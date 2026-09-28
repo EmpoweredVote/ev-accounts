@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "250a7ae0-f130-449e-9625-4c2d1512bbf6|897087f2-4301-4097-8245-5ccb22a0ab51|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "topic_key": "education-library-books",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "HB 1447 (2023) as introduced / as first sponsored in the Senate, to establish whether the school library chapter (IC 20-26-5.5) was in the version Donato sponsored or was added in conference",
+          "Donato's own words (floor statement, explanation of vote, press release) tying her HB 1447 vote to the school library removal provisions",
+          "A single-subject Indiana school library bill with a Donato vote or sponsorship (e.g. a later session bill on library material challenges)",
+          "Donato's own statement or floor explanation tying her HB 1447 vote or sponsorship specifically to the school-library removal provision (IC 20-26-5.5), since the enrolled act is multi-subject",
+          "the pre-conference-committee version of HB 1447 to confirm whether the school-library provision was in the bill as she first sponsored it or was added later",
+          "Donato's own words (floor statement, explanation of vote, press release, or questionnaire answer) tying her support for HB 1447 (2023) specifically to the school-library book-removal provision (IC 20-26-5.5), given the bill is multi-subject."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "250a7ae0-f130-449e-9625-4c2d1512bbf6|897087f2-4301-4097-8245-5ccb22a0ab51|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "requests": [
+        "HB 1447 (2023) as introduced / as first sponsored in the Senate, to establish whether the school library chapter (IC 20-26-5.5) was in the version Donato sponsored or was added in conference",
+        "Donato's own words (floor statement, explanation of vote, press release) tying her HB 1447 vote to the school library removal provisions",
+        "A single-subject Indiana school library bill with a Donato vote or sponsorship (e.g. a later session bill on library material challenges)",
+        "Donato's own statement or floor explanation tying her HB 1447 vote or sponsorship specifically to the school-library removal provision (IC 20-26-5.5), since the enrolled act is multi-subject",
+        "the pre-conference-committee version of HB 1447 to confirm whether the school-library provision was in the bill as she first sponsored it or was added later",
+        "Donato's own words (floor statement, explanation of vote, press release, or questionnaire answer) tying her support for HB 1447 (2023) specifically to the school-library book-removal provision (IC 20-26-5.5), given the bill is multi-subject."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

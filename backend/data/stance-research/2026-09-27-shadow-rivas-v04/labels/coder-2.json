@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+      "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "passages": [
+        {
+          "snapshot_id": "e2dfc4e8-d2ba-5c38-8740-bf578dd693da",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-10-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": "an owner of residential real property shall not, over the course of any 12-month period, increase the gross rental rate for a dwelling or a unit more than 5 percent plus the percentage change in the cost of living, or 10 percent, whichever is lower, of the lowest gross rental rate charged for that dwelling or unit at any time during the 12 months prior to the effective date of the increase.",
+          "note": "Bill text of AB 1482, Tenant Protection Act of 2019, a statewide rent cap plus just-cause eviction law with exemptions for new construction and other unit types.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fdb62213-b720-5b80-ac0e-421966fb5a2f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-09-11",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": null,
+          "note": "Robert Rivas voted Aye on the Assembly's final concurrence in Senate amendments to AB 1482, the last Assembly floor action before the bill went to the Governor.",
+          "record_kind": "vote",
+          "actor_quote": "Luz Rivas, Robert Rivas, Rodriguez",
+          "tally_quote": "Ayes Count 48 Noes Count 26"
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "e2dfc4e8-d2ba-5c38-8740-bf578dd693da",
+        "fdb62213-b720-5b80-ac0e-421966fb5a2f"
+      ],
+      "reasoning": "Robert Rivas voted Aye on AB 1482 (2019-2020), whose operative text caps rent increases statewide at 'more than 5 percent plus the percentage change in the cost of living, or 10 percent, whichever is lower' and adds statewide just-cause eviction protections, while exempting new construction (units issued a certificate of occupancy within the previous 15 years), single-family owner-occupied homes, and other categories. This matches 'Strengthen existing rent stabilization and extend coverage to more units' rather than 'Expand rent control to cover all rental units communitywide', since the bill's exemptions mean it does not reach all rental units communitywide.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

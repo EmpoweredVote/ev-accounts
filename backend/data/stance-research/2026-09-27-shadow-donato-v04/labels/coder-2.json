@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "551555f4-acd5-531c-b22e-8500eb58160c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Senate roll call 520 on HB 1447's Conference Committee Report; Donato voted Yea, but the enrolled bill bundles multiple unrelated education matters.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Messmer",
+          "tally_quote": "Yea 39"
+        },
+        {
+          "snapshot_id": "86b38e1c-3fd5-5db9-8f93-27bf535708a6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "off",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "The bill-details digest describes only the third-party-vendor-survey provision, not the school-library section; shows Donato as Senate sponsor.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7cbbaca8-97e0-5214-9675-e80abe3cb28c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": "(2) procedure for each school to allow a: (A) parent or guardian of a student enrolled in the school; or (B) community member: (i) within the school district; or (ii) within the school district in which the charter school is located; to submit a request to remove material from the school library that is obscene (as described in IC 35-49-2-1) or harmful to minors (as described in IC 35-49-2-2); and (3) response and appeal procedure for each school to respond to a removal request submitted by a parent, guardian, or community member described in subdivision (2). (b) The response and appeal procedure established under subsection (a)(3) must require the governing body to review the request at the next public meeting.",
+          "note": "Enrolled Act text of the new IC 20-26-5.5 school-library chapter, enacted by the same Conference Committee Report Donato voted on.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "HB 1447 (2023)'s Conference Committee Report bundles student-survey privacy, patriotic-observance/political-neutrality rules, obscenity-dissemination amendments, and the new school-library chapter (IC 20-26-5.5) into a single vote, so Donato's Yea on Roll Call 520 is multi-subject and cannot alone establish a library-books rung. The enacted library provision lets a parent or community member request removal of material that is 'obscene' or 'harmful to minors,' reviewed and appealed to 'the governing body' at its next public meeting -- a restrictive direction, but it names neither rung 3's review committee of educators and parents, rung 4's interim pull, nor rung 5's no-review report standard, so it is direction-only. Her sponsorship record is tied to the bill's survey-privacy digest only, not the library section, so it is off-question here.",
+      "needs_source": [
+        "Donato's own statement or floor explanation tying her HB 1447 vote or sponsorship specifically to the school-library removal provision (IC 20-26-5.5), since the enrolled act is multi-subject",
+        "the pre-conference-committee version of HB 1447 to confirm whether the school-library provision was in the bill as she first sponsored it or was added later"
+      ],
+      "quotes": []
+    }
+  ]
+}

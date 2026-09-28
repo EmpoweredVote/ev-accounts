@@ -20,6 +20,24 @@ export interface SeatContext {
   start_precision: string | null;
   term_end: string | null;
   election_date: string | null;
+  /** The seat's state (USPS, e.g. 'AZ'), from offices.representing_state. Absent → no earlier-chamber route. */
+  state_usps?: string | null;
+  /**
+   * Codebook V5 option B (ruling 2026-09-27): the person's CLOSED terms in a state-legislature seat of
+   * the same state — the other chamber, or an earlier district. A record dated in one of them counts
+   * for this seat; CONFIRM checks the page against that term's chamber. Empty/absent → such a record
+   * reads `prior-service-unverified` (fail closed).
+   */
+  prior_terms?: PriorTerm[];
+}
+export interface PriorTerm {
+  office_title: string;
+  /** The chamber served in (essentials.legislative_service). Given → it decides the chamber check. */
+  chamber?: 'upper' | 'lower';
+  state_usps: string;
+  term_start: string | null;
+  start_precision: string | null;
+  term_end: string | null;
 }
 export interface PromptTopic {
   topic_id: string;
@@ -101,6 +119,9 @@ export function buildCoderPrompt(i: {
     s.mode === 'seated'
       ? `Current term: ${s.term_start ?? 'unknown'} (precision: ${s.start_precision ?? 'unknown'}) to ${s.term_end ?? 'present'}`
       : `Candidate in the election of ${s.election_date ?? 'unknown date'}`,
+    ...((s.prior_terms?.length ?? 0) > 0
+      ? [`Earlier terms in this legislature: ${s.prior_terms!.map((t) => `${t.office_title} ${t.term_start ?? 'unknown'} (precision: ${t.start_precision ?? 'unknown'}) to ${t.term_end ?? 'unknown'}`).join('; ')}`]
+      : []),
     '',
     '## Topics (served ladder text — code against these words only)',
     '',

@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "bb4bbd05-0a4b-5617-9d6d-38b342fa770f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "off-axis",
+          "v5_time": "pre-seating",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": null,
+          "note": "Authored bill requires terms-of-service disclosure and content-moderation reporting to the Attorney General; it does not mandate removal, labeling, voluntary standards, free-speech protection, or non-involvement — a transparency/reporting dimension the ladder does not order.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 587 requires social media companies to post their terms of service and report content-moderation data (including whether they define 'Disinformation or misinformation') to the Attorney General; it does not require platforms to 'remove false information,' 'label false content, rather than remove it,' rest on 'voluntary standards,' 'protect free speech online and prevent government censorship,' or 'ban any government involvement in content moderation decisions.' Its operative content is a transparency/reporting mandate, a dimension the ladder does not order, so it is adjacent and off-axis and establishes no rung.",
+      "needs_source": ["Gabriel's own statement (floor speech, press release, or op-ed) tying AB 587 or another act to one of the ladder's specific mechanisms: mandatory removal, mandatory labeling, voluntary standards, free-speech/anti-censorship protection, or a ban on government involvement in content moderation"],
+      "quotes": []
+    }
+  ]
+}

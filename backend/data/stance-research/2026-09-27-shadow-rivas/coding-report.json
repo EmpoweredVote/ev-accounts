@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.3.1",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic_key": "rent-regulation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A roll call or first-person statement from Rivas's current term (2022-12-05 to present) on rent regulation, to test whether the 2019 position still holds"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "requests": [
+        "A roll call or first-person statement from Rivas's current term (2022-12-05 to present) on rent regulation, to test whether the 2019 position still holds"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

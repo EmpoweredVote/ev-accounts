@@ -496,3 +496,52 @@ describe('amendment-markup CONFIRM (spec 2026-09-27 §4)', () => {
     expect(run(page, { ...GENERIC_RULES, amendment_text: 'marked' }, 'kept')).toContain('provision-deleted');
   });
 });
+
+// name_format 'surname-initial' (Indiana roll calls): the page lists the WHOLE chamber and prints an
+// initial whenever two members share a surname ("Smith, V", "Young, J"). So a bare surname printed
+// once on the page names one member of that chamber, and a common surname needs no given name there.
+describe("name_format 'surname-initial' — a bare surname printed once is one member", () => {
+  const R = (name_format: SourceRules['name_format']): SourceRules => ({ ...GENERIC_RULES, vote_block: 'whole-page', chamber: 'page-header', name_format });
+  const run = (page: string, actor: string, rules: SourceRules, fullName = 'Joanna King') =>
+    checkRecordGroup({ passages: [P({ snapshot_id: 'x', instrument: 'HB 1041 (2022)', provision_quote: null, actor_quote: actor, tally_quote: 'Yea 67' })],
+      snapshotText: new Map([['x', page]]), fullName, chamber: null, profileOf: () => ({ rules, chamber: 'lower' }) }).findings;
+  const page = 'Indiana House of Representatives Roll Call 402: HB 1041 Yea 67 Nay 28 YEA - 67 Cook King Negele Torr Smith, V NAY - 28 Andrade Boy';
+  it('surname-initial: common surname printed once, bare → no name-collision', () =>
+    expect(run(page, 'Cook King Negele Torr', R('surname-initial'))).not.toContain('name-collision'));
+  it('surname (generic): the same page still needs a qualifier for a common surname', () =>
+    expect(run(page, 'Cook King Negele Torr', R('surname'))).toContain('name-collision'));
+  it('surname-initial: the surname printed twice on the page → name-collision', () =>
+    expect(run(page + ' EXCUSED - 1 King', 'Cook King Negele Torr', R('surname-initial'))).toContain('name-collision'));
+  it('surname-initial: the page printed an initial for the surname → a bare quote does not qualify', () =>
+    expect(run(page.replace('Cook King Negele', 'Cook King, J Negele'), 'Cook King', R('surname-initial'))).toContain('name-collision'));
+  it('real page (IN HB 1041 (2022), roll call 402): Joanna King, profile in-iga-roll-call → no name-collision', () => {
+    const f = fileURLToPath(new URL('../../data/stance-research/2026-09-27-shadow-king-v04/snapshots.json', import.meta.url));
+    const snap = (JSON.parse(readFileSync(f, 'utf8')) as { url: string; snapshot_text: string }[]).find((s) => s.url.includes('rollcalls'))!;
+    const found = checkRecordGroup({ passages: [P({ snapshot_id: 'r', instrument: 'HB 1041 (2022)', provision_quote: null, actor_quote: 'Cook King Negele Torr', tally_quote: 'Yea 67' })],
+      snapshotText: new Map([['r', snap.snapshot_text]]), fullName: 'Joanna King', chamber: null, profileOf: () => ({ rules: R('surname-initial'), chamber: 'lower' }) }).findings;
+    expect(found).not.toContain('name-collision');
+  });
+});
+
+// AZ BillStatus: one URL prefix serves the vote dialog ("House Third Reading - HB…") AND the overview
+// (sponsor list, no reading line). 'reading-else-bill-origin' reads the reading line when there is one,
+// else the bill's chamber of origin (with bill-origin's co-author guard).
+describe("chamber 'reading-else-bill-origin' (AZ BillStatus)", () => {
+  const R: SourceRules = { ...GENERIC_RULES, vote_block: 'whole-page', chamber: 'reading-else-bill-origin', tally_format: 'dash-ayes-nays' };
+  const run = (page: string, actor: string, chamber: 'upper' | 'lower', record_kind = 'sponsor', tally: string | null = null, fullName = 'Jake Hoffman', instrument = 'HB 2492 (2022)') =>
+    checkRecordGroup({ passages: [P({ snapshot_id: 'x', instrument, provision_quote: null, record_kind, actor_quote: actor, tally_quote: tally })],
+      snapshotText: new Map([['x', page]]), fullName, chamber: null, profileOf: () => ({ rules: R, chamber }) }).findings;
+  const overview = 'Bill Status Inquiry. Bill History for HB2492. Short Title: voter registration. Sponsors: Hoffman (Prime) Blackman (Co-Sponsor)';
+  it('overview (no reading line): HB → the House', () => {
+    expect(run(overview, 'Hoffman (Prime)', 'lower')).not.toContain('chamber-not-evidenced');
+    expect(run(overview, 'Hoffman (Prime)', 'upper')).toContain('chamber-not-evidenced');
+  });
+  const senate = 'Senate Third Reading - HB2492 voter registration Action Date Action Vote 03/23/2022 Passed 16-12-2-0-0 BARTO Y HOFFMAN Y';
+  it('a reading line wins over the bill origin (Senate vote on an HB)', () => {
+    expect(run(senate, 'HOFFMAN Y', 'upper', 'vote', 'Passed 16-12-2-0-0')).not.toContain('chamber-not-evidenced');
+    expect(run(senate, 'HOFFMAN Y', 'lower', 'vote', 'Passed 16-12-2-0-0')).toContain('chamber-not-evidenced');
+  });
+  it('"House Final Reading" names the House', () =>
+    expect(run('House Final Reading - SB1001 x Action Date Action Vote 06/01/2026 Passed 39-16-5-0-0 GRIFFIN Y', 'GRIFFIN Y', 'lower', 'vote', 'Passed 39-16-5-0-0', 'Gail Griffin', 'SB 1001 (2026)'))
+      .not.toContain('chamber-not-evidenced'));
+});

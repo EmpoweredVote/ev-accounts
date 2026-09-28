@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "25becdfe-46ec-4a8a-88ec-8c85eed418b5|109811e6-4a7d-4293-88d9-6dd9b90edd98|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Mishler's own explanation of vote, floor statement, or press release on HB 1002 (2022) tying his support specifically to the individual income tax rate cut (matching rung 4's 'cut taxes broadly, including the main rates most people pay'), separate from the bill's other unrelated tax and non-tax provisions.",
+          "Mishler's own words (floor speech, statement, questionnaire answer) tying his vote or sponsorship of HB 1002 (2022) specifically to the individual income tax rate cut rather than the bill's other provisions",
+          "A single-subject Mishler-sponsored or voted tax bill, or a budget/appropriations statement in his own words, to evidence a chair on this ladder"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "25becdfe-46ec-4a8a-88ec-8c85eed418b5|109811e6-4a7d-4293-88d9-6dd9b90edd98|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "requests": [
+        "Mishler's own explanation of vote, floor statement, or press release on HB 1002 (2022) tying his support specifically to the individual income tax rate cut (matching rung 4's 'cut taxes broadly, including the main rates most people pay'), separate from the bill's other unrelated tax and non-tax provisions.",
+        "Mishler's own words (floor speech, statement, questionnaire answer) tying his vote or sponsorship of HB 1002 (2022) specifically to the individual income tax rate cut rather than the bill's other provisions",
+        "A single-subject Mishler-sponsored or voted tax bill, or a budget/appropriations statement in his own words, to evidence a chair on this ladder"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

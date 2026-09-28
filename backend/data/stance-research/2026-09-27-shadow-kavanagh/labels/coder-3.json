@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "216da375-c911-5eb4-8bc4-1e613e587d75",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "pre-seating",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "New 15-2401.01 opens ESA eligibility to any resident eligible for public preschool-disability, kindergarten, or grades 1-12, matching rung 5's universal clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "58f93f4f-9a3f-5ecd-8652-844b534aa83f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "pre-seating",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Bill status page lists Kavanagh as a co-sponsor of HB2853; this was during his House service, before his Senate term beginning 2023-01-02.",
+          "record_kind": "sponsor",
+          "actor_quote": "Kavanagh (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "838392eb-5e1f-58ac-bd8c-a9a642ee905d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "pre-seating",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading vote shows Kavanagh voting Y on HB2853, a House floor vote cast before his current Senate term began 2023-01-02.",
+          "record_kind": "vote",
+          "actor_quote": "KAVANAGH Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "All three HB2853 passages document Kavanagh's co-sponsorship and Yea vote on the 2022 universal ESA expansion, whose enacted text opens ESA eligibility to any resident eligible for public preschool-disability, kindergarten, or grades 1-12, matching rung 5's universal, any-school clause. But the sponsorship and the House Third Reading vote both occurred in 2022 while Kavanagh served in the Arizona House, before his current State Senate term beginning 2023-01-02; per V5, a record from an earlier office is valid for that office only, so none of this evidence can establish the chair for this Senate row.",
+      "needs_source": ["Kavanagh's own act or words on school vouchers/ESAs from within his State Senate term (2023-01-02 to present)"],
+      "quotes": []
+    }
+  ]
+}

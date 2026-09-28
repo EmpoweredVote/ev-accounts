@@ -1,0 +1,21 @@
+Coded. One row, `education-library-books`, BLANK `direction-only`.
+
+**What the evidence shows.** All three snapshots are one record — HB 1447 (2023):
+- Roll call 520 (`billVotesClient`-style PDF): her Yea in the list, tally `Yea 39 ... Nay 10` (20% No, so not near-unanimous).
+- Enrolled act: SECTION 2 adds IC 20-26-5.5, the School Library chapter — a removal-request procedure open to a parent, guardian, or community member, plus a response/appeal procedure requiring the governing body to review at the next public meeting.
+- Bill details page: `Sponsored by: Sen. Stacey Donato`.
+
+**Why BLANK.** The provision is on-question — it is exactly the challenge procedure the ladder asks about — but it doesn't match any rung clause for clause:
+- Rung 3 names *a review committee of educators and parents*; the act assigns review to the school corporation's **governing body**.
+- Rung 4 requires pulling a book **until** review; the act has no pending-review removal.
+- Rung 5 requires removal on report **for all students**; the act routes reports through review and pegs the standard to obscene/harmful-to-minors.
+
+So it separates the sides (against rungs 1–2) without separating 3/4/5 → `direction-only`, not a "least extreme rung the evidence supports" tiebreak.
+
+**Shapes.** The vote page is `multi-subject` — HB 1447 is an education omnibus (Muncie school flexibility, third-party surveys, political-activism neutrality, school libraries, criminal code). Under V4.1 a final-passage vote on that proves direction at most, and there's no statement tying her vote to the library clause. The bill-text and sponsorship pages are `direction-only`.
+
+**Amendment markup.** The enrolled act is riddled with `[deleted: …]` fences (renumbered subdivisions, and the struck `school,` / `or educational` defense in IC 35-49-3-4). I quoted none of it; `provision_quote` is added text only.
+
+**needs_source:** her own words tying the vote/sponsorship to the library provision, and any record naming who decides a challenge.
+
+No quotes emitted — the three sources are records with no first-person words in them.

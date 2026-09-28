@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "b12590e5-2db2-535e-857b-4524fa9c9301",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Roll call 520: Donato voted Yea on the Conference Committee Report for HB 1447, a multi-subject education bill.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Messmer Young",
+          "tally_quote": "HB 1447 - Donato Yea 39 Education matters. Nay 10 Conference Committee Report #1 Excused 0 Not Voting 1"
+        },
+        {
+          "snapshot_id": "75f0aece-f2fb-5fa3-b9d3-610e1b046485",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Bill details page lists Donato as Senate sponsor of HB 1447, a multi-subject education bill whose published digest covers third-party survey privacy, not library books.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "351df78a-5dd4-59ed-ba4e-e8d2c8d5c368",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": "(2) procedure for each school to allow a: (A) parent or guardian of a student enrolled in the school; or (B) community member: (i) within the school district; or (ii) within the school district in which the charter school is located; to submit a request to remove material from the school library that is obscene (as described in IC 35-49-2-1) or harmful to minors (as described in IC 35-49-2-2); and (3) response and appeal procedure for each school to respond to a removal request submitted by a parent, guardian, or community member described in subdivision (2).",
+          "note": "New Chapter 5.5 lets both parents and community members request removal of library material, reviewed by the governing body at its next meeting; this mixes the rung-5 community-member trigger with a rung-3-like review step rather than matching either rung cleanly.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "HB 1447 (2023) is a multi-subject education bill covering third-party survey privacy, Muncie school flexibility, political neutrality, and obscenity-law amendments in addition to the new school-library chapter, so Donato's Yea vote and Senate sponsorship show direction at most without a statement tying her act to the library provision specifically. That provision itself lets 'a parent or guardian' or 'a community member... within the school district' submit a removal request for obscene or harmful-to-minors material, reviewed by the governing body at its next public meeting, which mixes the rung-5 community-member trigger with a rung-3-like review step rather than matching any single rung's full clause set to the exclusion of the others.",
+      "needs_source": [
+        "Donato's own explanation of vote or floor statement tying her Yea vote on HB 1447 (2023) specifically to the school-library provision (Chapter 5.5)"
+      ],
+      "quotes": []
+    }
+  ]
+}

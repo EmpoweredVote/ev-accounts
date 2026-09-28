@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "bb4bbd05-0a4b-5617-9d6d-38b342fa770f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": "A social media company shall post terms of service for each social media platform owned or operated by the company in a manner reasonably designed to inform all users of the social media platform of the existence and contents of the terms of service.",
+          "note": "AB 587 mandates terms-of-service disclosure and moderation-practice reporting, not removal, labeling, voluntary standards, or the free-speech/no-government-role axis the rungs order.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 587 (2021-2022), authored by Gabriel and signed into law, requires social media companies to publicly disclose their terms of service and report content-moderation data to the Attorney General; it does not require platforms to remove false information, label false content, encourage voluntary standards, protect free speech, or ban government involvement, so no rung on this ladder is established.",
+      "needs_source": ["Gabriel's own statements or floor remarks explaining AB 587's purpose regarding misinformation specifically", "any vote or statement addressing removal, labeling, or free-speech limits on platform content moderation"],
+      "quotes": []
+    }
+  ]
+}

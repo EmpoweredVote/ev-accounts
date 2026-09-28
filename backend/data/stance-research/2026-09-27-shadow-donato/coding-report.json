@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3.1",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "250a7ae0-f130-449e-9625-4c2d1512bbf6|897087f2-4301-4097-8245-5ccb22a0ab51|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "topic_key": "education-library-books",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Donato's own words tying her sponsorship or Yea on HB 1447 (2023) to the school library removal provision (floor statement, explanation of vote, or press release)",
+          "Any Donato record or first-person statement naming who decides a book challenge (a review committee of educators and parents, the school board, or automatic removal on report)",
+          "Donato floor statement, press release, or testimony specifically addressing HB 1447's school library provision or the library-book-challenge policy question",
+          "Donato's own explanation of vote or floor statement tying her Yea vote on HB 1447 (2023) specifically to the school-library provision (Chapter 5.5)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "250a7ae0-f130-449e-9625-4c2d1512bbf6|897087f2-4301-4097-8245-5ccb22a0ab51|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "requests": [
+        "Donato's own words tying her sponsorship or Yea on HB 1447 (2023) to the school library removal provision (floor statement, explanation of vote, or press release)",
+        "Any Donato record or first-person statement naming who decides a book challenge (a review committee of educators and parents, the school board, or automatic removal on report)",
+        "Donato floor statement, press release, or testimony specifically addressing HB 1447's school library provision or the library-book-challenge policy question",
+        "Donato's own explanation of vote or floor statement tying her Yea vote on HB 1447 (2023) specifically to the school-library provision (Chapter 5.5)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

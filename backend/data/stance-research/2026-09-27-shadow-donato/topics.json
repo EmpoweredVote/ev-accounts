@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+    "topic_key": "education-library-books",
+    "topic_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+    "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+    "question_number": 47,
+    "title": "School Library Books and Instructional Materials",
+    "question_text": "How should schools handle challenges to books in libraries and classrooms?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Keep every book available and let professional librarians and educators curate the collection"
+      },
+      {
+        "value": 2,
+        "text": "Keep challenged books available to all, while letting parents limit what their own child can borrow"
+      },
+      {
+        "value": 3,
+        "text": "Remove a challenged book only if a review committee of educators and parents finds it unsuitable"
+      },
+      {
+        "value": 4,
+        "text": "Pull any book a parent challenges until it has been reviewed"
+      },
+      {
+        "value": 5,
+        "text": "Remove any book a parent or community member reports as inappropriate, for all students"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  }
+]

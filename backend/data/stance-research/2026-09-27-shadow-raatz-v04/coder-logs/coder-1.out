@@ -1,0 +1,19 @@
+Coded and written to `labels/coder-1.json`.
+
+**Row: Jeff Raatz / education-gender-identity → chair 4**
+
+Three passages, all one instrument group (HB 1608, 2023):
+
+| Snapshot | V1–V5 | Record fields |
+|---|---|---|
+| Enrolled bill text | own-act / on-question / record / chair-shaped / in-term | `vote`; `provision_quote` = the IC 20-33-7.5 notification clause |
+| IGA bill details | own-act / on-question / record / chair-shaped / in-term | `sponsor`; `actor_quote` = the Senate sponsor line naming Raatz |
+| Senate Roll Call 345 | own-act / on-question / record / chair-shaped / in-term | `vote`; `actor_quote` = Yea-list span, `tally_quote` = the counts |
+
+Key judgments:
+- **V4 chair-shaped, rung 4.** The new chapter mandates written parental notification of a name or pronoun request within five business days, with no staff-discretion safety carve-out (Sec. 3 preserves abuse-reporting duties; Sec. 4 preserves federal law) — so the "unless staff believe it would put the student in danger" rung is excluded. It is notification after the fact, not prior written permission, so the permission rung is excluded too.
+- **Near-unanimous check:** 12 Nay of 50 voting members (24%) — rule does not apply.
+- **`[deleted:]` fences** appear only in the printing-code preamble; the quoted provision is added text, per the 0.3.1 rule.
+- **No quotes emitted** — none of the three sources contains Raatz's own words, so `quotes: []` and a `needs_source` entry asks for a first-person statement.
+
+One thing a reviewer may want to press on: HB 1608 carries two provisions (the PK–3 human-sexuality instruction ban and the notification chapter). I read it as single-subject enough — an education bill with two closely related sections, not an omnibus — so the vote stands as chair-shaped rather than `multi-subject`. His sponsorship is independent evidence of the bill as filed either way.

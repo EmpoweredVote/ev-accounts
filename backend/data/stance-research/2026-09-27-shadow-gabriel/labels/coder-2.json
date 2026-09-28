@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "199a64f5-c8f4-511a-bc77-8f558759a360",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": "A social media company shall post terms of service for each social media platform owned or operated by the company in a manner reasonably designed to inform all users of the social media platform of the existence and contents of the terms of service.",
+          "note": "AB 587 mandates content-moderation transparency reporting (including a disinformation/misinformation category), not removal, labeling, voluntary standards, free-speech protection, or a ban on government involvement.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 587's operative clauses require platforms to post terms of service and file transparency reports on content-moderation categories (including disinformation/misinformation) with the Attorney General; this is a disclosure mandate along a dimension none of the five rungs (remove, label, voluntary standards, protect free speech, ban government involvement) orders, so it is adjacent and cannot establish a chair.",
+      "needs_source": [
+        "Gabriel's own first-person statement (floor speech, press release, or op-ed) on AB 587 or misinformation policy tying his authorship to a specific rung (removal, labeling, voluntary standards, free-speech protection, or no government involvement)"
+      ],
+      "quotes": []
+    }
+  ]
+}

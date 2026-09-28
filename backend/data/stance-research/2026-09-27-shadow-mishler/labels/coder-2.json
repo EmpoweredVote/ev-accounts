@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+      "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "b43820da-b1b6-5f2d-bcd2-6b37c2f16221",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": null,
+          "note": "Bill details page names Mishler as a Senate sponsor of an omnibus 'various tax matters' bill.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Ryan Mishler, Sen. Travis Holdman, Sen. Lonnie Randolph.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "02ec32a0-cd5b-592d-9f65-d1e690ad737f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-09",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": null,
+          "note": "Roll call 374 shows Mishler voting Yea (50-0) on the conference committee report for the omnibus tax bill.",
+          "record_kind": "vote",
+          "actor_quote": "Ford Jon Mishler Walker K",
+          "tally_quote": "Yea 50"
+        },
+        {
+          "snapshot_id": "96bedf51-10e7-585b-b551-34f3f1dc5ce0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": "(4) For taxable years beginning after December 31, 2022, and before January 1, 2025, three and fifteen hundredths percent (3.15%).",
+          "note": "Enrolled act text: the broad individual income-tax rate cut is one clause among many unrelated tax and non-tax provisions in this bill.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 1002 (2022) is an omnibus 'various tax matters' bill bundling a broad individual income-tax rate cut, a narrow mini-mill property-tax valuation carve-out, repeal of the utility receipts tax with related utility-rate and criminal-code cleanup, partnership audit procedures, cable franchise revenue rules, and an unrelated Medicaid managed-care reporting requirement (SECTION 18). Mishler's sponsorship and Yea vote on the conference committee report are multi-subject and prove direction at most; without his own statement tying the vote to the rate-cut clause specifically, no rung is established.",
+      "needs_source": [
+        "Mishler's own statement, floor speech, or explanation of vote tying his sponsorship/Yea vote on HB 1002 (2022) specifically to the individual income-tax rate reduction (as opposed to the bill's other provisions), which V4.1 requires to prove a chair from a multi-subject bill."
+      ],
+      "quotes": []
+    }
+  ]
+}

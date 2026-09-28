@@ -1,0 +1,9 @@
+Wrote `labels/coder-1.json` — one row, coded BLANK.
+
+**Jesse Gabriel / misinformation → BLANK `no-evidence`**
+
+The only source is the chaptered text of AB 587 (2021-2022), whose Legislative Counsel's Digest names Gabriel as author ("AB 587, Gabriel. Social media companies: terms of service."). That passes V1 as `own-act` (`record_kind: author`) and is in-term under the V5 option-B ruling (same chamber, prior term; chaptered 2022-09-13).
+
+It fails V2. The bill requires companies to post their terms of service and to report semiannually to the Attorney General — including whether their terms define "Disinformation or misinformation" — with a $15,000/day civil penalty. That is a transparency-and-disclosure dimension. The rungs separate on removal, labeling, voluntary standards, free-speech protection, and banning government involvement. A reporting mandate is none of those: it doesn't compel removal, doesn't compel labels, and a penalty-backed duty isn't "encourage voluntary standards." So the passage is `adjacent` / `off-axis`, no passage survives V1–V5, and `rests_on` is empty.
+
+Two `needs_source` entries: his own first-person words on removal vs. labeling, and a named Assembly instrument that itself mandates one of those (with the vote page for actor and tally quotes). No candidate quotes — the source is statutory text, not his words.

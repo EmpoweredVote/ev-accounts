@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.3.1",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "188c386e-087b-4587-9510-da7fc5805575",
+      "office_id": "b68ffd33-82dd-4eba-adee-6a853f7fc882",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "6d362495-7cdd-50e6-910c-2ca8746ba67c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": "Supports policies that establish new customer classes, rate designs and cost allocation formulas for extra high load factor customers that are reasonable and necessary to prevent cost shifts to residential customers from extra high load factor customers.",
+          "note": "Enacted law requires cost-allocation formulas so extra high load factor customers (large power users) bear infrastructure costs, not residential ratepayers.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9ff27240-e5c1-511a-8801-a8241e5d7b0d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": null,
+          "note": "Griffin voted Y on House Final Reading of this single-subject utility rate-design bill.",
+          "record_kind": "vote",
+          "actor_quote": "GRIFFIN Y",
+          "tally_quote": "Passed 39-16-5-0-0"
+        },
+        {
+          "snapshot_id": "72771892-f96a-5695-8621-ac71ee1ce6de",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": null,
+          "note": "Bill overview lists Griffin as prime sponsor of HB 2756, signed by the Governor.",
+          "record_kind": "sponsor",
+          "actor_quote": "Griffin (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Griffin prime-sponsored and voted Yea on HB 2756 (2026), which requires cost allocation formulas so extra high load factor customers (large power users such as data centers) cover their own infrastructure costs rather than shifting them to residential ratepayers, evidencing the 'energy cost-sharing agreements' clause of the rung reading 'Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval.' The bill does not establish impact assessments or community benefit requirements before approval, so the rung's other clauses are unevidenced.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

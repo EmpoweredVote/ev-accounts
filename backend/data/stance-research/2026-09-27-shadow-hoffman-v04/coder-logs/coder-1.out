@@ -1,0 +1,10 @@
+Wrote `coder-1.json`. One row, chair **5**.
+
+**Coding:** Three passages, all one instrument, HB 2492 (2022):
+- Bill overview — `own-act` / `record` / `sponsor`, actor_quote `Sponsors: Hoffman (Prime)`.
+- House Third Reading vote page — `own-act` / `record` / `vote`, actor_quote `HOFFMAN Y`, tally `Passed 31-26-3-0-0` (26 No is well clear of the near-unanimous threshold).
+- Enrolled bill text — provision quote from the amended § 16-121.01(C), which requires registration applications to be accompanied by satisfactory evidence of citizenship and directs recorders to reject those that are not. No `[deleted: …]` text used.
+
+**V5:** the 2022 act is from Hoffman's Arizona House term; under the 0.4 option-B ruling, a record from either chamber of the same legislature is `in-term` for the Senate seat. Code still needs to verify prior service and chamber (`prior-service-unverified`, `chamber-not-evidenced`) — that's outside my call.
+
+**V4:** single-subject registration/citizenship-verification bill, so the vote and the sponsorship both carry the provision; it matches rung 5 ("Require documentary proof of citizenship to register to vote") clause for clause. `needs_source` is empty and `quotes` is empty — no own-words statement passage was supplied.

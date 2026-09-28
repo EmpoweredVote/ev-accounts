@@ -7,7 +7,7 @@
 import { normalizeText } from '../../src/lib/researchVerifier.js';
 
 /** 🔴 Must equal the codebook's **Version:** line — coderLabel.test.ts pins it. */
-export const CODEBOOK_VERSION = '0.3.1';
+export const CODEBOOK_VERSION = '0.4';
 
 export const V1_ATTRIBUTION = ['own-words', 'own-act', 'third-party-characterization', 'namesake-unclear'] as const;
 export const V2_RELEVANCE = ['on-question', 'adjacent', 'off'] as const;

@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "7ff4262f-e23d-5c82-a03f-30024e1d89bd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-20",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": "The right to marry is a fundamental right.",
+          "note": "Bill text repeals the opposite-sex-only marriage provision and makes marriage a fundamental right with no discrimination-protection or religious-exemption clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "36e059a0-4d0d-5ef1-9212-bc310d6bccea",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": null,
+          "note": "Wiener voted Aye on ACA 5's single-subject Senate Floor final passage, 31-0.",
+          "record_kind": "vote",
+          "actor_quote": "Wahab, Wiener, Wilk",
+          "tally_quote": "Ayes Count 31 Noes Count 0"
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": ["7ff4262f-e23d-5c82-a03f-30024e1d89bd", "36e059a0-4d0d-5ef1-9212-bc310d6bccea"],
+      "reasoning": "Wiener voted Aye on ACA 5 (2023-2024)'s Senate Floor final passage (31-0, 07/13/23), a single-subject constitutional amendment whose operative text states 'the right to marry is a fundamental right,' repealing the prior man-woman-only provision. This matches the rung guaranteeing same-sex marriage 'the same benefits and protections as any other marriage'; the text adds no discrimination protections in jobs/housing (rung 1) and names no religious-organization carve-out (rung 3).",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}
