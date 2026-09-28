@@ -580,26 +580,106 @@ The MARIS `.xlsx` block equivalency files were converted to two-column CSV with 
 
 ---
 
-## ▶ RESUMING THIS SLICE — read this first
+## ▶ RESUMING THIS SLICE — read this before touching anything
 
-1. 🟢 **MS-1 IS UNBLOCKED AND LOADS PLAIN TIGER (Map A, the 2022 plan).** Settled 2026-09-28
-   from the court's own docket, not from a tracker: the 2025 plans are *"not operative"* and the
-   Secretary of State reverted SEMS to the 2022 lines on 2026-07-24. **Add
-   `MS: new Set(['sldu','sldl'])` to `STATE_LAYER_ALLOWLIST` with a pre-flight block, and load
-   174 boundaries + 174 districts. Stage 1 needs no migration slot.**
-2. ⚠ **RE-READ THE DOCKET BEFORE THE 2027 CYCLE, AND BEFORE ANY RELOAD.** The merits are being
-   re-litigated under *Callais*; a motion to stay and a motion for an expedited schedule were both
-   pending on 2026-09-28. **The 2022 lines are operative now, not permanently.**
-3. **If a later order restores Map B or C, TIGER cannot be the source.** The geometry must be built from MARIS —
-   either by reprojecting the `MS_*_CourtApproved_May72025` shapefiles out of
-   `NAD_1983_HARN_Mississippi_TM` (false easting 500000, false northing 1300000, central meridian
-   −89.75, scale factor 0.9998335, latitude of origin 32.5, GRS80), or by dissolving the block
-   equivalency file against the TIGER 2020 block layer. ⚠ **MARIS publishes no block equivalency
-   for the court-approved Senate plan** — only shapefiles — so Map C needs the reprojection route
-   or a dissolve from a plan file the court accepted.
-4. ⚠ **`MS_ProposedSenate_Feb25_2025` is JR 202 as the Legislature adopted it, and the court
-   modified it.** The file is authoritative for Map B and stale for Map C. **A source can be
-   authoritative for one field and stale for another** — the programme's rule, and the filename
-   does not say which.
-5. **Stage 2 owes 174 seats**, 122 House and 52 Senate, both single-member. Fix the TLS chain first.
-6. **Biloxi is the last of the 26 Knight cities without officeholders.**
+**State: MS-1 and MS-2 are APPLIED and on `origin/knight/ms-slice16` (PR #839). Nothing is
+uncommitted and nothing is unpushed. MS-3 is next: BILOXI, and its office inventory is UNREAD.**
+
+| stage | state |
+| --- | --- |
+| 1 geography | ✅ applied — 174 polygons |
+| 2 legislature | ✅ applied — 174 offices seated (`CC_0169`/`CC_0170`) |
+| **3 Biloxi** | ▶ **OPEN, FROM ZERO. Inventory unread.** |
+| 4 Harrison County | — not started |
+| 5 assets | — not started. No `biloxi` banner key |
+
+### What MS-3 has to establish
+
+🔴 **BIND ON `(mtfcc, geo_id)` = (`G4110`, `2806220`) FOR BILOXI AND (`G4020`, `28047`) FOR
+HARRISON COUNTY.** Mississippi's `geo_id` collision is the worst in the programme after
+Pennsylvania: STATE_UPPER runs `28001`-`28052`, STATE_LOWER `28001`-`28122` and COUNTY
+`28001`-`28163`, so **Senate District 47, House District 47 and Harrison County are all `28047`**.
+MS also holds **427 `G6350` ZCTA** rows. Never match on a number or a name alone.
+
+🔴 **BILOXI HOLDS NO GOVERNMENT ROW, NO CHAMBER AND NO OFFICE.** It exists only as a TIGER place
+polygon (67.7068 sq mi, water included). Harrison County is a `districts` row with 0 offices.
+
+▶ **READ THE CITY'S OWN CHARTER FOR THE INVENTORY, the way every earlier stage 3 did** — Detroit's
+came from the charter's own enumerating sentence, Aberdeen's from Home Rule Charter s 2.02(a).
+⚠ **Do NOT carry a template across cities** (`feedback_describe_offices_dont_standardise`): Akron
+elects no City Clerk while Fort Wayne does; Gary elects a judge and Fort Wayne does not; Grand
+Forks elects a municipal judge mentioned in ONE sentence on a staff page.
+⚠ Mississippi municipalities run under one of several statutory forms (mayor-council, commission,
+council-manager, code charter). **Establish which form Biloxi uses before counting seats**, and
+read the later, more specific instrument — SD-4's rule, where a duty statute named a structure it
+did not require.
+
+🟢 **HARRISON COUNTY HAS TWO JUDICIAL DISTRICTS (First at Gulfport, Second at Biloxi).** That is
+a real Mississippi peculiarity and it may duplicate some county offices. **Check it; do not assume
+it either way.** Stage 4's inventory is unread too.
+
+### 🔴 The one thing about Mississippi that no other slice has
+
+**THE MAP AND THE MEMBER HAVE COME APART, AND IT IS NOW WRITTEN INTO PRODUCTION.** MS-1 loaded the
+**2022 lines** (the Supreme Court vacated the judgment approving the 2025 remedial plans on
+2026-05-18, the Secretary of State reverted SEMS to the 2022 lines on 2026-07-24, and the
+three-judge court held on 2026-09-11 that the 2025 Joint Resolutions *"are not operative"*, Doc
+318). But the members seated by the **2025-11-04** specials were elected under the 2025 lines, and
+the same order records that *"the Legislature's current composition will remain unchanged until
+the 2027 election."*
+▶ In **Senate 1, 2, 10, 11, 19, 34, 41, 42, 44, 45** and **House 16, 22, 36, 39, 41** the holder
+of district N may have been elected by a differently-shaped district N. **This is the State's
+position, not a defect. Do not "tidy" it.**
+⚠ **RE-READ THE DOCKET BEFORE ANY RELOAD OR BEFORE THE 2027 CYCLE** — 3:22-cv-734-DPJ-HSO-LHS on
+CourtListener RECAP (docket id `66672561`, PACER `gov.uscourts.mssd.117094`), **opened in
+Playwright**, because the page 403s a bare fetch and the docket-entries API 401s. A motion to stay
+and an expedited-schedule motion were both pending on 2026-09-28, and Mississippi was holding
+post-*Callais* redistricting hearings to 2026-10-01. **The 2022 lines are operative now, not
+permanently.** 🟢 Neither Loyola nor the American Redistricting Project had posted the order that
+settled this — **a tracker's silence is not a docket.**
+
+### ⚠ Working facts a fresh session will trip on
+
+- **Worktree `C:\ev-accounts-ms`, branch `knight/ms-slice16`.** `backend/node_modules` is a real
+  `npm install` (not a junction, unlike the SD worktree), and **`backend/.env` is a HARD LINK** to
+  the main checkout's, because the repo `.env` is read-blocked here. Both are gitignored. Recreate
+  the link with:
+  `cmd //c "mklink /H C:\ev-accounts-ms\backend\.env C:\EV-Accounts\backend\.env"`
+- 🔴 **The worktree's upstream was `origin/master` when created** (`git worktree add -b <branch>
+  <base>` does that). It has been repointed at `origin/knight/ms-slice16`. **Check `@{u}` before
+  pushing** in any new worktree made this way — OH-5's trap.
+- 🔴 **MIGRATIONS ARE APPLIED WITH `psql`, NOT THE MCP**, and dry-run by concatenating the pair
+  into one transaction ending in `ROLLBACK`, then **verifying the rollback reverted**:
+  `cd /c/ev-accounts-ms/backend && (set -a; . ./.env; set +a; "/c/Program Files/PostgreSQL/18/bin/psql" "$DATABASE_URL" -v ON_ERROR_STOP=1 -f <file>)`
+  `scripts/ms2-migration-controls.mjs` builds the dry run and one tampered copy per gate.
+- 🔴 **SLOTS USED SO FAR: `CC_0169`, `CC_0170`. ALLOCATE NEW ONES; NEVER COUNT.**
+  `npm run steward --prefix backend -- slot CC --purpose "..."`. MS-1 needed no slot (geography
+  loads run through the loader). ⚠ **An `X` boundary code has NO allocator** — if MS-3 loads
+  council-ward polygons it needs one, read from `max(mtfcc)` in prod in the same session as the
+  write (MI-3's `X0065`, SD-3's `X0072`).
+- 🔴 **THE TLS CHAIN FIX IS LOAD-BEARING FOR EVERY MISSISSIPPI LEGISLATIVE FETCH** and is built
+  into `scripts/build-ms-legislature-roster.mjs`: `legislature.ms.gov` and
+  `billstatus.ls.state.ms.us` send only their leaf certificate, and the intermediate is
+  **GlobalSign RSA OV SSL CA 2018** at `http://secure.globalsign.com/cacert/gsrsaovsslca2018.crt`.
+  `--tls-control` proves it necessary, sufficient and masking nothing. **Never disable
+  verification.** Biloxi's own hosts have NOT been probed — do that first, with controls.
+- ⚠ **`legislature.ms.gov/legislators/` is an empty shell** (650 characters of JS navigation), not
+  a second publisher. ⚠ `www.sos.ms.gov` answers **403 to a Chrome UA on a Node TLS fingerprint**
+  and 200 to a bare `fetch` — the half-impersonation refusal.
+- ⚠ **Regenerable working files are gitignored**: `data/seed-ms-2026/_pages` (member-page cache),
+  `_ca` (the intermediate), `_dryrun` (dry run + controls). The roster JSON **is** committed,
+  because the migrations were generated from it. `gen-ms-legislature-migrations.mjs` reproduces
+  both migrations byte-identically — **edit the generator, never the generated SQL.**
+- ⚠ **Lease `state:ms`** — extend it before a long session:
+  `npm run steward --prefix backend -- extend state:ms --hours 24`
+- ⚠ **Do not build regexes or SQL through nested shell→Python→JS quoting.** It ate backslashes
+  three separate times in this slice alone. Write the script to a file and run it.
+
+### Debts open across the slice
+
+- **167 undated legislative arrivals.** No Mississippi member page publishes a service date and the
+  oath date must not be computed. The eight 2025-11-04 turnovers are datable from the chambers'
+  own journals by a later pass; seven already carry the year.
+- **Biloxi scores 2 of 4** — state representative and state senator. The council member and the
+  county supervisor are MS-3 and MS-4.
+- **Biloxi is the last of the 26 Knight cities without officeholders.**
