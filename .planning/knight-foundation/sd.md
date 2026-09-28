@@ -11,7 +11,7 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-28 — 72 boundaries, 72 districts, 35 Senate + 37 House, 0 errors.** Only `sldu` + `sldl` were owed; vintage PROVED against the SD Legislature's own adopted-map layer |
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 105 offices, 105 seated, 0 vacant, EVERY TERM DATED TO THE DAY** (`CC_0163`/`CC_0164`) |
-| 3 city waves | ▶ **OPEN, FROM ZERO.** Aberdeen holds no government row, no chamber and no office |
+| 3 city waves | ▶ **MEASURED 2026-09-28, NOTHING WRITTEN. 9 offices** — Mayor + 8 council over 4 districts. Inventory settled from the charter; geometry located and validated. **Blocked on per-member arrival dates** |
 | 4 county waves | ▶ **OPEN, FROM ZERO.** Brown County holds no government row, no chamber and no office |
 | 5 assets | — not started. No `aberdeen` banner key |
 
@@ -373,7 +373,102 @@ to have reverted** before the apply.
 🟢 The reserved `external_id` band `-2766000 .. -2765896` was **measured empty** first — ND-2's
 first choice was already occupied.
 
-▶ **Next: SD-3, Aberdeen — office inventory UNREAD.**
+---
+
+## ▶ SD-3 MEASURED 2026-09-28 — NOTHING WRITTEN TO PRODUCTION
+
+### 🟢 THE INVENTORY IS THE CHARTER'S OWN SENTENCE, AND IT IS NINE
+
+**Aberdeen Home Rule Charter** (adopted Nov 2004, amended Nov 2020), § 2.02(a):
+*"There shall be a city council composed of the mayor and eight members; the council members shall
+be elected by the voters of the city according to districts established in §6.03 and the mayor
+shall be elected as provided in §2.03."*
+§ 6.03(a): *"There shall be four (4) city council districts."*
+
+✅ **A scan of the whole charter for "shall be elected" returns those two offices and nothing
+else.** No elected municipal judge — the ND-3 trap at Grand Forks — no elected finance officer, no
+elected clerk. **9 elected offices: 1 Mayor citywide + 8 council, TWO per district over FOUR
+districts.**
+
+🔴 **SO ABERDEEN IS A SECOND MULTI-MEMBER BODY IN THE SAME SLICE.** The council is two per
+district exactly as the SD House is, and the same gate shape applies: two offices on each of the
+four districts, eight in total, and a duplicate sweep keyed on (district, chamber) reports all four.
+
+🔴 **THE DISTRICTS ARE NAMED, NOT NUMBERED** — Northwest, Northeast, Southeast, Southwest.
+Nothing here may be cast to an integer.
+
+### 🟢 FIVE-YEAR TERMS, AND THE CHARTER FIXES THE START DAY
+
+§ 2.02(c): council members *"shall be elected for five-year terms. The terms of council members
+shall begin on the **first day of July** after their election, unless it is a special election,
+then the first day of an official's term would begin on the first day of the month following the
+special election **or immediately if it is to fill a vacancy**."* § 2.03(a) gives the mayor the same
+five-year term.
+
+⚠ **FIVE YEARS IS UNUSUAL AND IT IS NOT A TYPO** — the city's Elections page says the same in its
+own words: *"The offices of mayor and City Council members are five-year terms on a staggered
+basis."* Do not "correct" it to three or four.
+
+🔴 **THE CHARTER'S OWN EXCEPTION IS WHAT MAKES DERIVING A DATE UNSAFE.** A member appointed to a
+vacancy takes office **immediately**, not on 1 July, and inherits the unexpired term — so
+"term-end year minus five" would produce a WRONG start for them, and the published term-end year
+cannot tell an appointee from an elected member.
+
+### The roster, confirmed by the council's own dated roll call
+
+| Member | District | Term ends |
+| --- | --- | --- |
+| Rob Ronayne | Northeast | 2028 |
+| Erin Fouberg | Northeast | 2027 |
+| David Novstrup | Southeast | 2027 |
+| Chad Nilson | Southeast | 2030 |
+| Charlotte Liebelt | Northwest | 2027 |
+| Rich Ward | Northwest | 2029 |
+| Alan Johnson | Southwest | 2028 |
+| Talmage Ekanger | Southwest | 2030 |
+| **Travis Schaunaman** | **Mayor** (citywide) | 2029 |
+
+✅ **All nine are named in the roll call of the City Council minutes for 2026-07-06** — a dated,
+independent confirmation that the council page is CURRENT and not stale. That mattered: no member
+carries a 2031 term end, so a June 2026 election could have seated one. **No council seat was up in
+June 2026**, and the July 2026 minutes record no oath.
+
+✅ The 2025 result is the city's own: **Talmage Ekanger** (SW, 226 to 172) and **Chad Nilson** (SE,
+**124 to 123**, a one-vote margin), elected 2025-06-03, canvassed 2025-06-06 — and 🔴 **a canvass is
+not a fact about who holds the seat**; the charter's 1 July is.
+
+### 🟢 THE GEOMETRY EXISTS AND IS THE CITY'S OWN
+
+`https://services5.arcgis.com/H3Xuuu0h4PaTeWwU/arcgis/rest/services/New_Final_Districts/FeatureServer/1`
+— reached by rendering the city's ArcGIS Experience app (linked from `aberdeengis.com`) and reading
+its network traffic, then confirmed through the AGOL item search. **This is NOT the PDF-only dead
+end Gary hit.**
+
+⚠ **THE ITEM IS NAMED "New Final Districts", WHICH READS LIKE A DRAFT — THE SERVICE ITSELF IS
+NOT.** Its layer name is **`City Council Districts (2021 Finalized)`**, and it holds exactly **4
+polygons**:
+
+| District | Population |
+| --- | --- |
+| Northwest | 6,981 |
+| Northeast | 7,220 |
+| Southeast | 7,146 |
+| Southwest | 7,148 |
+
+🟢 **Those four populations sum to 28,495, which is Aberdeen's population** — an arithmetic check
+the layer passes against a number that came from somewhere else entirely. The layer sits in the same
+ArcGIS org as the city's imagery, roads, addresses and jurisdictions.
+
+⚠ `spatialReference` is **4269 (NAD83)**, not 4326. The load must set SRID explicitly.
+⚠ The city also publishes a council-district **PDF**; it is not the route and must not become one.
+
+### ▶ What SD-3 still owes before anything is written
+
+- 🔴 **A dated arrival for each of the nine.** The charter fixes 1 July, but only for members who
+  arrived by regular election. Nothing read so far rules out an appointment among the seven whose
+  election year is not directly evidenced, and the Agenda Center's default listing exposes only
+  2025-26, so the July minutes for 2022, 2023 and 2024 have not been read.
+- The X-series boundary load for the four polygons, and the two migrations.
 
 ▶ **The program's four-answer probe will return FIVE answers in South Dakota** on a whole district
 — council member, county commissioner, state senator, and **two** state representatives — and
