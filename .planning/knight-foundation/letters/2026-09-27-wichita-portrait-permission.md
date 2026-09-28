@@ -174,5 +174,10 @@ chris@empowered.vote
   their words, not from this page.
 - ▶ If the answer is no, the seven become a recorded debt and the honest display is a blank. A blank
   beats a link.
-- ⚠ Sedgwick County's ten are a separate and currently unsolved problem — the county publishes no
-  portrait for any of them. This letter does not cover them.
+- ⚠ **Sedgwick County's ten are a separate letter, and they are DONE and live** —
+  `2026-09-28-sedgwick-county-portrait-notice.md`, to Nicole Gibbs at county Strategic
+  Communications. This letter does not cover them, and that one does not cover these seven:
+  different government, different copyright footing, different recipients. ~~The county publishes no
+  portrait for any of them.~~ 🔴 **That line was wrong** — six of the ten were one level down on
+  `/contact/` and `/about/` sub-pages, and the rest are in the county budget book at print
+  resolution.

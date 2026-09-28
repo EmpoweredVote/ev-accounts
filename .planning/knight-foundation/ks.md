@@ -2198,10 +2198,30 @@ department pages, and `/policies-and-disclaimers/`, whose five children are HIPA
 open-source usage, website privacy and a disclaimer that covers **external links only**. There is no
 `©` anywhere in the markup of the home page, `/sheriff/about/` or a commissioner contact page.
 
-🔴 **This is the Kansas Legislature / Georgia / Florida footing, not Wichita's.** `wichita.gov/copyright`
-reserves all rights over all content; the county asserts nothing. Absence of a policy is still not a
-grant, so the licence is `press_use` and **a notification letter is owed** — the same posture as KS-5b,
-addressed to the county rather than the city. Only a reply moves `photo_license`.
+🔴🔴 **BUT THE COUNTY DOES CARRY ONE RESTRICTION, AND IT IS SCOPED ELSEWHERE — FOUND ONLY BY FOLLOWING
+THE MEDIA ROOM'S OWN LINKS.** The brand guide `/media/73810/sc_brand-guide_aod.pdf` (16 pp, linked as
+"county logo and graphics standards") cites **Resolution 1-1985**: the seal/logo *"is the property of
+Sedgwick County and may not be reproduced without permission. The same goes for all other seals, logos
+and symbols in this guide."* **The guide never uses the word "photograph" or "photo".** So the county
+has a considered, resolution-backed restriction on its *marks* and has said nothing about photographs
+of its officeholders.
+▶ **This is the KS-5a `portal.kansas.gov` shape** — a real restriction that does not reach the thing in
+hand. **Do not flatten "a restriction exists on this domain" into "the portraits are restricted."** That
+is the first Wichita draft's error running the other way. ⚠ The sibling link `/media/1066/sc-logo-standards.pdf`
+is a **soft-404** (45,264 bytes again); only the brand guide is real.
+🟢 Our crops carry no county mark: they are head-and-shoulders frames, and the Sheriff's Office star
+that sits beside Easter in the budget is outside the frame, as is his shoulder patch.
+
+🔴 **On photographs this is the Kansas Legislature / Georgia / Florida footing, not Wichita's.**
+`wichita.gov/copyright` reserves all rights over all content; the county reserves its seal. Absence of a
+policy is still not a grant, so the licence is `press_use` — the same posture as KS-5b, addressed to the
+county rather than the city. Only a reply moves `photo_license`.
+
+⚠ **`photo_origin_url`'s `#page=` anchors were 0-based and landed one sheet early; corrected in prod
+2026-09-28** to `#page=119` (Arnold), `#page=213` (Baily), `#page=386` (Bennett). A PDF viewer's `#page=`
+is the 1-based **sheet** number, which is not the page number printed in the footer — the budget's front
+matter offsets them by nine (printed 110 = sheet 119). The letter quotes the **printed** numbers, because
+that is what a reader at the county will look for.
 
 ### Artefacts
 
@@ -2215,9 +2235,22 @@ addressed to the county rather than the city. Only a reply moves `photo_license`
 
 1. 🔴 **The Wichita permission letter is still DRAFTED, NOT SENT** — `letters/2026-09-27-wichita-portrait-permission.md`,
    to Jim Jonas `jjonas@wichita.gov`.
-2. 🔴 **A Sedgwick County notification letter is owed and not yet drafted.** Ten portraits are published
-   under `press_use` from a county that states no policy. Same shape as the Wichita letter: the compass
-   disclosure in full, before the ask, and the ask is about the photograph and nothing else.
+2. 🔴 **The Sedgwick County notice is DRAFTED, NOT SENT** —
+   `letters/2026-09-28-sedgwick-county-portrait-notice.md`, to **Nicole Gibbs**, Director of Strategic
+   Communications, via `communications@sedgwick.gov`; cc **Brandon Zenner** `bzenner@sedgwick.gov` and
+   **Deputy Branden Stitt** `branden.stitt@sedgwick.gov` (the Sheriff's PIO — one of the ten is his
+   office's own portrait, and the county's social media policy excepts elected officials).
+   🔴 **Gibbs' own address is NOT published; do not construct one.** Two conventions coexist on this
+   domain — `bzenner@` (initial+surname) on the Communications page, `keith.allen@` / `Brian.White@`
+   (first.last) on the Sheriff's — so a guess could be wrong in two different ways.
+   🔴 **AND THE COUNTY DOES CARRY ONE RESTRICTION, SCOPED ELSEWHERE.** The brand guide
+   (`/media/73810/sc_brand-guide_aod.pdf`) cites **Resolution 1-1985**: the seal/logo "may not be
+   reproduced without permission … the same goes for all other seals, logos and symbols in this guide."
+   It **never uses the word photograph**. This is the KS-5a `portal.kansas.gov` shape — a real
+   restriction that does not reach the portraits. ▶ **Do not flatten "a restriction exists on this
+   domain" into "the portraits are restricted."** Our crops are head-and-shoulders and carry no county
+   mark: the Sheriff's Office star beside Easter in the budget is outside the frame, and so is his
+   shoulder patch.
 3. ▶ **Stage 4b, still undecided: the 31 elected judicial seats** of the 18th Judicial District — 30
    district judge divisions and 1 district magistrate. `KSA 4-219` says 24 and the register shows 30, so
    the statute is stale on the count. Kansas fills judicial vacancies by gubernatorial appointment
