@@ -14,7 +14,7 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 174 offices, 174 seated, 0 vacant** (`CC_0169`/`CC_0170`). 7 terms dated at `year`, 167 honestly `unknown` |
 | 3 city waves | ✅ **APPLIED 2026-09-28 — BILOXI IS SEATED. 7 ward polygons on `X0073`, 8 offices, 8 seated, 0 vacant** (`CC_0171`/`CC_0172`). City Hall now scores 4 of 4 bar the county |
 | 4 county waves | ✅ **APPLIED 2026-09-28 — HARRISON COUNTY IS SEATED. 5 supervisor-district polygons on `X0074`, 27 offices, 27 seated, 0 vacant** (`CC_0173`/`CC_0174`). **Biloxi City Hall now scores 4 of 4** |
-| **5 assets** | ▶ **OPEN — the last stage of the last slice. No `biloxi` banner key; no headshots for the 35 city and county officials** |
+| **5 assets** | 🟡 **BANNER SHIPPED · 18 OF 35 CITY AND COUNTY HEADSHOTS APPLIED (`CC_0175`) · THE LEGISLATURE'S 174 ARE BLOCKED ON A PERMISSION LETTER THAT IS DRAFTED AND NOT SENT** |
 
 ---
 
@@ -1103,11 +1103,15 @@ Nothing is uncommitted and nothing is unpushed. Geography (`X0073` Biloxi wards,
 supervisor districts) is loaded; `CC_0169`–`CC_0174` are written and applied.
 ✅ **Biloxi City Hall returns 15 officeholders and scores 4 of 4** — council member, county
 supervisor, state representative, state senator.
-▶ **MS-5 IS NEXT, AND IT IS THE LAST STAGE OF THE LAST SLICE: ASSETS.** No `biloxi` banner key
-is recorded, and **0 of 209 Mississippi officials carry a portrait — 8 Biloxi, 27 Harrison County
-and 174 legislators, measured 2026-09-28.** See "WHAT MS-5 HAS TO ESTABLISH" below. 🔴 Read the banner rules in
-memory before choosing anything — **certify in the 6:1 BAND and LOOK AT THE ASSET**, and **read
-the `states/MS.jpg` banner in the band first**, because adjacency is composition.
+🟡 **MS-5 IS PART DONE — READ ITS OWN SECTION AT THE END OF THIS FILE, NOT THE BRIEF BELOW.**
+The banner shipped (`cities/biloxi.jpg`, essentials PR #170) and 18 of the 35 city and county
+headshots are applied (`CC_0175`). **The remaining work is ONE THING: the Mississippi Legislature's
+174 portraits, which are blocked on a permission letter that is DRAFTED AND NOT SENT** —
+[`ms-legislature-portrait-request.md`](./ms-legislature-portrait-request.md). 🔴 **Do not send it
+twice**, and do not import a legislative portrait before a reply arrives.
+⚠ The block headed "WHAT MS-5 HAS TO ESTABLISH" below is the brief that was written *before* the
+stage ran. Its "0 of 209" is no longer true and its banner instructions are discharged. It is kept
+because its reasoning transfers; **do not act on its tense.**
 
 | stage | state |
 | --- | --- |
@@ -1264,3 +1268,154 @@ settled this — **a tracker's silence is not a docket.**
 - **Biloxi scores 2 of 4** — state representative and state senator. The council member and the
   county supervisor are MS-3 and MS-4.
 - **Biloxi is the last of the 26 Knight cities without officeholders.**
+
+---
+
+## 🟡 MS-5 — THE BANNER SHIPPED, 18 PORTRAITS ARE LIVE, AND 174 WAIT ON A LETTER (2026-09-28)
+
+Stage 5 of slice 16: the last stage of the last slice. It splits into three tracks on the SD-5
+shape, because only one of them needs anybody's permission.
+
+| track | state |
+| --- | --- |
+| Biloxi banner | ✅ **SHIPPED** — `cities/biloxi.jpg`, essentials PR #170 |
+| 35 city + county headshots | ✅ **18 APPLIED** (`CC_0175`); the other 17 are deliberately blank |
+| 174 legislature headshots | ⛔ **BLOCKED** — permission letter drafted, **NOT SENT** |
+
+**Measured against production before anything was written: 0 of 209.** 0 of 8 Biloxi, 0 of 27
+Harrison County, 0 of 174 legislators. The five MS statewide officials who *do* carry a portrait
+were the control that proved the query could report one.
+
+### ✅ The banner — `cities/biloxi.jpg`
+
+*Biloxi, Mississippi (2012)*, **Jared**, **CC BY 2.0**, 3264×1671, read from the Commons API rather
+than a search summary. Operator-certified on a 16-candidate sheet.
+
+🟢 **`states/MS.jpg` WAS READ IN THE BAND FIRST, and its credit is accurate** — the sixth time that
+has been verified rather than assumed (CA and NC fail it; SC, KY, SD and MS pass). It is an
+ELEVATED, DISTANT inland panorama of Jackson. The Biloxi frame is the opposite: WATER-LEVEL and
+NEAR, across the Mississippi Sound.
+
+🔴 **THE LIGHTHOUSE CANNOT BE THE SUBJECT, AND THAT IS WHY IT IS AT THE EDGE.** It is the city's
+emblem and the obvious choice. Its subject is VERTICAL, so at 6:1 it becomes a featureless white
+column against sky — the Bend failure mode. A second lighthouse frame died differently and just as
+usefully: shot from the highway, its band is a blank billboard, traffic signals, a pickup and an
+`END ROAD WORK` sign.
+
+🔴 **TWO READY-MADE ANSWERS WERE BOTH WRONG.** `Category:Wikivoyage banners of Mississippi` exists
+and HAS a Biloxi entry, 7:1 by construction — it is a close crop of the Blues Trail marker, so the
+band is illegible sign lettering. And the file titled **"Biloxi, Mississippi Skyline.jpg"** measures
+channel spread **2.1 of 255** and luminance 209.6: greyscale and blown out. Picked by name, it ships.
+
+Framing: the source is 1.95:1, *narrower* than the 3.148:1 asset, but a full-width crop still leaves
+**634 rows of slack** — so here the anchor IS the lever, unlike `states/CA.jpg` and
+`cities/charlotte.jpg`. Centred, the band cuts the Beau Rivage crown off; `vertical-anchor 0.35` +
+`focus 50% 30%` keeps it whole. People: two figures at ~14px, inside the 10–20px band, and below the
+desktop band besides. The shipped file is **pixel-identical to the certified one, max abs difference
+0**. `match:'exact'` was removed and the suite watched to fail first — `East Biloxi` resolved
+straight to `cities/biloxi.jpg`.
+
+### ✅ `CC_0175` — 18 headshots, and every binding signal the sources offered was wrong
+
+🔴🔴 **BOUND BY SEAT, NEVER BY FILENAME — AND BILOXI HAS NO ALT TEXT TO FALL BACK ON.** Not one
+image on the council page carries an `alt` attribute, and the filenames are wrong three ways:
+
+- Ward 3's file is `Mike-Nail`, against a roster that says **Robert Nail**;
+- Ward 6's full-size file is `Ward-6-Kenny-Glavin` (Glav**a**n) and its thumbnail is
+  `Kenny-Glavin-Ward-5` — **two different wrong labels on one man**;
+- two different files both claim Ward 5, and no file claims Ward 6.
+
+The **page caption** beside each image is right where all of that is wrong. That is what was believed.
+
+🔴🔴 **THE IDENTITY CHECK REFUSED ITSELF, AND THAT IS THE FINDING.** A mean-absolute-difference
+comparison of each thumbnail against the original it links to looked like the rigorous answer.
+Its control could not separate a matched pair (**worst 23.3**) from a mismatched one (**best 23.7**)
+— separation **0.40**. Wards 5–7 matched at ~1 while 1–4 scored ~22, because those link a
+**different crop of the same sitting** rather than a downscale. ▶ **A threshold would have
+"confirmed" all seven.** The images were looked at instead, side by side, and every pair is plainly
+the same person.
+
+🟢 **THE PUBLISHER HOLDS FILES ITS OWN PAGES NEVER LINK — TWICE IN ONE STAGE.**
+
+- The council page renders **120×150** thumbnails while linking **2048×2560** originals, which are
+  *exactly 4:5*, so the seven council portraits are a pure resize with no crop decision at all.
+- HCSO publishes Sheriff Matt Haley only as a cut-out inside a gold ring. Removing the ring works —
+  badge, collar stars and shoulder patch all survive a largest-connected-component mask — but leaves
+  **arc-shaped bites in the jacket** where the ring passed in front of his shoulders. The plain
+  original is on the same host as **`Matt-Haley,-Sheriff.jpg`, 3742×5423**, found by following the
+  naming his command staff use. It needs no repair and no upscale. **This is the Minnesota House
+  lesson, and it should now be the FIRST thing tried, not the last.**
+
+🔴 **A `<base href>` MEANS A RAW `src` ATTRIBUTE IS NOT THE URL.** Harrison County's pages carry
+`<base href="https://www.harrisoncountyms.gov/">`, so every relative `src` resolves against the SITE
+ROOT, not the page directory. Eight portraits 404'd against the obvious path — *including the
+control*, which is what said the path was wrong rather than the files missing.
+
+⚠ **THREE SUPERVISORS ARE PUBLISHED INSIDE A DECORATIVE WHITE FRAME** with a drop shadow, which was
+being counted as picture: the 4:5 crop was framing a border and the upscale factor was computed
+against it. Trimmed and zoomed on the operator's instruction, their factors *rose* (Powers 3.41×,
+Ladner 2.91×, Jones 3.95×) and now describe the photograph. The trimmer's control is Cuevas's
+frameless 2000×3000 file, which it correctly leaves alone.
+
+**Access facts.** `harrisoncountyms.gov` answers **403 to every Node persona including a bare
+fetch**, so the pages were read in Playwright — and since the Cloudflare clearance lives in the page
+context, `fetch()` *from inside the browser* pulled all eleven officer pages in one call.
+🔴 **`harrisoncountysheriff.com` SOFT-404s**: a bogus path returns **HTTP 200** after redirecting to
+`/404?requestedPage=…`, so status means nothing there and the final URL is what was read.
+`biloxi.ms.us` 404s honestly.
+
+**Gates, all watched failing.** `CC_0175` carries a pre-flight and a post-verify; six tampered
+copies were built and run. Two needed a second attempt, and both failures are the general lesson:
+
+- the "already carries a different photo" PRE guard reads state that exists **before** the migration,
+  so a tamper planted *after* it is simply overwritten and the control passes while proving nothing;
+- 🔴 **AN EARLIER GATE SHADOWS A LATER ONE.** Writing the source page into `photo_custom_url` also
+  breaks the all-three-fields gate, which raises first, so the image-file guard was never reached.
+  The working tamper changes the URL the temp table **builds**, so every field agrees and only the
+  second gate can fire.
+
+The rollback was confirmed reverted before applying — including **zero residue of the planted
+`example.invalid` URL**, which is the part that actually proves it.
+
+**End state:** Biloxi 8 of 8 render an image; Harrison County 10 of 27; **0 render a page**, which is
+the defect class the write order exists to prevent. All 18 objects were re-fetched and byte-compared,
+18 of 18 identical, with a never-uploaded key as control returning HTTP 400 and no image.
+
+### ⛔ The legislature's 174 — drafted, NOT SENT
+
+🔴 **DO NOT SEND THIS TWICE.** The draft is
+[`ms-legislature-portrait-request.md`](./ms-legislature-portrait-request.md). It has not been sent;
+if it ever is, the date goes in that file *and* here.
+
+- **All 178 portraits exist**, at `billstatus.ls.state.ms.us/members/{house,senate}/<IMG_NAME>`,
+  typically **675×900** — larger than our 600×750, so nothing would be upscaled. The directory sits
+  beside the XML pages; a control proved it does not soft-404, and a second control proved the
+  GlobalSign chain fix is still necessary.
+- 🔴 **THE LEGISLATURE PUBLISHES NO TERMS OF USE.** `legislature.ms.gov/terms-and-conditions/` has
+  never been written — it still contains the CMS template's **Lorem ipsum**. There is no grant and
+  no refusal on record, which is exactly why this is a letter and not an assumption.
+- **Disclosure, measured:** all 174 seated legislators carry **zero** compass answers and **zero**
+  reasoning rows. The letter states that, per the rule that "no endorsement" scopes the portrait only.
+- ⚠ **Their own record for Rep. Grace Butler-Washington (House 69) points at `butler-washinton.jpg`
+  and 404s** — the name is missing an *n*. The photograph is there, at `butler-washington.jpg`. The
+  letter tells them, whatever they decide.
+- **Recipient:** `webmaster@ls.ms.gov` is the only address the Legislature publishes, and it is
+  labelled "for technical issues", so the letter asks to be redirected if permission is not the
+  webmaster's to give. Fallback: Legislative Reference Bureau, (601) 359-3135.
+
+### ⚠ Debts carried out of MS-5
+
+- **17 of Harrison County's 27 have no portrait, on purpose.** Coroner, County Prosecuting Attorney,
+  5 Justice Court judges, 5 Constables, 5 Election Commissioners. Their offices publish none; the
+  commission page names all five commissioners and shows no photograph. **A blank is findable by
+  every "who still needs a headshot" query and a decorative link is not.**
+- 🔴 **WARD 3'S NAME IS UNRESOLVED AND WAS DELIBERATELY NOT CHANGED.** Production holds **Robert
+  Nail**, seeded from the city's own election records by `CC_0172`. The city calls him **Mike Nail**
+  everywhere, including `mnail@biloxi.ms.us` and his own member page. Likely a used name over a legal
+  one, but that was not established, and a portrait bound by ward does not depend on it. Resolve it
+  from a certified result or an oath record, not from the roster page.
+- **Mayor Gilich's portrait is an older sitting.** The city's mayor page currently shows a 2024
+  lectern photo; the studio portrait used here is the 2015/2017 one from the city's own media
+  library. Replace it if the city publishes a newer portrait.
+- **The 174 legislators stay blank until a reply arrives.** On a refusal they stay blank permanently,
+  and that gets written here so no later pass re-opens it.
