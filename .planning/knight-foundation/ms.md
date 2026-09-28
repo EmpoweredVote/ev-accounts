@@ -12,7 +12,7 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-28 — MISSISSIPPI HAS LEGISLATIVE GEOGRAPHY FOR THE FIRST TIME. 174 boundaries + 174 districts (52 Senate + 122 House), 0 errors.** No migration. The programme now owes legislative geography nowhere |
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 174 offices, 174 seated, 0 vacant** (`CC_0169`/`CC_0170`). 7 terms dated at `year`, 167 honestly `unknown` |
-| 3 city waves | — not started. Biloxi holds no government, no chamber, no office |
+| 3 city waves | ▶ **MEASURED 2026-09-28 — inventory read, roster dated, ward geometry proved. NOTHING WRITTEN YET.** 8 elected offices: Mayor + 7 ward council |
 | 4 county waves | — not started. Harrison County is a `districts` row with 0 offices |
 | 5 assets | — not started. No `biloxi` banner key |
 
@@ -527,6 +527,174 @@ regressed** — 4 / 17 / 7, every bucket at baseline.
   elected by a differently-shaped district N. Each term row carries the note.
 
 ---
+
+---
+
+## ▶ MS-3 MEASURED 2026-09-28 — NOTHING WRITTEN TO PRODUCTION
+
+Biloxi. Everything below is read from a primary document or measured against a live service.
+
+### 🟢 THE INVENTORY IS EIGHT, AND THE BALLOT IS WHAT PROVES IT
+
+**Biloxi has no home-rule charter.** The Municode publication holds a `Code of Ordinances` and a
+`Land Development Ordinance` and **no charter node** — because Mississippi's mayor-council form is
+a creature of statute, adopted by ordinance, not a charter the city wrote. So the SD-3 move (read
+the charter's own enumerating sentence) has no target here, and the enumeration had to come from
+somewhere else.
+
+🟢 **THE ENUMERATION IS THE 2025 BALLOT, AND IT IS EXHAUSTIVE BY CONSTRUCTION.** Every Mississippi
+municipal office runs on one four-year cycle, so one general election lists every elected seat the
+city has. The city's own report of 2025-06-03 (*"Four plus four equals Biloxi"*):
+
+> *"Voters faced a Biloxi ballot with contested races for Mayor and Wards 1 and 2, while council
+> member candidates in Wards 3, 4, 5, 6, and 7 were unopposed."*
+
+**Mayor plus seven wards. Nothing else was on the ballot.** ▶ **8 elected offices.**
+
+✅ **Two independent instruments agree.** The city's own Code of Ordinances, ch. 2 (ADMINISTRATION,
+92,594 characters, Supp. 63 Update 1, codified through Ord. 2607 of 2026-07-28) contains **no
+occurrence of "shall be elected" at all**. Every body it creates — human resources agency, city
+development commission, neighbourhood heritage advisory board, the CAO — is *"appointed by the
+mayor, subject to confirmation by the city council"*. **The municipal clerk is among them**
+(§ 2-1-4(a)(2)), which closes the Fort Wayne trap: Biloxi does **not** elect a clerk. The
+municipal court sits inside the legal department (§ 2-1-4(e)) and its judges are staff, so the
+Grand Forks trap — an elected municipal judge named in one sentence on a staff page — does not
+apply either. Ch. 2 also states the city's own ward count in passing: *"each of the seven wards of
+the city"*.
+
+⚠ **A REFUSAL THAT LOOKED LIKE A BLOCK WAS REAL, AND A CONTROL IS WHAT SAID SO.** `COOR_CH6EL`
+(Chapter 6 — ELECTIONS) answers *"The requested content cannot be found or you are not authorized
+to view it"* in the publisher's own app. That reads like an access problem. `COOR_CH1GEPR` on the
+identical route renders in full, so **the route works and that node genuinely does not resolve** —
+the refusal is about the node, not about us. The inventory does not depend on it.
+
+⚠ **The Municode REST API 401s to `fetch` AND to an in-page `fetch`** — the app signs its own
+calls. Read the rendered page instead. The TOC link `?nodeId=<NODE>` is the stable address.
+
+### The roster, and the form
+
+**Mayor-Council** (Miss. Code Ann. 1972, § 21-8-21 et seq., cited by the code itself at § 2-1-3).
+Mayor elected citywide; **seven council members, one per ward**; four-year terms.
+
+| seat | officeholder | in office since | precision | how |
+| --- | --- | --- | --- | --- |
+| Mayor | Andrew M. "FoFo" Gilich, Jr. | **2015-05-18** | day | special election |
+| Ward 1 | Wayne Gray | 2025-06-30 | day | elected |
+| Ward 2 | Anthony L. Marshall | 2025-06-30 | day | elected |
+| Ward 3 | Robert "Mike" Nail | 2025-06-30 | day | elected |
+| Ward 4 | Jamie Creel | 2025-06-30 | day | elected |
+| Ward 5 | Paul A. Tisdale | **2013-07-01** | day | elected |
+| Ward 6 | Kenny J. Glavan, Sr. | **2013-07-01** | day | elected |
+| Ward 7 | David Shoemaker | **2024-03** | **month** | special election |
+
+🔴🔴 **AN INAUGURATION DATE IS NOT AN OATH DATE, AND BILOXI'S OWN RECORD PROVES IT INSIDE THIS
+SLICE.** Gilich's public inauguration was **Wednesday 2015-05-20**. He was not sworn in then. The
+city reported on **Monday 2015-05-18**: *"His inauguration is not until Wednesday afternoon, but
+Mayor-elect Andrew 'FoFo' Gilich wanted to begin the workweek early, so this morning he became
+Mayor Andrew 'FoFo' Gilich"* — the oath administered *"shortly after 8"* by his 93-year-old aunt,
+so that he could sign documents and sit at Tuesday's council meeting. ▶ **Taking the advertised
+ceremony as the start would have been two days wrong, and nothing in the ceremony announcement
+could have revealed it.** This is the programme's oath-date rule meeting its sharpest case yet: the
+rule is not merely *do not compute the date from a statute*, it is **do not compute it from an
+announced ceremony either**.
+
+▶ **THAT IS WHY WARD 7 IS DATED TO A MONTH AND NOT A DAY.** Shoemaker won the special election of
+2024-02-27 to fill Nathan Barrett's unexpired term (Barrett resigned on election as Harrison County
+Supervisor, District 5). The city published an **invitation** to his inauguration — *"Tuesday,
+March 19, 2024, 12:00 p.m., Biloxi City Hall, 2nd Floor Council Chambers"* — and then published
+**nothing afterwards**: a full-text sweep of the city's posts returns nine Shoemaker hits and none
+between 2024-03-15 and 2025-03-21, and the council agendas for 19 and 26 March carry no roster and
+no oath item. **An invitation is a plan.** Given that this very city's own record shows a plan and
+an oath coming apart by two days, the honest write is `2024-03-01` at `start_precision => 'month'`.
+🔴 **DO NOT "PROMOTE" IT TO 2024-03-19 WITHOUT THE MINUTES.** The minutes live behind a Laserfiche
+portal (`weblink.mccinnovations.com/weblink8/login.aspx?LogName=Biloxi`); reading them is the one
+thing that would earn day precision.
+
+🟢 **THE ARITHMETIC CLOSES, AND THAT IS THE REAL CONTROL ON THE DATES.** The mayor's inaugural
+address of 2025-06-30 says *"four new council members"*. Against the 2021 inaugural list the change
+is **five** seats — which would have made the mayor wrong. It is not: **Shoemaker was already a
+sitting member**, seated at the 2024 special, and the 2025 result post confirms it by listing him
+among *"Council members ... all unopposed"*. So four genuinely new (Gray, Marshall, Nail, Creel)
+and three continuing (Tisdale, Glavan, Shoemaker). **The mayor's own count and the seat histories
+agree only if Ward 7 is dated to 2024, not 2025.**
+
+🟢 **AND THE TWO LONG-SERVING MEMBERS ARE DATED TO THE SEAT, NOT TO A CAREER** — MS-2's Chris
+Johnson rule, applied in the opposite direction. Tisdale and Glavan were both sworn at the
+**2013-07-01** inauguration and appear in the city's record of every ceremony since (2017-06-28,
+2021-06-29, 2025-06-30). 🔴 **The 2013 ceremony report does not give wards**, so it alone cannot
+date a seat — a member who changed ward would be mis-dated exactly as MS-2's SD-44 would have been.
+The 2013 **result** post supplies what the ceremony post lacks: *"Ward 5, Dr. Paul Tisdale; and
+Ward 6, Kenny Glavan, who defeated incumbent Edward 'Ed' Gemmill."* **Same ward, continuously.**
+Dating them from 2025-06-30 would have erased twelve years of tenure.
+
+⚠ **Names, and why the page is not the last word.** The Ward 6 portrait file is
+`Ward-6-Kenny-Glavin-scaled.jpg` while the page text and the election result both read **Glavan**;
+the result post gives the fuller **"Kenny J. Glavan Sr."** Ward 3's page heads *"Mike Nail"* and the
+result post gives **"Robert 'Mike' Nail"**. ▶ **The filename is not evidence, and the display name
+is not the full name.**
+
+⚠ **STALE PROSE UNDER A FRESH EDIT DATE.** The mayor's page was **modified 2025-09-17** — after the
+election, after the oath — and still reads *"He is now serving his second full term in office."* He
+is serving his third. ▶ **An edit timestamp says the page was touched, not that the sentence was
+read.** MS-2's rule was *a document's content cannot tell you its age; ask the server*. This is its
+mirror: **the server's age cannot tell you the content is current.** Both halves are now paid for
+in this state.
+🟢 Dates came from the WordPress REST API (`/wp-json/wp/v2/pages?slug=…`), which publishes
+`modified` per page; the HTML carries no `Last-Modified`, no `ETag` and no schema.org date. A bogus
+slug returns an empty array, which is the control.
+
+### 🟢 THE WARD GEOMETRY IS THE CITY'S OWN, AND TEN ANCHORS PROVE IT CURRENT
+
+`https://services1.arcgis.com/WJhHbwy2YfOSix5p/arcgis/rest/services/Wards2022/FeatureServer/8`
+— found through the AGOL item search for the org behind the city's own GIS gallery
+(`experience.arcgis.com/experience/28f7d5965d164ccdb963292f0a98dfb0`, org `WJhHbwy2YfOSix5p`).
+**7 polygons, SRID 4326, `lastEditDate` 2026-04-15.**
+
+🔴🔴 **THE SERVICE IS NAMED `Wards2022` AND THE CITY'S OWN MAP SAYS `WARDS LAST REVISED: 12/12/2024`.**
+A name cannot date a plan — the MS-1 finding in miniature, and the disagreement is explicit this
+time. It was settled by measurement, not by reading the name:
+
+| anchor | expected | got |
+| --- | --- | --- |
+| the 7 polling places named on the **2024-revised** Ward Map PDF, one per ward | 1…7 | **7 of 7 MATCH** |
+| Paul A. Tisdale, 2561 Brighton Circle (Ward 5 page) | 5 | MATCH |
+| Kenny Glavan, 827 Eagle Eyrie Drive (Ward 6 page) | 6 | MATCH |
+| Margaret Sherry Library, Ward 4's own ward-meeting venue | 4 | MATCH |
+
+**Ten anchors, ten matches, and not one of them derived from the layer.** Controls, both watched: a
+point in Mobile, Alabama returns **no ward** (so the query can return empty), and asserting Ward 1
+at the Ward 5 anchor reports **MISMATCH** (so the comparison can fail). ▶ **The layer named 2022
+carries the plan revised 2024-12-12.**
+
+🔴 **`Id` IS NOT THE WARD NUMBER. `Ward_2020` IS.** The layer carries both, and `Id` repeats —
+`Id = 6` appears on Ward 4 **and** Ward 6, `Id = 1` on Ward 1 **and** Ward 3. A join on `Id` would
+silently merge two wards. Reading one sample of the rows is what caught it; a count never would
+have.
+
+Ward populations, 1…7: 7,101 · 7,469 · 7,417 · 6,742 · 6,855 · 7,100 · 6,890 — **49,574 in all**.
+
+**Biloxi City Hall, 140 Lameuse Street, is in Ward 1**, so the four-answer probe's city answer will
+be Wayne Gray.
+
+### What MS-3 still owes
+
+- **`X0073`** for the ward boundaries — `max(mtfcc)` over both `geofence_boundaries` and
+  `districts` reads **`X0072`** (Aberdeen, SD-3), measured 2026-09-28 in this session. 🔴 Re-read it
+  in the session that writes.
+- A `governments` row, two `chambers` (Office of the Mayor · Biloxi City Council), **8 districts**
+  (1 citywide bound to `(G4110, 2806220)` + 7 wards on `X0073`), **8 offices**, 8 politicians,
+  8 `office_terms`.
+- Migration slots: **allocate, never count.** `CC_0169`/`CC_0170` are spent on MS-2.
+
+### ⚠ Access facts measured this session
+
+- 🟢 `biloxi.ms.us` answers Node directly, bare or with a Chrome UA, and **returns a real HTTP 404**
+  for a bogus path (74 KB body, title "Not Found") — so the status discriminates and the
+  soft-404 trap does not apply here.
+- 🔴 **`harrisoncountyms.gov` AND `www.co.harrison.ms.us` ARE BEHIND A CLOUDFLARE CHALLENGE** —
+  HTTP **403** with title *"Just a moment..."* to both a bare `fetch` and a Chrome UA, on the real
+  path and on a bogus one alike. **MS-4 must use Playwright from the start.**
+- ⚠ `biloxi.ms.us/gis` 403s; `biloxi.ms.us/gis-mapping` is the Experience Builder app.
 
 ## Access facts measured this session
 
