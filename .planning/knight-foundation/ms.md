@@ -1104,7 +1104,8 @@ supervisor districts) is loaded; `CC_0169`–`CC_0174` are written and applied.
 ✅ **Biloxi City Hall returns 15 officeholders and scores 4 of 4** — council member, county
 supervisor, state representative, state senator.
 ▶ **MS-5 IS NEXT, AND IT IS THE LAST STAGE OF THE LAST SLICE: ASSETS.** No `biloxi` banner key
-exists, and none of the 35 city and county officials has a headshot. 🔴 Read the banner rules in
+is recorded, and **0 of 209 Mississippi officials carry a portrait — 8 Biloxi, 27 Harrison County
+and 174 legislators, measured 2026-09-28.** See "WHAT MS-5 HAS TO ESTABLISH" below. 🔴 Read the banner rules in
 memory before choosing anything — **certify in the 6:1 BAND and LOOK AT THE ASSET**, and **read
 the `states/MS.jpg` banner in the band first**, because adjacency is composition.
 
@@ -1116,7 +1117,64 @@ the `states/MS.jpg` banner in the band first**, because adjacency is composition
 | **4 Harrison County** | ✅ applied — 27 offices seated (`CC_0173`/`CC_0174`) + 5 supervisor polygons on `X0074` |
 | **5 assets** | ▶ **OPEN — the last stage of the last slice. No `biloxi` banner key; no headshots for the 35 city and county officials** |
 
-### What MS-3 has to establish
+### ▶ WHAT MS-5 HAS TO ESTABLISH — measured 2026-09-28, in the session that applied MS-4
+
+🔴🔴 **THE HEADSHOT SCOPE IS NOT 35. IT IS 209, AND THE SPLIT MATTERS.** Measured against
+production: **0 of 8** Biloxi officials, **0 of 27** Harrison County officials and **0 of 174**
+Mississippi legislators carry a `photo_custom_url`. An earlier line in this file said "the 35 city
+and county officials" and was wrong by the whole legislature.
+
+| set | officials | with a portrait |
+| --- | --- | --- |
+| City of Biloxi (MS-3) | 8 | **0** |
+| Harrison County (MS-4) | 27 | **0** |
+| Mississippi Legislature (MS-2) | 174 | **0** |
+
+▶ **Decide the scope before starting.** SD-5 treated the legislature as its own permission track —
+one letter to the Legislative Research Council covering 105 portraits — and shipped the city banner
+separately, because the banner needed no permission. **The same shape is available here**, and the
+legislature's 174 is the larger and slower half.
+
+🔴🔴 **`photo_custom_url` IS WHAT RENDERS. A `politician_images` row changes NOTHING a voter sees.**
+And **a blank beats a wrong link.**
+
+⚠ **The banner is recorded as missing, not re-measured this session.** The slice record says there
+is no `biloxi` banner key. 🔴 **Banners live in the ESSENTIALS repo** (`buildingImages.js` /
+`banners.json`, generated and CI-enforced, tooling under `scripts/banners/`), **not in this repo and
+not in `treasury.municipalities`, which is dead.** Confirm the key is absent there before building
+anything.
+
+🔴 **READ `states/MS.jpg` IN THE 6:1 BAND BEFORE CHOOSING A BILOXI SUBJECT.** Adjacency is
+composition, and four Knight cities have already collided with their own state banner. Detroit's
+answer and Charlotte's went opposite ways on the same question, and only the band settled it.
+🔴 **Compute the band from the FILE, never from 540** — two live state assets are off-spec, and a
+band metric describes a CROP, not a file.
+🔴 **LOOK AT THE ASSET, not only the numbers**: a clean band can still ship roadworks to a phone,
+because mobile shows ~96.9% of the image and desktop ~52.4%.
+
+🔴 **Headshot rules that have each cost a real failure** — press/official/PD sources only, the
+credit line is the licence test, **no monochrome** (now enforced in code), a badge is
+portrait-shaped so shape and size cannot tell a face from a graphic, crop about one ear above the
+hair, and **a contact sheet is blind when the wrong person is also plausible — only a per-image
+`alt` catches it.** Full list in the knight memory file.
+
+⚠ **Two Harrison County sources are already known good for portraits**: the Sheriff's Office runs
+its own site with a portrait of Matt Haley, and each county officer has a page on
+`harrisoncountyms.gov` carrying a photograph. 🟢 **The county's documents are fetchable from Node**
+even though its HTML pages are not — they redirect to `cms9files.revize.com`. Biloxi publishes each
+council member's portrait under `biloxi.ms.us/wp-content/uploads/2025/08/`, and ⚠ **one of those
+filenames misspells its subject** (`Ward-6-Kenny-Glavin-scaled.jpg` for Kenny **Glavan**), so the
+filename is not evidence of who is pictured.
+
+### ✅ WHAT MS-3 AND MS-4 ESTABLISHED — discharged, kept for reference only
+
+⚠ **The block below was the brief for MS-3 and MS-4. Both are applied. Its present-tense claims —
+"Biloxi holds no government row, no chamber and no office", "Harrison County is a `districts` row
+with 0 offices" — are NO LONGER TRUE.** It is kept because the `geo_id` warning and the
+two-judicial-districts note still hold, and because the inventory reasoning is worth reading before
+any similar wave. **Do not act on its tense.**
+
+#### (historical) What MS-3 had to establish
 
 🔴 **BIND ON `(mtfcc, geo_id)` = (`G4110`, `2806220`) FOR BILOXI AND (`G4020`, `28047`) FOR
 HARRISON COUNTY.** Mississippi's `geo_id` collision is the worst in the programme after
