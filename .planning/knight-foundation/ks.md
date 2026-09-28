@@ -2000,3 +2000,100 @@ the Minnesota House's published refusal. Recorded in full so the next reader nee
 | `measure-ks-portraits.py` | decodes every file with PIL and writes real sizes, upscale and a monochrome test. A hand-rolled JPEG SOF walker returned null on some files, and **a null size reported as "no upscale" is worse than no number** |
 | `bind-ks-portraits.py` | binds photo → district → name across two documents; `--self-test` fires all eight assertions |
 | `ks-portrait-candidates.mjs` | adds production as the third document and refuses on any name disagreement |
+
+## ✅ KS-5b APPLIED 2026-09-27 — WICHITA'S 7 ARE SEATED WITH PORTRAITS, AND THE BANNER IS LIVE
+
+**Slice 14 is 172 of 182 renderable.** Wichita 7/7 · legislature 165/165 · Sedgwick County **0/10**.
+
+### The 7 Wichita portraits — imported on a ruling, not on an assumption
+
+7 imported, 0 skipped, 0 failed; verified from outside (7 decoded, 0 broken, bogus-key control
+failed as required, `tested 7 == expected 7`). Stored **160x200** — ⚠ a 4:5 crop of a 200x200 square
+takes the **WIDTH**, so nothing is clipped vertically and no hair or chin was ever at risk.
+
+🔴 **`wichita.gov/copyright` reserves all rights** — *"All content © 2006-2026 Wichita, KS and its
+representatives. All rights reserved."* An earlier reading called that "the Minnesota House shape".
+**That was wrong and is corrected**: Minnesota published a *photo policy* that required permission in
+advance and forbade cropping; Wichita has a blanket CivicPlus footer over "all content", with no
+photo clause anywhere and nothing in `/190/Legal-Notices`.
+
+▶ **Ruling (Cantrell, 2026-09-27): import, and tell them.** An official portrait a government
+publishes so residents can recognise a council member is ordinary press material; the service is
+free and non-profit; most officials want to be seen. The worst case is being asked to take them
+down. This is the ND-5 posture.
+▶ **And the fallback is worse on BOTH counts** — a news or campaign photograph carries a stronger
+and more actively enforced copyright than a city-published official portrait, so a "safer"
+substitute would buy no licence safety and serve the voter worse.
+
+🟢 **THE `alt` TEXT CAUGHT THE FAILURE IT EXISTS TO CATCH.** Three member pages carry a **staff**
+profile picture beside the member's own — Teresa Veazey (D5), Ana Lopez (D6), Becca Johnson (D3).
+Picking "the profile picture" off each page would have put an aide's face under a council member's
+name. ⚠ The URLs are bare `documentID` integers, so the filename can corroborate nothing; all seven
+are flagged `positional`.
+
+### The permission email — drafted, NOT sent
+
+`letters/2026-09-27-wichita-portrait-permission.md`. **To Jim Jonas**, Strategic Communications
+Director, `jjonas@wichita.gov`; cc **Nolan Roth** (Video, Photography & Streaming Producer)
+`nroth@wichita.gov` and **Tyler Schiffelbein** (webmaster) `tschiffelbein@wichita.gov`.
+
+⚠ **Addresses were DECODED, not inferred** — the city publishes every staff email through
+Cloudflare `email-protection`; the hex payload decodes deterministically.
+🔴 **The directory reuses job titles across boards and nearly produced the wrong recipient**:
+"Brooklynn Profit — Public Information Officer" is on the **Mayor's Youth Council**, *"Junior, Derby
+High School"*. Recipients came from the department page, never from a title search.
+
+🔴 **THE LETTER ASKS ABOUT THE PHOTOGRAPH AND NOTHING ELSE.** A draft invited the city to say whether
+it would rather its portraits "did not appear beside that kind of content" — handing a government a
+say over whether we cover its own elected officials. Corrected. The compass disclosure stays, in
+full, before the ask, and states that we **intend** to publish sourced positions for these seven
+(not merely that none exists today), that nothing is inferred from party, and that anything we
+cannot evidence is left blank. It discloses that the photographs are already displayed and offers
+removal. **`photo_license` is `press_use`; only a reply moves it.**
+
+### 🟢 THE BANNER IS LIVE — `cities/wichita.jpg`, essentials PR #166
+
+🔴🔴 **THE KANSAS STATE BANNER IS WICHITA.** `states/KS.jpg` is *"Wichita, Kansas skyline"* by
+Quintin Soloviev; in the 6:1 desktop band it is an aerial of the whole downtown — Epic Center,
+Garvey Center, New York Life tower, INTRUST Bank Arena. The strongest Commons candidate was
+`Wichita, Kansas skyline.jpg` **by the same photographer**; certified and **refused on adjacency**.
+
+**Winner: `Riverside street view` | FUBAR007 | CC BY-SA 3.0, vertical anchor 0.31** (lum 110.5,
+spread 52.4).
+
+🔴🔴 **THE BAND IS THE MIDDLE 52.4%, SO AN EDGE ANCHOR DOES NOT KEEP THAT EDGE OF THE SUBJECT.**
+
+| anchor | band shows | |
+| --- | --- | --- |
+| 0.0 | empty sky and rooflines — **the road is cropped OUT** | rejected |
+| 0.5 | canopy and a wall, no ground | rejected |
+| 1.0 | water and dead grass, lum 62.9 | rejected, dark |
+| **0.31** | street with parked cars, apartment block, far-bank houses, river | **shipped** |
+
+▶ **Solve for where the subject must land in the band, then derive the anchor.** Both edges look
+plausible and both lose the subject. ⚠ Old Town District (CC0) was the better *subject* and is dark
+at every anchor (lum 55.0) — the band killed a frame the full image flatters.
+⚠ **Wichita Falls, TEXAS is a live Commons name collision**; the Kansas provenance is the
+description plus `Category:July 2026 in Kansas`, **never** the filename.
+
+🔴 **THE BANNER LIVES IN A DIFFERENT REPO AND A DIFFERENT BRANCH**: `EmpoweredVote/essentials`,
+branch **`feat/banners-ky`** (default branch is **`main`**, not master), local path
+`C:\Transparent Motivations\essentials`. That branch had already merged as PR #165 (Lexington) and
+was reused, so the Wichita commit sits on top of a merged branch. **PR #166 is open.**
+
+## ▶▶ OPEN HERE NEXT: SEDGWICK COUNTY'S 10 PORTRAITS — SCOPED, NOT STARTED
+
+🔴 **THE COUNTY PUBLISHES NO PORTRAIT FOR ANY OF THE TEN.** Measured, not assumed:
+
+- **The five commissioners** have only `/media/681xx/dN-website-header.jpg` — a **900x325 banner**,
+  alt naming the member, carrying a **circular-masked face on navy with the name baked in as text**.
+  Cropping the circle ships a circle on a navy square, which is the El Paso County defect the
+  importer's alpha-flattening exists to prevent. ⚠ A badge is portrait-shaped; only looking showed
+  what it was.
+- **Clerk, Treasurer, Register of Deeds, Sheriff and the District Attorney have NO image at all** —
+  the department pages carry page banners, icons and building photographs only. `meet-bennett.html`
+  has no `/media/` image.
+
+▶ So this is **ten individual hunts**, not a roster sweep: press coverage, campaign material, or a
+records request to the county. It is the part of stage 5 with no tooling behind it.
+⚠ `politician_id`s for all ten are in `CC_0162`; the cohort query is in `ks.md`'s KS-5a section.
