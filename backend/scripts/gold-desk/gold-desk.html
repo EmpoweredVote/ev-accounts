@@ -290,7 +290,7 @@ button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
     for (const r of [
       'A rung needs every one of its claims shown. If the act proves only part of a rung, the answer is Blank — "Only part of a rung".',
       'A vote with fewer than 10% No votes cannot set a rung on its own: nearly everyone voted the same way. The person’s own act (writing, sponsoring or carrying the bill) can.',
-      'Records from either chamber of the same legislature count (a senator’s bills and votes from their House years). Records from another office — a city council, a county, Congress — do not.',
+      'Records from either chamber of the same legislature count (a senator’s bills and votes from their House years), for candidates too. Records from another office — a city council, a county, Congress — do not.',
       'Struck words are removed from the law. They are never the provision.',
       'Judge the bill’s operative text, not its title or its statement of purpose.',
     ]) ul.append(el('li', { text: r }));
@@ -306,8 +306,15 @@ button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
       const box = el('div', { class: 'source' },
         el('div', { class: 'shead' }, el('strong', { text: s.label }), s.url ? el('a', { href: s.url, target: '_blank', rel: 'noopener', text: 'Open the original' }) : null));
       if (s.summary) box.append(el('p', { class: 'sub', text: s.summary }));
-      box.append(legalText(s.text));
-      if (s.text.includes('[deleted: ')) box.append(el('p', { class: 'legend' }, 'Words shown like ', el('del', { text: 'this' }), ' are removed from the law by this act. They are not the law.'));
+      if (s.text_file) {
+        // A long text is published as a file beside the page (a database document holds 256 KiB).
+        const slot = el('div', { class: 'legal', text: 'Loading the text…' });
+        box.append(slot);
+        fetch(s.text_file).then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
+          .then((t) => slot.replaceWith(legalText(t)))
+          .catch(() => { slot.textContent = 'The text could not be loaded. Open the original with the link above.'; });
+      } else box.append(legalText(s.text));
+      if (s.has_deleted ?? s.text.includes('[deleted: ')) box.append(el('p', { class: 'legend' }, 'Words shown like ', el('del', { text: 'this' }), ' are removed from the law by this act. They are not the law.'));
       ev.append(box);
     }
     parts.push(ev, answerCard(it));
