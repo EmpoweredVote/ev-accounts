@@ -1,0 +1,98 @@
+[
+  {
+    "slug": "ward1",
+    "politician_id": "c4e9f036-a730-4e17-b19f-67bc4cf0685d",
+    "name": "Wayne Gray",
+    "title": "Council Member, Ward 1",
+    "src_file": "ward1.jpg",
+    "src_w": 2048,
+    "src_h": 2560,
+    "mode": "crop H 2560->2560 from y=0",
+    "out": "c4e9f036-a730-4e17-b19f-67bc4cf0685d-headshot.jpg",
+    "upscaled": false
+  },
+  {
+    "slug": "ward2",
+    "politician_id": "43800326-0f41-4ddb-987a-1a50e3cfb0c4",
+    "name": "Anthony Marshall",
+    "title": "Council Member, Ward 2",
+    "src_file": "ward2.jpg",
+    "src_w": 2048,
+    "src_h": 2560,
+    "mode": "crop H 2560->2560 from y=0",
+    "out": "43800326-0f41-4ddb-987a-1a50e3cfb0c4-headshot.jpg",
+    "upscaled": false
+  },
+  {
+    "slug": "ward3",
+    "politician_id": "9b44113d-0130-4f44-b0be-370e331bf6b0",
+    "name": "Robert Nail",
+    "title": "Council Member, Ward 3",
+    "src_file": "ward3.jpg",
+    "src_w": 2048,
+    "src_h": 2560,
+    "mode": "crop H 2560->2560 from y=0",
+    "out": "9b44113d-0130-4f44-b0be-370e331bf6b0-headshot.jpg",
+    "upscaled": false
+  },
+  {
+    "slug": "ward4",
+    "politician_id": "d17836ed-3c05-4868-8974-85b3cdc3bdef",
+    "name": "Jamie Creel",
+    "title": "Council Member, Ward 4",
+    "src_file": "ward4.jpg",
+    "src_w": 2048,
+    "src_h": 2560,
+    "mode": "crop H 2560->2560 from y=0",
+    "out": "d17836ed-3c05-4868-8974-85b3cdc3bdef-headshot.jpg",
+    "upscaled": false
+  },
+  {
+    "slug": "ward5",
+    "politician_id": "7217df2d-57d6-4c8e-9578-e9dff718cdd3",
+    "name": "Paul Tisdale",
+    "title": "Council Member, Ward 5",
+    "src_file": "ward5.jpg",
+    "src_w": 2048,
+    "src_h": 2560,
+    "mode": "crop H 2560->2560 from y=0",
+    "out": "7217df2d-57d6-4c8e-9578-e9dff718cdd3-headshot.jpg",
+    "upscaled": false
+  },
+  {
+    "slug": "ward6",
+    "politician_id": "52930985-bb79-4c7b-b1fe-775fd85e983b",
+    "name": "Kenny Glavan",
+    "title": "Council Member, Ward 6",
+    "src_file": "ward6.jpg",
+    "src_w": 2048,
+    "src_h": 2560,
+    "mode": "crop H 2560->2560 from y=0",
+    "out": "52930985-bb79-4c7b-b1fe-775fd85e983b-headshot.jpg",
+    "upscaled": false
+  },
+  {
+    "slug": "ward7",
+    "politician_id": "c8e9d222-4ce0-49ec-9d9a-c4ab48f090da",
+    "name": "David Shoemaker",
+    "title": "Council Member, Ward 7",
+    "src_file": "ward7.jpg",
+    "src_w": 2048,
+    "src_h": 2560,
+    "mode": "crop H 2560->2560 from y=0",
+    "out": "c8e9d222-4ce0-49ec-9d9a-c4ab48f090da-headshot.jpg",
+    "upscaled": false
+  },
+  {
+    "slug": "mayor",
+    "politician_id": "5cb4aeb2-f692-41e7-8bee-4fbe687230ac",
+    "name": "Andrew Gilich",
+    "title": "Mayor",
+    "src_file": "gilich-a2017.png",
+    "src_w": 1737,
+    "src_h": 2889,
+    "mode": "crop H 2889->2171 from y=359",
+    "out": "5cb4aeb2-f692-41e7-8bee-4fbe687230ac-headshot.jpg",
+    "upscaled": false
+  }
+]

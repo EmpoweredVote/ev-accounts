@@ -1,0 +1,71 @@
+[
+  {
+    "slug": "d2",
+    "name": "Rebecca Powers",
+    "politician_id": "699afdf5-18f8-4ad7-92d6-04b466fcd8fa",
+    "src": [
+      247,
+      279
+    ],
+    "frame_trim": [
+      31,
+      37,
+      207,
+      266
+    ],
+    "crop": [
+      0,
+      0,
+      176,
+      220
+    ],
+    "effective_w": 176,
+    "upscale": 3.41
+  },
+  {
+    "slug": "d3",
+    "name": "Marlin Ladner",
+    "politician_id": "e304bc6f-805e-405c-8af8-f98df3bd79ee",
+    "src": [
+      288,
+      288
+    ],
+    "frame_trim": [
+      14,
+      15,
+      271,
+      272
+    ],
+    "crop": [
+      25,
+      0,
+      231,
+      257
+    ],
+    "effective_w": 206,
+    "upscale": 2.91
+  },
+  {
+    "slug": "d4",
+    "name": "Kent Jones",
+    "politician_id": "01cc7a9d-f427-49c2-ba90-928163a4eaad",
+    "src": [
+      216,
+      219
+    ],
+    "frame_trim": [
+      15,
+      15,
+      204,
+      205
+    ],
+    "crop": [
+      18,
+      0,
+      170,
+      190
+    ],
+    "effective_w": 152,
+    "upscale": 3.95
+  }
+]
