@@ -10,7 +10,7 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | Stage | State |
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-28 — 72 boundaries, 72 districts, 35 Senate + 37 House, 0 errors.** Only `sldu` + `sldl` were owed; vintage PROVED against the SD Legislature's own adopted-map layer |
-| 2 legislature | ▶ **OPEN, FROM ZERO.** South Dakota holds **no legislative office at all** — 0 of 70 House, 0 of 35 Senate |
+| 2 legislature | ✅ **APPLIED 2026-09-28 — 105 offices, 105 seated, 0 vacant, EVERY TERM DATED TO THE DAY** (`CC_0163`/`CC_0164`) |
 | 3 city waves | ▶ **OPEN, FROM ZERO.** Aberdeen holds no government row, no chamber and no office |
 | 4 county waves | ▶ **OPEN, FROM ZERO.** Brown County holds no government row, no chamber and no office |
 | 5 assets | — not started. No `aberdeen` banner key |
@@ -265,7 +265,115 @@ the wrong half of a split district. Every SD comparison runs through `ocdDistric
 legitimately non-contiguous, so that check would fail correctly. The SD equivalent is the opposite
 shape: `026` and `028` are asserted **absent**.
 
-▶ **Next: SD-2, the legislature — 105 offices, 70 House + 35 Senate.**
+---
+
+## ✅ SD-2 APPLIED 2026-09-28 — THE SOUTH DAKOTA LEGISLATURE IS SEATED
+
+`CC_0163` (structure) + `CC_0164` (occupancy): **105 offices — 35 Senate + 70 House — 105 seated,
+0 vacant, 104 people created + 1 more under a lifted namesake guard, 0 reused.**
+
+| | baseline | after | delta |
+| --- | --- | --- | --- |
+| `politicians` | 89,361 | 89,466 | **+105 exact** |
+| `office_terms` | 9,842 | 9,947 | **+105 exact** |
+| SD chambers | 5 | **7** | +2 |
+| SD legislative offices | 0 | **105** | +105 |
+| `offices_missing_terms` | 422 / 238 | **422 / 238** | **unmoved** |
+
+House 70 offices / 70 seated / **70 distinct people**; Senate 35 / 35 / **35 distinct people**.
+
+### 🟢 EVERY ONE OF THE 105 TERMS IS DAY-PRECISION. NONE IS `unknown`.
+
+That is unusual — ND-2 wrote 133 of 141 open-ended — and it is possible only because South
+Dakota's Legislature publishes its own dated oath record and its Governor publishes his own dated
+appointments.
+
+| terms | date | `how_started` | source |
+| --- | --- | --- | --- |
+| 98 | 2025-01-14 | `elected` | first-day oath lists, Journal of the House (doc 274999, 68 names, oath by Justice Patricia J. DeVaney) and Journal of the Senate (doc 274997, 33 names, oath by Chief Justice Steven R. Jensen); **plus Rep. Peri Pourier**, whose oath the 2nd-day House journal records as taken *"at 1:15 p.m. on Tuesday, January 14, 2025"* |
+| 2 | 2025-01-15 | `elected` | Sens. **Sydney Davis** and **Larry Zikmund**, excused on day one; the 2nd-day Senate journal (doc 274998) records their oath, administered by President Larry Rhoden |
+| 5 | various | `appointed` | the Governor's own announcements — Kolbeck H-13 **2025-02-05**, Czmowski H-06 **2025-02-12**, Wipf S-22 **2025-07-10**, Fosness H-01 **2025-08-05**, Shubeck H-16 **2025-09-17** |
+
+✅ **Every appointment date falls AFTER its predecessor's departure date** — checked, not assumed.
+Venhuizen left 2025-01-29, Wheeler 2025-04-24, Reder 2025-05-01, Vasgaard 2025-08-27. Czmowski is
+the fifth because District 6 was certified with only **one** representative on day one.
+
+### 🔴 THE OATH LIST AND THE ROLL CALL ARE DIFFERENT EVENTS, AND CONFUSING THEM LOSES A MEMBER
+
+Rep. **Keri K. Weems** appears in the first-day oath list **and** in the *"excused"* line of the
+same day's roll call. Matching on the roll would have sent her for research she did not need. Only
+Pourier, Davis and Zikmund are genuinely absent from an oath list. **Match on the oath list.**
+
+### 🔴 A ROSTER LABEL SAYS HOW SOMEONE ARRIVED, NOT WHEN
+
+`MemberTermName` carries "New Member" (40), "Incumbent" (53), "Governor's Appointment" (5) and
+"Other House" (7). None is a date. **"Other House" means only that the member previously served in
+the other chamber** — all 7 were elected to their current seat in November 2024 and took the
+first-day oath with everyone else. Only the 5 appointments start on a different day.
+
+### ⚠ A SEARCH SUMMARY CONTRADICTED THE PRIMARY DOCUMENT, AND THEN TURNED OUT RIGHT
+
+A web search claimed Pourier was sworn at 1:15 p.m. on the first day. The **first-day journal
+contradicts it** — she is absent from that day's oath list and excused from every roll. The claim
+was true, but its evidence sits in the **second** day's journal. The date written to production
+comes from that document. ▶ A summary is a lead; it is never the source, even when it is correct.
+
+### 🔴 ONE NAME COLLIDES WITH A DIFFERENT PERSON
+
+Production already held a **`Lauren Nelson`** (external_id -840005) — the **El Paso County
+Commissioner for District 5, in COLORADO**, not South Dakota's senator for District 18. The row was
+**not reused**; a new person was created with the duplicate-name guard lifted for that one
+statement. Checked, not assumed — 2 of 4 name hits in the GA wave were a Colorado senator and a
+Utah treasurer.
+
+### 🔴 THE CONSTITUTION CANNOT VERIFY THE COUNTS, UNLIKE KANSAS
+
+S.D. Const. art. III § 2 sets only **ranges** — the house *"not less than fifty nor more than
+seventy-five"*, the senate *"not less than twenty-five nor more than thirty-five"*. 70 is merely
+inside the range and 35 is the maximum permitted. Neither number is fixed by law; both come from
+the apportionment act. ✅ **Three independent sources agree on 70/35 and on the structure**: TIGER
+(37 + 35 polygons), the Legislature's own adopted-map GeoJSON (39 features = 35 + 4 subdistricts),
+and the 101st-session member roster (70 representatives over 33 two-member districts plus
+26A/26B/28A/28B, 35 senators). § 6 **does** fix the term at two years, both chambers.
+
+### ⚠ THE PRIOR SESSION'S ROSTER IS CUMULATIVE AND WOULD HAVE SEATED 109 INTO 105
+
+The 100th session (2025) list returns **109** — 105 seats plus the four members who left, each
+carrying an `InactiveDate`. Because South Dakota's House is legitimately two-per-district, *"three
+in a district"* would have survived a shape check that a single-member state would have caught at
+once. The 101st-session roster returns exactly 105 with 0 `InactiveDate`.
+
+### End-to-end, measured against production after the apply
+
+| probe | answers |
+| --- | --- |
+| **Aberdeen City Hall** | **3** — Sen. **Carl Perry** (D3), Reps. **Al Novstrup** and **Brandei Schaefbauer** (D3) |
+| House 26A internal point | **2** — Sen. **Tamara R. Grove** (D26 **whole**), Rep. **Eric Emery** (D26A **only**) |
+
+🟢 The split chamber works end to end on occupancy as well as geography: a whole district
+returns **two** representatives and a subdistrict returns **one**. All three Aberdeen names match
+the Journal's own District 3 roll, read independently.
+
+### Gates
+
+Structure gate asserts: 1 host government, 2 chambers, 35 + 70 offices, **exactly 2 offices on each
+of the 33 whole House districts and exactly 1 on each subdistrict**, the **ABSENCE** of any whole
+`46026`/`46028` STATE_LOWER district, no COUNTY district holding a legislative office, 0 vacant, and
+**exactly 2 distinct titles** (South Dakota ballots carry no seat number, so no `(Seat 1)` slip).
+
+Occupancy gate asserts: 105 people in the reserved band, 105 terms, 35 + 70 seated **counting
+`och.politician_id` rather than `*`**, **every term day-precision**, 100 `elected` + 5 `appointed`,
+every person `is_incumbent`, **each whole House district holding two DISTINCT people**, and no
+person holding two SD legislative seats.
+
+`check:occupancy`, `check:migrations` and `check:reservations` all green. Dry-run was a real
+`BEGIN … ROLLBACK` against production through `psql` as `ev_api`, and **the rollback was verified
+to have reverted** before the apply.
+
+🟢 The reserved `external_id` band `-2766000 .. -2765896` was **measured empty** first — ND-2's
+first choice was already occupied.
+
+▶ **Next: SD-3, Aberdeen — office inventory UNREAD.**
 
 ▶ **The program's four-answer probe will return FIVE answers in South Dakota** on a whole district
 — council member, county commissioner, state senator, and **two** state representatives — and
