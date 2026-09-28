@@ -9,7 +9,7 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 
 | Stage | State |
 | --- | --- |
-| 1 geography | ▶ **OPEN — `sldu` + `sldl` ONLY.** `place` (310) and `county` (66) already exist; SD holds **zero** state legislative polygons |
+| 1 geography | ▶ **OPEN — `sldu` + `sldl` ONLY, and the load is MEASURED: `sldu` 35 + `sldl` 37 = 72 polygons.** `place` (310) and `county` (66) already exist; SD holds **zero** state legislative polygons. 🔴 **Blocked on the vintage proof, which the file cannot give** |
 | 2 legislature | ▶ **OPEN, FROM ZERO.** South Dakota holds **no legislative office at all** — 0 of 70 House, 0 of 35 Senate |
 | 3 city waves | ▶ **OPEN, FROM ZERO.** Aberdeen holds no government row, no chamber and no office |
 | 4 county waves | ▶ **OPEN, FROM ZERO.** Brown County holds no government row, no chamber and no office |
@@ -17,40 +17,75 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 
 ---
 
-## 🔴🔴 THE ONE THING THAT MAKES THIS SLICE DIFFERENT: THE HOUSE IS MULTI-MEMBER **AND PARTLY SINGLE-MEMBER**, AND A COUNT OF 70 CANNOT TELL THE TWO APART
+## ✅ MEASURED 2026-09-28 — THE HOUSE IS 37 POLYGONS FOR 70 SEATS, AND THE STRUCTURE IS PROVED
 
-This is carried from the program note and from ND's precedent. **It is NOT yet proved against a
-South Dakota source, and it must be proved before SD-1 loads anything.** Written here as the
-hypothesis to test, not as a fact.
+Measured from the TIGER files themselves by
+[`backend/scripts/measure-sd-tiger-legislative.mjs`](../../backend/scripts/measure-sd-tiger-legislative.mjs).
+The count is taken **twice by independent routes** — the `.dbf` header's own record count (bytes
+4..7, read with no shapefile library) and the number of feature rows the reader yields — and a
+**positive control runs first**: a bogus FIPS 99 must 404, or the counts prove nothing. It did.
 
-| | polygons (expected) | seats (expected) |
+| | polygons | seats |
 | --- | --- | --- |
-| Senate | 35 | 35 |
-| House | **35 or 37 — MEASURE IT** | **70** |
+| Senate `sldu` | **35** | **35** |
+| House `sldl` | **37** | **70** |
 
-The claim carried in is: 35 legislative districts, each electing one senator and two
-representatives, **except districts 26 and 28, which are split into single-member subdistricts
-26A / 26B and 28A / 28B**. That gives 33x2 + 4 = 70 House seats.
+**TIGER 2024 FIPS 46, measured:**
 
-🔴🔴 **70 IS THE SAME TOTAL ON A WRONG STRUCTURE.** 35 whole districts electing two each is also
-70. So the House seat count **cannot** distinguish the real structure from a flat two-per-district
-one. Neither gate that closed an earlier slice carries over:
+- `sldl` **37 records**, MTFCC `G5220`, `FUNCSTAT N`, 0 `ZZZ`. Codes `001`-`025`, `027`,
+  `029`-`035` — **33 whole districts** — plus **`26A`, `26B`, `28A`, `28B`**. `NAMELSAD` reads
+  `State House District 26A`, and so on.
+- `sldu` **35 records**, MTFCC `G5210`, 0 `ZZZ`, codes `001`-`035` **contiguous, no letters**.
 
-- **MI-4's "exactly one office per district"** is false here on every whole district.
-- **ND's "exactly two on each whole district, one on each subdistrict, 94 in total"** is the right
-  *shape*, but ND's numbers are its own. SD's version is **exactly two offices on each whole
-  district, exactly one on each of 26A, 26B, 28A, 28B, and 70 in total** — and the count of whole
-  districts in that sentence is the number SD-1 must measure, not assume.
+🔴 **THERE IS NO `026` AND NO `028` POLYGON IN THE HOUSE FILE.** TIGER files those two districts
+**only** as their subdistricts. The Senate keeps both **whole**. So the House code set is
+deliberately **not contiguous**, and a gate asserting `001..035` contiguous **fails correctly** on
+the House. Do not fill the gap.
 
-▶ **The discriminating measurement is the TIGER `sldl` polygon count for FIPS 46.** If TIGER files
-the subdistricts separately, `sldl` is **37** polygons for 70 seats. If it files districts 26 and
-28 whole, `sldl` is **35** polygons for 70 seats and the subdistrict split lives only in the
-statute. Read the `.dbf` and count — the same way ND's 48 was established. Do not infer it from the
-seat total.
+▶ So the seat arithmetic is **33 × 2 + 4 × 1 = 70**, and the four subdistricts are exactly
+26A/26B/28A/28B — **no others**. The claim carried into this slice is now proved against the file
+rather than assumed, and 70 is *derived* here, not asserted.
 
-⚠ **A South Dakota House district is probably not an integer either.** `26A` and `28B` are labels,
-not numbers. ND-1 hit exactly this with `4A`/`4B`; read [`nd.md`](./nd.md) § "A NORTH DAKOTA HOUSE
-DISTRICT IS NOT AN INTEGER" before writing any district-label handling.
+🔴🔴 **70 WOULD HAVE BEEN THE SAME TOTAL ON A WRONG STRUCTURE** (a flat 35 × 2 is also 70), which is
+why the polygon count and not the seat count was the measurement. Neither earlier gate carries over:
+
+- **MI-4's "exactly one office per district"** is false here on all 33 whole districts.
+- **ND's "48 polygons / 94 seats"** is the right *shape* with the wrong numbers. **SD's gate is:
+  exactly two offices on each of the 33 whole districts, exactly one on each of 26A/26B/28A/28B,
+  70 in total, and no office on any `026` or `028` district because no such district exists.**
+
+⚠ **A South Dakota House district is NOT an integer**, exactly as ND-1 found with `4A`/`4B` — read
+[`nd.md`](./nd.md) § "A NORTH DAKOTA HOUSE DISTRICT IS NOT AN INTEGER". Three traps, all measured:
+
+- 🔴 **Never cast the code to a number, and never reuse a helper that validates it as numeric.**
+  `normaliseCode` in `verify-ks-tiger-vintage.mjs` **throws** on `26A` by design.
+- 🔴 **The padding rule differs inside one field.** Numeric codes are zero-padded to three
+  (`004`); lettered ones are not (`26A`, never `026A`). `GEOID` is FIPS + code, so `46004` and
+  `4626A` are both five characters.
+- 🔴 **An ASCII sort misplaces the subdistricts** — `26A` sorts *after* `035` because `0` < `2`.
+  Numerically they sit between `025` and `027`. Sort on a parsed (number, letter) pair.
+
+### 🔴🔴 THE COUNT CANNOT DATE THE MAP, AND NEITHER CAN THE CODE SET
+
+Measured across four vintages on 2026-09-28. **Every one is 37 records with the identical code
+set** — including TIGER 2020, which carries the **superseded pre-2021 plan**:
+
+| vintage | `sldl` records | `LSY` | code set |
+| --- | --- | --- | --- |
+| TIGER 2020 | 37 | 2018 | same 33 + 26A/26B/28A/28B |
+| TIGER 2022 | 37 | 2022 | same |
+| TIGER 2024 | 37 | 2024 | same |
+| TIGER 2025 | 37 | 2024 | same |
+
+South Dakota's subdistrict structure **survived the 2021 redistricting unchanged**, so a count
+check, a letter check and a code-set check **all pass on a decade-old superseded map**. This
+reproduces the Kansas and Kentucky findings inside South Dakota.
+
+⚠ **`LSY` looks like a discriminator and is not** — it tracks the Census refresh, not the plan, the
+same trap KS-1 documented.
+
+▶ **SD-1's vintage proof must therefore be GEOMETRIC** — identity anchors whose district number
+differs between the pre- and post-2021 plans, in the shape MN, PA and ND used. **Still open.**
 
 ▶ **The program's four-answer probe will return FIVE answers in South Dakota** on a whole district
 — council member, county commissioner, state senator, and **two** state representatives — and
@@ -136,8 +171,8 @@ government row. It does not satisfy stage 4.
 
 | Stage | Expected | Confidence |
 | --- | --- | --- |
-| 1 geography | `sldu` 35 + `sldl` **35 or 37** polygons | **the polygon count is UNMEASURED** |
-| 2 legislature | **105 offices** — 70 House + 35 Senate | seat totals carried, structure unproved |
+| 1 geography | `sldu` **35** + `sldl` **37** = **72 polygons / 72 districts** | ✅ **MEASURED 2026-09-28** |
+| 2 legislature | **105 offices** — 70 House + 35 Senate | ✅ seat total now **derived** (33x2 + 4) |
 | 3 Aberdeen | unknown — the office inventory has not been read | **nothing read yet** |
 | 4 Brown County | unknown — the office inventory has not been read | **nothing read yet** |
 | 5 assets | portraits for everything seated, plus an `aberdeen` banner | |
@@ -152,12 +187,16 @@ charter. Do not standardise the municipality — `backend/data/seed-<place>/ROST
 
 ## Next steps, in order
 
-1. **SD-1 measurement.** Pull TIGER 2024 FIPS 46 `sldu` and `sldl`, read the `.dbf`, and count the
-   polygons and their `NAMELSAD` / district-label strings. **Settle 35 vs 37 from the file**, and
-   record the exact label strings the subdistricts carry.
-2. **Prove the vintage.** A count alone cannot date an SD map. Find identity anchors the way MN used
-   Duluth's Senate renumbering and PA used State College's SD-34 → SD-25 — pick points whose
-   district number differs between the pre- and post-2021 plans, and probe them.
+1. ✅ **SD-1 measurement — DONE 2026-09-28.** `sldl` **37**, `sldu` **35**, subdistricts
+   `26A`/`26B`/`28A`/`28B`, no `026` or `028` polygon. Script
+   `backend/scripts/measure-sd-tiger-legislative.mjs`, which asserts that shape and was watched
+   failing on a tampered count **and** on a tampered subdistrict list.
+2. ▶ **Prove the vintage — NOW THE BLOCKER, and it must be geometric.** The count, the letters and
+   the code set are **identical in TIGER 2020**, which carries the superseded plan, so none of them
+   can date the map. Find identity anchors the way MN used Duluth's Senate renumbering and PA used
+   State College's SD-34 → SD-25 — pick points whose district number differs between the pre- and
+   post-2021 plans, and probe them. The South Dakota Legislative Research Council is the authority
+   to look for first; KS-1 shows what a legislature's own enacted plan file is worth.
 3. **Add SD to `STATE_LAYER_ALLOWLIST`** in `backend/scripts/load-state-tiger-boundaries.ts` with the
    measurement that justifies its numbers written into the comment, as every other state's entry
    does. 🔴 **This is the program's hottest shared file** — merge `master` into this branch early and
@@ -171,9 +210,11 @@ charter. Do not standardise the municipality — `backend/data/seed-<place>/ROST
 
 ## Debts and open questions this slice already owes
 
-- 🔴 **The House structure is unproved.** 35 vs 37 polygons, and whether 26A/26B/28A/28B are the only
-  splits, both open.
-- 🔴 **The vintage is unproved.** No anchor has been chosen yet.
+- ✅ ~~The House structure is unproved.~~ **CLOSED 2026-09-28 — 37 `sldl` polygons, 33 whole + four
+  subdistricts `26A`/`26B`/`28A`/`28B`, and those are the only splits.**
+- 🔴 **The vintage is unproved, and it is now the blocker.** No anchor has been chosen, and the file
+  gives no structural discriminator — TIGER 2020 carries the superseded plan with the **same 37
+  records and the same code set**. The proof has to be geometric.
 - 🔴 **Aberdeen's office inventory is unread**, and so is Brown County's.
 - ⚠ **Which legislative district Aberdeen sits in is unknown**, so the acceptance probe cannot be
   written yet — and whether it asserts four answers or five depends on it.
