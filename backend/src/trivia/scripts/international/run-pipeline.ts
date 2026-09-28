@@ -28,6 +28,7 @@ import {
   emptyQualityRuleStats,
   mergeQualityRuleStats,
   qualityRulesEnforced,
+  enforcedRuleNames,
   shouldRecordClaim,
   type QualityRuleStats,
 } from './qualityGate.js';
@@ -606,7 +607,8 @@ export async function runNightlyPipeline(
         if (qr.audited > 0 || qr.ruleErrors > 0) {
           console.log(
             `[QualityRules] lane=${t.lane}: ${qr.audited} audited, ${qr.withBlocking} with blocking ` +
-            `(${qr.blocked} blocked, ${qr.suppressed} written anyway), ` +
+            `(${qr.blocked} blocked, ${qr.suppressed} written anyway; enforcing ` +
+            `${enforcedRuleNames().join(',') || 'nothing'}), ` +
             `${qr.withAdvisoryOnly} advisory-only, ${qr.ruleErrors} rule errors, ` +
             `${qr.writtenUnaudited} written unaudited` +
             (Object.keys(qr.byRule).length > 0
@@ -654,6 +656,7 @@ export async function runNightlyPipeline(
                 qualityRules: {
                   ...s.qualityRules,
                   enforced: qualityRulesEnforced(),
+                  enforcedRules: enforcedRuleNames(),
                 },
                 rejections: [
                   ...missingLanes,
