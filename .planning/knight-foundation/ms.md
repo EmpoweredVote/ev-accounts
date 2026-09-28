@@ -10,7 +10,7 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 
 | stage | status |
 | --- | --- |
-| 1 geography | ▶ **OPEN AND BLOCKED ON AN OPERATOR DECISION.** TIGER carries the 2022 plan; the sitting members of 15 districts were elected under a different one. Nothing written |
+| 1 geography | ▶ **OPEN AND UNBLOCKED 2026-09-28. LOAD PLAIN TIGER.** The docket settles it: the 2025 plans are *"not operative"* (Doc 318) and the State reverted its own system to the 2022 lines, which is what TIGER carries. Nothing written yet |
 | 2 legislature | — not started. MS holds **0 of 122** House and **0 of 52** Senate |
 | 3 city waves | — not started. Biloxi holds no government, no chamber, no office |
 | 4 county waves | — not started. Harrison County is a `districts` row with 0 offices |
@@ -206,22 +206,85 @@ Justice Jackson dissented. The case is back before the three-judge court: briefs
 filed 2026-07-29, a motion for a temporary restraining order on 2026-08-11, oppositions 2026-08-17
 and a reply 2026-08-18.
 
-⚠ **NO ORDER ON REMAND HAS BEEN FOUND, AND THAT IS "NOT FOUND", NOT "DOES NOT EXIST."** Two
-independent trackers were read: the Loyola Law School docket's latest posted filing is the
-2026-08-18 reply, and the American Redistricting Project's latest dated entry is 2026-05-18.
-Neither publishes an order on remand. **A tracker's silence is not a docket.** Before any load, read
-PACER or the court's own docket for case 3:22-cv-00734-DPJ-HSO-LHS.
+🔴🔴 **AND THEN THE DOCKET WAS READ, AND IT ANSWERED THE QUESTION THE TRACKERS COULD NOT.**
 
-⚠ **Loyola's own reading of the vacatur is that it restores Map B**, in its words: the Supreme
-Court vacated *"effectively restoring the March 2025 plan without the court's subsequent
-modification"*. **That is a secondary source's inference and it is recorded here as such, not
-adopted.** It is also exactly the question that decides B against C.
+The first version of this record said no order on remand had been found on two independent
+trackers, and warned that this was "not found", not "does not exist". **It did exist.** Read on
+2026-09-28 from the court's own docket via CourtListener RECAP (docket id 66672561, PACER
+`gov.uscourts.mssd.117094`), reached in Playwright because the page refuses a bare fetch and the
+API refuses an unauthenticated docket-entries call.
 
-🟢 **AND MISSISSIPPI IS REDISTRICTING AGAIN RIGHT NOW.** MARIS publishes a *"Public Hearing Schedule
-for upcoming redistricting **August 18 thru October 1, 2026**"*, and files its 2025 work under the
-heading **"Court Work (2025), Pre-Callais"**. The state's own publisher treats the 2025 plans as
-belonging to a superseded phase. ▶ **Whatever is loaded now has a foreseeable expiry, and it should
-be diarised the way MI-1 diarised the Crane A1 reload.**
+⚠ **AND THE FIRST SEARCH OF THAT DOCKET RETURNED ZERO, FROM A WORKING SERVICE.** A
+`docket_number=` query against the CourtListener search API answered HTTP 200 with `count: 0`
+while the case was plainly there; the parameter was simply not the one that field search uses. A
+second detector then reported **0 docket entries on a page carrying 44,177 characters of text**,
+because the CSS class guessed at does not exist. 🔴 **TWO CLEAN ZEROES IN A ROW, BOTH FROM MY OWN
+DETECTOR AND NEITHER FROM THE WORLD** — the rule that a detector reporting "nothing found" needs a
+positive control, paid for twice inside one lookup. The control that broke the deadlock was a
+query known to have to return rows.
+
+**Document 318, filed 2026-09-11 — `MEMORANDUM OPINION AND ORDER DENYING PLAINTIFFS' MOTION [308]
+FOR A TEMPORARY RESTRAINING ORDER`**, before Southwick, Ozerden and Jordan, per curiam. The facts
+it records, and its holding, in its own words:
+
+- **The Secretary of State has already reverted the State's own election system to the 2022 lines.**
+  *"on July 24, 2026, Mississippi's Secretary of State, Michael Watson, ordered Circuit Clerks
+  across Mississippi to update the Statewide Election Management System (SEMS) to revert the
+  legislative district lines back to the 2022 lines in light of the Supreme Court's vacatur."*
+- Plaintiffs moved to stop him and to order the 2025 lines restored. **The motion was DENIED.**
+- 🔴🔴 **The 2025 plans are held not to be in force.** Both Joint Resolutions took effect only
+  *"from and after its approval by the United States District Court"*, so — *"To treat our decision
+  in Mississippi NAACP as though it never occurred, J.R. 1 and J.R. 202 must be treated as though
+  never approved. **Thus, they are not operative.**"* And: *"no remnant of the relief we ordered in
+  Mississippi NAACP carries the force of law at this juncture."*
+- 🟢 **The people do not move.** Footnote 3: *"Defendants have informed the Court that the
+  Legislature's current composition will remain unchanged until the 2027 election. Thus, this Order
+  has no impact on those currently holding office."*
+- **Nothing is imminent.** *"no regular legislative election will occur until 2027"*, and *"the 2026
+  general election will not include any state legislative races in the areas changed by the 2025
+  lines."*
+
+Nothing on the docket supersedes it. The newest entries are procedural: plaintiffs' motion for a
+scheduling order (Doc 319, 2026-09-18) aimed at *"a remedy in time for the state legislative
+elections in November 2027"*, defendants' opposition and a motion to stay (Docs 321–324,
+2026-09-25), a Republican Executive Committee joinder (Doc 325, 2026-09-25), and a text-only order
+of 2026-09-21 setting a reply deadline of 2026-09-28. ⚠ **Plaintiffs' own motion argues about
+"vote dilution caused by the 2022 lines"** — both sides now treat the 2022 lines as the ones in
+force.
+
+### ▶ THEREFORE MS-1 LOADS PLAIN TIGER, AND THE SLICE IS UNBLOCKED
+
+**Mississippi's operative legislative district lines are the 2022 lines, and that is exactly what
+every TIGER vintage carries.** The block sweep above is unchanged and still correct — it is the
+measurement that proves TIGER is the 2022 plan, which is now the reason to *use* TIGER rather than
+the reason to avoid it. Stage 1 is the ordinary `sldu` + `sldl` load, the OH/PA/SC/MI/ND/KY/KS/SD
+shape.
+
+🔴🔴 **AND THE PROGRAMME'S OWN RULE BREAKS HERE — WRITE THIS DOWN.** Michigan's rule is *the
+correct map is the one the SITTING MEMBER was elected under*. In Mississippi that rule gives the
+**wrong answer**: the members of about fifteen districts were elected on 2025-11-04 under lines
+that a federal court has since held *"not operative"*, while the State's own address-to-district
+system answers on the 2022 lines and the Legislature's composition is frozen until 2027. ▶ **A
+MAP AND A MEMBER CAN COME APART. The map is a fact about the LINES and the member is a fact about
+the SEAT, and a vacatur can move one without moving the other.** The right question is not "what
+was the member elected under" but **"what does the State answer when it is asked which district an
+address is in"** — and here that is SEMS, reverted 2026-07-24.
+
+⚠ **STAGE 2 INHERITS A REAL ODDITY AND MUST NOT SMOOTH IT OVER.** In the DeSoto, Hattiesburg and
+northeast-Mississippi areas, the person now holding district *N* may have been elected by the
+voters of a differently-shaped district *N*. That is the State's position, not a defect in our
+data, and it should be recorded on those rows rather than quietly normalised.
+
+🔴 **DIARISE TWO THINGS.** The **November 2027** regular legislative elections, which every
+filing on the docket is aimed at; and Mississippi's **post-Callais redistricting**, whose public
+hearings MARIS schedules for **18 August – 1 October 2026** and which is likely to produce a new
+plan before then. MARIS already files its 2025 work under **"Court Work (2025), Pre-Callais"**.
+This is the MI-1 Crane A1 shape: a load that is correct now and has a foreseeable expiry.
+
+⚠ **AND THE CASE IS NOT OVER.** The TRO was denied on imminence and likelihood of success, not on
+a final ruling; the Section 2 merits are being re-litigated under *Callais* with a motion to stay
+pending. **A later order could restore the 2025 lines or impose new ones.** Re-read the docket
+before the 2027 cycle.
 
 ### 🟢 The slice's own city is not affected
 
@@ -302,12 +365,15 @@ The MARIS `.xlsx` block equivalency files were converted to two-column CSV with 
 
 ## ▶ RESUMING THIS SLICE — read this first
 
-1. 🔴 **MS-1 CANNOT PROCEED UNTIL THE MAP IS CHOSEN.** A, B or C above. The House question is
-   A against B/C and is not close; the Senate question is three-way and turns on what the
-   2026-05-18 vacatur restored.
-2. **Check the docket before anything else.** No order on remand was found on 2026-09-28, and a TRO
-   motion was pending. An order may exist that no tracker has posted.
-3. **If Map B or C is chosen, TIGER cannot be the source.** The geometry must be built from MARIS —
+1. 🟢 **MS-1 IS UNBLOCKED AND LOADS PLAIN TIGER (Map A, the 2022 plan).** Settled 2026-09-28
+   from the court's own docket, not from a tracker: the 2025 plans are *"not operative"* and the
+   Secretary of State reverted SEMS to the 2022 lines on 2026-07-24. **Add
+   `MS: new Set(['sldu','sldl'])` to `STATE_LAYER_ALLOWLIST` with a pre-flight block, and load
+   174 boundaries + 174 districts. Stage 1 needs no migration slot.**
+2. ⚠ **RE-READ THE DOCKET BEFORE THE 2027 CYCLE, AND BEFORE ANY RELOAD.** The merits are being
+   re-litigated under *Callais*; a motion to stay and a motion for an expedited schedule were both
+   pending on 2026-09-28. **The 2022 lines are operative now, not permanently.**
+3. **If a later order restores Map B or C, TIGER cannot be the source.** The geometry must be built from MARIS —
    either by reprojecting the `MS_*_CourtApproved_May72025` shapefiles out of
    `NAD_1983_HARN_Mississippi_TM` (false easting 500000, false northing 1300000, central meridian
    −89.75, scale factor 0.9998335, latitude of origin 32.5, GRS80), or by dissolving the block
