@@ -11,7 +11,7 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 | stage | status |
 | --- | --- |
 | 1 geography | ✅ **APPLIED 2026-09-28 — MISSISSIPPI HAS LEGISLATIVE GEOGRAPHY FOR THE FIRST TIME. 174 boundaries + 174 districts (52 Senate + 122 House), 0 errors.** No migration. The programme now owes legislative geography nowhere |
-| 2 legislature | — not started. MS holds **0 of 122** House and **0 of 52** Senate |
+| 2 legislature | ✅ **APPLIED 2026-09-28 — 174 offices, 174 seated, 0 vacant** (`CC_0169`/`CC_0170`). 7 terms dated at `year`, 167 honestly `unknown` |
 | 3 city waves | — not started. Biloxi holds no government, no chamber, no office |
 | 4 county waves | — not started. Harrison County is a `districts` row with 0 offices |
 | 5 assets | — not started. No `biloxi` banner key |
@@ -382,6 +382,149 @@ inside one state: `46003` is Senate District 3 **and** House District 3.
 
 ⚠ **Biloxi still scores 0 of 4**, and that is correct: the polygons exist now, but Mississippi
 holds no legislative office for them to carry. **Stage 2 owes 174 seats.**
+
+---
+
+## ✅ MS-2 APPLIED 2026-09-28 — THE MISSISSIPPI LEGISLATURE IS SEATED
+
+`CC_0169` (structure) + `CC_0170` (occupancy): **174 offices — 52 Senate + 122 House — 174 seated,
+0 vacant, 174 people created, 0 reused.** Both chambers single-member, so the polygon count is the
+seat count.
+
+| scope | before | after |
+| --- | --- | --- |
+| `politicians` | 89,485 | **89,659** (+174 exact) |
+| `offices` | 10,030 | **10,204** (+174 exact) |
+| `office_terms` | 9,966 | **10,140** (+174 exact) |
+| MS chambers | 5 | **7** |
+| `offices_missing_terms` | 422 / 238 | **422 / 238** — unmoved |
+| CONTROL: SD legislative offices | 105 | 105 — unmoved |
+| CONTROL: MS statewide execs | 5 | 5 — unmoved |
+
+✅ **Biloxi City Hall now returns Rep. Zachary Grady (HD-115) and Sen. Scott DeLano (SD-50)**;
+Gulfport returns HD-120 and SD-49; **Mobile, Alabama returns nothing**. Per-district control
+**52/52 and 122/122 resolve to exactly one holder**, with a positive control in the same query
+returning 2 across both chambers. **MI-2's gate 8 asserted directly**: all 174 are visible to the
+reps-feed predicate, so the hidden-legislator defect does not occur here.
+⚠ **Biloxi now scores 2 of 4.** The council member and the county supervisor are stages 3 and 4.
+
+### 🔴🔴 THE TRAP: THE LIST IS STALE AND THE MEMBER PAGES ARE CURRENT
+
+This is the **inverse** of MN-2 and MI-2, where a fresh-looking list had not noticed a departure.
+Only `Last-Modified` could tell:
+
+```
+ss_membs.xml  last modified 2025-07-01
+hr_membs.xml  last modified 2025-10-14
+```
+
+Both **predate the court-ordered special elections of 2025-11-04**, while member pages are current
+to 2026-08-18. So the Senate list still declares "Vacancy - District 24" and "Vacancy - District
+26" — both filled since — and still carries **John Polk, who retired**.
+▶ **A DOCUMENT'S CONTENT CANNOT TELL YOU ITS AGE; ASK THE SERVER.** Justin Pope's page looks
+exactly like a sitting member's — six committees, a capitol phone, "2026-present" — because he
+**is** one. The list calling his seat vacant is fourteen months old.
+⚠ **AND A PAGE EXISTING IS NOT MEMBERSHIP**: `senate/polk.xml` resolves HTTP 200 with full detail.
+The site keeps former members in the same namespace as sitting ones.
+⚠ **AND STALENESS IS NOT DEPARTURE**: 13 of 170 pages predate the specials and most are sitting
+members in districts the remedy never touched — a page is only edited when something changes.
+
+**A turnover therefore needs two independent halves**, both required: the page predates the
+specials, **and** Open States names a different *surname* in that district and that person nowhere
+in the chamber. Then the successor's own page must itself carry the expected `<DISTRICT>`.
+🟢 **The correlation is the evidence** — every seat where Open States names a different surname is
+also a seat whose page predates the specials, five of five. **Eight seats moved:**
+
+| seat | list said | actually |
+| --- | --- | --- |
+| Senate 2 | David Parker | **Theresa Gillespie-Isom** |
+| Senate 24 | *VACANT* | **Justin L. Pope** |
+| Senate 26 | *VACANT* | **Kamesha B. Mumford** |
+| Senate 42 | Robin Robinson | **Don Hartness** |
+| Senate 44 | John A. Polk (retired) | **Chris Johnson** |
+| Senate 45 | *absent from the list* | **Johnny L. DuPree** |
+| House 22 | Jonathan Ray Lancaster | **Justin Crosby** |
+| House 26 | Orlando Paden | **Otha Williams** |
+
+🟢 **And the arithmetic closes without slack — 52 and 122 exactly.** That is the real control.
+
+### ⚠ Smaller things this wave paid for
+
+- 🔴 **A LAYOUT IS NOT A SCHEMA.** The Senate list is a **four**-column grid and the House list a
+  **five**-column one, in the same document family from the same publisher on the same day. A
+  hard-coded four silently dropped every M5 slot — **24 House members** — which read as "the list
+  is 96 long" and produced 26 districts that looked unaccounted for. The column indices are now
+  discovered from the document.
+- 🔴 **THE PRESIDING OFFICERS ARE IN THE HEADER, NOT THE GRID, AND THE CHAMBERS DIFFER.** The
+  House's Speaker (**Jason White**, HD-48) and Speaker Pro Tempore (**Manly Barton**, HD-109)
+  appear nowhere in the member grid. The Senate's chair is the **Lieutenant Governor**, who is not
+  a senator at all. Adding CHAIR+PROTEMP for both chambers would seat a 53rd senator; the
+  discriminator is whether the link is a member page in this document family.
+- 🔴 **A NICKNAME IS NOT A DIFFERENT PERSON, AND TWELVE OF THEM WOULD HAVE HIDDEN THE EIGHT.**
+  Chuck/Charles Younger, Bubba/Joseph Tubb, Hank/Henry Zuber, Zack/Zachary Grady, Bubba/Lester
+  Carpenter, Jeff/Jeffrey Guice, Greg/Gregory Holloway, Sam/Samuel Creekmore. **None is a prefix
+  rule** — "Bubba" is not short for "Lester" — so only the SURNAME can carry the test. MI-2's rule:
+  split the class, do not loosen the detector. A hyphen is a third class again: "Theresa
+  Gillespie-Isom" has surname `gillespie-isom` and "Theresa Gillespie Isom" has surname `isom`, so
+  a last-token test called the same woman two people and reported her successor NOT FOUND.
+- 🔴 **A COMPOUND SURNAME IS DECIDED BY A SECOND PUBLISHER, NOT BY A LIST I WROTE.** "Angela
+  Turner Ford", "Hester Jackson McCray", "Theresa Gillespie-Isom" and "Beth Luther Waldo" are
+  published in one style and only three are compound — "Luther" is a middle name. Open States
+  hyphenates the real ones, so the number of hyphen parts in ITS surname says how many trailing
+  tokens the surname takes here. A first version hard-coded the tokens it had seen and got Waldo
+  wrong.
+- 🔴 **`office_terms` IS A SEAT, NOT A CAREER, AND ONE MEMBER OF THIS WAVE PROVES IT.** Member
+  pages carry `<LEG_EXP><STRETCH>`. For the **seven** whose only stretch is "2026-present" that is
+  the body's own statement, written at `year` precision. **Chris Johnson's reads "2020-present"
+  plus "House 2016-2019"** — but he moved from SD-45 to SD-44 in 2026, so dating SD-44 from his
+  career would assert he held it for six years during which **John Polk actually did**. MI-4's
+  rule, where two commissioners were dated to the year they changed district number. **A gate
+  asserts SD-44 is Chris Johnson with an UNDATED term**, and it was watched failing.
+- 🔴 **FOUR NAMESAKE COLLISIONS, ALL DIFFERENT PEOPLE, GUARD LIFTED FOR THOSE ROWS ONLY.**
+  Measured on the guard's own key with a positive control (72 active Smiths, 70 Johnsons, 45
+  Williamses, so four hits is a measurement). ⚠ **The Chris Johnson case had to be checked rather
+  than assumed** — the existing row has no office and `is_incumbent = false`, exactly the shape
+  MI-2 reused for four sitting legislators and then found hidden. It is a **Louisiana U.S. House
+  District 6 candidate**. ⚠ And "Richard Bennett" matched a row whose `full_name` reads "Rick
+  Bennett": the guard keys on first/last, not on full_name — MN-2's Steve/Steven again.
+- ⚠ **ONE SOURCE TYPO REPAIRED AND RECORDED**: SD-49's page reads **"Joel R.Carter, Jr."** with no
+  space after the initial. Rendering "R.Carter" to a voter is the alternative, so it is repaired
+  in the generator with the reason attached, not silently.
+- 🔴 **I REPRODUCED ND-2'S external_id RULE AND CAUGHT IT BY READING MY OWN OUTPUT.** The band
+  checked in production was `-2766400..-2766227`, but the generator **decremented**, so the ids
+  actually ran to `-2766573` — a band never checked. The generator now ascends, and its printed
+  range is compared against the gate's own `BETWEEN` clause. **Re-check the band you USE.**
+- ⚠ **THE DRY RUN EARNED ITS KEEP.** A `-- map/member split` comment appended with a join put the
+  comma **after** the comment, so the comment ate the row separator and the INSERT died at the
+  second row. And three separate times the nested shell-to-Python-to-JS quoting ate backslashes in
+  a regex — **MI-2's rule, met three times in one session**: do not build regexes through nested
+  quoting.
+
+### The gates, all watched failing
+
+Seven controls, each firing on its own target: `c1` missing Senate office · `c2` a COUNTY district
+receiving a legislative office (the `28047` collision) · `c3a`/`c3b` Chris Johnson dated ·
+`c4a`/`c4b` a missing term · `c5` a person without `is_incumbent`.
+🔴 **`c3` and `c4` each needed a second variant because an earlier gate's count fired first and
+shadowed the target** — MI-3's finding, twice. ⚠ **And `c4`'s first version aborted on a SYNTAX
+ERROR**, because it removed the only row without a trailing comma: **a control that aborts for the
+wrong reason proves nothing**, and it looked like a pass because the run did fail.
+Tooling: `scripts/ms2-migration-controls.mjs`.
+
+Dry run was a real `BEGIN … ROLLBACK` through `psql` as `ev_api`, and **the rollback was verified
+to have reverted** to 89,485 / 10,030 / 9,966 before the real apply.
+
+`check:occupancy` · `check:migrations` · `check:reservations` green; **`check:reachability` nothing
+regressed** — 4 / 17 / 7, every bucket at baseline.
+
+### ⚠ Debts carried out of MS-2
+
+- **167 undated arrivals.** No Mississippi member page publishes a service date, and the oath date
+  must not be computed. The eight 2025-11-04 turnovers are datable from the chambers' journals by
+  a later pass; seven already carry the year.
+- 🔴 **THE MAP/MEMBER SPLIT IS NOW IN PRODUCTION AND MUST NOT BE "TIDIED".** In Senate 1, 2, 10,
+  11, 19, 34, 41, 42, 44, 45 and House 16, 22, 36, 39, 41 the holder of district N may have been
+  elected by a differently-shaped district N. Each term row carries the note.
 
 ---
 
