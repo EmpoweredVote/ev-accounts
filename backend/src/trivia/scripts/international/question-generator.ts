@@ -3,7 +3,7 @@ import type { ClaimResult } from './claim-extractor.js';
 import type { QuestionInput } from '../../services/qualityRules/types.js';
 import { auditQuestion } from '../../services/qualityRules/index.js';
 import {
-  qualityRulesEnforced,
+  qualityRulesEnforcement,
   emptyQualityRuleStats,
   decideRuleGate,
   recordGate,
@@ -353,7 +353,7 @@ export async function writePassingQuestions(
     // and a news article URL is not a .gov page that answers bots politely.
     // Leaving it on would put an HTTP round trip per question inside the cron
     // and make the verdict depend on network weather.
-    const enforce = qualityRulesEnforced();
+    const enforcement = qualityRulesEnforcement();
     // Dereferenced OUTSIDE the try on purpose. A claim with no source articles
     // is a malformed claim, not a rules failure; inside the try it would be
     // logged as "audit threw" and then throw again uncaught at the insert
@@ -368,13 +368,19 @@ export async function writePassingQuestions(
         ),
       );
 
-      const decision = decideRuleGate(audit.violations, enforce);
-      recordGate(ruleStats, externalId, decision, enforce);
+      const decision = decideRuleGate(audit.violations, enforcement);
+      recordGate(ruleStats, externalId, decision);
 
       if (decision.blocking.length > 0) {
         const rules = decision.blocking.map(v => v.rule).join(', ');
+        // "WOULD BLOCK" now means "no ENFORCED rule objected", which with a
+        // partial list is a different statement from "enforcement is off".
+        // Naming the enforced rules keeps the line readable in the cron log.
+        const verdict = decision.enforced.length > 0
+          ? `BLOCKED (${decision.enforced.map(v => v.rule).join(', ')})`
+          : 'WOULD BLOCK';
         console.log(
-          `[QualityRules] ${enforce ? 'BLOCKED' : 'WOULD BLOCK'} ${externalId} — ${rules} — "${q.text.slice(0, 60)}"`,
+          `[QualityRules] ${verdict} ${externalId} — ${rules} — "${q.text.slice(0, 60)}"`,
         );
       }
 
