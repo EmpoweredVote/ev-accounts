@@ -13,8 +13,8 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 | 1 geography | ✅ **APPLIED 2026-09-28 — MISSISSIPPI HAS LEGISLATIVE GEOGRAPHY FOR THE FIRST TIME. 174 boundaries + 174 districts (52 Senate + 122 House), 0 errors.** No migration. The programme now owes legislative geography nowhere |
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 174 offices, 174 seated, 0 vacant** (`CC_0169`/`CC_0170`). 7 terms dated at `year`, 167 honestly `unknown` |
 | 3 city waves | ✅ **APPLIED 2026-09-28 — BILOXI IS SEATED. 7 ward polygons on `X0073`, 8 offices, 8 seated, 0 vacant** (`CC_0171`/`CC_0172`). City Hall now scores 4 of 4 bar the county |
-| 4 county waves | — not started. Harrison County is a `districts` row with 0 offices |
-| 5 assets | — not started. No `biloxi` banner key |
+| 4 county waves | ✅ **APPLIED 2026-09-28 — HARRISON COUNTY IS SEATED. 5 supervisor-district polygons on `X0074`, 27 offices, 27 seated, 0 vacant** (`CC_0173`/`CC_0174`). **Biloxi City Hall now scores 4 of 4** |
+| **5 assets** | ▶ **OPEN — the last stage of the last slice. No `biloxi` banner key; no headshots for the 35 city and county officials** |
 
 ---
 
@@ -807,6 +807,243 @@ across 393 refs) · `check:reservations` green · **`check:reachability` nothing
   (HTTP 403, *"Just a moment..."*, to a bare fetch and a Chrome UA alike, on real and bogus paths).
   **MS-4 must open them in Playwright from the start.**
 
+---
+
+## ✅ MS-4 APPLIED 2026-09-28 — HARRISON COUNTY IS SEATED, AND BILOXI SCORES 4 OF 4
+
+`CC_0173` (structure) + `CC_0174` (occupancy), plus
+`scripts/load-harrison-supervisor-districts.mjs` for the geometry: **5 supervisor-district polygons
+on `X0074`, 27 offices, 27 seated, 0 vacant, 27 people created, 0 reused.**
+
+| scope | before | after | expected |
+| --- | --- | --- | --- |
+| `geofence_boundaries` | 72,893 | **72,898** | +5 exact |
+| `politicians` | 89,667 | **89,694** | +27 exact |
+| `offices` | 10,212 | **10,239** | +27 exact |
+| `office_terms` | 10,148 | **10,175** | +27 exact |
+| `districts` | 10,714 | **10,719** | +5 exact — the county row is ADOPTED, not created |
+| `chambers` | 1,343 | **1,348** | +5 |
+| `governments` | 613 | **614** | +1 |
+| `offices_missing_terms` | 422 / 238 | **422 / 238** | must NOT move — unmoved |
+| CONTROL: Biloxi offices | 8 | 8 | unmoved |
+| CONTROL: MS legislative offices | 174 | 174 | unmoved |
+| CONTROL: Aberdeen offices | 9 | 9 | unmoved |
+
+### ✅✅ THE FOUR-ANSWER PROBE IS COMPLETE
+
+**Biloxi City Hall now returns FIFTEEN officeholders**, and the four the programme set out to get:
+
+| answer | officeholder |
+| --- | --- |
+| **council member** | **Wayne Gray**, Biloxi Ward 1 |
+| **county supervisor** | **Dan Cuevas**, Harrison County District 1 |
+| **state representative** | **Zachary Grady**, HD-115 |
+| **state senator** | **Scott DeLano**, SD-50 |
+
+plus Mayor Gilich, the seven countywide county officers, and District 1's Justice Court Judge,
+Constable and Election Commissioner. **Mobile, Alabama returns nothing at all.**
+
+**Per-district control: each of the 5 supervisor districts' interior points resolves to exactly 4
+offices**, with a positive control in the same query returning **11** when the county layer is
+included — so the query can report a number other than four.
+
+🟢 **AND THE SLICE CLOSED A CIRCLE.** District 1's Justice Court Judge is **Albert J. Fountain**,
+the judge who administered the oath to Biloxi's mayor in 2017; District 5's is **Nick Patano**, who
+did it in 2021 and 2025. MS-3 read those names out of the city's inauguration reports without
+knowing they were county officeholders. And **Nathan Barrett**, District 5 Supervisor, is the man
+whose resignation created the Biloxi Ward 7 vacancy that MS-3 spent a page dating.
+
+### 🟢 THE INVENTORY IS 27, AND THE COUNTY'S OWN SENTENCE COULD NOT SUPPLY IT
+
+⚠ **THE COUNTY'S "Elected Officials" PAGE IS AN OPEN LIST.** It reads: *"In Harrison County, these
+elected officials **include**; the Board of Supervisors, Sherriff, Circuit Clerk, Chancery Clerk,
+Tax Collector, Tax Assessor, District Attorney, Coroner, Election Officials, and County
+Prosecutor."* The word is *include*; it omits the **Justice Court Judges** and the **Constables**,
+both of which are on the ballot. ▶ **A list that says "include" is a lead, not an enumeration.**
+⚠ And the county's own site files the **Justice Court under DEPARTMENTS**, beside Mosquito Control
+— the Grand Forks trap: a menu's grouping is not the elected/appointed line.
+
+🟢 **THE ENUMERATION IS THE SECRETARY OF STATE'S CERTIFIED RECAPITULATION**, the document the
+County Election Commission signed on 2023-11-17 and filed with the State. Twenty-two county
+contests, and nothing else: Chancery Clerk · Circuit Clerk · Coroner · County Attorney · Sheriff ·
+Tax Assessor · Tax Collector · Supervisor 1–5 · Justice Court Judge 1–5 · Constable 1–5.
+
+⚠ **BILOXI'S ARGUMENT DOES NOT SURVIVE INTACT, AND THAT IS THE FINDING.** MS-3 could say "one
+ballot enumerates everything, because every municipal office shares one cycle". **That is false for
+a Mississippi county.** Only **two** Election Commissioner contests were on the 2023 ballot —
+Districts 2 and 4 — while the county's own page names **five** sitting commissioners and the
+recapitulation's certification page carries five signature lines. All five are seated; only the two
+the certified results cover are dated.
+
+⚠ **THE DISTRICT ATTORNEY IS DELIBERATELY NOT SEATED.** *"District Attorney 02"* (W. Crosby Parker)
+is on the same ballot, but the office is elected by the **Second Circuit Court District** — Harrison,
+Hancock and Stone counties together. Seating it here would hang a three-county officer on a
+one-county polygon. **Recorded as a debt, not created.**
+
+🟢 **AND THE TWO JUDICIAL DISTRICTS DO NOT DUPLICATE ANYTHING.** MS-3 flagged Harrison's First
+(Gulfport) and Second (Biloxi) judicial districts as a possible duplication of county offices. They
+are not: they are **courthouses**. The Board of Supervisors meets in Gulfport on the first Monday
+and in Biloxi on the second, and there is one Chancery Clerk, one Circuit Clerk, one Sheriff.
+
+### 🟢🟢 ONE GEOMETRY CARRIES TWENTY OFFICES, PROVED PRECINCT BY PRECINCT
+
+Four office sets are elected from five districts each. **Miss. Code § 9-11-2 lets the board draw
+the justice court districts**, so they need not be the beats — "obviously the same" is exactly the
+assumption this programme refuses.
+
+▶ **The certified recapitulation settles it.** The precincts that cast votes in Supervisor District
+N are exactly those that cast votes in Justice Court Judge District N and Constable District N, and
+Election Commissioner 2 and 4 match Supervisor 2 and 4. The totals corroborate:
+
+| district | Supervisor | Constable | Justice Court |
+| --- | --- | --- | --- |
+| 1 | 4,728 | 4,754 | 4,859 |
+| 2 | 7,761 | 7,842 | 7,890 |
+| 3 | 9,146 | 9,159 | 9,296 |
+| 4 | 5,676 | 5,745 | — |
+| 5 | 7,814 | 7,792 | — |
+
+**One electorate counted three times, not three that happen to be close.** So 20 district offices
+hang on 5 district rows, four each.
+
+⚠ **THE JUSTICE COURT JUDGES ARE JUDICIAL AND THEIR DISTRICTS ARE NOT FLAGGED `is_judicial`.** The
+flag lives on the district, and these districts also carry supervisors, constables and election
+commissioners. Marking it would mislabel the other fifteen.
+
+### 🔴🔴 `DIST_ID` IS A PERMUTATION, AND IT LOOKS PERFECT
+
+The supervisor layer carries `District` and `DIST_ID`. **`DIST_ID` is wrong for four of five:**
+
+| District | 1 | 2 | 3 | 4 | 5 |
+| --- | --- | --- | --- | --- | --- |
+| DIST_ID | 1 | **5** | **4** | **3** | **2** |
+
+A join on it would swap Districts 2↔5 and 3↔4, sending voters in four of five districts to the
+wrong supervisor, judge, constable **and** election commissioner at once.
+▶ **This is MS-3's Biloxi `Id` trap in the very next wave, and worse.** There the bad field
+*repeated*, so it looked broken. Here it is a clean permutation of exactly the right five values
+and looks perfect. **Only reading a sample row by row catches it; no count, no distinctness test
+and no null check ever would.**
+
+🟢 **The layer names its own supervisors** in `DIST_NAME`, so the Secretary of State's certified
+winners could be checked straight against the geometry's attributes — five for five.
+
+### The anchors, and a source defect they exposed
+
+| anchor set | result |
+| --- | --- |
+| the **18 precincts** whose supervisor district the CERTIFIED 2023 RESULTS state | **18 of 18** |
+| the county's own **49 polling places** against its own `District` field | **48 of 48 that state one** |
+| `DIST_NAME` against the certified winners | 5 of 5 |
+
+🔴 **THREE OF THE 49 POLLING PLACES CARRY LATITUDE 0, LONGITUDE 0 IN THEIR `LAT`/`LON` ATTRIBUTES**
+while their **geometry is correct**. A test built on the attributes would put three anchors in the
+Gulf of Guinea, match no district, and read as a broken boundary file. **The loader uses geometry
+and never the attributes**, and asserts the null-island records are still there — if they are
+repaired, it stops and makes a human re-decide.
+
+🔴 **AND ONE RECORD STATES NO DISTRICT AT ALL** — `EAST ORANGE GROVE` carries `District = " "`, a
+single space, *and* is one of the three at 0,0: the one record in 49 defective twice over. It is
+**named and split out**, not swept up by widening the filter, and the certified results cover it
+(E Orange Grove → District 2).
+
+### 🔴🔴 THE OATH DATE MOVED BECAUSE OF A HOLIDAY, AND ONLY THE MINUTES SAY SO
+
+Mississippi seats county officers on the **first Monday of January**. A reader who knew that would
+write 2024-01-01. The Board's own organising minute says otherwise and explains itself:
+
+> *"a regular meeting … was begun and held … on the **FIRST TUESDAY OF JANUARY 2024**, being
+> January 2, 2024, **the first Monday of January 2024 being a legal holiday** … There appeared the
+> following members-elect … **for the term of four years commencing on this date**: DAN CUEVAS
+> District One, REBECCA POWERS District Two, MARLIN R. LADNER District Three, KENT JONES District
+> Four, NATHAN BARRETT District Five — and each of them having given bond … and taken the oath
+> prescribed by the Constitution of the State of Mississippi…"*
+
+▶ **A computed date would have been a day wrong, for a reason no reading of the statute could
+supply.** This is the **third** variant of the rule inside this one slice: Biloxi's mayor was sworn
+**two days before** his advertised inauguration; Biloxi's Ward 7 ceremony was **announced and never
+reported**; and here **the statutory day itself moved**.
+
+⚠ **KENT JONES IS ABSENT FROM THE ROLL CALL OF THAT SAME MEETING**, and it is recorded rather than
+hidden. He is dated with the other four because `office_terms` records the start of the **term**,
+which the recital fixes for all five members-elect; attendance at the meeting's business is a
+different fact. He is present on 2024-01-08 and no later minute records a separate oath.
+
+**5 day-precision · 19 year · 3 honestly unknown.** The nineteen are certified winners of
+2023-11-07 taking a four-year term from January 2024, written at `year` because **no document read
+for this wave records the day each was sworn** — they are sworn separately from the Board. Writing
+2024-01-02 for them would borrow the supervisors' minute for people it does not mention.
+
+⚠ **THE COUNTY'S OWN OFFICER PAGES CARRY DATES AND THEY ARE NOT USED.** Each reads *"Elected: YYYY"*
+and *"Current Term Ends: MM/DD/YYYY"*. The **Coroner's** says *"Elected: 2020 / Current Term Ends:
+12/31/2028"* for a man the certified results show winning in **2023**, which on a four-year term
+ends 12/31/2027 — the two cannot both be right. The **Circuit Clerk's** says *"Elected: 2024"* for a
+man who won in November 2023. ▶ *"First elected" is not a term start and these fields mean neither
+consistently.* They are excellent evidence of **current incumbency**, which is what they were used
+for.
+
+### Namesakes, and a guard lifted for one row
+
+🟢 Two collisions on the guard's own key, both **different people**, both checked: **James Morgan**
+(an inactive `indiana_discovery` stub — the shape MI-2 reused for four sitting legislators and then
+found hidden) and **Jennifer Smith** (a sitting Santa Monica-Malibu Unified school board member in
+California). Controls fire: 73 active Smiths, 53 Joneses, 3 existing Ladners.
+🔴 **The duplicate-name guard was lifted for ONE ROW, not for the migration** — the other 26 insert
+with it armed. ⚠ **James Morgan did not trip it at all**, because the existing row is *inactive* and
+the guard only sees active rows; he was read anyway.
+🔴 **FOUR LADNERS ARE SEATED BY THIS WAVE AND THEY ARE FOUR PEOPLE** — Marlin R. (Supervisor 3),
+Paula (Tax Assessor), Brandon (Justice Court 2), Dianne (Justice Court 3) — beside three already in
+production, one of whom is **Philman A. Ladner**, whom MS-2 seated in Senate District 46. A
+surname-keyed merge would collapse seven people into one.
+
+⚠ **Two names are split on a judgement and it is written down**: *Sharon Nash Barnett* is stored
+with `last_name` **Barnett** and "Nash" read as a middle name, and *Toni Jo Diaz* with `first_name`
+**Toni**. MS-2's rule is that a compound surname is decided by a second publisher; none was found
+for either, so these are the most likely reading, not a proved one.
+
+### The gates
+
+**Eight loader controls and sixteen migration controls, every one watched failing on its own
+target.** 🟢 **None of the sixteen was shadowed on first writing** — MS-3 had five, and its lessons
+were applied in advance: *move* an office rather than add one to reach the per-district gate;
+*rename* a boundary rather than add one to reach the ownership gate; hold the precision constant to
+reach a date assertion; and use `beforeLast` for the second migration's gate, because both files
+carry a line reading `Post-verify gate`.
+
+Dry run was a real `BEGIN … ROLLBACK` through `psql` as `ev_api` with both migrations in one
+transaction, and **the rollback was verified to have reverted** — 89,667 / 10,212 / 10,148 / 10,714
+and zero Harrison County rows — before the apply.
+
+`check:occupancy` · `check:migrations` · `check:reservations` · `check:child-county` green;
+**`check:reachability` nothing regressed** — 4 / 17 / 7, every bucket exactly at baseline.
+
+### ⚠ Debts carried out of MS-4
+
+- **Three Election Commissioners undated** (Districts 1, 3, 5). Their arrival needs an election
+  record this wave did not find. 🔴 **Do not copy 2024 onto them from their two colleagues.**
+- **Nineteen officers at `year` precision.** The day each was sworn would need each officer's own
+  oath record, not the Board's minute.
+- **The District Attorney is not seated**, and will not be until the circuit court districts have
+  geometry.
+- **No headshots and no banner** — MS-5, the last stage of the last slice.
+
+### ⚠ Access facts measured this session
+
+- 🔴 **The Cloudflare challenge covers the county's HTML PAGES ONLY.** `harrisoncountyms.gov` answers
+  a bare `fetch` with **HTTP 403 "Just a moment…"**, but its **documents redirect to
+  `cms9files.revize.com`, which Node fetches normally** — the minutes, agendas and PDFs are all
+  reachable without a browser. Use Playwright for the pages and plain `fetch` for the files.
+- 🔴 `geo.co.harrison.ms.us` — the county's own ArcGIS Server, and the host of the *older* supervisor
+  district service — is behind the same challenge and returns HTML to an API request. The county's
+  **AGOL** copy is both readable and newer.
+- 🟢 `sos.ms.gov` serves the certified results to a bare `fetch`, and a bogus county name returns a
+  real **404**.
+- ⚠ **The certified recapitulation is a 41-page SCANNED PDF.** `pdftotext` returns one line and
+  `PyMuPDF` returns 46 characters across ten pages; the same extractor returns 1,783 characters from
+  page 1 of a text PDF, which is the control that says the document is the problem and not the tool.
+  It was read as images, block by block: contests repeat across five precinct groups, so the block
+  starts are pages 2, 7, 12, 17, 22, 27, 32 and 37.
+
 ## Access facts measured this session
 
 🔴🔴 **`legislature.ms.gov` AND `billstatus.ls.state.ms.us` SEND ONLY THEIR LEAF CERTIFICATE.** Both
@@ -861,18 +1098,23 @@ The MARIS `.xlsx` block equivalency files were converted to two-column CSV with 
 
 ## ▶ RESUMING THIS SLICE — read this before touching anything
 
-**State: MS-1 and MS-2 are APPLIED and on `origin/knight/ms-slice16` (PR #839). Nothing is
-uncommitted and nothing is unpushed. **MS-3 is APPLIED too** (`CC_0171`/`CC_0172` + the ward
-load on `X0073`) — see the MS-3 sections above. **MS-4 is next: HARRISON COUNTY, and its office
-inventory is UNREAD.**
+**State: MS-1, MS-2, MS-3 AND MS-4 ARE ALL APPLIED** and on `origin/knight/ms-slice16` (PR #839).
+Nothing is uncommitted and nothing is unpushed. Geography (`X0073` Biloxi wards, `X0074` Harrison
+supervisor districts) is loaded; `CC_0169`–`CC_0174` are written and applied.
+✅ **Biloxi City Hall returns 15 officeholders and scores 4 of 4** — council member, county
+supervisor, state representative, state senator.
+▶ **MS-5 IS NEXT, AND IT IS THE LAST STAGE OF THE LAST SLICE: ASSETS.** No `biloxi` banner key
+exists, and none of the 35 city and county officials has a headshot. 🔴 Read the banner rules in
+memory before choosing anything — **certify in the 6:1 BAND and LOOK AT THE ASSET**, and **read
+the `states/MS.jpg` banner in the band first**, because adjacency is composition.
 
 | stage | state |
 | --- | --- |
 | 1 geography | ✅ applied — 174 polygons |
 | 2 legislature | ✅ applied — 174 offices seated (`CC_0169`/`CC_0170`) |
 | **3 Biloxi** | ✅ applied — 8 offices seated (`CC_0171`/`CC_0172`) + 7 ward polygons on `X0073` |
-| **4 Harrison County** | ▶ **OPEN, FROM ZERO. Inventory unread. The county's hosts are behind Cloudflare — use Playwright.** |
-| 5 assets | — not started. No `biloxi` banner key |
+| **4 Harrison County** | ✅ applied — 27 offices seated (`CC_0173`/`CC_0174`) + 5 supervisor polygons on `X0074` |
+| **5 assets** | ▶ **OPEN — the last stage of the last slice. No `biloxi` banner key; no headshots for the 35 city and county officials** |
 
 ### What MS-3 has to establish
 
