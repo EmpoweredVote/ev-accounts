@@ -160,3 +160,28 @@ describe('QuestionSchema explanation', () => {
     expect(QuestionSchema.safeParse(withoutSource).success).toBe(false);
   });
 });
+
+describe('legacy mint shape (pinned — do NOT unify the widths)', () => {
+  // Three-digit legacy padding: the cron and the locale/state/replacement generators.
+  const mintFor3 = (c: { externalIdPrefix?: string; collectionSlug: string }, seq: number) =>
+    c.externalIdPrefix ? `${c.externalIdPrefix}-${String(seq).padStart(3, '0')}` : mintExternalId(c.collectionSlug, seq);
+
+  // Four-digit legacy padding: BOTH international generators. Deliberately different —
+  // each width matches ids already in the database.
+  const mintFor4 = (c: { externalIdPrefix?: string; collectionSlug: string }, seq: number) =>
+    c.externalIdPrefix ? `${c.externalIdPrefix}-${String(seq).padStart(4, '0')}` : mintExternalId(c.collectionSlug, seq);
+
+  it('mints the three-digit legacy shape when a prefix is present', () => {
+    expect(mintFor3({ externalIdPrefix: 'bli', collectionSlug: 'bloomington-in' }, 7)).toBe('bli-007');
+    expect(mintFor3({ externalIdPrefix: 'bli', collectionSlug: 'bloomington-in' }, 146)).toBe('bli-146');
+  });
+
+  it('mints the four-digit legacy shape for the international generators', () => {
+    expect(mintFor4({ externalIdPrefix: 'wiran', collectionSlug: 'war-in-iran' }, 1761)).toBe('wiran-1761');
+  });
+
+  it('falls through to the slug scheme when no prefix is present', () => {
+    expect(mintFor3({ collectionSlug: 'akron-oh' }, 1)).toBe('akron-oh_0001');
+    expect(mintFor4({ collectionSlug: 'akron-oh' }, 1)).toBe('akron-oh_0001');
+  });
+});
