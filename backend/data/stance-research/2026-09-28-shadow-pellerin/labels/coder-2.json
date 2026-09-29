@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259",
+      "office_id": "4164cda9-e149-46c7-9b5a-7f1f75088ac0",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "8dca6231-481c-5393-ad92-d19f85d328ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2839 (2023-2024)",
+          "provision_quote": "This section does not impose liability on an interactive computer service, as defined in Section 230(f)(2) of Title 47 of the United States Code.",
+          "note": "Bill creates civil liability for persons/committees/entities who distribute deceptive election media, but explicitly exempts platforms from any duty under the law.",
+          "record_kind": "author",
+          "actor_quote": "AB 2839, Pellerin.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 2839 (Pellerin, chaptered 2024) prohibits persons, committees, or entities from knowingly distributing materially deceptive election-related media absent a manipulation disclosure, but it expressly states 'this section does not impose liability on an interactive computer service,' exempting platforms from any obligation. Because the served rungs turn on what platforms must do (remove, label, or follow voluntary standards) or on limiting government's role in platform content moderation, and this instrument targets content creators/distributors while explicitly excluding platforms, it does not establish any rung on this ladder.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

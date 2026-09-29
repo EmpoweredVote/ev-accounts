@@ -1,0 +1,9 @@
+Wrote `labels/coder-1.json`.
+
+**Row: Anna Caballero / civil-rights → BLANK `no-evidence`**
+
+Two passages, one record group (SB 188, 2019-2020):
+- Vote page — `own-act` / `record` / `vote`, actor quote from the Ayes list, tally `Ayes Count 37 Noes Count 0`.
+- Bill text — same instrument, carries the `provision_quote` (the FEHA/Education Code amendment making "Race" inclusive of hair texture and protective hairstyles); `actor_quote`/`tally_quote` null, since that page prints neither.
+
+The vote is in-term (her 2018–2022 Senate term) and on-question, but 37–0 with zero Noes puts it under the V4 near-unanimous rule, so it cannot carry a chair alone. Nothing else in the sources separates rung 2 ("strengthen civil rights enforcement…") from rung 3 ("maintain current civil rights laws…"), so no passage survives to support a numeric chair. `rests_on` is empty and `needs_source` asks for her own first-person words on the ladder's question and a divided or authored California instrument on civil rights enforcement.

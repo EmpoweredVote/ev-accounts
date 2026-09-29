@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "d3110657-375e-516d-9153-509804371df6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-19",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 942 (2023-2024)",
+          "provision_quote": null,
+          "note": "Bill imposes AI content-disclosure/detection-tool duties and penalties for non-disclosure, not any of the ladder's oversight-strictness mechanisms.",
+          "record_kind": "author",
+          "actor_quote": "SB 942, Becker.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 942, authored by Becker and signed into law, requires a covered provider to offer an AI detection tool and to include manifest and latent disclosures identifying AI-generated content, with civil penalties for violations. That is a transparency/labeling mandate, not the dimension the rungs separate: it does not leave deployment free of government interference, it is not merely suggested guidelines companies may ignore, it does not hold developers legally responsible when their systems cause harm, it does not require safety testing before use in high-stakes areas like hiring, healthcare, or policing, and it does not impose strict government approval before any AI system can be deployed. The passage is adjacent to the ladder's question, so no chair is established.",
+      "needs_source": [
+        "Becker's own words or a further record establishing a position on AI liability for harm, mandatory pre-deployment safety testing, or a government approval requirement before AI deployment"
+      ],
+      "quotes": []
+    }
+  ]
+}

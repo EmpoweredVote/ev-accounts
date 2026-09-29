@@ -1,0 +1,55 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e",
+      "office_id": "54a4ad72-bcd1-4fe1-b684-bfa7e72152fc",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "af8b1b75-6d0f-527c-9442-8a02f944e8c9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": null,
+          "note": "Vote page: Lackey is in the Noes list on concurrence in AB 2571, in his earlier Assembly term of the same legislature.",
+          "record_kind": "vote",
+          "actor_quote": "Noes Bigelow, Chen, Cooley, Megan Dahle, Flora, Fong, Gallagher, Kiley, Lackey, Mathis, Patterson, Seyarto, Smith, Voepel, Waldron",
+          "tally_quote": "Ayes Count 57 Noes Count 15"
+        },
+        {
+          "snapshot_id": "dc53152c-0e3d-5c50-8f58-49a1b5cae228",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": "A firearm industry member shall not advertise, market, or arrange for placement of an advertising or marketing communication concerning any firearm-related product in a manner that is designed, intended, or reasonably appears to be attractive to minors.",
+          "note": "Bill text page prints the operative marketing-to-minors prohibition but names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only record is Lackey's No vote on AB 2571 (2021-2022), whose operative section bars a firearm industry member from advertising \"any firearm-related product in a manner that is designed, intended, or reasonably appears to be attractive to minors.\" Marketing restrictions are a dimension this ladder does not order: no rung turns on advertising, so the vote cannot separate \"Allow all types of firearms, but require universal background checks on every sale\" from \"Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines\" or \"Repeal major gun restrictions and let adults carry a firearm without a permit.\" Both passages fail V2 as adjacent, so no passage survives to support a chair.",
+      "needs_source": [
+        "California Assembly floor roll call on a universal background check bill (Penal Code firearm transfer provisions), showing Lackey's vote",
+        "California Assembly floor roll call on an assault-weapon or semi-automatic rifle restriction bill, showing Lackey's vote",
+        "California Assembly floor roll call on a concealed-carry permit bill (e.g. CCW issuance or permit reciprocity), showing Lackey's vote",
+        "Lackey's own first-person words on background checks, assault-style weapons, or carry permits (questionnaire, issue page, or floor statement)"
+      ],
+      "quotes": []
+    }
+  ]
+}

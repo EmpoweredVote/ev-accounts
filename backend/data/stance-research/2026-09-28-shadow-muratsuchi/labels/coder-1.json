@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "ea803096-927f-41fe-98e1-deab56291810",
+      "office_id": "e45c9d52-6288-4865-a2de-dadd73cc18e6",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "866c8347-0adf-554d-9611-6e162b500a57",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": "It is the policy of the state to do both of the following: (1) Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045, and to achieve and maintain net negative greenhouse gas emissions thereafter.",
+          "note": "Authored bill declaring a statewide net-zero policy goal with a 2045 deadline and directing scoping-plan updates and reports.",
+          "record_kind": "author",
+          "actor_quote": "AB 1279, Muratsuchi. The California Climate Crisis Act.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "AB 1279 (2021-2022), which he authored, declares it state policy to \"Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045\" and directs the state board to update the scoping plan and report; it shows he wants government to drive the transition, but its operative section sets an economy-wide emissions goal and planning duty rather than any clean-energy mechanism. It therefore does not separate \"Require a shift to clean energy through mandates and firm deadlines\" from \"Fund clean energy with major subsidies, tax credits, and public investment\" or \"Speed up clean energy by cutting permitting red tape and upgrading the grid\", and the bill's own text enables \"carbon dioxide removal solutions and carbon capture, utilization, and storage technologies\" as complementary paths rather than requiring a clean-energy shift.",
+      "needs_source": [
+        "A California Assembly record (authorship, sponsorship or roll call) on a clean-energy mechanism bill that matches one rung clause for clause — a renewable/zero-carbon electricity mandate with a deadline (rung 1), a clean-energy subsidy or tax-credit appropriation (rung 2), or a clean-energy permitting/grid-interconnection streamlining bill (rung 3)",
+        "Muratsuchi's own words answering how government should expand clean energy (candidate questionnaire, debate answer, or first-person issue page), dated within the current term or campaign"
+      ],
+      "quotes": []
+    }
+  ]
+}

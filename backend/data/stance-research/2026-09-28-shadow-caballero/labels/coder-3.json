@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+      "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "395a38a1-fcd1-5a3e-b3df-46bfbc6c14a5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-04-22",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": null,
+          "note": "Aye vote on Senate 3rd Reading, but the floor tally was 37 Ayes to 0 Noes, so V4.1 near-unanimous applies.",
+          "record_kind": "vote",
+          "actor_quote": "Bradford, Caballero, Chang",
+          "tally_quote": "Ayes Count 37 Noes Count 0 NVR Count 1"
+        },
+        {
+          "snapshot_id": "c0c966a9-84bd-5314-8011-594dd9fad9a3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-07-03",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": "“Race” is inclusive of traits historically associated with race, including, but not limited to, hair texture and protective hairstyles.",
+          "note": "The provision expands the legal definition of race for anti-discrimination enforcement, but the vote it rests on was near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Caballero's Aye vote on SB 188 (2019-2020), which amends the Education Code and Government Code definitions of race to include hair texture and protective hairstyles, would otherwise match \"strengthen civil rights enforcement and address systemic discrimination,\" but the Senate floor tally shows Ayes Count 37 Noes Count 0, so under V4.1 the vote is near-unanimous and cannot establish a chair alone without her own words tying the vote to this provision.",
+      "needs_source": [
+        "Caballero's own statement or floor remarks on SB 188 (2019-2020) tying her vote to the hair-discrimination/civil-rights provision",
+        "A committee vote on SB 188 (2019-2020) with a divided tally, if one exists"
+      ],
+      "quotes": []
+    }
+  ]
+}
