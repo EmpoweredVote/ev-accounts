@@ -184,16 +184,135 @@ anchor table"* rather than a wrong map. The diagnosis now names that case explic
 
 ---
 
+## Wave 2 — the General Assembly: measured, NOT written
+
+197 offices owed: 163 House + 34 Senate, all single-member. Nothing is written yet.
+
+### The rosters are harvested and complete
+
+All 163 House member pages fetched 2026-09-28, **0 errors**
+(`house.mo.gov/MemberDetails.aspx?district=NNN&year=2026&code=R`). Each publishes `Elected:`,
+`Years Served:`, `Hometown:` and `Counties:`. The **8 pages carrying no `Elected` value are exactly
+the 8 vacant seats**, which confirms the vacancy list from a second field.
+
+### 🔴 `Elected` is not a term start and `Years Served` is not a tenure — measured, both fail
+
+| `Elected` × `Years Served` | Count | What it means |
+|---|---|---|
+| 2024 × 2 | 54 | ordinary — seated at the 103rd GA |
+| 2022 × 4 · 2020 × 6 · 2018 × 8 | 93 | ordinary |
+| **2019 × 7 · 2021 × 6** | **4** | 🔴 **special elections** — an odd election year |
+| **2018 × 9** | **2** | 🔴 odd count against an even year — McGaugh (HD-7), Knight (HD-142) |
+| **2016 × 6** | **1** | 🔴🔴 **Mark Matthiesen, HD-107 — served, LEFT, returned** |
+| **2024 × 6** | **1** | 🔴🔴 **John Simmons, HD-109 — 6 years served, newly elected** |
+
+The last two are decisive. `Elected 2016` with only 6 years served, and `Elected 2024` with 6 years
+served, are both gaps in service. **Neither field can be turned into a date by arithmetic**, and
+`Years Served` counts years in the *chamber*, not in the *district* — a member who moved districts
+after the 2022 remap carries chamber-years that overstate their occupancy of the seat they hold.
+
+### The term-start document exists, and it states the date
+
+`documents.house.mo.gov/billtracking/bills251/jrnpdf/jrn001.pdf` — *Journal of the House, One
+Hundred Third General Assembly, First Regular Session*, whose first line reads **"FIRST DAY,
+WEDNESDAY, JANUARY 8, 2025"**. Page 6 records: *"The following Representatives advanced to the bar
+and subscribed to the oath of office, which was administered by the Honorable Mary R. Russell,
+Chief Justice of the Supreme Court of Missouri"*, followed by every member by name.
+
+So **2025-01-08 at day precision, sourced to a document that states it** — not computed from
+Mo. Const. Art. III §20a, which the program's rules forbid. Earlier General Assemblies have their
+own first-day journals; a member seated at a special election has their own oath recorded on its own
+journal day, and those four must be read individually.
+
+🟢 **The Journal disambiguates homonyms itself, by district**: `Brown 149` / `Brown 16`,
+`Jones 12` / `Jones 88`, `Smith 46` / `Smith 68` / `Smith 74`, `Taylor 48` / `Taylor 84`.
+⚠ And it lists **`Sharp 37` and `Sharpe 4`** — two different people whose surnames differ by one
+letter. Any fuzzy or normalised name match merges them.
+
+### 🔴 Three live cross-state homonyms, measured against prod
+
+| Missouri member | Already in prod holding a seat in |
+|---|---|
+| **Chad Perkins** (HD-40) | **Maine** |
+| **Michael Johnson** (HD-23, Kansas City) | **South Carolina** |
+| **Mike Jones** (HD-12) | **Pennsylvania** |
+
+No Missouri legislator exists in prod under any of these names, so every one of the three is a
+different person. A name-based insert guard seats a Missourian on a Maine, South Carolina or
+Pennsylvania seat and nothing errors. This is the Robert Nash failure, live again.
+
+### Senate
+
+33 of 34 filled; **SD-10 has no member card** and is vacant. Confirm from the Senate's own vacancy
+notice before writing it. The Senate's member pages have not yet been harvested.
+
+### Vacancies to write, not seat
+
+House **HD-29, 95, 99, 110, 114, 149, 159, 160** and Senate **SD-10**. Nine seats. Per CLAUDE.md a
+vacancy span whose start date is unknown must **not** be written — set `offices.is_vacant` and leave
+the span unwritten until the resignation letter or the Governor's writ of special election gives a
+date.
+
+### ⚠ A general election falls between measurement and January
+
+Polling is **2026-11-03**, five weeks after this was measured, and the 104th General Assembly
+convenes in January 2027. Everyone seated here is correct **today** and many change then. SD-4 is
+already known to change: Karla May is term-limited and Gina Mitten won the August primary. Seed
+current occupancy; do not seed the winners of an election that has not happened.
+
+---
+
 ## What is still unmeasured
 
-Nothing below has been probed yet. Do not plan against guesses.
+Nothing below has been probed. Do not plan against guesses.
 
-- **City of St. Louis** — the Board of Aldermen's size and ward geography, the citywide offices,
-  and the county-tier offices the city holds because it is a county-equivalent.
-- **St. Louis County** — the charter's list of elected offices, the 7 council districts and their
-  geography.
-- Term starts for every seat, each from a document that states it.
+- **City of St. Louis** — ward geography (the 14 ward polygons), and term starts for all 23 seats.
+- **St. Louis County** — the charter's list of elected offices, and the 7 council districts'
+  geography and membership.
 - Headshot sources and their licences; the banner.
+
+### What IS established for the City of St. Louis
+
+- **14 wards**, `Ward 01`–`Ward 14`, from the city's own representation page. Reduced from 28; the
+  charter PDF on the city site still describes the 28-ward, odd/even-year stagger, so **it is not
+  safe to read term cycles from that PDF.**
+- **Board of Aldermen (15 seats):** President **Megan Green** (citywide), plus Ward 01 Anne
+  Schweitzer · 02 Thomas Oldenburg · 03 Shane Cohn · 04 Bret Narayan · 05 Matt Devoti ·
+  06 Daniela Velazquez · 07 Alisha Sonnier · 08 Jami Cox Antwi · 09 Michael Browning ·
+  10 Shameem Clark Hubbard · 11 Laura Keys · 12 Sharon Tyus · 13 Pamela Boyd · 14 Rasheen Aldridge.
+- **Citywide:** Mayor **Cara Spencer**, Comptroller **Donna M.C. Baringer**.
+- **County-tier, because the city is a county-equivalent:** Recorder of Deeds **Michael Butler**,
+  Collector of Revenue **Gregory F.X. Daly**, Circuit Attorney **Gabriel Gore**, Treasurer
+  **Adam L. Layne**, License Collector **Mavis Thompson**, Public Administrator **Sean Rapp**.
+- 🔴 **THE CITY'S OWN "ALL ELECTED OFFICIALS" PAGE IS INCOMPLETE.** It lists 23 people and does not
+  mention **Sheriff**, **Public Administrator**, **Circuit Clerk** or **Assessor** anywhere — the
+  strings appear zero times. The Public Administrator nevertheless has his own city department page
+  naming Sean Rapp, and the charter's Scheme of Separation, §5, provides for the election of a
+  **sheriff, coroner and public administrator for the city**. So the roster page under-reports the
+  city's own elected offices. Establish the full list from the ballot, not from that page.
+- The 2026 certified results confirm the method: the **August 2026 primary** carried Collector of
+  Revenue, License Collector and Recorder of Deeds, and the **April 2026 municipal** election
+  carried nothing but Proposition E. The Assessor is appointed in the City of St. Louis; confirm
+  before excluding it.
+- The city contains House districts **76, 77, 78, 79, 80, 81, 82, 84** and Senate districts **4 and
+  5**, read off the 2026 primary ballot's own contest list. Verify by intersecting the polygons.
+
+### What IS established for St. Louis County
+
+- **7 single-member council districts.** The county's own page: *"The council shall consist of seven
+  members, each of whom shall be a qualified voter and resident in their respective district."*
+- **County Executive Sam Page.**
+- Departments that exist: County Assessor, County Auditor, County Clerk, County Prosecutor,
+  Collector of Revenue and Recorder of Deeds (the last two under Revenue). **Which of these are
+  ELECTED is a charter question and is NOT yet established** — St. Louis County is a charter county
+  and a charter county may appoint offices that are elected elsewhere in Missouri. Do not copy the
+  City's list across.
+- 🔴 **The council's seven district pages do NOT name their members.** Each carries a phone number,
+  an address and an email only. The District 1 email is `rdays@stlouiscountymo.gov`. **An email
+  prefix is not a name** — take the members from certified results or council journals.
+- ⚠ **The county site 403s every `curl`, including with a browser UA. Playwright gets through.**
+- The county charter is published only through a Yudu web reader
+  (`content.yudu.com/web/44p6g/0A44qnp/StLouisCountyCharter/index.html`), not as a PDF.
 
 ---
 
