@@ -19,7 +19,12 @@ let m;
 while ((m = re.exec(html))) {
   const tag = m[0];
   const attr = (n) => {
-    const a = new RegExp(n + '\s*=\s*"([^"]*)"', 'i').exec(tag);
+    // The backslashes MUST be doubled: this is a string handed to new RegExp, so '\s' would be
+    // collapsed to a literal 's' before the regex ever sees it. It read '\s' first, which made the
+    // pattern `srcs*=s*"..."` -- zero-or-more literal 's' characters instead of whitespace. It
+    // matched anyway, because s* also matches empty, so the extraction was right for the wrong
+    // reason and only eslint's no-useless-escape noticed.
+    const a = new RegExp(n + '\\s*=\\s*"([^"]*)"', 'i').exec(tag);
     return a ? a[1] : null;
   };
   const src = attr('src') || attr('data-src');
