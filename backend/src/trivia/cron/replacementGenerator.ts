@@ -364,7 +364,7 @@ async function tryLoadLocaleConfig(slug: string): Promise<LocaleConfig | null> {
       const mod = await import(configPath);
       for (const key of Object.keys(mod)) {
         const val = mod[key];
-        if (val && typeof val === 'object' && 'locale' in val && 'externalIdPrefix' in val) {
+        if (val && typeof val === 'object' && 'locale' in val && 'collectionSlug' in val) {
           return val as LocaleConfig;
         }
       }
