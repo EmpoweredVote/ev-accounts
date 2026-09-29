@@ -14,7 +14,7 @@ one whose map has been redrawn, litigated, re-approved and then vacated inside o
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 174 offices, 174 seated, 0 vacant** (`CC_0169`/`CC_0170`). 7 terms dated at `year`, 167 honestly `unknown` |
 | 3 city waves | ✅ **APPLIED 2026-09-28 — BILOXI IS SEATED. 7 ward polygons on `X0073`, 8 offices, 8 seated, 0 vacant** (`CC_0171`/`CC_0172`). City Hall now scores 4 of 4 bar the county |
 | 4 county waves | ✅ **APPLIED 2026-09-28 — HARRISON COUNTY IS SEATED. 5 supervisor-district polygons on `X0074`, 27 offices, 27 seated, 0 vacant** (`CC_0173`/`CC_0174`). **Biloxi City Hall now scores 4 of 4** |
-| **5 assets** | 🟡 **BANNER SHIPPED · 18 OF 35 CITY AND COUNTY HEADSHOTS APPLIED (`CC_0175`) · THE LEGISLATURE'S 174 ARE BLOCKED ON A PERMISSION LETTER THAT IS DRAFTED AND NOT SENT** |
+| **5 assets** | 🟡 **BANNER SHIPPED · 18 OF 35 CITY AND COUNTY HEADSHOTS APPLIED (`CC_0175`) · THE LEGISLATURE'S 174 WAIT ON A PERMISSION LETTER — SENT 2026-09-28, DO NOT SEND IT AGAIN** |
 
 ---
 
@@ -1106,7 +1106,8 @@ supervisor, state representative, state senator.
 🟡 **MS-5 IS PART DONE — READ ITS OWN SECTION AT THE END OF THIS FILE, NOT THE BRIEF BELOW.**
 The banner shipped (`cities/biloxi.jpg`, essentials PR #170) and 18 of the 35 city and county
 headshots are applied (`CC_0175`). **The remaining work is ONE THING: the Mississippi Legislature's
-174 portraits, which are blocked on a permission letter that is DRAFTED AND NOT SENT** —
+174 portraits, which wait on a permission letter — **SENT 2026-09-28 to `webmaster@ls.ms.gov`.
+🔴 DO NOT SEND IT AGAIN.** —
 [`letters/2026-09-28-ms-legislature-portrait-permission.md`](./letters/2026-09-28-ms-legislature-portrait-permission.md). 🔴 **Do not send it
 twice**, and do not import a legislative portrait before a reply arrives.
 ⚠ The block headed "WHAT MS-5 HAS TO ESTABLISH" below is the brief that was written *before* the
@@ -1280,7 +1281,7 @@ shape, because only one of them needs anybody's permission.
 | --- | --- |
 | Biloxi banner | ✅ **SHIPPED** — `cities/biloxi.jpg`, essentials PR #170 |
 | 35 city + county headshots | ✅ **18 APPLIED** (`CC_0175`); the other 17 are deliberately blank |
-| 174 legislature headshots | ⛔ **BLOCKED** — permission letter drafted, **NOT SENT** |
+| 174 legislature headshots | ⏳ **AWAITING A REPLY** — permission letter **SENT 2026-09-28**; do not re-send |
 
 **Measured against production before anything was written: 0 of 209.** 0 of 8 Biloxi, 0 of 27
 Harrison County, 0 of 174 legislators. The five MS statewide officials who *do* carry a portrait
@@ -1381,11 +1382,12 @@ The rollback was confirmed reverted before applying — including **zero residue
 the defect class the write order exists to prevent. All 18 objects were re-fetched and byte-compared,
 18 of 18 identical, with a never-uploaded key as control returning HTTP 400 and no image.
 
-### ⛔ The legislature's 174 — drafted, NOT SENT
+### ⏳ The legislature's 174 — LETTER SENT 2026-09-28, awaiting a reply
 
-🔴 **DO NOT SEND THIS TWICE.** The draft is
-[`letters/2026-09-28-ms-legislature-portrait-permission.md`](./letters/2026-09-28-ms-legislature-portrait-permission.md). It has not been sent;
-if it ever is, the date goes in that file *and* here.
+🔴 **SENT 2026-09-28 to `webmaster@ls.ms.gov`. DO NOT SEND IT AGAIN.** The letter is
+[`letters/2026-09-28-ms-legislature-portrait-permission.md`](./letters/2026-09-28-ms-legislature-portrait-permission.md). A sent request is **not a grant, and
+neither is silence** — import nothing and set no `photo_license` until a reply arrives, and
+there is no timeout after which silence becomes permission.
 
 - **All 178 portraits exist**, at `billstatus.ls.state.ms.us/members/{house,senate}/<IMG_NAME>`,
   typically **675×900** — larger than our 600×750, so nothing would be upscaled. The directory sits
