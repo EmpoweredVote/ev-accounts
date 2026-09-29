@@ -1,4 +1,6 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect, beforeAll } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
 import {
   mintExternalId,
   collectionKeyOf,
@@ -161,27 +163,120 @@ describe('QuestionSchema explanation', () => {
   });
 });
 
-describe('legacy mint shape (pinned — do NOT unify the widths)', () => {
-  // Three-digit legacy padding: the cron and the locale/state/replacement generators.
-  const mintFor3 = (c: { externalIdPrefix?: string; collectionSlug: string }, seq: number) =>
-    c.externalIdPrefix ? `${c.externalIdPrefix}-${String(seq).padStart(3, '0')}` : mintExternalId(c.collectionSlug, seq);
+/**
+ * WHY THIS EXISTS (Controller Ruling 22)
+ * ---------------------------------------
+ * The rule "legacy mints THREE digits in the cron and locale generators, FOUR
+ * in the international generators, and these must never be unified" is
+ * enforced only by five hand-copied, module-private `mintFor` implementations
+ * plus a comment. An earlier version of this test pinned a LOCAL reimplementation
+ * of those helpers (its own inline `padStart(3, '0')` / `padStart(4, '0')`) —
+ * which pins the test's own copy, not production. If someone DRYs the five
+ * `mintFor` copies tomorrow and unifies the padding width, that test would stay
+ * green while the invariant it existed to protect silently broke. A pinning
+ * test that cannot fail is worthless.
+ *
+ * Fixed the same way replacementGenerator.test.ts pins the module-private
+ * config-detection guard in this same directory tree: read the REAL, current
+ * source text, extract the exact prefixed-branch expression verbatim, and
+ * evaluate it with `new Function` (never `eval`, and only ever against
+ * literal test inputs defined in this file) rather than hand-copying it. This
+ * proves the CURRENT code, as written, produces the pinned width, and it
+ * fails exactly if either site's padStart width changes.
+ *
+ * Only these two ev-accounts sites are pinned here:
+ *   - THREE-digit: src/trivia/cron/replacementGenerator.ts, mintFor()
+ *   - FOUR-digit:  src/trivia/scripts/international/question-generator.ts
+ * The three hand-copied CTC-side copies (backend/src/scripts/content-generation
+ * in the CTC repo: locale, state, and the replacement-generator equivalent)
+ * cannot be pinned from here — that repo has no test runner. Coverage of the
+ * width invariant is therefore partial; a change made only on that side is
+ * still untested until it is carried over, same as the rule already noted for
+ * nested-options.
+ */
+describe('legacy mint shape (pinned against the REAL mintFor sites — Controller Ruling 22)', () => {
+  const REPLACEMENT_GENERATOR_SRC = readFileSync(
+    fileURLToPath(new URL('../cron/replacementGenerator.ts', import.meta.url)),
+    'utf-8',
+  );
+  const INTL_QUESTION_GENERATOR_SRC = readFileSync(
+    fileURLToPath(new URL('../scripts/international/question-generator.ts', import.meta.url)),
+    'utf-8',
+  );
 
-  // Four-digit legacy padding: BOTH international generators. Deliberately different —
-  // each width matches ids already in the database.
-  const mintFor4 = (c: { externalIdPrefix?: string; collectionSlug: string }, seq: number) =>
-    c.externalIdPrefix ? `${c.externalIdPrefix}-${String(seq).padStart(4, '0')}` : mintExternalId(c.collectionSlug, seq);
+  // Anchored on `if (config.externalIdPrefix) {` — mintFor()'s own guard —
+  // so this can only ever match its prefixed-branch return, never an
+  // unrelated template literal elsewhere in the file.
+  const MINT_3_RE = /if \(config\.externalIdPrefix\) \{[\s\S]*?return (`[\s\S]*?`);/;
+  // Anchored on `const externalId = externalIdPrefix` — unique in this file —
+  // so this can only ever match this ternary's truthy branch.
+  const MINT_4_RE = /const externalId = externalIdPrefix[\s\S]*?\?\s*(`[\s\S]*?`)[\s\S]*?:\s*mintExternalId/;
 
-  it('mints the three-digit legacy shape when a prefix is present', () => {
-    expect(mintFor3({ externalIdPrefix: 'bli', collectionSlug: 'bloomington-in' }, 7)).toBe('bli-007');
-    expect(mintFor3({ externalIdPrefix: 'bli', collectionSlug: 'bloomington-in' }, 146)).toBe('bli-146');
+  const mint3Match = REPLACEMENT_GENERATOR_SRC.match(MINT_3_RE);
+  const mint4Match = INTL_QUESTION_GENERATOR_SRC.match(MINT_4_RE);
+
+  it('the three-digit expression is present and extractable from replacementGenerator.ts', () => {
+    // Guards against this whole suite going vacuously green if a refactor
+    // changes the code's shape enough that MINT_3_RE stops matching anything.
+    expect(mint3Match).not.toBeNull();
   });
 
-  it('mints the four-digit legacy shape for the international generators', () => {
-    expect(mintFor4({ externalIdPrefix: 'wiran', collectionSlug: 'war-in-iran' }, 1761)).toBe('wiran-1761');
+  it('the four-digit expression is present and extractable from question-generator.ts', () => {
+    expect(mint4Match).not.toBeNull();
   });
 
-  it('falls through to the slug scheme when no prefix is present', () => {
-    expect(mintFor3({ collectionSlug: 'akron-oh' }, 1)).toBe('akron-oh_0001');
-    expect(mintFor4({ collectionSlug: 'akron-oh' }, 1)).toBe('akron-oh_0001');
+  let mintPrefixed3: (config: { externalIdPrefix?: string }, seq: number) => string;
+  let mintPrefixed4: (externalIdPrefix: string | undefined, nextIdNum: number) => string;
+
+  beforeAll(() => {
+    if (!mint3Match) {
+      throw new Error(
+        'mintFor() three-digit branch not found in replacementGenerator.ts -- ' +
+          'update MINT_3_RE in externalIdentity.test.ts to match the current source.',
+      );
+    }
+    if (!mint4Match) {
+      throw new Error(
+        'question-generator.ts four-digit branch not found -- update MINT_4_RE ' +
+          'in externalIdentity.test.ts to match the current source.',
+      );
+    }
+    // eslint-disable-next-line no-new-func -- deliberately evaluating the
+    // exact expression extracted from the real source above, not a
+    // hand-copied duplicate of it.
+    mintPrefixed3 = new Function(
+      'config',
+      'seq',
+      `return ${mint3Match[1]};`,
+    ) as (config: { externalIdPrefix?: string }, seq: number) => string;
+    // eslint-disable-next-line no-new-func
+    mintPrefixed4 = new Function(
+      'externalIdPrefix',
+      'nextIdNum',
+      `return ${mint4Match[1]};`,
+    ) as (externalIdPrefix: string | undefined, nextIdNum: number) => string;
+  });
+
+  it('mints the three-digit legacy shape when a prefix is present (real replacementGenerator.ts code)', () => {
+    expect(mintPrefixed3({ externalIdPrefix: 'bli' }, 7)).toBe('bli-007');
+    expect(mintPrefixed3({ externalIdPrefix: 'bli' }, 146)).toBe('bli-146');
+  });
+
+  it('mints the four-digit legacy shape for the international generator (real question-generator.ts code)', () => {
+    // A small seq is the width-sensitive case: 1761 is 4 digits regardless of
+    // whether padStart's width argument is 3 or 4, so it alone would not
+    // catch a regression to 3. 7 does — 'wiran-007' vs 'wiran-0007'.
+    expect(mintPrefixed4('wiran', 7)).toBe('wiran-0007');
+    expect(mintPrefixed4('wiran', 1761)).toBe('wiran-1761');
+  });
+
+  it('the two widths are still deliberately different (the invariant this suite protects)', () => {
+    expect(mintPrefixed3({ externalIdPrefix: 'bli' }, 7)).not.toBe(mintPrefixed4('bli', 7));
+    expect(mintPrefixed3({ externalIdPrefix: 'bli' }, 7)).toBe('bli-007');
+    expect(mintPrefixed4('bli', 7)).toBe('bli-0007');
+  });
+
+  it('the slug-scheme fallback (mintExternalId, shared and already covered above) is unaffected by either width', () => {
+    expect(mintExternalId('akron-oh', 1)).toBe('akron-oh_0001');
   });
 });
