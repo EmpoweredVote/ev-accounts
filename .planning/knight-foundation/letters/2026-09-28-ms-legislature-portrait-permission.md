@@ -1,13 +1,31 @@
-# Mississippi Legislature portrait permission — email draft, 2026-09-28
+# Mississippi Legislature portrait permission — SENT 2026-09-28
 
-## STATUS: **DRAFT. NOT SENT.**
+## 🔴🔴 STATUS: **SENT 2026-09-28. DO NOT SEND IT AGAIN.**
 
-🔴 **If this file ever says SENT, do not send it again.** A second request would be a duplicate to a
-government body. Record the date, the exact address and who sent it, here and in
-[`ms.md`](../ms.md), the way the SD letter records its own send.
+Sent by Cantrell to **`webmaster@ls.ms.gov`** — the only address the Legislature publishes — as the
+text below stands. **EVERY EARLIER LINE IN THIS REPOSITORY CALLING THIS LETTER "NOT SENT" IS
+SUPERSEDED.** A second request would be a duplicate to a government body.
+
+⚠ **The confirmation is the operator's word, not an in-page receipt.** North Dakota's request was a
+web form and returned *"Thank you! Your request has been sent."* on screen; this is ordinary email,
+so no such artifact exists and none should be claimed. ⚠ The address above is the one this draft
+names and the one the operator sent the draft as written; if it actually went somewhere else, or was
+copied to another desk, correct this line — it is the record.
 
 🔴 **NOTHING IS IMPORTED AND NO `photo_license` IS SET ON ANY OF THE 174.** A sent request is not a
-grant, and neither is silence. Only a reply moves that field, and only to what the reply says.
+grant, and **neither is silence**. Only a reply moves that field, and only to what the reply says.
+
+### What to do when a reply arrives
+
+- **Grant** → record its exact wording verbatim in this file, then import. The credit goes in
+  `politician_images.photo_license` on every row so the obligation travels with the record, the way
+  MN-6's grant was recorded. 🔴 **A grant is to us, not to the files** — another publisher serving
+  the same images is not covered.
+- **Refusal** → the 174 stay blank **permanently**. Write that into [`ms.md`](../ms.md) so no later
+  pass re-opens it. The fallback is **not** a news or campaign photograph.
+- **Redirect** → write to the office they name, from this same text, and add a second STATUS line
+  here. Do not re-send to the webmaster.
+- **No reply** → the 174 stay blank. There is no timeout after which silence becomes permission.
 
 ---
 
@@ -144,7 +162,7 @@ chris@empowered.vote
 
 ---
 
-## Notes for whoever sends this
+## Notes — written for the sender, kept because the reply handling depends on them
 
 - ✅ **Signature is "Chris Cantrell / Empowered Vote".** This is correspondence, not a legal form.
   **BJ Robert Cantrell** is the full legal name and belongs only on forms that demand one — the
