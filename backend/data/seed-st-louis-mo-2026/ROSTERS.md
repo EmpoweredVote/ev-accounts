@@ -135,3 +135,30 @@ trusting a re-parse; a matcher that only ever says "same" proves nothing.
   apostrophes as a replacement character, which dropped **HD-1 and HD-95** from the first parse.
 - 🟢 **SD-10's vacancy has the Senate's own notice**, not just an absent card: the index carries
   `Senators/VacantSenator?district=10` and the text *"Vacant District 10"*.
+
+---
+
+## ✅ Applied 2026-09-28 — `CC_0176` + `CC_0177`
+
+197 offices, 188 terms, 9 vacancies. Measured in production after the apply: `offices_missing_terms`
+unflagged returned to **238**, exactly its baseline. Full record in the spec's wave 2 section.
+
+### 🔴🔴 The one rule this wave paid for
+
+**`essentials.politician_name_duplicate_guard()` KEYS ON `(first_name, last_name)`, NOT
+`full_name`.** It compares `lower(btrim(first_name))` **and** `lower(btrim(last_name))`, over
+**active** rows only. A `full_name` sweep is a *different, weaker* test: it found 4 of 6 collisions
+here and missed `David Tyson Smith` vs Florida's `David Smith`, and `Brian Williams` vs Indiana's
+`Brian H Williams`. Both have different full names and the same `(first, last)`.
+
+**The guard threw during the dry run, which is the only reason they were caught.** Use
+`occupancy-scripts/gen_guardcheck.py`, which applies the guard's own predicate, before generating
+any seating migration.
+
+### 🟢 And the direction that is NOT a namesake
+
+**Rick Brattin (SD-31) already existed and his row was REUSED, not duplicated** — it carries ten
+researched compass stances that a second row would have stranded, leaving the seated senator an
+empty compass. A name collision has two opposite right answers, and the test is the same either
+way: read what the existing row *is*. Five of six were other states' officeholders; the sixth was
+the Missourian himself.
