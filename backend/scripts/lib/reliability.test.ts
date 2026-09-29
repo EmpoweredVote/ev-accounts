@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { alphaNominal, wilsonLowerBound, isSevereError, certify, chairCategory, type Unit, goldMeasures } from './reliability.js';
+import { alphaNominal, wilsonLowerBound, isSevereError, certify, chairCategory, type Unit, goldMeasures, blankMeasures } from './reliability.js';
 
 /** Coder-major matrix (rows = coders) → unit-major (rows = units), the shape alphaNominal takes. */
 const byUnit = (coders: (string | null)[][]): Unit[] =>
@@ -108,4 +108,31 @@ describe('goldMeasures (spec §3.1 M2–M4)', () => {
     expect(m.m2Pairs).toBe(2);
     expect(m.unanimousTotal).toBe(0);
   });
+});
+
+// Blanks (ruling 2026-09-28, Chris Andrews): the rows where no coder seated a chair are a diagnostic
+// bucket, not a certification stratum — a unanimous BLANK publishes no chair. Two measures.
+describe('blankMeasures', () => {
+  const B = 'BLANK';
+  it('blank precision: consensus BLANK rows whose gold is BLANK, with the Wilson lower bound', () => {
+    const m = blankMeasures([
+      { coders: [B, B, B], gold: null }, { coders: [B, B, '4'], gold: null }, { coders: [B, B, null], gold: 3 },
+    ]);
+    expect(m.blankConsensus).toBe(3);
+    expect(m.blankCorrect).toBe(2);
+    expect(m.precisionWilsonLow).toBeCloseTo(wilsonLowerBound(2, 3), 10);
+  });
+  it('missed chairs: gold seats a chair where the consensus is BLANK, listed by key', () => {
+    const m = blankMeasures([
+      { key: 'a', coders: [B, B, B], gold: 2 }, { key: 'b', coders: [B, B, B], gold: null }, { key: 'c', coders: ['2', '2', B], gold: 2 },
+    ]);
+    expect(m.missed).toEqual([{ key: 'a', gold: 2 }]);
+  });
+  it('a split row (no two coders agree) is neither precise nor missed', () => {
+    const m = blankMeasures([{ coders: [B, '3', '4'], gold: null }]);
+    expect(m.blankConsensus).toBe(0);
+    expect(m.missed).toEqual([]);
+  });
+  it('positive control: 13 of 13 → lower bound 0.772', () =>
+    expect(blankMeasures(Array.from({ length: 13 }, () => ({ coders: [B, B, B], gold: null }))).precisionWilsonLow).toBeCloseTo(0.772, 3));
 });

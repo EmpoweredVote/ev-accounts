@@ -9,7 +9,7 @@
  */
 import 'dotenv/config';
 import { pool } from '../src/lib/db.js';
-import { alphaNominal, certify, chairCategory, goldMeasures, type Unit } from './lib/reliability.js';
+import { alphaNominal, certify, chairCategory, goldMeasures, type Unit, blankMeasures } from './lib/reliability.js';
 import { CODEBOOK_VERSION } from './lib/coderLabel.js';
 
 const i = process.argv.indexOf('--codebook');
@@ -63,9 +63,15 @@ for (const [s, b] of [...byStratum].sort()) {
   const m1 = alphaNominal(b.units).alpha;
   const g = goldMeasures(b.pairs);
   const c = certify({ goldN: b.pairs.length, m1, m2: g.m2, unanimousCorrect: g.unanimousCorrect, unanimousTotal: g.unanimousTotal, severe: g.severe });
-  const cert = s.endsWith('statement-other') ? 'never (Q2)' : c.certified ? 'YES' : `no — ${c.reasons.join('; ')}`;
+  // 'blank' = no coder seated a chair: a diagnostic bucket, never certified (ruling 2026-09-28).
+  const cert = s.endsWith('statement-other') ? 'never (Q2)' : s.endsWith('× blank') ? 'diagnostic (blanks publish no chair)' : c.certified ? 'YES' : `no — ${c.reasons.join('; ')}`;
   console.log(s.padEnd(32), String(b.units.length).padStart(5), fmt(m1).padStart(7), String(b.pairs.length).padStart(5), fmt(g.m2).padStart(7),
     `  ${g.unanimousCorrect}/${g.unanimousTotal}`.padEnd(14), String(g.severe).padStart(3), ' ', cert);
 }
+// Blanks (spec §3.1 "Blanks"): over every row whose coder consensus is BLANK, in any stratum.
+const allPairs = [...units.values()].flatMap((u) => { const g = gold.get(u.goldKey); return g ? [{ key: `${g.topic_key} ${u.goldKey.split('|')[0].slice(0, 8)}`, coders: u.values, gold: g.final_value }] : []; });
+const bm = blankMeasures(allPairs);
+console.log(`\nblanks (diagnostic): precision ${bm.blankCorrect}/${bm.blankConsensus} (Wilson low ${bm.precisionWilsonLow.toFixed(3)}); missed chairs ${bm.missed.length}` +
+  (bm.missed.length ? ` — ${bm.missed.map((m) => `${m.key} (gold ${m.gold})`).join(', ')}` : ''));
 const all = alphaNominal([...units.values()].map((u) => u.values));
 console.log(`\nall strata: M1 α = ${fmt(all.alpha)} (target ≥ 0.80, spec §3.3). A stratum certifies only with ≥ 50 blind gold items.`);
