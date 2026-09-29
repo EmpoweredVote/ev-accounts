@@ -59,8 +59,10 @@ is the whole reason this model exists.
 An office with **no `office_terms` row is invisible**: no holder, so the official never appears in
 Essentials, stance research, coverage or campaign finance — and **nothing errors**. This is the one
 failure mode CI cannot catch. Watch `essentials.offices_missing_terms`. **Baseline, measured
-2026-09-24: 423 rows — 185 legitimately flagged `is_vacant`, 238 unknown-occupancy. Treat a count
-above 238 unflagged as new drift.** (`CA_0287` retired 8 flagged duplicate Lewiston school seats.) It was 857 / 158 / 699 at migration 1464; `CA_0183` (421 LA
+2026-09-29: 239 unknown-occupancy. Treat a count above 239 unflagged as new drift.** (It was 423
+rows / 185 flagged / 238 unflagged on 2026-09-24; `CC_0178` then created the St. Louis city Sheriff
+seat unseated and unflagged by ruling, which moved the unflagged figure to 239 — that is deliberate
+and is NOT drift.) (`CA_0287` retired 8 flagged duplicate Lewiston school seats.) It was 857 / 158 / 699 at migration 1464; `CA_0183` (421 LA
 Superior Court, 2nd DCA and Supreme Court judges seated from the courts' rosters) and `CA_0187` did
 most of the fall. Lower this number whenever a change shrinks it — a stale, high baseline hides drift.
 
