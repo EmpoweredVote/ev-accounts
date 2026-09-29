@@ -782,10 +782,85 @@ the gate then passes. Full record in `county-results/FETCH.md`.
   and then won a US House seat. Melissa Price Smith holds it, `how_started => 'appointed'`,
   2025-01-03 from her own office's page.
 
-### ⚠ What wave 5 still owes
+## ✅ Wave 5a — headshots, APPLIED 2026-09-29
 
-Headshots and their licences, and the city banner. 🔴 **`photo_custom_url` is what renders** — a
-`politician_images` row changes nothing a voter sees. A blank beats a wrong face.
+**32 of 32 seated officials now carry a photo** (22 city, 10 county). All approved from one contact
+sheet, uploaded to Supabase Storage at 600×750, and verified end to end: every seat an address
+returns reports a CDN photo. Evidence and scripts in `backend/data/seed-st-louis-mo-2026/headshots/`.
+
+| Piece | Result |
+|---|---|
+| Sources | all official `.gov` pages, licence `press_use` throughout |
+| Uploaded | 32 to `politician_photos/<politician_id>-headshot.jpg` |
+| Written | `photo_custom_url` + `photo_origin_url` + a `politician_images` row each |
+| Gate | 32 CDN `photo_custom_url` + 32 image rows, asserted in SQL |
+
+### 🔴 THE SKILL'S IMPORT STEP DOES NOT MAKE A PHOTO RENDER
+
+`find-headshots` writes `politician_images` and sets `photo_origin_url` to the SOURCE PAGE. Neither
+is what a voter sees on the address path: `districtQueries` reads
+`COALESCE(p.photo_custom_url, p.photo_origin_url, '')` and **never consults `politician_images`**
+(only `compassService` does). So the skill alone yields an invisible import, and setting
+`photo_origin_url` to a page URL makes that column a broken image wherever `photo_custom_url` is
+empty. This wave wrote **all three**, matching the Detroit/Wayne County convention.
+⚠ Measured 2026-09-29: **86 active politicians already render a page URL as their photo** —
+`photo_custom_url` empty and `photo_origin_url` pointing at HTML. Pre-existing, not this wave's, and
+worth its own pass.
+
+### 🔴 Two detector failures this pass caught
+
+- **The county's `_portrait` variant is an UPSCALE, not a larger original.** It returns 800×1200 for
+  *every* asset id — including "Change of Mailing Address" and "Appointments" — which is the tell.
+  Measured against the 300×300 original it is **softer**: edge energy 640 against 1377. The originals
+  were used. 🔴 **A uniform answer is a broken detector; dimensions are not evidence of detail.**
+- **The county council's binding is the weakest kind.** Filenames are bare UUIDs and `alt` text is
+  **positional** (`alt="District 1"` names the seat, not the person), so only card text ties a face
+  to a name. All seven were flagged for a face check on the contact sheet and approved by eye.
+  🟢 By contrast the city's aldermen bind on each profile page's own `<title>`, verified 14 of 14 —
+  the profile ids are opaque (`id=1543`), so order proves nothing.
+
+### ⚠ Every source is small, and that was a ruling
+
+Sources run **150×225 to 422×591**; 20 of 32 need more than a 2.2× upscale to reach the house
+600×750, and Jake Zimmerman's 150×225 is 4.0×. Ruled 2026-09-29 (Cantrell): **upscale anyway**, so
+the cards stay uniform with every other city. These are the only photos the city and county publish.
+
+### 🔴 The county's images are WAF-blocked to every local client
+
+`stlouiscountymo.gov` 403s `curl` for the image FILES as well as the pages — bare, browser-UA,
+full browser headers and Referer all refused. It is a TLS-fingerprint block, so **Playwright is the
+only way to fetch them**. The working method: `browser_evaluate` fetches the image, renders the
+production crop to an `OffscreenCanvas`, and returns base64 — deliberately large enough that the
+tool result overflows to a file on disk, which keeps the pixels out of the session transcript.
+⚠ An in-page `fetch` is same-origin only: Melissa Price Smith is on `stlcopa.stlouiscountymo.gov`
+and failed on CORS until the browser was navigated to that host first.
+
+---
+
+### ⏳ What wave 5b still owes — THE BANNER
+
+**St. Louis has no banner**, and neither does St. Louis County. Checked 2026-09-29:
+`buildingImages.js` holds no `st louis` / `saint louis` key. This is the only thing standing between
+the two governments and a landing-page chip — their `geo_id` was set by `CC_0183`, so the DATA is
+ready and the chip is a one-line addition to `coverage.js` once a banner is certified.
+
+Read the banner-system memory first. The rules that matter:
+- Registry `src/lib/buildingImages.js` in the **essentials** repo, state-scoped (`{ state: 'MO', src }`).
+  ⚠ `Springfield` and `Saint Paul` already prove the state scope is load-bearing.
+- Asset: Supabase Storage `politician_photos/cities/<slug>.jpg`, **1700×540 (3.148:1)**, JPEG q90 progressive.
+- 🔴 **AI image generation is excluded by design (D-09)** — real licensed photos only
+  (CC0 / CC BY / CC BY-SA / PD), Wikimedia Commons preferred. The `banner-design` skill is the WRONG tool.
+- 🔴 **Certify in the 6:1 DESKTOP BAND, but look at the whole asset too.** Mobile keeps ~96.9%,
+  desktop ~52.4%. A subject in the upper third survives mobile and vanishes on desktop — that is the
+  Bend, OR failure.
+- 🔴 **Read the MISSOURI state banner in the band first** — adjacency is composition, and the two
+  render on the same page.
+- `public/banners.json` is GENERATED and CI-enforced: run `npm run banners:json` after editing the registry.
+  ⚠ Its `--check` currently reports "stale" on a clean `main` because of CRLF; that is pre-existing.
+
+⚠ **The essentials repo had UNCOMMITTED work on `main` on 2026-09-29** — the whole coverage pass plus
+a 112-line `Landing.jsx` rewrite. The KS/KY chips were added to that working tree and deliberately
+NOT committed. Check with whoever owns that session before committing anything there.
 
 ## Coordination
 
