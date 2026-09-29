@@ -289,42 +289,40 @@ copy — fast to make, but not a normal setup. If anything resolves oddly, run a
 - All 197 seats are `voting_powers = 'full'`, `representation_basis = 'residency'`, so no
   `representation_note` is required (ADR 0003).
 
-### 🔴 Decide the occupancy question BEFORE writing anything
+### ✅ The occupancy question is SETTLED — ruled 2026-09-28 (Cantrell)
 
-`office_terms` holds **occupancy**, not individual terms — `seat_officeholder` closes the
-predecessor the day before, and re-election does not end an occupancy. Missouri House terms are
-2 years, so almost every sitting member began a *new term* on 2025-01-08 while their *occupancy*
-may reach back years.
+**Model continuous occupancy of the seat AS CURRENTLY DRAWN, floored at the first day of the 102nd
+General Assembly, `2023-01-04`.** Full rationale, sources and traps:
+[`backend/data/seed-st-louis-mo-2026/ROSTERS.md`](../../backend/data/seed-st-louis-mo-2026/ROSTERS.md).
 
-**Recommendation: model continuous occupancy of THIS seat**, which is the Nashville precedent. That
-means `term_start` = the first day of the General Assembly following the first election at which
-that person won **this district number**, or their special-election oath date.
+The floor is where the geography stops being true: prod holds only 2022-plan polygons, so reaching
+back further would answer `office_holders_as_of()` with the right person for ground that district
+did not cover. **This deliberately differs from `CC_0157` (KS) and `CC_0164` (SD)**, which wrote the
+current term start; Missouri's Journals sell the deeper answer for two PDFs per chamber. Say so in
+the migration comment.
 
-⚠ **`Years Served` cannot answer this.** It counts years in the *chamber*. Missouri renumbered its
-districts in the 2022 remap, so a member who moved districts carries a count that overstates their
-occupancy of the seat they now hold. If the per-district history proves too expensive, the honest
-fallback is to write every seated member from **2025-01-08** — correct for the current term,
-sourced to a document — and record in the migration comment that it is the term start rather than
-the occupancy start. **State which of the two you chose in the `source` string.**
+**Resolved, per seat, in `mo-occupancy-2026-09-28.json` — every row carries its own `basis` string.**
+
+| Chamber | 2023-01-04 | 2025-01-08 | vacant | total |
+|---|---|---|---|---|
+| House | 100 | 55 | 8 | 163 |
+| Senate | 23 | 10 | 1 | 34 |
+| | **123** | **65** | **9** | **197** |
+
+Evidence is the Secretary of State's §115.525 certification **keyed by district number**, printed in
+each chamber's first-day Journal on the day the oath was administered — so **no name matching is
+needed anywhere**, which is what defuses `Sharp 37`/`Sharpe 4` and the three cross-state homonyms.
+
+🔴 The four items the old "evidence still to collect" list called for are **no longer needed**: the
+100th and 101st Journals are below the floor, and the six individual oath dates and the two
+gap-service members are all resolved by the 102nd/103rd pair. HD-109 John Simmons held the seat in
+2019 and 2021, **lost it to Kyle Marquart in 2023**, and returned in 2025 — occupancy starts
+2025-01-08.
 
 ### Evidence still to collect
 
-1. **First-day Journals** for the 102nd (2023), 101st (2021) and 100th (2019) General Assemblies.
-   The 103rd is already read: `documents.house.mo.gov/billtracking/bills251/jrnpdf/jrn001.pdf`,
-   *"FIRST DAY, WEDNESDAY, JANUARY 8, 2025"*. The path pattern looks like `bills<YY>1`, so try
-   `bills231`, `bills211`, `bills191` — **confirm each file's own stated date; do not infer it.**
-2. **Six individual oath dates**, from the journal day each was seated:
-   HD-22 Yolanda Young (2019) · HD-37 Mark Sharp (2019) · HD-158 Scott Cupps (2019) ·
-   HD-46 David Tyson Smith (2021) · HD-7 Peggy McGaugh and HD-142 Jeff Knight (`2018 × 9`).
-3. **The two gap-service members**: HD-107 Mark Matthiesen (`2016 × 6`) and HD-109 John Simmons
-   (`2024 × 6`). Neither can be dated by arithmetic. Read their history.
-4. **Senate**: harvest the 33 member pages (`senate.mo.gov/Senators/Member?id=N` — the ids are in
-   `mo-senate-roster-2026-09-28.json`) and find the Senate's own first-day journals. **Senate terms
-   are 4 years and staggered**: odd districts elect in presidential years, even in midterms, which
-   the 2026 primary ballot confirms (SD-4 was on it, SD-5 was not).
-5. **SD-10's vacancy**, from the Senate's own notice.
-6. If you take the per-district route, the authoritative history is the **Missouri SoS certified
-   results by district** for 2018 / 2020 / 2022 / 2024. ⚠ **Read result-table headers by NAME.**
+Only the City and County waves still owe evidence. For those, the authoritative history is the
+**Missouri SoS certified results by district** for 2018 / 2020 / 2022 / 2024. ⚠ **Read result-table headers by NAME.**
    The Nashville wave got nine seats wrong because a fixed-column parser silently read the wrong
    column and ranked candidates by row order, with no error at any point.
 
