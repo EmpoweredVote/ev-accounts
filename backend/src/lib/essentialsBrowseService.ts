@@ -12,7 +12,7 @@ import { pool } from './db.js';
 import { cache } from './cache.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
 import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
-import { PHOTO_RESTRICTION_SELECT_SQL } from './photoRestriction.js';
+import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 
 // Overlap resolution is pure geometry — it only changes when geofence boundaries
 // are (re)loaded, which happens during seeding, not at request time. Caching the
@@ -552,6 +552,7 @@ export async function getPoliticiansByArea(
     full_name: row.full_name ?? '',
     party: row.party ?? '',
     photo_origin_url: row.photo_origin_url ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: row.web_form_url ?? '',
     urls: row.urls ?? null,
     email_addresses: row.email_addresses ?? null,
@@ -860,6 +861,7 @@ export async function getPoliticiansByGovernmentList(
     full_name: row.full_name as string ?? '',
     party: row.party as string ?? '',
     photo_origin_url: row.photo_origin_url as string ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: row.web_form_url as string ?? '',
     urls: row.urls as string[] ?? null,
     email_addresses: row.email_addresses as string[] ?? null,
@@ -944,6 +946,7 @@ function mapBrowseRow(row: Record<string, unknown>): PoliticianFlatRecord {
     full_name: (row.full_name as string) ?? '',
     party: (row.party as string) ?? '',
     photo_origin_url: (row.photo_origin_url as string) ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: (row.web_form_url as string) ?? '',
     urls: (row.urls as string[]) ?? null,
     email_addresses: (row.email_addresses as string[]) ?? null,
