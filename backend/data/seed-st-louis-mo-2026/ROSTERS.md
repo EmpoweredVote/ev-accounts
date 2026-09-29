@@ -55,9 +55,113 @@ Commissioners' certified results PDFs.
 ## St. Louis County
 
 ⚠ **`curl` gets HTTP 403 from `stlouiscountymo.gov` even with a browser user agent. Use Playwright.**
+Re-verified 2026-09-29: a full Chrome UA still returns 403 with a 5,786-byte body.
 
-🔴 **The seven council district pages do not name their members** — contact details only. An email
-prefix is not a name.
+### The office list — 10 seats, settled 2026-09-29
+
+Charter § 6.010 enumerates them **negatively**, so the list is exhaustive:
+
+> "There shall be no elective county officers other than county executive, council members,
+> prosecuting attorney and assessor."
+
+🟢 **The charter is on Municode as searchable text** —
+`library.municode.com/mo/st._louis_county/codes/code_of_ordinances?nodeId=STLOCOCH2020`
+(`ST. LOUIS COUNTY CHARTER 2020`, adopted by voters 2020-08-04, codified through 2026-02-17).
+⚠ `api.municode.com/CodesContent` returns **401** to `curl`; read the page in Playwright.
+
+Certified results agree, read contest by contest across both four-year cohorts:
+
+| Seat | Certified winner | Holds it now (county's own pages, 2026-09-29) |
+|---|---|---|
+| County Executive | Sam Page (D) 51.56%, Nov 2022 | Sam Page |
+| Prosecuting Attorney | Wesley Bell (D) 70.69%, Nov 2022 | 🔴 **Melissa Price Smith** |
+| County Assessor | Jake Zimmerman (D) 57.35%, Nov 2022 | Jake Zimmerman |
+| Council 1 | Rita Heard Days (D) unopposed, Nov 2022 | Rita Heard Days — Chair |
+| Council 2 | Gretchen Bangert (D) 67.13%, Nov 2024 | Gretchen Bangert |
+| Council 3 | Dennis Hancock (R) 51.22%, Nov 2022 | Dennis Hancock |
+| Council 4 | Shalonda Webb (D) 80.29%, Nov 2024 | Shalonda D. Webb |
+| Council 5 | Lisa D. Clancy (D) 63.78%, Nov 2022 | Lisa D. Clancy |
+| Council 6 | G. Michael Archer (R) 52.50%, Nov 2024 | Michael Archer |
+| Council 7 | Mark A. Harder (R) 58.40%, Nov 2022 | Mark Harder — Vice Chair |
+
+🔴 **THE COUNTY ELECTS NO SHERIFF, TREASURER, COLLECTOR, RECORDER, CIRCUIT CLERK, AUDITOR, CLERK,
+COUNSELOR OR PUBLIC ADMINISTRATOR.** The charter appoints every one (§§ 2.200, 2.240, 4.060, 4.350,
+4.450, 5.020, 6.020), and there is no sheriff or coroner at all — § 4.270 gives a board of police
+commissioners and § 4.150 a chief medical examiner. **The City of St. Louis elects seven of those
+offices. Do not copy wave 3's list across.**
+
+### 🔴🔴 A TRUNCATED CSV NAMED THE RUNNER-UP, UNDER A CLEAN HTTP 200
+
+`curl` wrote a short body and **exited 0** for three of five certified files. The partial Nov 2024
+file held only part of County Council District 6, so aggregating it named **Kevin Schartner** the
+winner at **53.13%**. The complete file names **G. Michael Archer** at **52.50%**. The runner-up,
+at a believable margin, correctly formatted, with nothing erroring. Truncation also hid **six
+contests** from that election's enumeration (83 → 89), so the office list itself was at risk.
+
+🔴 **It was caught only by the council's own roster page.** A certified tally verifies nothing about
+itself.
+
+`county-results/fetch.sh` loops on `Content-Length` until each file is byte-exact, and
+`county-results/derive_roster.py` **refuses to read a vote** until every byte count matches. Both
+were watched failing first. Method and URLs: `county-results/FETCH.md`.
+
+### 🟢 The council landing page NAMES all seven
+
+`stlouiscountymo.gov/st-louis-county-government/county-council/` lists every member with Chair and
+Vice Chair. 🔴 The seven **district** pages still carry contact details only — a phone number, an
+address and an email — and **an email prefix is not a name**. Earlier notes here said the council
+never names its members; that was true of the district pages only.
+
+### The election authority — and it is not the City's
+
+`stlouiscountymo.gov/st-louis-county-government/board-of-elections/election-results-archive/`
+indexes every election from 2000 to 2026. Each election page carries three links:
+`Official Election Results` (PDF), `Precinct Results` (PDF) and **`CSV Results`**.
+
+🟢 **Take the CSV.** It has `Contest Title`, `Choice Name`, `Choice Party` and `Total Votes` as real
+columns, so two of the three ways a certified PDF lies — abbreviated contest names and pypdf space
+injection — cannot apply. **The third still does: presence is not a win.** Read the counts.
+
+⚠ The URL pattern `extcontent.stlouisco.com/BOE/eResults/el<YYMMDD>/CSV.csv` **does not hold before
+about 2021**. Nov 2020 is `el201103/112020Detailed.csv`; `el201103/CSV.csv` is a 404. Take the href
+from the archive page rather than composing it.
+
+### Council district geography — two names, one map
+
+On the county's ArcGIS org `w657bnjzrjguNyOy`
+(`services2.arcgis.com/w657bnjzrjguNyOy/arcgis/rest/services/<name>/FeatureServer/0`):
+
+| Layer | Internal name | Verdict |
+|---|---|---|
+| `Council_District_Plan_2022` | `…SDEDBO.Council_District_Plan_2022` | current |
+| `Council_Districts_WFL1` | **`Council_Districts_2023`** | current, **same map** |
+| `County_Council_Districts_2019` | — | superseded |
+
+🟢 The first two are **identical ground**: grid-sampled at 160 × 160, **11,527 of 11,527** interior
+points assign to the same district, 0 different, 0 one-sided. 🟢 The 2019 layer is the control and
+**disagrees** — 217 points differ (1.88%) — so the comparator is not blind. `cmp_maps.py` does this
+and needs no geometry library.
+
+▶ Load `Council_Districts_WFL1`: same geometry, plus a `Hyperlink` field holding each district's own
+page URL.
+
+### Dating: the charter gives a computed day, so it is NOT a term start
+
+§§ 2.040, 3.010, 5.040 and 6.050 all say the officer takes office **"on the first Tuesday of January
+following the election"**. That is exactly the shape CLAUDE.md forbids. Do not compute it.
+
+▶ § 2.050 requires a first regular council meeting every calendar year. Agendas and **journals** are
+on iCompass — `stlouisco.civicweb.net/Portal/MeetingTypeList.aspx`. That is this wave's analogue of
+the House and Senate Journals. Where no document states a date, use month precision and say so in
+`source`, as wave 3 did for six city officers.
+
+⚠ **The Prosecuting Attorney's start is not in any certified result.** Bell won in 2022 and then won
+a US House seat; § 5.050 fills the vacancy by county executive appointment with council
+confirmation. Melissa Price Smith's date must come from that appointment or confirmation record.
+
+⚠ **County Executive appears in BOTH Nov 2020 and Nov 2022.** Charter § 3.010 puts the office on
+1982 + 4n, so 2020 is off-cycle. Sam Page won both. Do not read the 2020 row as a regular term.
+
 
 ---
 

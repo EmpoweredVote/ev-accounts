@@ -385,8 +385,13 @@ claim left beside its correction is how this spec misled a session once already.
 ## ▶ WAVE 4 HANDOFF — St. Louis County (the next session starts here)
 
 Read this file's wave 3 section first, then `backend/data/seed-st-louis-mo-2026/ROSTERS.md`, then
-CLAUDE.md's occupancy section. Everything in "What IS established for St. Louis County" below was
-measured on 2026-09-28 and is thin — re-verify before acting on it.
+CLAUDE.md's occupancy section.
+
+🟢 **UPDATE 2026-09-29 — THE OFFICE LIST IS SETTLED.** "What IS established for St. Louis County"
+below has been rewritten and is no longer thin: **10 elected seats**, agreed by the charter's own
+negative enumeration and by both certified November cohorts, with every current holder confirmed
+against the county's own pages. Read that section, not the three warnings below, wherever the two
+disagree — **two of the three have been disproved** and say so in place.
 
 ### Environment
 
@@ -413,15 +418,29 @@ allocated, never counted: `npm run steward --prefix backend -- slot CC`.
    29189's id is the correct one.
 
 3. **THE COUNTY SITE 403s EVERY `curl`, INCLUDING WITH A BROWSER UA. Playwright gets through.**
-   And the county charter is published only through a **Yudu web reader**
-   (`content.yudu.com/web/44p6g/0A44qnp/StLouisCountyCharter/index.html`), not as a PDF.
+   ✅ Re-verified 2026-09-29: `curl` with a full Chrome UA gets **HTTP 403, 5,786 bytes**; Playwright
+   renders the page.
+   🟢 **DISPROVED — the charter is NOT Yudu-only.** It is on **Municode as searchable text**
+   (`library.municode.com/mo/st._louis_county/codes/code_of_ordinances?nodeId=STLOCOCH2020`),
+   together with the whole Revised Code, codified through February 2026. The Yudu reader is one
+   publication of it, not the only one. ⚠ Municode's `api.municode.com/CodesContent` endpoint
+   returns **401** to `curl` — read the page in Playwright.
+
+🔴 **AND THERE IS A FOURTH, WHICH COST THIS WAVE A WRONG WINNER: A CERTIFIED CSV CAN ARRIVE
+   TRUNCATED UNDER A CLEAN HTTP 200.** Three of five files did. The short `el241105` named the
+   **runner-up** in County Council District 6 at a believable 53/47 margin, and nothing errored.
+   See the settled section below, and `county-results/FETCH.md`.
 
 ### 🔴 The rules waves 2 and 3 paid for, that apply here unchanged
 
 - 🔴🔴 **A ROSTER PAGE IS NOT THE OFFICE LIST — THE BALLOT IS.** Proven twice now. The city's own
-  "All Elected Officials" page omitted the **Sheriff** entirely. The county's council pages are
-  worse: **they do not name their members at all**, only a phone number, an address and an email.
-  **An email prefix is not a name.** Take the office list and the members from certified results.
+  "All Elected Officials" page omitted the **Sheriff** entirely. Take the office list from certified
+  results. ✅ Held again here: the charter and the ballots agree on 10 seats.
+  🟢 **PARTLY DISPROVED — the council DOES name its members.** The seven **district** pages carry a
+  phone number, an address and an email only, and an email prefix is not a name. But the council's
+  **landing page** (`…/county-council/`) names all seven, with Chair and Vice Chair. That page is
+  what caught the truncated CSV, so the rule cuts both ways: **a roster page is not the office list,
+  and a certified tally is not self-verifying either. Read both.**
   - ⚠ **The county has its OWN election authority**, separate from the city's Board of Election
     Commissioners whose archive wave 3 used. Find it; do not assume the city's results cover the
     county.
@@ -439,9 +458,11 @@ allocated, never counted: `npm run steward --prefix backend -- slot CC`.
 - 🔴 **A detector reporting "nothing found" needs a positive control**, and **a control can pass for
   the wrong reason**. In wave 3 two gate controls were **shadowed** by earlier gates and had to be
   reordered. Watch each gate fail on ITS OWN gate.
-- 🔴 **OCCUPANCY IS FLOORED AT THE MAP CHANGE, NOT THE TERM** (ruling 2026-09-28). **Establish
-  whether the 7 council districts were redrawn**, and when they first had officeholders — that date
-  is the floor, exactly as 2023-01-04 was for the General Assembly and 2023-04-18 for the wards.
+- 🔴 **OCCUPANCY IS FLOORED AT THE MAP CHANGE, NOT THE TERM** (ruling 2026-09-28).
+  ✅ **ANSWERED 2026-09-29: they were redrawn, by the 2021 commission (charter § 2.035, every tenth
+  year), and the two cohorts floor at DIFFERENT dates** — districts 1/3/5/7 at their January 2023
+  term start, districts 2/4/6 at their January **2025** one, because 2/4/6 were last elected on the
+  old map in Nov 2020. Full reasoning in the settled section below.
 - 🔴 **A TERM START COMES FROM A DOCUMENT THAT STATES IT**, never a statute or a computed day. In
   wave 3 the Mayor's and the Treasurer's own pages stated theirs; six others did not and carry
   month precision with the `source` saying so. That is acceptable — a guess is not.
@@ -471,25 +492,189 @@ Headshots and their licences, and the city banner. 🔴 **`photo_custom_url` is 
 `politician_images` row changes nothing a voter sees. A blank beats a wrong face.
 
 
-### What IS established for St. Louis County (measured 2026-09-28, thin — re-verify)
+### ✅ What IS established for St. Louis County — SETTLED 2026-09-29
 
+🔴 **The block that stood here has been REPLACED.** It was measured on 2026-09-28 and labelled
+"thin"; three of its claims are now disproved, and they are called out below so a later session
+does not re-derive them from the old wording. Nothing below is a guess — each row names its source.
 
-- **7 single-member council districts.** The county's own page: *"The council shall consist of seven
-  members, each of whom shall be a qualified voter and resident in their respective district."*
-- **County Executive Sam Page.**
-- Departments that exist: County Assessor, County Auditor, County Clerk, County Prosecutor,
-  Collector of Revenue and Recorder of Deeds (the last two under Revenue). **Which of these are
-  ELECTED is a charter question and is NOT yet established** — St. Louis County is a charter county
-  and a charter county may appoint offices that are elected elsewhere in Missouri. Do not copy the
-  City's list across.
-- 🔴 **The council's seven district pages do NOT name their members.** Each carries a phone number,
-  an address and an email only. The District 1 email is `rdays@stlouiscountymo.gov`. **An email
-  prefix is not a name** — take the members from certified results or council journals.
-- ⚠ **The county site 403s every `curl`, including with a browser UA. Playwright gets through.**
-- The county charter is published only through a Yudu web reader
-  (`content.yudu.com/web/44p6g/0A44qnp/StLouisCountyCharter/index.html`), not as a PDF.
+#### The elected-office list: **10 seats**, agreed by two independent sources
 
----
+**Source 1 — the charter, § 6.010, verbatim.** It is a *negative* enumeration, so it is exhaustive:
+
+> "There shall be **no elective county officers other than county executive, council members,
+> prosecuting attorney and assessor.** Elective officers shall be nominated and elected in the
+> manner provided in the election laws for the nomination and election of state and county
+> officers."
+
+🟢 **The charter is on MUNICODE as searchable text** —
+[`library.municode.com/mo/st._louis_county/codes/code_of_ordinances?nodeId=STLOCOCH2020`](https://library.municode.com/mo/st._louis_county/codes/code_of_ordinances?nodeId=STLOCOCH2020),
+titled `ST. LOUIS COUNTY CHARTER 2020`, *"Adopted By Voters August 4, 2020"*, codified through
+Ordinance 29,532 of 2026-02-17. **The Yudu web reader is not the only publication, and this spec
+said it was.** Municode also carries the whole Revised Code, so use it for any later ordinance
+question. ⚠ Its `api.municode.com/CodesContent` endpoint returns **401** to `curl`; read the page
+in Playwright and pull `innerText`.
+
+**Source 2 — certified results, read from the county's OWN election authority.** Both four-year
+cohorts, enumerated contest by contest rather than searched by name.
+
+| Office | Seats | Charter cycle | Cohort | District |
+|---|---|---|---|---|
+| County Executive | 1 | § 3.010 — 1982 + 4n | Nov 2022 → Nov 2026 | countywide |
+| Prosecuting Attorney | 1 | § 5.040 — 1982 + 4n | Nov 2022 → Nov 2026 | countywide |
+| County Assessor | 1 | § 6.050 — 2014 + 4n | Nov 2022 → Nov 2026 | countywide |
+| County Council 1, 3, 5, 7 | 4 | § 2.040 — odd districts, 1982 + 4n | Nov 2022 → Nov 2026 | single-member |
+| County Council 2, 4, 6 | 3 | § 2.040 — even districts, 1980 + 4n | Nov 2024 → Nov 2028 | single-member |
+
+#### 🔴 The measured absences — and why the City's list must NOT be copied across
+
+Each office below is **appointed by the charter**, and each returns **zero** hits in all four
+complete certified files (Nov 2020, Nov 2022, Nov 2024, Aug 2026):
+
+| Office | Charter | Appointed by |
+|---|---|---|
+| County Auditor | § 2.200 | the council |
+| County Clerk | § 2.240 | the administrative director |
+| Treasurer | § 4.060 | the director of administration |
+| Collector · Recorder of Deeds | § 4.350 | the director of revenue |
+| Circuit Clerk | § 4.450 | the director of judicial administration |
+| County Counselor | § 5.020 | the county executive |
+| Public Administrator | § 6.020 | a majority of the circuit judges, council confirming |
+| **Sheriff** | — | no such office. § 4.270 gives a board of police commissioners |
+| **Coroner** | — | no such office. § 4.150 gives a chief medical examiner |
+
+🔴🔴 **THE CITY ELECTS SEVEN OFFICES THE COUNTY DOES NOT.** Wave 3 seated a Sheriff, a Treasurer,
+a Collector of Revenue, a Recorder of Deeds, a License Collector, a Circuit Attorney and a
+Comptroller for the City. **The County elects none of them.** The two lists share only the word
+"county". Copying wave 3's list across would invent eight offices.
+
+**The absence test had three working controls.** `TREASURER` returns 4,942 hits in Nov 2020 and
+3,860 in Nov 2024 (`STATE TREASURER`) and 0 in Nov 2022 and Aug 2026. `COUNTY ASSESSOR` returns 0
+in Nov 2020 and Nov 2024 and thousands in Nov 2022 and Aug 2026 — exactly what § 6.050's 2014 + 4n
+cycle predicts. So the matcher reads this corpus and a zero is a real answer.
+
+#### 🔴🔴 A TRUNCATED CSV RETURNED A PLAUSIBLE WRONG WINNER UNDER A CLEAN HTTP 200
+
+This is the rule this wave paid for. `curl` wrote a **short body and exited 0** for three of five
+files:
+
+| File | Written | Actual |
+|---|---|---|
+| `el241105` Nov 2024 general | 6,127,301 | **9,364,370** |
+| `el240806` Aug 2024 primary | 5,449,212 | **14,766,495** |
+| `el220802` Aug 2022 primary | 6,675,537 | **6,929,384** |
+
+A truncated precinct file is not a smaller answer — it is a **different** one. The partial
+`el241105` held only part of County Council District 6, so aggregating it named **Kevin Schartner**
+the winner at **53.13%**. The complete file names **G. Michael Archer** at **52.50%**. The
+runner-up. At a believable margin. Correctly formatted. Nothing errored.
+
+🔴 **It was caught only by cross-checking the tally against the body's own roster page.** A
+certified tally verifies nothing about itself. Truncation also hid **six contests** from the Nov
+2024 enumeration (83 → 89), so the office list itself was at risk.
+
+Guards now in place, and each was **watched failing first**:
+`backend/data/seed-st-louis-mo-2026/county-results/derive_roster.py` asserts every file's exact
+byte count before it reads a vote; `fetch.sh` loops on `Content-Length` until each file matches.
+Truncate a file and the gate refuses; run `fetch.sh` and it repairs; the gate then passes. Full
+record in that directory's `FETCH.md`.
+
+⚠ **The URL pattern `eResults/el<YYMMDD>/CSV.csv` does not hold before about 2021.** Nov 2020 is
+`el201103/112020Detailed.csv`, and `el201103/CSV.csv` is a 404. Take the href from the archive page.
+
+#### The seats and who holds them — 2026-09-29
+
+The middle column is what the certified result says. The right column is what the county publishes
+**today**. They are different questions.
+
+| Seat | Certified winner | Holds it now |
+|---|---|---|
+| County Executive | Sam Page (D) 51.56%, Nov 2022 | **Sam Page** |
+| Prosecuting Attorney | Wesley Bell (D) 70.69%, Nov 2022 | 🔴 **Melissa Price Smith** |
+| County Assessor | Jake Zimmerman (D) 57.35%, Nov 2022 | **Jake Zimmerman** |
+| Council 1 | Rita Heard Days (D), unopposed, Nov 2022 | **Rita Heard Days** — Chair |
+| Council 2 | Gretchen Bangert (D) 67.13%, Nov 2024 | **Gretchen Bangert** |
+| Council 3 | Dennis Hancock (R) 51.22%, Nov 2022 | **Dennis Hancock** |
+| Council 4 | Shalonda Webb (D) 80.29%, Nov 2024 | **Shalonda D. Webb** |
+| Council 5 | Lisa D. Clancy (D) 63.78%, Nov 2022 | **Lisa D. Clancy** |
+| Council 6 | G. Michael Archer (R) 52.50%, Nov 2024 | **Michael Archer** |
+| Council 7 | Mark A. Harder (R) 58.40%, Nov 2022 | **Mark Harder** — Vice Chair |
+
+🔴 **THE PROSECUTING ATTORNEY IS NOT WESLEY BELL.** Bell won in Nov 2022 and then won a US House
+seat. § 5.050 fills the vacancy by county executive appointment with council confirmation. The
+office's own site names **Prosecutor Melissa Price Smith**
+(`stlcopa.stlouiscountymo.gov`), and she won the Aug 2026 Democratic primary with 74.10%. **Her
+term start needs the appointment or confirmation document — it is not in any certified result.**
+
+🔴 **THE COUNCIL LANDING PAGE NAMES ALL SEVEN MEMBERS**, with Chair and Vice Chair —
+`stlouiscountymo.gov/st-louis-county-government/county-council/`. This spec said the council "does
+not name their members at all". That is true of the seven **district** pages, and false of the
+landing page. 🟢 That page is the cross-check that caught the truncation.
+
+⚠ The roster comparison in `derive_roster.py` keys on the **surname only**. It is a reporting
+cross-check, not a guard: a surname match can be coincidence, and a surname change (wave 2's
+Mazzie Boyd → Christensen) would read as a mismatch. Read the row, do not trust the flag.
+
+#### Geography — three layers, and two of them are the same map
+
+All three are on the county's own ArcGIS org `w657bnjzrjguNyOy`
+(`services2.arcgis.com/w657bnjzrjguNyOy/arcgis/rest/services/<name>/FeatureServer/0`), each with
+exactly 7 features keyed `DISTRICT` 1–7:
+
+| Layer | Internal name |
+|---|---|
+| `Council_District_Plan_2022` | `stlco_sde_dw.SDEDBO.Council_District_Plan_2022` |
+| `Council_Districts_WFL1` — titled "St. Louis County Council District Boundaries" | **`Council_Districts_2023`** |
+| `County_Council_Districts_2019` | the superseded map |
+
+🟢 **`Council_District_Plan_2022` and `Council_Districts_WFL1` are the SAME MAP.** Grid-sampled at
+160 × 160 over the county bbox: **11,527 of 11,527** interior points assign to the same district,
+0 different, 0 one-sided. Two digitisations of one plan, not two plans.
+
+🟢 **The 2019 layer is the control, and it DISAGREES** — 217 points differ (1.88%), plus 23 and 42
+one-sided. So the comparator detects a real difference and was not blind.
+`county-results/cmp_maps.py` is the script; it needs no geometry library.
+
+▶ **Load `Council_Districts_WFL1`.** Same geometry as the 2022 plan, and it additionally carries a
+`Hyperlink` field holding each district's own page URL — usable for `offices.url`. Neither layer
+names a member.
+
+#### 🔴 The occupancy floor — RULED 2026-09-29 (Cantrell)
+
+Charter § 2.035 orders reapportionment within thirty days before June 1 **each tenth year**, so the
+current map comes from the **2021** commission. The two cohorts therefore floor at different dates:
+
+- **Districts 1, 3, 5, 7** were first elected on the current map in **Nov 2022**. Floor at their
+  January 2023 term start.
+- **Districts 2, 4, 6** were last elected on the **old** map in Nov 2020 and first elected on the
+  current map in **Nov 2024**. Floor at their **January 2025** term start.
+
+The ruling: occupancy of the seat **as currently drawn** begins at the first term begun under the
+current map. This is the same rule as 2023-01-04 for the General Assembly and 2023-04-18 for the
+city wards. Flooring all seven at 2023 would claim the even-district members represented ground
+they did not represent in 2023 and 2024.
+
+The three countywide offices carry no map question. They floor at their own term start.
+
+#### 🔴 Term-start dates are NOT available from the charter
+
+§§ 2.040, 3.010, 5.040 and 6.050 all say the officer takes office **"on the first Tuesday of
+January following the election"**. That is a **computed statutory day**, which CLAUDE.md forbids as
+a term start. Do not compute 2023-01-03 or 2025-01-07 from it.
+
+▶ **Get the date from a document that states it.** § 2.050 requires the council to meet in the
+first regular meeting of every calendar year and select a chair. The county runs agendas and
+**journals** through iCompass — `stlouisco.civicweb.net/Portal/MeetingTypeList.aspx`. That is this
+wave's analogue of the House and Senate Journals wave 2 used. If a journal does not state an oath
+date, fall back to **month precision** and say so in `source`, exactly as wave 3 did for six city
+officers.
+
+#### Still open when this section was written
+
+- The council journals, for each of the ten term starts.
+- Melissa Price Smith's appointment and confirmation date.
+- Whether the 2021 reapportionment commission's filing with the county clerk states an effective
+  date (charter § 2.035 requires the filing). It would confirm the floor rather than change it.
 
 ## Coordination
 

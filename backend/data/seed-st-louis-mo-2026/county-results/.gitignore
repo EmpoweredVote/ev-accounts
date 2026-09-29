@@ -1,0 +1,5 @@
+# Certified result CSVs from the St. Louis County Board of Elections.
+# 52 MB in total, so they are not committed. fetch.sh re-fetches them and
+# derive_roster.py REFUSES to run on a short file -- a truncated CSV returns a
+# plausible wrong winner under a clean HTTP 200. See FETCH.md.
+csv-*.csv
