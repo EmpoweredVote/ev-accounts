@@ -72,6 +72,16 @@ describe('regexes', () => {
     expect(LEGACY_EXTERNAL_ID_RE.test('wiran-1761')).toBe(true);
     expect(LEGACY_EXTERNAL_ID_RE.test('akron-oh_0001')).toBe(false);
   });
+
+  it('matches a widened id, so the minter and the validator agree', () => {
+    expect(NEW_EXTERNAL_ID_RE.test(mintExternalId('akron-oh', 10000))).toBe(true);
+    expect(NEW_EXTERNAL_ID_RE.test('akron-oh_123456')).toBe(true);
+  });
+
+  it('still rejects an under-padded sequence', () => {
+    expect(NEW_EXTERNAL_ID_RE.test('akron-oh_1')).toBe(false);
+    expect(NEW_EXTERNAL_ID_RE.test('akron-oh_001')).toBe(false);
+  });
 });
 
 describe('nextSequence', () => {
