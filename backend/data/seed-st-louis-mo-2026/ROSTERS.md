@@ -342,3 +342,40 @@ Board's representation page, the April 2023 ballot and the Board's session roste
   — a GET, or the name `sessionID`, silently returns the CURRENT session. Always read back the
   `selected` option to confirm which session you actually got.
 - Ward polygons: `maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer/4`.
+
+---
+
+## ✅ Wave 4 applied 2026-09-29 — St. Louis County
+
+`CC_0181` + `CC_0182`: 1 government, 4 chambers, 7 council districts, **10 offices, 10 seated**,
+plus **7 council polygons** (`X0076`). The `29510` `ocd_id` collision is repaired. Full record in
+the spec's wave 4 section.
+
+Measured in production after the apply: 10 offices, 10 seated, 0 districts without a polygon,
+`offices_missing_terms` unflagged back to **239**, and 🔴 **St. Louis County MINNESOTA unchanged at
+10 offices / 3 on district `27137`**.
+
+### The probe that matters
+
+| Point | County seats |
+|---|---|
+| Clayton, County Government Center | District 5 Clancy (2023-01-10) · Page · Price Smith · Zimmerman |
+| St Ann, north county | District 2 Bangert (**2025-01-07**) · the same three |
+| 🔴 **CITY CONTROL** 1200 Market St, and 5005 Chippewa St | **none** |
+| **CONTROL** Chicago | **none** |
+
+🟢 Two county addresses, two different council members. 🟢 **Both city addresses return zero county
+rows** — the City of St. Louis is not in St. Louis County, controlled end to end.
+
+### 🔴 The geography gate had to be geometric, and it was watched failing six ways
+
+7 is 7 under the 2019 plan too, so the count proves nothing. `--control=agree` points the
+agreement check at the 2019 layer (fires at 12.1460%); `--control=vintage` asks the disagreement
+check to tell the 2022 plan apart from itself (fires at 0.0000%). Neither gate is worth anything
+alone. All six controls fired on their own gate with none shadowed.
+
+### 🔴 And the truncated CSV is the rule to carry forward
+
+A short Nov 2024 file named **Kevin Schartner** the District 6 winner at 53.13%; the complete file
+names **G. Michael Archer** at 52.50%. HTTP 200, curl exit 0, correct formatting, nothing erroring.
+**Caught only by the council's own roster page.** See the top of this file and `county-results/FETCH.md`.

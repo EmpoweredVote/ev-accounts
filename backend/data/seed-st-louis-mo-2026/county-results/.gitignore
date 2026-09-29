@@ -10,3 +10,10 @@ min-*.pdf
 min-*.txt
 m*.json
 meetings-*.json
+
+# Open Civic Data registry dumps. country-us.csv is 22 MB. Re-fetch from
+# raw.githubusercontent.com/opencivicdata/ocd-division-ids/master/identifiers/
+#   country-us.csv                 -> county:st_louis (place-29189) and county:st_louis_city,
+#                                     whose own note says "do not confuse with St Louis County"
+#   country-us/state-mo-local_gov.csv -> county:st_louis/council_district:1 .. :7
+ocd*.csv

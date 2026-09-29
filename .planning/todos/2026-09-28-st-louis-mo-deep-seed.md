@@ -1,6 +1,6 @@
 # St. Louis, Missouri deep seed
 
-**Created** 2026-09-28 · **Status** waves 1 (geography), 2 (General Assembly) and 3 (City of St. Louis) APPLIED · **Author namespace** `CC_`
+**Created** 2026-09-28 · **Status** waves 1 (geography), 2 (General Assembly), 3 (City of St. Louis) and **4 (St. Louis County)** APPLIED · **Author namespace** `CC_`
 **Scope** (decided by Cantrell, 2026-09-28) the Missouri General Assembly, the City of St. Louis,
 and St. Louis County — offices, people and dated terms, plus headshots and one city banner.
 **Out of scope** compass stances; the 88 municipalities inside St. Louis County; judicial seats;
@@ -382,7 +382,10 @@ claim left beside its correction is how this spec misled a session once already.
 
 ---
 
-## ▶ WAVE 4 HANDOFF — St. Louis County (the next session starts here)
+## ✅ WAVE 4 HANDOFF — St. Louis County (COMPLETED 2026-09-29; kept for its rules)
+
+🟢 **Wave 4 is APPLIED.** This handoff is kept because its rules held, and the section below it
+records what was settled. The applied record is at the end of this file.
 
 Read this file's wave 3 section first, then `backend/data/seed-st-louis-mo-2026/ROSTERS.md`, then
 CLAUDE.md's occupancy section.
@@ -675,6 +678,114 @@ officers.
 - Melissa Price Smith's appointment and confirmation date.
 - Whether the 2021 reapportionment commission's filing with the county clerk states an effective
   date (charter § 2.035 requires the filing). It would confirm the floor rather than change it.
+
+---
+
+## ✅ Wave 4 — St. Louis County, APPLIED 2026-09-29
+
+One geography load and two migrations, all applied to production. `CC_0181` (structure) and
+`CC_0182` (occupancy), both gates passed, dry-run first with the rollback **confirmed to have
+reverted** before each real apply.
+
+| Piece | Result |
+|---|---|
+| `scripts/load-stlouis-county-council-boundaries.mjs` | **7** council polygons, `mtfcc X0076`, from the county's own ArcGIS org |
+| `CC_0181` | 1 government, 4 chambers, 7 districts, **10 offices**, and the `29510` `ocd_id` repaired |
+| `CC_0182` | **10 people, 10 terms**; all 10 seats filled |
+
+### Measured in production after the apply — not read from the gates
+
+| Check | Result |
+|---|---|
+| St. Louis County MO offices | **10** |
+| Seated (counting `och.politician_id`, never `count(*)`) | **10** |
+| Council districts with no polygon | **0** |
+| `offices_missing_terms` unflagged | **239** — exactly the baseline, unmoved |
+| 🔴 St. Louis County **MINNESOTA** offices | **10** — unchanged |
+| 🔴 Offices on the Minnesota district `27137` | **3** — unchanged |
+| `29510` `ocd_id` | `…/county:st_louis_city` (repaired) |
+| `29189` `ocd_id` | `…/county:st_louis` (untouched, as intended) |
+| `npm run check:occupancy` | passes |
+| `check:migrations` · `check:reservations` · `steward sync` | all clean |
+
+### The address probe, live against production
+
+| Point | County seats returned |
+|---|---|
+| 41 S Central Ave, Clayton (County Government Center) | **District 5 Lisa D. Clancy** (2023-01-10) · Sam Page · **Melissa Price Smith** (2025-01-03) · Jake Zimmerman |
+| 10405 St Charles Rock Rd, St Ann (north county) | **District 2 Gretchen Bangert** (2025-01-07) · the same three countywide |
+| 🔴 **CITY CONTROL:** 1200 Market St (City Hall) | **none** — Ward 14 Aldridge and the citywide officers only |
+| 🔴 **CITY CONTROL:** 5005 Chippewa St, St Louis | **none** — Ward 5 Devoti and the citywide officers only |
+| **CONTROL:** Chicago | **none** |
+
+🟢 Two county addresses return two different council members, so the ward-style failure (every
+address answering with all seven) did not happen. 🟢 **Both city addresses return ZERO county
+rows**, which is this wave's central confusion controlled end to end: the City of St. Louis is not
+in St. Louis County. 🟢 The two cohort floors show through — Clayton reads 2023-01-10, St Ann reads
+2025-01-07.
+
+### The geography gate was watched failing, six ways
+
+The count cannot date this map: 7 is 7 under the superseded 2019 plan too. So vintage is
+**geometric, and asserted in both directions**.
+
+| Control | Result |
+|---|---|
+| `--control=count` | `GATE 1: expected 7 features, got 6` |
+| `--control=agree` | `GATE 2: the layer DISAGREES with Council_District_Plan_2022 by up to 12.1460%` |
+| `--control=vintage` | `GATE 3: NO district differs from County_Council_Districts_2019 by more than 2%` |
+| `--control=overlap` | `GATE 4: 1 pair(s) of council districts overlap` |
+| `--control=probe` | `GATE 5: 41 S Central Ave, Clayton … falls in 0 council district(s)` |
+| `--control=tile` | `GATE 6: the seven districts cover only 85.014% of the county` |
+
+🟢 **Each control passed every earlier gate and failed only its own.** None was shadowed — the
+defect wave 3 had to reorder around. Gates 2 and 3 deliberately read the **untampered** fetch,
+because they are claims about the published layers rather than about the row list; without that,
+`overlap`/`probe`/`tile` would have tripped GATE 2 first.
+
+Measured on the real run: **0.0000%** symmetric difference against the 2022 plan, **12.1460%**
+against the 2019 map with six of seven districts moved, and **99.940%** of the county covered.
+
+### 🔴🔴 THE RULE THIS WAVE PAID FOR: A TRUNCATED CSV NAMED THE RUNNER-UP
+
+`curl` wrote a short body and **exited 0** for three of five certified files — `el241105` got
+6,127,301 of 9,364,370 bytes, `el240806` 5,449,212 of 14,766,495, `el220802` 6,675,537 of
+6,929,384. A truncated precinct file is not a smaller answer, it is a **different** one: the
+partial Nov 2024 file held only part of County Council District 6, so aggregating it named
+**Kevin Schartner** the winner at **53.13%**. The complete file names **G. Michael Archer** at
+**52.50%**. The runner-up, at a believable margin, correctly formatted, nothing erroring.
+
+It also hid **six contests** from that election's enumeration (83 → 89), so the office list itself
+was at risk.
+
+🔴 **It was caught only by cross-checking the tally against the council's own roster page.** A
+certified tally verifies nothing about itself. `county-results/fetch.sh` now loops on
+`Content-Length` until each file is byte-exact and `derive_roster.py` refuses to read a vote until
+every byte count matches; truncate a file and the gate refuses, run `fetch.sh` and it repairs, and
+the gate then passes. Full record in `county-results/FETCH.md`.
+
+### What this wave decided, and what it left understated
+
+- **The two council cohorts floor at different dates** (ruling 2026-09-29, Cantrell): districts
+  1/3/5/7 at **2023-01-10**, districts 2/4/6 at **2025-01-07**, because 2/4/6 were last elected on
+  the old map in Nov 2020. ⚠ **Shalonda Webb's row understates her on purpose** — she has held
+  District 4 since 2021 and chaired the council in 2023-2024, but District 4 was redrawn under her.
+- **Dates come from the Journal of the County Council**, never from the charter's computed "first
+  Tuesday of January". ⚠ 2023-01-10 is the first date a document places the 2022 cohort in the
+  seat; the charter's computed day was 2023-01-03 and there was **no council meeting on it**. Every
+  such `source` string says so.
+- ⚠ **Sam Page and Jake Zimmerman are understated, by decision** (Cantrell, 2026-09-29). Page has
+  been County Executive since 2019 and Zimmerman Assessor since 2011. A countywide seat has no map
+  floor, so their occupancy could reach further back, but no document for the earlier dates was
+  read and the operator ruled not to chase them. Both rows say so.
+- 🔴 **The Prosecuting Attorney is not the certified winner.** Wesley Bell won Nov 2022 with 70.69%
+  and then won a US House seat. Melissa Price Smith holds it, `how_started => 'appointed'`,
+  2025-01-03 from her own office's page.
+
+### ⚠ What wave 5 still owes
+
+Headshots and their licences, and the city banner. 🔴 **`photo_custom_url` is what renders** — a
+`politician_images` row changes nothing a voter sees. A blank beats a wrong face.
 
 ## Coordination
 
