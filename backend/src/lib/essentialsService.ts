@@ -65,6 +65,7 @@ import {
   buildDistrictQuery,
   buildStatewideQuery,
 } from './districtQueries.js';
+import { PHOTO_RESTRICTION_SELECT_SQL } from './photoRestriction.js';
 export { GeocodingError };
 
 /**
@@ -370,6 +371,7 @@ export async function getPoliticiansFlatList(
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
@@ -1314,6 +1316,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, p.party_short_name,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,

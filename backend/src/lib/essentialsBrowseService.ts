@@ -12,6 +12,7 @@ import { pool } from './db.js';
 import { cache } from './cache.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
 import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
+import { PHOTO_RESTRICTION_SELECT_SQL } from './photoRestriction.js';
 
 // Overlap resolution is pure geometry — it only changes when geofence boundaries
 // are (re)loaded, which happens during seeding, not at request time. Caching the
@@ -437,6 +438,7 @@ export async function getPoliticiansByArea(
     SELECT DISTINCT ON (p.id)
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
@@ -485,6 +487,7 @@ export async function getPoliticiansByArea(
       SELECT DISTINCT ON (p.id)
              p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
              p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
+             ${PHOTO_RESTRICTION_SELECT_SQL},
              p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
              p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
@@ -649,6 +652,7 @@ const DISTRICT_POLITICIAN_SELECT = `
   p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
   p.preferred_name, p.name_suffix, p.party,
   COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
+  ${PHOTO_RESTRICTION_SELECT_SQL},
   p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
   p.finance_summary,
   COALESCE(p.valid_from, '') AS term_start,
@@ -722,6 +726,7 @@ export async function getPoliticiansByGovernmentList(
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
@@ -777,6 +782,7 @@ export async function getPoliticiansByGovernmentList(
              p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
              p.preferred_name, p.name_suffix, p.party,
              COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+             ${PHOTO_RESTRICTION_SELECT_SQL},
              p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
              p.finance_summary,
              COALESCE(p.valid_from, '') AS term_start,
@@ -1006,6 +1012,7 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
@@ -1076,6 +1083,7 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
