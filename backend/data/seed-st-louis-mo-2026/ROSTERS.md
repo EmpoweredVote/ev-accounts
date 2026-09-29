@@ -155,9 +155,37 @@ on iCompass — `stlouisco.civicweb.net/Portal/MeetingTypeList.aspx`. That is th
 the House and Senate Journals. Where no document states a date, use month precision and say so in
 `source`, as wave 3 did for six city officers.
 
-⚠ **The Prosecuting Attorney's start is not in any certified result.** Bell won in 2022 and then won
-a US House seat; § 5.050 fills the vacancy by county executive appointment with council
-confirmation. Melissa Price Smith's date must come from that appointment or confirmation record.
+### ✅ The dates, found 2026-09-29 — `county-term-starts-2026-09-29.json`
+
+🟢 **The Journal of the County Council is this wave's House Journal.** Every regular meeting has
+one, with a **ROLL CALL naming each member present**, and the January journals report the
+inauguration as a past fact. Meeting list: the JSON API
+`stlouisco.civicweb.net/Services/MeetingsService.svc/meetings?from=YYYY-MM-DD&to=YYYY-MM-DD`
+(returns `Id`, `MeetingDate`, `Name`). Then `Portal/MeetingInformation.aspx?Id=<Id>`, click the
+**MINUTES** tab, and take `/document/<id>?printPdf=true`.
+
+| Seats | Start | Document |
+|---|---|---|
+| County Executive · Prosecuting Attorney · Assessor · Council 1, 3, 5, 7 | **2023-01-10** | Journal of 2023-01-10, `/document/110433?printPdf=true` (Id 800) |
+| Council 2, 4, 6 | **2025-01-07** | Journal of 2025-01-07, `/document/388825?printPdf=true` (Id 25750) |
+| Prosecuting Attorney — **Melissa Price Smith** | **2025-01-03** | `stlcopa.stlouiscountymo.gov/prosecutor-melissa-price-smith/` |
+
+- 2023-01-10 — County Executive Page: *"Today, in Memorial Plaza, we had a moment to celebrate …
+  the word inauguration means an official beginning."* Councilwoman Days: *"the inauguration. It was
+  a very nice event this morning."* The roll call that night seats all seven.
+- 2025-01-07 — Councilman Harder: *"We had a great swearing-in ceremony this morning."* Councilman
+  Archer: *"It was a very special day for getting inaugurated."* Roll call names Archer.
+- 2025-01-03 — *"Melissa Price Smith was sworn in on Friday, January 3, 2025, as the St. Louis
+  County Prosecuting Attorney."*
+
+⚠ **2023-01-10 is the first date a DOCUMENT places the 2022 cohort in the seat. It is NOT asserted
+to be the legal term start** — the charter's computed first Tuesday was 2023-01-03, and the
+inauguration was a week later. Say exactly that in `source`. For 2025 the two agree, because
+2025-01-07 was itself the first Tuesday.
+
+⚠ **Still undated: how far back Page and Zimmerman reach.** Page has been County Executive since
+2019 and Zimmerman Assessor since 2011. A countywide seat has no map floor, so their occupancy
+could start earlier than 2023-01-10 — but no document for the earlier dates has been read.
 
 ⚠ **County Executive appears in BOTH Nov 2020 and Nov 2022.** Charter § 3.010 puts the office on
 1982 + 4n, so 2020 is off-cycle. Sam Page won both. Do not read the 2020 row as a regular term.

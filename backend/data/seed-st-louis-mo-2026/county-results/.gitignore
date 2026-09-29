@@ -3,3 +3,10 @@
 # derive_roster.py REFUSES to run on a short file -- a truncated CSV returns a
 # plausible wrong winner under a clean HTTP 200. See FETCH.md.
 csv-*.csv
+
+# Council journals, pulled from civicweb. Re-fetchable from the stable /document/<id> URLs
+# recorded in ROSTERS.md; the quotations that matter are transcribed there.
+min-*.pdf
+min-*.txt
+m*.json
+meetings-*.json
