@@ -1107,7 +1107,7 @@ supervisor, state representative, state senator.
 The banner shipped (`cities/biloxi.jpg`, essentials PR #170) and 18 of the 35 city and county
 headshots are applied (`CC_0175`). **The remaining work is ONE THING: the Mississippi Legislature's
 174 portraits, which are blocked on a permission letter that is DRAFTED AND NOT SENT** —
-[`ms-legislature-portrait-request.md`](./ms-legislature-portrait-request.md). 🔴 **Do not send it
+[`letters/2026-09-28-ms-legislature-portrait-permission.md`](./letters/2026-09-28-ms-legislature-portrait-permission.md). 🔴 **Do not send it
 twice**, and do not import a legislative portrait before a reply arrives.
 ⚠ The block headed "WHAT MS-5 HAS TO ESTABLISH" below is the brief that was written *before* the
 stage ran. Its "0 of 209" is no longer true and its banner instructions are discharged. It is kept
@@ -1384,7 +1384,7 @@ the defect class the write order exists to prevent. All 18 objects were re-fetch
 ### ⛔ The legislature's 174 — drafted, NOT SENT
 
 🔴 **DO NOT SEND THIS TWICE.** The draft is
-[`ms-legislature-portrait-request.md`](./ms-legislature-portrait-request.md). It has not been sent;
+[`letters/2026-09-28-ms-legislature-portrait-permission.md`](./letters/2026-09-28-ms-legislature-portrait-permission.md). It has not been sent;
 if it ever is, the date goes in that file *and* here.
 
 - **All 178 portraits exist**, at `billstatus.ls.state.ms.us/members/{house,senate}/<IMG_NAME>`,
