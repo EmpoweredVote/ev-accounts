@@ -74,6 +74,12 @@ export async function generateReplacement(
     const { QuestionSchema } = await import('../scripts/content-generation/question-schema.js');
     const { auditQuestion } = await import('../services/qualityRules/index.js');
 
+    // Allocate the externalId up front (one query, same cost as before — just
+    // timed earlier) so the prompt below can name the exact id rather than a
+    // bare prefix, which for a new-scheme config (no externalIdPrefix) would
+    // otherwise render as the literal string 'undefined'.
+    const nextId = await getNextExternalId(collectionId);
+
     // Helper to call Anthropic and get raw parsed JSON
     async function callAnthropicForOne(): Promise<unknown> {
       const systemPrompt = buildSystemPrompt(
@@ -86,7 +92,7 @@ export async function generateReplacement(
       const userMessage =
         `Generate exactly 1 civic trivia question in the '${topic}' topic for ${config!.name}. ` +
         `Return JSON with a single 'questions' array containing 1 question. ` +
-        `Use the externalId prefix '${config!.externalIdPrefix}'.`;
+        `Set its externalId field to '${await mintFor(config!, nextId)}'.`;
 
       const response = await client.messages.create({
         model: MODEL,
@@ -147,10 +153,10 @@ export async function generateReplacement(
       return { replaced: false, reason: 'quality-fail: ' + violationMessages.join(', ') };
     }
 
-    // 6. Allocate externalId — queries ALL statuses to avoid collision with archived IDs
-    const nextId = await getNextExternalId(collectionId, config.externalIdPrefix);
-    parsedQuestion.externalId =
-      config.externalIdPrefix + '-' + String(nextId).padStart(3, '0');
+    // 6. Assign externalId — allocated above (before generation) so the prompt
+    // could name it; the underlying query covers ALL statuses to avoid
+    // collision with archived IDs.
+    parsedQuestion.externalId = await mintFor(config, nextId);
 
     // 7. Semantic dedup — guarded by OPENAI_API_KEY
     if (process.env.OPENAI_API_KEY) {
@@ -233,8 +239,7 @@ export async function generateReplacement(
             return { replaced: false, reason: 'near-duplicate' };
           }
           // Reallocate externalId for the retried question
-          parsedQuestion.externalId =
-            config.externalIdPrefix + '-' + String(nextId).padStart(3, '0');
+          parsedQuestion.externalId = await mintFor(config, nextId);
         } else {
           return { replaced: false, reason: 'near-duplicate' };
         }
@@ -371,31 +376,48 @@ async function tryLoadLocaleConfig(slug: string): Promise<LocaleConfig | null> {
   return null;
 }
 
+// ─── Internal: mintFor ────────────────────────────────────────────────────────
+
+/**
+ * Build the next externalId for a locale config, legacy or new-scheme.
+ * A config WITH externalIdPrefix mints the old `<prefix>-<NNN>` shape
+ * (unchanged width — ids of that shape already exist in the DB); a config
+ * WITHOUT one mints the slug-derived `<collectionSlug>_<NNNN>` shape.
+ */
+async function mintFor(
+  config: { externalIdPrefix?: string; collectionSlug: string },
+  seq: number,
+): Promise<string> {
+  if (config.externalIdPrefix) {
+    return `${config.externalIdPrefix}-${String(seq).padStart(3, '0')}`;
+  }
+  const { mintExternalId } = await import('../utils/externalIdentity.js');
+  return mintExternalId(config.collectionSlug, seq);
+}
+
 // ─── Internal: getNextExternalId ─────────────────────────────────────────────
 
 /**
- * Allocate next externalId number for a collection prefix.
+ * Allocate next externalId sequence number for a collection.
  * Queries ALL question statuses (active, expired, archived) to avoid collision
  * with archived externalIds that are still in DB with a UNIQUE constraint.
+ * Scoped by collection membership alone — the collection's prefix (or slug)
+ * is never used to filter here, since under the slug scheme a LIKE on the
+ * prefix would match nothing and silently reset the sequence to 1.
  */
-async function getNextExternalId(collectionId: number, prefix: string): Promise<number> {
+async function getNextExternalId(collectionId: number): Promise<number> {
   const { db } = await import('../db/index.js');
   const { questions, collectionQuestions } = await import('../db/schema.js');
-  const { eq, and, sql } = await import('drizzle-orm');
+  const { eq, sql } = await import('drizzle-orm');
+  const { nextSequence } = await import('../utils/externalIdentity.js');
 
   const result = await db
     .select({
-      maxId: sql<string>`MAX(SUBSTRING(${questions.externalId} FROM '[0-9]+')::int)`,
+      maxId: sql<string>`MAX(SUBSTRING(${questions.externalId} FROM '[0-9]+$')::int)`,
     })
     .from(questions)
     .innerJoin(collectionQuestions, eq(questions.id, collectionQuestions.questionId))
-    .where(
-      and(
-        eq(collectionQuestions.collectionId, collectionId),
-        sql`${questions.externalId} LIKE ${prefix + '-%'}`,
-      ),
-    );
+    .where(eq(collectionQuestions.collectionId, collectionId));
 
-  const maxId = result[0]?.maxId ? parseInt(result[0].maxId, 10) : 0;
-  return maxId + 1;
+  return nextSequence(result[0]?.maxId);
 }
