@@ -1,6 +1,6 @@
 # St. Louis, Missouri deep seed
 
-**Created** 2026-09-28 · **Status** waves 1 (geography) and 2 (General Assembly) APPLIED · **Author namespace** `CC_`
+**Created** 2026-09-28 · **Status** waves 1 (geography), 2 (General Assembly) and 3 (City of St. Louis) APPLIED · **Author namespace** `CC_`
 **Scope** (decided by Cantrell, 2026-09-28) the Missouri General Assembly, the City of St. Louis,
 and St. Louis County — offices, people and dated terms, plus headshots and one city banner.
 **Out of scope** compass stances; the 88 municipalities inside St. Louis County; judicial seats;
@@ -259,11 +259,115 @@ the positive control.
 
 ---
 
+## ✅ Wave 3 — the City of St. Louis, APPLIED 2026-09-28
+
+Two geography loads and two migrations, all applied. `CC_0178` (structure) and `CC_0179`
+(occupancy), both gates passed, dry-run first with the rollback confirmed to have reverted.
+
+| Piece | Result |
+|---|---|
+| `scripts/load-stlouis-ward-boundaries.mjs` | **14** ward polygons, `mtfcc X0075`, from the city's own GIS |
+| `scripts/load-stlouis-place-boundary.mjs` | **1** row, place `2965000`/`G4110` (TIGERweb) |
+| `CC_0178` | 1 government, 6 chambers, 16 districts, **23 offices** |
+| `CC_0179` | **22 people, 22 terms**; the Sheriff seat created **unseated** |
+
+Measured in production after the apply: 23 offices, 22 seated, 0 vacancy flags, **0 districts
+without a polygon**, 0 offices on county `29510`.
+
+### The address probe, live — and why the ward geography was worth loading
+
+| Point | Ward alderman | Citywide |
+|---|---|---|
+| 1200 Market St (City Hall) | **Ward 14 Rasheen Aldridge** | President Megan Green · Mayor Cara Spencer |
+| Missouri Botanical Garden | **Ward 5 Matt Devoti** | President Megan Green · Mayor Cara Spencer |
+| **CONTROL: Clayton** | — | — |
+
+Two city addresses, two different aldermen. Under the Springfield model both would have returned
+all fourteen.
+
+### 🔴 The office list came from certified ballots, and it corrects this spec
+
+Eight certified Board of Election Commissioners summaries were read — Nov 2020, Apr 2021, Nov 2022,
+Apr 2023, Nov 2024, Apr 2025, Apr 2026, Aug 2026. **23 elected offices**, each appearing on at
+least one:
+
+| Office | Ballots | Seats |
+|---|---|---|
+| Mayor · Comptroller | Apr 2021, Apr 2025 | 2 |
+| President of the Board of Aldermen | Nov 2022 (special), Apr 2023 | 1 |
+| Alderman | Apr 2023 (all 14), Apr 2025 (7 odd wards) | 14 |
+| Sheriff · Treasurer | Nov 2020, Nov 2024 | 2 |
+| Circuit Attorney | Nov 2024 | 1 |
+| Collector of Revenue · License Collector · Recorder of Deeds | Nov 2022, Aug 2026 | 3 |
+
+**This spec guessed the 23rd seat was the Public Administrator. The ballots say it is the SHERIFF.**
+
+🔴 **Public Administrator, Circuit Clerk, Assessor and Coroner are NOT seated, and that is a
+MEASURED ABSENCE.** A 4-year county-tier office must appear in one of the two November cohorts
+(2020/2024 or 2022/2026); none of the four appears in **either**. Sean Rapp does hold the Public
+Administrator's office and has his own department page — nothing found elects it.
+
+### 🔴 The Sheriff is created unseated and unflagged (ruling 2026-09-28, Cantrell)
+
+Alfred Montgomery won the seat in Nov 2024 with **85.90%**. The Missouri Attorney General's own
+statement says a judge ordered him *"immediately and completely removed from the position of
+Sheriff"*; that order was later halted, a new-trial motion was denied in April 2026, an interim
+runs the office, and **the city publishes no sheriff anywhere** — not on the roster page, and not
+in the Sheriff's Office leadership block (controlled: the Public Administrator's block does name
+Sean Rapp).
+
+So the office exists and is evidenced, and any occupancy claim would be a claim about contested
+facts concerning a named person. It carries no term row and no `is_vacant` flag.
+🔴 **`offices_missing_terms` unflagged therefore moves 238 → 239. That is this wave's doing and is
+NOT drift. Read CLAUDE.md's baseline as 239 from here.**
+
+### Two dating rules, and every row says which
+
+- **The 14 aldermen carry TRUE OCCUPANCY**, floored at the 14-ward board's first day —
+  **2023-04-18**, dated from the Board's own 2023-2024 session meeting record. The Board went from
+  28 wards to 14 at the April 2023 election, so occupancy of a ward *as currently drawn* cannot
+  begin earlier. Twelve wards at 2023-04-18; Ward 5 at 2025-04-15; Ward 8 at the **2025-07-01
+  special for the unexpired term** (Jami Cox Antwi, 1,072 votes / 54.95%, after Cara Spencer left
+  Ward 8 for the Mayor's office).
+- **The citywide officers carry what their own pages state, where they state it.** The Mayor's page:
+  *"sworn in as Mayor of St. Louis on April 15th, 2025."* The Treasurer's page: *"appointed in April
+  of 2021 as the successor for Mayor, Tishaura O. Jones."* The other six carry a **month-precision
+  current-term start**, because no city page states a take-office date — and the `source` says so.
+  ⚠ Gabriel Gore's row **understates** his occupancy: an earlier appointment as Circuit Attorney is
+  known and undated by anything read here.
+
+### 🔴 Four traps this pass hit
+
+- **The contests are ABBREVIATED** — `PRES OF BOA`, `COL OF REVENUE`, `REC OF DEEDS` — and pypdf
+  **injects spaces mid-word** (`US SENA TOR`, `EDUCA TION`). A search for full office names returns
+  **false absences**; the list came from reading every contest heading instead. My own survey also
+  dropped `MAYOR` because it required six characters.
+- 🔴 **PRESENCE IN A RESULTS PDF IS NOT EVIDENCE OF WINNING.** Donna Baringer appears in four
+  November ballots as a **state representative**; Cara Spencer appears in April 2021 because she
+  **lost** the mayoral race.
+- 🔴 **`stlelections.com` IS A PARKED DOMAIN**, serving HTTP 200 and *"This website is for sale!"*.
+  It is not the election authority; that is a department of the city site.
+- 🔴 **THREE PUBLISHERS STILL CARRY THE SUPERSEDED 28-WARD MAP**: the city's own Planning
+  department ("Census Data by Ward", wards 1–28), the charter PDF, and the **national Open Civic
+  Data registry** (`place:st_louis/ward:1 … ward:28`). Only the GIS layer, the Board's
+  representation page, the April 2023 ballot and the Board's session roster agree on 14.
+
+### ⚠ Recorded for the county wave, deliberately NOT fixed here
+
+Production's `St. Louis city` COUNTY row (`29510`) carries
+`ocd-division/country:us/state:mo/county:st_louis` — which the OCD registry assigns to **St. Louis
+County** (`place-29189`) — and `29189` carries it too. Two governments, different ground, one
+`ocd_id`, and `ocd_id` rolls up. The city's own identifier is
+`ocd-division/country:us/state:mo/place:st_louis` (`place-2965000`). **Wave 3 seats nothing on
+`29510`, so this is not needed for wave 3 to be correct.** It belongs to the county wave.
+
+
+---
+
 ## What is still unmeasured
 
 Nothing below has been probed. Do not plan against guesses.
 
-- **City of St. Louis** — ward geography (the 14 ward polygons), and term starts for all 23 seats.
 - **St. Louis County** — the charter's list of elected offices, and the 7 council districts'
   geography and membership.
 - Headshot sources and their licences; the banner.

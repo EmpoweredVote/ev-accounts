@@ -162,3 +162,51 @@ researched compass stances that a second row would have stranded, leaving the se
 empty compass. A name collision has two opposite right answers, and the test is the same either
 way: read what the existing row *is*. Five of six were other states' officeholders; the sixth was
 the Missourian himself.
+
+---
+
+## ✅ Wave 3 applied 2026-09-28 — the City of St. Louis
+
+23 offices, 22 seated, 14 ward polygons. Full record in the spec's wave 3 section.
+
+### 🔴🔴 THE CITY'S ROSTER PAGE IS NOT THE OFFICE LIST — THE BALLOT IS
+
+`stlouis-mo.gov/government/elected-officials.cfm` names **22** of the city's **23** elected
+officials. The strings `Sheriff`, `Public Administrator`, `Circuit Clerk`, `Assessor` and `Coroner`
+appear **zero** times on it. The missing seat is the **Sheriff** — this spec had guessed Public
+Administrator.
+
+Eight certified Board of Election Commissioners summaries (Nov 2020 → Aug 2026) establish the list.
+**Public Administrator, Circuit Clerk, Assessor and Coroner appear on NEITHER November cohort**, so
+nothing elects them, and that absence is measured rather than assumed.
+
+### 🔴 Reading a certified summary: three ways it lies
+
+1. **The contests are ABBREVIATED** — `PRES OF BOA`, `COL OF REVENUE`, `REC OF DEEDS`. Searching
+   for the full office name returns a **false absence**. Read every contest heading instead.
+2. **pypdf injects spaces mid-word** — `US SENA TOR`, `EDUCA TION`, `KELL Y BRONIEC`. Flatten
+   whitespace before matching, and control the flattened search in both directions.
+3. **PRESENCE IS NOT A WIN.** Donna Baringer appears in four November ballots as a *state
+   representative*; Cara Spencer appears in April 2021 because she **lost** the mayoral race.
+
+### 🔴 `stlelections.com` IS A PARKED DOMAIN
+
+HTTP 200, 3,103 bytes, *"This website is for sale!"*. The election authority is a department of the
+city site: `stlouis-mo.gov/government/departments/board-election-commissioners/`.
+
+### 🔴 THREE PUBLISHERS STILL CARRY THE SUPERSEDED 28-WARD MAP
+
+The Board went 28 → 14 wards at the April 2023 election. Still publishing 28 as of 2026-09-28:
+the city's own **Planning department** ("Census Data by Ward"), the **charter PDF**, and the
+**national Open Civic Data registry** (`place:st_louis/ward:1 … ward:28`). Only the GIS layer, the
+Board's representation page, the April 2023 ballot and the Board's session roster agree on 14.
+
+### Useful endpoints
+
+- Board of Aldermen roster **by legislative session**: POST `sessionID=N` to
+  `…/aldermen/representation/index.cfm` (202 = 2026-2027, 199 = 2023-2024, the first 14-ward one).
+- Full Board **meeting dates** per session: POST `sessionYear=N` to
+  `…/aldermen/aldermanic-legislative-session.cfm`. ⚠ **It is a POST and the field is `sessionYear`**
+  — a GET, or the name `sessionID`, silently returns the CURRENT session. Always read back the
+  `selected` option to confirm which session you actually got.
+- Ward polygons: `maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer/4`.
