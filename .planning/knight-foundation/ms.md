@@ -1279,7 +1279,7 @@ shape, because only one of them needs anybody's permission.
 
 | track | state |
 | --- | --- |
-| Biloxi banner | ✅ **SHIPPED** — `cities/biloxi.jpg`, essentials PR #170 |
+| Biloxi banner | ✅ **MERGED AND LIVE** — `cities/biloxi.jpg`, essentials PR #170, confirmed in the live `banners.json` |
 | 35 city + county headshots | ✅ **18 APPLIED** (`CC_0175`); the other 17 are deliberately blank |
 | 174 legislature headshots | ⏳ **AWAITING A REPLY** — permission letter **SENT 2026-09-28**; do not re-send |
 
