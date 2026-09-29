@@ -262,6 +262,109 @@ current occupancy; do not seed the winners of an election that has not happened.
 
 ---
 
+## ▶ HANDOFF — how to write wave 2 (the next session starts here)
+
+Read this file, then `backend/data/seed-st-louis-mo-2026/ROSTERS.md`, then CLAUDE.md's occupancy
+section. Everything below was measured on 2026-09-28; re-verify before acting on it.
+
+### Environment
+
+Worktree `C:\ev-accounts-mo`, branch `seed/mo-stlouis`, PR **#840**. Steward claim `state:mo`.
+⚠ `backend/node_modules` is a **directory junction to the main checkout** and `backend/.env` is a
+copy — fast to make, but not a normal setup. If anything resolves oddly, run a real
+`npm install --prefix backend` instead. `npx tsx --env-file=.env <script>.ts` runs the loaders;
+`pypdf` is installed for reading the Journals.
+
+### The target shape, confirmed against Kansas and South Dakota
+
+- **Government row already exists** — `State of Missouri`, `066b88fd-1458-462e-a3b5-1331f1810fdf`,
+  currently holding only the 5 statewide-executive chambers.
+- **Two chambers to add**: `Missouri House of Representatives` (`official_count` **163**) and
+  `Missouri Senate` (`official_count` **34**), both under that government.
+- **Office titles are bare**: `Representative` and `Senator`. Not "State Representative".
+- **The 197 district rows are already correct and need no change.** The loader wrote
+  `State House District N` / `State Senate District N`, `ocd-division/country:us/state:mo/sldl:N`,
+  `representation_basis = 'residency'`, `government_id` NULL — byte-identical in shape to KS and SD,
+  which also carry NULL `government_id`. **Do not "fix" that NULL.**
+- All 197 seats are `voting_powers = 'full'`, `representation_basis = 'residency'`, so no
+  `representation_note` is required (ADR 0003).
+
+### 🔴 Decide the occupancy question BEFORE writing anything
+
+`office_terms` holds **occupancy**, not individual terms — `seat_officeholder` closes the
+predecessor the day before, and re-election does not end an occupancy. Missouri House terms are
+2 years, so almost every sitting member began a *new term* on 2025-01-08 while their *occupancy*
+may reach back years.
+
+**Recommendation: model continuous occupancy of THIS seat**, which is the Nashville precedent. That
+means `term_start` = the first day of the General Assembly following the first election at which
+that person won **this district number**, or their special-election oath date.
+
+⚠ **`Years Served` cannot answer this.** It counts years in the *chamber*. Missouri renumbered its
+districts in the 2022 remap, so a member who moved districts carries a count that overstates their
+occupancy of the seat they now hold. If the per-district history proves too expensive, the honest
+fallback is to write every seated member from **2025-01-08** — correct for the current term,
+sourced to a document — and record in the migration comment that it is the term start rather than
+the occupancy start. **State which of the two you chose in the `source` string.**
+
+### Evidence still to collect
+
+1. **First-day Journals** for the 102nd (2023), 101st (2021) and 100th (2019) General Assemblies.
+   The 103rd is already read: `documents.house.mo.gov/billtracking/bills251/jrnpdf/jrn001.pdf`,
+   *"FIRST DAY, WEDNESDAY, JANUARY 8, 2025"*. The path pattern looks like `bills<YY>1`, so try
+   `bills231`, `bills211`, `bills191` — **confirm each file's own stated date; do not infer it.**
+2. **Six individual oath dates**, from the journal day each was seated:
+   HD-22 Yolanda Young (2019) · HD-37 Mark Sharp (2019) · HD-158 Scott Cupps (2019) ·
+   HD-46 David Tyson Smith (2021) · HD-7 Peggy McGaugh and HD-142 Jeff Knight (`2018 × 9`).
+3. **The two gap-service members**: HD-107 Mark Matthiesen (`2016 × 6`) and HD-109 John Simmons
+   (`2024 × 6`). Neither can be dated by arithmetic. Read their history.
+4. **Senate**: harvest the 33 member pages (`senate.mo.gov/Senators/Member?id=N` — the ids are in
+   `mo-senate-roster-2026-09-28.json`) and find the Senate's own first-day journals. **Senate terms
+   are 4 years and staggered**: odd districts elect in presidential years, even in midterms, which
+   the 2026 primary ballot confirms (SD-4 was on it, SD-5 was not).
+5. **SD-10's vacancy**, from the Senate's own notice.
+6. If you take the per-district route, the authoritative history is the **Missouri SoS certified
+   results by district** for 2018 / 2020 / 2022 / 2024. ⚠ **Read result-table headers by NAME.**
+   The Nashville wave got nine seats wrong because a fixed-column parser silently read the wrong
+   column and ranked candidates by row order, with no error at any point.
+
+### The migration
+
+Ask the allocator, never count: `npm run steward --prefix backend -- slot CC --purpose "..."`.
+Name the file that number immediately.
+
+**Offices and people ship in the SAME migration.** An office with no `office_terms` row is
+invisible and nothing errors, and splitting them pushes `offices_missing_terms` above its 238
+baseline for days.
+
+Required by CLAUDE.md:
+- 🔴 **Set `politicians.is_incumbent` explicitly on every insert** — `true` for all 188 seated
+  people. It defaults to `false`, so an omission hides them from address search.
+  `npm run check:occupancy --prefix backend` fails an INSERT that omits it.
+- **9 vacancies get `offices.is_vacant` and NO term row** — House 29, 95, 99, 110, 114, 149, 159,
+  160 and Senate 10. Do **not** write a vacancy span whose start date is unknown.
+- Idempotent throughout, ending in a `DO $$ … $$` post-verify gate that `RAISE EXCEPTION`s on a
+  wrong count.
+- Dry-run against prod by wrapping the body `BEGIN; … ROLLBACK;` and **confirm the rollback
+  actually reverted**.
+
+### Gates the migration must pass, each watched failing first
+
+1. **Homonym guard.** Prove it fires by trying to seat Maine's Chad Perkins, South Carolina's
+   Michael Johnson or Pennsylvania's Mike Jones on a Missouri seat inside a transaction, and
+   watching it raise. A name-based match seats the wrong person silently.
+2. **Nothing lands on Minnesota.** Assert that `St. Louis County` `27137` gained no offices.
+3. **Counts**: 163 + 34 offices; exactly 155 + 33 seated; exactly 9 `is_vacant`; every
+   `(chamber_id, district_id)` pair distinct.
+4. **`offices_missing_terms` unflagged must return to 238**, not merely "not rise" — the 9
+   vacancies are flagged, so they do not count against it.
+5. **An address probe**: 1200 Market St, St. Louis must return an alderman *(not yet — wave 3)*,
+   a state representative and a state senator. After wave 2 it scores **3 of 4**, and the
+   fourth arrives with the city wave.
+6. 🔴 **Run a positive control on any check that reports "nothing found."**
+
+---
+
 ## What is still unmeasured
 
 Nothing below has been probed. Do not plan against guesses.
