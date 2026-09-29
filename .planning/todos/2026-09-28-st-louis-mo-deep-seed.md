@@ -372,33 +372,107 @@ Nothing below has been probed. Do not plan against guesses.
   geography and membership.
 - Headshot sources and their licences; the banner.
 
-### What IS established for the City of St. Louis
+### ~~What IS established for the City of St. Louis~~ — SUPERSEDED by wave 3
 
-- **14 wards**, `Ward 01`–`Ward 14`, from the city's own representation page. Reduced from 28; the
-  charter PDF on the city site still describes the 28-ward, odd/even-year stagger, so **it is not
-  safe to read term cycles from that PDF.**
-- **Board of Aldermen (15 seats):** President **Megan Green** (citywide), plus Ward 01 Anne
-  Schweitzer · 02 Thomas Oldenburg · 03 Shane Cohn · 04 Bret Narayan · 05 Matt Devoti ·
-  06 Daniela Velazquez · 07 Alisha Sonnier · 08 Jami Cox Antwi · 09 Michael Browning ·
-  10 Shameem Clark Hubbard · 11 Laura Keys · 12 Sharon Tyus · 13 Pamela Boyd · 14 Rasheen Aldridge.
-- **Citywide:** Mayor **Cara Spencer**, Comptroller **Donna M.C. Baringer**.
-- **County-tier, because the city is a county-equivalent:** Recorder of Deeds **Michael Butler**,
-  Collector of Revenue **Gregory F.X. Daly**, Circuit Attorney **Gabriel Gore**, Treasurer
-  **Adam L. Layne**, License Collector **Mavis Thompson**, Public Administrator **Sean Rapp**.
-- 🔴 **THE CITY'S OWN "ALL ELECTED OFFICIALS" PAGE IS INCOMPLETE.** It lists 23 people and does not
-  mention **Sheriff**, **Public Administrator**, **Circuit Clerk** or **Assessor** anywhere — the
-  strings appear zero times. The Public Administrator nevertheless has his own city department page
-  naming Sean Rapp, and the charter's Scheme of Separation, §5, provides for the election of a
-  **sheriff, coroner and public administrator for the city**. So the roster page under-reports the
-  city's own elected offices. Establish the full list from the ballot, not from that page.
-- The 2026 certified results confirm the method: the **August 2026 primary** carried Collector of
-  Revenue, License Collector and Recorder of Deeds, and the **April 2026 municipal** election
-  carried nothing but Proposition E. The Assessor is appointed in the City of St. Louis; confirm
-  before excluding it.
-- The city contains House districts **76, 77, 78, 79, 80, 81, 82, 84** and Senate districts **4 and
-  5**, read off the 2026 primary ballot's own contest list. Verify by intersecting the polygons.
+🔴 **The city block that stood here has been REMOVED because wave 3 disproved two of its claims.**
+It said the city's roster page "lists 23 people" (it lists **22**) and it treated the **Public
+Administrator** as the missing elected office (the missing one is the **Sheriff**; nothing on either
+November cohort elects the Public Administrator). Read the wave 3 section above instead — a stale
+claim left beside its correction is how this spec misled a session once already.
 
-### What IS established for St. Louis County
+---
+
+## ▶ WAVE 4 HANDOFF — St. Louis County (the next session starts here)
+
+Read this file's wave 3 section first, then `backend/data/seed-st-louis-mo-2026/ROSTERS.md`, then
+CLAUDE.md's occupancy section. Everything in "What IS established for St. Louis County" below was
+measured on 2026-09-28 and is thin — re-verify before acting on it.
+
+### Environment
+
+Worktree `C:\ev-accounts-mo`, branch `seed/mo-stlouis`, PR **#840**. Steward claim `state:mo` —
+**check it is still live and extend it**; it has been renewed twice already. Migration slots are
+allocated, never counted: `npm run steward --prefix backend -- slot CC`.
+⚠ `CC_0180` is **abandoned** (reserved in error by a stray CLI call). Do not reuse it.
+
+### 🔴🔴 THE THREE THINGS THAT WILL BITE THIS WAVE
+
+1. **`St. Louis County` EXISTS TWICE IN PRODUCTION AND BOTH HAVE SEVEN-MEMBER BOARDS.**
+   `27137` is **MINNESOTA's** (Duluth slice, 3 offices + 7 commissioner districts); `29189` is
+   Missouri's, currently 0 offices. Identical `label`. **Key every insert and every gate on
+   `(geo_id, district_type)`, never on the label**, and assert as an ABSENCE that `27137` gained
+   nothing. Waves 2 and 3 both carry that gate — copy it.
+
+2. **THE `ocd_id` COLLISION IS THIS WAVE'S TO FIX.** Production's `St. Louis city` COUNTY row
+   (`29510`) **and** `St. Louis County` (`29189`) both carry
+   `ocd-division/country:us/state:mo/county:st_louis`. The Open Civic Data registry assigns that id
+   to the **COUNTY** (`place-29189`); the city's own is
+   `ocd-division/country:us/state:mo/place:st_louis` (`place-2965000`). Two governments on different
+   ground sharing one identifier, and **`ocd_id` ROLLS UP**. Wave 3 seats nothing on `29510` so it
+   did not need to fix this; wave 4 seats the county, so it does. **Fix `29510`, not `29189`** —
+   29189's id is the correct one.
+
+3. **THE COUNTY SITE 403s EVERY `curl`, INCLUDING WITH A BROWSER UA. Playwright gets through.**
+   And the county charter is published only through a **Yudu web reader**
+   (`content.yudu.com/web/44p6g/0A44qnp/StLouisCountyCharter/index.html`), not as a PDF.
+
+### 🔴 The rules waves 2 and 3 paid for, that apply here unchanged
+
+- 🔴🔴 **A ROSTER PAGE IS NOT THE OFFICE LIST — THE BALLOT IS.** Proven twice now. The city's own
+  "All Elected Officials" page omitted the **Sheriff** entirely. The county's council pages are
+  worse: **they do not name their members at all**, only a phone number, an address and an email.
+  **An email prefix is not a name.** Take the office list and the members from certified results.
+  - ⚠ **The county has its OWN election authority**, separate from the city's Board of Election
+    Commissioners whose archive wave 3 used. Find it; do not assume the city's results cover the
+    county.
+- 🔴 **A CERTIFIED SUMMARY LIES THREE WAYS** (all measured in wave 3):
+  **contests are ABBREVIATED** (`PRES OF BOA`, `COL OF REVENUE`, `REC OF DEEDS`) so a full-name
+  search returns **false absences** — read every contest heading instead; **pypdf injects spaces
+  mid-word** (`US SENA TOR`, `EDUCA TION`) so flatten whitespace before matching; and
+  **PRESENCE IS NOT A WIN** — Donna Baringer appears in four November ballots as a *state
+  representative*, Cara Spencer appears in April 2021 because she **lost**.
+- 🔴 **THE DUPLICATE-NAME GUARD KEYS ON `(first_name, last_name)`, NOT `full_name`.** A full_name
+  sweep found only 4 of 6 collisions in wave 2. Use
+  `backend/data/seed-st-louis-mo-2026/occupancy-scripts/gen_guardcheck.py`, which applies the
+  guard's own predicate. **A hit has two opposite right answers — read what the existing row IS**:
+  five were other states' officeholders, the sixth was the Missourian himself carrying 10 stances.
+- 🔴 **A detector reporting "nothing found" needs a positive control**, and **a control can pass for
+  the wrong reason**. In wave 3 two gate controls were **shadowed** by earlier gates and had to be
+  reordered. Watch each gate fail on ITS OWN gate.
+- 🔴 **OCCUPANCY IS FLOORED AT THE MAP CHANGE, NOT THE TERM** (ruling 2026-09-28). **Establish
+  whether the 7 council districts were redrawn**, and when they first had officeholders — that date
+  is the floor, exactly as 2023-01-04 was for the General Assembly and 2023-04-18 for the wards.
+- 🔴 **A TERM START COMES FROM A DOCUMENT THAT STATES IT**, never a statute or a computed day. In
+  wave 3 the Mayor's and the Treasurer's own pages stated theirs; six others did not and carry
+  month precision with the `source` saying so. That is acceptable — a guess is not.
+- 🔴 **`is_incumbent` EXPLICITLY ON EVERY INSERT**; it defaults to false and an omission hides the
+  person from address search.
+
+### Reachability — checked in wave 3, reusable here
+
+`districtQueries.GEOFENCE_DISTRICT_JOIN` and `geoIdGuard.MTFCC_DISTRICT_TYPE_GUARD` both carry an
+X catch-all: `mtfcc LIKE 'X%' AND mtfcc NOT IN (X0001..X0004) AND district_type IN
+('LOCAL','COUNTY',…)`. So **a synthetic `X00NN` mtfcc reaches `LOCAL` and `COUNTY` with no code
+change** — which is how the 14 city wards work (`X0075`; the next free code is **X0076**).
+**`G4020` maps only to `COUNTY`/`JUDICIAL`** (LOCAL_EXEC is PR-scoped), so a `LOCAL_EXEC` seat on
+the county polygon would be **unreachable by any address and nothing would error**. That is exactly
+why wave 3 loaded place `2965000`.
+🔴 **The structure migration must REFUSE TO RUN if its geography is absent** — `CC_0178` does this;
+copy the pre-flight block.
+
+### The baseline moved
+
+**`essentials.offices_missing_terms` unflagged is now 239, not 238.** Wave 3 created the Sheriff
+seat unseated by ruling. Treat **above 239** as new drift.
+
+### What wave 5 owes after this
+
+Headshots and their licences, and the city banner. 🔴 **`photo_custom_url` is what renders** — a
+`politician_images` row changes nothing a voter sees. A blank beats a wrong face.
+
+
+### What IS established for St. Louis County (measured 2026-09-28, thin — re-verify)
+
 
 - **7 single-member council districts.** The county's own page: *"The council shall consist of seven
   members, each of whom shall be a qualified voter and resident in their respective district."*
