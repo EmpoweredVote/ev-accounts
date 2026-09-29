@@ -1,0 +1,166 @@
+
+-- --- Post-verify gate -------------------------------------------------------
+
+DO $$
+DECLARE
+  v_people    int;
+  v_brattin   int;
+  v_terms     int;
+  v_seated_h  int;
+  v_seated_s  int;
+  v_vacant    int;
+  v_vac_terms int;
+  v_notday    int;
+  v_2023      int;
+  v_2025      int;
+  v_otherdate int;
+  v_noninc    int;
+  v_outside   int;
+  v_dupe      int;
+  v_missing   int;
+BEGIN
+  SELECT count(*) INTO v_people FROM essentials.politicians
+   WHERE external_id BETWEEN -2790388 AND -2790202;
+  IF v_people <> 187 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: expected 187 people in the reserved band, got %', v_people;
+  END IF;
+
+  -- The reuse, asserted as a reuse: exactly one Rick Brattin, and he is an incumbent now.
+  SELECT count(*) INTO v_brattin FROM essentials.politicians
+   WHERE lower(full_name) = 'rick brattin';
+  IF v_brattin <> 1 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: expected exactly 1 Rick Brattin row (his 10 stances must not be split), found %', v_brattin;
+  END IF;
+  IF NOT EXISTS (SELECT 1 FROM essentials.politicians
+                  WHERE id = 'e9ec322c-e997-486d-8202-48423671c800' AND is_incumbent IS true) THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: the reused Rick Brattin row is not flagged is_incumbent — he would be hidden from address search';
+  END IF;
+
+  -- 🔴 Count och.politician_id, NOT *: office_current_holder LEFT JOINs from offices, so a vacancy
+  -- is a NULL politician_id and count(*) would pass vacuously on an empty result.
+  SELECT count(och.politician_id) INTO v_seated_h
+    FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text = 'STATE_LOWER';
+  SELECT count(och.politician_id) INTO v_seated_s
+    FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+    LEFT JOIN essentials.office_current_holder och ON och.office_id = o.id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text = 'STATE_UPPER';
+  IF v_seated_h <> 155 OR v_seated_s <> 33 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: expected 155 House and 33 Senate seated, found % and %', v_seated_h, v_seated_s;
+  END IF;
+
+  SELECT count(*) INTO v_terms
+    FROM essentials.office_terms ot
+    JOIN essentials.offices o ON o.id = ot.office_id
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text IN ('STATE_UPPER', 'STATE_LOWER');
+  IF v_terms <> 188 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: expected 188 MO legislative terms, found %', v_terms;
+  END IF;
+
+  SELECT count(*) INTO v_vacant
+    FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text IN ('STATE_UPPER', 'STATE_LOWER')
+     AND o.is_vacant IS true;
+  IF v_vacant <> 9 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: expected exactly 9 vacant MO legislative seats (House 29/95/99/110/114/149/159/160, Senate 10), found %', v_vacant;
+  END IF;
+
+  -- 🔴 A vacancy must carry NO term row. This is the assertion that would catch a vacancy
+  -- accidentally seated, which the 188 total alone cannot see.
+  SELECT count(*) INTO v_vac_terms
+    FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+    JOIN essentials.office_terms ot ON ot.office_id = o.id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text IN ('STATE_UPPER', 'STATE_LOWER')
+     AND o.is_vacant IS true;
+  IF v_vac_terms <> 0 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: % vacant MO legislative seat(s) carry a term row — a vacancy span with an unknown start must not be written', v_vac_terms;
+  END IF;
+
+  -- Every term dated to the day, and to one of exactly two days.
+  SELECT count(*) INTO v_notday
+    FROM essentials.office_terms ot
+    JOIN essentials.offices o ON o.id = ot.office_id
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text IN ('STATE_UPPER', 'STATE_LOWER')
+     AND (ot.start_precision <> 'day' OR ot.term_start IS NULL);
+  IF v_notday <> 0 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: % MO legislative term(s) are not day-precision with a real date', v_notday;
+  END IF;
+
+  SELECT
+    count(*) FILTER (WHERE ot.term_start = DATE '2023-01-04'),
+    count(*) FILTER (WHERE ot.term_start = DATE '2025-01-08'),
+    count(*) FILTER (WHERE ot.term_start NOT IN (DATE '2023-01-04', DATE '2025-01-08'))
+    INTO v_2023, v_2025, v_otherdate
+    FROM essentials.office_terms ot
+    JOIN essentials.offices o ON o.id = ot.office_id
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text IN ('STATE_UPPER', 'STATE_LOWER');
+  IF v_otherdate <> 0 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: % MO legislative term(s) carry a date that is neither first day (2023-01-04 / 2025-01-08)', v_otherdate;
+  END IF;
+  IF v_2023 <> 123 OR v_2025 <> 65 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: expected 123 terms at 2023-01-04 and 65 at 2025-01-08, found % and %', v_2023, v_2025;
+  END IF;
+
+  -- 🔴 Every seated person must be flagged is_incumbent, or they vanish from address search.
+  SELECT count(*) INTO v_noninc
+    FROM essentials.office_terms ot
+    JOIN essentials.offices o ON o.id = ot.office_id
+    JOIN essentials.districts d ON d.id = o.district_id
+    JOIN essentials.politicians p ON p.id = ot.politician_id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text IN ('STATE_UPPER', 'STATE_LOWER')
+     AND (p.is_incumbent IS DISTINCT FROM true OR p.is_active IS DISTINCT FROM true);
+  IF v_noninc <> 0 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: % seated MO legislator(s) are not is_incumbent/is_active — they would be hidden from address search', v_noninc;
+  END IF;
+
+  -- 🔴🔴 The Minnesota guard, restated on the occupancy side. Nobody this file seats may land on a
+  -- district outside Missouri — St. Louis County exists in BOTH states with the same label and the
+  -- same seat count.
+  SELECT count(*) INTO v_outside
+    FROM essentials.office_terms ot
+    JOIN essentials.offices o ON o.id = ot.office_id
+    JOIN essentials.chambers c ON c.id = o.chamber_id
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE c.government_id = '066b88fd-1458-462e-a3b5-1331f1810fdf'
+     AND lower(coalesce(d.state, '')) <> 'mo';
+  IF v_outside <> 0 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: % Missouri-chamber term(s) sit on a district outside Missouri — the St. Louis County homonym (MN 27137 vs MO 29189)', v_outside;
+  END IF;
+
+  -- No person holds two Missouri legislative seats. office_terms' exclusion constraint forbids two
+  -- people on one office; it CANNOT see one person on two, which is the fan-out CLAUDE.md warns of.
+  SELECT count(*) INTO v_dupe FROM (
+    SELECT ot.politician_id
+      FROM essentials.office_terms ot
+      JOIN essentials.offices o ON o.id = ot.office_id
+      JOIN essentials.districts d ON d.id = o.district_id
+     WHERE lower(d.state) = 'mo' AND d.district_type::text IN ('STATE_UPPER', 'STATE_LOWER')
+     GROUP BY 1 HAVING count(*) > 1) x;
+  IF v_dupe <> 0 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: % person(s) hold more than one MO legislative seat', v_dupe;
+  END IF;
+
+  -- 🔴 The failure mode CI cannot catch: a seat with no term row is invisible and nothing errors.
+  -- 197 offices, 188 terms, 9 flagged vacant — so every unflagged seat must carry a term.
+  SELECT count(*) INTO v_missing
+    FROM essentials.offices o
+    JOIN essentials.districts d ON d.id = o.district_id
+   WHERE lower(d.state) = 'mo' AND d.district_type::text IN ('STATE_UPPER', 'STATE_LOWER')
+     AND o.is_vacant IS NOT true
+     AND NOT EXISTS (SELECT 1 FROM essentials.office_terms ot WHERE ot.office_id = o.id);
+  IF v_missing <> 0 THEN
+    RAISE EXCEPTION 'MO-2 occupancy gate: % unflagged MO legislative seat(s) carry no term row — invisible, and nothing would error', v_missing;
+  END IF;
+
+  RAISE NOTICE 'MO-2 occupancy gate PASSED: 187 new people + 1 reused, 188 terms (123 at 2023-01-04, 65 at 2025-01-08, all day precision), 155 House + 33 Senate seated, 9 vacant carrying no term, 0 outside Missouri, 0 double-seated, 0 unflagged seat without a term.';
+END $$;
+
+COMMIT;
