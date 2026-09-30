@@ -370,7 +370,7 @@
       ],
       "split": true,
       "verdict": "different_people",
-      "note": "Different people: Andrew K. Kim is the 2026 LA mayoral candidate (kimforla.com); Andrew C. Kim is an LA County Superior Court judge. Different middle initial."
+      "note": "Different people, re-confirmed 2026-09-30. Andrew C. Kim (e4a6ffc5) is the SEATED Judge of the Los Angeles County Superior Court. Andrew K. Kim (7f6c4fa3) ran for LOS ANGELES MAYOR in the 2026 LA County Primary (2026-06-02) and LOST; he carries 5 Season-1 stances and no seat. Different middle initial, different office. The \"split\" here is BENIGN: a seated judge and a defeated mayoral candidate are supposed to look like this."
     },
     "8118811a-aadd-4eb9-9208-de0f5d3b29ad|868b219c-a10a-4dc2-a632-9022c7f835d1": {
       "names": "Andy Biggs ~ Andy Biggs",
@@ -488,7 +488,7 @@
       ],
       "split": true,
       "verdict": "different_people",
-      "note": "Different people: Mónica García (LAUSD board, empowered.vote/school-district/los_angeles_unified) vs Monica García, Glendora Unified Trustee Area 2 (glendora.k12.ca.us). Different districts."
+      "note": "Different people, re-confirmed 2026-09-30 — but the ORIGINAL NOTE WAS WRONG ON ITS FACTS and is replaced. It read \"Monica Garcia (LAUSD board, empowered.vote/school-district/los_angeles_unified)\", which asserts a seat she does not hold: LAUSD's seven board seats are held by Newbill, Rivas, Schmerelson, Melvoin, Griego, Gonez and Ortiz Franklin, and District 2 is Rocio Rivas. Monica Garcia (a123c59e) is the FORMER LAUSD District 2 member — Ballotpedia: assumed office 2006, LEFT OFFICE 2022-12-09, did not seek re-election. She is correctly is_incumbent=false with no term. Monica Garcia (cde0a592) is a different, currently SEATED person: Glendora Unified Board Member, Trustee Area 2, also on the 2026-11-03 ballot for that seat. The \"split\" here is BENIGN: a former officeholder keeps her Season-1 stances as history. WARNING for anyone reading those three stances: their prose is PRESENT TENSE (\"Garcia IS the longest-serving LAUSD board member\"), true when written and false since 2022-12-09. Season 1 is CLOSED and is the historical record — do NOT rewrite it; a corrected position belongs in the open season. NB the Wikipedia article at \"Monica Garcia\" is a Spanish health minister — a different person again."
     },
     "a97678bc-8844-4560-87b1-5ef4f8013d96|f0a46feb-43bc-4620-a81f-3bbf7e3cec9c": {
       "names": "Dan Sullivan ~ Daniel J. Sullivan Jr.",
