@@ -1,0 +1,381 @@
+# St. Louis, Missouri — rosters and their sources
+
+Harvested 2026-09-28. Spec: [`.planning/todos/2026-09-28-st-louis-mo-deep-seed.md`](../../../.planning/todos/2026-09-28-st-louis-mo-deep-seed.md).
+
+🔴 **Read this before seeding anything.** Every trap below was measured, not assumed.
+
+## Files
+
+| File | Source | Rows |
+|---|---|---|
+| `mo-house-roster-2026-09-28.json` | `house.mo.gov/MemberDetails.aspx?district=NNN&year=2026&code=R`, all 163 fetched, 0 errors | 163 |
+| `mo-senate-roster-2026-09-28.json` | `senate.mo.gov/senators/` member cards | 33 |
+
+## What each source is good for, and what it is not
+
+- **The House member grid and detail pages are authoritative for WHO HOLDS THE SEAT TODAY.** They
+  are not authoritative for when the term began: they publish `Elected:` (an election year) and
+  `Years Served:` (a count of years in the chamber). See the spec for the seven rows that prove
+  neither can be turned into a date.
+- 🔴 **`house.mo.gov/DistrictInfo.aspx` — the address lookup — is AUTHORITATIVE FOR GEOGRAPHY AND
+  STALE FOR OCCUPANCY.** It returns **Ian Mackey** for HD-99, which the member grid reports as
+  **Vacant**. Use it to date the map; never to name an officeholder.
+- **The term-start document is the House Journal**, `documents.house.mo.gov/billtracking/bills251/jrnpdf/jrn001.pdf`,
+  which states *"FIRST DAY, WEDNESDAY, JANUARY 8, 2025"* and lists every member who *"advanced to
+  the bar and subscribed to the oath of office"*.
+
+## Homonyms — three of them are live in prod right now
+
+| Missouri member | A DIFFERENT person of the same name already holds a seat in |
+|---|---|
+| Chad Perkins (HD-40) | Maine |
+| Michael Johnson (HD-23) | South Carolina |
+| Mike Jones (HD-12) | Pennsylvania |
+
+And inside Missouri's own chamber, the House Journal itself disambiguates `Brown 149`/`Brown 16`,
+`Jones 12`/`Jones 88`, `Smith 46`/`Smith 68`/`Smith 74`, `Taylor 48`/`Taylor 84` — and lists
+⚠ **`Sharp 37` and `Sharpe 4`**, two different people one letter apart.
+
+## Vacancies — 9 seats. Do not seat anyone on these
+
+House **29, 95, 99, 110, 114, 149, 159, 160** · Senate **10**.
+
+Set `offices.is_vacant`. Per CLAUDE.md, do **not** write a vacancy span whose start date is unknown.
+
+## City of St. Louis
+
+🔴 **The city's own "All Elected Officials" page is incomplete** — Sheriff, Public Administrator,
+Circuit Clerk and Assessor appear **zero** times on it, and the city does elect at least the first
+two. Take the office list from the ballot, not from that page.
+
+Sources used: `stlouis-mo.gov/government/elected-officials.cfm`,
+`stlouis-mo.gov/government/departments/aldermen/representation/index.cfm`, and the Board of Election
+Commissioners' certified results PDFs.
+
+## St. Louis County
+
+⚠ **`curl` gets HTTP 403 from `stlouiscountymo.gov` even with a browser user agent. Use Playwright.**
+Re-verified 2026-09-29: a full Chrome UA still returns 403 with a 5,786-byte body.
+
+### The office list — 10 seats, settled 2026-09-29
+
+Charter § 6.010 enumerates them **negatively**, so the list is exhaustive:
+
+> "There shall be no elective county officers other than county executive, council members,
+> prosecuting attorney and assessor."
+
+🟢 **The charter is on Municode as searchable text** —
+`library.municode.com/mo/st._louis_county/codes/code_of_ordinances?nodeId=STLOCOCH2020`
+(`ST. LOUIS COUNTY CHARTER 2020`, adopted by voters 2020-08-04, codified through 2026-02-17).
+⚠ `api.municode.com/CodesContent` returns **401** to `curl`; read the page in Playwright.
+
+Certified results agree, read contest by contest across both four-year cohorts:
+
+| Seat | Certified winner | Holds it now (county's own pages, 2026-09-29) |
+|---|---|---|
+| County Executive | Sam Page (D) 51.56%, Nov 2022 | Sam Page |
+| Prosecuting Attorney | Wesley Bell (D) 70.69%, Nov 2022 | 🔴 **Melissa Price Smith** |
+| County Assessor | Jake Zimmerman (D) 57.35%, Nov 2022 | Jake Zimmerman |
+| Council 1 | Rita Heard Days (D) unopposed, Nov 2022 | Rita Heard Days — Chair |
+| Council 2 | Gretchen Bangert (D) 67.13%, Nov 2024 | Gretchen Bangert |
+| Council 3 | Dennis Hancock (R) 51.22%, Nov 2022 | Dennis Hancock |
+| Council 4 | Shalonda Webb (D) 80.29%, Nov 2024 | Shalonda D. Webb |
+| Council 5 | Lisa D. Clancy (D) 63.78%, Nov 2022 | Lisa D. Clancy |
+| Council 6 | G. Michael Archer (R) 52.50%, Nov 2024 | Michael Archer |
+| Council 7 | Mark A. Harder (R) 58.40%, Nov 2022 | Mark Harder — Vice Chair |
+
+🔴 **THE COUNTY ELECTS NO SHERIFF, TREASURER, COLLECTOR, RECORDER, CIRCUIT CLERK, AUDITOR, CLERK,
+COUNSELOR OR PUBLIC ADMINISTRATOR.** The charter appoints every one (§§ 2.200, 2.240, 4.060, 4.350,
+4.450, 5.020, 6.020), and there is no sheriff or coroner at all — § 4.270 gives a board of police
+commissioners and § 4.150 a chief medical examiner. **The City of St. Louis elects seven of those
+offices. Do not copy wave 3's list across.**
+
+### 🔴🔴 A TRUNCATED CSV NAMED THE RUNNER-UP, UNDER A CLEAN HTTP 200
+
+`curl` wrote a short body and **exited 0** for three of five certified files. The partial Nov 2024
+file held only part of County Council District 6, so aggregating it named **Kevin Schartner** the
+winner at **53.13%**. The complete file names **G. Michael Archer** at **52.50%**. The runner-up,
+at a believable margin, correctly formatted, with nothing erroring. Truncation also hid **six
+contests** from that election's enumeration (83 → 89), so the office list itself was at risk.
+
+🔴 **It was caught only by the council's own roster page.** A certified tally verifies nothing about
+itself.
+
+`county-results/fetch.sh` loops on `Content-Length` until each file is byte-exact, and
+`county-results/derive_roster.py` **refuses to read a vote** until every byte count matches. Both
+were watched failing first. Method and URLs: `county-results/FETCH.md`.
+
+### 🟢 The council landing page NAMES all seven
+
+`stlouiscountymo.gov/st-louis-county-government/county-council/` lists every member with Chair and
+Vice Chair. 🔴 The seven **district** pages still carry contact details only — a phone number, an
+address and an email — and **an email prefix is not a name**. Earlier notes here said the council
+never names its members; that was true of the district pages only.
+
+### The election authority — and it is not the City's
+
+`stlouiscountymo.gov/st-louis-county-government/board-of-elections/election-results-archive/`
+indexes every election from 2000 to 2026. Each election page carries three links:
+`Official Election Results` (PDF), `Precinct Results` (PDF) and **`CSV Results`**.
+
+🟢 **Take the CSV.** It has `Contest Title`, `Choice Name`, `Choice Party` and `Total Votes` as real
+columns, so two of the three ways a certified PDF lies — abbreviated contest names and pypdf space
+injection — cannot apply. **The third still does: presence is not a win.** Read the counts.
+
+⚠ The URL pattern `extcontent.stlouisco.com/BOE/eResults/el<YYMMDD>/CSV.csv` **does not hold before
+about 2021**. Nov 2020 is `el201103/112020Detailed.csv`; `el201103/CSV.csv` is a 404. Take the href
+from the archive page rather than composing it.
+
+### Council district geography — two names, one map
+
+On the county's ArcGIS org `w657bnjzrjguNyOy`
+(`services2.arcgis.com/w657bnjzrjguNyOy/arcgis/rest/services/<name>/FeatureServer/0`):
+
+| Layer | Internal name | Verdict |
+|---|---|---|
+| `Council_District_Plan_2022` | `…SDEDBO.Council_District_Plan_2022` | current |
+| `Council_Districts_WFL1` | **`Council_Districts_2023`** | current, **same map** |
+| `County_Council_Districts_2019` | — | superseded |
+
+🟢 The first two are **identical ground**: grid-sampled at 160 × 160, **11,527 of 11,527** interior
+points assign to the same district, 0 different, 0 one-sided. 🟢 The 2019 layer is the control and
+**disagrees** — 217 points differ (1.88%) — so the comparator is not blind. `cmp_maps.py` does this
+and needs no geometry library.
+
+▶ Load `Council_Districts_WFL1`: same geometry, plus a `Hyperlink` field holding each district's own
+page URL.
+
+### Dating: the charter gives a computed day, so it is NOT a term start
+
+§§ 2.040, 3.010, 5.040 and 6.050 all say the officer takes office **"on the first Tuesday of January
+following the election"**. That is exactly the shape CLAUDE.md forbids. Do not compute it.
+
+▶ § 2.050 requires a first regular council meeting every calendar year. Agendas and **journals** are
+on iCompass — `stlouisco.civicweb.net/Portal/MeetingTypeList.aspx`. That is this wave's analogue of
+the House and Senate Journals. Where no document states a date, use month precision and say so in
+`source`, as wave 3 did for six city officers.
+
+### ✅ The dates, found 2026-09-29 — `county-term-starts-2026-09-29.json`
+
+🟢 **The Journal of the County Council is this wave's House Journal.** Every regular meeting has
+one, with a **ROLL CALL naming each member present**, and the January journals report the
+inauguration as a past fact. Meeting list: the JSON API
+`stlouisco.civicweb.net/Services/MeetingsService.svc/meetings?from=YYYY-MM-DD&to=YYYY-MM-DD`
+(returns `Id`, `MeetingDate`, `Name`). Then `Portal/MeetingInformation.aspx?Id=<Id>`, click the
+**MINUTES** tab, and take `/document/<id>?printPdf=true`.
+
+| Seats | Start | Document |
+|---|---|---|
+| County Executive · Prosecuting Attorney · Assessor · Council 1, 3, 5, 7 | **2023-01-10** | Journal of 2023-01-10, `/document/110433?printPdf=true` (Id 800) |
+| Council 2, 4, 6 | **2025-01-07** | Journal of 2025-01-07, `/document/388825?printPdf=true` (Id 25750) |
+| Prosecuting Attorney — **Melissa Price Smith** | **2025-01-03** | `stlcopa.stlouiscountymo.gov/prosecutor-melissa-price-smith/` |
+
+- 2023-01-10 — County Executive Page: *"Today, in Memorial Plaza, we had a moment to celebrate …
+  the word inauguration means an official beginning."* Councilwoman Days: *"the inauguration. It was
+  a very nice event this morning."* The roll call that night seats all seven.
+- 2025-01-07 — Councilman Harder: *"We had a great swearing-in ceremony this morning."* Councilman
+  Archer: *"It was a very special day for getting inaugurated."* Roll call names Archer.
+- 2025-01-03 — *"Melissa Price Smith was sworn in on Friday, January 3, 2025, as the St. Louis
+  County Prosecuting Attorney."*
+
+⚠ **2023-01-10 is the first date a DOCUMENT places the 2022 cohort in the seat. It is NOT asserted
+to be the legal term start** — the charter's computed first Tuesday was 2023-01-03, and the
+inauguration was a week later. Say exactly that in `source`. For 2025 the two agree, because
+2025-01-07 was itself the first Tuesday.
+
+⚠ **Still undated: how far back Page and Zimmerman reach.** Page has been County Executive since
+2019 and Zimmerman Assessor since 2011. A countywide seat has no map floor, so their occupancy
+could start earlier than 2023-01-10 — but no document for the earlier dates has been read.
+
+⚠ **County Executive appears in BOTH Nov 2020 and Nov 2022.** Charter § 3.010 puts the office on
+1982 + 4n, so 2020 is off-cycle. Sam Page won both. Do not read the 2020 row as a regular term.
+
+
+---
+
+## Occupancy — ruled 2026-09-28 (Cantrell): floor at the current map
+
+`office_terms` holds **occupancy**, not a term. The ruling is to model continuous occupancy of the
+seat **as currently drawn**, floored at the first day of the **102nd General Assembly, 2023-01-04** —
+the first day on which the 2022 plan had officeholders.
+
+**Why the floor is there and not earlier.** Prod holds only 2022-plan polygons (wave 1 loaded TIGER
+2024 `sldu`/`sldl`). HD-78 before January 2023 covered different ground. Reaching occupancy back to
+2021 or 2019 would make `essentials.office_holders_as_of()` name the right person for **territory
+that district did not cover**. The floor is where the geography stops being true.
+
+**Why not the Kansas / South Dakota shape.** `CC_0157` (KS) and `CC_0164` (SD) both wrote the
+*current term start* — 119 of 125 Kansas House members carry `2025-01-13`. That is cheaper and it is
+the documented fallback in the spec, but Missouri's Journals hand over the deeper answer for the
+cost of two PDFs per chamber, so the fallback is not needed here. **This slice deliberately differs
+from KS and SD.** Say so in the migration comment.
+
+⚠ Nothing voter-facing changes either way today: no file in `backend/src` selects `och.term_start`
+(checked with a positive control on `och.politician_id`). The API's `term_start` field comes from the
+deprecated `politicians.valid_from`. What this ruling buys is a correct `office_holders_as_of()`.
+
+### The evidence: the Secretary of State's certification, printed in each Journal
+
+Each first-day Journal prints the Secretary of State's list of members **keyed by district number**,
+under §115.525 RSMo, on the day the oath was administered. **Keying on the district number means no
+name matching**, which is what makes the homonym traps above harmless.
+
+| Chamber | 102nd GA | 103rd GA |
+|---|---|---|
+| House | `documents.house.mo.gov/billtracking/bills231/jrnpdf/jrn001.pdf` — *FIRST DAY, WEDNESDAY, JANUARY 4, 2023* | `…/bills251/jrnpdf/jrn001.pdf` — *FIRST DAY, WEDNESDAY, JANUARY 8, 2025* |
+| Senate | `senate.mo.gov/23info/Journals/RDay0101041-87.pdf` — *FIRST DAY - WEDNESDAY, JANUARY 4, 2023* | `senate.mo.gov/25info/Journals/RDay0101081-80.pdf` — *FIRST DAY - WEDNESDAY, JANUARY 8, 2025* |
+
+🟢 **The Senate Journal prints TWO district-keyed lists, each tagged with the election that seated
+it** — "Elected November 8, 2022" (even districts) and "Elected November 5, 2024" (odd). That is
+exactly what a 4-year staggered chamber needs, and it removes any need to reason about the stagger.
+
+⚠ The Senate journal archive is **not** at a guessed path — three patterns returned 404. The list is
+an ASP.NET form; `https://www.senate.mo.gov/journallist/?SelectedYear=2023` returns it.
+
+### Parsed result — `mo-occupancy-2026-09-28.json`, one row per seat with its own `basis`
+
+| Chamber | 2023-01-04 | 2025-01-08 | vacant | total |
+|---|---|---|---|---|
+| House | 100 | 55 | 8 | 163 |
+| Senate | 23 | 10 | 1 | 34 |
+| | **123** | **65** | **9** | **197** |
+
+188 seated. The 155 seated House members agree with the member grid's independent 105 R + 50 D.
+
+Scripts in `occupancy-scripts/`. `control.py` is the matcher's tamper control — it asserts
+`Mark Sharp` ≠ `Greg Sharpe`, `Richard Brown` ≠ `Donnie Brown`, `John Simmons` ≠ `Kyle Marquart`
+**and** `Ken Jamison` = `Kenneth Jamison`, `Dean Van Schoiack` = `Dean VanSchoiack`. Run it before
+trusting a re-parse; a matcher that only ever says "same" proves nothing.
+
+### The traps this pass actually hit
+
+- 🔴 **`Vacant` is not the roster's string — it is `District Vacant`.** The first join silently
+  classified all 8 vacancies as mid-term arrivals. Match on `/vacan/i`.
+- 🔴 **HD-2 is a SURNAME CHANGE, not a change of person.** The 102nd Journal certifies
+  **Mazzie Boyd**; the 103rd certifies **Mazzie Christensen**; `elected` is 2022 for both. A name
+  match alone writes 2025-01-08 and understates her occupancy by two years. Resolved from
+  `house.mo.gov/MemberDetails.aspx?district=002&year=2023`, which names Christensen at the 2023 seat.
+  - 🟢 **That page needed its own control**, because a departed official's URL can serve their
+    successor. `?district=109&year=2023` returns **Kyle Marquart** and `&year=2025` returns
+    **John Simmons**, so the `year` parameter is honoured and the read is real.
+- ⚠ **HD-109 is the case arithmetic cannot solve** — *Elected 2024, 6 years served*. The Journals
+  date it exactly: Simmons held HD-109 in 2019 and 2021, **lost it to Kyle Marquart in 2023**, and
+  returned in 2025. His current occupancy starts 2025-01-08.
+- ⚠ Two Senate rows read as mid-term arrivals and were neither: `Cindy O&#x27;Laughlin` (an
+  undecoded HTML entity in the harvest) and `Stephen`/`Steven Webber`. **Unescape before matching.**
+- ⚠ pypdf splits the ordinal `1st` across two lines (`'1'` then `'st Jeff Farnan'`), and renders
+  apostrophes as a replacement character, which dropped **HD-1 and HD-95** from the first parse.
+- 🟢 **SD-10's vacancy has the Senate's own notice**, not just an absent card: the index carries
+  `Senators/VacantSenator?district=10` and the text *"Vacant District 10"*.
+
+---
+
+## ✅ Applied 2026-09-28 — `CC_0176` + `CC_0177`
+
+197 offices, 188 terms, 9 vacancies. Measured in production after the apply: `offices_missing_terms`
+unflagged returned to **238**, exactly its baseline. Full record in the spec's wave 2 section.
+
+### 🔴🔴 The one rule this wave paid for
+
+**`essentials.politician_name_duplicate_guard()` KEYS ON `(first_name, last_name)`, NOT
+`full_name`.** It compares `lower(btrim(first_name))` **and** `lower(btrim(last_name))`, over
+**active** rows only. A `full_name` sweep is a *different, weaker* test: it found 4 of 6 collisions
+here and missed `David Tyson Smith` vs Florida's `David Smith`, and `Brian Williams` vs Indiana's
+`Brian H Williams`. Both have different full names and the same `(first, last)`.
+
+**The guard threw during the dry run, which is the only reason they were caught.** Use
+`occupancy-scripts/gen_guardcheck.py`, which applies the guard's own predicate, before generating
+any seating migration.
+
+### 🟢 And the direction that is NOT a namesake
+
+**Rick Brattin (SD-31) already existed and his row was REUSED, not duplicated** — it carries ten
+researched compass stances that a second row would have stranded, leaving the seated senator an
+empty compass. A name collision has two opposite right answers, and the test is the same either
+way: read what the existing row *is*. Five of six were other states' officeholders; the sixth was
+the Missourian himself.
+
+---
+
+## ✅ Wave 3 applied 2026-09-28 — the City of St. Louis
+
+23 offices, 22 seated, 14 ward polygons. Full record in the spec's wave 3 section.
+
+### 🔴🔴 THE CITY'S ROSTER PAGE IS NOT THE OFFICE LIST — THE BALLOT IS
+
+`stlouis-mo.gov/government/elected-officials.cfm` names **22** of the city's **23** elected
+officials. The strings `Sheriff`, `Public Administrator`, `Circuit Clerk`, `Assessor` and `Coroner`
+appear **zero** times on it. The missing seat is the **Sheriff** — this spec had guessed Public
+Administrator.
+
+Eight certified Board of Election Commissioners summaries (Nov 2020 → Aug 2026) establish the list.
+**Public Administrator, Circuit Clerk, Assessor and Coroner appear on NEITHER November cohort**, so
+nothing elects them, and that absence is measured rather than assumed.
+
+### 🔴 Reading a certified summary: three ways it lies
+
+1. **The contests are ABBREVIATED** — `PRES OF BOA`, `COL OF REVENUE`, `REC OF DEEDS`. Searching
+   for the full office name returns a **false absence**. Read every contest heading instead.
+2. **pypdf injects spaces mid-word** — `US SENA TOR`, `EDUCA TION`, `KELL Y BRONIEC`. Flatten
+   whitespace before matching, and control the flattened search in both directions.
+3. **PRESENCE IS NOT A WIN.** Donna Baringer appears in four November ballots as a *state
+   representative*; Cara Spencer appears in April 2021 because she **lost** the mayoral race.
+
+### 🔴 `stlelections.com` IS A PARKED DOMAIN
+
+HTTP 200, 3,103 bytes, *"This website is for sale!"*. The election authority is a department of the
+city site: `stlouis-mo.gov/government/departments/board-election-commissioners/`.
+
+### 🔴 THREE PUBLISHERS STILL CARRY THE SUPERSEDED 28-WARD MAP
+
+The Board went 28 → 14 wards at the April 2023 election. Still publishing 28 as of 2026-09-28:
+the city's own **Planning department** ("Census Data by Ward"), the **charter PDF**, and the
+**national Open Civic Data registry** (`place:st_louis/ward:1 … ward:28`). Only the GIS layer, the
+Board's representation page, the April 2023 ballot and the Board's session roster agree on 14.
+
+### Useful endpoints
+
+- Board of Aldermen roster **by legislative session**: POST `sessionID=N` to
+  `…/aldermen/representation/index.cfm` (202 = 2026-2027, 199 = 2023-2024, the first 14-ward one).
+- Full Board **meeting dates** per session: POST `sessionYear=N` to
+  `…/aldermen/aldermanic-legislative-session.cfm`. ⚠ **It is a POST and the field is `sessionYear`**
+  — a GET, or the name `sessionID`, silently returns the CURRENT session. Always read back the
+  `selected` option to confirm which session you actually got.
+- Ward polygons: `maps8.stlouis-mo.gov/arcgis/rest/services/STLOUIS/BOUNDARIES/MapServer/4`.
+
+---
+
+## ✅ Wave 4 applied 2026-09-29 — St. Louis County
+
+`CC_0181` + `CC_0182`: 1 government, 4 chambers, 7 council districts, **10 offices, 10 seated**,
+plus **7 council polygons** (`X0076`). The `29510` `ocd_id` collision is repaired. Full record in
+the spec's wave 4 section.
+
+Measured in production after the apply: 10 offices, 10 seated, 0 districts without a polygon,
+`offices_missing_terms` unflagged back to **239**, and 🔴 **St. Louis County MINNESOTA unchanged at
+10 offices / 3 on district `27137`**.
+
+### The probe that matters
+
+| Point | County seats |
+|---|---|
+| Clayton, County Government Center | District 5 Clancy (2023-01-10) · Page · Price Smith · Zimmerman |
+| St Ann, north county | District 2 Bangert (**2025-01-07**) · the same three |
+| 🔴 **CITY CONTROL** 1200 Market St, and 5005 Chippewa St | **none** |
+| **CONTROL** Chicago | **none** |
+
+🟢 Two county addresses, two different council members. 🟢 **Both city addresses return zero county
+rows** — the City of St. Louis is not in St. Louis County, controlled end to end.
+
+### 🔴 The geography gate had to be geometric, and it was watched failing six ways
+
+7 is 7 under the 2019 plan too, so the count proves nothing. `--control=agree` points the
+agreement check at the 2019 layer (fires at 12.1460%); `--control=vintage` asks the disagreement
+check to tell the 2022 plan apart from itself (fires at 0.0000%). Neither gate is worth anything
+alone. All six controls fired on their own gate with none shadowed.
+
+### 🔴 And the truncated CSV is the rule to carry forward
+
+A short Nov 2024 file named **Kevin Schartner** the District 6 winner at 53.13%; the complete file
+names **G. Michael Archer** at 52.50%. HTTP 200, curl exit 0, correct formatting, nothing erroring.
+**Caught only by the council's own roster page.** See the top of this file and `county-results/FETCH.md`.
