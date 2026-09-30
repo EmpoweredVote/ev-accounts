@@ -13,22 +13,36 @@ Program tracker: [`PROGRAM.md`](./PROGRAM.md) · spec:
 | 2 legislature | ✅ **APPLIED 2026-09-28 — 105 offices, 105 seated, 0 vacant, EVERY TERM DATED TO THE DAY** (`CC_0163`/`CC_0164`) |
 | 3 city waves | ✅ **APPLIED 2026-09-28 — 9 offices, 9 seated, 0 vacant, 7 terms DATED + 2 honestly unknown** (`X0072`, `CC_0165`/`CC_0166`) |
 | 4 county waves | ✅ **APPLIED 2026-09-28 — 10 offices, 10 seated, 0 vacant, 8 terms DATED + 2 honestly unknown, NO GEOMETRY LOADED** (`CC_0167`/`CC_0168`) |
-| 5 assets | ▶ **PART DONE.** ✅ **`cities/aberdeen.jpg` SHIPPED 2026-09-28** (essentials [#169](https://github.com/EmpoweredVote/essentials/pull/169), build green). ▶ Portraits still **WAITING ON A REPLY** — LRC letter **SENT, do NOT send it again**; nothing imported, `photo_license` `unknown` on all 105 |
+| 5 assets | ▶ **PART DONE.** ✅ **`cities/aberdeen.jpg` SHIPPED 2026-09-28**. 🟢 **THE LRC REPLIED 2026-09-29: permission rests with each member, not the Council.** `CC_0184` APPLIED — the 105 are marked *restricted* and the site now explains itself. ▶ Open: sweep for non-LRC sources; `photo_license` still `unknown` on all 105 |
 
 ### ▶ RESUMING THIS SLICE — read this before touching anything
 
-**Stages 1-4 are APPLIED. Only SD-5 (assets) is left, and it is WAITING ON A REPLY.**
+**Stages 1-4 are APPLIED. SD-5 is part done. THE REPLY HAS ARRIVED — the wait is over.**
 
-🔴🔴 **THE LRC LETTER WAS SENT 2026-09-28. DO NOT SEND IT AGAIN** — a second request to a
-government body is a duplicate. It went from `chris@empowered.vote` to `LRC@sdlegislature.gov`;
-the text and the full status note are in
-[`letters/2026-09-28-sd-legislature-portrait-permission.md`](./letters/2026-09-28-sd-legislature-portrait-permission.md).
+🔴🔴 **THE LRC LETTER WAS SENT 2026-09-28. DO NOT SEND IT AGAIN.** It went from
+`chris@empowered.vote` to `LRC@sdlegislature.gov`. The text, **the reply**, and how to read it are
+in [`letters/2026-09-28-sd-legislature-portrait-permission.md`](./letters/2026-09-28-sd-legislature-portrait-permission.md).
 
-▶ **The next act is to WATCH FOR THE REPLY, and to import nothing until one arrives.** South Dakota
-states *"Use by Permission Only"* up front, unlike North Dakota's silence. **A sent request is not a
-grant and neither is silence** — `photo_license` stays `unknown` on all 105 and moves only to what a
-reply actually says. On a refusal the fallback is **no portrait**, never a news or campaign
-photograph. ✅ **The `aberdeen` banner is DONE** — `cities/aberdeen.jpg`, Main Street to the Brown County
+🟢 **THE COUNCIL REPLIED 2026-09-29, 10:59:** *"You will need to ask each legislator individually as
+they are the ones who can grant permission for use."* **That is a routing, not a refusal** — read
+the letter file before describing it as one, in a commit message or on the site.
+
+⚠ **THIS SUPERSEDES THE LINE THAT STOOD HERE: "on a refusal the fallback is no portrait, never a
+news or campaign photograph."** That sentence assumed the body we asked *held the right and said
+no*. It said the opposite: it does not hold the right. So the standing programme rule applies
+again unchanged — the 2026-07-08 ruling, which **approves campaign sites, official rosters and
+candidate-submitted Ballotpedia/Citizens Count photos**, and still bars news photography, personal
+social media and mugshots. Nothing about South Dakota narrows it.
+🔴 **The one South Dakota exception**: a candidate source that turns out to BE the Legislature's
+file is still barred. Measured — Spencer Gosch's Ballotpedia portrait is exactly that, re-cropped,
+and it looks like a different picture at thumbnail size. **Compare every candidate image against
+`lawmakerdocuments.blob.core.usgovcloudapi.net` before importing it.**
+
+▶ **`photo_license` still stays `unknown` on all 105 for the LEGISLATURE'S portraits** — a routing
+moves nothing. A portrait imported from an approved non-LRC source carries that source's own
+licence note instead, exactly as every other slice does.
+
+✅ **The `aberdeen` banner is DONE** — `cities/aberdeen.jpg`, Main Street to the Brown County
 Courthouse, public domain, essentials [#169](https://github.com/EmpoweredVote/essentials/pull/169).
 It needed no permission, so it did not wait on the LRC.
 

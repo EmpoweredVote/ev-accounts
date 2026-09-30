@@ -168,10 +168,23 @@ function describe(p) {
   }
 
   const count = (v) => [...observed.keys()].filter((k) => base[k]?.verdict === v).length;
-  const splits = [...observed.values()].filter(isSplit);
+  // 🔴 A SPLIT IS ONLY HARM WHEN THE TWO ROWS ARE THE SAME PERSON.
+  // "Seat on one row, compass answers only on the other" describes a shape, and that shape is the
+  // NORMAL state of the world for two different people: an incumbent and a challenger, a sitting
+  // judge and a defeated mayoral candidate, a serving trustee and a former board member. Counting
+  // those as harm made the summary report a standing "2" that had already been investigated and
+  // closed — and it invited a second investigation on 2026-09-30 that re-derived the same answer.
+  // So splits are counted among pairs that are NOT yet settled as different_people; the rest are
+  // reported separately as what they are.
+  const allSplits = [...observed.values()].filter(isSplit);
+  const splits = allSplits.filter((p) => base[p.key]?.verdict !== 'different_people');
+  const benignSplits = allSplits.length - splits.length;
   console.log(`duplicate people — ${rows.length} active rows, ${observed.size} candidate pair(s); positive control found`);
   console.log(`  reviewed: ${count('different_people')} different people, ${count('same_person')} same person (merge owed), ${count('unreviewed')} unreviewed`);
-  console.log(`  split pairs (seat on one row, answers only on the other): ${splits.length}`);
+  console.log(`  split pairs needing a look (seat on one row, answers only on the other): ${splits.length}`);
+  if (benignSplits) {
+    console.log(`  (+${benignSplits} split pair(s) already settled as different_people — expected shape, not harm)`);
+  }
   if (resolved.length) console.log(`  ${resolved.length} baseline pair(s) no longer appear (merged or renamed) — drop them with --update-baseline`);
 
   if (VERBOSE) {

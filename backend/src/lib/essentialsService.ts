@@ -65,6 +65,7 @@ import {
   buildDistrictQuery,
   buildStatewideQuery,
 } from './districtQueries.js';
+import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 export { GeocodingError };
 
 /**
@@ -120,6 +121,8 @@ export interface PoliticianFlatRecord {
   full_name: string;
   party: string;
   photo_origin_url: string;
+  /** Non-null when a portrait exists but its publisher reserved it. See photoRestriction.ts. */
+  photo_restriction?: PhotoRestriction | null;
   web_form_url: string;
   urls: string[] | null;
   email_addresses: string[] | null;
@@ -370,6 +373,7 @@ export async function getPoliticiansFlatList(
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
@@ -451,6 +455,7 @@ export async function getPoliticiansFlatList(
     full_name: row.full_name ?? '',
     party: row.party ?? '',
     photo_origin_url: row.photo_origin_url ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: row.web_form_url ?? '',
     urls: row.urls ?? null,
     email_addresses: row.email_addresses ?? null,
@@ -616,6 +621,7 @@ function mapPoliticianRow(row: Record<string, any>): PoliticianFlatRecord {
     full_name: row.full_name ?? '',
     party: row.party ?? '',
     photo_origin_url: row.photo_origin_url ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: row.web_form_url ?? '',
     urls: row.urls ?? null,
     email_addresses: row.email_addresses ?? null,
@@ -1188,6 +1194,8 @@ export interface PoliticianDetail {
   party_short_name: string;
   // Contact / web
   photo_origin_url: string;
+  /** Non-null when a portrait exists but its publisher reserved it. See photoRestriction.ts. */
+  photo_restriction?: PhotoRestriction | null;
   web_form_url: string;
   urls: string[] | null;
   email_addresses: string[] | null;
@@ -1314,6 +1322,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, p.party_short_name,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url,
            p.urls, p.email_addresses, p.bio_text, p.slug,
            p.total_years_in_office, p.is_incumbent, p.is_appointed, p.is_vacant,
@@ -1508,6 +1517,7 @@ export async function getPoliticianById(id: string): Promise<PoliticianDetail | 
     party: row.party ?? '',
     party_short_name: row.party_short_name ?? '',
     photo_origin_url: row.photo_origin_url ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: row.web_form_url ?? '',
     urls: row.urls ?? null,
     email_addresses: row.email_addresses ?? null,
@@ -1734,6 +1744,8 @@ export interface DistrictPoliticianSummary {
   party: string;
   is_incumbent: boolean;
   photo_origin_url: string;
+  /** Non-null when a portrait exists but its publisher reserved it. See photoRestriction.ts. */
+  photo_restriction?: PhotoRestriction | null;
 }
 
 /**
@@ -1947,6 +1959,7 @@ export async function getRepresentativesByJurisdiction(
     full_name: (row.full_name as string) ?? '',
     party: (row.party as string) ?? '',
     photo_origin_url: (row.photo_origin_url as string) ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: (row.web_form_url as string) ?? '',
     urls: (row.urls as string[] | null) ?? null,
     email_addresses: (row.email_addresses as string[] | null) ?? null,
@@ -2053,6 +2066,7 @@ export async function getLocalOfficialsByUserId(userId: string): Promise<Politic
     full_name: (row.full_name as string) ?? '',
     party: (row.party as string) ?? '',
     photo_origin_url: (row.photo_origin_url as string) ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: (row.web_form_url as string) ?? '',
     urls: (row.urls as string[] | null) ?? null,
     email_addresses: (row.email_addresses as string[] | null) ?? null,
