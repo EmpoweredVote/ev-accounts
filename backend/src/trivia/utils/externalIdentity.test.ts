@@ -2,6 +2,7 @@ import { describe, it, expect, beforeAll } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import {
+  mintForConfig,
   mintExternalId,
   collectionKeyOf,
   isLegacyExternalId,
@@ -194,7 +195,15 @@ describe('QuestionSchema explanation', () => {
  * still untested until it is carried over, same as the rule already noted for
  * nested-options.
  */
-describe('legacy mint shape (pinned against the REAL mintFor sites — Controller Ruling 22)', () => {
+describe('legacy mint WIDTH at the real call sites', () => {
+  // The widths used to be five hand-copied `padStart(3|4, '0')` expressions,
+  // pinned here by extracting them from source. They are now an argument to
+  // mintForConfig, so the risk moved: nobody can "unify the widths" any more,
+  // but someone can still change the number passed at a call site.
+  //
+  // So this pins the ARGUMENTS instead. mintForConfig's own behaviour is tested
+  // directly below; this only asserts each caller asks for the width its
+  // collection's existing ids actually use.
   const REPLACEMENT_GENERATOR_SRC = readFileSync(
     fileURLToPath(new URL('../cron/replacementGenerator.ts', import.meta.url)),
     'utf-8',
@@ -204,79 +213,52 @@ describe('legacy mint shape (pinned against the REAL mintFor sites — Controlle
     'utf-8',
   );
 
-  // Anchored on `if (config.externalIdPrefix) {` — mintFor()'s own guard —
-  // so this can only ever match its prefixed-branch return, never an
-  // unrelated template literal elsewhere in the file.
-  const MINT_3_RE = /if \(config\.externalIdPrefix\) \{[\s\S]*?return (`[\s\S]*?`);/;
-  // Anchored on `const externalId = externalIdPrefix` — unique in this file —
-  // so this can only ever match this ternary's truthy branch.
-  const MINT_4_RE = /const externalId = externalIdPrefix[\s\S]*?\?\s*(`[\s\S]*?`)[\s\S]*?:\s*mintExternalId/;
-
-  const mint3Match = REPLACEMENT_GENERATOR_SRC.match(MINT_3_RE);
-  const mint4Match = INTL_QUESTION_GENERATOR_SRC.match(MINT_4_RE);
-
-  it('the three-digit expression is present and extractable from replacementGenerator.ts', () => {
-    // Guards against this whole suite going vacuously green if a refactor
-    // changes the code's shape enough that MINT_3_RE stops matching anything.
-    expect(mint3Match).not.toBeNull();
+  it('the replacement cron takes the THREE-digit default', () => {
+    const call = REPLACEMENT_GENERATOR_SRC.match(/return mintForConfig\(([^)]*)\);/);
+    expect(call, 'mintForConfig call not found — did the cron stop using it?').not.toBeNull();
+    // No third argument means the default of 3. An explicit 4 here would mint
+    // `bli-0007` where the database holds `bli-007`.
+    expect(call![1]).not.toMatch(/,\s*4\s*$/);
   });
 
-  it('the four-digit expression is present and extractable from question-generator.ts', () => {
-    expect(mint4Match).not.toBeNull();
+  it('the international generator asks for FOUR digits explicitly', () => {
+    const call = INTL_QUESTION_GENERATOR_SRC.match(/mintForConfig\(\s*\{[^}]*\},\s*nextIdNum,\s*(\d)\s*,?\s*\)/);
+    expect(call, 'mintForConfig call not found — did the generator stop using it?').not.toBeNull();
+    expect(call![1]).toBe('4');
   });
 
-  let mintPrefixed3: (config: { externalIdPrefix?: string }, seq: number) => string;
-  let mintPrefixed4: (externalIdPrefix: string | undefined, nextIdNum: number) => string;
+  it('the two widths still differ, so neither caller can be "tidied" into the other', () => {
+    const legacy = { externalIdPrefix: 'bli', collectionSlug: 'bloomington-in' };
+    expect(mintForConfig(legacy, 7, 3)).toBe('bli-007');
+    expect(mintForConfig(legacy, 7, 4)).toBe('bli-0007');
+  });
+});
 
-  beforeAll(() => {
-    if (!mint3Match) {
-      throw new Error(
-        'mintFor() three-digit branch not found in replacementGenerator.ts -- ' +
-          'update MINT_3_RE in externalIdentity.test.ts to match the current source.',
-      );
-    }
-    if (!mint4Match) {
-      throw new Error(
-        'question-generator.ts four-digit branch not found -- update MINT_4_RE ' +
-          'in externalIdentity.test.ts to match the current source.',
-      );
-    }
-    // eslint-disable-next-line no-new-func -- deliberately evaluating the
-    // exact expression extracted from the real source above, not a
-    // hand-copied duplicate of it.
-    mintPrefixed3 = new Function(
-      'config',
-      'seq',
-      `return ${mint3Match[1]};`,
-    ) as (config: { externalIdPrefix?: string }, seq: number) => string;
-    // eslint-disable-next-line no-new-func
-    mintPrefixed4 = new Function(
-      'externalIdPrefix',
-      'nextIdNum',
-      `return ${mint4Match[1]};`,
-    ) as (externalIdPrefix: string | undefined, nextIdNum: number) => string;
+describe('mintForConfig', () => {
+  it('mints the three-digit legacy shape by default', () => {
+    const legacy = { externalIdPrefix: 'bli', collectionSlug: 'bloomington-in' };
+    expect(mintForConfig(legacy, 7)).toBe('bli-007');
+    expect(mintForConfig(legacy, 146)).toBe('bli-146');
   });
 
-  it('mints the three-digit legacy shape when a prefix is present (real replacementGenerator.ts code)', () => {
-    expect(mintPrefixed3({ externalIdPrefix: 'bli' }, 7)).toBe('bli-007');
-    expect(mintPrefixed3({ externalIdPrefix: 'bli' }, 146)).toBe('bli-146');
+  it('mints the four-digit legacy shape when asked', () => {
+    const legacy = { externalIdPrefix: 'wiran', collectionSlug: 'war-in-iran' };
+    expect(mintForConfig(legacy, 7, 4)).toBe('wiran-0007');
+    expect(mintForConfig(legacy, 1761, 4)).toBe('wiran-1761');
   });
 
-  it('mints the four-digit legacy shape for the international generator (real question-generator.ts code)', () => {
-    // A small seq is the width-sensitive case: 1761 is 4 digits regardless of
-    // whether padStart's width argument is 3 or 4, so it alone would not
-    // catch a regression to 3. 7 does — 'wiran-007' vs 'wiran-0007'.
-    expect(mintPrefixed4('wiran', 7)).toBe('wiran-0007');
-    expect(mintPrefixed4('wiran', 1761)).toBe('wiran-1761');
+  it('the two widths are genuinely different and must stay that way', () => {
+    const legacy = { externalIdPrefix: 'bli', collectionSlug: 'bloomington-in' };
+    expect(mintForConfig(legacy, 7, 3)).not.toBe(mintForConfig(legacy, 7, 4));
   });
 
-  it('the two widths are still deliberately different (the invariant this suite protects)', () => {
-    expect(mintPrefixed3({ externalIdPrefix: 'bli' }, 7)).not.toBe(mintPrefixed4('bli', 7));
-    expect(mintPrefixed3({ externalIdPrefix: 'bli' }, 7)).toBe('bli-007');
-    expect(mintPrefixed4('bli', 7)).toBe('bli-0007');
+  it('falls through to the slug scheme when no prefix is present, at either width', () => {
+    const modern = { collectionSlug: 'akron-oh' };
+    expect(mintForConfig(modern, 1)).toBe('akron-oh_0001');
+    expect(mintForConfig(modern, 1, 4)).toBe('akron-oh_0001');
   });
 
-  it('the slug-scheme fallback (mintExternalId, shared and already covered above) is unaffected by either width', () => {
-    expect(mintExternalId('akron-oh', 1)).toBe('akron-oh_0001');
+  it('treats an empty-string prefix as absent, matching the truthiness branch', () => {
+    expect(mintForConfig({ externalIdPrefix: '', collectionSlug: 'akron-oh' }, 1)).toBe('akron-oh_0001');
   });
 });

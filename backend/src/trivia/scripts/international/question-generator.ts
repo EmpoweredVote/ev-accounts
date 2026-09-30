@@ -2,7 +2,7 @@ import { client, MODEL } from '../../scripts/content-generation/anthropic-client
 import type { ClaimResult } from './claim-extractor.js';
 import type { QuestionInput } from '../../services/qualityRules/types.js';
 import { auditQuestion } from '../../services/qualityRules/index.js';
-import { mintExternalId, nextSequence } from '../../utils/externalIdentity.js';
+import { mintExternalId, mintForConfig, nextSequence } from '../../utils/externalIdentity.js';
 import {
   qualityRulesEnforcement,
   emptyQualityRuleStats,
@@ -362,9 +362,11 @@ export async function writePassingQuestions(
   for (const q of passingQuestions) {
     // Legacy keeps the four-digit width already used by ids in the DB;
     // new-scheme (no prefix) mints `<slug>_<NNNN>` via the shared minter.
-    const externalId = externalIdPrefix
-      ? `${externalIdPrefix}-${String(nextIdNum).padStart(4, '0')}`
-      : mintExternalId(collectionSlug!, nextIdNum);
+    const externalId = mintForConfig(
+      { externalIdPrefix, collectionSlug: collectionSlug! },
+      nextIdNum,
+      4,
+    );
     nextIdNum++;
 
     const placed = placeAnswer(q.options, q.correctAnswer, externalId);

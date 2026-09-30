@@ -388,11 +388,11 @@ async function mintFor(
   config: { externalIdPrefix?: string; collectionSlug: string },
   seq: number,
 ): Promise<string> {
-  if (config.externalIdPrefix) {
-    return `${config.externalIdPrefix}-${String(seq).padStart(3, '0')}`;
-  }
-  const { mintExternalId } = await import('../utils/externalIdentity.js');
-  return mintExternalId(config.collectionSlug, seq);
+  // THREE-digit legacy width here, unlike the international generators' four.
+  // The width is mintForConfig's third argument (defaulting to 3) rather than a
+  // convention repeated in five files; see that function's comment.
+  const { mintForConfig } = await import('../utils/externalIdentity.js');
+  return mintForConfig(config, seq);
 }
 
 // ─── Internal: getNextExternalId ─────────────────────────────────────────────
