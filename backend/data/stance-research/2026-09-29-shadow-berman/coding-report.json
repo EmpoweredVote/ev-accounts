@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4cfacf31-d285-40ac-8373-e350912fddda|6bb9a929-fd7a-4fee-b28e-4faa7c3b95de|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A California Assembly roll call, with bill text, on a measure that sets or removes the state's own voter-identification requirement (Elections Code), during Berman's service in either chamber",
+          "Berman's own words answering what identification California should require to vote (questionnaire, debate answer, or first-person issue page)",
+          "Berman's own record or statement setting the state's voter ID requirement (photo ID, non-photo ID, or no ID), independent of the SB 1174 local-preemption clause"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4cfacf31-d285-40ac-8373-e350912fddda|6bb9a929-fd7a-4fee-b28e-4faa7c3b95de|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "requests": [
+        "A California Assembly roll call, with bill text, on a measure that sets or removes the state's own voter-identification requirement (Elections Code), during Berman's service in either chamber",
+        "Berman's own words answering what identification California should require to vote (questionnaire, debate answer, or first-person issue page)",
+        "Berman's own record or statement setting the state's voter ID requirement (photo ID, non-photo ID, or no ID), independent of the SB 1174 local-preemption clause"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

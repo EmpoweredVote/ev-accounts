@@ -1,0 +1,7 @@
+Wrote `coder-1.json` — one row, Berman / voting-rights, coded BLANK `no-evidence`.
+
+Both snapshots are pages of a single record (SB 1174, 2023-2024) and are coded as one instrument group: the vote page carries `actor_quote` (Berman in the Ayes list) and `tally_quote` (`Ayes Count 57 Noes Count 16`), the chaptered text carries the `provision_quote` from SEC. 2 and nulls for the rest.
+
+The row turns on V2. SB 1174's operative section bars a *local government* from requiring identification to vote — it decides which level of government may set an ID rule, not what identification the state should require. That is the H12 / Durazo preemption case exactly, so both passages are `adjacent` (shape `off-axis`), nothing survives to support a chair, and `rests_on` is empty. Two `needs_source` entries name what would actually evidence this ladder: a California roll call with bill text on the state's own ID requirement, and Berman's own words answering the question.
+
+No quotes: neither snapshot contains any first-person Berman words.

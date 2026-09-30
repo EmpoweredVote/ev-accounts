@@ -1,0 +1,11 @@
+Wrote `coder-1.json` with one row.
+
+**Henry Stern / climate-change → chair 1**
+
+Two passages, one record (`SB 100 (2017-2018)`):
+- **Vote page** (`c7118dfe…`) — `own-act` / `record` / `vote`, 2018-08-29. Carries `actor_quote` (the Ayes list containing `Stern`) and `tally_quote` (`Ayes Count 25 Noes Count 13`). 13 of 40 voting No, so the near-unanimous rule doesn't bite; a Senate concurrence vote on unfinished business is final passage, not a procedural motion.
+- **Bill text** (`75b8d8b2…`) — `own-act` / `record` / `vote`, carries `provision_quote` only, per the per-instrument record-field rule.
+
+V4 `chair-shaped`: single-subject renewables bill whose operative sections impose binding procurement percentages on dated deadlines with penalties for noncompliance — the rung "Require a shift to clean energy through mandates and firm deadlines." No subsidy, tax-credit, or permitting mechanism appears in the operative text, which excludes the funding and permitting rungs. V5 `in-term` (seated 2016-12-05).
+
+No candidate quotes: neither snapshot contains Stern's own words, so `quotes` is empty. `needs_source` is empty — the chair stands on the record alone.

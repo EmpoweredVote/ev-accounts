@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "passages": [
+        {
+          "snapshot_id": "843f5f64-d525-5361-8821-91f18379a595",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-09-11",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": null,
+          "note": "Assembly floor vote on AB 1482 final passage; Wicks is listed among the Ayes (48-26).",
+          "record_kind": "vote",
+          "actor_quote": "Weber, Wicks, Wood, Rendon",
+          "tally_quote": "Ayes Count 48 Noes Count 26"
+        },
+        {
+          "snapshot_id": "7346d636-0059-5547-b6d6-5113cf6b4140",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-10-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": "an owner of residential real property shall not, over the course of any 12-month period, increase the gross rental rate for a dwelling or a unit more than 5 percent plus the percentage change in the cost of living, or 10 percent, whichever is lower, of the lowest gross rental rate charged for that dwelling or unit at any time during the 12 months prior to the effective date of the increase.",
+          "note": "Chaptered bill text of AB 1482 setting the statewide rent-cap and just-cause eviction provisions signed into law.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "843f5f64-d525-5361-8821-91f18379a595",
+        "7346d636-0059-5547-b6d6-5113cf6b4140"
+      ],
+      "reasoning": "Wicks voted Aye on AB 1482 (2019-2020) final passage in the Assembly (48-26), a single-subject tenant-protection bill that caps annual rent increases statewide at 5% plus CPI (or 10%, whichever is lower) and adds just-cause eviction protections, extending coverage to units with no prior rent regulation while exempting new construction and single-family/owner-occupied properties. This matches 'Strengthen existing rent stabilization and extend coverage to more units,' and the bill's carve-outs exclude 'Expand rent control to cover all rental units communitywide.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

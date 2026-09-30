@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6",
+      "office_id": "e090aea1-8a60-4a53-b43f-ce7162477c4a",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "c7118dfe-a4bb-56f7-b1cc-7049279c9a26",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-08-29",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": null,
+          "note": "Senate concurrence floor vote on SB 100; Stern voted Aye.",
+          "record_kind": "vote",
+          "actor_quote": "Skinner, Stern, Wieckowski, Wiener",
+          "tally_quote": "Ayes Count 25 Noes Count 13"
+        },
+        {
+          "snapshot_id": "75b8d8b2-f726-5f58-b711-b6409af31abd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-09-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": "It is the policy of the state that eligible renewable energy resources and zero-carbon resources supply 100 percent of all retail sales of electricity to California end-use customers and 100 percent of electricity procured to serve all state agencies by December 31, 2045.",
+          "note": "Chaptered bill text setting the RPS mandate and 100% clean-energy-by-2045 policy that Stern's vote enacted.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "c7118dfe-a4bb-56f7-b1cc-7049279c9a26",
+        "75b8d8b2-f726-5f58-b711-b6409af31abd"
+      ],
+      "reasoning": "Henry Stern voted Aye on SB 100 (2017-2018)'s Senate concurrence vote (Ayes Count 25, Noes Count 13), a single-subject clean-energy bill whose operative provisions set a 60% Renewables Portfolio Standard by December 31, 2030 and a state policy that renewable/zero-carbon resources supply 100 percent of retail electricity sales by December 31, 2045. These are mandates with firm deadlines, matching the rung text 'Require a shift to clean energy through mandates and firm deadlines.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

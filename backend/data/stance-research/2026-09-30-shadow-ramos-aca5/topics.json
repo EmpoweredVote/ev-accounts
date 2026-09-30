@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+    "topic_key": "civil-rights",
+    "topic_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+    "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+    "question_number": 6,
+    "title": "Civil Rights and Social Justice",
+    "question_text": "What role should government play in addressing racial and social inequality?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "mandate racial equity requirements in all institutions"
+      },
+      {
+        "value": 2,
+        "text": "strengthen civil rights enforcement and address systemic discrimination"
+      },
+      {
+        "value": 3,
+        "text": "maintain current civil rights laws while promoting equal opportunity"
+      },
+      {
+        "value": 4,
+        "text": "limit federal civil rights enforcement to clear cases of discrimination"
+      },
+      {
+        "value": 5,
+        "text": "eliminate affirmative action and all race-based government programs"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

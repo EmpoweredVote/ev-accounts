@@ -1,0 +1,10 @@
+Wrote `coder-1.json`.
+
+**Row: Mike McGuire / gun-policy → chair 2**
+
+Both snapshots code as `own-act` / `on-question` / `record` / `chair-shaped` / `in-term`, grouped under one instrument, `SB 880 (2015-2016)`:
+
+- Vote page (`998b80e1`): `record_kind: vote`, `actor_quote` = the Ayes list containing `McGuire`, `tally_quote` = `Ayes Count 24 Noes Count 14 NVR Count 2`. 14 of 40 voting No, so not `near-unanimous`; `provision_quote` is null — the page doesn't print the provision.
+- Bill text (`260c4d27`): `provision_quote` = the SEC. 1 operative redefinition of "assault weapon"; `actor_quote`/`tally_quote` null, since the page names no voter or count.
+
+V4 reasoning: single-subject bill ("Firearms: assault weapons"), final passage, whose operative sections widen the banned class of semi-automatic assault-style weapons (closing the detachable-magazine/bullet-button gap) while leaving other firearms lawful — the rung that would "Ban semi-automatic assault-style weapons, while allowing other firearms." Rung 1 (ban civilian ownership generally) is excluded by the bill's limited scope and its Olympic-pistol exemptions; rungs 4 and 5 are excluded by direction. No quotes: neither snapshot contains the person's words, so `quotes` is empty, and `needs_source` is empty since the chair rests on the record alone.
