@@ -1,0 +1,12 @@
+Wrote `labels/coder-1.json` — one row, chair **5**.
+
+**Passages (all three snapshots, instrument `HB 2853 (2022)`):**
+- **Vote page** — `own-act` / `on-question` / `record` (`vote`), `actor_quote` "PAWLIK N PAYNE Y PINGERELLI Y", `tally_quote` "Passed 31-26-3-0-0". 26 No of 60 → not near-unanimous.
+- **Bill overview** — `own-act` / `record` (`sponsor`), `actor_quote` "Payne (Co-Sponsor)".
+- **Bill text (Chapter 388)** — carries the `provision_quote`: new §15-2401.01 making "qualified student" include every resident eligible to enroll in an Arizona public school.
+
+**Judgments worth flagging:**
+- **V5 `in-term`:** the act is from Payne's House service (2017–2025), the other chamber of the same legislature → in-term under the 2026-09-27 option-B ruling, coded on content.
+- **Rung 5 over rung 4:** §15-2401.01 enacts universal eligibility outright (no cap, no phase-in), so "most families" is excluded; the annex names a universal ESA statute as rung-5 evidence. Clause [b] is met by the statute's own definitions — "qualified school" is any nongovernmental school barred only from race/color/national-origin discrimination (so religious schools included), plus "Services provided by a public school" as an allowed expense, with 90% of the base support level transferred to the account.
+- Deleted text (`[deleted: …]` fences) was not quoted; the provision quote comes from the added section, which has none.
+- No `quotes` and no `needs_source` — all three sources are public records and the record is complete.
