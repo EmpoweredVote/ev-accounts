@@ -85,5 +85,33 @@ No Season 1 description exists (35 topics; draft "Means" from the served text al
 `defense-spending`, `military-intervention`, `gun-policy`, `israel-military-aid`, `minimum-wage`,
 `ranked-choice-voting`.
 
+## Pending notes for annexes not yet written
+
+### `abortion` (served `085feb9c-f157-4dae-bfd0-7b2736c5d87c`)
+
+From the gold-labelling session, 2026-10-01, operator-approved. Coders split twice on one bill: a
+15-week limit with only a medical-emergency exception (death or serious lasting harm to a major
+bodily function) after it. The operator ruled it rung 3 on two gold items, which stay unnamed. The
+ladder states limits in trimesters; laws state them in weeks.
+
+Proposed line, as received:
+
+> A gestational limit at about 12–15 weeks, with only a health or life exception after it, reads as
+> rung 3. A limit at about 20–24 weeks, or at viability, with a health exception after it, reads as
+> rung 2. A ban from conception or implantation with rape, incest and life exceptions reads as rung 4.
+> A limit with NO stated exception after it does not reach rung 3 or 2 on its own (silence is not a
+> clause).
+
+Checked against the served wording before use. Open points:
+- Rungs 2 and 3 say "only to protect the mother's **health**". A **life-only** exception is narrower
+  than that, so "health or life" overstates rung 3. The ruled bill had a health exception.
+- Rung 2 is "through the second trimester" (about week 27). Viability (about 24) and 22–24 weeks are
+  close to it; **20 weeks** sits about halfway between the two thresholds. Decide where 16–21 weeks
+  goes, and whether weeks are counted from the last menstrual period or from fertilization (20 weeks
+  after fertilization is about 22 weeks LMP).
+- Rung 4 lists three exceptions: rape, incest **and** a serious risk to life. Not covered: an early
+  ban (for example 6 weeks) with those exceptions, and a ban whose only exception is the mother's
+  life. The second fits neither rung 4 nor rung 5 ("no exceptions").
+
 ⚠ `medicare/aid` contains a slash, so `annexPath` resolves it to `annex/medicare/aid.md` (a
 subdirectory). Keep that path when writing its annex.
