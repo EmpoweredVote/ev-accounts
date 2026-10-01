@@ -1,11 +1,12 @@
 ---
 profile: in-iga-bill-details
-version: 3
+version: 4
 scope: state:IN
 body: legislature
 match:
   url_prefixes:
     - https://iga.in.gov/legislative/2014/bills/
+    - https://iga.in.gov/legislative/2014/resolutions/
     - https://iga.in.gov/legislative/2015/bills/
     - https://iga.in.gov/legislative/2016/bills/
     - https://iga.in.gov/legislative/2017/bills/
@@ -114,7 +115,8 @@ calls are separate PDFs (`in-iga-roll-call`).
   `.../legislative/` root — a prefix that broad would also swallow other IGA pages under `/legislative/`
   that this profile's rules do not fit (final review fix 3). **A new session year needs a new prefix
   line here, plus a version bump**, or that year's pages resolve to no profile at all and CONFIRM
-  reports `no-source-profile` for them.
+  reports `no-source-profile` for them. Joint resolutions live under `/<year>/resolutions/`, not
+  `/bills/` — so they also need their own line per year (2014 added in v4, for HJR 3).
 - 🔴 **Bill-text PDFs of an AMENDED statute are not safe as a provision source.** Indiana marks deleted
   words with strike-through and added words with bold — only by print style. Text extraction (pdf.js,
   pdftotext) drops the style, so deleted and added text run together: HEA 1296 (2022) reads "a person

@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Indiana House roll call, HB 1007 (2025), final passage or concurrence",
+          "Soliday's own words tying HB 1007 (2025) to data centers (floor statement, committee testimony, or an interview)",
+          "Any Indiana instrument Soliday acted on that names data centers specifically (siting, permitting, community benefit, or residential ratepayer cost allocation)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "requests": [
+        "Indiana House roll call, HB 1007 (2025), final passage or concurrence",
+        "Soliday's own words tying HB 1007 (2025) to data centers (floor statement, committee testimony, or an interview)",
+        "Any Indiana instrument Soliday acted on that names data centers specifically (siting, permitting, community benefit, or residential ratepayer cost allocation)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "dd516298-029b-58eb-a741-716f341447af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Bill details page establishing that Smaltz authored HB 1032; it prints no operative text and no House tally.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Ben Smaltz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "17ad74dc-278e-53f9-91c5-37b3dbc6a486",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "House third-reading roll call; Smaltz is in the Yea list and the margin is well short of near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Aylesworth Haggard May Smaltz",
+          "tally_quote": "Yea 57 Nay 41 Excused 2 Not Voting 0"
+        },
+        {
+          "snapshot_id": "8e776ba8-1843-50fc-841e-7107d265564e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "A temporary restraining order may not be sought or 9 issued.",
+          "note": "Bill text as authored: the general assembly may redraw congressional districts outside the post-census session and new districts are enacted by statute, while apportionment suits lose temporary restraining orders and are channelled to the supreme court on appeal."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Smaltz authored HB 1032 (2026) and voted for it on House third reading (Yea 57 Nay 41 Excused 2 Not Voting 0): the bill lets the general assembly amend congressional districts outside the session following the decennial census, enacts a new map by statute, and narrows relief in apportionment suits. That excludes the commission and bipartisan-committee rungs, but excluding rungs is not evidence for the one left: the bill preserves judicial review of apportionment, with the supreme court given mandatory and exclusive jurisdiction over appeals, so it does not say the party controlling the legislature draws maps without outside interference. The evidence therefore shows a side but does not separate state legislatures with court oversight to prevent extreme partisan bias from the party that controls the state legislature without outside interference.",
+      "needs_source": [
+        "Smaltz's own words on HB 1032 (2026) — authored-bill floor remarks, committee testimony or House Journal statement tying the bill to whether courts should check partisan maps",
+        "Any Smaltz record or first-person statement on an independent or bipartisan redistricting commission in Indiana"
+      ],
+      "quotes": []
+    }
+  ]
+}

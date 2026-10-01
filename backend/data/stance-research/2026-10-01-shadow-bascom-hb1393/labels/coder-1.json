@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "ea05323c-8b6d-4b16-873c-083d9873889d",
+      "office_id": "4333d774-b25a-4c26-905b-ca604fa8216f",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b082c11d-2401-55c1-be63-29ba3df6db1a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-04-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": null,
+          "note": "IGA bill details page naming Bascom as the author of HB 1393 (2025); it prints the digest, not the statutory provision.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Garrett Bascom",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7437aeb0-9d93-5bdf-9dde-e83c9884611b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": "If a law enforcement officer arrests an individual for a felony or a misdemeanor and there is probable cause to believe that the person is not lawfully present in the United States, the jail or detention facility shall, during the intake process at the jail or detention facility, notify the county sheriff of the probable cause to believe the person is not lawfully present in the United States.",
+          "note": "Enrolled act text; it creates a notice and referral duty and names no removal policy, and nothing quoted here sits inside a [deleted: ] fence.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bascom authored HB 1393 (2025), which requires a jail to notify the county sheriff when someone arrested \"for a felony or a misdemeanor\" is probably \"not lawfully present in the United States\", and the sheriff to report it onward. That is a referral duty triggered by arrest, not a removal policy: it is incompatible with \"Stop deportations entirely and protect undocumented immigrants from removal\" and reaches past \"Only deport undocumented immigrants convicted of serious violent crimes\", but it never says how many undocumented immigrants should be removed. The act is silent on long-settled immigrants and on removing everyone, so it cannot establish \"Deport all undocumented immigrants, starting with those who have criminal records\" or either neighbouring rung.",
+      "needs_source": [
+        "Bascom's own words (questionnaire, issue page, floor statement) on how far removal should go: all undocumented immigrants, criminal records only, or recent arrivals",
+        "An Indiana instrument Bascom authored, co-authored or voted on that sets the scope of removal rather than a notification duty"
+      ],
+      "quotes": []
+    }
+  ]
+}

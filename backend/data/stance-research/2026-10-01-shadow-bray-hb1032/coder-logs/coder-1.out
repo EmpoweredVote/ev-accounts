@@ -1,0 +1,11 @@
+Written: `coder-1.json`, one row (Bray / redistricting).
+
+**Coding summary**
+
+- Three passages, all one record group on `HB 1032 (2026)`, all `own-act` / `on-question` / `record` / `vote` / `in-term`:
+  - Roll call 8 (Senate, 3rd reading, 2025-12-11) carries `actor_quote` (`Bohacek Dernulc Leising Spencer Bray Doriot Mishler Taylor` — Bray in the Nay column, no other Bray in either column) and `tally_quote` (`Yea 19 Nay 31`).
+  - Engrossed bill text carries the `provision_quote` (the added subsection (b) mid-decade amendment authority; copied verbatim including the PDF's inline line numbers, and taken from added text, not a `[deleted: …]` fence).
+  - Bill-details page carries the tally it prints; it names the authors and sponsors, none of whom is Bray.
+- V4 `direction-only` on all three: the act is a **No** vote. Per V4.1/V4.2, that rules out at most "the party that controls the state legislature without outside interference" and does not match the clauses of "state legislatures with court oversight to prevent extreme partisan bias" or any of the three commission rungs — reaching rung 4 by elimination is exactly H14.
+- **V6: BLANK, `direction-only`**, `rests_on` empty, no quotes (no Bray words in any source).
+- `needs_source`: his own words explaining the HB 1032 vote, and any redistricting instrument he authored/sponsored that names a drawing body.

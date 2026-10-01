@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "ea05323c-8b6d-4b16-873c-083d9873889d",
+      "office_id": "4333d774-b25a-4c26-905b-ca604fa8216f",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b082c11d-2401-55c1-be63-29ba3df6db1a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-04-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": null,
+          "note": "Bill details page credits Bascom as HB 1393's author and shows it was signed into law requiring jail notification to the sheriff about a suspected-undocumented arrestee.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Garrett Bascom.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7437aeb0-9d93-5bdf-9dde-e83c9884611b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": "If a law enforcement officer arrests an individual for a felony or a misdemeanor and there is probable cause to believe that the person is not lawfully present in the United States, the jail or detention facility shall, during the intake process at the jail or detention facility, notify the county sheriff of the probable cause to believe the person is not lawfully present in the United States.",
+          "note": "The enrolled act text shows the notification duty is triggered by an arrest for any felony or misdemeanor, not by a conviction or by undocumented status alone.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bascom authored HB 1393 (2025), signed into law during his current term, which requires a jail to notify the county sheriff -- who then notifies 'the proper authority' -- when someone arrested for a felony or misdemeanor is believed not lawfully present. This reaches further than rung 2's 'convicted of serious violent crimes' because it is triggered by arrest for any felony or misdemeanor, but it never requires deporting 'all undocumented immigrants' as rungs 4 and 5 do, so it shows an enforcement-cooperation direction without establishing a specific rung.",
+      "needs_source": [
+        "A statement, floor speech, or interview from Bascom on HB 1393 explaining whether the bill's criminal-arrestee notification requirement reflects a broader position on deporting all undocumented immigrants or only those with criminal involvement."
+      ],
+      "quotes": []
+    }
+  ]
+}
