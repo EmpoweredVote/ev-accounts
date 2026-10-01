@@ -12,6 +12,7 @@ import { pool } from './db.js';
 import { cache } from './cache.js';
 import type { PoliticianFlatRecord, FinanceSummary } from './essentialsService.js';
 import { MTFCC_DISTRICT_TYPE_GUARD, type GeoPair } from './geoIdGuard.js';
+import { PHOTO_RESTRICTION_SELECT_SQL, type PhotoRestriction } from './photoRestriction.js';
 
 // Overlap resolution is pure geometry — it only changes when geofence boundaries
 // are (re)loaded, which happens during seeding, not at request time. Caching the
@@ -437,6 +438,7 @@ export async function getPoliticiansByArea(
     SELECT DISTINCT ON (p.id)
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
@@ -485,6 +487,7 @@ export async function getPoliticiansByArea(
       SELECT DISTINCT ON (p.id)
              p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
              p.preferred_name, p.name_suffix, p.party, COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
+             ${PHOTO_RESTRICTION_SELECT_SQL},
              p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
              p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
@@ -549,6 +552,7 @@ export async function getPoliticiansByArea(
     full_name: row.full_name ?? '',
     party: row.party ?? '',
     photo_origin_url: row.photo_origin_url ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: row.web_form_url ?? '',
     urls: row.urls ?? null,
     email_addresses: row.email_addresses ?? null,
@@ -649,6 +653,7 @@ const DISTRICT_POLITICIAN_SELECT = `
   p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
   p.preferred_name, p.name_suffix, p.party,
   COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url, p.web_form_url,
+  ${PHOTO_RESTRICTION_SELECT_SQL},
   p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
   p.finance_summary,
   COALESCE(p.valid_from, '') AS term_start,
@@ -722,6 +727,7 @@ export async function getPoliticiansByGovernmentList(
     SELECT p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
@@ -777,6 +783,7 @@ export async function getPoliticiansByGovernmentList(
              p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
              p.preferred_name, p.name_suffix, p.party,
              COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+             ${PHOTO_RESTRICTION_SELECT_SQL},
              p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
              p.finance_summary,
              COALESCE(p.valid_from, '') AS term_start,
@@ -854,6 +861,7 @@ export async function getPoliticiansByGovernmentList(
     full_name: row.full_name as string ?? '',
     party: row.party as string ?? '',
     photo_origin_url: row.photo_origin_url as string ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: row.web_form_url as string ?? '',
     urls: row.urls as string[] ?? null,
     email_addresses: row.email_addresses as string[] ?? null,
@@ -938,6 +946,7 @@ function mapBrowseRow(row: Record<string, unknown>): PoliticianFlatRecord {
     full_name: (row.full_name as string) ?? '',
     party: (row.party as string) ?? '',
     photo_origin_url: (row.photo_origin_url as string) ?? '',
+    photo_restriction: (row.photo_restriction as PhotoRestriction | null) ?? null,
     web_form_url: (row.web_form_url as string) ?? '',
     urls: (row.urls as string[]) ?? null,
     email_addresses: (row.email_addresses as string[]) ?? null,
@@ -1006,6 +1015,7 @@ export async function getStatewideOfficials(stateAbbrev: string): Promise<Politi
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,
@@ -1076,6 +1086,7 @@ export async function getFederalOfficials(): Promise<PoliticianFlatRecord[]> {
            p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
            p.preferred_name, p.name_suffix, p.party,
            COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+           ${PHOTO_RESTRICTION_SELECT_SQL},
            p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
            p.finance_summary,
            COALESCE(p.valid_from, '') AS term_start,

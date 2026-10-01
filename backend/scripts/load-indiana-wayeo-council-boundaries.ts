@@ -118,7 +118,16 @@ const TARGETS: Target[] = [
   { county: 'Brown',    fips3: '013', countyGeoId: '18013', expected: 4,  load: range('18013', [1, 2, 3, 4]), body: 'Brown County Council',    ocd: 'brown' },
   { county: 'Martin',   fips3: '101', countyGeoId: '18101', expected: 4,  load: range('18101', [1, 2, 3, 4]), body: 'Martin County Council',   ocd: 'martin' },
   { county: 'Owen',     fips3: '119', countyGeoId: '18119', expected: 4,  load: range('18119', [1, 2, 3, 4]), body: 'Owen County Council',     ocd: 'owen' },
-  { county: 'Marion',   fips3: '097', countyGeoId: '18097', expected: 25, load: range('18097', [8, 12, 13, 14, 18]), body: 'Indianapolis City-County Council', ocd: 'marion' },
+  // 🔴 MARION LOADS ALL 25 SINCE 2026-09-30, and the reason is the rule this whole file exists for.
+  // It used to read `[8, 12, 13, 14, 18]` — the five seats that existed on 2026-09-24, when a seat with no
+  // geofence was the thing being fixed. CC_0185 then consolidated Indianapolis and Marion County and seated
+  // the other TWENTY councillors, and nothing re-ran this loader. The result was 20 seated officials whom no
+  // address could reach, which `check:reachability` caught on master (UNREACHABLE in|COUNTY 7 -> 27) while
+  // every PR stayed green, because that job does not run on PRs.
+  // ▶ THE LESSON: "only seats that exist" is a snapshot, and a seat list frozen in a loader goes stale the
+  //   moment a wave seats someone. The layer always held all 25 — GATE 1 expects 25 and GATE 6b has always
+  //   compared all 25 against Indianapolis's own City Council layer at 0.000%. Only the write list was short.
+  { county: 'Marion',   fips3: '097', countyGeoId: '18097', expected: 25, load: range('18097', Array.from({ length: 25 }, (_, i) => i + 1)), body: 'Indianapolis City-County Council', ocd: 'marion' },
 ];
 
 /** GATE 6 — counties whose districts we already hold from an independent county source. */

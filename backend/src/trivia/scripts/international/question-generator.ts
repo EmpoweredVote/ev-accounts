@@ -2,6 +2,7 @@ import { client, MODEL } from '../../scripts/content-generation/anthropic-client
 import type { ClaimResult } from './claim-extractor.js';
 import type { QuestionInput } from '../../services/qualityRules/types.js';
 import { auditQuestion } from '../../services/qualityRules/index.js';
+import { mintExternalId, mintForConfig, nextSequence } from '../../utils/externalIdentity.js';
 import {
   qualityRulesEnforcement,
   emptyQualityRuleStats,
@@ -277,7 +278,7 @@ export async function writePassingQuestions(
   claim: ClaimResult,
   collectionId: number,
   jobId: number,
-  externalIdPrefix: string,
+  externalIdPrefix: string | undefined,
   volatility: Volatility,
 ): Promise<WritePassResult> {
   const ruleStats = emptyQualityRuleStats();
@@ -286,8 +287,26 @@ export async function writePassingQuestions(
 
   // Lazy DB imports (ESM pattern — consistent with replacementGenerator.ts)
   const { db } = await import('../../db/index.js');
-  const { questions: questionsTable, collectionQuestions, topics } = await import('../../db/schema.js');
-  const { eq, and, sql } = await import('drizzle-orm');
+  const { questions: questionsTable, collectionQuestions, topics, collections } = await import('../../db/schema.js');
+  const { eq, sql } = await import('drizzle-orm');
+
+  // New-scheme lanes carry no externalIdPrefix; resolve the collection slug
+  // once, up front, to mint `<slug>_<NNNN>` ids below. Legacy lanes (prefix
+  // set) skip this query entirely.
+  let collectionSlug: string | undefined;
+  if (!externalIdPrefix) {
+    const [collectionRow] = await db
+      .select({ slug: collections.slug })
+      .from(collections)
+      .where(eq(collections.id, collectionId))
+      .limit(1);
+    collectionSlug = collectionRow?.slug;
+    if (!collectionSlug) {
+      throw new Error(
+        `No collection found for id ${collectionId} when minting a new-scheme external id`,
+      );
+    }
+  }
 
   // ── Resolve/create "world-news" topic ──────────────────────────────────────
   const WORLD_NEWS_SLUG = 'world-news';
@@ -315,21 +334,21 @@ export async function writePassingQuestions(
     console.log(`[QuestionGenerator] Created topic: ${WORLD_NEWS_NAME} (id=${topicId})`);
   }
 
-  // ── Get current max external ID for this prefix ────────────────────────────
+  // ── Get current max external ID sequence for this collection ───────────────
+  // Scoped by collection membership alone: the join already limits this to
+  // the one collection this lane writes into, so a LIKE on the prefix is
+  // redundant — and under the slug scheme it would match nothing (there is
+  // no literal '-' prefix to match), silently resetting the sequence to 1
+  // and colliding with existing ids.
   const maxIdResult = await db
     .select({
       maxId: sql<string>`MAX(SUBSTRING(${questionsTable.externalId} FROM '[0-9]+$')::int)`,
     })
     .from(questionsTable)
     .innerJoin(collectionQuestions, eq(questionsTable.id, collectionQuestions.questionId))
-    .where(
-      and(
-        eq(collectionQuestions.collectionId, collectionId),
-        sql`${questionsTable.externalId} LIKE ${externalIdPrefix + '-%'}`,
-      ),
-    );
+    .where(eq(collectionQuestions.collectionId, collectionId));
 
-  let nextIdNum = (maxIdResult[0]?.maxId ? parseInt(maxIdResult[0].maxId, 10) : 0) + 1;
+  let nextIdNum = nextSequence(maxIdResult[0]?.maxId);
 
   // ── Insert each passing question ────────────────────────────────────────────
   // Write-time answer-position guard: generator prompts show the model
@@ -341,7 +360,13 @@ export async function writePassingQuestions(
   const primarySource = claim.sourceArticles[0];
 
   for (const q of passingQuestions) {
-    const externalId = `${externalIdPrefix}-${String(nextIdNum).padStart(4, '0')}`;
+    // Legacy keeps the four-digit width already used by ids in the DB;
+    // new-scheme (no prefix) mints `<slug>_<NNNN>` via the shared minter.
+    const externalId = mintForConfig(
+      { externalIdPrefix, collectionSlug: collectionSlug! },
+      nextIdNum,
+      4,
+    );
     nextIdNum++;
 
     const placed = placeAnswer(q.options, q.correctAnswer, externalId);
