@@ -17,20 +17,16 @@
           "843cab4f-5897-5496-9266-d6872a6ad6ae"
         ]
       },
-      "confirm": [
-        "name-collision"
-      ],
+      "confirm": [],
       "stratum": {
         "level": "state",
         "evidence_class": "record"
       },
-      "shadow": "would-review",
-      "shadow_reasons": [
-        "confirm-failed"
-      ],
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
       "seed": "none",
       "profiles": [
-        "az-azleg-bill-status@3",
+        "az-azleg-bill-status@4",
         "az-azleg-bill-text@2"
       ]
     }

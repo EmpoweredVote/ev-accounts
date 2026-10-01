@@ -15,6 +15,9 @@
  *   'Adams J. S.') -> otherwise 'name-collision'.
  * - exception, name_format 'surname-initial': a common surname printed once on the whole page with no
  *   initial after it is one member of that chamber (the page prints initials to tell namesakes apart).
+ *   'surname-initial-vote' (Arizona vote dialogs, "SURNAME [INITIAL] VOTE"): the same, but a single
+ *   letter after the surname is an initial only when a vote mark (Y, N, NV) follows it — "CARTER Y
+ *   CHAPLIK" is one Carter voting Yes; "HERNANDEZ A N" is Hernandez A. voting No.
  * Known limit: a namesake who is absent from the page, in the same chamber, with an uncommon surname
  * cannot be detected by the page alone.
  *
@@ -43,7 +46,7 @@ export type Chamber = 'upper' | 'lower';
 export type VoteBlockRule = 'aye-count' | 'whole-page';
 export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'word-before-reading' | 'reading-else-bill-origin' | 'page-header' | 'bill-origin' | 'none';
 export type TallyFormat = 'labelled' | 'dash-ayes-nays';
-export type NameFormat = 'surname' | 'surname-initial' | 'last-first' | 'full-name';
+export type NameFormat = 'surname' | 'surname-initial' | 'surname-initial-vote' | 'last-first' | 'full-name';
 /**
  * How a source prints amended text (amendment-markup spec §1): 'final' — the page prints the law as
  * it will read, no markup to lose (CA chaptered text); 'marked' — deletions are recoverable from the
@@ -55,7 +58,7 @@ export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; 
 export const VOTE_BLOCK_RULES: readonly VoteBlockRule[] = ['aye-count', 'whole-page'];
 export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'word-before-reading', 'reading-else-bill-origin', 'page-header', 'bill-origin', 'none'];
 export const TALLY_FORMATS: readonly TallyFormat[] = ['labelled', 'dash-ayes-nays'];
-export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'last-first', 'full-name'];
+export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'surname-initial-vote', 'last-first', 'full-name'];
 export const AMENDMENT_TEXTS: readonly AmendmentText[] = ['final', 'marked', 'unmarked'];
 /** Today's layout rules. A source with no profile is read with these (and CONFIRM flags it). */
 export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled', amendment_text: 'final' };
@@ -211,6 +214,9 @@ function chamberAt(p: string[], k: number, extra: ReadonlySet<string>): Chamber 
   return c;
 }
 /** The nearest chamber word BEFORE token index `a`: the chamber of the vote that lists the actor. */
+/** The vote marks of an Arizona vote dialog, after words() (lowercased). */
+const AZ_VOTE_MARK = new Set(['y', 'n', 'nv']);
+
 /** The token after the surname marks an AZ BillStatus co-sponsor ("Nguyen (Co-Sponsor)"). */
 function isCoSponsorListing(p: string[], a: number): boolean {
   return p[a + 1] === 'co-sponsor';
@@ -434,6 +440,12 @@ export function checkRecordGroup(i: {
     if (prof(p).rules.name_format === 'surname-initial' && common) {
       const onPage = pt.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);
       if (onPage.length === 1 && (pt[onPage[0] + 1] ?? '').length !== 1) continue;
+    }
+    if (prof(p).rules.name_format === 'surname-initial-vote' && common) {
+      const onPage = pt.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);
+      const k = onPage[0];
+      const initialAfter = onPage.length === 1 && (pt[k + 1] ?? '').length === 1 && AZ_VOTE_MARK.has(pt[k + 2] ?? '');
+      if (onPage.length === 1 && !initialAfter) continue;
     }
     const aq = words(p.actor_quote!);
     const idx = aq.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);

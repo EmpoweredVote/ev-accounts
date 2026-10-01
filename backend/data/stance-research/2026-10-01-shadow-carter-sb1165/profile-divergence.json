@@ -7,7 +7,7 @@
       {
         "snapshot_id": "843cab4f-5897-5496-9266-d6872a6ad6ae",
         "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1165#house-third",
-        "profile": "az-azleg-bill-status@3"
+        "profile": "az-azleg-bill-status@4"
       },
       {
         "snapshot_id": "0586ad93-ef38-5f64-b8f2-651c243a64bd",
@@ -17,7 +17,7 @@
       {
         "snapshot_id": "aff26034-bc87-5198-a773-f0f4ecb5a794",
         "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1165",
-        "profile": "az-azleg-bill-status@3"
+        "profile": "az-azleg-bill-status@4"
       }
     ],
     "generic": [
@@ -25,9 +25,7 @@
       "name-collision",
       "tally-unreadable"
     ],
-    "profiled": [
-      "name-collision"
-    ]
+    "profiled": []
   },
   {
     "slot": 2,
@@ -37,7 +35,7 @@
       {
         "snapshot_id": "aff26034-bc87-5198-a773-f0f4ecb5a794",
         "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1165",
-        "profile": "az-azleg-bill-status@3"
+        "profile": "az-azleg-bill-status@4"
       },
       {
         "snapshot_id": "0586ad93-ef38-5f64-b8f2-651c243a64bd",
@@ -47,7 +45,7 @@
       {
         "snapshot_id": "843cab4f-5897-5496-9266-d6872a6ad6ae",
         "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1165#house-third",
-        "profile": "az-azleg-bill-status@3"
+        "profile": "az-azleg-bill-status@4"
       }
     ],
     "generic": [
@@ -55,9 +53,7 @@
       "name-collision",
       "tally-unreadable"
     ],
-    "profiled": [
-      "name-collision"
-    ]
+    "profiled": []
   },
   {
     "slot": 3,
@@ -67,12 +63,12 @@
       {
         "snapshot_id": "aff26034-bc87-5198-a773-f0f4ecb5a794",
         "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1165",
-        "profile": "az-azleg-bill-status@3"
+        "profile": "az-azleg-bill-status@4"
       },
       {
         "snapshot_id": "843cab4f-5897-5496-9266-d6872a6ad6ae",
         "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1165#house-third",
-        "profile": "az-azleg-bill-status@3"
+        "profile": "az-azleg-bill-status@4"
       },
       {
         "snapshot_id": "0586ad93-ef38-5f64-b8f2-651c243a64bd",
@@ -85,8 +81,6 @@
       "name-collision",
       "tally-unreadable"
     ],
-    "profiled": [
-      "name-collision"
-    ]
+    "profiled": []
   }
 ]
