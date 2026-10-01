@@ -127,8 +127,9 @@ Rulings on the three open points, relayed by the gold-labelling session as opera
 
 ⚠ Blank reason for 2 and 3: the relayed rulings say `adjacent-chairs`. V6 defines that as "surviving
 passages establish **two different** rungs". A limit between the thresholds, or a life-only ban,
-establishes **no** rung while showing the side → `direction-only` fits V6. Confirm which reason
-before writing the annex.
+establishes **no** rung while showing the side → `direction-only` fits V6. The gold-labelling
+session agrees (2026-10-01): no gold row carries `adjacent-chairs` for these cases, so nothing on the
+gold side changes. Use `direction-only` once the operator confirms in this session.
 
 ⚠ `medicare/aid` contains a slash, so `annexPath` resolves it to `annex/medicare/aid.md` (a
 subdirectory). Keep that path when writing its annex.
