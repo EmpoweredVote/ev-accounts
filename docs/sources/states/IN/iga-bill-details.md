@@ -1,10 +1,15 @@
 ---
 profile: in-iga-bill-details
-version: 2
+version: 3
 scope: state:IN
 body: legislature
 match:
   url_prefixes:
+    - https://iga.in.gov/legislative/2014/bills/
+    - https://iga.in.gov/legislative/2015/bills/
+    - https://iga.in.gov/legislative/2016/bills/
+    - https://iga.in.gov/legislative/2017/bills/
+    - https://iga.in.gov/legislative/2018/bills/
     - https://iga.in.gov/legislative/2019/bills/
     - https://iga.in.gov/legislative/2020/bills/
     - https://iga.in.gov/legislative/2021/bills/
@@ -25,6 +30,15 @@ seat_titles:
   Representative: lower
   State Representative: lower
 controls:
+  - batch: 2026-10-01-shadow-wesco-sb101
+    snapshot: "83485042"
+    person: Timothy Wesco
+    office_title: Representative
+    instrument: SB 101 (2015)
+    record_kind: sponsor
+    actor_quote: "Sponsored by: Rep. Timothy Wesco"
+    tally_quote: null
+    expect: pass
   - batch: 2026-09-25-shadow-yoder
     snapshot: d9257546
     person: Shelli Yoder

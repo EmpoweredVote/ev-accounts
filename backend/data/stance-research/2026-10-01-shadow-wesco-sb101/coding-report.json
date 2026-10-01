@@ -18,19 +18,16 @@
           "f453d135-d0ff-5015-b167-a137911145c1"
         ]
       },
-      "confirm": [
-        "no-source-profile"
-      ],
+      "confirm": [],
       "stratum": {
         "level": "state",
         "evidence_class": "record"
       },
-      "shadow": "would-review",
-      "shadow_reasons": [
-        "confirm-failed"
-      ],
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
       "seed": "none",
       "profiles": [
+        "in-iga-bill-details@3",
         "in-iga-roll-call@2"
       ]
     }
@@ -57,7 +54,5 @@
       "rowErrors": 0
     }
   ],
-  "noProfileHosts": {
-    "iga.in.gov": 1
-  }
+  "noProfileHosts": {}
 }
