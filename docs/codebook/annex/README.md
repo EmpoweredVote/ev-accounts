@@ -8,16 +8,21 @@ notes live here, not in the annexes.
 ## Annexes
 
 Season 2 (open). Served revision = what `seasonService.servedRevisionLateral` resolves for the season
-pin, read 2026-10-01. On all four topics below the pin and the served revision are the same row.
+pin, read 2026-10-01. On every topic below except `abortion` the pin and the served revision are the same row.
 
 | Topic | Served revision | Status |
 |---|---|---|
 | [`climate-change`](climate-change.md) | `5f1403f3-90b6-491f-ba54-3c8e46a5ae26` (v2 r3) | draft; 4 rulings 2026-10-01, no open `_owed:_` |
 | [`misinformation`](misinformation.md) | `bd313c07-02a5-4344-8cc3-0e4b4c3b78a1` (v2 r3) | draft; 1 ruling 2026-10-01, no open `_owed:_` |
 | [`school-vouchers`](school-vouchers.md) | `88858826-90c0-41c9-a3a4-1d9f5b8c5307` (v2 r3) | draft (refreshed); 3 rulings 2026-10-01, no open `_owed:_` |
+| [`abortion`](abortion.md) | `085feb9c-f157-4dae-bfd0-7b2736c5d87c` (v1 r5; pin `dab46e5c` is older) | draft; 6 rulings 2026-10-01 (weeks vs trimesters, exceptions), relayed from the gold-labelling session and confirmed |
 | [`voting-rights`](voting-rights.md) | _(not recorded in the file)_ | draft, not ruled (2026-09-26); not yet refreshed to this format |
 
-The other 56 open-season topics have no annex yet.
+The other 55 open-season topics have no annex yet.
+
+🔴 **Merge order.** These annexes cite codebook V4.2 "Silence is not a clause" and "Ruling out the
+other rungs is not evidence" (H13, H14). On 2026-10-01 those lines exist only on branch
+`claude/gold-round-2`, not on `master`. Merge that codebook change first, or with these annexes.
 
 ## How the drafts were made
 
@@ -87,49 +92,6 @@ No Season 1 description exists (35 topics; draft "Means" from the served text al
 `education-charter-authorization`, `education-school-budget`, `education-ai`, `cannabis-policy`,
 `defense-spending`, `military-intervention`, `gun-policy`, `israel-military-aid`, `minimum-wage`,
 `ranked-choice-voting`.
-
-## Pending notes for annexes not yet written
-
-### `abortion` (served `085feb9c-f157-4dae-bfd0-7b2736c5d87c`)
-
-From the gold-labelling session, 2026-10-01, operator-approved. Coders split twice on one bill: a
-15-week limit with only a medical-emergency exception (death or serious lasting harm to a major
-bodily function) after it. The operator ruled it rung 3 on two gold items, which stay unnamed. The
-ladder states limits in trimesters; laws state them in weeks.
-
-Proposed line, as received:
-
-> A gestational limit at about 12–15 weeks, with only a health or life exception after it, reads as
-> rung 3. A limit at about 20–24 weeks, or at viability, with a health exception after it, reads as
-> rung 2. A ban from conception or implantation with rape, incest and life exceptions reads as rung 4.
-> A limit with NO stated exception after it does not reach rung 3 or 2 on its own (silence is not a
-> clause).
-
-Checked against the served wording before use. Open points:
-- Rungs 2 and 3 say "only to protect the mother's **health**". A **life-only** exception is narrower
-  than that, so "health or life" overstates rung 3. The ruled bill had a health exception.
-- Rung 2 is "through the second trimester" (about week 27). Viability (about 24) and 22–24 weeks are
-  close to it; **20 weeks** sits about halfway between the two thresholds. Decide where 16–21 weeks
-  goes, and whether weeks are counted from the last menstrual period or from fertilization (20 weeks
-  after fertilization is about 22 weeks LMP).
-- Rung 4 lists three exceptions: rape, incest **and** a serious risk to life. Not covered: an early
-  ban (for example 6 weeks) with those exceptions, and a ban whose only exception is the mother's
-  life. The second fits neither rung 4 nor rung 5 ("no exceptions").
-
-Rulings on the three open points, relayed by the gold-labelling session as operator-accepted
-2026-10-01 (confirm in this session before the annex is written):
-1. Rung 3 needs a **health** exception after the early limit. A life-only exception after the limit
-   → BLANK `compound-partial`.
-2. A limit at 16–21 weeks sits between rung 3 (about 13 weeks) and rung 2 (about 27 weeks) → BLANK.
-   Read weeks as the law states them (LMP or post-fertilization); do not convert.
-3. An early ban (for example 6 weeks) **with** rape, incest and life exceptions → rung 4. A ban with a
-   life-only exception fits neither rung 4 nor rung 5 → BLANK.
-
-⚠ Blank reason for 2 and 3: the relayed rulings say `adjacent-chairs`. V6 defines that as "surviving
-passages establish **two different** rungs". A limit between the thresholds, or a life-only ban,
-establishes **no** rung while showing the side → `direction-only` fits V6. The gold-labelling
-session agrees (2026-10-01): no gold row carries `adjacent-chairs` for these cases, so nothing on the
-gold side changes. Use `direction-only` once the operator confirms in this session.
 
 ⚠ `medicare/aid` contains a slash, so `annexPath` resolves it to `annex/medicare/aid.md` (a
 subdirectory). Keep that path when writing its annex.
