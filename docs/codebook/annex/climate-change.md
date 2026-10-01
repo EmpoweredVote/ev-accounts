@@ -1,7 +1,7 @@
 # climate-change — served revision 5f1403f3-90b6-491f-ba54-3c8e46a5ae26 (Season 2)
 
-**Status:** draft, not ruled (2026-10-01). Lines marked _(proposed)_ are a drafter's reading; lines
-marked `_owed:_` need a ruling before this file is merged.
+**Status:** draft (2026-10-01). Lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris
+Andrews). Lines marked _(proposed)_ are a drafter's reading, not yet ruled.
 
 **Question:** "How much should government do to expand clean energy?"
 
@@ -51,7 +51,10 @@ credit", "green bank", "interconnection", "transmission siting", "permitting ref
    - Commonly confused with rung 1 because many bills both fund and require; code the requirement
      when its clause is binding and dated.
    - Commonly confused with rung 3 because public money for the **grid** matches "public investment"
-     and "upgrading the grid". `_owed:_` which rung a grid-upgrade appropriation evidences.
+     and "upgrading the grid". One passage that matches two rungs excludes neither, so a grid
+     **appropriation** alone → `direction-only`. Grid **rules** that are not spending
+     (interconnection reform, transmission-planning orders) are rung 3 clause [b] _(ruled
+     2026-10-01)_.
    - The list "subsidies, tax credits, and public investment" names forms of one clause, so one form
      is enough _(proposed)_. A small pilot grant is not "major" → `direction-only` _(proposed)_.
 
@@ -65,8 +68,10 @@ credit", "green bank", "interconnection", "transmission siting", "permitting ref
      interconnection rules), local (local permits and zoning for solar, wind, storage).
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 4 because a permitting bill that speeds **all** energy projects
-     equally is technology-neutral. `_owed:_` whether a technology-neutral permitting bill "speeds up
-     clean energy".
+     equally is technology-neutral. It speeds up clean projects too, so it meets rung 3 clause [a]
+     (and alone gives `compound-partial` until [b] is evidenced). It does **not** support rung 4:
+     rung 4 needs evidence that the person rejects any preference among sources, and a neutral bill
+     is silent on that (V4.2 "Silence is not a clause") _(ruled 2026-10-01)_.
    - Commonly confused with rung 2: see rung 2.
 
 4. **"Stay neutral on energy and let the market choose among all sources."**
@@ -96,14 +101,14 @@ credit", "green bank", "interconnection", "transmission siting", "permitting ref
 - **Preemption (codebook V2, H12).** A state law that forbids local clean-energy rules, or local bans
   on gas hookups, decides which level may act → `adjacent`.
 - **The government's own operations.** A clause that sets clean-energy or net-zero requirements only
-  for the government's own buildings, fleet or electricity purchases. `_owed:_` whether it is
-  on-question. Two adjudications so far point different ways: one treated a binding, dated
-  own-procurement clause as rung 1; another treated an own-operations net-zero **aim** as
-  `no-evidence` and gave "the government's own footprint" as the reason. The second also lacked a
-  binding verb, so the binding verb may be the real difference. Rule which one it is.
+  for the government's own buildings, fleet or electricity purchases, is **on-question**: government
+  buying clean energy expands clean energy. The **verb** decides the rung, not whose energy it is. A
+  binding, dated duty ("each state agency shall ensure … by [date]") is rung 1; an "aim", "intent" or
+  "goal" → `direction-only`. A narrow scope does not change the mechanism _(ruled 2026-10-01)_.
 - **Carbon pricing** (cap-and-trade, a carbon tax) prices emissions; it does not require, fund or ease
   clean energy as such → `direction-only` unless the passage names a clean-energy clause
   _(proposed)_.
-- **Vehicle rules** (zero-emission sales requirements, EV credits). `_owed:_` whether "clean energy"
-  covers vehicles or only electricity and buildings.
+- **Vehicle rules** (zero-emission sales requirements, EV credits) are transport, not energy supply.
+  The rungs speak of permitting, the grid and choice among energy sources → `adjacent` _(ruled
+  2026-10-01)_.
 - **Budget and omnibus votes** that contain a clean-energy item → V4 `multi-subject`.

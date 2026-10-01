@@ -12,9 +12,9 @@ pin, read 2026-10-01. On all four topics below the pin and the served revision a
 
 | Topic | Served revision | Status |
 |---|---|---|
-| [`climate-change`](climate-change.md) | `5f1403f3-90b6-491f-ba54-3c8e46a5ae26` (v2 r3) | draft, not ruled; 4 `_owed:_` |
-| [`misinformation`](misinformation.md) | `bd313c07-02a5-4344-8cc3-0e4b4c3b78a1` (v2 r3) | draft, not ruled; 1 `_owed:_` |
-| [`school-vouchers`](school-vouchers.md) | `88858826-90c0-41c9-a3a4-1d9f5b8c5307` (v2 r3) | draft, not ruled; 3 `_owed:_` (refreshed 2026-10-01) |
+| [`climate-change`](climate-change.md) | `5f1403f3-90b6-491f-ba54-3c8e46a5ae26` (v2 r3) | draft; 4 rulings 2026-10-01, no open `_owed:_` |
+| [`misinformation`](misinformation.md) | `bd313c07-02a5-4344-8cc3-0e4b4c3b78a1` (v2 r3) | draft; 1 ruling 2026-10-01, no open `_owed:_` |
+| [`school-vouchers`](school-vouchers.md) | `88858826-90c0-41c9-a3a4-1d9f5b8c5307` (v2 r3) | draft (refreshed); 3 rulings 2026-10-01, no open `_owed:_` |
 | [`voting-rights`](voting-rights.md) | _(not recorded in the file)_ | draft, not ruled (2026-09-26); not yet refreshed to this format |
 
 The other 56 open-season topics have no annex yet.
@@ -36,6 +36,9 @@ The other 56 open-season topics have no annex yet.
   lines; if one of those items is re-coded after an annex lands, mark it `excluded_from_cert`.
 - **`_(proposed)_`** marks a drafter's reading with no gold behind it. **`_owed:_`** marks a question
   that needs a ruling. Resolve every `_owed:_` before merging an annex: coders read it as guidance.
+  **`_(ruled <date>)_`** marks a line that carries an operator ruling.
+- **Ladder wording changes** found while drafting do not go in an annex. They are staged in
+  `.planning/todos/2026-10-01-season-3-ladder-notes.md` until Season 3 composition.
 
 ## Season 1 description vs Season 2 served text
 

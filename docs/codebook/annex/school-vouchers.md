@@ -1,7 +1,7 @@
 # school-vouchers — served revision 88858826-90c0-41c9-a3a4-1d9f5b8c5307 (Season 2)
 
-**Status:** draft, not ruled (2026-10-01 refresh). Lines marked _(proposed)_ are a drafter's
-reading; lines marked `_owed:_` need a ruling before this file is merged.
+**Status:** draft (2026-10-01 refresh). Lines marked _(ruled 2026-10-01)_ carry an operator ruling
+(Chris Andrews). Lines marked _(proposed)_ are a drafter's reading, not yet ruled.
 
 **Question:** "What role should vouchers and school choice play in the public education system?"
 
@@ -50,7 +50,9 @@ lever on vouchers.
      passage shows the cap admits most families; code 3 when it shows it does not; when the passage
      does not let you tell → `direction-only` _(proposed)_.
    - This ladder has **no low-income-only rung**. A narrow programme for low-income families is
-     still income-based → rung 3, if [b] is read as "wider than no programme" `_owed:_`.
+     income-based → rung 3. Clause [b] "wider range" compares with rung 2 (no growth); it is not a
+     separate test of the cap's size. A No on raising an existing cap is still rung-2 territory and
+     needs rung 2's evidence _(ruled 2026-10-01)_.
 
 4. **"Expanding voucher eligibility to most families so parents can choose the school that best fits
    their child"**
@@ -63,8 +65,10 @@ lever on vouchers.
    - Commonly confused with rung 5 when a phase-in ends in universal eligibility: code the end state
      the instrument enacts (so a phased path to universal is rung 5, not rung 4).
    - Commonly confused with rung 5 when every student is eligible but the number of awards or the
-     money is capped. `_owed:_` whether a funding or enrollment cap on a universal programme is rung 4
-     or rung 5.
+     money is capped. The rungs order **eligibility**, not budget size: universal eligibility with a
+     capped appropriation or award count is rung 5 (Utah HB215 had a capped first-year
+     appropriation). A cap written as an eligibility limit ("only students from …") is coded by who
+     can qualify _(ruled 2026-10-01)_.
 
 5. **"Providing universal vouchers so that education funding follows the student to any school —
    public, private, or religious — chosen by the family"**
@@ -85,10 +89,9 @@ lever on vouchers.
 - **A tax-credit scholarship is not rung 5.** It is a tax credit to donors, not funding that follows
   the student → `adjacent` (see the V4 omnibus example). This was written for the federal credit;
   the same reasoning applies to a state tax-credit scholarship _(proposed)_.
-- **ESA money spent outside a school** (tutoring, therapy, home education). Rung 5 says "any school".
-  `_owed:_` whether an ESA whose money can be spent outside schools still reads as rung 5, or whether
-  the ladder should say "schooling". Until ruled, code the eligibility clause; do not treat
-  non-school spending as excluding rung 5 _(proposed)_.
+- **ESA money spent outside a school** (tutoring, therapy, home education). Non-school uses add
+  choices; they do not remove the private and religious school option. Code the eligibility clause;
+  non-school spending does not exclude rung 5 _(ruled 2026-10-01)_.
 - **Charter schools and public open enrollment** move students among public schools → `adjacent`
   (charters have their own topic).
 - **A budget vote** that funds an existing programme → V4 `multi-subject`.

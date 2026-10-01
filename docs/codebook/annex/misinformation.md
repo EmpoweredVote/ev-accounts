@@ -1,7 +1,7 @@
 # misinformation — served revision bd313c07-02a5-4344-8cc3-0e4b4c3b78a1 (Season 2)
 
-**Status:** draft, not ruled (2026-10-01). Lines marked _(proposed)_ are a drafter's reading; lines
-marked `_owed:_` need a ruling before this file is merged.
+**Status:** draft (2026-10-01). Lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris
+Andrews). Lines marked _(proposed)_ are a drafter's reading, not yet ruled.
 
 **Question:** "What responsibility do platforms and government have in combating online
 misinformation?"
@@ -91,8 +91,10 @@ safety", "provenance" or "watermark", "jawboning", "Section 230".
   `no-evidence` when nothing else survives.
 - **Political-ad disclaimers** for synthetic media, placed on the campaign or advertiser → `adjacent`.
 - **Must-carry laws** that forbid platforms to remove users or viewpoints. Government regulates
-  moderation, so it is not rung 5; rung 4 names government censorship, not platform moderation.
-  `_owed:_` `adjacent` or `off-axis`.
+  moderation, so it is not rung 5; rung 4 names government censorship, not platform moderation. The
+  rungs order what is done about **false** content; a must-carry law is about a platform's power over
+  lawful speech → V2 `adjacent`. Do not use such a vote "against rung 5" to seat rung 4: ruling out a
+  rung is not evidence for another (V4.2) _(ruled 2026-10-01)_.
 - **Section 230 changes** alter liability, not a duty to remove or label → `direction-only` at most,
   unless the change conditions immunity on removing false content _(proposed)_.
 - **Government's own speech** (public information campaigns, media-literacy curricula) → `adjacent`.
