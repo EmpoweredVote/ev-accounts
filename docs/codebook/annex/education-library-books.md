@@ -100,7 +100,7 @@ collections _(proposed)_.
   `direction-only` _(proposed)_.
 - **State law and school boards.** A state law that sets the challenge process for every district
   states the rule → `on-question`. A law that only decides which body hears challenges (state board
-  or district) → `adjacent` (V2, H12) _(proposed)_.
+  or district) → `adjacent` (V2, H12) _(ruled 2026-10-01)_ A state law is the legislator's act, not a school-board member's..
 - **Removing a legal defence** for librarians or teachers (criminal liability for distributing
   material) → `direction-only` _(proposed)_.
 - **Ratings, labels, vendor rules and checkout-record access** for parents → `adjacent` _(proposed)_.

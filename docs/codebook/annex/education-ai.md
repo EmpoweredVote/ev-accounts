@@ -77,7 +77,7 @@ policy", "academic integrity", "AI disclosure", "AI literacy", "AI guidance", "r
 
 **Hard cases:**
 - **A state law that requires each district to adopt an AI policy**, without saying what it must
-  contain, decides that districts decide → `adjacent` (V2, H12) _(proposed)_.
+  contain, decides that districts decide → `adjacent` (V2, H12) _(ruled 2026-10-01)_.
 - **State guidance, task forces and pilot programmes** → `study-directive`.
 - **Teaching about AI** (AI literacy, computer science standards) is not use in student work →
   `adjacent` _(proposed)_.

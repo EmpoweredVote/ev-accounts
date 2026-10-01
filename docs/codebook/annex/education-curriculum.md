@@ -92,7 +92,7 @@ rights in education", "age-appropriate", "instructional materials", "curriculum 
 - **State law and school boards.** A state law that itself forbids or requires instruction in every
   public school states the rule → `on-question`. A law that only moves the decision (for example
   "only the state board may adopt …", or "a district shall not require a teacher to …" with no rule
-  on what is taught) decides which level decides → `adjacent` (V2, H12) _(proposed)_.
+  on what is taught) decides which level decides → `adjacent` (V2, H12) _(ruled 2026-10-01)_ A state law is the legislator's act, not a school-board member's..
 - **Curriculum transparency** (posting materials online, parent review of materials) and
   **opt-out** rights → `adjacent`. They let parents see or decline a lesson; they do not set what
   is taught _(proposed)_.

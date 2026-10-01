@@ -97,4 +97,6 @@ fund legal aid or write court-access statutes are not in this role → `off` _(p
   `statement-answer` (V3).
 - **A written opinion** the judge authored is `record` (`record_kind = author`); the instrument is the
   case name and docket number. Code the standard the opinion states, not who won _(proposed)_.
-- `_owed:_` whether a judge's record on a lower court counts as `in-term` for the current seat.
+- **A record from a lower court** is `pre-seating`: valid for that office only (V5). It counts for
+  the current seat only when the rung's lever is the same at both courts (an opinion that shows the
+  judge's method, the judge's own sealing or access practice), and the coder names that lever _(ruled 2026-10-01)_.

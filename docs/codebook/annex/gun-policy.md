@@ -53,7 +53,7 @@ law. Most states forbid local gun ordinances, so a local lever exists only where
    - Establishing evidence looks like: a universal-checks bill **plus** evidence that the person
      opposes bans on a type of firearm (a No on an assault-weapons ban, own words). [a] must be shown;
      a checks bill is silent on bans (V4.2 "Silence is not a clause"). Compound: one side only →
-     `compound-partial`.
+     `compound-partial`. Not finding a ban cosponsorship is not evidence for [a] (H14) _(ruled 2026-10-01)_.
    - Levels that hold a lever: federal; state.
    - Known chair-shaped instruments: _(none on file)_. The Background Check Expansion Act (S.3214),
      named in the topic note, meets [b] only.
@@ -72,7 +72,10 @@ law. Most states forbid local gun ordinances, so a local lever exists only where
    - Levels that hold a lever: federal; state.
    - Known chair-shaped instruments: _(none on file)_. The Constitutional Concealed Carry Reciprocity
      Act (S.65 / H.R.38), named in the topic note, meets the "loosen carry" part of [b].
-   - `_owed:_` a reciprocity bill as the only record: rung 4, or `direction-only`?
+   - A reciprocity bill as the only record → BLANK `direction-only`. It meets the "loosen carry"
+     part of [b], but one loosening law cannot show "at most" (V2, 2026-09-26) or "no new
+     restrictions" (V4.2). Seat rung 4 only with a second passage: own words, or a recorded vote
+     against a new restriction or against a repeal. This replaces the 2026-09-08 seating rule _(ruled 2026-10-01)_.
    - Not finding a rung-5 record is not evidence for rung 4 (V4.2 "Ruling out the other rungs").
 
 5. **"Repeal major gun restrictions and let adults carry a firearm without a permit."**

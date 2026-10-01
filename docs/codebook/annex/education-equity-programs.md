@@ -84,7 +84,7 @@ training", "culturally responsive training", "targeted support", "multi-tiered s
 **Hard cases:**
 - **State law and school boards.** A state law that bans (or requires) equity offices, training or
   programmes in every district states the rule → `on-question`. A law that only moves the decision
-  to another body → `adjacent` (V2, H12) _(proposed)_.
+  to another body → `adjacent` (V2, H12) _(ruled 2026-10-01)_ A state law is the legislator's act, not a school-board member's..
 - **Admissions to selective schools or programmes** (test-based, lottery, geographic) → `adjacent`
   _(proposed)_.
 - **Curriculum content on race or identity** → `adjacent` (curriculum has its own topic).

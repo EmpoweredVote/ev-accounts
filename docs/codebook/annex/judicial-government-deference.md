@@ -99,6 +99,9 @@ regularity", "judicial restraint".
   agencies is `statement-answer` (V3); "rein in government overreach" with no standard named →
   `rhetorical`.
 - **A written opinion** the judge authored is `record` (`record_kind = author`); the instrument is the
-  case name and docket. Joining another judge's opinion is `vote` _(proposed)_. `_owed:_` whether a
-  unanimous appellate panel counts as `near-unanimous`.
-- `_owed:_` whether a judge's record on a lower court counts as `in-term` for the current seat.
+  case name and docket. Joining another judge's opinion is `vote` _(proposed)_. On a unanimous
+  appellate panel, the **author** is coded on the opinion (own words); a judge who only **joined** it
+  falls under `near-unanimous` _(ruled 2026-10-01)_.
+- **A record from a lower court** is `pre-seating`: valid for that office only (V5). It counts for
+  the current seat only when the rung's lever is the same at both courts (an opinion that shows the
+  judge's method, the judge's own sealing or access practice), and the coder names that lever _(ruled 2026-10-01)_.

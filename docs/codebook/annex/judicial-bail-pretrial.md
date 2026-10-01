@@ -98,4 +98,6 @@ defence), "discovery", "chain of custody", "plea agreement" or "plea bargain", "
   `not-evidence` (V3); follow them to the named cases _(proposed)_.
 - **Bar complaints or appellate reversals** about the judge are not the judge's own act →
   `third-party-characterization` (V1).
-- `_owed:_` whether a judge's record on a lower court counts as `in-term` for the current seat.
+- **A record from a lower court** is `pre-seating`: valid for that office only (V5). It counts for
+  the current seat only when the rung's lever is the same at both courts (an opinion that shows the
+  judge's method, the judge's own sealing or access practice), and the coder names that lever _(ruled 2026-10-01)_.

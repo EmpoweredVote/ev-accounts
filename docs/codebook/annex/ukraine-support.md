@@ -40,8 +40,9 @@ assistance", "ceasefire", "peace talks", "negotiated settlement".
    - Levels that hold a lever: federal.
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 1 because the rungs differ on **magnitude** ("current levels" vs
-     "increase"). `_owed:_` a Yea on a supplemental of about the size of earlier packages (H.R.
-     8035, 2024, codebook V4).
+     "increase"). A Yea on a supplemental (H.R. 8035, 2024, codebook V4) does not show whether its
+     size is "current" or an "increase" → BLANK `direction-only` without own words about the size
+     _(ruled 2026-10-01)_.
 
 3. **"provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end
    the war."**

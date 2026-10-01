@@ -83,5 +83,5 @@ and staffs the officers, and state statute (mandates, grants, limits on officers
   contract → on-question.
 - **State law and school boards.** A state law that itself requires or forbids officers in every
   school states the rule → `on-question`. A law that only decides which body may contract for
-  officers → `adjacent` (V2, H12) _(proposed)_.
+  officers → `adjacent` (V2, H12) _(ruled 2026-10-01)_ A state law is the legislator's act, not a school-board member's..
 - **Study, safety audit or task force** → `study-directive`.

@@ -74,12 +74,13 @@ Defense Authorization Act), "defense appropriations", "budget request", "real gr
    - Commonly confused with rung 4: see rung 4.
 
 **Hard cases:**
-- **The annual defense authorization and defense appropriations bills.** `_owed:_` is final passage
-  `multi-subject` on this topic, or single-subject because the topline is the subject? Whatever the
-  ruling, a **No** proves nothing (V4.1), and a Yea that the passage does not compare with
-  inflation cannot separate rungs 2 and 3.
+- **The annual defense authorization and defense appropriations bills.** Final passage →
+  `multi-subject` _(ruled 2026-10-01)_. A **No** proves nothing (V4.1), and a Yea that the passage does not compare
+  with inflation cannot separate rungs 2 and 3.
 - **Topline amendments** (add or cut a stated sum or share) are the amendment row of the vote ladder
-  (V4.1) and can carry a chair.
+  (V4.1) and can carry a chair, but only when the size of the change maps to a rung's size
+  ("substantially", "moderately above inflation", "roughly flat", "modestly below", "roughly
+  halving") _(ruled 2026-10-01)_.
 - **Composition is not size.** Moving money inside the budget (cancel one programme, fund another),
   pay raises, base closures, or an audit of the department → `adjacent` _(proposed)_.
 - **Force posture** (where troops are based, whether to intervene) is the `military-intervention`

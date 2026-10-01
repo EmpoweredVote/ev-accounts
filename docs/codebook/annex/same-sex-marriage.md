@@ -49,8 +49,10 @@ religious-exemption clauses.
      (fewer than 10% No, V4.1), the chair rests on the person's authorship of the measure, not on the
      vote. A member who only voted Aye on that measure → BLANK `no-evidence` unless something else
      survives.
-   - `_owed:_` A Yes on a recognition bill that also protects religious organisations' right to
-     decline (for example the RFMA): rung 2 or rung 3?
+   - A Yes on a recognition bill whose religious section only **saves** existing protections (for
+     example the RFMA) → rung 2. The operative section governs (V4.1); a savings clause does not show
+     that the person insists on the carve-out that rung 3's "but" names. Rung 3 needs own words that
+     make the right to decline part of the position _(ruled 2026-10-01)_.
 
 3. **"Allow same-sex marriage, but protect religious organizations' right to decline to perform or
    host these marriages."**
@@ -62,8 +64,9 @@ religious-exemption clauses.
    - Levels that hold a lever: federal; state.
    - Known chair-shaped instruments: _(none on file)_.
    - **[real] (codebook V5, H4).** A candidate's debate answer that they "would have voted yes" on the
-     RFMA → `statement-answer`; the instrument's content is the position. Re-code it against the
-     served rung text (see the `_owed:_` line under rung 2); do not carry the S1 reading forward.
+     RFMA → `statement-answer`; the instrument's operative content (recognition) is the position →
+     rung 2, unless the person's own words stress the religious exemption _(ruled 2026-10-01)_. Do not carry the S1
+     reading forward.
    - [b] covers religious **organisations** and ceremonies. An exemption for businesses or
      individuals (vendors, clerks) is wider than [b] → `direction-only` here _(proposed)_; code it on
      `religious-freedom`.
