@@ -83,6 +83,40 @@ describe('presentQuestion — prose', () => {
   });
 });
 
+describe('presentQuestion — legacy numeric (optionsScale null, pre-Task-7 backfill)', () => {
+  it('keeps an unbounded magnitude series (population figures) in stored order, never shuffled', () => {
+    // stlmo-020 shape: ascending population figures, no scale yet.
+    const unbounded: Question = {
+      ...base,
+      options: ['800,000', '1,000,000', '2,250,000', '5,000,000'],
+      correctAnswer: 1,
+      optionsScale: null,
+    };
+    for (let i = 0; i < 50; i++) {
+      const r = presentQuestion(unbounded, Math.random);
+      expect(r.options).toEqual(['800,000', '1,000,000', '2,250,000', '5,000,000']);
+      expect(r.correctAnswer).toBe(1);
+    }
+  });
+
+  it('still shuffles a bounded series (term lengths), tracking the answer by text', () => {
+    const bounded: Question = {
+      ...base,
+      options: ['1 year', '2 years', '4 years', '6 years'],
+      correctAnswer: 1,
+      optionsScale: null,
+    };
+    const seen = new Set<number>();
+    for (let i = 0; i < 200; i++) {
+      const r = presentQuestion(bounded, Math.random);
+      expect(r.options[r.correctAnswer]).toBe('2 years');
+      expect([...r.options].sort()).toEqual([...bounded.options].sort());
+      seen.add(r.correctAnswer);
+    }
+    expect(seen.size).toBeGreaterThan(1);
+  });
+});
+
 describe('every path that puts a question in a session presents it first', () => {
   it('createSession presents', () => {
     const src = readFileSync('src/trivia/services/sessionService.ts', 'utf8');

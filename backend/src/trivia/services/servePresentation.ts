@@ -1,6 +1,6 @@
 import type { Question } from './sessionService.js';
 import { isValidScale, rollWindow } from './questionQuality/answerScale.js';
-import { hasFixedPositionOption } from './questionQuality/answerPlacement.js';
+import { hasFixedPositionOption, magnitudeValues, isBoundedSeries } from './questionQuality/answerPlacement.js';
 
 /**
  * A question as the player will see it this session.
@@ -31,6 +31,21 @@ export function presentQuestion(q: Question, rng: () => number = Math.random): Q
   // window the answer isn't in -- so this is a deliberate passthrough, distinct from
   // the shuffle branch below, which only ever sees `optionsScale == null`.
   if (q.optionsScale != null) return { ...q };
+
+  // A legacy numeric question (optionsScale null, pre-dating Task 1/7's backfill) whose
+  // options form an UNBOUNDED magnitude series -- populations, years, dollar amounts,
+  // distances -- must keep its stored ascending order. Shuffling would scramble numbers
+  // that are supposed to read in sequence, which is exactly why scaled numerics exist:
+  // to vary position while *staying* ascending. Until Task 7 backfills optionsScale,
+  // these rows simply get no per-session position variation -- that preserves today's
+  // behaviour rather than regressing it.
+  //
+  // A BOUNDED series (small whole-number domains like term lengths: min <= 2, max <= 12)
+  // is the one magnitude series that write-time code deliberately permutes rather than
+  // sorts (see isBoundedSeries' doc comment) -- it is not stored ascending, so nothing is
+  // lost by varying it per session, and it falls through to the shuffle below.
+  const values = magnitudeValues(q.options);
+  if (values && !isBoundedSeries(values)) return { ...q };
 
   // Fisher-Yates over indices, so the answer is tracked by position and duplicate
   // option text cannot retarget it.
