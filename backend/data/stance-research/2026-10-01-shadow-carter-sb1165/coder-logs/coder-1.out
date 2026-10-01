@@ -1,0 +1,17 @@
+Wrote `labels/coder-1.json`.
+
+**Row: Neal Carter / trans-athletes → chair 4**
+
+Three passages, all one record group (`SB 1165 (2022)`, `record_kind: vote`):
+
+| snapshot | role in the record |
+|---|---|
+| `843cab4f` (House Third Reading vote detail) | `actor_quote: "CARTER Y"`, `tally_quote: "Passed 31-24-5-0-0"` |
+| `0586ad93` (Chapter 106 text) | `provision_quote`: teams designated for females "may not be open to students of the male sex" |
+| `aff26034` (bill overview) | short title + `tally_quote: "House THIRD 03/24/2022 31-24-5-0-0 PASSED"` |
+
+Key judgments:
+- **V1/V5** — Carter is not on the sponsor list, so his act is the vote alone. 2022-03-24 falls inside his first term in this same office (2021-11-05 to 2023-01-09) → `in-term`.
+- **V4** — single-subject athletics bill, so final passage can carry a chair (V4.1). 24 No of 60 is well past the 10% near-unanimous floor.
+- **Chair 4 over 5** — subsection C expressly leaves male and coed teams open, which excludes "completely ban all transgender athletes from competing in any organized sports competitions." This tracks the codebook's Adams/HB11 good example, a structurally identical one-way bill ruled `chair-shaped` for rung 4.
+- No statements from Carter in the sources, so `quotes` is empty and `needs_source` is empty — the record is sufficient on its own.

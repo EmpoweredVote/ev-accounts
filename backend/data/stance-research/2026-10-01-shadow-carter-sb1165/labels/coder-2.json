@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508",
+      "office_id": "5f95f54d-d57c-4e3b-95ff-611505f721b3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "aff26034-bc87-5198-a773-f0f4ecb5a794",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bill history page shows single-subject SB1165 passed House 31-24-5-0-0 and was signed; names no individual voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Enacted text requires teams be designated by biological sex and bars male-sex students from female teams while leaving male/coed teams unrestricted, matching rung 4 and excluding rung 5.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "843cab4f-5897-5496-9266-d6872a6ad6ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Carter voted Y on final passage of this single-subject bill.",
+          "record_kind": "vote",
+          "actor_quote": "CARTER Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "aff26034-bc87-5198-a773-f0f4ecb5a794",
+        "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+        "843cab4f-5897-5496-9266-d6872a6ad6ae"
+      ],
+      "reasoning": "Carter voted Y on final House passage of SB 1165 (2022), a single-subject bill requiring school sports teams to be designated by biological sex and barring male-sex students from female-designated teams while leaving male and coed teams unrestricted. This matches the rung text \"require transgender athletes to compete only on teams matching their biological sex assigned at birth\" and excludes rung 5's complete ban, since other teams remain open. The vote (2022-03-24) falls within his 2021-11-05 to 2023-01-09 House term.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}
