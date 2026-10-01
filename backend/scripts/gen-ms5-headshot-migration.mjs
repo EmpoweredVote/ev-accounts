@@ -1,0 +1,228 @@
+#!/usr/bin/env node
+/**
+ * Generate CC_0175 -- the MS-5 headshot migration.
+ *
+ * EDIT THIS FILE, NEVER THE GENERATED SQL. Re-running reproduces the migration byte-identically,
+ * which is the convention the rest of this slice follows.
+ *
+ * What it writes, and why all three:
+ *   politicians.photo_custom_url   THE FIELD THAT RENDERS. districtQueries.ts -- the address
+ *                                  search that answers "who represents me", and the path Biloxi
+ *                                  City Hall's four-answer probe runs through -- builds its photo
+ *                                  from COALESCE(photo_custom_url, photo_origin_url) and never
+ *                                  reads politician_images at all. An importer that wrote only an
+ *                                  image row once reported "imported 155, failed 0" while changing
+ *                                  nothing a voter could see.
+ *   politician_images              carries photo_license, which the API returns to the frontend,
+ *                                  so the attribution travels with the record.
+ *   politicians.photo_origin_url   provenance: the page the photograph was found on. Written
+ *                                  AFTER the render field, never instead of it -- a source page in
+ *                                  the render position hands an HTML document to an <img src>.
+ *
+ * Licence is press_use: each image is the officeholder's own government publishing its own
+ * officials. None is a federal work and none carries a free licence.
+ */
+import fs from 'node:fs';
+
+const SLOT = 'CC_0175';
+const CDN = 'https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/';
+
+const BILOXI_COUNCIL = 'https://biloxi.ms.us/departments/city-council/';
+const BILOXI_MAYOR = 'https://biloxi.ms.us/departments/mayor/';
+const HC = 'https://www.harrisoncountyms.gov/government/';
+
+// politician_id, person as production holds them, office title, source page.
+// Bound by SEAT, not by filename: Biloxi's own files name Ward 3 "Mike Nail" against a roster
+// that says Robert Nail, and name Ward 6 "Glavin" while its thumbnail says Ward 5.
+const ROWS = [
+  ['c4e9f036-a730-4e17-b19f-67bc4cf0685d', 'Wayne Gray',       'Council Member, Ward 1', BILOXI_COUNCIL],
+  ['43800326-0f41-4ddb-987a-1a50e3cfb0c4', 'Anthony Marshall', 'Council Member, Ward 2', BILOXI_COUNCIL],
+  ['9b44113d-0130-4f44-b0be-370e331bf6b0', 'Robert Nail',      'Council Member, Ward 3', BILOXI_COUNCIL],
+  ['d17836ed-3c05-4868-8974-85b3cdc3bdef', 'Jamie Creel',      'Council Member, Ward 4', BILOXI_COUNCIL],
+  ['7217df2d-57d6-4c8e-9578-e9dff718cdd3', 'Paul Tisdale',     'Council Member, Ward 5', BILOXI_COUNCIL],
+  ['52930985-bb79-4c7b-b1fe-775fd85e983b', 'Kenny Glavan',     'Council Member, Ward 6', BILOXI_COUNCIL],
+  ['c8e9d222-4ce0-49ec-9d9a-c4ab48f090da', 'David Shoemaker',  'Council Member, Ward 7', BILOXI_COUNCIL],
+  ['5cb4aeb2-f692-41e7-8bee-4fbe687230ac', 'Andrew Gilich',    'Mayor',                  BILOXI_MAYOR],
+  ['9900867f-9721-4da3-87eb-0e06886b82ba', 'Dan Cuevas',       'Supervisor, District 1', HC + 'board_of_supervisors/district_one.php'],
+  ['699afdf5-18f8-4ad7-92d6-04b466fcd8fa', 'Rebecca Powers',   'Supervisor, District 2', HC + 'board_of_supervisors/district_two.php'],
+  ['e304bc6f-805e-405c-8af8-f98df3bd79ee', 'Marlin Ladner',    'Supervisor, District 3', HC + 'board_of_supervisors/district_three.php'],
+  ['01cc7a9d-f427-49c2-ba90-928163a4eaad', 'Kent Jones',       'Supervisor, District 4', HC + 'board_of_supervisors/district_four.php'],
+  ['81877664-281c-44c5-b9b2-4f7d6f2f00f7', 'Nathan Barrett',   'Supervisor, District 5', HC + 'board_of_supervisors/district_five.php'],
+  ['5dc02160-d488-455b-8c2b-7084c7cca2ff', 'Justin Wetzel',    'Circuit Clerk',          HC + 'circuit_clerk/index.php'],
+  ['234c3d33-38f4-4a0d-a682-1fd0b7cb7b52', 'Paula Ladner',     'Tax Assessor',           HC + 'tax_assessor/index.php'],
+  ['fe783b4b-b409-4223-8a7e-0a72ef0c3b6c', 'Sharon Barnett',   'Tax Collector',          HC + 'tax_collector/index.php'],
+  ['82189594-b059-458a-b56d-b044ee7bd8d4', 'Matt Haley',       'Sheriff',                'https://www.harrisoncountysheriff.com/administration'],
+  ['23f20063-8eeb-49b6-b950-70b4b879965c', 'Angela Thrash',    'Chancery Clerk',         'http://harrisoncountymschanceryclerk.gov/'],
+];
+
+const N = ROWS.length;
+const BILOXI_GOV = 'b8c2cbd9-ad29-43bd-b0eb-f965c37af25c';
+const HARRISON_GOV = '9ea25562-c483-43f4-8dd0-131235b828f8';
+const q = (s) => "'" + String(s).replace(/'/g, "''") + "'";
+
+const values = ROWS.map(([id, name, title, src], i) =>
+  `  (${q(id)}::uuid, ${q(name)}, ${q(title)}, ${q(src)})${i === N - 1 ? '' : ','}`
+).join('\n');
+
+const sql = `-- ${SLOT}_ms5_biloxi_harrison_headshots.sql
+--
+-- Slot ${SLOT} reserved via \`npm run steward --prefix backend -- slot CC\` (author: Chris Cantrell).
+-- No migration runner exists; this file records SQL applied by hand.
+-- GENERATED by scripts/gen-ms5-headshot-migration.mjs -- edit the generator, not this file.
+--
+-- MS-5, Knight slice 16. Headshots for ${N} of the 35 Biloxi and Harrison County officials seated by
+-- CC_0171-CC_0174. All 35 carried no portrait before this; the corpus-wide baseline for Mississippi
+-- was 0 of 209, measured 2026-09-28. The remaining 17 stay BLANK on purpose -- their offices publish
+-- no photograph, and a blank is findable by every "who still needs a headshot" query while a
+-- decorative link is not.
+--
+-- SOURCES. Each is the officeholder's own government publishing its own officials:
+--   City of Biloxi           7 council portraits at 2048x2560 (biloxi.ms.us/wp-content/uploads/2025/08/)
+--                            + the mayor's official studio portrait from the city media library.
+--   Harrison County          8 officer portraits, read in a browser because the county's HTML sits
+--                            behind a challenge that refuses every scripted request; the FILES are
+--                            served from cms9files.revize.com and fetch normally.
+--   Harrison County Sheriff  the plain 3742x5423 original on the office's own image host.
+--   Chancery Clerk           the clerk's own site.
+-- Licence: 'press_use'. None is a federal work and none carries a free licence.
+--
+-- BOUND BY SEAT, NOT BY FILENAME -- the filenames are wrong three separate ways and there is no
+-- alt text on the Biloxi council page to fall back on:
+--   * Ward 3's file is named "Mike-Nail" while this roster says Robert Nail. The city calls him
+--     Mike Nail throughout, including his own email address. The NAME DISCREPANCY IS LEFT ALONE
+--     and recorded as a debt; the portrait is bound by ward, where there is no ambiguity.
+--   * Ward 6's full-size file is "Ward-6-Kenny-Glavin" (Glavan) and its thumbnail is
+--     "Kenny-Glavin-Ward-5". Two different wrong labels on one man. The page CAPTION says
+--     "Ward 6 Kenny Glavan" and the caption is what was believed.
+--   * Every portrait was then looked at beside the thumbnail the page prints next to its caption.
+--     A mean-absolute-difference check was tried first and REFUSED ITSELF: its control could not
+--     separate a matched pair (worst 23.3) from a mismatched one (best 23.7), because wards 1-4
+--     link a DIFFERENT CROP of the same sitting rather than a downscale. A threshold would have
+--     "confirmed" all seven.
+--
+-- THREE FIELDS, AND THE ORDER MATTERS. photo_custom_url is what renders: districtQueries.ts, the
+-- address-search path, builds its photo from COALESCE(photo_custom_url, photo_origin_url) and never
+-- reads politician_images. Writing only an image row changes nothing a voter sees.
+--
+-- IDEMPOTENT: every write is guarded, so re-running is a no-op. An image row is inserted only where
+-- the person has none; photo_custom_url and photo_origin_url are set only where they do not already
+-- hold this value.
+-- ROLLBACK: DELETE FROM essentials.politician_images WHERE url LIKE '%<pid>-headshot.jpg' for the ${N}
+--   ids below; UPDATE essentials.politicians SET photo_custom_url = NULL, photo_origin_url = NULL for
+--   the same ids; remove the ${N} Storage objects.
+--
+-- STORAGE: all ${N} objects were uploaded and then re-fetched and compared by sha256 to the local
+-- file -- ${N} of ${N} byte-identical -- with a never-uploaded key as a control, which returned
+-- HTTP 400 and no image as required. A missing object in this bucket answers 400, not 404.
+
+BEGIN;
+
+CREATE TEMP TABLE ms5_head ON COMMIT DROP AS
+SELECT v.pid, v.person, v.title, v.src,
+       ${q(CDN)} || v.pid::text || '-headshot.jpg' AS url
+  FROM (VALUES
+${values}
+  ) AS v(pid, person, title, src);
+
+-- PRE-FLIGHT -------------------------------------------------------------------------------
+DO $$
+DECLARE n int;
+BEGIN
+  SELECT count(*) INTO n FROM ms5_head;
+  IF n <> ${N} THEN RAISE EXCEPTION 'PRE: % rows staged, expected ${N}', n; END IF;
+
+  -- Every id must be a real person whose name still matches, and who still holds the named seat.
+  -- A portrait bound to a seat is wrong the moment the seat changes hands.
+  SELECT count(*) INTO n
+    FROM ms5_head h
+    JOIN essentials.politicians p ON p.id = h.pid
+                                AND p.first_name || ' ' || p.last_name = h.person
+   WHERE EXISTS (
+     SELECT 1 FROM essentials.office_terms ot
+       JOIN essentials.offices o  ON o.id = ot.office_id AND o.title = h.title
+       JOIN essentials.chambers c ON c.id = o.chamber_id
+      WHERE ot.politician_id = h.pid
+        AND c.government_id IN (${q(BILOXI_GOV)}::uuid, ${q(HARRISON_GOV)}::uuid)
+        AND (ot.term_start IS NULL OR ot.term_start <= CURRENT_DATE)
+        AND (ot.term_end   IS NULL OR ot.term_end   >= CURRENT_DATE));
+  IF n <> ${N} THEN
+    RAISE EXCEPTION 'PRE: % of ${N} resolve to a seated officeholder with that exact name and title', n;
+  END IF;
+
+  -- Nobody may already carry a DIFFERENT photograph. Re-running with the same one is fine.
+  SELECT count(*) INTO n FROM ms5_head h
+    JOIN essentials.politicians p ON p.id = h.pid
+   WHERE p.photo_custom_url IS NOT NULL
+     AND btrim(p.photo_custom_url) <> ''
+     AND p.photo_custom_url <> h.url;
+  IF n <> 0 THEN RAISE EXCEPTION 'PRE: % already carry a different photo_custom_url', n; END IF;
+
+  RAISE NOTICE '${SLOT} pre-flight OK: ${N} seated officeholders, none holding a different photo';
+END $$;
+
+-- WRITE ------------------------------------------------------------------------------------
+-- 1. The render field FIRST.
+UPDATE essentials.politicians p
+   SET photo_custom_url = h.url
+  FROM ms5_head h
+ WHERE p.id = h.pid
+   AND (p.photo_custom_url IS DISTINCT FROM h.url);
+
+-- 2. The image row, which carries the licence the API hands the frontend.
+INSERT INTO essentials.politician_images (id, politician_id, url, type, photo_license)
+SELECT gen_random_uuid(), h.pid, h.url, 'default', 'press_use'
+  FROM ms5_head h
+ WHERE NOT EXISTS (SELECT 1 FROM essentials.politician_images i WHERE i.politician_id = h.pid);
+
+-- 3. Provenance last: the page the photograph was found on, never the image itself.
+UPDATE essentials.politicians p
+   SET photo_origin_url = h.src
+  FROM ms5_head h
+ WHERE p.id = h.pid
+   AND (p.photo_origin_url IS DISTINCT FROM h.src);
+
+-- POST-VERIFY ------------------------------------------------------------------------------
+DO $$
+DECLARE n int;
+BEGIN
+  SELECT count(*) INTO n
+    FROM ms5_head h
+    JOIN essentials.politicians p ON p.id = h.pid
+   WHERE p.photo_custom_url = h.url
+     AND p.photo_origin_url = h.src
+     AND (SELECT count(*) FROM essentials.politician_images i
+           WHERE i.politician_id = h.pid AND i.url = h.url
+             AND i.type = 'default' AND i.photo_license = 'press_use') = 1;
+  IF n <> ${N} THEN RAISE EXCEPTION 'POST: % of ${N} carry all three fields', n; END IF;
+
+  -- The render field must never be a page. This is the defect the ordering above exists to avoid.
+  SELECT count(*) INTO n FROM ms5_head h
+    JOIN essentials.politicians p ON p.id = h.pid
+   WHERE p.photo_custom_url NOT LIKE '%-headshot.jpg';
+  IF n <> 0 THEN RAISE EXCEPTION 'POST: % render fields do not point at an image file', n; END IF;
+
+  -- The other 17 are deliberately blank. If this number moves, something wrote a portrait
+  -- for an official whose office publishes none -- or an officeholder changed.
+  SELECT count(*) INTO n
+    FROM essentials.governments g
+    JOIN essentials.chambers c ON c.government_id = g.id
+    JOIN essentials.offices  o ON o.chamber_id   = c.id
+    JOIN essentials.office_terms ot ON ot.office_id = o.id AND ot.politician_id IS NOT NULL
+                                   AND (ot.term_start IS NULL OR ot.term_start <= CURRENT_DATE)
+                                   AND (ot.term_end   IS NULL OR ot.term_end   >= CURRENT_DATE)
+    JOIN essentials.politicians p ON p.id = ot.politician_id
+   WHERE g.id IN (${q(BILOXI_GOV)}::uuid, ${q(HARRISON_GOV)}::uuid)
+     AND (p.photo_custom_url IS NULL OR btrim(p.photo_custom_url) = '');
+  IF n <> 17 THEN
+    RAISE EXCEPTION 'POST: % Biloxi/Harrison officials still without a portrait, expected exactly 17', n;
+  END IF;
+
+  RAISE NOTICE '${SLOT} applied: ${N} MS-5 headshots, 17 deliberately blank';
+END $$;
+
+COMMIT;
+`;
+
+const out = `migrations/${SLOT}_ms5_biloxi_harrison_headshots.sql`;
+fs.writeFileSync(out, sql);
+console.log(`wrote ${out} (${sql.length} bytes, ${N} rows)`);
