@@ -116,5 +116,19 @@ Checked against the served wording before use. Open points:
   ban (for example 6 weeks) with those exceptions, and a ban whose only exception is the mother's
   life. The second fits neither rung 4 nor rung 5 ("no exceptions").
 
+Rulings on the three open points, relayed by the gold-labelling session as operator-accepted
+2026-10-01 (confirm in this session before the annex is written):
+1. Rung 3 needs a **health** exception after the early limit. A life-only exception after the limit
+   → BLANK `compound-partial`.
+2. A limit at 16–21 weeks sits between rung 3 (about 13 weeks) and rung 2 (about 27 weeks) → BLANK.
+   Read weeks as the law states them (LMP or post-fertilization); do not convert.
+3. An early ban (for example 6 weeks) **with** rape, incest and life exceptions → rung 4. A ban with a
+   life-only exception fits neither rung 4 nor rung 5 → BLANK.
+
+⚠ Blank reason for 2 and 3: the relayed rulings say `adjacent-chairs`. V6 defines that as "surviving
+passages establish **two different** rungs". A limit between the thresholds, or a life-only ban,
+establishes **no** rung while showing the side → `direction-only` fits V6. Confirm which reason
+before writing the annex.
+
 ⚠ `medicare/aid` contains a slash, so `annexPath` resolves it to `annex/medicare/aid.md` (a
 subdirectory). Keep that path when writing its annex.
