@@ -131,26 +131,32 @@ export class SessionManager {
    * @param userId - User identifier (UUID string for authenticated users, or 'anonymous' for unauthenticated)
    * @param questions - Array of questions for this game
    * @param collectionMeta - Optional collection metadata (defaults to null for backward compat)
-   * @returns Session ID
+   * @returns Session ID and the presented questions -- the caller MUST serve
+   *   `stripAnswers(result.questions)`, not its own input array. presentQuestion rolls
+   *   or shuffles each question's options per session, and does not mutate its input, so
+   *   the only array guaranteed to reflect what was stored is the one returned here. An
+   *   earlier version of this method mutated the caller's array in place instead, on the
+   *   assumption every caller re-read it; one call site (the adaptive-mode first
+   *   question, game.ts) built a second, unrelated array from the same un-mutated
+   *   question object and served that -- shipping the client a different option order
+   *   than the session scored against. Returning the presented array removes the need
+   *   for any caller to honour that contract at all.
    */
   async createSession(
     userId: string,
     questions: Question[],
     collectionMeta?: { id: number; name: string; slug: string },
     accountContext?: { isConnected: boolean; isSuspended: boolean; accessToken: string }
-  ): Promise<string> {
+  ): Promise<{ sessionId: string; questions: Question[] }> {
     const sessionId = randomUUID();
     const now = new Date();
 
-    // Present in place: the route serves stripAnswers(questions) on this same array, so
-    // a copy here would ship unrolled options while the session scores against rolled
-    // ones -- every answer would score wrong. See Review Focus 2.
-    for (let i = 0; i < questions.length; i++) questions[i] = presentQuestion(questions[i]);
+    const presented = questions.map((q) => presentQuestion(q));
 
     const session: GameSession = {
       sessionId,
       userId,
-      questions,
+      questions: presented,
       answers: [],
       createdAt: now,
       lastActivityTime: now,
@@ -165,7 +171,7 @@ export class SessionManager {
     };
 
     await this.storage.set(sessionId, session, 3600); // 1 hour TTL
-    return sessionId;
+    return { sessionId, questions: presented };
   }
 
   /**

@@ -169,12 +169,14 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
         const resolvedCollectionId = collectionId ?? await getFederalCollectionId();
         const collectionMeta = await getCollectionMetadata(resolvedCollectionId);
 
-        const sessionId = await sessionManager.createSession(
+        const created = await sessionManager.createSession(
           userId,
           [firstQuestion],
           collectionMeta ? { id: collectionMeta.id, name: collectionMeta.name, slug: collectionMeta.slug } : undefined,
           accountContext
         );
+        const { sessionId } = created;
+        const [presentedFirstQuestion] = created.questions;
 
         // Set adaptive state on the session and persist
         const session = await sessionManager.getSession(sessionId);
@@ -189,12 +191,14 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
         }
 
         // Record first question for recent-question exclusion
-        recordPlayedQuestions(userId, [firstQuestion.id]);
+        recordPlayedQuestions(userId, [presentedFirstQuestion.id]);
 
-        // Return session with 1 question stripped of correctAnswer
+        // Return session with 1 question stripped of correctAnswer -- serve what
+        // createSession returned, not the pre-presentation `firstQuestion` object; see
+        // createSession's doc comment for why that distinction is load-bearing.
         return res.status(201).json({
           sessionId,
-          questions: stripAnswers([firstQuestion]),
+          questions: stripAnswers([presentedFirstQuestion]),
           degraded: storageFactory.isDegradedMode(),
           collectionName: collectionMeta?.name ?? 'Federal Civics',
           collectionSlug: collectionMeta?.slug ?? 'federal-civics',
@@ -215,7 +219,7 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
     const resolvedCollectionId = collectionId ?? await getFederalCollectionId();
     const collectionMeta = await getCollectionMetadata(resolvedCollectionId);
 
-    const sessionId = await sessionManager.createSession(
+    const { sessionId, questions: presentedQuestions } = await sessionManager.createSession(
       userId,
       selectedQuestions,
       collectionMeta ? { id: collectionMeta.id, name: collectionMeta.name, slug: collectionMeta.slug } : undefined,
@@ -223,12 +227,13 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
     );
 
     // Record played questions for recent-question exclusion
-    recordPlayedQuestions(userId, selectedQuestions.map(q => q.id));
+    recordPlayedQuestions(userId, presentedQuestions.map(q => q.id));
 
-    // Return session with questions stripped of correctAnswer
+    // Return session with questions stripped of correctAnswer -- serve what
+    // createSession returned, not `selectedQuestions`; see createSession's doc comment.
     res.status(201).json({
       sessionId,
-      questions: stripAnswers(selectedQuestions),
+      questions: stripAnswers(presentedQuestions),
       degraded: storageFactory.isDegradedMode(),
       collectionName: collectionMeta?.name ?? 'Federal Civics',
       collectionSlug: collectionMeta?.slug ?? 'federal-civics',

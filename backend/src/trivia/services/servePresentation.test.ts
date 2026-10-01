@@ -1,5 +1,4 @@
 import { describe, it, expect } from 'vitest';
-import { readFileSync } from 'node:fs';
 import { presentQuestion } from './servePresentation.js';
 import type { Question } from './sessionService.js';
 
@@ -44,6 +43,22 @@ describe('presentQuestion — numeric with a scale', () => {
     const r = presentQuestion(bad, rng(0));
     expect(r.options).toEqual(['9', '11', '13', '15']);
     expect(r.correctAnswer).toBe(2);
+  });
+
+  it('falls back to stored options when the scale is well-formed but misaligned with the real answer', () => {
+    // Well-formed (length 7, ascending, one unit) but SCALE_ANSWER_INDEX (3) holds '15',
+    // not '13' -- the row's real answer. A backfill bug or a scale copied from a sibling
+    // row would produce exactly this: internally consistent, but wrong.
+    const misaligned = { ...scaled, optionsScale: ['7', '9', '11', '15', '13', '17', '19'] };
+    const r = presentQuestion(misaligned, rng(0));
+    expect(r.options).toEqual(['9', '11', '13', '15']);
+    expect(r.correctAnswer).toBe(2);
+    expect(r.options[r.correctAnswer]).toBe('13');
+  });
+
+  it('never serves optionsScale to the caller, even on a successful roll', () => {
+    const r = presentQuestion(scaled, rng(0));
+    expect(r).not.toHaveProperty('optionsScale');
   });
 });
 
@@ -117,16 +132,11 @@ describe('presentQuestion — legacy numeric (optionsScale null, pre-Task-7 back
   });
 });
 
-describe('every path that puts a question in a session presents it first', () => {
-  it('createSession presents', () => {
-    const src = readFileSync('src/trivia/services/sessionService.ts', 'utf8');
-    expect(src).toMatch(/presentQuestion\(/);
-  });
-
-  it('the adaptive append presents — this is the entry point that gets forgotten', () => {
-    const src = readFileSync('src/trivia/routes/game.ts', 'utf8');
-    const push = src.slice(src.indexOf('session.questions.push('));
-    expect(src).toMatch(/const presented = presentQuestion\(nextQ\)/);
-    expect(push.slice(0, 40)).toContain('presented');
-  });
-});
+// The two source-text-regex tests that used to live here (grepping sessionService.ts and
+// game.ts for a `presentQuestion(` call) were deleted per code review: they passed green
+// while the adaptive-mode first question was served UNPRESENTED (a Critical regression),
+// because a regex can see that a call site exists without seeing whether its result is
+// what actually gets served. Replaced by behavioural tests in
+// `routes/game.presentation.test.ts`, which assert the served HTTP payload equals the
+// stored session questions for all three paths a question can enter a session: classic
+// start, adaptive start, and the adaptive append.
