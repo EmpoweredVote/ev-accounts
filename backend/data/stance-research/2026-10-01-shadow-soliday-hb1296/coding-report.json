@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Soliday's own words on HB 1296 (2022) or on handgun carry licensing, for a candidate quote and for a check against later statements"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "Soliday's own words on HB 1296 (2022) or on handgun carry licensing, for a candidate quote and for a check against later statements"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

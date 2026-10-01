@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Indiana House roll call or sponsorship showing Pierce acting on a firearms bill whose operative section matches one rung, such as a universal background check or assault-weapon measure",
+          "Pierce's own words on firearms regulation from the current term or campaign: a floor statement explaining his Nay on HB 1296 (2022), a questionnaire answer, or a first-person issue page",
+          "Pierce's own statement or floor explanation of his Nay vote on HB 1296 (2022) tying it to a specific provision, such as the license-to-carry repeal.",
+          "Pierce's own statement, or a separate vote/sponsorship, specifying which gun regulations (e.g. universal background checks, an assault-style weapons ban, or no new restrictions) he supports, to distinguish among rungs 1-4."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "An Indiana House roll call or sponsorship showing Pierce acting on a firearms bill whose operative section matches one rung, such as a universal background check or assault-weapon measure",
+        "Pierce's own words on firearms regulation from the current term or campaign: a floor statement explaining his Nay on HB 1296 (2022), a questionnaire answer, or a first-person issue page",
+        "Pierce's own statement or floor explanation of his Nay vote on HB 1296 (2022) tying it to a specific provision, such as the license-to-carry repeal.",
+        "Pierce's own statement, or a separate vote/sponsorship, specifying which gun regulations (e.g. universal background checks, an assault-style weapons ban, or no new restrictions) he supports, to distinguish among rungs 1-4."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}
