@@ -18,20 +18,16 @@
           "c8fe9b04-9e6f-54f0-a969-3d243fa94359"
         ]
       },
-      "confirm": [
-        "chamber-not-evidenced"
-      ],
+      "confirm": [],
       "stratum": {
         "level": "state",
         "evidence_class": "record"
       },
-      "shadow": "would-review",
-      "shadow_reasons": [
-        "confirm-failed"
-      ],
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
       "seed": "none",
       "profiles": [
-        "az-azleg-bill-status@2",
+        "az-azleg-bill-status@3",
         "az-azleg-bill-text@2"
       ]
     }

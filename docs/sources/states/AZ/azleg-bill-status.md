@@ -1,6 +1,6 @@
 ---
 profile: az-azleg-bill-status
-version: 2
+version: 3
 scope: state:AZ
 body: legislature
 match:
@@ -54,6 +54,24 @@ controls:
     actor_quote: "Stahl Hamilton (Prime)"
     tally_quote: null
     expect: chamber-not-evidenced
+  - batch: 2026-10-01-shadow-nguyen-sb1165
+    snapshot: "c8fe9b04"
+    person: Quang Nguyen
+    office_title: State Representative
+    instrument: SB 1165 (2022)
+    record_kind: vote
+    actor_quote: "NGUYEN Y"
+    tally_quote: "Passed 31-24-5-0-0"
+    expect: pass
+  - batch: 2026-10-01-shadow-nguyen-sb1165
+    snapshot: "38a428f8"
+    person: Quang Nguyen
+    office_title: State Representative
+    instrument: SB 1165 (2022)
+    record_kind: sponsor
+    actor_quote: "Nguyen (Co-Sponsor)"
+    tally_quote: null
+    expect: chamber-not-evidenced
 ---
 # Arizona Legislature — bill status and roll-call votes (azleg)
 
@@ -74,7 +92,7 @@ it with `azleg-bill-text`.
 - `Senate Third Reading` / `House Third Reading` / `House Final Reading` names the chamber that voted
   (rule `reading-else-bill-origin`, v2). The **overview** page (the sponsor list) has no reading line:
   there the bill's own house of origin is the sponsor's chamber (HB → House), with bill-origin's
-  co-author guard. v1 read only the reading line, so every sponsor record from an overview failed
+  co-author guard — **for the `(Prime)` sponsor only** (v3, 2026-10-01). A co-sponsor list mixes both chambers with no label: SB 1165 (2022) lists Senate co-sponsors, then House ones (Rep. Nguyen). A `(Co-Sponsor)` line therefore shows no chamber; it passes only when another page of the same bill (the House or Senate vote dialog) shows the person in the seat's chamber, and fails closed alone. v2 gave every co-sponsor the bill's origin, so Nguyen's SB 1165 record failed `chamber-not-evidenced` against the House although his House vote was in the same group. v1 read only the reading line, so every sponsor record from an overview failed
   `chamber-not-evidenced` (Stahl Hamilton HB 2677, Hoffman HB 2492, Kavanagh HB 2853). This is the opposite of California, where `Motion Assembly 3rd Reading`
   names the bill's house of origin.
 - The tally is unlabelled: `16-14-0-0-0` = Ayes-Nays-Not voting-Excused-Vacant (rule

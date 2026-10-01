@@ -211,6 +211,11 @@ function chamberAt(p: string[], k: number, extra: ReadonlySet<string>): Chamber 
   return c;
 }
 /** The nearest chamber word BEFORE token index `a`: the chamber of the vote that lists the actor. */
+/** The token after the surname marks an AZ BillStatus co-sponsor ("Nguyen (Co-Sponsor)"). */
+function isCoSponsorListing(p: string[], a: number): boolean {
+  return p[a + 1] === 'co-sponsor';
+}
+
 function chamberBefore(p: string[], a: number, extra: ReadonlySet<string>): Chamber | null {
   for (let k = a - 1; k >= 0; k--) { const c = chamberAt(p, k, extra); if (c) return c; }
   return null;
@@ -247,7 +252,12 @@ function actorChamber(rule: ChamberRule, pt: string[], a: number, instrument: st
       // AZ BillStatus: one URL prefix serves both the vote dialog ("House Third Reading - HB…", which
       // names the chamber that voted) and the overview (a sponsor list with no reading line, where the
       // bill's own house of origin is the sponsor's chamber — bill-origin, with its co-author guard).
-      return actorChamber('word-before-reading', pt, a, instrument, extra, bounds) ?? actorChamber('bill-origin', pt, a, instrument, extra, bounds);
+      // v3: on the overview only the PRIME sponsor takes the bill's chamber. A co-sponsor list mixes
+      // both chambers with no label (SB 1165 (2022) lists Senate co-sponsors, then House ones such as
+      // Rep. Nguyen), so a co-sponsor's chamber is unknown from that page (null): checkRecordGroup lets
+      // another actor page of the same instrument settle it, and fails closed when none does.
+      return actorChamber('word-before-reading', pt, a, instrument, extra, bounds)
+        ?? (isCoSponsorListing(pt, a) ? null : actorChamber('bill-origin', pt, a, instrument, extra, bounds));
     case 'page-header':
       for (let k = 0; k < pt.length; k++) { const c = chamberAt(pt, k, extra); if (c) return c; }
       return null;
@@ -374,6 +384,11 @@ export function checkRecordGroup(i: {
   // Skipped when the seat has no chamber here or the source has none ('none'). Fails closed when no
   // occurrence shows it. The search starts at the surname, so a title inside the actor_quote counts
   // ("Authored by: Sen. Shelli Yoder").
+  // An AZ overview co-sponsor line cannot show the chamber (see 'reading-else-bill-origin'). It is
+  // deferred: it passes when another actor page of this instrument shows the seat's chamber, and fails
+  // closed when it is the group's only actor evidence.
+  let chamberShown = false;
+  let deferred = false;
   for (const l of located) {
     const { rules, chamber } = prof(l.p);
     if (!chamber || rules.chamber === 'none') continue;
@@ -383,8 +398,13 @@ export function checkRecordGroup(i: {
     // reduced to its first word.
     const extra = new Set(rules.not_chamber_after.map((w) => words(w)).filter((t) => t.length === 1).map((t) => t[0]));
     const inQuote = Math.max(0, words(l.p.actor_quote!).indexOf(last));
-    if (!l.occ.some((a) => actorChamber(rules.chamber, l.pt, a + inQuote, l.p.instrument, extra, l.bounds) === chamber)) out.add('chamber-not-evidenced');
+    if (l.occ.some((a) => actorChamber(rules.chamber, l.pt, a + inQuote, l.p.instrument, extra, l.bounds) === chamber)) { chamberShown = true; continue; }
+    const coSponsorOnly = rules.chamber === 'reading-else-bill-origin' && l.occ.length > 0 && l.occ.every((a) =>
+      isCoSponsorListing(l.pt, a + inQuote) && actorChamber('word-before-reading', l.pt, a + inQuote, l.p.instrument, extra, l.bounds) === null);
+    if (coSponsorOnly) deferred = true;
+    else out.add('chamber-not-evidenced');
   }
+  if (deferred && !chamberShown) out.add('chamber-not-evidenced');
 
   // A common surname, or a surname two members share on the page, needs a qualifier in the
   // actor_quote: the given name the person goes by, in full, immediately before the surname

@@ -5,7 +5,7 @@ import { decodeHtmlBody } from './verificationFetch.js';
 // windows-1252 only in a <meta http-equiv> tag. Decoding them as UTF-8 turned every §, dash and curly
 // quote into U+FFFD (1,769 of them in AZ SB 1828's chaptered text).
 const bytes = (s: string, extra: number[] = []) => new Uint8Array([...Buffer.from(s, 'latin1'), ...extra]);
-const resp = (body: Uint8Array, ctype: string) => new Response(body, { headers: { 'content-type': ctype } });
+const resp = (body: Uint8Array, ctype: string) => new Response(new Blob([body as BlobPart]), { headers: { 'content-type': ctype } });
 
 describe('decodeHtmlBody', () => {
   it('uses the meta charset when the header has none (windows-1252 en dash)', async () =>
