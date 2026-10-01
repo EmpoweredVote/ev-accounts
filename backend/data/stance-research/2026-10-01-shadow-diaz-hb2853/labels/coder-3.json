@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d",
+      "office_id": "8c909ec7-73d2-4488-8eb5-a72f4746f32b",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "ac550cec-a429-53c6-a766-a3103891d3d4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading vote; Diaz voted Y on the amended, engrossed bill, which passed.",
+          "record_kind": "vote",
+          "actor_quote": "DIAZ Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "387c346b-0d35-5f09-840c-1456403677e0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "New A.R.S. 15-2401.01, added by the bill Diaz voted for, extends ESA eligibility to any public-school-eligible resident statewide, making the program universal.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2edccbea-f0be-540d-844b-0c42eb581705",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Diaz is listed as a co-sponsor of HB2853, which the Governor signed as Chapter 388.",
+          "record_kind": "sponsor",
+          "actor_quote": "Diaz (Co-Sponsor)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ac550cec-a429-53c6-a766-a3103891d3d4",
+        "387c346b-0d35-5f09-840c-1456403677e0",
+        "2edccbea-f0be-540d-844b-0c42eb581705"
+      ],
+      "reasoning": "As a State Representative, Diaz co-sponsored and voted Aye on HB2853 (2022), a single-subject bill signed into law as Chapter 388, which added A.R.S. 15-2401.01 making 'qualified student' include any resident 'eligible to enroll in a public school in this state' at any level, removing prior eligibility limits. This matches the rung text 'Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}
