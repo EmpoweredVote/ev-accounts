@@ -54,12 +54,18 @@ trimester ends at about 13 weeks, the second at about 27. **Read the weeks as th
    - Operative clauses: [a] legal during the first trimester; [b] after that, a health exception
      only.
    - Establishing evidence looks like: a limit at about **12–15 weeks** with a health exception after
-     it (a medical emergency that covers serious lasting harm to the mother, not only death). A
-     15-week limit is within the ladder's precision for "first trimester". Such a law excludes rung 2
-     (it bans most of the second trimester) and rung 4 (it allows abortion for any reason before the
-     limit) _(ruled 2026-10-01)_.
+     it (a medical emergency that covers serious lasting harm to the mother, not only death) — **but
+     only when the law actually permits abortion up to the limit**, either affirmatively or by
+     repealing a broader ban. Then it excludes rung 2 (it bans most of the second trimester) and rung
+     4 (it allows abortion for any reason before the limit). A 15-week limit is within the ladder's
+     precision for "first trimester" _(ruled 2026-10-01, revised the same day)_.
+   - **Read the act's construction or savings clause.** A limit that says it does not create or
+     recognize a right to abortion, does not make lawful any abortion that is now unlawful, or leaves
+     a broader ban in force, evidences **no permitted stage**. A vote for it shows only the
+     restrictive side → BLANK `direction-only` _(ruled 2026-10-01)_.
    - Levels that hold a lever: state; federal.
-   - Known chair-shaped instruments: a single-subject 15-week limit with a medical-emergency exception.
+   - Known chair-shaped instruments: _(none on file)_. A gestational-limit bill is chair-shaped only
+     when it permits abortion before the limit (see the construction clause above).
    - Commonly confused with rung 2: see rung 2.
    - A **life-only** exception after the early limit is narrower than "to protect the mother's health"
      → BLANK `compound-partial` _(ruled 2026-10-01)_.
