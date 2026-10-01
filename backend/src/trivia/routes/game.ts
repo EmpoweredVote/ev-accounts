@@ -1,5 +1,6 @@
 import { Router, Request, Response } from 'express';
 import { sessionManager, Question } from '../services/sessionService.js';
+import { presentQuestion } from '../services/servePresentation.js';
 import { optionalAuth } from '../middleware/auth.js';
 import { calculateProgression, checkAccountContext, awardPlatformGems, upsertPlayerStats, calculateXpAmount, awardPlatformXp } from '../services/progressionService.js';
 import { storageFactory } from '../config/redis.js';
@@ -332,15 +333,20 @@ router.post('/answer', async (req: Request, res: Response) => {
           // Transform to Question
           const nextQ = await transformSingleDBQuestion(nextRow);
 
+          // Present (roll/shuffle) before it ever enters the session -- this is the
+          // second entry point, easy to miss: classic mode presents in createSession,
+          // but adaptive mode appends after session creation.
+          const presented = presentQuestion(nextQ);
+
           // Push onto session questions (server-side)
-          session.questions.push(nextQ);
+          session.questions.push(presented);
           session.adaptiveState.usedQuestionIds.push(nextRow.id);
 
           // Record for recent-question exclusion
-          recordPlayedQuestions(session.userId, [nextQ.id]);
+          recordPlayedQuestions(session.userId, [presented.id]);
 
           // Strip correctAnswer for client
-          nextQuestionStripped = stripAnswer(nextQ);
+          nextQuestionStripped = stripAnswer(presented);
 
           console.log(
             `[easy-steps-adaptive] Q${questionNumber + 1}: correctCount=${session.adaptiveState.correctCount}, ` +

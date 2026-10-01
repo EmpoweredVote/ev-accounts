@@ -10,6 +10,7 @@ import { MemoryStorage } from './storage/MemoryStorage.js';
 import { PLAUSIBILITY_THRESHOLDS, getAdjustedThreshold, type PlausibilityDifficulty } from '../config/plausibilityThresholds.js';
 import type { DBQuestionRow } from './gameModes.js';
 import type { XpAwardResult } from './progressionService.js';
+import { presentQuestion } from './servePresentation.js';
 
 // Question type matching backend data structure
 export interface Question {
@@ -17,6 +18,8 @@ export interface Question {
   text: string;
   options: string[];
   correctAnswer: number;
+  /** 7 ascending marks with the answer at index 3, or null. Rolled at serve time. */
+  optionsScale?: string[] | null;
   explanation: string;
   difficulty: string;
   topic: string;
@@ -138,6 +141,11 @@ export class SessionManager {
   ): Promise<string> {
     const sessionId = randomUUID();
     const now = new Date();
+
+    // Present in place: the route serves stripAnswers(questions) on this same array, so
+    // a copy here would ship unrolled options while the session scores against rolled
+    // ones -- every answer would score wrong. See Review Focus 2.
+    for (let i = 0; i < questions.length; i++) questions[i] = presentQuestion(questions[i]);
 
     const session: GameSession = {
       sessionId,

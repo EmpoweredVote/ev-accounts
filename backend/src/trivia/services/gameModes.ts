@@ -15,6 +15,7 @@ export interface DBQuestionRow {
   text: string;
   options: string[];
   correctAnswer: number;
+  optionsScale: string[] | null;
   explanation: string;
   difficulty: string;
   topicId: number;
