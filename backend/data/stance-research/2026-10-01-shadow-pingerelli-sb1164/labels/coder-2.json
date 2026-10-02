@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "office_id": "87c65dff-fa5b-4d7a-a7bc-d78595d2f506",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call recording Pingerelli's Aye vote on the single-subject gestational-limit bill.",
+          "record_kind": "vote",
+          "actor_quote": "PINGERELLI Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "89a47096-9e0c-51ea-89fc-ffed87200c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill history page confirming the same House Third Reading passage and governor's signature on the single-subject instrument.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f1403cb4-c530-5152-b92d-73f71cebf5b0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Enacted text of the instrument Pingerelli's House vote acted on, printing the operative gestational-limit and medical-emergency-exception clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 3,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+        "89a47096-9e0c-51ea-89fc-ffed87200c23",
+        "f1403cb4-c530-5152-b92d-73f71cebf5b0"
+      ],
+      "reasoning": "Pingerelli voted Y on SB 1164's House Third Reading (31-26-3-0-0), a single-subject bill that allows abortion without restriction through fifteen weeks' gestation and bans it afterward 'except in a medical emergency,' matching 'allow abortion during the first trimester, and after that only to protect the mother's health.' The bill's own findings frame this limit by comparison to nations that 'do not allow abortion after twelve weeks' gestation, except ... to save the life or to preserve the physical health of the mother,' confirming the early-access-plus-health-exception structure rather than the broader through-second-trimester or narrow life-only-exception structures of the adjacent rungs.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

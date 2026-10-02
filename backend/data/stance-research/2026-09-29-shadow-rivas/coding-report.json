@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Rivas's own words (floor statement, questionnaire or first-person issue page) on who should draw California's districts as a standing rule, rather than as a response to Texas",
+          "Assembly floor roll call on ACA 8 (2025-2026) showing Rivas's vote and the tally",
+          "Rivas's own floor statement or explanation of vote tying ACA 8 to a standing (non-temporary) preference among the ladder's rungs",
+          "Assembly floor roll call / final passage vote on ACA 8 (2025-2026)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "requests": [
+        "Rivas's own words (floor statement, questionnaire or first-person issue page) on who should draw California's districts as a standing rule, rather than as a response to Texas",
+        "Assembly floor roll call on ACA 8 (2025-2026) showing Rivas's vote and the tally",
+        "Rivas's own floor statement or explanation of vote tying ACA 8 to a standing (non-temporary) preference among the ladder's rungs",
+        "Assembly floor roll call / final passage vote on ACA 8 (2025-2026)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

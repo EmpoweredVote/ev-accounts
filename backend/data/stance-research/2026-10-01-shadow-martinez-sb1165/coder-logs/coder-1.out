@@ -1,0 +1,14 @@
+Wrote `coder-1.json`.
+
+**Row: Teresa Martinez / trans-athletes → chair 4**
+
+Three passages, all one record group on `SB 1165 (2022)`, `record_kind: vote`:
+- **Vote page** (`5ec5dda…`) — `own-act` / `on-question` / `record` / `chair-shaped` / `in-term`. `actor_quote` = `LONGDON N MARTINEZ Y MATHIS N` (only one MARTINEZ on the roll call), `tally_quote` = `Passed 31-24-5-0-0` — 24 of 55 voting No, so not `near-unanimous`.
+- **Bill text** (`1d6b701…`) — carries the `provision_quote` (section B: girls'/women's teams "may not be open to students of the male sex"), nulls for actor/tally per the per-record field rule.
+- **Bill overview** (`b11d9fd…`) — confirms chamber, date and tally; Martinez is not on the sponsor list, so her act is the vote, not sponsorship.
+
+V5: the 2022-03-24 vote falls in her earlier Arizona House term (2021-11-01 → 2023-01-09) — same chamber, same legislature → `in-term` under the V5 option-B ruling.
+
+V4.1: final passage of a single-subject bill whose operative section matches rung 4 ("compete only on teams matching their biological sex assigned at birth"). Rung 5 is excluded by section C, which leaves boys'/coed teams open; rungs 1–3 have no documentation or case-by-case path in the text.
+
+`rests_on` = vote page + bill text. No quotes (no Martinez words in the sources), empty `needs_source`.

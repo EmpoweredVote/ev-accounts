@@ -1,0 +1,3 @@
+Labels written to `coder-2.json` with one row for `redistricting`.
+
+Summary: the only evidence is Bray's Nay vote (Senate Roll Call 8, HB 1032, defeated 19-31). The bill bundled several provisions (off-cycle redraw authority, a leadership backup commission, restricted judicial review, and the actual map lines), so a No vote rules out this specific legislature-drawn map/procedure but can't isolate which rung Bray actually holds — coded `BLANK / direction-only` with all three passages (bill text/digest, bill details page, roll call) as `record / vote / direction-only / in-term`, no chair, and `needs_source` flagging his own statement or any commission-related record as what's missing.

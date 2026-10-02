@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "ea05323c-8b6d-4b16-873c-083d9873889d",
+      "office_id": "4333d774-b25a-4c26-905b-ca604fa8216f",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b082c11d-2401-55c1-be63-29ba3df6db1a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-04-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": null,
+          "note": "Bill digest requires jails to notify the county sheriff of probable unlawful presence at intake, a notification duty rather than a deportation-scope provision.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Garrett Bascom.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7437aeb0-9d93-5bdf-9dde-e83c9884611b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": "(b) If a law enforcement officer arrests an individual for a felony or a misdemeanor and there is probable cause to believe that the person is not lawfully present in the United States, the jail or detention facility shall, during the intake process at the jail or detention facility, notify the county sheriff of the probable cause to believe the person is not lawfully present in the United States. (c) A county sheriff shall report information received under subsection (b) to the proper authority in accordance with provisions of this chapter.",
+          "note": "Operative clause requires notifying the county sheriff, who reports to the proper authority; it sets no deportation policy itself.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 1393 (2025), authored by Bascom, requires jails to notify the county sheriff when an arrestee is believed unlawfully present, and the sheriff to notify the proper authority; this is a local-enforcement notification duty, not a statement of how far deportation should go, so neither passage is on-question under V2.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

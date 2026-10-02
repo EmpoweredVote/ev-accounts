@@ -1,0 +1,11 @@
+Wrote `coder-1.json`.
+
+**Row: Quang H Nguyen / trans-athletes → chair 4**
+
+Three passages, all on one instrument (`SB 1165 (2022)`), all `own-act` / `on-question` / `record` / `in-term`:
+
+- **Bill text (Ch. 106)** — `record_kind: vote`, carries `provision_quote` ("Athletic teams or sports designated for "females", "women" or "girls" may not be open to students of the male sex."); no actor/tally on that page.
+- **House Third Reading vote page** — `actor_quote: "MEZA N NGUYEN Y OSBORNE Y"` (longer span so the surname is unambiguous), `tally_quote: "Passed 31-24-5-0-0"`. 24 No of 60 voting, so not `near-unanimous`.
+- **Bill overview** — `record_kind: sponsor`, `actor_quote: "Nguyen (Co-Sponsor)"`.
+
+Shape is `chair-shaped` on the Adams/HB11 precedent in V4: a single-subject bill barring male-sex students from girls' teams matches rung 4 clause for clause, and subsection C (eligibility for boys'/coed teams untouched) excludes rung 5's total ban. `needs_source` and `quotes` are empty — no own-words statements in the sources.

@@ -140,3 +140,26 @@ export function goldMeasures(pairs: ReadonlyArray<{ coders: ReadonlyArray<Catego
   }
   return { m2: alphaNominal(m2Units).alpha, m2Pairs: m2Units.length, splits, unanimousCorrect, unanimousTotal, severe };
 }
+
+/**
+ * Blanks (ruling 2026-09-28, Chris Andrews; spec §3.1 "Blanks"). A unanimous BLANK publishes no chair,
+ * so blanks are not certified: the rows where no coder seated a chair are a DIAGNOSTIC bucket, and α
+ * (which needs two categories) is undefined there by construction. Two diagnostics instead, over every
+ * row whose coder consensus (≥ 2 valid coders agree) is BLANK, in any stratum:
+ * - blank precision: the share whose gold is also BLANK, with the Wilson 95% lower bound;
+ * - missed chairs: gold seats a chair where the consensus is BLANK — lost coverage, listed by key
+ *   for the improvement loop (spec §10.1).
+ * A split row (no two coders agree) is neither.
+ */
+export function blankMeasures(pairs: ReadonlyArray<{ key?: string; coders: ReadonlyArray<Category | null>; gold: number | null }>): {
+  blankConsensus: number; blankCorrect: number; precisionWilsonLow: number; missed: { key?: string; gold: number }[];
+} {
+  let blankConsensus = 0; let blankCorrect = 0; const missed: { key?: string; gold: number }[] = [];
+  for (const p of pairs) {
+    if (p.coders.filter((c) => c === 'BLANK').length < 2) continue;
+    blankConsensus++;
+    if (p.gold === null) blankCorrect++;
+    else missed.push({ key: p.key, gold: p.gold });
+  }
+  return { blankConsensus, blankCorrect, precisionWilsonLow: wilsonLowerBound(blankCorrect, blankConsensus), missed };
+}

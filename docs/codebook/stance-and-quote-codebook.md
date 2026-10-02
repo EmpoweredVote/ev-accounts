@@ -13,6 +13,11 @@ quotes it as `provision_quote` (V3 "Record fields").
 chamber of the same legislature** counts for the current seat (a senator's votes and bills from their
 House years). A record from another level of government (a city council, a county, Congress) is still
 valid for that office only. See V5.
+**Clarified 2026-09-30 (still 0.4 — no new variable or value; two existing rules spelled out):** V4.2
+"Silence is not a clause" and "Ruling out the other rungs is not evidence", with register rows H13 and
+H14. Both restate V4 `direction-only` and the CLAUDE.md tiebreaker rule; the version stays 0.4 so
+existing gold keeps counting. The two gold items that prompted them are not named here, so they stay
+certifiable: their coder labels were written before these lines existed.
 **Clarified 2026-10-01 (still 0.4 — no new variable or value; rulings by Chris Andrews):** V5 says
 how a judge's lower-court record is coded (`pre-seating`, with one lever-match exception), and the
 Maloy / `same-sex-marriage` example now reads the RFMA on its operative section (recognition → rung 2;
@@ -289,6 +294,16 @@ A vote does not mean support for every clause of a bill.
   "small adjustments to **both** benefits **and** taxes", needs evidence on both.
 - **Broader than the instrument** (stance-program R3): an ADU-only bill cannot evidence "upzone broadly
   to allow multifamily by right". Seat the narrower rung if one exists; otherwise BLANK.
+- **Silence is not a clause** (gold round 5, 2026-09-30). When a rung's clause is a limit or its
+  absence ("at every stage, with no time limit", "without exceptions"), the instrument must *say* it.
+  A text that declares a right and names no limit has not said "no limit"; it has said nothing about
+  limits, and other law may still set them. → `direction-only`.
+- **Ruling out the other rungs is not evidence for the one left** (gold round 5, 2026-09-30). "Not
+  rung 1 (nothing is required), not rung 3 (the law changes), so rung 2" establishes only a side. The
+  remaining rung still needs its own clauses matched — a repeal that *permits* a programme does not
+  "strengthen enforcement". This is the same fault as reaching for "the least extreme option the
+  reasoning supports" (CLAUDE.md): a tiebreaker, not evidence. → `direction-only`, or
+  `compound-partial` when the rung is compound and one clause is met.
 
 **Good (calibration A1).** A prime-sponsored bill that *is* "a moratorium on new data centres until the
 utility commission reports". Rung 1 is a moratorium. → `chair-shaped`.
@@ -598,6 +613,8 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 | H10 | "Remove regulations" with none named | V7 `direction` (fails T2) | V7 T2 | [real] Hilton / ai-regulation |
 | H11 | Local-control principle without a mechanism | V7 `direction` | V7 T2 | [real] Hilton / data-centers |
 | H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
+| H13 | A declared right with no stated limit coded as the "no limit" rung | V4 `direction-only` | V4.2 "Silence is not a clause" | gold round 5 (item withheld; coded before this entry) |
+| H14 | A chair reached by excluding every other rung, with the remaining rung's clause unmatched | BLANK `direction-only` / `compound-partial` | V4.2 "Ruling out the other rungs" | gold round 5 (item withheld; coded before this entry) |
 
 ---
 

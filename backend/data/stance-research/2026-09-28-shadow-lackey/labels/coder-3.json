@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e",
+      "office_id": "54a4ad72-bcd1-4fe1-b684-bfa7e72152fc",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "af8b1b75-6d0f-527c-9442-8a02f944e8c9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": null,
+          "note": "A No vote on a firearms-advertising-to-minors bill, off the ownership/carry/background-check axis this ladder orders.",
+          "record_kind": "vote",
+          "actor_quote": "Gallagher, Kiley, Lackey, Mathis, Patterson",
+          "tally_quote": "Ayes Count 57 Noes Count 15 NVR Count 8"
+        },
+        {
+          "snapshot_id": "dc53152c-0e3d-5c50-8f58-49a1b5cae228",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": "A firearm industry member shall not advertise, market, or arrange for placement of an advertising or marketing communication concerning any firearm-related product in a manner that is designed, intended, or reasonably appears to be attractive to minors.",
+          "note": "The bill's operative clause restricts firearm marketing to minors, not ownership, carrying, or background-check rules that separate these rungs.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is Lackey's No vote and the text of AB 2571 (2021-2022), which restricts firearm advertising and marketing to minors. It does not address civilian ownership, assault-style weapon bans, background checks, or carry-permit rules, the clauses that separate these rungs, so no rung is established.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

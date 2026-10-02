@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-10-01-shadow-soliday-hb1007",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2025/bills/house/1007/details",
+      "source_kind": "public-record",
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_keys": [
+        "data-centers"
+      ],
+      "instruments": [
+        "HB 1007 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2025-hb1007-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/124/2025/house/bills/HB1007/HB1007.08.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_keys": [
+        "data-centers"
+      ],
+      "instruments": [
+        "HB 1007 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2025-hb1007-enrolled.txt"
+    }
+  ]
+}

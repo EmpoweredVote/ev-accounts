@@ -1,0 +1,12 @@
+Written: `labels/coder-1.json`.
+
+**abortion → BLANK `direction-only`**
+
+Three passages, all one record (SB 1164, 2022), all `own-act` / `on-question` / `record` / `in-term`:
+- Bill overview — tally `House THIRD 03/24/2022 31-26-3-0-0 PASSED`
+- Vote detail — `PINGERELLI Y`, `Passed 31-26-3-0-0`
+- Chaptered text — the 15-week operative provision
+
+Why no chair: the act bars abortion after fifteen weeks except in a medical emergency. Fifteen weeks is neither "during the first trimester" (rung 3) nor "through the second trimester" (rung 2), and the act is not a ban, so rung 4 fails too. Its own construction section says it "does not : 1. Create or recognize a right to abortion" and does not repeal §13-3603 — so the vote can't be read as establishing what she would permit. Reaching a rung here would be the V4.2 "ruling out the other rungs" fault (register H14).
+
+Not near-unanimous (26 No of 60), so that rule doesn't apply. `rests_on` is empty; `quotes` is empty (no own-words passage in the sources). Two `needs_source` entries: a roll call/sponsorship on a near-total ban or §13-3603, and her own words on exceptions and gestational limit.

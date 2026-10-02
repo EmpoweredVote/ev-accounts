@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "0b0dc6ea-ed45-45e6-9a59-41d1c8aeb53c",
+      "office_id": "3b68f8ca-249f-4e82-be6a-7cf9b190ac04",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "30c7cd1f-3375-5f26-be47-023a665d1c4d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "Enacted text opens ESA eligibility to any resident student eligible to enroll in public school, with no income test.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2f65c0e0-5cdd-5f66-ad19-d588714103c3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": null,
+          "note": "Official bill-overview page lists Payne among HB2853's co-sponsors.",
+          "record_kind": "sponsor",
+          "actor_quote": "Payne (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "536e927e-57a3-51e6-88f4-bdae2d784a15",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Payne voting Y, with the bill passing 31-26-3-0-0.",
+          "record_kind": "vote",
+          "actor_quote": "PAYNE Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "30c7cd1f-3375-5f26-be47-023a665d1c4d",
+        "2f65c0e0-5cdd-5f66-ad19-d588714103c3",
+        "536e927e-57a3-51e6-88f4-bdae2d784a15"
+      ],
+      "reasoning": "Payne co-sponsored HB 2853 (2022) and voted Y on its House Third Reading (31-26-3-0-0); the enacted text adds a new eligibility category making any resident student eligible to enroll in public school (with no income cap) a 'qualified student' for an empowerment scholarship account, matching the rung text 'universal vouchers so that education funding follows the student to any school.' Per the V5 ruling on records from either chamber of the same legislature, his House-term vote counts as in-term for his current Senate seat.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

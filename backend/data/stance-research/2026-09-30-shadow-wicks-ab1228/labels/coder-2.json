@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "d406e55d-80fd-5708-be95-8b2bd4399548",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": null,
+          "note": "Vote page shows Wicks voting Aye on final passage of a bill setting wages only for the fast-food sector, not the general wage floor.",
+          "record_kind": "vote",
+          "actor_quote": "Ward, Weber, Wicks, Wilson, Wood",
+          "tally_quote": "Ayes Count 53 Noes Count 17"
+        },
+        {
+          "snapshot_id": "2b00b586-74a0-5073-9887-3b6484ae1ae5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": "The hourly minimum wage for fast food restaurant employees shall be twenty dollars ($20) per hour, effective April 1, 2024.",
+          "note": "Operative provision sets a wage floor only for fast food restaurant employees, via an appointed council with discretionary, capped future increases, not the general state minimum wage the rungs address.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 1228 sets a minimum wage only for fast food restaurant employees through an appointed Fast Food Council, with future increases discretionary and capped at the lesser of 3.5% or CPI-W change; it does not establish the general state wage floor the rungs describe, so it is adjacent to the ladder's question rather than on it.",
+      "needs_source": [
+        "Wicks's vote or sponsorship record on general (non-sector-specific) California minimum wage legislation"
+      ],
+      "quotes": []
+    }
+  ]
+}

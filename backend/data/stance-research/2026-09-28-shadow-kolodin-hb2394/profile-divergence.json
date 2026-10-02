@@ -1,0 +1,89 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+    "instrument": "hb2394(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "1a257be5-3bd9-5377-b982-677a77646c54",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2394#house-final",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "005c9f3d-ab1a-55ba-9d19-e07d93c9be78",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2394",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "ad150339-15bb-5863-8838-6fc394a3a0f4",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0193.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "near-unanimous-vote"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+    "instrument": "hb2394(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "ad150339-15bb-5863-8838-6fc394a3a0f4",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0193.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "1a257be5-3bd9-5377-b982-677a77646c54",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2394#house-final",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "005c9f3d-ab1a-55ba-9d19-e07d93c9be78",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2394",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "near-unanimous-vote"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+    "instrument": "hb2394(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "1a257be5-3bd9-5377-b982-677a77646c54",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2394#house-final",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "005c9f3d-ab1a-55ba-9d19-e07d93c9be78",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2394",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "ad150339-15bb-5863-8838-6fc394a3a0f4",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0193.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "near-unanimous-vote"
+    ]
+  }
+]

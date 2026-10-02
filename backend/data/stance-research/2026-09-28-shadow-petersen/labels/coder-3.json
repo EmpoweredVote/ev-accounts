@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "Performs an abortion knowing that the abortion is sought based on the sex or race of the child or the race of a parent of that child.",
+          "note": "Bans only sex/race/genetic-abnormality-motivated abortions and public-school-facility abortions; sets no general gestational-stage rule and Sec. 17 disclaims creating any abortion right.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Petersen voted Y on SB1457 final passage, 16-14; the bill bundles several unrelated abortion-regulation clauses, none matching the ladder's gestational-stage dimension.",
+          "record_kind": "vote",
+          "actor_quote": "PETERSEN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Petersen is listed as a Co-Sponsor of SB1457, the same multi-clause reason-based abortion restriction bill.",
+          "record_kind": "sponsor",
+          "actor_quote": "Petersen (Co-Sponsor)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only sourced record is SB 1457 (2021), which Petersen co-sponsored and voted Yes on (16-14 final passage); its operative clauses ban only sex-, race-, and genetic-abnormality-motivated abortions, restrict abortions at public-educational-institution facilities, and add clinic and informed-consent regulation, while Sec. 17 states the act 'does not create or recognize a right to an abortion and does not make lawful an abortion that is currently unlawful.' None of this speaks to the ladder's gestational-stage or exception question, so every passage is adjacent rather than on-question.",
+      "needs_source": [
+        "A vote, sponsorship, or statement by Petersen addressing Arizona's general gestational abortion limit (e.g., a comprehensive gestational-week ban) to establish a chair on this ladder."
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12",
+      "office_id": "927850b9-2c91-44f7-a6be-f4c81dc3b75d",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "001832e2-df00-5dd7-8847-550996caebb0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-25",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": "It is the intent of the Legislature that California remedy discrimination against, and underrepresentation of, certain disadvantaged groups in a manner consistent with the United States Constitution and allow gender, racial, and ethnic diversity to be considered among the factors used to decide college admissions and hiring and contracting by government institutions",
+          "note": "Bill text repeals the Prop 209 ban on race- and sex-conscious remedies and states legislative intent to remedy discrimination and underrepresentation.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "63afc856-cd20-5d20-8a29-ea5c72c469e6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": null,
+          "note": "Assembly floor vote page shows Ramos among the Ayes on final passage of ACA 5, 60-14.",
+          "record_kind": "vote",
+          "actor_quote": "Quirk-Silva, Ramos, Reyes,",
+          "tally_quote": "Ayes Count 60 Noes Count 14"
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "001832e2-df00-5dd7-8847-550996caebb0",
+        "63afc856-cd20-5d20-8a29-ea5c72c469e6"
+      ],
+      "reasoning": "Ramos voted Aye on ACA 5 (2019-2020), a single-subject state constitutional amendment repealing Article I, Section 31 (the Proposition 209 ban on race- and sex-based preferences in public employment, education, and contracting), whose text states legislative intent to remedy discrimination and underrepresentation of disadvantaged groups. That operative content matches the rung 'strengthen civil rights enforcement and address systemic discrimination', and excludes the rungs that mandate quotas in all institutions, preserve current law unchanged, limit enforcement, or eliminate affirmative action.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "c763f996-7d8a-59a6-a265-68994f093b9a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 Special Session)",
+          "provision_quote": null,
+          "note": "Roll call shows Holdman voting Yea on SB 1(ss).",
+          "record_kind": "vote",
+          "actor_quote": "Holdman",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 Special Session)",
+          "provision_quote": "the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus is diagnosed with a lethal fetal anomaly;",
+          "note": "Bill text establishes a near-total abortion ban with exceptions only for health/life risk, lethal fetal anomaly, and (elsewhere in the same section) rape or incest.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "c763f996-7d8a-59a6-a265-68994f093b9a",
+        "4eacbc9c-9ae2-58c6-86cd-c3f34380faab"
+      ],
+      "reasoning": "Holdman voted Yea on SB 1(ss) (2022 Special Session), whose operative text makes abortion \"a criminal act, except when performed under the following circumstances:\" permitting it only when, among the enumerated circumstances, \"the abortion is necessary ... to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life\" or for rape or incest within the first ten weeks. This matches the rung to \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

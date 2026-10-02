@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "1f711955-ccb8-5fda-ada7-1c2af3a19bae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview page listing her co-sponsorship of a gestational-limit bill; it prints no operative text, so it shows direction only.",
+          "record_kind": "sponsor",
+          "actor_quote": "Bolick (Co-Sponsor)",
+          "tally_quote": "House THIRD 03/24/2022 31-26-3-0-0 PASSED"
+        },
+        {
+          "snapshot_id": "e034c87f-a963-5a92-b728-aa0dfa230c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call recording her Aye; the tally is 31-26, so the near-unanimous rule does not apply.",
+          "record_kind": "vote",
+          "actor_quote": "BOLICK Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "f82c309c-b86d-54c6-9b4a-bd19c57aa7af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Chaptered single-subject text of the instrument she co-sponsored and voted for; it sets a fifteen-week limit that matches no rung's cutoff or exception set.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bolick co-sponsored and voted Yes on SB 1164 (2022), a single-subject act barring abortion when the gestational age is \"greater than fifteen weeks\" except in a medical emergency, which shows she favours restriction but matches no rung's clauses. It cannot evidence \"allow abortion during the first trimester, and after that only to protect the mother's health\": fifteen weeks is not the first trimester, and the act states it does not \"Create or recognize a right to abortion\" and does not repeal section 13-3603, so it permits nothing. It cannot evidence \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\" either, since it is not a ban and names no rape or incest exception.",
+      "needs_source": [
+        "Shawnna Bolick's own words on whether abortion should be legal during the first trimester",
+        "Arizona Senate roll call on the 2024 bill repealing A.R.S. section 13-3603, the pre-Roe ban that SB 1164 Sec. 2 expressly declines to repeal",
+        "A record or questionnaire answer on whether she would allow rape and incest exceptions"
+      ],
+      "quotes": []
+    }
+  ]
+}

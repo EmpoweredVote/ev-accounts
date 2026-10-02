@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Roll call shows Soliday voting Yea to adopt the conference committee report on HB 1296.",
+          "record_kind": "vote",
+          "actor_quote": "Bartels Heaton May Soliday Behning Heine Mayfield Speedy",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "3a61977f-28e8-584b-a0d7-0937aefcabfe",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "Enrolled bill text repeals the state license/permit requirement to carry a handgun.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+        "3a61977f-28e8-584b-a0d7-0937aefcabfe"
+      ],
+      "reasoning": "Soliday voted Yea to adopt the conference committee report on HB 1296 (2022), whose enacted text provides that a qualifying adult 'is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana,' matching the rung 'Repeal major gun restrictions and let adults carry a firearm without a permit.' The license becomes optional only for interstate reciprocity, going beyond the more modest loosening described in the rung above it.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

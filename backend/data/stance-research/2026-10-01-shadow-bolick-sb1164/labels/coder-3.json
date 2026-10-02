@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "f82c309c-b86d-54c6-9b4a-bd19c57aa7af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1164 (2022)",
+          "provision_quote": "a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Operative clause bars abortion after fifteen weeks except medical emergency; fifteen weeks matches neither the 'first trimester' nor 'second trimester' threshold.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1f711955-ccb8-5fda-ada7-1c2af3a19bae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1164 (2022)",
+          "provision_quote": null,
+          "note": "Lists Bolick as a co-sponsor of SB1164 (2022), the fifteen-week gestational limit bill, while she was a State Representative.",
+          "record_kind": "sponsor",
+          "actor_quote": "Bolick (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e034c87f-a963-5a92-b728-aa0dfa230c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading vote; Bolick voted Y on final passage of SB1164.",
+          "record_kind": "vote",
+          "actor_quote": "BOLICK Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "As a State Representative, Bolick co-sponsored and voted Y on SB1164, which bars abortion after fifteen weeks' gestation except in a medical emergency, showing a restrictive direction. But fifteen weeks matches neither 'keep abortion legal through the second trimester, and after that only to protect the mother's health' nor 'allow abortion during the first trimester, and after that only to protect the mother's health,' and no annex settles whether fifteen weeks equates to either threshold.",
+      "needs_source": [
+        "Bolick's own floor statement or public comment explaining how SB1164's fifteen-week limit maps onto a trimester-based threshold, if one exists"
+      ],
+      "quotes": []
+    }
+  ]
+}

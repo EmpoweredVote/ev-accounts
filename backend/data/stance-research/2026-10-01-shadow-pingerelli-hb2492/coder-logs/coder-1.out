@@ -1,0 +1,11 @@
+Wrote `coder-1.json`.
+
+**Row:** Pingerelli / voting-rights → **chair 5** ("Require documentary proof of citizenship to register to vote").
+
+- **Three passages, one record group** (`HB 2492 (2022)`), all `own-act` / `on-question` / `record` / `vote` / `in-term`:
+  - **Vote page** (`1c38c4de`) — `actor_quote: "PINGERELLI Y"`, `tally_quote: "Passed 31-26-3-0-0"`. House Third Reading is final passage in her chamber; 26 No is well clear of the near-unanimous bar.
+  - **Chapter 99 text** (`1e5c345e`) — `provision_quote` taken from the added language in §16-101, outside any `[deleted: …]` fence.
+  - **Status page** (`34ecf099`) — enactment plus the sponsor list, which does *not* include her; her act is the vote, not sponsorship. Not in `rests_on`.
+- **V5:** the Feb 2022 vote falls inside her earlier term in this same House (ended 2023-01-09) → `in-term` under the V5 option-B ruling; same chamber, so no cross-level question.
+- **V4:** single-subject registration-verification bill whose operative content is rung 5's only clause; no polling-place photo-ID or mail-ballot ID-number clause, so rungs 3–4 aren't what the instrument does.
+- No own-words passages, so `quotes` is empty; `needs_source` empty.

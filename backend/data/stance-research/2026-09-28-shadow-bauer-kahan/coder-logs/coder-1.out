@@ -1,0 +1,11 @@
+Wrote `coder-1.json` — one row, gun-policy, coded BLANK `no-evidence`.
+
+**Passage** (snapshot `71d6b197…`, AB 2571 chaptered text):
+- V1 `own-act` — the digest line names her as author: `AB 2571, Bauer-Kahan.`
+- V2 `adjacent` — the bill restricts firearm *marketing to minors*. None of the five rungs turn on advertising; they separate on which firearms may be owned, whether universal background checks are required, and whether carry rules are loosened or restrictions repealed.
+- V3 `record` / `record_kind: author`, instrument `AB 2571 (2021-2022)`, `provision_quote` from §22949.80(a)(1), `tally_quote: null` (no vote page in the sources, and the group is not a vote).
+- V4 `off-axis`, V5 `in-term` (approved 2022-06-30, within her term from 2018-12-03).
+
+**Row:** no passage survived V2, so `rests_on` is empty and the chair is BLANK `no-evidence`. `needs_source` asks for an assault-weapons or background-check roll call naming her, or her own words answering the ladder's question.
+
+No candidate quotes: the only source is statutory text, not her words.

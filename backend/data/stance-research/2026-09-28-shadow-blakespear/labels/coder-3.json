@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d",
+      "office_id": "76ce3998-b6e1-4fb3-9461-2ab82fff6f04",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "08f5d915-83e0-56c7-a5ea-fadec9e7bc5a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1216 (2023-2024)",
+          "provision_quote": null,
+          "note": "Restricts Active Transportation Program funding and installation of Class III bikeways (sharrows) on higher-speed roads; a bikeway design/safety standard, not a road-vs-multimodal investment priority.",
+          "record_kind": "author",
+          "actor_quote": "SB 1216, Blakespear. Transportation projects: Class III bikeways: prohibition.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is Blakespear's authored SB 1216 (2023-2024), chaptered law, which restricts state Active Transportation Program funding and on-street installation of Class III bikeways (sharrows) on higher-speed roads. This sets a bikeway design/safety standard within the existing active transportation program; it does not address 'Where should government focus its transportation investment' between road capacity and pedestrian, cycling, or transit priority, so it is adjacent to every rung. No passage survives V2, so the row is BLANK no-evidence.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

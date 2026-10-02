@@ -1,0 +1,89 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1164(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "1f711955-ccb8-5fda-ada7-1c2af3a19bae",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164",
+        "profile": "az-azleg-bill-status@3"
+      },
+      {
+        "snapshot_id": "e034c87f-a963-5a92-b728-aa0dfa230c23",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164#house-third",
+        "profile": "az-azleg-bill-status@3"
+      },
+      {
+        "snapshot_id": "f82c309c-b86d-54c6-9b4a-bd19c57aa7af",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0105.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1164(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "1f711955-ccb8-5fda-ada7-1c2af3a19bae",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164",
+        "profile": "az-azleg-bill-status@3"
+      },
+      {
+        "snapshot_id": "f82c309c-b86d-54c6-9b4a-bd19c57aa7af",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0105.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "e034c87f-a963-5a92-b728-aa0dfa230c23",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164#house-third",
+        "profile": "az-azleg-bill-status@3"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1164(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "f82c309c-b86d-54c6-9b4a-bd19c57aa7af",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0105.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "1f711955-ccb8-5fda-ada7-1c2af3a19bae",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164",
+        "profile": "az-azleg-bill-status@3"
+      },
+      {
+        "snapshot_id": "e034c87f-a963-5a92-b728-aa0dfa230c23",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164#house-third",
+        "profile": "az-azleg-bill-status@3"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  }
+]

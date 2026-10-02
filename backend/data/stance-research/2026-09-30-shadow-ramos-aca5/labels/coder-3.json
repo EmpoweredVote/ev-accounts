@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12",
+      "office_id": "927850b9-2c91-44f7-a6be-f4c81dc3b75d",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "001832e2-df00-5dd7-8847-550996caebb0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-25",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": "That Section 31 of Article I thereof is repealed.",
+          "note": "Operative text of ACA 5 repealing Proposition 209's ban on government race/sex preferences; the page names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "63afc856-cd20-5d20-8a29-ea5c72c469e6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": null,
+          "note": "Assembly Floor Third Reading vote on ACA 5; Ramos is listed among the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Quirk-Silva, Ramos, Reyes",
+          "tally_quote": "Ayes Count 60 Noes Count 14"
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "001832e2-df00-5dd7-8847-550996caebb0",
+        "63afc856-cd20-5d20-8a29-ea5c72c469e6"
+      ],
+      "reasoning": "Ramos voted Aye (Ayes Count 60) on ACA 5 (2019-2020), which repeals Section 31 of Article I, Proposition 209's ban on race- and sex-based preferential treatment in public employment, education, and contracting, and states legislative intent to 'remedy discrimination against, and underrepresentation of, certain disadvantaged groups.' This matches the rung text 'strengthen civil rights enforcement and address systemic discrimination' rather than 'mandate racial equity requirements in all institutions' (a repeal permits but does not mandate), 'maintain current civil rights laws' (it repeals rather than maintains), or the rungs that limit or eliminate race-based programs (the bill moves in the opposite direction).",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

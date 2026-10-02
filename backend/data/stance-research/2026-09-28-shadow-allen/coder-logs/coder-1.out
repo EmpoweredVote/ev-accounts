@@ -1,0 +1,13 @@
+Coded and written to `labels/coder-1.json`.
+
+**Row: Benjamin Allen / judicial-criminal-justice → BLANK `direction-only`**
+
+One passage, the chaptered text of SB 483 (2021-2022):
+
+- **V1 `own-act`** — the digest line "SB 483, Allen." is the author line (`record_kind: author`, `actor_quote`).
+- **V2 `on-question`** — sentence length is the dimension the rungs order.
+- **V3 `record`** — named instrument, with `provision_quote` from Sec. 2(d)(1) ("Resentencing pursuant to this section shall result in a lesser sentence…"). No `tally_quote`: this is an authorship group, not a vote.
+- **V5 `in-term`** — 2021 falls in his earlier term in the same legislature, which the 0.4 V5 ruling treats as in-term for a record.
+- **V4 `direction-only`** — this is the reason for the blank. Invalidating enhancements and resentencing downward shows a lean away from punishment, but rung 1 requires "support and treatment" and rung 2 requires "service or restitution"; the bill supplies neither, and it does not exclude rung 3. Seating rung 1 or 2 here would be the "least extreme rung the evidence supports" tiebreaker, which §0.4.3 forbids.
+
+`needs_source` asks for his own current-term words on the question plus any authored bill that funds treatment, diversion or restitution.

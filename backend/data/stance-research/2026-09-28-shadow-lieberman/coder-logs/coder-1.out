@@ -1,0 +1,11 @@
+Wrote `coder-1.json` — one row (abortion), coded BLANK.
+
+**Passages (both coded `own-act` / `record` / `vote` / `in-term`, instrument `SB1457 (2021)`):**
+- **cd73a205** (House final reading vote page): `actor_quote` `"KAVANAGH Y LIEBERMAN N LONGDON N"`, `tally_quote` `"Passed 31-29-0-0-0"`, no provision on the page. Not near-unanimous (29 No of 60).
+- **bf071e0c** (enacted chapter text): `provision_quote` taken from live text outside any `[deleted: …]` fence — `"Performs an abortion knowing that the abortion is sought solely because of a genetic abnormality of the child."`
+
+**V5:** the 2021-04-22 vote falls in his Arizona House term (ended 2021-09-20), the other chamber of the legislature he is now a candidate for → `in-term` under the 0.4 option-B ruling.
+
+**V6:** BLANK, `direction-only`. SB1457 restricts abortion by the *reason* it is sought (plus a personhood construction rule, a public-educational-facility ban, and a mail-delivery ban); none of its operative sections set a gestational limit. A No vote places him on the permissive side but cannot separate "legal at every stage … with no time limit" from "through the second trimester" or "during the first trimester", so `rests_on` is empty.
+
+**needs_source:** his own words on a stage limit from the 2026 campaign, and any Arizona record of his on a gestational-limit instrument. No quotes emitted — both sources are records, not his words.

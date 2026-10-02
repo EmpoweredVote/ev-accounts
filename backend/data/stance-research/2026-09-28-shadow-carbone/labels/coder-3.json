@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a",
+      "office_id": "5d39ba29-4d41-4a41-b01c-0c48786c3675",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "72e8d029-8f5a-52f4-96de-1e30f8c05042",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2720 (2024)",
+          "provision_quote": "5. Set restrictions for accessory dwelling units that are more restrictive than those for single-family dwellings within the same zoning area with regard to height, setbacks, lot size or coverage or building frontage.",
+          "note": "Chaptered law text of HB2720, prime-sponsored by Carbone, bars municipalities from imposing stricter zoning limits on ADUs than on single-family homes.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "733747ac-3504-5347-b1d2-c1cdd964394e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2720 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview lists Carbone as prime sponsor of HB2720, signed into law.",
+          "record_kind": "sponsor",
+          "actor_quote": "Carbone (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5319e2f3-6f44-59e5-a284-915392cf4203",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2720 (2024)",
+          "provision_quote": null,
+          "note": "House Final Reading shows Carbone voting Yea on final passage of HB2720.",
+          "record_kind": "vote",
+          "actor_quote": "CARBONE Y",
+          "tally_quote": "Passed 35-22-3-0-0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "72e8d029-8f5a-52f4-96de-1e30f8c05042",
+        "733747ac-3504-5347-b1d2-c1cdd964394e",
+        "5319e2f3-6f44-59e5-a284-915392cf4203"
+      ],
+      "reasoning": "As prime sponsor of HB2720 (2024), signed into law, and a Yea vote on its final passage, Carbone authored a law barring municipalities from setting accessory-dwelling-unit restrictions more restrictive than those for single-family homes, matching the rung 'Rely on the market to set prices and supply — at most, cut the regulations and zoning limits that block private building.' The bill creates no public housing, subsidies, or binding rent/affordable-unit rules, excluding the other rungs.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

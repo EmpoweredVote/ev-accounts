@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-30-shadow-gonzalez",
+  "seat": {
+    "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+    "full_name": "Lena Gonzalez",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2019-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "question_text": "What role should fossil fuels play in the nation's energy future?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Phase out fossil fuel production entirely."
+        },
+        {
+          "value": 2,
+          "text": "Allow no new drilling and let production decline over time."
+        },
+        {
+          "value": 3,
+          "text": "Keep fossil fuel production steady at current levels."
+        },
+        {
+          "value": 4,
+          "text": "Expand fossil fuel production with new drilling and permits."
+        },
+        {
+          "value": 5,
+          "text": "Maximize production and open more public land and waters to drilling."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

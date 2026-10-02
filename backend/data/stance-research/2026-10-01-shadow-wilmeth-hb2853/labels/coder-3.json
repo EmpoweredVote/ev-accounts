@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "729d1a1e-b58f-4a33-bf18-a0f11e3c5e04",
+      "office_id": "8ae7931a-b76b-4ff0-99c8-5619ca6a10ff",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "f0ccf364-4098-56e9-9ef1-45afe2dfa419",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Lists Wilmeth as a co-sponsor of HB2853, signed into law as Chapter 388.",
+          "record_kind": "sponsor",
+          "actor_quote": "Wilmeth (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "62424757-6167-5199-90b7-fec4a9a53a1a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Wilmeth voted Y on House Third Reading of HB2853, which passed as amended.",
+          "record_kind": "vote",
+          "actor_quote": "WILMETH Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "008f91a1-0539-5881-b52a-3e3519ead568",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "The enacted chapter adds new section 15-2401.01, making ESA eligibility universal for any student otherwise eligible to attend public school.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "f0ccf364-4098-56e9-9ef1-45afe2dfa419",
+        "62424757-6167-5199-90b7-fec4a9a53a1a",
+        "008f91a1-0539-5881-b52a-3e3519ead568"
+      ],
+      "reasoning": "As a State Representative, Wilmeth co-sponsored and voted Y on HB2853 (2022), a single-subject Arizona empowerment scholarship account bill; the enacted chapter's new section 15-2401.01 extends ESA eligibility to any resident eligible to enroll in public school, matching the rung text 'Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family,' with the unchanged 'qualified school' definition continuing to cover nongovernmental schools generally.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

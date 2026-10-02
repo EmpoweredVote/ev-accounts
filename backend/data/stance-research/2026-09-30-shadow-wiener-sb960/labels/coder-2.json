@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "a506b945-4177-56b7-b9b4-733b5aaa1d05",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 960 (2023-2024)",
+          "provision_quote": "This bill would require the department to commit to specific 4-year targets to incorporate complete streets facilities, including pedestrian and bicycle facilities, into projects funded by the SHOPP, as specified.",
+          "note": "Authored bill mandates complete streets/transit-priority targets within the existing state highway program; it has no appropriation and sets no funding split, so it shows a pro-multimodal direction but not which rung's magnitude.",
+          "record_kind": "author",
+          "actor_quote": "SB 960, Wiener.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 960 (2023-2024), authored by Wiener, requires Caltrans to adopt complete-streets and transit-priority targets, a transit policy, and permit-review changes within the existing state highway program (SHOPP), and carries no appropriation. This shows Wiener's own act pushing toward pedestrian, bicycle, and transit facilities, but the bill neither cuts road-capacity investment (excluding 'prioritize ... over new road capacity') nor states an equal or selective funding split, so it cannot alone establish 'invest equally in road capacity and in multimodal options' over 'maintain roads while selectively adding transit connections and pedestrian improvements where density supports it'.",
+      "needs_source": [
+        "Senate and Assembly floor vote tallies on SB 960 (2023-2024)",
+        "Wiener's own statements (floor speech, press release, or interview) explaining how SB 960 relates to overall transportation investment priorities"
+      ],
+      "quotes": []
+    }
+  ]
+}

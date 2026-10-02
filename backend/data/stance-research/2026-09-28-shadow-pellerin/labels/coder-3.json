@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259",
+      "office_id": "4164cda9-e149-46c7-9b5a-7f1f75088ac0",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "8dca6231-481c-5393-ad92-d19f85d328ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2839 (2023-2024)",
+          "provision_quote": "(4) This section does not impose liability on an interactive computer service, as defined in Section 230(f)(2) of Title 47 of the United States Code.",
+          "note": "Pellerin authored this deepfake-in-elections law, but its operative clauses impose civil liability on individual creators/distributors of deceptive election media and expressly exempt platforms, so it does not address the ladder's platform/government moderation-responsibility question.",
+          "record_kind": "author",
+          "actor_quote": "AB 2839, Pellerin.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source, AB 2839 (2023-2024), which Pellerin authored and was signed into law, regulates persons, committees, and entities that knowingly distribute materially deceptive election media, and explicitly exempts interactive computer services (platforms) from liability. It does not require platforms to remove false information (rung 1), require platforms to label false content (rung 2), encourage voluntary standards (rung 3), protect free speech online (rung 4), or ban government involvement in content moderation (rung 5), so it is adjacent to the ladder's question, not on-question.",
+      "needs_source": [
+        "Pellerin's own words or another authored/voted instrument specifically addressing platform obligations (removal, labeling, voluntary standards, free-speech protection, or government non-involvement) for online misinformation generally"
+      ],
+      "quotes": []
+    }
+  ]
+}

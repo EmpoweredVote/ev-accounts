@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-05-06",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "House Bill 1007 (2025)",
+          "provision_quote": null,
+          "note": "IGA bill details page lists Soliday as author and shows the bill enacted as Public Law 217 on 2025-05-06.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Edmond Soliday.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "House Bill 1007 (2025)",
+          "provision_quote": "The commission shall issue a final order on the petition not later than ninety (90) days after receiving the energy utility's complete petition.",
+          "note": "The enacted text creates an expedited commission-approval track for utility plans to serve large load customers, paired with mandatory load-growth forecasting, cost disclosure, and public-comment on retirement/cost reports.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+        "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69"
+      ],
+      "reasoning": "As author of House Bill 1007 (2025), Soliday created a commission process the bill itself frames as expedited, with a fixed 90-day deadline for the commission to act on an energy utility's plan to serve large load customers, alongside required load-growth forecasts, cost filings, and public comment on the commission's staff reports. This matches the rung text 'encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts,' and is distinguished from the adjacent rungs because the bill requires substantial cost-sharing and review rather than 'minimal regulatory barriers' (rung 5), and never requires a community benefit requirement before approval (rung 3).",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

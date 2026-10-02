@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "7925e549-fc15-5e78-91d8-1ca888818177",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Pierce (Nay) appears in the roll-call tally for adoption of HB 1296's conference committee report.",
+          "record_kind": "vote",
+          "actor_quote": "Campbell Hatcher Pierce DeLaney Hatfield Porter",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "85d1fad8-ebdb-5ed3-968d-f5b5450ef70b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "Enrolled Act text for the instrument Pierce voted Nay on; this section removes Indiana's license-to-carry requirement.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Pierce voted Nay on final adoption of the conference committee report for HB 1296 (2022), a multi-subject criminal-law bill whose sections span law enforcement training standards, juvenile-court jurisdiction, theft classification, zoning, and the clause removing the requirement that a person 'obtain or possess a license or permit from the state to carry a handgun in Indiana.' A No vote on a multi-subject bill proves nothing about which provision the member objected to, so no rung is established.",
+      "needs_source": [
+        "Pierce's own statement or floor explanation of his Nay vote on HB 1296 (2022) tying it to a specific provision, such as the license-to-carry repeal."
+      ],
+      "quotes": []
+    }
+  ]
+}

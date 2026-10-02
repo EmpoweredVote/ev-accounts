@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "e45850e5-c900-5eb6-a053-26d4882babdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-09-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": null,
+          "note": "Assembly floor vote page shows her Aye on SB 54; the page prints the voter and the count but no provision.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Arambula, Berman, Bloom",
+          "tally_quote": "Ayes Count 51 Noes Count 26"
+        },
+        {
+          "snapshot_id": "b2056197-763a-566a-abad-fe59bef3eb40",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-10-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": "California law enforcement agencies shall not: (1) Use agency or department moneys or personnel to investigate, interrogate, detain, detect, or arrest persons for immigration enforcement purposes",
+          "note": "Chaptered text: the bill restricts state and local assistance with immigration enforcement but preserves cooperation for a long list of convictions far broader than serious violent crimes.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Aye on SB 54 (2017-2018), the California Values Act, bars state and local agencies from using money or personnel for immigration enforcement, which leans against removal but does not pick a rung: it does not \"Stop deportations entirely and protect undocumented immigrants from removal\", because Section 7282.5 keeps cooperation available, and it is not \"Only deport undocumented immigrants convicted of serious violent crimes\", because the cooperation list reaches well past serious or violent felonies to theft, fraud, forgery, felony DUI and more. Nothing in either page addresses recent arrivals versus long-settled immigrants, so the rung-3 boundary is untouched as well.",
+      "needs_source": [
+        "Aguiar-Curry's own words on which undocumented immigrants should or should not be deported (floor statement, questionnaire answer, or first-person issue page), dated within her Assembly term"
+      ],
+      "quotes": []
+    }
+  ]
+}

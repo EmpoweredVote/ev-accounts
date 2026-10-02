@@ -1,0 +1,9 @@
+Wrote `labels/coder-1.json`.
+
+**rent-regulation → BLANK `direction-only`**
+
+The two snapshots are one record: AB 1482 (2019-2020), the Tenant Protection Act. The vote page shows Ramos in the Noes (`Ayes Count 48 Noes Count 26` — not near-unanimous); the chaptered text prints the operative rent cap he voted against. The act dates from his 2018–2022 Assembly term, so V5 is `in-term` (same chamber, same legislature).
+
+The No vote rules out rung 2 ("Strengthen existing rent stabilization and extend coverage to more units") but can't separate rungs 3, 4 and 5 — opposing a new statewide cap is consistent with maintaining current protections, limiting regulation to subsidized units, or opposing rent control entirely. Per V4.1, a final-passage vote is `direction-only` here, so `rests_on` is empty and no chair is seated.
+
+`needs_source` names what would resolve it: Ramos's own words on rent control, or a bill he authored/co-sponsored on rent caps or Costa-Hawkins. No quotes coded — neither snapshot contains his words.

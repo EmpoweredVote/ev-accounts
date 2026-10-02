@@ -1,0 +1,74 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1457(2021)",
+    "snapshots": [
+      {
+        "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457#house-final",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+        "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0286.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1457(2021)",
+    "snapshots": [
+      {
+        "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+        "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0286.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457#house-final",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1457(2021)",
+    "snapshots": [
+      {
+        "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+        "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0286.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457#house-final",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  }
+]

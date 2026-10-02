@@ -285,6 +285,20 @@ New V4 values: `multi-subject`, `procedural`. Coders must name the provision the
 - **Severe error:** a chair on the other side of the ladder, or a seated chair where gold is BLANK.
 - **Diagnostics:** α on V1–V5 shows where the coders split. Diagnostics never gate.
 - **Quotes:** the same measures on V7 and V8 give a separate certification for quote strata.
+- **Blanks (ruling 2026-09-28, Chris Andrews).** Certification exists so that a *chair* may
+  auto-publish; a unanimous BLANK publishes no chair, so blanks are **not certified**. The report's
+  `blank` bucket (rows where no coder seated a chair) is a **diagnostic**, and α there is undefined by
+  construction (one category). Two blank diagnostics are reported instead, over every row whose coder
+  consensus is BLANK, in any stratum (`reliability.ts` `blankMeasures`):
+  - **blank precision** — the share whose gold is also BLANK, with the Wilson 95% lower bound;
+  - **missed chairs** — gold seats a chair where the consensus is BLANK. Each is lost coverage, listed
+    for the improvement loop (§10.1).
+
+  Blank precision gates nothing. **Decide, for a unanimous BLANK** (P1, when it goes live): if voters
+  see no chair for that person and topic, the row writes nothing and goes to `needs-source`; if they
+  see one — a prior season's chair shown as the fallback included — it goes to a person under the
+  existing always-review `replaces-published-chair`. A blank never silently leaves a stale chair in
+  place, and never silently removes one.
 
 ### 3.2 Strata
 

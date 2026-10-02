@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0",
+      "office_id": "1621afeb-6cb1-4368-98db-6e18b0723faa",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "f85ff6c9-bb6d-5e4e-a775-4ebcba97382b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-10-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 88 (2023-2024)",
+          "provision_quote": null,
+          "note": "Bill governs crime-victim notice/hearing rights in resentencing and parole review, not the offender's punishment-vs-treatment spectrum the rungs order.",
+          "record_kind": "author",
+          "actor_quote": "AB 88, Sanchez.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 88, authored by Sanchez, requires victim notification and a hearing opportunity before resentencing and shortens the notice period victims must give to attend parole hearings; its operative clauses concern victims' procedural participation, not whether the system should 'focus on support and treatment' or 'impose the toughest penalties the law allows.' It is adjacent, not on-question, so no passage survives to establish a chair.",
+      "needs_source": ["Sanchez's own vote, sponsorship, or statement on the severity of the system's response to lawbreaking (sentencing standards, parole eligibility standards, or a treatment-vs-punishment statement), as distinct from victim-notice procedure"],
+      "quotes": []
+    }
+  ]
+}

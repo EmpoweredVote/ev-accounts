@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1ee95c1d-6127-494b-9f68-e8b3c975adee",
+      "office_id": "5b95be8c-1634-43ab-acb5-f904b859a5ef",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "bb02481b-29f4-5027-8d13-6dd7cb60a4f4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCA 10 (2021-2022)",
+          "provision_quote": null,
+          "note": "Assembly floor vote, Ward in the Ayes; 17 of 80 opposed, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Valladares, Villapudua, Ward, Akilah Weber, Wicks, Wilson, Wood, Rendon",
+          "tally_quote": "Ayes Count 58 Noes Count 17"
+        },
+        {
+          "snapshot_id": "0461ef3f-1704-5c95-b5c9-66932e52e05c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCA 10 (2021-2022)",
+          "provision_quote": "The state shall not deny or interfere with an individual’s reproductive freedom in their most intimate decisions, which includes their fundamental right to choose to have an abortion and their fundamental right to choose or refuse contraceptives.",
+          "note": "The operative section bars state interference but names no stage of pregnancy, which is the dimension the rungs order.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Ward voted Aye on SCA 10 (2021-2022), whose operative section states that \"The state shall not deny or interfere with an individual’s reproductive freedom in their most intimate decisions, which includes their fundamental right to choose to have an abortion\". That establishes the side — the state may not restrict — but the text attaches no stage of pregnancy, so it does not separate \"keep abortion legal at every stage of pregnancy, with no time limit\" from \"keep abortion legal through the second trimester, and after that only to protect the mother's health\"; the same page's digest describes the existing Reproductive Privacy Act, which the amendment does not repeal, as protecting abortion \"before viability of the fetus, or when the abortion is necessary to protect the life or health of the person\". No surviving passage fixes the gestational boundary, so no rung is established.",
+      "needs_source": [
+        "Ward's own words on a gestational limit or on viability (questionnaire, issue page, or floor statement)",
+        "A Ward vote or sponsorship on a California bill whose operative section names a stage of pregnancy (for example an amendment to the Reproductive Privacy Act's viability clause)"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+Wrote `labels/coder-1.json`.
+
+**Row: Josh Becker / climate-change — BLANK `no-evidence`**
+
+One passage, the chaptered text of SB 1203 (2021-2022):
+
+- **V1 `own-act`** — the digest line `SB 1203, Becker.` is his authorship; `record_kind: author`, no tally (not a vote page).
+- **V2 `adjacent`** — the ladder asks how much government should do to **expand clean energy**. SB 1203 governs the state's own agency operations (scope 1 and scope 2 emissions from state facilities and fleets). Same policy area, not the dimension the rungs separate.
+- **V4 `study-directive`** — the only binding clauses are "publish … an inventory", "develop and publish … a plan", "Ensure that the required actions and investments … are incorporated into the sustainability roadmaps", and "report to the Legislature". The 2035 target itself is framed as "It is the intent of the Legislature that all state agencies **aim** to achieve", with "to the extent feasible" and "or as soon as feasible thereafter" — not the mandate-with-firm-deadline that rung 1 names, and no subsidy, tax credit, permitting or grid clause for rungs 2 or 3.
+- **V5 `in-term`** — approved 2022-09-16, within his term from 2020-12-07.
+
+No passage survived V1–V5, so `rests_on` is empty and the reason is `no-evidence` rather than `direction-only`. `needs_source` asks for a Becker instrument actually on clean-energy expansion, or his own words answering the ladder's question.

@@ -1,0 +1,9 @@
+Written `labels/coder-1.json` — one row, voting-rights.
+
+**Coding:** rung 5, resting on all three snapshots as one record group (`HB 2492 (2022)`).
+
+- `a8e46bfe` — bill overview, `record`/`sponsor`, `actor_quote` `"Nguyen (Co-Sponsor)"`.
+- `030fed01` — House Third Reading, `record`/`vote`, `actor_quote` `"NGUYEN Y"`, `tally_quote` `"Passed 31-26-3-0-0"` (26 No of 60 voting, so not `near-unanimous`).
+- `13b7f1ae` — Chapter 99 text, `record`/`vote`, carries the `provision_quote` (§16-121.01(C): registration applications must be accompanied by satisfactory evidence of citizenship, and officials must reject those that are not). That sentence sits outside every `[deleted: …]` fence.
+
+All three in-term (2022, term began 2021-01-04), `on-question`, `chair-shaped`. The bill is single-subject on registration/citizenship verification, so final passage can carry a chair under V4.1, and the operative clause is exactly rung 5's "documentary proof of citizenship to register to vote." No in-person photo-ID or mail-ballot ID-number clause, so rung 4 is not what the instrument does. `needs_source` and `quotes` are empty — no first-person passage was supplied.

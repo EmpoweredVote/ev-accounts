@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+      "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "395a38a1-fcd1-5a3e-b3df-46bfbc6c14a5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-04-22",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": null,
+          "note": "Senate 3rd Reading floor vote; Caballero appears in the Ayes list and no member voted Noes.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Archuleta, Atkins, Bates, Beall, Bradford, Caballero",
+          "tally_quote": "Ayes Count 37 Noes Count 0"
+        },
+        {
+          "snapshot_id": "c0c966a9-84bd-5314-8011-594dd9fad9a3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-07-03",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": "“Race” is inclusive of traits historically associated with race, including, but not limited to, hair texture and protective hairstyles.",
+          "note": "Chaptered text page prints the operative amendment but names no voter and no tally.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only record is Caballero's Aye on SB 188 (2019-2020), which amends the Fair Employment and Housing Act so that “Race” is inclusive of traits historically associated with race, including, but not limited to, hair texture and protective hairstyles. The floor tally is Ayes Count 37 Noes Count 0, so under the near-unanimous rule the vote cannot carry a chair on its own, and nothing else separates \"strengthen civil rights enforcement and address systemic discrimination\" from \"maintain current civil rights laws while promoting equal opportunity\".",
+      "needs_source": [
+        "Caballero's own first-person words on the role of government in addressing racial and social inequality (questionnaire, issue page, or floor statement)",
+        "A divided (not near-unanimous) California roll call or an authored/sponsored California bill of hers on civil rights enforcement"
+      ],
+      "quotes": []
+    }
+  ]
+}

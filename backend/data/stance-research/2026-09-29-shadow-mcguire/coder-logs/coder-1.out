@@ -1,0 +1,11 @@
+Wrote `coder-1.json` — one row, `minimum-wage`.
+
+**Coding summary**
+
+- Both snapshots are one record: SB 3 (2015-2016), `record_kind: vote`, `own-act`, `on-question`, `in-term` (2016, term began 2014-12-01).
+- Vote page carries `actor_quote` (Ayes list containing `McGuire`) and `tally_quote` (`Ayes Count 26 Noes Count 12 NVR Count 2`); bill text carries `provision_quote`. Neither page gets a fact it does not print.
+- Not `near-unanimous`: 12 Noes on a 40-member body. The motion is a concurrence vote on the bill as amended, i.e. substantive rather than `procedural`.
+- Not `multi-subject` in the V4 sense: the bill amends three Labor Code sections on one labor subject, and the IHSS sick-leave tiers are keyed to the minimum-wage thresholds — it is not an omnibus.
+- **Chair 1.** Sec. 3 raises the floor on a fixed schedule to $15 and then directs the Director of Finance to calculate an adjusted minimum wage annually on a CPI-W formula effective each January 1. That matches "tie it to the cost of living, so it rises automatically each year without new legislation" and excludes the rung that adjusts "only when lawmakers vote to."
+
+No quotes coded — both sources are public records with no first-person words. `needs_source` is empty.

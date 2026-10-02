@@ -1,0 +1,83 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1457(55thlegislature,1stregularsession,2021)",
+    "snapshots": [
+      {
+        "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457#senate-final",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+        "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0286.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1457(2021)",
+    "snapshots": [
+      {
+        "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457#senate-final",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+        "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0286.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1457(2021)",
+    "snapshots": [
+      {
+        "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+        "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0286.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457#senate-final",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

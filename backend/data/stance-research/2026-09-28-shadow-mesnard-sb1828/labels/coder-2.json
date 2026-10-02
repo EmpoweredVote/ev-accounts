@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "69da793b-7075-56d9-8eae-7d3d89267239",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview page names Mesnard as Prime sponsor of an omnibus taxation act touching many unrelated tax subjects.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime with permission of Rules)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "420ed0d1-030a-5c8b-a1a6-5d63baffb890",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote page shows Mesnard voted Yea on final passage of a multi-subject omnibus bill, 16-14.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Chapter 412 text shows the enacted act amends unrelated subjects (UI wage base, income tax rate brackets, property tax assessment ratio, several tax credits, fire district levy caps) in one instrument; no single operative clause is isolated by a statement.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1828 (2021), titled 'omnibus; taxation,' amends many unrelated tax subjects in one act (unemployment-insurance wage base, individual income tax rate brackets, property tax assessment ratio, school-tuition and forest-production tax credits, fire district levy caps), so it is multi-subject under V4.1. Mesnard's prime sponsorship and Yea vote on final passage show direction at most; without his own words tying the act to one clause, no rung of 'How should government balance what it collects in taxes against what it spends on public services?' is established.",
+      "needs_source": ["Mesnard's own statement (floor speech, press release, or explanation of vote) tying his sponsorship or vote on SB 1828 (2021) to a specific provision, e.g. the individual income tax rate cut in Sec. 15 (amending 43-1011)."],
+      "quotes": []
+    }
+  ]
+}

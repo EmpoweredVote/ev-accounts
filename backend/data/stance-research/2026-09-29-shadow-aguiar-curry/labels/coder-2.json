@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b2056197-763a-566a-abad-fe59bef3eb40",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-10-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": "California law enforcement agencies shall not: (1) Use agency or department moneys or personnel to investigate, interrogate, detain, detect, or arrest persons for immigration enforcement purposes, including any of the following:",
+          "note": "Bars most state/local cooperation with ICE but carves out a broad felony list, so it shows direction without matching any rung's precise threshold.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e45850e5-c900-5eb6-a053-26d4882babdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-09-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": null,
+          "note": "Assembly floor vote page; names Aguiar-Curry among the Ayes on final passage of SB 54.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Arambula, Berman, Bloom, Bocanegra, Bonta, Burke,",
+          "tally_quote": "Ayes Count 51 Noes Count 26"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Aguiar-Curry voted Aye on SB 54 (2017-2018), the California Values Act, restricting state and local law enforcement from using resources to assist federal immigration enforcement except for a broad list of felony and specified-conviction categories. This establishes a direction toward limiting deportation cooperation but the carve-outs (e.g. any felony punishable by state prison) extend well beyond \"convicted of serious violent crimes,\" so the record cannot establish rung 2 or any single rung's precise magnitude.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

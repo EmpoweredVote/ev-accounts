@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+      "office_id": "6bb9a929-fd7a-4fee-b28e-4faa7c3b95de",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "cabcea7d-70f1-5f88-bb56-fff8218444e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 2655 (2023-2024)",
+          "provision_quote": "Any large online platform shall develop and implement procedures for the use of state-of-the-art techniques to identify and remove materially deceptive content if all of the following conditions are met:",
+          "note": "Section 20513 legally requires platforms to remove specified deepfake election content, matching rung 1.",
+          "record_kind": "author",
+          "actor_quote": "AB 2655, Berman.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cabcea7d-70f1-5f88-bb56-fff8218444e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 2655 (2023-2024)",
+          "provision_quote": "Any large online platform shall develop and implement procedures for the use of state-of-the-art techniques to identify materially deceptive content and for labeling such content as provided in subdivision (c) if all of the following conditions are met:",
+          "note": "Section 20514 legally requires platforms to label (not remove) specified deepfake content outside the removal window, matching rung 2.",
+          "record_kind": "author",
+          "actor_quote": "AB 2655, Berman.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "adjacent-chairs",
+      "rests_on": [],
+      "reasoning": "AB 2655 (2023-2024), authored by Berman and signed into law, legally requires platforms to identify and remove materially deceptive content under Section 20513, matching rung 1's 'legally require platforms to remove false information,' while Section 20514 of the same instrument independently requires platforms to label (rather than remove) materially deceptive content outside the removal window, matching rung 2's 'require platforms to label false content, rather than remove it.' The same act establishes both rungs.",
+      "needs_source": [
+        "Berman's own statement (floor speech, press release, or author's statement) explaining whether the removal mandate or the labeling mandate reflects his primary position, to resolve the rung 1 vs rung 2 conflict"
+      ],
+      "quotes": []
+    }
+  ]
+}

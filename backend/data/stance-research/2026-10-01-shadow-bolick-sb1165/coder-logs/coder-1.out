@@ -1,0 +1,11 @@
+Wrote `labels/coder-1.json`.
+
+**Row: Shawnna Bolick / trans-athletes → chair 4**
+
+Three passages, all one instrument group, `SB 1165 (2022)`:
+
+- **Bill overview** — `own-act` / `record` / `sponsor`, `actor_quote: "Bolick (Co-Sponsor)"`.
+- **House Third Reading vote detail** — `own-act` / `record` / `vote`, `actor_quote: "BOLICK Y"`, `tally_quote: "Passed 31-24-5-0-0"`. 31–24 is nowhere near unanimous.
+- **Chaptered text (Ch. 106)** — carries the `provision_quote` (teams designated for females "may not be open to students of the male sex"); `actor_quote`/`tally_quote` null, since the page prints neither.
+
+V5: the act dates from her House term (2019–2023), and under the 0.4 option-B ruling a record from either chamber of the same legislature is `in-term`. V4: single-subject athletics bill, so the vote ladder permits a chair; subsection C leaves boys'/coed teams open, which excludes the total-ban rung — the same shape as the codebook's Adams/HB11 good example. No candidate quotes (all three sources are public records, none in her words), so `quotes` and `needs_source` are empty.

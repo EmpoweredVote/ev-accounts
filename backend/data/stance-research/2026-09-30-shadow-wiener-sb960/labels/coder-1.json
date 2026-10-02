@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "a506b945-4177-56b7-b9b4-733b5aaa1d05",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 960 (2023-2024)",
+          "provision_quote": "Consistent with proportional progress toward the 10-year targets of the relevant State Highway System Management Plan, the department shall commit to specific 4-year targets to incorporate complete streets facilities, including pedestrian and bicycle facilities that are not otherwise required under the federal Americans with Disabilities Act (42 U.S.C. Sec. 12101 et seq.), into projects funded by the state highway operation and protection program, including on entrances and exits that interact with local streets.",
+          "note": "Authored bill that adds complete streets and transit priority requirements to the state highway rehabilitation program, but its operative sections say nothing about new road capacity or the balance of investment between modes.",
+          "record_kind": "author",
+          "actor_quote": "SB 960, Wiener.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 960 (2023-2024), authored by Wiener, requires the department to \"commit to specific 4-year targets to incorporate complete streets facilities\" into state highway operation and protection program projects and to \"adopt a transit policy to guide the implementation of transit priority facilities and transit stops on the state highway system\". That establishes a pro-transit, pedestrian and bicycle direction, but the operative sections layer those facilities onto the existing highway rehabilitation program and never address new road capacity, so they cannot separate \"Prioritize pedestrian infrastructure, cycling networks, and public transit over new road capacity\" from \"Invest equally in road capacity and in multimodal options like transit, bike lanes, and sidewalks\" or \"Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it\". Silence about road capacity is not a clause, and the findings in SECTION 1 are recitals, which do not govern.",
+      "needs_source": [
+        "Wiener's own words on where transportation investment should go relative to new road capacity (floor statement, author's press release or questionnaire answer, current term)",
+        "An authored or sponsored instrument whose operative section reduces, conditions or redirects new road-capacity funding (e.g. a highway-expansion moratorium or a modal funding split)"
+      ],
+      "quotes": []
+    }
+  ]
+}
