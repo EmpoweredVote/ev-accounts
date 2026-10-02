@@ -96,8 +96,8 @@ service", "public works".
      `compound-partial` (V4.2).
    - Levels that hold a lever: local.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` A city contract with one private hauler (the city still pays and stays responsible):
-     is that clause [a] → `compound-partial`, or `adjacent`?
+   - A city contract with one private hauler (the city still pays and stays responsible) is not
+     privatization: it changes who does the work, not who is responsible → `adjacent` _(ruled 2026-10-01)_.
 
 **Hard cases:**
 - **Budget and omnibus votes** with a sanitation line → V4 `multi-subject`.

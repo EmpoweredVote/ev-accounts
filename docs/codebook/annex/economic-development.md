@@ -101,7 +101,7 @@ grant", "revolving loan fund".
 - **A uniform tax change for every business** (a general rate cut, a change to how all business
   property is valued, an across-the-board exemption) is tax policy, not an incentive to attract
   employers → `adjacent`; BLANK `no-evidence` when nothing else survives. Read the operative numbers
-  carefully: a technical valuation factor is not a tax rate.
+  carefully: a change to how property is valued is not a tax-rate change.
 - **A No on one deal** fits rung 1, rung 2 and rung 4 ("pass on deals that cost too much") →
   `direction-only`.
 - **Workforce training and education** programmes not tied to attracting a company → `adjacent`

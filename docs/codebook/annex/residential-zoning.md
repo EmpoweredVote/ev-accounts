@@ -45,9 +45,8 @@ bonus".
      ordinance for single-family zones; own words supporting it.
    - Levels that hold a lever: local.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` An ADU-only or duplex-only ordinance, with nothing else on record: rung 2 (V4.2
-     "Broader than the instrument": seat the narrower rung), or `direction-only` (it does not
-     exclude rungs 3–5)?
+   - An ADU-only or duplex-only ordinance, with nothing else on record → rung 2 (V4.2 "Broader than
+     the instrument": seat the narrower rung). Rung 2 has no "at most" clause _(ruled 2026-10-01)_.
    - Commonly confused with rung 5 because allowing duplexes on every lot **ends single-family-only
      zoning**. It does not allow "any housing type on any lot", so it is not rung 5; code the density
      it allows _(proposed)_.
@@ -75,8 +74,8 @@ bonus".
      right in most residential zones.
    - Levels that hold a lever: local.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` Triplexes and fourplexes allowed by right in most zones: rung 4 (multifamily) or rung 2
-     (modest density)?
+   - Triplexes and fourplexes allowed by right in most zones → rung 4: three or more units is
+     multifamily, and rung 2's examples stop at two _(ruled 2026-10-01)_.
    - An upzoning that still needs a discretionary permit for each project does not meet [c] →
      `compound-partial` _(proposed)_.
    - Commonly confused with rung 5: see rung 5.

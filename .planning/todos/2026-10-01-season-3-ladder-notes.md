@@ -107,3 +107,30 @@ Add new notes at the bottom. Do not record gold item names here (keep them certi
 - **education-gender-identity** (low priority): no rung for a flat ban on chosen names or pronouns.
 - **education-ai** (low priority): rung 4 "light guidelines" and "teacher discretion" are hard to
   evidence separately.
+
+## Local batch (accepted 2026-10-01 as ladder notes; wording proposals are drafts)
+
+- **growth-and-development — rung 1 still double-barrel** (a cap AND a direct vote on the largest
+  projects), although the memory note says CA_0077 de-barrelled it. Proposed: "Hold the pace of growth
+  down — cap or limit major new development." Rung 4 has three clauses.
+- **local-immigration — rung 3** states no detainer rule (overlaps rungs 2 and 4). Proposed: "Honor
+  detainers only where federal law requires it, and do not use local resources for proactive
+  immigration enforcement." **Rung 4** "proactively when … request" contradicts itself. Proposed:
+  "Honor ICE detainers and share information when federal agencies request it".
+- **residential-zoning — rung 5** clause "eliminate single-family-only zoning" is met by a duplex-only
+  law. Proposed: "Allow any housing type on any residential lot communitywide". Rung 2 vs rung 4 is
+  undefined for 3–4 units (ruled 2026-10-01: rung 4). Proposed rung 2: "… accessory units and duplexes
+  — in single-family neighborhoods, but no larger buildings".
+- **public-safety-approach — rungs 4/5:** a vote to add officers fits both. Proposed rung 4: "Add more
+  officers and expand police presence, while keeping social and community programs at their current
+  level".
+- **city-sanitation — rung 2** measures allocation; the others measure amount and provider. Proposed:
+  "Keep sanitation spending about where it is, but move resources to the most neglected, worst-served
+  neighborhoods to close long-standing service gaps". Rung 3 is compound.
+- **economic-development — rung 3** has three clauses (wages, local hiring, clawback). Proposed: "Offer
+  incentives to attract businesses only with binding job conditions, and take the money back if they
+  don't deliver."
+- **homelessness-response — rung 4** ("limited … rather than running public programs") does not
+  separate from rungs 2–3, because most money already goes to nonprofits. Proposed: "Cut public
+  funding to a limited amount and give it to nonprofits and charities to lead the response, rather
+  than running public programs".

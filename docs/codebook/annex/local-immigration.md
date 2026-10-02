@@ -60,8 +60,9 @@ enforcement".
      law requires.
    - Levels that hold a lever: local.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` A policy that bars proactive enforcement and says nothing about detainers: rung 3, or
-     `direction-only`?
+   - A policy that bars proactive enforcement and says nothing about detainers → `direction-only`:
+     rungs 1 and 2 bar proactive enforcement too, and the detainer rule is what separates them (V4,
+     H14) _(ruled 2026-10-01)_.
    - "We follow the law" with no policy named → `rhetorical`.
 
 4. **"Honor ICE detainers and share information proactively when federal agencies request it"**
