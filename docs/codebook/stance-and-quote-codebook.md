@@ -18,6 +18,10 @@ valid for that office only. See V5.
 H14. Both restate V4 `direction-only` and the CLAUDE.md tiebreaker rule; the version stays 0.4 so
 existing gold keeps counting. The two gold items that prompted them are not named here, so they stay
 certifiable: their coder labels were written before these lines existed.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value):** V3 "A record reported only by news is
+not a record", with register row H15. It restates the V3 rule that a record needs the instrument and
+the person's action on it, for the case where the only source of that action is a reporter's sentence.
+The items that prompted it are not named here, for the same reason as H13 and H14.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -178,6 +182,13 @@ unevidenced chair.
 **Rules**
 - A record needs a named instrument. "Voted against clean energy mandates" with no instrument →
   `not-evidence` until the roll call is found. Emit `needs_source` for it.
+- **A record reported only by news is not a record (H15).** "She authored Senate Bill 285" or "he
+  voted against it", written by a reporter, is the reporter's account of a record, not the record. Code
+  that passage by what it is: the person's own quoted words in it are `statement-other`; the
+  reporter's account of the act is context for those words, not a `record` passage, and it cannot
+  carry `record_kind`. Find the record itself (the bill page, the roll call) and code that instead;
+  emit `needs_source` for it. CONFIRM cannot check a record on a news page, because no source profile
+  reads records from one.
 - **Scorecards (Q9, ruled).**
   - A grade, a percentage or an endorsement is `not-evidence`, and it is not corroboration either.
     A scorecard is another organization's choice of *which* votes count, with hidden weights, and it
@@ -602,6 +613,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 | H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
 | H13 | A declared right with no stated limit coded as the "no limit" rung | V4 `direction-only` | V4.2 "Silence is not a clause" | gold round 5 (item withheld; coded before this entry) |
 | H14 | A chair reached by excluding every other rung, with the remaining rung's clause unmatched | BLANK `direction-only` / `compound-partial` | V4.2 "Ruling out the other rungs" | gold round 5 (item withheld; coded before this entry) |
+| H15 | A news sentence that reports the person's vote or authorship, coded as a `record` | the quoted words → `statement-other`; the reported act → context only, `needs_source` | V3 "A record reported only by news" | gold round 14 (items withheld; coded before this entry) |
 
 ---
 
