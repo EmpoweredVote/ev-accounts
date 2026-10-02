@@ -1,7 +1,8 @@
 # ai-regulation — served revision c594dc06-0c70-4707-8ae0-d4bc760172db (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How much should government oversee artificial intelligence development and
 deployment?"

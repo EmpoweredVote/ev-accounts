@@ -1,7 +1,8 @@
 # israel-military-aid — served revision a9e300f1-8d13-4e34-89f0-e321031676b2 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "What level of military aid should the U.S. provide to Israel?"
 

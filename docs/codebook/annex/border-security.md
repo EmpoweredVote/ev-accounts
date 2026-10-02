@@ -1,7 +1,8 @@
 # border-security — served revision 76d9941b-3085-42cf-b229-ac41f4f85b8d (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How should the government handle people who cross the border?"
 
@@ -68,7 +69,8 @@ third country", "transit ban", "Title 42", "expulsion", "border emergency author
    - A narrow change (one category, one procedural bar) is not "sharply" → `direction-only`
      _(proposed)_.
    - Commonly confused with rung 5 because a **suspension** of asylum claims reads like "end
-     asylum". `_owed:_` a suspension that applies only while crossings stay above a set number.
+     asylum". A suspension that applies only while crossings stay above a set number restricts asylum
+     → rung 4, not rung 5 _(ruled 2026-10-01)_.
 
 5. **"End asylum and quickly turn back anyone who crosses illegally."**
    - Means: no asylum claim is available, and anyone who crosses unlawfully is sent back at once.

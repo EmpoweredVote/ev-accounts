@@ -1,7 +1,8 @@
 # housing — served revision 598c879d-f387-461c-9120-fbbbf6314bbc (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "What role should government play in making sure people can afford housing?"
 

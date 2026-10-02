@@ -1,7 +1,8 @@
 # judicial-interpretation — served revision e9bd9e3b-5ced-439e-b989-b98643d053f2 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "Does the law change with the times, or does it mean what it said when it was written?"
 

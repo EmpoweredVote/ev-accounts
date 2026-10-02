@@ -1,7 +1,8 @@
 # fossil-fuels — served revision 58796165-cd12-44de-a9b6-84df43f6eda0 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "What role should fossil fuels play in the nation's energy future?"
 

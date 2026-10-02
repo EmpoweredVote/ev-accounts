@@ -1,7 +1,8 @@
 # deportation — served revision 55c3167e-3ad8-425d-a699-b2e91552d912 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How far should the government go in deporting undocumented immigrants?"
 
@@ -71,8 +72,10 @@ citizenship", "legalization", "amnesty".
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 2: see rung 2.
    - Commonly confused with rung 5 because both remove everyone. Rung 5 names a dedicated programme
-     and names long-settled families and workers. `_owed:_` a passage that calls for a
-     mass-deportation programme **and** says it starts with criminal records.
+     and names long-settled families and workers. A passage that calls for a
+     mass-deportation programme **and** says it starts with criminal records → rung 4, unless it
+     also names long-settled families or workers (then rung 5). "Mass deportation" is a label, not a
+     clause (H13) _(ruled 2026-10-01)_.
 
 5. **"Carry out a mass-deportation program to remove all undocumented immigrants, including
    long-settled families and workers"**

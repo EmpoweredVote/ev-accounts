@@ -1,7 +1,8 @@
 # healthcare — served revision 87719e15-58aa-4729-a73f-d47e64d5a954 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged. The season pin is an older revision
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open. The season pin is an older revision
 (`afc91aa2-…`); coders code the served text below.
 
 **Question:** "What role should government play in healthcare access?"

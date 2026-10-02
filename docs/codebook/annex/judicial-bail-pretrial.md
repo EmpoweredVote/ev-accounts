@@ -1,7 +1,8 @@
 # judicial-bail-pretrial — served revision 1b4e6f5a-62e6-4939-95f3-c173eb471fb3 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "Should a judge trust what prosecutors say, or watch them closely?"
 

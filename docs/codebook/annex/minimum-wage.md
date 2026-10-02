@@ -2,7 +2,7 @@
 
 **Status:** draft (2026-10-01). Lines marked _(ruled 2026-08-31)_ carry an operator ruling (Chris
 Andrews, recorded when the topic was built). Lines marked _(proposed)_ are a drafter's reading, not
-yet ruled; lines marked `_owed:_` need a ruling before this file is merged.
+yet ruled. Lines marked _(ruled 2026-10-01)_ carry a later ruling. No `_owed:_` line is open.
 
 **Question:** "What approach should government take to the minimum wage?"
 

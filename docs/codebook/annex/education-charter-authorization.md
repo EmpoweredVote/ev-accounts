@@ -1,7 +1,8 @@
 # education-charter-authorization — served revision 3901e1b0-12b0-4f7e-9e14-061ae2247c26 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How should the board handle charter schools that want to open in the district?"
 

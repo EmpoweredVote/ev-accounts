@@ -1,7 +1,8 @@
 # residential-zoning — served revision 6b5a3504-9e90-455a-9dd5-07e5376399af (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged. The season pin is an older revision
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open. The season pin is an older revision
 (`ef2a5e59-…`); coders code the served text below.
 
 **Question:** "What should guide decisions about housing density and neighborhood character in your

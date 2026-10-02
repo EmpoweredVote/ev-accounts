@@ -2,7 +2,7 @@
 
 **Status:** draft (2026-10-01). Lines marked _(ruled 2026-08-30)_ carry an operator ruling (Chris
 Andrews, recorded with the rung-4 rewrite). Lines marked _(proposed)_ are a drafter's reading, not
-yet ruled; lines marked `_owed:_` need a ruling before this file is merged.
+yet ruled. No `_owed:_` line is open.
 
 **Question:** "How should government address the cost and availability of childcare?"
 

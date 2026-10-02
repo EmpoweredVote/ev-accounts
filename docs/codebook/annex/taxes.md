@@ -1,7 +1,8 @@
 # taxes — served revision 44ac21e4-76ad-4318-a5c4-d0d744a8313e (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged. The season pin is an older revision
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open. The season pin is an older revision
 (`87f8c011-…`); coders code the served text below.
 
 **Question:** "How should government balance what it collects in taxes against what it spends on

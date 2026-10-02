@@ -1,7 +1,8 @@
 # 2020-election — served revision 81920cf6-9a30-4c5c-82b1-5f2c16cda95c (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged. No gold item exists on this topic
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open. No gold item exists on this topic
 yet; every reading below is a drafter's.
 
 **Question:** "What is your view of the outcome of the 2020 presidential election?"

@@ -1,7 +1,8 @@
 # public-safety-approach — served revision cfc3824f-522e-4671-bd2d-dd628e6578e1 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged. The season pin is an older revision
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open. The season pin is an older revision
 (`b9c1c07f-…`); coders code the served text below.
 
 **Question:** "What approach should your community take to public safety?"

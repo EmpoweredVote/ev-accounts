@@ -1,7 +1,8 @@
 # tariffs — served revision c9b67f92-c9b9-4f7e-a10b-c312a4219346 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged. The season pin is an older revision
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open. The season pin is an older revision
 (`9f094155-…`); coders code the served text below.
 
 **Question:** "How should trade policy balance domestic industry with global commerce?"
@@ -63,7 +64,9 @@ to end the emergencies that some tariffs rest on. State and local officials hold
    - Levels that hold a lever: federal.
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 5 because "reciprocal" schedules reach nearly every country.
-     `_owed:_` a uniform baseline tariff on all imports with higher rates for named countries.
+     A uniform baseline tariff on all imports with higher rates for named countries meets "all
+     imports"; "high" needs own words or a rate the passage calls high, otherwise `direction-only`
+     between rungs 4 and 5 _(ruled 2026-10-01)_.
 
 5. **"impose high tariffs on all imports to bring manufacturing back to America."**
    - Means: a high tariff on everything the country imports, to move manufacturing home.
@@ -78,8 +81,9 @@ to end the emergencies that some tariffs rest on. State and local officials hold
 **Hard cases:**
 - **Who sets tariffs.** A bill that requires Congress to approve new tariffs, or that returns tariff
   authority from the President, decides which branch acts, not what the tariff is → `adjacent`, the
-  same reasoning as preemption (V2, H12) _(proposed)_. `_owed:_` a vote to end the emergency that a
-  set of tariffs rests on, when that ends those tariffs.
+  same reasoning as preemption (V2, H12) _(ruled 2026-10-01)_. A vote to end the emergency that a set of tariffs
+  rests on is `on-question` (it ends those tariffs) but `direction-only`: one set is not "most
+  tariffs" _(ruled 2026-10-01)_.
 - **Trade agreements** cut tariffs with partners and keep others → `direction-only` _(proposed)_.
 - **Sanctions, export controls and investment screening** are not tariffs → `adjacent`.
 - **Trade adjustment aid, tariff-relief payments to farmers, or rebates from tariff revenue** →

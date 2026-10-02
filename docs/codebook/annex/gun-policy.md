@@ -1,8 +1,7 @@
 # gun-policy — served revision 44615418-e111-4f2f-a256-92fcf74b0f2f (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(ruled …)_ carry an operator ruling (Chris Andrews).
-Lines marked _(proposed)_ are a drafter's reading, not yet ruled; lines marked `_owed:_` need a ruling
-before this file is merged. The season pin is an older revision (`1a72d5df-…`); coders code the
+Lines marked _(proposed)_ are a drafter's reading, not yet ruled. No `_owed:_` line is open. The season pin is an older revision (`1a72d5df-…`); coders code the
 served text below.
 
 **Question:** "How should the government regulate firearms?"
@@ -37,8 +36,7 @@ law. Most states forbid local gun ordinances, so a local lever exists only where
    - Establishing evidence looks like: a single-subject assault-weapons ban. A ban written as a
      definition or list of the banned weapons meets [b]: the definition is the boundary, and the
      instrument leaves other firearms legal.
-   - A vote for a bill that widens or clarifies the definition of a banned assault weapon, where a
-     ban is already in force, reads as rung 2: the bill acts to keep those weapons banned.
+   - A bill that extends an existing assault-weapons ban to more weapons → rung 2.
    - Levels that hold a lever: federal; state; local where state law allows.
    - Known chair-shaped instruments: the Assault Weapons Ban of 2025 (S.1531 / H.R.3115), named in the
      topic note _(proposed: chair-shaped as filed)_.
@@ -86,7 +84,8 @@ law. Most states forbid local gun ordinances, so a local lever exists only where
      **and** permitless carry _(proposed)_. Compound: one side only → `compound-partial` (V4.2).
    - Levels that hold a lever: federal; state.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` a state permitless-carry law as the only record: does it meet [a] as well?
+   - A state permitless-carry law as the only record meets [b] only → `compound-partial`: the line
+     between rungs 4 and 5 is whether the major laws stay (2026-09-08) _(ruled 2026-10-01)_.
 
 **Hard cases:**
 - **Rules about how guns are stored, marketed or advertised** (safe storage, advertising to minors)

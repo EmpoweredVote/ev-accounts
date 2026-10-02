@@ -1,7 +1,8 @@
 # homelessness-response — served revision 0e47ec98-46af-4e77-ae81-04d1311b4543 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How much should your community spend on housing and services to reduce homelessness?"
 

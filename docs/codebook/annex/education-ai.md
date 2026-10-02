@@ -1,7 +1,8 @@
 # education-ai — served revision c6a2c643-aaa3-4d91-958e-e17f421b7dc9 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "What role should artificial intelligence play in classrooms and student work?"
 

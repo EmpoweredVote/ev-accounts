@@ -31,6 +31,12 @@ reviewed migration (allocator slot), never an in-place edit.
   donut design does remove it and the benefit size separates rungs 1/2. Chair stays 2; fix the
   sentence at the next re-audit.
 
+## tariffs — who-sets-tariffs bills are adjacent (2026-10-01)
+
+- **1 rung-2 row (Moulton)** rests on the Prevent Tariff Abuse Act (which branch sets tariffs →
+  `adjacent`) plus one remark against across-the-board tariffs, which does not clearly say "reduce
+  most tariffs". Re-code; likely `direction-only` without more.
+
 ## data-centers — a study bill is not a chair (Season 1 carry-over)
 
 - The `data-centers` memory note (CA_0033) records a Season 1 move to rung 3 that rests on a bill for

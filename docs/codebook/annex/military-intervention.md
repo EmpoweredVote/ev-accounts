@@ -1,7 +1,8 @@
 # military-intervention — served revision c42b12b6-d7c3-4b88-a932-06b87d5043c9 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How should the United States use military force abroad?"
 
@@ -76,8 +77,8 @@ funds deployments and can direct the removal of forces; state and local official
 **Hard cases:**
 - **War Powers votes.** A resolution that directs the removal of forces from named hostilities is
   against **that** use of force; it does not state the general rule the rungs differ on →
-  `direction-only` at most. `_owed:_` a War Powers or authorization vote framed only as **who
-  decides** (Congress or the President).
+  `direction-only` at most. A War Powers or authorization vote framed only as **who decides**
+  (Congress or the President) → `adjacent` _(ruled 2026-10-01)_.
 - **Authorizations of force** (AUMF) for one conflict → `direction-only`; a repeal of an old
   authorization that is no longer used → `adjacent` _(proposed)_.
 - **Military aid and arms sales** are the `ukraine-support` and `israel-military-aid` questions;

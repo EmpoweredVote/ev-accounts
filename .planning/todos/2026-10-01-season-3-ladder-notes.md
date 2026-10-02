@@ -54,14 +54,12 @@ Add new notes at the bottom. Do not record gold item names here (keep them certi
   than tuition."
 - **Source:** `docs/codebook/annex/school-vouchers.md`, hard cases.
 
-## abortion — rungs 2, 3, 4 (candidate; not ruled)
+## abortion — rungs 2, 3, 4 (candidate)
 
-- **Problem:** the rungs state limits in trimesters; laws state weeks. A limit at about 20 weeks sits
-  between the rung-2 and rung-3 thresholds. A ban whose only exception is the mother's life fits
-  neither rung 4 (rape, incest and life) nor rung 5 (no exceptions).
-- **Status:** the annex will carry a weeks-to-rung reading first (see
-  `docs/codebook/annex/README.md`, "Pending notes"). Decide at Season 3 whether the ladder itself
-  should state weeks and cover the life-only ban.
+- **Problem:** the rungs state limits in trimesters; laws state weeks. The annex now carries the
+  weeks-to-rung reading (rulings 2026-10-01, `docs/codebook/annex/abortion.md`). Decide at Season 3
+  whether the ladder itself should state weeks, and whether a ban whose only exception is the
+  mother's life needs a rung (today it fits neither rung 4 nor rung 5 → `direction-only`).
 
 ## Judicial batch (from the 2026-10-01 annex drafting; wording proposals are drafts)
 
@@ -191,3 +189,22 @@ Add new notes at the bottom. Do not record gold item names here (keep them certi
   and documentary proof of citizenship to register." Material.
 - **ai-regulation — rung 4** (optional): "… or before powerful models are released" would seat
   frontier-model testing duties (ruled 2026-10-01: today they are compound-partial). Material.
+
+## Security and foreign batch (accepted 2026-10-01 as ladder notes; wording proposals are drafts)
+
+- **deportation — rungs 4/5 overlap** (ruled 2026-10-01: "mass deportation" is a label; rung 5 needs
+  "long-settled families and workers"). Proposed rung 4: "Deport all undocumented immigrants over
+  time through routine enforcement, starting with those who have criminal records".
+- **gun-policy — rungs 4/5 overlap on carry** (permitless carry is both "loosen carry" and rung 5 [b]).
+  Proposed rung 4: "Add no new restrictions, and at most loosen rules on carrying while keeping carry
+  permits".
+- **tariffs — rungs 2/3 overlap** ("limited exceptions" can be key industries). Proposed rung 2: "cut
+  most existing tariffs, keeping only a few exceptions"; rung 3: "keep or add tariffs only on selected
+  key industries".
+- **border-security — rung 5** "End asylum": at the border or the whole system? Proposed: "End asylum
+  at the border and quickly turn back anyone who crosses illegally."
+- **ukraine-support — rungs 1, 2, 4:** "military and financial/economic" reads as two tests (ruled
+  2026-10-01: one clause); rung 4's "focus resources on domestic priorities" is a reason, not a level.
+  Proposed rung 4: "reduce aid to Ukraine without ending it."
+- **Orientation wording (index, not ladder):** in deportation, border-security and israel-military-aid,
+  "standard" means rung 1 = least enforcement / most aid; the annexes say so.

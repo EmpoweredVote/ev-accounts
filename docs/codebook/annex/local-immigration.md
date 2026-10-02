@@ -1,7 +1,8 @@
 # local-immigration — served revision e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged. The season pin is an older revision
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open. The season pin is an older revision
 (`d497a221-…`); coders code the served text below.
 
 **Question:** "How should your community's law enforcement relate to federal immigration

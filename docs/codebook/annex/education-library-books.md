@@ -1,7 +1,8 @@
 # education-library-books — served revision f480f827-cb1f-4a2e-83cd-bef8763948b8 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How should schools handle challenges to books in libraries and classrooms?"
 

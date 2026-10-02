@@ -1,7 +1,8 @@
 # voting-rights — served revision 2a18c152-67a0-4380-a381-cb8795110a7c (Season 2)
 
 **Status:** draft (2026-10-01 refresh of the 2026-09-26 draft). Lines marked _(proposed)_ are a
-drafter's reading, not yet ruled; lines marked `_owed:_` need a ruling before this file is merged.
+drafter's reading, not yet ruled; lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How should the government verify a voter's identity and eligibility?"
 

@@ -1,7 +1,8 @@
 # ukraine-support — served revision 9ee7ecb7-fd99-429a-a37d-eff58a381983 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged. The season pin is an older revision
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open. The season pin is an older revision
 (`107d180d-…`); coders code the served text below.
 
 **Question:** "What level of military and financial support should be provided to Ukraine?"
@@ -27,7 +28,8 @@ assistance", "ceasefire", "peace talks", "negotiated settlement".
    - Known chair-shaped instruments: _(none on file)_.
    - "Until complete victory" is no longer part of this rung. A war-aim statement without an amount
      → not evidence for or against rung 1 _(proposed)_.
-   - `_owed:_` a passage that asks for more **military** aid only — does [b] need both kinds?
+   - "Military and financial aid" is one clause with two forms: more **military** aid alone is
+     enough _(ruled 2026-10-01)_.
    - Commonly confused with rung 2: see rung 2.
 
 2. **"continue providing current levels of military and economic aid to help Ukraine defend

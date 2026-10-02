@@ -12,68 +12,68 @@ pin, read 2026-10-01. Where the pin is an older revision, the row says so; coder
 
 | Topic | Served revision | Status |
 |---|---|---|
-| [`2020-election`](2020-election.md) | `81920cf6-9a30-4c5c-82b1-5f2c16cda95c` (v1 r1) | draft; 2 `_owed:_` |
+| [`2020-election`](2020-election.md) | `81920cf6-9a30-4c5c-82b1-5f2c16cda95c` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
 | [`abortion`](abortion.md) | `085feb9c-f157-4dae-bfd0-7b2736c5d87c` (v1 r5; pin `dab46e5c` is older) | draft; 6 rulings 2026-10-01 (weeks vs trimesters, exceptions), relayed from the gold-labelling session and confirmed |
-| [`ai-regulation`](ai-regulation.md) | `c594dc06-0c70-4707-8ae0-d4bc760172db` (v2 r2) | draft; 3 `_owed:_` |
-| [`border-security`](border-security.md) | `76d9941b-3085-42cf-b229-ac41f4f85b8d` (v1 r1) | draft; 2 `_owed:_` |
-| [`campaign-finance`](campaign-finance.md) | `ae53ba29-79eb-420f-aac6-ec99f8031ec6` (v2 r3) | draft; 4 `_owed:_` |
-| [`cannabis-policy`](cannabis-policy.md) | `0d9ff53d-0eb1-43a4-80f6-daaaf9851524` (v1 r1) | draft; 1 `_owed:_` |
-| [`childcare`](childcare.md) | `0e9fe0f2-cfab-4553-99cd-c3195d08e236` (v2 r2) | draft; 1 `_owed:_` |
-| [`city-sanitation`](city-sanitation.md) | `af3c2445-97e5-46a7-b33d-6915c13eab5c` (v1 r4) | draft; 2 `_owed:_` |
-| [`civil-rights`](civil-rights.md) | `2010cab0-1968-4f24-b74d-ca47c2f90165` (v2 r2) | draft; 2 `_owed:_` |
+| [`ai-regulation`](ai-regulation.md) | `c594dc06-0c70-4707-8ae0-d4bc760172db` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`border-security`](border-security.md) | `76d9941b-3085-42cf-b229-ac41f4f85b8d` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`campaign-finance`](campaign-finance.md) | `ae53ba29-79eb-420f-aac6-ec99f8031ec6` (v2 r3) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`cannabis-policy`](cannabis-policy.md) | `0d9ff53d-0eb1-43a4-80f6-daaaf9851524` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`childcare`](childcare.md) | `0e9fe0f2-cfab-4553-99cd-c3195d08e236` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`city-sanitation`](city-sanitation.md) | `af3c2445-97e5-46a7-b33d-6915c13eab5c` (v1 r4) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`civil-rights`](civil-rights.md) | `2010cab0-1968-4f24-b74d-ca47c2f90165` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
 | [`climate-change`](climate-change.md) | `5f1403f3-90b6-491f-ba54-3c8e46a5ae26` (v2 r3) | draft; 4 rulings 2026-10-01, no open `_owed:_` |
-| [`data-centers`](data-centers.md) | `c48a03d6-b972-4f27-9a8a-d41b07f4a929` (v1 r3) | draft; 1 `_owed:_` |
-| [`defense-spending`](defense-spending.md) | `5b75a7a2-1a72-436f-be9a-e60cf9ffada5` (v1 r1) | draft; 2 `_owed:_` |
-| [`deportation`](deportation.md) | `55c3167e-3ad8-425d-a699-b2e91552d912` (v2 r2) | draft; 2 `_owed:_` |
-| [`economic-development`](economic-development.md) | `af855dba-96f3-4fa0-beb7-43c5edb3f499` (v2 r2) | draft; 1 `_owed:_` |
-| [`education-ai`](education-ai.md) | `c6a2c643-aaa3-4d91-958e-e17f421b7dc9` (v1 r1) | draft; 1 `_owed:_` |
-| [`education-charter-authorization`](education-charter-authorization.md) | `3901e1b0-12b0-4f7e-9e14-061ae2247c26` (v1 r1) | draft; 2 `_owed:_` |
-| [`education-curriculum`](education-curriculum.md) | `2146e080-bd5e-4e1e-8a51-fcc1b44af916` (v1 r1) | draft; 2 `_owed:_` |
-| [`education-equity-programs`](education-equity-programs.md) | `23d87824-d25c-4b9a-8b13-fb2799d75661` (v1 r1) | draft; 2 `_owed:_` |
-| [`education-gender-identity`](education-gender-identity.md) | `89f9d4a5-362e-4470-9529-46d4826fdeb9` (v1 r1) | draft; 1 `_owed:_` |
-| [`education-library-books`](education-library-books.md) | `f480f827-cb1f-4a2e-83cd-bef8763948b8` (v1 r1) | draft; 2 `_owed:_` |
-| [`education-school-budget`](education-school-budget.md) | `0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc` (v1 r1) | draft; 3 `_owed:_` |
-| [`education-school-police`](education-school-police.md) | `d81d7662-3c68-425c-a5c6-ca0717384a9e` (v1 r1) | draft; 1 `_owed:_` |
-| [`fossil-fuels`](fossil-fuels.md) | `58796165-cd12-44de-a9b6-84df43f6eda0` (v1 r3; pin `c8e12b53` is older) | draft; 1 `_owed:_` |
-| [`growth-and-development`](growth-and-development.md) | `65e8ffd5-5aac-4d40-8862-a321949eafa4` (v2 r2) | draft; 1 `_owed:_` |
-| [`gun-policy`](gun-policy.md) | `44615418-e111-4f2f-a256-92fcf74b0f2f` (v2 r3; pin `1a72d5df` is older) | draft; 3 `_owed:_` |
-| [`healthcare`](healthcare.md) | `87719e15-58aa-4729-a73f-d47e64d5a954` (v1 r3; pin `afc91aa2` is older) | draft; 3 `_owed:_` |
-| [`homelessness`](homelessness.md) | `6958fa99-e317-45d7-8076-d11a0a78c897` (v2 r2) | draft; 2 `_owed:_` |
-| [`homelessness-response`](homelessness-response.md) | `0e47ec98-46af-4e77-ae81-04d1311b4543` (v2 r2) | draft; 1 `_owed:_` |
-| [`housing`](housing.md) | `598c879d-f387-461c-9120-fbbbf6314bbc` (v2 r3) | draft; 1 `_owed:_` |
-| [`israel-military-aid`](israel-military-aid.md) | `a9e300f1-8d13-4e34-89f0-e321031676b2` (v1 r1) | draft; 1 `_owed:_` |
-| [`jail-capacity`](jail-capacity.md) | `7992fadf-a24c-4f73-bd34-76b5bca4764b` (v1 r3; pin `f63a4e70` is older) | draft; 2 `_owed:_` |
-| [`judicial-access-to-justice`](judicial-access-to-justice.md) | `6c1d0a40-eb5c-481b-b035-323dedaa0d88` (v2 r2) | draft; 3 `_owed:_` |
-| [`judicial-bail-pretrial`](judicial-bail-pretrial.md) | `1b4e6f5a-62e6-4939-95f3-c173eb471fb3` (v2 r3) | draft; 3 `_owed:_` |
-| [`judicial-criminal-justice`](judicial-criminal-justice.md) | `c334f475-05bd-48ba-9d25-f4de593a3f15` (v2 r3) | draft; 1 `_owed:_` |
-| [`judicial-government-deference`](judicial-government-deference.md) | `d1107e47-5d39-4854-9150-37958dfa2d57` (v2 r2) | draft; 3 `_owed:_` |
-| [`judicial-interpretation`](judicial-interpretation.md) | `e9bd9e3b-5ced-439e-b989-b98643d053f2` (v2 r2) | draft; 5 `_owed:_` |
-| [`judicial-police-accountability`](judicial-police-accountability.md) | `eb6e1ecd-daa3-4362-810b-55fab93ff64c` (v2 r2) | draft; 2 `_owed:_` |
-| [`judicial-prosecution-priorities`](judicial-prosecution-priorities.md) | `f7fe7332-5068-4d41-a8cd-d837b9cdba82` (v1 r1) | draft; 1 `_owed:_` |
-| [`judicial-transparency`](judicial-transparency.md) | `15252183-dcf4-4ea9-b2e8-0faf26175bb0` (v2 r2) | draft; 2 `_owed:_` |
-| [`local-environment`](local-environment.md) | `d67eabf7-8da0-4ca7-b2af-74745b3bfd47` (v2 r3) | draft; 1 `_owed:_` |
-| [`local-immigration`](local-immigration.md) | `e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf` (v1 r3; pin `d497a221` is older) | draft; 2 `_owed:_` |
-| [`medicare/aid`](medicare/aid.md) | `38bab357-9790-4cb3-a6d2-c43cbdca615b` (v1 r4) | draft; 2 `_owed:_` |
-| [`military-intervention`](military-intervention.md) | `c42b12b6-d7c3-4b88-a932-06b87d5043c9` (v1 r1) | draft; 2 `_owed:_` |
-| [`minimum-wage`](minimum-wage.md) | `bc949d3b-43f4-4612-ba4c-2de39f8757c8` (v1 r1) | draft; 3 `_owed:_` |
+| [`data-centers`](data-centers.md) | `c48a03d6-b972-4f27-9a8a-d41b07f4a929` (v1 r3) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`defense-spending`](defense-spending.md) | `5b75a7a2-1a72-436f-be9a-e60cf9ffada5` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`deportation`](deportation.md) | `55c3167e-3ad8-425d-a699-b2e91552d912` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`economic-development`](economic-development.md) | `af855dba-96f3-4fa0-beb7-43c5edb3f499` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`education-ai`](education-ai.md) | `c6a2c643-aaa3-4d91-958e-e17f421b7dc9` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`education-charter-authorization`](education-charter-authorization.md) | `3901e1b0-12b0-4f7e-9e14-061ae2247c26` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`education-curriculum`](education-curriculum.md) | `2146e080-bd5e-4e1e-8a51-fcc1b44af916` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`education-equity-programs`](education-equity-programs.md) | `23d87824-d25c-4b9a-8b13-fb2799d75661` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`education-gender-identity`](education-gender-identity.md) | `89f9d4a5-362e-4470-9529-46d4826fdeb9` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`education-library-books`](education-library-books.md) | `f480f827-cb1f-4a2e-83cd-bef8763948b8` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`education-school-budget`](education-school-budget.md) | `0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`education-school-police`](education-school-police.md) | `d81d7662-3c68-425c-a5c6-ca0717384a9e` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`fossil-fuels`](fossil-fuels.md) | `58796165-cd12-44de-a9b6-84df43f6eda0` (v1 r3; pin `c8e12b53` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`growth-and-development`](growth-and-development.md) | `65e8ffd5-5aac-4d40-8862-a321949eafa4` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`gun-policy`](gun-policy.md) | `44615418-e111-4f2f-a256-92fcf74b0f2f` (v2 r3; pin `1a72d5df` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`healthcare`](healthcare.md) | `87719e15-58aa-4729-a73f-d47e64d5a954` (v1 r3; pin `afc91aa2` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`homelessness`](homelessness.md) | `6958fa99-e317-45d7-8076-d11a0a78c897` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`homelessness-response`](homelessness-response.md) | `0e47ec98-46af-4e77-ae81-04d1311b4543` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`housing`](housing.md) | `598c879d-f387-461c-9120-fbbbf6314bbc` (v2 r3) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`israel-military-aid`](israel-military-aid.md) | `a9e300f1-8d13-4e34-89f0-e321031676b2` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`jail-capacity`](jail-capacity.md) | `7992fadf-a24c-4f73-bd34-76b5bca4764b` (v1 r3; pin `f63a4e70` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`judicial-access-to-justice`](judicial-access-to-justice.md) | `6c1d0a40-eb5c-481b-b035-323dedaa0d88` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`judicial-bail-pretrial`](judicial-bail-pretrial.md) | `1b4e6f5a-62e6-4939-95f3-c173eb471fb3` (v2 r3) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`judicial-criminal-justice`](judicial-criminal-justice.md) | `c334f475-05bd-48ba-9d25-f4de593a3f15` (v2 r3) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`judicial-government-deference`](judicial-government-deference.md) | `d1107e47-5d39-4854-9150-37958dfa2d57` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`judicial-interpretation`](judicial-interpretation.md) | `e9bd9e3b-5ced-439e-b989-b98643d053f2` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`judicial-police-accountability`](judicial-police-accountability.md) | `eb6e1ecd-daa3-4362-810b-55fab93ff64c` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`judicial-prosecution-priorities`](judicial-prosecution-priorities.md) | `f7fe7332-5068-4d41-a8cd-d837b9cdba82` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`judicial-transparency`](judicial-transparency.md) | `15252183-dcf4-4ea9-b2e8-0faf26175bb0` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`local-environment`](local-environment.md) | `d67eabf7-8da0-4ca7-b2af-74745b3bfd47` (v2 r3) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`local-immigration`](local-immigration.md) | `e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf` (v1 r3; pin `d497a221` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`medicare/aid`](medicare/aid.md) | `38bab357-9790-4cb3-a6d2-c43cbdca615b` (v1 r4) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`military-intervention`](military-intervention.md) | `c42b12b6-d7c3-4b88-a932-06b87d5043c9` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`minimum-wage`](minimum-wage.md) | `bc949d3b-43f4-4612-ba4c-2de39f8757c8` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
 | [`misinformation`](misinformation.md) | `bd313c07-02a5-4344-8cc3-0e4b4c3b78a1` (v2 r3) | draft; 1 ruling 2026-10-01, no open `_owed:_` |
-| [`public-safety-approach`](public-safety-approach.md) | `cfc3824f-522e-4671-bd2d-dd628e6578e1` (v1 r4; pin `b9c1c07f` is older) | draft; 1 `_owed:_` |
-| [`ranked-choice-voting`](ranked-choice-voting.md) | `100cdf38-0794-4267-b711-934438f05853` (v1 r1) | draft; 1 `_owed:_` |
-| [`redistricting`](redistricting.md) | `c7f973fc-33f5-4570-bfe2-bff4ac6141cc` (v1 r1) | draft; 2 `_owed:_` |
-| [`religious-freedom`](religious-freedom.md) | `dfbd847a-294c-49d2-9ac3-69270ea03054` (v2 r3) | draft; 3 `_owed:_` |
-| [`rent-regulation`](rent-regulation.md) | `6fa44a68-8006-48e9-b562-6b5e61d58693` (v1 r3) | draft; 2 `_owed:_` |
-| [`residential-zoning`](residential-zoning.md) | `6b5a3504-9e90-455a-9dd5-07e5376399af` (v1 r4; pin `ef2a5e59` is older) | draft; 3 `_owed:_` |
-| [`same-sex-marriage`](same-sex-marriage.md) | `8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f` (v2 r2) | draft; 3 `_owed:_` |
+| [`public-safety-approach`](public-safety-approach.md) | `cfc3824f-522e-4671-bd2d-dd628e6578e1` (v1 r4; pin `b9c1c07f` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`ranked-choice-voting`](ranked-choice-voting.md) | `100cdf38-0794-4267-b711-934438f05853` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`redistricting`](redistricting.md) | `c7f973fc-33f5-4570-bfe2-bff4ac6141cc` (v1 r1) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`religious-freedom`](religious-freedom.md) | `dfbd847a-294c-49d2-9ac3-69270ea03054` (v2 r3) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`rent-regulation`](rent-regulation.md) | `6fa44a68-8006-48e9-b562-6b5e61d58693` (v1 r3) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`residential-zoning`](residential-zoning.md) | `6b5a3504-9e90-455a-9dd5-07e5376399af` (v1 r4; pin `ef2a5e59` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`same-sex-marriage`](same-sex-marriage.md) | `8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
 | [`school-vouchers`](school-vouchers.md) | `88858826-90c0-41c9-a3a4-1d9f5b8c5307` (v2 r3) | draft (refreshed); 3 rulings 2026-10-01, no open `_owed:_` |
-| [`social-security`](social-security.md) | `8defc029-0b7e-426f-b838-a2e170f566c9` (v2 r2) | draft; 2 `_owed:_` |
-| [`tariffs`](tariffs.md) | `c9b67f92-c9b9-4f7e-a10b-c312a4219346` (v1 r3; pin `9f094155` is older) | draft; 3 `_owed:_` |
-| [`taxes`](taxes.md) | `44ac21e4-76ad-4318-a5c4-d0d744a8313e` (v1 r3; pin `87f8c011` is older) | draft; 2 `_owed:_` |
-| [`trans-athletes`](trans-athletes.md) | `c47c957a-5eb6-426f-b38d-89e44ba8fe73` (v1 r3; pin `af2c6427` is older) | draft; 1 `_owed:_` |
-| [`transportation-priorities`](transportation-priorities.md) | `555f1618-fcdf-4e0b-8306-7eec8f4d0f4f` (v1 r3; pin `c48782d5` is older) | draft; 1 `_owed:_` |
-| [`ukraine-support`](ukraine-support.md) | `9ee7ecb7-fd99-429a-a37d-eff58a381983` (v1 r3; pin `107d180d` is older) | draft; 3 `_owed:_` |
-| [`voting-rights`](voting-rights.md) | `2a18c152-67a0-4380-a381-cb8795110a7c` (v2 r3) | draft; 1 `_owed:_` (refreshed 2026-10-01) |
+| [`social-security`](social-security.md) | `8defc029-0b7e-426f-b838-a2e170f566c9` (v2 r2) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`tariffs`](tariffs.md) | `c9b67f92-c9b9-4f7e-a10b-c312a4219346` (v1 r3; pin `9f094155` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`taxes`](taxes.md) | `44ac21e4-76ad-4318-a5c4-d0d744a8313e` (v1 r3; pin `87f8c011` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`trans-athletes`](trans-athletes.md) | `c47c957a-5eb6-426f-b38d-89e44ba8fe73` (v1 r3; pin `af2c6427` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`transportation-priorities`](transportation-priorities.md) | `555f1618-fcdf-4e0b-8306-7eec8f4d0f4f` (v1 r3; pin `c48782d5` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`ukraine-support`](ukraine-support.md) | `9ee7ecb7-fd99-429a-a37d-eff58a381983` (v1 r3; pin `107d180d` is older) | draft; ruled 2026-10-01, no open `_owed:_` |
+| [`voting-rights`](voting-rights.md) | `2a18c152-67a0-4380-a381-cb8795110a7c` (v2 r3) | draft; ruled 2026-10-01, no open `_owed:_` (refreshed 2026-10-01) |
 
-All 60 open-season topics have an annex (2026-10-01). Only the four with no open `_owed:_` lines are ready to merge.
+All 60 open-season topics have an annex (2026-10-01), and every `_owed:_` line has a ruling. Before merge: see the merge-order note below, and the re-audit list in `.planning/todos/2026-10-01-annex-rulings-reaudit.md`.
 
 🔴 **Merge order.** These annexes cite codebook V4.2 "Silence is not a clause" and "Ruling out the
 other rungs is not evidence" (H13, H14). On 2026-10-01 those lines exist only on branch

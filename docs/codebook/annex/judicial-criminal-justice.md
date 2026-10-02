@@ -1,7 +1,8 @@
 # judicial-criminal-justice — served revision c334f475-05bd-48ba-9d25-f4de593a3f15 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "When someone breaks the law, how should the system respond?"
 

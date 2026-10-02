@@ -1,7 +1,8 @@
 # civil-rights — served revision 2010cab0-1968-4f24-b74d-ca47c2f90165 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "What role should government play in addressing racial and social inequality?"
 

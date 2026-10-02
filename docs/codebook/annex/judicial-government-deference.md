@@ -1,7 +1,8 @@
 # judicial-government-deference — served revision d1107e47-5d39-4854-9150-37958dfa2d57 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "When elected officials or a government agency make a decision, how closely should
 courts review it?"

@@ -1,7 +1,8 @@
 # education-curriculum — served revision 2146e080-bd5e-4e1e-8a51-fcc1b44af916 (Season 2)
 
 **Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
-lines marked `_owed:_` need a ruling before this file is merged.
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
 
 **Question:** "How should schools handle contested topics like race, gender, and history in what they
 teach?"
