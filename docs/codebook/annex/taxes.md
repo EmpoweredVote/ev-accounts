@@ -31,7 +31,8 @@ this topic.
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 2 because "supports higher taxes on top earners to fund public
      services" shows direction only; it cannot separate "significantly" from "moderately" (CLAUDE.md) →
-     `direction-only`. `_owed:_` what separates "significantly" from "moderately".
+     `direction-only`. The **purpose clause** separates rungs 1 and 2: money for new or expanded
+     services → rung 1; for existing services → rung 2. Words of size alone → `direction-only` _(ruled 2026-10-01)_.
 
 2. **"Moderately raise taxes on wealthy people and large companies to fund existing services"**
    - Means: raise taxes on high earners and large companies by a modest amount, to pay for the

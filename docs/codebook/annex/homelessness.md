@@ -42,8 +42,9 @@ sweep" / "clearance" / "abatement", "move-along order", "right to rest", "infrac
    - Levels that hold a lever: local; state.
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 4 because a law that turns a camping crime into a civil fine both
-     decriminalizes (rung 2) and prohibits with civil penalties (rung 4). `_owed:_` which rung a
-     crime-to-civil conversion evidences.
+     decriminalizes (rung 2) and prohibits with civil penalties (rung 4). A law that turns a camping crime
+     into a civil fine still prohibits, with a civil penalty → rung 4 (see the 2026-08-31 penalty-type
+     ruling) _(ruled 2026-10-01)_.
    - A No on a criminal ban does not separate 1, 2, 3 and 4 → `direction-only`.
 
 3. **"Allowing enforcement only when adequate shelter beds are available, with citations diverting

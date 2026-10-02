@@ -134,3 +134,24 @@ Add new notes at the bottom. Do not record gold item names here (keep them certi
   separate from rungs 2–3, because most money already goes to nonprofits. Proposed: "Cut public
   funding to a limited amount and give it to nonprofits and charities to lead the response, rather
   than running public programs".
+
+## Housing and economy batch (accepted 2026-10-01 as ladder notes; wording proposals are drafts)
+
+- **homelessness — rungs 2/4 overlap** (a civil-only prohibition is both "decriminalized" and "civil
+  penalties"; ruled 2026-10-01: rung 4). Proposed rung 2: "Removing all criminal penalties for public
+  sleeping and camping, and not prohibiting it on public property."
+- **childcare — rungs 2/3 overlap.** Proposed rung 3: "Offering tax credits and subsidies only to
+  families below a set income threshold, with small grants for provider training and facilities, and
+  no broad expansion."
+- **minimum-wage — rung 3 says "national"**; no level below federal holds the lever. Proposed: "Keep a
+  modest baseline floor at the higher level of government and let lower levels set higher rates."
+- **taxes — rungs 1/2 are a magnitude dial** (ruled 2026-10-01: the purpose clause separates them).
+  Proposed rung 1: "Raise taxes on wealthy people and large companies to fund new or expanded public
+  services"; rung 2: "… only enough to fund existing services".
+- **transportation-priorities — rung 5 double-barrel** (highways + free parking) and says "local".
+  Proposed: "Prioritize highway and road access, including ample free public parking, above other
+  modes."
+- **housing — no home for demand-side aid** (vouchers, down-payment help). Consider rung 4 "subsidies,
+  vouchers and tax breaks".
+- **rent-regulation — rung 3** brings "tenant protections" into a coverage ladder. Proposed: "Keep
+  current rent rules as they are, while allowing market rents for new construction".

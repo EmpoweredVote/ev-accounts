@@ -34,14 +34,11 @@ floor where higher law permits; only Congress sets the national floor that rung 
    - Means: raise the floor to a fixed amount; later changes need a new vote.
    - Operative clauses: [a] raise to a set higher level; [b] adjust only by a vote of lawmakers.
    - Establishing evidence looks like: a general minimum-wage law that raises the floor to a stated
-     amount (or a stated schedule) with no automatic adjustment. `_owed:_` whether a fixed amount
-     with no index meets [b] by its own text, or is silent on [b] (V4.2).
+     amount (or a stated schedule) with no automatic adjustment. A fixed amount with no index meets
+     [b] by its own design, and that design excludes rung 1's automatic rise _(ruled 2026-10-01)_.
    - Levels that hold a lever: federal; state; local.
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 1: see rung 1.
-   - Commonly confused with BLANK when a body that is **not** the legislature (a wage board, a
-     council of appointees) may raise the floor at its discretion. That is neither automatic (rung 1)
-     nor a vote of lawmakers (rung 2) → `direction-only` (gold).
 
 3. **"Keep a modest national wage floor as a baseline and let states and cities set higher rates."**
    - Means: a low national floor stays in place, and states and cities may set higher floors.
@@ -49,7 +46,8 @@ floor where higher law permits; only Congress sets the national floor that rung 
    - Establishing evidence looks like: own words for a national baseline plus local choice; a vote
      against a large federal raise together with words for state and local rates.
    - Levels that hold a lever: federal for [a]. A state law that allows cities to set higher rates
-     meets [b] only. `_owed:_` how a state or local officeholder evidences [a].
+     meets [b] only. A state or local officeholder evidences [a] only by own words; otherwise
+     `compound-partial` _(ruled 2026-10-01)_.
    - Known chair-shaped instruments: _(none on file)_.
    - **Preemption is on-question here.** This rung is itself about which level decides (codebook V2
      exception), so a state law that forbids local minimum wages is evidence against [b], and a
@@ -77,8 +75,7 @@ floor where higher law permits; only Congress sets the national floor that rung 
      _(proposed)_.
 
 **Hard cases:**
-- **Sector or employer-group floors** (one industry, public contractors, hospital or airport
-  workers) set a floor for some workers only. They are on the wage-floor question but do not show
+- **Sector or employer-group floors** (one industry, public contractors) set a floor for some workers only. They are on the wage-floor question but do not show
   the person's general rule → `direction-only` (gold).
 - **Tipped-wage changes** (raise or abolish the tipped subminimum) → `direction-only` unless the same
   passage states the general rule _(proposed)_.

@@ -90,7 +90,8 @@ participation", "pretrial services", "diversion", "bail reform", "electronic mon
    - Commonly confused with rung 4: see rung 4.
 
 **Hard cases:**
-- **Prisons.** The question names jails. `_owed:_` whether state prison capacity is on-question.
+- **Prisons.** State prison capacity is on-question: the question names "criminal justice demand",
+  rung 1 names incarceration funding, and prisons are the state's lever _(ruled 2026-10-01)_.
 - **Bail and sentencing law** with no capacity or population clause → `adjacent`; the judicial
   topics order those rules _(proposed)_.
 - **Jail health care, staffing and wages** improve operations without changing capacity → `adjacent`

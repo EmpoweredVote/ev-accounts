@@ -26,8 +26,7 @@ allowable increase", "vacancy control" / "vacancy decontrol", "just-cause evicti
    - Levels that hold a lever: local (where state law permits); state (statewide coverage).
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 2 because a **statewide** cap reads as "all units". A cap that
-     exempts any class of units (recent construction, some single-family homes, small owners) does
-     not cover all units: it extends coverage → rung 2, not rung 1 (gold).
+     exempts any class of units does not cover all units: it extends coverage → rung 2, not rung 1 (gold).
    - Strong tenant protections and just-cause eviction are no longer part of this rung. A
      just-cause law does not move a person to rung 1.
 
@@ -84,8 +83,8 @@ allowable increase", "vacancy control" / "vacancy decontrol", "just-cause evicti
 - **A No vote** on a rent bill rules out the stronger rungs but names no chair → BLANK
   `direction-only` (gold). The same is true of a No on a repeal.
 - **Preemption (codebook V2, H12).** A state law that forbids local rent control, or its repeal,
-  decides which level may act, not how many units are covered → `adjacent` _(proposed)_. `_owed:_`
-  how to code repeal of a state ban on local rent control.
+  decides which level may act, not how many units are covered → `adjacent`. Repealing a state ban
+  on local rent control lets cities act but extends no rule to any unit → `adjacent` _(ruled 2026-10-01)_.
 - **Tenant protections with no rent rule** (just-cause eviction, relocation payments, habitability,
   right to counsel) are on the question's wording but do not order coverage → `direction-only`
   _(proposed)_.
