@@ -18,6 +18,11 @@ valid for that office only. See V5.
 H14. Both restate V4 `direction-only` and the CLAUDE.md tiebreaker rule; the version stays 0.4 so
 existing gold keeps counting. The two gold items that prompted them are not named here, so they stay
 certifiable: their coder labels were written before these lines existed.
+**Clarified 2026-10-01 (still 0.4 — no new variable or value; rulings by Chris Andrews):** V5 says
+how a judge's lower-court record is coded (`pre-seating`, with one lever-match exception), and the
+Maloy / `same-sex-marriage` example now reads the RFMA on its operative section (recognition → rung 2;
+its religious section is a savings clause). The version stays 0.4 so existing labels and gold keep
+counting; no gold item turns on either line.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -370,6 +375,11 @@ chair. → `direction-only`.
   - A record from a **different level** (city council → legislature, legislature → Congress) is
     `pre-seating`: the levers differ, so the ladder may not apply at the new level (scope is a per-rung
     question).
+  - **A judge's record on a lower court** (ruling 2026-10-01) is `pre-seating` too: a trial court and
+    an appellate court are different offices with different levers. It counts for the current seat
+    only when the rung's lever is the same at both courts — an opinion that shows the judge's method
+    of interpretation, or the judge's own sealing or access practice — and the coder names that lever
+    in the note.
   - **Candidates too (ruling 2026-09-27).** A candidate for a seat in a legislature is coded on their
     record from either chamber of that legislature, exactly as a seated member is — a former
     representative running for the senate, say. Earlier service comes from
@@ -394,8 +404,11 @@ role alone → review.
 **Hard [real].** Celeste Maloy / `same-sex-marriage`: in a 2023 candidate debate she said she "would
 have voted yes" on the Respect for Marriage Act. → `own-words`, `statement-answer` (an answer to a moderator's question in a debate; if the only source is an article paraphrasing it, `statement-other`), pre-seating by
 construction (she was a candidate). A hypothetical vote on a named instrument is a strong statement:
-the instrument's content (marriage recognition with religious-organization protections) is the
-position. It is `in-term` for the campaign that seated her. Note: the served ladder changed between
+the instrument's **operative** content is the position. The RFMA's operative section is marriage
+recognition; its religious section saves protections that already exist, so it does not show that she
+insists on a carve-out (V4.1: the operative section governs). → Season 2 rung 2, "the same benefits
+and protections as any other marriage", unless her own words stress the religious exemption (ruling
+2026-10-01). It is `in-term` for the campaign that seated her. Note: the served ladder changed between
 Seasons 1 and 2, and her Season 2 value differs. Re-code it against the served S2 rung text; do not
 carry the S1 reading forward.
 
