@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-10-01-shadow-bascom-hb1393",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2025/bills/house/1393/details",
+      "source_kind": "public-record",
+      "politician_id": "ea05323c-8b6d-4b16-873c-083d9873889d",
+      "office_id": "4333d774-b25a-4c26-905b-ca604fa8216f",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "HB 1393 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2025-hb1393-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/124/2025/house/bills/HB1393/HB1393.06.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "ea05323c-8b6d-4b16-873c-083d9873889d",
+      "office_id": "4333d774-b25a-4c26-905b-ca604fa8216f",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "HB 1393 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2025-hb1393-enrolled.txt"
+    }
+  ]
+}

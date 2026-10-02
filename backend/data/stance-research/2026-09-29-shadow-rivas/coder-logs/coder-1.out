@@ -1,0 +1,8 @@
+Wrote `coder-1.json` with one row (redistricting).
+
+**Coding summary**
+
+- **Passage** `2a4a6f51…` (ACA 8 chaptered text): `own-act` / `on-question` / `record` (`record_kind: author`, actor_quote `ACA 8, Rivas. Congressional redistricting.`) / `direction-only` / `in-term` (filed 2025-08-21; current Assembly term began 2022-12-05).
+- **Chair:** BLANK, `direction-only`. The measure both declares state policy supporting "fair, independent, and nonpartisan redistricting commissions nationwide" and temporarily substitutes legislature-drawn congressional maps (AB 604) notwithstanding the Citizens Redistricting Commission, restoring the commission in 2031. That excludes rung 5 but does not separate rungs 1, 2 and 4 — no single rung is matched clause for clause.
+- No `tally_quote`: the snapshot is the bill text page, which prints no vote; the Assembly roll call is listed in `needs_source` along with Rivas's own words on the standing rule.
+- No quotes emitted — the snapshot contains only instrument text, not the person's words.

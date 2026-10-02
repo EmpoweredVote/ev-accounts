@@ -1,0 +1,11 @@
+Wrote `coder-1.json` — one row, `abortion`, coded BLANK `direction-only`.
+
+**How it coded:**
+
+- **Both SCA 10 pages are one record** (`SCA 10 (2021-2022)`, `record_kind: vote`). The vote page carries `actor_quote` ("…Valladares, Villapudua, Ward, Akilah Weber…") and `tally_quote` ("Ayes Count 58 Noes Count 17"); the bill-text page carries the `provision_quote` and nulls for the other two, per the V3 worked example.
+- **V1 `own-act`, V2 `on-question`, V5 `in-term`** — the 2022-06-27 Assembly floor vote falls inside Ward's term (from 2020-12-07), same chamber, same seat. 17 of 80 opposed, so the near-unanimous rule doesn't bite.
+- **V4 `direction-only`** is the call that drives the blank. SEC. 1.1 bars the state from denying or interfering with the right to choose an abortion, but names no stage of pregnancy — and stage is exactly what separates rungs 1, 2 and 3. The same page's digest describes the un-repealed Reproductive Privacy Act as protecting abortion "before viability of the fetus, or when the abortion is necessary to protect the life or health of the person," which is roughly rung 2's boundary. A vote to constitutionalize the right doesn't settle whether the voter wants the viability limit gone.
+
+There's a defensible rung-1 reading here — an unqualified bar on interference arguably excludes any post-viability restriction — but it requires inferring that the amendment voids the RPA's viability clause, which neither source says. Under principle 3 ("least extreme rung" is a tiebreaker, not evidence) and the Durazo precedent on reading a vote as the rule itself, I coded the blank rather than pick a side of that inference.
+
+`needs_source` asks for Ward's own words on a gestational limit, or an act on a bill whose operative section names a stage.

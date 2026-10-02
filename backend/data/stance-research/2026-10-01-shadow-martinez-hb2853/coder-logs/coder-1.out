@@ -1,0 +1,18 @@
+Written. One row, chair **5**.
+
+**school-vouchers → rung 5**, resting on all three HB2853 (2022) snapshots as a single record group:
+
+| snapshot | V1/V2/V3 | V4 | record fields |
+|---|---|---|---|
+| vote page | own-act / on-question / record | chair-shaped | `vote`, actor `LONGDON N MARTINEZ Y MATHIS N`, tally `Passed 31-26-3-0-0` |
+| bill overview | own-act / on-question / record | chair-shaped | `sponsor`, actor `Kavanagh (Co-Sponsor) Martinez (Co-Sponsor) Nguyen (Co-Sponsor)` |
+| Chapter 388 text | own-act / on-question / record | chair-shaped | `vote`, provision = new §15-2401.01 |
+
+Coding notes:
+- **V5 `in-term`:** 06/22/2022 falls inside her first House term (2021-11-01 – 2023-01-09), same chamber and same office — no need to lean on the V5 option-B earlier-chamber ruling.
+- **V4.1:** single-subject (the appropriation funds administration of the same ESA program), 26 No of 60 so not near-unanimous, and the vote is final passage — so a chair is available.
+- **Rung 5 vs 4:** §15-2401.01 makes every resident eligible to enroll in an Arizona public school a "qualified student," which is universal, not "most families, not all." §15-2402(C)'s 90% per-student transfer is the funding-follows-the-student clause; "Qualified school" is defined as "a nongovernmental primary or secondary school" with no religious exclusion.
+- **Record fields are distributed per the 2026-09-26 ruling:** `actor_quote`/`tally_quote` on the pages that print them, `provision_quote` only on the law text. The provision span I quoted is added text, not inside any `[deleted: …]` fence.
+- **`needs_source`:** the as-introduced HB2853 text. The roll-call line records the bill as `Amended`, and C37 says co-sponsorship evidences the bill as filed — the chair doesn't depend on that passage (the vote carries the enacted text), but the co-sponsor shape isn't fully verifiable without it.
+
+No `quotes` entries: the snapshots are statutory and procedural text, with no span of Martinez's own words to tier.

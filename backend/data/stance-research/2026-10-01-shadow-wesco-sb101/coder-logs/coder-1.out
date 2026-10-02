@@ -1,0 +1,20 @@
+Written: `labels/coder-1.json` — one row, codebook 0.4, coder_slot 1.
+
+**religious-freedom → chair 4**
+
+Three passages, all one record group on `SB 101 (2015)`:
+
+| snapshot | V1 | V2 | V3 / kind | V4 | V5 | carries |
+|---|---|---|---|---|---|---|
+| bill details | own-act | on-question | record / sponsor | chair-shaped | in-term | `actor_quote` "Sponsored by: Rep. Timothy Wesco" |
+| enrolled text | own-act | on-question | record / vote | chair-shaped | in-term | `provision_quote` (Sec. 8) |
+| roll call 305 | own-act | on-question | record / vote | chair-shaped | in-term | `actor_quote` "Cook Koch Rhoads Wesco", `tally_quote` "Yea 63 Nay 31 Excused 5 Not Voting 0" |
+
+Reasoning for the chair: the act is single-subject (one new chapter, IC 34-13-9), and its operative section is the rung-4 clause — exemption from law that burdens religious exercise "even if the burden results from a rule of general applicability," asserted "as a claim or defense." Rung 5 is excluded by the act's own compelling-interest exception and by Sec. 11's bar on claims "against any private employer"; rungs 1–2 are excluded by Sec. 2, which exempts no statute or ordinance absent an express citation to the chapter.
+
+Two things worth noting about how I coded it:
+
+- 31 of 94 voting No, so the near-unanimous rule doesn't bite; the vote ladder's single-subject branch applies.
+- `provision_quote` crosses a PDF page-break artifact ("SEA 101 — Concur 3"). I copied it inside the quote rather than silently dropping it, so the span is an exact substring of the snapshot.
+
+`needs_source` is empty and `quotes` is empty — no own-words passage was supplied, so there was no candidate quote to tier.

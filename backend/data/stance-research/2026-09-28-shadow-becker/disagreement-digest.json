@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|666bf03d-81fc-4138-ab15-69ae734c9023#d3110657-375e-516d-9153-509804371df6",
+          "values": [
+            "on-question",
+            "adjacent",
+            "on-question"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|666bf03d-81fc-4138-ab15-69ae734c9023#d3110657-375e-516d-9153-509804371df6",
+          "values": [
+            "direction-only",
+            "off-axis",
+            "direction-only"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v2_relevance",
+    "v4_shape"
+  ]
+}

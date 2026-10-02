@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "a7e904b1-ec37-4c43-8594-99d778e7351a",
+      "office_id": "11c6dfc5-e935-4094-a01d-1d30ef64f95d",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "165e3a2a-d3e9-5521-a288-ef059dc09f19",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-10-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 316 (2025-2026)",
+          "provision_quote": "In an action against a defendant who developed, modified, or used artificial intelligence that is alleged to have caused a harm to the plaintiff, it shall not be a defense, and the defendant may not assert, that the artificial intelligence autonomously caused the harm to the plaintiff.",
+          "note": "Chaptered bill authored by Krell bars an 'AI acted autonomously' defense, keeping developers/users legally responsible for AI-caused harm.",
+          "record_kind": "author",
+          "actor_quote": "AB 316, Krell.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 3,
+      "v6_blank_reason": null,
+      "rests_on": ["165e3a2a-d3e9-5521-a288-ef059dc09f19"],
+      "reasoning": "AB 316, authored by Krell and signed October 13, 2025, adds Civil Code Section 1714.46(b), providing that a defendant who 'developed, modified, or used' AI 'may not assert' that the AI 'autonomously caused the harm to the plaintiff' as a defense. This matches rung 3's text, 'Hold AI developers legally responsible when their systems cause harm,' and excludes the other rungs, which turn on freedom from interference, voluntary guidelines, pre-deployment testing, or approval requirements.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

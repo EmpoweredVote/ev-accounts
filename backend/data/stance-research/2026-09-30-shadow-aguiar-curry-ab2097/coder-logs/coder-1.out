@@ -1,0 +1,17 @@
+Wrote `labels/coder-1.json` — one row, `codebook_version` 0.4, `coder_slot` 1.
+
+**transportation-priorities → BLANK `no-evidence`**
+
+Both passages are her own act on one instrument, AB 2097 (2021-2022):
+
+| | vote page (`9e2d72ba`) | bill text (`1a03cbce`) |
+|---|---|---|
+| V1 / V3 | `own-act` / `record` (`vote`) | `own-act` / `record` (`vote`) |
+| `actor_quote` | `Ayes Aguiar-Curry, Alvarez, Bennett` | `null` |
+| `tally_quote` | `Ayes Count 52 Noes Count 17` | `null` |
+| `provision_quote` | `null` | the §65863.2(a) parking-minimum prohibition |
+| V2 / V4 / V5 | `adjacent` / `off-axis` / `in-term` | same |
+
+The reasoning: this ladder asks where government should *focus transportation investment*, and AB 2097 lifts a local regulatory mandate on private developers near transit. It directs no spending and names no investment priority, so it doesn't separate "pedestrian infrastructure, cycling networks, and public transit over new road capacity" from "road capacity and traffic flow" — V2 `adjacent`, and no passage survives to carry a chair. The rung-5 parking clause is about parking as the foundation of local transportation policy, not about parking minimums, so I did not treat the bill as evidence against it either.
+
+`needs_source` asks for a transportation funding roll call (or her own words on where transportation money should go) — the tally is 52–17, well past the near-unanimous threshold, so the vote itself is usable if a genuinely on-question instrument turns up.

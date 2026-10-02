@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 2,
+      "split_units": 2,
+      "alpha": -0.25,
+      "examples": [
+        {
+          "unit": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|43d9e981-f25e-471f-ae92-b8e2a700900c#d406e55d-80fd-5708-be95-8b2bd4399548",
+          "values": [
+            "on-question",
+            "adjacent",
+            "on-question"
+          ]
+        },
+        {
+          "unit": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|43d9e981-f25e-471f-ae92-b8e2a700900c#2b00b586-74a0-5073-9887-3b6484ae1ae5",
+          "values": [
+            "on-question",
+            "adjacent",
+            "on-question"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v5_time",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v2_relevance"
+  ]
+}

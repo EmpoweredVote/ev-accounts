@@ -1,0 +1,68 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "instrument": "hb2853(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "e9e56d07-1b1d-5bd8-b284-2ea2381fed8f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853#house-third",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "c4059cca-3b4f-51ae-bae8-673e487d5925",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0388.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "instrument": "hb2853(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "c4059cca-3b4f-51ae-bae8-673e487d5925",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0388.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "e9e56d07-1b1d-5bd8-b284-2ea2381fed8f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853#house-third",
+        "profile": "az-azleg-bill-status@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "instrument": "hb2853(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "e9e56d07-1b1d-5bd8-b284-2ea2381fed8f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853#house-third",
+        "profile": "az-azleg-bill-status@2"
+      },
+      {
+        "snapshot_id": "c4059cca-3b4f-51ae-bae8-673e487d5925",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0388.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

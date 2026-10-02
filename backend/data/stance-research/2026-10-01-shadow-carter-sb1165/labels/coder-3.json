@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508",
+      "office_id": "5f95f54d-d57c-4e3b-95ff-611505f721b3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "aff26034-bc87-5198-a773-f0f4ecb5a794",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bill status overview shows House Third Reading passage of SB1165 but lists sponsors (not Carter) and only the aggregate tally, not Carter's individual vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "31-24-5-0-0 PASSED"
+        },
+        {
+          "snapshot_id": "843cab4f-5897-5496-9266-d6872a6ad6ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call on SB1165, a single-subject bill; Carter is the only CARTER listed and voted Y on final passage.",
+          "record_kind": "vote",
+          "actor_quote": "CARTER Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        },
+        {
+          "snapshot_id": "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Enacted A.R.S. 15-120.02(B) is the operative clause Carter's Yes vote enacted; (C) leaves male and coed teams open to all students, excluding a complete ban.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "843cab4f-5897-5496-9266-d6872a6ad6ae",
+        "0586ad93-ef38-5f64-b8f2-651c243a64bd"
+      ],
+      "reasoning": "Carter voted Y on SB1165 (2022)'s House Third Reading, a single-subject bill enacted as A.R.S. 15-120.02, whose operative text states that teams designated for \"females\", \"women\" or \"girls\" \"may not be open to students of the male sex\" while section C leaves male and coed teams open to all students. This matches the rung text requiring transgender athletes to compete only on teams matching their biological sex assigned at birth, and the bill's own text excludes the complete-ban rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

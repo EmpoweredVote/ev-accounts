@@ -1,0 +1,9 @@
+Wrote `coder-1.json` — one row (Tom Lackey / gun-policy), coded BLANK `no-evidence`.
+
+**How it coded:**
+
+- **Two passages, one record group** — AB 2571 (2021-2022). The vote page carries `actor_quote` (Lackey in the Noes list) and `tally_quote` (`Ayes Count 57 Noes Count 15`); the bill text carries the `provision_quote` (the marketing-to-minors prohibition). Both `record` / `vote`.
+- **V5 `in-term`** — the 06/30/22 vote falls in his earlier Assembly term, same legislature, so the V5 option-B ruling makes it in-term for the current seat.
+- **V2 `adjacent` / V4 `off-axis`** is what sinks it. The ladder orders firearms policy along ownership bans, weapon-type bans, universal background checks, and carry rules. AB 2571 regulates *advertising and marketing to minors* — a dimension no rung names. A No vote shows direction against a new firearm restriction, but cannot separate rung 3 from rung 4 from rung 5.
+
+No candidate quotes: neither source contains Lackey's own words. `needs_source` lists the roll calls and statements that would actually reach these rungs (background checks, assault-weapon restrictions, carry permits).

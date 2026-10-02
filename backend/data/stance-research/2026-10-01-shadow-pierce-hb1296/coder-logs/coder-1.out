@@ -1,0 +1,17 @@
+Written: `labels/coder-1.json` — one row, `codebook_version` 0.4, `coder_slot` 1.
+
+**Row: Matt Pierce / gun-policy → BLANK `direction-only`**
+
+| snapshot | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| roll call 382 | own-act | on-question | record / vote | direction-only | in-term |
+| HEA 1296 text | own-act | on-question | record / vote | direction-only | in-term |
+| bill details page | third-party-characterization | adjacent | not-evidence | off-axis | in-term |
+
+Why BLANK rather than a chair:
+
+- **The vote is real and on-question.** `actor_quote` `"Campbell Hatcher Pierce"` from the Nay column, `tally_quote` `"Yea 69 Nay 30 Excused 1 Not Voting 0"` — not near-unanimous (30% opposed), and adopting a conference committee report is a substantive vote, not one of the procedural motions V4.1 lists.
+- **But a No vote names no rung.** The bill is rung-5 content (`"is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana"` — quoted from added text only, with the `[deleted: …]` spans excluded per the amendment-markup rule). Voting against it establishes the side he is on and nothing more: rungs 1, 2 and 3 are all consistent with opposing permitless carry. Seating rung 3 here would be exactly the V4.2 fault — ruling out the other rungs and taking the least extreme one left, which is a tiebreaker, not evidence.
+- **The details page fails V1 for Pierce.** Smaltz authored it; the 48-name co-author list and the three Senate sponsors do not include Pierce, so the page records other members' acts.
+
+`rests_on` is empty, consistent with the BLANK. No quotes — none of the three sources contains Pierce's words, so there was no candidate quote to tier. `needs_source` asks for a firearms instrument he actually sponsored or voted for whose operative section matches a rung, or his own in-cycle words.

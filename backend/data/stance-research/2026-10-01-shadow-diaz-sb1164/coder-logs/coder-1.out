@@ -1,0 +1,8 @@
+Wrote `labels/coder-1.json` — one row (Diaz / abortion), coded **BLANK `direction-only`**.
+
+**Passages (3, all one record group, instrument `SB 1164 (2022)`):**
+- Bill overview — `own-act` / `record` / `sponsor`, `actor_quote: "Diaz (Co-Sponsor)"`
+- House Third Reading roll call — `own-act` / `record` / `vote`, `actor_quote: "DIAZ Y"`, `tally_quote: "Passed 31-26-3-0-0"` (26 of 60 No, so not near-unanimous)
+- Chapter 105 bill text — `own-act` / `record` / `vote`, `provision_quote` = the fifteen-week prohibition; `actor_quote`/`tally_quote` null, since that page prints neither
+
+**Why BLANK:** the act is single-subject and `on-question` (it sets a gestational limit, which is the dimension the rungs order), and it's `in-term` — 2022 falls inside Diaz's 2021–2023 House term. But the fifteen-week line matches no rung's clauses: elective abortion stays lawful past the first trimester, so rung 3 fails; the ban starts well before the second trimester ends, so rung 2 fails; and the act is not a ban with rape/incest exceptions, so rung 4 fails. Choosing the nearest rung would be the tiebreaker V4.2 forbids, so every passage is `direction-only`, `rests_on` is empty, and `needs_source` asks for Diaz's own words on a limit/exception set or a roll call on a measure that does match a rung clause.

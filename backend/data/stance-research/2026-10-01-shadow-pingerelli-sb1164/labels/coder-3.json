@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "office_id": "87c65dff-fa5b-4d7a-a7bc-d78595d2f506",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "f1403cb4-c530-5152-b92d-73f71cebf5b0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Bill text sets a 15-week gestational limit with a narrow medical-emergency exception and no rape/incest exception; it does not itself name Pingerelli but is part of the SB 1164 record with her House vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Pingerelli voting Y on SB 1164.",
+          "record_kind": "vote",
+          "actor_quote": "PINGERELLI Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "89a47096-9e0c-51ea-89fc-ffed87200c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill status overview confirms SB 1164's sponsors (not Pingerelli), the House Third Reading tally, and the 2022 enactment, but gives no individual-member breakdown.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pingerelli voted Y on SB 1164's House Third Reading (passed 31-26-3-0-0), a single-subject law permitting abortion up to fifteen weeks' gestation and thereafter restricting it to a narrowly defined medical emergency, with no exception for rape or incest. This structure does not match 'keep abortion legal through the second trimester, and after that only to protect the mother's health' (the 15-week cutoff falls far short of the second trimester) or 'allow abortion during the first trimester, and after that only to protect the mother's health' (the medical-emergency exception is narrower than a general health exception) or 'ban abortion except in cases of rape, incest, or a serious risk to the mother's life' (SB 1164 permits elective abortion up to 15 weeks, which that rung does not allow). The vote establishes a restrictive direction only, not a specific rung.",
+      "needs_source": [
+        "Pingerelli's own statement or floor explanation of her SB 1164 vote, to resolve which rung (if any) the 15-week cutoff and medical-emergency exception correspond to"
+      ],
+      "quotes": []
+    }
+  ]
+}

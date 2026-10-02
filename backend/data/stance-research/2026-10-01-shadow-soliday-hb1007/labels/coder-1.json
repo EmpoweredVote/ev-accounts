@@ -1,0 +1,54 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-05-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": null,
+          "note": "Bill details page naming Soliday as the author; it prints only the digest, not operative text.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Edmond Soliday",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": "include reimbursement by the large load customer of at least eighty percent (80%) of the project costs reasonably allocable to the large load customer",
+          "note": "Enrolled act text; its large load customer chapter mixes cost reimbursement with expedited review and confidentiality, matching no single rung.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Soliday is listed as \"Authored by: Rep. Edmond Soliday\" on HB 1007 (2025), which creates expedited commission review for utility generation plans and large load customer projects and requires financial assurances that \"include reimbursement by the large load customer of at least eighty percent (80%) of the project costs reasonably allocable to the large load customer\". That cost allocation evidences the \"energy cost-sharing agreements\" clause of the rung \"Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval\", but the act sets no community benefit requirement, its expedited review runs to the utility's generation filings rather than to data center permitting, and its confidentiality and trade secret provisions cut against \"requiring transparency about projected energy demand and rate impacts\". The act never names data centers, and no rung has all of its clauses matched.",
+      "needs_source": [
+        "Indiana House roll call, HB 1007 (2025), final passage or concurrence",
+        "Soliday's own words tying HB 1007 (2025) to data centers (floor statement, committee testimony, or an interview)",
+        "Any Indiana instrument Soliday acted on that names data centers specifically (siting, permitting, community benefit, or residential ratepayer cost allocation)"
+      ],
+      "quotes": []
+    }
+  ]
+}

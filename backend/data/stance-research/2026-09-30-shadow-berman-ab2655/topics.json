@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+    "topic_key": "misinformation",
+    "topic_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+    "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+    "question_number": 29,
+    "title": "Online Misinformation and Content Moderation",
+    "question_text": "What responsibility do platforms and government have in combating online misinformation?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "legally require platforms to remove false information"
+      },
+      {
+        "value": 2,
+        "text": "require platforms to label false content, rather than remove it"
+      },
+      {
+        "value": 3,
+        "text": "encourage voluntary standards for combating misinformation online"
+      },
+      {
+        "value": 4,
+        "text": "protect free speech online and prevent government censorship"
+      },
+      {
+        "value": 5,
+        "text": "ban any government involvement in content moderation decisions"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

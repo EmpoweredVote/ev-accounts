@@ -1,0 +1,12 @@
+Wrote `labels/coder-1.json` — one row, coded BLANK.
+
+**Wicks / minimum-wage → BLANK `direction-only`**
+
+Both snapshots are one record group (AB 1228, 2023-2024), `own-act` / `record` / `vote`, `in-term` (09/14/23, within the term that began 2022-12-05):
+
+- **Vote page** (`d406e55d`) — carries `actor_quote` (`"Ward, Weber, Wicks, Wilson, Wood, Zbur, Robert Rivas"`) and `tally_quote` (`"Ayes Count 53 Noes Count 17"`). 17 of 70 voting is ~24% No, so not `near-unanimous`.
+- **Bill text** (`2b00b586`) — carries the `provision_quote` (the $20 wage plus the council's annual-increase authority); names no voter, so both actor/tally fields are `null` per the V3 record-fields rule.
+
+Why no chair: the bill raises a wage floor, so it fixes a side, but the adjustment mechanism doesn't separate rung 1 from rung 2. The council *may* raise the wage annually, capped at the lesser of 3.5% or CPI-W — discretionary, so not "rises automatically each year," and not made by lawmakers either. It's also a single-sector wage against rungs that order the general wage floor (V4.2 "broader than the instrument," in the ADU sense). Coding a rung here would require the "least extreme rung the evidence supports" tiebreaker, which §0.4(3) forbids.
+
+Two `needs_source` entries: a record on a generally applicable California wage-floor measure, and Wicks's own words on indexing vs. legislative adjustment. No candidate quotes — neither snapshot contains her words.

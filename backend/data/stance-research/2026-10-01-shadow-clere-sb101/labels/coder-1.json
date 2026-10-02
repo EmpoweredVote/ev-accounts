@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "f58ce6de-755d-448f-9c0c-b21f9d386dad",
+      "office_id": "96d9e3b2-b607-4c64-bcbf-e2e0fedb0bf9",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+      "passages": [
+        {
+          "snapshot_id": "9c4adfd3-1e3d-5853-8592-48b6bcf78d5f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015-03-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "Clere is in the Nay list on House 3rd reading of SB 101; a No vote shows opposition to the bill but names no rung.",
+          "record_kind": "vote",
+          "actor_quote": "Brown, C Hale Niezgodski Stemler Clere Kersey Pelath Summers",
+          "tally_quote": "Yea 63 Nay 31 Excused 5 Not Voting 0"
+        },
+        {
+          "snapshot_id": "04de07e0-e878-5450-9dc7-3f3f888df866",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": "A governmental entity may substantially burden a person's exercise of religion only if the governmental entity demonstrates that application of the burden to the person: (1) is in furtherance of a compelling governmental interest; and (2) is the least restrictive means of furthering that compelling governmental interest.",
+          "note": "Enrolled text of the instrument Clere voted against; single subject (religious freedom restoration), and the provision he opposed is the exemption standard itself.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "80556c21-2b53-5b4d-9e90-6741313d9dfd",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2015",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "Bill detail page and digest; Clere appears nowhere among the authors, co-authors or sponsors, so it records no act of his.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Clere voted Nay on SB 101 (2015), a single-subject religious freedom restoration act whose operative section lets a governmental entity burden religious exercise only where that is \"the least restrictive means of furthering that compelling governmental interest.\" The No vote excludes the rung that would \"protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs,\" but it does not separate \"prohibit religious exemptions from civil rights and anti-discrimination laws\" from \"protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing\" or from \"balance protecting religious practices with maintaining equal treatment under the law for all citizens.\" Ruling out the other rungs is not evidence for the one left (V4.2).",
+      "needs_source": [
+        "Clere's own words on SB 101 (2015) — floor statement, explanation of vote, or press release — tying his Nay to one rung's clauses",
+        "An Indiana instrument Clere authored, sponsored or voted on that sets anti-discrimination coverage in employment and housing, to separate rungs 1, 2 and 3"
+      ],
+      "quotes": []
+    }
+  ]
+}

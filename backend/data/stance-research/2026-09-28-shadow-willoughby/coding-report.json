@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8edebfca-2e35-4424-85f8-f3ad498a2890|74f6255e-04a3-481e-9a90-9fabcd9697f0|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_key": "healthcare",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Willoughby's own words on healthcare coverage (first-person issue page, questionnaire, or debate answer) addressing who should be covered and by whom",
+          "An AZ roll call or sponsorship on an AHCCCS eligibility, Medicaid expansion, or private-insurance regulation instrument, 57th Legislature",
+          "Willoughby's own votes, sponsorship, or statements on health insurance coverage, Medicaid/AHCCCS eligibility, or private insurance regulation in Arizona"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "8edebfca-2e35-4424-85f8-f3ad498a2890|74f6255e-04a3-481e-9a90-9fabcd9697f0|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "requests": [
+        "Willoughby's own words on healthcare coverage (first-person issue page, questionnaire, or debate answer) addressing who should be covered and by whom",
+        "An AZ roll call or sponsorship on an AHCCCS eligibility, Medicaid expansion, or private-insurance regulation instrument, 57th Legislature",
+        "Willoughby's own votes, sponsorship, or statements on health insurance coverage, Medicaid/AHCCCS eligibility, or private insurance regulation in Arizona"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

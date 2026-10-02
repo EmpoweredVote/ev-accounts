@@ -1,0 +1,13 @@
+Coded and written to `labels/coder-1.json`.
+
+**Row: J.D. Mesnard / taxes → chair 4**
+
+Three passages, all on SB 1828 (2021):
+
+- **Bill overview** (`69da793b`) — `own-act` / `record` / `sponsor`, actor_quote `Sponsors: Mesnard (Prime with permission of Rules)`. Coded `chair-shaped`: V4.1 says sponsorship evidences the bill as filed.
+- **Chapter 412 text** (`9a99df4f`) — carries the `provision_quote` (the § 43-1011(9) flat-rate sentence), the page that prints the provision.
+- **Third-reading vote page** (`420ed0d1`) — `MESNARD Y`, `Passed 16-14-0-0-0`. Coded `multi-subject`: the bill is titled "omnibus; taxation", appropriates monies, and also rewrites unemployment benefit amounts and duration, so under the vote ladder the bare vote shows direction at most. **Not** in `rests_on`.
+
+The chair rests on sponsorship + provision text. Rung 5 is excluded by the bill's own operative content rather than by the "least extreme rung" tiebreaker — SB 1828 raises urban revenue sharing 15%→18%, raises the weekly UI benefit cap $240→$320, and adds new credits, so "shrink what government does" is contradicted, not merely unevidenced. Rung 3 is excluded because the bill replaces the whole four-bracket schedule rather than granting narrow relief.
+
+Two `needs_source` entries: Mesnard's own words tying his act to the rate provision (would settle the omnibus concern on the vote), and the as-introduced text (the only text snapshot is the Senate Engrossed version, and the vote page says "Amended").

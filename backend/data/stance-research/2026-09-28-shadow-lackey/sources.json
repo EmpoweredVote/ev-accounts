@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-09-28-shadow-lackey",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB2571",
+      "source_kind": "public-record",
+      "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e",
+      "office_id": "54a4ad72-bcd1-4fe1-b684-bfa7e72152fc",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "AB 2571 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2021-ab2571-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202120220AB2571",
+      "source_kind": "public-record",
+      "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e",
+      "office_id": "54a4ad72-bcd1-4fe1-b684-bfa7e72152fc",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "AB 2571 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2021-ab2571-votes.txt"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+Wrote `coder-1.json`.
+
+**John Laird — climate-change: chair 1**
+
+One passage, one snapshot (the chaptered text of SB 1020, 2021–2022):
+
+- **V1** `own-act` — the digest author line "SB 1020, Laird. Clean Energy, Jobs, and Affordability Act of 2022."
+- **V2** `on-question` — the ladder asks how much government should do to expand clean energy; the bill's operative sections set the state's clean-electricity supply requirements and dates.
+- **V3** `record`, `record_kind: author`, instrument `SB 1020 (2021-2022)`. No `tally_quote` — the group is an authorship record, not a vote, and the snapshot is the bill text, which prints no roll call.
+- **V4** `chair-shaped` — amended §454.53 adds dated targets (90% by 2035, 95% by 2040) and new §454.59 requires every state agency to hit 100% zero-carbon procurement by December 31, 2035. That is both clauses of rung 1: a required shift, with firm deadlines.
+- **V5** `in-term` — chaptered 2022-09-16, within the term beginning 2020-12-07.
+
+Rungs 2 and 3 are excluded on the bill's face: the digest states `Appropriation: no`, there is no subsidy or tax credit, and nothing in it changes a permitting rule. Rungs 4 and 5 run the other way.
+
+No quotes: the snapshot is statutory text, so there is no first-person span to tier. `needs_source` is empty — authorship is itself a record act, so no roll call is required to seat the chair.

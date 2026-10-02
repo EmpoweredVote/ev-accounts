@@ -1,0 +1,16 @@
+Done. Wrote `coder-1.json` — one row, `education-curriculum`, coded **BLANK / `direction-only`**.
+
+**How it codes out:**
+
+| Passage | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| Bill overview (sponsors) | own-act | on-question | record / sponsor | direction-only | in-term |
+| Chapter 418 bill text | own-act | on-question | record / sponsor | direction-only | in-term |
+| House Third Reading vote | own-act | on-question | record / vote | **near-unanimous** | in-term |
+
+**Why no chair:**
+- **V5** — HB2241 is 2021, before the current term, but it's the Arizona House in both cases, so the V5 0.4 ruling (same legislature) makes it `in-term`. Code still needs to check the earlier term is on file; the roster shows three Hernandezes, so `actor_quote` carries the initial (`HERNANDEZ A Y`).
+- **V4** — the operative section adds Holocaust-and-genocides instruction to the required course of study. Rung 2's clause set is "racism, injustice, **and** diverse identities"; the bill reaches injustice only, so it's broader-than-the-instrument in reverse (V4.2). It also doesn't exclude rung 3 or 4.
+- The tally settles it: 59-0, 0% No. `near-unanimous` — this instrument separates no member of that House, so it can't be what distinguishes her position on a contested-curriculum ladder.
+
+`rests_on` is empty, consistent with the BLANK. `needs_source` asks for the two things that would actually decide it: her own words on race/gender curriculum, or her act on a *divided* curriculum bill. No quotes surfaced — all three snapshots are statutory and roster text with no first-person words, so nothing is a candidate for V7/V8.

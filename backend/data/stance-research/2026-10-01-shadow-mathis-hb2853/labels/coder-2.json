@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "a7675f41-2e50-413c-9864-8a64969f47f9",
+      "office_id": "60ec357f-3c1b-4b58-82e7-447dd47bc111",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "c4059cca-3b4f-51ae-bae8-673e487d5925",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "Bill text creates universal ESA eligibility, but per the annex a No vote alone does not separate the non-universal rungs.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e9e56d07-1b1d-5bd8-b284-2ea2381fed8f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Mathis voted N on final passage of HB2853.",
+          "record_kind": "vote",
+          "actor_quote": "MATHIS N",
+          "tally_quote": "Passed 31-26-3-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "HB2853 (2022) made ESA eligibility universal for any student eligible to enroll in Arizona public school (Sec. 2, §15-2401.01), matching rung 5's universal-eligibility clause. Mathis voted N on House Third Reading final passage (31-26-3-0-0). The topic annex states a No vote alone on an expansion bill is direction-only and does not separate rung 1 from rung 2, so it likewise cannot choose among rungs 1-4 here.",
+      "needs_source": [
+        "Mathis's own words (statement or speech) on vouchers/ESAs that could narrow which non-universal rung he holds",
+        "Any Mathis sponsorship or floor vote on a narrower (repeal, income-cap, or means-tested) voucher bill"
+      ],
+      "quotes": []
+    }
+  ]
+}

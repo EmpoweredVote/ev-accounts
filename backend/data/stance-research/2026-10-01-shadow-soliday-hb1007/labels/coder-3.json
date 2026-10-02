@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-05-06",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": null,
+          "note": "Bill details page names Soliday as author of a bill establishing expedited utility review procedures for large-load generation projects.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Edmond Soliday",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-05-06",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": "The commission may expedite, in accordance with this chapter, the review of filings and submittals made by an energy utility to meet the energy infrastructure and generation resource needs of customers.",
+          "note": "Operative text creates an expedited, deemed-approved-on-deadline commission review track for utility generation-resource and large-load-customer filings.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-05-06",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": "Provide a load growth forecast for a minimum of five (5) years from the date of the petition.",
+          "note": "Operative text requires multi-year load-growth forecast disclosure as part of the expedited petition, i.e. transparency about projected energy demand.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+        "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69"
+      ],
+      "reasoning": "As author of HB 1007 (2025), Soliday created an expedited generation resource plan process with commission deemed-approval deadlines for utilities serving large electricity loads, while requiring multi-year load growth forecasts and ratepayer-impact disclosures, matching the rung text 'encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts.' The bill's substantial financial-assurance and existing-customer cost protections for large-load projects exclude 'welcoming data center investment with minimal regulatory barriers,' and the deemed-approval speed and absence of any community-benefit precondition exclude the case-by-case approval gate described in rung 3.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

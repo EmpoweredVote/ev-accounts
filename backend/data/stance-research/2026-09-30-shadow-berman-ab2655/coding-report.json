@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4cfacf31-d285-40ac-8373-e350912fddda|6bb9a929-fd7a-4fee-b28e-4faa7c3b95de|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Berman's own statement (floor speech, press release, or author's statement) explaining whether the removal mandate or the labeling mandate reflects his primary position, to resolve the rung 1 vs rung 2 conflict"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4cfacf31-d285-40ac-8373-e350912fddda|6bb9a929-fd7a-4fee-b28e-4faa7c3b95de|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "requests": [
+        "Berman's own statement (floor speech, press release, or author's statement) explaining whether the removal mandate or the labeling mandate reflects his primary position, to resolve the rung 1 vs rung 2 conflict"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

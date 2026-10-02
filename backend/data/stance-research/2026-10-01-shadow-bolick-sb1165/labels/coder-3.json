@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "bdfa6be5-27b0-5508-99cb-15186700b235",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Enacted statute text (Save Women's Sports Act) bars male-sex students from girls' teams while leaving boys'/coed teams open, matching rung 4.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "58432c29-d9e9-516c-aabb-7461a3bb55c5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bolick listed as a co-sponsor of SB1165 as a State Representative, during the legislature's 2022 session.",
+          "record_kind": "sponsor",
+          "actor_quote": "Bolick (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "73b9880f-24d0-5958-bfd1-5a221ad5bcd5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call: Bolick voted Yea on final passage of this single-subject bill.",
+          "record_kind": "vote",
+          "actor_quote": "BOLICK Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "bdfa6be5-27b0-5508-99cb-15186700b235",
+        "58432c29-d9e9-516c-aabb-7461a3bb55c5",
+        "73b9880f-24d0-5958-bfd1-5a221ad5bcd5"
+      ],
+      "reasoning": "As a State Representative, Bolick co-sponsored SB1165 (2022) and voted Yea on its House Third Reading passage (31-24-5-0-0); the enacted single-subject statute designates school teams by biological sex and bars male-sex students from girls' teams while leaving boys'/coed teams open, matching the rung text 'require transgender athletes to compete only on teams matching their biological sex assigned at birth' and excluding the other rungs. Her House service (2019-2023) is the same legislature as her current Senate seat, so the record counts as in-term.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

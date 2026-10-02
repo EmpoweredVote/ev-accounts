@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-09-28-shadow-weninger",
+  "seat": {
+    "politician_id": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d",
+    "full_name": "Jeff Weninger",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "2d574e6c-c30a-4897-8995-428b4968c690",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2025-01-06",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": null,
+        "start_precision": "unknown",
+        "term_end": "2023-01-09"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "question_text": "How should government attract businesses and support economic development?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Don't give companies tax breaks or subsidies. Invest in public services and infrastructure so businesses want to come on their own."
+        },
+        {
+          "value": 2,
+          "text": "Help small and local businesses grow, but don't offer subsidies to attract large outside companies."
+        },
+        {
+          "value": 3,
+          "text": "Offer incentives to attract businesses, but only if they commit to good wages and local hiring — and pay the money back if they don't deliver."
+        },
+        {
+          "value": 4,
+          "text": "Offer large tax breaks and infrastructure to attract major employers, but keep limits and pass on deals that cost too much."
+        },
+        {
+          "value": 5,
+          "text": "Offer the largest incentives to attract any large employer, with no conditions or spending limits."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

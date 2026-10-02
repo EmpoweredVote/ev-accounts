@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "a506b945-4177-56b7-b9b4-733b5aaa1d05",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 960 (2023-2024)",
+          "provision_quote": "the department shall commit to specific 4-year targets to incorporate complete streets facilities, including pedestrian and bicycle facilities that are not otherwise required under the federal Americans with Disabilities Act (42 U.S.C. Sec. 12101 et seq.), into projects funded by the state highway operation and protection program, including on entrances and exits that interact with local streets.",
+          "note": "Requires complete-streets (bike/ped/transit) elements be added into SHOPP highway maintenance projects but is silent on new road-capacity investment levels.",
+          "record_kind": "author",
+          "actor_quote": "SB 960, Wiener.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 960 (2023-2024), authored by Wiener and signed into law, requires the department to incorporate pedestrian, bicycle, and transit priority facilities into SHOPP maintenance projects and adopt a transit priority policy, which shows a direction toward multimodal investment. But the bill never addresses new road-capacity investment or sets relative investment levels between roads and multimodal options, so it cannot separate 'maintain roads while selectively adding transit connections and pedestrian improvements where density supports it' from 'invest equally in road capacity and in multimodal options' or from prioritizing multimodal 'over new road capacity.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

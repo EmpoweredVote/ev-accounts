@@ -1,0 +1,70 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Soliday is printed in the Yea column of Roll Call 382 adopting the conference committee report, a substantive vote on the bill's final text, not a procedural motion.",
+          "record_kind": "vote",
+          "actor_quote": "Y EA - 69 Abbott Frye Lucas Slager Baird Goodrich Lyness Smaltz Barrett Gutwein Manning Snow Bartels Heaton May Soliday",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "3a61977f-28e8-584b-a0d7-0937aefcabfe",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana",
+          "note": "The enrolled act abolishes the state carry-license mandate and repeals IC 35-47-2-2, IC 35-47-2-2.1 and IC 35-47-2-24, with the remaining sections conforming cross-references plus a firearms theft penalty, so it is single-subject rather than omnibus.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2bf220a9-505d-5996-9daa-5f252d65e69a",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2022",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "The details page lists the author and co-authors and does not include Soliday, so it records other members' acts and no act of his, and it prints no operative text.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+        "3a61977f-28e8-584b-a0d7-0937aefcabfe"
+      ],
+      "reasoning": "Soliday voted Yea on the conference committee report for HB 1296 (2022), a firearms bill whose operative section provides that an adult at least eighteen years of age and not otherwise prohibited \"is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana\", and which repeals IC 35-47-2-2, IC 35-47-2-2.1 and IC 35-47-2-24. That matches both clauses of the rung reading \"Repeal major gun restrictions and let adults carry a firearm without a permit\", and it exceeds the rung that would \"at most loosen rules on carrying, such as honoring permits across state lines\", because it eliminates the permit rather than extending it. The 69-30 tally is well outside the near-unanimous threshold, and the vote adopted the bill's final enrolled text rather than a procedural motion.",
+      "needs_source": [
+        "Soliday's own words on HB 1296 (2022) or on handgun carry licensing, for a candidate quote and for a check against later statements"
+      ],
+      "quotes": []
+    }
+  ]
+}

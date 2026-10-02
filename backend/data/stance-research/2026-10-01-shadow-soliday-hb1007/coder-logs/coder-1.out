@@ -1,0 +1,15 @@
+Written to `labels/coder-1.json` — one row, two passages, no quotes.
+
+**Row: Soliday × data-centers → BLANK `compound-partial`**
+
+Both passages are the same record (HB 1007 (2025), `record_kind: author`, `own-act`, `in-term`), split per the codebook's two-page pattern:
+- **Details page** carries `actor_quote: "Authored by: Rep. Edmond Soliday"`, `provision_quote: null` (it prints only a digest).
+- **Enrolled act** carries the `provision_quote` (the 80% reimbursement clause), `actor_quote: null`. No `tally_quote` on either — the instrument group is `author`, not `vote`.
+
+Why no chair:
+- **Rung 2** ("any … costs") is excluded by the text itself: the act requires *at least 80%*, not all, of allocable project costs.
+- **Rung 3** is compound and partial — "energy cost-sharing agreements" is squarely met, but there is no community benefit requirement anywhere in the act.
+- **Rung 4** is compound and partial — the expedited review runs to the *utility's* generation filings (EGR plans, large load customer projects), not to data center permitting, and Sec. 26's confidentiality/trade-secret and NDA provisions run against "requiring transparency about projected energy demand and rate impacts".
+- **Rung 5** is excluded: IURC review, financial assurances and existing-customer protections are not "minimal regulatory barriers".
+
+Two things I flagged rather than resolved: the act never uses the words "data center" (its category is "large load customer", defined by megawatts, $500M capital and 50 jobs), and authorship covers the whole act, which also contains an SMR manufacturing tax credit. Neither is fatal on its own — I coded V2 `on-question` because the cost-allocation and approval dimensions are what the rungs differ on — but combined with the unmatched clauses, no rung is established. `needs_source` names the roll call and Soliday's own words on the bill as what would move this.

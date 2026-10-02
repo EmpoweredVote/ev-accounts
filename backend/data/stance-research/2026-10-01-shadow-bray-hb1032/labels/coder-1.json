@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+      "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "0ce045a6-529f-58b0-90cf-d6df5bea213c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Bray is in the Nay column of the Senate third-reading roll call; no other Bray appears in either column.",
+          "record_kind": "vote",
+          "actor_quote": "Bohacek Dernulc Leising Spencer Bray Doriot Mishler Taylor",
+          "tally_quote": "Yea 19 Nay 31"
+        },
+        {
+          "snapshot_id": "0c4d9c30-1bb1-5e8d-8ff7-4936441259d4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "(b) The general assembly may amend the congressional districts 7 established under subsection (a) at a time other than the first 8 regular session of the general assembly convening immediately 9 following the United States decennial census.",
+          "note": "Engrossed bill text printing the operative provisions Bray voted against; the quote is added text, not text inside a [deleted: ] fence.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "39a0b7dd-c690-5fd8-9b89-f2dd41f19e61",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Official bill-details page for the same instrument; it prints the tally and the authors and sponsors, and does not name Bray.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "Roll Call 8: yeas 19, nays 31"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bray voted Nay on HB 1032 (2026), which would have authorized mid-decade amendment of congressional districts by the general assembly, enacted a new 2026 congressional map, and limited judicial review of apportionment challenges; the Senate defeated it 19-31. A No vote names no rung: at most it rules out the party that controls the state legislature without outside interference, and it leaves state legislatures with court oversight to prevent extreme partisan bias and the three commission rungs all unevidenced.",
+      "needs_source": [
+        "Bray's own words on who should draw Indiana's districts - a floor statement, press release or explanation of vote tied to HB 1032 (2026), December 2025",
+        "Any redistricting instrument Bray authored, sponsored or voted on that names a drawing body (citizens' commission, bipartisan commission, legislative committee with supermajority approval), with the Senate roll call"
+      ],
+      "quotes": []
+    }
+  ]
+}

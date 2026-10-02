@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-09-29-shadow-rivas",
+  "seat": {
+    "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+    "full_name": "Robert Rivas",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+    "office_title": "Assembly Member",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "CA",
+        "term_start": "2018-12-03",
+        "start_precision": "day",
+        "term_end": "2022-12-05"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "question_text": "Who should draw electoral district boundaries and how should they be determined?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "independent citizens' commissions with no elected officials involved at any level."
+        },
+        {
+          "value": 2,
+          "text": "independent redistricting commissions with equal representation from both major parties."
+        },
+        {
+          "value": 3,
+          "text": "bipartisan legislative committees with strict rules requiring supermajority approval."
+        },
+        {
+          "value": 4,
+          "text": "state legislatures with court oversight to prevent extreme partisan bias."
+        },
+        {
+          "value": 5,
+          "text": "the party that controls the state legislature without outside interference."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

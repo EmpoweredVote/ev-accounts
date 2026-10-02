@@ -1,0 +1,9 @@
+Wrote `labels/coder-1.json`.
+
+**school-vouchers → rung 5** (universal vouchers), resting on all three snapshots as one instrument group, `HB 2853 (2022)`:
+
+- **Vote page** (`62424757`) — `own-act` / `record` / `vote`; `actor_quote` `WILMETH Y`, `tally_quote` `Passed 31-26-3-0-0` (26 No, so not near-unanimous).
+- **Chapter 388 text** (`008f91a1`) — carries the `provision_quote`: new §15-2401.01 makes "qualified student" include any resident eligible to enroll in a public school in kindergarten or any of grades one through twelve. That is universal eligibility, which separates rung 5 from rung 4's "most families, not all". Avoided the `[deleted: …]` fences entirely; the quoted section is all added text.
+- **Bill overview** (`f0ccf364`) — `sponsor`, `actor_quote` `Wilmeth (Co-Sponsor)`.
+
+V5 is `in-term`: the 2022 act falls in his earlier Arizona House term (ending 2023-01-09), same chamber of the same legislature — the Kavanagh/HB2853 case named in the V5 ruling. Single-subject ESA bill plus its administration appropriation, so V4.1's multi-subject trap doesn't bite. No `own-words` passages are present, so `quotes` is empty and `needs_source` is empty.

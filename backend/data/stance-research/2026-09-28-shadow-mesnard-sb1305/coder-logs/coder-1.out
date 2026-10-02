@@ -1,0 +1,19 @@
+Coded and written to `coder-1.json`.
+
+**Row: J.D. Mesnard / education-curriculum → chair 5**
+
+Three passages, all `own-act` / `on-question` / `record` / `in-term`, one instrument group (`SB 1305 (2023)`):
+
+| snapshot | kind | fields |
+|---|---|---|
+| bill overview | `sponsor` | `actor_quote`: "Sponsors: Mesnard (Prime)" |
+| Senate Third Reading | `vote` | `actor_quote`: "MESNARD Y", `tally_quote`: "Passed 16-12-2-0-0" |
+| engrossed text | `vote` | `provision_quote`: the §15-717.02(A) prohibition |
+
+Reasoning for the chair: prime sponsorship plus an Aye on a single-subject curriculum bill that prohibits instruction promoting listed race/ethnicity concepts, enforced by a complaint process, civil penalties and teacher discipline. That is the prohibition rung, not "keep the curriculum focused on core academics" and not "equal weight" to competing viewpoints. The 16–12 tally clears the near-unanimous bar, and 2023-02-16 is inside the current term.
+
+Two judgment calls worth flagging for the reconciliation pass:
+- **Rung 5 names "race, gender, or sexuality"; SB 1305 covers race/ethnicity only.** I read the rung disjunctively, so the race branch alone satisfies it. A coder reading it conjunctively would go BLANK `compound-partial`.
+- **Rung 5 says "that the community considers divisive"; the bill fixes the banned concepts by statute** rather than by community judgment. I treated that as a difference in who names the concepts, not in what the rung does. Rung 5 is the only rung with a prohibition, so no other rung competes.
+
+The governor's veto (2023-03-09) doesn't bear on either act, and no `own-words` passage was supplied, so `quotes` is empty and `needs_source` is empty — nothing the row needs was named but missing.

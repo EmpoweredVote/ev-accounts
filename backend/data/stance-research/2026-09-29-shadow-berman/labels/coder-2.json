@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+      "office_id": "6bb9a929-fd7a-4fee-b28e-4faa7c3b95de",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "passages": [
+        {
+          "snapshot_id": "32cdd7e9-8990-5258-8fd2-354df120e3f4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1174 (2023-2024)",
+          "provision_quote": "A local government shall not enact or enforce any charter provision, ordinance, or regulation requiring a person to present identification for the purpose of voting or submitting a ballot at any polling place, vote center, or other location where ballots are cast or submitted, unless required by state or federal law.",
+          "note": "Preemption bill decides which level sets ID rules, not what the rule is (H12).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0c047186-c5e8-5f1f-91a9-db79a58c0202",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-08-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1174 (2023-2024)",
+          "provision_quote": null,
+          "note": "Berman voted Aye on this Assembly floor vote for SB 1174, a preemption bill (H12).",
+          "record_kind": "vote",
+          "actor_quote": "Bennett, Berman, Boerner",
+          "tally_quote": "Ayes Count 57 Noes Count 16"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1174 prohibits local governments from requiring identification to vote, which decides which level of government may set an ID rule rather than what identification the state itself should require; per H12 this is adjacent, not on-question, so no passage survives V1-V5 to establish a chair.",
+      "needs_source": ["Berman's own record or statement setting the state's voter ID requirement (photo ID, non-photo ID, or no ID), independent of the SB 1174 local-preemption clause"],
+      "quotes": []
+    }
+  ]
+}

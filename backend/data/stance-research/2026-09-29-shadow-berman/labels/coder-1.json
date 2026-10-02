@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+      "office_id": "6bb9a929-fd7a-4fee-b28e-4faa7c3b95de",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "passages": [
+        {
+          "snapshot_id": "0c047186-c5e8-5f1f-91a9-db79a58c0202",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-08-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1174 (2023-2024)",
+          "provision_quote": null,
+          "note": "Assembly floor page names Berman in the Ayes list and as the member presenting the motion, but prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Addis, Aguiar-Curry, Alvarez, Arambula, Bains, Bauer-Kahan, Bennett, Berman, Boerner, Bonta",
+          "tally_quote": "Ayes Count 57 Noes Count 16"
+        },
+        {
+          "snapshot_id": "32cdd7e9-8990-5258-8fd2-354df120e3f4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1174 (2023-2024)",
+          "provision_quote": "A local government shall not enact or enforce any charter provision, ordinance, or regulation requiring a person to present identification for the purpose of voting or submitting a ballot at any polling place, vote center, or other location where ballots are cast or submitted, unless required by state or federal law.",
+          "note": "Chaptered text page prints the operative section but names no voter, so actor and tally fields stay null for this page of the record.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Berman's only evidenced act is his Aye on SB 1174 (2023-2024), whose operative section bars a local government from enacting or enforcing an identification requirement for voting. That decides which level of government may set an ID rule, not what the state's own rule should be, so it cannot establish \"Require no identification to vote, verifying voters by signature or existing records\" or any other rung of this ladder (codebook V2 preemption rule, H12).",
+      "needs_source": [
+        "A California Assembly roll call, with bill text, on a measure that sets or removes the state's own voter-identification requirement (Elections Code), during Berman's service in either chamber",
+        "Berman's own words answering what identification California should require to vote (questionnaire, debate answer, or first-person issue page)"
+      ],
+      "quotes": []
+    }
+  ]
+}

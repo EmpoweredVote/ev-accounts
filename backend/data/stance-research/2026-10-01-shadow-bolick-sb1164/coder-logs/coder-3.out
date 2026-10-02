@@ -1,0 +1,3 @@
+I've written the coder-3.json file with one row for the abortion topic, based on SB1164 (2022).
+
+Key call: Bolick co-sponsored and voted Y (as a House member) on SB1164's 15-week gestational limit with a medical-emergency-only exception. Per V5's earlier-chamber ruling, this counts as in-term for her current Senate seat. However, 15 weeks doesn't cleanly match either rung 2 ("through the second trimester") or rung 3 ("during the first trimester" — which ends around week 13), and no annex resolves that gap — so I coded it `direction-only` rather than forcing it onto the nearest rung, per the codebook's explicit warning against using "least extreme rung" as a tiebreaker.

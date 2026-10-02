@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "office_id": "d13d9c57-2851-48fb-a1a6-0b181f449453",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "The laws of this state shall be interpreted and construed to acknowledge, on behalf of an unborn child at every stage of development, all rights, privileges and immunities available to other persons, citizens and residents of this state, subject only to the constitution of the United States and decisional interpretations thereof by the United States supreme court.",
+          "note": "Bars sex/race/genetic-abnormality-selective abortion and adds an interpretive personhood clause; sets no trimester/stage legality standard.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call; Lieberman voted N as a House member, within his term through 2021-09-20.",
+          "record_kind": "vote",
+          "actor_quote": "LIEBERMAN N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1457 (2021) bans sex-, race-, and genetic-abnormality-selective abortions, bars abortions at public educational institutions, and adds an interpretive 'unborn child' personhood clause, but it sets no gestational-stage standard for the legality of abortion generally, so it does not separate the ladder's rungs (keep legal at every stage / through second trimester / first trimester / ban with rape-incest-life exceptions / ban with no exceptions). Lieberman's N vote on House Final Reading is his own act and in-term, but both passages are adjacent to the ladder's question, so no passage survives to support a chair.",
+      "needs_source": [
+        "Lieberman's own statement or vote on a single-subject Arizona measure that sets a specific gestational-stage or trimester standard for abortion legality"
+      ],
+      "quotes": []
+    }
+  ]
+}

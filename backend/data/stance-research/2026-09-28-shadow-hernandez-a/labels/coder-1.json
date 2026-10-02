@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "ee4f18cb-a494-55f1-a53d-fcf21882f8d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-07-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2241 (2021, 55th Legislature 1st Regular Session)",
+          "provision_quote": null,
+          "note": "Prime sponsorship of a Holocaust-and-genocides instruction mandate leans toward teaching historical injustice but matches no rung clause for clause.",
+          "record_kind": "sponsor",
+          "actor_quote": "Hernandez A (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a9d948e7-b333-51c9-8523-9debcc4118b2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-07-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2241 (2021, 55th Legislature 1st Regular Session)",
+          "provision_quote": "In adopting the course of study and competency requirements pursuant to sections 15-701 and 15-701.01, the state board of education shall include a requirement that students be taught about the Holocaust and other genocides at least twice between the seventh and TWELFTH grades.",
+          "note": "The operative section adds one historical subject to the required course of study; it names neither racism, nor diverse identities, nor any treatment of contested social topics.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4a0d6404-e229-5af7-a662-6c6d35dbd0f9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-02-04",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "HB 2241 (2021, 55th Legislature 1st Regular Session)",
+          "provision_quote": null,
+          "note": "Third Reading passed 59-0 with no member voting No, so this vote separates no member of the body on this ladder and cannot carry a chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "HERNANDEZ A Y",
+          "tally_quote": "Passed 59-0-0-0-1"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "The only evidence is one instrument, HB 2241 (2021), which Hernandez A prime-sponsored and voted for: it requires that \"students be taught about the Holocaust and other genocides at least twice between the seventh and TWELFTH grades.\" That leans toward teaching historical injustice, but it names neither racism nor diverse identities, so it falls short of \"Teach an honest account of racism, injustice, and diverse identities as part of the core curriculum,\" and it does not exclude \"Keep the curriculum focused on core academics and leave contested social topics to families\" — the House passed it 59-0, so members on every rung voted for it.",
+      "needs_source": [
+        "Hernandez A's own words answering how schools should handle race, gender and history in the curriculum (candidate questionnaire, her own issue page, or a floor statement)",
+        "An Arizona House roll call or sponsorship by Hernandez A on a divided curriculum bill governing instruction on race, gender or sexuality, with the vote page and the bill's operative section"
+      ],
+      "quotes": []
+    }
+  ]
+}

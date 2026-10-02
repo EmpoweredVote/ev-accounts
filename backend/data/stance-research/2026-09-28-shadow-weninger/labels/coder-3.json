@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d",
+      "office_id": "2d574e6c-c30a-4897-8995-428b4968c690",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "passages": [
+        {
+          "snapshot_id": "ab0d1c3c-ed2a-56a4-aaad-bad5d34a850b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2822 (2022)",
+          "provision_quote": "the assessor shall use a valuation factor of two and one-half percent.",
+          "note": "General property-tax depreciation schedule for business personal property; not a targeted attraction incentive, so it is off the ladder's dimension.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a50951ea-62ce-5c70-a61e-bf083097318e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2822 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview shows Weninger as prime sponsor of a general depreciation-schedule bill, signed into law; not an attraction-incentive instrument.",
+          "record_kind": "sponsor",
+          "actor_quote": "Weninger (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3d9fd5e1-db92-594d-bcff-6d7fdf576df8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2822 (2022)",
+          "provision_quote": null,
+          "note": "House final-reading vote on the same general depreciation-schedule bill; the vote does not speak to attracting businesses.",
+          "record_kind": "vote",
+          "actor_quote": "WENINGER Y",
+          "tally_quote": "Passed 35-24-1-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only sources are the sponsorship and final-passage vote on HB 2822 (2022), a bill that adjusts the depreciation schedule used to value business personal property for property tax purposes statewide. It is a general tax-valuation change for existing classified property, not an incentive to attract a large employer, a small/local-business measure, or a conditioned deal of the kind the rungs distinguish, so no passage clears V2 relevance and no chair is evidenced.",
+      "needs_source": [
+        "A statement or record showing whether Weninger supports or opposes targeted business-attraction incentives (e.g., a GPLET deal, a qualified facility tax credit, or a specific employer incentive package) with or without wage/hiring conditions or spending limits."
+      ],
+      "quotes": []
+    }
+  ]
+}

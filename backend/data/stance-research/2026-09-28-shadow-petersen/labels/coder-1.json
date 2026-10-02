@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (55th Legislature, 1st Regular Session, 2021)",
+          "provision_quote": null,
+          "note": "Senate final reading roll call showing his Aye; the page prints no provision text.",
+          "record_kind": "vote",
+          "actor_quote": "PETERSEN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (55th Legislature, 1st Regular Session, 2021)",
+          "provision_quote": null,
+          "note": "Bill overview lists him as a co-sponsor; it prints no operative text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Petersen (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (55th Legislature, 1st Regular Session, 2021)",
+          "provision_quote": "Performs an abortion knowing that the abortion is sought solely because of a genetic abnormality of the child.",
+          "note": "Chaptered text: the act restricts abortion by the reason sought and adds an interpretive personhood section, but sets no gestational limit and no rape/incest/life exception scheme.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "His acts on SB1457 (2021) are real and in-term, but the bill's operative content bars abortions sought for a prohibited reason (\"Performs an abortion knowing that the abortion is sought solely because of a genetic abnormality of the child.\") and adds an interpretive rule that state law be \"interpreted and construed to acknowledge, on behalf of an unborn child at every stage of development, all rights, privileges and immunities available to other persons\"; the act itself states it \"does not create or recognize a right to an abortion and does not make lawful an abortion that is currently unlawful.\" That is a different dimension from the one these rungs order, which is the stage of pregnancy at which abortion stays legal and which exceptions survive a ban — so nothing here chooses between \"allow abortion during the first trimester, and after that only to protect the mother's health\", \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\", and \"ban abortion in all cases, with no exceptions.\"",
+      "needs_source": [
+        "An Arizona Senate or House roll call or sponsorship by Petersen on a bill that sets a gestational limit on abortion (e.g. the 2022 15-week measure), with the vote page and the bill text",
+        "An Arizona roll call or sponsorship by Petersen on a bill that defines abortion exceptions (rape, incest, life of the mother), with the vote page and the bill text",
+        "Petersen's own words answering how the law should handle abortion by stage of pregnancy or by exception (questionnaire, debate answer, or first-person issue page), dated in his current term or the campaign that seated him"
+      ],
+      "quotes": []
+    }
+  ]
+}

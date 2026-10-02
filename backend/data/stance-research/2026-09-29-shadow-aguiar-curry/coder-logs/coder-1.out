@@ -1,0 +1,9 @@
+Wrote `coder-1.json` — one row, `deportation`, coded BLANK `direction-only`.
+
+**Passages (both SB 54, 2017-2018, one record group):**
+- Vote page `e45850e5…` — `own-act` / `record` / `vote`, dated 2017-09-15, in-term (her term began 2016-12-05). Carries `actor_quote` (`Ayes Aguiar-Curry, Arambula, Berman, Bloom`) and `tally_quote` (`Ayes Count 51 Noes Count 26`); 51–26 is not near-unanimous.
+- Bill text `b2056197…` — same instrument, carries the `provision_quote` from Gov. Code § 7284.6(a)(1); `actor_quote`/`tally_quote` null, since that page prints neither.
+
+**Why BLANK:** the California Values Act limits state and local participation in immigration enforcement, which leans against removal but doesn't land on a rung. It isn't "Stop deportations entirely…" — § 7282.5 preserves discretion to cooperate — and it isn't "Only… convicted of serious violent crimes," because the cooperation list reaches theft, fraud, forgery, felony DUI and more. Nothing addresses recent arrivals versus long-settled immigrants, so rung 3 is untouched too. `needs_source` asks for her own in-term words on who should be deported.
+
+One judgment call worth flagging for the reviewer: I coded V2 as `on-question` rather than `adjacent`. SB 54 is arguably close to the H12 preemption case (Durazo / SB 1174), since it partly binds local agencies and says nothing about who the federal government removes. I read its operative sections as a substantive limit on enforcement activity rather than a pure allocation of authority — but if the reviewer reads it as `adjacent`, the row becomes BLANK `no-evidence`. Either way the chair is blank.

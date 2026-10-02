@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "d3110657-375e-516d-9153-509804371df6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-19",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 942 (2023-2024)",
+          "provision_quote": null,
+          "note": "Mandatory AI-content transparency/disclosure law with civil penalties shows support for government oversight of AI but does not match any rung's specific mechanism (voluntary guidelines, harm-based liability, safety testing, or pre-deployment approval).",
+          "record_kind": "author",
+          "actor_quote": "SB 942, Becker.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 942, which Becker authored and which was signed into law in 2024, requires covered AI providers to offer detection tools and content disclosures and imposes civil penalties for violations, showing he favors some government oversight of AI beyond \"allow companies to develop and deploy technology freely.\" But the bill's mechanism is mandatory content-provenance disclosure and penalties for noncompliance, not the safety testing, harm-based liability, or pre-deployment approval clauses that separate the higher rungs, so the passage establishes direction only.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

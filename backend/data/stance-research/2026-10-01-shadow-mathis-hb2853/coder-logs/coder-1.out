@@ -1,0 +1,9 @@
+Wrote `coder-1.json`.
+
+**Row: Christopher Mathis / school-vouchers → BLANK `direction-only`**
+
+- **Vote page (e9e56d07)** — `own-act` / `on-question` / `record` (vote), `MATHIS N` on HB2853, `Passed 31-26-3-0-0`, 2022-06-22. Dated inside his earlier House term (2021-12-09 – 2023-01-09), so `in-term` without needing the V5 cross-chamber rule. Tally is not near-unanimous (26 No).
+- **Chapter text (c4059cca)** — same record, carries the `provision_quote` from new §15-2401.01, the universal-eligibility expansion. `actor_quote`/`tally_quote` null per the per-instrument record rule.
+- **Bill overview (de4a25eb)** — sponsor list and governor action name Toma and 26 co-sponsors, not Mathis → `third-party-characterization` / `not-evidence`.
+
+The chair is blank because the annex rule for rung 2 is explicit: a No on an expansion bill alone is `direction-only` and does not separate "Eliminating voucher programs…" from "Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones." `needs_source` asks for his own act or words on repealing the existing ESA program. No quotes — neither source contains his words.

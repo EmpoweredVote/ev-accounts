@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a|5d39ba29-4d41-4a41-b01c-0c48786c3675|669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Carbone's own words (questionnaire, issue page or floor statement) on rent caps, inclusionary-zoning requirements or affordable-housing mandates",
+          "A record of Carbone acting on Arizona housing subsidy or tax-credit measures (e.g. the Housing Trust Fund or a low-income housing tax credit bill), with bill number and roll call"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a|5d39ba29-4d41-4a41-b01c-0c48786c3675|669cac97-66a6-4087-b036-936fbe62efb3",
+      "requests": [
+        "Carbone's own words (questionnaire, issue page or floor statement) on rent caps, inclusionary-zoning requirements or affordable-housing mandates",
+        "A record of Carbone acting on Arizona housing subsidy or tax-credit measures (e.g. the Housing Trust Fund or a low-income housing tax credit bill), with bill number and roll call"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

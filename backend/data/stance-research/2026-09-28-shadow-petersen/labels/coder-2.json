@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Final Senate vote on SB1457; the bill's content does not set a general gestational-stage rule the ladder differs on.",
+          "record_kind": "vote",
+          "actor_quote": "PETERSEN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Bill history lists Petersen as co-sponsor of SB1457, which does not address the ladder's gestational-stage dimension.",
+          "record_kind": "sponsor",
+          "actor_quote": "Petersen (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "A facility that is run by or that operates on the property of a public educational institution may not Perform or provide an abortion, unless the abortion is necessary to save the life of the woman having the abortion.",
+          "note": "Operative clauses ban sex/race/genetic-abnormality-selective abortion and restrict abortion at public-school facilities; neither sets a general stage-of-pregnancy rule.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1457 (2021), which Petersen co-sponsored and voted Yea on at Final Reading, bans abortions sought because of the child's sex, race, or a genetic abnormality, adds informed-consent and clinic regulations, and bars abortion at public-educational-institution facilities except to save the mother's life. None of this establishes a general rule for when abortion is legal or banned across the stages of pregnancy, which is the question the five rungs differ on, so no passage is on-question.",
+      "needs_source": [
+        "Petersen's own vote, sponsorship, or statement on a bill or policy that sets a general gestational limit or exception structure for abortion (e.g., a bill banning abortion after a set point in pregnancy, a total ban, or a statement on rape/incest/life exceptions)."
+      ],
+      "quotes": []
+    }
+  ]
+}

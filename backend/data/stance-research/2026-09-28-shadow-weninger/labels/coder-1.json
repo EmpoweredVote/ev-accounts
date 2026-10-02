@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d",
+      "office_id": "2d574e6c-c30a-4897-8995-428b4968c690",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "passages": [
+        {
+          "snapshot_id": "a50951ea-62ce-5c70-a61e-bf083097318e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2822 (2022)",
+          "provision_quote": null,
+          "note": "Prime sponsorship of a statewide personal-property depreciation change, not an incentive offered to attract a business.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Weninger (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ab0d1c3c-ed2a-56a4-aaad-bad5d34a850b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2822 (2022)",
+          "provision_quote": "4. For personal property that is initially classified during or after tax year 2022 as class one, paragraph 8, 9, 10 or 13 pursuant to section 42-12001 personal property that is initially classified during or after tax year 2022 as class two (P) pursuant to section 42-12002 and personal property that is acquired during or after tax year 2022 and initially classified during or after tax year 2022 as class six pursuant to section 42-12006, paragraph 2 or 3, the assessor shall use a valuation factor of two and one-half percent.",
+          "note": "The operative clause sets one depreciation factor for all qualifying personal property; it names no employer, no deal and no conditions.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3d9fd5e1-db92-594d-bcff-6d7fdf576df8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2822 (2022)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call showing his Aye; 24 No votes, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "WENINGER Y",
+          "tally_quote": "Passed 35-24-1-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only instrument in the sources, HB 2822 (2022), changes the depreciation factor the assessor applies to business personal property across the state — \"the assessor shall use a valuation factor of two and one-half percent\" — which is general tax policy, not an offer of \"incentives to attract businesses\" or \"large tax breaks and infrastructure to attract major employers\", the dimension every rung on this ladder turns on. Because it neither offers nor withholds a deal to a particular employer, it also cannot evidence rung 1's \"Don't give companies tax breaks or subsidies. Invest in public services and infrastructure so businesses want to come on their own.\" No passage survives V2, so nothing can support a chair.",
+      "needs_source": [
+        "Weninger's own act on an Arizona business-attraction incentive instrument (sponsorship or roll call on a qualified-facilities / data-center / relocation tax credit or abatement bill), 55th-57th Legislatures",
+        "Weninger's own words answering how government should attract businesses (first-person issue page, questionnaire answer, or debate answer), current term or the 2024 campaign"
+      ],
+      "quotes": []
+    }
+  ]
+}

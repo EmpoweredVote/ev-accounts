@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "178470c3-94ea-442a-a558-7b3c841ce858|f04e0b05-9d07-4f0d-b4a9-c9dd784545fe|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Kolodin's own words answering whether platforms should be required to remove or label false content online (questionnaire item, debate answer, or first-person issue page)",
+          "Kolodin's own words or a named instrument on government involvement in platform content-moderation decisions (e.g. an Arizona bill restricting state officials from requesting takedowns)",
+          "Kolodin's own statement, vote, or bill addressing platform duties to remove or label online misinformation, or government content-moderation/censorship policy generally"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "178470c3-94ea-442a-a558-7b3c841ce858|f04e0b05-9d07-4f0d-b4a9-c9dd784545fe|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "requests": [
+        "Kolodin's own words answering whether platforms should be required to remove or label false content online (questionnaire item, debate answer, or first-person issue page)",
+        "Kolodin's own words or a named instrument on government involvement in platform content-moderation decisions (e.g. an Arizona bill restricting state officials from requesting takedowns)",
+        "Kolodin's own statement, vote, or bill addressing platform duties to remove or label online misinformation, or government content-moderation/censorship policy generally"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

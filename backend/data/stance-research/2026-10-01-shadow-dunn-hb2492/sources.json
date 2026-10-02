@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-01-shadow-dunn-hb2492",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492",
+      "source_kind": "public-record",
+      "politician_id": "ebef00e8-7722-4e9b-b5dc-ef95a41a9a40",
+      "office_id": "2cd14bdb-de24-47b9-b5f7-02afa4038533",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2492 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-hb2492-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492#house-third",
+      "source_kind": "public-record",
+      "politician_id": "ebef00e8-7722-4e9b-b5dc-ef95a41a9a40",
+      "office_id": "2cd14bdb-de24-47b9-b5f7-02afa4038533",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2492 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-hb2492-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+      "source_kind": "public-record",
+      "politician_id": "ebef00e8-7722-4e9b-b5dc-ef95a41a9a40",
+      "office_id": "2cd14bdb-de24-47b9-b5f7-02afa4038533",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2492 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

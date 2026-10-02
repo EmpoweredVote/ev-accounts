@@ -1,0 +1,12 @@
+Written: `labels/coder-1.json` — one row, one passage, BLANK `direction-only`.
+
+**The passage (SB 7, enrolled text):**
+- V1 `own-act` — "Introduced by Senator McNerney"
+- V2 `on-question` — it sets the degree of government oversight over AI deployment, including explicitly in hiring
+- V3 `record` / `record_kind: author`, instrument `SB 7 (2025-2026)`; no `tally_quote` (an authorship group, not a vote)
+- V4 `direction-only`
+- V5 `in-term` — introduced 2024-12-02, the first day of his term
+
+**Why BLANK rather than a rung:** rung 4 is the tempting one because the ladder names hiring, but its operative clause is *safety testing before use*, and SB 7's pre-use obligation is a written notice (§1522) plus use prohibitions and human review (§1524). Rung 3's clause is liability for *AI developers*; SB 7's §1532 enforcement and $500 penalty run against employers who deploy an ADS. Rung 5 requires pre-deployment government approval, which the bill has nowhere. Seating rung 4 anyway would be the V4.2 fault of ruling out the other rungs and taking what's left with its clause unmatched.
+
+Three items in `needs_source`: his own words on pre-deployment safety testing in high-stakes areas, anything on developer (not deployer) liability, and the Senate roll call for the September 12, 2025 passage.

@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d|2d574e6c-c30a-4897-8995-428b4968c690|eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Weninger's own act on an Arizona business-attraction incentive instrument (sponsorship or roll call on a qualified-facilities / data-center / relocation tax credit or abatement bill), 55th-57th Legislatures",
+          "Weninger's own words answering how government should attract businesses (first-person issue page, questionnaire answer, or debate answer), current term or the 2024 campaign",
+          "Weninger's own sponsorship, vote, or statement on a bill or program that offers a tax break, subsidy, or infrastructure incentive specifically to attract a business or major employer, including whether it carries wage/hiring conditions, a clawback, or spending limits",
+          "A statement or record showing whether Weninger supports or opposes targeted business-attraction incentives (e.g., a GPLET deal, a qualified facility tax credit, or a specific employer incentive package) with or without wage/hiring conditions or spending limits."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d|2d574e6c-c30a-4897-8995-428b4968c690|eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "requests": [
+        "Weninger's own act on an Arizona business-attraction incentive instrument (sponsorship or roll call on a qualified-facilities / data-center / relocation tax credit or abatement bill), 55th-57th Legislatures",
+        "Weninger's own words answering how government should attract businesses (first-person issue page, questionnaire answer, or debate answer), current term or the 2024 campaign",
+        "Weninger's own sponsorship, vote, or statement on a bill or program that offers a tax break, subsidy, or infrastructure incentive specifically to attract a business or major employer, including whether it carries wage/hiring conditions, a clawback, or spending limits",
+        "A statement or record showing whether Weninger supports or opposes targeted business-attraction incentives (e.g., a GPLET deal, a qualified facility tax credit, or a specific employer incentive package) with or without wage/hiring conditions or spending limits."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

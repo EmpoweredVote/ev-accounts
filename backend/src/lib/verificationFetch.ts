@@ -387,7 +387,7 @@ async function fetchRobotsRules(origin: string): Promise<RobotsRule[] | null> {
     // caller fails open, except for a known-disallow host.
     if (res.status === 404 || res.status === 410) return [];
     if (!res.ok) return null;
-    const body = await res.text();
+    const body = await decodeHtmlBody(res);
     return parseRobotsForAgent(body, EMPOWERED_VOTE_UA_TOKEN);
   } catch {
     return null; // unreachable / timeout → could not read it
@@ -406,7 +406,7 @@ export async function fetchViaHttp(url: string): Promise<string> {
     },
   });
   if (!res.ok) throw new Error('HTTP ' + res.status);
-  const body = await res.text();
+  const body = await decodeHtmlBody(res);
   const ctype = res.headers.get('content-type') ?? '';
   return ctype.includes('html') ? htmlToArticleOrText(body, url) : body.replace(/\s+/g, ' ').trim();
 }
@@ -485,7 +485,7 @@ async function fetchViaWaybackCdx(url: string, fetchImpl: FetchLike): Promise<st
   if (!res.ok) return null;
   // Pass the ORIGINAL url (not the archive wrapper) so the non-article guard in
   // the extractor reasons about the real document.
-  const text = htmlToArticleOrText(await res.text(), url);
+  const text = htmlToArticleOrText(await decodeHtmlBody(res), url);
   return text || null;
 }
 
@@ -523,7 +523,7 @@ async function fetchViaWaybackAvailable(url: string, fetchImpl: FetchLike): Prom
     if (!res.ok) return null;
     // Pass the ORIGINAL url (not the archive.org wrapper) so the non-article
     // guard in extractArticleText reasons about the real document.
-    return htmlToArticleOrText(await res.text(), url);
+    return htmlToArticleOrText(await decodeHtmlBody(res), url);
   } catch {
     return null;
   }
@@ -624,7 +624,7 @@ async function fetchRawCapture(captureUrl: string, fetchImpl: FetchLike): Promis
     });
     if (!res.ok) return null;
     if (!(res.headers.get('content-type') ?? '').includes('html')) return null;
-    const html = await res.text();
+    const html = await decodeHtmlBody(res);
     return html ? { html, via: 'wayback', fetchedUrl: captureUrl } : null;
   } catch {
     return null;
@@ -685,7 +685,7 @@ export async function fetchRawHtmlViaHttp(
   }
   const ctype = res.headers.get('content-type') ?? '';
   if (!ctype.includes('html')) throw new NotHtmlError(url, ctype);
-  return { html: await res.text(), via: 'live', fetchedUrl: finalUrl };
+  return { html: await decodeHtmlBody(res), via: 'live', fetchedUrl: finalUrl };
 }
 
 /** Injectable tiers for {@link fetchRawHtml}. Defaults are the real network paths. */
@@ -850,4 +850,20 @@ export async function fetchForVerification(url: string): Promise<string> {
   } finally {
     await session.close();
   }
+}
+
+/**
+ * Decode an HTML response body by its declared charset: the Content-Type header's `charset`, else a
+ * `<meta charset>` / `<meta http-equiv=Content-Type>` in the first 4 KB, else UTF-8. `res.text()`
+ * always decodes UTF-8, and azleg.gov serves windows-1252 Word HTML with no header charset — every §,
+ * dash and curly quote became U+FFFD (1,769 in AZ SB 1828's chaptered text). An unknown label falls
+ * back to UTF-8 rather than throwing.
+ */
+export async function decodeHtmlBody(res: Response): Promise<string> {
+  const buf = new Uint8Array(await res.arrayBuffer());
+  const fromHeader = /charset\s*=\s*["']?([A-Za-z0-9._:-]+)/i.exec(res.headers.get('content-type') ?? '')?.[1];
+  const head = new TextDecoder('latin1').decode(buf.subarray(0, 4096));
+  const fromMeta = /<meta[^>]*charset\s*=\s*["']?([A-Za-z0-9._:-]+)/i.exec(head)?.[1];
+  const label = (fromHeader ?? fromMeta ?? 'utf-8').toLowerCase();
+  try { return new TextDecoder(label).decode(buf); } catch { return new TextDecoder('utf-8').decode(buf); }
 }

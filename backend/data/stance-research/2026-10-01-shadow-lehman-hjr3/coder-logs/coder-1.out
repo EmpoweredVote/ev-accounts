@@ -1,0 +1,9 @@
+Written: `labels/coder-1.json`.
+
+**Row:** Matt Lehman / same-sex-marriage → **chair 5**, resting on all three snapshots as one record (HJR 3 (2014)).
+
+- **Roll call 70** (`a8b9c1b7`) — `own-act` / `record` / `vote`, actor `Cherry Lehman Price Wesco`, tally `Yea 57 Nay 40 Excused 3 Not Voting 0`. 40 Nay of 97 voting, so not near-unanimous.
+- **Engrossed text** (`d0d7bfa5`) — carries the `provision_quote`: `Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.` Nothing inside a `[deleted: …]` fence was used (the fences there are printing-code boilerplate).
+- **Bill details** (`ec83c57d`) — co-authorship, `record_kind: author`; it also supplies the first name "Matthew Lehman" that the surname-only roll call lacks.
+
+Shape is `chair-shaped`: a single-subject joint resolution whose entire operative addition both defines marriage as one man/one woman and denies validity or recognition to same-sex marriage, matching the rung "Make same-sex marriage illegal and define marriage as only between one man and one woman"; recognizing no civil unions excludes the civil-unions rung. 2014 falls inside the term beginning 2008-11-05, so `in-term`. No quotes (no first-person passages in the sources), and `needs_source` is empty — the record is sufficient as given.

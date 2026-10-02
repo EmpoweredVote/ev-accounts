@@ -1,0 +1,83 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "instrument": "hb2853(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "62424757-6167-5199-90b7-fec4a9a53a1a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853#house-third",
+        "profile": "az-azleg-bill-status@3"
+      },
+      {
+        "snapshot_id": "008f91a1-0539-5881-b52a-3e3519ead568",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0388.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "f0ccf364-4098-56e9-9ef1-45afe2dfa419",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853",
+        "profile": "az-azleg-bill-status@3"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "instrument": "hb2853(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "008f91a1-0539-5881-b52a-3e3519ead568",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0388.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "f0ccf364-4098-56e9-9ef1-45afe2dfa419",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853",
+        "profile": "az-azleg-bill-status@3"
+      },
+      {
+        "snapshot_id": "62424757-6167-5199-90b7-fec4a9a53a1a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853#house-third",
+        "profile": "az-azleg-bill-status@3"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "instrument": "hb2853(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "f0ccf364-4098-56e9-9ef1-45afe2dfa419",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853",
+        "profile": "az-azleg-bill-status@3"
+      },
+      {
+        "snapshot_id": "62424757-6167-5199-90b7-fec4a9a53a1a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853#house-third",
+        "profile": "az-azleg-bill-status@3"
+      },
+      {
+        "snapshot_id": "008f91a1-0539-5881-b52a-3e3519ead568",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0388.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

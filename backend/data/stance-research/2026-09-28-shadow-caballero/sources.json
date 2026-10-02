@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-09-28-shadow-caballero",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200SB188",
+      "source_kind": "public-record",
+      "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+      "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+      "topic_keys": [
+        "civil-rights"
+      ],
+      "instruments": [
+        "SB 188 (2019-2020)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2019-sb188-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201920200SB188",
+      "source_kind": "public-record",
+      "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+      "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+      "topic_keys": [
+        "civil-rights"
+      ],
+      "instruments": [
+        "SB 188 (2019-2020)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2019-sb188-votes.txt"
+    }
+  ]
+}

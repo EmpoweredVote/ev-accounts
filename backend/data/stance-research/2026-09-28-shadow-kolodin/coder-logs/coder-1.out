@@ -1,0 +1,12 @@
+Wrote `coder-1.json` — one row (Kolodin / voting-rights), coded BLANK.
+
+**How it coded:**
+
+All three snapshots are one record group on `HB2785 (2024)`, all `own-act`, `record`, `in-term` (Feb 2024, House, seated 2023):
+- **Bill overview** — prime sponsor (`Sponsors: Kolodin (Prime)`), `record_kind: sponsor`.
+- **Vote page** — `JONES Y KOLODIN Y LIGUORI Y`, tally `Passed 56-2-0-0-2` → V4 `near-unanimous` (2 of 58 = 3.4% No, under the 10% floor).
+- **Bill text** — carries the `provision_quote`; V4 `multi-subject`.
+
+**Why BLANK `direction-only`:** HB2785 amends seventeen statute sections (polling places, sample ballots, early-ballot requests, signature verification, canvass deadlines, recounts, the 2024 primary date) — the annex's "omnibus election bill that includes an ID clause → `multi-subject`". Its identification clause is permissive, not mandatory: the voter *may choose* to present ID with a mailed early ballot, with signature verification remaining the default. That leans toward identification-based verification but establishes neither "Require photo ID in person and an ID number on every mail ballot" nor any other rung's clauses. `rests_on` is empty, as required for a blank.
+
+Three `needs_source` entries name what would settle it: his own words answering the ID question, a single-subject AZ voter-ID bill with his recorded action, and a proof-of-citizenship measure if rung 5 is in play. No `quotes` — the sources contain no first-person material, only records.

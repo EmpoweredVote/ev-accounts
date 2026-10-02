@@ -1,0 +1,11 @@
+Wrote `labels/coder-1.json` — one row, `taxes`, coded BLANK.
+
+**What the evidence is:** both snapshots are the same record — Arizona SB1828 (2021), titled "omnibus; taxation." The vote page shows `MARSH N` on Senate Third Reading, 16-14-0-0-0, 06/22/2021. The enacted text is the second page.
+
+**How it coded:**
+- **V1** `own-act` (a recorded roll-call vote), **V3** `record` / `vote`, with `actor_quote` and `tally_quote` on the vote page and `provision_quote` on the bill-text page, per the two-passage worked example.
+- **V5** `in-term` — the 2021 vote falls inside her earlier Senate term (to 2023-01-08), same chamber of the same legislature, which the V5 option-B ruling treats as in-term for the current seat.
+- **V4** `multi-subject`. The act amends income tax rates, unemployment wage bases and benefit amounts, class-one assessed valuation, urban revenue sharing, forest-product credits, school tuition organization limits and fire district levies. Under the vote ladder a **No** on a multi-subject bill proves nothing — she may have objected to any part — so it cannot even carry direction.
+- **V6** BLANK `no-evidence`, `rests_on` empty.
+
+`needs_source` asks for her own words tying the vote to the rate provision, or a single-subject Arizona tax bill with its roll call. No quotes were coded: neither snapshot contains her words.

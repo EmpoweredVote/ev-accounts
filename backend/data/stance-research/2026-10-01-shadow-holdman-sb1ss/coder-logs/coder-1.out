@@ -1,0 +1,18 @@
+Wrote `coder-1.json`.
+
+**Row: Travis Holdman / abortion → chair 4**
+
+Three passages, all one record on `SB 1(ss) (2022 First Special Session)`:
+
+- **Roll call 58** (`c763f996`) — `own-act` / `record` / `vote`, actor `Bray Crider Holdman Rogers`, tally `Yea 28 Abortion. Nay 19` (the page interleaves the bill title between the counts, so the verbatim span carries it). 19 No of 50 → not near-unanimous.
+- **Enrolled act text** (`4eacbc9c`) — carries the provision: `a criminal act, except when performed under the following circumstances:`. I took a span that starts after the page-header artifact ("SEA 1(ss) — Concur 13") that the extractor dropped mid-sentence, and I kept clear of every `[deleted: …]` fence.
+- **Bill details page** (`ed2da438`) — same instrument, digest and enactment only; nulls, and not in `rests_on`.
+
+Coded the concurrence vote as final passage, not `procedural`: it is the Senate's adoption of the final text (the act went to the Governor the same day), and concurrence is not in V4's procedural list. The bill is abortion-only, so not `multi-subject`.
+
+Two judgment calls worth flagging for the reviewer:
+
+1. The bill's exceptions are rape/incest (capped at 10 weeks postfertilization), serious health risk or life, **and lethal fetal anomaly**. Rung 4 names only the first three. I read all of rung 4's clauses as matched and the extra anomaly exception as not moving the instrument toward either neighbour — rung 3 needs elective first-trimester abortion, which the text criminalizes, and rung 5 needs no exceptions at all.
+2. I coded the bill-text and details pages `own-act` rather than inventing a non-actor value, following V3's worked example where the provision page is part of the person's record group. V1's value list has no clean code for "a page of the instrument the person acted on that doesn't name them."
+
+`needs_source` is empty — the record is complete. No candidate quotes in these sources, so `quotes` is empty.

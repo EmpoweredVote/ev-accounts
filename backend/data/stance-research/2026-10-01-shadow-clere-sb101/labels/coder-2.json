@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "f58ce6de-755d-448f-9c0c-b21f9d386dad",
+      "office_id": "96d9e3b2-b607-4c64-bcbf-e2e0fedb0bf9",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+      "passages": [
+        {
+          "snapshot_id": "04de07e0-e878-5450-9dc7-3f3f888df866",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": "A governmental entity may substantially burden a person's exercise of religion only if the governmental entity demonstrates that application of the burden to the person: (1) is in furtherance of a compelling governmental interest; and (2) is the least restrictive means of furthering that compelling governmental interest.",
+          "note": "Enrolled text of SB 101 sets the compelling-interest/least-restrictive-means standard that matches rung 4's faith-based exemption clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9c4adfd3-1e3d-5853-8592-48b6bcf78d5f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015-03-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "Clere is listed among the Nay votes on final House passage of SB 101.",
+          "record_kind": "vote",
+          "actor_quote": "Clere",
+          "tally_quote": "Yea 63 Nay 31 Excused 5 Not Voting 0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 101 (2015) sets a compelling-interest/least-restrictive-means standard for religious exemptions, matching rung 4's clause 'allow faith-based exemptions from laws that conflict with sincere religious beliefs' and excluded from rung 5 by the same compelling-interest test. Clere voted Nay on final passage, which rules out support for that broad exemption standard but does not, by itself, establish which of rungs 1 through 3 he holds, so the vote is direction-only.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

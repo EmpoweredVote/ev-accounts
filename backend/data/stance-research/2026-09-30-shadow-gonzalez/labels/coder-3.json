@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "b9379b8b-cb68-500a-a099-8922f2af98a7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1137 (2021-2022)",
+          "provision_quote": "This bill would prohibit, commencing January 1, 2023, the division from approving any notice of intention within a health protection zone, as defined, except for reasons related to preventing or responding to a threat to public health, safety, or the environment, complying with a court order, or to plug and abandon or reabandon a well, as provided.",
+          "note": "Bars new drilling permits only within 3,200-foot health protection zones near sensitive receptors, not statewide, so it shows direction but not which rung's magnitude.",
+          "record_kind": "author",
+          "actor_quote": "SB 1137, Gonzalez.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "As author of SB 1137, Gonzalez barred the division from approving new drilling permits only within 3,200-foot 'health protection zones' around sensitive receptors, not statewide. That establishes a restrictive direction on new drilling but does not separate 'Allow no new drilling and let production decline over time' from 'Keep fossil fuel production steady at current levels', since drilling outside those zones is unaffected.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}
