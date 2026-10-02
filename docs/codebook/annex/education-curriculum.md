@@ -44,7 +44,7 @@ rights in education", "age-appropriate", "instructional materials", "curriculum 
    - Levels that hold a lever: state; school.
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with BLANK because a mandate to teach **one historical subject** (for example
-     genocide education) points toward this rung but is narrower than "racism, injustice, and diverse
+     a required unit on a named historical injustice) points toward this rung but is narrower than "racism, injustice, and diverse
      identities" → `direction-only` (V4.2 "Broader than the instrument").
 
 3. **"Present contested social and historical topics as open questions, giving competing viewpoints
@@ -85,8 +85,9 @@ rights in education", "age-appropriate", "instructional materials", "curriculum 
      on gender identity or sexual orientation in named grades.
    - Levels that hold a lever: state; school.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` does a state statute's own list of prohibited concepts meet "that the community
-     considers"?
+   - "The community" is the public acting through its elected body: a state statute's own list of
+     prohibited concepts meets it, as does a board policy. The text must still prohibit the lessons
+     and give a divisiveness or age reason _(ruled 2026-10-01)_.
 
 **Hard cases:**
 - **State law and school boards.** A state law that itself forbids or requires instruction in every

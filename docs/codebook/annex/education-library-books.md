@@ -66,7 +66,9 @@ collections _(proposed)_.
    - A process that removes a book after a review finding, but names a different reviewer (the
      board alone, an administrator, a librarian, a state agency) or does not say who reviews → [a]
      only → BLANK `compound-partial`.
-   - `_owed:_` does [b] hold when the committee only recommends and the board makes the decision?
+   - A committee that recommends while the board decides meets [b] when **the board may remove a book
+     only on the committee's finding** (it may keep a book against the committee). If the board can
+     remove against the committee's recommendation, [b] fails → `compound-partial` _(ruled 2026-10-01)_.
    - Commonly confused with rung 4 because both review. If the book is pulled **during** the review,
      it is rung 4, not rung 3.
 

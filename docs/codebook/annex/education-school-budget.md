@@ -26,8 +26,9 @@ overhead", "classroom spending".
      referendum or override on the ballot, where the passage shows the increase is large.
    - Levels that hold a lever: school; local; state.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` where is the line between "significantly" and "modestly", and how is a tax-funded
-     increase that only keeps pace with costs coded?
+   - "Significantly" means an increase **above cost growth** (inflation and enrollment) as the
+     passage shows; rung 2 defines "modestly" as keeping pace. A tax-funded increase that only keeps
+     pace → `direction-only` (not rung 1: not significant; not rung 2: it raises taxes) _(ruled 2026-10-01)_.
 
 2. **"Increase funding modestly to keep pace with costs, without raising taxes"**
    - Means: funding rises about as fast as costs, paid from existing revenue.
@@ -72,8 +73,9 @@ overhead", "classroom spending".
      funding → not [a] → `direction-only` _(proposed)_.
 
 **Hard cases:**
-- `_owed:_` is a Yes on the district's annual budget `multi-subject`, or `on-question` on this
-  ladder because the total is the subject?
+- **A Yes on the district's annual budget** is `on-question`, not `multi-subject`: the total is this
+  ladder's subject. It is chair-shaped only when the passage shows the year-over-year change and the
+  levy or rate change; otherwise `direction-only` _(ruled 2026-10-01)_.
 - **A No on a budget** proves nothing (V4.1).
 - **What counts as raising taxes.** A higher rate, a higher levy amount, a new tax, or approval of a
   referendum, override or bond raises taxes. A rate held flat while values rise is not a tax

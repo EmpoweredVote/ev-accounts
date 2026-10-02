@@ -54,8 +54,9 @@ training", "culturally responsive training", "targeted support", "multi-tiered s
    - Known chair-shaped instruments: _(none on file)_.
    - Subgroup **reporting** alone (a common state or federal requirement) meets [a] only →
      `compound-partial`.
-   - `_owed:_` does a funding weight for low-income or English-learner students meet [b], or is it
-     rung 4 because it does not group by race or identity?
+   - A funding weight for low-income or English-learner students steers money by category, not by
+     measured results → `direction-only`, unless the act ties the support to the group's measured
+     results. It is not rung 4 either: a weight treats groups differently _(ruled 2026-10-01)_.
 
 4. **"Offer the same supports to every struggling student, without grouping them by race or
    identity"**

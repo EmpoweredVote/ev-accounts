@@ -83,3 +83,27 @@ Add new notes at the bottom. Do not record gold item names here (keep them certi
 - **judicial-prosecution-priorities — rung 5** carries editorial phrases.
 - **judicial-criminal-justice — rung 5** ("Impose the toughest penalties") is an act legislators
   cannot perform; they reach it only through own words.
+
+## Education batch (accepted 2026-10-01 as ladder notes; wording proposals are drafts)
+
+- **education-library-books — rung 3 double-barrel** (review finding + committee of educators and
+  parents). Proposed: "Remove a challenged book only if a formal review finds it unsuitable", or move
+  the reviewer into its own clause. Count seated rung-3 rows before filing (none in the open season on
+  2026-10-01). **Rung 1** "every book" conflicts with routine weeding.
+- **education-curriculum — rung 5** "that the community considers" does not say whose judgment counts.
+  Proposed: "Prohibit lessons on race, gender, or sexuality that are divisive or not suitable for the
+  students' age". Rung 1 is a triple compound ("race, gender, and social justice").
+- **education-school-budget — gaps:** no rung for a modest increase paid by a tax, none for a
+  significant increase with no tax. Proposed: rung 1 "Raise taxes if needed to significantly increase
+  school funding", rung 2 "Increase funding modestly to keep pace with costs". Rung 4 is about
+  composition, not level.
+- **education-school-police — rung 5** "make arrests on campus" adds nothing (a sworn officer has arrest
+  power). Proposed: "Place an officer in every school and let them handle student discipline as well
+  as crime". Rungs 1 and 2 are both compounds.
+- **education-charter-authorization — rung 2 referent.** Proposed: "Approve new charters rarely, only
+  where district schools are clearly failing students". Re-check the state scope.
+- **education-equity-programs — rung 5** "from the district" fits school boards only. Proposed:
+  "Eliminate equity programs, training, and staff in schools". Also a triple compound.
+- **education-gender-identity** (low priority): no rung for a flat ban on chosen names or pronouns.
+- **education-ai** (low priority): rung 4 "light guidelines" and "teacher discretion" are hard to
+  evidence separately.

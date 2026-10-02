@@ -38,8 +38,8 @@ the mayor or council is an authorizer _(proposed)_.
      schools with documented failure.
    - Levels that hold a lever: school; state.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` does "a school is clearly failing" mean the district school the students would leave,
-     or the applicant's own record?
+   - "A school is clearly failing" means the **district school the students would leave**, not the
+     applicant _(ruled 2026-10-01)_.
    - Commonly confused with rung 1 because a moratorium with a failing-school exception blocks most
      charters. It allows some → rung 2 territory, not rung 1 _(proposed)_.
 
