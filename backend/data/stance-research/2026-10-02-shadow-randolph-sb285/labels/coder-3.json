@@ -1,0 +1,47 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "e8054d02-34c2-485b-b54a-47658cc269b7",
+      "office_id": "1ca10b86-0477-4f4c-9cbc-d410cece1d61",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "69f3f360-6ec6-5d88-a7fc-e29709290381",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "News quote opposing jail time for public camping and favoring food/shelter/job support, but no specific enforcement mechanism is named.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Randolph's quote opposes the bill's jail-time consequence ('That's not the answer... not jail time') and favors 'food, shelter and a job,' which separates him from the criminal-penalty side of the question, but he names no mechanism distinguishing 'no penalties of any kind' (rung 1), decriminalization (rung 2), or enforcement conditioned on shelter availability with service diversion (rung 3).",
+      "needs_source": [
+        "Indiana Senate roll-call vote on the concurrence with House amendments to the public-camping bill, showing Sen. Randolph's own vote",
+        "the bill's enacted operative text describing the enforcement mechanism and any penalty/diversion conditions"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "69f3f360-6ec6-5d88-a7fc-e29709290381",
+          "text": "That’s not the answer. The answer is helping these homeless people by providing the things that they need, like food, shelter and a job — not jail time.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

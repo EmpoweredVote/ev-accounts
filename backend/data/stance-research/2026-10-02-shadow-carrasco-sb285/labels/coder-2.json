@@ -1,0 +1,96 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "326c5247-950b-407d-a10b-1116c49098f0",
+      "office_id": "679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-01-14",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "Senate Bill 285",
+          "provision_quote": "Under the bill, law enforcement officials first encountering individuals sleeping or camping on public property would issue a warning and offer to connect them with local shelters and other resources. Repeat violations could result in a Class C misdemeanor, which carries a standard fine of $500 or up to 60 days in jail.",
+          "note": "SB 285's structure (warning, then Class C misdemeanor for repeat violations) matches rung 5's ban with criminal penalties.",
+          "record_kind": "author",
+          "actor_quote": "its author, Senator Cyndi Carrasco (R-Indianapolis)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "99fe9a48-fd9e-52ea-a089-80a8a34edd2a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-02-27",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "Senate Bill 285",
+          "provision_quote": "The measure bans camping, sleeping or long-term sheltering on land owned by the state or a unit of local government — and establishes a Class C misdemeanor for violations.",
+          "note": "Final version of SB 285, which Carrasco authored, bans public camping/sleeping and criminalizes violations as a Class C misdemeanor, matching rung 5, not rung 4's civil penalties.",
+          "record_kind": "author",
+          "actor_quote": "She authored Senate Bill 285.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+        "99fe9a48-fd9e-52ea-a089-80a8a34edd2a"
+      ],
+      "reasoning": "Carrasco authored Senate Bill 285, which bans camping, sleeping or long-term sheltering on public land and makes violations after a warning step a Class C misdemeanor punishable by up to 60 days in jail and a $500 fine; this matches rung 5's 'banning public camping and sleeping with criminal penalties,' and excludes rung 4 because the penalty is criminal rather than civil, and excludes rung 3 because repeat violations route into the criminal justice system rather than diverting away from it.",
+      "needs_source": [
+        "Indiana Senate roll call on the SB 285 concurrence vote (28-22, Feb. 2026) showing Carrasco's individual vote"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "The goal of Senate Bill 285 is not to criminalize homelessness",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "This bill is structured so that initial interactions are focused on intervention rather than punishment.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "For individuals struggling with serious mental health or substance abuse issues who are unable or unwilling to seek help on their own, this bill creates a pathway to connect them with health care, housing resources, treatment, and support systems that can help begin to stabilize their lives",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "To be clear, it is not compassionate to allow our neighbors to die on the streets. This is a solvable problem, and I believe this bill is part of that solution.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "99fe9a48-fd9e-52ea-a089-80a8a34edd2a",
+          "text": "I do believe that this bill will make an impact. I believe it will save lives",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

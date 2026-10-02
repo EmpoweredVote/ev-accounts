@@ -1,0 +1,79 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636|7498c0e1-8652-4f8d-a82d-52e8be764cb4|44905f3b-e105-4f6c-afc7-5d223813dbac#27223785-70e8-59d3-8eba-c6c8ae421d79",
+          "values": [
+            "own-words",
+            "own-act",
+            "own-act"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636|7498c0e1-8652-4f8d-a82d-52e8be764cb4|44905f3b-e105-4f6c-afc7-5d223813dbac#27223785-70e8-59d3-8eba-c6c8ae421d79",
+          "values": [
+            "statement-other",
+            "record",
+            "record"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v4_shape",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636|7498c0e1-8652-4f8d-a82d-52e8be764cb4|44905f3b-e105-4f6c-afc7-5d223813dbac#27223785-70e8-59d3-8eba-c6c8ae421d79",
+          "values": [
+            "rhetorical",
+            "off-axis",
+            "off-axis"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v1_attribution",
+    "v3_class",
+    "v4_shape"
+  ]
+}

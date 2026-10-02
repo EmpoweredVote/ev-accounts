@@ -1,0 +1,48 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636",
+      "office_id": "7498c0e1-8652-4f8d-a82d-52e8be764cb4",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "27223785-70e8-59d3-8eba-c6c8ae421d79",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-05-22",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": "HCR 2060 (2024)",
+          "provision_quote": null,
+          "note": "A news quotation opposing the measure that names no deportation clause; the article's own line that he \"voted against it\" is the reporter's account, not a roll call.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only passage is a news quotation in which Fernandez says HCR 2060 \"will not make it safer, it will not save us money, it will costs us unnecessary and irreversible harm\" - words that name no policy clause and so cannot reach any rung. The excerpt describes the measure as \"allowing local law enforcement officers to arrest those who cross the border illegally\", which is arrest at unlawful entry rather than the scope of removal the rungs separate (\"Stop deportations entirely and protect undocumented immigrants from removal\" through \"Carry out a mass-deportation program to remove all undocumented immigrants\"). The reported No vote is third-party characterization with no roll call in the sources, so no passage survives V1-V5.",
+      "needs_source": [
+        "Arizona Senate roll call for HCR 2060 (2024 regular session), final passage, showing Fernandez's vote with the Ayes/Noes lists and tally",
+        "Text of HCR 2060 (2024) - any operative section addressing removal of undocumented immigrants, to test relevance against the deportation rungs",
+        "Fernandez's own words (floor explanation, questionnaire or issue page) stating how far he would go in deporting undocumented immigrants"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "27223785-70e8-59d3-8eba-c6c8ae421d79",
+          "text": "The measure will not make it safer, it will not save us money, it will costs us unnecessary and irreversible harm",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+Wrote `labels/coder-1.json` — one row (Carrasco / homelessness), coded **BLANK `direction-only`**.
+
+**Passages**
+- `551db3b5` (Today's Catholic): `own-words` / `on-question` / `statement-other` / `direction-only` / `in-term`, dated 2026-01. Her hearing testimony describes a services-first sequence but names no penalty type.
+- `99fe9a48` (Indiana Capital Chronicle, 2026-02-27): `own-act` / `on-question` / `record` (`record_kind: author`, instrument `Senate Bill 285 (2026)`, `actor_quote` "She authored Senate Bill 285.") / `direction-only` / `in-term`. No `tally_quote` — the 28–22 concurrence count is the chamber's, not shown as her vote; the group is an `author` record, so none is required.
+
+**Why BLANK.** The instrument straddles two adjacent rungs: it prohibits camping on public property *and* uses a first warning plus an offer of shelter and services (rung 4's "graduated warnings"), but the penalty is a Class C misdemeanor, not rung 4's "civil penalties". Rung 5 is matched on the ban and the criminal penalty but not on the services-first architecture her own words emphasize. Neither rung is matched clause for clause, and excluding rungs 1–3 is not evidence for the one left (V4.2, H14). Both snapshots are news paraphrase of the bill, so `provision_quote` is null in both — I did not treat a reporter's summary as operative text.
+
+**needs_source**: enrolled text of SB 285 (2026); the GA bill page's author line; the February 2026 Senate concurrence roll call showing Carrasco.
+
+**Quotes**: the "multi-step process that prioritizes services before enforcement" span coded `lever` (flagged `lever-unclear` — no other candidates' passages supplied); "focused on intervention rather than punishment" `direction`; the "not to criminalize homelessness" disclaimer and "it will save lives" coded `none` / not quotable (`off-question`).

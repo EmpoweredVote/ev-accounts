@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-10-02-shadow-randolph-sb285",
+  "seat": {
+    "politician_id": "e8054d02-34c2-485b-b54a-47658cc269b7",
+    "full_name": "Lonnie Randolph",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "1ca10b86-0477-4f4c-9cbc-d410cece1d61",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2008-11-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": [
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "IN",
+        "term_start": "1992-11-04",
+        "start_precision": "day",
+        "term_end": "1998-07-31"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "question_text": "How should government address people sleeping or camping in public spaces?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Protecting the right to sleep and shelter in public spaces, with no penalties of any kind"
+        },
+        {
+          "value": 2,
+          "text": "Decriminalizing public sleeping and camping in public spaces"
+        },
+        {
+          "value": 3,
+          "text": "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"
+        },
+        {
+          "value": 4,
+          "text": "Prohibiting encampments on public property, enforced through graduated warnings and civil penalties"
+        },
+        {
+          "value": 5,
+          "text": "Banning public camping and sleeping with criminal penalties to maintain public safety and order"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

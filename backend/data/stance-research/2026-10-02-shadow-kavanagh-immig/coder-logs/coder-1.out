@@ -1,0 +1,15 @@
+Wrote `coder-1.json` — one row, `deportation`.
+
+**Label:** BLANK, `direction-only`.
+
+**Passages** (both from the one snapshot, the Senate Republicans press release, 2025-03-10):
+- `own-act` / `record` / `sponsor`, instrument `SB 1610 (2025)` — the release states "All three measures, sponsored by Senator John Kavanagh, passed the Senate…" which I used as `actor_quote`. `provision_quote` is null: the release paraphrases the bills, it doesn't print their operative text, and the codebook forbids copying a fact onto a page that doesn't show it.
+- `own-words` / `statement-other` — his three quoted statements.
+
+Both coded `in-term` (2025, current Senate term from 2023) and `direction-only` on shape.
+
+**Why BLANK:** the bills are state assistance to federal removal aimed at people already arrested or convicted — a prison lease, officer training money, ICE information sharing. None of them, and none of his quoted words, say whether he wants "all undocumented immigrants" removed or only those "convicted of serious violent crimes," and nothing touches rung 5's "long-settled families and workers." Excluding the lower rungs would be the tiebreaker move V4.2 rules out, so `rests_on` is empty.
+
+**Quotes:** two `lever` / `lever-named` (the Marana Prison lease; the ICE inmate-information requirement), one `none` marked not quotable as `off-question` (the "FED UP … tsunami" line — a diagnosis of voter sentiment, no means).
+
+**needs_source:** the AZ Legislature bill texts for SB 1610 and SB 1294 (2025), the Senate roll call on SB 1610, and any statement of his on whether long-settled residents without criminal records should be removed.
