@@ -155,3 +155,23 @@ Add new notes at the bottom. Do not record gold item names here (keep them certi
   vouchers and tax breaks".
 - **rent-regulation — rung 3** brings "tenant protections" into a coverage ladder. Proposed: "Keep
   current rent rules as they are, while allowing market rents for new construction".
+
+## Health and rights batch (accepted 2026-10-01 as ladder notes; wording proposals are drafts)
+
+- **healthcare — rung 4** "Only help the poorest" conflicts with Medicare for seniors (ruled
+  2026-10-01: read as below Medicare age). Proposed: "Limit public help to the poorest people below
+  Medicare age, and leave everyone else to employers and private insurance." Rungs 2/3 turn on the one
+  word "everyone".
+- **medicare/aid — scope:** rungs 1, 4, 5 need Medicare; no state officeholder can act on them, yet the
+  topic has a `state` role. Options: a Medicaid-only state ladder, or a per-level note. Suggested state
+  rung 4: "scale back Medicaid eligibility or benefits, shifting more coverage to private insurance".
+- **civil-rights — rung 4** names "federal" enforcement. Proposed: "limit civil rights enforcement to
+  clear cases of intentional discrimination". Rung 1 "in all institutions" is almost never
+  evidenceable; rung 5 is on a different axis.
+- **religious-freedom — rungs 2/3 overlap.** Proposed rung 3: "decide conflicts case by case, weighing
+  the burden on religious practice against the harm of the discrimination, with no fixed rule for
+  either."
+- **same-sex-marriage — rungs 2/3** overlap for any law with a religious carve-out (ruled 2026-10-01:
+  a savings clause reads as rung 2).
+- **trans-athletes — rung 2** begins "should allow …" (grammar). Proposed: "allow transgender athletes
+  to compete on teams matching their gender identity …".

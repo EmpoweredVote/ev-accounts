@@ -47,9 +47,8 @@ rights commission", "protected class" or "protected characteristic", "affirmativ
      discrimination covered) **and** aims at a systemic pattern _(proposed)_.
    - Levels that hold a lever: federal; state; local.
    - Known chair-shaped instruments: _(none on file)_.
-   - **A measure that permits race-conscious programmes is not enforcement.** Repealing a ban on such
-     programmes lets government act; it strengthens no enforcement → at most [b] → BLANK
-     `compound-partial`. Reaching rung 2 because rungs 1, 3, 4 and 5 do not fit is not evidence (V4.2
+   - **Permitting a programme is not enforcement.** A measure that only permits a programme
+     strengthens no enforcement → at most [b] → BLANK `compound-partial` _(ruled 2026-10-01)_. Reaching rung 2 because rungs 1, 3, 4 and 5 do not fit is not evidence (V4.2
      "Ruling out the other rungs", H14).
    - **A near-unanimous vote** (fewer than 10% No) on an anti-discrimination bill cannot carry the
      chair alone, even when the bill fits rung 2 well (V4.1). Without authorship or own words that tie
@@ -92,8 +91,9 @@ rights commission", "protected class" or "protected characteristic", "affirmativ
      such programmes.
    - Levels that hold a lever: federal; state; local (its own programmes).
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` A ban on DEI offices, or a race-preference ban limited to one sector (for example
-     higher education): rung 5, `compound-partial`, or `direction-only`?
+   - A race-preference ban limited to one sector meets the affirmative-action part only →
+     `compound-partial`. Closing DEI offices with no ban on preferences → `direction-only`: an office
+     is not a programme that allocates by race _(ruled 2026-10-01)_.
    - Commonly confused with rung 4: see rung 4.
 
 **Hard cases:**

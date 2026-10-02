@@ -45,10 +45,6 @@ religious-exemption clauses.
    - **A measure that secures the right to marry and has no anti-discrimination clause is rung 2,
      not rung 1.** It meets every clause of rung 2; it does not need a second passage that rejects
      anti-discrimination law.
-   - **Authorship can carry the chair where the vote cannot.** If the floor vote is near-unanimous
-     (fewer than 10% No, V4.1), the chair rests on the person's authorship of the measure, not on the
-     vote. A member who only voted Aye on that measure → BLANK `no-evidence` unless something else
-     survives.
    - A Yes on a recognition bill whose religious section only **saves** existing protections (for
      example the RFMA) → rung 2. The operative section governs (V4.1); a savings clause does not show
      that the person insists on the carve-out that rung 3's "but" names. Rung 3 needs own words that

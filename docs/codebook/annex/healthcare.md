@@ -52,8 +52,8 @@ state Medicaid names ("Medi-Cal", "AHCCCS", "BadgerCare", "MassHealth").
    - Commonly confused with rung 3 because both expand public programmes and keep private insurance.
      The separating clause is [a] **everyone**. A measure that helps only people who cannot afford
      care does not reach [a] → rung 3 territory.
-   - `_owed:_` A vote or statement that **defends or expands the ACA** as a whole: rung 2, or
-     `direction-only`?
+   - A vote or statement that **defends or expands the ACA** as a whole → `direction-only`: the ACA
+     matches rung 3 too, so it excludes neither; rung 2 needs evidence of "everyone" _(ruled 2026-10-01)_.
    - Pre-existing-condition protection on its own regulates private insurance but says nothing on
      [a] → `direction-only` _(proposed)_.
 
@@ -87,7 +87,8 @@ state Medicaid names ("Medi-Cal", "AHCCCS", "BadgerCare", "MassHealth").
    - Known chair-shaped instruments: _(none on file)_.
    - A repeal of a Medicaid expansion excludes rung 3 [b], but it does not state [b] "only" →
      `direction-only` _(proposed)_.
-   - `_owed:_` Does [b] "only the poorest" require ending public coverage for seniors (Medicare)?
+   - "Only the poorest" is read for people **below Medicare age**; it does not require ending Medicare
+     for seniors. Medicare's structure is coded on `medicare/aid` _(ruled 2026-10-01)_.
    - Commonly confused with rung 5 because cutting a programme is not leaving healthcare
      **entirely**. A cut that keeps any programme → not rung 5.
 

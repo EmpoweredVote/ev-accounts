@@ -27,8 +27,9 @@ Offset), "personal accounts", "carve-out accounts", "fiscal commission".
      payroll tax to earnings above the present cap.
    - Levels that hold a lever: federal.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` A "donut hole" design (tax again above a threshold, with a gap below it): does it meet
-     [b] "remove the income cap"?
+   - A "donut hole" design (tax again above a threshold, with a gap below it) meets [b] "remove the
+     income cap": no upper limit remains. The **size of the benefit increase** then separates rung 1
+     from rung 2 _(ruled 2026-10-01)_.
    - Commonly confused with rung 2 because both raise taxes on higher earners. When the tax side does
      not separate them, the **size** of the benefit increase does: across-the-board → rung 1
      territory; one group or a small amount → rung 2 territory _(proposed)_.

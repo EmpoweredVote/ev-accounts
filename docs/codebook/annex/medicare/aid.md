@@ -77,8 +77,7 @@ negotiation", state Medicaid names ("Medi-Cal", "AHCCCS", "BadgerCare", "MassHea
      Medicaid cut or cap (block grant, per-capita cap, eligibility rollback); own words calling for
      both.
    - Levels that hold a lever: federal for [a] and [b]; state for [b] only.
-   - `_owed:_` At state level, a Medicaid-only scale-back: `compound-partial`, or rung 4 read as
-     Medicaid only?
+   - At state level, a Medicaid-only scale-back → `compound-partial`: the rung says "both" _(ruled 2026-10-01)_.
    - Known chair-shaped instruments: _(none on file)_.
    - Medicare Advantage growth alone moves enrollees to private plans **inside** Medicare; it does not
      scale back the programme → `direction-only` _(proposed)_.

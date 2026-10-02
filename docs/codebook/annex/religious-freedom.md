@@ -32,8 +32,9 @@ held religious belief", "conscience protection", "religious employer exemption" 
      religion from all public institutions"). School prayer, religious displays and public money for
      religious schools do not move a person along these rungs → `adjacent`. (The CA_0035 re-audit
      blanked Season 1 rows that rested on separation alone.)
-   - `_owed:_` A bill that bars religion (RFRA) as a defence to anti-discrimination claims but keeps
-     the existing religious-organisation exemptions: rung 1 or rung 2?
+   - A bill that bars religion (RFRA) as a defence to anti-discrimination claims but keeps the
+     existing religious-organisation exemptions → rung 2: it keeps exemptions (not rung 1) and stops
+     religion overriding the protections (rung 2's text) _(ruled 2026-10-01)_.
    - Commonly confused with rung 2 because limiting **one** exemption route is not prohibiting all
      exemptions.
 
@@ -78,8 +79,8 @@ held religious belief", "conscience protection", "religious employer exemption" 
      RFRA); a conscience law that excuses individuals or businesses from anti-discrimination duties.
    - Levels that hold a lever: federal; state.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` A RFRA (strict-scrutiny test: an exemption unless the government shows a compelling
-     interest): rung 4, or rung 3 because it is a balancing test?
+   - A RFRA (strict-scrutiny test: an exemption unless the government shows a compelling interest)
+     → rung 4: the exemption is the default; the compelling-interest test limits it _(ruled 2026-10-01)_.
    - An exemption for **one** service or field (adoption agencies, wedding services, one medical
      procedure) shows the exemption side but not "laws that conflict" in general →
      `direction-only` _(proposed)_.

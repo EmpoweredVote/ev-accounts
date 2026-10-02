@@ -20,6 +20,17 @@ reviewed migration (allocator slot), never an in-place edit.
 - **3 rung-3 rows rest on the Background Check Expansion Act only** (CC_0078). Clause [a] "allow all
   types" is unevidenced → `compound-partial` unless a second passage exists.
 
+## civil-rights — DEI-office closures are direction-only (2026-10-01)
+
+- **1 rung-5 row (Barr)** rests on DEI-office bills only (an office is not a programme that allocates
+  by race). → `direction-only` unless an affirmative-action record exists.
+
+## social-security — wording only
+
+- Barragán (rung 2) reasoning says SS 2100 "does not remove the cap"; the 2026-10-01 ruling says a
+  donut design does remove it and the benefit size separates rungs 1/2. Chair stays 2; fix the
+  sentence at the next re-audit.
+
 ## Not owed
 
 - ukraine-support: 0 open-season answers; the H.R. 8035 ruling moves nothing.
