@@ -4,6 +4,7 @@ import {
   magnitudeRank,
   magnitudeValues,
   hasFixedPositionOption,
+  targetPosition,
 } from './answerPlacement.js';
 
 /**
@@ -80,6 +81,9 @@ describe('magnitudeRank — rank reads values, never positions', () => {
   });
 });
 
+/** The sorted branch ran, regardless of whether it landed on the hashed target. */
+const SORTED_PATH = ['sorted', 'sorted-off-target'];
+
 describe('sorting — an unbounded numeric series sorts, so position equals rank', () => {
   it('sorts ascending and reports the placement', () => {
     const placed = placeAnswer(
@@ -88,7 +92,10 @@ describe('sorting — an unbounded numeric series sorts, so position equals rank
       'q'
     );
     expect(placed.options).toEqual(['100 members', '120 members', '160 members', '200 members']);
-    expect(placed.placement).toBe('sorted');
+    // Either sorted placement means the sorted path ran, which is what this asserts.
+    // 'sorted' vs 'sorted-off-target' distinguishes whether the sorted rank happened to
+    // equal the hashed target; that is generation's job to hit, not this test's subject.
+    expect(SORTED_PATH).toContain(placed.placement);
     expect(placed.correctAnswer).toBe(2);
     expect(placed.options[placed.correctAnswer]).toBe('160 members');
   });
@@ -117,7 +124,7 @@ describe('bounded series — rank is fixed by the world, so permute instead of s
 
   it('leaves large-magnitude series sorting', () => {
     const placed = placeAnswer(['800,000', '1,000,000', '2,250,000', '5,000,000'], 2, 'stlmo-020');
-    expect(placed.placement).toBe('sorted');
+    expect(SORTED_PATH).toContain(placed.placement);
   });
 
   it('leaves label-style ordinals sorting — they read naturally in order', () => {
@@ -126,7 +133,7 @@ describe('bounded series — rank is fixed by the world, so permute instead of s
       2,
       'q058'
     );
-    expect(placed.placement).toBe('sorted');
+    expect(SORTED_PATH).toContain(placed.placement);
   });
 
   it('does not treat a non-integer series as bounded', () => {
@@ -204,5 +211,51 @@ describe('distribution over a realistic batch', () => {
     const worst = (100 * Math.max(...counts)) / N;
     expect(worst).toBeLessThan(32);
     expect(counts.every((c) => c > 0)).toBe(true);
+  });
+});
+
+/** Smallest `q-N` seed whose hashed target is `want`. Keeps tests independent of the hash. */
+function findSeedWithTarget(want: number): string {
+  for (let i = 0; i < 500; i++) {
+    const seed = `q-${i}`;
+    if (targetPosition(seed) === want) return seed;
+  }
+  throw new Error(`no seed found for target ${want}`);
+}
+
+describe('placeAnswer — numeric options honour the hashed target', () => {
+  // The bug: options are sorted ascending AFTER generation, so the answer lands
+  // at its magnitude rank. Models bracket the true value (2 below, 1 above), so
+  // it ranked third and C hit 61% across 38 real numeric questions.
+  it('reports sorted-off-target when the sorted rank misses the target', () => {
+    // Build a case where the true value ranks third but the target is not 2.
+    const seed = findSeedWithTarget(0);
+    const r = placeAnswer(['10', '20', '30', '40'], 2, seed);
+    expect(r.placement).toBe('sorted-off-target');
+  });
+
+  it('reports sorted when the sorted rank already equals the target', () => {
+    const seed = findSeedWithTarget(2);
+    const r = placeAnswer(['10', '20', '30', '40'], 2, seed);
+    expect(r.placement).toBe('sorted');
+    expect(r.correctAnswer).toBe(2);
+    expect(r.options).toEqual(['10', '20', '30', '40']);
+  });
+
+  it('keeps options ascending in both cases — readability is not sacrificed', () => {
+    for (const target of [0, 1, 2, 3]) {
+      const r = placeAnswer(['10', '20', '30', '40'], 2, findSeedWithTarget(target));
+      expect(r.options).toEqual(['10', '20', '30', '40']);
+    }
+  });
+
+  it('still tracks the answer by original index when option text repeats', () => {
+    const r = placeAnswer(['5', '5', '30', '40'], 1, 'any-seed');
+    expect(r.options[r.correctAnswer]).toBe('5');
+  });
+
+  it('leaves a fixed-position option set unchanged', () => {
+    const r = placeAnswer(['10', '20', '30', 'All of the above'], 1, 'any-seed');
+    expect(r.placement).toBe('unchanged');
   });
 });

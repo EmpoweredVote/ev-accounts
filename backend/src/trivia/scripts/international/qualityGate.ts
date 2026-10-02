@@ -8,35 +8,98 @@
  * Anthropic client so it can be tested for nothing — the same move
  * `skipReasonFor()` made in `pipelineCron.ts`.
  *
- * ROLLOUT: enforcement is OFF by default. The rules always run and every
- * violation is counted; only the refusal to write is flagged. Chris's stated
- * preference at decision time was to log first and enforce after observing a
- * night or two, because the engine has never been pointed at news-shaped
- * content and its false-positive rate there is unknown — `checkPureLookup`
- * flags "in what year was..." shapes, which is a perfectly ordinary news
- * question.
+ * ROLLOUT: enforcement is PER RULE, and off for every rule by default. The
+ * rules always run and every violation is counted; only the refusal to write
+ * is gated. Chris's stated preference at decision time was to log first and
+ * enforce after observing a night or two, because the engine had never been
+ * pointed at news-shaped content and its false-positive rate there was
+ * unknown — `checkPureLookup` flags "in what year was..." shapes, which is a
+ * perfectly ordinary news question, and matched 15.3% of the live news bank.
  *
- * `suppressed` is the number that rollout turns on: questions that WOULD have
- * been blocked and were written anyway. Read it before flipping the flag.
+ * That measurement is why this is a per-rule list and not the boolean it
+ * started as. The rules do not share a false-positive rate, so they cannot
+ * share a switch: enforcing `nested-options` (0 known false positives across
+ * the live bank, its exclusions pinned by tests) should not require also
+ * enforcing `pure-lookup` (15.3%) on the same night.
+ *
+ * `suppressed` is the number the rollout turns on: questions that WOULD have
+ * been blocked, had their rule been enforced, and were written anyway. Read it
+ * before adding a rule to the list.
  */
 
 import type { Violation } from '../../services/qualityRules/types.js';
 
-/** Set to the exact string "true" to make blocking violations actually block. */
+/**
+ * Which blocking violations actually block.
+ *
+ * - unset, empty, "false" or "none" — nothing enforces (the original default)
+ * - "true" or "all"                 — every rule enforces
+ * - a comma-separated list          — exactly those rule names enforce
+ *
+ * "true" keeps working verbatim because that is what the boolean version of
+ * this flag meant. A deploy that silently downgraded a fully-enforcing
+ * pipeline to a non-enforcing one would be the worst regression available
+ * here, so that string is handled before anything clever happens.
+ */
 export const QUALITY_RULES_ENFORCE_ENV = 'TRIVIA_QUALITY_RULES_ENFORCE';
 
 /** Cap on the per-run sample list written into generation_jobs.notes. */
 export const MAX_SAMPLES = 20;
 
+/** Which rules enforce. `all` wins over `rules`, which it leaves empty. */
+export interface Enforcement {
+  readonly all: boolean;
+  readonly rules: ReadonlySet<string>;
+}
+
+/** Nothing blocks. */
+export const ENFORCE_NONE: Enforcement = { all: false, rules: new Set() };
+
+/** Every blocking violation blocks. */
+export const ENFORCE_ALL: Enforcement = { all: true, rules: new Set() };
+
+/** Only the named rules block. */
+export function enforceOnly(...rules: string[]): Enforcement {
+  return { all: false, rules: new Set(rules.filter(r => r.length > 0)) };
+}
+
 /**
- * Whether blocking violations block.
+ * Parse the flag.
  *
  * Read per question rather than captured at module load: a flag you cannot
  * flip without a redeploy is not a flagged rollout, and a module-level const
  * would make tests that set the variable assert against a stale value.
  */
+export function qualityRulesEnforcement(env: NodeJS.ProcessEnv = process.env): Enforcement {
+  const raw = (env[QUALITY_RULES_ENFORCE_ENV] ?? '').trim();
+  if (raw === '') return ENFORCE_NONE;
+  if (raw === 'true' || raw === 'all') return ENFORCE_ALL;
+  if (raw === 'false' || raw === 'none') return ENFORCE_NONE;
+  return enforceOnly(...raw.split(',').map(r => r.trim()));
+}
+
+/** Whether a specific rule's blocking violations block. */
+export function enforcesRule(enforcement: Enforcement, rule: string): boolean {
+  return enforcement.all || enforcement.rules.has(rule);
+}
+
+/**
+ * Whether anything enforces at all.
+ *
+ * Kept because `generation_jobs.notes.qualityRules.enforced` is a boolean that
+ * predates per-rule enforcement, and rewriting history's rows is not worth it.
+ * `enforcedRules` beside it carries the detail.
+ */
 export function qualityRulesEnforced(env: NodeJS.ProcessEnv = process.env): boolean {
-  return env[QUALITY_RULES_ENFORCE_ENV] === 'true';
+  const e = qualityRulesEnforcement(env);
+  return e.all || e.rules.size > 0;
+}
+
+/** Enforcing rule names for the notes row; `["*"]` when everything enforces. */
+export function enforcedRuleNames(env: NodeJS.ProcessEnv = process.env): string[] {
+  const e = qualityRulesEnforcement(env);
+  if (e.all) return ['*'];
+  return [...e.rules].sort();
 }
 
 export interface QualityRuleStats {
@@ -82,19 +145,27 @@ export function emptyQualityRuleStats(): QualityRuleStats {
 }
 
 export interface GateDecision {
-  /** False only when enforcement is on AND a blocking violation was found. */
+  /** False only when a blocking violation came from an ENFORCED rule. */
   write: boolean;
   blocking: Violation[];
   advisory: Violation[];
+  /** The subset of `blocking` whose rules enforce. Drives `blocked` vs
+   *  `suppressed`, so neither can disagree with `write`. */
+  enforced: Violation[];
 }
 
-export function decideRuleGate(violations: Violation[], enforce: boolean): GateDecision {
+export function decideRuleGate(
+  violations: Violation[],
+  enforcement: Enforcement,
+): GateDecision {
   const blocking = violations.filter(v => v.severity === 'blocking');
   const advisory = violations.filter(v => v.severity !== 'blocking');
+  const enforced = blocking.filter(v => enforcesRule(enforcement, v.rule));
   return {
-    write: !(enforce && blocking.length > 0),
+    write: enforced.length === 0,
     blocking,
     advisory,
+    enforced,
   };
 }
 
@@ -102,11 +173,15 @@ function pushSample(stats: QualityRuleStats, sample: string): void {
   if (stats.samples.length < MAX_SAMPLES) stats.samples.push(sample);
 }
 
+/**
+ * `enforce` is NOT a parameter any more: it is read off the decision. Passing
+ * it separately let a caller record a verdict the gate never reached —
+ * counting a question as blocked while it had in fact been written.
+ */
 export function recordGate(
   stats: QualityRuleStats,
   externalId: string,
   decision: GateDecision,
-  enforce: boolean,
 ): void {
   stats.audited++;
 
@@ -116,9 +191,13 @@ export function recordGate(
 
   if (decision.blocking.length > 0) {
     stats.withBlocking++;
-    if (enforce) stats.blocked++;
+    if (decision.enforced.length > 0) stats.blocked++;
     else stats.suppressed++;
-    pushSample(stats, `${externalId}:${decision.blocking[0].rule}`);
+    // Name the rule that decided it, not merely the first one seen: under a
+    // partial enforcement list the violation that actually refused the write
+    // is the useful one on a sample line.
+    const culprit = decision.enforced[0] ?? decision.blocking[0];
+    pushSample(stats, `${externalId}:${culprit.rule}`);
   } else if (decision.advisory.length > 0) {
     stats.withAdvisoryOnly++;
   }

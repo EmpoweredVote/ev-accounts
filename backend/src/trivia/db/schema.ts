@@ -122,9 +122,13 @@ export const generationJobs = triviaSchema.table('generation_jobs', {
     blockReasons?: string[];
     /** The quality rules engine's verdict on this lane's output.
      *  `suppressed` is the one to read during the flagged rollout: questions
-     *  that WOULD have been blocked and were written anyway, because
-     *  TRIVIA_QUALITY_RULES_ENFORCE was not set to "true". It is the cost of
-     *  switching enforcement on, measured before switching it on. */
+     *  that WOULD have been blocked and were written anyway, because their
+     *  rule was not named in TRIVIA_QUALITY_RULES_ENFORCE. It is the cost of
+     *  adding a rule to that list, measured before adding it.
+     *
+     *  `enforced` is whether ANY rule enforces; `enforcedRules` names them,
+     *  or is `["*"]` when the flag is "true". Rows written before per-rule
+     *  enforcement have no `enforcedRules`. */
     qualityRules?: {
       audited: number;
       withBlocking: number;
@@ -134,6 +138,7 @@ export const generationJobs = triviaSchema.table('generation_jobs', {
       ruleErrors: number;
       writtenUnaudited: number;
       enforced: boolean;
+      enforcedRules?: string[];
       byRule: Record<string, number>;
       samples: string[];
     };

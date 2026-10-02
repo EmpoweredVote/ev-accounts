@@ -1,0 +1,40 @@
+{
+  "measured": "2026-09-29",
+  "note": "Occupancy start per seat. Each carries the document that states it.",
+  "cohort_2022": {
+    "seats": [
+      "County Executive",
+      "Prosecuting Attorney",
+      "County Assessor",
+      "Council 1",
+      "Council 3",
+      "Council 5",
+      "Council 7"
+    ],
+    "date": "2023-01-10",
+    "document": "Journal of the County Council, Tuesday January 10 2023 -- https://stlouisco.civicweb.net/document/110433?printPdf=true (meeting Id 800)",
+    "quote": "County Executive Page: \"Today, in Memorial Plaza, we had a moment to celebrate ... the word inauguration means an official beginning.\" Councilwoman Days: \"the inauguration. It was a very nice event this morning.\"",
+    "caveat": "Charter 2.040/3.010/5.040/6.050 compute the first Tuesday of January = 2023-01-03. The inauguration was 2023-01-10 and the roll call that night seats all seven. 2023-01-10 is the first date a DOCUMENT places them in the seat; it is not asserted to be the legal term start."
+  },
+  "cohort_2024": {
+    "seats": [
+      "Council 2",
+      "Council 4",
+      "Council 6"
+    ],
+    "date": "2025-01-07",
+    "document": "Journal of the County Council, Tuesday January 7 2025 -- https://stlouisco.civicweb.net/document/388825?printPdf=true (meeting Id 25750)",
+    "quote": "Councilman Harder: \"We had a great swearing-in ceremony this morning.\" Councilman Archer: \"It was a very special day for getting inaugurated.\" Roll call names all seven, Archer included.",
+    "caveat": "2025-01-07 was also the charter first Tuesday, so the document and the computed day agree here."
+  },
+  "prosecuting_attorney": {
+    "holder": "Melissa Price Smith",
+    "date": "2025-01-03",
+    "document": "stlcopa.stlouiscountymo.gov/prosecutor-melissa-price-smith/",
+    "quote": "\"Melissa Price Smith was sworn in on Friday, January 3, 2025, as the St. Louis County Prosecuting Attorney.\"",
+    "caveat": "Wesley Bell won the seat in Nov 2022 and then won a US House seat. Charter 5.050 fills the vacancy by county executive appointment with council confirmation. Price Smith is NOT the certified winner."
+  },
+  "open": [
+    "Sam Page has been County Executive since 2019 and Jake Zimmerman Assessor since 2011. Countywide seats carry no map floor, so their occupancy could reach further back than 2023-01-10 -- but no document for the earlier dates has been read yet."
+  ]
+}

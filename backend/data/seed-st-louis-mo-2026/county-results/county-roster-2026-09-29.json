@@ -1,0 +1,124 @@
+{
+  "measured": "2026-09-29",
+  "seats": [
+    {
+      "contest": "COUNTY EXECUTIVE",
+      "cohort": "nov-2022",
+      "certified_winner": "SAM PAGE",
+      "certified_votes": 189405,
+      "certified_pct": 51.56,
+      "certified_party": "DEM",
+      "held_now": "Sam Page",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-executive/",
+      "same_person": true
+    },
+    {
+      "contest": "PROSECUTING ATTORNEY",
+      "cohort": "nov-2022",
+      "certified_winner": "WESLEY BELL",
+      "certified_votes": 235208,
+      "certified_pct": 70.69,
+      "certified_party": "DEM",
+      "held_now": "Melissa Price Smith",
+      "held_now_source": "stlcopa.stlouiscountymo.gov/",
+      "same_person": false
+    },
+    {
+      "contest": "COUNTY ASSESSOR",
+      "cohort": "nov-2022",
+      "certified_winner": "JAKE ZIMMERMAN",
+      "certified_votes": 208643,
+      "certified_pct": 57.35,
+      "certified_party": "DEM",
+      "held_now": "Jake Zimmerman",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-assessor/",
+      "same_person": true
+    },
+    {
+      "contest": "COUNTY COUNCIL - DISTRICT 1",
+      "cohort": "nov-2022",
+      "certified_winner": "RITA HEARD DAYS",
+      "certified_votes": 30492,
+      "certified_pct": 100.0,
+      "certified_party": "DEM",
+      "held_now": "Rita Heard Days",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-council/",
+      "same_person": true
+    },
+    {
+      "contest": "COUNTY COUNCIL - DISTRICT 2",
+      "cohort": "nov-2024",
+      "certified_winner": "GRETCHEN BANGERT",
+      "certified_votes": 41364,
+      "certified_pct": 67.13,
+      "certified_party": "DEM",
+      "held_now": "Gretchen Bangert",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-council/",
+      "same_person": true
+    },
+    {
+      "contest": "COUNTY COUNCIL - DISTRICT 3",
+      "cohort": "nov-2022",
+      "certified_winner": "DENNIS HANCOCK",
+      "certified_votes": 33415,
+      "certified_pct": 51.22,
+      "certified_party": "REP",
+      "held_now": "Dennis Hancock",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-council/",
+      "same_person": true
+    },
+    {
+      "contest": "COUNTY COUNCIL - DISTRICT 4",
+      "cohort": "nov-2024",
+      "certified_winner": "SHALONDA WEBB",
+      "certified_votes": 45763,
+      "certified_pct": 80.29,
+      "certified_party": "DEM",
+      "held_now": "Shalonda D. Webb",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-council/",
+      "same_person": true
+    },
+    {
+      "contest": "COUNTY COUNCIL - DISTRICT 5",
+      "cohort": "nov-2022",
+      "certified_winner": "LISA D. CLANCY",
+      "certified_votes": 39855,
+      "certified_pct": 63.78,
+      "certified_party": "DEM",
+      "held_now": "Lisa D. Clancy",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-council/",
+      "same_person": true
+    },
+    {
+      "contest": "COUNTY COUNCIL - DISTRICT 6",
+      "cohort": "nov-2024",
+      "certified_winner": "G. MICHAEL ARCHER",
+      "certified_votes": 36820,
+      "certified_pct": 52.5,
+      "certified_party": "REP",
+      "held_now": "Michael Archer",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-council/",
+      "same_person": true
+    },
+    {
+      "contest": "COUNTY COUNCIL - DISTRICT 7",
+      "cohort": "nov-2022",
+      "certified_winner": "MARK A. HARDER",
+      "certified_votes": 36563,
+      "certified_pct": 58.4,
+      "certified_party": "REP",
+      "held_now": "Mark Harder",
+      "held_now_source": "stlouiscountymo.gov/st-louis-county-government/county-council/",
+      "same_person": true
+    }
+  ],
+  "charter_6_010": "There shall be no elective county officers other than county executive, council members, prosecuting attorney and assessor.",
+  "source_csvs": {
+    "csv-201103.csv": 7998603,
+    "csv-220802.csv": 6929384,
+    "csv-221108.csv": 6316962,
+    "csv-240806.csv": 14766495,
+    "csv-241105.csv": 9364370,
+    "csv-260804.csv": 6438599
+  }
+}

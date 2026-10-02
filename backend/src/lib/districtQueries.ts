@@ -19,6 +19,7 @@
  */
 
 import { FALLBACK_EXCLUDED_MTFCC_SQL_LIST } from './geoIdGuard.js';
+import { PHOTO_RESTRICTION_SELECT_SQL } from './photoRestriction.js';
 
 /**
  * Next primary/general date per office, as a lateral so a politician with no
@@ -48,6 +49,7 @@ export const DISTRICT_SELECT_FIELDS = `
     p.id, p.external_id, p.full_name, p.first_name, p.last_name, p.middle_initial,
     p.preferred_name, p.name_suffix, p.party,
     COALESCE(p.photo_custom_url, p.photo_origin_url, '') AS photo_origin_url,
+    ${PHOTO_RESTRICTION_SELECT_SQL},
     p.web_form_url, p.urls, p.email_addresses, p.bio_text, p.slug, p.is_incumbent,
     p.finance_summary,
     COALESCE(p.valid_from, '') AS term_start,

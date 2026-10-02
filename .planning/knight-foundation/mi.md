@@ -889,9 +889,35 @@ WRONG PICTURE; ONLY LOOKING FINDS IT.**
 
 ### Debts carried out of MI-5
 
-- 🔴 **The Detroit banner still collides with `states/MI.jpg`**, which *is* Detroit's skyline. The
-  Miami move — version the state banner, never overwrite — is still available and still owed. MI has
-  **no city banner**.
+- ✅ **CLOSED 2026-09-28 — the Detroit banner shipped, and it took two assets.** The collision was
+  real: read in the band it actually ships, `states/MI.jpg` keeps the Renaissance Center, One Detroit
+  Center and the whole downtown front, so the Charlotte escape hatch (a state banner that loses its
+  own subject at 6:1) was not available. Resolved the Miami way — the state moved to a new subject,
+  versioned and never overwritten, and the city took the skyline. Live: `cities/detroit.jpg` (*City
+  of Detroit*, CyberDetroit, CC BY-SA 4.0) and `states/MI-v2.jpg` (*Pictured Rocks National
+  Lakeshore*, Victoria Stauffenberg, public domain). Essentials PR #167.
+  - 🔴🔴 **`states/MI.jpg` IS OFF-SPEC AND THAT CHANGED THE ANSWER.** It is **1700×422 (4.03:1)**,
+    not the 1700×540 spec, so `object-fit: cover` in the 6:1 box shows **67.1% of it, rows 69–352**,
+    not the documented 52.4% / rows 128–411. `certify_banner.py` crops every `--baseline` to 3.148:1
+    first — for this file that means cutting the **width** to 1328 and upscaling 1.28× — so the tool
+    could not show what this asset serves, and the adjacency band had to be cut by hand.
+    `states/FL.jpg` is the same shape (1700×419); ten other live assets measured exactly 1700×540.
+    Fixed in essentials PR #168, which reads a live baseline at its own size.
+  - ⚠ **THE STATE'S OWN PHOTOGRAPH WAS NOT THE BEST CITY BANNER, WHICH IS NOT OBVIOUS.** The
+    intuitive move — re-render the file that is already live — was certified and **refused in both
+    its forms**: the `(cropped)` 4773×1185 source must lose 22% of its width to reach 3.148:1 and the
+    building bases still fall below the band, and the uncropped 4773×2787 original floats the towers
+    with no bases and no riverbank. A third photograph won on the measurement. ▶ **Certify the
+    move, do not assume it.**
+  - ⚠ **Mackinac Bridge measured best of all on colour (spread 92.6) and was refused on adjacency** —
+    a distant engineered structure across open water is the across-water skyline one tier up, which
+    is Myrtle Beach's refusal met in a state with no beach. Two Mackinac frames also carried people
+    at identifiable scale (the Durham test), and one was shot over a research vessel's rail.
+  - 🟢 **An operator who does not recognise the subject has refuted a recognisability argument.**
+    Sleeping Bear Dunes was proposed first because it "reads as Michigan to more people"; the
+    reviewer had never heard of it. Visitation says the dunes are busier (1,501,117 in 2022 against
+    Pictured Rocks' 953,052 in 2024), which is **not the same question**. Pictured Rocks also
+    measures better on colour and is public domain.
 - ⚠ **Nine portraits ship at 3.75× upscale** from 200 px sources: Worthy, Youngblood, Sabree and
   Garrett (Wayne countywide), and Whitfield-Calloway, Lavish Williams, Watts, Carter and Camille
   (Detroit). Approved knowingly; a better source would be a real improvement.
@@ -901,11 +927,12 @@ WRONG PICTURE; ONLY LOOKING FINDS IT.**
 
 ## ▶ Next: slice 12 — ND / Grand Forks
 
-Michigan is complete across all five stages. The remaining Michigan debts are the **Detroit banner**
-(it collides with `states/MI.jpg`), the **Crane A1 `sldu` re-load for 2027-01-01** (which also
-re-seats the Senate), **17 undated Detroit arrivals**, **6 undated Wayne countywide arrivals**, and
-the excluded sets: Detroit's **15 Community Advisory Council** seats and Wayne's **judges and WCCCD
-trustees**, both reversible.
+Michigan is complete across all five stages, and the **Detroit banner debt closed 2026-09-28** (see
+MI-5 above — it took two assets, and `states/MI.jpg` turned out to be off-spec). The remaining
+Michigan debts are the **Crane A1 `sldu` re-load for 2027-01-01** (which also re-seats the Senate),
+**17 undated Detroit arrivals**, **6 undated Wayne countywide arrivals**, and the excluded sets:
+Detroit's **15 Community Advisory Council** seats and Wayne's **judges and WCCCD trustees**, both
+reversible.
 
 ⚠ **ND's House is multi-member — two representatives per district.** Every earlier slice in this
 programme has been single-member in both chambers, so the office-per-district assumption that

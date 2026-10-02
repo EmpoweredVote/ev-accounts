@@ -1,0 +1,9 @@
+# Image binaries. 32 sources + 32 renders + previews; all re-fetchable from the
+# URLs in sheet-manifest.json, and the renders are reproducible from build_sheet.py.
+raw/
+render/
+preview/
+contact-sheet.html
+apply-photos.sql
+politician-ids.json
+*.bin

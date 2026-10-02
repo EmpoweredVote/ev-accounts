@@ -611,6 +611,93 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // slice, after Ohio, ND and KY, that owes no `place` load — one of six such states
   // (KS KY MI MS ND SD).
   KS: new Set(['sldu', 'sldl']),
+  // SD. Knight program slice 15 — Aberdeen and Brown County. Production held ZERO G5210/G5220
+  // rows for FIPS 46 and ZERO state legislative offices before this wave; measured 2026-09-28
+  // (South Dakota held ONE government row, 'State of South Dakota', carrying 5 statewide
+  // executives — Governor, Lt Governor, Attorney General, Secretary of State, Treasurer — all
+  // seated, and nothing else at all).
+  // sldu/sldl MEASURED against raw TIGER 2024 FIPS 46 by parsing the .dbf inside each zip:
+  //   sldu  35 records, MTFCC G5210, LSY 2024, 0 'ZZZ', SLDUST '001'..'035' contiguous, NO letters
+  //   sldl  37 records, MTFCC G5220, LSY 2024, 0 'ZZZ', '001'..'025','027','029'..'035' + 26A/26B/28A/28B
+  // 🔴🔴 THE POLYGON COUNT IS NOT THE SEAT COUNT, AND A COUNT OF 70 PASSES ON BOTH A RIGHT AND
+  // A WRONG STRUCTURE. Every SD district elects one senator and TWO representatives, except
+  // districts 26 and 28, which are split into single-member subdistricts. So 37 House polygons
+  // carry 70 seats: 33 whole districts at two each (66) plus 26A/26B/28A/28B at one each (4).
+  // A FLAT 35x2 IS ALSO 70 — the seat total can never discriminate, which is why the polygon
+  // count is the measurement and the seat arithmetic is asserted separately below.
+  // 🔴 THERE IS NO '026' AND NO '028' HOUSE POLYGON. TIGER files those two districts ONLY as
+  // their subdistricts, while the Senate keeps both WHOLE. The House code set is therefore
+  // deliberately NOT contiguous, and a contiguity assertion of the kind Kansas uses would fail
+  // CORRECTLY here. Do not add one, and do not "fill the gap".
+  // 🔴 A SOUTH DAKOTA HOUSE DISTRICT IS NOT AN INTEGER. `parseInt('26A')` is 26, which collapses
+  // 26A and 26B onto one OCD-ID — the MN '08A' / MD '1A' defect that ocdDistrictSuffix() exists
+  // to prevent and that the pre-flight asserts against by counting distinct suffixes. The
+  // padding rule also differs INSIDE the one field: numeric codes are zero-padded to three
+  // ('004'), lettered ones are not ('26A', never '026A'), so GEOID is '46004' and '4626A', both
+  // five characters. And an ASCII sort puts '26A' AFTER '035'. Never cast, sort or join an SD
+  // district code as a number.
+  // 🔴 VINTAGE WAS PROVEN, NOT ASSUMED — AND NOTHING IN THE FILE COULD PROVE IT. TIGER 2020,
+  // 2022, 2024 and 2025 are ALL sldl 37 / sldu 35 with the IDENTICAL code set, because South
+  // Dakota's subdistrict structure survived the 2021 redistricting unchanged. A count check, a
+  // letter check and a code-set check all pass on TIGER 2020, which carries the SUPERSEDED 2010
+  // plan. LSY looks like a discriminator and is not (2018/2022/2024/2024) — it tracks the Census
+  // refresh, the same trap KS-1 and KY-1 documented.
+  // The proof is GEOMETRIC, against the Legislature's own map layer, which publishes BOTH plans:
+  //   adopted     https://sdlegislature.gov/redistrictingFeatureLayer.geojson
+  //   superseded  https://sdlegislature.gov/2010redistrictingFeatureLayer.geojson
+  // linked from sdlegislature.gov/Redistricting/Home as "2021 Adopted Map". Measured 2026-09-28:
+  // TIGER 2024 moves 0 of 35 Senate and 0 of 37 House districts against the adopted plan and 7
+  // and 7 against the 2010 plan; TIGER 2020 inverts exactly. Tool:
+  // scripts/verify-sd-tiger-vintage.mjs, which needs no database and refuses TIGER 2020 by name.
+  // ⚠ AND A THRESHOLD TEST PASSES THE SUPERSEDED MAP HERE TOO, for the third state running.
+  // TIGER 2020 still agrees with the adopted plan on 28 of 35 Senate and 30 of 37 House — 80.0%
+  // and 81.1%. Anyone relaxing MOVED === 0 to "most districts agree" re-admits the 2010 plan.
+  // ⚠ AND THE AUTHORITY'S OWN LAYER HAS 39 FEATURES, NOT 35 OR 37: 1..35 PLUS 26A/26B/28A/28B,
+  // one layer serving both chambers, so 26A and 26B lie INSIDE 26 and a point-in-polygon lookup
+  // returns two answers unless the layer is narrowed per chamber first. Narrowed, it comes out
+  // at exactly 35 and 37 — the TIGER counts confirmed by a source that never saw a TIGER file.
+  // 🔴 THE geo_id COLLISION IS WITH COUNTIES, AS IN PA, SC, OH AND ND. sldu runs 46001..46035
+  // and sldl 46001..4628B, while South Dakota's 66 counties are 46003..46137 odd — so 17 county
+  // geo_ids fall inside the Senate range, and Brown County is '46013' while Senate District 13
+  // is ALSO '46013'. Every join must pair geo_id with mtfcc/district_type. The four subdistricts
+  // are safe by construction: '4626A' ends in a letter and cannot collide with a numeric county.
+  // place/cousub/CDP are EXCLUDED and MUST NOT be re-run: South Dakota's G4110 (310), G4040
+  // (1,219) and G4210 (175) rows are already in production, and Aberdeen city 4600100 is present
+  // with geometry. ⚠ 'Aberdeen' resolves THREE ways inside SD — place 4600100, plus cousub
+  // 4601300100 ALSO named 'Aberdeen city', plus cousub 4601300140 'Aberdeen township' — so a
+  // name match returns all three. SD is the fifth Knight slice, after Ohio, ND, KY and KS, that
+  // owes no `place` load — one of six such states (KS KY MI MS ND SD).
+  // cd/county are EXCLUDED: prod already holds South Dakota's single at-large congressional
+  // district (G5200) and all 66 counties.
+  SD: new Set(['sldu', 'sldl']),
+  // MO (St. Louis deep seed, wave 1). sldu/sldl: Missouri's operative legislative maps are the
+  // 2022 plans — the House map drawn by the House Independent Bipartisan Citizens Commission and
+  // the Senate map by its Senate counterpart, both governing from the 2022 election onward.
+  // Missouri did NOT redraw either chamber mid-decade. TIGER 2024 carries LSY=2024 on both.
+  // Counts MEASURED against raw TIGER 2024 FIPS 29 on 2026-09-28 by reading the .dbf inside each
+  // zip directly: sldl 163, sldu 34, ZERO 'ZZZ' pseudo-districts in either file, codes contiguous
+  // '001'..'163' and '001'..'034'. Missouri is SINGLE-MEMBER in both chambers, so polygon count
+  // EQUALS seat count — unlike AZ/WA/ND/SD, where one sldl polygon can carry two seats.
+  // 🔴 MISSOURI'S SENATE MAP BARELY MOVED, AND THAT IS THE TRAP HERE. Resolving each 2024 Senate
+  // polygon's own internal point against TIGER 2020 (LSY=2018, the 2011 plan) puts 32 of 34 on
+  // the SAME district number. Kansas City, Springfield and Jefferson City all resolve identically
+  // under both plans in BOTH chambers, and St. Louis City Hall does too. So a set of recognisable
+  // civic landmarks CANNOT date either map. The discriminating anchors below are concentrated in
+  // the St. Louis metro, which is where the two plans actually differ, and several are plain
+  // coordinates rather than landmarks on purpose — see the anchor table's own warning.
+  // 🔴 THE geo_id COLLISION IS WITH COUNTIES, as in PA, SC, OH, ND and SD. sldu runs 29001..29034
+  // and sldl 29001..29163, while Missouri's 115 counties are 29001..29510 — so the whole Senate
+  // range and most of the House range collide. Measured against prod: Senate District 5 is
+  // '29005' and so is ATCHISON COUNTY; House District 99 — the Clayton seat this slice cares
+  // about — is '29099' and so is JEFFERSON COUNTY; House District 163 is '29163' and so is PIKE
+  // COUNTY. Every join must pair geo_id with mtfcc/district_type.
+  // place/county are EXCLUDED and must NOT be re-run here: prod already holds all 115 Missouri
+  // county polygons, including 'St. Louis city' 29510 and 'St. Louis County' 29189, and the city
+  // is an INDEPENDENT CITY whose county-equivalent polygon is the territory the city government
+  // covers. Loading `place` would add a second, coextensive 'St. Louis city' row (2965000) for
+  // the same ground. MO is the seventh slice in this program that owes no `place` load.
+  // cd is EXCLUDED: prod already holds Missouri's 8 congressional districts.
+  MO: new Set(['sldu', 'sldl']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -2959,8 +3046,508 @@ async function processLayer(
     }
   }
 
+  // ── SD pre-flight (Knight slice 15 — Aberdeen / Brown County) ──────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 46 on 2026-09-28 by parsing the .dbf inside
+  // each zip directly:
+  //   sldu  35 records, 0 'ZZZ', LSY=2024, MTFCC G5210, SLDUST '001'..'035', NO letters
+  //   sldl  37 records, 0 'ZZZ', LSY=2024, MTFCC G5220, '026'/'028' ABSENT, 26A/26B/28A/28B present
+  // 🔴🔴 THE POLYGON COUNT IS NOT THE SEAT COUNT, AND A COUNT OF 70 PASSES ON BOTH A RIGHT AND A
+  // WRONG STRUCTURE. 33 whole districts at two representatives each (66) plus 26A/26B/28A/28B at
+  // one each (4) is 70 — and so is a flat 35x2. The seat total can NEVER discriminate, so the
+  // polygon count is the measurement and the seat arithmetic is asserted separately below, the
+  // same separation ND uses, so the two can never be read as the same number.
+  // 🔴 '026' AND '028' MUST BE ABSENT FROM THE HOUSE FILE. TIGER files those two districts only
+  // as their subdistricts while the Senate keeps both whole. Their PRESENCE would mean a file
+  // this program has never measured, so it is asserted as an absence — Kansas's contiguity check
+  // would fail correctly here and is deliberately NOT copied.
+  // 🔴 NOTHING IN THE FILE DATES THE MAP. TIGER 2020/2022/2024/2025 are all 37/35 with the
+  // IDENTICAL code set, and TIGER 2020 carries the SUPERSEDED 2010 plan. The vintage evidence is
+  // the anchors below, taken from the SD Legislature's own layer, which publishes both plans.
+  if (fipsArg === '46') {
+    const EXPECTED_SD_MTFCC: Record<string, number> = {
+      sldu: 35,   // 35 SD Senate districts — 2021 Adopted Map — measured 2026-09-28
+      sldl: 37,   // 37 SD House polygons carrying 70 seats, same plan — measured 2026-09-28
+    };
+    // The only subdistricts South Dakota has. Districts 26 and 28 split; nothing else does.
+    const SD_EXPECTED_SUBDISTRICTS = ['26A', '26B', '28A', '28B'];
+    // The parents of those subdistricts, which must NOT appear as whole House polygons.
+    const SD_ABSENT_HOUSE_CODES = ['026', '028'];
+    const SD_HOUSE_SEATS = 70;
+    //
+    // ANCHOR SHAPE: [lat, lon, code under the 2021 ADOPTED plan, code under the 2010 plan, label].
+    // 🔴 THE CODE IS A STRING, NOT A NUMBER, AND THAT IS THE WHOLE POINT. Kansas's equivalent
+    // block resolves anchors with `parseInt(fpVal, 10)`, which turns '26A' into 26 and would
+    // silently pass a House anchor that landed in the wrong half of a split district. Every
+    // comparison here runs on ocdDistrictSuffix(), which keeps the letter.
+    //
+    // 🔴🔴 EVERY RECOGNISABLE CIVIC POINT IN SOUTH DAKOTA FAILS TO DATE THE MAP, AND THAT WAS
+    // MEASURED, NOT ASSUMED. Aberdeen City Hall, the Brown County Courthouse, the State Capitol,
+    // Sioux Falls City Hall and Rapid City City Hall resolve IDENTICALLY under the 2010 and 2021
+    // plans in every chamber — 0 of 10 pairs discriminate. This reproduces Kansas exactly. The
+    // seven discriminating anchors are chosen for the opposite reason: they sit at the internal
+    // points of the seven districts that actually moved, and their expected values come from the
+    // Legislature's own adopted layer.
+    // ⚠ Sioux Falls City Hall resolves to 15 under BOTH plans while District 15's own internal
+    // point moved from 9 to 15 — the same district number, two points, opposite verdicts. An
+    // anchor is a POINT, never a district.
+    const SD_VINTAGE_ANCHORS: Record<string, Array<[number, number, string, string, string]>> = {
+      sldu: [
+        [45.4639, -98.4865, '3', '3', 'Aberdeen City Hall (Brown County) — this slice’s subject'],
+        [44.3662, -100.3464, '24', '24', 'South Dakota State Capitol, Pierre'],
+        [43.5474, -96.7287, '15', '15', 'Sioux Falls City Hall'],
+        [44.0832, -103.2263, '32', '32', 'Rapid City City Hall'],
+        [43.477, -100.7459, '26', '26', 'House 26A internal point — WHOLE district 26 in the Senate'],
+        [45.2925, -101.5252, '28', '28', 'House 28A internal point — WHOLE district 28 in the Senate'],
+        [43.5656, -96.5592, '2', '25', 'Minnehaha County — 2010 SD-25, 2021 SD-2'],
+        [44.2321, -97.2407, '8', '22', 'Kingsbury County — 2010 SD-22, 2021 SD-8'],
+        [43.5706, -96.7405, '15', '9', 'Sioux Falls — 2010 SD-9, 2021 SD-15'],
+        [43.9454, -98.2564, '20', '8', 'Sanborn County — 2010 SD-8, 2021 SD-20'],
+        [44.7123, -98.2916, '22', '2', 'Spink County — 2010 SD-2, 2021 SD-22'],
+        [43.8721, -96.7535, '25', '8', 'Minnehaha County — 2010 SD-8, 2021 SD-25'],
+        [44.0734, -103.2983, '34', '33', 'Rapid City — 2010 SD-33, 2021 SD-34'],
+      ],
+      sldl: [
+        [45.4639, -98.4865, '3', '3', 'Aberdeen City Hall (Brown County) — this slice’s subject'],
+        [44.3662, -100.3464, '24', '24', 'South Dakota State Capitol, Pierre'],
+        [43.5474, -96.7287, '15', '15', 'Sioux Falls City Hall'],
+        [44.0832, -103.2263, '32', '32', 'Rapid City City Hall'],
+        [43.477, -100.7459, '26A', '26A', 'House subdistrict 26A internal point — LETTERED in the House'],
+        [43.9091, -99.6531, '26B', '26B', 'House subdistrict 26B internal point'],
+        [45.2925, -101.5252, '28A', '28A', 'House subdistrict 28A internal point'],
+        [45.3787, -103.3479, '28B', '28B', 'House subdistrict 28B internal point'],
+        [43.5656, -96.5592, '2', '25', 'Minnehaha County — 2010 HD-25, 2021 HD-2'],
+        [44.2321, -97.2407, '8', '22', 'Kingsbury County — 2010 HD-22, 2021 HD-8'],
+        [43.5706, -96.7405, '15', '9', 'Sioux Falls — 2010 HD-9, 2021 HD-15'],
+        [43.9454, -98.2564, '20', '8', 'Sanborn County — 2010 HD-8, 2021 HD-20'],
+        [44.7123, -98.2916, '22', '2', 'Spink County — 2010 HD-2, 2021 HD-22'],
+        [43.8721, -96.7535, '25', '8', 'Minnehaha County — 2010 HD-8, 2021 HD-25'],
+        [44.0734, -103.2983, '34', '33', 'Rapid City — 2010 HD-33, 2021 HD-34'],
+      ],
+    };
+    // ⚠ Every coordinate above was rounded to 4 dp FIRST and re-resolved against BOTH authority
+    // layers afterwards, so the value in this file is exactly the value that was tested — the
+    // KS-1 rule. Civic coordinates come from the Census address geocoder; the rest are TIGER
+    // 2024 internal points.
+    const SD_MIN_DISCRIMINATING = 4;
+    // Controls, so every half of this gate can be WATCHED FAILING rather than trusted:
+    //   SD_PREFLIGHT_CONTROL=count   perturbs the expected record count -> MTFCC assertion fires
+    //   SD_PREFLIGHT_CONTROL=anchor  perturbs one anchor's expected code -> VINTAGE fires
+    //   SD_PREFLIGHT_CONTROL=weak    drops the discriminating anchors  -> DISCRIMINATION fires
+    //   SD_PREFLIGHT_CONTROL=absent  drops the '026'/'028' absence list -> nothing should change
+    // 🟢 AND SOUTH DAKOTA HAS THE CONTROL KENTUCKY COULD NOT HAVE, needing no flag at all:
+    //   --vintage 2020  (carries the 2010 plan) -> the discriminating anchors name the wrong
+    //   plan and the vintage assertion aborts. The structure is byte-identical between the two
+    //   vintages, so this control tests ONLY the geometry, which is the thing in doubt.
+    const SD_CONTROL = process.env.SD_PREFLIGHT_CONTROL ?? '';
+    if (SD_CONTROL) console.log(`  [${layer}] ⚠ SD_PREFLIGHT_CONTROL=${SD_CONTROL} — this run is a CONTROL and must FAIL.`);
+    if (SD_CONTROL === 'count') EXPECTED_SD_MTFCC[layer] = EXPECTED_SD_MTFCC[layer] - 1;
+    if (SD_CONTROL === 'anchor' && SD_VINTAGE_ANCHORS[layer]?.length) SD_VINTAGE_ANCHORS[layer][0][2] = '999';
+    if (SD_CONTROL === 'weak' && SD_VINTAGE_ANCHORS[layer]?.length) {
+      SD_VINTAGE_ANCHORS[layer] = SD_VINTAGE_ANCHORS[layer].filter((a) => a[2] === a[3]);
+    }
+    if (SD_CONTROL === 'absent') SD_ABSENT_HOUSE_CODES.length = 0;
+
+    if (layer in EXPECTED_SD_MTFCC) {
+      const expected = EXPECTED_SD_MTFCC[layer];
+      const anchors = SD_VINTAGE_ANCHORS[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      const seenCodes = new Set<string>();
+      const anchorHits: Array<string | null> = anchors.map(() => null);
+
+      const ringHas = (x: number, y: number, ring: number[][]): boolean => {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i];
+          const [xj, yj] = ring[j];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+      };
+      const polyHas = (x: number, y: number, poly: number[][][]): boolean => {
+        if (!ringHas(x, y, poly[0])) return false;
+        for (let k = 1; k < poly.length; k++) if (ringHas(x, y, poly[k])) return false;
+        return true;
+      };
+      type Ring = number[][];
+      type GeoJsonPoly = { type: string; coordinates: Ring[] | Ring[][] };
+      const geomHas = (x: number, y: number, geom: GeoJsonPoly | null | undefined): boolean => {
+        if (!geom) return false;
+        if (geom.type === 'Polygon') return polyHas(x, y, geom.coordinates as Ring[]);
+        if (geom.type === 'MultiPolygon') return (geom.coordinates as Ring[][]).some((p) => polyHas(x, y, p));
+        return false;
+      };
+
+      // 🔴 THE ANCHOR SET MUST BE ABLE TO TELL THE PLANS APART. Runs BEFORE the file is read,
+      // because it is a statement about this source file rather than about the download. It is
+      // what stops a later editor from "tidying" the odd-looking internal-point anchors into
+      // recognisable civic landmarks and leaving South Dakota with a gate that agrees with the
+      // 2010 map — which, measured, every civic landmark in the state does.
+      const discriminating = anchors.filter((a) => a[2] !== a[3]).length;
+      if (discriminating < SD_MIN_DISCRIMINATING) {
+        const err = new Error(
+          `[SD anchor discrimination assertion] layer=${layer}: only ${discriminating} of ` +
+          `${anchors.length} anchors distinguish the 2021 adopted plan from the 2010 plan, ` +
+          `expected at least ${SD_MIN_DISCRIMINATING}. ⚠ Every recognisable civic point in South ` +
+          `Dakota resolves IDENTICALLY under both plans — the 2010 map still agrees 80.0% ` +
+          `(Senate) and 81.1% (House) — so an anchor set with too few disagreements cannot date ` +
+          `the map at all. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      await streamShapefile(shpPath, dbfPath, async (geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        let code: string | null = null;
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          // 🔴 Never parseInt this. '26A' -> 26 collapses the two halves of a split district.
+          code = ocdDistrictSuffix(fpVal);
+          ocdSuffixes.add(code);
+          seenCodes.add(fpVal);
+        }
+        actualCount++;
+        for (let i = 0; i < anchors.length; i++) {
+          if (anchorHits[i] !== null) continue;
+          const [lat, lon] = anchors[i];
+          if (geomHas(lon, lat, geom as GeoJsonPoly)) anchorHits[i] = code;
+        }
+      });
+
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[SD MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. ⚠ 37/35 is identical in TIGER 2020/2022/2024/2025, so a WRONG ` +
+          `count here means a wrong state, a wrong layer or a truncated download — it can never ` +
+          `mean a superseded plan. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[SD OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. South Dakota's ` +
+          `House subdistricts 26A/26B/28A/28B carry a letter, so this is the MN '08A' / MD '1A' ` +
+          `collapse — parseInt('26A') is 26. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      const lettered = [...ocdSuffixes].filter((s) => /[A-Z]$/.test(s)).sort();
+      const expectedLettered = layer === 'sldl' ? SD_EXPECTED_SUBDISTRICTS : [];
+      if (lettered.join(',') !== expectedLettered.join(',')) {
+        const err = new Error(
+          `[SD subdistrict assertion] layer=${layer}: subdistricts ${JSON.stringify(lettered)}, ` +
+          `expected ${JSON.stringify(expectedLettered)}. Districts 26 and 28 are the only ones ` +
+          `South Dakota splits, and the SENATE splits neither. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (layer === 'sldl') {
+        // 🔴 ASSERTED AS AN ABSENCE. TIGER files 26 and 28 only as subdistricts in the House, so
+        // a whole '026' or '028' polygon means a file this program has never measured.
+        const present = SD_ABSENT_HOUSE_CODES.filter((c) => seenCodes.has(c));
+        if (present.length) {
+          const err = new Error(
+            `[SD absent-parent assertion] layer=sldl: whole House polygons ${JSON.stringify(present)} ` +
+            `are PRESENT. TIGER files districts 26 and 28 only as their subdistricts in the House ` +
+            `— the Senate keeps them whole — so this file is not the one measured on 2026-09-28. ` +
+            `Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+        // 🔴 The seat arithmetic, asserted apart from the polygon count so the two can never be
+        // read as the same number: 33 dual-member districts + 4 single-member subdistricts = 70.
+        const wholeDistricts = expected - SD_EXPECTED_SUBDISTRICTS.length;
+        const seats = wholeDistricts * 2 + SD_EXPECTED_SUBDISTRICTS.length;
+        if (seats !== SD_HOUSE_SEATS) {
+          const err = new Error(
+            `[SD seat assertion] ${wholeDistricts} dual-member districts + ` +
+            `${SD_EXPECTED_SUBDISTRICTS.length} single-member subdistricts = ${seats} House seats, ` +
+            `expected ${SD_HOUSE_SEATS}. Aborting before any DB write.`
+          );
+          err.name = 'MtfccAssertionError';
+          throw err;
+        }
+      }
+      const anchorFailures = anchors
+        .map((a, i) => ({ expected: a[2], prior: a[3], got: anchorHits[i], label: a[4] }))
+        .filter((r) => r.got !== r.expected);
+      if (anchorFailures.length) {
+        // 🔴🔴 NAME THE CONDITION ACTUALLY FOUND, AND THIS BRANCH FIRED WRONGLY ONCE BEFORE IT
+        // WAS RIGHT — the same way Kansas's did, twice. The first version asked "did every
+        // failure land on its prior value, and was at least one failure discriminating?", which
+        // the SD_PREFLIGHT_CONTROL=anchor tamper satisfies trivially: perturbing Aberdeen City
+        // Hall's expected value from '3' to '999' MAKES it look discriminating (999 !== 3) while
+        // it lands on '3', its prior. A corrupted anchor table was therefore diagnosed as "THIS
+        // FILE IS THE SUPERSEDED 2010 PLAN". It is not; it is the right file and a wrong table.
+        // ▶ The correct test is a statement about the WHOLE discriminating set: this file is the
+        // 2010 plan only if EVERY anchor that distinguishes the plans failed onto its 2010 value.
+        // One failure out of seven cannot be a different map — six anchors still name the
+        // adopted one.
+        const allOnPrior = anchorFailures.every((r) => r.got === r.prior);
+        const discriminatingAnchors = anchors.filter((a) => a[2] !== a[3]);
+        const failedDiscriminating = anchorFailures.filter((r) => r.expected !== r.prior);
+        const isPriorPlan = allOnPrior
+          && discriminatingAnchors.length > 0
+          && failedDiscriminating.length === discriminatingAnchors.length;
+        const diagnosis = isPriorPlan
+          ? `⚠ ALL ${discriminatingAnchors.length} discriminating anchors failed onto their 2010 ` +
+            `value — THIS FILE IS THE SUPERSEDED 2010 PLAN, not a damaged download. TIGER 2020 ` +
+            `carries it.`
+          : `⚠ Only ${failedDiscriminating.length} of ${discriminatingAnchors.length} discriminating ` +
+            `anchors failed, so this is NOT simply the 2010 plan — suspect a wrong state, a wrong ` +
+            `layer, a moved anchor, or an edited anchor table.`;
+        const err = new Error(
+          `[SD vintage assertion] layer=${layer}: ${anchorFailures.length} of ${anchors.length} ` +
+          `anchors disagree with the 2021 Adopted Map: ` +
+          anchorFailures.map((r) => `${r.label} expected ${r.expected}, got ${r.got ?? 'NONE'} (2010: ${r.prior})`).join('; ') +
+          `. ${diagnosis} These anchors come from the South Dakota Legislature's own published ` +
+          `layer (sdlegislature.gov/redistrictingFeatureLayer.geojson). Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] SD MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  `subdistricts ${JSON.stringify(lettered)}, ` +
+                  (layer === 'sldl' ? `'026'/'028' absent as required, seat arithmetic 33x2 + 4 = ${SD_HOUSE_SEATS} holds, ` : '') +
+                  `${anchors.length}/${anchors.length} adopted-plan anchors agree ` +
+                  `(${discriminating} of them distinguish the 2010 plan).`);
+    }
+  }
+
+  // ── MO pre-flight (St. Louis deep seed — wave 1) ───────────────────────────
+  // Counts MEASURED against raw TIGER 2024 FIPS 29 on 2026-09-28 by parsing the .dbf inside each
+  // zip directly:
+  //   sldu  34 records, 0 'ZZZ', LSY=2024, MTFCC G5210, SLDUST '001'..'034', no letters
+  //   sldl 163 records, 0 'ZZZ', LSY=2024, MTFCC G5220, SLDLST '001'..'163', no letters
+  // Missouri is single-member in both chambers, so 34 and 163 are seat counts as well as polygon
+  // counts. Nothing splits, so no subdistrict handling is needed — the SD/ND lettered-code path
+  // is deliberately NOT copied.
+  // 🔴🔴 NOTHING IN THE FILE DATES THE MAP, AND MISSOURI IS THE WORST CASE THIS PROGRAM HAS MET
+  // FOR THE SENATE. TIGER 2020 carries the SUPERSEDED 2011 plan (LSY=2018) at the IDENTICAL
+  // counts, 163 and 34. Worse, the plans barely differ where anyone would think to look:
+  // resolving each 2024 Senate polygon's own internal point against the 2011 file puts 32 OF 34
+  // ON THE SAME NUMBER. Kansas City City Hall, Springfield City Hall, Jefferson City and
+  // St. Louis City Hall ALL resolve identically under both plans in the Senate, and all but two
+  // do in the House as well.
+  // ▶ So the anchors below are chosen for DISAGREEMENT, not for recognisability, and five of six
+  // per layer distinguish the plans. Four of each set are bare coordinates in the St. Louis
+  // metro, because that is where the two plans actually differ. 🔴 DO NOT "TIDY" THEM INTO CIVIC
+  // LANDMARKS — measured, the landmarks agree with the 2011 map and would leave Missouri with a
+  // gate that cannot tell one plan from the other. This is the South Dakota failure, and the
+  // discrimination assertion below exists to stop it.
+  // ⚠ Every coordinate was rounded to 4 dp FIRST and re-resolved against BOTH vintages
+  // afterwards, so the value in this file is exactly the value that was tested — the KS-1 rule.
+  // Civic coordinates come from the Census address geocoder. 🔴 A HAND-TYPED COORDINATE IS NOT
+  // GOOD ENOUGH HERE: a first pass typed Kansas City City Hall ~30 m off, landed across the
+  // HD-23/24 line, and read '024' — which is ALSO the 2011 plan's answer for that spot. It looked
+  // exactly like a vintage failure and was a typing failure. Geocode every anchor.
+  if (fipsArg === '29') {
+    const EXPECTED_MO_MTFCC: Record<string, number> = {
+      sldu: 34,    // 34 MO Senate districts, single-member — 2022 plan — measured 2026-09-28
+      sldl: 163,   // 163 MO House districts, single-member — 2022 plan — measured 2026-09-28
+    };
+    // [lat, lon, expected code under the 2022 plan, code under the 2011 plan, label]
+    // 🔴 THESE ARE OCD SUFFIXES, NOT TIGER CODES — ocdDistrictSuffix() STRIPS LEADING ZEROS, so
+    // the value compared is '4', never '004'. Writing the zero-padded form here fails all six
+    // anchors at once and the gate then reports "an edited anchor table", which is exactly what
+    // it was. That is how this table was caught on its first run; do not pad them back.
+    let MO_VINTAGE_ANCHORS: Record<string, Array<[number, number, string, string, string]>> = {
+      sldl: [
+        [38.6497, -90.3384, '99', '87', 'Clayton, 41 S Central Ave — St. Louis County seat'],
+        [39.0998, -94.5783, '23', '24', 'Kansas City City Hall, 414 E 12th St'],
+        [38.4500, -90.5400, '97', '112', 'south St. Louis County'],
+        [38.4800, -90.6200, '88', '110', 'south-west St. Louis County'],
+        [38.5000, -90.3100, '93', '94', 'Lemay / south St. Louis County'],
+        [38.6274, -90.1984, '78', '78', 'St. Louis City Hall, 1200 Market St — identity only'],
+      ],
+      sldu: [
+        [38.6497, -90.3384, '4', '14', 'Clayton, 41 S Central Ave — St. Louis County seat'],
+        [38.4600, -90.4100, '24', '15', 'south St. Louis County'],
+        [38.5100, -90.6100, '15', '26', 'south-west St. Louis County'],
+        [38.6900, -90.6200, '2', '23', 'west St. Louis County'],
+        [38.6500, -90.2700, '5', '4', 'north-east St. Louis County'],
+        [38.6274, -90.1984, '5', '5', 'St. Louis City Hall, 1200 Market St — identity only'],
+      ],
+    };
+    const MO_MIN_DISCRIMINATING = 4;
+    // Controls, so every half of this gate can be WATCHED FAILING rather than trusted:
+    //   MO_PREFLIGHT_CONTROL=count   perturbs the expected record count -> MTFCC assertion fires
+    //   MO_PREFLIGHT_CONTROL=anchor  perturbs one anchor's expected code -> VINTAGE fires
+    //   MO_PREFLIGHT_CONTROL=weak    drops the discriminating anchors  -> DISCRIMINATION fires
+    // 🟢 AND MISSOURI HAS THE CONTROL SOUTH DAKOTA HAS, needing no flag at all:
+    //   --vintage 2020  (carries the 2011 plan) -> the discriminating anchors name the wrong plan
+    //   and the vintage assertion aborts. The COUNTS are identical between the two vintages, so
+    //   that control tests ONLY the geometry, which is the thing in doubt.
+    const MO_CONTROL = process.env.MO_PREFLIGHT_CONTROL ?? '';
+    if (MO_CONTROL) console.log(`  [${layer}] ⚠ MO_PREFLIGHT_CONTROL=${MO_CONTROL} — this run is a CONTROL and must FAIL.`);
+    if (MO_CONTROL === 'count') EXPECTED_MO_MTFCC[layer] = EXPECTED_MO_MTFCC[layer] - 1;
+    if (MO_CONTROL === 'anchor' && MO_VINTAGE_ANCHORS[layer]?.length) MO_VINTAGE_ANCHORS[layer][0][2] = '999';
+    if (MO_CONTROL === 'weak' && MO_VINTAGE_ANCHORS[layer]?.length) {
+      MO_VINTAGE_ANCHORS[layer] = MO_VINTAGE_ANCHORS[layer].filter((a) => a[2] === a[3]);
+    }
+
+    if (layer in EXPECTED_MO_MTFCC) {
+      const expected = EXPECTED_MO_MTFCC[layer];
+      const anchors = MO_VINTAGE_ANCHORS[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      const seenCodes = new Set<string>();
+      const anchorHits: Array<string | null> = anchors.map(() => null);
+
+      const ringHas = (x: number, y: number, ring: number[][]): boolean => {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i];
+          const [xj, yj] = ring[j];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+      };
+      const polyHas = (x: number, y: number, poly: number[][][]): boolean => {
+        if (!ringHas(x, y, poly[0])) return false;
+        for (let k = 1; k < poly.length; k++) if (ringHas(x, y, poly[k])) return false;
+        return true;
+      };
+      type Ring = number[][];
+      type GeoJsonPoly = { type: string; coordinates: Ring[] | Ring[][] };
+      const geomHas = (x: number, y: number, geom: GeoJsonPoly | null | undefined): boolean => {
+        if (!geom) return false;
+        if (geom.type === 'Polygon') return polyHas(x, y, geom.coordinates as Ring[]);
+        if (geom.type === 'MultiPolygon') return (geom.coordinates as Ring[][]).some((p) => polyHas(x, y, p));
+        return false;
+      };
+
+      // 🔴 THE ANCHOR SET MUST BE ABLE TO TELL THE PLANS APART. Runs BEFORE the file is read,
+      // because it is a statement about this source file rather than about the download. It is
+      // what stops a later editor from replacing the bare St. Louis coordinates with tidier civic
+      // landmarks and leaving Missouri with a gate that agrees with the 2011 map — which,
+      // measured, every recognisable landmark in the state does for the Senate.
+      const discriminating = anchors.filter((a) => a[2] !== a[3]).length;
+      if (discriminating < MO_MIN_DISCRIMINATING) {
+        const err = new Error(
+          `[MO anchor discrimination assertion] layer=${layer}: only ${discriminating} of ` +
+          `${anchors.length} anchors distinguish the 2022 adopted plan from the 2011 plan, ` +
+          `expected at least ${MO_MIN_DISCRIMINATING}. ⚠ Missouri's Senate map barely moved — 32 ` +
+          `of 34 district internal points resolve to the SAME number under both plans, and every ` +
+          `recognisable civic landmark in the state agrees — so an anchor set with too few ` +
+          `disagreements cannot date the map at all. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      await streamShapefile(shpPath, dbfPath, async (geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        let code: string | null = null;
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          code = ocdDistrictSuffix(fpVal);
+          ocdSuffixes.add(code);
+          seenCodes.add(fpVal);
+        }
+        actualCount++;
+        for (let i = 0; i < anchors.length; i++) {
+          if (anchorHits[i] !== null) continue;
+          const [lat, lon] = anchors[i];
+          if (geomHas(lon, lat, geom as GeoJsonPoly)) anchorHits[i] = code;
+        }
+      });
+
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[MO MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. ⚠ 163/34 is identical in TIGER 2020 and 2024, so a WRONG count ` +
+          `here means a wrong state, a wrong layer or a truncated download — it can never mean a ` +
+          `superseded plan. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      // Codes must be contiguous 001..NNN with no gaps, no duplicates and no letters. Missouri
+      // splits nothing, so any lettered code means a file this slice has never measured.
+      const lettered = [...seenCodes].filter((c) => /[^0-9]/.test(c)).sort();
+      const expectedCodes = Array.from({ length: expected }, (_, i) => String(i + 1).padStart(3, '0'));
+      const missingCodes = expectedCodes.filter((c) => !seenCodes.has(c));
+      if (lettered.length || missingCodes.length || seenCodes.size !== expected) {
+        const err = new Error(
+          `[MO code-set assertion] layer=${layer}: expected exactly ${expected} distinct numeric ` +
+          `codes '001'..'${String(expected).padStart(3, '0')}', got ${seenCodes.size} distinct` +
+          (missingCodes.length ? `, missing ${JSON.stringify(missingCodes.slice(0, 10))}` : ``) +
+          (lettered.length ? `, and UNEXPECTED lettered codes ${JSON.stringify(lettered)} — ` +
+            `Missouri is single-member in both chambers and splits no district, so a lettered ` +
+            `code means a wrong state or a wrong vintage` : ``) +
+          `. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      const anchorFailures = anchors
+        .map((a, i) => ({ expected: a[2], prior: a[3], got: anchorHits[i], label: a[4] }))
+        .filter((r) => r.got !== r.expected);
+      if (anchorFailures.length) {
+        // 🔴 NAME THE CONDITION ACTUALLY FOUND. This file is the 2011 plan only if EVERY anchor
+        // that distinguishes the plans failed onto its 2011 value. One failure out of six cannot
+        // be a different map — five anchors still name the adopted one. The SD block records why
+        // the looser test is wrong: an `anchor` tamper satisfies it trivially.
+        const allOnPrior = anchorFailures.every((r) => r.got === r.prior);
+        const discriminatingAnchors = anchors.filter((a) => a[2] !== a[3]);
+        const failedDiscriminating = anchorFailures.filter((r) => r.expected !== r.prior);
+        const isPriorPlan = allOnPrior
+          && discriminatingAnchors.length > 0
+          && failedDiscriminating.length === discriminatingAnchors.length;
+        const diagnosis = isPriorPlan
+          ? `⚠ ALL ${discriminatingAnchors.length} discriminating anchors failed onto their 2011 ` +
+            `value — THIS FILE IS THE SUPERSEDED 2011 PLAN, not a damaged download. TIGER 2020 ` +
+            `carries it at the same 163/34 counts.`
+          : (failedDiscriminating.length === discriminatingAnchors.length
+              ? `⚠ All ${discriminatingAnchors.length} discriminating anchors failed but NOT onto ` +
+                `their 2011 values, so this is NOT the 2011 plan — suspect a wrong state, a wrong ` +
+                `layer, or an edited anchor table. If every 'got' differs from its 'expected' only ` +
+                `by leading zeros, the table was zero-padded: these are OCD suffixes, so '4' not '004'.`
+              : `⚠ Only ${failedDiscriminating.length} of ${discriminatingAnchors.length} ` +
+                `discriminating anchors failed, so this is NOT simply the 2011 plan — suspect a ` +
+                `moved anchor or an edited anchor table.`);
+        const err = new Error(
+          `[MO vintage assertion] layer=${layer}: ${anchorFailures.length} of ${anchors.length} ` +
+          `anchors disagree with the 2022 adopted plan: ` +
+          anchorFailures.map((r) => `${r.label} expected ${r.expected}, got ${r.got ?? 'NONE'} (2011: ${r.prior})`).join('; ') +
+          `. ${diagnosis} The 2022 values were cross-read three ways on 2026-09-28 — this ` +
+          `shapefile, the Missouri House's own address lookup at house.mo.gov/DistrictInfo.aspx, ` +
+          `and the Census geocoder's '2026 State Legislative Districts' layer. Aborting before ` +
+          `any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] MO MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  `codes contiguous 001..${String(expected).padStart(3, '0')} with no letters, ` +
+                  `${anchors.length}/${anchors.length} adopted-plan anchors agree ` +
+                  `(${discriminating} of them distinguish the 2011 plan).`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY, KS) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY, KS, SD, MO) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md

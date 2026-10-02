@@ -2,8 +2,9 @@ import { client, MODEL } from '../../scripts/content-generation/anthropic-client
 import type { ClaimResult } from './claim-extractor.js';
 import type { QuestionInput } from '../../services/qualityRules/types.js';
 import { auditQuestion } from '../../services/qualityRules/index.js';
+import { mintExternalId, mintForConfig, nextSequence } from '../../utils/externalIdentity.js';
 import {
-  qualityRulesEnforced,
+  qualityRulesEnforcement,
   emptyQualityRuleStats,
   decideRuleGate,
   recordGate,
@@ -277,7 +278,7 @@ export async function writePassingQuestions(
   claim: ClaimResult,
   collectionId: number,
   jobId: number,
-  externalIdPrefix: string,
+  externalIdPrefix: string | undefined,
   volatility: Volatility,
 ): Promise<WritePassResult> {
   const ruleStats = emptyQualityRuleStats();
@@ -286,8 +287,26 @@ export async function writePassingQuestions(
 
   // Lazy DB imports (ESM pattern — consistent with replacementGenerator.ts)
   const { db } = await import('../../db/index.js');
-  const { questions: questionsTable, collectionQuestions, topics } = await import('../../db/schema.js');
-  const { eq, and, sql } = await import('drizzle-orm');
+  const { questions: questionsTable, collectionQuestions, topics, collections } = await import('../../db/schema.js');
+  const { eq, sql } = await import('drizzle-orm');
+
+  // New-scheme lanes carry no externalIdPrefix; resolve the collection slug
+  // once, up front, to mint `<slug>_<NNNN>` ids below. Legacy lanes (prefix
+  // set) skip this query entirely.
+  let collectionSlug: string | undefined;
+  if (!externalIdPrefix) {
+    const [collectionRow] = await db
+      .select({ slug: collections.slug })
+      .from(collections)
+      .where(eq(collections.id, collectionId))
+      .limit(1);
+    collectionSlug = collectionRow?.slug;
+    if (!collectionSlug) {
+      throw new Error(
+        `No collection found for id ${collectionId} when minting a new-scheme external id`,
+      );
+    }
+  }
 
   // ── Resolve/create "world-news" topic ──────────────────────────────────────
   const WORLD_NEWS_SLUG = 'world-news';
@@ -315,21 +334,21 @@ export async function writePassingQuestions(
     console.log(`[QuestionGenerator] Created topic: ${WORLD_NEWS_NAME} (id=${topicId})`);
   }
 
-  // ── Get current max external ID for this prefix ────────────────────────────
+  // ── Get current max external ID sequence for this collection ───────────────
+  // Scoped by collection membership alone: the join already limits this to
+  // the one collection this lane writes into, so a LIKE on the prefix is
+  // redundant — and under the slug scheme it would match nothing (there is
+  // no literal '-' prefix to match), silently resetting the sequence to 1
+  // and colliding with existing ids.
   const maxIdResult = await db
     .select({
       maxId: sql<string>`MAX(SUBSTRING(${questionsTable.externalId} FROM '[0-9]+$')::int)`,
     })
     .from(questionsTable)
     .innerJoin(collectionQuestions, eq(questionsTable.id, collectionQuestions.questionId))
-    .where(
-      and(
-        eq(collectionQuestions.collectionId, collectionId),
-        sql`${questionsTable.externalId} LIKE ${externalIdPrefix + '-%'}`,
-      ),
-    );
+    .where(eq(collectionQuestions.collectionId, collectionId));
 
-  let nextIdNum = (maxIdResult[0]?.maxId ? parseInt(maxIdResult[0].maxId, 10) : 0) + 1;
+  let nextIdNum = nextSequence(maxIdResult[0]?.maxId);
 
   // ── Insert each passing question ────────────────────────────────────────────
   // Write-time answer-position guard: generator prompts show the model
@@ -341,7 +360,13 @@ export async function writePassingQuestions(
   const primarySource = claim.sourceArticles[0];
 
   for (const q of passingQuestions) {
-    const externalId = `${externalIdPrefix}-${String(nextIdNum).padStart(4, '0')}`;
+    // Legacy keeps the four-digit width already used by ids in the DB;
+    // new-scheme (no prefix) mints `<slug>_<NNNN>` via the shared minter.
+    const externalId = mintForConfig(
+      { externalIdPrefix, collectionSlug: collectionSlug! },
+      nextIdNum,
+      4,
+    );
     nextIdNum++;
 
     const placed = placeAnswer(q.options, q.correctAnswer, externalId);
@@ -353,7 +378,7 @@ export async function writePassingQuestions(
     // and a news article URL is not a .gov page that answers bots politely.
     // Leaving it on would put an HTTP round trip per question inside the cron
     // and make the verdict depend on network weather.
-    const enforce = qualityRulesEnforced();
+    const enforcement = qualityRulesEnforcement();
     // Dereferenced OUTSIDE the try on purpose. A claim with no source articles
     // is a malformed claim, not a rules failure; inside the try it would be
     // logged as "audit threw" and then throw again uncaught at the insert
@@ -368,13 +393,19 @@ export async function writePassingQuestions(
         ),
       );
 
-      const decision = decideRuleGate(audit.violations, enforce);
-      recordGate(ruleStats, externalId, decision, enforce);
+      const decision = decideRuleGate(audit.violations, enforcement);
+      recordGate(ruleStats, externalId, decision);
 
       if (decision.blocking.length > 0) {
         const rules = decision.blocking.map(v => v.rule).join(', ');
+        // "WOULD BLOCK" now means "no ENFORCED rule objected", which with a
+        // partial list is a different statement from "enforcement is off".
+        // Naming the enforced rules keeps the line readable in the cron log.
+        const verdict = decision.enforced.length > 0
+          ? `BLOCKED (${decision.enforced.map(v => v.rule).join(', ')})`
+          : 'WOULD BLOCK';
         console.log(
-          `[QualityRules] ${enforce ? 'BLOCKED' : 'WOULD BLOCK'} ${externalId} — ${rules} — "${q.text.slice(0, 60)}"`,
+          `[QualityRules] ${verdict} ${externalId} — ${rules} — "${q.text.slice(0, 60)}"`,
         );
       }
 
