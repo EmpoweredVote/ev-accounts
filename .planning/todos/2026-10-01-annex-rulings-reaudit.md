@@ -31,6 +31,12 @@ reviewed migration (allocator slot), never an in-place edit.
   donut design does remove it and the benefit size separates rungs 1/2. Chair stays 2; fix the
   sentence at the next re-audit.
 
+## data-centers — a study bill is not a chair (Season 1 carry-over)
+
+- The `data-centers` memory note (CA_0033) records a Season 1 move to rung 3 that rests on a bill for
+  a data-centre impact **study**. Under the codebook that is V4 `study-directive` and cannot seat a
+  chair. Check whether the row carried into Season 2; if so, re-code it.
+
 ## Not owed
 
 - ukraine-support: 0 open-season answers; the H.R. 8035 ruling moves nothing.

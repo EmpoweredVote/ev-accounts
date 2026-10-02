@@ -175,3 +175,19 @@ Add new notes at the bottom. Do not record gold item names here (keep them certi
   a savings clause reads as rung 2).
 - **trans-athletes — rung 2** begins "should allow …" (grammar). Proposed: "allow transgender athletes
   to compete on teams matching their gender identity …".
+
+## Energy, tech and elections batch (accepted 2026-10-01 as ladder notes; wording proposals are drafts)
+
+- **campaign-finance — rung 5** "Eliminate all campaign finance laws and limits" still covers
+  disclosure laws, which left this ladder (CA_0041). Proposed: "Eliminate all limits on political
+  donations and spending." Clarifying; count seated rows first.
+- **data-centers — rung 3** is a triple compound (impact assessments, cost-sharing, community benefit).
+  Proposed: "Allowing data center development only after approval conditions such as impact
+  assessments, energy cost-sharing agreements, or community benefit requirements." Material (widens).
+- **redistricting — rung 2** (ruled 2026-10-01: a party-balanced citizens' commission with leaders
+  choosing members is rung 2). Proposed: "independent redistricting commissions with equal
+  representation from both major parties, whose members elected officials help select." Clarifying.
+- **voting-rights — rung 5** moves to registration, not ID to vote. Proposed: "Require photo ID to vote
+  and documentary proof of citizenship to register." Material.
+- **ai-regulation — rung 4** (optional): "… or before powerful models are released" would seat
+  frontier-model testing duties (ruled 2026-10-01: today they are compound-partial). Material.

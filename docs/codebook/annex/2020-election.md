@@ -70,7 +70,8 @@ election boards).
      won, by fraud.
    - Levels that hold a lever: none; own words. Records: see hard cases.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` "stolen" or "rigged" with no mechanism named: rung 5, or `compound-partial`?
+   - "Stolen" or "rigged" with no mechanism named → `compound-partial`: it meets [a] but not [b]
+     "through widespread fraud" (H14) _(ruled 2026-10-01)_.
    - A claim that it was stolen by something other than fraud (rule changes, media, courts) meets [a]
      but not [b] → `compound-partial` _(proposed)_.
 

@@ -37,9 +37,8 @@ the SSN).
      bill that keeps a list with non-photo documents against a move to photo only.
    - Levels that hold a lever: state; federal.
    - Known chair-shaped instruments: _(none on file)_.
-   - Commonly confused with BLANK when an **amending bill** changes something near an existing ID law
-     whose list already has non-photo documents. If the bill's changes do not set what ID is required,
-     the existing law's rung is not the person's position → BLANK `no-evidence`.
+   - Commonly confused with BLANK when a bill amends an existing ID law without setting what ID is
+     required: the existing law's rung is not the person's position → BLANK `no-evidence`.
 
 3. **"Require photo ID to vote, but let voters without one cast a ballot after signing an
    affidavit."**
@@ -73,9 +72,8 @@ the SSN).
    - Levels that hold a lever: state; federal.
    - Known chair-shaped instruments: _(none on file)_. Code each record from its own bill text and
      roll call.
-   - Commonly confused with rung 2 when the same bill also asks for **proof of residence** or a
-     citizenship **checkbox**. The documentary-proof clause is rung 5 verbatim; code it, not the
-     weaker clauses beside it.
+   - Commonly confused with rung 2 when the same bill also has weaker identity clauses. The
+     documentary-proof clause is rung 5 verbatim; code it, not the weaker clauses beside it.
    - A rule for **registration** that is not documentary proof (an ID number, a database match, a
      sworn statement of citizenship) matches no rung → `direction-only` _(proposed)_.
    - The SAVE Act is rung 5 verbatim, but an encyclopedia page about it is not the person's act. Find

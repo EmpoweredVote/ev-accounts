@@ -28,8 +28,9 @@ for rungs 2 and 3 a federal official's evidence is usually own words (review 202
    - Levels that hold a lever: state; federal (national standards that require such commissions).
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 2 because many citizens' commissions also seat equal numbers from the
-     two largest parties. `_owed:_` a citizens' commission with equal party seats, where legislative
-     leaders take part in choosing members: rung 1 or rung 2?
+     two largest parties. A citizens' commission with equal party seats, where legislative leaders take
+     part in choosing members, is rung 2: elected officials are involved, so rung 1's absence clause
+     fails _(ruled 2026-10-01)_.
 
 2. **"independent redistricting commissions with equal representation from both major parties."**
    - Means: a commission outside the legislature draws the maps, with equal seats for the two largest
@@ -77,9 +78,7 @@ for rungs 2 and 3 a federal official's evidence is usually own words (review 202
    - Commonly confused with rung 4: see rung 4.
 
 **Hard cases:**
-- **A temporary change of map-drawer.** A measure that sets aside a commission's map for a
-  legislature-drawn map for a limited period, and returns the task to the commission later, fits no
-  single rung → BLANK `direction-only`. The measure's own findings or declarations are part of the same
+- **A change of map-drawer that is not permanent** fits no single rung → BLANK `direction-only`. The measure's own findings or declarations are part of the same
   record, not a separate statement, so there is no `record-vs-statement-conflict`.
 - **A vote for a particular map** is about the map's lines, not about who should draw → `adjacent`
   _(proposed)_.

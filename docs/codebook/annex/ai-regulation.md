@@ -50,7 +50,7 @@ decision", "high-risk artificial intelligence system", "algorithmic discriminati
    - Establishing evidence looks like: operative text that creates liability for harm caused by an AI
      system, where the liable party **can be the company** that made or provided it → rung 3. If the
      text reaches only an individual who misuses AI, [b] is not met → `direction-only` _(proposed)_.
-     A general term such as "the defendant" or "a person" that can include a company meets [b].
+     A general liability statute that does not name AI developers but reaches them meets [b].
    - Levels that hold a lever: federal; state.
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with BLANK because a **disclosure or labelling** duty (watermarks, provenance,
@@ -70,12 +70,14 @@ decision", "high-risk artificial intelligence system", "algorithmic discriminati
      rung 5 by its own text (as in codebook V4.2, Adams / trans-athletes).
    - Levels that hold a lever: federal; state.
    - Known chair-shaped instruments: _(none on file)_.
-   - Commonly confused with BLANK because rules on **employers or other users** of AI in a high-stakes
-     area (notice to the person, human review, appeal rights, enforcement) are oversight but not
-     testing, and not developer liability → BLANK `direction-only`.
-   - `_owed:_` does a required pre-use bias audit or impact assessment count as "safety testing"?
-   - `_owed:_` does a pre-deployment testing duty scoped by **model size** (frontier or covered models),
-     not by use area, meet [c]?
+   - Commonly confused with BLANK because duties on **users** of AI (not developers) are oversight,
+     not testing, and not developer liability → BLANK `direction-only`.
+   - A required pre-use **bias audit** counts as safety testing when it tests the system's outputs
+     before use. An impact assessment that is only a report, with no test → `direction-only` _(ruled 2026-10-01)_.
+   - A pre-deployment testing duty scoped by **model size** (frontier or covered models), not by use
+     area, meets the testing clause but not "in high-stakes areas" → `compound-partial`. It is not
+     rung 5 (testing is not approval). A duty only to publish a safety framework → `direction-only`
+     _(ruled 2026-10-01)_.
 
 5. **"Impose strict government approval requirements before any AI system can be deployed"**
    - Means: no AI system may be deployed until government approves it.

@@ -39,9 +39,10 @@ city public-financing programmes).
      constitutional amendment that lets government limit such spending _(proposed)_.
    - Levels that hold a lever: federal; state; local.
    - Known chair-shaped instruments: _(none on file)_.
-   - `_owed:_` are [b] and [c] one clause with two forms, or a compound that needs both?
-   - `_owed:_` is a rule that bars spending unless the group discloses its donors a limit, or
-     disclosure?
+   - [b] and [c] are **one clause with two forms**: either is enough. "Strictly" still needs a real
+     limit, not a reporting duty _(ruled 2026-10-01)_.
+   - A rule that bars spending unless the group discloses its donors is a **limit** on dark-money
+     spending. A plain reporting duty is not → `direction-only` _(ruled 2026-10-01)_.
    - Commonly confused with rung 3 when a bill only lowers **contribution** limits to candidates.
      Rung 2 targets spending by corporations and outside groups.
    - A narrow ban (foreign-influenced corporations, government contractors, lobbyists) is not "strictly
@@ -70,7 +71,7 @@ city public-financing programmes).
      excludes rung 5 by its own text _(proposed)_.
    - Levels that hold a lever: federal; state; local.
    - Known chair-shaped instruments: _(none on file)_.
-   - The two-forms question for [b] and [c] is the same `_owed:_` as rung 2.
+   - [b] and [c] are one clause with two forms, as in rung 2 _(ruled 2026-10-01)_.
    - A **lawsuit or amicus brief** arguing that a limit violates free speech is a `record` (Q8); the
      substantive claim is the position. A claim against one limit is rung 4, not rung 5 _(proposed)_.
 

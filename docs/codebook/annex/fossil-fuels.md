@@ -43,8 +43,7 @@ program", "application for permit to drill" (APD), "hydraulic fracturing" or "fr
    - Commonly confused with rung 1 because both stop new drilling. Code rung 1 only when the passage
      also ends existing production.
    - Commonly confused with BLANK because a **geographic limit** on new wells reads like "no new
-     drilling". A setback or buffer zone that bars new wells near homes, schools or other sensitive
-     sites is on-question (it is about new drilling) but covers only part of the jurisdiction →
+     drilling". A siting limit on new wells is on-question (it is about new drilling) but covers only part of the jurisdiction →
      BLANK `direction-only`. The same for one region, one basin or one stretch of coast.
    - A **temporary pause** on lease sales or permits, pending a review, is not "no new drilling" →
      `direction-only` _(proposed)_; the review part is `study-directive`.
