@@ -1,0 +1,750 @@
+You are stance coder 1. You code evidence against the codebook below. You do not search,
+fetch or verify anything: every source you may use is in this message, and code checks your
+labels afterwards. If the evidence a row needs is named but not included here, put it in
+needs_source instead of guessing.
+
+Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts/.claude/worktrees/clever-leakey-bd9943/backend/data/stance-research/2026-10-02-shadow-koch-sb1ss/labels/coder-1.json. Write JSON only, matching
+codebook Part E, with "codebook_version": "0.4" and "coder_slot": 1. One row per
+topic below. Every quoted string you write must be copied exactly from a source below.
+
+## Codebook
+
+# Empowered Vote — Stance & Quote Codebook
+
+**Version:** 0.4 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
+fields (confirm-basis spec). The annex
+readings and examples are not yet ruled on. Every label records `codebook_version`.
+**Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
+record fields are required per instrument group, not per passage (V3 "Record fields", Part E), and V3
+carries a worked two-passage vote example.
+**Updated 2026-09-27 (0.3 → 0.3.1 — a new rule coders must apply, amendment-markup spec §5):** text
+inside a `[deleted: …]` fence is removed from the law; it is never the provision, and a coder never
+quotes it as `provision_quote` (V3 "Record fields").
+**Updated 2026-09-27 (0.3.1 → 0.4 — V5 ruling, option B, Chris Andrews):** a record from **either
+chamber of the same legislature** counts for the current seat (a senator's votes and bills from their
+House years). A record from another level of government (a city council, a county, Congress) is still
+valid for that office only. See V5.
+**Clarified 2026-09-30 (still 0.4 — no new variable or value; two existing rules spelled out):** V4.2
+"Silence is not a clause" and "Ruling out the other rungs is not evidence", with register rows H13 and
+H14. Both restate V4 `direction-only` and the CLAUDE.md tiebreaker rule; the version stays 0.4 so
+existing gold keeps counting. The two gold items that prompted them are not named here, so they stay
+certifiable: their coder labels were written before these lines existed.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value):** V3 "A record reported only by news is
+not a record", with register row H15. It restates the V3 rule that a record needs the instrument and
+the person's action on it, for the case where the only source of that action is a reporter's sentence.
+The items that prompted it are not named here, for the same reason as H13 and H14.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4 "A study
+directive that states its goal", with register row H16. It decides which existing blank reason a
+`study-directive` row takes; it changes no chair. The item that prompted it is not named here.
+**Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
+**Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
+and a skill or prompt disagree, this file wins; fix the other one.
+**Authorities it consolidates:** CLAUDE.md "Compass chairs are five distinct stances"; stance-program
+spec (2026-09-23) §3, §4, §10; `research-stances` SKILL.md hard rules; `on-the-record`
+`docs/quote-curation/PRINCIPLES.md`, `audit-quotes/CHECKS.md` §4, `CASEBOOK.md`.
+
+> Examples marked **[real]** are taken from rows in `inform.stance_research_review` (Season 1, June
+> 2026). The code shown is what this codebook *would* assign. It is not what was published. Several
+> of those rows were published under older rules; Season 2 research re-codes them.
+
+---
+
+## Part 0 — Frame
+
+### 0.1 Units
+
+- **Unit of analysis:** one *row* = (politician, office, topic, season). The coders code only the
+  season's **served** ladder revision.
+- **Unit of coding:** one *source passage*, meaning one snapshot excerpt, identified by `snapshot_id`.
+- **Quote unit:** one *candidate quote*, a verbatim span inside a snapshot.
+
+### 0.2 What a coder sees, and what it does not see
+
+- **It sees:** this codebook, the topic annex, the served ladder text (all five rungs), the
+  politician's name, office, jurisdiction and term dates, and the snapshot passages.
+- **It does not see:** the collector's opinion, any other coder's label, the chair currently
+  published, the party, or anything about the "usual" position of people like this one.
+- **Party is never evidence.** A coder that uses party, caucus or "voted with the majority" as a basis
+  for anything is wrong on that item (§A6 bad example 2).
+
+### 0.3 Decision order (fixed)
+
+Code the source passages first, one at a time. Then code the row.
+
+```
+per passage:  V1 attribution → V2 relevance → V3 evidence class → V4 shape → V5 time
+              (a disqualifying value at any step ends that passage: it cannot support a chair)
+per row:      V6 chair, using only passages that survived V1–V5
+per quote:    V7 tier → V8 quotable
+```
+
+### 0.4 Principles that override everything below
+
+1. **A blank is a correct answer.** An honest BLANK scores the same as a correct chair. A wrong chair
+   is the only failure that reaches voters.
+2. **Five chairs, not a polarity scale.** Each rung is a distinct stance. Evidence of *direction*
+   (for/against) does not choose between the rungs on one side.
+3. **"The least extreme rung the evidence supports" is a tiebreaker, not evidence.** If you are about
+   to use it, the row is not evidenced: code BLANK `direction-only`.
+4. **Never assume polarity.** Read the rung text. Rung 1 is not always "most government". The annex
+   marks inverted and off-axis topics.
+5. **Scope is per rung.** A rung that no officeholder at this level can act on cannot be evidenced at
+   this level.
+6. **Convergent error is not corroboration.** Two news stories that repeat one press release are one
+   source.
+
+---
+
+## Part A — Stance variables
+
+### V1 Attribution — *is this passage this person's own act or own words?*
+
+| Value | Definition |
+|---|---|
+| `own-words` | First person, or a direct quotation of the person, attributed in the text. |
+| `own-act` | A recorded act of the person: sponsorship, a vote, a veto, a signed filing, an adopted motion. |
+| `third-party-characterization` | Someone else describing the person ("a champion of…", "has long supported…"). |
+| `namesake-unclear` | It cannot be established that this is the same person *in this office*. |
+
+**Rules**
+- Only `own-words` and `own-act` can support a chair.
+- Voice decides, not domain. A campaign site that says "Jane will fight for…" in the third person is a
+  `third-party-characterization` of a promise. Look for the first-person version.
+- A news article's paraphrase is characterization. The article's quotation marks around the person's
+  words are `own-words`.
+- The office and jurisdiction in the passage must match the seat. If they do not, or are absent and
+  the name is common → `namesake-unclear`.
+
+**Good.** A senate press release quoting the president of the senate in his own words on the veto
+override he led. → `own-words` + `own-act`.
+
+**Hard [real].** J. Stuart Adams / `school-vouchers`. The basis says Adams "was a champion of the Utah
+Fits All Scholarship Program (HB215, 2023)", and quotes him in 2024 saying "educational choice is a
+right, not a privilege."
+- "Champion" is a `third-party-characterization`, so it supports nothing on its own.
+- The quotation is `own-words` and can go forward to V2.
+- The fix is to find his own act on HB215 (floor vote, sponsorship) in the legislature's record.
+
+**Hard.** A candidate's questionnaire answer published by a newspaper. → `own-words`: the paper is the
+channel, the words are the candidate's. The same answer summarized by the paper → characterization.
+
+**Bad [real].** Mike Kennedy / `voting-rights`. The only source is a Wikipedia article about the SAVE
+Act. An encyclopedia page about a bill is not the person's act; at most it points to the roll call.
+→ `third-party-characterization`, tagged `pointer` in the snapshot.
+
+---
+
+### V2 Relevance — *does the passage speak to this ladder's question, at this level?*
+
+| Value | Definition |
+|---|---|
+| `on-question` | It addresses the thing the rungs differ on. |
+| `adjacent` | Same policy area, but not the dimension the rungs separate. |
+| `off` | A different question, or the right question for a different office the person also holds. |
+
+**Rules**
+- Test against the **rung text**, not the topic label. `voting-rights` Season 1 is an identification
+  ladder, so a passage about mail ballots is `adjacent`.
+- `adjacent` passages can never support a chair.
+- **Preemption (ruling Q10, 2026-09-26).** A law that forbids another level of government to act
+  decides *which level* may set the rule, not *what* the rule is → `adjacent`, unless a rung is itself
+  about which level decides.
+  - **Refined 2026-09-26:** when the state law removes the very limits a rung names (a rung that says
+    "cut the zoning limits that block building", and a law that voids local zoning limits statewide),
+    it is `on-question` but only `direction-only`. One deregulation law cannot show that the person
+    wants *nothing more* ("rely on the market", "at most") — that is an unproven magnitude → BLANK.
+
+**Good.** `trans-athletes`: a vote to override a veto of a bill that restricts girls' school sports
+teams by sex at birth. The rungs differ exactly on that. → `on-question`.
+
+**Hard [real].** Blake Moore / `childcare`. The evidence is co-sponsorship of a $2,000 newborn tax
+credit and an expanded child tax credit. Season 1 rung 4 is "reducing regulations on childcare
+providers… with limited subsidies reserved for the lowest-income families."
+- A general child tax credit is not a childcare-provider or childcare-subsidy measure. → `adjacent`.
+- It cannot establish rung 4, whose operative clause is deregulation of providers. → Row: BLANK
+  `no-evidence` unless another source exists.
+
+**Hard [real].** Maria Elena Durazo / `voting-rights` / SB 1174 (2023-2024). She voted Aye on a bill
+whose operative section reads "A local government shall not enact or enforce any charter provision,
+ordinance, or regulation requiring a person to present identification for the purpose of voting".
+The ladder asks *what* identification the government should require (rung 1: "Require no
+identification to vote …").
+- The bill decides *which level of government* may set an ID rule. It leaves the state's own rule
+  as it is, and it says nothing about what that rule should be. A legislator can oppose a local
+  patchwork and still favour a state photo-ID law. → `adjacent`.
+- A preemption bill is `on-question` only when a rung is itself about which level decides.
+- 2026-09-25/26: three coders read it as rung 1, twice. Each time, the page mechanics (vote page,
+  bill text, a divided 30–8 tally) were correct, so CONFIRM cannot catch this reading. Only V2 can.
+
+**Bad [real].** Blake Moore / `data-centers`. The quote supports one local data-centre project "with
+environmental safeguards". It says nothing about permitting speed, energy-demand transparency or rate
+impacts, which are the clauses that separate rungs 3, 4 and 5. It is `on-question` only in the sense
+of the topic label. On the rungs → `adjacent`. Coding it as rung 4 ("streamlined permitting") is an
+unevidenced chair.
+
+---
+
+### V3 Evidence class — *what kind of evidence is it?*
+
+| Value | Definition |
+|---|---|
+| `record` | An instrument **plus** the person's action on it: authored, prime-sponsored, co-sponsored, voted yes/no, vetoed, signed into law, filed (a lawsuit, an amicus brief), signed an official letter. The instrument must be named (bill number, ordinance number, docket, case, dated letter). |
+| `statement-answer` | The person's own words **given in answer to this question**: a questionnaire (including one a group published with the candidate's answers), a moderated debate answer to the question, a first-person issue page on their own site, a signed pledge. |
+| `statement-other` | The person's own words matched to the question afterwards: news quotes, interviews, speeches, social posts. |
+| `not-evidence` | Scorecard grades, percentages and endorsements; quizzes; voter-guide summaries not in the person's words; encyclopedia or aggregator pages; advocacy-group profiles. |
+
+**Rules**
+- A record needs a named instrument. "Voted against clean energy mandates" with no instrument →
+  `not-evidence` until the roll call is found. Emit `needs_source` for it.
+- **A record reported only by news is not a record (H15).** "She authored Senate Bill 285" or "he
+  voted against it", written by a reporter, is the reporter's account of a record, not the record. Code
+  that passage by what it is: the person's own quoted words in it are `statement-other`; the
+  reporter's account of the act is context for those words, not a `record` passage, and it cannot
+  carry `record_kind`. Find the record itself (the bill page, the roll call) and code that instead;
+  emit `needs_source` for it. CONFIRM cannot check a record on a news page, because no source profile
+  reads records from one.
+- **Scorecards (Q9, ruled).**
+  - A grade, a percentage or an endorsement is `not-evidence`, and it is not corroboration either.
+    A scorecard is another organization's choice of *which* votes count, with hidden weights, and it
+    often brings back the party signal.
+  - The scorecard **page** is a `pointer`. Follow it to the roll calls it lists, and code each one as
+    a record on its own.
+- **Pledges (Q8, ruled): `statement-answer`.**
+  - The text is the group's, and the person agreed to it, which is how a questionnaire works.
+  - It does **not** outrank the person's later words, because it is not a record.
+  - The election-cycle rule (V5) applies: a pledge signed three campaigns ago → review.
+- **Lawsuits, amicus briefs, signed official letters (Q8, ruled): `record`.** The **legal claim or the
+  letter's demand itself** must match the rung clause in V4. A procedural claim (standing, authority,
+  a deadline) proves nothing about the policy.
+- **Classifying `statement-answer` vs `statement-other`: was there a question?** If the person was
+  answering *this* question (a questionnaire item, a moderator's question, their own issue page
+  heading), it is an answer. If a curator later decided that the words speak to the question, it is
+  `statement-other`. When unsure → `statement-other`.
+- When `record` and a statement conflict, the record wins, and the row is coded
+  `record-vs-statement-conflict` if the conflict decides the chair.
+- **Record fields (0.3).**
+  - `record_kind` is one of `vote` / `sponsor` / `author` / `other-act`. Every `record` passage
+    carries it — the bill-text page of a vote is `vote` too.
+  - `actor_quote` is the words, verbatim, showing this person acted: the Aye/No list segment that
+    contains the surname, or the author/sponsor line. If two members on the page share the surname,
+    or the surname is a common one (Adams, Walker, Smith …), include the initial or first name (for
+    example `Walker G`, or `Watson, R.`).
+  - `tally_quote` is the vote count text, verbatim (for example `Ayes Count 29 Noes Count 8`).
+  - **They are required per record, not per page (ruling 2026-09-26).** All `record` passages on one
+    `instrument` are one record. At least one of them carries `actor_quote`; for a vote, at least one
+    carries `tally_quote`. Put each fact on the page that prints it: `actor_quote` and `tally_quote`
+    on the vote page, `provision_quote` on the page that prints the provision (usually the bill
+    text). A page that does not print a fact carries `null` for it — never copy a fact onto a page
+    that does not show it.
+  - **An amending bill's page keeps deleted text fenced as `[deleted: …]` (amendment-markup spec
+    2026-09-27 §2).** That text is removed from the law — it is never the provision, and never
+    quoted as `provision_quote`. A bill's effect is the added text plus the unchanged text.
+- `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
+  one record must name the same instrument.
+
+**Worked example — a vote is two passages.** The vote page names the voter and the count but not
+the provision; the bill text prints the provision but names no voter. Both are in `rests_on`.
+
+| field | vote page (`billVotesClient`, SB 1174) | bill text (`billNavClient`, SB 1174) |
+|---|---|---|
+| `v3_class` / `record_kind` | `record` / `vote` | `record` / `vote` |
+| `instrument` | `SB 1174 (2023-2024)` | `SB 1174 (2023-2024)` |
+| `actor_quote` | `Ayes Archuleta, Ashby, … Dodd, Durazo` | `null` |
+| `tally_quote` | `Ayes Count 30 Noes Count 8` | `null` |
+| `provision_quote` | `null` | `A local government shall not enact or enforce any charter provision, …` |
+
+**Good.** "H.R. 8035, Ukraine Security Supplemental Appropriations Act, 2024 — Yea", from the Clerk's
+roll call. → `record`.
+
+**Hard [real].** Blake Moore / `taxes`: the ATR Taxpayer Protection Pledge. → `statement-answer`
+(Q8). The pledge commits against *any* net tax increase. It can therefore evidence a "no tax increases" rung, but
+it cannot choose between rungs that differ on *which* cuts.
+
+**Bad [real].** Blake Moore / `climate-change`: "scored 0% from the League of Conservation Voters" +
+the LCV scorecard page. → `not-evidence`. The same row's own quote ("if there needs to be some type of
+tax incentive to make sure that they can be on the grid") leans *toward* subsidy, not toward S1 rung 4
+("let market forces drive"). A coder that leans on the scorecard reaches the opposite reading from the
+person's own words.
+
+**Bad [real].** Blake Moore / `civil-rights`: an advocacy group's lawmaker profile and a
+legislator-directory page. → both `not-evidence`.
+
+---
+
+### V4 Shape — *what can this passage prove?*
+
+This variable is the core of the codebook. The stance-program pass-1 measurement is the reason:
+*shape*, not type, predicted which chairs survived audit (authored bill 67%, co-authored 40%, bare vote
+0%, statement alone 0%).
+
+| Value | Definition | Can support a chair? |
+|---|---|---|
+| `chair-shaped` | The operative content matches **every clause** of one rung and excludes the adjacent rungs. | yes |
+| `direction-only` | It shows for/against but does not separate the rungs on that side. | no |
+| `multi-subject` | A vote on a bill with many unrelated parts (omnibus, budget, appropriations, reconciliation). | only via the vote ladder |
+| `procedural` | Cloture, rule, table, recommit, previous question, adjournment. | no |
+| `study-directive` | It orders a study, task force or report. | no |
+| `near-unanimous` | Fewer than 10% of the body voted against. | no, alone |
+| `rhetorical` | Real and attributed, but it names no policy clause ("hateful and divisive"). | no |
+| `off-axis` | It speaks to the topic along a dimension the ladder does not order. | no |
+
+#### V4.1 The vote ladder (ruling 2026-09-25)
+
+A vote does not mean support for every clause of a bill.
+
+| Vote | Can prove |
+|---|---|
+| Amendment / motion to strike / divided question on **the specific provision** | a chair |
+| Final passage of a **single-subject** bill whose operative section matches the rung | a chair |
+| Final passage of a **multi-subject** bill | direction at most. It proves a chair **only** if the person's own statement ties their vote to *that provision* (an explanation of vote, a floor speech). |
+| **No** on a multi-subject bill | nothing. They may have objected to any part. |
+| Procedural | nothing about the policy |
+
+- A coder citing a vote must fill `provision_quote`: the operative text it relies on, verbatim from a
+  snapshot. The gate rejects the label if the text is not in the snapshot.
+- **The operative section governs, not the recital or the short title** (C38, C51).
+- **A study directive that states its goal (H16, ruling 2026-10-02).** A vote for a study does not say
+  what the person hopes it finds, so a study directive is never a chair. Which blank it gives depends
+  on the bill's own text:
+  - The text states no outcome ("study X and report") → the row is BLANK `no-evidence`.
+  - The text states the outcome it seeks — findings that endorse a side ("the Legislature endorses a
+    health care system with unified financing, such as a single-payer health care system"), or a
+    study ordered "with the objective of creating" a named policy → BLANK `direction-only`, on that
+    side. It applies to anyone who acted on the bill, because the stated goal is in the text they
+    voted for; it is clearest for the author.
+  - This does not let a recital carry a chair: the operative section still governs what the bill
+    does, and the stated goal shows only a side.
+- **Sponsorship evidences the bill as filed** (C37). If the bill was amended out of shape, code the
+  version the person acted on.
+- A vote whose `tally_quote` shows fewer than 10% No is `near-unanimous` and cannot carry the chair
+  alone; a claimed vote with no vote page (for example a bill that died in committee) is not a vote.
+
+#### V4.2 Clause completeness
+
+- **Compound rungs need every clause evidenced** (stance-program §4.2). Rung 3 of `social-security`,
+  "small adjustments to **both** benefits **and** taxes", needs evidence on both.
+- **Broader than the instrument** (stance-program R3): an ADU-only bill cannot evidence "upzone broadly
+  to allow multifamily by right". Seat the narrower rung if one exists; otherwise BLANK.
+- **Silence is not a clause** (gold round 5, 2026-09-30). When a rung's clause is a limit or its
+  absence ("at every stage, with no time limit", "without exceptions"), the instrument must *say* it.
+  A text that declares a right and names no limit has not said "no limit"; it has said nothing about
+  limits, and other law may still set them. → `direction-only`.
+- **Ruling out the other rungs is not evidence for the one left** (gold round 5, 2026-09-30). "Not
+  rung 1 (nothing is required), not rung 3 (the law changes), so rung 2" establishes only a side. The
+  remaining rung still needs its own clauses matched — a repeal that *permits* a programme does not
+  "strengthen enforcement". This is the same fault as reaching for "the least extreme option the
+  reasoning supports" (CLAUDE.md): a tiebreaker, not evidence. → `direction-only`, or
+  `compound-partial` when the rung is compound and one clause is met.
+
+**Good (calibration A1).** A prime-sponsored bill that *is* "a moratorium on new data centres until the
+utility commission reports". Rung 1 is a moratorium. → `chair-shaped`.
+
+**Good [real].** J. Stuart Adams / `trans-athletes`. He led the 2022 Senate vote to override the
+governor's veto of HB11, a single-subject bill barring transgender girls from girls' school teams.
+S1 rung 4: "require transgender athletes to compete only on teams matching their biological sex
+assigned at birth."
+- The instrument's operative content is rung 4.
+- Rung 5 (a total ban from all sport) is excluded by the bill's own text.
+- → `chair-shaped`. (Check under V5: the act is in-term.)
+
+**Hard [real].** Blake Moore / `ukraine-support`. Yea on H.R. 8035, a Ukraine-specific supplemental
+appropriation, plus his statement that it is "squarely in our national interest".
+- The bill is single-subject enough (Ukraine aid) → `chair-shaped` for *continuing aid*.
+- The rung-2 vs rung-1 boundary is "current levels" vs "increase". The coder must check that the
+  supplemental's size and the rung's magnitude line up.
+- If the annex does not settle whether a supplemental is "current level", code BLANK
+  `direction-only`. **This is the example to rule on for the annex.**
+
+**Hard [real].** Burgess Owens / `redistricting`: a filed federal lawsuit arguing the Elections Clause
+gives map-drawing "exclusively to state legislatures". → `record` (Q8), and the claim in the
+complaint is itself the position (a substantive claim, not a procedural one). It is `chair-shaped` if rung 5 says "legislature alone draws the
+maps". The coder quotes the complaint's claim as `provision_quote`.
+
+**Bad [real] — the omnibus trap.** Mike Kennedy / `school-vouchers`, published as rung 5 (universal
+vouchers). The basis is a Yea on the One Big Beautiful Bill Act (July 2025), a reconciliation bill
+covering taxes, Medicaid, immigration enforcement and more, one part of which created federal
+tax-credit scholarships.
+- → `multi-subject`. His vote proves nothing about the scholarship clause on its own.
+- A tax-credit scholarship is also not "funding follows the student to any school". → `adjacent`
+  on V2 as well.
+- The row needs his own words tying the vote to that clause, **and** a rung that matches the clause.
+  Otherwise → BLANK.
+
+**Bad [real].** Blake Moore / `medicare/aid` and `healthcare`: the same OBBBA vote used as the basis
+for two further rungs. → `multi-subject`, both times. The statements in those rows ("sound policy",
+defending work requirements) are about work requirements, a narrower clause than either rung. →
+`adjacent`.
+
+**Bad (calibration R1).** No on a rebate deal the member disliked. It rules out one end and names no
+chair. → `direction-only`.
+
+**Bad (calibration R6).** "Morally wrong… hateful and divisive." It is verbatim and attributed. →
+`rhetorical`.
+
+---
+
+### V5 Time — *does it describe the person's position now, in this role?*
+
+| Value | Definition |
+|---|---|
+| `in-term` | The act or statement dates from within a term of this office, or from the current campaign for it. **A record** (vote, sponsorship, authorship, a signed act) also counts as `in-term` when it dates from a term in **either chamber of the same legislature** (V5 ruling 2026-09-27, option B). |
+| `pre-seating` | A vote or act from before the person held a seat in this body. A record from **another level of government** (a city council, a county, Congress) is valid for that office only. |
+| `superseded-by-later` | A later passage from the same person states or acts differently. |
+| `undated` | No date can be established. |
+
+**Rules**
+- A **record** has no age limit if it is chair-shaped against the served rung text.
+- **Earlier chamber, same legislature (ruling 2026-09-27, option B).** A person moves between the two
+  chambers of one legislature as the same person, and what they sponsored there is often what elected
+  them to the other. So their earlier-chamber records are coded exactly like in-term records: the vote
+  ladder (V4.1), the near-unanimous rule and `superseded-by-later` all apply unchanged. Code, not the
+  coder, then checks that the earlier term is on file and that the page shows that term's chamber
+  (CONFIRM `prior-service-unverified`, `chamber-not-evidenced`). A statement is not a record: the
+  election-cycle rule below still decides it.
+  - **[real]** John Kavanagh / `school-vouchers`: co-sponsored and voted for AZ HB 2853 (2022) in the
+    House; a State Senator since 2023. → `in-term`; code the act on its content.
+  - A record from a **different level** (city council → legislature, legislature → Congress) is
+    `pre-seating`: the levers differ, so the ladder may not apply at the new level (scope is a per-rung
+    question).
+  - **Candidates too (ruling 2026-09-27).** A candidate for a seat in a legislature is coded on their
+    record from either chamber of that legislature, exactly as a seated member is — a former
+    representative running for the senate, say. Earlier service comes from
+    `essentials.legislative_service` (CA_0296); CONFIRM checks it the same way.
+- **A statement follows the election cycle (Q4, ruled).** It counts only if it is from one of:
+  - the current term;
+  - the current campaign;
+  - the campaign that seated the person in *this* office.
+
+  An older statement is coded, but the row goes to review (`statement-out-of-cycle`). Code, not the
+  coder, applies this from the dates; the coder records the date it sees.
+- `superseded-by-later` passages are coded but cannot support the chair. The newest evidence governs.
+- A person's position change is not an error. The closed season keeps the old chair.
+- `undated` statements cannot support a chair. `undated` records are looked up (the instrument has a
+  date).
+
+**Hard [real].** Blake Moore / `redistricting`: co-chair of the Better Boundaries campaign in 2017,
+before he was elected in 2020. Campaign work is not a vote, so this is not a pre-seating vote. But it
+is 9 years old, and the source is Wikipedia (V3 `not-evidence`). Find his own recent words; the 2017
+role alone → review.
+
+**Hard [real].** Celeste Maloy / `same-sex-marriage`: in a 2023 candidate debate she said she "would
+have voted yes" on the Respect for Marriage Act. → `own-words`, `statement-answer` (an answer to a moderator's question in a debate; if the only source is an article paraphrasing it, `statement-other`), pre-seating by
+construction (she was a candidate). A hypothetical vote on a named instrument is a strong statement:
+the instrument's content (marriage recognition with religious-organization protections) is the
+position. It is `in-term` for the campaign that seated her. Note: the served ladder changed between
+Seasons 1 and 2, and her Season 2 value differs. Re-code it against the served S2 rung text; do not
+carry the S1 reading forward.
+
+---
+
+### V6 Chair — *which rung does the surviving evidence establish?* (row level)
+
+**Values:** `1`–`5`, or `BLANK` with exactly one reason:
+
+| BLANK reason | Use when |
+|---|---|
+| `no-evidence` | No passage survived V1–V5. |
+| `direction-only` | The surviving passages separate the sides but not the rungs on one side. |
+| `adjacent-chairs` | Surviving passages establish two different rungs (stance-program R4). |
+| `compound-partial` | The best rung is compound and only some of its clauses are evidenced. |
+| `record-vs-statement-conflict` | The record and the statement point to different rungs, and the record is not itself chair-shaped. |
+| `scope-unavailable` | No officeholder at this level holds a lever on the rung (normally dropped before coding). |
+
+**Rules**
+- **`rests_on`** lists the snapshot IDs whose passages establish the chair. At least one is required
+  for a numeric chair.
+- **Reasoning:** 1–3 sentences that name the instrument or quote the words, and that cite the rung by
+  its **text**, not by its number.
+- **One instrument can establish chairs across a whole body** (calibration A4) — but only after a
+  cohort pass shows the members are not being separated by language that separates nobody.
+- **Party inference is a bad code** wherever it appears.
+
+**Good (calibration A3).** A council appointee's vacancy-application packet, published by the city,
+answers the ladder's question in his own words. It matches one rung clause for clause. → that rung.
+
+**Hard [real].** Celeste Maloy / `social-security`. Her 2024 voter-guide answer supported "gradually
+raising the retirement age"; in 2026 she said "everything's on the table", including lifting the cap.
+- The first statement is benefit-side only.
+- The second is `rhetorical`: "on the table" is not a position.
+- S1 rung 3 ("small adjustments to **both** benefits **and** taxes") is compound.
+- → BLANK `compound-partial`. Rung 4 is not established either: "raise the retirement age" is
+  one clause of rung 4, and "reduce benefits for higher earners" is unevidenced.
+
+**Hard [real].** Burgess Owens / `social-security`: co-sponsored the Social Security Fairness Act
+(repealed WEP/GPO, a benefit expansion for a specific group) and said lawmakers "must be willing to
+reform" the program.
+- The Act increases benefits for one group and has no tax side.
+- Rung 3 is compound (benefits and taxes); rung 2 is "increase benefits modestly **while** raising
+  taxes on higher earners".
+- → BLANK `compound-partial`.
+
+**Bad [real] — party inference.** Celeste Maloy / `trans-athletes`. Basis: "voted with the Republican
+caucus on this party-line vote. She has not expressed any dissent." Neither cited source is the roll
+call.
+- → Every passage fails V1 (no own act in the snapshot), and the reasoning uses the caucus as evidence.
+- → BLANK `no-evidence`. The right fix: fetch the Clerk's roll call for H.R. 28 (2025), which is
+  single-subject and `chair-shaped` for rung 4. It would then be a good example.
+
+**Bad [real].** Mike Kennedy / `voting-rights`. The SAVE Act requires documentary proof of citizenship
+to *register*. S1 rung 4 is "require photo ID for **voting** and regularly update voter rolls". Proof
+of citizenship at registration is a different clause. → V2 `adjacent`, V6 BLANK `no-evidence` (or the
+annex adds a rung that names it).
+
+---
+
+## Part B — Quote variables
+
+These variables apply to every **candidate quote** the collector surfaces, for Read & Rank and for the
+"Why this position?" citation.
+
+### V7 Tier — *what does the quote commit the speaker to?*
+
+The vocabulary is the on-the-record evidence program's.
+
+| Value | Definition |
+|---|---|
+| `lever` | It names a means that passes **both** T1 and T2, below. |
+| `direction` | A contestable lean whose means fails T2 ("remove regulations", "be tougher on…"). |
+| `none` | A shared goal, a diagnosis, a record or accomplishment, a complaint, biography, a slogan. |
+
+**The lever tests (Q5, ruled 2026-09-25).** Name the goal the quote serves, then apply:
+
+- **T1, the opponent test:** could a candidate *who holds the same goal* reasonably choose a different
+  means? If not, the "means" is the shared goal phrased as an action → `none`.
+- **T2, the accountability test:** could a voter later check whether the person *did it*? If not, the
+  means is too vague to hold anyone to → `direction`.
+
+A quote is `lever` only if it passes both. When the lever names a specific instrument (a law, a rule,
+a program, an agency action, a waiver, a budget line), also set `v7_flag = "lever-named"`. That tag
+is useful for display and for chair evidence; it is not required for rankability.
+
+This settles the disagreement between PRINCIPLES.md:139 ("build shelters" is a lever) and the
+decomposition spec (broad actions are not instruments):
+- "Build shelters" passes T1 (an opponent can prefer housing first) and T2 (shelter beds can be
+  counted) → `lever`.
+- "Build more housing", where every candidate says it, fails T1 → `none`.
+- "Triple housing construction" fails T1 (a target on a shared goal) unless the passage names how →
+  `none`.
+
+T1 is relative to the question and the race, not to the words. The coder uses the other candidates'
+passages when the collector supplies them; otherwise it sets `v7_flag = "lever-unclear"`.
+
+**Graded examples [real, `essentials.quotes`, Steve Hilton unless noted]**
+
+| # | Quote (short) | T1 | T2 | Code |
+|---|---|---|---|---|
+| 1 | "repeal the low-carbon fuel standard… change the refinery regulations" | yes | yes | `lever`, `lever-named` |
+| 2 | "a waiver from the Medicaid IMD rule that stops any institution with more than 16 beds…" | yes | yes | `lever`, `lever-named` |
+| 3 | "instructing the California Department of Geologic and Energy Management to… issue permits" | yes | yes | `lever`, `lever-named` |
+| 4 | "it is illegal to live and camp on the streets. We need to enforce the law… drug treatment… cannot be a choice" | yes (vs Becerra's "Housing First approaches… paired… with treatment") | yes | `lever` |
+| 5 | "If a community doesn't want a data center, there shouldn't be someone forcing that data center in there" | yes (vs state siting authority) | only if the passage says how (e.g., a local veto) | `direction` as quoted |
+| 6 | "We could get that back by removing regulations" (AI) | yes | no — which regulations? | `direction` |
+| 7 | "Government's role is to facilitate rather than provide…" (childcare) | yes | no | `direction` |
+| 8 | "common sense on climate change, not ideology" | — | — | `none` |
+
+⚠ **Two currently selected Read & Rank quotes code as not rankable** under this rule:
+- climate-change: #8;
+- economic-development: "California's policy regime should be unequivocally on the side of job- and
+  wealth-creators" → `direction`.
+
+A quote re-audit should review them. This codebook does not change them.
+
+**Good (lever).** "We must build much more housing. That includes… deed-restricted affordable,
+market-rate, social housing, and shelters." (PRINCIPLES.md). The second sentence names the means, so
+keep both sentences in the quote.
+
+**Hard [real, tier_gold_v1].** "I actually really believe in shelter and shelter is an urgent
+response. We've tripled the number of shelter beds…" The labeler wrote: "a mix of record and beliefs.
+I'm saying lever, but I'm not sure." Under the test: "shelter as the urgent response" is a means an
+opponent (housing-first) rejects → `lever`. The "tripled beds" clause is record → it does not add to
+the tier.
+
+**Hard [real, tier_gold_v1].** "I've… created the first real performance data… on our homelessness
+system." The labeler hesitated between direction and lever. Under the test: "manage by performance
+data" is a means few would reject → `direction`.
+
+**Bad → none [real, tier_gold_v1].** "We only have a third of the shelter that we need…" A diagnosis.
+The labeler: "more complaining" than proposing. → `none`.
+
+### V8 Quotable — *may this quote be shown?*
+
+`yes`, or one or more reason codes. The codes are the `audit-quotes` check IDs, so the two systems
+share one vocabulary.
+
+| Code | Meaning (full rule in `audit-quotes/CHECKS.md` §4) |
+|---|---|
+| `not-forward` | Record or retrospective, not what they would do. |
+| `is-attack` | Attacks a person rather than a policy or office. |
+| `off-question` | Does not answer the ranking question (not the topic label). |
+| `misleading-verbatim` | Word-for-word, but the cut changes the meaning in context. |
+| `source-not-an-answer` | Curator-extracted from a passage that was not an answer to this question. |
+| `deid-dishonest` | The blind version changes the position, or hides a load-bearing identity. |
+| `non-differentiating-goal` | V7 = `none` because of a shared goal. Flag for a human; do not gate. |
+
+**Rules**
+- The quote must be verbatim in its snapshot. That is a code check, not a coder judgment.
+- Trimming follows `publish-quotes/EDITORIAL.md`: marked cuts `…`, inserts `[ ]`, no reordering, no
+  cut of a load-bearing qualifier.
+- A quote can be quotable for the "Why this position?" citation and still not rankable in Read & Rank.
+  Rankable needs V7 = `lever` (and a certified quote stratum before any auto-promotion).
+
+---
+
+## Part C — Per-topic annex (template + one example)
+
+One file per open-season topic: `docs/codebook/annex/<topic_key>.md`. Written against the **served**
+revision. A new revision gets a new annex version.
+
+**Template**
+
+```
+# <topic_key> — served revision <id> (Season N)
+Orientation: standard | inverted | off-axis — one sentence why.
+Levels with a role: federal / state / local / school   (compass_topic_roles)
+Synonyms: statute or program names the state uses for this topic (e.g. "Medical Assistance Program" for Medicaid in Maryland)
+Per rung:
+  <n>. "<rung text>"
+     Operative clauses: [a] … [b] …
+     Establishing evidence looks like: …
+     Levels that hold a lever: …
+     Known chair-shaped instruments: …
+     Commonly confused with rung <m> because …
+Hard cases: …
+```
+
+**Example:** [`annex/school-vouchers.md`](annex/school-vouchers.md).
+
+---
+
+## Part D — Hard-case register
+
+Every row where the coders split, or where a person's blind answer differed from their final one,
+adds an entry here: situation → code → rule → gold item ID. Items listed here are
+`excluded_from_cert` (leakage).
+
+| # | Situation | Code | Rule | Source |
+|---|---|---|---|---|
+| H1 | Yea on a reconciliation bill that contains the clause | V4 `multi-subject` | V4.1 | [real] Kennedy / school-vouchers |
+| H2 | Party-line vote given as the only basis, and no roll call in the sources | V1 fail; BLANK `no-evidence` | 0.2, V6 | [real] Maloy / trans-athletes |
+| H3 | Scorecard beside a quote that points the other way | V3 `not-evidence` | V3 | [real] Moore / climate-change |
+| H4 | A hypothetical vote on a named bill, said as a candidate | `statement-answer`, the instrument is the content | V5 | [real] Maloy / same-sex-marriage |
+| H5 | A compound rung with one side evidenced | BLANK `compound-partial` | V4.2 | [real] Owens, Maloy / social-security |
+| H6 | A child tax credit coded on a childcare-provider rung | V2 `adjacent` | V2 | [real] Moore / childcare |
+| H7 | A filed lawsuit as the position | `record`; the substantive claim must match the rung (Q8) | V3 | [real] Owens / redistricting |
+| H8 | A signed pledge | `statement-answer` (Q8), limited shape | V3 | [real] Moore / taxes |
+| H9 | "Shelter is the urgent response" + a record | V7 `lever` | V7 T1+T2 | [real] tier_gold_v1 |
+| H10 | "Remove regulations" with none named | V7 `direction` (fails T2) | V7 T2 | [real] Hilton / ai-regulation |
+| H11 | Local-control principle without a mechanism | V7 `direction` | V7 T2 | [real] Hilton / data-centers |
+| H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
+| H13 | A declared right with no stated limit coded as the "no limit" rung | V4 `direction-only` | V4.2 "Silence is not a clause" | gold round 5 (item withheld; coded before this entry) |
+| H14 | A chair reached by excluding every other rung, with the remaining rung's clause unmatched | BLANK `direction-only` / `compound-partial` | V4.2 "Ruling out the other rungs" | gold round 5 (item withheld; coded before this entry) |
+| H15 | A news sentence that reports the person's vote or authorship, coded as a `record` | the quoted words → `statement-other`; the reported act → context only, `needs_source` | V3 "A record reported only by news" | gold round 14 (items withheld; coded before this entry) |
+| H16 | A study directive whose findings or stated objective endorse a side, coded `no-evidence` | BLANK `direction-only` (a study with no stated outcome stays `no-evidence`) | V4.1 "A study directive that states its goal" | gold round 15 (item withheld; coded before this entry) |
+
+---
+
+## Part E — Coder output schema (`labels/coder-N.json`)
+
+```json
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "uuid",
+      "office_id": "uuid",
+      "topic_id": "uuid",
+      "served_revision_id": "uuid",
+      "passages": [
+        {
+          "snapshot_id": "uuid",
+          "v1_attribution": "own-words | own-act | third-party-characterization | namesake-unclear",
+          "v2_relevance": "on-question | adjacent | off",
+          "v3_class": "record | statement-answer | statement-other | not-evidence",
+          "date": "YYYY-MM-DD | YYYY-MM | YYYY | null",
+          "v4_shape": "chair-shaped | direction-only | multi-subject | procedural | study-directive | near-unanimous | rhetorical | off-axis",
+          "v5_time": "in-term | pre-seating | superseded-by-later | undated",
+          "instrument": "H.R. 8035 (118th) | null",
+          "provision_quote": "verbatim operative text from this snapshot | null",
+          "note": "≤ 1 sentence",
+          "record_kind": "vote | sponsor | author | other-act | null",
+          "actor_quote": "verbatim span showing this person acted | null",
+          "tally_quote": "verbatim vote count text | null"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": ["snapshot uuid"],
+      "reasoning": "1–3 sentences; names the instrument or quotes the words; cites the rung by its text",
+      "needs_source": ["e.g. Clerk roll call, H.R. 28 (119th), final passage"],
+      "quotes": [
+        {
+          "snapshot_id": "uuid",
+          "text": "verbatim span",
+          "v7_tier": "lever | direction | none",
+          "v7_flag": "lever-named | lever-unclear | null",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Invariants (code-checked):**
+- `v6_value` is null **iff** `v6_blank_reason` is set.
+- A numeric `v6_value` requires `rests_on` to have at least one entry, and every entry must be a
+  passage whose V1–V5 values all allow a chair.
+- Every `provision_quote` and every quote `text` is verbatim in its snapshot.
+- Every value is from the lists above.
+- A `record` passage (`v3_class = "record"`) requires `record_kind`. Per instrument group (all
+  `record` passages of the row on one `instrument`), at least one passage carries a non-empty
+  `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
+  2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
+
+
+## The person
+
+politician_id: 8f1088b4-48b5-40ed-95e6-16d8dabd2d33  office_id: ae285450-8e0b-43d9-a534-e747ea9baf0b
+Eric A Koch — Senator, Indiana (seated, level: state)
+Current term: 2016-11-09 (precision: day) to present
+Earlier terms in this legislature: State Senator 2002-11-06 (precision: day) to 2016-11-08
+
+## Topics (served ladder text — code against these words only)
+
+### topic_key: abortion
+topic_id: af2fdfd6-02c4-49df-b09c-cf8536f4773f  served_revision_id: 085feb9c-f157-4dae-bfd0-7b2736c5d87c
+Question: How should the law handle abortion?
+  1. keep abortion legal at every stage of pregnancy, with no time limit.
+  2. keep abortion legal through the second trimester, and after that only to protect the mother's health.
+  3. allow abortion during the first trimester, and after that only to protect the mother's health.
+  4. ban abortion except in cases of rape, incest, or a serious risk to the mother's life.
+  5. ban abortion in all cases, with no exceptions.
+
+#### Annex
+
+(no annex for this topic yet — apply the codebook alone)
+
+## Sources
+
+---
+snapshot_id: c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6
+source_kind: public-record
+url: https://iga.in.gov/legislative/2022ss1/bills/senate/1/details
+
+IGA | Senate Bill 1(ss) (2022 First Special Session) Indiana General Assembly. Session Year: 2022 First Special Session. Senate Bill 1(ss) Abortion. Enrolled Senate Bill (S) Authored by: Sen. Susan Glick. Sponsored by: Rep. Wendy McNamara, Rep. Joanna King. Digest Terminates the licensure of abortion clinics. Specifies that the abortion statutes do not apply to in vitro fertilization. Makes changes to when an abortion may be performed, including when: (1) the abortion is necessary to prevent any serious health risk of the pregnant woman or to save the pregnant woman's life; (2) the fetus is diagnosed with a lethal fetal anomaly; or (3) the pregnancy is a result of rape or incest. Specifies time frames and conditions that must be met in order for the abortion to be performed. Latest Bill Actions: S 08/05/2022 Public Law 179(ss). S 08/05/2022 Signed by the Governor. [Bill details page for SB 1(ss) (2022), saved by browser from iga.in.gov on 2026-09-27.]
+
+---
+snapshot_id: cd82aaef-bdce-5e61-8163-6841ae3300e9
+source_kind: public-record
+url: https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/SB0001.06.ENRH.pdf
+
+Special Session of the 122nd General Assembly (2022)(ss) PRINTING CODE. Amendments: Whenever an existing statute (or a section of the Indiana Constitution) is being amended, the text of the existing provision will appear in this style type, additions will appear in this style type , and deletions will appear in [deleted: this style type.] Additions: Whenever a new statutory provision is being enacted (or a new constitutional provision adopted), the text of the new provision will appear in this style type . Also, the word NEW will appear in that style type in the introductory clause of each SECTION that adds a new provision to the Indiana Code or the Indiana Constitution. Conflict reconciliation: Text in a statute in this style type or [deleted: this style type] reconciles conflicts between statutes enacted by the 2022 Regular Session of the General Assembly. SENATE ENROLLED ACT No. 1(ss) AN ACT to amend the Indiana Code concerning health. Be it enacted by the General Assembly of the State of Indiana: SECTION 1. IC 16-18-2-1.5 IS REPEALED [EFFECTIVE SEPTEMBER 15, 2022]. [deleted: Sec. 1.5. (a) "Abortion clinic", for purposes of IC 16-21-2, IC 16-34-2-4.7, IC 16-34-3, and IC 16-41-16, means a health care provider (as defined in section 163(e)(1) of this chapter) that: (1) performs surgical abortion procedures; or (2) beginning January 1, 2014, provides an abortion inducing drug for the purpose of inducing an abortion. (b) The term does not include the following: (1) A hospital that is licensed as a hospital under IC 16-21-2. (2) An ambulatory outpatient surgical center that is licensed as an ambulatory outpatient surgical center under IC 16-21-2. (3) A health care provider that provides, prescribes, administers, or dispenses an abortion inducing drug to fewer than five (5) patients per year for the purposes of inducing an abortion.] SECTION 2. IC 16-18-2-9.4 IS REPEALED [EFFECTIVE SEPTEMBER 15, 2022]. [deleted: Sec. 9.4. "Affiliate", for purposes of IC 16-21-2-11, means any person who directly or indirectly controls, is controlled by, or is under common control of another person.] SECTION 3. IC 16-18-2-14, AS AMENDED BY P.L.2-2019, SECTION 2, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 14. (a) "Ambulatory outpatient surgical SEA 1(ss) — Concur 2 center", for purposes of IC 16-21, IC 16-32-5, and IC 16-38-2, means a public or private institution that meets the following conditions: (1) Is established, equipped, and operated primarily for the purpose of performing surgical procedures and services. (2) Is operated under the supervision of at least one (1) licensed physician or under the supervision of the governing board of the hospital if the center is affiliated with a hospital. (3) Permits a surgical procedure to be performed only by a physician, dentist, or podiatrist who meets the following conditions: (A) Is qualified by education and training to perform the surgical procedure. (B) Is legally authorized to perform the procedure. (C) Is privileged to perform surgical procedures in at least one (1) hospital within the county or an Indiana county adjacent to the county in which the ambulatory outpatient surgical center is located. (D) Is admitted to the open staff of the ambulatory outpatient surgical center. (4) Requires that a licensed physician with specialized training or experience in the administration of an anesthetic supervise the administration of the anesthetic to a patient and remain present in the facility during the surgical procedure, except when only a local infiltration anesthetic is administered. (5) Provides at least one (1) operating room and, if anesthetics other than local infiltration anesthetics are administered, at least one (1) postanesthesia recovery room. (6) Is equipped to perform diagnostic x-ray and laboratory examinations required in connection with any surgery performed. (7) Does not provide accommodations for patient stays of longer than twenty-four (24) hours. (8) Provides full-time services of registered and licensed nurses for the professional care of the patients in the postanesthesia recovery room. (9) Has available the necessary equipment and trained personnel to handle foreseeable emergencies such as a defibrillator for cardiac arrest, a tracheotomy set for airway obstructions, and a blood bank or other blood supply. (10) Maintains a written agreement with at least one (1) hospital for immediate acceptance of patients who develop complications or require postoperative confinement. (11) Provides for the periodic review of the center and the center's SEA 1(ss) — Concur 3 operations by a committee of at least three (3) licensed physicians having no financial connections with the center. (12) Maintains adequate medical records for each patient. (13) Meets all additional minimum requirements as established by the state department for building and equipment requirements. (14) Meets the rules and other requirements established by the state department for the health, safety, and welfare of the patients. (b) The term does not include a birthing center. (c) "Ambulatory outpatient surgical center", for purposes of IC 16-34, refers to an institution described in subsection (a) and that has a majority ownership by a hospital licensed under IC 16-21. SECTION 4. IC 16-18-2-163, AS AMENDED BY P.L.50-2021, SECTION 17, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 163. (a) Except as provided in subsection (c), "health care provider", for purposes of IC 16-21 and IC 16-41, means any of the following: (1) An individual, a partnership, a corporation, a professional corporation, a facility, or an institution licensed or legally authorized by this state to provide health care or professional services as a licensed physician, a psychiatric hospital, a hospital, a health facility, an emergency ambulance service (IC 16-31-3), a dentist, a registered or licensed practical nurse, a midwife, an optometrist, a pharmacist, a podiatrist, a chiropractor, a physical therapist, a respiratory care practitioner, an occupational therapist, a psychologist, a paramedic, an emergency medical technician, an advanced emergency medical technician, an athletic trainer, or a person who is an officer, employee, or agent of the individual, partnership, corporation, professional corporation, facility, or institution acting in the course and scope of the person's employment. (2) A college, university, or junior college that provides health care to a student, a faculty member, or an employee, and the governing board or a person who is an officer, employee, or agent of the college, university, or junior college acting in the course and scope of the person's employment. (3) A blood bank, community mental health center, community intellectual disability center, community health center, or migrant health center. (4) A home health agency (as defined in IC 16-27-1-2). (5) A health maintenance organization (as defined in IC 27-13-1-19). SEA 1(ss) — Concur 4 (6) A health care organization whose members, shareholders, or partners are health care providers under subdivision (1). (7) A corporation, partnership, or professional corporation not otherwise qualified under this subsection that: (A) provides health care as one (1) of the corporation's, partnership's, or professional corporation's functions; (B) is organized or registered under state law; and (C) is determined to be eligible for coverage as a health care provider under IC 34-18 for the corporation's, partnership's, or professional corporation's health care function. Coverage for a health care provider qualified under this subdivision is limited to the health care provider's health care functions and does not extend to other causes of action. (b) "Health care provider", for purposes of IC 16-35, has the meaning set forth in subsection (a). However, for purposes of IC 16-35, the term also includes a health facility (as defined in section 167 of this chapter). (c) "Health care provider", for purposes of IC 16-32-5, IC 16-36-5, IC 16-36-6, and IC 16-41-10 means an individual licensed or authorized by this state to provide health care or professional services as: (1) a licensed physician; (2) a registered nurse; (3) a licensed practical nurse; (4) an advanced practice registered nurse; (5) a certified nurse midwife; (6) a paramedic; (7) an emergency medical technician; (8) an advanced emergency medical technician; (9) an emergency medical responder, as defined by section 109.8 of this chapter; (10) a licensed dentist; (11) a home health aide, as defined by section 174 of this chapter; or (12) a licensed physician assistant. The term includes an individual who is an employee or agent of a health care provider acting in the course and scope of the individual's employment. (d) "Health care provider", for purposes of IC 16-36-7, has the meaning set forth in IC 16-36-7-12. (e) "Health care provider", for purposes of [deleted: section 1.5 of this chapter and] IC 16-40-4, means any of the following: SEA 1(ss) — Concur 5 (1) An individual, a partnership, a corporation, a professional corporation, a facility, or an institution licensed or authorized by the state to provide health care or professional services as a licensed physician, a psychiatric hospital, a hospital, a health facility, an emergency ambulance service (IC 16-31-3), an ambulatory outpatient surgical center, a dentist, an optometrist, a pharmacist, a podiatrist, a chiropractor, a psychologist, or a person who is an officer, employee, or agent of the individual, partnership, corporation, professional corporation, facility, or institution acting in the course and scope of the person's employment. (2) A blood bank, laboratory, community mental health center, community intellectual disability center, community health center, or migrant health center. (3) A home health agency (as defined in IC 16-27-1-2). (4) A health maintenance organization (as defined in IC 27-13-1-19). (5) A health care organization whose members, shareholders, or partners are health care providers under subdivision (1). (6) A corporation, partnership, or professional corporation not otherwise specified in this subsection that: (A) provides health care as one (1) of the corporation's, partnership's, or professional corporation's functions; (B) is organized or registered under state law; and (C) is determined to be eligible for coverage as a health care provider under IC 34-18 for the corporation's, partnership's, or professional corporation's health care function. (7) A person that is designated to maintain the records of a person described in subdivisions (1) through (6). (f) "Health care provider", for purposes of IC 16-45-4, has the meaning set forth in 47 CFR 54.601(a). SECTION 5. IC 16-18-2-306.7 IS ADDED TO THE INDIANA CODE AS A NEW SECTION TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 306.7. "Rape or incest", for purposes of IC 16-34, means: (1) sexual intercourse with another person if the other person is related to the person biologically as a parent, child, grandparent, grandchild, sibling, aunt, uncle, niece, or nephew; (2) rape (IC 35-42-4-1); (3) child molesting (IC 35-42-4-3); (4) child seduction (IC 35-42-4-7); or SEA 1(ss) — Concur 6 (5) sexual misconduct with a minor (IC 35-42-4-9); even if a person has not been charged with or convicted of the act or offense. The term includes a delinquent act described in subdivisions (2) through (5) that would be a crime if committed by an adult. SECTION 6. IC 16-18-2-327.9, AS ADDED BY P.L.93-2019, SECTION 2, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 327.9. "Serious health risk", for purposes of [deleted: IC 16-34-2-1(c),] IC 16-34, means that in reasonable medical judgment, a condition exists that has complicated the mother's medical condition and necessitates an abortion to prevent death or a serious risk of substantial and irreversible physical impairment of a major bodily function. The term does not include psychological or emotional conditions. A medical condition may not be determined to exist based on a claim or diagnosis that the woman will engage in conduct that she intends to result in her death or in physical harm. SECTION 7. IC 16-21-1-7, AS AMENDED BY P.L.264-2019, SECTION 4, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 7. [deleted: (a)] The executive board may adopt rules under IC 4-22-2 necessary to protect the health, safety, rights, and welfare of patients, including the following: (1) Rules pertaining to the operation and management of hospitals, ambulatory outpatient surgical centers, [deleted: abortion clinics,] and birthing centers. (2) Rules establishing standards for equipment, facilities, and staffing required for efficient and quality care of patients. [deleted: (b) Notwithstanding 410 IAC 15-1.7-1 and 410 IAC 15-2.7-1, the following apply to a publication that is referred to in 410 IAC 15: (1) The Guidelines for Construction and Equipment of Hospital and Medical Facilities refers to the following: (A) The 2018 edition or most recent publication of the Guidelines for Design and Construction of Hospitals. (B) The 2018 edition or most recent publication of the Guidelines for Design and Construction of Outpatient Facilities. (2) The National Fire Protection Association (NFPA) 101, Life Safety Code Handbook publication refers to the 2018 edition or most recent publication. (3) The National Fire Protection Association 99, Health Care Facilities publication refers to the 2018 edition or most recent publication. (4) A publication incorporated by reference is not effective until] SEA 1(ss) — Concur 7 [deleted: one hundred eighty (180) days after the date of publication. The executive board shall amend 410 IAC 15-1.7-1 and 410 IAC 15-2.7-1 to reflect the requirements in this subsection. This subsection expires July 1, 2021.] SECTION 8. IC 16-21-2-1, AS AMENDED BY P.L.96-2005, SECTION 5, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 1. (a) Except as provided in subsection (b), this chapter applies to all hospitals, ambulatory outpatient surgical centers, [deleted: abortion clinics,] and birthing centers. (b) This chapter does not apply to a hospital operated by the federal government. (c) This chapter does not affect a statute pertaining to the placement and adoption of children. SECTION 9. IC 16-21-2-2, AS AMENDED BY P.L.96-2005, SECTION 6, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 2. The state department shall license and regulate: (1) hospitals; (2) ambulatory outpatient surgical centers; and (3) birthing centers. [deleted: and (4) abortion clinics.] SECTION 10. IC 16-21-2-2.5, AS AMENDED BY P.L.205-2018, SECTION 4, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 2.5. (a) The state department shall adopt rules under IC 4-22-2 to do the following concerning birthing centers [deleted: and abortion clinics:] and other facilities as specified: (1) Establish minimum license qualifications. (2) Establish the following requirements: (A) Sanitation standards. (B) Staff qualifications. (C) Necessary emergency equipment. (D) Procedures to provide emergency care. (E) Procedures to monitor patients after the administration of anesthesia. (F) Procedures to provide follow-up care for patient complications. (G) Quality assurance standards. (H) Infection control. (I) Provision of informed consent brochures, as described in IC 16-34-2-1.5, to hospitals and ambulatory outpatient surgical centers in English, Spanish, and a third language determined by the state department. [deleted: inside abortion clinics.] SEA 1(ss) — Concur 8 (J) Provision of a hotline telephone number that provides assistance for patients who are: (i) coerced into an abortion; or (ii) victims of sex trafficking. (K) Annual training by law enforcement officers on identifying and assisting women who are: (i) coerced into an abortion; or (ii) victims of sex trafficking. (3) Prescribe the operating policies, supervision, and maintenance of medical records, including the requirement that all forms that require a patient signature be stored in the patient's medical record. (4) Establish procedures for the issuance, renewal, denial, and revocation of licenses under this chapter. The rules adopted under this subsection must address the following: (A) The form and content of the license. (B) The collection of an annual license fee. (5) Prescribe the procedures and standards for inspections. (6) Prescribe procedures for: (A) implementing a plan of correction to address any violations of any provision of this chapter or any rules adopted under this chapter; and (B) implementing a system for the state department to follow if the [deleted: abortion clinic or] birthing center fails to comply with the plan of correction described in clause (A) and disciplinary action is needed. (b) A person who knowingly or intentionally: (1) operates a birthing center [deleted: or an abortion clinic] that is not licensed under this chapter; or (2) advertises the operation of a birthing center [deleted: or an abortion clinic] that is not licensed under this chapter; commits a Class A misdemeanor. [deleted: (c) Not later than January 1, 2019, the state department shall: (1) adopt separate rules under IC 4-22-2, including those required under subsection (a), for existing and future abortion clinics that perform only surgical abortions; (2) adopt separate rules under IC 4-22-2, including those required under subsection (a), for existing and future abortion clinics that perform abortions only through the provision of an abortion inducing drug; and (3) establish procedures regarding the issuance of licenses to existing and future abortion clinics that:] SEA 1(ss) — Concur 9 [deleted: (A) perform only surgical abortions; (B) perform abortions only through the provision of an abortion inducing drug; or (C) perform both surgical abortions and abortions through the provision of abortion inducing drugs. (d) A rule or emergency rule adopted under subsection (c)(1), (c)(2), or (c)(3) applies, respectively, to every abortion clinic of the type described in subsection (c)(1), (c)(2), or (c)(3), regardless of the date of adoption of the rule or emergency rule. (e) Before January 1, 2019, the state department shall adopt emergency rules in the manner provided under IC 4-22-2-37.1 to carry out the duties established in this section under the following: (1) Subsection (a)(2)(E). (2) Subsection (a)(2)(F). (3) Subsection (a)(2)(I). (4) Subsection (a)(2)(J). (5) Subsection (a)(2)(K). (6) Subsection (a)(3). (7) Subsection (a)(5). (8) Subsection (a)(6). This subsection expires July 1, 2019.] SECTION 11. IC 16-21-2-2.6 IS REPEALED [EFFECTIVE SEPTEMBER 15, 2022]. [deleted: Sec. 2.6. The state department shall inspect an abortion clinic at least one (1) time per calendar year and may conduct a complaint inspection as needed.] SECTION 12. IC 16-21-2-10, AS AMENDED BY P.L.96-2005, SECTION 8, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 10. A: (1) person; (2) state, county, or local governmental unit; or (3) division, a department, a board, or an agency of a state, county, or local governmental unit; must obtain a license from the state health commissioner under IC 4-21.5-3-5 before establishing, conducting, operating, or maintaining a hospital, an ambulatory outpatient surgical center, [deleted: an abortion clinic,] or a birthing center. SECTION 13. IC 16-21-2-11, AS AMENDED BY P.L.205-2018, SECTION 6, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 11. (a) An applicant must submit an application for a license on a form prepared by the state department showing that: (1) the applicant is of reputable and responsible character; SEA 1(ss) — Concur 10 (2) the applicant is able to comply with the minimum standards for a hospital, an ambulatory outpatient surgical center, [deleted: an abortion clinic,] or a birthing center, and with rules adopted under this chapter; and (3) the applicant has complied with section 15.4 of this chapter. (b) The application must contain the following additional information: (1) The name of the applicant. (2) The type of institution to be operated. (3) The location of the institution. (4) The name of the person to be in charge of the institution. (5) If the applicant is a hospital, the range and types of services to be provided under the general hospital license, including any service that would otherwise require licensure by the state department under the authority of IC 16-19. (6) Other information the state department requires. (c) If the department of state revenue notifies the department that a person is on the most recent tax warrant list, the department shall not issue or renew the person's license until: (1) the person provides to the department a statement from the department of state revenue that the person's tax warrant has been satisfied; or (2) the department receives a notice from the commissioner of the department of state revenue under IC 6-8.1-8-2(k). [deleted: (d) An application for an abortion clinic license must require the applicant to do the following: (1) Disclose whether the applicant, or an owner or affiliate of the applicant, operated an abortion clinic that was closed as a direct result of patient health and safety concerns. (2) Disclose whether a principal or clinic staff member was convicted of a felony. (3) Disclose whether a principal or clinic staff member was ever employed by a facility owned or operated by the applicant that closed as a result of administrative or legal action. (4) Provide copies of: (A) administrative and legal documentation relating to the information required under subdivisions (1) and (2); (B) inspection reports; and (C) violation remediation contracts; if any.] SECTION 14. IC 16-21-2-14, AS AMENDED BY P.L.32-2021, SECTION 44, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEA 1(ss) — Concur 11 SEPTEMBER 15, 2022]: Sec. 14. A license to operate a hospital, an ambulatory outpatient surgical center, [deleted: an abortion clinic,] or a birthing center: (1) expires: (A) one (1) year after the date of issuance for: (i) an ambulatory outpatient surgical center; and [deleted: (ii) an abortion clinic; (iii)] (ii) a birthing center; and [deleted: (iv) a hospital until April 30, 2020; and] (B) beginning May 1, 2020, two (2) years after the date of issuance for a hospital; (2) is not assignable or transferable; (3) is issued only for the premises named in the application; (4) must be posted in a conspicuous place in the facility; and (5) may be renewed each year, or every two (2) years for a hospital, upon the payment of a renewal fee at the rate adopted by the state department under IC 4-22-2. SECTION 15. IC 16-21-2-16, AS AMENDED BY P.L.96-2005, SECTION 11, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 16. A hospital, an ambulatory outpatient surgical center, [deleted: an abortion clinic,] or a birthing center that provides to a patient notice concerning a third party billing for a service provided to the patient shall ensure that the notice: (1) conspicuously states that the notice is not a bill; (2) does not include a tear-off portion; and (3) is not accompanied by a return mailing envelope. SECTION 16. IC 16-31-6.5-2, AS AMENDED BY P.L.96-2005, SECTION 12, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 2. This chapter does not apply to the following: (1) A licensed physician. (2) A hospital, an ambulatory outpatient surgical center, [deleted: an abortion clinic,] or a birthing center. (3) A person providing health care in a hospital, an ambulatory outpatient surgical center, [deleted: an abortion clinic,] or a birthing center licensed under IC 16-21. (4) A person or entity certified under IC 16-31-3. SECTION 17. IC 16-34-1-0.5 IS ADDED TO THE INDIANA CODE AS A NEW SECTION TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 0.5. This article does not apply to in vitro fertilization. SECTION 18. IC 16-34-1-8, AS ADDED BY P.L.193-2011, SEA 1(ss) — Concur 12 SECTION 5, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 8. A qualified health plan (as defined in IC 27-8-33-3) offered under Subtitle D of Title 1 of the federal Patient Protection and Affordable Care Act (P.L. 111-148) may not provide coverage for abortion, [deleted: except in the following cases: (1) The pregnant woman became pregnant through an act of rape or incest. (2)] unless [deleted: An] the abortion is [deleted: necessary to avert the pregnant woman's death or a substantial and irreversible impairment of a major bodily function of the pregnant woman.] permitted under IC 16-34-2-1. SECTION 19. IC 16-34-1-9 IS REPEALED [EFFECTIVE SEPTEMBER 15, 2022]. [deleted: Sec. 9. (a) The general assembly finds the following: (1) There is substantial medical evidence that a fetus at twenty (20) weeks of postfertilization age has the physical structures necessary to experience pain. (2) There is substantial medical evidence that a fetus of at least twenty (20) weeks of postfertilization age seeks to evade certain stimuli in a manner similar to an infant's or adult's response to pain. (3) Anesthesia is routinely administered to a fetus of at least twenty (20) weeks of postfertilization age when prenatal surgery is performed. (4) A fetus has been observed to exhibit hormonal stress responses to painful stimuli earlier than at twenty (20) weeks of postfertilization age. (b) Indiana asserts a compelling state interest in protecting the life of a fetus from the state at which substantial medical evidence indicates that the fetus is capable of feeling pain.] SECTION 20. IC 16-34-1-10, AS ADDED BY P.L.173-2017, SECTION 3, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 10. If the state or an agency of the state has wardship or guardianship of an unemancipated pregnant minor, the state or agency of the state may not consent to an abortion unless the abortion is [deleted: necessary to avert the pregnant minor's death or a substantial and irreversible impairment of a major bodily function of the pregnant minor, as determined by a physician who certifies the determination in writing.] permitted under IC 16-34-2-1. SECTION 21. IC 16-34-2-1, AS AMENDED BY P.L.218-2021, SECTION 4, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 1. (a) Abortion shall in all instances be SEA 1(ss) — Concur 13 a criminal act, except when performed under the following circumstances: (1) Except as prohibited in IC 16-34-4, [deleted: during the first trimester of pregnancy] before the earlier of viability of the fetus or twenty (20) weeks of postfertilization age of the fetus, if: (A) for reasons based upon the professional, medical judgment of the pregnant woman's physician, if either: (i) the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus is diagnosed with a lethal fetal anomaly; [deleted: (A)] (B) the abortion is performed by the physician in a hospital licensed under IC 16-21 or an ambulatory outpatient surgical center (as defined in IC 16-18-2-14) that has a majority ownership by a hospital licensed under IC 16-21; [deleted: (B)] (C) the woman submitting to the abortion has filed her consent with her physician. However, if in the judgment of the physician the abortion is necessary to preserve the life of the woman, her consent is not required; [deleted: and (C)] (D) the woman submitting to the abortion has filed with her physician the written consent of her parent or legal guardian if required under section 4 of this chapter; and (E) before the abortion, the attending physician shall certify in writing to the hospital or ambulatory outpatient surgical center in which the abortion is to be performed, that: (i) in the attending physician's reasonable medical judgment, performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus has been diagnosed with a lethal fetal anomaly. All facts and reasons supporting the certification shall be set forth by the physician in writing and attached to the certificate. However, under this article, an abortion inducing drug may not be dispensed, prescribed, administered, or otherwise given to a pregnant woman after eight (8) weeks of postfertilization age. A physician must dispense the abortion inducing drug in person and SEA 1(ss) — Concur 14 have the pregnant woman consume the drug in the presence of the physician. A physician shall examine a pregnant woman in person before prescribing or dispensing an abortion inducing drug. The physician shall provide the pregnant woman with a copy of the manufacturer's instruction sheets and require that the pregnant woman sign the manufacturer's patient agreement form. A physician shall also provide, orally and in writing, along with other discharge information, the following statement: "Some evidence suggests that the effects of Mifepristone may be avoided, ceased, or reversed if the second pill, Misoprostol, has not been taken. Immediately contact the following for more information at (insert applicable abortion inducing drug reversal Internet web site and corresponding hotline number)." The physician shall retain a copy of the signed patient agreement form, and the signed physician's agreement form required by the manufacturer, in the patient's file. As used in this subdivision, "in person" does not include the use of telehealth or telemedicine services. (2) Except as prohibited by IC 16-34-4, [deleted: after the first trimester of pregnancy and before the earlier of viability of the fetus or twenty (20)] during the first ten (10) weeks of postfertilization age of the fetus, [deleted: for reasons based upon the professional, medical judgment of the pregnant woman's physician] if: (A) the pregnancy is a result of rape or incest; (B) all the circumstances and provisions required for legal abortion [deleted: during the first trimester] set forth in subdivision (1)(C) through (1)(D) are present and adhered to; [deleted: and (B)] (C) the abortion is performed in a hospital licensed under IC 16-21 or ambulatory outpatient surgical center (as defined in IC 16-18-2-14) that has a majority ownership by a hospital licensed under IC 16-21; and (D) before the abortion, the attending physician shall certify in writing to the ambulatory outpatient surgical center or hospital in which the abortion is to be performed, after proper examination, the abortion is being performed at the woman's request because the pregnancy is the result of rape or incest. All facts and reasons supporting the certification shall be set forth by the physician in writing and attached to the certificate. (3) Except as provided in subsection (b) or as prohibited by IC 16-34-4, at the earlier of viability of the fetus or twenty (20) weeks of postfertilization age and any time after, for reasons SEA 1(ss) — Concur 15 based upon the professional, medical judgment of the pregnant woman's physician if: (A) based on reasonable medical judgment, performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; (B) all the circumstances and provisions required for legal abortion [deleted: before the earlier of viability of the fetus or twenty (20) weeks of postfertilization age] set forth in subdivision (1)(C) through (1)(D) are present and adhered to; (C) the abortion is performed in a hospital licensed under IC 16-21; [deleted: (B)] (D) the abortion is performed in compliance with section 3 of this chapter; and [deleted: (C)] (E) before the abortion, the attending physician shall certify in writing to the hospital in which the abortion is to be performed, that in the attending physician's [deleted: professional,] reasonable medical judgment, performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life. [deleted: medical judgment, after proper examination and review of the woman's history, the abortion is necessary to prevent a substantial permanent impairment of the life or physical health of the pregnant woman.] All facts and reasons supporting the certification shall be set forth by the physician in writing and attached to the certificate. (b) A person may not knowingly or intentionally perform a partial birth abortion unless a physician reasonably believes that: (1) performing the partial birth abortion is necessary to save the mother's life; and (2) no other medical procedure is sufficient to save the mother's life. (c) A person may not knowingly or intentionally perform a dismemberment abortion unless reasonable medical judgment dictates that performing the dismemberment abortion is necessary: (1) to prevent any serious health risk to the mother; or (2) to save the mother's life. (d) Telehealth and telemedicine may not be used to provide any abortion, including the writing or filling of a prescription for any purpose that is intended to result in an abortion. SECTION 22. IC 16-34-2-1.1, AS AMENDED BY P.L.93-2022, SECTION 4, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 1.1. (a) An abortion shall not be SEA 1(ss) — Concur 16 performed except with the voluntary and informed consent of the pregnant woman upon whom the abortion is to be performed. Except in the case of a medical emergency, consent to an abortion is voluntary and informed only if the following conditions are met: (1) At least eighteen (18) hours before the abortion and in the private, not group, presence of the pregnant woman, the physician who is to perform the abortion, the referring physician or a physician assistant (as defined in IC 25-27.5-2-10), an advanced practice registered nurse (as defined in IC 25-23-1-1(b)), or a certified nurse midwife (as defined in IC 34-18-2-6.5) to whom the responsibility has been delegated by the physician who is to perform the abortion or the referring physician has informed the pregnant woman orally and in writing of the following: (A) The name of the physician performing the abortion, the physician's medical license number, and an emergency telephone number where the physician or the physician's designee may be contacted on a twenty-four (24) hour a day, seven (7) day a week basis. (B) That follow-up care by the physician or the physician's designee (if the designee is licensed under IC 25-22.5) is available on an appropriate and timely basis when clinically necessary. (C) The nature of the proposed procedure or information concerning the abortion inducing drug that includes the following statement: "Some evidence suggests that effects of Mifespristone may be avoided, ceased, or reversed if the second pill, Misoprostol, has not been taken. Immediately contact the following for more information at (insert applicable abortion inducing drug reversal Internet web site and corresponding hotline number)." (D) Objective scientific information of the risks of and alternatives to the procedure or the use of an abortion inducing drug, including: (i) the risk of infection and hemorrhage; (ii) the potential danger to a subsequent pregnancy; and (iii) the potential danger of infertility. (E) That human physical life begins when a human ovum is fertilized by a human sperm. (F) The probable gestational age of the fetus at the time the abortion is to be performed, including: (i) a picture of a fetus; (ii) the dimensions of a fetus; and SEA 1(ss) — Concur 17 (iii) relevant information on the potential survival of an unborn fetus; at this stage of development. (G) That objective scientific information shows that a fetus can feel pain at or before twenty (20) weeks of postfertilization age. (H) The medical risks associated with carrying the fetus to term. (I) The availability of fetal ultrasound imaging and auscultation of fetal heart tone services to enable the pregnant woman to view the image and hear the heartbeat of the fetus and how to obtain access to these services. (J) That the pregnancy of a child less than fifteen (15) years of age may constitute child abuse under Indiana law if the act included an adult and must be reported to the department of child services or the local law enforcement agency under IC 31-33-5. (K) That Indiana does not allow a fetus to be aborted solely because of the fetus's race, color, national origin, ancestry, sex, or diagnosis or potential diagnosis of the fetus having Down syndrome or any other disability. (L) That no one has the right to coerce the pregnant woman to have an abortion. (2) At least eighteen (18) hours before the abortion, the pregnant woman will be informed orally and in writing of the following: (A) That medical assistance benefits may be available for prenatal care, childbirth, and neonatal care from the county office of the division of family resources. (B) That the father of the unborn fetus is legally required to assist in the support of the child. In the case of rape, the information required under this clause may be omitted. (C) That adoption alternatives are available and that adoptive parents may legally pay the costs of prenatal care, childbirth, and neonatal care. (D) That there are physical risks to the pregnant woman in having an abortion, both during the abortion procedure and after. (E) That Indiana has enacted the safe haven law under IC 31-34-2.5. (F) The: (i) Internet web site address of the state department of health's web site; and SEA 1(ss) — Concur 18 (ii) description of the information that will be provided on the web site and that is; described in section 1.5 of this chapter. (G) For the facility in which the abortion is to be performed, an emergency telephone number that is available and answered on a twenty-four (24) hour a day, seven (7) day a week basis. (H) On a form developed by the state department and as described in IC 16-34-3, that the pregnant woman has a right to determine the final disposition of the remains of the aborted fetus. (I) On a form developed by the state department, that the pregnant woman has a right, after a surgical abortion, to: (i) dispose of the remains of the aborted fetus by interment in compliance with IC 23-14-54, or cremation through a licensee (as defined in IC 25-15-2-19) and in compliance with IC 23-14-31; or (ii) have the health care facility [deleted: or abortion clinic] dispose of the remains of the aborted fetus by interment in compliance with IC 23-14-54, or cremation through a licensee (as defined in IC 25-15-2-19) and in compliance with IC 23-14-31, and ask which method of disposition will be used by the health care facility. [deleted: or abortion clinic.] (J) On a form developed by the state department: (i) that a pregnant woman, after an abortion induced by an abortion inducing drug, will expel an aborted fetus; and (ii) the disposition policy of the health care facility [deleted: or the abortion clinic] concerning the disposition of the aborted fetus. The disposition policy must allow the pregnant woman to return the aborted fetus to the health care facility [deleted: or abortion clinic] for disposition by interment in compliance with IC 23-14-54, or cremation through a licensee (as defined in IC 25-15-2-19) and in compliance with IC 23-14-31. (K) On a form developed by the state department, information concerning any counseling that is available to a pregnant woman after having an abortion. The state department shall develop and distribute the forms required by clauses (H) through (K). (3) The pregnant woman certifies in writing, on a form developed by the state department, before the abortion is performed, that: (A) the information required by subdivisions (1) and (2) has SEA 1(ss) — Concur 19 been provided to the pregnant woman; (B) the pregnant woman has been offered by the provider the opportunity to view the fetal ultrasound imaging and hear the auscultation of the fetal heart tone if the fetal heart tone is audible and that the woman has: (i) viewed or refused to view the offered fetal ultrasound imaging; and (ii) listened to or refused to listen to the offered auscultation of the fetal heart tone if the fetal heart tone is audible; and (C) the pregnant woman has been given a written copy of the printed materials described in section 1.5 of this chapter. (4) At least eighteen (18) hours before the abortion and in the presence of the pregnant woman, the physician who is to perform the abortion, the referring physician or a physician assistant (as defined in IC 25-27.5-2-10), an advanced practice registered nurse (as defined in IC 25-23-1-1(b)), or a certified nurse midwife (as defined in IC 34-18-2-6.5) to whom the responsibility has been delegated by the physician who is to perform the abortion or the referring physician has provided the pregnant woman with a color copy of the informed consent brochure described in section 1.5 of this chapter by printing the informed consent brochure from the state department's Internet web site and including the following information on the back cover of the brochure: (A) The name of the physician performing the abortion and the physician's medical license number. (B) An emergency telephone number where the physician or the physician's designee may be contacted twenty-four (24) hours a day, seven (7) days a week. (C) A statement that follow-up care by the physician or the physician's designee who is licensed under IC 25-22.5 is available on an appropriate and timely basis when clinically necessary. (5) At least eighteen (18) hours before an abortion is performed and at the same time that the pregnant woman receives the information required by subdivision (1), the provider shall perform, and the pregnant woman shall view, the fetal ultrasound imaging and hear the auscultation of the fetal heart tone if the fetal heart tone is audible unless the pregnant woman certifies in writing, on a form developed by the state department, before the abortion is performed, that the pregnant woman: (A) does not want to view the fetal ultrasound imaging; and (B) does not want to listen to the auscultation of the fetal heart SEA 1(ss) — Concur 20 tone if the fetal heart tone is audible. A pregnant woman must be advised, prior to the pregnant woman's decision concerning fetal ultrasound imaging, that an ultrasound image of the fetus will be provided to the pregnant woman to keep at no charge to the pregnant woman if the fetal ultrasound is performed. (6) At least eighteen (18) hours before the abortion, the physician who is to perform the abortion, the referring physician or a physician assistant (as defined in IC 25-27.5-2-10), an advanced practice registered nurse (as defined in IC 25-23-1-1(b)), or a certified nurse midwife (as defined in IC 34-18-2-6.5) to whom the responsibility has been delegated by the physician who is to perform the abortion or the referring physician shall, in the private, not group, presence of the pregnant woman, verbally ask the pregnant woman if she is being coerced to have an abortion. (b) This subsection applies to a pregnant woman whose unborn child has been diagnosed with a lethal fetal anomaly. The requirements of this subsection are in addition to the other requirements of this section. At least eighteen (18) hours before an abortion is performed on the pregnant woman, the physician who will perform the abortion shall: (1) orally and in person, inform the pregnant woman of the availability of perinatal hospice services; and (2) provide the pregnant woman copies of the perinatal hospice brochure developed by the state department under IC 16-25-4.5-4 and the list of perinatal hospice providers and programs developed under IC 16-25-4.5-5, by printing the perinatal hospice brochure and list of perinatal hospice providers from the state department's Internet web site. (c) If a pregnant woman described in subsection (b) chooses to have an abortion rather than continuing the pregnancy in perinatal hospice care, the pregnant woman shall certify in writing, on a form developed by the state department under IC 16-25-4.5-6, at least eighteen (18) hours before the abortion is performed, that the pregnant woman has been provided the information described in subsection (b) in the manner required by subsection (b). (d) For any abortion performed under this article, the physician who is to perform the abortion, the referring physician or a physician assistant (as defined in IC 25-27.5-2-10), an advanced practice registered nurse (as defined in IC 25-23-1-1(b)), or a certified nurse midwife (as defined in IC 34-18-2-6.5) to whom the responsibility has been delegated by the physician who is to perform the abortion or the referring physician shall include, or ensure the inclusion of, a copy of SEA 1(ss) — Concur 21 a pregnant woman's ultrasound report in the pregnant woman's patient file. (e) If the physician who is to perform the abortion, the referring physician, a physician assistant (as defined in IC 25-27.5-2-10), an advanced practice registered nurse (as defined in IC 25-23-1-1(b)), or a certified nurse midwife (as defined in IC 34-18-2-6.5) suspects a pregnant woman is being coerced to have an abortion after making the inquiry required under subsection (a)(6), the physician, physician assistant, advanced practice registered nurse, or certified nurse midwife shall: (1) inform the pregnant woman that coercing a pregnant woman to have an abortion is illegal; (2) inform the pregnant woman that a demand by the father to have an abortion does not relieve him of financial support responsibilities; and (3) provide the pregnant woman with: (A) information about: (i) assistance; (ii) counseling; and (iii) protective services offered by social programs and local or state law enforcement agencies; (B) access to a telephone if she needs to make a private telephone call; and (C) access to an alternate exit from the health care facility. (f) Except as provided in subsection (g), if a physician, physician assistant (as defined in IC 25-27.5-2-10), advanced practice registered nurse (as defined in IC 25-23-1-1(b)), or certified nurse midwife (as defined in IC 34-18-2-6.5) has specific and credible information that a pregnant woman is being coerced into having an abortion, then an abortion may not be provided to the pregnant woman during the twenty-four (24) hour period after the physician, physician assistant (as defined in IC 25-27.5-2-10), advanced practice registered nurse (as defined in IC 25-23-1-1(b)), or certified nurse midwife (as defined in IC 34-18-2-6.5) makes a report under IC 16-34-6-6(b). (g) The twenty-four (24) hour period described in subsection (f) may be waived if a physician, in the physician's best medical judgment, determines that an abortion is necessary to prevent the death of the pregnant woman or to prevent substantial and irreversible injury to a major bodily function of the pregnant woman. SECTION 23. IC 16-34-2-3, AS AMENDED BY P.L.193-2011, SECTION 12, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 3. (a) All abortions performed on and SEA 1(ss) — Concur 22 after the earlier of the time a fetus is viable or the time the postfertilization age of the fetus is at least twenty (20) weeks shall be: (1) governed by [deleted: section 1(a)(3) and 1(b)] section 1 of this chapter; (2) performed in a hospital having premature birth intensive care units, unless compliance with this requirement would result in an increased risk to the life or health of the mother; and (3) performed in the presence of a second physician as provided in subsection (b). (b) An abortion may be performed after the earlier of the time a fetus is viable or the time the postfertilization age of the fetus is at least twenty (20) weeks only if there is in attendance a physician, other than the physician performing the abortion, who shall take control of and provide immediate care for a child born alive as a result of the abortion. During the performance of the abortion, the physician performing the abortion, and after the abortion, the physician required by this subsection to be in attendance, shall take all reasonable steps in keeping with good medical practice, consistent with the procedure used, to preserve the life and health of the viable unborn child. However, this subsection does not apply if compliance would result in an increased risk to the life or health of the mother. (c) Any fetus born alive shall be treated as a person under the law, and a birth certificate shall be issued certifying the child's birth even though the child may subsequently die, in which event a death certificate shall be issued. Failure to take all reasonable steps, in keeping with good medical practice, to preserve the life and health of the live born person shall subject the responsible persons to Indiana laws governing homicide, manslaughter, and civil liability for wrongful death and medical malpractice. (d) If, before the abortion, the mother, and if married, her husband, has or have stated in writing that she does or they do not wish to keep the child in the event that the abortion results in a live birth, and this writing is not retracted before the abortion, the child, if born alive, shall immediately upon birth become a ward of the department of child services. SECTION 24. IC 16-34-2-4, AS AMENDED BY P.L.218-2021, SECTION 6, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 4. (a) This section does not apply to a minor who is less than eighteen (18) years of age who is pregnant as a result of rape or incest by a parent, legal guardian, or custodian of the unemancipated minor. [deleted: (a)] (b) No physician shall perform an abortion on an unemancipated pregnant minor less than eighteen (18) years of age without first having SEA 1(ss) — Concur 23 obtained from one (1) of the parents, a legal guardian, or a custodian accompanying the unemancipated pregnant minor: (1) the notarized written consent of the parent, legal guardian, or custodian of the unemancipated pregnant minor; (2) government issued proof of identification of the parent or the legal guardian or custodian of the unemancipated pregnant minor; and (3) some evidence, which may include identification or other written documentation that provides an articulable basis for a reasonably prudent person to believe that the person is the parent or legal guardian or custodian of the unemancipated pregnant minor. The physician shall keep records of the documents required under this subsection in the unemancipated pregnant minor's medical file for at least seven (7) years. [deleted: (b)] (c) A minor: (1) who objects to having to obtain the written consent of her parent or legal guardian or custodian under this section; or (2) whose parent or legal guardian or custodian refuses to consent to an abortion; may petition, on her own behalf or by next friend, the juvenile court in the county in which the pregnant minor resides or in which the abortion is to be performed, for a waiver of the parental consent requirement under subsection [deleted: (a)] (b) and the parental notification requirement under subsection [deleted: (d).] (e). A next friend may not be a physician or provider of abortion services, representative of the physician or provider, or other person that may receive a direct financial benefit from the performance of an abortion. [deleted: (c)] (d) A physician who feels that compliance with the parental consent requirement in subsection [deleted: (a)] (b) would have an adverse effect on the welfare of the pregnant minor or on her pregnancy may petition the juvenile court within twenty-four (24) hours of the abortion request for a waiver of the parental consent requirement under subsection [deleted: (a)] (b) and the parental notification requirement under subsection [deleted: (d).] (e). [deleted: (d)] (e) Unless the juvenile court finds that it is in the best interests of an unemancipated pregnant minor to obtain an abortion without parental notification following a hearing on a petition filed under subsection [deleted: (b)] (c) or [deleted: (c),] (d), a parent, legal guardian, or custodian of a pregnant unemancipated minor is entitled to receive notice of the emancipated minor's intent to obtain an abortion before the abortion is performed on the unemancipated pregnant minor. The attorney representing the unemancipated pregnant minor shall serve the notice SEA 1(ss) — Concur 24 required by this subsection by certified mail or by personal service and provide the court with documentation of the attorney's good faith effort to serve the notice, including any return receipt for a certified mailing. The court shall retain the documentation provided in the confidential records of the waiver proceedings held under this section. [deleted: (e)] (f) The juvenile court must rule on a petition filed by a pregnant minor under subsection [deleted: (b)] (c) or by her physician under subsection [deleted: (c)] (d) within forty-eight (48) hours of the filing of the petition. Before ruling on the petition, the court shall consider the concerns expressed by the pregnant minor and her physician. The requirement of parental consent under this section shall be waived by the juvenile court if the court finds that the minor is mature enough to make the abortion decision independently or that an abortion would be in the minor's best interests. The juvenile court shall waive the requirement of parental notification under subsection [deleted: (d)] (e) if the court finds that obtaining an abortion without parental notification is in the best interests of the unemancipated pregnant minor. If the juvenile court does not find that obtaining an abortion without parental notification is in the best interests of the unemancipated pregnant minor, the court shall, subject to an appeal under subsection [deleted: (g),] (h), order the attorney representing the unemancipated pregnant minor to serve the notice required under subsection [deleted: (d).] (e). [deleted: (f)] (g) Unless the juvenile court finds that the pregnant minor is already represented by an attorney, the juvenile court shall appoint an attorney to represent the pregnant minor in a waiver proceeding brought by the minor under subsection [deleted: (b)] (c) and on any appeals. The cost of legal representation appointed for the minor under this section shall be paid by the county. [deleted: (g)] (h) A minor or the minor's physician who desires to appeal an adverse judgment of the juvenile court in a waiver proceeding under subsection [deleted: (b)] (c) or [deleted: (c)] (d) is entitled to an expedited appeal, under rules to be adopted by the supreme court. [deleted: (h)] (i) All records of the juvenile court and of the supreme court or the court of appeals that are made as a result of proceedings conducted under this section are confidential. [deleted: (i)] (j) A minor who initiates legal proceedings under this section is exempt from the payment of filing fees. [deleted: (j)] (k) This section does not apply where there is an emergency need for a medical procedure to be performed to avert the pregnant minor's death or a substantial and irreversible impairment of a major bodily function of the pregnant minor, and the attending physician certifies this in writing. SEA 1(ss) — Concur 25 [deleted: (k)] (l) A physician receiving parental consent under subsection [deleted: (a)] (b) shall execute an affidavit for inclusion in the unemancipated pregnant minor's medical record. The affidavit must contain the following information: (1) The physician's name. (2) Certification that, to the physician's best information and belief, a reasonable person under similar circumstances would rely on the information provided by the unemancipated pregnant minor and the unemancipated pregnant minor's parent or legal guardian or custodian as sufficient evidence of identity and relationship. (3) The physician's signature. [deleted: (l)] (m) A person who, with intent to avoid the parental notification requirements described in subsection [deleted: (a),] (b), falsely claims to be the parent or legal guardian or custodian of an unemancipated pregnant minor by: (1) making a material misstatement while purportedly providing the written consent described in subsection [deleted: (a)(1);] (b)(1); or (2) providing false or fraudulent identification to meet the requirement described in subsection [deleted: (a)(2);] (b)(2); commits a Level 6 felony. SECTION 25. IC 16-34-2-4.5, AS AMENDED BY P.L.213-2016, SECTION 15, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 4.5. (a) A physician may not perform an abortion, including an abortion using an abortion inducing drug, unless the physician: (1) has admitting privileges in writing at a hospital located in the county where abortions are provided or in a contiguous county; or (2) has entered into a written agreement with a physician who has written admitting privileges at a hospital in the county or contiguous county concerning the management of possible complications of the services provided. A written agreement described in subdivision (2) must be renewed annually. (b) A physician who performs an abortion, including an abortion using an abortion inducing drug, shall notify the patient of the location of the hospital at which the physician or a physician with whom the physician has entered into an agreement under subsection (a)(2) has admitting privileges and where the patient may receive follow-up care by the physician if complications arise. (c) [deleted: An abortion clinic] A hospital or ambulatory outpatient surgical center in which abortions are performed shall: SEA 1(ss) — Concur 26 (1) keep at the [deleted: abortion clinic] hospital or ambulatory outpatient surgical center a copy of the admitting privileges of a physician described in subsection (a)(1) and (a)(2) who is performing abortions at the hospital or ambulatory outpatient surgical center; and (2) submit a copy of the admitting privileges described in subdivision (1) to the state department. [deleted: as part of the abortion clinic's licensure.] The state department shall verify the validity of the admitting privileges document. The state department shall remove any identifying information from the admitting privileges document before releasing the document under IC 5-14-3. (d) The state department shall annually submit a copy of the admitting privileges described in subsection (a)(1) and a copy of the written agreement described in subsection (a)(2) to: (1) each hospital located in the county in which the hospital granting the admitting privileges described in subsection (a) is located; and (2) each hospital located in a county that is contiguous to the county described in subdivision (1); where abortions are performed. (e) The state department shall confirm to a member of the public, upon request, that the admitting privileges required to be submitted under this section for [deleted: an abortion clinic] a hospital or ambulatory outpatient surgical center have been received by the state department. (f) Notwithstanding IC 5-14-3-6 and IC 5-14-3-6.5, this section only allows for the redaction of information that is described in subsection (c). This section does not allow the state department to limit the disclosure of information in other public documents. SECTION 26. IC 16-34-2-4.7, AS AMENDED BY P.L.93-2019, SECTION 4, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 4.7. (a) As used in this section, "abortion complication" means only the following physical or psychological conditions arising from the induction or performance of an abortion: (1) Uterine perforation. (2) Cervical laceration. (3) Infection. (4) Vaginal bleeding that qualifies as a Grade 2 or higher adverse event according to the Common Terminology Criteria for Adverse Events (CTCAE). (5) Pulmonary embolism. (6) Deep vein thrombosis. (7) Failure to terminate the pregnancy. SEA 1(ss) — Concur 27 (8) Incomplete abortion (retained tissue). (9) Pelvic inflammatory disease. (10) Missed ectopic pregnancy. (11) Cardiac arrest. (12) Respiratory arrest. (13) Renal failure. (14) Shock. (15) Amniotic fluid embolism. (16) Coma. (17) Placenta previa in subsequent pregnancies. (18) Pre-term delivery in subsequent pregnancies. (19) Free fluid in the abdomen. (20) Hemolytic reaction due to the administration of ABO-incompatible blood or blood products. (21) Hypoglycemia occurring while the patient is being treated at the [deleted: abortion facility.] hospital or ambulatory outpatient surgical center. (22) Allergic reaction to anesthesia or abortion inducing drugs. (23) Psychological complications, including depression, suicidal ideation, anxiety, and sleeping disorders. (24) Death. (25) Any other adverse event as defined by criteria provided in the Food and Drug Administration Safety Information and Adverse Event Reporting Program. (b) The following persons shall report to the state department each case in which the person treated a patient suffering from an abortion complication: (1) A physician licensed under IC 25-22.5. (2) A hospital licensed under IC 16-21. (3) [deleted: An abortion clinic licensed under IC 16-21-2-2.5.] Beginning September 1, 2022, an ambulatory outpatient surgical center licensed under IC 16-21-2. (c) The state department shall develop a process for the submission of a report under this section. (d) A report under this section shall be submitted to the state department in the manner prescribed by the state department. (e) The report under this section must include the following information concerning the abortion complication: (1) The date the patient presented for treatment for the abortion complication. (2) The age of the patient. (3) The race of the patient. SEA 1(ss) — Concur 28 (4) The county and state of the patient's residence. (5) The type of abortion obtained by the patient. (6) The date of abortion obtained by the patient. (7) The name of the: (A) [deleted: abortion clinic; (B) medical facility; or (C)] hospital; or (B) ambulatory outpatient surgical center; where the patient obtained the abortion. (8) Whether the patient obtained abortion medication via mail order or Internet web site, and if so, information identifying the source of the medication. (9) Whether the complication was previously managed by the abortion provider or the abortion provider's required back-up physician. (10) The name of the medications taken by the patient as part of the pharmaceutical abortion regimen, if any. (11) A list of each diagnosed complication. (12) A list of each treated complication, with a description of the treatment provided. (13) Whether the patient's visit to treat the complications was the original visit or a follow-up visit. (14) The date of each follow-up visit, if any. (15) A list of each complication diagnosed at a follow-up visit, if any. (16) A list of each complication treated at a follow-up visit, if any. [deleted: (f) Before February 1, 2020, the state department shall inform in writing all providers described in subsection (b) of the new reporting requirements for abortion complications. This subsection expires December 31, 2020. (g)] (f) [deleted: Not later than June 30 of each year,] On a quarterly basis, the state department shall compile a public report summarizing the information collected under this section. The report must include statistics for the previous calendar [deleted: year,] quarter, with updated information for the most recent calendar [deleted: year.] quarter. [deleted: (h)] (g) The state department shall summarize the aggregate data from the data submitted under this section and submit the data, on or before June 30 of each year, to the United States Centers for Disease Control and Prevention for its inclusion in the annual Vital Statistics Report. [deleted: (i)] (h) The state department shall ensure that no identifying information of a pregnant woman is included in the report described in SEA 1(ss) — Concur 29 subsection [deleted: (g).] (f). [deleted: (j)] (i) This subsection applies after August 31, 2020. Each failure to report an abortion complication as required under this section is a Class B misdemeanor. [deleted: (k)] (j) [deleted: Before January 1, 2020,] The state department shall adopt rules under IC 4-22-2 to implement this section. SECTION 27. IC 16-34-2-5, AS AMENDED BY P.L.218-2021, SECTION 7, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 5. (a) Every health care provider who performs a surgical abortion or provides, prescribes, administers, or dispenses an abortion inducing drug for the purposes of inducing an abortion shall report the performance of the abortion or the provision, prescribing, administration, or dispensing of an abortion inducing drug on a form drafted by the state department, the purpose and function of which shall be the improvement of maternal health and life through the compilation of relevant maternal life and health factors and data, and a further purpose and function shall be to monitor all abortions performed in Indiana to assure the abortions are done only under the authorized provisions of the law. For each abortion performed and abortion inducing drug provided, prescribed, administered, or dispensed, the report shall include, among other things, the following: (1) The age of the patient. (2) Whether a waiver of consent under section 4 of this chapter was obtained. (3) Whether a waiver of notification under section 4 of this chapter was obtained. (4) The date and location, including the facility name and city or town, where the: (A) pregnant woman: (i) provided consent; and (ii) received all information; required under section 1.1 of this chapter; and (B) abortion was performed or the abortion inducing drug was provided, prescribed, administered, or dispensed. (5) The health care provider's full name and address, including the name of the physicians performing the abortion or providing, prescribing, administering, or dispensing the abortion inducing drug. (6) The city and county where the pregnancy termination occurred. (7) The age of the father, or the approximate age of the father if the father's age is unknown. SEA 1(ss) — Concur 30 (8) The patient's county and state of residence. (9) The marital status of the patient. (10) The educational level of the patient. (11) The race of the patient. (12) The ethnicity of the patient. (13) The number of the patient's previous live births. (14) The number of the patient's deceased children. (15) The number of the patient's spontaneous pregnancy terminations. (16) The number of the patient's previous induced terminations. (17) The date of the patient's last menses. (18) The physician's determination of the gestation of the fetus in weeks. (19) The reason for the abortion. [deleted: (19)] (20) Whether the patient indicated that the patient was seeking an abortion as a result of being: (A) abused; (B) coerced; (C) harassed; or (D) trafficked. [deleted: (20)] (21) The following information concerning the abortion or the provision, prescribing, administration, or dispensing of the abortion inducing drug: (A) The postfertilization age of the fetus (in weeks). (B) The manner in which the postfertilization age was determined. (C) The gender of the fetus, if detectable. (D) Whether the fetus has been diagnosed with or has a potential diagnosis of having Down syndrome or any other disability. (E) If after the earlier of the time the fetus obtains viability or the time the postfertilization age of the fetus is at least twenty (20) weeks, the medical reason for the performance of the abortion. [deleted: or the provision, prescribing, administration, or dispensing of the abortion inducing drug. (21)] (22) For a surgical abortion, the medical procedure used for the abortion and, if the fetus [deleted: was viable or] had a postfertilization age of at least twenty (20) weeks: (A) whether the procedure, in the reasonable judgment of the health care provider, gave the fetus the best opportunity to survive; (B) the basis for the determination that the pregnant woman SEA 1(ss) — Concur 31 had a condition described in this chapter that required the abortion to avert the death of or serious impairment to the pregnant woman; and (C) the name of the second doctor present, as required under IC 16-34-2-3(a)(3). [deleted: (22)] (23) For a nonsurgical abortion, the precise drugs provided, prescribed, administered, or dispensed, and the means of delivery of the drugs to the patient. [deleted: (23)] (24) For a nonsurgical abortion, that the manufacturer's instructions were provided to the patient and that the patient signed the patient agreement. [deleted: (24)] (25) For an [deleted: early pre-viability termination,] abortion performed before twenty (20) weeks of postfertilization age of the fetus, the medical indication by diagnosis code for the fetus and the mother. [deleted: (25)] (26) The mother's obstetrical history, including dates of other abortions, if any. [deleted: (26)] (27) Any preexisting medical conditions of the patient that may complicate the abortion. [deleted: (27)] (28) The results of pathological examinations if performed. [deleted: (28)] (29) For a surgical abortion, whether the fetus was delivered alive, and if so, how long the fetus lived. [deleted: (29)] (30) Records of all maternal deaths occurring at the location where the abortion was performed or the abortion inducing drug was provided, prescribed, administered, or dispensed. [deleted: (30)] (31) The date the form was transmitted to the state department and, if applicable, separately to the department of child services. (b) The health care provider shall complete the form provided for in subsection (a) and shall transmit the completed form to the state department, in the manner specified on the form, within thirty (30) days after the date of each abortion. However, if an abortion is for a female who is less than sixteen (16) years of age, the health care provider shall transmit the form to the state department of health and separately to the department of child services within three (3) days after the abortion is performed. (c) The dates supplied on the form may not be redacted for any reason before the form is transmitted as provided in this section. (d) Each failure to complete or timely transmit a form, as required under this section, for each abortion performed or abortion inducing drug that was provided, prescribed, administered, or dispensed, is a Class B misdemeanor. SEA 1(ss) — Concur 32 (e) [deleted: Not later than June 30 of each year,] On a quarterly basis, the state department shall compile a public report providing the following: (1) Statistics for the previous calendar [deleted: year] quarter from the information submitted under this section. (2) Statistics for previous calendar years compiled by the state department under this subsection, with updated information for the calendar [deleted: year] quarter that was submitted to the state department after the compilation of the statistics. The state department shall ensure that no identifying information of a pregnant woman is contained in the report. (f) The state department shall: (1) summarize aggregate data from all data submitted under this section; and (2) submit the data, before July 1 of each year, to the United States Centers for Disease Control and Prevention for its inclusion in the annual Vital Statistics Report. SECTION 28. IC 16-34-2-7, AS AMENDED BY P.L.93-2019, SECTION 5, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 7. (a) Except as provided in subsections (b) and (c), a person who knowingly or intentionally performs an abortion [deleted: not expressly provided for in] prohibited by section 1 of this chapter commits a Level 5 felony. (b) A physician who performs an abortion intentionally or knowingly in violation of [deleted: section 1(a)(1)(C)] section 1(a)(1)(D) or 4 of this chapter commits a Class A misdemeanor. (c) A person who knowingly or intentionally performs an abortion in violation of section 1.1 of this chapter commits a Class A infraction. (d) A woman upon whom a partial birth abortion is performed may not be prosecuted for violating or conspiring to violate section 1(b) of this chapter. (e) A woman upon whom a dismemberment abortion is performed may not be prosecuted for violating or conspiring to violate section 1(c) of this chapter. SECTION 29. IC 16-34-3-2, AS AMENDED BY P.L.77-2020, SECTION 2, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 2. (a) A pregnant woman who has an abortion under this article has the right to have the [deleted: health care facility or abortion clinic] hospital or ambulatory outpatient surgical center dispose of the aborted fetus by interment in compliance with IC 23-14-54, or cremation through a licensee (as defined in IC 25-15-2-19) and in compliance with IC 23-14-31. The pregnant woman who selects to have the [deleted: health care facility or abortion clinic] SEA 1(ss) — Concur 33 hospital or ambulatory outpatient surgical center dispose of the aborted fetus has the right to ask which method will be used by the [deleted: health care facility or abortion clinic.] hospital or ambulatory outpatient surgical center. (b) After receiving the notification and information required by IC 16-34-2-1.1(a)(2)(H), IC 16-34-2-1.1(a)(2)(I), and IC 16-34-2-1.1(a)(2)(J), the pregnant woman shall inform the [deleted: abortion clinic or the health care facility:] hospital or ambulatory outpatient surgical center: (1) in writing; and (2) on a form prescribed by the state department; of the pregnant woman's decision for final disposition of the aborted fetus by cremation or interment and, in an abortion induced by an abortion inducing drug, whether the pregnant woman will return the aborted fetus to the [deleted: health care facility or abortion clinic] hospital or ambulatory outpatient surgical center for disposition by interment in compliance with IC 23-14-54, or cremation through a licensee (as defined in IC 25-15-2-19) and in compliance with IC 23-14-31. (c) If the pregnant woman is a minor, the [deleted: abortion clinic or health care facility] hospital or ambulatory outpatient surgical center shall obtain parental consent in the disposition of the aborted fetus unless the minor has received a waiver of parental consent under IC 16-34-2-4. (d) The [deleted: abortion clinic or the health care facility] hospital or ambulatory outpatient surgical center shall document the pregnant woman's decision concerning disposition of the aborted fetus in the pregnant woman's medical record. (e) In the case of an abortion induced by an abortion inducing drug, the pregnant woman may return the aborted fetus to the [deleted: health care facility or abortion clinic] hospital or ambulatory outpatient surgical center for disposition by interment in compliance with IC 23-14-54, or cremation through a licensee (as defined in IC 25-15-2-19) and in compliance with IC 23-14-31. SECTION 30. IC 16-34-3-3, AS AMENDED BY P.L.213-2016, SECTION 20, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 3. If the pregnant woman chooses a location for final disposition other than the location of final disposition that is usual and customary for [deleted: an abortion clinic or a health care facility,] a hospital or ambulatory outpatient surgical center, the pregnant woman is responsible for the costs related to the final disposition of the aborted fetus at the chosen location. SECTION 31. IC 16-34-3-4, AS AMENDED BY P.L.77-2020, SECTION 3, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEA 1(ss) — Concur 34 SEPTEMBER 15, 2022]: Sec. 4. (a) [deleted: An abortion clinic or health care facility] A hospital or ambulatory outpatient surgical center having possession of an aborted fetus shall provide for the final disposition of the aborted fetus. The burial transit permit requirements of IC 16-37-3 apply to the final disposition of an aborted fetus, which must be interred or cremated. However: (1) a person is not required to designate a name for the aborted fetus on the burial transit permit and the space for a name may remain blank; and (2) any information submitted under this section that may be used to identify the pregnant woman is confidential and must be redacted from any public records maintained under IC 16-37-3. Aborted fetuses may be cremated by simultaneous cremation. (b) If the [deleted: abortion clinic or health care facility] hospital or ambulatory outpatient surgical center conducts the cremation of aborted fetal remains on site, the [deleted: abortion clinic or health care facility] hospital or ambulatory outpatient surgical center must comply with all state laws concerning the cremation of human remains as prescribed in IC 23-14-31. The [deleted: abortion clinic or health care facility] hospital or ambulatory outpatient surgical center must make the onsite cremation equipment available to the state department for inspection at the time the [deleted: abortion clinic or health care facility] hospital or ambulatory outpatient surgical center is inspected. When the [deleted: abortion clinic or health care facility] hospital or ambulatory outpatient surgical center contracts with a licensed funeral home for the disposal of the aborted fetal remains, the contract must be made available for review by the state department at the time the [deleted: abortion clinic or health care facility] hospital or ambulatory outpatient surgical center is inspected. (c) Except in extraordinary circumstances where the required information is unavailable or unknown, a burial transit permit issued under IC 16-37-3 that includes multiple fetal remains must be accompanied by a log prescribed by the state department containing the following information about each fetus included under the burial transit permit: (1) The date of the abortion. (2) Whether the abortion was surgical or induced by an abortion inducing drug. (3) The name of the funeral director licensee who will be retrieving the aborted fetus. (4) In the case of an abortion induced by an abortion inducing drug: SEA 1(ss) — Concur 35 (A) whether the pregnant woman will cremate or inter the fetus, or will return the fetus to the [deleted: health care facility or abortion clinic] hospital or ambulatory outpatient surgical center for disposition; and (B) if the pregnant woman returns the fetus to the [deleted: health care facility or abortion clinic,] hospital or ambulatory outpatient surgical center, whether the returned fetus is included in the burial transit permit. The [deleted: abortion clinic or health care facility] hospital or ambulatory outpatient surgical center must keep a copy of the burial transit permit and accompanying log in a permanent file. (d) Each time the fetal remains are transported from one entity to another for disposition, the entity receiving the fetal remains must confirm that the number of fetal remains matches the information contained in the burial transit permit and accompanying log. After final disposition, a copy of the log will be sent back to the [deleted: health care facility or abortion clinic.] hospital or ambulatory outpatient surgical center. The final log will be attached to the original log described in subsection (c) and will be made available for review by the state department at the time of inspection. (e) [deleted: An abortion clinic or a health care facility] A hospital or ambulatory outpatient surgical center is responsible for demonstrating to the state department that the [deleted: abortion clinic or the health care facility] hospital or ambulatory outpatient surgical center has complied with the protocol provided in this section. (f) A certificate of stillbirth is not required to be issued for an aborted fetus with a gestational age of less than twenty (20) weeks of age. (g) IC 23-14-31-26, IC 23-14-55-2, IC 25-15-9-18, and IC 29-2-19-17 concerning the authorization of disposition of human remains apply to this section. SECTION 32. IC 16-34-4-5, AS ADDED BY P.L.213-2016, SECTION 22, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 5. (a) A person may not intentionally perform or attempt to perform an abortion [deleted: before the earlier of viability of the fetus or twenty (20) weeks of postfertilization age] allowed under IC 16-34-2 if the person knows that the pregnant woman is seeking a sex selective abortion. (b) A person may not intentionally perform or attempt to perform an abortion [deleted: after viability of the fetus or twenty (20) weeks of postfertilization age] allowed under IC 16-34-2 if the person knows that the pregnant woman is seeking a sex selective abortion. SEA 1(ss) — Concur 36 (c) This section is severable as specified in IC 1-1-1-8. SECTION 33. IC 16-34-4-6, AS ADDED BY P.L.213-2016, SECTION 22, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 6. (a) A person may not intentionally perform or attempt to perform an abortion [deleted: before the earlier of viability of the fetus or twenty (20) weeks of postfertilization age] allowed under IC 16-34-2 if the person knows that the pregnant woman is seeking the abortion solely because the fetus has been diagnosed with Down syndrome or has a potential diagnosis of Down syndrome. (b) A person may not intentionally perform or attempt to perform an abortion [deleted: after viability of the fetus or twenty (20) weeks of postfertilization age] allowed under IC 16-34-2 if the person knows that the pregnant woman is seeking the abortion solely because the fetus has been diagnosed with Down syndrome or has a potential diagnosis of Down syndrome. (c) This section is severable as specified in IC 1-1-1-8. SECTION 34. IC 16-34-4-7, AS ADDED BY P.L.213-2016, SECTION 22, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 7. (a) A person may not intentionally perform or attempt to perform an abortion [deleted: before the earlier of viability of the fetus or twenty (20) weeks of postfertilization age] allowed under IC 16-34-2 if the person knows that the pregnant woman is seeking the abortion solely because the fetus has been diagnosed with any other disability or has a potential diagnosis of any other disability. (b) A person may not intentionally perform or attempt to perform an abortion [deleted: after viability of the fetus or twenty (20) weeks of postfertilization age] allowed under IC 16-34-2 if the person knows that the pregnant woman is seeking the abortion solely because the fetus has been diagnosed with any other disability or has a potential diagnosis of any other disability. (c) This section is severable as specified in IC 1-1-1-8. SECTION 35. IC 16-34-4-8, AS ADDED BY P.L.213-2016, SECTION 22, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 8. (a) A person may not intentionally perform or attempt to perform an abortion [deleted: before the earlier of viability of the fetus or twenty (20) weeks of postfertilization age] allowed under IC 16-34-2 if the person knows that the pregnant woman is seeking the abortion solely because of the race, color, national origin, or ancestry of the fetus. (b) A person may not intentionally perform or attempt to perform an abortion [deleted: after viability of the fetus or twenty (20) weeks of postfertilization age] allowed under IC 16-34-2 if the person knows SEA 1(ss) — Concur 37 that the pregnant woman is seeking the abortion solely because of the race, color, national origin, or ancestry of the fetus. (c) This section is severable as specified in IC 1-1-1-8. SECTION 36. IC 16-34-5 IS REPEALED [EFFECTIVE SEPTEMBER 15, 2022]. (Miscellaneous Provisions). SECTION 37. IC 16-41-16-1, AS AMENDED BY P.L.213-2016, SECTION 23, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 1. (a) This chapter applies to persons and facilities that handle infectious waste, including the following: (1) Hospitals. (2) Ambulatory surgical facilities. (3) Medical laboratories. (4) Diagnostic laboratories. (5) Blood centers. (6) Pharmaceutical companies. (7) Academic research laboratories. (8) Industrial research laboratories. (9) Health facilities. (10) Offices of health care providers. (11) Diet or health care clinics. (12) Offices of veterinarians. (13) Veterinary hospitals. (14) Emergency medical services providers. (15) Mortuaries. [deleted: (16) Abortion clinics.] (b) Except as provided in sections 2, 4, and 7.5 of this chapter, this chapter does not apply to: (1) home health agencies; or (2) hospice services delivered in the home of a hospice patient. SECTION 38. IC 16-50-1-3, AS AMENDED BY P.L.65-2021, SECTION 2, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 3. (a) The state department shall establish a statewide maternal mortality review committee to: (1) review cases of maternal morbidity and maternal mortality; (2) determine factors contributing to maternal morbidity and maternal mortality; (3) identify public health and clinical interventions to improve systems of care and enhance coordination; and (4) develop strategies for the prevention of maternal morbidity and maternal mortality; in Indiana. (b) The statewide maternal mortality review committee: SEA 1(ss) — Concur 38 (1) shall review cases involving the death of a woman occurring during pregnancy, irrespective of the duration and site of the pregnancy, through one (1) year after the pregnancy; [deleted: and] (2) shall study how changes in the state's abortion laws affect maternal mortality in Indiana; and (3) may review cases of maternal morbidity; to carry out the duties set forth in this chapter. SECTION 39. IC 16-50-1-12, AS AMENDED BY P.L.65-2021, SECTION 6, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 12. This article expires [deleted: June 30, 2025.] June 30, 2027. SECTION 40. IC 25-1-9.8-10, AS AMENDED BY P.L.9-2022, SECTION 46, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 10. (a) As used in this chapter, "provider facility" means any of the following: (1) A hospital licensed under IC 16-21-2. (2) An ambulatory outpatient surgical center licensed under IC 16-21-2. [deleted: (3) An abortion clinic licensed under IC 16-21-2. (4)] (3) A birthing center licensed under IC 16-21-2. [deleted: (5)] (4) Except for an urgent care facility (as defined by IC 27-1-46-10.5), a facility that provides diagnostic services to the medical profession or the general public. [deleted: (6)] (5) A laboratory where clinical pathology tests are carried out on specimens to obtain information about the health of a patient. [deleted: (7)] (6) A facility where radiologic and electromagnetic images are made to obtain information about the health of a patient. [deleted: (8)] (7) An infusion center that administers intravenous medications. (b) The term does not include the following: (1) A private mental health institution licensed under IC 12-25. (2) A Medicare certified, freestanding rehabilitation hospital. SECTION 41. IC 25-22.5-8-6, AS ADDED BY P.L.173-2017, SECTION 8, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 6. (a) As used in this section, "abortion" has the meaning set forth in IC 16-18-2-1. (b) Notwithstanding IC 25-1-9, the board: (1) may revoke the license of a physician if, after appropriate notice and an opportunity for a hearing, the attorney general proves by a preponderance of the evidence that the physician [deleted: (1)] failed to transmit the form to the state department of health as described in IC 16-34-2-5(b); [deleted: or] and SEA 1(ss) — Concur 39 (2) shall revoke the license of a physician if, after appropriate notice and an opportunity for a hearing, the attorney general proves by a preponderance of the evidence that the physician performed an abortion in violation of IC 16-34-2-7(a) through IC 16-34-2-7(c) with the intent to avoid the requirements of [deleted: IC 16-34-2.] 16-34-2-1. SECTION 42. IC 25-36.1-2-1, AS ADDED BY P.L.97-2009, SECTION 1, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 1. As used in this chapter, "health care facility" means the following: (1) A hospital that is licensed under IC 16-21-2. (2) An ambulatory outpatient surgical center licensed under IC 16-21-2. (3) A birthing center licensed under IC 16-21-2. [deleted: (4) An abortion clinic licensed under IC 16-21-2.] SECTION 43. IC 27-1-46-10, AS AMENDED BY P.L.9-2022, SECTION 49, AND BY P.L.36-2022, SECTION 11, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 10. (a) As used in this chapter, "provider facility" means any of the following: (1) A hospital licensed under IC 16-21-2. (2) An ambulatory outpatient surgical center licensed under IC 16-21-2. [deleted: (3) An abortion clinic licensed under IC 16-21-2. (4)] (3) A birthing center licensed under IC 16-21-2. [deleted: (5)] (4) Except for an urgent care facility, a facility that provides diagnostic services to the medical profession or the general public, including outpatient facilities. [deleted: (6)] (5) A laboratory where clinical pathology tests are carried out on specimens to obtain information about the health of a patient. [deleted: (7)] (6) A facility where radiologic and electromagnetic images are made to obtain information about the health of a patient. [deleted: (8)] (7) An infusion center that administers intravenous medications. (b) The term does not include the following: (1) A private mental health institution licensed under IC 12-25. (2) A Medicare certified, freestanding rehabilitation hospital. SECTION 44. IC 27-2-25-11, AS AMENDED BY P.L.9-2022, SECTION 51, AND BY P.L.36-2022, SECTION 12, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 11. As used in this chapter, "provider facility" means any of the following: SEA 1(ss) — Concur 40 (1) A hospital licensed under IC 16-21-2. (2) An ambulatory outpatient surgical center licensed under IC 16-21-2. [deleted: (3) An abortion clinic licensed under IC 16-21-2. (4)] (3) A birthing center licensed under IC 16-21-2. [deleted: (5)] (4) Except for an urgent care facility (as defined by IC 27-1-46-10.5), a facility that provides diagnostic services to the medical profession or the general public. [deleted: (6)] (5) A laboratory where clinical pathology tests are carried out on specimens to obtain information about the health of a patient. [deleted: (7)] (6) A facility where radiologic and electromagnetic images are made to obtain information about the health of a patient. [deleted: (8)] (7) An infusion center that administers intravenous medications. SECTION 45. IC 27-8-33-1, AS ADDED BY P.L.193-2011, SECTION 16, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 1. As used in this chapter, "abortion" [deleted: means the termination of human pregnancy with an intention other than to produce a live birth or to remove a dead fetus.] has the meaning set forth in IC 16-18-2-1. SECTION 46. IC 27-8-33-4, AS ADDED BY P.L.193-2011, SECTION 16, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 4. A qualified health plan offered under Subtitle D of Title 1 of the federal Patient Protection and Affordable Care Act may not provide coverage for abortion, except [deleted: in the following cases: (1) The pregnant woman became pregnant through an act of rape or incest. (2) An] when an abortion is [deleted: necessary to avert the pregnant woman's death or a substantial and irreversible impairment of a major bodily function of the pregnant woman.] permitted under IC 16-34-2-1. SECTION 47. IC 27-13-7-7.5, AS ADDED BY P.L.124-2014, SECTION 2, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 7.5. (a) A health maintenance organization that provides coverage for basic health care services and that is entered into, delivered, amended, or renewed after December 31, 2014, under a group contract or an individual contract may not provide coverage for abortion unless the abortion is permitted under IC 16-34-2-1. [deleted: except in the following cases: (1) The pregnant woman became pregnant through an act of rape or incest.] SEA 1(ss) — Concur 41 [deleted: (2) An abortion is necessary to avert the pregnant woman's death or a substantial and irreversible impairment of a major bodily function of the pregnant woman.] (b) A health maintenance organization that enters into a group contract or an individual contract described in subsection (a) may offer coverage for an abortion permitted under IC 16-34-2-1 through a rider or an endorsement. SECTION 48. IC 35-41-3-12 IS ADDED TO THE INDIANA CODE AS A NEW SECTION TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 12. (a) It is a defense to any crime involving the death of or injury to a fetus that the defendant was a pregnant woman who committed the unlawful act with the intent to terminate her pregnancy. (b) Except as provided in subsection (c), it is a defense to any crime involving the death of or injury to a fetus that the mother of the fetus requested that the defendant terminate her pregnancy, and that the death or injury to the fetus was the result of the defendant's termination or attempted termination of her pregnancy. (c) Subsection (b) is not a defense to: (1) performing an unlawful abortion under IC 16-34-2-7; or (2) feticide (IC 35-42-1-6). SECTION 49. IC 35-42-1-6, AS AMENDED BY P.L.203-2018, SECTION 4, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 6. (a) This section does not apply to: (1) the pregnant mother whose pregnancy is terminated; (2) a person who in good faith provides medical treatment to a pregnant woman that results in the accidental or unintentional termination of the pregnancy; or (3) a physician licensed under IC 25-22.5 who, upon the request of a pregnant woman, performs a medical procedure to terminate her pregnancy, even if the procedure is not authorized under IC 16-34-2-1. (b) [deleted: Except as provided in section 6.5 of this chapter,] A person who knowingly or intentionally terminates a human pregnancy with an intention other than to produce a live birth or to remove a dead fetus commits feticide, a Level 3 felony. SECTION 50. IC 35-42-1-6.5, AS ADDED BY P.L.203-2018, SECTION 5, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE SEPTEMBER 15, 2022]: Sec. 6.5. (a) The following sections of this chapter do not apply to an abortion performed in compliance with [deleted: IC 16-34 or IC 35-1-58.5 (before its repeal):] IC 16-34-2: SEA 1(ss) — Concur 42 (1) Section 1 (murder). (2) Section 3 (voluntary manslaughter). (3) Section 4 (involuntary manslaughter). (4) Section 6 (feticide). (b) The following sections of this chapter do not apply to a pregnant woman who terminates her own pregnancy or kills a fetus that she is carrying: (1) Section 1 (murder). (2) Section 3 (voluntary manslaughter). (3) Section 4 (involuntary manslaughter). (4) Section 6 (feticide). SECTION 51. [EFFECTIVE SEPTEMBER 15, 2022] (a) 410 IAC 26 is void. The publisher of the Indiana Administrative Code and Indiana Register shall remove this article from the Indiana Administrative Code. (b) This SECTION expires July 1, 2024. SECTION 52. [EFFECTIVE SEPTEMBER 15, 2022] (a) 410 IAC 26.5 is void. The publisher of the Indiana Administrative Code and Indiana Register shall remove this article from the Indiana Administrative Code. (b) This SECTION expires July 1, 2024. SECTION 53. [EFFECTIVE SEPTEMBER 15, 2022] (a) The prosecutorial oversight task force is created. The task force shall consist of the following members: (1) Four (4) members of the house of representatives, appointed as follows: (A) Three (3) members appointed by the speaker of the house of representatives, one (1) of whom shall serve as the co-chairperson of the task force. (B) One (1) member appointed by the minority leader of the house of representatives. (2) Four (4) members of the senate, appointed as follows: (A) Three (3) member appointed by the president pro tempore of the senate, one (1) of whom shall serve as the co-chairperson of the task force. (B) One (1) member appointed by the minority leader. (3) The executive director of the prosecuting attorneys council of Indiana, or the executive director's designee. (4) The executive director of the public defender council of Indiana, or the executive director's designee. (5) The president of the Indiana judges association, or the president's designee. SEA 1(ss) — Concur 43 The legislative services agency shall provide staff support to the task force. The task force may not have more than five (5) meetings. (b) The task force shall: (1) study the circumstances in which a county prosecutor makes a blanket refusal to enforce a specific statute or constitutional provision; and (2) consider appropriate methods of enforcing the statute or constitutional provision, including: (A) granting the attorney general concurrent jurisdiction to enforce the statute or constitutional provision under certain circumstances; (B) granting another prosecuting attorney concurrent jurisdiction to enforce the statute or constitutional provision under certain circumstances; (C) establishing a procedure to appoint a special prosecuting attorney under certain circumstances; or (D) any other method the task force determines should be recommended; and (3) make recommendations under subsection (c) resulting from the task force's study and considerations under this subsection. (c) Before December 1, 2022, the task force shall make recommendations to the general assembly in an electronic format under IC 5-14-6 concerning the task force's study and findings under subsection (b). (d) Each member of the task force who is not a state employee is entitled to the minimum salary per diem provided by IC 4-10-11-2.1(b). The member is also entitled to reimbursement for traveling expenses as provided under IC 4-13-1-4 and other expenses actually incurred in connection with the member's duties as provided in the state policies and procedures established by the Indiana department of administration and approved by the budget agency. (e) Each member of the task force who is a state employee but who is not a member of the general assembly is entitled to reimbursement for traveling expenses as provided under IC 4-13-1-4 and other expenses actually incurred in connection with the member's duties as provided in the state policies and procedures established by the Indiana department of administration and approved by the budget agency. (f) Each member of the task force who is a member of the SEA 1(ss) — Concur 44 general assembly is entitled to receive the same per diem, mileage, and travel allowances paid to legislative members of interim study committees established by the legislative council. Per diem, mileage, and travel allowances paid under this subsection shall be paid from appropriations made to the legislative council or the legislative services agency. (g) This SECTION expires December 31, 2022. SECTION 54. An emergency is declared for this act. SEA 1(ss) — Concur President of the Senate President Pro Tempore Speaker of the House of Representatives Governor of the State of Indiana Date: Time: SEA 1(ss) — Concur [extracted by pdf-snapshot.ts with strike detection, 2026-09-27T01:56:01.764Z, https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/SB0001.06.ENRH.pdf, from saved file]
+
+---
+snapshot_id: 03a96ddb-0a85-5ab5-a5fd-701c88762989
+source_kind: public-record
+url: https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/rollcalls/SB0001.58_S.pdf
+
+Senate F IRST S PECIAL S ESSION 122 ND G ENERAL A SSEMBLY A UG 05, 2022 9:56:16 PM Roll Call 58: Motion Passed SB 1(ss) - Glick Yea 28 Abortion. Nay 19 Concurrence Eligible for Action Excused 0 Not Voting 3 Presiding: President Y EA - 28 Baldwin Byrne Garten Mishler Bassler Charbonneau Gaskill Niemeyer Boehnlein Crane Glick Raatz Bray Crider Holdman Rogers Brown Donato Koch Sandlin Buchanan Doriot Kruse Walker G Busch Freeman Leising Zay N AY - 19 Alting Ford J.D. Niezgodski Tomes Becker Ford Jon Perfect Walker K Bohacek Griffin Pol Yoder Breaux Lanane Qaddoura Young Buck Melton Taylor E XCUSED - 0 N OT V OTING - 3 Boots Messmer Randolph [extracted by pdf-snapshot.ts with strike detection, 2026-09-27T01:56:02.562Z, https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/rollcalls/SB0001.58_S.pdf, from saved file]

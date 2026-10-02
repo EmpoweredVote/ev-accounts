@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
+      "office_id": "ae285450-8e0b-43d9-a534-e747ea9baf0b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "03a96ddb-0a85-5ab5-a5fd-701c88762989",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate roll call on the motion to concur, the chamber's final adoption vote on the bill (signed by the Governor the same day), not a cloture/table/recommit motion, and at 19 No votes it is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Koch Sandlin",
+          "tally_quote": "Yea 28 Abortion. Nay 19 Concurrence"
+        },
+        {
+          "snapshot_id": "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "a criminal act, except when performed under the following circumstances:",
+          "note": "Enrolled act text as concurred in; the quoted ban clause is followed by exceptions for a serious health risk or to save the life of the pregnant woman, a lethal fetal anomaly, and, within the first ten weeks, rape or incest, none of them inside a deleted fence.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill details page for the same instrument; it prints the digest rather than operative text and names the author and sponsors rather than any voter, so it carries no record field of its own.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "03a96ddb-0a85-5ab5-a5fd-701c88762989",
+        "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+        "c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6"
+      ],
+      "reasoning": "Koch appears in the Yea list on Senate Roll Call 58, the concurrence vote on SB 1(ss) (2022 First Special Session), whose enrolled operative section makes abortion \"a criminal act, except when performed under the following circumstances:\" - a serious health risk to the pregnant woman or saving her life, a lethal fetal anomaly, and, during the first ten weeks of postfertilization age, where \"the pregnancy is a result of rape or incest\". Those exceptions match the rung \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life.\", and the bill's own exceptions exclude \"ban abortion in all cases, with no exceptions.\" while its criminalization of all other abortions excludes \"allow abortion during the first trimester, and after that only to protect the mother's health.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

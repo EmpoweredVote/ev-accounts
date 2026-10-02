@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "6133e73c-4c33-4cfc-9fd3-de1382729f42|7803f2a9-9dd2-4f45-8b85-1cf5fd29e785|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Assembly roll call on a clean-energy-specific instrument (for example the renewables portfolio standard bill SB 350 (2015-2016), or SB 100 (2017-2018)) showing Gipson's vote",
+          "Gipson's own words on how government should expand clean energy (floor statement, questionnaire answer, or first-person issue page)",
+          "Start date of Gipson's earlier Assembly term, to confirm he was seated at the 2016-08-23 vote"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "6133e73c-4c33-4cfc-9fd3-de1382729f42|7803f2a9-9dd2-4f45-8b85-1cf5fd29e785|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "Assembly roll call on a clean-energy-specific instrument (for example the renewables portfolio standard bill SB 350 (2015-2016), or SB 100 (2017-2018)) showing Gipson's vote",
+        "Gipson's own words on how government should expand clean energy (floor statement, questionnaire answer, or first-person issue page)",
+        "Start date of Gipson's earlier Assembly term, to confirm he was seated at the 2016-08-23 vote"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

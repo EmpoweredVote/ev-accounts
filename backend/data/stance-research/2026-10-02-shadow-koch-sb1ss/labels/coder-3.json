@@ -1,0 +1,83 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
+      "office_id": "ae285450-8e0b-43d9-a534-e747ea9baf0b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "03a96ddb-0a85-5ab5-a5fd-701c88762989",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate Roll Call 58 records Koch voting Yea on concurrence with SB 1(ss), the action that sent it to the Governor the same day.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Koch Sandlin Buchanan",
+          "tally_quote": "Yea 28 Abortion. Nay 19 Concurrence Eligible for Action Excused 0 Not Voting 3"
+        },
+        {
+          "snapshot_id": "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "a criminal act, except when performed under the following circumstances:",
+          "note": "Enrolled Act amends IC 16-34-2-1 to make abortion unlawful except under enumerated exceptions.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus is diagnosed with a lethal fetal anomaly;",
+          "note": "Operative exception permitting abortion for serious health risk, risk to the mother's life, or a lethal fetal anomaly, before viability/20 weeks.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "if: (A) the pregnancy is a result of rape or incest;",
+          "note": "Separate operative exception, limited to the first ten weeks, for pregnancies resulting from rape or incest.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "03a96ddb-0a85-5ab5-a5fd-701c88762989",
+        "cd82aaef-bdce-5e61-8163-6841ae3300e9"
+      ],
+      "reasoning": "Koch voted Yea on SB 1(ss) (2022 First Special Session) in the Aug 5, 2022 concurrence vote that sent the bill to the Governor the same day. The enacted law makes abortion 'a criminal act, except when performed under the following circumstances,' permitting it only where 'the abortion is necessary ... to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life,' where 'the fetus is diagnosed with a lethal fetal anomaly,' or, within the first ten weeks, where 'the pregnancy is a result of rape or incest.' This matches rung 4: ban abortion except in cases of rape, incest, or a serious risk to the mother's life.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}
