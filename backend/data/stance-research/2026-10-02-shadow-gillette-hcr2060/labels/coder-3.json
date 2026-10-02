@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "50d00238-5334-4616-ac43-72375f53df71",
+      "office_id": "ae116c94-7533-46d0-aa81-20106f5cb572",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "3572370e-a6b6-5c8e-86fa-80fff3553f34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call on the bundled border/benefits/fentanyl/illegal-entry referendum; Gillette voted Yea.",
+          "record_kind": "vote",
+          "actor_quote": "GILLETTE Y",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "73523759-920c-580b-819b-75e0df267be1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Bill status page confirms the same House Final passage and shows the prime sponsor was Toma, not Gillette.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "31-29-0-0-0 PASSED"
+        },
+        {
+          "snapshot_id": "5d7cfa43-a906-5a3c-aee4-81f846261d04",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "It is unlawful for a person who is an alien to enter or attempt to enter this state directly from a foreign nation at any location other than a lawful port of entry.",
+          "note": "The bill text's operative illegal-entry clause sits alongside separate, unrelated benefits-fraud, e-verify, and fentanyl-homicide sections, confirming the bill is multi-subject.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gillette voted Yea on HCR2060's House Final Reading (31-29-0-0-0), a referendum whose enacted title bundles four subjects (border, benefits, fentanyl, illegal entry), so under the vote ladder it proves direction at most. No statement from Gillette ties his vote to the illegal-entry/return-to-nation provision specifically, so it cannot separate 'Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place' from the other deportation rungs.",
+      "needs_source": [
+        "Gillette's own statement or floor explanation of his HCR2060 vote tying it specifically to the illegal-entry/return-to-nation provision, separate from the bundled benefits-fraud, e-verify, and fentanyl clauses"
+      ],
+      "quotes": []
+    }
+  ]
+}

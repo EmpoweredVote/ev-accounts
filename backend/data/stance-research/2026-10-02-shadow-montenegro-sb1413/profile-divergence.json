@@ -1,0 +1,78 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+    "instrument": "sb1413(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "ecfb8093-af2f-5b3e-a310-2fd65772ce73",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1413#house-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "c7fb207f-85cc-5317-8436-36b9a7d243be",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1413S.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "45f5c7f6-1762-51f2-be10-f31c2af3bd1b",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1413",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+    "instrument": "sb1413(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "ecfb8093-af2f-5b3e-a310-2fd65772ce73",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1413#house-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "c7fb207f-85cc-5317-8436-36b9a7d243be",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1413S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+    "instrument": "sb1413(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "c7fb207f-85cc-5317-8436-36b9a7d243be",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1413S.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "45f5c7f6-1762-51f2-be10-f31c2af3bd1b",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1413",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "ecfb8093-af2f-5b3e-a310-2fd65772ce73",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1413#house-third",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]
