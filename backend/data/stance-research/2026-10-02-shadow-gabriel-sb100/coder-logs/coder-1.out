@@ -1,0 +1,17 @@
+Wrote `coder-1.json`.
+
+**Row: Jesse Gabriel / climate-change → rung 1**
+
+Two passages, one record group (SB 100, 2017-2018):
+
+- **Vote page** (`eed8e3bb`) — `own-act` / `on-question` / `record` / `vote`, dated 2018-08-28. `actor_quote` is the Ayes segment containing his surname; `tally_quote` is `Ayes Count 44 Noes Count 33 NVR Count 3` from the Assembly Floor block (not the Senate concurrence block). 33 of 80 against, so not `near-unanimous`.
+- **Bill text** (`dc49ccc5`) — same record group, carries the `provision_quote` and nulls for actor/tally, per the V3 worked example.
+
+Chair reasoning: single-subject RPS bill, final Assembly passage, so V4.1 permits a chair. The operative sections command procurement ("the commission shall establish a renewables portfolio standard requiring all retail sellers to procure a minimum quantity…") on dated targets rising to 60 percent by December 31, 2030, enforced by penalties — mandates plus firm deadlines. No appropriation or tax credit (the digest reads `Appropriation: no`), which excludes the subsidy rung; nothing touches permitting or grid upgrades, which excludes rung 3.
+
+Two judgment calls worth flagging:
+
+- **V5.** I coded `in-term` under the option-B ruling: the vote is an Assembly Floor vote and he has a prior term in this legislature ending 2022-12-05. His appearance in the roll call is itself evidence he was seated at that date. But the prior term's start is on file as *unknown*, so I put the term-start lookup in `needs_source` for CONFIRM's `prior-service-unverified` check rather than resolving it myself.
+- **Section 454.53** (the 100% by 2045 clause) is framed as state *policy* that agencies "shall incorporate… into all relevant planning," plus a joint report — closer to a directive than a mandate. I did not rest the chair on it; the chair rests on the amended §399.15 and §399.30 procurement requirements, which are enforceable with penalties.
+
+No quotes array — neither source contains his own words.

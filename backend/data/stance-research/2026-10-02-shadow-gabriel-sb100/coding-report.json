@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Start date of Jesse Gabriel's earlier California Assembly term (on file only as ending 2022-12-05, precision unknown), to confirm the 2018-08-28 Assembly Floor vote falls within a term in this legislature"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "Start date of Jesse Gabriel's earlier California Assembly term (on file only as ending 2022-12-05, precision unknown), to confirm the 2018-08-28 Assembly Floor vote falls within a term in this legislature"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

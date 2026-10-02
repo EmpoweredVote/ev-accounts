@@ -1,0 +1,17 @@
+Written. One row, one chair.
+
+**minimum-wage → rung 1**
+
+Two passages, both `record` / `vote` on `SB 3 (2015-2016)`, grouped as one record:
+
+- **Vote page** — `own-act`, Assembly floor final passage 03/31/16. `actor_quote` is the Ayes-list span containing Gipson; `tally_quote` is `Ayes Count 48 Noes Count 26 NVR Count 5`. 26 Noes out of 79 voting, so the near-unanimous rule doesn't bite. No provision printed on this page → `provision_quote: null`.
+- **Bill text** — carries the `provision_quote` only, per the V3 worked example. `actor_quote` and `tally_quote` are null.
+
+Chair reasoning: the rung is compound — raise the floor **and** index it so it rises automatically without new legislation — and §1182.12 evidences both clauses. Subdivision (b) steps the floor to $15; subdivision (c)(1) hands the annual CPI-W adjustment to the Director of Finance, which is what excludes the rung that would "adjust it only when lawmakers vote to."
+
+Two judgment calls worth flagging:
+
+1. **Not `multi-subject`.** SB 3 has a second half (paid sick days for IHSS providers), but V4's definition is "many unrelated parts (omnibus, budget, appropriations, reconciliation)." Both halves amend the Labor Code, and the sick-leave accrual tiers are keyed to the minimum-wage schedule reaching $13 and $15 — related, not an omnibus. I read it as single-subject enough, on the same footing as the H.R. 8035 example. A coder who read the sick-leave half as a separate subject would land on `multi-subject` → BLANK `direction-only`; that's the likeliest point of split with the other coders.
+2. **V5 `in-term`.** The 2016 vote predates the current term (2022-12-05), but the earlier term in this legislature ends exactly at that date, so the 0.4 option-B ruling makes it `in-term`. The earlier term's *start* is recorded as unknown, so I put that in `needs_source` — the roll call itself shows him seated in the Assembly that day, so it doesn't block the chair, but CONFIRM will want the service record.
+
+`quotes` is empty: neither source contains the person's words.
