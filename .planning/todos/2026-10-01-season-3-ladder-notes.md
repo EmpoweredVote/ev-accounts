@@ -62,3 +62,24 @@ Add new notes at the bottom. Do not record gold item names here (keep them certi
 - **Status:** the annex will carry a weeks-to-rung reading first (see
   `docs/codebook/annex/README.md`, "Pending notes"). Decide at Season 3 whether the ladder itself
   should state weeks and cover the life-only ban.
+
+## Judicial batch (from the 2026-10-01 annex drafting; wording proposals are drafts)
+
+- **judicial-bail-pretrial — key/title:** "Bail and Pretrial" does not match the rungs, which ask how
+  closely a judge watches prosecutors and never mention bail. Rename (for example "Judicial Scrutiny
+  of Prosecutors") or re-axe onto bail. Rungs 1 and 2 are not clearly ordered; rungs 1, 4, 5 carry
+  reason sentences.
+- **judicial-access-to-justice — rungs 2/3 close;** clerks can reach only rung 1 (ruled: not coded in
+  S2). Possible rung 2: "Apply the normal requirements, but use the court's discretion to forgive
+  small mistakes so a real case is heard."
+- **judicial-government-deference — rung 5 referent:** "elected officials and agencies" vs "the
+  government" in rungs 1–4. Rungs 1/2 and 4/5 differ only in strength.
+- **judicial-interpretation — rungs 4/5 overlap:** rung 5 names no method rung 4 lacks. Possible rung
+  5: "Apply the plain words of the law as they read today, without looking to purpose or history; if
+  it needs to change, that is for elected lawmakers."
+- **judicial-police-accountability — rungs 2/3 overlap.** Possible rung 2: "Take misconduct
+  complaints seriously, investigate each one fully, and act on the ones that hold up, without
+  defending the employee in the meantime."
+- **judicial-prosecution-priorities — rung 5** carries editorial phrases.
+- **judicial-criminal-justice — rung 5** ("Impose the toughest penalties") is an act legislators
+  cannot perform; they reach it only through own words.

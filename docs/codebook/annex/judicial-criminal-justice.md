@@ -81,8 +81,7 @@ time" or "good-time credit".
   shows direction, but one offense cannot set the person's general response to lawbreaking →
   `direction-only`, not `no-evidence`.
 - **Victims' rights.** A bill about victims' notice, compensation or participation is about victims,
-  not the response to the person who broke the law, even when it touches a proceeding for the accused →
-  `adjacent`; BLANK `no-evidence` when nothing else survives.
+  not the response to the person who broke the law → `adjacent`; BLANK `no-evidence` when nothing else survives.
 - **Pretrial measures** (bail, detention) come before any finding that the person broke the law →
   `adjacent` _(proposed)_.
 - **Record clearing** (expungement, sealing) and re-entry aid after a sentence is served → `adjacent`

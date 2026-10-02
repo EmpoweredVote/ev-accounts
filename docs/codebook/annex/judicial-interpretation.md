@@ -75,8 +75,9 @@ precedent) is not this axis → `off-axis` (V4).
    - Levels that hold a lever: judicial (judges).
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 4 because a person who holds rung 4 usually says rung 5's sentence
-     too, and rung 5 names no method that rung 4 lacks. `_owed:_` what excludes rung 4 when a passage
-     states only rung 5's two clauses.
+     too, and rung 5 names no method that rung 4 lacks. A passage that states only "apply the law as
+     written; change is for lawmakers" → `direction-only`, unless it also rejects reading the law by
+     its purpose or history _(ruled 2026-10-01)_.
    - **"Apply the law, don't make it" / "not legislate from the bench"** is said by nearly every
      judicial candidate. Alone it does not exclude rungs 3 or 4 → `rhetorical` or `direction-only`
      _(proposed)_.
@@ -87,7 +88,7 @@ precedent) is not this axis → `off-axis` (V4).
 - **Praise for a named justice or a court** is not the person's own method → `direction-only` at most
   _(proposed)_.
 - **A brief a legal officer files** (an attorney general's brief that argues a method) argues for a
-  client. `_owed:_` whether such a brief evidences the officer's own method.
+  client → `direction-only`, unless the officer's own words elsewhere confirm the method _(ruled 2026-10-01)_.
 - **Judicial ethics.** Candidates may not promise outcomes, but they may state a method. A
   questionnaire answer on method is `statement-answer` (V3).
 - **A written opinion** the judge authored is `record` (`record_kind = author`); the instrument is the

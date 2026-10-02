@@ -86,8 +86,8 @@ fund legal aid or write court-access statutes are not in this role → `off` _(p
 - **Legal-aid funding votes and court-access bills by legislators** are outside this role → `off`
   (V2). Season 2 codes legal actors only _(proposed)_.
 - **Court clerks** control filing costs, hours and language help (rung 1 [b]) but never whether a case
-  stands, so only rung 1 can be reached for a clerk. `_owed:_` whether clerks are coded on this
-  ladder.
+  stands, so only rung 1 can be reached for a clerk. Clerks are **not coded** on this ladder in
+  Season 2 → `scope-unavailable` _(ruled 2026-10-01)_.
 - **A ruling that grants a fee waiver or dismisses a case because binding law requires it** is the
   law's choice, not the judge's posture → `direction-only` at most _(proposed)_.
 - **Criminal diversion** (alternative courts for defendants) is a criminal-justice or prosecution

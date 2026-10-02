@@ -85,8 +85,8 @@ defence), "discovery", "chain of custody", "plea agreement" or "plea bargain", "
 
 **Hard cases:**
 - **Bail and pretrial-detention rulings.** A ruling on the prosecution's request to detain or set bail
-  is about the defendant's release, not trust in the prosecution. `_owed:_` whether such a ruling is
-  `on-question` when its reasoning states how much weight the judge gives the prosecution's showing.
+  is about the defendant's release. It is `on-question` only when its reasoning states how much weight
+  the judge gives the prosecution's showing; the release outcome alone → `direction-only` _(ruled 2026-10-01)_.
 - **A judge's earlier career as a prosecutor or defence lawyer** is a different role and says nothing
   about the judge's posture → `off` (V2) _(proposed)_.
 - **Judicial ethics.** Candidates may not promise outcomes. A questionnaire answer on how the person

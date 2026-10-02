@@ -91,7 +91,8 @@ investigation", "public integrity unit", "civilian oversight", "internal affairs
 - **A record and a statement that disagree** (a stated support for oversight, and an office that
   declines to cooperate with it) → the record wins; `record-vs-statement-conflict` when it decides the
   chair (V3).
-- `_owed:_` whether, for a prosecutor, the police count as "the office's own side" in rung 1.
+- **For a prosecutor, the police are "the office's own side"** in rung 1: they are the office's
+  working partners _(ruled 2026-10-01)_.
 - **Legislation** on police accountability by a legislator is outside this office → `off`; an
   attorney general's own legislative career is `pre-seating` (V5).
 - **Budget and omnibus votes** → V4 `multi-subject`.
