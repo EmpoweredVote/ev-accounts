@@ -78,8 +78,9 @@ and state; tax treatment is state and local.
    - Levels that hold a lever: state; local; federal (federal permits, federal land).
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with BLANK because a **reporting duty that is not about projected demand and
-     rate impacts** — for example a utility reporting duty about large-load customers — does not meet
-     [b], and has no permitting clause → BLANK `direction-only`.
+     rate impacts** does not meet [b], and has no permitting clause → BLANK `direction-only`.
+   - A provision about **large-load utility customers** that never names data centers is not about
+     data centers → BLANK `no-evidence` _(ruled 2026-10-01)_.
    - A local project approval "with environmental safeguards" says nothing about permitting speed,
      disclosure or rate impacts → `adjacent` (codebook V2, Moore / data-centers). Coding it as rung 4
      is an unevidenced chair.

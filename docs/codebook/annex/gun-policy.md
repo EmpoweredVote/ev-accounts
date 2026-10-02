@@ -81,11 +81,14 @@ law. Most states forbid local gun ordinances, so a local lever exists only where
    - Operative clauses: [a] repeal major gun restrictions; [b] permitless carry for adults.
    - Establishing evidence looks like: a repeal of a major restriction (for example the federal NFA
      rules on suppressors or short-barrelled rifles, a state registration or assault-weapons ban)
-     **and** permitless carry _(proposed)_. Compound: one side only → `compound-partial` (V4.2).
+     **and** permitless carry _(proposed)_. Compound: one side only → `compound-partial` (V4.2). For a
+     state officeholder, see the state rule below.
    - Levels that hold a lever: federal; state.
    - Known chair-shaped instruments: _(none on file)_.
-   - A state permitless-carry law as the only record meets [b] only → `compound-partial`: the line
-     between rungs 4 and 5 is whether the major laws stay (2026-09-08) _(ruled 2026-10-01)_.
+   - **For a state officeholder**, a state law that removes the state's license or permit to carry
+     meets **both** clauses: the carry license is the major restriction the state controls → rung 5.
+     **For a federal officeholder**, [a] still needs repeal of major federal laws; a federal
+     permitless-carry or reciprocity measure alone → `compound-partial` _(ruled 2026-10-01)_.
 
 **Hard cases:**
 - **Rules about how guns are stored, marketed or advertised** (safe storage, advertising to minors)
