@@ -1,0 +1,89 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "hb2721(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721#house-final",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "e2243c37-bc6e-5125-b97e-21d342430160",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "48e5adc9-77eb-5d52-8dbc-19668f745378",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0197.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "hb2721(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "e2243c37-bc6e-5125-b97e-21d342430160",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "48e5adc9-77eb-5d52-8dbc-19668f745378",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0197.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721#house-final",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "hb2721(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "e2243c37-bc6e-5125-b97e-21d342430160",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "48e5adc9-77eb-5d52-8dbc-19668f745378",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0197.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721#house-final",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "chamber-not-evidenced"
+    ]
+  }
+]

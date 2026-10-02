@@ -1,0 +1,11 @@
+Wrote `coder-1.json`.
+
+**Row: David Gowan / housing — BLANK `direction-only`**
+
+Three passages, all one record: HB2721 (2024), the Arizona middle-housing zoning preemption.
+
+- **Vote page** (`7be5fdac`) — `own-act` / `record` / `vote`, `actor_quote: "GOWAN Y"`, `tally_quote: "Passed 21-7-2-0-0"`. 7 No of 28 voting, so not near-unanimous.
+- **Bill overview** (`6048bc5d`) — same instrument; Gowan is not on the sponsor list, so the vote is his only act here. Carries the Senate tally; no `actor_quote`.
+- **Chaptered text** (`bf815c59`) — carries the `provision_quote` (the municipality "must authorize … duplexes, triplexes, fourplexes and townhomes as a permitted use").
+
+The bill strips local zoning limits on middle housing, which is the V2 preemption refinement case: it removes the very limits rung 5 names, so it is `on-question` rather than `adjacent` — but one deregulation vote cannot establish "Rely on the market to set prices and supply — at most". That magnitude is unproven, and nothing in the sources touches binding affordability rules or subsidies, so rungs 3 and 4 aren't separated either. `rests_on` is empty; `needs_source` asks for his own words or a record on subsidies/affordability mandates. No quotes — there are no first-person words in any snapshot.

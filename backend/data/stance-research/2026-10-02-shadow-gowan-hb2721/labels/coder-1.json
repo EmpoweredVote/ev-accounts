@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote page: Gowan voted Y on a single-subject municipal zoning bill, 21-7 so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "GOWAN Y",
+          "tally_quote": "Passed 21-7-2-0-0"
+        },
+        {
+          "snapshot_id": "6048bc5d-41e2-501a-bb4b-c01ccbd5ba6e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": null,
+          "note": "Bill history for the same instrument; Gowan is not among the listed sponsors, so his only act on HB2721 is the Senate third reading vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "Senate THIRD 05/08/2024 21-7-2-0-0 Amended PASSED"
+        },
+        {
+          "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": "a municipality with a population of seventy-five thousand persons or more must authorize by ordinance and incorporate into its development regulations, zoning regulations and other official controls the development of duplexes, triplexes, fourplexes and townhomes as a permitted use",
+          "note": "Chaptered text prints the operative provision: it strips local zoning limits on middle housing but sets no rule about prices, subsidies or affordability requirements.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gowan's only act in the sources is an Aye on HB2721 (2024), which forces larger municipalities to permit duplexes, triplexes, fourplexes and townhomes and bars them from restricting those types — a removal of the zoning limits that block private building, so it is on-question against the rung that would \"cut the regulations and zoning limits that block private building\". But one deregulation vote cannot show he wants nothing more than that: the \"Rely on the market to set prices and supply — at most\" clause is an unproven magnitude, and nothing here speaks to \"binding rules on the private market like rent caps or required affordable units\" or to \"subsidies and tax breaks\" either. Direction is evidenced; no rung on that side is separated from its neighbours.",
+      "needs_source": [
+        "David Gowan's own words or a record on housing subsidies, tax breaks or affordability mandates, to test the \"at most\" clause of the market rung against the rung that offers \"subsidies and tax breaks so more affordable housing gets built\""
+      ],
+      "quotes": []
+    }
+  ]
+}

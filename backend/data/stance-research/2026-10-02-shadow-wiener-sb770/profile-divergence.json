@@ -1,0 +1,74 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+    "instrument": "sb770(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB770",
+        "profile": "ca-leginfo-bill-text@1"
+      },
+      {
+        "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+        "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB770",
+        "profile": "ca-leginfo-bill-votes@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision"
+    ],
+    "profiled": [
+      "name-collision"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+    "instrument": "sb770(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB770",
+        "profile": "ca-leginfo-bill-text@1"
+      },
+      {
+        "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+        "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB770",
+        "profile": "ca-leginfo-bill-votes@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision"
+    ],
+    "profiled": [
+      "name-collision"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+    "instrument": "sb770(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240SB770",
+        "profile": "ca-leginfo-bill-text@1"
+      },
+      {
+        "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+        "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB770",
+        "profile": "ca-leginfo-bill-votes@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision"
+    ],
+    "profiled": [
+      "name-collision"
+    ]
+  }
+]
