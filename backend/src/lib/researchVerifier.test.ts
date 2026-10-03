@@ -448,3 +448,44 @@ describe('verifyEvidence — I6 published span and I1 cited URLs', () => {
     expect(failed.map((f) => [f.url, f.snippets[0].verdict.verdict])).toEqual([['https://www.vote411.org/x', 'url_not_cited']]);
   });
 });
+
+describe('checkNameProximity — accented stored names and spaced council titles', () => {
+  // Both regressions were measured on the Charlotte city batch, 2026-10-02.
+  const longSnippet = 'There is a place for single-family subdivisions, period. You can have strategic development and that is what we are asking for. There are urban areas where duplexes and triplexes are appropriate but not inside them.';
+
+  it('verifies when the source drops an accent the stored name carries', () => {
+    const page = `Council member Renee Johnson, who is also Black, agreed. ${longSnippet}`;
+    const v = checkNameProximity({
+      fullName: 'Reneé Johnson',
+      lastName: 'Johnson',
+      pageText: page,
+      matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+    });
+    expect(v.verdict).toBe('verified');
+  });
+
+  it('verifies a common surname qualified by the two-word rendering "Council member"', () => {
+    // "johnson" is a COMMON_LAST_NAME, so this can only pass via TITLE_PATTERN.
+    // The FULL name must not appear, or the full-name branch short-circuits
+    // the test and it passes without exercising TITLE_PATTERN at all.
+    const page = `Council member Johnson spoke. ${longSnippet}`;
+    const v = checkNameProximity({
+      fullName: 'Dana Johnson',
+      lastName: 'Johnson',
+      pageText: page,
+      matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+    });
+    expect(v.verdict).toBe('verified');
+  });
+
+  it('still refuses an unqualified common surname — the guard is not loosened', () => {
+    const page = `A spokesman named Johnson commented. ${longSnippet}`;
+    const v = checkNameProximity({
+      fullName: 'Dana Johnson',
+      lastName: 'Johnson',
+      pageText: page,
+      matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+    });
+    expect(v.verdict).toBe('name_not_present');
+  });
+});
