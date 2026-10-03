@@ -13,5 +13,20 @@
     ],
     "failed_urls": [],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Eileen Higgins",
+    "topic_key": "local-immigration",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.miaminewtimes.com/news/eileen-higgins-takes-power-in-a-pivotal-year-for-miami-40521172/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   }
 ]
