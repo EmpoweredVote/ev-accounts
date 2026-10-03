@@ -1,7 +1,7 @@
 /**
  * ocpfAdapter — Massachusetts OCPF adapter implementing SourceAdapter.
  * Base URL: https://api.ocpf.us
- * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageSize={n}
+ * Contributions endpoint: GET /search/items?SearchTypeId=1&SearchTypeCategory=receipts&CpfId={cpfId}&pageSize={n}&StartDate={MM/DD/YYYY}&EndDate={MM/DD/YYYY}
  * No auth required.
  *
  * 🔴 THIS ENDPOINT DOES NOT PAGINATE. `pageSize` is honoured; every offset parameter is
@@ -11,17 +11,35 @@
  * `skip` and `start` all behaved the same way. Ask for pageSize=1000 and you get the
  * window's true total (289) in one response.
  *
- * So a full page is NOT evidence that another page exists. Issue ONE request with a
- * pageSize above the expected count and read the whole window at once.
- * Because the whole filer fits in one response, there is nothing to chunk. A filer's FULL
- * HISTORY is a single request: measured live 2026-08-17 across all 20 ocpf sources, the
- * largest (cpf 15710, 2001–present) is 89,557 records in ~5 s against a 180 s budget.
+ * So a full page is NOT evidence that another page exists. Issue ONE request per window
+ * with a pageSize above the expected count and read the whole window at once.
  *
- * 🔴 The year/quarter/month/week chunking this adapter used to carry was sized in PAGES of
- * the phantom loop ("~300 pages/month", "75k+ contributions per quarter"). Both numbers were
- * duplicates of the same 250 rows. cpf 15710's true worst QUARTER is 5,754 records, and its
- * true LIFETIME is 89,557 — so the chunking subdivided a 5-second call. It is gone; do not
- * reintroduce date windows without measuring the window first.
+ * 🔴 THE WINDOW IS ONE CALENDAR QUARTER, AND THAT IS A MEMORY BOUND, NOT A PAGE BOUND.
+ * Until 2026-10 this adapter read a filer's FULL HISTORY in one request. That stopped
+ * fitting: on 2026-10-01 the first monthly Render cron (starter plan, 512 MiB) died with
+ * "Out of memory (used over 512Mi)" ten seconds into cpf 15710, and the 12 sources after it
+ * never ran. Measured 2026-10-02: cpf 15710's full history is 97,205 records and a 109 MB
+ * response body, and reading that body as text alone took the process to 528 MB RSS.
+ * Measured the same day, one-year windows for cpf 15710 (1995–2026) returned 97,205
+ * DISTINCT records — an exact match with the full history, nothing lost at a boundary.
+ * Peak RSS reading that history (plain node, live API, every record re-serialized):
+ *   one request: 641 MB · per-year (32 requests): 299 MB · per-quarter (128): 236 MB
+ * The largest year is 29,026 records; the largest quarter is 12,149. Quarters were chosen
+ * over years because an election year concentrates receipts — 2026 alone was 30% of
+ * cpf 15710's 31-year history by September — and the extra ~96 requests cost ~6 s.
+ *
+ * So the adapter streams (StreamingAdapter): one request per quarter, and runIngestion
+ * normalizes and upserts each quarter before the next is fetched. Peak memory tracks the
+ * largest QUARTER, not the whole history. Live-verified behaviour the windows rely on:
+ *   - StartDate / EndDate are INCLUSIVE ("12/31/2025" to "12/31/2025" returns that day).
+ *   - Either bound may be sent alone, so the two open-ended edge windows below catch any
+ *     record dated before OCPF_FIRST_YEAR or after the current year.
+ * 🔴 A record with NO date cannot fall in any window. There were none among the 212,497
+ * stored ocpf rows on 2026-10-02 (contribution_date is never null), but that is the one
+ * shape the windows cannot see.
+ *
+ * Do not go back to a single full-history request without re-measuring the largest filer
+ * against the cron's memory limit.
  *
  * Export: createOcpfAdapter(signal?: AbortSignal) — factory function.
  *   Pass a signal to cancel an in-flight fetch from an external AbortController.
@@ -30,6 +48,8 @@
 import { pool } from '../db.js';
 import type {
   SourceAdapter,
+  StreamingAdapter,
+  BatchSink,
   FetchResult,
   NormalizeResult,
   UpsertResult,
@@ -54,6 +74,11 @@ const OCPF_BASE = 'https://api.ocpf.us';
 // the server imposes no ceiling below that. 250,000 leaves ~2.8x headroom over the current
 // worst case while still being a real bound rather than "infinity".
 const OCPF_MAX_WINDOW = parseInt(process.env.OCPF_MAX_WINDOW ?? '250000', 10);
+
+// First calendar year fetched in quarterly windows. Anything older is still read, by the
+// open-ended "before" window — this only decides where the quarters start. The oldest
+// stored ocpf contribution on 2026-10-02 was 1997-11-07.
+const OCPF_FIRST_YEAR = parseInt(process.env.OCPF_FIRST_YEAR ?? '1995', 10);
 
 // ---------------------------------------------------------------------------
 // OCPF API response types
@@ -82,23 +107,57 @@ interface OcpfItem {
 }
 
 // ---------------------------------------------------------------------------
-// Fetch — ONE request, full history; this endpoint does not paginate (see file header)
+// Fetch — one request per calendar-quarter window; the endpoint does not paginate
 // ---------------------------------------------------------------------------
 
-async function fetchOcpfReceipts(cpfId: string, externalSignal?: AbortSignal): Promise<Record<string, unknown>[]> {
-  const allItems: Record<string, unknown>[] = [];
+/** A date window. A missing bound is open-ended. Dates are OCPF's MM/DD/YYYY. */
+export interface OcpfWindow {
+  start?: string;
+  end?: string;
+}
 
-  // ONE request, no date filter — the filer's whole history. See the file header: this
-  // endpoint ignores every offset parameter, so the previous `for(;;)` loop — which exited
-  // only on `items.length < PAGE_SIZE` — could never terminate for a window holding >= 250
-  // records. It re-appended the SAME 250 rows until the scheduler's 180s per-cycle
-  // AbortSignal killed it at ~page 300, which is why every failure in prod carried
-  // `page=296..300` regardless of filer or cycle.
+/**
+ * ocpfWindows returns the windows that together cover every dated record: everything
+ * before firstYear, one window per calendar quarter of firstYear..lastYear, and everything
+ * after lastYear. Bounds are inclusive on the server, so adjacent windows neither gap nor
+ * overlap.
+ */
+const QUARTERS = [
+  ['01/01', '03/31'],
+  ['04/01', '06/30'],
+  ['07/01', '09/30'],
+  ['10/01', '12/31'],
+] as const;
+
+export function ocpfWindows(firstYear: number, lastYear: number): OcpfWindow[] {
+  const windows: OcpfWindow[] = [{ end: `12/31/${firstYear - 1}` }];
+  for (let y = firstYear; y <= lastYear; y++) {
+    for (const [start, end] of QUARTERS) {
+      windows.push({ start: `${start}/${y}`, end: `${end}/${y}` });
+    }
+  }
+  windows.push({ start: `01/01/${lastYear + 1}` });
+  return windows;
+}
+
+async function fetchOcpfWindow(
+  cpfId: string,
+  window: OcpfWindow,
+  externalSignal?: AbortSignal
+): Promise<Record<string, unknown>[]> {
+  // ONE request for the window. See the file header: this endpoint ignores every offset
+  // parameter, so the old `for(;;)` page loop — which exited only on
+  // `items.length < PAGE_SIZE` — could never terminate for a window holding >= 250 records.
+  // It re-appended the SAME 250 rows until the scheduler's 180s per-cycle AbortSignal killed
+  // it at ~page 300, which is why every failure in prod carried `page=296..300`.
+  const label = `${window.start ?? '…'}–${window.end ?? '…'}`;
   const url =
     `${OCPF_BASE}/search/items` +
     `?SearchTypeId=1&SearchTypeCategory=receipts` +
     `&CpfId=${encodeURIComponent(cpfId)}` +
-    `&pageSize=${OCPF_MAX_WINDOW}`;
+    `&pageSize=${OCPF_MAX_WINDOW}` +
+    (window.start ? `&StartDate=${window.start}` : '') +
+    (window.end ? `&EndDate=${window.end}` : '');
 
   let response: Response;
   try {
@@ -108,23 +167,19 @@ async function fetchOcpfReceipts(cpfId: string, externalSignal?: AbortSignal): P
     response = await fetch(url, { signal: requestSignal });
   } catch (err) {
     throw new Error(
-      `[ocpfAdapter] fetch error cpfId=${cpfId}: ${err instanceof Error ? err.message : String(err)}`,
+      `[ocpfAdapter] fetch error cpfId=${cpfId} window=${label}: ${err instanceof Error ? err.message : String(err)}`,
       { cause: err }
     );
   }
 
   if (response.status !== 200) {
     throw new Error(
-      `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId}`
+      `[ocpfAdapter] HTTP ${response.status} for cpfId=${cpfId} window=${label}`
     );
   }
 
   const body = await response.json() as OcpfSearchResponse;
   const items = body.items ?? [];
-
-  for (const item of items) {
-    allItems.push(item as unknown as Record<string, unknown>);
-  }
 
   // A response that exactly fills the requested window is the ONLY truncation signal
   // available — there is no total count (`summary` is null on every response). Failing
@@ -132,13 +187,34 @@ async function fetchOcpfReceipts(cpfId: string, externalSignal?: AbortSignal): P
   // loop was originally written to avoid.
   if (items.length >= OCPF_MAX_WINDOW) {
     throw new Error(
-      `[ocpfAdapter] possible truncation for cpfId=${cpfId}: ` +
+      `[ocpfAdapter] possible truncation for cpfId=${cpfId} window=${label}: ` +
       `received ${items.length} records, which fills the requested window of ${OCPF_MAX_WINDOW}. ` +
       `Raise OCPF_MAX_WINDOW.`
     );
   }
 
-  return allItems;
+  return items as unknown as Record<string, unknown>[];
+}
+
+/**
+ * streamOcpfReceipts reads a filer's whole history window by window, handing each window
+ * to onWindow before fetching the next, so only one quarter is ever held in memory.
+ * Returns the total record count.
+ */
+async function streamOcpfReceipts(
+  cpfId: string,
+  onWindow: (records: Record<string, unknown>[]) => Promise<void>,
+  externalSignal?: AbortSignal
+): Promise<number> {
+  const lastYear = new Date().getUTCFullYear();
+  let total = 0;
+  for (const window of ocpfWindows(OCPF_FIRST_YEAR, lastYear)) {
+    externalSignal?.throwIfAborted();
+    const records = await fetchOcpfWindow(cpfId, window, externalSignal);
+    total += records.length;
+    if (records.length > 0) await onWindow(records);
+  }
+  return total;
 }
 
 // ---------------------------------------------------------------------------
@@ -389,7 +465,7 @@ async function upsertContributions(normalized: NormalizeResult): Promise<UpsertR
 // OcpfAdapter — implements SourceAdapter
 // ---------------------------------------------------------------------------
 
-class OcpfAdapter implements SourceAdapter {
+class OcpfAdapter implements SourceAdapter, StreamingAdapter {
   private readonly externalSignal?: AbortSignal;
 
   constructor(externalSignal?: AbortSignal) {
@@ -400,14 +476,34 @@ class OcpfAdapter implements SourceAdapter {
     return 'ocpf';
   }
 
+  /**
+   * fetch buffers every window into one result. runIngestion does NOT use it — it prefers
+   * fetchStream — so this exists for the SourceAdapter contract and for tests. Buffering a
+   * large filer here brings back exactly the memory peak fetchStream exists to avoid.
+   */
   async fetch(ps: PoliticianSource): Promise<FetchResult> {
-    const cpfId = ps.external_id;
-    const records = await fetchOcpfReceipts(cpfId, this.externalSignal);
+    const records: Record<string, unknown>[] = [];
+    await streamOcpfReceipts(ps.external_id, async (batch) => {
+      for (const r of batch) records.push(r);
+    }, this.externalSignal);
     return {
       records,
       totalExpected: 0, // OCPF does not return a total count
       totalFetched: records.length,
     };
+  }
+
+  /**
+   * fetchStream hands each quarter's records to onBatch (normalize + upsert in runIngestion)
+   * before the next quarter is fetched. Returns an EMPTY records array, per the
+   * StreamingAdapter contract.
+   */
+  async fetchStream(ps: PoliticianSource, onBatch: BatchSink, signal?: AbortSignal): Promise<FetchResult> {
+    const combined = signal && this.externalSignal
+      ? AbortSignal.any([signal, this.externalSignal])
+      : (signal ?? this.externalSignal);
+    const totalFetched = await streamOcpfReceipts(ps.external_id, onBatch, combined);
+    return { records: [], totalExpected: 0, totalFetched };
   }
 
   async normalize(raw: FetchResult, ps: PoliticianSource): Promise<NormalizeResult> {
@@ -439,15 +535,14 @@ class OcpfAdapter implements SourceAdapter {
 
 /**
  * createOcpfAdapter returns an OcpfAdapter implementing SourceAdapter.
- * The adapter fetches a filer's ENTIRE receipt history from api.ocpf.us in ONE request,
- * keyed on cpfId (stored as politician_sources.external_id).
+ * The adapter reads a filer's ENTIRE receipt history from api.ocpf.us, keyed on cpfId
+ * (stored as politician_sources.external_id), one calendar-quarter window per request.
  *
- * There is deliberately no year/quarter/month parameter. See the file header: the endpoint
- * does not paginate, and the largest filer's full history is ~5 s. Date windows only ever
- * existed to subdivide the phantom page loop.
+ * The windows bound MEMORY, not pages: see the file header. The endpoint does not
+ * paginate, and a single full-history request for cpf 15710 overran the 512 MiB cron.
  *
- * @param signal - Optional external AbortSignal, combined with the 30-second request timeout
- *   via AbortSignal.any — whichever fires first cancels the in-flight fetch.
+ * @param signal - Optional external AbortSignal, combined with each request's 30-second
+ *   timeout via AbortSignal.any — whichever fires first cancels the in-flight fetch.
  */
 export function createOcpfAdapter(signal?: AbortSignal): SourceAdapter {
   return new OcpfAdapter(signal);

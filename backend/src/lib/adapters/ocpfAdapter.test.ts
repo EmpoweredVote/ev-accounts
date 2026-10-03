@@ -6,7 +6,7 @@ import { vi, describe, it, expect, beforeEach, afterEach } from 'vitest';
 const poolQueryMock = vi.fn();
 vi.mock('../db.js', () => ({ pool: { query: (...args: unknown[]) => poolQueryMock(...args) } }));
 
-import { createOcpfAdapter, parseOcpfAmount } from './ocpfAdapter.js';
+import { createOcpfAdapter, ocpfWindows, parseOcpfAmount } from './ocpfAdapter.js';
 import type { PoliticianSource } from '../campaignFinanceService.js';
 
 const PAGE_SIZE = 250;
@@ -15,97 +15,114 @@ function source(externalId = '12008'): PoliticianSource {
   return { id: 'src-1', external_id: externalId } as unknown as PoliticianSource;
 }
 
+/** Parse OCPF's MM/DD/YYYY into a comparable yyyymmdd number. */
+function ymd(mdy: string): number {
+  const [m, d, y] = mdy.split('/').map(Number);
+  return y * 10000 + m * 100 + d;
+}
+
 /**
- * Reproduces the OCPF API's ACTUAL behaviour, confirmed live against
- * api.ocpf.us on 2026-08-17:
+ * Reproduces the OCPF API's ACTUAL behaviour, confirmed live against api.ocpf.us:
  *
- *   pageNumber is IGNORED. Pages 1, 2, 3, 50, 298, 500 and 1000 all returned the
- *   identical 250 records (same first ids 518289, 518326). pageSize IS honoured —
- *   pageSize=10 returns 10, pageSize=1000 returns the cycle's true total of 289.
+ *   pageNumber is IGNORED (2026-08-17). Pages 1, 2, 3, 50, 298, 500 and 1000 all returned
+ *   the identical 250 records (same first ids 518289, 518326). pageSize IS honoured —
+ *   pageSize=10 returns 10, pageSize=1000 returns the window's true total of 289.
  *
- * So a full first page is NOT evidence that another page exists, and the old
- * `items.length < PAGE_SIZE` exit condition could never fire for any committee
- * with >= 250 receipts in the window.
+ *   StartDate / EndDate filter INCLUSIVELY, and either may be sent alone (2026-10-02).
+ *
+ * `perYear` maps a calendar year to how many receipts the filer has that year; every
+ * receipt is dated 06/15 of its year, except that each year's first receipt sits on
+ * 01/01 and its last on 12/31 so the boundaries are exercised.
  */
-function mockOcpfIgnoringPageNumber(total: number) {
+function mockOcpf(perYear: Record<number, number>) {
+  const all: { id: number; amount: number; date: string }[] = [];
+  let id = 1;
+  for (const [yearStr, n] of Object.entries(perYear)) {
+    const y = Number(yearStr);
+    for (let i = 0; i < n; i++) {
+      const date = i === 0 ? `01/01/${y}` : i === n - 1 ? `12/31/${y}` : `06/15/${y}`;
+      all.push({ id: id++, amount: 1, date });
+    }
+  }
   return vi.fn(async (url: string) => {
-    const size = Number(new URL(url).searchParams.get('pageSize') ?? PAGE_SIZE);
+    const q = new URL(url).searchParams;
+    const size = Number(q.get('pageSize') ?? PAGE_SIZE);
+    const start = q.get('StartDate');
+    const end = q.get('EndDate');
     // pageNumber deliberately not read — the real API ignores it.
-    const n = Math.min(size, total);
-    const items = Array.from({ length: n }, (_, i) => ({ id: 518289 + i, amount: 1 }));
+    const inWindow = all.filter((r) =>
+      (!start || ymd(r.date) >= ymd(start)) && (!end || ymd(r.date) <= ymd(end)));
+    const items = inWindow.slice(0, size);
     return { status: 200, json: async () => ({ summary: null, items }) } as unknown as Response;
   });
 }
 
-describe('ocpfAdapter pagination', () => {
+const THIS_YEAR = new Date().getUTCFullYear();
+
+describe('ocpfWindows', () => {
+  it('covers before, every year, and after — with no gap and no overlap', () => {
+    const w = ocpfWindows(1995, 1996);
+    expect(w).toEqual([
+      { end: '12/31/1994' },
+      { start: '01/01/1995', end: '03/31/1995' },
+      { start: '04/01/1995', end: '06/30/1995' },
+      { start: '07/01/1995', end: '09/30/1995' },
+      { start: '10/01/1995', end: '12/31/1995' },
+      { start: '01/01/1996', end: '03/31/1996' },
+      { start: '04/01/1996', end: '06/30/1996' },
+      { start: '07/01/1996', end: '09/30/1996' },
+      { start: '10/01/1996', end: '12/31/1996' },
+      { start: '01/01/1997' },
+    ]);
+  });
+});
+
+describe('ocpfAdapter fetch', () => {
   beforeEach(() => vi.stubGlobal('fetch', vi.fn()));
   afterEach(() => vi.unstubAllGlobals());
 
-  it('terminates and returns each record ONCE when the window holds more than one page', async () => {
-    // 289 records — above PAGE_SIZE, so this is exactly the shape that used to loop
-    // forever. (It was the real 2005-Q2 total for cpf 12008 back when the adapter still
-    // took date windows; the adapter now always asks for the filer's full history.)
-    const fetchMock = mockOcpfIgnoringPageNumber(289);
-    vi.stubGlobal('fetch', fetchMock);
+  it('terminates and returns each record ONCE when a window holds more than one page', async () => {
+    // 289 records in one year — above PAGE_SIZE, so this is exactly the shape that used to
+    // loop forever (the real 2005-Q2 total for cpf 12008).
+    vi.stubGlobal('fetch', mockOcpf({ 2005: 289 }));
 
     const result = await createOcpfAdapter().fetch(source());
 
-    // Before the fix this never returned — the loop appended the same 250 rows
+    // Before the page-loop fix this never returned — the loop appended the same 250 rows
     // ~300 times until the external 180s timeout aborted it.
     expect(result.records.length).toBe(289);
-
-    // And every record must be distinct: the old loop's output was 300 copies.
     const ids = new Set(result.records.map((r) => (r as { id: number }).id));
     expect(ids.size).toBe(289);
   });
 
-  it('issues ONE request per filer, not one per phantom page', async () => {
-    const fetchMock = mockOcpfIgnoringPageNumber(289);
+  it('sends ONE request per quarter window, plus the two open-ended edges', async () => {
+    const fetchMock = mockOcpf({ 2005: 289 });
     vi.stubGlobal('fetch', fetchMock);
 
     await createOcpfAdapter().fetch(source());
 
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    const urls = fetchMock.mock.calls.map((c) => new URL(c[0] as string).searchParams);
+    // Four quarters of 1995..THIS_YEAR inclusive, plus "before" and "after".
+    expect(urls.length).toBe((THIS_YEAR - 1995 + 1) * 4 + 2);
+    expect(urls.every((q) => q.get('CpfId') === '12008')).toBe(true);
+    // The edges are open-ended, so a record dated outside the year range is still read.
+    expect(urls[0].get('StartDate')).toBeNull();
+    expect(urls.at(-1)!.get('EndDate')).toBeNull();
   });
 
-  it('still returns everything for a filer with less than one page of receipts', async () => {
-    const fetchMock = mockOcpfIgnoringPageNumber(42);
-    vi.stubGlobal('fetch', fetchMock);
-
-    const result = await createOcpfAdapter().fetch(source());
-
-    expect(result.records.length).toBe(42);
-    expect(fetchMock).toHaveBeenCalledTimes(1);
-  });
-
-  it('handles the largest real committee (cpf 15710, 89,557 records) in one request', async () => {
-    const fetchMock = mockOcpfIgnoringPageNumber(89_557);
-    vi.stubGlobal('fetch', fetchMock);
+  it('reads the whole history across windows — nothing lost at a boundary or an edge', async () => {
+    // Every year's receipts sit on 01/01, 06/15 and 12/31 — the edges of the first, second
+    // and last quarter; 1990 is before the first quarter and THIS_YEAR+1 after the last.
+    vi.stubGlobal('fetch', mockOcpf({ 1990: 3, 2001: 500, 2025: 382, [THIS_YEAR]: 29, [THIS_YEAR + 1]: 2 }));
 
     const result = await createOcpfAdapter().fetch(source('15710'));
 
-    expect(result.records.length).toBe(89_557);
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(result.records.length).toBe(3 + 500 + 382 + 29 + 2);
+    const ids = new Set(result.records.map((r) => (r as { id: number }).id));
+    expect(ids.size).toBe(result.records.length);
   });
 
-  it('sends NO date window — the chunking it replaced was sized in phantom pages', async () => {
-    // The year/quarter/month/week chunking existed to keep each fetch inside a 3-minute
-    // budget, sized as "~300 pages x 0.5s". Those pages were the same 250 rows re-appended.
-    // Measured live 2026-08-17: cpf 15710's ENTIRE history is 89,557 records in ~5s, and its
-    // worst single quarter is 5,754 — so the windows subdivided one short call. A StartDate
-    // reappearing here means someone reintroduced a window without measuring it.
-    const fetchMock = mockOcpfIgnoringPageNumber(289);
-    vi.stubGlobal('fetch', fetchMock);
-
-    await createOcpfAdapter().fetch(source());
-
-    const url = new URL(fetchMock.mock.calls[0][0] as string);
-    expect(url.searchParams.get('StartDate')).toBeNull();
-    expect(url.searchParams.get('EndDate')).toBeNull();
-    expect(url.searchParams.get('CpfId')).toBe('12008');
-  });
-
-  it('throws rather than silently truncating if the response fills the requested pageSize', async () => {
+  it('throws rather than silently truncating if a window fills the requested pageSize', async () => {
     // If OCPF ever caps pageSize, items.length === requested size is the ONLY
     // signal available (there is no total count — `summary` is null). Silently
     // returning a truncated set would undercount a filer's receipts, so this must
@@ -118,6 +135,52 @@ describe('ocpfAdapter pagination', () => {
     vi.stubGlobal('fetch', fetchMock);
 
     await expect(createOcpfAdapter().fetch(source())).rejects.toThrow(/truncat|cap/i);
+  });
+});
+
+describe('ocpfAdapter fetchStream — memory bound', () => {
+  beforeEach(() => vi.stubGlobal('fetch', vi.fn()));
+  afterEach(() => vi.unstubAllGlobals());
+
+  it('hands each quarter to onBatch before fetching the next, and buffers nothing itself', async () => {
+    // 🔴 THE 2026-10-01 OOM. One full-history request for cpf 15710 (97,205 records,
+    // 109 MB) overran the 512 MiB cron. Streaming by quarter bounds the peak to one quarter.
+    const fetchMock = mockOcpf({ 2022: 214, 2024: 150, [THIS_YEAR]: 290 });
+    vi.stubGlobal('fetch', fetchMock);
+
+    const batches: number[] = [];
+    const callsAtBatch: number[] = [];
+    const adapter = createOcpfAdapter() as unknown as {
+      fetchStream: (ps: PoliticianSource, onBatch: (r: Record<string, unknown>[]) => Promise<void>) =>
+        Promise<{ records: unknown[]; totalFetched: number }>;
+    };
+    const result = await adapter.fetchStream(source('15710'), async (records) => {
+      batches.push(records.length);
+      callsAtBatch.push(fetchMock.mock.calls.length);
+    });
+
+    // One batch per non-empty quarter; no batch ever spans two. The mock dates each
+    // year's receipts 01/01 (Q1), 06/15 (Q2) and 12/31 (Q4).
+    expect(batches).toEqual([1, 212, 1, 1, 148, 1, 1, 288, 1]);
+    // Each batch was delivered BEFORE the following window was requested.
+    for (let i = 1; i < callsAtBatch.length; i++) {
+      expect(callsAtBatch[i]).toBeGreaterThan(callsAtBatch[i - 1]);
+    }
+    // StreamingAdapter contract: records were streamed, not buffered.
+    expect(result.records).toEqual([]);
+    expect(result.totalFetched).toBe(214 + 150 + 290);
+  });
+
+  it('stops between windows when the signal aborts', async () => {
+    vi.stubGlobal('fetch', mockOcpf({ 2000: 5, 2001: 5 }));
+    const controller = new AbortController();
+    const adapter = createOcpfAdapter() as unknown as {
+      fetchStream: (ps: PoliticianSource, onBatch: () => Promise<void>, signal?: AbortSignal) => Promise<unknown>;
+    };
+
+    await expect(adapter.fetchStream(source(), async () => {
+      controller.abort(new Error('per-source timeout'));
+    }, controller.signal)).rejects.toThrow(/per-source timeout/);
   });
 });
 
@@ -171,9 +234,11 @@ describe('ocpfAdapter normalize — amount fidelity', () => {
       { id: 2, amount: '($250.00)', date: '03/16/2024', firstName: 'C', lastName: 'D', electionYear: 2024 },
       { id: 3, amount: '$945,000.00', date: '03/17/2024', firstName: 'E', lastName: 'F', electionYear: 2024 },
     ];
-    vi.stubGlobal('fetch', vi.fn(async () => (
-      { status: 200, json: async () => ({ summary: null, items }) } as unknown as Response
-    )));
+    // Only the 2024 window holds these receipts, as on the real API.
+    vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+      const in2024 = new URL(url).searchParams.get('StartDate') === '01/01/2024';
+      return { status: 200, json: async () => ({ summary: null, items: in2024 ? items : [] }) } as unknown as Response;
+    }));
 
     const adapter = createOcpfAdapter();
     const ps = source();
