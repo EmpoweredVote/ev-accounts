@@ -21,9 +21,16 @@ programme is for.
 
 ## Slice status
 
-| # | City | Members | Rows | Scored | Batch |
+| # | Slice | Members | Rows | Scored | Batch |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Charlotte NC | 12 | 420 | 3 | `2026-10-02-knight-clt-city` |
+| 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
+| 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
+
+Seven chairs from 29 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
+publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
+from 22 → 122 in Florida. Price the next slice from these numbers, not from the first pass.
+
+⏳ **PR #855 (verifier fix) must merge first** — both slices carry the same commit.
 
 ---
 
@@ -76,6 +83,13 @@ programme is for.
 6. ⚠ **A STUDY CALL AND A DOUBT ARE BOTH REFUSALS.** Graham's call for an independent I-77 study
    is C47. Driggs asking how much of Charlotte's climate the city can affect questions efficacy,
    not policy — reading either as a chair would be a confident wrong row.
+
+## Toolchain
+
+🟢 **`backend/scripts/stance-news/`** — the sweep and mining scripts, with a README stating the
+nine rules each one encodes. Run both `sweep.py` (name x topic) and `small_outlet.py` (name only)
+and merge: query breadth must match outlet size in both directions. Start there for a new city;
+only the outlet list and the state statute review are per-slice.
 
 ## Access notes
 
