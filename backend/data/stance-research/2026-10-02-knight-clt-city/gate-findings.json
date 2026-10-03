@@ -20,14 +20,28 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Kimberly Owens",
+      "topic_key": "transportation-priorities",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "JD Mazuera Arias",
+      "topic_key": "transportation-priorities",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
     "rows": 420,
     "high": 0,
-    "medium": 3,
+    "medium": 5,
     "by_check": {
-      "statement-needs-review": 3
+      "statement-needs-review": 5
     }
   }
 }
