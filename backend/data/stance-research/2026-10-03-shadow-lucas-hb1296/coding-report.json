@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "d758604c-9dd9-4a00-ac09-90713a7bc4be|5b1c46e1-5d4f-4a63-8dbf-e5f564863177|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "HB 1296 (2022) as introduced, to confirm the version Lucas co-authored matches the enrolled act (C37)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "d758604c-9dd9-4a00-ac09-90713a7bc4be|5b1c46e1-5d4f-4a63-8dbf-e5f564863177|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "HB 1296 (2022) as introduced, to confirm the version Lucas co-authored matches the enrolled act (C37)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

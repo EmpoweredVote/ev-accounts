@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": "The Secretary of the California Health and Human Services Agency shall research, develop, and pursue discussions of a waiver framework in consultation with the federal government with the objective of creating a health care system that incorporates the following features and objectives:",
+          "note": "The operative sections direct research, stakeholder engagement, a draft waiver framework and reports to the Legislature; they establish no coverage and no financing.",
+          "record_kind": "author",
+          "actor_quote": "SB 770, Wiener.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": null,
+          "note": "Wiener is listed in the Ayes on concurrence, 29-9, so the vote is not near-unanimous, but the bill he voted for is a research-and-report directive.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Archuleta, Ashby, Atkins, Becker, Blakespear, Bradford, Caballero, Cortese, Dodd, Durazo, Eggman, Gonzalez, Laird, Limón, McGuire, Menjivar, Min, Newman, Padilla, Portantino, Roth, Rubio, Skinner, Smallwood-Cuevas, Stern, Umberg, Wahab, Wiener",
+          "tally_quote": "Ayes Count 29 Noes Count 9"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 770 (2023-2024), which Wiener authored and voted for, orders the Health and Human Services Secretary to \"research, develop, and pursue discussions of a waiver framework\" and to deliver interim and final reports, so it is a study-and-report directive and no passage survives V4. The legislative endorsement of \"a health care system with unified financing, such as a single-payer health care system\" sits in Section 1000's findings and declarations, which the operative section governs over, and the framework it describes still contemplates cost sharing outside essential services and a sliding-scale income contribution, so it does not match \"Make healthcare free and available to everyone, fully paid for by the public sector\" clause for clause.",
+      "needs_source": [
+        "A California instrument that would itself establish coverage or financing (for example SB 562 (2017-2018)), with Wiener's authorship line or his roll-call vote, plus the operative section that sets what the public sector pays",
+        "Wiener's own first-person words answering what role government should play in healthcare access (questionnaire, debate answer, or his own issue page), dated in the current term"
+      ],
+      "quotes": []
+    }
+  ]
+}

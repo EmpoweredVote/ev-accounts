@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "e45850e5-c900-5eb6-a053-26d4882babdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-09-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": null,
+          "note": "Assembly floor final-passage vote; Aguiar-Curry is listed among the Ayes on SB 54.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Arambula, Berman,",
+          "tally_quote": "Ayes Count 51 Noes Count 26"
+        },
+        {
+          "snapshot_id": "b2056197-763a-566a-abad-fe59bef3eb40",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-10-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": "California law enforcement agencies shall not: (1) Use agency or department moneys or personnel to investigate, interrogate, detain, detect, or arrest persons for immigration enforcement purposes, including any of the following:",
+          "note": "Operative text of the California Values Act; cooperation with federal immigration authorities is barred except for a listed set of exceptions that reach any felony punishable by state prison, not only serious or violent crimes.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Aye vote on SB 54's Assembly floor passage is own-act, in-term, and on-question for how far California's own enforcement apparatus goes in assisting deportation, but the law's exception list for permitted cooperation includes 'a felony punishable by imprisonment in the state prison' and a long list of non-violent offenses, not only 'serious violent crimes,' so it does not match rung 2's clause cleanly; it also does not stop cooperation 'entirely' (rung 1), and it does not speak to recency of arrival, deporting all immigrants, or mass deportation (rungs 3-5). The passages show only a direction toward restricting deportation assistance.",
+      "needs_source": [
+        "Her own floor statement, press release, or author's statement on SB 54 tying the vote to a specific category of immigrants (e.g., limited to serious/violent felons), which could resolve whether rung 2 applies despite the broader felony-based exceptions in the bill text"
+      ],
+      "quotes": []
+    }
+  ]
+}

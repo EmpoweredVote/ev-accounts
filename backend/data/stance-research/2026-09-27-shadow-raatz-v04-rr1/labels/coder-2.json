@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+      "office_id": "d4ace730-3f85-4533-bedb-0f3d87127aa3",
+      "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+      "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+      "passages": [
+        {
+          "snapshot_id": "d88173a9-b44f-55ba-9fae-ebb1ffca0d2d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Senate roll call 345 shows Raatz voting Yea on HB 1608's 3rd reading, 37-12.",
+          "record_kind": "vote",
+          "actor_quote": "Gaskill Raatz",
+          "tally_quote": "Yea 37 Education matters. Nay 12 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "f3a1f5ed-00da-5dc9-b14e-e6957f929c73",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Bill details page lists Raatz as a Senate sponsor of HB 1608.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz, Sen. Gary Byrne.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2f59d923-5380-5e94-bd43-d665187ac38a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's: (1) name; or (2) pronoun, title, or word to identify the student.",
+          "note": "Enrolled HEA 1608 Sec. 2 requires written parental notification of a name/pronoun change request, with no stated exception.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "d88173a9-b44f-55ba-9fae-ebb1ffca0d2d",
+        "f3a1f5ed-00da-5dc9-b14e-e6957f929c73",
+        "2f59d923-5380-5e94-bd43-d665187ac38a"
+      ],
+      "reasoning": "Raatz sponsored and voted Yea on HB 1608 (2023), whose Sec. 2 (new IC 20-33-7.5) requires a school to notify a parent in writing of any student request to change their name or pronoun, with no exception for staff judgment of danger and no permission requirement. This matches 'Require staff to notify parents whenever a student asks to be treated as a different gender at school' and excludes the danger-exception and permission-required rungs.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

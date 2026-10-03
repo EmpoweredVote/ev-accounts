@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e71471f4-bef5-46ef-a1f2-f19f275b558d|fe457319-058b-4dc5-8540-dac64a6a328f|669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Gowan's own first-person words on housing affordability within the current term or campaign (issue page, questionnaire, or debate answer naming what government should do about housing costs)",
+          "An Arizona Senate roll call with Gowan recorded, on a bill that sets or forbids binding private-market housing rules (rent regulation, inclusionary/affordable-unit requirements)",
+          "An Arizona Senate roll call with Gowan recorded, on housing subsidy or tax-credit measures (Housing Trust Fund appropriation, low-income housing tax credit), to test the \"no binding rules, but offer subsidies and tax breaks\" clause"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e71471f4-bef5-46ef-a1f2-f19f275b558d|fe457319-058b-4dc5-8540-dac64a6a328f|669cac97-66a6-4087-b036-936fbe62efb3",
+      "requests": [
+        "Gowan's own first-person words on housing affordability within the current term or campaign (issue page, questionnaire, or debate answer naming what government should do about housing costs)",
+        "An Arizona Senate roll call with Gowan recorded, on a bill that sets or forbids binding private-market housing rules (rent regulation, inclusionary/affordable-unit requirements)",
+        "An Arizona Senate roll call with Gowan recorded, on housing subsidy or tax-credit measures (Housing Trust Fund appropriation, low-income housing tax credit), to test the \"no binding rules, but offer subsidies and tax breaks\" clause"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

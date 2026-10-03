@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+      "office_id": "6bb9a929-fd7a-4fee-b28e-4faa7c3b95de",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "cabcea7d-70f1-5f88-bb56-fff8218444e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 2655 (2023-2024)",
+          "provision_quote": "This bill, to be known as the Defending Democracy from Deepfake Deception Act of 2024, would require a large online platform, as defined, to block the posting of materially deceptive content related to elections in California, during specified periods before and after an election. The bill would require a large online platform to label certain additional content inauthentic, fake, or false during specified periods before and after an election in California.",
+          "note": "AB 2655 legally mandates both removal of certain deepfake election content in a narrow pre-election window and labeling of similar content at other times, so it shows a legal-mandate direction but does not separate rung 1 (remove) from rung 2 (label rather than remove).",
+          "record_kind": "author",
+          "actor_quote": "AB 2655, Berman.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Berman authored and signed into law AB 2655, which legally requires platforms to remove certain deepfake election content within 120 days of an election and separately requires labeling of similar content outside that window or within ads; because the instrument implements both 'legally require platforms to remove false information' and 'require platforms to label false content, rather than remove it' as distinct operative mandates, it shows a legal-mandate direction (ruling out rungs 3, 4 and 5) without separating rung 1 from rung 2.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

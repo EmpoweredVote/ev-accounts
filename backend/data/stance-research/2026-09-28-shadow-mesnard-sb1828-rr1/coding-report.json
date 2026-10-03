@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "J.D. Mesnard's own words (floor statement, press release or interview) tying his sponsorship of SB 1828 (2021) to the income tax rate reduction",
+          "Mesnard's own floor statement or explanation of vote tying his SB 1828 sponsorship/vote specifically to the §43-1011 flat-tax rate reduction, to distinguish S1 rung 3 from rung 4 from rung 5",
+          "Mesnard's own statement, floor speech, or explanation of vote on SB 1828 (2021) tying his support to a specific tax provision (e.g., the income-tax-rate-cut mechanism in section 15)."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "requests": [
+        "J.D. Mesnard's own words (floor statement, press release or interview) tying his sponsorship of SB 1828 (2021) to the income tax rate reduction",
+        "Mesnard's own floor statement or explanation of vote tying his SB 1828 sponsorship/vote specifically to the §43-1011 flat-tax rate reduction, to distinguish S1 rung 3 from rung 4 from rung 5",
+        "Mesnard's own statement, floor speech, or explanation of vote on SB 1828 (2021) tying his support to a specific tax provision (e.g., the income-tax-rate-cut mechanism in section 15)."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,10 @@
+Wrote `labels/coder-1.json` — one row, `deportation`, BLANK `direction-only`.
+
+**Coding:**
+- All three snapshots are one record group on `HCR2060 (2024)`: the House Final Reading roll call (`GILLETTE Y`, `Passed 31-29-0-0-0`), the bill history page, and the Senate-engrossed text (`provision_quote` from §13-4295.03(C), the return order).
+- `v4_shape = multi-subject` on all three: the referral bundles illegal-entry crimes and return orders with public-benefit document verification, e-verify false-document crimes, and fentanyl sentencing. Under V4.1 a final-passage vote on a multi-subject bill proves direction at most, and no Gillette statement ties his vote to the removal clause.
+- Not rung 3: the article's prospective-only limit doesn't *say* long-settled immigrants should be left in place (V4.2 "Silence is not a clause"), and reaching rung 3 by excluding the others would be the fault in V4.2 / H14.
+- `v5_time = in-term` (2024-06-04, term began 2023-01-02). 31–29 is not near-unanimous.
+- No `quotes`: nothing in the sources is Gillette's own words. I did not quote the `[deleted: lawful presence; e-verify program; penalties]` short title.
+
+`needs_source` asks for his own words tying the vote to the return-order provision, or any other Gillette record/answer on whom Arizona should remove.

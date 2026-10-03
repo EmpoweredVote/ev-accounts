@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-28-shadow-willoughby-rr1",
+  "seat": {
+    "politician_id": "8edebfca-2e35-4424-85f8-f3ad498a2890",
+    "full_name": "Julie Willoughby",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "74f6255e-04a3-481e-9a90-9fabcd9697f0",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_key": "healthcare",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "question_text": "What role should government play in healthcare access?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Make healthcare free and available to everyone, fully paid for by the public sector"
+        },
+        {
+          "value": 2,
+          "text": "Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance"
+        },
+        {
+          "value": 3,
+          "text": "Help people who can't afford care and expand programs for seniors and low-income residents, while keeping private insurance for everyone else"
+        },
+        {
+          "value": 4,
+          "text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+        },
+        {
+          "value": 5,
+          "text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

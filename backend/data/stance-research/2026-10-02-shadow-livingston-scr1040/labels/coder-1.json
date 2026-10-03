@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+      "office_id": "f7cad0ce-e9af-46a1-a39d-d5d4520d3879",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "aaf0c889-8192-5e2d-beae-5259803f0021",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": "For any employee who customarily and regularly receives tips or gratuities from patrons or others, the employer may pay a wage up to twenty-five percent per hour less than the minimum wage established by statute",
+          "note": "Engrossed text of the instrument Livingston voted on: a tipped-worker carve-out that presupposes and leaves standing the statutory minimum wage.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b0246426-bf3f-59b0-b47b-1a9a378b8052",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "Bill history page for the same instrument; it prints the chamber tallies and the prime sponsor, but does not name Livingston.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 04/03/2024 35-24-0-0-1 Amended PASSED"
+        },
+        {
+          "snapshot_id": "5bd9b1c9-1855-5ee6-a5aa-b3215b6e9eb3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-04-03",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "House Third Reading vote detail showing Livingston voting Y on a divided 35-24 roll call, so the near-unanimous rule does not apply.",
+          "record_kind": "vote",
+          "actor_quote": "LIGUORI N LIVINGSTON Y LUCKING N",
+          "tally_quote": "Passed 35-24-0-0-1 Amended"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Livingston's only recorded act in these sources is his Y on SCR1040 (2024), which would let the employer of a tipped worker \"pay a wage up to twenty-five percent per hour less than the minimum wage established by statute\" while leaving that statutory minimum standing. A subminimum carve-out for one class of worker does not speak to the dimension these rungs order, which is the floor itself: whether to \"tie it to the cost of living\", \"Raise the wage floor to a set higher level\", \"Keep a modest national wage floor as a baseline\", \"Hold the wage floor at its current level\", or \"Remove the wage floor entirely\". Every passage is adjacent on V2, so none can support a chair.",
+      "needs_source": [
+        "Arizona Legislature roll call or sponsorship by Livingston on a bill or resolution that sets, raises, freezes, indexes or repeals the statutory minimum wage itself (56th-57th Legislature)",
+        "Livingston's own words on what the state or federal wage floor should be"
+      ],
+      "quotes": []
+    }
+  ]
+}

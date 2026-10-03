@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "188c386e-087b-4587-9510-da7fc5805575",
+      "office_id": "b68ffd33-82dd-4eba-adee-6a853f7fc882",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "bd92bde7-63c0-58d1-9cf6-d40adba823e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": null,
+          "note": "Bill overview lists Griffin as prime sponsor; the bill was signed by the Governor in 2026.",
+          "record_kind": "sponsor",
+          "actor_quote": "Griffin (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "808d1653-39ab-5fb6-ae74-30fd1d32f1ca",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call; Griffin voted Y on HB2756, which passed by a wide margin.",
+          "record_kind": "vote",
+          "actor_quote": "GRIFFIN Y",
+          "tally_quote": "Passed 39-16-5-0-0"
+        },
+        {
+          "snapshot_id": "5ba60589-f014-530e-82f5-4339c10261a9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": "Does not attempt to set or establish any specific rates or charges to be made or collected by public service corporations or require the corporation commission to set or adopt any specific rates or charges to be made or collected by a public service corporation.",
+          "note": "Enacted statute lets the commission optionally set cost-allocation protections for other ratepayers but disclaims mandating any specific rate or charge.",
+          "record_kind": "other-act",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [
+        "bd92bde7-63c0-58d1-9cf6-d40adba823e1",
+        "808d1653-39ab-5fb6-ae74-30fd1d32f1ca",
+        "5ba60589-f014-530e-82f5-4339c10261a9"
+      ],
+      "reasoning": "Griffin was prime sponsor and voted Y on HB2756 (2026), signed into law, which lets the corporation commission optionally require extra high load factor customers to pay their own infrastructure costs so other customers are protected 'from subsidizing extra-high load factor customers,' and its findings state the goal of preventing 'cost shifts to residential customers from extra high load factor customers.' But the same findings say the act 'does not attempt to set or establish any specific rates or charges... or require the corporation commission to set or adopt any specific rates or charges,' so this shows the anti-cost-shift direction shared by the rungs without barring any cost pass-through, imposing pre-approval conditions, or streamlining permitting, and no single rung's full clause set is matched.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

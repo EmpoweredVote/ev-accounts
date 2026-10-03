@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Assembly floor roll call or authorship record for Alex Lee on a bill setting dated clean-energy procurement targets (a renewable portfolio standard), which would be the chair-shaped instrument for rung 1",
+          "California Assembly floor roll call or authorship record for Alex Lee on a clean-energy appropriation, subsidy or tax-credit bill, which would be the chair-shaped instrument for rung 2",
+          "Alex Lee's own words answering how much government should do to expand clean energy (questionnaire, debate answer, or first-person issue page), dated to the current term or the campaign that seated him"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "California Assembly floor roll call or authorship record for Alex Lee on a bill setting dated clean-energy procurement targets (a renewable portfolio standard), which would be the chair-shaped instrument for rung 1",
+        "California Assembly floor roll call or authorship record for Alex Lee on a clean-energy appropriation, subsidy or tax-credit bill, which would be the chair-shaped instrument for rung 2",
+        "Alex Lee's own words answering how much government should do to expand clean energy (questionnaire, debate answer, or first-person issue page), dated to the current term or the campaign that seated him"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

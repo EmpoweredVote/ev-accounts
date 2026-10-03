@@ -1,0 +1,9 @@
+Written: `labels/coder-1.json` — one row (Ash Kalra / climate-change).
+
+**Coding summary**
+
+- **Vote page** (`269d29a3`): `own-act` / `on-question` / `record` (`vote`), dated 2018-08-28, `chair-shaped`, `in-term`. Actor quote `Jones-Sawyer, Kalra, Kamlager-Dove` from the Assembly Floor Ayes list; tally `Ayes Count 44 Noes Count 33 NVR Count 3` (41% No — not near-unanimous).
+- **Bill text** (`d408c686`): `own-act` / `on-question` / `record` (`vote`), same instrument `SB 100 (2017-2018)`, carries the `provision_quote` (Pub. Util. Code §399.15(b)(2)(B) procurement percentages and dates); `actor_quote`/`tally_quote` null per the per-instrument record-fields rule.
+- **V5**: the 2018 vote is an Assembly Floor vote and Kalra's earlier term in this legislature ran to 2022-12-05, so it is `in-term` under the V5 option-B ruling.
+- **V6 = 1.** SB 100 is single-subject energy legislation whose operative sections impose binding procurement minimums with dates certain plus penalties — the mandates-and-deadlines rung. No subsidy/tax-credit and no permitting/grid clauses, so rungs 2 and 3 are excluded.
+- No candidate quotes (no own-words passage); `needs_source` empty.

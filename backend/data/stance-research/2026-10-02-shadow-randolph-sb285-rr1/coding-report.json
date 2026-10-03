@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e8054d02-34c2-485b-b54a-47658cc269b7|1ca10b86-0477-4f4c-9cbc-d410cece1d61|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Indiana General Assembly roll call for the 2026 public camping ban bill, Senate passage (reported 29-19) and the Senate concurrence vote, showing Sen. Lonnie Randolph's vote",
+          "The bill text of the 2026 Indiana public camping ban (bill number not named in the available excerpt), for the operative enforcement provision",
+          "Indiana Senate roll call showing Lonnie Randolph's own vote on the public camping ban bill described in this article",
+          "Indiana Senate roll call vote on the public camping ban bill's final passage, showing Randolph's own vote"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e8054d02-34c2-485b-b54a-47658cc269b7|1ca10b86-0477-4f4c-9cbc-d410cece1d61|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "requests": [
+        "Indiana General Assembly roll call for the 2026 public camping ban bill, Senate passage (reported 29-19) and the Senate concurrence vote, showing Sen. Lonnie Randolph's vote",
+        "The bill text of the 2026 Indiana public camping ban (bill number not named in the available excerpt), for the operative enforcement provision",
+        "Indiana Senate roll call showing Lonnie Randolph's own vote on the public camping ban bill described in this article",
+        "Indiana Senate roll call vote on the public camping ban bill's final passage, showing Randolph's own vote"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

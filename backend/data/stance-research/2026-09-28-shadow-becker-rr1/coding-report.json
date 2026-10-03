@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Senate floor vote on SB 942 (2023-2024), final passage, with Becker named in the Aye/No list and the tally",
+          "Becker's own words answering how much government should oversee AI development and deployment (questionnaire, debate answer, or first-person issue page), within the current term",
+          "Any Becker-authored or co-authored California bill requiring pre-deployment safety testing or approval for AI, or creating developer liability for harm caused by AI systems",
+          "Becker's own statements or acts specifically addressing AI developer liability for harm, mandatory pre-use safety testing in high-stakes areas, or pre-deployment approval requirements",
+          "Becker's own statement or an instrument addressing AI developer liability for harm, mandatory safety testing in high-stakes areas, or pre-deployment approval requirements -- the ai-regulation ladder's dimension -- not found in the provided source."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|666bf03d-81fc-4138-ab15-69ae734c9023",
+      "requests": [
+        "California Senate floor vote on SB 942 (2023-2024), final passage, with Becker named in the Aye/No list and the tally",
+        "Becker's own words answering how much government should oversee AI development and deployment (questionnaire, debate answer, or first-person issue page), within the current term",
+        "Any Becker-authored or co-authored California bill requiring pre-deployment safety testing or approval for AI, or creating developer liability for harm caused by AI systems",
+        "Becker's own statements or acts specifically addressing AI developer liability for harm, mandatory pre-use safety testing in high-stakes areas, or pre-deployment approval requirements",
+        "Becker's own statement or an instrument addressing AI developer liability for harm, mandatory safety testing in high-stakes areas, or pre-deployment approval requirements -- the ai-regulation ladder's dimension -- not found in the provided source."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

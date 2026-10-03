@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "office_id": "87c65dff-fa5b-4d7a-a7bc-d78595d2f506",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "passages": [
+        {
+          "snapshot_id": "34ecf099-bd34-5028-be0e-5353496c0867",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": "2022-03-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2492 (2022)",
+          "provision_quote": null,
+          "note": "Bill-overview page lists prime/co-sponsors and the governor's signing action; it does not name Pingerelli or show any act of hers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1c38c4de-527d-57ee-949c-cbce3dc9c42e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2492 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call on HB 2492, a single-subject citizenship-verification bill; Pingerelli voted Y.",
+          "record_kind": "vote",
+          "actor_quote": "PINGERELLI Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "1e5c345e-d662-58bb-b336-014c09b5b559",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2492 (2022)",
+          "provision_quote": "Except for a form produced by the United States election assistance commission, any application for registration shall be accompanied by satisfactory evidence of citizenship as prescribed in section 16-166, subsection F, and the county recorder or other officer in charge of elections shall reject any application for registration that is not accompanied by satisfactory evidence of citizenship.",
+          "note": "Enacted text of HB 2492 requires documentary proof of citizenship to register and directs rejection of applications lacking it, matching rung 5's clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "1c38c4de-527d-57ee-949c-cbce3dc9c42e",
+        "1e5c345e-d662-58bb-b336-014c09b5b559"
+      ],
+      "reasoning": "Pingerelli voted Y on the House Third Reading of HB 2492 (2022), a single-subject voter-registration/citizenship-verification bill that passed and was signed into law. The enacted text requires that registration applications 'be accompanied by satisfactory evidence of citizenship' and directs rejection of any application lacking it, matching the rung text 'Require documentary proof of citizenship to register to vote' and excluding the other rungs, which concern ID at the polls or on mail ballots rather than citizenship proof at registration. The vote dates from her earlier term as State Representative in the same chamber of the same legislature, so it counts as in-term.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

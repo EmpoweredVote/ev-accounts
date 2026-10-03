@@ -1,0 +1,54 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42",
+      "office_id": "7803f2a9-9dd2-4f45-8b85-1cf5fd29e785",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "b7acd69d-cf9a-574e-8736-cc9f9f4883af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-08-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 32 (2015-2016)",
+          "provision_quote": null,
+          "note": "Assembly Floor final vote on the Senate bill, not near-unanimous, with Gipson in the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Alejo, Arambula, Atkins, Baker, Bloom, Bonilla, Bonta, Brown, Burke, Calderon, Campos, Chau, Chiu, Chu, Cooley, Dababneh, Dodd, Eggman, Cristina Garcia, Eduardo Garcia, Gatto, Gipson",
+          "tally_quote": "Ayes Count 48 Noes Count 31 NVR Count 1"
+        },
+        {
+          "snapshot_id": "30741f51-b2c7-5435-8fe6-bb504fdedbb2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-09-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 32 (2015-2016)",
+          "provision_quote": "the state board shall ensure that statewide greenhouse gas emissions are reduced to at least 40 percent below the statewide greenhouse gas emissions limit no later than December 31, 2030",
+          "note": "Single-subject bill whose operative section sets an emissions target for the state board and names no energy source.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gipson is in the Ayes on the Assembly Floor vote on SB 32 (2015-2016), where the tally was Ayes Count 48 Noes Count 31 NVR Count 1, and the bill's operative section requires that \"the state board shall ensure that statewide greenhouse gas emissions are reduced to at least 40 percent below the statewide greenhouse gas emissions limit no later than December 31, 2030\". That is a mandate with a firm deadline, but it is an emissions target addressed to the air board and names no energy source, so it does not match the clause \"Require a shift to clean energy through mandates and firm deadlines\" and does not exclude \"Fund clean energy with major subsidies, tax credits, and public investment\" or \"Speed up clean energy by cutting permitting red tape and upgrading the grid\" as his stance on expanding clean energy. The vote places him on the government-action side of the question without separating those rungs.",
+      "needs_source": [
+        "Assembly roll call on a clean-energy-specific instrument (for example the renewables portfolio standard bill SB 350 (2015-2016), or SB 100 (2017-2018)) showing Gipson's vote",
+        "Gipson's own words on how government should expand clean energy (floor statement, questionnaire answer, or first-person issue page)",
+        "Start date of Gipson's earlier Assembly term, to confirm he was seated at the 2016-08-23 vote"
+      ],
+      "quotes": []
+    }
+  ]
+}

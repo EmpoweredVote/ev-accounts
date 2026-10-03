@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2",
+      "office_id": "1c197b51-fded-441e-a72a-de51329efe42",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "c9cb2779-6c2f-529c-9d0d-bcd236631a7d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote on an omnibus taxation bill; she is recorded voting No.",
+          "record_kind": "vote",
+          "actor_quote": "MARSH N",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "f8862baf-e5bf-50e1-b0e0-a31dd944c8e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Enacted text is an omnibus taxation measure bundling unemployment wage base, property tax aid, individual/corporate income tax rate changes and unrelated sales tax exemptions.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Marsh voted No on SB 1828 (2021), an omnibus taxation bill combining unrelated provisions (unemployment insurance wage base, property tax aid formulas, individual and corporate income tax changes, sales tax exemptions). Per V4.1, a No vote on a multi-subject bill proves nothing about which provision she opposed, so no rung of 'how should government balance what it collects in taxes against what it spends on public services' is established.",
+      "needs_source": [
+        "Marsh's own statement or floor explanation of vote tying her SB 1828 (2021) No vote to a specific taxation provision, if any exists"
+      ],
+      "quotes": []
+    }
+  ]
+}

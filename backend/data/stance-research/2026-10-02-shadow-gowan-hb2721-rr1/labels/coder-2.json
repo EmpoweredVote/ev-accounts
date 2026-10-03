@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": "A. On or before January 1, 2026, a municipality with a population of seventy-five thousand persons or more must authorize by ordinance and incorporate into its development regulations, zoning regulations and other official controls the development of duplexes, triplexes, fourplexes and townhomes as a permitted use on both of the following:",
+          "note": "Operative text of HB2721 requiring municipalities to permit middle housing and barring restrictive zoning conditions; names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading roll call shows Gowan voting Aye on final passage of the single-subject middle-housing zoning bill.",
+          "record_kind": "vote",
+          "actor_quote": "GONZALES Y GOWAN Y HATATHLIE NV",
+          "tally_quote": "Passed 21-7-2-0-0"
+        },
+        {
+          "snapshot_id": "6048bc5d-41e2-501a-bb4b-c01ccbd5ba6e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": null,
+          "note": "Bill history page confirms HB2721's passage path and 2024-05-21 governor signature; sponsor list does not include Gowan.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gowan voted Aye on HB2721 (2024), a statewide law barring municipalities from zoning or permitting conditions that block duplexes, triplexes, fourplexes and townhomes; this is on-question for rung 5's clause to 'cut the regulations and zoning limits that block private building,' but one statewide deregulation act cannot show the person wants nothing more, i.e. to otherwise 'rely on the market to set prices and supply' — an unproven magnitude.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

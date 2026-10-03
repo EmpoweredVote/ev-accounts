@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8edebfca-2e35-4424-85f8-f3ad498a2890",
+      "office_id": "74f6255e-04a3-481e-9a90-9fabcd9697f0",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "aec5f209-e03b-5705-a1a8-8608e15eada5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2332 (2025)",
+          "provision_quote": null,
+          "note": "Overview page shows her prime sponsorship of the enacted bill but prints no provision text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Willoughby (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a58fdf07-8f73-57c1-9fe5-b7c363562a0f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-07",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2332 (2025)",
+          "provision_quote": null,
+          "note": "House Final Reading vote page names her Aye and the tally but prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "WILLOUGHBY Y",
+          "tally_quote": "Passed 44-13-3-0-0"
+        },
+        {
+          "snapshot_id": "36c9d9a3-c4b0-5cfc-b18e-d791b9234e25",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2332 (2025)",
+          "provision_quote": "The department shall identify and compile relevant educational materials and information for health care professionals and patients regarding maternal mental health conditions",
+          "note": "The enacted text orders educational materials on maternal mental health and a rural obstetrics advisory committee that reports by December 31, 2026.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only record in the sources is HB2332 (2025), which Willoughby prime-sponsored and voted Aye on: it directs the department to compile and distribute maternal mental health educational materials and creates an advisory committee to \"develop recommendations to ensure the availability of obstetrics, gynecology and maternal mental health services in low-volume, high-risk rural communities\". That is patient information and rural service availability, not the dimension these rungs separate — who pays for coverage, from \"fully paid for by the public sector\" through \"a mix of public programs and regulated private insurance\" to \"let private markets handle all coverage decisions\". No surviving passage speaks to the ladder's question, so the row is blank.",
+      "needs_source": [
+        "HB2332 (2025) as-introduced text — the filed short title was \"postpartum depression; treatment; insurers\", so the version she filed may have carried an insurer-coverage mandate that the enacted text does not",
+        "A record of Willoughby acting on health coverage itself (AHCCCS eligibility or funding, insurance-mandate or marketplace legislation), with the roll call or sponsorship page",
+        "Willoughby's own words answering what role government should play in healthcare access (candidate questionnaire, issue page, or debate answer)"
+      ],
+      "quotes": []
+    }
+  ]
+}

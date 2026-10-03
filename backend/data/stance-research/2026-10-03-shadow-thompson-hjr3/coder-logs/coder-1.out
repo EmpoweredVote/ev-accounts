@@ -1,0 +1,13 @@
+Done. Label file written: `.claude/worktrees/clever-leakey-bd9943/backend/data/stance-research/2026-10-03-shadow-thompson-hjr3/labels/coder-1.json`.
+
+**Row:** Jeffrey Thompson / `same-sex-marriage` → **chair 5**, resting on two snapshots.
+
+How it coded:
+
+- **Roll call 70 (bcc0ba5a)** — `own-act` / `on-question` / `record` (`vote`), 2014-01-28, `in-term` (Indiana House, within his 1998–present term). `actor_quote` `"Behning Harman Morris Thompson"`; `tally_quote` `"Yea 57 Nay 40 Excused 3 Not Voting 0"`. Only one Thompson appears anywhere on the page (Yea, Nay and Excused lists), and the page prints no initial, so the surname is unambiguous within the record.
+- **Engrossed HJR 3 text (a09e6e64)** — carries the `provision_quote`: `"Section 38. Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana."` The `[deleted: …]` fences on that page are printing-code boilerplate explaining the typography, not provisions, so nothing fenced is quoted.
+- **IGA bill details (c2cfac75)** — coded as a third page of the same instrument group (`HJR 3 (2014)`), all fields null: it prints a digest rather than the operative section, and does not name Thompson among the author/co-authors. Not in `rests_on`.
+
+V4 checks that mattered: single-subject joint resolution (title "Marriage", one operative section), so not `multi-subject`; third reading is final passage, not `procedural`; 40 of 97 against is far above the 10% floor, so not `near-unanimous`. The provision matches both clauses of the rung text — it defines marriage as only between one man and one woman, and bars any same-sex marriage from being valid or recognized in Indiana. Rung 4 is not reached, since nothing here recognizes civil unions.
+
+`needs_source` and `quotes` are empty — the record is complete on the pages given, and no passage carries the person's own words.

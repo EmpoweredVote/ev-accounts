@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": "The Secretary of the California Health and Human Services Agency shall research, develop, and pursue discussions of a waiver framework in consultation with the federal government with the objective of creating a health care system that incorporates the following features and objectives:",
+          "note": "The operative sections only direct research and waiver-framework discussions toward unified financing; this is a study-directive, not an enactment of any rung.",
+          "record_kind": "author",
+          "actor_quote": "SB 770, Wiener.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": null,
+          "note": "Final floor vote on the same study-directive instrument; the vote cannot prove a chair because the bill itself only orders research and discussions.",
+          "record_kind": "vote",
+          "actor_quote": "Umberg, Wahab, Wiener",
+          "tally_quote": "Ayes Count 29 Noes Count 9"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 770, which Wiener authored and signed into law, only directs the Secretary of CHHS to research, pursue waiver discussions, and report on a possible unified financing system; it is a study-directive under V4 and cannot establish any rung, so no passage supports a chair.",
+      "needs_source": ["an enacted single-payer or unified health care financing law (not a waiver-framework study), or Wiener's own words answering what role government should play in healthcare access"],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "Senate vote page shows Gowan voted Yes; a state law voiding local zoning limits is direction-only, not an unproven magnitude of market reliance.",
+          "record_kind": "vote",
+          "actor_quote": "GOWAN Y",
+          "tally_quote": "05/08/2024 Passed 21-7-2-0-0 Amended"
+        },
+        {
+          "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": "The municipality may not do any of the following: 1. Discourage the development of middle housing through requirements or actions that individually or cumulatively make impracticable the permitting, siting, or construction of middle housing.",
+          "note": "Bill text bars municipalities from blocking middle-housing permitting; a preemption law removing local zoning limits that a rung names, so it is on-question but only direction-only.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gowan voted Yes on HB 2721 (2024-05-08), a state law barring municipalities from imposing requirements that make middle-housing development impracticable. Because the law removes the very local zoning limits the rung text names ('cut the regulations and zoning limits that block private building'), it shows direction but cannot prove he wants government to do 'at most' that and nothing more, so it is direction-only.",
+      "needs_source": ["Gowan's own statement or floor remarks on HB 2721 or municipal zoning deregulation, to establish whether he favors relying on the market beyond this one preemption law"],
+      "quotes": []
+    }
+  ]
+}

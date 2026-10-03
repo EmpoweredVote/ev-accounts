@@ -1,0 +1,70 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "f58ce6de-755d-448f-9c0c-b21f9d386dad",
+      "office_id": "96d9e3b2-b607-4c64-bcbf-e2e0fedb0bf9",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+      "passages": [
+        {
+          "snapshot_id": "9c4adfd3-1e3d-5853-8592-48b6bcf78d5f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015-03-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "House 3rd-reading roll call on SB 101; Clere listed under Nay, not Yea",
+          "record_kind": "vote",
+          "actor_quote": "Stemler Clere Kersey",
+          "tally_quote": "Yea 63 Nay 31"
+        },
+        {
+          "snapshot_id": "04de07e0-e878-5450-9dc7-3f3f888df866",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": "A governmental entity may substantially burden a person's exercise of religion only if the governmental entity demonstrates that application of the burden to the person: (1) is in furtherance of a compelling governmental interest; and (2) is the least restrictive means of furthering that compelling governmental interest.",
+          "note": "Enrolled Act creates a strict-scrutiny standard for any burden on religious exercise; no clause addresses civil rights or anti-discrimination law one way or the other",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "80556c21-2b53-5b4d-9e90-6741313d9dfd",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2015-03-26",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "Bill-tracking/digest page; lists authors, co-authors and House sponsors, none of whom is Clere; confirms the bill became Public Law on 2015-03-26 but attributes no act or words to Clere",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [
+        "9c4adfd3-1e3d-5853-8592-48b6bcf78d5f",
+        "04de07e0-e878-5450-9dc7-3f3f888df866"
+      ],
+      "reasoning": "Clere voted Nay on SB 101 (2015), a single-subject bill that creates a strict-scrutiny standard barring a governmental entity from substantially burdening religious exercise absent a compelling interest pursued by the least restrictive means, with no clause addressing anti-discrimination law either way. A No vote on this exemption-granting bill shows opposition to that mechanism but does not by itself separate rungs 1-3, which all fall on the side he voted against expanding; excluding rungs 4-5 is not evidence for a specific one of the remaining rungs.",
+      "needs_source": [
+        "Clere's own statement or floor explanation of his Nay vote on SB 101 (2015), if one exists, tying the vote to a specific anti-discrimination or religious-freedom clause"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "e2243c37-bc6e-5125-b97e-21d342430160",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview page shows her co-sponsorship of the middle-housing zoning bill; she was a State Representative in this same legislature in 2024, so V5 option B applies.",
+          "record_kind": "sponsor",
+          "actor_quote": "Ortiz (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "House final-reading roll call records her Y; 15 of 60 voted No, so this is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "ORTIZ Y",
+          "tally_quote": "Passed 42-15-3-0-0"
+        },
+        {
+          "snapshot_id": "48e5adc9-77eb-5d52-8dbc-19668f745378",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": "On or before January 1, 2026, a municipality with a population of seventy-five thousand persons or more must authorize by ordinance and incorporate into its development regulations, zoning regulations and other official controls the development of duplexes, triplexes, fourplexes and townhomes as a permitted use on both of the following:",
+          "note": "Single-subject zoning law that voids local limits on middle housing; it removes the limits rung 5 names but says nothing about whether government should do more than that.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Ortiz co-sponsored and voted Y on HB 2721 (2024), which requires larger municipalities to allow \"duplexes, triplexes, fourplexes and townhomes as a permitted use\" on single-family lots near downtown, so it does \"cut the regulations and zoning limits that block private building\". But one deregulation law cannot establish the \"at most\" magnitude of that rung, and nothing here speaks to \"binding rules on the private market like rent caps or required affordable units\" or to subsidies and tax breaks. The record therefore shows a pro-supply direction without separating the rungs on that side.",
+      "needs_source": [
+        "Ortiz's own words or a further record on whether she supports binding affordability rules (rent caps, inclusionary requirements) alongside zoning liberalization",
+        "Ortiz's own words or a further record on whether she supports public housing construction or housing subsidies and tax breaks"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "1cede4d2-3075-4860-b133-1ab34cdacff5|a77cd5e4-d43d-4af1-b8e0-46ed80b979c6|a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Senate roll call, SB 1137 (2021-2022), final passage",
+          "Gonzalez's own words or a record on statewide fossil fuel production levels or new drilling outside health protection zones",
+          "Gonzalez's own statement describing her overall position on statewide/national fossil fuel production levels, or a record establishing a statewide (not zone-limited) new-drilling policy",
+          "A floor statement or explanation of vote from Gonzalez tying SB 1137 to a broader statewide drilling-production position"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "1cede4d2-3075-4860-b133-1ab34cdacff5|a77cd5e4-d43d-4af1-b8e0-46ed80b979c6|a22215c3-6693-4bc2-b248-01aebba14570",
+      "requests": [
+        "California Senate roll call, SB 1137 (2021-2022), final passage",
+        "Gonzalez's own words or a record on statewide fossil fuel production levels or new drilling outside health protection zones",
+        "Gonzalez's own statement describing her overall position on statewide/national fossil fuel production levels, or a record establishing a statewide (not zone-limited) new-drilling policy",
+        "A floor statement or explanation of vote from Gonzalez tying SB 1137 to a broader statewide drilling-production position"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

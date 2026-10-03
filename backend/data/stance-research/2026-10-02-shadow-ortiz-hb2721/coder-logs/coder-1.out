@@ -1,0 +1,20 @@
+Written: `backend/data/stance-research/2026-10-02-shadow-ortiz-hb2721/labels/coder-1.json`
+
+**housing → BLANK `direction-only`**
+
+Three passages, all one instrument group (HB 2721, 2024), all `own-act` / `on-question` / `record` / `in-term`:
+
+| snapshot | record_kind | carries |
+|---|---|---|
+| `8b3ecaa1` vote page | `vote` | `actor_quote` "NGUYEN N ORTIZ Y PARKER B N", `tally_quote` "Passed 42-15-3-0-0" |
+| `e2243c37` bill overview | `sponsor` | `actor_quote` "Livingston (Co-Sponsor) Ortiz (Co-Sponsor) Peña (Co-Sponsor)" |
+| `48e5adc9` enacted text | `vote` | `provision_quote` (the §9-462.10(A) middle-housing mandate) |
+
+Two judgment calls worth flagging:
+
+- **V5:** the 2024 act is from her Arizona House term, not her Senate term. Coded `in-term` under the 0.4 option-B ruling (either chamber of the same legislature), not `pre-seating`.
+- **V4:** this is the V2 preemption refinement almost word for word — a state law voiding the local zoning limits that rung 5 names. On-question, but a single deregulation law can't prove the "at most" magnitude, and it doesn't exclude rung 3's binding rules or rung 4's subsidies. Her Y vote on a bill that *permits* more housing types says nothing about whether she'd also back rent caps. So `direction-only`, `rests_on: []`.
+
+Not near-unanimous (15 of 60 No), so that exclusion didn't apply. No candidate quotes — all three sources are records, none contain her words.
+
+`needs_source` names four things that would resolve the row: her own first-person words on the ladder question, plus Arizona records on rent caps/inclusionary zoning, housing subsidies, and public housing.

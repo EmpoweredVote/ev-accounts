@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Roll call shows Soliday voting Yea on final passage/conference report of HB 1296.",
+          "record_kind": "vote",
+          "actor_quote": "Heaton May Soliday Behning Heine",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "3a61977f-28e8-584b-a0d7-0937aefcabfe",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "A person who meets the following requirements may carry a handgun in the manner described in subsection (b): (1) The person is not prohibited from possessing or carrying a handgun under federal law as in effect on January 1, 2022. (2) Notwithstanding section 1.5 of this chapter, the person is not otherwise prohibited under state law from possessing or carrying a handgun. (3) The person does not meet the requirements under IC 35-47-2-3 to receive a license to carry a handgun in Indiana.",
+          "note": "Enrolled bill text removes the prior license-to-carry requirement and substitutes eligibility criteria, with a companion section stating no license or permit is required to carry a handgun in Indiana.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+        "3a61977f-28e8-584b-a0d7-0937aefcabfe"
+      ],
+      "reasoning": "Soliday voted Yea on HB 1296 (2022), whose enrolled text repeals Indiana's handgun carry licensing requirement and substitutes an eligibility test with no license or permit needed, matching 'Repeal major gun restrictions and let adults carry a firearm without a permit' and excluding the lesser 'loosen rules on carrying' rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

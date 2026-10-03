@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-02-shadow-livingston-scr1040-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040",
+      "source_kind": "public-record",
+      "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+      "office_id": "f7cad0ce-e9af-46a1-a39d-d5d4520d3879",
+      "topic_keys": [
+        "minimum-wage"
+      ],
+      "instruments": [
+        "SCR 1040 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-scr1040-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040#house-third",
+      "source_kind": "public-record",
+      "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+      "office_id": "f7cad0ce-e9af-46a1-a39d-d5d4520d3879",
+      "topic_keys": [
+        "minimum-wage"
+      ],
+      "instruments": [
+        "SCR 1040 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-scr1040-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2r/bills/scr1040h.htm",
+      "source_kind": "public-record",
+      "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+      "office_id": "f7cad0ce-e9af-46a1-a39d-d5d4520d3879",
+      "topic_keys": [
+        "minimum-wage"
+      ],
+      "instruments": [
+        "SCR 1040 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "69da793b-7075-56d9-8eae-7d3d89267239",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Bill status page shows Mesnard as prime sponsor of the omnibus taxation bill SB 1828, signed by the Governor and chaptered as Chapter 412.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime with permission of Rules)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "420ed0d1-030a-5c8b-a1a6-5d63baffb890",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Senate Third Reading shows Mesnard voting Aye on the amended omnibus taxation bill, passed 16-14.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "The enacted chapter text shows SB 1828 bundles unrelated tax provisions — a higher unemployment-insurance taxable wage base, an income-tax-rate-cut trigger mechanism, a lower class one property assessed-valuation ratio, and new tax credits — confirming the bill is multi-subject.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1828 (2021) is titled 'omnibus; taxation' and combines unrelated provisions in one vote — raising the unemployment-insurance taxable wage base, cutting individual income tax rates, lowering the class one property assessed-valuation ratio, and adding new tax credits — so Mesnard's sponsorship and Aye vote are multi-subject under V4.1 and cannot be tied to any single rung's clause absent his own words explaining the vote. No statement in these sources ties his action to a specific provision, so no passage establishes even a direction.",
+      "needs_source": ["Mesnard's own statement, floor speech, or explanation of vote on SB 1828 (2021) tying his support to a specific tax provision (e.g., the income-tax-rate-cut mechanism in section 15)."],
+      "quotes": []
+    }
+  ]
+}

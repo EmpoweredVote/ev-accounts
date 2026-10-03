@@ -1,0 +1,11 @@
+Wrote `coder-1.json` — one row (Shope / deportation), codebook 0.4, coder slot 1.
+
+**How it coded:**
+
+- **Three passages, one record group** on `HCR2060 (2024)`:
+  - Senate Third Reading vote detail → `own-act` / `record` / `vote`, `actor_quote` `"SHOPE Y"`, `tally_quote` `"Passed 16-13-1-0-0"` (16–13 is not near-unanimous).
+  - Bill overview → same instrument, `tally_quote` only, `actor_quote` null (the page doesn't name him; prime sponsor is Toma, not Shope).
+  - Engrossed bill text → carries the `provision_quote` (the order-to-return provision), no actor or tally.
+- **V4 `multi-subject`** on all three. The measure's own retitling — "border; benefits; fentanyl; illegal entry" — plus its sections (public-benefit false documents, SAVE verification, lethal-fentanyl sentencing, illegal entry, e-verify) make it a multi-subject final passage. Under V4.1 that proves direction at most, and no Shope statement ties his vote to the removal clause.
+- **V6 BLANK `direction-only`.** The return-order sections are on-question, but the prospective-only limit is a constitutional necessity, not a stated policy of "leaving long-settled undocumented immigrants in place" (rung 3's second clause), and nothing reaches rung 4's "Deport all undocumented immigrants." Reaching a rung by elimination would be H14.
+- `rests_on` is empty (no numeric chair); `needs_source` asks for his own words tying the vote to the illegal-entry/return sections, or a single-subject record on deportation scope. No quotes — the sources contain no Shope words.

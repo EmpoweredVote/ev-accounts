@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4f57bead-e464-4a26-bc14-49f9599f2086",
+      "office_id": "9e556e36-d300-4bef-ac90-8df64db0b849",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "ec83c57d-630f-5015-b979-e4af870930b9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "Bill-details page: he is a co-author of the resolution; the page prints the digest, not the operative constitutional text.",
+          "record_kind": "author",
+          "actor_quote": "Co-Authored by: Rep. Timothy Wesco, Rep. Wes Culver, Rep. Rhonda Rhoads, Rep. Robert Heaton, Rep. Don Lehe, Rep. Matthew Lehman, Rep. Randall Frye",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a8b9c1b7-54eb-5919-b0bd-732575bf3505",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014-01-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "House third-reading roll call: Lehman is in the Yea list, and the 57-40 tally is far from near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Cherry Lehman Price Wesco",
+          "tally_quote": "Yea 57 Nay 40 Excused 3 Not Voting 0"
+        },
+        {
+          "snapshot_id": "d0d7bfa5-a0d8-54c7-bacc-7ebfa6236408",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": "Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.",
+          "note": "Engrossed text: a single-subject constitutional amendment whose one operative section is the marriage definition.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ec83c57d-630f-5015-b979-e4af870930b9",
+        "a8b9c1b7-54eb-5919-b0bd-732575bf3505",
+        "d0d7bfa5-a0d8-54c7-bacc-7ebfa6236408"
+      ],
+      "reasoning": "Lehman co-authored HJR 3 (2014) and voted Yea on its House third reading (Yea 57 Nay 40), a single-subject joint resolution whose sole operative section would write into the state constitution that \"Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.\" That is the rung that would \"Make same-sex marriage illegal and define marriage as only between one man and one woman\": it bars any same-sex marriage from being valid in Indiana and fixes the one-man-one-woman definition. The rung allowing civil unions while reserving marriage is excluded, because the resolution recognizes no same-sex status at all.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

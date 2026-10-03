@@ -1,0 +1,75 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e8054d02-34c2-485b-b54a-47658cc269b7|1ca10b86-0477-4f4c-9cbc-d410cece1d61|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Indiana Senate roll call for the 2026 public camping ban bill (the vote the article reports as 29-19), showing Randolph by name with the tally text",
+          "The bill's operative section text, to test it against the rung clauses",
+          "Randolph's own words on whether any penalty (civil citation, diversion) should apply, or whether enforcement should be conditioned on available shelter beds",
+          "Randolph's recorded Aye/No vote on this Indiana public camping bill, with bill number and session",
+          "The bill text's operative provisions, to check whether his opposition matches a specific rung's clauses",
+          "A floor speech, questionnaire, or campaign statement from Randolph naming his preferred enforcement mechanism (or lack thereof) for public camping",
+          "Indiana Senate roll-call vote on the concurrence with House amendments to the public-camping bill, showing Sen. Randolph's own vote",
+          "the bill's enacted operative text describing the enforcement mechanism and any penalty/diversion conditions"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e8054d02-34c2-485b-b54a-47658cc269b7|1ca10b86-0477-4f4c-9cbc-d410cece1d61|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "requests": [
+        "Indiana Senate roll call for the 2026 public camping ban bill (the vote the article reports as 29-19), showing Randolph by name with the tally text",
+        "The bill's operative section text, to test it against the rung clauses",
+        "Randolph's own words on whether any penalty (civil citation, diversion) should apply, or whether enforcement should be conditioned on available shelter beds",
+        "Randolph's recorded Aye/No vote on this Indiana public camping bill, with bill number and session",
+        "The bill text's operative provisions, to check whether his opposition matches a specific rung's clauses",
+        "A floor speech, questionnaire, or campaign statement from Randolph naming his preferred enforcement mechanism (or lack thereof) for public camping",
+        "Indiana Senate roll-call vote on the concurrence with House amendments to the public-camping bill, showing Sen. Randolph's own vote",
+        "the bill's enacted operative text describing the enforcement mechanism and any penalty/diversion conditions"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

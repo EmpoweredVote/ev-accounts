@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Assembly ACA 8 (2025-2026) bill history or author page printing the author's first name, to confirm the \"Rivas\" of the Legislative Counsel's Digest is Robert Rivas and not another member of that surname",
+          "Robert Rivas's own words (questionnaire answer, floor statement or interview) on who should draw California's districts once the temporary congressional maps lapse in 2031, which is what would separate the rungs",
+          "Roll call for ACA 8 (2025-2026) in the Assembly, for his recorded vote in addition to authorship"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "requests": [
+        "California Assembly ACA 8 (2025-2026) bill history or author page printing the author's first name, to confirm the \"Rivas\" of the Legislative Counsel's Digest is Robert Rivas and not another member of that surname",
+        "Robert Rivas's own words (questionnaire answer, floor statement or interview) on who should draw California's districts once the temporary congressional maps lapse in 2031, which is what would separate the rungs",
+        "Roll call for ACA 8 (2025-2026) in the Assembly, for his recorded vote in addition to authorship"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

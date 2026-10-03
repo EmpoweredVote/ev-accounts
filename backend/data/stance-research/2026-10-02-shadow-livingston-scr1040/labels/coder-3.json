@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+      "office_id": "f7cad0ce-e9af-46a1-a39d-d5d4520d3879",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "5bd9b1c9-1855-5ee6-a5aa-b3215b6e9eb3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-04-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "House Third Reading tally shows Livingston voting Y on SCR1040, a tipped-worker wage measure, not a general wage-floor clause.",
+          "record_kind": "vote",
+          "actor_quote": "LIVINGSTON Y",
+          "tally_quote": "Passed 35-24-0-0-1"
+        },
+        {
+          "snapshot_id": "b0246426-bf3f-59b0-b47b-1a9a378b8052",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "Bill status history confirms SCR1040's identity, prime sponsor Mesnard, and chamber actions, but adds no clause matching any minimum-wage rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "aaf0c889-8192-5e2d-beae-5259803f0021",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": "For any employee who customarily and regularly receives tips or gratuities from patrons or others, the employer may pay a wage up to twenty-five percent per hour less than the minimum wage established by statute if the employer can establish by the employer's records of charged tips or gratuities or by the employee’s declaration for federal insurance contributions act purposes that for each week, when adding tips or gratuities received to wages paid, the employee received not less than the minimum wage plus $2 for all hours worked.",
+          "note": "Engrossed bill text sets a tip-credit allowing up to 25% below minimum wage for tipped workers, a different clause than any served rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SCR1040 only authorizes a tip credit letting employers pay tipped workers up to 25% below the statutory minimum wage when tips make up the difference; it does not address 'tie it to the cost of living', 'adjust it only when lawmakers vote to', 'let states and cities set higher rates', 'hold the wage floor at its current level' or 'remove the wage floor entirely'. Livingston's House Third Reading Y vote is adjacent to the ladder's question, so no passage survives to support a chair.",
+      "needs_source": [
+        "A vote, sponsorship, or own statement by Livingston addressing the general minimum-wage floor-setting mechanism (indexing, legislative adjustment, state/local authority, market-only, or full repeal) rather than a tipped-worker tip-credit carve-out."
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-29-shadow-aguiar-curry-rr1",
+  "seat": {
+    "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+    "full_name": "Cecilia M. Aguiar-Curry",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+    "office_title": "Assembly Member",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2016-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "question_text": "How far should the government go in deporting undocumented immigrants?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Stop deportations entirely and protect undocumented immigrants from removal"
+        },
+        {
+          "value": 2,
+          "text": "Only deport undocumented immigrants convicted of serious violent crimes"
+        },
+        {
+          "value": 3,
+          "text": "Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place"
+        },
+        {
+          "value": 4,
+          "text": "Deport all undocumented immigrants, starting with those who have criminal records"
+        },
+        {
+          "value": 5,
+          "text": "Carry out a mass-deportation program to remove all undocumented immigrants, including long-settled families and workers"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

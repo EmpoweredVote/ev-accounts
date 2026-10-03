@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-10-02-shadow-gabriel-sb100-rr1",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180SB100",
+      "source_kind": "public-record",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_keys": [
+        "climate-change"
+      ],
+      "instruments": [
+        "SB 100 (2017-2018)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2018-sb100-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201720180SB100",
+      "source_kind": "public-record",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_keys": [
+        "climate-change"
+      ],
+      "instruments": [
+        "SB 100 (2017-2018)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2018-sb100-votes.txt"
+    }
+  ]
+}

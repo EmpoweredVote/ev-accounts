@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "bb4bbd05-0a4b-5617-9d6d-38b342fa770f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": "A statement of whether the current version of the terms of service defines each of the following categories of content, and, if so, the definitions of those categories, including any subcategories: (A) Hate speech or racism. (B) Extremism or radicalization. (C) Disinformation or misinformation. (D) Harassment. (E) Foreign political interference.",
+          "note": "Bill requires platforms to disclose and report moderation policies/data on misinformation, but does not mandate removal, labeling, voluntary-only standards, free-speech protection, or a ban on government involvement.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "AB 587 requires social media companies to disclose their content-moderation terms of service and report enforcement data to the Attorney General for categories including 'Disinformation or misinformation,' which shows government involvement in regulating platform transparency on misinformation. But it neither 'legally require[s] platforms to remove false information' nor 'require[s] platforms to label false content,' is not limited to 'encourag[ing] voluntary standards,' and does not 'protect free speech online and prevent government censorship' or 'ban any government involvement in content moderation decisions.' The operative mechanism (mandatory disclosure/reporting) does not match any single rung's clause, so the evidence establishes direction only.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

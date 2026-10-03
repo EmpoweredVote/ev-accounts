@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab",
+      "office_id": "b58a97c0-8ee8-4949-827d-c06946a12a4c",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "71d6b197-b7d9-5675-a5e9-5ddcc6ec1b4f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": "A firearm industry member shall not advertise, market, or arrange for placement of an advertising or marketing communication concerning any firearm-related product in a manner that is designed, intended, or reasonably appears to be attractive to minors.",
+          "note": "A marketing-and-advertising restriction on firearm industry members; it regulates neither who may own which firearms nor how sales are screened, which is the dimension the rungs order.",
+          "record_kind": "author",
+          "actor_quote": "AB 2571, Bauer-Kahan. Firearms: advertising to minors.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is AB 2571 (2021-2022), which Bauer-Kahan authored; its operative section bars a firearm industry member from marketing a firearm-related product in a manner \"attractive to minors\". That regulates firearm advertising, not whether the state should \"Ban semi-automatic assault-style weapons\" or \"require universal background checks on every sale\", so it is adjacent on V2 and no passage survives to seat a rung.",
+      "needs_source": [
+        "California Assembly floor roll call on a background-check or assault-weapon bill (e.g. the vote page for a universal-background-check measure) in the 2019-2026 sessions",
+        "Bauer-Kahan's own first-person words on background checks, assault-style weapons, or concealed-carry permits (campaign issue page, questionnaire, or debate answer)"
+      ],
+      "quotes": []
+    }
+  ]
+}

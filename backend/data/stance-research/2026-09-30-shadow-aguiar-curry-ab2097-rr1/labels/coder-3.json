@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "9e2d72ba-9f81-5280-9411-ee545091da00",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 2097 (2021-2022)",
+          "provision_quote": null,
+          "note": "Vote page shows Aguiar-Curry voted Aye on concurrence in Senate amendments to AB 2097.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Alvarez, Bennett,",
+          "tally_quote": "Ayes Count 52 Noes Count 17"
+        },
+        {
+          "snapshot_id": "1a03cbce-3c6a-5f51-a7ff-7cec07571f45",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 2097 (2021-2022)",
+          "provision_quote": "A public agency shall not impose or enforce any minimum automobile parking requirement on a residential, commercial, or other development project if the project is located within one-half mile of public transit.",
+          "note": "Enacted text bars most local minimum parking mandates near transit, the opposite of rung 5's abundant-parking premise.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Aguiar-Curry voted Aye on AB 2097 (2021-2022), which bars a public agency from imposing minimum parking requirements near transit, the opposite of rung 5's foundation of 'abundant free parking.' Removing a parking mandate shows a direction away from parking-centric policy but does not itself fund or prioritize 'pedestrian infrastructure, cycling networks, and public transit' or any other named clause of rungs 1 through 4, so no numbered rung is chair-shaped.",
+      "needs_source": [
+        "a vote, sponsorship, or own-words statement by Aguiar-Curry on a bill that funds or prioritizes transit, cycling, pedestrian infrastructure, or road capacity investment specifically"
+      ],
+      "quotes": []
+    }
+  ]
+}

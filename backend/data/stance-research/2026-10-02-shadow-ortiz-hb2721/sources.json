@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-02-shadow-ortiz-hb2721",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721",
+      "source_kind": "public-record",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "HB 2721 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hb2721-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721#house-final",
+      "source_kind": "public-record",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "HB 2721 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hb2721-house-final.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0197.htm",
+      "source_kind": "public-record",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "HB 2721 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

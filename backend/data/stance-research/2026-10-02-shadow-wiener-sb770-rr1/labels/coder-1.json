@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": null,
+          "note": "Senate floor concurrence vote on SB 770; Wiener is in the Ayes list and 9 of 40 voted No, so the tally is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Archuleta, Ashby, Atkins, Becker, Blakespear, Bradford, Caballero, Cortese, Dodd, Durazo, Eggman, Gonzalez, Laird, Limón, McGuire, Menjivar, Min, Newman, Padilla, Portantino, Roth, Rubio, Skinner, Smallwood-Cuevas, Stern, Umberg, Wahab, Wiener",
+          "tally_quote": "Ayes Count 29 Noes Count 9"
+        },
+        {
+          "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": "The Secretary of the California Health and Human Services Agency shall research, develop, and pursue discussions of a waiver framework in consultation with the federal government with the objective of creating a health care system that incorporates the following features and objectives:",
+          "note": "The operative section orders research, a waiver framework and reports, and the findings state the goal the research serves.",
+          "record_kind": "author",
+          "actor_quote": "SB 770, Wiener.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 770 (2023-2024), which Wiener authored and voted Aye on, directs the Health and Human Services Secretary to \"research, develop, and pursue discussions of a waiver framework\" and to report back; it enacts no financing system, so it is a study directive and cannot seat a chair. Its text does state the outcome it seeks — \"the Legislature endorses a health care system with unified financing, such as a single-payer health care system\" — which shows a side (toward public financing) without choosing between \"Make healthcare free and available to everyone, fully paid for by the public sector\" and \"Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance\". The bill's own features list keeps cost sharing only for \"essential services and treatments\" and names Medicare, Medi-Cal and employer-sponsored insurance as systems whose disparities are to be identified, so it does not match the \"fully paid for by the public sector\" clause either.",
+      "needs_source": [
+        "A California record whose operative section itself establishes or funds a unified/single-payer financing system (bill text plus Wiener's author line or roll call), rather than directing research toward one",
+        "Wiener's own first-person answer to what role government should play in healthcare access (his Senate issue page, a questionnaire, or a debate answer), dated within his current term"
+      ],
+      "quotes": []
+    }
+  ]
+}

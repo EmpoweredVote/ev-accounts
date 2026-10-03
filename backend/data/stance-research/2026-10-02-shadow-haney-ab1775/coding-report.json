@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4c7d1cea-a6ce-4185-a977-c754800f491a|f11ac115-0c75-4fbf-baf8-d78ef703dc49|2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "topic_key": "cannabis-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Haney's own words or a chair-shaped record on the legal status and market structure of cannabis itself (licensed, taxed commercial market vs. minimal-restriction ordinary product), e.g. a floor statement or a vote on a cannabis licensing/taxation bill",
+          "Haney's own act or statement directly addressing the cannabis legal-status/commercial-licensing question itself (e.g., sponsorship or vote on the AUMA/MAUCRSA licensing or penalty framework)",
+          "Haney's own statement, questionnaire answer, or a chair-shaped record (bill/vote) addressing cannabis's legal status or regulatory model (criminal penalties, medical-only, decriminalization, commercial licensing/taxation level, or minimal-restriction deregulation)."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4c7d1cea-a6ce-4185-a977-c754800f491a|f11ac115-0c75-4fbf-baf8-d78ef703dc49|2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "requests": [
+        "Haney's own words or a chair-shaped record on the legal status and market structure of cannabis itself (licensed, taxed commercial market vs. minimal-restriction ordinary product), e.g. a floor statement or a vote on a cannabis licensing/taxation bill",
+        "Haney's own act or statement directly addressing the cannabis legal-status/commercial-licensing question itself (e.g., sponsorship or vote on the AUMA/MAUCRSA licensing or penalty framework)",
+        "Haney's own statement, questionnaire answer, or a chair-shaped record (bill/vote) addressing cannabis's legal status or regulatory model (criminal penalties, medical-only, decriminalization, commercial licensing/taxation level, or minimal-restriction deregulation)."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

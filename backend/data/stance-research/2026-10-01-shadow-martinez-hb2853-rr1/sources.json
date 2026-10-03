@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-01-shadow-martinez-hb2853-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853",
+      "source_kind": "public-record",
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "HB 2853 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-hb2853-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853#house-third",
+      "source_kind": "public-record",
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "HB 2853 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-hb2853-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0388.htm",
+      "source_kind": "public-record",
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "HB 2853 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

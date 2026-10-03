@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "e45850e5-c900-5eb6-a053-26d4882babdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-09-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": null,
+          "note": "Assembly floor vote page: she is listed in the Ayes on SB 54 third reading, 51-26.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Arambula, Berman, Bloom",
+          "tally_quote": "Ayes Count 51 Noes Count 26"
+        },
+        {
+          "snapshot_id": "b2056197-763a-566a-abad-fe59bef3eb40",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-10-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": "Transfer an individual to immigration authorities unless authorized by a judicial warrant or judicial probable cause determination, or in accordance with Section 7282.5.",
+          "note": "Chaptered text limits state and local assistance with immigration enforcement but keeps a wide list of convictions under which transfer is permitted.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Aye on SB 54 (2017-2018) withdraws state and local resources from federal immigration enforcement, which places her on the protective side but does not pick a rung. It does not \"Stop deportations entirely and protect undocumented immigrants from removal\", because the act keeps transfers available by judicial warrant and under Section 7282.5; and it is broader than \"Only deport undocumented immigrants convicted of serious violent crimes\", because the same section permits cooperation for \"Burglary, robbery, theft, fraud, forgery, or embezzlement\" and other non-violent convictions.",
+      "needs_source": [
+        "Aguiar-Curry's own words or an authored/sponsored bill stating which undocumented immigrants she would have removed (the ladder's question), in-term"
+      ],
+      "quotes": []
+    }
+  ]
+}

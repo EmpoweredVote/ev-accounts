@@ -1,0 +1,13 @@
+Wrote `labels/coder-1.json`.
+
+**Row: David Livingston / minimum-wage → BLANK `no-evidence`**
+
+The three sources are one record: SCR1040 (2024), on which Livingston voted Y at House Third Reading (35-24, so not near-unanimous), in-term for his current House seat.
+
+The reason it can't seat a chair is V2. SCR1040 would let an employer of a tipped worker "pay a wage up to twenty-five percent per hour less than the minimum wage established by statute," conditioned on tips bringing the employee to the minimum plus $2 — a carve-out for one class of worker that presupposes and leaves standing the statutory minimum. The five rungs order a different dimension: the floor's level, its indexing, which level of government sets it, and whether it exists at all. None of them names a tipped subminimum, so the passages are `adjacent` / `off-axis` and none survives to V6.
+
+Field notes:
+- `provision_quote` comes from the bill-text page only; the vote pages carry `actor_quote` ("LIGUORI N LIVINGSTON Y LUCKING N") and `tally_quote`, per the per-instrument-group rule.
+- The `[deleted: permanent school fund; distribution; uses]` short title is fenced and never quoted.
+- `quotes` is empty — all three sources are public records with no words of Livingston's.
+- `needs_source` asks for a roll call or sponsorship on the wage floor itself, or his own words on it.

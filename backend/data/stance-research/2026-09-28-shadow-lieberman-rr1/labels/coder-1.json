@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "office_id": "d13d9c57-2851-48fb-a1a6-0b181f449453",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (55th Legislature, 1st Regular Session, 2021)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call showing Lieberman voting No on the abortion restriction bill; the page prints the voter and the count but no provision text.",
+          "record_kind": "vote",
+          "actor_quote": "LIEBERMAN N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (55th Legislature, 1st Regular Session, 2021)",
+          "provision_quote": "Performs an abortion knowing that the abortion is sought solely because of a genetic abnormality of the child.",
+          "note": "Chaptered text of the bill he voted against; its operative prohibitions are reason-based and facility- and delivery-based, and set no gestational limit or general exception list.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Lieberman voted No on SB 1457 (2021) in the Arizona House, a bill making it a felony to perform an abortion \"sought solely because of a genetic abnormality of the child\" and barring an abortion-inducing drug \"via courier, delivery or mail service\", which places him on the permissive side of the question. The bill sets no gestational limit and no general exception list, so it cannot separate \"keep abortion legal at every stage of pregnancy, with no time limit.\" from \"keep abortion legal through the second trimester, and after that only to protect the mother's health.\" or from \"allow abortion during the first trimester, and after that only to protect the mother's health.\" Direction without a stage or exception clause is not a chair.",
+      "needs_source": [
+        "Aaron Lieberman's own first-person answer on what gestational limit the law should set (candidate questionnaire, debate answer, or issue page) for the 2026 Arizona Senate campaign",
+        "Any Arizona legislative record of Lieberman on a bill that itself sets a gestational limit or an exception list (rape, incest, risk to the mother's life)"
+      ],
+      "quotes": []
+    }
+  ]
+}

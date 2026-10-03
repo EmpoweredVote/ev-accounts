@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d",
+      "office_id": "8c909ec7-73d2-4488-8eb5-a72f4746f32b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "4c212da4-3762-58c4-ad14-8fb9a928ce75",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview lists Diaz as a co-sponsor of SB1164 and shows aggregate chamber vote tallies, but not a per-member roll call.",
+          "record_kind": "sponsor",
+          "actor_quote": "Diaz (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bc6d6c40-f82c-5085-93be-c0b59c163104",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Enacted bill text sets a 15-week gestational cutoff with a narrow medical-emergency exception; this page does not name Diaz.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e1974ddd-d5a2-5fc0-8ae4-a4a31cd685c2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Diaz voting Y on final passage of SB1164.",
+          "record_kind": "vote",
+          "actor_quote": "DIAZ Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Diaz co-sponsored and voted Y on SB 1164 (2022), which bars abortion once probable gestational age is 'greater than fifteen weeks' except in a narrowly defined medical emergency. Fifteen weeks does not match the first-trimester cutoff in the rung that allows abortion 'during the first trimester, and after that only to protect the mother's health,' nor the later cutoff in the rung keeping abortion legal 'through the second trimester,' and the medical-emergency exception is narrower than either rung's health exception. The record shows a restrictive direction but does not establish which rung's time limit and exception the person holds.",
+      "needs_source": [
+        "Diaz's own floor statement or public comment explaining whether the 15-week/medical-emergency standard reflects a first-trimester or second-trimester position"
+      ],
+      "quotes": []
+    }
+  ]
+}

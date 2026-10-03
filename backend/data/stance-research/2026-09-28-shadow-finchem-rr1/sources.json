@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-28-shadow-finchem-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=130&BillNumber=SB1057",
+      "source_kind": "public-record",
+      "politician_id": "489e2fc3-b47a-4304-b959-07e35f010da4",
+      "office_id": "124f5425-d00d-4a54-8505-74e25b80cceb",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "SB 1057 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2026-sb1057-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=130&BillNumber=SB1057#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "489e2fc3-b47a-4304-b959-07e35f010da4",
+      "office_id": "124f5425-d00d-4a54-8505-74e25b80cceb",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "SB 1057 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2026-sb1057-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1057S.htm",
+      "source_kind": "public-record",
+      "politician_id": "489e2fc3-b47a-4304-b959-07e35f010da4",
+      "office_id": "124f5425-d00d-4a54-8505-74e25b80cceb",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "SB 1057 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "instrument": "scr1040(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "e121a3e5-fb82-55aa-bf3e-1b9270d55b38",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040#senate-final-2",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "7e5394eb-9b86-5fda-8a44-2b64a8eb2336",
+        "url": "https://www.azleg.gov/legtext/56leg/2r/bills/scr1040h.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "bc7051d3-e46d-5cc7-97e2-720c91ddd769",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "instrument": "scr1040(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "7e5394eb-9b86-5fda-8a44-2b64a8eb2336",
+        "url": "https://www.azleg.gov/legtext/56leg/2r/bills/scr1040h.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "bc7051d3-e46d-5cc7-97e2-720c91ddd769",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "e121a3e5-fb82-55aa-bf3e-1b9270d55b38",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040#senate-final-2",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "instrument": "scr1040(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "bc7051d3-e46d-5cc7-97e2-720c91ddd769",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "e121a3e5-fb82-55aa-bf3e-1b9270d55b38",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040#senate-final-2",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "7e5394eb-9b86-5fda-8a44-2b64a8eb2336",
+        "url": "https://www.azleg.gov/legtext/56leg/2r/bills/scr1040h.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  }
+]

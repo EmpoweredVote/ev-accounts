@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+      "office_id": "4021cde6-9098-442f-8126-55f6377a328f",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "f54b3d9a-dc48-5ef4-a20e-d92a74f10756",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-02-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2635 (2025)",
+          "provision_quote": null,
+          "note": "Vote on a sales-tax exemption for firearm storage devices; a tax measure, not on the ownership/carry regulation dimension this ladder orders.",
+          "record_kind": "vote",
+          "actor_quote": "GRESS Y",
+          "tally_quote": "Passed 57-0-3-0-0"
+        },
+        {
+          "snapshot_id": "2ef4af7b-fbdf-56a9-8aa0-1847973593ba",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2635 (2025)",
+          "provision_quote": "Sales of safe firearm storage devices.",
+          "note": "Operative text creates a TPT exemption for sales of safe firearm storage devices; it defines and taxes storage equipment, not firearm ownership, type, background checks, or carry rules.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ce71935f-0138-5b11-8388-d3530c46910f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2635 (2025)",
+          "provision_quote": null,
+          "note": "Bill overview lists Gress as prime sponsor of the firearm storage device TPT exemption bill.",
+          "record_kind": "sponsor",
+          "actor_quote": "Gress (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is Representative Gress's prime sponsorship of and vote for HB 2635 (2025), a bill creating a sales-tax exemption for 'Sales of safe firearm storage devices.' That provision addresses taxation of storage equipment, not any rung's clause on who may own firearms, which weapon types are restricted, background checks, or carry permits, so it is adjacent to the ladder's question of 'How should the government regulate firearms?' No passage establishes a chair.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

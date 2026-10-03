@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "7cbbaca8-97e0-5214-9675-e80abe3cb28c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": "A school corporation or charter school may not make available materials that contain: (1) obscene matter (as described in IC 35-49-2-1); or (2) matter harmful to minors (as described in IC 35-49-2-2); within the school library.",
+          "note": "HB 1447 is a multi-subject 'education matters' bill bundling Muncie-corporation flexibility, student-survey privacy, this library-removal provision, curriculum neutrality, and obscenity-law defenses.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "86b38e1c-3fd5-5db9-8f93-27bf535708a6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Bill-details page names Donato as a Senate sponsor of the same multi-subject HB 1447; sponsorship alone does not show support for the library-removal clause specifically.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "551555f4-acd5-531c-b22e-8500eb58160c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Senate Roll Call 520 shows Donato voting Yea on the Conference Committee Report (final passage) of the multi-subject HB 1447, with no explanation of vote tying it to the library provision.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Messmer Young",
+          "tally_quote": "Yea 39 Education matters. Nay 10"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 1447 (2023) is a multi-subject 'education matters' bill combining Muncie Community School Corporation flexibility, third-party-vendor student-survey privacy, a school-library removal-request process, curriculum-neutrality rules, and obscenity-law defenses, so Donato's Senate sponsorship and her Yea vote on the Conference Committee Report prove nothing about the library-removal clause on their own. No source here shows her own words tying that vote to the library chapter, so none of the rungs, from 'Keep every book available and let professional librarians and educators curate the collection' through 'Remove any book a parent or community member reports as inappropriate, for all students', is evidenced.",
+      "needs_source": [
+        "Donato's own explanation of vote or public statement tying her Yea vote on HB 1447 (2023) to the school-library removal provision specifically"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+Written: `backend/data/stance-research/2026-10-02-shadow-montenegro-sb1413/labels/coder-1.json`
+
+**Row: Montenegro / homelessness → BLANK `compound-partial`**
+
+Three passages, all one record group on `SB 1413 (2023)`, all `own-act` / `on-question` / `record` / `vote` / `in-term` (05/15/2023 falls in his current term, 2023-01-02–present):
+
+| snapshot | role in the record | fields carried |
+|---|---|---|
+| `ecfb8093` House Third Reading | his act + tally | `actor_quote` "MONTENEGRO Y", `tally_quote` "Passed 31-27-1-0-1" |
+| `c7fb207f` bill text | the provision | `provision_quote` (the 9-500.49(A) notice-and-removal sentence) |
+| `45f5c7f6` bill overview | tally, veto, sponsors | `tally_quote` "House THIRD 05/15/2023 31-27-1-0-1 PASSED" |
+
+Shape on all three is `direction-only`, so `rests_on` is empty and no chair is seated.
+
+Reasoning for the blank: the bill is single-subject and the tally is well divided (31–27, not near-unanimous), so the vote ladder would allow a chair if a rung matched clause for clause. It doesn't. Rung 4 is compound — "Prohibiting encampments on public property, **enforced through graduated warnings and civil penalties**." SB 1413 mandates clearance (one notice, 24 hours, then seizure and cleanup) but creates no civil penalty and no graduated sequence, so clause [b] is unevidenced → `compound-partial` per V4.2. Rung 5 is excluded by the bill's own text: its criminal exposure is trespass for encampments on *private* property and existing drug offenses, not criminal penalties for public camping. Rung 3 is excluded too — no shelter-availability condition anywhere in the text.
+
+Two judgment calls worth flagging:
+- I read this as `on-question`, not preemption-`adjacent` (H12/Durazo). The state isn't allocating authority here; it's imposing a substantive statewide rule on cities and counties. Different fact pattern from SB 1174.
+- The two pages that don't name him (bill text, overview) are coded `own-act` because the codebook's record model distributes facts across pages of one record — the V3 worked example puts the voter-less bill-text page in `rests_on`, which only works if those pages clear V1.
+
+`needs_source` asks for his own words tying the vote to the enforcement mechanism, and for any record of his creating a civil or criminal penalty for public-property camping.

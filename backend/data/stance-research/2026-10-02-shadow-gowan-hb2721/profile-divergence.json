@@ -1,0 +1,73 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "hb2721(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "6048bc5d-41e2-501a-bb4b-c01ccbd5ba6e",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0197.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "hb2721(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0197.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "hb2721(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2721#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0197.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

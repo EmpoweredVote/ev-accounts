@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "50d00238-5334-4616-ac43-72375f53df71",
+      "office_id": "ae116c94-7533-46d0-aa81-20106f5cb572",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "3572370e-a6b6-5c8e-86fa-80fff3553f34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call on HCR2060; Gillette voted Yea on this multi-subject border-security referendum.",
+          "record_kind": "vote",
+          "actor_quote": "DUNN Y GILLETTE Y GRANTHAM Y",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "73523759-920c-580b-819b-75e0df267be1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Bill history page confirms the same House Final vote tally for HCR2060, with no name-level detail.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "31-29-0-0-0 PASSED"
+        },
+        {
+          "snapshot_id": "5d7cfa43-a906-5a3c-aee4-81f846261d04",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "This section may only be enforced prospectively. This section does not apply retroactively and shall not be construed to apply to the conduct of any person who entered this state unlawfully from a foreign nation at any time before this section becomes enforceable.",
+          "note": "Bill text shows the new illegal-entry/return-to-home-nation article applies only prospectively, not to those who entered before enforceability, alongside unrelated fentanyl, benefits-fraud and e-verify provisions.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HCR2060 ('Secure the Border Act') is a multi-subject referendum bundling fentanyl-sale penalties, public-benefits document-fraud crimes, e-verify fraud, and a new prospective-only illegal-entry crime with a court-ordered return to the person's home nation. Gillette's Yea vote on House Final passage, without his own statement tying that vote specifically to the illegal-entry/return provisions, proves direction at most and cannot by itself establish which rung — from 'Stop deportations entirely' to 'Carry out a mass-deportation program... including long-settled families and workers' — he holds.",
+      "needs_source": ["Gillette's own statement, floor explanation, or sponsor-level act tying his HCR2060 vote specifically to the illegal-entry/return-to-foreign-nation provisions (13-4295.01-13-4295.06), separate from the bill's fentanyl, benefits-fraud and e-verify provisions"],
+      "quotes": []
+    }
+  ]
+}

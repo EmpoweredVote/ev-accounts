@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "the pregnancy is a result of rape or incest;",
+          "note": "Enrolled bill text amending IC 16-34-2-1; prints the operative exceptions but not the voter list.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c763f996-7d8a-59a6-a265-68994f093b9a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate roll call 58 on concurrence; Holdman is listed among the Yea votes.",
+          "record_kind": "vote",
+          "actor_quote": "Bray Crider Holdman Rogers",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        },
+        {
+          "snapshot_id": "ed2da438-9790-5cc8-9b32-9b6647c5a263",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill tracking/digest page; names the author and sponsors but not Holdman, and is a paraphrase summary rather than his own act or words.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+        "c763f996-7d8a-59a6-a265-68994f093b9a"
+      ],
+      "reasoning": "Holdman voted Yea on SB 1(ss) (2022 First Special Session), a single-subject abortion bill whose amended IC 16-34-2-1 makes abortion a criminal act except for a serious health risk to the pregnant woman or to save her life, a lethal fetal anomaly before 20 weeks, or when 'the pregnancy is a result of rape or incest.' This matches the rung banning abortion except in cases of rape, incest, or a serious risk to the mother's life, and excludes the rungs that keep abortion legal through a trimester or ban it with no exceptions.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

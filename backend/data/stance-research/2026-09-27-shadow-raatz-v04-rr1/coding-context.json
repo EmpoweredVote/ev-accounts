@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-27-shadow-raatz-v04-rr1",
+  "seat": {
+    "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+    "full_name": "Jeff Raatz",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "d4ace730-3f85-4533-bedb-0f3d87127aa3",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2014-11-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+      "topic_key": "education-gender-identity",
+      "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+      "question_text": "What should schools do when a student uses a different name or gender identity at school than at home?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Use the student's chosen name and pronouns, and keep their gender identity from parents unless the student agrees to share it"
+        },
+        {
+          "value": 2,
+          "text": "Use the student's chosen name and pronouns, and tell parents only if they directly ask"
+        },
+        {
+          "value": 3,
+          "text": "Tell parents when a student changes their name or gender at school, unless staff believe it would put the student in danger"
+        },
+        {
+          "value": 4,
+          "text": "Require staff to notify parents whenever a student asks to be treated as a different gender at school"
+        },
+        {
+          "value": 5,
+          "text": "Require written parental permission before staff use a student's chosen name or pronouns"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

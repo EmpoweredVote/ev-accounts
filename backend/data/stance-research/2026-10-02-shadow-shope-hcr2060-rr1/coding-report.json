@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Shope's own words or a further record stating whom Arizona should remove beyond new unlawful entrants, to separate \"Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place\" from \"Deport all undocumented immigrants, starting with those who have criminal records\"",
+          "Shope's own floor statement or explanation of vote on HCR2060 tying his Yea specifically to the Article 35 illegal-entry/removal provision rather than the bundled benefits-fraud, e-verify, or fentanyl provisions",
+          "A statement from Shope tying his Senate Third Reading vote specifically to the illegal-entry/removal provision (13-4295.01-.03), to resolve the multi-subject vote"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "Shope's own words or a further record stating whom Arizona should remove beyond new unlawful entrants, to separate \"Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place\" from \"Deport all undocumented immigrants, starting with those who have criminal records\"",
+        "Shope's own floor statement or explanation of vote on HCR2060 tying his Yea specifically to the Article 35 illegal-entry/removal provision rather than the bundled benefits-fraud, e-verify, or fentanyl provisions",
+        "A statement from Shope tying his Senate Third Reading vote specifically to the illegal-entry/removal provision (13-4295.01-.03), to resolve the multi-subject vote"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

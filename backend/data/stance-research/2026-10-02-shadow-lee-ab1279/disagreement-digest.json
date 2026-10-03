@@ -1,0 +1,95 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 2,
+      "split_units": 2,
+      "alpha": -0.25,
+      "examples": [
+        {
+          "unit": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c#be93f3c4-6cf6-5747-940c-bca5f19862e9",
+          "values": [
+            "on-question",
+            "adjacent",
+            "on-question"
+          ]
+        },
+        {
+          "unit": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c#d684a2cc-ce7b-5bf2-9d9b-42a414539c46",
+          "values": [
+            "on-question",
+            "adjacent",
+            "on-question"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 2,
+      "split_units": 2,
+      "alpha": -0.25,
+      "examples": [
+        {
+          "unit": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c#be93f3c4-6cf6-5747-940c-bca5f19862e9",
+          "values": [
+            "direction-only",
+            "study-directive",
+            "chair-shaped"
+          ]
+        },
+        {
+          "unit": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c#d684a2cc-ce7b-5bf2-9d9b-42a414539c46",
+          "values": [
+            "direction-only",
+            "study-directive",
+            "chair-shaped"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+          "values": [
+            "BLANK",
+            "BLANK",
+            "1"
+          ]
+        }
+      ]
+    }
+  ],
+  "ranked": [
+    "v2_relevance",
+    "v4_shape",
+    "v6_chair"
+  ]
+}

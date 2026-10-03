@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "0ac7beee-f298-4d41-8981-30c3c307fe3d|8c909ec7-73d2-4488-8eb5-a72f4746f32b|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Diaz's own act on an Arizona bill whose limit matches a rung boundary - e.g. his roll-call vote on repealing A.R.S. section 13-3603 (HB 2677, 56th Legislature, 2024)",
+          "Diaz's own words on where the gestational limit should fall and on rape/incest exceptions (questionnaire, floor statement or explanation of vote)",
+          "Diaz's own floor statement or public comment explaining whether the 15-week/medical-emergency standard reflects a first-trimester or second-trimester position"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "0ac7beee-f298-4d41-8981-30c3c307fe3d|8c909ec7-73d2-4488-8eb5-a72f4746f32b|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Diaz's own act on an Arizona bill whose limit matches a rung boundary - e.g. his roll-call vote on repealing A.R.S. section 13-3603 (HB 2677, 56th Legislature, 2024)",
+        "Diaz's own words on where the gestational limit should fall and on rape/incest exceptions (questionnaire, floor statement or explanation of vote)",
+        "Diaz's own floor statement or public comment explaining whether the 15-week/medical-emergency standard reflects a first-trimester or second-trimester position"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

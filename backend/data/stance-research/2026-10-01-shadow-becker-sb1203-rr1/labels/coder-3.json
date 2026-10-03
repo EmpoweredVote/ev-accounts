@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "1de9f4db-a9ca-53e2-8314-82ab64756ac4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1203 (2021-2022)",
+          "provision_quote": "It is the intent of the Legislature that all state agencies aim to achieve net-zero emissions of greenhouse gases resulting from their operations, including scope 1 and scope 2 emissions, no later than January 1, 2035, or as soon as feasible thereafter.",
+          "note": "A net-zero emissions target for state agency operations names no energy source and can be met by means other than a clean-energy mandate (H17).",
+          "record_kind": "author",
+          "actor_quote": "SB 1203, Becker.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 1203 (2021-2022), authored by Becker, declares legislative intent that state agencies 'achieve net-zero emissions of greenhouse gases resulting from their operations ... no later than January 1, 2035' and requires inventories, plans, and reports toward that goal. Per H17, an emissions-reduction goal that names no energy source can be met by means other than 'a shift to clean energy,' so this establishes only the pro-action side, not rung 1's clean-energy-mandate clause or any other rung's clause.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

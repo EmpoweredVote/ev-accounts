@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "8e776ba8-1843-50fc-841e-7107d265564e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "The general assembly may amend the congressional districts",
+          "note": "Bill text, authored by Smaltz, has the general assembly draw districts directly while limiting but not eliminating court review of apportionment challenges.",
+          "record_kind": "author",
+          "actor_quote": "Smaltz December 1, 2025, read first time and referred to Committee on Elections and Apportionment.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "dd516298-029b-58eb-a741-716f341447af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "IGA bill details page identifies Smaltz as author of HB 1032, a congressional redistricting bill.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Ben Smaltz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "17ad74dc-278e-53f9-91c5-37b3dbc6a486",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "House roll call 28 shows Smaltz voting Yea on final passage of HB 1032, which passed 57-41.",
+          "record_kind": "vote",
+          "actor_quote": "Smaltz",
+          "tally_quote": "Yea 57 Nay 41"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Smaltz authored and voted Yea on HB 1032 (2026), under which the general assembly may amend the congressional districts itself and establishes new congressional districts by statute, while restricting but not eliminating judicial review of apportionment challenges (barring temporary restraining orders and channeling appeals to the supreme court with automatic stays). This shows legislative control of map-drawing but does not establish whether the remaining court role is oversight 'to prevent extreme partisan bias' or amounts to drawing maps 'without outside interference', since the supreme court retains jurisdiction over constitutionality.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

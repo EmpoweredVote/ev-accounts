@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "54bf0425-8d31-5ced-8b4d-f6ffea98d6d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "the judge shall enter an order that requires the person to return to the foreign nation from which the person entered or attempted to enter the United States or the person's nation of origin",
+          "note": "Bill's removal-order mechanism applies only prospectively; bundled with unrelated benefits-fraud, e-verify and fentanyl-sentencing provisions.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "022d8b7f-14e4-5f50-95fc-77e10a1558ea",
+          "v1_attribution": "namesake-unclear",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": "2024-06-04",
+          "v4_shape": "procedural",
+          "v5_time": "undated",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview page lists only the prime sponsor (Toma) and chamber-level tallies, not Shope by name.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "152ec81f-c8ab-5494-8b68-711193f672d5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading roll call; Shope voted Y on final passage of a multi-provision bill.",
+          "record_kind": "vote",
+          "actor_quote": "SHOPE Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "HCR2060 (2024) creates a new illegal-entry crime and a court-ordered removal mechanism ('the judge shall enter an order that requires the person to return to the foreign nation'), on which Shope voted Y at Senate Third Reading ('SHOPE Y', 'Passed 16-13-1-0-0'). But final passage bundles this with unrelated benefits-fraud, e-verify and fentanyl-sentencing provisions, and the removal section's prospective-only limit is a standard non-retroactivity rule rather than a stated choice to leave long-settled immigrants in place, so the vote shows only a pro-enforcement direction, not a specific rung of the deportation ladder.",
+      "needs_source": [
+        "A statement from Shope tying his Senate Third Reading vote specifically to the illegal-entry/removal provision (13-4295.01-.03), to resolve the multi-subject vote"
+      ],
+      "quotes": []
+    }
+  ]
+}

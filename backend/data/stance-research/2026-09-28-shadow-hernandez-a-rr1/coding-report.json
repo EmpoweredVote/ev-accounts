@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "topic_key": "education-curriculum",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Alma Hernandez's own words answering how Arizona schools should teach race, gender and contested history (questionnaire, debate answer, or first-person issue page)",
+          "An Arizona Legislature record of her acting on a curriculum instrument that names race, gender or diverse identities (bill page plus roll call)",
+          "A statement or record from Hernandez addressing race, gender, or sexuality curriculum content specifically, as opposed to the Holocaust/genocide instruction mandate"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "requests": [
+        "Alma Hernandez's own words answering how Arizona schools should teach race, gender and contested history (questionnaire, debate answer, or first-person issue page)",
+        "An Arizona Legislature record of her acting on a curriculum instrument that names race, gender or diverse identities (bill page plus roll call)",
+        "A statement or record from Hernandez addressing race, gender, or sexuality curriculum content specifically, as opposed to the Holocaust/genocide instruction mandate"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,76 @@
+{
+  "batch_id": "2026-09-28-shadow-petersen-rr1",
+  "seat": {
+    "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+    "full_name": "Warren Petersen",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2017-01-09",
+        "start_precision": "day",
+        "term_end": "2019-01-14"
+      },
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2019-01-14",
+        "start_precision": "day",
+        "term_end": "2021-01-11"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2021-01-11",
+        "start_precision": "day",
+        "term_end": "2023-01-08"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "question_text": "How should the law handle abortion?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "keep abortion legal at every stage of pregnancy, with no time limit."
+        },
+        {
+          "value": 2,
+          "text": "keep abortion legal through the second trimester, and after that only to protect the mother's health."
+        },
+        {
+          "value": 3,
+          "text": "allow abortion during the first trimester, and after that only to protect the mother's health."
+        },
+        {
+          "value": 4,
+          "text": "ban abortion except in cases of rape, incest, or a serious risk to the mother's life."
+        },
+        {
+          "value": 5,
+          "text": "ban abortion in all cases, with no exceptions."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

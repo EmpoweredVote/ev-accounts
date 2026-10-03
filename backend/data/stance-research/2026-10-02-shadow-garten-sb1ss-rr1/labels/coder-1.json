@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
+      "office_id": "b93ba475-ef99-4209-be1d-28cc3eae2399",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "2d98cb03-ae4d-58a1-829a-58039d7da041",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate roll call 58, the concurrence vote that sent the abortion bill to the governor; Garten is in the Yea list and the 28-19 split is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Y EA - 28 Baldwin Byrne Garten Mishler",
+          "tally_quote": "Roll Call 58: Motion Passed SB 1(ss) - Glick Yea 28 Abortion. Nay 19 Concurrence"
+        },
+        {
+          "snapshot_id": "6ee430d7-d418-55b6-9c18-c3af1da5167f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "a criminal act, except when performed under the following circumstances:",
+          "note": "Enrolled act text: the operative section makes abortion criminal except for a serious health risk or to save the woman's life, a lethal fetal anomaly, and rape or incest.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e5a9c198-8499-5f12-ae69-c2c51d8155fb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill details page for the same instrument: single-subject (\"Abortion\"), enacted as Public Law 179(ss) on 08/05/2022.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "2d98cb03-ae4d-58a1-829a-58039d7da041",
+        "6ee430d7-d418-55b6-9c18-c3af1da5167f",
+        "e5a9c198-8499-5f12-ae69-c2c51d8155fb"
+      ],
+      "reasoning": "Garten voted Yea on the concurrence motion for SB 1(ss) (2022 First Special Session), a single-subject abortion bill whose operative section makes abortion \"a criminal act, except when performed under the following circumstances:\" and then limits those circumstances to an abortion \"necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life\", a case where \"the fetus is diagnosed with a lethal fetal anomaly\", and a case where \"the pregnancy is a result of rape or incest\". That operative content matches the rung \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\", and the enumerated exceptions exclude \"ban abortion in all cases, with no exceptions\". It also excludes \"allow abortion during the first trimester, and after that only to protect the mother's health\", because the bill permits no elective first-trimester abortion.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

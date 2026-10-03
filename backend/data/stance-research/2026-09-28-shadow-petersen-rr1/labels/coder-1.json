@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": null,
+          "note": "Senate Final Reading #2 vote page; names the voter and the count but prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "PESHLAKAI N PETERSEN Y QUEZADA N",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": "Performs an abortion knowing that the abortion is sought solely because of a genetic abnormality of the child.",
+          "note": "Chaptered text of the bill he voted for and co-sponsored; it restricts abortion by the reason sought, not by stage of pregnancy or by an exception set.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview page listing him as a co-sponsor; it prints no provision and no tally.",
+          "record_kind": "sponsor",
+          "actor_quote": "Petersen (Co-Sponsor)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Petersen co-sponsored SB1457 (2021) and voted Aye on its Senate Final Reading, a bill that makes it a felony to perform an abortion knowing \"the abortion is sought solely because of a genetic abnormality of the child.\" That is a restriction keyed to the reason for the abortion at any stage, so it does not choose between \"allow abortion during the first trimester, and after that only to protect the mother's health\", \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\", and \"ban abortion in all cases, with no exceptions\". The record places him on the restrictive side and no further, so the row is blank.",
+      "needs_source": [
+        "An Arizona roll call or sponsorship by Warren Petersen on a bill that sets a gestational limit for abortion (a stage-of-pregnancy threshold)",
+        "An Arizona roll call or sponsorship by Warren Petersen on a bill that sets the exception set for an abortion ban (rape, incest, risk to the mother's life)",
+        "Warren Petersen's own words, in a questionnaire, debate answer or first-person issue page, on which stage limit and which exceptions the law should have"
+      ],
+      "quotes": []
+    }
+  ]
+}

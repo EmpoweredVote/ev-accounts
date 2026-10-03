@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A California bill Alex Lee authored, sponsored or voted on whose operative text itself requires clean energy by mandate and deadline (an RPS or 100-percent-clean-electricity measure), with the leginfo vote page and bill text",
+          "Alex Lee's own words answering how much government should do to expand clean energy (questionnaire, debate answer, or first-person issue page), dated within his Assembly service or a campaign for it",
+          "A clean-energy-specific instrument (e.g., a renewable portfolio standard mandate, a clean-energy subsidy or tax-credit bill, or a permitting-streamlining bill) authored, sponsored, or voted on by Alex Lee as an Assembly Member."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "A California bill Alex Lee authored, sponsored or voted on whose operative text itself requires clean energy by mandate and deadline (an RPS or 100-percent-clean-electricity measure), with the leginfo vote page and bill text",
+        "Alex Lee's own words answering how much government should do to expand clean energy (questionnaire, debate answer, or first-person issue page), dated within his Assembly service or a campaign for it",
+        "A clean-energy-specific instrument (e.g., a renewable portfolio standard mandate, a clean-energy subsidy or tax-credit bill, or a permitting-streamlining bill) authored, sponsored, or voted on by Alex Lee as an Assembly Member."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

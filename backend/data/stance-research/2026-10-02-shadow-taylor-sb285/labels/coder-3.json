@@ -1,0 +1,54 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "6b6368a1-354d-4f28-9232-a6ec70198ab8",
+      "office_id": "085054aa-8e66-46c3-a41d-18e75de7eab6",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Taylor's floor remarks oppose the bill's enforcement mechanics and favor housing, but do not match clauses of one rung over the adjacent ones.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Taylor's quoted floor remarks criticize the bill's 300-foot radius and $500 fine and call for housing solutions instead, showing opposition to this punitive bill, but they do not commit to which of rungs 1-3 (no penalties, decriminalize, or shelter-conditioned enforcement with diversion) he would choose; this is direction only, not chair-shaped.",
+      "needs_source": [
+        "Senate roll call / concurrence vote showing Taylor's own vote on the public camping ban bill, with bill number and tally"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "text": "Why would you prescribe any distance away?",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "text": "What I think we should be working on is finding a place for the unhoused to be housed. This is a bill that looks for a place for the unhoused to remain unhoused, because you can actually move 300 feet and not violate this law.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}
