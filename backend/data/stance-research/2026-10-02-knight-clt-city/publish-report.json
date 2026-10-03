@@ -13,5 +13,35 @@
     ],
     "failed_urls": [],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Dimple Ajmera",
+    "topic_key": "climate-change",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.wfae.org/politics/2018-06-15/city-considers-goal-of-eliminating-carbon-emissions-by-2030"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Reneé Johnson",
+    "topic_key": "residential-zoning",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.wfae.org/politics/2023-05-23/tempers-flare-as-city-council-votes-to-revisit-duplex-and-triplex-rules"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   }
 ]

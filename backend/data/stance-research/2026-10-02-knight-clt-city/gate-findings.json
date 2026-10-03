@@ -6,14 +6,28 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Dimple Ajmera",
+      "topic_key": "climate-change",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Reneé Johnson",
+      "topic_key": "residential-zoning",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 224,
+    "rows": 227,
     "high": 0,
-    "medium": 1,
+    "medium": 3,
     "by_check": {
-      "statement-needs-review": 1
+      "statement-needs-review": 3
     }
   }
 }
