@@ -25,6 +25,9 @@ The items that prompted it are not named here, for the same reason as H13 and H1
 **Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4 "A study
 directive that states its goal", with register row H16. It decides which existing blank reason a
 `study-directive` row takes; it changes no chair. The item that prompted it is not named here.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4.2 "The rung's
+object is a clause", with register row H17 and its `climate-change` example. The items that prompted it
+are not named here.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -324,6 +327,16 @@ A vote does not mean support for every clause of a bill.
   "strengthen enforcement". This is the same fault as reaching for "the least extreme option the
   reasoning supports" (CLAUDE.md): a tiebreaker, not evidence. → `direction-only`, or
   `compound-partial` when the rung is compound and one clause is met.
+- **The rung's object is a clause (H17, ruling 2026-10-02).** A rung says *what* the government acts on,
+  not only *how*. A mandate with a firm deadline matches the mechanism of `climate-change` rung 1,
+  "Require a shift to **clean energy** through mandates and firm deadlines", only when the thing it
+  mandates is clean energy.
+  - A renewable-procurement standard with dated targets ("44 percent by December 31, 2024 … 60 percent
+    by December 31, 2030" of retail sales from eligible renewable resources) → rung 1, `chair-shaped`.
+  - A greenhouse-gas emissions limit ("reduced to at least 40 percent below … no later than December
+    31, 2030"), or a declared net-zero policy that names carbon capture and removal as paths, names no
+    energy source; it can be met in other ways → BLANK `direction-only` (the pro-action side).
+  - The same test applies on every ladder: match the rung's object, not only its verb.
 
 **Good (calibration A1).** A prime-sponsored bill that *is* "a moratorium on new data centres until the
 utility commission reports". Rung 1 is a moratorium. → `chair-shaped`.
@@ -629,6 +642,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 | H14 | A chair reached by excluding every other rung, with the remaining rung's clause unmatched | BLANK `direction-only` / `compound-partial` | V4.2 "Ruling out the other rungs" | gold round 5 (item withheld; coded before this entry) |
 | H15 | A news sentence that reports the person's vote or authorship, coded as a `record` | the quoted words → `statement-other`; the reported act → context only, `needs_source` | V3 "A record reported only by news" | gold round 14 (items withheld; coded before this entry) |
 | H16 | A study directive whose findings or stated objective endorse a side, coded `no-evidence` | BLANK `direction-only` (a study with no stated outcome stays `no-evidence`) | V4.1 "A study directive that states its goal" | gold round 15 (item withheld; coded before this entry) |
+| H17 | An emissions limit coded as `climate-change` rung 1 ("a shift to clean energy") | BLANK `direction-only`; a renewable-procurement standard with dates stays rung 1 | V4.2 "The rung's object is a clause" | gold round 17 (items withheld; coded before this entry) |
 
 ---
 
