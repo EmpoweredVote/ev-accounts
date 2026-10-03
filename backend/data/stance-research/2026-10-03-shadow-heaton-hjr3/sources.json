@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-10-03-shadow-heaton-hjr3",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2014/resolutions/house/joint/3/details",
+      "source_kind": "public-record",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [
+        "HJR 3 (2014)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2014-hjr3-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/rollcalls/HJ0003.70_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [
+        "HJR 3 (2014)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2014-hjr3-rc70.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/HJ0003.05.ENGH.pdf",
+      "source_kind": "public-record",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [
+        "HJR 3 (2014)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2014-hjr3-engrossed.txt"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+    "instrument": "hjr3(2014)",
+    "snapshots": [
+      {
+        "snapshot_id": "bcc0ba5a-0c29-56b2-bd9a-f0ee074bf16c",
+        "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/rollcalls/HJ0003.70_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "a09e6e64-9bac-5f53-a71c-f4c5a535f032",
+        "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/HJ0003.05.ENGH.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "c2cfac75-8f4e-5604-8a3b-425e61a7df7d",
+        "url": "https://iga.in.gov/legislative/2014/resolutions/house/joint/3/details",
+        "profile": "in-iga-bill-details@4"
+      }
+    ],
+    "generic": [
+      "instrument-mismatch",
+      "name-collision"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+    "instrument": "hjr3(2014)",
+    "snapshots": [
+      {
+        "snapshot_id": "bcc0ba5a-0c29-56b2-bd9a-f0ee074bf16c",
+        "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/rollcalls/HJ0003.70_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "a09e6e64-9bac-5f53-a71c-f4c5a535f032",
+        "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/HJ0003.05.ENGH.pdf",
+        "profile": "in-iga-roll-call@2"
+      }
+    ],
+    "generic": [
+      "instrument-mismatch",
+      "name-collision"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+    "instrument": "hjr3(2014)",
+    "snapshots": [
+      {
+        "snapshot_id": "a09e6e64-9bac-5f53-a71c-f4c5a535f032",
+        "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/HJ0003.05.ENGH.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "bcc0ba5a-0c29-56b2-bd9a-f0ee074bf16c",
+        "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/rollcalls/HJ0003.70_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      }
+    ],
+    "generic": [
+      "instrument-mismatch",
+      "name-collision"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  }
+]

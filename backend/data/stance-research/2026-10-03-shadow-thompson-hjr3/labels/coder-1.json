@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "3688a87d-4b4c-400c-ab5a-52c90896ef2f",
+      "office_id": "219c260d-1781-43a6-a04d-7567f113db2b",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "bcc0ba5a-0c29-56b2-bd9a-f0ee074bf16c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014-01-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "Third reading passage in the Indiana House; only one Thompson appears anywhere on this roll call and the page prints no initial.",
+          "record_kind": "vote",
+          "actor_quote": "Behning Harman Morris Thompson",
+          "tally_quote": "Yea 57 Nay 40 Excused 3 Not Voting 0"
+        },
+        {
+          "snapshot_id": "a09e6e64-9bac-5f53-a71c-f4c5a535f032",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": "Section 38. Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.",
+          "note": "Engrossed text of the resolution he voted on; the bracketed deletions on this page are printing-code boilerplate, not provisions.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c2cfac75-8f4e-5604-8a3b-425e61a7df7d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "Instrument page for the same record; it prints a digest rather than the operative section, and it does not name Thompson among the authors.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "bcc0ba5a-0c29-56b2-bd9a-f0ee074bf16c",
+        "a09e6e64-9bac-5f53-a71c-f4c5a535f032"
+      ],
+      "reasoning": "Thompson voted Yea on third reading of HJR 3 (2014), a single-subject joint resolution whose operative text adds to the Indiana Constitution: \"Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.\" That text defines marriage as only between one man and one woman and bars any same-sex marriage from being valid or recognized in the state, matching the rung \"Make same-sex marriage illegal and define marriage as only between one man and one woman.\" The tally of 57 to 40 is not near-unanimous, and the resolution's only subject is marriage, so the vote is not multi-subject.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}
