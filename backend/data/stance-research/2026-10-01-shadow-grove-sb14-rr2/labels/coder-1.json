@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3",
+      "office_id": "e38cdc56-9228-456b-ba4c-3fc0ab72f6cd",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "638a85ea-c93a-58f7-82e7-a136ae37daff",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-25",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 14 (2023-2024)",
+          "provision_quote": "(42) human trafficking of a minor, in violation of subdivision (c) of Section 236.1, except, with respect to a violation of paragraph (1) of subdivision (c) of Section 236.1, where the person who committed the offense was a victim of human trafficking, as described in subdivision (b) or (c) of Section 236.1, at the time of the offense; and",
+          "note": "Authored bill adding one offense to the serious-felony list for Three Strikes purposes, which shows direction toward consequences but not a general orientation (annex hard case \"One offense\").",
+          "record_kind": "author",
+          "actor_quote": "SB 14, Grove. Serious felonies: human trafficking.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Grove authored SB 14 (2023-2024), which adds \"human trafficking of a minor\" to the Penal Code's serious-felony list, expanding a sentencing enhancement for that one offense. Raising the penalty for a single offense points toward the side that says \"Breaking the law needs to have real consequences\" but cannot show whether accountability is her priority across lawbreaking generally, nor distinguish it from \"Impose the toughest penalties the law allows\" or from \"Each situation is different.\" The annex rules that a bill changing the penalty for one offense is direction-only.",
+      "needs_source": [
+        "Shannon Grove's own words stating a general orientation to the response to lawbreaking (candidate questionnaire, issue page, or floor statement), in the current term or seating campaign",
+        "California Senate roll call for SB 14 (2023-2024), final passage, showing Grove's vote and the tally"
+      ],
+      "quotes": []
+    }
+  ]
+}

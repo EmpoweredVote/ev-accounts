@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Becker's own words (questionnaire, issue page or debate answer) on whether AI systems should be safety-tested before use in high-stakes areas, or on developer liability for harm",
+          "A Becker-authored or Becker-voted California instrument creating liability for harm caused by an AI system, or requiring pre-use testing of AI in consequential-decision areas (bill text plus the Senate vote page with the Aye/No list and the tally)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|666bf03d-81fc-4138-ab15-69ae734c9023",
+      "requests": [
+        "Becker's own words (questionnaire, issue page or debate answer) on whether AI systems should be safety-tested before use in high-stakes areas, or on developer liability for harm",
+        "A Becker-authored or Becker-voted California instrument creating liability for harm caused by an AI system, or requiring pre-use testing of AI in consequential-decision areas (bill text plus the Senate vote page with the Aye/No list and the tally)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,75 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 3,
+      "alpha": -0.33333333333333326,
+      "examples": [
+        {
+          "unit": "8edebfca-2e35-4424-85f8-f3ad498a2890|74f6255e-04a3-481e-9a90-9fabcd9697f0|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529#aec5f209-e03b-5705-a1a8-8608e15eada5",
+          "values": [
+            "off-axis",
+            "study-directive",
+            "off-axis"
+          ]
+        },
+        {
+          "unit": "8edebfca-2e35-4424-85f8-f3ad498a2890|74f6255e-04a3-481e-9a90-9fabcd9697f0|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529#a58fdf07-8f73-57c1-9fe5-b7c363562a0f",
+          "values": [
+            "off-axis",
+            "study-directive",
+            "off-axis"
+          ]
+        },
+        {
+          "unit": "8edebfca-2e35-4424-85f8-f3ad498a2890|74f6255e-04a3-481e-9a90-9fabcd9697f0|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529#36c9d9a3-c4b0-5cfc-b18e-d791b9234e25",
+          "values": [
+            "off-axis",
+            "study-directive",
+            "off-axis"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v4_shape"
+  ]
+}

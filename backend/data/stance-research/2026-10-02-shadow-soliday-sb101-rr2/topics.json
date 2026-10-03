@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+    "topic_key": "religious-freedom",
+    "topic_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+    "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+    "question_number": 32,
+    "title": "Religious Freedom",
+    "question_text": "How should the law balance religious freedom with protection from discrimination?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "prohibit religious exemptions from civil rights and anti-discrimination laws."
+      },
+      {
+        "value": 2,
+        "text": "protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing."
+      },
+      {
+        "value": 3,
+        "text": "balance protecting religious practices with maintaining equal treatment under the law for all citizens."
+      },
+      {
+        "value": 4,
+        "text": "protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs."
+      },
+      {
+        "value": 5,
+        "text": "strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

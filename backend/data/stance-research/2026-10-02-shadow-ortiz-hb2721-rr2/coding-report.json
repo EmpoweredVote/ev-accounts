@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8|61fd47dd-1cd3-4be9-a53e-2558dd662edf|669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Her own first-person words on rent caps, required affordable units, housing subsidies or public housing, from her current Senate term or the campaign that seated her",
+          "An AZ Legislature roll call or sponsorship by Ortiz on a rent-regulation or inclusionary-requirement bill (to test rung 3 clause [b] and rung 4 clause [a])",
+          "An AZ Legislature roll call or sponsorship by Ortiz on a housing trust fund, state low-income housing tax credit or affordable-construction appropriation (to test rung 4 clauses [b] and [c])",
+          "apps.azleg.gov BillStatus vote detail for HB2721 House THIRD #2, 03/12/2024, 36-18-6-0-0 (second recorded Ortiz vote on this instrument)",
+          "Ortiz's own words rejecting public housing, binding rent/affordability rules, and subsidies, to establish the rung-5 ceiling beyond direction-only"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8|61fd47dd-1cd3-4be9-a53e-2558dd662edf|669cac97-66a6-4087-b036-936fbe62efb3",
+      "requests": [
+        "Her own first-person words on rent caps, required affordable units, housing subsidies or public housing, from her current Senate term or the campaign that seated her",
+        "An AZ Legislature roll call or sponsorship by Ortiz on a rent-regulation or inclusionary-requirement bill (to test rung 3 clause [b] and rung 4 clause [a])",
+        "An AZ Legislature roll call or sponsorship by Ortiz on a housing trust fund, state low-income housing tax credit or affordable-construction appropriation (to test rung 4 clauses [b] and [c])",
+        "apps.azleg.gov BillStatus vote detail for HB2721 House THIRD #2, 03/12/2024, 36-18-6-0-0 (second recorded Ortiz vote on this instrument)",
+        "Ortiz's own words rejecting public housing, binding rent/affordability rules, and subsidies, to establish the rung-5 ceiling beyond direction-only"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

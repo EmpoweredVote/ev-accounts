@@ -1,0 +1,57 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "25becdfe-46ec-4a8a-88ec-8c85eed418b5|109811e6-4a7d-4293-88d9-6dd9b90edd98|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 4,
+        "shared_sources": [
+          "909c3da5-0b10-5bcb-8764-7ae863bde3be",
+          "c81f9d6a-5163-5e81-8afc-bf71e435f87d"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "in-iga-bill-details@4",
+        "in-iga-roll-call@2"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

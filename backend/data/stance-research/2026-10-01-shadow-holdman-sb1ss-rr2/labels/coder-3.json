@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "ed2da438-9790-5cc8-9b32-9b6647c5a263",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill details digest names Glick as author and McNamara/King as sponsors; it does not name Holdman or show his own act, so it cannot carry his chair.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "the pregnancy is a result of rape or incest",
+          "note": "Enrolled act's IC 16-34-2-1 makes abortion a criminal act except for serious health risk or to save the mother's life, a lethal fetal anomaly, or when the pregnancy is a result of rape or incest; matches the rung's ban-with-exceptions structure.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c763f996-7d8a-59a6-a265-68994f093b9a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate Roll Call 58 on concurrence with SB 1(ss); Holdman is listed among the 28 Yea votes.",
+          "record_kind": "vote",
+          "actor_quote": "Bray Crider Holdman Rogers",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+        "c763f996-7d8a-59a6-a265-68994f093b9a"
+      ],
+      "reasoning": "Holdman voted Yea on concurrence with SB 1(ss) (2022 Special Session), whose enrolled text amends IC 16-34-2-1 so abortion is a criminal act except when necessary to prevent a serious health risk or save the mother's life, when the fetus has a lethal fetal anomaly, or when 'the pregnancy is a result of rape or incest.' This ban-with-exceptions structure matches the rung text 'ban abortion except in cases of rape, incest, or a serious risk to the mother's life.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "c763f996-7d8a-59a6-a265-68994f093b9a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate roll call 58, a concurrence vote adopting the final text of a single-subject abortion act, not one of the procedural motions V4 lists.",
+          "record_kind": "vote",
+          "actor_quote": "Bray Crider Holdman Rogers",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        },
+        {
+          "snapshot_id": "ed2da438-9790-5cc8-9b32-9b6647c5a263",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill-details page for the same instrument, showing it became law the day of the vote; its digest is a summary, not the operative text, so no provision is quoted from it.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "a criminal act, except when performed under the following circumstances:",
+          "note": "Enrolled act, IC 16-34-2-1(a) as amended: the operative rule is a ban from the start of pregnancy with enumerated exceptions.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "(A) for reasons based upon the professional, medical judgment of the pregnant woman's physician, if either: (i) the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus is diagnosed with a lethal fetal anomaly;",
+          "note": "The life and serious-health-risk exception, which the same section also carries at and after viability or twenty weeks.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "if: (A) the pregnancy is a result of rape or incest;",
+          "note": "The rape-or-incest exception, which the same subdivision confines to \"during the first ten (10) weeks of postfertilization age of the fetus,\".",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "c763f996-7d8a-59a6-a265-68994f093b9a",
+        "4eacbc9c-9ae2-58c6-86cd-c3f34380faab"
+      ],
+      "reasoning": "Holdman voted Yea on SB 1(ss) (2022 First Special Session), a single-subject abortion act whose operative section (IC 16-34-2-1) makes abortion \"a criminal act, except when performed under the following circumstances:\" and then permits it where \"the pregnancy is a result of rape or incest\", where it is \"necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life\", and where \"the fetus is diagnosed with a lethal fetal anomaly\". That is a ban carrying all three of the exceptions named in \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\". It excludes \"allow abortion during the first trimester, and after that only to protect the mother's health\", because abortion is criminal from the start of pregnancy unless one of those circumstances applies, and it excludes \"ban abortion in all cases, with no exceptions\".",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

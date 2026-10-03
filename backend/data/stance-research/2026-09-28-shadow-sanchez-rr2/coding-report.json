@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "62dfefeb-9979-445a-aee6-06cf7c03a8c0|1621afeb-6cb1-4368-98db-6e18b0723faa|9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "topic_key": "judicial-criminal-justice",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Kate Sanchez's own words stating her general orientation on how the system should respond to someone who breaks the law (questionnaire, issue page, floor statement)",
+          "California Assembly roll calls on single-subject sentencing bills (penalty increases, enhancements, diversion or treatment-in-lieu measures) during the 2023-2024 and 2025-2026 sessions, with bill text showing the operative section",
+          "A Sanchez vote, sponsorship, or own-words statement addressing sentencing severity, diversion/treatment programs, or the general consequences-vs-rehabilitation orientation (not victims' notification procedure)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "62dfefeb-9979-445a-aee6-06cf7c03a8c0|1621afeb-6cb1-4368-98db-6e18b0723faa|9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "requests": [
+        "Kate Sanchez's own words stating her general orientation on how the system should respond to someone who breaks the law (questionnaire, issue page, floor statement)",
+        "California Assembly roll calls on single-subject sentencing bills (penalty increases, enhancements, diversion or treatment-in-lieu measures) during the 2023-2024 and 2025-2026 sessions, with bill text showing the operative section",
+        "A Sanchez vote, sponsorship, or own-words statement addressing sentencing severity, diversion/treatment programs, or the general consequences-vs-rehabilitation orientation (not victims' notification procedure)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

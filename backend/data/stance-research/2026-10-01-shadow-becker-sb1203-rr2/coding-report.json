@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Senate floor roll call, SB 1203 (2021-2022), final passage (actor and tally)",
+          "Becker's own words on whether a clean-energy requirement or clean-energy funding should be used",
+          "A Becker record on a renewable or clean-electricity procurement standard, a clean-energy funding programme, or permitting/grid reform"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "California Senate floor roll call, SB 1203 (2021-2022), final passage (actor and tally)",
+        "Becker's own words on whether a clean-energy requirement or clean-energy funding should be used",
+        "A Becker record on a renewable or clean-electricity procurement standard, a clean-energy funding programme, or permitting/grid reform"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

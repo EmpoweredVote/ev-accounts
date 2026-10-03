@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "office_id": "87c65dff-fa5b-4d7a-a7bc-d78595d2f506",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "passages": [
+        {
+          "snapshot_id": "1c38c4de-527d-57ee-949c-cbce3dc9c42e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2492 (2022)",
+          "provision_quote": null,
+          "note": "Pingerelli voted Aye on House Third Reading of HB 2492, a divided 31-26 vote (not near-unanimous).",
+          "record_kind": "vote",
+          "actor_quote": "PINGERELLI Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "1e5c345e-d662-58bb-b336-014c09b5b559",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2492 (2022)",
+          "provision_quote": "any application for registration shall be accompanied by satisfactory evidence of citizenship as prescribed in section 16-166, subsection F, and the county recorder or other officer in charge of elections shall reject any application for registration that is not accompanied by satisfactory evidence of citizenship.",
+          "note": "The chaptered law requires documentary evidence of citizenship before a registration application may be accepted, the clause this person's own vote enacted.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "34ecf099-bd34-5028-be0e-5353496c0867",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2492 (2022)",
+          "provision_quote": null,
+          "note": "A bill-status overview listing sponsors (Hoffman prime) and the Governor's signature; Pingerelli is not named as a sponsor, and no act of hers appears on this page.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "1c38c4de-527d-57ee-949c-cbce3dc9c42e",
+        "1e5c345e-d662-58bb-b336-014c09b5b559"
+      ],
+      "reasoning": "Pingerelli voted Aye (PINGERELLI Y) on HB 2492 (2022)'s House Third Reading, a divided 31-26 vote on a single-subject voter-registration/citizenship bill; its enacted text requires that registration applications 'be accompanied by satisfactory evidence of citizenship' and directs recorders to reject applications that lack it, matching rung 5, 'Require documentary proof of citizenship to register to vote.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

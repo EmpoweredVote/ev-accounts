@@ -1,0 +1,57 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-03-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A caucus press release: his quoted words are own-words matched to this question afterwards, while the sponsorship it reports is the caucus's account of the act (H15), and all three bills set how Arizona assists federal enforcement rather than who is removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is a caucus press release about three Kavanagh-sponsored bills — leasing the Marana Prison to the federal government, grants for local immigration training, and requiring county detention facilities to give ICE inmate information and access — each of which sets how Arizona assists federal enforcement, which the annex places on the local-immigration question rather than this ladder. His quoted words there, \"With this bill, we are supporting the federal government's deportation efforts by requiring detention facilities to supply inmate information to ICE.\", name no removal rule, and nothing in the page separates \"Only deport undocumented immigrants convicted of serious violent crimes\" from \"Deport all undocumented immigrants, starting with those who have criminal records\". The sponsorship is reported by the caucus's communications office, not by a bill page or roll call, so no record passage survives either.",
+      "needs_source": [
+        "Arizona Legislature bill text and Senate third-reading roll call, SB 1294 (2025, 57th Legislature 1st Regular Session)",
+        "Arizona Legislature bill text and Senate third-reading roll call, SB 1299 (2025, 57th Legislature 1st Regular Session)",
+        "Arizona Legislature bill text and Senate third-reading roll call, SB 1610 (2025, 57th Legislature 1st Regular Session)",
+        "Kavanagh's own words on who should be removed — whether every undocumented immigrant, or only those convicted of serious violent crimes, and whether long-settled residents are left in place"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "With this bill, we are supporting the federal government's deportation efforts by requiring detention facilities to supply inmate information to ICE.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "The federal government should have access to the empty Marana Prison to house these dangerous criminal illegal aliens so that Arizonans are protected from further threats",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

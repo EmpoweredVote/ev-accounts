@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d",
+      "office_id": "76ce3998-b6e1-4fb3-9461-2ab82fff6f04",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "08f5d915-83e0-56c7-a5ea-fadec9e7bc5a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1216 (2023-2024)",
+          "provision_quote": "On and after January 1, 2025, an agency responsible for the development or operation of bikeways or highways where bicycle travel is permitted shall not install a new sharrow on a highway that has a posted speed limit greater than 30 miles per hour, except at or near an intersection for the purpose of connecting a Class I, Class II, or Class IV bikeway through the intersection.",
+          "note": "SB 1216 restricts sharrow installation on fast roads and bars Class III bikeways from the Active Transportation Program, a bikeway design/safety standard for how cyclists share the road, not a statement on the road-vs-multimodal investment split.",
+          "record_kind": "author",
+          "actor_quote": "SB 1216, Blakespear.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is SB 1216 (2023-2024), which Blakespear authored, restricting new sharrow markings on highways over 30 mph and removing Class III bikeways from Active Transportation Program eligibility. This matches the annex's own hard case that a law about how cyclists share the road is a safety/design standard, not evidence of where transportation investment is focused, so it cannot establish any rung of 'Where should government focus its transportation investment?'",
+      "needs_source": [
+        "A record or own-words statement by Blakespear that addresses the split between road capacity investment and multimodal (transit, bike, pedestrian) investment, e.g. a vote or statement on funding allocation, a road-diet/lane-reduction measure, or a highway-expansion vote"
+      ],
+      "quotes": []
+    }
+  ]
+}

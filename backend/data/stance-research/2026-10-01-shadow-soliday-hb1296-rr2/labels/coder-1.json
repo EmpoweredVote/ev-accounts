@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "2bf220a9-505d-5996-9daa-5f252d65e69a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Bill details page identifying the instrument he voted on; Soliday is not among the authors or co-authors listed, and the page prints neither the provision nor a vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "House roll call 382 adopting the conference committee report on HB 1296, a final adoption vote (not procedural), with 30 of 99 voting No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Bartels Heaton May Soliday",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "3a61977f-28e8-584b-a0d7-0937aefcabfe",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null,
+          "note": "Enrolled act text: every section is a firearms provision, and the operative amendment to IC 35-47-2-3 removes the state's requirement to hold a license or permit to carry a handgun."
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+        "3a61977f-28e8-584b-a0d7-0937aefcabfe"
+      ],
+      "reasoning": "Soliday voted Yea on the conference committee report for HB 1296 (2022), a single-subject firearms act whose operative amendment to IC 35-47-2-3 provides that an adult not otherwise barred is \"not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.\" For a state officeholder, removing the state's carry license is the rung \"Repeal major gun restrictions and let adults carry a firearm without a permit.\" (annex, rung 5, state-officeholder rule); the act also repeals IC 35-47-2-2, IC 35-47-2-2.1 and IC 35-47-2-24.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

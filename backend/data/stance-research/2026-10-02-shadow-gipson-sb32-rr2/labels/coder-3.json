@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42",
+      "office_id": "7803f2a9-9dd2-4f45-8b85-1cf5fd29e785",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "30741f51-b2c7-5435-8fe6-bb504fdedbb2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-09-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 32 (2015-2016)",
+          "provision_quote": "the state board shall ensure that statewide greenhouse gas emissions are reduced to at least 40 percent below the statewide greenhouse gas emissions limit no later than December 31, 2030",
+          "note": "Operative text sets a GHG emissions limit, not a clean-energy mandate; no energy source named (annex H17).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b7acd69d-cf9a-574e-8736-cc9f9f4883af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-08-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 32 (2015-2016)",
+          "provision_quote": null,
+          "note": "Gipson listed among Ayes on the Assembly Floor vote, 08/23/16 (Ayes 48, Noes 31).",
+          "record_kind": "vote",
+          "actor_quote": "Gipson",
+          "tally_quote": "Ayes Count 48 Noes Count 31 NVR Count 1"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gipson voted Aye on SB 32 (2015-2016) on the Assembly Floor (08/23/16, Ayes 48-Noes 31, within his earlier term in this legislature), but the bill's operative text sets a greenhouse-gas emissions limit ('shall ensure that statewide greenhouse gas emissions are reduced to at least 40 percent below the statewide greenhouse gas emissions limit no later than December 31, 2030') and names no clean-energy source, so it shows only the pro-action side on 'Require a shift to clean energy through mandates and firm deadlines', per the annex's ruling that an emissions limit meetable by any means does not match the rung's object (H17).",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

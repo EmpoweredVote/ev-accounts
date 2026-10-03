@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+      "passages": [
+        {
+          "snapshot_id": "fa4ac4a5-2478-53cb-94c5-4f32c49e38d2",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2015-03-26",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "The IGA bill-tracking page names SB 101's authors, co-authors and sponsors (none is Soliday) and paraphrases its digest rather than quoting the enacted text, so it shows no own act by him.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fc68959c-6a8f-5a63-8c36-8ef5478755d5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": "A governmental entity may substantially burden a person's exercise of religion only if the governmental entity demonstrates that application of the burden to the person: (1) is in furtherance of a compelling governmental interest; and (2) is the least restrictive means of furthering that compelling governmental interest.",
+          "note": "The Enrolled Act text prints SB 101's RFRA operative provision, the compelling-interest/least-restrictive-means limit on an exemption that is the default rule.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5772688b-fd43-5ea1-b4bb-f0e12dd37f67",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015-03-23",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "House Roll Call 305 shows Soliday voting Yea on SB 101's single-subject third-reading passage, with 31 of 94 voting members voting Nay.",
+          "record_kind": "vote",
+          "actor_quote": "McMillin Soliday Bacon",
+          "tally_quote": "Yea 63 Nay 31 Excused 5 Not Voting 0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "fc68959c-6a8f-5a63-8c36-8ef5478755d5",
+        "5772688b-fd43-5ea1-b4bb-f0e12dd37f67"
+      ],
+      "reasoning": "Soliday voted Yea on SB 101 (2015)'s House third-reading passage (Roll Call 305, Yea 63-Nay 31), a single-subject Religious Freedom Restoration Act whose Section 8 makes an exemption the default and limits it only by a compelling-interest/least-restrictive-means test. This RFRA strict-scrutiny pattern establishes 'protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

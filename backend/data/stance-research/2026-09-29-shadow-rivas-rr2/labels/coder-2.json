@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+      "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "2a4a6f51-471e-5ea5-b0a9-d8d75d8519ff",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-08-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 8 (2025-2026)",
+          "provision_quote": "the single-member districts for Congress reflected in Assembly Bill 604 of the 2025–26 Regular Session pursuant to the requirements of Chapter 5 (commencing with Section 21400) of Division 21 of the Elections Code shall temporarily be used for every congressional election for a term of office commencing on or after the date this subdivision becomes operative and before the certification of new congressional boundary lines drawn by the Citizens Redistricting Commission pursuant to subdivision (d).",
+          "note": "ACA 8 temporarily substitutes the AB 604 congressional map for the Citizens Redistricting Commission's lines, reverting to the commission in 2031, matching the annex's 'not permanent' hard case.",
+          "record_kind": "author",
+          "actor_quote": "ACA 8, Rivas.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "ACA 8 (2025-2026), authored by Rivas, temporarily substitutes the AB 604 congressional map for the Citizens Redistricting Commission's districts only until the commission draws new boundary lines in 2031, so it is a change of map-drawer that is not permanent and fits no single rung per the annex hard case; it shows a direction (temporary override with court review) but does not establish any of rungs 1-5.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

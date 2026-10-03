@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "47071c20-df9d-4f9d-9329-25faf64cd163|9d6fd1f4-0372-4576-a7d1-77b09eed2de4|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Steve Montenegro's own words on SB 1413 (2023) tying his vote to a penalty rule for camping in public (floor statement, explanation of vote, or his own press release)",
+          "Any Arizona bill Montenegro sponsored or voted on that itself sets a civil or criminal penalty for sleeping or camping on public property, with the roll call naming him",
+          "Montenegro's own statement, if any, tying his SB 1413 vote to a public-property camping clause specifically"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "47071c20-df9d-4f9d-9329-25faf64cd163|9d6fd1f4-0372-4576-a7d1-77b09eed2de4|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "requests": [
+        "Steve Montenegro's own words on SB 1413 (2023) tying his vote to a penalty rule for camping in public (floor statement, explanation of vote, or his own press release)",
+        "Any Arizona bill Montenegro sponsored or voted on that itself sets a civil or criminal penalty for sleeping or camping on public property, with the roll call naming him",
+        "Montenegro's own statement, if any, tying his SB 1413 vote to a public-property camping clause specifically"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

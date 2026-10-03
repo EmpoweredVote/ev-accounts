@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Shope's own words on whom the government should deport (floor statement, explanation of vote, questionnaire or debate answer) tying his HCR2060 vote to the illegal-entry and return-order provisions",
+          "A single-subject Arizona instrument Shope authored, sponsored or voted on that states which undocumented immigrants should be removed",
+          "Shope's own statement (floor speech, press release) on HCR2060 or its illegal-entry provision, to establish whether his vote ties to a specific deportation rung beyond direction-only",
+          "Shope's own words on deportation of long-settled undocumented immigrants or on a mass-deportation program"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "Shope's own words on whom the government should deport (floor statement, explanation of vote, questionnaire or debate answer) tying his HCR2060 vote to the illegal-entry and return-order provisions",
+        "A single-subject Arizona instrument Shope authored, sponsored or voted on that states which undocumented immigrants should be removed",
+        "Shope's own statement (floor speech, press release) on HCR2060 or its illegal-entry provision, to establish whether his vote ties to a specific deportation rung beyond direction-only",
+        "Shope's own words on deportation of long-settled undocumented immigrants or on a mass-deportation program"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

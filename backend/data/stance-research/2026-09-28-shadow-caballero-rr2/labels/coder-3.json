@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+      "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "395a38a1-fcd1-5a3e-b3df-46bfbc6c14a5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-04-22",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": null,
+          "note": "Aye vote in a 37-0 floor vote; she is not the author, so the near-unanimous rule bars the chair without her own words.",
+          "record_kind": "vote",
+          "actor_quote": "Bradford, Caballero, Chang",
+          "tally_quote": "Ayes Count 37 Noes Count 0"
+        },
+        {
+          "snapshot_id": "c0c966a9-84bd-5314-8011-594dd9fad9a3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-07-03",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": "“Race” is inclusive of traits historically associated with race, including, but not limited to, hair texture and protective hairstyles.",
+          "note": "Chaptered bill text printing the operative provision of the same near-unanimous vote; it names Mitchell, not Caballero, as author.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Caballero's only evidence is an Aye vote on SB 188 (2019-2020), a near-unanimous floor vote (Ayes Count 37 Noes Count 0); she is not the bill's author (Mitchell) and no own words tie her to the provision, so per the annex's near-unanimous rule this cannot establish rung 2 ('strengthen civil rights enforcement and address systemic discrimination') alone, even though the bill's content fits it well.",
+      "needs_source": [
+        "Caballero's own words on SB 188, or evidence she authored/co-sponsored it, to overcome the near-unanimous-vote bar for rung 2."
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Alma Hernandez's own words answering what identification Arizona should require to vote (questionnaire, debate answer, or first-person issue page), 2023-present",
+          "An Arizona bill Hernandez sponsored or voted Aye on that sets the identification required to vote, with the roll call and the bill text",
+          "Hernandez's own words or a further record (e.g. a floor statement explaining her No vote, or a later bill she sponsored/voted on) that establish which identification rung she supports, since her No vote on HB2492 shows direction only."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "requests": [
+        "Alma Hernandez's own words answering what identification Arizona should require to vote (questionnaire, debate answer, or first-person issue page), 2023-present",
+        "An Arizona bill Hernandez sponsored or voted Aye on that sets the identification required to vote, with the roll call and the bill text",
+        "Hernandez's own words or a further record (e.g. a floor statement explaining her No vote, or a later bill she sponsored/voted on) that establish which identification rung she supports, since her No vote on HB2492 shows direction only."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

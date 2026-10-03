@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259",
+      "office_id": "4164cda9-e149-46c7-9b5a-7f1f75088ac0",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "8dca6231-481c-5393-ad92-d19f85d328ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2839 (2023-2024)",
+          "provision_quote": "This section does not impose liability on an interactive computer service, as defined in Section 230(f)(2) of Title 47 of the United States Code.",
+          "note": "Author of AB 2839, which bars advertisers/distributors from knowingly distributing deceptive election media absent a disclosure, but expressly exempts platforms (interactive computer services) from liability, so it does not reach the platform-duty dimension this ladder orders.",
+          "record_kind": "author",
+          "actor_quote": "AB 2839, Pellerin. Elections: deceptive media in advertisements.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 2839 (Pellerin, 2023-2024) requires a 'person, committee, or other entity' to disclose or refrain from knowingly distributing materially deceptive election media, but it states 'this section does not impose liability on an interactive computer service,' so the duty falls on the advertiser/distributor, not on platforms. The ladder orders what platforms and government do about false content (require platforms to remove it, require platforms to label it, encourage voluntary industry standards, protect online speech from government, or ban government involvement in content moderation); a law aimed at the speaker while exempting the platform from liability does not establish any rung. No passage survives V2, so the row is BLANK.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

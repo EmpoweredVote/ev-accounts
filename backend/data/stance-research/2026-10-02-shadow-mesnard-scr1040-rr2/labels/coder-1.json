@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "7e5394eb-9b86-5fda-8a44-2b64a8eb2336",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR 1040 (2024, 56th Leg. 2R)",
+          "provision_quote": "For any employee who customarily and regularly receives tips or gratuities from patrons or others, the employer may pay a wage up to twenty-five percent per hour less than the minimum wage established by statute if the employer can establish by the employer's records of charged tips or gratuities or by the employee’s declaration for federal insurance contributions act purposes that for each week, when adding tips or gratuities received to wages paid, the employee received not less than the minimum wage plus $2 for all hours worked.",
+          "note": "The operative section creates a tipped subminimum carve-out and states no general rule for the wage floor.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e121a3e5-fb82-55aa-bf3e-1b9270d55b38",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR 1040 (2024, 56th Leg. 2R)",
+          "provision_quote": null,
+          "note": "Senate Final Reading #2 shows his Aye on the tipped-wage measure; the page prints no provision text.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "bc7051d3-e46d-5cc7-97e2-720c91ddd769",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR 1040 (2024, 56th Leg. 2R)",
+          "provision_quote": null,
+          "note": "Bill history names him prime sponsor of the resolution; it prints no provision text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Mesnard (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Mesnard prime-sponsored and voted Aye on SCR 1040 (2024), whose operative section lets an employer of a tipped worker \"pay a wage up to twenty-five percent per hour less than the minimum wage established by statute\" subject to a tips test. That is an exemption for one group of workers, not a general rule: it does not \"hold the wage floor at its current level\", and a carve-out is not \"remove the wage floor entirely\", so it shows a side without separating those rungs.",
+      "needs_source": [
+        "Mesnard's own words stating the general rule for Arizona's minimum wage (current level, indexing, or repeal)",
+        "An Arizona record of Mesnard on a general minimum-wage bill (not a tipped-wage or sector measure)"
+      ],
+      "quotes": []
+    }
+  ]
+}

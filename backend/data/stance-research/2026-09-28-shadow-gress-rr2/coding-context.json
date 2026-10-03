@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-28-shadow-gress-rr2",
+  "seat": {
+    "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+    "full_name": "Matt Gress",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "4021cde6-9098-442f-8126-55f6377a328f",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "question_text": "How should the government regulate firearms?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Ban civilian firearm ownership, except for tightly licensed hunting and sport use."
+        },
+        {
+          "value": 2,
+          "text": "Ban semi-automatic assault-style weapons, while allowing other firearms."
+        },
+        {
+          "value": 3,
+          "text": "Allow all types of firearms, but require universal background checks on every sale."
+        },
+        {
+          "value": 4,
+          "text": "Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines."
+        },
+        {
+          "value": 5,
+          "text": "Repeal major gun restrictions and let adults carry a firearm without a permit."
+        }
+      ],
+      "annexMd": "# gun-policy — served revision 44615418-e111-4f2f-a256-92fcf74b0f2f (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(ruled …)_ carry an operator ruling (Chris Andrews).\nLines marked _(proposed)_ are a drafter's reading, not yet ruled. No `_owed:_` line is open. The season pin is an older revision (`1a72d5df-…`); coders code the\nserved text below.\n\n**Question:** \"How should the government regulate firearms?\"\n\n**Orientation:** standard. Rung 1 is the most restriction (a ban on civilian ownership), rung 5 the\nleast (repeal major restrictions, carry without a permit). The rungs order **how far the law\nrestricts which firearms civilians may own, buy and carry**. Each person sits at the furthest line\nthey would go: someone who wants universal checks **and** an assault-weapons ban wants more than\nrung 3 allows (\"all types\"), so sits at rung 2.\n\n**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is state and federal\nlaw. Most states forbid local gun ordinances, so a local lever exists only where state law allows one.\n\n**Synonyms:** \"assault weapon\", \"assault-style\", \"semi-automatic\", \"large-capacity magazine\",\n\"universal background checks\", \"private sale\", \"gun-show loophole\", \"transfer\", \"concealed carry\",\n\"permitless carry\" / \"constitutional carry\", \"reciprocity\", \"National Firearms Act\" (NFA),\n\"suppressor\", \"red flag\" / \"extreme risk protection order\", \"safe storage\", \"ghost gun\".\n\n1. **\"Ban civilian firearm ownership, except for tightly licensed hunting and sport use.\"**\n   - Means: civilians may not own firearms, apart from tightly licensed hunting and sport guns.\n   - Operative clauses: [a] ban civilian ownership; [b] the only exception is tightly licensed hunting\n     and sport use.\n   - Establishing evidence looks like: own words or an instrument that bans civilian ownership in\n     general. A ban on one class of firearm is not this rung.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2: a broad assault-weapons ban is still a ban on one class.\n\n2. **\"Ban semi-automatic assault-style weapons, while allowing other firearms.\"**\n   - Means: assault-style semi-automatic weapons are banned; other firearms stay legal.\n   - Operative clauses: [a] ban semi-automatic assault-style weapons; [b] allow other firearms.\n   - Establishing evidence looks like: a single-subject assault-weapons ban. A ban written as a\n     definition or list of the banned weapons meets [b]: the definition is the boundary, and the\n     instrument leaves other firearms legal.\n   - A bill that extends an existing assault-weapons ban to more weapons → rung 2.\n   - Levels that hold a lever: federal; state; local where state law allows.\n   - Known chair-shaped instruments: the Assault Weapons Ban of 2025 (S.1531 / H.R.3115), named in the\n     topic note _(proposed: chair-shaped as filed)_.\n   - A **magazine-capacity limit** alone is not a ban on a class of weapon → `direction-only`\n     _(proposed)_.\n\n3. **\"Allow all types of firearms, but require universal background checks on every sale.\"**\n   - Means: no type of firearm is banned, and every sale, private sales included, needs a background\n     check.\n   - Operative clauses: [a] allow all types of firearms; [b] universal background checks on every\n     sale.\n   - Establishing evidence looks like: a universal-checks bill **plus** evidence that the person\n     opposes bans on a type of firearm (a No on an assault-weapons ban, own words). [a] must be shown;\n     a checks bill is silent on bans (V4.2 \"Silence is not a clause\"). Compound: one side only →\n     `compound-partial`. Not finding a ban cosponsorship is not evidence for [a] (H14) _(ruled 2026-10-01)_.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_. The Background Check Expansion Act (S.3214),\n     named in the topic note, meets [b] only.\n   - Checks for some sales only (gun shows, buyers under 21) are not \"every sale\" → `direction-only`\n     _(proposed)_.\n\n4. **\"Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across\n   state lines.\"**\n   - Means: keep current gun laws, with no new limits; the furthest change is easier carrying, such\n     as recognizing other states' carry permits.\n   - Operative clauses: [a] no new restrictions; [b] at most, loosen carry rules (the major laws\n     stay).\n   - Establishing evidence looks like: own words against new restrictions, and a record that loosens\n     carry rules without repealing major laws. The 4 / 5 line is whether the major laws stay _(ruled\n     2026-09-08)_.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_. The Constitutional Concealed Carry Reciprocity\n     Act (S.65 / H.R.38), named in the topic note, meets the \"loosen carry\" part of [b].\n   - A reciprocity bill as the only record → BLANK `direction-only`. It meets the \"loosen carry\"\n     part of [b], but one loosening law cannot show \"at most\" (V2, 2026-09-26) or \"no new\n     restrictions\" (V4.2). Seat rung 4 only with a second passage: own words, or a recorded vote\n     against a new restriction or against a repeal. This replaces the 2026-09-08 seating rule _(ruled 2026-10-01)_.\n   - Not finding a rung-5 record is not evidence for rung 4 (V4.2 \"Ruling out the other rungs\").\n\n5. **\"Repeal major gun restrictions and let adults carry a firearm without a permit.\"**\n   - Means: repeal the major gun laws, and let adults carry with no permit.\n   - Operative clauses: [a] repeal major gun restrictions; [b] permitless carry for adults.\n   - Establishing evidence looks like: a repeal of a major restriction (for example the federal NFA\n     rules on suppressors or short-barrelled rifles, a state registration or assault-weapons ban)\n     **and** permitless carry _(proposed)_. Compound: one side only → `compound-partial` (V4.2). For a\n     state officeholder, see the state rule below.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - **For a state officeholder**, a state law that removes the state's license or permit to carry\n     meets **both** clauses: the carry license is the major restriction the state controls → rung 5.\n     **For a federal officeholder**, [a] still needs repeal of major federal laws; a federal\n     permitless-carry or reciprocity measure alone → `compound-partial` _(ruled 2026-10-01)_.\n\n**Hard cases:**\n- **Rules about how guns are stored, marketed or advertised** (safe storage, advertising to minors)\n  do not say which guns may be owned or who may buy them → V2 `adjacent`; BLANK `no-evidence` when\n  nothing else survives. A Yea and a No on such a bill are the same: the direction of the vote does\n  not make it on-question.\n- **Red-flag laws, waiting periods, minimum ages, ghost-gun rules** restrict but do not match a rung\n  clause → `direction-only` _(proposed)_.\n- **Preemption (codebook V2, H12).** A state law that voids local gun ordinances decides which level\n  may act → `adjacent`.\n- **Budget and omnibus votes** with a firearms item → V4 `multi-subject`.\n"
+    }
+  ]
+}

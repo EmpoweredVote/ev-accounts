@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "77261f08-6172-4a58-a5d6-446c2b84a50e|445584b2-cff8-4040-941f-9c6df1e53037|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "HJR 3 (2014) as introduced (iga.in.gov HJ0003.01.INTR) — the as-filed text his co-authorship evidences (C37); only the engrossed House version is in these sources",
+          "Any Heaton record or own words on same-sex marriage after Obergefell (2015) — the newest evidence governs (V5 superseded-by-later)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "77261f08-6172-4a58-a5d6-446c2b84a50e|445584b2-cff8-4040-941f-9c6df1e53037|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "requests": [
+        "HJR 3 (2014) as introduced (iga.in.gov HJ0003.01.INTR) — the as-filed text his co-authorship evidences (C37); only the engrossed House version is in these sources",
+        "Any Heaton record or own words on same-sex marriage after Obergefell (2015) — the newest evidence governs (V5 superseded-by-later)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

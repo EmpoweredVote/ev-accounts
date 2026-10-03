@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "50d00238-5334-4616-ac43-72375f53df71",
+      "office_id": "ae116c94-7533-46d0-aa81-20106f5cb572",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "3572370e-a6b6-5c8e-86fa-80fff3553f34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Gillette's named Yea vote on HCR2060 final House passage, 06/04/2024.",
+          "record_kind": "vote",
+          "actor_quote": "GILLETTE Y",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "5d7cfa43-a906-5a3c-aee4-81f846261d04",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "the judge shall enter an order that requires the person to return to the foreign nation from which the person entered or attempted to enter the United States or the person's nation of origin",
+          "note": "The bill criminalizes illegal entry only prospectively and orders convicted entrants, via Sec. 13-4295.03, to return to their home country.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gillette voted Yea on HCR2060's final passage (31-29-0-0-0), a state law that makes illegal entry into Arizona a crime and lets a judge order a convicted entrant to 'return to the foreign nation from which the person entered,' but the offense 'may only be enforced prospectively' and does not apply to people who entered before the law takes effect. This matches the annex's hard case for 'State criminal-entry laws that let state courts order a person to leave the state,' which 'speak to removal of recent crossers, not to all undocumented immigrants' rather than any rung of 'How far should the government go in deporting undocumented immigrants?' — so the vote establishes direction only, not a chair.",
+      "needs_source": [
+        "Gillette's own statement or floor explanation tying his HCR2060 vote specifically to the illegal-entry/return-to-home-country provisions, given the bill's other unrelated subjects (benefits fraud, e-verify, fentanyl penalties)."
+      ],
+      "quotes": []
+    }
+  ]
+}

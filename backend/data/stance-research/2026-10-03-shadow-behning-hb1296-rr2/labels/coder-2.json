@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5922a7c4-65a4-46da-acb2-6df183e596b2",
+      "office_id": "dd704aff-ea11-4e9c-a290-3debbe40671e",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "90cc52c9-d3d6-5bd9-9fdb-cb4fe4446e99",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "A person … who is at least eighteen (18) years of age and is not otherwise prohibited from carrying or possessing a handgun … under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "The enrolled act removes Indiana's license-to-carry requirement, letting an adult not otherwise prohibited carry a handgun without a state license or permit.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "06efabe0-e0ba-53d3-beb5-dd56c75e0d2f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "The House bill-details page lists Robert Behning among the co-authors of HB 1296, the permitless-carry bill.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Robert Behning",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e72d0989-fd58-555d-b39c-785354666904",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "The House roll call on adopting HB 1296's conference committee report shows Behning voting Yea, 69-30, well above the near-unanimous threshold.",
+          "record_kind": "vote",
+          "actor_quote": "Behning",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "90cc52c9-d3d6-5bd9-9fdb-cb4fe4446e99",
+        "06efabe0-e0ba-53d3-beb5-dd56c75e0d2f",
+        "e72d0989-fd58-555d-b39c-785354666904"
+      ],
+      "reasoning": "Behning co-authored HB 1296 (2022) and voted Yea to adopt its conference committee report; the enacted text removes Indiana's handgun carry license requirement, so a person not otherwise prohibited \"is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.\" This matches the rung text \"repeal major gun restrictions and let adults carry a firearm without a permit,\" and under the annex's rule for a state officeholder, removing the state's carry license meets both clauses.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

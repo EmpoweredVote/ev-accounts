@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508",
+      "office_id": "5f95f54d-d57c-4e3b-95ff-611505f721b3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "A. Each interscholastic or intramural athletic team or sport that is sponsored by a public school or a private school whose students or teams compete against a public school shall be expressly designated as one of the following based on the biological sex of the students who participate on the team or in the sport: 1. \"Males\", \"men\" or \"boys\". 2. \"Females\", \"women\" or \"girls\". 3. \"Coed\" or \"mixed\". B. Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex. C. This section does not restrict the eligibility of any student to participate in any interscholastic or intramural athletic team or sport designated as being for \"males\", \"men\" or \"boys\" or designated as \"coed\" or \"mixed\".",
+          "note": "Bill text bars males from girls'/women's teams while leaving boys' and coed teams open, matching rung 4 and excluding a full ban.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "843cab4f-5897-5496-9266-d6872a6ad6ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Carter voted Y on final House passage of SB1165, a contested 31-24-5-0-0 tally, not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "CARTER Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+        "843cab4f-5897-5496-9266-d6872a6ad6ae"
+      ],
+      "reasoning": "SB1165's operative text requires that teams be designated by biological sex and bars males from girls'/women's teams while expressly leaving boys' and coed teams open, matching 'require transgender athletes to compete only on teams matching their biological sex assigned at birth' and excluding a complete ban. Carter cast a Y vote on final House passage, 31-24-5-0-0, a single-subject, non-near-unanimous vote, as a sitting State Representative in March 2022, an in-term own-act.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "ea803096-927f-41fe-98e1-deab56291810",
+      "office_id": "e45c9d52-6288-4865-a2de-dadd73cc18e6",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "866c8347-0adf-554d-9611-6e162b500a57",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": "It is the policy of the state to do both of the following: (1) Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045, and to achieve and maintain net negative greenhouse gas emissions thereafter.",
+          "note": "Declares a net-zero/emissions-reduction policy and directs carbon capture and removal strategies as a path; it names no clean-energy source, so per the annex's rung 1 guidance it shows only the pro-action side.",
+          "record_kind": "author",
+          "actor_quote": "AB 1279, Muratsuchi.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Muratsuchi authored AB 1279 (2021-2022), the California Climate Crisis Act, which declares state policy to 'achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045' and to reduce emissions 85 percent below 1990 levels by 2045, while directing the state board to pursue carbon dioxide removal and carbon capture, utilization, and storage technologies to meet those goals. This is a declared net-zero/emissions policy naming no energy source and using carbon capture as a complement, so it does not establish rung 1's 'Require a shift to clean energy through mandates and firm deadlines'; it shows only the pro-action side. No passage speaks to funding, permitting/grid, neutrality, or ending support, so the row is BLANK direction-only.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

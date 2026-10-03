@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "d406e55d-80fd-5708-be95-8b2bd4399548",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": null,
+          "note": "Wicks is listed in the Ayes on the Assembly Floor concurrence vote, 53-17, so the vote is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Ting, Valencia, Ward, Weber, Wicks, Wilson, Wood, Zbur, Robert Rivas",
+          "tally_quote": "Ayes Count 53 Noes Count 17"
+        },
+        {
+          "snapshot_id": "2b00b586-74a0-5073-9887-3b6484ae1ae5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": "The hourly minimum wage for fast food restaurant employees shall be twenty dollars ($20) per hour, effective April 1, 2024.",
+          "note": "The floor reaches only \"fast food restaurant employees\", and the later adjustment is discretionary: \"the council may establish, pursuant to this subdivision, minimum wages for fast food restaurant employees\".",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Wicks voted Aye on AB 1228 (2023-2024), which sets a floor of \"twenty dollars ($20) per hour\" for \"fast food restaurant employees\" and lets a council raise it by \"no more than the lesser of\" 3.5 percent or CPI-W. A floor for one industry does not show her general rule, and the council \"may\" raise it rather than it rising \"automatically each year without new legislation\", so the vote shows only the pro-raise side and does not separate that rung from \"Raise the wage floor to a set higher level, then adjust it only when lawmakers vote to.\"",
+      "needs_source": [
+        "Wicks's own act on a generally applicable California minimum-wage bill (for example a roll call on an SB 3-type statewide floor), to show whether she backs automatic annual indexing or a set level adjusted only by a legislative vote",
+        "Wicks's own words answering what the general wage floor should be and whether it should be indexed"
+      ],
+      "quotes": []
+    }
+  ]
+}

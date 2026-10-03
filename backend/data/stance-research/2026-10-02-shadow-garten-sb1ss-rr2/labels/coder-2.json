@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
+      "office_id": "b93ba475-ef99-4209-be1d-28cc3eae2399",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "6ee430d7-d418-55b6-9c18-c3af1da5167f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life",
+          "note": "Enacted text bans abortion as a criminal act except for serious health risk/life of the mother, a lethal fetal anomaly before 20 weeks, or pregnancy from rape or incest before 10 weeks.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e5a9c198-8499-5f12-ae69-c2c51d8155fb",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "IGA bill-details digest page names the bill's author and sponsors (not Garten) and does not show Garten's own act.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2d98cb03-ae4d-58a1-829a-58039d7da041",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Roll Call 58 (Aug. 5, 2022) records Garten voting Yea on final passage of SB 1(ss), a single-subject abortion bill, 28-19.",
+          "record_kind": "vote",
+          "actor_quote": "Byrne Garten Mishler",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "6ee430d7-d418-55b6-9c18-c3af1da5167f",
+        "2d98cb03-ae4d-58a1-829a-58039d7da041"
+      ],
+      "reasoning": "Garten voted Yea (Roll Call 58, Aug. 5, 2022) on SB 1(ss), a single-subject abortion bill; its enacted text bans abortion as a criminal act except for serious health risk to or to save the life of the mother, a lethal fetal anomaly, or pregnancy resulting from rape or incest, matching the rung \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

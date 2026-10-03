@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
+      "office_id": "ae285450-8e0b-43d9-a534-e747ea9baf0b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "Abortion shall in all instances be a criminal act, except when performed under the following circumstances:",
+          "note": "The enrolled act's operative section bans abortion except for narrow, time-boxed exceptions (health/life and lethal fetal anomaly to 20 weeks, rape/incest only to 10 weeks), which is not a clean clause-for-clause match to rung 4's unconditional rape/incest/life exceptions or rung 5's no-exceptions ban.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Official bill-tracking page confirms the single-subject instrument and that it was signed into law (Public Law 179(ss)) on 08/05/2022.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "03a96ddb-0a85-5ab5-a5fd-701c88762989",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate roll call 58 shows Koch voting Yea on final passage of this single-subject abortion bill, 28-19.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Koch Sandlin",
+          "tally_quote": "Yea 28"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Koch voted Yea on SB 1(ss) (2022 Special Session, signed as Public Law 179(ss)), whose operative text makes abortion 'in all instances...a criminal act, except when performed under the following circumstances,' permitting it only for serious health risk/life of the mother or a lethal fetal anomaly through 20 weeks, and for rape or incest only through the first ten weeks. This establishes the restrictive direction but does not match rung 4's 'ban abortion except in cases of rape, incest, or a serious risk to the mother's life' clause for clause, since the rape/incest exception is time-limited rather than general and an additional lethal-fetal-anomaly exception exists that the rung text does not name; it also is not rung 5, since exceptions do exist.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

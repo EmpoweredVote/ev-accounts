@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-10-01-shadow-holdman-sb1ss-rr2",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2022ss1/bills/senate/1/details",
+      "source_kind": "public-record",
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1 (2022ss1)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/rollcalls/SB0001.58_S.pdf",
+      "source_kind": "public-record",
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1 (2022ss1)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-rc58.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/SB0001.06.ENRH.pdf",
+      "source_kind": "public-record",
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1 (2022ss1)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-enrolled.txt"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "022d8b7f-14e4-5f50-95fc-77e10a1558ea",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview shows HCR2060's Senate Third Reading passed 16-13-1-0-0 but does not name Shope's individual vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "54bf0425-8d31-5ced-8b4d-f6ffea98d6d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "On conviction of an offense under this article, the judge shall enter an order that requires the person to return to the foreign nation from which the person entered or attempted to enter the United States or the person's nation of origin.",
+          "note": "The return-to-foreign-nation order applies only to people convicted under the bill's new state illegal-entry crime, i.e. recent border crossers, not to all undocumented immigrants.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "152ec81f-c8ab-5494-8b68-711193f672d5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading roll call shows Shope voted Y on HCR2060.",
+          "record_kind": "vote",
+          "actor_quote": "SHOPE Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Shope voted Y on HCR2060's Senate Third Reading, a bill that creates a state crime for illegal entry and lets a court order a person convicted of it 'to return to the foreign nation from which the person entered or attempted to enter the United States or the person's nation of origin.' Per the annex, a state criminal-entry law that lets courts order a person to leave speaks only to removal of recent crossers, not to 'all undocumented immigrants,' so it shows the removal side without matching any rung's full clauses.",
+      "needs_source": [
+        "Shope's own words on deportation of long-settled undocumented immigrants or on a mass-deportation program"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "office_id": "87c65dff-fa5b-4d7a-a7bc-d78595d2f506",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading vote page: it names her vote and the count but prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "PINGERELLI Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "f1403cb4-c530-5152-b92d-73f71cebf5b0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "The act's construction section says it does not \"Create or recognize a right to abortion\" and does not \"Repeal, by implication or otherwise, section 13-3603, Arizona Revised Statutes, or any other applicable state law regulating or restricting abortion\", so the fifteen-week limit permits no stage.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "89a47096-9e0c-51ea-89fc-ffed87200c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview: it prints the House tally and the sponsor list, which does not include her, so she is a voter on this record and not a sponsor.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 03/24/2022 31-26-3-0-0 PASSED"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pingerelli voted Y on SB 1164 (2022), a single-subject act whose operative section bars abortion \"if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks\", with a medical-emergency exception. But its construction section says the act does not \"Create or recognize a right to abortion\" and does not \"Repeal, by implication or otherwise, section 13-3603, Arizona Revised Statutes, or any other applicable state law regulating or restricting abortion\", so it establishes no permitted stage and cannot evidence \"allow abortion during the first trimester, and after that only to protect the mother's health.\" The vote shows only the restrictive side.",
+      "needs_source": [
+        "Pingerelli's own words on a gestational limit and on which exceptions apply after it (questionnaire, issue page, floor statement)",
+        "Her vote or sponsorship on an Arizona abortion instrument that itself permits abortion up to a stated stage (an affirmative permission or a repeal of the broader ban)"
+      ],
+      "quotes": []
+    }
+  ]
+}

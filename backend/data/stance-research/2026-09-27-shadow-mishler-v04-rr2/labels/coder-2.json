@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+      "office_id": "109811e6-4a7d-4293-88d9-6dd9b90edd98",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "3fb9bf85-7b82-5c95-8b18-f9683c42c170",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-09",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": null,
+          "note": "Final-passage vote on the Conference Committee Report passed 50-0 (0 Nay), so it is near-unanimous and cannot carry the chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "Ford Jon Mishler Walker K",
+          "tally_quote": "Yea 50 Various tax matters. Nay 0"
+        },
+        {
+          "snapshot_id": "909c3da5-0b10-5bcb-8764-7ae863bde3be",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": "(3) For taxable years beginning after December 31, 2016, and before January 1, 2023, three and twenty-three hundredths percent (3.23%). (4) For taxable years beginning after December 31, 2022, and before January 1, 2025, three and fifteen hundredths percent (3.15%).",
+          "note": "Enrolled text of HB 1002 cuts the individual income tax rate from 3.23% to 3.15% and phases it down further, a broad cut to the main individual rate matching rung 4.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c81f9d6a-5163-5e81-8afc-bf71e435f87d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1002 (2022)",
+          "provision_quote": null,
+          "note": "Bill details page lists Mishler as a Senate sponsor of HB 1002, evidencing the bill as filed regardless of the near-unanimous vote.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Ryan Mishler, Sen. Travis Holdman, Sen. Lonnie Randolph.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "909c3da5-0b10-5bcb-8764-7ae863bde3be",
+        "c81f9d6a-5163-5e81-8afc-bf71e435f87d"
+      ],
+      "reasoning": "Mishler is listed as a Senate sponsor of HB 1002 (2022), whose enrolled text cuts the individual adjusted gross income tax rate from 3.23% to 3.15% (and further in later years), a broad reduction to the main individual rate matching rung 4, 'Cut taxes broadly, including the main rates most people pay.' The Conference Committee Report passed 50-0, so the vote alone is near-unanimous and cannot carry the chair, but sponsorship evidences the bill as filed.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

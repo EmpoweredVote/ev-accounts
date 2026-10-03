@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0",
+      "office_id": "c8952cf4-85b9-4602-9edc-dfa0878583ff",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "190d126e-5005-54a7-bae2-6bd166c9a4f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 7 (2025-2026)",
+          "provision_quote": "An employer shall not rely solely on an ADS when making a discipline, termination, or deactivation decision.",
+          "note": "Every duty and the $500 penalty fall on the employer that uses the ADS, not on the developer, and the bill requires notice rather than pre-use testing.",
+          "record_kind": "author",
+          "actor_quote": "Introduced by Senator McNerney",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "McNerney authored SB 7 (2025-2026), which makes employers give written notice of automated decision systems, bars reliance on an ADS alone for discipline, termination, or deactivation decisions, and penalizes the employer $500 for violations. The liable party is the employer deploying the system, so it does not \"Hold AI developers legally responsible when their systems cause harm\"; the bill requires notice and human review, not testing, so it does not \"Require safety testing before AI can be used in high-stakes areas like hiring, healthcare, and policing\" either. It shows the pro-oversight side without matching any rung's clauses.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

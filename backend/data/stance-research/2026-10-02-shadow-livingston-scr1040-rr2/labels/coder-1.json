@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+      "office_id": "f7cad0ce-e9af-46a1-a39d-d5d4520d3879",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "5bd9b1c9-1855-5ee6-a5aa-b3215b6e9eb3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-04-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call showing Livingston voted Y on SCR1040; 24 of 59 members voting were No, so this is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "LIVINGSTON Y",
+          "tally_quote": "Passed 35-24-0-0-1 Amended"
+        },
+        {
+          "snapshot_id": "aaf0c889-8192-5e2d-beae-5259803f0021",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": "For any employee who customarily and regularly receives tips or gratuities from patrons or others, the employer may pay a wage up to twenty-five percent per hour less than the minimum wage established by statute if the employer can establish by the employer's records of charged tips or gratuities or by the employee’s declaration for federal insurance contributions act purposes that for each week, when adding tips or gratuities received to wages paid, the employee received not less than the minimum wage plus $2 for all hours worked.",
+          "note": "Engrossed text of the instrument Livingston voted on; it creates a tipped subminimum and names no voter, so actor and tally are null here.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b0246426-bf3f-59b0-b47b-1a9a378b8052",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "Bill history page for SCR1040 printing the House Third Reading tally; it names Mesnard as prime sponsor and no individual House voters.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 04/03/2024 35-24-0-0-1 Amended PASSED"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Livingston voted Y on SCR1040 (2024), which would let an employer of a tipped worker \"pay a wage up to twenty-five percent per hour less than the minimum wage established by statute\" where tips bring the worker to the minimum wage plus $2. That is a carve-out for one group of employees, not the person's general rule: it does not \"Hold the wage floor at its current level and let the market set pay above it\", nor \"Remove the wage floor entirely and let employers and workers set pay by agreement\" — the statutory floor stays, and the annex treats a tipped-subminimum change and an exemption alike as showing a side only. It shows a lean toward a weaker floor and separates no rung on that side.",
+      "needs_source": [
+        "Livingston's own words on what the general wage floor should be (questionnaire item, issue page, or debate answer naming a level or an indexing mechanism)",
+        "A record of Livingston acting on a general Arizona minimum-wage measure (bill text plus the roll call naming him)"
+      ],
+      "quotes": []
+    }
+  ]
+}

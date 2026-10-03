@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d",
+      "office_id": "8c909ec7-73d2-4488-8eb5-a72f4746f32b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "4c212da4-3762-58c4-ad14-8fb9a928ce75",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview lists Diaz as a co-sponsor of a gestational-age limit bill and records that it passed the House Third Reading on 03/24/2022.",
+          "record_kind": "sponsor",
+          "actor_quote": "Burges (Co-Sponsor) Diaz (Co-Sponsor) Fillmore (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bc6d6c40-f82c-5085-93be-c0b59c163104",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "The enacted text bars abortion after fifteen weeks except in a medical emergency, but its construction section says the act does not create or recognize a right to abortion and does not repeal section 13-3603, so it names no stage at which abortion is permitted.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e1974ddd-d5a2-5fc0-8ae4-a4a31cd685c2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Diaz voting Y, with 26 members against, so the vote is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "DEGRAZIA N DIAZ Y DUNN Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Diaz co-sponsored SB 1164 (2022) and voted Y on House Third Reading for a fifteen-week gestational limit whose medical emergency exception reaches a delay that will create serious risk of substantial and irreversible impairment of a major bodily function. But the act's construction section says it does not Create or recognize a right to abortion or alter generally accepted medical standards, states that The Legislature does not intend this act to make lawful an abortion that is currently unlawful, and leaves section 13-3603 in force, so it establishes no permitted stage. The record therefore places him on the restrictive side without matching the clauses of allow abortion during the first trimester, and after that only to protect the mother's health, or of any other rung.",
+      "needs_source": [
+        "Lupe Diaz's own words answering which stage of pregnancy abortion should remain legal and which exceptions apply after it (questionnaire item, debate answer, or first-person issue page)",
+        "Arizona House roll call plus bill text for a later abortion instrument he acted on that states a stage at which abortion is permitted, or that sets a ban and its exceptions"
+      ],
+      "quotes": []
+    }
+  ]
+}

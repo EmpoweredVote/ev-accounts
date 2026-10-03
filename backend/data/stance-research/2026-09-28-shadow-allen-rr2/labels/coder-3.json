@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "4486f856-118b-475c-83f0-078581a7b268",
+      "office_id": "58c7cb0f-6409-4e6a-aa4f-1d146e88eb69",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "eaa2624a-2981-5ff4-804f-fe74bf32fecd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-10-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 483 (2021-2022)",
+          "provision_quote": "Resentencing pursuant to this section shall result in a lesser sentence than the one originally imposed as a result of the elimination of the repealed enhancement, unless the court finds by clear and convincing evidence that imposing a lesser sentence would endanger public safety.",
+          "note": "Authored bill retroactively invalidates certain sentencing enhancements and defaults to a lesser sentence absent a public-safety finding, showing a leniency direction without matching any single rung's full clauses.",
+          "record_kind": "author",
+          "actor_quote": "SB 483, Allen.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "As the bill's author, Allen's SB 483 (2021-2022) retroactively invalidates specified sentencing enhancements and requires courts to impose a sentence that 'shall result in a lesser sentence than the one originally imposed... unless the court finds by clear and convincing evidence that imposing a lesser sentence would endanger public safety,' showing only a lean toward reduced punishment. This narrow enhancement-removal measure does not establish 'support and treatment, not punishment,' 'service or restitution,' or a stated 'each situation is different' orientation, so the evidence is direction-only.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

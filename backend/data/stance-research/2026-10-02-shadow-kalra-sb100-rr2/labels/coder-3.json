@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4",
+      "office_id": "3db4bfac-030f-4c8b-afbe-77c093e64ea9",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "269d29a3-0c22-59d0-8c3f-76866fcdf736",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-08-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": null,
+          "note": "Assembly Floor third-reading vote on SB 100; Kalra voted Aye, 44-33.",
+          "record_kind": "vote",
+          "actor_quote": "Jones-Sawyer, Kalra, Kamlager-Dove",
+          "tally_quote": "Ayes Count 44 Noes Count 33"
+        },
+        {
+          "snapshot_id": "d408c686-abf1-56ca-b428-f44adccf94ab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-09-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": "the quantities shall reflect reasonable progress in each of the intervening years sufficient to ensure that the procurement of electricity products from eligible renewable energy resources achieves 25 percent of retail sales by December 31, 2016, 33 percent by December 31, 2020, 44 percent by December 31, 2024, 52 percent by December 31, 2027, and 60 percent by December 31, 2030.",
+          "note": "Single-subject RPS bill; binding 'shall procure' mandate with firm dated percentage targets.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "269d29a3-0c22-59d0-8c3f-76866fcdf736",
+        "d408c686-abf1-56ca-b428-f44adccf94ab"
+      ],
+      "reasoning": "Kalra voted Aye on SB 100 (2017-2018)'s Assembly Floor third reading (Ayes Count 44, Noes Count 33), a single-subject renewables-portfolio-standard bill whose operative text binds retail sellers to firm, dated procurement targets ('44 percent by December 31, 2024 ... 60 percent by December 31, 2030'). This matches rung 1, 'Require a shift to clean energy through mandates and firm deadlines.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

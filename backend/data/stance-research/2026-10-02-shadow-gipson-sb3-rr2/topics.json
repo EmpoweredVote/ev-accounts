@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "topic_key": "minimum-wage",
+    "topic_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+    "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+    "question_number": 59,
+    "title": "Minimum Wage",
+    "question_text": "What approach should government take to the minimum wage?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation."
+      },
+      {
+        "value": 2,
+        "text": "Raise the wage floor to a set higher level, then adjust it only when lawmakers vote to."
+      },
+      {
+        "value": 3,
+        "text": "Keep a modest national wage floor as a baseline and let states and cities set higher rates."
+      },
+      {
+        "value": 4,
+        "text": "Hold the wage floor at its current level and let the market set pay above it."
+      },
+      {
+        "value": 5,
+        "text": "Remove the wage floor entirely and let employers and workers set pay by agreement."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

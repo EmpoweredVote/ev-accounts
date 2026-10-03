@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "bb4bbd05-0a4b-5617-9d6d-38b342fa770f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": "A social media company shall post terms of service for each social media platform owned or operated by the company in a manner reasonably designed to inform all users of the social media platform of the existence and contents of the terms of service.",
+          "note": "A transparency and reporting mandate: platforms must post their terms of service and report their moderation practices, including for “Disinformation or misinformation”, but no content is labeled or removed.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel. Social media companies: terms of service.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gabriel authored AB 587 (2021-2022), which requires a social media company to \"post terms of service for each social media platform owned or operated by the company\" and to submit semiannual reports to the Attorney General describing its content moderation practices. That is a disclosure duty about moderation policy, not a duty to \"remove false information\" and not a duty to \"label false content\", so it places him on the side that imposes legal duties on platforms without choosing between those rungs. The annex treats such a transparency mandate as direction-only at most, because it \"puts no label on any content and sets no moderation duty\".",
+      "needs_source": [
+        "Jesse Gabriel's own words stating whether platforms should be legally required to remove false information or only to label it (floor statement, press release, or questionnaire answer)",
+        "California Assembly or Senate roll call on a bill that imposes a removal or labeling duty on platforms, with Gabriel's vote"
+      ],
+      "quotes": []
+    }
+  ]
+}

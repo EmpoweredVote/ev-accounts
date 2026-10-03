@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4c7d1cea-a6ce-4185-a977-c754800f491a|f11ac115-0c75-4fbf-baf8-d78ef703dc49|2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "topic_key": "cannabis-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Haney's own act on what cannabis use is legal in California: a roll call on an adult-use legalization, decriminalization or medical-only measure",
+          "Haney's own first-person words answering how government should regulate cannabis (questionnaire item, debate answer, or his Assembly issue page)",
+          "Haney's own vote, sponsorship, or statement on a bill or ballot measure that addresses cannabis's legal status directly (e.g., medical-use authorization, decriminalization of possession, adult-use legalization, or licensing of a commercial market).",
+          "Haney's own words, vote, or sponsorship on a bill addressing cannabis's legal status itself (adult-use legalization, medical-cannabis, decriminalization, rescheduling/descheduling, or home-grow/ordinary-product deregulation)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4c7d1cea-a6ce-4185-a977-c754800f491a|f11ac115-0c75-4fbf-baf8-d78ef703dc49|2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "requests": [
+        "Haney's own act on what cannabis use is legal in California: a roll call on an adult-use legalization, decriminalization or medical-only measure",
+        "Haney's own first-person words answering how government should regulate cannabis (questionnaire item, debate answer, or his Assembly issue page)",
+        "Haney's own vote, sponsorship, or statement on a bill or ballot measure that addresses cannabis's legal status directly (e.g., medical-use authorization, decriminalization of possession, adult-use legalization, or licensing of a commercial market).",
+        "Haney's own words, vote, or sponsorship on a bill addressing cannabis's legal status itself (adult-use legalization, medical-cannabis, decriminalization, rescheduling/descheduling, or home-grow/ordinary-product deregulation)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

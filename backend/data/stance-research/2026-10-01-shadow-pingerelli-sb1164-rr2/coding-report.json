@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Pingerelli's own words on a gestational limit and on which exceptions apply after it (questionnaire, issue page, floor statement)",
+          "Her vote or sponsorship on an Arizona abortion instrument that itself permits abortion up to a stated stage (an affirmative permission or a repeal of the broader ban)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Pingerelli's own words on a gestational limit and on which exceptions apply after it (questionnaire, issue page, floor statement)",
+        "Her vote or sponsorship on an Arizona abortion instrument that itself permits abortion up to a stated stage (an affirmative permission or a repeal of the broader ban)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

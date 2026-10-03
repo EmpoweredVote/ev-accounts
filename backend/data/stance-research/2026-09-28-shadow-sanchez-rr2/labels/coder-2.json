@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0",
+      "office_id": "1621afeb-6cb1-4368-98db-6e18b0723faa",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "f85ff6c9-bb6d-5e4e-a775-4ebcba97382b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-10-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 88 (2023-2024)",
+          "provision_quote": "the victim shall notify the prosecution of their request to be heard within 15 days of being notified that resentencing is being sought and the court shall provide an opportunity for the victim to be heard",
+          "note": "Signed bill amending victim-notice and right-to-be-heard rules for resentencing/parole hearings; per annex hard case this is a victims'-rights bill, not the punishment-vs-treatment question.",
+          "record_kind": "author",
+          "actor_quote": "AB 88, Sanchez",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 88 (2023-2024), authored by Sanchez and signed into law, governs victim notice and the victim's right to be heard at resentencing and parole hearings. Per the annex hard case on victims' rights, a bill about victims' notice or participation is about victims, not the response to the person who broke the law, so the passage is adjacent and cannot establish any rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

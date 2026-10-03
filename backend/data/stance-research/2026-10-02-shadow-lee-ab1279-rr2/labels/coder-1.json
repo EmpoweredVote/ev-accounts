@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375",
+      "office_id": "43dd153e-0834-434f-9577-f9bae44d8f89",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "be93f3c4-6cf6-5747-940c-bca5f19862e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": null,
+          "note": "Assembly floor concurrence vote on AB 1279; Lee is in the Aye list and the tally is 52-18-10, so it is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Jones-Sawyer, Kalra, Lee, Levine, Low",
+          "tally_quote": "Ayes Count 52 Noes Count 18 NVR Count 10"
+        },
+        {
+          "snapshot_id": "d684a2cc-ce7b-5bf2-9d9b-42a414539c46",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": "It is the policy of the state to do both of the following: (1) Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045, and to achieve and maintain net negative greenhouse gas emissions thereafter.",
+          "note": "The operative section declares a state policy goal on emissions and directs the state board to recommend measures and to enable carbon dioxide removal and carbon capture, naming no energy source.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Lee voted Aye on AB 1279 (2021-2022), whose operative section states \"It is the policy of the state to do both of the following: (1) Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045\" and directs the state board to \"identify and recommend measures\" and to enable \"carbon dioxide removal solutions and carbon capture, utilization, and storage technologies\". That is an emissions target the state may meet by means other than clean energy, so it does not match \"Require a shift to clean energy through mandates and firm deadlines\"; a declared \"policy of the state\" with a recommendation directive is also a goal rather than a binding duty, and it funds and eases nothing, so it separates no rung from its neighbours on the pro-action side.",
+      "needs_source": [
+        "Alex Lee's own act on a clean-energy mechanism at the state level — e.g. an Assembly floor roll call or authorship/co-authorship on a renewable or clean-electricity procurement standard with dated binding percentages (rung 1), or on a clean-energy subsidy, tax credit or public investment programme (rung 2)",
+        "Alex Lee's own first-person words answering how much government should do to expand clean energy — mandates versus funding versus permitting and grid reform"
+      ],
+      "quotes": []
+    }
+  ]
+}

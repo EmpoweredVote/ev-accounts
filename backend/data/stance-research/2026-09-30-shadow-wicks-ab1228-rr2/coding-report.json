@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Wicks's own act on a generally applicable California minimum-wage bill (for example a roll call on an SB 3-type statewide floor), to show whether she backs automatic annual indexing or a set level adjusted only by a legislative vote",
+          "Wicks's own words answering what the general wage floor should be and whether it should be indexed",
+          "A general (non-sector-specific) minimum-wage vote, sponsorship, or own-words statement by Wicks"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "Wicks's own act on a generally applicable California minimum-wage bill (for example a roll call on an SB 3-type statewide floor), to show whether she backs automatic annual indexing or a set level adjusted only by a legislative vote",
+        "Wicks's own words answering what the general wage floor should be and whether it should be indexed",
+        "A general (non-sector-specific) minimum-wage vote, sponsorship, or own-words statement by Wicks"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

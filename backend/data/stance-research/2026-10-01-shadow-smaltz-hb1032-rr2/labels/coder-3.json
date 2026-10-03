@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "dd516298-029b-58eb-a741-716f341447af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Official bill-details page names Smaltz as HB 1032's author; it also reports a later Senate defeat, which is not his own act.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Ben Smaltz",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8e776ba8-1843-50fc-841e-7107d265564e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "(b) The general assembly may amend the congressional districts",
+          "note": "Bill text printed under Smaltz's name lets the general assembly itself amend congressional maps off-cycle and channels any apportionment challenge to exclusive, stayed Supreme Court review rather than stating a partisan-bias standard.",
+          "record_kind": "author",
+          "actor_quote": "Smaltz December 1, 2025, read first time and referred to Committee on Elections and Apportionment.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "17ad74dc-278e-53f9-91c5-37b3dbc6a486",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Smaltz voted Yea as HB 1032 passed the House 57-41 on third reading.",
+          "record_kind": "vote",
+          "actor_quote": "Smaltz",
+          "tally_quote": "Yea 57 Nay 41"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "As HB 1032's author and a Yea vote on its House third-reading passage, Smaltz backed letting '(b) The general assembly may amend the congressional districts' itself rather than an independent commission, matching the legislature-draws clause shared by rungs 4 and 5. But the bill's own court provisions preserve 'mandatory and exclusive jurisdiction' for the state supreme court over apportionment appeals (only staying and prioritizing them) without stating a partisan-bias standard, so the evidence shows the legislature-controls direction without separating 'state legislatures with court oversight to prevent extreme partisan bias' from 'the party that controls the state legislature without outside interference.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

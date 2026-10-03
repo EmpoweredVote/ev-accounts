@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "4a0d6404-e229-5af7-a662-6c6d35dbd0f9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-02-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2241 (2021)",
+          "provision_quote": null,
+          "note": "House Third Reading vote page; Hernandez A voted Yea on single-subject HB2241.",
+          "record_kind": "vote",
+          "actor_quote": "HERNANDEZ A Y",
+          "tally_quote": "Passed 59-0-0-0-1"
+        },
+        {
+          "snapshot_id": "a9d948e7-b333-51c9-8523-9debcc4118b2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-07-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2241 (2021)",
+          "provision_quote": "In adopting the course of study and competency requirements pursuant to sections 15-701 and 15-701.01, the state board of education shall include a requirement that students be taught about the Holocaust and other genocides at least twice between the seventh and TWELFTH grades.",
+          "note": "Enacted provision mandates Holocaust/genocide instruction, narrower than rung 2's full 'racism, injustice, and diverse identities' clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ee4f18cb-a494-55f1-a53d-fcf21882f8d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2241 (2021)",
+          "provision_quote": null,
+          "note": "Bill status page names Hernandez A as prime sponsor of HB2241.",
+          "record_kind": "sponsor",
+          "actor_quote": "Hernandez A (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Hernandez A prime-sponsored and voted Yea on HB2241 (2021), which requires the state board to include instruction on the Holocaust and other genocides at least twice between grades 7-12. This points toward rung 2's 'honest account of racism, injustice, and diverse identities' but mandates only one named historical subject, narrower than that full clause, so it is direction-only, not chair-shaped (annex, rung 2, 'Broader than the instrument').",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

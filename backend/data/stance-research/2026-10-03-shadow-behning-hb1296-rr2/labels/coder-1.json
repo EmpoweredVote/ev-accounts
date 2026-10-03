@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5922a7c4-65a4-46da-acb2-6df183e596b2",
+      "office_id": "dd704aff-ea11-4e9c-a290-3debbe40671e",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "06efabe0-e0ba-53d3-beb5-dd56c75e0d2f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "The Indiana General Assembly bill page lists Behning among the co-authors of HB 1296, \"Firearms matters\"; it prints no operative text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Robert Behning",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e72d0989-fd58-555d-b39c-785354666904",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "House Roll Call 382 adopting the conference committee report on HB 1296 records Behning in the Yea column; 30 of 100 members voting were opposed, so it is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Bartels Heaton May Soliday Behning Heine Mayfield Speedy",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "90cc52c9-d3d6-5bd9-9fdb-cb4fe4446e99",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "The enrolled act amends IC 35-47-2-3 so that a person at least eighteen years of age who is not otherwise prohibited needs no state license to carry a handgun, and repeals IC 35-47-2-2 and IC 35-47-2-2.1 outright.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "06efabe0-e0ba-53d3-beb5-dd56c75e0d2f",
+        "e72d0989-fd58-555d-b39c-785354666904",
+        "90cc52c9-d3d6-5bd9-9fdb-cb4fe4446e99"
+      ],
+      "reasoning": "Behning co-authored HB 1296 (2022) and voted Yea on the conference committee report adopting it; the enrolled act provides that an adult not otherwise prohibited \"under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.\" For a state officeholder, removing the state's license to carry is the major firearm restriction the state controls, so the act matches the rung \"Repeal major gun restrictions and let adults carry a firearm without a permit.\" The bill is single-subject firearms and the 69-30 tally is not near-unanimous.",
+      "needs_source": [
+        "IGA HB 1296 (2022) as-introduced bill text, to confirm the version Behning co-authored carried the license repeal"
+      ],
+      "quotes": []
+    }
+  ]
+}

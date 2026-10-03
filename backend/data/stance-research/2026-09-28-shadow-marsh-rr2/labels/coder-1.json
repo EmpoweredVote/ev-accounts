@@ -1,0 +1,54 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2",
+      "office_id": "1c197b51-fded-441e-a72a-de51329efe42",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "c9cb2779-6c2f-529c-9d0d-bcd236631a7d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote page shows Marsh voting No on SB1828, titled \"omnibus; taxation\".",
+          "record_kind": "vote",
+          "actor_quote": "MARSH N",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "f8862baf-e5bf-50e1-b0e0-a31dd944c8e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": "the tax is 2.5% of taxable income",
+          "note": "The enacted text cuts the main individual income tax rate but also amends unemployment insurance, property tax assessment ratios, urban revenue sharing, forest-product credits, school tuition organizations and fire district levy caps.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is Marsh's No vote on SB1828 (2021), a bill captioned \"omnibus; taxation\" that amends unemployment benefit levels, property tax assessment ratios, urban revenue sharing, forest-product tax credits, school tuition organizations and fire district levy caps alongside the income tax rate change. A No vote on a multi-subject bill proves nothing about any one clause, so nothing here shows whether she would \"Keep the current tax system mostly as-is, with targeted adjustments\" or \"Moderately raise taxes on wealthy people and large companies to fund existing services\", and no surviving passage establishes a rung.",
+      "needs_source": [
+        "Christine Marsh's own words tying her No vote on SB 1828 (2021) to the individual income tax rate provision (floor speech, explanation of vote, press release)",
+        "A single-subject Arizona tax bill she authored, prime-sponsored or co-sponsored, with the AZ Legislature bill page and roll call",
+        "A first-person candidate statement or questionnaire answer on state tax rates and funding for public services, from the current term or the 2026 campaign"
+      ],
+      "quotes": []
+    }
+  ]
+}

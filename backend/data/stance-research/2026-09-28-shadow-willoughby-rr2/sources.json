@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-28-shadow-willoughby-rr2",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2332",
+      "source_kind": "public-record",
+      "politician_id": "8edebfca-2e35-4424-85f8-f3ad498a2890",
+      "office_id": "74f6255e-04a3-481e-9a90-9fabcd9697f0",
+      "topic_keys": [
+        "healthcare"
+      ],
+      "instruments": [
+        "HB 2332 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2025-hb2332-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2332#house-final",
+      "source_kind": "public-record",
+      "politician_id": "8edebfca-2e35-4424-85f8-f3ad498a2890",
+      "office_id": "74f6255e-04a3-481e-9a90-9fabcd9697f0",
+      "topic_keys": [
+        "healthcare"
+      ],
+      "instruments": [
+        "HB 2332 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2025-hb2332-house-final.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/laws/0201.htm",
+      "source_kind": "public-record",
+      "politician_id": "8edebfca-2e35-4424-85f8-f3ad498a2890",
+      "office_id": "74f6255e-04a3-481e-9a90-9fabcd9697f0",
+      "topic_keys": [
+        "healthcare"
+      ],
+      "instruments": [
+        "HB 2332 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

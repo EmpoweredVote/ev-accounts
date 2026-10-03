@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": "The Secretary of the California Health and Human Services Agency shall research, develop, and pursue discussions of a waiver framework in consultation with the federal government with the objective of creating a health care system that incorporates the following features and objectives:",
+          "note": "Wiener's authored bill orders research, stakeholder engagement and reports toward a waiver framework; it enrolls no one and pays for no care, so it is a study directive, but its text states the goal it seeks.",
+          "record_kind": "author",
+          "actor_quote": "SB 770, Wiener.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": null,
+          "note": "Wiener voted Aye on concurrence in SB 770; the page names the voter and the 29-9 count but prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "Stern, Umberg, Wahab, Wiener",
+          "tally_quote": "Ayes Count 29 Noes Count 9"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 770 (2023-2024), which Wiener authored and voted Aye on, directs the Secretary to \"research, develop, and pursue discussions of a waiver framework\" and declares that \"the Legislature endorses a health care system with unified financing, such as a single-payer health care system\". A study directive that states the outcome it seeks shows only the side pointing toward \"Make healthcare free and available to everyone, fully paid for by the public sector\"; the bill itself covers no one and pays for nothing, so it does not establish that rung's clauses (everyone, free to the patient, fully paid for by the public sector), nor exclude \"Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance\".",
+      "needs_source": [
+        "Wiener's own words (first-person statement, questionnaire answer or debate answer) on whether every Californian should be covered with no cost sharing and whether private insurance would remain",
+        "A roll call showing Wiener's vote on a California single-payer bill that would itself enroll residents (for example AB 1400, 2021-2022)"
+      ],
+      "quotes": []
+    }
+  ]
+}

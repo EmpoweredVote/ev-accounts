@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "178470c3-94ea-442a-a558-7b3c841ce858|f04e0b05-9d07-4f0d-b4a9-c9dd784545fe|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Kolodin's own act (bill text plus roll call or sponsorship line) on a single-subject Arizona bill that sets what identification a voter must present, for example a photo-ID or documentary-proof-of-citizenship bill",
+          "Kolodin's own words answering what identification the government should require to vote (questionnaire, debate answer or first-person issue page), dated within the current term or the campaign that seated him",
+          "A statement or floor explanation from Kolodin tying his sponsorship or vote on HB2785 to a specific identification provision (e.g., the mail-ballot ID option in Sec. 10, 16-579(A)(4)).",
+          "Kolodin's own words (floor speech, explanation of vote, press release, or statement) tying his support for HB2785 specifically to its voter-identification provisions, as distinct from its other, unrelated provisions"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "178470c3-94ea-442a-a558-7b3c841ce858|f04e0b05-9d07-4f0d-b4a9-c9dd784545fe|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "requests": [
+        "Kolodin's own act (bill text plus roll call or sponsorship line) on a single-subject Arizona bill that sets what identification a voter must present, for example a photo-ID or documentary-proof-of-citizenship bill",
+        "Kolodin's own words answering what identification the government should require to vote (questionnaire, debate answer or first-person issue page), dated within the current term or the campaign that seated him",
+        "A statement or floor explanation from Kolodin tying his sponsorship or vote on HB2785 to a specific identification provision (e.g., the mail-ballot ID option in Sec. 10, 16-579(A)(4)).",
+        "Kolodin's own words (floor speech, explanation of vote, press release, or statement) tying his support for HB2785 specifically to its voter-identification provisions, as distinct from its other, unrelated provisions"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

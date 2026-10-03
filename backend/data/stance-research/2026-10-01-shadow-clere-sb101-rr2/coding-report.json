@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "f58ce6de-755d-448f-9c0c-b21f9d386dad|96d9e3b2-b607-4c64-bcbf-e2e0fedb0bf9|6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic_key": "religious-freedom",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Edward Clere's own words on SB 101 (2015) given as an answer to this question — a floor statement, an explanation of vote, or a first-person issue statement saying what rule he would set instead",
+          "Clere's vote or sponsorship on an Indiana bill that states whether religion is a defense to employment or housing discrimination, or that removes or limits religious exemptions in the state civil rights law",
+          "Clere's own explanation of his Nay vote on SB 101 (2015) — a floor statement or contemporaneous own-words source — to establish which of rungs 1-3 he holds.",
+          "Clere's own statement explaining his Nay vote on SB 101 (2015) (floor speech, press release, or similar), to show which of rungs 1-3 he holds on religious exemptions"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "f58ce6de-755d-448f-9c0c-b21f9d386dad|96d9e3b2-b607-4c64-bcbf-e2e0fedb0bf9|6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "requests": [
+        "Edward Clere's own words on SB 101 (2015) given as an answer to this question — a floor statement, an explanation of vote, or a first-person issue statement saying what rule he would set instead",
+        "Clere's vote or sponsorship on an Indiana bill that states whether religion is a defense to employment or housing discrimination, or that removes or limits religious exemptions in the state civil rights law",
+        "Clere's own explanation of his Nay vote on SB 101 (2015) — a floor statement or contemporaneous own-words source — to establish which of rungs 1-3 he holds.",
+        "Clere's own statement explaining his Nay vote on SB 101 (2015) (floor speech, press release, or similar), to show which of rungs 1-3 he holds on religious exemptions"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}
