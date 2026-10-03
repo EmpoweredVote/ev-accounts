@@ -489,3 +489,34 @@ describe('checkNameProximity — accented stored names and spaced council titles
     expect(v.verdict).toBe('name_not_present');
   });
 });
+
+describe('checkNameProximity — municipal and county titles', () => {
+  const longSnippet = 'There is a place for single-family subdivisions, period. You can have strategic development and that is what we are asking for. There are urban areas where duplexes and triplexes are appropriate but not inside them.';
+
+  // "king", "moore", "brown" and "gonzalez" are all COMMON_LAST_NAMES, and real
+  // Knight-city members carry them. The full name is deliberately absent so the
+  // test exercises TITLE_PATTERN rather than the full-name branch.
+  for (const title of ['Commissioner', 'County Commissioner', 'Alderman', 'Supervisor', 'Trustee']) {
+    it(`verifies a common surname qualified by "${title}"`, () => {
+      const page = `${title} King spoke at the meeting. ${longSnippet}`;
+      const v = checkNameProximity({
+        fullName: 'Christine King',
+        lastName: 'King',
+        pageText: page,
+        matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+      });
+      expect(v.verdict).toBe('verified');
+    });
+  }
+
+  it('still refuses a common surname with no title at all', () => {
+    const page = `A resident named King spoke. ${longSnippet}`;
+    const v = checkNameProximity({
+      fullName: 'Christine King',
+      lastName: 'King',
+      pageText: page,
+      matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+    });
+    expect(v.verdict).toBe('name_not_present');
+  });
+});
