@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "ea05323c-8b6d-4b16-873c-083d9873889d",
+      "office_id": "4333d774-b25a-4c26-905b-ca604fa8216f",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "7437aeb0-9d93-5bdf-9dde-e83c9884611b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": "If a law enforcement officer arrests an individual for a felony or a misdemeanor and there is probable cause to believe that the person is not lawfully present in the United States, the jail or detention facility shall, during the intake process at the jail or detention facility, notify the county sheriff of the probable cause to believe the person is not lawfully present in the United States.",
+          "note": "Enrolled bill text; names no author on this page, and requires notification of immigration status upon arrest for a felony or misdemeanor.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b082c11d-2401-55c1-be63-29ba3df6db1a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-04-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": null,
+          "note": "IGA bill details page naming Bascom as author and showing the bill signed into law; the digest paraphrases the provision rather than quoting it verbatim.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Garrett Bascom.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "HB 1393, authored by Bascom, requires jails to notify the county sheriff of probable cause that a felony or misdemeanor arrestee is not lawfully present, who then notifies the proper authority; this shows a direction toward enforcement cooperation but does not match any rung's specific clause (it is not limited to those convicted of serious violent crimes, does not call for deporting all undocumented immigrants, and makes no recent-arrival/long-settled distinction).",
+      "needs_source": ["Bascom's own statement tying HB 1393 or his broader immigration views to a specific deportation-scope position"],
+      "quotes": []
+    }
+  ]
+}

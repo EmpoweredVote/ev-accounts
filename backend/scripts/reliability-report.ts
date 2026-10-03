@@ -5,7 +5,12 @@
  * A row's stratum = the SEAT's level (stance_coder_labels.level, written from coding-context.json
  * seat.level — the same level codingReport uses) × the weakest evidence class any valid coder rested
  * its chair on (spec §3.2).
- *   npx tsx scripts/reliability-report.ts [--codebook 0.2]
+ *   npx tsx scripts/reliability-report.ts [--codebook 0.2] [--run rr1] [--exclude-batches a,b]
+ * A re-run of the coders over saved gold inputs (spec §3.4, after a codebook change) is stored under
+ * batch ids ending "-<run>" (e.g. "2026-10-01-shadow-wesco-sb101-rr1"). By default those are left out,
+ * so the original figures do not move; --run <tag> reports ONLY that re-run. --exclude-batches drops
+ * the named batches (base names, the "-<run>" suffix ignored) — used to report a re-run without the
+ * gold items whose adjudication wrote the rule being tested.
  */
 import 'dotenv/config';
 import { pool } from '../src/lib/db.js';
@@ -14,10 +19,17 @@ import { CODEBOOK_VERSION } from './lib/coderLabel.js';
 
 const i = process.argv.indexOf('--codebook');
 const version = i > 0 ? process.argv[i + 1] : CODEBOOK_VERSION;
-const { rows } = await pool.query(
+const ri = process.argv.indexOf('--run');
+const run = ri > 0 ? process.argv[ri + 1] : null;
+const xi = process.argv.indexOf('--exclude-batches');
+const excluded = new Set(xi > 0 ? process.argv[xi + 1].split(',').map((b) => b.trim()).filter(Boolean) : []);
+const RERUN = /-rr\d+$/;
+const baseName = (b: string) => b.replace(RERUN, '');
+const { rows: allRows } = await pool.query(
   `SELECT l.batch_id, l.politician_id, l.office_id, l.topic_id, l.coder_slot, l.valid, l.value, l.rests_on, l.source_codes, l.level
      FROM inform.stance_coder_labels l
     WHERE l.codebook_version = $1 AND NOT l.is_diagnostic AND l.coder_slot BETWEEN 1 AND 3`, [version]);
+const rows = allRows.filter((r) => (run ? r.batch_id.endsWith(`-${run}`) : !RERUN.test(r.batch_id)) && !excluded.has(baseName(r.batch_id)));
 // Blind gold (spec §3.3): the newest counted decision per (politician, office, topic). A decision a
 // later row supersedes is not the answer any more.
 const { rows: goldRows } = await pool.query(
@@ -56,7 +68,7 @@ for (const u of units.values()) {
   if (g) b.pairs.push({ coders: u.values, gold: g.final_value, offAxis: OFF_AXIS.has(g.topic_key) });
   byStratum.set(stratumOf(u), b);
 }
-console.log(`codebook ${version} — ${units.size} coded rows, ${[...byStratum.values()].reduce((n, b) => n + b.pairs.length, 0)} with blind gold\n`);
+console.log(`codebook ${version}${run ? ` — re-run ${run}` : ''}${excluded.size ? ` — ${excluded.size} batch(es) excluded` : ''} — ${units.size} coded rows, ${[...byStratum.values()].reduce((n, b) => n + b.pairs.length, 0)} with blind gold\n`);
 console.log('stratum'.padEnd(32), 'rows'.padStart(5), 'M1 α'.padStart(7), 'gold'.padStart(5), 'M2 α'.padStart(7), '  M3 unan ok/n', ' M4', '  certified?');
 const fmt = (a: number | null) => (a === null ? 'undef' : a.toFixed(3));
 for (const [s, b] of [...byStratum].sort()) {

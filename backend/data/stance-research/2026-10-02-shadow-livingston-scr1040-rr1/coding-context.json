@@ -1,0 +1,68 @@
+{
+  "batch_id": "2026-10-02-shadow-livingston-scr1040-rr1",
+  "seat": {
+    "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+    "full_name": "David Livingston",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "f7cad0ce-e9af-46a1-a39d-d5d4520d3879",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": null,
+        "start_precision": "unknown",
+        "term_end": "2018-01-14"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": null,
+        "start_precision": "unknown",
+        "term_end": "2023-01-08"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "question_text": "What approach should government take to the minimum wage?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation."
+        },
+        {
+          "value": 2,
+          "text": "Raise the wage floor to a set higher level, then adjust it only when lawmakers vote to."
+        },
+        {
+          "value": 3,
+          "text": "Keep a modest national wage floor as a baseline and let states and cities set higher rates."
+        },
+        {
+          "value": 4,
+          "text": "Hold the wage floor at its current level and let the market set pay above it."
+        },
+        {
+          "value": 5,
+          "text": "Remove the wage floor entirely and let employers and workers set pay by agreement."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

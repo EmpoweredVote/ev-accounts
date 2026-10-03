@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "9b2ded26-858c-5fd2-aac3-c706625ba56f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-03-31",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": null,
+          "note": "McGuire is in the Ayes list on the concurrence vote that sent SB 3 to the Governor, 26-12.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Beall, Block, De León, Galgiani, Glazer, Hall, Hancock, Hernandez, Hertzberg, Hill, Hueso, Jackson, Lara, Leno, Leyva, Liu, McGuire, Mendoza, Mitchell, Monning, Pan, Pavley, Roth, Wieckowski, Wolk",
+          "tally_quote": "Ayes Count 26 Noes Count 12"
+        },
+        {
+          "snapshot_id": "dcfecd0c-4c76-50c4-ab19-82e030d74297",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-04-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": "Following the implementation of the minimum wage increase specified in subparagraph (F) of paragraph (2) of subdivision (b), on or before August 1 of that year, and on or before each August 1 thereafter, the Director of Finance shall calculate an adjusted minimum wage. The calculation shall increase the minimum wage by the lesser of 3.5 percent and the rate of change in the averages of the most recent July 1 to June 30, inclusive, period over the preceding July 1 to June 30, inclusive, period for the United States Bureau of Labor Statistics nonseasonally adjusted United States Consumer Price Index for Urban Wage Earners and Clerical Workers (U.S. CPI-W). The result shall be rounded to the nearest ten cents ($0.10). Each adjusted minimum wage increase calculated under this subdivision shall take effect on the following January 1.",
+          "note": "The chaptered text prints both the scheduled rise to fifteen dollars ($15) per hour and the standing CPI-W adjustment thereafter; it names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "9b2ded26-858c-5fd2-aac3-c706625ba56f",
+        "dcfecd0c-4c76-50c4-ab19-82e030d74297"
+      ],
+      "reasoning": "McGuire voted Aye on concurrence in SB 3 (2015-2016), whose operative section amends Labor Code 1182.12 to step the wage floor up to \"fifteen dollars ($15) per hour\" and then requires that \"the Director of Finance shall calculate an adjusted minimum wage\" each year by the CPI-W, which \"shall take effect on the following January 1\". That matches both clauses of the rung \"Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation,\" and the standing annual adjustment excludes the rung that would \"adjust it only when lawmakers vote to\".",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-09-30-shadow-wicks-ab1228-rr1",
+  "seat": {
+    "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+    "full_name": "Buffy Wicks",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+    "office_title": "Assembly Member",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "CA",
+        "term_start": "2018-12-03",
+        "start_precision": "day",
+        "term_end": "2022-12-05"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "question_text": "What approach should government take to the minimum wage?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation."
+        },
+        {
+          "value": 2,
+          "text": "Raise the wage floor to a set higher level, then adjust it only when lawmakers vote to."
+        },
+        {
+          "value": 3,
+          "text": "Keep a modest national wage floor as a baseline and let states and cities set higher rates."
+        },
+        {
+          "value": 4,
+          "text": "Hold the wage floor at its current level and let the market set pay above it."
+        },
+        {
+          "value": 5,
+          "text": "Remove the wage floor entirely and let employers and workers set pay by agreement."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

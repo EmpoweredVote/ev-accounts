@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-28-shadow-becker-rr1",
+  "seat": {
+    "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+    "full_name": "Josh Becker",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2020-12-07",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "question_text": "How much should government oversee artificial intelligence development and deployment?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Allow AI companies to develop and deploy technology freely without government interference"
+        },
+        {
+          "value": 2,
+          "text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+        },
+        {
+          "value": 3,
+          "text": "Hold AI developers legally responsible when their systems cause harm"
+        },
+        {
+          "value": 4,
+          "text": "Require safety testing before AI can be used in high-stakes areas like hiring, healthcare, and policing"
+        },
+        {
+          "value": 5,
+          "text": "Impose strict government approval requirements before any AI system can be deployed"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

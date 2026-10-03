@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "178470c3-94ea-442a-a558-7b3c841ce858",
+      "office_id": "f04e0b05-9d07-4f0d-b4a9-c9dd784545fe",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "1a257be5-3bd9-5377-b982-677a77646c54",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "HB2394 (2024)",
+          "provision_quote": null,
+          "note": "House final reading vote page; Kolodin voted Yea on HB2394, but the bill creates a candidate digital-impersonation civil remedy, not a platform/government misinformation duty.",
+          "record_kind": "vote",
+          "actor_quote": "KOLODIN Y",
+          "tally_quote": "Passed 57-0-3-0-0"
+        },
+        {
+          "snapshot_id": "ad150339-15bb-5863-8838-6fc394a3a0f4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2394 (2024)",
+          "provision_quote": "A candidate for public office or political party office who will appear on the ballot in this state or any citizen of this state may bring an action for digital impersonation within two years after the date that the person knows, or in the exercise of reasonable diligence should know, that a digital impersonation of the person who is bringing the action was published.",
+          "note": "Enacted statute (Ch. 193) creates a private civil action against publishers of digital impersonations of candidates and exempts interactive computer service providers from liability; it sets no platform removal, labeling, or voluntary-standards duty and does not address government content moderation.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "005c9f3d-ab1a-55ba-9d19-e07d93c9be78",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2394 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview lists Kolodin as prime sponsor of HB2394, a candidate digital-impersonation measure signed by the Governor on 2024-05-21.",
+          "record_kind": "sponsor",
+          "actor_quote": "Kolodin (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB2394 creates a private civil cause of action for candidates and citizens against publishers of 'digital impersonations' (deepfakes), expressly exempting interactive computer service providers from liability (Sec. C); it does not require platforms to remove or label false content, encourage voluntary standards, or address government censorship of online misinformation, so every passage is adjacent under V2 and no passage can support a chair on this ladder.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

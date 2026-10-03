@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+      "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "39a0b7dd-c690-5fd8-9b89-f2dd41f19e61",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Bill overview page shows HB 1032 defeated on Senate third reading, Roll Call 8, yeas 19 nays 31.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0ce045a6-529f-58b0-90cf-d6df5bea213c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Senate Roll Call 8 on HB 1032 third reading lists Bray among the 31 Nay votes that defeated the bill.",
+          "record_kind": "vote",
+          "actor_quote": "Leising Spencer Bray Doriot Mishler",
+          "tally_quote": "Yea 19 Nay 31"
+        },
+        {
+          "snapshot_id": "0c4d9c30-1bb1-5e8d-8ff7-4936441259d4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "Redistricting. Allows the general assembly to amend congressional districts at a time other than the first regular session of the general assembly convening immediately following the United States decennial census. Specifies requirements that apply to any action challenging the apportionment of congressional districts or general assembly districts. Establishes new Indiana congressional districts. Provides for expiration of the current congressional districts on the date of the 2026 general election. Specifies that for purposes of the 2026 primary and general election, a precinct may cross the boundary of a congressional district. Requires the election division to assist each county voter registration office with the implementation of this act. Makes technical and necessary changes in related statutes.",
+          "note": "Engrossed bill text has the legislature redraw congressional districts itself and bars TROs while giving the state supreme court mandatory, stayed-pending-appeal jurisdiction over apportionment challenges, mixing legislature-drawn maps with narrowed (not removed) court review.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Senator Bray voted Nay on HB 1032 (2026), a single-subject redistricting bill letting the General Assembly redraw congressional districts itself and barring temporary restraining orders while giving the state supreme court mandatory, stayed-pending-appeal jurisdiction over apportionment challenges. That text does not cleanly match either 'state legislatures with court oversight to prevent extreme partisan bias' or 'the party that controls the state legislature without outside interference,' since it narrows but does not remove court review, so his Nay shows only opposition to this bill, not which rung he holds.",
+      "needs_source": [
+        "Bray's own floor explanation of his Nay vote on HB 1032 tying it to a specific clause (the court-jurisdiction restrictions in new IC 3-3-2-3 versus the mid-decade redistricting timing itself)",
+        "Any other Bray record or statement on who should draw Indiana's districts (commission vs. legislature) to resolve the direction-only chair"
+      ],
+      "quotes": []
+    }
+  ]
+}

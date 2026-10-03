@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "eed8e3bb-c007-5140-99b2-82050a30bbdf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-08-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": null,
+          "note": "Assembly floor final-passage vote; Gabriel listed among the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Friedman, Gabriel, Cristina Garcia",
+          "tally_quote": "Ayes Count 44 Noes Count 33 NVR Count 3"
+        },
+        {
+          "snapshot_id": "dc49ccc5-06bc-591f-ae43-b6e68d3239f5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-09-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": "the quantities shall reflect reasonable progress in each of the intervening years sufficient to ensure that the procurement of electricity products from eligible renewable energy resources achieves 25 percent of retail sales by December 31, 2016, 33 percent by December 31, 2020, 44 percent by December 31, 2024, 52 percent by December 31, 2027, and 60 percent by December 31, 2030.",
+          "note": "Chaptered bill text printing the RPS procurement targets with firm statutory deadlines.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "eed8e3bb-c007-5140-99b2-82050a30bbdf",
+        "dc49ccc5-06bc-591f-ae43-b6e68d3239f5"
+      ],
+      "reasoning": "Gabriel voted Aye on SB 100 (2017-2018)'s Assembly floor final passage; the chaptered bill requires retail sellers to procure renewable energy resources reaching firm percentage targets by firm dates (44% by 2024, 52% by 2027, 60% by 2030), matching rung 1's 'Require a shift to clean energy through mandates and firm deadlines' and excluding the neutral and anti-mandate rungs.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

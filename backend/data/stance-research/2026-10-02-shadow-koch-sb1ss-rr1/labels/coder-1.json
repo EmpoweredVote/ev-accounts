@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
+      "office_id": "ae285450-8e0b-43d9-a534-e747ea9baf0b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "03a96ddb-0a85-5ab5-a5fd-701c88762989",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate roll call 58, concurrence on SB 1(ss); Koch is in the Yea list and the 28-19 split is far from near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Koch Sandlin",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        },
+        {
+          "snapshot_id": "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "Abortion shall in all instances be SEA 1(ss) — Concur 13 a criminal act, except when performed under the following circumstances:",
+          "note": "Enrolled act text; SECTION 21 rewrites IC 16-34-2-1 into a ban with exceptions for serious health risk or life, lethal fetal anomaly, and rape or incest, which is the operative section the concurrence vote passed.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill details page: it identifies the instrument and its single subject, but the digest is a summary and the operative section governs, so this page alone shows only the restrictive side.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "03a96ddb-0a85-5ab5-a5fd-701c88762989",
+        "cd82aaef-bdce-5e61-8163-6841ae3300e9"
+      ],
+      "reasoning": "Koch voted Yea on concurrence in SB 1(ss) (2022 First Special Session), a single-subject abortion bill whose operative SECTION 21 makes abortion \"a criminal act, except when performed under the following circumstances:\" — serious health risk or the woman's life, a lethal fetal anomaly, and, for ten weeks, \"the pregnancy is a result of rape or incest\". That matches the rung \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\", and the bill's own exceptions exclude the rung that would \"ban abortion in all cases, with no exceptions\" as well as the rung that would \"allow abortion during the first trimester\". The 28-19 tally is not near-unanimous.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

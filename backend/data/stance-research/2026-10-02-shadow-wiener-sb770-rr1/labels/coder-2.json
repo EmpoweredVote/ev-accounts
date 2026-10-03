@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": null,
+          "note": "Floor vote page; Wiener is both the bill's author and an Aye vote.",
+          "record_kind": "vote",
+          "actor_quote": "Stern, Umberg, Wahab, Wiener",
+          "tally_quote": "Ayes Count 29 Noes Count 9"
+        },
+        {
+          "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": "The Secretary of the California Health and Human Services Agency shall research, develop, and pursue discussions of a waiver framework in consultation with the federal government with the objective of creating a health care system that incorporates the following features and objectives:",
+          "note": "Operative section directs a waiver study, not an enactment of coverage; it states the objective it seeks per H16.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 770 (2023-2024), which Wiener authored and voted Aye on, directs the Secretary of Health and Human Services to pursue a federal waiver 'with the objective of creating a health care system that incorporates' comprehensive benefits and no cost sharing, and declares that 'the Legislature endorses a health care system with unified financing, such as a single-payer health care system.' Under H16, a study directive that states its sought outcome shows only the pro-public-financing side, not a specific rung; the operative text orders research and reports, not an enacted coverage system matching any one rung's clauses.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "03ee06fb-9b51-41cc-8942-4632f3a724e3|e38cdc56-9228-456b-ba4c-3fc0ab72f6cd|9db07b16-1076-4b7d-ad89-ebe7b51f4336#638a85ea-c93a-58f7-82e7-a136ae37daff",
+          "values": [
+            "direction-only",
+            "chair-shaped",
+            "direction-only"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "03ee06fb-9b51-41cc-8942-4632f3a724e3|e38cdc56-9228-456b-ba4c-3fc0ab72f6cd|9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+          "values": [
+            "BLANK",
+            "4",
+            "BLANK"
+          ]
+        }
+      ]
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v6_chair"
+  ]
+}

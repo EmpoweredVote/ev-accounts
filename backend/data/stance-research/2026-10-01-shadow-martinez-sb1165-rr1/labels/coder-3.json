@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "5ec5ddad-123b-5a0b-a45d-d44edba17b59",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call records Martinez voting Y on final passage of the single-subject bill.",
+          "record_kind": "vote",
+          "actor_quote": "MARTINEZ Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        },
+        {
+          "snapshot_id": "1d6b7010-dc9b-5123-8e54-281e2c0790f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "The chaptered bill text bars students of the male sex from female-designated teams while leaving male and coed teams open to all, matching rung 4 and excluding a full ban.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": ["5ec5ddad-123b-5a0b-a45d-d44edba17b59", "1d6b7010-dc9b-5123-8e54-281e2c0790f6"],
+      "reasoning": "Martinez voted Y on final passage of SB 1165 (2022), a single-subject bill whose operative text requires each team be designated by biological sex and bars students of the male sex from female-designated teams while leaving male and coed teams open to all students, matching 'require transgender athletes to compete only on teams matching their biological sex assigned at birth' and excluding a complete ban. The vote occurred during her term as State Representative (2021-11-01 to 2023-01-09).",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": "for taxable years beginning from and after December 31 of the year in which notice is provided to the department pursuant to section 43-243, subsection B, paragraph 2, the tax is 2.5% of taxable income.",
+          "note": "Chapter 412 bill text; one clause (flat 2.5% income tax) matches S1 rung 4 language, but the enacted act is an omnibus of 32 unrelated tax sections (sales-tax exemptions, property tax, unemployment benefits, fire-district caps, school-tuition credits).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "69da793b-7075-56d9-8eae-7d3d89267239",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview names Mesnard as prime sponsor of the omnibus taxation bill, later signed by the governor.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime with permission of Rules)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "420ed0d1-030a-5c8b-a1a6-5d63baffb890",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Senate Third Reading roll call: Mesnard voted Yea on the omnibus taxation bill, 16-14.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Mesnard was prime sponsor and cast a Yea vote (16-14) on SB 1828 (2021), an omnibus taxation act bundling a phased flat income-tax rate ('the tax is 2.5% of taxable income') with unrelated sales-tax, property-tax, unemployment-benefit and fire-district provisions. Per V4.1, final passage of a multi-subject bill proves direction only, absent his own statement tying the vote to the income-tax-rate clause specifically, so no single rung (3 'targeted adjustments' vs. 4 'cut taxes broadly' vs. 5 'cut as far as possible and shrink government') can be established.",
+      "needs_source": ["Mesnard's own floor statement or explanation of vote tying his SB 1828 sponsorship/vote specifically to the §43-1011 flat-tax rate reduction, to distinguish S1 rung 3 from rung 4 from rung 5"],
+      "quotes": []
+    }
+  ]
+}

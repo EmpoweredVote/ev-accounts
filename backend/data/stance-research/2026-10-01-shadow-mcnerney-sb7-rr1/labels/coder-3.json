@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0",
+      "office_id": "c8952cf4-85b9-4602-9edc-dfa0878583ff",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "190d126e-5005-54a7-bae2-6bd166c9a4f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 7 (2025-2026)",
+          "provision_quote": "An employer shall not rely solely on an ADS when making a discipline, termination, or deactivation decision.",
+          "note": "Mandates notice, use restrictions and human review on employers using ADS; liability falls on employers for procedural violations, not on AI developers for harm (rung 3), and the mechanism is notice/human review, not safety testing (rung 4).",
+          "record_kind": "author",
+          "actor_quote": "Introduced by Senator McNerney",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 7, which McNerney introduced, requires employer notice before using automated decision systems, bars reliance solely on an ADS for discipline/termination decisions, and creates civil penalties for violators, showing a clear pro-regulation direction. But the rung text of \"Hold AI developers legally responsible when their systems cause harm\" names developers, not employers, and \"Require safety testing before AI can be used in high-stakes areas\" names testing, not notice-and-human-review, so no single rung's clause is matched.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "6b6368a1-354d-4f28-9232-a6ec70198ab8",
+      "office_id": "085054aa-8e66-46c3-a41d-18e75de7eab6",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Floor statement opposing the bill's distance/fine provisions and urging housing solutions, but it does not match any rung's full clauses.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Taylor's quoted floor statement criticizes the bill's 300-foot buffer ('you can actually move 300 feet and not violate this law') and says 'What I think we should be working on is finding a place for the unhoused to be housed' — this shows opposition to the bill's enforcement mechanism and a preference for housing solutions, but it does not establish which rung: it does not say penalties should never apply ('with no penalties of any kind'), that camping should be decriminalized outright, or that enforcement should be limited to cases where adequate shelter beds are unavailable ('allowing enforcement only when adequate shelter beds are available, with citations diverting people to services'). So it is direction-only.",
+      "needs_source": [
+        "Roll call or vote record showing Taylor's own vote on the public camping ban bill (instrument/bill number not given in this source)",
+        "The bill's own operative text (not just the news summary) to check which rung clauses it matches"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "text": "Why would you prescribe any distance away?",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "text": "What I think we should be working on is finding a place for the unhoused to be housed. This is a bill that looks for a place for the unhoused to remain unhoused, because you can actually move 300 feet and not violate this law.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

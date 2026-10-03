@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "9b2ded26-858c-5fd2-aac3-c706625ba56f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-03-31",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": null,
+          "note": "Senate floor concurrence vote on SB 3; McGuire voted Aye.",
+          "record_kind": "vote",
+          "actor_quote": "Liu, McGuire, Mendoza",
+          "tally_quote": "Ayes Count 26 Noes Count 12"
+        },
+        {
+          "snapshot_id": "dcfecd0c-4c76-50c4-ab19-82e030d74297",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-04-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": "the Director of Finance shall calculate an adjusted minimum wage. The calculation shall increase the minimum wage by the lesser of 3.5 percent and the rate of change in the averages of the most recent July 1 to June 30, inclusive, period over the preceding July 1 to June 30, inclusive, period for the United States Bureau of Labor Statistics nonseasonally adjusted United States Consumer Price Index for Urban Wage Earners and Clerical Workers (U.S. CPI-W).",
+          "note": "Chaptered text, SEC. 3 (Labor Code 1182.12): schedules wage to $15, then sets automatic CPI-W adjustment with no further legislation.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "9b2ded26-858c-5fd2-aac3-c706625ba56f",
+        "dcfecd0c-4c76-50c4-ab19-82e030d74297"
+      ],
+      "reasoning": "McGuire voted Aye on SB 3 (2015-2016), which schedules the minimum wage up to $15 and then directs the Director of Finance to recalculate it annually by the CPI-W 'without complying with' any further legislative step, taking effect each following January 1 -- matching the rung text 'tie it to the cost of living, so it rises automatically each year without new legislation.' The bill's own mechanism excludes rung 2, since no future lawmaker vote is required once the index takes over.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

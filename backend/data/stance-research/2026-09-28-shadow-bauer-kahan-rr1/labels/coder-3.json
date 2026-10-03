@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab",
+      "office_id": "b58a97c0-8ee8-4949-827d-c06946a12a4c",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "71d6b197-b7d9-5675-a5e9-5ddcc6ec1b4f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": null,
+          "note": "Bill restricts firearm advertising/marketing to minors; the ladder's rungs differ on ownership bans, weapon-type bans, background checks, and carry rules, none of which this instrument touches.",
+          "record_kind": "author",
+          "actor_quote": "AB 2571, Bauer-Kahan.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 2571 prohibits firearm industry members from advertising or marketing firearm-related products in a manner attractive to minors. This regulates marketing practices, not civilian ownership, weapon types, background checks, or carry permits, which is the dimension the gun-policy rungs separate, so the passage is adjacent and off-axis to the ladder and cannot establish a chair.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

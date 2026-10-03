@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "48e5adc9-77eb-5d52-8dbc-19668f745378",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": "The municipality may not do any of the following: 1. Discourage the development of middle housing through requirements or actions that individually or cumulatively make impracticable the permitting, siting, or construction of middle housing.",
+          "note": "Bill text bars zoning restrictions that block middle housing, matching rung 5's clause, but one deregulation law can't prove this is 'at most' what she supports.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e2243c37-bc6e-5125-b97e-21d342430160",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview lists Ortiz as a co-sponsor of HB2721, evidencing the bill as filed.",
+          "record_kind": "sponsor",
+          "actor_quote": "Ortiz (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "Ortiz voted Y on the House Final Reading of HB2721, the zoning-deregulation bill.",
+          "record_kind": "vote",
+          "actor_quote": "ORTIZ Y",
+          "tally_quote": "42-15-3-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [
+        "48e5adc9-77eb-5d52-8dbc-19668f745378",
+        "e2243c37-bc6e-5125-b97e-21d342430160",
+        "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f"
+      ],
+      "reasoning": "HB2721 requires municipalities over 75,000 residents to permit duplexes, triplexes, fourplexes and townhomes and bars zoning requirements that make such housing impracticable, matching rung 5's clause to cut the zoning limits that block private building. Ortiz co-sponsored the bill as a state representative and voted Y on House Final Reading (ORTIZ Y, 42-15-3-0-0), a record that counts in-term for her current senate seat under the same-legislature rule. Because one deregulation law cannot show this is 'at most' what she supports rather than a step she would pair with binding rules or subsidies, this is direction-only, not chair-shaped for rung 5.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

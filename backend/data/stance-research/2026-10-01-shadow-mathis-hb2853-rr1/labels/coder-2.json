@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "a7675f41-2e50-413c-9864-8a64969f47f9",
+      "office_id": "60ec357f-3c1b-4b58-82e7-447dd47bc111",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "e9e56d07-1b1d-5bd8-b284-2ea2381fed8f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Roll call shows Mathis voting No on final passage of HB2853 (2022), the ESA expansion bill, 31-26.",
+          "record_kind": "vote",
+          "actor_quote": "MATHIS N",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "c4059cca-3b4f-51ae-bae8-673e487d5925",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "Enacted text (Chapter 388) opens ESA eligibility to nearly all Arizona students notwithstanding prior qualifying criteria, matching rung 5's universal-eligibility clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Mathis voted No on HB2853 (2022), a single-subject ESA bill whose operative text (15-2401.01) made nearly every Arizona K-12 and qualifying preschool student eligible 'notwithstanding' prior criteria, matching rung 5's 'universal vouchers so that education funding follows the student to any school.' Per the annex's own hard case, a No vote on an expansion bill alone is only direction-only: it shows opposition to the expansion but does not separate rung 1 ('eliminating voucher programs') from rung 2 ('opposing voucher programs and blocking their expansion, without moving to eliminate existing ones').",
+      "needs_source": [
+        "Mathis's own words on HB2853 or on the existing Arizona ESA program, to distinguish eliminating existing voucher programs (rung 1) from opposing expansion without repeal (rung 2)."
+      ],
+      "quotes": []
+    }
+  ]
+}

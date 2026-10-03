@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "a7e904b1-ec37-4c43-8594-99d778e7351a",
+      "office_id": "11c6dfc5-e935-4094-a01d-1d30ef64f95d",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "165e3a2a-d3e9-5521-a288-ef059dc09f19",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-10-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 316 (2025-2026)",
+          "provision_quote": "it shall not be a defense, and the defendant may not assert, that the artificial intelligence autonomously caused the harm to the plaintiff.",
+          "note": "Chaptered single-subject bill she authored bars an AI-autonomy defense, keeping developers/users liable for AI-caused harm.",
+          "record_kind": "author",
+          "actor_quote": "AB 316, Krell.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 3,
+      "v6_blank_reason": null,
+      "rests_on": ["165e3a2a-d3e9-5521-a288-ef059dc09f19"],
+      "reasoning": "AB 316, which Krell authored and the Governor approved during her current term, adds Civil Code 1714.46(b), barring a defendant who developed, modified, or used AI from defending on the ground that the AI autonomously caused the harm. That operative clause matches the rung text 'Hold AI developers legally responsible when their systems cause harm' and excludes the testing (rung 4) and pre-approval (rung 5) mechanisms.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

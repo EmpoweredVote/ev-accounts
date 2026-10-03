@@ -1,0 +1,57 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-03-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Caucus press release quotes Kavanagh backing ICE cooperation and 'deportation efforts' generally; it is not the bill text or a roll call, so sponsorship/passage is not coded as a record (H15-style).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Kavanagh's own quoted words support 'the federal government's deportation efforts' and say he will 'stand with President Trump in this mission,' including backing ICE access to inmate information and more detention capacity for 'dangerous criminal illegal aliens.' This establishes a pro-enforcement direction but does not say whether deportation should be limited to those convicted of serious violent crimes, start with the criminally convicted before expanding, or extend to all undocumented immigrants including long-settled families, so no rung on the served ladder is chair-shaped.",
+      "needs_source": [
+        "Bill text and sponsor line for SB 1294 (2025)",
+        "Bill text and sponsor line for SB 1299 (2025)",
+        "Bill text and sponsor line for SB 1610 (2025)",
+        "Arizona Senate roll call votes for SB 1294, SB 1299, and SB 1610 (2025)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "The federal government should have access to the empty Marana Prison to house these dangerous criminal illegal aliens so that Arizonans are protected from further threats",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "With this bill, we are supporting the federal government's deportation efforts by requiring detention facilities to supply inmate information to ICE",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

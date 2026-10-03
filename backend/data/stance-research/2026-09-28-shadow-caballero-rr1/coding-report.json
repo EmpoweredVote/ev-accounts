@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20|d55ca4b0-d53f-42f5-9ed7-000d188e6634|0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A contested California roll call or a Caballero-authored/sponsored bill whose operative section matches one rung of this ladder (civil rights enforcement, equity mandates, or affirmative action)",
+          "Caballero's own words answering what role government should play in addressing racial and social inequality (questionnaire, debate answer, or her own issue page), dated within her current term or the campaign that seated her",
+          "A contested vote, sponsorship, or her own statement addressing civil rights enforcement or affirmative action, since the only record found (SB 188) passed 37-0"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20|d55ca4b0-d53f-42f5-9ed7-000d188e6634|0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "requests": [
+        "A contested California roll call or a Caballero-authored/sponsored bill whose operative section matches one rung of this ladder (civil rights enforcement, equity mandates, or affirmative action)",
+        "Caballero's own words answering what role government should play in addressing racial and social inequality (questionnaire, debate answer, or her own issue page), dated within her current term or the campaign that seated her",
+        "A contested vote, sponsorship, or her own statement addressing civil rights enforcement or affirmative action, since the only record found (SB 188) passed 37-0"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

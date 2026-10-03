@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b2056197-763a-566a-abad-fe59bef3eb40",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-10-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": "California law enforcement agencies shall not: (1) Use agency or department moneys or personnel to investigate, interrogate, detain, detect, or arrest persons for immigration enforcement purposes, including any of the following:",
+          "note": "The bill bars immigration-enforcement cooperation but carves out cooperation for any felony punishable by state prison, not only serious violent crimes, so the operative text does not match a single rung's boundary.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e45850e5-c900-5eb6-a053-26d4882babdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-09-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": null,
+          "note": "Final Assembly floor vote on SB 54; the Ayes list names Aguiar-Curry and the tally shows a 51-26 pass.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Arambula, Berman, Bloom,",
+          "tally_quote": "Ayes Count 51 Noes Count 26"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "She voted Aye on final passage of SB 54 (2017-2018), which bars California law enforcement agencies from using resources for immigration enforcement except where a person 'has been convicted of a felony punishable by imprisonment in the state prison' or other listed offenses — a carve-out far broader than 'serious violent crimes.' The operative text shows a direction toward restricting deportation assistance but does not match the clause boundary of any one rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

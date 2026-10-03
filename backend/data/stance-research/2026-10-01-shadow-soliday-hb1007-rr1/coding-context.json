@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-10-01-shadow-soliday-hb1007-rr1",
+  "seat": {
+    "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+    "full_name": "Edmond Soliday",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2006-11-08",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "question_text": "How should government manage the growth of large-scale data centers?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"
+        },
+        {
+          "value": 2,
+          "text": "Barring utilities from passing any data center energy infrastructure costs to residential customers"
+        },
+        {
+          "value": 3,
+          "text": "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"
+        },
+        {
+          "value": 4,
+          "text": "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"
+        },
+        {
+          "value": 5,
+          "text": "Welcoming data center investment with minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

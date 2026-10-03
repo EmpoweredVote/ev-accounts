@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Beverly Pingerelli's own words on how late in pregnancy abortion should remain legal, and on rape/incest exceptions (questionnaire, debate answer, or first-person issue page), from her current term or the campaign that seated her",
+          "An Arizona House roll call or sponsorship by Pingerelli on a bill whose operative section matches one rung's permitted window and exceptions (for example a ban with rape, incest and life-of-the-mother exceptions, or a first-trimester limit)",
+          "a statement from Pingerelli explaining her vote or describing her own position on the 15-week limit, to settle whether it matches rung 2 or rung 3",
+          "Pingerelli's own statement (floor speech, interview, questionnaire) tying the fifteen-week cutoff to a specific trimester or rung, if one exists"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Beverly Pingerelli's own words on how late in pregnancy abortion should remain legal, and on rape/incest exceptions (questionnaire, debate answer, or first-person issue page), from her current term or the campaign that seated her",
+        "An Arizona House roll call or sponsorship by Pingerelli on a bill whose operative section matches one rung's permitted window and exceptions (for example a ban with rape, incest and life-of-the-mother exceptions, or a first-trimester limit)",
+        "a statement from Pingerelli explaining her vote or describing her own position on the 15-week limit, to settle whether it matches rung 2 or rung 3",
+        "Pingerelli's own statement (floor speech, interview, questionnaire) tying the fifteen-week cutoff to a specific trimester or rung, if one exists"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

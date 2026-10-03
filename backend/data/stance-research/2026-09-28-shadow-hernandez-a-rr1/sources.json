@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-28-shadow-hernandez-a-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=HB2241",
+      "source_kind": "public-record",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_keys": [
+        "education-curriculum"
+      ],
+      "instruments": [
+        "HB 2241 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2021-hb2241-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=HB2241#house-third",
+      "source_kind": "public-record",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_keys": [
+        "education-curriculum"
+      ],
+      "instruments": [
+        "HB 2241 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2021-hb2241-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0418.htm",
+      "source_kind": "public-record",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_keys": [
+        "education-curriculum"
+      ],
+      "instruments": [
+        "HB 2241 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

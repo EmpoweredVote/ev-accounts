@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "66ca210e-deab-4d07-8a18-48f7079f6f9b",
+      "office_id": "cd9644aa-ae19-4f20-bde2-6099f5ac57cc",
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "passages": [
+        {
+          "snapshot_id": "7e0d9c2a-7ead-5b7f-bec7-ab4f87a4d5d4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2492 (2022)",
+          "provision_quote": "any application for registration shall be accompanied by satisfactory evidence of citizenship as prescribed in section 16-166, subsection F, and the county recorder or other officer in charge of elections shall reject any application for registration that is not accompanied by satisfactory evidence of citizenship.",
+          "note": "Enacted text of HB2492, the bill Hoffman prime-sponsored, requiring documentary proof of citizenship to register.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "11019933-33fd-5edb-a41d-97b95071dfd4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2492 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview names Hoffman as prime sponsor of HB2492, which was signed into law.",
+          "record_kind": "sponsor",
+          "actor_quote": "Hoffman (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cea620f7-fb9a-5084-b23c-b93a82de741a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2492 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Hoffman voting Y on HB2492's passage.",
+          "record_kind": "vote",
+          "actor_quote": "HOFFMAN Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "7e0d9c2a-7ead-5b7f-bec7-ab4f87a4d5d4",
+        "11019933-33fd-5edb-a41d-97b95071dfd4",
+        "cea620f7-fb9a-5084-b23c-b93a82de741a"
+      ],
+      "reasoning": "Hoffman was prime sponsor of HB2492 (2022) and voted Y on its House Third Reading passage (31-26-3-0-0); the enacted text requires that a registration application 'be accompanied by satisfactory evidence of citizenship' and directs rejection of applications lacking it, matching the rung text 'Require documentary proof of citizenship to register to vote.' Per the V5 earlier-chamber ruling, his 2022 House record counts as in-term for his current Senate seat.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

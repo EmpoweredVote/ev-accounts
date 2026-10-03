@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-10-02-shadow-haney-ab1775-rr1",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1775",
+      "source_kind": "public-record",
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_keys": [
+        "cannabis-policy"
+      ],
+      "instruments": [
+        "AB 1775 (2023-2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2024-ab1775-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1775",
+      "source_kind": "public-record",
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_keys": [
+        "cannabis-policy"
+      ],
+      "instruments": [
+        "AB 1775 (2023-2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2024-ab1775-votes.txt"
+    }
+  ]
+}

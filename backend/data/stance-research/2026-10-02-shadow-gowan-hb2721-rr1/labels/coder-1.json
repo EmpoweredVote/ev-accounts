@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024, 56th Legislature, 2nd Regular Session)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote detail naming Gowan and the count; the page prints no provision text.",
+          "record_kind": "vote",
+          "actor_quote": "GOWAN Y",
+          "tally_quote": "05/08/2024 Passed 21-7-2-0-0 Amended"
+        },
+        {
+          "snapshot_id": "6048bc5d-41e2-501a-bb4b-c01ccbd5ba6e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024, 56th Legislature, 2nd Regular Session)",
+          "provision_quote": null,
+          "note": "Bill history page for the same instrument; it prints the Senate tally but names no individual voter, and Gowan is not among the listed sponsors.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "Senate THIRD 05/08/2024 21-7-2-0-0 Amended PASSED"
+        },
+        {
+          "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024, 56th Legislature, 2nd Regular Session)",
+          "provision_quote": "On or before January 1, 2026, a municipality with a population of seventy-five thousand persons or more must authorize by ordinance and incorporate into its development regulations, zoning regulations and other official controls the development of duplexes, triplexes, fourplexes and townhomes as a permitted use on both of the following:",
+          "note": "Chaptered text of the instrument Gowan voted on; it names no voter, so actor and tally fields are null here.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gowan voted Aye on HB 2721 (2024), a single-subject law forcing larger municipalities to permit duplexes, triplexes, fourplexes and townhomes and barring them from imposing more restrictive permitting, floor-area, owner-occupancy or parking requirements on them. That removes local zoning limits that block private building, so it is on-question for \"at most, cut the regulations and zoning limits that block private building\", but one deregulation vote cannot show he would do nothing more, which is what \"Rely on the market to set prices and supply\" requires. It also fails \"set binding rules on the private market like rent caps or required affordable units\" (the bill binds municipalities, not private owners) and names no subsidies or tax breaks, so no rung is matched clause for clause.",
+      "needs_source": [
+        "Gowan's own first-person words on housing affordability within the current term or campaign (issue page, questionnaire, or debate answer naming what government should do about housing costs)",
+        "An Arizona Senate roll call with Gowan recorded, on a bill that sets or forbids binding private-market housing rules (rent regulation, inclusionary/affordable-unit requirements)",
+        "An Arizona Senate roll call with Gowan recorded, on housing subsidy or tax-credit measures (Housing Trust Fund appropriation, low-income housing tax credit), to test the \"no binding rules, but offer subsidies and tax breaks\" clause"
+      ],
+      "quotes": []
+    }
+  ]
+}

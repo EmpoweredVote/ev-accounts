@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+      "office_id": "4021cde6-9098-442f-8126-55f6377a328f",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "f54b3d9a-dc48-5ef4-a20e-d92a74f10756",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-02-27",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "HB2635 (2025)",
+          "provision_quote": null,
+          "note": "House Third Reading vote page: it names the voter and the count but prints no operative text, and no member voted no.",
+          "record_kind": "vote",
+          "actor_quote": "GILLETTE Y GRESS Y GRIFFIN Y",
+          "tally_quote": "Passed 57-0-3-0-0"
+        },
+        {
+          "snapshot_id": "2ef4af7b-fbdf-56a9-8aa0-1847973593ba",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2635 (2025)",
+          "provision_quote": "Sales of safe firearm storage devices.",
+          "note": "The operative sections amend the transaction privilege and use tax statutes to exempt safe storage devices, a dimension none of the five rungs orders.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ce71935f-0138-5b11-8388-d3530c46910f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2635 (2025)",
+          "provision_quote": null,
+          "note": "Bill overview page showing his prime sponsorship; it prints the short title, not the provision.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Gress (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only record in the sources is HB2635 (2025), which Gress prime-sponsored and voted for: a transaction privilege and use tax exemption for \"Sales of safe firearm storage devices.\" A tax exemption for storage devices neither adds nor removes any rule on owning, buying or carrying firearms, so it speaks to none of the clauses that separate \"Allow all types of firearms, but require universal background checks on every sale\", \"Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines\" and \"Repeal major gun restrictions and let adults carry a firearm without a permit\". The 57-0-3-0-0 tally also shows no member opposed it, so it separates nobody.",
+      "needs_source": [
+        "Arizona House roll call on a bill setting or repealing a firearm background-check requirement, 2023-2026 sessions",
+        "Arizona House roll call on a bill on carrying a firearm without a permit or on out-of-state permit reciprocity, 2023-2026 sessions",
+        "Gress's own words answering how firearms should be regulated (candidate questionnaire, debate answer, or first-person issue page)"
+      ],
+      "quotes": []
+    }
+  ]
+}

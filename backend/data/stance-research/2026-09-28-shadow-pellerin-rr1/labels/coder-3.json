@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259",
+      "office_id": "4164cda9-e149-46c7-9b5a-7f1f75088ac0",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "8dca6231-481c-5393-ad92-d19f85d328ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2839 (2023-2024)",
+          "provision_quote": null,
+          "note": "Bill creates distributor liability for deceptive election media and expressly exempts platforms, not platform content-moderation duties.",
+          "record_kind": "author",
+          "actor_quote": "AB 2839, Pellerin.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 2839 creates civil liability for a person, committee, or entity that knowingly distributes materially deceptive election media, and it expressly states it 'does not impose liability on an interactive computer service.' It does not require platforms to remove or label false content, encourage voluntary standards, or speak to government involvement in content-moderation decisions, so it is adjacent to the question the rungs differ on rather than on-question.",
+      "needs_source": ["Pellerin's own statements or a record addressing platform obligations to remove, label, or moderate false content online"],
+      "quotes": []
+    }
+  ]
+}

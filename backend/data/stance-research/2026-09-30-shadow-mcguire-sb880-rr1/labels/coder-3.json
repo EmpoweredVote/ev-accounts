@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "998b80e1-b18a-5259-8b29-a1c32abbaab6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-05-19",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 880 (2015-2016)",
+          "provision_quote": null,
+          "note": "Senate floor vote (3rd Reading) on SB 880, a single-subject assault-weapons bill; McGuire voted Aye.",
+          "record_kind": "vote",
+          "actor_quote": "Liu, McGuire, Mendoza",
+          "tally_quote": "Ayes Count 24 Noes Count 14"
+        },
+        {
+          "snapshot_id": "260c4d27-e30f-5a59-939c-271dbd17e5aa",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-07-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 880 (2015-2016)",
+          "provision_quote": "This bill would revise this definition of “assault weapon” to mean a semiautomatic centerfire rifle, or a semiautomatic pistol that does not have a fixed magazine but has any one of those specified attributes.",
+          "note": "Chaptered bill text shows the operative clause: expanding the assault-weapon ban's definition to close the fixed-magazine loophole, while leaving other firearms untouched.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "998b80e1-b18a-5259-8b29-a1c32abbaab6",
+        "260c4d27-e30f-5a59-939c-271dbd17e5aa"
+      ],
+      "reasoning": "McGuire voted Aye on SB 880's Senate floor passage, a single-subject bill whose operative text expands the definition of banned \"assault weapon\" semi-automatic rifles and pistols (closing the fixed-magazine loophole) while leaving other firearm types subject only to existing law. This matches rung 2, \"Ban semi-automatic assault-style weapons, while allowing other firearms,\" and excludes rung 1 (no general ownership ban) and rung 3 (no background-check provision).",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

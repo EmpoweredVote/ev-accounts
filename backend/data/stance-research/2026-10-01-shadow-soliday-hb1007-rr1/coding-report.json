@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Rep. Edmond Soliday's own words on data centers and residential ratepayer impacts (committee testimony, floor statement, or interview), 2025 session",
+          "Indiana House roll call, HB 1007 (2025), final passage and concurrence",
+          "A source showing whether HB 1007's large load customer thresholds were applied to or aimed at data centers specifically",
+          "Soliday's own floor statement or sponsor explanation of HB 1007 tying the EGR plan process specifically to streamlined permitting (rung 4) or to cost-sharing/impact-assessment gatekeeping (rung 3)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "requests": [
+        "Rep. Edmond Soliday's own words on data centers and residential ratepayer impacts (committee testimony, floor statement, or interview), 2025 session",
+        "Indiana House roll call, HB 1007 (2025), final passage and concurrence",
+        "A source showing whether HB 1007's large load customer thresholds were applied to or aimed at data centers specifically",
+        "Soliday's own floor statement or sponsor explanation of HB 1007 tying the EGR plan process specifically to streamlined permitting (rung 4) or to cost-sharing/impact-assessment gatekeeping (rung 3)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

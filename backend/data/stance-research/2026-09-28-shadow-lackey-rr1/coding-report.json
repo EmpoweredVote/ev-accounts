@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e8bdd8a7-a1b2-43e3-afd4-df975980819e|54a4ad72-bcd1-4fe1-b684-bfa7e72152fc|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Assembly floor roll calls with Lackey's vote on bills that set who may own or possess a firearm, or that ban a class of semi-automatic weapons (2015-2026 sessions)",
+          "California Assembly floor roll calls with Lackey's vote on background-check or sale-transfer requirements (2015-2026 sessions)",
+          "California Assembly floor roll calls, or bills authored or co-authored by Lackey, on concealed-carry permits or carry reciprocity (2015-2026 sessions)",
+          "A first-person statement or questionnaire answer from Lackey, in the current term or the campaign that seated him, on what firearm rules California should have",
+          "A roll-call vote or Lackey's own statement on a bill addressing firearm ownership bans, assault-weapon restrictions, universal background checks, or concealed-carry/permit rules",
+          "Lackey's own vote, sponsorship, or statement on a bill addressing firearm ownership restrictions, semi-automatic weapon bans, universal background checks, or carry-permit rules."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e8bdd8a7-a1b2-43e3-afd4-df975980819e|54a4ad72-bcd1-4fe1-b684-bfa7e72152fc|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "California Assembly floor roll calls with Lackey's vote on bills that set who may own or possess a firearm, or that ban a class of semi-automatic weapons (2015-2026 sessions)",
+        "California Assembly floor roll calls with Lackey's vote on background-check or sale-transfer requirements (2015-2026 sessions)",
+        "California Assembly floor roll calls, or bills authored or co-authored by Lackey, on concealed-carry permits or carry reciprocity (2015-2026 sessions)",
+        "A first-person statement or questionnaire answer from Lackey, in the current term or the campaign that seated him, on what firearm rules California should have",
+        "A roll-call vote or Lackey's own statement on a bill addressing firearm ownership bans, assault-weapon restrictions, universal background checks, or concealed-carry/permit rules",
+        "Lackey's own vote, sponsorship, or statement on a bill addressing firearm ownership restrictions, semi-automatic weapon bans, universal background checks, or carry-permit rules."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

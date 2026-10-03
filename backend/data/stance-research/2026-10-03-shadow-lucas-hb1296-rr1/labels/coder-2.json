@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "d758604c-9dd9-4a00-ac09-90713a7bc4be",
+      "office_id": "5b1c46e1-5d4f-4a63-8dbf-e5f564863177",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "164f5ec0-961e-55cb-833c-c0e74646b4aa",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Lucas voted Yea on the conference committee report adopting HB 1296, which repeals Indiana's handgun carry license requirement.",
+          "record_kind": "vote",
+          "actor_quote": "Abbott Frye Lucas Slager",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "6497dd3c-9b0e-5e71-a976-36a9042d8099",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Lucas is listed as a co-author of HB 1296, the bill repealing Indiana's handgun carry license requirement.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Jim Lucas",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c2a0d647-b10d-5cdc-8f8c-5b9feee4290e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "The enrolled act text amends IC 35-47-2-3 so that an adult not otherwise prohibited need not obtain a license or permit to carry a handgun.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "164f5ec0-961e-55cb-833c-c0e74646b4aa",
+        "6497dd3c-9b0e-5e71-a976-36a9042d8099",
+        "c2a0d647-b10d-5cdc-8f8c-5b9feee4290e"
+      ],
+      "reasoning": "Lucas co-authored HB 1296 and voted Yea on its conference committee report; the enacted text amends IC 35-47-2-3 so a qualifying adult 'is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana,' matching the rung text 'Repeal major gun restrictions and let adults carry a firearm without a permit.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

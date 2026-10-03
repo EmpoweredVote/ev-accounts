@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-02-shadow-shope-hcr2060-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HCR2060",
+      "source_kind": "public-record",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "HCR 2060 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hcr2060-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HCR2060#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "HCR 2060 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hcr2060-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HCR2060S.htm",
+      "source_kind": "public-record",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "HCR 2060 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-09-27-shadow-king-v04-rr1",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2022/bills/house/1041/details",
+      "source_kind": "public-record",
+      "politician_id": "b5a9a489-0784-428a-b1ed-81fd40e07ff5",
+      "office_id": "a88bbec4-49c8-41b5-a70f-2cc34b45aab8",
+      "topic_keys": [
+        "trans-athletes"
+      ],
+      "instruments": [
+        "HB 1041 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1041-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/rollcalls/HB1041.402_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "b5a9a489-0784-428a-b1ed-81fd40e07ff5",
+      "office_id": "a88bbec4-49c8-41b5-a70f-2cc34b45aab8",
+      "topic_keys": [
+        "trans-athletes"
+      ],
+      "instruments": [
+        "HB 1041 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1041-rc.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/HB1041.05.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "b5a9a489-0784-428a-b1ed-81fd40e07ff5",
+      "office_id": "a88bbec4-49c8-41b5-a70f-2cc34b45aab8",
+      "topic_keys": [
+        "trans-athletes"
+      ],
+      "instruments": [
+        "HB 1041 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022-hb1041-enrolled.txt"
+    }
+  ]
+}

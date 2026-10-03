@@ -1,0 +1,76 @@
+{
+  "batch_id": "2026-09-28-shadow-mesnard-sb1828-rr1",
+  "seat": {
+    "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+    "full_name": "J.D. Mesnard",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": null,
+        "start_precision": "unknown",
+        "term_end": "2019-01-14"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2019-01-14",
+        "start_precision": "day",
+        "term_end": "2021-01-11"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2021-01-11",
+        "start_precision": "day",
+        "term_end": "2023-01-08"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "question_text": "How should government balance what it collects in taxes against what it spends on public services?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Significantly raise taxes on wealthy people and large companies to fund more public services"
+        },
+        {
+          "value": 2,
+          "text": "Moderately raise taxes on wealthy people and large companies to fund existing services"
+        },
+        {
+          "value": 3,
+          "text": "Keep the current tax system mostly as-is, with targeted adjustments — closing loopholes or granting narrow relief"
+        },
+        {
+          "value": 4,
+          "text": "Cut taxes broadly, including the main rates most people pay"
+        },
+        {
+          "value": 5,
+          "text": "Cut taxes as far as possible and shrink what government does"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

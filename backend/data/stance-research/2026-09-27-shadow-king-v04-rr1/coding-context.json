@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-27-shadow-king-v04-rr1",
+  "seat": {
+    "politician_id": "b5a9a489-0784-428a-b1ed-81fd40e07ff5",
+    "full_name": "Joanna King",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "a88bbec4-49c8-41b5-a70f-2cc34b45aab8",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2020-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."
+        },
+        {
+          "value": 2,
+          "text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."
+        },
+        {
+          "value": 3,
+          "text": "decide transgender athletes' eligibility case by case based on individual circumstances and the requirements of each sport."
+        },
+        {
+          "value": 4,
+          "text": "require transgender athletes to compete only on teams matching their biological sex assigned at birth."
+        },
+        {
+          "value": 5,
+          "text": "completely ban all transgender athletes from competing in any organized sports competitions."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

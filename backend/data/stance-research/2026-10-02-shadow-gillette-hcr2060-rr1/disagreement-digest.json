@@ -1,0 +1,75 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 3,
+      "alpha": -0.33333333333333326,
+      "examples": [
+        {
+          "unit": "50d00238-5334-4616-ac43-72375f53df71|ae116c94-7533-46d0-aa81-20106f5cb572|44905f3b-e105-4f6c-afc7-5d223813dbac#5d7cfa43-a906-5a3c-aee4-81f846261d04",
+          "values": [
+            "on-question",
+            "adjacent",
+            "adjacent"
+          ]
+        },
+        {
+          "unit": "50d00238-5334-4616-ac43-72375f53df71|ae116c94-7533-46d0-aa81-20106f5cb572|44905f3b-e105-4f6c-afc7-5d223813dbac#73523759-920c-580b-819b-75e0df267be1",
+          "values": [
+            "on-question",
+            "adjacent",
+            "adjacent"
+          ]
+        },
+        {
+          "unit": "50d00238-5334-4616-ac43-72375f53df71|ae116c94-7533-46d0-aa81-20106f5cb572|44905f3b-e105-4f6c-afc7-5d223813dbac#3572370e-a6b6-5c8e-86fa-80fff3553f34",
+          "values": [
+            "on-question",
+            "adjacent",
+            "adjacent"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v2_relevance"
+  ]
+}

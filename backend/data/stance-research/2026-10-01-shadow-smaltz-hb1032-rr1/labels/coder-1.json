@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "dd516298-029b-58eb-a741-716f341447af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "The bill page shows Smaltz as author and prints the digest, not the operative text.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Ben Smaltz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8e776ba8-1843-50fc-841e-7107d265564e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "Sec. 1. The First Congressional District consists of the following:",
+          "note": "The bill enacts congressional districts by statute and limits interim judicial relief, but keeps supreme court review and names no partisan-bias standard.",
+          "record_kind": "author",
+          "actor_quote": "Smaltz",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "17ad74dc-278e-53f9-91c5-37b3dbc6a486",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "House third-reading passage, 57-41, so not near-unanimous; the page prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "Aylesworth Haggard May Smaltz",
+          "tally_quote": "Yea 57 Nay 41 Excused 2 Not Voting 0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Smaltz authored HB 1032 (2026), which draws congressional districts in statute (\"Sec. 1. The First Congressional District consists of the following:\"), lets the general assembly amend them outside the post-census session, and restricts interim relief in apportionment suits; he also voted Yea on its House passage, 57-41. That places him on the legislature-draws side but does not match \"state legislatures with court oversight to prevent extreme partisan bias\", since the bill sets no partisan-bias standard, nor \"the party that controls the state legislature without outside interference\", since SECTION 3 preserves supreme court jurisdiction over apportionment appeals rather than removing court review.",
+      "needs_source": [
+        "Ben Smaltz's own words as author (floor speech, committee remarks, questionnaire) on whether courts should review legislative maps for partisan bias"
+      ],
+      "quotes": []
+    }
+  ]
+}

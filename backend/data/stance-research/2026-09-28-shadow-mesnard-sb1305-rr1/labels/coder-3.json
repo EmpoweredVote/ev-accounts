@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": null,
+          "note": "Mesnard is listed as Prime sponsor of SB1305, a single-subject bill prohibiting race-based divisive instruction.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0db8e945-92cc-5f28-b839-85721d76633d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": "A public school, school district or state agency or an employee of a public school, school district or state agency may not provide or allow any person to provide instruction to students or employees that promotes or advocates for any of the following concepts: 1. Judging an individual on the basis of the individual's race or ethnicity.",
+          "note": "Operative section 15-717.02 bars instruction promoting specified race-based concepts; matches rung 5's prohibition clause for race.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "75343598-1fb8-585f-aad1-2ba26517eaa6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": null,
+          "note": "Mesnard voted Aye on Senate Third Reading of SB1305, 16-12-2-0-0, a non-unanimous single-subject bill.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+        "0db8e945-92cc-5f28-b839-85721d76633d",
+        "75343598-1fb8-585f-aad1-2ba26517eaa6"
+      ],
+      "reasoning": "Mesnard was Prime sponsor of SB1305 (2023), a single-subject bill, and voted Aye on its Senate Third Reading (16-12-2-0-0). Its operative section bars public schools from providing instruction that promotes judging individuals by race or ethnicity, matching the rung text 'Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

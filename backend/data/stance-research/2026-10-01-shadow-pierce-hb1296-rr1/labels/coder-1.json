@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "7925e549-fc15-5e78-91d8-1ca888818177",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Pierce is listed in the Nay column on the House vote adopting the conference committee report for HB 1296.",
+          "record_kind": "vote",
+          "actor_quote": "Campbell Hatcher Pierce",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "85d1fad8-ebdb-5ed3-968d-f5b5450ef70b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "The enrolled act removes the handgun carry license requirement, but Pierce voted against it, so the text shows only which side he took.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "60bbe94f-d3c4-57ee-acfd-b0edf8237cca",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2022",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "The bill details page lists the author, co-authors and sponsors and does not name Pierce, so it records no act of his.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce voted Nay on the conference committee report for HB 1296 (2022), the enrolled act under which a qualifying adult \"is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.\" That No vote shows he opposes \"Repeal major gun restrictions and let adults carry a firearm without a permit,\" but it does not separate \"Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines.\" from \"Allow all types of firearms, but require universal background checks on every sale.\" or from the two ban rungs. Ruling out the loosening rung is not evidence for any of the rungs that remain.",
+      "needs_source": [
+        "Pierce's own first-person words on firearm regulation in this term (questionnaire answer, issue page, floor statement) saying which restrictions he would require",
+        "Any Indiana bill Pierce authored, co-authored or sponsored on background checks or on restricting classes of firearms, with the IGA bill page and roll call"
+      ],
+      "quotes": []
+    }
+  ]
+}

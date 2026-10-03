@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A California roll call or sponsorship on a general (non-sector) statewide minimum-wage bill, with the indexing provision quoted",
+          "Buffy Wicks' own words answering what approach government should take to the minimum wage, in-cycle",
+          "A record of Wicks's vote or sponsorship on a general (non-sector-specific) California minimum-wage statute, to establish her view on the general wage-floor mechanism this ladder asks about",
+          "Wicks's own statement or a bill/vote on the general California state minimum wage floor (not the sector-specific Fast Food Council wage)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "A California roll call or sponsorship on a general (non-sector) statewide minimum-wage bill, with the indexing provision quoted",
+        "Buffy Wicks' own words answering what approach government should take to the minimum wage, in-cycle",
+        "A record of Wicks's vote or sponsorship on a general (non-sector-specific) California minimum-wage statute, to establish her view on the general wage-floor mechanism this ladder asks about",
+        "Wicks's own statement or a bill/vote on the general California state minimum wage floor (not the sector-specific Fast Food Council wage)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Arizona roll call or sponsorship by Warren Petersen on a bill that sets a gestational limit for abortion (a stage-of-pregnancy threshold)",
+          "An Arizona roll call or sponsorship by Warren Petersen on a bill that sets the exception set for an abortion ban (rape, incest, risk to the mother's life)",
+          "Warren Petersen's own words, in a questionnaire, debate answer or first-person issue page, on which stage limit and which exceptions the law should have",
+          "A Petersen record or statement addressing the trimester/gestational-limit question this topic's rungs differ on (e.g., a vote or statement on a general gestational-ban bill)",
+          "A vote, sponsorship, or own-words statement by Petersen on a measure that sets a general gestational-age or trimester-based abortion limit, or that defines a rape/incest/health exception structure, to evidence this ladder directly."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "An Arizona roll call or sponsorship by Warren Petersen on a bill that sets a gestational limit for abortion (a stage-of-pregnancy threshold)",
+        "An Arizona roll call or sponsorship by Warren Petersen on a bill that sets the exception set for an abortion ban (rape, incest, risk to the mother's life)",
+        "Warren Petersen's own words, in a questionnaire, debate answer or first-person issue page, on which stage limit and which exceptions the law should have",
+        "A Petersen record or statement addressing the trimester/gestational-limit question this topic's rungs differ on (e.g., a vote or statement on a general gestational-ban bill)",
+        "A vote, sponsorship, or own-words statement by Petersen on a measure that sets a general gestational-age or trimester-based abortion limit, or that defines a rape/incest/health exception structure, to evidence this ladder directly."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

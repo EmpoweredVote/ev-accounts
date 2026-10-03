@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "6133e73c-4c33-4cfc-9fd3-de1382729f42|7803f2a9-9dd2-4f45-8b85-1cf5fd29e785|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A California record (bill text plus roll call) on a renewable-energy procurement standard with dated targets, showing Gipson's vote or sponsorship",
+          "Gipson's own words on how much government should do to expand clean energy (subsidies vs mandates vs permitting), from the current term or campaign"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "6133e73c-4c33-4cfc-9fd3-de1382729f42|7803f2a9-9dd2-4f45-8b85-1cf5fd29e785|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "A California record (bill text plus roll call) on a renewable-energy procurement standard with dated targets, showing Gipson's vote or sponsorship",
+        "Gipson's own words on how much government should do to expand clean energy (subsidies vs mandates vs permitting), from the current term or campaign"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}
