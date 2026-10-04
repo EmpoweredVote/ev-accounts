@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | — | `2026-10-04-knight-mn-cities` — **OPEN** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | — | `2026-10-04-knight-mn-cities` — **OPEN, scope done (15 blank / 20 live)** |
 
 Seven chairs from 29 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -55,11 +55,25 @@ Minnesota is expected to be the opposite case. Saint Paul is believed to have en
 stabilisation ordinance and a municipal minimum wage — which, if true, makes those ladders live
 levers carrying recorded votes and recorded member statements.
 
-🔴 **NEITHER CLAIM HAS BEEN VERIFIED AGAINST A STATUTE OR AN ORDINANCE. It is the reason the slice
-was chosen, so it is also the first thing that can make the choice wrong.** Read the Minnesota
-preemption statutes and the Saint Paul ordinance text before researching any row, exactly as
-§14-409.40 and §790.33 were read. If the claim fails, this slice reverts to the NC/FL shape and the
-yield estimate must come down with it.
+✅ **VERIFIED 2026-10-04 — the claim holds.** Full working:
+[`scope-review.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/scope-review.md).
+**15 topics are scope blanks (270 rows), 20 are live (360).** 43% blank, against 51% for both
+Charlotte and Florida. Four ladders that NC and FL could not reach are live here, each with a cited
+Saint Paul instrument: `rent-regulation` (§ 471.9996 subd. 2 + Leg. Code ch. 193A), `minimum-wage`
+(ch. 224, amended by Ord 26-31 four months ago), `local-immigration` (Admin. Code ch. 44; RES 25-1980,
+Dec 2025) and `ranked-choice-voting` (ch. 31).
+
+🔴 **`cannabis-policy` REVERSES THE FLORIDA FINDING — do not copy it across.** § 342.13 bars a
+Minnesota city from prohibiting cannabis, and rung 4 *is* the state law, so it is blank here while it
+was live in Florida.
+
+🔴 **A LEGISTAR SEARCH FOR "ranked choice" RETURNED ZERO AND THE ZERO WAS FALSE.** Saint Paul’s
+ordinances say **"ranked voting"**. Search the term the body uses, not the term the ladder uses.
+
+🟢 **Saint Paul has the Legistar public Web API** (client `stpaul`, no key; control passed on
+`charlottenc`). **Duluth does not** — `duluth` and `duluthmn` both 500, so Duluth needs HTML work and
+should be priced higher per member.
+⚠ `RLH RSA` rent-stabilization appeals are single-property determinations, not positions.
 
 ⚠ **Saint Paul's mayor reads as Kaohly Her, `is_incumbent` true.** Confirm the current officeholder
 against the city's own page before citing the office — a roster label says how someone arrived, not
