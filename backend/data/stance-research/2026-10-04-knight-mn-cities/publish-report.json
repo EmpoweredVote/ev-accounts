@@ -15,5 +15,22 @@
       "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
     ],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Anika Bowie",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
+    ],
+    "failed_urls": [
+      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
+    ],
+    "admin_queue_visible": true
   }
 ]
