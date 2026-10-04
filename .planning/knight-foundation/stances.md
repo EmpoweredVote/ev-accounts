@@ -25,12 +25,52 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | — | `2026-10-04-knight-mn-cities` — **OPEN** |
 
 Seven chairs from 29 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
 from 22 → 122 in Florida. Price the next slice from these numbers, not from the first pass.
 
-⏳ **PR #855 (verifier fix) must merge first** — both slices carry the same commit.
+✅ **Slices 1 and 2 are merged** (2026-10-04): PR #855 (verifier fix), then #857, then #856. #856 had
+cherry-picked only half of #855 and conflicted once #855 landed; the base was merged into it and both
+verifier files were resolved to master, which is a strict superset. Charlotte’s five and Florida’s two
+sit in the admin review queue awaiting human approval.
+
+## Slice 3 — Duluth and Saint Paul, Minnesota (opened 2026-10-04)
+
+- **18 seated people**: Duluth 9 councilors + Mayor Reinert; Saint Paul 7 councilmembers + Mayor Her.
+  35 local ladders pinned into the open season (Season 2, 60 pinned, 35 at `local`). **630 rows.**
+- **Baseline measured, not assumed: zero** `politician_answers` rows in the open season for all 18.
+  A positive control confirmed the query shape returns rows for other politicians, so the zero is real.
+- Leases: `place:2717000` (Duluth) and `place:2758000` (Saint Paul).
+- Branch `knight/stances-mn`; batch `backend/data/stance-research/2026-10-04-knight-mn-cities`.
+
+### Why Minnesota, and the claim the scope review must test FIRST
+
+Charlotte spent 216 of its 420 rows on scope blanks, and Florida 306 of 595, because both states
+preempt the whole field for firearms, municipal wages and rent regulation. Those rows prove a city
+cannot act; they seat nobody.
+
+Minnesota is expected to be the opposite case. Saint Paul is believed to have enacted **both** a rent
+stabilisation ordinance and a municipal minimum wage — which, if true, makes those ladders live
+levers carrying recorded votes and recorded member statements.
+
+🔴 **NEITHER CLAIM HAS BEEN VERIFIED AGAINST A STATUTE OR AN ORDINANCE. It is the reason the slice
+was chosen, so it is also the first thing that can make the choice wrong.** Read the Minnesota
+preemption statutes and the Saint Paul ordinance text before researching any row, exactly as
+§14-409.40 and §790.33 were read. If the claim fails, this slice reverts to the NC/FL shape and the
+yield estimate must come down with it.
+
+⚠ **Saint Paul's mayor reads as Kaohly Her, `is_incumbent` true.** Confirm the current officeholder
+against the city's own page before citing the office — a roster label says how someone arrived, not
+what they hold now, and a departed official's URL can serve their successor.
+
+### Outlets to profile before the sweep — none yet checked for reachability
+
+MPR News · MinnPost · Minnesota Reformer · Sahan Journal · Racket · Duluth News Tribune ·
+Saint Paul Pioneer Press. Run `sweep.py` (name x topic) **and** `small_outlet.py` (name only) and
+merge: query breadth must match outlet size in both directions. Expect the two dailies to be
+paywalled, as the Charlotte Observer was.
 
 ---
 
@@ -115,7 +155,7 @@ only the outlet list and the state statute review are per-slice.
   on guessed URLs alone, so more exist; Ballotpedia lists each member's campaign URL. First-person
   issue pages are the most chair-shaped source still untouched.
 
-- ▶ 24 cities remain. The sweep scripts are generic; only the outlet list and the preemption
+- ▶ **21 cities remain.** The sweep scripts are generic; only the outlet list and the preemption
   review are per-state.
 - ▶ **PR #855** fixes a verifier defect this wave exposed: a stored name carrying a diacritic the
   source spells without (`Reneé` vs `Renee`) failed `checkNameProximity` although the snippet
