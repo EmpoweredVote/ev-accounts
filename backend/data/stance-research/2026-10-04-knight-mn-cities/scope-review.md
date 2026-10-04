@@ -1,127 +1,225 @@
 # Minnesota scope review — Duluth and Saint Paul city offices
 
-Season 2, 35 ladders at `local`, 18 seated people. Scope is a **per-rung** question (ruling
-2026-08-28), and a scope blank is a fact about the **office**, identical for every member of the
-body — so each finding below templates across all 18 rows for that topic.
+Season 2, 35 ladders at `local`, 18 seated people, 630 rows. Scope is a **per-rung** question
+(ruling 2026-08-28), and a scope blank is a fact about the **office**, identical for every member of
+the body — so each finding below templates across all 18 rows for that topic.
 
-Every statute below was read as **verbatim text fetched from `revisor.mn.gov` with `curl`**, not
-through WebFetch, because WebFetch summarises and this programme has already paid for a fabricated
-citation. The extractor was checked against four different sections before any finding was recorded:
-its first pass returned the same site navigation for all four, which is the broken-detector
-signature, and every finding below rests on the second pass, which returns four distinct bodies.
+**Result: 15 topics are scope blanks (270 rows). 20 are live (360 rows).**
+
+That is a materially better ratio than either earlier slice — Charlotte 216 blanks of 420 (51%) and
+Florida 306 of 595 (51%), against 270 of 630 (43%) here. **Four ladders that are blank or truncated
+in both NC and FL are fully live in Minnesota**: `rent-regulation`, `minimum-wage`,
+`local-immigration` and `ranked-choice-voting`. That is 72 rows that would have been blanks
+elsewhere, and it is the reason this slice was chosen.
 
 ---
 
-## SETTLED — 11 topics, scope blank for both cities (198 rows)
+## Method, and two false answers it caught
 
-### `gun-policy` — § 471.633 FIREARMS
+Statutes were read as **verbatim text fetched with `curl`** from `revisor.mn.gov`, then parsed here.
+WebFetch was used only to *locate* pages, never to source a section number, a date or a count.
 
-> The legislature preempts all authority of a home rule charter or statutory city including a city
-> of the first class, county, town, municipal corporation, or other governmental subdivision, or any
-> of their instrumentalities, to regulate firearms, ammunition, or their respective components to
-> the complete exclusion of any order, ordinance or regulation by them except that: (a) a
-> governmental subdivision may regulate the discharge of firearms; and (b) a governmental
-> subdivision may adopt regulations identical to state law.
+Two detectors returned a wrong answer before they returned a right one. Both are recorded because
+both would have produced a confidently wrong scope table.
+
+1. 🔴 **The HTML extractor returned identical site navigation for all four statutes on its first
+   pass.** A uniform answer is a broken detector. The second pass returns four distinct bodies, and
+   every statute finding rests on that.
+2. 🔴 **A Legistar search for `"ranked choice"` returned ZERO matters, and that zero was false.**
+   Saint Paul's own ordinances call it **"ranked voting"**. Searching `ranked` returns nine matters
+   including the ordinance that created the rules. A vocabulary mismatch produced a clean, confident,
+   wrong "this city has no lever here". The same shape as the query-breadth lesson from Charlotte.
+   ▶ **Search the term the body itself uses, not the term the ladder uses.**
+
+The Legistar probe itself carried a positive control: `charlottenc` returns 200 with data, and the
+clients that fail return an explicit 500 naming the missing connection string. The probe works.
+
+---
+
+## Access — the two cities are NOT symmetric
+
+| | Saint Paul | Duluth |
+|---|---|---|
+| Legistar public Web API | 🟢 **yes — client `stpaul`, no key** | 🔴 **no** — `duluth` and `duluthmn` both 500 |
+| Legislative web portal | `stpaul.legistar.com` | `duluthmn.legistar.com` responds 200 |
+
+Saint Paul's record is queryable: matters, titles, files and per-member roll calls. Duluth has the
+InSite portal but not the API, so its record needs HTML work. **Price Duluth higher than Saint Paul
+per member.**
+
+⚠ **Rent-stabilization appeals are not positions.** `stpaul` carries many `RLH RSA` matters of the
+form *"Appeal of … to a Rent Stabilization Determination at 1029 Raymond Avenue"*. These are
+single-property, quasi-judicial determinations. They are the Charlotte "single project approval"
+trap wearing a different hat — do not read one as a chair.
+
+---
+
+## SCOPE BLANK — 15 topics, 270 rows
+
+### Statute-backed, Minnesota-specific
+
+**`gun-policy` — § 471.633 FIREARMS**
+
+> The legislature preempts all authority of a home rule charter or statutory city … to regulate
+> firearms, ammunition, or their respective components to the complete exclusion of any order,
+> ordinance or regulation by them except that: (a) a governmental subdivision may regulate the
+> discharge of firearms; and (b) a governmental subdivision may adopt regulations identical to state
+> law.
 
 Whole field, as in NC § 14-409.40 and FL § 790.33. Neither exception reaches a rung: no rung is a
 discharge rule, and adopting a regulation *identical to state law* is not a position a council
 chooses. **All five rungs unavailable.**
 
-### `campaign-finance` — § 211A.12 CONTRIBUTION LIMITS
+**`campaign-finance` — § 211A.12 CONTRIBUTION LIMITS**
 
 > (c) Notwithstanding sections 211A.02, subdivision 3, and 410.21, this section supersedes any home
 > rule charter.
 
-Duluth and Saint Paul are both home rule charter cities, so the statute displaces any local limit
-they might set, and the dollar figures in (a) are the legislature's. Rungs 2, 3 and 4 are all
-positions on contribution limits and are therefore state levers; rungs 1 and 5 are beyond any city.
-**Same conclusion as NC § 163-278.13 and FL § 106.08(11)(a), but on an explicit supersession clause.**
+Duluth and Saint Paul are both home rule charter cities, so the statute displaces any local limit,
+and the dollar figures in (a) are the legislature's. Rungs 2, 3 and 4 are positions on contribution
+limits and are therefore state levers; rungs 1 and 5 are beyond any city.
 
-### `cannabis-policy` — § 342.13 LOCAL CONTROL
+**`cannabis-policy` — § 342.13 LOCAL CONTROL**
 
 > (a) A local unit of government may not prohibit the possession, transportation, or use of cannabis
-> flower, cannabis products… (b) Except as provided in section 342.22, a local unit of government
-> may not prohibit the establishment or operation of a cannabis business… (c) A local unit of
-> government may adopt reasonable restrictions on the time, place, and manner of the operation of a
-> cannabis business provided that such restrictions do not prohibit the establishment or operation
-> of cannabis businesses.
+> flower, cannabis products… (b) … a local unit of government may not prohibit the establishment or
+> operation of a cannabis business… (c) A local unit of government may adopt reasonable restrictions
+> on the time, place, and manner of the operation of a cannabis business provided that such
+> restrictions do not prohibit the establishment or operation of cannabis businesses.
 
-🔴 **This REVERSES the Florida finding and must not be copied from it.** In Florida `cannabis-policy`
-stayed live because a Florida city may pass a civil-citation ordinance. In Minnesota the state both
-legalised cannabis and barred local prohibition, so rungs 1, 2 and 3 are removed outright. Rung 4
-*is the state's own law*, which is the FL trap in mirror image — working backwards from it would
-seat all 18 at 4. Rung 5 is not a council lever either; § 342.22 registration is mandatory.
-**All five rungs unavailable.**
+🔴 **This REVERSES the Florida finding and must not be copied from it.** In Florida the topic stayed
+live because a Florida city may pass a civil-citation ordinance. Minnesota both legalised cannabis
+and barred local prohibition, so rungs 1–3 are removed outright. Rung 4 *is the state's own law* —
+the Florida trap in mirror image, where working backwards would seat all 18 at one chair. Rung 5 is
+not a council lever either; § 342.22 registration is mandatory.
 
-### The eight `education-*` topics — § 123B.02 GENERAL POWERS OF INDEPENDENT SCHOOL DISTRICTS
+**The eight `education-*` topics — § 123B.02 GENERAL POWERS OF INDEPENDENT SCHOOL DISTRICTS**
 
 > Subdivision 1. Board authority. The board must have the general charge of the business of the
-> district, the school houses, and of the interests of the schools thereof. The board's authority to
-> govern, manage, and control the district; to carry out its duties and responsibilities; and to
-> conduct the business of the district includes implied powers in addition to any specific powers
-> granted by the legislature.
+> district, the school houses, and of the interests of the schools thereof.
 
 Duluth (ISD 709) and Saint Paul (ISD 625) are independent school districts with their own elected
-boards. The lever on every school question belongs to that board, not to the city council or the
-mayor. This is the Charlotte-Mecklenburg Board of Education pattern, and it settles **eight topics
-at once**: `education-ai`, `education-charter-authorization`, `education-curriculum`,
-`education-equity-programs`, `education-gender-identity`, `education-library-books`,
-`education-school-budget`, `education-school-police`.
+boards. One citation settles eight topics: `education-ai`, `education-charter-authorization`,
+`education-curriculum`, `education-equity-programs`, `education-gender-identity`,
+`education-library-books`, `education-school-budget`, `education-school-police`.
 
 ⚠ Our database holds no school-district government for either city. That is a fact about our data,
-not about the world, so the finding above rests on the statute and not on that absence.
+not the world, so this finding rests on the statute and not on that absence.
+
+### Structural — the ladder's rungs are not municipal acts
+
+These four follow the Charlotte precedent, which separated "the office holds no lever" from "the
+lever exists but no evidence was found". Basis is the subject matter of the rungs, not a Minnesota
+preemption clause.
+
+- **`abortion`** — every rung is a question of state law on legality and timing limits. No city lever.
+- **`fossil-fuels`** — every rung is about national production levels, drilling permits and public land.
+- **`trans-athletes`** — eligibility is set by the state, the school board and the athletic
+  associations, not by a city.
+- **`jail-capacity`** — the jails serving these cities are run by the **Ramsey County** and
+  **St. Louis County** sheriffs and funded by their county boards. A city member holds no vote on
+  capacity, alternatives, or detention funding.
 
 ---
 
-## SETTLED — `rent-regulation` is LIVE, and this is why the slice was opened
+## LIVE — 20 topics, 360 rows
 
-### § 471.9996 RENT CONTROL PROHIBITED
+### The four that make Minnesota different, each with a cited municipal instrument
 
-> **Subdivision 1. In general.** No statutory or home rule charter city, county, or town may adopt
-> or renew by ordinance or otherwise any law to control rents on private residential property
-> **except as provided in subdivision 2.** This section does not impair the right of any statutory or
-> home rule charter city, county, or town: (1) to manage or control property in which it has a
-> financial interest through a housing authority or similar agency; (2) to contract with a property
-> owner; (3) to act as required or authorized by laws or regulations of the United States government
-> or this state; or (4) to mediate between property owners and tenants for the purpose of
-> negotiating rents.
->
-> **Subd. 2. Exception.** Subdivision 1 does not preclude a statutory or home rule charter city…
-> from controlling rents on private residential property to the extent that the city… has the power
-> to adopt an ordinance, charter amendment, or law to control these rents **if the ordinance,
-> charter amendment, or law that controls rents is approved in a general election.**
+**`rent-regulation` — § 471.9996 subd. 2, and Legislative Code ch. 193A**
 
-**This is the finding the slice was chosen on, and it holds — with a condition attached.** Minnesota
-is not NC or FL: rent regulation is not preempted outright. A council acting alone cannot adopt it,
-but a measure approved at a general election is lawful, and four powers in subd. 1 need no vote at
-all — notably (1) property the city has a financial interest in through a housing authority, which
-is the same shape as the NC § 42-14.1(c) carve-out that let Charlotte's chair 4 survive, and (4)
-mediation.
+> **Subd. 2. Exception.** Subdivision 1 does not preclude a … city … from controlling rents on
+> private residential property … **if the ordinance, charter amendment, or law that controls rents is
+> approved in a general election.**
 
-So the rungs are **not** categorically removed, and a member's votes and words on rent are real
-positions rather than restatements of state law. Rung 3 — *maintain current tenant protections while
-allowing market rents for new construction* — describes a live municipal choice precisely.
+Subd. 1 also preserves four powers needing no vote, notably (1) property the city has a financial
+interest in through a housing authority — the same shape as the NC § 42-14.1(c) carve-out that let
+Charlotte's chair 4 survive — and (4) mediation between owners and tenants.
 
-🔴 **Still to establish before any row is written:** whether Saint Paul's ordinance exists in the
-form assumed, what the council has actually voted on since, and whether Duluth has any ordinance at
-all. The statute proves the **lever exists**; it does not prove anyone pulled it. Do not write a row
-from this section alone.
+The lever was pulled, and the record is in `stpaul`:
+
+| File | Date | Title |
+|---|---|---|
+| RES 21-968 | 2021-06-28 | Adopting the report of Ramsey County Elections finding that the petition for an initiative to adopt Chapter 193A… |
+| Ord 22-16 | 2022-03-10 | Amending Chapter 193A … to define certain terms contained therein |
+| Ord 22-37 | 2022-07-27 | Amending Chapter 193A … pertaining to rent stabilization |
+| Ord 25-29 | 2025-03-19 | Amending Chapter 193A.08 … pertaining to rent stabilization |
+
+Rung 3 — *maintain current tenant protections while allowing market rents for new construction* —
+describes a live municipal choice precisely. **Read the text of Ord 22-37 and Ord 25-29 before
+seating anyone**; the titles say the subject, not the position.
+
+**`minimum-wage` — Legislative Code ch. 224**
+
+| File | Date | Title |
+|---|---|---|
+| Ord 18-54 | 2018-10-08 | **Creating Chapter 224** of the Legislative Code to implement a City minimum wage |
+| Ord 26-31 | 2026-06-15 | Amending Section 224.05(c) … to eliminate the City's provisional 90-day minimum wage rate |
+
+§ 177.24 sets the state floor and carries no local preemption clause; the existence and continued
+amendment of ch. 224 is the stronger proof that the lever exists. **Ord 26-31 is four months old and
+falls inside the current council's term** — the most promising single instrument in this slice.
+
+⚠ Blank in NC (§ 95-25.1(d)) and FL (§ 218.077). Do not carry either conclusion across.
+
+**`local-immigration` — Administrative Code ch. 44**
+
+| File | Date | Title |
+|---|---|---|
+| Ord 18-21 | 2018-05-07 | Amending **Chapter 44** of the Administrative Code on Employee Authority in Immigration Matters |
+| RES 25-1980 | 2025-12-10 | City Council actions in response to SPPD conduct during federal immigration enforcement |
+| PH 25-10 | 2025-12-11 | Public hearing on federal immigration operations and Saint Paul Police Department conduct |
+
+No Minnesota anti-sanctuary preemption was found, and the city has legislated in the field and acted
+again ten months ago. **All five rungs appear live** — against FL § 908.103 and NC § 160A-205.2,
+which each removed rungs 1 and 2.
+
+**`ranked-choice-voting` — Legislative Code ch. 31**
+
+| File | Date | Title |
+|---|---|---|
+| Ord 10-60 | 2010-12-08 | An Ordinance creating election rules for municipal elections under **ranked voting** |
+| Ord 18-12 | 2018-02-16 | Amending **Chapter 31** of the Legislative Code pertaining to ranked voting |
+| CCI 25-8 | 2025-11-19 | Announcement of Charter Amendment Ballot Question Result |
+
+Rungs 2 and 3 are reachable by a Saint Paul member; rung 5 (*ban by law*) is a state lever, and
+rung 1 (proportional multi-seat) would need a charter change, which the charter-amendment route
+makes possible rather than impossible. **Blank in both NC (§ 163-292) and FL (§ 101.019, banned
+statewide).**
+
+### The other sixteen — ordinary municipal subject matter
+
+`2020-election` · `childcare` · `city-sanitation` · `civil-rights` · `climate-change` ·
+`data-centers` · `economic-development` · `growth-and-development` · `homelessness` ·
+`homelessness-response` · `housing` · `local-environment` · `public-safety-approach` ·
+`religious-freedom` · `residential-zoning` · `transportation-priorities`
+
+Charlotte treated `2020-election`, `childcare`, `civil-rights`, `climate-change`, `religious-freedom`
+and `homelessness` as **searched** blanks rather than scope blanks — the lever exists, the evidence
+did not. This slice follows that precedent.
+
+⚠ `public-safety-approach` is the ladder Charlotte wrote up as defective for Season 3: its chairs 1
+and 3 do not separate a member who funds both police and prevention, and **7 of Charlotte's 12 spoke
+substantively on it and none could be seated**. Expect the same here and do not force a chair.
 
 ---
 
-## NOT YET SETTLED — do not template these
+## Duluth is in scope on all 20, but with a thinner record
 
-| Topic | Status |
-|---|---|
-| `minimum-wage` | § 177.24 subd. 1 sets the state wage and carries **no** local preemption clause in the text read, but §§ 177.21–177.35 were not read end to end, and the Saint Paul ordinance was not located. **Leaning LIVE — unproven.** |
-| `ranked-choice-voting` | The basis is the home rule charter, not a statute I have found. The revisor search page returned **zero** cites, and that page is JS-rendered, so the search was **blind** — it is not evidence that no statute exists. |
-| `local-immigration` | No Minnesota preemption found, but not yet searched properly. If none exists, all five rungs are live — a sharp contrast with FL § 908.103 and NC § 160A-205.2, both of which removed rungs. |
-| The remaining 21 | Per-rung review outstanding. Several are plainly municipal (`residential-zoning`, `city-sanitation`, `transportation-priorities`, `housing`, `growth-and-development`, `local-environment`) and several plainly are not (`abortion`, `2020-election`, `trans-athletes`, `religious-freedom`), but "plainly" is not a citation. |
+Both cities are home rule charter cities, so the statutory frame is identical and the **office**
+holds the same levers. Duluth has no rent-stabilization ordinance, no city minimum wage and no
+ranked voting, so for those three the lever exists but has not been exercised — a Duluth member's
+position has to come from their words, not from an instrument. That is statement evidence, which
+goes to human review, not a scope blank.
 
-## Running count
+---
 
-- **11 topics settled as scope blanks** → 11 × 18 = **198 rows** templated.
-- **1 topic settled as live** (`rent-regulation`).
-- **23 topics outstanding.**
+## Running totals
 
-For comparison: Charlotte ended at 216 scope blanks of 420 rows, Florida at 306 of 595.
+| | Topics | Rows |
+|---|---|---|
+| Scope blank | 15 | 270 |
+| Live | 20 | 360 |
+| **Total** | **35** | **630** |
+
+Next: read the text of Ord 22-37, Ord 25-29, Ord 26-31 and RES 25-1980, then profile the outlets.
