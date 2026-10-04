@@ -40,12 +40,17 @@ clients that fail return an explicit 500 naming the missing connection string. T
 
 | | Saint Paul | Duluth |
 |---|---|---|
-| Legistar public Web API | 🟢 **yes — client `stpaul`, no key** | 🔴 **no** — `duluth` and `duluthmn` both 500 |
-| Legislative web portal | `stpaul.legistar.com` | `duluthmn.legistar.com` responds 200 |
+| Legistar public Web API | 🟢 yes — client `stpaul` | 🟢 yes — client **`duluth-mn`** (hyphen) |
+| Per-member roll calls | 🟢 **yes** | 🔴 **no — none published** |
+| Divided votes in the recent record | 🟢 4–3 and 5–2 on rent | 🔴 **none in 14 meetings / 37 tallies** |
 
-Saint Paul's record is queryable: matters, titles, files and per-member roll calls. Duluth has the
-InSite portal but not the API, so its record needs HTML work. **Price Duluth higher than Saint Paul
-per member.**
+🔴 **CORRECTED 2026-10-04 — twice, in opposite directions.** This table first said Duluth has no API.
+It does: the client is `duluth-mn`, and `duluth`/`duluthmn` both 500, which is why the first probe
+missed it. But the API carries **no per-member roll calls**, and every one of the 37 roll-call
+tallies in 14 meetings of minutes was unanimous, so **C46 refuses all of them**. Duluth is a
+**statement-only** city: its ten members have no usable record instrument. See
+[`instruments.md`](./instruments.md). **Price Duluth higher than Saint Paul per seated chair**, for a
+different reason than first recorded.
 
 ⚠ **Rent-stabilization appeals are not positions.** `stpaul` carries many `RLH RSA` matters of the
 form *"Appeal of … to a Rent Stabilization Determination at 1029 Raymond Avenue"*. These are

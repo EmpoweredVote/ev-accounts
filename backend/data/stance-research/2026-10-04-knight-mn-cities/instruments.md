@@ -127,5 +127,79 @@ still establishes direction only.
 - `minimum-wage` and `local-immigration` remain live ladders; they simply have no usable *record*
   instrument yet. Statement evidence is the route for both.
 
-**Next:** Duluth has no Legistar API, so its instruments need HTML work; then outlet profiling, then
-research one member per run starting with the three candidate rows above.
+---
+
+# Duluth — the API exists, and it will not yield a single chair
+
+## 🟢 Correction: Duluth DOES have the Legistar Web API
+
+The scope review said Duluth has none. That was a **false negative**. The client is **`duluth-mn`**,
+with a hyphen. My first probe tried `duluth` and `duluthmn`, both of which 500, and I stopped there.
+
+▶ **Client names are not derivable from the city name — enumerate variants, hyphens included.** This
+is the same error as the `"ranked choice"` / `"ranked voting"` false zero, one layer out: a confident
+negative produced by trying too few spellings.
+
+Identity confirmed before use: `/duluth-mn/bodies` returns *Duluth Economic Development Authority*,
+*Duluth Citizen Review Board* and *Duluth Public Utilities Commission*, and `/persons` returns
+**Arik Forsman, Janet Kennedy, Roz Randorf and Terese Tomanek**, all `active=1` — four of our 18.
+
+## 🔴 But it carries no per-member roll calls, and the council does not divide
+
+| Measurement | Result |
+|---|---|
+| Event items scanned (3 meetings) | 186 |
+| Items with `EventItemRollCallFlag = 1` | **0** |
+| `/eventitems/{id}/votes` on the two 2026 immigration items | **empty** |
+| Meetings whose minutes were read | **14** |
+| Roll-call tallies found in those minutes | **37** |
+| Tallies that were **not** unanimous | **0** — 30 × (9-0), 7 × (8-0) |
+
+The empty `/votes` response is **not** a broken detector. The same endpoint returns seven named votes
+for Saint Paul, and Duluth's own action text explains why it is empty:
+
+> Motion to approve was made by Councilor Randorf, seconded by Councilor Tomanek. **Motion carried
+> unanimously by voice vote.**
+
+**Consequence: C46 refuses every Duluth vote in the window examined.** Ten of the slice's eighteen
+people have no usable record instrument at all. They must be researched from **their own words** —
+statement evidence, which goes to human review.
+
+⚠ **I did not find a single divided Duluth vote, so the format used to record one is UNKNOWN.** The
+minutes write unanimous results as *"carried unanimously by roll call vote (9-0)"*, which names
+nobody because it does not need to. Whether a divided tally would name the dissenter is **not
+established** — do not assume either way.
+
+## What Duluth does and does not have
+
+- **`rent-regulation` — no instrument.** `rent stabilization` and `rent control` both return **zero**
+  matters. That zero is trustworthy: the same query shape returns results for `tenant`, `housing`,
+  `immigration` and `ranked`.
+  ⚠ A bare `rent` search returns 20 hits and they are **false** — `substringof` has no word boundary,
+  so it matches **CONCURRENT** use permits. Search the phrase, not the stem.
+- **`minimum-wage` — no instrument.** Zero matters. Duluth has **Earned Sick and Safe Time**
+  (Ch. 29E, Ord 18-009-O, amended 19-052-O and 20-003-O), but paid leave is not a wage floor and
+  names no rung on this ladder.
+- **`local-immigration` — two 2026 instruments, both refused.**
+
+  | Matter | Adopted | How |
+  |---|---|---|
+  | 26-0100R — resolution clarifying the city/federal enforcement relationship | 2026-02-09 | unanimous |
+  | 26-005-O — Ch. 2, new Article XXXIX, *Stewardship of City Resources* | 2026-02-23 | unanimous voice vote |
+
+  🔴 **Mover and seconder are not chair evidence.** Randorf moved 26-005-O and Tomanek seconded it.
+  Charlotte already tested motion sponsorship as individual evidence and the distribution refuted it
+  — it is a procedural role. Do not seat either member from this.
+- **`ranked-choice-voting` — 2015 only** (15-0516R, fixing a ballot question). Predates every current
+  member, so C44 excludes it.
+
+## ⚠ The two cities do not share a vocabulary
+
+Saint Paul's ordinances say **"ranked voting"**. Duluth's say **"ranked choice voting"**. Same state,
+same ladder, different search term. Run both spellings in every city.
+
+---
+
+**Next:** outlet profiling, then research one member per run. Start with Noecker, Bowie and Jost,
+whose rent rows are already evidenced. **Budget Duluth as a statement-only city** — its ten members
+will cost more per seated chair than Saint Paul's eight.
