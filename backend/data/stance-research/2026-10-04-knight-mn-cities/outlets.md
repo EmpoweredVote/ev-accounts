@@ -84,3 +84,19 @@ many candidates answer the same question in sequence. The member's name appears 
 page, so proximity rules pass. **In a round-up, attribution must come from the candidate's own
 labelled block, never from the page.** Two of Jost's reasonings cited that quote and have been
 corrected.
+
+## 🔴🔴 A MEMBER'S OWN NAME CAN HAVE MORE THAN ONE SPELLING — sweep every variant
+
+| Query | MinnPost | Sahan | Corpus built |
+|---|---|---|---|
+| `HwaJeong Kim` (our database spelling) | 1 | 7 | **8 articles** |
+| `Hwa Jeong Kim` (the newsrooms' spelling) | 10 | 17 | **27 articles** |
+
+The database spelling found **less than a third** of her coverage, and nothing warned of it — the
+thin result looked exactly like a member who is rarely covered. Searching `HwaJeong` alone returned
+the same 8, which is what made it look settled.
+
+▶ **Before accepting a thin corpus, try the spaced, hyphenated and joined forms of the name.** This
+is the third costume of the same lesson in this slice: `"ranked choice"` vs `"ranked voting"` was the
+body's vocabulary, the topic sweeps were query breadth, and this is the **person's own name**.
+▶ The row still uses the database `full_name`, which the pipeline requires. Only the SEARCH varies.

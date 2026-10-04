@@ -240,3 +240,45 @@ An earlier version said Ord 22-37 set the exemption at **15 years**, inferred fr
 it read a title instead of the text. A1's own recitals state that the September 2022 amendment
 "include[d] a **twenty (20) year** exemption ... and those changes to the law took effect on
 January 1, 2023". A proposed amendment's title is not what the council adopted.
+
+---
+
+# 🔴🔴 WHAT ORD 25-29 ACTUALLY DID — read from the RTF revision marks
+
+`MatterTextPlain` renders an ordinance **with the strikethrough invisible**, so it reads as the text
+*before* the amendment. Reading `MatterTextRtf` and tracking `\strike` / `\ul` gives the real change:
+
+```
+STRUCK   less than twenty (20) years from the date of notice of a rent increase
+STRUCK   for twenty (20) years from the date of the first building certificate of occupancy issued after the change.
+ADDED    after December 31, 2004
+ADDED    that were issued their first building certificate of occupancy after December 31, 2004
+```
+
+**Ord 25-29 removed the twenty-year limit altogether and replaced it with a date.** The 3% cap no
+longer applies to any rental property first issued a certificate of occupancy after 31 December
+2004 — permanently, with no expiry. That is a far larger change than "a longer exemption".
+
+⚠ **Three seated reasonings described the old rule and have been corrected.** The chair does not
+move: the cap still binds every unit first occupied on or before that date, while new construction
+sets market rents, which is chair 3. But the mechanism was wrong, and `reasoning` is voter-facing.
+
+▶ **Never describe what an ordinance changed from its plain text.** Use the RTF revision marks, or
+the Word revision marks for a .docx attachment. This is the second time in this slice that a
+formatting-stripped read produced a confident wrong answer; the first was Yang's A1.
+
+# Kim's A2 amendment — real evidence that CANNOT BE CITED
+
+Kim moved A2 to Ord 25-29. Its filed text keeps the twenty-year limit and makes the exemption
+conditional on paying the prevailing wage rate, with recitals that prevailing wage helps workers
+afford rent and improves the durability of the housing stock. It failed 3-4.
+
+That is an affirmative position pointing at chair 2, not a direction. **It is still written as a
+blank**, because the amendment exists only as a Word and PDF attachment and **no fetchable page names
+both Kim and that amendment** — the meeting page carries the agenda grid and the designation, not the
+amendment or her name.
+
+🔴 **Saint Paul's amendment-level record is therefore effectively uncitable** under the evidence
+contract: `verificationFetch` throws `not_html`, and nothing below a final ordinance vote reaches a
+reportable page. Expect this to recur wherever a member's clearest position is an amendment rather
+than a final vote.
