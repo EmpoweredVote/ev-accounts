@@ -157,8 +157,11 @@ seating anyone**; the titles say the subject, not the position.
 | Ord 26-31 | 2026-06-15 | Amending Section 224.05(c) … to eliminate the City's provisional 90-day minimum wage rate |
 
 § 177.24 sets the state floor and carries no local preemption clause; the existence and continued
-amendment of ch. 224 is the stronger proof that the lever exists. **Ord 26-31 is four months old and
-falls inside the current council's term** — the most promising single instrument in this slice.
+amendment of ch. 224 is the stronger proof that the lever exists.
+
+🔴 **CORRECTED 2026-10-04 — Ord 26-31 is NOT usable.** This section called it the most promising
+instrument in the slice. Its roll call is **7–0, adopted 2026-08-12**, and C46 refuses a unanimous
+vote. See [`instruments.md`](./instruments.md). The ladder stays live; only the instrument fails.
 
 ⚠ Blank in NC (§ 95-25.1(d)) and FL (§ 218.077). Do not carry either conclusion across.
 
@@ -173,6 +176,10 @@ falls inside the current council's term** — the most promising single instrume
 No Minnesota anti-sanctuary preemption was found, and the city has legislated in the field and acted
 again ten months ago. **All five rungs appear live** — against FL § 908.103 and NC § 160A-205.2,
 which each removed rungs 1 and 2.
+
+🔴 **CORRECTED — RES 25-1980 is NOT usable**: adopted **5–0 with 2 absent**, so C46 refuses it, and
+Bowie and Johnson were the absences (an absence is not a position). The ladder stays live; the
+resolution seats nobody.
 
 **`ranked-choice-voting` — Legislative Code ch. 31**
 
@@ -222,4 +229,5 @@ goes to human review, not a scope blank.
 | Live | 20 | 360 |
 | **Total** | **35** | **630** |
 
-Next: read the text of Ord 22-37, Ord 25-29, Ord 26-31 and RES 25-1980, then profile the outlets.
+The four ordinances are now read — see [`instruments.md`](./instruments.md). Next: Duluth
+instruments (no API, so HTML work), then outlet profiling, then research one member per run.
