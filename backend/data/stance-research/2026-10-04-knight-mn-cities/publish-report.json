@@ -49,5 +49,22 @@
       "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
     ],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Cheniqua Johnson",
+    "topic_key": "rent-regulation",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://sahanjournal.com/housing/st-paul-city-council-extends-pre-eviction-filing-period/"
+    ],
+    "failed_urls": [
+      "https://www.minnpost.com/elections/2023/11/st-paul-voters-appear-to-have-sent-7-women-to-city-council-in-historic-election-highlighting-rent-control-sales-tax/"
+    ],
+    "admin_queue_visible": true
   }
 ]
