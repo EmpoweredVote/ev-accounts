@@ -1,0 +1,286 @@
+◇ injected env (0) from .env
+(node:52956) DeprecationWarning: Calling client.query() when the client is already executing a query is deprecated and will be removed in pg@9.0. Use async/await or an external async flow control mechanism instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+wrote 60 open-season topics and 12 politician(s) to C:/ev-accounts-stances-clt/backend/data/stance-research/2026-10-02-knight-clt-city
+
+===== TOPIC SCALE REFERENCE (local) — 35 topics =====
+
+abortion (id: af2fdfd6-02c4-49df-b09c-cf8536f4773f, pin: dab46e5c-628a-4360-ad1d-3aaba61768f0, served: 085feb9c-f157-4dae-bfd0-7b2736c5d87c)
+Question: "How should the law handle abortion?"
+  1 = "keep abortion legal at every stage of pregnancy, with no time limit."
+  2 = "keep abortion legal through the second trimester, and after that only to protect the mother's health."
+  3 = "allow abortion during the first trimester, and after that only to protect the mother's health."
+  4 = "ban abortion except in cases of rape, incest, or a serious risk to the mother's life."
+  5 = "ban abortion in all cases, with no exceptions."
+
+campaign-finance (id: 92730f69-ae57-401c-8ad1-2d07834a895d, pin: ae53ba29-79eb-420f-aac6-ec99f8031ec6, served: ae53ba29-79eb-420f-aac6-ec99f8031ec6)
+Question: "What rules should govern money in political campaigns and elections?"
+  1 = "Ban all private money in political campaigns"
+  2 = "Strictly limit corporate and dark-money spending"
+  3 = "Keep contribution limits at current levels"
+  4 = "Reduce restrictions on political donations and spending"
+  5 = "Eliminate all campaign finance laws and limits"
+
+childcare (id: c1ac1330-47f7-44ec-baf3-c913d926b97c, pin: 0e9fe0f2-cfab-4553-99cd-c3195d08e236, served: 0e9fe0f2-cfab-4553-99cd-c3195d08e236)
+Question: "How should government address the cost and availability of childcare?"
+  1 = "Establishing publicly funded universal childcare so that all families have access regardless of income"
+  2 = "Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families"
+  3 = "Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants"
+  4 = "Limiting government support to childcare subsidies for the lowest-income families, relying on the private market for everyone else"
+  5 = "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+
+city-sanitation (id: 7687de4f-4d0b-462a-b803-bdfb23b16b42, pin: af3c2445-97e5-46a7-b33d-6915c13eab5c, served: af3c2445-97e5-46a7-b33d-6915c13eab5c)
+Question: "How should your community approach street cleanliness and sanitation?"
+  1 = "Significantly expand public sanitation services, treating cleanliness as the city's responsibility"
+  2 = "Concentrate sanitation resources on the most neglected, worst-served neighborhoods to close long-standing service gaps"
+  3 = "Maintain current public sanitation services and target enforcement at the businesses and large property owners who create the most waste"
+  4 = "Rely primarily on enforcement of anti-littering and property maintenance laws; hold residents and businesses responsible"
+  5 = "Privatize sanitation services and require residents and businesses to contract for cleanup directly"
+
+civil-rights (id: 0bc588c6-39e1-4084-b5de-cac909b8b762, pin: 2010cab0-1968-4f24-b74d-ca47c2f90165, served: 2010cab0-1968-4f24-b74d-ca47c2f90165)
+Question: "What role should government play in addressing racial and social inequality?"
+  1 = "mandate racial equity requirements in all institutions"
+  2 = "strengthen civil rights enforcement and address systemic discrimination"
+  3 = "maintain current civil rights laws while promoting equal opportunity"
+  4 = "limit federal civil rights enforcement to clear cases of discrimination"
+  5 = "eliminate affirmative action and all race-based government programs"
+
+climate-change (id: f1e44d66-5d27-4b51-b54f-b7ace86f6a3c, pin: 5f1403f3-90b6-491f-ba54-3c8e46a5ae26, served: 5f1403f3-90b6-491f-ba54-3c8e46a5ae26)
+Question: "How much should government do to expand clean energy?"
+  1 = "Require a shift to clean energy through mandates and firm deadlines."
+  2 = "Fund clean energy with major subsidies, tax credits, and public investment."
+  3 = "Speed up clean energy by cutting permitting red tape and upgrading the grid."
+  4 = "Stay neutral on energy and let the market choose among all sources."
+  5 = "End government subsidies and mandates for clean energy."
+
+data-centers (id: 4559b513-0fd8-4ed1-babd-f3b554162f40, pin: c48a03d6-b972-4f27-9a8a-d41b07f4a929, served: c48a03d6-b972-4f27-9a8a-d41b07f4a929)
+Question: "How should government manage the growth of large-scale data centers?"
+  1 = "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"
+  2 = "Barring utilities from passing any data center energy infrastructure costs to residential customers"
+  3 = "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"
+  4 = "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"
+  5 = "Welcoming data center investment with minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"
+
+economic-development (id: eb3d1247-0de1-4b7f-baec-7259861efd53, pin: af855dba-96f3-4fa0-beb7-43c5edb3f499, served: af855dba-96f3-4fa0-beb7-43c5edb3f499)
+Question: "How should government attract businesses and support economic development?"
+  1 = "Don't give companies tax breaks or subsidies. Invest in public services and infrastructure so businesses want to come on their own."
+  2 = "Help small and local businesses grow, but don't offer subsidies to attract large outside companies."
+  3 = "Offer incentives to attract businesses, but only if they commit to good wages and local hiring — and pay the money back if they don't deliver."
+  4 = "Offer large tax breaks and infrastructure to attract major employers, but keep limits and pass on deals that cost too much."
+  5 = "Offer the largest incentives to attract any large employer, with no conditions or spending limits."
+
+fossil-fuels (id: a22215c3-6693-4bc2-b248-01aebba14570, pin: c8e12b53-64f6-48ac-9c2d-0a3cf4d3df9b, served: 58796165-cd12-44de-a9b6-84df43f6eda0)
+Question: "What role should fossil fuels play in the nation's energy future?"
+  1 = "Phase out fossil fuel production entirely."
+  2 = "Allow no new drilling and let production decline over time."
+  3 = "Keep fossil fuel production steady at current levels."
+  4 = "Expand fossil fuel production with new drilling and permits."
+  5 = "Maximize production and open more public land and waters to drilling."
+
+growth-and-development (id: fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4, pin: 65e8ffd5-5aac-4d40-8862-a321949eafa4, served: 65e8ffd5-5aac-4d40-8862-a321949eafa4)
+Question: "How should government manage population growth and new development?"
+  1 = "Hold the pace of growth down — cap major new development, and let residents vote directly on the largest projects."
+  2 = "Allow growth only as fast as current infrastructure can handle — make new development wait for capacity."
+  3 = "Welcome steady growth — invest in roads, water and schools ahead of demand so expansion isn't held back."
+  4 = "Actively push for faster growth — cut red tape and recruit new development, while keeping basic guardrails."
+  5 = "Step back and let the market set the pace — remove development constraints beyond basic health and safety."
+
+homelessness (id: 4938766b-b45a-46e3-93bd-b8b30651271a, pin: 6958fa99-e317-45d7-8076-d11a0a78c897, served: 6958fa99-e317-45d7-8076-d11a0a78c897)
+Question: "How should government address people sleeping or camping in public spaces?"
+  1 = "Protecting the right to sleep and shelter in public spaces, with no penalties of any kind"
+  2 = "Decriminalizing public sleeping and camping in public spaces"
+  3 = "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"
+  4 = "Prohibiting encampments on public property, enforced through graduated warnings and civil penalties"
+  5 = "Banning public camping and sleeping with criminal penalties to maintain public safety and order"
+
+homelessness-response (id: 6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f, pin: 0e47ec98-46af-4e77-ae81-04d1311b4543, served: 0e47ec98-46af-4e77-ae81-04d1311b4543)
+Question: "How much should your community spend on housing and services to reduce homelessness?"
+  1 = "Guarantee housing and support services through dedicated, permanent public funding"
+  2 = "Expand housing and support services by increasing public funding"
+  3 = "Maintain current housing and service programs at today's funding level, with no major new spending"
+  4 = "Provide limited public funding to nonprofits and charities to lead the response, rather than running public programs"
+  5 = "Withdraw government funding for housing and support services, treating homelessness as a matter for private charity and the market"
+
+housing (id: 669cac97-66a6-4087-b036-936fbe62efb3, pin: 598c879d-f387-461c-9120-fbbbf6314bbc, served: 598c879d-f387-461c-9120-fbbbf6314bbc)
+Question: "What role should government play in making sure people can afford housing?"
+  1 = "Make government the main provider — build and operate public housing so everyone is guaranteed a home."
+  2 = "Build a large public housing sector that competes with the private market to hold prices down, while private housing stays the norm."
+  3 = "Build no public housing, but set binding rules on the private market like rent caps or required affordable units."
+  4 = "Set no binding rules, but offer subsidies and tax breaks so more affordable housing gets built."
+  5 = "Rely on the market to set prices and supply — at most, cut the regulations and zoning limits that block private building."
+
+jail-capacity (id: c267e137-0ff9-4e7d-9d13-e3cea1756cd0, pin: f63a4e70-055e-4115-a5e0-3deeb5748816, served: 7992fadf-a24c-4f73-bd34-76b5bca4764b)
+Question: "How should government respond to jail overcrowding and criminal justice demand?"
+  1 = "Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system"
+  2 = "Reducing the incarcerated population through alternatives to incarceration rather than building new capacity"
+  3 = "Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity"
+  4 = "Building additional jail capacity to address overcrowding and facility deficiencies"
+  5 = "Expanding jail capacity as the primary response to crime, prioritizing detention over alternatives"
+
+local-environment (id: 1935979c-b290-42e4-baa5-8cb0138b4ffa, pin: d67eabf7-8da0-4ca7-b2af-74745b3bfd47, served: d67eabf7-8da0-4ca7-b2af-74745b3bfd47)
+Question: "How should your community balance new development with environmental preservation?"
+  1 = "Make environmental protection the overriding priority — block or sharply limit development that would harm the local environment"
+  2 = "Lean strongly toward protection — put the burden on development to prove it will not damage the environment before it can proceed"
+  3 = "Apply consistent environmental standards while giving developers reasonable flexibility on implementation"
+  4 = "Lean toward development — treat environmental cost as a manageable trade-off and approve projects with clear economic benefit"
+  5 = "Remove local environmental restrictions beyond what state and federal law requires"
+
+local-immigration (id: b9ccee94-ad96-4f10-b655-889d8e5abe92, pin: d497a221-1616-4ebf-8405-f9c851083e2c, served: e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf)
+Question: "How should your community's law enforcement relate to federal immigration enforcement?"
+  1 = "Refuse all ICE detainers; prohibit local employees from sharing immigration status information with federal agencies"
+  2 = "Comply with ICE detainers only when they are ordered by a court"
+  3 = "Follow federal law as required but do not use local resources for proactive immigration enforcement"
+  4 = "Honor ICE detainers and share information proactively when federal agencies request it"
+  5 = "Direct local police to actively assist with immigration enforcement and support federal detention operations"
+
+public-safety-approach (id: e9ebefcd-c496-45e8-b816-a79f8442ba85, pin: b9c1c07f-f80e-493a-9bb0-015e46c9bc71, served: cfc3824f-522e-4671-bd2d-dd628e6578e1)
+Question: "What approach should your community take to public safety?"
+  1 = "Shift public safety away from policing and toward mental health, housing, and social services."
+  2 = "Send unarmed responders, instead of police, to mental-health and non-violent calls."
+  3 = "Keep police as the main responders and add crisis teams to work alongside them."
+  4 = "Add more officers and expand police presence to deter and respond to crime."
+  5 = "Make policing the community's top public-safety priority, ahead of social and community programs."
+
+religious-freedom (id: 6b9ba6d9-1001-43f5-b073-4d37130696fd, pin: dfbd847a-294c-49d2-9ac3-69270ea03054, served: dfbd847a-294c-49d2-9ac3-69270ea03054)
+Question: "How should the law balance religious freedom with protection from discrimination?"
+  1 = "prohibit religious exemptions from civil rights and anti-discrimination laws."
+  2 = "protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing."
+  3 = "balance protecting religious practices with maintaining equal treatment under the law for all citizens."
+  4 = "protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs."
+  5 = "strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices."
+
+rent-regulation (id: c308e8e8-caac-44f5-ab04-dbfecf40bbe2, pin: 6fa44a68-8006-48e9-b562-6b5e61d58693, served: 6fa44a68-8006-48e9-b562-6b5e61d58693)
+Question: "What role should government play in regulating rents and protecting tenants?"
+  1 = "Expand rent control to cover all rental units communitywide"
+  2 = "Strengthen existing rent stabilization and extend coverage to more units"
+  3 = "Maintain current tenant protections while allowing market rents for new construction"
+  4 = "Limit rent regulations to subsidized units; allow market rents broadly"
+  5 = "Oppose rent control entirely; rents should be set by the market without government intervention"
+
+residential-zoning (id: d4f18138-a2e0-4110-b925-7387d9d0d16d, pin: ef2a5e59-525a-41fa-94de-ce771df7c927, served: 6b5a3504-9e90-455a-9dd5-07e5376399af)
+Question: "What should guide decisions about housing density and neighborhood character in your community?"
+  1 = "Protect existing single-family neighborhoods; oppose density increases."
+  2 = "Allow modest density increases, like duplexes and accessory units, in single-family neighborhoods"
+  3 = "Allow multifamily and mixed-use near commercial corridors while protecting most residential zones"
+  4 = "Upzone broadly to allow multifamily housing by right in most neighborhoods"
+  5 = "Eliminate single-family-only zoning; allow any housing type on any lot communitywide"
+
+trans-athletes (id: d1618b9c-0b9e-45af-b986-bb33d270b8e4, pin: af2c6427-daf8-4819-93ba-42db212bae68, served: c47c957a-5eb6-426f-b38d-89e44ba8fe73)
+Question: "How should sports leagues determine eligibility for transgender athletes?"
+  1 = "allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."
+  2 = "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."
+  3 = "decide transgender athletes' eligibility case by case based on individual circumstances and the requirements of each sport."
+  4 = "require transgender athletes to compete only on teams matching their biological sex assigned at birth."
+  5 = "completely ban all transgender athletes from competing in any organized sports competitions."
+
+transportation-priorities (id: ba59337e-30e2-4aba-a39a-426b3366eb27, pin: c48782d5-e905-408d-8532-2a5fd5bb6efa, served: 555f1618-fcdf-4e0b-8306-7eec8f4d0f4f)
+Question: "Where should government focus its transportation investment?"
+  1 = "Prioritize pedestrian infrastructure, cycling networks, and public transit over new road capacity"
+  2 = "Invest equally in road capacity and in multimodal options like transit, bike lanes, and sidewalks"
+  3 = "Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it"
+  4 = "Focus on road capacity and traffic flow; transportation investment should serve the majority who drive"
+  5 = "Prioritize highway access and abundant free parking as the foundation of local transportation policy"
+
+2020-election (id: b5260e5a-5576-4071-8b2a-088af8d1f9eb, pin: 81920cf6-9a30-4c5c-82b1-5f2c16cda95c, served: 81920cf6-9a30-4c5c-82b1-5f2c16cda95c)
+Question: "What is your view of the outcome of the 2020 presidential election?"
+  1 = "The election was fair and Joe Biden won legitimately."
+  2 = "Joe Biden won, but the election had real problems worth fixing."
+  3 = "There was some fraud, but not enough to change the result."
+  4 = "Fraud or irregularities may have been enough to change the result."
+  5 = "The election was stolen from Donald Trump through widespread fraud."
+
+education-curriculum (id: 6c43fdec-d084-415d-a15d-d78f48d4fb34, pin: 2146e080-bd5e-4e1e-8a51-fcc1b44af916, served: 2146e080-bd5e-4e1e-8a51-fcc1b44af916)
+Question: "How should schools handle contested topics like race, gender, and history in what they teach?"
+  1 = "Require lessons that center race, gender, and social justice as themes across the curriculum"
+  2 = "Teach an honest account of racism, injustice, and diverse identities as part of the core curriculum"
+  3 = "Present contested social and historical topics as open questions, giving competing viewpoints equal weight"
+  4 = "Keep the curriculum focused on core academics and leave contested social topics to families"
+  5 = "Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate"
+
+education-library-books (id: 1fcff1e8-c913-4d97-91da-1145952d7c65, pin: f480f827-cb1f-4a2e-83cd-bef8763948b8, served: f480f827-cb1f-4a2e-83cd-bef8763948b8)
+Question: "How should schools handle challenges to books in libraries and classrooms?"
+  1 = "Keep every book available and let professional librarians and educators curate the collection"
+  2 = "Keep challenged books available to all, while letting parents limit what their own child can borrow"
+  3 = "Remove a challenged book only if a review committee of educators and parents finds it unsuitable"
+  4 = "Pull any book a parent challenges until it has been reviewed"
+  5 = "Remove any book a parent or community member reports as inappropriate, for all students"
+
+education-gender-identity (id: d96f987e-3404-4667-909d-5889116ba6e5, pin: 89f9d4a5-362e-4470-9529-46d4826fdeb9, served: 89f9d4a5-362e-4470-9529-46d4826fdeb9)
+Question: "What should schools do when a student uses a different name or gender identity at school than at home?"
+  1 = "Use the student's chosen name and pronouns, and keep their gender identity from parents unless the student agrees to share it"
+  2 = "Use the student's chosen name and pronouns, and tell parents only if they directly ask"
+  3 = "Tell parents when a student changes their name or gender at school, unless staff believe it would put the student in danger"
+  4 = "Require staff to notify parents whenever a student asks to be treated as a different gender at school"
+  5 = "Require written parental permission before staff use a student's chosen name or pronouns"
+
+education-equity-programs (id: 66b389c7-86fc-45e9-bf34-964bb747f27b, pin: 23d87824-d25c-4b9a-8b13-fb2799d75661, served: 23d87824-d25c-4b9a-8b13-fb2799d75661)
+Question: "How should schools address gaps in achievement and opportunity between groups of students?"
+  1 = "Fund dedicated equity offices and staff to close gaps between student groups"
+  2 = "Require equity training for staff and set measurable goals to close gaps between groups"
+  3 = "Measure results for each student group and steer extra support to those falling behind"
+  4 = "Offer the same supports to every struggling student, without grouping them by race or identity"
+  5 = "Eliminate equity programs, training, and staff from the district"
+
+education-school-police (id: 15d7e730-119b-43a2-a351-1efb7352b86b, pin: d81d7662-3c68-425c-a5c6-ca0717384a9e, served: d81d7662-3c68-425c-a5c6-ca0717384a9e)
+Question: "What role should police officers play in schools?"
+  1 = "Remove police officers from schools and rely on counselors and mental health staff"
+  2 = "Keep officers out of schools and call them only when a serious crime occurs"
+  3 = "Bring in a shared or part-time officer with a limited, clearly defined role"
+  4 = "Place a dedicated officer in every school for safety, but bar them from routine discipline"
+  5 = "Place an officer in every school with authority to handle discipline and make arrests on campus"
+
+education-charter-authorization (id: c8807d3d-4264-47ce-b8c4-08c6c9c33ce3, pin: 3901e1b0-12b0-4f7e-9e14-061ae2247c26, served: 3901e1b0-12b0-4f7e-9e14-061ae2247c26)
+Question: "How should the board handle charter schools that want to open in the district?"
+  1 = "Stop authorizing new charter schools and move to close existing ones"
+  2 = "Approve new charters rarely, only when a school is clearly failing students"
+  3 = "Judge each charter application on its own merits"
+  4 = "Welcome charters and approve strong applications to expand family options"
+  5 = "Convert failing district schools into charters run by independent operators"
+
+education-school-budget (id: 49f0b171-2ddf-4e68-887f-0ba78a2562f1, pin: 0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc, served: 0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc)
+Question: "How should schools set spending levels and decide whether to raise more revenue?"
+  1 = "Raise taxes to significantly increase school funding"
+  2 = "Increase funding modestly to keep pace with costs, without raising taxes"
+  3 = "Hold funding flat at current levels"
+  4 = "Cut administrative overhead to lower costs while protecting classroom funding"
+  5 = "Cut school funding significantly to reduce the taxes residents pay"
+
+education-ai (id: 61269f44-9c7f-4b27-818a-3508009f6ae2, pin: c6a2c643-aaa3-4d91-958e-e17f421b7dc9, served: c6a2c643-aaa3-4d91-958e-e17f421b7dc9)
+Question: "What role should artificial intelligence play in classrooms and student work?"
+  1 = "Prohibit artificial intelligence tools in student work and classroom instruction"
+  2 = "Restrict artificial intelligence to teacher planning and administrative use, keeping it out of student work"
+  3 = "Permit students to use artificial intelligence on designated assignments, with disclosure required"
+  4 = "Encourage broad classroom use of artificial intelligence with light guidelines and teacher discretion"
+  5 = "Let teachers and students use artificial intelligence freely, without restrictions"
+
+cannabis-policy (id: 2d893b95-9365-48f3-b7d6-1d0db8216518, pin: 0d9ff53d-0eb1-43a4-80f6-daaaf9851524, served: 0d9ff53d-0eb1-43a4-80f6-daaaf9851524)
+Question: "How should the government regulate cannabis?"
+  1 = "Keep cannabis fully illegal and enforce criminal penalties for possessing or selling it."
+  2 = "Allow cannabis only for medical use, available to patients with a physician's authorization."
+  3 = "Remove criminal penalties for personal possession, replacing them with civil fines, but keep commercial sales illegal."
+  4 = "Legalize recreational cannabis and regulate it through a licensed, taxed commercial market."
+  5 = "Legalize cannabis and treat it like an ordinary legal product, with minimal restrictions on growing and using it."
+
+gun-policy (id: 56125933-b82a-46c5-847b-b2e9a146b89f, pin: 1a72d5df-746f-4469-ab9b-1d3e8bc33b8d, served: 44615418-e111-4f2f-a256-92fcf74b0f2f)
+Question: "How should the government regulate firearms?"
+  1 = "Ban civilian firearm ownership, except for tightly licensed hunting and sport use."
+  2 = "Ban semi-automatic assault-style weapons, while allowing other firearms."
+  3 = "Allow all types of firearms, but require universal background checks on every sale."
+  4 = "Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines."
+  5 = "Repeal major gun restrictions and let adults carry a firearm without a permit."
+
+minimum-wage (id: 43d9e981-f25e-471f-ae92-b8e2a700900c, pin: bc949d3b-43f4-4612-ba4c-2de39f8757c8, served: bc949d3b-43f4-4612-ba4c-2de39f8757c8)
+Question: "What approach should government take to the minimum wage?"
+  1 = "Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation."
+  2 = "Raise the wage floor to a set higher level, then adjust it only when lawmakers vote to."
+  3 = "Keep a modest national wage floor as a baseline and let states and cities set higher rates."
+  4 = "Hold the wage floor at its current level and let the market set pay above it."
+  5 = "Remove the wage floor entirely and let employers and workers set pay by agreement."
+
+ranked-choice-voting (id: 81ff12e2-0e4f-44b3-a936-2f154f7d9ab5, pin: 100cdf38-0794-4267-b711-934438f05853, served: 100cdf38-0794-4267-b711-934438f05853)
+Question: "How should votes be cast and counted in elections?"
+  1 = "Replace winner-take-all elections with proportional ranked-choice voting — ranked ballots fill several seats at once, so seats reflect how everyone voted."
+  2 = "Adopt ranked-choice voting for single-winner offices: voters rank candidates, and if a top choice can't win, the vote shifts to the next choice until someone has a majority."
+  3 = "Allow ranked-choice voting where communities choose it, while keeping single-choice voting as the standard."
+  4 = "Keep single-choice voting and oppose adopting ranked-choice voting, but stop short of banning it."
+  5 = "Ban ranked-choice voting by law."

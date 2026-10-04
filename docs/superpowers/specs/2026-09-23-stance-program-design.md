@@ -650,6 +650,75 @@ the city council and leave the school board; say in the wave notes that you did.
 ⚠ Some seats set almost no policy the ladders ask about. **6 of 32** NC locals were Sheriff, Register
 of Deeds or Clerk of Superior Court. Expect documented zeros. Do not force.
 
+### 5.3.1 Local press is the other half of the municipal method
+
+§5.3 covers the body's own record — agendas, minutes, Legistar. **That is only half of what a
+municipal wave needs, and often the smaller half.** Measured across Charlotte and three Florida
+cities, 2026-10-02/03: of the seven chairs seated across 29 members, **all seven came from local
+reporting or a member's own words, and none from the vote record.** Every divided policy vote on
+Charlotte City Council failed as chair evidence — omnibus, housekeeping, or unanimous.
+
+Tooling: `backend/scripts/stance-news/`, with a README stating the rule behind each script.
+
+**The yield funnel, so a new wave can price itself.** Charlotte: 803 passages naming a member →
+106 carrying a quotation → 51 attributed to the member → **5 chairs**. Florida: 377 → 66 → 122
+attributed after re-mining → **2 chairs**. Run `funnel.py` early; a steep drop at one stage is
+either the world or a bug, and the stage tells you which.
+
+🔴🔴 **A LOW YIELD IS THE TOOLING UNTIL PROVED OTHERWISE.** The first Charlotte pass reported 3
+chairs and the first Florida pass reported 0, and both numbers were depressed by one bug class.
+Re-mining took them to 5 and 2, and Florida's attributed passages from 22 to 122. **Do not conclude
+anything about a city's coverage from a first pass.**
+
+🔴🔴 **DO NOT TIE ARTICLE-LINK EXTRACTION TO ONE PUBLISHER'S URL SHAPE.** A pattern requiring an
+absolute href with a `/2026-10-03/` date path — an NPR convention — silently excluded **Queen City
+Nerve**, which publishes at `/slug/` and is the one Charlotte outlet that covers council meetings
+with direct member quotes. The same assumption produced "Bradenton has no coverage" four separate
+ways: the live WUSF host is `www.wusf.org` (the older host renders results client-side, so its
+server HTML has no results at all); wusf.org serves **relative** hrefs; The Bradenton Times uses
+`/stories/<slug>,<id>` with no date and `search_filter=` rather than `?s=`; and its result links end
+in `?`, which a pattern excluding query strings discarded while keeping the sidebar. Resolve every
+href against the page's own base and accept any slug-shaped path on the same host.
+
+🔴 **QUERY BREADTH MUST MATCH OUTLET SIZE, IN BOTH DIRECTIONS.** On a large outlet a name-only
+search returns its top ~25 results for that person, which is election and process coverage: adding
+the topic surfaced **9–15 new articles per query** on WFAE. On a small one the reverse holds —
+`Kocher` returns 20 results on The Bradenton Times including her own column, while
+`Jayne Kocher economic development incentives` returns none and falls back to the default listing.
+**Run both sweeps and merge, deduped by URL.** They are complementary: one member scored 19 articles
+under name+topic and 4 under name-only; another the reverse.
+
+🔴 **A QUOTE MUST BE ATTRIBUTED TO THE MEMBER, ADJACENT TO A SPEECH VERB.** A proximity test is not
+enough. The top "evidence" for one member was an opponent's attack — quoted, on topic, naming him —
+because *"Commissioner Matlow, I think it is unacceptable," he said* puts the surname near a verb.
+Require `Surname said` / `said Surname` / `Title Surname told`.
+
+🔴🔴 **CONFIRM IDENTITY FROM THE ARTICLE'S OWN INTRODUCTION, EVERY TIME.** Eight surname collisions
+across two slices. Most are obvious once seen — Kelly Lee Owens and Jessica Lea Mayfield
+(musicians), Michael Mayo (a jazz singer), Baker Mayfield, Chester Higgins (a photographer), a salsa
+musician named Rosado, a death-row inmate named Pardo. **One was not.** A critique of increased
+criminalisation, surfaced under a homelessness search and attributed to "Mayfield" by a speech verb,
+is **State Senator Julie Mayfield of Asheville** discussing House Bill 437; the article never writes
+"LaWana". On topic, quoted, correctly attributed, wrong person — and it would have seated a chair.
+
+⚠ **Some civic sites refuse a browser User-Agent.** `charlottenc.gov` returns 403 to a Chrome UA on
+curl's TLS fingerprint (449 bytes) and serves a bare curl request normally (286 KB) — and serves the
+verifier's own `EmpoweredVoteBot` too, so its pages do verify. Python `urllib` is refused whatever UA
+it sends. Its planning pages return **HTTP 200 carrying an Akamai challenge**, which is a refusal
+wearing a success code.
+
+⚠ **Price the outlet set before the wave.** Reachable in these four cities: WFAE, Queen City Nerve,
+The Charlotte Post, WLRN, WFSU, WUSF, Miami New Times, The Bradenton Times. Refused: Axios Charlotte
+and Florida Phoenix (403), the Tallahassee Democrat (402), the Bradenton Herald (timeout), WCNC
+search (403). **The metro daily is usually paywalled**, which is the largest single gap in a
+municipal wave and the reason a city can look thinner than it is.
+
+⚠ **A candidate questionnaire can be substantive and still seat nothing.** WFAE's 2025 climate
+survey produced real written answers from two Charlotte candidates — on tree canopy, cool roofs and
+shaded bus stops — while the `climate-change` ladder asks about clean-energy mandates and subsidies.
+Evidence that answers a different question is not evidence for this one.
+
+
 ### 5.4 What went wrong at scale, and why it did not look like laziness
 
 This is the part a new researcher most needs to read, because the failure is *convincing*.

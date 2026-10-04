@@ -1,0 +1,47 @@
+{
+  "findings": [
+    {
+      "full_name": "Dimple Ajmera",
+      "topic_key": "data-centers",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Dimple Ajmera",
+      "topic_key": "climate-change",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Reneé Johnson",
+      "topic_key": "residential-zoning",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Kimberly Owens",
+      "topic_key": "transportation-priorities",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "JD Mazuera Arias",
+      "topic_key": "transportation-priorities",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    }
+  ],
+  "summary": {
+    "rows": 420,
+    "high": 0,
+    "medium": 5,
+    "by_check": {
+      "statement-needs-review": 5
+    }
+  }
+}
