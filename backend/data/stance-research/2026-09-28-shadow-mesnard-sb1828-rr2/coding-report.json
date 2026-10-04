@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Mesnard's own words (floor statement, explanation of vote, press release) tying his SB 1828 (2021) sponsorship or vote to the individual income tax rate provision",
+          "A single-subject Arizona income tax rate bill authored or prime-sponsored by Mesnard, with its bill text and vote page",
+          "Mesnard's own statement or floor speech tying his SB 1828 vote or sponsorship specifically to the income-tax-rate-cut provision (Sec. 43-1011), since the bill also enacts unrelated unemployment-insurance, property-tax, and sales-tax provisions.",
+          "A single-subject income-tax-rate bill sponsored or voted on by Mesnard, if one exists, to establish a chair without relying on the SB 1828 omnibus."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "requests": [
+        "Mesnard's own words (floor statement, explanation of vote, press release) tying his SB 1828 (2021) sponsorship or vote to the individual income tax rate provision",
+        "A single-subject Arizona income tax rate bill authored or prime-sponsored by Mesnard, with its bill text and vote page",
+        "Mesnard's own statement or floor speech tying his SB 1828 vote or sponsorship specifically to the income-tax-rate-cut provision (Sec. 43-1011), since the bill also enacts unrelated unemployment-insurance, property-tax, and sales-tax provisions.",
+        "A single-subject income-tax-rate bill sponsored or voted on by Mesnard, if one exists, to establish a chair without relying on the SB 1828 omnibus."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

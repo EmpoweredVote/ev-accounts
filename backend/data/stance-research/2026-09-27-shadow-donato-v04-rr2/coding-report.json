@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "250a7ae0-f130-449e-9625-4c2d1512bbf6|897087f2-4301-4097-8245-5ccb22a0ab51|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "topic_key": "education-library-books",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Indiana Senate roll call on HB 1447 (2023) third reading, to show the version Donato sponsored before conference",
+          "The Senate-passed or committee-report version of HB 1447 (2023), to confirm the school library chapter (IC 20-26-5.5) was in the bill she sponsored",
+          "Stacey Donato's own words on the school library removal-request and review procedure in HB 1447 (2023)",
+          "Donato's own statement (floor speech, press release, or explanation of vote) tying her support to the HB 1447 school-library provision (IC 20-26-5.5 / Sec. 2), to establish which rung it supports",
+          "Donato's own floor statement or explanation of vote tying her support to the school-library provision of HB 1447 (2023), since the bill also covers unrelated Muncie-schools, student-survey-privacy, and political-neutrality provisions"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "250a7ae0-f130-449e-9625-4c2d1512bbf6|897087f2-4301-4097-8245-5ccb22a0ab51|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "requests": [
+        "Indiana Senate roll call on HB 1447 (2023) third reading, to show the version Donato sponsored before conference",
+        "The Senate-passed or committee-report version of HB 1447 (2023), to confirm the school library chapter (IC 20-26-5.5) was in the bill she sponsored",
+        "Stacey Donato's own words on the school library removal-request and review procedure in HB 1447 (2023)",
+        "Donato's own statement (floor speech, press release, or explanation of vote) tying her support to the HB 1447 school-library provision (IC 20-26-5.5 / Sec. 2), to establish which rung it supports",
+        "Donato's own floor statement or explanation of vote tying her support to the school-library provision of HB 1447 (2023), since the bill also covers unrelated Muncie-schools, student-survey-privacy, and political-neutrality provisions"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

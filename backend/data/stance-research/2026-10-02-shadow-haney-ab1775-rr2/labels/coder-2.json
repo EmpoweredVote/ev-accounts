@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+      "passages": [
+        {
+          "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "AB 1775 only lets a local jurisdiction permit noncannabis food/beverage sales and live performances at an already-licensed cannabis consumption area; it does not speak to cannabis's legal status.",
+          "record_kind": "author",
+          "actor_quote": "AB 1775, Haney.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-08-28",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "Floor concurrence vote on the same ancillary-business amendment; Haney is in the Ayes list, but the measure does not order the legality dimension the rungs differ on.",
+          "record_kind": "vote",
+          "actor_quote": "Grayson, Haney, Hart",
+          "tally_quote": "Ayes Count 63 Noes Count 5"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 1775 amends Business and Professions Code Section 26200 to let local jurisdictions allow noncannabis food/beverage sales and live performances at premises already licensed for cannabis consumption. That operative content is about ancillary business activity at existing licensed retailers, not about whether cannabis is legal, decriminalized, medical-only, or restricted, so it is adjacent to every rung and establishes no chair.",
+      "needs_source": [
+        "Haney's own vote, sponsorship, or statement on a bill or ballot measure that addresses cannabis's legal status directly (e.g., medical-use authorization, decriminalization of possession, adult-use legalization, or licensing of a commercial market)."
+      ],
+      "quotes": []
+    }
+  ]
+}

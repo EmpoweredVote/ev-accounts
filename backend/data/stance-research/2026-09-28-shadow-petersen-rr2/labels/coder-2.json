@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview lists Petersen as co-sponsor of SB1457, which bans selective abortions and declares unborn-child rights but sets no gestational limit.",
+          "record_kind": "sponsor",
+          "actor_quote": "Petersen (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "This act does not create or recognize a right to an abortion and does not make lawful an abortion that is currently unlawful.",
+          "note": "SB1457 bans sex-, race-, and genetic-abnormality-selective abortions and declares unborn-child rights at every stage, but its own construction clause disclaims creating any abortion right or legalizing anything unlawful, so it shows only the restrictive direction, no permitted stage.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Petersen voted Y on SB1457's final Senate reading; because the bill's construction clause creates no abortion right and legalizes nothing, the vote shows direction only, not a specific rung.",
+          "record_kind": "vote",
+          "actor_quote": "PETERSEN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Petersen co-sponsored and voted Y on SB 1457 (2021), which bans sex-, race-, and genetic-abnormality-selective abortions and declares unborn-child rights 'at every stage of development,' but the act's own construction clause states it 'does not create or recognize a right to an abortion and does not make lawful an abortion that is currently unlawful,' so it establishes no gestational stage permitted or forbidden under the ladder's rungs — only the restrictive direction.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

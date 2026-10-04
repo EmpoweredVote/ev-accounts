@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+      "office_id": "6bb9a929-fd7a-4fee-b28e-4faa7c3b95de",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "cabcea7d-70f1-5f88-bb56-fff8218444e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 2655 (2023-2024)",
+          "provision_quote": "Any large online platform shall develop and implement procedures for the use of state-of-the-art techniques to identify and remove materially deceptive content if all of the following conditions are met:",
+          "note": "Author's bill requires platform removal of deceptive election content; per annex, a mixed removal/label bill resolves on the removal duty.",
+          "record_kind": "author",
+          "actor_quote": "AB 2655, Berman.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": ["cabcea7d-70f1-5f88-bb56-fff8218444e1"],
+      "reasoning": "Berman authored AB 2655 (2023-2024), the Defending Democracy from Deepfake Deception Act of 2024, whose Section 20513 requires large online platforms to identify and remove materially deceptive election-related content; although Section 20514 also requires labeling of other content, the misinformation annex's rule for bills mixing the two duties holds that the removal duty decides, matching rung 1, 'legally require platforms to remove false information.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

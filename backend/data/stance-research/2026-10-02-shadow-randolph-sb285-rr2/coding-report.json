@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e8054d02-34c2-485b-b54a-47658cc269b7|1ca10b86-0477-4f4c-9cbc-d410cece1d61|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Indiana Senate roll call on the 2026 public camping ban bill (reported 29-19) showing Randolph's own vote",
+          "Text of the 2026 Indiana public camping ban bill showing the penalty provision it creates",
+          "The camping-ban bill's text and instrument number, and the Senate/House roll calls showing Randolph's individual vote (this excerpt gives only the chamber totals, not his vote).",
+          "Indiana Senate/House roll call naming the bill number and showing Lonnie Randolph's own vote on the public camping ban, to establish a record-based chair"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e8054d02-34c2-485b-b54a-47658cc269b7|1ca10b86-0477-4f4c-9cbc-d410cece1d61|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "requests": [
+        "Indiana Senate roll call on the 2026 public camping ban bill (reported 29-19) showing Randolph's own vote",
+        "Text of the 2026 Indiana public camping ban bill showing the penalty provision it creates",
+        "The camping-ban bill's text and instrument number, and the Senate/House roll calls showing Randolph's individual vote (this excerpt gives only the chamber totals, not his vote).",
+        "Indiana Senate/House roll call naming the bill number and showing Lonnie Randolph's own vote on the public camping ban, to establish a record-based chair"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "489e2fc3-b47a-4304-b959-07e35f010da4|124f5425-d00d-4a54-8505-74e25b80cceb|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Arizona roll call, sponsorship or authorship by Finchem on a bill that sets what identification a voter must present (photo ID at the polls, non-photo documents, an affidavit fallback, or an ID number on mail ballots) — from either his Senate or his earlier House term",
+          "An Arizona roll call or sponsorship by Finchem on a documentary-proof-of-citizenship-at-registration bill, with the bill text printing the proof-of-citizenship clause",
+          "Finchem's own words answering how the government should verify a voter's identity and eligibility (questionnaire item, debate answer, or first-person issue page), dated within the current term or the campaign that seated him",
+          "An Arizona bill, vote, or sponsorship record where Finchem acts on a rule for what identification a voter must show to vote, or on documentary proof of citizenship at registration",
+          "Finchem's own record or statement specifically on voter identification requirements at the polls or at registration (e.g., a photo-ID or documentary-proof-of-citizenship bill he sponsored, voted on, or spoke about)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "489e2fc3-b47a-4304-b959-07e35f010da4|124f5425-d00d-4a54-8505-74e25b80cceb|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "requests": [
+        "An Arizona roll call, sponsorship or authorship by Finchem on a bill that sets what identification a voter must present (photo ID at the polls, non-photo documents, an affidavit fallback, or an ID number on mail ballots) — from either his Senate or his earlier House term",
+        "An Arizona roll call or sponsorship by Finchem on a documentary-proof-of-citizenship-at-registration bill, with the bill text printing the proof-of-citizenship clause",
+        "Finchem's own words answering how the government should verify a voter's identity and eligibility (questionnaire item, debate answer, or first-person issue page), dated within the current term or the campaign that seated him",
+        "An Arizona bill, vote, or sponsorship record where Finchem acts on a rule for what identification a voter must show to vote, or on documentary proof of citizenship at registration",
+        "Finchem's own record or statement specifically on voter identification requirements at the polls or at registration (e.g., a photo-ID or documentary-proof-of-citizenship bill he sponsored, voted on, or spoke about)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

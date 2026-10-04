@@ -1,0 +1,39 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "1de9f4db-a9ca-53e2-8314-82ab64756ac4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1203 (2021-2022)",
+          "provision_quote": "It is the intent of the Legislature that all state agencies aim to achieve net-zero emissions of greenhouse gases resulting from their operations, including scope 1 and scope 2 emissions, no later than January 1, 2035, or as soon as feasible thereafter.",
+          "note": "An intent clause plus inventory, plan and report duties on the Department of General Services, all qualified by \"to the extent feasible\".",
+          "record_kind": "author",
+          "actor_quote": "SB 1203, Becker.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Becker authored SB 1203 (2021-2022), which declares \"the intent of the Legislature that all state agencies aim to achieve net-zero emissions\" by January 1, 2035 and orders the Department of General Services to publish an inventory, a plan and progress reports. An aim with a date is not the \"mandates and firm deadlines\" of \"Require a shift to clean energy\", and a net-zero emissions target names no energy source, so it can be met without expanding clean energy; the plan and reporting duties are a study directive whose stated goal shows only a side. The appropriation-contingent \"required actions and investments\" do not appropriate money, so \"Fund clean energy with major subsidies, tax credits, and public investment\" is not evidenced either.",
+      "needs_source": [
+        "California Senate floor roll call, SB 1203 (2021-2022), final passage (actor and tally)",
+        "Becker's own words on whether a clean-energy requirement or clean-energy funding should be used",
+        "A Becker record on a renewable or clean-electricity procurement standard, a clean-energy funding programme, or permitting/grid reform"
+      ],
+      "quotes": []
+    }
+  ]
+}

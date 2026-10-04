@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-28-shadow-gress-rr2",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2635",
+      "source_kind": "public-record",
+      "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+      "office_id": "4021cde6-9098-442f-8126-55f6377a328f",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "HB 2635 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2025-hb2635-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2635#house-third",
+      "source_kind": "public-record",
+      "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+      "office_id": "4021cde6-9098-442f-8126-55f6377a328f",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "HB 2635 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2025-hb2635-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2635H.htm",
+      "source_kind": "public-record",
+      "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+      "office_id": "4021cde6-9098-442f-8126-55f6377a328f",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "HB 2635 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

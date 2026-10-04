@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "0db8e945-92cc-5f28-b839-85721d76633d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023, 56th Leg., 1st Reg. Sess.)",
+          "provision_quote": "A public school, school district or state agency or an employee of a public school, school district or state agency may not provide or allow any person to provide instruction to students or employees that promotes or advocates for any of the following concepts: 1. Judging an individual on the basis of the individual's race or ethnicity. 2. That one race or ethnic group is inherently morally or intellectually superior to another race or ethnic group.",
+          "note": "Engrossed text of the bill he prime-sponsored; single-subject curriculum bill whose operative section forbids named race and ethnicity lessons.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023, 56th Leg., 1st Reg. Sess.)",
+          "provision_quote": null,
+          "note": "Bill overview page names him prime sponsor of SB1305 and records the governor's veto; it prints no provision text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "75343598-1fb8-585f-aad1-2ba26517eaa6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023, 56th Leg., 1st Reg. Sess.)",
+          "provision_quote": null,
+          "note": "Senate Third Reading roll call: he voted Aye on final passage of a single-subject bill, and the 16-12 split is far from near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "0db8e945-92cc-5f28-b839-85721d76633d",
+        "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+        "75343598-1fb8-585f-aad1-2ba26517eaa6"
+      ],
+      "reasoning": "Mesnard was prime sponsor of SB 1305 (2023) and voted Aye on its Senate Third Reading (Passed 16-12-2-0-0), a single-subject curriculum bill whose operative section bars a public school or its employee from providing \"instruction to students or employees that promotes or advocates for\" an enumerated list of race and ethnicity concepts, enforced by civil penalty and teacher discipline. That is the legislature prohibiting named lessons on race, which matches \"Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate\". It is not \"Keep the curriculum focused on core academics and leave contested social topics to families\", because the instrument is a ban rather than a withdrawal, and subsection G expressly preserves teaching about \"historical movements, ideologies or instances of racial hatred or discrimination\", so the bill does not order balance or displace the subject generally.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

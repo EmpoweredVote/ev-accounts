@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12|927850b9-2c91-44f7-a6be-f4c81dc3b75d|c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic_key": "rent-regulation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "James C. Ramos's own words on rent control or rent stabilization coverage, from the current term or the campaign that seated him",
+          "Any vote or sponsorship by Ramos on a bill repealing or narrowing rent rules (e.g. Costa-Hawkins amendments), which would separate rungs 3, 4 and 5"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12|927850b9-2c91-44f7-a6be-f4c81dc3b75d|c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "requests": [
+        "James C. Ramos's own words on rent control or rent stabilization coverage, from the current term or the campaign that seated him",
+        "Any vote or sponsorship by Ramos on a bill repealing or narrowing rent rules (e.g. Costa-Hawkins amendments), which would separate rungs 3, 4 and 5"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

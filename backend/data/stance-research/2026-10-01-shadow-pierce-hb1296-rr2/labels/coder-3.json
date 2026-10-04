@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "85d1fad8-ebdb-5ed3-968d-f5b5450ef70b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "Operative text repeals Indiana's license/permit requirement to carry a handgun (annex: meets rung 5 for a state officeholder), but Pierce voted Nay on this bill, so it shows opposition to the repeal only.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7925e549-fc15-5e78-91d8-1ca888818177",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Pierce is listed among the 30 Nay votes on the Conference Committee Report adopting HB 1296, the bill repealing the handgun carry license requirement.",
+          "record_kind": "vote",
+          "actor_quote": "Campbell Hatcher Pierce DeLaney Hatfield Porter",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce was recorded among the 30 Nay votes on the conference committee report adopting HB 1296 (2022), whose operative section provides that a qualifying adult 'is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana' — content the annex ties to 'Repeal major gun restrictions and let adults carry a firearm without a permit' for a state officeholder. His No vote shows only that he opposed repealing the carry license, not which of the more-restrictive rungs he holds.",
+      "needs_source": [
+        "Pierce's own statement explaining his Nay vote on HB 1296, or another record/vote establishing which specific firearm restriction he supports"
+      ],
+      "quotes": []
+    }
+  ]
+}

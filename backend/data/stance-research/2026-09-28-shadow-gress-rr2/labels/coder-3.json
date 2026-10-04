@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "5293ff0f-0365-4943-89a5-f4017566c8dd",
+      "office_id": "4021cde6-9098-442f-8126-55f6377a328f",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "f54b3d9a-dc48-5ef4-a20e-d92a74f10756",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-02-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2635 (2025)",
+          "provision_quote": null,
+          "note": "House Third Reading vote page shows Gress voting Y on final passage of HB2635, a TPT exemption for safe firearm storage devices.",
+          "record_kind": "vote",
+          "actor_quote": "GRESS Y",
+          "tally_quote": "Passed 57-0-3-0-0"
+        },
+        {
+          "snapshot_id": "ce71935f-0138-5b11-8388-d3530c46910f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2635 (2025)",
+          "provision_quote": null,
+          "note": "Bill overview lists Gress as Prime sponsor of HB2635, the firearm-storage-device tax-exemption bill.",
+          "record_kind": "sponsor",
+          "actor_quote": "Gress (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2ef4af7b-fbdf-56a9-8aa0-1847973593ba",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2635 (2025)",
+          "provision_quote": "Sales of safe firearm storage devices.",
+          "note": "Bill text's operative exemption covers only safe firearm storage devices (locks/safes); it says nothing about who may own, buy or carry a firearm.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB2635, which Gress prime-sponsored and voted Yea on, creates a transaction-privilege/use-tax exemption for 'safe firearm storage devices'; its operative clause addresses only storage-device taxation. Per the gun-policy annex, rules about how guns are stored 'do not say which guns may be owned or who may buy them,' so this is V2 adjacent to the ladder's question of how far the law restricts which firearms civilians may own, buy and carry. No surviving passage addresses ownership, sale/background-check, or carry restrictions, so the row is BLANK no-evidence.",
+      "needs_source": [
+        "A roll-call vote or sponsorship record for Matt Gress on a bill addressing firearm ownership, sale/background-check requirements, or carry rules (e.g., an assault-weapons ban, universal background checks, permitless/constitutional carry, or carry reciprocity)"
+      ],
+      "quotes": []
+    }
+  ]
+}

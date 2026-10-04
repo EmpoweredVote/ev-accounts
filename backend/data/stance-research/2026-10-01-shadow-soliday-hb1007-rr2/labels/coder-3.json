@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "off",
+          "v3_class": "record",
+          "date": "2025-05-06",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": null,
+          "note": "Digest covers an SMR tax credit and large-load-customer utility procedures; never names data centers (annex ruling 2026-10-01).",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Edmond Soliday.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69",
+          "v1_attribution": "own-act",
+          "v2_relevance": "off",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": null,
+          "note": "Enacted text defines 'large load customer' by demand, investment and employment thresholds, but the term 'data center' never appears (annex ruling 2026-10-01).",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 1007 (2025), authored by Soliday, creates an SMR manufacturing tax credit and expedited-review procedures for utilities serving 'large load customers,' but the enrolled text never names data centers. The data-centers annex rules this exact case: a large-load-utility-customer provision that never names data centers is not about data centers, so both passages are off-question and the row has no surviving evidence.",
+      "needs_source": [
+        "An instrument or statement in Soliday's own words that names 'data center(s)' specifically"
+      ],
+      "quotes": []
+    }
+  ]
+}

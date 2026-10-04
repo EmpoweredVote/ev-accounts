@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a",
+      "office_id": "5d39ba29-4d41-4a41-b01c-0c48786c3675",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "5319e2f3-6f44-59e5-a284-915392cf4203",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024)",
+          "provision_quote": null,
+          "note": "House final reading vote page: Carbone voted Aye, 22 of 60 voted No, so the vote is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "CARBONE Y",
+          "tally_quote": "Passed 35-22-3-0-0"
+        },
+        {
+          "snapshot_id": "733747ac-3504-5347-b1d2-c1cdd964394e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview names Carbone as prime sponsor; the page prints no provision text and no vote count.",
+          "record_kind": "sponsor",
+          "actor_quote": "Carbone (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "72e8d029-8f5a-52f4-96de-1e30f8c05042",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024)",
+          "provision_quote": "A municipality with a population of more than seventy-five thousand persons shall adopt regulations that allow on any lot or parcel where a single-family dwelling is allowed all of the following: 1. At least one attached and one detached accessory dwelling unit as a permitted use.",
+          "note": "Chaptered text of the sponsored bill: it voids local zoning limits on accessory dwelling units but says nothing about public housing, binding price rules or subsidies.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Carbone prime-sponsored and voted Aye on HB 2720 (2024), which forces municipalities over seventy-five thousand to allow accessory dwelling units as \"a permitted use\" and bars them from parking, design and setback limits on those units. Cutting local zoning limits is on-question for \"Rely on the market to set prices and supply — at most, cut the regulations and zoning limits that block private building\", but one accessory-dwelling-unit deregulation law cannot show the \"at most\" ceiling, and a legislator who also wants binding rules or subsidies could sponsor it. Nothing in the sources shows his position on building public housing, rent caps, required affordable units or subsidies, so the evidence gives a side and not a rung.",
+      "needs_source": [
+        "Carbone's own words or an Arizona House record on rent caps / required affordable units (e.g. a vote on a statewide rent-regulation or inclusionary-zoning bill)",
+        "Carbone's own words or an Arizona House record on housing subsidies or tax credits for affordable construction (e.g. a Housing Trust Fund appropriation vote)",
+        "Carbone's own words or an Arizona House record on publicly built and operated housing"
+      ],
+      "quotes": []
+    }
+  ]
+}

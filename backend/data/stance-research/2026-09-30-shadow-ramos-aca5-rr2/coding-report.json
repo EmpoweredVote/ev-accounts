@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12|927850b9-2c91-44f7-a6be-f4c81dc3b75d|0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "James C. Ramos's own words on ACA 5 (2019-2020) or Proposition 209 repeal, tying him to a specific rung clause",
+          "A California Assembly bill Ramos authored or prime-sponsored that widens anti-discrimination law or its enforcement (bill number plus the leginfo bill-text and vote pages)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12|927850b9-2c91-44f7-a6be-f4c81dc3b75d|0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "requests": [
+        "James C. Ramos's own words on ACA 5 (2019-2020) or Proposition 209 repeal, tying him to a specific rung clause",
+        "A California Assembly bill Ramos authored or prime-sponsored that widens anti-discrimination law or its enforcement (bill number plus the leginfo bill-text and vote pages)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

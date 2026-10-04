@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "ea803096-927f-41fe-98e1-deab56291810|e45c9d52-6288-4865-a2de-dadd73cc18e6|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Assembly floor roll call plus bill text for a California renewable or clean-electricity procurement standard carrying dated binding percentages (a clean-energy supply duty), to test \"Require a shift to clean energy through mandates and firm deadlines\"",
+          "Muratsuchi's own act (authorship, sponsorship or a final-passage vote) on a single-subject clean-energy subsidy, tax credit or public investment programme, to test \"Fund clean energy with major subsidies, tax credits, and public investment\"",
+          "Muratsuchi's own words on whether clean energy should be required or only funded, to separate the rungs on the pro-action side"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "ea803096-927f-41fe-98e1-deab56291810|e45c9d52-6288-4865-a2de-dadd73cc18e6|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "Assembly floor roll call plus bill text for a California renewable or clean-electricity procurement standard carrying dated binding percentages (a clean-energy supply duty), to test \"Require a shift to clean energy through mandates and firm deadlines\"",
+        "Muratsuchi's own act (authorship, sponsorship or a final-passage vote) on a single-subject clean-energy subsidy, tax credit or public investment programme, to test \"Fund clean energy with major subsidies, tax credits, and public investment\"",
+        "Muratsuchi's own words on whether clean energy should be required or only funded, to separate the rungs on the pro-action side"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

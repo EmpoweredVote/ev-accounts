@@ -1,0 +1,76 @@
+{
+  "batch_id": "2026-10-02-shadow-shope-hcr2060-rr2",
+  "seat": {
+    "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+    "full_name": "Thomas \"T.J.\" Shope",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2013-01-01",
+        "start_precision": "day",
+        "term_end": "2014-12-31"
+      },
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2015-01-01",
+        "start_precision": "day",
+        "term_end": "2016-12-31"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": null,
+        "start_precision": "unknown",
+        "term_end": "2023-01-09"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "question_text": "How far should the government go in deporting undocumented immigrants?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Stop deportations entirely and protect undocumented immigrants from removal"
+        },
+        {
+          "value": 2,
+          "text": "Only deport undocumented immigrants convicted of serious violent crimes"
+        },
+        {
+          "value": 3,
+          "text": "Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place"
+        },
+        {
+          "value": 4,
+          "text": "Deport all undocumented immigrants, starting with those who have criminal records"
+        },
+        {
+          "value": 5,
+          "text": "Carry out a mass-deportation program to remove all undocumented immigrants, including long-settled families and workers"
+        }
+      ],
+      "annexMd": "# deportation — served revision 55c3167e-3ad8-425d-a699-b2e91552d912 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How far should the government go in deporting undocumented immigrants?\"\n\n**Orientation:** standard. Rung 1 removes no one, rung 5 removes everyone through a dedicated\nprogramme. The rungs order **how many undocumented immigrants the government removes**, and which\ngroups are left in place. Do not read the number as \"more government\": rung 1 is the least removal.\n\n**Levels with a role:** federal, state (`compass_topic_roles`). Removal is a federal lever (Congress\nsets who is removable and funds enforcement). State officials cannot deport anyone; at state level\nmost rungs can only be evidenced by own words.\n\n**Synonyms:** \"removal\", \"deportation\", \"removal proceedings\", \"expedited removal\", \"enforcement\npriorities\", \"interior enforcement\", \"detainer\", \"287(g)\", \"mass deportation\", \"self-deportation\",\n\"long-term residents\", \"Dreamers\", \"DACA\", \"Temporary Protected Status\" (TPS), \"parole\", \"path to\ncitizenship\", \"legalization\", \"amnesty\".\n\n1. **\"Stop deportations entirely and protect undocumented immigrants from removal\"**\n   - Means: no undocumented immigrant is removed.\n   - Operative clauses: [a] stop all deportations; [b] protect undocumented immigrants from removal.\n   - Establishing evidence looks like: own words that call for an end to every removal; an instrument\n     that bars removal of all undocumented immigrants. \"Entirely\" is an absence clause: the passage\n     must say that no one is removed (V4.2 \"Silence is not a clause\").\n   - Levels that hold a lever: federal. State: own words only.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because a **time-limited moratorium** on removals reads like\n     \"stop entirely\". A pause for a fixed period does not say removals should never resume →\n     `direction-only` _(proposed)_.\n   - Commonly confused with BLANK because protecting **one group** (young people brought as\n     children, TPS holders) is protection from removal. It says nothing about everyone else →\n     `direction-only` _(proposed)_.\n\n2. **\"Only deport undocumented immigrants convicted of serious violent crimes\"**\n   - Means: removal is for people convicted of serious violent crimes, and for no one else.\n   - Operative clauses: [a] deport those convicted of serious violent crimes; [b] \"only\" — no one else.\n   - Establishing evidence looks like: own words or an instrument that limits removal to this group.\n     [b] must be stated; a call to deport violent offenders that is silent on everyone else meets [a]\n     only → `direction-only`.\n   - Levels that hold a lever: federal. State: own words only.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because rung 4 also starts with criminal records. Rung 4 then\n     removes everyone; rung 2 stops at serious violent convictions. \"Deport criminals first\" does not\n     separate the two → `direction-only` _(proposed)_.\n   - A bill that requires detention or removal of people **charged with** (not convicted of) a crime,\n     or of lesser crimes, does not match [a] or [b]. It shows the enforcement side only →\n     `direction-only` _(proposed)_.\n\n3. **\"Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in\n   place\"**\n   - Means: removal falls on people who arrived recently; people settled here a long time stay.\n   - Operative clauses: [a] removal focused on recent arrivals; [b] long-settled undocumented\n     immigrants left in place.\n   - Establishing evidence looks like: own words or an instrument that does both — for example, a\n     legalization for people present a long time, together with removal of recent arrivals.\n     Compound: one side only → `compound-partial` (V4.2).\n   - Levels that hold a lever: federal. State: own words only.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with `border-security` because quick removal of people **at the border** is\n     that topic's question. A passage only about people turned back at or near the border meets\n     [a] at most; it says nothing about [b] _(proposed)_.\n\n4. **\"Deport all undocumented immigrants, starting with those who have criminal records\"**\n   - Means: every undocumented immigrant is removed in time, with criminal records first.\n   - Operative clauses: [a] deport all; [b] those with criminal records first.\n   - Establishing evidence looks like: own words that name both the goal (all) and the order\n     (criminal records first). Compound: one side only → `compound-partial` (V4.2) _(proposed)_.\n   - Levels that hold a lever: federal. State: own words only.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2: see rung 2.\n   - Commonly confused with rung 5 because both remove everyone. Rung 5 names a dedicated programme\n     and names long-settled families and workers. A passage that calls for a\n     mass-deportation programme **and** says it starts with criminal records → rung 4, unless it\n     also names long-settled families or workers (then rung 5). \"Mass deportation\" is a label, not a\n     clause (H13) _(ruled 2026-10-01)_.\n\n5. **\"Carry out a mass-deportation program to remove all undocumented immigrants, including\n   long-settled families and workers\"**\n   - Means: the government runs a deliberate, large-scale programme that removes every undocumented\n     immigrant, with no exception for how long a person has lived here or for family or work ties.\n   - Operative clauses: [a] a mass-deportation programme; [b] remove all; [c] including long-settled\n     families and workers.\n   - Establishing evidence looks like: own words that call for such a programme and reject exceptions\n     for long-settled people. [c] must be stated; \"deport all illegal immigrants\" without it meets\n     [b] only → `compound-partial` _(proposed)_.\n   - Levels that hold a lever: federal. State: own words only.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Speed is no longer the rung-4 / rung-5 line; the **programme** and clause [c] are. \"Faster\n     removals\" alone does not reach rung 5 _(proposed)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **Cooperation with federal enforcement.** A state law that limits state and local cooperation with\n  federal immigration enforcement (detainers, information sharing, use of local resources) does not\n  say who should be deported. That is the `local-immigration` question → V2 `adjacent`; BLANK\n  `no-evidence` when nothing else survives — not `direction-only`.\n- A law that **requires** state or local cooperation is the same question from the other side →\n  `adjacent` _(proposed)_.\n- **Enforcement funding.** Money for detention beds, officers or removal flights shows the\n  enforcement side; it does not say who is removed → `direction-only`. Inside an appropriations or\n  reconciliation bill → V4 `multi-subject`.\n- **Legal-status bills** (a path to citizenship for one group, TPS designations, visa changes) protect\n  a group; they do not set the removal rule for everyone → `direction-only` unless the passage also\n  states that rule _(proposed)_.\n- **State criminal-entry laws** that let state courts order a person to leave the state speak to\n  removal of recent crossers, not to all undocumented immigrants → `direction-only` _(proposed)_.\n- **Preemption (codebook V2, H12)** → `adjacent`.\n"
+    }
+  ]
+}

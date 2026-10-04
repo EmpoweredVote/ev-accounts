@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Alex Lee's own act on a clean-energy mechanism at the state level — e.g. an Assembly floor roll call or authorship/co-authorship on a renewable or clean-electricity procurement standard with dated binding percentages (rung 1), or on a clean-energy subsidy, tax credit or public investment programme (rung 2)",
+          "Alex Lee's own first-person words answering how much government should do to expand clean energy — mandates versus funding versus permitting and grid reform"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "525a5d79-d7a9-498a-b972-57fa517be375|43dd153e-0834-434f-9577-f9bae44d8f89|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "Alex Lee's own act on a clean-energy mechanism at the state level — e.g. an Assembly floor roll call or authorship/co-authorship on a renewable or clean-electricity procurement standard with dated binding percentages (rung 1), or on a clean-energy subsidy, tax credit or public investment programme (rung 2)",
+        "Alex Lee's own first-person words answering how much government should do to expand clean energy — mandates versus funding versus permitting and grid reform"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

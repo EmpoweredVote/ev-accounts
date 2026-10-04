@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "7cbbaca8-97e0-5214-9675-e80abe3cb28c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": "The response and appeal procedure established under subsection (a)(3) must require the governing body to review the request at the next public meeting.",
+          "note": "HB 1447 is a multi-subject education act: the library chapter sits alongside Muncie school-corporation flexibility, third-party student surveys, political-neutrality rules, and obscenity-statute amendments.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "551555f4-acd5-531c-b22e-8500eb58160c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Senate Roll Call 520 shows Donato voting Yea on the Conference Committee Report for HB 1447, a multi-subject education bill, with no statement tying the vote to the library provision.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Messmer Young",
+          "tally_quote": "Yea 39"
+        },
+        {
+          "snapshot_id": "86b38e1c-3fd5-5db9-8f93-27bf535708a6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Bill details page lists Donato as a Senate sponsor of HB 1447; the page's own digest text describes the student-survey provisions, not the library chapter.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 1447 (2023) is a multi-subject education act: Sec. 2 (IC 20-26-5.5) sets a school-library removal-request and governing-body review process, but the same act also covers Muncie school-corporation flexibility, third-party student surveys, political-activity neutrality, and amendments to the obscenity statute. Donato voted Yea on the Conference Committee Report (Senate Roll Call 520) and is listed as a Senate sponsor, but nothing in the sources ties her vote or sponsorship specifically to the library provision, so under V4.1 the vote proves nothing about that clause on its own.",
+      "needs_source": [
+        "Donato's own statement (floor speech, press release, or explanation of vote) tying her support to the HB 1447 school-library provision (IC 20-26-5.5 / Sec. 2), to establish which rung it supports"
+      ],
+      "quotes": []
+    }
+  ]
+}

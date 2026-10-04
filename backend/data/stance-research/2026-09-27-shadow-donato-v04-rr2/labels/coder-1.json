@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "551555f4-acd5-531c-b22e-8500eb58160c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Donato voted Yea on the conference committee report for a bill carrying unrelated parts, so the vote shows direction at most.",
+          "record_kind": "vote",
+          "actor_quote": "Brown Donato Messmer Young",
+          "tally_quote": "Yea 39 Education matters. Nay 10"
+        },
+        {
+          "snapshot_id": "86b38e1c-3fd5-5db9-8f93-27bf535708a6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "This page records her sponsorship of the instrument but prints no school library provision.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7cbbaca8-97e0-5214-9675-e80abe3cb28c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": "(2) procedure for each school to allow a: (A) parent or guardian of a student enrolled in the school; or (B) community member: (i) within the school district; or (ii) within the school district in which the charter school is located; to submit a request to remove material from the school library that is obscene (as described in IC 35-49-2-1) or harmful to minors (as described in IC 35-49-2-2); and (3) response and appeal procedure for each school to respond to a removal request submitted by a parent, guardian, or community member described in subdivision (2). (b) The response and appeal procedure established under subsection (a)(3) must require the governing body to review the request at the next public meeting.",
+          "note": "The enrolled act prints the challenge process but names the governing body as reviewer, not a committee of educators and parents.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Donato sponsored HB 1447 (2023) in the Senate and voted Yea on its conference committee report; the act's new school library chapter lets a \"parent or guardian\" or \"community member\" request removal of obscene or harmful-to-minors material and requires \"the governing body to review the request at the next public meeting.\" That meets only the first clause of \"Remove a challenged book only if a review committee of educators and parents finds it unsuitable\" — removal follows a review — because the reviewer named is the school board, not a committee of educators and parents. Rung 4 is excluded too: the act says nothing about access while the request is pending, and the vote itself is on a bill with unrelated parts (Muncie school flexibility, third party vendor surveys, student political activism, criminal code defenses), so it carries direction at most.",
+      "needs_source": [
+        "Indiana Senate roll call on HB 1447 (2023) third reading, to show the version Donato sponsored before conference",
+        "The Senate-passed or committee-report version of HB 1447 (2023), to confirm the school library chapter (IC 20-26-5.5) was in the bill she sponsored",
+        "Stacey Donato's own words on the school library removal-request and review procedure in HB 1447 (2023)"
+      ],
+      "quotes": []
+    }
+  ]
+}

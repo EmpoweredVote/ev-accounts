@@ -1,0 +1,77 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4f7db8ce-def5-4225-b183-654f8f64cb9a|80d6f6f6-c62b-46a8-ae32-725e8a8a8f06|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Arizona Legislature bill text and Senate third-reading roll call, SB 1294 (2025, 57th Legislature 1st Regular Session)",
+          "Arizona Legislature bill text and Senate third-reading roll call, SB 1299 (2025, 57th Legislature 1st Regular Session)",
+          "Arizona Legislature bill text and Senate third-reading roll call, SB 1610 (2025, 57th Legislature 1st Regular Session)",
+          "Kavanagh's own words on who should be removed — whether every undocumented immigrant, or only those convicted of serious violent crimes, and whether long-settled residents are left in place",
+          "Arizona Legislature bill text and vote record for SB 1294 (2025)",
+          "Arizona Legislature bill text and vote record for SB 1299 (2025)",
+          "Arizona Legislature bill text and vote record for SB 1610 (2025)",
+          "Enacted bill text of SB 1294, SB 1299, and SB 1610 (2025) to confirm operative provisions beyond the press release's paraphrase",
+          "A Kavanagh statement or vote stating which undocumented immigrants he believes should be deported (recent arrivals vs. long-settled, criminal vs. non-criminal, or a mass-deportation programme) to establish a rung"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4f7db8ce-def5-4225-b183-654f8f64cb9a|80d6f6f6-c62b-46a8-ae32-725e8a8a8f06|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "Arizona Legislature bill text and Senate third-reading roll call, SB 1294 (2025, 57th Legislature 1st Regular Session)",
+        "Arizona Legislature bill text and Senate third-reading roll call, SB 1299 (2025, 57th Legislature 1st Regular Session)",
+        "Arizona Legislature bill text and Senate third-reading roll call, SB 1610 (2025, 57th Legislature 1st Regular Session)",
+        "Kavanagh's own words on who should be removed — whether every undocumented immigrant, or only those convicted of serious violent crimes, and whether long-settled residents are left in place",
+        "Arizona Legislature bill text and vote record for SB 1294 (2025)",
+        "Arizona Legislature bill text and vote record for SB 1299 (2025)",
+        "Arizona Legislature bill text and vote record for SB 1610 (2025)",
+        "Enacted bill text of SB 1294, SB 1299, and SB 1610 (2025) to confirm operative provisions beyond the press release's paraphrase",
+        "A Kavanagh statement or vote stating which undocumented immigrants he believes should be deported (recent arrivals vs. long-settled, criminal vs. non-criminal, or a mass-deportation programme) to establish a rung"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

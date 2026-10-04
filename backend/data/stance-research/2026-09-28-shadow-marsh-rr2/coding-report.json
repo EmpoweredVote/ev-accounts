@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2|1c197b51-fded-441e-a72a-de51329efe42|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Christine Marsh's own words tying her No vote on SB 1828 (2021) to the individual income tax rate provision (floor speech, explanation of vote, press release)",
+          "A single-subject Arizona tax bill she authored, prime-sponsored or co-sponsored, with the AZ Legislature bill page and roll call",
+          "A first-person candidate statement or questionnaire answer on state tax rates and funding for public services, from the current term or the 2026 campaign",
+          "Marsh's own words tying her SB 1828 vote to a specific provision (floor speech or explanation of vote)",
+          "A single-subject tax vote, sponsorship, or campaign/questionnaire statement on tax rates and public services",
+          "Marsh's own words (floor statement, explanation of vote, interview) tying her SB1828 No vote to a specific tax provision"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2|1c197b51-fded-441e-a72a-de51329efe42|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "requests": [
+        "Christine Marsh's own words tying her No vote on SB 1828 (2021) to the individual income tax rate provision (floor speech, explanation of vote, press release)",
+        "A single-subject Arizona tax bill she authored, prime-sponsored or co-sponsored, with the AZ Legislature bill page and roll call",
+        "A first-person candidate statement or questionnaire answer on state tax rates and funding for public services, from the current term or the 2026 campaign",
+        "Marsh's own words tying her SB 1828 vote to a specific provision (floor speech or explanation of vote)",
+        "A single-subject tax vote, sponsorship, or campaign/questionnaire statement on tax rates and public services",
+        "Marsh's own words (floor statement, explanation of vote, interview) tying her SB1828 No vote to a specific tax provision"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

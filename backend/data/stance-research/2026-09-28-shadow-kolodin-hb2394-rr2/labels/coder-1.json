@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "178470c3-94ea-442a-a558-7b3c841ce858",
+      "office_id": "f04e0b05-9d07-4f0d-b4a9-c9dd784545fe",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "005c9f3d-ab1a-55ba-9d19-e07d93c9be78",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2394 (2024)",
+          "provision_quote": null,
+          "note": "Overview page shows Kolodin as prime sponsor of the enacted bill but prints no operative text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Kolodin (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1a257be5-3bd9-5377-b982-677a77646c54",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "HB2394 (2024)",
+          "provision_quote": null,
+          "note": "House final reading passed with no members voting No, so the vote cannot carry a chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "KOLODIN Y",
+          "tally_quote": "Passed 57-0-3-0-0"
+        },
+        {
+          "snapshot_id": "ad150339-15bb-5863-8838-6fc394a3a0f4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2394 (2024)",
+          "provision_quote": "A provider of an interactive computer service may not be subject to an action for DIGITAL IMPERSONATION for PUBLISHING INFORMATION that is provided by another information content provider.",
+          "note": "The enacted text creates a private cause of action against the publisher or advertiser of a digital impersonation and expressly exempts interactive computer services, so it places no duty on platforms.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB2394 (2024), which Kolodin prime-sponsored and voted for, lets a person sue over a digital impersonation and, by its subsection C, exempts a \"provider of an interactive computer service\" from that action, so it is a duty on the publisher rather than on a platform and it establishes neither \"legally require platforms to remove false information\" nor \"require platforms to label false content, rather than remove it\". It also restrains no government actor, so it does not reach \"protect free speech online and prevent government censorship\" or \"ban any government involvement in content moderation decisions\". No passage survived relevance, so the row is blank.",
+      "needs_source": [
+        "Kolodin's own first-person words on whether platforms should be required to remove or label false or synthetic content (2023-2026 term)",
+        "Arizona bill text and roll call for any Kolodin-sponsored measure barring state officials from pressing platforms to remove lawful speech"
+      ],
+      "quotes": []
+    }
+  ]
+}

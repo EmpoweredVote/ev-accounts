@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "998b80e1-b18a-5259-8b29-a1c32abbaab6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-05-19",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 880 (2015-2016)",
+          "provision_quote": null,
+          "note": "Senate floor vote page: McGuire is listed in the Ayes on SB 880, a single-subject assault-weapons bill, on a divided 24-14 tally.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Beall, Block, De León, Glazer, Hall, Hancock, Hernandez, Hertzberg, Hill, Hueso, Jackson, Lara, Leno, Leyva, Liu, McGuire, Mendoza, Mitchell, Monning, Pan, Pavley, Wieckowski, Wolk",
+          "tally_quote": "Ayes Count 24 Noes Count 14 NVR Count 2"
+        },
+        {
+          "snapshot_id": "260c4d27-e30f-5a59-939c-271dbd17e5aa",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-07-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 880 (2015-2016)",
+          "provision_quote": "30515. (a) Notwithstanding Section 30510, “assault weapon” also means any of the following: (1) A semiautomatic, centerfire rifle that does not have a fixed magazine but has any one of the following: (A) A pistol grip that protrudes conspicuously beneath the action of the weapon. (B) A thumbhole stock. (C) A folding or telescoping stock. (D) A grenade launcher or flare launcher. (E) A flash suppressor. (F) A forward pistol grip.",
+          "note": "Chaptered text: the operative section rewrites the Penal Code definition of \"assault weapon\" so that more semiautomatic centerfire rifles and pistols fall inside the existing ban, while firearms outside the definition stay legal.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "998b80e1-b18a-5259-8b29-a1c32abbaab6",
+        "260c4d27-e30f-5a59-939c-271dbd17e5aa"
+      ],
+      "reasoning": "McGuire voted Aye on SB 880 (2015-2016), a single-subject bill whose operative section amends Penal Code 30515 so that \"assault weapon\" also means a semiautomatic centerfire rifle or pistol that \"does not have a fixed magazine\" with any listed attribute, extending the existing ban to more semi-automatic weapons while leaving firearms outside that definition legal. That is the rung \"Ban semi-automatic assault-style weapons, while allowing other firearms\": the definition is the boundary, so it is not \"Ban civilian firearm ownership\" and it contradicts \"Allow all types of firearms\". The 24-14 tally is not near-unanimous, and the vote is in-term for his Senate seat.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

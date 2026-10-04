@@ -1,0 +1,48 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "6b6368a1-354d-4f28-9232-a6ec70198ab8",
+      "office_id": "085054aa-8e66-46c3-a41d-18e75de7eab6",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A news page quoting his floor remarks against the camping-ban bill and its $500 fine; the reporter's account of the bill is context, not a record of his act.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Taylor's own words object to this bill — \"This is a bill that looks for a place for the unhoused to remain unhoused, because you can actually move 300 feet and not violate this law\" — and to fining an impoverished homeless person, but they name no penalty rule he would set instead. Opposition to a camping ban does not separate \"Protecting the right to sleep and shelter in public spaces, with no penalties of any kind\" from \"Decriminalizing public sleeping and camping in public spaces\" or from \"Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system\". His call for \"finding a place for the unhoused to be housed\" is housing provision, which this ladder does not order.",
+      "needs_source": [
+        "Indiana General Assembly roll call on the 2026 public camping ban bill (Senate concurrence with House edits) showing Taylor's recorded vote, plus the bill number and session",
+        "The bill text printing the operative camping prohibition and its Class C misdemeanor penalty, for provision_quote",
+        "Taylor's own words naming a penalty rule he supports (no penalty, no criminal penalty, or enforcement conditioned on an available shelter bed)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "text": "What I think we should be working on is finding a place for the unhoused to be housed. This is a bill that looks for a place for the unhoused to remain unhoused, because you can actually move 300 feet and not violate this law.",
+          "v7_tier": "direction",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

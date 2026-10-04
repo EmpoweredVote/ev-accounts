@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "e2243c37-bc6e-5125-b97e-21d342430160",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview lists Ortiz among HB 2721's co-sponsors and records its full passage history through the governor's signature.",
+          "record_kind": "sponsor",
+          "actor_quote": "Ortiz (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "House Final Reading vote detail shows Ortiz voting Y on HB 2721's final passage, 42-15-3-0-0.",
+          "record_kind": "vote",
+          "actor_quote": "ORTIZ Y",
+          "tally_quote": "Passed 42-15-3-0-0"
+        },
+        {
+          "snapshot_id": "48e5adc9-77eb-5d52-8dbc-19668f745378",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": "On or before January 1, 2026, a municipality with a population of seventy-five thousand persons or more must authorize by ordinance and incorporate into its development regulations, zoning regulations and other official controls the development of duplexes, triplexes, fourplexes and townhomes as a permitted use on both of the following:",
+          "note": "Chapter 197 text of HB 2721 adds A.R.S. 9-462.10, requiring large municipalities to permit middle housing and barring added restrictions on it.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [
+        "e2243c37-bc6e-5125-b97e-21d342430160",
+        "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f",
+        "48e5adc9-77eb-5d52-8dbc-19668f745378"
+      ],
+      "reasoning": "Ortiz co-sponsored and voted Yea on HB 2721 (2024), which bars municipalities of 75,000+ from restricting duplexes, triplexes, fourplexes and townhomes more than single-family housing. This cuts local zoning limits that block private building, matching the mechanism of \"at most, cut the regulations and zoning limits that block private building\", but per the annex a deregulation law like this is on-question only as direction-only: it cannot show the rung's \"at most\" ceiling, since a person favoring rung 3 or 4 could support it too.",
+      "needs_source": [
+        "Ortiz's own words rejecting public housing, binding rent/affordability rules, and subsidies, to establish the rung-5 ceiling beyond direction-only"
+      ],
+      "quotes": []
+    }
+  ]
+}

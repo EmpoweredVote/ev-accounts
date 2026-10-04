@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "188c386e-087b-4587-9510-da7fc5805575|b68ffd33-82dd-4eba-adee-6a853f7fc882|4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Gail Griffin's own words on large-scale data centers (first-person issue page, questionnaire or debate answer)",
+          "An Arizona instrument she acted on that names data centers (siting, permitting, tax or ratepayer bill), with the AZ Legislature bill text and roll call",
+          "Griffin's own words or an act naming data centers specifically, to evidence this ladder"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "188c386e-087b-4587-9510-da7fc5805575|b68ffd33-82dd-4eba-adee-6a853f7fc882|4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "requests": [
+        "Gail Griffin's own words on large-scale data centers (first-person issue page, questionnaire or debate answer)",
+        "An Arizona instrument she acted on that names data centers (siting, permitting, tax or ratepayer bill), with the AZ Legislature bill text and roll call",
+        "Griffin's own words or an act naming data centers specifically, to evidence this ladder"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

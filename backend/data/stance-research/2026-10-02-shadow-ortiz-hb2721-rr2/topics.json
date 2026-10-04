@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "topic_key": "housing",
+    "topic_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+    "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+    "question_number": 16,
+    "title": "Affordable Housing",
+    "question_text": "What role should government play in making sure people can afford housing?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Make government the main provider \u2014 build and operate public housing so everyone is guaranteed a home."
+      },
+      {
+        "value": 2,
+        "text": "Build a large public housing sector that competes with the private market to hold prices down, while private housing stays the norm."
+      },
+      {
+        "value": 3,
+        "text": "Build no public housing, but set binding rules on the private market like rent caps or required affordable units."
+      },
+      {
+        "value": 4,
+        "text": "Set no binding rules, but offer subsidies and tax breaks so more affordable housing gets built."
+      },
+      {
+        "value": 5,
+        "text": "Rely on the market to set prices and supply \u2014 at most, cut the regulations and zoning limits that block private building."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

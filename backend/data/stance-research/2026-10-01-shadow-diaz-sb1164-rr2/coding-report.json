@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "0ac7beee-f298-4d41-8981-30c3c307fe3d|8c909ec7-73d2-4488-8eb5-a72f4746f32b|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Lupe Diaz's own words answering which stage of pregnancy abortion should remain legal and which exceptions apply after it (questionnaire item, debate answer, or first-person issue page)",
+          "Arizona House roll call plus bill text for a later abortion instrument he acted on that states a stage at which abortion is permitted, or that sets a ban and its exceptions"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "0ac7beee-f298-4d41-8981-30c3c307fe3d|8c909ec7-73d2-4488-8eb5-a72f4746f32b|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Lupe Diaz's own words answering which stage of pregnancy abortion should remain legal and which exceptions apply after it (questionnaire item, debate answer, or first-person issue page)",
+        "Arizona House roll call plus bill text for a later abortion instrument he acted on that states a stage at which abortion is permitted, or that sets a ban and its exceptions"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

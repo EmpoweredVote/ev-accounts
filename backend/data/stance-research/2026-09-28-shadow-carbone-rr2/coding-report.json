@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a|5d39ba29-4d41-4a41-b01c-0c48786c3675|669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Carbone's own words or an Arizona House record on rent caps / required affordable units (e.g. a vote on a statewide rent-regulation or inclusionary-zoning bill)",
+          "Carbone's own words or an Arizona House record on housing subsidies or tax credits for affordable construction (e.g. a Housing Trust Fund appropriation vote)",
+          "Carbone's own words or an Arizona House record on publicly built and operated housing",
+          "Carbone's own words on housing policy (e.g., views on rent caps/binding rules or on public housing/subsidies) to establish rung 5's 'at most' ceiling claim"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a|5d39ba29-4d41-4a41-b01c-0c48786c3675|669cac97-66a6-4087-b036-936fbe62efb3",
+      "requests": [
+        "Carbone's own words or an Arizona House record on rent caps / required affordable units (e.g. a vote on a statewide rent-regulation or inclusionary-zoning bill)",
+        "Carbone's own words or an Arizona House record on housing subsidies or tax credits for affordable construction (e.g. a Housing Trust Fund appropriation vote)",
+        "Carbone's own words or an Arizona House record on publicly built and operated housing",
+        "Carbone's own words on housing policy (e.g., views on rent caps/binding rules or on public housing/subsidies) to establish rung 5's 'at most' ceiling claim"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

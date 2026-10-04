@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "ea05323c-8b6d-4b16-873c-083d9873889d",
+      "office_id": "4333d774-b25a-4c26-905b-ca604fa8216f",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b082c11d-2401-55c1-be63-29ba3df6db1a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-04-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": null,
+          "note": "Bill digest: requires jail/detention intake notification to the county sheriff on probable cause of unlawful presence; a cooperation/notification requirement, not a deportation rule.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Garrett Bascom.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7437aeb0-9d93-5bdf-9dde-e83c9884611b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-04-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1393 (2025)",
+          "provision_quote": "(b) If a law enforcement officer arrests an individual for a felony or a misdemeanor and there is probable cause to believe that the person is not lawfully present in the United States, the jail or detention facility shall, during the intake process at the jail or detention facility, notify the county sheriff of the probable cause to believe the person is not lawfully present in the United States.",
+          "note": "Enrolled act text: notification-to-sheriff mechanism on probable cause of unlawful presence; does not set who is removed.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 1393 requires a jail or detention facility to notify the county sheriff when there is probable cause an arrestee is not lawfully present, and the sheriff to report that to the proper authority; it is a state/local notification and cooperation provision with federal immigration enforcement. Per the annex, a law requiring state or local cooperation with federal enforcement does not say who should be deported, so it is V2 adjacent, and with nothing else surviving the row is BLANK no-evidence.",
+      "needs_source": ["Bascom's own words on federal deportation enforcement priorities (statements, questionnaire, campaign site) — not provided in sources."],
+      "quotes": []
+    }
+  ]
+}

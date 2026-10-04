@@ -1,0 +1,76 @@
+{
+  "batch_id": "2026-09-28-shadow-petersen-rr2",
+  "seat": {
+    "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+    "full_name": "Warren Petersen",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2017-01-09",
+        "start_precision": "day",
+        "term_end": "2019-01-14"
+      },
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2019-01-14",
+        "start_precision": "day",
+        "term_end": "2021-01-11"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2021-01-11",
+        "start_precision": "day",
+        "term_end": "2023-01-08"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "question_text": "How should the law handle abortion?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "keep abortion legal at every stage of pregnancy, with no time limit."
+        },
+        {
+          "value": 2,
+          "text": "keep abortion legal through the second trimester, and after that only to protect the mother's health."
+        },
+        {
+          "value": 3,
+          "text": "allow abortion during the first trimester, and after that only to protect the mother's health."
+        },
+        {
+          "value": 4,
+          "text": "ban abortion except in cases of rape, incest, or a serious risk to the mother's life."
+        },
+        {
+          "value": 5,
+          "text": "ban abortion in all cases, with no exceptions."
+        }
+      ],
+      "annexMd": "# abortion — served revision 085feb9c-f157-4dae-bfd0-7b2736c5d87c (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris\nAndrews). Lines marked _(proposed)_ are a drafter's reading, not yet ruled. The season pin is an\nolder revision (`dab46e5c-…`); coders code the served text below.\n\n**Question:** \"How should the law handle abortion?\"\n\n**Orientation:** standard. Rung 1 has no legal limit, rung 5 is a ban with no exceptions. The rungs\norder **when** abortion is legal and **which exceptions** apply after that point.\n\n**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is state law;\nfederal action is national limits or protections; local governments rarely hold one.\n\n**Synonyms:** \"gestational limit\", \"weeks of gestation\", \"post-fertilization age\", \"LMP\" (last\nmenstrual period), \"viability\", \"heartbeat\" (an early limit, about 6 weeks), \"medical emergency\",\n\"life of the mother\", \"reproductive freedom\", \"fundamental right\", \"fetal personhood\".\n\n**Weeks and trimesters.** The rungs state limits in trimesters; laws state them in weeks. The first\ntrimester ends at about 13 weeks, the second at about 27. **Read the weeks as the law states them**\n(LMP or post-fertilization); do not convert _(ruled 2026-10-01)_.\n\n1. **\"keep abortion legal at every stage of pregnancy, with no time limit.\"**\n   - Means: no point in pregnancy after which the law forbids abortion.\n   - Operative clauses: [a] legal at every stage; [b] no time limit.\n   - Establishing evidence looks like: own words that reject every gestational limit; an instrument\n     that removes the jurisdiction's limits and says no limit remains _(proposed)_.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because a **declared right** reads like \"no limit\". A text that\n     declares a right to abortion and names no limit has said nothing about limits; other law may\n     still set them → `direction-only` (V4.2 \"Silence is not a clause\").\n   - Public funding is no longer part of this rung. A funding bill does not move a person along these\n     rungs → `adjacent` _(proposed)_.\n\n2. **\"keep abortion legal through the second trimester, and after that only to protect the mother's\n   health.\"**\n   - Means: abortion is legal until about 27 weeks; after that, only for the mother's health.\n   - Operative clauses: [a] legal through the second trimester; [b] after that, a health exception\n     only.\n   - Establishing evidence looks like: a limit at about 22 weeks or later — up to about 27 weeks, or\n     at viability — with a health exception after it.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 when the limit falls between the two thresholds. A limit at\n     **16–21 weeks** establishes neither rung → BLANK `direction-only` _(ruled 2026-10-01)_.\n   - A limit with **no** stated exception after it does not reach rung 2 on its own (V4.2 \"Silence is\n     not a clause\"). A limit with a **life-only** exception after it → `compound-partial`, the same\n     as rung 3 _(proposed, by analogy with the rung-3 ruling)_.\n\n3. **\"allow abortion during the first trimester, and after that only to protect the mother's\n   health.\"**\n   - Means: abortion is legal early in pregnancy; after that, only for the mother's health.\n   - Operative clauses: [a] legal during the first trimester; [b] after that, a health exception\n     only.\n   - Establishing evidence looks like: a limit at about **12–15 weeks** with a health exception after\n     it (a medical emergency that covers serious lasting harm to the mother, not only death) — **but\n     only when the law actually permits abortion up to the limit**, either affirmatively or by\n     repealing a broader ban. Then it excludes rung 2 (it bans most of the second trimester) and rung\n     4 (it allows abortion for any reason before the limit). A 15-week limit is within the ladder's\n     precision for \"first trimester\" _(ruled 2026-10-01, revised the same day)_.\n   - **Read the act's construction or savings clause.** A limit that says it does not create or\n     recognize a right to abortion, does not make lawful any abortion that is now unlawful, or leaves\n     a broader ban in force, evidences **no permitted stage**. A vote for it shows only the\n     restrictive side → BLANK `direction-only` _(ruled 2026-10-01)_.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_. A gestational-limit bill is chair-shaped only\n     when it permits abortion before the limit (see the construction clause above).\n   - Commonly confused with rung 2: see rung 2.\n   - A **life-only** exception after the early limit is narrower than \"to protect the mother's health\"\n     → BLANK `compound-partial` _(ruled 2026-10-01)_.\n   - A limit with **no** stated exception after it does not reach rung 3 on its own (V4.2).\n\n4. **\"ban abortion except in cases of rape, incest, or a serious risk to the mother's life.\"**\n   - Means: abortion is banned, with three exceptions.\n   - Operative clauses: [a] a ban; [b] exceptions for rape **and** incest **and** a serious risk to\n     the mother's life.\n   - Establishing evidence looks like: a ban with all three exceptions. An **early ban** (for example\n     at about 6 weeks) with all three exceptions is in practice a ban with those exceptions → rung 4\n     _(ruled 2026-10-01)_.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 when the ban has a **life-only** exception. It has an exception, so\n     it is not rung 5; it lacks rape and incest, so it is not rung 4 → BLANK `direction-only` _(ruled\n     2026-10-01)_. A ban with life and health exceptions but no rape or incest exception → the same\n     _(proposed)_.\n\n5. **\"ban abortion in all cases, with no exceptions.\"**\n   - Means: abortion is banned at every stage, with no exception at all, including for the mother's\n     life.\n   - Operative clauses: [a] a ban; [b] no exceptions.\n   - Establishing evidence looks like: own words that reject every exception, including the mother's\n     life. [b] is an absence clause: a ban that lists no exception does not show that none applies,\n     because other law may supply one (V4.2) _(proposed)_.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Criminal penalties for patients and providers are no longer part of this rung → not evidence for\n     or against it _(proposed)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **Narrow restrictions** that set no gestational limit and no exception rule (parental\n  notification, waiting periods, clinic rules, reporting) → `adjacent`; BLANK `no-evidence` when\n  nothing else survives.\n- **Medication-abortion rules** (who may prescribe, by mail or in person) → `adjacent` _(proposed)_.\n- **Fetal-personhood measures** that define life from conception but state no ban or exception rule\n  → `direction-only` _(proposed)_.\n- **Preemption (codebook V2, H12)** → `adjacent`.\n- **Budget and omnibus votes** with an abortion item → V4 `multi-subject`.\n"
+    }
+  ]
+}

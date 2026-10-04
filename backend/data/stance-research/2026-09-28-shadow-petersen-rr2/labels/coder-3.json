@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "This act does not create or recognize a right to an abortion and does not make lawful an abortion that is currently unlawful.",
+          "note": "SB1457 bans sex-, race- and genetic-abnormality-based abortions and disclaims any right to abortion; it sets no gestational limit.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview lists Petersen as a co-sponsor of SB1457, signed into law April 27, 2021.",
+          "record_kind": "sponsor",
+          "actor_quote": "Petersen (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Senate final-reading roll call shows Petersen voting Y to pass SB1457.",
+          "record_kind": "vote",
+          "actor_quote": "PETERSEN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB1457 bans abortion sought for the sex, race, or a genetic abnormality of the child, and its construction clause disclaims any right to abortion or legalization of any abortion now unlawful; it sets no gestational limit and no stage-based exception rule, so it is a narrow, reason-based restriction that does not address when abortion is legal. It is adjacent on every passage, so no chair survives.",
+      "needs_source": [
+        "Petersen's own words or vote on a bill setting a general gestational limit, exception rule, or legality standard for abortion"
+      ],
+      "quotes": []
+    }
+  ]
+}

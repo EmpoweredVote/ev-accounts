@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-09-29-shadow-stern-rr2",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180SB100",
+      "source_kind": "public-record",
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6",
+      "office_id": "e090aea1-8a60-4a53-b43f-ce7162477c4a",
+      "topic_keys": [
+        "climate-change"
+      ],
+      "instruments": [
+        "SB 100 (2017-2018)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2017-sb100-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201720180SB100",
+      "source_kind": "public-record",
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6",
+      "office_id": "e090aea1-8a60-4a53-b43f-ce7162477c4a",
+      "topic_keys": [
+        "climate-change"
+      ],
+      "instruments": [
+        "SB 100 (2017-2018)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2017-sb100-votes.txt"
+    }
+  ]
+}

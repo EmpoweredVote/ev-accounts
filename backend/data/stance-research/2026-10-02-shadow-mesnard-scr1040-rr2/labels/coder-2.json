@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "7e5394eb-9b86-5fda-8a44-2b64a8eb2336",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": "For any employee who customarily and regularly receives tips or gratuities from patrons or others, the employer may pay a wage up to twenty-five percent per hour less than the minimum wage established by statute if the employer can establish by the employer's records of charged tips or gratuities or by the employee’s declaration for federal insurance contributions act purposes that for each week, when adding tips or gratuities received to wages paid, the employee received not less than the minimum wage plus $2 for all hours worked.",
+          "note": "SCR1040 bill text prints the tipped-wage tip-credit provision Mesnard's instrument carries; it states no general minimum-wage-floor rule.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e121a3e5-fb82-55aa-bf3e-1b9270d55b38",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "Senate Final Reading #2 vote detail page shows Mesnard voted Yes on SCR1040 (2024).",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "bc7051d3-e46d-5cc7-97e2-720c91ddd769",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "Bill Status page lists Mesnard as Prime sponsor of SCR1040 (2024), now titled tipped workers; wages.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Mesnard (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Mesnard was Prime sponsor of, and voted Yes on, SCR1040 (2024), which lets employers pay tipped employees up to twenty-five percent less than the minimum wage as long as wages plus tips reach the minimum wage plus $2 per hour. This is a tipped-wage change that states no general minimum-wage-floor rule (no indexing, no set level, no removal), so per the annex hard case on tipped-wage changes it is direction-only and establishes none of the five rungs.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

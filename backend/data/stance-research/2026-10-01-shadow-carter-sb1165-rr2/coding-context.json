@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-10-01-shadow-carter-sb1165-rr2",
+  "seat": {
+    "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508",
+    "full_name": "Neal Carter",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "5f95f54d-d57c-4e3b-95ff-611505f721b3",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2021-11-05",
+        "start_precision": "day",
+        "term_end": "2023-01-09"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."
+        },
+        {
+          "value": 2,
+          "text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."
+        },
+        {
+          "value": 3,
+          "text": "decide transgender athletes' eligibility case by case based on individual circumstances and the requirements of each sport."
+        },
+        {
+          "value": 4,
+          "text": "require transgender athletes to compete only on teams matching their biological sex assigned at birth."
+        },
+        {
+          "value": 5,
+          "text": "completely ban all transgender athletes from competing in any organized sports competitions."
+        }
+      ],
+      "annexMd": "# trans-athletes — served revision c47c957a-5eb6-426f-b38d-89e44ba8fe73 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`af2c6427-…`); coders code the served text below.\n\n**Question:** \"How should sports leagues determine eligibility for transgender athletes?\"\n\n**Orientation:** standard. Rung 1 lets every transgender athlete play on the team of their gender\nidentity with no conditions, rung 5 bars transgender athletes from all organised sport. The rungs\norder **how far eligibility follows gender identity**: always, after documentation, case by case,\nby sex at birth, not at all.\n\n**Levels with a role:** federal, local, state (`compass_topic_roles`). The main lever is state law on\nschool and college sport. Congress acts through Title IX and federal bills. School boards set\ndistrict athletic policy where state law leaves room. Athletic associations are not officeholders;\nan officeholder's vote on their rules is.\n\n**Synonyms:** \"Save Women's Sports\", \"Fairness in Women's Sports\", \"Protection of Women and Girls in\nSports Act\", \"biological sex\", \"sex at birth\", \"sex assigned at birth\", \"designated for females\",\n\"girls' teams\" or \"women's teams\", \"coed\" or \"open\" teams, \"Title IX\", \"gender identity\",\n\"testosterone threshold\", \"hormone therapy\", \"eligibility commission\".\n\n1. **\"allow all transgender athletes to compete on teams matching their gender identity without any\n   restrictions or requirements.\"**\n   - Means: a transgender athlete plays on the team of their gender identity, and nothing more is\n     asked.\n   - Operative clauses: [a] all transgender athletes; [b] teams matching gender identity; [c] no\n     restriction or requirement. [c] is an absence clause: the instrument or words must state it\n     (V4.2 \"Silence is not a clause\").\n   - Establishing evidence looks like: a law or policy that sets eligibility by gender identity and\n     says no documentation or medical condition applies; own words saying so.\n   - Levels that hold a lever: state; local; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A general gender-identity anti-discrimination law that covers school activities but says nothing\n     about documentation does not meet [c] → `direction-only` _(proposed)_.\n   - Commonly confused with rung 2 because a law can admit by gender identity and leave the\n     documentation rules to an athletic association.\n\n2. **\"should allow transgender athletes to compete on teams matching their gender identity after\n   completing basic documentation of their transition.\"**\n   - Means: a transgender athlete plays on the team of their gender identity once they document their\n     transition.\n   - Operative clauses: [a] teams matching gender identity; [b] after basic documentation of the\n     transition (a letter, a record of hormone therapy for a set time).\n   - Establishing evidence looks like: a policy or own words that admit by gender identity on one\n     uniform documentation condition.\n   - Levels that hold a lever: state; local; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because hormone-level rules can be either. One condition for every\n     sport → rung 2; conditions that differ by sport or are decided per athlete → rung 3\n     _(proposed)_.\n\n3. **\"decide transgender athletes' eligibility case by case based on individual circumstances and\n   the requirements of each sport.\"**\n   - Means: no single rule; each athlete's eligibility is decided on their facts and their sport.\n   - Operative clauses: [a] case by case on individual circumstances; [b] by the requirements of each\n     sport.\n   - Establishing evidence looks like: a law that sends eligibility to a body that decides per athlete\n     and per sport; own words for that.\n   - Levels that hold a lever: state; local; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - **Separate transgender divisions are no longer part of this rung** (S1 rung 3 had \"create\n     separate transgender divisions or …\"). A separate-division or open-category proposal is not\n     ordered by these rungs → `off-axis` _(proposed)_.\n   - A sex-at-birth rule with a waiver or appeal process: code the rule the instrument enacts; a\n     narrow waiver does not turn it into rung 3 _(proposed)_.\n\n4. **\"require transgender athletes to compete only on teams matching their biological sex assigned\n   at birth.\"**\n   - Means: an athlete plays on the team of their sex at birth, whatever their gender identity.\n   - Operative clauses: [a] a requirement; [b] teams by sex at birth.\n   - Establishing evidence looks like: authoring, sponsoring, or a final-passage vote on a\n     **single-subject** bill that limits girls' or women's teams to students who are female at birth.\n     The bill is narrow enough that a vote for it is chair-shaped (V4.1), if the tally is not\n     near-unanimous.\n   - **A girls'-teams-only law is rung 4.** Most such laws restrict only girls' and women's teams and\n     leave boys' or coed teams open to all. That still reads as rung 4; rung 4 does not need the boys'\n     side restricted too. Leaving boys' or coed teams open is also what excludes rung 5.\n   - Levels that hold a lever: state; federal; local (district policy).\n   - Known chair-shaped instruments: Utah HB11 (2022), barring transgender girls from girls' school\n     teams (codebook V4.2, [real]: a vote to override the governor's veto); H.R. 28 (119th, 2025)\n     (codebook V6, single-subject).\n   - Commonly confused with rung 5: a sex-at-birth team rule is not a ban from sport.\n\n5. **\"completely ban all transgender athletes from competing in any organized sports competitions.\"**\n   - Means: transgender athletes may not compete in organised sport at all.\n   - Operative clauses: [a] all transgender athletes; [b] any organised sport; \"completely\" is an\n     absence clause (V4.2).\n   - Establishing evidence looks like: own words or an instrument that excludes transgender athletes\n     from every team, including boys', coed and open teams.\n   - Levels that hold a lever: state; federal; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **Party inference (codebook V6, H2, [real]).** \"Voted with the caucus on this party-line vote\",\n  with no roll call in the sources → every passage fails V1 → BLANK `no-evidence`. Fetch the roll\n  call; for a single-subject bill it is then chair-shaped.\n- **A governor's veto or signature** is a record. A signature on a single-subject bill is\n  chair-shaped; a veto shows only a side unless the veto message names a rung → `direction-only`\n  _(proposed)_.\n- **A state law that sets the rule for every school** is the rule itself, not preemption. A law that\n  only forbids school boards to set their own policy → `adjacent` (codebook V2, H12).\n- **A federal resolution against a Title IX rule** that covers much more than athletics →\n  `multi-subject` unless the vote is on the athletics provision _(proposed)_.\n- **An amendment on the athletics provision** of a larger bill (for example a defence bill) can\n  carry a chair (V4.1).\n- **Budget and omnibus votes** → V4 `multi-subject`.\n"
+    }
+  ]
+}

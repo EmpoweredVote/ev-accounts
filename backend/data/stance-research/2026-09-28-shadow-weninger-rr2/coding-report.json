@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d|2d574e6c-c30a-4897-8995-428b4968c690|eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Weninger's own words on company-specific incentives (a questionnaire answer or issue page on attracting employers)",
+          "An Arizona record on an employer-attraction incentive: a vote or sponsorship on an Arizona Commerce Authority programme, the Qualified Facilities tax credit, or a deal-closing fund",
+          "An Arizona record on a small-business grant, loan or technical-assistance programme"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d|2d574e6c-c30a-4897-8995-428b4968c690|eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "requests": [
+        "Weninger's own words on company-specific incentives (a questionnaire answer or issue page on attracting employers)",
+        "An Arizona record on an employer-attraction incentive: a vote or sponsorship on an Arizona Commerce Authority programme, the Qualified Facilities tax credit, or a deal-closing fund",
+        "An Arizona record on a small-business grant, loan or technical-assistance programme"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

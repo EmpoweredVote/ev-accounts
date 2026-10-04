@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a",
+      "office_id": "5d39ba29-4d41-4a41-b01c-0c48786c3675",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "733747ac-3504-5347-b1d2-c1cdd964394e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024)",
+          "provision_quote": null,
+          "note": "Bill status page lists Carbone as prime sponsor of HB2720 (ADU by-right requirement), signed as Chapter 196.",
+          "record_kind": "sponsor",
+          "actor_quote": "Carbone (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5319e2f3-6f44-59e5-a284-915392cf4203",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024)",
+          "provision_quote": null,
+          "note": "House Final Reading vote page shows Carbone voting Y on HB2720.",
+          "record_kind": "vote",
+          "actor_quote": "CARBONE Y",
+          "tally_quote": "Passed 35-22-3-0-0"
+        },
+        {
+          "snapshot_id": "72e8d029-8f5a-52f4-96de-1e30f8c05042",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024)",
+          "provision_quote": "A municipality with a population of more than seventy-five thousand persons shall adopt regulations that allow on any lot or parcel where a single-family dwelling is allowed all of the following: 1. At least one attached and one detached accessory dwelling unit as a permitted use.",
+          "note": "Enacted text (Ch. 196) requires municipalities over 75,000 to permit ADUs by right and bars several local restrictions on them.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Carbone prime-sponsored and voted Y (35-22-3-0-0) on HB 2720 (2024)/Ch. 196, which requires municipalities over 75,000 to allow accessory dwelling units 'as a permitted use' and forbids several local restrictions on them, cutting zoning limits that block private building. Per the housing annex, a law that voids or cuts local zoning limits such as by-right approval shows direction toward 'rely on the market to set prices and supply — at most, cut the regulations and zoning limits that block private building,' but cannot alone prove the 'at most' ceiling, since someone who also favors binding rules or subsidies could support it too.",
+      "needs_source": [
+        "Carbone's own words on housing policy (e.g., views on rent caps/binding rules or on public housing/subsidies) to establish rung 5's 'at most' ceiling claim"
+      ],
+      "quotes": []
+    }
+  ]
+}

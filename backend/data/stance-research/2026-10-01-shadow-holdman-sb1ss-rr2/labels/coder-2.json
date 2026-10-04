@@ -1,0 +1,98 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "c763f996-7d8a-59a6-a265-68994f093b9a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Holdman is listed among the 28 Yea votes on Roll Call 58 for SB 1(ss), the abortion bill.",
+          "record_kind": "vote",
+          "actor_quote": "Bray Crider Holdman Rogers",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "a criminal act, except when performed under the following circumstances:",
+          "note": "States the general operative rule that abortion is a criminal act except under enumerated circumstances.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "before the earlier of viability of the fetus or twenty (20) weeks of postfertilization age of the fetus, if: (A) for reasons based upon the professional, medical judgment of the pregnant woman's physician, if either: (i) the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus is diagnosed with a lethal fetal anomaly;",
+          "note": "States the exception allowing abortion before 20 weeks/viability for serious health risk, to save the mother's life, or a lethal fetal anomaly diagnosis.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "during the first ten (10) weeks of postfertilization age of the fetus,",
+          "note": "Limits the rape-or-incest exception to the first ten weeks of postfertilization age, unlike the health/life exception which has no such early cutoff.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "(A) the pregnancy is a result of rape or incest;",
+          "note": "States the exception allowing abortion, within the first ten weeks, for pregnancies resulting from rape or incest.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "c763f996-7d8a-59a6-a265-68994f093b9a",
+        "4eacbc9c-9ae2-58c6-86cd-c3f34380faab"
+      ],
+      "reasoning": "Holdman is recorded as a Yea vote (one of 28) on Roll Call 58 for SB 1(ss) (2022 First Special Session), which rewrites IC 16-34-2-1 so that abortion is 'a criminal act, except when performed under the following circumstances,' with exceptions for a serious health risk to the pregnant woman or to save her life, a lethal fetal anomaly, and (within the first ten weeks of postfertilization age) a pregnancy resulting from rape or incest. This matches rung 4, 'ban abortion except in cases of rape, incest, or a serious risk to the mother's life,' and excludes the broader-legality rungs (1-3) and the no-exceptions rung (5).",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

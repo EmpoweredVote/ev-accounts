@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e8bdd8a7-a1b2-43e3-afd4-df975980819e|54a4ad72-bcd1-4fe1-b684-bfa7e72152fc|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Lackey's own words, or a California Assembly roll call on a bill that sets which firearms may be owned, bought or carried (assault-weapons scope, universal background checks on private sales, or carry permits)",
+          "A record or own-words from Tom Lackey addressing firearm ownership, sale/background-check, assault-weapons, or carry restrictions",
+          "Lackey's votes, sponsorship, or own words on firearm ownership bans, assault-weapons restrictions, universal background checks, or carry-permit/reciprocity law, which are the clauses the gun-policy rungs actually turn on"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e8bdd8a7-a1b2-43e3-afd4-df975980819e|54a4ad72-bcd1-4fe1-b684-bfa7e72152fc|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "Lackey's own words, or a California Assembly roll call on a bill that sets which firearms may be owned, bought or carried (assault-weapons scope, universal background checks on private sales, or carry permits)",
+        "A record or own-words from Tom Lackey addressing firearm ownership, sale/background-check, assault-weapons, or carry restrictions",
+        "Lackey's votes, sponsorship, or own words on firearm ownership bans, assault-weapons restrictions, universal background checks, or carry-permit/reciprocity law, which are the clauses the gun-policy rungs actually turn on"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

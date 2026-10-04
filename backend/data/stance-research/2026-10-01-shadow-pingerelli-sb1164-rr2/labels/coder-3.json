@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "office_id": "87c65dff-fa5b-4d7a-a7bc-d78595d2f506",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading vote Y on SB 1164's 15-week gestational limit; shape governed by the bill's construction clause (see bill-text passage).",
+          "record_kind": "vote",
+          "actor_quote": "PINGERELLI Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "f1403cb4-c530-5152-b92d-73f71cebf5b0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "This act does not : 1. Create or recognize a right to abortion or alter generally accepted medical standards. The Legislature does not intend this act to make lawful an abortion that is currently unlawful. 2. Repeal, by implication or otherwise, section 13-3603, Arizona Revised Statutes, or any other applicable state law regulating or restricting abortion.",
+          "note": "Construction clause disclaims any right to abortion and preserves other restricting law, so the 15-week limit does not establish a permitted stage (annex rung-3 ruling 2026-10-01).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [
+        "9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+        "f1403cb4-c530-5152-b92d-73f71cebf5b0"
+      ],
+      "reasoning": "SB 1164 (2022) sets a 15-week gestational limit with a medical-emergency exception, and Pingerelli voted Y on House Third Reading (31-26-3-0-0). But the act's own construction clause states it 'does not... Create or recognize a right to abortion' and does not make lawful any abortion 'currently unlawful,' nor repeal section 13-3603 or other restricting law. Per the annex's rung-3 ruling, this means the vote shows only the restrictive side rather than a permitted stage through 15 weeks, so the rung-3 text ('allow abortion during the first trimester, and after that only to protect the mother's health') is not established.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}
