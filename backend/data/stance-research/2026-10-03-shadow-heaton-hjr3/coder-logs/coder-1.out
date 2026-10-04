@@ -1,0 +1,13 @@
+Coded and written to `coder-1.json`.
+
+**Row: Bob Heaton / same-sex-marriage → chair 5**
+
+Three passages, all coded `record` on instrument `HJR 3 (2014)`, all `own-act` / `on-question` / `in-term` (Heaton seated since 2010; acts in 2014):
+
+- **Bill text (enrolled HJR 3)** — carries `provision_quote`: "Section 38. Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana." The `[deleted: …]` printing-code boilerplate was not quoted.
+- **Roll call 70** — carries `actor_quote` "Beumer Heaton Neese Turner" (Yea list) and `tally_quote` "Yea 57 Nay 40 Excused 3 Not Voting 0". 40/97 No, so not near-unanimous.
+- **Bill details page** — carries `actor_quote` for co-authorship; `record_kind` "author", `provision_quote` null (the page prints a digest, not the provision).
+
+V4 `chair-shaped`: single-subject joint resolution whose entire operative content matches both clauses of the rung "Make same-sex marriage illegal and define marriage as only between one man and one woman."
+
+No first-person Heaton words appear in the sources, so `quotes` is empty, and `needs_source` is empty — nothing the row relies on is missing.

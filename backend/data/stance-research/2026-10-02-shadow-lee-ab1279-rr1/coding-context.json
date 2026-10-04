@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-10-02-shadow-lee-ab1279-rr1",
+  "seat": {
+    "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375",
+    "full_name": "Alex Lee",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "43dd153e-0834-434f-9577-f9bae44d8f89",
+    "office_title": "Assembly Member",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "CA",
+        "term_start": "2020-12-07",
+        "start_precision": "day",
+        "term_end": "2022-12-04"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "question_text": "How much should government do to expand clean energy?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require a shift to clean energy through mandates and firm deadlines."
+        },
+        {
+          "value": 2,
+          "text": "Fund clean energy with major subsidies, tax credits, and public investment."
+        },
+        {
+          "value": 3,
+          "text": "Speed up clean energy by cutting permitting red tape and upgrading the grid."
+        },
+        {
+          "value": 4,
+          "text": "Stay neutral on energy and let the market choose among all sources."
+        },
+        {
+          "value": 5,
+          "text": "End government subsidies and mandates for clean energy."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

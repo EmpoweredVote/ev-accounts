@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": null,
+          "note": "Senate Floor concurrence vote on his own bill; Wiener is in the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Umberg, Wahab, Wiener",
+          "tally_quote": "Ayes Count 29 Noes Count 9"
+        },
+        {
+          "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": "the Legislature endorses a health care system with unified financing, such as a single-payer health care system, to provide accessible, affordable, equitable, and high-quality health care for all Californians",
+          "note": "Operative text orders a waiver-framework study, not an enacted program; its stated goal endorses unified/single-payer financing (H16).",
+          "record_kind": "author",
+          "actor_quote": "SB 770, Wiener.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 770 (2023-2024), authored by Wiener and passed with his Aye vote, directs the Secretary to research and develop a waiver framework for a unified health care financing system rather than enacting one, so it is a study-directive under V4.1. Because its text states the outcome it seeks -- 'the Legislature endorses a health care system with unified financing, such as a single-payer health care system' -- per the H16 ruling this is BLANK direction-only (toward rung 1, 'Make healthcare free and available to everyone, fully paid for by the public sector') rather than no-evidence.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+      "passages": [
+        {
+          "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-08-28",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "Concurrence vote on Haney's own bill; the vote page names the tally and the author but no provision.",
+          "record_kind": "author",
+          "actor_quote": "Motion AB 1775 Haney Concurrence in Senate Amendments",
+          "tally_quote": "Ayes Count 63 Noes Count 5 NVR Count 11"
+        },
+        {
+          "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": "(B) (i) Preparation or sale of noncannabis food or beverage products in compliance with all applicable provisions of the California Retail Food Code (Chapter 1 (commencing with Section 113700) of Part 7 of Division 104 of the Health and Safety Code) by a retailer or microbusiness licensed under this division in the area where the consumption of cannabis is allowed.",
+          "note": "Digest names Haney as author; the amended section only lets localities allow ancillary food/beverage sales and performances at already-licensed consumption lounges.",
+          "record_kind": "author",
+          "actor_quote": "AB 1775, Haney.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 1775 (2023-2024), authored by Haney, only authorizes a local jurisdiction to let an already-licensed cannabis retailer sell noncannabis food or beverages and host ticketed live performances in its existing consumption area; it does not touch whether cannabis itself should be 'fully illegal', limited to medical use, decriminalized for possession, or legalized as a licensed commercial market versus an ordinary product with minimal restrictions. Neither passage speaks to the dimension the rungs order, so no chair is established.",
+      "needs_source": [
+        "Haney's own words, vote, or sponsorship on a bill addressing cannabis's legal status itself (adult-use legalization, medical-cannabis, decriminalization, rescheduling/descheduling, or home-grow/ordinary-product deregulation)"
+      ],
+      "quotes": []
+    }
+  ]
+}

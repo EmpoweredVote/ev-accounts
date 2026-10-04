@@ -1,0 +1,73 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "326c5247-950b-407d-a10b-1116c49098f0|679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Indiana General Assembly bill text, SB 285 (2026), the enacted section banning camping/sleeping on public land and the section setting the penalty",
+          "Indiana General Assembly authorship page for SB 285 (2026) showing Carrasco as author",
+          "Indiana Senate roll call, SB 285 (2026), motion to concur in House amendments (reported 28-22)",
+          "Indiana Senate Bill 285 (2026) — enrolled/final bill text, the penalty section",
+          "Indiana Senate roll call vote on SB 285 (concurrence / final passage, Feb 26-27, 2026)",
+          "Indiana Senate Bill 285 (2026) — operative penalty section, verbatim bill text",
+          "Indiana Senate roll call / vote record on SB 285 (2026), including Carrasco's own recorded vote and the House-amendment concurrence vote (28-22)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "326c5247-950b-407d-a10b-1116c49098f0|679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "requests": [
+        "Indiana General Assembly bill text, SB 285 (2026), the enacted section banning camping/sleeping on public land and the section setting the penalty",
+        "Indiana General Assembly authorship page for SB 285 (2026) showing Carrasco as author",
+        "Indiana Senate roll call, SB 285 (2026), motion to concur in House amendments (reported 28-22)",
+        "Indiana Senate Bill 285 (2026) — enrolled/final bill text, the penalty section",
+        "Indiana Senate roll call vote on SB 285 (concurrence / final passage, Feb 26-27, 2026)",
+        "Indiana Senate Bill 285 (2026) — operative penalty section, verbatim bill text",
+        "Indiana Senate roll call / vote record on SB 285 (2026), including Carrasco's own recorded vote and the House-amendment concurrence vote (28-22)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

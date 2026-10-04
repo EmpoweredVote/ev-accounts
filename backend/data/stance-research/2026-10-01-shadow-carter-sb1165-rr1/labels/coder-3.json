@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508",
+      "office_id": "5f95f54d-d57c-4e3b-95ff-611505f721b3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Enacted text requiring teams to be designated by biological sex, with female/girls teams closed to students of the male sex.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "843cab4f-5897-5496-9266-d6872a6ad6ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call on SB1165; Carter voted Y.",
+          "record_kind": "vote",
+          "actor_quote": "CARTER Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+        "843cab4f-5897-5496-9266-d6872a6ad6ae"
+      ],
+      "reasoning": "SB 1165 (2022) provides that athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex, assigning team eligibility strictly by biological sex; Carter voted Y on its House Third Reading passage (31-24-5-0-0) during his earlier House term. This matches the rung requiring transgender athletes to compete only on teams matching their biological sex assigned at birth, and excludes the ladder's no-restriction, documentation-based, case-by-case, and total-ban rungs.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-10-01-shadow-becker-sb1203-rr1",
+  "seat": {
+    "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+    "full_name": "Josh Becker",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2020-12-07",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "question_text": "How much should government do to expand clean energy?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require a shift to clean energy through mandates and firm deadlines."
+        },
+        {
+          "value": 2,
+          "text": "Fund clean energy with major subsidies, tax credits, and public investment."
+        },
+        {
+          "value": 3,
+          "text": "Speed up clean energy by cutting permitting red tape and upgrading the grid."
+        },
+        {
+          "value": 4,
+          "text": "Stay neutral on energy and let the market choose among all sources."
+        },
+        {
+          "value": 5,
+          "text": "End government subsidies and mandates for clean energy."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

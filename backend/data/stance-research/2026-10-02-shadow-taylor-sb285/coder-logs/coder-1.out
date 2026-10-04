@@ -1,0 +1,9 @@
+Wrote `labels/coder-1.json` — one row, BLANK `direction-only`.
+
+**Coding:** The single snapshot is a news excerpt containing direct, attributed quotations of "Sen. Greg Taylor, D-Indianapolis" → `own-words`, `statement-other` (news quotes, not an answer to this question), dated 2026-02-27 from the URL, `in-term` (current term runs 2008 to present).
+
+**Why BLANK:** His words oppose the bill's penalties — the 300-foot clause, the $500 fine he calls "dangerous" — and say the work should be "finding a place for the unhoused to be housed." That establishes a side, not a rung: nothing in the passage chooses between rung 1 (no penalties of any kind), rung 2 (decriminalizing), and rung 3 (enforcement only when beds are available, citations diverting to services). Under V4.2, ruling out the punitive rungs is not evidence for any of the three left. The article reports no act of his on the bill, so there is no `record` passage and `rests_on` is empty.
+
+**needs_source:** the Senate roll call on the concurrence vote this article describes (bill number and tally), and his own words naming an enforcement rule he would adopt.
+
+**Quote:** the "finding a place for the unhoused to be housed" span codes `none` — housing the unhoused is the shared goal, so it fails T1. Flagged `non-differentiating-goal` but left quotable, per the codebook's "flag for a human; do not gate."

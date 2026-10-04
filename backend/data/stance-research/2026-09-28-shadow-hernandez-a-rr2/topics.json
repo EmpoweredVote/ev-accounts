@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+    "topic_key": "education-curriculum",
+    "topic_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+    "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+    "question_number": 46,
+    "title": "Curriculum and Contested Topics",
+    "question_text": "How should schools handle contested topics like race, gender, and history in what they teach?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Require lessons that center race, gender, and social justice as themes across the curriculum"
+      },
+      {
+        "value": 2,
+        "text": "Teach an honest account of racism, injustice, and diverse identities as part of the core curriculum"
+      },
+      {
+        "value": 3,
+        "text": "Present contested social and historical topics as open questions, giving competing viewpoints equal weight"
+      },
+      {
+        "value": 4,
+        "text": "Keep the curriculum focused on core academics and leave contested social topics to families"
+      },
+      {
+        "value": 5,
+        "text": "Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  }
+]

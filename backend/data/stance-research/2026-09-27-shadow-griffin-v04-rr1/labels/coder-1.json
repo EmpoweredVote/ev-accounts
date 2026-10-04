@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "188c386e-087b-4587-9510-da7fc5805575",
+      "office_id": "b68ffd33-82dd-4eba-adee-6a853f7fc882",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "bd92bde7-63c0-58d1-9cf6-d40adba823e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": null,
+          "note": "Prime sponsorship of HB2756, signed as Chapter 111; this page prints the sponsor line but no provision text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Griffin (Prime) Blackman (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "808d1653-39ab-5fb6-ae74-30fd1d32f1ca",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": null,
+          "note": "House Final Reading Aye; 16 of 60 members voted No, so this is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "GRIFFIN Y",
+          "tally_quote": "Passed 39-16-5-0-0"
+        },
+        {
+          "snapshot_id": "5ba60589-f014-530e-82f5-4339c10261a9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": "REQUIREMENTS FOR EXTRA HIGH LOAD FACTOR CUSTOMER PAYMENTS TO COVER THE COSTS OF ANY INFRASTRUCTURE IMPROVEMENTS, ADDITIONS OR expansions THAT ARE NECESSARY TO FACILITATE SERVICE TO THE CUSTOMER, WHICH SHALL BE SUPPORTED BY SCHEDULES that are FILED BY THE ELECTRIC PUBLIC SERVICE CORPORATION THAT DEMONSTRATE THE PROTECTION OF NON-extra HIGH LOAD FACTOR CUSTOMERS FROM subsidizing extra-high load factor customers.",
+          "note": "The cost-protection clause is permissive (the commission \"may\" establish these characteristics) and the act's own findings say it does not set rates.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Griffin prime-sponsored and voted Aye on HB2756 (2026), which requires semiannual interconnection reports for \"new extra high load factor customers\" and lets the corporation commission set service terms that \"DEMONSTRATE THE PROTECTION OF NON-extra HIGH LOAD FACTOR CUSTOMERS FROM subsidizing extra-high load factor customers\". That is a permissive authority, not \"Barring utilities from passing any data center energy infrastructure costs to residential customers\", and the act names no streamlined permitting, no transparency \"about projected energy demand and rate impacts\", and no impact assessment, cost-sharing agreement or community benefit requirement \"before approval\". The record shows a side (regulate large loads to keep costs off residential ratepayers) without matching the clauses of any one rung.",
+      "needs_source": [
+        "Gail Griffin's own words tying HB2756 (2026) to data center growth, permitting speed, or projected energy demand and rate impacts",
+        "Arizona House or Senate record of any Griffin-sponsored measure that names data centers and a permitting or approval condition"
+      ],
+      "quotes": []
+    }
+  ]
+}

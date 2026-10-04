@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-10-02-shadow-lee-ab1279-rr1",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB1279",
+      "source_kind": "public-record",
+      "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375",
+      "office_id": "43dd153e-0834-434f-9577-f9bae44d8f89",
+      "topic_keys": [
+        "climate-change"
+      ],
+      "instruments": [
+        "AB 1279 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2022-ab1279-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202120220AB1279",
+      "source_kind": "public-record",
+      "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375",
+      "office_id": "43dd153e-0834-434f-9577-f9bae44d8f89",
+      "topic_keys": [
+        "climate-change"
+      ],
+      "instruments": [
+        "AB 1279 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2022-ab1279-votes.txt"
+    }
+  ]
+}

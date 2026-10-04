@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "office_id": "d13d9c57-2851-48fb-a1a6-0b181f449453",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "House Final Reading shows Lieberman voting No on SB1457, which bans genetic-abnormality-selective abortion and adds procedural rules, not a trimester/exception rule.",
+          "record_kind": "vote",
+          "actor_quote": "LIEBERMAN N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "Performs an abortion knowing that the abortion is sought solely because of a genetic abnormality of the child.",
+          "note": "Operative clause bans a reason-based category of abortion (genetic abnormality) and adds informed-consent, clinic-facility, and reporting rules; it sets no gestational-stage limit and no rape/incest/life exception, the dimension this ladder orders.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Both SB1457 passages are adjacent: the bill's operative clause bans abortion sought because of a genetic abnormality (plus sex/race) and adds informed-consent, clinic-facility, and reporting rules; none of this sets a gestational-stage limit or a rape/incest/life-risk exception, the dimension the served rungs ('keep abortion legal at every stage... with no time limit' through 'ban abortion in all cases, with no exceptions') actually order. Lieberman's No vote on House Final Reading is his own act, in-term under the earlier-chamber rule, but the instrument itself cannot establish a chair on this ladder.",
+      "needs_source": [
+        "Lieberman's own vote, sponsorship, or first-person statement addressing the general legality of abortion by gestational stage or exceptions for rape, incest, or life risk — the dimension this ladder orders."
+      ],
+      "quotes": []
+    }
+  ]
+}

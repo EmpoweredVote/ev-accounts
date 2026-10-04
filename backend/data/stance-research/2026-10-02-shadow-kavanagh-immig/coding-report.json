@@ -1,0 +1,77 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4f7db8ce-def5-4225-b183-654f8f64cb9a|80d6f6f6-c62b-46a8-ae32-725e8a8a8f06|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Arizona Legislature bill text, SB 1610 (2025), operative section",
+          "Arizona Legislature bill text, SB 1294 (2025), operative section",
+          "Arizona Senate roll call, SB 1610 (2025), third reading",
+          "Kavanagh's own words on whether long-settled undocumented residents without criminal records should be removed",
+          "Bill text (operative provisions) for SB 1294, SB 1299, and SB 1610 (2025 session)",
+          "A Kavanagh statement or vote addressing deportation scope for non-criminal, long-settled undocumented immigrants",
+          "Arizona Legislature bill text and floor-vote tally for SB 1294 (2025)",
+          "Arizona Legislature bill text and floor-vote tally for SB 1299 (2025)",
+          "Arizona Legislature bill text and floor-vote tally for SB 1610 (2025)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4f7db8ce-def5-4225-b183-654f8f64cb9a|80d6f6f6-c62b-46a8-ae32-725e8a8a8f06|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "Arizona Legislature bill text, SB 1610 (2025), operative section",
+        "Arizona Legislature bill text, SB 1294 (2025), operative section",
+        "Arizona Senate roll call, SB 1610 (2025), third reading",
+        "Kavanagh's own words on whether long-settled undocumented residents without criminal records should be removed",
+        "Bill text (operative provisions) for SB 1294, SB 1299, and SB 1610 (2025 session)",
+        "A Kavanagh statement or vote addressing deportation scope for non-criminal, long-settled undocumented immigrants",
+        "Arizona Legislature bill text and floor-vote tally for SB 1294 (2025)",
+        "Arizona Legislature bill text and floor-vote tally for SB 1299 (2025)",
+        "Arizona Legislature bill text and floor-vote tally for SB 1610 (2025)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

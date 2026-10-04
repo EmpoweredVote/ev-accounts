@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-10-02-shadow-ortiz-hb2721",
+  "seat": {
+    "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+    "full_name": "Analise Ortiz",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2025-01-06",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2023-01-09",
+        "start_precision": "day",
+        "term_end": "2025-01-13"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "question_text": "What role should government play in making sure people can afford housing?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Make government the main provider — build and operate public housing so everyone is guaranteed a home."
+        },
+        {
+          "value": 2,
+          "text": "Build a large public housing sector that competes with the private market to hold prices down, while private housing stays the norm."
+        },
+        {
+          "value": 3,
+          "text": "Build no public housing, but set binding rules on the private market like rent caps or required affordable units."
+        },
+        {
+          "value": 4,
+          "text": "Set no binding rules, but offer subsidies and tax breaks so more affordable housing gets built."
+        },
+        {
+          "value": 5,
+          "text": "Rely on the market to set prices and supply — at most, cut the regulations and zoning limits that block private building."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

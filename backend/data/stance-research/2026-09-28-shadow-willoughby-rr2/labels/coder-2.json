@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8edebfca-2e35-4424-85f8-f3ad498a2890",
+      "office_id": "74f6255e-04a3-481e-9a90-9fabcd9697f0",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "aec5f209-e03b-5705-a1a8-8608e15eada5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-13",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "HB 2332 (2025)",
+          "provision_quote": null,
+          "note": "Bill overview page lists Willoughby as prime sponsor of HB2332, signed by the governor 2025-05-13.",
+          "record_kind": "sponsor",
+          "actor_quote": "Willoughby (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "36c9d9a3-c4b0-5cfc-b18e-d791b9234e25",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-13",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "HB 2332 (2025)",
+          "provision_quote": null,
+          "note": "The enacted text requires the health department to compile and distribute maternal mental health/postpartum depression educational materials and creates a rural maternal-health advisory committee to develop recommendations and submit a report, rather than setting who government covers or helps pay for care.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a58fdf07-8f73-57c1-9fe5-b7c363562a0f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "HB 2332 (2025)",
+          "provision_quote": null,
+          "note": "House Final Reading vote on HB2332 shows Willoughby voting Y on the same information/advisory-committee measure.",
+          "record_kind": "vote",
+          "actor_quote": "WILLOUGHBY Y",
+          "tally_quote": "Passed 44-13-3-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 2332 (2025), which Willoughby prime-sponsored and voted Y on and which the governor signed 2025-05-13, directs the health department to distribute postpartum depression educational materials and creates a rural maternal-health advisory committee to develop recommendations and report; per the annex's 'Health information is not access' rule, a measure that distributes health information or orders a study committee does not say whom government covers or helps pay for care, so no passage establishes any rung of 'What role should government play in healthcare access?'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

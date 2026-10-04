@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "03ee06fb-9b51-41cc-8942-4632f3a724e3",
+      "office_id": "e38cdc56-9228-456b-ba4c-3fc0ab72f6cd",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "638a85ea-c93a-58f7-82e7-a136ae37daff",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-25",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 14 (2023-2024)",
+          "provision_quote": "(42) human trafficking of a minor, in violation of subdivision (c) of Section 236.1, except, with respect to a violation of paragraph (1) of subdivision (c) of Section 236.1, where the person who committed the offense was a victim of human trafficking, as described in subdivision (b) or (c) of Section 236.1, at the time of the offense;",
+          "note": "SB 14, authored by Grove, adds human trafficking of a minor to the Three Strikes 'serious felony' list, a penalty enhancement for one offense (annex 'one offense' rule).",
+          "record_kind": "author",
+          "actor_quote": "SB 14, Grove.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 14 (2023-2024), authored by Grove, amends Penal Code Section 1192.7 to add human trafficking of a minor to the definition of 'serious felony' for Three Strikes purposes. Per the annex's 'one offense' hard case, a bill that raises the penalty exposure for one offense shows direction toward consequences but cannot establish the general orientation the rungs separate (rungs 3 'some people need support, some need consequences', 4 'accountability is the priority', or 5 'the toughest penalties the law allows').",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

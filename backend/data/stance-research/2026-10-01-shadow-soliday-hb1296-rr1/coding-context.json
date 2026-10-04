@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-10-01-shadow-soliday-hb1296-rr1",
+  "seat": {
+    "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+    "full_name": "Edmond Soliday",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2006-11-08",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "question_text": "How should the government regulate firearms?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Ban civilian firearm ownership, except for tightly licensed hunting and sport use."
+        },
+        {
+          "value": 2,
+          "text": "Ban semi-automatic assault-style weapons, while allowing other firearms."
+        },
+        {
+          "value": 3,
+          "text": "Allow all types of firearms, but require universal background checks on every sale."
+        },
+        {
+          "value": 4,
+          "text": "Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines."
+        },
+        {
+          "value": 5,
+          "text": "Repeal major gun restrictions and let adults carry a firearm without a permit."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

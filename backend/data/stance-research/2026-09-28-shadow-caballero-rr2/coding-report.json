@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20|d55ca4b0-d53f-42f5-9ed7-000d188e6634|0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Legislature bill history/status page for SB 188 (2019-2020) showing whether Caballero was a coauthor",
+          "Caballero's own words on SB 188 (2019-2020) or on strengthening California anti-discrimination enforcement, from her current term or the campaign that seated her",
+          "Caballero's own words on SB 188 or civil-rights generally, or evidence she authored/co-sponsored an anti-discrimination measure, to establish the chair",
+          "Caballero's own words on SB 188, or evidence she authored/co-sponsored it, to overcome the near-unanimous-vote bar for rung 2."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20|d55ca4b0-d53f-42f5-9ed7-000d188e6634|0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "requests": [
+        "California Legislature bill history/status page for SB 188 (2019-2020) showing whether Caballero was a coauthor",
+        "Caballero's own words on SB 188 (2019-2020) or on strengthening California anti-discrimination enforcement, from her current term or the campaign that seated her",
+        "Caballero's own words on SB 188 or civil-rights generally, or evidence she authored/co-sponsored an anti-discrimination measure, to establish the chair",
+        "Caballero's own words on SB 188, or evidence she authored/co-sponsored it, to overcome the near-unanimous-vote bar for rung 2."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "instrument": "scr1040(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "aaf0c889-8192-5e2d-beae-5259803f0021",
+        "url": "https://www.azleg.gov/legtext/56leg/2r/bills/scr1040h.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "b0246426-bf3f-59b0-b47b-1a9a378b8052",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "5bd9b1c9-1855-5ee6-a5aa-b3215b6e9eb3",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040#house-third",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "instrument": "scr1040(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "5bd9b1c9-1855-5ee6-a5aa-b3215b6e9eb3",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040#house-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "b0246426-bf3f-59b0-b47b-1a9a378b8052",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "aaf0c889-8192-5e2d-beae-5259803f0021",
+        "url": "https://www.azleg.gov/legtext/56leg/2r/bills/scr1040h.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "instrument": "scr1040(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "5bd9b1c9-1855-5ee6-a5aa-b3215b6e9eb3",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040#house-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "b0246426-bf3f-59b0-b47b-1a9a378b8052",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SCR1040",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "aaf0c889-8192-5e2d-beae-5259803f0021",
+        "url": "https://www.azleg.gov/legtext/56leg/2r/bills/scr1040h.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  }
+]

@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "188c386e-087b-4587-9510-da7fc5805575",
+      "office_id": "b68ffd33-82dd-4eba-adee-6a853f7fc882",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "808d1653-39ab-5fb6-ae74-30fd1d32f1ca",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call on HB2756 where Griffin voted Y.",
+          "record_kind": "vote",
+          "actor_quote": "GRIFFIN Y",
+          "tally_quote": "Passed 39-16-5-0-0"
+        },
+        {
+          "snapshot_id": "bd92bde7-63c0-58d1-9cf6-d40adba823e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": null,
+          "note": "Bill status page lists Griffin as Prime sponsor of HB2756, later signed by the Governor.",
+          "record_kind": "sponsor",
+          "actor_quote": "Griffin (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5ba60589-f014-530e-82f5-4339c10261a9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2756 (2026)",
+          "provision_quote": "REQUIREMENTS FOR EXTRA HIGH LOAD FACTOR CUSTOMER PAYMENTS TO COVER THE COSTS OF ANY INFRASTRUCTURE IMPROVEMENTS, ADDITIONS OR expansions THAT ARE NECESSARY TO FACILITATE SERVICE TO THE CUSTOMER, WHICH SHALL BE SUPPORTED BY SCHEDULES that are FILED BY THE ELECTRIC PUBLIC SERVICE CORPORATION THAT DEMONSTRATE THE PROTECTION OF NON-extra HIGH LOAD FACTOR CUSTOMERS FROM subsidizing extra-high load factor customers.",
+          "note": "Chaptered HB2756 text lets the corporation commission optionally require extra-high-load-factor (data center) customers to cover their own infrastructure costs so other ratepayers are not subsidizing them.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "HB2756 (2026), which Griffin prime-sponsored and voted Yea on, requires utilities to report on 'extra high load factor customer' (data center) interconnections and lets the corporation commission optionally set tariff terms recovering those customers' infrastructure costs so they do not subsidize other ratepayers. This shows direction toward regulating data-center utility costs rather than 'welcoming data center investment with minimal regulatory barriers' (rung 5) or imposing 'a moratorium on new data center construction' (rung 1), but its discretionary 'may establish' framing and the absence of 'community benefit requirements' or 'streamlined permitting' language mean it does not match the full text of rung 2, 3, or 4.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

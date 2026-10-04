@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0",
+      "office_id": "1621afeb-6cb1-4368-98db-6e18b0723faa",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "f85ff6c9-bb6d-5e4e-a775-4ebcba97382b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-10-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 88 (2023-2024)",
+          "provision_quote": "the victim shall notify the prosecution of their request to be heard within 15 days of being notified that resentencing is being sought and the court shall provide an opportunity for the victim to be heard",
+          "note": "AB 88 sets victim notice/hearing-participation timelines for resentencing and parole, not the severity of the system's response to lawbreaking.",
+          "record_kind": "author",
+          "actor_quote": "AB 88, Sanchez",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 88's operative text governs victim notification timelines and the right to be heard in resentencing and parole proceedings; it does not say whether the system should respond to lawbreaking with support, restitution, or consequences. This is a victim-procedure dimension the ladder does not order, so no passage establishes a chair.",
+      "needs_source": [
+        "Sanchez's own record, vote, or statement addressing sentencing severity, restitution, or treatment-vs-punishment policy"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "50d00238-5334-4616-ac43-72375f53df71|ae116c94-7533-46d0-aa81-20106f5cb572|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "John Gillette's own first-person words on how far the government should go in deporting undocumented immigrants (questionnaire answer, floor statement, interview), 2023-present",
+          "Any bill Gillette authored, prime-sponsored or co-sponsored in the Arizona Legislature that sets who is removed (not state-federal enforcement cooperation), 56th-57th Legislature",
+          "Gillette's own statement or floor explanation tying his HCR2060 vote specifically to the illegal-entry/return-to-home-country provisions, given the bill's other unrelated subjects (benefits fraud, e-verify, fentanyl penalties).",
+          "Gillette's own statement (floor speech, press release, campaign material) tying his HCR2060 vote specifically to the illegal-entry/removal-order provision rather than the bill's benefits, fentanyl, or e-verify sections"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "50d00238-5334-4616-ac43-72375f53df71|ae116c94-7533-46d0-aa81-20106f5cb572|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "John Gillette's own first-person words on how far the government should go in deporting undocumented immigrants (questionnaire answer, floor statement, interview), 2023-present",
+        "Any bill Gillette authored, prime-sponsored or co-sponsored in the Arizona Legislature that sets who is removed (not state-federal enforcement cooperation), 56th-57th Legislature",
+        "Gillette's own statement or floor explanation tying his HCR2060 vote specifically to the illegal-entry/return-to-home-country provisions, given the bill's other unrelated subjects (benefits fraud, e-verify, fentanyl penalties).",
+        "Gillette's own statement (floor speech, press release, campaign material) tying his HCR2060 vote specifically to the illegal-entry/removal-order provision rather than the bill's benefits, fentanyl, or e-verify sections"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

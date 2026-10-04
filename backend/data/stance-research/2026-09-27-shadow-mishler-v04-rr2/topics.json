@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+    "topic_key": "taxes",
+    "topic_revision_id": "87f8c011-5c70-4f39-a1ea-5cc53c010c60",
+    "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+    "question_number": 39,
+    "title": "Taxation and Public Spending",
+    "question_text": "How should government balance what it collects in taxes against what it spends on public services?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Significantly raise taxes on wealthy people and large companies to fund more public services"
+      },
+      {
+        "value": 2,
+        "text": "Moderately raise taxes on wealthy people and large companies to fund existing services"
+      },
+      {
+        "value": 3,
+        "text": "Keep the current tax system mostly as-is, with targeted adjustments \u2014 closing loopholes or granting narrow relief"
+      },
+      {
+        "value": 4,
+        "text": "Cut taxes broadly, including the main rates most people pay"
+      },
+      {
+        "value": 5,
+        "text": "Cut taxes as far as possible and shrink what government does"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

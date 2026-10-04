@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-28-shadow-mesnard-sb1828-rr2",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1828",
+      "source_kind": "public-record",
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "SB 1828 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2021-sb1828-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1828#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "SB 1828 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2021-sb1828-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0412.htm",
+      "source_kind": "public-record",
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "SB 1828 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

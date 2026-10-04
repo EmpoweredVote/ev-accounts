@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-10-02-shadow-taylor-sb285-rr1",
+  "seat": {
+    "politician_id": "6b6368a1-354d-4f28-9232-a6ec70198ab8",
+    "full_name": "Greg Taylor",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "085054aa-8e66-46c3-a41d-18e75de7eab6",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2008-11-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "question_text": "How should government address people sleeping or camping in public spaces?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Protecting the right to sleep and shelter in public spaces, with no penalties of any kind"
+        },
+        {
+          "value": 2,
+          "text": "Decriminalizing public sleeping and camping in public spaces"
+        },
+        {
+          "value": 3,
+          "text": "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"
+        },
+        {
+          "value": 4,
+          "text": "Prohibiting encampments on public property, enforced through graduated warnings and civil penalties"
+        },
+        {
+          "value": 5,
+          "text": "Banning public camping and sleeping with criminal penalties to maintain public safety and order"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview page showing his co-sponsorship; it prints no operative text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Petersen (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": null,
+          "note": "Senate final reading vote page: he voted Y on a divided 16-14 roll call, and it prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "PETERSEN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": "The laws of this state shall be interpreted and construed to acknowledge, on behalf of an unborn child at every stage of development, all rights, privileges and immunities available to other persons, citizens and residents of this state, subject only to the constitution of the United States and decisional interpretations thereof by the United States supreme court.",
+          "note": "Chaptered text: a fetal-personhood construction rule, a reason-based prohibition, medication-abortion and reporting rules, but no gestational limit and no exception scheme.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Petersen co-sponsored and voted Y on SB1457 (2021), whose operative content is a fetal-personhood interpretation rule, a prohibition on abortion \"sought solely because of a genetic abnormality of the child\", medication-abortion delivery limits and reporting duties; it states no stage at which abortion is legal and no exception rule, and it says \"This act does not create or recognize a right to an abortion and does not make lawful an abortion that is currently unlawful.\" That places him on the restrictive side but matches no rung's clauses: it neither \"allow[s] abortion during the first trimester\" nor sets a ban \"except in cases of rape, incest, or a serious risk to the mother's life\" nor a ban \"in all cases, with no exceptions.\"",
+      "needs_source": [
+        "An Arizona Legislature roll call plus bill text for a gestational-limit abortion bill Petersen voted on or sponsored (a limit stated in weeks, with the exception language that follows it)",
+        "Petersen's own words, in-cycle, on which exceptions (rape, incest, risk to the mother's life or health) an abortion ban should carry"
+      ],
+      "quotes": []
+    }
+  ]
+}

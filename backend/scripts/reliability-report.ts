@@ -5,7 +5,16 @@
  * A row's stratum = the SEAT's level (stance_coder_labels.level, written from coding-context.json
  * seat.level — the same level codingReport uses) × the weakest evidence class any valid coder rested
  * its chair on (spec §3.2).
- *   npx tsx scripts/reliability-report.ts [--codebook 0.2]
+ *   npx tsx scripts/reliability-report.ts [--codebook 0.2] [--run rr1] [--exclude-batches a,b]
+ * A re-run of the coders over saved gold inputs (spec §3.4, after a codebook change) is stored under
+ * batch ids ending "-<run>" (e.g. "2026-10-01-shadow-wesco-sb101-rr1"). By default those are left out,
+ * so the original figures do not move; --run <tag> reports ONLY that re-run. --exclude-batches drops
+ * the named batches (base names, the "-<run>" suffix ignored) — used to report a re-run without the
+ * gold items whose adjudication wrote the rule being tested.
+ * --record --models a,b,c --note "..." (repeatable) writes one inform.reliability_certifications row
+ * per CERTIFIED stratum (never a blank or statement-other one), from the figures computed here — no
+ * hand-typed numbers. The table is append-only; a decertification is a later row. --note lines go in
+ * `reason` prefixed "note:" (the run, the leakage control, who approved it).
  */
 import 'dotenv/config';
 import { pool } from '../src/lib/db.js';
@@ -14,10 +23,17 @@ import { CODEBOOK_VERSION } from './lib/coderLabel.js';
 
 const i = process.argv.indexOf('--codebook');
 const version = i > 0 ? process.argv[i + 1] : CODEBOOK_VERSION;
-const { rows } = await pool.query(
+const ri = process.argv.indexOf('--run');
+const run = ri > 0 ? process.argv[ri + 1] : null;
+const xi = process.argv.indexOf('--exclude-batches');
+const excluded = new Set(xi > 0 ? process.argv[xi + 1].split(',').map((b) => b.trim()).filter(Boolean) : []);
+const RERUN = /-rr\d+$/;
+const baseName = (b: string) => b.replace(RERUN, '');
+const { rows: allRows } = await pool.query(
   `SELECT l.batch_id, l.politician_id, l.office_id, l.topic_id, l.coder_slot, l.valid, l.value, l.rests_on, l.source_codes, l.level
      FROM inform.stance_coder_labels l
     WHERE l.codebook_version = $1 AND NOT l.is_diagnostic AND l.coder_slot BETWEEN 1 AND 3`, [version]);
+const rows = allRows.filter((r) => (run ? r.batch_id.endsWith(`-${run}`) : !RERUN.test(r.batch_id)) && !excluded.has(baseName(r.batch_id)));
 // Blind gold (spec §3.3): the newest counted decision per (politician, office, topic). A decision a
 // later row supersedes is not the answer any more.
 const { rows: goldRows } = await pool.query(
@@ -27,7 +43,6 @@ const { rows: goldRows } = await pool.query(
     WHERE g.mode = 'blind' AND g.blind_submitted_at IS NOT NULL AND NOT g.excluded_from_cert
       AND NOT EXISTS (SELECT 1 FROM inform.stance_gold_labels s WHERE s.supersedes_id = g.id)
     ORDER BY g.politician_id, g.office_id, g.topic_id, g.created_at DESC`);
-await pool.end();
 // Off-axis ladders (CLAUDE.md "Never assume polarity"): there, any wrong unanimous chair is severe.
 const OFF_AXIS = new Set(['residential-zoning', 'growth-and-development', 'judicial-government-deference']);
 const gold = new Map(goldRows.map((g) => [`${g.politician_id}|${g.office_id}|${g.topic_id}`, g as { final_value: number | null; topic_key: string }]));
@@ -56,8 +71,13 @@ for (const u of units.values()) {
   if (g) b.pairs.push({ coders: u.values, gold: g.final_value, offAxis: OFF_AXIS.has(g.topic_key) });
   byStratum.set(stratumOf(u), b);
 }
-console.log(`codebook ${version} — ${units.size} coded rows, ${[...byStratum.values()].reduce((n, b) => n + b.pairs.length, 0)} with blind gold\n`);
+console.log(`codebook ${version}${run ? ` — re-run ${run}` : ''}${excluded.size ? ` — ${excluded.size} batch(es) excluded` : ''} — ${units.size} coded rows, ${[...byStratum.values()].reduce((n, b) => n + b.pairs.length, 0)} with blind gold\n`);
 console.log('stratum'.padEnd(32), 'rows'.padStart(5), 'M1 α'.padStart(7), 'gold'.padStart(5), 'M2 α'.padStart(7), '  M3 unan ok/n', ' M4', '  certified?');
+const record = process.argv.includes('--record');
+const mi = process.argv.indexOf('--models');
+const modelSet = (mi > 0 ? process.argv[mi + 1] : 'opus,sonnet,sonnet').split(',');
+const notes = process.argv.flatMap((a, k) => (a === '--note' ? [`note: ${process.argv[k + 1]}`] : []));
+const toRecord: { level: string; cls: string; n: number; m1: number | null; m2: number | null; m3: number; severe: number }[] = [];
 const fmt = (a: number | null) => (a === null ? 'undef' : a.toFixed(3));
 for (const [s, b] of [...byStratum].sort()) {
   const m1 = alphaNominal(b.units).alpha;
@@ -65,6 +85,7 @@ for (const [s, b] of [...byStratum].sort()) {
   const c = certify({ goldN: b.pairs.length, m1, m2: g.m2, unanimousCorrect: g.unanimousCorrect, unanimousTotal: g.unanimousTotal, severe: g.severe });
   // 'blank' = no coder seated a chair: a diagnostic bucket, never certified (ruling 2026-09-28).
   const cert = s.endsWith('statement-other') ? 'never (Q2)' : s.endsWith('× blank') ? 'diagnostic (blanks publish no chair)' : c.certified ? 'YES' : `no — ${c.reasons.join('; ')}`;
+  if (cert === 'YES') { const [lvl, cls] = s.split(' × '); toRecord.push({ level: lvl, cls, n: b.pairs.length, m1, m2: g.m2, m3: c.m3WilsonLow, severe: g.severe }); }
   console.log(s.padEnd(32), String(b.units.length).padStart(5), fmt(m1).padStart(7), String(b.pairs.length).padStart(5), fmt(g.m2).padStart(7),
     `  ${g.unanimousCorrect}/${g.unanimousTotal}`.padEnd(14), String(g.severe).padStart(3), ' ', cert);
 }
@@ -75,3 +96,14 @@ console.log(`\nblanks (diagnostic): precision ${bm.blankCorrect}/${bm.blankConse
   (bm.missed.length ? ` — ${bm.missed.map((m) => `${m.key} (gold ${m.gold})`).join(', ')}` : ''));
 const all = alphaNominal([...units.values()].map((u) => u.values));
 console.log(`\nall strata: M1 α = ${fmt(all.alpha)} (target ≥ 0.80, spec §3.3). A stratum certifies only with ≥ 50 blind gold items.`);
+if (record) {
+  for (const r of toRecord) {
+    const { rows: [row] } = await pool.query(
+      `INSERT INTO inform.reliability_certifications (level, evidence_class, topic_id, codebook_version, model_set, n, m1_alpha, m2_alpha, m3_wilson_low, m4_severe, certified, reason)
+       VALUES ($1, $2, NULL, $3, $4, $5, $6, $7, $8, $9, true, $10) RETURNING id, computed_at`,
+      [r.level, r.cls, version, modelSet, r.n, r.m1, r.m2, r.m3, r.severe, notes]);
+    console.log(`recorded certification ${row.id} — ${r.level} × ${r.cls} at ${row.computed_at.toISOString()}`);
+  }
+  if (!toRecord.length) console.log('--record: no stratum certified; nothing written');
+}
+await pool.end();

@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": null,
+          "note": "Bill overview page lists Mesnard as the prime sponsor of SB1305.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "75343598-1fb8-585f-aad1-2ba26517eaa6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote record shows Mesnard voted Y on SB1305's passage.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "0db8e945-92cc-5f28-b839-85721d76633d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1305 (2023)",
+          "provision_quote": "A public school, school district or state agency or an employee of a public school, school district or state agency may not provide or allow any person to provide instruction to students or employees that promotes or advocates for any of the following concepts: 1. Judging an individual on the basis of the individual's race or ethnicity.",
+          "note": "Bill text's new section 15-717.02(A) prints the operative prohibition on race-based instructional concepts that Mesnard sponsored and voted for.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+        "75343598-1fb8-585f-aad1-2ba26517eaa6",
+        "0db8e945-92cc-5f28-b839-85721d76633d"
+      ],
+      "reasoning": "As prime sponsor of SB1305 (2023) and a Y vote on its Senate Third Reading passage (16-12-2-0-0), Mesnard acted on a single-subject instrument whose operative section bars public schools from providing instruction that 'promotes or advocates' concepts such as judging an individual 'on the basis of the individual's race or ethnicity.' This matches the rung text 'Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

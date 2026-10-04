@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Arizona Legislature roll call plus bill text for a gestational-limit abortion bill Petersen voted on or sponsored (a limit stated in weeks, with the exception language that follows it)",
+          "Petersen's own words, in-cycle, on which exceptions (rape, incest, risk to the mother's life or health) an abortion ban should carry",
+          "Petersen's own words or vote on a bill setting a general gestational limit, exception rule, or legality standard for abortion"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "An Arizona Legislature roll call plus bill text for a gestational-limit abortion bill Petersen voted on or sponsored (a limit stated in weeks, with the exception language that follows it)",
+        "Petersen's own words, in-cycle, on which exceptions (rape, incest, risk to the mother's life or health) an abortion ban should carry",
+        "Petersen's own words or vote on a bill setting a general gestational limit, exception rule, or legality standard for abortion"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

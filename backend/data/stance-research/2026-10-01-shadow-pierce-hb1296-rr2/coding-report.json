@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Matt Pierce's own words on which firearms Indiana should restrict (first-person issue page, questionnaire answer, or floor statement explaining his HB 1296 vote)",
+          "An Indiana roll call or sponsorship by Pierce on an assault-weapons or semi-automatic ban bill",
+          "An Indiana roll call or sponsorship by Pierce on a universal background check bill covering private sales",
+          "Pierce's own statement explaining his Nay vote on HB 1296, or another record/vote establishing which specific firearm restriction he supports"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "Matt Pierce's own words on which firearms Indiana should restrict (first-person issue page, questionnaire answer, or floor statement explaining his HB 1296 vote)",
+        "An Indiana roll call or sponsorship by Pierce on an assault-weapons or semi-automatic ban bill",
+        "An Indiana roll call or sponsorship by Pierce on a universal background check bill covering private sales",
+        "Pierce's own statement explaining his Nay vote on HB 1296, or another record/vote establishing which specific firearm restriction he supports"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

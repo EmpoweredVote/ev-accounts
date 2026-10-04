@@ -1,0 +1,743 @@
+You are stance coder 2. You code evidence against the codebook below. You do not search,
+fetch or verify anything: every source you may use is in this message, and code checks your
+labels afterwards. If the evidence a row needs is named but not included here, put it in
+needs_source instead of guessing.
+
+Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts/.claude/worktrees/clever-leakey-bd9943/backend/data/stance-research/2026-10-02-shadow-kalra-sb100/labels/coder-2.json. Write JSON only, matching
+codebook Part E, with "codebook_version": "0.4" and "coder_slot": 2. One row per
+topic below. Every quoted string you write must be copied exactly from a source below.
+
+## Codebook
+
+# Empowered Vote — Stance & Quote Codebook
+
+**Version:** 0.4 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
+fields (confirm-basis spec). The annex
+readings and examples are not yet ruled on. Every label records `codebook_version`.
+**Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
+record fields are required per instrument group, not per passage (V3 "Record fields", Part E), and V3
+carries a worked two-passage vote example.
+**Updated 2026-09-27 (0.3 → 0.3.1 — a new rule coders must apply, amendment-markup spec §5):** text
+inside a `[deleted: …]` fence is removed from the law; it is never the provision, and a coder never
+quotes it as `provision_quote` (V3 "Record fields").
+**Updated 2026-09-27 (0.3.1 → 0.4 — V5 ruling, option B, Chris Andrews):** a record from **either
+chamber of the same legislature** counts for the current seat (a senator's votes and bills from their
+House years). A record from another level of government (a city council, a county, Congress) is still
+valid for that office only. See V5.
+**Clarified 2026-09-30 (still 0.4 — no new variable or value; two existing rules spelled out):** V4.2
+"Silence is not a clause" and "Ruling out the other rungs is not evidence", with register rows H13 and
+H14. Both restate V4 `direction-only` and the CLAUDE.md tiebreaker rule; the version stays 0.4 so
+existing gold keeps counting. The two gold items that prompted them are not named here, so they stay
+certifiable: their coder labels were written before these lines existed.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value):** V3 "A record reported only by news is
+not a record", with register row H15. It restates the V3 rule that a record needs the instrument and
+the person's action on it, for the case where the only source of that action is a reporter's sentence.
+The items that prompted it are not named here, for the same reason as H13 and H14.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4 "A study
+directive that states its goal", with register row H16. It decides which existing blank reason a
+`study-directive` row takes; it changes no chair. The item that prompted it is not named here.
+**Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
+**Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
+and a skill or prompt disagree, this file wins; fix the other one.
+**Authorities it consolidates:** CLAUDE.md "Compass chairs are five distinct stances"; stance-program
+spec (2026-09-23) §3, §4, §10; `research-stances` SKILL.md hard rules; `on-the-record`
+`docs/quote-curation/PRINCIPLES.md`, `audit-quotes/CHECKS.md` §4, `CASEBOOK.md`.
+
+> Examples marked **[real]** are taken from rows in `inform.stance_research_review` (Season 1, June
+> 2026). The code shown is what this codebook *would* assign. It is not what was published. Several
+> of those rows were published under older rules; Season 2 research re-codes them.
+
+---
+
+## Part 0 — Frame
+
+### 0.1 Units
+
+- **Unit of analysis:** one *row* = (politician, office, topic, season). The coders code only the
+  season's **served** ladder revision.
+- **Unit of coding:** one *source passage*, meaning one snapshot excerpt, identified by `snapshot_id`.
+- **Quote unit:** one *candidate quote*, a verbatim span inside a snapshot.
+
+### 0.2 What a coder sees, and what it does not see
+
+- **It sees:** this codebook, the topic annex, the served ladder text (all five rungs), the
+  politician's name, office, jurisdiction and term dates, and the snapshot passages.
+- **It does not see:** the collector's opinion, any other coder's label, the chair currently
+  published, the party, or anything about the "usual" position of people like this one.
+- **Party is never evidence.** A coder that uses party, caucus or "voted with the majority" as a basis
+  for anything is wrong on that item (§A6 bad example 2).
+
+### 0.3 Decision order (fixed)
+
+Code the source passages first, one at a time. Then code the row.
+
+```
+per passage:  V1 attribution → V2 relevance → V3 evidence class → V4 shape → V5 time
+              (a disqualifying value at any step ends that passage: it cannot support a chair)
+per row:      V6 chair, using only passages that survived V1–V5
+per quote:    V7 tier → V8 quotable
+```
+
+### 0.4 Principles that override everything below
+
+1. **A blank is a correct answer.** An honest BLANK scores the same as a correct chair. A wrong chair
+   is the only failure that reaches voters.
+2. **Five chairs, not a polarity scale.** Each rung is a distinct stance. Evidence of *direction*
+   (for/against) does not choose between the rungs on one side.
+3. **"The least extreme rung the evidence supports" is a tiebreaker, not evidence.** If you are about
+   to use it, the row is not evidenced: code BLANK `direction-only`.
+4. **Never assume polarity.** Read the rung text. Rung 1 is not always "most government". The annex
+   marks inverted and off-axis topics.
+5. **Scope is per rung.** A rung that no officeholder at this level can act on cannot be evidenced at
+   this level.
+6. **Convergent error is not corroboration.** Two news stories that repeat one press release are one
+   source.
+
+---
+
+## Part A — Stance variables
+
+### V1 Attribution — *is this passage this person's own act or own words?*
+
+| Value | Definition |
+|---|---|
+| `own-words` | First person, or a direct quotation of the person, attributed in the text. |
+| `own-act` | A recorded act of the person: sponsorship, a vote, a veto, a signed filing, an adopted motion. |
+| `third-party-characterization` | Someone else describing the person ("a champion of…", "has long supported…"). |
+| `namesake-unclear` | It cannot be established that this is the same person *in this office*. |
+
+**Rules**
+- Only `own-words` and `own-act` can support a chair.
+- Voice decides, not domain. A campaign site that says "Jane will fight for…" in the third person is a
+  `third-party-characterization` of a promise. Look for the first-person version.
+- A news article's paraphrase is characterization. The article's quotation marks around the person's
+  words are `own-words`.
+- The office and jurisdiction in the passage must match the seat. If they do not, or are absent and
+  the name is common → `namesake-unclear`.
+
+**Good.** A senate press release quoting the president of the senate in his own words on the veto
+override he led. → `own-words` + `own-act`.
+
+**Hard [real].** J. Stuart Adams / `school-vouchers`. The basis says Adams "was a champion of the Utah
+Fits All Scholarship Program (HB215, 2023)", and quotes him in 2024 saying "educational choice is a
+right, not a privilege."
+- "Champion" is a `third-party-characterization`, so it supports nothing on its own.
+- The quotation is `own-words` and can go forward to V2.
+- The fix is to find his own act on HB215 (floor vote, sponsorship) in the legislature's record.
+
+**Hard.** A candidate's questionnaire answer published by a newspaper. → `own-words`: the paper is the
+channel, the words are the candidate's. The same answer summarized by the paper → characterization.
+
+**Bad [real].** Mike Kennedy / `voting-rights`. The only source is a Wikipedia article about the SAVE
+Act. An encyclopedia page about a bill is not the person's act; at most it points to the roll call.
+→ `third-party-characterization`, tagged `pointer` in the snapshot.
+
+---
+
+### V2 Relevance — *does the passage speak to this ladder's question, at this level?*
+
+| Value | Definition |
+|---|---|
+| `on-question` | It addresses the thing the rungs differ on. |
+| `adjacent` | Same policy area, but not the dimension the rungs separate. |
+| `off` | A different question, or the right question for a different office the person also holds. |
+
+**Rules**
+- Test against the **rung text**, not the topic label. `voting-rights` Season 1 is an identification
+  ladder, so a passage about mail ballots is `adjacent`.
+- `adjacent` passages can never support a chair.
+- **Preemption (ruling Q10, 2026-09-26).** A law that forbids another level of government to act
+  decides *which level* may set the rule, not *what* the rule is → `adjacent`, unless a rung is itself
+  about which level decides.
+  - **Refined 2026-09-26:** when the state law removes the very limits a rung names (a rung that says
+    "cut the zoning limits that block building", and a law that voids local zoning limits statewide),
+    it is `on-question` but only `direction-only`. One deregulation law cannot show that the person
+    wants *nothing more* ("rely on the market", "at most") — that is an unproven magnitude → BLANK.
+
+**Good.** `trans-athletes`: a vote to override a veto of a bill that restricts girls' school sports
+teams by sex at birth. The rungs differ exactly on that. → `on-question`.
+
+**Hard [real].** Blake Moore / `childcare`. The evidence is co-sponsorship of a $2,000 newborn tax
+credit and an expanded child tax credit. Season 1 rung 4 is "reducing regulations on childcare
+providers… with limited subsidies reserved for the lowest-income families."
+- A general child tax credit is not a childcare-provider or childcare-subsidy measure. → `adjacent`.
+- It cannot establish rung 4, whose operative clause is deregulation of providers. → Row: BLANK
+  `no-evidence` unless another source exists.
+
+**Hard [real].** Maria Elena Durazo / `voting-rights` / SB 1174 (2023-2024). She voted Aye on a bill
+whose operative section reads "A local government shall not enact or enforce any charter provision,
+ordinance, or regulation requiring a person to present identification for the purpose of voting".
+The ladder asks *what* identification the government should require (rung 1: "Require no
+identification to vote …").
+- The bill decides *which level of government* may set an ID rule. It leaves the state's own rule
+  as it is, and it says nothing about what that rule should be. A legislator can oppose a local
+  patchwork and still favour a state photo-ID law. → `adjacent`.
+- A preemption bill is `on-question` only when a rung is itself about which level decides.
+- 2026-09-25/26: three coders read it as rung 1, twice. Each time, the page mechanics (vote page,
+  bill text, a divided 30–8 tally) were correct, so CONFIRM cannot catch this reading. Only V2 can.
+
+**Bad [real].** Blake Moore / `data-centers`. The quote supports one local data-centre project "with
+environmental safeguards". It says nothing about permitting speed, energy-demand transparency or rate
+impacts, which are the clauses that separate rungs 3, 4 and 5. It is `on-question` only in the sense
+of the topic label. On the rungs → `adjacent`. Coding it as rung 4 ("streamlined permitting") is an
+unevidenced chair.
+
+---
+
+### V3 Evidence class — *what kind of evidence is it?*
+
+| Value | Definition |
+|---|---|
+| `record` | An instrument **plus** the person's action on it: authored, prime-sponsored, co-sponsored, voted yes/no, vetoed, signed into law, filed (a lawsuit, an amicus brief), signed an official letter. The instrument must be named (bill number, ordinance number, docket, case, dated letter). |
+| `statement-answer` | The person's own words **given in answer to this question**: a questionnaire (including one a group published with the candidate's answers), a moderated debate answer to the question, a first-person issue page on their own site, a signed pledge. |
+| `statement-other` | The person's own words matched to the question afterwards: news quotes, interviews, speeches, social posts. |
+| `not-evidence` | Scorecard grades, percentages and endorsements; quizzes; voter-guide summaries not in the person's words; encyclopedia or aggregator pages; advocacy-group profiles. |
+
+**Rules**
+- A record needs a named instrument. "Voted against clean energy mandates" with no instrument →
+  `not-evidence` until the roll call is found. Emit `needs_source` for it.
+- **A record reported only by news is not a record (H15).** "She authored Senate Bill 285" or "he
+  voted against it", written by a reporter, is the reporter's account of a record, not the record. Code
+  that passage by what it is: the person's own quoted words in it are `statement-other`; the
+  reporter's account of the act is context for those words, not a `record` passage, and it cannot
+  carry `record_kind`. Find the record itself (the bill page, the roll call) and code that instead;
+  emit `needs_source` for it. CONFIRM cannot check a record on a news page, because no source profile
+  reads records from one.
+- **Scorecards (Q9, ruled).**
+  - A grade, a percentage or an endorsement is `not-evidence`, and it is not corroboration either.
+    A scorecard is another organization's choice of *which* votes count, with hidden weights, and it
+    often brings back the party signal.
+  - The scorecard **page** is a `pointer`. Follow it to the roll calls it lists, and code each one as
+    a record on its own.
+- **Pledges (Q8, ruled): `statement-answer`.**
+  - The text is the group's, and the person agreed to it, which is how a questionnaire works.
+  - It does **not** outrank the person's later words, because it is not a record.
+  - The election-cycle rule (V5) applies: a pledge signed three campaigns ago → review.
+- **Lawsuits, amicus briefs, signed official letters (Q8, ruled): `record`.** The **legal claim or the
+  letter's demand itself** must match the rung clause in V4. A procedural claim (standing, authority,
+  a deadline) proves nothing about the policy.
+- **Classifying `statement-answer` vs `statement-other`: was there a question?** If the person was
+  answering *this* question (a questionnaire item, a moderator's question, their own issue page
+  heading), it is an answer. If a curator later decided that the words speak to the question, it is
+  `statement-other`. When unsure → `statement-other`.
+- When `record` and a statement conflict, the record wins, and the row is coded
+  `record-vs-statement-conflict` if the conflict decides the chair.
+- **Record fields (0.3).**
+  - `record_kind` is one of `vote` / `sponsor` / `author` / `other-act`. Every `record` passage
+    carries it — the bill-text page of a vote is `vote` too.
+  - `actor_quote` is the words, verbatim, showing this person acted: the Aye/No list segment that
+    contains the surname, or the author/sponsor line. If two members on the page share the surname,
+    or the surname is a common one (Adams, Walker, Smith …), include the initial or first name (for
+    example `Walker G`, or `Watson, R.`).
+  - `tally_quote` is the vote count text, verbatim (for example `Ayes Count 29 Noes Count 8`).
+  - **They are required per record, not per page (ruling 2026-09-26).** All `record` passages on one
+    `instrument` are one record. At least one of them carries `actor_quote`; for a vote, at least one
+    carries `tally_quote`. Put each fact on the page that prints it: `actor_quote` and `tally_quote`
+    on the vote page, `provision_quote` on the page that prints the provision (usually the bill
+    text). A page that does not print a fact carries `null` for it — never copy a fact onto a page
+    that does not show it.
+  - **An amending bill's page keeps deleted text fenced as `[deleted: …]` (amendment-markup spec
+    2026-09-27 §2).** That text is removed from the law — it is never the provision, and never
+    quoted as `provision_quote`. A bill's effect is the added text plus the unchanged text.
+- `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
+  one record must name the same instrument.
+
+**Worked example — a vote is two passages.** The vote page names the voter and the count but not
+the provision; the bill text prints the provision but names no voter. Both are in `rests_on`.
+
+| field | vote page (`billVotesClient`, SB 1174) | bill text (`billNavClient`, SB 1174) |
+|---|---|---|
+| `v3_class` / `record_kind` | `record` / `vote` | `record` / `vote` |
+| `instrument` | `SB 1174 (2023-2024)` | `SB 1174 (2023-2024)` |
+| `actor_quote` | `Ayes Archuleta, Ashby, … Dodd, Durazo` | `null` |
+| `tally_quote` | `Ayes Count 30 Noes Count 8` | `null` |
+| `provision_quote` | `null` | `A local government shall not enact or enforce any charter provision, …` |
+
+**Good.** "H.R. 8035, Ukraine Security Supplemental Appropriations Act, 2024 — Yea", from the Clerk's
+roll call. → `record`.
+
+**Hard [real].** Blake Moore / `taxes`: the ATR Taxpayer Protection Pledge. → `statement-answer`
+(Q8). The pledge commits against *any* net tax increase. It can therefore evidence a "no tax increases" rung, but
+it cannot choose between rungs that differ on *which* cuts.
+
+**Bad [real].** Blake Moore / `climate-change`: "scored 0% from the League of Conservation Voters" +
+the LCV scorecard page. → `not-evidence`. The same row's own quote ("if there needs to be some type of
+tax incentive to make sure that they can be on the grid") leans *toward* subsidy, not toward S1 rung 4
+("let market forces drive"). A coder that leans on the scorecard reaches the opposite reading from the
+person's own words.
+
+**Bad [real].** Blake Moore / `civil-rights`: an advocacy group's lawmaker profile and a
+legislator-directory page. → both `not-evidence`.
+
+---
+
+### V4 Shape — *what can this passage prove?*
+
+This variable is the core of the codebook. The stance-program pass-1 measurement is the reason:
+*shape*, not type, predicted which chairs survived audit (authored bill 67%, co-authored 40%, bare vote
+0%, statement alone 0%).
+
+| Value | Definition | Can support a chair? |
+|---|---|---|
+| `chair-shaped` | The operative content matches **every clause** of one rung and excludes the adjacent rungs. | yes |
+| `direction-only` | It shows for/against but does not separate the rungs on that side. | no |
+| `multi-subject` | A vote on a bill with many unrelated parts (omnibus, budget, appropriations, reconciliation). | only via the vote ladder |
+| `procedural` | Cloture, rule, table, recommit, previous question, adjournment. | no |
+| `study-directive` | It orders a study, task force or report. | no |
+| `near-unanimous` | Fewer than 10% of the body voted against. | no, alone |
+| `rhetorical` | Real and attributed, but it names no policy clause ("hateful and divisive"). | no |
+| `off-axis` | It speaks to the topic along a dimension the ladder does not order. | no |
+
+#### V4.1 The vote ladder (ruling 2026-09-25)
+
+A vote does not mean support for every clause of a bill.
+
+| Vote | Can prove |
+|---|---|
+| Amendment / motion to strike / divided question on **the specific provision** | a chair |
+| Final passage of a **single-subject** bill whose operative section matches the rung | a chair |
+| Final passage of a **multi-subject** bill | direction at most. It proves a chair **only** if the person's own statement ties their vote to *that provision* (an explanation of vote, a floor speech). |
+| **No** on a multi-subject bill | nothing. They may have objected to any part. |
+| Procedural | nothing about the policy |
+
+- A coder citing a vote must fill `provision_quote`: the operative text it relies on, verbatim from a
+  snapshot. The gate rejects the label if the text is not in the snapshot.
+- **The operative section governs, not the recital or the short title** (C38, C51).
+- **A study directive that states its goal (H16, ruling 2026-10-02).** A vote for a study does not say
+  what the person hopes it finds, so a study directive is never a chair. Which blank it gives depends
+  on the bill's own text:
+  - The text states no outcome ("study X and report") → the row is BLANK `no-evidence`.
+  - The text states the outcome it seeks — findings that endorse a side ("the Legislature endorses a
+    health care system with unified financing, such as a single-payer health care system"), or a
+    study ordered "with the objective of creating" a named policy → BLANK `direction-only`, on that
+    side. It applies to anyone who acted on the bill, because the stated goal is in the text they
+    voted for; it is clearest for the author.
+  - This does not let a recital carry a chair: the operative section still governs what the bill
+    does, and the stated goal shows only a side.
+- **Sponsorship evidences the bill as filed** (C37). If the bill was amended out of shape, code the
+  version the person acted on.
+- A vote whose `tally_quote` shows fewer than 10% No is `near-unanimous` and cannot carry the chair
+  alone; a claimed vote with no vote page (for example a bill that died in committee) is not a vote.
+
+#### V4.2 Clause completeness
+
+- **Compound rungs need every clause evidenced** (stance-program §4.2). Rung 3 of `social-security`,
+  "small adjustments to **both** benefits **and** taxes", needs evidence on both.
+- **Broader than the instrument** (stance-program R3): an ADU-only bill cannot evidence "upzone broadly
+  to allow multifamily by right". Seat the narrower rung if one exists; otherwise BLANK.
+- **Silence is not a clause** (gold round 5, 2026-09-30). When a rung's clause is a limit or its
+  absence ("at every stage, with no time limit", "without exceptions"), the instrument must *say* it.
+  A text that declares a right and names no limit has not said "no limit"; it has said nothing about
+  limits, and other law may still set them. → `direction-only`.
+- **Ruling out the other rungs is not evidence for the one left** (gold round 5, 2026-09-30). "Not
+  rung 1 (nothing is required), not rung 3 (the law changes), so rung 2" establishes only a side. The
+  remaining rung still needs its own clauses matched — a repeal that *permits* a programme does not
+  "strengthen enforcement". This is the same fault as reaching for "the least extreme option the
+  reasoning supports" (CLAUDE.md): a tiebreaker, not evidence. → `direction-only`, or
+  `compound-partial` when the rung is compound and one clause is met.
+
+**Good (calibration A1).** A prime-sponsored bill that *is* "a moratorium on new data centres until the
+utility commission reports". Rung 1 is a moratorium. → `chair-shaped`.
+
+**Good [real].** J. Stuart Adams / `trans-athletes`. He led the 2022 Senate vote to override the
+governor's veto of HB11, a single-subject bill barring transgender girls from girls' school teams.
+S1 rung 4: "require transgender athletes to compete only on teams matching their biological sex
+assigned at birth."
+- The instrument's operative content is rung 4.
+- Rung 5 (a total ban from all sport) is excluded by the bill's own text.
+- → `chair-shaped`. (Check under V5: the act is in-term.)
+
+**Hard [real].** Blake Moore / `ukraine-support`. Yea on H.R. 8035, a Ukraine-specific supplemental
+appropriation, plus his statement that it is "squarely in our national interest".
+- The bill is single-subject enough (Ukraine aid) → `chair-shaped` for *continuing aid*.
+- The rung-2 vs rung-1 boundary is "current levels" vs "increase". The coder must check that the
+  supplemental's size and the rung's magnitude line up.
+- If the annex does not settle whether a supplemental is "current level", code BLANK
+  `direction-only`. **This is the example to rule on for the annex.**
+
+**Hard [real].** Burgess Owens / `redistricting`: a filed federal lawsuit arguing the Elections Clause
+gives map-drawing "exclusively to state legislatures". → `record` (Q8), and the claim in the
+complaint is itself the position (a substantive claim, not a procedural one). It is `chair-shaped` if rung 5 says "legislature alone draws the
+maps". The coder quotes the complaint's claim as `provision_quote`.
+
+**Bad [real] — the omnibus trap.** Mike Kennedy / `school-vouchers`, published as rung 5 (universal
+vouchers). The basis is a Yea on the One Big Beautiful Bill Act (July 2025), a reconciliation bill
+covering taxes, Medicaid, immigration enforcement and more, one part of which created federal
+tax-credit scholarships.
+- → `multi-subject`. His vote proves nothing about the scholarship clause on its own.
+- A tax-credit scholarship is also not "funding follows the student to any school". → `adjacent`
+  on V2 as well.
+- The row needs his own words tying the vote to that clause, **and** a rung that matches the clause.
+  Otherwise → BLANK.
+
+**Bad [real].** Blake Moore / `medicare/aid` and `healthcare`: the same OBBBA vote used as the basis
+for two further rungs. → `multi-subject`, both times. The statements in those rows ("sound policy",
+defending work requirements) are about work requirements, a narrower clause than either rung. →
+`adjacent`.
+
+**Bad (calibration R1).** No on a rebate deal the member disliked. It rules out one end and names no
+chair. → `direction-only`.
+
+**Bad (calibration R6).** "Morally wrong… hateful and divisive." It is verbatim and attributed. →
+`rhetorical`.
+
+---
+
+### V5 Time — *does it describe the person's position now, in this role?*
+
+| Value | Definition |
+|---|---|
+| `in-term` | The act or statement dates from within a term of this office, or from the current campaign for it. **A record** (vote, sponsorship, authorship, a signed act) also counts as `in-term` when it dates from a term in **either chamber of the same legislature** (V5 ruling 2026-09-27, option B). |
+| `pre-seating` | A vote or act from before the person held a seat in this body. A record from **another level of government** (a city council, a county, Congress) is valid for that office only. |
+| `superseded-by-later` | A later passage from the same person states or acts differently. |
+| `undated` | No date can be established. |
+
+**Rules**
+- A **record** has no age limit if it is chair-shaped against the served rung text.
+- **Earlier chamber, same legislature (ruling 2026-09-27, option B).** A person moves between the two
+  chambers of one legislature as the same person, and what they sponsored there is often what elected
+  them to the other. So their earlier-chamber records are coded exactly like in-term records: the vote
+  ladder (V4.1), the near-unanimous rule and `superseded-by-later` all apply unchanged. Code, not the
+  coder, then checks that the earlier term is on file and that the page shows that term's chamber
+  (CONFIRM `prior-service-unverified`, `chamber-not-evidenced`). A statement is not a record: the
+  election-cycle rule below still decides it.
+  - **[real]** John Kavanagh / `school-vouchers`: co-sponsored and voted for AZ HB 2853 (2022) in the
+    House; a State Senator since 2023. → `in-term`; code the act on its content.
+  - A record from a **different level** (city council → legislature, legislature → Congress) is
+    `pre-seating`: the levers differ, so the ladder may not apply at the new level (scope is a per-rung
+    question).
+  - **Candidates too (ruling 2026-09-27).** A candidate for a seat in a legislature is coded on their
+    record from either chamber of that legislature, exactly as a seated member is — a former
+    representative running for the senate, say. Earlier service comes from
+    `essentials.legislative_service` (CA_0296); CONFIRM checks it the same way.
+- **A statement follows the election cycle (Q4, ruled).** It counts only if it is from one of:
+  - the current term;
+  - the current campaign;
+  - the campaign that seated the person in *this* office.
+
+  An older statement is coded, but the row goes to review (`statement-out-of-cycle`). Code, not the
+  coder, applies this from the dates; the coder records the date it sees.
+- `superseded-by-later` passages are coded but cannot support the chair. The newest evidence governs.
+- A person's position change is not an error. The closed season keeps the old chair.
+- `undated` statements cannot support a chair. `undated` records are looked up (the instrument has a
+  date).
+
+**Hard [real].** Blake Moore / `redistricting`: co-chair of the Better Boundaries campaign in 2017,
+before he was elected in 2020. Campaign work is not a vote, so this is not a pre-seating vote. But it
+is 9 years old, and the source is Wikipedia (V3 `not-evidence`). Find his own recent words; the 2017
+role alone → review.
+
+**Hard [real].** Celeste Maloy / `same-sex-marriage`: in a 2023 candidate debate she said she "would
+have voted yes" on the Respect for Marriage Act. → `own-words`, `statement-answer` (an answer to a moderator's question in a debate; if the only source is an article paraphrasing it, `statement-other`), pre-seating by
+construction (she was a candidate). A hypothetical vote on a named instrument is a strong statement:
+the instrument's content (marriage recognition with religious-organization protections) is the
+position. It is `in-term` for the campaign that seated her. Note: the served ladder changed between
+Seasons 1 and 2, and her Season 2 value differs. Re-code it against the served S2 rung text; do not
+carry the S1 reading forward.
+
+---
+
+### V6 Chair — *which rung does the surviving evidence establish?* (row level)
+
+**Values:** `1`–`5`, or `BLANK` with exactly one reason:
+
+| BLANK reason | Use when |
+|---|---|
+| `no-evidence` | No passage survived V1–V5. |
+| `direction-only` | The surviving passages separate the sides but not the rungs on one side. |
+| `adjacent-chairs` | Surviving passages establish two different rungs (stance-program R4). |
+| `compound-partial` | The best rung is compound and only some of its clauses are evidenced. |
+| `record-vs-statement-conflict` | The record and the statement point to different rungs, and the record is not itself chair-shaped. |
+| `scope-unavailable` | No officeholder at this level holds a lever on the rung (normally dropped before coding). |
+
+**Rules**
+- **`rests_on`** lists the snapshot IDs whose passages establish the chair. At least one is required
+  for a numeric chair.
+- **Reasoning:** 1–3 sentences that name the instrument or quote the words, and that cite the rung by
+  its **text**, not by its number.
+- **One instrument can establish chairs across a whole body** (calibration A4) — but only after a
+  cohort pass shows the members are not being separated by language that separates nobody.
+- **Party inference is a bad code** wherever it appears.
+
+**Good (calibration A3).** A council appointee's vacancy-application packet, published by the city,
+answers the ladder's question in his own words. It matches one rung clause for clause. → that rung.
+
+**Hard [real].** Celeste Maloy / `social-security`. Her 2024 voter-guide answer supported "gradually
+raising the retirement age"; in 2026 she said "everything's on the table", including lifting the cap.
+- The first statement is benefit-side only.
+- The second is `rhetorical`: "on the table" is not a position.
+- S1 rung 3 ("small adjustments to **both** benefits **and** taxes") is compound.
+- → BLANK `compound-partial`. Rung 4 is not established either: "raise the retirement age" is
+  one clause of rung 4, and "reduce benefits for higher earners" is unevidenced.
+
+**Hard [real].** Burgess Owens / `social-security`: co-sponsored the Social Security Fairness Act
+(repealed WEP/GPO, a benefit expansion for a specific group) and said lawmakers "must be willing to
+reform" the program.
+- The Act increases benefits for one group and has no tax side.
+- Rung 3 is compound (benefits and taxes); rung 2 is "increase benefits modestly **while** raising
+  taxes on higher earners".
+- → BLANK `compound-partial`.
+
+**Bad [real] — party inference.** Celeste Maloy / `trans-athletes`. Basis: "voted with the Republican
+caucus on this party-line vote. She has not expressed any dissent." Neither cited source is the roll
+call.
+- → Every passage fails V1 (no own act in the snapshot), and the reasoning uses the caucus as evidence.
+- → BLANK `no-evidence`. The right fix: fetch the Clerk's roll call for H.R. 28 (2025), which is
+  single-subject and `chair-shaped` for rung 4. It would then be a good example.
+
+**Bad [real].** Mike Kennedy / `voting-rights`. The SAVE Act requires documentary proof of citizenship
+to *register*. S1 rung 4 is "require photo ID for **voting** and regularly update voter rolls". Proof
+of citizenship at registration is a different clause. → V2 `adjacent`, V6 BLANK `no-evidence` (or the
+annex adds a rung that names it).
+
+---
+
+## Part B — Quote variables
+
+These variables apply to every **candidate quote** the collector surfaces, for Read & Rank and for the
+"Why this position?" citation.
+
+### V7 Tier — *what does the quote commit the speaker to?*
+
+The vocabulary is the on-the-record evidence program's.
+
+| Value | Definition |
+|---|---|
+| `lever` | It names a means that passes **both** T1 and T2, below. |
+| `direction` | A contestable lean whose means fails T2 ("remove regulations", "be tougher on…"). |
+| `none` | A shared goal, a diagnosis, a record or accomplishment, a complaint, biography, a slogan. |
+
+**The lever tests (Q5, ruled 2026-09-25).** Name the goal the quote serves, then apply:
+
+- **T1, the opponent test:** could a candidate *who holds the same goal* reasonably choose a different
+  means? If not, the "means" is the shared goal phrased as an action → `none`.
+- **T2, the accountability test:** could a voter later check whether the person *did it*? If not, the
+  means is too vague to hold anyone to → `direction`.
+
+A quote is `lever` only if it passes both. When the lever names a specific instrument (a law, a rule,
+a program, an agency action, a waiver, a budget line), also set `v7_flag = "lever-named"`. That tag
+is useful for display and for chair evidence; it is not required for rankability.
+
+This settles the disagreement between PRINCIPLES.md:139 ("build shelters" is a lever) and the
+decomposition spec (broad actions are not instruments):
+- "Build shelters" passes T1 (an opponent can prefer housing first) and T2 (shelter beds can be
+  counted) → `lever`.
+- "Build more housing", where every candidate says it, fails T1 → `none`.
+- "Triple housing construction" fails T1 (a target on a shared goal) unless the passage names how →
+  `none`.
+
+T1 is relative to the question and the race, not to the words. The coder uses the other candidates'
+passages when the collector supplies them; otherwise it sets `v7_flag = "lever-unclear"`.
+
+**Graded examples [real, `essentials.quotes`, Steve Hilton unless noted]**
+
+| # | Quote (short) | T1 | T2 | Code |
+|---|---|---|---|---|
+| 1 | "repeal the low-carbon fuel standard… change the refinery regulations" | yes | yes | `lever`, `lever-named` |
+| 2 | "a waiver from the Medicaid IMD rule that stops any institution with more than 16 beds…" | yes | yes | `lever`, `lever-named` |
+| 3 | "instructing the California Department of Geologic and Energy Management to… issue permits" | yes | yes | `lever`, `lever-named` |
+| 4 | "it is illegal to live and camp on the streets. We need to enforce the law… drug treatment… cannot be a choice" | yes (vs Becerra's "Housing First approaches… paired… with treatment") | yes | `lever` |
+| 5 | "If a community doesn't want a data center, there shouldn't be someone forcing that data center in there" | yes (vs state siting authority) | only if the passage says how (e.g., a local veto) | `direction` as quoted |
+| 6 | "We could get that back by removing regulations" (AI) | yes | no — which regulations? | `direction` |
+| 7 | "Government's role is to facilitate rather than provide…" (childcare) | yes | no | `direction` |
+| 8 | "common sense on climate change, not ideology" | — | — | `none` |
+
+⚠ **Two currently selected Read & Rank quotes code as not rankable** under this rule:
+- climate-change: #8;
+- economic-development: "California's policy regime should be unequivocally on the side of job- and
+  wealth-creators" → `direction`.
+
+A quote re-audit should review them. This codebook does not change them.
+
+**Good (lever).** "We must build much more housing. That includes… deed-restricted affordable,
+market-rate, social housing, and shelters." (PRINCIPLES.md). The second sentence names the means, so
+keep both sentences in the quote.
+
+**Hard [real, tier_gold_v1].** "I actually really believe in shelter and shelter is an urgent
+response. We've tripled the number of shelter beds…" The labeler wrote: "a mix of record and beliefs.
+I'm saying lever, but I'm not sure." Under the test: "shelter as the urgent response" is a means an
+opponent (housing-first) rejects → `lever`. The "tripled beds" clause is record → it does not add to
+the tier.
+
+**Hard [real, tier_gold_v1].** "I've… created the first real performance data… on our homelessness
+system." The labeler hesitated between direction and lever. Under the test: "manage by performance
+data" is a means few would reject → `direction`.
+
+**Bad → none [real, tier_gold_v1].** "We only have a third of the shelter that we need…" A diagnosis.
+The labeler: "more complaining" than proposing. → `none`.
+
+### V8 Quotable — *may this quote be shown?*
+
+`yes`, or one or more reason codes. The codes are the `audit-quotes` check IDs, so the two systems
+share one vocabulary.
+
+| Code | Meaning (full rule in `audit-quotes/CHECKS.md` §4) |
+|---|---|
+| `not-forward` | Record or retrospective, not what they would do. |
+| `is-attack` | Attacks a person rather than a policy or office. |
+| `off-question` | Does not answer the ranking question (not the topic label). |
+| `misleading-verbatim` | Word-for-word, but the cut changes the meaning in context. |
+| `source-not-an-answer` | Curator-extracted from a passage that was not an answer to this question. |
+| `deid-dishonest` | The blind version changes the position, or hides a load-bearing identity. |
+| `non-differentiating-goal` | V7 = `none` because of a shared goal. Flag for a human; do not gate. |
+
+**Rules**
+- The quote must be verbatim in its snapshot. That is a code check, not a coder judgment.
+- Trimming follows `publish-quotes/EDITORIAL.md`: marked cuts `…`, inserts `[ ]`, no reordering, no
+  cut of a load-bearing qualifier.
+- A quote can be quotable for the "Why this position?" citation and still not rankable in Read & Rank.
+  Rankable needs V7 = `lever` (and a certified quote stratum before any auto-promotion).
+
+---
+
+## Part C — Per-topic annex (template + one example)
+
+One file per open-season topic: `docs/codebook/annex/<topic_key>.md`. Written against the **served**
+revision. A new revision gets a new annex version.
+
+**Template**
+
+```
+# <topic_key> — served revision <id> (Season N)
+Orientation: standard | inverted | off-axis — one sentence why.
+Levels with a role: federal / state / local / school   (compass_topic_roles)
+Synonyms: statute or program names the state uses for this topic (e.g. "Medical Assistance Program" for Medicaid in Maryland)
+Per rung:
+  <n>. "<rung text>"
+     Operative clauses: [a] … [b] …
+     Establishing evidence looks like: …
+     Levels that hold a lever: …
+     Known chair-shaped instruments: …
+     Commonly confused with rung <m> because …
+Hard cases: …
+```
+
+**Example:** [`annex/school-vouchers.md`](annex/school-vouchers.md).
+
+---
+
+## Part D — Hard-case register
+
+Every row where the coders split, or where a person's blind answer differed from their final one,
+adds an entry here: situation → code → rule → gold item ID. Items listed here are
+`excluded_from_cert` (leakage).
+
+| # | Situation | Code | Rule | Source |
+|---|---|---|---|---|
+| H1 | Yea on a reconciliation bill that contains the clause | V4 `multi-subject` | V4.1 | [real] Kennedy / school-vouchers |
+| H2 | Party-line vote given as the only basis, and no roll call in the sources | V1 fail; BLANK `no-evidence` | 0.2, V6 | [real] Maloy / trans-athletes |
+| H3 | Scorecard beside a quote that points the other way | V3 `not-evidence` | V3 | [real] Moore / climate-change |
+| H4 | A hypothetical vote on a named bill, said as a candidate | `statement-answer`, the instrument is the content | V5 | [real] Maloy / same-sex-marriage |
+| H5 | A compound rung with one side evidenced | BLANK `compound-partial` | V4.2 | [real] Owens, Maloy / social-security |
+| H6 | A child tax credit coded on a childcare-provider rung | V2 `adjacent` | V2 | [real] Moore / childcare |
+| H7 | A filed lawsuit as the position | `record`; the substantive claim must match the rung (Q8) | V3 | [real] Owens / redistricting |
+| H8 | A signed pledge | `statement-answer` (Q8), limited shape | V3 | [real] Moore / taxes |
+| H9 | "Shelter is the urgent response" + a record | V7 `lever` | V7 T1+T2 | [real] tier_gold_v1 |
+| H10 | "Remove regulations" with none named | V7 `direction` (fails T2) | V7 T2 | [real] Hilton / ai-regulation |
+| H11 | Local-control principle without a mechanism | V7 `direction` | V7 T2 | [real] Hilton / data-centers |
+| H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
+| H13 | A declared right with no stated limit coded as the "no limit" rung | V4 `direction-only` | V4.2 "Silence is not a clause" | gold round 5 (item withheld; coded before this entry) |
+| H14 | A chair reached by excluding every other rung, with the remaining rung's clause unmatched | BLANK `direction-only` / `compound-partial` | V4.2 "Ruling out the other rungs" | gold round 5 (item withheld; coded before this entry) |
+| H15 | A news sentence that reports the person's vote or authorship, coded as a `record` | the quoted words → `statement-other`; the reported act → context only, `needs_source` | V3 "A record reported only by news" | gold round 14 (items withheld; coded before this entry) |
+| H16 | A study directive whose findings or stated objective endorse a side, coded `no-evidence` | BLANK `direction-only` (a study with no stated outcome stays `no-evidence`) | V4.1 "A study directive that states its goal" | gold round 15 (item withheld; coded before this entry) |
+
+---
+
+## Part E — Coder output schema (`labels/coder-N.json`)
+
+```json
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "uuid",
+      "office_id": "uuid",
+      "topic_id": "uuid",
+      "served_revision_id": "uuid",
+      "passages": [
+        {
+          "snapshot_id": "uuid",
+          "v1_attribution": "own-words | own-act | third-party-characterization | namesake-unclear",
+          "v2_relevance": "on-question | adjacent | off",
+          "v3_class": "record | statement-answer | statement-other | not-evidence",
+          "date": "YYYY-MM-DD | YYYY-MM | YYYY | null",
+          "v4_shape": "chair-shaped | direction-only | multi-subject | procedural | study-directive | near-unanimous | rhetorical | off-axis",
+          "v5_time": "in-term | pre-seating | superseded-by-later | undated",
+          "instrument": "H.R. 8035 (118th) | null",
+          "provision_quote": "verbatim operative text from this snapshot | null",
+          "note": "≤ 1 sentence",
+          "record_kind": "vote | sponsor | author | other-act | null",
+          "actor_quote": "verbatim span showing this person acted | null",
+          "tally_quote": "verbatim vote count text | null"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": ["snapshot uuid"],
+      "reasoning": "1–3 sentences; names the instrument or quotes the words; cites the rung by its text",
+      "needs_source": ["e.g. Clerk roll call, H.R. 28 (119th), final passage"],
+      "quotes": [
+        {
+          "snapshot_id": "uuid",
+          "text": "verbatim span",
+          "v7_tier": "lever | direction | none",
+          "v7_flag": "lever-named | lever-unclear | null",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Invariants (code-checked):**
+- `v6_value` is null **iff** `v6_blank_reason` is set.
+- A numeric `v6_value` requires `rests_on` to have at least one entry, and every entry must be a
+  passage whose V1–V5 values all allow a chair.
+- Every `provision_quote` and every quote `text` is verbatim in its snapshot.
+- Every value is from the lists above.
+- A `record` passage (`v3_class = "record"`) requires `record_kind`. Per instrument group (all
+  `record` passages of the row on one `instrument`), at least one passage carries a non-empty
+  `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
+  2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
+
+
+## The person
+
+politician_id: eb1a285e-fd86-4da1-a198-a66ad6a81be4  office_id: 3db4bfac-030f-4c8b-afbe-77c093e64ea9
+Ash Kalra — Assembly Member, California (seated, level: state)
+Current term: 2022-12-05 (precision: day) to present
+Earlier terms in this legislature: State Representative unknown (precision: unknown) to 2022-12-05
+
+## Topics (served ladder text — code against these words only)
+
+### topic_key: climate-change
+topic_id: f1e44d66-5d27-4b51-b54f-b7ace86f6a3c  served_revision_id: 5f1403f3-90b6-491f-ba54-3c8e46a5ae26
+Question: How much should government do to expand clean energy?
+  1. Require a shift to clean energy through mandates and firm deadlines.
+  2. Fund clean energy with major subsidies, tax credits, and public investment.
+  3. Speed up clean energy by cutting permitting red tape and upgrading the grid.
+  4. Stay neutral on energy and let the market choose among all sources.
+  5. End government subsidies and mandates for clean energy.
+
+#### Annex
+
+(no annex for this topic yet — apply the codebook alone)
+
+## Sources
+
+---
+snapshot_id: d408c686-abf1-56ca-b428-f44adccf94ab
+source_kind: public-record
+url: https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180SB100
+
+Senate Bill No. 100 CHAPTER 312 An act to amend Sections 399.11, 399.15, and 399.30 of, and to add Section 454.53 to, the Public Utilities Code, relating to energy. [ Approved by Governor September 10, 2018. Filed with Secretary of State September 10, 2018. ] LEGISLATIVE COUNSEL'S DIGEST SB 100, De León. California Renewables Portfolio Standard Program: emissions of greenhouse gases. (1) Under existing law, the Public Utilities Commission (PUC) has regulatory authority over public utilities, including electrical corporations, while local publicly owned electric utilities, as defined, are under the direction of their governing boards. The California Renewables Portfolio Standard Program requires the PUC to establish a renewables portfolio standard requiring all retail sellers, as defined, to procure a minimum quantity of electricity products from eligible renewable energy resources, as defined, so that the total kilowatthours of those products sold to their retail end-use customers achieve 25% of retail sales by December 31, 2016, 33% by December 31, 2020, 40% by December 31, 2024, 45% by December 31, 2027, and 50% by December 31, 2030. The program additionally requires each local publicly owned electric utility, as defined, to procure a minimum quantity of electricity products from eligible renewable energy resources to achieve the procurement requirements established by the program. The Legislature has found and declared that its intent in implementing the program is to attain, among other targets for sale of eligible renewable resources, the target of 50% of total retail sales of electricity by December 31, 2030. This bill would revise the above-described legislative findings and declarations to state that the goal of the program is to achieve that 50% renewable resources target by December 31, 2026, and to achieve a 60% target by December 31, 2030. The bill would require that retail sellers and local publicly owned electric utilities procure a minimum quantity of electricity products from eligible renewable energy resources so that the total kilowatthours of those products sold to their retail end-use customers achieve 44% of retail sales by December 31, 2024, 52% by December 31, 2027, and 60% by December 31, 2030. Under existing law, a local publicly owned electric utility is not required to procure more than a specified minimum quantity of eligible renewable energy resources under the program if it receives more than 50% of its retail sales from hydroelectric generation, as specified. This bill would revise those provisions, limit the applicability of this exception to large hydroelectric generation, and reduce that threshold to 40%. (2) Existing law establishes the California Environmental Protection Agency, establishes the State Air Resources Board within the agency as the entity with responsibility for control of emissions from motor vehicles, and designates the state board as the air pollution control agency for all purposes set forth in federal law. The California Global Warming Solutions Act of 2006 establishes the state board as the state agency charged with monitoring and regulating sources of emissions of greenhouse gases that cause global warming. The Warren-Alquist State Energy Resources Conservation and Development Act establishes the State Energy Resources Conservation and Development Commission (Energy Commission) and requires it to conduct an ongoing assessment of the opportunities and constraints presented by all forms of energy, to encourage the balanced use of all sources of energy to meet the state’s needs, and to seek to avoid possible undesirable consequences of reliance on a single source of energy. This bill would state that it is the policy of the state that eligible renewable energy resources and zero-carbon resources supply 100% of retail sales of electricity to California end-use customers and 100% of electricity procured to serve all state agencies by December 31, 2045. The bill would require that the achievement of this policy for California not increase carbon emissions elsewhere in the western grid and that the achievement not allow resource shuffling. The bill would require the PUC and the Energy Commission, in consultation with the state board, to take steps to ensure that a transition to a zero-carbon electric system for the State of California does not cause or contribute to greenhouse gas emissions increases elsewhere in the western grid. The bill would require the PUC, Energy Commission, state board, and all other state agencies to incorporate that policy into all relevant planning. The bill would require the PUC, Energy Commission, state board, and all other state agencies to ensure actions taken in furtherance of these purposes achieve specified objectives. The bill would require the PUC, Energy Commission, and state board to utilize programs authorized under existing statutes to achieve that policy and, as part of a public process, issue a joint report to the Legislature by January 1, 2021, and every 4 years thereafter, that includes specified information relating to the implementation of the policy. (3) Under existing law, a violation of the Public Utilities Act or any order, decision, rule, direction, demand, or requirement of the PUC is a crime. Because certain of the provisions of this bill would be a part of the act and because a violation of an order or decision of the PUC implementing its requirements would be a crime, the bill would impose a state-mandated local program. By expanding the requirements placed upon a local publicly owned electric utility, the bill would impose a state-mandated local program. The California Constitution requires the state to reimburse local agencies and school districts for certain costs mandated by the state. Statutory provisions establish procedures for making that reimbursement. This bill would provide that no reimbursement is required by this act for specified reasons. DIGEST KEY Vote: majority Appropriation: no Fiscal Committee: yes Local Program: yes BILL TEXT THE PEOPLE OF THE STATE OF CALIFORNIA DO ENACT AS FOLLOWS: SECTION 1. (a) This act shall be known as The 100 Percent Clean Energy Act of 2018. (b) The Legislature finds and declares that the Public Utilities Commission, State Energy Resources Conservation and Development Commission, and State Air Resources Board should plan for 100 percent of total retail sales of electricity in California to come from eligible renewable energy resources and zero-carbon resources by December 31, 2045. (c) It is the intent of the Legislature in enacting this act to extend and expand policies established pursuant to the California Renewables Portfolio Standard Program (Article 16 (commencing with Section 399.11) of Chapter 2.3 of Part 1 of Division 1 of the Public Utilities Code), and to codify the policies established pursuant to Section 454.53 of the Public Utilities Code, and that both be incorporated in long-term planning. SEC. 2. Section 399.11 of the Public Utilities Code is amended to read: 399.11. The Legislature finds and declares all of the following: (a) In order to attain a target of generating 20 percent of total retail sales of electricity in California from eligible renewable energy resources by December 31, 2013, 33 percent by December 31, 2020, 50 percent by December 31, 2026, and 60 percent by December 31, 2030, it is the intent of the Legislature that the commission and the Energy Commission implement the California Renewables Portfolio Standard Program described in this article. (b) Achieving the renewables portfolio standard through the procurement of various electricity products from eligible renewable energy resources is intended to provide unique benefits to California, including all of the following, each of which independently justifies the program: (1) Displacing fossil fuel consumption within the state. (2) Adding new electrical generating facilities in the transmission network within the WECC service area. (3) Reducing air pollution, particularly criteria pollutant emissions and toxic air contaminants, in the state. (4) Meeting the state’s climate change goals by reducing emissions of greenhouse gases associated with electrical generation. (5) Promoting stable retail rates for electric service. (6) Meeting the state’s need for a diversified and balanced energy generation portfolio. (7) Assisting with meeting the state’s resource adequacy requirements. (8) Contributing to the safe and reliable operation of the electrical grid, including providing predictable electrical supply, voltage support, lower line losses, and congestion relief. (9) Implementing the state’s transmission and land use planning activities related to development of eligible renewable energy resources. (c) The California Renewables Portfolio Standard Program is intended to complement the Renewable Energy Resources Program administered by the Energy Commission and established pursuant to Chapter 8.6 (commencing with Section 25740) of Division 15 of the Public Resources Code. (d) New and modified electric transmission facilities may be necessary to facilitate the state achieving its renewables portfolio standard targets. (e) (1) Supplying electricity to California end-use customers that is generated by eligible renewable energy resources is necessary to improve California’s air quality and public health, particularly in disadvantaged communities identified pursuant to Section 39711 of the Health and Safety Code, and the commission shall ensure rates are just and reasonable, and are not significantly affected by the procurement requirements of this article. This electricity may be generated anywhere in the interconnected grid that includes many states, and areas of both Canada and Mexico. (2) This article requires generating resources located outside of California that are able to supply that electricity to California end-use customers to be treated identically to generating resources located within the state, without discrimination. (3) California electrical corporations have already executed, and the commission has approved, power purchase agreements with eligible renewable energy resources located outside of California that will supply electricity to California end-use customers. These resources will fully count toward meeting the renewables portfolio standard procurement requirements. SEC. 3. Section 399.15 of the Public Utilities Code is amended to read: 399.15. (a) In order to fulfill unmet long-term resource needs, the commission shall establish a renewables portfolio standard requiring all retail sellers to procure a minimum quantity of electricity products from eligible renewable energy resources as a specified percentage of total kilowatthours sold to their retail end-use customers each compliance period to achieve the targets established under this article. For any retail seller procuring at least 14 percent of retail sales from eligible renewable energy resources in 2010, the deficits associated with any previous renewables portfolio standard shall not be added to any procurement requirement pursuant to this article. (b) The commission shall implement renewables portfolio standard procurement requirements only as follows: (1) Each retail seller shall procure a minimum quantity of eligible renewable energy resources for each of the following compliance periods: (A) January 1, 2011, to December 31, 2013, inclusive. (B) January 1, 2014, to December 31, 2016, inclusive. (C) January 1, 2017, to December 31, 2020, inclusive. (D) January 1, 2021, to December 31, 2024, inclusive. (E) January 1, 2025, to December 31, 2027, inclusive. (F) January 1, 2028, to December 31, 2030, inclusive. (2) (A) No later than January 1, 2017, the commission shall establish the quantity of electricity products from eligible renewable energy resources to be procured by the retail seller for each compliance period. These quantities shall be established in the same manner for all retail sellers and result in the same percentages used to establish compliance period quantities for all retail sellers. (B) In establishing quantities for the compliance period from January 1, 2011, to December 31, 2013, inclusive, the commission shall require procurement for each retail seller equal to an average of 20 percent of retail sales. For the following compliance periods, the quantities shall reflect reasonable progress in each of the intervening years sufficient to ensure that the procurement of electricity products from eligible renewable energy resources achieves 25 percent of retail sales by December 31, 2016, 33 percent by December 31, 2020, 44 percent by December 31, 2024, 52 percent by December 31, 2027, and 60 percent by December 31, 2030. The commission shall establish appropriate three-year compliance periods for all subsequent years that require retail sellers to procure not less than 60 percent of retail sales of electricity products from eligible renewable energy resources. (C) Retail sellers shall be obligated to procure no less than the quantities associated with all intervening years by the end of each compliance period. Retail sellers shall not be required to demonstrate a specific quantity of procurement for any individual intervening year. (3) The commission may require the procurement of eligible renewable energy resources in excess of the quantities specified in paragraph (2). (4) Only for purposes of establishing the renewables portfolio standard procurement requirements of paragraph (1) and determining the quantities pursuant to paragraph (2), the commission shall include all electricity sold to retail customers by the Department of Water Resources pursuant to Division 27 (commencing with Section 80000) of the Water Code in the calculation of retail sales by an electrical corporation. (5) The commission shall waive enforcement of this section if it finds that the retail seller has demonstrated any of the following conditions are beyond the control of the retail seller and will prevent compliance: (A) There is inadequate transmission capacity to allow for sufficient electricity to be delivered from proposed eligible renewable energy resource projects using the current operational protocols of the Independent System Operator. In making its findings relative to the existence of this condition with respect to a retail seller that owns transmission lines, the commission shall consider both of the following: (i) Whether the retail seller has undertaken, in a timely fashion, reasonable measures under its control and consistent with its obligations under local, state, and federal laws and regulations, to develop and construct new transmission lines or upgrades to existing lines intended to transmit electricity generated by eligible renewable energy resources. In determining the reasonableness of a retail seller’s actions, the commission shall consider the retail seller’s expectations for full-cost recovery for these transmission lines and upgrades. (ii) Whether the retail seller has taken all reasonable operational measures to maximize cost-effective deliveries of electricity from eligible renewable energy resources in advance of transmission availability. (B) Permitting, interconnection, or other circumstances that delay procured eligible renewable energy resource projects, or there is an insufficient supply of eligible renewable energy resources available to the retail seller. In making a finding that this condition prevents timely compliance, the commission shall consider whether the retail seller has done all of the following: (i) Prudently managed portfolio risks, including relying on a sufficient number of viable projects. (ii) Sought to develop one of the following: its own eligible renewable energy resources, transmission to interconnect to eligible renewable energy resources, or energy storage used to integrate eligible renewable energy resources. This clause shall not require an electrical corporation to pursue development of eligible renewable energy resources pursuant to Section 399.14. (iii) Procured an appropriate minimum margin of procurement above the minimum procurement level necessary to comply with the renewables portfolio standard to compensate for foreseeable delays or insufficient supply. (iv) Taken reasonable measures, under the control of the retail seller, to procure cost-effective distributed generation and allowable unbundled renewable energy credits. (C) Unanticipated curtailment of eligible renewable energy resources if the waiver would not result in an increase in greenhouse gas emissions. (D) Unanticipated increase in retail sales due to transportation electrification. In making a finding that this condition prevents timely compliance, the commission shall consider both of the following: (i) Whether transportation electrification significantly exceeded forecasts in that retail seller’s service territory based on the best and most recently available information filed with the State Air Resources Board, the Energy Commission, or another state agency. (ii) Whether the retail seller has taken reasonable measures to procure sufficient resources to account for unanticipated increases in retail sales due to transportation electrification. (6) If the commission waives the compliance requirements of this section, the commission shall establish additional reporting requirements on the retail seller to demonstrate that all reasonable actions under the control of the retail seller are taken in each of the intervening years sufficient to satisfy future procurement requirements. (7) The commission shall not waive enforcement pursuant to this section, unless the retail seller demonstrates that it has taken all reasonable actions under its control, as set forth in paragraph (5), to achieve full compliance. (8) If a retail seller fails to procure sufficient eligible renewable energy resources to comply with a procurement requirement pursuant to paragraphs (1) and (2) and fails to obtain an order from the commission waiving enforcement pursuant to paragraph (5), the commission shall assess penalties for noncompliance. A schedule of penalties shall be adopted by the commission that shall be comparable for electrical corporations and other retail sellers. For electrical corporations, the cost of any penalties shall not be collected in rates. Any penalties collected under this article shall be deposited into the Electric Program Investment Charge Fund and used for the purposes described in Chapter 8.1 (commencing with Section 25710) of Division 15 of the Public Resources Code. (9) Deficits associated with the compliance period shall not be added to a future compliance period. (c) The commission shall establish a limitation for each electrical corporation on the procurement expenditures for all eligible renewable energy resources used to comply with the renewables portfolio standard. This limitation shall be set at a level that prevents disproportionate rate impacts. (d) If the cost limitation for an electrical corporation is insufficient to support the projected costs of meeting the renewables portfolio standard procurement requirements, the electrical corporation may refrain from entering into new contracts or constructing facilities beyond the quantity that can be procured within the limitation, unless eligible renewable energy resources can be procured without exceeding a de minimis increase in rates, consistent with the long-term procurement plan established for the electrical corporation pursuant to Section 454.5. (e) (1) The commission shall monitor the status of the cost limitation for each electrical corporation in order to ensure compliance with this article. (2) If the commission determines that an electrical corporation may exceed its cost limitation prior to achieving the renewables portfolio standard procurement requirements, the commission shall do both of the following within 60 days of making that determination: (A) Investigate and identify the reasons why the electrical corporation may exceed its annual cost limitation. (B) Notify the appropriate policy and fiscal committees of the Legislature that the electrical corporation may exceed its cost limitation, and include the reasons why the electrical corporation may exceed its cost limitation. (f) The establishment of a renewables portfolio standard shall not constitute implementation by the commission of the federal Public Utility Regulatory Policies Act of 1978 (Public Law 95-617). SEC. 4. Section 399.30 of the Public Utilities Code is amended to read: 399.30. (a) (1) To fulfill unmet long-term generation resource needs, each local publicly owned electric utility shall adopt and implement a renewable energy resources procurement plan that requires the utility to procure a minimum quantity of electricity products from eligible renewable energy resources, including renewable energy credits, as a specified percentage of total kilowatthours sold to the utility’s retail end-use customers, each compliance period, to achieve the targets of subdivision (c). (2) Beginning January 1, 2019, a local publicly owned electric utility subject to Section 9621 shall incorporate the renewable energy resources procurement plan required by this section as part of a broader integrated resource plan developed and adopted pursuant to Section 9621. (b) The governing board shall implement procurement targets for a local publicly owned electric utility that require the utility to procure a minimum quantity of eligible renewable energy resources for each of the following compliance periods: (1) January 1, 2011, to December 31, 2013, inclusive. (2) January 1, 2014, to December 31, 2016, inclusive. (3) January 1, 2017, to December 31, 2020, inclusive. (4) January 1, 2021, to December 31, 2024, inclusive. (5) January 1, 2025, to December 31, 2027, inclusive. (6) January 1, 2028, to December 31, 2030, inclusive. (c) The governing board of a local publicly owned electric utility shall ensure all of the following: (1) The quantities of eligible renewable energy resources to be procured for the compliance period from January 1, 2011, to December 31, 2013, inclusive, are equal to an average of 20 percent of retail sales. (2) The quantities of eligible renewable energy resources to be procured for all other compliance periods reflect reasonable progress in each of the intervening years sufficient to ensure that the procurement of electricity products from eligible renewable energy resources achieves 25 percent of retail sales by December 31, 2016, 33 percent by December 31, 2020, 44 percent by December 31, 2024, 52 percent by December 31, 2027, and 60 percent by December 31, 2030. The Energy Commission shall establish appropriate multiyear compliance periods for all subsequent years that require the local publicly owned electric utility to procure not less than 60 percent of retail sales of electricity products from eligible renewable energy resources. (3) A local publicly owned electric utility shall adopt procurement requirements consistent with Section 399.16. (4) Beginning January 1, 2014, in calculating the procurement requirements under this article, a local publicly owned electric utility may exclude from its total retail sales the kilowatthours generated by an eligible renewable energy resource that is credited to a participating customer pursuant to a voluntary green pricing or shared renewable generation program. Any exclusion shall be limited to electricity products that do not meet the portfolio content criteria set forth in paragraph (2) or (3) of subdivision (b) of Section 399.16. Any renewable energy credits associated with electricity credited to a participating customer shall not be used for compliance with procurement requirements under this article, shall be retired on behalf of the participating customer, and shall not be further sold, transferred, or otherwise monetized for any purpose. To the extent possible for generation that is excluded from retail sales under this subdivision, a local publicly owned electric utility shall seek to procure those eligible renewable energy resources that are located in reasonable proximity to program participants. (d) (1) The governing board of a local publicly owned electric utility shall adopt procurement requirements consistent with subparagraph (B) of paragraph (4) of subdivision (a) of, and subdivision (b) of, Section 399.13. (2) The governing board of a local publicly owned electric utility may adopt the following measures: (A) Conditions that allow for delaying timely compliance consistent with subdivision (b) of Section 399.15. (B) Cost limitations for procurement expenditures consistent with subdivision (c) of Section 399.15. (e) The governing board of the local publicly owned electric utility shall adopt a program for the enforcement of this article. The program shall be adopted at a publicly noticed meeting offering all interested parties an opportunity to comment. Not less than 30 days’ notice shall be given to the public of any meeting held for purposes of adopting the program. Not less than 10 days’ notice shall be given to the public before any meeting is held to make a substantive change to the program. (f) Each local publicly owned electric utility shall annually post notice, in accordance with the Ralph M. Brown Act (Chapter 9 (commencing with Section 54950) of Part 1 of Division 2 of Title 5 of the Government Code), whenever its governing body will deliberate in public on its renewable energy resources procurement plan. (g) A public utility district that receives all of its electricity pursuant to a preference right adopted and authorized by the United States Congress pursuant to Section 4 of the Trinity River Division Act of August 12, 1955 (Public Law 84-386), shall be in compliance with the renewable energy procurement requirements of this article. (h) For a local publicly owned electric utility that was in existence on or before January 1, 2009, that provides retail electric service to 15,000 or fewer customer accounts in California, and is interconnected to a balancing authority located outside this state but within the WECC, an eligible renewable energy resource includes a facility that is located outside California that is connected to the WECC transmission system, if all of the following conditions are met: (1) The electricity generated by the facility is procured by the local publicly owned electric utility, is delivered to the balancing authority area in which the local publicly owned electric utility is located, and is not used to fulfill renewable energy procurement requirements of other states. (2) The local publicly owned electric utility participates in, and complies with, the accounting system administered by the Energy Commission pursuant to this article. (3) The Energy Commission verifies that the electricity generated by the facility is eligible to meet the renewables portfolio standard procurement requirements. (i) Notwithstanding subdivision (a), for a local publicly owned electric utility that is a joint powers authority of districts established pursuant to state law on or before January 1, 2005, that furnishes electric services other than to residential customers, and is formed pursuant to the Irrigation District Law (Division 11 (commencing with Section 20500) of the Water Code), the percentage of total kilowatthours sold to the district’s retail end-use customers, upon which the renewables portfolio standard procurement requirements in subdivision (b) are calculated, shall be based on the authority’s average retail sales over the previous seven years. If the authority has not furnished electric service for seven years, then the calculation shall be based on average retail sales over the number of completed years during which the authority has provided electric service. (j) A local publicly owned electric utility in a city and county that only receives greater than 67 percent of its electricity sources from hydroelectric generation located within the state that it owns and operates, and that does not meet the definition of a “renewable electrical generation facility” pursuant to Section 25741 of the Public Resources Code, shall be required to procure eligible renewable energy resources, including renewable energy credits, to meet only the electricity demands unsatisfied by its hydroelectric generation in any given year, in order to satisfy its renewable energy procurement requirements. (k) (1) For purposes of this subdivision, “large hydroelectric generation” means electricity generated from an existing hydroelectric facility located within the state that does not qualify as an eligible renewable energy resource and, as of January 1, 2018, was owned by a local publicly owned electric utility, the federal government as a part of the federal Central Valley Project, or a joint powers agency formed and created pursuant to the Joint Exercise of Powers Act (Chapter 5 (commencing with Section 6500) of Division 7 of Title 1 of the Government Code). (2) If, during a year within a compliance period set forth in subdivision (b), a local publicly owned electric utility receives more than 40 percent of its retail sales from large hydroelectric generation under an ownership agreement or contract in effect as of January 1, 2018, it is not required to procure eligible renewable energy resources that exceed the lesser of the following for that year: (A) The portion of the local publicly owned electric utility’s retail sales unsatisfied by the local publicly owned electric utility’s large hydroelectric generation. (B) The soft target adopted by the Energy Commission for the intervening years of the relevant compliance period. (3) An extension or renewal of a procurement agreement shall not be eligible to count towards the determination that the local publicly owned electric utility receives more than 40 percent of its retail sales from large hydroelectric generation in any year. This paragraph shall not apply to any agreement in effect on January 1, 2015, between a local publicly owned electric utility and the Western Area Power Administration or federal government as part of the federal Central Valley Project. (4) The Energy Commission shall adjust the total quantities of eligible renewable energy resources to be procured by a local publicly owned electric utility for a compliance period to reflect any reductions required pursuant to paragraph (2). (5) This subdivision does not modify the compliance obligation of a local publicly owned electric utility to satisfy the requirements of subdivision (c) of Section 399.16. (l) (1) (A) For purposes of this subdivision, “unavoidable long-term contracts and ownership agreements” means commitments for electricity from a coal-fired powerplant, located outside the state, originally entered into by a local publicly owned electric utility before June 1, 2010, that is not subsequently modified to result in an extension of the duration of the agreement or result in an increase in total quantities of energy delivered during any compliance period set forth in subdivision (b). (B) The governing board of a local publicly owned electric utility shall demonstrate in its renewable energy resources procurement plan required pursuant to subdivision (f) that any cancellation or divestment of the commitment would result in significant economic harm to its retail customers that cannot be substantially mitigated through resale, transfer to another entity, early closure of the facility, or other feasible measures. (2) For the compliance period set forth in paragraph (4) of subdivision (b), a local publicly owned electric utility meeting the requirement of subparagraph (B) of paragraph (1) may adjust its renewable energy procurement targets to ensure that the procurement of additional electricity from eligible renewable energy resources, in combination with the procurement of electricity from unavoidable long-term contracts and ownership agreements, does not exceed the total retail sales of the local publicly owned electric utility during that compliance period. The local publicly owned electric utility may limit its procurement of eligible renewable energy resources for that compliance period to no less than an average of 33 percent of its retail sales. (3) The Energy Commission shall approve any reductions in procurement targets proposed by a local publicly owned electric utility if it determines that the requirements of this subdivision are satisfied. (m) A local publicly owned electric utility shall retain discretion over both of the following: (1) The mix of eligible renewable energy resources procured by the utility and those additional generation resources procured by the utility for purposes of ensuring resource adequacy and reliability. (2) The reasonable costs incurred by the utility for eligible renewable energy resources owned by the utility. (n) The Energy Commission shall adopt regulations specifying procedures for enforcement of this article. The regulations shall include a public process under which the Energy Commission may issue a notice of violation and correction against a local publicly owned electric utility for failure to comply with this article, and for referral of violations to the State Air Resources Board for penalties pursuant to subdivision (o). (o) (1) Upon a determination by the Energy Commission that a local publicly owned electric utility has failed to comply with this article, the Energy Commission shall refer the failure to comply with this article to the State Air Resources Board, which may impose penalties to enforce this article consistent with Part 6 (commencing with Section 38580) of Division 25.5 of the Health and Safety Code. Any penalties imposed shall be comparable to those adopted by the commission for noncompliance by retail sellers. (2) Any penalties collected by the State Air Resources Board pursuant to this article shall be deposited in the Air Pollution Control Fund and, upon appropriation by the Legislature, shall be expended for reducing emissions of air pollution or greenhouse gases within the same geographic area as the local publicly owned electric utility. SEC. 5. Section 454.53 is added to the Public Utilities Code, to read: 454.53. (a) It is the policy of the state that eligible renewable energy resources and zero-carbon resources supply 100 percent of all retail sales of electricity to California end-use customers and 100 percent of electricity procured to serve all state agencies by December 31, 2045. The achievement of this policy for California shall not increase carbon emissions elsewhere in the western grid and shall not allow resource shuffling. The commission and Energy Commission, in consultation with the State Air Resources Board, shall take steps to ensure that a transition to a zero-carbon electric system for the State of California does not cause or contribute to greenhouse gas emissions increases elsewhere in the western grid, and is undertaken in a manner consistent with clause 3 of Section 8 of Article I of the United States Constitution. The commission, the Energy Commission, the State Air Resources Board, and all other state agencies shall incorporate this policy into all relevant planning. (b) The commission, Energy Commission, state board, and all other state agencies shall ensure that actions taken in furtherance of subdivision (a) do all of the following: (1) Maintain and protect the safety, reliable operation, and balancing of the electric system. (2) Prevent unreasonable impacts to electricity, gas, and water customer rates and bills resulting from implementation of this section, taking into full consideration the economic and environmental costs and benefits of renewable energy and zero-carbon resources. (3) To the extent feasible and authorized under law, lead to the adoption of policies and taking of actions in other sectors to obtain greenhouse gas emission reductions that ensure equity between other sectors and the electricity sector. (4) Not affect in any manner the rules and requirements for the oversight of, and enforcement against, retail sellers and local publicly owned utilities pursuant to the California Renewables Portfolio Standard Program (Article 16 (commencing with Section 399.11) of Chapter 2.3) and Sections 454.51, 454.52, 9621, and 9622. (c) Nothing in this section shall affect a retail seller’s obligation to comply with the federal Public Utility Regulatory Policies Act of 1978 (16 U.S.C. Sec. 2601 et seq.). (d) The commission, Energy Commission, and state board shall do both of the following: (1) Utilize programs authorized under existing statutes to achieve the policy described in subdivision (a). (2) In consultation with all California balancing authorities, as defined in subdivision (d) of Section 399.12, as part of a public process, issue a joint report to the Legislature by January 1, 2021, and at least every four years thereafter. The joint report shall include all of the following: (A) A review of the policy described in subdivision (a) focused on technologies, forecasts, then-existing transmission, and maintaining safety, environmental and public safety protection, affordability, and system and local reliability. (B) An evaluation identifying the potential benefits and impacts on system and local reliability associated with achieving the policy described in subdivision (a). (C) An evaluation identifying the nature of any anticipated financial costs and benefits to electric, gas, and water utilities, including customer rate impacts and benefits. (D) The barriers to, and benefits of, achieving the policy described in subdivision (a). (E) Alternative scenarios in which the policy described in subdivision (a) can be achieved and the estimated costs and benefits of each scenario. (e) Nothing in this section authorizes the commission to establish any requirements on a nonmobile self-cogeneration or cogeneration facility that served onsite load, or that served load pursuant to an over-the-fence arrangement if that arrangement existed on or before December 20, 1995. SEC. 6. No reimbursement is required by this act pursuant to Section 6 of Article XIII B of the California Constitution because a local agency or school district has the authority to levy service charges, fees, or assessments sufficient to pay for the program or level of service mandated by this act or because costs that may be incurred by a local agency or school district will be incurred because this act creates a new crime or infraction, eliminates a crime or infraction, or changes the penalty for a crime or infraction, within the meaning of Section 17556 of the Government Code, or changes the definition of a crime within the meaning of Section 6 of Article XIII B of the California Constitution. [Chaptered text of SB 100 (2017-2018), saved by browser from leginfo.legislature.ca.gov on 2026-10-02; the site's robots.txt disallows crawling.]
+
+---
+snapshot_id: 269d29a3-0c22-59d0-8c3f-76866fcdf736
+source_kind: public-record
+url: https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201720180SB100
+
+BILL VOTES SB-100 California Renewables Portfolio Standard Program: emissions of greenhouse gases.(2017-2018) Bill Votes Date 08/29/18 Result (PASS) Location Senate Floor Ayes Count 25 Noes Count 13 NVR Count 2 Motion Unfinished Business SB100 De León et al. Concurrence Ayes Allen, Atkins, Beall, Bradford, De León, Delgado, Dodd, Galgiani, Glazer, Hernandez, Hertzberg, Hill, Hueso, Jackson, Lara, Leyva, McGuire, Mitchell, Monning, Pan, Portantino, Skinner, Stern, Wieckowski, Wiener Noes Anderson, Bates, Cannella, Chang, Fuller, Gaines, Moorlach, Morrell, Nguyen, Nielsen, Stone, Vidak, Wilk NVR Berryhill, Roth Bill Votes Date 08/28/18 Result (PASS) Location Assembly Floor Ayes Count 44 Noes Count 33 NVR Count 3 Motion SB 100 De León Senate Third Reading By GONZALEZ FLETCHER Ayes Baker, Berman, Bloom, Bonta, Burke, Calderon, Carrillo, Chau, Chiu, Chu, Cooley, Eggman, Friedman, Gabriel, Cristina Garcia, Eduardo Garcia, Gloria, Gonzalez Fletcher, Grayson, Holden, Irwin, Jones-Sawyer, Kalra, Kamlager-Dove, Levine, Limón, Low, McCarty, Medina, Mullin, Muratsuchi, Nazarian, O'Donnell, Quirk, Reyes, Rivas, Rodriguez, Santiago, Mark Stone, Thurmond, Ting, Weber, Wood, Rendon Noes Acosta, Travis Allen, Bigelow, Brough, Caballero, Chávez, Chen, Choi, Cooper, Cunningham, Dahle, Daly, Flora, Fong, Frazier, Gallagher, Gipson, Gray, Harper, Kiley, Lackey, Maienschein, Mathis, Mayes, Melendez, Obernolte, Patterson, Quirk-Silva, Rubio, Salas, Steinorth, Voepel, Waldron NVR Aguiar-Curry, Arambula, Cervantes [Final floor votes (Senate concurrence and Assembly third reading) from the bill votes page for SB 100 (2017-2018), saved by browser from leginfo.legislature.ca.gov on 2026-10-02; the site's robots.txt disallows crawling.]

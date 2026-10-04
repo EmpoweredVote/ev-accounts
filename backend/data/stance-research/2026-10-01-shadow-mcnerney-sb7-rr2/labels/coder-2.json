@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0",
+      "office_id": "c8952cf4-85b9-4602-9edc-dfa0878583ff",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "190d126e-5005-54a7-bae2-6bd166c9a4f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 7 (2025-2026)",
+          "provision_quote": "When an employer relies primarily on ADS output to make a discipline, termination, or deactivation decision, the employer shall use a human reviewer to review the ADS output and compile and review other information that is relevant to the decision, if any.",
+          "note": "SB 7 regulates employer use of ADS (notice, use limits, human review, employer penalties) but holds employers, not AI developers, liable and requires no pre-use safety testing, so it shows direction without matching any rung's full clause set.",
+          "record_kind": "author",
+          "actor_quote": "Introduced by Senator McNerney",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "As author of SB 7 (2025-2026), McNerney's bill requires notice before ADS use, limits what an ADS may be used for, and requires a human reviewer before an employer relies primarily on ADS output for a discipline, termination, or deactivation decision, which shows more government oversight of AI deployment. But the bill's liability (civil penalty, civil action) runs against the employer that uses the ADS, not against 'the developer or company' that made or provided it, so it does not meet rung 3's clause that liability fall on the developer; and it requires no pre-use safety testing, so it does not meet rung 4's 'require safety testing before AI can be used in high-stakes areas like hiring.' No rung's full clause set is established.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

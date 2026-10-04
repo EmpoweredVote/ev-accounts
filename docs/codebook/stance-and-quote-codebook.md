@@ -23,6 +23,16 @@ how a judge's lower-court record is coded (`pre-seating`, with one lever-match e
 Maloy / `same-sex-marriage` example now reads the RFMA on its operative section (recognition → rung 2;
 its religious section is a savings clause). The version stays 0.4 so existing labels and gold keep
 counting; no gold item turns on either line.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value):** V3 "A record reported only by news is
+not a record", with register row H15. It restates the V3 rule that a record needs the instrument and
+the person's action on it, for the case where the only source of that action is a reporter's sentence.
+The items that prompted it are not named here, for the same reason as H13 and H14.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4 "A study
+directive that states its goal", with register row H16. It decides which existing blank reason a
+`study-directive` row takes; it changes no chair. The item that prompted it is not named here.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4.2 "The rung's
+object is a clause", with register row H17 and its `climate-change` example. The items that prompted it
+are not named here.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -183,6 +193,13 @@ unevidenced chair.
 **Rules**
 - A record needs a named instrument. "Voted against clean energy mandates" with no instrument →
   `not-evidence` until the roll call is found. Emit `needs_source` for it.
+- **A record reported only by news is not a record (H15).** "She authored Senate Bill 285" or "he
+  voted against it", written by a reporter, is the reporter's account of a record, not the record. Code
+  that passage by what it is: the person's own quoted words in it are `statement-other`; the
+  reporter's account of the act is context for those words, not a `record` passage, and it cannot
+  carry `record_kind`. Find the record itself (the bill page, the roll call) and code that instead;
+  emit `needs_source` for it. CONFIRM cannot check a record on a news page, because no source profile
+  reads records from one.
 - **Scorecards (Q9, ruled).**
   - A grade, a percentage or an endorsement is `not-evidence`, and it is not corroboration either.
     A scorecard is another organization's choice of *which* votes count, with hidden weights, and it
@@ -283,6 +300,17 @@ A vote does not mean support for every clause of a bill.
 - A coder citing a vote must fill `provision_quote`: the operative text it relies on, verbatim from a
   snapshot. The gate rejects the label if the text is not in the snapshot.
 - **The operative section governs, not the recital or the short title** (C38, C51).
+- **A study directive that states its goal (H16, ruling 2026-10-02).** A vote for a study does not say
+  what the person hopes it finds, so a study directive is never a chair. Which blank it gives depends
+  on the bill's own text:
+  - The text states no outcome ("study X and report") → the row is BLANK `no-evidence`.
+  - The text states the outcome it seeks — findings that endorse a side ("the Legislature endorses a
+    health care system with unified financing, such as a single-payer health care system"), or a
+    study ordered "with the objective of creating" a named policy → BLANK `direction-only`, on that
+    side. It applies to anyone who acted on the bill, because the stated goal is in the text they
+    voted for; it is clearest for the author.
+  - This does not let a recital carry a chair: the operative section still governs what the bill
+    does, and the stated goal shows only a side.
 - **Sponsorship evidences the bill as filed** (C37). If the bill was amended out of shape, code the
   version the person acted on.
 - A vote whose `tally_quote` shows fewer than 10% No is `near-unanimous` and cannot carry the chair
@@ -304,6 +332,16 @@ A vote does not mean support for every clause of a bill.
   "strengthen enforcement". This is the same fault as reaching for "the least extreme option the
   reasoning supports" (CLAUDE.md): a tiebreaker, not evidence. → `direction-only`, or
   `compound-partial` when the rung is compound and one clause is met.
+- **The rung's object is a clause (H17, ruling 2026-10-02).** A rung says *what* the government acts on,
+  not only *how*. A mandate with a firm deadline matches the mechanism of `climate-change` rung 1,
+  "Require a shift to **clean energy** through mandates and firm deadlines", only when the thing it
+  mandates is clean energy.
+  - A renewable-procurement standard with dated targets ("44 percent by December 31, 2024 … 60 percent
+    by December 31, 2030" of retail sales from eligible renewable resources) → rung 1, `chair-shaped`.
+  - A greenhouse-gas emissions limit ("reduced to at least 40 percent below … no later than December
+    31, 2030"), or a declared net-zero policy that names carbon capture and removal as paths, names no
+    energy source; it can be met in other ways → BLANK `direction-only` (the pro-action side).
+  - The same test applies on every ladder: match the rung's object, not only its verb.
 
 **Good (calibration A1).** A prime-sponsored bill that *is* "a moratorium on new data centres until the
 utility commission reports". Rung 1 is a moratorium. → `chair-shaped`.
@@ -615,6 +653,9 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 | H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
 | H13 | A declared right with no stated limit coded as the "no limit" rung | V4 `direction-only` | V4.2 "Silence is not a clause" | gold round 5 (item withheld; coded before this entry) |
 | H14 | A chair reached by excluding every other rung, with the remaining rung's clause unmatched | BLANK `direction-only` / `compound-partial` | V4.2 "Ruling out the other rungs" | gold round 5 (item withheld; coded before this entry) |
+| H15 | A news sentence that reports the person's vote or authorship, coded as a `record` | the quoted words → `statement-other`; the reported act → context only, `needs_source` | V3 "A record reported only by news" | gold round 14 (items withheld; coded before this entry) |
+| H16 | A study directive whose findings or stated objective endorse a side, coded `no-evidence` | BLANK `direction-only` (a study with no stated outcome stays `no-evidence`) | V4.1 "A study directive that states its goal" | gold round 15 (item withheld; coded before this entry) |
+| H17 | An emissions limit coded as `climate-change` rung 1 ("a shift to clean energy") | BLANK `direction-only`; a renewable-procurement standard with dates stays rung 1 | V4.2 "The rung's object is a clause" | gold round 17 (items withheld; coded before this entry) |
 
 ---
 

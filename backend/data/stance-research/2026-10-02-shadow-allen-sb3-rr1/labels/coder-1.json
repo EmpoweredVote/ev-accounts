@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4486f856-118b-475c-83f0-078581a7b268",
+      "office_id": "58c7cb0f-6409-4e6a-aa4f-1d146e88eb69",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "d42d09e7-2ede-5fa6-ba21-7954ba81ca8c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-03-31",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": null,
+          "note": "Senate floor concurrence vote of 26-12, so not near-unanimous; the Allen on the Senate list is the senator, while Travis Allen on the same page is in the Assembly Noes.",
+          "record_kind": "vote",
+          "actor_quote": "Location Senate Floor Ayes Count 26 Noes Count 12 NVR Count 2 Motion Unfinished Business (Supplemental File 1) SB3 Leno, et al. Concurrence Ayes Allen, Beall, Block, De León",
+          "tally_quote": "Ayes Count 26 Noes Count 12 NVR Count 2"
+        },
+        {
+          "snapshot_id": "8ac73b47-dab1-5d7f-ab2d-35aeb301746a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-04-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": "Following the implementation of the minimum wage increase specified in subparagraph (F) of paragraph (2) of subdivision (b), on or before August 1 of that year, and on or before each August 1 thereafter, the Director of Finance shall calculate an adjusted minimum wage. The calculation shall increase the minimum wage by the lesser of 3.5 percent and the rate of change in the averages of the most recent July 1 to June 30, inclusive, period over the preceding July 1 to June 30, inclusive, period for the United States Bureau of Labor Statistics nonseasonally adjusted United States Consumer Price Index for Urban Wage Earners and Clerical Workers (U.S. CPI-W). The result shall be rounded to the nearest ten cents ($0.10). Each adjusted minimum wage increase calculated under this subdivision shall take effect on the following January 1.",
+          "note": "Chaptered text printing the operative minimum wage section; the bill's other part, paid sick days for in-home supportive services providers, is itself keyed to the same minimum wage schedule, so this is a single-subject labor bill rather than an omnibus.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "d42d09e7-2ede-5fa6-ba21-7954ba81ca8c",
+        "8ac73b47-dab1-5d7f-ab2d-35aeb301746a"
+      ],
+      "reasoning": "Allen voted Aye on Senate concurrence in SB 3 (2015-2016), which steps the state minimum wage up to \"fifteen dollars ($15) per hour\" and then has the Director of Finance \"calculate an adjusted minimum wage\" annually by U.S. CPI-W, each increase taking effect \"on the following January 1\" with no further legislation. Both clauses of the rung \"Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation\" are in the operative section he voted for. The indexing formula excludes the neighbouring rung that would \"adjust it only when lawmakers vote to\".",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

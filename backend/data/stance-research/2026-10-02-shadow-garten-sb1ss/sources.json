@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-10-02-shadow-garten-sb1ss",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2022ss1/bills/senate/1/details",
+      "source_kind": "public-record",
+      "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
+      "office_id": "b93ba475-ef99-4209-be1d-28cc3eae2399",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1 (2022 special session)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/rollcalls/SB0001.58_S.pdf",
+      "source_kind": "public-record",
+      "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
+      "office_id": "b93ba475-ef99-4209-be1d-28cc3eae2399",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1 (2022 special session)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-rc58.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/SB0001.06.ENRH.pdf",
+      "source_kind": "public-record",
+      "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
+      "office_id": "b93ba475-ef99-4209-be1d-28cc3eae2399",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1 (2022 special session)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-enrolled.txt"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0|620160e2-1d50-45f2-b9ab-968b6be31820|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Ben Smaltz's own words as author (floor speech, committee remarks, questionnaire) on whether courts should review legislative maps for partisan bias",
+          "Smaltz's own statement or floor explanation of HB 1032's court-review provisions tying them to preventing partisan bias (rung 4) or to excluding outside interference (rung 5)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0|620160e2-1d50-45f2-b9ab-968b6be31820|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "requests": [
+        "Ben Smaltz's own words as author (floor speech, committee remarks, questionnaire) on whether courts should review legislative maps for partisan bias",
+        "Smaltz's own statement or floor explanation of HB 1032's court-review provisions tying them to preventing partisan bias (rung 4) or to excluding outside interference (rung 5)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

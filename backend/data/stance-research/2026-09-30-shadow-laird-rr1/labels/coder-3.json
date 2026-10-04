@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "178a41d4-42b5-4ffd-be06-d1059d54eacb",
+      "office_id": "eaf4cad0-012a-48a6-8765-ca9020432782",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "48806783-3894-5855-8a66-ed263f20f170",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1020 (2021-2022)",
+          "provision_quote": "It is the policy of the state that eligible renewable energy resources and zero-carbon resources supply 90 percent of all retail sales of electricity to California end-use customers by December 31, 2035, 95 percent of all retail sales of electricity to California end-use customers by December 31, 2040, 100 percent of all retail sales of electricity to California end-use customers by December 31, 2045, and 100 percent of electricity procured to serve all state agencies by December 31, 2035.",
+          "note": "Digest names Laird as author; Governor approved the chaptered bill within his current Senate term.",
+          "record_kind": "author",
+          "actor_quote": "SB 1020, Laird.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": ["48806783-3894-5855-8a66-ed263f20f170"],
+      "reasoning": "Laird authored SB 1020, which sets a renewable/zero-carbon retail-sales standard with firm percentage targets tied to specific calendar dates (90% by 2035, 95% by 2040, 100% by 2045). That is a mandate with firm deadlines, matching rung 1, \"Require a shift to clean energy through mandates and firm deadlines,\" per H17's renewable-procurement-standard-with-dates example, and it excludes the subsidy, permitting, neutral, and anti-mandate rungs.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

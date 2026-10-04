@@ -1,0 +1,10 @@
+Wrote `coder-1.json`.
+
+**Row: Matt Haney / cannabis-policy — BLANK (`direction-only`)**
+
+Two passages, both AB 1775 (2023-2024), one record group:
+
+- **Vote page** — `own-act` / `record` / `vote`. Actor quote from the Aye list, tally `Ayes Count 63 Noes Count 5`. 5 Noes of 68 voting is under 10%, so V4 = `near-unanimous`: it cannot carry a chair alone.
+- **Bill text** — `own-act` / `record` / `author` ("AB 1775, Haney."). Provision quoted from the operative amendment to § 26200(g)(1)(B)(i), not the digest.
+
+Both coded `on-question` and `in-term`, but V4 lands at `direction-only` on the bill text: the operative section lets local jurisdictions permit noncannabis food, beverages and performances at already-licensed consumption lounges. That shows he works within a legal commercial cannabis market, which rules out the prohibition rungs — but V4.2 says ruling out other rungs is not evidence for the one left, and nothing in the instrument separates "regulate it through a licensed, taxed commercial market" from "treat it like an ordinary legal product, with minimal restrictions." Hence BLANK rather than rung 4, with a `needs_source` entry for evidence on the regime question itself. No quotes emitted — both snapshots are statutory/roll-call text, not his words.

@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8edebfca-2e35-4424-85f8-f3ad498a2890",
+      "office_id": "74f6255e-04a3-481e-9a90-9fabcd9697f0",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "36c9d9a3-c4b0-5cfc-b18e-d791b9234e25",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2332 (2025)",
+          "provision_quote": "The department shall identify and compile relevant educational materials and information for health care professionals and patients regarding maternal mental health conditions, including postpartum depression",
+          "note": "The enacted bill mandates postpartum-depression education materials and a rural ob-gyn/maternal-mental-health advisory committee, not healthcare coverage or payment policy.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a58fdf07-8f73-57c1-9fe5-b7c363562a0f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-07",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2332 (2025)",
+          "provision_quote": null,
+          "note": "Willoughby's yes vote on HB2332 final passage concerns the same education/advisory-committee measure, which does not speak to the coverage-vs-market dimension the healthcare rungs separate.",
+          "record_kind": "vote",
+          "actor_quote": "WILLOUGHBY Y",
+          "tally_quote": "Passed 44-13-3-0-0"
+        },
+        {
+          "snapshot_id": "aec5f209-e03b-5705-a1a8-8608e15eada5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2332 (2025)",
+          "provision_quote": null,
+          "note": "Bill status confirms Willoughby as prime sponsor of HB2332, now signed law, on the same postpartum-education/advisory-committee measure.",
+          "record_kind": "sponsor",
+          "actor_quote": "Willoughby (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is Willoughby's sponsorship of, vote for, and signing into law of HB2332 (2025), which mandates postpartum-depression educational materials and creates a rural obstetrics/maternal-mental-health advisory committee; it is silent on who pays for or how to structure healthcare coverage, the dimension the healthcare rungs separate, so no rung is established.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

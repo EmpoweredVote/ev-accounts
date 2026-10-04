@@ -1,0 +1,54 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "7ff4262f-e23d-5c82-a03f-30024e1d89bd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": "The right to marry is a fundamental right.",
+          "note": "The measure repeals the one-man-one-woman definition and declares a fundamental right to marry, but names no benefits or protections, no jobs or housing nondiscrimination, and no religious-organization rule, so it does not separate the three pro-recognition rungs.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "36e059a0-4d0d-5ef1-9212-bc310d6bccea",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-13",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": null,
+          "note": "Wiener voted Aye on the Senate floor and presented the motion, but the tally shows zero Noes, so the vote cannot carry a chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Alvarado-Gil, Archuleta, Ashby, Atkins, Becker, Blakespear, Bradford, Caballero, Cortese, Durazo, Eggman, Glazer, Gonzalez, Hurtado, Laird, Limón, McGuire, Menjivar, Min, Newman, Padilla, Roth, Rubio, Skinner, Smallwood-Cuevas, Stern, Umberg, Wahab, Wiener, Wilk",
+          "tally_quote": "Ayes Count 31 Noes Count 0 NVR Count 9"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Wiener's only record here is his Aye on ACA 5 (2023-2024), whose operative section repeals the man-woman definition and provides that \"The right to marry is a fundamental right.\" That text places him on the recognition side but names no benefits or protections, no protection from discrimination \"such as in jobs and housing\", and nothing about religious organizations' right to decline, so it does not choose between \"full legal equality\", \"the same benefits and protections as any other marriage\", and the religious-exemption rung. The Senate floor tally is 31 Ayes and 0 Noes, so the vote is near-unanimous and cannot carry a chair alone either.",
+      "needs_source": [
+        "Scott Wiener's own first-person words answering what legal recognition same-sex marriages should receive, dated within his current Senate term",
+        "A California Senate bill Wiener authored, sponsored or voted on that pairs marriage recognition with protection from discrimination in employment and housing (to test the \"full legal equality\" rung)",
+        "A California Senate bill or amendment on a religious-organization exemption from performing or hosting marriages, with Wiener's recorded vote (to test the religious-exemption rung)"
+      ],
+      "quotes": []
+    }
+  ]
+}

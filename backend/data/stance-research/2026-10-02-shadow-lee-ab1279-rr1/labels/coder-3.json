@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375",
+      "office_id": "43dd153e-0834-434f-9577-f9bae44d8f89",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "be93f3c4-6cf6-5747-940c-bca5f19862e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": null,
+          "note": "Vote page shows Lee's Aye on concurrence; names no energy source, so it is H17's pro-action direction, not a rung-1 clean-energy mandate.",
+          "record_kind": "vote",
+          "actor_quote": "Jones-Sawyer, Kalra, Lee, Levine",
+          "tally_quote": "Ayes Count 52 Noes Count 18 NVR Count 10"
+        },
+        {
+          "snapshot_id": "d684a2cc-ce7b-5bf2-9d9b-42a414539c46",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": "It is the policy of the state to do both of the following: (1) Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045, and to achieve and maintain net negative greenhouse gas emissions thereafter.",
+          "note": "Bill text declares a net-zero/net-negative emissions policy and enables carbon capture and removal as paths; per H17 this names no energy source and can be met other ways.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [
+        "be93f3c4-6cf6-5747-940c-bca5f19862e9",
+        "d684a2cc-ce7b-5bf2-9d9b-42a414539c46"
+      ],
+      "reasoning": "Lee voted Aye to concur on AB 1279, which declares state policy to 'achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045' and directs the state board to enable carbon capture, utilization, and storage technologies toward that goal. Per H17, an emissions/net-zero policy that names carbon capture and removal as paths, naming no energy source, can be met in other ways and so matches only the pro-action direction, not rung 1's object ('a shift to clean energy through mandates and firm deadlines').",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

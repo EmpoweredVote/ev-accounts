@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "077fd751-3a54-5003-b65b-fd1ad1dcc063",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": "shall research, develop, and pursue discussions of a waiver framework in consultation with the federal government with the objective of creating a health care system that incorporates the following features and objectives:",
+          "note": "Operative Section 1001-1002 orders research, stakeholder engagement, and future reports/statutory proposals, not an enacted financing system; Section 1000 findings endorsing single-payer are recitals, not operative text.",
+          "record_kind": "author",
+          "actor_quote": "SB 770, Wiener.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c3d2ff3e-1337-524d-a694-568e618e4803",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 770 (2023-2024)",
+          "provision_quote": null,
+          "note": "Senate floor concurrence vote on the same study-directive bill; the vote confirms passage of the research/waiver-framework directive, not a chair on the ladder.",
+          "record_kind": "vote",
+          "actor_quote": "Umberg, Wahab, Wiener",
+          "tally_quote": "Ayes Count 29 Noes Count 9"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 770 (2023-2024), which Wiener authored and voted for (Senate concurrence, Ayes 29-Noes 9), directs the Secretary of California Health and Human Services to research and develop a waiver framework toward a unified health care financing system and report back to the Legislature by specified dates, with statutory language still to be proposed; its operative sections (1001, 1002) order a study and future reports, not an enacted system that is 'free and available to everyone, fully paid for by the public sector' or any other rung's text. Section 1000's findings endorse a single-payer-style system, but under the operative-section rule those recitals do not govern, so no passage establishes a chair.",
+      "needs_source": [
+        "Wiener's own statements (press release, op-ed, floor speech, interview) on SB 770 or single-payer/universal healthcare that go beyond the bill's study-directive text",
+        "Any later enacted statute implementing the SB 770 waiver framework, if since adopted"
+      ],
+      "quotes": []
+    }
+  ]
+}

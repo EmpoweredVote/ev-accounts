@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "eb1a285e-fd86-4da1-a198-a66ad6a81be4|3db4bfac-030f-4c8b-afbe-77c093e64ea9|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Ash Kalra's Assembly service start date (essentials.legislative_service) to confirm the 2018-08-28 vote falls within his earlier Assembly term, which is on file only as ending 2022-12-05 with an unknown start"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "eb1a285e-fd86-4da1-a198-a66ad6a81be4|3db4bfac-030f-4c8b-afbe-77c093e64ea9|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "Ash Kalra's Assembly service start date (essentials.legislative_service) to confirm the 2018-08-28 vote falls within his earlier Assembly term, which is on file only as ending 2022-12-05 with an unknown start"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

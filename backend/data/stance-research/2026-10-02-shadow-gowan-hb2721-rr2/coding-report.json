@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e71471f4-bef5-46ef-a1f2-f19f275b558d|fe457319-058b-4dc5-8540-dac64a6a328f|669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "David Gowan's own words (questionnaire, issue page, floor statement) on whether government should build public housing, set rent caps or required affordable units, or fund housing subsidies, 2023-2026",
+          "An Arizona Senate roll call with Gowan recorded on a rent-regulation or inclusionary-requirement bill, 56th or 57th Legislature",
+          "An Arizona Senate roll call or sponsorship with Gowan recorded on a housing subsidy, state housing trust fund or affordable-housing tax credit measure, 56th or 57th Legislature"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e71471f4-bef5-46ef-a1f2-f19f275b558d|fe457319-058b-4dc5-8540-dac64a6a328f|669cac97-66a6-4087-b036-936fbe62efb3",
+      "requests": [
+        "David Gowan's own words (questionnaire, issue page, floor statement) on whether government should build public housing, set rent caps or required affordable units, or fund housing subsidies, 2023-2026",
+        "An Arizona Senate roll call with Gowan recorded on a rent-regulation or inclusionary-requirement bill, 56th or 57th Legislature",
+        "An Arizona Senate roll call or sponsorship with Gowan recorded on a housing subsidy, state housing trust fund or affordable-housing tax credit measure, 56th or 57th Legislature"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

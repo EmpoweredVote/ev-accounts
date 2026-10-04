@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "eb8b6aa3-a9d2-4792-8175-a105304da87f|429c8d57-1550-4fcf-9592-d6c166f443d7|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_key": "healthcare",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Wiener's own words (first-person statement, questionnaire answer or debate answer) on whether every Californian should be covered with no cost sharing and whether private insurance would remain",
+          "A roll call showing Wiener's vote on a California single-payer bill that would itself enroll residents (for example AB 1400, 2021-2022)",
+          "An enacted or voted single-payer/public-option coverage bill with an operative coverage or financing mandate (not a study/waiver-framework directive) to establish a numeric chair"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "eb8b6aa3-a9d2-4792-8175-a105304da87f|429c8d57-1550-4fcf-9592-d6c166f443d7|e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "requests": [
+        "Wiener's own words (first-person statement, questionnaire answer or debate answer) on whether every Californian should be covered with no cost sharing and whether private insurance would remain",
+        "A roll call showing Wiener's vote on a California single-payer bill that would itself enroll residents (for example AB 1400, 2021-2022)",
+        "An enacted or voted single-payer/public-option coverage bill with an operative coverage or financing mandate (not a study/waiver-framework directive) to establish a numeric chair"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

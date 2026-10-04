@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+      "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "c0c966a9-84bd-5314-8011-594dd9fad9a3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-07-03",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": "“Race” is inclusive of traits historically associated with race, including, but not limited to, hair texture and protective hairstyles.",
+          "note": "Bill text amending Education Code 212.1 and FEHA's Government Code 12926 to include hair texture and protective hairstyles within the definition of race.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "395a38a1-fcd1-5a3e-b3df-46bfbc6c14a5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-04-22",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": null,
+          "note": "Senate floor vote page shows Caballero among the Ayes on SB 188 final passage, 37-0.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Archuleta, Atkins, Bates, Beall, Bradford, Caballero, Chang, Dodd, Durazo",
+          "tally_quote": "Ayes Count 37 Noes Count 0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Caballero voted Aye on SB 188 (2019-2020), which expands the Education Code and FEHA definition of race to cover hair texture and protective hairstyles and addresses systemic discrimination in grooming policies — content that would otherwise fit rung 2's 'strengthen civil rights enforcement and address systemic discrimination'. But the vote was near-unanimous (Ayes 37, Noes 0), she was not the bill's author (Mitchell et al.), and no statement of her own ties her to the provision, so per the annex the vote cannot carry the chair alone.",
+      "needs_source": [
+        "Caballero's own words on SB 188 or civil-rights generally, or evidence she authored/co-sponsored an anti-discrimination measure, to establish the chair"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "b9379b8b-cb68-500a-a099-8922f2af98a7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1137 (2021-2022)",
+          "provision_quote": "Notwithstanding any other law, commencing January 1, 2023, the division shall not approve any notice of intention under Section 3203 within a health protection zone, except for approvals of notices of intention necessary for any of the following purposes: (1) To prevent or respond to a threat to public health, safety, or the environment. (2) To comply with a court order finding that denying approval would amount to a taking of property, or a court order otherwise requiring approval of a notice of intention. (3) To plug and abandon or reabandon a well, including an intercept well necessary to plug and abandon or reabandon a well.",
+          "note": "She is named as the bill's author in the Legislative Counsel's Digest, and the bill was chaptered during her current term.",
+          "record_kind": "author",
+          "actor_quote": "SB 1137, Gonzalez.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 1137, which Gonzalez authored and which was signed into law in 2022, bars the division from approving new notices of intention to drill only within a defined 'health protection zone' (3,200 feet of sensitive receptors), with limited exceptions. This is a siting limit on new drilling covering only part of the jurisdiction, not a jurisdiction-wide bar on new drilling that rung 2's clause [a] ('no new drilling') requires, so it shows direction against unrestricted new drilling without establishing rung 2.",
+      "needs_source": ["Gonzalez's own words or a jurisdiction-wide (statewide) bar on new drilling/leasing, or a statement on where production overall should stand, to separate direction from a specific rung"],
+      "quotes": []
+    }
+  ]
+}

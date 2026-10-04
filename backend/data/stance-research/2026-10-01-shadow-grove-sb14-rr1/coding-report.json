@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "03ee06fb-9b51-41cc-8942-4632f3a724e3|e38cdc56-9228-456b-ba4c-3fc0ab72f6cd|9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "topic_key": "judicial-criminal-justice",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Grove's own words on how the system should respond to lawbreaking in general (questionnaire answer, issue page, or floor statement), to separate the accountability rung from the toughest-penalties rung",
+          "Further chair-shaped records in the 2023-2026 term on sentencing or diversion generally, not a single offense category"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "03ee06fb-9b51-41cc-8942-4632f3a724e3|e38cdc56-9228-456b-ba4c-3fc0ab72f6cd|9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "requests": [
+        "Grove's own words on how the system should respond to lawbreaking in general (questionnaire answer, issue page, or floor statement), to separate the accountability rung from the toughest-penalties rung",
+        "Further chair-shaped records in the 2023-2026 term on sentencing or diversion generally, not a single offense category"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

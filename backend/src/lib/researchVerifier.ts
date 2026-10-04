@@ -255,12 +255,18 @@ export const COMMON_LAST_NAMES: ReadonlySet<string> = new Set([
   'phillips', 'evans', 'turner', 'parker', 'edwards', 'collins',
 ]);
 
+// ⚠ The municipal and county titles matter as much as the legislative ones for
+// this programme: a city commission (Miami, Tallahassee), a county commission,
+// a board of supervisors and a school board of trustees all style their members
+// with words this pattern did not carry. Miami seats a Christine King and
+// Bradenton a Lisa Gonzalez Moore — `king`, `moore`, `brown` and `gonzalez` are
+// all COMMON_LAST_NAMES, so without the title the guard cannot fire for them.
 // ⚠ `council member` and `city council member` are the two-word renderings most
 // newspapers use; the closed-up `councilmember` is mostly an official-site
 // spelling. Without the spaced forms the common-surname fallback cannot fire for
 // a city councillor, which is the whole municipal cohort — "Council member Renee
 // Johnson" failed this test while "Councilmember" would have passed.
-const TITLE_PATTERN = /\b(sen|sen\.|senator|rep|rep\.|representative|gov|gov\.|governor|pres|pres\.|president|mayor|councilor|councilman|councilwoman|councilmember|council member|city council member|delegate|asm|asm\.|assemblymember|judge|justice|chief|sheriff|hon|hon\.|honorable)\b/;
+const TITLE_PATTERN = /\b(sen|sen\.|senator|rep|rep\.|representative|gov|gov\.|governor|pres|pres\.|president|mayor|councilor|councilman|councilwoman|councilmember|council member|city council member|commissioner|county commissioner|alderman|alderwoman|alderperson|supervisor|trustee|selectman|delegate|asm|asm\.|assemblymember|judge|justice|chief|sheriff|hon|hon\.|honorable)\b/;
 
 export function checkNameProximity(args: {
   fullName: string;

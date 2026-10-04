@@ -1,0 +1,22 @@
+Written: `labels/coder-1.json`, one row (Jim Lucas / `gun-policy`), chair **5**.
+
+**How it coded**
+
+| Passage | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| Roll call 382 (CCR adopted) | own-act | on-question | record / vote | chair-shaped | in-term |
+| HEA 1296 enrolled text | own-act | on-question | record / vote | chair-shaped | in-term |
+| IGA bill details (co-authors) | own-act | on-question | record / author | chair-shaped | in-term |
+
+All three are one instrument group, `HB 1296 (2022)`: `actor_quote` on the roll call (`Abbott Frye Lucas Slager`) and on the details page (the co-author line through `Rep. Jim Lucas`), `tally_quote` on the roll call (`Yea 69 Nay 30 Excused 1 Not Voting 0`), `provision_quote` only on the page that prints the provision.
+
+**Why rung 5, not rung 4.** The enrolled act repeals the carry-licensing sections outright and provides that an adult 18+ not otherwise prohibited is "not required to obtain or possess a license or permit from the state to carry a handgun in Indiana" — both verbs of "Repeal major gun restrictions and let adults carry a firearm without a permit" are performed by the instrument's own operative text. Rung 4 caps at "at most loosen rules on carrying, such as honoring permits across state lines," which presumes a permit that still exists; this act abolishes it. Not a tiebreaker, not an exclusion argument (H14).
+
+Three notes on judgment calls:
+- The CCR adoption is the final substantive vote on the enrolled text, not one of V4's procedural forms (cloture, table, recommit…), so the vote ladder treats it as final passage. 30 of 99 Nay clears the near-unanimous bar.
+- Not `multi-subject`: the conforming amendments (training cross-refs, probation officers, off-road vehicle transport, juvenile jurisdiction, arrest authority, sentencing) all run to the same firearms subject, unlike the OBBBA pattern in H1.
+- `provision_quote` is a single fence-free contiguous span — the SECTION 12 sentence carries `[deleted: …]` fences mid-clause, which 0.3.1 bars from the quote, so the span starts at "under state or federal law".
+
+`needs_source` carries one item: HB 1296 as introduced, to confirm under C37 that the version Lucas co-authored matches the enrolled act. The chair does not depend on it — it rests on the vote plus the enrolled text.
+
+I wrote the file twice: the first version's note on the bill-text passage contained a misquoted citation that also asserted the opposite of what the act says. The second write corrected it; the coded values were unchanged.

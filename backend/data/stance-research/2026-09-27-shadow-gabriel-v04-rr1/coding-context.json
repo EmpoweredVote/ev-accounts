@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-09-27-shadow-gabriel-v04-rr1",
+  "seat": {
+    "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+    "full_name": "Jesse Gabriel",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+    "office_title": "Assembly Member",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "CA",
+        "term_start": null,
+        "start_precision": "unknown",
+        "term_end": "2022-12-05"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "question_text": "What responsibility do platforms and government have in combating online misinformation?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "legally require platforms to remove false information"
+        },
+        {
+          "value": 2,
+          "text": "require platforms to label false content, rather than remove it"
+        },
+        {
+          "value": 3,
+          "text": "encourage voluntary standards for combating misinformation online"
+        },
+        {
+          "value": 4,
+          "text": "protect free speech online and prevent government censorship"
+        },
+        {
+          "value": 5,
+          "text": "ban any government involvement in content moderation decisions"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12",
+      "office_id": "927850b9-2c91-44f7-a6be-f4c81dc3b75d",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "001832e2-df00-5dd7-8847-550996caebb0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-25",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": "That Section 31 of Article I thereof is repealed.",
+          "note": "Bill text repeals Prop 209's ban on race/sex preferences but does not itself mandate or strengthen any enforcement clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "63afc856-cd20-5d20-8a29-ea5c72c469e6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": null,
+          "note": "Assembly Floor vote page shows Ramos voting Aye on ACA 5; 14 of 74 cast votes were No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Quirk-Silva, Ramos, Reyes",
+          "tally_quote": "Ayes Count 60 Noes Count 14 NVR Count 5"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Ramos voted Aye on ACA 5, which repeals Section 31 of Article I (Proposition 209's prohibition on race- and sex-based preferences in public employment, education, and contracting). A repeal that permits race-conscious programs to resume shows the pro-side against 'eliminate affirmative action and all race-based government programs,' but it does not itself 'mandate racial equity requirements' or 'strengthen civil rights enforcement'; ruling out rung 5 does not establish any remaining rung's clauses.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "1ee95c1d-6127-494b-9f68-e8b3c975adee|5b95be8c-1634-43ab-acb5-f904b859a5ef|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Ward's own words or a record of his on a gestational time limit for abortion (e.g. a vote or sponsorship on a bill that sets or removes a viability limit under the Reproductive Privacy Act)",
+          "Ward's own statement (speech, interview, questionnaire answer) on whether abortion access should have a trimester or viability limit, to distinguish rung 1 from rungs 2-3"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "1ee95c1d-6127-494b-9f68-e8b3c975adee|5b95be8c-1634-43ab-acb5-f904b859a5ef|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Ward's own words or a record of his on a gestational time limit for abortion (e.g. a vote or sponsorship on a bill that sets or removes a viability limit under the Reproductive Privacy Act)",
+        "Ward's own statement (speech, interview, questionnaire answer) on whether abortion access should have a trimester or viability limit, to distinguish rung 1 from rungs 2-3"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

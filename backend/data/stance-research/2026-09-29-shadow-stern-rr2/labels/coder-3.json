@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6",
+      "office_id": "e090aea1-8a60-4a53-b43f-ce7162477c4a",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "75b8d8b2-f726-5f58-b711-b6409af31abd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-09-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": "the quantities shall reflect reasonable progress in each of the intervening years sufficient to ensure that the procurement of electricity products from eligible renewable energy resources achieves 25 percent of retail sales by December 31, 2016, 33 percent by December 31, 2020, 44 percent by December 31, 2024, 52 percent by December 31, 2027, and 60 percent by December 31, 2030.",
+          "note": "SB 100's bill text sets a binding RPS mandate ('shall procure') with firm dated percentages, matching the annex's rung-1 renewable-procurement-standard example.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c7118dfe-a4bb-56f7-b1cc-7049279c9a26",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-08-29",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": null,
+          "note": "Senate Floor concurrence vote on SB 100 (2017-2018); Stern voted Aye.",
+          "record_kind": "vote",
+          "actor_quote": "Skinner, Stern, Wieckowski",
+          "tally_quote": "Ayes Count 25 Noes Count 13"
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "75b8d8b2-f726-5f58-b711-b6409af31abd",
+        "c7118dfe-a4bb-56f7-b1cc-7049279c9a26"
+      ],
+      "reasoning": "Stern voted Aye on SB 100 (2017-2018), a single-subject renewable-portfolio-standard bill requiring retail sellers to procure renewable energy at binding, dated percentages ('achieves ... 44 percent of retail sales by December 31, 2024 ... and 60 percent by December 31, 2030'). This matches rung 1, 'Require a shift to clean energy through mandates and firm deadlines,' per the annex's chair-shaped renewable-procurement-standard example.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

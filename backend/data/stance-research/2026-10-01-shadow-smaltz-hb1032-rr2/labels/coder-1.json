@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "dd516298-029b-58eb-a741-716f341447af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Bill details page shows Smaltz as the author of HB 1032, a measure keeping congressional map-drawing in the general assembly.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Ben Smaltz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8e776ba8-1843-50fc-841e-7107d265564e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "The general assembly may amend the congressional districts",
+          "note": "The bill lets the legislature redraw congressional maps at any time and narrows litigation remedies, but its own Section 3 still contemplates courts holding an apportionment unconstitutional.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "17ad74dc-278e-53f9-91c5-37b3dbc6a486",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Smaltz voted Yea on third reading of his own bill; the 57-41 tally is far from near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Aylesworth Haggard May Smaltz",
+          "tally_quote": "Yea 57 Nay 41 Excused 2 Not Voting 0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Smaltz authored and voted Yea on HB 1032 (2026), which lets the general assembly amend congressional districts outside the post-census session and enacts new districts itself, matching the first clause of \"the party that controls the state legislature without outside interference.\" The second clause, no outside check, is not met: Section 3 of the same bill restricts remedies but expressly preserves supreme court review of \"any appealable order holding the apportionment unconstitutional or otherwise invalid,\" and the backup redistricting commission in IC 3-3-2-2 survives. It is therefore not \"state legislatures with court oversight to prevent extreme partisan bias\" either, since the bill sets no partisan-fairness standard for courts to enforce.",
+      "needs_source": [
+        "Ben Smaltz's own words on HB 1032 (2026) — author's floor remarks or committee testimony stating who he thinks should draw the maps and what check, if any, should apply"
+      ],
+      "quotes": []
+    }
+  ]
+}

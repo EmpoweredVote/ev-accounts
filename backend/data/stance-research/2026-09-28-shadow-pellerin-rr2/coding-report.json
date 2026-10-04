@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "190c3584-0826-4a5f-a2ad-104ff70ff259|4164cda9-e149-46c7-9b5a-7f1f75088ac0|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A Pellerin record (roll call, sponsorship or authorship) on a California bill that places a legal duty on online platforms to remove or label false content",
+          "Pellerin's own words answering what platforms and government should do about online misinformation (questionnaire, debate answer, or first-person issue page)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "190c3584-0826-4a5f-a2ad-104ff70ff259|4164cda9-e149-46c7-9b5a-7f1f75088ac0|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "requests": [
+        "A Pellerin record (roll call, sponsorship or authorship) on a California bill that places a legal duty on online platforms to remove or label false content",
+        "Pellerin's own words answering what platforms and government should do about online misinformation (questionnaire, debate answer, or first-person issue page)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

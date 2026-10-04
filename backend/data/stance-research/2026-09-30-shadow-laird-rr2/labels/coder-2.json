@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "178a41d4-42b5-4ffd-be06-d1059d54eacb",
+      "office_id": "eaf4cad0-012a-48a6-8765-ca9020432782",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "48806783-3894-5855-8a66-ed263f20f170",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1020 (2021-2022)",
+          "provision_quote": "Each state agency shall ensure that zero-carbon resources and eligible renewable energy resources supply 100 percent of electricity procured on its behalf by December 31, 2035.",
+          "note": "New PUC §454.59(b), added by Laird's SB 1020, is a binding dated duty on state agencies' own procurement, matching the annex's government's-own-operations hard case for rung 1.",
+          "record_kind": "author",
+          "actor_quote": "SB 1020, Laird.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": ["48806783-3894-5855-8a66-ed263f20f170"],
+      "reasoning": "As author of SB 1020 (2021-2022), Laird's bill added Public Utilities Code §454.59(b), requiring that 'Each state agency shall ensure that zero-carbon resources and eligible renewable energy resources supply 100 percent of electricity procured on its behalf by December 31, 2035' — a binding, dated duty matching rung 1, 'Require a shift to clean energy through mandates and firm deadlines.' The bill's separate §454.53 'policy of the state' language for retail electricity sales is a goal, not a mandate, so the state-agency procurement duty is the operative clause relied on here.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

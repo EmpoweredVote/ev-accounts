@@ -1,0 +1,47 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "6b6368a1-354d-4f28-9232-a6ec70198ab8",
+      "office_id": "085054aa-8e66-46c3-a41d-18e75de7eab6",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted floor words oppose the camping ban's 300-foot rule and its $500 fine but name no enforcement posture of his own; the reporter's account of the bill is not his act (H15).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Taylor's own quoted words oppose the bill's penalties — he asks “Why would you prescribe any distance away?” and says “What I think we should be working on is finding a place for the unhoused to be housed” — which places him against “Banning public camping and sleeping with criminal penalties to maintain public safety and order” but does not match the clauses of any single rung on the other side. Nothing in the passage says whether he would keep civil penalties, allow enforcement only “when adequate shelter beds are available”, decriminalize, or protect a right to sleep in public “with no penalties of any kind”; ruling out the criminal-penalty rung is not evidence for the one left (V4.2). The excerpt is a news report of debate, so it carries no record of his vote on the bill.",
+      "needs_source": [
+        "Indiana Senate roll call on the public camping ban bill (2026 session) showing Taylor's vote, from the General Assembly's own vote page",
+        "Bill text of the 2026 Indiana public camping ban (bill number not given in the excerpt), for the operative section"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "text": "What I think we should be working on is finding a place for the unhoused to be housed. This is a bill that looks for a place for the unhoused to remain unhoused, because you can actually move 300 feet and not violate this law.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-28-shadow-pellerin-rr2",
+  "seat": {
+    "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259",
+    "full_name": "Gail Pellerin",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "4164cda9-e149-46c7-9b5a-7f1f75088ac0",
+    "office_title": "Assembly Member",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "question_text": "What responsibility do platforms and government have in combating online misinformation?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "legally require platforms to remove false information"
+        },
+        {
+          "value": 2,
+          "text": "require platforms to label false content, rather than remove it"
+        },
+        {
+          "value": 3,
+          "text": "encourage voluntary standards for combating misinformation online"
+        },
+        {
+          "value": 4,
+          "text": "protect free speech online and prevent government censorship"
+        },
+        {
+          "value": 5,
+          "text": "ban any government involvement in content moderation decisions"
+        }
+      ],
+      "annexMd": "# misinformation — served revision bd313c07-02a5-4344-8cc3-0e4b4c3b78a1 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris\nAndrews). Lines marked _(proposed)_ are a drafter's reading, not yet ruled.\n\n**Question:** \"What responsibility do platforms and government have in combating online\nmisinformation?\"\n\n**Orientation:** standard. Rung 1 is the most legal compulsion on platforms (removal), rung 5 forbids\nany government role. The rungs order **mechanisms** — require removal, require labels, encourage\nvoluntary standards, protect speech from government, ban government involvement.\n\n**Levels with a role:** federal, state (`compass_topic_roles`).\n\n**Synonyms:** \"materially deceptive content\", \"deepfake\", \"synthetic media\", \"digital impersonation\",\n\"digital replica\", \"large online platform\", \"content moderation\", \"terms of service\", \"trust and\nsafety\", \"provenance\" or \"watermark\", \"jawboning\", \"Section 230\".\n\n1. **\"legally require platforms to remove false information\"**\n   - Means: the law makes platforms take false content down.\n   - Operative clauses: [a] a legal duty; [b] on a platform; [c] to remove or block content because it\n     is false or deceptive.\n   - Establishing evidence looks like: operative text that requires a platform to remove or block a\n     class of false or deceptive content; own words calling for such a duty.\n   - Levels that hold a lever: federal, state.\n   - Known chair-shaped instruments: a single-subject law that requires large platforms to remove\n     deceptive election content.\n   - Commonly confused with rung 2 because many bills mix the two duties: removal for one class of\n     content, labels for the rest. The removal duty decides — rung 2 says \"rather than remove it\".\n     A **narrow scope** (one category of content, an election window) does not change the mechanism\n     the rungs order; the rung does not say \"all\" false information.\n   - Content removed for a reason other than falsity (child abuse material, harassment,\n     non-consensual intimate images) is not \"false information\" → `adjacent` _(proposed)_.\n\n2. **\"require platforms to label false content, rather than remove it\"**\n   - Means: the law makes platforms mark false content as false or synthetic, and stops short of\n     removal.\n   - Operative clauses: [a] a legal duty on a platform to label, flag or mark content as false or\n     synthetic; [b] not removal.\n   - Establishing evidence looks like: a labeling or provenance mandate on platforms **plus**\n     something that excludes removal — the text says removal is not required, the person voted\n     against a removal duty, or their own words prefer labels. A label-only law that is silent on\n     removal does not exclude rung 1 → `direction-only` (V4.2 \"Silence is not a clause\") _(proposed)_.\n   - Levels that hold a lever: federal, state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - Commonly confused with BLANK because a **transparency** mandate looks like a label. A law that\n     makes platforms publish their moderation policies or report how they enforce them puts no label\n     on any content and sets no moderation duty → `direction-only` at most. Algorithm transparency\n     is not in this ladder → `adjacent` _(proposed)_.\n\n3. **\"encourage voluntary standards for combating misinformation online\"**\n   - Means: government promotes industry standards but does not require them.\n   - Operative clauses: [a] government encourages — it convenes, recommends, endorses or funds; [b]\n     the standards are voluntary, with no legal duty.\n   - Establishing evidence looks like: a resolution or bill that adopts or endorses a voluntary code;\n     own words preferring voluntary standards to mandates.\n   - Levels that hold a lever: federal, state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with `study-directive` because a task force or report is not a standard. A bill\n     that only orders a study → V4 `study-directive`.\n   - Commonly confused with rung 2 because a disclosure **requirement** is not voluntary. See rung 2.\n\n4. **\"protect free speech online and prevent government censorship\"**\n   - Means: the law stops government from suppressing lawful online speech.\n   - Operative clauses: [a] protect online speech; [b] against **government** action.\n   - Establishing evidence looks like: a bill that bars officials from pressing platforms to remove\n     lawful speech; a No on a removal mandate together with own words that name government\n     censorship.\n   - Levels that hold a lever: federal, state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because rung 5 bans **any** involvement — requests, partnerships,\n     funding — not only coercion. A bar on coercion with exceptions (illegal content, security) is\n     rung 4, not rung 5 _(proposed)_.\n\n5. **\"ban any government involvement in content moderation decisions\"**\n   - Means: government may play no part at all in what platforms allow or remove.\n   - Operative clauses: [a] a prohibition; [b] on **any** government involvement; [c] in content\n     moderation decisions.\n   - Establishing evidence looks like: a bill or own words that forbid all government contact with\n     platforms on moderation. \"Any\" is an absence of exceptions: the instrument must say it (V4.2\n     \"Silence is not a clause\") _(proposed)_.\n   - Levels that hold a lever: federal, state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **A duty on the speaker, not the platform.** A law that makes the creator or publisher of a deepfake\n  disclose that it is fake, or makes them liable for it, puts no duty on platforms. One liability line\n  for publishers in a law aimed at the creator does not make it a platform duty → `adjacent`, BLANK\n  `no-evidence` when nothing else survives.\n- **Political-ad disclaimers** for synthetic media, placed on the campaign or advertiser → `adjacent`.\n- **Must-carry laws** that forbid platforms to remove users or viewpoints. Government regulates\n  moderation, so it is not rung 5; rung 4 names government censorship, not platform moderation. The\n  rungs order what is done about **false** content; a must-carry law is about a platform's power over\n  lawful speech → V2 `adjacent`. Do not use such a vote \"against rung 5\" to seat rung 4: ruling out a\n  rung is not evidence for another (V4.2) _(ruled 2026-10-01)_.\n- **Section 230 changes** alter liability, not a duty to remove or label → `direction-only` at most,\n  unless the change conditions immunity on removing false content _(proposed)_.\n- **Government's own speech** (public information campaigns, media-literacy curricula) → `adjacent`.\n- **Preemption (codebook V2, H12)** → `adjacent`.\n"
+    }
+  ]
+}

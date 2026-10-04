@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "bb4bbd05-0a4b-5617-9d6d-38b342fa770f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": "On a semiannual basis in accordance with subdivision (b), a social media company shall submit to the Attorney General a terms of service report.",
+          "note": "Mandates TOS posting and AG reporting on content-moderation practices and categories (including 'Disinformation or misinformation'); it does not require removal or labeling of false content, so it is a transparency/reporting dimension the rungs do not order.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 587 (2021-2022), authored by Gabriel, requires social media companies to post terms of service and report to the Attorney General on content-moderation practices for categories including 'Disinformation or misinformation'; it does not 'legally require platforms to remove false information', 'require platforms to label false content', 'encourage voluntary standards', 'protect free speech online', or 'ban any government involvement in content moderation decisions', so no rung's operative clause is matched and the passage is adjacent, not on-question.",
+      "needs_source": [
+        "Gabriel's own words (floor statement, author's statement, questionnaire answer) explaining why AB 587 was needed or what he believes platforms/government should do about false information specifically",
+        "A bill, vote, or statement by Gabriel that requires removal or labeling of false content, encourages voluntary standards, protects free speech online, or addresses government's role in content moderation decisions directly"
+      ],
+      "quotes": []
+    }
+  ]
+}

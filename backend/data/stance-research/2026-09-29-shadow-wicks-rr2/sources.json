@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-09-29-shadow-wicks-rr2",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200AB1482",
+      "source_kind": "public-record",
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_keys": [
+        "rent-regulation"
+      ],
+      "instruments": [
+        "AB 1482 (2019-2020)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2019-ab1482-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201920200AB1482",
+      "source_kind": "public-record",
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_keys": [
+        "rent-regulation"
+      ],
+      "instruments": [
+        "AB 1482 (2019-2020)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2019-ab1482-votes.txt"
+    }
+  ]
+}

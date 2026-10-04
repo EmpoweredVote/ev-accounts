@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-28-shadow-sanchez-rr2",
+  "seat": {
+    "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0",
+    "full_name": "Kate Sanchez",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "1621afeb-6cb1-4368-98db-6e18b0723faa",
+    "office_title": "Assembly Member",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "topic_key": "judicial-criminal-justice",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "question_text": "When someone breaks the law, how should the system respond?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Focus on support and treatment, not punishment."
+        },
+        {
+          "value": 2,
+          "text": "Give the person a chance to make things right through service or restitution, rarely punishment."
+        },
+        {
+          "value": 3,
+          "text": "Each situation is different — some people need support, some need consequences."
+        },
+        {
+          "value": 4,
+          "text": "Breaking the law needs to have real consequences — accountability is the priority."
+        },
+        {
+          "value": 5,
+          "text": "Impose the toughest penalties the law allows."
+        }
+      ],
+      "annexMd": "# judicial-criminal-justice — served revision c334f475-05bd-48ba-9d25-f4de593a3f15 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"When someone breaks the law, how should the system respond?\"\n\n**Orientation:** standard. Rung 1 rejects punishment (support and treatment), rung 5 is the harshest\npenalty the law allows. All five rungs sit on one spine: **the role of punishment in the response to\na person who broke the law**. They are general orientations, not a view on one offense.\n\n**Levels with a role:** federal, judicial, state (`compass_topic_roles`). A judge acts through\nsentencing; a prosecutor through charging and sentence requests; a legislator through sentencing law.\nThe rungs are written as orientations so all three can be coded against the same text.\n\n**Synonyms:** \"diversion\", \"drug court\", \"mental health court\", \"problem-solving\" or \"collaborative\"\ncourt, \"treatment in lieu of\", \"restorative justice\", \"restitution\", \"community service\",\n\"probation\", \"alternatives to incarceration\", \"rehabilitation\", \"sentencing guidelines\", \"mandatory\nminimum\", \"sentence enhancement\", \"three strikes\", \"serious felony\", \"truth in sentencing\", \"earned\ntime\" or \"good-time credit\".\n\n1. **\"Focus on support and treatment, not punishment.\"**\n   - Means: the response should help the person, and punishment should not be the aim.\n   - Operative clauses: [a] support and treatment; [b] not punishment.\n   - Establishing evidence looks like: own words that put treatment in place of punishment as the\n     general response; a record that replaces penalties with treatment across many offenses.\n     [b] is an absence clause: a treatment programme that keeps jail as a sanction does not say \"not\n     punishment\" (V4.2 \"Silence is not a clause\") → `direction-only` _(proposed)_.\n   - Levels that hold a lever: judicial (sentencing), state and federal (sentencing law).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because both reduce punishment. Rung 1 names **treatment**; rung\n     2 names **making things right** (service, restitution).\n\n2. **\"Give the person a chance to make things right through service or restitution, rarely\n   punishment.\"**\n   - Means: the person repairs the harm; punishment is a rare last resort.\n   - Operative clauses: [a] make things right through service or restitution; [b] rarely punishment.\n   - Establishing evidence looks like: a restorative-justice or restitution-first record or own words,\n     **plus** a statement or act that keeps punishment for rare cases. Compound: one side only →\n     `compound-partial` (V4.2) _(proposed)_.\n   - Levels that hold a lever: judicial, state, federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n\n3. **\"Each situation is different — some people need support, some need consequences.\"**\n   - Means: the response depends on the person and the offense, with neither support nor punishment\n     the default.\n   - Operative clauses: [a] case by case; [b] support for some, consequences for others.\n   - Establishing evidence looks like: own words that state the case-by-case orientation as the\n     person's general view.\n   - Levels that hold a lever: judicial, state, federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because **a bill that lowers some penalties and keeps others** looks\n     like \"some support, some consequences\". It is not: such a bill is consistent with rungs 2, 3 and\n     4, and a mixed record is not a stated orientation → `direction-only`. Rung 3 is not the place for\n     a record that points both ways (V4.2 \"Ruling out the other rungs is not evidence\").\n\n4. **\"Breaking the law needs to have real consequences — accountability is the priority.\"**\n   - Means: there must be a real penalty, and holding the person to account comes first.\n   - Operative clauses: [a] real consequences; [b] accountability is the priority.\n   - Establishing evidence looks like: own words that make consequences the general priority **plus**\n     something that excludes rung 5 (the person does not seek the maximum as a rule).\n   - Levels that hold a lever: judicial, state, federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because a penalty increase points toward both.\n\n5. **\"Impose the toughest penalties the law allows.\"**\n   - Means: seek or give the maximum penalty as the general rule.\n   - Operative clauses: [a] the toughest penalties; [b] the law allows (the maximum available).\n   - Establishing evidence looks like: own words that the maximum should be the rule; for a judge, a\n     stated sentencing practice at the top of the range; for a prosecutor, a policy of seeking the\n     maximum. For a legislator, whose act is to set the range, not to impose a sentence, own words are\n     the main route _(proposed)_.\n   - Levels that hold a lever: judicial (sentencing, charging); state and federal mostly through own\n     words _(proposed)_.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **One offense.** A bill that raises or lowers the penalty for **one** offense is on-question and\n  shows direction, but one offense cannot set the person's general response to lawbreaking →\n  `direction-only`, not `no-evidence`.\n- **Victims' rights.** A bill about victims' notice, compensation or participation is about victims,\n  not the response to the person who broke the law → `adjacent`; BLANK `no-evidence` when nothing else survives.\n- **Pretrial measures** (bail, detention) come before any finding that the person broke the law →\n  `adjacent` _(proposed)_.\n- **Record clearing** (expungement, sealing) and re-entry aid after a sentence is served → `adjacent`\n  _(proposed)_.\n- **Policing and jail capacity** have their own topics → `adjacent`.\n- **The death penalty** is one penalty for a few offenses → `direction-only` _(proposed)_.\n- **Budget and omnibus votes** with a sentencing item → V4 `multi-subject`.\n- **Judges.** One sentence in one case is set inside a legal range → `direction-only` at most. A\n  stated sentencing philosophy in a questionnaire is `statement-answer` (V3). Ethics rules bar\n  candidates from promising outcomes; \"tough on crime\" or \"second chances\" with no orientation named\n  → `rhetorical` _(proposed)_.\n"
+    }
+  ]
+}

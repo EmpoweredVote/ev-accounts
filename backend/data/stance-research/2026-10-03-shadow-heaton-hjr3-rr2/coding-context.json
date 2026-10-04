@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-10-03-shadow-heaton-hjr3-rr2",
+  "seat": {
+    "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+    "full_name": "Bob Heaton",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2010-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "question_text": "What legal recognition should same-sex marriages receive?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Guarantee same-sex couples full legal equality — equal marriage plus protection from discrimination (such as in jobs and housing)."
+        },
+        {
+          "value": 2,
+          "text": "Guarantee same-sex marriage the same benefits and protections as any other marriage."
+        },
+        {
+          "value": 3,
+          "text": "Allow same-sex marriage, but protect religious organizations' right to decline to perform or host these marriages."
+        },
+        {
+          "value": 4,
+          "text": "Recognize civil unions for same-sex couples, but reserve marriage for opposite-sex couples."
+        },
+        {
+          "value": 5,
+          "text": "Make same-sex marriage illegal and define marriage as only between one man and one woman."
+        }
+      ],
+      "annexMd": "# same-sex-marriage — served revision 8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"What legal recognition should same-sex marriages receive?\"\n\n**Orientation:** standard. Rung 1 is full legal equality, rung 5 makes same-sex marriage illegal. The\nrungs order **how much legal equality** same-sex couples get: marriage plus anti-discrimination\nprotection, equal marriage, marriage with a religious carve-out, civil unions only, nothing. (The S1\nrung \"let each state decide\" is gone: who decides is not on this ladder.)\n\n**Levels with a role:** federal, state (`compass_topic_roles`). Since 2015 every state must license\nand recognise same-sex marriages, so the live levers are federal recognition law, state\nconstitutional amendments (to repeal or keep inactive bans), state anti-discrimination law, and\nreligious-exemption clauses.\n\n**Synonyms:** \"marriage equality\", \"Respect for Marriage Act\" (RFMA, 2022), \"Defense of Marriage Act\"\n(DOMA, 1996), \"Obergefell\", \"civil union\", \"domestic partnership\", \"one man and one woman\",\n\"freedom to marry\", \"sexual orientation\" in anti-discrimination law, \"SOGI\", \"Equality Act\".\n\n1. **\"Guarantee same-sex couples full legal equality — equal marriage plus protection from\n   discrimination (such as in jobs and housing).\"**\n   - Means: equal marriage, and a legal bar on discrimination against same-sex couples outside\n     marriage too.\n   - Operative clauses: [a] equal marriage; [b] protection from discrimination based on sexual\n     orientation (jobs, housing and similar). Compound: one side only → `compound-partial` (V4.2);\n     but see rung 2 for marriage-only evidence.\n   - Establishing evidence looks like: a marriage passage **plus** a record on a broad\n     sexual-orientation anti-discrimination instrument (employment, housing, public\n     accommodations); or one instrument that does both.\n   - [b] needs a broad anti-discrimination instrument. Bans on conversion therapy, hate-crime laws,\n     and marriage-only votes do not meet [b] (the bar used in the CA_0100 re-audit, 2026-09-01).\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2: see rung 2.\n\n2. **\"Guarantee same-sex marriage the same benefits and protections as any other marriage.\"**\n   - Means: same-sex marriage is legal and equal to any other marriage in law.\n   - Operative clauses: [a] same-sex marriage is guaranteed; [b] the same benefits and protections.\n   - Establishing evidence looks like: authoring or carrying a measure that secures the right to\n     marry, or full recognition of same-sex marriages, in law.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - **A measure that secures the right to marry and has no anti-discrimination clause is rung 2,\n     not rung 1.** It meets every clause of rung 2; it does not need a second passage that rejects\n     anti-discrimination law.\n   - A Yes on a recognition bill whose religious section only **saves** existing protections (for\n     example the RFMA) → rung 2. The operative section governs (V4.1); a savings clause does not show\n     that the person insists on the carve-out that rung 3's \"but\" names. Rung 3 needs own words that\n     make the right to decline part of the position _(ruled 2026-10-01)_.\n\n3. **\"Allow same-sex marriage, but protect religious organizations' right to decline to perform or\n   host these marriages.\"**\n   - Means: same-sex marriage is legal, and religious organisations need not perform or host one.\n   - Operative clauses: [a] allow same-sex marriage; [b] protect religious organisations' right to\n     decline to perform or host. Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: own words that accept same-sex marriage and name the\n     religious-organisation right to decline as part of the position.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - **[real] (codebook V5, H4).** A candidate's debate answer that they \"would have voted yes\" on the\n     RFMA → `statement-answer`; the instrument's operative content (recognition) is the position →\n     rung 2, unless the person's own words stress the religious exemption _(ruled 2026-10-01)_. Do not carry the S1\n     reading forward.\n   - [b] covers religious **organisations** and ceremonies. An exemption for businesses or\n     individuals (vendors, clerks) is wider than [b] → `direction-only` here _(proposed)_; code it on\n     `religious-freedom`.\n\n4. **\"Recognize civil unions for same-sex couples, but reserve marriage for opposite-sex couples.\"**\n   - Means: same-sex couples get civil unions, not marriage.\n   - Operative clauses: [a] recognise civil unions; [b] reserve marriage for opposite-sex couples.\n     Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: a civil-union statute plus a marriage definition; own words for\n     civil unions but not marriage.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Older records count if chair-shaped (V5: a record has no age limit), but a later passage that\n     differs governs (`superseded-by-later`).\n\n5. **\"Make same-sex marriage illegal and define marriage as only between one man and one woman.\"**\n   - Means: the law permits only opposite-sex marriage and recognises nothing else as marriage.\n   - Operative clauses: [a] same-sex marriage not legally permitted; [b] marriage defined as one man\n     and one woman.\n   - Establishing evidence looks like: a constitutional amendment or statute that defines marriage\n     as one man and one woman **and** bars recognising other unions; own words calling for that.\n   - Levels that hold a lever: federal (a constitutional amendment); state (constitutional\n     amendments).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a definition-only measure meets rung 4 [b] too. If it\n     also bars civil unions → rung 5; if it leaves civil unions in place or creates them → rung 4;\n     if it is silent on civil unions → rung 5 when it bars recognition, otherwise `direction-only`\n     _(proposed)_.\n   - A federal definition for federal purposes only (DOMA) does not make same-sex marriage illegal →\n     `direction-only` _(proposed)_.\n\n**Hard cases:**\n- **A No on repealing an inactive state ban** shows only a side → `direction-only` _(proposed)_.\n- **Positions change.** Many officeholders voted one way before 2015 and another way later. The\n  newest evidence governs (V5).\n- **Transgender measures, conversion therapy, adoption rules** are other questions → `adjacent`\n  _(proposed)_.\n- **Preemption (codebook V2, H12)** → `adjacent`.\n- **Budget and omnibus votes** → V4 `multi-subject`.\n"
+    }
+  ]
+}

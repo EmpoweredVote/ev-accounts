@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+      "passages": [
+        {
+          "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": "Preparation or sale of noncannabis food or beverage products in compliance with all applicable provisions of the California Retail Food Code (Chapter 1 (commencing with Section 113700) of Part 7 of Division 104 of the Health and Safety Code) by a retailer or microbusiness licensed under this division in the area where the consumption of cannabis is allowed.",
+          "note": "The operative change adds ancillary amenities inside the already-licensed market; it neither legalizes cannabis nor sets the market's structure or taxes.",
+          "record_kind": "author",
+          "actor_quote": "AB 1775, Haney.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-08-28",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "Concurrence vote with 5 Noes in an 80-member body is under the 10% threshold, so it cannot carry a chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "Gipson, Grayson, Haney, Hart, Holden",
+          "tally_quote": "Ayes Count 63 Noes Count 5"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Haney authored AB 1775 (2023-2024) and voted Aye on concurrence; its operative change lets a local jurisdiction allow a licensed retailer or microbusiness to prepare or sell noncannabis food and host ticketed \"Live musical or other performances\" in the consumption area. That presupposes the existing legal market rather than establishing it, so it does not match the clauses of \"Legalize recreational cannabis and regulate it through a licensed, taxed commercial market\" as against \"Legalize cannabis and treat it like an ordinary legal product, with minimal restrictions on growing and using it.\" It shows only the permissive side, and the concurrence vote is near-unanimous besides.",
+      "needs_source": [
+        "Haney's own first-person words on whether California should keep recreational cannabis legal and regulate it through a licensed, taxed commercial market (issue page, questionnaire, or floor statement)",
+        "A Haney record on a CA instrument that sets cannabis legal status, licensing structure or cannabis taxation (bill number plus his authorship/sponsorship or roll call)"
+      ],
+      "quotes": []
+    }
+  ]
+}

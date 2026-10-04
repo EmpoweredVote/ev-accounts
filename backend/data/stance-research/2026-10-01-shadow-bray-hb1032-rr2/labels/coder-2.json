@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+      "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "0ce045a6-529f-58b0-90cf-d6df5bea213c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Roll call shows Bray voted Nay on HB 1032's third reading; the count 19-31 is far from near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Spencer Bray Doriot",
+          "tally_quote": "Yea 19 Nay 31"
+        },
+        {
+          "snapshot_id": "39a0b7dd-c690-5fd8-9b89-f2dd41f19e61",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Bill details page confirms the same instrument and final-reading defeat, but does not name individual voters.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0c4d9c30-1bb1-5e8d-8ff7-4936441259d4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "The supreme court has mandatory and exclusive jurisdiction over any appeal from a final judgment or any other appealable order holding the apportionment unconstitutional or otherwise invalid, either in whole or in part.",
+          "note": "Bill text shows the operative content Bray's Nay vote rejected: legislature-drawn mid-decade maps with expedited, channeled court review.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bray voted Nay on HB 1032 (2026), a bill letting the general assembly amend congressional districts outside the normal post-census cycle and giving the state supreme court mandatory, exclusive, expedited jurisdiction over apportionment challenges with an automatic stay. A No vote on this single-subject redistricting bill shows opposition to its approach but does not by itself establish which rung he holds: it rules out this particular arrangement without evidencing his own preference among 'independent citizens' commissions', 'independent redistricting commissions', 'bipartisan legislative committees', 'state legislatures with court oversight', or 'the party that controls the state legislature' (V4.2, 'ruling out the other rungs is not evidence for the one left').",
+      "needs_source": ["An explanation of vote or floor statement from Bray on HB 1032 (2026) tying his Nay vote to a specific objection (timing, the court-review provisions, or the district lines themselves)"],
+      "quotes": []
+    }
+  ]
+}

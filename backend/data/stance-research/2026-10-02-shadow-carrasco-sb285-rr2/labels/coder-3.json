@@ -1,0 +1,102 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "326c5247-950b-407d-a10b-1116c49098f0",
+      "office_id": "679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-14",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "Senate Bill 285 (2026)",
+          "provision_quote": null,
+          "note": "Carrasco's own committee-hearing words describe a warnings/services-before-enforcement process but name no specific penalty clause; the article's description of the Class C misdemeanor penalty is the reporter's paraphrase, not verbatim bill text.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "99fe9a48-fd9e-52ea-a089-80a8a34edd2a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": "Senate Bill 285 (2026)",
+          "provision_quote": null,
+          "note": "The reporter's account that she authored SB 285 and the chamber's 28-22 concurrence vote is news-only (H15), not a record; her own quote names no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Carrasco's own statements (statement-other) favor a structured, services-before-enforcement process over either no penalty or straightforward criminalization, but neither source supplies the bill's verbatim operative penalty text or her recorded vote, so no rung's clauses (e.g., rung 4's \"graduated warnings\" and \"civil penalties,\" or rung 3's shelter-bed and diversion clauses) can be matched; the news reports of her authorship and the chamber vote are not a record under H15.",
+      "needs_source": [
+        "Indiana Senate Bill 285 (2026) — operative penalty section, verbatim bill text",
+        "Indiana Senate roll call / vote record on SB 285 (2026), including Carrasco's own recorded vote and the House-amendment concurrence vote (28-22)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "The goal of Senate Bill 285 is not to criminalize homelessness,",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "This bill is structured so that initial interactions are focused on intervention rather than punishment.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "create a moment where outreach, diversion, and connection to services can occur, and to move individuals to a healthier and more stable life through a clear, multi-step process that prioritizes services before enforcement.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "For individuals struggling with serious mental health or substance abuse issues who are unable or unwilling to seek help on their own, this bill creates a pathway to connect them with health care, housing resources, treatment, and support systems that can help begin to stabilize their lives,",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "551db3b5-49d9-50ee-ae51-1d95afdb5d33",
+          "text": "To be clear, it is not compassionate to allow our neighbors to die on the streets. This is a solvable problem, and I believe this bill is part of that solution.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "99fe9a48-fd9e-52ea-a089-80a8a34edd2a",
+          "text": "I do believe that this bill will make an impact. I believe it will save lives,",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

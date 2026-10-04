@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-28-shadow-kolodin-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2785",
+      "source_kind": "public-record",
+      "politician_id": "178470c3-94ea-442a-a558-7b3c841ce858",
+      "office_id": "f04e0b05-9d07-4f0d-b4a9-c9dd784545fe",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2785 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hb2785-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2785#house-third",
+      "source_kind": "public-record",
+      "politician_id": "178470c3-94ea-442a-a558-7b3c841ce858",
+      "office_id": "f04e0b05-9d07-4f0d-b4a9-c9dd784545fe",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2785 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hb2785-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/laws/0001.htm",
+      "source_kind": "public-record",
+      "politician_id": "178470c3-94ea-442a-a558-7b3c841ce858",
+      "office_id": "f04e0b05-9d07-4f0d-b4a9-c9dd784545fe",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2785 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

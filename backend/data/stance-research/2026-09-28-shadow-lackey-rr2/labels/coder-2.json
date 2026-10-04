@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e",
+      "office_id": "54a4ad72-bcd1-4fe1-b684-bfa7e72152fc",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "dc53152c-0e3d-5c50-8f58-49a1b5cae228",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": "A firearm industry member shall not advertise, market, or arrange for placement of an advertising or marketing communication concerning any firearm-related product in a manner that is designed, intended, or reasonably appears to be attractive to minors.",
+          "note": "Bill restricts firearm advertising/marketing to minors, a dimension the gun-policy rungs do not order (annex hard case).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "af8b1b75-6d0f-527c-9442-8a02f944e8c9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": null,
+          "note": "Lackey voted No on AB 2571, an advertising-to-minors bill; direction of vote does not make it on-question per the annex.",
+          "record_kind": "vote",
+          "actor_quote": "Noes Bigelow, Chen, Cooley, Megan Dahle, Flora, Fong, Gallagher, Kiley, Lackey, Mathis, Patterson, Seyarto, Smith, Voepel, Waldron",
+          "tally_quote": "Ayes Count 57 Noes Count 15 NVR Count 8"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Both sources are AB 2571 (2021-2022), a bill and floor vote restricting firearm advertising and marketing to minors; the annex states that rules about how guns are marketed or advertised do not say which guns may be owned or bought, so this is V2 adjacent regardless of the direction of Lackey's No vote. No passage survives V1-V5 to support a chair on \"How should the government regulate firearms?\"",
+      "needs_source": [
+        "A record or own-words from Tom Lackey addressing firearm ownership, sale/background-check, assault-weapons, or carry restrictions"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "e8054d02-34c2-485b-b54a-47658cc269b7",
+      "office_id": "1ca10b86-0477-4f4c-9cbc-d410cece1d61",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "69f3f360-6ec6-5d88-a7fc-e29709290381",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted opposition to the bill's jail-time consequences, favoring services, names a side but not a specific rung's mechanism.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Randolph's own quoted words criticize the camping-ban bill for causing jail overcrowding and argue \"the answer is helping these homeless people by providing the things that they need, like food, shelter and a job — not jail time,\" which shows opposition to criminal/jail penalties but does not commit to any one rung's operative clauses (no penalties of any kind, decriminalization, or shelter-conditioned enforcement with service diversion).",
+      "needs_source": [
+        "The camping-ban bill's text and instrument number, and the Senate/House roll calls showing Randolph's individual vote (this excerpt gives only the chamber totals, not his vote)."
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "69f3f360-6ec6-5d88-a7fc-e29709290381",
+          "text": "That's not the answer. The answer is helping these homeless people by providing the things that they need, like food, shelter and a job — not jail time.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

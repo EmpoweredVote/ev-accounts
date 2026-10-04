@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-10-02-shadow-koch-sb1ss",
+  "seat": {
+    "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
+    "full_name": "Eric A Koch",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "ae285450-8e0b-43d9-a534-e747ea9baf0b",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2016-11-09",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": [
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "IN",
+        "term_start": "2002-11-06",
+        "start_precision": "day",
+        "term_end": "2016-11-08"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "question_text": "How should the law handle abortion?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "keep abortion legal at every stage of pregnancy, with no time limit."
+        },
+        {
+          "value": 2,
+          "text": "keep abortion legal through the second trimester, and after that only to protect the mother's health."
+        },
+        {
+          "value": 3,
+          "text": "allow abortion during the first trimester, and after that only to protect the mother's health."
+        },
+        {
+          "value": 4,
+          "text": "ban abortion except in cases of rape, incest, or a serious risk to the mother's life."
+        },
+        {
+          "value": 5,
+          "text": "ban abortion in all cases, with no exceptions."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

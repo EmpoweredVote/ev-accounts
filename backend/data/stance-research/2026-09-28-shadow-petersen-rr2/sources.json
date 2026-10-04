@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-28-shadow-petersen-rr2",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457",
+      "source_kind": "public-record",
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1457 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2021-sb1457-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1457#senate-final",
+      "source_kind": "public-record",
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1457 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2021-sb1457-senate-final.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0286.htm",
+      "source_kind": "public-record",
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1457 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "b9379b8b-cb68-500a-a099-8922f2af98a7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1137 (2021-2022)",
+          "provision_quote": "Notwithstanding any other law, commencing January 1, 2023, the division shall not approve any notice of intention under Section 3203 within a health protection zone, except for approvals of notices of intention necessary for any of the following purposes:",
+          "note": "Authored bill restricts new drilling only within 3,200-foot health protection zones near sensitive receptors; drilling outside those zones is unaffected, so it does not establish a statewide no-new-drilling rung.",
+          "record_kind": "author",
+          "actor_quote": "SB 1137, Gonzalez.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 1137, which Gonzalez authored and which was signed into law, bars new drilling permits only within 3,200 feet of homes, schools, and other sensitive receptors, with exceptions; it leaves new drilling outside those zones untouched. This shows a lean against expanding drilling near sensitive communities but does not establish rung 2's clause, \"Allow no new drilling,\" statewide, nor does it match the steady-state or expansion rungs.",
+      "needs_source": [
+        "A floor statement or explanation of vote from Gonzalez tying SB 1137 to a broader statewide drilling-production position"
+      ],
+      "quotes": []
+    }
+  ]
+}

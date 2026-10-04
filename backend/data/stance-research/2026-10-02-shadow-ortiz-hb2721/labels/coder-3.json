@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "e2243c37-bc6e-5125-b97e-21d342430160",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "Bill status page lists Ortiz as a co-sponsor of HB2721, a single-subject middle-housing zoning deregulation bill signed into law.",
+          "record_kind": "sponsor",
+          "actor_quote": "Ortiz (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "48e5adc9-77eb-5d52-8dbc-19668f745378",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": "a municipality with a population of seventy-five thousand persons or more must authorize by ordinance and incorporate into its development regulations, zoning regulations and other official controls the development of duplexes, triplexes, fourplexes and townhomes as a permitted use",
+          "note": "Chapter 197 text mandates municipalities permit middle housing by right and bars restrictions on it beyond those applied to single-family zoning.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call shows Ortiz voting Yes on HB2721, which passed 42-15-3-0-0.",
+          "record_kind": "vote",
+          "actor_quote": "ORTIZ Y",
+          "tally_quote": "Passed 42-15-3-0-0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "e2243c37-bc6e-5125-b97e-21d342430160",
+        "48e5adc9-77eb-5d52-8dbc-19668f745378",
+        "8b3ecaa1-800c-592a-8c65-0f2f8aa7a97f"
+      ],
+      "reasoning": "As a State Representative, Ortiz co-sponsored HB 2721 (2024) and voted Yes on final passage (ORTIZ Y, Passed 42-15-3-0-0); signed into Chapter 197, the single-subject bill bars municipalities from restricting duplexes, triplexes, fourplexes and townhomes beyond single-family zoning rules and requires they be a permitted use, which cuts the zoning limits that block private building of that housing, matching rung 5 ('at most, cut the regulations and zoning limits that block private building'). Her House-years record counts for her current Senate seat under the same-legislature rule.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "e8054d02-34c2-485b-b54a-47658cc269b7",
+      "office_id": "1ca10b86-0477-4f4c-9cbc-d410cece1d61",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "69f3f360-6ec6-5d88-a7fc-e29709290381",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "News quote has Randolph opposing jail time for public campers and favoring services, but no bill number or vote is given in this excerpt.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Randolph's own-words quote opposes jailing people for public camping and says 'the answer is helping these homeless people by providing the things that they need, like food, shelter and a job — not jail time,' which rules out criminal-penalty enforcement but does not establish whether he supports 'protecting the right to sleep and shelter in public spaces, with no penalties of any kind,' 'decriminalizing public sleeping and camping,' or 'allowing enforcement only when adequate shelter beds are available, with citations diverting people to services.' Because the surviving evidence shows only a direction against incarceration without choosing among these rungs, the row is BLANK direction-only.",
+      "needs_source": [
+        "Randolph's recorded Aye/No vote on this Indiana public camping bill, with bill number and session",
+        "The bill text's operative provisions, to check whether his opposition matches a specific rung's clauses",
+        "A floor speech, questionnaire, or campaign statement from Randolph naming his preferred enforcement mechanism (or lack thereof) for public camping"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "69f3f360-6ec6-5d88-a7fc-e29709290381",
+          "text": "That’s not the answer. The answer is helping these homeless people by providing the things that they need, like food, shelter and a job — not jail time.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

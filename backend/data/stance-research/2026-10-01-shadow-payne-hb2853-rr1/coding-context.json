@@ -1,0 +1,68 @@
+{
+  "batch_id": "2026-10-01-shadow-payne-hb2853-rr1",
+  "seat": {
+    "politician_id": "0b0dc6ea-ed45-45e6-9a59-41d1c8aeb53c",
+    "full_name": "Kevin Payne",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "3b68f8ca-249f-4e82-be6a-7cf9b190ac04",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2025-01-06",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2017-01-09",
+        "start_precision": "day",
+        "term_end": "2023-01-09"
+      },
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2023-01-09",
+        "start_precision": "day",
+        "term_end": "2025-01-13"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "question_text": "What role should vouchers and school choice play in the public education system?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Eliminating voucher programs that divert taxpayer money from public schools to private institutions"
+        },
+        {
+          "value": 2,
+          "text": "Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones"
+        },
+        {
+          "value": 3,
+          "text": "Allowing income-based voucher programs, open to a wider range of families under an income cap"
+        },
+        {
+          "value": 4,
+          "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child"
+        },
+        {
+          "value": 5,
+          "text": "Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family"
+        }
+      ],
+      "annexMd": "# school-vouchers — annex (Season 2 served text; draft, not ruled)\n\n**Orientation:** standard. Rung 1 is most restrictive of vouchers, rung 5 is universal.\n\n**Levels:** state (the lever: program statutes), federal (tax-credit scholarships only), school\nboards (no lever on vouchers). Verify against `compass_topic_roles` before use.\n\n**Synonyms:** \"education savings account\" (ESA), \"scholarship\", \"tax-credit scholarship\",\n\"Choice Scholarship\" (Indiana), \"Utah Fits All\".\n\n1. **\"Eliminating voucher programs that divert taxpayer money from public schools to private\n   institutions\"**\n   - Clauses: [a] eliminate existing programs.\n   - Evidence: a repeal bill, or a vote on a repeal amendment; own words calling for repeal.\n   - Confused with 2 when the person only opposes an *expansion*.\n\n2. **\"Opposing voucher programs and blocking their expansion, without moving to eliminate existing\n   ones\"**\n   - Clauses: [a] oppose expansion; [b] no repeal.\n   - Evidence: a No on an expansion bill **plus** evidence against repeal (a No vote alone is only\n     `direction-only`: it does not separate 1 from 2).\n\n3. **\"Allowing income-based voucher programs, open to a wider range of families under an income\n   cap\"**\n   - Clauses: [a] means-tested; [b] a wider cap.\n   - Evidence: authoring or voting for a means-tested program with a cap.\n\n4. **\"Expanding voucher eligibility to most families so parents can choose the school that best fits\n   their child\"**\n   - Clauses: [a] most families, not all.\n   - Evidence: an expansion bill with a high income cap, or a phased path to universal.\n   - Confused with 5 when a phase-in ends in universal eligibility: code the end state the instrument\n     enacts.\n\n5. **\"Providing universal vouchers so that education funding follows the student to any school —\n   public, private, or religious — chosen by the family\"**\n   - Clauses: [a] universal; [b] any school, including religious.\n   - Evidence: a universal ESA/voucher statute (e.g., Utah HB215, 2023).\n   - **A federal tax-credit scholarship is not rung 5.** It is a tax credit to donors, not funding that\n     follows the student. → `adjacent` (see the V4 omnibus example).\n\n**Hard cases:** a vote on a budget that funds an existing program (`multi-subject`); a governor's\nsignature (a record; `chair-shaped` when the signed bill is single-subject).\n"
+    }
+  ]
+}

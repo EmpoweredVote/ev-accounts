@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-09-27-shadow-raatz-v04-rr2",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1608/details",
+      "source_kind": "public-record",
+      "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+      "office_id": "d4ace730-3f85-4533-bedb-0f3d87127aa3",
+      "topic_keys": [
+        "education-gender-identity"
+      ],
+      "instruments": [
+        "HB 1608 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2023-hb1608-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.345_S.pdf",
+      "source_kind": "public-record",
+      "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+      "office_id": "d4ace730-3f85-4533-bedb-0f3d87127aa3",
+      "topic_keys": [
+        "education-gender-identity"
+      ],
+      "instruments": [
+        "HB 1608 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2023-hb1608-rc.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.05.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+      "office_id": "d4ace730-3f85-4533-bedb-0f3d87127aa3",
+      "topic_keys": [
+        "education-gender-identity"
+      ],
+      "instruments": [
+        "HB 1608 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2023-hb1608-enrolled.txt"
+    }
+  ]
+}

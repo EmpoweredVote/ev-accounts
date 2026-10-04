@@ -1,0 +1,70 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "69da793b-7075-56d9-8eae-7d3d89267239",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview page naming Mesnard as prime sponsor of SB1828 and recording the governor's signature.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Mesnard (Prime with permission of Rules)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": "9. Subject to subsection F of this section, for taxable years beginning from and after December 31 of the year in which notice is provided to the department pursuant to section 43-243, subsection B, paragraph 2, the tax is 2.5% of taxable income.",
+          "note": "Chaptered text of the bill Mesnard prime-sponsored; it replaces the graduated income tax brackets with a 2.5% rate and also lowers the class one assessment ratio.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "420ed0d1-030a-5c8b-a1a6-5d63baffb890",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Final-passage vote on a bill styled \"omnibus; taxation\" that also rewrites unemployment insurance benefits and fire district levy limits, so the vote alone shows direction at most.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "69da793b-7075-56d9-8eae-7d3d89267239",
+        "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d"
+      ],
+      "reasoning": "Mesnard is the prime sponsor of SB 1828 (2021), and the bill as filed replaces Arizona's graduated income tax brackets so that \"the tax is 2.5% of taxable income\", lowers the class one assessment ratio to \"Sixteen percent beginning from and after December 31, 2024\" and adds further exemptions and credits, which matches \"Cut taxes broadly, including the main rates most people pay\" clause for clause. The same bill raises urban revenue sharing to \"eighteen percent of the net proceeds of the state income taxes\", raises the weekly unemployment benefit cap to $320 and raises the fire district levy cap, so \"Cut taxes as far as possible and shrink what government does\" is excluded by the instrument's own text. His Aye on third reading is coded multi-subject and the chair does not rest on it.",
+      "needs_source": [
+        "J.D. Mesnard's own words (floor statement, press release or interview) tying his sponsorship of SB 1828 (2021) to the income tax rate reduction"
+      ],
+      "quotes": []
+    }
+  ]
+}

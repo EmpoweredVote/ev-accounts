@@ -1,0 +1,89 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#12fa8f23-aba8-55ed-9b1c-b3eea7b0a34a",
+          "values": [
+            "own-act",
+            "third-party-characterization",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#12fa8f23-aba8-55ed-9b1c-b3eea7b0a34a",
+          "values": [
+            "on-question",
+            "adjacent",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#12fa8f23-aba8-55ed-9b1c-b3eea7b0a34a",
+          "values": [
+            "record",
+            "not-evidence",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#12fa8f23-aba8-55ed-9b1c-b3eea7b0a34a",
+          "values": [
+            "direction-only",
+            "procedural",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v1_attribution",
+    "v2_relevance",
+    "v3_class",
+    "v4_shape"
+  ]
+}

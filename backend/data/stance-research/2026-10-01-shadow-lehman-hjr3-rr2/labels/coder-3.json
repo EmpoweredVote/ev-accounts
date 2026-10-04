@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "4f57bead-e464-4a26-bc14-49f9599f2086",
+      "office_id": "9e556e36-d300-4bef-ac90-8df64db0b849",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "d0d7bfa5-a0d8-54c7-bacc-7ebfa6236408",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": "Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.",
+          "note": "Engrossed HJR 3 adds a new constitutional section defining marriage as one man and one woman; civil unions are not addressed.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a8b9c1b7-54eb-5919-b0bd-732575bf3505",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014-01-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "Lehman is listed in the Yea column on the House third-reading roll call for HJR 3.",
+          "record_kind": "vote",
+          "actor_quote": "Lehman",
+          "tally_quote": "Yea 57 Nay 40 Excused 3 Not Voting 0"
+        },
+        {
+          "snapshot_id": "ec83c57d-630f-5015-b979-e4af870930b9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "Bill details page lists Lehman among the co-authors of HJR 3.",
+          "record_kind": "sponsor",
+          "actor_quote": "Co-Authored by: Rep. Timothy Wesco, Rep. Wes Culver, Rep. Rhonda Rhoads, Rep. Robert Heaton, Rep. Don Lehe, Rep. Matthew Lehman, Rep. Randall Frye.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "d0d7bfa5-a0d8-54c7-bacc-7ebfa6236408",
+        "a8b9c1b7-54eb-5919-b0bd-732575bf3505",
+        "ec83c57d-630f-5015-b979-e4af870930b9"
+      ],
+      "reasoning": "Lehman co-authored HJR 3 (2014) and voted Yea on its House passage; the resolution's operative text, \"Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana,\" matches the rung \"Make same-sex marriage illegal and define marriage as only between one man and one woman,\" with no civil-union alternative recognized.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

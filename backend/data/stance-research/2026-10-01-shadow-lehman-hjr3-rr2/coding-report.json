@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4f57bead-e464-4a26-bc14-49f9599f2086|9e556e36-d300-4bef-ac90-8df64db0b849|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Any Lehman statement or record on same-sex marriage after Obergefell (2015), to test superseded-by-later against this 2014 record"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4f57bead-e464-4a26-bc14-49f9599f2086|9e556e36-d300-4bef-ac90-8df64db0b849|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "requests": [
+        "Any Lehman statement or record on same-sex marriage after Obergefell (2015), to test superseded-by-later against this 2014 record"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

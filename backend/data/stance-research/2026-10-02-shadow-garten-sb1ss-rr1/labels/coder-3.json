@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
+      "office_id": "b93ba475-ef99-4209-be1d-28cc3eae2399",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "2d98cb03-ae4d-58a1-829a-58039d7da041",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate Roll Call 58, SB 1(ss), Aug 5 2022: Garten voted Yea.",
+          "record_kind": "vote",
+          "actor_quote": "Baldwin Byrne Garten Mishler",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        },
+        {
+          "snapshot_id": "6ee430d7-d418-55b6-9c18-c3af1da5167f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "if: (A) the pregnancy is a result of rape or incest;",
+          "note": "Enrolled act amending IC 16-34-2-1: abortion is a criminal act except for serious health risk to or to save the life of the mother, a lethal fetal anomaly (before viability/20 weeks), and pregnancies from rape or incest (first 10 weeks).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e5a9c198-8499-5f12-ae69-c2c51d8155fb",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "IGA bill details/digest page for SB 1(ss); authored by Sen. Glick, does not mention Garten or his vote.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "2d98cb03-ae4d-58a1-829a-58039d7da041",
+        "6ee430d7-d418-55b6-9c18-c3af1da5167f"
+      ],
+      "reasoning": "Garten voted Yea on SB 1(ss) (2022 First Special Session) (Roll Call 58, Aug 5 2022), which amended IC 16-34-2-1 to make abortion 'a criminal act' except where the pregnancy is a result of rape or incest, or there is a serious health risk to or risk to the life of the mother. This matches the rung that would 'ban abortion except in cases of rape, incest, or a serious risk to the mother's life,' and excludes the no-exceptions rung and the first-trimester-allowance rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

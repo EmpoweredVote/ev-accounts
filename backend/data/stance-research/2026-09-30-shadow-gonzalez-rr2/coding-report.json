@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "1cede4d2-3075-4860-b133-1ab34cdacff5|a77cd5e4-d43d-4af1-b8e0-46ed80b979c6|a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Gonzalez's own words on the trajectory of California fossil fuel production (phase out entirely, no new drilling statewide, or hold steady) — a first-person issue page, questionnaire answer or floor statement",
+          "A Gonzalez record on a jurisdiction-wide bar on new oil and gas drilling permits or leases in California",
+          "Gonzalez's own words or a jurisdiction-wide (statewide) bar on new drilling/leasing, or a statement on where production overall should stand, to separate direction from a specific rung",
+          "A statewide (jurisdiction-wide) bar on new drilling permits or leases authored or voted on by Gonzalez, if one exists",
+          "Gonzalez's own words stating the production trajectory she seeks"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "1cede4d2-3075-4860-b133-1ab34cdacff5|a77cd5e4-d43d-4af1-b8e0-46ed80b979c6|a22215c3-6693-4bc2-b248-01aebba14570",
+      "requests": [
+        "Gonzalez's own words on the trajectory of California fossil fuel production (phase out entirely, no new drilling statewide, or hold steady) — a first-person issue page, questionnaire answer or floor statement",
+        "A Gonzalez record on a jurisdiction-wide bar on new oil and gas drilling permits or leases in California",
+        "Gonzalez's own words or a jurisdiction-wide (statewide) bar on new drilling/leasing, or a statement on where production overall should stand, to separate direction from a specific rung",
+        "A statewide (jurisdiction-wide) bar on new drilling permits or leases authored or voted on by Gonzalez, if one exists",
+        "Gonzalez's own words stating the production trajectory she seeks"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

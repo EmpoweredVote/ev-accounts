@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4486f856-118b-475c-83f0-078581a7b268|58c7cb0f-6409-4e6a-aa4f-1d146e88eb69|9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "topic_key": "judicial-criminal-justice",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Benjamin Allen's own words stating his general view of how the system should respond to someone who breaks the law (candidate questionnaire, issue page, or floor statement on SB 483)",
+          "A California Senate roll call or authorship record on a treatment-in-lieu-of-punishment or restorative-justice/restitution measure, with bill number and session"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4486f856-118b-475c-83f0-078581a7b268|58c7cb0f-6409-4e6a-aa4f-1d146e88eb69|9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "requests": [
+        "Benjamin Allen's own words stating his general view of how the system should respond to someone who breaks the law (candidate questionnaire, issue page, or floor statement on SB 483)",
+        "A California Senate roll call or authorship record on a treatment-in-lieu-of-punishment or restorative-justice/restitution measure, with bill number and session"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

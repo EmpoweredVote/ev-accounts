@@ -1,0 +1,75 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "326c5247-950b-407d-a10b-1116c49098f0|679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Indiana General Assembly bill page for SB 285 (2026 session), authorship line showing Carrasco as author",
+          "Indiana Senate roll call, SB 285 (2026 session), motion to concur in House amendments (reported 28-22), with the Aye/No lists",
+          "Enrolled text of SB 285 (2026 session): the operative section banning camping, sleeping or long-term sheltering on public land, the Class C misdemeanor section, and the warning/service-referral steps",
+          "Indiana Senate Bill 285 (2026) bill text, operative sections on enforcement and penalties",
+          "Indiana Senate roll call vote on SB 285 final passage (28-22, February 2026)",
+          "Indiana Senate Bill 285 (2026) official bill text — operative provision on warnings/penalties for provision_quote",
+          "Indiana Senate official roll call for SB 285 final passage (2026) — actor_quote and tally_quote",
+          "Indiana Senate Judiciary Committee sponsorship/authorship record naming Carrasco on SB 285 — record_kind"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "326c5247-950b-407d-a10b-1116c49098f0|679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3|4938766b-b45a-46e3-93bd-b8b30651271a",
+      "requests": [
+        "Indiana General Assembly bill page for SB 285 (2026 session), authorship line showing Carrasco as author",
+        "Indiana Senate roll call, SB 285 (2026 session), motion to concur in House amendments (reported 28-22), with the Aye/No lists",
+        "Enrolled text of SB 285 (2026 session): the operative section banning camping, sleeping or long-term sheltering on public land, the Class C misdemeanor section, and the warning/service-referral steps",
+        "Indiana Senate Bill 285 (2026) bill text, operative sections on enforcement and penalties",
+        "Indiana Senate roll call vote on SB 285 final passage (28-22, February 2026)",
+        "Indiana Senate Bill 285 (2026) official bill text — operative provision on warnings/penalties for provision_quote",
+        "Indiana Senate official roll call for SB 285 final passage (2026) — actor_quote and tally_quote",
+        "Indiana Senate Judiciary Committee sponsorship/authorship record naming Carrasco on SB 285 — record_kind"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d|2d574e6c-c30a-4897-8995-428b4968c690|eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Arizona Legislature record of Weninger acting on a business-attraction incentive instrument (for example a qualified facility tax credit or Arizona Competes Fund bill): bill page plus roll call",
+          "Weninger's own words on whether the state should offer incentives to attract large employers, and on conditions or clawbacks, from the current term or the campaign that seated him"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d|2d574e6c-c30a-4897-8995-428b4968c690|eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "requests": [
+        "An Arizona Legislature record of Weninger acting on a business-attraction incentive instrument (for example a qualified facility tax credit or Arizona Competes Fund bill): bill page plus roll call",
+        "Weninger's own words on whether the state should offer incentives to attract large employers, and on conditions or clawbacks, from the current term or the campaign that seated him"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

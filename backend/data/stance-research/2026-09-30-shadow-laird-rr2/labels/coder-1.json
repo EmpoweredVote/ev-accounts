@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "178a41d4-42b5-4ffd-be06-d1059d54eacb",
+      "office_id": "eaf4cad0-012a-48a6-8765-ca9020432782",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "48806783-3894-5855-8a66-ed263f20f170",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1020 (2021-2022)",
+          "provision_quote": "Each state agency shall ensure that zero-carbon resources and eligible renewable energy resources supply 100 percent of electricity procured on its behalf by December 31, 2035.",
+          "note": "Authored bill; the added Public Utilities Code section 454.59 is a binding, dated clean-energy procurement duty, while the amended section 454.53 retail-sales percentages are stated only as state policy.",
+          "record_kind": "author",
+          "actor_quote": "SB 1020, Laird.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": ["48806783-3894-5855-8a66-ed263f20f170"],
+      "reasoning": "Laird authored SB 1020 (2021-2022), the Clean Energy, Jobs, and Affordability Act of 2022, which adds Public Utilities Code section 454.59: \"Each state agency shall ensure that zero-carbon resources and eligible renewable energy resources supply 100 percent of electricity procured on its behalf by December 31, 2035.\" A binding verb attached to a clean-energy share and a firm date matches \"Require a shift to clean energy through mandates and firm deadlines\", and the annex's government-operations rule holds that a narrow scope does not change the mechanism. The revised section 454.53 percentages beside it are framed as \"the policy of the state\" and so are not themselves the mandate, but one binding dated clause in the bill is enough.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Jesse Gabriel's own words stating whether platforms should be legally required to remove false information or only to label it (floor statement, press release, or questionnaire answer)",
+          "California Assembly or Senate roll call on a bill that imposes a removal or labeling duty on platforms, with Gabriel's vote",
+          "Gabriel's own words or an instrument specifically requiring platforms to remove or label false/misinformation content, to separate the rungs",
+          "Gabriel's own in-term statement explaining whether he favors a removal duty, a labeling duty, voluntary standards, or no government role for false content specifically"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "requests": [
+        "Jesse Gabriel's own words stating whether platforms should be legally required to remove false information or only to label it (floor statement, press release, or questionnaire answer)",
+        "California Assembly or Senate roll call on a bill that imposes a removal or labeling duty on platforms, with Gabriel's vote",
+        "Gabriel's own words or an instrument specifically requiring platforms to remove or label false/misinformation content, to separate the rungs",
+        "Gabriel's own in-term statement explaining whether he favors a removal duty, a labeling duty, voluntary standards, or no government role for false content specifically"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

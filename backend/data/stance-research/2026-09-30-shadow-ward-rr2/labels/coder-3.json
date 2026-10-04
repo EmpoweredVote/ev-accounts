@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "1ee95c1d-6127-494b-9f68-e8b3c975adee",
+      "office_id": "5b95be8c-1634-43ab-acb5-f904b859a5ef",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "0461ef3f-1704-5c95-b5c9-66932e52e05c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCA 10 (2021-2022)",
+          "provision_quote": "The state shall not deny or interfere with an individual’s reproductive freedom in their most intimate decisions, which includes their fundamental right to choose to have an abortion and their fundamental right to choose or refuse contraceptives.",
+          "note": "SCA 10 declares a right to abortion but states no gestational limit or exception rule, so per V4.2 it shows direction only.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bb02481b-29f4-5027-8d13-6dd7cb60a4f4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SCA 10 (2021-2022)",
+          "provision_quote": null,
+          "note": "Ward is listed among the Ayes on the Assembly Floor vote for SCA 10, within his current term.",
+          "record_kind": "vote",
+          "actor_quote": "Villapudua, Ward, Akilah Weber",
+          "tally_quote": "Ayes Count 58 Noes Count 17"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Ward voted Aye on SCA 10 (2021-2022), which adds that 'the state shall not deny or interfere with an individual's reproductive freedom in their most intimate decisions, which includes their fundamental right to choose to have an abortion.' The provision declares a right to abortion but states no gestational limit or exception rule, so per V4.2 ('Silence is not a clause') it establishes only the pro-abortion-rights direction, not any specific rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

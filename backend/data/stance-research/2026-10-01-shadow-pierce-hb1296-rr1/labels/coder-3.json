@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "7925e549-fc15-5e78-91d8-1ca888818177",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Pierce voted Nay on adoption of the conference committee report for HB 1296, a bill bundling the handgun-license repeal with unrelated law-enforcement-training, theft, and juvenile-jurisdiction provisions.",
+          "record_kind": "vote",
+          "actor_quote": "Hatcher Pierce DeLaney",
+          "tally_quote": "Yea 69 Nay 30"
+        },
+        {
+          "snapshot_id": "85d1fad8-ebdb-5ed3-968d-f5b5450ef70b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "This clause alone would be chair-shaped for rung 5, but it is one provision among the bill's unrelated law-enforcement-training, theft, and juvenile-jurisdiction sections (e.g. SECTION 1's cultural-diversity, human-trafficking, and de-escalation training standards), so the single Nay vote cannot be tied to this clause specifically.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only passage naming Pierce is his Nay vote on adoption of the HB 1296 conference committee report, a bill whose operative content spans the handgun-carry-license repeal alongside unrelated law-enforcement-training-curriculum, theft, vehicle-law, and juvenile-jurisdiction sections. Per V4.1, a No vote on a multi-subject bill proves nothing, since he may have objected to any unrelated part rather than the carry-license clause.",
+      "needs_source": [
+        "Pierce's own statement or floor explanation of vote tying his Nay to the handgun-license-repeal provision of HB 1296 specifically, rather than to one of the bill's other, unrelated sections",
+        "a roll call on an amendment or motion to strike the handgun-license-repeal provision of HB 1296 specifically, rather than the bundled final-passage vote"
+      ],
+      "quotes": []
+    }
+  ]
+}

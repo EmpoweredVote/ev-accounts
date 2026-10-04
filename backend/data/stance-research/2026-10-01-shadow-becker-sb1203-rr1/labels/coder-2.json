@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "1de9f4db-a9ca-53e2-8314-82ab64756ac4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "SB 1203 (2021-2022)",
+          "provision_quote": "It is the intent of the Legislature that all state agencies aim to achieve net-zero emissions of greenhouse gases resulting from their operations, including scope 1 and scope 2 emissions, no later than January 1, 2035, or as soon as feasible thereafter.",
+          "note": "Net-zero intent for state agency operations only; no clean-energy mechanism named and the deadline is softened by 'or as soon as feasible thereafter' (H16, H17).",
+          "record_kind": "author",
+          "actor_quote": "SB 1203, Becker.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 1203, authored by Becker and signed into law, only declares legislative intent that state agencies 'aim to achieve net-zero emissions of greenhouse gases resulting from their operations... no later than January 1, 2035, or as soon as feasible thereafter.' It names no clean-energy mechanism, so it does not match rung 1's text, 'Require a shift to clean energy through mandates and firm deadlines'; a net-zero goal can be met by means other than a shift to clean energy, and the stated deadline is itself softened by 'or as soon as feasible thereafter.' The passage shows only the pro-action side.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

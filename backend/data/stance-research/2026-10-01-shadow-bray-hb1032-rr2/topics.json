@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+    "topic_key": "redistricting",
+    "topic_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+    "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+    "question_number": 31,
+    "title": "State Redistricting and Gerrymandering",
+    "question_text": "Who should draw electoral district boundaries and how should they be determined?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "independent citizens' commissions with no elected officials involved at any level."
+      },
+      {
+        "value": 2,
+        "text": "independent redistricting commissions with equal representation from both major parties."
+      },
+      {
+        "value": 3,
+        "text": "bipartisan legislative committees with strict rules requiring supermajority approval."
+      },
+      {
+        "value": 4,
+        "text": "state legislatures with court oversight to prevent extreme partisan bias."
+      },
+      {
+        "value": 5,
+        "text": "the party that controls the state legislature without outside interference."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

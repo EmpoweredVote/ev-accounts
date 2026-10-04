@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+      "passages": [
+        {
+          "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-08-28",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "Haney is in the Aye list on concurrence, but 5 Noes of 68 voting is under 10%, so the vote cannot carry a chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "Gipson, Grayson, Haney, Hart, Holden",
+          "tally_quote": "Ayes Count 63 Noes Count 5"
+        },
+        {
+          "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": "(B) (i) Preparation or sale of noncannabis food or beverage products in compliance with all applicable provisions of the California Retail Food Code (Chapter 1 (commencing with Section 113700) of Part 7 of Division 104 of the Health and Safety Code) by a retailer or microbusiness licensed under this division in the area where the consumption of cannabis is allowed.",
+          "note": "He authored the bill, but its operative section governs food, beverage and performances inside already-licensed premises, not the legal regime the rungs separate.",
+          "record_kind": "author",
+          "actor_quote": "AB 1775, Haney.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Authoring and voting for AB 1775 (2023-2024), which lets a local jurisdiction allow \"Preparation or sale of noncannabis food or beverage products\" and live performances at licensed cannabis retailers, shows he works within and expands a legal commercial cannabis market, but the operative section says nothing about whether cannabis should be \"regulate[d] ... through a licensed, taxed commercial market\" rather than treated \"like an ordinary legal product, with minimal restrictions on growing and using it.\" Excluding the prohibition rungs is not evidence for the rung left (V4.2), and the concurrence vote is near-unanimous (5 Noes of 68). No surviving passage separates the rungs on the legalization side."
+      ,
+      "needs_source": [
+        "Haney's own words or a chair-shaped record on the legal status and market structure of cannabis itself (licensed, taxed commercial market vs. minimal-restriction ordinary product), e.g. a floor statement or a vote on a cannabis licensing/taxation bill"
+      ],
+      "quotes": []
+    }
+  ]
+}

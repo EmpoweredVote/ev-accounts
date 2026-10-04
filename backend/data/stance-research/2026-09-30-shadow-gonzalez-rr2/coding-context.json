@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-30-shadow-gonzalez-rr2",
+  "seat": {
+    "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+    "full_name": "Lena Gonzalez",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2019-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "question_text": "What role should fossil fuels play in the nation's energy future?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Phase out fossil fuel production entirely."
+        },
+        {
+          "value": 2,
+          "text": "Allow no new drilling and let production decline over time."
+        },
+        {
+          "value": 3,
+          "text": "Keep fossil fuel production steady at current levels."
+        },
+        {
+          "value": 4,
+          "text": "Expand fossil fuel production with new drilling and permits."
+        },
+        {
+          "value": 5,
+          "text": "Maximize production and open more public land and waters to drilling."
+        }
+      ],
+      "annexMd": "# fossil-fuels — served revision 58796165-cd12-44de-a9b6-84df43f6eda0 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"What role should fossil fuels play in the nation's energy future?\"\n\n**Orientation:** standard. Rung 1 ends fossil fuel production, rung 5 maximizes it. The rungs order\nthe **trajectory of production** — end it, let it decline, hold it, grow it, maximize it — not\nemissions rules or clean-energy policy.\n\n**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is leasing and\npermitting: federal (federal lands and offshore waters), state (state lands, well permits, the oil\nand gas commission). Local governments hold a lever only where state law lets them zone or ban\ndrilling.\n\n**Synonyms:** \"oil and gas lease sale\", \"Outer Continental Shelf\" (OCS), \"five-year leasing\nprogram\", \"application for permit to drill\" (APD), \"hydraulic fracturing\" or \"fracking\", \"setback\",\n\"buffer zone\", \"keep it in the ground\", \"managed decline\", \"energy dominance\", \"extraction\",\n\"severance tax\", \"coal lease\", \"moratorium\".\n\n1. **\"Phase out fossil fuel production entirely.\"**\n   - Means: all fossil fuel production ends, including from wells and mines that operate now.\n   - Operative clauses: [a] a phase-out of production; [b] entirely — existing production ends too.\n   - Establishing evidence looks like: an instrument that ends existing production by a date or\n     schedule; own words calling for an end to all production. [b] separates rung 1 from rung 2, so\n     a ban on **new** drilling alone does not reach it.\n   - Levels that hold a lever: federal (federal lands and waters); state (state permits); local only\n     where state law allows a local ban.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2: see rung 2.\n   - A ban on one technique (for example fracking) or one fuel is narrower than \"entirely\" →\n     `direction-only` _(proposed)_.\n\n2. **\"Allow no new drilling and let production decline over time.\"**\n   - Means: no new wells or leases; existing production continues and falls off over time.\n   - Operative clauses: [a] no new drilling; [b] existing production is allowed to decline, not ended.\n   - Establishing evidence looks like: a jurisdiction-wide bar on new drilling permits or new leases\n     that leaves existing wells in place _(proposed)_. [a] is an absence clause (\"no new\"): the\n     instrument must bar new drilling across the jurisdiction, not in part of it (V4.2).\n   - Levels that hold a lever: federal; state; local only where state law allows it.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1 because both stop new drilling. Code rung 1 only when the passage\n     also ends existing production.\n   - Commonly confused with BLANK because a **geographic limit** on new wells reads like \"no new\n     drilling\". A siting limit on new wells is on-question (it is about new drilling) but covers only part of the jurisdiction →\n     BLANK `direction-only`. The same for one region, one basin or one stretch of coast.\n   - A **temporary pause** on lease sales or permits, pending a review, is not \"no new drilling\" →\n     `direction-only` _(proposed)_; the review part is `study-directive`.\n\n3. **\"Keep fossil fuel production steady at current levels.\"**\n   - Means: production stays about where it is now, neither cut nor grown.\n   - Operative clauses: [a] production held at current levels.\n   - Establishing evidence looks like: own words that production should neither fall nor grow.\n     Instruments rarely state this, so expect statements _(proposed)_.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because a person who opposes both a ban and an expansion looks like\n     rung 3. Ruling out rungs 1, 2, 4 and 5 is not evidence for rung 3 (V4.2 \"Ruling out the other\n     rungs\") → `direction-only`.\n   - Environmental rules are no longer part of this rung. A vote on emissions or safety rules does not\n     place a person here → `adjacent`.\n\n4. **\"Expand fossil fuel production with new drilling and permits.\"**\n   - Means: production grows, through new wells, new leases and more permits.\n   - Operative clauses: [a] expand production; [b] by new drilling and new permits.\n   - Establishing evidence looks like: an instrument that requires lease sales, speeds or adds\n     drilling permits in areas already open; own words calling for more drilling. A single record of\n     this kind does not exclude rung 5, so it is `direction-only` unless a second passage excludes\n     \"maximize\" (for example own words that keep some areas closed) _(proposed)_.\n   - Levels that hold a lever: federal; state; local (local permits where they exist).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because both expand. Rung 5 adds two clauses: \"maximize\" and\n     opening **more** public land and waters.\n\n5. **\"Maximize production and open more public land and waters to drilling.\"**\n   - Means: produce as much as possible, including by opening public land and waters that are closed\n     to drilling now.\n   - Operative clauses: [a] maximize production; [b] open more public land and waters to drilling.\n   - Establishing evidence looks like: an instrument that opens closed public land or offshore areas\n     to leasing **and** own words or text that call for maximum production. Compound: one side only\n     → `compound-partial` (V4.2) _(proposed)_.\n   - Levels that hold a lever: federal (federal lands and the OCS); state (state lands and state\n     waters). Local governments hold no lever on [b].\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4. A deregulation law cannot show \"maximize\" on its own:\n     that is a magnitude (codebook V2, refined 2026-09-26) → `direction-only`.\n   - Removal of environmental restrictions is no longer this rung's clause. It is evidence for\n     neither [a] nor [b] on its own → `direction-only` _(proposed)_.\n\n**Hard cases:**\n- **Preemption (codebook V2, H12).** A state law that forbids local governments to ban drilling, or to\n  ban new gas hookups, decides which level may act → `adjacent`. A hookup rule is also about using gas,\n  not producing it; the climate-change annex makes the same call.\n- **Use, transport and export** (gas hookups, pipelines, refineries, export terminals, power-plant\n  fuel) are not production → `adjacent` _(proposed)_.\n- **Emissions and safety rules** (methane limits, flaring rules, well plugging, spill rules) →\n  `adjacent`. They regulate how production happens, not how much.\n- **Clean-energy measures** (a renewable standard, clean-energy credits) belong to `climate-change` →\n  `adjacent` here.\n- **Taxes and subsidies** (severance tax rates, production tax breaks, royalty rates) change the cost\n  of production, not its permitted level → `direction-only` at most _(proposed)_.\n- **Budget and omnibus votes** that contain a leasing or permitting item → V4 `multi-subject`.\n- **\"All of the above\"** or \"energy independence\" with no production clause → `rhetorical`.\n"
+    }
+  ]
+}

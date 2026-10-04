@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+      "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "passages": [
+        {
+          "snapshot_id": "fdb62213-b720-5b80-ac0e-421966fb5a2f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-09-11",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": null,
+          "note": "Rivas voted Aye on the Assembly's concurrence in Senate amendments, the final Assembly vote on the bill as enacted.",
+          "record_kind": "vote",
+          "actor_quote": "Quirk, Quirk-Silva, Reyes, Luz Rivas, Robert Rivas, Rodriguez, Santiago",
+          "tally_quote": "Ayes Count 48 Noes Count 26"
+        },
+        {
+          "snapshot_id": "e2dfc4e8-d2ba-5c38-8740-bf578dd693da",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-10-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": "an owner of residential real property shall not, over the course of any 12-month period, increase the gross rental rate for a dwelling or a unit more than 5 percent plus the percentage change in the cost of living, or 10 percent, whichever is lower, of the lowest gross rental rate charged for that dwelling or unit at any time during the 12 months prior to the effective date of the increase.",
+          "note": "The bill text caps annual rent increases statewide and exempts new construction, single-family homes not owned by a corporation/REIT, and deed-restricted affordable units, while stating it does not limit local governments' authority to maintain stronger existing rent controls.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "fdb62213-b720-5b80-ac0e-421966fb5a2f",
+        "e2dfc4e8-d2ba-5c38-8740-bf578dd693da"
+      ],
+      "reasoning": "AB 1482 caps annual rent increases at 5% plus CPI (or 10%, whichever is lower) and adds just-cause eviction protections statewide, while expressly preserving stronger local rent-control ordinances adopted before September 2019 and not preempting local authority to 'adopt or maintain rent controls or price controls'. This extends rent-stabilization-style protections to units in jurisdictions without local rent control, matching rung 2, 'Strengthen existing rent stabilization and extend coverage to more units.' It does not match rung 1 ('all rental units communitywide'), since new construction, non-corporate single-family homes, and deed-restricted affordable units are exempted; it exceeds rung 3 ('maintain current tenant protections'), since it creates new statewide caps and just-cause requirements rather than leaving protections unchanged. Robert Rivas voted Aye on the Assembly's concurrence in Senate amendments, the final Assembly vote on the bill that was then signed into law.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

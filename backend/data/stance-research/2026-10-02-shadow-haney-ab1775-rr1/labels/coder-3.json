@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+      "passages": [
+        {
+          "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": "This bill would authorize a local jurisdiction, if specified conditions are met, to allow for the preparation or sale of noncannabis food or beverage products, as specified, by a licensed retailer or microbusiness in the area where the consumption of cannabis is allowed, and to allow, and to sell tickets for, live musical or other performances on the premises of a licensed retailer or microbusiness in the area where the consumption of cannabis is allowed.",
+          "note": "Bill lets local jurisdictions allow food sales and live performances at already-licensed cannabis consumption lounges; it does not touch the ladder's legal-status question.",
+          "record_kind": "author",
+          "actor_quote": "AB 1775, Haney.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-08-28",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "Floor concurrence vote on the same consumption-lounge amenities bill; Haney is listed as both mover and an Aye, but the vote is on the same off-axis content.",
+          "record_kind": "vote",
+          "actor_quote": "Garcia, Gipson, Grayson, Haney, Hart, Holden",
+          "tally_quote": "Ayes Count 63 Noes Count 5 NVR Count 11"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 1775 and its floor vote only authorize local jurisdictions to let licensed cannabis retailers sell noncannabis food/beverages and host ticketed live performances in existing consumption lounges; neither passage addresses the ladder's question of whether cannabis should be illegal, medical-only, decriminalized, a licensed commercial market, or minimally restricted, so both are adjacent and no chair is supported.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

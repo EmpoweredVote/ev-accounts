@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "b5a9a489-0784-428a-b1ed-81fd40e07ff5",
+      "office_id": "a88bbec4-49c8-41b5-a70f-2cc34b45aab8",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "4a478ff4-9133-56ed-ab4a-289af0110b4a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": "A male, based on a student's biological sex at birth in accordance with the student's genetics and reproductive biology, may not participate on an athletic team or sport designated under this section as being a female, women's, or girls' athletic team or sport.",
+          "note": "Enrolled act's operative clause restricts girls' teams to biological sex at birth, matching rung 4.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b7d2553f-89c0-5fb5-bf36-1963f7caca5c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-05-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": null,
+          "note": "Roll Call 402, veto override of HEA 1041; King recorded among the Yea votes.",
+          "record_kind": "vote",
+          "actor_quote": "Cook King Negele Torr",
+          "tally_quote": "Yea 67 Participation in school sports. (2022) Nay 28 Excused 5 Not Voting 0"
+        },
+        {
+          "snapshot_id": "70148e16-ac78-5bc4-a055-363237f5e98a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": null,
+          "note": "King is listed as a co-author of the bill as filed.",
+          "record_kind": "author",
+          "actor_quote": "Co-Authored by: Rep. Chris Jeter, Rep. Joanna King, Rep. Robert Heaton.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "4a478ff4-9133-56ed-ab4a-289af0110b4a",
+        "b7d2553f-89c0-5fb5-bf36-1963f7caca5c",
+        "70148e16-ac78-5bc4-a055-363237f5e98a"
+      ],
+      "reasoning": "Joanna King co-authored HB 1041 (2022) and voted Yea on Roll Call 402 to override the governor's veto, enacting HEA 1041's provision that 'A male, based on a student's biological sex at birth ... may not participate on an athletic team or sport designated under this section as being a female, women's, or girls' athletic team or sport,' which matches the rung requiring transgender athletes to compete only on teams matching their biological sex assigned at birth.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

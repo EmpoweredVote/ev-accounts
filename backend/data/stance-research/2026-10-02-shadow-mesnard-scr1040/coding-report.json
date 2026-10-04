@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A Mesnard record on a measure that sets or changes Arizona's statutory minimum wage level itself (bill number and Senate roll call), not a tip-credit carve-out",
+          "A Mesnard record or first-person statement on indexing the wage floor to the cost of living (Prop 206 annual escalator), which is what separates rung 1 from rung 2",
+          "Mesnard's own words answering what the wage floor should be — a questionnaire item, debate answer, floor statement on SCR1040, or first-person issue page; no statement by him appears in any snapshot here",
+          "Annex for minimum-wage (none exists yet) stating whether a tipped-wage credit is on-question for this ladder",
+          "Mesnard's own statement or vote on a general minimum-wage bill (not limited to tipped workers) addressing automatic indexing, legislative-set levels, state/local preemption, or removing the wage floor"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "A Mesnard record on a measure that sets or changes Arizona's statutory minimum wage level itself (bill number and Senate roll call), not a tip-credit carve-out",
+        "A Mesnard record or first-person statement on indexing the wage floor to the cost of living (Prop 206 annual escalator), which is what separates rung 1 from rung 2",
+        "Mesnard's own words answering what the wage floor should be — a questionnaire item, debate answer, floor statement on SCR1040, or first-person issue page; no statement by him appears in any snapshot here",
+        "Annex for minimum-wage (none exists yet) stating whether a tipped-wage credit is on-question for this ladder",
+        "Mesnard's own statement or vote on a general minimum-wage bill (not limited to tipped workers) addressing automatic indexing, legislative-set levels, state/local preemption, or removing the wage floor"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

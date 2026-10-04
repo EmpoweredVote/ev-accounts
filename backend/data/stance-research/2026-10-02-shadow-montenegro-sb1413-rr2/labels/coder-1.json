@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+      "office_id": "9d6fd1f4-0372-4576-a7d1-77b09eed2de4",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "ecfb8093-af2f-5b3e-a310-2fd65772ce73",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call naming Montenegro Y on a divided 31-27 vote, so not near-unanimous; the page prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "MCGARR Y MONTENEGRO Y NGUYEN Y",
+          "tally_quote": "Passed 31-27-1-0-1"
+        },
+        {
+          "snapshot_id": "c7fb207f-85cc-5317-8436-36b9a7d243be",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": "On receipt of a report of the existence of a homeless encampment, a city or town shall notify the owner to remove the owner's tent, structure or other personal property from the area in which the encampment is located. If removal does not occur within twenty-four hours after the order to remove the property, the city or town shall claim the property and retain the property for a period of fourteen days, during which the owner may claim the owner's property.",
+          "note": "The public-space rule is removal of property after a twenty-four-hour order with no penalty on the person; the bill's only penalty clause makes persons living at an encampment \"located on private property\" guilty of trespassing.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "45f5c7f6-1762-51f2-be10-f31c2af3bd1b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": null,
+          "note": "Bill history page for the same instrument; it shows the House tally and that sponsorship was \"Wadsack (Prime) Jones (Co-Sponsor)\", so Montenegro's act here is a vote, not sponsorship.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 05/15/2023 31-27-1-0-1 PASSED"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Montenegro voted Y on SB 1413 (2023), which requires a city or town to order removal of a homeless encampment and to claim the property if removal does not occur \"within twenty-four hours\", but sets no penalty on the person for camping in public. Against \"Prohibiting encampments on public property, enforced through graduated warnings and civil penalties\", the prohibition-and-notice side is evidenced while the \"civil penalties\" clause is not, and a single twenty-four-hour order is not \"graduated warnings\". The bill's one penalty clause makes persons living at an encampment \"located on private property\" guilty of trespassing, which is not the public-space question these rungs order, so it does not reach \"Banning public camping and sleeping with criminal penalties\" either.",
+      "needs_source": [
+        "Steve Montenegro's own words on SB 1413 (2023) tying his vote to a penalty rule for camping in public (floor statement, explanation of vote, or his own press release)",
+        "Any Arizona bill Montenegro sponsored or voted on that itself sets a civil or criminal penalty for sleeping or camping on public property, with the roll call naming him"
+      ],
+      "quotes": []
+    }
+  ]
+}

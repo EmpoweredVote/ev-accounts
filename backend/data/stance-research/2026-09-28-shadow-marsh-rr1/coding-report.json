@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2|1c197b51-fded-441e-a72a-de51329efe42|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Christine Marsh's own words (floor explanation of vote, press release or statement) tying her No vote on SB 1828 (2021) to its income tax rate provisions",
+          "An Arizona single-subject tax instrument (rate change, credit or loophole measure) with her recorded vote, sponsorship or authorship",
+          "A first-person statement or questionnaire answer from the current term or the 2026 campaign on how she would balance tax collection against public services",
+          "Marsh's own statement or floor explanation of vote tying her SB 1828 (2021) No vote to a specific taxation provision, if any exists",
+          "Marsh's own explanation of vote or floor statement on SB 1828 (2021) tying her No vote to a specific provision (e.g., the income-tax rate cut in Sec. 15, amending A.R.S. 43-1011)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2|1c197b51-fded-441e-a72a-de51329efe42|f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "requests": [
+        "Christine Marsh's own words (floor explanation of vote, press release or statement) tying her No vote on SB 1828 (2021) to its income tax rate provisions",
+        "An Arizona single-subject tax instrument (rate change, credit or loophole measure) with her recorded vote, sponsorship or authorship",
+        "A first-person statement or questionnaire answer from the current term or the 2026 campaign on how she would balance tax collection against public services",
+        "Marsh's own statement or floor explanation of vote tying her SB 1828 (2021) No vote to a specific taxation provision, if any exists",
+        "Marsh's own explanation of vote or floor statement on SB 1828 (2021) tying her No vote to a specific provision (e.g., the income-tax rate cut in Sec. 15, amending A.R.S. 43-1011)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

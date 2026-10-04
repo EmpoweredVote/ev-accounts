@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42",
+      "office_id": "7803f2a9-9dd2-4f45-8b85-1cf5fd29e785",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "295f5a1d-c49c-5f9a-9fc9-5aa165bb0955",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-03-31",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": null,
+          "note": "Assembly Floor final-passage vote on SB 3 where Gipson appears among the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Gatto, Gipson, Gomez",
+          "tally_quote": "Ayes Count 48 Noes Count 26"
+        },
+        {
+          "snapshot_id": "8b72ea71-4dd8-58df-a205-06f9b9b16340",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-04-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": "Following the implementation of the minimum wage increase specified in subparagraph (F) of paragraph (2) of subdivision (b), on or before August 1 of that year, and on or before each August 1 thereafter, the Director of Finance shall calculate an adjusted minimum wage.",
+          "note": "Chaptered bill text: Labor Code 1182.12 raises the wage floor on a set schedule to $15/hour, then requires annual CPI-based adjustment without further legislative action.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "295f5a1d-c49c-5f9a-9fc9-5aa165bb0955",
+        "8b72ea71-4dd8-58df-a205-06f9b9b16340"
+      ],
+      "reasoning": "Gipson voted Aye on SB 3 (2015-2016) final Assembly passage; the bill he voted for raises the wage floor on a set schedule and then requires the Director of Finance to calculate an adjusted minimum wage each year by a CPI-based formula with no new legislative vote, matching rung 1, 'Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation,' and excluding rung 2's requirement that lawmakers vote on each adjustment.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

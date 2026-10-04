@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "5ec5ddad-123b-5a0b-a45d-d44edba17b59",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call showing her Y vote; one MARTINEZ appears on the list, and 24 of 60 voting members voted No, so the vote is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "LONGDON N MARTINEZ Y MATHIS N",
+          "tally_quote": "03/24/2022 Passed 31-24-5-0-0"
+        },
+        {
+          "snapshot_id": "1d6b7010-dc9b-5123-8e54-281e2c0790f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Enrolled text of the bill she voted for; it is single-subject, and subsection C leaves teams designated for boys or coed open to all students.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b11d9fdf-2748-59e2-b6bf-18144546d124",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview confirming House final passage and the governor's signature; Martinez is not on the sponsor list, so her action on this instrument is the vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 03/24/2022 31-24-5-0-0 PASSED."
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "5ec5ddad-123b-5a0b-a45d-d44edba17b59",
+        "1d6b7010-dc9b-5123-8e54-281e2c0790f6",
+        "b11d9fdf-2748-59e2-b6bf-18144546d124"
+      ],
+      "reasoning": "On SB 1165 (2022) Martinez voted Y at House Third Reading (31-24-5-0-0), a single-subject athletics bill whose operative section provides that teams \"designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex\", which is the rung requiring transgender athletes to compete only on teams matching their biological sex assigned at birth. The bill's own subsection C states it \"does not restrict the eligibility of any student to participate in any interscholastic or intramural athletic team or sport designated as being for \"males\", \"men\" or \"boys\" or designated as \"coed\" or \"mixed\"\", which excludes the rung banning all transgender athletes from any organized sport. The vote falls in her 2021-2023 term in this same chamber, and 24 of the 60 voting members voted No, so it is not near-unanimous.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

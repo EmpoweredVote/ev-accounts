@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "50d00238-5334-4616-ac43-72375f53df71",
+      "office_id": "ae116c94-7533-46d0-aa81-20106f5cb572",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "3572370e-a6b6-5c8e-86fa-80fff3553f34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR 2060 (2024)",
+          "provision_quote": null,
+          "note": "House final reading roll call: Gillette voted Y on HCR2060, a divided 31-29 vote, in his current term.",
+          "record_kind": "vote",
+          "actor_quote": "GILLETTE Y",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "5d7cfa43-a906-5a3c-aee4-81f846261d04",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR 2060 (2024)",
+          "provision_quote": "On conviction of an offense under this article, the judge shall enter an order that requires the person to return to the foreign nation from which the person entered or attempted to enter the United States or the person's nation of origin.",
+          "note": "The removal order reaches only aliens convicted of the new illegal-entry offense, which \"may only be enforced prospectively\", so the act says nothing about who else is removed.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "73523759-920c-580b-819b-75e0df267be1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR 2060 (2024)",
+          "provision_quote": null,
+          "note": "Bill history page for the same instrument; it prints the final tally and the prime sponsor (Toma), not Gillette's individual vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House FINAL 06/04/2024 31-29-0-0-0 PASSED"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gillette's only evidenced act is a Y vote on HCR 2060 (2024), a state criminal-entry measure whose removal clause reaches only a person convicted of entering \"at any location other than a lawful port of entry\" and which \"may only be enforced prospectively\". That places him on the enforcement side but does not establish \"deport all undocumented immigrants, starting with those who have criminal records\", nor \"focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place\" — the act never says long-settled immigrants are left in place, and saying nothing about them is not that clause. It also cannot establish \"only deport undocumented immigrants convicted of serious violent crimes\", since the offense it creates is entry, not a serious violent crime.",
+      "needs_source": [
+        "John Gillette's own first-person words on how far the government should go in deporting undocumented immigrants (questionnaire answer, floor statement, interview), 2023-present",
+        "Any bill Gillette authored, prime-sponsored or co-sponsored in the Arizona Legislature that sets who is removed (not state-federal enforcement cooperation), 56th-57th Legislature"
+      ],
+      "quotes": []
+    }
+  ]
+}

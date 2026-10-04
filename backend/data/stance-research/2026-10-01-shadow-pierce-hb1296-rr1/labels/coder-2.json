@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "7925e549-fc15-5e78-91d8-1ca888818177",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Pierce voted Nay on adoption of the conference committee report for HB 1296, a multi-subject firearms/criminal-law bill.",
+          "record_kind": "vote",
+          "actor_quote": "Pierce",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "85d1fad8-ebdb-5ed3-968d-f5b5450ef70b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "(3) The person does not meet the requirements under IC 35-47-2-3 to receive a license to carry a handgun in Indiana.",
+          "note": "Enrolled act text repeals the handgun-carry license requirement, but the bill also amends unrelated law-enforcement-training, vehicle, juvenile-jurisdiction and theft provisions, so it is multi-subject.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "60bbe94f-d3c4-57ee-acfd-b0edf8237cca",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Lists HB 1296's authors, co-authors, and sponsors; Pierce is not named among them.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Pierce's only action on this topic is a Nay vote on adoption of the conference committee report for HB 1296, a multi-subject bill (it also amends law-enforcement-training standards, vehicle-operation law, juvenile-court jurisdiction, and theft classification alongside the handgun-carry-license repeal, \"(3) The person does not meet the requirements under IC 35-47-2-3 to receive a license to carry a handgun in Indiana.\"). Per the vote ladder, a No vote on a multi-subject bill proves nothing, since he may have objected to any part of it, and no statement ties his vote to the carry-license provision specifically.",
+      "needs_source": ["Pierce's own statement, floor speech, or explanation of vote on HB 1296 (2022) tying his Nay vote to the handgun-carry-license repeal rather than the bill's other provisions"],
+      "quotes": []
+    }
+  ]
+}

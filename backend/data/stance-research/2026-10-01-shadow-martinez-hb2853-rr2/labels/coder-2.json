@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "c1b703be-a2d3-5376-8419-b3d9505af7f7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Martinez is listed as a co-sponsor of HB2853 (2022), the Arizona empowerment scholarship accounts bill, during her first House term.",
+          "record_kind": "sponsor",
+          "actor_quote": "Martinez (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4800e623-e763-50c3-9001-948450f45863",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "The House Third Reading roll call shows Martinez voting Y on final passage of HB2853 (2022), which passed 31-26-3-0-0.",
+          "record_kind": "vote",
+          "actor_quote": "MARTINEZ Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "7e02b0b6-bcb1-5d0b-9253-c21df0a6c8e2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "The enacted bill adds section 15-2401.01, making any resident eligible to attend a public preschool-disability program, kindergarten, or grades 1-12 a qualified student, i.e., a universal ESA expansion.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "c1b703be-a2d3-5376-8419-b3d9505af7f7",
+        "4800e623-e763-50c3-9001-948450f45863",
+        "7e02b0b6-bcb1-5d0b-9253-c21df0a6c8e2"
+      ],
+      "reasoning": "Martinez co-sponsored and voted Y on final passage of HB2853 (2022), a single-subject Arizona empowerment scholarship accounts bill. Its enacted text adds section 15-2401.01, making any resident eligible to enroll in a public preschool-disability program, kindergarten, or grades one through twelve a qualified student, with funds usable at any qualified nongovernmental school, matching the rung text \"Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

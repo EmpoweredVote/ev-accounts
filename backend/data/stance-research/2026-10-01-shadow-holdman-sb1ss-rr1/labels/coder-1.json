@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+      "office_id": "8d0b1e43-d2c5-4c83-8f73-566bc82237e0",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "c763f996-7d8a-59a6-a265-68994f093b9a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate roll call 58 on the motion to concur in SB 1(ss), the chamber's final adoption of the bill text, not a procedural motion; Holdman is in the Yea list.",
+          "record_kind": "vote",
+          "actor_quote": "Bray Crider Holdman Rogers",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        },
+        {
+          "snapshot_id": "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "Abortion shall in all instances be SEA 1(ss) — Concur 13 a criminal act, except when performed under the following circumstances:",
+          "note": "Enrolled act text: the amended IC 16-34-2-1 bans abortion except where necessary to prevent a serious health risk or save the woman's life, for a lethal fetal anomaly, or where the pregnancy is a result of rape or incest.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ed2da438-9790-5cc8-9b32-9b6647c5a263",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill details page: single-subject abortion bill, signed by the Governor and enacted as Public Law 179(ss) on 08/05/2022; the page prints a digest, not operative text.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "c763f996-7d8a-59a6-a265-68994f093b9a",
+        "4eacbc9c-9ae2-58c6-86cd-c3f34380faab",
+        "ed2da438-9790-5cc8-9b32-9b6647c5a263"
+      ],
+      "reasoning": "Holdman voted Yea on the Senate's concurrence in SB 1(ss) (2022 First Special Session), a single-subject abortion bill whose enrolled text makes abortion \"a criminal act, except when performed under the following circumstances:\" — a serious health risk to or the life of the pregnant woman, a lethal fetal anomaly, or a pregnancy that \"is a result of rape or incest\". That is the rung \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\"; the enumerated exceptions exclude \"ban abortion in all cases, with no exceptions\", and the absence of any general first-trimester permission excludes \"allow abortion during the first trimester, and after that only to protect the mother's health\".",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

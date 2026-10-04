@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote page naming Gowan's Aye and the 21-7-2 tally; it prints no provision.",
+          "record_kind": "vote",
+          "actor_quote": "GOWAN Y",
+          "tally_quote": "Passed 21-7-2-0-0"
+        },
+        {
+          "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": "On or before January 1, 2026, a municipality with a population of seventy-five thousand persons or more must authorize by ordinance and incorporate into its development regulations, zoning regulations and other official controls the development of duplexes, triplexes, fourplexes and townhomes as a permitted use on both of the following:",
+          "note": "Chaptered text of the bill Gowan voted on; it removes local zoning limits but names no price rule, required unit, subsidy or public housing.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6048bc5d-41e2-501a-bb4b-c01ccbd5ba6e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview confirming the same Senate third-reading tally and showing Gowan is not among the sponsors, so his only act on this instrument is the vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "Senate THIRD 05/08/2024 21-7-2-0-0 Amended PASSED."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gowan's only act on file is an Aye on HB2721 (2024), which forces larger municipalities to permit \"duplexes, triplexes, fourplexes and townhomes as a permitted use\" near downtowns and in large new developments and bars them from imposing heavier review, parking or floor-area limits on those units. Voiding local zoning limits is on-question for \"Rely on the market to set prices and supply — at most, cut the regulations and zoning limits that block private building\", but one deregulation law cannot establish that \"at most\" ceiling: a legislator who also wants binding rules on the private market or subsidies for affordable construction could cast the same vote. Nothing here speaks to public housing, rent caps, required affordable units or housing subsidies, so the evidence shows a side and not a rung.",
+      "needs_source": [
+        "David Gowan's own words (questionnaire, issue page, floor statement) on whether government should build public housing, set rent caps or required affordable units, or fund housing subsidies, 2023-2026",
+        "An Arizona Senate roll call with Gowan recorded on a rent-regulation or inclusionary-requirement bill, 56th or 57th Legislature",
+        "An Arizona Senate roll call or sponsorship with Gowan recorded on a housing subsidy, state housing trust fund or affordable-housing tax credit measure, 56th or 57th Legislature"
+      ],
+      "quotes": []
+    }
+  ]
+}

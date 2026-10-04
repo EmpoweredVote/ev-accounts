@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a",
+      "office_id": "5d39ba29-4d41-4a41-b01c-0c48786c3675",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "733747ac-3504-5347-b1d2-c1cdd964394e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024, 56th Legislature 2nd Regular Session)",
+          "provision_quote": null,
+          "note": "Bill overview page shows Carbone as prime sponsor of HB2720 and the governor's signature, but prints no operative text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Carbone (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5319e2f3-6f44-59e5-a284-915392cf4203",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024, 56th Legislature 2nd Regular Session)",
+          "provision_quote": null,
+          "note": "House Final Reading vote page names Carbone's Aye and the tally but prints no operative text; 22 No votes, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "CARBONE Y",
+          "tally_quote": "Passed 35-22-3-0-0"
+        },
+        {
+          "snapshot_id": "72e8d029-8f5a-52f4-96de-1e30f8c05042",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2720 (2024, 56th Legislature 2nd Regular Session)",
+          "provision_quote": "A municipality with a population of more than seventy-five thousand persons shall adopt regulations that allow on any lot or parcel where a single-family dwelling is allowed all of the following:",
+          "note": "Chaptered text removes municipal zoning limits on accessory dwelling units but creates no subsidy, no binding affordability rule and no public housing.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Carbone prime-sponsored and voted Aye on HB2720 (2024), which forces large municipalities to adopt regulations that allow accessory dwelling units and bars a list of local restrictions on them, so it removes the kind of limit named in \"cut the regulations and zoning limits that block private building\". Under V2's preemption refinement, one deregulation law is on-question but cannot show the \"at most\" magnitude that distinguishes \"Rely on the market to set prices and supply\" from \"offer subsidies and tax breaks so more affordable housing gets built\"; it is also an ADU-only measure, narrower than the instrument the rung describes. No source here shows his position on subsidies, rent caps or required affordable units, so the evidence fixes a side only.",
+      "needs_source": [
+        "Carbone's own words or an Arizona legislative record on housing subsidies or tax credits (to separate \"offer subsidies and tax breaks so more affordable housing gets built\" from \"Rely on the market to set prices and supply\")",
+        "Carbone's own words or an Arizona legislative record on rent caps or required affordable units (to test \"set binding rules on the private market\")"
+      ],
+      "quotes": []
+    }
+  ]
+}

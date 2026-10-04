@@ -1,0 +1,80 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1610 (2025)",
+          "provision_quote": null,
+          "note": "The caucus release reports his sponsorship and Senate passage but only paraphrases the bill, so no operative bill text is in this snapshot.",
+          "record_kind": "sponsor",
+          "actor_quote": "All three measures, sponsored by Senator John Kavanagh, passed the Senate and are being transmitted to the House of Representatives for consideration.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-03-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted words back federal removal of arrested and criminal aliens but never say who else should or should not be removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Kavanagh sponsored SB 1294, SB 1299 and SB 1610 (2025) and said \"we are supporting the federal government's deportation efforts by requiring detention facilities to supply inmate information to ICE\" — state assistance aimed at people already arrested or convicted. Nothing here says whether he would \"Deport all undocumented immigrants, starting with those who have criminal records\" or stop at those \"convicted of serious violent crimes\", and the ladder's top rung clause \"including long-settled families and workers\" is untouched. The evidence fixes a direction only; excluding the lower rungs would not establish the clauses of any remaining rung.",
+      "needs_source": [
+        "Arizona Legislature bill text, SB 1610 (2025), operative section",
+        "Arizona Legislature bill text, SB 1294 (2025), operative section",
+        "Arizona Senate roll call, SB 1610 (2025), third reading",
+        "Kavanagh's own words on whether long-settled undocumented residents without criminal records should be removed"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "The federal government should have access to the empty Marana Prison to house these dangerous criminal illegal aliens so that Arizonans are protected from further threats",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "With this bill, we are supporting the federal government's deportation efforts by requiring detention facilities to supply inmate information to ICE.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "Voters made it very clear in the last election - they are FED UP with the massive tsunami of people who have been entering this country illegally",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

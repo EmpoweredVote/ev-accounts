@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-09-27-shadow-rivas-v04-rr1",
+  "seat": {
+    "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+    "full_name": "Robert Rivas",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+    "office_title": "Assembly Member",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "CA",
+        "term_start": "2018-12-03",
+        "start_precision": "day",
+        "term_end": "2022-12-05"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic_key": "rent-regulation",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "question_text": "What role should government play in regulating rents and protecting tenants?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Expand rent control to cover all rental units communitywide"
+        },
+        {
+          "value": 2,
+          "text": "Strengthen existing rent stabilization and extend coverage to more units"
+        },
+        {
+          "value": 3,
+          "text": "Maintain current tenant protections while allowing market rents for new construction"
+        },
+        {
+          "value": 4,
+          "text": "Limit rent regulations to subsidized units; allow market rents broadly"
+        },
+        {
+          "value": 5,
+          "text": "Oppose rent control entirely; rents should be set by the market without government intervention"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "office_id": "d13d9c57-2851-48fb-a1a6-0b181f449453",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "House Final Reading vote on SB1457; Lieberman voted No as a State Representative, but the recorded vote alone does not show which of the bill's reason- and facility-based provisions he objected to.",
+          "record_kind": "vote",
+          "actor_quote": "LIEBERMAN N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "This act does not create or recognize a right to an abortion and does not make lawful an abortion that is currently unlawful.",
+          "note": "The enacted text bans sex-, race- and genetic-abnormality-selective abortions, restricts abortion at public educational facilities, and adds clinic, informed-consent and reporting rules; it sets no gestational limit.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1457 (2021) bans abortions sought because of the child's sex, race or a genetic abnormality, restricts abortion at public educational facilities, and adds clinic, informed-consent and reporting rules; its own construction clause states it 'does not create or recognize a right to an abortion.' It sets no trimester-based limit and no exception rule, so it speaks to a dimension (reason and facility, not gestational stage) that this ladder does not order, matching the annex's narrow-restrictions hard case. Lieberman's recorded No vote as a State Representative on this bill therefore cannot establish any rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

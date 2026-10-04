@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "43e734b4-4417-4dcd-91c9-f420f3a1b702|f7cad0ce-e9af-46a1-a39d-d5d4520d3879|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Livingston's own words on what the general wage floor should be (questionnaire item, issue page, or debate answer naming a level or an indexing mechanism)",
+          "A record of Livingston acting on a general Arizona minimum-wage measure (bill text plus the roll call naming him)",
+          "Livingston's own statement(s) on the general minimum wage question, not limited to the tipped-worker subminimum",
+          "Livingston's own words or a record addressing the general minimum-wage floor, not limited to the tipped subminimum"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "43e734b4-4417-4dcd-91c9-f420f3a1b702|f7cad0ce-e9af-46a1-a39d-d5d4520d3879|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "Livingston's own words on what the general wage floor should be (questionnaire item, issue page, or debate answer naming a level or an indexing mechanism)",
+        "A record of Livingston acting on a general Arizona minimum-wage measure (bill text plus the roll call naming him)",
+        "Livingston's own statement(s) on the general minimum wage question, not limited to the tipped-worker subminimum",
+        "Livingston's own words or a record addressing the general minimum-wage floor, not limited to the tipped subminimum"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

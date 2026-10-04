@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-01-shadow-nguyen-hb2492-rr2",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492",
+      "source_kind": "public-record",
+      "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7",
+      "office_id": "0561b24d-9c8a-40b1-81a9-8b676e0d56fa",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2492 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-hb2492-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2492#house-third",
+      "source_kind": "public-record",
+      "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7",
+      "office_id": "0561b24d-9c8a-40b1-81a9-8b676e0d56fa",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2492 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-hb2492-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+      "source_kind": "public-record",
+      "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7",
+      "office_id": "0561b24d-9c8a-40b1-81a9-8b676e0d56fa",
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "instruments": [
+        "HB 2492 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

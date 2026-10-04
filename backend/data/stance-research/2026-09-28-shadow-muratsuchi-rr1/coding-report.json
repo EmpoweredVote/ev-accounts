@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "ea803096-927f-41fe-98e1-deab56291810|e45c9d52-6288-4865-a2de-dadd73cc18e6|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A record on a clean-energy instrument naming the energy source itself (for example a renewable-procurement standard with dated targets), or his own words on mandates vs. subsidies vs. permitting",
+          "a chair-shaped instrument matching rung 1's clean-energy mandate (e.g., a renewable-procurement standard with dated targets), or evidence separating rungs 2/3/4/5"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "ea803096-927f-41fe-98e1-deab56291810|e45c9d52-6288-4865-a2de-dadd73cc18e6|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "A record on a clean-energy instrument naming the energy source itself (for example a renewable-procurement standard with dated targets), or his own words on mandates vs. subsidies vs. permitting",
+        "a chair-shaped instrument matching rung 1's clean-energy mandate (e.g., a renewable-procurement standard with dated targets), or evidence separating rungs 2/3/4/5"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

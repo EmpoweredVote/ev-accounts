@@ -1,0 +1,47 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636",
+      "office_id": "7498c0e1-8652-4f8d-a82d-52e8be764cb4",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "27223785-70e8-59d3-8eba-c6c8ae421d79",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-05-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HCR 2060 (2024)",
+          "provision_quote": "The resolution is meant to secure the southern border by allowing local law enforcement officers to arrest those who cross the border illegally.",
+          "note": "Bill gives local police arrest power over illegal border crossing; this is an entry-enforcement dimension, not the deportation-scope of already-present undocumented immigrants the rungs order.",
+          "record_kind": "vote",
+          "actor_quote": "Democratic Senator Brian Fernandez, who voted against it",
+          "tally_quote": "In a 16 to 13 vote, with one senator not voting"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is a No vote on HCR 2060, which the article describes as authorizing local law enforcement to arrest people who cross the border illegally. That operative content concerns entry/arrest enforcement at the border, not the ladder's question of how far to go deporting undocumented immigrants already in the country, so the passage is adjacent/off-axis and cannot establish a rung.",
+      "needs_source": [
+        "Full text of HCR 2060 (2024) or Arizona Legislature roll call to check for any provision specifically addressing removal/deportation of already-present undocumented immigrants",
+        "Fernandez's own statements, if any, specifically about deportation scope for long-settled undocumented immigrants"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "27223785-70e8-59d3-8eba-c6c8ae421d79",
+          "text": "The measure will not make it safer, it will not save us money, it will costs us unnecessary and irreversible harm",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

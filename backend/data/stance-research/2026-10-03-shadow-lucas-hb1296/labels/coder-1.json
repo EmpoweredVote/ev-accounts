@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "d758604c-9dd9-4a00-ac09-90713a7bc4be",
+      "office_id": "5b1c46e1-5d4f-4a63-8dbf-e5f564863177",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "164f5ec0-961e-55cb-833c-c0e74646b4aa",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Adoption of the conference committee report is the final vote on the enrolled text, and 30 of the 99 members voting were Nay, so it is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Abbott Frye Lucas Slager",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "c2a0d647-b10d-5cdc-8f8c-5b9feee4290e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "Every section of the act concerns firearms, and it repeals the carry licensing sections outright (\"IC 35-47-2-2 IS REPEALED\", \"IC 35-47-2-24 IS REPEALED\"), so the vote is not multi-subject.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6497dd3c-9b0e-5e71-a976-36a9042d8099",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "The page lists Lucas as a co-author of the enrolled bill, a second act of his on the same instrument.",
+          "record_kind": "author",
+          "actor_quote": "Co-Authored by: Rep. David Abbott, Rep. Beau Baird, Rep. Brad Barrett, Rep. Steve Bartels, Rep. Robert Behning, Rep. Bruce Borders, Rep. Martin Carbaugh, Rep. Robert Cherry, Rep. Anthony Cook, Rep. Michelle Davis, Rep. J. Davisson, Rep. Dale DeVon, Rep. Sean Eberhart, Rep. Jeff Ellington, Rep. Karen Engleman, Rep. Randall Frye, Rep. Chuck Goodrich, Rep. Doug Gutwein, Rep. Robert Heaton, Rep. Dave Heine, Rep. Matt Hostettler, Rep. Todd Huston, Rep. Chris Jeter, Rep. Jack Jordan, Rep. Chris Judy, Rep. Joanna King, Rep. Ryan Lauer, Rep. Cindy Ledbetter, Rep. Don Lehe, Rep. Matt Lehman, Rep. Daniel Leonard, Rep. Shane Lindauer, Rep. Jim Lucas",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "164f5ec0-961e-55cb-833c-c0e74646b4aa",
+        "c2a0d647-b10d-5cdc-8f8c-5b9feee4290e",
+        "6497dd3c-9b0e-5e71-a976-36a9042d8099"
+      ],
+      "reasoning": "Lucas voted Yea on the conference committee report for HB 1296 (2022) and is listed as a co-author of the enrolled bill, which states \"IC 35-47-2-2 IS REPEALED\" and provides that an adult who is \"not otherwise prohibited from carrying or possessing a handgun\" is \"not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.\" That matches the rung \"Repeal major gun restrictions and let adults carry a firearm without a permit\" clause for clause. It excludes \"at most loosen rules on carrying, such as honoring permits across state lines\", because the act abolishes the carry permit requirement rather than loosening rules around a permit that remains.",
+      "needs_source": [
+        "HB 1296 (2022) as introduced, to confirm the version Lucas co-authored matches the enrolled act (C37)"
+      ],
+      "quotes": []
+    }
+  ]
+}

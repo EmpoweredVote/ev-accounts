@@ -1,0 +1,9 @@
+Written to `labels/coder-1.json`.
+
+**Row: Alex Lee / climate-change — BLANK `direction-only`**
+
+Both snapshots are one record: his Aye on AB 1279 (2021-2022), concurrence in Senate amendments, 8/31/2022. That falls in his first Assembly term (2020-12-07 to 2022-12-04), so under V5 option B it is `in-term` for the current seat. The tally (52–18) clears the near-unanimous threshold, and concurrence is not on the V4.1 procedural list, so the vote could in principle carry a chair.
+
+It doesn't, because of clause completeness. Rung 1 reads "Require a shift to clean energy through mandates and firm deadlines." The operative section — new Health and Safety Code § 38562.2 — declares a state policy of net zero "no later than 2045" and 85% below 1990 levels, directs the state board to ensure scoping-plan updates "identify and recommend measures," and directs it to implement carbon-removal and carbon-capture policies. It names no energy source and requires no shift to clean energy. The phrase about "almost complete transition away from fossil fuels" sits in SECTION 1 findings, and under C38/C51 the operative section governs, not the recital. So the vote shows a side — strong state action on emissions — without separating rung 1 from the subsidy rung or the permitting rung.
+
+Record fields are split per the V3 worked example: `actor_quote` ("Kalra, Lee, Levine") and `tally_quote` ("Ayes Count 52 Noes Count 18") on the vote page, `provision_quote` on the bill-text page, nulls elsewhere. `rests_on` is empty, and `needs_source` asks for a clean-energy-mandate instrument or his own words on the question.

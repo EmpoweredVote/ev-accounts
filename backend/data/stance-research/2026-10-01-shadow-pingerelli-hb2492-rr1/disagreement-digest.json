@@ -1,0 +1,89 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0.4285714285714286,
+      "examples": [
+        {
+          "unit": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#34ecf099-bd34-5028-be0e-5353496c0867",
+          "values": [
+            "third-party-characterization",
+            "third-party-characterization",
+            "own-act"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#34ecf099-bd34-5028-be0e-5353496c0867",
+          "values": [
+            "on-question",
+            "off",
+            "on-question"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0.4285714285714286,
+      "examples": [
+        {
+          "unit": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#34ecf099-bd34-5028-be0e-5353496c0867",
+          "values": [
+            "not-evidence",
+            "not-evidence",
+            "record"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0.6,
+      "examples": [
+        {
+          "unit": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|d1792200-1d3b-4955-a0b7-0e6980d7a7b2#34ecf099-bd34-5028-be0e-5353496c0867",
+          "values": [
+            "direction-only",
+            "off-axis",
+            "direction-only"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v1_attribution",
+    "v2_relevance",
+    "v3_class",
+    "v4_shape"
+  ]
+}

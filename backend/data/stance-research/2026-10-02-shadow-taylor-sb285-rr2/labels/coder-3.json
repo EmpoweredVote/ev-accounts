@@ -1,0 +1,55 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "6b6368a1-354d-4f28-9232-a6ec70198ab8",
+      "office_id": "085054aa-8e66-46c3-a41d-18e75de7eab6",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Floor remarks criticize the bill's distance rule and $500 fine but name no preferred rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Taylor's quoted floor remarks criticize the bill's 300-foot distance rule ('Why would you prescribe any distance away?') and call the $500 fine dangerous for an impoverished homeless person, and he separately says the focus should be on housing people rather than this enforcement scheme. This shows opposition to the bill's penalty design but does not state which of the five rungs' penalty levels he would support instead, so it is direction-only rather than a match to any rung's text.",
+      "needs_source": [
+        "Indiana Senate roll call recording Taylor's vote on the public camping ban bill, 2026 session",
+        "bill number and full text of the Indiana camping ban bill referenced in this article"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "text": "Why would you prescribe any distance away?",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "fee02f1f-bedd-56e3-a489-3d45b76112dc",
+          "text": "What I think we should be working on is finding a place for the unhoused to be housed. This is a bill that looks for a place for the unhoused to remain unhoused, because you can actually move 300 feet and not violate this law.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

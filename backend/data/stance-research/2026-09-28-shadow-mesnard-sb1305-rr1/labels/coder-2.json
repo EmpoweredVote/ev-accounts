@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB1305 (2023)",
+          "provision_quote": null,
+          "note": "Mesnard is listed as Prime sponsor of SB1305, a race/ethnicity curriculum bill, later vetoed by the governor.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "75343598-1fb8-585f-aad1-2ba26517eaa6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB1305 (2023)",
+          "provision_quote": null,
+          "note": "Senate Third Reading roll call shows Mesnard voting Y on SB1305, which passed 16-12-2-0-0.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "0db8e945-92cc-5f28-b839-85721d76633d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB1305 (2023)",
+          "provision_quote": "A public school, school district or state agency or an employee of a public school, school district or state agency may not provide or allow any person to provide instruction to students or employees that promotes or advocates for any of the following concepts: 1. Judging an individual on the basis of the individual's race or ethnicity.",
+          "note": "Engrossed bill text prohibits instruction promoting listed race/ethnicity concepts, with complaint and civil-penalty enforcement, matching a prohibition on divisive race-related lessons.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "f0aa35cb-1a4e-5311-9827-06432e5164d7",
+        "75343598-1fb8-585f-aad1-2ba26517eaa6",
+        "0db8e945-92cc-5f28-b839-85721d76633d"
+      ],
+      "reasoning": "Mesnard prime-sponsored and voted Yes (16-12-2-0-0) on SB1305 (2023), a single-subject curriculum bill whose operative text bars schools from providing instruction that 'promotes or advocates' for specified race-based concepts, backed by complaints and civil penalties. That matches rung 5, 'Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate,' and excludes the weaker rung 4 (merely leaving topics to families) since the bill actively bans and penalizes the instruction.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

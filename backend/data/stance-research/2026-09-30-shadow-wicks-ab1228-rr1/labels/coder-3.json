@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "d406e55d-80fd-5708-be95-8b2bd4399548",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": null,
+          "note": "Final-passage floor vote on AB 1228, a Fast Food Council wage-setting bill, not the general state minimum-wage floor this ladder addresses.",
+          "record_kind": "vote",
+          "actor_quote": "Weber, Wicks, Wilson",
+          "tally_quote": "Ayes Count 53 Noes Count 17"
+        },
+        {
+          "snapshot_id": "2b00b586-74a0-5073-9887-3b6484ae1ae5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-28",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": "The hourly minimum wage for fast food restaurant employees shall be twenty dollars ($20) per hour, effective April 1, 2024.",
+          "note": "The bill's operative wage clause sets $20/hour only for fast-food restaurant employees via an appointed council, not the general minimum wage floor.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 1228 creates a Fast Food Council that sets a $20/hour wage solely for fast-food restaurant employees, adjustable by the council rather than by a legislative vote, within a cap of the lesser of 3.5% or the CPI-W change; it does not 'raise the wage floor and tie it to the cost of living', 'raise the wage floor to a set higher level', 'hold the wage floor at its current level', or 'remove the wage floor entirely', so no passage is on-question for this ladder.",
+      "needs_source": ["Wicks's own statement or a bill/vote on the general California state minimum wage floor (not the sector-specific Fast Food Council wage)"],
+      "quotes": []
+    }
+  ]
+}

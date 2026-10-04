@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-09-28-shadow-mesnard-sb1305-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1305",
+      "source_kind": "public-record",
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_keys": [
+        "education-curriculum"
+      ],
+      "instruments": [
+        "SB 1305 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-sb1305-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1305#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_keys": [
+        "education-curriculum"
+      ],
+      "instruments": [
+        "SB 1305 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-sb1305-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1305S.htm",
+      "source_kind": "public-record",
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_keys": [
+        "education-curriculum"
+      ],
+      "instruments": [
+        "SB 1305 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

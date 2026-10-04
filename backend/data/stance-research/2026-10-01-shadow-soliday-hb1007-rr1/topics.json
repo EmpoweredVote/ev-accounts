@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+    "topic_key": "data-centers",
+    "topic_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+    "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+    "question_number": 8,
+    "title": "Data Center Development & Energy Costs",
+    "question_text": "How should government manage the growth of large-scale data centers?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"
+      },
+      {
+        "value": 2,
+        "text": "Barring utilities from passing any data center energy infrastructure costs to residential customers"
+      },
+      {
+        "value": 3,
+        "text": "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"
+      },
+      {
+        "value": 4,
+        "text": "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"
+      },
+      {
+        "value": 5,
+        "text": "Welcoming data center investment with minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

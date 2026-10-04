@@ -1,0 +1,23 @@
+Written: one row, coded BLANK `no-evidence`.
+
+**How the three passages coded**
+
+All three are Mesnard's own acts on one instrument, SCR1040 (2024), in-term (2024, current term began 2023-01-02):
+
+| Snapshot | V1 | V3 / kind | Carries |
+|---|---|---|---|
+| vote page | `own-act` | `record` / `vote` | `MESNARD Y`, `Passed 16-12-2-0-0` |
+| bill text | `own-act` | `record` / `vote` | the provision |
+| overview | `own-act` | `record` / `sponsor` | `Sponsors: Mesnard (Prime)` |
+
+The instrument group satisfies the 0.3 record-field rule: one passage carries `actor_quote`, one carries `tally_quote`, one carries `provision_quote`, and no fact is copied onto a page that doesn't print it. The struck short title on the bill-text page sits inside a `[deleted: …]` fence, so it is not quoted anywhere.
+
+**Why it blanks**
+
+Every passage fails V2 as `adjacent`. SCR1040 is a tip credit: it lets an employer pay up to 25% below the statutory minimum for tipped workers *only* where tips bring them to the minimum plus $2. It changes neither the floor's level nor its escalation mechanism, which is the single dimension this ladder orders across all five rungs. It is not "hold at current level" and it is emphatically not "remove the wage floor entirely" — it preserves the floor as the benchmark and adds a guarantee above it. V4 is `off-axis` for the same reason: the ladder does not order tip credits.
+
+Two things that could have made this a chair but don't:
+- The vote clears V4.1 on mechanics — final passage of a measure that is single-subject after the strike-everything amendment, 16–12 so not near-unanimous. Mechanics are fine; relevance is what fails.
+- There is no Mesnard statement in any snapshot, so nothing ties his vote to a floor-level position and `quotes` is empty.
+
+`needs_source` lists four concrete items, including his own words on the wage floor and whether an annex (none exists for this topic) would make tip credits on-question.
