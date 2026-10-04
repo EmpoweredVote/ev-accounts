@@ -203,3 +203,40 @@ same ladder, different search term. Run both spellings in every city.
 **Next:** outlet profiling, then research one member per run. Start with Noecker, Bowie and Jost,
 whose rent rows are already evidenced. **Budget Duluth as a statement-only city** — its ten members
 will cost more per seated chair than Saint Paul's eight.
+
+---
+
+# ⚠ UNEXPLAINED: Yang's A1 amendment to Ord 25-29
+
+The attachment `A1 Amendment - Yang` on matter 49196 is a .docx. Read through its Word revision
+marks rather than as plain text, because the plain text shows both numbers side by side and says
+nothing about which is which:
+
+```
+[ less than][STRUCK: twenty (20)][NEW: thirty (30)][ years ]
+[ ... ][STRUCK: after December 31, 2004]
+```
+
+**The amendment Yang moved would have lengthened the new-construction exemption from twenty years
+to thirty, and removed the 2004 cutoff** — both of which make the exemption broader and rent
+stabilization weaker.
+
+That does not sit with the rest of the record. Yang voted **against** the ordinance; the minutes show
+Johnson and Kim, the other two Nay votes, speaking **for** A1, and Jost, Bowie and Privratsky — the
+Yea side — speaking **against** it. A1 failed 3-4.
+
+🔴 **No chair has been seated from this, in either direction.** A protest or poison-pill amendment
+would explain it, and so would several other things; none is evidenced. It is written down as
+unexplained because the alternative is to guess at a motive and publish the guess.
+
+▶ **This is also why the plain-text read of a .docx is not enough.** The first extraction of this
+file produced `twenty (20) thirty (30)` with no way to tell the struck text from the inserted text,
+and reading it either way would have been a coin flip presented as a finding.
+
+## ⚠ Correction to an earlier claim in this file
+
+An earlier version said Ord 22-37 set the exemption at **15 years**, inferred from an attachment
+*titled* "Jalali Amendment #1 - 15 Year NCE after 1.1.23". That was wrong, and it was wrong because
+it read a title instead of the text. A1's own recitals state that the September 2022 amendment
+"include[d] a **twenty (20) year** exemption ... and those changes to the law took effect on
+January 1, 2023". A proposed amendment's title is not what the council adopted.
