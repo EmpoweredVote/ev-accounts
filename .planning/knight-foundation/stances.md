@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | — | `2026-10-04-knight-mn-cities` — **OPEN, scope done (15 blank / 20 live)** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | 3 so far | `2026-10-04-knight-mn-cities` — **OPEN, 3 of 18 members done** |
 
 Seven chairs from 29 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
