@@ -106,6 +106,15 @@ only the outlet list and the state statute review are per-slice.
 
 ## Open
 
+- 🔴 **LADDER DEFECTS FOR SEASON 3 — written up for Chris Andrews:**
+  [`.planning/todos/2026-10-03-local-ladder-defects-season-3.md`](../todos/2026-10-03-local-ladder-defects-season-3.md).
+  Seven asks. The costliest by far is `public-safety-approach`, whose chairs 1 and 3 do not
+  separate a member who funds both police and prevention — **7 of Charlotte's 12 spoke
+  substantively on it and none could be seated.**
+- ▶ **Campaign-site pass not yet run.** Only Ajmera's was read. Watlington's and Graham's are live
+  on guessed URLs alone, so more exist; Ballotpedia lists each member's campaign URL. First-person
+  issue pages are the most chair-shaped source still untouched.
+
 - ▶ 24 cities remain. The sweep scripts are generic; only the outlet list and the preemption
   review are per-state.
 - ▶ **PR #855** fixes a verifier defect this wave exposed: a stored name carrying a diacritic the
