@@ -3,7 +3,7 @@
 // 🔴 It used to live inline in attribute_quotes.mjs, and the self-test re-implemented it. A control
 // that re-implements the thing it tests is not a control: the copy lost a backslash and reported
 // four failures against code that was correct, which is the same defect in the other direction.
-// Both the tool and its self-test now import this.
+// Both the tool and its self-test import this.
 
 export const VERB = 'said|says|told|added|argued|noted|explained|wrote|asked|countered|replied';
 
@@ -31,12 +31,37 @@ const LQ = String.fromCharCode(8220), RQ = String.fromCharCode(8221);
 export const quoteRe = () => new RegExp(`(?:^|[\\s(\\[])[${LQ}"]([^${RQ}"]{35,500})[${RQ}"](?=[\\s.,;:!?)\\]]|$)`, 'g');
 
 /**
- * Quotes in `text` that are safely attributable to <first> <surname>.
+ * Split a full name into { first, middles, surname }.
+ *
+ * 🔴🔴 This used to be `const [FIRST, ...rest] = name.split(/\s+/); const SURNAME = rest.join(' ')`,
+ * which gives "Lynn Marie Nephew" the surname "Marie Nephew". Nothing matched, and the member
+ * returned ZERO attributed quotes from 42 articles. Passing the two-token form instead made her own
+ * MIDDLE NAME look like a different person — "Marie Nephew" — and excluded 34 of those 42 articles
+ * as ambiguous. One middle name broke the tool in both directions at once.
+ *
+ * The surname is the LAST token. Tokens between first and surname belong to the same person and must
+ * be forgiven by the ambiguity check, never counted as somebody else's first name.
+ */
+export function parseName(full) {
+  const parts = String(full).trim().split(/\s+/);
+  return { first: parts[0], middles: parts.slice(1, -1), surname: parts[parts.length - 1] };
+}
+
+/** Name pattern: first and each middle token optional, surname required. */
+export function nameRe(first, middles = [], surname) {
+  const mid = (middles || []).map((m) => `(?:${m}\\s+)?`).join('');
+  return `(?:${first}\\s+)?${mid}${surname}`;
+}
+
+/**
+ * Quotes in `text` safely attributable to this person.
  * The speech verb is REQUIRED — making it optional attributed a school principal's quote to a
  * councilmember because the NEXT SENTENCE merely began with her name.
  */
-export function findAttributed(text, first, surname) {
-  const nm = `(?:${first}\\s+)?${surname}`;
+export function findAttributed(text, first, middles, surname) {
+  // Back-compat: findAttributed(text, first, surname)
+  if (typeof middles === 'string' && surname === undefined) { surname = middles; middles = []; }
+  const nm = nameRe(first, middles, surname);
   const re = quoteRe();
   const out = [];
   let m;

@@ -232,7 +232,7 @@ passes it.
 
 ---
 
-## Summary of the eight asks
+## Summary of the nine asks
 
 1. Make `public-safety-approach` chairs 1 and 3 separable behaviourally — **highest value by far**.
 2. Mark rungs that coincide with common state preemptions, so they cannot be seated by accident.
@@ -244,3 +244,27 @@ passes it.
 8. Add a `tenant-protections` ladder at `local`, or widen `rent-regulation` chair 3 — **second highest
    value**: three divided, single-subject, well-reported Duluth votes seat nobody, and reading them on
    the price ladder gets six members exactly backwards.
+
+## 9. ⚠ `childcare` at `local` is a FUNDING ladder, and a city's lever is ZONING
+
+**Added 2026-10-05 from slice 3 (Duluth MN).** All five rungs are about public money: universal
+public funding · expanded subsidies and provider grants · targeted tax credits below an income
+threshold · support limited to the lowest incomes · none at all. Those are state and federal levers.
+
+What a city actually does, and what Duluth did, is **zoning**. Council Vice President Lynn Marie
+Nephew, speaking for an ordinance opening childcare facilities to more neighborhoods:
+
+> "There are **limited things we can do** to support our childcare providers and one thing we can do
+> is **actually zoning**. … What this is going to do is open up zoning to a variety of different
+> neighborhoods and hopefully create some more community daycare or childcare facilities in the
+> neighborhoods for parents to bring their kiddos to."
+
+She names the problem herself: the city's levers here are limited, and the one it has is not on the
+ladder. A member who acts on childcare supply therefore reads as having no position on childcare.
+
+**Ask:** either add a supply rung at `local` — zoning and licensing that let childcare open in more
+places — or re-scope `childcare` to `state` and `federal`, where its five rungs are real choices.
+⚠ This is **not** the same as defect 7 (`education-*` at `local`), where no city lever exists at all.
+Here a lever exists, is used, and the ladder cannot see it.
+9. Give `childcare` a supply rung at `local`, or re-scope it off `local` — its five rungs are all
+   public money, and the lever a city actually has is zoning.

@@ -3,9 +3,21 @@
 // 🔴 Run after ANY change to the quote regex, the TITLE list or the stoplist. Each of those has
 // silently reduced the yield to something indistinguishable from "this member is rarely quoted".
 // It imports the real matcher — a control that re-implements its subject is not a control.
-import { findAttributed } from './attribution.mjs';
+import { findAttributed, parseName } from './attribution.mjs';
 
 const LQ = String.fromCharCode(8220), RQ = String.fromCharCode(8221);
+
+const NAMEPARSE = [
+  ['Lynn Marie Nephew', 'Lynn', ['Marie'], 'Nephew'],
+  ['Arik Forsman', 'Arik', [], 'Forsman'],
+  ['Mary Jo Van Der Berg', 'Mary', ['Jo','Van','Der'], 'Berg'],
+];
+for (const [full, f2, m2, s2] of NAMEPARSE) {
+  const p = parseName(full);
+  const ok = p.first === f2 && p.surname === s2 && p.middles.join(' ') === m2.join(' ');
+  console.log(`${ok ? 'PASS' : '🔴 FAIL'}  parseName  ${full} -> ${p.first} | ${p.middles.join(' ')} | ${p.surname}`);
+  if (!ok) process.exitCode = 1;
+}
 
 const CASES = [
   ['real WDIO passage, stray quoted phrase before it (the pairing bug)',
@@ -26,14 +38,20 @@ const CASES = [
   ['NEGATIVE — the next sentence merely BEGINS with the name (the school-principal bug)',
     '"If a kid missed the bus, she would be willing to take them home for the evening." Nelsie Yang, who is now a council member, got to know her at school.',
     'Nelsie', 'Yang', false],
+  ['three-token name: the middle name must NOT break the match',
+    'Council President Lynn Marie Nephew said the policy needs work. "I do think there are holes in this and it is a place to start for now," Nephew said.',
+    'Lynn', ['Marie'], 'Nephew', true],
   ['NEGATIVE — quote belongs to someone else, member named after it (the Grondahl bug)',
     '"Duluthians are clear that passing this common-sense policy is the next step renters deserve," Grondahl said. Durwachter said she has remained in contact.',
     'Wendy', 'Durwachter', false],
 ];
 
 let pass = 0, fail = 0;
-for (const [label, text, first, surname, must] of CASES) {
-  const found = findAttributed(text, first, surname).length > 0;
+for (const [label, text, first, a, b, c] of CASES) {
+  const middles = Array.isArray(a) ? a : [];
+  const surname = Array.isArray(a) ? b : a;
+  const must = Array.isArray(a) ? c : b;
+  const found = findAttributed(text, first, middles, surname).length > 0;
   const ok = found === must;
   console.log(`${ok ? 'PASS' : '🔴 FAIL'}  ${must ? 'must find   ' : 'must NOT find'}  ${label}`);
   ok ? pass++ : fail++;

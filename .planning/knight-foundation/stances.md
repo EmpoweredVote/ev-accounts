@@ -25,9 +25,9 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | 11 so far | `2026-10-04-knight-mn-cities` — **OPEN, 11/18 done: Saint Paul + Randorf, Durrwachter, Forsman** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | 11 so far | `2026-10-04-knight-mn-cities` — **OPEN, 12/18 done: Saint Paul + Randorf, Durrwachter, Forsman, Nephew** |
 
-Fourteen chairs from 32 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
+Fourteen chairs from 33 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
 from 22 → 122 in Florida. Price the next slice from these numbers, not from the first pass.
 
@@ -87,6 +87,27 @@ Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human revie
 **✅ RANDORF IS DONE — 35 rows, 3 chairs** (`homelessness` 3 · `rent-regulation` 3 · `economic-development` 3).
 **✅ DURRWACHTER IS DONE — 35 rows, 2 chairs** (`climate-change` 1 · `economic-development` 2).
 **✅ FORSMAN IS DONE — 35 rows, 2 chairs** (`homelessness` 3 · `economic-development` 4).
+**✅ NEPHEW IS DONE — 35 rows, 0 chairs. A DOCUMENTED ZERO, not a gap.** Her in-term remarks are
+procedural (the short-term rental policy "has holes", the Lester Park study is a condition of
+closing) or press another government to pay (the county's $114M human services budget). Her
+substantive housing statements are from the 2023 campaign — see the ruling question below.
+
+🔴🔴 **A MIDDLE NAME BROKE THE ATTRIBUTOR IN BOTH DIRECTIONS AT ONCE.** `parseName` was
+`[FIRST, ...rest]`, so "Lynn Marie Nephew" got the surname **"Marie Nephew"** and matched nothing —
+**0 attributed quotes from 42 articles**. Passing the two-token form instead made her own middle name
+look like a different person and excluded **34 of those 42** as ambiguous. Fixed: the surname is the
+LAST token, middle tokens are forgiven by the ambiguity check, and `_attr_selftest.mjs` now covers
+`parseName` (including "Mary Jo Van Der Berg"). After the fix: 9 attributed, 6 exclusions, all six
+genuinely other Nephews. ▶ **A regression control on Forsman confirmed his 39 were unchanged.**
+
+🔴 **OPEN RULING NEEDED — are a candidate's statements from the campaign that SEATED them admissible?**
+This slice has excluded them for every member, which is conservative and consistent. It costs:
+Nephew on supportive housing and on changing ordinances to build more homes (Nov 2023, seated Jan
+2024) · Durrwachter on childcare (2023) · Randorf on the Lake Superior watershed (2019). C44 is about
+**votes** cast before the seat; nothing rules on statements. ⚠ Admitting them would not have seated
+Nephew anyway — her campaign remarks span chairs 3 and 5 on `housing` — so this is not blocking, but
+it should be decided before the state-legislature tranche, where challengers are the norm.
+
 
 🟢 **`economic-development` NOW SEPARATES THREE MEMBERS OF ONE COUNCIL — 2, 3 and 4 — each evidenced.**
 Durrwachter refuses subsidy to a large outside company; Randorf backs a small incentive paid only
@@ -121,8 +142,8 @@ line. A nay list is not a side.
 ordinance only after it was cut from a misdemeanor to a $200 fine, and the same night voted $500,000
 to accelerate new capacity — which is chair 3's two clauses exactly.
 
-**Seven people remain, all in Duluth:** Nephew, Jordon Johnson, Tomanek, Desotelle,
-Clanaugh, Kennedy, and Mayor Reinert.
+**Six people remain, all in Duluth:** Jordon Johnson, Tomanek, Desotelle, Clanaugh,
+Kennedy, and Mayor Reinert.
 
 ▶ **Method that worked, reuse it per member:**
 ```
@@ -145,9 +166,19 @@ Fixed to a sha1 in all three sweeps — **the Saint Paul corpus was built with t
 🔴 **A signed first-person op-ed fails `checkNameProximity`** — the author's name is in the byline and
 the bio, never beside the argument. Take the passage just before the author bio. README has the
 worked example.
-⚠ **Four Saint Paul rows each carry one failed source** (a `stpaul.legistar.com/MeetingDetail.aspx`
-URL on three, a MinnPost election story on one). Each still has a verified source, so each is queued
-— but the dead citations should be re-sourced before approval.
+⚠ **Four Saint Paul rows each carry one failed source, and the verifier is RIGHT about all four.**
+Diagnosed 2026-10-05; both URLs fetch fine, so this is the snippet, not reachability.
+- Noecker, Bowie and Jost (`rent-regulation`) cite a `stpaul.legistar.com` **agenda table row**:
+  *"Ord 25-29 1 34 Ordinance Amending Chapter 193A.08 … Adopted Pass Action details Video …"*. It
+  proves the ordinance passed and **names none of them** — Legistar keeps the roll call on a separate
+  *Action details* page — so `checkNameProximity` refuses it.
+- Cheniqua Johnson (`rent-regulation`) cites a MinnPost election story whose snippet reads
+  *"Kim, Jalali, Yang and Johnson have all expressed interest in…"*. **Johnson is a common surname**,
+  so the proximity rule needs a title qualifier within 30 characters and a four-name list has none.
+▶ **An instrument-level citation is not a member-level citation.** Each of the four still has one
+verified source and is queued, so a reviewer sees a working citation; the dead one should be replaced
+with a page that names the member before approval. Not fixed here — re-sourcing is a re-research of
+someone else's pair, not an edit.
 
 🔴🔴 **CORRECTION 2026-10-05 — "DULUTH IS STATEMENT-ONLY" WAS WRONG. IT HAS A VOTE RECORD.**
 `divided_votes.mjs duluth-mn 2025-01-01 138` over **40 meetings** found **905 items, 12 with a roll

@@ -6,7 +6,7 @@ import fs from 'node:fs';
 // session ends — the script then reads nothing and reports a clean zero. Corpus root is now an
 // argument: SWEEP_OUT, or data/stance-news, the same default sweep_duluth.mjs writes to.
 import path from 'node:path';
-import { findAttributed } from './attribution.mjs';
+import { findAttributed, parseName, nameRe } from './attribution.mjs';
 
 import crypto from 'node:crypto';
 // 🔴🔴 Corpus filenames were base64url(url).slice(0, 60). 45 bytes of URL is not past a shared
@@ -21,9 +21,10 @@ const NAME = process.argv[3];
 // A member's own name can be spelled more than one way, and the database spelling
 // is not always the newsroom's: "HwaJeong Kim" found 8 articles, "Hwa Jeong Kim" 27.
 const ALT = (process.argv[4] || '').trim();
-const [FIRST, ...rest] = NAME.split(/\s+/);
-const SURNAME = rest.join(' ');
+const { first: FIRST, middles: MIDDLES, surname: SURNAME } = parseName(NAME);
 const FIRSTRE = ALT ? `(?:${FIRST}|${ALT})` : FIRST;
+// Middle tokens belong to the SAME person — forgive them in the ambiguity check below.
+const OWNWORDS = new Set([FIRST, ...MIDDLES]);
 const ALTWORDS = ALT ? ALT.split('|').map((s) => s.replace(/[^A-Za-z]/g, ' ').trim().split(/\s+/)).flat() : [];
 
 const LQ = String.fromCharCode(8220), RQ = String.fromCharCode(8221);
@@ -38,6 +39,10 @@ const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'A
   // The rest are caption, nav and section labels that sit immediately before a name.
   'Councilor', 'Counselor', 'Alderman', 'Alderwoman', 'Supervisor', 'Trustee',
   'Councilors', 'Councilmembers', 'Members', 'Picture', 'Group', 'Submit', 'Video', 'Image',
+  'Neither', 'Either', 'Nor', 'Because', 'Since', 'Although', 'However', 'Meanwhile', 'Still',
+  // 🔴 'My Nephew' is the ordinary-word surname collision, capitalised. 'Support'/'Design' are
+  // nav labels. A surname that is an ordinary English word needs these or it excludes itself.
+  'My', 'Your', 'Our', 'Its', 'Support', 'Design', 'Photo', 'Read', 'Watch', 'Listen', 'Share',
   'Contact', 'Newsletter', 'Team', 'Careers', 'Weather', 'Sports', 'Communities', 'Events',
   'Local', 'News', 'District', 'Vote', 'Business', 'Opinion', 'Editorial', 'Letters', 'Column',
   'Columns', 'Photo', 'Photos', 'Video', 'Subscribers', 'Sections', 'Tags', 'Share', 'Listen',
@@ -59,13 +64,13 @@ for (const a of named) {
 
   // Another real person with this surname? Ignore sentence-starter false positives.
   const fulls = new Set([...t.matchAll(new RegExp(`\\b([A-Z][a-z]+)\\s+${SURNAME}\\b`, 'g'))].map((m) => m[1]));
-  fulls.delete(FIRST);
+  for (const w of OWNWORDS) fulls.delete(w);
   for (const w of ALTWORDS) fulls.delete(w);
   for (const w of [...fulls]) if (STOP.has(w)) fulls.delete(w);
   if (fulls.size) { ambiguous++; for (const w of fulls) others.add(`${w} ${SURNAME}`); continue; }
   clean++;
 
-  for (const q of findAttributed(t, FIRSTRE, SURNAME)) out.push({ url: a.url, quote: q });
+  for (const q of findAttributed(t, FIRSTRE, MIDDLES, SURNAME)) out.push({ url: a.url, quote: q });
 }
 
 const seen = new Set(), uniq = [];
