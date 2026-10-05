@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | 15 so far | `2026-10-04-knight-mn-cities` — **OPEN, 14/18 done: Saint Paul + Randorf, Durrwachter, Forsman, Nephew, Reinert, Kennedy** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | **22** | `2026-10-04-knight-mn-cities` — **OPEN, 14/18 done.** Saint Paul all 8 RE-RESEARCHED 2026-10-05 (4 chairs → 11); Duluth 6 done. **Four Duluth members remain** |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -83,6 +83,26 @@ what they hold now, and a departed official's URL can serve their successor.
 
 Work in `C:/ev-accounts-stances-mn` on branch `knight/stances-mn`. Everything below is measured,
 not assumed; nothing here needs re-deriving.
+
+🔴 **THE TOOLCHAIN CHANGED UNDER THIS SECTION ON 2026-10-05 — READ THE SAINT PAUL RE-SWEEP BLOCK
+BELOW BEFORE RUNNING THE RECIPE.** Six defects were fixed in `attribute_quotes.mjs`,
+`attribution.mjs` and the sweeps, and three new tools exist. The per-member recipe is now:
+
+```bash
+node scripts/stance-news/sweep_duluth.mjs <slug> "<Full Name>" ["<Alt>"]   # Reformer REMOVED from it
+node scripts/stance-news/sweep_reformer.mjs <slug> "<Full Name>"          # curl; QUERY_GAP_MS=6000 FETCH_GAP_MS=2000
+node scripts/stance-news/_corpus_profile.mjs <slug> "<Full Name>" ["<Alt>"]   # 🔴 BEFORE reading anything
+node scripts/stance-news/attribute_quotes.mjs <slug> "<Full Name>" ["Alt|Spellings"]
+node scripts/stance-news/_triage_quotes.mjs <slug> [--topic <key>]        # reading ORDER, never a finding
+node scripts/stance-news/quote_context.mjs <slug> <n>                     # settle every quote by reading
+SURNAME=<Surname> node scripts/stance-news/quoted_passages.mjs <slug>     # what the strict rule dropped
+```
+
+⚠ **Reformer 429s after roughly four members.** It is a budget across runs, not per run: raise the
+gaps, do not retry at the same speed. `sweep_reformer.mjs` controls at BOTH ends of a run and exits
+rather than record a throttled zero — **a genuine +0 and a blocked +0 are identical in a log.**
+⚠ **Duluth's Reformer yield is ONE article across all six members**, so expect nothing and measure
+anyway. All six are now searched; their rows say so.
 
 | Member | Seated | Expect |
 | --- | --- | --- |
@@ -214,7 +234,82 @@ When all four are done, update the slice table, the chair count, and open the PR
 
 ---
 
-**SAINT PAUL IS DONE** — seven councilmembers and the mayor, 280 rows. **4 chairs**, all on `rent-regulation`:
+## 🔴🔴 SAINT PAUL WAS RE-SWEPT AND RE-RESEARCHED, 2026-10-05 — 4 CHAIRS BECAME 11
+
+**All eight members redone.** The 15 scope blanks each are facts about Minnesota law and were
+preserved untouched; the ~20 searched blanks each were rewritten. Gate 490 rows `high=0`,
+`RE-RESEARCH: 0`, 22 rows in review. Nothing auto-publishes.
+
+| Member | Chairs before → after | New |
+| --- | --- | --- |
+| **Noecker** | 1 → **3** | `economic-development` 4, `residential-zoning` 4 |
+| **Coleman** | 0 → **2** | `homelessness` 3, `local-immigration` 3 |
+| **Her** (mayor) | 0 → **1** | `local-immigration` 1 |
+| **Kim** | 0 → **1** | `housing` 4 |
+| **Yang** | 0 → **1** | `ranked-choice-voting` 2 |
+| Cheniqua Johnson · Bowie · Jost | 1 → 1 | confirmed, better evidenced |
+
+### Why it was redone — two silent zeros, and neither raised an error
+
+1. 🔴 **A QUARTER OF THE CORPUS WAS NEVER ON DISK.** Saint Paul was swept before the corpus-key
+   fix, so filenames were `base64url(url).slice(0,60)` and articles overwrote each other: **342
+   named, 256 written, 86 lost.** Noecker lost 26 of 77. Yang's rows claimed *"every passage in the
+   remaining 47 was read"* when 39 existed.
+2. 🔴 **MINNESOTA REFORMER SUPPLIED ZERO TO EVERY CORPUS IN THE SLICE**, both cities, while 490 rows
+   named it as searched. It refuses node's `fetch` at the **TLS layer** — 403 and 5,795 bytes where
+   `curl` with the same UA gets 200 and 150,559. ▶ **A USER-AGENT IS NOT A CLIENT.** Profile with
+   the client that will do the work, and count what each outlet CONTRIBUTED per run.
+
+**Result: 256 readable articles → 810.** Reformer alone added 155 to Saint Paul (Kim +61, Coleman
++37, Her +25, Yang +21) and **one** across all six Duluth members. Coleman's `rent-regulation`
+evidence and Noecker's both came from Reformer articles no sweep had ever fetched.
+
+### Rules this cost, beyond the two above
+
+- 🔴 **THE AMBIGUITY CHECK ASSUMED WESTERN NAME ORDER.** 18 of Yang's 34 quotes came from articles
+  that never name her — Kaying Yang, the Chinese foreign minister **Yang Jiechi**, Korean officials.
+  `<First> Yang` never matches a surname-first name. Fixed with an **article-level gate**: the piece
+  must name the member in full or no quote in it is theirs. Saint Paul, with Yang, Her, Vang, Xiong
+  and Thao, is the worst place for this.
+- 🔴 **ARTICLE-LEVEL AND QUOTE-LEVEL TAKE OPPOSITE ANSWERS.** Requiring the full name *beside the
+  speech verb* yields **0 quotes for Mayor Her** — newsrooms name her once then write "Her said".
+  Which articles are about someone, and which quotes are theirs, are different questions.
+- 🔴 **CONSECUTIVE QUOTES BELONG TO THE LAST-NAMED SPEAKER.** A rec worker's testimony about having
+  been homeless was attributed to Council President Noecker because the next sentence began
+  "Noecker said…". ⚠ My first fix — reject quotes ending in terminal punctuation — dropped 24 of
+  Her's 88, including *"…?" Her asked.* The discriminator is a **preceding attribution to a
+  different named person**, not punctuation.
+- 🔴 **`nameRe` REGEX-ESCAPED THE ALTERNATION** `attribute_quotes` built, so every alternate spelling
+  was inert and matches fell back to the bare surname. It takes an **array** now.
+- 🔴 **THE GATE MUST ACCEPT first+surname.** `"Kaohly Vang Her"` skipped **221 of her 265 articles** —
+  every one printing the ordinary "Kaohly Her". A middle name is optional in print.
+- 🔴 **A POSITION THAT CAN BE READ BUT NOT CITED DOES NOT PUBLISH.** Three times: Mayor Her's
+  questionnaire (name 2,788 chars from the passage), Cheniqua Johnson's housing (702 and 1,693),
+  Jost's transportation (source will not verify). All three are **recorded in their blanks** with
+  what would settle them, so the next pass finishes rather than rediscovers them.
+- 🔴 **URLS COME FROM THE CORPUS INDEX, NEVER A CONSOLE DISPLAY.** I composed a MinnPost URL from a
+  line truncated at 74 characters and it 404'd. The verifier caught it. A truncated field is not a
+  short value.
+- 🟢 **`_corpus_profile.mjs` BEFORE READING ANYTHING.** Collision loss, signal ratio, same-surname
+  ambiguity, campaign-era count, per-outlet contribution. Yang is 16% signal, Kim and Coleman 9%:
+  the raw file count is the flattering lie every time. It is also what exposed the gate bug, because
+  it said 265 of 265 name her while the gate claimed 221 did not.
+- ⚠ **MPR NEWS IS READABLE AND NOT CITABLE** — Playwright renders its search, but its article pages
+  are hydrated client-side (132 KB of HTML, 99 characters of text). **Racket is blind**: the same 12
+  boilerplate links for a real query and for gibberish. Both stay named as uncovered. Do not retry.
+
+### Consistency checks worth keeping
+
+🟢 **Four members seated off ONE ordinance, and the chairs track the votes.** Noecker, Bowie and
+Jost co-authored Ord 25-29 (the new-construction exemption) and sit at `rent-regulation` **3**;
+Cheniqua Johnson voted against it and sits at **2**.
+🟢 **`minimum-wage` is blank for Coleman, Yang and Kim for the SAME reason.** All three proposed
+eliminating the youth training wage. It excludes holding or removing the floor and does not choose
+among the three rungs that remain. The clearest instrument Coleman has still earned no chair.
+
+---
+
+**SAINT PAUL (ORIGINAL PASS, SUPERSEDED ABOVE)** — seven councilmembers and the mayor, 280 rows. **4 chairs**, all on `rent-regulation`:
 Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human review; nothing publishes.
 
 **✅ NEPHEW RE-RESEARCHED UNDER THE RULING — 35 rows, still 0 chairs.** 5 blanks rewritten with the
