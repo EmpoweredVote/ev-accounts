@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | 3 so far | `2026-10-04-knight-mn-cities` — **OPEN, 3 of 18 members done** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | 4 so far | `2026-10-04-knight-mn-cities` — **OPEN, Saint Paul done (8/18)** |
 
 Seven chairs from 29 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -81,11 +81,10 @@ what they hold now, and a departed official's URL can serve their successor.
 
 ### ▶️ RESUME HERE
 
-**Saint Paul’s seven councilmembers are DONE** (245 rows). **4 chairs**, all on `rent-regulation`:
+**SAINT PAUL IS DONE** — seven councilmembers and the mayor, 280 rows. **4 chairs**, all on `rent-regulation`:
 Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human review; nothing publishes.
 
-**Eleven people remain:**
-- **Mayor Kaohly Her** (Saint Paul) — in progress.
+**Ten people remain, all in Duluth:**
 - **Duluth’s ten**: Forsman, Nephew, Jordon Johnson, Tomanek, Durrwachter, Desotelle, Randorf,
   Clanaugh, Kennedy, and Mayor Reinert.
 
