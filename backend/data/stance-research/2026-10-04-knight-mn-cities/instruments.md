@@ -161,6 +161,25 @@ answered in four minutes what a hand sample got backwards.
 (87%). So the *rate* finding was real and the *absence* finding was not: **Duluth records a roll call
 more or less exactly when the council divides.** A 1.3% rate is what "no roll calls" looked like.
 
+### 🔴🔴 THE API'S ROLL CALLS ARE A FLOOR, NOT A CENSUS — the newspaper carries a tally it does not
+
+`26-0105R` was **tabled 5-4 on 2026-02-09** (the API has that vote) and then **failed 7-2 on the
+merits on 2026-02-23** — and for that second vote `/eventitems/{id}/votes` returns **zero**. The
+action text records only *"A motion was made to approve 26-0105R by Councilor Durrwachter, seconded by
+Councilor Clanaugh"*. The Duluth News Tribune reports the tally and names who was on which side:
+
+> Yet Clanaugh's and Durrwachter's resolution failed on a 7-2 vote, with support only from its authors.
+
+▶ **So `divided_votes.mjs` under-reports, and a city's record evidence is not bounded by its API.**
+A vote on the MERITS can be missing while the PROCEDURAL vote on the same matter is present — which is
+the worst direction for this error to run, because the procedural one is the one C46 should refuse.
+▶ **Read the local paper's meeting coverage as a second census of the vote record**, not only as
+statement evidence.
+
+⚠ The same meeting adopted **26-005-O** (Stewardship of City Resources) *"unanimously by voice vote"*,
+moved by Randorf — so the zero-votes response is genuinely empty for some items and genuinely
+incomplete for others. **The API cannot tell you which.**
+
 ### The ten divided votes, and what each one is worth
 
 | Matter | Date | Tally | Verdict |

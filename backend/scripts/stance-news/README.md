@@ -215,3 +215,21 @@ probe answers the wrong question — **in both directions**.
 `sweep_member.mjs` hardcodes MinnPost, Sahan Journal and Minnesota Reformer. It knows nothing about
 the **Duluth News Tribune, WDIO or Duluth Monitor**, which are the three that work in Duluth. Extend
 it per city, or it will report a thin corpus that is an artifact of its own outlet list.
+
+### 🔴🔴 Two ways a sweep lies about being alive — both cost 45 minutes on 2026-10-05
+
+**1. A fetch with no timeout stalls the whole run, silently.** `sweep_duluth.mjs` v1 used bare
+`fetch`. One request hung; the process stayed alive, held memory, and reported nothing. Flat CPU over
+a 15-second sample is what finally distinguished *hung* from *slow* — nothing in the output could.
+▶ **Every fetch takes `AbortSignal.timeout(...)`.** A sweep makes hundreds of requests to a dozen
+hosts and one of them will hang.
+
+**2. Buffered progress is invisible.** `process.stdout.write('.')` flushes to a terminal and buffers
+to a file, so a backgrounded sweep wrote **zero bytes for 45 minutes** whether it was working or not.
+▶ **Append progress to a log file after every query**, with the running corpus size. `sweep_duluth.mjs`
+writes `<out>/_progress.log`; watch that, not stdout.
+
+⚠ Together these two are worse than either alone: the symptom of a hung run is *no output*, and the
+symptom of a healthy backgrounded run was also *no output*. **A detector that cannot distinguish
+success from failure is not a detector** — the same rule the positive-control discipline encodes,
+applied to the tooling instead of to the corpus.
