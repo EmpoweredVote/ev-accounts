@@ -38,11 +38,81 @@ The scope review flagged that `Kaohly Her` needed checking against a source outs
 Sahan Journal's results name her as mayor repeatedly, including a story on her 2027 budget proposal
 and one on her election. **Confirmed; the open question is closed.**
 
-## Duluth
+## Duluth — profiled 2026-10-05, every row carries a control
 
-Not yet profiled. Expect the Duluth News Tribune (Forum Communications) to be paywalled. Duluth is a
-**statement-only** city — see `instruments.md` — so its outlet profile matters more there than in
-Saint Paul, not less.
+Each row was tested **differentially**: the same extractor was run on a real query (`Forsman`) and on
+a nonsense one (`qzxwvplmdk`), and the outlet counts as working only if the real query returns links
+the nonsense query does not. **A bare link count proves nothing** — Northern News Now returned 64 links
+and Duluth Reader 37, and both return the *same* links for gibberish.
+
+| Outlet | Method that works | Control | Notes |
+|---|---|---|---|
+| **Duluth News Tribune** | 🟢 `GET /search?q=` + **absolute**-href extraction | ✅ 12 query-specific | **Best in the city.** City-hall reporter Peter Passi. **NOT paywalled** |
+| **WDIO** (ABC) | 🟢 `?s=` HTML search | ✅ 24 query-specific | Station coverage, short pieces, direct quotes |
+| **Duluth Monitor** | 🟢 `GET /wp-json/wp/v2/search` | ✅ 6 query-specific | Investigative: TIF subsidies, housing goals, encampments |
+| **Minnesota Reformer** | 🟢 bare curl **or the EmpoweredVoteBot UA** | ✅ passed | 🔴 **403s a CHROME UA.** See below |
+| MinnPost · Sahan Journal | 🟢 WP REST | ✅ passed | Statewide; thin on Duluth but not empty |
+| **Perfect Duluth Day** | 🔴 none | ❌ Cloudflare 403 to *every* UA incl. the bot | robots.txt also disallows `/?s=` for all agents |
+| **FOX 21 Online** | 🔴 none | ❌ HTTP 429 to every UA | BLOX/TownNews WAF, 65-byte body naming our IP |
+| **Business North** | 🔴 none | ❌ HTTP 429 to every UA | same WAF as FOX 21 |
+| **Northern News Now** | 🔴 none | ❌ **0 results in a real browser** | Gray TV; search is broken, not merely JS-rendered |
+| **Duluth Reader** | 🔴 none | ❌ blind — gibberish returns the same 37 links | |
+
+▶ **Three working local outlets, one of them the daily of record.** That is a *better* profile than
+Saint Paul's, where four of six were blind. Duluth was priced as the hard city and is not.
+
+### 🔴🔴 A HEX-ID FILTER PRODUCED A CONFIDENT ZERO ON A RICH CORPUS
+
+Five DNT queries — `right to repair`, `tenant right to repair`, `rent`, `Duluth tenants union`,
+`rental housing` — returned **0 articles each**, and the corpus was there the whole time. The
+extractor required a 24-hex-character id in the path, because the first URLs seen carried one:
+
+    /community/letters/paid-political-letter-forsman-a-community-builder-5d01…-6520…   ← has an id
+    /news/local/duluth-voters-to-decide-if-tenants-should-have-right-to-repair-homes  ← has none
+
+**Only DNT's paid-political-letter URLs carry an id. Its news URLs do not.** The filter was written
+from the first sample and excluded exactly the section being searched for.
+▶ **This is rule 2 of the README again** — *do not tie link extraction to one publisher's URL shape* —
+and it now has a second costume: not the publisher, but **one SECTION of one publisher**.
+▶ **A uniform zero across five different queries is the signature.** It was visible and nearly missed.
+
+### 🔴 A LONGER QUERY MADE DNT'S SEARCH WORSE — this is the third costume of query breadth
+
+| Query | What came back |
+|---|---|
+| `right to repair` | Vikings beat Dolphins · a weather forecast · a prep cross-country result |
+| `tenant` | **the entire right-to-repair corpus** — the news piece, the pro/con column, the editorial |
+
+DNT ORs the terms and ranks badly, so each extra word adds noise instead of precision. On WFAE adding
+the topic *gained* 9–15 articles per query; here it **lost** the corpus.
+▶ **Query breadth must match the outlet's search engine, not just its size.** Run the single
+discriminating word as well as the phrase, and merge.
+
+### 🔴🔴 MINNESOTA REFORMER 403s A CHROME UA AND SERVES THE VERIFIER BOT A CLEAN 200
+
+| UA sent | Result |
+|---|---|
+| Chrome 120 desktop | **HTTP 403**, Cloudflare *"Just a moment…"* |
+| bare curl, no UA | 200 |
+| `EmpoweredVoteBot/1.0` | **200**, 159 KB |
+
+This inverts the usual direction and it **cost a false negative in this very session**: the first
+profiling pass sent a Chrome UA, recorded Reformer as blocked, and contradicted yesterday's note
+saying it works. Yesterday's note was right.
+▶ **Profile with the UA the VERIFIER will use.** A row is only citable if `verificationFetch` can read
+it, so a browser-UA probe answers the wrong question in both directions.
+⚠ Playwright also clears the challenge, but it was not needed, and **Playwright is not a universal
+fix** — Northern News Now rendered **zero** results in a real browser.
+
+### 🟢 The Duluth News Tribune is NOT paywalled — the expectation was wrong
+
+The Charlotte Observer and the Pioneer Press are paywalled, and DNT was expected to match. It does
+not. Fetched with the verifier's own UA, articles return **complete body text**: 10,193 chars for the
+right-to-repair ballot piece, 6,227 for the labor-support piece, 10,145 for the rent-relief piece —
+full quotes, bylines and datelines, no truncation and no sign-in wall. robots.txt disallows only
+`/search` and `/cms` for `*`, with `Crawl-delay: 10`.
+🔴 **`/search` IS disallowed for the bot.** Searching is a research step for a human; **never cite a
+DNT search URL** — cite the article.
 
 ---
 

@@ -88,18 +88,42 @@ Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human revie
 - **Duluth’s ten**: Forsman, Nephew, Jordon Johnson, Tomanek, Durrwachter, Desotelle, Randorf,
   Clanaugh, Kennedy, and Mayor Reinert.
 
-🔴 **DULUTH IS STATEMENT-ONLY.** It has the Legistar API (client `duluth-mn`, hyphenated) but
-**publishes no per-member roll calls at all** — 37 tallies across 14 meetings, every one unanimous.
-C46 refuses all of them. Budget Duluth far higher per seated chair than Saint Paul.
+🔴🔴 **CORRECTION 2026-10-05 — "DULUTH IS STATEMENT-ONLY" WAS WRONG. IT HAS A VOTE RECORD.**
+`divided_votes.mjs duluth-mn 2025-01-01 138` over **40 meetings** found **905 items, 12 with a roll
+call, 10 DIVIDED**, every dissenter named. The earlier claim came from **three** meetings and two
+hand-picked matters. Duluth records a roll call for only **1.3%** of items (Saint Paul: 87%) — but it
+records one more or less exactly when the council divides, which is the 10% C46 cares about.
+▶ **The defect was the SAMPLE, not the detector. Run the whole-year script before characterising a
+city's record.** Per-member tallies: `duluth-divided-votes.txt`.
 
-🔴 **DULUTH’S OUTLETS ARE NOT PROFILED YET.** Do that before any Duluth row is written, and run the
-control query on each one — four of six Saint Paul outlets were blind to HTML search and would have
-produced a confident “no coverage”. Expect the Duluth News Tribune (Forum Communications) to be
-paywalled.
+🟢 **TWO OF THE TEN ARE REAL EVIDENCE, AND THEY MUST BE READ AS A PAIR**, both on 2025-07-01:
+**25-015-O** Tenant Right to Repair (citizen petition, **FAILED 2-6**, then went to the Nov 2025
+ballot) and **25-016-O** the council's own Ch. 29A landlord-training/timely-repair ordinance
+(**passed 6-2**). 🔴 **The direction of a nay INVERTS between them** — Durrwachter voted against the
+council's version *and for* the tenants' stronger one. **A divided vote is only legible against the
+measure it competed with.** The other eight are omnibus, procedural, appointments or single projects.
 
-▶ **Run `backend/scripts/stance-news/divided_votes.mjs duluth-mn <date>` first** if Duluth is ever
-re-checked, and `sweep_member.mjs` / `attribute_quotes.mjs` for each member. The README in that
-directory states the failure each script encodes — read it before trusting a thin result.
+🔴 **NEITHER PAIR IS `rent-regulation` EVIDENCE.** Every rung of that ladder is rent *price*;
+right-to-repair is habitability — and the campaign's own organiser said **"This is not rent control"**
+in the DNT. **No current local ladder states what these ten members divided over.** That is a Season 3
+ladder defect, to be added to the seven already written up.
+
+🟢 **DULUTH'S OUTLETS ARE NOW PROFILED**, each with a differential control (real query vs gibberish):
+`outlets.md`. **Three work and one is the daily of record.** 🟢 **The Duluth News Tribune is NOT
+paywalled** — the expectation was wrong; it serves the verifier bot complete article text, and it has
+a city-hall reporter. WDIO and Duluth Monitor also work. Perfect Duluth Day, FOX 21, Business North,
+Northern News Now and Duluth Reader are all unusable.
+
+🔴 **THREE PROFILING TRAPS THIS COST, ALL IN `outlets.md`:** a **hex-id filter** returned 0 on five
+DNT queries over a rich corpus (only its *letters* URLs carry an id, not its news URLs) · a **longer
+query made DNT's search WORSE** (`right to repair` returned Vikings football; `tenant` returned the
+whole corpus) · **Minnesota Reformer 403s a Chrome UA and serves `EmpoweredVoteBot` a clean 200**.
+▶ **Profile with the UA the VERIFIER will use** — a browser-UA probe answers the wrong question.
+
+▶ Then `sweep_member.mjs` / `attribute_quotes.mjs` per member. 🔴 **Both are hardcoded to MinnPost,
+Sahan Journal and Minnesota Reformer and know nothing about the three Duluth outlets** — they must be
+extended before they will find Duluth coverage at all. The README in that directory states the failure
+each script encodes — read it before trusting a thin result.
 
 Full working: [`scope-review.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/scope-review.md) ·
 [`instruments.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/instruments.md) ·

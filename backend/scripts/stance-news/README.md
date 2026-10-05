@@ -155,3 +155,63 @@ produced a wrong mechanism in three already-seated rows. Use `MatterTextRtf` and
 attachments — exactly where the per-member detail lives — are unusable as sources. Saint Paul's
 amendment-level record is effectively uncitable; cite reporting instead, or record the row as a
 blank for want of a citable source and say so.
+
+---
+
+## Duluth additions (2026-10-05) — four more failures, all of them confident wrong answers
+
+### `divided_votes.mjs` is not optional, and a hand sample is not a measurement
+
+Duluth was recorded as having **no per-member roll calls at all**, from a hand sample of three
+meetings and two matters. Running this script over 40 meetings found **10 divided votes**, every
+dissenter named by full name.
+
+🔴 **The defect was the SAMPLE, not the detector.** Both hand probes returned a *true* empty — those
+items did pass by unanimous voice vote. Generalising from them to the city was the error.
+⚠ Duluth records a roll call for **12 of 905 items (1.3%)**; Saint Paul for 918 of 1,059 (87%). A
+1.3% rate is exactly what "no roll calls" looks like from three meetings. ▶ **Run the whole-year
+script before characterising a city's record.** It costs four minutes.
+
+`duluth_vote_detail.mjs <matter files>` prints the full per-member tally and the action text for
+named matters, which is what tells a tabling vote from a vote on the merits.
+
+### 🔴🔴 A divided vote is only legible against the measure it COMPETED WITH
+
+Duluth voted on two tenant ordinances the same night: the tenants' union petition (failed 2-6) and
+the council's own weaker alternative (passed 6-2). **Durrwachter voted against the council's
+tenant-protection ordinance and for the stronger one.** Read alone, her nay scores as anti-tenant; it
+is the opposite. ▶ Rule 6 above says read the agenda item text. This is one layer deeper: **read the
+other item on the same agenda.**
+
+### 🔴🔴 A link filter learned from the first sample can exclude the whole target
+
+Five Duluth News Tribune queries returned **0 articles** and the corpus was there. The extractor
+required a 24-hex id in the path, learned from the first URLs seen — which were *paid political
+letters*. DNT's **news** URLs carry no id.
+
+Rule 2 said do not tie extraction to one publisher's URL shape. The second costume is **one SECTION
+of one publisher**. ▶ A uniform zero across several different queries is the signature; check it
+against an extractor you have not tuned.
+
+### 🔴 A LONGER query can make a search worse
+
+On WFAE, adding the topic to the name gained 9–15 articles. On DNT, `right to repair` returned
+Vikings football and a weather forecast, while the single word `tenant` returned the entire
+right-to-repair corpus. DNT ORs the terms and ranks badly. ▶ **Match query breadth to the search
+engine, not only to the outlet's size.** Run the one discriminating word as well as the phrase.
+
+### 🔴🔴 Profile with the UA the VERIFIER will use
+
+Minnesota Reformer: **Chrome UA → HTTP 403** Cloudflare challenge; **bare curl → 200**;
+**`EmpoweredVoteBot/1.0` → 200**. A Chrome-UA profiling pass recorded it as blocked and contradicted
+a correct earlier note. A row is citable only if `verificationFetch` can read it, so a browser-UA
+probe answers the wrong question — **in both directions**.
+
+⚠ Playwright clears a Cloudflare challenge but is **not** a universal fix: Northern News Now returned
+**zero** search results in a real browser.
+
+### ⚠ The sweep scripts know only three Twin Cities outlets
+
+`sweep_member.mjs` hardcodes MinnPost, Sahan Journal and Minnesota Reformer. It knows nothing about
+the **Duluth News Tribune, WDIO or Duluth Monitor**, which are the three that work in Duluth. Extend
+it per city, or it will report a thin corpus that is an artifact of its own outlet list.

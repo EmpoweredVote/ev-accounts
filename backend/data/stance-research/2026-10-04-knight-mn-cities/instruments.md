@@ -144,6 +144,61 @@ Identity confirmed before use: `/duluth-mn/bodies` returns *Duluth Economic Deve
 *Duluth Citizen Review Board* and *Duluth Public Utilities Commission*, and `/persons` returns
 **Arik Forsman, Janet Kennedy, Roz Randorf and Terese Tomanek**, all `active=1` — four of our 18.
 
+## 🔴🔴 CORRECTION 2026-10-05 — IT DOES CARRY PER-MEMBER ROLL CALLS, AND THE COUNCIL DOES DIVIDE
+
+**Everything in the section below this one is WRONG, and it is kept only to show how.** Scanning
+**40 meetings** instead of three with `divided_votes.mjs duluth-mn 2025-01-01 138` found **905 event
+items, 12 with a recorded roll call, and 10 DIVIDED votes**, every one naming its dissenters. Full
+output and per-member tallies: [`duluth-divided-votes.txt`](./duluth-divided-votes.txt).
+
+🔴 **The defect was the SAMPLE, not the detector.** Three meetings and two hand-picked matters is not
+a measurement of a city's vote record. Both of those probes returned a *true* empty — those items did
+pass unanimously by voice — and the generalisation from them to "no per-member roll calls at all" is
+what was false. ▶ **Run the whole-year script before characterising a city's record.** One command
+answered in four minutes what a hand sample got backwards.
+
+⚠ Duluth records a roll call for **12 of 905 items (1.3%)**. Saint Paul records one for 918 of 1,059
+(87%). So the *rate* finding was real and the *absence* finding was not: **Duluth records a roll call
+more or less exactly when the council divides.** A 1.3% rate is what "no roll calls" looked like.
+
+### The ten divided votes, and what each one is worth
+
+| Matter | Date | Tally | Verdict |
+|---|---|---|---|
+| 25-015-O Tenant Right to Repair (petition ordinance) | 2025-07-01 | **2-6 FAILED** | 🟢 single-subject, citizen-initiated — the best record evidence in the city |
+| 25-016-O Ch. 29A landlord training, notice, timely repairs | 2025-07-01 | 6-2 | 🟢 the council's own alternative — **read as a PAIR with 25-015-O** |
+| 26-0105R Call on the Governor for residential financial protection (Operation Metro Surge) | 2026-02-09 | 5-4 **to TABLE** | ⚠ procedural; a table vote is not a vote on the merits |
+| 25-0784R Axon drone-as-first-responder + Draft One, $1.92M | 2025-10-14 | 8-1 | ⚠ procurement, and the lone nay (Awal) is not ours |
+| 26-0092R Housing Trust Fund Committee appointments | 2026-02-09 | 6-2-1 | ❌ appointments |
+| 25-035-O / 25-036-O 2026 levy and budget | 2025-12-15 | 8-1 / 7-2 | ❌ omnibus |
+| 25-0995R Council standing rules, public comment | 2025-12-15 | 7-2 | ❌ procedural, no ladder |
+| 25-032-O Lester Park conveyance to DEDA | 2025-12-08 | 8-1 | ❌ single land transaction |
+| 25-0891R Shopper's Ramp demolition change order | 2025-11-24 | 7-2 | ❌ single project |
+
+🔴🔴 **THE DIRECTION OF A NAY DEPENDS ON WHAT THE ALTERNATIVE WAS, AND HERE IT INVERTS.**
+Durrwachter voted **against** the council's tenant-protection ordinance (25-016-O) and **for** the
+tenants' union's stronger one (25-015-O), on the same night. Read alone, her nay on 25-016-O scores as
+anti-tenant; it is the opposite. **A divided vote is only legible against the measure it was competing
+with.** This is "read the agenda item text before trusting a vote title" one layer deeper — read the
+*other item on the same agenda*.
+
+🔴 **Neither pair is `rent-regulation` evidence, and the campaign says so in its own words.** Every
+rung of that ladder is about rent *price* — control, stabilisation, market rents. Right-to-repair is
+habitability. Asked directly whether it was a precursor to rent control, organiser DyAnna Grondahl
+answered **"This is not rent control"** (Duluth News Tribune, 2025-09-16). Seating a rent chair from
+these votes would be a confident wrong row.
+
+▶ **No current local ladder states what these ten members divided over.** `rent-regulation` is price,
+`housing` is public housing vs subsidies, `residential-zoning` is density. **Tenant protection and
+habitability have no ladder.** This is a Season 3 ladder defect and belongs with the other seven.
+
+⚠ Mayor Reinert did **not sign** 25-016-O — it "passes without Mayoral signature". That is a fact
+about a signature, not a stated position, and it has two readings. **Do not seat the mayor from it.**
+
+---
+
+## ❌ SUPERSEDED — the original finding, wrong, kept for the lesson
+
 ## 🔴 But it carries no per-member roll calls, and the council does not divide
 
 | Measurement | Result |
@@ -165,7 +220,11 @@ for Saint Paul, and Duluth's own action text explains why it is empty:
 people have no usable record instrument at all. They must be researched from **their own words** —
 statement evidence, which goes to human review.
 
-⚠ **I did not find a single divided Duluth vote, so the format used to record one is UNKNOWN.** The
+❌ **FALSE — see the correction above.** The window was three meetings. Over 40 meetings there are ten
+divided votes, and two of them are single-subject housing measures voted on the same night.
+
+⚠ ❌ **FALSE — ten divided votes were found, and the API names every dissenter by full name.**
+Original text: **I did not find a single divided Duluth vote, so the format used to record one is UNKNOWN.** The
 minutes write unanimous results as *"carried unanimously by roll call vote (9-0)"*, which names
 nobody because it does not need to. Whether a divided tally would name the dissenter is **not
 established** — do not assume either way.
