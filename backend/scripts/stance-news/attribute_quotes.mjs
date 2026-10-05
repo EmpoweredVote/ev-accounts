@@ -28,8 +28,28 @@ const OWNWORDS = new Set([FIRST, ...MIDDLES]);
 const ALTWORDS = ALT ? ALT.split('|').map((s) => s.replace(/[^A-Za-z]/g, ' ').trim().split(/\s+/)).flat() : [];
 
 const LQ = String.fromCharCode(8220), RQ = String.fromCharCode(8221);
-// Set for a member whose surname is an ordinary English word. See the block in the loop below.
-const FULLNAME_ONLY = process.env.FULLNAME_ONLY === '1';
+
+/**
+ * 🔴 Is the `<Word> Surname` pair at [i, i+len) sitting inside a TITLE-CASE RUN — a headline,
+ * caption or nav label — rather than in prose?
+ *
+ * This exists because a surname that is also an ordinary English word turns every title-case
+ * headline into a phantom second person: "Mayor Backs Her Budget Plan", "Residents Told Her They
+ * Wanted More Shelter Beds", "Advocates Praised Her Decision to Fund the Program". No stoplist can
+ * enumerate every English verb, so discriminate on the SHAPE of the surrounding text instead:
+ * in a headline nearly every word is capitalised; in prose almost none are.
+ *
+ * Deliberately ignores words of 1-3 letters (a, of, the, to, and), which stay lowercase even in a
+ * headline and would otherwise drag the ratio down and make every headline look like prose.
+ */
+function isTitleCase(text, i, len) {
+  const before = text.slice(Math.max(0, i - 60), i).split(/\s+/).filter(Boolean).slice(-4);
+  const after = text.slice(i + len, i + len + 60).split(/\s+/).filter(Boolean).slice(0, 4);
+  const words = [...before, ...after].filter((w) => /^[A-Za-z]{4,}$/.test(w));
+  if (words.length < 3) return false;
+  const caps = words.filter((w) => /^[A-Z]/.test(w)).length;
+  return caps / words.length >= 0.75;
+}
 
 // Words that can precede a surname at a sentence start without being a first name.
 const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'As', 'At', 'With', 'That', 'This',
@@ -73,23 +93,31 @@ for (const a of named) {
   // 🔴 A MIDDLE INITIAL DEFEATS THIS CHECK. "Robert F. Kennedy Jr." contains no `[A-Z][a-z]+ Kennedy`
   // pair, so the article read as unambiguous and THREE of ten quotes attributed to Janet Kennedy were
   // actually the US Health Secretary. Allow one or two initials between the first name and surname.
-  // 🔴 FULLNAME_ONLY=1 is for a surname that is also an ordinary English word — Kaohly Her here.
-  // This check exists ONLY to decide whether BARE-SURNAME attribution is safe. When the full name
-  // is required anyway it has nothing to protect, and running it is actively harmful: the pattern
-  // `([A-Z][a-z]+)\s+Her` is satisfied by any title-case headline — "Mayor Backs Her Budget Plan",
-  // "Residents Told Her They Wanted More Shelter Beds", "Advocates Praised Her Decision" — so the
-  // article is excluded as naming a DIFFERENT person called Her. That is a false ZERO, and no
-  // stoplist can enumerate every English verb. Skip the check; require the full name instead.
-  if (!FULLNAME_ONLY) {
-    const fulls = new Set([...t.matchAll(new RegExp(`\\b([A-Z][a-z]+)\\s+(?:[A-Z]\\.\\s+){0,2}${SURNAME}\\b`, 'g'))].map((m) => m[1]));
-    for (const w of OWNWORDS) fulls.delete(w);
-    for (const w of ALTWORDS) fulls.delete(w);
-    for (const w of [...fulls]) if (STOP.has(w)) fulls.delete(w);
-    if (fulls.size) { ambiguous++; for (const w of fulls) others.add(`${w} ${SURNAME}`); continue; }
+  // 🔴🔴 FULLNAME_ONLY APPLIES TO THE SWEEP'S KEEP-FILTER, NEVER TO ATTRIBUTION. Measured on
+  // Kaohly Her's 240-article corpus, 2026-10-05:
+  //      requireFirst: true  ->   0 quotes
+  //      requireFirst: false -> 115 quotes
+  // A newsroom names her in full in the lede and uses the bare surname on every later reference —
+  // "Her said" — which is exactly where quotes sit. Requiring the full name here would have
+  // produced a TOTAL false zero for the mayor. Deciding WHICH ARTICLES are about her and deciding
+  // WHICH QUOTES are hers are different questions and take opposite answers.
+  //
+  // So the ambiguity check runs for everyone, including her — her corpus really does contain other
+  // people named Her (Ilean Her, Lo Her, Kong Her: it is a common Hmong surname in Saint Paul).
+  // What it must NOT do is read a title-case headline as a second person, which `isTitleCase`
+  // below prevents.
+  const fulls = new Set();
+  for (const m of t.matchAll(new RegExp(`\\b([A-Z][a-z]+)\\s+(?:[A-Z]\\.\\s+){0,2}${SURNAME}\\b`, 'g'))) {
+    if (isTitleCase(t, m.index, m[0].length)) continue;
+    fulls.add(m[1]);
   }
+  for (const w of OWNWORDS) fulls.delete(w);
+  for (const w of ALTWORDS) fulls.delete(w);
+  for (const w of [...fulls]) if (STOP.has(w)) fulls.delete(w);
+  if (fulls.size) { ambiguous++; for (const w of fulls) others.add(`${w} ${SURNAME}`); continue; }
   clean++;
 
-  for (const q of findAttributed(t, FIRSTRE, MIDDLES, SURNAME, { requireFirst: FULLNAME_ONLY })) out.push({ url: a.url, quote: q });
+  for (const q of findAttributed(t, FIRSTRE, MIDDLES, SURNAME)) out.push({ url: a.url, quote: q });
 }
 
 const seen = new Set(), uniq = [];
