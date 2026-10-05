@@ -220,5 +220,21 @@
     ],
     "failed_urls": [],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Janet Kennedy",
+    "topic_key": "economic-development",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.duluthnewstribune.com/news/local/duluth-city-council-backs-paper-mill-subsidy-despite-skeptics",
+      "https://www.duluthnewstribune.com/news/local/duluth-shapes-policy-to-guide-future-use-of-tax-subsidies-for-developers"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   }
 ]

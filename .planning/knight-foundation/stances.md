@@ -25,9 +25,9 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | 14 so far | `2026-10-04-knight-mn-cities` — **OPEN, 13/18 done: Saint Paul + Randorf, Durrwachter, Forsman, Nephew, Reinert** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | 15 so far | `2026-10-04-knight-mn-cities` — **OPEN, 14/18 done: Saint Paul + Randorf, Durrwachter, Forsman, Nephew, Reinert, Kennedy** |
 
-Seventeen chairs from 34 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
+Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
 from 22 → 122 in Florida. Price the next slice from these numbers, not from the first pass.
 
@@ -87,6 +87,31 @@ Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human revie
 **✅ RANDORF IS DONE — 35 rows, 3 chairs** (`homelessness` 3 · `rent-regulation` 3 · `economic-development` 3).
 **✅ DURRWACHTER IS DONE — 35 rows, 2 chairs** (`climate-change` 1 · `economic-development` 2).
 **✅ FORSMAN IS DONE — 35 rows, 2 chairs** (`homelessness` 3 · `economic-development` 4).
+**✅ KENNEDY IS DONE — 35 rows, 1 chair** (`economic-development` 4, alongside Forsman). She argued
+for the Sofidel package on the floor — *"I don’t want the perfect to get in the way of the good …
+We need this economic development. I don’t think this is the time to stand back"* — and is one of
+the three DEDA councilors who introduced the TIF policy that sets the limits.
+
+**▶️ FOUR PEOPLE REMAIN, ALL IN DULUTH:** Jordon Johnson, Terese Tomanek, Diane Desotelle and
+David Clanaugh. Desotelle, Clanaugh and Johnson took their seats in January 2026, so expect thin
+records; Tomanek has served since 2020 and chaired the council in 2026.
+
+🔴🔴 **A COMMON SURNAME MAKES THE CORPUS 94% NOISE, AND THE SWEEP CANNOT SEE IT.** The keep-filter
+matches the SURNAME alone, so her sweep kept **359 articles of which only 23 name Janet Kennedy** —
+the rest are RFK Jr., JFK, Justice Kennedy, the Kennedy Center, Harvard Kennedy School. The
+ambiguity check then excluded 290, leaving 69 usable. ▶ **Measure that ratio before trusting a
+corpus size**; for Durrwachter the same filter was harmless.
+
+🔴 **A MIDDLE INITIAL DEFEATED THE AMBIGUITY CHECK.** *"Robert F. Kennedy Jr."* contains no
+`[A-Z][a-z]+ Kennedy` pair, so those articles read as unambiguous and **three of ten attributed
+quotes were the US Health Secretary**. The regex now allows one or two initials: exclusions rose
+207 → 290 and attributions fell 10 → 7, with a regression control confirming Forsman stayed at 39.
+
+⚠ **Her own sweep MISSED the paper-mill article** that another member’s sweep caught. A per-member
+corpus is not exhaustive, and a citation need not come from the member’s own corpus.
+⚠ **Kennedy is a common surname for `checkNameProximity` too**, which then demands a title
+qualifier within 30 characters — both her snippets carry *"5th District Councilor Janet Kennedy"*.
+
 **✅ MAYOR REINERT IS DONE — 35 rows, 3 chairs** (`homelessness` 5 · `residential-zoning` 4 ·
 `growth-and-development` 4). The strongest member in the slice: 146 of 398 articles name him.
 

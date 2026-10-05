@@ -64,7 +64,10 @@ for (const a of named) {
   try { t = fs.readFileSync(f, 'utf8'); } catch { continue; }
 
   // Another real person with this surname? Ignore sentence-starter false positives.
-  const fulls = new Set([...t.matchAll(new RegExp(`\\b([A-Z][a-z]+)\\s+${SURNAME}\\b`, 'g'))].map((m) => m[1]));
+  // 🔴 A MIDDLE INITIAL DEFEATS THIS CHECK. "Robert F. Kennedy Jr." contains no `[A-Z][a-z]+ Kennedy`
+  // pair, so the article read as unambiguous and THREE of ten quotes attributed to Janet Kennedy were
+  // actually the US Health Secretary. Allow one or two initials between the first name and surname.
+  const fulls = new Set([...t.matchAll(new RegExp(`\\b([A-Z][a-z]+)\\s+(?:[A-Z]\\.\\s+){0,2}${SURNAME}\\b`, 'g'))].map((m) => m[1]));
   for (const w of OWNWORDS) fulls.delete(w);
   for (const w of ALTWORDS) fulls.delete(w);
   for (const w of [...fulls]) if (STOP.has(w)) fulls.delete(w);

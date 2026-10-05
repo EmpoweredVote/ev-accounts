@@ -76,14 +76,21 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Janet Kennedy",
+      "topic_key": "economic-development",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 455,
+    "rows": 490,
     "high": 0,
-    "medium": 11,
+    "medium": 12,
     "by_check": {
-      "statement-needs-review": 11
+      "statement-needs-review": 12
     }
   }
 }
