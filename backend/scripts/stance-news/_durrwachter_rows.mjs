@@ -21,7 +21,7 @@ const cut = (u, from, to, last) => {
   return s;
 };
 
-const SWEEP = 'A sweep of the three Duluth outlets that pass a differential control - the Duluth News Tribune, WDIO and Duluth Monitor - together with MinnPost, Sahan Journal and Minnesota Reformer, over 46 queries covering both spellings of her surname, returned 586 unique articles. 38 of them name her and all 38 were read. Perfect Duluth Day, FOX 21, Business North, Northern News Now and Duluth Reader could not be searched by any method found, so no outlet count here covers them. Her recorded votes were read from the council’s own roll calls: 31 divided votes across 76 meetings since she took office on 4 January 2024.';
+const SWEEP = 'A sweep of the three Duluth outlets that pass a differential control - the Duluth News Tribune, WDIO and Duluth Monitor - together with MinnPost and Sahan Journal, over 46 queries covering both spellings of her surname, returned 586 unique articles. Minnesota Reformer was searched separately and added no article naming her. 38 of them name her and all 38 were read. Perfect Duluth Day, FOX 21, Business North, Northern News Now and Duluth Reader could not be searched by any method found, so no outlet count here covers them. Her recorded votes were read from the council’s own roll calls: 31 divided votes across 76 meetings since she took office on 4 January 2024.';
 
 const seated = [
   {

@@ -21,7 +21,7 @@ const cut = (u, from, to, last) => {
   return s;
 };
 
-const SWEEP = 'A sweep of the three Duluth outlets that pass a differential control - the Duluth News Tribune, WDIO and Duluth Monitor - together with MinnPost, Sahan Journal and Minnesota Reformer, over 23 queries, returned 547 unique articles. 79 of them name him and 67 were used; 12 were set aside because they also name a different Forsman, and there are six of those in the region, including a St. Louis County commissioner. Perfect Duluth Day, FOX 21, Business North, Northern News Now and Duluth Reader could not be searched by any method found, so no outlet count here covers them. His recorded votes were read from the council’s own roll calls: he is recorded on all 31 divided matters since January 2024, 26 Yea and 5 Nay.';
+const SWEEP = 'A sweep of the three Duluth outlets that pass a differential control - the Duluth News Tribune, WDIO and Duluth Monitor - together with MinnPost and Sahan Journal, over 23 queries, returned 547 unique articles. Minnesota Reformer was searched separately and added one article naming him. 79 of them name him and 67 were used; 12 were set aside because they also name a different Forsman, and there are six of those in the region, including a St. Louis County commissioner. Perfect Duluth Day, FOX 21, Business North, Northern News Now and Duluth Reader could not be searched by any method found, so no outlet count here covers them. His recorded votes were read from the council’s own roll calls: he is recorded on all 31 divided matters since January 2024, 26 Yea and 5 Nay.';
 
 const seated = [
   {

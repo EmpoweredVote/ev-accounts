@@ -25,7 +25,7 @@ const cut = (u, from, to, last) => {
   return s;
 };
 
-const SWEEP = 'A sweep of the three Duluth outlets that pass a differential control - the Duluth News Tribune, WDIO and Duluth Monitor - together with MinnPost, Sahan Journal and Minnesota Reformer, over 23 queries, returned 609 unique articles. 50 of them name Randorf and all 50 were read. Perfect Duluth Day, FOX 21, Business North, Northern News Now and Duluth Reader could not be searched by any method found, so no outlet count here covers them.';
+const SWEEP = 'A sweep of the three Duluth outlets that pass a differential control - the Duluth News Tribune, WDIO and Duluth Monitor - together with MinnPost and Sahan Journal, over 23 queries, returned 609 unique articles. Minnesota Reformer was searched separately and added no article naming her. 50 of them name Randorf and all 50 were read. Perfect Duluth Day, FOX 21, Business North, Northern News Now and Duluth Reader could not be searched by any method found, so no outlet count here covers them.';
 
 const seated = [
   {

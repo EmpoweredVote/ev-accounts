@@ -45,13 +45,34 @@ const TOPICS = ['tenant', 'rent', 'housing', 'homeless', 'encampment', 'zoning',
   ...(process.env.EXTRA_TOPICS ? process.env.EXTRA_TOPICS.split(',').map((s) => s.trim()).filter(Boolean) : [])];
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-// curl, not fetch — see the header. --compressed matches what a real client sends.
-const curl = async (url) => {
-  try {
-    const { stdout } = await exec('curl', ['-sL', '--compressed', '--max-time', '25', '-A', UA, url],
-      { maxBuffer: 32 * 1024 * 1024 });
-    return stdout || '';
-  } catch { return ''; }
+
+// 🔴🔴 REFORMER RATE-LIMITS, AND A 429 IS A 140-BYTE PAGE THAT PARSES TO ZERO LINKS.
+// Measured 2026-10-05: after roughly four members' worth of queries the host began returning
+//   <html><head><title>429, Rate Limited</title></head>…<p>Wait a minute and try again</p>
+// Returning that body to the caller makes every remaining query record "0 candidates" — the exact
+// silent zero this whole tool exists to prevent, reappearing one layer in. So: read the status
+// code, back off on 429, and ABORT rather than finish a run on throttled data.
+let aborted = null;
+const curl = async (url, tries = 4) => {
+  for (let i = 0; i < tries; i++) {
+    try {
+      const { stdout } = await exec('curl', ['-sL', '--compressed', '--max-time', '25',
+        '-w', '\\n__HTTP__%{http_code}', '-A', UA, url], { maxBuffer: 32 * 1024 * 1024 });
+      const m = /\n__HTTP__(\d{3})$/.exec(stdout);
+      const code = m ? Number(m[1]) : 0;
+      const body = m ? stdout.slice(0, m.index) : stdout;
+      if (code === 429 || /429, Rate Limited/.test(body)) {
+        const wait = 20000 * (i + 1);
+        console.log(`    ⏳ 429 from Reformer — waiting ${wait / 1000}s (attempt ${i + 1}/${tries})`);
+        await sleep(wait);
+        continue;
+      }
+      if (code >= 400) return '';
+      return body;
+    } catch { return ''; }
+  }
+  aborted = 'rate-limited after retries';
+  return '';
 };
 const articleLinks = (html) => new Set(
   [...html.matchAll(/href="(https:\/\/minnesotareformer\.com\/20\d\d\/[^"#]+)"/g)].map((m) => m[1].split('?')[0]),
@@ -76,9 +97,20 @@ for (const q of queries) {
   for (const u of links) if (!ctlJunk.has(u) && !found.has(u)) { found.set(u, q); add++; }
   qn++;
   if (add) console.log(`  [${qn}/${queries.length}] "${q}" -> +${add} (total ${found.size})`);
-  await sleep(800);
+  if (aborted) { console.error(`🔴 ABORTING at query ${qn}/${queries.length}: ${aborted}. Nothing recorded — re-run after a cooldown.`); process.exit(3); }
+  await sleep(1500);
 }
 console.log(`reformer candidates: ${found.size}`);
+
+// 🔴 A CONTROL AT THE START PROVES NOTHING ABOUT THE END OF A LONG RUN. The host began throttling
+// partway through the Duluth backfill, and an opening control cannot see that. Re-run it.
+const ctlEnd = articleLinks(await curl('https://minnesotareformer.com/?s=Saint%20Paul'));
+console.log(`closing control: "Saint Paul" -> ${ctlEnd.size} links (opened at ${ctlReal.size})`);
+if (ctlEnd.size === 0) {
+  console.error('🔴 CLOSING CONTROL FAILED — the host stopped answering during this run, so every');
+  console.error('   query after that point recorded a FALSE zero. Nothing recorded. Re-run after a cooldown.');
+  process.exit(3);
+}
 
 const strip = (h) => h.replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '')
   .replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ')

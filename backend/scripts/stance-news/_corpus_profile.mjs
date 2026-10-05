@@ -57,7 +57,17 @@ for (const f of files) {
     if (CAMP.test(t)) campaign++;
   }
 }
-console.log(`2. NOISE RATIO      ${full} of ${files.length} files name "${NAMES[0]}" (${Math.round((full / Math.max(files.length, 1)) * 100)}% signal) | ${surnameOnly} carry only the surname "${SURNAME}"`);
+console.log(`2. NOISE RATIO      ${full} of ${files.length} files name ${NAMES.map((n) => `"${n}"`).join(' or ')} (${Math.round((full / Math.max(files.length, 1)) * 100)}% signal) | ${surnameOnly} carry only the surname "${SURNAME}"`);
+// 🔴 Per-spelling, because a thin corpus can be a SPELLING artifact and look like thin coverage.
+// "HwaJeong Kim" (our database spelling) found 8 articles; "Hwa Jeong Kim" (the newsrooms')
+// found 27. Nothing warned — the thin result looked exactly like a rarely-covered member.
+if (NAMES.length > 1) {
+  for (const n of NAMES) {
+    let c = 0;
+    for (const f of files) if (fs.readFileSync(path.join(DIR, f), 'utf8').includes(n)) c++;
+    console.log(`     spelling "${n}": ${c}`);
+  }
+}
 if (full && full / files.length < 0.35) console.log(`   🔴 HIGH NOISE — the keep-filter matched the surname alone. Read only the ${full} that name her.`);
 console.log(`3. AMBIGUITY        ${ambiguous} of the ${full} also name a DIFFERENT <First> ${SURNAME} — no bare-surname attribution in those`);
 console.log(`4. CAMPAIGN-ERA     ${campaign} of the ${full} carry candidate/campaign language (admissible since the ruling 2026-10-05)`);

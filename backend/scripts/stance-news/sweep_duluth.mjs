@@ -79,7 +79,14 @@ const OUTLETS = [
   { name: 'duluthmonitor.com',     kind: 'wp',   host: 'duluthmonitor.com',        gap: 500 },
   { name: 'minnpost.com',          kind: 'wp',   host: 'www.minnpost.com',         gap: 500 },
   { name: 'sahanjournal.com',      kind: 'wp',   host: 'sahanjournal.com',         gap: 500 },
-  { name: 'minnesotareformer.com', kind: 'html', host: 'minnesotareformer.com',    gap: 800,  url: (q) => `https://minnesotareformer.com/?s=${encodeURIComponent(q)}` },
+  // 🔴🔴 MINNESOTA REFORMER REMOVED 2026-10-05. Rule 1 above says this file sends the verifier's
+  // UA because Reformer 403s a Chrome one. That was true and INSUFFICIENT: Cloudflare fingerprints
+  // the TLS handshake, so node's `fetch` is refused whatever UA it carries — 403 and 5,795 bytes,
+  // where `curl` with the same UA gets 200 and 150,559. The 403 died in `get`'s `catch`, and
+  // Reformer supplied ZERO articles to all six Duluth corpora while 109 rows said it was searched.
+  // ▶ Run `sweep_reformer.mjs <slug> "<Name>"` — it uses curl, merges into this same corpus, and
+  //   runs a differential control at BOTH ends of the run.
+  // ▶ A UA IS NOT A CLIENT. Profile with the client that will do the work.
 ];
 
 // A baseline per HTML outlet: whatever a nonsense query returns is navigation, not results.
