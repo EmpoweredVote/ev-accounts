@@ -28,6 +28,8 @@ const OWNWORDS = new Set([FIRST, ...MIDDLES]);
 const ALTWORDS = ALT ? ALT.split('|').map((s) => s.replace(/[^A-Za-z]/g, ' ').trim().split(/\s+/)).flat() : [];
 
 const LQ = String.fromCharCode(8220), RQ = String.fromCharCode(8221);
+// Set for a member whose surname is an ordinary English word. See the block in the loop below.
+const FULLNAME_ONLY = process.env.FULLNAME_ONLY === '1';
 
 // Words that can precede a surname at a sentence start without being a first name.
 const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'As', 'At', 'With', 'That', 'This',
@@ -67,14 +69,23 @@ for (const a of named) {
   // 🔴 A MIDDLE INITIAL DEFEATS THIS CHECK. "Robert F. Kennedy Jr." contains no `[A-Z][a-z]+ Kennedy`
   // pair, so the article read as unambiguous and THREE of ten quotes attributed to Janet Kennedy were
   // actually the US Health Secretary. Allow one or two initials between the first name and surname.
-  const fulls = new Set([...t.matchAll(new RegExp(`\\b([A-Z][a-z]+)\\s+(?:[A-Z]\\.\\s+){0,2}${SURNAME}\\b`, 'g'))].map((m) => m[1]));
-  for (const w of OWNWORDS) fulls.delete(w);
-  for (const w of ALTWORDS) fulls.delete(w);
-  for (const w of [...fulls]) if (STOP.has(w)) fulls.delete(w);
-  if (fulls.size) { ambiguous++; for (const w of fulls) others.add(`${w} ${SURNAME}`); continue; }
+  // 🔴 FULLNAME_ONLY=1 is for a surname that is also an ordinary English word — Kaohly Her here.
+  // This check exists ONLY to decide whether BARE-SURNAME attribution is safe. When the full name
+  // is required anyway it has nothing to protect, and running it is actively harmful: the pattern
+  // `([A-Z][a-z]+)\s+Her` is satisfied by any title-case headline — "Mayor Backs Her Budget Plan",
+  // "Residents Told Her They Wanted More Shelter Beds", "Advocates Praised Her Decision" — so the
+  // article is excluded as naming a DIFFERENT person called Her. That is a false ZERO, and no
+  // stoplist can enumerate every English verb. Skip the check; require the full name instead.
+  if (!FULLNAME_ONLY) {
+    const fulls = new Set([...t.matchAll(new RegExp(`\\b([A-Z][a-z]+)\\s+(?:[A-Z]\\.\\s+){0,2}${SURNAME}\\b`, 'g'))].map((m) => m[1]));
+    for (const w of OWNWORDS) fulls.delete(w);
+    for (const w of ALTWORDS) fulls.delete(w);
+    for (const w of [...fulls]) if (STOP.has(w)) fulls.delete(w);
+    if (fulls.size) { ambiguous++; for (const w of fulls) others.add(`${w} ${SURNAME}`); continue; }
+  }
   clean++;
 
-  for (const q of findAttributed(t, FIRSTRE, MIDDLES, SURNAME)) out.push({ url: a.url, quote: q });
+  for (const q of findAttributed(t, FIRSTRE, MIDDLES, SURNAME, { requireFirst: FULLNAME_ONLY })) out.push({ url: a.url, quote: q });
 }
 
 const seen = new Set(), uniq = [];

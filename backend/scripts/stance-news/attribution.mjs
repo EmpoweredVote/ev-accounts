@@ -53,9 +53,19 @@ export function parseName(full) {
  * `(?:J.\s+)?`, where the dot matches any character. Harmless there, dangerous in general.
  */
 const esc = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-export function nameRe(first, middles = [], surname) {
+/**
+ * 🔴 `requireFirst` is for a surname that is also an ordinary English word. Kaohly Her is the
+ * case in this programme. With the first name optional the pattern is effectively a bare `Her`,
+ * and two things go wrong at once: attribution can fire on the pronoun, and the ambiguity check
+ * in attribute_quotes.mjs reads any title-case headline — "Mayor Backs Her Budget Plan",
+ * "Residents Told Her They Wanted More Shelter Beds" — as naming a DIFFERENT person called Her,
+ * and excludes the article. That is the false-zero direction, and no stoplist can enumerate
+ * every English verb. For such a name, require the full name and do not use bare-surname
+ * attribution at all.
+ */
+export function nameRe(first, middles = [], surname, { requireFirst = false } = {}) {
   const mid = (middles || []).map((m) => `(?:${esc(m)}\\s+)?`).join('');
-  return `(?:${esc(first)}\\s+)?${mid}${esc(surname)}`;
+  return requireFirst ? `${esc(first)}\\s+${mid}${esc(surname)}` : `(?:${esc(first)}\\s+)?${mid}${esc(surname)}`;
 }
 
 /**
@@ -63,10 +73,10 @@ export function nameRe(first, middles = [], surname) {
  * The speech verb is REQUIRED — making it optional attributed a school principal's quote to a
  * councilmember because the NEXT SENTENCE merely began with her name.
  */
-export function findAttributed(text, first, middles, surname) {
+export function findAttributed(text, first, middles, surname, opts = {}) {
   // Back-compat: findAttributed(text, first, surname)
   if (typeof middles === 'string' && surname === undefined) { surname = middles; middles = []; }
-  const nm = nameRe(first, middles, surname);
+  const nm = nameRe(first, middles, surname, opts);
   const re = quoteRe();
   const out = [];
   let m;
