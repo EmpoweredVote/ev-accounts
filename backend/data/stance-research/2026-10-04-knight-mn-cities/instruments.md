@@ -398,3 +398,33 @@ reading them one at a time.
 rent regulation, and she voted against referring a tenant repair-and-deduct question to the ballot.
 The two are not contradictory — a referral decision is not a position on the policy — but the
 reviewer should see the whole record, not only the part that supports the chair.
+
+---
+
+# 🔴🔴 DULUTH'S ENACTED ORDINANCE TEXT IS READABLE BUT NOT CITABLE (2026-10-05)
+
+The Legistar **Web API** serves the full text — `/matters/{id}/versions` gives a version key, and
+`/matters/{id}/texts/{key}` returns `MatterTextPlain` and `MatterTextRtf`. That is how the camping
+ordinance's enforcement conditions were read. But **no HTML page carrying that text can be cited**:
+
+| Route | Result |
+|---|---|
+| `duluth-mn.legistar.com/LegislationDetail.aspx?ID=…&GUID=…` | **HTTP 200, 19 bytes** — with the correct GUID taken from `MatterGuid` |
+| `library.municode.com/mn/duluth/codes/code_of_ordinances` | HTTP 200, **6 KB shell**, rendered client-side |
+| `/matters/{id}/texts/{key}` | JSON, not an HTML page |
+| `duluthmn.gov/…/city-code/` | 302 |
+
+🔴 **A 200 carrying 19 bytes is the soft-404 trap, and it survived the obvious fix.** The first probe
+used a placeholder GUID and the 19-byte body looked like the explanation; supplying the real GUID
+returned the same 19 bytes. ▶ **Judge a fetch by its SIZE as well as its status** — the memory rule
+about a clean 200 lying in five ways, met in the wild.
+
+**Consequence for the rows.** An ordinance's operative conditions can be *read* and used to decide
+which chair fits, but the citation must be the reporting. For the camping ordinance the News Tribune
+carries the two facts that matter: the mayor proposed a misdemeanor *"unless other housing is
+available for them"*, and councilors *"balked at the prospect of charging homeless people with
+misdemeanors for the crime of potentially having no other suitable place to go, amending the
+ordinance to recommend no more than a $200 fine."*
+
+⚠ **Do not quote the ordinance text in `reasoning`.** A quoted sentence must appear in a cited
+snippet, and no citable page carries it. Describe the instrument and cite what was reported.

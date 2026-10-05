@@ -41,14 +41,28 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Arik Forsman",
+      "topic_key": "homelessness",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Arik Forsman",
+      "topic_key": "economic-development",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 350,
+    "rows": 385,
     "high": 0,
-    "medium": 6,
+    "medium": 8,
     "by_check": {
-      "statement-needs-review": 6
+      "statement-needs-review": 8
     }
   }
 }

@@ -25,9 +25,9 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | 9 so far | `2026-10-04-knight-mn-cities` — **OPEN, 10/18 done: Saint Paul + Randorf + Durrwachter** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | 11 so far | `2026-10-04-knight-mn-cities` — **OPEN, 11/18 done: Saint Paul + Randorf, Durrwachter, Forsman** |
 
-Twelve chairs from 31 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
+Fourteen chairs from 32 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
 from 22 → 122 in Florida. Price the next slice from these numbers, not from the first pass.
 
@@ -86,6 +86,14 @@ Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human revie
 
 **✅ RANDORF IS DONE — 35 rows, 3 chairs** (`homelessness` 3 · `rent-regulation` 3 · `economic-development` 3).
 **✅ DURRWACHTER IS DONE — 35 rows, 2 chairs** (`climate-change` 1 · `economic-development` 2).
+**✅ FORSMAN IS DONE — 35 rows, 2 chairs** (`homelessness` 3 · `economic-development` 4).
+
+🟢 **`economic-development` NOW SEPARATES THREE MEMBERS OF ONE COUNCIL — 2, 3 and 4 — each evidenced.**
+Durrwachter refuses subsidy to a large outside company; Randorf backs a small incentive paid only
+after local spending is proved; Forsman backs an $18.4M package for a major employer and co-writes
+the policy that sets limits on it. That is the ladder doing exactly what it is for, and it is the
+first time in this programme that one body has produced three distinct chairs on one topic.
+
 All queued for human review; every source verifies with zero failures. Corpora:
 `backend/data/stance-news/<slug>/`.
 
@@ -113,8 +121,8 @@ line. A nay list is not a side.
 ordinance only after it was cut from a misdemeanor to a $200 fine, and the same night voted $500,000
 to accelerate new capacity — which is chair 3's two clauses exactly.
 
-**Eight people remain, all in Duluth:** Forsman, Nephew, Jordon Johnson, Tomanek,
-Desotelle, Clanaugh, Kennedy, and Mayor Reinert.
+**Seven people remain, all in Duluth:** Nephew, Jordon Johnson, Tomanek, Desotelle,
+Clanaugh, Kennedy, and Mayor Reinert.
 
 ▶ **Method that worked, reuse it per member:**
 ```
@@ -172,6 +180,15 @@ DNT queries over a rich corpus (only its *letters* URLs carry an id, not its new
 query made DNT's search WORSE** (`right to repair` returned Vikings football; `tenant` returned the
 whole corpus) · **Minnesota Reformer 403s a Chrome UA and serves `EmpoweredVoteBot` a clean 200**.
 ▶ **Profile with the UA the VERIFIER will use** — a browser-UA probe answers the wrong question.
+
+🔴 **DULUTH’S ENACTED ORDINANCE TEXT IS READABLE BUT NOT CITABLE.** The Legistar **API** serves it
+(`/matters/{id}/versions` then `/matters/{id}/texts/{key}`), and that is how the camping ordinance’s
+conditions were read. But `LegislationDetail.aspx` returns **HTTP 200 carrying 19 bytes** even with the
+correct GUID, and Municode is a 6 KB client-rendered shell. **Read the text to decide the chair; cite
+the reporting.** Full table in `instruments.md`.
+
+🔴 **SIX OTHER FORSMANS LIVE IN THE REGION**, one a St. Louis County commissioner, and the attribution
+filter set aside 12 of his 79 articles for that reason. The surname-collision rule earns its keep here.
 
 ▶ Then `sweep_member.mjs` / `attribute_quotes.mjs` per member. 🔴 **Both are hardcoded to MinnPost,
 Sahan Journal and Minnesota Reformer and know nothing about the three Duluth outlets** — they must be
