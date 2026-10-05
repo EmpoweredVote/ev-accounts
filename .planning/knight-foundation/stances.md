@@ -79,6 +79,33 @@ should be priced higher per member.
 against the city's own page before citing the office — a roster label says how someone arrived, not
 what they hold now, and a departed official's URL can serve their successor.
 
+### ▶️ RESUME HERE
+
+**Saint Paul’s seven councilmembers are DONE** (245 rows). **4 chairs**, all on `rent-regulation`:
+Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human review; nothing publishes.
+
+**Eleven people remain:**
+- **Mayor Kaohly Her** (Saint Paul) — in progress.
+- **Duluth’s ten**: Forsman, Nephew, Jordon Johnson, Tomanek, Durrwachter, Desotelle, Randorf,
+  Clanaugh, Kennedy, and Mayor Reinert.
+
+🔴 **DULUTH IS STATEMENT-ONLY.** It has the Legistar API (client `duluth-mn`, hyphenated) but
+**publishes no per-member roll calls at all** — 37 tallies across 14 meetings, every one unanimous.
+C46 refuses all of them. Budget Duluth far higher per seated chair than Saint Paul.
+
+🔴 **DULUTH’S OUTLETS ARE NOT PROFILED YET.** Do that before any Duluth row is written, and run the
+control query on each one — four of six Saint Paul outlets were blind to HTML search and would have
+produced a confident “no coverage”. Expect the Duluth News Tribune (Forum Communications) to be
+paywalled.
+
+▶ **Run `backend/scripts/stance-news/divided_votes.mjs duluth-mn <date>` first** if Duluth is ever
+re-checked, and `sweep_member.mjs` / `attribute_quotes.mjs` for each member. The README in that
+directory states the failure each script encodes — read it before trusting a thin result.
+
+Full working: [`scope-review.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/scope-review.md) ·
+[`instruments.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/instruments.md) ·
+[`outlets.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/outlets.md).
+
 ### Outlets to profile before the sweep — none yet checked for reachability
 
 MPR News · MinnPost · Minnesota Reformer · Sahan Journal · Racket · Duluth News Tribune ·
