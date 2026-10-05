@@ -84,7 +84,12 @@ const out = [];
 let ambiguous = 0, clean = 0, notAbout = 0;
 // Every spelling of the member's full name that an article may use. The article-level gate below
 // accepts any of them: "HwaJeong Kim" found 8 articles where "Hwa Jeong Kim" found 27.
-const ALLNAMES = [NAME, ...(ALT ? ALT.split('|').map((a) => `${a.replace(/[^A-Za-z ]/g, '').trim()} ${SURNAME}`) : [])]
+// 🔴 THE FORM WITHOUT THE MIDDLE NAME MUST BE HERE, OR THE GATE EATS THE CORPUS. Run as
+// `attribute_quotes.mjs kher "Kaohly Vang Her"`, this list was ["Kaohly Vang Her", …] and the gate
+// skipped 221 of Mayor Her's 265 articles as "not about her" — every one that writes the ordinary
+// "Kaohly Her". Her profile says 265 of 265 name her, which is how the loss was visible at all.
+// A middle name is optional in print; the gate must accept first+surname as well as the full form.
+const ALLNAMES = [NAME, `${FIRST} ${SURNAME}`, ...(ALT ? ALT.split('|').map((a) => `${a.replace(/[^A-Za-z ]/g, '').trim()} ${SURNAME}`) : [])]
   .map((n) => n.replace(/\s+/g, ' ').trim()).filter(Boolean);
 const others = new Set();
 
