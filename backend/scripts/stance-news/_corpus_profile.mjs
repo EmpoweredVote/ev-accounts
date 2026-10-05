@@ -31,9 +31,13 @@ console.log(`1. KEY COLLISIONS   named ${idx.length} | on disk ${files.length} |
 
 // Sentence-starters that are not first names — without this stoplist the ambiguity filter excluded
 // almost everything and produced a false zero of its own.
+// ⚠ Keep this in step with the larger STOP list in attribute_quotes.mjs. When the two disagree,
+// this profiler reports ambiguity the attributor will not act on, or misses some it will.
 const STOP = new Set(['In', 'When', 'Like', 'And', 'But', 'The', 'If', 'As', 'At', 'For', 'With',
   'Councilmember', 'Councilor', 'Council', 'Member', 'President', 'Vice', 'Mayor', 'Ward', 'District',
-  'Said', 'Says', 'After', 'Before', 'Both', 'That', 'This', 'While', 'Since', 'Where', 'Though']);
+  'Said', 'Says', 'After', 'Before', 'Both', 'That', 'This', 'While', 'Since', 'Where', 'Though',
+  'Councilwoman', 'Councilman', 'Alderman', 'Alderwoman', 'Journal', 'Opinion', 'Editorial',
+  'News', 'Local', 'Letters', 'Column', 'Neither', 'Either', 'However', 'Meanwhile', 'Former']);
 const otherRe = new RegExp(`([A-Z][a-z]+|[A-Z]\\.(?:\\s?[A-Z]\\.)?)\\s+${SURNAME}\\b`, 'g');
 
 let full = 0, surnameOnly = 0, ambiguous = 0, campaign = 0;

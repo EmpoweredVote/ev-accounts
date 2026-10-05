@@ -39,7 +39,11 @@ const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'A
   // 🔴 The stoplist is a VOCABULARY, and it was Saint Paul's. Duluth's council title is "Councilor",
   // not "Councilmember" — that one word excluded 9 of 50 Randorf articles as "a different Randorf".
   // The rest are caption, nav and section labels that sit immediately before a name.
-  'Councilor', 'Counselor', 'Alderman', 'Alderwoman', 'Supervisor', 'Trustee',
+  // 🔴 'Councilwoman' and 'Journal' found 2026-10-05 in Noecker's re-swept corpus: "Councilwoman
+  // Noecker" is a title the Pioneer Press uses, and "Journal Noecker" is a Sahan Journal nav label
+  // abutting her name. Each one silently excluded an article as "a different Noecker".
+  'Councilor', 'Counselor', 'Alderman', 'Alderwoman', 'Councilwoman', 'Councilman', 'Journal',
+  'Supervisor', 'Trustee',
   'Councilors', 'Councilmembers', 'Members', 'Picture', 'Group', 'Submit', 'Video', 'Image',
   'Neither', 'Either', 'Nor', 'Because', 'Since', 'Although', 'However', 'Meanwhile', 'Still',
   // 🔴 'My Nephew' is the ordinary-word surname collision, capitalised. 'Support'/'Design' are
