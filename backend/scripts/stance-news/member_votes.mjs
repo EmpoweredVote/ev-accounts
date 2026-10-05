@@ -12,6 +12,16 @@ const bodyId = process.argv[4] || '138';
 const who = (process.argv[5] || '').toLowerCase();
 if (!who) { console.error('usage: member_votes.mjs <client> <from> <bodyId> "Surname"'); process.exit(1); }
 
+// 🔴 PROGRESS MUST BE FLUSHED TO A FILE. `process.stdout.write('.')` is block-buffered when stdout
+// is a pipe, so a run of this script through `| head` showed ZERO bytes for 20 minutes and was
+// mistaken for a hang. It was working: this walks every agenda item of every meeting and makes one
+// votes call per item, so a 2024-onward window on Saint Paul is ~8,400 sequential requests.
+// Watch the log, not the terminal. Same lesson as sweep_duluth.mjs rule 5.
+import fs from 'node:fs';
+const LOG = `data/stance-news/_votes_${process.argv[2]}_${(process.argv[5] || 'x').toLowerCase()}.log`;
+const log = (m) => { try { fs.appendFileSync(LOG, `${m}\n`); } catch {} };
+log(`votes ${process.argv[2]} ${process.argv[5]} from ${process.argv[3]} :: ${new Date().toISOString()}`);
+
 const get = async (u) => { const r = await fetch(u, { signal: AbortSignal.timeout(40000) }); if (!r.ok) throw new Error(`${r.status} ${u}`); return r.json(); };
 
 const events = [];
@@ -21,17 +31,18 @@ for (let skip = 0; ; skip += 100) {
   if (page.length < 100) break;
 }
 const dates = events.map((e) => (e.EventDate || '').slice(0, 10)).filter(Boolean).sort();
+log(`meetings: ${events.length} (this is the expensive part: one votes call per agenda item)`);
 console.log(`meetings: ${events.length} (${dates[0]} to ${dates[dates.length - 1]})`);
 
 const rows = [];
-let seen = 0;
+let seen = 0, done = 0, calls = 0;
 for (const e of events) {
   let items;
   try { items = await get(`https://webapi.legistar.com/v1/${client}/events/${e.EventId}/eventitems?AgendaNote=0&MinutesNote=0`); } catch { continue; }
   for (const it of items) {
     if (!it.EventItemMatterFile) continue;
     let votes;
-    try { votes = await get(`https://webapi.legistar.com/v1/${client}/eventitems/${it.EventItemId}/votes`); } catch { continue; }
+    try { calls++; votes = await get(`https://webapi.legistar.com/v1/${client}/eventitems/${it.EventItemId}/votes`); } catch { continue; }
     if (!Array.isArray(votes) || !votes.length) continue;
     const yea = votes.filter((v) => v.VoteValueName === 'Yea').length;
     const nay = votes.filter((v) => v.VoteValueName === 'Nay').length;
@@ -48,8 +59,10 @@ for (const e of events) {
       title: (it.EventItemTitle || '').replace(/\s+/g, ' ').slice(0, 150),
     });
   }
-  process.stdout.write('.');
+  done++;
+  if (done % 5 === 0) log(`  ${done}/${events.length} meetings scanned | divided matters so far: ${seen} | vote calls: ${calls}`);
 }
+log(`FINISHED ${done}/${events.length} meetings | divided: ${seen} | vote calls: ${calls}`);
 console.log(`\ndivided matters (C46): ${seen}`);
 const present = rows.filter((r) => r.vote === 'Yea' || r.vote === 'Nay');
 console.log(`"${process.argv[5]}" recorded on ${present.length} of them — Yea ${present.filter((r) => r.vote === 'Yea').length} / Nay ${present.filter((r) => r.vote === 'Nay').length}\n`);

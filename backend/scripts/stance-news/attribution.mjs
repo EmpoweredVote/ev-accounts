@@ -84,8 +84,31 @@ export function findAttributed(text, first, middles, surname, opts = {}) {
     const end = m.index + m[0].length;
     const after = text.slice(end, end + 70);
     const before = text.slice(Math.max(0, m.index - 70), m.index);
-    const tagA = new RegExp(`^[,.]?\\s*(?:${VERB})\\s+(?:${TITLE})?${nm}`, 'i').test(after)
-      || new RegExp(`^[,.]?\\s*${nm}\\s+(?:${VERB})`, 'i').test(after);
+    // 🔴 CONSECUTIVE QUOTES BELONG TO THE LAST-NAMED SPEAKER. This caught a rec-centre worker's
+    // testimony being attributed to Council President Noecker:
+    //     "We're not asking for much," said Rosie Kohnen, a community rec leader on the East Side.
+    //     "I mean, I barely make it. … I've been homeless before."  Noecker said AFSCME had…
+    // The second quote is still Kohnen's; "Noecker said …" begins a NEW sentence. Requiring a
+    // speech verb — the fix for the school-principal bug — does not catch this, because the verb
+    // is there.
+    //
+    // ⚠ MY FIRST FIX FOR THIS WAS WRONG and is worth recording. I rejected any quote ending in
+    // terminal punctuation, reasoning that an attribution tag follows a comma. That dropped 24 of
+    // Mayor Her's 88 quotes, including
+    //     "Are we saying we're investing, or taking credit for other people's work?" Her asked.
+    // which is textbook attribution. Terminal punctuation is NOT the discriminator; a preceding
+    // attribution to a DIFFERENT NAMED PERSON is. Requiring a capitalised name means "…," she
+    // said' and '…," the governor said' do not trip it.
+    const prevSpeaker = new RegExp(`(?:${VERB})\\s+([A-Z][a-z]+\\s+[A-Z][a-z]+)|([A-Z][a-z]+\\s+[A-Z][a-z]+)\\s+(?:${VERB})`, 'g');
+    let otherSpoke = false;
+    for (const pm of before.matchAll(prevSpeaker)) {
+      const who = (pm[1] || pm[2] || '').trim();
+      if (who && !new RegExp(nm, 'i').test(who)) otherSpoke = true;
+    }
+    const tagA = !otherSpoke && (new RegExp(`^[,.]?\\s*(?:${VERB})\\s+(?:${TITLE})?${nm}`, 'i').test(after)
+      || new RegExp(`^[,.]?\\s*${nm}\\s+(?:${VERB})`, 'i').test(after));
+    // `before` is unaffected: "Noecker said, "..."" puts the tag ahead of the quote, where the
+    // quote's own final punctuation says nothing about who is speaking.
     const tagB = new RegExp(`${nm}\\s+(?:${VERB})[,:]?\\s*$`, 'i').test(before);
     if (tagA || tagB) out.push(m[1].trim());
   }

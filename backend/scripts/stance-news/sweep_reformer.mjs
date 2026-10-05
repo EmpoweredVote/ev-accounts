@@ -46,6 +46,16 @@ const TOPICS = ['tenant', 'rent', 'housing', 'homeless', 'encampment', 'zoning',
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// 🔴 PACING IS CONFIGURABLE BECAUSE THE DEFAULTS WERE TOO FAST AND THE HOST SAID SO.
+// Measured 2026-10-05: at 1.5s per query and 0.4s per article fetch, one member makes roughly 190
+// requests in a few minutes. Kim's run succeeded; Coleman's then hit HTTP 429 and worked through
+// the entire backoff ladder (20s/40s/60s/80s) without recovering, and the next seven members would
+// have done the same. The limit is not per-run, it is a budget across runs.
+// ▶ Raise these, do not retry at the same speed. QUERY_GAP_MS=6000 FETCH_GAP_MS=2000 is a gentle
+//   pass: about 7 minutes per member instead of 90 seconds.
+const QUERY_GAP = Number(process.env.QUERY_GAP_MS || 1500);
+const FETCH_GAP = Number(process.env.FETCH_GAP_MS || 400);
+
 // 🔴🔴 REFORMER RATE-LIMITS, AND A 429 IS A 140-BYTE PAGE THAT PARSES TO ZERO LINKS.
 // Measured 2026-10-05: after roughly four members' worth of queries the host began returning
 //   <html><head><title>429, Rate Limited</title></head>…<p>Wait a minute and try again</p>
@@ -98,7 +108,7 @@ for (const q of queries) {
   qn++;
   if (add) console.log(`  [${qn}/${queries.length}] "${q}" -> +${add} (total ${found.size})`);
   if (aborted) { console.error(`🔴 ABORTING at query ${qn}/${queries.length}: ${aborted}. Nothing recorded — re-run after a cooldown.`); process.exit(3); }
-  await sleep(1500);
+  await sleep(QUERY_GAP);
 }
 console.log(`reformer candidates: ${found.size}`);
 
@@ -129,7 +139,7 @@ for (const [u, via] of found) {
   if (!(NAMES.some((n) => t.includes(n)) || SURNAMES.some((s) => t.includes(s)))) continue;
   fs.writeFileSync(path.join(DIR, corpusKey(u) + '.txt'), scrubText(t).text);
   if (!have.has(u)) { idx.push({ url: u, outlet: 'minnesotareformer.com', via: `reformer:${via}` }); added++; }
-  await sleep(400);
+  await sleep(FETCH_GAP);
 }
 fs.writeFileSync(idxPath, JSON.stringify(idx, null, 1));
 const onDisk = fs.readdirSync(DIR).filter((f) => f.endsWith('.txt')).length;
