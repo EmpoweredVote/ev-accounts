@@ -1,5 +1,80 @@
 # Outlet profile — Saint Paul and Duluth
 
+## 🔴🔴 A QUARTER OF THE SAINT PAUL CORPUS WAS NEVER WRITTEN TO DISK (measured 2026-10-05)
+
+Saint Paul was swept **before** the corpus-key fix, so its files were named
+`base64url(url).slice(0, 60)` — about 45 bytes of URL, which on these outlets is not past a shared
+path prefix. Articles overwrote each other. Nothing warned, and the corpus looked complete.
+
+| Member | Named by the sweep | On disk | Lost |
+|---|---|---|---|
+| Noecker | 77 | 51 | **26 (34%)** |
+| Her | 96 | 72 | **24** |
+| Yang | 50 | 39 | **11** |
+| Kim | 27 | 19 | 8 |
+| Cheniqua Johnson | 27 | 20 | 7 |
+| Jost | 21 | 16 | 5 |
+| Bowie | 32 | 28 | 4 |
+| Coleman | 12 | 11 | 1 |
+| **TOTAL** | **342** | **256** | **86 (25%)** |
+
+🔴 **A CHAIR SURVIVES A DAMAGED CORPUS. A SEARCHED BLANK DOES NOT.** A chair is a positive finding
+from evidence that was present. A searched blank asserts *nothing was found*, and that assertion is
+exactly as strong as the corpus behind it. Of Saint Paul's 280 rows: 4 chairs and 120 scope blanks
+(facts about Minnesota law) are unaffected; **156 searched blanks were not.**
+
+⚠ **The defect was provable from the row text, not just from the file count.** Yang's reasoning says
+*"50 articles naming Nelsie Yang … every passage in the remaining 47 that quotes her beside a speech
+verb was read."* Thirty-nine were on disk. The sentence asserted work that had not happened.
+
+▶ **The measurement that catches this is `named.json` length vs `ls <corpus> | wc -l`.** It is one
+line, it is cheap, and no run had ever made it. `sweep_stpaul.mjs` now asserts it at the end of every
+sweep and prints `🔴 N LOST` if the key is still colliding.
+▶ All eight members were **re-swept 2026-10-05** with `sweep_stpaul.mjs`: whole-URL sha1 key, the
+verifier's UA, and the Pioneer Press added.
+
+## 🔴🔴 MINNESOTA REFORMER SUPPLIED ZERO ARTICLES TO **EVERY** CORPUS IN THIS SLICE
+
+Not the Saint Paul sweep — **all of them**, both cities, for the whole programme:
+
+| randorf | durrwachter | forsman | nephew | kennedy | reinert | every Saint Paul member |
+|---|---|---|---|---|---|---|
+| 0 of 50 | 0 of 38 | 0 of 79 | 0 of 42 | 0 of 359 | 0 of 146 | 0 |
+
+**490 rows of reasoning name Minnesota Reformer as an outlet that was searched. It never was.**
+
+⚠ **The first diagnosis here was the user-agent, and it was wrong.** Reformer does 403 a Chrome UA,
+which is true and documented below — but switching to the verifier's UA does **not** fix it. The
+cause is one layer lower.
+
+### The cause: Cloudflare fingerprints the TLS handshake, not the user-agent
+
+Same URL, same user-agent, same machine, same minute:
+
+| Client | Result |
+|---|---|
+| node `fetch()` | **HTTP 403**, 5,795 bytes, 0 article links |
+| `curl` | **HTTP 200**, 150,559 bytes, 6 article links |
+
+The 403 was swallowed by the sweep's `r.ok` test and a bare `catch {}`, so an outlet recorded as
+**"✅ passed"** contributed nothing and raised no error, in every run, for weeks.
+
+🔴 **THE RULE: PROFILE WITH THE CLIENT THAT WILL DO THE WORK. A USER-AGENT IS NOT A CLIENT.** curl,
+node `fetch` and a real browser present three different TLS fingerprints, and a WAF can accept one
+and refuse another carrying identical headers. Reformer was profiled with curl and swept with node
+fetch, and the profile simply did not transfer.
+▶ **Count what each outlet CONTRIBUTED, every run.** An outlet listed as working that returns
+nothing is the signature, and it is the only thing that would have caught this.
+
+🟢 **Fixed: `sweep_reformer.mjs`** sweeps Reformer over curl and merges into an existing corpus. It
+runs its own differential control first and **exits 2 rather than record a zero**. Reformer is now
+removed from `sweep_stpaul.mjs`'s fetch list so the silent zero cannot come back. First run, Yang:
+141 candidates, **21 articles added** that no sweep in this programme had ever seen.
+⚠ **The six Duluth corpora still lack their Reformer articles** — `sweep_reformer.mjs` works for
+them too, but it has not been run and their rows still carry the false coverage sentence.
+
+---
+
 🔴 **The ordinary `?s=` HTML search is BLIND on four of six outlets, and a naive sweep would have
 reported "no coverage" for all four.** Each row below was tested with a **positive control** — the
 query `Saint Paul`, which must return results on a Minnesota news site. Four outlets returned
@@ -20,6 +95,33 @@ yield was my extractor, not the world* — and it fired again here, on four outl
 Reformer's HTML search works where theirs does not. Profile each outlet, record the method, reuse it.
 ▶ **MPR News and Racket are still blind.** Do **not** record a searched blank that claims to have
 covered them until a method is found. Either solve them or name them as uncovered in the reasoning.
+
+### 🔴 RESOLVED 2026-10-05 — MPR News is READABLE and NOT CITABLE. Racket is simply blind.
+
+**MPR News search works in Playwright**, and the differential control is clean: `Nelsie Yang`
+returns 11 article links, gibberish returns **exactly the 2** "latest stories" furniture links that
+appear in both, so the real yield is **9** — including a May 2025 profile of her and her response to
+the Yia Xiong shooting. Plain `curl` gets an identical 15.5 KB shell for any query, so the earlier
+"JS-rendered" finding was right about the search.
+
+🔴 **But its ARTICLE pages are hydrated client-side too, and that is what disqualifies it.** The
+verifier's own UA fetches 132 KB of HTML from which the stripped text is **99 characters**, and the
+string `Yang` appears **once** in the entire raw response. The body is not in the bytes — not in
+`__NEXT_DATA__`, not in the `ld+json`. So a passage found on MPR could be read by a researcher and
+**could never be verified or published**, because a snippet must be cut verbatim from what
+`verificationFetch` receives.
+
+▶ **PROFILE THE ARTICLE PAGE, NOT ONLY THE SEARCH.** An outlet can pass the search control and still
+be unusable. "Can I read it?" and "can the verifier read it?" are different questions, and only the
+second one decides whether an outlet can carry a row.
+▶ MPR News therefore stays **named as uncovered** in Saint Paul reasoning — but the reason is now
+"not citable", which is stronger and final, rather than "we could not search it", which invited
+another attempt. ⚠ Do not spend time solving it again.
+
+**Racket is blind, confirmed by differential control**: `Nelsie Yang`, `Saint Paul` and `qzxwvplmdk`
+each return the **same 12 links**, and they are boilerplate — `about-us-racket-mn`,
+`commenting-policy`, `cookies-policy`. The response sizes differ by six bytes, which is the query
+echoed back. A bare link count of 82 looks like a working outlet and is not one.
 
 ## Verified working — MinnPost, by WP REST
 
