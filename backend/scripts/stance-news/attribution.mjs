@@ -65,7 +65,14 @@ const esc = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
  */
 export function nameRe(first, middles = [], surname, { requireFirst = false } = {}) {
   const mid = (middles || []).map((m) => `(?:${esc(m)}\\s+)?`).join('');
-  return requireFirst ? `${esc(first)}\\s+${mid}${esc(surname)}` : `(?:${esc(first)}\\s+)?${mid}${esc(surname)}`;
+  // 🔴 `first` MAY BE SEVERAL SPELLINGS, AND EACH IS ESCAPED SEPARATELY. Callers used to hand in a
+  // pre-built alternation string — attribute_quotes.mjs built `(?:HwaJeong|Hwa ?Jeong)` — which
+  // esc() then turned into a LITERAL, so it could never match. The first name is optional in this
+  // pattern, so nothing errored: every match quietly fell back to the bare surname, and the
+  // alternate spelling a newsroom actually prints was inert. Pass an array.
+  const firsts = (Array.isArray(first) ? first : [first]).filter(Boolean);
+  const alt = `(?:${firsts.map(esc).join('|')})`;
+  return requireFirst ? `${alt}\\s+${mid}${esc(surname)}` : `(?:${alt}\\s+)?${mid}${esc(surname)}`;
 }
 
 /**
@@ -109,7 +116,13 @@ export function findAttributed(text, first, middles, surname, opts = {}) {
       || new RegExp(`^[,.]?\\s*${nm}\\s+(?:${VERB})`, 'i').test(after));
     // `before` is unaffected: "Noecker said, "..."" puts the tag ahead of the quote, where the
     // quote's own final punctuation says nothing about who is speaking.
-    const tagB = new RegExp(`${nm}\\s+(?:${VERB})[,:]?\\s*$`, 'i').test(before);
+    // 🔴 INVERTED ATTRIBUTION BEFORE THE QUOTE: `Added Council Member HwaJeong Kim, "…"`. The
+    // original tagB only matched NAME then VERB, so every `Said/Added <Title> <Name>, "quote"`
+    // was dropped. Found while checking why Kim had 11 quotes across 43 articles: the strict rule
+    // had discarded her on the Right to Repair ballot vote, among others. This is the fourth time
+    // in this programme that a thin yield has been the extractor rather than the world.
+    const tagB = new RegExp(`${nm}\\s+(?:${VERB})[,:]?\\s*$`, 'i').test(before)
+      || new RegExp(`\\b(?:${VERB})\\s+(?:${TITLE})?${nm}[,:]?\\s*$`, 'i').test(before);
     if (tagA || tagB) out.push(m[1].trim());
   }
   return out;

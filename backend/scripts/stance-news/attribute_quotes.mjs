@@ -22,7 +22,11 @@ const NAME = process.argv[3];
 // is not always the newsroom's: "HwaJeong Kim" found 8 articles, "Hwa Jeong Kim" 27.
 const ALT = (process.argv[4] || '').trim();
 const { first: FIRST, middles: MIDDLES, surname: SURNAME } = parseName(NAME);
-const FIRSTRE = ALT ? `(?:${FIRST}|${ALT})` : FIRST;
+// 🔴 An ARRAY of spellings, not a pre-built alternation: nameRe escapes what it is given, so the
+// old `(?:${FIRST}|${ALT})` string became a literal and never matched. `Hwa ?Jeong` is still
+// allowed as an alt — the optional space is expanded here rather than left as regex.
+const FIRSTS = [FIRST, ...(ALT ? ALT.split('|').flatMap((a) => (a.includes('?') ? [a.replace(/ \?/g, ' '), a.replace(/ \?/g, '')] : [a])) : [])]
+  .map((s) => s.trim()).filter(Boolean);
 // Middle tokens belong to the SAME person — forgive them in the ambiguity check below.
 const OWNWORDS = new Set([FIRST, ...MIDDLES]);
 const ALTWORDS = ALT ? ALT.split('|').map((s) => s.replace(/[^A-Za-z]/g, ' ').trim().split(/\s+/)).flat() : [];
@@ -148,7 +152,7 @@ for (const a of named) {
   if (fulls.size) { ambiguous++; for (const w of fulls) others.add(`${w} ${SURNAME}`); continue; }
   clean++;
 
-  for (const q of findAttributed(t, FIRSTRE, MIDDLES, SURNAME)) out.push({ url: a.url, quote: q });
+  for (const q of findAttributed(t, FIRSTS, MIDDLES, SURNAME)) out.push({ url: a.url, quote: q });
 }
 
 const seen = new Set(), uniq = [];
