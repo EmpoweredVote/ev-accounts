@@ -11,6 +11,7 @@ const NAMEPARSE = [
   ['Lynn Marie Nephew', 'Lynn', ['Marie'], 'Nephew'],
   ['Arik Forsman', 'Arik', [], 'Forsman'],
   ['Mary Jo Van Der Berg', 'Mary', ['Jo','Van','Der'], 'Berg'],
+  ['Roger J. Reinert', 'Roger', ['J.'], 'Reinert'],
 ];
 for (const [full, f2, m2, s2] of NAMEPARSE) {
   const p = parseName(full);
@@ -32,6 +33,12 @@ const CASES = [
   ['straight quotes, name before the verb',
     '"This is the exact same funding. So $200,000. And the thing that I like the most about it is real," Randorf said.',
     'Roz', 'Randorf', true],
+  ['middle INITIAL with a dot: the paper omits it and the match must still work',
+    'Mayor Roger Reinert told the council the city cannot afford to do nothing. "It has sat for six years and it is literally just deteriorating in place," Reinert said.',
+    'Roger', ['J.'], 'Reinert', true],
+  ['NEGATIVE — a dot in a name part must not match any character',
+    '"This is a long enough sentence to clear the thirty five character minimum for a quotation," Roger Jx Reinert said.',
+    'Roger', ['J.'], 'Reinertx', false],
   ['NEGATIVE — quoted, on topic, but attributed to nobody',
     '"Something entirely unrelated was said here by a person with no name attached at all," the report noted.',
     'Roz', 'Randorf', false],

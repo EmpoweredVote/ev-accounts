@@ -47,10 +47,15 @@ export function parseName(full) {
   return { first: parts[0], middles: parts.slice(1, -1), surname: parts[parts.length - 1] };
 }
 
-/** Name pattern: first and each middle token optional, surname required. */
+/**
+ * Name pattern: first and each middle token optional, surname required.
+ * 🔴 Every part is regex-escaped. A middle INITIAL carries a dot — "Roger J. Reinert" produced
+ * `(?:J.\s+)?`, where the dot matches any character. Harmless there, dangerous in general.
+ */
+const esc = (s) => String(s).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 export function nameRe(first, middles = [], surname) {
-  const mid = (middles || []).map((m) => `(?:${m}\\s+)?`).join('');
-  return `(?:${first}\\s+)?${mid}${surname}`;
+  const mid = (middles || []).map((m) => `(?:${esc(m)}\\s+)?`).join('');
+  return `(?:${esc(first)}\\s+)?${mid}${esc(surname)}`;
 }
 
 /**
