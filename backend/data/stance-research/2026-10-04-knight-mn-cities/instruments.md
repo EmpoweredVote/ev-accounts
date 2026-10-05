@@ -428,3 +428,30 @@ ordinance to recommend no more than a $200 fine."*
 
 ⚠ **Do not quote the ordinance text in `reasoning`.** A quoted sentence must appear in a cited
 snippet, and no citable page carries it. Describe the instrument and cite what was reported.
+
+---
+
+# THE MAYOR LEAVES ALMOST NO RECORD IN LEGISTAR (2026-10-05)
+
+A mayor casts no votes, so `member_votes.mjs` finds nothing for one and the divided-vote census is
+silent about the executive. The mayor's recorded act is the **signature** — signing, vetoing, or
+letting an ordinance pass unsigned — and that appears only in an event item's action text.
+
+`mayor_actions.mjs duluth-mn 2024-01-04 138` over **1,914 items in 76 meetings** returns exactly
+**one** match:
+
+> 2025-07-01 · `25-016-O` · *"The Ordinance passed 6-2 **This Ordinance passes without Mayoral
+> signature.**"* — the council's own tenant ordinance (landlord training, tenant notification,
+> repairs within 14 days).
+
+🟢 **The near-zero is a real finding, not a broken detector**, because the pattern fired once: Reinert
+has **vetoed nothing** in the window and has let exactly one ordinance pass unsigned.
+
+⚠ **Not signing has two readings** — disapproval, or simply letting a measure take effect — and no
+reporting in the corpus says which. It is a lead, never a chair. Do not seat the mayor from it, and
+note that `rent-regulation` would be the wrong ladder for it in any case, because that ordinance is
+about habitability rather than rent.
+
+▶ **So a mayor is researched almost entirely from proposals and statements.** Reinert's are abundant:
+he proposed the 2024 public safety package, proposes the budget and levy each year, and speaks to both
+papers regularly.

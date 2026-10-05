@@ -19,6 +19,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import crypto from 'node:crypto';
+// 🔴 A scraped news page carries OTHER PEOPLE'S keys. GitHub push protection rejected a whole push
+// because a MinnPost election page embedded a Mapbox secret token in its map widget. Redact on write.
+import { scrubText } from './scrub_corpus.mjs';
 // 🔴🔴 Corpus filenames were base64url(url).slice(0, 60). 45 bytes of URL is not past a shared
 // path prefix, so SIXTEEN Duluth News Tribune news articles wrote to ONE file and 50 named
 // articles became 26 on disk — a corpus that looked complete and was half gone. Hash the WHOLE
@@ -138,7 +141,7 @@ async function worker() {
     const t = strip(h);
     if (NAMES.some((n) => t.includes(n)) || SURNAMES.some((sn) => t.includes(sn))) {
       named.push(a);
-      fs.writeFileSync(path.join(OUT, corpusKey(a.url) + '.txt'), t);
+      fs.writeFileSync(path.join(OUT, corpusKey(a.url) + '.txt'), scrubText(t).text);
     }
   }
 }

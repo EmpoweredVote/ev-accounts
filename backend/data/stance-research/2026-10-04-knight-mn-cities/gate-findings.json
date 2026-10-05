@@ -55,14 +55,35 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Roger J. Reinert",
+      "topic_key": "homelessness",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Roger J. Reinert",
+      "topic_key": "residential-zoning",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Roger J. Reinert",
+      "topic_key": "growth-and-development",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 420,
+    "rows": 455,
     "high": 0,
-    "medium": 8,
+    "medium": 11,
     "by_check": {
-      "statement-needs-review": 8
+      "statement-needs-review": 11
     }
   }
 }

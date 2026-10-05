@@ -43,6 +43,7 @@ const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'A
   // 🔴 'My Nephew' is the ordinary-word surname collision, capitalised. 'Support'/'Design' are
   // nav labels. A surname that is an ordinary English word needs these or it excludes itself.
   'My', 'Your', 'Our', 'Its', 'Support', 'Design', 'Photo', 'Read', 'Watch', 'Listen', 'Share',
+  'Editors', 'Agenda', 'Glean', 'Is', 'Are', 'Was', 'Were', 'Has', 'Had', 'Will', 'Would', 'Can',
   'Contact', 'Newsletter', 'Team', 'Careers', 'Weather', 'Sports', 'Communities', 'Events',
   'Local', 'News', 'District', 'Vote', 'Business', 'Opinion', 'Editorial', 'Letters', 'Column',
   'Columns', 'Photo', 'Photos', 'Video', 'Subscribers', 'Sections', 'Tags', 'Share', 'Listen',

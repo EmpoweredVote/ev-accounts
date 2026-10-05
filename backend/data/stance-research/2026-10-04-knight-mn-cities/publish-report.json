@@ -175,5 +175,50 @@
     ],
     "failed_urls": [],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Roger J. Reinert",
+    "topic_key": "homelessness",
+    "value": 5,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Roger J. Reinert",
+    "topic_key": "residential-zoning",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.duluthnewstribune.com/news/local/duluth-considers-changing-zoning-rules-in-hopes-of-boosting-housing"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Roger J. Reinert",
+    "topic_key": "growth-and-development",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.wdio.com/local-news/mayor-reinert-weighs-in-on-lester-park-debate/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   }
 ]
