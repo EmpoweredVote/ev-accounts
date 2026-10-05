@@ -25,9 +25,9 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | 4 so far | `2026-10-04-knight-mn-cities` — **OPEN, Saint Paul done (8/18)** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | 7 so far | `2026-10-04-knight-mn-cities` — **OPEN, 9/18 done: Saint Paul + Randorf** |
 
-Seven chairs from 29 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
+Ten chairs from 30 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
 from 22 → 122 in Florida. Price the next slice from these numbers, not from the first pass.
 
@@ -84,9 +84,37 @@ what they hold now, and a departed official's URL can serve their successor.
 **SAINT PAUL IS DONE** — seven councilmembers and the mayor, 280 rows. **4 chairs**, all on `rent-regulation`:
 Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human review; nothing publishes.
 
-**Ten people remain, all in Duluth:**
-- **Duluth’s ten**: Forsman, Nephew, Jordon Johnson, Tomanek, Durrwachter, Desotelle, Randorf,
-  Clanaugh, Kennedy, and Mayor Reinert.
+**✅ RANDORF IS DONE — 35 rows, 3 chairs**, all queued for human review, all sources verified with
+zero failures: `homelessness` 3 · `rent-regulation` 3 · `economic-development` 3. Corpus:
+`backend/data/stance-news/randorf/` (50 articles naming her, all read).
+
+**Nine people remain, all in Duluth:** Forsman, Nephew, Jordon Johnson, Tomanek, Durrwachter,
+Desotelle, Clanaugh, Kennedy, and Mayor Reinert.
+
+▶ **Method that worked, reuse it per member:**
+```
+node scripts/stance-news/sweep_duluth.mjs <slug> "Full Name"      # ~25 min, 600 articles
+node scripts/stance-news/refetch_corpus.mjs <slug>                 # only if the sweep was interrupted
+node scripts/stance-news/attribute_quotes.mjs <slug> "Full Name"   # candidates, NOT settled
+node scripts/stance-news/quote_context.mjs <slug> [n ...]          # READ each one in context
+node scripts/stance-news/quoted_passages.mjs <slug>              # every quoted passage the strict rule dropped
+```
+🔴 **`attribute_quotes` produced TWO misattributions in 22 candidates and both were caught only by
+reading the context** — one belonged to the tenants' organiser and one to former councilor Tara
+Swenson, in each case because *"… ," Randorf said* followed the quote. **Never write a row from the
+attributed list without opening the article.**
+🔴 **The stoplist is a VOCABULARY and it was Saint Paul's.** Duluth's title is **Councilor**, not
+Councilmember, and that one word excluded 9 of Randorf's 50 articles as "a different Randorf".
+Extended now; check it again for the next city.
+🔴 **Corpus filenames collided.** `base64url(url).slice(0, 60)` truncates inside a shared path prefix,
+so **16 Duluth News Tribune articles wrote to ONE file** and 50 named articles became 26 on disk.
+Fixed to a sha1 in all three sweeps — **the Saint Paul corpus was built with the old key.**
+🔴 **A signed first-person op-ed fails `checkNameProximity`** — the author's name is in the byline and
+the bio, never beside the argument. Take the passage just before the author bio. README has the
+worked example.
+⚠ **Four Saint Paul rows each carry one failed source** (a `stpaul.legistar.com/MeetingDetail.aspx`
+URL on three, a MinnPost election story on one). Each still has a verified source, so each is queued
+— but the dead citations should be re-sourced before approval.
 
 🔴🔴 **CORRECTION 2026-10-05 — "DULUTH IS STATEMENT-ONLY" WAS WRONG. IT HAS A VOTE RECORD.**
 `divided_votes.mjs duluth-mn 2025-01-01 138` over **40 meetings** found **905 items, 12 with a roll

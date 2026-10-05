@@ -6,6 +6,13 @@ import fs from 'node:fs';
 // session ends — the script then reads nothing and reports a clean zero. Corpus root is now an
 // argument: SWEEP_OUT, or data/stance-news, the same default sweep_duluth.mjs writes to.
 import path from 'node:path';
+
+import crypto from 'node:crypto';
+// 🔴🔴 Corpus filenames were base64url(url).slice(0, 60). 45 bytes of URL is not past a shared
+// path prefix, so SIXTEEN Duluth News Tribune news articles wrote to ONE file and 50 named
+// articles became 26 on disk — a corpus that looked complete and was half gone. Hash the WHOLE
+// url. Any truncation of a key derived from a structured string collides where the structure is.
+const corpusKey = (url) => crypto.createHash('sha1').update(url).digest('hex').slice(0, 24);
 const ROOT = process.env.SWEEP_OUT || 'data/stance-news';
 const SLUG = process.argv[2];
 const NAME = process.argv[3];
@@ -25,7 +32,15 @@ const VERB = 'said|says|told|added|argued|noted|explained|wrote|asked|countered|
 const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'As', 'At', 'With', 'That', 'This',
   'She', 'He', 'They', 'Also', 'Said', 'After', 'Before', 'Councilmember', 'Council', 'Member', 'Mayor', 'Ward',
   'Then', 'While', 'Though', 'Both', 'Her', 'His', 'Their', 'Of', 'To', 'On', 'By', 'From', 'So', 'Yet', 'Now',
-  'President', 'Representative', 'Senator', 'Commissioner', 'Chair', 'Vice', 'Former', 'Incumbent', 'Candidate']);
+  'President', 'Representative', 'Senator', 'Commissioner', 'Chair', 'Vice', 'Former', 'Incumbent', 'Candidate',
+  // 🔴 The stoplist is a VOCABULARY, and it was Saint Paul's. Duluth's council title is "Councilor",
+  // not "Councilmember" — that one word excluded 9 of 50 Randorf articles as "a different Randorf".
+  // The rest are caption, nav and section labels that sit immediately before a name.
+  'Councilor', 'Counselor', 'Alderman', 'Alderwoman', 'Supervisor', 'Trustee',
+  'Local', 'News', 'District', 'Vote', 'Business', 'Opinion', 'Editorial', 'Letters', 'Column',
+  'Columns', 'Photo', 'Photos', 'Video', 'Subscribers', 'Sections', 'Tags', 'Share', 'Listen',
+  'By', 'Elect', 'Re', 'Vice-President', 'Duluth', 'City', 'Third', 'Second', 'First', 'Fourth',
+  'Fifth', 'At', 'Large', 'Northland', 'Minnesota', 'Our', 'View', 'Endorsement', 'Pro', 'Con']);
 
 const idxFile = ['_index.json', '../' + SLUG + '-named.json'].map((n) => path.join(ROOT, SLUG, n)).find((p) => fs.existsSync(p));
 if (!idxFile) { console.error('no corpus index under ' + path.join(ROOT, SLUG) + ' — run the sweep first'); process.exit(1); }
@@ -36,7 +51,7 @@ let ambiguous = 0, clean = 0;
 const others = new Set();
 
 for (const a of named) {
-  const f = path.join(ROOT, SLUG, Buffer.from(a.url).toString('base64url').slice(0, 60) + '.txt');
+  const f = path.join(ROOT, SLUG, corpusKey(a.url) + '.txt');
   let t;
   try { t = fs.readFileSync(f, 'utf8'); } catch { continue; }
 

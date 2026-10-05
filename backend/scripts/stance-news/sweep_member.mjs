@@ -2,6 +2,13 @@
 // Usage: node sweep-aliases.mjs <slug> "Primary Name" "Alias One" "Alias Two" ...
 import fs from 'node:fs';
 
+import crypto from 'node:crypto';
+// 🔴🔴 Corpus filenames were base64url(url).slice(0, 60). 45 bytes of URL is not past a shared
+// path prefix, so SIXTEEN Duluth News Tribune news articles wrote to ONE file and 50 named
+// articles became 26 on disk — a corpus that looked complete and was half gone. Hash the WHOLE
+// url. Any truncation of a key derived from a structured string collides where the structure is.
+const corpusKey = (url) => crypto.createHash('sha1').update(url).digest('hex').slice(0, 24);
+
 const P = 'C:/Users/Chris/AppData/Local/Temp/claude/C--EV-Accounts/e6365231-862e-4798-ba8d-61bcd06426c1/scratchpad/outlets/';
 const SLUG = process.argv[2];
 const NAMES = process.argv.slice(3);
@@ -60,7 +67,7 @@ async function worker() {
       ok++;
       if (NAMES.some((n) => t.includes(n))) {
         named.push({ ...a });
-        fs.writeFileSync(`${P}${SLUG}/${Buffer.from(a.url).toString('base64url').slice(0, 60)}.txt`, t);
+        fs.writeFileSync(`${P}${SLUG}/${corpusKey(a.url)}.txt`, t);
       }
     } catch { bad++; }
   }

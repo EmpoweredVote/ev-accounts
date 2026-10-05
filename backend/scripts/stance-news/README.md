@@ -253,3 +253,34 @@ the single most convincing false negative this toolchain can produce, and every 
 about not trusting one.
 ▶ **Corpora belong under `data/stance-news/<slug>/`, in the repo tree**, not in a scratchpad — they
 are the evidence a row was built from, and a reviewer may need to see them.
+
+### 🔴🔴 The verifier rejects the body of a SIGNED FIRST-PERSON OP-ED — the strongest statement evidence there is
+
+`checkNameProximity` (`backend/src/lib/researchVerifier.ts`, `NAME_PROXIMITY_CHARS = 500`) requires
+the member's name within 500 characters of the snippet. **A column the member wrote never names them
+beside their own argument** — it says *"we should focus on strengthening and enforcing the
+protections we already have"*, and the only occurrences of the name are the byline at the top and the
+bio at the bottom, thousands of characters away.
+
+Randorf's Duluth News Tribune column failed this way. The snippet was verbatim, contiguous, 67 words,
+and inside a single `<p>` in the live HTML — and the source was still recorded as failed. The rule is
+working as written; the shape of the evidence defeats it.
+
+**Workaround, until the rule learns about bylines:** take the passage that sits **immediately before
+the author bio**. It states the position and the name follows within a sentence or two:
+
+```
+It is a vote for a thoughtful, legally sound approach that delivers real protection without
+creating new risks. Duluth deserves a policy that delivers justice and security for tenants, not
+just promises.
+          ↓ about 90 characters later
+Roz Randorf is the elected representative of District 3 on the Duluth City Council.
+```
+
+▶ **Check a failed source before assuming the snippet is wrong.** Re-running the verifier is the
+first test: a transient block clears, and this did not. Reading the live HTML is the second — it
+showed the text present and contiguous, which ruled out every explanation except the rule itself.
+▶ **A first-person source needs its snippet chosen with the name-proximity rule in mind**, which is
+the opposite of how a human would pick the best passage.
+⚠ Worth fixing properly: the byline is structured data on every one of these pages, and a column by
+the member is a *stronger* citation than a reporter's paraphrase of them, not a weaker one.

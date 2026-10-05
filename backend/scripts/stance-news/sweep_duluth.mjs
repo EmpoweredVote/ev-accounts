@@ -18,6 +18,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import crypto from 'node:crypto';
+// 🔴🔴 Corpus filenames were base64url(url).slice(0, 60). 45 bytes of URL is not past a shared
+// path prefix, so SIXTEEN Duluth News Tribune news articles wrote to ONE file and 50 named
+// articles became 26 on disk — a corpus that looked complete and was half gone. Hash the WHOLE
+// url. Any truncation of a key derived from a structured string collides where the structure is.
+const corpusKey = (url) => crypto.createHash('sha1').update(url).digest('hex').slice(0, 24);
+
 const UA = 'EmpoweredVoteBot/1.0 (+https://empowered.vote/crawler; nonprofit civic citation verification; contact info@empowered.vote)';
 const SLUG = process.argv[2];
 const NAMES = process.argv.slice(3);
@@ -126,7 +133,7 @@ async function worker() {
     const t = strip(h);
     if (NAMES.some((n) => t.includes(n)) || t.includes(SURNAME)) {
       named.push(a);
-      fs.writeFileSync(path.join(OUT, Buffer.from(a.url).toString('base64url').slice(0, 60) + '.txt'), t);
+      fs.writeFileSync(path.join(OUT, corpusKey(a.url) + '.txt'), t);
     }
   }
 }
