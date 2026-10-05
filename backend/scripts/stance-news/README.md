@@ -95,3 +95,63 @@ Carolina and Florida differ, and copying one to the other would have been wrong 
 an option, the rung describing that removal is an accurate description of **state law and of
 nobody's position**: Florida's rent-regulation rung 5 and ranked-choice rung 5 both read this way,
 and working backwards from the outcome would seat every member there.
+
+---
+
+## Minnesota additions (2026-10-04) — three Node scripts
+
+The Python scripts above build a corpus by crawling an outlet's HTML search. Minnesota needed a
+different shape, because **four of six outlets were blind to HTML search** (see the slice's
+`outlets.md`). These three are the working method, and each encodes a failure that cost real time.
+
+```bash
+node sweep_member.mjs <slug> "Primary Name" ["Alt Spelling" ...]   # corpus, WP REST + site search
+node attribute_quotes.mjs <slug> "First Last" ["AltFirst|AltFirst2"]  # quotes safely attributed
+node divided_votes.mjs <legistar-client> <YYYY-MM-DD> [bodyId]     # every C46-eligible vote
+```
+
+### `divided_votes.mjs` — run this FIRST for a new city
+
+It scans a whole year of roll calls and reports only the votes with 10% or more against, which is
+C46's threshold. Saint Paul 2026: **1,059 items, 918 with a roll call, 8 divided, none seating a
+chair.** One number prices a city's record evidence before any topic searching begins.
+
+### `sweep_member.mjs` — pass every spelling of the name
+
+🔴 **A member's own name can be spelled more than one way, and the database spelling is not always
+the newsroom's.** `HwaJeong Kim` found 8 articles; `Hwa Jeong Kim` found 27. Searching `HwaJeong`
+alone returned the same 8, which is what made the thin result look settled. Pass the joined, spaced
+and hyphenated forms; the row still uses the database `full_name`.
+
+### `attribute_quotes.mjs` — two rules, both paid for
+
+1. 🔴 **The speech verb is required.** With it optional, a school principal's quote was attributed to
+   a councilmember because the *next sentence* began with her name.
+2. 🔴 **An article naming a second person with the same surname is dropped**, because bare-surname
+   attribution cannot be trusted in it. A stoplist keeps sentence starters (*In Yang's response*,
+   *When Yang*) from counting as first names — without it the filter excluded nearly everything and
+   produced a false zero of its own.
+
+⚠ **Known false negative**: requiring the verb immediately after the quote misses a real attribution
+when an appositive intervenes — *"…" Council Member Rebecca Noecker, who represents downtown St.
+Paul, said last year.* **Re-read what the strict rule drops**; it is for finding candidates safely,
+not for settling attribution.
+
+⚠ **A surname that is an ordinary English word** (Her) cannot use bare-surname matching at all.
+
+⚠ **The worst case is a multi-candidate questionnaire round-up**, where many candidates answer the
+same question in sequence and the member's name appears elsewhere on the page. A quote was
+misattributed that way and had to be corrected after it was committed. In a round-up, take
+attribution from the candidate's own labelled block, never from the page.
+
+### Reading an ordinance
+
+🔴 **Never describe what an ordinance changed from its plain text.** Legistar's `MatterTextPlain`
+renders it with the strikethrough invisible, so it reads as the text *before* the amendment — this
+produced a wrong mechanism in three already-seated rows. Use `MatterTextRtf` and track `\strike` /
+`\ul`; for a .docx attachment, read the Word revision marks in `word/document.xml`.
+
+🔴 **A PDF cannot be cited.** `verificationFetch` throws `not_html`, so minutes and amendment
+attachments — exactly where the per-member detail lives — are unusable as sources. Saint Paul's
+amendment-level record is effectively uncitable; cite reporting instead, or record the row as a
+blank for want of a citable source and say so.
