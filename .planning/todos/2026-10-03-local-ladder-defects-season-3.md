@@ -155,6 +155,63 @@ until the badge ships, so these rungs currently have no one to answer them at th
 
 ---
 
+## 8. 🔴🔴 There is no ladder for TENANT PROTECTION — `rent-regulation` is a price ladder, and a whole city's divided record falls through the gap
+
+**Added 2026-10-05 from slice 3 (Duluth MN). This is defect 1's shape in a different place: a real,
+contested, well-documented municipal position with no chair to sit in.**
+
+Duluth City Council's housing record in 2025–26 is almost entirely about **habitability and eviction**,
+not about rent:
+
+| Instrument | Date | Tally |
+|---|---|---|
+| 25-015-O — *Tenant Right to Repair*, a citizens' petition ordinance (repair, deduct up to $500 or half a month's rent) | 2025-07-01 | **failed 2-6**, then went to the Nov 2025 ballot |
+| 25-016-O — the council's own Ch. 29A alternative (landlord training, tenant notification, repairs in 14 days) | 2025-07-01 | **passed 6-2** |
+| 26-0105R — call on the Governor for a temporary eviction moratorium + $50M rental assistance | 2026-02-23 | **failed 7-2** |
+
+Three divided votes, all single-subject, all within term, all reported by the daily paper with the
+members named — **the best record evidence the Knight programme has found in a city so far.** The
+`rent-regulation` ladder cannot hold any of it, because every rung is about **price**:
+
+- 1 *Expand rent control to cover all rental units communitywide*
+- 2 *Strengthen existing rent stabilization and extend coverage to more units*
+- 3 *Maintain current tenant protections while allowing market rents for new construction*
+- 4 *Limit rent regulations to subsidized units; allow market rents broadly*
+- 5 *Oppose rent control entirely; rents should be set by the market without government intervention*
+
+Only chair 3 names tenant protection at all, and it names it as a **subordinate clause** of a position
+about new-construction rents. Duluth has no rent control of any kind, so chairs 1, 2 and 4 describe
+nothing that exists there, and chair 5 is contradicted by the council unanimously *adding* tenant
+protections.
+
+**The campaign itself said the two subjects are different.** Asked directly, at a public forum, whether
+right-to-repair was a precursor to rent control, the organiser answered:
+
+> "This is not rent control. And I'm here today to talk about the 'Right to Repair' policy, which is a
+> common-sense tool to support renters getting the repairs they need in their homes."
+
+🔴 **The failure mode is specific and dangerous.** Working backwards from "voted against a tenant
+measure" seats the six who voted no at chair 5 — *oppose rent control entirely, no government
+intervention* — when **five of those six voted the same night to ADD tenant protections**, and one of
+the two who voted FOR the tenants' ordinance voted AGAINST the council's. A price ladder reads a
+habitability vote exactly backwards.
+
+**Ask — one of two, and they are not equivalent:**
+1. **A `tenant-protections` ladder at `local`**, whose rungs are enforcement mechanisms — who acts
+   when a repair is not made, and at whose risk: tenant self-help with rent deduction · a city
+   inspection-and-order regime · landlord licensing conditions · state-law remedies only (escrow and
+   the courts) · no local role. Those five are five real municipal positions, each with an instrument
+   behind it in some city, and Duluth's three votes separate cleanly across them.
+2. **Or widen `rent-regulation` chair 3** so tenant protection is the position rather than the
+   subordinate clause — cheaper, but it collapses two genuinely different questions into one chair and
+   leaves the other four rungs still unreachable in any city without rent control.
+
+⚠ **This is not a Minnesota problem.** Charlotte reached the same wall from the other side: NC
+§42-14.1 bars rent regulation outright, so `rent-regulation` was a scope blank there — and Charlotte's
+tenant-habitability record, if it has one, was never looked for, because no ladder asks for it.
+
+---
+
 ## What worked — the ask is not "fix the local tier"
 
 Five ladders seated cleanly, and they share a shape: **a concrete municipal lever, and rungs that
@@ -175,7 +232,7 @@ passes it.
 
 ---
 
-## Summary of the seven asks
+## Summary of the nine asks
 
 1. Make `public-safety-approach` chairs 1 and 3 separable behaviourally — **highest value by far**.
 2. Mark rungs that coincide with common state preemptions, so they cannot be seated by accident.
@@ -184,3 +241,30 @@ passes it.
 5. Re-scope `local-immigration`: detainer rungs to county, police-policy rungs to local.
 6. Consider a municipal climate ladder phrased in city levers.
 7. Re-scope `education-*` to `school` only.
+8. Add a `tenant-protections` ladder at `local`, or widen `rent-regulation` chair 3 — **second highest
+   value**: three divided, single-subject, well-reported Duluth votes seat nobody, and reading them on
+   the price ladder gets six members exactly backwards.
+
+## 9. ⚠ `childcare` at `local` is a FUNDING ladder, and a city's lever is ZONING
+
+**Added 2026-10-05 from slice 3 (Duluth MN).** All five rungs are about public money: universal
+public funding · expanded subsidies and provider grants · targeted tax credits below an income
+threshold · support limited to the lowest incomes · none at all. Those are state and federal levers.
+
+What a city actually does, and what Duluth did, is **zoning**. Council Vice President Lynn Marie
+Nephew, speaking for an ordinance opening childcare facilities to more neighborhoods:
+
+> "There are **limited things we can do** to support our childcare providers and one thing we can do
+> is **actually zoning**. … What this is going to do is open up zoning to a variety of different
+> neighborhoods and hopefully create some more community daycare or childcare facilities in the
+> neighborhoods for parents to bring their kiddos to."
+
+She names the problem herself: the city's levers here are limited, and the one it has is not on the
+ladder. A member who acts on childcare supply therefore reads as having no position on childcare.
+
+**Ask:** either add a supply rung at `local` — zoning and licensing that let childcare open in more
+places — or re-scope `childcare` to `state` and `federal`, where its five rungs are real choices.
+⚠ This is **not** the same as defect 7 (`education-*` at `local`), where no city lever exists at all.
+Here a lever exists, is used, and the ladder cannot see it.
+9. Give `childcare` a supply rung at `local`, or re-scope it off `local` — its five rungs are all
+   public money, and the lever a city actually has is zoning.
