@@ -153,14 +153,21 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Terese Tomanek",
+      "topic_key": "public-safety-approach",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 490,
+    "rows": 525,
     "high": 0,
-    "medium": 22,
+    "medium": 23,
     "by_check": {
-      "statement-needs-review": 22
+      "statement-needs-review": 23
     }
   }
 }

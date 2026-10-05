@@ -360,5 +360,21 @@
     ],
     "failed_urls": [],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Terese Tomanek",
+    "topic_key": "public-safety-approach",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.wdio.com/top-stories/four-candidates-advance-in-duluth-city-council-at-large-race/",
+      "https://www.wdio.com/top-stories/meet-the-candidates-running-for-duluths-at-large-city-council-seats/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   }
 ]
