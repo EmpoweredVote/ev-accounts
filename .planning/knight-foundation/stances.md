@@ -79,7 +79,82 @@ should be priced higher per member.
 against the city's own page before citing the office — a roster label says how someone arrived, not
 what they hold now, and a departed official's URL can serve their successor.
 
-### ▶️ RESUME HERE
+### ▶️ RESUME HERE — FINISH DULUTH: FOUR MEMBERS LEFT
+
+Work in `C:/ev-accounts-stances-mn` on branch `knight/stances-mn`. Everything below is measured,
+not assumed; nothing here needs re-deriving.
+
+| Member | Seated | Expect |
+| --- | --- | --- |
+| **Terese Tomanek** | 2020-06-12, Council President 2020–2026 | the real record of the four — six years, chaired the body, one of the four who prepared the 2024 public safety package |
+| **Jordon Johnson** (at large) | **2026-01-05** | ~9 months. 🔴 **Johnson is a very common surname — expect the Kennedy problem** (her corpus was 94% other Kennedys). ⚠ **Cheniqua Johnson of Saint Paul is in THIS SAME BATCH** — do not cross them |
+| **Diane Desotelle** | **2026-01-05** | ~9 months. Rare surname. Voted nay on the Housing Trust Fund appointments and against tabling the eviction moratorium |
+| **David Clanaugh** | **2026-01-05** | ~9 months. Rare surname. **Co-authored the eviction moratorium resolution with Durrwachter** and is quoted on it — the best single lead of the three newcomers |
+
+⚠ **Three of the four took their seats in January 2026**, so a documented zero is a likely and
+correct outcome. Nephew is the precedent: 35 rows, 0 chairs, every blank reasoned.
+
+#### The recipe, per member, in order
+
+```bash
+cd /c/ev-accounts-stances-mn/backend
+set -a; . /c/EV-Accounts/backend/.env; set +a      # this worktree has no .env of its own
+
+node scripts/stance-news/_office_record.mjs duluth-mn <Surname>          # confirm the term
+node scripts/stance-news/member_votes.mjs duluth-mn 2024-01-04 138 "<Surname>"   # their 31 divided votes
+node scripts/stance-news/sweep_duluth.mjs <slug> "<Full Name>" ["<Alt>"]  # ~20 min; watch <out>/_progress.log
+node scripts/stance-news/scrub_corpus.mjs <slug>                          # belt and braces; the sweep also scrubs
+node scripts/stance-news/attribute_quotes.mjs <slug> "<Full Name>"        # CANDIDATES, not settled
+node scripts/stance-news/quote_context.mjs <slug> [n ...]                 # READ each one in context
+SURNAME=<Surname> node scripts/stance-news/quoted_passages.mjs <slug>     # what the strict rule dropped
+
+# write _<slug>_rows.mjs modelled on _kennedy_rows.mjs, then:
+node scripts/stance-news/_<slug>_rows.mjs
+node scripts/stance-news/merge_rows.mjs <batch> <batch>/_rows/<slug>-rows.json <batch>/_rows/<slug>-evidence.json
+npx tsx scripts/stance-gate.ts --dir <batch>                   # must be high=0
+npx tsx scripts/verify-stance-research.ts --dir <batch>        # dry run; want failed=0
+```
+
+🟢 **The 15 scope blanks are already generated** for all four, at
+`<batch>/_rows/<slug>-blanks.json` — **on disk in this worktree only, because `_rows/` is gitignored.**
+If they are missing, regenerate with
+`node scripts/stance-news/duluth_scope_blanks.mjs "<Full Name>" > <batch>/_rows/<slug>-blanks.json`.
+They are a fact about the office, identical for every councilor, and a control asserts the wording
+still matches the rows already committed. Do not regenerate or reword them.
+
+#### The traps, in the order they will bite
+
+1. 🔴 **Check how each outlet spells the name before sweeping.** WDIO writes "Durwachter" with one
+   `r`. Pass every variant; the sweep now sweeps and filters on all of their surnames.
+2. 🔴 **Measure the noise ratio for a common surname.** Count how many corpus files actually contain
+   the FULL name. For Kennedy it was 23 of 359. The sweep keeps on the surname alone and cannot see this.
+3. 🔴 **`attribute_quotes` produces MISATTRIBUTIONS — never write a row from its list without opening
+   the article.** Across this slice it attributed the tenants’ organiser, a former councilor and the
+   US Health Secretary to the wrong people. `quote_context.mjs` is how you settle it.
+4. 🔴 **A thin yield is usually the tool.** Every one of these looked like "rarely quoted": curly-only
+   quote matching, straight quotes mis-pairing, a title list without "Councilor", a middle name
+   parsed as the surname, a middle initial defeating the ambiguity check. `_attr_selftest.mjs` has
+   14 controls — **run it after touching the matcher**.
+5. 🔴 **Snippets: >= 25 words, verbatim, cut from the fetched file, and the member’s name within 500
+   characters.** For a COMMON surname the verifier also needs a title qualifier within 30 characters,
+   so prefer "District N Councilor <Full Name>". A signed op-ed fails this — take the passage next to
+   the author bio.
+6. 🔴 **Read the agenda item AND the other item on the same agenda.** Durrwachter voted against the
+   council’s tenant ordinance and for the tenants’ stronger one; her nay inverts if read alone.
+7. 🔴 **A 5-4 minority can hold both poles**, and a lone-dissent PATTERN can be procedural rather than
+   political — Durrwachter’s five were about vetting and disclosure, and she wanted the projects built.
+8. ⚠ **Duluth’s enacted ordinance text is readable via the Legistar API and NOT citable** (the detail
+   page returns a 19-byte 200; Municode is a JS shell). Read it to pick the chair, cite the reporting.
+9. ⚠ **Pre-term statements have been EXCLUDED for every member so far.** Keep doing that unless the
+   operator rules otherwise — the open question is recorded below.
+
+#### Finishing
+
+Commit with an explicit pathspec, then push. If push protection rejects it, a scraped page contained
+someone else’s key: run `scrub_corpus.mjs`, amend, push again. **Never allowlist the secret.**
+When all four are done, update the slice table, the chair count, and open the PR.
+
+---
 
 **SAINT PAUL IS DONE** — seven councilmembers and the mayor, 280 rows. **4 chairs**, all on `rent-regulation`:
 Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human review; nothing publishes.
