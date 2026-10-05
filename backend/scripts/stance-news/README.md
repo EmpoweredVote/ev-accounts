@@ -284,3 +284,33 @@ showed the text present and contiguous, which ruled out every explanation except
 the opposite of how a human would pick the best passage.
 ⚠ Worth fixing properly: the byline is structured data on every one of these pages, and a column by
 the member is a *stronger* citation than a reporter's paraphrase of them, not a weaker one.
+
+### 🔴🔴 It is not only the NAME that varies — the SURNAME inside it varies, and that is worse
+
+`sweep_member.mjs` already warns that a member's own name can be spelled more than one way
+(`HwaJeong Kim` 8 articles, `Hwa Jeong Kim` 27). Duluth produced the next turn of it:
+
+> 1st District Councilor **Wendy Durwachter** … "Tenants do have protections already under the state
+> of Minnesota," said **Councilor Durwachter**. — WDIO
+
+The city, the database and the Duluth News Tribune all spell it **Durrwachter**, with two `r`s. WDIO
+spells it **Durwachter** throughout.
+
+A one-letter surname difference is worse than a spacing difference in a first name, because the
+surname is used **three** times in the pipeline and all three fail together:
+
+| Stage | What it does with the surname | What the variant costs |
+|---|---|---|
+| `surname+topic` queries | 22 of the 23 queries | an entire outlet never searched |
+| corpus name filter | decides which fetched pages are kept | every page from that outlet discarded |
+| `attribute_quotes.mjs` | finds and attributes the quote | nothing to attribute |
+
+So the result is not a thinner corpus — it is **a confident zero for one outlet**, with no warning,
+and the sweep's own per-query counts look healthy because the other outlets answer.
+
+▶ **`sweep_duluth.mjs` now sweeps and filters on EVERY variant's surname**, not just the first.
+▶ **Before sweeping a member, read one article about them from each outlet and check how that outlet
+spells the name.** The spelling to pass is the newsroom's; the spelling the row uses is still the
+database `full_name`.
+⚠ This was caught only because an article already in *another member's* corpus happened to quote her.
+Nothing in the tooling would have reported it.

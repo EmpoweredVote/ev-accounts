@@ -29,7 +29,12 @@ const UA = 'EmpoweredVoteBot/1.0 (+https://empowered.vote/crawler; nonprofit civ
 const SLUG = process.argv[2];
 const NAMES = process.argv.slice(3);
 if (!SLUG || !NAMES.length) { console.error('usage: sweep_duluth.mjs <slug> "Name" [alias ...]'); process.exit(1); }
-const SURNAME = NAMES[0].split(/\s+/).pop();
+// 🔴 EVERY variant's surname is swept, not just the first one's. WDIO spells Wendy Durrwachter as
+// "Durwachter" (one r) throughout its coverage, so a surname+topic loop over NAMES[0] alone misses
+// that outlet entirely — and so does the corpus name filter below. This is the HwaJeong / Hwa Jeong
+// Kim lesson one layer on: it is not only the full NAME that varies, it is the SURNAME inside it.
+const SURNAMES = [...new Set(NAMES.map((n) => n.split(/\s+/).pop()))];
+const SURNAME = SURNAMES[0];
 const OUT = path.join(process.env.SWEEP_OUT || 'data/stance-news', SLUG);
 fs.mkdirSync(OUT, { recursive: true });
 const LOG = path.join(OUT, '_progress.log');
@@ -106,7 +111,7 @@ const runQuery = async (q, label) => {
 
 for (const n of NAMES) await runQuery(n, 'name');
 const nameOnly = all.size;
-for (const t of TOPICS) await runQuery(`${SURNAME} ${t}`, 'surname+topic');
+for (const sn of SURNAMES) for (const t of TOPICS) await runQuery(`${sn} ${t}`, 'surname+topic');
 
 log(`\nspellings: ${NAMES.join(' | ')}`);
 log(`name-only: ${nameOnly} | corpus unique: ${all.size}`);
@@ -131,7 +136,7 @@ async function worker() {
     if (!h) { bad++; continue; }
     ok++;
     const t = strip(h);
-    if (NAMES.some((n) => t.includes(n)) || t.includes(SURNAME)) {
+    if (NAMES.some((n) => t.includes(n)) || SURNAMES.some((sn) => t.includes(sn))) {
       named.push(a);
       fs.writeFileSync(path.join(OUT, corpusKey(a.url) + '.txt'), t);
     }
