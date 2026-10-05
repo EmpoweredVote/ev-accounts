@@ -1,73 +1,5 @@
 [
   {
-    "full_name": "Rebecca Noecker",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Anika Bowie",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Saura Jost",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Cheniqua Johnson",
-    "topic_key": "rent-regulation",
-    "value": 2,
-    "action": "review",
-    "reasons": [
-      "statement-evidence"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://sahanjournal.com/housing/st-paul-city-council-extends-pre-eviction-filing-period/"
-    ],
-    "failed_urls": [
-      "https://www.minnpost.com/elections/2023/11/st-paul-voters-appear-to-have-sent-7-women-to-city-council-in-historic-election-highlighting-rent-control-sales-tax/"
-    ],
-    "admin_queue_visible": true
-  },
-  {
     "full_name": "Roz Randorf",
     "topic_key": "homelessness",
     "value": 3,
@@ -233,6 +165,198 @@
     "verified_sources": [
       "https://www.duluthnewstribune.com/news/local/duluth-city-council-backs-paper-mill-subsidy-despite-skeptics",
       "https://www.duluthnewstribune.com/news/local/duluth-shapes-policy-to-guide-future-use-of-tax-subsidies-for-developers"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Rebecca Noecker",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
+    ],
+    "failed_urls": [
+      "https://minnesotareformer.com/2022/09/07/st-paul-council-poised-to-exempt-new-construction-from-rent-control/",
+      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Rebecca Noecker",
+    "topic_key": "economic-development",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/06/11/st-paul-approves-tif-funds-for-166-market-rate-units-at-galtier-cray-plaza/",
+      "https://www.minnpost.com/politics-policy/2016/03/st-paul-tiff-over-tif-comes-down-simple-question-how-good-deal-soccer-stadiu/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Rebecca Noecker",
+    "topic_key": "residential-zoning",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://sahanjournal.com/housing/st-paul-city-council-zoning-changes-affordable-housing/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Kaohly Her",
+    "topic_key": "local-immigration",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/01/05/minneapolis-st-paul-30-day-immigration-surge/",
+      "https://sahanjournal.com/immigration/st-paul-immigration-raid-protest-rapid-response/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "HwaJeong Kim",
+    "topic_key": "housing",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/04/27/st-paul-2-developers-pitch-affordable-housing-on-jackson-street/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Cheniqua Johnson",
+    "topic_key": "rent-regulation",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://sahanjournal.com/housing/st-paul-city-council-extends-pre-eviction-filing-period/"
+    ],
+    "failed_urls": [
+      "https://www.minnpost.com/elections/2023/11/st-paul-voters-appear-to-have-sent-7-women-to-city-council-in-historic-election-highlighting-rent-control-sales-tax/"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Nelsie Yang",
+    "topic_key": "ranked-choice-voting",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/politics-policy/2023/03/senate-advances-bill-that-could-move-minnesota-toward-ranked-choice-voting/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Anika Bowie",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
+    ],
+    "failed_urls": [
+      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Saura Jost",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
+    ],
+    "failed_urls": [
+      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Molly Coleman",
+    "topic_key": "homelessness",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/08/04/st-paul-homeless-encampment-pigs-eye/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Molly Coleman",
+    "topic_key": "local-immigration",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/04/01/st-paul-training-separation-ordinance/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Saura Jost",
+    "topic_key": "transportation-priorities",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/elections/2023/11/st-paul-city-council-ward-3-2023-candidates-isaac-russell-saura-jost-troy-barksdale-patty-hartmann/",
+      "https://www.minnpost.com/metro/2023/10/could-opposition-to-the-summit-avenue-bike-trail-plan-shape-this-years-st-pauls-elections/"
     ],
     "failed_urls": [],
     "admin_queue_visible": true

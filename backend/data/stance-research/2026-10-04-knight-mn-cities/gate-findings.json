@@ -146,14 +146,21 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Saura Jost",
+      "topic_key": "transportation-priorities",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
     "rows": 490,
     "high": 0,
-    "medium": 21,
+    "medium": 22,
     "by_check": {
-      "statement-needs-review": 21
+      "statement-needs-review": 22
     }
   }
 }
