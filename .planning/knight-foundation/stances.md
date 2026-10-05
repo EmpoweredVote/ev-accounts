@@ -172,11 +172,38 @@ these rows were decided ON the exclusion and should be revisited once the four a
 | **Randorf** `local-environment` | **2019**: livable-wage jobs *"but not at the expense of the Lake Superior watershed"* | ⚠ two terms and six years back. Admissible under the ruling, but date-stamp it and let the reviewer weigh it |
 | **Durrwachter** `childcare` | 2023 meet-and-greet, reporting what residents told her | no change — that blank carries a second, independent reason: it names no rung |
 
-▶ **Do the four first, applying the ruling from the start.** Then re-research Nephew’s three pairs
-   and Randorf’s one, replacing those pairs rather than appending (`merge_rows.mjs` does this).
-⚠ **Each revisited blank’s reasoning currently asserts the old standard** — *"Statements she made as
-   a candidate in the 2023 campaign are not used, which is how this slice has treated every member"*.
-   That sentence is now false and must come out of any row that is touched.
+#### ✅ NEPHEW RE-RESEARCHED 2026-10-05 — THE CONTROL, AND ITS ANSWER IS ZERO
+
+She was chosen as the control precisely because she was a documented zero across all 35 rows, so
+any chair gained would be attributable to the ruling alone and to nothing else.
+
+**Result: still 0 chairs. 5 rows replaced, all still blank.** `high=0`, verifier clean, and the 15
+chairs already seated in this batch all still verify.
+
+🔴 **ADMISSIBILITY WAS NEVER THE BINDING CONSTRAINT — THE LADDER WAS.** Her campaign material is
+real, in her own quoted voice, fetchable, and easily over the 25-word bar. It still seats nobody,
+because it names *subjects* and not *rungs*:
+
+- `housing` — she argues supply ("creating just more housing units in general will take pressure
+  off the system"; the council "should focus changing city ordinances, in order to build more
+  homes") but never names subsidies (chair 4) or market pricing (chair 5), and her in-term position
+  is a binding cap on vacation-rental licences, which points at chair 3 instead. Three chairs stay open.
+- `economic-development` — her remarks are a **sequencing** argument (housing must come before
+  growth), made twice. Every rung of that ladder is about business incentives. **Different axis.**
+- `growth-and-development` — the same sequencing argument. It states a precondition for growth, never a pace.
+- `homelessness-response` — 🔴 **this row was never on the revisit list and should have been.** The
+  forum put homelessness *directly* to the candidates and her answer was about nonprofit supportive
+  housing. The ladder asks how much to **spend**; "more of these programs need to be encouraged" is
+  not a funding level. ▶ **The exclusion operated SILENTLY — a row whose reasoning never mentioned
+  campaign material had still been decided without it.** Do not trust the flagged list as complete.
+- `residential-zoning` — "changing city ordinances" names no density level.
+
+▶ **STILL OPEN: Randorf `local-environment`** (the 2019 watershed remark). Not yet revisited.
+✅ The false sentence — *"Statements she made as a candidate in the 2023 campaign are not used…"* —
+is now in **0 rows**, down from 3. A positive control confirmed the detector matched all 3 first.
+
+▶ **Do the four remaining members next, applying the ruling from the start.** Replace pairs rather
+   than append (`merge_rows.mjs` does this; it replaced exactly 5 and touched no other member).
 
 ---
 #### Finishing
@@ -189,6 +216,10 @@ When all four are done, update the slice table, the chair count, and open the PR
 
 **SAINT PAUL IS DONE** — seven councilmembers and the mayor, 280 rows. **4 chairs**, all on `rent-regulation`:
 Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human review; nothing publishes.
+
+**✅ NEPHEW RE-RESEARCHED UNDER THE RULING — 35 rows, still 0 chairs.** 5 blanks rewritten with the
+campaign material read and weighed. See the control write-up above: the bar that held her out was
+never admissibility, it was that her statements name subjects rather than rungs.
 
 **✅ RANDORF IS DONE — 35 rows, 3 chairs** (`homelessness` 3 · `rent-regulation` 3 · `economic-development` 3).
 **✅ DURRWACHTER IS DONE — 35 rows, 2 chairs** (`climate-change` 1 · `economic-development` 2).
