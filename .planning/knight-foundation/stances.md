@@ -145,9 +145,40 @@ still matches the rows already committed. Do not regenerate or reword them.
    political — Durrwachter’s five were about vetting and disclosure, and she wanted the projects built.
 8. ⚠ **Duluth’s enacted ordinance text is readable via the Legistar API and NOT citable** (the detail
    page returns a 19-byte 200; Municode is a JS shell). Read it to pick the chair, cite the reporting.
-9. ⚠ **Pre-term statements have been EXCLUDED for every member so far.** Keep doing that unless the
-   operator rules otherwise — the open question is recorded below.
+9. 🟢 **CAMPAIGN STATEMENTS COUNT (ruling 2026-10-05, Chris Cantrell). USE THEM.** This reverses how
+   the first six members were researched. A candidate’s own words about the office they went on to
+   hold are statement evidence like any other. **Date-stamp every such row in the reasoning** so a
+   reviewer can weigh staleness, and keep the ordinary bar: the statement must still name a chair.
+   🔴 **AND IT NEEDS A LINK. A SOURCED STANCE.** A campaign statement is evidence on exactly the same
+   terms as any other: a fetchable page carrying the words verbatim, at least 25 of them, with the
+   person named within 500 characters. A remembered position, a party platform, or an aggregator is
+   not a source, and vote411.org and thevoterguide.org cannot be cited on any row at all.
+   🟢 In practice this slice is fine: the campaign material is in WDIO and Duluth News Tribune
+   articles already sitting in the members’ corpora, so each row can carry a real citation.
+   ⚠ C44 is untouched — it is about **votes** cast before the seat, and those stay excluded.
 
+#### 🟢 RULING 2026-10-05 — campaign statements count, and what that reopens
+
+Chris Cantrell: *"campaign statements count, use them going forward"*.
+
+The first six Duluth members were researched under the opposite assumption, and several blanks say
+so in their reasoning. The ruling is forward-looking, so nothing is rewritten automatically — but
+these rows were decided ON the exclusion and should be revisited once the four are done:
+
+| Member / pair | What was excluded | Likely effect |
+| --- | --- | --- |
+| **Nephew** `housing` | Nov 2023: wants more supportive housing, and *"the Duluth City Council should focus changing city ordinances, in order to build more homes"* | 🔴 **The one that matters.** Her campaign remarks were her only substantive housing material, and she is currently a documented zero across all 35 rows |
+| **Nephew** `economic-development`, `residential-zoning` | the same campaign round, on revenue and on building more homes | worth re-reading; neither was clean before |
+| **Randorf** `local-environment` | **2019**: livable-wage jobs *"but not at the expense of the Lake Superior watershed"* | ⚠ two terms and six years back. Admissible under the ruling, but date-stamp it and let the reviewer weigh it |
+| **Durrwachter** `childcare` | 2023 meet-and-greet, reporting what residents told her | no change — that blank carries a second, independent reason: it names no rung |
+
+▶ **Do the four first, applying the ruling from the start.** Then re-research Nephew’s three pairs
+   and Randorf’s one, replacing those pairs rather than appending (`merge_rows.mjs` does this).
+⚠ **Each revisited blank’s reasoning currently asserts the old standard** — *"Statements she made as
+   a candidate in the 2023 campaign are not used, which is how this slice has treated every member"*.
+   That sentence is now false and must come out of any row that is touched.
+
+---
 #### Finishing
 
 Commit with an explicit pathspec, then push. If push protection rejects it, a scraped page contained
