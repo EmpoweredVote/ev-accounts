@@ -6,6 +6,7 @@ import fs from 'node:fs';
 // session ends — the script then reads nothing and reports a clean zero. Corpus root is now an
 // argument: SWEEP_OUT, or data/stance-news, the same default sweep_duluth.mjs writes to.
 import path from 'node:path';
+import { findAttributed } from './attribution.mjs';
 
 import crypto from 'node:crypto';
 // 🔴🔴 Corpus filenames were base64url(url).slice(0, 60). 45 bytes of URL is not past a shared
@@ -26,7 +27,6 @@ const FIRSTRE = ALT ? `(?:${FIRST}|${ALT})` : FIRST;
 const ALTWORDS = ALT ? ALT.split('|').map((s) => s.replace(/[^A-Za-z]/g, ' ').trim().split(/\s+/)).flat() : [];
 
 const LQ = String.fromCharCode(8220), RQ = String.fromCharCode(8221);
-const VERB = 'said|says|told|added|argued|noted|explained|wrote|asked|countered|replied';
 
 // Words that can precede a surname at a sentence start without being a first name.
 const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'As', 'At', 'With', 'That', 'This',
@@ -37,6 +37,8 @@ const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'A
   // not "Councilmember" — that one word excluded 9 of 50 Randorf articles as "a different Randorf".
   // The rest are caption, nav and section labels that sit immediately before a name.
   'Councilor', 'Counselor', 'Alderman', 'Alderwoman', 'Supervisor', 'Trustee',
+  'Councilors', 'Councilmembers', 'Members', 'Picture', 'Group', 'Submit', 'Video', 'Image',
+  'Contact', 'Newsletter', 'Team', 'Careers', 'Weather', 'Sports', 'Communities', 'Events',
   'Local', 'News', 'District', 'Vote', 'Business', 'Opinion', 'Editorial', 'Letters', 'Column',
   'Columns', 'Photo', 'Photos', 'Video', 'Subscribers', 'Sections', 'Tags', 'Share', 'Listen',
   'By', 'Elect', 'Re', 'Vice-President', 'Duluth', 'City', 'Third', 'Second', 'First', 'Fourth',
@@ -63,19 +65,7 @@ for (const a of named) {
   if (fulls.size) { ambiguous++; for (const w of fulls) others.add(`${w} ${SURNAME}`); continue; }
   clean++;
 
-  const re = new RegExp(`${LQ}([^${RQ}]{35,500})${RQ}`, 'g');
-  const nm = `(?:${FIRST}\\s+)?${SURNAME}`;
-  let m;
-  while ((m = re.exec(t)) !== null) {
-    const after = t.slice(m.index + m[0].length, m.index + m[0].length + 70);
-    const before = t.slice(Math.max(0, m.index - 70), m.index);
-    // The speech verb is REQUIRED. Making it optional attributed a school principal's
-    // quote to Yang, because the NEXT SENTENCE merely began with her name.
-    const tagA = new RegExp(`^[,.]?\\s*(?:${VERB})\\s+(?:council\\s*member\\s+|councilmember\\s+|council\\s+president\\s+)?${nm}`, 'i').test(after)
-      || new RegExp(`^[,.]?\\s*${nm}\\s+(?:${VERB})`, 'i').test(after);
-    const tagB = new RegExp(`${nm}\\s+(?:${VERB})[,:]?\\s*$`, 'i').test(before);
-    if (tagA || tagB) out.push({ url: a.url, quote: m[1].trim() });
-  }
+  for (const q of findAttributed(t, FIRSTRE, SURNAME)) out.push({ url: a.url, quote: q });
 }
 
 const seen = new Set(), uniq = [];

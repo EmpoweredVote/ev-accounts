@@ -314,3 +314,64 @@ spells the name.** The spelling to pass is the newsroom's; the spelling the row 
 database `full_name`.
 ⚠ This was caught only because an article already in *another member's* corpus happened to quote her.
 Nothing in the tooling would have reported it.
+
+### 🔴 Do not match a news article to a vote by subject-matter resemblance — look the matter up
+
+Duluth has **two** Lester Park matters, a year apart and about different things:
+
+| Matter | Date | What it is | Tally |
+|---|---|---|---|
+| `25-032-O` | 2025-12-08 | conveyance of Lester Park **neighborhood** property to DEDA, contingent on protective designations over 1,500 acres | **8-1**, Durrwachter the sole nay |
+| `26-0761R` | 2026-08-24 | comprehensive plan amendment reclassifying areas of the **golf course** (63 developed / 207 open) | **no roll call at all** |
+
+A WDIO report of the golf-course decision quotes Durrwachter urging the council to consider school
+capacity. Pairing that remark with the 8-1 dissent would have produced a clean, confident, **wrong**
+row: a recorded dissent attributed to a reason given about a different matter eight months later.
+
+▶ **Look the matter up by file number and read its own tally** (`_matter_votes.mjs`), and check the
+article's date against the matter's action date. `_matter_search.mjs` finds the file number from a
+phrase in the title.
+⚠ The golf course also drew **two initiative petitions** (`26-033-O`, `26-034-O`, both withdrawn),
+which is the signature of a contested question — and it still carries no per-member vote. Contested
+does not imply recorded.
+
+### 🔴🔴 `$top=40` is a CAP, not a window — the census script was taking a sample
+
+`divided_votes.mjs` fetched meetings with one `$top=40` call. Duluth has had more than 40 council
+meetings since 2025, so `from=2024-01-04` and `from=2025-01-01` returned **byte-identical output**:
+the same 40 most recent meetings, the same 10 divided votes. That reads as *"2024 adds nothing"* and
+actually means *"2024 was never fetched"*.
+
+Paginated, the same window gives **76 meetings, 1,914 items, 40 roll calls and 31 divided votes**.
+Three times as many. ▶ **The whole point of this script is that a sample is not a census, and it was
+quietly taking a sample.** Re-run it for any city scanned before 2026-10-05.
+
+⚠ **Two identical answers for two different inputs is the signature** — the same shape as rule 5,
+reached from the other side. A parameter that changes nothing is either irrelevant or ignored, and
+only one of those is good news. It now prints the date range it actually covered.
+
+### 🔴🔴 A measured voting PATTERN can have a non-policy explanation
+
+Wendy Durrwachter is the sole dissenter on **five** development-subsidy instruments — a pattern, not
+a single project vote, and exactly what "a lead count is not evidence until the pattern is measured"
+asks for. Two of the five she explained herself:
+
+> "a project that I would like to see built" — on the LSC housing subsidy she alone voted against,
+> objecting that the public had not been given the documents
+>
+> "I would love for this property to be developed for housing, I was deeply disappointed in the
+> administration's lack of vetting this developer" — on Incline Village
+
+**Those dissents evidence a position on transparency, not on economics.** Seating the pattern on
+`economic-development` would have been clean, confident and wrong. Only the Sofidel votes, where she
+gave a policy reason — a $3 billion multi-national should not need tax relief, and the city "has been
+abusing TIF" — seat anything.
+▶ **Measure the pattern, then read what the member said about each instance.** The count tells you
+there is something to explain; it does not tell you what the explanation is.
+
+### 🔴 A 5-4 minority can contain BOTH poles
+
+On Duluth's 2024 camping ordinance, three members voted no "citing what they viewed as a need for
+more work" and a fourth voted no as "an advocate for the tougher line" the mayor had proposed.
+▶ **A nay list is not a side.** Read why each dissenter dissented before treating the minority as a
+position, and expect the paper to be the only source that says.

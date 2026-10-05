@@ -27,14 +27,28 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Wendy Durrwachter",
+      "topic_key": "climate-change",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Wendy Durrwachter",
+      "topic_key": "economic-development",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 315,
+    "rows": 350,
     "high": 0,
-    "medium": 4,
+    "medium": 6,
     "by_check": {
-      "statement-needs-review": 4
+      "statement-needs-review": 6
     }
   }
 }

@@ -25,9 +25,9 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | 7 so far | `2026-10-04-knight-mn-cities` — **OPEN, 9/18 done: Saint Paul + Randorf** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | 9 so far | `2026-10-04-knight-mn-cities` — **OPEN, 10/18 done: Saint Paul + Randorf + Durrwachter** |
 
-Ten chairs from 30 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
+Twelve chairs from 31 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
 from 22 → 122 in Florida. Price the next slice from these numbers, not from the first pass.
 
@@ -84,11 +84,36 @@ what they hold now, and a departed official's URL can serve their successor.
 **SAINT PAUL IS DONE** — seven councilmembers and the mayor, 280 rows. **4 chairs**, all on `rent-regulation`:
 Noecker 3 · Bowie 3 · Jost 3 · Johnson 2. Every row is queued for human review; nothing publishes.
 
-**✅ RANDORF IS DONE — 35 rows, 3 chairs**, all queued for human review, all sources verified with
-zero failures: `homelessness` 3 · `rent-regulation` 3 · `economic-development` 3. Corpus:
-`backend/data/stance-news/randorf/` (50 articles naming her, all read).
+**✅ RANDORF IS DONE — 35 rows, 3 chairs** (`homelessness` 3 · `rent-regulation` 3 · `economic-development` 3).
+**✅ DURRWACHTER IS DONE — 35 rows, 2 chairs** (`climate-change` 1 · `economic-development` 2).
+All queued for human review; every source verifies with zero failures. Corpora:
+`backend/data/stance-news/<slug>/`.
 
-**Nine people remain, all in Duluth:** Forsman, Nephew, Jordon Johnson, Tomanek, Durrwachter,
+🔴🔴 **THE DIVIDED-VOTE CENSUS WAS WRONG TWICE, AND THE SECOND TIME WAS MY OWN FIX.** It is **31
+divided votes across 76 meetings**, not 10. `divided_votes.mjs` used a single `$top=40` call, which
+is a **cap, not a window** — `from=2024-01-04` and `from=2025-01-01` returned byte-identical output,
+which reads as "2024 adds nothing" and actually means "2024 was never fetched". It paginates now.
+▶ **The whole point of that script is that a sample is not a census, and it was quietly taking a
+sample.** Re-run it for any city scanned before 2026-10-05.
+
+🔴🔴 **A MEASURED VOTING PATTERN CAN HAVE A NON-POLICY EXPLANATION, AND ONLY HER OWN WORDS SHOW IT.**
+Durrwachter is the sole dissenter on **five** development-subsidy instruments — the easiest "pattern"
+in the slice. Two of them she explained by saying she *wanted the project built*: of the LSC housing
+subsidy, "a project that I would like to see built", objecting that the public lacked the documents;
+of Incline Village, "I would love for this property to be developed for housing", objecting to the
+vetting. **Those votes evidence transparency, not economics**, and reading the pattern as an
+economic-development chair would have been a clean, confident, wrong row. Only the Sofidel votes,
+where she gave a policy reason, seat anything.
+
+🔴 **A 5-4 MINORITY CAN CONTAIN BOTH POLES.** On the 2024 camping ordinance three members voted no
+"citing what they viewed as a need for more work" and a fourth voted no wanting the mayor's *tougher*
+line. A nay list is not a side.
+
+🟢 **RANDORF'S `homelessness` 3 IS CORROBORATED by the fuller census**: she voted for the camping
+ordinance only after it was cut from a misdemeanor to a $200 fine, and the same night voted $500,000
+to accelerate new capacity — which is chair 3's two clauses exactly.
+
+**Eight people remain, all in Duluth:** Forsman, Nephew, Jordon Johnson, Tomanek,
 Desotelle, Clanaugh, Kennedy, and Mayor Reinert.
 
 ▶ **Method that worked, reuse it per member:**

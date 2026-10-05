@@ -113,5 +113,36 @@
     ],
     "failed_urls": [],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Wendy Durrwachter",
+    "topic_key": "climate-change",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.wdio.com/top-stories/duluth-city-councilors-advocate-strong-federal-clean-car-standards/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Wendy Durrwachter",
+    "topic_key": "economic-development",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.duluthnewstribune.com/news/local/duluth-city-council-backs-paper-mill-subsidy-despite-skeptics",
+      "https://www.duluthnewstribune.com/news/local/duluth-shapes-policy-to-guide-future-use-of-tax-subsidies-for-developers"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   }
 ]

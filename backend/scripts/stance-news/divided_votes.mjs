@@ -4,10 +4,23 @@ const client = process.argv[2];
 const from = process.argv[3];
 const bodyId = process.argv[4] || '138';
 
-const get = async (u) => { const r = await fetch(u); if (!r.ok) throw new Error(`${r.status} ${u}`); return r.json(); };
+const get = async (u) => { const r = await fetch(u, { signal: AbortSignal.timeout(40000) }); if (!r.ok) throw new Error(`${r.status} ${u}`); return r.json(); };
 
-const events = await get(`https://webapi.legistar.com/v1/${client}/events?$filter=EventBodyId+eq+${bodyId}+and+EventDate+ge+datetime'${from}'&$orderby=EventDate+desc&$top=40`);
-console.log(`meetings since ${from}: ${events.length}`);
+// 🔴 THIS USED TO BE A SINGLE `$top=40` CALL, WHICH IS A CAP, NOT A WINDOW. Duluth has had more
+// than 40 council meetings since 2025, so `from=2024-01-04` and `from=2025-01-01` returned the SAME
+// 40 most recent meetings and the SAME 10 divided votes — byte-identical output for a window twice
+// as long. That reads as "2024 adds nothing" and actually means "2024 was never fetched".
+// The whole point of this script is that a sample is not a census; it was quietly taking a sample.
+const events = [];
+for (let skip = 0; ; skip += 100) {
+  const page = await get(`https://webapi.legistar.com/v1/${client}/events?$filter=EventBodyId+eq+${bodyId}+and+EventDate+ge+datetime'${from}'&$orderby=EventDate+desc&$top=100&$skip=${skip}`);
+  events.push(...page);
+  if (page.length < 100) break;
+  if (skip > 2000) { console.log('!! stopped paging at 2000 meetings — widen this guard if that is real'); break; }
+}
+const dates = events.map((e) => (e.EventDate || '').slice(0, 10)).filter(Boolean).sort();
+console.log(`meetings since ${from}: ${events.length}  (covering ${dates[0]} to ${dates[dates.length - 1]})`);
+if (!events.length) { console.log('🔴 ZERO MEETINGS — check the bodyId, not the date'); }
 
 let scanned = 0, withVotes = 0;
 const divided = [];
