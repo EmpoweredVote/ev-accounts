@@ -81,7 +81,11 @@ if (!idxFile) { console.error('no corpus index under ' + path.join(ROOT, SLUG) +
 const named = JSON.parse(fs.readFileSync(idxFile, 'utf8'));
 if (!named.length) { console.error('corpus index is EMPTY — that is a broken sweep, not a finding'); process.exit(1); }
 const out = [];
-let ambiguous = 0, clean = 0;
+let ambiguous = 0, clean = 0, notAbout = 0;
+// Every spelling of the member's full name that an article may use. The article-level gate below
+// accepts any of them: "HwaJeong Kim" found 8 articles where "Hwa Jeong Kim" found 27.
+const ALLNAMES = [NAME, ...(ALT ? ALT.split('|').map((a) => `${a.replace(/[^A-Za-z ]/g, '').trim()} ${SURNAME}`) : [])]
+  .map((n) => n.replace(/\s+/g, ' ').trim()).filter(Boolean);
 const others = new Set();
 
 for (const a of named) {
@@ -106,10 +110,32 @@ for (const a of named) {
   // people named Her (Ilean Her, Lo Her, Kong Her: it is a common Hmong surname in Saint Paul).
   // What it must NOT do is read a title-case headline as a second person, which `isTitleCase`
   // below prevents.
+  // 🔴🔴 ARTICLE-LEVEL GATE, AND IT IS THE ONE THAT MATTERS. The article must name the member in
+  // full somewhere, or no quote in it is hers. Without this, 18 of Nelsie Yang's 34 attributed
+  // quotes came from articles that never mention her — one about Kaying Yang, one about the
+  // Chinese foreign minister Yang Jiechi, one about Korean officials.
+  //
+  // The ambiguity check could not catch those, because it assumes WESTERN NAME ORDER: it looks for
+  // `<First> Yang`, and "Yang Jiechi" is surname-first, so the article read as unambiguous and
+  // bare-surname attribution fired on "Yang said". That is the Robert F. Kennedy Jr. failure in a
+  // new costume — name order rather than middle initials — and Saint Paul, with a large Hmong
+  // community and surnames like Yang, Her, Vang, Xiong and Thao, is the worst place for it.
+  //
+  // This gate and the quote-level rule answer different questions and must not be confused:
+  //   article level — does this article name the member in full? If not, skip it entirely.
+  //   quote level   — bare surname beside a speech verb is FINE, and is where real quotes live
+  //                   (requiring the full name there yields 0 quotes for Mayor Her).
+  if (!ALLNAMES.some((n) => t.includes(n))) { notAbout++; continue; }
+
   const fulls = new Set();
   for (const m of t.matchAll(new RegExp(`\\b([A-Z][a-z]+)\\s+(?:[A-Z]\\.\\s+){0,2}${SURNAME}\\b`, 'g'))) {
     if (isTitleCase(t, m.index, m[0].length)) continue;
     fulls.add(m[1]);
+  }
+  // Defence in depth: the same pair in surname-first order, e.g. "Yang Jiechi", "Her Pao".
+  for (const m of t.matchAll(new RegExp(`\\b${SURNAME}\\s+([A-Z][a-z]+)\\b`, 'g'))) {
+    if (isTitleCase(t, m.index, m[0].length)) continue;
+    if (!STOP.has(m[1])) fulls.add(m[1]);
   }
   for (const w of OWNWORDS) fulls.delete(w);
   for (const w of ALTWORDS) fulls.delete(w);
@@ -123,7 +149,8 @@ for (const a of named) {
 const seen = new Set(), uniq = [];
 for (const o of out) { const k = o.quote.slice(0, 80); if (seen.has(k)) continue; seen.add(k); uniq.push(o); }
 
-console.log(`articles naming "${NAME}": ${named.length}`);
+console.log(`articles in the corpus index: ${named.length}`);
+console.log(`  skipped, do NOT name ${ALLNAMES.join(' / ')} anywhere: ${notAbout}`);
 console.log(`  excluded, a different ${SURNAME} present: ${ambiguous}${others.size ? ' -> ' + [...others].join(', ') : ''}`);
 console.log(`  clean articles used: ${clean}`);
 console.log(`attributed: ${out.length} | unique: ${uniq.length}`);
