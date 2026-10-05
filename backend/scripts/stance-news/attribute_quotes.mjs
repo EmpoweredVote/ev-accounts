@@ -2,7 +2,11 @@
 // Usage: node attribute.mjs <slug> "First Last"
 import fs from 'node:fs';
 
-const P = 'C:/Users/Chris/AppData/Local/Temp/claude/C--EV-Accounts/e6365231-862e-4798-ba8d-61bcd06426c1/scratchpad/outlets/';
+// 🔴 This was a hardcoded absolute path into ONE session's scratchpad, which is deleted when that
+// session ends — the script then reads nothing and reports a clean zero. Corpus root is now an
+// argument: SWEEP_OUT, or data/stance-news, the same default sweep_duluth.mjs writes to.
+import path from 'node:path';
+const ROOT = process.env.SWEEP_OUT || 'data/stance-news';
 const SLUG = process.argv[2];
 const NAME = process.argv[3];
 // argv[4]: extra first-name spellings, pipe-separated, e.g. "Hwa ?Jeong".
@@ -23,13 +27,16 @@ const STOP = new Set(['In', 'When', 'Like', 'But', 'And', 'The', 'For', 'If', 'A
   'Then', 'While', 'Though', 'Both', 'Her', 'His', 'Their', 'Of', 'To', 'On', 'By', 'From', 'So', 'Yet', 'Now',
   'President', 'Representative', 'Senator', 'Commissioner', 'Chair', 'Vice', 'Former', 'Incumbent', 'Candidate']);
 
-const named = JSON.parse(fs.readFileSync(`${P}${SLUG}-named.json`, 'utf8'));
+const idxFile = ['_index.json', '../' + SLUG + '-named.json'].map((n) => path.join(ROOT, SLUG, n)).find((p) => fs.existsSync(p));
+if (!idxFile) { console.error('no corpus index under ' + path.join(ROOT, SLUG) + ' — run the sweep first'); process.exit(1); }
+const named = JSON.parse(fs.readFileSync(idxFile, 'utf8'));
+if (!named.length) { console.error('corpus index is EMPTY — that is a broken sweep, not a finding'); process.exit(1); }
 const out = [];
 let ambiguous = 0, clean = 0;
 const others = new Set();
 
 for (const a of named) {
-  const f = `${P}${SLUG}/${Buffer.from(a.url).toString('base64url').slice(0, 60)}.txt`;
+  const f = path.join(ROOT, SLUG, Buffer.from(a.url).toString('base64url').slice(0, 60) + '.txt');
   let t;
   try { t = fs.readFileSync(f, 'utf8'); } catch { continue; }
 
@@ -63,7 +70,7 @@ console.log(`articles naming "${NAME}": ${named.length}`);
 console.log(`  excluded, a different ${SURNAME} present: ${ambiguous}${others.size ? ' -> ' + [...others].join(', ') : ''}`);
 console.log(`  clean articles used: ${clean}`);
 console.log(`attributed: ${out.length} | unique: ${uniq.length}`);
-fs.writeFileSync(`${P}${SLUG}-final.json`, JSON.stringify(uniq, null, 1));
+fs.writeFileSync(path.join(ROOT, SLUG, '_attributed.json'), JSON.stringify(uniq, null, 1));
 uniq.forEach((o, i) => {
   console.log(`\n[${i + 1}] ${o.url.replace('https://www.', '').replace('https://', '').slice(0, 88)}`);
   console.log('    ' + o.quote.slice(0, 280));

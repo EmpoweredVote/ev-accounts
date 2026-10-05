@@ -233,3 +233,23 @@ writes `<out>/_progress.log`; watch that, not stdout.
 symptom of a healthy backgrounded run was also *no output*. **A detector that cannot distinguish
 success from failure is not a detector** — the same rule the positive-control discipline encodes,
 applied to the tooling instead of to the corpus.
+
+### 🔴 A hardcoded scratchpad path turns a dead corpus into a clean zero
+
+`attribute_quotes.mjs` held an absolute path into **one session's** scratchpad
+(`.../claude/.../e6365231-.../scratchpad/outlets/`). That directory is deleted when the session ends,
+so the next run read an empty corpus and would have reported *no attributed quotes* — a finding
+shaped exactly like a member nobody quotes.
+
+It now takes `SWEEP_OUT` (default `data/stance-news`), the same root the sweeps write to, and
+**exits non-zero on a missing or empty index** rather than proceeding:
+
+```
+corpus index is EMPTY — that is a broken sweep, not a finding
+```
+
+▶ **A tool that reads a corpus must refuse to run on an empty one.** Silence from an empty input is
+the single most convincing false negative this toolchain can produce, and every other rule here is
+about not trusting one.
+▶ **Corpora belong under `data/stance-news/<slug>/`, in the repo tree**, not in a scratchpad — they
+are the evidence a row was built from, and a reviewer may need to see them.
