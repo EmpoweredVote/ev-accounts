@@ -282,3 +282,41 @@ amendment or her name.
 contract: `verificationFetch` throws `not_html`, and nothing below a final ordinance vote reaches a
 reportable page. Expect this to recur wherever a member's clearest position is an amendment rather
 than a final vote.
+
+---
+
+# 🟢 The divided-vote scan — do this FIRST for the next city
+
+Rather than hunt instruments topic by topic, scan the whole year's roll calls and keep only the ones
+C46 can accept. For Saint Paul in 2026 (`divided-votes.mjs`):
+
+| | |
+|---|---|
+| Council items scanned | **1,059** |
+| Items carrying a recorded roll call | **918** |
+| Divided by 10% or more (C46) | **8** |
+
+**Eight.** Fewer than one per cent of recorded votes are positions under the programme's own rule.
+That single number prices a city's record evidence better than any amount of topic searching, and it
+explains why four of the slice's six seated-or-searched members have no record chair.
+
+The eight, and what they are worth:
+
+| Date | File | Tally | On a ladder? |
+|---|---|---|---|
+| 2026-08-05 | RES 26-1253 | 2-5 | tenant repair-and-deduct **ballot question** — a referral decision, names no rung |
+| 2026-04-22 | RES 26-619 | 5-2 | urging European banks to divest from DHS contractors — no rung |
+| 2026-05-13 / 05-27 | RES 26-791 | 4-3 / 6-1 | a mayoral **appointment** — personnel, not policy |
+| 2026-08-26 | RES PH 26-175 | 0-7 | residential permit parking boundary |
+| 2026-08-12 | RLH SAO 26-62 | 6-1 | a **single-property** abatement appeal |
+| 2026-09-09 | RES 26-1502 / 26-1543 | 6-1 | honorary street **co-naming** |
+
+▶ **None of the eight seats a chair.** They are appointments, single properties, street names, a
+parking boundary and two referral decisions — the municipal equivalent of Charlotte's finding that
+every divided policy vote failed as chair evidence, reached here by measurement rather than by
+reading them one at a time.
+
+⚠ **RES 26-1253 is recorded in Johnson's reasoning as a counter-fact.** She is seated at chair 2 on
+rent regulation, and she voted against referring a tenant repair-and-deduct question to the ballot.
+The two are not contradictory — a referral decision is not a position on the policy — but the
+reviewer should see the whole record, not only the part that supports the chair.
