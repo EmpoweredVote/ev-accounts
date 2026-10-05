@@ -129,12 +129,21 @@ Full working: [`scope-review.md`](../../backend/data/stance-research/2026-10-04-
 [`instruments.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/instruments.md) ·
 [`outlets.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/outlets.md).
 
-### Outlets to profile before the sweep — none yet checked for reachability
+### Outlets — PROFILED for both cities, each with a control
 
-MPR News · MinnPost · Minnesota Reformer · Sahan Journal · Racket · Duluth News Tribune ·
-Saint Paul Pioneer Press. Run `sweep.py` (name x topic) **and** `small_outlet.py` (name only) and
-merge: query breadth must match outlet size in both directions. Expect the two dailies to be
-paywalled, as the Charlotte Observer was.
+**Saint Paul** (4 of 6 were blind to HTML search): MinnPost and Sahan Journal by **WP REST**;
+Minnesota Reformer and the Pioneer Press by **HTML `?s=`** (the Press is paywalled); **MPR News and
+Racket are still unsolved** — do not record a searched blank that claims to have covered them.
+
+**Duluth** (profiled 2026-10-05): 🟢 **Duluth News Tribune** (`/search?q=`, absolute hrefs, **not
+paywalled**, city-hall reporter) · 🟢 **WDIO** (`?s=`) · 🟢 **Duluth Monitor** (WP REST).
+🔴 Unusable: Perfect Duluth Day (Cloudflare to every UA), FOX 21 and Business North (429 to every UA),
+Northern News Now (**zero results in a real browser**), Duluth Reader (blind).
+
+Full method, and the three traps it cost, in
+[`outlets.md`](../../backend/data/stance-research/2026-10-04-knight-mn-cities/outlets.md).
+▶ **`sweep_duluth.mjs` is the Duluth sweep** — `sweep_member.mjs` knows only the three Twin Cities
+outlets and under-reports here by construction.
 
 ---
 
