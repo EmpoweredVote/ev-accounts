@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | **28** | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 28 rows in the review queue |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | **29** | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 29 rows in the review queue |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -81,8 +81,8 @@ what they hold now, and a departed official's URL can serve their successor.
 
 ### ✅ SLICE 3 IS COMPLETE — 18 members, 630 rows, 28 chairs (2026-10-05)
 
-Tomanek 2 · Jordon Johnson 1 · Desotelle 1 · Clanaugh 0. Nephew gained her first chair, and
-Forsman, Johnson, Tomanek and Desotelle all moved on one ladder. Gate `high=0`, verifier clean,
+Tomanek 2 · Jordon Johnson 1 · Desotelle 1 · Clanaugh 0. Nephew gained her first chair, Randorf went
+to four — the most in the slice — and five members moved on `local-immigration` alone. Gate `high=0`, verifier clean,
 nothing auto-published.
 
 #### 🔴🔴 THE BIGGEST FINDING OF THE SLICE: SPONSORSHIP IS AN EVIDENCE CHANNEL AND NOBODY HAD USED IT
@@ -117,9 +117,17 @@ The web GUID is **not** the API's `MatterGuid`. They are different identifiers.
 | `?ID=…` alone, or a mismatched pair, or **the API's `MatterGuid`** | 200, **19 bytes** |
 | `?ID=…&GUID=<the web GUID>` | 200, **116 KB**, sponsors + full operative text, to curl AND node |
 
-▶ Get the pair from a link Legistar's web UI or a news story publishes — 26-0100R's came from a
-MinnPost hyperlink. `Calendar.aspx` does not expose it, so **there is no scripted route yet, and
-finding one would make every Duluth instrument citable in bulk.**
+🟢 **AND ONE KNOWN PAIR BOOTSTRAPS THE REST.** `Calendar.aspx` does not expose the pairs, which is
+what made this look impossible — but any single matter page does. A `LegislationDetail` page links
+every `MeetingDetail` it reached, with that meeting's pair; a `MeetingDetail` page links every matter
+on the agenda, with each matter's pair. Seed from any news story that links a Legistar matter and
+walk meetings → agendas. That is how 26-005-O was found, and **it settled Randorf**.
+
+🔴 **CUT THE SNIPPET WITH ITS ORIGINAL CASE.** Slicing out of `normalizeText(page)` lowercases it,
+which makes a poor published citation and silently fails the gate: the instrument patterns are
+**case-sensitive**, so "Chapter 2" in a reasoning never matches "chapter 2" in a snippet. Use
+`scripts/stance-news/_legistar_text.mjs`, which returns a case-preserving twin and asserts the two
+align before slicing.
 
 #### Rules this slice's last four members paid for
 
@@ -143,18 +151,15 @@ finding one would make every Duluth instrument citable in bulk.**
 
 #### ▶️ OPEN, IN PRIORITY ORDER
 
-1. **Randorf `local-immigration` is a chair that cannot be cited yet.** She is sole author of
-   26-005-O, which codified the same policy into the city code on 2026-02-23. Its text states
-   chair 3. **Find its Legistar web GUID and the row is settleable.**
-2. **Three Saint Paul `rent-regulation` rows fail on a Legistar meeting URL** (Noecker, Bowie,
+1. **Three Saint Paul `rent-regulation` rows fail on a Legistar meeting URL** (Noecker, Bowie,
    Jost). 🔴 The page is NOT broken — 1,065,089 bytes, and it contains both the matter and the
    member. The defect is the **snippet**, as it was for Jost's transportation row. Each row still
    verifies on another source, so all three stay queued.
-3. **Sponsorship leads for members already closed**, all from the same scan: Randorf sponsored the
-   TIF development-incentives policy, a short-term-rental moratorium with interim controls, and a
-   2021 climate emergency declaration; Kennedy sponsored an ordinance integrating the city's
-   LGBTQ+ commission. None acted on.
-4. ⚠ **The pre-2026 sponsor scan is INCOMPLETE.** The API caps at 1000 matters per query and three
+2. **Sponsorship leads for members already closed**, all from the same scan and now all reachable
+   through the meeting-walk above: Randorf also sponsored the TIF development-incentives policy, a
+   short-term-rental moratorium with interim controls, and a 2021 climate emergency declaration;
+   Kennedy sponsored an ordinance integrating the city's LGBTQ+ commission. None acted on.
+3. ⚠ **The pre-2026 sponsor scan is INCOMPLETE.** The API caps at 1000 matters per query and three
    year-windows hit the cap. Nothing ladder-bearing was missed for the four members done here, but
    the record is not exhaustive for the longer-serving members.
 

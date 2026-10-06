@@ -15,7 +15,8 @@
 //     ID only                -> 200, 19 bytes
 //     ID + matching GUID     -> 200, 116,377 bytes
 // That correction unlocks record citations for the whole Duluth slice, not just this row.
-import { normalizeText, checkNameProximity } from '../../src/lib/researchVerifier.js';
+import { checkNameProximity } from '../../src/lib/researchVerifier.js';
+import { fetchLegistar, sliceSnippet } from './_legistar_text.mjs';
 
 export const URL_26_0100R = 'https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7864734&GUID=B105F04C-45ED-4AC9-B451-9E69CD2774D2';
 
@@ -26,18 +27,15 @@ export const URL_26_0100R = 'https://duluth-mn.legistar.com/LegislationDetail.as
 // window — Johnson is a COMMON_LAST_NAME, and the body's "BY COUNCILORS JOHNSON" does not help
 // because TITLE_PATTERN matches "councilor" and not the plural "councilors".
 export async function buildSnippet() {
-  const r = await fetch(URL_26_0100R);
-  if (!r.ok) throw new Error('26-0100R page HTTP ' + r.status);
-  const html = await r.text();
-  const stripped = html.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/g, '').replace(/<[^>]+>/g, ' ');
-  const page = normalizeText(stripped);
-  const start = page.indexOf('26-0100r', 100);
+  const doc = await fetchLegistar(URL_26_0100R);
+  const start = doc.page.indexOf('26-0100r', 100);
   const tail = 'to assist in or otherwise facilitate the enforcement of federal civil immigration laws.';
-  const end = page.indexOf(tail, start);
+  const end = doc.page.indexOf(tail, start);
   if (start < 0 || end < 0) throw new Error('26-0100R anchors not on the page — re-read it before trusting this row');
-  const snippet = page.slice(start, end + tail.length);
+  const lower = doc.page.slice(start, end + tail.length);
+  const snippet = sliceSnippet(doc, start, end + tail.length);   // original case; see _legistar_text.mjs
 
-  // Controls. Each one is a thing the row asserts; if the page stops saying it, refuse the row.
+  // Controls. Each is a thing the row asserts; if the page stops saying it, refuse the row.
   const must = {
     'the file number': '26-0100r',
     'all four sponsors': 'sponsors: jordon johnson , terese tomanek , diane desotelle , lynn nephew',
@@ -45,14 +43,15 @@ export async function buildSnippet() {
     'the city-resources clause': 'shall not use city resources',
     'the federal-law carve-out': 'except as required by federal law or court order',
   };
-  for (const [what, s] of Object.entries(must)) {
-    if (!snippet.includes(s)) throw new Error('REFUSING: the snippet no longer carries ' + what);
+  for (const [what, probe] of Object.entries(must)) {
+    if (!lower.includes(probe)) throw new Error('REFUSING: the snippet no longer carries ' + what);
   }
   if (snippet.split(/\s+/).length < 25) throw new Error('snippet under 25 words');
+  if (snippet.toLowerCase() !== lower) throw new Error('REFUSING: case-preserving slice does not match the normalized one');
 
   // Every sponsor this snippet is used for must pass the verifier's own proximity check.
   for (const [full, last] of [['Jordon Johnson', 'Johnson'], ['Terese Tomanek', 'Tomanek'], ['Diane Desotelle', 'Desotelle'], ['Lynn Marie Nephew', 'Nephew']]) {
-    const v = checkNameProximity({ fullName: full, lastName: last, pageText: stripped, matchOffsetInNormalized: start });
+    const v = checkNameProximity({ fullName: full, lastName: last, pageText: doc.stripped, matchOffsetInNormalized: start });
     if (v.verdict !== 'verified') throw new Error('REFUSING: name proximity for ' + full + ' is ' + v.verdict);
   }
   return snippet;

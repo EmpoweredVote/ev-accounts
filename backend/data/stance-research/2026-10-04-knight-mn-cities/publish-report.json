@@ -363,6 +363,21 @@
     "admin_queue_visible": true
   },
   {
+    "full_name": "Arik Forsman",
+    "topic_key": "homelessness",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
     "full_name": "Diane Desotelle",
     "topic_key": "local-immigration",
     "value": 3,
@@ -423,16 +438,16 @@
     "admin_queue_visible": true
   },
   {
-    "full_name": "Arik Forsman",
-    "topic_key": "homelessness",
+    "full_name": "Roz Randorf",
+    "topic_key": "local-immigration",
     "value": 3,
     "action": "review",
     "reasons": [
-      "statement-evidence"
+      "review-all-mode"
     ],
     "displayed_value": null,
     "verified_sources": [
-      "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7869631&GUID=B9A84056-7F2A-4E7A-ADD4-B55A575AF296"
     ],
     "failed_urls": [],
     "admin_queue_visible": true

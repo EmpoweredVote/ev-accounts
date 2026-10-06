@@ -66,7 +66,7 @@ const evRows = members.map((m) => ({ full_name: m.name, topic_key: 'local-immigr
 for (const r of rows) {
   if (!r.reasoning.includes('26-0100R')) throw new Error('reasoning does not name the instrument: ' + r.full_name);
 }
-if (!SNIP.includes('26-0100r')) throw new Error('snippet does not carry the instrument number');
+if (!SNIP.toLowerCase().includes('26-0100r')) throw new Error('snippet does not carry the instrument number');
 
 fs.writeFileSync(B + '/_rows/sponsors-26-0100R-rows.json', JSON.stringify(rows, null, 1));
 fs.writeFileSync(B + '/_rows/sponsors-26-0100R-evidence.json', JSON.stringify(evRows, null, 1));
