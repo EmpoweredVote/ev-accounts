@@ -1,0 +1,99 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+      "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+      "passages": [
+        {
+          "snapshot_id": "03bcc78c-22a6-5d7a-93cd-ebd706c9ac9e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2023-04-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted words defend the bill against safety objections; they name no rung clause, and the reporter's account of the bill is context only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e6eccf73-35fc-5421-8ded-3ceaca1cb358",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1001 (2023)",
+          "provision_quote": null,
+          "note": "Bill status page naming him prime sponsor of SB 1001; it prints no provision.",
+          "record_kind": "sponsor",
+          "actor_quote": "Kavanagh (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "43e14408-0928-586a-9ae6-4ce06ebf5e2f",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2023-01-01",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted words concern medical transition of minors, not who controls name or pronoun use or disclosure at school.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a39a47e3-b594-50c3-8560-71a03fcd3ea9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1001 (2023)",
+          "provision_quote": null,
+          "note": "Senate third reading roll call showing his Y vote on single-subject SB 1001, 16-12 (not near-unanimous).",
+          "record_kind": "vote",
+          "actor_quote": "KAVANAGH Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "2129194b-e9c9-555d-b5b9-a1be638fb494",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1001 (2023)",
+          "provision_quote": "may not knowingly address, identify or refer to a student who is under eighteen years of age by either of the following unless the school district or charter school receives written permission from the student's parent",
+          "note": "Operative section requires written parental permission before staff use a different pronoun or first name; it names no exception that lets staff proceed without it.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "e6eccf73-35fc-5421-8ded-3ceaca1cb358",
+        "a39a47e3-b594-50c3-8560-71a03fcd3ea9",
+        "2129194b-e9c9-555d-b5b9-a1be638fb494"
+      ],
+      "reasoning": "He is prime sponsor of and voted Y on single-subject SB 1001 (2023), whose operative section bars staff from using a pronoun or first name other than the one on record unless the school receives written permission from the student's parent. That matches 'Require written parental permission before staff use a student's chosen name or pronouns' on written, parental and before-use clauses, and the bill allows permission, so it is not past the rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

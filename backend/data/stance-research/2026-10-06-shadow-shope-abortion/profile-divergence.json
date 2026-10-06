@@ -1,0 +1,149 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1164(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "4b47b424-4f74-5f1e-a0a5-d5c944f24ffe",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0105.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "e56d73a2-e326-563b-9dba-ca237c0feb46",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "9fee5ead-e828-52a8-9301-4f5ca5f1a9e9",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 1,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "hb2677(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "edd021b7-3185-558f-a168-95e7c4179b44",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HB2677H.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "da71474c-b1e9-5915-9eb7-16a3f11ea415",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2677#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1164(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "e56d73a2-e326-563b-9dba-ca237c0feb46",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "9fee5ead-e828-52a8-9301-4f5ca5f1a9e9",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "4b47b424-4f74-5f1e-a0a5-d5c944f24ffe",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0105.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "hb2677(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "da71474c-b1e9-5915-9eb7-16a3f11ea415",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2677#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "edd021b7-3185-558f-a168-95e7c4179b44",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HB2677H.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "sb1164(2022)",
+    "snapshots": [
+      {
+        "snapshot_id": "e56d73a2-e326-563b-9dba-ca237c0feb46",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "9fee5ead-e828-52a8-9301-4f5ca5f1a9e9",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "4b47b424-4f74-5f1e-a0a5-d5c944f24ffe",
+        "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0105.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+    "instrument": "hb2677(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "edd021b7-3185-558f-a168-95e7c4179b44",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HB2677H.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "da71474c-b1e9-5915-9eb7-16a3f11ea415",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2677#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

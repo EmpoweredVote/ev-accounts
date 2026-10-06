@@ -6,7 +6,7 @@ steps (round 1 lost IDs to zsh's `$P:state` modifier). Run from backend/:
 spec.json: {"batches": [{"name": "kavanagh", "politician_id": "...", "office_id": "...", "level": "state",
   "topic_key": "school-vouchers", "instrument": "HB 2853 (2022)",
   "sources": [{"url": "...", "human_saved_path": "human-saved/x.txt" | null}]}]}
-A source may also carry "source_kind" (default public-record; news/pointer are excerpt-only and need
+A source may also carry "instruments" (overrides the batch instrument; evidence-bank rows cite several bills), "source_kind" (default public-record; news/pointer are excerpt-only and need
 "pointer_passages" or "candidate_quotes" as anchors), and a statement-only batch may omit "instrument".
 Batch dir: data/stance-research/<date>-shadow-<name>. Steps: sources.json -> topic bundle (filtered to
 the one topic, full list kept as topics.all.json) -> snapshots -> coder inputs; with --coders, the three
@@ -29,7 +29,7 @@ for b in spec['batches']:
   for s in b['sources']:
     if s.get('human_saved_path'): assert os.path.exists(f"{d}/{s['human_saved_path']}"), f"missing {d}/{s['human_saved_path']}"
   json.dump({'batch_id': os.path.basename(d), 'sources': [dict({'url': s['url'], 'source_kind': s.get('source_kind', 'public-record'), 'politician_id': b['politician_id'],
-    'office_id': b['office_id'], 'topic_keys': [b['topic_key']], 'instruments': [b['instrument']] if b.get('instrument') else [],
+    'office_id': b['office_id'], 'topic_keys': [b['topic_key']], 'instruments': s.get('instruments') or ([b['instrument']] if b.get('instrument') else []),
     'pointer_passages': s.get('pointer_passages', []), 'candidate_quotes': s.get('candidate_quotes', [])},
     **({'human_saved_path': s['human_saved_path']} if s.get('human_saved_path') else {})) for s in b['sources']]}, open(d + '/sources.json', 'w'), indent=2)
   # A candidate needs --race so the bundle records the race (build-coder-inputs codes the race's office).

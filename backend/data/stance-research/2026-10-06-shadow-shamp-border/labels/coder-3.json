@@ -1,0 +1,142 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_id": "407614a8-ba2c-4145-8224-233655e6ac3f",
+      "served_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+      "passages": [
+        {
+          "snapshot_id": "71d87495-204b-51b8-96d1-6ff81b693ecf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1231 (2024)",
+          "provision_quote": "it is unlawful for a person who is an alien to enter or attempt to enter this state directly from a foreign nation at any location other than a lawful port of entry",
+          "note": "A state crossing crime (enforcement only) that leaves asylum claims untouched, so it shows a side but no rung.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "125fe8a9-eb1b-515f-9261-332a868709f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-03-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1231 (2024)",
+          "provision_quote": null,
+          "note": "Bill status page names her as prime sponsor of SB 1231; the bill was vetoed.",
+          "record_kind": "sponsor",
+          "actor_quote": "Shamp (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1486069c-8039-5984-aac6-3e2f54f0e1db",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-02-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1231 (2024)",
+          "provision_quote": null,
+          "note": "Senate third-reading Yes vote, 16-13, on a bill whose content shows enforcement direction only.",
+          "record_kind": "vote",
+          "actor_quote": "SHAMP Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        },
+        {
+          "snapshot_id": "c5f21c37-b7a1-5a7f-bd5f-0d5039fcd863",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR 2060 (2024)",
+          "provision_quote": "It is unlawful for a person who is an alien to enter or attempt to enter this state directly from a foreign nation at any location other than a lawful port of entry.",
+          "note": "Referral covering state crossing crime, benefits verification, e-verify and fentanyl penalties; no asylum-eligibility clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4fd78a7a-f8e3-5b48-b6c2-e36e56d47f36",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-05-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR 2060 (2024)",
+          "provision_quote": null,
+          "note": "Yes vote on a multi-subject referral; proves no rung on its own.",
+          "record_kind": "vote",
+          "actor_quote": "SHAMP Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        },
+        {
+          "snapshot_id": "d8b53c96-0bbb-5e9d-87e2-d67475de3328",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-02-21",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted statement attacks Biden and names no asylum clause; the reporter's account of the bill is context only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b9b4e91d-3b34-52e1-89d7-db46344d6d08",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-03-04",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her statement condemns the veto in attack language and names no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her prime sponsorship of and Yes vote on SB 1231 (a state crime for entering other than at a lawful port of entry) show an enforcement-side lean, but the bill says nothing about who may claim asylum or how fast claims are decided, so it matches no rung's full clauses. The HCR 2060 vote is a multi-subject referral and her quoted statements are rhetorical.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "d8b53c96-0bbb-5e9d-87e2-d67475de3328",
+          "text": "Every single day Joe Biden allows this invasion at our southern border to continue, the lives of Arizonans remain in grave danger",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["is-attack"]
+        },
+        {
+          "snapshot_id": "b9b4e91d-3b34-52e1-89d7-db46344d6d08",
+          "text": "Vetoing the Arizona Border Invasion Act is a prime example of the chaos Hobbs is unleashing in our state while perpetuating this open border crisis as Biden's accomplice",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["is-attack"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "e56d73a2-e326-563b-9dba-ca237c0feb46",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Aye on a 15-week limit whose construction clause disclaims any right and leaves the broader ban in force, so it shows only the restrictive side.",
+          "record_kind": "vote",
+          "actor_quote": "SHOPE Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        },
+        {
+          "snapshot_id": "9fee5ead-e828-52a8-9301-4f5ca5f1a9e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Co-sponsor line for the same bill; the bill's construction clause means sponsorship evidences no permitted stage.",
+          "record_kind": "sponsor",
+          "actor_quote": "Shope (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4b47b424-4f74-5f1e-a0a5-d5c944f24ffe",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Operative limit is 15 weeks, but Sec. 2 says the act does not repeal section 13-3603, so no permitted stage is evidenced.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "edd021b7-3185-558f-a168-95e7c4179b44",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2677 (2024)",
+          "provision_quote": "Section 13-3603, Arizona Revised Statutes, is repealed.",
+          "note": "A bare repeal of the older ban states no gestational limit or exception, so it shows a side but not a rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "da71474c-b1e9-5915-9eb7-16a3f11ea415",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2677 (2024)",
+          "provision_quote": null,
+          "note": "Aye on the repeal of section 13-3603 in the Senate third reading; the repeal alone sets no limit.",
+          "record_kind": "vote",
+          "actor_quote": "SHOPE Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "031aa790-bd22-53fa-ab12-875d1d3cad16",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-04-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His own quoted words back a 15-week law but state no exception rule and no permitted stage, so they do not match a rung's clauses.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "He voted for and co-sponsored SB 1164 (a 15-week limit), but its construction clause disclaims any right and leaves the broader ban in force, and he voted for the repeal in HB 2677, whose text sets no limit. His quoted words, \"I do believe in a 15 week [law]\", state no exception after the limit, so the evidence shows a restrictive side without matching the clauses of \"allow abortion during the first trimester, and after that only to protect the mother's health.\"",
+      "needs_source": [
+        "Shope's own statement or the full text of his April 2024 repeal statement, stating the exceptions he supports after 15 weeks"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "031aa790-bd22-53fa-ab12-875d1d3cad16",
+          "text": "I voted yes, because I do believe in a 15 week [law], and that's what was in front of me",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

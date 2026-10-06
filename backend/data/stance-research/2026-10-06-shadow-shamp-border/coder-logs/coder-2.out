@@ -1,0 +1,11 @@
+I wrote the label file for `border-security` (Janae Shamp, State Senator, Arizona) to `labels/coder-2.json`, with `codebook_version` 0.4 and `coder_slot` 2. I haven't run the code check on it.
+
+**Row result:** BLANK, reason `scope-unavailable`, with an empty `rests_on`.
+
+- **No state lever:** the annex lists only the federal level as having a role on asylum access. SB 1231, her prime-sponsored state crime for entering outside a lawful port of entry, matches none of the five rungs. It keeps an affirmative defense for people granted asylum, so it does not restrict who can claim asylum and does not end it.
+- **Not a chair:** her Aye votes on SB 1231 and on HCR 2060 (a multi-subject referral) and her public statements show a pro-enforcement side but no rung's clauses. I coded the SB 1231 passages as `adjacent` and `direction-only`, and the HCR 2060 passages as `adjacent` and `multi-subject`.
+- **Statements:** her two news-quoted statements are coded `statement-other` and `rhetorical`. They attack Biden and Hobbs and name no policy clause.
+
+I filled the record fields on each instrument group. SB 1231 carries `actor_quote` on the bill-status and Senate-vote pages, `tally_quote` on the vote page and `provision_quote` on the bill text. HCR 2060 carries them the same way.
+
+I coded both statements as quotes with `v7_tier` `none` and `v8_quotable` false (`is-attack`, `off-question`). `needs_source` is empty, because the evidence a numeric chair would need doesn't exist at the state level.

@@ -1,0 +1,128 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "4b47b424-4f74-5f1e-a0a5-d5c944f24ffe",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Single-subject 15-week limit whose medical-emergency exception covers serious irreversible impairment (health); its construction clause alone makes it direction-only, but Shope's 2024 vote to repeal the broader ban (HB 2677) supplies the permitted stage, per the annex's rung-3 'by repealing a broader ban' path.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e56d73a2-e326-563b-9dba-ca237c0feb46",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Senate third-reading Aye from his earlier Senate term in the same legislature (V5 option B); 13 of 30 voted No.",
+          "record_kind": "vote",
+          "actor_quote": "SHOPE Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        },
+        {
+          "snapshot_id": "9fee5ead-e828-52a8-9301-4f5ca5f1a9e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Shope listed as co-sponsor of the bill as filed; signed into law as Chapter 105.",
+          "record_kind": "sponsor",
+          "actor_quote": "Shope (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "edd021b7-3185-558f-a168-95e7c4179b44",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2677 (2024)",
+          "provision_quote": "Section 13-3603, Arizona Revised Statutes, is repealed.",
+          "note": "Single-subject repeal of the near-total ban (13-3603) that SB 1164's construction clause left in force, so the 15-week limit with its health exception governs.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "da71474c-b1e9-5915-9eb7-16a3f11ea415",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2677 (2024)",
+          "provision_quote": null,
+          "note": "Senate third-reading Aye in the current term; 14 of 30 voted No.",
+          "record_kind": "vote",
+          "actor_quote": "SHOPE Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "031aa790-bd22-53fa-ab12-875d1d3cad16",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-04-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Quoted words tie his SB 1164 vote to the 15-week limit but state no exception clause; the reporter's account of his statement calling for repeal is context only (H15).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 3,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "4b47b424-4f74-5f1e-a0a5-d5c944f24ffe",
+        "e56d73a2-e327-563b-9dba-ca237c0feb46",
+        "9fee5ead-e828-52a8-9301-4f5ca5f1a9e9",
+        "edd021b7-3185-558f-a168-95e7c4179b44",
+        "da71474c-b1e9-5915-9eb7-16a3f11ea415"
+      ],
+      "reasoning": "Shope co-sponsored and voted for SB 1164 (2022), which bars abortion after fifteen weeks 'Except in a medical emergency' (a definition covering serious irreversible impairment, i.e. health), and in 2024 voted for HB 2677, 'Section 13-3603, Arizona Revised Statutes, is repealed', removing the broader ban SB 1164 had left in force. Together the limit permits abortion up to about 15 weeks with only a health exception after, matching 'allow abortion during the first trimester, and after that only to protect the mother's health' per the annex's repeal path.",
+      "needs_source": [
+        "Text of A.R.S. 13-3603 as repealed by HB 2677 (2024), to confirm it is the broader ban",
+        "HB 2677 (2024) final status (House vote, governor action)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "031aa790-bd22-53fa-ab12-875d1d3cad16",
+          "text": "I voted yes, because I do believe in a 15 week [law], and that's what was in front of me",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

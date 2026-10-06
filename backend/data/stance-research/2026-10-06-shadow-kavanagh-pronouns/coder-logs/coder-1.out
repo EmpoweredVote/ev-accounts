@@ -1,0 +1,12 @@
+I wrote the coder-1 label file. It has one row (`education-gender-identity`) and codes Kavanagh at **chair 5**, "Require written parental permission before staff use a student's chosen name or pronouns". I haven't run the validator on it.
+
+**What the chair rests on.** All three passages are records of SB 1001 (2023), so they count as one source. That makes the tier `single-source`.
+- **Bill overview:** shows him as prime sponsor (`Sponsors: Kavanagh (Prime)`).
+- **Senate third-reading roll call:** `KAVANAGH Y`, `Passed 16-12-2-0-0`. Twelve of 28 voted no, so it is not near-unanimous. The vote was on 2023-03-01, inside his current Senate term.
+- **Senate-engrossed text:** this is the version he voted on. Its operative subsection A bars staff from using a pronoun that doesn't match the student's biological sex, or a chosen first name, "unless the school district or charter school receives written permission from the student's parent." That matches all three clauses of rung 5: parental permission, in writing, before use. Because it requires consent rather than just notice, it rules out rung 4. Subsection B, which protects teachers' convictions, is `adjacent`.
+
+**Passages that don't support the chair:**
+- **KJZZ, April 2023:** his own quoted words, coded `statement-other` and `direction-only`. The article's line that the bill "does not require a school employee to out the child" is the reporter's paraphrase, so I treated it as context only.
+- **KAWC, January 2023:** his only quoted words are about medical transition for minors, so it's `adjacent` and `off-axis`. The rest is the reporter's description.
+
+`needs_source` and `quotes` are left empty.

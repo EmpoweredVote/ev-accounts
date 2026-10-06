@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+    "topic_key": "education-gender-identity",
+    "topic_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+    "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+    "question_number": 48,
+    "title": "Parental Notification and Transgender Students",
+    "question_text": "What should schools do when a student uses a different name or gender identity at school than at home?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Use the student's chosen name and pronouns, and keep their gender identity from parents unless the student agrees to share it"
+      },
+      {
+        "value": 2,
+        "text": "Use the student's chosen name and pronouns, and tell parents only if they directly ask"
+      },
+      {
+        "value": 3,
+        "text": "Tell parents when a student changes their name or gender at school, unless staff believe it would put the student in danger"
+      },
+      {
+        "value": 4,
+        "text": "Require staff to notify parents whenever a student asks to be treated as a different gender at school"
+      },
+      {
+        "value": 5,
+        "text": "Require written parental permission before staff use a student's chosen name or pronouns"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true
+  }
+]
