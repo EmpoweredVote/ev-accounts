@@ -424,6 +424,23 @@ is now in **0 rows**, down from 3. A positive control confirmed the detector mat
    than append (`merge_rows.mjs` does this; it replaced exactly 5 and touched no other member).
 
 ---
+#### 📁 THE SAINT PAUL CORPORA LIVE OUTSIDE THE REPO
+
+`C:/ev-accounts-corpora/stance-news-mn/` — 2,137 files, about 96 MB, for all eight Saint Paul
+members (bowie, cjohnson, coleman, jost, kher, kim, noecker, yang). These are the **re-swept**
+articles that took the batch from 256 readable to 810.
+
+🔴 **EVERY DULUTH CORPUS IS IN GIT AND NO SAINT PAUL ONE EVER WAS**, and nothing said so. They are
+not gitignored — the 2026-10-05 re-sweep committed with explicit pathspecs (rule 3, correctly) and
+the articles were simply never staged. The gap surfaced only when `check:deletable` refused to
+delete the worktree over 2,137 unique files.
+▶ **RULE 3 AND "COMMIT YOUR OUTPUTS" PULL AGAINST EACH OTHER.** A pathspec commit protects you from
+another session's `git add -A` and silently leaves your own new files behind. After a sweep, list
+what is untracked before you finish.
+⚠ They were byte-compared file by file before the worktree was removed, with a positive control
+confirming the comparison could see a tampered byte. Re-sweeping them is not cheap: roughly 20
+minutes per member, and Reformer 429s after about four.
+
 #### ✅ APPLIED 2026-10-06 — 30 ROWS ARE IN THE ADMIN REVIEW QUEUE, ALL PENDING
 
 `verify-stance-research --apply --editor-id <chris@empowered.vote>`:
