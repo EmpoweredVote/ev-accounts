@@ -797,6 +797,16 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // Harrison County 28047 both have geometry. MS is the sixth Knight slice, after Ohio, ND, KY,
   // KS and SD, that owes no `place` load — and the last of the six.
   MS: new Set(['sldu', 'sldl']),
+  // IL and AK (Read & Rank city-name lookup, GET /api/readrank/localities). `place` ONLY:
+  // a read-only check on 2026-10-06 found ZERO G4110 rows for either state, so "Springfield, IL"
+  // and "Juneau" resolved to nothing. county is EXCLUDED and MUST NOT be re-run: IL's 102 and
+  // AK's 30 G4020 rows (Alaska's are boroughs / census areas) are already in production, and the
+  // place->county mapping (essentials.geofence_child_county) joins against them. No legislative
+  // or school layers: this slice is for city-name resolution only.
+  // Refresh the view after loading: REFRESH MATERIALIZED VIEW CONCURRENTLY
+  // essentials.geofence_child_county (outside a transaction; see migration 1696).
+  IL: new Set(['place']),
+  AK: new Set(['place']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -885,6 +895,10 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   // wrong-state or wrong-vintage file and nothing finer. The load-bearing check for the
   // Knight municipalities is the EXACT geo_id query in scripts/verify-ga-tiger-import.sql.
   GA: ['Columbus city', 'Macon-Bibb County', 'Milledgeville city'],
+  // IL / AK: measured against raw TIGER 2024 on 2026-10-06 (IL 1,294 G4110; AK 149 G4110).
+  // Juneau is a "city and borough" and Anchorage a "municipality" — the unified governments.
+  IL: ['Chicago city', 'Springfield city', 'Naperville city'],
+  AK: ['Anchorage municipality', 'Juneau city and borough', 'Fairbanks city'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
