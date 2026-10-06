@@ -40,10 +40,11 @@ duplicate row from a discovery sweep or a genuine second seat. So a politician-r
 one row **per office that person holds**, and needs a `DISTINCT ON (p.id)` or a deliberately chosen
 office.
 
-⚠ **This is not hypothetical.** `GET /api/essentials/politicians?q=` carried the old claim as a
-comment and no `DISTINCT`, and returned **two** Aaron Freemans until `CC_0103` deleted the duplicate
-office (2026-09-12). `getPoliticianById` has the same shape and takes `rows[0]` with no `ORDER BY`,
-so it reports an arbitrary one of the two as the person's office.
+⚠ **This is not hypothetical** — a list query without the `DISTINCT` once returned two Aaron
+Freemans. Both politician-rooted reads in `backend/src/lib/essentialsService.ts` now show the two
+fixes: the `?q=` list wraps a `DISTINCT ON (p.id)`, and `getPoliticianById` takes `LIMIT 1` under an
+`ORDER BY` that prefers a held seat over a sought one. Give a new politician-rooted query one or the
+other.
 
 For history, `essentials.office_holders_as_of(date)` answers "who represented me in 2019". It **skips
 terms whose `source` carries `| unverified <slot>`** (CA_0171): placeholder terms an audit kept because it
@@ -59,12 +60,9 @@ is the whole reason this model exists.
 An office with **no `office_terms` row is invisible**: no holder, so the official never appears in
 Essentials, stance research, coverage or campaign finance — and **nothing errors**. This is the one
 failure mode CI cannot catch. Watch `essentials.offices_missing_terms`. **Baseline, measured
-2026-09-29: 239 unknown-occupancy. Treat a count above 239 unflagged as new drift.** (It was 423
-rows / 185 flagged / 238 unflagged on 2026-09-24; `CC_0178` then created the St. Louis city Sheriff
-seat unseated and unflagged by ruling, which moved the unflagged figure to 239 — that is deliberate
-and is NOT drift.) (`CA_0287` retired 8 flagged duplicate Lewiston school seats.) It was 857 / 158 / 699 at migration 1464; `CA_0183` (421 LA
-Superior Court, 2nd DCA and Supreme Court judges seated from the courts' rosters) and `CA_0187` did
-most of the fall. Lower this number whenever a change shrinks it — a stale, high baseline hides drift.
+2026-09-29: 239 unknown-occupancy. Treat a count above 239 unflagged as new drift.** The St. Louis
+city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling and is counted in that 239; it is
+not drift. Lower this number whenever a change shrinks it — a stale, high baseline hides drift.
 
 Use the helpers rather than hand-rolling the two-step:
 
@@ -218,9 +216,6 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
     sessions reached for `CA_` while Andrews' did too. The namespace is chosen by *who is doing the
     work*, not by what the last migration in the directory happened to be called. If you cannot
     establish which Chris you are working for, ask — do not read `ls` and copy the prefix.
-  - This block previously read "`CA_` IS CLOSED TO NEW WORK" while also telling Andrews nothing
-    about where to write instead. That gap is what sent a session looking for a prefix to copy.
-    Both authors now have a named, open namespace; neither needs to infer one.
   - **The plain `NNNN_` sequence stays open** to everyone else — but it is **allocated now, not
     counted**: `npm run steward --prefix backend -- slot shared --purpose "..."`. This
     superseded "keep taking the next free number there exactly as before" on 2026-09-04, when CI
@@ -427,7 +422,7 @@ this person holds, not a rating of how strongly they lean.
 - A re-sourcing pass that cites **sponsorship** must refuse any row at the anti pole — the new
   citation would contradict the displayed position.
 
-**Gate:** `node scripts/audit-chair-evidence.mjs --check <rollback.json>` fails if any row it lists
+**Gate:** `node backend/scripts/audit-chair-evidence.mjs --check <rollback.json>` fails if any row it lists
 carries reasoning that names no instrument, act or vote. Run it before committing any migration that
 sets a chair.
 
