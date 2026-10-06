@@ -20,6 +20,12 @@ describe('validateLocalityQuery', () => {
     expect(validateLocalityQuery('Irv1ne', undefined)).toMatchObject({ ok: false });
     expect(validateLocalityQuery(['a', 'b'], undefined)).toMatchObject({ ok: false });
   });
+  it('requires at least one letter', () => {
+    for (const q of ['..', "'-'", '. -']) expect(validateLocalityQuery(q, undefined)).toMatchObject({ ok: false });
+  });
+  it('normalises curly apostrophes', () => {
+    expect(validateLocalityQuery('O’Fallon', undefined)).toEqual({ ok: true, q: "O'Fallon", state: null });
+  });
   it('accepts accents, period, apostrophe, hyphen, spaces', () => {
     for (const q of ['Irvine', 'St. Paul', "O'Fallon", 'Winston-Salem', 'Cañon City', 'Río Rancho']) {
       expect(validateLocalityQuery(q, undefined)).toEqual({ ok: true, q, state: null });
@@ -45,6 +51,18 @@ describe('stripPlaceSuffix', () => {
     expect(stripPlaceSuffix('Akron')).toBe('Akron');
     expect(stripPlaceSuffix('city')).toBe('city');
   });
+  it('is case-sensitive: capitalised words are part of the name', () => {
+    expect(stripPlaceSuffix('Michigan City')).toBe('Michigan City');
+    expect(stripPlaceSuffix('Carson City')).toBe('Carson City');
+  });
+  it('handles city and borough and bare (balance)', () => {
+    expect(stripPlaceSuffix('Juneau city and borough')).toBe('Juneau');
+    expect(stripPlaceSuffix('Butte-Silver Bow (balance)')).toBe('Butte-Silver Bow');
+  });
+  it('strips consolidated city-county suffixes', () => {
+    expect(stripPlaceSuffix('Lexington-Fayette urban county')).toBe('Lexington-Fayette');
+    expect(stripPlaceSuffix('Louisville/Jefferson County metro government (balance)')).toBe('Louisville/Jefferson County');
+  });
 });
 
 describe('findLocalities', () => {
@@ -68,9 +86,46 @@ describe('findLocalities', () => {
     expect(params[0]).toContain(evil);
     expect(params[0]).toContain("O'Fallon city");
     expect(params[1]).toBe('17');
+    expect(params[2]).toBe(evil);
     expect(sql).toMatch(/LIMIT 10/);
     expect(sql).toMatch(/ORDER BY/);
     expect(sql).toContain("'G4110'");
+  });
+  it('escapes LIKE wildcards in the prefix param', async () => {
+    await findLocalities('A_b.', null);
+    expect(mockQuery.mock.calls[0][1][2]).toBe('A\\_b.');
+  });
+  it('drops rows whose name differs from q only by suffix case (Carson City for Carson)', async () => {
+    mockQuery.mockResolvedValue({
+      rows: [{ name: 'Carson City', state: '32', place_geoid: '3209700', county_geoid: '32510' }],
+    });
+    expect(await findLocalities('Carson', null)).toEqual([]);
+  });
+  it('keeps exact unsuffixed, suffixed, city-and-borough and prefix matches', async () => {
+    mockQuery.mockResolvedValue({
+      rows: [
+        { name: 'Carson City', state: '32', place_geoid: '1', county_geoid: '32510' },
+        { name: 'Irvine city', state: '06', place_geoid: '2', county_geoid: '06059' },
+        { name: 'Juneau city and borough', state: '02', place_geoid: '3', county_geoid: '02110' },
+        { name: 'Lexington-Fayette urban county', state: '21', place_geoid: '4', county_geoid: '21067' },
+      ],
+    });
+    expect((await findLocalities('Carson City', null)).map((l) => l.name)).toEqual(['Carson City']);
+    expect((await findLocalities('Irvine', null)).map((l) => l.name)).toEqual(['Irvine']);
+    expect((await findLocalities('Juneau', null)).map((l) => l.name)).toEqual(['Juneau']);
+    expect((await findLocalities('Lexington', null)).map((l) => l.name)).toEqual(['Lexington-Fayette']);
+  });
+  it('does not match a suffixed name by whole-name equality (Carson city vs Carson City)', async () => {
+    mockQuery.mockResolvedValue({
+      rows: [{ name: 'Carson city', state: '06', place_geoid: '1', county_geoid: '06037' }],
+    });
+    expect(await findLocalities('Carson City', null)).toEqual([]);
+  });
+  it('drops rows with no USPS mapping', async () => {
+    mockQuery.mockResolvedValue({
+      rows: [{ name: 'Irvine city', state: '99', place_geoid: '1', county_geoid: '2' }],
+    });
+    expect(await findLocalities('Irvine', null)).toEqual([]);
   });
   it('passes null state param when no state given', async () => {
     await findLocalities('Springfield', null);

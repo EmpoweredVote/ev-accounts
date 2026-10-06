@@ -28,6 +28,7 @@ const STATE_RE = /^[A-Za-z]{2}$/;
 
 /** Census place suffixes seen in G4110 names, longest first so stripping is greedy. */
 const BASE_SUFFIXES = [
+  'city and borough',
   'consolidated government',
   'metropolitan government',
   'unified government',
@@ -41,9 +42,24 @@ const BASE_SUFFIXES = [
   'city',
   'town',
 ];
-const SUFFIXES = BASE_SUFFIXES.flatMap((s) => [`${s} (balance)`, s]);
+const SUFFIXES = [...BASE_SUFFIXES.flatMap((s) => [`${s} (balance)`, s]), '(balance)'];
 
-const SUFFIX_RE = new RegExp(`^(.+?) (?:${SUFFIXES.map((s) => s.replace(/[()]/g, '\\$&')).join('|')})$`, 'i');
+const SUFFIX_RE = new RegExp(`^(.+?) (?:${SUFFIXES.map((s) => s.replace(/[()]/g, '\\$&')).join('|')})$`);
+
+/** Lowercase + strip combining marks, for comparing a typed name to a stored one. */
+function fold(v: string): string {
+  return v.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+}
+
+/** True when the stored name is q, q + an exact (lowercase) Census suffix, or q + '-'/'/' + more. */
+function nameMatchesQuery(raw: string, q: string): boolean {
+  const fq = fold(q);
+  const fr = fold(raw);
+  if (fr.startsWith(`${fq}-`) || fr.startsWith(`${fq}/`)) return true;
+  // A suffixed name is compared by its stripped part only, so "Carson city" is not "Carson City".
+  const stripped = stripPlaceSuffix(raw);
+  return fold(stripped) === fq;
+}
 
 /** Drop one trailing Census suffix. Leaves unsuffixed names (and a bare suffix word) alone. */
 export function stripPlaceSuffix(name: string): string {
@@ -53,9 +69,10 @@ export function stripPlaceSuffix(name: string): string {
 
 export function validateLocalityQuery(rawQ: unknown, rawState: unknown): LocalityQueryResult {
   if (typeof rawQ !== 'string') return { ok: false, message: 'q is required' };
-  const q = rawQ.trim();
+  const q = rawQ.trim().replace(/[’‘]/g, "'");
   if (q.length < 2 || q.length > 60) return { ok: false, message: 'q must be 2-60 characters' };
   if (!Q_RE.test(q)) return { ok: false, message: 'q may contain only letters, spaces, periods, apostrophes and hyphens' };
+  if (!/\p{L}/u.test(q)) return { ok: false, message: 'q must contain a letter' };
   if (rawState === undefined || rawState === '') return { ok: true, q, state: null };
   if (typeof rawState !== 'string' || !STATE_RE.test(rawState)) {
     return { ok: false, message: 'state must be a 2-letter USPS code' };
@@ -74,8 +91,12 @@ const LOCALITY_SQL = `
    WHERE b.mtfcc = 'G4110'
      AND b.name IS NOT NULL
      AND cc.county_geo_id IS NOT NULL
-     AND public.f_unaccent(lower(b.name)) = ANY (
-           ARRAY(SELECT public.f_unaccent(lower(c)) FROM unnest($1::text[]) AS c))
+     AND (
+           public.f_unaccent(lower(b.name)) = ANY (
+             ARRAY(SELECT public.f_unaccent(lower(c)) FROM unnest($1::text[]) AS c))
+        OR public.f_unaccent(lower(b.name)) LIKE public.f_unaccent(lower($3::text)) || '-%' ESCAPE '\\'
+        OR public.f_unaccent(lower(b.name)) LIKE public.f_unaccent(lower($3::text)) || '/%' ESCAPE '\\'
+         )
      AND ($2::text IS NULL OR b.state = $2::text)
    ORDER BY b.state, b.name
    LIMIT 10`;
@@ -98,11 +119,13 @@ export async function findLocalities(q: string, state: string | null): Promise<L
     if (!fips) return [];
   }
   const candidates = [q, ...SUFFIXES.map((s) => `${q} ${s}`)];
-  const { rows } = await pool.query<LocalityRow>(LOCALITY_SQL, [candidates, fips]);
-  return rows.map((r) => ({
-    name: stripPlaceSuffix(r.name),
-    state: FIPS_TO_USPS[r.state] ?? r.state,
-    placeGeoid: r.place_geoid,
-    countyGeoid: r.county_geoid,
-  }));
+  const { rows } = await pool.query<LocalityRow>(LOCALITY_SQL, [candidates, fips, q.replace(/[\\%_]/g, '\\$&')]);
+  return rows
+    .filter((r) => nameMatchesQuery(r.name, q) && FIPS_TO_USPS[r.state])
+    .map((r) => ({
+      name: stripPlaceSuffix(r.name),
+      state: FIPS_TO_USPS[r.state],
+      placeGeoid: r.place_geoid,
+      countyGeoid: r.county_geoid,
+    }));
 }
