@@ -17,6 +17,12 @@ export interface EvidenceInsertRow {
   snippet: string;
   snippet_index: number;
   batch_id: string;
+  /**
+   * CA_0301: when the person said or did what this source cites, with its precision. Set only by
+   * the coder pipeline (scripts/lib/coderQueue.ts); absent/null everywhere else = unknown.
+   */
+  source_date?: string | null;
+  source_date_precision?: 'day' | 'month' | 'year' | null;
 }
 
 export interface ReviewInsertRow {
@@ -162,21 +168,26 @@ export async function accumulateEvidence(rows: EvidenceInsertRow[], db?: Queryab
   const { SEASON_IS_PUBLISHED } = await import('./seasonService.js');
   let inserted = 0;
   for (const r of rows) {
+    // CA_0301's columns are named only when the row carries a date, so a row without one writes
+    // the same SQL as before that migration.
+    const dated = r.source_date ? { cols: ', source_date, source_date_precision', vals: ', $7::date, $8' } : { cols: '', vals: '' };
+    const params: unknown[] = [r.politician_id, r.topic_id, r.source_url, r.snippet, r.snippet_index, r.batch_id];
+    if (r.source_date) params.push(r.source_date, r.source_date_precision ?? null);
     const res = await runner.query(
       // season_id comes from the context row this evidence supports. The FK from
       // evidence to context has always required that row to exist, so this
       // subselect cannot come up empty for a row that would have inserted before.
       // Newest season, so evidence attaches to the current reading of the topic.
       `INSERT INTO inform.politician_context_evidence
-         (politician_id, topic_id, season_id, source_url, snippet, snippet_index, batch_id)
-       SELECT $1, $2, c.season_id, $3, $4, $5, $6
+         (politician_id, topic_id, season_id, source_url, snippet, snippet_index, batch_id${dated.cols})
+       SELECT $1, $2, c.season_id, $3, $4, $5, $6${dated.vals}
          FROM inform.politician_context c
          JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE c.politician_id = $1 AND c.topic_id = $2
         ORDER BY s.number DESC
         LIMIT 1
        ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
-      [r.politician_id, r.topic_id, r.source_url, r.snippet, r.snippet_index, r.batch_id],
+      params,
     );
     inserted += res.rowCount ?? 0;
   }
@@ -196,6 +207,9 @@ export interface ResearchReviewRow {
   proposedReasoning: string;
   evidence: Array<{
     url: string;
+    /** CA_0301: the source's date, coder-pipeline rows only (scripts/lib/coderQueue.ts). */
+    date?: string | null;
+    date_precision?: 'day' | 'month' | 'year' | null;
     snippets: Array<{
       snippet_index: number;
       snippet: string;
@@ -228,6 +242,10 @@ export interface ResearchReviewRow {
   evidenceType: string | null;
   /** CA_0285: the served revision the researcher was shown. null = not recorded. */
   servedRevisionId: string | null;
+  /** CA_0292: the three coders' unanimous chair. null = not a coder-pipeline row. */
+  consensusValue: number | null;
+  /** CA_0301: the tier evidenceTier.ts computed for consensusValue at queue time. null = none. */
+  evidenceTier: 'corroborated' | 'single-source' | null;
   /** The served revision of the open season's current pin — the rung text voters read now. */
   openServedRevisionId: string | null;
   /** The ladder revision the row was researched against (CA_0264). null = unknown (legacy row). */
@@ -399,6 +417,8 @@ function mapReviewRow(row: any): ResearchReviewRow {
       nullable(row.served_revision_id), nullable(row.open_served_revision_id)),
     seasonId: nullable(row.season_id),
     bodyLabel: nullable(row.body_label),
+    consensusValue: row.consensus_value === null || row.consensus_value === undefined ? null : Number(row.consensus_value),
+    evidenceTier: row.evidence_tier === 'corroborated' || row.evidence_tier === 'single-source' ? row.evidence_tier : null,
   };
 }
 
@@ -673,7 +693,13 @@ export async function resolveResearchReview(
         snippet: publishable(s) as string,
         snippet_index: s.snippet_index,
         batch_id: row.batchId,
+        source_date: e.date ?? null,
+        source_date_precision: e.date ? e.date_precision ?? null : null,
       })));
+  // CA_0300: the tier is published only for the chair the coders tested. A reviewer who approves a
+  // different chair publishes none — and a re-approval always overwrites, so a tier from an earlier
+  // approval of another chair cannot survive.
+  const tierToPublish = row.consensusValue !== null && row.consensusValue === finalValue ? row.evidenceTier : null;
   const batchId = `human-review-${id}`;
 
   const client = await pool.connect();
@@ -687,6 +713,19 @@ export async function resolveResearchReview(
     }, client);
 
     await accumulateEvidence(machineVerifiedRows, client);
+
+    // Only rows that carry a tier, or that could be overwriting one, name the CA_0300 column — so a
+    // legacy row's approval writes the same SQL it always did.
+    if (row.consensusValue !== null) {
+      await client.query(
+        `UPDATE inform.politician_context c
+            SET evidence_tier = $3
+           FROM inform.seasons s
+          WHERE s.id = c.season_id AND s.status = 'open'
+            AND c.politician_id = $1 AND c.topic_id = $2`,
+        [politicianId, topicId, tierToPublish],
+      );
+    }
 
     // Write human-verified URLs to politician_context_evidence so they appear in citations
     for (const url of cleanedHumanVerifiedUrls) {
