@@ -451,5 +451,21 @@
     ],
     "failed_urls": [],
     "admin_queue_visible": true
+  },
+  {
+    "full_name": "Janet Kennedy",
+    "topic_key": "civil-rights",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7693374&GUID=F535C3F2-463E-4072-81C9-973B1C939EAC",
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7770940&GUID=E31ABEE4-9606-4DEC-B375-9DADBE307208"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
   }
 ]

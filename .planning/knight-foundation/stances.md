@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | **29** | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 29 rows in the review queue |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | **30** | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows in the review queue (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -177,15 +177,41 @@ all nine corpora for "climate emergency" returns three articles, none about this
 
 **Kennedy's LGBTQ+ commission ordinance** (introduced 2025-10-07, read once, **WITHDRAWN**
 2025-10-27), plus the follow-on she co-sponsored, adopted 2025-12-15.
-🔴 **THE STATEMENT OF PURPOSE CARRIES BOTH READINGS IN ONE SENTENCE** — "improve equity, increase
-efficiency, and strengthen the impact of the human rights-related work". *Strengthening* is chair 2;
-consolidating advisory bodies for *efficiency* with the enforcement powers untouched is chair 3.
-Two adjacent chairs survive ⇒ blank.
+🟢 **RULED CHAIR 2 BY CHRIS CANTRELL, 2026-10-06** — *"make it chair 2"*. The row was blank for one
+commit and the blank's reason was a genuine tie: her statement of purpose puts improving equity,
+increasing efficiency and strengthening the impact of the work in **one sentence**. *Strengthening*
+is chair 2; consolidating advisory bodies for *efficiency* with the enforcement powers untouched is
+chair 3. The ruling reads the first as controlling. ▶ **The researcher's blank and the ruling are
+both recorded in the row**, so a reviewer sees the tie and who broke it.
+The row rests on the ordinance repealing the old article and **rewriting the operative chapter** —
+which states it is enforceable through compliance actions by the city, and whose purposes are
+effectuated by information, education, mediation, conciliation and enforcement — on the ground she
+**added**, and on the standing committee with a vote. Chair 1 is excluded by the instrument: it
+mandates nothing of any institution outside the city's own advisory structure.
 ⚠ **THE GENDER-IDENTITY INSERTION LOOKS LIKE AN EXPANSION AND IS NOT.** The same ordinance adopts
 the state human rights act definitions "as it may be amended from time to time", and Minnesota added
 that ground in 2023 — so the insertion **conforms** the city code to state law. 🔴 **This was only
 visible in the RTF amendment marks.** `MatterTextPlain` shows inserted words with no sign that they
 are new, and shows nothing of what was struck.
+
+#### 🟢🟢 `Gateway.aspx?M=L&ID=<API MatterId>` MAKES EVERY MATTER CITABLE — NO MEETING WALK
+
+The block above says a known ID+GUID pair must bootstrap the rest by walking meetings → agendas,
+because `Calendar.aspx` does not expose pairs. **It does not.** `Gateway.aspx?M=L&ID=<MatterId>`
+302s straight to `LegislationDetail.aspx?ID=<webId>&GUID=<webGuid>`, and the MatterId comes from
+`/matters?$filter=MatterFile eq '<file>'` for any file number you can name. Two matters resolved
+this way on the first try, at 178 KB and 105 KB.
+🔴 **IT TAKES ANY INTEGER AND WILL SERVE A DIFFERENT MATTER.** `_legistar_gateway.mjs` asserts the
+file number appears on the page it reached, and exits non-zero when it does not. Do not skip it.
+▶ This retires the remaining "readable but not citable" entries for Duluth. `instruments.md` and
+the 26-0100R note both record the old limit.
+
+🔴 **THE FILE NUMBER AND THE SPONSOR NAME ARE 545 CHARACTERS APART IN A LEGISTAR HEADER, AND THE
+NAME WINDOW IS 500.** No snippet can start at `File #: …` and still carry the sponsor's name. It
+does not matter: **a Duluth file number matches NO pattern in `INSTRUMENT_IDENTIFIER_PATTERNS`**, so
+naming `25-026-O` in a reasoning obliges no snippet to carry it. ⚠ `Chapter 2` **does** match, and
+`\bOrdinance\b` in `NAMES_INSTRUMENT` is **case-sensitive** — a record row whose reasoning says only
+"ordinance" in lower case fails `record-no-instrument`. Both cost a high finding here.
 
 🔴 **`/matters/{id}/texts` RETURNS 405 ON `duluth-mn`** — so `_matter_text.mjs` cannot read any
 Duluth matter. The route that works is `/matters/{id}/versions` → `[{Key, Value}]` →
@@ -491,7 +517,8 @@ never admissibility, it was that her statements name subjects rather than rungs.
 **✅ RANDORF IS DONE — 35 rows, 3 chairs** (`homelessness` 3 · `rent-regulation` 3 · `economic-development` 3).
 **✅ DURRWACHTER IS DONE — 35 rows, 2 chairs** (`climate-change` 1 · `economic-development` 2).
 **✅ FORSMAN IS DONE — 35 rows, 2 chairs** (`homelessness` 3 · `economic-development` 4).
-**✅ KENNEDY IS DONE — 35 rows, 1 chair** (`economic-development` 4, alongside Forsman). She argued
+**✅ KENNEDY IS DONE — 35 rows, 2 chairs** (`economic-development` 4, alongside Forsman ·
+`civil-rights` **2**, ruled 2026-10-06 — see the sponsorship block above). She argued
 for the Sofidel package on the floor — *"I don’t want the perfect to get in the way of the good …
 We need this economic development. I don’t think this is the time to stand back"* — and is one of
 the three DEDA councilors who introduced the TIF policy that sets the limits.
@@ -513,8 +540,14 @@ quotes were the US Health Secretary**. The regex now allows one or two initials:
 
 ⚠ **Her own sweep MISSED the paper-mill article** that another member’s sweep caught. A per-member
 corpus is not exhaustive, and a citation need not come from the member’s own corpus.
-⚠ **Kennedy is a common surname for `checkNameProximity` too**, which then demands a title
-qualifier within 30 characters — both her snippets carry *"5th District Councilor Janet Kennedy"*.
+🔴🔴 **THIS LINE WAS WRONG AND STOOD FOR A DAY: `kennedy` IS NOT IN `COMMON_LAST_NAMES`.** It used
+to read "Kennedy is a common surname for `checkNameProximity` too, which then demands a title
+qualifier within 30 characters". Measured 2026-10-06: `COMMON_LAST_NAMES.has('kennedy') === false`
+(`johnson` is true). The verifier never demanded a title for her, so her two
+`economic-development` snippets carrying *"5th District Councilor Janet Kennedy"* are good practice
+that **nothing was enforcing**. ▶ **The guard that would have caught a 94%-noise corpus was not the
+verifier, and believing it was is how a corpus problem gets left to one tool that cannot see it.**
+▶ **A guard you have not watched fail is a guard you have not seen run.**
 
 **✅ MAYOR REINERT IS DONE — 35 rows, 3 chairs** (`homelessness` 5 · `residential-zoning` 4 ·
 `growth-and-development` 4). The strongest member in the slice: 146 of 398 articles name him.
