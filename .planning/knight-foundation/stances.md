@@ -424,6 +424,43 @@ is now in **0 rows**, down from 3. A positive control confirmed the detector mat
    than append (`merge_rows.mjs` does this; it replaced exactly 5 and touched no other member).
 
 ---
+#### 🔴🔴 `reasoning` IS VOTER-FACING, AND 21 OF 30 SCORED ROWS CARRIED PIPELINE BOOKKEEPING
+
+Found 2026-10-06, at the point of publishing. `writeVerifiedStance` writes `reasoning` straight into
+`inform.politician_context`, and `Citations.jsx` renders it **verbatim** under "Why this position?".
+21 of this batch's 30 scored rows would have published internal bookkeeping to voters:
+
+| What was in the voter prose | Example |
+|---|---|
+| Correction logs | *"🔴 Correction, 2026-10-05: this row previously opened by saying Forsman put forward…"* |
+| Internal rule codes | *"C46 governs votes; C37 governs sponsorship"* |
+| Ruling notes naming the operator | *"Ruled chair 2 by Chris Cantrell on 6 October 2026"* |
+| Snippet mechanics | *"a shorter cut would not carry her name close enough to be attributable"* |
+| Stale claims | *"Resolving that URL is the one thing that would settle her row"* — settled the day before |
+
+🔴 **A SENTENCE-LEVEL REGEX SPLIT WAS TRIED FIRST AND HAD TO BE THROWN AWAY.** It read the SHAPE of
+a sentence and not what it said, and failed in both directions at once:
+- It **orphaned continuations.** *"Two things the reviewer should weigh."* matched; the two things
+  did not, and would have stayed behind as a dangling fragment.
+- It **deleted evidence.** *"The re-swept corpus adds her own account of why, which states the chair
+  directly: …"* matched on its bookkeeping clause and would have taken Jost's quotation with it.
+
+▶ **THE REVIEWER TAILS IN THIS BATCH ARE MOSTLY BALANCING FACTS** — what cuts the other way, what
+the record shows that does *not* support the chair. Deleting them makes a row one-sided, which is
+worse for a voter than leaving the bookkeeping in. 🟢 **The rule is: strip the bookkeeping, keep the
+caveat, and reword it as plain prose.** A voter benefits from "one qualification: this chair names
+major employers and her instruments are housing". A voter has no use for "C46".
+
+`_voter_prose_rows.mjs` does it with a hand-written replacement table. **Every `old` string is
+asserted present and asserted unique**, because a replacement that silently no-ops is a row that
+ships bookkeeping to a voter. Controls: no rule code, glyph, "reviewer", "this row", ruling note or
+corpus bookkeeping may survive; the row must still name a chair; a `record` row must still name an
+instrument; and the prose may not lose more than 35% of its length. Removed text is kept verbatim in
+`editor_note`. 21 rows, −0% to −19%, gate `high=0`, verifier `RE-RESEARCH: 0`.
+
+⚠ **Write the next slice this way from the start.** Put the caveat in the reasoning and the
+bookkeeping in `editor_note` as you go; retrofitting 21 rows costs far more than writing them right.
+
 #### Finishing
 
 Commit with an explicit pathspec, then push. If push protection rejects it, a scraped page contained
