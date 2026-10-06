@@ -15,6 +15,10 @@
  * per CERTIFIED stratum (never a blank or statement-other one), from the figures computed here — no
  * hand-typed numbers. The table is append-only; a decertification is a later row. --note lines go in
  * `reason` prefixed "note:" (the run, the leakage control, who approved it).
+ * --slot N scores ONE coder alone (e.g. --slot 1 = the Opus coder) as if it were the whole system: its
+ * answer is the "consensus" and every chair it seats is "unanimous". M1 (coder-vs-coder) does not exist
+ * for one coder and is printed n/a; the verdict reads "M2–M4 only" and is never recorded (--record is
+ * refused) — certifying a single coder needs a spec ruling first.
  */
 import 'dotenv/config';
 import { pool } from '../src/lib/db.js';
@@ -27,13 +31,16 @@ const ri = process.argv.indexOf('--run');
 const run = ri > 0 ? process.argv[ri + 1] : null;
 const xi = process.argv.indexOf('--exclude-batches');
 const excluded = new Set(xi > 0 ? process.argv[xi + 1].split(',').map((b) => b.trim()).filter(Boolean) : []);
+const si = process.argv.indexOf('--slot');
+const slot = si > 0 ? Number(process.argv[si + 1]) : null;
+if (slot !== null && process.argv.includes('--record')) { console.error('--record is refused with --slot: a single coder is not a certifiable setup without a spec ruling'); process.exit(2); }
 const RERUN = /-rr\d+$/;
 const baseName = (b: string) => b.replace(RERUN, '');
 const { rows: allRows } = await pool.query(
   `SELECT l.batch_id, l.politician_id, l.office_id, l.topic_id, l.coder_slot, l.valid, l.value, l.rests_on, l.source_codes, l.level
      FROM inform.stance_coder_labels l
     WHERE l.codebook_version = $1 AND NOT l.is_diagnostic AND l.coder_slot BETWEEN 1 AND 3`, [version]);
-const rows = allRows.filter((r) => (run ? r.batch_id.endsWith(`-${run}`) : !RERUN.test(r.batch_id)) && !excluded.has(baseName(r.batch_id)));
+const rows = allRows.filter((r) => (slot === null || r.coder_slot === slot) && (run ? r.batch_id.endsWith(`-${run}`) : !RERUN.test(r.batch_id)) && !excluded.has(baseName(r.batch_id)));
 // Blind gold (spec §3.3): the newest counted decision per (politician, office, topic). A decision a
 // later row supersedes is not the answer any more.
 const { rows: goldRows } = await pool.query(
@@ -53,7 +60,8 @@ for (const r of rows) {
   const key = `${r.batch_id}|${r.politician_id}|${r.office_id}|${r.topic_id}`;
   const u = units.get(key) ?? { level: String(r.level ?? 'unknown'), classes: new Set<string>(), values: [null, null, null],
     goldKey: `${r.politician_id}|${r.office_id}|${r.topic_id}` };
-  u.values[r.coder_slot - 1] = r.valid ? chairCategory(r.value) : null;
+  if (slot !== null) u.values = [0, 1, 2].map(() => (r.valid ? chairCategory(r.value) : null)); // one coder stands in for all three
+  else u.values[r.coder_slot - 1] = r.valid ? chairCategory(r.value) : null;
   if (r.valid) {
     for (const p of r.source_codes as { snapshot_id: string; v3_class: string }[]) {
       if ((r.rests_on as string[]).includes(p.snapshot_id)) u.classes.add(p.v3_class);
@@ -71,7 +79,7 @@ for (const u of units.values()) {
   if (g) b.pairs.push({ coders: u.values, gold: g.final_value, offAxis: OFF_AXIS.has(g.topic_key) });
   byStratum.set(stratumOf(u), b);
 }
-console.log(`codebook ${version}${run ? ` — re-run ${run}` : ''}${excluded.size ? ` — ${excluded.size} batch(es) excluded` : ''} — ${units.size} coded rows, ${[...byStratum.values()].reduce((n, b) => n + b.pairs.length, 0)} with blind gold\n`);
+console.log(`codebook ${version}${slot !== null ? ` — coder slot ${slot} ALONE` : ''}${run ? ` — re-run ${run}` : ''}${excluded.size ? ` — ${excluded.size} batch(es) excluded` : ''} — ${units.size} coded rows, ${[...byStratum.values()].reduce((n, b) => n + b.pairs.length, 0)} with blind gold\n`);
 console.log('stratum'.padEnd(32), 'rows'.padStart(5), 'M1 α'.padStart(7), 'gold'.padStart(5), 'M2 α'.padStart(7), '  M3 unan ok/n', ' M4', '  certified?');
 const record = process.argv.includes('--record');
 const mi = process.argv.indexOf('--models');
@@ -80,11 +88,12 @@ const notes = process.argv.flatMap((a, k) => (a === '--note' ? [`note: ${process
 const toRecord: { level: string; cls: string; n: number; m1: number | null; m2: number | null; m3: number; severe: number }[] = [];
 const fmt = (a: number | null) => (a === null ? 'undef' : a.toFixed(3));
 for (const [s, b] of [...byStratum].sort()) {
-  const m1 = alphaNominal(b.units).alpha;
+  const m1 = slot !== null ? null : alphaNominal(b.units).alpha;
   const g = goldMeasures(b.pairs);
   const c = certify({ goldN: b.pairs.length, m1, m2: g.m2, unanimousCorrect: g.unanimousCorrect, unanimousTotal: g.unanimousTotal, severe: g.severe });
   // 'blank' = no coder seated a chair: a diagnostic bucket, never certified (ruling 2026-09-28).
-  const cert = s.endsWith('statement-other') ? 'never (Q2)' : s.endsWith('× blank') ? 'diagnostic (blanks publish no chair)' : c.certified ? 'YES' : `no — ${c.reasons.join('; ')}`;
+  const cSingle = slot !== null ? c.reasons.filter((x) => x !== 'm1 undefined') : null;
+  const cert = cSingle !== null && !s.endsWith('× blank') && !s.endsWith('statement-other') ? (cSingle.length ? `M2–M4 only: no — ${cSingle.join('; ')}` : 'M2–M4 only: PASS (not a certification)') : s.endsWith('statement-other') ? 'never (Q2)' : s.endsWith('× blank') ? 'diagnostic (blanks publish no chair)' : c.certified ? 'YES' : `no — ${c.reasons.join('; ')}`;
   if (cert === 'YES') { const [lvl, cls] = s.split(' × '); toRecord.push({ level: lvl, cls, n: b.pairs.length, m1, m2: g.m2, m3: c.m3WilsonLow, severe: g.severe }); }
   console.log(s.padEnd(32), String(b.units.length).padStart(5), fmt(m1).padStart(7), String(b.pairs.length).padStart(5), fmt(g.m2).padStart(7),
     `  ${g.unanimousCorrect}/${g.unanimousTotal}`.padEnd(14), String(g.severe).padStart(3), ' ', cert);
@@ -94,7 +103,7 @@ const allPairs = [...units.values()].flatMap((u) => { const g = gold.get(u.goldK
 const bm = blankMeasures(allPairs);
 console.log(`\nblanks (diagnostic): precision ${bm.blankCorrect}/${bm.blankConsensus} (Wilson low ${bm.precisionWilsonLow.toFixed(3)}); missed chairs ${bm.missed.length}` +
   (bm.missed.length ? ` — ${bm.missed.map((m) => `${m.key} (gold ${m.gold})`).join(', ')}` : ''));
-const all = alphaNominal([...units.values()].map((u) => u.values));
+const all = slot !== null ? { alpha: null } : alphaNominal([...units.values()].map((u) => u.values));
 console.log(`\nall strata: M1 α = ${fmt(all.alpha)} (target ≥ 0.80, spec §3.3). A stratum certifies only with ≥ 50 blind gold items.`);
 if (record) {
   for (const r of toRecord) {
