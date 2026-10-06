@@ -15,13 +15,6 @@
       "what": "statement evidence (the person's own words) goes to human review"
     },
     {
-      "full_name": "Roz Randorf",
-      "topic_key": "economic-development",
-      "check_id": "statement-needs-review",
-      "severity": "medium",
-      "what": "statement evidence (the person's own words) goes to human review"
-    },
-    {
       "full_name": "Wendy Durrwachter",
       "topic_key": "climate-change",
       "check_id": "statement-needs-review",
@@ -157,6 +150,13 @@
     {
       "full_name": "Cheniqua Johnson",
       "topic_key": "rent-regulation",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Roz Randorf",
+      "topic_key": "economic-development",
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"

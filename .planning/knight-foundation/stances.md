@@ -151,13 +151,36 @@ align before slicing.
 
 #### ▶️ OPEN, IN PRIORITY ORDER
 
-1. **Sponsorship leads for members already closed**, all from the same scan and now all reachable
-   through the meeting-walk above: Randorf also sponsored the TIF development-incentives policy, a
-   short-term-rental moratorium with interim controls, and a 2021 climate emergency declaration;
-   Kennedy sponsored an ordinance integrating the city's LGBTQ+ commission. None acted on.
+1. **Remaining sponsorship leads.** Randorf's TIF policy and short-term-rental moratorium are
+   **done — both recorded, neither moves a chair** (see below). Still open: her 2021 climate
+   emergency declaration, and Kennedy's ordinance integrating the city's LGBTQ+ commission.
 2. ⚠ **The pre-2026 sponsor scan is INCOMPLETE.** The API caps at 1000 matters per query and three
    year-windows hit the cap. Nothing ladder-bearing was missed for the four members done here, but
    the record is not exhaustive for the longer-serving members.
+
+#### ✅ RANDORF'S TWO SPONSORSHIP LEADS — WORKED THROUGH, NEITHER MOVES A CHAIR
+
+Different reasons in each case, and both are worth not re-opening.
+
+**TIF development incentives** (with Forsman and Kennedy, adopted 2025-06-16).
+🔴 **THE OPERATIVE CONTENT IS AN ATTACHMENT.** The only resolving clause is that the city "adopts
+the policy on development incentives for tax increment financing, attached hereto as Exhibit A".
+C51 says the operative section governs — and here it governs **by reference to a document the
+legislative record does not render**. Whether that policy sets wage and local-hiring conditions with
+repayment (chair 3) or spending limits and a willingness to pass on deals (chair 4) is precisely
+what the exhibit would say. Randorf keeps chair 3 on the film incentive's pay-on-delivery mechanism,
+which she named herself.
+▶ **A framework resolution that adopts an attachment cannot refine a chair on its own.** Reading
+Exhibit A is the one thing that would settle it — and would bear on Forsman's chair 4 as well, since
+his rests partly on shaping this same policy.
+
+**Short-term rental moratorium** (with Swenson, Nephew and Forsman, adopted 2025-11-10).
+🔴 **IT IS A STUDY MORATORIUM ON ITS FACE** — the interim ordinance runs "pending completion of a
+city study weighing the need for any amendment to official controls". C47 refuses a study directive
+as a chair, and no statement from her says what the study should conclude. It fails on a second,
+independent ground too: short-term rental permitting is about how a dwelling may be used, not how
+much housing a neighbourhood should hold, which is what `residential-zoning` separates on. Nephew's
+blank there is recorded for the same reason.
 
 #### ✅ THE SAINT PAUL CITATIONS ARE FIXED TOO (2026-10-05)
 
