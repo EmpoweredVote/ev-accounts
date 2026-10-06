@@ -13,6 +13,7 @@ the one topic, full list kept as topics.all.json) -> snapshots -> coder inputs; 
 headless coders too (slot 1 opus, 2-3 sonnet). It never reads or prints coder output.
 """
 import json, os, subprocess, sys, datetime
+sys.path.insert(0, os.path.dirname(__file__)); from repair import repair
 spec = json.load(open(sys.argv[1])); run_coders = '--coders' in sys.argv
 DATE = spec.get('date') or datetime.date.today().isoformat()
 SP = os.environ.get('SCRATCH', '/tmp')
@@ -56,4 +57,7 @@ for name, k, p in procs:
   p.wait()
   d = f"data/stance-research/{DATE}-shadow-{name}"
   if not os.path.exists(f"{d}/labels/coder-{k}.json"): print(f"{name}: coder {k} wrote no label (see coder-logs/coder-{k}.err)")
+  else:
+    st = repair(d, k, SP, env)
+    if st not in ('valid',): print(f"{name}: coder {k} {st}")
 if procs: print(f"coders done: {len(procs)} run(s)")
