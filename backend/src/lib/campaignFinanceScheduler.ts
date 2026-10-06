@@ -491,22 +491,25 @@ export async function runAdapterForAll(adapterName: string): Promise<void> {
     }
 
     case 'ocpf': {
-      // ONE run per source, full history, no chunking.
+      // ONE run per source, full history, read as one request per calendar quarter.
       //
-      // The OCPF receipts endpoint returns a filer's ENTIRE history in a single response:
-      // measured live 2026-08-17, the largest of the 20 sources (cpf 15710, 2001–present) is
-      // 89,557 records in ~5 s. The loop this replaced issued 2001→now × 4 quarters ≈ 104
-      // requests and 104 ingestion_runs rows PER SOURCE to subdivide that one call. Its
-      // sizing came from the phantom page loop fixed in f80efc02 — "75k+ contributions per
-      // quarter" was the same 250 rows re-appended ~300 times; cpf 15710's true worst
-      // quarter is 5,754 records.
+      // The OCPF receipts endpoint ignores every offset parameter, so a window is one request.
+      // Until 2026-10 the window was the filer's whole history; on 2026-10-01 that overran
+      // the 512 MiB cron on cpf 15710 (97,205 records, a 109 MB body). The adapter now
+      // streams one quarter at a time and runIngestion upserts each quarter before the next is
+      // fetched — see ocpfAdapter.ts. It is still ONE ingestion_runs row per source.
       //
-      // Re-fetching everything each tick is also strictly MORE correct than the resume-skip
-      // it replaces: contributions upsert on (data_source, source_transaction_id), so repeat
-      // rows are updates rather than duplicates, and late filings or amendments landing in an
-      // already-'completed' quarter — which the skip could never revisit — now get picked up.
+      // Re-fetching everything each tick is also strictly MORE correct than a resume-skip:
+      // contributions upsert on (data_source, source_transaction_id), so repeat rows are
+      // updates rather than duplicates, and late filings or amendments in an old quarter get
+      // picked up.
       const OCPF_CYCLE_KEY = 'all';
-      const PER_SOURCE_TIMEOUT_MS = 3 * 60 * 1000; // ~36x the measured worst case
+      // 🔴 This budget covers the UPSERT, not just the fetch. Streaming checks the signal
+      // between quarters, so a source still writing when it fires now FAILS — before, the
+      // signal only ever cut a fetch. The fetch is ~15 s for cpf 15710 (130 requests), but its upsert took 130–150 s on 2026-08-18 and 2026-09-01, and the old 3 min
+      // budget was described as "~36x the worst case" on fetch time alone. 10 min is ~4x
+      // the measured end-to-end worst case.
+      const PER_SOURCE_TIMEOUT_MS = 10 * 60 * 1000;
 
       for (const ps of sources) {
         const controller = new AbortController();
