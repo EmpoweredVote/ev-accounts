@@ -401,7 +401,70 @@ reviewer should see the whole record, not only the part that supports the chair.
 
 ---
 
-# 🔴🔴 DULUTH'S ENACTED ORDINANCE TEXT IS READABLE BUT NOT CITABLE (2026-10-05)
+# ✅ CORRECTED 2026-10-05 (LATER) — DULUTH'S ORDINANCE TEXT **IS** CITABLE, AND THE SECTION BELOW SAYS OTHERWISE
+
+The finding below is **wrong in its conclusion and right in every measurement it took**. Keep both.
+
+`duluth-mn.legistar.com/LegislationDetail.aspx?ID=…&GUID=…` serves **116,377 bytes** of readable
+text — sponsor list, full title and the complete operative body — to `curl` **and to node's
+`fetch`**, which is what the verifier uses. A snippet cut from it verifies. Measured on 26-0100R:
+
+| Route | Result |
+|---|---|
+| `?ID=7864734` alone | 200, **19 bytes** |
+| `?ID=7864734&GUID=B105F04C-45ED-4AC9-B451-9E69CD2774D2` | 200, **116,377 bytes**, full body |
+| `?ID=7864734&GUID=<the API's MatterGuid>` | 200, **19 bytes** |
+| `?GUID=…` alone, or a mismatched pair | 200, **19 bytes** |
+
+🔴 **THE WEB GUID IS NOT THE API'S `MatterGuid`. THEY ARE DIFFERENT IDENTIFIERS.** For 26-0100R
+the API returns `8AAC66AD-3744-4503-8EDB-B05D98622FCE` and the page wants
+`B105F04C-45ED-4AC9-B451-9E69CD2774D2`. That is why the probe below got 19 bytes **with "the
+correct GUID taken from `MatterGuid`"** and concluded no page could be cited. The page exists; the
+URL simply cannot be constructed from the Web API.
+
+## 🟢 THE SCRIPTED ROUTE EXISTS — ONE KNOWN PAIR BOOTSTRAPS ALL THE OTHERS
+
+`Calendar.aspx` does not expose the pairs, which is what made this look impossible. **Any single
+matter page does.** A `LegislationDetail` page lists, under History, a `MeetingDetail` link for every
+meeting the matter reached, carrying its own ID+GUID; a `MeetingDetail` page then lists every matter
+on that agenda as a `LegislationDetail` link carrying ITS ID+GUID. So:
+
+```
+26-0100R  (pair taken from a MinnPost hyperlink)
+  └─ MeetingDetail 1381311 / 75A5A26D-6D66-405A-B879-2F25492EF387   (council, 2026-02-23)
+       └─ 26-005-O = ID 7869631 / GUID B9A84056-7F2A-4E7A-ADD4-B55A575AF296
+```
+
+▶ **Seed from any news story that links a Legistar matter, then walk meetings → agendas.** Every
+Duluth instrument that reached a meeting is reachable this way, and the same shape should hold for
+Saint Paul and every other Legistar client.
+
+✅ **`26-005-O` IS SETTLED.** Stewardship of City Resources, sole author Councilor Randorf, adopted
+2026-02-23, pair above. Randorf holds `local-immigration` **3** on it. Its codified text excludes
+chair 1 more sharply than the resolution does: § 2-196(d) bars employees from sharing private or
+nonpublic data with federal immigration authorities **and then exempts data subject to 8 U.S.C.
+§§ 1373 and 1644** — the provisions governing citizenship and immigration status information. The
+ordinance restricts data sharing in general and carves out exactly the category chair 1 names.
+
+🔴 **CUT LEGISTAR SNIPPETS WITH THEIR ORIGINAL CASE.** The first batch of them was sliced out of
+`normalizeText(page)`, which lowercases. Two costs: the published citation reads as lowercase
+ordinance text, and `stanceGate`'s instrument patterns are **case-sensitive** — `/Chapter\s?\d+/`
+has no `i` flag — so a reasoning naming "Chapter 2" fails `instrument-not-cited` against a snippet
+that says "chapter 2". `scripts/stance-news/_legistar_text.mjs` returns a case-preserving twin of the
+normalized page and asserts the two align before any slice is taken.
+
+⚠ **`checkNameProximity` can miss by a single character.** On 26-005-O the file number sits at offset
+246 and "Randorf" spans 740–746, so the window `slice(0, 746)` cuts the final letter and the header
+snippet reads `name_not_present`; starting at 247 verifies and would begin mid-number. That row
+therefore carries two snippets off the one page — the header for the file number, the body for the
+operative text and the verification. Both are cut from the page; neither is composed.
+
+⚠ The "do not quote the ordinance text in reasoning" rule below is **withdrawn for any matter whose
+web GUID you have**, and still stands for any matter where you have only the API.
+
+---
+
+# ❌ SUPERSEDED — DULUTH'S ENACTED ORDINANCE TEXT IS READABLE BUT NOT CITABLE (2026-10-05)
 
 The Legistar **Web API** serves the full text — `/matters/{id}/versions` gives a version key, and
 `/matters/{id}/texts/{key}` returns `MatterTextPlain` and `MatterTextRtf`. That is how the camping

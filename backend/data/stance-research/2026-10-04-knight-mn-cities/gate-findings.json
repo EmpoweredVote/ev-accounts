@@ -1,13 +1,6 @@
 {
   "findings": [
     {
-      "full_name": "Cheniqua Johnson",
-      "topic_key": "rent-regulation",
-      "check_id": "statement-needs-review",
-      "severity": "medium",
-      "what": "statement evidence (the person's own words) goes to human review"
-    },
-    {
       "full_name": "Roz Randorf",
       "topic_key": "homelessness",
       "check_id": "statement-needs-review",
@@ -17,13 +10,6 @@
     {
       "full_name": "Roz Randorf",
       "topic_key": "rent-regulation",
-      "check_id": "statement-needs-review",
-      "severity": "medium",
-      "what": "statement evidence (the person's own words) goes to human review"
-    },
-    {
-      "full_name": "Roz Randorf",
-      "topic_key": "economic-development",
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
@@ -38,13 +24,6 @@
     {
       "full_name": "Wendy Durrwachter",
       "topic_key": "economic-development",
-      "check_id": "statement-needs-review",
-      "severity": "medium",
-      "what": "statement evidence (the person's own words) goes to human review"
-    },
-    {
-      "full_name": "Arik Forsman",
-      "topic_key": "homelessness",
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
@@ -83,14 +62,112 @@
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Rebecca Noecker",
+      "topic_key": "economic-development",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Rebecca Noecker",
+      "topic_key": "residential-zoning",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Kaohly Her",
+      "topic_key": "local-immigration",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "HwaJeong Kim",
+      "topic_key": "housing",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Nelsie Yang",
+      "topic_key": "ranked-choice-voting",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Molly Coleman",
+      "topic_key": "homelessness",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Molly Coleman",
+      "topic_key": "local-immigration",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Saura Jost",
+      "topic_key": "transportation-priorities",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Terese Tomanek",
+      "topic_key": "public-safety-approach",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Arik Forsman",
+      "topic_key": "homelessness",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Rebecca Noecker",
+      "topic_key": "rent-regulation",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Saura Jost",
+      "topic_key": "rent-regulation",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Cheniqua Johnson",
+      "topic_key": "rent-regulation",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Roz Randorf",
+      "topic_key": "economic-development",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
     }
   ],
   "summary": {
-    "rows": 490,
+    "rows": 630,
     "high": 0,
-    "medium": 12,
+    "medium": 23,
     "by_check": {
-      "statement-needs-review": 12
+      "statement-needs-review": 23
     }
   }
 }

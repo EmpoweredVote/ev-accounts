@@ -1,73 +1,5 @@
 [
   {
-    "full_name": "Rebecca Noecker",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Anika Bowie",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Saura Jost",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Cheniqua Johnson",
-    "topic_key": "rent-regulation",
-    "value": 2,
-    "action": "review",
-    "reasons": [
-      "statement-evidence"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://sahanjournal.com/housing/st-paul-city-council-extends-pre-eviction-filing-period/"
-    ],
-    "failed_urls": [
-      "https://www.minnpost.com/elections/2023/11/st-paul-voters-appear-to-have-sent-7-women-to-city-council-in-historic-election-highlighting-rent-control-sales-tax/"
-    ],
-    "admin_queue_visible": true
-  },
-  {
     "full_name": "Roz Randorf",
     "topic_key": "homelessness",
     "value": 3,
@@ -99,22 +31,6 @@
     "admin_queue_visible": true
   },
   {
-    "full_name": "Roz Randorf",
-    "topic_key": "economic-development",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "statement-evidence"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.wdio.com/top-stories/duluth-city-council-production-incentives/",
-      "https://www.wdio.com/local-news/duluth-city-council-approves-22-items-on-consent-agenda/"
-    ],
-    "failed_urls": [],
-    "admin_queue_visible": true
-  },
-  {
     "full_name": "Wendy Durrwachter",
     "topic_key": "climate-change",
     "value": 1,
@@ -141,21 +57,6 @@
     "verified_sources": [
       "https://www.duluthnewstribune.com/news/local/duluth-city-council-backs-paper-mill-subsidy-despite-skeptics",
       "https://www.duluthnewstribune.com/news/local/duluth-shapes-policy-to-guide-future-use-of-tax-subsidies-for-developers"
-    ],
-    "failed_urls": [],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Arik Forsman",
-    "topic_key": "homelessness",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "statement-evidence"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
     ],
     "failed_urls": [],
     "admin_queue_visible": true
@@ -233,6 +134,336 @@
     "verified_sources": [
       "https://www.duluthnewstribune.com/news/local/duluth-city-council-backs-paper-mill-subsidy-despite-skeptics",
       "https://www.duluthnewstribune.com/news/local/duluth-shapes-policy-to-guide-future-use-of-tax-subsidies-for-developers"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Rebecca Noecker",
+    "topic_key": "economic-development",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/06/11/st-paul-approves-tif-funds-for-166-market-rate-units-at-galtier-cray-plaza/",
+      "https://www.minnpost.com/politics-policy/2016/03/st-paul-tiff-over-tif-comes-down-simple-question-how-good-deal-soccer-stadiu/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Rebecca Noecker",
+    "topic_key": "residential-zoning",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://sahanjournal.com/housing/st-paul-city-council-zoning-changes-affordable-housing/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Kaohly Her",
+    "topic_key": "local-immigration",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/01/05/minneapolis-st-paul-30-day-immigration-surge/",
+      "https://sahanjournal.com/immigration/st-paul-immigration-raid-protest-rapid-response/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "HwaJeong Kim",
+    "topic_key": "housing",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/04/27/st-paul-2-developers-pitch-affordable-housing-on-jackson-street/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Nelsie Yang",
+    "topic_key": "ranked-choice-voting",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/politics-policy/2023/03/senate-advances-bill-that-could-move-minnesota-toward-ranked-choice-voting/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Molly Coleman",
+    "topic_key": "homelessness",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/08/04/st-paul-homeless-encampment-pigs-eye/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Molly Coleman",
+    "topic_key": "local-immigration",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.twincities.com/2026/04/01/st-paul-training-separation-ordinance/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Saura Jost",
+    "topic_key": "transportation-priorities",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/elections/2023/11/st-paul-city-council-ward-3-2023-candidates-isaac-russell-saura-jost-troy-barksdale-patty-hartmann/",
+      "https://www.minnpost.com/metro/2023/10/could-opposition-to-the-summit-avenue-bike-trail-plan-shape-this-years-st-pauls-elections/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Terese Tomanek",
+    "topic_key": "public-safety-approach",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.wdio.com/top-stories/four-candidates-advance-in-duluth-city-council-at-large-race/",
+      "https://www.wdio.com/top-stories/meet-the-candidates-running-for-duluths-at-large-city-council-seats/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Arik Forsman",
+    "topic_key": "homelessness",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Diane Desotelle",
+    "topic_key": "local-immigration",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7864734&GUID=B105F04C-45ED-4AC9-B451-9E69CD2774D2"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Jordon Johnson",
+    "topic_key": "local-immigration",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7864734&GUID=B105F04C-45ED-4AC9-B451-9E69CD2774D2"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Terese Tomanek",
+    "topic_key": "local-immigration",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7864734&GUID=B105F04C-45ED-4AC9-B451-9E69CD2774D2"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Lynn Marie Nephew",
+    "topic_key": "local-immigration",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7864734&GUID=B105F04C-45ED-4AC9-B451-9E69CD2774D2"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Roz Randorf",
+    "topic_key": "local-immigration",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7869631&GUID=B9A84056-7F2A-4E7A-ADD4-B55A575AF296"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Rebecca Noecker",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://minnesotareformer.com/2022/09/07/st-paul-council-poised-to-exempt-new-construction-from-rent-control/",
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/",
+      "https://stpaul.legistar.com/HistoryDetail.aspx?ID=33396952&GUID=808097B7-59D1-42C8-B93A-81BDAB7D45CE"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Anika Bowie",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/",
+      "https://stpaul.legistar.com/LegislationDetail.aspx?ID=7282238&GUID=60463898-B948-4757-B9D9-128B514C7BDD",
+      "https://stpaul.legistar.com/HistoryDetail.aspx?ID=33396952&GUID=808097B7-59D1-42C8-B93A-81BDAB7D45CE"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Saura Jost",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/",
+      "https://stpaul.legistar.com/LegislationDetail.aspx?ID=7282238&GUID=60463898-B948-4757-B9D9-128B514C7BDD",
+      "https://stpaul.legistar.com/HistoryDetail.aspx?ID=33396952&GUID=808097B7-59D1-42C8-B93A-81BDAB7D45CE"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Cheniqua Johnson",
+    "topic_key": "rent-regulation",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://sahanjournal.com/housing/st-paul-city-council-extends-pre-eviction-filing-period/",
+      "https://stpaul.legistar.com/HistoryDetail.aspx?ID=33396952&GUID=808097B7-59D1-42C8-B93A-81BDAB7D45CE"
+    ],
+    "failed_urls": [
+      "https://www.minnpost.com/elections/2023/11/st-paul-voters-appear-to-have-sent-7-women-to-city-council-in-historic-election-highlighting-rent-control-sales-tax/"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Roz Randorf",
+    "topic_key": "economic-development",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.wdio.com/top-stories/duluth-city-council-production-incentives/",
+      "https://www.wdio.com/local-news/duluth-city-council-approves-22-items-on-consent-agenda/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Janet Kennedy",
+    "topic_key": "civil-rights",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7693374&GUID=F535C3F2-463E-4072-81C9-973B1C939EAC",
+      "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7770940&GUID=E31ABEE4-9606-4DEC-B375-9DADBE307208"
     ],
     "failed_urls": [],
     "admin_queue_visible": true

@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | **22** | `2026-10-04-knight-mn-cities` — **OPEN, 14/18 done.** Saint Paul all 8 RE-RESEARCHED 2026-10-05 (4 chairs → 11); Duluth 6 done. **Four Duluth members remain** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | **30** | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows in the review queue (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -79,7 +79,205 @@ should be priced higher per member.
 against the city's own page before citing the office — a roster label says how someone arrived, not
 what they hold now, and a departed official's URL can serve their successor.
 
-### ▶️ RESUME HERE — FINISH DULUTH: FOUR MEMBERS LEFT
+### ✅ SLICE 3 IS COMPLETE — 18 members, 630 rows, 28 chairs (2026-10-05)
+
+Tomanek 2 · Jordon Johnson 1 · Desotelle 1 · Clanaugh 0. Nephew gained her first chair, Randorf went
+to four — the most in the slice — and five members moved on `local-immigration` alone. Gate `high=0`, verifier clean,
+nothing auto-published.
+
+#### 🔴🔴 THE BIGGEST FINDING OF THE SLICE: SPONSORSHIP IS AN EVIDENCE CHANNEL AND NOBODY HAD USED IT
+
+`GET /matters/{id}/sponsors` on the Legistar Web API. It seated **four members at
+`local-immigration` 3** off one instrument, Duluth resolution **26-0100R**, which bars city
+agencies from using city resources to assist federal civil immigration enforcement except as
+required by federal law or court order. Chair 1 is excluded **by the document**: it expressly
+preserves compliance with 8 U.S.C. 1373, the statute barring restrictions on immigration-status
+information sharing.
+
+▶ **C46 REFUSES A UNANIMOUS VOTE. C37 ADMITS THE SPONSORSHIP.** Nephew's blank already named this
+instrument and refused it, correctly, as "adopted unanimously by voice vote". That is true of the
+VOTE and it stopped one rule short. **When a measure passes without division, stop asking how
+people voted and ask who wrote it.**
+
+Three tools were blind to it at once: `divided_votes.mjs` (not a divided roll call), the member
+vote lists, and **every news sweep** — no article in any of the nine corpora names the sponsors;
+MinnPost says only "four of their colleagues".
+
+🟢 **And it answers questions prose leaves open.** Forsman thanked "three other councilors" for
+what he "put forward"; the sponsor list shows 24-0588R (the $500,000) is Randorf, Nephew, Forsman
+and Tomanek, and that **24-030-O, the camping ordinance, has NO sponsors at all** — the
+administration brought it. That disproved a sentence already sitting in Forsman's scored row.
+
+#### 🟢 LEGISTAR DETAIL PAGES **ARE** CITABLE — `instruments.md` said they were not
+
+The web GUID is **not** the API's `MatterGuid`. They are different identifiers.
+
+| URL form | Result |
+|---|---|
+| `?ID=…` alone, or a mismatched pair, or **the API's `MatterGuid`** | 200, **19 bytes** |
+| `?ID=…&GUID=<the web GUID>` | 200, **116 KB**, sponsors + full operative text, to curl AND node |
+
+🟢 **AND ONE KNOWN PAIR BOOTSTRAPS THE REST.** `Calendar.aspx` does not expose the pairs, which is
+what made this look impossible — but any single matter page does. A `LegislationDetail` page links
+every `MeetingDetail` it reached, with that meeting's pair; a `MeetingDetail` page links every matter
+on the agenda, with each matter's pair. Seed from any news story that links a Legistar matter and
+walk meetings → agendas. That is how 26-005-O was found, and **it settled Randorf**.
+
+🔴 **CUT THE SNIPPET WITH ITS ORIGINAL CASE.** Slicing out of `normalizeText(page)` lowercases it,
+which makes a poor published citation and silently fails the gate: the instrument patterns are
+**case-sensitive**, so "Chapter 2" in a reasoning never matches "chapter 2" in a snippet. Use
+`scripts/stance-news/_legistar_text.mjs`, which returns a case-preserving twin and asserts the two
+align before slicing.
+
+#### Rules this slice's last four members paid for
+
+1. 🔴 **FOR A COMMON SURNAME THE MEMBER'S OWN SWEEP IS THE WORST SOURCE.** Jordon Johnson: 700
+   files kept on the surname, **9 name him** (1% signal), **0 attributed quotes**. Every passage
+   used came from other members' corpora, where **26** articles name him. Read the slice first.
+2. 🔴 **A NAME-PRESENCE COUNT IS NOT A COVERAGE COUNT.** 10 of those 26 name him only in the
+   council roster sidebar the Duluth News Tribune appends to its local stories.
+3. 🔴 **THE AMBIGUITY CHECK HAS NO STOPLIST AND INVENTS PEOPLE.** It dropped 10 of Clanaugh's 23
+   usable articles for "Repair", "Represents", "While", "Local" and "Yet" Clanaugh — including the
+   candidate forum, his best article. It needs a plausible-given-name test; until then read the
+   excluded list by hand.
+4. 🔴 **A QUESTIONNAIRE SNIPPET MUST START AT THE MEMBER'S NAME.** `checkNameProximity` windows
+   ±500 characters around the SNIPPET START, and a Q&A puts the name at the head of the section —
+   2,096 characters above Tomanek's answer. That is what made Mayor Her's questionnaire uncitable.
+   It works when the run from name to answer is contiguous; the snippet is then long, and says so.
+   ⚠ `TITLE_PATTERN` matches `councilor` and **not the plural `councilors`**, so "BY COUNCILORS
+   JOHNSON" does not rescue a common surname.
+5. ⚠ **Naming a second instrument in a reviewer note trips `instrument-not-cited`.** "Chapter 2"
+   in an aside cost four high findings. Describe an uncitable instrument; do not number it.
+
+#### ▶️ OPEN, IN PRIORITY ORDER
+
+1. ✅ **Sponsorship leads — the list is EMPTY.** Randorf's TIF policy and short-term-rental
+   moratorium are **done** (see below), and so are the last two: her **2021 climate emergency
+   declaration** and **Kennedy's ordinance integrating the city's LGBTQ+ commission** — both worked
+   through 2026-10-06, **neither moves a chair**, three blanks rewritten. See the block below.
+2. ⚠ **The pre-2026 sponsor scan is INCOMPLETE.** The API caps at 1000 matters per query and three
+   year-windows hit the cap. Nothing ladder-bearing was missed for the four members done here, but
+   the record is not exhaustive for the longer-serving members.
+
+#### ✅ THE LAST TWO SPONSORSHIP LEADS — WORKED THROUGH 2026-10-06, NEITHER MOVES A CHAIR
+
+Three blanks rewritten, 630 rows, gate `high=0`, verifier `RE-RESEARCH: 0`, 29 rows in review.
+
+**The 2021 climate emergency declaration** (Randorf, with Sipress, Anderson and **Forsman**; adopted
+2021-04-12). 🔴 **ITS OPERATIVE CLAUSES ARE A DECLARATION, A TARGET AND A PLANNING DIRECTIVE.**
+C47 refuses a plan directive. The one number is an emissions target for the **city's own** operations
+and community — not a requirement about how energy is produced — and this ladder asks how much
+government should do to **expand clean energy** (mandates / subsidies / permitting). "Support
+renewable energy development" appears **once**, as one bullet among nine subjects the plan should
+cover: a subject, not a level. Seeking "state, federal, philanthropic and private" money is not the
+public investment of chair 2.
+▶ **IT TOUCHES TWO MEMBERS.** Forsman co-sponsored it and his `climate-change` blank is rewritten
+for the same reason. ⚠ **The sponsor list is the only place either name appears on it** — a grep of
+all nine corpora for "climate emergency" returns three articles, none about this resolution.
+
+**Kennedy's LGBTQ+ commission ordinance** (introduced 2025-10-07, read once, **WITHDRAWN**
+2025-10-27), plus the follow-on she co-sponsored, adopted 2025-12-15.
+🟢 **RULED CHAIR 2 BY CHRIS CANTRELL, 2026-10-06** — *"make it chair 2"*. The row was blank for one
+commit and the blank's reason was a genuine tie: her statement of purpose puts improving equity,
+increasing efficiency and strengthening the impact of the work in **one sentence**. *Strengthening*
+is chair 2; consolidating advisory bodies for *efficiency* with the enforcement powers untouched is
+chair 3. The ruling reads the first as controlling. ▶ **The researcher's blank and the ruling are
+both recorded in the row**, so a reviewer sees the tie and who broke it.
+The row rests on the ordinance repealing the old article and **rewriting the operative chapter** —
+which states it is enforceable through compliance actions by the city, and whose purposes are
+effectuated by information, education, mediation, conciliation and enforcement — on the ground she
+**added**, and on the standing committee with a vote. Chair 1 is excluded by the instrument: it
+mandates nothing of any institution outside the city's own advisory structure.
+⚠ **THE GENDER-IDENTITY INSERTION LOOKS LIKE AN EXPANSION AND IS NOT.** The same ordinance adopts
+the state human rights act definitions "as it may be amended from time to time", and Minnesota added
+that ground in 2023 — so the insertion **conforms** the city code to state law. 🔴 **This was only
+visible in the RTF amendment marks.** `MatterTextPlain` shows inserted words with no sign that they
+are new, and shows nothing of what was struck.
+
+#### 🟢🟢 `Gateway.aspx?M=L&ID=<API MatterId>` MAKES EVERY MATTER CITABLE — NO MEETING WALK
+
+The block above says a known ID+GUID pair must bootstrap the rest by walking meetings → agendas,
+because `Calendar.aspx` does not expose pairs. **It does not.** `Gateway.aspx?M=L&ID=<MatterId>`
+302s straight to `LegislationDetail.aspx?ID=<webId>&GUID=<webGuid>`, and the MatterId comes from
+`/matters?$filter=MatterFile eq '<file>'` for any file number you can name. Two matters resolved
+this way on the first try, at 178 KB and 105 KB.
+🔴 **IT TAKES ANY INTEGER AND WILL SERVE A DIFFERENT MATTER.** `_legistar_gateway.mjs` asserts the
+file number appears on the page it reached, and exits non-zero when it does not. Do not skip it.
+▶ This retires the remaining "readable but not citable" entries for Duluth. `instruments.md` and
+the 26-0100R note both record the old limit.
+
+🔴 **THE FILE NUMBER AND THE SPONSOR NAME ARE 545 CHARACTERS APART IN A LEGISTAR HEADER, AND THE
+NAME WINDOW IS 500.** No snippet can start at `File #: …` and still carry the sponsor's name. It
+does not matter: **a Duluth file number matches NO pattern in `INSTRUMENT_IDENTIFIER_PATTERNS`**, so
+naming `25-026-O` in a reasoning obliges no snippet to carry it. ⚠ `Chapter 2` **does** match, and
+`\bOrdinance\b` in `NAMES_INSTRUMENT` is **case-sensitive** — a record row whose reasoning says only
+"ordinance" in lower case fails `record-no-instrument`. Both cost a high finding here.
+
+🔴 **`/matters/{id}/texts` RETURNS 405 ON `duluth-mn`** — so `_matter_text.mjs` cannot read any
+Duluth matter. The route that works is `/matters/{id}/versions` → `[{Key, Value}]` →
+`/matters/{id}/texts/{Key}`. **`Key` is the MatterTextId; `Value` is the version number**, and
+passing `Value` gives a 404 that reads exactly like a matter with no text.
+
+#### ✅ RANDORF'S TWO EARLIER SPONSORSHIP LEADS — WORKED THROUGH, NEITHER MOVES A CHAIR
+
+Different reasons in each case, and both are worth not re-opening.
+
+**TIF development incentives** (with Forsman and Kennedy, adopted 2025-06-16).
+🔴 **THE OPERATIVE CONTENT IS AN ATTACHMENT.** The only resolving clause is that the city "adopts
+the policy on development incentives for tax increment financing, attached hereto as Exhibit A".
+C51 says the operative section governs — and here it governs **by reference to a document the
+legislative record does not render**. Whether that policy sets wage and local-hiring conditions with
+repayment (chair 3) or spending limits and a willingness to pass on deals (chair 4) is precisely
+what the exhibit would say. Randorf keeps chair 3 on the film incentive's pay-on-delivery mechanism,
+which she named herself.
+▶ **A framework resolution that adopts an attachment cannot refine a chair on its own.** Reading
+Exhibit A is the one thing that would settle it — and would bear on Forsman's chair 4 as well, since
+his rests partly on shaping this same policy.
+
+**Short-term rental moratorium** (with Swenson, Nephew and Forsman, adopted 2025-11-10).
+🔴 **IT IS A STUDY MORATORIUM ON ITS FACE** — the interim ordinance runs "pending completion of a
+city study weighing the need for any amendment to official controls". C47 refuses a study directive
+as a chair, and no statement from her says what the study should conclude. It fails on a second,
+independent ground too: short-term rental permitting is about how a dwelling may be used, not how
+much housing a neighbourhood should hold, which is what `residential-zoning` separates on. Nephew's
+blank there is recorded for the same reason.
+
+#### ✅ THE SAINT PAUL CITATIONS ARE FIXED TOO (2026-10-05)
+
+🔴 **THE OLD CITATION WAS A PAGE WITHOUT THE PEOPLE ON IT.** Noecker, Bowie and Jost all cited the
+same 47-word agenda row from `MeetingDetail.aspx?LEGID=7306…`. The page is not broken and the
+snippet IS on it — but it is an agenda listing: **"Bowie" and "Jost" appear ZERO times on it**,
+"Noecker" twice and both ~24,000 characters away, and it carries no roll call at all. The verifier
+was right to refuse all three.
+▶ **When a citation fails, ask first whether the PAGE can carry the claim.** This one never could.
+
+The meeting-walk found the two that can, both linked from that same agenda row:
+
+| Page | Carries |
+|---|---|
+| `LegislationDetail` ID 7282238 / GUID 60463898-… | File # **Ord 25-29**, the title, and **"Sponsors: Anika Bowie, Saura Jost, Rebecca Noecker"** |
+| `HistoryDetail` ID 33396952 / GUID 808097B7-… | **"Votes (4:3) … Rebecca Noecker Yea … Anika Bowie Yea … Saura Jost Yea … Cheniqua Johnson Nay"**, and "Mover: Saura Jost" |
+
+All three now verify on **3 of 3** sources with no failures. No value, evidence_type or reasoning
+changed — a re-source and nothing else. A negative control in the script asserts the OLD page still
+fails, so the fix is addressing the real defect.
+
+⚠ **Cheniqua Johnson keeps one failing source, correctly.** Her MinnPost snippet reads "Kim,
+Jalali, Yang and Johnson have all expressed interest…" — a bare common surname with no title. Her
+reasoning describes it accurately AS a group attribution, so the citation stays and the verifier
+declines to publish it. She gained the roll call, which evidences her Nay. **A group attribution is
+not a statement by the member, and a verifier refusing it is the system working.**
+
+#### ✅ The campaign-statements ruling is fully worked through
+
+Randorf `local-environment` was the last flagged row: still blank, because the ladder was always
+the constraint and not admissibility. A sweep of all 630 rows found the obsolete pre-office
+sentence in **three** rows, not the two that were flagged — Randorf `childcare` carried it unnoticed.
+It is now in **0 of 630**. Both childcare blanks keep their independent second reason.
+
+---
+
+### ✅ DONE — THE FOUR REMAINING DULUTH MEMBERS (kept: the recipe below is the one to reuse)
 
 Work in `C:/ev-accounts-stances-mn` on branch `knight/stances-mn`. Everything below is measured,
 not assumed; nothing here needs re-deriving.
@@ -319,7 +517,8 @@ never admissibility, it was that her statements name subjects rather than rungs.
 **✅ RANDORF IS DONE — 35 rows, 3 chairs** (`homelessness` 3 · `rent-regulation` 3 · `economic-development` 3).
 **✅ DURRWACHTER IS DONE — 35 rows, 2 chairs** (`climate-change` 1 · `economic-development` 2).
 **✅ FORSMAN IS DONE — 35 rows, 2 chairs** (`homelessness` 3 · `economic-development` 4).
-**✅ KENNEDY IS DONE — 35 rows, 1 chair** (`economic-development` 4, alongside Forsman). She argued
+**✅ KENNEDY IS DONE — 35 rows, 2 chairs** (`economic-development` 4, alongside Forsman ·
+`civil-rights` **2**, ruled 2026-10-06 — see the sponsorship block above). She argued
 for the Sofidel package on the floor — *"I don’t want the perfect to get in the way of the good …
 We need this economic development. I don’t think this is the time to stand back"* — and is one of
 the three DEDA councilors who introduced the TIF policy that sets the limits.
@@ -341,8 +540,14 @@ quotes were the US Health Secretary**. The regex now allows one or two initials:
 
 ⚠ **Her own sweep MISSED the paper-mill article** that another member’s sweep caught. A per-member
 corpus is not exhaustive, and a citation need not come from the member’s own corpus.
-⚠ **Kennedy is a common surname for `checkNameProximity` too**, which then demands a title
-qualifier within 30 characters — both her snippets carry *"5th District Councilor Janet Kennedy"*.
+🔴🔴 **THIS LINE WAS WRONG AND STOOD FOR A DAY: `kennedy` IS NOT IN `COMMON_LAST_NAMES`.** It used
+to read "Kennedy is a common surname for `checkNameProximity` too, which then demands a title
+qualifier within 30 characters". Measured 2026-10-06: `COMMON_LAST_NAMES.has('kennedy') === false`
+(`johnson` is true). The verifier never demanded a title for her, so her two
+`economic-development` snippets carrying *"5th District Councilor Janet Kennedy"* are good practice
+that **nothing was enforcing**. ▶ **The guard that would have caught a 94%-noise corpus was not the
+verifier, and believing it was is how a corpus problem gets left to one tool that cannot see it.**
+▶ **A guard you have not watched fail is a guard you have not seen run.**
 
 **✅ MAYOR REINERT IS DONE — 35 rows, 3 chairs** (`homelessness` 5 · `residential-zoning` 4 ·
 `growth-and-development` 4). The strongest member in the slice: 146 of 398 articles name him.
