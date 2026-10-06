@@ -486,6 +486,11 @@ carry the S1 reading forward.
   - **Independent** means a different instrument (record passages on one instrument are one source —
     the instrument group of V3), or a different occasion of the person's own words. Two reports of one
     statement, or news repeating one press release, are one source (principle 6).
+  - **Two statements on one day (ruling 2026-10-06, Chris Andrews).** A date is not an occasion: a
+    debate answer and a questionnaire on the same day are two occasions. Two same-day statements count
+    as two sources only if (1) both are the person's own words on a first-party page, not news or a
+    pointer; (2) they are on different snapshots; and (3) their texts do not overlap — one page does
+    not reprint the other's words. News on that day adds no source.
   - _owed:_ whether the person's own explanation of a vote counts as a second source for that same
     vote, or as the same act. Until ruled, it is the same act (one source).
   - A tier never upgrades a blank: two `direction-only` sources are still BLANK `direction-only`.
