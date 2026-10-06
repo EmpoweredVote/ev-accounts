@@ -1,0 +1,115 @@
+[
+  {
+    "slug": "d1",
+    "politician_id": "9900867f-9721-4da3-87eb-0e06886b82ba",
+    "name": "Dan Cuevas",
+    "title": "Supervisor, District 1",
+    "src": "d1.jpg",
+    "src_w": 2000,
+    "src_h": 3000,
+    "mode": "crop H 3000->2500 @y250",
+    "upscale": null
+  },
+  {
+    "slug": "d2",
+    "politician_id": "699afdf5-18f8-4ad7-92d6-04b466fcd8fa",
+    "name": "Rebecca Powers",
+    "title": "Supervisor, District 2",
+    "src": "d2.jpg",
+    "src_w": 247,
+    "src_h": 279,
+    "mode": "frame trimmed, zoomed to subject",
+    "upscale": 3.41,
+    "effective_w": 176
+  },
+  {
+    "slug": "d3",
+    "politician_id": "e304bc6f-805e-405c-8af8-f98df3bd79ee",
+    "name": "Marlin Ladner",
+    "title": "Supervisor, District 3",
+    "src": "d3.jpg",
+    "src_w": 288,
+    "src_h": 288,
+    "mode": "frame trimmed, zoomed to subject",
+    "upscale": 2.91,
+    "effective_w": 206
+  },
+  {
+    "slug": "d4",
+    "politician_id": "01cc7a9d-f427-49c2-ba90-928163a4eaad",
+    "name": "Kent Jones",
+    "title": "Supervisor, District 4",
+    "src": "d4.jpg",
+    "src_w": 216,
+    "src_h": 219,
+    "mode": "frame trimmed, zoomed to subject",
+    "upscale": 3.95,
+    "effective_w": 152
+  },
+  {
+    "slug": "d5",
+    "politician_id": "81877664-281c-44c5-b9b2-4f7d6f2f00f7",
+    "name": "Nathan Barrett",
+    "title": "Supervisor, District 5",
+    "src": "d5.jpg",
+    "src_w": 2000,
+    "src_h": 3000,
+    "mode": "crop H 3000->2500 @y250",
+    "upscale": null
+  },
+  {
+    "slug": "circuit",
+    "politician_id": "5dc02160-d488-455b-8c2b-7084c7cca2ff",
+    "name": "Justin Wetzel",
+    "title": "Circuit Clerk",
+    "src": "circuit.jpg",
+    "src_w": 880,
+    "src_h": 953,
+    "mode": "crop W 880->762",
+    "upscale": null
+  },
+  {
+    "slug": "assessor",
+    "politician_id": "234c3d33-38f4-4a0d-a682-1fd0b7cb7b52",
+    "name": "Paula Ladner",
+    "title": "Tax Assessor",
+    "src": "assessor.jpg",
+    "src_w": 280,
+    "src_h": 386,
+    "mode": "crop H 386->350 @y18",
+    "upscale": 2.14
+  },
+  {
+    "slug": "collector",
+    "politician_id": "fe783b4b-b409-4223-8a7e-0a72ef0c3b6c",
+    "name": "Sharon Barnett",
+    "title": "Tax Collector",
+    "src": "collector.jpg",
+    "src_w": 906,
+    "src_h": 1350,
+    "mode": "crop H 1350->1132 @y109",
+    "upscale": null
+  },
+  {
+    "slug": "sheriff",
+    "politician_id": "82189594-b059-458a-b56d-b044ee7bd8d4",
+    "name": "Matt Haley",
+    "title": "Sheriff",
+    "src": "sheriff-plain.jpg",
+    "src_w": 3742,
+    "src_h": 5423,
+    "mode": "crop to head and shoulders",
+    "upscale": null
+  },
+  {
+    "slug": "chancery",
+    "politician_id": "23f20063-8eeb-49b6-b950-70b4b879965c",
+    "name": "Angela Thrash",
+    "title": "Chancery Clerk",
+    "src": "chancery-thrash.jpg",
+    "src_w": 300,
+    "src_h": 300,
+    "mode": "crop W 300->240",
+    "upscale": 2.0
+  }
+]

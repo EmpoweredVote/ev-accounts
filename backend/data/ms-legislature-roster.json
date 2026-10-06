@@ -1,0 +1,2367 @@
+{
+  "generated": "2026-09-28",
+  "source": {
+    "upperList": "https://billstatus.ls.state.ms.us/members/ss_membs.xml",
+    "lowerList": "https://billstatus.ls.state.ms.us/members/hr_membs.xml",
+    "memberBase": "https://billstatus.ls.state.ms.us/members/",
+    "openStates": "https://data.openstates.org/people/current/ms.csv"
+  },
+  "chambers": {
+    "upper": {
+      "expected": 52,
+      "resolved": 52,
+      "missing": [],
+      "listLastModified": "Tue, 01 Jul 2025 15:53:53 GMT",
+      "superseded": [
+        {
+          "district": 44,
+          "was": "John A. Polk",
+          "link": "senate/polk.xml",
+          "why": "page last modified Fri, 17 Jan 2025 16:52:14 GMT (before the 2025-11-04 specials) AND Open States names no \"polk\" in this chamber; \"Chris Johnson\" holds the seat"
+        },
+        {
+          "district": 2,
+          "was": "David Parker",
+          "link": "senate/parker.xml",
+          "why": "page last modified Tue, 14 Jan 2025 18:46:52 GMT (before the 2025-11-04 specials) AND Open States names \"Theresa Gillespie Isom\" here and no \"parker\" anywhere in the chamber; successor page senate/gillespie_isom.xml carries <DISTRICT>2</DISTRICT>"
+        },
+        {
+          "district": 42,
+          "was": "Robin Robinson",
+          "link": "senate/robinson.xml",
+          "why": "page last modified Tue, 14 Jan 2025 18:49:14 GMT (before the 2025-11-04 specials) AND Open States names \"Don Hartness\" here and no \"robinson\" anywhere in the chamber; successor page senate/hartness.xml carries <DISTRICT>42</DISTRICT>"
+        }
+      ],
+      "members": [
+        {
+          "district": 1,
+          "name": "Michael McLendon",
+          "link": "senate/mclendon.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:13:21 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "DeSoto",
+            "Tate"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 2,
+          "name": "Theresa Gillespie-Isom",
+          "link": "senate/gillespie_isom.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:07:34 GMT",
+          "stretches": [
+            "2026-present"
+          ],
+          "counties": [
+            "DeSoto",
+            "Tunica"
+          ],
+          "arrivedThisTerm": true,
+          "mapMemberSplit": true
+        },
+        {
+          "district": 3,
+          "name": "Kathy L. Chism",
+          "link": "senate/chism.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:35:10 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Benton",
+            "Marshall",
+            "Pontotoc",
+            "Prentiss",
+            "Union"
+          ]
+        },
+        {
+          "district": 4,
+          "name": "Rita Potts Parks",
+          "link": "senate/parks.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:40:14 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Alcorn",
+            "Tippah"
+          ]
+        },
+        {
+          "district": 5,
+          "name": "Daniel H. Sparks",
+          "link": "senate/sparks.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:42:09 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Itawamba",
+            "Prentiss",
+            "Tishomingo"
+          ]
+        },
+        {
+          "district": 6,
+          "name": "Chad McMahan",
+          "link": "senate/mcmahan.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:39:15 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Lee"
+          ]
+        },
+        {
+          "district": 7,
+          "name": "Hob Bryan",
+          "link": "senate/bryan.xml",
+          "pageLastModified": "Thu, 26 Feb 2026 20:46:12 GMT",
+          "stretches": [
+            "1984-present"
+          ],
+          "counties": [
+            "Itawamba",
+            "Lee",
+            "Monroe"
+          ]
+        },
+        {
+          "district": 8,
+          "name": "Benjamin Suber",
+          "link": "senate/suber.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:38:40 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Calhoun",
+            "Chickasaw",
+            "Lafayette",
+            "Pontotoc",
+            "Yalobusha"
+          ]
+        },
+        {
+          "district": 9,
+          "name": "Nicole Boyd",
+          "link": "senate/boyd.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:30:38 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Lafayette",
+            "Panola"
+          ]
+        },
+        {
+          "district": 10,
+          "name": "Neil S. Whaley",
+          "link": "senate/whaley.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:15:27 GMT",
+          "stretches": [
+            "2018-present"
+          ],
+          "counties": [
+            "Lafayette,",
+            "Marshall",
+            "Tate",
+            "Union"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 11,
+          "name": "Reginald Jackson",
+          "link": "senate/jackson.xml",
+          "pageLastModified": "Fri, 17 Apr 2026 20:47:46 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Coahoma",
+            "DeSoto",
+            "Quitman",
+            "Tate",
+            "Tunica"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 12,
+          "name": "Derrick T. Simmons",
+          "link": "senate/simmons_(12th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:40:57 GMT",
+          "stretches": [
+            "2011-present"
+          ],
+          "counties": [
+            "Bolivar",
+            "Coahoma",
+            "Washington"
+          ]
+        },
+        {
+          "district": 13,
+          "name": "Sarita Simmons",
+          "link": "senate/simmons_(13th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:41:06 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Bolivar",
+            "Sunflower",
+            "Tallahatchie"
+          ]
+        },
+        {
+          "district": 14,
+          "name": "Lydia Graves Chassaniol",
+          "link": "senate/chassaniol.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:34:10 GMT",
+          "stretches": [
+            "2007-present"
+          ],
+          "counties": [
+            "Attala",
+            "Carroll",
+            "Grenada",
+            "Leflore",
+            "Montgomery"
+          ]
+        },
+        {
+          "district": 15,
+          "name": "Bart Williams",
+          "link": "senate/williams.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:36:30 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Choctaw",
+            "Montgomery",
+            "Oktibbeha",
+            "Webster"
+          ]
+        },
+        {
+          "district": 16,
+          "name": "Angela Turner Ford",
+          "link": "senate/turner-ford.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:43:07 GMT",
+          "stretches": [
+            "2013-present"
+          ],
+          "counties": [
+            "Clay",
+            "Lowndes",
+            "Noxubee",
+            "Oktibbeha"
+          ]
+        },
+        {
+          "district": 17,
+          "name": "Charles Younger",
+          "link": "senate/younger.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:15:55 GMT",
+          "stretches": [
+            "2014-present"
+          ],
+          "counties": [
+            "Lowndes",
+            "Monroe",
+            "Oktibbeha"
+          ]
+        },
+        {
+          "district": 18,
+          "name": "Lane Taylor",
+          "link": "senate/taylor.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:38:02 GMT",
+          "stretches": [
+            "2025 - Present"
+          ],
+          "counties": [
+            "Leake",
+            "Neshoba",
+            "Winston"
+          ]
+        },
+        {
+          "district": 19,
+          "name": "Kevin Blackwell",
+          "link": "senate/blackwell.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:26:50 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "DeSoto"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 20,
+          "name": "Josh Harkins",
+          "link": "senate/harkins.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:36:19 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Rankin"
+          ]
+        },
+        {
+          "district": 21,
+          "name": "Bradford Blackmon",
+          "link": "senate/blackmon.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:30:01 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Attala",
+            "Holmes",
+            "Leake",
+            "Madison"
+          ]
+        },
+        {
+          "district": 22,
+          "name": "Joseph Thomas",
+          "link": "senate/thomas.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:37:45 GMT",
+          "stretches": [
+            "2020-present",
+            "Senate 2004-2008"
+          ],
+          "counties": [
+            "Humphreys",
+            "Madison",
+            "Sharkey",
+            "Yazoo"
+          ]
+        },
+        {
+          "district": 23,
+          "name": "W. Briggs Hopson III",
+          "link": "senate/hopson.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:12:15 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Issaquena",
+            "Madison",
+            "Warren",
+            "Yazoo"
+          ]
+        },
+        {
+          "district": 24,
+          "name": "Justin L. Pope",
+          "link": "senate/pope.xml",
+          "pageLastModified": "Fri, 17 Apr 2026 20:48:57 GMT",
+          "stretches": [
+            "2026-present"
+          ],
+          "counties": [],
+          "arrivedThisTerm": true
+        },
+        {
+          "district": 25,
+          "name": "J. Walter Michel",
+          "link": "senate/michel.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:39:26 GMT",
+          "stretches": [
+            "2016-present",
+            "Senate 1999-2011",
+            "House 1992"
+          ],
+          "counties": [
+            "Hinds",
+            "Madison"
+          ]
+        },
+        {
+          "district": 26,
+          "name": "Kamesha B. Mumford",
+          "link": "senate/mumford.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:29:11 GMT",
+          "stretches": [
+            "2026-present"
+          ],
+          "counties": [],
+          "arrivedThisTerm": true
+        },
+        {
+          "district": 27,
+          "name": "Hillman Terome Frazier",
+          "link": "senate/frazier.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:35:22 GMT",
+          "stretches": [
+            "House of Representatives 1980-1993",
+            "Senate 1993-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 28,
+          "name": "Sollie B. Norwood",
+          "link": "senate/norwood.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:40:06 GMT",
+          "stretches": [
+            "2013-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 29,
+          "name": "David Blount",
+          "link": "senate/blount.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:30:27 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 30,
+          "name": "Dean Kirby",
+          "link": "senate/kirby.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:35:40 GMT",
+          "stretches": [
+            "1992-present"
+          ],
+          "counties": [
+            "Rankin"
+          ]
+        },
+        {
+          "district": 31,
+          "name": "Tyler McCaughn",
+          "link": "senate/mccaughn.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:38:53 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Lauderdale",
+            "Newton",
+            "Rankin",
+            "Scott"
+          ]
+        },
+        {
+          "district": 32,
+          "name": "Rod Hickman",
+          "link": "senate/hickman.xml",
+          "pageLastModified": "Tue, 14 Jan 2025 18:30:42 GMT",
+          "stretches": [
+            "2021-present"
+          ],
+          "counties": [
+            "Kemper",
+            "Lauderdale",
+            "Noxubee",
+            "Winston"
+          ]
+        },
+        {
+          "district": 33,
+          "name": "Jeff Tate",
+          "link": "senate/tate.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:38:18 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Clarke",
+            "Lauderdale"
+          ]
+        },
+        {
+          "district": 34,
+          "name": "Juan Barnett",
+          "link": "senate/barnett.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:27:06 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Forrest",
+            "Jasper",
+            "Jones"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 35,
+          "name": "Andy Berry",
+          "link": "senate/berry.xml",
+          "pageLastModified": "Thu, 30 Apr 2026 14:57:42 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Copiah",
+            "Jefferson Davis",
+            "Lawrence",
+            "Simpson"
+          ]
+        },
+        {
+          "district": 36,
+          "name": "Brian Rhodes",
+          "link": "senate/rhodes.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:40:36 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": []
+        },
+        {
+          "district": 37,
+          "name": "Albert Butler",
+          "link": "senate/butler.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:31:36 GMT",
+          "stretches": [
+            "2010-present"
+          ],
+          "counties": [
+            "Adams",
+            "Claiborne",
+            "Copiah",
+            "Franklin",
+            "Hinds",
+            "Jefferson"
+          ]
+        },
+        {
+          "district": 38,
+          "name": "Gary Brumfield",
+          "link": "senate/brumfield.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:30:47 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Adams",
+            "Amite",
+            "Pike",
+            "Walthall",
+            "Wilkinson"
+          ]
+        },
+        {
+          "district": 39,
+          "name": "Jason T Barrett",
+          "link": "senate/barrett.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:28:45 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Amite",
+            "Franklin",
+            "Lawrence",
+            "Lincoln",
+            "Pike"
+          ]
+        },
+        {
+          "district": 40,
+          "name": "Angela Burks Hill",
+          "link": "senate/hill.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:11:45 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Pearl River",
+            "Stone"
+          ]
+        },
+        {
+          "district": 41,
+          "name": "Joey Fillingane",
+          "link": "senate/fillingane.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:11:14 GMT",
+          "stretches": [
+            "House: 2000-2006",
+            "Senate: 2007-present"
+          ],
+          "counties": [
+            "Covington",
+            "Lamar",
+            "Marion",
+            "Walthall"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 42,
+          "name": "Don Hartness",
+          "link": "senate/hartness.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:06:02 GMT",
+          "stretches": [
+            "2026-present"
+          ],
+          "counties": [
+            "Forrest,Greene,Jones,Wayne"
+          ],
+          "arrivedThisTerm": true,
+          "mapMemberSplit": true
+        },
+        {
+          "district": 43,
+          "name": "Dennis DeBar, Jr.",
+          "link": "senate/debar.xml",
+          "pageLastModified": "Fri, 17 Apr 2026 20:46:00 GMT",
+          "stretches": [
+            "House: 2012-2015",
+            "Senate: 2016-present"
+          ],
+          "counties": [
+            "George",
+            "Greene",
+            "Wayne"
+          ]
+        },
+        {
+          "district": 44,
+          "name": "Chris Johnson",
+          "link": "senate/johnson.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:13:02 GMT",
+          "stretches": [
+            "2020-present",
+            "House 2016-2019"
+          ],
+          "counties": [
+            "Forrest",
+            "Lamar",
+            "Perry"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 45,
+          "name": "Johnny L. DuPree",
+          "link": "senate/dupree.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:07:09 GMT",
+          "stretches": [
+            "2026-present"
+          ],
+          "counties": [
+            "Forrest",
+            "Lamar"
+          ],
+          "arrivedThisTerm": true,
+          "mapMemberSplit": true
+        },
+        {
+          "district": 46,
+          "name": "Philman A. Ladner",
+          "link": "senate/ladner.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 13:34:30 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Hancock",
+            "Harrison"
+          ]
+        },
+        {
+          "district": 47,
+          "name": "Joseph M. Seymour",
+          "link": "senate/seymour.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:40:50 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Jackson",
+            "Pearl River",
+            "Stone"
+          ]
+        },
+        {
+          "district": 48,
+          "name": "Mike Thompson",
+          "link": "senate/thompson.xml",
+          "pageLastModified": "Tue, 18 Aug 2026 14:14:52 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Hancock",
+            "Harrison"
+          ]
+        },
+        {
+          "district": 49,
+          "name": "Joel R.Carter, Jr.",
+          "link": "senate/carter.xml",
+          "pageLastModified": "Wed, 28 Jan 2026 17:19:50 GMT",
+          "stretches": [
+            "2018-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 50,
+          "name": "Scott DeLano",
+          "link": "senate/delano.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:34:45 GMT",
+          "stretches": [
+            "2020-present",
+            "House 2010-2019"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 51,
+          "name": "Jeremy England",
+          "link": "senate/england.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:35:04 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Jackson"
+          ]
+        },
+        {
+          "district": 52,
+          "name": "Brice Wiggins",
+          "link": "senate/wiggins.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 22:43:32 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Jackson"
+          ]
+        }
+      ]
+    },
+    "lower": {
+      "expected": 122,
+      "resolved": 122,
+      "missing": [],
+      "listLastModified": "Tue, 14 Oct 2025 13:17:06 GMT",
+      "superseded": [
+        {
+          "district": 26,
+          "was": "Orlando Paden",
+          "link": "house/paden.xml",
+          "why": "page last modified Mon, 15 Jan 2024 21:55:50 GMT (before the 2025-11-04 specials) AND Open States names \"Otha Williams\" here and no \"paden\" anywhere in the chamber; successor page house/williams.xml carries <DISTRICT>26</DISTRICT>"
+        },
+        {
+          "district": 22,
+          "was": "Jonathan Ray Lancaster",
+          "link": "house/lancaster.xml",
+          "why": "page last modified Mon, 15 Jan 2024 21:31:25 GMT (before the 2025-11-04 specials) AND Open States names \"Justin Crosby\" here and no \"lancaster\" anywhere in the chamber; successor page house/crosby.xml carries <DISTRICT>22</DISTRICT>"
+        }
+      ],
+      "members": [
+        {
+          "district": 1,
+          "name": "Lester Carpenter",
+          "link": "house/carpenter.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:37:25 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Alcorn",
+            "Tishomingo"
+          ]
+        },
+        {
+          "district": 2,
+          "name": "Brad Mattox",
+          "link": "house/mattox.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:18:01 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Alcorn"
+          ]
+        },
+        {
+          "district": 3,
+          "name": "William Tracy Arnold",
+          "link": "house/arnold.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:48:01 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Alcorn",
+            "Prentiss"
+          ]
+        },
+        {
+          "district": 4,
+          "name": "Jody Steverson",
+          "link": "house/steverson.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:04:16 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Alcorn",
+            "Tippah"
+          ]
+        },
+        {
+          "district": 5,
+          "name": "John G. Faulkner",
+          "link": "house/faulkner.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:31:46 GMT",
+          "stretches": [
+            "2014-present"
+          ],
+          "counties": [
+            "Benton",
+            "Lafayette",
+            "Marshall",
+            "Tate"
+          ]
+        },
+        {
+          "district": 6,
+          "name": "Justin Keen",
+          "link": "house/keen.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:20:53 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "DeSoto"
+          ]
+        },
+        {
+          "district": 7,
+          "name": "Kimberly Remak",
+          "link": "house/remak.xml",
+          "pageLastModified": "Mon, 24 Aug 2026 13:32:37 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Desoto"
+          ]
+        },
+        {
+          "district": 8,
+          "name": "John Thomas \"Trey\" Lamar",
+          "link": "house/lamar.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:19:39 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Lafayette",
+            "Tate"
+          ]
+        },
+        {
+          "district": 9,
+          "name": "Cedric Burnett",
+          "link": "house/burnett.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:42:12 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Coahoma",
+            "Quitman",
+            "Tate",
+            "Tunica"
+          ]
+        },
+        {
+          "district": 10,
+          "name": "Josh Hawkins",
+          "link": "house/hawkins.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:27:47 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Panola, Lafayette"
+          ]
+        },
+        {
+          "district": 11,
+          "name": "Lataisha Jackson",
+          "link": "house/jackson_(11th).xml",
+          "pageLastModified": "Mon, 18 Nov 2024 20:19:24 GMT",
+          "stretches": [
+            "2013 - Present"
+          ],
+          "counties": [
+            "Panola",
+            "Tate"
+          ]
+        },
+        {
+          "district": 12,
+          "name": "Clay Deweese",
+          "link": "house/deweese.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:34:06 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Lafayette"
+          ]
+        },
+        {
+          "district": 13,
+          "name": "Steve Massengill",
+          "link": "house/massengill.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:18:40 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Benton",
+            "Lafayette",
+            "Marshall",
+            "Union"
+          ]
+        },
+        {
+          "district": 14,
+          "name": "Samuel Creekmore IV",
+          "link": "house/creekmore_iv.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:36:13 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Union"
+          ]
+        },
+        {
+          "district": 15,
+          "name": "Beth Luther Waldo",
+          "link": "house/waldo.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:01:08 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Pontotoc"
+          ]
+        },
+        {
+          "district": 16,
+          "name": "Rickey Thompson",
+          "link": "house/thompson.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:03:14 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Lee",
+            "Monroe"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 17,
+          "name": "Shane Aguirre",
+          "link": "house/aguirre.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:50:31 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Lee"
+          ]
+        },
+        {
+          "district": 18,
+          "name": "Jerry R. Turner",
+          "link": "house/turner.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:01:41 GMT",
+          "stretches": [
+            "2004-present"
+          ],
+          "counties": [
+            "Lee",
+            "Prentiss",
+            "Union"
+          ]
+        },
+        {
+          "district": 19,
+          "name": "Randy P. Boyd",
+          "link": "house/boyd_(19th).xml",
+          "pageLastModified": "Wed, 08 Feb 2023 21:02:38 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Itawamba",
+            "Lee"
+          ]
+        },
+        {
+          "district": 20,
+          "name": "Rodney Hall",
+          "link": "house/hall.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:28:47 GMT",
+          "stretches": [
+            "Legislative Director and counsel for Congressman Trent Kelly."
+          ],
+          "counties": [
+            "DeSoto"
+          ]
+        },
+        {
+          "district": 21,
+          "name": "Donnie Bell",
+          "link": "house/bell_(21st).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:46:16 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Itawamba",
+            "Tishomingo"
+          ]
+        },
+        {
+          "district": 22,
+          "name": "Justin Crosby",
+          "link": "house/crosby.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:35:52 GMT",
+          "stretches": [
+            "2026-present"
+          ],
+          "counties": [
+            "Chicksaw, Clay, Monroe"
+          ],
+          "arrivedThisTerm": true,
+          "mapMemberSplit": true
+        },
+        {
+          "district": 23,
+          "name": "Perry Bailey",
+          "link": "house/bailey_(23rd).xml",
+          "pageLastModified": "Wed, 08 Apr 2026 20:38:11 GMT",
+          "stretches": [
+            "2023-present"
+          ],
+          "counties": [
+            "Calhoun",
+            "Grenada",
+            "Lafayette",
+            "Webster"
+          ]
+        },
+        {
+          "district": 24,
+          "name": "Jeff Hale",
+          "link": "house/hale.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:29:00 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "DeSoto"
+          ]
+        },
+        {
+          "district": 25,
+          "name": "Dan Eubanks",
+          "link": "house/eubanks.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:32:58 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "DeSoto"
+          ]
+        },
+        {
+          "district": 26,
+          "name": "Otha Williams",
+          "link": "house/williams.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 19:55:08 GMT",
+          "stretches": [
+            "2026-present"
+          ],
+          "counties": [
+            "Bolivar, Coahoma, Sunflower"
+          ],
+          "arrivedThisTerm": true
+        },
+        {
+          "district": 27,
+          "name": "Kenji Holloway",
+          "link": "house/holloway_(27th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:26:21 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Leake,Scott,Madison,Attala"
+          ]
+        },
+        {
+          "district": 28,
+          "name": "W.I. Harris",
+          "link": "house/harris.xml",
+          "pageLastModified": "Tue, 10 Mar 2026 16:24:54 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": []
+        },
+        {
+          "district": 29,
+          "name": "Robert L. Sanders",
+          "link": "house/sanders.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:07:20 GMT",
+          "stretches": [
+            "2021-present"
+          ],
+          "counties": [
+            "Bolivar",
+            "Sunflower"
+          ]
+        },
+        {
+          "district": 30,
+          "name": "Tracey T. Rosebud",
+          "link": "house/rosebud.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:07:49 GMT",
+          "stretches": [
+            "2018-present"
+          ],
+          "counties": [
+            "Bolivar",
+            "Quitman",
+            "Sunflower",
+            "Tallahatchie"
+          ]
+        },
+        {
+          "district": 31,
+          "name": "Otis Anthony",
+          "link": "house/anthony.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:48:17 GMT",
+          "stretches": [
+            "2019-present"
+          ],
+          "counties": [
+            "Bolivar",
+            "Sunflower"
+          ]
+        },
+        {
+          "district": 32,
+          "name": "Solomon C. Osborne",
+          "link": "house/osborne.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:12:00 GMT",
+          "stretches": [
+            "2019-present"
+          ],
+          "counties": [
+            "Leflore"
+          ]
+        },
+        {
+          "district": 33,
+          "name": "Jim Estrada",
+          "link": "house/estrada.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:33:18 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 34,
+          "name": "Kevin Horan",
+          "link": "house/horan.xml",
+          "pageLastModified": "Mon, 22 Jun 2026 20:55:58 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Carroll",
+            "Grenada",
+            "Holmes",
+            "Leflore",
+            "Tallahatchie"
+          ]
+        },
+        {
+          "district": 35,
+          "name": "Joey Hood",
+          "link": "house/hood.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:25:26 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Attala",
+            "Choctaw",
+            "Webster",
+            "Winston"
+          ]
+        },
+        {
+          "district": 36,
+          "name": "Karl Gibbs",
+          "link": "house/gibbs_(36th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:30:23 GMT",
+          "stretches": [
+            "2013-present"
+          ],
+          "counties": [
+            "Hinds",
+            "Madison"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 37,
+          "name": "Andy Boyd",
+          "link": "house/boyd_(37th).xml",
+          "pageLastModified": "Wed, 08 Feb 2023 21:02:54 GMT",
+          "stretches": [
+            "2023-present"
+          ],
+          "counties": [
+            "Clay",
+            "Lowndes",
+            "Oktibbeha"
+          ]
+        },
+        {
+          "district": 38,
+          "name": "Cheikh Taylor",
+          "link": "house/taylor.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:03:27 GMT",
+          "stretches": [
+            "2018-present"
+          ],
+          "counties": [
+            "Clay",
+            "Lowndes",
+            "Oktibbeha"
+          ]
+        },
+        {
+          "district": 39,
+          "name": "Dana McLean",
+          "link": "house/mclean.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:16:48 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Lowndes",
+            "Monroe"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 40,
+          "name": "Hester Jackson McCray",
+          "link": "house/mccray.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:17:37 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "DeSoto"
+          ]
+        },
+        {
+          "district": 41,
+          "name": "Kabir Karriem",
+          "link": "house/karriem.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:21:33 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Lowndes"
+          ],
+          "mapMemberSplit": true
+        },
+        {
+          "district": 42,
+          "name": "Carl L. Mickens",
+          "link": "house/mickens.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:15:49 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Lowndes",
+            "Noxubee",
+            "Winston"
+          ]
+        },
+        {
+          "district": 43,
+          "name": "Rob Roberson",
+          "link": "house/roberson.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:08:24 GMT",
+          "stretches": [
+            "1998-2003; 2016-present"
+          ],
+          "counties": [
+            "Oktibbeha"
+          ]
+        },
+        {
+          "district": 44,
+          "name": "C. Scott Bounds",
+          "link": "house/bounds.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:43:47 GMT",
+          "stretches": [
+            "2004-present"
+          ],
+          "counties": [
+            "Leake",
+            "Neshoba"
+          ]
+        },
+        {
+          "district": 45,
+          "name": "Keith Jackson",
+          "link": "house/jackson_(45th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:22:20 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Kemper, Lauderdale, Winston, Neshoba"
+          ]
+        },
+        {
+          "district": 46,
+          "name": "Karl Oliver",
+          "link": "house/oliver.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:12:13 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Carroll",
+            "Grenada",
+            "Leflore",
+            "Montgomery",
+            "Webster"
+          ]
+        },
+        {
+          "district": 47,
+          "name": "Bryant W. Clark",
+          "link": "house/clark.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:37:12 GMT",
+          "stretches": [
+            "2004-present"
+          ],
+          "counties": [
+            "Attala",
+            "Holmes",
+            "Yazoo"
+          ]
+        },
+        {
+          "district": 48,
+          "name": "Jason White",
+          "link": "house/White.xml",
+          "pageLastModified": "Wed, 10 Apr 2024 21:00:08 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Attala",
+            "Carroll",
+            "Holmes",
+            "Leake"
+          ]
+        },
+        {
+          "district": 49,
+          "name": "Willie Bailey",
+          "link": "house/bailey_(49th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:47:31 GMT",
+          "stretches": [
+            "1995-present"
+          ],
+          "counties": [
+            "Washington"
+          ]
+        },
+        {
+          "district": 50,
+          "name": "John W. Hines, Sr.",
+          "link": "house/hines.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:27:32 GMT",
+          "stretches": [
+            "2001-present"
+          ],
+          "counties": [
+            "Bolivar",
+            "Issaquena",
+            "Washington"
+          ]
+        },
+        {
+          "district": 51,
+          "name": "Timaka James-Jones",
+          "link": "house/james-jones.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:22:06 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Humphreys, Sharkey, Holmes, Yazoo, Leflore"
+          ]
+        },
+        {
+          "district": 52,
+          "name": "Bill Kinkade",
+          "link": "house/kinkade.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:20:02 GMT",
+          "stretches": [
+            "2013-present"
+          ],
+          "counties": [
+            "DeSoto",
+            "Marshall"
+          ]
+        },
+        {
+          "district": 53,
+          "name": "Vince Mangold",
+          "link": "house/mangold.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:19:08 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Franklin",
+            "Jefferson Davis",
+            "Lawrence",
+            "Lincoln",
+            "Pike"
+          ]
+        },
+        {
+          "district": 54,
+          "name": "Kevin Ford",
+          "link": "house/ford_(54th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:31:07 GMT",
+          "stretches": [
+            "2018-present"
+          ],
+          "counties": [
+            "Issaquena",
+            "Warren",
+            "Yazoo"
+          ]
+        },
+        {
+          "district": 55,
+          "name": "Oscar Denton",
+          "link": "house/denton.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:34:56 GMT",
+          "stretches": [
+            "2014-present"
+          ],
+          "counties": [
+            "Warren"
+          ]
+        },
+        {
+          "district": 56,
+          "name": "Clay Mansell",
+          "link": "house/mansell.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:18:53 GMT",
+          "stretches": [],
+          "counties": [
+            "Hinds, Madison"
+          ]
+        },
+        {
+          "district": 57,
+          "name": "Lawrence Blackmon",
+          "link": "house/blackmon.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:44:55 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Madison"
+          ]
+        },
+        {
+          "district": 58,
+          "name": "Jonathan McMillan",
+          "link": "house/mcmillan.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:16:02 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Madison"
+          ]
+        },
+        {
+          "district": 59,
+          "name": "Brent Powell",
+          "link": "house/powell.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:09:47 GMT",
+          "stretches": [
+            "2013-present"
+          ],
+          "counties": [
+            "Rankin"
+          ]
+        },
+        {
+          "district": 60,
+          "name": "Fred Shanks",
+          "link": "house/shanks.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:05:39 GMT",
+          "stretches": [
+            "2018-present"
+          ],
+          "counties": [
+            "Rankin"
+          ]
+        },
+        {
+          "district": 61,
+          "name": "Gene Newman",
+          "link": "house/newman.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:12:45 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Rankin"
+          ]
+        },
+        {
+          "district": 62,
+          "name": "Lance Varner",
+          "link": "house/varner.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:01:24 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Rankin, Simpson, Copiah"
+          ]
+        },
+        {
+          "district": 63,
+          "name": "Stephanie Foster",
+          "link": "house/foster.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:30:42 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Hinds",
+            "Warren",
+            "Yazoo"
+          ]
+        },
+        {
+          "district": 64,
+          "name": "Shanda Yates",
+          "link": "house/yates.xml",
+          "pageLastModified": "Wed, 08 Apr 2026 13:18:31 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Hinds",
+            "Madison"
+          ]
+        },
+        {
+          "district": 65,
+          "name": "Christopher Bell",
+          "link": "house/bell_(65th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:46:00 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 66,
+          "name": "Fabian Nelson",
+          "link": "house/nelson.xml",
+          "pageLastModified": "Mon, 19 Jan 2026 19:29:22 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 67,
+          "name": "Earle S. Banks",
+          "link": "house/banks.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:46:57 GMT",
+          "stretches": [
+            "1993-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 68,
+          "name": "Zakiya Summers",
+          "link": "house/summers.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:03:42 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Hinds",
+            "Rankin"
+          ]
+        },
+        {
+          "district": 69,
+          "name": "Grace Butler-Washington",
+          "link": "house/butler-washington.xml",
+          "pageLastModified": "Tue, 13 Feb 2024 20:43:31 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 70,
+          "name": "Bo Brown",
+          "link": "house/brown.xml",
+          "pageLastModified": "Mon, 15 Jan 2024 20:30:19 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 71,
+          "name": "Ronnie C. Crudup",
+          "link": "house/crudup.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:35:39 GMT",
+          "stretches": [
+            "2019-present"
+          ],
+          "counties": [
+            "Hinds"
+          ]
+        },
+        {
+          "district": 72,
+          "name": "Justis Gibbs",
+          "link": "house/gibbs_(72nd).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:30:09 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Hinds, Madison"
+          ]
+        },
+        {
+          "district": 73,
+          "name": "Jill Ford",
+          "link": "house/ford_(73rd).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:30:55 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Madison"
+          ]
+        },
+        {
+          "district": 74,
+          "name": "Lee Yancey",
+          "link": "house/yancey.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 19:59:16 GMT",
+          "stretches": [
+            "2020-present",
+            "State Senate 2008-2012"
+          ],
+          "counties": [
+            "Rankin"
+          ]
+        },
+        {
+          "district": 75,
+          "name": "Celeste Hurst",
+          "link": "house/hurst.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:23:26 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Madison, Rankin, Scott"
+          ]
+        },
+        {
+          "district": 76,
+          "name": "Gregory Holloway",
+          "link": "house/holloway_(76th).xml",
+          "pageLastModified": "Mon, 27 Jan 2020 19:11:12 GMT",
+          "stretches": [
+            "2000-present"
+          ],
+          "counties": [
+            "Claiborne",
+            "Copiah",
+            "Hinds"
+          ]
+        },
+        {
+          "district": 77,
+          "name": "Price Wallace",
+          "link": "house/wallace.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:00:46 GMT",
+          "stretches": [
+            "2018-present"
+          ],
+          "counties": [
+            "Rankin",
+            "Simpson"
+          ]
+        },
+        {
+          "district": 78,
+          "name": "Randy Rushing",
+          "link": "house/rushing.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:07:34 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Leake",
+            "Newton",
+            "Scott"
+          ]
+        },
+        {
+          "district": 79,
+          "name": "Mark Tullos",
+          "link": "house/tullos.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:02:37 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Jasper",
+            "Smith"
+          ]
+        },
+        {
+          "district": 80,
+          "name": "Omeria Scott",
+          "link": "house/scott.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:06:19 GMT",
+          "stretches": [
+            "1993-present"
+          ],
+          "counties": [
+            "Clarke",
+            "Jasper",
+            "Jones"
+          ]
+        },
+        {
+          "district": 81,
+          "name": "Stephen A. (Steve) Horne",
+          "link": "house/horne.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:24:48 GMT",
+          "stretches": [
+            "2004-present"
+          ],
+          "counties": [
+            "Clarke",
+            "Lauderdale"
+          ]
+        },
+        {
+          "district": 82,
+          "name": "Gregory Elliott",
+          "link": "house/elliott.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:33:36 GMT",
+          "stretches": [
+            "2025-present"
+          ],
+          "counties": []
+        },
+        {
+          "district": 83,
+          "name": "Billy Adam Calvert",
+          "link": "house/calvert.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:37:37 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Lauderdale"
+          ]
+        },
+        {
+          "district": 84,
+          "name": "Troy Smith",
+          "link": "house/smith.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:05:24 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Clarke",
+            "Jasper",
+            "Newton"
+          ]
+        },
+        {
+          "district": 85,
+          "name": "Jeffery Harness",
+          "link": "house/harness.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:28:20 GMT",
+          "stretches": [
+            "2019-present"
+          ],
+          "counties": [
+            "Claiborne",
+            "Franklin",
+            "Jefferson",
+            "Warren"
+          ]
+        },
+        {
+          "district": 86,
+          "name": "Shane Barnett",
+          "link": "house/barnett.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:46:43 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Greene",
+            "Perry",
+            "Wayne"
+          ]
+        },
+        {
+          "district": 87,
+          "name": "Joseph Tubb",
+          "link": "house/tubb.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:02:55 GMT",
+          "stretches": [
+            "2021-present"
+          ],
+          "counties": [
+            "Forrest",
+            "Lamar"
+          ]
+        },
+        {
+          "district": 88,
+          "name": "Charles Blackwell",
+          "link": "house/blackwell.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:44:08 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Jones"
+          ]
+        },
+        {
+          "district": 89,
+          "name": "Donnie Scoggin",
+          "link": "house/scoggin.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:06:51 GMT",
+          "stretches": [
+            "2017-present"
+          ],
+          "counties": [
+            "Jones"
+          ]
+        },
+        {
+          "district": 90,
+          "name": "Noah Sanford",
+          "link": "house/sanford.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:07:05 GMT",
+          "stretches": [
+            "2016-present"
+          ],
+          "counties": [
+            "Covington",
+            "Jefferson Davis",
+            "Simpson"
+          ]
+        },
+        {
+          "district": 91,
+          "name": "Bob Evans",
+          "link": "house/evans.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:32:25 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Copiah",
+            "Covington",
+            "Jefferson Davis",
+            "Lawrence",
+            "Simpson"
+          ]
+        },
+        {
+          "district": 92,
+          "name": "Becky Currie",
+          "link": "house/currie.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:35:27 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Copiah",
+            "Lawrence",
+            "Lincoln"
+          ]
+        },
+        {
+          "district": 93,
+          "name": "Timmy Ladner",
+          "link": "house/ladner.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:19:51 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Hancock",
+            "Pearl River",
+            "Stone"
+          ]
+        },
+        {
+          "district": 94,
+          "name": "Robert L. Johnson III",
+          "link": "house/johnson.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:21:49 GMT",
+          "stretches": [
+            "Senate: 1993-2003",
+            "House of Representatives: 2004-present"
+          ],
+          "counties": [
+            "Adams",
+            "Franklin",
+            "Jefferson"
+          ]
+        },
+        {
+          "district": 95,
+          "name": "Jay McKnight",
+          "link": "house/mcknight.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:17:11 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Hancock",
+            "Harrison"
+          ]
+        },
+        {
+          "district": 96,
+          "name": "Angela Cockerham",
+          "link": "house/cockerham.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:36:39 GMT",
+          "stretches": [
+            "2005-present"
+          ],
+          "counties": [
+            "Adams",
+            "Amite",
+            "Pike",
+            "Wilkinson"
+          ]
+        },
+        {
+          "district": 97,
+          "name": "Sam C. Mims, V",
+          "link": "house/mims.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:15:27 GMT",
+          "stretches": [
+            "2003-present"
+          ],
+          "counties": [
+            "Adams",
+            "Amite",
+            "Franklin",
+            "Pike"
+          ]
+        },
+        {
+          "district": 98,
+          "name": "Daryl Porter",
+          "link": "house/porter.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:10:04 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Pike",
+            "Walthall"
+          ]
+        },
+        {
+          "district": 99,
+          "name": "Bill Pigott",
+          "link": "house/pigott.xml",
+          "pageLastModified": "Mon, 23 Mar 2026 18:46:33 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Lamar",
+            "Marion",
+            "Walthall"
+          ]
+        },
+        {
+          "district": 100,
+          "name": "Ken Morgan",
+          "link": "house/morgan.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:14:28 GMT",
+          "stretches": [
+            "2007-present"
+          ],
+          "counties": [
+            "Lamar",
+            "Marion"
+          ]
+        },
+        {
+          "district": 101,
+          "name": "Kent McCarty",
+          "link": "house/mccarty.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:17:49 GMT",
+          "stretches": [
+            "2019-present"
+          ],
+          "counties": [
+            "Lamar"
+          ]
+        },
+        {
+          "district": 102,
+          "name": "Missy McGee",
+          "link": "house/mcgee.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:17:25 GMT",
+          "stretches": [
+            "2017-present"
+          ],
+          "counties": [
+            "Forrest",
+            "Lamar"
+          ]
+        },
+        {
+          "district": 103,
+          "name": "Percy W. Watson",
+          "link": "house/watson.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:00:27 GMT",
+          "stretches": [
+            "1980-present"
+          ],
+          "counties": [
+            "Forrest"
+          ]
+        },
+        {
+          "district": 104,
+          "name": "Larry Byrd",
+          "link": "house/byrd.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:38:00 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Forrest"
+          ]
+        },
+        {
+          "district": 105,
+          "name": "Elliot Burch",
+          "link": "house/burch.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:42:30 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Greene, Perry, George"
+          ]
+        },
+        {
+          "district": 106,
+          "name": "Jansen T. Owen",
+          "link": "house/owen.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:11:47 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Lamar",
+            "Pearl River"
+          ]
+        },
+        {
+          "district": 107,
+          "name": "Steve Lott",
+          "link": "house/lott.xml",
+          "pageLastModified": "Mon, 14 Jul 2025 20:46:19 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "George, Stone"
+          ]
+        },
+        {
+          "district": 108,
+          "name": "Stacey Hobgood-Wilkes",
+          "link": "house/hobgood-wilkes.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:27:20 GMT",
+          "stretches": [
+            "2017-present"
+          ],
+          "counties": [
+            "Pearl River"
+          ]
+        },
+        {
+          "district": 109,
+          "name": "Manly Barton",
+          "link": "house/Barton.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:46:29 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "George",
+            "Jackson"
+          ]
+        },
+        {
+          "district": 110,
+          "name": "Jeramey Anderson",
+          "link": "house/anderson_(110th).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:49:52 GMT",
+          "stretches": [
+            "2014-present"
+          ],
+          "counties": [
+            "Jackson"
+          ]
+        },
+        {
+          "district": 111,
+          "name": "Jimmy Fondren",
+          "link": "house/fondren.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:31:21 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Jackson"
+          ]
+        },
+        {
+          "district": 112,
+          "name": "John Read",
+          "link": "house/read.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:09:32 GMT",
+          "stretches": [
+            "1993-present"
+          ],
+          "counties": [
+            "Jackson"
+          ]
+        },
+        {
+          "district": 113,
+          "name": "Henry Zuber III",
+          "link": "house/zuber.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 19:57:35 GMT",
+          "stretches": [
+            "2000-present"
+          ],
+          "counties": [
+            "Jackson"
+          ]
+        },
+        {
+          "district": 114,
+          "name": "Jeffrey S. Guice",
+          "link": "house/guice.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:29:28 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Harrison",
+            "Jackson"
+          ]
+        },
+        {
+          "district": 115,
+          "name": "Zachary Grady",
+          "link": "house/grady.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:29:41 GMT",
+          "stretches": [
+            "2024-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 116,
+          "name": "Casey Eure",
+          "link": "house/eure.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:32:44 GMT",
+          "stretches": [
+            "2011-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 117,
+          "name": "Kevin Felsher",
+          "link": "house/felsher.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:31:33 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 118,
+          "name": "Greg Haney",
+          "link": "house/haney.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:28:33 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 119,
+          "name": "Jeffrey Hulum III",
+          "link": "house/hulum.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:23:45 GMT",
+          "stretches": [
+            "2022-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 120,
+          "name": "Richard Bennett",
+          "link": "house/bennett.xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:45:25 GMT",
+          "stretches": [
+            "2008-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 121,
+          "name": "Carolyn Crawford",
+          "link": "house/crawford.xml",
+          "pageLastModified": "Wed, 18 Mar 2026 14:11:10 GMT",
+          "stretches": [
+            "2012-present"
+          ],
+          "counties": [
+            "Harrison"
+          ]
+        },
+        {
+          "district": 122,
+          "name": "Brent Anderson",
+          "link": "house/anderson_(122nd).xml",
+          "pageLastModified": "Wed, 14 Jan 2026 20:49:14 GMT",
+          "stretches": [
+            "2020-present"
+          ],
+          "counties": [
+            "Hancock"
+          ]
+        }
+      ]
+    }
+  }
+}
