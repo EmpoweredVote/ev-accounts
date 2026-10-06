@@ -79,21 +79,6 @@
   },
   {
     "full_name": "Arik Forsman",
-    "topic_key": "homelessness",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "statement-evidence"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
-    ],
-    "failed_urls": [],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Arik Forsman",
     "topic_key": "economic-development",
     "value": 4,
     "action": "review",
@@ -179,10 +164,10 @@
     ],
     "displayed_value": null,
     "verified_sources": [
+      "https://minnesotareformer.com/2022/09/07/st-paul-council-poised-to-exempt-new-construction-from-rent-control/",
       "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
     ],
     "failed_urls": [
-      "https://minnesotareformer.com/2022/09/07/st-paul-council-poised-to-exempt-new-construction-from-rent-control/",
       "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
     ],
     "admin_queue_visible": true
@@ -433,6 +418,21 @@
     "displayed_value": null,
     "verified_sources": [
       "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7864734&GUID=B105F04C-45ED-4AC9-B451-9E69CD2774D2"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Arik Forsman",
+    "topic_key": "homelessness",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
     ],
     "failed_urls": [],
     "admin_queue_visible": true
