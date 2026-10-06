@@ -41,10 +41,20 @@ import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 /**
- * First migration this rule binds on. 1757 is the last one written before the rule existed; everything
- * at or below it predates the guard and is already applied.
+ * First migration this rule binds on, per namespace. The shared sequence uses the bare number; author
+ * namespaces (`CA_0032_…`, `CC_0037_…`) each have their own sequence, so each needs its own cutoff.
+ *
+ * - shared 1758: 1757 is the last one written before the rule existed.
+ * - CA 1: every CA_ migration that deletes answers already carries the guard, so nothing is excused.
+ * - CC 61: CC_0037 (a real delete), CC_0044 and CC_0060 were written after the rule but slipped
+ *   through, because until 2026-10-06 this script skipped every namespaced file. All three are
+ *   applied, so they are grandfathered rather than edited. (CC_0001 and CC_0003 only quote a DELETE
+ *   in a comment and no longer match at all.)
+ *
+ * A namespace missing from this table binds from its first migration.
  */
-const FLOOR = 1758;
+const FLOORS = { '': 1758, CA: 1, CC: 61 };
+const floorOf = (ns) => FLOORS[ns] ?? 1;
 const MIGRATIONS_DIR = 'backend/migrations';
 const LIST_ALL = process.argv.includes('--list');
 
@@ -87,18 +97,23 @@ for (const [label, file] of [
   }
 }
 
-const numberOf = (name) => {
-  const m = /^(\d+)_/.exec(name);
-  return m ? Number(m[1]) : null;
+/** `1758_x.sql` -> { ns: '', n: 1758 }; `CC_0037_x.sql` -> { ns: 'CC', n: 37 }; anything else -> null. */
+const slotOf = (name) => {
+  const m = /^(?:([A-Z]+)_)?(\d+)_/.exec(name);
+  return m ? { ns: m[1] ?? '', n: Number(m[2]) } : null;
 };
+const labelOf = (o) => (o.ns ? `${o.ns}_${String(o.n).padStart(4, '0')}` : String(o.n));
+
+/** SQL `--` comments removed, so a migration that only quotes a DELETE in prose is not counted. */
+const stripLineComments = (sql) => sql.replace(/--[^\n]*/g, '');
 
 const offenders = [];
 for (const name of readdirSync(dir).sort()) {
   if (!name.endsWith('.sql')) continue;
-  const n = numberOf(name);
-  if (n === null) continue;                      // _verify_*.sql, ad-hoc lookups, _templates/
+  const slot = slotOf(name);
+  if (slot === null) continue;                   // _verify_*.sql, ad-hoc lookups, _templates/
   const src = readFileSync(path.join(dir, name), 'utf8');
-  if (!DELETES_ANSWERS.test(src)) continue;
+  if (!DELETES_ANSWERS.test(stripLineComments(src))) continue;
 
   const decision = DECISION.exec(src);
   const problems = [];
@@ -111,30 +126,33 @@ for (const name of readdirSync(dir).sort()) {
     problems.push("does not run the gate's ORPHAN_CONTEXT predicate against the rows it deleted");
   }
 
-  offenders.push({ name, n, problems, decision: decision?.[1] ?? null });
+  offenders.push({ name, ...slot, problems, decision: decision?.[1] ?? null });
 }
-// Numeric, not the lexicographic order readdirSync gives: '248' sorting after '1739' makes the
-// grandfathered list read as though something is out of sequence.
-offenders.sort((a, b) => a.n - b.n);
+// Shared sequence first, then each namespace, numerically within each -- not the lexicographic order
+// readdirSync gives: '248' sorting after '1739' makes the grandfathered list read as out of sequence.
+offenders.sort((a, b) => a.ns.localeCompare(b.ns) || a.n - b.n);
 
+const isGrandfathered = (o) => o.n < floorOf(o.ns);
 const failing = offenders.filter((o) => o.problems.length > 0);
-const grandfathered = failing.filter((o) => o.n < FLOOR);
-const live = failing.filter((o) => o.n >= FLOOR);
+const grandfathered = failing.filter(isGrandfathered);
+const live = failing.filter((o) => !isGrandfathered(o));
 
 if (LIST_ALL) {
   console.log(`${offenders.length} migration(s) delete from inform.politician_answers:\n`);
   for (const o of offenders) {
-    const tag = o.problems.length === 0 ? 'guarded' : o.n < FLOOR ? `grandfathered (<${FLOOR})` : '🔴 UNGUARDED';
-    console.log(`  ${String(o.n).padStart(4)}  [${tag}]  ${o.name}${o.decision ? `  → ${o.decision}` : ''}`);
-    for (const p of o.problems) if (o.n >= FLOOR) console.log(`          - ${p}`);
+    const floor = o.ns ? `${o.ns}_${floorOf(o.ns)}` : floorOf(o.ns);
+    const tag = o.problems.length === 0 ? 'guarded' : isGrandfathered(o) ? `grandfathered (<${floor})` : '🔴 UNGUARDED';
+    console.log(`  ${labelOf(o).padStart(7)}  [${tag}]  ${o.name}${o.decision ? `  → ${o.decision}` : ''}`);
+    if (!isGrandfathered(o)) for (const p of o.problems) console.log(`             - ${p}`);
   }
   process.exit(0);
 }
 
 if (live.length === 0) {
+  const floors = Object.entries(FLOORS).map(([ns, n]) => (ns ? `${ns}_${n}` : n)).join(', ');
   console.log(
     `Answer-delete context guards OK — ${offenders.length} migration(s) delete stance answers; ` +
-    `${offenders.length - failing.length} guarded, ${grandfathered.length} grandfathered below ${FLOOR}.`,
+    `${offenders.length - failing.length} guarded, ${grandfathered.length} grandfathered below ${floors}.`,
   );
   process.exit(0);
 }
