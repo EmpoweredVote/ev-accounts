@@ -401,7 +401,43 @@ reviewer should see the whole record, not only the part that supports the chair.
 
 ---
 
-# 🔴🔴 DULUTH'S ENACTED ORDINANCE TEXT IS READABLE BUT NOT CITABLE (2026-10-05)
+# ✅ CORRECTED 2026-10-05 (LATER) — DULUTH'S ORDINANCE TEXT **IS** CITABLE, AND THE SECTION BELOW SAYS OTHERWISE
+
+The finding below is **wrong in its conclusion and right in every measurement it took**. Keep both.
+
+`duluth-mn.legistar.com/LegislationDetail.aspx?ID=…&GUID=…` serves **116,377 bytes** of readable
+text — sponsor list, full title and the complete operative body — to `curl` **and to node's
+`fetch`**, which is what the verifier uses. A snippet cut from it verifies. Measured on 26-0100R:
+
+| Route | Result |
+|---|---|
+| `?ID=7864734` alone | 200, **19 bytes** |
+| `?ID=7864734&GUID=B105F04C-45ED-4AC9-B451-9E69CD2774D2` | 200, **116,377 bytes**, full body |
+| `?ID=7864734&GUID=<the API's MatterGuid>` | 200, **19 bytes** |
+| `?GUID=…` alone, or a mismatched pair | 200, **19 bytes** |
+
+🔴 **THE WEB GUID IS NOT THE API'S `MatterGuid`. THEY ARE DIFFERENT IDENTIFIERS.** For 26-0100R
+the API returns `8AAC66AD-3744-4503-8EDB-B05D98622FCE` and the page wants
+`B105F04C-45ED-4AC9-B451-9E69CD2774D2`. That is why the probe below got 19 bytes **with "the
+correct GUID taken from `MatterGuid`"** and concluded no page could be cited. The page exists; the
+URL simply cannot be constructed from the Web API.
+
+▶ **To cite a Duluth instrument, get the ID+GUID pair from a link Legistar's own web UI publishes,
+or from a news story that links it.** The 26-0100R pair came from a MinnPost article's hyperlink.
+`Calendar.aspx` does not expose the pair in its HTML, so there is no scripted route yet — finding
+one would make every Duluth instrument citable in bulk.
+
+⚠ **Consequence: `26-005-O` (Stewardship of City Resources, sole author Councilor Randorf, adopted
+2026-02-23) is still readable-and-not-citable**, because its web GUID has not been found. Its text
+states the same chair-3 policy as 26-0100R. **Randorf's `local-immigration` row is unchanged for
+that reason alone**, and resolving that URL is the one thing that would settle it.
+
+⚠ The "do not quote the ordinance text in reasoning" rule below is **withdrawn for any matter whose
+web GUID you have**, and still stands for any matter where you have only the API.
+
+---
+
+# ❌ SUPERSEDED — DULUTH'S ENACTED ORDINANCE TEXT IS READABLE BUT NOT CITABLE (2026-10-05)
 
 The Legistar **Web API** serves the full text — `/matters/{id}/versions` gives a version key, and
 `/matters/{id}/texts/{key}` returns `MatterTextPlain` and `MatterTextRtf`. That is how the camping
