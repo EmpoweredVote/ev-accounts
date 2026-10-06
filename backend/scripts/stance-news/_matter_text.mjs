@@ -12,8 +12,13 @@ if (!ms.length) { console.log('no matter ' + file); process.exit(0); }
 const m = ms[0];
 console.log(`${m.MatterFile} (MatterId ${m.MatterId}) — ${m.MatterStatusName}`);
 
-const texts = await get(`https://webapi.legistar.com/v1/${client}/matters/${m.MatterId}/texts`);
-if (!texts.length) { console.log('no text versions'); process.exit(0); }
+// 🔴 `/matters/{id}/texts` RETURNS 405 ON duluth-mn — it is not a "no text" answer, it is the
+// wrong route. Go through `/versions`, which returns [{Key: MatterTextId, Value: versionNumber}],
+// and fetch each by its KEY. Passing Value gives a 404 that reads exactly like a missing matter.
+const versions = await get(`https://webapi.legistar.com/v1/${client}/matters/${m.MatterId}/versions`);
+if (!versions.length) { console.log('no text versions'); process.exit(0); }
+const texts = [];
+for (const v of versions) texts.push(await get(`https://webapi.legistar.com/v1/${client}/matters/${m.MatterId}/texts/${v.Key}`));
 for (const t of texts) {
   const rtf = t.MatterTextRtf || '';
   const plain = (t.MatterTextPlain || '').replace(/\s+/g, ' ').trim();

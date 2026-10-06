@@ -151,14 +151,48 @@ align before slicing.
 
 #### ▶️ OPEN, IN PRIORITY ORDER
 
-1. **Remaining sponsorship leads.** Randorf's TIF policy and short-term-rental moratorium are
-   **done — both recorded, neither moves a chair** (see below). Still open: her 2021 climate
-   emergency declaration, and Kennedy's ordinance integrating the city's LGBTQ+ commission.
+1. ✅ **Sponsorship leads — the list is EMPTY.** Randorf's TIF policy and short-term-rental
+   moratorium are **done** (see below), and so are the last two: her **2021 climate emergency
+   declaration** and **Kennedy's ordinance integrating the city's LGBTQ+ commission** — both worked
+   through 2026-10-06, **neither moves a chair**, three blanks rewritten. See the block below.
 2. ⚠ **The pre-2026 sponsor scan is INCOMPLETE.** The API caps at 1000 matters per query and three
    year-windows hit the cap. Nothing ladder-bearing was missed for the four members done here, but
    the record is not exhaustive for the longer-serving members.
 
-#### ✅ RANDORF'S TWO SPONSORSHIP LEADS — WORKED THROUGH, NEITHER MOVES A CHAIR
+#### ✅ THE LAST TWO SPONSORSHIP LEADS — WORKED THROUGH 2026-10-06, NEITHER MOVES A CHAIR
+
+Three blanks rewritten, 630 rows, gate `high=0`, verifier `RE-RESEARCH: 0`, 29 rows in review.
+
+**The 2021 climate emergency declaration** (Randorf, with Sipress, Anderson and **Forsman**; adopted
+2021-04-12). 🔴 **ITS OPERATIVE CLAUSES ARE A DECLARATION, A TARGET AND A PLANNING DIRECTIVE.**
+C47 refuses a plan directive. The one number is an emissions target for the **city's own** operations
+and community — not a requirement about how energy is produced — and this ladder asks how much
+government should do to **expand clean energy** (mandates / subsidies / permitting). "Support
+renewable energy development" appears **once**, as one bullet among nine subjects the plan should
+cover: a subject, not a level. Seeking "state, federal, philanthropic and private" money is not the
+public investment of chair 2.
+▶ **IT TOUCHES TWO MEMBERS.** Forsman co-sponsored it and his `climate-change` blank is rewritten
+for the same reason. ⚠ **The sponsor list is the only place either name appears on it** — a grep of
+all nine corpora for "climate emergency" returns three articles, none about this resolution.
+
+**Kennedy's LGBTQ+ commission ordinance** (introduced 2025-10-07, read once, **WITHDRAWN**
+2025-10-27), plus the follow-on she co-sponsored, adopted 2025-12-15.
+🔴 **THE STATEMENT OF PURPOSE CARRIES BOTH READINGS IN ONE SENTENCE** — "improve equity, increase
+efficiency, and strengthen the impact of the human rights-related work". *Strengthening* is chair 2;
+consolidating advisory bodies for *efficiency* with the enforcement powers untouched is chair 3.
+Two adjacent chairs survive ⇒ blank.
+⚠ **THE GENDER-IDENTITY INSERTION LOOKS LIKE AN EXPANSION AND IS NOT.** The same ordinance adopts
+the state human rights act definitions "as it may be amended from time to time", and Minnesota added
+that ground in 2023 — so the insertion **conforms** the city code to state law. 🔴 **This was only
+visible in the RTF amendment marks.** `MatterTextPlain` shows inserted words with no sign that they
+are new, and shows nothing of what was struck.
+
+🔴 **`/matters/{id}/texts` RETURNS 405 ON `duluth-mn`** — so `_matter_text.mjs` cannot read any
+Duluth matter. The route that works is `/matters/{id}/versions` → `[{Key, Value}]` →
+`/matters/{id}/texts/{Key}`. **`Key` is the MatterTextId; `Value` is the version number**, and
+passing `Value` gives a 404 that reads exactly like a matter with no text.
+
+#### ✅ RANDORF'S TWO EARLIER SPONSORSHIP LEADS — WORKED THROUGH, NEITHER MOVES A CHAIR
 
 Different reasons in each case, and both are worth not re-opening.
 
