@@ -151,17 +151,39 @@ align before slicing.
 
 #### ▶️ OPEN, IN PRIORITY ORDER
 
-1. **Three Saint Paul `rent-regulation` rows fail on a Legistar meeting URL** (Noecker, Bowie,
-   Jost). 🔴 The page is NOT broken — 1,065,089 bytes, and it contains both the matter and the
-   member. The defect is the **snippet**, as it was for Jost's transportation row. Each row still
-   verifies on another source, so all three stay queued.
-2. **Sponsorship leads for members already closed**, all from the same scan and now all reachable
+1. **Sponsorship leads for members already closed**, all from the same scan and now all reachable
    through the meeting-walk above: Randorf also sponsored the TIF development-incentives policy, a
    short-term-rental moratorium with interim controls, and a 2021 climate emergency declaration;
    Kennedy sponsored an ordinance integrating the city's LGBTQ+ commission. None acted on.
-3. ⚠ **The pre-2026 sponsor scan is INCOMPLETE.** The API caps at 1000 matters per query and three
+2. ⚠ **The pre-2026 sponsor scan is INCOMPLETE.** The API caps at 1000 matters per query and three
    year-windows hit the cap. Nothing ladder-bearing was missed for the four members done here, but
    the record is not exhaustive for the longer-serving members.
+
+#### ✅ THE SAINT PAUL CITATIONS ARE FIXED TOO (2026-10-05)
+
+🔴 **THE OLD CITATION WAS A PAGE WITHOUT THE PEOPLE ON IT.** Noecker, Bowie and Jost all cited the
+same 47-word agenda row from `MeetingDetail.aspx?LEGID=7306…`. The page is not broken and the
+snippet IS on it — but it is an agenda listing: **"Bowie" and "Jost" appear ZERO times on it**,
+"Noecker" twice and both ~24,000 characters away, and it carries no roll call at all. The verifier
+was right to refuse all three.
+▶ **When a citation fails, ask first whether the PAGE can carry the claim.** This one never could.
+
+The meeting-walk found the two that can, both linked from that same agenda row:
+
+| Page | Carries |
+|---|---|
+| `LegislationDetail` ID 7282238 / GUID 60463898-… | File # **Ord 25-29**, the title, and **"Sponsors: Anika Bowie, Saura Jost, Rebecca Noecker"** |
+| `HistoryDetail` ID 33396952 / GUID 808097B7-… | **"Votes (4:3) … Rebecca Noecker Yea … Anika Bowie Yea … Saura Jost Yea … Cheniqua Johnson Nay"**, and "Mover: Saura Jost" |
+
+All three now verify on **3 of 3** sources with no failures. No value, evidence_type or reasoning
+changed — a re-source and nothing else. A negative control in the script asserts the OLD page still
+fails, so the fix is addressing the real defect.
+
+⚠ **Cheniqua Johnson keeps one failing source, correctly.** Her MinnPost snippet reads "Kim,
+Jalali, Yang and Johnson have all expressed interest…" — a bare common surname with no title. Her
+reasoning describes it accurately AS a group attribution, so the citation stays and the verifier
+declines to publish it. She gained the roll call, which evidences her Nay. **A group attribution is
+not a statement by the member, and a verifier refusing it is the system working.**
 
 #### ✅ The campaign-statements ruling is fully worked through
 

@@ -72,13 +72,6 @@
     },
     {
       "full_name": "Rebecca Noecker",
-      "topic_key": "rent-regulation",
-      "check_id": "statement-needs-review",
-      "severity": "medium",
-      "what": "statement evidence (the person's own words) goes to human review"
-    },
-    {
-      "full_name": "Rebecca Noecker",
       "topic_key": "economic-development",
       "check_id": "statement-needs-review",
       "severity": "medium",
@@ -106,22 +99,8 @@
       "what": "statement evidence (the person's own words) goes to human review"
     },
     {
-      "full_name": "Cheniqua Johnson",
-      "topic_key": "rent-regulation",
-      "check_id": "statement-needs-review",
-      "severity": "medium",
-      "what": "statement evidence (the person's own words) goes to human review"
-    },
-    {
       "full_name": "Nelsie Yang",
       "topic_key": "ranked-choice-voting",
-      "check_id": "statement-needs-review",
-      "severity": "medium",
-      "what": "statement evidence (the person's own words) goes to human review"
-    },
-    {
-      "full_name": "Saura Jost",
-      "topic_key": "rent-regulation",
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"
@@ -157,6 +136,27 @@
     {
       "full_name": "Arik Forsman",
       "topic_key": "homelessness",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Rebecca Noecker",
+      "topic_key": "rent-regulation",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Saura Jost",
+      "topic_key": "rent-regulation",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Cheniqua Johnson",
+      "topic_key": "rent-regulation",
       "check_id": "statement-needs-review",
       "severity": "medium",
       "what": "statement evidence (the person's own words) goes to human review"

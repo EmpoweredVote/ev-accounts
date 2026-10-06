@@ -156,24 +156,6 @@
   },
   {
     "full_name": "Rebecca Noecker",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "statement-evidence"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://minnesotareformer.com/2022/09/07/st-paul-council-poised-to-exempt-new-construction-from-rent-control/",
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Rebecca Noecker",
     "topic_key": "economic-development",
     "value": 4,
     "action": "review",
@@ -235,23 +217,6 @@
     "admin_queue_visible": true
   },
   {
-    "full_name": "Cheniqua Johnson",
-    "topic_key": "rent-regulation",
-    "value": 2,
-    "action": "review",
-    "reasons": [
-      "statement-evidence"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://sahanjournal.com/housing/st-paul-city-council-extends-pre-eviction-filing-period/"
-    ],
-    "failed_urls": [
-      "https://www.minnpost.com/elections/2023/11/st-paul-voters-appear-to-have-sent-7-women-to-city-council-in-historic-election-highlighting-rent-control-sales-tax/"
-    ],
-    "admin_queue_visible": true
-  },
-  {
     "full_name": "Nelsie Yang",
     "topic_key": "ranked-choice-voting",
     "value": 2,
@@ -264,40 +229,6 @@
       "https://www.minnpost.com/politics-policy/2023/03/senate-advances-bill-that-could-move-minnesota-toward-ranked-choice-voting/"
     ],
     "failed_urls": [],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Anika Bowie",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "review-all-mode"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
-    "admin_queue_visible": true
-  },
-  {
-    "full_name": "Saura Jost",
-    "topic_key": "rent-regulation",
-    "value": 3,
-    "action": "review",
-    "reasons": [
-      "statement-evidence"
-    ],
-    "displayed_value": null,
-    "verified_sources": [
-      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/"
-    ],
-    "failed_urls": [
-      "https://stpaul.legistar.com/MeetingDetail.aspx?LEGID=7306&GID=125&G=EDAB5C5F-1041-4DF4-A894-59E957785E36"
-    ],
     "admin_queue_visible": true
   },
   {
@@ -450,6 +381,75 @@
       "https://duluth-mn.legistar.com/LegislationDetail.aspx?ID=7869631&GUID=B9A84056-7F2A-4E7A-ADD4-B55A575AF296"
     ],
     "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Rebecca Noecker",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://minnesotareformer.com/2022/09/07/st-paul-council-poised-to-exempt-new-construction-from-rent-control/",
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/",
+      "https://stpaul.legistar.com/HistoryDetail.aspx?ID=33396952&GUID=808097B7-59D1-42C8-B93A-81BDAB7D45CE"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Anika Bowie",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/",
+      "https://stpaul.legistar.com/LegislationDetail.aspx?ID=7282238&GUID=60463898-B948-4757-B9D9-128B514C7BDD",
+      "https://stpaul.legistar.com/HistoryDetail.aspx?ID=33396952&GUID=808097B7-59D1-42C8-B93A-81BDAB7D45CE"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Saura Jost",
+    "topic_key": "rent-regulation",
+    "value": 3,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.minnpost.com/metro/2025/05/st-pauls-rent-control-policy-could-be-further-watered-down-in-response-to-development-downturn/",
+      "https://stpaul.legistar.com/LegislationDetail.aspx?ID=7282238&GUID=60463898-B948-4757-B9D9-128B514C7BDD",
+      "https://stpaul.legistar.com/HistoryDetail.aspx?ID=33396952&GUID=808097B7-59D1-42C8-B93A-81BDAB7D45CE"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Cheniqua Johnson",
+    "topic_key": "rent-regulation",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://sahanjournal.com/housing/st-paul-city-council-extends-pre-eviction-filing-period/",
+      "https://stpaul.legistar.com/HistoryDetail.aspx?ID=33396952&GUID=808097B7-59D1-42C8-B93A-81BDAB7D45CE"
+    ],
+    "failed_urls": [
+      "https://www.minnpost.com/elections/2023/11/st-paul-voters-appear-to-have-sent-7-women-to-city-council-in-historic-election-highlighting-rent-control-sales-tax/"
+    ],
     "admin_queue_visible": true
   }
 ]
