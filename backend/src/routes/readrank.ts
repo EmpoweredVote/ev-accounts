@@ -2,6 +2,7 @@ import { Router } from 'express';
 import type { Request, Response } from 'express';
 import { z } from 'zod';
 import { getPlayableRaces, getRaceBlindQuotes, computeRaceMatch } from '../lib/readrankService.js';
+import { findLocalities, validateLocalityQuery } from '../lib/readrankLocalities.js';
 import type { JurisdictionGeoIds } from '../lib/essentialsService.js';
 
 /**
@@ -106,6 +107,22 @@ router.post('/races', async (req: Request, res: Response): Promise<void> => {
     }
   }
   await sendRaceList(res, parseRaceListInput(src), 'POST /readrank/races');
+});
+
+// GET /api/readrank/localities?q=<city>[&state=<USPS>] — city name -> incorporated place + county
+router.get('/localities', async (req: Request, res: Response): Promise<void> => {
+  const v = validateLocalityQuery(req.query.q, req.query.state);
+  if (!v.ok) {
+    res.status(422).json({ code: 'VALIDATION_ERROR', message: v.message });
+    return;
+  }
+  try {
+    const localities = await findLocalities(v.q, v.state);
+    res.status(200).json({ localities });
+  } catch (err) {
+    console.error('[GET /readrank/localities] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
 });
 
 // GET /api/readrank/races/:raceId/quotes — blind, topic-grouped
