@@ -2,7 +2,12 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 import express from 'express';
 import request from 'supertest';
 
-const { mockGetPlayableRaces } = vi.hoisted(() => ({ mockGetPlayableRaces: vi.fn() }));
+const { mockGetPlayableRaces, mockFindLocalities } = vi.hoisted(() => ({ mockGetPlayableRaces: vi.fn(), mockFindLocalities: vi.fn() }));
+vi.mock('../lib/db.js', () => ({ pool: { query: vi.fn() } }));
+vi.mock('../lib/readrankLocalities.js', async (importOriginal) => ({
+  ...(await importOriginal<typeof import('../lib/readrankLocalities.js')>()),
+  findLocalities: mockFindLocalities,
+}));
 vi.mock('../lib/readrankService.js', () => ({
   getPlayableRaces: mockGetPlayableRaces,
   getRaceBlindQuotes: vi.fn(),
@@ -26,6 +31,7 @@ const JURISDICTION = {
 
 beforeEach(() => {
   mockGetPlayableRaces.mockReset();
+  mockFindLocalities.mockReset();
   mockGetPlayableRaces.mockResolvedValue({ races: [{ raceId: 'r1' }], counties: { '06037': 'Los Angeles' } });
 });
 
@@ -95,5 +101,44 @@ describe('POST /api/readrank/races', () => {
     const res = await request(app).post('/api/readrank/races').send({ politician_ids: [uuid(1)] });
     expect(res.status).toBe(500);
     expect(res.body).toEqual({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  });
+});
+
+describe('GET /api/readrank/localities', () => {
+  it('422 on missing q', async () => {
+    const res = await request(app).get('/api/readrank/localities');
+    expect(res.status).toBe(422);
+    expect(res.body.code).toBe('VALIDATION_ERROR');
+    expect(mockFindLocalities).not.toHaveBeenCalled();
+  });
+  it('422 on too-short q, bad chars, bad state', async () => {
+    for (const query of [{ q: 'a' }, { q: 'Irv<ine' }, { q: 'x'.repeat(61) }, { q: 'Irvine', state: 'CAL' }, { q: 'Irvine', state: '1' }]) {
+      const res = await request(app).get('/api/readrank/localities').query(query);
+      expect(res.status).toBe(422);
+      expect(res.body.code).toBe('VALIDATION_ERROR');
+    }
+  });
+  it('uppercases state and returns localities', async () => {
+    const rows = [{ name: 'Irvine', state: 'CA', placeGeoid: '0636770', countyGeoid: '06059' }];
+    mockFindLocalities.mockResolvedValue(rows);
+    const res = await request(app).get('/api/readrank/localities').query({ q: ' Irvine ', state: 'ca' });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ localities: rows });
+    expect(mockFindLocalities).toHaveBeenCalledWith('Irvine', 'CA');
+  });
+  it('passes null state when omitted; empty result is 200 []', async () => {
+    mockFindLocalities.mockResolvedValue([]);
+    const res = await request(app).get('/api/readrank/localities').query({ q: 'Nowhere' });
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual({ localities: [] });
+    expect(mockFindLocalities).toHaveBeenCalledWith('Nowhere', null);
+  });
+  it('500 INTERNAL_ERROR on DB error', async () => {
+    mockFindLocalities.mockRejectedValue(new Error('db down'));
+    const spy = vi.spyOn(console, 'error').mockImplementation(() => {});
+    const res = await request(app).get('/api/readrank/localities').query({ q: 'Irvine' });
+    expect(res.status).toBe(500);
+    expect(res.body.code).toBe('INTERNAL_ERROR');
+    spy.mockRestore();
   });
 });
