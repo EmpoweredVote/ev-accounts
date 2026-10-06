@@ -106,7 +106,7 @@ export function buildCodingReport(i: {
       const cRow = rowsBySlot.get(consensusSlot(labels, outcome.value))!;
       const restsOn = cRow.passages.filter((p) => outcome.shared_sources.includes(p.snapshot_id));
       evidenceClass = weakestClass(restsOn);
-      tier = evidenceTier(cRow, outcome.shared_sources).tier;
+      tier = evidenceTier(cRow, outcome.shared_sources, { sourceKind: i.sourceKind, snapshotText: i.snapshotText }).tier;
       const detailed = confirmRowDetailed({ seat, restsOnPassages: restsOn, snapshotText: i.snapshotText, sourceKind: i.sourceKind, rowServedRevisionId: cRow.served_revision_id, bundleServedRevisionId: t.served_revision_id, snapshotUrl: i.snapshotUrl, profiles: i.profiles, snapshotMarkup: i.snapshotMarkup });
       confirm = detailed.findings;
       profiles = detailed.profiles;

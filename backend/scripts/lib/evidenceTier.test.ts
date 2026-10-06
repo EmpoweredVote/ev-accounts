@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { evidenceTier } from './evidenceTier.js';
+import { evidenceTier, textsOverlap } from './evidenceTier.js';
 import type { Passage } from './coderLabel.js';
 
 const rec = (id: string, instrument: string, over: Partial<Passage> = {}): Passage => ({
@@ -39,4 +39,31 @@ describe('evidenceTier', () => {
     expect(evidenceTier(row([rec('a', 'HB 11'), rec('b', 'SB 5', { tally_quote: null })])).tier).toBe('single-source'));
   it('only the shared sources count when a subset is passed', () =>
     expect(evidenceTier(row([rec('a', 'HB 11'), rec('b', 'SB 5')]), ['a']).tier).toBe('single-source'));
+});
+
+describe('evidenceTier — two statements on one day (ruling 2026-10-06)', () => {
+  const DAY = '2024-05-01';
+  const debate = 'Moderator asked about rent. I will cap annual rent increases at five percent for every tenant in the city.';
+  const survey = 'Question 4, housing. My plan funds new public housing on city land and expands the voucher program next year.';
+  const ctx = (kinds: Record<string, string>, texts: Record<string, string>) =>
+    ({ sourceKind: new Map(Object.entries(kinds)), snapshotText: new Map(Object.entries(texts)) });
+  const two = row([stmt('a', DAY), stmt('b', DAY)]);
+
+  it('two first-party pages with different words are two occasions', () =>
+    expect(evidenceTier(two, undefined, ctx({ a: 'transcript', b: 'own-site' }, { a: debate, b: survey })).tier).toBe('corroborated'));
+  it('one page reprinting the other is one occasion (check 3)', () =>
+    expect(evidenceTier(two, undefined, ctx({ a: 'transcript', b: 'own-site' }, { a: debate, b: `Full remarks: ${debate}` })).tier).toBe('single-source'));
+  it('news that day adds no source (check 1)', () =>
+    expect(evidenceTier(two, undefined, ctx({ a: 'own-site', b: 'news' }, { a: debate, b: survey })).tier).toBe('single-source'));
+  it('a pointer adds no source (check 1)', () =>
+    expect(evidenceTier(two, undefined, ctx({ a: 'own-site', b: 'pointer' }, { a: debate, b: survey })).tier).toBe('single-source'));
+  it('unknown text cannot rule out overlap', () =>
+    expect(evidenceTier(two, undefined, ctx({ a: 'transcript', b: 'own-site' }, { a: debate })).tier).toBe('single-source'));
+  it('no source kinds: same-day statements collapse', () =>
+    expect(evidenceTier(two).tier).toBe('single-source'));
+  it('textsOverlap needs a shared run of 8 words', () => {
+    expect(textsOverlap('one two three four five six', 'zero one two three four five six')).toBe(true);
+    expect(textsOverlap('I support rent caps', 'I oppose new taxes')).toBe(false);
+    expect(textsOverlap('a one two three four five six seven eight b', 'x one two three four five six seven eight y')).toBe(true);
+  });
 });
