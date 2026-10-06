@@ -13,6 +13,7 @@ Store with: npm run -s coding:report -- --dir <batch>-<tag> --season-id ... --mo
 Report with: npx tsx scripts/reliability-report.ts --run <tag>
 """
 import json, os, shutil, subprocess, sys, time
+sys.path.insert(0, os.path.dirname(__file__)); from repair import repair
 tag, listfile = sys.argv[1], sys.argv[2]
 par = int(sys.argv[sys.argv.index('--parallel') + 1]) if '--parallel' in sys.argv else 8
 SP = os.environ.get('SCRATCH', '/tmp')
@@ -56,5 +57,8 @@ while jobs or running:
   for item in [x for x in running if x[2].poll() is not None]:
     running.remove(item); done += 1
     if not os.path.exists(f'{item[0]}/labels/coder-{item[1]}.json'): print(f'{os.path.basename(item[0])}: coder {item[1]} wrote no label', flush=True)
+    else:
+      st = repair(item[0], item[1], SP, env)
+      if st != 'valid': print(f'{os.path.basename(item[0])}: coder {item[1]} {st}', flush=True)
   if done and done % 30 == 0: print(f'{done} run(s) finished', flush=True)
 print(f'coders done: {done} run(s)', flush=True)
