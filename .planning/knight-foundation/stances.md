@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | **22** | `2026-10-04-knight-mn-cities` — **OPEN, 14/18 done.** Saint Paul all 8 RE-RESEARCHED 2026-10-05 (4 chairs → 11); Duluth 6 done. **Four Duluth members remain** |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | **28** | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 28 rows in the review queue |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -79,7 +79,95 @@ should be priced higher per member.
 against the city's own page before citing the office — a roster label says how someone arrived, not
 what they hold now, and a departed official's URL can serve their successor.
 
-### ▶️ RESUME HERE — FINISH DULUTH: FOUR MEMBERS LEFT
+### ✅ SLICE 3 IS COMPLETE — 18 members, 630 rows, 28 chairs (2026-10-05)
+
+Tomanek 2 · Jordon Johnson 1 · Desotelle 1 · Clanaugh 0. Nephew gained her first chair, and
+Forsman, Johnson, Tomanek and Desotelle all moved on one ladder. Gate `high=0`, verifier clean,
+nothing auto-published.
+
+#### 🔴🔴 THE BIGGEST FINDING OF THE SLICE: SPONSORSHIP IS AN EVIDENCE CHANNEL AND NOBODY HAD USED IT
+
+`GET /matters/{id}/sponsors` on the Legistar Web API. It seated **four members at
+`local-immigration` 3** off one instrument, Duluth resolution **26-0100R**, which bars city
+agencies from using city resources to assist federal civil immigration enforcement except as
+required by federal law or court order. Chair 1 is excluded **by the document**: it expressly
+preserves compliance with 8 U.S.C. 1373, the statute barring restrictions on immigration-status
+information sharing.
+
+▶ **C46 REFUSES A UNANIMOUS VOTE. C37 ADMITS THE SPONSORSHIP.** Nephew's blank already named this
+instrument and refused it, correctly, as "adopted unanimously by voice vote". That is true of the
+VOTE and it stopped one rule short. **When a measure passes without division, stop asking how
+people voted and ask who wrote it.**
+
+Three tools were blind to it at once: `divided_votes.mjs` (not a divided roll call), the member
+vote lists, and **every news sweep** — no article in any of the nine corpora names the sponsors;
+MinnPost says only "four of their colleagues".
+
+🟢 **And it answers questions prose leaves open.** Forsman thanked "three other councilors" for
+what he "put forward"; the sponsor list shows 24-0588R (the $500,000) is Randorf, Nephew, Forsman
+and Tomanek, and that **24-030-O, the camping ordinance, has NO sponsors at all** — the
+administration brought it. That disproved a sentence already sitting in Forsman's scored row.
+
+#### 🟢 LEGISTAR DETAIL PAGES **ARE** CITABLE — `instruments.md` said they were not
+
+The web GUID is **not** the API's `MatterGuid`. They are different identifiers.
+
+| URL form | Result |
+|---|---|
+| `?ID=…` alone, or a mismatched pair, or **the API's `MatterGuid`** | 200, **19 bytes** |
+| `?ID=…&GUID=<the web GUID>` | 200, **116 KB**, sponsors + full operative text, to curl AND node |
+
+▶ Get the pair from a link Legistar's web UI or a news story publishes — 26-0100R's came from a
+MinnPost hyperlink. `Calendar.aspx` does not expose it, so **there is no scripted route yet, and
+finding one would make every Duluth instrument citable in bulk.**
+
+#### Rules this slice's last four members paid for
+
+1. 🔴 **FOR A COMMON SURNAME THE MEMBER'S OWN SWEEP IS THE WORST SOURCE.** Jordon Johnson: 700
+   files kept on the surname, **9 name him** (1% signal), **0 attributed quotes**. Every passage
+   used came from other members' corpora, where **26** articles name him. Read the slice first.
+2. 🔴 **A NAME-PRESENCE COUNT IS NOT A COVERAGE COUNT.** 10 of those 26 name him only in the
+   council roster sidebar the Duluth News Tribune appends to its local stories.
+3. 🔴 **THE AMBIGUITY CHECK HAS NO STOPLIST AND INVENTS PEOPLE.** It dropped 10 of Clanaugh's 23
+   usable articles for "Repair", "Represents", "While", "Local" and "Yet" Clanaugh — including the
+   candidate forum, his best article. It needs a plausible-given-name test; until then read the
+   excluded list by hand.
+4. 🔴 **A QUESTIONNAIRE SNIPPET MUST START AT THE MEMBER'S NAME.** `checkNameProximity` windows
+   ±500 characters around the SNIPPET START, and a Q&A puts the name at the head of the section —
+   2,096 characters above Tomanek's answer. That is what made Mayor Her's questionnaire uncitable.
+   It works when the run from name to answer is contiguous; the snippet is then long, and says so.
+   ⚠ `TITLE_PATTERN` matches `councilor` and **not the plural `councilors`**, so "BY COUNCILORS
+   JOHNSON" does not rescue a common surname.
+5. ⚠ **Naming a second instrument in a reviewer note trips `instrument-not-cited`.** "Chapter 2"
+   in an aside cost four high findings. Describe an uncitable instrument; do not number it.
+
+#### ▶️ OPEN, IN PRIORITY ORDER
+
+1. **Randorf `local-immigration` is a chair that cannot be cited yet.** She is sole author of
+   26-005-O, which codified the same policy into the city code on 2026-02-23. Its text states
+   chair 3. **Find its Legistar web GUID and the row is settleable.**
+2. **Three Saint Paul `rent-regulation` rows fail on a Legistar meeting URL** (Noecker, Bowie,
+   Jost). 🔴 The page is NOT broken — 1,065,089 bytes, and it contains both the matter and the
+   member. The defect is the **snippet**, as it was for Jost's transportation row. Each row still
+   verifies on another source, so all three stay queued.
+3. **Sponsorship leads for members already closed**, all from the same scan: Randorf sponsored the
+   TIF development-incentives policy, a short-term-rental moratorium with interim controls, and a
+   2021 climate emergency declaration; Kennedy sponsored an ordinance integrating the city's
+   LGBTQ+ commission. None acted on.
+4. ⚠ **The pre-2026 sponsor scan is INCOMPLETE.** The API caps at 1000 matters per query and three
+   year-windows hit the cap. Nothing ladder-bearing was missed for the four members done here, but
+   the record is not exhaustive for the longer-serving members.
+
+#### ✅ The campaign-statements ruling is fully worked through
+
+Randorf `local-environment` was the last flagged row: still blank, because the ladder was always
+the constraint and not admissibility. A sweep of all 630 rows found the obsolete pre-office
+sentence in **three** rows, not the two that were flagged — Randorf `childcare` carried it unnoticed.
+It is now in **0 of 630**. Both childcare blanks keep their independent second reason.
+
+---
+
+### ✅ DONE — THE FOUR REMAINING DULUTH MEMBERS (kept: the recipe below is the one to reuse)
 
 Work in `C:/ev-accounts-stances-mn` on branch `knight/stances-mn`. Everything below is measured,
 not assumed; nothing here needs re-deriving.
