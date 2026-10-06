@@ -15,9 +15,10 @@
  * forces Claude to call report_candidates IMMEDIATELY, skipping web search
  * entirely — resulting in 0 candidates every time.
  *
- * WHY server-side web_search_20250305:
- * Claude executes it internally, returns citation URLs in its chain of thought
- * without us implementing any fetch, HTML parsing, or headless browser.
+ * WHY server-side web_search_20260209:
+ * Anthropic runs the search and returns result URLs in the response, without us
+ * implementing any fetch, HTML parsing, or headless browser. The _20260209
+ * version (dynamic filtering) is the current one for claude-sonnet-4-6.
  * Org-wide web search must be enabled in the Claude Console before this works
  * (console.anthropic.com/settings/privacy).
  */
@@ -70,7 +71,7 @@ export type AnthropicAvailability =
 const REPORT_CANDIDATES_TOOL = {
   name: 'report_candidates',
   description:
-    'Report ALL candidates you found on the official source(s). Include every candidate name that appears on the page — do not filter to only the races provided in the context. For each candidate, include the exact URL where their name appears verbatim. If you cannot find a verbatim citation URL for a candidate, DO NOT include them.',
+    'Report every candidate found on the official source(s), across all races on the page, not only the races listed in the context. For each candidate, give the exact URL where their name appears verbatim. Leave out any candidate you cannot cite that way: an uncited name is not published.',
   input_schema: {
     type: 'object',
     properties: {
@@ -124,7 +125,7 @@ export async function runDiscoveryAgent(
   const hasPrefetch = !!input.prefetchedContent;
 
   const webSearchTool = {
-    type: 'web_search_20250305' as const,
+    type: 'web_search_20260209' as const,
     name: 'web_search',
     max_uses: input.sourceUrl ? 1 : 2,
     ...(input.allowedDomains && input.allowedDomains.length > 0
@@ -132,7 +133,7 @@ export async function runDiscoveryAgent(
       : {}),
   };
 
-  // Agentic loop: web_search_20250305 is a server-side tool that pauses mid-turn
+  // Agentic loop: web_search_20260209 is a server-side tool that pauses mid-turn
   // (stop_reason='pause_turn'). We append the assistant response and continue until
   // Claude calls report_candidates or exhausts its search quota.
   // When prefetchedContent is set, we skip straight to report_candidates (no search needed).
@@ -144,16 +145,18 @@ export async function runDiscoveryAgent(
   const MAX_TURNS = 5; // safety cap: 1 search turn + up to 4 continuations
 
   for (let turn = 0; turn < MAX_TURNS; turn++) {
-    // On the first turn Claude may search; on continuations strip web_search so
-    // max_uses doesn't reset per-request and Claude is forced to report.
+    // On the first turn Claude may search; on continuations tool_choice forces
+    // report_candidates, so it cannot search again. web_search stays declared on
+    // every turn: the history now holds web_search blocks, and a request whose
+    // tools omit a tool the history used is rejected.
     // If pre-fetched content was provided, always force report_candidates directly.
     const isFirstTurn = turn === 0;
     const response = await client.messages.create({
       model: 'claude-sonnet-4-6',
-      max_tokens: 4096,
-      tools: isFirstTurn && !hasPrefetch
-        ? [webSearchTool as any, REPORT_CANDIDATES_TOOL as any]   // search or report
-        : [REPORT_CANDIDATES_TOOL as any],                        // report only
+      max_tokens: 16000,
+      tools: !hasPrefetch
+        ? [webSearchTool as any, REPORT_CANDIDATES_TOOL as any]
+        : [REPORT_CANDIDATES_TOOL as any],
       tool_choice: (isFirstTurn && !hasPrefetch)
         ? ({ type: 'any' } as any)                                // let Claude pick
         : ({ type: 'tool', name: 'report_candidates' } as any),   // must report now
@@ -340,7 +343,7 @@ export async function checkAnthropicAvailability(): Promise<AnthropicAvailabilit
 function buildPrompt(input: DiscoveryAgentInput): string {
   const knownRacesBlock =
     input.knownRaces && input.knownRaces.length > 0
-      ? `\n\nRaces we already have on file for this jurisdiction (MATCHING CONTEXT ONLY — you must NOT limit your results to these; report every candidate you find):\n` +
+      ? `\n\nRaces we already have on file for this jurisdiction (context for matching only; report every candidate you find, not only these races):\n` +
         input.knownRaces
           .map(
             (r) =>
@@ -353,7 +356,7 @@ function buildPrompt(input: DiscoveryAgentInput): string {
   if (input.prefetchedContent) {
     return (
       `You are a candidate-discovery agent for a nonpartisan voter-information app.\n` +
-      `Your job is to find EVERY candidate listed for the upcoming ${input.electionDate} election in ` +
+      `Your job is to find every candidate listed for the upcoming ${input.electionDate} election in ` +
       `${input.jurisdictionName}, ${input.state}.\n\n` +
       `The following is the full text content of the official source page at ${input.sourceUrl ?? 'the election authority website'}, ` +
       `rendered by a headless browser (JavaScript executed):\n\n` +
@@ -361,26 +364,26 @@ function buildPrompt(input: DiscoveryAgentInput): string {
       `Rules:\n` +
       `1. Only report candidates whose names appear verbatim in the source content above.\n` +
       `2. Use ${input.sourceUrl ?? 'the source URL'} as the citation_url for every candidate — it is the page where their names appear.\n` +
-      `3. Report candidates for ALL races you find — not just the ones in the context list below.\n` +
+      `3. Report candidates for all races you find, not only the ones in the context list below.\n` +
       `4. Call the report_candidates tool with all candidates you found.` +
       knownRacesBlock
     );
   }
 
   const sourceBlock = input.sourceUrl
-    ? `\n\nStarting source URL (fetch this page; follow direct same-domain links one level deep if they lead to candidate rosters):\n  ${input.sourceUrl}`
+    ? `\n\nStarting source URL (the official page for this election). You have web_search only and cannot open pages directly, so use your search to find this page and the candidate roster it links to:\n  ${input.sourceUrl}`
     : `\n\nNo starting URL provided. Use web_search (max 2 searches) to locate the official ` +
       `election authority page for ${input.jurisdictionName}, ${input.state} — typically a Secretary of State, ` +
       `county registrar, city clerk, or election commissioner domain. Prefer .gov results.`;
 
   return (
     `You are a candidate-discovery agent for a nonpartisan voter-information app.\n` +
-    `Your job is to find EVERY candidate listed for the upcoming ${input.electionDate} election in ` +
+    `Your job is to find every candidate listed for the upcoming ${input.electionDate} election in ` +
     `${input.jurisdictionName}, ${input.state}.\n\n` +
     `Rules:\n` +
     `1. Only report candidates whose names appear verbatim on an official source page.\n` +
-    `2. Record the EXACT URL where the name appears. If you cannot produce a citation URL, DO NOT report that candidate.\n` +
-    `3. Report candidates for ALL races you find — not just the ones in the context list below.\n` +
+    `2. Record the exact URL where the name appears. Leave out any candidate you cannot cite that way.\n` +
+    `3. Report candidates for all races you find, not only the ones in the context list below.\n` +
     `4. When you have finished gathering candidates, call the report_candidates tool.` +
     sourceBlock +
     knownRacesBlock
