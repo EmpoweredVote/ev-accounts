@@ -33,6 +33,9 @@ directive that states its goal", with register row H16. It decides which existin
 **Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4.2 "The rung's
 object is a clause", with register row H17 and its `climate-change` example. The items that prompted it
 are not named here.
+**Clarified 2026-10-06 (still 0.4 — no new coded variable; ruling by Chris Andrews):** V6 "Evidence
+tier". A chair may still rest on one source, but every published chair carries a tier — `single-source`
+or `corroborated` — that code computes from `rests_on`. Coders code exactly as before.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -473,6 +476,19 @@ carry the S1 reading forward.
 - **One instrument can establish chairs across a whole body** (calibration A4) — but only after a
   cohort pass shows the members are not being separated by language that separates nobody.
 - **Party inference is a bad code** wherever it appears.
+- **Evidence tier (ruling 2026-10-06, Chris Andrews; option C).** One chair-shaped source is enough to
+  seat a chair, but the voter sees how much evidence stands behind it. The tier is **computed by code
+  from the row's `rests_on`, never coded**:
+  - `corroborated` — at least two **independent** sources in `rests_on`, each of which on its own
+    supports the chair (its passage is `chair-shaped` for that rung, or, for a vote, passes the V4.1
+    vote ladder for it).
+  - `single-source` — anything else that seats a chair.
+  - **Independent** means a different instrument (record passages on one instrument are one source —
+    the instrument group of V3), or a different occasion of the person's own words. Two reports of one
+    statement, or news repeating one press release, are one source (principle 6).
+  - _owed:_ whether the person's own explanation of a vote counts as a second source for that same
+    vote, or as the same act. Until ruled, it is the same act (one source).
+  - A tier never upgrades a blank: two `direction-only` sources are still BLANK `direction-only`.
 
 **Good (calibration A3).** A council appointee's vacancy-application packet, published by the city,
 answers the ladder's question in his own words. It matches one rung clause for clause. → that rung.
