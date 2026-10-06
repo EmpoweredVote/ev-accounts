@@ -23,8 +23,8 @@ programme is for.
 
 | # | Slice | Members | Rows | Scored | Batch |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
-| 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
+| 1 | Charlotte NC | 12 | 420 | 5 ✅queued | `2026-10-02-knight-clt-city` (PR #856) |
+| 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 ✅queued | `2026-10-03-knight-fl-cities` (PR #857) |
 | 3 | Duluth, Saint Paul MN | 18 | 630 | **30** ✅queued | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows in the review queue (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
@@ -460,8 +460,11 @@ first of the three to have had it run.
 ▶ **CHECK THE QUEUE, NOT THE TRACKER.** Two sentences in this file asserted a production state
 nobody had queried. The query is one line:
 `SELECT batch_id, count(*) FROM inform.stance_research_review GROUP BY batch_id;`
-⏳ **OPEN: slices 1 and 2 still need `--apply`.** Their batch directories are
-`2026-10-02-knight-clt-city` and `2026-10-03-knight-fl-cities`.
+✅ **SLICES 1 AND 2 APPLIED 2026-10-06.** Charlotte `reviewed=5 stamped=12 errors=0`, Florida
+`reviewed=2 stamped=17 errors=0`. **All three slices are now in the queue: 37 rows, 37 pending,
+23 people.** 🟢 Their prose was far cleaner than slice 3's — **2 of 7 scored rows** carried
+bookkeeping, and only the word "reviewer", against 21 of 30 with correction logs and rule codes.
+Both were Ajmera, both were real qualifications, and both were kept and reworded.
 
 #### 🔴🔴 `reasoning` IS VOTER-FACING, AND 21 OF 30 SCORED ROWS CARRIED PIPELINE BOOKKEEPING
 
