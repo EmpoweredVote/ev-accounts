@@ -15,6 +15,9 @@
  * per CERTIFIED stratum (never a blank or statement-other one), from the figures computed here — no
  * hand-typed numbers. The table is append-only; a decertification is a later row. --note lines go in
  * `reason` prefixed "note:" (the run, the leakage control, who approved it).
+ * --latest scores the CURRENT setup: for each batch, the rows of its newest run (the highest "-rrN", else
+ * the original coding). After a re-run, fresh batches coded under the new prompts have no "-rrN" copy, so
+ * neither the default nor --run sees the setup as it now stands. Not combinable with --run.
  * --slot N scores ONE coder alone (e.g. --slot 1 = the Opus coder) as if it were the whole system: its
  * answer is the "consensus" and every chair it seats is "unanimous". M1 (coder-vs-coder) does not exist
  * for one coder and is printed n/a; the verdict reads "M2–M4 only" and is never recorded (--record is
@@ -40,7 +43,13 @@ const { rows: allRows } = await pool.query(
   `SELECT l.batch_id, l.politician_id, l.office_id, l.topic_id, l.coder_slot, l.valid, l.value, l.rests_on, l.source_codes, l.level
      FROM inform.stance_coder_labels l
     WHERE l.codebook_version = $1 AND NOT l.is_diagnostic AND l.coder_slot BETWEEN 1 AND 3`, [version]);
-const rows = allRows.filter((r) => (slot === null || r.coder_slot === slot) && (run ? r.batch_id.endsWith(`-${run}`) : !RERUN.test(r.batch_id)) && !excluded.has(baseName(r.batch_id)));
+const latest = process.argv.includes('--latest');
+if (latest && run) { console.error('--latest and --run are exclusive: --latest already picks each batch\'s newest run'); process.exit(2); }
+const runNo = (b: string) => Number(b.match(RERUN)?.[0].slice(3) ?? 0);
+const newest = new Map<string, number>();
+for (const r of allRows) newest.set(baseName(r.batch_id), Math.max(newest.get(baseName(r.batch_id)) ?? 0, runNo(r.batch_id)));
+const inView = (b: string) => latest ? runNo(b) === newest.get(baseName(b)) : run ? b.endsWith(`-${run}`) : !RERUN.test(b);
+const rows = allRows.filter((r) => (slot === null || r.coder_slot === slot) && inView(r.batch_id) && !excluded.has(baseName(r.batch_id)));
 // Blind gold (spec §3.3): the newest counted decision per (politician, office, topic). A decision a
 // later row supersedes is not the answer any more.
 const { rows: goldRows } = await pool.query(

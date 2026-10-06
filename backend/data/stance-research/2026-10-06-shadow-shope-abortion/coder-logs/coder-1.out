@@ -1,0 +1,15 @@
+I wrote `coder-1.json` for one row: Shope / `abortion`, coded **rung 3**. The file has one typo that will likely fail the label check. I didn't rewrite it because the instructions allowed exactly one Write.
+
+**The typo:** the second `rests_on` entry reads `e56d73a2-e327-563b-9dba-ca237c0feb46`. It should be `e56d73a2-e326-563b-9dba-ca237c0feb46`, the SB1164 Senate vote page. As written it matches no passage, so the "every `rests_on` entry is a coded passage" check should reject it. That one character needs fixing, or the row needs re-coding.
+
+**Why rung 3:**
+- **SB 1164 (2022):** Shope co-sponsored it and voted Aye. It bars abortion after fifteen weeks "Except in a medical emergency", and the bill defines that term to cover serious, irreversible harm, so it is a health exception. The vote dates from his earlier Senate term, which counts as `in-term` under the same-legislature rule.
+- **HB 2677 (2024):** he voted Aye in the current term on "Section 13-3603, Arizona Revised Statutes, is repealed". That repealed the broader ban which SB 1164's construction clause had left in force.
+- **The annex's repeal path:** on its own, the SB 1164 vote would only be BLANK `direction-only` because of that construction clause. The annex's rung-3 entry also counts a limit that becomes permissive "by repealing a broader ban". So I coded both bills' passages `chair-shaped` and seated "allow abortion during the first trimester, and after that only to protect the mother's health."
+- **The KJZZ quote** ("I do believe in a 15 week [law]") is coded `statement-other`, `direction-only` and left out of `rests_on`.
+
+**Judgement call:** this is the risky part. A stricter reading treats each record as `direction-only`, because neither one alone shows a permitted stage with a health limit after it. That would make the row BLANK `direction-only`.
+
+**`needs_source`:**
+- the text of A.R.S. 13-3603, to confirm it is the broader ban;
+- HB 2677's final status (House vote and governor action).

@@ -1,0 +1,58 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4f7db8ce-def5-4225-b183-654f8f64cb9a|80d6f6f6-c62b-46a8-ae32-725e8a8a8f06|d96f987e-3404-4667-909d-5889116ba6e5",
+      "topic_key": "education-gender-identity",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 5,
+        "shared_sources": [
+          "2129194b-e9c9-555d-b5b9-a1be638fb494",
+          "a39a47e3-b594-50c3-8560-71a03fcd3ea9",
+          "e6eccf73-35fc-5421-8ded-3ceaca1cb358"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "az-azleg-bill-status@4",
+        "az-azleg-bill-text@2"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

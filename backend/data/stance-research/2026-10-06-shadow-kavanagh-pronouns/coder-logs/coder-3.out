@@ -1,0 +1,9 @@
+I wrote the label file to `labels/coder-3.json` with one Write call. One row, John Kavanagh on education-gender-identity, coded as chair 5.
+
+**Chair 5** is "Require written parental permission before staff use a student's chosen name or pronouns". The basis is SB 1001 (2023), which Kavanagh prime-sponsored and voted Yes on in the Senate, 16-12. Its operative section bars staff from using a different pronoun or first name for a minor unless the school has written permission from the parent. That matches all three clauses of the rung: permission, in writing, before use. `rests_on` lists the bill status page, the bill text and the Senate roll call. They are one instrument, so the evidence tier will compute as single-source.
+
+- **Subsection B:** the teacher religious-convictions clause is treated as adjacent and doesn't change the rung.
+- **News passages:** both are Kavanagh's own words quoted by reporters (`statement-other`), coded `direction-only`. Their reporter paraphrase is context only.
+- **Other fields:** I found no `needs_source` items and added no quotes.
+
+I added a `"tally_note": null` key to the roll-call passage. It isn't in the Part E schema and I can't correct it without a second Write. If the validator rejects unknown keys, delete that one line.

@@ -1,0 +1,9 @@
+I've written the labels to `labels/coder-1.json` (codebook 0.4, coder slot 1). It has one row, Janae Shamp on `border-security`, and I left that row blank with the reason `scope-unavailable`.
+
+**Why there's no chair:** the annex says only federal offices have a role on asylum and border handling, and Shamp is an Arizona state senator. Her own record wouldn't seat a chair even without that:
+
+- **SB 1231 (2024):** she was the prime sponsor and voted Yes (`SHAMP Y`, `Passed 16-13-1-0-0`). The bill makes it a state crime to enter "at any location other than a lawful port of entry". A federal grant of asylum is a defense. That is enforcement only and never says who can claim asylum, so I coded it `direction-only`.
+- **HCR 2060 (2024):** she voted Yes, but the measure also covers public-benefit fraud, fentanyl sentencing and e-verify, so I coded it `multi-subject`.
+- **Her two news quotes** (the KJZZ "invasion" line and the Fox10 statement on the veto) name no policy, so both are `rhetorical`. I treated the reporters' descriptions of the bill as context, not as a record (rule H15).
+
+I put the provision quotes on the bill-text pages and the voter line and vote count on the vote and overview pages. I kept the deleted header text in HCR 2060 out of every quote. I listed both news quotes as candidate quotes; both code as tier `none` and not quotable, mainly because they attack Hobbs and Biden. I listed no missing sources.
