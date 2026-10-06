@@ -25,7 +25,7 @@ programme is for.
 | --- | --- | --- | --- | --- | --- |
 | 1 | Charlotte NC | 12 | 420 | 5 | `2026-10-02-knight-clt-city` (PR #856) |
 | 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | **30** | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows in the review queue (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | **30** ✅queued | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows in the review queue (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -424,6 +424,28 @@ is now in **0 rows**, down from 3. A positive control confirmed the detector mat
    than append (`merge_rows.mjs` does this; it replaced exactly 5 and touched no other member).
 
 ---
+#### ✅ APPLIED 2026-10-06 — 30 ROWS ARE IN THE ADMIN REVIEW QUEUE, ALL PENDING
+
+`verify-stance-research --apply --editor-id <chris@empowered.vote>`:
+`pushed=0 reviewed=30 left-alone=0 not-in-admin-queue=0 stamped=18 errors=0`. Confirmed in
+production: `inform.stance_research_review` holds **30 rows for `2026-10-04-knight-mn-cities`,
+30 pending, 17 people**. Nothing auto-published, which is correct — the batch runs in
+`review-all` mode and `AUTO-PUSH` was 0.
+
+🔴🔴 **AND THE APPLY IS WHERE WE LEARNED SLICES 1 AND 2 WERE NEVER APPLIED.** This file said
+Charlotte's five and Florida's two "sit in the admin review queue awaiting human approval".
+They do not. Measured 2026-10-06, before this run: the queue held **four batches, all from
+June 2026**, and no `inform.politician_answers` row had been written since **2026-09-27** —
+days before either PR merged.
+▶ **MERGING THE PR IS NOT PUBLISHING.** A merged branch means the research is in the repo; the
+rows reach a reviewer only when somebody runs `--apply` against production. Slice 3 is the
+first of the three to have had it run.
+▶ **CHECK THE QUEUE, NOT THE TRACKER.** Two sentences in this file asserted a production state
+nobody had queried. The query is one line:
+`SELECT batch_id, count(*) FROM inform.stance_research_review GROUP BY batch_id;`
+⏳ **OPEN: slices 1 and 2 still need `--apply`.** Their batch directories are
+`2026-10-02-knight-clt-city` and `2026-10-03-knight-fl-cities`.
+
 #### 🔴🔴 `reasoning` IS VOTER-FACING, AND 21 OF 30 SCORED ROWS CARRIED PIPELINE BOOKKEEPING
 
 Found 2026-10-06, at the point of publishing. `writeVerifiedStance` writes `reasoning` straight into
