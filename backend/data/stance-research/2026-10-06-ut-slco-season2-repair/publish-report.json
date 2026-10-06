@@ -1,0 +1,37 @@
+[
+  {
+    "full_name": "Mike Kennedy",
+    "topic_key": "climate-change",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence",
+      "replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://mikekennedy.house.gov/media/press-releases/rep-kennedys-license-drill-act-its-way-presidents-desk",
+      "https://mikekennedy.house.gov/issues/energy"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Traci Crockett",
+    "topic_key": "housing",
+    "value": 5,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 5,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://www.traci4countycouncil.com/issues/"
+    ],
+    "failed_urls": []
+  }
+]
