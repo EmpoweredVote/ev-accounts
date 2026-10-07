@@ -1,0 +1,62 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "passages": [
+        {
+          "snapshot_id": "e1ef65d5-bd42-5262-8c07-2e8662a61cc4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted objection to data-centre sales-tax exemptions, alongside a caucus account of his amendment to stop IEDC granting further such exemptions, shows opposition to one incentive but no rung's clauses (no stated rejection of all incentives, no small-business side, no conditions or limits); the amendment itself is reported, not a record.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3bdba939-43a9-55bf-9c2b-d7f11ccff4ee",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-07-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Defends the Diversity Business Enterprise contracting goals for women- and minority-owned businesses and criticises budget reserves; contracting preferences and reserves are not company incentives to attract or grow businesses as the rungs order them.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": ["e1ef65d5-bd42-5262-8c07-2e8662a61cc4"],
+      "reasoning": "Pierce's own words object to data centres paying no sales tax on energy use, and a caucus release says his HB 1002 amendment would have stopped IEDC from granting further data-centre sales-tax exemptions; this opposes one incentive, which fits \"Don't give companies tax breaks or subsidies\", \"don't offer subsidies to attract large outside companies\" and \"pass on deals that cost too much\" alike. No passage states a clause that separates these rungs, so the row is direction-only.",
+      "needs_source": [
+        "Indiana House Journal: text of and action on Rep. Pierce's amendment to HB 1002 (2026) barring further IEDC sales-tax exemptions for data centers",
+        "Pierce's own words or record on incentive programmes generally (e.g. IEDC tax credits, clawbacks, small-business programmes)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "e1ef65d5-bd42-5262-8c07-2e8662a61cc4",
+          "text": "Apparently, it’s fine for trillion-dollar corporations to pay no sales tax on energy use at their data centers",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

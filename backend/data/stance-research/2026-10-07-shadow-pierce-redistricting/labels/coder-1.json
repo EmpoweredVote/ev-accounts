@@ -1,0 +1,114 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "0b82d0fc-79d9-56ac-a5b8-f3319d2e29eb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-05",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Nay on third reading of a bill that combines a new congressional map, mid-decade redistricting authority and court-challenge rules; a No on a multi-part bill proves nothing about any one rung.",
+          "record_kind": "vote",
+          "actor_quote": "N AY - 41 Andrade Errington Karickhoff Pfaff Bartels Garcia Wilburn Klinker Pierce, M",
+          "tally_quote": "Yea 57 Nay 41 Excused 2 Not Voting 0"
+        },
+        {
+          "snapshot_id": "850e9e86-3efa-5bd3-a1ef-3ce3ee5b11ba",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-02",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "(b) The general assembly may amend the congressional districts",
+          "note": "Bill text of the measure he voted against: it keeps map-drawing with the legislature, adds mid-decade authority, limits court remedies and enacts a map; opposing it does not name any rung's map-drawer.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "573edad6-a2b9-5813-8484-e917c31c0c9c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Bill details page (digest and later Senate defeat); shows no act by this person.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "caec4816-01dc-5b50-a525-dc2d2b388e65",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-12-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "He says he offered an amendment to 'establish a non-partisan system of redistricting' with no political data, which leans away from legislative-majority control but names no map-drawer (citizens' commission, bipartisan commission or committee), so it separates no rungs; the amendment itself is not in the sources.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a837cee9-158c-5243-bd19-e4e6692f4e7b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-12-05",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Caucus release quoting him condemning the map as cheating and rigging; names no policy clause about who should draw maps.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His Nay on HB 1032 (2026) is a No on a multi-part bill (new map, mid-decade authority, court-challenge limits) and proves no rung. His own words that he offered an amendment to 'establish a non-partisan system of redistricting, in which no political data could be used' lean against 'the party that controls the state legislature without outside interference' but do not say who should draw the maps, so they cannot separate 'independent citizens' commissions with no elected officials involved' from 'independent redistricting commissions with equal representation from both major parties' or the other rungs on that side.",
+      "needs_source": [
+        "Text of Rep. Pierce's second-reading amendment to HB 1032 (2026) establishing a non-partisan redistricting system, and the House roll call on it (iga.in.gov / House Journal)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "caec4816-01dc-5b50-a525-dc2d2b388e65",
+          "text": "I offered an amendment to not redraw the maps now and instead establish a non-partisan system of redistricting, in which no political data could be used when maps are next redrawn in 2031.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "a837cee9-158c-5243-bd19-e4e6692f4e7b",
+          "text": "We have a president who wants to cheat in the midterms to preserve his party's control of the U.S. House of Representatives.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["is-attack", "off-question"]
+        }
+      ]
+    }
+  ]
+}

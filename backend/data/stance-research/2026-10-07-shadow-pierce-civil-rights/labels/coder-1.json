@@ -1,0 +1,78 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "58a775de-e269-5080-83c6-54a2f1c293c9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-07-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "He defends keeping the Diversity Business Enterprise program against the governor's non-enforcement, which sets him against rung 5 but names no enforcement-strengthening, mandate, or 'no expansion' clause, so it separates sides, not rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5c610196-ce30-5ead-a6ae-e520df71c2ff",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The ACLU 100% score is a scorecard grade (not-evidence); his own words ('we must defend the civil rights and liberties of every Hoosier') name no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In his July 2026 newsletter he defends the Diversity Business Enterprise program, saying 'The DBE goals have been in place since 1983 to level the playing field for minority-owned and women-owned businesses competing for state contracts', which places him against 'eliminate affirmative action and all race-based government programs' but does not choose among 'strengthen civil rights enforcement and address systemic discrimination', 'maintain current civil rights laws while promoting equal opportunity', or the mandate rung. The ACLU scorecard is not evidence and his March statement is rhetorical.",
+      "needs_source": [
+        "Indiana General Assembly roll calls or bill pages for any civil-rights or anti-discrimination bill Pierce authored or voted on (e.g. bills on the Diversity Business Enterprise / minority and women business enterprise program)",
+        "The individual roll calls listed on the ACLU of Indiana 2026 Legislative Scorecard, each to be coded as a record"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "58a775de-e269-5080-83c6-54a2f1c293c9",
+          "text": "The DBE goals have been in place since 1983 to level the playing field for minority-owned and women-owned businesses competing for state contracts.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "58a775de-e269-5080-83c6-54a2f1c293c9",
+          "text": "If the law needs to change, that’s the responsibility of the General Assembly, not an executive announcement or order.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "5c610196-ce30-5ead-a6ae-e520df71c2ff",
+          "text": "As national culture wars continue to influence state politics, we must defend the civil rights and liberties of every Hoosier.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

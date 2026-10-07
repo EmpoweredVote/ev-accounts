@@ -1,0 +1,42 @@
+[
+  {
+    "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+    "topic_key": "tariffs",
+    "topic_revision_id": "9f094155-f604-47e8-93db-54a3142420ca",
+    "served_revision_id": "c9b67f92-c9b9-4f7e-a10b-c312a4219346",
+    "question_number": 38,
+    "title": "United States Tariff Policy",
+    "question_text": "How should trade policy balance domestic industry with global commerce?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "eliminate all tariffs and pursue completely free trade with every country."
+      },
+      {
+        "value": 2,
+        "text": "reduce most tariffs, keeping only limited exceptions."
+      },
+      {
+        "value": 3,
+        "text": "use tariffs selectively to protect key American industries and jobs."
+      },
+      {
+        "value": 4,
+        "text": "increase tariffs on countries that don't trade fairly with America."
+      },
+      {
+        "value": 5,
+        "text": "impose high tariffs on all imports to bring manufacturing back to America."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  }
+]

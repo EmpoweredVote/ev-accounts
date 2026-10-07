@@ -37,6 +37,7 @@ def window(text, anchor, words=60):
   toks = [(m.start(), m.end()) for m in re.finditer(r'\S+', text)]
   k = next((n for n, (a, b) in enumerate(toks) if b > i), 0)
   lo, hi = max(0, k - words // 3), min(len(toks), k + words)
+  if hi - lo < 40: lo = max(0, hi - 40)  # near the end of a page: reach back so the snippet keeps 25+ words
   return text[toks[lo][0]:toks[hi - 1][1]]
 
 def instrument_window(text, instrument):
