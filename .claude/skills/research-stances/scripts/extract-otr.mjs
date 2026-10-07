@@ -12,7 +12,7 @@
  *
  *   node .claude/skills/research-stances/scripts/extract-otr.mjs --race <race_id>
  *   node .../extract-otr.mjs --race <id> --out /abs/dir --base https://accounts-api.empowered.vote
- *   node .../extract-otr.mjs --politician <uuid>[,<uuid>…] [--out /abs/dir]
+ *   node .../extract-otr.mjs --politician <uuid>[,<uuid>…] [--city <City>] [--out /abs/dir]
  *
  * --politician (2026-10-07) finds EVERY meeting a person spoke in, whatever race it is linked to (or none):
  * a seated officeholder off the ballot, a council member, a primary forum linked only to the primary
@@ -21,6 +21,10 @@
  * url = the OTR page, human_saved_path = the file). Each file names the date On the Record lists AND
  * the date in the source's own file name when they differ — they can (an LWV forum held 2026-03-23 is
  * listed as 2026-06-09), and the election-cycle rule needs the real date.
+ * NAME FALLBACK (--city): a person with no LINKED appearance may still speak under their name with no
+ * politician link (Mayor Kerry Thomson, Bloomington council 2026-05-06). With --city, every meeting in
+ * that city is scanned for an unlinked speaker whose name matches, and those turns are written too,
+ * flagged "found by name, NOT linked" — fix the link in On the Record (run_local.py --relink-person).
  *
  * The OTR public API (authoritative transcript source):
  *   GET /api/people                              -> [{ politicianId, name, ... }]
@@ -47,6 +51,7 @@ function parseArgs(argv) {
     else if (k === '--base') a.base = argv[++i];
     else if (k === '--candidates') a.candidates = argv[++i].split(',').map(s => s.trim()).filter(Boolean);
     else if (k === '--names') a.names = argv[++i].split(',').map(s => s.trim()).filter(Boolean);
+    else if (k === '--city') a.city = argv[++i];
     else if (k === '--politician') a.politicians = argv[++i].split(',').map(s => s.trim()).filter(Boolean);
   }
   return a;
@@ -119,18 +124,37 @@ function sourcePathDate(m) {
   return hit ? hit[1] : null;
 }
 
+// Meetings in `city` where an UNLINKED speaker's name matches `name`; shaped like /appearances rows.
+async function byNameInCity(args, name) {
+  const all = await getJSON(`${args.base}/api/meetings?city=${encodeURIComponent(args.city)}`);
+  const meetings = Array.isArray(all) ? all : all.meetings || [];
+  const out = [];
+  for (const m of meetings) {
+    let segs; try { segs = await fetchAllSegments(args.base, m.id); } catch { continue; }
+    const mine = segs.filter((sg) => !sg.politicianSlug && sg.speakerName && nameMatch(sg.speakerName, name));
+    if (mine.length) out.push({ meetingId: m.id, date: m.date, eventKind: m.eventKind, meetingType: m.meetingType, city: m.city,
+      title: m.title, segments: mine, byName: mine[0].speakerName });
+  }
+  return out;
+}
+
 async function byPolitician(args) {
   const here = dirname(fileURLToPath(import.meta.url));
   const evRoot = resolve(here, '..', '..', '..', '..');
   const outRoot = args.out ? resolve(args.out) : join(evRoot, 'backend', 'data', 'stance-research', 'otr-transcripts', 'politician');
   let nFiles = 0, nPeople = 0;
   for (const id of args.politicians) {
-    let person, apps;
+    let person = null, apps = [];
     try {
       person = await getJSON(`${args.base}/api/people/${id}`);
       apps = (await getJSON(`${args.base}/api/people/${id}/appearances`)).appearances || [];
-    } catch (e) { console.log(`  ${id}: not on On the Record (${e.message})`); continue; }
-    if (!apps.length) { console.log(`  ${person.name}: 0 appearances`); continue; }
+    } catch (e) { /* not linked anywhere: try the name fallback */ }
+    if (!apps.length && args.city) {
+      const name = person?.name || args.names?.[args.politicians.indexOf(id)];
+      if (name) apps = await byNameInCity(args, name);
+      if (apps.length) person = person || { name };
+    }
+    if (!apps.length) { console.log(`  ${person?.name || id}: 0 appearances${args.city ? '' : ' (pass --city <City> --names <Full Name> to also search unlinked speakers by name)'}`); continue; }
     nPeople++;
     const slug = (person.name || id).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
     const dir = join(outRoot, slug); mkdirSync(dir, { recursive: true });
@@ -146,7 +170,8 @@ async function byPolitician(args) {
         `- Video: ${youtubeUrl(m)}`,
         `- Date on On the Record: ${a.date || 'n/a'}` + (real && real !== a.date ? ` · date in the source's file name: ${real}` : ''),
         `- Kind: ${a.eventKind || 'n/a'} · ${a.meetingType || ''} · ${a.city || ''}`,
-        `- Linked races: ${(m.raceIds || []).join(', ') || 'none'}`, ''];
+        `- Linked races: ${(m.raceIds || []).join(', ') || 'none'}`,
+        ...(a.byName ? [`- 🔴 Found by name ("${a.byName}"), NOT linked to this politician in On the Record — confirm the speaker, then relink`] : []), ''];
       for (const sg of a.segments || []) lines.push(`${fmtTime(sg.startTime)} ${(sg.text || '').trim()}`);
       writeFileSync(file, lines.join('\n') + '\n');
       nFiles++;
