@@ -1,65 +1,85 @@
 # Duvall + Redmond — headshot wave
 
-Compiled 2026-10-06. Nothing is published yet; `photo_custom_url` is unwritten for all 16.
+Compiled 2026-10-06. Nothing is published: `photo_custom_url` is unwritten for all 16 pending
+approval of the contact sheet.
 
-## Duvall — 6 of 8, ready for approval
+**13 of 16 proposed. 3 left blank.**
 
-`headshots/contact-sheet-duvall.png`. Every frame comes from that member's own page on
-`duvallwa.gov` and carries the page's own `alt="Profile picture of <NAME>"`, which is a second
-factor independent of where the image sits.
+## Duvall — 6 of 8
 
-| Seat | Member | Image | Size | Note |
+`headshots/contact-sheet-duvall.png`. Each frame is from that member's own page on `duvallwa.gov`
+and carries the page's own `alt="Profile picture of <NAME>"`, a second factor independent of where
+the image sits.
+
+| Seat | Member | documentID | Size | Note |
 |---|---|---|---|---|
-| Mayor | Amy McHenry | `documentID=14439` | 2048x1638 | colour |
-| Pos 1 | Adam Olen | `documentID=13383` | 2600x1734 | colour |
-| Pos 4 | Ronn Mercer | `documentID=14773` | 2048x1638 | colour |
-| Pos 5 | Mike Supple | `documentID=8889` | **165x231** | colour, but small — the city publishes nothing larger |
-| Pos 6 | Paul Wiggins | `documentID=14441` | 2048x1638 | colour |
-| Pos 7 | Jennifer Hernandez | `documentID=14626` | 2048x1638 | colour |
+| Mayor | Amy McHenry | 14439 | 2048x1638 | colour |
+| Pos 1 | Adam Olen | 13383 | 2600x1734 | colour |
+| Pos 2 | Linda Conway | — | — | **blank** — appointed 2026-09-01, no member page yet |
+| Pos 3 | Sara Taylor | — | — | **blank** — appointed 2026-08-18, no member page yet |
+| Pos 4 | Ronn Mercer | 14773 | 2048x1638 | colour |
+| Pos 5 | Mike Supple | 8889 | **165x231** | colour; the city publishes nothing larger |
+| Pos 6 | Paul Wiggins | 14441 | 2048x1638 | colour |
+| Pos 7 | Jennifer Hernandez | 14626 | 2048x1638 | colour |
 
-**Positions 2 (Linda Conway) and 3 (Sara Taylor) have no portrait.** Neither has a member page yet;
-both were appointed in August and September 2026. They stay blank.
+## Redmond — 7 of 8
 
-⚠ **A guessed document id produced a nine-person group photo under `alt="Profile picture of Amy
-McHenry"`.** I had incremented Mercer's id rather than reading McHenry's page. The alt was right
-about the intent and wrong about the file. Only looking at the frame caught it. **Read the id off
-the page; never increment one.**
+`headshots/contact-sheet-redmond.png`. Councilmembers from `redmond.gov/189/City-Council`, the
+Mayor from `redmond.gov/284/Office-of-the-Mayor`. Every frame carries an `alt` naming the person.
 
-## Redmond — 0 of 8. There is no usable source.
+| Seat | Member | documentID | Size | Note |
+|---|---|---|---|---|
+| Mayor | Angela Birney | 157 | 800x800 | colour |
+| Pos 1 | Sayna Parsi | 40581 | 800x800 | colour |
+| Pos 2 | Vivek Prakriya | 40270 | 1864x1864 | **REJECTED — black and white** |
+| Pos 3 | Jessica Forsythe | 21593 | 500x500 | colour |
+| Pos 4 | Melissa Stuart | 21592 | 500x500 | colour |
+| Pos 5 | Vanessa Kritzer | 11885 | 500x500 | colour |
+| Pos 6 | Menka Soni | 40269 | 1650x1650 | colour |
+| Pos 7 | Angie Nuevacamina | 30947 | 500x500 | colour |
 
-Three sources were tried and all three fail, for different reasons:
+## 🔴 Four detector failures, every one caught by looking
 
-1. **The city publishes no member portraits.** Checked in the rendered DOM with Playwright, not
-   just the raw HTML: `redmond.gov/m/directory/employee?eid=<n>` serves the member's name in the
-   page title and **the same four chrome images for every member**, including one empty-alt
-   banner identical across all eight. The council pages carry none either.
-   🔴 My first control here — "the surname appears in the page HTML" — **passed for all eight and
-   was worthless**. A control for a portrait must require an image whose alt or filename names
-   *this* member.
+**1. `redmond.gov/189` DOES publish portraits — they are BELOW THE FOLD.** An earlier pass of this
+wave concluded Redmond published none. That was wrong. The portraits load near the bottom of
+`/189`; a text dump of the page truncates before reaching them, and the member staff-directory
+pages (`/m/directory/employee?eid=`) genuinely have none, which made the wrong conclusion look
+confirmed. **Scroll the page, in a real browser, before concluding an image is absent.**
 
-2. **The city's press distribution has only group and event shots.** The 2026-01-21 release links
-   a Dropbox folder (`Council 01-20-26`) holding `Full Council.jpg`, `Nuevacamina, Parsi,
-   Stuart.jpg` and three Parsi swearing-in frames. `headshots/redmond-press-full-council.jpg` is a
-   clean, well-lit 5712x4284 shot of all seven councilmembers — crops would be good quality — but
-   it is **unlabelled**, and six of the seven are women of broadly similar age. This is the exact
-   case a contact sheet cannot resolve by itself.
+**2. The control that let that happen passed for the wrong reason.** "The member's surname appears
+in the page HTML" returned OK for all eight Redmond members while not one of those pages held a
+portrait. 🔴 **A portrait control must require an image whose `alt` or filename names THAT member**,
+never merely the presence of a name somewhere in the markup.
 
-3. 🔴🔴 **The King County voters' pamphlet is MONOCHROME, and my attempt to label it failed.**
-   Measured R-G-B spread of every extracted pamphlet frame is **0.00** — the pamphlet is printed
-   black and white, so no-monochrome bars all of it from publication.
-   Worse, the attempt to use those frames as *identification references* for the group photo
-   produced demonstrably wrong pairings: see `headshots/REJECTED-pamphlet-misattribution.png`,
-   where nearest-name matching labelled **a man as "Angela Birney" and another man as "Angie
-   Nuevacamina"** — both are women. A two-column pamphlet layout defeats proximity matching.
-   **That strip is kept as evidence of the failure mode, not as data. Do not use it.**
+**3. A guessed `documentID` served a nine-person group photo** under
+`alt="Profile picture of Amy McHenry"`. The id had been incremented from Mercer's rather than read
+off McHenry's page; the real one is 14439. **Read the id off the page; never increment one.**
 
-### What would actually work for Redmond
+**4. 🔴🔴 A SATURATION THRESHOLD PASSES A TINTED BLACK-AND-WHITE.** Vivek Prakriya's official
+portrait (`headshots/REJECTED-prakriya-monochrome.jpg`) is black and white with a cool tint, so its
+mean R-G-B spread measured **15.0** and cleared a threshold of 6. Two further attempts also failed:
+a hue-variance test over the face crop flagged six colour portraits as mono, because a face crop is
+mostly skin and skin is one hue.
 
-Identify the seven faces in the press group shot against a labelled, non-pamphlet source, then crop
-each from the colour original. The city's own release names three of them in one file
-(`Nuevacamina, Parsi, Stuart.jpg`), and Vivek Prakriya is the only man in the group, so four of
-seven are constrained before any further work. The remaining identifications need a labelled photo
-the city has not published, or a request to the city's communications office.
+The test that works is **chromaticity constancy over the whole frame** — normalise each pixel by
+its own R+G+B and take the standard deviation. A greyscale or duotone image sits at one point;
+a colour photograph spreads out. Measured here, with controls that fired in both directions:
 
-**Until then Redmond stays blank. A blank beats a wrong face**, and this wave produced two concrete
-demonstrations of how easily the wrong face would have been published.
+```
+known greyscale (pamphlet)   0.0     <- control, must be low
+known colour (city portrait) 87.6    <- control, must be high
+Vivek Prakriya                6.4    <- MONOCHROME
+every other frame        47.7-164.1  <- colour
+```
+
+## Sources that do NOT work, recorded so nobody retries them
+
+- **The King County voters' pamphlet is printed monochrome.** Every extracted frame measures 0.0.
+  Barred entirely.
+- **Pamphlet frames cannot be used to identify people either.** Nearest-name matching on a
+  two-column pamphlet page labelled two men as "Angela Birney" and "Angie Nuevacamina", both of
+  whom are women. Kept as `headshots/REJECTED-pamphlet-misattribution.png` — evidence of the
+  failure mode, not data.
+- **Redmond's press distribution** (Dropbox, linked from the 2026-01-21 release) holds only group
+  and event shots: `headshots/redmond-press-full-council.jpg` is a clean 5712x4284 frame of all
+  seven councilmembers but is unlabelled. Not needed now that `/189` is known to carry portraits.
