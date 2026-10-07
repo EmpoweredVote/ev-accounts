@@ -49,7 +49,9 @@ export function parseSourceProfile(md: string, file: string): SourceProfile {
   for (const k of TOP_KEYS) if (h[k] === undefined) fail(`missing "${k}"`);
   if (!str(h.profile)) fail('profile must be a non-empty string');
   if (!Number.isInteger(h.version) || (h.version as number) < 1) fail('version must be an integer >= 1');
-  if (!str(h.scope) || !/^(state|county|place):[A-Za-z0-9]+$/.test(h.scope as string)) fail(`scope "${String(h.scope)}" must be state:<USPS> | county:<fips> | place:<geoid>`);
+  // nation:US is Congress (House Clerk roll calls, congress.gov bill pages) — added 2026-10-07 for the first
+  // federal production batch. It never matches confirm.ts's prior-chamber route, which is state-scoped.
+  if (!str(h.scope) || !/^(state|county|place|nation):[A-Za-z0-9]+$/.test(h.scope as string)) fail(`scope "${String(h.scope)}" must be state:<USPS> | county:<fips> | place:<geoid> | nation:US`);
   if (!str(h.body)) fail('body must be a non-empty string');
   if (!isObj(h.match)) return fail('match must be a mapping');
   for (const k of Object.keys(h.match)) if (k !== 'url_prefixes') fail(`unknown key "match.${k}"`);
