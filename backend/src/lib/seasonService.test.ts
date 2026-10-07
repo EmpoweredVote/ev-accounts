@@ -9,6 +9,7 @@ import {
   isSeasonWriteError, SeasonWriteError,
   WRITABLE_TOPIC_IDS_SQL, writableTopicIds, OPEN_SEASON_ANSWER_SQL,
   SEASON_IS_PUBLISHED, topicAskedByPublishedSeason,
+  writtenForServedVersion, newestAnswerLateral, DISPLAYED_VALUES_SQL,
 } from './seasonService.js';
 
 beforeEach(() => mockQuery.mockReset());
@@ -314,5 +315,55 @@ describe('topicAskedByPublishedSeason — shown if a published season asks it', 
     expect(sql).toMatch(/^EXISTS \(/);
     expect(sql).toMatch(/WHERE sq\.topic_id = ct\.id\)$/);
     expect(topicAskedByPublishedSeason('ct2.id')).toMatch(/WHERE sq\.topic_id = ct2\.id\)$/);
+  });
+});
+
+// A chair shows only on the ladder version it was written for
+// (docs/superpowers/specs/2026-10-07-version-aware-reads-design.md).
+describe('writtenForServedVersion', () => {
+  const sql = writtenForServedVersion('a.topic_id', 'a.topic_revision_id');
+
+  it('compares the VERSION of the answer\'s revision with the version the OPEN season pins', () => {
+    expect(sql).toMatch(/vs\.status = 'open'/);
+    expect(sql).toMatch(/vpin\.id = vq\.topic_revision_id/);
+    expect(sql).toMatch(/vw\.id = a\.topic_revision_id/);
+    expect(sql).toMatch(/vw\.version = vpin\.version/);
+  });
+
+  // ADR 0005 §3.4: a topic a season dropped is still answered. No served ladder, nothing to disagree with.
+  it('is true when the open season asks no such topic (or no season is open)', () => {
+    expect(sql).toMatch(/NOT EXISTS \(SELECT 1 FROM inform\.season_questions vq[\s\S]*?vq\.topic_id = a\.topic_id\)/);
+  });
+
+  it('compares by version, not by revision id (a clarifying revision keeps its chairs)', () => {
+    expect(sql).not.toMatch(/vw\.id = vpin\.id/);
+    expect(sql).not.toMatch(/is_current/);
+  });
+
+  it('threads the caller\'s expressions through', () => {
+    const other = writtenForServedVersion('x.t', 'x.rev');
+    expect(other).toContain('vq.topic_id = x.t');
+    expect(other).toContain('vw.id = x.rev');
+    expect(other).not.toContain('a.topic_id');
+  });
+});
+
+describe('newestAnswerLateral and DISPLAYED_VALUES_SQL follow the version rule', () => {
+  it('newestAnswerLateral applies the predicate AFTER LIMIT 1, so it never falls back to an older season', () => {
+    const q = newestAnswerLateral('p.id', 't.id', 'ans');
+    expect(q.indexOf('vw.version = vpin.version')).toBeGreaterThan(q.indexOf('LIMIT 1'));
+    expect(q).toMatch(/\) n\s[\s\S]*WHERE/);
+    // the inner collapse must expose the revision and topic the predicate reads
+    expect(q).toMatch(/SELECT a\.topic_id, a\.value, a\.season_id, a\.topic_revision_id/);
+  });
+
+  it('newestAnswerLateral still returns a 0 as 0 (a blank is not hidden by the version rule)', () => {
+    expect(newestAnswerLateral('p.id', 't.id')).not.toMatch(/value\s*(<>|!=)\s*0/);
+  });
+
+  it('DISPLAYED_VALUES_SQL collapses first, then drops a chair on another ladder version', () => {
+    const q = DISPLAYED_VALUES_SQL;
+    expect(q.indexOf('vw.version = vpin.version')).toBeGreaterThan(q.indexOf('ORDER BY a.politician_id, a.topic_id, s.number DESC'));
+    expect(q).not.toMatch(/value\s*(<>|!=)\s*0/);
   });
 });

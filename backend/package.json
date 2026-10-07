@@ -31,6 +31,7 @@
     "check:readrank-question-unit": "node scripts/check-readrank-question-unit.mjs",
     "check:readrank-question-unit:verbose": "node scripts/check-readrank-question-unit.mjs --verbose",
     "check:answer-seasons": "node scripts/check-answer-season-consumers.mjs",
+    "check:version-aware-reads": "node scripts/check-version-aware-reads.mjs",
     "check:suppressed-reads": "node scripts/check-suppressed-answer-reads.mjs",
     "check:auth-isolation": "node scripts/check-auth-client-isolation.mjs",
     "check:answer-seasons:verbose": "node scripts/check-answer-season-consumers.mjs --verbose",

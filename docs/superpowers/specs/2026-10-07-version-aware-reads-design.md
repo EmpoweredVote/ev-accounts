@@ -1,6 +1,7 @@
 # Version-aware reads — a chair shows only on the ladder version it was written for
 
-**Status:** design, for approval. **No read path is changed by this document.**
+**Status:** approved by Chris Andrews 2026-10-07 (decisions 1–3 as recommended; rollout: deploy AFTER more Season 2
+re-research — do not merge until then). Implemented on this branch. Pending: Chris Cantrell's review of §3 and §5.
 **Author:** Chris Andrews' session, 2026-10-07.
 **Owner of the seasons design (loop in before changing read semantics):** Chris Cantrell — ADR 0005, ADR 0006, and
 the handoff in [`2026-09-25-season-carry-forward-handoff.md`](2026-09-25-season-carry-forward-handoff.md).
@@ -154,7 +155,17 @@ re-researched in Season 2, their new row matches and shows.
 - **Guard.** Add a static check that any `FROM inform.politician_answers` voter read carries the helper or an
   `-- @version-scope:` marker, in the same shape as `@zero-scope`. Otherwise the next new read repeats the bug.
 
-## 8. Decisions requested
+## 8. Decisions (2026-10-07, Chris Andrews)
+
+Approved: 1 (the rule, with §3.3), 2 (empty spoke, no notice), 3 (keep the 268 listed). Rollout (4): deploy after more
+Season 2 re-research. Open: 5 (Cantrell review).
+
+Implementation notes: `writtenForServedVersion` in `seasonService.ts`; `newestAnswerLateral` and `DISPLAYED_VALUES_SQL`
+carry it; CI gate `npm run check:version-aware-reads`. Measured on prod after the change: visible chairs 33,012 → 18,802;
+politicians with a chair 4,223 → 3,955. The admin compose distribution (`seasonCompositionService`) is a judged exception:
+an editor's view of the draft season, not a voter read.
+
+### Original questions
 
 1. Approve the rule (§3), including §3.3 (unasked topics unchanged).
 2. Empty spoke with no notice for now (§4), or return a mismatch flag for a later notice.

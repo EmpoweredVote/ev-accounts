@@ -1,6 +1,6 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 import { pool } from './db.js';
-import { SEASON_IS_PUBLISHED, servedRevisionLateral } from './seasonService.js';
+import { SEASON_IS_PUBLISHED, servedRevisionLateral, writtenForServedVersion } from './seasonService.js';
 import { appliesFromRoles } from './topicApplicability.js';
 
 // ---------------------------------------------------------------------------
@@ -413,19 +413,19 @@ export async function getCompassPoliticians() {
             -- COUNT(*) would double a re-researched politician's answer_count and
             -- array_agg would repeat each topic id once per season.
             (SELECT COUNT(*)::int FROM (
-               SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+               SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.topic_revision_id
                  FROM inform.politician_answers a
                  JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
                 WHERE a.politician_id = p.id
                 ORDER BY a.topic_id, s.number DESC
-             ) l WHERE l.value != 0) AS answer_count,
+             ) l WHERE l.value != 0 AND ${writtenForServedVersion('l.topic_id', 'l.topic_revision_id')}) AS answer_count,
             (SELECT array_agg(l.topic_id) FROM (
-               SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+               SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.topic_revision_id
                  FROM inform.politician_answers a
                  JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
                 WHERE a.politician_id = p.id
                 ORDER BY a.topic_id, s.number DESC
-             ) l WHERE l.value != 0) AS answered_topic_ids
+             ) l WHERE l.value != 0 AND ${writtenForServedVersion('l.topic_id', 'l.topic_revision_id')}) AS answered_topic_ids
      FROM essentials.politicians p
      -- @zero-scope: counts-blanks — this join is the "does this person have a
      --   compass at all" gate, and it is deliberately NOT guarded on value,
@@ -508,12 +508,12 @@ export async function getCandidates() {
           -- Newest season per topic before counting; a plain COUNT(*) doubles a
           -- re-researched candidate's answer_count.
           SELECT COUNT(*)::int FROM (
-            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.topic_revision_id
               FROM inform.politician_answers a
               JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
              WHERE a.politician_id = rc.politician_id
              ORDER BY a.topic_id, s.number DESC
-          ) l WHERE l.value != 0
+          ) l WHERE l.value != 0 AND ${writtenForServedVersion('l.topic_id', 'l.topic_revision_id')}
         )
       END AS answer_count,
       CASE
@@ -528,12 +528,12 @@ export async function getCandidates() {
         ELSE (
           -- Same collapse; otherwise each topic id repeats once per season.
           SELECT array_agg(l.topic_id) FROM (
-            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+            SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.topic_revision_id
               FROM inform.politician_answers a
               JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
              WHERE a.politician_id = rc.politician_id
              ORDER BY a.topic_id, s.number DESC
-          ) l WHERE l.value != 0
+          ) l WHERE l.value != 0 AND ${writtenForServedVersion('l.topic_id', 'l.topic_revision_id')}
         )
       END AS answered_topic_ids,
       CASE
@@ -651,14 +651,16 @@ export async function getCandidateAnswers(
     // topic once per season, and the compass renders duplicate spokes.
     // Filtering value != 0 AFTER the collapse is deliberate: if their newest
     // answer is 0 they have no current position, even if an older season did.
+    // So is the version predicate: a newest chair written for another ladder version
+    // shows nothing, and never falls back to an older season's rung.
     `SELECT topic_id, value FROM (
-       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.topic_revision_id
          FROM inform.politician_answers a
          JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1
         ORDER BY a.topic_id, s.number DESC
      ) latest
-     WHERE value != 0
+     WHERE value != 0 AND ${writtenForServedVersion('latest.topic_id', 'latest.topic_revision_id')}
      ORDER BY topic_id ASC`,
     [politicianId]
   );
@@ -706,13 +708,13 @@ export async function getPoliticianAnswers(
 ): Promise<PoliticianAnswer[]> {
   const { rows } = await pool.query<{ topic_id: string; value: string }>(
     `SELECT topic_id, value::text FROM (
-       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.topic_revision_id
          FROM inform.politician_answers a
          JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1
         ORDER BY a.topic_id, s.number DESC
      ) latest
-     WHERE value <> 0
+     WHERE value <> 0 AND ${writtenForServedVersion('latest.topic_id', 'latest.topic_revision_id')}
      ORDER BY topic_id ASC`,
     [politicianId]
   );
@@ -768,7 +770,10 @@ export async function getPoliticianContext(politicianId: string, topicId: string
     // spoke only. The newest-season row is chosen FIRST (inner LIMIT 1) and dropped afterwards
     // when that same season's answer is 0; a filter inside the collapse would fall back to an older
     // season's reasoning, arguing a position the person no longer holds.
+    // Version rule (2026-10-07): the same NOT EXISTS also drops reasoning whose season's answer was
+    // written for another ladder version — reasoning argues one ladder and must not outlive the chair.
     // @zero-scope: excludes-blanks — voter-facing "why this position?" text.
+    // @version-scope: written-for-served
     `SELECT x.reasoning, x.sources, x.evidence FROM (
      SELECT c.reasoning, c.sources, c.season_id,
             COALESCE((
@@ -797,7 +802,8 @@ export async function getPoliticianContext(politicianId: string, topicId: string
      ) x
      WHERE NOT EXISTS (
        SELECT 1 FROM inform.politician_answers a
-        WHERE a.politician_id = $1 AND a.topic_id = $2 AND a.season_id = x.season_id AND a.value = 0)`,
+        WHERE a.politician_id = $1 AND a.topic_id = $2 AND a.season_id = x.season_id
+          AND (a.value = 0 OR NOT ${writtenForServedVersion('a.topic_id', 'a.topic_revision_id')}))`,
     [politicianId, topicId]
   );
   // The route turns null into a 404 — the documented contract for "no context on
@@ -820,6 +826,7 @@ export async function getPoliticianContextAll(
     // Q2 (ruling 2026-10-07): as getPoliticianContext — the endpoint is public, so a topic whose
     // newest season holds a blank (value 0) is dropped AFTER the per-topic collapse, never inside it.
     // @zero-scope: excludes-blanks — public context read; a blank's reasoning is not shown.
+    // @version-scope: written-for-served — nor is reasoning whose season's answer was written for another ladder version.
     `SELECT x.topic_id, x.reasoning, x.sources FROM (
        SELECT DISTINCT ON (c.topic_id) c.topic_id, c.reasoning, c.sources, c.season_id
          FROM inform.politician_context c
@@ -829,7 +836,8 @@ export async function getPoliticianContextAll(
      ) x
      WHERE NOT EXISTS (
        SELECT 1 FROM inform.politician_answers a
-        WHERE a.politician_id = $1 AND a.topic_id = x.topic_id AND a.season_id = x.season_id AND a.value = 0)
+        WHERE a.politician_id = $1 AND a.topic_id = x.topic_id AND a.season_id = x.season_id
+          AND (a.value = 0 OR NOT ${writtenForServedVersion('a.topic_id', 'a.topic_revision_id')}))
      ORDER BY x.topic_id`,
     [politicianId]
   );
@@ -1021,14 +1029,17 @@ export async function compareWithPoliticians(
         // now, not that an older season's answer should stand in for one.
         `SELECT latest.topic_id, latest.value::text, ep.full_name
          FROM (
-           SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.politician_id
+           SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.politician_id, a.topic_revision_id
              FROM inform.politician_answers a
              JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
             WHERE a.politician_id = $1
             ORDER BY a.topic_id, s.number DESC
          ) latest
          JOIN essentials.politicians ep ON ep.id = latest.politician_id
-         WHERE latest.value <> 0`,
+         WHERE latest.value <> 0
+           -- A chair written for another ladder version is not a shared topic: it leaves the numerator
+           -- AND the denominator, so it neither scores nor penalises. After the collapse, like the zero.
+           AND ${writtenForServedVersion('latest.topic_id', 'latest.topic_revision_id')}`,
         [pid]
       );
       return { id: pid, rows };
@@ -1123,13 +1134,13 @@ export async function getBatchPoliticianAnswers(
     // Newest season per topic; see getCandidateAnswers for why the value <> 0
     // filter is applied after the collapse rather than inside it.
     `SELECT topic_id, value::text FROM (
-       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value
+       SELECT DISTINCT ON (a.topic_id) a.topic_id, a.value, a.topic_revision_id
          FROM inform.politician_answers a
          JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
         WHERE a.politician_id = $1 AND a.topic_id = ANY($2::uuid[])
         ORDER BY a.topic_id, s.number DESC
      ) latest
-     WHERE value <> 0`,
+     WHERE value <> 0 AND ${writtenForServedVersion('latest.topic_id', 'latest.topic_revision_id')}`,
     [politicianId, topicIds]
   );
   return rows.map(r => ({
@@ -1336,6 +1347,12 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
        -- Here, after the pa collapse, for the same reason as the predicate above.
        -- @zero-scope: excludes-blanks — voter-facing citations page.
        AND (pa.value IS NULL OR pa.value <> 0)
+       -- Version rule (2026-10-07): a chair written for another ladder version shows no block either.
+       -- Outside the pa collapse for the same reason as the blank guard: inside it the query would
+       -- fall back to an older season's rung. This also ends a disagreement — the block used to show
+       -- the Season 1 chair against its OWN ladder while the compass spoke showed it against the new one.
+       -- @version-scope: written-for-served
+       AND (pa.value IS NULL OR ${writtenForServedVersion('pce.topic_id', 'pa.topic_revision_id')})
      ORDER BY ct.topic_key ASC,
               (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) DESC,
               pce.verified_at DESC`,
@@ -1351,7 +1368,8 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
     // indexes the same rungs as stance_text above. Resolve, per topic, the version
     // of this politician's latest-season answer; with no answer, fall back to the
     // topic's current revision (the pre-seasons behavior).
-    `SELECT ct.topic_key, sr.value,
+    `-- @version-scope: only picks the ladder to print under a block the main query already kept through writtenForServedVersion; a block whose chair is on another version never reaches here.
+     SELECT ct.topic_key, sr.value,
             upper(left(sr.text, 1)) || substr(sr.text, 2) AS text
      FROM inform.compass_topics ct
      JOIN LATERAL (

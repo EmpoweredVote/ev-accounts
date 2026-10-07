@@ -459,6 +459,20 @@ to an older season's rung — serving a position the politician no longer holds,
 was never an answer to. That is the same failure the season collapse exists to prevent, one layer
 down, and it is what the tests in `compassService.test.ts` pin.
 
+### A chair shows only on the ladder version it was written for (2026-10-07)
+
+Every voter read collapses to the newest published season per topic, then applies `writtenForServedVersion`
+(`seasonService.ts`): the answer's revision `version` must equal the version the OPEN season pins for that topic. Same
+version = clarifying changes carry. A substantive rewrite bumps `version`, so a Season 1 chair with no Season 2 row shows
+an **empty spoke**, like a blank. Design: `docs/superpowers/specs/2026-10-07-version-aware-reads-design.md`.
+
+- 🔴 **Same guard placement as the zero guard**: outside the newest-season collapse, never inside it, or an older
+  season's rung comes back. The collapse must `SELECT a.topic_revision_id`.
+- A topic the open season does not ask is exempt (nothing is served to disagree with).
+- "Ever researched" reads (`@season-scope: all-seasons`) are exempt — research happened.
+- `npm run check:version-aware-reads --prefix backend` (CI) fails a literal that collapses `politician_answers` to the
+  newest season without the helper or an `-- @version-scope: <reason>` line.
+
 ### Rewording a chair that already holds seated politicians (ruling 2026-08-28, Chris Andrews)
 
 - A **clarifying** rewording — same position, clearer words — keeps existing seats. Nothing re-audits.

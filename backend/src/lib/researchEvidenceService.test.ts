@@ -305,6 +305,15 @@ describe('review reads carry the open-season current value', () => {
     expect((await getResearchReviewById('x'))?.displayed).toEqual(
       { value: 5, seasonNumber: 1, text: 'S2 served chair 5', historyText: 'S1 chair 5', reasoning: null });
   });
+  it('version rule: "voters see now" uses the version-aware newest-answer lateral (a hidden chair is not replaced)', async () => {
+    const { getResearchReviewById } = await import('./researchEvidenceService.js');
+    mockQuery.mockClear();
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await getResearchReviewById('x');
+    const sql = String(mockQuery.mock.calls[0][0]);
+    expect(sql).toMatch(/vw\.version = vpin\.version/);
+    expect(sql.indexOf('vw.version = vpin.version')).toBeGreaterThan(sql.indexOf('LIMIT 1'));
+  });
   it('N1: a topic the open season does not ask (S1-only, e.g. immigration) shows nothing', async () => {
     const { getResearchReviewById } = await import('./researchEvidenceService.js');
     mockQuery.mockClear();

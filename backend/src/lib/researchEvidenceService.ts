@@ -340,6 +340,9 @@ const CURRENT_VALUE_SQL = `
  *   shown / shown_eff / shown_sr — I2: what voters see now. newestAnswerLateral is the read path's
  *     own collapse (newest PUBLISHED season), so a pair with only a Season 1 answer shows the S1
  *     chair, and an S2 value-0 blank shows as the blank it is — never the S1 chair behind it.
+ *     Version rule (2026-10-07): a Season 1 chair written for ANOTHER ladder version than the open
+ *     season serves is not shown to voters, so `shown` has no row for it — a write does not replace
+ *     it and the `replaces-published-chair` reason does not fire.
  */
 async function reviewReadJoins(): Promise<string> {
   const { servedRevisionLateral, newestAnswerLateral } = await import('./seasonService.js');

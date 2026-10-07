@@ -888,6 +888,12 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # A voter read that shows a newest-season chair must apply the version rule (a chair shows only
+      # on the ladder version it was written for) or declare why not. Reads text, not placement:
+      # compassService.test.ts pins the placement after the collapse.
+      - name: Check every newest-season chair read applies the version rule
+        run: npm run check:version-aware-reads
+
   readrank-question-unit:
     name: read & rank question unit
     runs-on: ubuntu-latest

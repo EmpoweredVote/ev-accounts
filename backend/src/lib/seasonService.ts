@@ -99,6 +99,51 @@ export interface AnsweredSeason {
 export const SEASON_IS_PUBLISHED = `s.status <> 'draft'`;
 
 /**
+ * A CHAIR SHOWS ONLY ON THE LADDER VERSION IT WAS WRITTEN FOR, as a SQL predicate
+ * (docs/superpowers/specs/2026-10-07-version-aware-reads-design.md).
+ *
+ * Reads serve each person's newest published season per topic, so a Season 1 chair
+ * with no Season 2 row would be rendered against Season 2's ladder text. Same
+ * `version` (editorial / clarifying changes) is the same ladder: it carries. A
+ * different `version` (a substantive rewrite) is a different sentence: the chair
+ * was never evidenced against it, so it does not show. A voter sees an empty
+ * spoke, as for a blank. The row is NOT deleted; Season 1 stays history.
+ *
+ * True when:
+ *   - the OPEN season asks no such topic (nothing served to disagree with — ADR
+ *     0005 §3.4 keeps answering topics a season dropped), or no season is open; or
+ *   - the version of the revision the answer was written for equals the version the
+ *     open season pins for the topic.
+ *
+ * 🔴 PLACEMENT. Apply this OUTSIDE the newest-season collapse, never inside it, for
+ * the reason CLAUDE.md gives for the `value = 0` guard: inside, a mismatched newest
+ * row would be skipped and the query would fall back to an OLDER season's rung —
+ * serving a position against a ladder it was never an answer to. So the answer is
+ * collapsed first, then this and `value <> 0` are applied to the survivor. The
+ * collapse must therefore SELECT `a.topic_revision_id`.
+ *
+ * A bug here hides chairs; it can never show a wrong one. `topic_revision_id` is
+ * NOT NULL, so there is no unknown-version case.
+ *
+ * Not for "ever researched" reads (`@season-scope: all-seasons`): research happened.
+ *
+ * @param topicExpr    SQL expression for the answer's topic id
+ * @param revisionExpr SQL expression for the answer's `topic_revision_id`
+ */
+export function writtenForServedVersion(topicExpr: string, revisionExpr: string): string {
+  return `(
+    NOT EXISTS (SELECT 1 FROM inform.season_questions vq
+                  JOIN inform.seasons vs ON vs.id = vq.season_id AND vs.status = 'open'
+                 WHERE vq.topic_id = ${topicExpr})
+    OR EXISTS (SELECT 1 FROM inform.season_questions vq
+                 JOIN inform.seasons vs ON vs.id = vq.season_id AND vs.status = 'open'
+                 JOIN inform.compass_topic_revisions vpin ON vpin.id = vq.topic_revision_id
+                 JOIN inform.compass_topic_revisions vw ON vw.id = ${revisionExpr}
+                WHERE vq.topic_id = ${topicExpr} AND vw.version = vpin.version)
+  )`;
+}
+
+/**
  * A topic that some PUBLISHED season asks, as a SQL predicate.
  *
  * THE DISPLAY KILL SWITCH that replaced `compass_topics.is_live` on the
@@ -197,7 +242,8 @@ export async function latestAnsweredSeason(
   topicId: string,
 ): Promise<AnsweredSeason | null> {
   const { rows } = await pool.query<{ season_id: string; number: number }>(
-    `SELECT a.season_id, s.number
+    `-- @version-scope: returns only the newest season's number and id; no chair is shown, so there is no ladder to disagree with.
+     SELECT a.season_id, s.number
        FROM inform.politician_answers a
        JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
       WHERE a.politician_id = $1 AND a.topic_id = $2
@@ -493,15 +539,20 @@ export async function assertWritten(rowCount: number, topicId: string): Promise<
  */
 export const DISPLAYED_VALUES_SQL = `
   -- @zero-scope: counts-blanks — a 0 is a blank voters see; replacing it is a change to what they see.
-  SELECT DISTINCT ON (a.politician_id, a.topic_id)
-         a.politician_id::text AS politician_id, a.topic_id::text AS topic_id, a.value, s.number AS season_number
-    FROM inform.politician_answers a
-    JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
-   WHERE a.politician_id = ANY($1::uuid[])
-     AND EXISTS (SELECT 1 FROM inform.season_questions oq
-                   JOIN inform.seasons os ON os.id = oq.season_id AND os.status = 'open'
-                  WHERE oq.topic_id = a.topic_id)
-   ORDER BY a.politician_id, a.topic_id, s.number DESC`;
+  -- @version-scope: written-for-served — a chair on another ladder version is not shown, so a write does not replace it.
+  SELECT politician_id, topic_id, value, season_number FROM (
+    SELECT DISTINCT ON (a.politician_id, a.topic_id)
+           a.politician_id::text AS politician_id, a.topic_id::text AS topic_id, a.topic_id AS topic_uuid,
+           a.topic_revision_id, a.value, s.number AS season_number
+      FROM inform.politician_answers a
+      JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
+     WHERE a.politician_id = ANY($1::uuid[])
+       AND EXISTS (SELECT 1 FROM inform.season_questions oq
+                     JOIN inform.seasons os ON os.id = oq.season_id AND os.status = 'open'
+                    WHERE oq.topic_id = a.topic_id)
+     ORDER BY a.politician_id, a.topic_id, s.number DESC
+  ) shown
+  WHERE ${writtenForServedVersion('shown.topic_uuid', 'shown.topic_revision_id')}`;
 
 /**
  * The read shape, as a SQL fragment: newest answered season for one
@@ -524,12 +575,16 @@ export function newestAnswerLateral(
   alias = 'ans',
 ): string {
   return `LEFT JOIN LATERAL (
-    SELECT a.value, a.season_id, a.topic_revision_id, s.number AS season_number
-      FROM inform.politician_answers a
-      JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
-     WHERE a.politician_id = ${politicianExpr}
-       AND a.topic_id = ${topicExpr}
-     ORDER BY s.number DESC
-     LIMIT 1
+    SELECT n.value, n.season_id, n.topic_revision_id, n.season_number FROM (
+      SELECT a.topic_id, a.value, a.season_id, a.topic_revision_id, s.number AS season_number
+        FROM inform.politician_answers a
+        JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
+       WHERE a.politician_id = ${politicianExpr}
+         AND a.topic_id = ${topicExpr}
+       ORDER BY s.number DESC
+       LIMIT 1
+    ) n
+    -- @version-scope: written-for-served — applied after the collapse (LIMIT 1), never inside it.
+    WHERE ${writtenForServedVersion('n.topic_id', 'n.topic_revision_id')}
   ) ${alias} ON true`;
 }
