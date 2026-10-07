@@ -40,6 +40,12 @@
  * served text without moving the pin) — or the run exits 2 before any write. stances.csv must carry
  * stance-gate's source_urls column: only evidence on a row's own research.csv sources is verified
  * or published (I1).
+ * A BLANK (value 0 + blank_reason; spec 2026-10-07-season2-blank-review-design.md) is verified like a
+ * chair — its sources are the pages the coder examined. decidePublish writes nothing for a blank that
+ * changes nothing voters see, and queues the rest; a blank is never auto-pushed. Before deciding, a
+ * blank that would remove a chair voters see is checked against that chair's own cited sources
+ * (blank-unexamined-fallback, operator ruling 2026-10-07 Q3): every one that still loads must be among
+ * the blank's examined sources, or the row goes back to research.
  * Exit: 0 ok, 1 --apply finished with row errors, 2 usage / unreadable / refused batch.
  *
  * Idempotent: re-running the same batch is safe. Stance writes are season-aware
@@ -82,7 +88,7 @@ import {
 } from '../src/lib/researchEvidenceService.js';
 import { OPEN_SEASON_ANSWER_SQL, DISPLAYED_VALUES_SQL, servedRevisionLateral } from '../src/lib/seasonService.js';
 import { decidePublish, type Decision } from './lib/stancePublishPolicy.js';
-import { GATE_CHECK_IDS, type GateFinding } from './lib/stanceGate.js';
+import { GATE_CHECK_IDS, checkBlankExaminedFallback, type GateFinding } from './lib/stanceGate.js';
 import { buildLedgerFile, politicianIdsInBatch, type LedgerRow } from './lib/writtenLedger.js';
 
 // ---------------------------------------------------------------- args
@@ -185,7 +191,8 @@ if (allStances.some((s) => s.source_urls === undefined)) {
 }
 
 // value=null rows are an explicit "insufficient evidence" signal: skip verification,
-// drop in normal mode (never pushed, never queued).
+// drop in normal mode (never pushed, never queued). A blank (value 0) is NOT one of these: it is a
+// finding that no chair fits, verified and decided like a chair.
 const nullRows = allStances.filter((s) => s.value === null);
 const stanceRows = allStances.filter((s) => s.value !== null);
 
@@ -437,7 +444,6 @@ const { pushable, needsReResearch } = await verifyEvidence({
   threshold: THRESHOLD,
   politicianNames,
 });
-await fetchSession.close();
 
 const failedUrls = (row: VerifiedRow) => row.failedSources.map((s) => s.url);
 
@@ -459,6 +465,42 @@ const displayed = new Map<string, { value: number; season: number }>();
   }
 }
 
+// ---------------------------------------------------------------- blank-unexamined-fallback (spec §3.3)
+// A blank that would remove a chair voters see must have examined that chair's own cited sources —
+// the ones that still load. Only this script knows what voters see and can fetch, so the check runs
+// here and joins the row's gate findings. The fetcher is the batch's cached one: a fallback URL the
+// row already cites was fetched above and is not fetched again.
+const isBlankRow = (s: StanceRow) => s.value === 0 && Boolean(s.blank_reason);
+let fallbackFindings = 0;
+for (const row of [...pushable, ...needsReResearch].filter((r) => isBlankRow(r.stance))) {
+  const pid = idByName.get(row.stance.full_name) ?? null;
+  const tid = topicIdByKey.get(normTopic(row.stance.topic_key)) ?? null;
+  const shown = pid && tid ? displayed.get(`${pid} ${tid}`) : undefined;
+  if (!pid || !tid || !shown || shown.value === 0) continue; // removes nothing voters see
+  // The displayed chair's own context row: same season as the answer voters see.
+  const { rows: ctx } = await pool.query<{ sources: string[] | null }>(
+    `SELECT c.sources
+       FROM inform.politician_context c
+       JOIN inform.seasons s ON s.id = c.season_id
+      WHERE c.politician_id = $1 AND c.topic_id = $2 AND s.number = $3
+      -- the season of the chair voters see now (DISPLAYED_VALUES_SQL), to check a blank examined its sources`,
+    [pid, tid, shown.season],
+  );
+  const fallbackSources = ctx[0]?.sources ?? [];
+  const live = new Map<string, boolean>();
+  for (const u of fallbackSources) live.set(u, (await fetcher(u)).ok);
+  const finding = checkBlankExaminedFallback({
+    row: { full_name: row.stance.full_name, topic_key: row.stance.topic_key, source_urls: row.stance.source_urls ?? [] },
+    displayedValue: shown.value, fallbackSources, fetchable: (u) => live.get(u) ?? false,
+  });
+  if (finding) {
+    const k = stanceKey(row.stance.full_name, row.stance.topic_key);
+    gateByKey.set(k, [...(gateByKey.get(k) ?? []), finding]);
+    fallbackFindings++;
+  }
+}
+await fetchSession.close();
+
 type Decided = { row: VerifiedRow; pid: string | null; tid: string | null; decision: Decision };
 const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
   const pid = idByName.get(row.stance.full_name) ?? null;
@@ -477,6 +519,9 @@ const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
   });
   return { row, pid, tid, decision };
 });
+const fallbackFindingFor = (d: Decided): string | undefined =>
+  (gateByKey.get(stanceKey(d.row.stance.full_name, d.row.stance.topic_key)) ?? [])
+    .find((f) => f.check_id === 'blank-unexamined-fallback')?.what;
 const bucket = (a: Decision['action']) => decided.filter((d) => d.decision.action === a);
 const reasonsOf = (d: Decided): string[] => ('reasons' in d.decision ? [...d.decision.reasons] : []);
 
@@ -492,7 +537,9 @@ const notInAdminQueue = queued.filter((d) => !d.pid);
 
 writeFileSync(join(DIR, 'publish-report.json'), JSON.stringify(decided.map((d) => ({
   full_name: d.row.stance.full_name, topic_key: d.row.stance.topic_key, value: d.row.stance.value,
+  ...(isBlankRow(d.row.stance) ? { blank_reason: d.row.stance.blank_reason } : {}),
   action: d.decision.action, reasons: reasonsOf(d),
+  ...(fallbackFindingFor(d) ? { blank_unexamined_fallback: fallbackFindingFor(d) } : {}),
   displayed_value: (d.pid && d.tid ? displayed.get(`${d.pid} ${d.tid}`) : undefined) ?? null,
   verified_sources: d.row.verifiedSources.map((s) => s.url), failed_urls: failedUrls(d.row),
   // Only on rows that go to inform.stance_research_review: true = a `pending` row the admin
@@ -504,7 +551,9 @@ console.log(`\n=== verify-stance-research — batch "${BATCH_ID}" (threshold ${T
 console.log(AUTO_PUSH
   ? 'mode: --auto-push — rows that pass every check are written without a person'
   : 'mode: review-all (default) — every stance goes to a person; pass --auto-push to publish clean rows unattended');
-console.log(`stance rows: ${allStances.length} (${stanceRows.length} scored, ${nullRows.length} value=null skipped) | evidence rows: ${evidenceRows.length}`);
+console.log(`stance rows: ${allStances.length} (${stanceRows.length} scored, of which ${stanceRows.filter(isBlankRow).length} blank; `
+  + `${nullRows.length} value=null skipped) | evidence rows: ${evidenceRows.length}`
+  + (fallbackFindings ? ` | blank-unexamined-fallback: ${fallbackFindings}` : ''));
 console.log(`AUTO-PUSH: ${bucket('auto-push').length}  UNCHANGED: ${bucket('unchanged').length}  REVIEW: ${bucket('review').length}  `
   + `RE-RESEARCH: ${bucket('re-research').length}  OUT-OF-SCOPE: ${bucket('out-of-scope').length}`);
 if (bucket('out-of-scope').length) {
@@ -567,6 +616,11 @@ if (!APPLY) {
 
   for (const d of bucket('auto-push')) {
     const { row, pid, tid } = d;
+    // decidePublish never returns auto-push for a blank; refuse one anyway rather than write a 0 unseen.
+    if (row.stance.value === 0) {
+      errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: a blank is never auto-pushed — skipped`);
+      continue;
+    }
     if (!pid || !tid) {
       errors.push(`PUSH ${row.stance.full_name}/${row.stance.topic_key}: ${!pid ? 'no politician_id' : 'topic_key not in the open season'} — skipped`);
       continue;
@@ -605,6 +659,12 @@ if (!APPLY) {
 
   for (const d of queued) {
     const { row, pid, tid } = d;
+    // CA_0303: a queued blank needs somewhere to record its reason, or the reviewer sees a bare 0.
+    if (isBlankRow(row.stance) && !reviewColumns.has('proposed_blank_reason')) {
+      errors.push(`REVIEW ${row.stance.full_name}/${row.stance.topic_key}: a blank cannot be queued until CA_0303 `
+        + '(inform.stance_research_review.proposed_blank_reason) is applied — not queued');
+      continue;
+    }
     try {
       // R7: --re-researched stamps a queued row only when it is actually a re-research attempt
       // (a below-threshold row) — NOT every queued row. Under review-all (the default) most queued

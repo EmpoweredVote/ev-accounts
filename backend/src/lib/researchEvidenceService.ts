@@ -7,6 +7,7 @@
 import type { VerifiedRow } from './researchVerifier.js';
 // A value import is safe: researchVerifier imports nothing (no db.js), unlike seasonService below.
 import { normalizeText, MIN_SNIPPET_WORDS } from './researchVerifier.js';
+import { BLANK_REASONS, isBlankReason } from './blankReasons.js';
 // Type-only: erased at runtime, so it does not pull db.js in before a test's mock (see below).
 import type { Queryable } from './seasonService.js';
 
@@ -55,6 +56,8 @@ export interface ReviewInsertRow {
   served_revision_id: string | null;
   queue_reasons: string[] | null;
   evidence_type: string | null;
+  /** CA_0303: codebook V6 blank reason when proposed_value is 0 (a blank); null for a chair. */
+  proposed_blank_reason: string | null;
 }
 
 /**
@@ -144,6 +147,7 @@ export function buildReviewRowForInsert(args: {
     served_revision_id: args.servedRevisionId ?? null,
     queue_reasons: args.queueReasons ?? null,
     evidence_type: args.row.stance.evidence_type?.trim() || null,
+    proposed_blank_reason: args.row.stance.value === 0 ? args.row.stance.blank_reason?.trim() || null : null,
   };
 }
 
@@ -203,8 +207,11 @@ export interface ResearchReviewRow {
   fullNameRaw: string;
   topicId: string | null;
   topicKey: string;
+  /** 1-5 = a chair; 0 = a blank, with proposedBlankReason (CA_0303). */
   proposedValue: number | null;
   proposedReasoning: string;
+  /** CA_0303: the codebook V6 reason for a proposed blank. null for a chair, or before CA_0303. */
+  proposedBlankReason: string | null;
   evidence: Array<{
     url: string;
     /** CA_0301: the source's date, coder-pipeline rows only (scripts/lib/coderQueue.ts). */
@@ -236,7 +243,11 @@ export interface ResearchReviewRow {
    * open season does not ask. `text` is that rung on the OPEN season's served ladder — what voters
    * read (N1); `historyText` is the same rung on the ladder the answer was recorded against. Approving this row replaces what voters see, even when currentValue is null.
    */
-  displayed: { value: number; seasonNumber: number; text: string | null; historyText: string | null } | null;
+  displayed: {
+    value: number; seasonNumber: number; text: string | null; historyText: string | null;
+    /** The displayed answer's own context reasoning (CA_0303 review: what a blank would remove). */
+    reasoning: string | null;
+  } | null;
   /** CA_0285: why the row was queued, and its evidence class. null = not recorded (legacy, or before CA_0285). */
   queueReasons: string[] | null;
   evidenceType: string | null;
@@ -350,7 +361,12 @@ async function reviewReadJoins(): Promise<string> {
   -- History only: the same value's text on the ladder the answer was recorded against.
   LEFT JOIN ${servedRevisionLateral('shown.topic_revision_id', 'shown_eff')} ON true
   LEFT JOIN inform.compass_stance_revisions shown_hist_sr
-    ON shown_hist_sr.topic_revision_id = shown_eff.id AND shown_hist_sr.value = shown.value`;
+    ON shown_hist_sr.topic_revision_id = shown_eff.id AND shown_hist_sr.value = shown.value
+  -- CA_0303 review: the displayed chair's own reasoning (same season as the answer voters see), so a
+  -- reviewer weighing a blank sees what it would remove.
+  LEFT JOIN inform.politician_context shown_ctx
+    ON shown_ctx.politician_id = r.politician_id AND shown_ctx.topic_id = r.topic_id
+   AND shown_ctx.season_id = shown.season_id`;
 }
 
 const REVIEW_READ_COLUMNS = `
@@ -359,7 +375,7 @@ const REVIEW_READ_COLUMNS = `
   -- A topic the open season does not ask is not on the voter compass at all: nothing is shown.
   CASE WHEN open_pin.topic_revision_id IS NULL THEN NULL ELSE shown.value END AS shown_value,
   shown.season_number AS shown_season_number, shown_sr.text AS shown_text,
-  shown_hist_sr.text AS shown_history_text`;
+  shown_hist_sr.text AS shown_history_text, shown_ctx.reasoning AS shown_reasoning`;
 
 /**
  * The row's politician's CURRENT office body/chamber (task 5, list-view cohort grouping).
@@ -397,6 +413,7 @@ function mapReviewRow(row: any): ResearchReviewRow {
     topicKey: row.topic_key,
     proposedValue: row.proposed_value,
     proposedReasoning: row.proposed_reasoning,
+    proposedBlankReason: nullable(row.proposed_blank_reason),
     evidence: row.evidence ?? [],
     verifiedSourceCount: row.verified_source_count,
     threshold: row.threshold,
@@ -410,6 +427,7 @@ function mapReviewRow(row: any): ResearchReviewRow {
       seasonNumber: Number(row.shown_season_number),
       text: nullable(row.shown_text),
       historyText: nullable(row.shown_history_text),
+      reasoning: nullable(row.shown_reasoning),
     },
     queueReasons: Array.isArray(row.queue_reasons) ? row.queue_reasons.map(String) : null,
     evidenceType: nullable(row.evidence_type),
@@ -613,6 +631,7 @@ export async function resolveResearchReview(
   humanVerifiedUrls: string[] = [],
   valueOverride?: number | null,
   reasoningOverride?: string,
+  blankReasonOverride?: string,
 ): Promise<{ ladderRevisionUnknown: boolean }> {
   // Lazy, for the same reason as accumulateEvidence above: a static import of
   // seasonService drags db.js in before the test mock is installed.
@@ -632,8 +651,8 @@ export async function resolveResearchReview(
   // Same defence-in-depth reasoning as cleanHumanVerifiedUrls above: the route already rejects a
   // non-integer or out-of-range valueOverride with a 400, but a direct caller could still pass one.
   if (valueOverride !== undefined && valueOverride !== null
-    && (!Number.isInteger(valueOverride) || valueOverride < 1 || valueOverride > 5)) {
-    throw Object.assign(new Error('valueOverride must be an integer 1-5'), { code: 'INCOMPLETE' });
+    && (!Number.isInteger(valueOverride) || valueOverride < 0 || valueOverride > 5)) {
+    throw Object.assign(new Error('valueOverride must be an integer 0-5 (0 = blank)'), { code: 'INCOMPLETE' });
   }
 
   // Task 5, requirement 3: a reviewer who changes the CHAIR must also write why — the public
@@ -654,6 +673,15 @@ export async function resolveResearchReview(
 
   if (!row.politicianId || !row.topicId || finalValue === null) {
     throw Object.assign(new Error('Row is missing politician_id, topic_id, or value'), { code: 'INCOMPLETE' });
+  }
+
+  // A blank (spec 2026-10-07-season2-blank-review-design.md §3.6): the queued blank's own reason,
+  // or — when a reviewer blanks a proposed chair — the reason they give. Never a bare 0.
+  const blankReason = finalValue !== 0 ? null
+    : (blankReasonOverride?.trim() || (row.proposedValue === 0 ? row.proposedBlankReason : null));
+  if (finalValue === 0 && !isBlankReason(blankReason)) {
+    throw Object.assign(
+      new Error(`a blank needs a blank reason — one of ${BLANK_REASONS.join(', ')}`), { code: 'INCOMPLETE' });
   }
 
   const cleanedHumanVerifiedUrls = cleanHumanVerifiedUrls(humanVerifiedUrls);
@@ -706,10 +734,23 @@ export async function resolveResearchReview(
   try {
     await client.query('BEGIN');
 
-    // Season-aware write (answer + context together); see writeVerifiedStance.
+    // A blank's context says it is one, the season, when the research was done and why (§3.6).
+    // The open season's number, read in this transaction: the label must name the season the
+    // value-0 row lands in.
+    let contextReasoning = finalReasoning;
+    if (finalValue === 0) {
+      const { rows: open } = await client.query<{ number: number }>(
+        `SELECT number FROM inform.seasons WHERE status = 'open'`);
+      const researched = new Date(row.createdAt).toISOString().slice(0, 10);
+      contextReasoning = `Blank in Season ${open[0]?.number ?? '?'} (${blankReason}) — researched on ${researched}. ${finalReasoning}`;
+    }
+
+    // Season-aware write (answer + context together); see writeVerifiedStance. An UPSERT: an open-season
+    // chair already there is UPDATEd to 0, never deleted (season2-prestage correction 2026-09-23), and
+    // the closed Season 1 row is not touched — the read path's newest-season collapse hides it.
     await writeVerifiedStance({
       politicianId, topicId, value: finalValue,
-      reasoning: finalReasoning, sources: allSources, editorId: resolvedBy,
+      reasoning: contextReasoning, sources: allSources, editorId: resolvedBy,
     }, client);
 
     await accumulateEvidence(machineVerifiedRows, client);
@@ -817,6 +858,7 @@ export function validStoredSpan(snippet: string, span: string | undefined): stri
 export const OPTIONAL_REVIEW_COLUMNS = {
   topic_revision_id: 'CA_0264', season_id: 'CA_0264',
   served_revision_id: 'CA_0285', queue_reasons: 'CA_0285', evidence_type: 'CA_0285',
+  proposed_blank_reason: 'CA_0303',
 } as const;
 export type OptionalReviewColumn = keyof typeof OPTIONAL_REVIEW_COLUMNS;
 
@@ -884,6 +926,7 @@ export async function upsertReviewRow(
   const extra = (Object.keys(OPTIONAL_REVIEW_COLUMNS) as OptionalReviewColumn[]).filter((c) => present.has(c));
   const cast: Record<OptionalReviewColumn, string> = {
     topic_revision_id: '', season_id: '', served_revision_id: '', queue_reasons: '::text[]', evidence_type: '',
+    proposed_blank_reason: '',
   };
   const placeholders = extra.map((c) => {
     params.push(row[c]);

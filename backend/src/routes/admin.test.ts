@@ -197,7 +197,7 @@ describe('POST /api/admin/research-review/:id/resolve — approval input validat
     expect(mockResolveResearchReview).not.toHaveBeenCalled();
   });
 
-  it.each([7, 2.5, 0, -1, '3'])('400 when valueOverride is %j (not absent, null, or an integer 1-5)', async (bad) => {
+  it.each([7, 2.5, -1, '3'])('400 when valueOverride is %j (not absent, null, or an integer 0-5)', async (bad) => {
     const res = await request(app)
       .post('/api/admin/research-review/rev-1/resolve')
       .send({ valueOverride: bad });
@@ -238,6 +238,26 @@ describe('POST /api/admin/research-review/:id/resolve — approval input validat
     expect(call[2]).toEqual(['https://a.example']);
     expect(call[3]).toBe(3);
     expect(call[4]).toBe('why');
+  });
+
+  // CA_0303: 0 is a blank. The route passes it and its reason on; the service requires the reason.
+  it('reaches the service with valueOverride 0 and a blankReasonOverride', async () => {
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ valueOverride: 0, reasoningOverride: 'direction only', blankReasonOverride: 'direction-only' });
+    expect(res.status).toBe(200);
+    const call = mockResolveResearchReview.mock.calls[0];
+    expect(call[3]).toBe(0);
+    expect(call[5]).toBe('direction-only');
+  });
+
+  it('400 when blankReasonOverride is not a string', async () => {
+    const res = await request(app)
+      .post('/api/admin/research-review/rev-1/resolve')
+      .send({ valueOverride: 0, blankReasonOverride: 3 });
+    expect(res.status).toBe(400);
+    expect(res.body.error).toMatch(/blankReasonOverride/);
+    expect(mockResolveResearchReview).not.toHaveBeenCalled();
   });
 
   // CA_0264: the ladder check's two outcomes, as the page receives them.

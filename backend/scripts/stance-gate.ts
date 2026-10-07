@@ -6,8 +6,12 @@
  * verify-stance-research.ts expects). stances.csv carries the bundle politician's canonical
  * full_name AND the bundle topic's canonical topic_key for every row that matched one
  * (toStanceRows), so downstream sees one spelling of each.
- * It also carries each row's evidence_type and its research.csv source_url_1..3 (column source_urls):
+ * It also carries each row's evidence_type and its research.csv source_url_1..N (column source_urls):
  * the verifier verifies and publishes only evidence on those URLs (I1, 2026-09-24).
+ * A BLANK is `value = 0` with a `blank_reason` column (codebook V6) and evidence_type `blank`; its
+ * sources are every page the coder examined, so research.csv may carry source_url_4 and beyond
+ * (spec 2026-10-07-season2-blank-review-design.md §3.1). An empty value keeps its old meaning.
+ * blank_reason is carried into stances.csv.
  * Rows, bundle entries and evidence are joined through the verifier's own normalizer
  * (normName / normTopic / stanceKey in src/lib/researchVerifier.ts).
  *
@@ -56,7 +60,12 @@ const research: ResearchRow[] = records
     value: r.value && r.value.trim() !== '' ? Number(r.value) : null,
     reasoning: r.reasoning ?? '',
     evidence_type: (r.evidence_type ?? '').trim(),
-    source_urls: [r.source_url_1, r.source_url_2, r.source_url_3].map((s) => (s ?? '').trim()).filter(Boolean),
+    // source_url_1, _2, _3, … in numeric order: a blank's examined sources can outnumber three.
+    source_urls: Object.keys(r)
+      .filter((k) => /^source_url_\d+$/.test(k))
+      .sort((a, b) => Number(a.slice(11)) - Number(b.slice(11)))
+      .map((k) => (r[k] ?? '').trim()).filter(Boolean),
+    blank_reason: (r.blank_reason ?? '').trim() || null,
   }))
   .filter((r) => r.full_name);
 // Positive-control rule (CLAUDE.md): a detector that parsed nothing must not report "clean".

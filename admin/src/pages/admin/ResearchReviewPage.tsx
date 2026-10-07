@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router';
 import { apiFetch } from '../../lib/api';
-import { overrideNeedsReasoning } from './researchReviewApproval';
+import { overrideNeedsReasoning, proposedLabel, approvableValue, BLANK_REASONS } from './researchReviewApproval';
 
 interface EvidenceSnippet {
   snippet_index: number;
@@ -30,8 +30,11 @@ interface ResearchReviewRow {
   fullNameRaw: string;
   topicId: string | null;
   topicKey: string;
+  /** 1-5 = a chair; 0 = a blank (CA_0303). */
   proposedValue: number | null;
   proposedReasoning: string;
+  /** CA_0303: the codebook V6 reason for a proposed blank; null for a chair. */
+  proposedBlankReason?: string | null;
   evidence: EvidenceSource[];
   verifiedSourceCount: number;
   threshold: number;
@@ -44,7 +47,11 @@ interface ResearchReviewRow {
    * I2: what voters see NOW — the newest published season's answer (the Season 1 chair when the
    * open season has none). value 0 = a blank. null = nothing shown. text = that rung's served text.
    */
-  displayed: { value: number; seasonNumber: number; text: string | null; historyText: string | null } | null;
+  displayed: {
+    value: number; seasonNumber: number; text: string | null; historyText: string | null;
+    /** The displayed chair's own reasoning — what a blank would remove (CA_0303 review). */
+    reasoning?: string | null;
+  } | null;
   /** CA_0285: why the row was queued, and its evidence class. null = not recorded. */
   queueReasons: string[] | null;
   evidenceType: string | null;
@@ -83,6 +90,8 @@ export function ResearchReviewPage() {
   const [humanVerified, setHumanVerified] = useState<Set<string>>(new Set());
   const [editValue, setEditValue] = useState<string>('');
   const [editReasoning, setEditReasoning] = useState<string>('');
+  // A reviewer who blanks a proposed chair (value 0) must say why: one of codebook V6's six.
+  const [blankReason, setBlankReason] = useState<string>('');
 
   useEffect(() => {
     if (id) load();
@@ -130,6 +139,8 @@ export function ResearchReviewPage() {
           humanVerifiedUrls: [...humanVerified],
           valueOverride: parsedValue,
           reasoningOverride: editReasoning || undefined,
+          // Only when the reviewer blanks a chair, or changes a queued blank's reason.
+          blankReasonOverride: parsedValue === 0 && blankReason ? blankReason : undefined,
         }),
       });
       navigate('/admin/review?tab=research');
@@ -173,10 +184,15 @@ export function ResearchReviewPage() {
   // I6: only a snippet with a stored page span is a machine citation.
   const hasMachineVerified = row.evidence.some((e) => e.snippets.some(isPublishable));
   const hasSource = hasMachineVerified || humanVerified.size > 0;
-  // The value is a chair 1-5, never anything else — the server refuses the same case (400), so
-  // this only saves a round trip.
-  const numericValue = Number(editValue);
-  const isValidValue = editValue !== '' && Number.isInteger(numericValue) && numericValue >= 1 && numericValue <= 5;
+  // The value is a chair 1-5, or 0 = a blank that carries one of the six reasons (CA_0303) — the
+  // server refuses anything else (400/422), so this only saves a round trip.
+  const approvable = approvableValue({
+    editedValue: editValue, proposedValue: row.proposedValue, proposedBlankReason: row.proposedBlankReason, blankReason,
+  });
+  const isValidValue = approvable !== null;
+  const numericValue = approvable?.value ?? NaN;
+  const editingBlank = editValue.trim() === '0';
+  const proposal = proposedLabel(row.proposedValue, row.proposedBlankReason);
   // Task 5, requirement 3: a value override with no changed reasoning is refused by the server
   // (422); this only saves the round trip. The server is the source of truth either way.
   const needsReasoningForOverride = overrideNeedsReasoning({
@@ -245,7 +261,9 @@ export function ResearchReviewPage() {
             : !row.topicId
             ? 'Topic could not be matched — approve is disabled.'
             : !isValidValue
-            ? 'Enter a whole number from 1 to 5 to enable approve.'
+            ? (editingBlank
+              ? 'A blank (0) needs a blank reason — choose one to enable approve.'
+              : 'Enter a whole number from 1 to 5 (or 0 for a blank) to enable approve.')
             : needsReasoningForOverride
             ? 'The value differs from the proposal — edit the reasoning to explain the new value before approving.'
             : 'No source is verified — check a source URL and mark it verified to enable approve.'}
@@ -284,6 +302,15 @@ export function ResearchReviewPage() {
         }`}>
           Voters see now: {displayedText}
           {replacesShownChair && ' — approving replaces this chair, although the open season holds no value.'}
+          {/* §3.5: a proposed blank reads as "Blank — <reason>" beside what it would remove. */}
+          {row.proposedValue === 0 && (
+            <p className="mt-1 font-medium">Proposed: {proposal}</p>
+          )}
+          {row.proposedValue === 0 && row.displayed && row.displayed.value !== 0 && row.displayed.reasoning && (
+            <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">
+              Season {row.displayed.seasonNumber} reasoning: {row.displayed.reasoning}
+            </p>
+          )}
           {row.displayed && row.displayed.value !== 0 && row.displayed.historyText
             && row.displayed.historyText !== row.displayed.text && (
             <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
@@ -331,14 +358,32 @@ export function ResearchReviewPage() {
         {/* Proposed stance */}
         <div>
           <label className="block text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
-            Value
+            Value <span className="normal-case font-normal">(1-5 = a chair, 0 = a blank)</span>
           </label>
-          <input
-            type="number"
-            value={editValue}
-            onChange={(e) => setEditValue(e.target.value)}
-            className="w-24 px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-2xl font-bold text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-ev-red"
-          />
+          <div className="flex items-center gap-3">
+            <input
+              type="number"
+              value={editValue}
+              onChange={(e) => setEditValue(e.target.value)}
+              className="w-24 px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-2xl font-bold text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-ev-red"
+            />
+            {editingBlank && (
+              <select
+                value={blankReason || (row.proposedValue === 0 ? row.proposedBlankReason ?? '' : '')}
+                onChange={(e) => setBlankReason(e.target.value)}
+                aria-label="Blank reason"
+                className="px-3 py-2 bg-gray-50 dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md text-sm text-gray-700 dark:text-gray-300"
+              >
+                <option value="">Blank reason…</option>
+                {BLANK_REASONS.map((r) => <option key={r} value={r}>{r}</option>)}
+              </select>
+            )}
+          </div>
+          {editingBlank && (
+            <p className="mt-1 text-xs text-gray-500 dark:text-gray-400">
+              Approving writes a blank: voters see an empty spoke for this topic, not the chair above.
+            </p>
+          )}
         </div>
 
         {/* Reasoning */}
@@ -358,7 +403,7 @@ export function ResearchReviewPage() {
         {row.evidence.length > 0 && (
           <div>
             <p className="text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-2">
-              Sources — click a URL to check it, then toggle verified
+              {row.proposedValue === 0 ? 'Examined sources' : 'Sources'} — click a URL to check it, then toggle verified
             </p>
             <div className="space-y-2">
               {row.evidence.map((src, i) => (

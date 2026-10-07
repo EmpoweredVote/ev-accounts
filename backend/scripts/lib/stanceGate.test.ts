@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { checkStanceRow, checkBatch, toStanceRows, PARTY_NAMES, PARTY_NOUNS_ANY_CASE, GATE_CHECK_IDS,
+  checkBlankExaminedFallback, canonicalUrl,
   type ResearchRow, type BundleTopic, type BundlePolitician } from './stanceGate.js';
 
 const SNIP = 'Representative Jane Doe voted yes on HB 1001 in 2025 because she believes every '
@@ -362,5 +363,66 @@ describe('GATE_CHECK_IDS', () => {
   it('lists every check the gate emits, including duplicate-row', () => {
     expect(GATE_CHECK_IDS).toContain('duplicate-row');
     expect(new Set(GATE_CHECK_IDS).size).toBe(GATE_CHECK_IDS.length);
+  });
+});
+
+describe('a blank — value 0 with a codebook V6 reason (spec 2026-10-07 §3.2)', () => {
+  const blank: ResearchRow = {
+    ...good, value: 0, blank_reason: 'direction-only', evidence_type: 'blank',
+    reasoning: 'Blank (direction-only). HB 1001 shows support but cannot tell rung 1 from rung 2; "the two rungs differ only in scope" here.',
+  };
+  it('passes a clean blank: no instrument-not-cited, no quote-not-in-snippet, no record checks', () => {
+    expect(ids(blank)).toEqual([]);
+  });
+  it('0 without a reason is still value-out-of-range (high)', () => {
+    const f = checkStanceRow({ ...blank, blank_reason: null }, { topic: HEALTH, politician: JANE, evidence: ev });
+    expect(f.find((x) => x.check_id === 'value-out-of-range')).toMatchObject({ severity: 'high' });
+  });
+  it('refuses a reason that is not one of the six, and a reason beside a chair', () => {
+    expect(ids({ ...blank, blank_reason: 'looked-hard' })).toContain('blank-reason-invalid');
+    expect(ids({ ...good, blank_reason: 'no-evidence' })).toContain('blank-reason-invalid');
+  });
+  it("a blank's evidence_type must be blank, and blank is not a chair's evidence_type", () => {
+    expect(ids({ ...blank, evidence_type: 'record' })).toContain('evidence-type-invalid');
+    expect(ids({ ...good, evidence_type: 'blank' })).toContain('evidence-type-invalid');
+  });
+  it('a no-evidence blank may cite nothing', () => {
+    expect(ids({ ...blank, blank_reason: 'no-evidence', source_urls: [] }, { evidence: [] })).toEqual([]);
+  });
+  it('still runs party-inference and the source checks on the examined sources', () => {
+    expect(ids({ ...blank, reasoning: 'Blank; she votes with the Republican caucus.' })).toContain('party-inference');
+    expect(ids({ ...blank, source_urls: ['https://a.gov/x', 'https://b.gov/y'] })).toContain('source-without-snippet');
+    expect(ids({ ...blank, source_urls: ['https://vote411.org/x'] }, { evidence: [] })).toContain('pointer-only-source');
+  });
+  it('carries blank_reason into stances.csv rows', () => {
+    expect(toStanceRows([blank], [HEALTH], [JANE])[0]).toMatchObject({ value: 0, blank_reason: 'direction-only', evidence_type: 'blank' });
+  });
+  it('the new check ids are ones verify-stance-research accepts from gate-findings.json', () => {
+    expect(GATE_CHECK_IDS).toEqual(expect.arrayContaining(['blank-reason-invalid', 'blank-unexamined-fallback']));
+  });
+});
+
+describe('blank-unexamined-fallback — a blank removes a visible chair only after its sources were examined (ruling Q3)', () => {
+  const row = { full_name: 'Jane Doe', topic_key: 'healthcare', source_urls: ['https://www.a.gov/x/', 'https://c.gov/z'] };
+  const all = () => true;
+  it('passes when every fallback source that still loads was examined (scheme/www/slash do not matter)', () => {
+    expect(checkBlankExaminedFallback({ row, displayedValue: 3, fallbackSources: ['http://a.gov/x'], fetchable: all })).toBeNull();
+  });
+  it('fires (high) for a fallback source the coder did not examine', () => {
+    const f = checkBlankExaminedFallback({ row, displayedValue: 3, fallbackSources: ['https://a.gov/x', 'https://s1.gov/vote'], fetchable: all });
+    expect(f).toMatchObject({ check_id: 'blank-unexamined-fallback', severity: 'high' });
+    expect(f!.what).toContain('https://s1.gov/vote');
+    expect(f!.what).not.toContain('https://a.gov/x ');
+  });
+  it('does not require a fallback source that no longer loads', () => {
+    expect(checkBlankExaminedFallback({ row, displayedValue: 3, fallbackSources: ['https://dead.gov/gone'], fetchable: () => false })).toBeNull();
+  });
+  it('fires for a no-evidence blank that examined nothing while the chair cites a live page', () => {
+    expect(checkBlankExaminedFallback({ row: { ...row, source_urls: [] }, displayedValue: 2, fallbackSources: ['https://s1.gov/a'], fetchable: all }))
+      .toMatchObject({ check_id: 'blank-unexamined-fallback' });
+  });
+  it('canonicalUrl ignores scheme, www, a trailing slash and the fragment, but keeps the query', () => {
+    expect(canonicalUrl('https://www.A.gov/x/#top')).toBe(canonicalUrl('http://a.gov/x'));
+    expect(canonicalUrl('https://a.gov/x?id=1')).not.toBe(canonicalUrl('https://a.gov/x?id=2'));
   });
 });
