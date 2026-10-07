@@ -24,8 +24,12 @@ const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
 const CACHE = flag('--cache', 'C:/Users/Chris/AppData/Local/Temp/ev-stance-cache/tierb-cache');
 const OUT = flag('--out', 'data/stance-retirement/2026-08-12-the-197-claim-on-page.json');
+// --in generalises the guard beyond the original 197. The same question — "is the cited page silent
+// on the ROW'S OWN WORDS?" — has to be asked of every TOPIC_ABSENT cohort before any retirement, and
+// the 305 and the federal cohort are the next two. Default unchanged, so existing invocations work.
+const IN = flag('--in', 'data/stance-retirement/2026-08-12-the-197.json');
 
-const G = JSON.parse(fs.readFileSync('data/stance-retirement/2026-08-12-the-197.json', 'utf8'));
+const G = JSON.parse(fs.readFileSync(IN, 'utf8'));
 const fileFor = (u) => path.join(CACHE, encodeURIComponent(u).replace(/[^A-Za-z0-9%._-]/g, '_').slice(-180) + '.html');
 
 // Words too common to be evidence of anything. A hit on one of these is noise.
