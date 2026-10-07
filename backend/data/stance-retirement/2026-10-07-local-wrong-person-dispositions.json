@@ -1,0 +1,413 @@
+{
+  "pass": "The LOCAL half of the wrong-person class -- chairs built from a different politician's evidence. The federal half closed in migration 1896 / ev-accounts #904; this is what it left behind, re-read person by person rather than key by key.",
+  "read_on": "2026-10-07",
+  "written_by": "migration 1897",
+  "headline": "The handoff recorded 8 rows across 5 officials plus 2 candidates. Read as PEOPLE rather than as keys it is 27 rows across 6 officials -- and the 2 candidates were not defects at all. 24 keys blanked, 3 blocked, 2 recorded findings withdrawn.",
+  "the_lesson": "A BORROWED BILL CITATION IS WORSE THAN A BORROWED CAMPAIGN WEBSITE. Migration 1896 found that a borrowed campaign site scores clean on every \"is this generic?\" test. The local rows go one level deeper: Ortega's and Bennett's contaminated chairs cite leginfo.legislature.ca.gov BILL PAGES -- the most specific, most primary-looking source in the corpus -- and the bills are real. They are simply SOMEONE ELSE'S BILLS. Only the rows that happened to cite a Wikipedia biography were visible to the probe that found them, and those were the minority.",
+  "three_distinct_mechanisms": {
+    "1_succession_link": "Steve Bennett <- Suzette Martinez Valladares. Her article names him EXACTLY ONCE, in the infobox line \"Member of the California State Assembly from the 38th district ... Succeeded by Steve Bennett\". The predecessor's article is one click from the subject's own and names him as his own predecessor. This is not a name collision and no name-based probe can find it -- every officeholder has such a neighbour.",
+    "2_inheritance_from_a_mentor": "Katy Yaroslavsky <- Sheila Kuehl. Not a misfiling at all: the research states the gap in its own words (\"No specific vote or statement on childcare policy was found\") and then seats the chair on the county supervisor she once worked for. Every name on the page is correct, so no name-token, state or party probe can see it. Whom someone worked for is not a position they hold.",
+    "3_invented_party_and_invented_instruments": "Steve Johnson (MD, Democrat). All eight chairs at rung 4, each reached by calling him a Republican, while his own cited page says \"Party Democrat\". Five of the eight rest on bills absent from the 150 his page lists, and one claim is contradicted outright: the row says he opposes \"major police accountability reforms\" and his page lists him as a CO-SPONSOR of HB0508, Public Safety - Police Accountability - Investigation Records."
+  },
+  "proof_from_our_own_corpus": "The strongest proof needed no external page. Laura Richardson and Suzette Martinez Valladares are both rows in this database, both CALIFORNIA STATE SENATORS, and our own rows for them attribute the very same bills to them. \"Richardson authored SB 510 (2025)\" and \"Authored SB 510\" sit in the corpus under two different people; so do SB 530, SB 611, SB 752, SB 767, SB 34, SB 1137 and SB 1144. Liz Ortega is an Assembly Member credited with authoring SENATE bills and with a \"prior US House record\" she does not have; Steve Bennett is a Democratic Assembly member described as a \"Republican senator\".",
+  "control_terms": {
+    "en.wikipedia.org/wiki/Laura_Richardson": "\"Richardson\" 103, \"Ortega\" 0, \"Hayward\" 0, \"Long Beach\" 13",
+    "en.wikipedia.org/wiki/Suzette_Martinez_Valladares": "\"Valladares\" 33, \"Republican\" 33, \"Schiavo\" 5, \"Ventura\" 1, \"Bennett\" 1 (the succession line)",
+    "mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01": "\"Harford\" 15, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0; across its 150 bills: \"Solar\" 0, \"Generating Station\" 0, \"Redistricting\" 0, \"Scholarship\" 0, \"Voter\" 0, \"Citizenship\" 0",
+    "www.jasmineforok.com/policies": "\"Jasmine\" 2, \"Thomas\" 2, \"N'Kiyla\" 1 -- headed \"N'kiyla Jasmine Thomas For US Senate\", footer \"Paid for By N'Kiyla For OK\"",
+    "wwno.org Louisiana Senate Q&A": "\"Crockett\" 5, \"Gary\" 5, \"pro-choice\" 1 -- carries his answers in the first person"
+  },
+  "withdrawn_false_positives": [
+    {
+      "who": "N'Kiyla Thomas (OK, US Senate candidate)",
+      "recorded_as": "cites jasmineforok.com -- no source names her",
+      "finding": "WRONG. jasmineforok.com IS her own campaign site; she campaigns under her middle name. The page is headed \"N'kiyla Jasmine Thomas For US Senate\" and its footer reads \"Paid for By N'Kiyla For OK\". Her 7 Season 1 and 2 Season 2 rows are sound and were left alone.",
+      "disposition": "SOUND"
+    },
+    {
+      "who": "Gary Crockett (LA, US Senate candidate)",
+      "recorded_as": "no source names him",
+      "finding": "WRONG. The cited WWNO candidate Q&A names him 5 times, runs his photo, and carries his answers in the first person -- \"I am Moderate/pro-choice. I support legal abortion in some circumstances. I oppose total abortion bans ... totally against 3rd trimester abortions unless the woman's life is in jeopardy\", which is exactly the chair his row holds (3). Both his rows are sound.",
+      "disposition": "SOUND"
+    }
+  ],
+  "why_both_were_wrong": "The probe behind them -- \"does any source name them?\" -- was run against the URL and the name string, not against the PAGE. A probe that FIRES must be confirmed by reading the page, exactly as a probe that is SILENT must be confirmed with a control term. Otherwise it manufactures false defects as readily as it finds real ones.",
+  "blocked": {
+    "keys": [
+      "Liz Ortega / immigration (chair 2)",
+      "Steve Bennett / immigration (chair 4)",
+      "Katy Yaroslavsky / immigration (chair 2)"
+    ],
+    "reason": "`immigration` has NO Season 2 pin -- the Season-1-only orphan topic -- so there is no row to shadow the bad one with. A blank cannot be written.",
+    "the_standing_total": "With the three left blocked by migration 1896 (Janak Joshi chair 5, Alex Vindman chair 4, David Roth chair 2), SIX WRONG-PERSON CHAIRS REMAIN VISIBLE TO VOTERS AND ALL SIX ARE ON `immigration`. None can be fixed by a Season 2 write. This is now the single largest blocked defect in the audit and it belongs to the Season 3 decision.",
+    "guard": "Migration 1897 carries a pre-guard asserting immigration still has no Season 2 pin, so if it ever gains one the guard fails loudly and the six are revisited."
+  },
+  "recorded_not_fixed": {
+    "katy_yaroslavsky_self_confessed_absence": "Every row of all six people was read. Besides the 6 Kuehl rows, Yaroslavsky carries 9 more rows of a DIFFERENT defect class: abortion, deportation, economic-development, jail-capacity, local-immigration, rent-regulation, school-vouchers, taxes and voting-rights each either open with \"no specific vote or statement was found\" or cite only the generic en.wikipedia.org/wiki/Sanctuary_city article, which names no person at all. Deliberately not touched: widening this migration to a different class would have made it unreviewable.",
+    "morales_and_campos": "Both carry further rows reached from party membership alone (\"As a Democrat, Morales supports...\"). That is the Texas cohort already recorded under tx_immigration_cohort_audit, not this class.",
+    "bennett_and_ortega_sound_rows": "Their vote-based rows (abortion SB-233, ai-regulation SB-7, fossil-fuels SB-4, civil-rights AB-7, housing SB-4, voting-rights ACA-7/AB-7) describe votes an Assembly member does cast on Senate bills and are consistent with the right person. Left alone."
+  },
+  "method_notes": [
+    "leginfo.legislature.ca.gov returns HTTP 403 to automated retrieval even with a browser User-Agent; legiscan.com likewise. Their contents are NOT asserted in either direction. The bill-authorship proof comes from this database's own rows for Richardson and Valladares.",
+    "openstates.org is JS-rendered -- it returns 53 bytes of \"You need to enable JavaScript to run this app.\" A control term caught it. Nothing is asserted from it. Same trap as GovTrack in 1896.",
+    "ballotpedia.org/Steve_Johnson_(Maryland) returned HTTP 200 with EVERY control term at 0, including both party names. A 200 is not a read. Recorded as NOT READ.",
+    "The MGA member page lists the 2025 and 2026 sessions only, so absence of a bill is established for that window and NOT for 2023-2024 -- except the SAVE Our Elections Act of 2026, which is dated inside it. The limit is written into every Johnson blank rather than left implicit.",
+    "Re-running probe 2 after migration 1896 returns 39 rows rather than 27, because 1896's OWN BLANKS carry the contaminated URLs as \"sources examined\". Explaining a defect in prose makes you a permanent false positive -- the same effect recorded for migration 1882."
+  ],
+  "tally": {
+    "blanked": 24,
+    "blocked": 3,
+    "withdrawn_as_false_positives": 2,
+    "inserted_into_season2": 22,
+    "updated_in_place": 2
+  },
+  "rows": [
+    {
+      "politician": "Liz Ortega",
+      "topic": "civil-rights",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Laura Richardson (CA State Senator)",
+      "sources_examined": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB510"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Laura Richardson's research filed under Assembly Member Liz Ortega. Both are California Democrats and both are rows in this database: Liz Ortega is an Assembly Member; Laura Richardson is a State Senator, and before that a member of the US House of Representatives and of the Long Beach City Council. The rows filed under Ortega credit her with AUTHORING Senate bills -- SB 510, SB 530, SB 535, SB 611, SB 748, SB 752, SB 767, SB 34 -- and with a \"prior US House record\" and service as a \"prior Long Beach City Council member\". 🔑 THE DECISIVE TEST NEEDS NO PAGE: Liz Ortega has never served in the US House and never sat on the Long Beach City Council. Laura Richardson did both, and THIS DATABASE'S OWN ROW FOR RICHARDSON ATTRIBUTES THE VERY SAME BILLS TO HER -- \"Richardson authored SB 510 (2025)\", \"Richardson authored SB 530 (2025)\", \"Richardson authored SB 611 (2025)\", \"authored SB 752\", \"authored SB 767\", \"Richardson authored SB 34 (2025) on port emissions\". The immigration row cites en.wikipedia.org/wiki/Laura_Richardson outright: control term \"Richardson\" 103 hits, \"Ortega\" 0, \"Hayward\" 0. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Liz Ortega",
+      "topic": "climate-change",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Laura Richardson (CA State Senator)",
+      "sources_examined": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB752"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Laura Richardson's research filed under Assembly Member Liz Ortega. Both are California Democrats and both are rows in this database: Liz Ortega is an Assembly Member; Laura Richardson is a State Senator, and before that a member of the US House of Representatives and of the Long Beach City Council. The rows filed under Ortega credit her with AUTHORING Senate bills -- SB 510, SB 530, SB 535, SB 611, SB 748, SB 752, SB 767, SB 34 -- and with a \"prior US House record\" and service as a \"prior Long Beach City Council member\". 🔑 THE DECISIVE TEST NEEDS NO PAGE: Liz Ortega has never served in the US House and never sat on the Long Beach City Council. Laura Richardson did both, and THIS DATABASE'S OWN ROW FOR RICHARDSON ATTRIBUTES THE VERY SAME BILLS TO HER -- \"Richardson authored SB 510 (2025)\", \"Richardson authored SB 530 (2025)\", \"Richardson authored SB 611 (2025)\", \"authored SB 752\", \"authored SB 767\", \"Richardson authored SB 34 (2025) on port emissions\". The immigration row cites en.wikipedia.org/wiki/Laura_Richardson outright: control term \"Richardson\" 103 hits, \"Ortega\" 0, \"Hayward\" 0. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Liz Ortega",
+      "topic": "healthcare",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Laura Richardson (CA State Senator)",
+      "sources_examined": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB530",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB535"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Laura Richardson's research filed under Assembly Member Liz Ortega. Both are California Democrats and both are rows in this database: Liz Ortega is an Assembly Member; Laura Richardson is a State Senator, and before that a member of the US House of Representatives and of the Long Beach City Council. The rows filed under Ortega credit her with AUTHORING Senate bills -- SB 510, SB 530, SB 535, SB 611, SB 748, SB 752, SB 767, SB 34 -- and with a \"prior US House record\" and service as a \"prior Long Beach City Council member\". 🔑 THE DECISIVE TEST NEEDS NO PAGE: Liz Ortega has never served in the US House and never sat on the Long Beach City Council. Laura Richardson did both, and THIS DATABASE'S OWN ROW FOR RICHARDSON ATTRIBUTES THE VERY SAME BILLS TO HER -- \"Richardson authored SB 510 (2025)\", \"Richardson authored SB 530 (2025)\", \"Richardson authored SB 611 (2025)\", \"authored SB 752\", \"authored SB 767\", \"Richardson authored SB 34 (2025) on port emissions\". The immigration row cites en.wikipedia.org/wiki/Laura_Richardson outright: control term \"Richardson\" 103 hits, \"Ortega\" 0, \"Hayward\" 0. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Liz Ortega",
+      "topic": "housing",
+      "season1_value": 2,
+      "season2_value_before": 3,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Laura Richardson (CA State Senator)",
+      "sources_examined": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB611",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB748"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Laura Richardson's research filed under Assembly Member Liz Ortega. Both are California Democrats and both are rows in this database: Liz Ortega is an Assembly Member; Laura Richardson is a State Senator, and before that a member of the US House of Representatives and of the Long Beach City Council. The rows filed under Ortega credit her with AUTHORING Senate bills -- SB 510, SB 530, SB 535, SB 611, SB 748, SB 752, SB 767, SB 34 -- and with a \"prior US House record\" and service as a \"prior Long Beach City Council member\". 🔑 THE DECISIVE TEST NEEDS NO PAGE: Liz Ortega has never served in the US House and never sat on the Long Beach City Council. Laura Richardson did both, and THIS DATABASE'S OWN ROW FOR RICHARDSON ATTRIBUTES THE VERY SAME BILLS TO HER -- \"Richardson authored SB 510 (2025)\", \"Richardson authored SB 530 (2025)\", \"Richardson authored SB 611 (2025)\", \"authored SB 752\", \"authored SB 767\", \"Richardson authored SB 34 (2025) on port emissions\". The immigration row cites en.wikipedia.org/wiki/Laura_Richardson outright: control term \"Richardson\" 103 hits, \"Ortega\" 0, \"Hayward\" 0. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Liz Ortega",
+      "topic": "medicare/aid",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Laura Richardson (CA State Senator)",
+      "sources_examined": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB530"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Laura Richardson's research filed under Assembly Member Liz Ortega. Both are California Democrats and both are rows in this database: Liz Ortega is an Assembly Member; Laura Richardson is a State Senator, and before that a member of the US House of Representatives and of the Long Beach City Council. The rows filed under Ortega credit her with AUTHORING Senate bills -- SB 510, SB 530, SB 535, SB 611, SB 748, SB 752, SB 767, SB 34 -- and with a \"prior US House record\" and service as a \"prior Long Beach City Council member\". 🔑 THE DECISIVE TEST NEEDS NO PAGE: Liz Ortega has never served in the US House and never sat on the Long Beach City Council. Laura Richardson did both, and THIS DATABASE'S OWN ROW FOR RICHARDSON ATTRIBUTES THE VERY SAME BILLS TO HER -- \"Richardson authored SB 510 (2025)\", \"Richardson authored SB 530 (2025)\", \"Richardson authored SB 611 (2025)\", \"authored SB 752\", \"authored SB 767\", \"Richardson authored SB 34 (2025) on port emissions\". The immigration row cites en.wikipedia.org/wiki/Laura_Richardson outright: control term \"Richardson\" 103 hits, \"Ortega\" 0, \"Hayward\" 0. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Bennett",
+      "topic": "climate-change",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Suzette Martinez Valladares (CA State Senator)",
+      "sources_examined": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB1161"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Suzette Martinez Valladares's research filed under Assembly Member Steve Bennett. Steve Bennett is a DEMOCRATIC member of the California State Assembly representing Ventura. The rows filed under him describe a \"Republican senator\", a \"Republican representing Santa Clarita/Simi Valley\", and a \"Republican who narrowly lost to Pilar Schiavo in 2022 and won back a senate seat in 2024\". That is Suzette Martinez Valladares, a Republican state senator, who is a separate row in this database. Two of the rows cite en.wikipedia.org/wiki/Suzette_Martinez_Valladares outright and carry her biography verbatim: \"her grandfather was a farmworker who worked alongside Cesar Chavez\" and \"one of the inaugural members of the California State Legislature's Problem Solvers Caucus\". Control terms on that page: \"Valladares\" 33 hits, \"Republican\" 33, \"Schiavo\" 5, \"Bennett\" 1. 🔑 THE SINGLE \"Bennett\" HIT IS THE MECHANISM, NOT A COINCIDENCE: it is the infobox line \"Member of the California State Assembly from the 38th district ... Succeeded by Steve Bennett\". THE CONTAMINATION TRAVELLED ALONG A SUCCESSION LINK, not a name collision -- the article is one click from his own and names him exactly once, as the man who replaced her. This database's own row for Valladares attributes the same tax bills to her: \"authored SB 1144 (increasing the dependent exemption credit from $475 to $700 for 2026-2030), SB 1137 (lowering the medical expense deduction threshold from 7.5% to 4% of AGI)\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Bennett",
+      "topic": "fossil-fuels",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Suzette Martinez Valladares (CA State Senator)",
+      "sources_examined": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB1161"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Suzette Martinez Valladares's research filed under Assembly Member Steve Bennett. Steve Bennett is a DEMOCRATIC member of the California State Assembly representing Ventura. The rows filed under him describe a \"Republican senator\", a \"Republican representing Santa Clarita/Simi Valley\", and a \"Republican who narrowly lost to Pilar Schiavo in 2022 and won back a senate seat in 2024\". That is Suzette Martinez Valladares, a Republican state senator, who is a separate row in this database. Two of the rows cite en.wikipedia.org/wiki/Suzette_Martinez_Valladares outright and carry her biography verbatim: \"her grandfather was a farmworker who worked alongside Cesar Chavez\" and \"one of the inaugural members of the California State Legislature's Problem Solvers Caucus\". Control terms on that page: \"Valladares\" 33 hits, \"Republican\" 33, \"Schiavo\" 5, \"Bennett\" 1. 🔑 THE SINGLE \"Bennett\" HIT IS THE MECHANISM, NOT A COINCIDENCE: it is the infobox line \"Member of the California State Assembly from the 38th district ... Succeeded by Steve Bennett\". THE CONTAMINATION TRAVELLED ALONG A SUCCESSION LINK, not a name collision -- the article is one click from his own and names him exactly once, as the man who replaced her. This database's own row for Valladares attributes the same tax bills to her: \"authored SB 1144 (increasing the dependent exemption credit from $475 to $700 for 2026-2030), SB 1137 (lowering the medical expense deduction threshold from 7.5% to 4% of AGI)\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Bennett",
+      "topic": "school-vouchers",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Suzette Martinez Valladares (CA State Senator)",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Suzette_Martinez_Valladares"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Suzette Martinez Valladares's research filed under Assembly Member Steve Bennett. Steve Bennett is a DEMOCRATIC member of the California State Assembly representing Ventura. The rows filed under him describe a \"Republican senator\", a \"Republican representing Santa Clarita/Simi Valley\", and a \"Republican who narrowly lost to Pilar Schiavo in 2022 and won back a senate seat in 2024\". That is Suzette Martinez Valladares, a Republican state senator, who is a separate row in this database. Two of the rows cite en.wikipedia.org/wiki/Suzette_Martinez_Valladares outright and carry her biography verbatim: \"her grandfather was a farmworker who worked alongside Cesar Chavez\" and \"one of the inaugural members of the California State Legislature's Problem Solvers Caucus\". Control terms on that page: \"Valladares\" 33 hits, \"Republican\" 33, \"Schiavo\" 5, \"Bennett\" 1. 🔑 THE SINGLE \"Bennett\" HIT IS THE MECHANISM, NOT A COINCIDENCE: it is the infobox line \"Member of the California State Assembly from the 38th district ... Succeeded by Steve Bennett\". THE CONTAMINATION TRAVELLED ALONG A SUCCESSION LINK, not a name collision -- the article is one click from his own and names him exactly once, as the man who replaced her. This database's own row for Valladares attributes the same tax bills to her: \"authored SB 1144 (increasing the dependent exemption credit from $475 to $700 for 2026-2030), SB 1137 (lowering the medical expense deduction threshold from 7.5% to 4% of AGI)\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Bennett",
+      "topic": "taxes",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Suzette Martinez Valladares (CA State Senator)",
+      "sources_examined": [
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB1137",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB1144",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260SB17"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is State Senator Suzette Martinez Valladares's research filed under Assembly Member Steve Bennett. Steve Bennett is a DEMOCRATIC member of the California State Assembly representing Ventura. The rows filed under him describe a \"Republican senator\", a \"Republican representing Santa Clarita/Simi Valley\", and a \"Republican who narrowly lost to Pilar Schiavo in 2022 and won back a senate seat in 2024\". That is Suzette Martinez Valladares, a Republican state senator, who is a separate row in this database. Two of the rows cite en.wikipedia.org/wiki/Suzette_Martinez_Valladares outright and carry her biography verbatim: \"her grandfather was a farmworker who worked alongside Cesar Chavez\" and \"one of the inaugural members of the California State Legislature's Problem Solvers Caucus\". Control terms on that page: \"Valladares\" 33 hits, \"Republican\" 33, \"Schiavo\" 5, \"Bennett\" 1. 🔑 THE SINGLE \"Bennett\" HIT IS THE MECHANISM, NOT A COINCIDENCE: it is the infobox line \"Member of the California State Assembly from the 38th district ... Succeeded by Steve Bennett\". THE CONTAMINATION TRAVELLED ALONG A SUCCESSION LINK, not a name collision -- the article is one click from his own and names him exactly once, as the man who replaced her. This database's own row for Valladares attributes the same tax bills to her: \"authored SB 1144 (increasing the dependent exemption credit from $475 to $700 for 2026-2030), SB 1137 (lowering the medical expense deduction threshold from 7.5% to 4% of AGI)\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Katy Yaroslavsky",
+      "topic": "same-sex-marriage",
+      "season1_value": 1,
+      "season2_value_before": 2,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Sheila Kuehl (former LA County Supervisor)",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Sheila_Kuehl"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴 THE CHAIR RESTS ON A DIFFERENT PERSON'S RECORD. Katy Yaroslavsky is a Los Angeles City Council member; this chair is reached from the record of Sheila Kuehl, the former LA County Supervisor and state legislator she once worked for. The same-sex-marriage and trans-athletes rows cite en.wikipedia.org/wiki/Sheila_Kuehl as their ONLY source. The reasoning states the gap itself -- \"No specific vote or statement on childcare policy was found\", \"No specific LA City Council votes on healthcare access were found\", \"No specific statement or vote by Yaroslavsky on transgender athletes was found\" -- and then seats the chair on Kuehl anyway: \"Her mentor Sheila Kuehl was a champion of childcare and early childhood programs\", \"her mentor Sheila Kuehl co-authored California's first same-sex marriage bill in 2002\", \"Her background working for Kuehl -- who authored LGBTQ protections in California -- signals consistent support\", \"her background at Climate Action Reserve and working for Kuehl aligns with strengthening civil rights protections\". 🔑 THIS IS INHERITANCE, NOT A MISFILING. The research did not confuse two people; it substituted a mentor's positions for the subject's, which is why no name-token, state or party probe can see it -- every name on the page is correct. WHOM SOMEONE WORKED FOR IS NOT A POSITION THEY HOLD. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Katy Yaroslavsky",
+      "topic": "trans-athletes",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Sheila Kuehl (former LA County Supervisor)",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Sheila_Kuehl"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴 THE CHAIR RESTS ON A DIFFERENT PERSON'S RECORD. Katy Yaroslavsky is a Los Angeles City Council member; this chair is reached from the record of Sheila Kuehl, the former LA County Supervisor and state legislator she once worked for. The same-sex-marriage and trans-athletes rows cite en.wikipedia.org/wiki/Sheila_Kuehl as their ONLY source. The reasoning states the gap itself -- \"No specific vote or statement on childcare policy was found\", \"No specific LA City Council votes on healthcare access were found\", \"No specific statement or vote by Yaroslavsky on transgender athletes was found\" -- and then seats the chair on Kuehl anyway: \"Her mentor Sheila Kuehl was a champion of childcare and early childhood programs\", \"her mentor Sheila Kuehl co-authored California's first same-sex marriage bill in 2002\", \"Her background working for Kuehl -- who authored LGBTQ protections in California -- signals consistent support\", \"her background at Climate Action Reserve and working for Kuehl aligns with strengthening civil rights protections\". 🔑 THIS IS INHERITANCE, NOT A MISFILING. The research did not confuse two people; it substituted a mentor's positions for the subject's, which is why no name-token, state or party probe can see it -- every name on the page is correct. WHOM SOMEONE WORKED FOR IS NOT A POSITION THEY HOLD. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Katy Yaroslavsky",
+      "topic": "childcare",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Sheila Kuehl (former LA County Supervisor)",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Katy_Yaroslavsky"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴 THE CHAIR RESTS ON A DIFFERENT PERSON'S RECORD. Katy Yaroslavsky is a Los Angeles City Council member; this chair is reached from the record of Sheila Kuehl, the former LA County Supervisor and state legislator she once worked for. The same-sex-marriage and trans-athletes rows cite en.wikipedia.org/wiki/Sheila_Kuehl as their ONLY source. The reasoning states the gap itself -- \"No specific vote or statement on childcare policy was found\", \"No specific LA City Council votes on healthcare access were found\", \"No specific statement or vote by Yaroslavsky on transgender athletes was found\" -- and then seats the chair on Kuehl anyway: \"Her mentor Sheila Kuehl was a champion of childcare and early childhood programs\", \"her mentor Sheila Kuehl co-authored California's first same-sex marriage bill in 2002\", \"Her background working for Kuehl -- who authored LGBTQ protections in California -- signals consistent support\", \"her background at Climate Action Reserve and working for Kuehl aligns with strengthening civil rights protections\". 🔑 THIS IS INHERITANCE, NOT A MISFILING. The research did not confuse two people; it substituted a mentor's positions for the subject's, which is why no name-token, state or party probe can see it -- every name on the page is correct. WHOM SOMEONE WORKED FOR IS NOT A POSITION THEY HOLD. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Katy Yaroslavsky",
+      "topic": "healthcare",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Sheila Kuehl (former LA County Supervisor)",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Katy_Yaroslavsky"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴 THE CHAIR RESTS ON A DIFFERENT PERSON'S RECORD. Katy Yaroslavsky is a Los Angeles City Council member; this chair is reached from the record of Sheila Kuehl, the former LA County Supervisor and state legislator she once worked for. The same-sex-marriage and trans-athletes rows cite en.wikipedia.org/wiki/Sheila_Kuehl as their ONLY source. The reasoning states the gap itself -- \"No specific vote or statement on childcare policy was found\", \"No specific LA City Council votes on healthcare access were found\", \"No specific statement or vote by Yaroslavsky on transgender athletes was found\" -- and then seats the chair on Kuehl anyway: \"Her mentor Sheila Kuehl was a champion of childcare and early childhood programs\", \"her mentor Sheila Kuehl co-authored California's first same-sex marriage bill in 2002\", \"Her background working for Kuehl -- who authored LGBTQ protections in California -- signals consistent support\", \"her background at Climate Action Reserve and working for Kuehl aligns with strengthening civil rights protections\". 🔑 THIS IS INHERITANCE, NOT A MISFILING. The research did not confuse two people; it substituted a mentor's positions for the subject's, which is why no name-token, state or party probe can see it -- every name on the page is correct. WHOM SOMEONE WORKED FOR IS NOT A POSITION THEY HOLD. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Katy Yaroslavsky",
+      "topic": "civil-rights",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Sheila Kuehl (former LA County Supervisor)",
+      "sources_examined": [
+        "https://www.planningreport.com/2019/09/03/katy-young-yaroslavsky-unpacks-measure-w-implementation-la-s-safe-clean-water-program",
+        "https://jewishinsider.com/2022/06/los-angeles-city-council-sam-yebri-katy-young-yaroslavsky-scott-epstein-jimmy-biblarz/"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴 THE CHAIR RESTS ON A DIFFERENT PERSON'S RECORD. Katy Yaroslavsky is a Los Angeles City Council member; this chair is reached from the record of Sheila Kuehl, the former LA County Supervisor and state legislator she once worked for. The same-sex-marriage and trans-athletes rows cite en.wikipedia.org/wiki/Sheila_Kuehl as their ONLY source. The reasoning states the gap itself -- \"No specific vote or statement on childcare policy was found\", \"No specific LA City Council votes on healthcare access were found\", \"No specific statement or vote by Yaroslavsky on transgender athletes was found\" -- and then seats the chair on Kuehl anyway: \"Her mentor Sheila Kuehl was a champion of childcare and early childhood programs\", \"her mentor Sheila Kuehl co-authored California's first same-sex marriage bill in 2002\", \"Her background working for Kuehl -- who authored LGBTQ protections in California -- signals consistent support\", \"her background at Climate Action Reserve and working for Kuehl aligns with strengthening civil rights protections\". 🔑 THIS IS INHERITANCE, NOT A MISFILING. The research did not confuse two people; it substituted a mentor's positions for the subject's, which is why no name-token, state or party probe can see it -- every name on the page is correct. WHOM SOMEONE WORKED FOR IS NOT A POSITION THEY HOLD. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Eddie Morales",
+      "topic": "redistricting",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Dustin Burrows (TX House Speaker, Republican)",
+      "sources_examined": [
+        "https://www.texastribune.org/2025/09/04/2025-texas-redistricting-maps/",
+        "https://en.wikipedia.org/wiki/Dustin_Burrows"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴 THE CITED EVIDENCE IS ABOUT A DIFFERENT PERSON, AND ON THE OPPOSITE SIDE. This redistricting chair cites en.wikipedia.org/wiki/Dustin_Burrows. Dustin Burrows is the REPUBLICAN Speaker of the Texas House who presided over the 2025 mid-decade congressional redistricting that this row opposes, and he is a separate row in this database (Representative, TX, Republican). Nothing in that citation records this member's own position. The reasoning reaches the chair from party membership alone -- \"Democrats in the Texas House unanimously opposed the 2025 mid-decade congressional redistricting\" -- plus a conditional about the district: \"Morales's district was potentially affected by new maps designed to protect Republican incumbents\". 🔑 A PARTY IS NOT AN INSTRUMENT, AND AN OPPONENT'S ARTICLE IS NOT EVIDENCE ABOUT THIS MEMBER. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Elizabeth Campos",
+      "topic": "redistricting",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "Dustin Burrows (TX House Speaker, Republican)",
+      "sources_examined": [
+        "https://www.texastribune.org/2025/09/04/2025-texas-redistricting-maps/",
+        "https://en.wikipedia.org/wiki/Dustin_Burrows"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴 THE CITED EVIDENCE IS ABOUT A DIFFERENT PERSON, AND ON THE OPPOSITE SIDE. This redistricting chair cites en.wikipedia.org/wiki/Dustin_Burrows. Dustin Burrows is the REPUBLICAN Speaker of the Texas House who presided over the 2025 mid-decade congressional redistricting that this row opposes, and he is a separate row in this database (Representative, TX, Republican). Nothing in that citation records this member's own position. The reasoning reaches the chair from party membership alone -- \"Democrats in the Texas House unanimously opposed the 2025 mid-decade congressional redistricting\" -- plus a conditional about the district: \"Campos would support independent redistricting commissions over partisan map drawing\", stated as an expectation rather than a record. 🔑 A PARTY IS NOT AN INSTRUMENT, AND AN OPPONENT'S ARTICLE IS NOT EVIDENCE ABOUT THIS MEMBER. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Johnson",
+      "topic": "climate-change",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "owner not identified -- party and instruments both absent from his record",
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE REASONING DESCRIBES A REPUBLICAN; THE CITED PAGE SAYS DEMOCRAT. All eight of Steve Johnson's Season 1 chairs sit at rung 4 and each is reached by calling him a Republican -- \"As an Eastern Shore Republican\", \"As a Republican member\", \"consistent with Republican preference for private market healthcare\". His own cited page, mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01, states \"Party Democrat\", District 34A, County Harford, Health Committee. Control terms on that page: \"Harford\" 15 hits, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0. This database records him as a Democrat. 🔴 THE INSTRUMENTS ARE NOT ON HIS RECORD EITHER. That page lists 150 bills for the 2025 and 2026 sessions. Control terms across the list: \"Solar\" 0 and \"Generating Station\" 0 (the climate-change and fossil-fuels rows rest on a \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas\" bill); \"Redistricting\" 0 in any bill title (the \"Fair Districts for Maryland Act\"); \"Scholarship\" 0 (the \"Opting in on Opportunity Act\"); \"Voter\" 0 and \"Citizenship\" 0 (the \"SAVE Our Elections Act of 2026\"). ⚠ THE LIMIT, STATED PLAINLY: that list covers the 2025 and 2026 sessions only, so absence is established for that window and NOT for 2023-2024 -- except for the SAVE Our Elections Act of 2026, which is dated inside it. 🔴 AND ONE CLAIM IS CONTRADICTED OUTRIGHT: the public-safety row says he is \"opposing major police accountability reforms\", while his own page lists him as a CO-SPONSOR of HB0508, \"Public Safety - Police Accountability - Investigation Records Relating to Not Administratively Charged, Unfounded, and Exonerated Complaints\". The bills that ARE his are real and have nothing to do with these chairs: optometry board revisions, physician and midwife parity, interference-of-custody penalties, and a Schedule III scheduling bill for medetomidine and xylazine. ⚠ ballotpedia.org/Steve_Johnson_(Maryland), the second source on the voting-rights row, returned a page on which every control term scored 0, including both party names; it was NOT READ and nothing is asserted about its contents in either direction. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Johnson",
+      "topic": "fossil-fuels",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "owner not identified -- party and instruments both absent from his record",
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE REASONING DESCRIBES A REPUBLICAN; THE CITED PAGE SAYS DEMOCRAT. All eight of Steve Johnson's Season 1 chairs sit at rung 4 and each is reached by calling him a Republican -- \"As an Eastern Shore Republican\", \"As a Republican member\", \"consistent with Republican preference for private market healthcare\". His own cited page, mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01, states \"Party Democrat\", District 34A, County Harford, Health Committee. Control terms on that page: \"Harford\" 15 hits, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0. This database records him as a Democrat. 🔴 THE INSTRUMENTS ARE NOT ON HIS RECORD EITHER. That page lists 150 bills for the 2025 and 2026 sessions. Control terms across the list: \"Solar\" 0 and \"Generating Station\" 0 (the climate-change and fossil-fuels rows rest on a \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas\" bill); \"Redistricting\" 0 in any bill title (the \"Fair Districts for Maryland Act\"); \"Scholarship\" 0 (the \"Opting in on Opportunity Act\"); \"Voter\" 0 and \"Citizenship\" 0 (the \"SAVE Our Elections Act of 2026\"). ⚠ THE LIMIT, STATED PLAINLY: that list covers the 2025 and 2026 sessions only, so absence is established for that window and NOT for 2023-2024 -- except for the SAVE Our Elections Act of 2026, which is dated inside it. 🔴 AND ONE CLAIM IS CONTRADICTED OUTRIGHT: the public-safety row says he is \"opposing major police accountability reforms\", while his own page lists him as a CO-SPONSOR of HB0508, \"Public Safety - Police Accountability - Investigation Records Relating to Not Administratively Charged, Unfounded, and Exonerated Complaints\". The bills that ARE his are real and have nothing to do with these chairs: optometry board revisions, physician and midwife parity, interference-of-custody penalties, and a Schedule III scheduling bill for medetomidine and xylazine. ⚠ ballotpedia.org/Steve_Johnson_(Maryland), the second source on the voting-rights row, returned a page on which every control term scored 0, including both party names; it was NOT READ and nothing is asserted about its contents in either direction. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Johnson",
+      "topic": "healthcare",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "owner not identified -- party and instruments both absent from his record",
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE REASONING DESCRIBES A REPUBLICAN; THE CITED PAGE SAYS DEMOCRAT. All eight of Steve Johnson's Season 1 chairs sit at rung 4 and each is reached by calling him a Republican -- \"As an Eastern Shore Republican\", \"As a Republican member\", \"consistent with Republican preference for private market healthcare\". His own cited page, mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01, states \"Party Democrat\", District 34A, County Harford, Health Committee. Control terms on that page: \"Harford\" 15 hits, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0. This database records him as a Democrat. 🔴 THE INSTRUMENTS ARE NOT ON HIS RECORD EITHER. That page lists 150 bills for the 2025 and 2026 sessions. Control terms across the list: \"Solar\" 0 and \"Generating Station\" 0 (the climate-change and fossil-fuels rows rest on a \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas\" bill); \"Redistricting\" 0 in any bill title (the \"Fair Districts for Maryland Act\"); \"Scholarship\" 0 (the \"Opting in on Opportunity Act\"); \"Voter\" 0 and \"Citizenship\" 0 (the \"SAVE Our Elections Act of 2026\"). ⚠ THE LIMIT, STATED PLAINLY: that list covers the 2025 and 2026 sessions only, so absence is established for that window and NOT for 2023-2024 -- except for the SAVE Our Elections Act of 2026, which is dated inside it. 🔴 AND ONE CLAIM IS CONTRADICTED OUTRIGHT: the public-safety row says he is \"opposing major police accountability reforms\", while his own page lists him as a CO-SPONSOR of HB0508, \"Public Safety - Police Accountability - Investigation Records Relating to Not Administratively Charged, Unfounded, and Exonerated Complaints\". The bills that ARE his are real and have nothing to do with these chairs: optometry board revisions, physician and midwife parity, interference-of-custody penalties, and a Schedule III scheduling bill for medetomidine and xylazine. ⚠ ballotpedia.org/Steve_Johnson_(Maryland), the second source on the voting-rights row, returned a page on which every control term scored 0, including both party names; it was NOT READ and nothing is asserted about its contents in either direction. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Johnson",
+      "topic": "judicial-criminal-justice",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "owner not identified -- party and instruments both absent from his record",
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE REASONING DESCRIBES A REPUBLICAN; THE CITED PAGE SAYS DEMOCRAT. All eight of Steve Johnson's Season 1 chairs sit at rung 4 and each is reached by calling him a Republican -- \"As an Eastern Shore Republican\", \"As a Republican member\", \"consistent with Republican preference for private market healthcare\". His own cited page, mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01, states \"Party Democrat\", District 34A, County Harford, Health Committee. Control terms on that page: \"Harford\" 15 hits, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0. This database records him as a Democrat. 🔴 THE INSTRUMENTS ARE NOT ON HIS RECORD EITHER. That page lists 150 bills for the 2025 and 2026 sessions. Control terms across the list: \"Solar\" 0 and \"Generating Station\" 0 (the climate-change and fossil-fuels rows rest on a \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas\" bill); \"Redistricting\" 0 in any bill title (the \"Fair Districts for Maryland Act\"); \"Scholarship\" 0 (the \"Opting in on Opportunity Act\"); \"Voter\" 0 and \"Citizenship\" 0 (the \"SAVE Our Elections Act of 2026\"). ⚠ THE LIMIT, STATED PLAINLY: that list covers the 2025 and 2026 sessions only, so absence is established for that window and NOT for 2023-2024 -- except for the SAVE Our Elections Act of 2026, which is dated inside it. 🔴 AND ONE CLAIM IS CONTRADICTED OUTRIGHT: the public-safety row says he is \"opposing major police accountability reforms\", while his own page lists him as a CO-SPONSOR of HB0508, \"Public Safety - Police Accountability - Investigation Records Relating to Not Administratively Charged, Unfounded, and Exonerated Complaints\". The bills that ARE his are real and have nothing to do with these chairs: optometry board revisions, physician and midwife parity, interference-of-custody penalties, and a Schedule III scheduling bill for medetomidine and xylazine. ⚠ ballotpedia.org/Steve_Johnson_(Maryland), the second source on the voting-rights row, returned a page on which every control term scored 0, including both party names; it was NOT READ and nothing is asserted about its contents in either direction. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Johnson",
+      "topic": "public-safety-approach",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "owner not identified -- party and instruments both absent from his record",
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE REASONING DESCRIBES A REPUBLICAN; THE CITED PAGE SAYS DEMOCRAT. All eight of Steve Johnson's Season 1 chairs sit at rung 4 and each is reached by calling him a Republican -- \"As an Eastern Shore Republican\", \"As a Republican member\", \"consistent with Republican preference for private market healthcare\". His own cited page, mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01, states \"Party Democrat\", District 34A, County Harford, Health Committee. Control terms on that page: \"Harford\" 15 hits, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0. This database records him as a Democrat. 🔴 THE INSTRUMENTS ARE NOT ON HIS RECORD EITHER. That page lists 150 bills for the 2025 and 2026 sessions. Control terms across the list: \"Solar\" 0 and \"Generating Station\" 0 (the climate-change and fossil-fuels rows rest on a \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas\" bill); \"Redistricting\" 0 in any bill title (the \"Fair Districts for Maryland Act\"); \"Scholarship\" 0 (the \"Opting in on Opportunity Act\"); \"Voter\" 0 and \"Citizenship\" 0 (the \"SAVE Our Elections Act of 2026\"). ⚠ THE LIMIT, STATED PLAINLY: that list covers the 2025 and 2026 sessions only, so absence is established for that window and NOT for 2023-2024 -- except for the SAVE Our Elections Act of 2026, which is dated inside it. 🔴 AND ONE CLAIM IS CONTRADICTED OUTRIGHT: the public-safety row says he is \"opposing major police accountability reforms\", while his own page lists him as a CO-SPONSOR of HB0508, \"Public Safety - Police Accountability - Investigation Records Relating to Not Administratively Charged, Unfounded, and Exonerated Complaints\". The bills that ARE his are real and have nothing to do with these chairs: optometry board revisions, physician and midwife parity, interference-of-custody penalties, and a Schedule III scheduling bill for medetomidine and xylazine. ⚠ ballotpedia.org/Steve_Johnson_(Maryland), the second source on the voting-rights row, returned a page on which every control term scored 0, including both party names; it was NOT READ and nothing is asserted about its contents in either direction. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Johnson",
+      "topic": "redistricting",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "owner not identified -- party and instruments both absent from his record",
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE REASONING DESCRIBES A REPUBLICAN; THE CITED PAGE SAYS DEMOCRAT. All eight of Steve Johnson's Season 1 chairs sit at rung 4 and each is reached by calling him a Republican -- \"As an Eastern Shore Republican\", \"As a Republican member\", \"consistent with Republican preference for private market healthcare\". His own cited page, mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01, states \"Party Democrat\", District 34A, County Harford, Health Committee. Control terms on that page: \"Harford\" 15 hits, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0. This database records him as a Democrat. 🔴 THE INSTRUMENTS ARE NOT ON HIS RECORD EITHER. That page lists 150 bills for the 2025 and 2026 sessions. Control terms across the list: \"Solar\" 0 and \"Generating Station\" 0 (the climate-change and fossil-fuels rows rest on a \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas\" bill); \"Redistricting\" 0 in any bill title (the \"Fair Districts for Maryland Act\"); \"Scholarship\" 0 (the \"Opting in on Opportunity Act\"); \"Voter\" 0 and \"Citizenship\" 0 (the \"SAVE Our Elections Act of 2026\"). ⚠ THE LIMIT, STATED PLAINLY: that list covers the 2025 and 2026 sessions only, so absence is established for that window and NOT for 2023-2024 -- except for the SAVE Our Elections Act of 2026, which is dated inside it. 🔴 AND ONE CLAIM IS CONTRADICTED OUTRIGHT: the public-safety row says he is \"opposing major police accountability reforms\", while his own page lists him as a CO-SPONSOR of HB0508, \"Public Safety - Police Accountability - Investigation Records Relating to Not Administratively Charged, Unfounded, and Exonerated Complaints\". The bills that ARE his are real and have nothing to do with these chairs: optometry board revisions, physician and midwife parity, interference-of-custody penalties, and a Schedule III scheduling bill for medetomidine and xylazine. ⚠ ballotpedia.org/Steve_Johnson_(Maryland), the second source on the voting-rights row, returned a page on which every control term scored 0, including both party names; it was NOT READ and nothing is asserted about its contents in either direction. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Johnson",
+      "topic": "school-vouchers",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "owner not identified -- party and instruments both absent from his record",
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE REASONING DESCRIBES A REPUBLICAN; THE CITED PAGE SAYS DEMOCRAT. All eight of Steve Johnson's Season 1 chairs sit at rung 4 and each is reached by calling him a Republican -- \"As an Eastern Shore Republican\", \"As a Republican member\", \"consistent with Republican preference for private market healthcare\". His own cited page, mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01, states \"Party Democrat\", District 34A, County Harford, Health Committee. Control terms on that page: \"Harford\" 15 hits, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0. This database records him as a Democrat. 🔴 THE INSTRUMENTS ARE NOT ON HIS RECORD EITHER. That page lists 150 bills for the 2025 and 2026 sessions. Control terms across the list: \"Solar\" 0 and \"Generating Station\" 0 (the climate-change and fossil-fuels rows rest on a \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas\" bill); \"Redistricting\" 0 in any bill title (the \"Fair Districts for Maryland Act\"); \"Scholarship\" 0 (the \"Opting in on Opportunity Act\"); \"Voter\" 0 and \"Citizenship\" 0 (the \"SAVE Our Elections Act of 2026\"). ⚠ THE LIMIT, STATED PLAINLY: that list covers the 2025 and 2026 sessions only, so absence is established for that window and NOT for 2023-2024 -- except for the SAVE Our Elections Act of 2026, which is dated inside it. 🔴 AND ONE CLAIM IS CONTRADICTED OUTRIGHT: the public-safety row says he is \"opposing major police accountability reforms\", while his own page lists him as a CO-SPONSOR of HB0508, \"Public Safety - Police Accountability - Investigation Records Relating to Not Administratively Charged, Unfounded, and Exonerated Complaints\". The bills that ARE his are real and have nothing to do with these chairs: optometry board revisions, physician and midwife parity, interference-of-custody penalties, and a Schedule III scheduling bill for medetomidine and xylazine. ⚠ ballotpedia.org/Steve_Johnson_(Maryland), the second source on the voting-rights row, returned a page on which every control term scored 0, including both party names; it was NOT READ and nothing is asserted about its contents in either direction. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Steve Johnson",
+      "topic": "voting-rights",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "borrowed_from": "owner not identified -- party and instruments both absent from his record",
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01",
+        "https://ballotpedia.org/Steve_Johnson_(Maryland)"
+      ],
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE REASONING DESCRIBES A REPUBLICAN; THE CITED PAGE SAYS DEMOCRAT. All eight of Steve Johnson's Season 1 chairs sit at rung 4 and each is reached by calling him a Republican -- \"As an Eastern Shore Republican\", \"As a Republican member\", \"consistent with Republican preference for private market healthcare\". His own cited page, mgaleg.maryland.gov/mgawebsite/Members/Details/johnson01, states \"Party Democrat\", District 34A, County Harford, Health Committee. Control terms on that page: \"Harford\" 15 hits, \"Democrat\" 1, \"Republican\" 0, \"Eastern Shore\" 0. This database records him as a Democrat. 🔴 THE INSTRUMENTS ARE NOT ON HIS RECORD EITHER. That page lists 150 bills for the 2025 and 2026 sessions. Control terms across the list: \"Solar\" 0 and \"Generating Station\" 0 (the climate-change and fossil-fuels rows rest on a \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas\" bill); \"Redistricting\" 0 in any bill title (the \"Fair Districts for Maryland Act\"); \"Scholarship\" 0 (the \"Opting in on Opportunity Act\"); \"Voter\" 0 and \"Citizenship\" 0 (the \"SAVE Our Elections Act of 2026\"). ⚠ THE LIMIT, STATED PLAINLY: that list covers the 2025 and 2026 sessions only, so absence is established for that window and NOT for 2023-2024 -- except for the SAVE Our Elections Act of 2026, which is dated inside it. 🔴 AND ONE CLAIM IS CONTRADICTED OUTRIGHT: the public-safety row says he is \"opposing major police accountability reforms\", while his own page lists him as a CO-SPONSOR of HB0508, \"Public Safety - Police Accountability - Investigation Records Relating to Not Administratively Charged, Unfounded, and Exonerated Complaints\". The bills that ARE his are real and have nothing to do with these chairs: optometry board revisions, physician and midwife parity, interference-of-custody penalties, and a Schedule III scheduling bill for medetomidine and xylazine. ⚠ ballotpedia.org/Steve_Johnson_(Maryland), the second source on the voting-rights row, returned a page on which every control term scored 0, including both party names; it was NOT READ and nothing is asserted about its contents in either direction. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch."
+    },
+    {
+      "politician": "Liz Ortega",
+      "topic": "immigration",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "finding": "Contaminated, and cannot be blanked: `immigration` has no Season 2 pin."
+    },
+    {
+      "politician": "Steve Bennett",
+      "topic": "immigration",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "finding": "Contaminated, and cannot be blanked: `immigration` has no Season 2 pin."
+    },
+    {
+      "politician": "Katy Yaroslavsky",
+      "topic": "immigration",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "finding": "Contaminated, and cannot be blanked: `immigration` has no Season 2 pin."
+    }
+  ]
+}
