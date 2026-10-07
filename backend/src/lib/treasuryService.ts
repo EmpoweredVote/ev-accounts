@@ -184,6 +184,21 @@ export interface TreasuryBudget {
   // ⚠ `unknown` means NOBODY HAS LOOKED. It is an honesty marker, never a guess and
   // never a judgement about the government, and it is the MAJORITY value.
   audit_grade?: string | null;
+  // ACCOUNTING-BASIS: what measurement basis the figure is ON — 'gaap' |
+  // 'modified_cash' | 'cash' | 'unknown'. NOT NULL with an 'unknown' default
+  // and a CHECK constraint, so always one of the four.
+  //
+  // ⚠⚠ ORTHOGONAL TO audit_grade, and the pair is the whole reason both
+  // exist. Duvall, WA's figures are AUDITED and NOT GAAP: its auditor issues
+  // an unmodified opinion on the BARS regulatory basis and an ADVERSE opinion
+  // on U.S. GAAP, in the same report. `audited_gaap` would be a false claim
+  // about a document that denies GAAP; `unknown` would claim nobody looked.
+  // Neither axis can carry both halves alone.
+  //
+  // ⚠ A consumer must render the non-GAAP values as DIFFERENT, never WORSE.
+  // The assurance lives in audit_grade; this says only what the figure
+  // measures, and a cash-basis figure is not a lesser figure.
+  accounting_basis?: string | null;
   data_source: string | null;
   data_source_info: {
     displayName: string;
@@ -299,6 +314,7 @@ interface BudgetRow {
   reporting_entity: string; // SCOPE-02; NOT NULL with a 'unknown' default, so always present
   derivation: string;   // SCOPE-04; NOT NULL with a 'published' default, so always present
   audit_grade: string;  // AUDIT-GRADE; NOT NULL with a 'unknown' default, so always present
+  accounting_basis: string; // ACCOUNTING-BASIS; NOT NULL with a 'unknown' default + CHECK, so always present
   data_source: string | null;
   source_url: string | null;   // municipal attribution (non-federal fallback)
   source_date: string | null;  // municipal attribution (non-federal fallback)
@@ -439,6 +455,7 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     reporting_entity: row.reporting_entity,
     derivation: row.derivation,
     audit_grade: row.audit_grade,
+    accounting_basis: row.accounting_basis,
     data_source: row.data_source,
     data_source_info: row.ds_display_name && row.ds_url
       ? {
@@ -804,7 +821,7 @@ export async function getBudgetsByCityId(
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
       `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade, b.accounting_basis,
               b.data_source, b.source_url, b.source_date,
               sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -825,7 +842,7 @@ export async function getBudgetsByCityId(
 
   const { rows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade, b.accounting_basis,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -1113,7 +1130,7 @@ export async function getBudgetById(
 ): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade, b.accounting_basis,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
