@@ -43,7 +43,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 |---|--------|------|--------|
 | 7 | **Barri Worth Girvan** | CD 3 | **White rectangle burned into the top-right corner** — a compositing artifact, visible to a voter. |
 | 8 | **John McKinney** | City Attorney | Full-length walking shot. Head ≈12% of frame. |
-| 9 | Timothy Gaspar | CD 3 | Half-body, head small, busy signage behind. **Borderline.** |
+| 9 | ~~Timothy Gaspar~~ ✅ **DONE 2026-10-07** (`CC_0197`) | CD 3 | Half-body, head small, busy signage behind. **Borderline.** |
 
 ---
 
@@ -52,8 +52,8 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 | # | Person | Seat | Defect |
 |---|--------|------|--------|
 | 10 | **Robert S. Draper** | LA Superior Court judge | **Worst on the page.** Candid snapshot in a courthouse lobby. **672×446 landscape**, subject off-centre and at an angle, flags and furniture behind, poor light. |
-| 11 | **Nathan Hochman** | District Attorney | Full-body standing portrait between flags. Head ≈10% of frame. |
-| 12 | Patrick Connolly | LA Superior Court judge | 588×554, three-quarter body, bokeh city background. **Borderline — crop would fix it.** |
+| 11 | ~~**Nathan Hochman**~~ ✅ **DONE 2026-10-07** (`CC_0197`) | District Attorney | Full-body standing portrait between flags. Head ≈10% of frame. |
+| 12 | ~~Patrick Connolly~~ ✅ **DONE 2026-10-07** (`CC_0197`) | LA Superior Court judge | 588×554, three-quarter body, bokeh city background. **Borderline — crop would fix it.** |
 
 ---
 
@@ -139,6 +139,36 @@ same minute.
 exactly one `type='default'` row — two make the grid's `find()` pick an arbitrary one.
 
 ▶ **A correct API response is not evidence the fix landed.** Only the rendered `<img>` is.
+
+### 2026-10-07, batch 2 — Hochman, Connolly, Gaspar (`CC_0197`)
+
+**14 of the original 19 remain.**
+
+| Person | Was | Now | How |
+|---|---|---|---|
+| Nathan Hochman | 1069×1200, head ~10% | **630×788**, head 40.0%, eyes 30.5% | Pure crop. `da.lacounty.gov`'s own original is also 1069×1200 — measured at the origin, nothing larger exists. |
+| Patrick Connolly | 588×554 suit shot from LAist | **736×920**, head 42.4%, eyes 28.8% | **A different photograph**: the judicial-robe studio portrait on `reelectjudgepatconnolly.com` (1080×1080). Operator compared the faces and approved. |
+| Timothy Gaspar | 1011×1404, busy signage | **840×1050**, head 50.5%, eyes 26.7% | Pure crop. `timgaspar.com` publishes no better portrait. |
+
+Nothing was enlarged; every output is a native-size crop. All three passed the no-monochrome gate.
+
+⚠ **Connolly's identity rests on a filename-only alt** (`DSC_2550_pp.png`) and the fact that it is the
+single hero of a single-candidate site. That is weaker than the two-source standard. It was approved
+on sight against the LAist image we already held.
+
+### 🔴 A PROOF SHEET CAN GO STALE BETWEEN THE NUMBERS AND THE PICTURES
+
+The first version of this batch's proof sheet was published with **re-measured numbers and the
+PREVIOUS crops**: the images were cached as `data:` URIs in a separate file, the crops were re-cut,
+and only the page's text was rebuilt. The operator reviewed a Hochman frame that cut his face in
+half — a crop that had already been discarded — and rejected it.
+
+▶ **Re-encode the assets in the same step that rebuilds the page, and diff them.** The check that
+caught it afterwards was comparing each new data URI against the old one; all three "proposed"
+tiles had changed, meaning every one on the published page was stale.
+
+▶ **"I looked at the render" is only true for the version you looked at.** Looking once, then
+editing, then publishing is not the same as looking at what you published.
 
 ## Notes
 
