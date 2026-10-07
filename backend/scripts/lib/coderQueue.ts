@@ -77,15 +77,22 @@ function spansFor(p: Passage, quotes: QuoteLabel[]): string[] {
 
 export function evidenceEntries(row: CoderRow, sharedIds: readonly string[], snapshots: ReadonlyMap<string, SnapshotInfo>): CoderEvidenceEntry[] {
   const out: CoderEvidenceEntry[] = [];
+  // 🔴 snippet_index is numbered PER URL across passages. Two passages can cite one URL, and the
+  // unique index on politician_context_evidence is (politician, topic, source_url, snippet_index):
+  // a fixed 0 made the second snippet's insert conflict and be skipped silently (Koch abortion,
+  // 2026-10-07, SB0001.06.ENRH.pdf cited twice).
+  const nextIndex = new Map<string, number>();
   for (const p of row.passages) {
     if (!sharedIds.includes(p.snapshot_id)) continue;
     const snap = snapshots.get(p.snapshot_id);
     if (!snap) continue;
     const window = spansFor(p, row.quotes).map((s) => publishableWindow(snap.snapshot_text, s)).find((w) => w !== null) ?? null;
     const d = coderDateToSql(p.date);
+    const index = nextIndex.get(snap.url) ?? 0;
+    if (window) nextIndex.set(snap.url, index + 1);
     out.push({
       url: snap.url, snapshot_id: p.snapshot_id, date: d?.date ?? null, date_precision: d?.precision ?? null,
-      snippets: window ? [{ snippet_index: 0, snippet: window, verdict: 'verified', matched_span: window }] : [],
+      snippets: window ? [{ snippet_index: index, snippet: window, verdict: 'verified', matched_span: window }] : [],
     });
   }
   return out;
