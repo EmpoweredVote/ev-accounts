@@ -244,11 +244,11 @@ BEGIN
 
     -- every mapped row sits on the mapped rung; every blank carries no reasoning
     SELECT count(*) INTO v_n FROM inform.politician_answers n
-      JOIN inform.politician_answers o ON o.politician_id = n.politician_id AND o.topic_id = n.topic_id
-      JOIN inform.seasons so ON so.id = o.season_id
+      JOIN inform.politician_answers prior ON prior.politician_id = n.politician_id AND prior.topic_id = n.topic_id
+      JOIN inform.seasons so ON so.id = prior.season_id
      WHERE n.season_id = v_draft AND n.topic_id = v_topic AND n.value <> 0
        AND so.number = (SELECT number FROM inform.seasons WHERE id = v_draft) - 1
-       AND n.value <> CASE o.value WHEN 2 THEN 3 WHEN 3 THEN 4 WHEN 4 THEN 5 WHEN 5 THEN 5 ELSE o.value END;
+       AND n.value <> CASE prior.value WHEN 2 THEN 3 WHEN 3 THEN 4 WHEN 4 THEN 5 WHEN 5 THEN 5 ELSE prior.value END;
     IF v_n <> 0 THEN RAISE EXCEPTION 'CA_0305 probe: % mapped row(s) on the wrong rung', v_n; END IF;
     SELECT count(*) INTO v_n FROM inform.politician_answers n
       JOIN inform.politician_context c ON c.politician_id = n.politician_id AND c.topic_id = n.topic_id AND c.season_id = n.season_id
