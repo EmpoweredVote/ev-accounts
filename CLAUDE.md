@@ -494,6 +494,10 @@ her position on abortion, even if she can't change the laws on that."* Memo:
 - 🔴 **An own-words chair is a separate reliability stratum.** A certification measured on `record` rows
   never covers it; own-words rows go to review until that stratum has its own blind gold.
 - The election-cycle rule for statements (codebook V5, Q4) applies unchanged.
-- ⚠ **Legacy out-of-scope chairs exist and are hidden** (Season 1 research at levels that were not
-  asked, e.g. local `deportation` and `same-sex-marriage`). Adding a role row can make them visible: they
-  are owed a re-audit before they show.
+- **What a voter sees is decided by the lenses, not by `compass_topic_roles`.** The essentials compass
+  draws its spokes from the active lens's curated topic list (or the voter's own compass), and with no
+  lens the stance breakdown lists every topic the official answered. `applies_*` only narrows the pool
+  under the Local Lens, and drives tier badges, coverage counts and the stance-research gate.
+- ⚠ **Legacy out-of-scope chairs exist and are already visible** in that breakdown (Season 1 research at
+  levels that were not asked, e.g. local `taxes`, `deportation`, `same-sex-marriage`). They are owed a
+  re-audit under the codebook; adding a role row does not change whether they show.
