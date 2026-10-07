@@ -386,7 +386,15 @@ async function importBills(
         }
       } else {
         for (const [k, v] of await extractCommittees(bill, jurisdiction, sessionId, dryRun)) committees.set(k, v);
-        if (dryRun) { count++; continue; }
+        if (dryRun) {
+          // Count this bill's votes too, so a dry run reports the true size of the load.
+          for (const stub of bill.votes ?? []) {
+            const rc = stub.roll_call_id ? rollCalls.get(stub.roll_call_id) : undefined;
+            if (rc) votes += queueRollCall(rc, 'dry-run', sessionId, bridge, buffer, true);
+          }
+          count++;
+          continue;
+        }
         const status = bill.status ?? 1;
         const introduced = parseIsoDate(bill.history?.[0]?.date);
         const ins = await pool.query(
