@@ -19,6 +19,12 @@
  *
  * ⚠ Cache file naming must match the guard's `fileFor()` exactly or every row reports NO_CACHE.
  *
+ * ⚠ TOPIC LABELS COME FROM `topic_key`, NEVER `compass_topics.title`. That column is the FROZEN v1
+ * wording and 29 of 60 topics disagree with their season pin, so a worklist labelled from it can
+ * name a question nobody was asked. CI's `frozen ladder text` guard caught exactly that in the
+ * first draft of this script. These tools are season-agnostic triage, so the stable key is the
+ * right label; anything needing the real wording must read the season's pinned revision.
+ *
  * 🔴 Reads only. Writes an input file and a cache, never the DB.
  *   node scripts/claim-on-page-input.mjs --work <worklist.json> --cache <dir> --out <input.json>
  */
@@ -47,7 +53,7 @@ const pool = new pg.Pool({ connectionString: url, ssl: { rejectUnauthorized: fal
 // ⚠ A key spans seasons. Pull EVERY context row for it — the guard judges rows, and an S1 and an S2
 // row for one key can carry different prose.
 const { rows } = await pool.query(`
-  SELECT c.politician_id, c.topic_id, p.full_name, t.title AS topic, t.topic_key,
+  SELECT c.politician_id, c.topic_id, p.full_name, t.topic_key, t.topic_key AS topic,
          a.value AS answer_value, c.reasoning, c.sources, s.number AS season
   FROM inform.politician_context c
   JOIN essentials.politicians p ON p.id = c.politician_id

@@ -19,6 +19,12 @@
  * and both defect quadrants came back EMPTY, which reads exactly like good news. The real numbers
  * are 39 and 53. An all-clear from a join is a claim about your join first and the data second.
  *
+ * ⚠ TOPIC LABELS COME FROM `topic_key`, NEVER `compass_topics.title`. That column is the FROZEN v1
+ * wording and 29 of 60 topics disagree with their season pin, so a worklist labelled from it can
+ * name a question nobody was asked. CI's `frozen ladder text` guard caught exactly that in the
+ * first draft of this script. These tools are season-agnostic triage, so the stable key is the
+ * right label; anything needing the real wording must read the season's pinned revision.
+ *
  * 🔴 Reads only. Writes a worklist, never the DB.
  *   node scripts/federal-tierb-crosstab.mjs --out <worklist.json>
  */
@@ -54,7 +60,7 @@ const { rows: fed } = await pool.query(`
     FROM cls GROUP BY 1,2
   ), bad AS (SELECT * FROM agg WHERE n_gen = n_src)
   SELECT DISTINCT b.politician_id, b.topic_id, b.srcs,
-         p.full_name, t.topic_key, t.title AS topic, ch.name AS chamber
+         p.full_name, t.topic_key, ch.name AS chamber
   FROM bad b
   JOIN essentials.politicians p ON p.id = b.politician_id
   JOIN essentials.office_terms ot ON ot.politician_id = p.id
@@ -94,7 +100,7 @@ for (const [k, r] of keys) {
   tab.set(cell, (tab.get(cell) || 0) + 1);
   work.push({
     politician: r.full_name, politician_id: r.politician_id,
-    topic_key: r.topic_key, topic: r.topic, topic_id: r.topic_id,
+    topic_key: r.topic_key, topic_id: r.topic_id,
     chambers: [...r.chambers], sources: r.srcs, cell,
     prior_verdict: p ? p.verdict : null,
   });
