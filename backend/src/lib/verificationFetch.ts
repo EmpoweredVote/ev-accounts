@@ -104,6 +104,7 @@ const CHALLENGE_MARKERS = [
 ];
 
 import { decodeEntities } from './htmlEntities.js';
+import { extractPdfText, isPdfResponse } from './pdfText.js';
 
 /** Strip tags/scripts/styles from raw HTML and collapse to readable text. */
 export function htmlToText(html: string): string {
@@ -380,8 +381,13 @@ export async function fetchViaHttp(url: string): Promise<string> {
     },
   });
   if (!res.ok) throw new Error('HTTP ' + res.status);
-  const body = await decodeHtmlBody(res);
   const ctype = res.headers.get('content-type') ?? '';
+  const buf = new Uint8Array(await res.arrayBuffer());
+  // A PDF is extracted to text, never decoded as one: its bytes are not text (2026-10-07: a 7 MB
+  // "%PDF-1.4 …" string went into a coder input as ok:true). An unreadable PDF throws, so the ladder
+  // falls through to Wayback and, failing that, to a not-codable result.
+  if (isPdfResponse(ctype, buf)) return await extractPdfText(buf);
+  const body = decodeHtmlBytes(buf, ctype);
   return ctype.includes('html') ? htmlToArticleOrText(body, url) : body.replace(/\s+/g, ' ').trim();
 }
 
@@ -459,7 +465,7 @@ async function fetchViaWaybackCdx(url: string, fetchImpl: FetchLike): Promise<st
   if (!res.ok) return null;
   // Pass the ORIGINAL url (not the archive wrapper) so the non-article guard in
   // the extractor reasons about the real document.
-  const text = htmlToArticleOrText(await decodeHtmlBody(res), url);
+  const text = await archivedBodyToText(res, url);
   return text || null;
 }
 
@@ -497,7 +503,7 @@ async function fetchViaWaybackAvailable(url: string, fetchImpl: FetchLike): Prom
     if (!res.ok) return null;
     // Pass the ORIGINAL url (not the archive.org wrapper) so the non-article
     // guard in extractArticleText reasons about the real document.
-    return htmlToArticleOrText(await decodeHtmlBody(res), url);
+    return await archivedBodyToText(res, url);
   } catch {
     return null;
   }
@@ -834,8 +840,18 @@ export async function fetchForVerification(url: string): Promise<string> {
  * back to UTF-8 rather than throwing.
  */
 export async function decodeHtmlBody(res: Response): Promise<string> {
+  return decodeHtmlBytes(new Uint8Array(await res.arrayBuffer()), res.headers.get('content-type') ?? '');
+}
+
+/** A Wayback `id_` capture is the original bytes, so an archived PDF is still a PDF: extract it. */
+async function archivedBodyToText(res: Response, url: string): Promise<string> {
   const buf = new Uint8Array(await res.arrayBuffer());
-  const fromHeader = /charset\s*=\s*["']?([A-Za-z0-9._:-]+)/i.exec(res.headers.get('content-type') ?? '')?.[1];
+  if (isPdfResponse(res.headers.get('content-type') ?? '', buf)) return await extractPdfText(buf);
+  return htmlToArticleOrText(decodeHtmlBytes(buf, res.headers.get('content-type') ?? ''), url);
+}
+
+export function decodeHtmlBytes(buf: Uint8Array, contentType: string): string {
+  const fromHeader = /charset\s*=\s*["']?([A-Za-z0-9._:-]+)/i.exec(contentType)?.[1];
   const head = new TextDecoder('latin1').decode(buf.subarray(0, 4096));
   const fromMeta = /<meta[^>]*charset\s*=\s*["']?([A-Za-z0-9._:-]+)/i.exec(head)?.[1];
   const label = (fromHeader ?? fromMeta ?? 'utf-8').toLowerCase();
