@@ -71,8 +71,17 @@ export function sectionText(content, id = CC_SECTION_ID) {
  */
 export const SHINGLE_WORDS = 6;
 export const MIN_COVERAGE = 0.6;
+/**
+ * 🔴 A "Campaign themes" section with this notice carries NO survey answers: Ballotpedia prints it under
+ * the same heading, beside an editorial summary of the campaign website. Measured 2026-10-07: 10 of 13
+ * pages the deep-link sweep had marked CC_VERIFIED said it, and the sweep's term matcher had matched the
+ * editorial summary. The section id alone does not make the text the candidate's own words.
+ */
+export const NO_SURVEY_NOTICE = /has not (?:yet )?completed Ballotpedia'?s?\b|did not complete Ballotpedia'?s?\b|has not responded to Ballotpedia'?s?\b/i;
+
 export function passageInSurveySection(section, passage) {
   if (!section || !String(passage ?? '').trim()) return false;
+  if (NO_SURVEY_NOTICE.test(section)) return false;
   const hay = norm(section);
   const words = norm(passage).split(' ').filter(Boolean);
   if (words.length === 0) return false;

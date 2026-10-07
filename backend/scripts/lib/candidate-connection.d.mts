@@ -5,3 +5,4 @@ export declare function withoutFragment(url: string): string;
 export declare function sectionText(content: unknown, id?: string): string | null;
 export declare function passageInSurveySection(section: string | null | undefined, passage: string): boolean;
 export declare const SHINGLE_WORDS: number; export declare const MIN_COVERAGE: number;
+export declare const NO_SURVEY_NOTICE: RegExp;

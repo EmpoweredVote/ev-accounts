@@ -41,6 +41,10 @@ describe('passageInSurveySection (test 2: the page text)', () => {
   });
   it('passes a passage taken from the survey section', () => expect(passageInSurveySection(section, SURVEY)).toBe(true));
   it('refuses a passage that is on the page but outside the survey section', () => expect(passageInSurveySection(section, BIO)).toBe(false));
+  it('refuses a section that says the candidate has not completed the survey, even if the passage is in it', () => {
+    const none = `Ballotpedia survey responses Jane Doe has not yet completed Ballotpedia's 2026 Candidate Connection survey. ${SURVEY}`;
+    expect(passageInSurveySection(none, SURVEY)).toBe(false);
+  });
   it('refuses when there is no section', () => {
     expect(passageInSurveySection(null, SURVEY)).toBe(false);
     expect(passageInSurveySection('', SURVEY)).toBe(false);
