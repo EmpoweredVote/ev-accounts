@@ -8,68 +8,15 @@
  * See docs/superpowers/specs/2026-04-30-stance-research-verification-design.md
  */
 
-// ⚠ The typographic entries below are the ones a NEWS page actually emits. Without them
-// normalizeText left `&ldquo;` and `&mdash;` as literal text: matching still worked, because the
-// snippet was copied from the same extracted page and carried the same literal, but a snippet that
-// honestly typed a real “ or — could never match that page. They are listed AFTER `&amp;` so a
-// doubly-escaped `&amp;mdash;` resolves the same way it always has.
-const HTML_ENTITIES: Record<string, string> = {
-  '&amp;': '&',
-  '&lt;': '<',
-  '&gt;': '>',
-  '&quot;': '"',
-  '&apos;': "'",
-  '&nbsp;': ' ',
-  '&#39;': "'",
-  '&ldquo;': '“',
-  '&rdquo;': '”',
-  '&lsquo;': '‘',
-  '&rsquo;': '’',
-  '&mdash;': '—',
-  '&ndash;': '–',
-  '&hellip;': '…',
-  // § turns up in statute text this corpus cites constantly ("RCW § 35.21.830").
-  '&sect;': '§',
-};
+import { HTML_ENTITIES, decodeNumericEntities, decodeEntities } from './htmlEntities.js';
 
 /**
- * Decode a page's character references for DISPLAY, and nothing else.
- *
- * {@link normalizeText} folds case, quotes, dashes and diacritics so two spellings of the same
- * sentence compare equal — useful for matching, useless for anything a person reads. The published
- * citation is the matched span, and it was stored exactly as the extracted page had it, so a span
- * cut from a news page put a literal `&mdash;` in front of a voter. Measured 2026-10-06: 3 of the
- * 12 live citations in the Redmond and Duvall batches.
- *
- * This keeps case, real quotation marks and spacing intact and only turns references into the
- * characters they stand for. A malformed reference is left alone rather than guessed at.
+ * Decode a page's character references for DISPLAY, and nothing else. See
+ * {@link decodeEntities} — this is the name the stance pipeline uses for it.
  */
-export function decodeForDisplay(input: string): string {
-  let out = decodeNumericEntities(input);
-  for (const [entity, replacement] of Object.entries(HTML_ENTITIES)) {
-    out = out.split(entity).join(replacement);
-  }
-  return out;
-}
+export const decodeForDisplay = decodeEntities;
 
-// 🔴 Decode numeric character references BEFORE anything else touches punctuation.
-// `&#8217;` (decimal) and `&#x2019;` (hex) are both the curly right single quote — neither is in
-// HTML_ENTITIES above, so left alone they survive as literal "&#8217;" text: "you&#8217;re" would
-// never become "you're" and would fail to match a snippet that (honestly) types a straight
-// apostrophe. Ported from verify-quotes.mjs (backend/scripts/verify-quotes.mjs), which hit this for
-// real on a live wave. `String.fromCodePoint` also gets this right for names/quotes outside the
-// BMP; a malformed reference (bad digits) is left as-is rather than throwing.
-function decodeNumericEntities(input: string): string {
-  return input
-    .replace(/&#(\d+);/g, (match, dec: string) => {
-      const code = Number(dec);
-      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
-    })
-    .replace(/&#[xX]([0-9a-fA-F]+);/g, (match, hex: string) => {
-      const code = parseInt(hex, 16);
-      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
-    });
-}
+
 
 export function normalizeText(input: string): string {
   // Numeric entities first (see decodeNumericEntities) — decoding `&#8217;` before anything else

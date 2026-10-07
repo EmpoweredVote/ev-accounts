@@ -103,33 +103,7 @@ const CHALLENGE_MARKERS = [
   'request unsuccessful',
 ];
 
-const HTML_ENTITIES: Record<string, string> = {
-  '&nbsp;': ' ',
-  '&amp;': '&',
-  '&lt;': '<',
-  '&gt;': '>',
-  '&quot;': '"',
-  '&apos;': "'",
-  '&#39;': "'",
-};
-
-// 🔴 Decode numeric character references (`&#8217;` decimal, `&#x2019;` hex) before the named-entity
-// pass. Neither form is in HTML_ENTITIES above, so undecoded they survive as literal "&#8217;" text
-// in the extracted page — and the deterministic snippet matcher (researchVerifier.normalizeText)
-// then has no curly quote to fold to a straight one, so "you're" never matches "you&#8217;re".
-// Ported from verify-quotes.mjs (backend/scripts/verify-quotes.mjs), which hit this for real on a
-// live wave; kept in sync with researchVerifier.ts's copy of the same fix.
-function decodeNumericEntities(input: string): string {
-  return input
-    .replace(/&#(\d+);/g, (match, dec: string) => {
-      const code = Number(dec);
-      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
-    })
-    .replace(/&#[xX]([0-9a-fA-F]+);/g, (match, hex: string) => {
-      const code = parseInt(hex, 16);
-      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
-    });
-}
+import { decodeEntities } from './htmlEntities.js';
 
 /** Strip tags/scripts/styles from raw HTML and collapse to readable text. */
 export function htmlToText(html: string): string {
@@ -138,10 +112,10 @@ export function htmlToText(html: string): string {
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/<[^>]+>/g, ' ');
-  out = decodeNumericEntities(out);
-  for (const [entity, replacement] of Object.entries(HTML_ENTITIES)) {
-    out = out.split(entity).join(replacement);
-  }
+  // 🔴 Decode at the ROOT, so the extracted page a snippet is matched against — and the span cut
+  // from it and published — carry characters, not references. One shared table (htmlEntities.ts);
+  // this module used to keep its own, and the two drifted apart unnoticed.
+  out = decodeEntities(out);
   return out.replace(/\s+/g, ' ').trim();
 }
 
