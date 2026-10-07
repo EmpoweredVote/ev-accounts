@@ -1,6 +1,6 @@
 # Proposal: how a human-saved own-site copy should count for verification
 
-Status: **PROPOSAL — not implemented. Operator (Chris Andrews) to rule.** 2026-10-07.
+Status: **RULED 2026-10-07 (Chris Andrews) — not yet implemented.** Option B; rules 2 and 3 below accepted as recommended.
 
 ## Problem
 
@@ -54,13 +54,14 @@ review-all unchanged, and uses the existing hand-verified mechanism and its audi
 (`resolved_by`, batch `human-review-<id>`). The `sha256` makes a later edit of the saved file
 detectable.
 
-## Decisions needed
+## Rulings (2026-10-07, Chris Andrews)
 
-1. B, or C?
-2. Under `--auto-push`, may a row whose only support is a human-saved copy publish? Recommended:
-   **no** — such a row always goes to review, even in auto mode.
-3. Scope of "JS-only": any own-site page, or only own-site sources with `source_kind` own-site?
-   Recommended: only sources the manifest marks own-site.
+1. **Option B.** Link only; no span is published from a human-saved copy.
+2. **Auto-push:** a row whose only support is a human-saved copy always goes to review, even under
+   `--auto-push`. Stated as an explicit rule so a later change to the threshold logic cannot let it through.
+3. **Scope:** only sources the manifest marks `own-site`. Widen later if a government site proves JS-only.
+
+Implementation is a separate change.
 
 ## Not changed by this PR
 
