@@ -32,6 +32,7 @@ import logging
 import os
 import sys
 import tempfile
+import time
 import zipfile
 from datetime import datetime
 from pathlib import Path
@@ -103,8 +104,29 @@ def _load_all_state_sessions() -> dict:
     return raw.get("states", {})
 
 
-# State session configurations — loaded from state_legislative_config.json
+# Per-state overrides loaded from state_legislative_config.json. States NOT listed
+# there get their two newest regular sessions picked automatically from LegiScan's
+# dataset list (see resolve_state_config / pick_sessions).
 STATE_SESSIONS = _load_all_state_sessions()
+
+STATE_NAMES = {
+    "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California",
+    "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia",
+    "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois",
+    "IN": "Indiana", "IA": "Iowa", "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana",
+    "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan",
+    "MN": "Minnesota", "MS": "Mississippi", "MO": "Missouri", "MT": "Montana",
+    "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey",
+    "NM": "New Mexico", "NY": "New York", "NC": "North Carolina", "ND": "North Dakota",
+    "OH": "Ohio", "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania",
+    "RI": "Rhode Island", "SC": "South Carolina", "SD": "South Dakota", "TN": "Tennessee",
+    "TX": "Texas", "UT": "Utah", "VT": "Vermont", "VA": "Virginia", "WA": "Washington",
+    "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming", "PR": "Puerto Rico",
+}
+
+# LegiScan allows about 2 requests a second. Pause between calls to stay under it.
+MIN_SECONDS_BETWEEN_QUERIES = 0.6
+_last_query_at = 0.0
 
 # Common nickname <-> formal name mappings for legislator matching.
 # Each entry maps both directions: "dave" matches "david" and vice versa.
@@ -336,6 +358,11 @@ def legiscan_query(api_key, op, params=None):
     if params:
         req_params.update(params)
 
+    global _last_query_at
+    wait = MIN_SECONDS_BETWEEN_QUERIES - (time.monotonic() - _last_query_at)
+    if wait > 0:
+        time.sleep(wait)
+    _last_query_at = time.monotonic()
     resp = requests.get(LEGISCAN_BASE, params=req_params, timeout=60)
     resp.raise_for_status()
     data = resp.json()
@@ -364,6 +391,41 @@ def get_dataset_list(api_key, state_code):
     if isinstance(datasets, dict):
         datasets = list(datasets.values())
     return datasets
+
+
+def resolve_state_config(state_code):
+    """Config for a state: the file entry if present, else derived from STATE_NAMES."""
+    if state_code in STATE_SESSIONS:
+        return STATE_SESSIONS[state_code]
+    name = STATE_NAMES[state_code]
+    return {"name": name, "jurisdiction": name.lower()}
+
+
+def pick_session_datasets(datasets, config, sessions_to_import):
+    """Return [(label, year_start, dataset)] for the sessions to import.
+
+    A config with explicit current/previous year starts wins. Otherwise the two
+    newest regular (non-special) sessions are used: newest = current, next = previous.
+    """
+    picks = []
+    if "current_year_start" in config:
+        wanted = {
+            "current": config["current_year_start"],
+            "previous": config.get("previous_year_start"),
+        }
+        for label in ("current", "previous"):
+            if label in sessions_to_import and wanted[label]:
+                picks.append((label, wanted[label], find_dataset_for_session(datasets, wanted[label])))
+        return picks
+    regular = sorted(
+        (d for d in datasets if d.get("special") == 0),
+        key=lambda d: d.get("year_start", 0),
+        reverse=True,
+    )
+    for label, ds in zip(("current", "previous"), regular[:2]):
+        if label in sessions_to_import:
+            picks.append((label, ds.get("year_start"), ds))
+    return picks
 
 
 def find_dataset_for_session(datasets, year_start):
@@ -568,8 +630,9 @@ def build_legislator_bridge(api_key, legiscan_session_id, state_code, jurisdicti
             WHERE LOWER(p.last_name) = LOWER(%s)
               AND LOWER(p.first_name) = ANY(%s)
               AND d.district_type IN ('STATE_UPPER', 'STATE_LOWER', 'STATE_EXEC')
+              AND UPPER(d.state) = %s
             """,
-            (last_name, list(name_variants)),
+            (last_name, list(name_variants), state_code.upper()),
         )
         matches = cur.fetchall()
 
@@ -824,14 +887,57 @@ def link_sponsors_to_bill(cur, sponsors, bridge_map, bill_db_id, dry_run=False):
 # Vote processing (from pre-loaded dataset data — zero API calls)
 # ---------------------------------------------------------------------------
 
-def process_roll_call(conn, roll_call, bill_db_id, session_db_id, bridge_map, dry_run=False):
-    """Process a single roll call from pre-loaded dataset data.
+VOTE_INSERT_SQL = """
+    INSERT INTO essentials.legislative_votes
+        (id, politician_id, bill_id, session_id, external_vote_id,
+         vote_question, position, vote_date, result, yea_count, nay_count, source)
+    VALUES %s
+    ON CONFLICT (politician_id, bill_id, session_id, external_vote_id) DO UPDATE SET
+        position = EXCLUDED.position,
+        vote_question = EXCLUDED.vote_question,
+        result = EXCLUDED.result
+"""
+VOTE_ROW_TEMPLATE = "(gen_random_uuid(), %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 'legiscan')"
 
-    Returns count of vote rows upserted.
+
+class VoteBuffer:
+    """Collects vote rows and writes them in batches (one round trip per batch).
+
+    Rows are keyed by (politician, bill, session, vote id), so a repeated key inside a
+    batch cannot trip Postgres's "cannot affect row a second time" error.
     """
-    cur = conn.cursor()
-    votes_upserted = 0
 
+    def __init__(self, batch_size=2000):
+        self.batch_size = batch_size
+        self.rows = {}
+        self.written = 0
+
+    def add(self, rows):
+        for row in rows:
+            self.rows[(row[0], row[1], row[2], row[3])] = row
+
+    def full(self):
+        return len(self.rows) >= self.batch_size
+
+    def flush(self, conn):
+        if not self.rows:
+            return
+        batch = list(self.rows.values())
+        with conn.cursor() as cur:
+            psycopg2.extras.execute_values(
+                cur, VOTE_INSERT_SQL, batch, template=VOTE_ROW_TEMPLATE, page_size=500
+            )
+        conn.commit()
+        self.written += len(batch)
+        self.rows = {}
+
+
+def process_roll_call(conn, roll_call, bill_db_id, session_db_id, bridge_map, dry_run=False, buffer=None):
+    """Turn one roll call from the dataset into vote rows (zero API calls).
+
+    With a buffer, rows are queued and the caller flushes. Without one, rows are written
+    now. Returns the number of vote rows for our legislators.
+    """
     roll_call_id = roll_call.get("roll_call_id")
     vote_date_str = roll_call.get("date", "")
     vote_date = None
@@ -847,48 +953,33 @@ def process_roll_call(conn, roll_call, bill_db_id, session_db_id, bridge_map, dr
     nay_count = roll_call.get("nay", 0)
     external_vote_id = f"legiscan-{roll_call_id}"
 
+    rows = []
     for member_vote in roll_call.get("votes", []):
         people_id = member_vote.get("people_id")
         if people_id not in bridge_map:
             continue
+        rows.append((
+            str(bridge_map[people_id]),
+            str(bill_db_id) if bill_db_id else None,
+            str(session_db_id),
+            external_vote_id,
+            vote_question,
+            normalize_vote_cast(member_vote.get("vote_text", "")),
+            vote_date,
+            result,
+            yea_count,
+            nay_count,
+        ))
 
-        politician_id = bridge_map[people_id]
-        position = normalize_vote_cast(member_vote.get("vote_text", ""))
-
-        if dry_run:
-            continue
-
-        cur.execute(
-            """
-            INSERT INTO essentials.legislative_votes
-                (id, politician_id, bill_id, session_id, external_vote_id,
-                 vote_question, position, vote_date, result, yea_count, nay_count, source)
-            VALUES (gen_random_uuid(), %s, %s, %s, %s,
-                    %s, %s, %s, %s, %s, %s, 'legiscan')
-            ON CONFLICT (politician_id, bill_id, session_id, external_vote_id) DO UPDATE SET
-                position = EXCLUDED.position,
-                vote_question = EXCLUDED.vote_question,
-                result = EXCLUDED.result
-            """,
-            (
-                str(politician_id),
-                str(bill_db_id) if bill_db_id else None,
-                str(session_db_id),
-                external_vote_id,
-                vote_question,
-                position,
-                vote_date,
-                result,
-                yea_count,
-                nay_count,
-            ),
-        )
-        votes_upserted += 1
-
-    if not dry_run:
-        conn.commit()
-
-    return votes_upserted
+    if dry_run or not rows:
+        return len(rows)
+    if buffer is not None:
+        buffer.add(rows)
+        return len(rows)
+    local = VoteBuffer()
+    local.add(rows)
+    local.flush(conn)
+    return len(rows)
 
 
 # ---------------------------------------------------------------------------
@@ -938,16 +1029,19 @@ def import_bills_from_dataset(
     bill_items = sorted(bills_data.items())
     logging.info(f"Processing {len(bill_items)} bills from dataset")
 
-    # Pre-fetch existing bill external_ids for this jurisdiction to skip already-imported bills
-    existing_bill_ids = set()
+    # Existing bills: keep their sponsors/committees as they are, but still refresh
+    # status and load roll calls (a new legislator needs the old votes too).
+    existing_bills = {}
+    status_updates = []
+    vote_buffer = VoteBuffer()
     try:
         cur.execute(
-            "SELECT external_id FROM essentials.legislative_bills WHERE jurisdiction = %s AND session_id = %s",
+            "SELECT external_id, id, raw_status FROM essentials.legislative_bills WHERE jurisdiction = %s AND session_id = %s",
             (jurisdiction, str(session_db_id)),
         )
-        existing_bill_ids = {row[0] for row in cur.fetchall()}
-        if existing_bill_ids:
-            logging.info(f"Found {len(existing_bill_ids)} existing bills in DB — will skip these")
+        existing_bills = {row[0]: (row[1], row[2]) for row in cur.fetchall()}
+        if existing_bills:
+            logging.info(f"Found {len(existing_bills)} existing bills in DB — refreshing status and votes only")
     except Exception as e:
         logging.warning(f"Could not pre-fetch existing bills: {e}")
         conn.rollback()
@@ -956,8 +1050,24 @@ def import_bills_from_dataset(
         try:
             # Skip bills already in DB (before any processing)
             external_id = f"legiscan-{bill_id}"
-            if external_id in existing_bill_ids:
+            if external_id in existing_bills:
+                bill_db_id, old_status = existing_bills[external_id]
+                status_int = bill_data.get("status", 1)
+                if str(status_int) != str(old_status):
+                    status_updates.append((
+                        str(bill_db_id), str(status_int),
+                        normalize_bill_status(status_int, bill_data.get("status_desc", "")),
+                    ))
+                for vote_stub in bill_data.get("votes", []):
+                    roll_call_id = vote_stub.get("roll_call_id")
+                    if roll_call_id and roll_call_id in roll_calls_data:
+                        votes_total += process_roll_call(
+                            conn, roll_calls_data[roll_call_id], bill_db_id,
+                            session_db_id, bridge_map, dry_run, vote_buffer
+                        )
                 bills_skipped += 1
+                if not dry_run and vote_buffer.full():
+                    vote_buffer.flush(conn)
                 continue
 
             # Refresh cursor (may have been replaced after reconnect)
@@ -1051,7 +1161,7 @@ def import_bills_from_dataset(
                 try:
                     votes_for_rc = process_roll_call(
                         conn, roll_calls_data[roll_call_id], bill_db_id,
-                        session_db_id, bridge_map, dry_run
+                        session_db_id, bridge_map, dry_run, vote_buffer
                     )
                     votes_total += votes_for_rc
                 except Exception as e:
@@ -1091,12 +1201,38 @@ def import_bills_from_dataset(
                 logging.error("Too many errors — aborting bill import")
                 break
 
+    if not dry_run:
+        try:
+            vote_buffer.flush(conn)
+            if status_updates:
+                with conn.cursor() as cur2:
+                    psycopg2.extras.execute_values(
+                        cur2,
+                        """
+                        UPDATE essentials.legislative_bills b
+                        SET raw_status = v.raw_status, status_label = v.status_label
+                        FROM (VALUES %s) AS v(id, raw_status, status_label)
+                        WHERE b.id = v.id::uuid
+                        """,
+                        status_updates,
+                        page_size=500,
+                    )
+                conn.commit()
+        except Exception as e:
+            errors.append(f"final flush: {e}")
+            logging.error(f"Final vote/status flush failed: {e}")
+            try:
+                conn.rollback()
+            except Exception:
+                conn = reconnect(db_url, conn)
+    logging.info(f"Existing bills refreshed: {bills_skipped} ({len(status_updates)} status changes)")
     logging.info(
-        f"Bills: {bills_upserted} upserted, {bills_skipped} skipped (already in DB), "
+        f"Bills: {bills_upserted} new, {bills_skipped} existing, "
         f"{cosponsors_total} cosponsors, {votes_total} votes, "
         f"{len(all_committee_db_map)} committees, {len(errors)} errors"
     )
-    return conn, bills_upserted, cosponsors_total, votes_total, all_committee_db_map, errors
+    # bills = new + existing-and-refreshed, so an unchanged-roster rerun still counts as imported
+    return conn, bills_upserted + bills_skipped, cosponsors_total, votes_total, all_committee_db_map, errors
 
 
 # ---------------------------------------------------------------------------
@@ -1115,7 +1251,7 @@ def import_state(api_key, db_url, conn, state_code, sessions_to_import, dry_run=
     Total: ~3-5 queries per state instead of thousands.
     db_url is passed so the bill import can reconnect if Supabase drops the connection.
     """
-    config = STATE_SESSIONS[state_code]
+    config = resolve_state_config(state_code)
     jurisdiction = config["jurisdiction"]
     results = {
         "bridge_rows": 0,
@@ -1132,21 +1268,21 @@ def import_state(api_key, db_url, conn, state_code, sessions_to_import, dry_run=
     datasets = get_dataset_list(api_key, state_code)
     logging.info(f"Found {len(datasets)} datasets for {state_code}")
 
-    session_targets = []
-    if "current" in sessions_to_import:
-        session_targets.append(("current", config["current_year_start"]))
-    if "previous" in sessions_to_import:
-        session_targets.append(("previous", config["previous_year_start"]))
+    session_targets = pick_session_datasets(datasets, config, sessions_to_import)
+    if not session_targets:
+        msg = f"No regular-session datasets found for {state_code}"
+        logging.error(msg)
+        results["errors"].append(msg)
+        return results
 
     all_committee_db_map = {}
 
-    for label, year_start in session_targets:
+    for label, year_start, ds in session_targets:
         logging.info(f"\n{'=' * 60}")
         logging.info(f"Processing {config['name']} {label} session (year_start={year_start})")
         logging.info(f"{'=' * 60}")
 
-        # 2. Find matching dataset
-        ds = find_dataset_for_session(datasets, year_start)
+        # 2. Dataset for this session (already picked above)
         if not ds:
             msg = f"No dataset found for {state_code} year_start={year_start}"
             logging.error(msg)
@@ -1160,6 +1296,15 @@ def import_state(api_key, db_url, conn, state_code, sessions_to_import, dry_run=
             f"Found dataset: session_id={legiscan_session_id}, "
             f"hash={dataset_hash[:12]}..., size={ds.get('dataset_size', '?')} bytes"
         )
+
+        # 2b. Unchanged since the last successful import? Skip before spending any query.
+        # (A grown legislator roster is not noticed here. Use --force after roster changes.)
+        if not dry_run and not force and should_skip_session(
+            legiscan_session_id, dataset_hash, 0
+        ):
+            logging.info(f"Session {legiscan_session_id} unchanged (hash match). Skipping.")
+            results["skipped"] = results.get("skipped", 0) + 1
+            continue
 
         # 3. Download and extract dataset (1 API call, or cached)
         bills_data, roll_calls_data = download_and_extract_dataset(
@@ -1239,13 +1384,35 @@ def import_state(api_key, db_url, conn, state_code, sessions_to_import, dry_run=
 # CLI entry point
 # ---------------------------------------------------------------------------
 
+def states_with_legislators(conn):
+    """State codes (upper case) that have a sitting state legislator in our database."""
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            SELECT DISTINCT UPPER(d.state)
+            FROM essentials.office_terms ot
+            JOIN essentials.offices o ON o.id = ot.office_id
+            JOIN essentials.districts d ON d.id = o.district_id
+            WHERE d.district_type IN ('STATE_UPPER', 'STATE_LOWER')
+              AND ot.term_end IS NULL
+            """
+        )
+        found = {r[0] for r in cur.fetchall()}
+    return sorted(c for c in found if c in STATE_NAMES)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="Import state legislative data from LegiScan API (Dataset Edition)"
+        description="Import state legislative data from LegiScan weekly datasets"
     )
-    parser.add_argument(
-        "--state", required=True, choices=list(STATE_SESSIONS.keys()),
-        help="State code (IN or CA)"
+    target = parser.add_mutually_exclusive_group(required=True)
+    target.add_argument("--state", choices=sorted(STATE_NAMES), help="One state code, e.g. CA")
+    target.add_argument(
+        "--states", help="Comma-separated state codes, e.g. CA,IN,TX"
+    )
+    target.add_argument(
+        "--all", action="store_true",
+        help="Every state that has a sitting state legislator in our database",
     )
     parser.add_argument(
         "--sessions", default="current,previous",
@@ -1281,21 +1448,6 @@ def main():
         logging.error("DATABASE_URL environment variable required")
         sys.exit(1)
 
-    # Budget check before starting
-    budget_used = read_budget()
-    remaining = BUDGET_LIMIT - budget_used
-    logging.info(f"LegiScan budget: {budget_used}/{BUDGET_LIMIT} used, {remaining} remaining")
-    if remaining < 1000:
-        logging.warning(
-            f"Budget low ({remaining} remaining). A dataset run costs about 5 queries per state."
-        )
-    if remaining < 100:
-        logging.error(
-            f"Budget nearly exhausted ({remaining} remaining). "
-            "Wait for monthly reset."
-        )
-        sys.exit(1)
-
     sessions_to_import = [s.strip() for s in args.sessions.split(",")]
     invalid = [s for s in sessions_to_import if s not in ("current", "previous")]
     if invalid:
@@ -1303,27 +1455,60 @@ def main():
         sys.exit(1)
 
     conn = psycopg2.connect(db_url)
+    totals = {"bridge_rows": 0, "bills": 0, "votes": 0, "cosponsors": 0,
+              "committees": 0, "memberships": 0, "skipped": 0}
+    failed_states = []
     try:
-        results = import_state(api_key, db_url, conn, args.state, sessions_to_import, args.dry_run, args.force)
+        if args.all:
+            states = states_with_legislators(conn)
+        elif args.states:
+            states = [c.strip().upper() for c in args.states.split(",") if c.strip()]
+            unknown = [c for c in states if c not in STATE_NAMES]
+            if unknown:
+                logging.error(f"Unknown state codes: {unknown}")
+                sys.exit(1)
+        else:
+            states = [args.state]
+        logging.info(f"States to process ({len(states)}): {' '.join(states)}")
 
-        logging.info(f"\n{'=' * 60}")
-        logging.info(f"IMPORT COMPLETE: {args.state}")
-        logging.info(f"  Bridge rows:   {results['bridge_rows']}")
-        logging.info(f"  Bills:         {results['bills']}")
-        logging.info(f"  Cosponsors:    {results['cosponsors']}")
-        logging.info(f"  Votes:         {results['votes']}")
-        logging.info(f"  Committees:    {results['committees']}")
-        logging.info(f"  Memberships:   {results['memberships']}")
-        logging.info(f"  Errors:        {len(results['errors'])}")
-        if results["errors"]:
-            logging.error("First errors:")
-            for e in results["errors"][:10]:
-                logging.error(f"  - {e}")
+        for state_code in states:
+            # Budget check before each state (a state costs about 1 to 5 queries)
+            budget_used = read_budget()
+            remaining = BUDGET_LIMIT - budget_used
+            logging.info(f"LegiScan budget: {budget_used}/{BUDGET_LIMIT} used, {remaining} remaining")
+            if remaining < 100:
+                logging.error("Budget nearly exhausted. Stopping. Wait for the monthly reset.")
+                failed_states.append(f"{state_code} (budget)")
+                break
+            try:
+                results = import_state(
+                    api_key, db_url, conn, state_code, sessions_to_import, args.dry_run, args.force
+                )
+            except Exception as exc:  # one bad state must not stop the others
+                logging.exception(f"{state_code} failed: {exc}")
+                failed_states.append(state_code)
+                try:
+                    conn.rollback()
+                except Exception:
+                    conn = psycopg2.connect(db_url)
+                continue
+            for k in totals:
+                totals[k] += results.get(k, 0)
+            if results["errors"]:
+                failed_states.append(state_code)
+                logging.error(f"{state_code}: {len(results['errors'])} errors, first: {results['errors'][:3]}")
+
         budget_used = read_budget()
+        logging.info(f"\n{'=' * 60}")
+        logging.info(f"IMPORT COMPLETE: {len(states)} state(s){' (dry run)' if args.dry_run else ''}")
+        for k, v in totals.items():
+            logging.info(f"  {k:<13} {v}")
+        logging.info(f"  Problem states: {failed_states or 'none'}")
         logging.info(f"  Budget used:   {budget_used}/{BUDGET_LIMIT} ({BUDGET_LIMIT - budget_used} remaining)")
         logging.info(f"{'=' * 60}")
     finally:
         conn.close()
+    sys.exit(1 if failed_states else 0)
 
 
 if __name__ == "__main__":

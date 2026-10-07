@@ -19,7 +19,20 @@ Loads bills, votes and committee data from LegiScan weekly datasets into the
     pip install -r requirements.txt
     python import_state_legislative.py --state CA --sessions current --dry-run --verbose
     python import_state_legislative.py --state CA --sessions current
-    python import_state_legislative.py --state IN --sessions current,previous
+    python import_state_legislative.py --states CA,IN,TX
+    python import_state_legislative.py --all --dry-run     # every state with a sitting legislator
+    python import_state_legislative.py --all
+
+`--all` reads the list of states from our database. For each state it picks the two
+newest regular sessions from LegiScan's dataset list. A state listed in
+`state_legislative_config.json` uses the years in that file instead. Legislators are
+matched by name inside their own state only. A session whose `dataset_hash` has not
+changed since the last good import is skipped at no query cost. After the legislator
+roster grows, run with `--force` so new legislators get their votes.
+
+Known limits: bills already in the database are not updated, so a bill's status
+(passed, signed) can lag. Writes are row by row over the network, so a big state takes
+tens of minutes.
 
 Needs `LEGISCAN_API_KEY` and `DATABASE_URL` in `backend/.env` or the shell.
 
