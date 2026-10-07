@@ -1091,6 +1091,13 @@ export interface CitationEntry {
   snippet: string;
   verified_at: string;
   is_primary: boolean;
+  /**
+   * CA_0301: when the person said or did what this source cites (YYYY-MM-DD), read with
+   * source_date_precision. A 'year' date is YYYY-01-01 and must render as the year only;
+   * 'month' as the month. Both null = unknown: render no date.
+   */
+  source_date: string | null;
+  source_date_precision: 'day' | 'month' | 'year' | null;
 }
 
 export interface StanceOption {
@@ -1122,6 +1129,8 @@ interface RawCitationRow {
   snippet: string;
   verified_at: string;
   is_primary: boolean;
+  source_date: string | null;
+  source_date_precision: 'day' | 'month' | 'year' | null;
 }
 
 /**
@@ -1155,6 +1164,8 @@ export function groupCitationRows(rows: RawCitationRow[]): TopicCitationBlock[] 
       snippet: r.snippet,
       verified_at: r.verified_at,
       is_primary: Boolean(r.is_primary),
+      source_date: r.source_date ?? null,
+      source_date_precision: r.source_date_precision ?? null,
     });
   }
   return [...blockMap.values()];
@@ -1191,6 +1202,8 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
        pce.source_url,
        pce.snippet,
        pce.verified_at::text AS verified_at,
+       pce.source_date::text AS source_date,
+       pce.source_date_precision,
        (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) AS is_primary
      FROM inform.politician_context_evidence pce
      -- Topic identity and title only. Which topics may appear is decided by the

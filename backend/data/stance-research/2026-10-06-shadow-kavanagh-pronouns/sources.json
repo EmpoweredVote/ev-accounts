@@ -1,0 +1,84 @@
+{
+  "batch_id": "2026-10-06-shadow-kavanagh-pronouns",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1001",
+      "source_kind": "public-record",
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_keys": [
+        "education-gender-identity"
+      ],
+      "instruments": [
+        "SB 1001 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-sb1001-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1001#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_keys": [
+        "education-gender-identity"
+      ],
+      "instruments": [
+        "SB 1001 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-sb1001-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1001S.htm",
+      "source_kind": "public-record",
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_keys": [
+        "education-gender-identity"
+      ],
+      "instruments": [
+        "SB 1001 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.kawc.org/news/2023-01-01/arizona-law-would-require-parents-permission-before-school-employees-could-refer-to-a-student-by-preferred-pronouns",
+      "source_kind": "news",
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_keys": [
+        "education-gender-identity"
+      ],
+      "instruments": [
+        "SB 1001 (2023)"
+      ],
+      "pointer_passages": [
+        "You're talking to somebody who was a parent who wouldn't let their minor child get a tattoo",
+        "Kavanagh pointed out that his legislation would not preclude a teacher",
+        "if the parents know about it and the child is receiving treatment"
+      ],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.kjzz.org/2023-04-03/content-1843185-arizona-bill-restricting-use-preferred-pronouns-schools-heads-house-floor",
+      "source_kind": "news",
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_keys": [
+        "education-gender-identity"
+      ],
+      "instruments": [
+        "SB 1001 (2023)"
+      ],
+      "pointer_passages": [
+        "I don\u2019t think you can assume that when a parent finds out about this",
+        "Kavanagh added that the bill does not require a school employee to out the child to their parents"
+      ],
+      "candidate_quotes": []
+    }
+  ]
+}

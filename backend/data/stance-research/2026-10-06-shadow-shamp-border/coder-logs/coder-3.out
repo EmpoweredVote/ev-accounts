@@ -1,0 +1,12 @@
+I wrote `labels/coder-3.json` for Janae Shamp on `border-security`. The one row is BLANK `direction-only`, with no `needs_source`. I didn't re-read or validate the file after writing.
+
+**Why BLANK:**
+- **SB 1231 (2024):**
+  - Shamp is the prime sponsor and voted Yes on the Senate third reading (16-13).
+  - It makes crossing outside a port of entry a state crime. It says nothing on who may claim asylum or how fast claims are decided, so it matches no rung.
+  - I coded it on-question and `direction-only`. That fits the annex's rule that enforcement alone with no asylum treatment is `direction-only`.
+  - It is a `record` on one instrument: the bill text carries `provision_quote`, the status page carries `actor_quote` "Shamp (Prime)", and the vote page carries `actor_quote` and `tally_quote`.
+- **HCR 2060 (2024):** Her Yes vote is on a multi-subject referral (state crossing crime, benefits verification, e-verify, fentanyl penalties). It is `multi-subject` and adjacent, so it proves nothing about a rung.
+- **News passages:** Her two quoted statements, from KJZZ and Fox 10, are `statement-other` and `rhetorical` (they attack Biden and Hobbs and name no policy clause). I coded both as `v7_tier` none with `is-attack` and not quotable. The reporters' own accounts of the bill are context only (H15).
+
+`rests_on` is empty.

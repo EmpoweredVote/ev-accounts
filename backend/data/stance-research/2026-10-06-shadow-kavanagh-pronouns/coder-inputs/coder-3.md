@@ -1,3 +1,14 @@
+You are stance coder 3. You code evidence against the codebook below. You do not search,
+fetch or verify anything: every source you may use is in this message, and code checks your
+labels afterwards. If the evidence a row needs is named but not included here, put it in
+needs_source instead of guessing.
+
+Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts-gold19/backend/data/stance-research/2026-10-06-shadow-kavanagh-pronouns/labels/coder-3.json. Write JSON only, matching
+codebook Part E, with "codebook_version": "0.4" and "coder_slot": 3. One row per
+topic below. Every quoted string you write must be copied exactly from a source below.
+
+## Codebook
+
 # Empowered Vote — Stance & Quote Codebook
 
 **Version:** 0.4 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
@@ -486,11 +497,6 @@ carry the S1 reading forward.
   - **Independent** means a different instrument (record passages on one instrument are one source —
     the instrument group of V3), or a different occasion of the person's own words. Two reports of one
     statement, or news repeating one press release, are one source (principle 6).
-  - **Two statements on one day (ruling 2026-10-06, Chris Andrews).** A date is not an occasion: a
-    debate answer and a questionnaire on the same day are two occasions. Two same-day statements count
-    as two sources only if (1) both are the person's own words on a first-party page, not news or a
-    pointer; (2) they are on different snapshots; and (3) their texts do not overlap — one page does
-    not reprint the other's words. News on that day adds no source.
   - _owed:_ whether the person's own explanation of a vote counts as a second source for that same
     vote, or as the same act. Until ruled, it is the same act (one source).
   - A tier never upgrades a blank: two `direction-only` sources are still BLANK `direction-only`.
@@ -739,3 +745,159 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
   `record` passages of the row on one `instrument`), at least one passage carries a non-empty
   `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
   2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
+
+
+## The person
+
+politician_id: 4f7db8ce-def5-4225-b183-654f8f64cb9a  office_id: 80d6f6f6-c62b-46a8-ae32-725e8a8a8f06
+John Kavanagh — State Senator, Arizona (seated, level: state)
+Current term: 2023-01-02 (precision: day) to present
+Earlier terms in this legislature: State Senator unknown (precision: unknown) to 2018-01-14; State Representative unknown (precision: unknown) to 2023-01-09
+
+## Topics (served ladder text — code against these words only)
+
+### topic_key: education-gender-identity
+topic_id: d96f987e-3404-4667-909d-5889116ba6e5  served_revision_id: 89f9d4a5-362e-4470-9529-46d4826fdeb9
+Question: What should schools do when a student uses a different name or gender identity at school than at home?
+  1. Use the student's chosen name and pronouns, and keep their gender identity from parents unless the student agrees to share it
+  2. Use the student's chosen name and pronouns, and tell parents only if they directly ask
+  3. Tell parents when a student changes their name or gender at school, unless staff believe it would put the student in danger
+  4. Require staff to notify parents whenever a student asks to be treated as a different gender at school
+  5. Require written parental permission before staff use a student's chosen name or pronouns
+
+#### Annex
+
+# education-gender-identity — served revision 89f9d4a5-362e-4470-9529-46d4826fdeb9 (Season 2)
+
+**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
+lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
+`_owed:_` line is open.
+
+**Question:** "What should schools do when a student uses a different name or gender identity at
+school than at home?"
+
+**Orientation:** standard. Rung 1 gives the student's wish the most weight against disclosure to
+parents; rung 5 gives parents a veto before staff act. The rungs order **who controls disclosure and
+consent**: the student, the parent on request, the school with a safety exception, the school with
+no exception, the parent in advance.
+
+**Levels with a role:** local, school, state (`compass_topic_roles`). The lever is the school board's
+policy and the state statute or state-board rule. A city or county council holds none →
+`scope-unavailable` there _(proposed)_.
+
+**Synonyms:** "chosen name", "preferred name", "pronouns", "social transition", "gender support
+plan", "parental notification", "parental rights", "forced outing", "parental consent", "safety
+exception", "education records", "student privacy".
+
+1. **"Use the student's chosen name and pronouns, and keep their gender identity from parents unless
+   the student agrees to share it"**
+   - Means: staff use the student's name and pronouns, and do not tell parents unless the student
+     consents — even when a parent asks.
+   - Operative clauses: [a] staff use the chosen name and pronouns; [b] no disclosure to parents
+     without the student's consent. Compound: one side only → `compound-partial` (V4.2).
+   - Establishing evidence looks like: a policy or statute that requires staff to use the chosen
+     name **and** forbids disclosure without the student's consent.
+   - Levels that hold a lever: state; school.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 2 because both use the name. Rung 1 keeps the identity from a parent
+     who asks; rung 2 answers a parent who asks. A policy that does not say what happens when a
+     parent asks cannot separate them → `direction-only`.
+
+2. **"Use the student's chosen name and pronouns, and tell parents only if they directly ask"**
+   - Means: staff use the student's name and pronouns, do not notify parents on their own, but answer
+     truthfully when a parent asks.
+   - Operative clauses: [a] staff use the chosen name and pronouns; [b] no notice unless a parent
+     asks; [c] disclosure when a parent asks. Compound: one side only → `compound-partial`.
+   - Establishing evidence looks like: a policy with no notification duty that releases the
+     information on a parent's request.
+   - Levels that hold a lever: state; school.
+   - Known chair-shaped instruments: _(none on file)_.
+   - A general parent right to see education records does not by itself meet [b] or [c]; it does not
+     say what staff do about name or gender → `adjacent` _(proposed)_.
+
+3. **"Tell parents when a student changes their name or gender at school, unless staff believe it
+   would put the student in danger"**
+   - Means: the school tells parents by default, but staff may hold back when they believe telling
+     would endanger the student.
+   - Operative clauses: [a] a notification duty; [b] a safety exception that staff apply.
+   - Establishing evidence looks like: a notification statute or policy with an exception for a
+     belief that disclosure would cause abuse, neglect or harm.
+   - Levels that hold a lever: state; school.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 4: see rung 4.
+
+4. **"Require staff to notify parents whenever a student asks to be treated as a different gender at
+   school"**
+   - Means: staff must notify parents every time, with no safety exception.
+   - Operative clauses: [a] a notification duty; [b] it applies whenever a student asks.
+   - Establishing evidence looks like: operative text that makes notification a duty on every such
+     request and carries no safety exception. A duty stated for every request is a stated rule, not
+     silence.
+   - Levels that hold a lever: state; school.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 3 when the safety exception is in another section of the same act or
+     in a cross-referenced law. Read the whole act: an exception anywhere in it → rung 3.
+   - Commonly confused with rung 5 when the act also requires consent. Notice only → rung 4; consent
+     before use → rung 5.
+
+5. **"Require written parental permission before staff use a student's chosen name or pronouns"**
+   - Means: staff may not use the chosen name or pronouns until a parent gives written permission.
+   - Operative clauses: [a] parental permission; [b] in writing; [c] before staff use the name or
+     pronouns.
+   - Establishing evidence looks like: operative text that requires written parental consent for
+     the use of a different name or pronouns.
+   - Levels that hold a lever: state; school.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Permission that need not be written meets [a] and [c] only → `compound-partial` _(proposed)_.
+   - A rule that forbids staff to use a name or pronouns that do not match sex **even with** parental
+     permission is past this rung, and no rung states it → `direction-only` _(proposed)_.
+
+**Hard cases:**
+- **A law that forbids school boards to adopt a notification policy** (or a law that forbids them to
+  adopt a confidentiality policy) removes one side's rule statewide, but it does not itself require
+  the other side's practice → `on-question` but `direction-only` (V2 "Refined 2026-09-26") _(proposed)_.
+- **Teacher speech protections** (a teacher may not be required to use a pronoun) → `adjacent`
+  _(proposed)_.
+- **Sports, restrooms and locker rooms** → `adjacent` (sports has its own topic).
+- **Curriculum on gender identity** → `adjacent` (curriculum has its own topic).
+- **Federal law** (education-records rights, Title IX rules) is not a role here; a state or school
+  passage that only cites it → `adjacent` unless it states the school's own rule _(proposed)_.
+- **Budget or omnibus votes** → V4 `multi-subject`.
+
+
+## Sources
+
+---
+snapshot_id: e6eccf73-35fc-5421-8ded-3ceaca1cb358
+source_kind: public-record
+url: https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1001
+
+Bill Status Inquiry. Bill History for SB1001. Short Title: pronouns; biological sex; school policies. Sponsors: Kavanagh (Prime) Senate THIRD 03/01/2023 16-12-2-0-0 PASSED (Amended). House THIRD 05/15/2023 31-27-1-0-1 PASSED. Governor Action 05/19/2023 Vetoed [Bill overview for SB1001 (2023), saved by browser from apps.azleg.gov BillStatus on 2026-10-06.]
+
+---
+snapshot_id: 2129194b-e9c9-555d-b5b9-a1be638fb494
+source_kind: public-record
+url: https://www.azleg.gov/legtext/56leg/1R/bills/SB1001S.htm
+
+SB1001 - 561R - S Ver Senate Engrossed pronouns; biological sex; school policies State of Arizona Senate Fifty-sixth Legislature First Regular Session 2023 SENATE BILL 1001 An Act amending title 15, chapter 5, article 1, Arizona Revised Statutes, by adding section 15-509; relating to school employees. (TEXT OF BILL BEGINS ON NEXT PAGE) Be it enacted by the Legislature of the State of Arizona: Section 1. Title 15, chapter 5, article 1, Arizona Revised Statutes, is amended by adding section 15-509, to read: START_STATUTE 15-509. Pronouns; biological sex; parental permission; prohibition; policies a. An employee or independent contractor of a school district or charter school may not knowingly address, identify or refer to a student who is under eighteen years of age by either of the following unless the school district or charter school receives written permission from the student's parent: 1. A pronoun that differs from the pronoun that aligns with the student's biological sex. 2. A first name other than the first or middle name that is listed on the student's official school records, except that an employee or independent contractor may address, identify or refer to a student by a nickname that is commonly associated with the student's name of record. B. A school district or charter school may not require an employee or independent contractor to address, identify or refer to a person by a pronoun that differs from the pronoun that aligns with the person's biological sex if doing so is contrary to the employee's or independent contractor's religious or moral convictions. C. Each school district governing board and charter school governing body shall adopt policies to implement this section. D. This section does not prohibit any person described in subsection A of this section from discussing matters of public concern outside the context of the person's official duties. END_STATUTE
+
+---
+snapshot_id: a39a47e3-b594-50c3-8560-71a03fcd3ea9
+source_kind: public-record
+url: https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1001#senate-third
+
+Senate Third Reading - SB1001 pronouns; biological sex; school policies Action Date Action Vote 03/01/2023 Passed 16-12-2-0-0 Amended ALSTON N BENNETT Y BORRELLI Y BURCH N CARROLL Y DIAZ NV EPSTEIN N FARNSWORTH Y FERNANDEZ N GABALDÓN N GONZALES NV GOWAN Y HATATHLIE N HERNANDEZ N HOFFMAN Y KAISER Y KAVANAGH Y KERN Y KERR Y MARSH N MENDEZ N MESNARD Y MIRANDA N ROGERS Y SHAMP Y SHOPE Y SUNDARESHAN N TERÁN N WADSACK Y PETERSEN Y [Vote detail dialog for SB1001 (2023) Senate Third Reading, saved by browser from apps.azleg.gov BillStatus on 2026-10-06.]
+
+---
+snapshot_id: 43e14408-0928-586a-9ae6-4ce06ebf5e2f
+source_kind: news (excerpt only)
+url: https://www.kawc.org/news/2023-01-01/arizona-law-would-require-parents-permission-before-school-employees-could-refer-to-a-student-by-preferred-pronouns
+
+… loophole where teachers could avoid pronouns and instead address a student by the first name he or she prefers. He wants state law to read that only a student's given name or some variant could be used. So someone named Edward could be addressed as Eddie or Ed. But calling that student Emma or Evelyn would be breaking the law. Kavanagh bills his measure as ensuring that parents know if their children are identifying themselves by a gender other than the one they were assigned at birth. That, he said, ensures the children can get the psychological treatment they may need to deal with depression and possible suicide. But what it's not designed to do, he told Capitol Media Services, is make it easier for a parent, informed of a child's "gender dysphoria,'' to get him or her the medical treatment needed to match the biological sex and gender identity. "You're talking to somebody who was a parent who wouldn't let their minor child get a tattoo, much less change their gender,'' Kavanagh said. "Those decisions need to be deferred to when an individual's an adult and can make a mature decision.'' His legislation comes less than a year after state lawmakers approved -- and Gov. Doug Ducey signed -- a measure to prohibit any form of "irreversible gender reassignment surgery'' on an individual younger than 18, even with the consent of parents. But to get the votes, proponents had to remove a provision that would have prohibited doctors from providing puberty-blocking hormones or any other hormone therapy to minors. Ducey also signed another measure passed by the Republican-controlled legislature spelling out that anyone who is born a male cannot participate in intramural or interscholastic sports for females, regardless of whether she has fully transitioned. Kavanagh, in discussing his new bill, acknowledged he has heard of no issues in Arizona schools with teachers using the "wrong'' pronouns … But Jeanne Woodbury, the interim executive director of Equality Arizona, said it's a bad idea. "Reactionary legislators are now trying to forcibly enlist teachers into their efforts to make schools inhospitable to trans and binary students,'' she said. And Woodbury called it "an embarrassment to good governance'' for this to be the first measure introduced in the Senate for the 2023 session. Bridget Sharpe, state director of the Human Rights Campaign, said Kavanagh is trying to make an issue out of something that's …
+
+---
+snapshot_id: 03bcc78c-22a6-5d7a-93cd-ebd706c9ac9e
+source_kind: news (excerpt only)
+url: https://www.kjzz.org/2023-04-03/content-1843185-arizona-bill-restricting-use-preferred-pronouns-schools-heads-house-floor
+
+… Jazz Venues and Organizations Jazz Map Those Lowdown Blues: Playlists Tiny Desert Concerts E-Member Login E-Member Login Member Portal Access KJZZ Plus E-Member Login Member Portal Access KJZZ Plus News Arizona bill restricting use of preferred pronouns in schools heads to House floor KJZZ | By Bridget Dowd Published April 3, 2023 at 2:21 PM MST Facebook Threads LinkedIn Bluesky Email Listen On Monday afternoon, the Arizona House Appropriations Committee advanced a bill that puts restrictions on the use of preferred pronouns in schools. SB 1001 prohibits teachers or other school employees from referring to a student by a pronoun that differs from their biological sex without parent permission. During a special committee meeting Monday, members heard testimony from several residents who argued that the bill puts students in danger, because not all households are accepting of trans youth. Bill sponsor, Sen. John Kavanagh (R-Fountain Hills), pushed back on that. “I don’t think you can assume that when a parent finds out about this, that they’re gonna suddenly attack the kid, harass the kid, throw the kid out of the house,” Kavanagh said. “I think most parents will support the child and try to get help if it’s needed.” “This is my lived experience since I was 5 years old. That’s when I knew.” Stop what you are doing and watch Rep. @LorenaAustin4Az ’s 🔥 vote explanation on SB1001, the GOP’s hateful & dangerous “pronoun” bill. Austin is Arizona’s first non-binary, non gender-conforming lawmaker. pic.twitter.com/GdovkoTi3c &mdash; Arizona House Democrats (@AZHouseDems) April 3, 2023 Democratic Rep. Lorena Austin (Mesa) responded to those comments before voting “ no.” “Another teacher texted me that they had a student come out to them, they told their parents, and they were kicked out of their home," Austin said. “So this assumption, that you just don’t think families will have this reaction is absolutely, unequivocally false.” Kavanagh added that the bill does not require a school employee to out the child to their parents. The committee passed it by a vote of 9-6. The bill now heads to the house floor. Tags News Gender Education Politics Facebook Threads LinkedIn Bluesky Email Bridget Dowd Senior field correspondent Bridget Dowd has a bachelor’s degree from Arizona State University’s Walter Cronkite School of Journalism and Mass Communication. See stories by Bridget Dowd Our Sponsors Stay Connected instagram youtube bluesky threads facebook linkedin KJZZ is a service of Rio Salado …

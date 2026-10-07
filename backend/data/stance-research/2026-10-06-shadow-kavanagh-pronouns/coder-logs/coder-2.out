@@ -1,0 +1,9 @@
+I wrote `labels/coder-2.json` with one row, education-gender-identity for John Kavanagh. I coded it as rung 5, "Require written parental permission before staff use a student's chosen name or pronouns".
+
+- **Basis:** SB 1001 (2023) is a single-subject bill. He is its prime sponsor and voted Y on the Senate third reading, which passed 16-12. That is 12 of 30 voting No, so it is not near-unanimous.
+- **Operative text:** section 15-509(A) bars staff from using a pronoun that differs from the student's biological sex, or a first name other than the one on record, unless the school receives written permission from the student's parent. That matches rung 5 on written, parental and before-use. The bill allows permission, so it is not past the rung.
+- **`rests_on`:** the bill status page (sponsor), the Senate roll call (vote) and the engrossed bill text (provision). All three are on one instrument, so the tier will compute as single-source.
+- **Not relied on:** the two news pieces are coded as `statement-other` and do not support the chair. The KJZZ quotes defend the bill against safety objections and name no rung clause. The KAWC quote is about medical transition, so I marked it adjacent.
+- **Left empty:** `needs_source` and `quotes` are empty arrays.
+
+The `actor_quote` and `tally_quote` strings are copied from the roll call page. I did not run any validator on the file.

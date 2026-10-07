@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "407614a8-ba2c-4145-8224-233655e6ac3f",
+    "topic_key": "border-security",
+    "topic_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+    "served_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+    "question_number": 45,
+    "title": "Border Security",
+    "question_text": "How should the government handle people who cross the border?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Give everyone who crosses the border a fair asylum hearing."
+      },
+      {
+        "value": 2,
+        "text": "Expand orderly, legal ways to seek asylum at the border."
+      },
+      {
+        "value": 3,
+        "text": "Combine strong enforcement with a faster asylum process."
+      },
+      {
+        "value": 4,
+        "text": "Sharply restrict who can claim asylum at the border."
+      },
+      {
+        "value": 5,
+        "text": "End asylum and quickly turn back anyone who crosses illegally."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": false,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

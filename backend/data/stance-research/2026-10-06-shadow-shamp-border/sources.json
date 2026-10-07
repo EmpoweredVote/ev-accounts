@@ -1,0 +1,111 @@
+{
+  "batch_id": "2026-10-06-shadow-shamp-border",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SB1231",
+      "source_kind": "public-record",
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_keys": [
+        "border-security"
+      ],
+      "instruments": [
+        "SB 1231 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-sb1231-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=SB1231#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_keys": [
+        "border-security"
+      ],
+      "instruments": [
+        "SB 1231 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-sb1231-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/bills/SB1231S.htm",
+      "source_kind": "public-record",
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_keys": [
+        "border-security"
+      ],
+      "instruments": [
+        "SB 1231 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HCR2060#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_keys": [
+        "border-security"
+      ],
+      "instruments": [
+        "HCR 2060 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hcr2060-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HCR2060S.htm",
+      "source_kind": "public-record",
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_keys": [
+        "border-security"
+      ],
+      "instruments": [
+        "HCR 2060 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.kjzz.org/2024-02-21/content-1871968-arizona-republicans-move-controversial-immigration-bills-despite-hobbs-veto-threat",
+      "source_kind": "news",
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_keys": [
+        "border-security"
+      ],
+      "instruments": [
+        "SB 1231 (2024)"
+      ],
+      "pointer_passages": [
+        "But Shamp said the bill will empower state and local law enforcement",
+        "Every single day Joe Biden allows this invasion"
+      ],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.fox10phoenix.com/news/sb1231-gov-katie-hobbs-vetoes-bill-on-border-crossing-saying-the-bill-does-not-secure-our-border",
+      "source_kind": "news",
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_keys": [
+        "border-security"
+      ],
+      "instruments": [
+        "SB 1231 (2024)"
+      ],
+      "pointer_passages": [
+        "The Legislature did its job to protect our citizens"
+      ],
+      "candidate_quotes": []
+    }
+  ]
+}

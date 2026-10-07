@@ -1,3 +1,14 @@
+You are stance coder 3. You code evidence against the codebook below. You do not search,
+fetch or verify anything: every source you may use is in this message, and code checks your
+labels afterwards. If the evidence a row needs is named but not included here, put it in
+needs_source instead of guessing.
+
+Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts-gold19/backend/data/stance-research/2026-10-06-shadow-shope-abortion/labels/coder-3.json. Write JSON only, matching
+codebook Part E, with "codebook_version": "0.4" and "coder_slot": 3. One row per
+topic below. Every quoted string you write must be copied exactly from a source below.
+
+## Codebook
+
 # Empowered Vote — Stance & Quote Codebook
 
 **Version:** 0.4 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
@@ -486,11 +497,6 @@ carry the S1 reading forward.
   - **Independent** means a different instrument (record passages on one instrument are one source —
     the instrument group of V3), or a different occasion of the person's own words. Two reports of one
     statement, or news repeating one press release, are one source (principle 6).
-  - **Two statements on one day (ruling 2026-10-06, Chris Andrews).** A date is not an occasion: a
-    debate answer and a questionnaire on the same day are two occasions. Two same-day statements count
-    as two sources only if (1) both are the person's own words on a first-party page, not news or a
-    pointer; (2) they are on different snapshots; and (3) their texts do not overlap — one page does
-    not reprint the other's words. News on that day adds no source.
   - _owed:_ whether the person's own explanation of a vote counts as a second source for that same
     vote, or as the same act. Until ruled, it is the same act (one source).
   - A tier never upgrades a blank: two `direction-only` sources are still BLANK `direction-only`.
@@ -739,3 +745,179 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
   `record` passages of the row on one `instrument`), at least one passage carries a non-empty
   `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
   2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
+
+
+## The person
+
+politician_id: 8bbf9f70-adee-4801-ab19-7b78f9e70aa1  office_id: 3451fbc8-ec4d-48c2-a93c-19f135d84bf3
+Thomas "T.J." Shope — State Senator, Arizona (seated, level: state)
+Current term: 2023-01-02 (precision: day) to present
+Earlier terms in this legislature: State Representative 2013-01-01 (precision: day) to 2014-12-31; State Representative 2015-01-01 (precision: day) to 2016-12-31; State Senator unknown (precision: unknown) to 2023-01-09
+
+## Topics (served ladder text — code against these words only)
+
+### topic_key: abortion
+topic_id: af2fdfd6-02c4-49df-b09c-cf8536f4773f  served_revision_id: 085feb9c-f157-4dae-bfd0-7b2736c5d87c
+Question: How should the law handle abortion?
+  1. keep abortion legal at every stage of pregnancy, with no time limit.
+  2. keep abortion legal through the second trimester, and after that only to protect the mother's health.
+  3. allow abortion during the first trimester, and after that only to protect the mother's health.
+  4. ban abortion except in cases of rape, incest, or a serious risk to the mother's life.
+  5. ban abortion in all cases, with no exceptions.
+
+#### Annex
+
+# abortion — served revision 085feb9c-f157-4dae-bfd0-7b2736c5d87c (Season 2)
+
+**Status:** draft (2026-10-01). Lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris
+Andrews). Lines marked _(proposed)_ are a drafter's reading, not yet ruled. The season pin is an
+older revision (`dab46e5c-…`); coders code the served text below.
+
+**Question:** "How should the law handle abortion?"
+
+**Orientation:** standard. Rung 1 has no legal limit, rung 5 is a ban with no exceptions. The rungs
+order **when** abortion is legal and **which exceptions** apply after that point.
+
+**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is state law;
+federal action is national limits or protections; local governments rarely hold one.
+
+**Synonyms:** "gestational limit", "weeks of gestation", "post-fertilization age", "LMP" (last
+menstrual period), "viability", "heartbeat" (an early limit, about 6 weeks), "medical emergency",
+"life of the mother", "reproductive freedom", "fundamental right", "fetal personhood".
+
+**Weeks and trimesters.** The rungs state limits in trimesters; laws state them in weeks. The first
+trimester ends at about 13 weeks, the second at about 27. **Read the weeks as the law states them**
+(LMP or post-fertilization); do not convert _(ruled 2026-10-01)_.
+
+1. **"keep abortion legal at every stage of pregnancy, with no time limit."**
+   - Means: no point in pregnancy after which the law forbids abortion.
+   - Operative clauses: [a] legal at every stage; [b] no time limit.
+   - Establishing evidence looks like: own words that reject every gestational limit; an instrument
+     that removes the jurisdiction's limits and says no limit remains _(proposed)_.
+   - Levels that hold a lever: state; federal.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with BLANK because a **declared right** reads like "no limit". A text that
+     declares a right to abortion and names no limit has said nothing about limits; other law may
+     still set them → `direction-only` (V4.2 "Silence is not a clause").
+   - Public funding is no longer part of this rung. A funding bill does not move a person along these
+     rungs → `adjacent` _(proposed)_.
+
+2. **"keep abortion legal through the second trimester, and after that only to protect the mother's
+   health."**
+   - Means: abortion is legal until about 27 weeks; after that, only for the mother's health.
+   - Operative clauses: [a] legal through the second trimester; [b] after that, a health exception
+     only.
+   - Establishing evidence looks like: a limit at about 22 weeks or later — up to about 27 weeks, or
+     at viability — with a health exception after it.
+   - Levels that hold a lever: state; federal.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 3 when the limit falls between the two thresholds. A limit at
+     **16–21 weeks** establishes neither rung → BLANK `direction-only` _(ruled 2026-10-01)_.
+   - A limit with **no** stated exception after it does not reach rung 2 on its own (V4.2 "Silence is
+     not a clause"). A limit with a **life-only** exception after it → `compound-partial`, the same
+     as rung 3 _(proposed, by analogy with the rung-3 ruling)_.
+
+3. **"allow abortion during the first trimester, and after that only to protect the mother's
+   health."**
+   - Means: abortion is legal early in pregnancy; after that, only for the mother's health.
+   - Operative clauses: [a] legal during the first trimester; [b] after that, a health exception
+     only.
+   - Establishing evidence looks like: a limit at about **12–15 weeks** with a health exception after
+     it (a medical emergency that covers serious lasting harm to the mother, not only death) — **but
+     only when the law actually permits abortion up to the limit**, either affirmatively or by
+     repealing a broader ban. Then it excludes rung 2 (it bans most of the second trimester) and rung
+     4 (it allows abortion for any reason before the limit). A 15-week limit is within the ladder's
+     precision for "first trimester" _(ruled 2026-10-01, revised the same day)_.
+   - **Read the act's construction or savings clause.** A limit that says it does not create or
+     recognize a right to abortion, does not make lawful any abortion that is now unlawful, or leaves
+     a broader ban in force, evidences **no permitted stage**. A vote for it shows only the
+     restrictive side → BLANK `direction-only` _(ruled 2026-10-01)_.
+   - Levels that hold a lever: state; federal.
+   - Known chair-shaped instruments: _(none on file)_. A gestational-limit bill is chair-shaped only
+     when it permits abortion before the limit (see the construction clause above).
+   - Commonly confused with rung 2: see rung 2.
+   - A **life-only** exception after the early limit is narrower than "to protect the mother's health"
+     → BLANK `compound-partial` _(ruled 2026-10-01)_.
+   - A limit with **no** stated exception after it does not reach rung 3 on its own (V4.2).
+
+4. **"ban abortion except in cases of rape, incest, or a serious risk to the mother's life."**
+   - Means: abortion is banned, with three exceptions.
+   - Operative clauses: [a] a ban; [b] exceptions for rape **and** incest **and** a serious risk to
+     the mother's life.
+   - Establishing evidence looks like: a ban with all three exceptions. An **early ban** (for example
+     at about 6 weeks) with all three exceptions is in practice a ban with those exceptions → rung 4
+     _(ruled 2026-10-01)_.
+   - Levels that hold a lever: state; federal.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 5 when the ban has a **life-only** exception. It has an exception, so
+     it is not rung 5; it lacks rape and incest, so it is not rung 4 → BLANK `direction-only` _(ruled
+     2026-10-01)_. A ban with life and health exceptions but no rape or incest exception → the same
+     _(proposed)_.
+
+5. **"ban abortion in all cases, with no exceptions."**
+   - Means: abortion is banned at every stage, with no exception at all, including for the mother's
+     life.
+   - Operative clauses: [a] a ban; [b] no exceptions.
+   - Establishing evidence looks like: own words that reject every exception, including the mother's
+     life. [b] is an absence clause: a ban that lists no exception does not show that none applies,
+     because other law may supply one (V4.2) _(proposed)_.
+   - Levels that hold a lever: state; federal.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Criminal penalties for patients and providers are no longer part of this rung → not evidence for
+     or against it _(proposed)_.
+   - Commonly confused with rung 4: see rung 4.
+
+**Hard cases:**
+- **Narrow restrictions** that set no gestational limit and no exception rule (parental
+  notification, waiting periods, clinic rules, reporting) → `adjacent`; BLANK `no-evidence` when
+  nothing else survives.
+- **Medication-abortion rules** (who may prescribe, by mail or in person) → `adjacent` _(proposed)_.
+- **Fetal-personhood measures** that define life from conception but state no ban or exception rule
+  → `direction-only` _(proposed)_.
+- **Preemption (codebook V2, H12)** → `adjacent`.
+- **Budget and omnibus votes** with an abortion item → V4 `multi-subject`.
+
+
+## Sources
+
+---
+snapshot_id: edd021b7-3185-558f-a168-95e7c4179b44
+source_kind: public-record
+url: https://www.azleg.gov/legtext/56leg/2R/bills/HB2677H.htm
+
+HB2677 - 562R - H Ver House Engrossed abortion ban; repeal State of Arizona House of Representatives Fifty-sixth Legislature Second Regular Session 2024 HOUSE BILL 2677 An Act repealing section 13-3603, Arizona Revised Statutes; relating to family offenses. (TEXT OF BILL BEGINS ON NEXT PAGE) Be it enacted by the Legislature of the State of Arizona: Section 1. Repeal Section 13-3603, Arizona Revised Statutes, is repealed.
+
+---
+snapshot_id: e56d73a2-e326-563b-9dba-ca237c0feb46
+source_kind: public-record
+url: https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164#senate-third
+
+Senate Third Reading - SB1164 abortion; gestational age; limit Action Date Action Vote 02/15/2022 Passed 16-13-1-0-0 ALSTON N BARTO Y BORRELLI Y BOWIE N BOYER Y CONTRERAS N GABALDON N GONZALES N GOWAN Y GRAY Y HATATHLIE N KERR Y LEACH Y LIVINGSTON Y MARSH N MENDEZ NV MESNARD Y OTONDO N PACE Y PETERSEN Y QUEZADA N RIOS N ROGERS Y SHOPE Y STAHL HAMILTON N STEELE N TERÁN N TOWNSEND Y UGENTI-RITA Y FANN Y [Vote detail dialog for SB1164 (2022) Senate Third Reading, saved by browser from apps.azleg.gov BillStatus on 2026-10-06.]
+
+---
+snapshot_id: 9fee5ead-e828-52a8-9301-4f5ca5f1a9e9
+source_kind: public-record
+url: https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164
+
+Bill Status Inquiry. Bill History for SB1164. Short Title: abortion; gestational age; limit. Sponsors: Barto (Prime) Boyer (Co-Sponsor) Gowan (Co-Sponsor) Kerr (Co-Sponsor) Livingston (Co-Sponsor) Mesnard (Co-Sponsor) Petersen (Co-Sponsor) Shope (Co-Sponsor) Bolick (Co-Sponsor) Burges (Co-Sponsor) Diaz (Co-Sponsor) Fillmore (Co-Sponsor) Griffin (Co-Sponsor) Kavanagh (Co-Sponsor) Nguyen (Co-Sponsor) Toma (Co-Sponsor) Udall (Co-Sponsor) Senate THIRD 02/15/2022 16-13-1-0-0 PASSED. House THIRD 03/24/2022 31-26-3-0-0 PASSED. Governor Action 03/30/2022 Signed Chapter: 105 Chapter Version: Senate Engrossed [Bill overview for SB1164 (2022), saved by browser from apps.azleg.gov BillStatus on 2026-10-01.]
+
+---
+snapshot_id: 4b47b424-4f74-5f1e-a0a5-d5c944f24ffe
+source_kind: public-record
+url: https://www.azleg.gov/legtext/55leg/2R/laws/0105.htm
+
+Chapter 0105 - 552R - S Ver of SB1164 Senate Engrossed abortion; gestational age; limit State of Arizona Senate Fifty-fifth Legislature Second Regular Session 2022 CHAPTER 105 SENATE BILL 1164 An Act amending title 36, chapter 23, Arizona Revised Statutes, by adding article 3; relating to abortion. (TEXT OF BILL BEGINS ON NEXT PAGE) Be it enacted by the Legislature of the State of Arizona: Section 1. Title 36, chapter 23, Arizona Revised Statutes, is amended by adding article 3, to read: ARTICLE 3. GESTATIONAL LIMIT ON ABORTION START_STATUTE 36-2321. Definitions In this article, unless the context otherwise requires: 1. "Abortion" has the same meaning prescribed in section 36-2151. 2. "Attempt to perform or induce an abortion" means to do or to omit doing anything that, under the circumstances as the physician believes them to be, is an act or omission that constitutes a substantial step in a course of conduct planned to culminate in the performance or induction of an abortion in violation of this article. 3. "Department" means the department of health services. 4. "Gestational age" or "probable gestational age" means the age of an unborn human being as calculated from the first day of the last menstrual period of the pregnant woman. 5. "Human being" means an individual member of the species homo sapiens, from and after the point of conception. 6. "Major bodily function" includes functions of the immune system, normal cell growth, and digestive, bowel, bladder, neurological, brain, respiratory, circulatory, endocrine and reproductive functions. 7. "Medical emergency" means a condition that, on the basis of the physician's good faith clinical judgment, so complicates the medical condition of a pregnant woman as to necessitate the immediate abortion of her pregnancy to avert her death or for which a delay will create serious risk of substantial and irreversible impairment of a major bodily function. 8. "Physician" means a person who is licensed pursuant to title 32, chapter 13 or 17. END_STATUTE START_STATUTE 36-2322. Gestational limit on abortion; medical emergency exception; physician reports; confidentiality A. Except in a medical emergency, a physician may not perform, induce or attempt to perform or induce an abortion unless the physician or the referring physician has first made a determination of the probable gestational age of the unborn human being and documented that gestational age in the maternal patient's chart and, if required, in a report required to be filed with the department as set forth in subsection C of this section. The determination of probable gestational age shall be made according to standard medical practices and techniques used in the medical community. B. Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks. C. In every case in which a physician performs or induces an abortion on an unborn human being whose gestational age is greater than fifteen weeks, the physician, within fifteen days after the abortion, shall file with the department, on a form supplied by the department, a report containing all of the following: 1. The date the abortion was performed. 2. Specific method of abortion used. 3. The probable gestational age of the unborn human being and the method used to calculate gestational age. 4. A statement that the abortion was necessary because of a medical emergency. 5. The specific medical indications supporting the determination that a medical emergency existed. 6. The probable health consequences of the abortion. 7. The physician's signature as the physician's attestation under oath that the information stated is true and correct to the best of the physician's knowledge. D. Reports required and submitted pursuant to subsection C of this section may not contain the name of the maternal patient on whom the abortion was performed or any other information or identifiers that would make it possible to identify, in any manner or under any circumstances, a woman who obtained or sought to obtain an abortion. END_STATUTE START_STATUTE 36-2323. Department; forms The department shall create the forms required by section 36-2322 within thirty days after the effective date of this section. The reporting requirements of section 36-2322 on forms published by the department do not apply until ten days after the requisite forms have been made available or the effective date of this section, whichever is later. END_STATUTE START_STATUTE 36-2324. Violation; classification; exclusion from prosecution A. Any physician who intentionally or knowingly violates the prohibition in section 36-2322, subsection B is guilty of a class 6 felony. B. A pregnant woman on whom an abortion is performed, induced or attempted in violation of section 36-2322 may not be prosecuted for conspiracy to commit any violation of this article. END_STATUTE START_STATUTE 36-2325. Unprofessional conduct; civil penalties A. A physician who intentionally or knowingly violates the prohibition in section 36-2322, subsection B commits an act of unprofessional conduct and the physician's license to practice medicine in this state shall be suspended or revoked pursuant to title 32, chapter 13 or 17, as applicable. B. A physician who knowingly or intentionally delivers to the department any report required by section 36-2322, subsection C that contains a false statement is subject to a civil penalty of not more than $10,000 imposed by the department. C. A physician who knowingly or intentionally fails to file with the department any report required by section 36-2322, subsection C is subject to a civil penalty of not more than $10,000 imposed by the department. END_STATUTE START_STATUTE 36-2326. Enforcement; attorney general The attorney general may bring an action in law or equity to enforce this article on behalf of the director of the department, the Arizona medical board or the board of osteopathic examiners in medicine and surgery. END_STATUTE Sec. 2. Construction This act does not : 1. Create or recognize a right to abortion or alter generally accepted medical standards. The Legislature does not intend this act to make lawful an abortion that is currently unlawful. 2. Repeal, by implication or otherwise, section 13-3603, Arizona Revised Statutes, or any other applicable state law regulating or restricting abortion. Sec. 3. Legislative intent A. The Legislature makes the following findings of fact and incorporates them herein by reference: 1. The United States is one of only six nations in the world that allows nontherapeutic or elective abortion-on-demand after the twentieth week of gestation. In fact, fully seventy-five percent of all nations do not allow abortion after twelve weeks' gestation, except in most instances to save the life or to preserve the physical health of the mother. 2. Medical and other authorities now know more about human prenatal development than ever before, including that: (a) Between five and six weeks' gestation, an unborn human being's heart begins beating. (b) An unborn human being begins to move about in the womb at approximately eight weeks' gestation. (c) At nine weeks' gestation, all basic physiological functions are present. Teeth and eyes are present, as well as external genitalia. (d) An unborn human being's vital organs begin to function at ten weeks' gestation. Hair, fingernails and toenails also begin to form. (e) At eleven weeks' gestation, an unborn human being's diaphragm is developing, and he or she may even hiccup. The unborn human being is beginning to move about freely in the womb. (f) At twelve weeks' gestation, an unborn human being can open and close his or her fingers, starts to make sucking motions and senses stimulation from the world outside the womb. Importantly, the unborn human being has taken on "the human form" in all relevant aspects. Gonzales v. Carhart , 550 U.S. 124, 160 (2007). 3. The United States Supreme Court has long recognized that this state has an "important and legitimate interest in protecting the potentiality of human life," Roe v. Wade , 410 U.S. 113, 162 (1973), and specifically that this state "has an interest in protecting the life of the unborn." Planned Parenthood of Southeastern Pennsylvania v. Casey , 505 U.S. 833, 873 (1992). 4. The majority of abortion procedures performed after fifteen weeks' gestation are dilation and evacuation procedures that involve the use of surgical instruments to crush and tear the unborn human being apart before removing the pieces of the dead human being from the womb. The Legislature finds that the intentional commission of such acts for nontherapeutic or elective reasons is a barbaric practice, dangerous for the maternal patient and demeaning to the medical profession. 5. Most obstetricians and gynecologists practicing in this state do not offer or perform nontherapeutic or elective abortions. Even fewer offer or perform the dilation and evacuation abortion procedure even though it is within their scope of practice. 6. This state also has "legitimate interests from the outset of pregnancy in protecting the health of women." Planned Parenthood of Southeastern Pennsylvania v. Casey , 505 U.S. 833, 847 (1992), as the "medical, emotional, and psychological consequences of abortion are serious and can be lasting.…" H.L. v. Matheson , 450 U.S. 398, 411 (1981). 7. Abortion carries significant physical and psychological risks to the maternal patient and these physical and psychological risks increase with gestational age. Specifically, in abortions performed after eight weeks' gestation, the relative physical and psychological risks escalate exponentially as gestational age increases. L. Bartlett et al., Risk factors for legal induced abortion mortality in the United States, OBSTETRICS AND GYNECOLOGY 103(4):729 (2004). 8. Importantly, as the second trimester progresses, in the vast majority of uncomplicated pregnancies, the maternal health risks of undergoing an abortion are greater than the risks of carrying a pregnancy to term. 9. Medical complications from dilation and evacuation abortions include pelvic infection, incomplete abortions (retained tissue), blood clots, heavy bleeding or hemorrhage, laceration, tear or other injury to the cervix, puncture, laceration, tear or other injury to the uterus, injury to the bowel or bladder, depression, anxiety, substance abuse and other emotional or psychological problems. Further, in abortions performed after fifteen weeks' gestation, there is a higher risk of requiring a hysterectomy, other reparative surgery or blood transfusion. B. This Legislature intends through this act and any rules and policies adopted hereunder, to restrict the practice of nontherapeutic or elective abortion to the period up to fifteen weeks of gestation. Sec. 4. Right of intervention The Legislature may appoint one or more of its members to intervene as a matter of right in any case in which the constitutionality or enforceability of this act is challenged. Sec. 5. Severability If a provision of this act or its application to any person or circumstance is held invalid, the invalidity does not affect other provisions or applications of the act that can be given effect without the invalid provision or application, and to this end the provisions of this act are severable. APPROVED BY THE GOVERNOR MARCH 30, 2022. FILED IN THE OFFICE OF THE SECRETARY OF STATE MARCH 30, 2022.
+
+---
+snapshot_id: da71474c-b1e9-5915-9eb7-16a3f11ea415
+source_kind: public-record
+url: https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2677#senate-third
+
+Senate Third Reading - HB2677 abortion ban; repeal Action Date Action Vote 05/01/2024 Passed 16-14-0-0-0 ALSTON Y BENNETT N BOLICK Y BORRELLI N BRAVO Y BURCH Y CARROLL N DIAZ Y EPSTEIN Y FARNSWORTH N FERNANDEZ Y GABALDÓN Y GONZALES Y GOWAN N HATATHLIE Y HERNANDEZ Y HOFFMAN N KAVANAGH N KERN N KERR N MARSH Y MENDEZ Y MESNARD N MIRANDA Y ROGERS N SHAMP N SHOPE Y SUNDARESHAN Y WADSACK N PETERSEN N [Vote detail dialog for HB2677 (2024) Senate Third Reading, saved by browser from apps.azleg.gov BillStatus on 2026-10-06.]
+
+---
+snapshot_id: 031aa790-bd22-53fa-ab12-875d1d3cad16
+source_kind: news (excerpt only)
+url: https://www.kjzz.org/2024-04-10/content-1876720-these-arizona-gop-lawmakers-voted-support-1864-abortion-law-now-they-want-repeal-it
+
+… Jazz Map Those Lowdown Blues: Playlists Tiny Desert Concerts Jazz PHX Jazz Playlists Events Jazz Venues and Organizations Jazz Map Those Lowdown Blues: Playlists Tiny Desert Concerts E-Member Login E-Member Login Member Portal Access KJZZ Plus E-Member Login Member Portal Access KJZZ Plus News These Arizona GOP lawmakers voted to support 1864 abortion law. Now, they want to repeal it KJZZ | By Wayne Schutsky Published April 10, 2024 at 5:43 PM MST Facebook Threads LinkedIn Bluesky Email Listen Gage Skidmore/ CC BY 2.0 T.J. Shope at the Arizona State Capitol in 2023. The Arizona Supreme Court issued a ruling this week reinstating a near total ban on abortion in the state . Now, a handful of Republican state lawmakers say they want to repeal that law, just two years after they voted for legislation that explicitly supported it. Shortly after the court published its decision, Sen. T.J. Shope (R-Coolidge) issued a statement calling on the Legislature to repeal the old, 1864 abortion ban in order to let a 15-week ban that Republicans passed in 2022 take effect instead. “I voted yes, because I do believe in a 15 week [law], and that's what was in front of me,” Shope said. But that’s not all Shope was voting for two years ago. The bill to create a 15-week ban did not include language overturning the old law. Former Sen. Nancy Barto, who sponsored the 2022 bill, said that was intentional. In fact, she pointed to a legislative intent clause in the bill that explicitly affirms the validity of the 1864 ban. That clause said the new law did not “repeal, by implication or otherwise, [the old law], or any other applicable state law regulating or restricting abortion.” Arizona Supreme Court justices cited that language in their ruling putting the territorial-era near-total ban back into effect . And members of Arizona’s far-right Freedom Caucus praised justices for upholding the intent of the Republican-led Legislature. “The Supreme Court of Arizona made the correct ruling, upheld the intent of the Legislature, and preserved the rule of law today by ruling that the pre-Roe law will remain effective,” the Freedom Caucus said in a statement. Katherine Davis-Young/KJZZ Rep. Selina Bliss speaks against a proposed abortion rights ballot measure at the March for Life rally in Phoenix on March 1, 2024. But House Minority Leader Oscar de los Santos says Democrats have regularly introduced bills …
