@@ -1,0 +1,1454 @@
+{
+  "pass": "The 73 federal keys the 2026-08-11 Tier B pass had NEVER AUDITED — the last cell of the cross-tab in ev-accounts #897, and the last of the federal generic-sourcing block.",
+  "read_on": "2026-10-07",
+  "written_by": "migration 1896",
+  "headline": "These are not weakly-sourced rows. 40 of them are SOMEBODY ELSE'S RESEARCH filed under the wrong candidate, and the misassignments chain: Mike Collins (GA,R) -> Janak Joshi (CO,R) -> Alex Vindman (FL,D) -> David Roth (ID,D) -> Zach Wahls (IA,D), with Mike Collins also landing on Angie Nixon (FL,D).",
+  "the_lesson": "ONLY 19 OF THE 40 CONTAMINATED ROWS WERE EVER IN A QUEUE. The generic-source detector asks \"is this a generic profile page?\", so it can only see contamination that happens to arrive on a generic-looking URL. A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS: ten of Zach Wahls's eleven Season 1 rows cite rothforidaho.org and score perfectly clean, and only 2 of his 12 rows reached the queue. Janak Joshi, every one of whose twelve rows is Mike Collins's research, was in NO queue at all — he was found by probing, not by sorting. The repair unit is the PERSON, not the key.",
+  "method": [
+    "Every cited page fetched and read, flattened to a single line first, and every probe run with a CONTROL TERM so an absence is evidence and not a claim about the method. (A control term is exactly what stopped a false \"the Strengthening Public Schools Act does not exist\" finding: the GovTrack browse endpoint is JS-rendered and returned 0 hits for \"Equality Act\" too.)",
+    "Every roll-call claim verified against the Clerk of the House XML, parsing the OVERALL <totals-by-vote> block — <totals-by-party> comes FIRST in the file — and checking the per-member tally equals the declared totals before reading anyone's vote. The sheet distinguishes Wilson (FL) from Wilson (SC) and Williams (GA) from Williams (TX) and (NY); both were checked on every vote.",
+    "Identity checked against the database's own records (office title, party, race candidacy), not against the reasoning's self-description.",
+    "Ladder revisions compared rung by rung before any chair was carried from Season 1 into Season 2."
+  ],
+  "tally": {
+    "in_the_73": {
+      "BLANK": 42,
+      "REPAIR": 14,
+      "SOUND": 12,
+      "BLOCKED": 5
+    },
+    "outside_the_73_same_defect": {
+      "BLANK": 23,
+      "BLOCKED": 2
+    },
+    "rows_written": 79
+  },
+  "contamination_proof": {
+    "Alex Vindman <- Janak Joshi": "en.wikipedia.org/wiki/Janak_Joshi: \"Joshi\" 11 hits, \"Colorado\" 8, \"Vindman\" 0, \"Florida\" 0. A 2,844-char stub on a retired physician who sat in the Colorado House 2011-2017. Vindman is a Florida Senate candidate and a Democrat; the rows call him a \"Conservative Republican\", one at rung 5.",
+    "David Roth <- Alex Vindman": "en.wikipedia.org/wiki/Alexander_Vindman redirects to the Alex Vindman article. \"Vindman\" 84 hits, \"David Roth\" 0. The reasoning recites Vindman's biography (\"testified against presidential abuse of power\") as Roth's.",
+    "Zach Wahls <- David Roth": "rothforidaho.org/solutions/ is headed \"SOLUTIONS - David Roth for Idaho\". \"Idaho\" 16 hits, \"Wahls\" 0, \"Iowa\" 0.",
+    "Angie Nixon <- Mike Collins": "2026 Georgia Senate race article: \"Georgia\" 132 hits, \"Angie Nixon\" 0. The rows recite the CPAC and Veterans for America First endorsements the same article records for Mike Collins, and use \"he\".",
+    "Janak Joshi <- Mike Collins": "All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm. THE DECISIVE TEST NEEDS NEITHER PAGE: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\") and Janak Joshi has never served in Congress. Mike Collins has. Six of the twelve sit at rung 5."
+  },
+  "corpus_measurement": {
+    "context_rows_scanned": 37259,
+    "person_article_sharing_no_name_token": "27 rows / 25 keys / 10 politicians",
+    "race_article_for_the_wrong_state": "10 rows / 4 politicians",
+    "reasoning_asserting_a_party_the_party_field_contradicts": "13 rows / 5 politicians",
+    "federal_part": "fixed in migration 1896",
+    "left_for_the_non_federal_queue": [
+      "Katy Yaroslavsky <- Sheila Kuehl (3 rows, LA City Council)",
+      "Steve Bennett <- Suzette Martinez Valladares (2, CA Assembly)",
+      "Liz Ortega <- Laura Richardson (1, CA Assembly)",
+      "Eddie Morales <- Dustin Burrows (1, TX House)",
+      "Elizabeth Campos <- Dustin Burrows (1, TX House)",
+      "N'Kiyla Thomas (OK Senate candidate) cites jasmineforok.com — no source names her",
+      "Gary Crockett (LA Senate candidate) — no source names him"
+    ],
+    "seated_rows_with_empty_reasoning": "exactly 4 rows / 3 keys in the whole corpus; all three keys blanked here, so the class is CLOSED AS READ (Season 1 is immutable, so its rows keep the empty string and are shadowed)."
+  },
+  "a_repair_must_not_move_a_chair": {
+    "finding": "7 of the 12 topics carrying a repair are pinned to a DIFFERENT ladder revision in Season 2, and the re-pin was not cosmetic — housing and same-sex-marriage rows written earlier sit one rung higher in S2 than S1 because a rung was inserted.",
+    "rule_applied": [
+      "Where a Season 2 row already exists it is updated in place and ITS value kept, never Season 1's (Himes 1->2, Carson 1->2, Wilson housing 3).",
+      "Where none exists, the Season 1 value is carried only after the rung's OWN TEXT was compared at that exact value in both revisions. childcare 2 and religious-freedom 2 are character-for-character identical; campaign-finance 2 and deportation 2 and 4 are rewordings; redistricting, taxes, trans-athletes, ukraine-support and healthcare are the SAME revision in both seasons."
+    ],
+    "blocked_by_this_test": "André Carson / campaign-finance. He is a verified ORIGINAL COSPONSOR of the DISCLOSE Act of 2026 (H.R. 7802) and was seated on Season 1 rung 3, \"require full disclosure of all political donations\". SEASON 2 DELETED THAT RUNG — its rung 3 reads \"Keep contribution limits at current levels\" and no Season 2 rung asks about disclosure at all. For the ladder-scope register."
+  },
+  "rollcalls_verified": {
+    "Frederica Wilson W000808 D-FL": {
+      "clerk.house.gov/Votes/202162": "H.R. 1 For the People Act, 3 Mar 2021, On Passage, 220-210 — Yea",
+      "clerk.house.gov/Votes/2021385": "H.R. 5376 Build Back Better Act, 19 Nov 2021, On Passage, 220-213 — Yea",
+      "clerk.house.gov/Votes/202139": "H.R. 5 Equality Act, 25 Feb 2021, On Passage, 224-206 — Yea",
+      "clerk.house.gov/Votes/202191": "H.R. 6 Dream Act, 18 Mar 2021, On Passage, 228-197 — Yea",
+      "clerk.house.gov/Votes/202523": "S. 5 Laken Riley Act, 22 Jan 2025, On Passage, 263-156 — Nay",
+      "clerk.house.gov/Votes/2022420": "H.R. 5376 Inflation Reduction Act, 12 Aug 2022, Motion to Concur, 220-207 — Yea",
+      "TCJA 2017": "NOT VOTING — the cited article's own House table lists her as one of exactly two Democrats not voting. The row claimed she \"voted against\" it."
+    },
+    "Mike Flood F000474 R-NE": "roll 2025/23 Yea, 2025/145 Yea, 2025/190 Aye, 2023/192 Yea (H.R. 734, 219-203)",
+    "Jay Obernolte O000019 R-CA": "roll 2023/192 Yea (H.R. 734, 219-203); roll 2023/191 Nay on the motion to recommit",
+    "James Himes H001047 D-CT": "roll 2022/513 Yea (Respect for Marriage Act, 258-169)",
+    "Nikema Williams W000788 D-GA": "roll 2024/151 Yea (H.R. 8035 Ukraine Security Supplemental, 311-112) — AND roll 2024/145 NAY on H.R. 8038, the bill her row cited as evidence she supports Ukraine aid",
+    "Debbie Dingell D000624 D-MI": "roll 2022/141 Yea (Lend-Lease, 417-10) — verified and still blanked, because 417-10 cannot seat a distinctive chair; Not Voting on rolls 2024/150 and 151",
+    "Norma Torres T000474 D-CA": "roll 2021/62 Yea (H.R. 1) — verified and still blanked, because H.R. 1 is not about this ladder"
+  },
+  "traps_hit": [
+    "A `--` comment runs to end of line, so a row separator or a statement terminator placed AFTER one is swallowed. That broke the first dry run in three places and left an INSERT unterminated. Put the comma and the semicolon before the comment, or on their own line.",
+    "The first post-guard asserted that NO seated row in the corpus carries empty reasoning. The dry run failed it with 3 rows — correctly: those are the Season 1 rows, Season 1 is IMMUTABLE, and the fix is shadowing. The guard now asserts the reader-visible condition (rows not shadowed by a Season 2 row).",
+    "GovTrack's bill-browse endpoint is JS-rendered; it returns 0 hits for a bill that certainly exists. A control term caught it before it became a \"this bill does not exist\" finding.",
+    "congress.gov returns HTTP 403 to automated retrieval. Its member pages were NOT read and nothing is asserted about what they contain — in either direction."
+  ],
+  "rows": [
+    {
+      "politician": "Alex Padilla",
+      "topic": "school-vouchers",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "uncheckable_claim_unfetchable_source",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The chair rests on one specific claim - that he cosponsored \"the Strengthening Public Schools Act\" - plus two generalities with no instance attached (\"has spoken out against federal voucher proposals\", \"His Senate voting record reflects opposition\"). The single cited source, his congress.gov member page, returns HTTP 403 to automated retrieval and was NOT READ; nothing is asserted here about what it does or does not contain. No bill of that name could be located through an accessible index, and the nearest real titles - \"Strengthening America's Public Schools Through Promoting Foreign Investment Act\" (H.R. 7132 / H.R. 3983 / S. 823) - are about foreign investment. ⚠ This is NOT a finding that the bill does not exist; it is a finding that the chair cannot be checked as cited. His cosponsorship record is public and this is cheaply re-researchable.",
+      "sources_examined": [
+        "https://www.congress.gov/member/alex-padilla/P000145"
+      ]
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "school-vouchers",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "Seth Moulton",
+      "topic": "data-centers",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "self_confessed_absence",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The row opens \"Moulton has NOT TAKEN A HIGHLY SPECIFIC PUBLIC STANCE on data center siting\" and then seats a centre chair from his committee work and his district (\"MA-06 does not have major data center clusters driving local controversy\"). A centre chair is a claim, not a neutral default. Its only source is his congress.gov member page, which returns HTTP 403 to automated retrieval and was not read.",
+      "sources_examined": [
+        "https://congress.gov/member/seth-moulton/M001196"
+      ]
+    },
+    {
+      "politician": "Ayanna Pressley",
+      "topic": "data-centers",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "self_confessed_absence",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The row opens \"Pressley has NOT TAKEN A SPECIFIC PUBLIC STANCE on data center siting\" and then seats a centre chair anyway, built from her district's geography (\"does not have major data center development pressure\") and from what she \"WOULD LIKELY\" do. A centre chair is a claim, not a neutral default: a reader cannot tell \"she is a moderate on this\" from \"nobody found anything\". Only a blank says the second. Its only source is her congress.gov member page, which returns HTTP 403 to automated retrieval and was not read.",
+      "sources_examined": [
+        "https://congress.gov/member/ayanna-pressley/P000617"
+      ]
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "childcare",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 2,
+      "finding": "Wilson voted for the Build Back Better Act (H.R. 5376): Clerk roll 385, 19 November 2021, On Passage, 220-213 -> Wilson (FL), W000808, D-FL: Yea. The Act carried roughly $400bn for childcare and universal pre-K. Citation repaired 2026-10-07: verified against the primary record because the cited article about the bill does not name her.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Build_Back_Better_Act",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://clerk.house.gov/Votes/2021385"
+      ]
+    },
+    {
+      "politician": "Christian Menefee",
+      "topic": "childcare",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Every row quotes his Ballotpedia Candidate Connection survey verbatim and all seven distinctive phrases checked were found on the page: \"Medicare for All\", \"birth control, abortion, and IVF\", \"Expand tax credits for parents\", \"down payment help\", \"fair share\", \"John Lewis Voting Rights\", \"weakened Social Security\". The detector fired only because the host is ballotpedia.org; a #Campaign_themes anchor carrying the candidate's own survey answers is about as specific as evidence gets. A clean example of the generic-source predicate over-firing.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "redistricting",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 2,
+      "finding": "Wilson voted for the For the People Act (H.R. 1): Clerk roll 62, 3 March 2021, On Passage, 220-210 -> Wilson (FL), W000808, D-FL: Yea. The Act requires independent redistricting commissions with equal party representation to draw congressional boundaries, which is the chair. Citation repaired 2026-10-07: verified against the primary record because the cited article about the bill does not name her.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/For_the_People_Act",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://clerk.house.gov/Votes/202162"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "abortion",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Kim Farington",
+      "topic": "abortion",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Her Ballotpedia survey carries, in her own words: \"Consistent with the 10th Amendment and the Dobbs decision, believes abortion policy belongs at the state level. Does not support the proposed Virginia constitutional amendment. Will be a strong advocate for adoption and prevention, and will be a pro-life vote in the U.S. Senate.\" The row read it carefully and declined the most extreme rung for the stated reason that she calls for no total ban with criminal penalties.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Christian Menefee",
+      "topic": "abortion",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Every row quotes his Ballotpedia Candidate Connection survey verbatim and all seven distinctive phrases checked were found on the page: \"Medicare for All\", \"birth control, abortion, and IVF\", \"Expand tax credits for parents\", \"down payment help\", \"fair share\", \"John Lewis Voting Rights\", \"weakened Social Security\". The detector fired only because the host is ballotpedia.org; a #Campaign_themes anchor carrying the candidate's own survey answers is about as specific as evidence gets. A clean example of the generic-source predicate over-firing.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "abortion",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "Alex Vindman",
+      "topic": "abortion",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Janak Joshi's research filed under Alex Vindman. Alex Vindman is Candidate for U.S. Senate - Florida (Democratic); the retired Army officer who testified in the 2019 impeachment inquiry; Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017. en.wikipedia.org/wiki/Janak_Joshi is a 2,844-character stub about Joshi: Colorado House District 16 and 14, a 2024 Republican primary loss to Gabe Evans. It contains no mention of Vindman and no mention of Florida. The Colorado race article likewise contains no mention of Vindman or of \"Alex\" (control term \"Colorado\" appears 71 times, so the page was read). The reasoning on these rows calls a Democratic candidate a \"Conservative Republican\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://leg.colorado.gov/legislators/janak-joshi",
+        "https://en.wikipedia.org/wiki/Janak_Joshi"
+      ]
+    },
+    {
+      "politician": "Hallie Shoffner",
+      "topic": "abortion",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source is the 2026 Arkansas Senate race article, which names Shoffner twenty-two times and contains ZERO occurrences of abortion, LGBT, Social Security, immigration or voting - it carries no policy content at all. The rows concede the method themselves: the immigration row reads \"Moderate position EXPECTED for Arkansas context ... LIKELY supports reform\". Her economic-development and taxes rows, which cite hallieshoffner.com/priorities and quote it, are sound and are left alone.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "abortion",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "abortion",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho"
+      ]
+    },
+    {
+      "politician": "James A. Himes",
+      "topic": "same-sex-marriage",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 1,
+      "season2_value_before": 2,
+      "written_value": 2,
+      "finding": "Himes voted for the Respect for Marriage Act (H.R. 8404): Clerk roll 513, 8 December 2022, On Motion to Concur, 258-169 -> Himes, H001047, D-CT: Yea. Citation repaired 2026-10-07: the row inferred the vote from the party bloc (\"All House Democrats voted in favor, including Himes\") rather than looking it up. The inference was right and the roll call now stands in its place. ⚠ LIMITATION RECORDED: this Act requires recognition of marriages lawfully performed elsewhere, and 39-47 House Republicans voted for it too, so on its own it does not separate the most expansive chair from the next one. The chair is unchanged pending evidence that speaks to that distinction.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Respect_for_Marriage_Act",
+        "https://clerk.house.gov/Votes/2022513"
+      ]
+    },
+    {
+      "politician": "André Carson",
+      "topic": "same-sex-marriage",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_unfetchable_source",
+      "season1_value": 1,
+      "season2_value_before": 2,
+      "written_value": 2,
+      "finding": "Carson is an ORIGINAL COSPONSOR of the Equality Act (H.R. 15) in both the 119th and the 118th Congress - the cosponsor list records \"Carson, Andre [D-IN7, 2008-2026] Original Cosponsor\". The Equality Act extends federal non-discrimination protection to LGBTQ people without a carve-out for religious objectors, which is the chair. Citation repaired 2026-10-07: the claim was true but its only source was his congress.gov member page, which returns HTTP 403 to automated retrieval and so could not be read.",
+      "sources_examined": [
+        "https://www.congress.gov/member/andre-carson/C001072",
+        "https://www.govtrack.us/congress/bills/119/hr15/cosponsors"
+      ]
+    },
+    {
+      "politician": "Alex Vindman",
+      "topic": "same-sex-marriage",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": 4,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Janak Joshi's research filed under Alex Vindman. Alex Vindman is Candidate for U.S. Senate - Florida (Democratic); the retired Army officer who testified in the 2019 impeachment inquiry; Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017. en.wikipedia.org/wiki/Janak_Joshi is a 2,844-character stub about Joshi: Colorado House District 16 and 14, a 2024 Republican primary loss to Gabe Evans. It contains no mention of Vindman and no mention of Florida. The Colorado race article likewise contains no mention of Vindman or of \"Alex\" (control term \"Colorado\" appears 71 times, so the page was read). The reasoning on these rows calls a Democratic candidate a \"Conservative Republican\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Janak_Joshi"
+      ]
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "religious-freedom",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 2,
+      "finding": "Wilson voted for the Equality Act (H.R. 5): Clerk roll 39, 25 February 2021, On Passage, 224-206 -> Wilson (FL), W000808, D-FL: Yea. The Act extends federal non-discrimination protection without a religious exemption, which is the chair. Citation repaired 2026-10-07: verified against the primary record because the cited article about the bill does not name her.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Equality_Act_%28United_States%29",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://clerk.house.gov/Votes/202139"
+      ]
+    },
+    {
+      "politician": "Alex Vindman",
+      "topic": "religious-freedom",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Janak Joshi's research filed under Alex Vindman. Alex Vindman is Candidate for U.S. Senate - Florida (Democratic); the retired Army officer who testified in the 2019 impeachment inquiry; Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017. en.wikipedia.org/wiki/Janak_Joshi is a 2,844-character stub about Joshi: Colorado House District 16 and 14, a 2024 Republican primary loss to Gabe Evans. It contains no mention of Vindman and no mention of Florida. The Colorado race article likewise contains no mention of Vindman or of \"Alex\" (control term \"Colorado\" appears 71 times, so the page was read). The reasoning on these rows calls a Democratic candidate a \"Conservative Republican\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Janak_Joshi"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "trans-athletes",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Jay Obernolte",
+      "topic": "trans-athletes",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_wrong_bill",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 4,
+      "finding": "Obernolte voted for the Protection of Women and Girls in Sports Act (H.R. 734): Clerk roll 192, 20 April 2023, On Passage, 219-203 -> Obernolte, O000019, R-CA: Yea (and Nay on the motion to recommit, roll 191). A direct, divided vote on exactly this question. Citation repaired 2026-10-07. 🔴 THE ROW ARGUED FROM THE PARTY, NOT THE MEMBER: it said \"Republicans in the 118th and 119th Congresses broadly supported\" H.R. 734, which is a claim about a caucus, and rested the rest on the One Big Beautiful Bill Act, whose article contains no athlete or sports-eligibility language at all. He voted for the actual bill; that is now what the row cites.",
+      "sources_examined": [
+        "https://www.govtrack.us/congress/members/jay_obernolte/456801",
+        "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+        "https://clerk.house.gov/Votes/2023192"
+      ]
+    },
+    {
+      "politician": "Mike Flood",
+      "topic": "trans-athletes",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_wrong_bill",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 4,
+      "finding": "Flood voted for the Protection of Women and Girls in Sports Act (H.R. 734): Clerk roll 192, 20 April 2023, On Passage, 219-203 -> Flood, F000474, R-NE: Yea. That is a direct, divided vote on exactly this question. Citation repaired 2026-10-07. 🔴 THE ROW HAD THE WRONG BILL: it claimed the One Big Beautiful Bill Act \"included the Protection of Women and Girls in Sports Act language\". It does not - the cited OBBBA article contains ZERO occurrences of \"athlete\" or \"Protection of Women and Girls\", and its only two uses of \"sports\" are in an educator tax deduction for sports coaches. The chair is right; the instrument named was not.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+        "https://clerk.house.gov/Votes/2023192"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "ukraine-support",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Angie Nixon",
+      "topic": "ukraine-support",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Angie Nixon. Angie Nixon is Candidate for U.S. Senate - Florida (Democratic), a Florida state representative from Jacksonville; Mike Collins is the Republican nominee for U.S. Senate in Georgia. These rows cite the 2026 Georgia Senate race article, which contains no mention of Angie Nixon (control term \"Georgia\" appears 132 times, so the page was read). The reasoning describes \"a Republican candidate in Georgia\", uses \"he\", and names the endorsements the same article records for Mike Collins - CPAC and Veterans for America First. Nixon's seven other rows, sourced to her own campaign site, correctly describe a progressive Democrat, so this politician carries two different people's politics at once. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia"
+      ]
+    },
+    {
+      "politician": "Debbie Dingell",
+      "topic": "ukraine-support",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "near_unanimous_vote",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. THE VOTE IS REAL AND WAS VERIFIED, AND IT STILL CANNOT SEAT THIS CHAIR. Ukraine Democracy Defense Lend-Lease Act (S. 3522): Clerk roll 141, 28 April 2022, On Passage, 417-10 -> Dingell, D000624, D-MI: Yea. Being one of 417 is not a choice a ladder can seat - the same 417-10 vote blanked Schrier in migration 1893, and the same rule blanked Newhouse on a 385-41 vote in 1894. 🔑 The row also did not look the vote up: it reasoned that she \"was not among the 10 dissenters ... indicating a yes vote\", inferring a vote from absence from a dissent list. She was also NOT VOTING on the April 2024 Ukraine supplemental (rolls 150 and 151), so no divided Ukraine vote of hers is on the record here.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Ukraine_Democracy_Defense_Lend-Lease_Act_of_2022"
+      ]
+    },
+    {
+      "politician": "Nikema Williams",
+      "topic": "ukraine-support",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_wrong_bill",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 2,
+      "finding": "Williams voted for the Ukraine Security Supplemental Appropriations Act, 2024 (H.R. 8035): Clerk roll 151, 20 April 2024, On Passage, 311-112 -> Williams (GA), W000788, D-GA: Yea. The sheet distinguishes Williams (GA) from Williams (TX) and Williams (NY). Citation repaired 2026-10-07. 🔴🔴 THE ROW CITED A BILL SHE VOTED AGAINST: its source was the 21st Century Peace Through Strength Act (H.R. 8038), and the Clerk records Williams (GA) voting NAY on it (roll 145, 20 April 2024, 360-58). H.R. 8038 was the sanctions-and-TikTok piece of the April 2024 package, not the Ukraine aid appropriation. The chair is correct and the aid vote is a genuine 311-112 division; only the instrument was wrong.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://en.wikipedia.org/wiki/21st_Century_Peace_Through_Strength_Act",
+        "https://clerk.house.gov/Votes/2024151"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "ukraine-support",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Alex_Vindman.htm",
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "medicare/aid",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": null,
+      "sources_examined": null
+    },
+    {
+      "politician": "Mike Flood",
+      "topic": "medicare/aid",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 4,
+      "finding": "Flood voted for the One Big Beautiful Bill Act (H.R. 1): Clerk roll 145, 22 May 2025, On Passage, 215-214 -> Flood, F000474, R-NE: Yea; roll 190, 3 July 2025, Motion to Concur, 218-214 -> Aye. The cited article carries a \"Medicaid restrictions and funding cuts\" section. Citation repaired 2026-10-07. ⚠ An omnibus vote carries the package, not this question alone.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+        "https://clerk.house.gov/Votes/2025145",
+        "https://clerk.house.gov/Votes/2025190"
+      ]
+    },
+    {
+      "politician": "Christian Menefee",
+      "topic": "medicare/aid",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Every row quotes his Ballotpedia Candidate Connection survey verbatim and all seven distinctive phrases checked were found on the page: \"Medicare for All\", \"birth control, abortion, and IVF\", \"Expand tax credits for parents\", \"down payment help\", \"fair share\", \"John Lewis Voting Rights\", \"weakened Social Security\". The detector fired only because the host is ballotpedia.org; a #Campaign_themes anchor carrying the candidate's own survey answers is about as specific as evidence gets. A clean example of the generic-source predicate over-firing.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "fossil-fuels",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Angie Nixon",
+      "topic": "fossil-fuels",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Angie Nixon. Angie Nixon is Candidate for U.S. Senate - Florida (Democratic), a Florida state representative from Jacksonville; Mike Collins is the Republican nominee for U.S. Senate in Georgia. These rows cite the 2026 Georgia Senate race article, which contains no mention of Angie Nixon (control term \"Georgia\" appears 132 times, so the page was read). The reasoning describes \"a Republican candidate in Georgia\", uses \"he\", and names the endorsements the same article records for Mike Collins - CPAC and Veterans for America First. Nixon's seven other rows, sourced to her own campaign site, correctly describe a progressive Democrat, so this politician carries two different people's politics at once. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia"
+      ]
+    },
+    {
+      "politician": "Alex Vindman",
+      "topic": "fossil-fuels",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Janak Joshi's research filed under Alex Vindman. Alex Vindman is Candidate for U.S. Senate - Florida (Democratic); the retired Army officer who testified in the 2019 impeachment inquiry; Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017. en.wikipedia.org/wiki/Janak_Joshi is a 2,844-character stub about Joshi: Colorado House District 16 and 14, a 2024 Republican primary loss to Gabe Evans. It contains no mention of Vindman and no mention of Florida. The Colorado race article likewise contains no mention of Vindman or of \"Alex\" (control term \"Colorado\" appears 71 times, so the page was read). The reasoning on these rows calls a Democratic candidate a \"Conservative Republican\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Colorado"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "voting-rights",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Christian Menefee",
+      "topic": "voting-rights",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Every row quotes his Ballotpedia Candidate Connection survey verbatim and all seven distinctive phrases checked were found on the page: \"Medicare for All\", \"birth control, abortion, and IVF\", \"Expand tax credits for parents\", \"down payment help\", \"fair share\", \"John Lewis Voting Rights\", \"weakened Social Security\". The detector fired only because the host is ballotpedia.org; a #Campaign_themes anchor carrying the candidate's own survey answers is about as specific as evidence gets. A clean example of the generic-source predicate over-firing.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "voting-rights",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "Hallie Shoffner",
+      "topic": "voting-rights",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source is the 2026 Arkansas Senate race article, which names Shoffner twenty-two times and contains ZERO occurrences of abortion, LGBT, Social Security, immigration or voting - it carries no policy content at all. The rows concede the method themselves: the immigration row reads \"Moderate position EXPECTED for Arkansas context ... LIKELY supports reform\". Her economic-development and taxes rows, which cite hallieshoffner.com/priorities and quote it, are sound and are left alone.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "voting-rights",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "voting-rights",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "social-security",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "social-security",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "misdescribed_bill_plus_confessed_absence",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The chair rested on three things and none of them holds. (1) THE BILL IS MISDESCRIBED: the row says the One Big Beautiful Bill \"proposed converting Social Security savings to private 'Trump accounts'\". It did not. The cited article describes Trump accounts as tax-advantaged childrens' savings accounts, with a $1,000 federal deposit for each citizen child born 2025-2028 \"with a social security NUMBER\" - the row appears to have read \"social security number\" as Social Security. (2) IT IS A NO VOTE: she did vote against the Act (Clerk rolls 145 and 190, verified), but a no only rejects a package and cannot choose between the chairs on this ladder. (3) THE ROW CONFESSES: \"She likely cosponsored Social Security 2100 Act but no direct confirmation found.\" Her cosponsorship record is public and this is cheaply re-researchable.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Big_Beautiful_Bill",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+      ]
+    },
+    {
+      "politician": "Christian Menefee",
+      "topic": "social-security",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Every row quotes his Ballotpedia Candidate Connection survey verbatim and all seven distinctive phrases checked were found on the page: \"Medicare for All\", \"birth control, abortion, and IVF\", \"Expand tax credits for parents\", \"down payment help\", \"fair share\", \"John Lewis Voting Rights\", \"weakened Social Security\". The detector fired only because the host is ballotpedia.org; a #Campaign_themes anchor carrying the candidate's own survey answers is about as specific as evidence gets. A clean example of the generic-source predicate over-firing.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "social-security",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "Hallie Shoffner",
+      "topic": "social-security",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source is the 2026 Arkansas Senate race article, which names Shoffner twenty-two times and contains ZERO occurrences of abortion, LGBT, Social Security, immigration or voting - it carries no policy content at all. The rows concede the method themselves: the immigration row reads \"Moderate position EXPECTED for Arkansas context ... LIKELY supports reform\". Her economic-development and taxes rows, which cite hallieshoffner.com/priorities and quote it, are sound and are left alone.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "social-security",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "social-security",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "climate-change",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Angie Nixon",
+      "topic": "climate-change",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Angie Nixon. Angie Nixon is Candidate for U.S. Senate - Florida (Democratic), a Florida state representative from Jacksonville; Mike Collins is the Republican nominee for U.S. Senate in Georgia. These rows cite the 2026 Georgia Senate race article, which contains no mention of Angie Nixon (control term \"Georgia\" appears 132 times, so the page was read). The reasoning describes \"a Republican candidate in Georgia\", uses \"he\", and names the endorsements the same article records for Mike Collins - CPAC and Veterans for America First. Nixon's seven other rows, sourced to her own campaign site, correctly describe a progressive Democrat, so this politician carries two different people's politics at once. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Georgia"
+      ]
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "climate-change",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "Alex Vindman",
+      "topic": "climate-change",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Janak Joshi's research filed under Alex Vindman. Alex Vindman is Candidate for U.S. Senate - Florida (Democratic); the retired Army officer who testified in the 2019 impeachment inquiry; Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017. en.wikipedia.org/wiki/Janak_Joshi is a 2,844-character stub about Joshi: Colorado House District 16 and 14, a 2024 Republican primary loss to Gabe Evans. It contains no mention of Vindman and no mention of Florida. The Colorado race article likewise contains no mention of Vindman or of \"Alex\" (control term \"Colorado\" appears 71 times, so the page was read). The reasoning on these rows calls a Democratic candidate a \"Conservative Republican\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Colorado"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "climate-change",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "climate-change",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "civil-rights",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "civil-rights",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "Alex Vindman",
+      "topic": "civil-rights",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Janak Joshi's research filed under Alex Vindman. Alex Vindman is Candidate for U.S. Senate - Florida (Democratic); the retired Army officer who testified in the 2019 impeachment inquiry; Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017. en.wikipedia.org/wiki/Janak_Joshi is a 2,844-character stub about Joshi: Colorado House District 16 and 14, a 2024 Republican primary loss to Gabe Evans. It contains no mention of Vindman and no mention of Florida. The Colorado race article likewise contains no mention of Vindman or of \"Alex\" (control term \"Colorado\" appears 71 times, so the page was read). The reasoning on these rows calls a Democratic candidate a \"Conservative Republican\". A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Janak_Joshi"
+      ]
+    },
+    {
+      "politician": "Hallie Shoffner",
+      "topic": "civil-rights",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source is the 2026 Arkansas Senate race article, which names Shoffner twenty-two times and contains ZERO occurrences of abortion, LGBT, Social Security, immigration or voting - it carries no policy content at all. The rows concede the method themselves: the immigration row reads \"Moderate position EXPECTED for Arkansas context ... LIKELY supports reform\". Her economic-development and taxes rows, which cite hallieshoffner.com/priorities and quote it, are sound and are left alone.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "civil-rights",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "civil-rights",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/",
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Idaho"
+      ]
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "campaign-finance",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 2,
+      "finding": "Wilson voted for the For the People Act (H.R. 1): Clerk roll 62, 3 March 2021, On Passage, 220-210 -> Wilson (FL), W000808, D-FL: Yea. The Act carries the DISCLOSE provisions requiring disclosure of dark-money donors and a voluntary public matching-fund system. Citation repaired 2026-10-07: the vote is real and verified against the primary record, but the cited Wikipedia article about the bill does not name her, so the roll call is now cited directly. The House sheet distinguishes Wilson (FL) from Wilson (SC), who voted Nay.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/For_the_People_Act",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://clerk.house.gov/Votes/202162"
+      ]
+    },
+    {
+      "politician": "André Carson",
+      "topic": "campaign-finance",
+      "in_the_73": true,
+      "disposition": "BLOCKED",
+      "klass": "ladder_scope_rung_deleted",
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "Carson is an ORIGINAL COSPONSOR of the DISCLOSE Act of 2026 (H.R. 7802) - the cosponsor list records \"Carson, Andre [D-IN7, 2008-2026] Original Cosponsor\", which also confirms the right Carson. A donor-disclosure and transparency bill, matching the full-disclosure chair rather than a ban or deregulation. Citation repaired 2026-10-07: the claim was true but its only source was his congress.gov member page, which returns HTTP 403 to automated retrieval and so could not be read; a fetchable record of the same fact was located (govtrack.us/congress/bills/119/hr7802/cosponsors). 🔴 BUT IT CANNOT BE WRITTEN. The chair is Season 1 rung 3, \"require full disclosure of all political donations\". Season 2 REPLACED that rung: its rung 3 reads \"Keep contribution limits at current levels\", and no rung on the Season 2 ladder asks about disclosure at all. Carrying the number 3 across would seat him on a position he was never assessed for, and choosing a different number would be a new seating decision rather than a citation repair. Recorded for the ladder-scope register; the fact is verified and waiting.",
+      "sources_examined": null
+    },
+    {
+      "politician": "J.D. Vance",
+      "topic": "campaign-finance",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. The cited article states: \"Plaintiffs are the National Republican Senatorial Committee (NRSC), the National Republican Congressional Committee (NRCC), then-candidate JD Vance, and then-Congressman Steven Joseph Chabot ... challenging the coordinated party expenditure [limits].\" Being a named plaintiff in a suit to strike coordinated-spending limits is a specific, dated, personally attributable act. ⚠ NOTED, NOT FIXED: the reasoning is a telegraphic fragment with a bare URL pasted into the prose (\"Named plaintiff NRSC v FEC; strike coordinated-spending limits; https://...\"). That is voter-facing text and it reads badly, but it is a presentation defect rather than an evidence defect, so it belongs to a prose pass and not to this migration.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "campaign-finance",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "misinformation",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Norma Torres",
+      "topic": "misinformation",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "role_plus_different_question",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. Both halves fail. (1) ROLE, NOT POSITION: she does serve on the Committee on House Administration and in the New Democrat Coalition - both confirmed on the cited pages - but NEITHER PAGE CONTAINS THE WORDS misinformation, disinformation OR content moderation, not once. A committee seat is an assignment, not a position. (2) A DIFFERENT QUESTION: she did vote for the For the People Act (Clerk roll 62, 3 March 2021, 220-210 -> Torres (CA), T000474, D-CA: Yea, verified; the sheet distinguishes her from Torres (NY)), but that Act governs election administration, campaign-finance disclosure and redistricting. This ladder asks about platform and government content restrictions.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/House_Administration_Committee",
+        "https://en.wikipedia.org/wiki/New_Democrat_Coalition"
+      ]
+    },
+    {
+      "politician": "Karen Ruth Bass",
+      "topic": "ai-regulation",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "no_reasoning_at_all",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. THIS CHAIR HAD NO REASONING AT ALL - the context row existed with its source set and the reasoning an empty string. Its only source is her congress.gov member page from her time in the House, which returns HTTP 403 to automated retrieval and was not read; she is now Mayor of Los Angeles. ⚠ This key was NOT in the 73-key federal queue. It is written here because a corpus-wide measurement found exactly four empty-reasoning rows across three keys, and leaving the third behind would leave a complete and closable class open for the sake of a queue boundary.",
+      "sources_examined": [
+        "https://www.congress.gov/member/karen-bass/B001270"
+      ]
+    },
+    {
+      "politician": "Pete Aguilar",
+      "topic": "ai-regulation",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "no_reasoning_at_all",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. THIS CHAIR HAD NO REASONING AT ALL - the context row existed with its source set and the reasoning an empty string, so a seated chair was being shown to voters with literally nothing asserted behind it. Its only source is his congress.gov member page, which returns HTTP 403 to automated retrieval and was not read. A measurement over the whole corpus found exactly four such rows across three keys, and this migration blanks all of them.",
+      "sources_examined": [
+        "https://www.congress.gov/member/pete-aguilar/A000371"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "ai-regulation",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/"
+      ]
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "housing",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "omnibus_vote_cannot_pin_a_rung",
+      "season1_value": 2,
+      "season2_value_before": 3,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. THE VOTE IS REAL AND VERIFIED AND IT STILL DOES NOT PIN THIS RUNG. Build Back Better Act (H.R. 5376): Clerk roll 385, 19 November 2021, On Passage, 220-213 -> Wilson (FL), W000808, D-FL: Yea. But the Act carried BOTH public-housing capital funding AND subsidy-and-tax-credit programmes, and the Season 2 rungs here separate exactly those: rung 2 is \"Build a large public housing sector\", rung 3 (the seated chair) is \"Build NO public housing, but set binding rules ... like rent caps or required affordable units\", and rung 4 is \"Set no binding rules, but offer subsidies and tax breaks\". A single omnibus vote is consistent with 2 and with 4 and is the one thing it is not evidence for, namely 3. The rest of the row argued from the economic character of her district, which is circumstance rather than position. Re-researchable from her own sponsorships.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Build_Back_Better_Act",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus"
+      ]
+    },
+    {
+      "politician": "Christian Menefee",
+      "topic": "housing",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Every row quotes his Ballotpedia Candidate Connection survey verbatim and all seven distinctive phrases checked were found on the page: \"Medicare for All\", \"birth control, abortion, and IVF\", \"Expand tax credits for parents\", \"down payment help\", \"fair share\", \"John Lewis Voting Rights\", \"weakened Social Security\". The detector fired only because the host is ballotpedia.org; a #Campaign_themes anchor carrying the candidate's own survey answers is about as specific as evidence gets. A clean example of the generic-source predicate over-firing.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Pete Aguilar",
+      "topic": "housing",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "no_reasoning_at_all",
+      "season1_value": 2,
+      "season2_value_before": 3,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. THIS CHAIR HAD NO REASONING AT ALL - in Season 1 and again in Season 2, the context row existed with its source set and the reasoning an empty string. Its only source is his congress.gov member page, which returns HTTP 403 to automated retrieval and was not read. A measurement over the whole corpus found exactly four such rows across three keys, and this migration blanks all of them.",
+      "sources_examined": [
+        "https://www.congress.gov/member/pete-aguilar/A000371"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "housing",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": 3,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "immigration",
+      "in_the_73": false,
+      "disposition": "BLOCKED",
+      "klass": "no_season_2_pin",
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "topic `immigration` has no Season 2 pin - it is the Season-1-only orphan, so no Season 2 row can legally exist and neither a blank nor a repair can be written",
+      "sources_examined": null
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "immigration",
+      "in_the_73": true,
+      "disposition": "BLOCKED",
+      "klass": "no_season_2_pin",
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "topic `immigration` has no Season 2 pin - it is the Season-1-only orphan, so no Season 2 row can legally exist and neither a blank nor a repair can be written",
+      "sources_examined": null
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "immigration",
+      "in_the_73": true,
+      "disposition": "BLOCKED",
+      "klass": "no_season_2_pin",
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "topic `immigration` has no Season 2 pin - it is the Season-1-only orphan, so no Season 2 row can legally exist and neither a blank nor a repair can be written",
+      "sources_examined": null
+    },
+    {
+      "politician": "Alex Vindman",
+      "topic": "immigration",
+      "in_the_73": true,
+      "disposition": "BLOCKED",
+      "klass": "no_season_2_pin",
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "topic `immigration` has no Season 2 pin - it is the Season-1-only orphan, so no Season 2 row can legally exist and neither a blank nor a repair can be written",
+      "sources_examined": null
+    },
+    {
+      "politician": "Hallie Shoffner",
+      "topic": "immigration",
+      "in_the_73": true,
+      "disposition": "BLOCKED",
+      "klass": "no_season_2_pin",
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "topic `immigration` has no Season 2 pin - it is the Season-1-only orphan, so no Season 2 row can legally exist and neither a blank nor a repair can be written",
+      "sources_examined": null
+    },
+    {
+      "politician": "David Roth",
+      "topic": "immigration",
+      "in_the_73": false,
+      "disposition": "BLOCKED",
+      "klass": "no_season_2_pin",
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "topic `immigration` has no Season 2 pin - it is the Season-1-only orphan, so no Season 2 row can legally exist and neither a blank nor a repair can be written",
+      "sources_examined": null
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "deportation",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 2,
+      "finding": "Two verified votes. (1) Dream Act / American Dream and Promise Act (H.R. 6): Clerk roll 91, 18 March 2021, On Passage, 228-197 -> Wilson (FL), W000808, D-FL: Yea. (2) Laken Riley Act (S. 5): Clerk roll 23, 22 January 2025, On Passage, 263-156 -> Wilson (FL): Nay. Citation repaired 2026-10-07. 🔑 THE ROW PREVIOUSLY GUESSED THE SECOND VOTE: it stated she voted against the Laken Riley Act and then conceded \"based on her Progressive Caucus membership and 100% Biden alignment, she almost certainly voted against it\". The guess was correct, but a guess is not evidence; the roll call now stands in its place.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/American_Dream_and_Promise_Act",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://en.wikipedia.org/wiki/Laken_Riley_Act",
+        "https://clerk.house.gov/Votes/202191",
+        "https://clerk.house.gov/Votes/202523"
+      ]
+    },
+    {
+      "politician": "Mike Flood",
+      "topic": "deportation",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 4,
+      "finding": "Verified votes. Laken Riley Act (S. 5): Clerk roll 23, 22 January 2025, On Passage, 263-156 -> Flood, F000474, R-NE: Yea. One Big Beautiful Bill Act (H.R. 1): Clerk roll 145, 22 May 2025, On Passage, 215-214 -> Yea; roll 190, 3 July 2025, Motion to Concur, 218-214 -> Aye. Citation repaired 2026-10-07: the votes are real and verified against the primary record, but the cited articles about the bills do not name him.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Laken_Riley_Act",
+        "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+        "https://clerk.house.gov/Votes/202523",
+        "https://clerk.house.gov/Votes/2025145",
+        "https://clerk.house.gov/Votes/2025190"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "healthcare",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "healthcare",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": null,
+      "sources_examined": null
+    },
+    {
+      "politician": "Mike Flood",
+      "topic": "healthcare",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 4,
+      "finding": "Flood voted for the One Big Beautiful Bill Act (H.R. 1): Clerk roll 145, 22 May 2025, On Passage, 215-214 -> Flood, F000474, R-NE: Yea; roll 190, 3 July 2025, Motion to Concur, 218-214 -> Aye. The cited article records the Act's Medicaid restrictions and funding cuts. Citation repaired 2026-10-07. ⚠ The row states its own limitation: this is an omnibus vote, so it carries the package rather than this question alone.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+        "https://en.wikipedia.org/wiki/Republican_Study_Committee",
+        "https://clerk.house.gov/Votes/2025145",
+        "https://clerk.house.gov/Votes/2025190"
+      ]
+    },
+    {
+      "politician": "Christian Menefee",
+      "topic": "healthcare",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Every row quotes his Ballotpedia Candidate Connection survey verbatim and all seven distinctive phrases checked were found on the page: \"Medicare for All\", \"birth control, abortion, and IVF\", \"Expand tax credits for parents\", \"down payment help\", \"fair share\", \"John Lewis Voting Rights\", \"weakened Social Security\". The detector fired only because the host is ballotpedia.org; a #Campaign_themes anchor carrying the candidate's own survey answers is about as specific as evidence gets. A clean example of the generic-source predicate over-firing.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "healthcare",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "Hallie Shoffner",
+      "topic": "healthcare",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source is the 2026 Arkansas Senate race article, which names Shoffner twenty-two times and contains ZERO occurrences of abortion, LGBT, Social Security, immigration or voting - it carries no policy content at all. The rows concede the method themselves: the immigration row reads \"Moderate position EXPECTED for Arkansas context ... LIKELY supports reform\". Her economic-development and taxes rows, which cite hallieshoffner.com/priorities and quote it, are sound and are left alone.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Arkansas"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "healthcare",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "healthcare",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "taxes",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Frederica S. Wilson",
+      "topic": "taxes",
+      "in_the_73": true,
+      "disposition": "REPAIR",
+      "klass": "citation_repair_rollcall",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 1,
+      "finding": "Wilson voted for the Inflation Reduction Act (H.R. 5376, Senate amendment): Clerk roll 420, 12 August 2022, On Motion to Concur, 220-207 -> Wilson (FL), W000808, D-FL: Yea. The Act raised the corporate minimum tax and funded IRS enforcement. Citation repaired 2026-10-07. ⚠ REMOVED FROM THIS ROW: the claim that she \"voted against the Tax Cuts and Jobs Act (2017, absent/not voting but did not support it)\". The cited TCJA article's own House vote table records her as one of exactly two Democrats NOT VOTING. An absence is not a position, and the row contradicted itself inside one sentence.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Inflation_Reduction_Act_of_2022",
+        "https://en.wikipedia.org/wiki/Tax_Cuts_and_Jobs_Act_of_2017",
+        "https://en.wikipedia.org/wiki/Congressional_Progressive_Caucus",
+        "https://clerk.house.gov/Votes/2022420"
+      ]
+    },
+    {
+      "politician": "Christian Menefee",
+      "topic": "taxes",
+      "in_the_73": true,
+      "disposition": "SOUND",
+      "klass": null,
+      "season1_value": null,
+      "season2_value_before": null,
+      "written_value": null,
+      "finding": "SOUND. Every row quotes his Ballotpedia Candidate Connection survey verbatim and all seven distinctive phrases checked were found on the page: \"Medicare for All\", \"birth control, abortion, and IVF\", \"Expand tax credits for parents\", \"down payment help\", \"fair share\", \"John Lewis Voting Rights\", \"weakened Social Security\". The detector fired only because the host is ballotpedia.org; a #Campaign_themes anchor carrying the candidate's own survey answers is about as specific as evidence gets. A clean example of the generic-source predicate over-firing.",
+      "sources_examined": null
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "taxes",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "David Roth",
+      "topic": "taxes",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Alex Vindman's research filed under David Roth. David Roth is Candidate for U.S. Senate - Idaho (Democratic), who withdrew on 2026-09-01; Alex Vindman is Candidate for U.S. Senate - Florida (Democratic). Every one of these rows is sourced to en.wikipedia.org/wiki/Alexander_Vindman, which redirects to the article on Alex Vindman and contains no mention of David Roth (control term \"Vindman\" appears 84 times, so the page was read). The reasoning recites Vindman's biography - \"a veteran who faced retaliation for truth-telling\", \"testified against presidential disinformation\", \"someone who testified against presidential abuse of power\" - and attributes it to Roth. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Alexander_Vindman"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "taxes",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/"
+      ]
+    },
+    {
+      "politician": "Janak Joshi",
+      "topic": "judicial-criminal-justice",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is Mike Collins's research filed under Janak Joshi. Janak Joshi is Candidate for U.S. Senate - Colorado (Republican), a retired physician who served in the Colorado House 2011-2017 and has never served in Congress; Mike Collins is the Republican nominee for U.S. Senate in Georgia and the sitting U.S. Representative for Georgia's 10th district. All twelve rows cite ontheissues.org/Senate/Mike_Collins.htm - a page about Mike Collins, not Joshi - and one also cites the 2026 Georgia Senate race article, which contains no mention of Joshi (control term \"Georgia\" appears 132 times). 🔑 The decisive test needs neither page: the reasoning attributes CONGRESSIONAL acts to Joshi (\"opposed Equality Act\", \"co-sponsored pro-life legislation\"), and Janak Joshi has never been a member of Congress. Mike Collins has. Six of these twelve chairs sit at rung 5, the most extreme rung on their ladder. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://www.ontheissues.org/Senate/Mike_Collins.htm"
+      ]
+    },
+    {
+      "politician": "Dakarai Larriett",
+      "topic": "economic-development",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "race_article_carries_no_positions",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The only source on every one of these ten rows is the 2026 Alabama Senate race article. That page names Larriett twelve times and contains ZERO occurrences of abortion, Medicaid, voucher, Social Security, climate or immigration - it is a candidate list, endorsements, fundraising and polling. It cannot seat a policy chair for anyone. The reasoning says so in its own words on every row (\"standard Democratic position\", \"as a Democrat in Alabama\"), and the voting-rights row reaches its chair \"as a Black Democratic candidate in Alabama\" - a chair inferred from the candidate's race and party. Re-researchable from his campaign material; this is an invitation, not a verdict.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Alabama"
+      ]
+    },
+    {
+      "politician": "Zach Wahls",
+      "topic": "economic-development",
+      "in_the_73": false,
+      "disposition": "BLANK",
+      "klass": "wrong_person_contamination",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. 🔴🔴 THE EVIDENCE DESCRIBES A DIFFERENT PERSON. This row is David Roth's research filed under Zach Wahls. Zach Wahls is Candidate for U.S. Senate - Iowa (Democratic); David Roth is Candidate for U.S. Senate - Idaho (Democratic). Ten of these rows cite rothforidaho.org/solutions/, which is headed \"SOLUTIONS - David Roth for Idaho\" and contains no mention of Wahls and no mention of Iowa (control term \"Idaho\" appears 16 times). The rest cite the 2026 Idaho Senate race article, which contains no mention of Wahls or of \"Zach\" (control term \"Idaho\" appears 27 times). 🔴 A BORROWED CAMPAIGN WEBSITE IS THE MOST SPECIFIC-LOOKING SOURCE THERE IS, which is why only two of these eleven rows ever reached a sourcing-quality queue. A chair must rest on evidence about the person it is shown under, so there is nothing here to keep. The sources examined are kept below so the next reader does not re-derive this from scratch.",
+      "sources_examined": [
+        "https://rothforidaho.org/solutions/"
+      ]
+    },
+    {
+      "politician": "Seth Moulton",
+      "topic": "growth-and-development",
+      "in_the_73": true,
+      "disposition": "BLANK",
+      "klass": "different_question_plus_district_inference",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "finding": "Blanked 2026-10-07. The one concrete instrument is his support for the CHIPS Act, which is federal semiconductor industrial policy; this ladder asks about local growth and development intensity. The rest of the chair is inferred from the character of his district - \"His district, which spans suburban communities north of Boston, LEADS HIM TO support mixed development\" - which is geography, not a position. Its only source is his congress.gov member page, which returns HTTP 403 to automated retrieval and was not read.",
+      "sources_examined": [
+        "https://congress.gov/member/seth-moulton/M001196"
+      ]
+    }
+  ]
+}
