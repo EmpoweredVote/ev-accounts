@@ -1,0 +1,104 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "bb0579b9-8507-5374-acb3-fbb7faca9e0b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-05-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": null,
+          "note": "Pierce voted Nay on the veto override of a single-subject girls'-teams sex-at-birth law (67-28, not near-unanimous); a No shows opposition to rung 4 but does not separate rungs 1-3.",
+          "record_kind": "vote",
+          "actor_quote": "N AY - 28 Andrade Errington Hatfield Pierce",
+          "tally_quote": "Yea 67 Participation in school sports. (2022) Nay 28"
+        },
+        {
+          "snapshot_id": "73a15cd2-6363-5329-a011-2248d2959474",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": "(b) A male, based on a student's biological sex at birth in accordance with the student's genetics and reproductive biology, may not participate on an athletic team or sport designated under this section as being a female, women's, or girls' athletic team or sport.",
+          "note": "Enrolled text: the operative section is rung 4; the member's Nay on it shows only the side against rung 4.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "dcb5ce58-76aa-56a2-88f6-bdaf7c4644de",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": null,
+          "note": "Bill details page (digest, authors); names no voter and is part of the same vote record.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6a23453f-63fd-5625-9d53-e90c4fed465b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-03-23",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remarks call efforts against trans people cynical and hateful and cite gender-affirming-care bills, but name no sports-eligibility clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e3c36ce3-4d23-575f-81a5-c24b2ba6a956",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-03-03",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "News account of his opposition to a transgender bathroom bill (a different question); his quoted words name no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce voted Nay on the 2022 veto override of HEA 1041, whose operative section bars a male by \"biological sex at birth\" from girls' teams, matching the rung \"require transgender athletes to compete only on teams matching their biological sex assigned at birth.\" A No shows he opposes that rule but does not choose among \"without any restrictions or requirements,\" \"after completing basic documentation,\" or \"case by case\"; his forum and news remarks are rhetorical and name no eligibility clause.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "6a23453f-63fd-5625-9d53-e90c4fed465b",
+          "text": "they no longer had the political power to attack marriage equality, so now they're attacking trans people",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "off-question"]
+        }
+      ]
+    }
+  ]
+}

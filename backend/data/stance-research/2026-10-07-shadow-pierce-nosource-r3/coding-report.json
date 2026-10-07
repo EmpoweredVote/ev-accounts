@@ -1,0 +1,371 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus"
+  ],
+  "rows": [
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "topic_key": "jail-capacity",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic_key": "rent-regulation",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|87d20824-a6e9-407b-983c-65440084a0ab",
+      "topic_key": "social-security",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|24e9212c-b011-422a-865c-093e35050901",
+      "topic_key": "ukraine-support",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|b5260e5a-5576-4071-8b2a-088af8d1f9eb",
+      "topic_key": "2020-election",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|407614a8-ba2c-4145-8224-233655e6ac3f",
+      "topic_key": "border-security",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "topic_key": "cannabis-policy",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|3fd1aa81-e032-4335-8785-452ed10ce9ce",
+      "topic_key": "defense-spending",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|710396dc-e618-4011-8118-43c62a786111",
+      "topic_key": "military-intervention",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|6783e65c-0722-45d9-8579-65327af7c15c",
+      "topic_key": "israel-military-aid",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+      "topic_key": "ranked-choice-voting",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 0
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

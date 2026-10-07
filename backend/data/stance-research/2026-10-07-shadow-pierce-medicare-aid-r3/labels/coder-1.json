@@ -1,0 +1,108 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "passages": [
+        {
+          "snapshot_id": "96cd33c0-2f03-5a1f-9cd5-11291c3ca704",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Opposes HIP work requirements; the annex rules stand-alone Medicaid work requirements adjacent to every rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2e5ad88c-ec99-5efa-9e1a-f727a2abe8e9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticises SEA 1's stricter Medicaid eligibility as causing eligible people to lose coverage: against scaling Medicaid back, but names no rung among 1-3; his own vote on SEA 1 is not in the sources.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "349f2ada-5c23-5e51-8f89-44c36608dc89",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "About procedural Medicaid disenrollment and paperwork, which the annex rules is enrollment procedure, not eligibility.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9867b6c8-cfa8-5eb8-8b0a-1957fda23e1e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-03-23",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remark that people want accessible and affordable health care names no Medicare or Medicaid clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce's newsletter criticises SEA 1 (2026) for stricter Medicaid eligibility, saying \"eligible Hoosiers losing health and nutrition benefits\", which places him against \"scale back both programs\" but does not show whether he wants to \"significantly expand Medicare or Medicaid eligibility\" or \"improve current programs while controlling costs\". His other passages concern work requirements and enrollment paperwork, which are adjacent, or are rhetorical.",
+      "needs_source": [
+        "Indiana House roll call on SEA 1 (2026), Human Services Matters, final passage",
+        "Any Medicaid eligibility bill Pierce authored or co-authored (e.g. HIP expansion or Medicaid eligibility legislation) with bill text"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "2e5ad88c-ec99-5efa-9e1a-f727a2abe8e9",
+          "text": "The additional bureaucratic red tape enacted in the name of combating fraud will actually result in eligible Hoosiers losing health and nutrition benefits because they won’t be able to keep up with the constant demands for more paperwork.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "96cd33c0-2f03-5a1f-9cd5-11291c3ca704",
+          "text": "I oppose them because claims of fraud are overblown.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "9867b6c8-cfa8-5eb8-8b0a-1957fda23e1e",
+          "text": "accessible and affordable health care is another thing people are crying out for",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

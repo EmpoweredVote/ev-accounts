@@ -1,0 +1,46 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-ai-regulation-r3",
+  "sources": [
+    {
+      "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-june-newsletter",
+      "source_kind": "own-site",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "ai-regulation"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.wfyi.org/news/articles/indiana-legislative-task-force-grapples-with-legal-questions-around-ai",
+      "source_kind": "news",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "ai-regulation"
+      ],
+      "instruments": [],
+      "pointer_passages": [
+        "Matt Pierce (D-Bloomington) is one of four lawmakers serving on a bipartisan task force exploring artificial intelligence.",
+        "Matt Pierce (D-Bloomington) said that's a problem he's wrestling with.",
+        "\"So, we as policymakers have to understand \u2014 how is that technology actually working to generate that kind of response and then what, if anything, should we be doing about it so those kinds of responses don't get generated,\" Pierce said."
+      ],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "source_kind": "transcript",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "ai-regulation"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+  ]
+}

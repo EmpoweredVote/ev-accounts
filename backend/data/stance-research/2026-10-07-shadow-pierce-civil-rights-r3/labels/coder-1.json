@@ -1,0 +1,76 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "7f4b8d57-be1f-5ddb-9985-857016d52ea7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The ACLU 100% score is not-evidence (Q9); his own lines ('we must defend the civil rights and liberties of every Hoosier') name no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "12cb8b04-9bc9-52c6-b00d-27422bd3e441",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-03",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum answers on police reform, gender-affirming care and marriage are other topics or health law, and 'not attacking and trying to marginalize communities' names no enforcement or programme clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e92c2c22-4152-54b8-b3c6-777cf6ee2f2c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-07-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Defends the Diversity Business Enterprise contracting goals against the governor's non-enforcement, which sets him against rung 5 but does not show whether he wants current law kept (rung 3) or enforcement strengthened (rung 2).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His July 2026 newsletter defends the DBE program, saying it 'was created because Indiana’s previous policies failed to give marginalized communities equal opportunities', which places him against 'eliminate affirmative action and all race-based government programs'. Nothing in the sources separates 'strengthen civil rights enforcement and address systemic discrimination' from 'maintain current civil rights laws while promoting equal opportunity'; the ACLU score is not evidence and the other lines are rhetorical.",
+      "needs_source": [
+        "Indiana General Assembly bill pages for any anti-discrimination or civil-rights enforcement bill Matt Pierce authored or co-authored, with roll calls"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "e92c2c22-4152-54b8-b3c6-777cf6ee2f2c",
+          "text": "The DBE was created because Indiana’s previous policies failed to give marginalized communities equal opportunities.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

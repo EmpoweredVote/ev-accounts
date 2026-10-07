@@ -1,0 +1,176 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "0dbc08b0-cfd6-5853-9613-5a336b07ad09",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01-17",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1472 (2023)",
+          "provision_quote": null,
+          "note": "Bill page shows Pierce as author of an all-payer hospital rate-setting and cost-control bill; it governs reimbursement rates, not whom government covers.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Matt Pierce.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b41b7cf7-23c6-5156-963a-ee298ad30145",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01-17",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1472 (2023)",
+          "provision_quote": "requires equalization of hospital reimbursement rates for all payers by July 1, 2025",
+          "note": "Operative text sets equal reimbursement rates across payers and a total cost of care model; cost control, not coverage, so adjacent (annex: cost/price measures are adjacent).",
+          "record_kind": "author",
+          "actor_quote": "Pierce M",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1ab0cdb3-62eb-5292-80ff-95dfaa1a773a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Objects to eligible Hoosiers losing Medicaid coverage through procedural terminations; pro-public-coverage direction, but keeping a programme names no rung's clauses.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "540993cd-0bf4-571d-aacf-5331bcbc15c3",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Opposes HIP work requirements; the annex rules Medicaid work requirements on their own adjacent.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9b8c4e80-528a-5ebe-9339-697d2518cbde",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticises SEA 1's stricter Medicaid eligibility, co-pays and work requirements as costing eligible people coverage; against narrowing coverage, but no rung's clauses (everyone, expand, keep private insurance) are stated; his vote on SEA 1 is not in the sources.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c7e1466f-41e5-5aa1-9c7a-9baf031be64c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Primary-campaign forum remark that accessible and affordable health care is something people want; names no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2e578b6b-55b9-5d77-978e-07d644519911",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-18",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Quoted saying families should have things like health care; a goal with no clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5d7c7bb2-7660-5ac6-beaf-99c4f9b134c7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-03-03",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Excerpt covers a bathroom bill and childcare grants; nothing on healthcare coverage.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His newsletters object to eligible Hoosiers losing Medicaid coverage and to SEA 1's stricter eligibility, which shows only the pro-public-coverage side; defending existing coverage does not show \"everyone\" covered, an expansion of programmes for seniors and low-income residents, or full public payment. HB 1472, which he authored, equalizes hospital reimbursement rates for all payers, a cost-control measure that does not say whom government covers.",
+      "needs_source": [
+        "Indiana House roll call, SEA 1 (2026) Human Services Matters, final passage, with Pierce's vote",
+        "Any bill Pierce authored or co-authored on Medicaid eligibility, a state public option, or single-payer coverage"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "1ab0cdb3-62eb-5292-80ff-95dfaa1a773a",
+          "text": "Hundreds of thousands of eligible Hoosiers shouldn’t lose their health care coverage because of confusion or miscommunication.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "9b8c4e80-528a-5ebe-9339-697d2518cbde",
+          "text": "The additional bureaucratic red tape enacted in the name of combating fraud will actually result in eligible Hoosiers losing health and nutrition benefits because they won’t be able to keep up with the constant demands for more paperwork.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "540993cd-0bf4-571d-aacf-5331bcbc15c3",
+          "text": "I oppose them because claims of fraud are overblown.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "c7e1466f-41e5-5aa1-9c7a-9baf031be64c",
+          "text": "accessible and affordable health care is another thing people are crying out for",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

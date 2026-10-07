@@ -1,0 +1,41 @@
+[
+  {
+    "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+    "topic_key": "transportation-priorities",
+    "topic_revision_id": "c48782d5-e905-408d-8532-2a5fd5bb6efa",
+    "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+    "question_number": 41,
+    "title": "Transportation Priorities",
+    "question_text": "Where should government focus its transportation investment?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Prioritize pedestrian infrastructure, cycling networks, and public transit over new road capacity"
+      },
+      {
+        "value": 2,
+        "text": "Invest equally in road capacity and in multimodal options like transit, bike lanes, and sidewalks"
+      },
+      {
+        "value": 3,
+        "text": "Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it"
+      },
+      {
+        "value": 4,
+        "text": "Focus on road capacity and traffic flow; transportation investment should serve the majority who drive"
+      },
+      {
+        "value": 5,
+        "text": "Prioritize highway access and abundant free parking as the foundation of local transportation policy"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "federal"
+    ]
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-campaign-finance-r3",
+  "sources": [
+    {
+      "url": "https://www.journalgazette.net/local/indiana/study-indiana-ranks-last-in-campaign-finance-laws/article_9bc75a20-24c8-11ed-a784-3306e660682f.html",
+      "source_kind": "news",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "campaign-finance"
+      ],
+      "instruments": [],
+      "pointer_passages": [
+        "Matt Pierce, D-Bloomington, says Supreme Court decisions have complicated efforts to change campaign finance laws.",
+        "Matt Pierce, D-Bloomington, says Supreme Court decisions have complicated efforts to change campaign finance laws.",
+        "Matt Pierce, D-Bloomington, has served in Indiana\u2019s House since 2002."
+      ],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "source_kind": "transcript",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "campaign-finance"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+  ]
+}
