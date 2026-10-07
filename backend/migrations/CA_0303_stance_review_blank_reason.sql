@@ -1,7 +1,7 @@
 BEGIN;
 
--- ⚠ NOT APPLIED. Dry-run on production inside BEGIN…ROLLBACK first; apply only with the
--- operator's explicit OK.
+-- APPLIED to production 2026-10-07 with the operator's OK (Chris Andrews), after a dry-run inside
+-- BEGIN…ROLLBACK (two runs in one transaction, plus a planted 0-without-reason that the CHECK refused).
 
 -- =============================================================================
 -- CA_0303: a Season 2 blank can be queued for review
