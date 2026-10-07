@@ -1,0 +1,10 @@
+I've already written the labels file at `backend/data/stance-research/2026-10-07-shadow-bolick-housing/labels/coder-3.json`, so that task is finished.
+
+The newly available tools (Google Calendar, monday.com, AWS) have nothing to do with this task, so I'm not using them. The six servers that need authorization (Benevity, Candid, Canva, Figma, Harvey, WorkOS) and the GitHub server that failed to connect are all outside this task too.
+
+**Result:** the housing row for Shawnna Bolick is BLANK `direction-only`.
+
+- **Why it isn't a chair:** SB 1229 (2025) voids local lot-size, setback and design limits. That puts it on the question, but it only shows a deregulation side. It can't show the "rely on the market… at most" ceiling of rung 5.
+- **Her record:** she is the prime sponsor and voted Yes on Senate third reading (`BOLICK Y`, `Passed 16-13-1-0-0`). I coded all three record passages as one instrument and put `actor_quote` and `tally_quote` on the pages that print them.
+- **Her own words:** the press-release quote names no clause on public housing, binding rules or subsidies, so I coded it `adjacent` and `direction-only`.
+- **Other fields:** `rests_on` and `needs_source` are empty, and I filed no quotes.

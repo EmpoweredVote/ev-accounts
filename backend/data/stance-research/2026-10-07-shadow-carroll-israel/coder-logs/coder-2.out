@@ -1,0 +1,9 @@
+I wrote the labels file to `.../2026-10-07-shadow-carroll-israel/labels/coder-2.json` with one row, for `israel-military-aid`. I coded the row BLANK `direction-only`, so no rung is seated.
+
+- **June 2025 release (`d8c2da8d…`):** I coded Carroll's quote as `own-words` and `statement-other`, `in-term`, shape `direction-only`. "America must stand strong and continue to support our ally…" shows a pro-Israel side, but it names no aid level and no conditions, so it can't separate rung 1 from rung 2.
+- **October 2024 release (`202edb52…`):** I coded it as `own-words` and `statement-other`, `in-term`, `adjacent`, shape `rhetorical`. "I continue to support Israel's right to defend itself" names no aid level, so it can't support a chair.
+- **Seat:** this is a state seat with no lever on the topic, so only his own words could seat a chair. Neither passage matches a rung clause for clause.
+- **Quote:** I coded the June 2025 quote as `direction` and not quotable (`off-question`), since it doesn't answer the aid-level question.
+- **Other fields:** `rests_on` is empty, and `needs_source` is empty because no record is named that isn't already included here.
+
+The system prompt includes some MCP and skill notices that I didn't act on. Several claude.ai connectors (Benevity, Candid, Canva, Figma, Harvey, WorkOS) need authorization in the claude.ai connector settings. The GitHub server failed to connect with a 400 error on its Authorization header.

@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8",
+      "office_id": "9a6106f5-9ecc-4b66-8085-5395d7eaaf79",
+      "topic_id": "6783e65c-0722-45d9-8579-65327af7c15c",
+      "served_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+      "passages": [
+        {
+          "snapshot_id": "202edb52-d033-595a-a1de-5802b76f9a11",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-10-07",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Anniversary statement supporting Israel's right to defend itself and a permanent end to the war; it names no level of U.S. military aid and no conditions.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d8c2da8d-20f2-5d2a-94f2-ad88dade7057",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-06-17",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says America must 'continue to support our ally' against Iran's nuclear program, but names no military aid, aid level, or stance on conditions.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "At the state level only own words can seat a chair, and both press releases are statements of support for Israel (\"I continue to support Israel's right to defend itself from violence\"; \"continue to support our ally in this battle\") that name no amount of U.S. military aid and say nothing about conditions. None reaches \"Continue full military aid to Israel with no new conditions\" or any other rung's clauses, so no passage survives.",
+      "needs_source": [
+        "Frank Carroll's own words on the level of U.S. military aid to Israel or on conditioning it (questionnaire, interview, or issue page)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "202edb52-d033-595a-a1de-5802b76f9a11",
+          "text": "I continue to support Israel's right to defend itself from violence",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        },
+        {
+          "snapshot_id": "d8c2da8d-20f2-5d2a-94f2-ad88dade7057",
+          "text": "America must stand strong and continue to support our ally in this battle to dismantle Iran's nuclear capabilities.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

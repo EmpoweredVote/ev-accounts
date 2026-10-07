@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "687e6f07-f71a-41b4-8525-b509b2cebb42|2aed98f5-ab9e-49d3-b6be-e8fd257518cd|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "topic_key": "education-library-books",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Janae Shamp's own words (questionnaire, issue page, floor statement) on how schools should handle book challenges",
+          "Any other Shamp sponsorship or vote on a school library book-challenge bill (2023-present) from azleg.gov",
+          "Shamp's own words on how school library book challenges should be handled"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "687e6f07-f71a-41b4-8525-b509b2cebb42|2aed98f5-ab9e-49d3-b6be-e8fd257518cd|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "requests": [
+        "Janae Shamp's own words (questionnaire, issue page, floor statement) on how schools should handle book challenges",
+        "Any other Shamp sponsorship or vote on a school library book-challenge bill (2023-present) from azleg.gov",
+        "Shamp's own words on how school library book challenges should be handled"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

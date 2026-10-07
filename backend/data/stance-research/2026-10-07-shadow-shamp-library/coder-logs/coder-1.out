@@ -1,0 +1,14 @@
+I wrote `labels/coder-1.json` with one row, Janae Shamp / `education-library-books`. The chair is **BLANK, `compound-partial`**.
+
+**Passages** (both on SB 1700 (2023), Senate Third Reading, 03/20/2023, in her current term):
+- **Vote page:** a `record` / `vote`. The actor quote is `SHAMP Y` and the tally is `Passed 16-12-2-0-0`. With 12 of 28 voting No, it is not near-unanimous.
+- **Bill text:** a `record` / `vote`. The provision quote comes from the new section 15-249.01: "If the department agrees with the parent's findings, the department shall add the book to the list…". I took it from text outside the `[deleted: …]` markup.
+
+**Why it's blank:**
+- The bill removes a challenged book statewide only after the state department of education reviews it and agrees with the parent. That meets clause [a] of rung 3, "removal only after a review finding".
+- It fails [b]: the reviewer is a state agency, not "a review committee of educators and parents". The annex names a state agency as a reviewer that meets [a] only, which gives `compound-partial`.
+- It is not rung 4, because the bill does not pull a challenged book while the review runs.
+
+**Still needed:** Shamp's own words on book challenges, and any other bill on this topic she sponsored or voted on. There are no candidate quotes, because the sources contain none of her own words.
+
+**Connectors:** Benevity, Candid, Canva, Figma, Harvey and WorkOS need authorization in claude.ai connector settings before they can be used. The GitHub plugin server failed to connect. This task didn't need any of them.

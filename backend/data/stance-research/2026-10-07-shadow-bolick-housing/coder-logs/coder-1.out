@@ -1,0 +1,8 @@
+I wrote the coder-1 label for Bolick / `housing`. The chair is **BLANK `direction-only`**, so `rests_on` is empty.
+
+- **SB 1229 (2025), Arizona Starter Homes Act:** she was the prime sponsor and voted `BOLICK Y` on Senate third reading, which `Passed 16-13-1-0-0`. That vote happened while she was a senator, so it counts as in-term. The bill stops cities from enforcing minimum lot sizes, setbacks, lot-coverage limits and design rules. That is cutting "the regulations and zoning limits that block private building." Under the 2026-09-26 refinement, a deregulation law like this is on-question but direction-only. One law can't show the rung-5 limit ("at most" cut regulations), because someone on rung 3 or 4 could vote for it too.
+- **Press release:** her own quoted words ("protects private property rights from big government overreach") lean toward the market. They don't rule out subsidies and tax breaks (rung 4) or binding rules (rung 3), so they also only show a side. I coded the release's account of her sponsorship as context, not as a record.
+- **needs_source:** her own words or record on affordable-housing subsidies or tax credits, and on rent caps or required affordable units.
+- **Quote:** I tagged the property-rights line as `direction` and quotable.
+
+Separately, the GitHub MCP server failed to connect, and the Benevity, Candid, Canva, Figma, Harvey and WorkOS connectors still need authorizing in claude.ai connector settings. None of these were needed for this task.

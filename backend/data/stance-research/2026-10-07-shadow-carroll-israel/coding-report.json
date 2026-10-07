@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "376698b5-a276-4977-b2c3-3d15a822f7d8|9a6106f5-9ecc-4b66-8085-5395d7eaaf79|6783e65c-0722-45d9-8579-65327af7c15c",
+      "topic_key": "israel-military-aid",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Frank Carroll's own words on the level of U.S. military aid to Israel or on conditioning it (questionnaire, interview, or issue page)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "376698b5-a276-4977-b2c3-3d15a822f7d8|9a6106f5-9ecc-4b66-8085-5395d7eaaf79|6783e65c-0722-45d9-8579-65327af7c15c",
+      "requests": [
+        "Frank Carroll's own words on the level of U.S. military aid to Israel or on conditioning it (questionnaire, interview, or issue page)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

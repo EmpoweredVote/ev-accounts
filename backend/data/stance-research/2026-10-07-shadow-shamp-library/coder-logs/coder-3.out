@@ -1,0 +1,8 @@
+I wrote the label file with one row for Janae Shamp on `education-library-books`. I coded it BLANK, reason `compound-partial`.
+
+- **The vote:** She voted yes on the final Senate vote for SB1700 (2023), which passed 16–12. That counts as in-term and is not near-unanimous.
+- **What the bill does:** A parent can submit a book to the Department of Education, which reviews it and, if it agrees, adds the book to a statewide prohibited list.
+- **Why no rung is established:** The bill meets only the "review finding before removal" side of rung 3. The reviewer is a state agency, not "a review committee of educators and parents", so rung 3 fails on that clause. It is not rung 4 or 5, because removal follows a review rather than happening on a challenge or report alone.
+- **Passage coding:** Both passages are `record` / `vote` on `SB 1700 (2023)`, coded `direction-only` and `in-term`.
+- **Quote fields:** The vote page carries `SHAMP Y` and `Passed 16-12-2-0-0`. The bill-text page carries the provision quote.
+- **Left empty:** `rests_on`, `needs_source` and `quotes`.

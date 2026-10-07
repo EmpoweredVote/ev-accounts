@@ -1,0 +1,59 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8",
+      "office_id": "9a6106f5-9ecc-4b66-8085-5395d7eaaf79",
+      "topic_id": "6783e65c-0722-45d9-8579-65327af7c15c",
+      "served_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+      "passages": [
+        {
+          "snapshot_id": "d8c2da8d-20f2-5d2a-94f2-ad88dade7057",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-06-17",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Pro-Israel side only: says to continue supporting the ally but names no aid level or condition, so it cannot separate rungs 1 and 2.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "202edb52-d033-595a-a1de-5802b76f9a11",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-10-07",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Support for Israel's right to defend itself names no aid level, so it is rhetorical and cannot support a chair.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Carroll's own words say \"America must stand strong and continue to support our ally\", which shows a pro-Israel side but names no aid level and says nothing on conditions, so it does not match every clause of \"Continue full military aid to Israel with no new conditions\" or any other rung. His 2024 release only supports Israel's right to defend itself and is rhetorical.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "d8c2da8d-20f2-5d2a-94f2-ad88dade7057",
+          "text": "America must stand strong and continue to support our ally in this battle to dismantle Iran's nuclear capabilities.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

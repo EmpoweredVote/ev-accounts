@@ -1,0 +1,15 @@
+I wrote the coder-2 labels file for Shawnna Bolick on `housing`. The row is BLANK `direction-only`, with no numeric chair. I didn't read the file back or run any validation.
+
+The evidence is SB 1229 (2025), the Arizona Starter Homes Act. She is the prime sponsor and voted Yea on third reading. The bill voids municipal minimum-lot-size, setback and lot-coverage limits. By codebook V2 "Refined 2026-09-26", one deregulation law shows the side but not rung 5's "at most" ceiling. The bill is also silent on public housing, subsidies and binding rules, so I didn't seat any rung.
+
+Passage codes:
+- **Press release:** her quoted words are `statement-other`. They defend the bill on property-rights grounds and don't address market pricing, so I coded them `adjacent`.
+- **Vote page:** `record`/`vote`, with `actor_quote` "BOLICK Y" and `tally_quote` "Passed 16-13-1-0-0".
+- **Bill overview:** `record`/`sponsor`, with `actor_quote` "Bolick (Prime)".
+- **Bill text:** `record`/`sponsor`, with `provision_quote` "minimum lot sizes that are more than three thousand square feet".
+
+I included one quote, "The bill also protects private property rights from big government overreach." I coded it V7 `direction`, `v8_quotable` true.
+
+`needs_source` is empty.
+
+The session also reported MCP servers needing authorization or failing to connect (claude.ai Benevity, Candid, Canva, Figma, Harvey and WorkOS, and the GitHub plugin). None were needed for this task.
