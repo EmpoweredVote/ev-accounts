@@ -1,0 +1,23 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+    "instrument": "sb76(2026)",
+    "snapshots": [
+      {
+        "snapshot_id": "181ecadb-9f56-55fa-a8f9-03243bd09eb5",
+        "url": "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/rollcalls/SB0076.240_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "ab2dde00-60b5-5599-9416-dc2001f9844d",
+        "url": "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/SB0076.01.INTR.pdf",
+        "profile": "in-iga-roll-call@2"
+      }
+    ],
+    "generic": [],
+    "profiled": [
+      "amendment-markup-lost"
+    ]
+  }
+]

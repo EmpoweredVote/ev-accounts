@@ -21,6 +21,9 @@
  * url = the OTR page, human_saved_path = the file). Each file names the date On the Record lists AND
  * the date in the source's own file name when they differ — they can (an LWV forum held 2026-03-23 is
  * listed as 2026-06-09), and the election-cycle rule needs the real date.
+ * 🔴 An empty `politicianSlug` in /transcript does NOT mean "unlinked": it is empty whenever the linked
+ * politician has no essentials slug (most council members, 2026-10-07). /api/people/:id/appearances is
+ * the reliable link; the race mode's slug match can miss such people, so prefer --politician.
  * NAME FALLBACK (--city): a person with no LINKED appearance may still speak under their name with no
  * politician link (Mayor Kerry Thomson, Bloomington council 2026-05-06). With --city, every meeting in
  * that city is scanned for an unlinked speaker whose name matches, and those turns are written too,

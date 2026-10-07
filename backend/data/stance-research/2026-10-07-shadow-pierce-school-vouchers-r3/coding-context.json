@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-school-vouchers-r3",
+  "seat": {
+    "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+    "full_name": "Matt Pierce",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2002-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "question_text": "What role should vouchers and school choice play in the public education system?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Eliminating voucher programs that divert taxpayer money from public schools to private institutions"
+        },
+        {
+          "value": 2,
+          "text": "Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones"
+        },
+        {
+          "value": 3,
+          "text": "Allowing income-based voucher programs, open to a wider range of families under an income cap"
+        },
+        {
+          "value": 4,
+          "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child"
+        },
+        {
+          "value": 5,
+          "text": "Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family"
+        }
+      ],
+      "own_words_levels": [
+        "local"
+      ],
+      "annexMd": "# school-vouchers — served revision 88858826-90c0-41c9-a3a4-1d9f5b8c5307 (Season 2)\n\n**Status:** draft (2026-10-01 refresh). Lines marked _(ruled 2026-10-01)_ carry an operator ruling\n(Chris Andrews). Lines marked _(proposed)_ are a drafter's reading, not yet ruled.\n\n**Question:** \"What role should vouchers and school choice play in the public education system?\"\n\n**Orientation:** standard. Rung 1 is most restrictive of vouchers, rung 5 is universal. The rungs\norder **who is eligible**: no one, no one new, families under an income cap, most families, every\nfamily.\n\n**Levels with a lever:** federal, state. The lever is the state programme\nstatute; federal action is mostly tax-credit scholarships (see hard cases). School boards hold no\nlever on vouchers.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"education savings account\" (ESA), \"empowerment scholarship account\", \"scholarship\",\n\"tax-credit scholarship\", \"opportunity scholarship\", \"Choice Scholarship\" (Indiana), \"Utah Fits All\",\n\"education freedom account\", \"qualified student\".\n\n1. **\"Eliminating voucher programs that divert taxpayer money from public schools to private\n   institutions\"**\n   - Means: end the voucher programmes that exist now.\n   - Operative clauses: [a] eliminate existing programmes.\n   - Establishing evidence looks like: a repeal bill, or a vote on a repeal amendment; own words\n     calling for repeal.\n   - Levels that hold a lever: state; federal (federal programmes only).\n   - Known chair-shaped instruments: a single-subject repeal bill.\n   - Commonly confused with rung 2 when the person only opposes an **expansion**.\n\n2. **\"Opposing voucher programs and blocking their expansion, without moving to eliminate existing\n   ones\"**\n   - Means: keep the programmes that exist, but let them grow no further.\n   - Operative clauses: [a] oppose expansion; [b] no repeal.\n   - Establishing evidence looks like: a No on an expansion bill **plus** evidence against repeal. A No\n     vote alone is `direction-only`: it does not separate 1 from 2, and [b] is a \"without\" clause\n     that silence does not meet (V4.2).\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n\n3. **\"Allowing income-based voucher programs, open to a wider range of families under an income\n   cap\"**\n   - Means: vouchers are acceptable when eligibility is limited by family income.\n   - Operative clauses: [a] means-tested (an income cap); [b] open to a wider range of families.\n   - Establishing evidence looks like: authoring or a final-passage vote on a means-tested programme\n     with a cap.\n   - Levels that hold a lever: state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a high cap can admit most families. Code 4 when the\n     passage shows the cap admits most families; code 3 when it shows it does not; when the passage\n     does not let you tell → `direction-only` _(proposed)_.\n   - This ladder has **no low-income-only rung**. A narrow programme for low-income families is\n     income-based → rung 3. Clause [b] \"wider range\" compares with rung 2 (no growth); it is not a\n     separate test of the cap's size. A No on raising an existing cap is still rung-2 territory and\n     needs rung 2's evidence _(ruled 2026-10-01)_.\n\n4. **\"Expanding voucher eligibility to most families so parents can choose the school that best fits\n   their child\"**\n   - Means: most families qualify, but not all.\n   - Operative clauses: [a] most families, not all.\n   - Establishing evidence looks like: an expansion bill with a cap high enough to admit most\n     families.\n   - Levels that hold a lever: state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 when a phase-in ends in universal eligibility: code the end state\n     the instrument enacts (so a phased path to universal is rung 5, not rung 4).\n   - Commonly confused with rung 5 when every student is eligible but the number of awards or the\n     money is capped. The rungs order **eligibility**, not budget size: universal eligibility with a\n     capped appropriation or award count is rung 5 (Utah HB215 had a capped first-year\n     appropriation). A cap written as an eligibility limit (\"only students from …\") is coded by who\n     can qualify _(ruled 2026-10-01)_.\n\n5. **\"Providing universal vouchers so that education funding follows the student to any school —\n   public, private, or religious — chosen by the family\"**\n   - Means: every student qualifies, and the money goes to the school the family picks, religious\n     schools included.\n   - Operative clauses: [a] universal eligibility; [b] any school, including private and religious.\n   - Establishing evidence looks like: a universal ESA or voucher statute (e.g., Utah HB215, 2023). A\n     statute that makes **every student eligible to attend a public school** a qualified student is\n     universal; the definition does not have to say \"all\".\n   - Levels that hold a lever: state.\n   - Known chair-shaped instruments: a single-subject universal ESA or voucher statute.\n   - Commonly confused with rung 4: see rung 4.\n   - [b] and religious schools: a programme that excludes religious schools is not rung 5. A\n     programme whose eligible schools include private schools and does not exclude religious ones\n     meets [b] _(proposed — check against V4.2 \"Silence is not a clause\")_.\n\n**Hard cases:**\n- **A tax-credit scholarship is not rung 5.** It is a tax credit to donors, not funding that follows\n  the student → `adjacent` (see the V4 omnibus example). This was written for the federal credit;\n  the same reasoning applies to a state tax-credit scholarship _(proposed)_.\n- **ESA money spent outside a school** (tutoring, therapy, home education). Non-school uses add\n  choices; they do not remove the private and religious school option. Code the eligibility clause;\n  non-school spending does not exclude rung 5 _(ruled 2026-10-01)_.\n- **Charter schools and public open enrollment** move students among public schools → `adjacent`\n  (charters have their own topic).\n- **A budget vote** that funds an existing programme → V4 `multi-subject`.\n- **A governor's signature** is a record; `chair-shaped` when the signed bill is single-subject.\n"
+    }
+  ]
+}

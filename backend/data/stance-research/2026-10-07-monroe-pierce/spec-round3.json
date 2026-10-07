@@ -1,0 +1,1133 @@
+{
+ "date": "2026-10-07",
+ "batches": [
+  {
+   "name": "pierce-abortion-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "abortion"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2022ss1/bills/senate/1/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 1(ss) (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022ss-sb1-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/SB0001.06.ENRH.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 1(ss) (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022ss-sb1-enrolled.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/rollcalls/SB0001.64_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 1(ss) (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022ss-sb1-rc64h.txt"
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-same-sex-marriage-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "same-sex-marriage"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2014/resolutions/house/joint/3/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HJR 3 (2014)"
+     ],
+     "human_saved_path": "human-saved/iga-2014-hjr3-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/HJ0003.05.ENGH.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HJR 3 (2014)"
+     ],
+     "human_saved_path": "human-saved/iga-2014-hjr3-engrossed.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/rollcalls/HJ0003.70_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HJR 3 (2014)"
+     ],
+     "human_saved_path": "human-saved/iga-2014-hjr3-rc70.txt"
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-religious-freedom-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "religious-freedom"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2015/bills/senate/101/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 101 (2015)"
+     ],
+     "human_saved_path": "human-saved/iga-2015-sb101-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/119/2015/senate/bills/SB0101/SB0101.05.ENRS.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 101 (2015)"
+     ],
+     "human_saved_path": "human-saved/iga-2015-sb101-enrolled.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/119/2015/senate/bills/SB0101/rollcalls/SB0101.305_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 101 (2015)"
+     ],
+     "human_saved_path": "human-saved/iga-2015-sb101-rc305.txt"
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-trans-athletes-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "trans-athletes"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2022/bills/house/1041/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1041 (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022-hb1041-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/HB1041.05.ENRS.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1041 (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022-hb1041-enrolled.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/rollcalls/HB1041.402_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1041 (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022-hb1041-rc.txt"
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/bloomington-indiana-district-state-candidates-democratic-primary-lilliana-young-matt-pierce",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Pierce, who represents District 61 in the Indiana House of Representatives, has held the seat since 2002.",
+      "Matt Pierce, who represents District 61 in the Indiana Statehouse, has held the seat since 2002.",
+      "Here\u2019s what they said: Matt Pierce Pierce, the incumbent, is the assistant Democratic House floor leader and a senior lecturer at the Media School at Indiana University."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-gun-policy-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2022/bills/house/1296/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1296 (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022-hb1296-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/HB1296.04.ENRS.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1296 (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022-hb1296-enrolled.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/rollcalls/HB1296.382_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1296 (2022)"
+     ],
+     "human_saved_path": "human-saved/iga-2022-hb1296-rc382.txt"
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-april-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-deportation-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "deportation"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2026/bills/senate/76/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 76 (2026)"
+     ],
+     "human_saved_path": "human-saved/iga-2026-sb76-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/SB0076.01.INTR.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 76 (2026)"
+     ],
+     "human_saved_path": "human-saved/iga-2026-sb76-introduced.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/rollcalls/SB0076.240_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 76 (2026)"
+     ],
+     "human_saved_path": "human-saved/iga-2026-sb76-rc240h.txt"
+    },
+    {
+     "url": "https://www.indianahousedemocrats.org/news/pierce-rejects-bill-forcing-all-levels-of-state-government-schools-and-universities-to-assist-ice",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.indianahousedemocrats.org/news/house-republicans-reject-amendment-to-unmask-ice",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-redistricting-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "redistricting"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2026/bills/house/1032/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1032 (2026)"
+     ],
+     "human_saved_path": "human-saved/iga-2026-hb1032-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/HB1032.02.COMH.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1032 (2026)"
+     ],
+     "human_saved_path": "human-saved/iga-2026-hb1032-comh.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/rollcalls/HB1032.28_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1032 (2026)"
+     ],
+     "human_saved_path": "human-saved/iga-2026-hb1032-rc28.txt"
+    },
+    {
+     "url": "https://www.indianahousedemocrats.org/news/pierce-reacts-to-the-house-passage-of-republicans-gerrymandered-congressional-map",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/house-republicans-pass-their-gerrymandered",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-healthcare-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "healthcare"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/2026-session-wrap-up-the-wins-the",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-august-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-september-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://iga.in.gov/legislative/2023/bills/house/1472/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1472 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1472-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1472/HB1472.01.INTR.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1472 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1472-introduced.txt"
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/bloomington-indiana-district-state-candidates-democratic-primary-lilliana-young-matt-pierce",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Pierce, who represents District 61 in the Indiana House of Representatives, has held the seat since 2002.",
+      "Matt Pierce, who represents District 61 in the Indiana Statehouse, has held the seat since 2002.",
+      "Here\u2019s what they said: Matt Pierce Pierce, the incumbent, is the assistant Democratic House floor leader and a senior lecturer at the Media School at Indiana University."
+     ]
+    },
+    {
+     "url": "https://www.ipm.org/news/2026-02-18/rep-pierce-faces-first-primary-challenger-in-more-than-20-years",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Matt Pierce in the May 5 primary, ending a 22-year streak of uncontested primaries in Bloomington.",
+      "As Pierce is working through an accelerated legislative session, he\u2019s hoping his experience and track record as a progressive voice will earn a renomination.",
+      "Pierce was first elected to the House of Representatives in 2002, and he said he has not faced a challenger in a primary since 2004."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-medicare-aid-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "medicare/aid"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-august-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/2026-session-wrap-up-the-wins-the",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-september-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-childcare-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "childcare"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-october-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/2026-session-wrap-up-the-wins-the",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/braun-gives-his-state-of-the-state",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/bloomington-indiana-district-state-candidates-democratic-primary-lilliana-young-matt-pierce",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Pierce, who represents District 61 in the Indiana House of Representatives, has held the seat since 2002.",
+      "Matt Pierce, who represents District 61 in the Indiana Statehouse, has held the seat since 2002.",
+      "Here\u2019s what they said: Matt Pierce Pierce, the incumbent, is the assistant Democratic House floor leader and a senior lecturer at the Media School at Indiana University."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-taxes-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "taxes"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-may-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-august-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.indianahousedemocrats.org/news/pierce-comments-on-national-push-to-gerrymander-indianas-congressional-districts",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ipm.org/news/2026-02-18/rep-pierce-faces-first-primary-challenger-in-more-than-20-years",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Matt Pierce in the May 5 primary, ending a 22-year streak of uncontested primaries in Bloomington.",
+      "As Pierce is working through an accelerated legislative session, he\u2019s hoping his experience and track record as a progressive voice will earn a renomination.",
+      "Pierce was first elected to the House of Representatives in 2002, and he said he has not faced a challenger in a primary since 2004."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-school-vouchers-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "school-vouchers"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-june-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-october-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/democratic-candidates-bloomington-state-house-election-public-forum",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Young and Pierce answered questions about school choice, environmental protections, pro-Palestine protests and more at the forum.",
+      "Photo by Adelyn Rabbitt / The Indiana Daily Student By Adelyn Rabbitt Mar 6, 2026 2:40 pm \u00b7 Updated Mar 6, 2026 2:40 pm Two Democratic candidates for Indiana\u2019s House of Representatives District 61, Matt Pierce and Lilliana Young, discussed pro-Palestine protests, school choice, environmental protections and more during a candidate forum Thursday.",
+      "Pierce, the incumbent, is facing a Democratic primary challenger , Lilliana Young, in the statehouse District 61 election for the first time in over two decades."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-tariffs-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "tariffs"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-july-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-data-centers-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "data-centers"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-january-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.indianahousedemocrats.org/news/pierce-votes-for-hb-1002-its-a-step-forward-but-more-could-be-done",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-february-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/democratic-candidates-bloomington-state-house-election-public-forum",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Young and Pierce answered questions about school choice, environmental protections, pro-Palestine protests and more at the forum.",
+      "Photo by Adelyn Rabbitt / The Indiana Daily Student By Adelyn Rabbitt Mar 6, 2026 2:40 pm \u00b7 Updated Mar 6, 2026 2:40 pm Two Democratic candidates for Indiana\u2019s House of Representatives District 61, Matt Pierce and Lilliana Young, discussed pro-Palestine protests, school choice, environmental protections and more during a candidate forum Thursday.",
+      "Pierce, the incumbent, is facing a Democratic primary challenger , Lilliana Young, in the statehouse District 61 election for the first time in over two decades."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-fossil-fuels-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "fossil-fuels"
+   ],
+   "sources": [
+    {
+     "url": "https://www.indianahousedemocrats.org/news/pierce-welcomes-iurc-investigation-calls-on-iurc-to-include-iga-passed-legislation-in-study",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-november-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-february-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/democratic-candidates-bloomington-state-house-election-public-forum",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Young and Pierce answered questions about school choice, environmental protections, pro-Palestine protests and more at the forum.",
+      "Photo by Adelyn Rabbitt / The Indiana Daily Student By Adelyn Rabbitt Mar 6, 2026 2:40 pm \u00b7 Updated Mar 6, 2026 2:40 pm Two Democratic candidates for Indiana\u2019s House of Representatives District 61, Matt Pierce and Lilliana Young, discussed pro-Palestine protests, school choice, environmental protections and more during a candidate forum Thursday.",
+      "Pierce, the incumbent, is facing a Democratic primary challenger , Lilliana Young, in the statehouse District 61 election for the first time in over two decades."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-climate-change-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "climate-change"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-november-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://iga.in.gov/legislative/2014/bills/house/1374/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1374 (2014)"
+     ],
+     "human_saved_path": "human-saved/iga-2014-hb1374-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/118/2014/house/bills/HB1374/HB1374.01.INTR.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1374 (2014)"
+     ],
+     "human_saved_path": "human-saved/iga-2014-hb1374-introduced.txt"
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/democratic-candidates-bloomington-state-house-election-public-forum",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Young and Pierce answered questions about school choice, environmental protections, pro-Palestine protests and more at the forum.",
+      "Photo by Adelyn Rabbitt / The Indiana Daily Student By Adelyn Rabbitt Mar 6, 2026 2:40 pm \u00b7 Updated Mar 6, 2026 2:40 pm Two Democratic candidates for Indiana\u2019s House of Representatives District 61, Matt Pierce and Lilliana Young, discussed pro-Palestine protests, school choice, environmental protections and more during a candidate forum Thursday.",
+      "Pierce, the incumbent, is facing a Democratic primary challenger , Lilliana Young, in the statehouse District 61 election for the first time in over two decades."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-housing-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "housing"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-august-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/braun-gives-his-state-of-the-state",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/democratic-candidates-bloomington-state-house-election-public-forum",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Young and Pierce answered questions about school choice, environmental protections, pro-Palestine protests and more at the forum.",
+      "Photo by Adelyn Rabbitt / The Indiana Daily Student By Adelyn Rabbitt Mar 6, 2026 2:40 pm \u00b7 Updated Mar 6, 2026 2:40 pm Two Democratic candidates for Indiana\u2019s House of Representatives District 61, Matt Pierce and Lilliana Young, discussed pro-Palestine protests, school choice, environmental protections and more during a candidate forum Thursday.",
+      "Pierce, the incumbent, is facing a Democratic primary challenger , Lilliana Young, in the statehouse District 61 election for the first time in over two decades."
+     ]
+    },
+    {
+     "url": "https://www.ipm.org/news/2026-02-18/rep-pierce-faces-first-primary-challenger-in-more-than-20-years",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Matt Pierce in the May 5 primary, ending a 22-year streak of uncontested primaries in Bloomington.",
+      "As Pierce is working through an accelerated legislative session, he\u2019s hoping his experience and track record as a progressive voice will earn a renomination.",
+      "Pierce was first elected to the House of Representatives in 2002, and he said he has not faced a challenger in a primary since 2004."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-voting-rights-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "voting-rights"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-may-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-september-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://iga.in.gov/legislative/2026/bills/house/1339/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1339 (2026)"
+     ],
+     "human_saved_path": "human-saved/iga-2026-hb1339-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1339/HB1339.01.INTR.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1339 (2026)"
+     ],
+     "human_saved_path": "human-saved/iga-2026-hb1339-introduced.txt"
+    },
+    {
+     "url": "https://www.indianahousedemocrats.org/news/pierce-reacts-to-the-house-passage-of-republicans-gerrymandered-congressional-map",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-homelessness-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "homelessness"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/2026-session-wrap-up-the-wins-the",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.idsnews.com/article/2026/03/democratic-candidates-bloomington-state-house-election-public-forum",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Young and Pierce answered questions about school choice, environmental protections, pro-Palestine protests and more at the forum.",
+      "Photo by Adelyn Rabbitt / The Indiana Daily Student By Adelyn Rabbitt Mar 6, 2026 2:40 pm \u00b7 Updated Mar 6, 2026 2:40 pm Two Democratic candidates for Indiana\u2019s House of Representatives District 61, Matt Pierce and Lilliana Young, discussed pro-Palestine protests, school choice, environmental protections and more during a candidate forum Thursday.",
+      "Pierce, the incumbent, is facing a Democratic primary challenger , Lilliana Young, in the statehouse District 61 election for the first time in over two decades."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-civil-rights-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "civil-rights"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-march-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-july-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-ai-regulation-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "ai-regulation"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-june-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.wfyi.org/news/articles/indiana-legislative-task-force-grapples-with-legal-questions-around-ai",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Matt Pierce (D-Bloomington) is one of four lawmakers serving on a bipartisan task force exploring artificial intelligence.",
+      "Matt Pierce (D-Bloomington) said that's a problem he's wrestling with.",
+      "\"So, we as policymakers have to understand \u2014 how is that technology actually working to generate that kind of response and then what, if anything, should we be doing about it so those kinds of responses don't get generated,\" Pierce said."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-economic-development-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "economic-development"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-july-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.indianahousedemocrats.org/news/pierce-votes-for-hb-1002-its-a-step-forward-but-more-could-be-done",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-transportation-priorities-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "transportation-priorities"
+   ],
+   "sources": [
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-august-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://iga.in.gov/legislative/2016/bills/senate/128/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "SB 128 (2016)"
+     ],
+     "human_saved_path": "human-saved/iga-2016-sb128-details.txt"
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-education-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "education-curriculum",
+    "education-library-books",
+    "education-gender-identity",
+    "education-equity-programs",
+    "education-school-police",
+    "education-charter-authorization",
+    "education-school-budget",
+    "education-ai"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2023/bills/house/1608/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1608 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1608-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.05.ENRS.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1608 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1608-enrolled.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1608 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1608-rc220h.txt"
+    },
+    {
+     "url": "https://iga.in.gov/legislative/2023/bills/house/1447/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1447 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1447-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1447/HB1447.04.ENRS.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1447 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1447-enrolled.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1447/rollcalls/HB1447.535_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1447 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1447-rc535h.txt"
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-december-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-may-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.489_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1608 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1608-rc489h.txt"
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-judicial-criminal-justice-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "judicial-criminal-justice"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2018/bills/house/1006/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1006 (2018)"
+     ],
+     "human_saved_path": "human-saved/iga-2018-hb1006-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/legislative/2018/bills/house/1057/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1057 (2018)"
+     ],
+     "human_saved_path": "human-saved/iga-2018-hb1057-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/legislative/2021/bills/house/1127/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1127 (2021)"
+     ],
+     "human_saved_path": "human-saved/iga-2021-hb1127-details.txt"
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-campaign-finance-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "campaign-finance"
+   ],
+   "sources": [
+    {
+     "url": "https://www.journalgazette.net/local/indiana/study-indiana-ranks-last-in-campaign-finance-laws/article_9bc75a20-24c8-11ed-a784-3306e660682f.html",
+     "source_kind": "news",
+     "instruments": [],
+     "pointer_passages": [
+      "Matt Pierce, D-Bloomington, says Supreme Court decisions have complicated efforts to change campaign finance laws.",
+      "Matt Pierce, D-Bloomington, says Supreme Court decisions have complicated efforts to change campaign finance laws.",
+      "Matt Pierce, D-Bloomington, has served in Indiana\u2019s House since 2002."
+     ]
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  },
+  {
+   "name": "pierce-nosource-r3",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "growth-and-development",
+    "jail-capacity",
+    "misinformation",
+    "rent-regulation",
+    "social-security",
+    "ukraine-support",
+    "2020-election",
+    "border-security",
+    "cannabis-policy",
+    "defense-spending",
+    "military-intervention",
+    "israel-military-aid",
+    "minimum-wage",
+    "ranked-choice-voting"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+     "source_kind": "transcript",
+     "instruments": [],
+     "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+   ]
+  }
+ ]
+}

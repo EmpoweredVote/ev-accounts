@@ -1,0 +1,83 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "adbb6866-9677-5cf1-8d0b-b1e0ec49b1e4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Nay on third-reading passage of the near-total ban (62-38); a No vote opposes the ban but does not separate rungs 1-3 on the permissive side.",
+          "record_kind": "vote",
+          "actor_quote": "Eberhart Jackson Pierce",
+          "tally_quote": "Yea 62 Abortion Nay 38 Excused 0 Not Voting 0"
+        },
+        {
+          "snapshot_id": "645cd896-96e7-5d93-99f8-450fd1ea1f4c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "a criminal act, except when performed under the following circumstances:",
+          "note": "Enrolled text: abortion criminal except listed exceptions (health/life, lethal anomaly, rape/incest to 10 weeks); voting No on it shows only opposition to the ban, not a gestational rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7393f38c-49bb-5ab4-a806-12d3b16873e0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill details page; digest only, no operative text and no record of Pierce's action.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3d73ebd4-34a3-5a67-b320-e642e778976a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum transcript covers democracy, economy, energy, LGBTQ issues and redistricting; nothing on abortion.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce voted Nay on SB 1(ss) (2022), which makes abortion 'a criminal act, except when performed under the following circumstances' (health/life, lethal anomaly, rape/incest to 10 weeks). A No on a ban shows he is on the side against banning, but it does not show whether he would 'keep abortion legal at every stage of pregnancy, with no time limit', through the second trimester, or only the first trimester; his forum remarks do not address abortion.",
+      "needs_source": [
+        "Pierce's own words on gestational limits or exceptions (questionnaire, issue page, floor speech or explanation of vote on SB 1(ss) 2022)",
+        "Any amendment roll call on SB 1(ss) (2022) setting a specific gestational limit or exception on which Pierce voted"
+      ],
+      "quotes": []
+    }
+  ]
+}

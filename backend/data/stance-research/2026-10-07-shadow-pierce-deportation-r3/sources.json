@@ -1,0 +1,87 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-deportation-r3",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2026/bills/senate/76/details",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "SB 76 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2026-sb76-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/SB0076.01.INTR.pdf",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "SB 76 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2026-sb76-introduced.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/rollcalls/SB0076.240_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "SB 76 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2026-sb76-rc240h.txt"
+    },
+    {
+      "url": "https://www.indianahousedemocrats.org/news/pierce-rejects-bill-forcing-all-levels-of-state-government-schools-and-universities-to-assist-ice",
+      "source_kind": "own-site",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.indianahousedemocrats.org/news/house-republicans-reject-amendment-to-unmask-ice",
+      "source_kind": "own-site",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "source_kind": "transcript",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+  ]
+}

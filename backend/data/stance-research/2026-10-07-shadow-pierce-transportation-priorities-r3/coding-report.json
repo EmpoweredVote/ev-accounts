@@ -1,0 +1,59 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus"
+  ],
+  "rows": [
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic_key": "transportation-priorities",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 0
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}
