@@ -342,6 +342,35 @@ describe('getPoliticianCitations — a blanked stance reads as no stance', () =>
   });
 });
 
+// Q2 (ruling 2026-10-07): voters see an empty spoke for a blank — no reasoning, no citations. Each
+// public read drops a blank AFTER its newest-season collapse, never inside it (inside would serve an
+// older season's reasoning for a position the person no longer holds).
+describe('a blank (value 0) is hidden from every public context read (ruling Q2)', () => {
+  beforeEach(() => mockQuery.mockReset());
+  it('getPoliticianCitations drops the block after the pa collapse', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianCitations('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/AND \(pa\.value IS NULL OR pa\.value <> 0\)/);
+    // after the LATERAL's LIMIT 1, i.e. in the outer WHERE
+    expect(sql.indexOf('pa.value IS NULL OR pa.value <> 0')).toBeGreaterThan(sql.indexOf(') pa ON true'));
+  });
+  it('getPoliticianContext picks the newest season first, then drops it when that season answered 0', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    expect(await getPoliticianContext('p1', 't1')).toBeNull();
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/LIMIT 1\s*\) x\s*WHERE NOT EXISTS/);
+    expect(sql).toMatch(/a\.season_id = x\.season_id AND a\.value = 0/);
+  });
+  it('getPoliticianContextAll collapses per topic first, then drops blanked topics', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContextAll('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/ORDER BY c\.topic_id, s\.number DESC\s*\) x\s*WHERE NOT EXISTS/);
+    expect(sql).toMatch(/a\.topic_id = x\.topic_id AND a\.season_id = x\.season_id AND a\.value = 0/);
+  });
+});
+
 // 🔴 SEVENTEEN OF SEASON 2'S SIXTY TOPICS ARE NOT is_live (measured 2026-09-22).
 // They were created staged (is_live = false) and went live when Season 2
 // OPENED, which flips no boolean. The citation reader still gated on
