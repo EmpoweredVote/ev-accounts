@@ -46,6 +46,10 @@
  * blank that would remove a chair voters see is checked against that chair's own cited sources
  * (blank-unexamined-fallback, operator ruling 2026-10-07 Q3): every one that still loads must be among
  * the blank's examined sources, or the row goes back to research.
+ * --season open|draft|<uuid> (default open, unchanged): the season the batch is checked against and written to.
+ *   `draft` pre-stages a season that has not opened. The bundle must have been built with the same --season
+ *   (build-stance-topic-bundle.ts writes <dir>/season.json for a non-open season; a mismatch exits 2). Writes land in
+ *   that season only — hidden from voters (SEASON_IS_PUBLISHED) until it opens; the people are not stamped researched.
  * Exit: 0 ok, 1 --apply finished with row errors, 2 usage / unreadable / refused batch.
  *
  * Idempotent: re-running the same batch is safe. Stance writes are season-aware
@@ -87,7 +91,12 @@ import {
   writeVerifiedStance,
   ladderMatches,
 } from '../src/lib/researchEvidenceService.js';
-import { OPEN_SEASON_ANSWER_SQL, DISPLAYED_VALUES_SQL, servedRevisionLateral } from '../src/lib/seasonService.js';
+import {
+  OPEN_SEASON_ANSWER_SQL, ANSWERS_IN_SEASON_SQL, DISPLAYED_VALUES_SQL, servedRevisionLateral,
+} from '../src/lib/seasonService.js';
+import {
+  resolveSeasonTarget, seasonSpecFromArgv, assertBundleSeason, SeasonTargetError, type SeasonTarget,
+} from './lib/seasonTarget.js';
 import { decidePublish, type Decision } from './lib/stancePublishPolicy.js';
 import { GATE_CHECK_IDS, checkBlankExaminedFallback, type GateFinding } from './lib/stanceGate.js';
 import { buildLedgerFile, politicianIdsInBatch, type LedgerRow } from './lib/writtenLedger.js';
@@ -125,6 +134,10 @@ if (!Number.isInteger(THRESHOLD) || THRESHOLD < 1) {
   console.error(`ERROR: --threshold (or RESEARCH_STANCES_THRESHOLD) must be an integer >= 1, got ${JSON.stringify(rawThreshold)}`);
   process.exit(2);
 }
+// --season <open|draft|uuid>, default open (unchanged). A draft season's rows are written with that
+// season's id and are hidden from voters until it opens (SEASON_IS_PUBLISHED on every voter read).
+let SEASON_SPEC: string;
+try { SEASON_SPEC = seasonSpecFromArgv(process.argv); } catch (e) { console.error(`ERROR: ${(e as Error).message}`); process.exit(2); }
 const BATCH_ID = opt('--batch-id', basename(DIR.replace(/\/+$/, '')))!;
 const APPLY = flag('--apply');
 // Review-all unless the operator opts in, per run (ruling 2026-09-22). Deliberately argv-only:
@@ -376,27 +389,42 @@ for (const name of csvNames) {
 // question the open season asks; is_live and the season's set disagreed on 2026-09-22.
 // served_revision_id: the revision whose text voters read now (ADR 0006, servedRevisionLateral).
 // LEFT lateral: a pin with no served revision still counts as asked, and reads as drift below.
+let season: SeasonTarget;
+try {
+  season = await resolveSeasonTarget(SEASON_SPEC, (q, p) => pool.query(q, p));
+  assertBundleSeason(DIR, season); // a draft bundle is never checked against the open season, or the reverse
+} catch (e) {
+  if (!(e instanceof SeasonTargetError)) throw e;
+  console.error(`ERROR: ${e.message}`);
+  await pool.end();
+  process.exit(2);
+}
+const NAMED_SEASON = season.status !== 'open'; // false = the open season, through the original statements
+// A DRAFT season's pin may be an approved, not-yet-published revision: it is the served text (ADR 0006).
+const servedOpts = season.status === 'draft' ? { includeApprovedWhen: 'true' } : {};
 const { rows: topicRows } = await pool.query<{
   topic_id: string; topic_key: string; topic_revision_id: string; served_revision_id: string | null; season_id: string;
 }>(
   `SELECT t.id AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id,
           eff.id::text AS served_revision_id, sq.season_id::text AS season_id
      FROM inform.season_questions sq
-     JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+     JOIN inform.seasons s ON s.id = sq.season_id AND s.id = $1::uuid
      JOIN inform.compass_topics t ON t.id = sq.topic_id
-     LEFT JOIN ${servedRevisionLateral('sq.topic_revision_id', 'eff')} ON true`,
+     LEFT JOIN ${servedRevisionLateral('sq.topic_revision_id', 'eff', servedOpts)} ON true`,
+  [season.id],
 );
 const topicIdByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_id]));
 const openRevisionByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.topic_revision_id]));
 const openServedByKey = new Map(topicRows.map((t) => [normTopic(t.topic_key), t.served_revision_id]));
 if (topicRows.length === 0) {
-  console.error('ERROR: no open season (or it asks no questions) — nothing can be verified against a pin or written; open a season first');
+  console.error(`ERROR: no ${season.status} season (or it asks no questions) — nothing can be verified against a pin or written; open a season first`);
   await pool.end();
   process.exit(2);
 }
 // One open season (seasons_one_open), so every row carries the same season_id. Stored on each
 // queued row with the bundle's revision (CA_0264), so approval can refuse a row re-pinned later.
-const openSeasonId = topicRows[0].season_id;
+const openSeasonId = topicRows[0].season_id; // the TARGET season's id (the open season unless --season says otherwise)
+if (NAMED_SEASON) console.log(`season: ${season.name} (${season.id}) [${season.status}] — writes go to this season only; voters see none of it until it opens`);
 
 // ---------------------------------------------------------------- the ladder must still be the pin (I7)
 // A value is an answer to one ladder's wording. If the open season re-pinned a topic (or dropped
@@ -458,7 +486,9 @@ const failedUrls = (row: VerifiedRow) => row.failedSources.map((s) => s.url);
 // Existing OPEN-season values — the thing a write would replace.
 const existing = new Map<string, number>();
 for (const pid of new Set([...idByName.values()].filter((v): v is string => Boolean(v)))) {
-  const { rows } = await pool.query<{ topic_id: string; value: string }>(OPEN_SEASON_ANSWER_SQL, [pid]);
+  const { rows } = NAMED_SEASON
+    ? await pool.query<{ topic_id: string; value: string }>(ANSWERS_IN_SEASON_SQL, [pid, season.id])
+    : await pool.query<{ topic_id: string; value: string }>(OPEN_SEASON_ANSWER_SQL, [pid]);
   for (const r of rows) existing.set(`${pid} ${r.topic_id}`, Number(r.value));
 }
 
@@ -648,8 +678,9 @@ if (!APPLY) {
       await writeVerifiedStance({
         politicianId: pid, topicId: tid, value: row.stance.value as number,
         reasoning: row.stance.reasoning, sources: row.verifiedSources.map((s) => s.url), editorId: EDITOR_ID,
+        ...(NAMED_SEASON ? { seasonId: season.id } : {}),
       }, c);
-      const inserted = await accumulateEvidence(evRows, c);
+      const inserted = await accumulateEvidence(evRows, c, NAMED_SEASON ? { seasonId: season.id } : {});
       await c.query('COMMIT');
       pushed++; snippetsAttempted += evRows.length; snippetsInserted += inserted;
       writtenLedgerRows.push({
@@ -719,7 +750,9 @@ if (!APPLY) {
   // was researched. Taken from stances.csv (csvNames/idByName, resolved above from allStances),
   // never from what got pushed.
   const batchPoliticianIds = politicianIdsInBatch(csvNames, idByName);
-  if (batchPoliticianIds.length) {
+  // A draft-season run does NOT stamp "researched" on the person: that flag is read by the live
+  // research queue and coverage, and the research is not in any published season yet.
+  if (batchPoliticianIds.length && !NAMED_SEASON) {
     // C118: this stamp is deliberately unconditional on whether any row above pushed, was queued,
     // or errored — it records that these people were RESEARCHED this run, not that anything was
     // WRITTEN for them. A research timestamp with zero answers is still a legitimate result (see the
@@ -735,7 +768,7 @@ if (!APPLY) {
   console.log(
     `\nSUMMARY: pushed=${pushed} (snippets inserted=${snippetsInserted} of ${snippetsAttempted} attempted) `
     + `reviewed=${reviewed} left-alone(already decided)=${leftDecided} not-in-admin-queue=${notInAdminQueue.length} `
-    + `stamped=${batchPoliticianIds.length} errors=${errors.length}`,
+    + `stamped=${NAMED_SEASON ? 0 : batchPoliticianIds.length} errors=${errors.length}`,
   );
   if (snippetsInserted < snippetsAttempted) {
     console.log(`  ${snippetsAttempted - snippetsInserted} snippet(s) were not inserted: the unique index on `

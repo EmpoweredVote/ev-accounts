@@ -7,6 +7,7 @@
  * docs/superpowers/specs/2026-05-31-elections-mode-design.md.
  */
 import { pool } from './db.js';
+import { SEASON_IS_PUBLISHED } from './seasonService.js';
 import { STATE_ABBR_TO_FIPS } from './treasuryService.js';
 import { HAS_ANY_CONTRIBUTION_SQL } from './donorCoverage.js';
 import {
@@ -101,7 +102,8 @@ export async function racesForStateDate(stateAbbr: string, date: string): Promis
        --   classifyRaceTier, its tests and the map payload all key on "stanced",
        --   so renaming it for accuracy would ripple past this file for no
        --   behavioural gain. Read the comment, not the column name.
-       LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
+       LEFT JOIN (SELECT DISTINCT a.politician_id FROM inform.politician_answers a
+              JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}) ans
               ON ans.politician_id = p.id
       WHERE e.state = $1 AND e.election_date = $2
       GROUP BY r.id, r.position_name, r.seats, d.ocd_id`,
