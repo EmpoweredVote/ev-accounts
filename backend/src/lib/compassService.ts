@@ -437,7 +437,10 @@ export async function getCompassPoliticians() {
      --   counts above ARE zero-guarded, so such a person gets an honest empty
      --   compass rather than a wrong one. Measured 2026-09-02: nobody is in that
      --   state — every politician holding a blank holds at least 7 other answers.
-     JOIN inform.politician_answers pa ON pa.politician_id = p.id
+     -- A DRAFT season's answers (research pre-staged before it opens) do not make a person listable.
+     JOIN (SELECT DISTINCT a.politician_id FROM inform.politician_answers a
+             JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}) pa
+       ON pa.politician_id = p.id
      -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
      LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
      LEFT JOIN essentials.offices o ON o.id = och.office_id
@@ -574,6 +577,7 @@ export async function getCandidates() {
         )
         OR EXISTS (
           SELECT 1 FROM inform.politician_answers pa
+            JOIN inform.seasons s ON s.id = pa.season_id AND ${SEASON_IS_PUBLISHED}
           WHERE pa.politician_id = rc.politician_id AND pa.value != 0
         )
       )`
@@ -786,6 +790,8 @@ export async function getPoliticianContext(politicianId: string, topicId: string
                      AND e.topic_id = c.topic_id
                      AND e.source_url = ANY(COALESCE(c.sources, ARRAY[]::text[]))
                      AND e.source_date IS NOT NULL
+                     -- Evidence written for a DRAFT season (research pre-staged before it opens) is not published.
+                     AND NOT EXISTS (SELECT 1 FROM inform.seasons ds WHERE ds.id = e.season_id AND ds.status = 'draft')
                    ORDER BY e.source_url, e.source_date ASC, e.snippet_index ASC
                 ) d
             ), '[]'::jsonb) AS evidence
@@ -1312,6 +1318,9 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
         LIMIT 1
      ) pc ON true
      WHERE pce.politician_id = $1
+       -- Evidence written for a DRAFT season (research pre-staged before it opens) is not published:
+       -- without this, a draft snippet for a pair that has a published context would render under it.
+       AND NOT EXISTS (SELECT 1 FROM inform.seasons ds WHERE ds.id = pce.season_id AND ds.status = 'draft')
        -- 🔴 THE TOPIC SET FOLLOWS THE SEASON THIS BLOCK SHOWS — not is_live, and
        -- not the open season. This used to be "ct.is_live = true" on the join,
        -- which hid every citation on the 17 Season 2 topics created staged

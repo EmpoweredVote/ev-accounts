@@ -34,6 +34,7 @@
  */
 
 import { pool } from './db.js';
+import { SEASON_IS_PUBLISHED } from './seasonService.js';
 import { listCoverageStates, readCoverageFile, type Tristate } from './coverageService.js';
 import { toSlug, PLACE_STRIP } from './electionsMap.js';
 import { aggregateUnits, type Unit } from './coverageBivariate.js';
@@ -236,7 +237,8 @@ async function statsByJurisdiction(stateCode: string): Promise<Map<string, Juris
      --   caused. Measured 2026-09-02: every politician holding a blank holds at
      --   least 7 other answers, so this count is identical either way today —
      --   the note is here so the next reader does not "fix" it.
-     LEFT JOIN (SELECT DISTINCT politician_id FROM inform.politician_answers) ans
+     LEFT JOIN (SELECT DISTINCT a.politician_id FROM inform.politician_answers a
+              JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}) ans
             ON ans.politician_id = p.id
      WHERE p.is_active = true
        AND d.ocd_id LIKE 'ocd-division/country:us/state:' || $1 || '/%'

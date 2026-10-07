@@ -3,11 +3,12 @@
  * Reads coding-context.json, snapshots.json and labels/coder-{1,2,3}.json; writes coding-report.json
  * and needs-source.json. Changes NOTHING that is published. --apply stores the labels in
  * inform.stance_coder_labels (needs CA_<slot> applied and the operator's OK).
- *   npx tsx scripts/code-stance-batch.ts --dir <batch> --season-id <uuid> --models "opus,sonnet,sonnet" [--apply]
+ *   npx tsx scripts/code-stance-batch.ts --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) --models "opus,sonnet,sonnet" [--apply]
  * One model ("--models opus") is the Opus-alone production run (ruling 2026-10-07): only slot 1 is
  * read and stored; slots 2 and 3 report "file missing" and M1 is undefined, which is expected.
  */
 import 'dotenv/config';
+import { seasonIdFromArgs, SeasonTargetError } from './lib/seasonTarget.js';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
@@ -21,10 +22,21 @@ import { loadSourceProfiles } from './lib/sourceProfiles.js';
 import { profileDivergences } from './lib/profileDivergence.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
-const dir = arg('--dir'); const seasonId = arg('--season-id'); const models = (arg('--models') ?? '').split(',');
+const dir = arg('--dir'); const models = (arg('--models') ?? '').split(',');
+// --season-id <uuid> (as before) or --season open|draft|<uuid>; a batch dir built for another season is refused.
+let seasonId: string | undefined;
 const APPLY = process.argv.includes('--apply');
+try {
+  // A uuid (--season-id, as before) needs no database; --season open|draft resolves through the pool.
+  seasonId = (dir ? await seasonIdFromArgs(process.argv, dir,
+    async (q, p) => (await import('../src/lib/db.js')).pool.query(q, p)) : null) ?? undefined;
+} catch (e) {
+  if (!(e instanceof SeasonTargetError)) throw e;
+  console.error(`ERROR: ${e.message}`);
+  process.exit(2);
+}
 if (!dir || !seasonId || (models.length !== 3 && models.length !== 1) || models.some((m) => m.trim().length === 0)) {
-  console.error('usage: --dir <batch> --season-id <uuid> --models "m1,m2,m3" | "m1" (slot 1 only; each name non-empty) [--apply]');
+  console.error('usage: --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) --models "m1,m2,m3" | "m1" (slot 1 only; each name non-empty) [--apply]');
   process.exit(2);
 }
 
