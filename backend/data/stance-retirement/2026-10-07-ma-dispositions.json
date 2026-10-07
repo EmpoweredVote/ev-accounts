@@ -1,0 +1,1109 @@
+{
+  "pass": "The Massachusetts cohort of the national stance-sourcing audit.",
+  "read_on": "2026-10-07",
+  "written_by": "migration 1899",
+  "cohort_measured_fresh": {
+    "keys_citing_malegislature": 1551,
+    "legislators": 197,
+    "profile_page_only": 232,
+    "cite_a_bill_page": 927,
+    "cite_a_roll_call": 17,
+    "on_immigration_and_therefore_unwritable": 105,
+    "note": "The recorded backlog said 'MA 422'. Re-measured rather than inherited. The two defects fixed here cut ACROSS source classes, so neither the old number nor any single class is the unit."
+  },
+  "defect_1_default_chairs": {
+    "written": 35,
+    "blocked": 4,
+    "finding": "The row concedes there is no evidence and seats the middle anyway: \"Not tracked by Act on Mass. No immigration legislation found in sponsored bills. Moderate Democrat default.\" A CENTRE CHAIR IS A CLAIM, NOT A DEFAULT -- chair 3 is shown to voters as this person's position, and the corpus already has a way of saying unknown: value 0.",
+    "the_wider_class": "106 MA rows reason from a NON-SPONSORSHIP or from absence in a third-party tracker. AN ABSENT SIGNATURE IS NOT A VOTE AGAINST. Only the self-condemning subset -- the rows that actually say \"default\" or \"insufficient evidence\" -- was written here, because that needs no judgement call. The other 67 are recorded and owed a reading.",
+    "false_positive_excluded": "Sal N. DiDomenico / judicial-transparency uses \"a default-to-openness philosophy\" in the opposite sense and cites real bills (S.1066, S.1068). Not a defect."
+  },
+  "defect_2_h4264_cluster": {
+    "rows": 39,
+    "legislators": 36,
+    "finding": "39 rows cite malegislature.gov/Bills/192/H4264 as \"the Massachusetts climate roadmap\" or \"the Environmental Justice Policy Act\". H.4264 OF THE 192nd IS \"An Act establishing a year-round market rate rental housing trust in the town of Truro\".",
+    "the_number_is_right_for_a_different_court": "H.4264 of the 191st IS \"An Act relative to environmental justice in the commonwealth\". MA renumbers every General Court exactly as Maryland renumbers every session -- the hazard that nearly produced a mass false finding in migration 1898. Every cited number was resolved in the court its URL names AND in every other court before any verdict. The real climate roadmap is S.9 of the 192nd, which this corpus cites correctly on 21 other rows.",
+    "five_verdicts_not_one": {
+      "NOT_DISTINCTIVE (28, blanked)": "Claim support for the roadmap. S.9 passed the House 144-14 and the Senate 39-1. A near-unanimous vote cannot establish a DISTINCTIVE position (Newhouse 385-41, mig 1894; Dingell 417-10, mig 1896). 91% of the House voted the same way.",
+      "ROLLCALL_REPAIR (3, repaired, chair unchanged)": "Berthiaume, McKenna and Frost say they voted AGAINST it, and the roll call confirms it. THE CONVERSE OF THE LEHMAN RULE: dissent from a 91% majority IS distinctive -- 14 of 158. Citation repaired to S.9 + the roll call; chair 4 kept after comparing the rung text.",
+      "INVERTED_VOTE (1, blanked)": "Colleen M. Garry's row says she \"voted for the 2021 climate roadmap bill\". SHE VOTED NAY -- she is one of the fourteen. Retiring on the citation alone would have been right for the wrong reason; trusting it would have left an inverted chair standing.",
+      "TRUE_BUT_LADDER_SCOPE (3, blanked, claim preserved)": "Madaro, Tyler and Holmes ARE on the 87-name Cosponsors page of H.4264/191 (Madaro first, as an original petitioner). But the bill DIED (\"No further action taken\", 1/5/2021) so it was never \"signed into law\", and Season 2 rewrote local-environment rung 1 from \"require green space, tree preservation and environmental review\" to \"make environmental protection the overriding priority -- block or sharply limit development\". Co-sponsoring a cumulative-impact review bill is not evidence of blocking development. The Carson call of migration 1896; for the ladder-scope register. The verified fact is written into the blank.",
+      "NOT_A_COSPONSOR (1, blanked)": "David Biele served in the 191st but is NOT among the 87. A checked absence.",
+      "NOT_SERVING (3, blanked)": "Giannino (from the 192nd), Garcia and Montaño (from the 193rd) were NOT IN THE LEGISLATURE when H.4264/191 existed. The claim is IMPOSSIBLE, not merely unsupported. CHECK TENURE BEFORE READING A SPONSORSHIP OR A NON-VOTE."
+    },
+    "roll_call_parse_is_asymmetric": "The PDF is a four-column grid that pdftotext splits mid-cell, so continuation names lose their marker. The 14 NAYS parse cleanly and were verified against the roll call's OWN declared total of 14 before any name was used. The YEA parse recovers only 39 of 144, so NOTHING is asserted from it: this migration proves someone voted Nay, never that someone voted Yea. Every claim in the migration respects that limit."
+  },
+  "blocked": {
+    "keys_here": 4,
+    "ma_keys_on_immigration": 105,
+    "running_total_unfixable": "migs 1896 (3) + 1897 (3) + 1898 (20) + 1899 (4) = 30 defective chairs unfixable because `immigration` has no Season 2 pin."
+  },
+  "not_fixed_recorded": {
+    "the_676_bill_sweep": "A sweep of every one of the 676 distinct bills this cohort cites -- \"does the cited bill say what the row says it says?\" -- was still running when this migration was cut. The H.4264 cluster is ONE bill out of 676, found only because it was the most-cited (39 rows). The sweep is the way to find the rest and is the next step. Method and cache are in the scratchpad; the key rule is to resolve a number in EVERY court before calling it wrong.",
+    "the_232_profile_only_keys": "Need the per-court Sponsored/Cosponsored lists the way migration 1898 read Maryland's (/Legislators/Profile/<code>/<court>/Bills/Sponsored). Untouched here.",
+    "act_on_mass_uncited": "147 MA rows name \"Act on Mass\" as their evidence; 20 of them do not cite it as a source at all. Uncited evidence, recorded."
+  },
+  "rows": [
+    {
+      "politician": "Adrian C. Madaro",
+      "topic": "local-environment",
+      "disposition": "BLANK",
+      "klass": "TRUE_BUT_LADDER_SCOPE",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/ACM1"
+      ],
+      "original_reasoning": "Madaro authored and championed the Massachusetts Environmental Justice Policy Act (H.4264/S.2820), signed into law in 2021, which requires state agencies to consider disproportionate environmental burdens on low-income communities of color. East Boston — his district — is a designated Environmental Justice community facing air quality impacts from Logan Airport, the highway system, and industrial facilities. He has been the Legislature's leading voice on environmental justice."
+    },
+    {
+      "politician": "Brian W. Murray",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/BWM1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Murray supported the Massachusetts climate roadmap legislation (H.4264, 2021) which set binding emissions reductions targets and expanded offshore wind procurement. He has backed clean energy transition legislation in the 194th General Court consistent with the MA Democratic caucus position on climate action."
+    },
+    {
+      "politician": "Bruce J. Ayers",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20251114032517/https://actonmass.org/legislators/bruce-ayers/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Ayers voted for the 2021 MA climate roadmap committing to net-zero emissions by 2050. He has supported clean energy legislation and offshore wind investment. His coastal South Shore district is particularly vulnerable to climate change impacts. His record reflects mainstream Democratic support for state climate goals."
+    },
+    {
+      "politician": "Chynah Tyler",
+      "topic": "local-environment",
+      "disposition": "BLANK",
+      "klass": "TRUE_BUT_LADDER_SCOPE",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/C_T1"
+      ],
+      "original_reasoning": "Tyler co-sponsored the Environmental Justice Policy Act (H.4264) and has been among its strongest advocates in the House. Roxbury is a designated EJ community with elevated air pollution from I-93 and Route 1. She has championed green infrastructure investment, urban heat island mitigation, and air quality improvements specifically for EJ communities of color."
+    },
+    {
+      "politician": "Colleen M. Garry",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "INVERTED_VOTE",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20260310193641/https://actonmass.org/legislators/colleen-garry/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Garry voted for the 2021 climate roadmap bill overall but has a more moderate record on aggressive climate mandates than her Cambridge and Somerville colleagues. Her Merrimack Valley district has concerns about energy costs and manufacturing impacts of rapid climate policy changes. Her record reflects a balanced approach supporting climate goals while being cautious about economic impacts on her district."
+    },
+    {
+      "politician": "Daniel M. Donahue",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/DMD1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Donahue supported the Massachusetts climate roadmap (H.4264, 2021) and clean energy legislation in the 194th General Court. He has backed climate action and clean energy transition consistent with the MA Democratic caucus, supporting reduced emissions and renewable energy development for Worcester and central Massachusetts."
+    },
+    {
+      "politician": "David A. LeBoeuf",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/DAL1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "LeBoeuf has been an active advocate for aggressive climate action in the MA House, supporting the 2021 climate roadmap (H.4264) and clean energy legislation. He co-sponsored bills calling for even more aggressive emissions reductions and has been among the more vocal climate advocates in the legislature, backing clean energy investment for Worcester and central Massachusetts."
+    },
+    {
+      "politician": "David Biele",
+      "topic": "local-environment",
+      "disposition": "BLANK",
+      "klass": "NOT_A_COSPONSOR",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/D_B1"
+      ],
+      "original_reasoning": "Biele co-sponsored environmental justice legislation including H.4264 protections for communities of color facing disproportionate pollution. Chinatown — the densest part of his district — is a designated Environmental Justice community surrounded by highway infrastructure (Mass Pike, I-93) and faces significant air quality burdens. He has been an advocate for reducing highway pollution impacts and investing in urban green infrastructure."
+    },
+    {
+      "politician": "David K. Muradian",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/DKM1"
+      ],
+      "original_reasoning": "Muradian voted against the Massachusetts climate roadmap (H.4264, 2021) as part of the Republican minority opposing binding emissions reduction mandates. He has expressed concerns about the economic impact of aggressive climate legislation on businesses and residents in his suburban Worcester County district."
+    },
+    {
+      "politician": "Donald R. Berthiaume",
+      "topic": "climate-change",
+      "disposition": "REPAIR",
+      "klass": "ROLLCALL_REPAIR",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 4,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/DRB1"
+      ],
+      "original_reasoning": "Berthiaume voted against the Massachusetts climate roadmap legislation (H.4264, 2021) as part of the Republican minority that opposed binding emissions reduction mandates and accelerated clean energy timelines. He has expressed concerns about the economic costs of aggressive climate legislation on working families and businesses in his rural district."
+    },
+    {
+      "politician": "James J. O'Day",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/JJO1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "O'Day supported the Massachusetts climate roadmap (H.4264, 2021) and clean energy legislation in the 194th General Court. He has backed climate action and clean energy transition consistent with the MA Democratic caucus, supporting reduced emissions and renewable energy development."
+    },
+    {
+      "politician": "James M. Murphy",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20251114021146/https://actonmass.org/legislators/james-murphy/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Murphy voted for the 2021 MA climate roadmap committing to net-zero emissions by 2050. His coastal South Shore district gives him particular awareness of climate impacts including sea-level rise and storm surge. He supports the state's climate framework while being attentive to economic impacts on working-class constituents."
+    },
+    {
+      "politician": "Jessica A. Giannino",
+      "topic": "local-environment",
+      "disposition": "BLANK",
+      "klass": "NOT_SERVING",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/JAG1"
+      ],
+      "original_reasoning": "Giannino co-sponsored the Environmental Justice Policy Act (H.4264) and has advocated for air quality improvements in East Boston. Her district faces elevated particulate matter and noise pollution from Logan Airport operations, and she has been an active voice for addressing these environmental burdens on her predominantly immigrant community."
+    },
+    {
+      "politician": "John J. Mahoney",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/JJM2/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Mahoney supported the Massachusetts climate roadmap (H.4264, 2021) and clean energy legislation in the 194th General Court. He has backed climate action and clean energy transition consistent with the MA Democratic caucus position, supporting renewable energy development for Worcester and central Massachusetts."
+    },
+    {
+      "politician": "John J. Marsi",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/JJM1"
+      ],
+      "original_reasoning": "Marsi voted against the Massachusetts climate roadmap (H.4264, 2021) as part of the Republican minority opposing binding emissions reduction mandates and accelerated clean energy timelines. He has expressed concerns about economic costs to rural communities and businesses from aggressive climate regulations."
+    },
+    {
+      "politician": "Jonathan D. Zlotnik",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/JDZ1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Zlotnik co-sponsored the 2021 Massachusetts climate roadmap legislation (H.4264) that set binding emissions reductions targets and expanded offshore wind procurement. He has supported clean energy transition bills in the 194th General Court, indicating strong support for state-level climate action consistent with the Massachusetts Democratic caucus position."
+    },
+    {
+      "politician": "Joseph D. McKenna",
+      "topic": "climate-change",
+      "disposition": "REPAIR",
+      "klass": "ROLLCALL_REPAIR",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 4,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/JDM1"
+      ],
+      "original_reasoning": "McKenna voted against the Massachusetts climate roadmap (H.4264, 2021) as part of the Republican minority opposing binding emissions reduction mandates. He has raised concerns about economic costs of aggressive climate legislation on businesses and residents in his rural southern Worcester County district."
+    },
+    {
+      "politician": "Joseph W. McGonagle",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20260310194841/https://actonmass.org/legislators/joseph-mcgonagle/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "McGonagle voted for the 2021 MA climate roadmap bill committing to net-zero emissions by 2050. He has supported offshore wind investment and clean energy legislation. His record on climate is moderate-supportive: he backs the mainstream MA climate framework but is less vocal on aggressive phase-out measures."
+    },
+    {
+      "politician": "Judith A. Garcia",
+      "topic": "local-environment",
+      "disposition": "BLANK",
+      "klass": "NOT_SERVING",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/JAG2"
+      ],
+      "original_reasoning": "Garcia co-sponsored the Environmental Justice Policy Act (H.4264) and has been among its most passionate advocates. Chelsea is the state's most densely populated city and has long served as a sacrifice zone for industrial and fossil fuel infrastructure. She has championed air quality monitoring, GreenWave clean energy incentives for EJ communities, and phasing out the Chelsea Creek fuel terminal."
+    },
+    {
+      "politician": "Kate Donaghue",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/K_D1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Donaghue has been a notable advocate for climate action in the MA House, serving on environmental committees and actively supporting the 2021 climate roadmap (H.4264) and subsequent clean energy legislation. She has been among the more vocal champions of offshore wind, clean energy transition, and aggressive emissions reductions, and has authored or co-sponsored climate-related legislation in the 194th General Court."
+    },
+    {
+      "politician": "Kate Lipper-Garabedian",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20251114022621/https://actonmass.org/legislators/kate-lipper-garabedian/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Lipper-Garabedian voted for the 2021 MA climate roadmap committing to net-zero emissions by 2050. She has supported clean energy investment and building efficiency programs. Her record shows consistent Democratic support for the state's climate framework."
+    },
+    {
+      "politician": "Marjorie C. Decker",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250324121332/https://actonmass.org/legislators/marjorie-decker/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Decker co-sponsored the 100% Renewable Energy Act and voted in favor of the 2021 climate roadmap bill (H.4264) committing Massachusetts to net-zero emissions by 2050. She has consistently supported offshore wind investment, clean energy incentives, and legislation to accelerate the transition away from fossil fuels. Her district includes environmentally active Cambridge residents and she has attended climate advocacy events hosted by 350 Massachusetts."
+    },
+    {
+      "politician": "Marjorie C. Decker",
+      "topic": "residential-zoning",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250324121332/https://actonmass.org/legislators/marjorie-decker/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Decker supported the MBTA Communities zoning reform requiring denser housing near transit stations, reflecting support for increased density in urban areas. However, she has also championed tenant protections and community input in planning decisions, balancing density goals with displacement prevention. Her position favors more housing production in transit-oriented locations combined with strong affordability requirements."
+    },
+    {
+      "politician": "Mark J. Cusack",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20241031001442/https://actonmass.org/legislators/mark-cusack/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Cusack voted for the 2021 MA climate roadmap committing to net-zero emissions by 2050. He has supported clean energy investment and offshore wind development. His South Shore coastal district is vulnerable to climate impacts and he has backed the state's climate goals while being attentive to constituent concerns about energy costs."
+    },
+    {
+      "politician": "Mary S. Keefe",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/MSK1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Keefe supported the Massachusetts climate roadmap (H.4264, 2021) and has been an active advocate for clean energy transition in the MA House. She backed the 2022 clean energy legislation and has supported aggressive emissions reductions, offshore wind expansion, and clean energy investment for Worcester and central Massachusetts."
+    },
+    {
+      "politician": "Meghan Kilcoyne",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/M_K1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Kilcoyne supported the Massachusetts climate roadmap (H.4264, 2021) and clean energy legislation in the 194th General Court. She has backed climate action and clean energy transition consistent with the MA Democratic caucus, supporting reduced emissions and renewable energy development in central Massachusetts."
+    },
+    {
+      "politician": "Michael J. Soter",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/MJS3"
+      ],
+      "original_reasoning": "Soter voted against the Massachusetts climate roadmap legislation (H.4264, 2021) as part of the Republican minority opposing binding emissions reduction mandates and accelerated clean energy requirements. He has raised concerns about economic costs to businesses and residents from aggressive climate regulations."
+    },
+    {
+      "politician": "Michael P. Kushmerek",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/MPK1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Kushmerek supported the Massachusetts climate roadmap legislation (H.4264, 2021) which set binding emissions reductions targets and expanded clean energy programs. He has backed clean energy transition bills in the 194th General Court, supporting the state's path toward net zero emissions consistent with the MA Democratic caucus position."
+    },
+    {
+      "politician": "Michael S. Day",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20260510012200/https://actonmass.org/legislators/michael-day/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Day voted for the 2021 MA climate roadmap committing to net-zero emissions by 2050. He has supported clean energy investment and building efficiency programs. His record reflects mainstream Democratic support for state climate goals."
+    },
+    {
+      "politician": "Natalie Higgins",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/N_H1/Bills",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Higgins co-sponsored the Massachusetts climate roadmap (H.4264, 2021) and has been a leading voice on climate action in the MA House, supporting aggressive emissions reduction targets and clean energy transition. She backed the 2022 clean energy legislation expanding offshore wind and solar incentives, demonstrating a strong commitment to climate action."
+    },
+    {
+      "politician": "Paul J. Donato",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250124165438/https://actonmass.org/legislators/paul-donato/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Donato voted for the 2021 MA climate roadmap bill committing to net-zero emissions by 2050. He has supported clean energy investment and offshore wind development. His climate record reflects mainstream Massachusetts Democratic positions on the state's climate goals."
+    },
+    {
+      "politician": "Paul K. Frost",
+      "topic": "climate-change",
+      "disposition": "REPAIR",
+      "klass": "ROLLCALL_REPAIR",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 4,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/PKF1"
+      ],
+      "original_reasoning": "Frost voted against the Massachusetts climate roadmap (H.4264, 2021) as part of the Republican minority opposing binding emissions reductions and accelerated clean energy mandates. He has expressed concerns about economic impacts of climate legislation on businesses and residents in central Worcester County."
+    },
+    {
+      "politician": "Richard M. Haggerty",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20260510022049/https://actonmass.org/legislators/richard-haggerty/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Haggerty voted for the 2021 MA climate roadmap committing the state to net-zero emissions by 2050. He has supported clean energy investment, offshore wind, and building efficiency programs. His votes reflect mainstream Democratic support for the state's climate framework."
+    },
+    {
+      "politician": "Ronald Mariano",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Speaker Mariano moved the 2021 MA climate roadmap bill through the House and it passed under his leadership, committing Massachusetts to net-zero emissions by 2050. However, he has been more cautious than climate activists on aggressive mandates, preferring a balanced approach sensitive to ratepayer and business impacts. He supports clean energy investment but is not the lead champion for the most ambitious climate proposals."
+    },
+    {
+      "politician": "Russell E. Holmes",
+      "topic": "local-environment",
+      "disposition": "BLANK",
+      "klass": "TRUE_BUT_LADDER_SCOPE",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/REH1"
+      ],
+      "original_reasoning": "Holmes co-sponsored the Environmental Justice Policy Act (H.4264) and has been a champion of linking environmental justice to racial equity in Mattapan. His district is surrounded by highways and industrial zones generating disproportionate pollution burdens. He has advocated for urban tree canopy expansion, urban agriculture, and green infrastructure investment to improve environmental quality in his community."
+    },
+    {
+      "politician": "Samantha Montaño",
+      "topic": "local-environment",
+      "disposition": "BLANK",
+      "klass": "NOT_SERVING",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/192/H4264",
+        "https://malegislature.gov/Legislators/Profile/S_M1"
+      ],
+      "original_reasoning": "Montaño co-sponsored the Environmental Justice Policy Act (H.4264) and has been an advocate for linking environmental protection to racial equity in Mission Hill. Her district contains EJ communities affected by highway pollution from Route 9 and adjacent industrial zones. She has championed green infrastructure and air quality improvement investments in underserved communities."
+    },
+    {
+      "politician": "Steven C. Owens",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20260212225827/https://actonmass.org/legislators/steve-owens/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Owens voted for the 2021 MA climate roadmap bill committing to net-zero emissions by 2050. He has supported clean energy legislation including offshore wind investment and building efficiency programs. His suburban district contains significant conservation land and his record shows consistent support for environmental protection."
+    },
+    {
+      "politician": "Steven Ultrino",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20260212225811/https://actonmass.org/legislators/steven-ultrino/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Ultrino voted for the 2021 MA climate roadmap bill committing to net-zero emissions by 2050. He has supported clean energy investment and building efficiency programs. His record reflects mainstream Democratic support for state climate policy."
+    },
+    {
+      "politician": "William C. Galvin",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "NOT_DISTINCTIVE",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250124162751/https://actonmass.org/legislators/william-galvin/",
+        "https://malegislature.gov/Bills/192/H4264"
+      ],
+      "original_reasoning": "Galvin voted for the 2021 MA climate roadmap committing to net-zero emissions by 2050. He has supported clean energy investment and offshore wind development. His record reflects mainstream Democratic support for state climate goals."
+    },
+    {
+      "politician": "Amy M. Sangiolo",
+      "topic": "abortion",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/AMS3/Bills"
+      ],
+      "original_reasoning": "Not tracked on Act on Mass (new 2024 member). No abortion-related bills sponsored. No anti-abortion bills found either. Default status-quo position without evidence of the Abortion Access Act co-sponsorship."
+    },
+    {
+      "politician": "Cynthia S. Creem",
+      "topic": "redistricting",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/194/S505",
+        "https://en.wikipedia.org/wiki/Cynthia_Creem"
+      ],
+      "original_reasoning": "No evidence of sponsoring independent redistricting commission legislation. Wikipedia records her 2018 leadership on automatic voter registration (H.4671). Her election reform bills (S.503-S.505) focus on voter access but not redistricting process reform. Default bipartisan committee position."
+    },
+    {
+      "politician": "Dennis C. Gallagher",
+      "topic": "healthcare",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/DCG2"
+      ],
+      "original_reasoning": "Not tracked by Act on Mass. Sponsored H.1703 (prison mitigation fund) and local municipal bills. No evidence of healthcare-specific legislation for or against M4A. Moderate Democrat default."
+    },
+    {
+      "politician": "Dennis C. Gallagher",
+      "topic": "housing",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": 4,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/DCG2/Bills"
+      ],
+      "original_reasoning": "No housing legislation found in sponsored bills beyond municipal infrastructure (H.3997 suburban infrastructure fund). Not on Act on Mass tracker. Moderate Democrat default."
+    },
+    {
+      "politician": "Dennis C. Gallagher",
+      "topic": "jail-capacity",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/194/H1703",
+        "https://malegislature.gov/Legislators/Profile/DCG2/Bills"
+      ],
+      "original_reasoning": "Sponsored H.1703 (prison mitigation fund for municipalities hosting correctional facilities), indicating pragmatic engagement with incarceration costs but no reform or moratorium legislation. Moderate default."
+    },
+    {
+      "politician": "Dennis C. Gallagher",
+      "topic": "voting-rights",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/DCG2"
+      ],
+      "original_reasoning": "No election legislation found in sponsored bills. Not tracked by Act on Mass. Moderate Democrat default."
+    },
+    {
+      "politician": "Donald H. Wong",
+      "topic": "healthcare",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250613060826/https://actonmass.org/legislators/donald-wong/",
+        "https://malegislature.gov/Legislators/Profile/DHW1"
+      ],
+      "original_reasoning": "Zero co-sponsorships on all Act on Mass tracked bills including Medicare for All. As a Republican with a minimal legislative footprint (one local retirement bill), maintains current regulated system by default."
+    },
+    {
+      "politician": "Donald R. Berthiaume",
+      "topic": "jail-capacity",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250518072529/https://actonmass.org/legislators/donald-berthiaume/",
+        "https://malegislature.gov/Legislators/Profile/DRB1/Bills"
+      ],
+      "original_reasoning": "Zero co-sponsorships on criminal justice reform bills. H.204-H.206 (child services/foster care reform) show engagement with child welfare without prison reform. Moderate Republican default."
+    },
+    {
+      "politician": "Donald R. Berthiaume",
+      "topic": "medicare/aid",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Bills/194/H1095",
+        "https://web.archive.org/web/20250518072529/https://actonmass.org/legislators/donald-berthiaume/"
+      ],
+      "original_reasoning": "Sponsored H.1095 (life insurance exemptions from Medicaid eligibility calculation), showing engagement with Medicaid rules without expansion. Republican who declines all progressive healthcare bills. Moderate Republican default."
+    },
+    {
+      "politician": "Edward R. Philips",
+      "topic": "abortion",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ],
+      "original_reasoning": "Not tracked by Act on Mass. Sponsored legislation on voting rights for permanent resident aliens in Sharon (local), suggesting progressive on civic inclusion. No abortion-specific legislation found; moderate Democrat default under existing MA law."
+    },
+    {
+      "politician": "Edward R. Philips",
+      "topic": "fossil-fuels",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ],
+      "original_reasoning": "Environmental legislation focuses on plastics and water quality, not fossil fuel restrictions. No evidence of support for new drilling or fossil fuel bans. Moderate default."
+    },
+    {
+      "politician": "Edward R. Philips",
+      "topic": "jail-capacity",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ],
+      "original_reasoning": "No criminal justice legislation found in sponsored bills. Not tracked by Act on Mass. Moderate Democrat default."
+    },
+    {
+      "politician": "Edward R. Philips",
+      "topic": "medicare/aid",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ],
+      "original_reasoning": "No Medicare expansion or privatization legislation found. Healthcare bills focus on insurance coverage improvements within current system. Moderate Democrat default."
+    },
+    {
+      "politician": "Edward R. Philips",
+      "topic": "taxes",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/ERP1/Bills"
+      ],
+      "original_reasoning": "No progressive revenue or tax-cut legislation found. Not tracked by Act on Mass. Moderate Democrat default."
+    },
+    {
+      "politician": "Francisco E. Paulino",
+      "topic": "deportation",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250418064320/https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ],
+      "original_reasoning": "Did not co-sponsor the Safe Communities Act, which is the key bill limiting deportation cooperation. No evidence of extreme deportation stance either way. Default moderate."
+    },
+    {
+      "politician": "Francisco E. Paulino",
+      "topic": "housing",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": 4,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250418064320/https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ],
+      "original_reasoning": "Did not co-sponsor Lift the Ban on Local Tenant Protections. No housing-specific legislation found in own bill list. Default moderate."
+    },
+    {
+      "politician": "Francisco E. Paulino",
+      "topic": "medicare/aid",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250418064320/https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ],
+      "original_reasoning": "Did not co-sponsor Medicare for All, which would indicate support for expanding Medicare beyond current scope. No bills found that address Medicare or Medicaid expansion. Default to current program support without expansion."
+    },
+    {
+      "politician": "Francisco E. Paulino",
+      "topic": "voting-rights",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20250418064320/https://actonmass.org/legislators/francisco-paulino/",
+        "https://malegislature.gov/Legislators/Profile/FEP1"
+      ],
+      "original_reasoning": "Did not co-sponsor Voting Rights Restoration per Act on Mass. No specific voting rights bills authored. Default current standards."
+    },
+    {
+      "politician": "Hadley Luddy",
+      "topic": "local-immigration",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ],
+      "original_reasoning": "No Safe Communities Act co-sponsorship found. No immigration-specific legislation in bill list. New legislator focused heavily on Cape Cod local issues. Insufficient evidence for stronger score."
+    },
+    {
+      "politician": "Hadley Luddy",
+      "topic": "taxes",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ],
+      "original_reasoning": "No Stop Corporate Offshoring co-sponsorship found. Cape Cod-focused local bills do not address tax policy broadly. No progressive revenue bills authored. Default current rates."
+    },
+    {
+      "politician": "Hadley Luddy",
+      "topic": "voting-rights",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/H_L1",
+        "https://malegislature.gov/Legislators/Profile/H_L1/Bills"
+      ],
+      "original_reasoning": "No Voting Rights Restoration co-sponsorship found. Sponsored H.835 (ranked choice voting for Easthampton) shows willingness to expand voting options at the local level — but actually that is Gómez's bill. No RCV or voting access bills by Luddy found. Default current standards."
+    },
+    {
+      "politician": "Hannah E. Kane",
+      "topic": "jail-capacity",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20260510025103/https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ],
+      "original_reasoning": "Sponsored H.1987 (rape statute of limitations and DNA exception rule) — a victim's rights bill extending prosecution windows. No Prison Moratorium or Age of Criminal Majority co-sponsorship. Republican, but evidence is insufficient to score as strongly pro-incarceration. Default moderate."
+    },
+    {
+      "politician": "Hannah E. Kane",
+      "topic": "school-vouchers",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20260510025103/https://actonmass.org/legislators/hannah-kane/",
+        "https://malegislature.gov/Legislators/Profile/HEK1"
+      ],
+      "original_reasoning": "No Cherish Act co-sponsorship. Sponsored H.617 (task force to review state mandates on public schools). Republican affiliation might lean toward choice, but no voucher-specific bills found. Default moderate."
+    },
+    {
+      "politician": "Hannah L. Bowen",
+      "topic": "childcare",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/HLB1",
+        "https://malegislature.gov/Bills/194/H4568"
+      ],
+      "original_reasoning": "H.4568 (family self-sufficiency program) includes wraparound services that touch on childcare access for low-income families. No targeted childcare legislation found. Housing and Labor committee assignments. Insufficient evidence for stronger score."
+    },
+    {
+      "politician": "Hannah L. Bowen",
+      "topic": "healthcare",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/HLB1",
+        "https://en.wikipedia.org/wiki/Hannah_Bowen"
+      ],
+      "original_reasoning": "Very new legislator (2025, 6th Essex). Not found on Act on Mass. Only 2 bills found on malegislature.gov. Committees include Housing, Labor, and Transportation — no healthcare committee. Insufficient evidence for any score other than default."
+    },
+    {
+      "politician": "Homar Gómez",
+      "topic": "climate-change",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Legislators/Profile/H_G1/Bills"
+      ],
+      "original_reasoning": "No 100% Renewable Energy or Environmental Justice co-sponsorship found. H.3498 (home energy assistance) is about affordability not climate policy. Insufficient evidence for stronger score. Default moderate."
+    },
+    {
+      "politician": "Homar Gómez",
+      "topic": "fossil-fuels",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Legislators/Profile/H_G1/Bills"
+      ],
+      "original_reasoning": "Sponsored H.3498 (expand low-income home energy assistance program) — focused on energy affordability for poor families rather than fossil fuel policy. No renewable energy legislation or anti-fossil fuel bills found. Default maintain current regulations."
+    },
+    {
+      "politician": "Homar Gómez",
+      "topic": "jail-capacity",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Bills/194/H3670"
+      ],
+      "original_reasoning": "No Prison Moratorium or Age of Criminal Majority co-sponsorship found. Sponsored H.3670 (regulating dangerous high-speed pursuits) which limits police pursuits — a mild reform. Insufficient evidence for stronger score."
+    },
+    {
+      "politician": "Homar Gómez",
+      "topic": "taxes",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/H_G1",
+        "https://malegislature.gov/Legislators/Profile/H_G1/Bills"
+      ],
+      "original_reasoning": "No Stop Corporate Offshoring co-sponsorship found. No progressive revenue bills authored. Default current rates."
+    },
+    {
+      "politician": "James Arciero",
+      "topic": "local-immigration",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20251114031938/https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ],
+      "original_reasoning": "Did not co-sponsor Safe Communities Act. No bills addressing local immigration enforcement found. Default current law compliance."
+    },
+    {
+      "politician": "James Arciero",
+      "topic": "medicare/aid",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20251114031938/https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ],
+      "original_reasoning": "Did not co-sponsor Medicare for All. No Medicare or Medicaid expansion bills found. Default current program support without expansion."
+    },
+    {
+      "politician": "James Arciero",
+      "topic": "taxes",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20251114031938/https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ],
+      "original_reasoning": "Did not co-sponsor Stop Corporate Offshoring Act per Act on Mass. No progressive tax legislation found. Sponsored H.479 (LLC fees) — a business-related provision. Default current rates."
+    },
+    {
+      "politician": "James Arciero",
+      "topic": "voting-rights",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://web.archive.org/web/20251114031938/https://actonmass.org/legislators/james-arciero/",
+        "https://malegislature.gov/Legislators/Profile/J_A1"
+      ],
+      "original_reasoning": "Did not co-sponsor Voting Rights Restoration per Act on Mass. No voting rights legislation found. Default current standards."
+    },
+    {
+      "politician": "Lydia M. Edwards",
+      "topic": "religious-freedom",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/LME0/194/Bills/Sponsored"
+      ],
+      "original_reasoning": "No evidence of positions at either extreme. Edwards's civil rights record focuses on racial equity and worker protections rather than religious freedom conflicts. No bills on either strict church-state separation or broad religious exemptions. Default mainstream Democratic balance."
+    },
+    {
+      "politician": "Ryan C. Fattman",
+      "topic": "redistricting",
+      "disposition": "BLANK",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "sources_examined": [
+        "https://malegislature.gov/Legislators/Profile/RCF0",
+        "https://web.archive.org/web/20241030235831/https://actonmass.org/legislators/ryan-fattman/"
+      ],
+      "original_reasoning": "No evidence Fattman has filed redistricting commission bills or supported independent commissions. His legislative profile shows no engagement with redistricting reform. In the absence of any affirmative redistricting reform position, his default as a Republican state senator aligns with state legislature control with court oversight, which is the current Massachusetts system."
+    },
+    {
+      "politician": "Dennis C. Gallagher",
+      "topic": "immigration",
+      "disposition": "BLOCKED",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Not tracked by Act on Mass. No immigration legislation found in sponsored bills. Moderate Democrat default for a district-focused legislator."
+    },
+    {
+      "politician": "Edward R. Philips",
+      "topic": "immigration",
+      "disposition": "BLOCKED",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "No immigration legislation found in sponsored bills. Sponsored local voting rights bill for permanent resident aliens, suggesting openness to immigrant civic participation. Moderate Democrat default."
+    },
+    {
+      "politician": "Francisco E. Paulino",
+      "topic": "immigration",
+      "disposition": "BLOCKED",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Did not co-sponsor Safe Communities Act per Act on Mass tracker. Serves on Public Safety and Homeland Security committee. No bills advocating for open borders or significantly expanded immigration. Default moderate."
+    },
+    {
+      "politician": "James Arciero",
+      "topic": "immigration",
+      "disposition": "BLOCKED",
+      "klass": "DEFAULT_CHAIR",
+      "season1_value": 3,
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Did not co-sponsor Safe Communities Act per Act on Mass. No immigration-specific legislation found in bill list. Default current levels."
+    }
+  ]
+}
