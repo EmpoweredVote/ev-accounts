@@ -562,7 +562,8 @@ def build_legislator_bridge(api_key, legiscan_session_id, state_code, jurisdicti
         cur.execute(
             """
             SELECT DISTINCT p.id, p.first_name FROM essentials.politicians p
-            JOIN essentials.offices o ON o.politician_id = p.id
+            JOIN essentials.office_terms ot ON ot.politician_id = p.id
+            JOIN essentials.offices o ON o.id = ot.office_id
             JOIN essentials.districts d ON o.district_id = d.id
             WHERE LOWER(p.last_name) = LOWER(%s)
               AND LOWER(p.first_name) = ANY(%s)
