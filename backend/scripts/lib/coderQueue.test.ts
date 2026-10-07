@@ -47,6 +47,17 @@ describe('publishableWindow', () => {
 });
 
 describe('buildCoderReviewRow', () => {
+  // Two passages on one URL must not share snippet_index 0: the unique index on
+  // politician_context_evidence would skip the second insert silently (Koch abortion, 2026-10-07).
+  it('numbers snippets per URL, so two passages on one page get distinct indexes', () => {
+    const r = build(report(), [passage(), passage({ provision_quote: 'post3 post4 post5' })])!;
+    expect(r.evidence).toHaveLength(2);
+    expect(r.evidence.flatMap((e) => e.snippets.map((s) => s.snippet_index))).toEqual([0, 1]);
+  });
+  it('does not spend an index on a passage with no publishable window', () => {
+    const r = build(report(), [passage({ provision_quote: 'abolish rent control', actor_quote: null }), passage()])!;
+    expect(r.evidence.flatMap((e) => e.snippets.map((s) => s.snippet_index))).toEqual([0]);
+  });
   it('queues a unanimous chair with dated, publishable sources and the tier', () => {
     const r = build(report())!;
     expect(r.proposed_value).toBe(2);
