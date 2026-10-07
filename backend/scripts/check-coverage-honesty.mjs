@@ -55,11 +55,18 @@
  *       so the script surfaces the candidate and stops. Two today: Travis County TX (6 of 12) and
  *       Deschutes County OR (3 of 7) — the latter being, with some irony, the namesake of the
  *       "Deschutes rule" that the rest of coverage.js cites for not overclaiming.
- *     - UNRESOLVED_GEOID. A catalog geoid matching no government row. Two today, both VA
- *       independent cities carrying a second county-equivalent code beside a place code that does
- *       resolve — Alexandria ['5101000','51510'] and Falls Church ['5127200','51610']. Both cities
- *       are genuinely covered via the place code, so this is dead weight in a published contract
- *       rather than a false claim, and the VA dual-tier seed may have meant it.
+ *     - UNRESOLVED_GEOID. A catalog geoid that resolves NOWHERE: absent from
+ *       essentials.governments AND from essentials.geofence_boundaries. None today.
+ *       🔴 THIS CHECK WAS WRONG ON ITS FIRST DAY AND THE DATA WAS RIGHT. It originally tested
+ *       governments.geo_id alone and so reported Alexandria's '51510' and Falls Church's '51610'
+ *       — Virginia independent cities exist in TIGER at BOTH tiers (G4110 place AND G4020
+ *       county-equivalent), and only the place code carries a governments row. Measured against
+ *       the live browse API 2026-10-06: posting ONLY ['51510'] returns the full Alexandria result,
+ *       identical to ['5101000'], while a made-up code returns the bare federal+state fallback.
+ *       They resolve through geofence_boundaries. Publishing both is what lets a consumer holding
+ *       only one of them find the city, so 'tidying' them away would have broken a cross-link
+ *       nobody can see break. 🔑 The browse resolves a geoid through EITHER table, so a check on
+ *       one of them is not a check on the browse.
  *
  * 🔑 THE THRESHOLD IS A COUNT OF OFFICIALS, NEVER A PERCENTAGE. Dover WI seats three; a 25% rule
  * would pass it on one row while failing a 12-seat council with two. The ruling was about the
@@ -157,6 +164,16 @@ async function loadCatalog() {
   const { rows } = await pool.query(
     `
     WITH cat(geo_id) AS (SELECT unnest($1::text[])),
+    -- A geoid counts as RESOLVING if the browse could reach something with it, which means either
+    -- table: officials hang off governments, but geofence_boundaries is how the VA county-equivalent
+    -- codes resolve. Officials are still counted through governments only, below -- a geofence-only
+    -- geoid contributes reachability, not officeholders.
+    resolvable AS (
+      SELECT cat.geo_id,
+             EXISTS (SELECT 1 FROM essentials.governments g        WHERE g.geo_id = cat.geo_id) AS in_governments,
+             EXISTS (SELECT 1 FROM essentials.geofence_boundaries b WHERE b.geo_id = cat.geo_id) AS in_geofence
+      FROM cat
+    ),
     seats AS (
       SELECT DISTINCT g.geo_id, coh.politician_id
       FROM cat
@@ -165,17 +182,20 @@ async function loadCatalog() {
       JOIN essentials.offices o     ON o.chamber_id = ch.id
       JOIN essentials.current_office_holders coh ON coh.office_id = o.id
     )
-    SELECT s.geo_id,
-           array_agg(DISTINCT s.politician_id) AS seated_ids,
+    SELECT r.geo_id,
+           bool_or(r.in_governments) AS in_governments,
+           bool_or(r.in_geofence)    AS in_geofence,
+           array_remove(array_agg(DISTINCT s.politician_id), NULL) AS seated_ids,
            array_remove(array_agg(DISTINCT pa.politician_id)
              FILTER (WHERE pc.reasoning IS NOT NULL AND btrim(pc.reasoning) <> ''), NULL) AS covered_ids
-    FROM seats s
+    FROM resolvable r
+    LEFT JOIN seats s ON s.geo_id = r.geo_id
     LEFT JOIN inform.politician_answers pa ON pa.politician_id = s.politician_id
     LEFT JOIN inform.politician_context pc
            ON pc.politician_id = pa.politician_id
           AND pc.topic_id      = pa.topic_id
           AND pc.season_id     = pa.season_id
-    GROUP BY s.geo_id
+    GROUP BY r.geo_id
     `,
     [geoids]
   );
@@ -189,7 +209,12 @@ async function loadCatalog() {
 
   for (const e of entries) {
     const ids = e.geoids ?? [];
-    const unresolved = ids.filter((g) => !byGeoid.has(g));
+    // Unresolved means NEITHER table knows it — a typo'd or retired code. A geoid that exists
+    // only in geofence_boundaries still routes the browse, so it is not a defect.
+    const unresolved = ids.filter((g) => {
+      const r = byGeoid.get(g);
+      return !r || (!r.in_governments && !r.in_geofence);
+    });
     const seated = new Set();
     const covered = new Set();
     for (const g of ids) {
@@ -205,7 +230,7 @@ async function loadCatalog() {
       reports.push({
         code: 'UNRESOLVED_GEOID',
         name,
-        detail: `${unresolved.join(', ')} matches no essentials.governments row`,
+        detail: `${unresolved.join(', ')} matches neither essentials.governments nor essentials.geofence_boundaries`,
       });
     }
 
