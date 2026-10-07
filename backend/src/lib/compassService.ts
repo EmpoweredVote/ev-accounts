@@ -764,7 +764,13 @@ export async function getPoliticianContext(politicianId: string, topicId: string
     sources: string[];
     evidence: ContextEvidenceDate[];
   }>(
-    `SELECT c.reasoning, c.sources,
+    // Q2 (ruling 2026-10-07): a blank's reasoning is never shown to voters — they see an empty
+    // spoke only. The newest-season row is chosen FIRST (inner LIMIT 1) and dropped afterwards
+    // when that same season's answer is 0; a filter inside the collapse would fall back to an older
+    // season's reasoning, arguing a position the person no longer holds.
+    // @zero-scope: excludes-blanks — voter-facing "why this position?" text.
+    `SELECT x.reasoning, x.sources, x.evidence FROM (
+     SELECT c.reasoning, c.sources, c.season_id,
             COALESCE((
               SELECT jsonb_agg(jsonb_build_object(
                        'source_url', d.source_url,
@@ -787,7 +793,11 @@ export async function getPoliticianContext(politicianId: string, topicId: string
        JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
       WHERE c.politician_id = $1 AND c.topic_id = $2
       ORDER BY s.number DESC
-      LIMIT 1`,
+      LIMIT 1
+     ) x
+     WHERE NOT EXISTS (
+       SELECT 1 FROM inform.politician_answers a
+        WHERE a.politician_id = $1 AND a.topic_id = $2 AND a.season_id = x.season_id AND a.value = 0)`,
     [politicianId, topicId]
   );
   // The route turns null into a 404 — the documented contract for "no context on
@@ -807,11 +817,20 @@ export async function getPoliticianContextAll(
   // maybeSingle() that made that one loud: this returned a row per season per
   // topic and the contributor editor pre-filled from whichever arrived first.
   const { rows } = await pool.query<{ topic_id: string; reasoning: string; sources: string[] }>(
-    `SELECT DISTINCT ON (c.topic_id) c.topic_id, c.reasoning, c.sources
-       FROM inform.politician_context c
-       JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
-      WHERE c.politician_id = $1
-      ORDER BY c.topic_id, s.number DESC`,
+    // Q2 (ruling 2026-10-07): as getPoliticianContext — the endpoint is public, so a topic whose
+    // newest season holds a blank (value 0) is dropped AFTER the per-topic collapse, never inside it.
+    // @zero-scope: excludes-blanks — public context read; a blank's reasoning is not shown.
+    `SELECT x.topic_id, x.reasoning, x.sources FROM (
+       SELECT DISTINCT ON (c.topic_id) c.topic_id, c.reasoning, c.sources, c.season_id
+         FROM inform.politician_context c
+         JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
+        WHERE c.politician_id = $1
+        ORDER BY c.topic_id, s.number DESC
+     ) x
+     WHERE NOT EXISTS (
+       SELECT 1 FROM inform.politician_answers a
+        WHERE a.politician_id = $1 AND a.topic_id = x.topic_id AND a.season_id = x.season_id AND a.value = 0)
+     ORDER BY x.topic_id`,
     [politicianId]
   );
   return rows;
@@ -1312,6 +1331,11 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
          SELECT 1 FROM inform.season_questions sq
           WHERE sq.topic_id = pce.topic_id
             AND sq.season_id = COALESCE(pa.season_id, pc.season_id))
+       -- Q2 (ruling 2026-10-07): a topic whose newest answer is a blank (value 0) shows NO block —
+       -- no "Position under review", no reasoning, no citations; voters see an empty spoke only.
+       -- Here, after the pa collapse, for the same reason as the predicate above.
+       -- @zero-scope: excludes-blanks — voter-facing citations page.
+       AND (pa.value IS NULL OR pa.value <> 0)
      ORDER BY ct.topic_key ASC,
               (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) DESC,
               pce.verified_at DESC`,
