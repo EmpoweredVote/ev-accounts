@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-thomson-transportation-priorities",
+  "seat": {
+    "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+    "full_name": "Kerry Thomson",
+    "level": "local",
+    "mode": "seated",
+    "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+    "office_title": "City Mayor",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": null,
+    "start_precision": "unknown",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic_key": "transportation-priorities",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "question_text": "Where should government focus its transportation investment?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Prioritize pedestrian infrastructure, cycling networks, and public transit over new road capacity"
+        },
+        {
+          "value": 2,
+          "text": "Invest equally in road capacity and in multimodal options like transit, bike lanes, and sidewalks"
+        },
+        {
+          "value": 3,
+          "text": "Maintain roads while selectively adding transit connections and pedestrian improvements where density supports it"
+        },
+        {
+          "value": 4,
+          "text": "Focus on road capacity and traffic flow; transportation investment should serve the majority who drive"
+        },
+        {
+          "value": 5,
+          "text": "Prioritize highway access and abundant free parking as the foundation of local transportation policy"
+        }
+      ],
+      "own_words_levels": [
+        "federal"
+      ],
+      "annexMd": "# transportation-priorities — served revision 555f1618-fcdf-4e0b-8306-7eec8f4d0f4f (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`c48782d5-…`); coders code the served text below.\n\n**Question:** \"Where should government focus its transportation investment?\"\n\n**Orientation:** standard. Rung 1 puts walking, cycling and transit ahead of new road capacity, rung 5\nputs highways and free parking first. The rungs order **the split of investment** between roads and\nother modes.\n\n**Levels with a lever:** local, state. States program highway and transit\nmoney; cities and counties build streets, bike networks, local transit and public parking.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"complete streets\", \"multimodal\", \"active transportation\", \"road diet\", \"lane\nreduction\", \"bus rapid transit\" (BRT), \"transit-priority lane\", \"level of service\" (LOS), \"vehicle\nmiles traveled\" (VMT), \"capacity expansion\", \"widening\", \"interchange\", \"state highway operation and\nprotection program\", \"parking minimums\", \"park-and-ride\".\n\n1. **\"Prioritize pedestrian infrastructure, cycling networks, and public transit over new road\n   capacity\"**\n   - Means: walking, cycling and transit come before adding road capacity.\n   - Operative clauses: [a] invest in pedestrian, cycling and transit infrastructure; [b] over new\n     road capacity.\n   - Establishing evidence looks like: a record or own words that put these modes **ahead of** road\n     capacity: redirect road-widening money to transit, a road diet or lane reduction, a stop to a\n     highway expansion in favour of transit. A transit vote alone has no [b] → `direction-only`.\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because support for transit is on both rungs. The discriminator is\n     [b]: rung 1 takes from road capacity; rung 2 funds both _(proposed, from the 2026-08-30\n     re-seat)_.\n   - \"Pedestrian, cycling and transit\" names forms of one clause; one form is enough for [a]\n     _(proposed)_.\n\n2. **\"Invest equally in road capacity and in multimodal options like transit, bike lanes, and\n   sidewalks\"**\n   - Means: road capacity and other modes get equal weight.\n   - Operative clauses: [a] invest in road capacity; [b] invest in multimodal options; [c] equally.\n   - Establishing evidence looks like: own words for a balanced split, or a single-subject programme\n     that funds both at a stated balance. A bill that adds multimodal duties but sets no split\n     against road capacity → `direction-only` (gold).\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - Commonly confused with rung 3 because both maintain roads and add other modes. Rung 2 adds road\n     **capacity** and invests equally; rung 3 maintains roads and adds other modes only where density\n     supports them.\n   - The duty to include bike lanes and sidewalks on new road projects is no longer part of this rung.\n\n3. **\"Maintain roads while selectively adding transit connections and pedestrian improvements where\n   density supports it\"**\n   - Means: keep the existing roads in repair, and add transit and walking improvements only where\n     enough people live or work to use them.\n   - Operative clauses: [a] maintain roads; [b] selectively add transit and pedestrian improvements;\n     [c] where density supports it.\n   - Establishing evidence looks like: own words or a programme that prefers repair over new capacity\n     and limits new transit to dense areas. A repaving vote alone → `direction-only`.\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2: see rung 2.\n\n4. **\"Focus on road capacity and traffic flow; transportation investment should serve the majority who\n   drive\"**\n   - Means: spending goes first to more road capacity and smoother traffic, for the people who drive.\n   - Operative clauses: [a] focus on road capacity and traffic flow; [b] investment serves drivers\n     first.\n   - Establishing evidence looks like: a record or own words that put road widening, interchanges or\n     signal timing ahead of other modes; a vote to move transit money to roads.\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because both put cars first. Rung 5 needs highways **and** free\n     parking as the foundation.\n\n5. **\"Prioritize highway access and abundant free parking as the foundation of local transportation\n   policy\"**\n   - Means: highway access and plenty of free parking come first.\n   - Operative clauses: [a] prioritize highway access; [b] abundant free parking. Compound: one side\n     only → `compound-partial` (V4.2) _(proposed)_.\n   - Establishing evidence looks like: own words or records for both, for example a highway-access\n     project and a vote to keep public parking free or to add public parking.\n   - Levels that hold a lever: local (public parking, local access roads); state (highway access).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **Safety rules are not investment.** A law about how cyclists, drivers or pedestrians share the road\n  (lane position, passing distance, right-of-way) does not say where money goes → BLANK\n  `no-evidence` (gold).\n- **Parking rules on private builders.** A law that removes or caps parking minimums for private\n  development (for example near transit) is a land-use rule, not transportation investment →\n  `adjacent` (gold). A law that **requires** parking minimums → `adjacent` too _(proposed)_.\n- **Multimodal duties without a split.** SB 960 (a state bill in the gold set) adds complete-streets and\n  transit-priority duties to state highway projects but sets no split against road capacity → BLANK\n  `direction-only` (gold, `excluded_from_cert`).\n- **Preemption (codebook V2, H12).** A state law that forbids local road diets or congestion pricing\n  decides which level acts → `adjacent` _(proposed)_.\n- **Large infrastructure packages** that fund roads and transit together (federal or state) → V4\n  `multi-subject`; a Yea shows at most direction.\n- **Transit fares and operations** (free-fare pilots, service hours) are investment in transit → on\n  [a] of rung 1 or [b] of rung 2, never the split on their own → `direction-only` _(proposed)_.\n- **Studies and corridor plans** → V4 `study-directive`.\n"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "served_revision_id": "6b5a3504-9e90-455a-9dd5-07e5376399af",
+      "passages": [
+        {
+          "snapshot_id": "f78ca08c-32e5-5698-a4cd-cd55bf4bd556",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-07-01",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words concern a city-led housing development (Hopewell) fitting 'the character of our city'; they name no zoning density rule for residential neighborhoods.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bf65b3b5-0570-5da7-9680-26e81e52fefd",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-07-07",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Permitting-process reform is not density (annex hard case), and the release says the changes 'do not change what may be built, where projects may be located'.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb073067-e4a5-530c-8ab6-e9dc3bc400c2",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2025-06-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A city explainer of staff- and council-initiated UDO amendments (SRO use, ZO-03-25) with no act or first-person words of the mayor on residential density.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "None of the passages has Thomson's own words or act on how much density zoning should permit in residential neighborhoods: the Hopewell quote ('fits the character of our city') is about one city housing project, the permitting reform expressly does 'not change what may be built', and the UDO explainer is not her words. No rung, from 'Protect existing single-family neighborhoods' to 'allow any housing type on any lot communitywide', is evidenced.",
+      "needs_source": [
+        "Kerry Thomson's own words on single-family zoning, duplexes/ADUs or upzoning (e.g., 2023 mayoral campaign questionnaire or debate answer, or a mayoral statement on a UDO residential-density amendment)",
+        "Any mayoral signature/veto or own statement on a Bloomington UDO amendment changing residential density allowances"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f78ca08c-32e5-5698-a4cd-cd55bf4bd556",
+          "text": "My administration is committed to building a neighborhood Bloomington can be proud of—a place that reflects our values, fits the character of our city, and provides real options for the people who live and work here and people who want to live and work here.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

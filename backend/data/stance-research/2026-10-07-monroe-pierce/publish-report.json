@@ -1,0 +1,20 @@
+[
+  {
+    "full_name": "Matt Pierce",
+    "topic_key": "gun-policy",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://repmattpierce.substack.com/p/rep-matt-pierces-april-newsletter"
+    ],
+    "failed_urls": [
+      "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/rollcalls/HB1296.382_H.pdf",
+      "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/HB1296.04.ENRS.pdf"
+    ],
+    "admin_queue_visible": true
+  }
+]

@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+    "topic_key": "fossil-fuels",
+    "topic_revision_id": "c8e12b53-64f6-48ac-9c2d-0a3cf4d3df9b",
+    "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+    "question_number": 11,
+    "title": "Fossil Fuel Policy",
+    "question_text": "What role should fossil fuels play in the nation's energy future?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Phase out fossil fuel production entirely."
+      },
+      {
+        "value": 2,
+        "text": "Allow no new drilling and let production decline over time."
+      },
+      {
+        "value": 3,
+        "text": "Keep fossil fuel production steady at current levels."
+      },
+      {
+        "value": 4,
+        "text": "Expand fossil fuel production with new drilling and permits."
+      },
+      {
+        "value": 5,
+        "text": "Maximize production and open more public land and waters to drilling."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

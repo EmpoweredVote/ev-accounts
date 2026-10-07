@@ -1,0 +1,107 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "cf3beccf-77b9-59ad-ae8f-02142d7f531e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-04-05",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.J.Res. 126 (118th)",
+          "provision_quote": "Congress disapproves the rule submitted by the Federal Deposit Insurance Corporation relating to",
+          "note": "Sponsored disapproval of an FDIC climate-related financial risk rule for banks; it neither requires, funds, eases nor ends support for clean energy.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsor: Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "859240a2-8b38-57c8-ae5f-710413fe1776",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 1435 (118th)",
+          "provision_quote": "such State standards directly or indirectly limit the sale or use of new motor vehicles with internal combustion engines",
+          "note": "Bill text of a vehicle-emission waiver limit; the annex rules vehicle rules adjacent to the energy-supply rungs.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "be4156c6-63f3-5dbc-b5dd-f8c03329843d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 1435 (118th)",
+          "provision_quote": null,
+          "note": "Roll call 391: Houchin voted Yea on passage of a vehicle-rules bill, which is adjacent per the annex.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 222 nay: 190"
+        },
+        {
+          "snapshot_id": "d307e2db-78ae-55a7-b904-26197d0528bc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-09-09",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Praise for a military nuclear microreactor project; names no mechanism (mandate, subsidy, permitting, neutrality) the rungs separate.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "56875b74-a61a-5bf8-85ef-409ea73908c5",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-04-10",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Own words opposing an FDIC climate-risk banking rule as red tape; says nothing about clean-energy mandates, subsidies, permitting or market neutrality.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "H.J.Res. 126 disapproves an FDIC climate-related financial risk rule for banks and H.R. 1435 limits state vehicle-emission waivers; neither speaks to whether government should require, fund, speed up, stay neutral on, or end support for clean energy. Her press-release words (\"The FDIC is not a climate regulator\", praise for a nuclear microreactor) name no clean-energy mechanism, so no passage reaches any rung.",
+      "needs_source": [
+        "Clerk roll call or bill text for any single-subject House vote on clean-energy tax credits, subsidies or mandates (118th/119th Congress) on which Houchin acted",
+        "Houchin's own words (issue page 'Energy' on houchin.house.gov, questionnaire or debate answer) on clean-energy subsidies, mandates, permitting or market neutrality"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "56875b74-a61a-5bf8-85ef-409ea73908c5",
+          "text": "The FDIC is not a climate regulator.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

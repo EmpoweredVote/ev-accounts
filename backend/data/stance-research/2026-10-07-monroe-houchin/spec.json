@@ -1,0 +1,819 @@
+{
+ "date": "2026-10-07",
+ "batches": [
+  {
+   "name": "houchin-abortion",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "abortion"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/26",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 26 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/202329",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 26 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/7",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 7 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/video-congresswoman-erin-houchin-delivers-first-remarks-house-floor-pro-life",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/rep-erin-houchin-introduces-abortion-funding-awareness-act",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.erinhouchin.com/issues",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-ai-regulation",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "ai-regulation"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/5360",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5360 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6489",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 6489 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-auchincloss-introduce-first-house-bill-ai-chatbot-companions",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-bills-protect-children-ai-dangers-pass-energy-commerce-committee",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-climate-change",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "climate-change"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/1435",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1435 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023391",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1435 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-introduces-resolution-stop-fdic-climate-rule",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/rep-houchin-applauds-announcement-nuclear-microreactor-nws-crane-develop",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-joint-resolution/126",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.J.Res. 126 (118th Congress)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "houchin-fossil-fuels",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "fossil-fuels"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/1121",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1121 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/202493",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1121 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/7176",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 7176 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/202452",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 7176 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-visits-gauck-farms-poet-bioprocessing-highlight-farm-bill-push-year",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-deportation",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "deportation"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5",
+     "source_kind": "public-record",
+     "instruments": [
+      "S. 5 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/202523",
+     "source_kind": "public-record",
+     "instruments": [
+      "S. 5 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-houchin-prosecutor-chalfant-announce-deportation-illegal-alien",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-fong-and-obernolte-introduce-dalilah-law-remove-illegal-truck-drivers",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.erinhouchin.com/issues",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-border-security",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "border-security"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/2",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 2 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023209",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 2 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-houchin-releases-statement-house-passage-border-bill",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-criticizes-president-bidens-executive-order-border",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-houchin-supports-texas-immigration-fight-against-biden",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.erinhouchin.com/issues",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-healthcare",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "healthcare"
+   ],
+   "sources": [
+    {
+     "url": "https://clerk.house.gov/Votes/2025145",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-statement-house-passage-one-big-beautiful-bill",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-medicare-aid",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "medicare/aid"
+   ],
+   "sources": [
+    {
+     "url": "https://clerk.house.gov/Votes/2025145",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-statement-house-passage-one-big-beautiful-bill",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-taxes",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "taxes"
+   ],
+   "sources": [
+    {
+     "url": "https://clerk.house.gov/Votes/2025190",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/rep-erin-houchin-applauds-house-passage-one-big-beautiful-bill",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-statement-house-passage-one-big-beautiful-bill",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.erinhouchin.com/issues",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-housing",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "housing"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/5184",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5184 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/202612",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5184 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-flood-introduce-affordable-homes-act-cut-red-tape-and-lower-housing",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/house-passes-houchins-affordable-homes-act-cut-red-tape-and-lower-housing",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-school-vouchers",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "school-vouchers"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/531",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 531 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/833",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 833 (119th Congress)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "houchin-social-security",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "social-security"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/82",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 82 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2024456",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 82 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-statement-house-passage-one-big-beautiful-bill",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-tariffs",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "tariffs"
+   ],
+   "sources": [
+    {
+     "url": "https://www.wbiw.com/2025/04/29/congresswoman-erin-houchin-president-trumps-tariffs-are-reviving-american-manufacturing/",
+     "source_kind": "news",
+     "instruments": [],
+     "candidate_quotes": [
+      "baseline 10% tariff on all imports, along with targeted tariffs on countries that cheat trade rules, is helping to level the playing field",
+      "If we stay the course on tariffs, energy independence, deregulation, and pro-growth tax policy"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "houchin-trans-athletes",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "trans-athletes"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/734",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 734 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023192",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 734 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/28",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 28 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/202512",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 28 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-op-ed-protecting-female-athletes-should-not-be-controversial",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-ukraine-support",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "ukraine-support"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/8035",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8035 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2024151",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8035 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/5692",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5692 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023503",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5692 (118th Congress)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "houchin-israel-military-aid",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "israel-military-aid"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/8034",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8034 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2024152",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8034 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/8369",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8369 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2024217",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8369 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.erinhouchin.com/issues",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-voting-rights",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "voting-rights"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/8281",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8281 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2024345",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8281 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/22",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 22 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2025102",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 22 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/rep-erin-houchin-statement-house-passage-save-america-act",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-gun-policy",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-joint-resolution/44",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.J.Res. 44 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023252",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.J.Res. 44 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 2189 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/202670",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 2189 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/38",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 38 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.erinhouchin.com/issues",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-military-intervention",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "military-intervention"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-concurrent-resolution/21",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.Con.Res. 21 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023136",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.Con.Res. 21 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-concurrent-resolution/30",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.Con.Res. 30 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023201",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.Con.Res. 30 (118th Congress)"
+     ]
+    }
+   ]
+  },
+  {
+   "name": "houchin-defense-spending",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "defense-spending"
+   ],
+   "sources": [
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-houchin-releases-statement-house-ndaa-passage",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-votes-favor-national-defense-authorization-act",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-applauds-house-passage-fy26-ndaa-secures-major-win-advanced-nuclear",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-education",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "education-curriculum",
+    "education-library-books",
+    "education-gender-identity",
+    "education-equity-programs",
+    "education-school-police",
+    "education-school-budget",
+    "education-ai"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/5",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023161",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-houchin-supports-house-passage-parents-bill-rights",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-houchin-manages-debate-house-floor-first-time-parents-bill",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/published-op-ed-im-mom-3-school-aged-children-and-we-need-protect-parents",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.erinhouchin.com/issues",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-nosource",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "campaign-finance",
+    "childcare",
+    "civil-rights",
+    "data-centers",
+    "economic-development",
+    "growth-and-development",
+    "homelessness",
+    "jail-capacity",
+    "judicial-criminal-justice",
+    "misinformation",
+    "redistricting",
+    "religious-freedom",
+    "rent-regulation",
+    "same-sex-marriage",
+    "transportation-priorities",
+    "2020-election",
+    "cannabis-policy",
+    "minimum-wage",
+    "ranked-choice-voting"
+   ],
+   "sources": [
+    {
+     "url": "https://www.erinhouchin.com/issues",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  }
+ ]
+}

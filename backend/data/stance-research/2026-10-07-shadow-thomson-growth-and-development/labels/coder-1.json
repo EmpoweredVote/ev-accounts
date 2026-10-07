@@ -1,0 +1,115 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+      "passages": [
+        {
+          "snapshot_id": "9969392d-b53f-5614-927f-ca37c14f0feb",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-03-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Annexation statement about city boundaries matching existing urban growth and the tax base; it does not address how fast development should be allowed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a9f9306e-fca1-544f-9485-c95923216d0e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-07-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words back permitting improvement and 'protects the standards our community has set' (streamlining with guardrails), but name no recruitment of development and do not separate rung 3 from rung 4.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d004487a-2d16-5c62-b2a4-4733395f928c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-19",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Urges Council to move the Hopewell South PUD without delay; support for one project shows a pro-growth lean only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5acaf8df-0765-503d-9fff-83891633c473",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-07-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words concern delivering attainable housing on one city project; the pre-approved designs and streamlining are the release's text, not her words.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "db90fb1e-1cc3-5a36-a572-55c95a18af21",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-08-15",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Decision to appeal the annexation ruling so the city can 'manage and guide growth'; boundaries, not the pace of development.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her own words favour faster housing approval and better permitting that still 'protects the standards our community has set', a pro-growth lean. None of them names recruiting new development, the clause 'cut red tape and recruit new development', nor separates that from 'invest in roads, water and schools ahead of demand'. The annexation statements are about boundaries, not pace.",
+      "needs_source": [
+        "City of Bloomington Comprehensive Audit of Development Review and Permitting Services Recommendations Report (07-07-26) and any executive order or ordinance adopting it",
+        "Hopewell South PUD ordinance and Council action (2026), as the mayor's own act"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "a9f9306e-fca1-544f-9485-c95923216d0e",
+          "text": "A strong permitting process ensures a clear and dependable process for creating a built environment that protects the standards our community has set.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "d004487a-2d16-5c62-b2a4-4733395f928c",
+          "text": "Time and delay carry real financial consequences. Delay increases cost. Increased cost reduces attainability.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

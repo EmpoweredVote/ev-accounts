@@ -1,0 +1,312 @@
+{
+  "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+  "leads": [
+    {
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "dab46e5c-628a-4360-ad1d-3aaba61768f0",
+      "reasoning": "Houchin has a 100% pro-life voting record  and an A+ rating from SBA Pro-Life America. She was an original cosponsor of the Born-Alive Abortion Survivors Protection Act (H.R. 26 January 2023).  She celebrated Indiana's near-total abortion ban (SB 1) which includes exceptions for rape incest and life of the mother.",
+      "sources": [
+        "https://sbaprolife.org/representative/erin-houchin",
+        "https://houchin.house.gov/media/press-releases/video-congresswoman-erin-houchin-delivers-first-remarks-house-floor-pro-life",
+        "https://www.congress.gov/bill/118th-congress/house-bill/26/cosponsors"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "58804871-b768-4d4a-85b5-07c92eb40bc7",
+      "reasoning": "Houchin introduced the AI AWARE Act (2025) targeting AI chatbot companions used by minors and the SAFE BOTs Act, both narrow bills addressing specific consumer-facing products rather than broad AI deployment requirements. Her stated position — 'We want to have responsible regulation that doesn't stifle innovation' and emphasis on U.S. global competitiveness — reflects a light-touch approach more consistent with suggested guidelines than mandatory safety testing or liability requirements.",
+      "sources": [
+        "https://houchin.house.gov/media"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "58ebaab3-0849-446a-82f9-162f084e93e3",
+      "reasoning": "No direct vote or statement from Houchin on campaign finance reform legislation was found — she did not respond to Ballotpedia's 2022 Candidate Connection survey and has not cosponsored any transparency or disclosure bills. Her 94% Heritage Action score (119th Congress) and consistent conservative voting record indicate strong opposition to campaign finance restrictions, aligning with stance 4 (reduce restrictions on donations and spending) rather than the DB value of 5 (eliminate all laws), which would require an explicit statement that was not found.",
+      "sources": [
+        "https://heritageaction.com/scorecard/members/H001093",
+        "https://www.opensecrets.org/members-of-congress/erin-houchin/summary?cid=N00037427"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "30cb4666-836f-4f13-a8c3-2c3caadf6337",
+      "reasoning": "Houchin voted for the One Big Beautiful Bill (H.R. 1, passed 218-214, July 2025), which expanded the employer-provided childcare tax credit from $150,000 to $500,000 and increased DCAP FSA limits from $5,000 to $7,500 — a market/tax credit approach rather than direct government childcare funding. She also introduced the bipartisan Foster Care Tax Credit Act (H.R. 2438, April 2025) providing an $850 annual refundable credit to foster families. Her record consistently favors tax incentives and employer-based solutions over government-funded childcare programs.",
+      "sources": [
+        "https://www.congress.gov/bill/119th-congress/house-bill/1/text",
+        "https://www.congress.gov/bill/119th-congress/house-bill/2438/text",
+        "https://www.ffyf.org/resources/2025/07/toplines-tax-package/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "839b4b5b-dd16-45a5-8dce-8e54f85165f6",
+      "reasoning": "Houchin voted to block DEI programs at environmental agencies and environmental justice funding (2024). She introduced legislation establishing immigration requirements for Federal TRIO programs (H.R. 2063 2025). She cosponsored H.R. 2057 protecting First Amendment rights of student organizations at public universities including religious organizations.",
+      "sources": [
+        "https://www.lcv.org/moc/erin-houchin/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "da9cf777-0a95-41aa-8775-c5b29528825b",
+      "reasoning": "Houchin has a 0% lifetime LCV score across all tracked votes from 2023-2025.  She voted to roll back the methane polluter fee block EPA clean car standards defund DOE clean energy programs and rescind international climate funding.  She voted for the One Big Beautiful Bill which scales back Inflation Reduction Act clean energy incentives.",
+      "sources": [
+        "https://www.lcv.org/moc/erin-houchin/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "f6630c71-8ba8-464d-82d4-9079803d4e8b",
+      "reasoning": "As a member of the House Energy & Commerce Committee's Communications and Technology Subcommittee, Houchin has consistently framed AI data center infrastructure as a growth and access issue rather than a cost-protection issue. At a June 2025 subcommittee hearing she stated AI 'success still depends on the basics: fast, reliable, broadband infrastructure, access to spectrum, cybersecurity, and reliable energy' and asked witnesses whether classifying AI infrastructure as strategic for fast-track permitting is necessary — a pro-development position. Her legislative record shows deregulatory approaches (CABLE Competition Act streamlining broadband deployment) with no evidence of supporting consumer ratepayer protections from data center energy costs.",
+      "sources": [
+        "https://republicans-energycommerce.house.gov/posts/c-and-t-subcommittee-holds-hearing-on-network-infrastructure-demands-for-ai-and-uses-in-the-media-and-entertainment-industries",
+        "https://houchin.house.gov/media/press-releases/houchin-bills-advance-out-subcommittee-move-full-energy-and-commerce-committee"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "673c3758-448d-46ce-ab09-5869488a131f",
+      "reasoning": "Houchin voted for H.R. 2 (Secure the Border Act, 2023) mandating 900+ miles of wall construction and E-Verify compliance, and characterized immigration as an \"invasion.\" She supports deporting all people without legal status and introduced legislation blocking taxpayer-funded benefits for undocumented immigrants. This aligns with new stance 4: deport everyone without legal status, starting with those who have criminal records.",
+      "sources": [
+        "https://houchin.house.gov/media/press-releases/congresswoman-houchin-releases-statement-house-passage-border-bill",
+        "https://www.congress.gov/bill/118th-congress/house-bill/2"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "c8e12b53-64f6-48ac-9c2d-0a3cf4d3df9b",
+      "reasoning": "Houchin has a 0% lifetime LCV score.  She consistently voted against clean car standards against fracking bans and for fast-tracking fossil fuel production (2023-2025). However she signed a March 2025 GOP letter supporting 'all-of-the-above' energy including some clean energy tax credits  placing her at expanding drilling rather than removing all restrictions.",
+      "sources": [
+        "https://www.lcv.org/moc/erin-houchin/"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_key": "healthcare",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "afc91aa2-4d48-4db6-aebd-f4c9788e6ad7",
+      "reasoning": "Houchin voted for H.R. 1 (2025), which imposed Medicaid work requirements and reduced ACA premium subsidies, defending the cuts as protecting the safety net for those it was designed for while reducing broader federal involvement. Her campaign rhetoric of getting government out of the way signals she supports only helping the poorest afford care while leaving everyone else to employers and private insurance, consistent with new stance 4.",
+      "sources": [
+        "https://budget.house.gov/press-release/budget-committee-members-champion-the-one-big-beautiful-bill-act-in-op-eds",
+        "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-votes-first-bill-pass-house"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "bab0fb79-19dd-43ed-ab73-b50ac3f934b9",
+      "reasoning": "Houchin's approach to homelessness is primarily deregulatory and market-oriented. Her flagship housing bill, the Affordable HOMES Act (H.R. 5184), which passed the House 263-147 in January 2026, reduces federal energy standards on manufactured housing to lower costs — a supply-side rather than direct-assistance approach. She did introduce bipartisan legislation in May 2024 (with Sen. Patty Murray) to expand higher education access for homeless and foster youth, showing some targeted social support. No evidence of supporting criminalization of homelessness, but her overall policy framework emphasizes deregulation over direct housing assistance or social services.",
+      "sources": [
+        "https://houchin.house.gov/media/press-releases/house-passes-houchins-affordable-homes-act-cut-red-tape-and-lower-housing",
+        "https://houchin.house.gov/media/press-releases/houchin-introduces-legislation-break-down-barriers-higher-education-homeless",
+        "https://www.murray.senate.gov/murray-braun-kamlager-dove-and-houchin-introduce-legislation-to-break-down-barriers-to-higher-education-for-homeless-and-foster-youth/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "234c3f2a-0bbf-4a8f-ab6b-5344e080f783",
+      "reasoning": "Houchin introduced the Affordable HOMES Act (2025) to eliminate federal regulations she described as driving up the cost of manufactured housing. This deregulatory approach — removing government red tape so private developers and manufacturers can lower prices — aligns with new stance 4: cut regulations and zoning rules so private developers can build more housing. There is no evidence she supports rent caps, public housing investment, or direct government funding of affordable units.",
+      "sources": [
+        "https://houchin.house.gov/media"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "topic_key": "medicare/aid",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "92e96359-57a9-4c7e-a78e-a6f1af105ec6",
+      "reasoning": "Houchin voted for the One Big Beautiful Bill Act imposing Medicaid work requirements stricter eligibility verification and rolling back Medicare drug negotiation authority. She stated: 'We are ensuring that only those who are legal eligible and truly unable to work are receiving taxpayer-funded assistance.'",
+      "sources": [
+        "https://budget.house.gov/press-release/budget-committee-members-champion-the-one-big-beautiful-bill-act-in-op-eds"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "6fa8a338-153a-430d-bc44-e985b44a357c",
+      "reasoning": "Houchin introduced the SAFE BOTs Act and AI AWARE Act focusing on targeted transparency measures for AI interactions with minors rather than broad government content moderation. Her legislative approach favors targeted interventions over broad regulation of online speech. No evidence found of her supporting government involvement in social media content moderation.",
+      "sources": [
+        "https://houchin.house.gov/media"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "reasoning": "Houchin publicly stated 'Redistricting is a political process' and announced support for Indiana's Republican-controlled state legislature redrawing congressional maps mid-decade in 2025, explicitly to 'send a delegation to Washington committed to advancing President Trump's America First agenda.' She was among four Indiana House GOP members who formally backed the redistricting effort, with no support for independent commissions or bipartisan oversight, aligning with stance 5 (the party that controls the state legislature without outside interference).",
+      "sources": [
+        "https://indianacapitalchronicle.com/2025/08/18/indiana-house-republicans-weigh-redistricting-in-closed-door-caucus/",
+        "https://www.ipm.org/news/2025-08-19/indianas-house-gop-congressional-contingent-lines-up-behind-redistricting-effort"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic_key": "religious-freedom",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "6c4b402f-4d41-42ce-a04c-be17b85f131d",
+      "reasoning": "Houchin served in the Indiana State Senate during the 2015 Religious Freedom Restoration Act debate. She has consistently supported faith-based pregnancy centers and cosponsored H.R. 2057 (2025) to protect First Amendment rights of student organizations at public universities.  Her pro-life advocacy is grounded in faith-based frameworks.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Erin_Houchin"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "5d26a058-0678-449e-ab76-85a31562c1f1",
+      "reasoning": "Houchin's iVoterGuide questionnaire response states 'Governments should define marriage as between one man and one woman; no other definition of marriage should be legalized or supported with taxpayer or public funds.' She also answered 'Strongly Disagree' when asked if sexual orientation and gender identity should be protected classes in non-discrimination laws, and describes herself as 'a conservative evangelical Christian.' These responses align directly with stance 5 (make same-sex marriage illegal, define marriage as only between one man and one woman).",
+      "sources": [
+        "https://ivoterguide.com/candidate/29434/race/1369/election/956",
+        "https://ontheissues.org/IN/Erin_Houchin_Civil_Rights.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "835bc8d1-b31b-4fef-9cca-31318cc0f1d6",
+      "reasoning": "Houchin cosponsored H.R. 531, the Educational Choice for Children Act, on January 26, 2023, which provides $10 billion in annual tax credits to fund private and religious K-12 school scholarships. In a March 2025 op-ed she wrote that she will 'always be a strong supporter of school choice and education savings accounts, which keep parents squarely in the driver's seat.' She also passed the Parents Bill of Rights Act and consistently frames education as a parental-choice issue.",
+      "sources": [
+        "https://www.congress.gov/bill/118th-congress/house-bill/531/cosponsors",
+        "https://houchin.house.gov/media/press-releases/published-op-ed-im-mom-3-school-aged-children-and-we-need-protect-parents"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "topic_key": "social-security",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "a624f5d1-8aad-426b-bf46-b5788d8e620d",
+      "reasoning": "Houchin explicitly defended Social Security in the context of the One Big Beautiful Bill stating: 'Democrats have spent weeks fearmongering about so-called cuts to Medicaid Medicare and Social Security... those talking points are false.'  The bill provides tax deductions for seniors on Social Security income.  She has not advocated for privatization.",
+      "sources": [
+        "https://budget.house.gov/press-release/budget-committee-members-champion-the-one-big-beautiful-bill-act-in-op-eds"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "topic_key": "tariffs",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "9f094155-f604-47e8-93db-54a3142420ca",
+      "reasoning": "In an April 2025 op-ed, Houchin endorsed Trump's 'baseline 10% tariff on all imports, along with targeted tariffs on countries that cheat trade rules,' framing them as leveling the playing field and cited a $19 million manufacturing investment in her district as proof. Her stated rationale centers on fairness and accountability against countries exploiting 'cheap labor' and ignoring environmental standards, aligning with stance 4 (increase tariffs on countries that don't trade fairly) rather than stance 5's maximalist across-the-board approach; the DB value of 4 is confirmed.",
+      "sources": [
+        "https://www.wbiw.com/2025/04/29/congresswoman-erin-houchin-president-trumps-tariffs-are-reviving-american-manufacturing/",
+        "https://www.newsandtribune.com/opinion/houchin-column-president-trump-s-tariffs-are-reviving-american-manufacturing/article_108e81d0-2731-486d-b377-1e1fc794c9f8.html"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "87f8c011-5c70-4f39-a1ea-5cc53c010c60",
+      "reasoning": "Houchin signed the Americans for Tax Reform Taxpayer Protection Pledge and voted for the One Big Beautiful Bill Act, which permanently extends the 2017 Trump tax cuts including across-the-board rate reductions and new deductions for tips and overtime. She also voted to rescind IRS funding, reducing tax enforcement capacity. These actions consistently favor cutting taxes for everyone and scaling back government revenue collection, which matches new scale stance 4.",
+      "sources": [
+        "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-votes-first-bill-pass-house",
+        "https://ballotpedia.org/Erin_Houchin"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "af2c6427-daf8-4819-93ba-42db212bae68",
+      "reasoning": "Houchin was an original cosponsor of the Protection of Women and Girls in Sports Act (H.R. 28 passed House 218-206 in January 2025; also H.R. 734 passed April 2023).  She wrote an op-ed stating: 'Biological males do have advantages related to size height and muscle mass. This is why Title IX exists.'  The bill defines sex based on 'reproductive biology and genetics at birth.'",
+      "sources": [
+        "https://houchin.house.gov/media/press-releases/houchin-op-ed-protecting-female-athletes-should-not-be-controversial",
+        "https://www.congress.gov/bill/119th-congress/house-bill/28/cosponsors",
+        "https://clerk.house.gov/Votes/202512"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "topic_key": "ukraine-support",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "107d180d-a949-4a42-a250-54f0a7683be0",
+      "reasoning": "Houchin voted for the Gaetz amendment to halt all U.S. military aid to Ukraine  (2023 failed) and against H.R. 5692 Ukraine Security Assistance (September 2023). She stated: 'We cannot continue down this path of tens of billions of dollars being spent in Ukraine with no accounting.'  She later voted for H.R. 8035 (Ukraine Security Supplemental April 2024)  with accountability measures.",
+      "sources": [
+        "https://gopforukraine.com/legislator/erin-houchin/",
+        "https://en.wikipedia.org/wiki/Erin_Houchin"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "63c52abb-fc28-42a3-a421-a27eced16da0",
+      "reasoning": "Houchin voted for the SAVE America Act (passed House 218-213 February 2026) requiring documentary proof of citizenship to register and photo ID to vote. She stated: 'The standard should not be whether fraud is widespread. The standard should be zero.'  She also voted for the SAVE Act (2025) with similar requirements restricting mail-in ballot access.",
+      "sources": [
+        "https://www.npr.org/2026/02/19/nx-s1-5719252/trump-voting-save-america-act-explainer",
+        "https://www.wdrb.com/news/politics/bill-targeting-non-citizen-voting-passes-us-house/article_33c5ab9e-3f05-11ef-8e26-dbad5ffce493.html"
+      ],
+      "seed": "stale"
+    }
+  ]
+}

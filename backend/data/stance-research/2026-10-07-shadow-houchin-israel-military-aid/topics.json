@@ -1,0 +1,42 @@
+[
+  {
+    "topic_id": "6783e65c-0722-45d9-8579-65327af7c15c",
+    "topic_key": "israel-military-aid",
+    "topic_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+    "served_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+    "question_number": 58,
+    "title": "U.S. Military Aid to Israel",
+    "question_text": "What level of military aid should the U.S. provide to Israel?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Continue full military aid to Israel with no new conditions."
+      },
+      {
+        "value": 2,
+        "text": "Continue aid to Israel, but require it to comply with humanitarian and human-rights law."
+      },
+      {
+        "value": 3,
+        "text": "Block offensive weapons sales while continuing defensive support such as missile defense."
+      },
+      {
+        "value": 4,
+        "text": "Sharply cut military aid to Israel as a step toward ending it."
+      },
+      {
+        "value": 5,
+        "text": "End all military aid to Israel."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  }
+]

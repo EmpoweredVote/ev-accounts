@@ -1,0 +1,42 @@
+[
+  {
+    "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+    "topic_key": "deportation",
+    "topic_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+    "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+    "question_number": 9,
+    "title": "Deportation Priorities",
+    "question_text": "How far should the government go in deporting undocumented immigrants?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Stop deportations entirely and protect undocumented immigrants from removal"
+      },
+      {
+        "value": 2,
+        "text": "Only deport undocumented immigrants convicted of serious violent crimes"
+      },
+      {
+        "value": 3,
+        "text": "Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place"
+      },
+      {
+        "value": 4,
+        "text": "Deport all undocumented immigrants, starting with those who have criminal records"
+      },
+      {
+        "value": 5,
+        "text": "Carry out a mass-deportation program to remove all undocumented immigrants, including long-settled families and workers"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "state",
+      "local"
+    ]
+  }
+]

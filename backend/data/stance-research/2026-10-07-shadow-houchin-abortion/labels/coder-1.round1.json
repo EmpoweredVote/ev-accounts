@@ -1,0 +1,115 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "6768bba8-34be-54a1-b4de-3721aa6fe13a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2023-01-11",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her press-release words on the Born-Alive bill ('I will always defend life') name no gestational limit or exception rule; the bill itself concerns care for infants born alive.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3c6cba5a-7385-5a8f-af9b-2b6df86d8f12",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01-11",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 26 (118th)",
+          "provision_quote": null,
+          "note": "Yea on passage of the Born-Alive Abortion Survivors Protection Act, which sets a degree of care for infants born alive and sets no gestational limit or exception rule.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 220 nay: 210 present: 1 not voting: 3"
+        },
+        {
+          "snapshot_id": "149ab2b0-f8ff-5e6f-813e-642e00caadbb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 26 (118th)",
+          "provision_quote": "exercise the same degree of professional skill, care, and diligence to preserve the life and health of the child as a reasonably diligent and conscientious health care practitioner would render to any other child born alive at the same gestational age",
+          "note": "Cosponsor of H.R. 26; the operative section governs care after a live birth, not when abortion is legal or which exceptions apply (annex hard case: narrow restrictions).",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "90f7dcf9-94a1-5322-9e7f-55bbfed465ac",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01-09",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 7 (118th)",
+          "provision_quote": "No funds authorized or appropriated by Federal law, and none of the funds in any trust fund to which funds are authorized or appropriated by Federal law, shall be expended for any abortion.",
+          "note": "Cosponsor of a federal-funding prohibition; the annex rules a funding bill does not move a person along these rungs.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a1f7f6da-7040-52df-9ff7-b41e976cedc8",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her words on the Abortion Funding Awareness Act concern Medicaid payment reporting and funding transparency, not gestational limits or exceptions; no bill number is given.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Every surviving passage is adjacent: H.R. 26 (Born-Alive Abortion Survivors Protection Act) governs care for infants born alive, H.R. 7 (118th) and the Abortion Funding Awareness Act concern funding, and none states when abortion is legal or which exceptions (rape, incest, the mother's life or health) apply. Her words ('I will always defend life and support mothers and their children') name no limit or exception rule, so no rung from 'keep abortion legal at every stage' to 'ban abortion in all cases, with no exceptions' is evidenced.",
+      "needs_source": [
+        "Houchin's own words (questionnaire, debate answer, issue page, interview) on a gestational limit or on rape/incest/life/health exceptions",
+        "Clerk roll call or congress.gov cosponsor record for any federal gestational-limit or abortion-ban bill Houchin acted on (118th-119th Congress)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "6768bba8-34be-54a1-b4de-3721aa6fe13a",
+          "text": "I will always defend life and support mothers and their children",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "a1f7f6da-7040-52df-9ff7-b41e976cedc8",
+          "text": "The Abortion Funding Awareness Act exposes how states are funneling tax dollars to abortion providers",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "off-question"]
+        }
+      ]
+    }
+  ]
+}

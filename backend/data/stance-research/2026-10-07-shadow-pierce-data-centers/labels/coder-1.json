@@ -1,0 +1,93 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "0194f17c-6f2e-5461-914b-6ba260ab2350",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-02-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His objection to HB 1333 is that projects proceed without public hearings and weaken local control, which says which level decides, not what conditions the rungs order (annex hard case: local control).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "97629d45-f65b-529b-931f-777c4385456d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His own account of his HB 1002 amendment to bar further data-center sales tax exemptions shows opposition to the welcoming side (rung 5) but does not separate rungs 1-4; the amendment itself is reported here, not a record page (H15).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2fd41135-afac-5aa8-a650-08076faf4298",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Caucus release quoting him objecting to data centers paying no sales tax on energy; a lean against tax incentives, no rung clause matched; the HB 1002 vote it reports is a utility-affordability bill, not a data-center measure.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce's own words oppose data-center sales tax exemptions (\"Apparently, it’s fine for trillion-dollar corporations to pay no sales tax on energy use at their data centers\") and object that HB 1333 shuts Hoosiers out of local decisions. That places him against \"welcoming data center investment with minimal regulatory barriers\" but matches no clause of a moratorium, a bar on passing costs to residential customers, approval conditions, or streamlined permitting with disclosure, so only a side is shown.",
+      "needs_source": [
+        "Indiana House Journal roll call on Pierce amendment to HB 1002 (2026) barring further data-center sales tax exemptions, with amendment text",
+        "Indiana House roll call and bill text, HB 1333 (2026), third reading"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "2fd41135-afac-5aa8-a650-08076faf4298",
+          "text": "Apparently, it’s fine for trillion-dollar corporations to pay no sales tax on energy use at their data centers",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "97629d45-f65b-529b-931f-777c4385456d",
+          "text": "It also would have prevented the Indiana Economic Development Corporation (IEDC) from granting any further sales tax exemptions to data centers.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "0194f17c-6f2e-5461-914b-6ba260ab2350",
+          "text": "This vote further weakens local control and shuts Hoosiers out of decisions that affect their own communities.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

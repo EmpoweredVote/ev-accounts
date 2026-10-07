@@ -1,0 +1,62 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "a09abc6e-e749-5f47-9c4a-0aa17850ef0b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-05-22",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Press statement defending the OBBBA's Medicaid changes as ending benefits for illegal immigrants and waste, fraud and abuse; it names no clause on whom government should cover and does not say help should go only to the poorest.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "59414d82-4613-5563-bb13-309fa0bb1eae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 1 (119th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of the One Big Beautiful Bill Act, a reconciliation bill covering taxes, Medicaid, immigration and energy (annex omnibus trap); no bill text in the sources.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 215 nay: 214 present: 1 not voting: 2"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Her Yea on H.R. 1 (119th), the One Big Beautiful Bill Act, is a multi-subject reconciliation vote and proves no rung on its own. Her statement that it \"protects and strengthens Medicaid, Medicare, and Social Security for the people who truly need it most\" defends eligibility limits on immigrants and waste, not a stance on whom government covers; it never states that public help should go \"Only\" to \"the poorest people\" or any other rung's clauses, so nothing survives.",
+      "needs_source": [
+        "Houchin's own words (issue page, questionnaire, debate) on whom government should cover or help pay for healthcare",
+        "Roll calls or sponsorships on single-subject coverage bills (Medicaid eligibility, ACA subsidies, marketplace rules) in the 118th–119th Congress"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "a09abc6e-e749-5f47-9c4a-0aa17850ef0b",
+          "text": "It also protects and strengthens Medicaid, Medicare, and Social Security for the people who truly need it most—pregnant women, children, individuals with disabilities, and seniors—by ending taxpayer-funded benefits for illegal immigrants and eliminating waste, fraud, and abuse.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "off-question"]
+        }
+      ]
+    }
+  ]
+}

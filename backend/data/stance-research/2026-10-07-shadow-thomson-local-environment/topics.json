@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+    "topic_key": "local-environment",
+    "topic_revision_id": "d67eabf7-8da0-4ca7-b2af-74745b3bfd47",
+    "served_revision_id": "d67eabf7-8da0-4ca7-b2af-74745b3bfd47",
+    "question_number": 26,
+    "title": "Environmental Protection vs. Development",
+    "question_text": "How should your community balance new development with environmental preservation?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Make environmental protection the overriding priority \u2014 block or sharply limit development that would harm the local environment"
+      },
+      {
+        "value": 2,
+        "text": "Lean strongly toward protection \u2014 put the burden on development to prove it will not damage the environment before it can proceed"
+      },
+      {
+        "value": 3,
+        "text": "Apply consistent environmental standards while giving developers reasonable flexibility on implementation"
+      },
+      {
+        "value": 4,
+        "text": "Lean toward development \u2014 treat environmental cost as a manageable trade-off and approve projects with clear economic benefit"
+      },
+      {
+        "value": 5,
+        "text": "Remove local environmental restrictions beyond what state and federal law requires"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

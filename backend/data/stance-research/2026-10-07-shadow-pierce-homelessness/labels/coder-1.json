@@ -1,0 +1,55 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "d9e93217-fd45-515f-9069-baa1f11b63c2",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person newsletter opposing SEA 285's criminal camping ban and saying fines continue the cycle of poverty; rules out rungs 4 and 5 but states no clause that separates rungs 1, 2 and 3, and his self-reported amendment (delay until treatment capacity exists) is not a shelter-bed condition with service diversion.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce's own words, \"Criminalizing street camping and sleeping does nothing to solve the root causes of homelessness\" and \"fines will continue the cycle of poverty\", oppose both a ban with criminal penalties and a prohibition enforced through civil penalties, but they do not state a protected right with \"no penalties of any kind\", nor enforcement \"only when adequate shelter beds are available\" with diverting citations. Ruling out the penalty rungs is not evidence for any one remaining rung, so only the side is established.",
+      "needs_source": [
+        "Indiana House roll call, SEA 285 (2026), final passage, with Pierce's vote",
+        "Text and House vote record of Pierce's amendment to SEA 285 (2026)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "d9e93217-fd45-515f-9069-baa1f11b63c2",
+          "text": "Criminalizing street camping and sleeping does nothing to solve the root causes of homelessness. In fact, a criminal record will add additional barriers to recovery and fines will continue the cycle of poverty.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "d9e93217-fd45-515f-9069-baa1f11b63c2",
+          "text": "Instead of spending money on imprisonment and enforcement, we could use it to expand much-needed access to shelters, rehab centers and mental health services.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

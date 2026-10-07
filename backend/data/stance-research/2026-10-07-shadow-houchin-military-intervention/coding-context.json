@@ -1,0 +1,55 @@
+{
+  "batch_id": "2026-10-07-shadow-houchin-military-intervention",
+  "seat": {
+    "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+    "full_name": "Erin Houchin",
+    "level": "federal",
+    "mode": "seated",
+    "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+    "office_title": "U.S. House of Representatives - Indiana 9th Congressional District",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2023-01-03",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "710396dc-e618-4011-8118-43c62a786111",
+      "topic_key": "military-intervention",
+      "served_revision_id": "c42b12b6-d7c3-4b88-a932-06b87d5043c9",
+      "question_text": "How should the United States use military force abroad?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Use US military power to actively lead and police conflicts around the world."
+        },
+        {
+          "value": 2,
+          "text": "Intervene militarily when clear US interests or allied nations are directly threatened."
+        },
+        {
+          "value": 3,
+          "text": "Prefer diplomacy and economic sanctions, using military force only as a last resort."
+        },
+        {
+          "value": 4,
+          "text": "Avoid overseas military action except to defend US territory from direct attack."
+        },
+        {
+          "value": 5,
+          "text": "Withdraw from overseas military commitments and end foreign military intervention."
+        }
+      ],
+      "own_words_levels": [
+        "local",
+        "state"
+      ],
+      "annexMd": "# military-intervention — served revision c42b12b6-d7c3-4b88-a932-06b87d5043c9 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should the United States use military force abroad?\"\n\n**Orientation:** standard. Rung 1 is the most use of force (lead and police conflicts worldwide),\nrung 5 the least (withdraw from overseas commitments). The rungs order **the conditions under which\nforce is used abroad**, and at rung 5, whether the overseas footprint stays.\n\n**Levels with a lever:** federal. Congress declares war, authorizes force,\nfunds deployments and can direct the removal of forces; state and local officials hold no lever.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"War Powers Resolution\", \"authorization for use of military force\" (AUMF),\n\"declaration of war\", \"hostilities\", \"deployment\", \"troop withdrawal\", \"forward presence\",\n\"overseas bases\", \"collective defense\", \"NATO Article 5\", \"treaty commitments\", \"deterrence\",\n\"strike\", \"regime change\", \"sanctions\", \"restraint\", \"global leadership\".\n\n1. **\"Use US military power to actively lead and police conflicts around the world.\"**\n   - Means: the United States uses force to shape and settle conflicts worldwide, not only where its\n     own interests are threatened.\n   - Operative clauses: [a] actively lead and police conflicts; [b] around the world.\n   - Establishing evidence looks like: own words that the United States should act militarily in\n     conflicts generally, as a world role.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because support for **one** strike or deployment reads like a world\n     role. One use of force does not state a general rule → `direction-only` _(proposed)_.\n\n2. **\"Intervene militarily when clear US interests or allied nations are directly threatened.\"**\n   - Means: force is used when U.S. interests or allies face a direct threat, and not otherwise.\n   - Operative clauses: [a] intervene militarily; [b] when clear U.S. interests or allies are directly\n     threatened.\n   - Establishing evidence looks like: own words that state that condition as the test; a Yea on an\n     authorization of force against a named direct threat **plus** words that tie it to the threat\n     _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because rung 3 also allows force. Rung 3 tries diplomacy and\n     sanctions first; rung 2 acts when the threat is direct. A passage that does not say which comes\n     first → `direction-only` _(proposed)_.\n\n3. **\"Prefer diplomacy and economic sanctions, using military force only as a last resort.\"**\n   - Means: diplomacy and sanctions come first; force only when they have failed.\n   - Operative clauses: [a] prefer diplomacy and sanctions; [b] force only as a last resort.\n   - Establishing evidence looks like: own words that state both. Compound: one side only →\n     `compound-partial` (V4.2).\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A **sanctions bill** shows [a] at most; it is silent on force → `compound-partial` _(proposed)_.\n\n4. **\"Avoid overseas military action except to defend US territory from direct attack.\"**\n   - Means: no military action abroad unless U.S. territory is attacked directly; defending allies is\n     not an exception.\n   - Operative clauses: [a] avoid overseas military action; [b] except to defend U.S. territory from\n     direct attack.\n   - Establishing evidence looks like: own words that limit force to defense of U.S. territory.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because both oppose intervention. Rung 4 keeps the overseas\n     footprint and does not use it; rung 5 pulls it back. A passage against one intervention that is\n     silent on bases and commitments → `direction-only` _(proposed)_.\n\n5. **\"Withdraw from overseas military commitments and end foreign military intervention.\"**\n   - Means: bring forces home, leave military commitments abroad, and stop intervening.\n   - Operative clauses: [a] withdraw from overseas commitments (bases, deployments, alliances); [b]\n     end foreign military intervention.\n   - Establishing evidence looks like: own words or an instrument that withdraws from commitments\n     generally. A bill to withdraw troops from **one** country meets [a] for that country only →\n     `direction-only` _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **War Powers votes.** A resolution that directs the removal of forces from named hostilities is\n  against **that** use of force; it does not state the general rule the rungs differ on →\n  `direction-only` at most. A War Powers or authorization vote framed only as **who decides**\n  (Congress or the President) → `adjacent` _(ruled 2026-10-01)_.\n- **Authorizations of force** (AUMF) for one conflict → `direction-only`; a repeal of an old\n  authorization that is no longer used → `adjacent` _(proposed)_.\n- **Military aid and arms sales** are the `ukraine-support` and `israel-military-aid` questions;\n  **the size of the budget** is `defense-spending` → `adjacent`.\n- **The defense authorization bill** and other omnibus votes → V4 `multi-subject`.\n- **Statements about one strike** (\"the strike was right\", \"the strike was wrong\") → `direction-only`\n  unless the passage states the rule behind it _(proposed)_.\n"
+    }
+  ]
+}

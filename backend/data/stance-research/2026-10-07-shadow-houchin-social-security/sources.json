@@ -1,0 +1,45 @@
+{
+  "batch_id": "2026-10-07-shadow-houchin-social-security",
+  "sources": [
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/82",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "social-security"
+      ],
+      "instruments": [
+        "H.R. 82 (118th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://clerk.house.gov/Votes/2024456",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "social-security"
+      ],
+      "instruments": [
+        "H.R. 82 (118th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-statement-house-passage-one-big-beautiful-bill",
+      "source_kind": "own-site",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "social-security"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

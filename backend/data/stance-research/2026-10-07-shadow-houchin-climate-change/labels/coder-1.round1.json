@@ -1,0 +1,99 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "859240a2-8b38-57c8-ae5f-710413fe1776",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 1435 (118th)",
+          "provision_quote": "such State standards directly or indirectly limit the sale or use of new motor vehicles with internal combustion engines",
+          "note": "Bill text of the Preserving Choice in Vehicle Purchases Act: a vehicle-emissions waiver rule, which the annex rules adjacent (vehicle rules are transport, not energy supply); Houchin is not a sponsor or cosponsor.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "be4156c6-63f3-5dbc-b5dd-f8c03329843d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 1435 (118th)",
+          "provision_quote": null,
+          "note": "Roll call 391: Houchin voted Yea on final passage of a vehicle-emissions waiver bill, adjacent to the clean-energy supply rungs.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 222 nay: 190"
+        },
+        {
+          "snapshot_id": "d307e2db-78ae-55a7-b904-26197d0528bc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-09-09",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Press-release praise for a nuclear microreactor at NWS Crane for base energy resilience; names no mandate, subsidy, permitting or neutrality clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "56875b74-a61a-5bf8-85ef-409ea73908c5",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-04-10",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A CRA resolution against a bank climate-risk guidance rule is about banking supervision, not how government expands clean energy; her quoted words are a complaint, and no resolution number is printed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Her Yea on H.R. 1435 (118th) concerns state vehicle-emission waivers, which the annex rules adjacent to rungs about requiring, funding, easing or ending support for clean energy. Her press-release words on a Crane microreactor and on the FDIC climate rule name no mandate, subsidy, permitting reform or market-neutral clause, so no passage speaks to any rung.",
+      "needs_source": [
+        "Text and number of Houchin's 2024 Congressional Review Act resolution on the interagency climate-related financial risk principles (FDIC/Fed/OCC), to confirm sponsorship and content"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "56875b74-a61a-5bf8-85ef-409ea73908c5",
+          "text": "In this environment of high inflation and energy costs, the last thing we need from this Administration is more red tape and more attacks on American energy producers",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        },
+        {
+          "snapshot_id": "d307e2db-78ae-55a7-b904-26197d0528bc",
+          "text": "microreactors at our military installations is a natural next step in U.S. energy deployment and rebuilding our nuclear supply chain",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

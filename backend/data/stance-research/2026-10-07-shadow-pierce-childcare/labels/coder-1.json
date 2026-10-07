@@ -1,0 +1,86 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "served_revision_id": "0e9fe0f2-cfab-4553-99cd-c3195d08e236",
+      "passages": [
+        {
+          "snapshot_id": "3d96657f-dc81-5114-931e-5b5ad490266d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-10-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticizes the cut to CCDF voucher reimbursement rates and says the state needs to revamp its child care system; shows the pro-support side but names no rung's reach or mechanism.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fcec99df-b2ce-5376-8666-3df3759ab97b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Calls the employer credit (HEA 1177) a 'small step' and backs a caucus proposal to require release of CCDF funds; his own vote on either is not shown, and the words separate sides, not rungs 1-3.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "18bd353f-9022-5c01-8d22-06078fdf31f4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-15",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticizes the governor for delaying action on child care and funding cuts; names no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His newsletters oppose the cut to CCDF voucher reimbursement rates, call HEA 1177's employer credit only a 'small step', and say 'Indiana needs to revamp its child care system', which places him on the side of more public support. None of it states whether support should reach all families regardless of income, low- and middle-income families with provider grants, or families below a set threshold with training and facility grants, so no single rung is evidenced.",
+      "needs_source": [
+        "Indiana House roll call, HEA 1177 (2026), final passage, with bill text",
+        "Indiana House roll call on the House Democratic amendment to SEA 4 (2026) requiring release of CCDF funds, with amendment text",
+        "Any bill Matt Pierce authored or co-authored on childcare subsidies or provider grants"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "3d96657f-dc81-5114-931e-5b5ad490266d",
+          "text": "Indiana needs to revamp its child care system to support parents, care for our kids and ensure those who want to work can.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "fcec99df-b2ce-5376-8666-3df3759ab97b",
+          "text": "Republicans voted down a proposal offered by House Democrats that would have required the release of funds to alleviate the child care crisis.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

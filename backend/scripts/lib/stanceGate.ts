@@ -127,7 +127,9 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /\bS\.?B\.?\s?\d+\b/,
   /\b(?:House|Senate) Bill \d{1,4}\b/,
   /\bS\.?L\.?\s?20\d{2}-\d{1,4}\b/,
-  /\bH\.?R\.?\s?\d+\b/,
+  // The U.S. House Clerk prints "H. R. 22" (a space after each period) and "H. J. RES. 44" (2026-10-07).
+  /\bH\.?\s?R\.?\s?\d+\b/,
+  /\bH\.?\s?(?:J\.?\s?|Con\.?\s?)?Res\.?\s?\d+\b/i,
   /\bS\.?J\.?\s?Res\.?\s?\d+\b/,
   // Asymmetric on purpose: unlike HB/SB/HR above, the hyphen sits AFTER the optional periods ("A.B.-123"
   // as well as "AB-123"), because NAMES_INSTRUMENT's own AB form pairs the hyphen with the digits, not
@@ -267,9 +269,13 @@ export function checkStanceRow(
 
   // C69: a quoted passage in the reasoning that isn't in any cited snippet is either a wrong sentence or a
   // fabricated quote — quotation marks are a promise the words were said, and this checks the promise.
+  // A quote of this topic's own served rung text is the ladder, not a claim about what the person said:
+  // codebook V6 tells coders to "cite the rung by its text" (2026-10-07, first Opus-alone batch).
+  const rungTexts = (ctx.topic?.stances ?? []).map((st) => normalizeText(st.text));
   const quotes = extractQuotedPhrases(row.reasoning).filter((q) => wordCount(q) >= 4);
   for (const q of quotes) {
     const nq = normalizeText(q);
+    if (rungTexts.some((t) => t.includes(nq))) continue;
     if (!citedEvidence.some((e) => normalizeText(e.snippet).includes(nq))) {
       add('quote-not-in-snippet', 'high', `reasoning quotes text not found verbatim in any cited snippet: "${q}"`);
     }

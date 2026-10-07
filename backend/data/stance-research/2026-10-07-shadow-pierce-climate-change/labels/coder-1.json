@@ -1,0 +1,47 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "d85b02ae-e546-582b-9a43-97924d670542",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-11-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person newsletter says he has advocated promoting wind, solar and storage, a pro-clean-energy lean that names no mechanism (mandate, subsidy, permitting/grid) separating the rungs; the bills he says he opposed concern utility cost recovery for gas/nuclear and are adjacent, with no roll calls in the source.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce writes that he has \"advocated for more competition in the utility industry by promoting renewable energy like wind and solar, along with energy storage\", which places him on the pro-clean-energy side but does not say whether government should require it through mandates and firm deadlines, fund it with major subsidies, or speed it by cutting permitting red tape and upgrading the grid. The bills he says he opposed (utility cost recovery for gas plants, small modular reactors, coal ash) are about who bears utility costs, not clean-energy mechanisms, and no vote record is in the sources.",
+      "needs_source": [
+        "Indiana General Assembly roll calls for Pierce's votes on HEA 1421 (2023), SEA 271 (2022), SEA 423 and SEA 424 (2025)",
+        "Any Indiana bill Pierce authored or co-sponsored on a renewable portfolio standard, clean-energy incentives, or renewable siting/interconnection, with bill text"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "d85b02ae-e546-582b-9a43-97924d670542",
+          "text": "I fought these bills and have advocated for more competition in the utility industry by promoting renewable energy like wind and solar, along with energy storage.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

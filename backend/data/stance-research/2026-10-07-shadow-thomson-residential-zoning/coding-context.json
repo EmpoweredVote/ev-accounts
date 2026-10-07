@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-thomson-residential-zoning",
+  "seat": {
+    "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+    "full_name": "Kerry Thomson",
+    "level": "local",
+    "mode": "seated",
+    "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+    "office_title": "City Mayor",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": null,
+    "start_precision": "unknown",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "topic_key": "residential-zoning",
+      "served_revision_id": "6b5a3504-9e90-455a-9dd5-07e5376399af",
+      "question_text": "What should guide decisions about housing density and neighborhood character in your community?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Protect existing single-family neighborhoods; oppose density increases."
+        },
+        {
+          "value": 2,
+          "text": "Allow modest density increases, like duplexes and accessory units, in single-family neighborhoods"
+        },
+        {
+          "value": 3,
+          "text": "Allow multifamily and mixed-use near commercial corridors while protecting most residential zones"
+        },
+        {
+          "value": 4,
+          "text": "Upzone broadly to allow multifamily housing by right in most neighborhoods"
+        },
+        {
+          "value": 5,
+          "text": "Eliminate single-family-only zoning; allow any housing type on any lot communitywide"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# residential-zoning — served revision 6b5a3504-9e90-455a-9dd5-07e5376399af (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`ef2a5e59-…`); coders code the served text below.\n\n**Question:** \"What should guide decisions about housing density and neighborhood character in your\ncommunity?\"\n\n**Orientation:** off-axis (CLAUDE.md lists it). Read it as one scale of **how much housing density\nzoning permits in residential areas**: rung 1 permits no increase, rung 5 permits any housing type on\nany lot. It is **not** a government-action scale. Rung 5 removes zoning rules, and it is also the\nrung that permits the most housing; rung 1 keeps the most rules. A \"more government\" reading and a\n\"less regulation\" reading point in opposite directions here, and placements have been inverted both\nways before. Place a person only by the density their act or words permit.\n\n**Levels with a lever:** local. The lever is the city or county zoning code,\nrezonings, and the general or comprehensive plan. State laws that override local zoning are state\nacts; this topic has no state role (see hard cases).\n\n**Asked at:** local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"single-family zoning\" (R-1), \"upzoning\", \"downzoning\", \"accessory dwelling unit\"\n(ADU, granny flat, backyard cottage), \"duplex\", \"triplex\", \"fourplex\", \"missing middle\", \"lot split\",\n\"multifamily\", \"mixed-use\", \"transit-oriented development\", \"corridor plan\", \"by right\" (no\ndiscretionary approval), \"conditional use\", \"neighbourhood character\", \"historic district\", \"density\nbonus\".\n\n1. **\"Protect existing single-family neighborhoods; oppose density increases.\"**\n   - Means: keep single-family areas as they are and allow no added density.\n   - Operative clauses: [a] protect existing single-family neighbourhoods; [b] oppose density\n     increases.\n   - Establishing evidence looks like: own words against density increases in general; a vote\n     against a citywide ADU, duplex or upzoning ordinance **plus** own words that density, not the\n     details, is the objection.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A No on **one** project rezoning may rest on the project (traffic, height, design) →\n     `direction-only` _(proposed)_.\n\n2. **\"Allow modest density increases, like duplexes and accessory units, in single-family\n   neighborhoods\"**\n   - Means: allow small additions such as duplexes and ADUs inside single-family areas.\n   - Operative clauses: [a] modest density increases (duplexes, accessory units); [b] in\n     single-family neighbourhoods.\n   - Establishing evidence looks like: authoring or a final-passage vote on an ADU or duplex\n     ordinance for single-family zones; own words supporting it.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - An ADU-only or duplex-only ordinance, with nothing else on record → rung 2 (V4.2 \"Broader than\n     the instrument\": seat the narrower rung). Rung 2 has no \"at most\" clause _(ruled 2026-10-01)_.\n   - Commonly confused with rung 5 because allowing duplexes on every lot **ends single-family-only\n     zoning**. It does not allow \"any housing type on any lot\", so it is not rung 5; code the density\n     it allows _(proposed)_.\n\n3. **\"Allow multifamily and mixed-use near commercial corridors while protecting most residential\n   zones\"**\n   - Means: add apartments and mixed-use buildings along commercial streets, and leave most\n     residential areas as they are.\n   - Operative clauses: [a] allow multifamily and mixed-use near commercial corridors; [b] protect\n     most residential zones.\n   - Establishing evidence looks like: a corridor or transit-area rezoning whose text limits the new\n     density to those areas; own words for both parts. Compound: one side only → `compound-partial`\n     (V4.2). A corridor rezoning whose map leaves the other residential zones unchanged meets [b] by\n     its scope _(proposed)_.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a large corridor plan can reach many neighbourhoods. Code\n     4 only when the passage shows multifamily by right in **most** neighbourhoods.\n\n4. **\"Upzone broadly to allow multifamily housing by right in most neighborhoods\"**\n   - Means: change zoning across most of the community so apartment buildings are allowed without\n     special approval.\n   - Operative clauses: [a] upzone broadly, in most neighbourhoods; [b] multifamily; [c] by right.\n   - Establishing evidence looks like: a citywide zoning change that allows multifamily buildings by\n     right in most residential zones.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Triplexes and fourplexes allowed by right in most zones → rung 4: three or more units is\n     multifamily, and rung 2's examples stop at two _(ruled 2026-10-01)_.\n   - An upzoning that still needs a discretionary permit for each project does not meet [c] →\n     `compound-partial` _(proposed)_.\n   - Commonly confused with rung 5: see rung 5.\n\n5. **\"Eliminate single-family-only zoning; allow any housing type on any lot communitywide\"**\n   - Means: no zone is reserved for single-family homes, and every housing type is allowed on every\n     lot.\n   - Operative clauses: [a] eliminate single-family-only zoning; [b] allow **any** housing type on\n     **any** lot, communitywide.\n   - Establishing evidence looks like: own words or an ordinance that allows every housing type on\n     every residential lot. Compound: one side only → `compound-partial` (V4.2). [b] is a universal\n     clause: the text must say \"any\" or list no limit, and silence does not meet it (V4.2 \"Silence is\n     not a clause\").\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a broad upzoning reaches most lots. Rung 4 is \"most\n     neighbourhoods\"; rung 5 is every lot and every type.\n   - Commonly confused with rung 2: see rung 2.\n\n**Hard cases:**\n- **State laws that override local zoning** (statewide ADU, duplex or lot-split rights). This topic\n  has no state role, so a state legislator's act → BLANK `scope-unavailable` _(proposed)_. Such a\n  law removes the very limits a rung names, so for a level that does hold the lever it would be\n  `on-question` but `direction-only` (codebook V2, \"Refined 2026-09-26\").\n- **A local official implementing a state mandate** (adopting the ordinance the state requires) is\n  not their own position → `direction-only` at most _(proposed)_.\n- **Parking minimums, design review and permit streamlining** are not density → `adjacent`\n  _(proposed)_.\n- **Historic districts and downzonings** that stop added density point toward rung 1 →\n  `direction-only` unless own words generalize them _(proposed)_.\n- **Inclusionary and affordability requirements** are about who can afford the units, not density →\n  `adjacent` (the `housing` topic).\n- **General and comprehensive plans** → V4 `multi-subject`.\n"
+    }
+  ]
+}

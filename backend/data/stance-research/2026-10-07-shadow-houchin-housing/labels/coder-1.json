@@ -1,0 +1,100 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "48a400fd-2828-5a1a-bf19-9635645ca3b9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-09-17",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her own words on cutting federal red tape on manufactured housing lean market-side but do not exclude subsidies or say she wants nothing more than deregulation.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f3309a23-b297-5cd7-b16f-88bab7092038",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says cutting regulations will increase supply and lower costs; shows the deregulation side but not rung 5's 'at most' ceiling.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6fef62e0-f4cd-5508-95f7-2f6b0c6915e3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-01-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5184 (119th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of a single-subject bill rescinding a DOE manufactured-housing efficiency rule; one deregulation law cannot show rung 5's 'at most'.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 263 nay: 147 present: 0 not voting: 21"
+        },
+        {
+          "snapshot_id": "8f7ce57e-06f6-5f95-a51a-dcdea19b908f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-01-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5184 (119th)",
+          "provision_quote": "(b) No Force or Effect.--The final rule titled ``Energy Conservation Program: Energy Conservation Standards for Manufactured Housing'' published by the Department of Energy in the Federal Register on May 31, 2022 (87 Fed. Reg. 32728), shall have no force or effect.",
+          "note": "She sponsored the bill; its operative section voids a federal building-standard rule, a cut to a regulation on private building, which is direction toward rung 5 only.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsor: Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Houchin sponsored and voted Yea on H.R. 5184 (119th), the Affordable HOMES Act, which voids the DOE manufactured-housing energy rule, and said it would 'get government out of the way, lower costs'. That shows the side of 'cut the regulations ... that block private building', but one deregulation law and these words do not show she would 'rely on the market' and reject subsidies and tax breaks, so rungs 4 and 5 are not separated.",
+      "needs_source": [
+        "Houchin's own words or record on housing subsidies or tax credits (e.g., LIHTC expansion) to separate rung 4 from rung 5",
+        "Houchin's own words or record on public housing or binding rules (rent caps, required affordable units)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "48a400fd-2828-5a1a-bf19-9635645ca3b9",
+          "text": "The Affordable HOMES Act is a commonsense solution to get government out of the way, lower costs, and give more families the opportunity to achieve the American dream of homeownership.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "f3309a23-b297-5cd7-b16f-88bab7092038",
+          "text": "The Affordable HOMES Act takes a practical approach by cutting red tape and regulations that contribute to pricing American families out of owning a home, which will increase supply and lower costs.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

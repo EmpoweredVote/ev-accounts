@@ -46,7 +46,7 @@ export type Chamber = 'upper' | 'lower';
 export type VoteBlockRule = 'aye-count' | 'whole-page';
 export type ChamberRule = 'nearest-before' | 'word-before-floor' | 'word-before-reading' | 'reading-else-bill-origin' | 'page-header' | 'bill-origin' | 'none';
 export type TallyFormat = 'labelled' | 'dash-ayes-nays';
-export type NameFormat = 'surname' | 'surname-initial' | 'surname-initial-vote' | 'last-first' | 'full-name';
+export type NameFormat = 'surname' | 'surname-initial' | 'surname-initial-vote' | 'surname-doubled' | 'last-first' | 'full-name';
 /**
  * How a source prints amended text (amendment-markup spec §1): 'final' — the page prints the law as
  * it will read, no markup to lose (CA chaptered text); 'marked' — deletions are recoverable from the
@@ -58,7 +58,7 @@ export interface SourceRules { vote_block: VoteBlockRule; chamber: ChamberRule; 
 export const VOTE_BLOCK_RULES: readonly VoteBlockRule[] = ['aye-count', 'whole-page'];
 export const CHAMBER_RULES: readonly ChamberRule[] = ['nearest-before', 'word-before-floor', 'word-before-reading', 'reading-else-bill-origin', 'page-header', 'bill-origin', 'none'];
 export const TALLY_FORMATS: readonly TallyFormat[] = ['labelled', 'dash-ayes-nays'];
-export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'surname-initial-vote', 'last-first', 'full-name'];
+export const NAME_FORMATS: readonly NameFormat[] = ['surname', 'surname-initial', 'surname-initial-vote', 'surname-doubled', 'last-first', 'full-name'];
 export const AMENDMENT_TEXTS: readonly AmendmentText[] = ['final', 'marked', 'unmarked'];
 /** Today's layout rules. A source with no profile is read with these (and CONFIRM flags it). */
 export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'nearest-before', not_chamber_after: [], name_format: 'surname', tally_format: 'labelled', amendment_text: 'final' };
@@ -66,8 +66,9 @@ export const GENERIC_RULES: SourceRules = { vote_block: 'aye-count', chamber: 'n
 export type PassageProfile = { rules: SourceRules; chamber: Chamber | null };
 export function seatChamber(officeTitle: string | null | undefined): Chamber | null {
   const t = officeTitle ?? '';
-  if (/\bsenator\b/i.test(t)) return 'upper';
-  if (/\brepresentative\b|\bassembly\s*(?:member|man|woman)\b|\bassemblymember\b|\bdelegate\b/i.test(t)) return 'lower';
+  if (/\bsenator\b|\bu\.\s?s\.\s?senate\b/i.test(t)) return 'upper';
+  // "U.S. House of Representatives - Indiana 9th Congressional District": the plural never matched \brepresentative\b.
+  if (/\bhouse of representatives\b|\brepresentative\b|\bassembly\s*(?:member|man|woman)\b|\bassemblymember\b|\bdelegate\b/i.test(t)) return 'lower';
   return null;
 }
 /** All numbers matching `pattern` (an alternation, e.g. "ayes|yeas") immediately labelling a count. */
@@ -446,6 +447,14 @@ export function checkRecordGroup(i: {
       const k = onPage[0];
       const initialAfter = onPage.length === 1 && (pt[k + 1] ?? '').length === 1 && AZ_VOTE_MARK.has(pt[k + 2] ?? '');
       if (onPage.length === 1 && !initialAfter) continue;
+    }
+    // 'surname-doubled' (U.S. House Clerk roll calls): every member prints twice, side by side
+    // ("Houchin Houchin Republican Indiana IN Yea"), and namesakes print with their state
+    // ("Higgins (LA) Higgins (LA)"). A surname printed exactly twice, adjacent, is one member.
+    // A namesake page has the surname four or more times and still fails closed.
+    if (prof(p).rules.name_format === 'surname-doubled') {
+      const onPage = pt.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);
+      if (onPage.length === 2 && onPage[1] === onPage[0] + 1) continue;
     }
     const aq = words(p.actor_quote!);
     const idx = aq.map((w, k) => (w === last ? k : -1)).filter((k) => k >= 0);

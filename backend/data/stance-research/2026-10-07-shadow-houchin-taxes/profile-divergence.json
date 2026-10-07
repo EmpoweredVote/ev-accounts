@@ -1,0 +1,21 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+    "instrument": "hr1(119th)",
+    "snapshots": [
+      {
+        "snapshot_id": "a4e61ddf-13ed-56c8-8166-fbf1db4338cb",
+        "url": "https://clerk.house.gov/Votes/2025190",
+        "profile": "us-house-clerk-roll-call@1"
+      }
+    ],
+    "generic": [
+      "name-collision",
+      "provision-missing"
+    ],
+    "profiled": [
+      "provision-missing"
+    ]
+  }
+]

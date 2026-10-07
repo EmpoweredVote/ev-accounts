@@ -1,0 +1,44 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "hjres44(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "b43add17-b4d6-5893-a3d0-89cc0a31e3c1",
+        "url": "https://clerk.house.gov/Votes/2023252",
+        "profile": "us-house-clerk-roll-call@1"
+      },
+      {
+        "snapshot_id": "3e74e5a9-0a92-5762-ba36-7b106be03e0a",
+        "url": "https://www.congress.gov/bill/118th-congress/house-joint-resolution/44",
+        "profile": "us-congress-gov-bill@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 1,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "hr2189(119th)",
+    "snapshots": [
+      {
+        "snapshot_id": "54b16fca-5296-530b-a8c3-20e37e44bf05",
+        "url": "https://clerk.house.gov/Votes/202670",
+        "profile": "us-house-clerk-roll-call@1"
+      },
+      {
+        "snapshot_id": "ac58db88-fdda-5a46-9add-5de73b10a656",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/2189",
+        "profile": "us-congress-gov-bill@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]

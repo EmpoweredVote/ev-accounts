@@ -1,0 +1,23 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+    "instrument": "hr1435(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "859240a2-8b38-57c8-ae5f-710413fe1776",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/1435",
+        "profile": "us-congress-gov-bill@1"
+      },
+      {
+        "snapshot_id": "be4156c6-63f3-5dbc-b5dd-f8c03329843d",
+        "url": "https://clerk.house.gov/Votes/2023391",
+        "profile": "us-house-clerk-roll-call@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]

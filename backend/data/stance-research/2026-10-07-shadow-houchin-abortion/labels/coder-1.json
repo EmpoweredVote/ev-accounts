@@ -1,0 +1,122 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "90f7dcf9-94a1-5322-9e7f-55bbfed465ac",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01-09",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 7 (118th)",
+          "provision_quote": "No funds authorized or appropriated by Federal law, and none of the funds in any trust fund to which funds are authorized or appropriated by Federal law, shall be expended for any abortion.",
+          "note": "Co-sponsorship of a federal-funding restriction; the annex rules funding bills adjacent, as they set no gestational limit or exception rule for abortion itself.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "149ab2b0-f8ff-5e6f-813e-642e00caadbb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01-11",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 26 (118th)",
+          "provision_quote": "exercise the same degree of professional skill, care, and diligence to preserve the life and health of the child as a reasonably diligent and conscientious health care practitioner would render to any other child born alive at the same gestational age",
+          "note": "Co-sponsored bill sets a duty of care for infants born alive after an abortion; it sets no gestational limit or exception rule (annex hard case: narrow restriction).",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3c6cba5a-7385-5a8f-af9b-2b6df86d8f12",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01-11",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 26 (118th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of the Born-Alive Abortion Survivors Protection Act; adjacent to the ladder's question for the same reason as the bill text.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 220 nay: 210 present: 1 not voting: 3"
+        },
+        {
+          "snapshot_id": "6768bba8-34be-54a1-b4de-3721aa6fe13a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2023-01-11",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words concern born-alive care and a general pledge to 'defend life'; they name no gestational limit or exception rule.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a1f7f6da-7040-52df-9ff7-b41e976cedc8",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-29",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Press release on a Medicaid-payment reporting bill (no bill number given); funding transparency is adjacent and 'taking innocent lives' names no legal rule.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e9630556-2125-5b4f-a07b-d4e0adca1713",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign page in the third person ('Erin is pro-life', 'advocating for the prohibition of late-term abortions'); characterization of a lean, plus scorecard/endorsement mentions that are not evidence.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Her records (co-sponsor of H.R. 7, a federal-funding restriction; co-sponsor and Yea on H.R. 26, the Born-Alive Abortion Survivors Protection Act) set no gestational limit and no exception rule, so they are adjacent to rungs such as \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\". Her own words ('I will always defend life') are rhetorical, and the campaign page's 'prohibition of late-term abortions' is a third-person characterization, so no passage survives.",
+      "needs_source": [
+        "Her own first-person words on gestational limits or exceptions (e.g. rape, incest, life of the mother) from the current term or campaign",
+        "Clerk roll call or congress.gov record of any vote or sponsorship by her on a federal gestational-limit or nationwide-ban bill (118th/119th Congress)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "6768bba8-34be-54a1-b4de-3721aa6fe13a",
+          "text": "I will always defend life and support mothers and their children",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "topic_key": "school-vouchers",
+    "topic_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+    "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+    "question_number": 36,
+    "title": "School Vouchers & Public Education Funding",
+    "question_text": "What role should vouchers and school choice play in the public education system?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Eliminating voucher programs that divert taxpayer money from public schools to private institutions"
+      },
+      {
+        "value": 2,
+        "text": "Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones"
+      },
+      {
+        "value": 3,
+        "text": "Allowing income-based voucher programs, open to a wider range of families under an income cap"
+      },
+      {
+        "value": 4,
+        "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child"
+      },
+      {
+        "value": 5,
+        "text": "Providing universal vouchers so that education funding follows the student to any school \u2014 public, private, or religious \u2014 chosen by the family"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local"
+    ]
+  }
+]

@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-thomson-local-immigration",
+  "seat": {
+    "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+    "full_name": "Kerry Thomson",
+    "level": "local",
+    "mode": "seated",
+    "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+    "office_title": "City Mayor",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": null,
+    "start_precision": "unknown",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "topic_key": "local-immigration",
+      "served_revision_id": "e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf",
+      "question_text": "How should your community's law enforcement relate to federal immigration enforcement?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Refuse all ICE detainers; prohibit local employees from sharing immigration status information with federal agencies"
+        },
+        {
+          "value": 2,
+          "text": "Comply with ICE detainers only when they are ordered by a court"
+        },
+        {
+          "value": 3,
+          "text": "Follow federal law as required but do not use local resources for proactive immigration enforcement"
+        },
+        {
+          "value": 4,
+          "text": "Honor ICE detainers and share information proactively when federal agencies request it"
+        },
+        {
+          "value": 5,
+          "text": "Direct local police to actively assist with immigration enforcement and support federal detention operations"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# local-immigration — served revision e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`d497a221-…`); coders code the served text below.\n\n**Question:** \"How should your community's law enforcement relate to federal immigration\nenforcement?\"\n\n**Orientation:** standard. Rung 1 is the least cooperation (refuse all detainers, share no status\ninformation), rung 5 the most (local police actively assist and support detention). The rungs order\n**how far local law enforcement cooperates with federal immigration enforcement**.\n\n**Levels with a lever:** local. The lever is the sheriff's jail and booking\npolicy, the police department's policy, county jail contracts, and council or county-board\nordinances on cooperation. State law can require or forbid cooperation, but this topic has **no state\nrole**: a state legislator's act on it → `scope-unavailable` (see hard cases).\n\n**Asked at:** local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"ICE detainer\" (an I-247 request to hold a person), \"judicial warrant\", \"administrative\nwarrant\", \"hold request\", \"notification request\", \"sanctuary\" or \"welcoming\" ordinance, \"trust act\",\n\"287(g) agreement\" (jail model, task-force model), \"intergovernmental service agreement\" (IGSA, a\ncontract to house federal detainees), \"Secure Communities\", \"8 U.S.C. 1373\", \"civil immigration\nenforcement\".\n\n1. **\"Refuse all ICE detainers; prohibit local employees from sharing immigration status information\n   with federal agencies\"**\n   - Means: the community honours no detainer of any kind, and its employees may not share anyone's\n     immigration status with federal agencies.\n   - Operative clauses: [a] refuse **all** detainers; [b] prohibit employees from sharing immigration\n     status information.\n   - Establishing evidence looks like: an ordinance or jail policy that refuses every detainer,\n     including those with a judicial warrant, **and** bars status sharing. Compound: one side only →\n     `compound-partial` (V4.2). \"All\" is an absence clause: the text must say it.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because most sanctuary policies refuse detainers **without a\n     judicial warrant**. A policy that still honours a court-ordered hold is rung 2, not rung 1\n     _(proposed)_.\n\n2. **\"Comply with ICE detainers only when they are ordered by a court\"**\n   - Means: the jail holds a person for immigration agents only when a judge has signed a warrant or\n     order.\n   - Operative clauses: [a] comply with detainers **only** when ordered by a court.\n   - Establishing evidence looks like: a jail policy or ordinance that honours detainers backed by a\n     judicial warrant and declines the rest.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - Commonly confused with rung 3 because both limit cooperation. Rung 2 states a **detainer** rule;\n     rung 3 states a **resources** rule (no proactive enforcement).\n\n3. **\"Follow federal law as required but do not use local resources for proactive immigration\n   enforcement\"**\n   - Means: do what federal law requires, and nothing more: local officers do not seek out\n     immigration violations.\n   - Operative clauses: [a] follow federal law as required; [b] no local resources for proactive\n     immigration enforcement.\n   - Establishing evidence looks like: a policy that bars officers from asking about status or\n     arresting on civil immigration grounds, together with a statement of compliance with what federal\n     law requires.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A policy that bars proactive enforcement and says nothing about detainers → `direction-only`:\n     rungs 1 and 2 bar proactive enforcement too, and the detainer rule is what separates them (V4,\n     H14) _(ruled 2026-10-01)_.\n   - \"We follow the law\" with no policy named → `rhetorical`.\n\n4. **\"Honor ICE detainers and share information proactively when federal agencies request it\"**\n   - Means: the jail honours detainers, and local agencies give federal agents the information they\n     ask for.\n   - Operative clauses: [a] honour detainers (not only court-ordered ones); [b] share information\n     when federal agencies request it.\n   - Establishing evidence looks like: a jail policy or ordinance that honours detainer requests\n     **and** provides release dates or status information on request. Compound: one side only →\n     `compound-partial` (V4.2).\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because a 287(g) jail agreement includes honouring detainers. Rung\n     5 needs local officers **acting** in enforcement or support for detention; responding to\n     requests is rung 4.\n\n5. **\"Direct local police to actively assist with immigration enforcement and support federal\n   detention operations\"**\n   - Means: local officers take part in immigration enforcement, and the community helps federal\n     detention.\n   - Operative clauses: [a] local police actively assist immigration enforcement; [b] support federal\n     detention operations.\n   - Establishing evidence looks like: entering or renewing a 287(g) agreement (evidences [a]) **and**\n     a contract to hold federal detainees or support for a detention facility (evidences [b]); own\n     words calling for both. Compound: one side only → `compound-partial` (V4.2) _(proposed)_.\n   - Levels that hold a lever: local (sheriff, county board, city council).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **State law on local cooperation** (a state mandate to cooperate, or a state ban on it). This topic\n  has no state role, so a state legislator's vote or bill → BLANK `scope-unavailable`, even when the\n  bill's content matches a rung. Worked case: IN SB 76 (2026), a multi-provision state bill; the blind\n  label rested on two of its clauses, and adjudication read rung 4 on the merits but recorded\n  `scope-unavailable` (gold, excluded from certification).\n- **A local official under a state mandate.** Complying with a state law that requires or forbids\n  cooperation is not the official's own position → `direction-only` at most _(proposed)_.\n- **Opposing a detention facility** shows only that the person rejects rung 5 [b] → `direction-only`.\n- **Legal-defence funds, driver's licences, and \"welcoming city\" proclamations** do not speak to law\n  enforcement's cooperation → `adjacent` or `rhetorical`.\n- **Resolutions condemning or praising federal raids** → `rhetorical` unless they set a local policy.\n- **Budget votes** that fund a jail or a 287(g) unit among other items → V4 `multi-subject`.\n"
+    }
+  ]
+}

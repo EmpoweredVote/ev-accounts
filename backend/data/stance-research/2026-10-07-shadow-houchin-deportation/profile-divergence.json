@@ -1,0 +1,23 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+    "instrument": "s5(119th)",
+    "snapshots": [
+      {
+        "snapshot_id": "df91a342-7f02-503c-89cc-a4e9ece748d6",
+        "url": "https://clerk.house.gov/Votes/202523",
+        "profile": "us-house-clerk-roll-call@1"
+      },
+      {
+        "snapshot_id": "7fba9638-5e6c-5a36-9429-bca35555d7a9",
+        "url": "https://www.congress.gov/bill/119th-congress/senate-bill/5",
+        "profile": "us-congress-gov-bill@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]

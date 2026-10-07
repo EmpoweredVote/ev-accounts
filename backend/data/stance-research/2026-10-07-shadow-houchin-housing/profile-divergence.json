@@ -1,0 +1,23 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "hr5184(119th)",
+    "snapshots": [
+      {
+        "snapshot_id": "6fef62e0-f4cd-5508-95f7-2f6b0c6915e3",
+        "url": "https://clerk.house.gov/Votes/202612",
+        "profile": "us-house-clerk-roll-call@1"
+      },
+      {
+        "snapshot_id": "8f7ce57e-06f6-5f95-a51a-dcdea19b908f",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/5184",
+        "profile": "us-congress-gov-bill@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]

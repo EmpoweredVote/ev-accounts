@@ -1,0 +1,46 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+    "instrument": "hr734(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "7dbb3832-acd5-571d-970e-8ff9b07fadb9",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/734",
+        "profile": "us-congress-gov-bill@1"
+      },
+      {
+        "snapshot_id": "9cacfaf8-60a4-589f-9c3e-05dedb263d8a",
+        "url": "https://clerk.house.gov/Votes/2023192",
+        "profile": "us-house-clerk-roll-call@1"
+      }
+    ],
+    "generic": [
+      "name-collision",
+      "tally-other-vote"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 1,
+    "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+    "instrument": "hr28(119th)",
+    "snapshots": [
+      {
+        "snapshot_id": "96637826-33c9-51ac-83e0-4ea269d3ef1e",
+        "url": "https://www.congress.gov/bill/119th-congress/house-bill/28",
+        "profile": "us-congress-gov-bill@1"
+      },
+      {
+        "snapshot_id": "c8e06077-f5c8-5d02-968d-d13cd39a2f24",
+        "url": "https://clerk.house.gov/Votes/202512",
+        "profile": "us-house-clerk-roll-call@1"
+      }
+    ],
+    "generic": [
+      "name-collision",
+      "tally-other-vote"
+    ],
+    "profiled": []
+  }
+]

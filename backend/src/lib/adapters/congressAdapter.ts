@@ -172,7 +172,9 @@ async function buildBillText(
     if (s?.text) parts.push(htmlToText(String(s.text)));
   }
 
-  const cosponsors = await getJson(`${base}/cosponsors`, apiKey, fetchImpl);
+  // limit=250: the API's default page is 20, so a member deep in a long list (H.R. 26 (118th) has
+  // about 160) was never printed, and their cosponsorship could not be verified from this page.
+  const cosponsors = await getJson(`${base}/cosponsors?limit=250`, apiKey, fetchImpl);
   const cosponsorList: any[] = Array.isArray(cosponsors?.cosponsors) ? cosponsors.cosponsors : [];
   const coNames = cosponsorList.map((c: any) => c?.fullName).filter(Boolean);
   if (coNames.length) parts.push('Cosponsors: ' + coNames.join(', '));
