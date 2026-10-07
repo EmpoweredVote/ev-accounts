@@ -1,6 +1,6 @@
 # Proposal: how a human-saved own-site copy should count for verification
 
-Status: **RULED 2026-10-07 (Chris Andrews) — not yet implemented.** Option B; rules 2 and 3 below accepted as recommended.
+Status: **RULED 2026-10-07 (Chris Andrews) — implemented in the PR that follows #928.** Option B; rules 2 and 3 below accepted as recommended.
 
 ## Problem
 
@@ -61,7 +61,7 @@ detectable.
    `--auto-push`. Stated as an explicit rule so a later change to the threshold logic cannot let it through.
 3. **Scope:** only sources the manifest marks `own-site`. Widen later if a government site proves JS-only.
 
-Implementation is a separate change.
+Implementation: `src/lib/humanSavedCopy.ts`, `scripts/lib/humanSavedCopies.ts`, policy reason `human-saved-source`, review-page notice. No migration (the marker lives in the free-form evidence jsonb).
 
 ## Not changed by this PR
 
