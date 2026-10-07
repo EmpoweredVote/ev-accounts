@@ -36,3 +36,8 @@ enable_signup = true
 enable_signup = true
 double_confirm_changes = true
 enable_confirmations = false
+
+# GitHub -> Discord review relay (ev-cto decision 0030). GitHub sends no
+# Supabase JWT; the function authenticates with the X-Hub-Signature-256 HMAC.
+[functions.github-pr-review-relay]
+verify_jwt = false
