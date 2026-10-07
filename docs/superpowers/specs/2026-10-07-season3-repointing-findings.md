@@ -106,3 +106,80 @@ No schema change is needed for the index.
 ## Reproduction
 
 Scripts used (not committed; scratchpad): a before/after snapshot of seven tables, and the dry-run script described in section 4. Prod access: session pooler `DATABASE_URL`, with `SET default_transaction_read_only = on` inside each session. The pooler ignores `PGOPTIONS`, so that environment variable does **not** make the session read-only.
+
+## Appendix: per-topic counts (prod, read-only, 2026-10-07)
+
+One row per topic pinned in draft Season 3 (61 topics: 60 carried plus surveillance-technology).
+
+- **s2 rows**: people with a Season 2 answer (includes blanks).
+- **s2 blank**: Season 2 rows with value 0.
+- **s1-only**: people with a Season 1 answer and no Season 2 row. The guard forces an S3 row for each if the topic moves.
+- **s2 pin = current**: yes means one map step is correct for Season 2 rows. NO means chained maps (13 topics).
+- **s1 pin vs current**: differs means Season 1 answers sit on an older ladder than the current one.
+- **voters**: voter answer rows on the topic, all seasons.
+
+| topic | s2 rows | s2 blank | s1-only | s2 pin = current | s1 pin vs current | voters |
+|---|---:|---:|---:|---|---|---:|
+| taxes | 81 | 39 | 1940 | NO | differs | 4 |
+| abortion | 61 | 27 | 1850 | NO | differs | 8 |
+| climate-change | 60 | 54 | 1842 | yes | differs | 8 |
+| healthcare | 54 | 34 | 1741 | NO | differs | 3 |
+| civil-rights | 41 | 32 | 1536 | yes | differs | 8 |
+| voting-rights | 46 | 46 | 1475 | yes | differs | 6 |
+| deportation | 39 | 22 | 1319 | yes | differs | 6 |
+| fossil-fuels | 24 | 16 | 1319 | NO | differs | 6 |
+| school-vouchers | 15 | 14 | 1216 | yes | differs | 4 |
+| trans-athletes | 7 | 5 | 854 | NO | differs | 7 |
+| campaign-finance | 7 | 5 | 834 | yes | differs | 4 |
+| public-safety-approach | 66 | 23 | 801 | NO | differs | 3 |
+| childcare | 36 | 15 | 761 | yes | differs | 6 |
+| religious-freedom | 5 | 3 | 683 | yes | differs | 8 |
+| redistricting | 12 | 10 | 674 | yes | same | 4 |
+| economic-development | 51 | 27 | 668 | yes | differs | 4 |
+| tariffs | 6 | 4 | 657 | NO | differs | 8 |
+| homelessness | 5 | 1 | 637 | yes | differs | 7 |
+| ai-regulation | 7 | 7 | 597 | yes | differs | 3 |
+| social-security | 9 | 7 | 589 | yes | differs | 8 |
+| local-immigration | 15 | 4 | 555 | NO | differs | 5 |
+| ukraine-support | 7 | 6 | 460 | NO | differs | 7 |
+| homelessness-response | 3 | 0 | 440 | yes | differs | 4 |
+| transportation-priorities | 133 | 16 | 428 | NO | differs | 3 |
+| growth-and-development | 10 | 1 | 428 | yes | differs | 4 |
+| misinformation | 5 | 5 | 364 | yes | differs | 4 |
+| residential-zoning | 92 | 84 | 355 | NO | differs | 5 |
+| local-environment | 14 | 12 | 345 | yes | differs | 3 |
+| jail-capacity | 16 | 7 | 291 | NO | differs | 3 |
+| judicial-criminal-justice | 7 | 4 | 283 | yes | differs | 3 |
+| data-centers | 4 | 2 | 280 | yes | differs | 6 |
+| rent-regulation | 18 | 1 | 228 | yes | differs | 4 |
+| city-sanitation | 1 | 0 | 113 | yes | differs | 3 |
+| judicial-interpretation | 0 | 0 | 71 | yes | differs | 3 |
+| judicial-access-to-justice | 0 | 0 | 48 | yes | differs | 3 |
+| judicial-transparency | 0 | 0 | 34 | yes | differs | 3 |
+| judicial-government-deference | 0 | 0 | 22 | yes | differs | 3 |
+| judicial-prosecution-priorities | 0 | 0 | 20 | yes | same | 2 |
+| judicial-police-accountability | 0 | 0 | 12 | yes | differs | 3 |
+| judicial-bail-pretrial | 0 | 0 | 6 | yes | differs | 3 |
+| housing | 1821 | 39 | 0 | yes | differs | 6 |
+| same-sex-marriage | 901 | 35 | 0 | yes | differs | 8 |
+| cannabis-policy | 116 | 0 | 0 | yes | - | 1 |
+| gun-policy | 97 | 0 | 0 | NO | - | 1 |
+| ranked-choice-voting | 75 | 0 | 0 | yes | - | 1 |
+| israel-military-aid | 47 | 0 | 0 | yes | - | 1 |
+| border-security | 12 | 0 | 0 | yes | - | 3 |
+| minimum-wage | 2 | 0 | 0 | yes | - | 1 |
+| 2020-election | 0 | 0 | 0 | yes | - | 1 |
+| education-ai | 0 | 0 | 0 | yes | - | 1 |
+| education-charter-authorization | 0 | 0 | 0 | yes | - | 1 |
+| education-school-police | 0 | 0 | 0 | yes | - | 1 |
+| education-library-books | 0 | 0 | 0 | yes | - | 1 |
+| education-gender-identity | 0 | 0 | 0 | yes | - | 1 |
+| education-equity-programs | 0 | 0 | 0 | yes | - | 2 |
+| defense-spending | 0 | 0 | 0 | yes | - | 1 |
+| education-curriculum | 0 | 0 | 0 | yes | - | 1 |
+| education-school-budget | 0 | 0 | 0 | yes | - | 1 |
+| military-intervention | 0 | 0 | 0 | yes | - | 1 |
+| surveillance-technology | 0 | 0 | 0 | new | - | 0 |
+| **total** | 4028 | 607 | 26776 | | | 223 |
+
+The appendix total of s1-only (27,907) is lower than the prod-wide 29,585 in section 1. The difference is Season 1 answers on topics Season 3 does not carry.
