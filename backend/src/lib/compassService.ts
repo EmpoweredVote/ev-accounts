@@ -722,6 +722,13 @@ export async function getPoliticianAnswers(
   }));
 }
 
+/** One dated source of a context row (CA_0301). Read the date with its precision. */
+export interface ContextEvidenceDate {
+  source_url: string;
+  source_date: string;
+  source_date_precision: 'day' | 'month' | 'year';
+}
+
 /**
  * getPoliticianContext
  * Returns reasoning and sources for a politician's newest-season stance on a
@@ -743,8 +750,39 @@ export async function getPoliticianAnswers(
  * holding.
  */
 export async function getPoliticianContext(politicianId: string, topicId: string) {
-  const { rows } = await pool.query<{ reasoning: string; sources: string[] }>(
-    `SELECT c.reasoning, c.sources
+  // `evidence` (CA_0301) carries the date of each source, for ComparePanel. It is one
+  // entry per URL in `sources` that has a date; an undated source has no entry.
+  //   - politician_context_evidence has no season column, so the newest-season rule is
+  //     applied through `c.sources`: only URLs the chosen season's context lists.
+  //   - One URL can have several snippets with different dates. The earliest wins
+  //     (ties by snippet_index), so the date never depends on row order.
+  //   - source_date is cast to text: a pg `date` would become a JS Date and shift a
+  //     day with the time zone. Year and month dates keep their precision so the
+  //     caller never renders them as a full day.
+  const { rows } = await pool.query<{
+    reasoning: string;
+    sources: string[];
+    evidence: ContextEvidenceDate[];
+  }>(
+    `SELECT c.reasoning, c.sources,
+            COALESCE((
+              SELECT jsonb_agg(jsonb_build_object(
+                       'source_url', d.source_url,
+                       'source_date', d.source_date,
+                       'source_date_precision', d.source_date_precision))
+                FROM (
+                  SELECT DISTINCT ON (e.source_url)
+                         e.source_url,
+                         e.source_date::text AS source_date,
+                         e.source_date_precision
+                    FROM inform.politician_context_evidence e
+                   WHERE e.politician_id = c.politician_id
+                     AND e.topic_id = c.topic_id
+                     AND e.source_url = ANY(COALESCE(c.sources, ARRAY[]::text[]))
+                     AND e.source_date IS NOT NULL
+                   ORDER BY e.source_url, e.source_date ASC, e.snippet_index ASC
+                ) d
+            ), '[]'::jsonb) AS evidence
        FROM inform.politician_context c
        JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
       WHERE c.politician_id = $1 AND c.topic_id = $2
