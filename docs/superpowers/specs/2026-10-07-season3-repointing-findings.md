@@ -107,14 +107,15 @@ No schema change is needed for the index.
 
 Scripts used (not committed; scratchpad): a before/after snapshot of seven tables, and the dry-run script described in section 4. Prod access: session pooler `DATABASE_URL`, with `SET default_transaction_read_only = on` inside each session. The pooler ignores `PGOPTIONS`, so that environment variable does **not** make the session read-only.
 
+
 ## Appendix: per-topic counts (prod, read-only, 2026-10-07)
 
-One row per topic pinned in draft Season 3 (61 topics: 60 carried plus surveillance-technology).
+One row per topic pinned in draft Season 3 (61 topics).
 
 - **s2 rows**: people with a Season 2 answer (includes blanks).
 - **s2 blank**: Season 2 rows with value 0.
 - **s1-only**: people with a Season 1 answer and no Season 2 row. The guard forces an S3 row for each if the topic moves.
-- **s2 pin = current**: yes means one map step is correct for Season 2 rows. NO means chained maps (13 topics).
+- **s2 pin = current**: yes means one map step is correct for Season 2 rows. NO means chained maps.
 - **s1 pin vs current**: differs means Season 1 answers sit on an older ladder than the current one.
 - **voters**: voter answer rows on the topic, all seasons.
 
@@ -129,6 +130,7 @@ One row per topic pinned in draft Season 3 (61 topics: 60 carried plus surveilla
 | deportation | 39 | 22 | 1319 | yes | differs | 6 |
 | fossil-fuels | 24 | 16 | 1319 | NO | differs | 6 |
 | school-vouchers | 15 | 14 | 1216 | yes | differs | 4 |
+| medicare/aid | 13 | 7 | 1131 | yes | differs | 6 |
 | trans-athletes | 7 | 5 | 854 | NO | differs | 7 |
 | campaign-finance | 7 | 5 | 834 | yes | differs | 4 |
 | public-safety-approach | 66 | 23 | 801 | NO | differs | 3 |
@@ -180,6 +182,6 @@ One row per topic pinned in draft Season 3 (61 topics: 60 carried plus surveilla
 | education-school-budget | 0 | 0 | 0 | yes | - | 1 |
 | military-intervention | 0 | 0 | 0 | yes | - | 1 |
 | surveillance-technology | 0 | 0 | 0 | new | - | 0 |
-| **total** | 4028 | 607 | 26776 | | | 223 |
+| **total** | 4041 | 614 | 27907 | | | 229 |
 
-The appendix total of s1-only (27,907) is lower than the prod-wide 29,585 in section 1. The difference is Season 1 answers on topics Season 3 does not carry.
+The s1-only total is lower than the prod-wide 29,585 in section 1. The difference is Season 1 answers on topics that Season 3 does not carry.
