@@ -39,11 +39,16 @@
  *
  * REPORT · the rest. These print and do NOT fail, because each needs a judgement this script is
  *   not entitled to make:
- *     - ONE_OFFICIAL_COUNTY. Counties are not on the landing grid and the one instance is
- *       legitimate: Kitsap County WA's comment names two chair-holders, but one is a sheriff
- *       CANDIDATE rather than a seated official, so it reads as 1 only to a seated-officials
- *       measure like this one. Failing it would punish an accurate comment for our measurement
- *       choice.
+ *     - ONE_OFFICIAL_COUNTY. Counties are not on the landing grid, so the city ruling was not
+ *       automatically theirs and this tier exists to surface them for a decision rather than
+ *       make one. THERE ARE NONE TODAY: the only instance, Kitsap County WA, was greyed by
+ *       operator ruling on 2026-10-06 (essentials #192), which is why the standing REPORT list
+ *       is four items and not five.
+ *       🔑 Keep the tier anyway, and keep why it was separate. Kitsap's comment named two
+ *       chair-holders and was ACCURATE — one of them was a sheriff CANDIDATE, who holds no
+ *       office_terms row, so it read as 1 only to a seated-officials measure like this one.
+ *       Failing a county automatically would have punished an accurate comment for our
+ *       measurement choice; reporting it got it looked at and ruled on in a day.
  *     - UNDERCLAIMED. hasContext FALSE while three or more officials hold rows. This is the
  *       INVERSE defect and it is real — Newton MA sat grey through a full re-research pass and
  *       had to be flipped by hand in #190. But flipping a chip purple requires reading the rows,
