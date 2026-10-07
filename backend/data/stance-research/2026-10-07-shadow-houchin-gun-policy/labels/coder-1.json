@@ -1,0 +1,117 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "ef59fa3c-2c51-59d3-b90f-f0e3055c93d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01-03",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.R. 38 (119th)",
+          "provision_quote": "may possess or carry a concealed handgun (other than a machine gun or destructive device) that has been shipped or transported in interstate or foreign commerce, in any State that--",
+          "note": "Original cosponsor of concealed-carry reciprocity, which meets the 'loosen carry' part of rung 4 [b]; seats rung 4 only together with the recorded vote against the new ATF brace restriction (annex rung 4 seating rule).",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b43add17-b4d6-5893-a3d0-89cc0a31e3c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-06-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.J.Res. 44 (118th)",
+          "provision_quote": null,
+          "note": "Yea on a single-subject resolution nullifying a new ATF rule that would subject braced firearms to NFA regulation: a recorded vote against a new restriction (rung 4 [a]), divided 219-210.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 219 nay: 210"
+        },
+        {
+          "snapshot_id": "3e74e5a9-0a92-5762-ba36-7b106be03e0a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-06-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.J.Res. 44 (118th)",
+          "provision_quote": "That Congress disapproves the rule submitted by the Bureau of Alcohol, Tobacco, Firearms, and Explosives relating to",
+          "note": "Operative text of the disapproval resolution (the brace rule 'shall have no force or effect'); she is also listed as a cosponsor.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "54b16fca-5296-530b-a8c3-20e37e44bf05",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2026-02-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2189 (119th)",
+          "provision_quote": null,
+          "note": "Yea on removing less-than-lethal projectile devices from firearm regulation; these devices are not firearms, so it does not speak to which firearms civilians may own or carry.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 233 nay: 185"
+        },
+        {
+          "snapshot_id": "ac58db88-fdda-5a46-9add-5de73b10a656",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2026-02-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2189 (119th)",
+          "provision_quote": "by inserting ``or a less-than-lethal projectile device'' before the period",
+          "note": "Bill text excludes less-than-lethal devices from the firearm definition; adjacent to the rungs, which order restrictions on firearms.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d70174c1-616e-5bfb-8ce4-d0c21756c7d3",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign site in the third person ('Erin is a firm believer that the Second Amendment...'); names no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ef59fa3c-2c51-59d3-b90f-f0e3055c93d9",
+        "b43add17-b4d6-5893-a3d0-89cc0a31e3c1",
+        "3e74e5a9-0a92-5762-ba36-7b106be03e0a"
+      ],
+      "reasoning": "She cosponsored H.R. 38, which lets a person with a home-state permit carry a concealed handgun in other states, meeting the 'loosen rules on carrying, such as honoring permits across state lines' part of the rung 'Add no new restrictions, and at most loosen rules on carrying'. She also voted Yea on H.J.Res. 44, nullifying a new ATF rule on braced firearms, a recorded vote against a new restriction, which the annex requires as the second passage. No record repeals a major federal law, so the repeal-and-permitless-carry rung is not reached.",
+      "needs_source": [
+        "Houchin's own first-person words on new gun restrictions or on repealing major federal gun laws (current campaign or term)",
+        "Introduced text of H.R. 38 (119th) as filed on 2025-01-03, to confirm the version she cosponsored"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "full_name": "Erin Houchin",
+    "topic_key": "trans-athletes",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://clerk.house.gov/Votes/2023192"
+    ],
+    "failed_urls": [
+      "https://www.congress.gov/bill/118th-congress/house-bill/734",
+      "https://www.congress.gov/bill/119th-congress/house-bill/28"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Erin Houchin",
+    "topic_key": "israel-military-aid",
+    "value": 1,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://clerk.house.gov/Votes/2024217",
+      "https://clerk.house.gov/Votes/2024152"
+    ],
+    "failed_urls": [
+      "https://www.congress.gov/bill/118th-congress/house-bill/8369"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Erin Houchin",
+    "topic_key": "voting-rights",
+    "value": 5,
+    "action": "review",
+    "reasons": [
+      "replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://clerk.house.gov/Votes/2024345",
+      "https://clerk.house.gov/Votes/2025102"
+    ],
+    "failed_urls": [
+      "https://www.congress.gov/bill/118th-congress/house-bill/8281"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Erin Houchin",
+    "topic_key": "gun-policy",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "review-all-mode"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://clerk.house.gov/Votes/2023252"
+    ],
+    "failed_urls": [
+      "https://www.congress.gov/bill/119th-congress/house-bill/38",
+      "https://www.congress.gov/bill/118th-congress/house-joint-resolution/44"
+    ],
+    "admin_queue_visible": true
+  }
+]

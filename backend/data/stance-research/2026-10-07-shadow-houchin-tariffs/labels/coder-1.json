@@ -1,0 +1,47 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "served_revision_id": "c9b67f92-c9b9-4f7e-a10b-c312a4219346",
+      "passages": [
+        {
+          "snapshot_id": "c712130f-eadb-5f2f-a906-6e92f9df27e4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-04-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person op-ed backing a baseline 10% tariff on all imports plus targeted tariffs on countries that cheat; she never calls the rate high, so per the annex ruling it is direction-only between rungs 4 and 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Houchin writes that \"President Trump’s baseline 10% tariff on all imports, along with targeted tariffs on countries that cheat trade rules, is helping to level the playing field\", which puts her on the protective side. It meets \"all imports\" but she does not call the tariff high, so it cannot separate \"increase tariffs on countries that don't trade fairly with America\" from \"impose high tariffs on all imports to bring manufacturing back to America\" (annex ruling 2026-10-01).",
+      "needs_source": [
+        "Clerk roll calls on House votes on resolutions to terminate the national emergencies underlying the 2025 IEEPA tariffs (119th Congress), or rules blocking such votes",
+        "Houchin's own words stating whether she considers the tariff rate on all imports high, or opposes broad tariffs"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "c712130f-eadb-5f2f-a906-6e92f9df27e4",
+          "text": "President Trump’s baseline 10% tariff on all imports, along with targeted tariffs on countries that cheat trade rules, is helping to level the playing field.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus"
+  ],
+  "rows": [
+    {
+      "key": "68568faf-1e0f-4ca2-89d9-bda625665712|b343becb-af7d-4a19-a6a1-2e5df210f344|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "federal",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 0
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

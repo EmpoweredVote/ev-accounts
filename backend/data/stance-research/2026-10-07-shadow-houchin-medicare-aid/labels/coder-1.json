@@ -1,0 +1,62 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "passages": [
+        {
+          "snapshot_id": "e976c0f4-2127-5d90-8c99-2e28d45ea6dc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-05-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Press-release defence of the OBBBA saying it 'protects and strengthens Medicaid, Medicare' via ending benefits for illegal immigrants and cutting waste, fraud and abuse; per annex, 'protect' language excludes rungs 4-5 only and the waste/fraud clause alone is one side of compound rung 3.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "513aa269-057b-54f8-9fc3-c5c9bc1d7fc9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-05-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 1 (119th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of the One Big Beautiful Bill Act, a reconciliation bill covering taxes, border, energy and health; annex omnibus trap, proves no rung.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 215 nay: 214 present: 1 not voting: 2"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Yea on H.R. 1 (One Big Beautiful Bill Act) is a multi-subject reconciliation vote and cannot carry a rung. Her statement that it 'protects and strengthens Medicaid, Medicare' by 'eliminating waste, fraud, and abuse' leans away from 'scale back both programs' and 'phase out both programs', but it evidences only the cost side of the compound 'improve current programs while controlling costs' and names no eligibility change, so it shows a side, not a rung.",
+      "needs_source": [
+        "Houchin's own words (questionnaire, issue page, or statement) on the size and structure of Medicare and Medicaid",
+        "Any single-subject Medicare or Medicaid bill Houchin authored, sponsored, or voted on in the 118th/119th Congress, with bill text and roll call"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "e976c0f4-2127-5d90-8c99-2e28d45ea6dc",
+          "text": "It also protects and strengthens Medicaid, Medicare, and Social Security for the people who truly need it most—pregnant women, children, individuals with disabilities, and seniors—by ending taxpayer-funded benefits for illegal immigrants and eliminating waste, fraud, and abuse.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

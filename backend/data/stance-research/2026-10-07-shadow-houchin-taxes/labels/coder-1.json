@@ -1,0 +1,92 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "a4e61ddf-13ed-56c8-8166-fbf1db4338cb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-07-03",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 1 (119th)",
+          "provision_quote": null,
+          "note": "Aye on concurring in the Senate amendment to the One Big Beautiful Bill Act, a reconciliation bill covering taxes, border, energy and spending; a multi-subject vote proves direction at most.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Aye",
+          "tally_quote": "Aye: 218 No: 214"
+        },
+        {
+          "snapshot_id": "6cf3e2ee-1088-539f-a9eb-281c4b6c7191",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-07-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her press-release words praise the bill for making 'the Trump tax cuts permanent' and ending taxes on tips and overtime, a tax-cutting side, but they name no main rate and do not separate rung 4 from rungs 3 or 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3e4b1683-122d-5c65-aa93-4ebf4e460b1a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-05-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "No tax on tips/overtime and relief for seniors are narrow relief (rung 3 clause [b]) but nothing excludes a broader cut, so it shows a side only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f7c6cc16-e1e2-5581-93ee-6143d769dc63",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign issue page written in the third person ('Erin believes our government takes too much of your money'; 'working to cut taxes'), so it is characterization, not her own words.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Aye on H.R. 1 (119th) is a multi-subject reconciliation vote, and her own statements ('makes the Trump tax cuts permanent, ends taxes on tips and overtime'; 'No tax on tips, no tax on overtime') show a tax-cutting side without naming a cut to 'the main rates most people pay' or a call to 'cut taxes as far as possible and shrink what government does'. The campaign issue page is third-person and cannot carry a chair.",
+      "needs_source": [
+        "Her own words (first-person issue page, questionnaire or debate answer) on cutting the main individual income tax rates, or on cutting taxes as far as possible and shrinking government",
+        "A single-subject tax bill she authored or prime-sponsored that cuts the main individual income tax rate (congress.gov sponsor page and bill text)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "6cf3e2ee-1088-539f-a9eb-281c4b6c7191",
+          "text": "This bill makes the Trump tax cuts permanent, ends taxes on tips and overtime, slashes wasteful spending, secures our border, unleashes American energy, and restores accountability across the federal government.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

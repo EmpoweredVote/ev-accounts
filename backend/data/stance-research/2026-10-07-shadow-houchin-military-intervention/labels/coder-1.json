@@ -1,0 +1,82 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "710396dc-e618-4011-8118-43c62a786111",
+      "served_revision_id": "c42b12b6-d7c3-4b88-a932-06b87d5043c9",
+      "passages": [
+        {
+          "snapshot_id": "7997ef35-d11e-5aa6-bb99-ee2f3ae1d195",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H. Con. Res. 21 (118th)",
+          "provision_quote": null,
+          "note": "Nay on a War Powers resolution to remove forces from Syria; against that one withdrawal, states no general rule for using force.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Nay",
+          "tally_quote": "yea: 103 nay: 321"
+        },
+        {
+          "snapshot_id": "2a7f3987-10ec-57c3-8699-128ebbf4eacb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H. Con. Res. 21 (118th)",
+          "provision_quote": "Congress directs the President to remove the United States Armed Forces from Syria by not later than the date that is 180 days after the date of the adoption of this concurrent resolution",
+          "note": "Operative text directs withdrawal from one country only; meets rung 5 clause [a] for Syria at most.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b62bc317-9913-5902-9da4-f1c7ac998334",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H. Con. Res. 30 (118th)",
+          "provision_quote": null,
+          "note": "Nay on a War Powers resolution to remove forces from Somalia; against that one withdrawal, states no general rule for using force.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Nay",
+          "tally_quote": "yea: 102 nay: 321"
+        },
+        {
+          "snapshot_id": "8bc827eb-d3d3-5340-ad76-a6237d26db1b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H. Con. Res. 30 (118th)",
+          "provision_quote": "Congress directs the President to remove all United States Armed Forces, other than United States Armed Forces assigned to protect the United States Embassy, from Somalia by not later than the date that is 365 days after the date of the adoption of this resolution",
+          "note": "Operative text directs withdrawal from one country only; meets rung 5 clause [a] for Somalia at most.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Houchin voted Nay on H. Con. Res. 21 (Syria) and H. Con. Res. 30 (Somalia), War Powers resolutions directing removal of forces from one named country each. Per the annex these are against that one withdrawal and do not state the general rule that separates \"Intervene militarily when clear US interests or allied nations are directly threatened\" from \"Use US military power to actively lead and police conflicts around the world\" or from \"Prefer diplomacy and economic sanctions, using military force only as a last resort\"; they show a side at most.",
+      "needs_source": [
+        "Houchin's own words (statement, questionnaire, floor speech or explanation of vote) stating the conditions under which she would use military force abroad"
+      ],
+      "quotes": []
+    }
+  ]
+}

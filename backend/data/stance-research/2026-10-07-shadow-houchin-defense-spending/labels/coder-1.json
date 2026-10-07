@@ -1,0 +1,85 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "3fd1aa81-e032-4335-8785-452ed10ce9ce",
+      "served_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+      "passages": [
+        {
+          "snapshot_id": "79c8cbd9-8260-5d27-bf13-0afd552183d2",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-06-19",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted praise of the FY2025 NDAA ('resources they need') names no budget size or comparison with inflation; the vote itself is reported only by the release and the NDAA is multi-subject.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "294de37f-953f-598f-bb9d-a317ccbaa5d5",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2023-07-14",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Statement on FY2024 NDAA passage about readiness and 'far-left policies'; it states no position on the size of the military budget.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "34b94562-7be5-54b4-a317-8eea966c6d0d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-12-10",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words ('peace through strength', 'every advantage') do not size the budget; the $900.6 billion figure is the release's third-person text, not compared with inflation, and the NDAA is multi-subject.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Her own words on three NDAA passages (\"ensures our armed forces have the resources they need\", \"restoring peace through strength\") praise the bills but never say how big the military budget should be relative to inflation, so they cannot reach any rung from \"Increase military spending substantially\" to \"Cut military spending dramatically\". Her NDAA final-passage votes are multi-subject under the annex and are reported here only by her press releases, not a roll call.",
+      "needs_source": [
+        "Her own words sizing the defense topline (e.g., real growth above inflation, percent of GDP)",
+        "Clerk roll calls on any defense topline amendments (add or cut a stated sum) in the 118th/119th Congress, with the amendment text"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "79c8cbd9-8260-5d27-bf13-0afd552183d2",
+          "text": "This crucial legislation ensures our armed forces have the resources they need to protect our nation.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "34b94562-7be5-54b4-a317-8eea966c6d0d",
+          "text": "This year’s NDAA delivers on our commitment to restoring peace through strength and ensuring our servicemembers have every advantage to defend our nation.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

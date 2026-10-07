@@ -13,9 +13,9 @@ longer rests_on is reported). evidence_type is `record` when any rests_on passag
 else `statement`. A BLANK is written with an empty value (verify-stance-research records it as
 "insufficient evidence"; it is not queued — there is no blank path into the review queue yet).
 
-Each cited URL gets one evidence.csv snippet: a verbatim window of the snapshot text (about 60 words)
+Each cited URL gets one or two evidence.csv snippets: a verbatim window of the snapshot text (about 60 words)
 around the coder's own quote on that page (provision_quote, actor_quote or tally_quote), else around
-the person's surname. It is the page text the coder read, not a paraphrase.
+the person's surname, and a second window around the instrument's number when the first lacks it. It is the page text the coder read, not a paraphrase.
 Writes <person-batch-dir>/research.csv, evidence.csv and labels-summary.json.
 """
 import csv, json, os, re, subprocess, sys
@@ -38,6 +38,16 @@ def window(text, anchor, words=60):
   k = next((n for n, (a, b) in enumerate(toks) if b > i), 0)
   lo, hi = max(0, k - words // 3), min(len(toks), k + words)
   return text[toks[lo][0]:toks[hi - 1][1]]
+
+def instrument_window(text, instrument):
+  """A verbatim window around the first place the page prints the instrument ("H.R. 734" as "H. R. 734")."""
+  if not instrument: return None
+  m = re.match(r'\s*([A-Za-z.\s]+?)\s*(\d+)', instrument.split('(')[0])
+  if not m: return None
+  letters = [c for c in m.group(1) if c.isalpha()]
+  pat = r'\b' + r'\.?\s?'.join(map(re.escape, letters)) + r'\.?\s?' + m.group(2) + r'\b'
+  hit = re.search(pat, text, re.I)
+  return window(text, text[hit.start():hit.end()]) if hit else None
 
 research, evidence, summary = [], [], []
 for b in spec['batches']:
@@ -66,6 +76,15 @@ for b in spec['batches']:
     urls = []
     for s in rests:
       if snaps[s]['url'] not in urls: urls.append(snaps[s]['url'])
+    # A bill the reasoning names but rests_on leaves out (context, e.g. an earlier vote) still needs a cited
+    # page, or the gate refuses the row (instrument-not-cited): use a free URL slot for the coder's own page.
+    ctx_urls = []
+    canon = lambda x: re.sub(r'[^a-z0-9]', '', (x or '').split('(')[0].lower())
+    named = re.sub(r'[^a-z0-9]', '', row['reasoning'].lower())
+    for p in row.get('passages', []):
+      sid, ins = p.get('snapshot_id'), canon(p.get('instrument'))
+      if sid in snaps and sid not in rests and ins and ins in named and snaps[sid]['url'] not in urls and len(urls) < 3:
+        urls.append(snaps[sid]['url']); rests.append(sid); ctx_urls.append(snaps[sid]['url'])
     etype = 'record' if any(passages.get(s, {}).get('v3_class') == 'record' for s in rests) else 'statement'
     reasoning = row['reasoning'].strip()
     if value is None: reasoning = f"Blank ({row['v6_blank_reason']}). {reasoning}"
@@ -78,9 +97,12 @@ for b in spec['batches']:
       p, text = passages.get(sid, {}), snaps[sid]['snapshot_text']
       snip = next((w for w in (window(text, p.get(f)) for f in ('provision_quote', 'actor_quote', 'tally_quote')) if w), None) or window(text, surname)
       if snip: evidence.append({'full_name': full_name, 'topic_key': tk, 'source_url': u, 'snippet': snip, 'snippet_index': '1'})
+      # A second window around the instrument's number, so the snippets name the bill the reasoning names.
+      ins = instrument_window(text, p.get('instrument'))
+      if ins and ins != snip: evidence.append({'full_name': full_name, 'topic_key': tk, 'source_url': u, 'snippet': ins, 'snippet_index': '2'})
     summary.append({'topic_key': tk, 'batch': b['name'], 'status': 'ok', 'value': value, 'blank_reason': row['v6_blank_reason'],
       'evidence_type': etype, 'rests_on': len(rests), 'urls_dropped': max(0, len(urls) - 3),
-      'needs_source': row.get('needs_source', [])})
+      'needs_source': row.get('needs_source', []), 'context_urls': ctx_urls})
   for k in keys:
     if k not in seen and not any(x['topic_key'] == k and x['batch'] == b['name'] for x in summary):
       summary.append({'topic_key': k, 'batch': b['name'], 'status': 'row-missing'})

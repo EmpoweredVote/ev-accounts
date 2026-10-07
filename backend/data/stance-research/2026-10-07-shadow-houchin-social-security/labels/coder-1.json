@@ -1,0 +1,76 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "served_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+      "passages": [
+        {
+          "snapshot_id": "7f7971b6-53a1-59de-8706-2a008e3a2fc9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-11-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 82 (118th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of the single-subject Social Security Fairness Act (WEP/GPO repeal), a benefit increase for one group with no tax side; 75 of 403 voted No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 327 nay: 75 present: 1 not voting: 29"
+        },
+        {
+          "snapshot_id": "0a77a5b8-daf1-55a6-b5e0-b6e67a37f377",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 82 (118th)",
+          "provision_quote": "Section 202(k) of the Social Security Act (42 U.S.C. 402(k)) is amended by striking paragraph (5).",
+          "note": "Enrolled text repeals the government pension offset and windfall elimination provisions; it raises benefits for one group and contains no tax provision.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "eef1ffee-e0d1-52c9-af69-7712a2fa0c3b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-05-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Statement on the multi-subject One Big Beautiful Bill; income-tax relief on benefits and ending benefits for illegal immigrants do not address benefit level or the payroll tax (annex: adjacent).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Her Yea on H.R. 82 (118th), the Social Security Fairness Act, evidences only a benefit increase for one group; rung 2, \"increase Social Security benefits modestly while raising taxes on higher earners\", is compound and its tax clause is unevidenced. Her OBBB statement on \"tax relief for seniors on Social Security\" concerns income tax on benefits, which is adjacent to the payroll-tax and benefit-level question.",
+      "needs_source": [
+        "Erin Houchin's own words or record on the Social Security payroll tax or taxable maximum (tax side of the rungs)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "eef1ffee-e0d1-52c9-af69-7712a2fa0c3b",
+          "text": "No tax on tips, no tax on overtime, and tax relief for seniors on Social Security.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "off-question"]
+        }
+      ]
+    }
+  ]
+}
