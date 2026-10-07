@@ -1,9 +1,20 @@
 # Duvall + Redmond — headshot wave
 
-Compiled 2026-10-06. Nothing is published: `photo_custom_url` is unwritten for all 16 pending
-approval of the contact sheet.
+Compiled 2026-10-06. **APPLIED** as `CC_0192` on 2026-10-06, approved by Cantrell.
 
-**13 of 16 proposed. 3 left blank.**
+**13 of 16 published. 3 left blank.**
+
+Pipeline: cropped to 4:5 first and never stretched, resized 600x750 Lanczos q90, uploaded to
+`politician_photos/{politician_id}-headshot.jpg` with `x-upsert`, then fetched back and confirmed
+serving HTTP 200 `image/jpeg` against a control (an absent object returns 400). The uploader was
+`backend/scripts/_tmp-wa-duvall-redmond-headshots.py`, which is **gitignored** like every other
+`_tmp-` script; the pipeline it ran is documented here and in `CC_0192`.
+
+⚠ **Six frames were cropped before resizing.** `PoliticianCard` renders a 4:5 box with
+`object-cover`, so a circular mask or a flat border shows in the corners. Forsythe, Stuart,
+Kritzer, Soni and Nuevacamina were a circle on a flat ground; Birney had a light border. The crop
+takes the largest 4:5 rectangle that fits wholly inside the circle — for a 500x500 source that is
+313x391, which keeps more height than an inscribed square would.
 
 ## Duvall — 6 of 8
 
