@@ -82,6 +82,7 @@ import {
   type VerifiedRow,
 } from '../src/lib/researchVerifier.js';
 import { createVerificationFetchSession } from '../src/lib/verificationFetch.js';
+import { withOtrTranscripts } from '../src/lib/otrTranscript.js';
 import {
   buildEvidenceRowsForInsert,
   buildReviewRowForInsert,
@@ -472,7 +473,9 @@ if (duplicatePairs.length) {
 // ---------------------------------------------------------------- verify
 // Tiered fetch ladder (HTTP → Wayback). No LLM in the loop.
 const fetchSession = createVerificationFetchSession();
-const fetcher = createPageFetcher(fetchSession.fetch);
+// On the Record meeting pages are a JS SPA with no transcript in the HTML: resolve them through
+// the OTR transcript API instead (src/lib/otrTranscript.ts). Everything else takes the tiered ladder.
+const fetcher = withOtrTranscripts(createPageFetcher(fetchSession.fetch));
 const { pushable, needsReResearch } = await verifyEvidence({
   stanceRows,
   evidenceRows,
