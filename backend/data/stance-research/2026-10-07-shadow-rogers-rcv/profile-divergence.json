@@ -1,0 +1,149 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "sb1265(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "4fa1c78d-3daf-5147-a8c6-7c39583f7c1a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1265",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "8c494645-2364-5fdd-b343-ebb22130f43d",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1265#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "02f8aec0-5a1a-53e4-99e5-d56b0de52d25",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1265S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 1,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "hb2552(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "8a18c8aa-4aff-5429-84dc-77e3d9041490",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "f0b34cd1-f8a6-5f5c-bd0d-fe22ece97e09",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/HB2552H.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "sb1265(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "8c494645-2364-5fdd-b343-ebb22130f43d",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1265#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "02f8aec0-5a1a-53e4-99e5-d56b0de52d25",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1265S.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "4fa1c78d-3daf-5147-a8c6-7c39583f7c1a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1265",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "hb2552(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "8a18c8aa-4aff-5429-84dc-77e3d9041490",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "f0b34cd1-f8a6-5f5c-bd0d-fe22ece97e09",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/HB2552H.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "sb1265(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "4fa1c78d-3daf-5147-a8c6-7c39583f7c1a",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1265",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "8c494645-2364-5fdd-b343-ebb22130f43d",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1265#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "02f8aec0-5a1a-53e4-99e5-d56b0de52d25",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1265S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "instrument": "hb2552(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "8a18c8aa-4aff-5429-84dc-77e3d9041490",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "f0b34cd1-f8a6-5f5c-bd0d-fe22ece97e09",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/HB2552H.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

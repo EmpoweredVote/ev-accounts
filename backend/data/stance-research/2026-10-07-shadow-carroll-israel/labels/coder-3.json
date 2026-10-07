@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8",
+      "office_id": "9a6106f5-9ecc-4b66-8085-5395d7eaaf79",
+      "topic_id": "6783e65c-0722-45d9-8579-65327af7c15c",
+      "served_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+      "passages": [
+        {
+          "snapshot_id": "d8c2da8d-20f2-5d2a-94f2-ad88dade7057",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-06-17",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says America must continue to support Israel as an ally, but names no aid level, conditions or weapon types, so it shows a side only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "202edb52-d033-595a-a1de-5802b76f9a11",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-10-07",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Supports Israel's right to defend itself, which names no military aid level or clause of any rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own words say America must \"continue to support our ally\" and that he supports Israel's right to defend itself, which shows a pro-Israel side. Neither passage names a level of military aid, a condition, or a weapon type, so none separates the rungs on that side.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "9388236a-4422-500f-8870-366702b726df",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SCR 1024 (2025, 57th Legislature, 1st Regular Session)",
+          "provision_quote": "Marriage between two individuals shall not be prohibited or void on the basis of the sex, race, ethnicity or national origin of those individuals.",
+          "note": "Co-sponsored Senate concurrent resolution referring to voters a repeal of the state marriage ban and a constitutional guarantee that same-sex marriage is not prohibited or void; no anti-discrimination or religious carve-out clause.",
+          "record_kind": "sponsor",
+          "actor_quote": "Introduced by Senators Kuby: Alston, Gabaldón, Ortiz",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9d21a2d3-c445-56b1-b4cb-e4d1371dfcd9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HCR 2017 (2024, 56th Legislature, 2nd Regular Session)",
+          "provision_quote": "Marriage between two individuals shall not be prohibited or void on the basis of the sex, race, ethnicity or national origin of those individuals.",
+          "note": "Co-sponsored the identical House concurrent resolution during her House term (same legislature, counts as in-term under V5 option B).",
+          "record_kind": "sponsor",
+          "actor_quote": "Hernandez M, Ortiz A",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "9388236a-4422-500f-8870-366702b726df",
+        "9d21a2d3-c445-56b1-b4cb-e4d1371dfcd9"
+      ],
+      "reasoning": "Ortiz co-sponsored SCR 1024 (2025) and HCR 2017 (2024), each proposing to repeal Arizona's marriage ban and add that \"Marriage between two individuals shall not be prohibited or void on the basis of the sex\" of those individuals. That secures same-sex marriage as equal to any other marriage, matching \"Guarantee same-sex marriage the same benefits and protections as any other marriage\"; neither measure adds protection from discrimination in jobs and housing, so full legal equality is not evidenced.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

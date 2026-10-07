@@ -1,0 +1,62 @@
+{
+  "batch_id": "2026-10-07-shadow-hernandez-deportation",
+  "sources": [
+    {
+      "url": "https://www.azhousedemocrats.com/post/rep-alma-hernandez-statement-on-ice-arrest-near-school-in-south-tucson",
+      "source_kind": "own-site",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.kold.com/2026/01/23/lawmaker-ice-detains-three-south-tucson/",
+      "source_kind": "news",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [],
+      "pointer_passages": [
+        "Hernandez said the family was in the asylum process",
+        "This type of recklessness, of just stopping someone for no reason other than profiling",
+        "It is very clear that they feel they are above the law"
+      ],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HCR2060#house-final",
+      "source_kind": "public-record",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "HCR 2060 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hcr2060-house-final.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HCR2060S.htm",
+      "source_kind": "public-record",
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_keys": [
+        "deportation"
+      ],
+      "instruments": [
+        "HCR 2060 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

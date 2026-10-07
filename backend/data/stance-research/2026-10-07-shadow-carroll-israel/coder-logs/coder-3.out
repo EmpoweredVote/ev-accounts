@@ -1,0 +1,10 @@
+I coded Frank Carroll's `israel-military-aid` row as BLANK `direction-only`, with no numeric chair, and wrote it to `labels/coder-3.json`. I didn't read the file back after writing it, so it hasn't been checked against the schema.
+
+His own words show he is pro-Israel but not what level of military aid he wants. At a state seat the only evidence that can count is the person's own words, because no officeholder at this level holds a lever on this topic.
+
+- **June 17, 2025 press release** (`d8c2da8d-20f2-5d2a-94f2-ad88dade7057`): he says "America must stand strong and continue to support our ally." I coded it `statement-other` and `on-question`, with shape `direction-only`. It names no aid level, no conditions and no weapon types, so it can't separate the rungs.
+- **October 7, 2024 press release** (`202edb52-d033-595a-a1de-5802b76f9a11`): he supports Israel's right to defend itself and calls for a permanent end to the war. I coded it `statement-other` and `adjacent`, with shape `rhetorical`, because it says nothing about military aid.
+
+Both passages are `own-words` and `in-term`, since they date from after his current term began on 2023-01-02. I used `statement-other` because neither release answers this question.
+
+`rests_on` is empty, `needs_source` is empty, and I coded no quotes.

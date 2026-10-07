@@ -1,0 +1,14 @@
+I wrote `labels/coder-2.json` for the one topic, `ranked-choice-voting`. It codes Rogers at rung 5, "Ban ranked-choice voting by law." I only wrote the file. I didn't read it back, and the code-side checks haven't run.
+
+**Evidence.** All five passages are public-record snapshots, coded as `record` / `chair-shaped` / `in-term`, and all five are in `rests_on`.
+- **SB 1265 (2023):** Rogers is listed as co-sponsor on the bill status page, and the Senate third-reading page shows `ROGERS Y` on a 16-13 passage. The bill text adds section 16-605. It bars any state or local election method that ranks more candidates than there are seats, or that tabulates by eliminating candidates over multiple rounds and transferring votes.
+- **HB 2552 (2023):** the Senate third-reading page shows `ROGERS Y` on a 16-14 passage. The bill text is the same section 16-605.
+
+Both bills are single-subject and both votes are well above the 10% No threshold. Code will compute the tier as `corroborated`, since there are two different instruments.
+
+**Judgment calls.**
+- **Ban without the name:** section 16-605 never says "ranked-choice voting." I read the multi-round elimination and vote-transfer prohibition as a legal ban on it, which matches rung 5's single clause.
+- **Vote-page shape:** the two vote pages don't print the provision themselves. I coded them `chair-shaped` as part of their instrument group, with `provision_quote` null on those pages and set on the bill-text pages.
+- **HB 2552 text version:** the snapshot is the House-engrossed version, while the Senate vote is later. Nothing in the sources shows the text changed, so I treated them as the same bill.
+
+`quotes` and `needs_source` are both empty, because no passage carries Rogers' own words.

@@ -1,0 +1,12 @@
+I wrote the labels to `backend/data/stance-research/2026-10-07-shadow-rogers-rcv/labels/coder-1.json`. The file has one row, for `ranked-choice-voting`.
+
+**Chair: rung 5, "Ban ranked-choice voting by law."**
+
+- **SB 1265 (2023):** Rogers is listed as a co-sponsor. She voted Y at Senate third reading, which passed 16-13-1, so the vote was not near-unanimous.
+- **HB 2552 (2023):** a second instrument with the same text. She voted Y at Senate third reading, which passed 16-14-0.
+- **What the bills do:** in both, the main section says the state and its subdivisions "may not use" any counting method that eliminates candidates over several rounds or transfers votes between them. That is a statewide ban on ranked-choice voting, local elections included. The annex treats this as rung 5, not as preemption, and a bill that also bans approval voting still counts as rung 5.
+- **Timing:** all of these actions are from 2023, after her current term began on 2023-01-02, so they count as in-term. Governor Hobbs vetoed SB 1265, but that doesn't change what Rogers herself did.
+
+`rests_on` lists all five snapshots: SB 1265's bill page, vote page and bill text, and HB 2552's vote page and bill text. Because there are two independent bills, the code should give this chair the `corroborated` tier. `needs_source` and `quotes` are empty, since none of the sources contain her own words.
+
+Separately, several MCP connectors need you to authorize them in your claude.ai connector settings: Benevity, Candid, Canva, Figma, Harvey and WorkOS. The GitHub plugin failed to connect with a bad Authorization header. This task didn't need any of them.

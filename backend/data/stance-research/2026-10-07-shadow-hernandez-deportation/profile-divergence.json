@@ -1,0 +1,74 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+    "instrument": "hcr2060(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "11b46b77-7071-5ff8-bb46-03abbddfe3f8",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HCR2060#house-final",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "7148c25d-bde6-59d2-9f0e-b983f236bdf1",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HCR2060S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+    "instrument": "hcr2060(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "11b46b77-7071-5ff8-bb46-03abbddfe3f8",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HCR2060#house-final",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "7148c25d-bde6-59d2-9f0e-b983f236bdf1",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HCR2060S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+    "instrument": "hcr2060(2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "11b46b77-7071-5ff8-bb46-03abbddfe3f8",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HCR2060#house-final",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "7148c25d-bde6-59d2-9f0e-b983f236bdf1",
+        "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HCR2060S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "instrument-mismatch",
+      "tally-unreadable"
+    ],
+    "profiled": [
+      "instrument-mismatch"
+    ]
+  }
+]

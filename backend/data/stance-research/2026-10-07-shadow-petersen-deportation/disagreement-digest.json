@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 4,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 4,
+      "split_units": 1,
+      "alpha": 0.44999999999999996,
+      "examples": [
+        {
+          "unit": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|44905f3b-e105-4f6c-afc7-5d223813dbac#3deffd83-7442-55e5-87d4-36ab58b0274e",
+          "values": [
+            "adjacent",
+            "on-question",
+            "on-question"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 4,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 4,
+      "split_units": 1,
+      "alpha": 0.44999999999999996,
+      "examples": [
+        {
+          "unit": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|44905f3b-e105-4f6c-afc7-5d223813dbac#3deffd83-7442-55e5-87d4-36ab58b0274e",
+          "values": [
+            "off-axis",
+            "direction-only",
+            "direction-only"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 4,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v2_relevance",
+    "v4_shape"
+  ]
+}

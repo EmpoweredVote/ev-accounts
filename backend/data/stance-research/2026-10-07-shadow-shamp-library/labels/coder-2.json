@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "7dd05169-48e0-58e4-a021-42a191f1b4d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1700 (2023)",
+          "provision_quote": "The department of education shall establish rules and procedures for establishing and maintaining a list of books that public educational institutions in this state are prohibited from using or making available to students",
+          "note": "Removal follows a state department of education review of a parent's submission, not a committee of educators and parents, so only the review-before-removal clause of the committee rung is met.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a3b413d2-e1a1-5333-b0ca-c259e5dbfdd8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1700 (2023)",
+          "provision_quote": null,
+          "note": "Aye on Senate third reading of SB 1700, which passed 16-12 so it is not near-unanimous; the vote shows her side but not a full rung.",
+          "record_kind": "vote",
+          "actor_quote": "SHAMP Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Shamp voted Aye on SB 1700, whose operative section has a state department of education review parent-submitted books and add them to a prohibited list. That meets the clause that removal follows a review finding, but the reviewer is a state agency, not a review committee of educators and parents, so the rung is only partly evidenced.",
+      "needs_source": [
+        "Shamp's own words on how school library book challenges should be handled"
+      ],
+      "quotes": []
+    }
+  ]
+}

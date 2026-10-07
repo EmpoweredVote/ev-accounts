@@ -1,0 +1,68 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+    "instrument": "sb1700(2023,56thlegislature,1stregularsession)",
+    "snapshots": [
+      {
+        "snapshot_id": "a3b413d2-e1a1-5333-b0ca-c259e5dbfdd8",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1700#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "7dd05169-48e0-58e4-a021-42a191f1b4d9",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1700S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+    "instrument": "sb1700(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "7dd05169-48e0-58e4-a021-42a191f1b4d9",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1700S.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "a3b413d2-e1a1-5333-b0ca-c259e5dbfdd8",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1700#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+    "instrument": "sb1700(2023)",
+    "snapshots": [
+      {
+        "snapshot_id": "a3b413d2-e1a1-5333-b0ca-c259e5dbfdd8",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1700#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "7dd05169-48e0-58e4-a021-42a191f1b4d9",
+        "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1700S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

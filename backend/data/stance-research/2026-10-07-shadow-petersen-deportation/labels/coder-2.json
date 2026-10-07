@@ -1,0 +1,92 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "3deffd83-7442-55e5-87d4-36ab58b0274e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-06-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "He calls for cooperation on deportations of criminal illegal aliens; that shows the enforcement side but says nothing on 'only' (rung 2) or 'all' (rung 4).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b77f03e5-865f-5127-b241-bb50aa3c05d6",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-21",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Defends a bill on state cooperation with federal enforcement, which is the local-immigration question, not who is deported; the press release's account of his sponsorship is context, not a record.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fbb70c81-deb3-5e4d-a911-0e13e105c086",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-10",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Statement on a state-cooperation bill (detainers, 287(g)); adjacent per the annex cooperation hard case.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0d9b588b-ede4-58fd-8122-06645a10b2b4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-02-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Statement supporting law-enforcement cooperation with federal enforcement; does not say who should be removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own words call for cooperation on \"deportations of criminal illegal aliens\", which shows a pro-enforcement side but states neither \"Only deport undocumented immigrants convicted of serious violent crimes\" nor \"Deport all undocumented immigrants\". The SB 1164 passages concern state cooperation with federal enforcement, which is adjacent.",
+      "needs_source": [
+        "SB 1164 (2025) bill page and Senate/House roll calls (a record, though at a no-lever level it cannot seat a chair)",
+        "Petersen's own first-person statement on who should be deported (all vs. only criminals, long-settled people)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "3deffd83-7442-55e5-87d4-36ab58b0274e",
+          "text": "cooperating with the Trump Administration on enforcement of federal immigration laws, deportations of criminal illegal aliens",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

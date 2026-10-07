@@ -1,0 +1,16 @@
+I wrote the label file to `labels/coder-2.json`. It has one row, Márquez / `gun-policy`, coded BLANK `compound-partial`. I did not validate the file against the code-side invariants.
+
+**Evidence**
+- HB 2621 (2025): he is prime sponsor, and the bill text bars selling or transferring a firearm unless a licensed dealer is involved, so every sale gets a background check. That meets clause [b] of rung 3, "universal background checks on every sale".
+- HCR 2034 (2025): he introduced the same measure as a referral to voters, with the same content.
+- All three passages are `record`, `sponsor`, `in-term` and `direction-only` as shape.
+
+**Why no rung**
+- Rung 3 is compound. Clause [a] is "allow all types of firearms".
+- A checks bill says nothing about bans on firearm types (V4.2, "Silence is not a clause"). The annex rules that not finding an assault-weapons-ban cosponsorship is not evidence for [a] either.
+- I read the held-in-committee bill as sponsorship of the bill as filed (V4.1, C37). The row therefore has no `rests_on` entries.
+
+**Needs a source**
+- The row lists `needs_source`: a roll call or sponsorship on an Arizona assault-weapons-ban bill, or his own words on bans of firearm types.
+
+I coded no quotes, because none of the sources contains his own words.

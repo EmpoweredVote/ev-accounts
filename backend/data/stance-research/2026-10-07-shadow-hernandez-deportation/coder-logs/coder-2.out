@@ -1,0 +1,7 @@
+I wrote the labels file to `labels/coder-2.json`. It has one row, for Alma Hernandez on `deportation`, coded BLANK `no-evidence`.
+
+- **HCR2060 vote and bill text (2024):** She voted No on this referral, which combines border, benefits, fentanyl and illegal-entry provisions. A No on a multi-subject bill proves nothing. The bill's state criminal-entry provision is `direction-only` at most under the annex. Both pages are coded `record` / `vote` / `multi-subject`, with `actor_quote` "HERNANDEZ A N" and `tally_quote` "Passed 31-29-0-0-0" on the vote page.
+- **Press release and KOLD report (2026-01-23):** In her own words, she criticizes ICE tactics and the arrest of a documented asylum family. She never says whom the government should deport, so both are coded `adjacent` / `rhetorical`.
+- **Open call:** I could have coded the 2026 statements `direction-only` instead, since they lean against aggressive enforcement. I went with `no-evidence` because I read them as `adjacent`, so no passage survives.
+- **`needs_source`:** Her own words on who should be deported (questionnaire, issue page, debate answer or interview).
+- **Quote:** One quote from the press release ("We deserve safety rooted in dignity, accountability, and humanity, not fear."), tier `none`, not quotable (`off-question`).

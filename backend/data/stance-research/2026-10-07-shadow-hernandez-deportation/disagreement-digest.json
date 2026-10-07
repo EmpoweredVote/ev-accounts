@@ -1,0 +1,93 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 4,
+      "split_units": 0,
+      "alpha": 1,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 4,
+      "split_units": 2,
+      "alpha": -0.10000000000000009,
+      "examples": [
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|44905f3b-e105-4f6c-afc7-5d223813dbac#b26381e8-bea3-5185-8702-2f30d880de88",
+          "values": [
+            "on-question",
+            "adjacent",
+            "on-question"
+          ]
+        },
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|44905f3b-e105-4f6c-afc7-5d223813dbac#e9078be6-7dca-5fe3-bf6d-72beea801b76",
+          "values": [
+            "on-question",
+            "adjacent",
+            "on-question"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 4,
+      "split_units": 0,
+      "alpha": 1,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 4,
+      "split_units": 4,
+      "alpha": 0.06382978723404253,
+      "examples": [
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|44905f3b-e105-4f6c-afc7-5d223813dbac#b26381e8-bea3-5185-8702-2f30d880de88",
+          "values": [
+            "direction-only",
+            "rhetorical",
+            "direction-only"
+          ]
+        },
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|44905f3b-e105-4f6c-afc7-5d223813dbac#e9078be6-7dca-5fe3-bf6d-72beea801b76",
+          "values": [
+            "rhetorical",
+            "rhetorical",
+            "direction-only"
+          ]
+        },
+        {
+          "unit": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|44905f3b-e105-4f6c-afc7-5d223813dbac#11b46b77-7071-5ff8-bb46-03abbddfe3f8",
+          "values": [
+            "multi-subject",
+            "multi-subject",
+            "direction-only"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 4,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v2_relevance"
+  ]
+}

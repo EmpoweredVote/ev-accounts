@@ -1,0 +1,65 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "hb2621(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "58c272ba-1eb1-5fd1-b86e-4f3abf736751",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2621P.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "928f616f-3835-53bb-a4ee-332d4aa75d34",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2621",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "hb2621(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "928f616f-3835-53bb-a4ee-332d4aa75d34",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2621",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "58c272ba-1eb1-5fd1-b86e-4f3abf736751",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2621P.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+    "instrument": "hb2621(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "58c272ba-1eb1-5fd1-b86e-4f3abf736751",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/HB2621P.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "928f616f-3835-53bb-a4ee-332d4aa75d34",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=HB2621",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced"
+    ],
+    "profiled": []
+  }
+]

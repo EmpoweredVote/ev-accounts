@@ -1,0 +1,33 @@
+{
+  "batch_id": "2026-10-07-shadow-ortiz-ssm",
+  "sources": [
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HCR2017P.htm",
+      "source_kind": "public-record",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [
+        "HCR 2017 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/SCR1024P.htm",
+      "source_kind": "public-record",
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [
+        "SCR 1024 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

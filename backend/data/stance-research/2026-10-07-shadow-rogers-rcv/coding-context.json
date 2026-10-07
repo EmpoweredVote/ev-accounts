@@ -1,0 +1,61 @@
+{
+  "batch_id": "2026-10-07-shadow-rogers-rcv",
+  "seat": {
+    "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+    "full_name": "Wendy Rogers",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "8a24929f-d3f4-4a39-b8e8-8fa104e6e3be",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": null,
+        "start_precision": "unknown",
+        "term_end": "2023-01-09"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+      "topic_key": "ranked-choice-voting",
+      "served_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+      "question_text": "How should votes be cast and counted in elections?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Replace winner-take-all elections with proportional ranked-choice voting — ranked ballots fill several seats at once, so seats reflect how everyone voted."
+        },
+        {
+          "value": 2,
+          "text": "Adopt ranked-choice voting for single-winner offices: voters rank candidates, and if a top choice can't win, the vote shifts to the next choice until someone has a majority."
+        },
+        {
+          "value": 3,
+          "text": "Allow ranked-choice voting where communities choose it, while keeping single-choice voting as the standard."
+        },
+        {
+          "value": 4,
+          "text": "Keep single-choice voting and oppose adopting ranked-choice voting, but stop short of banning it."
+        },
+        {
+          "value": 5,
+          "text": "Ban ranked-choice voting by law."
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# ranked-choice-voting — served revision 100cdf38-0794-4267-b711-934438f05853 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should votes be cast and counted in elections?\"\n\n**Orientation:** standard. Rung 1 is the largest change to the voting method (proportional ranked\nvoting), rung 5 forbids ranked-choice voting by law; rung 3 is the neutral local-option centre. The\nrungs order **openness to changing how votes are cast and counted**.\n\n**Levels with a lever:** federal, local, state. Each level sets the method for\nits own elections; states also decide whether their cities may choose.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"ranked-choice voting\" (RCV), \"instant-runoff voting\" (IRV), \"single transferable\nvote\" (STV), \"proportional RCV\", \"multi-winner\" or \"multi-member districts\", \"plurality\",\n\"first-past-the-post\", \"winner-take-all\", \"majority winner\", \"local option\", \"final-five\" or\n\"final-four voting\" (a top-N primary with an RCV general election).\n\n1. **\"Replace winner-take-all elections with proportional ranked-choice voting — ranked ballots fill\n   several seats at once, so seats reflect how everyone voted.\"**\n   - Means: elect several members per district by ranked ballots, so seats track the vote share.\n   - Operative clauses: [a] replace winner-take-all; [b] ranked ballots; [c] several seats filled at\n     once (proportional).\n   - Establishing evidence looks like: a bill that creates multi-member districts elected by ranked\n     ballots; own words for it. The federal Fair Representation Act is this shape (ladder grounding,\n     2026-09-01) — check the version the person acted on.\n   - Levels that hold a lever: federal (House elections); state (legislature); local (councils).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because **proportional systems without ranked ballots** (list\n     systems, cumulative voting) fail [b] → `direction-only` _(proposed)_.\n\n2. **\"Adopt ranked-choice voting for single-winner offices: voters rank candidates, and if a top\n   choice can't win, the vote shifts to the next choice until someone has a majority.\"**\n   - Means: use ranked ballots with a majority count for offices that have one winner.\n   - Operative clauses: [a] adopt RCV; [b] for single-winner offices.\n   - Establishing evidence looks like: a statute, charter amendment or ordinance that adopts RCV for\n     single-winner offices; own words for it. Adoption for some offices only (primaries, one city's\n     offices) still meets [a] and [b] for those offices _(proposed)_.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because a **local-option** bill permits RCV without adopting it.\n     Permission is rung 3; adoption is rung 2.\n   - A vote to **put RCV on the ballot** lets voters decide; it does not adopt it → `direction-only`\n     _(proposed)_.\n\n3. **\"Allow ranked-choice voting where communities choose it, while keeping single-choice voting as\n   the standard.\"**\n   - Means: communities may opt into RCV; single-choice voting stays the default.\n   - Operative clauses: [a] RCV permitted where a community chooses it; [b] single-choice voting stays\n     the standard.\n   - Establishing evidence looks like: a local-option statute that lets cities or counties adopt RCV\n     and keeps plurality as the default. Its own text excludes rung 2 (it keeps the default) and\n     rung 5 (it permits RCV) _(proposed)_.\n   - Levels that hold a lever: state (the enabling law); local (the officials who choose).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2: see rung 2.\n\n4. **\"Keep single-choice voting and oppose adopting ranked-choice voting, but stop short of banning\n   it.\"**\n   - Means: oppose RCV for one's own elections, without making it illegal.\n   - Operative clauses: [a] keep single-choice voting; [b] oppose adoption; [c] no ban.\n   - Establishing evidence looks like: own words that oppose RCV and also oppose a ban. [c] is an\n     absence clause and must be stated (V4.2): a No on an RCV adoption bill, or a veto, does not\n     separate rung 4 from rung 5 → `direction-only`.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5: see rung 5.\n   - A **repeal** of an existing RCV system restores single-choice voting but does not by itself\n     forbid RCV later → `direction-only` unless the text also bans it _(proposed)_.\n\n5. **\"Ban ranked-choice voting by law.\"**\n   - Means: the law forbids RCV in the jurisdiction's elections.\n   - Operative clauses: [a] a legal ban on RCV.\n   - Establishing evidence looks like: a statute or constitutional text that prohibits RCV in the\n     state's elections, including its local elections. Sponsorship or a final-passage vote on a\n     single-subject ban is `chair-shaped`. A ban reaches only the jurisdiction's own elections; it\n     does not need to reach other states _(ruled 2026-09-01, ladder wording)_.\n   - Levels that hold a lever: state; local (its own elections); federal (federal elections).\n   - Known chair-shaped instruments: _(none on file)_. The statewide bans of 2022 and 2024 are the\n     ladder's grounding; code each from its bill text and roll call.\n   - Commonly confused with BLANK because a state ban that also covers cities looks like\n     **preemption**. It is not `adjacent`: rung 3 is itself about whether communities may choose,\n     so the Q10 exception applies (codebook V2), and a direct ban is rung 5.\n\n**Hard cases:**\n- **Other reform systems** (approval voting, top-two primaries, runoffs, score voting) are on a\n  different axis (ladder ruling 2026-09-01) → `adjacent`. A bill that bans RCV **and** another\n  method is still rung 5 for RCV.\n- **\"Final-five\" style packages** combine an off-axis primary with an RCV general election. Code the\n  RCV clause; the primary clause is `adjacent` _(proposed)_.\n- **Ballot-counting and audit rules** for an existing RCV system (tabulation, reporting rounds) →\n  `adjacent` _(proposed)_.\n- **Omnibus election bills** with an RCV clause → V4 `multi-subject`.\n"
+    }
+  ]
+}
