@@ -1,0 +1,12 @@
+I wrote the label file with one row for Analise Ortiz on `same-sex-marriage`, coded rung 2: "Guarantee same-sex marriage the same benefits and protections as any other marriage."
+
+- **Evidence:** Ortiz co-sponsored two measures with identical operative text. `HCR 2017 (2024)` was introduced in the House, and `SCR 1024 (2025)` was introduced in the Senate. The text reads "Marriage between two individuals shall not be prohibited or void on the basis of the sex, race, ethnicity or national origin of those individuals."
+- **Why rung 2:** The annex says a measure that secures the right to marry, with no anti-discrimination clause, is rung 2. Neither measure has an anti-discrimination clause, so rung 1 is out. Neither has a religious carve-out, so rung 3 is out.
+- **Coding choices:**
+  - **Time:** Both passages are `in-term`. The 2024 House record counts under the V5 same-legislature ruling.
+  - **Source count:** The two measures are different instruments, so they count as two independent sources. Code computes the evidence tier, not me.
+  - **Actor quotes:** `Ortiz A` for the House bill and `Gabaldón, Ortiz` for the Senate bill.
+  - **Tally quote:** `null` on both, because these are sponsorships, not votes.
+- **Quotes and sources:** I filed no quotes and no `needs_source` entries.
+
+The file is at `/Users/chrisandrews/Documents/GitHub/ev-accounts-gold20/backend/data/stance-research/2026-10-07-shadow-ortiz-ssm/labels/coder-2.json`.

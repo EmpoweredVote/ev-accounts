@@ -1,0 +1,9 @@
+I wrote `labels/coder-1.json` for Romero / `abortion`. The row is **BLANK `direction-only`**.
+
+- **Passages:** I coded all three as `own-words` and `statement-other`. Each shows support for legal abortion, but none names a gestational limit or the lack of one.
+- **Why no chair:** declaring "the right to choose" says nothing about time limits (V4.2 "Silence is not a clause"). Nothing she says separates "no time limit" (rung 1) from the rungs with a second-trimester or first-trimester limit (rungs 2 and 3).
+- **Council resolution:** the only source for it is news coverage, so I didn't code it as a record (H15). It's also a policing directive, not a gestational rule, so it wouldn't move the row.
+- **Missing date:** the third passage, from KGUN, prints no date, so I left the date null and coded it `undated`.
+- **`needs_source`:** her own words on a gestational limit.
+
+Separately, some connectors need authorizing in their claude.ai connector settings before they can be used: Benevity, Candid, Canva, Figma, Harvey and WorkOS. The GitHub plugin also failed to connect. This task didn't need any of them.

@@ -1,0 +1,12 @@
+I wrote `labels/coder-3.json` with one row, deportation for Alma Hernandez. It is coded BLANK `direction-only`, with no numeric chair and an empty `rests_on`. I haven't validated the file against the code checks.
+
+Her own words and her vote show which side she is on, but none of the four passages states a rule that separates the rungs:
+
+- **Press release (Jan 23, 2026):** `statement-other`, `direction-only`. She opposes ICE detaining a documented asylum family and says the claim that only "dangerous criminals" are targeted is not true. It does not say who should be removed.
+- **HCR2060 vote page (Jun 4, 2024):** a `record` of a No vote, `direction-only`. I took the actor quote `HERNANDEZ A N` and the tally `Passed 31-29-0-0-0` from this page.
+- **HCR2060 bill text:** the same record, `direction-only`. The provision quoted is the state illegal-entry offense, which the annex says shows enforcement side only. The actor and tally fields are `null` on this page.
+- **KOLD news piece (Jan 23, 2026):** `statement-other`, `direction-only`. She calls the stop "profiling" but states no position on who should be deported.
+
+Her record and her statements are both in-term, so the blank rests on shape, not on timing or attribution. Because the state level has no lever on this topic, only her own words could seat a chair. None of them state a rule on who should be deported.
+
+I listed one `needs_source`: a first-person statement from her on who should or should not be deported, such as a questionnaire, debate answer or issue page. I left `quotes` empty.

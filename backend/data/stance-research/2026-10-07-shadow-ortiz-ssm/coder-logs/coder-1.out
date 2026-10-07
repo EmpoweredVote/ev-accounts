@@ -1,0 +1,11 @@
+I wrote the labels for Ortiz / `same-sex-marriage` to `labels/coder-1.json`. It has one row, coded **rung 2**: "Guarantee same-sex marriage the same benefits and protections as any other marriage."
+
+- **Evidence:** she co-sponsored two identical resolutions. One is SCR 1024 (2025), from her current Senate term. The other is HCR 2017 (2024), from her House term; under the V5 ruling (option B), a record from the other chamber of the same legislature counts for her Senate seat. Each resolution would repeal Arizona's marriage ban and add that "Marriage between two individuals shall not be prohibited or void on the basis of the sex…" of those individuals.
+- **Why rung 2 and not rung 1:** neither resolution protects same-sex couples from discrimination in jobs or housing. The annex says a measure that secures the right to marry, with no anti-discrimination clause, is rung 2.
+- **Why rung 2 and not rung 3:** neither has a religious carve-out.
+- **Record fields:** both passages are `record` / `sponsor`. Each has an `actor_quote` from its sponsor line ("…Ortiz" and "Ortiz A"). There is no `tally_quote` because neither is a vote.
+- **Not included:** `needs_source` is empty, and there are no quotes because the sources contain none of her own words.
+
+Rung 2 is a judgment call. These resolutions say only that a same-sex marriage "shall not be prohibited or void"; they don't say "same benefits and protections" in so many words. I read a valid marriage as carrying the same benefits, which is how the annex treats the RFMA. A stricter reading would leave the row BLANK `direction-only`. The other coders or the reviewer may split on this point.
+
+Both chair passages are in `rests_on`, so code should compute the tier as `corroborated`.

@@ -1,0 +1,91 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b26381e8-bea3-5185-8702-2f30d880de88",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her statement condemns ICE arresting an asylum-seeking family and disputes that only 'dangerous criminals' are targeted; it leans against removal but states no rule on who should be deported (no 'entirely', no 'only serious violent crimes').",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e9078be6-7dca-5fe3-bf6d-72beea801b76",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "News quotes of her words on the same incident object to profiling and recklessness, naming no removal rule.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "11b46b77-7071-5ff8-bb46-03abbddfe3f8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "No vote on a multi-subject referral (border; benefits; fentanyl; illegal entry); a No on a multi-subject measure proves nothing, and at this no-lever level a record cannot seat a chair.",
+          "record_kind": "vote",
+          "actor_quote": "HERNANDEZ A N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "7148c25d-bde6-59d2-9f0e-b983f236bdf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "On conviction of an offense under this article, the judge shall enter an order that requires the person to return to the foreign nation from which the person entered or attempted to enter the United States or the person's nation of origin.",
+          "note": "State criminal-entry and return-order provisions sit in a measure that also covers benefits fraud, e-verify and fentanyl; per the annex a state criminal-entry law is direction-only at most.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "At state level only her own words count; her 2026-01-23 statement condemns ICE taking an asylum-seeking family and says 'only dangerous criminals' are not the ones targeted, which shows the anti-removal side but never says deportations should stop entirely ('Stop deportations entirely') or be limited only to people 'convicted of serious violent crimes'. Her No on HCR2060 is a vote on a multi-subject measure and a record at a no-lever level, so it seats nothing.",
+      "needs_source": [
+        "Alma Hernandez's own words (questionnaire, issue page, debate answer) stating which undocumented immigrants, if any, should be deported"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "b26381e8-bea3-5185-8702-2f30d880de88",
+          "text": "These actions do not make our communities safer. They terrorize neighborhoods, tear families apart, and undermine public trust",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

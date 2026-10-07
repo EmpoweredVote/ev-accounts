@@ -1,0 +1,82 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b26381e8-bea3-5185-8702-2f30d880de88",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Opposes ICE enforcement against a documented asylum family but states no rule on who should be removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "11b46b77-7071-5ff8-bb46-03abbddfe3f8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "A No vote on a state border and illegal-entry referral shows the side only; no lever at this level.",
+          "record_kind": "vote",
+          "actor_quote": "HERNANDEZ A N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "7148c25d-bde6-59d2-9f0e-b983f236bdf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "It is unlawful for a person who is an alien to enter or attempt to enter this state directly from a foreign nation at any location other than a lawful port of entry.",
+          "note": "State criminal-entry law is direction-only per the annex; it sets no removal rule for all undocumented immigrants.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e9078be6-7dca-5fe3-bf6d-72beea801b76",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Quoted criticism of ICE profiling in one arrest; no stated position on who should be deported.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her own words oppose ICE enforcement that takes documented asylum seekers, and she voted No on HCR2060, but nothing states a rule such as \"Stop deportations entirely and protect undocumented immigrants from removal\" or limits removal to serious violent convictions. The passages show the side only, not a rung.",
+      "needs_source": [
+        "Her own first-person statement of who should or should not be deported (questionnaire, debate answer, or issue page)"
+      ],
+      "quotes": []
+    }
+  ]
+}

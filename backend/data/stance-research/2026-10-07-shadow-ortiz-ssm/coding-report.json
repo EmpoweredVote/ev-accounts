@@ -1,0 +1,62 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8|61fd47dd-1cd3-4be9-a53e-2558dd662edf|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 2,
+        "shared_sources": [
+          "9388236a-4422-500f-8870-366702b726df",
+          "9d21a2d3-c445-56b1-b4cb-e4d1371dfcd9"
+        ]
+      },
+      "confirm": [
+        "chamber-not-evidenced"
+      ],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record",
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "confirm-failed"
+      ],
+      "seed": "none",
+      "profiles": [
+        "az-azleg-bill-text@2"
+      ],
+      "evidence_tier": "corroborated"
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}
