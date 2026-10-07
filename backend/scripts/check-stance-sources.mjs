@@ -110,6 +110,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
+import { CC_ANCHOR_PATTERN } from './lib/candidate-connection.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const BASELINE = path.join(HERE, '..', 'data', 'stance-source-baseline.json');
@@ -249,11 +250,19 @@ const QUERY = `
         -- well-sourced survey row or bolting on a second citation that is not really the source.
         -- The anchor is required: a bare /Name page is still just a bio. #Campaign_themes is where
         -- Ballotpedia renders survey responses (verified against live pages, not assumed).
+        -- Ruling 2026-10-07 (Chris Andrews): the survey answer is the candidate's own words and may
+        -- stand alone. The pattern lives in lib/candidate-connection.mjs, shared with the pre-write
+        -- gate (stanceGate.ts C57) and pinned against it by candidate-connection.test.ts.
+        -- 🔴 THIS SQL CAN TEST THE URL ONLY. It has no page text. The page-text half (the passage is
+        -- inside the survey section) is enforced where the anchor is WRITTEN: deep-link-candidate-
+        -- connection.mjs proposes #Campaign_themes only for CC_VERIFIED rows, and the pre-write gate
+        -- requires the same check. Do not hand-append the anchor.
+        -- (The old OR s ILIKE '%Candidate_Connection%' clause was dropped 2026-10-07: measured on
+        -- prod it matched 0 rows, and a substring anywhere in a URL is not an anchor.)
         WHEN NOT EXISTS (
           SELECT 1 FROM unnest(pc.sources) s
            WHERE s NOT ILIKE '%ballotpedia%'
-              OR s ~* 'ballotpedia.org/[^#]+#Campaign_themes'
-              OR s ILIKE '%Candidate_Connection%'
+              OR s ~* '${CC_ANCHOR_PATTERN}'
         )                                                          THEN 'BALLOTPEDIA_ONLY'
         ELSE NULL
       END AS chk,
