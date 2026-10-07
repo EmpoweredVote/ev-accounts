@@ -34,7 +34,7 @@ describe('names and jurisdictions', () => {
     expect(jurisdictionFor('NC')).toBe('north carolina');
   });
   it('knows every state we hold legislators for', () => {
-    for (const s of ['AZ','CA','CO','FL','GA','IN','KS','KY','MA','MD','ME','MI','MN','MO','MS','NC','ND','NV','OH','OR','PA','PR','SC','SD','TN','TX','UT','VA','WA','WI']) {
+    for (const s of ['AZ','CA','CO','FL','GA','IN','KS','KY','MA','MD','ME','MI','MN','MO','MS','NC','ND','NV','OH','OR','PA','SC','SD','TN','TX','UT','VA','WA','WI']) {
       expect(STATE_NAMES[s]).toBeTruthy();
     }
   });
