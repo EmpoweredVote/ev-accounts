@@ -1,0 +1,63 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-abortion-r3",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2022ss1/bills/senate/1/details",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1(ss) (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/SB0001.06.ENRH.pdf",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1(ss) (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-enrolled.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/rollcalls/SB0001.64_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1(ss) (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2022ss-sb1-rc64h.txt"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "source_kind": "transcript",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+  ]
+}

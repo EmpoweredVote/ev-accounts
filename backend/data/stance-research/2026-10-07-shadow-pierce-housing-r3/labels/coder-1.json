@@ -1,0 +1,115 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "9a44440d-8b4a-580c-a8e3-f90811821654",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum answer on affordable housing: wants more Section 8 vouchers (demand-side aid, not rung 4's build clause) and derides a deregulation bill, which leans away from rung 5 but names no public housing, binding rule or construction subsidy.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "211e4199-7c0a-5fb9-a856-537430de45d1",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-15",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Complains that funding for affordable housing is cut; names no policy clause of any rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ca18a872-08d1-5434-95ca-179466b69154",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-08-31",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Lists affordable housing as a budget priority in a gas-tax passage; no housing policy named.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7050c355-d7dd-5941-8512-ccad47aad288",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-18",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Quoted goal that families \"can afford housing\"; a shared goal with no means.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "247b3ce7-625f-5f21-b688-e29ca31d75c2",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2026-03-06",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Reporter's paraphrase that he has focused on housing affordability; not his words.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His only on-question words call for doing \"a better job\" on \"Section 8 vouchers\" and deride a 2026 deregulatory housing bill, which leans away from \"Rely on the market to set prices and supply\" but names no public housing, no binding rule such as rent caps or required affordable units, and no subsidy to get housing built. Vouchers are demand-side aid, so they do not meet rung 4's \"so more affordable housing gets built\"; the rungs on the pro-government side stay unseparated.",
+      "needs_source": [
+        "Indiana General Assembly roll call and bill text for the 2026 affordable-housing bill he describes at the March 2026 forum (final passage vote by Rep. Pierce)",
+        "Any bill Rep. Pierce authored or co-authored on rent rules, inclusionary requirements, housing trust funds or public housing"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "9a44440d-8b4a-580c-a8e3-f90811821654",
+          "text": "we need to do a better job, and this is probably Congress's job on Section 8 vouchers. The wait lists are too long for that. We have to do more to try to get more housing.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "7050c355-d7dd-5941-8512-ccad47aad288",
+          "text": "They want a progressive voice that fights hard to make sure that average Hoosier families have things like health care, can afford housing, can afford their electric bill, that we have good public schools.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-same-sex-marriage-r3",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2014/resolutions/house/joint/3/details",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [
+        "HJR 3 (2014)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2014-hjr3-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/HJ0003.05.ENGH.pdf",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [
+        "HJR 3 (2014)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2014-hjr3-engrossed.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/rollcalls/HJ0003.70_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [
+        "HJR 3 (2014)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2014-hjr3-rc70.txt"
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "source_kind": "transcript",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "same-sex-marriage"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+  ]
+}

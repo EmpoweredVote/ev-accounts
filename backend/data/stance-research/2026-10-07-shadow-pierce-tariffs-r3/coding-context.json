@@ -1,0 +1,55 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-tariffs-r3",
+  "seat": {
+    "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+    "full_name": "Matt Pierce",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2002-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "topic_key": "tariffs",
+      "served_revision_id": "c9b67f92-c9b9-4f7e-a10b-c312a4219346",
+      "question_text": "How should trade policy balance domestic industry with global commerce?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "eliminate all tariffs and pursue completely free trade with every country."
+        },
+        {
+          "value": 2,
+          "text": "reduce most tariffs, keeping only limited exceptions."
+        },
+        {
+          "value": 3,
+          "text": "use tariffs selectively to protect key American industries and jobs."
+        },
+        {
+          "value": 4,
+          "text": "increase tariffs on countries that don't trade fairly with America."
+        },
+        {
+          "value": 5,
+          "text": "impose high tariffs on all imports to bring manufacturing back to America."
+        }
+      ],
+      "own_words_levels": [
+        "local",
+        "state"
+      ],
+      "annexMd": "# tariffs — served revision c9b67f92-c9b9-4f7e-a10b-c312a4219346 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`9f094155-…`); coders code the served text below.\n\n**Question:** \"How should trade policy balance domestic industry with global commerce?\"\n\n**Orientation:** **inverted.** Rung 1 is the **least** government action (no tariffs at all), rung 5\nthe most (high tariffs on all imports). CLAUDE.md names Tariffs as a ladder that runs the other way\nfrom the corpus convention. The rungs order **how widely and how high tariffs apply**.\n\n**Levels with a lever:** federal. Congress holds the tariff power and has\ndelegated much of it to the President; members act through trade agreements, tariff bills and votes\nto end the emergencies that some tariffs rest on. State and local officials hold no lever.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"tariff\", \"duty\", \"import tax\", \"levy\", \"free trade\", \"free-trade agreement\" (FTA),\n\"USMCA\", \"most-favoured-nation\" (MFN), \"normal trade relations\", \"Section 232\" (national security),\n\"Section 301\" (unfair practices), \"IEEPA\" (emergency powers), \"reciprocal tariffs\", \"baseline tariff\",\n\"universal tariff\", \"de minimis\", \"dumping\", \"countervailing duties\", \"trade deficit\", \"reshoring\".\n\n1. **\"eliminate all tariffs and pursue completely free trade with every country.\"**\n   - Means: no tariffs on any import from any country.\n   - Operative clauses: [a] eliminate all tariffs; [b] completely free trade with every country.\n   - Establishing evidence looks like: own words that reject every tariff, for every country. \"All\"\n     and \"every\" are absence clauses (V4.2 \"Silence is not a clause\").\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because a **free-trade agreement** removes tariffs. It removes them\n     with one partner and keeps others → not [b]; alone → `direction-only` _(proposed)_.\n\n2. **\"reduce most tariffs, keeping only limited exceptions.\"**\n   - Means: most tariffs are cut or removed; a small number stay.\n   - Operative clauses: [a] reduce most tariffs; [b] keep only limited exceptions.\n   - Establishing evidence looks like: own words or an instrument that rolls back tariffs broadly and\n     names the few it keeps.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - The exceptions are no longer limited to products that harm the environment. Any limited set of\n     exceptions meets [b].\n   - Commonly confused with rung 3 because the \"limited exceptions\" can be key industries. Code 2\n     when the passage calls for a **general reduction** of tariffs now in force; code 3 when it\n     defends or adds tariffs on named sectors without a general reduction _(proposed)_.\n\n3. **\"use tariffs selectively to protect key American industries and jobs.\"**\n   - Means: tariffs are a tool for some strategic industries; they are not a general policy.\n   - Operative clauses: [a] selective — named industries or products; [b] to protect domestic\n     industries and jobs.\n   - Establishing evidence looks like: support for a sector tariff (steel, semiconductors, shipbuilding)\n     **plus** something that excludes rungs 4 and 5 (own words against broad or country-wide\n     tariffs). One sector tariff alone shows the protective side → `direction-only` _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a sector tariff often targets one country's products. The\n     **basis** decides: protecting an industry → 3; answering a country's trade practices → 4\n     _(proposed)_.\n\n4. **\"increase tariffs on countries that don't trade fairly with America.\"**\n   - Means: raise tariffs on specific countries because of how they trade.\n   - Operative clauses: [a] increase tariffs; [b] on countries named as trading unfairly.\n   - Establishing evidence looks like: a bill or own words that raise tariffs on a named country for\n     dumping, subsidies, currency practices or barriers to U.S. goods.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because \"reciprocal\" schedules reach nearly every country.\n     A uniform baseline tariff on all imports with higher rates for named countries meets \"all\n     imports\"; \"high\" needs own words or a rate the passage calls high, otherwise `direction-only`\n     between rungs 4 and 5 _(ruled 2026-10-01)_.\n\n5. **\"impose high tariffs on all imports to bring manufacturing back to America.\"**\n   - Means: a high tariff on everything the country imports, to move manufacturing home.\n   - Operative clauses: [a] high; [b] on all imports; [c] to bring manufacturing back.\n   - Establishing evidence looks like: own words or an instrument that sets a tariff on all (or\n     nearly all) imports and calls it high or sets a rate the passage itself calls high. Clause [c]\n     states the purpose; it is not a separate test _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **Who sets tariffs.** A bill that requires Congress to approve new tariffs, or that returns tariff\n  authority from the President, decides which branch acts, not what the tariff is → `adjacent`, the\n  same reasoning as preemption (V2, H12) _(ruled 2026-10-01)_. A vote to end the emergency that a set of tariffs\n  rests on is `on-question` (it ends those tariffs) but `direction-only`: one set is not \"most\n  tariffs\" _(ruled 2026-10-01)_.\n- **Trade agreements** cut tariffs with partners and keep others → `direction-only` _(proposed)_.\n- **Sanctions, export controls and investment screening** are not tariffs → `adjacent`.\n- **Trade adjustment aid, tariff-relief payments to farmers, or rebates from tariff revenue** →\n  `adjacent` _(proposed)_.\n- **Budget, reconciliation and omnibus votes** with a tariff item → V4 `multi-subject`.\n"
+    }
+  ]
+}

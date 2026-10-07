@@ -1,0 +1,30 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-tariffs-r3",
+  "sources": [
+    {
+      "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-july-newsletter",
+      "source_kind": "own-site",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "tariffs"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "source_kind": "transcript",
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_keys": [
+        "tariffs"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/otr-2026-03-23-lwv-forum-hd61.md"
+    }
+  ]
+}

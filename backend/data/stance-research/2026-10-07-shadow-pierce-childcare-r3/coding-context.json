@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-childcare-r3",
+  "seat": {
+    "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+    "full_name": "Matt Pierce",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2002-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "served_revision_id": "0e9fe0f2-cfab-4553-99cd-c3195d08e236",
+      "question_text": "How should government address the cost and availability of childcare?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Establishing publicly funded universal childcare so that all families have access regardless of income"
+        },
+        {
+          "value": 2,
+          "text": "Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families"
+        },
+        {
+          "value": 3,
+          "text": "Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants"
+        },
+        {
+          "value": 4,
+          "text": "Limiting government support to childcare subsidies for the lowest-income families, relying on the private market for everyone else"
+        },
+        {
+          "value": 5,
+          "text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# childcare — served revision 0e9fe0f2-cfab-4553-99cd-c3195d08e236 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(ruled 2026-08-30)_ carry an operator ruling (Chris\nAndrews, recorded with the rung-4 rewrite). Lines marked _(proposed)_ are a drafter's reading, not\nyet ruled. No `_owed:_` line is open.\n\n**Question:** \"How should government address the cost and availability of childcare?\"\n\n**Orientation:** standard. Rung 1 is universal public childcare, rung 5 leaves childcare to families\nand the market. The rungs order **how far public money reaches**: every family, low- and\nmiddle-income families, families under a threshold, the lowest-income families only, no one.\n\n**Levels with a lever:** federal, local, state. Federal money flows through\nblock grants and tax credits; states run subsidy programmes and license providers; some cities and\ncounties fund their own programmes.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"child care subsidy\", \"Child Care and Development Block Grant\" (CCDBG), \"child care\nassistance\", \"Child and Dependent Care Tax Credit\" (CDCTC), \"dependent care FSA\", \"provider grant\",\n\"stabilization grant\", \"facility grant\", \"workforce grant\", \"universal childcare\", \"universal\npre-K\", \"Head Start\", \"licensing\", \"staff-to-child ratio\".\n\n1. **\"Establishing publicly funded universal childcare so that all families have access regardless of\n   income\"**\n   - Means: public money pays for a childcare system open to every family, whatever its income.\n   - Operative clauses: [a] publicly funded childcare; [b] universal, regardless of income.\n   - Establishing evidence looks like: an instrument that creates childcare open to all families with\n     no income test, or own words calling for it.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because a programme with a high income cap is broad but not\n     universal. Any income test → not rung 1.\n   - **Universal pre-K** for one age group is universal in income but not childcare for all families\n     with young children → `direction-only` _(proposed)_.\n\n2. **\"Significantly expanding subsidies and provider grants to make childcare affordable for low- and\n   middle-income families\"**\n   - Means: much more public money, through subsidies and grants to providers, so childcare is\n     affordable for low- and middle-income families.\n   - Operative clauses: [a] significantly expand subsidies; [b] and provider grants; [c] reaching low-\n     **and** middle-income families.\n   - Establishing evidence looks like: a large expansion of a subsidy programme whose eligibility\n     reaches middle-income families, paired with provider grants. Compound: subsidies without\n     provider grants, or the reverse → `compound-partial` (V4.2) _(proposed)_.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because both fund subsidies and providers. The discriminator is\n     [c]: an expansion that reaches middle-income families → rung 2; a programme capped below that →\n     rung 3 _(proposed)_.\n\n3. **\"Offering targeted tax credits and subsidies for families below a set income threshold while\n   supporting providers through training and facility grants\"**\n   - Means: tax credits and subsidies go to families under an income limit, and providers get\n     training and facility grants.\n   - Operative clauses: [a] targeted tax credits and subsidies for families below a set income\n     threshold; [b] training and facility grants for providers. Compound: one side only →\n     `compound-partial` (V4.2).\n   - Establishing evidence looks like: a means-tested childcare credit or subsidy **and** a provider\n     training or facility grant, in one instrument or two.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_. A childcare facility pilot grant (NC HB 877,\n     used in the 2026-08-30 re-seat) meets [b] only.\n   - Commonly confused with rung 2: see rung 2.\n   - **A general child tax credit is not a childcare credit.** A credit paid per child whatever the\n     family spends on care is not a childcare-subsidy measure → V2 `adjacent` (codebook H6). A\n     credit for childcare **expenses** (CDCTC-type) is on-question.\n\n4. **\"Limiting government support to childcare subsidies for the lowest-income families, relying on\n   the private market for everyone else\"**\n   - Means: public help goes only to the poorest families; everyone else pays the market price.\n   - Operative clauses: [a] subsidies for the lowest-income families; [b] no support beyond them;\n     [c] the market for everyone else.\n   - Establishing evidence looks like: support for keeping a low-income subsidy **plus** opposition to\n     extending help above it (a No on an expansion to middle-income families, or own words). A No\n     alone → `direction-only`.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - **Provider deregulation is no longer part of this rung.** Licensing exemptions or looser staff\n     ratios do not move a person to rung 4 _(ruled 2026-08-30)_.\n   - Commonly confused with rung 5 because both rely on the market. Rung 4 keeps the low-income\n     subsidy.\n\n5. **\"Leaving childcare to the private market and families, with no government subsidies or mandates\n   that increase costs for providers and taxpayers\"**\n   - Means: no public money for childcare and no rules that raise providers' or taxpayers' costs.\n   - Operative clauses: [a] no government subsidies; [b] no cost-raising mandates. Both are absence\n     clauses (V4.2 \"Silence is not a clause\"). Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: own words against all childcare subsidies **and** against\n     cost-raising rules; a repeal of a subsidy programme.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n   - A deregulation record touches [b] only → `compound-partial` at most _(proposed)_.\n\n**Hard cases:**\n- **Employer childcare credits** (a business credit for on-site care) are not a credit for families\n  below a threshold → `direction-only` _(proposed)_.\n- **Paid family leave** and parental leave → `adjacent`.\n- **Preemption (codebook V2, H12)** of local childcare rules → `adjacent`.\n- **Childcare workforce pay** (wage supplements for providers' staff) is a provider grant → rung 2\n  [b]; it is not a training or facility grant, so not rung 3 [b] _(proposed)_.\n- **Studies and task forces** → V4 `study-directive`.\n- **Budget and omnibus votes** with a childcare item → V4 `multi-subject`.\n"
+    }
+  ]
+}

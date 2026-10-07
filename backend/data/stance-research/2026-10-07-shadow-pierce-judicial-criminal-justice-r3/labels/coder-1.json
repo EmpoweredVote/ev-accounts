@@ -1,0 +1,84 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "c78fa705-0fa4-5743-8d7e-8a4d0808586b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-03-23",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remarks touch policing reform (own topic, adjacent) and opposing a firing-squad execution-method bill (one penalty's method, not a general orientation); no stated general response to lawbreaking.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c20200d7-cf0d-5aec-9966-bbf740e1042a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-03-13",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1006 (2018)",
+          "provision_quote": "Adds probation departments, pretrial diversion programs, and jail treatment programs to programs that are eligible to apply for a state grant for community corrections.",
+          "note": "Co-authored a bill widening treatment-option funding; leans toward support and treatment but does not say 'not punishment' (jail treatment keeps jail), so it shows a side only.",
+          "record_kind": "sponsor",
+          "actor_quote": "Co-Authored by: Rep. Jerry Torr, Rep. Martin Carbaugh, Rep. Matt Pierce",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "41c392a3-825b-55cb-bcda-d92fd78452ef",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2018-03-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1057 (2018)",
+          "provision_quote": "Provides that the initial user fee amount for a diversion agreement involving a misdemeanor is $50.",
+          "note": "Co-authored a bill setting pretrial diversion fees; pretrial measures and fee amounts are adjacent per the annex.",
+          "record_kind": "sponsor",
+          "actor_quote": "Co-Authored by: Rep. Thomas Washburne, Rep. Wendy McNamara, Rep. Matt Pierce",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e6e52b1b-614b-5d5f-9c84-e51ac078a755",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1127 (2021)",
+          "provision_quote": "Adds competency restoration services to the list of treatment and wraparound recovery services made available to certain persons in the criminal justice system.",
+          "note": "Co-authored expansion of treatment services for people in the criminal justice system; shows the treatment side but says nothing about replacing punishment.",
+          "record_kind": "sponsor",
+          "actor_quote": "Co-Authored by: Rep. Wendy McNamara, Rep. Matt Pierce, Rep. Randall Frye",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce co-authored HB 1006 (2018) and HB 1127 (2021), which widen treatment options for people in the criminal justice system, a lean toward 'support and treatment'. Neither says 'not punishment' or names restitution, case-by-case, or consequence priorities, so they separate a side but no rung; his forum remarks address policing and an execution-method bill, not his general response to lawbreaking.",
+      "needs_source": [
+        "Enrolled text of HB 1006 (2018) operative sections (Indiana General Assembly)",
+        "Enrolled text of HB 1127 (2021) operative sections (Indiana General Assembly)",
+        "Pierce's own words (questionnaire or interview) stating his general orientation on sentencing and punishment"
+      ],
+      "quotes": []
+    }
+  ]
+}

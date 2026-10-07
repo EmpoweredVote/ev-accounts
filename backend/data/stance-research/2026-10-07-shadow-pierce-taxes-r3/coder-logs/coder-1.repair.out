@@ -1,0 +1,3 @@
+I've rewritten `coder-1.json` to fix the one thing the validator flagged. The last quote ("We cannot have a system where some people have fabulous wealth…") carried the `off-question` code but was still marked as quotable, so I changed `v8_quotable` from `true` to `false`.
+
+Nothing else changed. The chair is still blank (`direction-only`), `rests_on` is still empty, and the reasoning and the other quotes are as before. I haven't re-run the validator on the new file.
