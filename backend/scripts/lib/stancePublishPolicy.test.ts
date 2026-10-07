@@ -159,3 +159,23 @@ describe('decidePublish — a blank (spec 2026-10-07 §3.3)', () => {
       .toEqual({ action: 'review', reasons: ['gate-medium', 'blank-replaces-published-chair'] });
   });
 });
+
+describe('human-saved own-site copies (ruling 2026-10-07)', () => {
+  const saved = { ...base, verifiedSourceCount: 0, humanSavedSourceCount: 1 };
+  it('a row supported ONLY by a saved copy is reviewed, never auto-pushed — even with --auto-push', () => {
+    expect(decidePublish({ ...saved, autoPushEnabled: true })).toEqual({ action: 'review', reasons: ['human-saved-source'] });
+    expect(decidePublish({ ...saved, autoPushEnabled: false })).toEqual({ action: 'review', reasons: ['human-saved-source'] });
+  });
+  it('a saved copy does not lift a row that is still short after counting it', () => {
+    expect(decidePublish({ ...saved, threshold: 2 })).toEqual({ action: 're-research', reasons: ['below-threshold'] });
+  });
+  it('a row that clears the threshold on machine verification alone is unaffected', () => {
+    expect(decidePublish({ ...base, humanSavedSourceCount: 3 })).toEqual({ action: 'auto-push' });
+  });
+  it('no saved copy keeps today\'s below-threshold behaviour', () => {
+    expect(decidePublish({ ...base, verifiedSourceCount: 0 })).toEqual({ action: 're-research', reasons: ['below-threshold'] });
+  });
+  it('a high gate finding still wins', () => {
+    expect(decidePublish({ ...saved, gateFindings: [f('no-source', 'high')] })).toEqual({ action: 're-research', reasons: ['gate-high'] });
+  });
+});

@@ -99,6 +99,8 @@ function snippetsForJsonb(verifiedSources: VerifiedRow['verifiedSources'], faile
   const all = [...verifiedSources, ...failedSources];
   return all.map((s) => ({
     url: s.url,
+    // Ruling 2026-10-07: a human-saved own-site copy is shown to the reviewer, never verified from.
+    ...(s.humanSaved ? { human_saved: s.humanSaved } : {}),
     snippets: s.snippets.map((snip) => ({
       snippet_index: snip.snippet_index,
       snippet: snip.snippet,
@@ -233,6 +235,8 @@ export interface ResearchReviewRow {
     /** CA_0301: the source's date, coder-pipeline rows only (scripts/lib/coderQueue.ts). */
     date?: string | null;
     date_precision?: 'day' | 'month' | 'year' | null;
+    /** A person-saved copy of this own-site page exists; reviewer information only (humanSavedCopy.ts). */
+    human_saved?: { sha256: string; snippets_found: number[]; snippets_total: number };
     snippets: Array<{
       snippet_index: number;
       snippet: string;
