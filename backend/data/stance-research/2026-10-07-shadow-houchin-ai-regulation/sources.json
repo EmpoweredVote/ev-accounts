@@ -1,0 +1,57 @@
+{
+  "batch_id": "2026-10-07-shadow-houchin-ai-regulation",
+  "sources": [
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/5360",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "ai-regulation"
+      ],
+      "instruments": [
+        "H.R. 5360 (119th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/6489",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "ai-regulation"
+      ],
+      "instruments": [
+        "H.R. 6489 (119th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://houchin.house.gov/media/press-releases/houchin-auchincloss-introduce-first-house-bill-ai-chatbot-companions",
+      "source_kind": "own-site",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "ai-regulation"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://houchin.house.gov/media/press-releases/houchin-bills-protect-children-ai-dangers-pass-energy-commerce-committee",
+      "source_kind": "own-site",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "ai-regulation"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "ad53d5ab-01ba-5c47-9670-c5e343a0738e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-23",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Nay on third reading of a bill that both bans PreK-3 human-sexuality instruction and requires parental notification of name/pronoun requests; a No on a multi-subject bill proves nothing.",
+          "record_kind": "vote",
+          "actor_quote": "N AY - 29 Andrade Fleming Johnson Porter Bauer, M Garcia Wilburn Klinker Pryor Boy GiaQuinta Miller, K Shackleford Campbell Gore Moed Smith, V Clere Hamilton Moseley Summers DeLaney Harris Pack Dvorak Hatfield Pfaff Errington Jackson Pierce, M",
+          "tally_quote": "Yea 65 Human sexuality instruction Nay 29"
+        },
+        {
+          "snapshot_id": "30f74405-4bca-53d2-80ca-512b13a4b443",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school, an employee or staff member of a school, or a third party vendor used by a school to provide instruction may not provide any instruction to a student in prekindergarten through grade 3 on human sexuality.",
+          "note": "Enrolled (concurred) text; the third-reading version he voted on may differ, and the ban states no divisiveness or age reason.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0776b409-4af5-5603-b773-6447a8a2209c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-12-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Opposes a Commission for Higher Education 'American values' requirement for university degree programs; higher education, not K-12 curriculum content.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "His only K-12 act is a Nay on HB 1608 (2023), a bill joining a PreK-3 human-sexuality instruction ban with parental name/pronoun notification; a No on a multi-subject bill proves nothing about the rung 'Prohibit lessons on race, gender, or sexuality...'. His newsletter criticism of 'American values' degree review concerns universities, not school curriculum.",
+      "needs_source": [
+        "House concurrence roll call on HB 1608 (2023) enrolled text",
+        "Pierce's own words on K-12 curriculum on race, gender or history (questionnaire, issue page, floor speech)"
+      ],
+      "quotes": []
+    },
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "502a0117-c635-5a60-a779-864c9afde4c8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Nay on the conference report of a multi-subject act (Muncie schools, third-party surveys, library removal requests, neutrality, criminal defense); a No proves nothing.",
+          "record_kind": "vote",
+          "actor_quote": "N AY - 28 Andrade Dvorak Jackson Pierce, M",
+          "tally_quote": "Yea 69 Education matters Nay 28"
+        },
+        {
+          "snapshot_id": "9b63482e-23ef-5fbd-b484-b9f965876198",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": "The response and appeal procedure established under subsection (a)(3) must require the governing body to review the request at the next public meeting.",
+          "note": "The library process has the governing body review removal requests, not a committee of educators and parents, so even a Yes would reach rung 3 clause [a] only.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "His only act is a Nay on the HB 1447 (2023) conference report, a multi-subject act whose library section lets a parent or community member request removal of obscene or harmful material for review by the governing body; a No on a multi-subject bill proves nothing about any rung on how challenges are handled.",
+      "needs_source": [
+        "Pierce's own words on school library book challenges",
+        "Any single-subject vote by Pierce on a school library challenge process"
+      ],
+      "quotes": []
+    },
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+      "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+      "passages": [
+        {
+          "snapshot_id": "ad53d5ab-01ba-5c47-9670-c5e343a0738e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-23",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Nay on third reading; the bill also bans PreK-3 human-sexuality instruction, so the No may target either part, and whether the third-reading text held the notification section is not shown.",
+          "record_kind": "vote",
+          "actor_quote": "N AY - 29 Andrade Fleming Johnson Porter Bauer, M Garcia Wilburn Klinker Pryor Boy GiaQuinta Miller, K Shackleford Campbell Gore Moed Smith, V Clere Hamilton Moseley Summers DeLaney Harris Pack Dvorak Hatfield Pfaff Errington Jackson Pierce, M",
+          "tally_quote": "Yea 65 Human sexuality instruction Nay 29"
+        },
+        {
+          "snapshot_id": "30f74405-4bca-53d2-80ca-512b13a4b443",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's: (1) name; or (2) pronoun, title, or word to identify the student.",
+          "note": "Enrolled text is a notification duty with no safety exception (rung 4 territory), but he voted No, which at most rules out that rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 1608 (2023) requires a school to notify a parent of a student's request to change name or pronoun, which sits near 'Require staff to notify parents whenever...', but Pierce voted Nay on a multi-subject bill that also bans PreK-3 sexuality instruction; a No proves nothing, and even on a single-subject bill it would only rule one rung out.",
+      "needs_source": [
+        "House concurrence roll call on HB 1608 (2023) enrolled text",
+        "Pierce's own words on parental notification of a student's name or gender identity"
+      ],
+      "quotes": []
+    },
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "66b389c7-86fc-45e9-bf34-964bb747f27b",
+      "served_revision_id": "23d87824-d25c-4b9a-8b13-fb2799d75661",
+      "passages": [
+        {
+          "snapshot_id": "0776b409-4af5-5603-b773-6447a8a2209c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-12-22",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Vows to oppose legislation that 'erodes diversity on campus'; this concerns universities and names no mechanism for achievement gaps in schools.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "No source speaks to how K-12 schools should address gaps between student groups; his December 2025 newsletter line about opposing legislation that erodes diversity on campus is about higher education and names none of the rung mechanisms (equity offices, training and goals, measured targeted support).",
+      "needs_source": [
+        "Pierce's votes or own words on K-12 equity offices, training or DEI bans"
+      ],
+      "quotes": []
+    },
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "15d7e730-119b-43a2-a351-1efb7352b86b",
+      "served_revision_id": "d81d7662-3c68-425c-a5c6-ca0717384a9e",
+      "passages": [],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "No supplied source addresses police officers in schools, so no passage speaks to any rung from removing officers to placing one in every school.",
+      "needs_source": [
+        "Pierce's votes or own words on school resource officers"
+      ],
+      "quotes": []
+    },
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "c8807d3d-4264-47ce-b8c4-08c6c9c33ce3",
+      "served_revision_id": "3901e1b0-12b0-4f7e-9e14-061ae2247c26",
+      "passages": [],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "No supplied source addresses charter school authorization, caps or conversion, so no rung is evidenced.",
+      "needs_source": [
+        "Pierce's votes or own words on charter authorization, caps or conversion"
+      ],
+      "quotes": []
+    },
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "49f0b171-2ddf-4e68-887f-0ba78a2562f1",
+      "served_revision_id": "0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc",
+      "passages": [
+        {
+          "snapshot_id": "f65d7bd5-af08-5541-a8eb-790f48c5bc62",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-05-26",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticizes SEA 1 property-tax relief for costing schools funding, which leans against cutting school funding to cut taxes but states no preferred funding level or tax change.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In his May 2026 newsletter he writes that 'SEA 1 is making it difficult for schools and local governments to balance their budgets', which leans away from 'Cut school funding significantly to reduce the taxes residents pay' but does not say whether he would raise taxes, increase modestly, or hold funding flat.",
+      "needs_source": [
+        "Pierce's House vote on SEA 1 (2025)",
+        "Pierce's own words stating a preferred school funding level or tax change"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f65d7bd5-af08-5541-a8eb-790f48c5bc62",
+          "text": "Meanwhile, SEA 1 is making it difficult for schools and local governments to balance their budgets.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    },
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "61269f44-9c7f-4b27-818a-3508009f6ae2",
+      "served_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+      "passages": [],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "No supplied source addresses artificial intelligence in classrooms or student work, so no rung is evidenced.",
+      "needs_source": [
+        "Pierce's votes or own words on AI use in K-12 classrooms"
+      ],
+      "quotes": []
+    }
+  ]
+}

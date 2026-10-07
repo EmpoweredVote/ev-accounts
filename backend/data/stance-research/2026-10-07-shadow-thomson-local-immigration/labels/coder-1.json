@@ -1,0 +1,48 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "b9ccee94-ad96-4f10-b655-889d8e5abe92",
+      "served_revision_id": "e08e6f62-0d0e-4bea-a3df-a2ab2e0d5ecf",
+      "passages": [
+        {
+          "snapshot_id": "409d32f3-68a8-5294-9b0f-6e7ff16da17f",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-05-02",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Mayoral press statement saying federal enforcement is outside city authority and the city operates within federal legal frameworks; it names no detainer, information-sharing or resources policy, so it is 'we follow the law' with no policy named.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only passage is the mayor's 2025 statement that \"we operate within legal frameworks established by the federal government\", which names no policy on detainers, status-information sharing, or use of local resources, so it cannot match any rung's clauses (annex: \"We follow the law\" with no policy named is rhetorical). No passage survives to seat a chair.",
+      "needs_source": [
+        "Bloomington Police Department policy or general order on immigration status inquiries, civil immigration arrests, or ICE requests",
+        "Any City of Bloomington ordinance, executive order or council resolution on cooperation with federal immigration enforcement acted on by Mayor Thomson",
+        "Mayor Thomson's own words (questionnaire, debate answer, interview) on ICE detainers or information sharing"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "409d32f3-68a8-5294-9b0f-6e7ff16da17f",
+          "text": "While the City remains guided by principles of dignity and safety, we operate within legal frameworks established by the federal government.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

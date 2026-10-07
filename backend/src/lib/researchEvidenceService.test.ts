@@ -749,6 +749,17 @@ describe('validStoredSpan (I6)', () => {
     expect(validStoredSpan(FULL_SNIPPET, 'Jane Doe voted')).toBeNull();
     expect(validStoredSpan(FULL_SNIPPET, `${SPAN} extra`)).toBeNull();
   });
+
+  // The span is now decoded before it is stored, so a voter does not read "&mdash;". The snippet in
+  // the review row is still the researcher's copy of the page, entities and all. Both sides fold
+  // through normalizeText, so approval must still accept the pair — if it did not, every citation
+  // cut from a news page would silently fail to publish.
+  it('accepts a DECODED span against a snippet that still carries the raw entities', async () => {
+    const { validStoredSpan } = await import('./researchEvidenceService.js');
+    const raw = `Councilmember Jane Doe said &ldquo;this is the plan&rdquo; &mdash; and the city&rsquo;s budget ${FULL_SNIPPET}`;
+    const decoded = `Councilmember Jane Doe said “this is the plan” — and the city’s budget ${FULL_SNIPPET}`;
+    expect(validStoredSpan(raw, decoded)).toBe(decoded);
+  });
 });
 
 describe('resolveResearchReview — coder-pipeline rows: source dates (CA_0301) and evidence tier (CA_0300)', () => {

@@ -1,0 +1,691 @@
+[
+ {
+  "topic_key": "abortion",
+  "batch": "houchin-abortion",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Her own first-person words on gestational limits or exceptions (e.g. rape, incest, life of the mother) from the current term or campaign",
+   "Clerk roll call or congress.gov record of any vote or sponsorship by her on a federal gestational-limit or nationwide-ban bill (118th/119th Congress)"
+  ],
+  "context_urls": [
+   "https://www.congress.gov/bill/118th-congress/house-bill/7",
+   "https://www.congress.gov/bill/118th-congress/house-bill/26",
+   "https://clerk.house.gov/Votes/202329"
+  ]
+ },
+ {
+  "topic_key": "ai-regulation",
+  "batch": "houchin-ai-regulation",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 1,
+  "urls_dropped": 0,
+  "needs_source": [
+   "House Energy and Commerce Committee recorded vote on H.R. 7757 (119th), KIDS Act markup, March 2026",
+   "Her own words on AI developer liability, pre-use testing, or approval requirements"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "climate-change",
+  "batch": "houchin-climate-change",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Clerk roll call or bill text for any single-subject House vote on clean-energy tax credits, subsidies or mandates (118th/119th Congress) on which Houchin acted",
+   "Houchin's own words (issue page 'Energy' on houchin.house.gov, questionnaire or debate answer) on clean-energy subsidies, mandates, permitting or market neutrality"
+  ],
+  "context_urls": [
+   "https://www.congress.gov/bill/118th-congress/house-joint-resolution/126",
+   "https://www.congress.gov/bill/118th-congress/house-bill/1435",
+   "https://clerk.house.gov/Votes/2023391"
+  ]
+ },
+ {
+  "topic_key": "fossil-fuels",
+  "batch": "houchin-fossil-fuels",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words on drilling, leasing or fossil fuel production levels (issue page 'Energy' on houchin.house.gov, questionnaire or debate answer)",
+   "Clerk roll call on any single-subject bill requiring federal oil and gas lease sales or expanding drilling permits, with her vote"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/202493",
+   "https://www.congress.gov/bill/118th-congress/house-bill/1121",
+   "https://clerk.house.gov/Votes/202452"
+  ]
+ },
+ {
+  "topic_key": "deportation",
+  "batch": "houchin-deportation",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/202523",
+   "https://www.congress.gov/bill/119th-congress/senate-bill/5"
+  ]
+ },
+ {
+  "topic_key": "border-security",
+  "batch": "houchin-border-security",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own explanation of vote or floor speech on H.R. 2 (118th) tying her vote to its asylum-eligibility provisions (Div. B Title I)",
+   "Text of the Arrington-led amicus brief in United States v. Texas (W.D. Tex., Austin Div., Feb. 2024) with Houchin's signature"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/2023209",
+   "https://www.congress.gov/bill/118th-congress/house-bill/2"
+  ]
+ },
+ {
+  "topic_key": "healthcare",
+  "batch": "houchin-healthcare",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 1,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words (issue page, questionnaire, debate) on whom government should cover or help pay for healthcare",
+   "Roll calls or sponsorships on single-subject coverage bills (Medicaid eligibility, ACA subsidies, marketplace rules) in the 118th\u2013119th Congress"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/2025145"
+  ]
+ },
+ {
+  "topic_key": "medicare/aid",
+  "batch": "houchin-medicare-aid",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 1,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words (questionnaire, issue page, or statement) on the size and structure of Medicare and Medicaid",
+   "Any single-subject Medicare or Medicaid bill Houchin authored, sponsored, or voted on in the 118th/119th Congress, with bill text and roll call"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/2025145"
+  ]
+ },
+ {
+  "topic_key": "taxes",
+  "batch": "houchin-taxes",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 1,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Her own words (first-person issue page, questionnaire or debate answer) on cutting the main individual income tax rates, or on cutting taxes as far as possible and shrinking government",
+   "A single-subject tax bill she authored or prime-sponsored that cuts the main individual income tax rate (congress.gov sponsor page and bill text)"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/2025190"
+  ]
+ },
+ {
+  "topic_key": "housing",
+  "batch": "houchin-housing",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or record on housing subsidies or tax credits (e.g., LIHTC expansion) to separate rung 4 from rung 5",
+   "Houchin's own words or record on public housing or binding rules (rent caps, required affordable units)"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/202612",
+   "https://www.congress.gov/bill/119th-congress/house-bill/5184"
+  ]
+ },
+ {
+  "topic_key": "school-vouchers",
+  "batch": "houchin-school-vouchers",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Erin Houchin's own words (issue page, questionnaire, debate answer, or statement) on voucher/school-choice eligibility",
+   "Bill text of H.R. 833 (119th) operative sections, to confirm what the credit funds and who is eligible"
+  ],
+  "context_urls": [
+   "https://www.congress.gov/bill/119th-congress/house-bill/833",
+   "https://www.congress.gov/bill/118th-congress/house-bill/531"
+  ]
+ },
+ {
+  "topic_key": "social-security",
+  "batch": "houchin-social-security",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "compound-partial",
+  "evidence_type": "record",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Erin Houchin's own words or record on the Social Security payroll tax or taxable maximum (tax side of the rungs)"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/2024456",
+   "https://www.congress.gov/bill/118th-congress/house-bill/82"
+  ]
+ },
+ {
+  "topic_key": "tariffs",
+  "batch": "houchin-tariffs",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Clerk roll calls on House votes on resolutions to terminate the national emergencies underlying the 2025 IEEPA tariffs (119th Congress), or rules blocking such votes",
+   "Houchin's own words stating whether she considers the tariff rate on all imports high, or opposes broad tariffs"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "trans-athletes",
+  "batch": "houchin-trans-athletes",
+  "status": "ok",
+  "value": 4,
+  "blank_reason": null,
+  "evidence_type": "record",
+  "rests_on": 4,
+  "urls_dropped": 1,
+  "needs_source": [
+   "Congress.gov bill page and Houchin's cosponsorship record for the Protection of Women in Olympic and Amateur Sports Act (118th), named in her op-ed"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "ukraine-support",
+  "batch": "houchin-ukraine-support",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words (statement, explanation of vote, interview) on the level of Ukraine aid, especially regarding her H.R. 8035 Yea (April 2024)",
+   "Houchin's own explanation of her Nay on H.R. 5692 (118th), September 2023"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/2024151",
+   "https://www.congress.gov/bill/118th-congress/house-bill/8035",
+   "https://clerk.house.gov/Votes/2023503"
+  ]
+ },
+ {
+  "topic_key": "israel-military-aid",
+  "batch": "houchin-israel-military-aid",
+  "status": "ok",
+  "value": 1,
+  "blank_reason": null,
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/2024152"
+  ]
+ },
+ {
+  "topic_key": "voting-rights",
+  "batch": "houchin-voting-rights",
+  "status": "ok",
+  "value": 5,
+  "blank_reason": null,
+  "evidence_type": "record",
+  "rests_on": 4,
+  "urls_dropped": 1,
+  "needs_source": [
+   "Bill text and cosponsor record for the SAVE America Act (119th Congress) and the House roll call on its passage (February 2026)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "gun-policy",
+  "batch": "houchin-gun-policy",
+  "status": "ok",
+  "value": 4,
+  "blank_reason": null,
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own first-person words on new gun restrictions or on repealing major federal gun laws (current campaign or term)",
+   "Introduced text of H.R. 38 (119th) as filed on 2025-01-03, to confirm the version she cosponsored"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "military-intervention",
+  "batch": "houchin-military-intervention",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words (statement, questionnaire, floor speech or explanation of vote) stating the conditions under which she would use military force abroad"
+  ],
+  "context_urls": [
+   "https://clerk.house.gov/Votes/2023136",
+   "https://www.congress.gov/bill/118th-congress/house-concurrent-resolution/21",
+   "https://clerk.house.gov/Votes/2023201"
+  ]
+ },
+ {
+  "topic_key": "defense-spending",
+  "batch": "houchin-defense-spending",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Her own words sizing the defense topline (e.g., real growth above inflation, percent of GDP)",
+   "Clerk roll calls on any defense topline amendments (add or cut a stated sum) in the 118th/119th Congress, with the amendment text"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-curriculum",
+  "batch": "houchin-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-library-books",
+  "batch": "houchin-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": [
+   "https://www.congress.gov/bill/118th-congress/house-bill/5",
+   "https://clerk.house.gov/Votes/2023161"
+  ]
+ },
+ {
+  "topic_key": "education-gender-identity",
+  "batch": "houchin-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": [
+   "https://www.congress.gov/bill/118th-congress/house-bill/5",
+   "https://clerk.house.gov/Votes/2023161"
+  ]
+ },
+ {
+  "topic_key": "education-equity-programs",
+  "batch": "houchin-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-school-police",
+  "batch": "houchin-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-school-budget",
+  "batch": "houchin-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-ai",
+  "batch": "houchin-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": []
+ },
+ {
+  "topic_key": "campaign-finance",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House roll call on a campaign-finance bill (118th/119th Congress)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "childcare",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on a childcare subsidy or provider-grant bill"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "civil-rights",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on a civil-rights enforcement or affirmative-action bill"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "data-centers",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on data-center energy or permitting"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "economic-development",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own first-person words on business incentives or subsidies to attract employers"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "growth-and-development",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own first-person words on managing growth and new development"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "homelessness",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on public camping or encampment penalties"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "jail-capacity",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own first-person words on jail capacity or alternatives to incarceration"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "judicial-criminal-justice",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on sentencing or alternatives to punishment"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "misinformation",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on platform content-moderation or misinformation bills"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "redistricting",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on redistricting commissions or standards"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "religious-freedom",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on religious exemptions from anti-discrimination law"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "rent-regulation",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own first-person words on rent control"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "same-sex-marriage",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on same-sex marriage recognition (e.g. Respect for Marriage Act)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "transportation-priorities",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own first-person words on transportation investment priorities"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "2020-election",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words on the outcome of the 2020 presidential election"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "cannabis-policy",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on cannabis legalization or scheduling"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "minimum-wage",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a House record on a federal minimum-wage bill"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "ranked-choice-voting",
+  "batch": "houchin-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Houchin's own words or a record on ranked-choice voting (including her Indiana State Senate votes on any RCV bill)"
+  ],
+  "context_urls": []
+ }
+]

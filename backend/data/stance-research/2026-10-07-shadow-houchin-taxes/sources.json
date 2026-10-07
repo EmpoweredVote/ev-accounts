@@ -1,0 +1,55 @@
+{
+  "batch_id": "2026-10-07-shadow-houchin-taxes",
+  "sources": [
+    {
+      "url": "https://clerk.house.gov/Votes/2025190",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "H.R. 1 (119th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://houchin.house.gov/media/press-releases/rep-erin-houchin-applauds-house-passage-one-big-beautiful-bill",
+      "source_kind": "own-site",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-statement-house-passage-one-big-beautiful-bill",
+      "source_kind": "own-site",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.erinhouchin.com/issues",
+      "source_kind": "own-site",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

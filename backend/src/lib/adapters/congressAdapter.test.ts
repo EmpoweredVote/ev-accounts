@@ -153,6 +153,14 @@ describe('fetchCongressPageText', () => {
     }
   });
 
+  it('asks for the whole cosponsor list (limit=250), not the API default page of 20', async () => {
+    const urls: string[] = [];
+    await fetchCongressPageText('https://www.congress.gov/bill/118th-congress/house-bill/26', {
+      apiKey: KEY, fetchImpl: routedFetch([['/bill/118/hr/26?', { bill: { title: 'Born-Alive Abortion Survivors Protection Act' } }]], (u) => urls.push(u)),
+    });
+    expect(urls.find((u) => u.includes('/cosponsors'))).toMatch(/\/cosponsors\?limit=250&/);
+  });
+
   it('falls through (null) when the bill endpoint 404s', async () => {
     const r = await fetchCongressPageText('https://www.congress.gov/bill/119th-congress/house-bill/9', {
       apiKey: KEY, fetchImpl: routedFetch([]), // every route 404s

@@ -1,0 +1,92 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "c8727df7-7edd-5a4b-807f-029dd27f569a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 6489 (119th)",
+          "provision_quote": "A chatbot provider shall clearly and conspicuously disclose, in accordance with paragraphs (2) and (3), to each covered user of a chatbot of such provider notice of the following",
+          "note": "Sponsored bill imposes disclosure and content-policy duties on chatbot providers for minors with FTC enforcement; it requires no pre-use testing, no approval, and no liability for harm the system causes, so it rules out 'without government interference' but fits no rung (annex: disclosure-only → direction-only).",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsor: Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "da2b1e15-013e-566e-9484-411b106d0440",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-09-15",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5360 (119th)",
+          "provision_quote": "the Commission, in consultation with relevant Federal agencies, shall develop and make available to the public educational resources for parents, educators, and minors with respect to the safe and responsible use of AI chatbots by minors",
+          "note": "Sponsored bill directs FTC educational resources for parents and minors, not safety guidelines for AI companies, so it does not reach the voluntary-guidelines rung.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mrs. Houchin (for herself and Mr. Auchincloss) introduced the following bill",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f69fa415-ab72-565a-a599-c20aebd4e69e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-09-25",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Press-release quote about giving families guidance on AI chatbots; names no oversight clause on AI developers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7db6a698-fa56-580e-9441-c4be2232cdc8",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-06",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Quote says the current system is broken and kids' safety should come first, but names no testing, liability or approval clause; the committee passage of H.R. 7757 is reported, not her recorded vote.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": ["c8727df7-7edd-5a4b-807f-029dd27f569a"],
+      "reasoning": "Her sponsored SAFE BOTs Act (H.R. 6489) imposes disclosure and content-policy duties on chatbot providers, which rules out 'develop and deploy technology freely without government interference' but is neither 'safety testing before AI can be used in high-stakes areas' nor a rule to 'hold AI developers legally responsible when their systems cause harm'. The AWARE Act gives parents educational resources rather than guidelines to companies, and her quoted words name no oversight mechanism, so only a side is shown.",
+      "needs_source": [
+        "House Energy and Commerce Committee recorded vote on H.R. 7757 (119th), KIDS Act markup, March 2026",
+        "Her own words on AI developer liability, pre-use testing, or approval requirements"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f69fa415-ab72-565a-a599-c20aebd4e69e",
+          "text": "The AWARE Act gives families practical guidance to navigate AI chatbot companions with confidence, because protecting kids in the digital age must always come first.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

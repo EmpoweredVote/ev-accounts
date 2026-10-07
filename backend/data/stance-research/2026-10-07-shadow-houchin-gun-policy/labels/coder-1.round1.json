@@ -1,0 +1,102 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "ef59fa3c-2c51-59d3-b90f-f0e3055c93d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01-03",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.R. 38 (119th)",
+          "provision_quote": "may possess or carry a concealed handgun (other than a machine gun or destructive device) that has been shipped or transported in interstate or foreign commerce, in any State that--",
+          "note": "Original cosponsor of concealed-carry reciprocity; it meets the 'loosen carry' part of rung 4 and, together with the H.J.Res. 44 vote against a new restriction, seats rung 4 under the annex rule (ruled 2026-10-01); the page prints the reported substitute, not the filed text.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b43add17-b4d6-5893-a3d0-89cc0a31e3c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-06-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.J.Res. 44 (118th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of a single-subject CRA resolution nullifying the ATF stabilizing-brace rule, a recorded vote against a new restriction (the annex's second passage for rung 4); 219-210, not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 219 nay: 210"
+        },
+        {
+          "snapshot_id": "3e74e5a9-0a92-5762-ba36-7b106be03e0a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-06-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.J.Res. 44 (118th)",
+          "provision_quote": "Congress disapproves the rule submitted by the Bureau of Alcohol, Tobacco, Firearms, and Explosives relating to",
+          "note": "Bill text of the vote, and she is also listed as a cosponsor; the operative section voids a new NFA classification rule, i.e. blocks a new restriction without repealing a major law.",
+          "record_kind": "vote",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ac58db88-fdda-5a46-9add-5de73b10a656",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2026-02-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2189 (119th)",
+          "provision_quote": "The term `less-than-lethal projectile device' means a device that--",
+          "note": "Cosponsored a bill exempting less-than-lethal devices (e.g. TASERs) from firearm law; it does not address which firearms civilians may own, buy or carry.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "54b16fca-5296-530b-a8c3-20e37e44bf05",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2026-02-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2189 (119th)",
+          "provision_quote": null,
+          "note": "Yea on passage of H.R. 2189 (less-than-lethal devices), which does not speak to the firearm rungs.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 233 nay: 185"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ef59fa3c-2c51-59d3-b90f-f0e3055c93d9",
+        "b43add17-b4d6-5893-a3d0-89cc0a31e3c1",
+        "3e74e5a9-0a92-5762-ba36-7b106be03e0a"
+      ],
+      "reasoning": "She cosponsored H.R. 38, the Constitutional Concealed Carry Reciprocity Act, which loosens carry rules across state lines, and voted Yea on H.J.Res. 44 nullifying the ATF stabilizing-brace rule, a recorded vote against a new restriction. Per the annex, a reciprocity record plus a vote against a new restriction seats \"Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines\"; no record repeals a major federal law, so the rung-5 repeal clause is unevidenced.",
+      "needs_source": [
+        "H.R. 38 (119th) text as introduced (2025-01-03), to confirm the filed version she cosponsored",
+        "Houchin's own words on gun policy (campaign issue page, questionnaire, or statement)"
+      ],
+      "quotes": []
+    }
+  ]
+}

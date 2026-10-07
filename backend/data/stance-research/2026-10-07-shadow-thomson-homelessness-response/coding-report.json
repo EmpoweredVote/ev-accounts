@@ -1,0 +1,59 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus"
+  ],
+  "rows": [
+    {
+      "key": "1c6dbdaf-e110-48d3-9b88-27f911d9521f|b42f6de3-da88-4d50-af66-c78cdb46e628|6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "topic_key": "homelessness-response",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "local",
+        "evidence_class": null,
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 0
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

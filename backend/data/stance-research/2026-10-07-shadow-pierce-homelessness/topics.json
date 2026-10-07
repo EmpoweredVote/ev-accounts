@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+    "topic_key": "homelessness",
+    "topic_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+    "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+    "question_number": 14,
+    "title": "Criminalization of Homelessness",
+    "question_text": "How should government address people sleeping or camping in public spaces?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Protecting the right to sleep and shelter in public spaces, with no penalties of any kind"
+      },
+      {
+        "value": 2,
+        "text": "Decriminalizing public sleeping and camping in public spaces"
+      },
+      {
+        "value": 3,
+        "text": "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"
+      },
+      {
+        "value": 4,
+        "text": "Prohibiting encampments on public property, enforced through graduated warnings and civil penalties"
+      },
+      {
+        "value": 5,
+        "text": "Banning public camping and sleeping with criminal penalties to maintain public safety and order"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

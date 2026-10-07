@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-civil-rights",
+  "seat": {
+    "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+    "full_name": "Matt Pierce",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2002-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "question_text": "What role should government play in addressing racial and social inequality?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "mandate racial equity requirements in all institutions"
+        },
+        {
+          "value": 2,
+          "text": "strengthen civil rights enforcement and address systemic discrimination"
+        },
+        {
+          "value": 3,
+          "text": "maintain current civil rights laws while promoting equal opportunity"
+        },
+        {
+          "value": 4,
+          "text": "limit federal civil rights enforcement to clear cases of discrimination"
+        },
+        {
+          "value": 5,
+          "text": "eliminate affirmative action and all race-based government programs"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# civil-rights — served revision 2010cab0-1968-4f24-b74d-ca47c2f90165 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"What role should government play in addressing racial and social inequality?\"\n\n**Orientation:** standard. Rung 1 is the most government action (equity mandates on every\ninstitution), rung 5 removes race-conscious programmes. Rungs 1–4 order **how much enforcement and\nremedy** government supplies; rung 5 is about **race-conscious programmes**, a related but different\ndimension. Read each rung's own clauses.\n\n**Levels with a lever:** federal, local, state. Federal law (the Civil Rights\nAct, the Fair Housing Act, agency enforcement) is the main lever. States and cities pass and enforce\ntheir own anti-discrimination laws and run their own programmes. Rung 4 names **federal**\nenforcement only.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"Title VI\", \"Title VII\", \"Civil Rights Act\", \"Fair Housing Act\", \"disparate impact\",\n\"intentional discrimination\" or \"disparate treatment\", \"EEOC\", \"Civil Rights Division\", \"human\nrights commission\", \"protected class\" or \"protected characteristic\", \"affirmative action\",\n\"race-conscious admissions\", \"set-aside\", \"DBE\" or \"MBE\" (minority business enterprise), \"DEI\"\n(diversity, equity and inclusion), \"equity plan\", \"equity audit\", \"systemic racism\", \"colorblind\",\n\"reparations\".\n\n1. **\"mandate racial equity requirements in all institutions\"**\n   - Means: the law requires every institution to meet racial-equity requirements.\n   - Operative clauses: [a] a mandate (binding text); [b] racial-equity requirements (equity plans,\n     audits, outcome targets); [c] in **all** institutions.\n   - Establishing evidence looks like: binding operative text that imposes racial-equity requirements\n     across sectors (public bodies **and** private employers or institutions); own words calling for\n     that.\n   - Levels that hold a lever: federal; state; local (for the institutions the city governs).\n   - Known chair-shaped instruments: _(none on file)_.\n   - An equity requirement on one sector only (state agencies, one city's departments) does not meet\n     [c] \"all\" → `direction-only` _(proposed)_.\n   - Reparations are no longer part of this rung (S1 rung 1 had \"and provide reparations\"). A\n     reparations measure does not move a person along these rungs → `adjacent`; a reparations\n     **study** is V4 `study-directive` _(proposed)_.\n\n2. **\"strengthen civil rights enforcement and address systemic discrimination\"**\n   - Means: make anti-discrimination law stronger or better enforced, and act on discrimination built\n     into systems.\n   - Operative clauses: [a] strengthen civil rights enforcement; [b] address systemic\n     discrimination. Compound: one side only → `compound-partial` (V4.2).\n   - Establishing evidence looks like: authoring or prime-sponsoring a single-subject bill that widens\n     anti-discrimination law or its enforcement (new remedies, more enforcement power, a new form of\n     discrimination covered) **and** aims at a systemic pattern _(proposed)_.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - **Permitting a programme is not enforcement.** A measure that only permits a programme\n     strengthens no enforcement → at most [b] → BLANK `compound-partial` _(ruled 2026-10-01)_. Reaching rung 2 because rungs 1, 3, 4 and 5 do not fit is not evidence (V4.2\n     \"Ruling out the other rungs\", H14).\n   - **A near-unanimous vote** (fewer than 10% No) on an anti-discrimination bill cannot carry the\n     chair alone, even when the bill fits rung 2 well (V4.1). Without authorship or own words that tie\n     the person to the provision → BLANK `no-evidence`.\n   - Commonly confused with rung 1 because a strong enforcement bill is not a mandate on **all**\n     institutions.\n\n3. **\"maintain current civil rights laws while promoting equal opportunity\"**\n   - Means: keep the present laws as they are, neither widening nor narrowing them, and promote equal\n     opportunity.\n   - Operative clauses: [a] maintain current law (no expansion, no rollback); [b] promote equal\n     opportunity. Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: own words that present law is enough and should stay as it is,\n     beside an equal-opportunity measure.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - \"Equal opportunity for all\" alone names no clause → `rhetorical`.\n   - A No on an expansion bill does not show [a] (the person may want a rollback) → `direction-only`.\n\n4. **\"limit federal civil rights enforcement to clear cases of discrimination\"**\n   - Means: federal agencies act only on clear, usually intentional, discrimination, not on\n     statistical disparities.\n   - Operative clauses: [a] **federal** enforcement; [b] limited to clear cases (for example, ending\n     disparate-impact liability).\n   - Establishing evidence looks like: a federal bill or vote that removes disparate-impact liability\n     or narrows federal enforcement to intentional discrimination; own words calling for that.\n   - Levels that hold a lever: federal. State and local officeholders hold no lever on federal\n     enforcement → own words only (codebook V2 \"No-lever level\"). A state law that narrows the state's **own** enforcement does\n     not match [a] → `direction-only` _(proposed)_.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because ending a race-conscious programme is not a limit on\n     enforcement.\n\n5. **\"eliminate affirmative action and all race-based government programs\"**\n   - Means: government ends affirmative action and every programme that sorts people by race.\n   - Operative clauses: [a] eliminate affirmative action; [b] eliminate **all** race-based government\n     programmes. Compound: [a] only → `compound-partial`.\n   - Establishing evidence looks like: a single-subject measure that bars preferential treatment by\n     race in public employment, education **and** contracting; own words calling for an end to all\n     such programmes.\n   - Levels that hold a lever: federal; state; local (its own programmes).\n   - Known chair-shaped instruments: _(none on file)_.\n   - A race-preference ban limited to one sector meets the affirmative-action part only →\n     `compound-partial`. Closing DEI offices with no ban on preferences → `direction-only`: an office\n     is not a programme that allocates by race _(ruled 2026-10-01)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **Advocacy-group profiles and legislator directories** → V3 `not-evidence` (codebook V3, [real]).\n- **Hate-crime penalties** are criminal law, not a remedy for inequality → `adjacent` _(proposed)_.\n- **Policing and voting** have their own topics (`judicial-police-accountability`, `voting-rights`)\n  → `adjacent` here.\n- **Commemorative resolutions** (a holiday, an apology, a history month) → `rhetorical`.\n- **Task forces and disparity studies** → V4 `study-directive`.\n- **Protected traits other than race.** Rungs 2–4 speak of civil rights in general, so a\n  sex, disability or sexual-orientation anti-discrimination measure is `on-question` for them; rungs\n  1 and 5 are about race only _(proposed)_.\n- **Preemption (codebook V2, H12).** A state law that forbids **local** governments to run a\n  programme → `adjacent`. A state law that binds the state's own bodies too sets the rule →\n  `on-question` _(proposed)_.\n- **Budget and omnibus votes** → V4 `multi-subject`.\n"
+    }
+  ]
+}

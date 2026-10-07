@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-thomson-local-environment",
+  "seat": {
+    "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+    "full_name": "Kerry Thomson",
+    "level": "local",
+    "mode": "seated",
+    "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+    "office_title": "City Mayor",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": null,
+    "start_precision": "unknown",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "1935979c-b290-42e4-baa5-8cb0138b4ffa",
+      "topic_key": "local-environment",
+      "served_revision_id": "d67eabf7-8da0-4ca7-b2af-74745b3bfd47",
+      "question_text": "How should your community balance new development with environmental preservation?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Make environmental protection the overriding priority — block or sharply limit development that would harm the local environment"
+        },
+        {
+          "value": 2,
+          "text": "Lean strongly toward protection — put the burden on development to prove it will not damage the environment before it can proceed"
+        },
+        {
+          "value": 3,
+          "text": "Apply consistent environmental standards while giving developers reasonable flexibility on implementation"
+        },
+        {
+          "value": 4,
+          "text": "Lean toward development — treat environmental cost as a manageable trade-off and approve projects with clear economic benefit"
+        },
+        {
+          "value": 5,
+          "text": "Remove local environmental restrictions beyond what state and federal law requires"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# local-environment — served revision d67eabf7-8da0-4ca7-b2af-74745b3bfd47 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should your community balance new development with environmental preservation?\"\n\n**Orientation:** standard. Rung 1 puts environmental protection first and blocks harmful\ndevelopment, rung 5 removes local environmental rules beyond state and federal law. The rungs order\n**how strict local rules are when development and the local environment conflict**. The particular\ngood (trees, open space, wetlands, creeks) is evidence that places a person; it is not what the rungs\ndiffer on.\n\n**Levels with a lever:** local. The lever is local land-use approvals and local\nenvironmental ordinances (tree, wetland, creek, hillside, open space). State environmental-review law\nand federal law are a floor that local officials cannot lower. State and federal officeholders hold\nno lever here → `scope-unavailable`.\n\n**Asked at:** local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"tree ordinance\", \"heritage tree\", \"tree canopy\", \"riparian buffer\", \"wetland setback\",\n\"critical areas ordinance\", \"open-space preservation\", \"conservation easement\", \"environmental\nreview\", \"mitigation\", \"no net loss\", \"in-lieu fee\", \"environmental impact report\", \"greenbelt\",\n\"habitat conservation plan\".\n\n1. **\"Make environmental protection the overriding priority — block or sharply limit development that\n   would harm the local environment\"**\n   - Means: protecting the local environment comes first, and harmful development is stopped or\n     tightly limited.\n   - Operative clauses: [a] environmental protection as the overriding priority; [b] block or sharply\n     limit harmful development.\n   - Establishing evidence looks like: a moratorium or ban on development in a sensitive area; a vote\n     to deny a project on environmental grounds **plus** own words that protection comes first.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because a denial is also a strong demand for proof. A **denial**\n     or **ban** is rung 1 [b]; a rule that lets the project go ahead **once it proves no harm** is\n     rung 2. One project denial alone may rest on other grounds (traffic, design) → `direction-only`\n     unless the passage names environmental harm _(proposed)_.\n\n2. **\"Lean strongly toward protection — put the burden on development to prove it will not damage\n   the environment before it can proceed\"**\n   - Means: development may go ahead only after it shows it will not harm the environment.\n   - Operative clauses: [a] lean strongly toward protection; [b] the burden of proof is on the\n     developer, before approval.\n   - Establishing evidence looks like: an ordinance that requires a showing of no harm, full\n     mitigation or no net loss before approval; own words putting the burden on the project.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - Commonly confused with rung 3 because both set standards. Rung 2 makes the project **prove no\n     damage**; rung 3 sets **consistent standards** the project must meet, with room on how\n     _(proposed)_.\n\n3. **\"Apply consistent environmental standards while giving developers reasonable flexibility on\n   implementation\"**\n   - Means: the same rules apply to every project, but developers can choose how to meet them.\n   - Operative clauses: [a] consistent standards; [b] reasonable flexibility on implementation.\n   - Establishing evidence looks like: an ordinance that sets one standard (for example a canopy or\n     buffer requirement) and lets the developer choose among ways to meet it. Compound: one side only\n     → `compound-partial` (V4.2).\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - **An option to pay instead of meeting the standard** (an in-lieu fee) relaxes the standard; it is\n     not \"flexibility on implementation\". It leans toward rung 4 → `direction-only` _(proposed)_.\n\n4. **\"Lean toward development — treat environmental cost as a manageable trade-off and approve\n   projects with clear economic benefit\"**\n   - Means: development usually wins when it brings clear economic benefit; the environmental cost is\n     accepted and managed.\n   - Operative clauses: [a] lean toward development; [b] environmental cost treated as a manageable\n     trade-off; [c] approve projects with clear economic benefit.\n   - Establishing evidence looks like: a vote to approve a project over a stated environmental\n     objection, with own words citing its economic benefit; own words that economic benefit outweighs\n     the local environmental cost.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because most approvals are routine. An approval vote with no\n     environmental objection on the record shows nothing about the trade-off → `direction-only`\n     _(proposed)_.\n\n5. **\"Remove local environmental restrictions beyond what state and federal law requires\"**\n   - Means: the community keeps no environmental rule of its own; only state and federal law apply.\n   - Operative clauses: [a] remove local environmental restrictions; [b] beyond what state and\n     federal law requires (the floor stays, nothing above it).\n   - Establishing evidence looks like: a vote or own words to repeal the community's own environmental\n     ordinances as a set. [b] is a limit clause: repealing **one** local rule does not show that the\n     person wants none above the floor (V4.2 \"Silence is not a clause\") → `direction-only`.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because both favour development; rung 5 removes the rules,\n     rung 4 weighs each project under them.\n\n**Hard cases:**\n- **Climate, energy, waste and pollution measures** (emissions targets, clean energy, plastic bans,\n  recycling) do not speak to development versus the local environment → `adjacent`. They belong to\n  other topics (`climate-change`, `city-sanitation`).\n- **Park funding and acquisition** with no development decision → `adjacent` _(proposed)_.\n- **State law that removes local environmental rules** is a state act; a state officeholder holds no\n  lever here (`scope-unavailable`). For a local officeholder, a resolution for or against such a law\n  → V2 `adjacent` (H12), unless the passage states their own position on local rules _(proposed)_.\n- **State environmental-review suits and appeals** filed by residents are not the officeholder's act\n  → V1 fails.\n- **Budget and omnibus votes**, and **general plans** → V4 `multi-subject`.\n- **\"Smart growth\" and \"sustainable development\"** with no rule named → `rhetorical`.\n"
+    }
+  ]
+}

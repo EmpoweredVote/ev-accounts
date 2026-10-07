@@ -33,6 +33,27 @@ describe('htmlToText', () => {
     expect(htmlToText('<!-- hidden -->Shown')).toBe('Shown');
   });
 
+  // The root of the published-citation defect: the extracted page is what a snippet is matched
+  // against AND what the stored span is cut from, so a reference left here reaches the reader.
+  // This module used to keep its own entity table, which lacked every typographic reference a news
+  // page emits; it now shares one with the matcher (htmlEntities.ts).
+  it('decodes the typographic references a news page emits', () => {
+    expect(htmlToText('<p>Council position 6 &mdash; Jenn Hernandez</p>'))
+      .toBe('Council position 6 — Jenn Hernandez');
+    expect(htmlToText('<p>&ldquo;Placing a levy&rdquo; said the city&rsquo;s Mayor</p>'))
+      .toBe('“Placing a levy” said the city’s Mayor');
+    expect(htmlToText('<p>RCW &sect; 35.21.830</p>')).toBe('RCW § 35.21.830');
+  });
+
+  it('still decodes numeric and hex references', () => {
+    expect(htmlToText('<p>you&#8217;re here</p>')).toBe('you’re here');
+    expect(htmlToText('<p>you&#x2019;re here</p>')).toBe('you’re here');
+  });
+
+  it('resolves a doubly-escaped reference one step, not two', () => {
+    expect(htmlToText('<p>a &amp;mdash; b</p>')).toBe('a &mdash; b');
+  });
+
   it('decodes common HTML entities', () => {
     expect(htmlToText('<p>a &amp; b &nbsp;&quot;c&quot;</p>')).toBe('a & b "c"');
   });

@@ -193,6 +193,130 @@ describe('checkNameProximity', () => {
   });
 });
 
+// A source routinely prints a ballot name ("Jenn Hernandez") where the record holds the legal one
+// ("Jennifer Hernandez"). Neither name test then fires: the full name is absent, and the surname is
+// on COMMON_LAST_NAMES, which demands a title the article has no reason to use for a candidate.
+// `aliases` carries the other names the record knows, each treated as a full name.
+describe('checkNameProximity with aliases', () => {
+  const longSnippet = 'We need a mix of housing options that support both current and future residents, encouraging smaller homes like cottages, townhomes, or starter homes designed to fit the character of this town.';
+  const at = (page: string) => normalizeText(page).indexOf(normalizeText(longSnippet));
+
+  it('name_not_present without the alias, when the surname is common and untitled', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('verified when an alias full name appears in the window', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+
+  it('matches an alias through normalization (case, spacing, curly punctuation)', () => {
+    const page = `JENN   HERNANDEZ said: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['  jenn hernandez  '],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+
+  it('refuses a one-token alias — a bare first name must not bypass the common-surname rule', () => {
+    const page = `Jenn: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('holds an alias to the same 500-character window as the full name', () => {
+    const page = `Jenn Hernandez spoke first. ${'x'.repeat(2000)}. Later: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('ignores blank and non-string aliases without throwing', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez',
+      aliases: ['', '   ', null as unknown as string, 'Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+});
+
+import { decodeForDisplay } from './researchVerifier.js';
+
+// The published citation is the matched span. It was stored exactly as the page's extracted text
+// had it, so a span cut from a news page carried raw `&ldquo;` and `&mdash;` into what a voter
+// reads. Measured 2026-10-06: 3 of 12 live citations in the Redmond and Duvall batches.
+describe('decodeForDisplay', () => {
+  it('decodes the typographic named entities a news page actually uses', () => {
+    expect(decodeForDisplay('Council position 6 &mdash; Jenn Hernandez'))
+      .toBe('Council position 6 — Jenn Hernandez');
+    expect(decodeForDisplay('&ldquo;Placing a levy&rdquo; said the Mayor'))
+      .toBe('“Placing a levy” said the Mayor');
+    expect(decodeForDisplay('the city&rsquo;s finances')).toBe('the city’s finances');
+    expect(decodeForDisplay('RCW &sect; 35.21.830')).toBe('RCW § 35.21.830');
+  });
+
+  it('decodes numeric and hex references', () => {
+    expect(decodeForDisplay('you&#8217;re here')).toBe('you’re here');
+    expect(decodeForDisplay('you&#x2019;re here')).toBe('you’re here');
+  });
+
+  it('preserves case, straight quotes and spacing — it is not normalizeText', () => {
+    const s = 'The Mayor said "no" — twice.';
+    expect(decodeForDisplay(s)).toBe(s);
+    expect(decodeForDisplay('A  B')).toBe('A  B');
+  });
+
+  it('leaves a malformed reference alone rather than throwing', () => {
+    expect(decodeForDisplay('a &notanentity; b &#; c')).toBe('a &notanentity; b &#; c');
+  });
+});
+
+describe('normalizeText folds the same entities, so a decoded span still matches its snippet', () => {
+  it('folds named typographic entities to the characters it already normalizes', () => {
+    expect(normalizeText('a &mdash; b')).toBe(normalizeText('a — b'));
+    expect(normalizeText('&ldquo;x&rdquo;')).toBe(normalizeText('“x”'));
+    expect(normalizeText('city&rsquo;s')).toBe(normalizeText('city’s'));
+  });
+});
+
+import { aliasesFrom } from './researchVerifier.js';
+
+describe('aliasesFrom', () => {
+  it('keeps multi-token names and trims them', () => {
+    expect(aliasesFrom(['  Jenn Hernandez ', 'J. C. Hernandez'])).toEqual(['Jenn Hernandez', 'J. C. Hernandez']);
+  });
+
+  it('drops one-token names, blanks and non-strings', () => {
+    expect(aliasesFrom(['Jenn', '', '   ', 42, null, undefined, 'Jenn Hernandez'])).toEqual(['Jenn Hernandez']);
+  });
+
+  it('dedupes case-insensitively, keeping the first spelling', () => {
+    expect(aliasesFrom(['Jenn Hernandez', 'JENN HERNANDEZ', 'jenn  hernandez'])).toEqual(['Jenn Hernandez']);
+  });
+
+  it('returns an empty array for null, a non-array, or an empty array', () => {
+    expect(aliasesFrom(null)).toEqual([]);
+    expect(aliasesFrom(undefined)).toEqual([]);
+    expect(aliasesFrom('Jenn Hernandez')).toEqual([]);
+    expect(aliasesFrom([])).toEqual([]);
+  });
+
+  it('caps the list so one bad row cannot slow every snippet check', () => {
+    const many = Array.from({ length: 50 }, (_, i) => `Name Number${i}`);
+    expect(aliasesFrom(many)).toHaveLength(8);
+  });
+});
+
 import { createPageFetcher } from './researchVerifier.js';
 
 describe('createPageFetcher', () => {

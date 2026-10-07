@@ -1,0 +1,42 @@
+[
+  {
+    "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+    "topic_key": "ukraine-support",
+    "topic_revision_id": "107d180d-a949-4a42-a250-54f0a7683be0",
+    "served_revision_id": "9ee7ecb7-fd99-429a-a37d-eff58a381983",
+    "question_number": 42,
+    "title": "Ukraine - Russia Conflict",
+    "question_text": "What level of military and financial support should be provided to Ukraine?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "significantly increase military and financial aid to Ukraine."
+      },
+      {
+        "value": 2,
+        "text": "continue providing current levels of military and economic aid to help Ukraine defend itself."
+      },
+      {
+        "value": 3,
+        "text": "provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war."
+      },
+      {
+        "value": 4,
+        "text": "reduce aid to Ukraine and focus American resources on domestic priorities instead."
+      },
+      {
+        "value": 5,
+        "text": "end all aid to Ukraine immediately and stay completely out of the conflict."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "417846f2-7126-5fbc-972b-99796e4c9392",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Complains that funding for affordable housing is cut; shows a pro-funding lean but names no mechanism that separates public housing, binding rules or subsidies.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "454f5b42-f49f-5acd-8e73-46d9bc4ed85e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Lists affordable housing among priorities that need state funding; a side, not a rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce's own newsletter words object that \"funding for child care, affordable housing, public health programs and our public colleges and universitates is cut\" and call affordable housing a priority that needs funding. That leans away from \"Rely on the market to set prices and supply\" but does not say whether government should build public housing, set binding rules like rent caps, or offer subsidies and tax breaks, so no rung is established.",
+      "needs_source": [
+        "Indiana General Assembly bill pages and roll calls for any housing bill Matt Pierce authored, co-authored or voted on (rent rules, inclusionary requirements, housing trust fund, LIHTC-style credits)",
+        "Matt Pierce's own campaign issue page or candidate questionnaire answer on housing affordability"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "417846f2-7126-5fbc-972b-99796e4c9392",
+          "text": "funding for child care, affordable housing, public health programs and our public colleges and universitates is cut",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "454f5b42-f49f-5acd-8e73-46d9bc4ed85e",
+          "text": "could crowd out funding desperately needed for priorities like schools, health care , child care, and affordable housing",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

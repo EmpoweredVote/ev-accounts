@@ -1,0 +1,23 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "407614a8-ba2c-4145-8224-233655e6ac3f",
+    "instrument": "hr2(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "6d207f46-4d4a-5be5-a1cf-95ef997eb6a5",
+        "url": "https://clerk.house.gov/Votes/2023209",
+        "profile": "us-house-clerk-roll-call@1"
+      },
+      {
+        "snapshot_id": "3591a859-4944-5303-89ba-25ccb3235105",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/2",
+        "profile": "us-congress-gov-bill@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]

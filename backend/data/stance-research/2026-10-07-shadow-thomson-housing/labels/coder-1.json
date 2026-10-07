@@ -1,0 +1,101 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "b744520a-72ca-5f8f-845c-14ae52b19b1d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-07-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted statement ('We must create more housing—of more types—for more people') names a shared goal and no means that separates public housing, binding rules, subsidies or market reliance; the Title 16 tenant enforcement is a tenant protection (adjacent) and the incentive-program lines are in the city's voice.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "727350e3-5a83-51d5-b112-f45057f28b49",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-07-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Permitting-process reform that by the release's own text does 'not change what may be built'; it is administrative streamlining, not a cut to zoning limits or a position on rent rules, subsidies or public housing.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "95bb8376-e29a-510f-8a17-494cab8a942d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-07-01",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quotes on Hopewell ('deliver real, attainable housing that serves our community') name no rung clause; the permanent-affordability framework is described in the city's voice and the act is the Redevelopment Commission's, not hers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f018747b-97fc-58f4-acc6-a870a9be7e18",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-11-20",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words concern homelessness and city capacity in general; the affordable-housing investments are summarized in the city's voice with no instrument.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "None of the mayor's own words names a means that matches any rung's clauses — public housing as main provider, a large competing public sector, binding rules like rent caps or required affordable units, subsidies and tax breaks, or relying on the market; 'We must create more housing—of more types—for more people' is a shared goal. The permitting reform is process-only and the Hopewell permanent-affordability framework is the city's and the Redevelopment Commission's, not her own act.",
+      "needs_source": [
+        "City of Bloomington Redevelopment Commission resolution and the Hopewell legal framework for permanently affordable homes, with any action by the mayor on it",
+        "Bloomington Housing Action Plan and any executive order or ordinance the mayor signed or proposed on inclusionary units, rent rules or housing subsidies",
+        "Kerry Thomson's own answer to a housing questionnaire or debate question (2023 mayoral campaign or current term)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "b744520a-72ca-5f8f-845c-14ae52b19b1d",
+          "text": "We must create more housing—of more types—for more people.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "95bb8376-e29a-510f-8a17-494cab8a942d",
+          "text": "our goal was never to follow a checklist—it’s to deliver real, attainable housing that serves our community.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

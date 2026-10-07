@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "0f8fecef-3864-521d-9835-22b7181883f2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-05-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": null,
+          "note": "Pierce voted Nay on the House veto override of a single-subject girls'-teams-by-sex-at-birth bill; a No rejects rung 4 but does not separate rungs 1-3.",
+          "record_kind": "vote",
+          "actor_quote": "N AY - 28 Andrade Errington Hatfield Pierce",
+          "tally_quote": "Yea 67 Participation in school sports. (2022) Nay 28 Excused 5 Not Voting 0"
+        },
+        {
+          "snapshot_id": "a6e81f2f-e5ce-5f32-afb6-fa47f16918bb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": "A male, based on a student's biological sex at birth in accordance with the student's genetics and reproductive biology, may not participate on an athletic team or sport designated under this section as being a female, women's, or girls' athletic team or sport.",
+          "note": "Enrolled text: the operative section is rung 4 (girls' teams by sex at birth), so a vote against it shows only the side opposed to rung 4.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "047d888d-947e-5d87-bcea-933003444090",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1041 (2022)",
+          "provision_quote": null,
+          "note": "Bill details page (digest, authors, sponsors); does not name Pierce or print the operative text.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce voted Nay on overriding the veto of HB 1041 (2022), whose operative section bars a male 'based on a student's biological sex at birth' from girls' teams, i.e. 'require transgender athletes to compete only on teams matching their biological sex assigned at birth.' A No vote rejects that rung but does not show whether he would allow participation 'without any restrictions or requirements', 'after completing basic documentation', or 'case by case', so only the side is evidenced.",
+      "needs_source": [
+        "Matt Pierce's own words (statement, floor speech, or questionnaire) on transgender athlete eligibility that would separate rungs 1-3"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+    "topic_key": "residential-zoning",
+    "topic_revision_id": "ef2a5e59-525a-41fa-94de-ce771df7c927",
+    "served_revision_id": "6b5a3504-9e90-455a-9dd5-07e5376399af",
+    "question_number": 34,
+    "title": "Residential Zoning",
+    "question_text": "What should guide decisions about housing density and neighborhood character in your community?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Protect existing single-family neighborhoods; oppose density increases."
+      },
+      {
+        "value": 2,
+        "text": "Allow modest density increases, like duplexes and accessory units, in single-family neighborhoods"
+      },
+      {
+        "value": 3,
+        "text": "Allow multifamily and mixed-use near commercial corridors while protecting most residential zones"
+      },
+      {
+        "value": 4,
+        "text": "Upzone broadly to allow multifamily housing by right in most neighborhoods"
+      },
+      {
+        "value": 5,
+        "text": "Eliminate single-family-only zoning; allow any housing type on any lot communitywide"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

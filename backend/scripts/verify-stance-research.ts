@@ -69,6 +69,7 @@ import { parseStancesCsv, parseEvidenceCsv } from '../src/lib/stanceResearchCsv.
 import {
   verifyEvidence,
   createPageFetcher,
+  aliasesFrom,
   normTopic,
   stanceKey,
   type StanceRow,
@@ -313,8 +314,8 @@ for (const s of allStances) {
 const idsToLookUp = [...new Set([...idsByName.values()].flatMap((set) => [...set]))];
 // Compare as text so a malformed id in the CSV cannot throw a uuid cast error.
 const { rows: idRows } = idsToLookUp.length
-  ? await pool.query<{ id: string; full_name: string }>(
-      `SELECT id::text AS id, full_name FROM essentials.politicians WHERE id::text = ANY($1::text[])`,
+  ? await pool.query<{ id: string; full_name: string; alternate_names: string[] | null }>(
+      `SELECT id::text AS id, full_name, alternate_names FROM essentials.politicians WHERE id::text = ANY($1::text[])`,
       [idsToLookUp],
     )
   : { rows: [] };
@@ -322,8 +323,8 @@ const polById = new Map(idRows.map((p) => [p.id, p]));
 
 const namesNeedingFallback = csvNames.filter((n) => (idsByName.get(n)?.size ?? 0) === 0);
 const { rows: nameRows } = namesNeedingFallback.length
-  ? await pool.query<{ id: string; full_name: string }>(
-      `SELECT id::text AS id, full_name FROM essentials.politicians
+  ? await pool.query<{ id: string; full_name: string; alternate_names: string[] | null }>(
+      `SELECT id::text AS id, full_name, alternate_names FROM essentials.politicians
        WHERE lower(full_name) = ANY(SELECT lower(n) FROM unnest($1::text[]) AS n)`,
       [namesNeedingFallback],
     )
@@ -340,7 +341,7 @@ const politicianNames: PoliticianNames = {};
 const idByName = new Map<string, string | null>(); // csv name -> politician_id (or null if unmatched)
 for (const name of csvNames) {
   const ids = idsByName.get(name);
-  let resolved: { id: string; full_name: string } | null = null;
+  let resolved: { id: string; full_name: string; alternate_names?: string[] | null } | null = null;
   if (ids && ids.size === 1) {
     const [id] = ids;
     const p = polById.get(id);
@@ -360,7 +361,14 @@ for (const name of csvNames) {
     }
   }
   const canonical = resolved?.full_name ?? name;
-  politicianNames[name] = { fullName: canonical, lastName: lastToken(canonical) };
+  // A page that prints this person's ballot name rather than the record's spelling is still about
+  // this person: aliasesFrom keeps the multi-token ones, which checkNameProximity accepts as full
+  // names. An unresolved row has no alternate names to offer.
+  politicianNames[name] = {
+    fullName: canonical,
+    lastName: lastToken(canonical),
+    aliases: aliasesFrom(resolved?.alternate_names),
+  };
   idByName.set(name, resolved?.id ?? null);
 }
 

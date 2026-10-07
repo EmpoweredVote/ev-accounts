@@ -1,0 +1,93 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "fee753a0-2a5a-5de5-92ca-cf04d52be405",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His newsletter criticizes SEA 1's stricter Medicaid eligibility as causing eligible Hoosiers to lose benefits: against narrowing coverage, but it names no rung's clauses (no 'everyone', no expansion, no 'only'); the step-therapy and out-of-network items are benefit/cost rules and adjacent.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a93ffabe-64f4-5892-a216-ad51f14cfddc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "He opposes the HIP work requirements; per the annex, Medicaid work requirements on their own are adjacent to the rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "934fb561-03f6-5add-b937-a6b36f76d3b9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Objects to procedural Medicaid disenrollment of eligible people and offers casework help; this concerns administration of the existing programme, not whom government should cover.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own words oppose SEA 1's stricter Medicaid eligibility because \"eligible Hoosiers losing health and nutrition benefits\", which places him against narrowing public coverage (away from \"Only help the poorest people\" and \"Stay out of healthcare entirely\"). Nothing he says states coverage for everyone, a public payer for all, or an expansion of programmes for seniors and low-income residents, so the rungs on that side are not separated; his opposition to work requirements and procedural disenrollment is adjacent.",
+      "needs_source": [
+        "Indiana House roll call, SEA 1 (2026), final passage — Pierce's vote",
+        "Any Pierce-authored or co-sponsored bill on Medicaid eligibility expansion or coverage for all Hoosiers (iga.in.gov)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "fee753a0-2a5a-5de5-92ca-cf04d52be405",
+          "text": "The additional bureaucratic red tape enacted in the name of combating fraud will actually result in eligible Hoosiers losing health and nutrition benefits because they won’t be able to keep up with the constant demands for more paperwork.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "a93ffabe-64f4-5892-a216-ad51f14cfddc",
+          "text": "I oppose them because claims of fraud are overblown. A majority of HIP recipients are working and just need help affording astronomical healthcare premiums.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "934fb561-03f6-5add-b937-a6b36f76d3b9",
+          "text": "Hundreds of thousands of eligible Hoosiers shouldn’t lose their health care coverage because of confusion or miscommunication.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

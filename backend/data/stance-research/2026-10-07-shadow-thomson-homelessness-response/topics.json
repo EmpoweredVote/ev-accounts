@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+    "topic_key": "homelessness-response",
+    "topic_revision_id": "0e47ec98-46af-4e77-ae81-04d1311b4543",
+    "served_revision_id": "0e47ec98-46af-4e77-ae81-04d1311b4543",
+    "question_number": 15,
+    "title": "Homelessness Funding",
+    "question_text": "How much should your community spend on housing and services to reduce homelessness?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Guarantee housing and support services through dedicated, permanent public funding"
+      },
+      {
+        "value": 2,
+        "text": "Expand housing and support services by increasing public funding"
+      },
+      {
+        "value": 3,
+        "text": "Maintain current housing and service programs at today's funding level, with no major new spending"
+      },
+      {
+        "value": 4,
+        "text": "Provide limited public funding to nonprofits and charities to lead the response, rather than running public programs"
+      },
+      {
+        "value": 5,
+        "text": "Withdraw government funding for housing and support services, treating homelessness as a matter for private charity and the market"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

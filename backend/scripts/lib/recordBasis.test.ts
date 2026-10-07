@@ -166,6 +166,7 @@ describe('seatChamber', () => {
     ['Senator', 'upper'], ['State Senator', 'upper'], ['U.S. Senator', 'upper'],
     ['State Representative', 'lower'], ['Representative', 'lower'], ['Assembly Member', 'lower'],
     ['Assemblymember', 'lower'], ['Delegate', 'lower'],
+    ['U.S. House of Representatives - Indiana 9th Congressional District', 'lower'], ['U.S. Senate - Indiana', 'upper'],
     ['Mayor', null], ['County Commissioner', null], ['', null],
   ] as const)('%s -> %s', (t, c) => expect(seatChamber(t)).toBe(c));
 });
@@ -572,6 +573,19 @@ describe("chamber 'reading-else-bill-origin' (AZ BillStatus)", () => {
     // An initial before the vote mark means the page tells namesakes apart: another member's initial
     // ("CARTER P Y", a Pamela Carter) does not name Neal Carter.
     expect(one(RV, 'House Third Reading - SB1165 x Action Date Action Vote 03/24/2022 Passed 31-24-5-0-0 CARTER P Y CHAPLIK Y', 'CARTER P Y')).toContain('name-collision');
+  });
+  // name_format 'surname-doubled' (2026-10-07): the U.S. House Clerk prints every member twice, and a
+  // namesake with the state ("Higgins (LA) Higgins (LA)"). Erin Houchin, H.R. 26 (118th), roll call 29.
+  it("'surname-doubled': a surname printed twice side by side is one member; namesakes still fail closed", () => {
+    const RD: SourceRules = { ...R, name_format: 'surname-doubled' };
+    const page = 'Office of the Clerk, U.S. House of Representatives Roll Call 29 | Bill Number: H. R. 26 VOTES yea: 220 nay: 210 '
+      + 'Horsford Horsford Democratic Nevada NV Nay Houchin Houchin Republican Indiana IN Yea Houlahan Houlahan Democratic Pennsylvania PA Nay';
+    const one = (rules: SourceRules, pg: string, actor: string, name: string) => checkRecordGroup({ passages: [P({ snapshot_id: 'v', instrument: 'H.R. 26 (118th Congress)', provision_quote: null, record_kind: 'vote', actor_quote: actor, tally_quote: 'yea: 220 nay: 210' })],
+      snapshotText: new Map([['v', pg]]), fullName: name, chamber: null, profileOf: () => ({ rules, chamber: 'lower' }) }).findings;
+    expect(one(R, page, 'Houchin Houchin Republican Indiana IN Yea', 'Erin Houchin')).toContain('name-collision');
+    expect(one(RD, page, 'Houchin Houchin Republican Indiana IN Yea', 'Erin Houchin')).not.toContain('name-collision');
+    const twins = page + ' Higgins (LA) Higgins (LA) Republican Louisiana LA Yea Higgins (NY) Higgins (NY) Democratic New York NY Nay';
+    expect(one(RD, twins, 'Higgins (LA) Higgins (LA) Republican Louisiana LA Yea', 'Clay Higgins')).toContain('name-collision');
   });
   it('"House Final Reading" names the House', () =>
     expect(run('House Final Reading - SB1001 x Action Date Action Vote 06/01/2026 Passed 39-16-5-0-0 GRIFFIN Y', 'GRIFFIN Y', 'lower', 'vote', 'Passed 39-16-5-0-0', 'Gail Griffin', 'SB 1001 (2026)'))
