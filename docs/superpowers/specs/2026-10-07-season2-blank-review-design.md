@@ -1,6 +1,7 @@
 # Season 2 blanks through the review queue — design (draft, 2026-10-07)
 
-**Status:** draft for the operator (Chris Andrews). Option A of three (below), recommended 2026-10-07.
+**Status:** option A chosen; §5 answered by the operator (Chris Andrews) 2026-10-07; built on branch
+`claude/season2-blank-review` (migration CA_0303 — see §6 for what the build changed from this draft).
 **Why now:** the Opus-alone Monroe pilot (PR #911) coded 145 rows and blanked 140. 52 of those blanks sit
 over a Season 1 chair that voters see today, and none of them can reach the review queue — so the old chair
 stays visible even though the current codebook cannot support it.
@@ -92,10 +93,41 @@ rollup (`counts-blanks`).
   an existing S2 chair is UPDATEd to 0, never deleted.
 - end-to-end on a fixture batch: research.csv → gate → verify --apply → resolve → read path shows a blank.
 
-## 5. Open questions for the operator
-1. A blank where voters see nothing: write nothing (3.3), or write the value-0 row without review so the
-   Season 2 record exists?
-2. Does a voter see the blank's reasoning ("Why is this blank?"), or only an empty spoke? (Citations.jsx and
-   CompassV2 behaviour for value 0 should be checked.)
-3. Should a `no-evidence` blank (no source found at all) be allowed to remove a visible chair, or only blanks
-   whose examined sources include the fallback chair's sources (3.3 rule)? The draft says the latter.
+## 5. Operator rulings (Chris Andrews, 2026-10-07)
+1. **A blank where voters see nothing writes nothing** (§3.3 as drafted). `decidePublish` returns `unchanged`;
+   the run's research stamp (C118) records that the person was researched. No value-0 row, no review.
+2. **Voters see only an empty spoke.** No "Why is this blank?" view; no read-path change. The blank's reasoning
+   and examined sources stay in the database and on the admin review page. (Checked: the API already drops
+   value-0 answers after the newest-season collapse, so the spoke is empty today.)
+3. **A blank may remove a visible chair only after the coder examined that chair's own cited sources** (§3.3
+   rule, as drafted) — whatever its reason, `no-evidence` included. A cited source that no longer loads is not
+   required.
+
+## 6. As built (2026-10-07) — differences from the draft
+- **Where blank-unexamined-fallback runs.** The rule needs what voters see now and whether each cited page still
+  loads; `stance-gate` is offline by design. So the check is a pure function in `stanceGate.ts`
+  (`checkBlankExaminedFallback`, check id in `GATE_CHECK_IDS`) and `verify-stance-research.ts` runs it, after
+  fetching, against the displayed chair's own context sources (same season as the displayed answer). Its
+  finding joins the row's gate findings, so `decidePublish` sends the row back as `gate-high`. "Visible chair"
+  covers an open-season chair as well as the Season 1 fallback.
+- **Examined sources.** `research.csv` may carry `source_url_4` and beyond (stance-gate reads every
+  `source_url_N` in order); a blank cites every page the coder examined. Each still needs a verbatim
+  evidence.csv snippet (25+ words): a page with no snippet cannot be listed as examined. A blank skips
+  `no-source` (a `no-evidence` blank may cite nothing) and `ballotpedia-only` as well as the chair checks.
+- **New gate check `blank-reason-invalid`** (high): a reason not in V6's six, or a reason beside a chair.
+- **Threshold.** A blank that changes what voters see needs `threshold` verified sources, as a chair does;
+  approval still refuses a blank with no citation.
+- **Context text** names the reason: `Blank in Season <open season number> (<reason>) — researched on <queue
+  date>. <reasoning>`.
+- **Review read** also returns the displayed chair's own reasoning (`displayed.reasoning`), shown under
+  "Voters see now" for a proposed blank.
+- **CA_0303** adds `proposed_blank_reason` with two CHECKs: the six reasons, and `proposed_value = 0` exactly
+  when a reason is set (NULL value exempt). `evidence_type` gains `blank`. The verifier refuses to queue a blank
+  until CA_0303 is applied.
+- **Known limit, unchanged:** `politician_context_evidence`'s unique index has no season column, so a snippet
+  already stored for the pair (for example the Season 1 chair's, at the same URL and index) is skipped on
+  approval. The Season 2 context row still lists every URL in `sources`.
+- **Not in this build:** the converter (`scripts/gold-desk/labels_to_research.py`, on PR #911 only) must write
+  a blank as `value = 0`, `blank_reason`, `evidence_type = blank`, every examined URL as `source_url_N` with a
+  snippet each, and no "Blank (reason)." prefix in reasoning. The collector must add the fallback chair's cited
+  sources to the batch (§3.3). The three-coder path (`queue-coded-batch.ts`) still queues unanimous chairs only.

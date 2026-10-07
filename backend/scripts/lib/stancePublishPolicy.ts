@@ -12,12 +12,15 @@
  * cites a real page and names an instrument, but nothing yet proves the evidence fits the CHAIR
  * rather than just the direction. Until the Plan 2 chair-fit classifier exists, a person approves
  * every stance — and those decisions are the labeled set that classifier is trained and measured on.
+ *
+ * A BLANK (proposedValue 0, spec 2026-10-07-season2-blank-review-design.md §3.3) never auto-pushes:
+ * a blank either replaces a chair voters see — a person decides that — or changes nothing.
  */
 import type { GateFinding } from './stanceGate.js';
 
 export type ReviewReason =
   | 'unresolved-politician' | 'statement-evidence' | 'gate-medium' | 'value-change' | 'review-all-mode'
-  | 'replaces-published-chair';
+  | 'replaces-published-chair' | 'blank-replaces-published-chair';
 export type ReReason = 'gate-high' | 'below-threshold';
 export type Decision =
   | { action: 'auto-push' }
@@ -29,6 +32,7 @@ export type Decision =
   | { action: 'out-of-scope' };
 
 export interface PolicyInput {
+  /** 1-5 = a chair; 0 = a blank (stance-gate admits 0 only with a codebook V6 blank_reason). */
   proposedValue: number;
   verifiedSourceCount: number;
   threshold: number;
@@ -67,6 +71,7 @@ export function decidePublish(i: PolicyInput): Decision {
     return otherHigh ? { action: 're-research', reasons: ['gate-high'] } : { action: 'review', reasons: ['unresolved-politician'] };
   }
   if (i.gateFindings.some((f) => f.severity === 'high')) return { action: 're-research', reasons: ['gate-high'] };
+  if (i.proposedValue === 0) return decideBlank(i);
   if (i.verifiedSourceCount < i.threshold) return { action: 're-research', reasons: ['below-threshold'] };
   if (i.existingOpenSeasonValue !== null && i.existingOpenSeasonValue === i.proposedValue) return { action: 'unchanged' };
   // Ruling 2026-09-24: a row that would change what voters see now is never written without a
@@ -88,4 +93,28 @@ export function decidePublish(i: PolicyInput): Decision {
   if (reasons.length) return { action: 'review', reasons };
   // Every check passed. Review-all (the default) still sends it to a person — see the header.
   return i.autoPushEnabled ? { action: 'auto-push' } : { action: 'review', reasons: ['review-all-mode'] };
+}
+
+/**
+ * A blank (spec §3.3, operator ruling 2026-10-07 Q1: a blank where voters see nothing writes nothing).
+ *
+ *   voters see nothing (no row, or a blank) and the open season holds nothing → unchanged
+ *   the open season already holds 0                                            → unchanged
+ *   voters see an older season's chair (the fallback)                          → review
+ *   the open season holds a chair                                              → review (value-change)
+ *
+ * `unchanged` writes nothing: the run's research stamp (C118) still records that the person was
+ * researched. The threshold applies only to a blank that would change what voters see — a blank
+ * that removes a chair must name the sources it examined, and its context row cites them.
+ */
+function decideBlank(i: PolicyInput): Decision {
+  if (i.existingOpenSeasonValue === 0) return { action: 'unchanged' };
+  const showsChair = i.displayedValue !== null && i.displayedValue !== 0;
+  if (i.existingOpenSeasonValue === null && !showsChair) return { action: 'unchanged' };
+  if (i.verifiedSourceCount < i.threshold) return { action: 're-research', reasons: ['below-threshold'] };
+  const reasons: ReviewReason[] = [];
+  if (i.gateFindings.some((f) => f.severity === 'medium')) reasons.push('gate-medium');
+  if (i.existingOpenSeasonValue !== null) reasons.push('value-change');
+  reasons.push('blank-replaces-published-chair');
+  return { action: 'review', reasons };
 }

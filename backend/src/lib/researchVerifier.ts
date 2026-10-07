@@ -395,8 +395,10 @@ export interface StanceRow {
    * the column, so the pipeline always passes it.
    */
   source_urls?: string[];
-  /** record | statement, from research.csv (stored on the review row). */
+  /** record | statement | blank, from research.csv (stored on the review row). */
   evidence_type?: string;
+  /** Codebook V6 blank reason when value is 0 (a Season 2 blank); null/absent for a chair. */
+  blank_reason?: string | null;
 }
 
 export interface EvidenceRow {

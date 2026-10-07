@@ -1304,10 +1304,12 @@ router.get('/research-review/:id', async (req, res) => {
 
 router.post('/research-review/:id/resolve', async (req: any, res) => {
   try {
-    const { humanVerifiedUrls, valueOverride, reasoningOverride } = (req.body ?? {}) as {
+    const { humanVerifiedUrls, valueOverride, reasoningOverride, blankReasonOverride } = (req.body ?? {}) as {
       humanVerifiedUrls?: string[];
       valueOverride?: number | null;
       reasoningOverride?: string;
+      /** CA_0303: with valueOverride 0, the codebook V6 reason the reviewer blanks a proposed chair for. */
+      blankReasonOverride?: string;
     };
     // Reject a malformed body before it reaches the service (NOT the "R1" ruling referenced
     // elsewhere in this file — citations on approval; this is approval INPUT validation, added in
@@ -1320,8 +1322,13 @@ router.post('/research-review/:id/resolve', async (req: any, res) => {
       return;
     }
     if (valueOverride !== undefined && valueOverride !== null
-      && (!Number.isInteger(valueOverride) || valueOverride < 1 || valueOverride > 5)) {
-      res.status(400).json({ error: 'valueOverride must be an integer 1-5' });
+      && (!Number.isInteger(valueOverride) || valueOverride < 0 || valueOverride > 5)) {
+      // 0 = blank (spec 2026-10-07-season2-blank-review-design.md §3.6); it needs blankReasonOverride.
+      res.status(400).json({ error: 'valueOverride must be an integer 0-5 (0 = blank)' });
+      return;
+    }
+    if (blankReasonOverride !== undefined && typeof blankReasonOverride !== 'string') {
+      res.status(400).json({ error: 'blankReasonOverride must be a string' });
       return;
     }
     if (reasoningOverride !== undefined && typeof reasoningOverride !== 'string') {
@@ -1329,7 +1336,7 @@ router.post('/research-review/:id/resolve', async (req: any, res) => {
       return;
     }
     const { ladderRevisionUnknown } = await resolveResearchReview(
-      req.params.id, actorId(req), humanVerifiedUrls ?? [], valueOverride, reasoningOverride);
+      req.params.id, actorId(req), humanVerifiedUrls ?? [], valueOverride, reasoningOverride, blankReasonOverride);
     // ladderRevisionUnknown: a legacy row (queued before CA_0264), approved without a ladder check.
     res.json({ ok: true, ladderRevisionUnknown });
   } catch (err: any) {

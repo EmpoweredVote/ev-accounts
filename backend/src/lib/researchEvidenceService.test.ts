@@ -149,6 +149,7 @@ describe('upsertReviewRow', () => {
     status: 'pending' as const, re_research_attempted: false,
     topic_revision_id: 'rev-a', season_id: 'season-2',
     served_revision_id: 'rev-a3', queue_reasons: ['review-all-mode'], evidence_type: 'record',
+    proposed_blank_reason: null,
   };
   it('updates only rows still undecided — the ON CONFLICT DO UPDATE carries a status guard', async () => {
     const { upsertReviewRow } = await import('./researchEvidenceService.js');
@@ -280,9 +281,9 @@ describe('review reads carry the open-season current value', () => {
     mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], current_value: null, shown_value: '3', shown_season_number: 1, shown_text: 'rung three', shown_history_text: 'old rung three' }] });
     const r = await getResearchReviewById('x');
     expect(r?.currentValue).toBeNull();
-    expect(r?.displayed).toEqual({ value: 3, seasonNumber: 1, text: 'rung three', historyText: 'old rung three' });
+    expect(r?.displayed).toEqual({ value: 3, seasonNumber: 1, text: 'rung three', historyText: 'old rung three', reasoning: null });
     mockQuery.mockResolvedValueOnce({ rows: [{ id: 'y', evidence: [], shown_value: '0', shown_season_number: 2, shown_text: null }] });
-    expect((await getResearchReviewById('y'))?.displayed).toEqual({ value: 0, seasonNumber: 2, text: null, historyText: null });
+    expect((await getResearchReviewById('y'))?.displayed).toEqual({ value: 0, seasonNumber: 2, text: null, historyText: null, reasoning: null });
     mockQuery.mockResolvedValueOnce({ rows: [{ id: 'z', evidence: [] }] });
     expect((await getResearchReviewById('z'))?.displayed).toBeNull();
   });
@@ -302,7 +303,7 @@ describe('review reads carry the open-season current value', () => {
     mockQuery.mockResolvedValueOnce({ rows: [{ id: 'x', evidence: [], shown_value: '5', shown_season_number: 1,
       shown_text: 'S2 served chair 5', shown_history_text: 'S1 chair 5', open_topic_revision_id: 'pin-s2' }] });
     expect((await getResearchReviewById('x'))?.displayed).toEqual(
-      { value: 5, seasonNumber: 1, text: 'S2 served chair 5', historyText: 'S1 chair 5' });
+      { value: 5, seasonNumber: 1, text: 'S2 served chair 5', historyText: 'S1 chair 5', reasoning: null });
   });
   it('N1: a topic the open season does not ask (S1-only, e.g. immigration) shows nothing', async () => {
     const { getResearchReviewById } = await import('./researchEvidenceService.js');
@@ -624,7 +625,7 @@ describe('resolveResearchReview — citations written on approval, not at queue 
     mockQuery.mockResolvedValueOnce({ rows: [reviewRow] });
     await expect(resolveResearchReview('rev-1', 'editor-1', [], bad)).rejects.toMatchObject({
       code: 'INCOMPLETE',
-      message: 'valueOverride must be an integer 1-5',
+      message: 'valueOverride must be an integer 0-5 (0 = blank)',
     });
     expect(mockConnect).not.toHaveBeenCalled();
   });
@@ -813,3 +814,111 @@ describe('resolveResearchReview — coder-pipeline rows: source dates (CA_0301) 
   });
 });
 
+
+describe('Season 2 blanks through the review queue (CA_0303, spec 2026-10-07 §3.6)', () => {
+  const blankRow = (over: Record<string, unknown> = {}) => ({
+    id: 'rev-b', batch_id: 'batch-b', politician_id: 'p1', full_name_raw: 'Jane Doe', topic_id: 't1',
+    topic_key: 'healthcare', proposed_value: 0, proposed_blank_reason: 'direction-only',
+    proposed_reasoning: 'HB 1001 shows support but cannot tell rung 1 from rung 2.',
+    evidence: [{ url: 'https://s1.example/vote', snippets: [{ snippet_index: 0, snippet: SPAN, verdict: 'verified', matched_span: SPAN }] }],
+    verified_source_count: 1, threshold: 1, status: 'pending', re_research_attempted: false,
+    created_at: '2026-10-07T15:00:00Z', ...over,
+  });
+  beforeEach(() => { mockQuery.mockClear(); mockClientQuery.mockClear(); mockConnect.mockClear(); mockRelease.mockClear(); });
+  const openSeason = () => mockClientQuery.mockImplementation(async (sql: string) =>
+    String(sql).includes("FROM inform.seasons WHERE status = 'open'") ? { rows: [{ number: 2 }], rowCount: 1 } : { rows: [], rowCount: 1 });
+
+  it('queues a blank with its reason and evidence_type blank', () => {
+    const row: VerifiedRow = { ...exampleRow, stance: { ...exampleRow.stance, value: 0, blank_reason: 'no-evidence', evidence_type: 'blank' } };
+    const r = buildReviewRowForInsert({ row, politicianId: 'p1', topicId: 't1', batchId: 'b', threshold: 1, reResearchAttempted: false });
+    expect(r).toMatchObject({ proposed_value: 0, proposed_blank_reason: 'no-evidence', evidence_type: 'blank' });
+    expect(buildReviewRowForInsert({ row: exampleRow, politicianId: 'p1', topicId: 't1', batchId: 'b', threshold: 1, reResearchAttempted: false })
+      .proposed_blank_reason).toBeNull();
+  });
+
+  it('upsertReviewRow names proposed_blank_reason once CA_0303 is applied', async () => {
+    const { upsertReviewRow } = await import('./researchEvidenceService.js');
+    const row = { ...buildReviewRowForInsert({ row: exampleRow, politicianId: 'p1', topicId: 't1', batchId: 'b', threshold: 1, reResearchAttempted: false }),
+      proposed_value: 0, proposed_blank_reason: 'no-evidence' };
+    mockQuery.mockResolvedValueOnce({ rows: [], rowCount: 1 });
+    await upsertReviewRow(row, { columns: new Set(['proposed_blank_reason'] as const) });
+    const [sql, params] = mockQuery.mock.calls.at(-1)!;
+    expect(String(sql)).toContain('proposed_blank_reason = EXCLUDED.proposed_blank_reason');
+    expect(params).toContain('no-evidence');
+  });
+
+  it('approval writes the open-season answer value 0 and a labelled context, in one transaction, with no DELETE', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL } = await import('./seasonService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [blankRow()] });
+    openSeason();
+    await resolveResearchReview('rev-b', 'editor-1');
+    const calls = mockClientQuery.mock.calls;
+    expect(calls[0][0]).toBe('BEGIN');
+    expect(calls.at(-1)![0]).toBe('COMMIT');
+    const ans = calls.find((c) => c[0] === UPSERT_ANSWER_SQL)!;
+    expect(ans[1]).toEqual(['p1', 't1', 0, 'editor-1']);
+    const ctx = calls.find((c) => c[0] === UPSERT_CONTEXT_SQL)!;
+    expect(ctx[1][2]).toBe('Blank in Season 2 (direction-only) — researched on 2026-10-07. HB 1001 shows support but cannot tell rung 1 from rung 2.');
+    expect(ctx[1][3]).toEqual(['https://s1.example/vote']);
+    // One evidence row per examined (verified) source.
+    expect(calls.filter((c) => String(c[0]).includes('politician_context_evidence'))).toHaveLength(1);
+    // 🔴 never DELETE: an open-season chair already there is UPDATEd by the upsert; S1 is never named.
+    expect(calls.some((c) => /\bDELETE\b/i.test(String(c[0])))).toBe(false);
+    expect(UPSERT_ANSWER_SQL).toMatch(/ON CONFLICT \(politician_id, topic_id, season_id\) DO UPDATE/);
+    expect(UPSERT_ANSWER_SQL).toMatch(/s\.status = 'open'/);
+  });
+
+  it('a reviewer can blank a proposed chair (valueOverride 0) only with a reason and new reasoning', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const chair = blankRow({ proposed_value: 3, proposed_blank_reason: null });
+    mockQuery.mockResolvedValueOnce({ rows: [chair] });
+    await expect(resolveResearchReview('rev-b', 'editor-1', [], 0, 'the record shows direction only')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+    mockQuery.mockResolvedValueOnce({ rows: [chair] });
+    await expect(resolveResearchReview('rev-b', 'editor-1', [], 0, undefined, 'direction-only')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+    mockQuery.mockResolvedValueOnce({ rows: [chair] });
+    await expect(resolveResearchReview('rev-b', 'editor-1', [], 0, 'the record', 'made-up')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+    expect(mockConnect).not.toHaveBeenCalled();
+    mockQuery.mockResolvedValueOnce({ rows: [chair] });
+    openSeason();
+    await resolveResearchReview('rev-b', 'editor-1', [], 0, 'the record shows direction only', 'direction-only');
+    const { UPSERT_ANSWER_SQL } = await import('./seasonService.js');
+    expect(mockClientQuery.mock.calls.find((c) => c[0] === UPSERT_ANSWER_SQL)![1][2]).toBe(0);
+  });
+
+  it('a reviewer may instead approve a chair over a proposed blank, as today', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL } = await import('./seasonService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [blankRow()] });
+    openSeason();
+    await resolveResearchReview('rev-b', 'editor-1', [], 2, 'HB 1001 funds a public option: rung 2.');
+    expect(mockClientQuery.mock.calls.find((c) => c[0] === UPSERT_ANSWER_SQL)![1][2]).toBe(2);
+    expect(mockClientQuery.mock.calls.find((c) => c[0] === UPSERT_CONTEXT_SQL)![1][2]).toBe('HB 1001 funds a public option: rung 2.');
+  });
+
+  it('refuses a queued 0 that carries no reason (a row from before CA_0303)', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [blankRow({ proposed_blank_reason: null })] });
+    await expect(resolveResearchReview('rev-b', 'editor-1')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+    expect(mockConnect).not.toHaveBeenCalled();
+  });
+
+  it('a blank with no verified source still cannot be published without a citation', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [blankRow({ evidence: [] })] });
+    await expect(resolveResearchReview('rev-b', 'editor-1')).rejects.toMatchObject({ code: 'INCOMPLETE' });
+  });
+});
+
+describe('review reads for a blank (CA_0303)', () => {
+  it('maps proposed_blank_reason and the displayed chair\'s own reasoning, joined on the displayed season', async () => {
+    const { getResearchReviewById } = await import('./researchEvidenceService.js');
+    mockQuery.mockClear();
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'b', evidence: [], proposed_value: 0, proposed_blank_reason: 'no-evidence',
+      shown_value: '3', shown_season_number: 1, shown_reasoning: 'Voted for HB 9 (2024).' }] });
+    const r = await getResearchReviewById('b');
+    expect(r?.proposedBlankReason).toBe('no-evidence');
+    expect(r?.displayed?.reasoning).toBe('Voted for HB 9 (2024).');
+    expect(String(mockQuery.mock.calls[0][0])).toMatch(/shown_ctx\.season_id = shown\.season_id/);
+  });
+});
