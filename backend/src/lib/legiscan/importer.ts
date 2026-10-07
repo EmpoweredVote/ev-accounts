@@ -5,7 +5,7 @@
  *   getDatasetList -> per session: skip if dataset_hash unchanged -> getDataset (ZIP)
  *   -> getSessionPeople -> match legislators -> bills, sponsors, committees, roll calls.
  * Everything after the downloads is local work on the ZIP contents (zero queries).
- * ev-cto decision 0030. Ported from backend/scripts/legiscan/import_state_legislative.py.
+ * ev-cto decision 0031. Ported from backend/scripts/legiscan/import_state_legislative.py.
  *
  * Antipartisan rule: party fields in LegiScan's people records are never read or stored.
  */

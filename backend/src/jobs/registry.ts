@@ -67,7 +67,7 @@ export const JOBS: Record<string, JobFn> = {
   // after disputing a committee link. Exits non-zero if any row failed.
   'local-finance-summary': () => runLocalFinanceSummaries(),
   'ocpf': () => runAdapterForAll('ocpf'),
-  // Weekly state-legislature votes and bills from LegiScan datasets (ev-cto decision 0030). About 1 query per
+  // Weekly state-legislature votes and bills from LegiScan datasets (ev-cto decision 0031). About 1 query per
   // state when nothing changed. Needs LEGISCAN_API_KEY and migration 1901. Never reads or stores party.
   'legiscan': () => runLegiscanRefresh(),
   // Never had an in-process cron: until 2026-09-23 it ran only from the admin endpoint.

@@ -2,7 +2,7 @@
  * helpers.ts — pure helpers for the LegiScan state-legislature refresh (no I/O).
  *
  * Ported from the Python loader (backend/scripts/legiscan/import_state_legislative.py) so the
- * refresh can run as a Render cron job next to the other `ev-jobs-*` jobs. ev-cto decision 0030.
+ * refresh can run as a Render cron job next to the other `ev-jobs-*` jobs. ev-cto decision 0031.
  *
  * Antipartisan rule: nothing here reads, stores or returns a legislator's party.
  */
