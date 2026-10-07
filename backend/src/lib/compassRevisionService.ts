@@ -335,10 +335,10 @@ function publishBlockedReason(
     .map(([k, v]) => (v === 'invalidated' ? `rung ${k} removed` : `rung ${k} → ${v}`));
   if (moved.length === 0) return null;
   return (
-    `This change moves or removes rungs (${moved.join(', ')}). Publishing is blocked ` +
-    `because existing recorded stances point at rung positions, and the machinery to ` +
-    `move them has not been built yet. Reword the rungs in place, or ask an engineer ` +
-    `to build the re-pointing step first.`
+    `This change moves or removes rungs (${moved.join(', ')}). It is published when its ` +
+    `season opens, after the re-pointing step (inform.repoint_season_answers) has written ` +
+    `the season's answers, so publishing it by hand here is disabled. Reword the rungs in ` +
+    `place if you need it live sooner.`
   );
 }
 
