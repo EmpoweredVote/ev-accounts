@@ -173,7 +173,24 @@ speaker-attributed transcripts for many races — debates, forums, and news inte
 they are what the `audit-quotes` source check verifies against. Skipping them was a real failure: a
 prior CA-Governor run used WebFetch/Ballotpedia only and missed **18 of 21** available OTR sources.
 
-If the politicians belong to a race, resolve the `race_id` and pull the transcripts first:
+🔴 **Every person, every run — not only candidates on a race (2026-10-07).** The race lookup below
+misses a seated officeholder who is not on the ballot, a council member speaking in council, and a primary
+forum linked only to the primary race (Matt Pierce's LWV forum was all three). So first, for each person:
+
+```bash
+node .claude/skills/research-stances/scripts/extract-otr.mjs --politician <uuid>[,<uuid>…]
+#   one file per meeting: backend/data/stance-research/otr-transcripts/politician/<slug>/<date>-<id8>.md
+#   (only that person's turns; the header gives the OTR page, the linked races, and the real date when the
+#   source's file name disagrees with the date On the Record lists)
+cd backend && npx tsx scripts/list-discovered-sources.ts --politician <uuid> [--race <race_id> …]
+#   discovery rows for the person, approved/ingested first — check these before any web search
+```
+
+Each meeting file is one batch source: `source_kind: "transcript"`, `url` = its OTR page,
+`human_saved_path` = the file copied into `<batch>/human-saved/`. An `approved` discovery row that is not
+yet ingested is a lead: cite the original (the outlet's page or video), never the discovery row itself.
+
+If the politicians belong to a race, also resolve the `race_id` and pull the race's transcripts:
 
 ```bash
 # Resolve the race_id from the candidate names (skip if the user already gave you a --race id)
