@@ -185,3 +185,20 @@ One row per topic pinned in draft Season 3 (61 topics).
 | **total** | 4041 | 614 | 27907 | | | 229 |
 
 The s1-only total is lower than the prod-wide 29,585 in section 1. The difference is Season 1 answers on topics that Season 3 does not carry.
+
+## Built (2026-10-07, approved by Chris Andrews)
+
+Decision on question A: accepted the default rule. Mapped only for a previous-season row on the current revision that has reasoning; everyone else blank.
+
+| Slot | What | Dry run on prod (rolled back, snapshots identical) |
+|---|---|---|
+| `CA_0305` | `inform.repoint_season_answers(season, topic)` | homelessness-response: 443 people, 3 mapped, 440 blank, 3 reasoning rows; second run adds nothing; guard publishes; earlier seasons untouched |
+| `CA_0306` | publish guard refuses a non-blank answer with no reasoning, on a moving revision | no rows gives `REPOINTING_INCOMPLETE`; no reasoning gives `REPOINTING_NO_REASONING`; blanking it publishes |
+
+**Not applied to prod yet.** The files are committed on `claude/s3-repointing-check`. Apply `CA_0305` first, then `CA_0306` (it refuses to run without `CA_0305`). Both probes skip with a notice if no draft season exists.
+
+**Deviation from section 5.** The value check ("carried value equals the mapped value") was dropped. `editor_id` is NULL on 3,975 of 4,041 Season 2 answers, researched rows included, so nothing marks a mechanical carry. A check keyed on it would refuse real research and abort the open. The probe in `CA_0305` asserts value correctness instead.
+
+**Rule detail.** The rule maps only from the season immediately before the target. For Season 3 that is Season 2. A Season 1-only person is always blank, even on a topic whose Season 1 ladder equals the current one. Extending the rule to those people is a possible later change.
+
+**Re-running.** Run `repoint_season_answers` as the last step before the open. A second run adds rows only for people who have none. It does not repair rows written against another revision (the pin FKs have no cascade).
