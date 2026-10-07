@@ -13,9 +13,11 @@ benefit of the doubt when the law is unclear** — a burden of proof in judicial
 less government action. The same person may want close review of one agency and deference to
 another; never infer a rung from which policies the person favours or which side won.
 
-**Levels with a role:** judicial (`compass_topic_roles`). The lever is a judge's standard of review
+**Levels with a lever:** judicial. The lever is a judge's standard of review
 in rulings on government decisions. Legislators and executives do not review decisions as a court →
 `off` (V2) _(proposed)_.
+
+**Asked at:** judicial (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "standard of review", "de novo", "deference", "Chevron deference", "Loper Bright"
 (2024, which ended Chevron deference in federal courts), "Skidmore", "Auer" or "Kisor" deference,

@@ -11,8 +11,10 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 The rungs order **how much aid**, and from rung 3 down, **what kind** (humanitarian only) and how far
 the United States stays involved.
 
-**Levels with a role:** federal (`compass_topic_roles`). Congress appropriates the aid and authorizes
+**Levels with a lever:** federal. Congress appropriates the aid and authorizes
 transfers; state and local officials hold no lever.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 "No-lever level").
 
 **Synonyms:** "supplemental appropriation", "security assistance", "Ukraine Security Assistance
 Initiative" (USAI), "presidential drawdown authority" (PDA), "Foreign Military Financing" (FMF),

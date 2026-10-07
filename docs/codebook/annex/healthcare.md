@@ -11,9 +11,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 government no role. The rungs order **whom government covers or helps pay for**: everyone in full,
 everyone through a mix, people who cannot afford care plus seniors, only the poorest, no one.
 
-**Levels with a role:** federal, state (`compass_topic_roles`). The levers are federal law (Medicare,
+**Levels with a lever:** federal, state. The levers are federal law (Medicare,
 marketplace subsidies, insurance rules) and state law (Medicaid eligibility, state exchanges and
 subsidies, state insurance regulation). Local governments hold no lever on coverage.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "single-payer", "Medicare for All", "universal coverage", "public option", "Affordable
 Care Act" (ACA, "Obamacare"), "marketplace" or "exchange", "premium tax credit", "cost-sharing

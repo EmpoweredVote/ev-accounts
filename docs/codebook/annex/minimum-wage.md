@@ -10,8 +10,10 @@ yet ruled. Lines marked _(ruled 2026-10-01)_ carry a later ruling. No `_owed:_` 
 the floor. Rungs 1 and 2 differ by **mechanism** (automatic indexing against a lawmakers' vote), not
 by the size of the raise.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). Each level can set its own
+**Levels with a lever:** federal, local, state. Each level can set its own
 floor where higher law permits; only Congress sets the national floor that rung 3 names.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "minimum wage", "wage floor", "living wage", "indexing", "cost-of-living adjustment"
 (COLA), "CPI" / "CPI-W", "escalator", "step increases", "tipped minimum wage", "training wage",

@@ -12,9 +12,11 @@ money and help goes to individual companies, and on what terms**. This is not a 
 scale: rung 1 still spends on public services, and rung 5 spends the most on companies. Do not read
 rung 1 as "most government".
 
-**Levels with a role:** local, state (`compass_topic_roles`). State: tax-credit and closing-fund
+**Levels with a lever:** local, state. State: tax-credit and closing-fund
 programmes, the economic-development agency, megasite deals. Local: property-tax abatements, tax
 increment financing, land and site infrastructure, local development corporations.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "tax abatement", "PILOT" (payment in lieu of taxes), "tax increment financing" (TIF),
 "enterprise zone", "opportunity zone", "deal-closing fund", "job-creation tax credit", "megasite",

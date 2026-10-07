@@ -11,9 +11,11 @@ trust. The rungs order **a judge's posture toward the prosecution**, not more or
 action and not a view on crime. ⚠ The topic key says "bail", but no rung mentions bail; code the rung
 text, not the key.
 
-**Levels with a role:** judicial (`compass_topic_roles`). Only a judge, or a candidate for a judge's
+**Levels with a lever:** judicial. Only a judge, or a candidate for a judge's
 seat, holds this lever: it is conduct in the role ("a judge's job"). A legislator, prosecutor or
 defence lawyer cannot hold it in their own role → `off` (V2) (migration 1735 scope rule).
+
+**Asked at:** judicial (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "prosecutorial misconduct", "Brady" or "disclosure" (evidence favourable to the
 defence), "discovery", "chain of custody", "plea agreement" or "plea bargain", "plea colloquy",

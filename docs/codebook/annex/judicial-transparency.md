@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 default. The rungs order **the strength of the presumption that court proceedings are open**, not
 which reasons justify sealing.
 
-**Levels with a role:** judicial (`compass_topic_roles`). The lever is a judge's sealing, closure and
+**Levels with a lever:** judicial. The lever is a judge's sealing, closure and
 protective orders, and a court's rules on public access. Legislators who write sealing statutes are
 not this role → `off` (V2) _(proposed)_.
+
+**Asked at:** judicial (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "sealing order", "motion to seal", "closure" or "closed hearing", "in camera",
 "protective order", "redaction", "presumption of access", "right of access", "overriding interest",

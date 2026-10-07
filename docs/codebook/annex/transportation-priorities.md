@@ -11,8 +11,10 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 puts highways and free parking first. The rungs order **the split of investment** between roads and
 other modes.
 
-**Levels with a role:** local, state (`compass_topic_roles`). States program highway and transit
+**Levels with a lever:** local, state. States program highway and transit
 money; cities and counties build streets, bike networks, local transit and public parking.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "complete streets", "multimodal", "active transportation", "road diet", "lane
 reduction", "bus rapid transit" (BRT), "transit-priority lane", "level of service" (LOS), "vehicle

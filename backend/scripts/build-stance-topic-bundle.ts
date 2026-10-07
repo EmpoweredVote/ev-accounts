@@ -26,7 +26,7 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pool } from '../src/lib/db.js';
 import {
-  appliesFromRoles, appliesToLevel, levelForDistrict, type Level,
+  appliesFromRoles, appliesToLevel, levelForDistrict, ownWordsLevels, type Level,
 } from '../src/lib/topicApplicability.js';
 import { servedRevisionLateral } from '../src/lib/seasonService.js';
 
@@ -81,7 +81,9 @@ const { rows: raw } = await pool.query(`
          (SELECT json_agg(json_build_object('value', sr.value, 'text', sr.text) ORDER BY sr.value)
             FROM inform.compass_stance_revisions sr
            WHERE sr.topic_revision_id = eff.id) AS stances,
-         (SELECT coalesce(json_agg(json_build_object('role_scope', r.role_scope)), '[]'::json)
+         -- evidence_basis via to_jsonb so the bundle still builds before CA_0302 is applied (absent → record).
+         (SELECT coalesce(json_agg(json_build_object('role_scope', r.role_scope,
+                                                     'evidence_basis', to_jsonb(r)->>'evidence_basis')), '[]'::json)
             FROM inform.compass_topic_roles r WHERE r.topic_id = t.id) AS roles
     FROM inform.season_questions sq
     JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
@@ -108,7 +110,7 @@ const topics = raw.map(({ roles, ...t }) => {
     console.error(`ERROR: ${t.topic_key} has ${t.stances?.length ?? 0} rungs, expected 5`);
     process.exit(1);
   }
-  return { ...t, ...appliesFromRoles(roles) };
+  return { ...t, ...appliesFromRoles(roles), own_words_levels: ownWordsLevels(roles) };
 });
 
 type Pol = { full_name: string; politician_id: string; level: Level | null; race_id: string | null };
@@ -169,7 +171,8 @@ for (const level of LEVELS) {
     console.log(`⚠ no open-season topic applies at the ${level} level — do not research${level === 'school' ? ' (are CA_0256\'s school role rows applied?)' : ''}`);
   }
   for (const t of inScope) {
-    console.log(`\n${t.topic_key} (id: ${t.topic_id}, pin: ${t.topic_revision_id}, served: ${t.served_revision_id})`);
+    const ownWords = t.own_words_levels.includes(level) ? ' — OWN WORDS ONLY at this level (no lever; codebook V2 "No-lever level")' : '';
+    console.log(`\n${t.topic_key} (id: ${t.topic_id}, pin: ${t.topic_revision_id}, served: ${t.served_revision_id})${ownWords}`);
     console.log(`Question: "${t.question_text}"`);
     for (const s of t.stances) console.log(`  ${s.value} = "${s.text}"`);
   }

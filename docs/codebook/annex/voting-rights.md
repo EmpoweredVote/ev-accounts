@@ -10,9 +10,11 @@ drafter's reading, not yet ruled; lines marked _(ruled 2026-10-01)_ carry an ope
 order **what identification a voter must show to vote**; rung 5 moves to **registration** and asks for
 documentary proof of citizenship.
 
-**Levels with a role:** federal, state (`compass_topic_roles`). The lever is state: election codes set
+**Levels with a lever:** federal, state. The lever is state: election codes set
 ID and registration rules. Federal law sets registration and mail-ballot rules for federal elections.
 Local governments run elections but, in most states, cannot set their own ID rules.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "voter identification", "voter ID", "photo identification", "strict photo ID",
 "proof of citizenship", "documentary proof of citizenship" (DPOC), "SAVE Act", "signature

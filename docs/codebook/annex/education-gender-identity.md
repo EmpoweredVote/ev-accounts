@@ -12,9 +12,11 @@ parents; rung 5 gives parents a veto before staff act. The rungs order **who con
 consent**: the student, the parent on request, the school with a safety exception, the school with
 no exception, the parent in advance.
 
-**Levels with a role:** local, school, state (`compass_topic_roles`). The lever is the school board's
+**Levels with a lever:** school, state. The lever is the school board's
 policy and the state statute or state-board rule. A city or county council holds none →
-`scope-unavailable` there _(proposed)_.
+own words only there _(proposed)_.
+
+**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal, local (codebook V2 "No-lever level").
 
 **Synonyms:** "chosen name", "preferred name", "pronouns", "social transition", "gender support
 plan", "parental notification", "parental rights", "forced outing", "parental consent", "safety

@@ -40,6 +40,8 @@ export interface BundleTopic extends TopicApplicability {
   title: string;
   question_text: string;
   stances: { value: number; text: string }[];
+  /** CA_0302: levels at which this topic is asked on own words only. Absent in bundles built before it. */
+  own_words_levels?: Level[];
 }
 export interface BundlePolitician { full_name: string; politician_id: string; level: Level | null; race_id: string | null }
 /**

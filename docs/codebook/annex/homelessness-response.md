@@ -11,9 +11,11 @@ rung 5 ends public funding. The rungs order **the size and form of public fundin
 support services: guarantee, increase, hold, hand a limited amount to private groups, withdraw.
 Enforcement is **not** on this ladder (the `homelessness` topic orders it).
 
-**Levels with a role:** local (`compass_topic_roles`). The lever is the city or county budget, local
+**Levels with a lever:** local. The lever is the city or county budget, local
 dedicated taxes and bonds, and the local homelessness agency or continuum of care. State and federal
 officeholders hold no lever here → `scope-unavailable`.
+
+**Asked at:** local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "permanent supportive housing", "rapid rehousing", "housing first", "navigation
 center", "shelter beds", "interim housing", "continuum of care" (CoC), "coordinated entry",

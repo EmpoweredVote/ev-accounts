@@ -11,10 +11,12 @@ yet; every reading below is a drafter's.
 certified result without reservation, rung 5 says it was stolen. The rungs order **how far the
 person doubts the certified result**. No rung asks what government should do.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). No officeholder holds a lever
-on a past event; the evidence is mostly own words. Records exist too: objections to electoral votes
+**Levels with a lever:** federal, local, state, in the sense that records count at each level. No
+officeholder can change a past event; the evidence is mostly own words. Records exist too: objections to electoral votes
 (Congress), audit, decertification or elector resolutions (state), certification votes (local
 election boards).
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "certification", "certify" or "decertify", "electoral count", "objection",
 "Electoral Count Act", "alternate electors", "forensic audit", "irregularities", "rigged",

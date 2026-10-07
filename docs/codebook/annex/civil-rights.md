@@ -11,10 +11,12 @@ institution), rung 5 removes race-conscious programmes. Rungs 1–4 order **how 
 remedy** government supplies; rung 5 is about **race-conscious programmes**, a related but different
 dimension. Read each rung's own clauses.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). Federal law (the Civil Rights
+**Levels with a lever:** federal, local, state. Federal law (the Civil Rights
 Act, the Fair Housing Act, agency enforcement) is the main lever. States and cities pass and enforce
 their own anti-discrimination laws and run their own programmes. Rung 4 names **federal**
 enforcement only.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "Title VI", "Title VII", "Civil Rights Act", "Fair Housing Act", "disparate impact",
 "intentional discrimination" or "disparate treatment", "EEOC", "Civil Rights Division", "human
@@ -77,7 +79,7 @@ rights commission", "protected class" or "protected characteristic", "affirmativ
    - Establishing evidence looks like: a federal bill or vote that removes disparate-impact liability
      or narrows federal enforcement to intentional discrimination; own words calling for that.
    - Levels that hold a lever: federal. State and local officeholders hold no lever on federal
-     enforcement → `scope-unavailable`. A state law that narrows the state's **own** enforcement does
+     enforcement → own words only (codebook V2 "No-lever level"). A state law that narrows the state's **own** enforcement does
      not match [a] → `direction-only` _(proposed)_.
    - Known chair-shaped instruments: _(none on file)_.
    - Commonly confused with rung 5 because ending a race-conscious programme is not a limit on

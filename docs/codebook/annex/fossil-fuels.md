@@ -10,10 +10,12 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 the **trajectory of production** — end it, let it decline, hold it, grow it, maximize it — not
 emissions rules or clean-energy policy.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is leasing and
+**Levels with a lever:** federal, local, state. The lever is leasing and
 permitting: federal (federal lands and offshore waters), state (state lands, well permits, the oil
 and gas commission). Local governments hold a lever only where state law lets them zone or ban
 drilling.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "oil and gas lease sale", "Outer Continental Shelf" (OCS), "five-year leasing
 program", "application for permit to drill" (APD), "hydraulic fracturing" or "fracking", "setback",

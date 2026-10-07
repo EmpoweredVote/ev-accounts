@@ -470,10 +470,30 @@ down, and it is what the tests in `compassService.test.ts` pin.
   exactly the wording they were evidenced against. The re-audit question is about what carries forward
   into the NEXT season's research, not about rewriting history.
 
-### Scope is a per-rung question, not a per-topic one (ruling 2026-08-28, Chris Andrews)
+### Scope decides the evidence, not whether a position exists (ruling 2026-10-06, Chris Andrews, option B)
 
-**A ladder is only valid at a level where its rungs are things an officeholder there can actually
-do.** Scopes were originally assigned per topic and never re-checked rung by rung — `voting-rights`
-fails 4 of 5 rungs at `local` (NC wave 2b memo). Before adding a `compass_topic_roles` row for a
-level, read every rung and ask: does an officeholder at this level hold a lever on this? A chair
-that can only be evidenced by opinion at that level is the exact shape the evidence standard refuses.
+This replaces the 2026-08-28 ruling "Scope is a per-rung question, not a per-topic one", which said a
+chair evidenced only by opinion at a level is "the exact shape the evidence standard refuses". The
+operator's reason: *"I would want to know whether my local mayor thinks the 2020 election was stolen or
+her position on abortion, even if she can't change the laws on that."* Memo:
+`.planning/todos/2026-10-06-positions-without-a-lever.md` (workspace root).
+
+- **Which topics a level is ASKED** — every topic, at federal, state and local, unless there is a good
+  reason not to. Named exclusions: judges keep the judicial topics only and judicial topics stay
+  judge-only; **school boards keep the school topics only** (the 2026-09-24 rung-by-rung school ruling
+  stands, for now); local-only topics ("your community") are not asked of federal or state officials
+  until their question text reads at every level. Recorded in `compass_topic_roles` (CA_0302).
+- **What evidence can seat a chair** — still a per-rung question. **A record needs a lever**: a rung no
+  officeholder at this level can act on cannot be evidenced at this level by a record. **The person's
+  own words can** (codebook V2 "No-lever level"). `compass_topic_roles.evidence_basis` marks a
+  (topic, level) `own-words` when no rung has a lever there.
+- **Before adding a topic or a level**, still read every rung and ask whether an officeholder there
+  holds a lever on it. The answer now sets the evidence basis, not whether the level is asked.
+- **Voters see no label** — they see the sources (the evidence chain). An own-words chair is compared
+  with the voter's view like any other chair.
+- 🔴 **An own-words chair is a separate reliability stratum.** A certification measured on `record` rows
+  never covers it; own-words rows go to review until that stratum has its own blind gold.
+- The election-cycle rule for statements (codebook V5, Q4) applies unchanged.
+- ⚠ **Legacy out-of-scope chairs exist and are hidden** (Season 1 research at levels that were not
+  asked, e.g. local `deportation` and `same-sex-marriage`). Adding a role row can make them visible: they
+  are owed a re-audit before they show.

@@ -9,9 +9,11 @@
 order **who is eligible**: no one, no one new, families under an income cap, most families, every
 family.
 
-**Levels with a role:** federal, state (`compass_topic_roles`). The lever is the state programme
+**Levels with a lever:** federal, state. The lever is the state programme
 statute; federal action is mostly tax-credit scholarships (see hard cases). School boards hold no
 lever on vouchers.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "education savings account" (ESA), "empowerment scholarship account", "scholarship",
 "tax-credit scholarship", "opportunity scholarship", "Choice Scholarship" (Indiana), "Utah Fits All",

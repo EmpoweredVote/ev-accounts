@@ -11,9 +11,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 the most (high tariffs on all imports). CLAUDE.md names Tariffs as a ladder that runs the other way
 from the corpus convention. The rungs order **how widely and how high tariffs apply**.
 
-**Levels with a role:** federal (`compass_topic_roles`). Congress holds the tariff power and has
+**Levels with a lever:** federal. Congress holds the tariff power and has
 delegated much of it to the President; members act through trade agreements, tariff bills and votes
 to end the emergencies that some tariffs rest on. State and local officials hold no lever.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 "No-lever level").
 
 **Synonyms:** "tariff", "duty", "import tax", "levy", "free trade", "free-trade agreement" (FTA),
 "USMCA", "most-favoured-nation" (MFN), "normal trade relations", "Section 232" (national security),

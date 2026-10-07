@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 control at all. The rungs order **how many units** a rent rule covers: all, more than now, the
 current set, subsidized units only, none.
 
-**Levels with a role:** local, state (`compass_topic_roles`). Cities and counties adopt rent rules
+**Levels with a lever:** local, state. Cities and counties adopt rent rules
 where state law permits; the state sets statewide caps and decides whether local rent control is
 allowed at all.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "rent control", "rent stabilization", "rent cap", "anti-gouging cap", "annual
 allowable increase", "vacancy control" / "vacancy decontrol", "just-cause eviction", "Costa-Hawkins"

@@ -10,10 +10,12 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 removes a book on any report. The rungs order **what a challenge does to access**: nothing, a limit
 for one child, removal after a review finding, removal during review, removal on report.
 
-**Levels with a role:** local, school, state (`compass_topic_roles`). The lever is the school board's
+**Levels with a lever:** local, school, state. The lever is the school board's
 reconsideration policy and the state statute that sets the challenge process. A city or county
 council governs public libraries, not school libraries → `adjacent` unless the act covers school
 collections _(proposed)_.
+
+**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "reconsideration policy", "request for reconsideration", "challenged material",
 "review committee", "media specialist", "collection development", "weeding", "harmful to minors",

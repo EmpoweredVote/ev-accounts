@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 rungs order **how much classroom and student use is allowed**: none, staff only, designated
 assignments with disclosure, broad use with light rules, free use.
 
-**Levels with a role:** local, school, state (`compass_topic_roles`). The lever is the school board's
+**Levels with a lever:** school, state. The lever is the school board's
 policy (acceptable use, academic integrity, device and network rules) and state statute or
-state-board rules. A city or county council holds none → `scope-unavailable` there _(proposed)_.
+state-board rules. A city or county council holds none → own words only there _(proposed)_.
+
+**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal, local (codebook V2 "No-lever level").
 
 **Synonyms:** "generative AI", "large language model", "chatbot", "AI tutor", "acceptable use
 policy", "academic integrity", "AI disclosure", "AI literacy", "AI guidance", "responsible use".

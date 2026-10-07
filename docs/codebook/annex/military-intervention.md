@@ -10,8 +10,10 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 rung 5 the least (withdraw from overseas commitments). The rungs order **the conditions under which
 force is used abroad**, and at rung 5, whether the overseas footprint stays.
 
-**Levels with a role:** federal (`compass_topic_roles`). Congress declares war, authorizes force,
+**Levels with a lever:** federal. Congress declares war, authorizes force,
 funds deployments and can direct the removal of forces; state and local officials hold no lever.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 "No-lever level").
 
 **Synonyms:** "War Powers Resolution", "authorization for use of military force" (AUMF),
 "declaration of war", "hostilities", "deployment", "troop withdrawal", "forward presence",

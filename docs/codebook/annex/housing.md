@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 and supply to the market. Each rung states a **ceiling** on how far government goes ("build no public
 housing, but …", "set no binding rules, but …"), so the rungs exclude each other.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). Federal action is funding
+**Levels with a lever:** federal, local, state. Federal action is funding
 (public-housing capital, tax credits, vouchers); states set rent and zoning law and fund programmes;
 local governments run housing authorities, zoning and inclusionary rules.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "public housing", "social housing", "mixed-income public housing", "housing
 authority", "right to housing", "inclusionary zoning", "required affordable units", "rent cap",

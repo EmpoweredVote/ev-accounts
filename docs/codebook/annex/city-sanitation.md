@@ -12,9 +12,11 @@ responsible for keeping streets clean**: the city (1–3), the people who make t
 private market (5). Rung 2 is an **allocation** choice (where the service goes), not a smaller amount
 than rung 1.
 
-**Levels with a role:** local (`compass_topic_roles`). The lever is the city or county budget, the
+**Levels with a lever:** local. The lever is the city or county budget, the
 sanitation or public-works department, and local codes on litter, dumping and property upkeep. A
 state or federal officeholder holds no lever here → `scope-unavailable`.
+
+**Asked at:** local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "solid waste", "refuse collection", "street sweeping", "bulky-item pickup", "illegal
 dumping", "blight", "code enforcement", "property maintenance code", "nuisance abatement",

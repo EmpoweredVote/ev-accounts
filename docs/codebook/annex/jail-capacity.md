@@ -11,9 +11,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 expands jails as the main response to crime. The rungs order **the size of the jail system**: shrink
 it, reduce its population, hold capacity, add capacity, make detention the primary tool.
 
-**Levels with a role:** local, state (`compass_topic_roles`). Counties fund, build and run jails
+**Levels with a lever:** local, state. Counties fund, build and run jails
 (boards of supervisors or commissioners, sheriffs); states fund jail construction, set bail and
-sentencing law, and run prisons. There is no federal role.
+sentencing law, and run prisons. No federal officeholder holds a lever.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "jail", "detention center", "correctional facility", "beds" / "rated capacity",
 "overcrowding", "consent decree", "conditions of confinement", "jail bond", "certificates of

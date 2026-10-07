@@ -11,8 +11,10 @@ deployment?"
 most (approval before any deployment). Read the rung text, not the number (CLAUDE.md "Never assume
 polarity").
 
-**Levels with a role:** federal, state (`compass_topic_roles`). Both legislate; local governments
+**Levels with a lever:** federal, state. Both legislate; local governments
 are not asked on this topic.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "automated decision system" (ADS), "automated employment decision tool", "consequential
 decision", "high-risk artificial intelligence system", "algorithmic discrimination", "frontier model",

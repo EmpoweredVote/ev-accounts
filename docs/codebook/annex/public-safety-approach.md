@@ -11,9 +11,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 top priority. The rungs order **how central police are** in the community's public-safety response:
 replaced in part, replaced on some calls, kept as main responders with help, expanded, put first.
 
-**Levels with a role:** local (`compass_topic_roles`). The lever is the city or county budget, police
+**Levels with a lever:** local. The lever is the city or county budget, police
 and sheriff staffing, the 911 dispatch system, and civilian response programmes. State and federal
 officeholders hold no lever here → `scope-unavailable`.
+
+**Asked at:** local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "alternative response", "civilian crisis response", "unarmed responders",
 "co-responder", "crisis intervention team" (CIT), "mobile crisis team", "988", "behavioural-health

@@ -10,8 +10,10 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 (about half or more). The rungs order **the size of the military budget measured against
 inflation**. How the money is spent, and where forces are based, are not on this ladder.
 
-**Levels with a role:** federal (`compass_topic_roles`). Congress sets the budget through the annual
+**Levels with a lever:** federal. Congress sets the budget through the annual
 defense authorization and defense appropriations bills, budget resolutions and spending caps.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 "No-lever level").
 
 **Synonyms:** "national defense" (budget function 050), "topline", "base budget", "NDAA" (National
 Defense Authorization Act), "defense appropriations", "budget request", "real growth",

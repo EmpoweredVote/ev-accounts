@@ -11,10 +11,12 @@ rungs order **how much legal equality** same-sex couples get: marriage plus anti
 protection, equal marriage, marriage with a religious carve-out, civil unions only, nothing. (The S1
 rung "let each state decide" is gone: who decides is not on this ladder.)
 
-**Levels with a role:** federal, state (`compass_topic_roles`). Since 2015 every state must license
+**Levels with a lever:** federal, state. Since 2015 every state must license
 and recognise same-sex marriages, so the live levers are federal recognition law, state
 constitutional amendments (to repeal or keep inactive bans), state anti-discrimination law, and
 religious-exemption clauses.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "marriage equality", "Respect for Marriage Act" (RFMA, 2022), "Defense of Marriage Act"
 (DOMA, 1996), "Obergefell", "civil union", "domestic partnership", "one man and one woman",

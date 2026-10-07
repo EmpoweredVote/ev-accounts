@@ -36,7 +36,7 @@ describe('buildCodingReport', () => {
     const t1 = r.rows.find((x) => x.topic_key === 'k-t1')!;
     const t2 = r.rows.find((x) => x.topic_key === 'k-t2')!;
     expect(t1.shadow).toBe('would-publish-if-certified');
-    expect(t1.stratum).toEqual({ level: 'state', evidence_class: 'record' });
+    expect(t1.stratum).toEqual({ level: 'state', evidence_class: 'record', evidence_basis: 'record' });
     expect(t2.shadow).toBe('would-review');
     expect(t2.shadow_reasons).toContain('coder-split');
     expect(r.m1.units).toBe(2);
@@ -53,6 +53,18 @@ describe('buildCodingReport', () => {
     const t1 = buildCodingReport({ context, files, snapshotText, sourceKind }).rows.find((x) => x.topic_key === 'k-t1')!;
     expect(t1.shadow).toBe('would-review');
     expect(t1.shadow_reasons).toContain('statement-other');
+  });
+  it('sends a unanimous chair at an own-words level to review, and leaves a blank alone (CA_0302)', () => {
+    const owTopics = topics.map((t) => ({ ...t, own_words_levels: ['state'] }));
+    const so = { ...row('t1', 4), passages: [{ ...P, v3_class: 'statement-answer' as const, provision_quote: null }] };
+    const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [so, row('t2', null)])]));
+    const r = buildCodingReport({ context: { ...context, topics: owTopics }, files, snapshotText, sourceKind });
+    const t1 = r.rows.find((x) => x.topic_key === 'k-t1')!;
+    const t2 = r.rows.find((x) => x.topic_key === 'k-t2')!;
+    expect(t1.shadow).toBe('would-review');
+    expect(t1.shadow_reasons).toContain('own-words-basis');
+    expect(t1.stratum.evidence_basis).toBe('own-words');
+    expect(t2.shadow_reasons).not.toContain('own-words-basis');
   });
   it('collects needs-source requests', () => {
     const ns = { ...row('t1', null), needs_source: ['Clerk roll call, H.R. 28'] };

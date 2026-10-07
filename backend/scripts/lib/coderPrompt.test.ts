@@ -30,6 +30,14 @@ describe('shuffleSeeded / seedFor', () => {
 });
 
 describe('buildCoderPrompt', () => {
+  it('tells the coder when the seat\'s level is own words only (CA_0302), and says nothing otherwise', () => {
+    const line = 'Evidence basis at this seat\'s level (state): OWN WORDS ONLY';
+    const ownWords = buildCoderPrompt({ codebookMd: '# CODEBOOK', seat, topics: [{ ...topic, own_words_levels: ['state', 'local'] }], snapshots: snaps, slot: 1, seed: 1, labelPath: '/b/l.json' });
+    expect(ownWords).toContain(line);
+    const otherLevel = buildCoderPrompt({ codebookMd: '# CODEBOOK', seat, topics: [{ ...topic, own_words_levels: ['local'] }], snapshots: snaps, slot: 1, seed: 1, labelPath: '/b/l.json' });
+    expect(otherLevel).not.toContain('OWN WORDS ONLY');
+    expect(build(1, 1)).not.toContain('OWN WORDS ONLY');
+  });
   it('contains the codebook, the annex, all five rungs, the seat and every codable snapshot id', () => {
     const p = build(1, 1);
     for (const s of ['# CODEBOOK', '# annex body', 'rung 1', 'rung 5', 'J. Stuart Adams', 'State Senator', 'Utah', 's1', 's5']) expect(p).toContain(s);

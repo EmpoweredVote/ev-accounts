@@ -2,8 +2,9 @@
  * Which office levels a compass topic applies to, and which level an office sits at.
  *
  * One source of truth for the rule compassService applies at the API boundary and the
- * stance-research gate applies before a batch is written. CLAUDE.md: "a ladder is only
- * valid at a level where its rungs are things an officeholder there can actually do."
+ * stance-research gate applies before a batch is written. CLAUDE.md "Scope decides the evidence"
+ * (ruling 2026-10-06, option B): every level is asked every topic unless excluded; a level with no
+ * lever is asked on own words only (`evidence_basis`, CA_0302).
  * Extracted from compassService.getCompassTopics with behaviour unchanged.
  *
  * `school` (CA_0256, rulings 2026-09-23 / 2026-09-24, Chris Andrews): K-12 school boards are
@@ -12,8 +13,17 @@
  * reconciliation/school-scope-proposal.md.
  */
 export type Level = 'federal' | 'state' | 'local' | 'judicial' | 'school';
+const LEVELS: readonly Level[] = ['federal', 'state', 'local', 'judicial', 'school'];
 
-export interface TopicRoleRow { role_scope: string }
+export interface TopicRoleRow {
+  role_scope: string;
+  /**
+   * CA_0302 (ruling 2026-10-06, option B): 'record' = the level holds a lever, so records and own
+   * words both count; 'own-words' = no lever at this level, only the person's own words can seat a
+   * chair. Absent (a read from before CA_0302, or a column not selected) reads as 'record'.
+   */
+  evidence_basis?: string | null;
+}
 
 export interface TopicApplicability {
   applies_federal: boolean;
@@ -40,6 +50,21 @@ export function appliesFromRoles(roles: TopicRoleRow[]): TopicApplicability {
     // rung by rung (ruling 2026-09-24). A new topic with no role rows must not reach it.
     applies_school: has ? any('school') : false,
   };
+}
+
+/**
+ * The levels at which a topic is asked on own words only (CA_0302, codebook V2 "No-lever level").
+ * A level the topic does not apply at is not listed: it is not asked at all, which is a different
+ * fact from "asked, own words only".
+ */
+export function ownWordsLevels(roles: TopicRoleRow[]): Level[] {
+  const out: Level[] = [];
+  for (const r of roles) {
+    if (r.evidence_basis === 'own-words' && LEVELS.includes(r.role_scope as Level) && !out.includes(r.role_scope as Level)) {
+      out.push(r.role_scope as Level);
+    }
+  }
+  return out;
 }
 
 export function appliesToLevel(t: TopicApplicability, level: Level): boolean {

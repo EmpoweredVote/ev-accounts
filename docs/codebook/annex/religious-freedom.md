@@ -10,10 +10,12 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 gives religious organisations complete autonomy. The rungs order **how wide religious exemptions
 from anti-discrimination law are**: none, limited, balanced, general, complete.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). Federal and state law set the
+**Levels with a lever:** federal, local, state. Federal and state law set the
 anti-discrimination rules and the general exemption statutes (RFRA). Cities and counties pass their
 own human-rights ordinances, with or without religious exemptions, so local officeholders hold a
 lever on rungs 1–3; general exemption statutes (rungs 4–5) are state and federal.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "Religious Freedom Restoration Act" (RFRA, federal and state versions), "free
 exercise", "compelling interest" and "least restrictive means", "substantial burden", "sincerely

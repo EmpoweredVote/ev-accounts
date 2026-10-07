@@ -46,6 +46,8 @@ export interface PromptTopic {
   question_text: string;
   stances: { value: number; text: string }[];
   annexMd: string | null;
+  /** CA_0302 (ruling 2026-10-06, option B): levels at which this topic is asked on own words only. */
+  own_words_levels?: string[];
 }
 
 /** mulberry32 — small, deterministic, good enough for ordering. */
@@ -86,6 +88,9 @@ export function buildCoderPrompt(i: {
     `### topic_key: ${t.topic_key}`,
     `topic_id: ${t.topic_id}  served_revision_id: ${t.served_revision_id}`,
     `Question: ${t.question_text}`,
+    ...(s.level && t.own_words_levels?.includes(s.level)
+      ? [`Evidence basis at this seat's level (${s.level}): OWN WORDS ONLY — no officeholder at this level holds a lever on this topic (codebook V2 "No-lever level").`]
+      : []),
     ...[...t.stances].sort((a, b) => a.value - b.value).map((r) => `  ${r.value}. ${r.text}`),
     '',
     t.annexMd ? `#### Annex\n\n${t.annexMd}` : '#### Annex\n\n(no annex for this topic yet — apply the codebook alone)',

@@ -9,7 +9,9 @@ Andrews). Lines marked _(proposed)_ are a drafter's reading, not yet ruled.
 government support. The rungs order **mechanisms** — require, fund, ease, stay neutral, end support —
 not the size of an emissions goal.
 
-**Levels with a role:** federal, state, local (`compass_topic_roles`).
+**Levels with a lever:** federal, state, local.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "renewable portfolio standard" (RPS), "clean energy standard", "zero-carbon" or "100%
 clean" electricity, "net zero", "renewable energy credit", "investment tax credit", "production tax

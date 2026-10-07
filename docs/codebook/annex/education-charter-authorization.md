@@ -10,10 +10,12 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 district schools into charters. The rungs order **how readily charters are authorized**: none,
 rarely, case by case, readily, by conversion.
 
-**Levels with a role:** local, school, state (`compass_topic_roles`). The question is about the
+**Levels with a lever:** local, school, state. The question is about the
 board as authorizer. A school board holds the lever only where state law lets districts authorize;
 state legislators set who may authorize, caps and conversion rules; a city holds a lever only where
 the mayor or council is an authorizer _(proposed)_.
+
+**Asked at:** state, local, school (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "charter authorizer", "charter application", "charter petition", "charter renewal",
 "charter cap", "moratorium", "state charter commission", "conversion charter", "restart",

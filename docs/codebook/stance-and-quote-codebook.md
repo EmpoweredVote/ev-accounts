@@ -36,6 +36,14 @@ are not named here.
 **Clarified 2026-10-06 (still 0.4 — no new coded variable; ruling by Chris Andrews):** V6 "Evidence
 tier". A chair may still rest on one source, but every published chair carries a tier — `single-source`
 or `corroborated` — that code computes from `rests_on`. Coders code exactly as before.
+**Updated 2026-10-06 (still 0.4 — ruling by Chris Andrews, option B "positions without a lever"):**
+scope now decides **which evidence counts**, not whether a chair can exist. Every level is asked every
+topic unless an exclusion is named; at a level with no lever, only the person's own words can seat a
+chair (V2 "No-lever level"). `scope-unavailable` narrows to the named exclusions (V6). Code computes
+the row's evidence basis, never the coder. The version stays 0.4: no recorded gold turns on the change
+(the two `scope-unavailable` gold rows are `excluded_from_cert`), and own-words rows form their own
+stratum with no gold yet. Memo: `.planning/todos/2026-10-06-positions-without-a-lever.md` (workspace
+root).
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -88,8 +96,10 @@ per quote:    V7 tier → V8 quotable
    to use it, the row is not evidenced: code BLANK `direction-only`.
 4. **Never assume polarity.** Read the rung text. Rung 1 is not always "most government". The annex
    marks inverted and off-axis topics.
-5. **Scope is per rung.** A rung that no officeholder at this level can act on cannot be evidenced at
-   this level.
+5. **Scope decides the evidence, per rung (ruling 2026-10-06, option B).** A record needs a lever: a
+   rung that no officeholder at this level can act on cannot be evidenced at this level by a record.
+   It can still be evidenced by the person's own words (V2 "No-lever level"). A voter may want to
+   know a mayor's view on abortion even though she cannot change the law.
 6. **Convergent error is not corroboration.** Two news stories that repeat one press release are one
    source.
 
@@ -153,6 +163,24 @@ Act. An encyclopedia page about a bill is not the person's act; at most it point
     "cut the zoning limits that block building", and a law that voids local zoning limits statewide),
     it is `on-question` but only `direction-only`. One deregulation law cannot show that the person
     wants *nothing more* ("rely on the market", "at most") — that is an unproven magnitude → BLANK.
+
+- **No-lever level (ruling 2026-10-06, Chris Andrews, option B).** Read the annex line "Levels that
+  hold a lever" for the rung. If the seat's level is not listed there, the level holds no lever on
+  that rung, and **only the person's own words** (V3 `statement-answer` or `statement-other`) can
+  support it. The prompt also says so per topic ("Evidence basis at this seat's level: OWN WORDS
+  ONLY") when no rung of the topic has a lever at that level.
+  - An act of this office on such a rung cannot enact it. A vote or bill at this level is coded on
+    what its text does, against the rung's clauses; a law on a neighbouring matter is `adjacent`, as
+    anywhere else (no example is given here: the item that prompted this rule is to be re-labelled
+    blind). A resolution that only urges another level to act is V4 `rhetorical`, unless its text
+    states every clause of one rung.
+    _owed:_ whether a member's vote for a resolution that states every clause of a rung counts as
+    their own words (statement class) or stays a record that cannot seat a chair at a no-lever level.
+    Until ruled: code it `statement-other` and let the row go to review.
+  - A record from another level stays `pre-seating` (V5); it is not this person's act in this office.
+  - The election-cycle rule (V5, Q4) applies unchanged.
+  - **Not** this rule: a level the topic is not asked at all (no `compass_topic_roles` row, or a
+    named exclusion). That row is not coded; V6 `scope-unavailable`.
 
 **Good.** `trans-athletes`: a vote to override a veto of a bill that restricts girls' school sports
 teams by sex at birth. The rungs differ exactly on that. → `on-question`.
@@ -415,7 +443,8 @@ chair. → `direction-only`.
     House; a State Senator since 2023. → `in-term`; code the act on its content.
   - A record from a **different level** (city council → legislature, legislature → Congress) is
     `pre-seating`: the levers differ, so the ladder may not apply at the new level (scope is a per-rung
-    question).
+    question). Their **own words** from that time are statements, decided by the election-cycle rule
+    below.
   - **A judge's record on a lower court** (ruling 2026-10-01) is `pre-seating` too: a trial court and
     an appellate court are different offices with different levers. It counts for the current seat
     only when the rung's lever is the same at both courts — an opinion that shows the judge's method
@@ -466,7 +495,7 @@ carry the S1 reading forward.
 | `adjacent-chairs` | Surviving passages establish two different rungs (stance-program R4). |
 | `compound-partial` | The best rung is compound and only some of its clauses are evidenced. |
 | `record-vs-statement-conflict` | The record and the statement point to different rungs, and the record is not itself chair-shaped. |
-| `scope-unavailable` | No officeholder at this level holds a lever on the rung (normally dropped before coding). |
+| `scope-unavailable` | This level is **not asked** this topic or rung: a named exclusion (no `compass_topic_roles` row for the level, or the annex rules the office out). Normally dropped before coding. Since 2026-10-06 the lack of a lever alone is **not** this reason: own words can still seat the chair (V2 "No-lever level"). |
 
 **Rules**
 - **`rests_on`** lists the snapshot IDs whose passages establish the chair. At least one is required
@@ -494,6 +523,12 @@ carry the S1 reading forward.
   - _owed:_ whether the person's own explanation of a vote counts as a second source for that same
     vote, or as the same act. Until ruled, it is the same act (one source).
   - A tier never upgrades a blank: two `direction-only` sources are still BLANK `direction-only`.
+- **Evidence basis (ruling 2026-10-06, Chris Andrews; option B).** Computed by code, never coded, from
+  `compass_topic_roles.evidence_basis` for the topic at the seat's level (CA_0302): `record` (the
+  level holds a lever) or `own-words` (it holds none). It is not shown to voters: they see the sources
+  (the evidence chain). It splits the reliability strata — a certification measured on `record` rows
+  never covers `own-words` rows — and an own-words chair goes to review until its own stratum is
+  certified. A chair from own words is compared with the voter's view like any other chair.
 
 **Good (calibration A3).** A council appointee's vacancy-application packet, published by the city,
 answers the ladder's question in his own words. It matches one rung clause for clause. → that rung.
@@ -636,7 +671,8 @@ revision. A new revision gets a new annex version.
 ```
 # <topic_key> — served revision <id> (Season N)
 Orientation: standard | inverted | off-axis — one sentence why.
-Levels with a role: federal / state / local / school   (compass_topic_roles)
+Levels with a lever: federal / state / local / school — records and own words count here
+Asked at: every level unless excluded (compass_topic_roles); a level asked but not listed above is own words only
 Synonyms: statute or program names the state uses for this topic (e.g. "Medical Assistance Program" for Medicaid in Maryland)
 Per rung:
   <n>. "<rung text>"

@@ -11,11 +11,13 @@ hold them accountable?"
 rungs order **how the office responds to accused misconduct by government employees** — police and
 every other employee, despite the title.
 
-**Levels with a role:** judicial (`compass_topic_roles`). The lever is held by legal offices, and it
+**Levels with a lever:** judicial. The lever is held by legal offices, and it
 differs by office: a district attorney or attorney general charges or declines to charge an employee
 and can run independent review; a city or county attorney defends, settles or concedes civil claims
 and advises on discipline. Code each office from its own lever against the same rung text. A
 legislator or council member is not this office → `off` (V2) (migration 1735 scope rule).
+
+**Asked at:** judicial (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "use of force", "officer-involved shooting", "in-custody death", "independent
 investigation", "public integrity unit", "civilian oversight", "internal affairs", "Brady list" or

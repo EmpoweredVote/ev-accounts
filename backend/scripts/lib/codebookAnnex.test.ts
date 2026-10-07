@@ -7,7 +7,7 @@ const topic = {
   served_revision_id: 'rev-9',
   question_text: 'How should vouchers work?',
   stances: [1, 2, 3, 4, 5].map((value) => ({ value, text: `rung ${value} text` })),
-  roles: [{ level: 'state' }, { level: 'federal' }],
+  roles: [{ level: 'state' }, { level: 'federal' }, { level: 'local', evidence_basis: 'own-words' }],
 };
 
 describe('renderAnnexSkeleton', () => {
@@ -20,9 +20,10 @@ describe('renderAnnexSkeleton', () => {
   });
   it('leaves orientation explicitly unset (stance-program P4 is owed) rather than guessing', () =>
     expect(md).toContain('Orientation: UNSET'));
-  it('lists the role levels', () => expect(md).toContain('Levels with a role: federal, state'));
+  it('lists the asked levels and the own-words ones (CA_0302)', () =>
+    expect(md).toContain('Asked at: federal, local, state (compass_topic_roles). Own words only at: local'));
   it('marks every guidance field for a human to fill', () =>
-    expect(md.match(/_fill: /g)?.length).toBe(5 * 4 + 1));
+    expect(md.match(/_fill: /g)?.length).toBe(5 * 5 + 2));
 });
 
 describe('annexPath', () => {

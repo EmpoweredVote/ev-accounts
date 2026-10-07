@@ -10,7 +10,9 @@ misinformation?"
 any government role. The rungs order **mechanisms** — require removal, require labels, encourage
 voluntary standards, protect speech from government, ban government involvement.
 
-**Levels with a role:** federal, state (`compass_topic_roles`).
+**Levels with a lever:** federal, state.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "materially deceptive content", "deepfake", "synthetic media", "digital impersonation",
 "digital replica", "large online platform", "content moderation", "terms of service", "trust and

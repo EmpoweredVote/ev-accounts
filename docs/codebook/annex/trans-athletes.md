@@ -12,10 +12,12 @@ identity with no conditions, rung 5 bars transgender athletes from all organised
 order **how far eligibility follows gender identity**: always, after documentation, case by case,
 by sex at birth, not at all.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). The main lever is state law on
+**Levels with a lever:** federal, local, state. The main lever is state law on
 school and college sport. Congress acts through Title IX and federal bills. School boards set
 district athletic policy where state law leaves room. Athletic associations are not officeholders;
 an officeholder's vote on their rules is.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "Save Women's Sports", "Fairness in Women's Sports", "Protection of Women and Girls in
 Sports Act", "biological sex", "sex at birth", "sex assigned at birth", "designated for females",

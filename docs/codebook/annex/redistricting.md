@@ -11,9 +11,11 @@ the maps to the legislative majority with no check. The rungs order **how insula
 from the people elected under the maps**. Each rung names an institution and the constraint that
 separates it from its neighbour.
 
-**Levels with a role:** federal, state (`compass_topic_roles`). The lever is state: constitutions and
+**Levels with a lever:** federal, state. The lever is state: constitutions and
 statutes say who draws the maps. The federal lever is national redistricting-standards legislation;
 for rungs 2 and 3 a federal official's evidence is usually own words (review 2026-08-31, scope kept).
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "independent redistricting commission" (IRC), "citizens redistricting commission",
 "advisory commission", "backup commission", "apportionment", "gerrymandering", "partisan fairness",
