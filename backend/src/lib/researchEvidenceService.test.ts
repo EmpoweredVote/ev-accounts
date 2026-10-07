@@ -749,3 +749,56 @@ describe('validStoredSpan (I6)', () => {
     expect(validStoredSpan(FULL_SNIPPET, `${SPAN} extra`)).toBeNull();
   });
 });
+
+describe('resolveResearchReview — coder-pipeline rows: source dates (CA_0301) and evidence tier (CA_0300)', () => {
+  const coderRow = (over: Record<string, unknown> = {}) => ({
+    id: 'rev-2', batch_id: 'batch-2', politician_id: 'p1', full_name_raw: 'Jane Doe', topic_id: 't1',
+    topic_key: 'healthcare', proposed_value: 4, proposed_reasoning: 'reasoning text',
+    evidence: [
+      { url: 'https://a.example', date: '2024-05-01', date_precision: 'day',
+        snippets: [{ snippet_index: 0, snippet: SPAN, verdict: 'verified', matched_span: SPAN }] },
+      { url: 'https://b.example', date: '2019-01-01', date_precision: 'year',
+        snippets: [{ snippet_index: 0, snippet: SPAN, verdict: 'verified', matched_span: SPAN }] },
+    ],
+    verified_source_count: 2, threshold: 1, status: 'pending', re_research_attempted: false,
+    created_at: '2026-10-06T00:00:00Z', consensus_value: 4, evidence_tier: 'corroborated', ...over,
+  });
+  const tierCall = () => mockClientQuery.mock.calls.find((c) => String(c[0]).includes('SET evidence_tier'));
+  beforeEach(() => { mockQuery.mockClear(); mockClientQuery.mockClear(); mockConnect.mockClear(); mockRelease.mockClear(); });
+
+  it('writes each source with its date and precision', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [coderRow()] });
+    await resolveResearchReview('rev-2', 'editor-1');
+    const ev = mockClientQuery.mock.calls.filter((c) => String(c[0]).includes('politician_context_evidence'));
+    expect(ev).toHaveLength(2);
+    expect(String(ev[0][0])).toContain('source_date, source_date_precision');
+    expect(ev[0][1]).toEqual(['p1', 't1', 'https://a.example', SPAN, 0, 'batch-2', '2024-05-01', 'day']);
+    expect(ev[1][1]).toEqual(['p1', 't1', 'https://b.example', SPAN, 0, 'batch-2', '2019-01-01', 'year']);
+  });
+
+  it('publishes the queued tier when the approved chair is the coders\' chair', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [coderRow()] });
+    await resolveResearchReview('rev-2', 'editor-1');
+    expect(tierCall()?.[1]).toEqual(['p1', 't1', 'corroborated']);
+  });
+
+  it('publishes NO tier (and clears an old one) when the reviewer approves a different chair', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [coderRow()] });
+    await resolveResearchReview('rev-2', 'editor-1', [], 3, 'a different, explained position');
+    expect(tierCall()?.[1]).toEqual(['p1', 't1', null]);
+  });
+
+  it('a legacy row (no consensus) never touches the tier column, and writes no date columns', async () => {
+    const { resolveResearchReview } = await import('./researchEvidenceService.js');
+    mockQuery.mockResolvedValueOnce({ rows: [coderRow({ consensus_value: null, evidence_tier: null,
+      evidence: [{ url: 'https://a.example', snippets: [{ snippet_index: 0, snippet: SPAN, verdict: 'verified', matched_span: SPAN }] }] })] });
+    await resolveResearchReview('rev-2', 'editor-1');
+    expect(tierCall()).toBeUndefined();
+    const ev = mockClientQuery.mock.calls.filter((c) => String(c[0]).includes('politician_context_evidence'));
+    expect(String(ev[0][0])).not.toContain('source_date');
+  });
+});
+
