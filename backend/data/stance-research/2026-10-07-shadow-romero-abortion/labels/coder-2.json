@@ -1,0 +1,85 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "27e6aaca-8af5-4ec5-a30b-ac4aa19d2df5",
+      "office_id": "1ffda701-1dcc-44ef-a8d9-c9e270f67432",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "5ac42baa-f85b-55f4-b0e4-526f34936807",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "News quotes of Romero defending abortion rights and a right to choose; no gestational limit or exception stated, so only the pro-access side is shown.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e3da31ad-6ee0-5c41-9272-060ae9e36a75",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Reaction to the Arizona Supreme Court ruling; names no gestational limit or exception.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c54a7b69-2eb5-5347-956f-a227fbde5c7d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2022-06-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Supports abortion rights and the right to choose, with no stage or exception stated; the resolution itself is not in the snapshot.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Romero's own words ('We are reaffirming our commitment in support of abortion rights and the right to choose') show she is on the pro-access side, but none states a time limit or the stage after which only the mother's health would justify abortion. Nothing separates the rungs on that side, so the row is only a direction.",
+      "needs_source": [
+        "Tucson Mayor and Council resolution on reproductive and abortion rights (June 7, 2022), full text and Romero's vote",
+        "Romero's own first-person statement or questionnaire answer on gestational limits"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "c54a7b69-2eb5-5347-956f-a227fbde5c7d",
+          "text": "We are reaffirming our commitment in support of abortion rights and the right to choose and the right to choose and the health care concerns and the reproductive concerns of all persons",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "5ac42baa-f85b-55f4-b0e4-526f34936807",
+          "text": "I am not going to sit and wait as our constitutional rights are stripped away",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

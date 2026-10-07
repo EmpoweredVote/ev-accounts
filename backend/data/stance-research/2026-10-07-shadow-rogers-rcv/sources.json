@@ -1,0 +1,78 @@
+{
+  "batch_id": "2026-10-07-shadow-rogers-rcv",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1265",
+      "source_kind": "public-record",
+      "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+      "office_id": "8a24929f-d3f4-4a39-b8e8-8fa104e6e3be",
+      "topic_keys": [
+        "ranked-choice-voting"
+      ],
+      "instruments": [
+        "SB 1265 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-sb1265-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1265#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+      "office_id": "8a24929f-d3f4-4a39-b8e8-8fa104e6e3be",
+      "topic_keys": [
+        "ranked-choice-voting"
+      ],
+      "instruments": [
+        "SB 1265 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-sb1265-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1265S.htm",
+      "source_kind": "public-record",
+      "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+      "office_id": "8a24929f-d3f4-4a39-b8e8-8fa104e6e3be",
+      "topic_keys": [
+        "ranked-choice-voting"
+      ],
+      "instruments": [
+        "SB 1265 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=HB2552#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+      "office_id": "8a24929f-d3f4-4a39-b8e8-8fa104e6e3be",
+      "topic_keys": [
+        "ranked-choice-voting"
+      ],
+      "instruments": [
+        "HB 2552 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-hb2552-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/1R/bills/HB2552H.htm",
+      "source_kind": "public-record",
+      "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+      "office_id": "8a24929f-d3f4-4a39-b8e8-8fa104e6e3be",
+      "topic_keys": [
+        "ranked-choice-voting"
+      ],
+      "instruments": [
+        "HB 2552 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

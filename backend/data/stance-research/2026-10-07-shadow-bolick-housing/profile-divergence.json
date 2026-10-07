@@ -1,0 +1,83 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "sb1229(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "be745a55-d2dd-5052-b3e5-a9911f4f9047",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=SB1229#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "4498e821-95a7-504f-9468-b70584d036e7",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=SB1229",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "40486c7d-e370-58f0-ad18-92248e7cc86c",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/SB1229S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 2,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "sb1229(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "be745a55-d2dd-5052-b3e5-a9911f4f9047",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=SB1229#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "4498e821-95a7-504f-9468-b70584d036e7",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=SB1229",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "40486c7d-e370-58f0-ad18-92248e7cc86c",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/SB1229S.htm",
+        "profile": "az-azleg-bill-text@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+    "instrument": "sb1229(2025)",
+    "snapshots": [
+      {
+        "snapshot_id": "40486c7d-e370-58f0-ad18-92248e7cc86c",
+        "url": "https://www.azleg.gov/legtext/57leg/1R/bills/SB1229S.htm",
+        "profile": "az-azleg-bill-text@2"
+      },
+      {
+        "snapshot_id": "4498e821-95a7-504f-9468-b70584d036e7",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=SB1229",
+        "profile": "az-azleg-bill-status@4"
+      },
+      {
+        "snapshot_id": "be745a55-d2dd-5052-b3e5-a9911f4f9047",
+        "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=SB1229#senate-third",
+        "profile": "az-azleg-bill-status@4"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "tally-unreadable"
+    ],
+    "profiled": []
+  }
+]

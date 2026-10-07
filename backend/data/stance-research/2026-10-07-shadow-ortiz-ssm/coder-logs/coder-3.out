@@ -1,0 +1,11 @@
+I wrote `labels/coder-3.json` (via the Write tool, once). It has one row, same-sex-marriage, coded **rung 2**: "Guarantee same-sex marriage the same benefits and protections as any other marriage."
+
+- **Passages:** both passages are sponsorship records (`record_kind` "sponsor"), `chair-shaped`, `on-question` and `in-term`.
+  - HCR 2017 (2024) is her House co-sponsorship, a term in the same legislature.
+  - SCR 1024 (2025) is her current-term Senate co-sponsorship.
+  - Both propose the same operative text: "Marriage between two individuals shall not be prohibited or void on the basis of the sex, race, ethnicity or national origin of those individuals."
+- **Rung choice:** the annex says a measure that secures the right to marry and has no anti-discrimination clause is rung 2, not rung 1. Neither resolution has an anti-discrimination clause or a religious carve-out, so rungs 1 and 3 are excluded.
+- **Evidence:** both snapshots are in `rests_on`. They are separate instruments, so code should compute the tier as corroborated.
+- **Not filled in:** `tally_quote` is null because sponsorship has no vote count. `quotes` is empty and `needs_source` is empty, since no outside source was needed.
+
+The MCP servers that need authorization (Benevity, Candid, Canva, Figma, Harvey, WorkOS) are unavailable here. The `plugin:github:github` server failed to connect. None of them were needed for this task.

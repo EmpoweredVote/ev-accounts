@@ -1,0 +1,63 @@
+{
+  "batch_id": "2026-10-07-shadow-bolick-housing",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=SB1229",
+      "source_kind": "public-record",
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "SB 1229 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2025-sb1229-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=129&BillNumber=SB1229#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "SB 1229 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2025-sb1229-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/57leg/1R/bills/SB1229S.htm",
+      "source_kind": "public-record",
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "SB 1229 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.azsenaterepublicans.gov/press-releases/bipartisan-starter-homes-act-to-make-homeownership-affordable-for-hardworking-arizonans-passes-senate",
+      "source_kind": "own-site",
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_keys": [
+        "housing"
+      ],
+      "instruments": [
+        "SB 1229 (2025)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

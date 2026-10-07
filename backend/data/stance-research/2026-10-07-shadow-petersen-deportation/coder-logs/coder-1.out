@@ -1,0 +1,8 @@
+I wrote the labels to `labels/coder-1.json`. Petersen gets no chair on `deportation`: it's a blank, reason `no-evidence`.
+
+- **Why it's blank:** All four sources are his own words in Senate Republican press releases from 2025. Every one is about the state cooperating with federal immigration enforcement. That covers the AZ ICE Act (SB 1164) and his calls on the governor and attorney general to cooperate on "deportations of criminal illegal aliens."
+- **How I coded the passages:** The topic's annex treats cooperation with federal enforcement as a separate immigration question, so it's "adjacent" here. Its rule is a `no-evidence` blank, not `direction-only`. None of the four passages says who should be deported or who should stay, so none matches a rung's clauses. I coded each as `adjacent`, `statement-other`, `off-axis` and `in-term`.
+- **SB 1164:** I didn't code his sponsorship as a record. The only account of it is a press release, and at the state level only his own words count on this topic anyway. So I left `needs_source` empty: even the bill page wouldn't change the result.
+- **Quotes:** I included two of his cooperation quotes. Both are tiered `direction` and marked not quotable (`off-question`), because they don't answer how far deportation should go.
+
+Several connectors aren't usable in this session; none affected this task. Benevity, Candid, Canva, Figma, Harvey and WorkOS need authorizing in your claude.ai connector settings, and the GitHub plugin failed to connect.

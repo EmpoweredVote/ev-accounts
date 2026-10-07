@@ -1,0 +1,79 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "27e6aaca-8af5-4ec5-a30b-ac4aa19d2df5|1ffda701-1dcc-44ef-a8d9-c9e270f67432|af2fdfd6-02c4-49df-b09c-cf8536f4773f#e3da31ad-6ee0-5c41-9272-060ae9e36a75",
+          "values": [
+            "on-question",
+            "on-question",
+            "adjacent"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0.4285714285714286,
+      "examples": [
+        {
+          "unit": "27e6aaca-8af5-4ec5-a30b-ac4aa19d2df5|1ffda701-1dcc-44ef-a8d9-c9e270f67432|af2fdfd6-02c4-49df-b09c-cf8536f4773f#e3da31ad-6ee0-5c41-9272-060ae9e36a75",
+          "values": [
+            "direction-only",
+            "rhetorical",
+            "rhetorical"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0.6,
+      "examples": [
+        {
+          "unit": "27e6aaca-8af5-4ec5-a30b-ac4aa19d2df5|1ffda701-1dcc-44ef-a8d9-c9e270f67432|af2fdfd6-02c4-49df-b09c-cf8536f4773f#5ac42baa-f85b-55f4-b0e4-526f34936807",
+          "values": [
+            "in-term",
+            "undated",
+            "undated"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v2_relevance",
+    "v4_shape",
+    "v5_time"
+  ]
+}

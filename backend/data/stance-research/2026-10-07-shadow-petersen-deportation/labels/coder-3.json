@@ -1,0 +1,92 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b77f03e5-865f-5127-b241-bb50aa3c05d6",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-21",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Petersen's quoted defence of the AZ ICE Act is about state cooperation with federal enforcement, not who is removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fbb70c81-deb3-5e4d-a911-0e13e105c086",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-04-10",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Quoted words urge all levels of government to cooperate on enforcement; that is the cooperation question, and the SB 1164 sponsorship is only reported here.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0d9b588b-ede4-58fd-8122-06645a10b2b4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-02-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Quoted words support state law enforcement joining federal enforcement; it says nothing about which undocumented immigrants are removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3deffd83-7442-55e5-87d4-36ab58b0274e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-06-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "He calls for deportations of criminal illegal aliens, which shows the pro-removal side but does not say only those, all, or recent arrivals.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own words call for \"deportations of criminal illegal aliens\", which shows he favours removal but states neither that only violent offenders are removed nor that all are, so no rung's clauses are matched. The AZ ICE Act material concerns state cooperation with federal enforcement, which is adjacent to this ladder.",
+      "needs_source": [
+        "SB 1164 (2025) bill page and Senate and House roll calls (the press releases only report his sponsorship, and the bill is a cooperation measure)",
+        "Petersen's own first-person statement on who should be deported (questionnaire, issue page or interview)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "3deffd83-7442-55e5-87d4-36ab58b0274e",
+          "text": "I am calling on the governor and the attorney general to honor the oath of office they swore to uphold by cooperating with the Trump Administration on enforcement of federal immigration laws, deportations of criminal illegal aliens, and to hold accountable those who violate state laws when demonstrations spiral out of control.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

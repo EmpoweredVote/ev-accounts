@@ -1,0 +1,12 @@
+I wrote one row, for Márquez on gun-policy, to `labels/coder-3.json`. It is BLANK `compound-partial`, with `rests_on` empty.
+
+**Why compound-partial:** Márquez is the prime sponsor of HB 2621 and HCR 2034. Both route every sale or transfer through a licensed dealer with a background check, which meets rung 3's "universal background checks on every sale" clause. Rung 3 also needs "allow all types of firearms", and a checks bill says nothing about bans. The annex says not finding a ban cosponsorship is not evidence for that clause.
+
+**Passage codes:**
+- **HB 2621 bill text, HB 2621 status page, HCR 2034 text:** each is coded `own-act`, `on-question`, `record` (`sponsor`), `direction-only`, `in-term`.
+- **Vote status:** HB 2621 was held in committee, so there was no vote and no `tally_quote`.
+- **Quotes:** the row carries none.
+
+**`needs_source` (two items):**
+- Márquez's own words showing he opposes bans on a type of firearm.
+- A recorded vote or sponsorship that shows where he stands on banning a type of firearm.

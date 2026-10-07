@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "a3b413d2-e1a1-5333-b0ca-c259e5dbfdd8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1700 (2023)",
+          "provision_quote": null,
+          "note": "Aye on Senate third reading of SB1700 (16-12); the vote page prints the voter and tally but not the provision.",
+          "record_kind": "vote",
+          "actor_quote": "SHAMP Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "7dd05169-48e0-58e4-a021-42a191f1b4d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1700 (2023)",
+          "provision_quote": "If the department agrees with the parent's findings, the department shall add the book to the list described in subsection A of this section",
+          "note": "Removal follows a state department finding, not a committee of educators and parents, so rung 3 clause [b] fails.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "SB1700 removes a book statewide only after the Department of Education reviews a parent's submission and agrees, which meets only the 'review finding before removal' side of 'Remove a challenged book only if a review committee of educators and parents finds it unsuitable'. The reviewer is a state agency rather than a committee of educators and parents, and the bill also orders exclusion of books by content test, so no rung is fully matched.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

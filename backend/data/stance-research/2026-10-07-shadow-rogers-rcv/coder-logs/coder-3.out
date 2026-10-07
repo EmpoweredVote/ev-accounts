@@ -1,0 +1,8 @@
+I wrote `labels/coder-3.json` for the Wendy Rogers `ranked-choice-voting` row. It codes the chair as **rung 5**, "Ban ranked-choice voting by law."
+
+- **Evidence:** Rogers co-sponsored SB 1265 (2023) and voted Yes on its Senate third reading (16-13). She also voted Yes on HB 2552 (2023), the companion bill (16-14).
+- **Why rung 5:** Both bills are single-subject. Their operative section 16-605(B)(2) bars the state, cities, towns and counties from tabulation that eliminates candidates through multiple rounds or transfers votes. That is a legal ban on ranked-choice voting.
+- **Passages:** All five passages are coded `record`, `chair-shaped` and `in-term`. `rests_on` lists all five. Each of the two instruments has its actor and vote-count quotes on the vote page and its provision on the bill-text page. SB 1265's co-sponsor line comes from the bill overview page.
+- **Other fields:** No `needs_source` entries and no statement quotes. Every quoted string was copied from the supplied sources, but I did not run the code check on the file.
+
+The WorkOS, Figma, Canva, Benevity, Candid and Harvey connectors need authorization through your claude.ai connector settings. The GitHub plugin failed to connect with a malformed Authorization header. None of these were needed for this task.

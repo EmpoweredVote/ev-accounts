@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "687e6f07-f71a-41b4-8525-b509b2cebb42",
+      "office_id": "2aed98f5-ab9e-49d3-b6be-e8fd257518cd",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "a3b413d2-e1a1-5333-b0ca-c259e5dbfdd8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1700 (2023, 56th Legislature, 1st Regular Session)",
+          "provision_quote": null,
+          "note": "Senate third-reading roll call: Shamp voted Y; 12 of 28 voting No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "SHAMP Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "7dd05169-48e0-58e4-a021-42a191f1b4d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1700 (2023, 56th Legislature, 1st Regular Session)",
+          "provision_quote": "The Department shall review each submission made by a parent, together with the basis for the parent's findings and, If the department agrees with the parent's findings, the department shall add the book to the list described in subsection A of this section.",
+          "note": "Single-subject state challenge-process bill: a parent's challenge leads to removal statewide after a review finding by the department of education, a state agency rather than a committee of educators and parents.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Shamp voted Y on SB 1700 (2023). Under the bill, a parent's challenge leads to statewide removal once the department of education \"agrees with the parent's findings\". That meets the review-finding clause of \"Remove a challenged book only if a review committee of educators and parents finds it unsuitable\". The reviewer, though, is a state agency rather than \"a review committee of educators and parents\", and the bill does not pull books while they are under review (rung 4). Per the annex, a review by a different body meets only [a], so the row is BLANK compound-partial on the removal side.",
+      "needs_source": [
+        "Janae Shamp's own words (questionnaire, issue page, floor statement) on how schools should handle book challenges",
+        "Any other Shamp sponsorship or vote on a school library book-challenge bill (2023-present) from azleg.gov"
+      ],
+      "quotes": []
+    }
+  ]
+}
