@@ -8,6 +8,11 @@
  * See docs/superpowers/specs/2026-04-30-stance-research-verification-design.md
  */
 
+// ⚠ The typographic entries below are the ones a NEWS page actually emits. Without them
+// normalizeText left `&ldquo;` and `&mdash;` as literal text: matching still worked, because the
+// snippet was copied from the same extracted page and carried the same literal, but a snippet that
+// honestly typed a real “ or — could never match that page. They are listed AFTER `&amp;` so a
+// doubly-escaped `&amp;mdash;` resolves the same way it always has.
 const HTML_ENTITIES: Record<string, string> = {
   '&amp;': '&',
   '&lt;': '<',
@@ -16,7 +21,36 @@ const HTML_ENTITIES: Record<string, string> = {
   '&apos;': "'",
   '&nbsp;': ' ',
   '&#39;': "'",
+  '&ldquo;': '“',
+  '&rdquo;': '”',
+  '&lsquo;': '‘',
+  '&rsquo;': '’',
+  '&mdash;': '—',
+  '&ndash;': '–',
+  '&hellip;': '…',
+  // § turns up in statute text this corpus cites constantly ("RCW § 35.21.830").
+  '&sect;': '§',
 };
+
+/**
+ * Decode a page's character references for DISPLAY, and nothing else.
+ *
+ * {@link normalizeText} folds case, quotes, dashes and diacritics so two spellings of the same
+ * sentence compare equal — useful for matching, useless for anything a person reads. The published
+ * citation is the matched span, and it was stored exactly as the extracted page had it, so a span
+ * cut from a news page put a literal `&mdash;` in front of a voter. Measured 2026-10-06: 3 of the
+ * 12 live citations in the Redmond and Duvall batches.
+ *
+ * This keeps case, real quotation marks and spacing intact and only turns references into the
+ * characters they stand for. A malformed reference is left alone rather than guessed at.
+ */
+export function decodeForDisplay(input: string): string {
+  let out = decodeNumericEntities(input);
+  for (const [entity, replacement] of Object.entries(HTML_ENTITIES)) {
+    out = out.split(entity).join(replacement);
+  }
+  return out;
+}
 
 // 🔴 Decode numeric character references BEFORE anything else touches punctuation.
 // `&#8217;` (decimal) and `&#x2019;` (hex) are both the curly right single quote — neither is in
@@ -549,7 +583,10 @@ export async function verifyEvidence(args: {
           });
           judged.push({
             snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: proxVerdict,
-            ...(proxVerdict.verdict === 'verified' ? { matchedSpan: span.text } : {}),
+            // I6 + display: the span is what a voter reads, so it is stored decoded. The snippet beside it
+            // keeps the researcher's copy of the page; both fold through normalizeText, so
+            // validStoredSpan still pairs them at approval.
+            ...(proxVerdict.verdict === 'verified' ? { matchedSpan: decodeForDisplay(span.text) } : {}),
           });
         }
       }

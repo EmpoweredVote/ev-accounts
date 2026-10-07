@@ -250,6 +250,45 @@ describe('checkNameProximity with aliases', () => {
   });
 });
 
+import { decodeForDisplay } from './researchVerifier.js';
+
+// The published citation is the matched span. It was stored exactly as the page's extracted text
+// had it, so a span cut from a news page carried raw `&ldquo;` and `&mdash;` into what a voter
+// reads. Measured 2026-10-06: 3 of 12 live citations in the Redmond and Duvall batches.
+describe('decodeForDisplay', () => {
+  it('decodes the typographic named entities a news page actually uses', () => {
+    expect(decodeForDisplay('Council position 6 &mdash; Jenn Hernandez'))
+      .toBe('Council position 6 — Jenn Hernandez');
+    expect(decodeForDisplay('&ldquo;Placing a levy&rdquo; said the Mayor'))
+      .toBe('“Placing a levy” said the Mayor');
+    expect(decodeForDisplay('the city&rsquo;s finances')).toBe('the city’s finances');
+    expect(decodeForDisplay('RCW &sect; 35.21.830')).toBe('RCW § 35.21.830');
+  });
+
+  it('decodes numeric and hex references', () => {
+    expect(decodeForDisplay('you&#8217;re here')).toBe('you’re here');
+    expect(decodeForDisplay('you&#x2019;re here')).toBe('you’re here');
+  });
+
+  it('preserves case, straight quotes and spacing — it is not normalizeText', () => {
+    const s = 'The Mayor said "no" — twice.';
+    expect(decodeForDisplay(s)).toBe(s);
+    expect(decodeForDisplay('A  B')).toBe('A  B');
+  });
+
+  it('leaves a malformed reference alone rather than throwing', () => {
+    expect(decodeForDisplay('a &notanentity; b &#; c')).toBe('a &notanentity; b &#; c');
+  });
+});
+
+describe('normalizeText folds the same entities, so a decoded span still matches its snippet', () => {
+  it('folds named typographic entities to the characters it already normalizes', () => {
+    expect(normalizeText('a &mdash; b')).toBe(normalizeText('a — b'));
+    expect(normalizeText('&ldquo;x&rdquo;')).toBe(normalizeText('“x”'));
+    expect(normalizeText('city&rsquo;s')).toBe(normalizeText('city’s'));
+  });
+});
+
 import { aliasesFrom } from './researchVerifier.js';
 
 describe('aliasesFrom', () => {
