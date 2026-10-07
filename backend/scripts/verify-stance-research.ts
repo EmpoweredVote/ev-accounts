@@ -81,7 +81,9 @@ import {
   type PoliticianNames,
   type VerifiedRow,
 } from '../src/lib/researchVerifier.js';
-import { createVerificationFetchSession } from '../src/lib/verificationFetch.js';
+import { createVerificationFetchSession, htmlToText } from '../src/lib/verificationFetch.js';
+import { markHumanSaved } from '../src/lib/humanSavedCopy.js';
+import { loadHumanSavedCopies } from './lib/humanSavedCopies.js';
 import { withOtrTranscripts } from '../src/lib/otrTranscript.js';
 import {
   buildEvidenceRowsForInsert,
@@ -486,6 +488,25 @@ const { pushable, needsReResearch } = await verifyEvidence({
 
 const failedUrls = (row: VerifiedRow) => row.failedSources.map((s) => s.url);
 
+// Human-saved own-site copies (ruling 2026-10-07, option B). A source that failed machine verification
+// and has a person-saved copy is MARKED for the reviewer — it stays failed, never counts toward the
+// threshold, and publishes no span. Own-site entries of <dir>/sources.json only.
+const humanSaved = loadHumanSavedCopies(DIR, htmlToText);
+for (const w of humanSaved.warnings) console.warn(`WARN: ${w}`);
+const humanSavedCount = new Map<VerifiedRow, number>();
+if (humanSaved.copies.size) {
+  for (const row of [...pushable, ...needsReResearch]) {
+    let n = 0;
+    for (const src of row.failedSources) {
+      const copy = humanSaved.copies.get(src.url.trim());
+      if (!copy || src.snippets.some((sn) => sn.verdict.verdict === 'url_not_cited')) continue;
+      src.humanSaved = markHumanSaved(copy, src.snippets);
+      if (src.humanSaved.snippets_found.length > 0) n++;
+    }
+    if (n) humanSavedCount.set(row, n);
+  }
+}
+
 // Existing OPEN-season values — the thing a write would replace.
 const existing = new Map<string, number>();
 for (const pid of new Set([...idByName.values()].filter((v): v is string => Boolean(v)))) {
@@ -557,6 +578,7 @@ const decided: Decided[] = [...pushable, ...needsReResearch].map((row) => {
     existingOpenSeasonValue: ex === undefined ? null : ex,
     displayedValue: shown === undefined ? null : shown.value,
     autoPushEnabled: AUTO_PUSH,
+    humanSavedSourceCount: humanSavedCount.get(row) ?? 0,
   });
   return { row, pid, tid, decision };
 });

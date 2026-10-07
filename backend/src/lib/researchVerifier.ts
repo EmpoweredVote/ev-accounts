@@ -420,6 +420,11 @@ export interface VerifiedSnippet {
 export interface VerifiedSource {
   url: string;
   snippets: VerifiedSnippet[];
+  /**
+   * A person-saved copy of this own-site page exists (src/lib/humanSavedCopy.ts). Reviewer
+   * information only: it never changes a verdict and never counts toward the source threshold.
+   */
+  humanSaved?: { sha256: string; snippets_found: number[]; snippets_total: number };
 }
 
 export interface VerifiedRow {
