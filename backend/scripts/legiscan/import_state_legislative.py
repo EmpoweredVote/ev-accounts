@@ -32,6 +32,7 @@ import logging
 import os
 import sys
 import tempfile
+import time
 import zipfile
 from datetime import datetime
 from pathlib import Path
@@ -103,8 +104,29 @@ def _load_all_state_sessions() -> dict:
     return raw.get("states", {})
 
 
-# State session configurations — loaded from state_legislative_config.json
+# Per-state overrides loaded from state_legislative_config.json. States NOT listed
+# there get their two newest regular sessions picked automatically from LegiScan's
+# dataset list (see resolve_state_config / pick_sessions).
 STATE_SESSIONS = _load_all_state_sessions()
+
+STATE_NAMES = {
+    "AL": "Alabama", "AK": "Alaska", "AZ": "Arizona", "AR": "Arkansas", "CA": "California",
+    "CO": "Colorado", "CT": "Connecticut", "DE": "Delaware", "DC": "District of Columbia",
+    "FL": "Florida", "GA": "Georgia", "HI": "Hawaii", "ID": "Idaho", "IL": "Illinois",
+    "IN": "Indiana", "IA": "Iowa", "KS": "Kansas", "KY": "Kentucky", "LA": "Louisiana",
+    "ME": "Maine", "MD": "Maryland", "MA": "Massachusetts", "MI": "Michigan",
+    "MN": "Minnesota", "MS": "Mississippi", "MO": "Missouri", "MT": "Montana",
+    "NE": "Nebraska", "NV": "Nevada", "NH": "New Hampshire", "NJ": "New Jersey",
+    "NM": "New Mexico", "NY": "New York", "NC": "North Carolina", "ND": "North Dakota",
+    "OH": "Ohio", "OK": "Oklahoma", "OR": "Oregon", "PA": "Pennsylvania",
+    "RI": "Rhode Island", "SC": "South Carolina", "SD": "South Dakota", "TN": "Tennessee",
+    "TX": "Texas", "UT": "Utah", "VT": "Vermont", "VA": "Virginia", "WA": "Washington",
+    "WV": "West Virginia", "WI": "Wisconsin", "WY": "Wyoming", "PR": "Puerto Rico",
+}
+
+# LegiScan allows about 2 requests a second. Pause between calls to stay under it.
+MIN_SECONDS_BETWEEN_QUERIES = 0.6
+_last_query_at = 0.0
 
 # Common nickname <-> formal name mappings for legislator matching.
 # Each entry maps both directions: "dave" matches "david" and vice versa.
@@ -336,6 +358,11 @@ def legiscan_query(api_key, op, params=None):
     if params:
         req_params.update(params)
 
+    global _last_query_at
+    wait = MIN_SECONDS_BETWEEN_QUERIES - (time.monotonic() - _last_query_at)
+    if wait > 0:
+        time.sleep(wait)
+    _last_query_at = time.monotonic()
     resp = requests.get(LEGISCAN_BASE, params=req_params, timeout=60)
     resp.raise_for_status()
     data = resp.json()
@@ -364,6 +391,41 @@ def get_dataset_list(api_key, state_code):
     if isinstance(datasets, dict):
         datasets = list(datasets.values())
     return datasets
+
+
+def resolve_state_config(state_code):
+    """Config for a state: the file entry if present, else derived from STATE_NAMES."""
+    if state_code in STATE_SESSIONS:
+        return STATE_SESSIONS[state_code]
+    name = STATE_NAMES[state_code]
+    return {"name": name, "jurisdiction": name.lower()}
+
+
+def pick_session_datasets(datasets, config, sessions_to_import):
+    """Return [(label, year_start, dataset)] for the sessions to import.
+
+    A config with explicit current/previous year starts wins. Otherwise the two
+    newest regular (non-special) sessions are used: newest = current, next = previous.
+    """
+    picks = []
+    if "current_year_start" in config:
+        wanted = {
+            "current": config["current_year_start"],
+            "previous": config.get("previous_year_start"),
+        }
+        for label in ("current", "previous"):
+            if label in sessions_to_import and wanted[label]:
+                picks.append((label, wanted[label], find_dataset_for_session(datasets, wanted[label])))
+        return picks
+    regular = sorted(
+        (d for d in datasets if d.get("special") == 0),
+        key=lambda d: d.get("year_start", 0),
+        reverse=True,
+    )
+    for label, ds in zip(("current", "previous"), regular[:2]):
+        if label in sessions_to_import:
+            picks.append((label, ds.get("year_start"), ds))
+    return picks
 
 
 def find_dataset_for_session(datasets, year_start):
@@ -568,8 +630,9 @@ def build_legislator_bridge(api_key, legiscan_session_id, state_code, jurisdicti
             WHERE LOWER(p.last_name) = LOWER(%s)
               AND LOWER(p.first_name) = ANY(%s)
               AND d.district_type IN ('STATE_UPPER', 'STATE_LOWER', 'STATE_EXEC')
+              AND UPPER(d.state) = %s
             """,
-            (last_name, list(name_variants)),
+            (last_name, list(name_variants), state_code.upper()),
         )
         matches = cur.fetchall()
 
@@ -1115,7 +1178,7 @@ def import_state(api_key, db_url, conn, state_code, sessions_to_import, dry_run=
     Total: ~3-5 queries per state instead of thousands.
     db_url is passed so the bill import can reconnect if Supabase drops the connection.
     """
-    config = STATE_SESSIONS[state_code]
+    config = resolve_state_config(state_code)
     jurisdiction = config["jurisdiction"]
     results = {
         "bridge_rows": 0,
@@ -1132,21 +1195,21 @@ def import_state(api_key, db_url, conn, state_code, sessions_to_import, dry_run=
     datasets = get_dataset_list(api_key, state_code)
     logging.info(f"Found {len(datasets)} datasets for {state_code}")
 
-    session_targets = []
-    if "current" in sessions_to_import:
-        session_targets.append(("current", config["current_year_start"]))
-    if "previous" in sessions_to_import:
-        session_targets.append(("previous", config["previous_year_start"]))
+    session_targets = pick_session_datasets(datasets, config, sessions_to_import)
+    if not session_targets:
+        msg = f"No regular-session datasets found for {state_code}"
+        logging.error(msg)
+        results["errors"].append(msg)
+        return results
 
     all_committee_db_map = {}
 
-    for label, year_start in session_targets:
+    for label, year_start, ds in session_targets:
         logging.info(f"\n{'=' * 60}")
         logging.info(f"Processing {config['name']} {label} session (year_start={year_start})")
         logging.info(f"{'=' * 60}")
 
-        # 2. Find matching dataset
-        ds = find_dataset_for_session(datasets, year_start)
+        # 2. Dataset for this session (already picked above)
         if not ds:
             msg = f"No dataset found for {state_code} year_start={year_start}"
             logging.error(msg)
@@ -1160,6 +1223,15 @@ def import_state(api_key, db_url, conn, state_code, sessions_to_import, dry_run=
             f"Found dataset: session_id={legiscan_session_id}, "
             f"hash={dataset_hash[:12]}..., size={ds.get('dataset_size', '?')} bytes"
         )
+
+        # 2b. Unchanged since the last successful import? Skip before spending any query.
+        # (A grown legislator roster is not noticed here. Use --force after roster changes.)
+        if not dry_run and not force and should_skip_session(
+            legiscan_session_id, dataset_hash, 0
+        ):
+            logging.info(f"Session {legiscan_session_id} unchanged (hash match). Skipping.")
+            results["skipped"] = results.get("skipped", 0) + 1
+            continue
 
         # 3. Download and extract dataset (1 API call, or cached)
         bills_data, roll_calls_data = download_and_extract_dataset(
@@ -1239,13 +1311,35 @@ def import_state(api_key, db_url, conn, state_code, sessions_to_import, dry_run=
 # CLI entry point
 # ---------------------------------------------------------------------------
 
+def states_with_legislators(conn):
+    """State codes (upper case) that have a sitting state legislator in our database."""
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            SELECT DISTINCT UPPER(d.state)
+            FROM essentials.office_terms ot
+            JOIN essentials.offices o ON o.id = ot.office_id
+            JOIN essentials.districts d ON d.id = o.district_id
+            WHERE d.district_type IN ('STATE_UPPER', 'STATE_LOWER')
+              AND ot.term_end IS NULL
+            """
+        )
+        found = {r[0] for r in cur.fetchall()}
+    return sorted(c for c in found if c in STATE_NAMES)
+
+
 def main():
     parser = argparse.ArgumentParser(
-        description="Import state legislative data from LegiScan API (Dataset Edition)"
+        description="Import state legislative data from LegiScan weekly datasets"
     )
-    parser.add_argument(
-        "--state", required=True, choices=list(STATE_SESSIONS.keys()),
-        help="State code (IN or CA)"
+    target = parser.add_mutually_exclusive_group(required=True)
+    target.add_argument("--state", choices=sorted(STATE_NAMES), help="One state code, e.g. CA")
+    target.add_argument(
+        "--states", help="Comma-separated state codes, e.g. CA,IN,TX"
+    )
+    target.add_argument(
+        "--all", action="store_true",
+        help="Every state that has a sitting state legislator in our database",
     )
     parser.add_argument(
         "--sessions", default="current,previous",
@@ -1281,21 +1375,6 @@ def main():
         logging.error("DATABASE_URL environment variable required")
         sys.exit(1)
 
-    # Budget check before starting
-    budget_used = read_budget()
-    remaining = BUDGET_LIMIT - budget_used
-    logging.info(f"LegiScan budget: {budget_used}/{BUDGET_LIMIT} used, {remaining} remaining")
-    if remaining < 1000:
-        logging.warning(
-            f"Budget low ({remaining} remaining). A dataset run costs about 5 queries per state."
-        )
-    if remaining < 100:
-        logging.error(
-            f"Budget nearly exhausted ({remaining} remaining). "
-            "Wait for monthly reset."
-        )
-        sys.exit(1)
-
     sessions_to_import = [s.strip() for s in args.sessions.split(",")]
     invalid = [s for s in sessions_to_import if s not in ("current", "previous")]
     if invalid:
@@ -1303,27 +1382,60 @@ def main():
         sys.exit(1)
 
     conn = psycopg2.connect(db_url)
+    totals = {"bridge_rows": 0, "bills": 0, "votes": 0, "cosponsors": 0,
+              "committees": 0, "memberships": 0, "skipped": 0}
+    failed_states = []
     try:
-        results = import_state(api_key, db_url, conn, args.state, sessions_to_import, args.dry_run, args.force)
+        if args.all:
+            states = states_with_legislators(conn)
+        elif args.states:
+            states = [c.strip().upper() for c in args.states.split(",") if c.strip()]
+            unknown = [c for c in states if c not in STATE_NAMES]
+            if unknown:
+                logging.error(f"Unknown state codes: {unknown}")
+                sys.exit(1)
+        else:
+            states = [args.state]
+        logging.info(f"States to process ({len(states)}): {' '.join(states)}")
 
-        logging.info(f"\n{'=' * 60}")
-        logging.info(f"IMPORT COMPLETE: {args.state}")
-        logging.info(f"  Bridge rows:   {results['bridge_rows']}")
-        logging.info(f"  Bills:         {results['bills']}")
-        logging.info(f"  Cosponsors:    {results['cosponsors']}")
-        logging.info(f"  Votes:         {results['votes']}")
-        logging.info(f"  Committees:    {results['committees']}")
-        logging.info(f"  Memberships:   {results['memberships']}")
-        logging.info(f"  Errors:        {len(results['errors'])}")
-        if results["errors"]:
-            logging.error("First errors:")
-            for e in results["errors"][:10]:
-                logging.error(f"  - {e}")
+        for state_code in states:
+            # Budget check before each state (a state costs about 1 to 5 queries)
+            budget_used = read_budget()
+            remaining = BUDGET_LIMIT - budget_used
+            logging.info(f"LegiScan budget: {budget_used}/{BUDGET_LIMIT} used, {remaining} remaining")
+            if remaining < 100:
+                logging.error("Budget nearly exhausted. Stopping. Wait for the monthly reset.")
+                failed_states.append(f"{state_code} (budget)")
+                break
+            try:
+                results = import_state(
+                    api_key, db_url, conn, state_code, sessions_to_import, args.dry_run, args.force
+                )
+            except Exception as exc:  # one bad state must not stop the others
+                logging.exception(f"{state_code} failed: {exc}")
+                failed_states.append(state_code)
+                try:
+                    conn.rollback()
+                except Exception:
+                    conn = psycopg2.connect(db_url)
+                continue
+            for k in totals:
+                totals[k] += results.get(k, 0)
+            if results["errors"]:
+                failed_states.append(state_code)
+                logging.error(f"{state_code}: {len(results['errors'])} errors, first: {results['errors'][:3]}")
+
         budget_used = read_budget()
+        logging.info(f"\n{'=' * 60}")
+        logging.info(f"IMPORT COMPLETE: {len(states)} state(s){' (dry run)' if args.dry_run else ''}")
+        for k, v in totals.items():
+            logging.info(f"  {k:<13} {v}")
+        logging.info(f"  Problem states: {failed_states or 'none'}")
         logging.info(f"  Budget used:   {budget_used}/{BUDGET_LIMIT} ({BUDGET_LIMIT - budget_used} remaining)")
         logging.info(f"{'=' * 60}")
     finally:
         conn.close()
+    sys.exit(1 if failed_states else 0)
 
 
 if __name__ == "__main__":
