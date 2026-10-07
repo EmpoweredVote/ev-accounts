@@ -208,8 +208,23 @@ describe('getPoliticianContext — the newest season, never two rows', () => {
   });
 
   it('returns the newest row when the pair has one', async () => {
-    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'r', sources: ['u'] }] });
-    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: ['u'] });
+    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'r', sources: ['u'], evidence: [] }] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: ['u'], evidence: [] });
+  });
+
+  // CA_0301. The date of each source rides along; `sources` is unchanged for old callers.
+  it('returns per-source dates, scoped to the chosen row\'s own sources, as text', async () => {
+    const evidence = [{ source_url: 'u', source_date: '2022-01-01', source_date_precision: 'year' }];
+    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'r', sources: ['u'], evidence }] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: ['u'], evidence });
+
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('politician_context_evidence');
+    expect(sql).toMatch(/e\.source_url = ANY\(COALESCE\(c\.sources/);
+    expect(sql).toMatch(/e\.source_date::text/);
+    expect(sql).toMatch(/e\.source_date IS NOT NULL/);
+    expect(sql).toMatch(/DISTINCT ON \(e\.source_url\)/);
   });
 
   // The route turns null into a 404, which is the documented contract for a
