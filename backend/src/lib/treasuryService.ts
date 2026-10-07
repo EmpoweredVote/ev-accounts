@@ -1105,8 +1105,14 @@ export interface NestedCategory {
   subcategories?: NestedCategory[];
   lineItems?: Array<{
     description: string;
-    approvedAmount: number;
-    actualAmount: number;
+    // ⚠⚠ NULLABLE, AND THE NULL IS THE POINT. `approved_amount` is NULL for
+    // every source that publishes no adopted budget -- the WA SAO loader writes
+    // `aa: null` on purpose, because a BARS or GAAP statement reports what was
+    // SPENT and never what was budgeted. Typing these `number` forced the
+    // mapper to invent a 0, and Treasury Tracker published "Budgeted $0 /
+    // Actual $140,249,393" for the City of Redmond.
+    approvedAmount: number | null;
+    actualAmount: number | null;
     basePay?: number | null;
     benefits?: number | null;
     overtime?: number | null;
@@ -1270,8 +1276,24 @@ export async function getBudgetById(
       subcategories: [] as NestedCategory[],
       lineItems: catLineItems?.map(li => ({
         description: li.description,
-        approvedAmount: li.approved_amount !== null ? Number(li.approved_amount) : 0,
-        actualAmount: li.actual_amount !== null ? Number(li.actual_amount) : 0,
+        // ⚠⚠ NULL SURVIVES AS NULL. These two coerced to 0 while every
+        // neighbouring nullable field below preserved null -- and the write
+        // path stores `data.approvedAmount ?? null`, and the route schema
+        // declares both `.optional().nullable()`. The schema, the writer and
+        // the validator all agreed NULL was legal; this reader was the only
+        // place that disagreed, and it is what manufactured the $0 budget.
+        //
+        // ⚠ A REAL ZERO IS STILL 0. `Number('0')` is 0 and stays 0 -- a source
+        // that genuinely budgeted nothing for a line must keep saying so, or
+        // this trades one wrong answer for another.
+        //
+        // ⚠ The symptom was seen before and had a DIFFERENT cause:
+        // buildBudgetTree once had `a`/`aa` inverted, leaving approved_amount
+        // NULL for San Francisco's 19,299 items. That was a bug, fixed by
+        // populating the column. Washington's NULLs are the fact, not a bug.
+        // Preserving NULL is what tells the two apart.
+        approvedAmount: li.approved_amount !== null ? Number(li.approved_amount) : null,
+        actualAmount: li.actual_amount !== null ? Number(li.actual_amount) : null,
         basePay: li.base_pay !== null ? Number(li.base_pay) : null,
         benefits: li.benefits !== null ? Number(li.benefits) : null,
         overtime: li.overtime !== null ? Number(li.overtime) : null,
