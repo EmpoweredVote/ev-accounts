@@ -268,13 +268,52 @@ export const COMMON_LAST_NAMES: ReadonlySet<string> = new Set([
 // Johnson" failed this test while "Councilmember" would have passed.
 const TITLE_PATTERN = /\b(sen|sen\.|senator|rep|rep\.|representative|gov|gov\.|governor|pres|pres\.|president|mayor|councilor|councilman|councilwoman|councilmember|council member|city council member|commissioner|county commissioner|alderman|alderwoman|alderperson|supervisor|trustee|selectman|delegate|asm|asm\.|assemblymember|judge|justice|chief|sheriff|hon|hon\.|honorable)\b/;
 
+/** How many alternate names one politician may contribute. A bound, not a judgement: the list is
+ * scanned once per snippet, so a row carrying a hundred names must not slow every check. */
+export const MAX_ALIASES = 8;
+
+/**
+ * The usable alternate names on a politician row (`essentials.politicians.alternate_names`).
+ *
+ * A source routinely prints the name a person put on the ballot while our record holds their legal
+ * one. Measured on Duvall WA 2026-10-06: the Snoqualmie Valley Record, the King County voters'
+ * pamphlet and the election results all write "Jenn Hernandez" where the record says "Jennifer
+ * Hernandez". Neither name test fired — the full name is absent from the page, and `hernandez` is
+ * on {@link COMMON_LAST_NAMES}, which demands a title no article has reason to give a candidate —
+ * so a real, read, chair-level answer could not be cited.
+ *
+ * 🔴 ONE-TOKEN NAMES ARE DROPPED, and that is the whole safety property. An alias is accepted as a
+ * FULL name, which is precisely the path that bypasses the common-surname rule; a bare "Jenn" would
+ * hand that bypass to every page carrying a common first name. Two tokens keeps an alias at least
+ * as specific as the full name it stands in for.
+ */
+export function aliasesFrom(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  const out: string[] = [];
+  const seen = new Set<string>();
+  for (const raw of value) {
+    if (typeof raw !== 'string') continue;
+    const collapsed = raw.trim().replace(/\s+/g, ' ');
+    if (collapsed.split(' ').filter(Boolean).length < 2) continue;
+    const key = normalizeText(collapsed);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(collapsed);
+    if (out.length >= MAX_ALIASES) break;
+  }
+  return out;
+}
+
 export function checkNameProximity(args: {
   fullName: string;
   lastName: string;
+  /** Other full names this person is published under. {@link aliasesFrom} is re-applied here, so a
+   * caller that hands over the raw column cannot widen the test by accident. */
+  aliases?: string[];
   pageText: string;
   matchOffsetInNormalized: number;
 }): SnippetVerdict {
-  const { fullName, lastName, pageText, matchOffsetInNormalized } = args;
+  const { fullName, lastName, aliases, pageText, matchOffsetInNormalized } = args;
   if (matchOffsetInNormalized < 0) {
     return { verdict: 'snippet_not_found' };
   }
@@ -293,6 +332,15 @@ export function checkNameProximity(args: {
   // Full name in window → verified.
   if (window.includes(fullNameLower)) {
     return { verdict: 'verified', matchOffset: matchOffsetInNormalized };
+  }
+
+  // An alternate full name counts the same, and for the same reason: it identifies the person as
+  // precisely as the record's own spelling. It is checked BEFORE the surname path so that a page
+  // printing the ballot name never falls through to the common-surname rule.
+  for (const alias of aliasesFrom(aliases)) {
+    if (window.includes(normalizeText(alias))) {
+      return { verdict: 'verified', matchOffset: matchOffsetInNormalized };
+    }
   }
 
   // Last name in window?
@@ -404,7 +452,7 @@ export interface VerifyResult {
 }
 
 export interface PoliticianNames {
-  [fullName: string]: { fullName: string; lastName: string };
+  [fullName: string]: { fullName: string; lastName: string; aliases?: string[] };
 }
 
 /**
@@ -495,6 +543,7 @@ export async function verifyEvidence(args: {
           const proxVerdict = checkNameProximity({
             fullName: names.fullName,
             lastName: names.lastName,
+            aliases: names.aliases,
             pageText: fetched.text,
             matchOffsetInNormalized: span.offset,
           });

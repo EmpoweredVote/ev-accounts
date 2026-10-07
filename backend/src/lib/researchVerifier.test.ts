@@ -193,6 +193,91 @@ describe('checkNameProximity', () => {
   });
 });
 
+// A source routinely prints a ballot name ("Jenn Hernandez") where the record holds the legal one
+// ("Jennifer Hernandez"). Neither name test then fires: the full name is absent, and the surname is
+// on COMMON_LAST_NAMES, which demands a title the article has no reason to use for a candidate.
+// `aliases` carries the other names the record knows, each treated as a full name.
+describe('checkNameProximity with aliases', () => {
+  const longSnippet = 'We need a mix of housing options that support both current and future residents, encouraging smaller homes like cottages, townhomes, or starter homes designed to fit the character of this town.';
+  const at = (page: string) => normalizeText(page).indexOf(normalizeText(longSnippet));
+
+  it('name_not_present without the alias, when the surname is common and untitled', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('verified when an alias full name appears in the window', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+
+  it('matches an alias through normalization (case, spacing, curly punctuation)', () => {
+    const page = `JENN   HERNANDEZ said: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['  jenn hernandez  '],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+
+  it('refuses a one-token alias — a bare first name must not bypass the common-surname rule', () => {
+    const page = `Jenn: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('holds an alias to the same 500-character window as the full name', () => {
+    const page = `Jenn Hernandez spoke first. ${'x'.repeat(2000)}. Later: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('ignores blank and non-string aliases without throwing', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez',
+      aliases: ['', '   ', null as unknown as string, 'Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+});
+
+import { aliasesFrom } from './researchVerifier.js';
+
+describe('aliasesFrom', () => {
+  it('keeps multi-token names and trims them', () => {
+    expect(aliasesFrom(['  Jenn Hernandez ', 'J. C. Hernandez'])).toEqual(['Jenn Hernandez', 'J. C. Hernandez']);
+  });
+
+  it('drops one-token names, blanks and non-strings', () => {
+    expect(aliasesFrom(['Jenn', '', '   ', 42, null, undefined, 'Jenn Hernandez'])).toEqual(['Jenn Hernandez']);
+  });
+
+  it('dedupes case-insensitively, keeping the first spelling', () => {
+    expect(aliasesFrom(['Jenn Hernandez', 'JENN HERNANDEZ', 'jenn  hernandez'])).toEqual(['Jenn Hernandez']);
+  });
+
+  it('returns an empty array for null, a non-array, or an empty array', () => {
+    expect(aliasesFrom(null)).toEqual([]);
+    expect(aliasesFrom(undefined)).toEqual([]);
+    expect(aliasesFrom('Jenn Hernandez')).toEqual([]);
+    expect(aliasesFrom([])).toEqual([]);
+  });
+
+  it('caps the list so one bad row cannot slow every snippet check', () => {
+    const many = Array.from({ length: 50 }, (_, i) => `Name Number${i}`);
+    expect(aliasesFrom(many)).toHaveLength(8);
+  });
+});
+
 import { createPageFetcher } from './researchVerifier.js';
 
 describe('createPageFetcher', () => {
