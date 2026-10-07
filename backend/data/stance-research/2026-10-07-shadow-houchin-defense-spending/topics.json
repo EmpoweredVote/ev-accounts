@@ -1,0 +1,42 @@
+[
+  {
+    "topic_id": "3fd1aa81-e032-4335-8785-452ed10ce9ce",
+    "topic_key": "defense-spending",
+    "topic_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+    "served_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+    "question_number": 55,
+    "title": "Defense Spending",
+    "question_text": "How much should the government spend on the military?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Increase military spending substantially, launching a major buildup to expand the armed forces and their capabilities."
+      },
+      {
+        "value": 2,
+        "text": "Increase military spending moderately, growing the budget above inflation to keep pace with rising threats."
+      },
+      {
+        "value": 3,
+        "text": "Hold military spending roughly flat, allowing it to rise only with inflation."
+      },
+      {
+        "value": 4,
+        "text": "Reduce military spending modestly below current levels."
+      },
+      {
+        "value": 5,
+        "text": "Cut military spending dramatically, roughly halving the budget or more."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  }
+]

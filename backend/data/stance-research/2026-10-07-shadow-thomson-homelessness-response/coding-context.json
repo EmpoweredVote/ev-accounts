@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-thomson-homelessness-response",
+  "seat": {
+    "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+    "full_name": "Kerry Thomson",
+    "level": "local",
+    "mode": "seated",
+    "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+    "office_title": "City Mayor",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": null,
+    "start_precision": "unknown",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "topic_key": "homelessness-response",
+      "served_revision_id": "0e47ec98-46af-4e77-ae81-04d1311b4543",
+      "question_text": "How much should your community spend on housing and services to reduce homelessness?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Guarantee housing and support services through dedicated, permanent public funding"
+        },
+        {
+          "value": 2,
+          "text": "Expand housing and support services by increasing public funding"
+        },
+        {
+          "value": 3,
+          "text": "Maintain current housing and service programs at today's funding level, with no major new spending"
+        },
+        {
+          "value": 4,
+          "text": "Provide limited public funding to nonprofits and charities to lead the response, rather than running public programs"
+        },
+        {
+          "value": 5,
+          "text": "Withdraw government funding for housing and support services, treating homelessness as a matter for private charity and the market"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# homelessness-response — served revision 0e47ec98-46af-4e77-ae81-04d1311b4543 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How much should your community spend on housing and services to reduce homelessness?\"\n\n**Orientation:** standard. Rung 1 is the largest public role (a permanent, dedicated guarantee),\nrung 5 ends public funding. The rungs order **the size and form of public funding** for housing and\nsupport services: guarantee, increase, hold, hand a limited amount to private groups, withdraw.\nEnforcement is **not** on this ladder (the `homelessness` topic orders it).\n\n**Levels with a lever:** local. The lever is the city or county budget, local\ndedicated taxes and bonds, and the local homelessness agency or continuum of care. State and federal\nofficeholders hold no lever here → `scope-unavailable`.\n\n**Asked at:** local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"permanent supportive housing\", \"rapid rehousing\", \"housing first\", \"navigation\ncenter\", \"shelter beds\", \"interim housing\", \"continuum of care\" (CoC), \"coordinated entry\",\n\"homelessness trust fund\", \"dedicated sales tax\" or \"parcel tax\", \"housing bond\", \"right to shelter\",\n\"service providers\", \"faith-based providers\".\n\n1. **\"Guarantee housing and support services through dedicated, permanent public funding\"**\n   - Means: the community commits to provide housing and services, and pays for them from a revenue\n     source set aside for that purpose with no end date.\n   - Operative clauses: [a] a guarantee of housing and support services; [b] dedicated, permanent\n     public funding.\n   - Establishing evidence looks like: a measure that both creates a right or duty to house (or\n     shelter) and funds it from a dedicated, ongoing source; own words calling for both. Compound:\n     one side only → `compound-partial` (V4.2).\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because a dedicated tax is an increase. A **dedicated, ongoing**\n     tax or trust fund meets [b]; a **time-limited** bond or one-year increase does not, and is rung\n     2 territory. A dedicated tax with no stated guarantee meets [b] only → `compound-partial`\n     (V4.2 \"Silence is not a clause\") _(proposed)_.\n   - A \"right to shelter\" with no funding source meets [a] only → `compound-partial` _(proposed)_.\n\n2. **\"Expand housing and support services by increasing public funding\"**\n   - Means: spend more public money to add housing and services.\n   - Operative clauses: [a] expand housing and support services; [b] by increasing public funding.\n   - Establishing evidence looks like: a single-subject vote or budget amendment that increases\n     homelessness funding; authoring or voting for a housing bond.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1. An increase does not exclude rung 1 unless the\n     passage rejects a permanent guarantee; a single increase alone → `direction-only` (V4)\n     _(proposed)_.\n\n3. **\"Maintain current housing and service programs at today's funding level, with no major new\n   spending\"**\n   - Means: keep what exists at its current budget, and add nothing major.\n   - Operative clauses: [a] maintain current programmes at today's level; [b] no major new spending.\n   - Establishing evidence looks like: own words to hold funding flat; a vote against an increase\n     **plus** support for continuing current programmes. [b] is an absence clause: it must be stated,\n     and a vote for this year's budget does not state it (V4.2).\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a No on an increase fits both → `direction-only`.\n\n4. **\"Provide limited public funding to nonprofits and charities to lead the response, rather than\n   running public programs\"**\n   - Means: give a limited amount of public money to private groups and let them lead, instead of the\n     government running programmes.\n   - Operative clauses: [a] limited public funding; [b] to nonprofits and charities, which lead;\n     [c] rather than running public programmes.\n   - Establishing evidence looks like: own words or a vote to replace public programmes with limited\n     grants to private providers.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rungs 2 and 3 because **most local homelessness money already goes to\n     nonprofit providers** by contract. A grant or contract with a nonprofit is the normal delivery\n     method at every funding level; it does not show [a] or [c] _(proposed)_.\n\n5. **\"Withdraw government funding for housing and support services, treating homelessness as a matter\n   for private charity and the market\"**\n   - Means: public funding stops; private charity and the market take over.\n   - Operative clauses: [a] withdraw government funding; [b] homelessness treated as a matter for\n     private charity and the market.\n   - Establishing evidence looks like: own words to end public funding; a vote to eliminate the\n     homelessness budget or a dedicated tax.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a **cut** keeps some funding. A cut that leaves money\n     flowing is not \"withdraw\" → `direction-only` _(proposed)_.\n\n**Hard cases:**\n- **Enforcement** (camping bans, sweeps, sit-lie rules) does not speak to funding → `adjacent`. It\n  belongs to the `homelessness` topic. A passage that pairs enforcement with a funding position is\n  coded on the funding clause only.\n- **Accepting state or federal grant money** is usually near-unanimous and says little about local\n  spending → `near-unanimous` or `direction-only` _(proposed)_.\n- **Placing a tax measure on the ballot** is not a vote for the tax; code it on the person's own\n  words about the measure _(proposed)_.\n- **Budget and omnibus votes** with a homelessness line → V4 `multi-subject`.\n- **Shelter and housing.** Rungs name \"housing and support services\"; shelter beds count as support\n  services _(proposed)_.\n- **\"Accountability\" and audit demands** on homelessness spending say nothing about the amount →\n  `rhetorical` unless they name a funding change.\n"
+    }
+  ]
+}

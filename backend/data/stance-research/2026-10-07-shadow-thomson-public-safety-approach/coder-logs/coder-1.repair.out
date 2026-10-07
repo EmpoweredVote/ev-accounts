@@ -1,0 +1,5 @@
+I fixed the quote the validator flagged and rewrote `labels/coder-1.json`. I haven't re-run the validator.
+
+The problem was the second quote, from the 2024-04-25 policing-tools release. In the snapshot that sentence ends with a comma, not a period: `…safely, efficiently protect our community,”`. My copy had added a period. I removed it, so the text now ends at `protect our community`, which appears word for word in the snapshot.
+
+Nothing else changed. The row is still BLANK `direction-only`, `rests_on` is still empty, and the reasoning, `needs_source` and passage codes are as before. I checked the other two quotes against their snapshots and both match exactly.

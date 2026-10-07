@@ -1,0 +1,44 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+    "instrument": "hr5(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "035b809c-3a9b-500b-8771-7bcbc2ce0b37",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/5",
+        "profile": "us-congress-gov-bill@1"
+      },
+      {
+        "snapshot_id": "69a6e8f0-cf48-566f-bc0d-9b73253476ec",
+        "url": "https://clerk.house.gov/Votes/2023161",
+        "profile": "us-house-clerk-roll-call@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 1,
+    "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+    "instrument": "hr5(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "035b809c-3a9b-500b-8771-7bcbc2ce0b37",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/5",
+        "profile": "us-congress-gov-bill@1"
+      },
+      {
+        "snapshot_id": "69a6e8f0-cf48-566f-bc0d-9b73253476ec",
+        "url": "https://clerk.house.gov/Votes/2023161",
+        "profile": "us-house-clerk-roll-call@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]

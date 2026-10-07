@@ -55,6 +55,7 @@ file and the key.
 | | `none` | no chamber: a council, a board, a unicameral body (Nebraska) — the chamber test is skipped. **Not valid when `seat_titles` names both an `upper` and a `lower` chamber** — that pairing is the signal that this body needs the chamber test, not that it can be skipped (`parseSourceProfile` rejects it). |
 | `name_format` | `surname` | members print by surname; the collision rules of today apply |
 | | `surname-initial` | the page lists the whole chamber and prints an initial whenever two members share a surname ("Smith, V"). A common surname printed **once** on the page, with no initial after it, names one member — no given name needed. Otherwise as `surname`. |
+| | `surname-doubled` | every member prints twice, side by side (`Houchin Houchin Republican Indiana IN Yea`), and namesakes print with their state (`Higgins (LA)`) — the U.S. House Clerk roll call. A surname printed exactly twice, adjacent, names one member; a namesake page still needs a qualifier. |
 | | `last-first` | accepted; today behaves as `surname` (no separate code path yet) |
 | | `full-name` | "Councilmember Jane Roe" — the full name is required |
 | `amendment_text` | `final` (default) | the page prints the law as it will read — no amendment markup to lose (CA chaptered text) |

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "de828a0f-1eb0-5483-a66b-6da7686640cf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 833 (119th)",
+          "provision_quote": null,
+          "note": "Co-sponsorship of the Educational Choice for Children Act, a federal tax-credit scholarship bill (Policy area: Taxation); per the annex a tax-credit scholarship is adjacent, not funding that follows the student, and the snapshot prints no operative provision.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e6d396fa-bf08-550d-ba7c-b138f33c5cd2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 531 (118th)",
+          "provision_quote": null,
+          "note": "Co-sponsorship of the 118th-Congress Educational Choice for Children Act, the same tax-credit scholarship measure; adjacent to an eligibility ladder and no provision text is in the snapshot.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Houchin's only acts on file are co-sponsorships of the Educational Choice for Children Act (H.R. 531, 118th; H.R. 833, 119th), a tax-credit scholarship bill; under the annex a tax credit to donors is not 'education funding follows the student to any school', so both passages are adjacent and none can seat a rung such as 'Providing universal vouchers'. No passage survives V2.",
+      "needs_source": [
+        "Erin Houchin's own words (issue page, questionnaire, debate answer, or statement) on voucher/school-choice eligibility",
+        "Bill text of H.R. 833 (119th) operative sections, to confirm what the credit funds and who is eligible"
+      ],
+      "quotes": []
+    }
+  ]
+}

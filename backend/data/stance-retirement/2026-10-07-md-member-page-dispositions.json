@@ -1,0 +1,1684 @@
+{
+  "pass": "The Maryland member-page cohort -- every voter-visible, still-seated stance key whose ONLY source is an mgaleg Members/Details roster page.",
+  "read_on": "2026-10-07",
+  "written_by": "migration 1898",
+  "cohort_measured_fresh": {
+    "keys": 521,
+    "legislators": 88,
+    "note": "The recorded backlog called this '932 MD member-page keys'. That number came from an 08-11 source-class precedence I could not reproduce, so it was re-measured against production rather than inherited: 521 voter-visible, still-seated, member-page-ONLY keys across 88 legislators. 1,665 keys cite a member page among other sources; 521 cite ONLY one. Both numbers are stated so the next reader need not guess which is meant."
+  },
+  "headline": "70% OF THIS COHORT IS SOUND. 367 of 521 rows carry a sponsorship that is verifiable against the member's own mgaleg record. The detector flagged the whole class because the URL is a roster page -- but a roster page LISTS THE MEMBER'S BILLS, so for most of these rows it is genuinely the evidence. The right disposition for the bulk of the MD backlog is a CITATION REPAIR, not retirement. Treating it as a retirement queue would have destroyed hundreds of true rows.",
+  "method": "Every bill each of the 88 legislators sponsored or co-sponsored in 2023RS, 2024RS, 2025RS and 2026RS was read from mgaleg's own per-session member record (Members/Details/<slug>?ys=<session>). That is mgaleg's OWN attribution, so the surname twin (md_sponsor_identity_traps 2) cannot bite, and the Primary/Co-Sponsor label excludes the crossfile companions that trap 8 warns about. A member page defaults to the CURRENT session only, so each session was fetched explicitly. Trap 5 is honoured: a session with no record (no session portrait) is marked UNAVAILABLE, never read as an absence.",
+  "classification": {
+    "MATCHED": 254,
+    "PARAPHRASE_MATCH": 113,
+    "NO_INSTRUMENT": 89,
+    "VOTE_CLAIM": 35,
+    "NOT_IN_WINDOW": 13,
+    "PARTIAL": 13,
+    "REORDERED_MATCH": 2,
+    "NUMBER_MATCH": 2
+  },
+  "four_passes_each_rescuing_rows": [
+    "Pass 1 matched Title-Case spans only -> 162 NO_INSTRUMENT.",
+    "Pass 2 added contiguous content-token runs for paraphrased titles and moved 113 rows out, 64 of them straight off the blank list. April Miller and April Rose describe HB0460 as \"solar energy construction restrictions in priority preservation areas\" -- it is genuinely theirs, and pass 1 would have blanked a TRUE claim.",
+    "Pass 3 added reordered paraphrases (bag-of-words coverage) and explicit bill NUMBERS.",
+    "Pass 4 was hand-reading all 72 survivors, which is how the composed-citation class surfaced.",
+    "THE FIRST CUT OVER-FIRES. It did here four times running, and each correction rescued rows a blank would have destroyed."
+  ],
+  "class_1_no_instrument": {
+    "written": 69,
+    "blocked": 19,
+    "finding": "A roster page states who someone IS and lists the bills they put their name to. IT CARRIES NO POSITION. These rows name no bill, no vote and no statement, and reach a chair from party, district or role alone -- \"Backed progressive revenue measures and tax equity legislation\", \"As a Baltimore City Democrat ... supports comprehensive clean energy legislation\". A PARTY IS NOT AN INSTRUMENT (the rule that blanked Morales and Campos in 1897).",
+    "concentration": "taxes 25, public-safety-approach 24, civil-rights 11 -- the topics where a party label feels most like an answer."
+  },
+  "class_2_composed_citations": {
+    "written": 13,
+    "blocked": 1,
+    "rows_citing_a_bill_number": 29,
+    "citations_that_check_out": 14,
+    "finding": "A REAL BILL NUMBER WELDED TO AN ACT NAME THAT DOES NOT EXIST. The number resolves to a real Maryland bill about an entirely different subject.",
+    "examples": {
+      "HB1261 (2023) cited as the \"Maryland Voting Rights Act\" by FOUR legislators (Ben Barnes, Joseline Pena-Melnyk, Mary A. Lehman, Nicole A. Williams), all seating voting-rights at CHAIR 1": "is \"Workplace Fraud and Prevailing Wage - Violations - Penalties and Referrals\", sponsored by Delegate Valderrama. None of the four is on it.",
+      "HB0996 (2023) cited as the \"Abortion Care Access Act\"": "is \"Artificial Intelligence - Implementation Causing Injury or Death - Civil and Criminal Liability\".",
+      "HB1171 (2023) cited as the \"Abortion Care Access Act\"": "is \"Baltimore County - Speed Monitoring Systems - Residential Districts\".",
+      "HB1221 (2024) cited as expanding child care subsidy eligibility": "is \"Battery Storage and Solar Arrays Safety Training Grant Program and Fund\".",
+      "HB1121 (2024) cited as clean energy workforce development": "is \"Public Health - Opioids and Opioid Overdose Reversal Drugs - Information\"."
+    },
+    "the_subtler_half": "THREE cite a bill the member REALLY DID SPONSOR and invent its subject. Veronica Turner's HB0478 (2026) is hers -- it is \"Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers\", not \"Immigration Enforcement Agreements - Prohibition\" (that is HB0444). Her HB0347 is hers -- \"Workers' Compensation - Occupational Disease Presumptions - Hypertension\", not a \"Voting Rights Act of 2026\". Valderrama's HB0997 is hers -- \"State Finance and Procurement - Prevailing Wage Rate\", not \"Real Property - Short-Term Rentals\". THE NUMBER CHECKS OUT AND ONLY THE SUBJECT IS INVENTED, so the citation looks maximally verifiable and is false only on inspection.",
+    "one_row_in_this_set_is_NOT_a_defect": "Mary A. Lehman / housing cites HB 693 (2024) = the Renters' Rights and Stabilization Act of 2024, real housing legislation, AND SHE IS AMONG ITS SPONSORS. Left alone. Ben Barnes cites the same bill, is NOT a sponsor, and his row claims only that he \"supported\" it -- his is blanked. Same citation, two verdicts, decided by reading the sponsor list."
+  },
+  "the_bug_that_nearly_produced_a_mass_false_finding": "The first bill-number run took the session only from a parenthesised year like \"(2023)\". Claims are written \"(SB0977 2025)\" just as often, so the year was missed and the fallback tried 2023RS FIRST. MARYLAND RENUMBERS EVERY SESSION, so that compared a 2025 bill against the unrelated 2023 bill sharing its number and reported a mismatch EVERY time -- it briefly looked as though almost every cited bill number in Maryland was fabricated. Fixed by taking the year NEAREST the number mention and recording which session was used in every verdict. WHEN A CHECK FAILS FOR EVERYTHING, SUSPECT THE CHECK.",
+  "correction_to_migration_1897": {
+    "what_was_wrong": "1897 said Steve Johnson's member page \"lists 150 bills for the 2025 and 2026 sessions\". A member page shows the CURRENT session only, so that reading covered 2026RS alone. Its control count \"Solar 0\" was an artefact of that one-session window.",
+    "what_is_true": "All four sessions of his term were read (117, 118, 123, 90 sponsorships). He co-sponsored HB0300 (2023RS) \"School Buildings - Solar Technology - Solar Panels on Schools\" and HB1233 (2025RS) \"Community Solar Energy Generating Systems - Subscription Eligibility\" -- both EXPANDING solar, the opposite of the restrictive siting bill his row attributed to him.",
+    "the_blanks_stand": "The claimed bill is still not his: HB0460 (2026RS) \"Solar Energy - Construction of Generating Stations in Priority Preservation Areas and Study\" is co-sponsored by Delegates April Miller and April Rose, both REPUBLICANS, and Johnson is not among them -- which independently confirms 1897's finding that his rows carried a Republican's record. \"Fair Districts\" 0, \"Scholarship\" 0, \"Voter\" 0 and \"Citizenship\" 0 across all four sessions. He is a CO-SPONSOR of two police accountability bills (HB0885 2025RS, HB0508 2026RS), contradicting the row that said he opposed such reforms.",
+    "action": "All eight blanks keep value 0; their reasoning is rewritten in place because it is shown to voters."
+  },
+  "blocked": {
+    "keys": 20,
+    "reason": "`immigration` has NO Season 2 pin, so no blank can be written.",
+    "running_total": "With the 3 blocked by migration 1896 and the 3 by 1897, 26 defective chairs now stand unfixable on that one topic. It is the largest blocked defect in the audit and belongs to the Season 3 decision."
+  },
+  "recorded_not_fixed": {
+    "VOTE_CLAIM": "35 rows claim a VOTE. A SPONSORSHIP INDEX CANNOT TEST A VOTE -- these need MD roll calls and are untouched. Calling them absent would have been a false negative; the first cut did exactly that before the class was split out.",
+    "PARTIAL_and_out_of_window": "30 rows have weak title overlap, or belong to members seated before 2023 whose claim may reference an earlier session. Absence is only provable inside the sessions actually read, so none of these is called absent. They need a human and, for the long-serving members, sessions earlier than the four read here.",
+    "MATCHED_and_PARAPHRASE_MATCH": "367 rows have a verified sponsorship and are LEFT ALONE. Whether the sponsorship seats the chair at the right rung is a separate ladder question, not a sourcing one. The useful follow-up for these is a citation repair pointing at the bill page, which would clear them from the generic-source queue without touching a single chair."
+  },
+  "rows": [
+    {
+      "politician": "Adrian Boafo",
+      "topic": "public-safety-approach",
+      "slug": "boafo01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/boafo01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Backed mental health crisis response and community violence intervention programs; supported balanced public safety investments combining policing and social services."
+    },
+    {
+      "politician": "Andrea Fletcher Harrison",
+      "topic": "childcare",
+      "slug": "harrison01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2025RS-legislation"
+      ],
+      "original_reasoning": "Supported expanded childcare subsidy programs and early childhood education funding; backed childcare access initiatives."
+    },
+    {
+      "politician": "Andrea Fletcher Harrison",
+      "topic": "civil-rights",
+      "slug": "harrison01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Backed civil rights and anti-discrimination legislation; supported racial equity and LGBTQ+ protection bills in the Maryland House."
+    },
+    {
+      "politician": "Andrea Fletcher Harrison",
+      "topic": "public-safety-approach",
+      "slug": "harrison01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Backed mental health crisis response and community violence prevention alongside traditional policing; supported balanced public safety investments."
+    },
+    {
+      "politician": "Andrea Fletcher Harrison",
+      "topic": "taxes",
+      "slug": "harrison01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/harrison01?tab=2025RS-legislation"
+      ],
+      "original_reasoning": "Supported progressive tax equity measures and revenue legislation funding education and social services."
+    },
+    {
+      "politician": "Anne Healey",
+      "topic": "taxes",
+      "slug": "healey",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/healey"
+      ],
+      "original_reasoning": "Supported progressive revenue measures and opposed regressive tax cuts; backed tax equity legislation to fund education and social programs."
+    },
+    {
+      "politician": "Arthur Ellis",
+      "topic": "fossil-fuels",
+      "slug": "ellis01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ellis01"
+      ],
+      "original_reasoning": "Ellis supports transitioning away from fossil fuels and backed Maryland's renewable energy standards and climate legislation."
+    },
+    {
+      "politician": "Ashanti Martinez",
+      "topic": "childcare",
+      "slug": "martinez01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2025RS-legislation"
+      ],
+      "original_reasoning": "Supported child care access expansion and early education investment; backed subsidy programs for low and moderate income families."
+    },
+    {
+      "politician": "Ashanti Martinez",
+      "topic": "taxes",
+      "slug": "martinez01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/martinez01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Supported progressive tax structures and revenue measures; backed tax equity legislation funding education and healthcare programs."
+    },
+    {
+      "politician": "Barry Beauchamp",
+      "topic": "fossil-fuels",
+      "slug": "beauchamp01",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/beauchamp01"
+      ],
+      "original_reasoning": "As a rural Eastern Shore Republican Beauchamp opposed renewable energy mandates and co-sponsored legislation restricting solar farm expansion — consistent with support for conventional energy."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "abortion",
+      "slug": "barnes",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB0996 (2023), cited as the \"Abortion Care Access Act\"",
+      "actually_is": "Artificial Intelligence - Implementation Causing Injury or Death - Civil and Criminal Liability",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+      ],
+      "original_reasoning": "Consistently voted for abortion access legislation; co-sponsored HB 996 (2023) — Abortion Care Access Act expanding abortion provider scope and eliminating barriers to care in Maryland."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "campaign-finance",
+      "slug": "barnes",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+      ],
+      "original_reasoning": "Supported campaign finance transparency legislation; backed disclosure requirements and public financing pilot programs in Maryland."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "childcare",
+      "slug": "barnes",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB1221 (2024), cited as expanding child care subsidy eligibility",
+      "actually_is": "Battery Storage and Solar Arrays Safety Training Grant Program and Fund",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+      ],
+      "original_reasoning": "Backed HB 1221 (2024) expanding child care subsidy program eligibility; as Appropriations Chair allocated funding for universal pre-K in Prince George's County."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "climate-change",
+      "slug": "barnes",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB1121 (2024), cited as clean energy workforce development",
+      "actually_is": "Public Health - Opioids and Opioid Overdose Reversal Drugs - Information",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+      ],
+      "original_reasoning": "Co-sponsored Maryland Climate Solutions Now Act implementation bills; supported HB 1121 (2024) clean energy workforce development and emissions reduction requirements."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "housing",
+      "slug": "barnes",
+      "season1_value": 2,
+      "season2_value_before": 3,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB0693 (2024), cited as expanding affordable housing programs",
+      "actually_is": "the Renters' Rights and Stabilization Act of 2024, which is housing legislation, but Ben Barnes is not among its sponsors and the row claims only that he \"supported\" it",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+      ],
+      "original_reasoning": "Supported HB 693 (2024) expanding affordable housing programs; backed inclusionary zoning incentives and rental assistance programs as Appropriations Chair setting budget priorities."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "public-safety-approach",
+      "slug": "barnes",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+      ],
+      "original_reasoning": "Supported public safety investments including mental health response alternatives alongside traditional law enforcement; backed violence interruption programs in budget priorities."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "taxes",
+      "slug": "barnes",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+      ],
+      "original_reasoning": "As Appropriations Chair controls budget priorities; has consistently backed progressive tax structures and rejected regressive tax cuts in budget negotiations."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "voting-rights",
+      "slug": "barnes",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB1261 (2023), cited as the \"Maryland Voting Rights Act\"",
+      "actually_is": "Workplace Fraud and Prevailing Wage - Violations - Penalties and Referrals, sponsored by Delegate Valderrama",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/barnes"
+      ],
+      "original_reasoning": "Co-sponsored HB 1261 (2023) — Maryland Voting Rights Act; supported automatic voter registration and expanded early voting access measures."
+    },
+    {
+      "politician": "Chris Tomlinson",
+      "topic": "fossil-fuels",
+      "slug": "tomlinson01",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/tomlinson01"
+      ],
+      "original_reasoning": "Tomlinson sponsored repeal of electric and gas company customer bill surcharges — opposing clean energy surcharges and supporting fossil fuel market access."
+    },
+    {
+      "politician": "Chris Tomlinson",
+      "topic": "public-safety-approach",
+      "slug": "tomlinson01",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/tomlinson01"
+      ],
+      "original_reasoning": "Tomlinson co-sponsored fentanyl/heroin distribution death penalty legislation and parole limitation for violent criminals — strongly favoring prosecution and incarceration."
+    },
+    {
+      "politician": "Christopher Eric Bouchat",
+      "topic": "public-safety-approach",
+      "slug": "bouchat01",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/bouchat01"
+      ],
+      "original_reasoning": "Bouchat sponsored legislation restricting parole for violent criminals and fentanyl distribution death penalty enhancement — strongly favoring law enforcement and prosecution over social services."
+    },
+    {
+      "politician": "Deni Taveras",
+      "topic": "taxes",
+      "slug": "taveras01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taveras01"
+      ],
+      "original_reasoning": "As a PG County Democrat supporting bulk pharmaceutical purchasing healthcare expansion and clean energy programs Taveras supports higher taxes on corporations and high earners to fund public investment."
+    },
+    {
+      "politician": "Denise Roberts",
+      "topic": "civil-rights",
+      "slug": "roberts01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts01"
+      ],
+      "original_reasoning": "Backed civil rights and anti-discrimination legislation; supported racial equity and LGBTQ+ protection bills."
+    },
+    {
+      "politician": "Denise Roberts",
+      "topic": "public-safety-approach",
+      "slug": "roberts01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts01"
+      ],
+      "original_reasoning": "Backed mental health crisis response and violence prevention programs alongside policing; supported balanced public safety investment."
+    },
+    {
+      "politician": "Denise Roberts",
+      "topic": "taxes",
+      "slug": "roberts01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberts01"
+      ],
+      "original_reasoning": "Backed progressive revenue measures funding education and social services; supported tax equity legislation."
+    },
+    {
+      "politician": "Derrick Coley",
+      "topic": "public-safety-approach",
+      "slug": "coley01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01"
+      ],
+      "original_reasoning": "Backed mental health crisis response and violence prevention programs alongside law enforcement; supported balanced public safety investments."
+    },
+    {
+      "politician": "Derrick Coley",
+      "topic": "taxes",
+      "slug": "coley01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/coley01"
+      ],
+      "original_reasoning": "Backed progressive revenue measures and tax equity legislation funding education and social programs."
+    },
+    {
+      "politician": "Gabriel Acevero",
+      "topic": "school-vouchers",
+      "slug": "acevero01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/acevero01"
+      ],
+      "original_reasoning": "Acevero consistently opposes school vouchers as a progressive caucus Democrat who champions public school funding equity."
+    },
+    {
+      "politician": "Jamila J. Woods",
+      "topic": "deportation",
+      "slug": "woods01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/woods01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Co-sponsored immigration enforcement prohibition bill (2026) blocking cooperation with ICE-style deportation operations at state/local level; strongly opposes deportation enforcement cooperation."
+    },
+    {
+      "politician": "Jeffrie E. Long, Jr.",
+      "topic": "deportation",
+      "slug": "long02",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/long02?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Co-sponsored immigration enforcement prohibition bill (2026) preventing cooperation with ICE-style deportation enforcement; supports sanctuary policies."
+    },
+    {
+      "politician": "Jim Hinebaugh, Jr.",
+      "topic": "deportation",
+      "slug": "hinebaugh01",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/hinebaugh01"
+      ],
+      "original_reasoning": "Hinebaugh sponsored HB prohibiting sanctuary policies in Maryland — strongly supporting immigration enforcement and opposing sanctuary protections for undocumented immigrants."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "abortion",
+      "slug": "pena",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB1171 (2023), cited as the \"Abortion Care Access Act\"",
+      "actually_is": "Baltimore County - Speed Monitoring Systems - Residential Districts",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ],
+      "original_reasoning": "As Speaker Pro Tem and former Health & Government Operations chair; sponsored HB 1171 (2023) Abortion Care Access Act expanding access and removing restrictions on abortion services in Maryland."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "childcare",
+      "slug": "pena",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ],
+      "original_reasoning": "Sponsored child care access and subsidy bills; backed universal pre-K funding and childcare worker wage increases through legislative advocacy."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "civil-rights",
+      "slug": "pena",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ],
+      "original_reasoning": "Sponsored anti-discrimination and civil rights legislation including protections for LGBTQ+ individuals and immigrants; supported police accountability reform bills."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "public-safety-approach",
+      "slug": "pena",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ],
+      "original_reasoning": "Supported mental health crisis intervention and community-based violence prevention programs; backed balanced approach combining policing with social services investment."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "redistricting",
+      "slug": "pena",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ],
+      "original_reasoning": "Supported independent redistricting reform as Speaker Pro Tem; backed fair maps legislation and transparency in district drawing process."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "taxes",
+      "slug": "pena",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ],
+      "original_reasoning": "Supported progressive tax legislation and revenue measures to fund healthcare and education; backed tax equity bills targeting high earners and corporations."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "trans-athletes",
+      "slug": "pena",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ],
+      "original_reasoning": "Supported transgender inclusion legislation; backed gender identity protections and opposed bills restricting transgender athletes from participating in gender-aligned sports."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "voting-rights",
+      "slug": "pena",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB1261 (2023), cited as the \"Maryland Voting Rights Act\"",
+      "actually_is": "Workplace Fraud and Prevailing Wage - Violations - Penalties and Referrals, sponsored by Delegate Valderrama",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/pena"
+      ],
+      "original_reasoning": "Voted for Maryland Voting Rights Act (2023) HB 1261; consistently supported expanded voter registration and ballot access in her district."
+    },
+    {
+      "politician": "Joshua J. Stonko",
+      "topic": "healthcare",
+      "slug": "stonko01",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stonko01"
+      ],
+      "original_reasoning": "As a Carroll County Republican opposing environmental mandates and supporting deregulation Stonko favors market-based healthcare approaches over government expansion of public programs."
+    },
+    {
+      "politician": "Karen Toles",
+      "topic": "public-safety-approach",
+      "slug": "toles01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Backed community violence prevention and mental health crisis response alongside law enforcement; supported balanced public safety approach."
+    },
+    {
+      "politician": "Karen Toles",
+      "topic": "taxes",
+      "slug": "toles01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/toles01?tab=2025RS-legislation"
+      ],
+      "original_reasoning": "Backed progressive tax equity legislation and revenue measures funding social programs and education."
+    },
+    {
+      "politician": "Kathy Szeliga",
+      "topic": "healthcare",
+      "slug": "szeliga",
+      "season1_value": 4,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/szeliga"
+      ],
+      "original_reasoning": "Szeliga sponsored multiple healthcare regulatory bills (nursing home requirements, pharmacy agreements, insurer provider panels) — favoring market-based healthcare regulation rather than government expansion of coverage."
+    },
+    {
+      "politician": "Kent Roberson",
+      "topic": "civil-rights",
+      "slug": "roberson01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Backed civil rights and anti-discrimination legislation; supported racial equity bills and LGBTQ+ protections in the Maryland House."
+    },
+    {
+      "politician": "Kent Roberson",
+      "topic": "public-safety-approach",
+      "slug": "roberson01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Backed mental health response and community violence prevention alongside law enforcement; supported balanced public safety investment."
+    },
+    {
+      "politician": "Kent Roberson",
+      "topic": "taxes",
+      "slug": "roberson01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/roberson01?tab=2025RS-legislation"
+      ],
+      "original_reasoning": "Backed progressive revenue measures and tax equity legislation; supported funding for education and social programs."
+    },
+    {
+      "politician": "Kriselda Valderrama",
+      "topic": "housing",
+      "slug": "valderrama",
+      "season1_value": 2,
+      "season2_value_before": 3,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB0997 (2026), cited as \"Real Property - Short-Term Rentals\" regulation",
+      "actually_is": "State Finance and Procurement - Prevailing Wage Rate - Calculation",
+      "member_sponsors_that_number": true,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/valderrama?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Sponsored Real Property - Short-Term Rentals regulation (HB0997, 2026); supports consumer protections and housing market oversight; backed fair housing measures."
+    },
+    {
+      "politician": "Kym Taylor",
+      "topic": "civil-rights",
+      "slug": "taylor03",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03"
+      ],
+      "original_reasoning": "Backed civil rights and anti-discrimination legislation; supported racial equity bills and LGBTQ+ protections in the Maryland House."
+    },
+    {
+      "politician": "Kym Taylor",
+      "topic": "public-safety-approach",
+      "slug": "taylor03",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03"
+      ],
+      "original_reasoning": "Supported mental health crisis response and community violence prevention alongside policing; backed balanced public safety investment."
+    },
+    {
+      "politician": "Kym Taylor",
+      "topic": "taxes",
+      "slug": "taylor03",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/taylor03"
+      ],
+      "original_reasoning": "Backed progressive revenue measures and tax equity legislation funding education and healthcare programs."
+    },
+    {
+      "politician": "Luke Clippinger",
+      "topic": "climate-change",
+      "slug": "clippinger",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/clippinger"
+      ],
+      "original_reasoning": "As a Baltimore City Democrat supporting expanded social programs and infrastructure investment Clippinger supports comprehensive clean energy legislation and climate action."
+    },
+    {
+      "politician": "Malcolm P. Ruff",
+      "topic": "climate-change",
+      "slug": "ruff01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/ruff01"
+      ],
+      "original_reasoning": "Ruff sponsored utility cost recovery limitation legislation for electric and gas companies — restricting fossil fuel utility cost recovery aligns with transition-supporting climate stance."
+    },
+    {
+      "politician": "Marvin E. Holmes, Jr.",
+      "topic": "taxes",
+      "slug": "holmes",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/holmes"
+      ],
+      "original_reasoning": "Supported progressive tax legislation and revenue measures funding public education and social programs; backed tax equity reforms."
+    },
+    {
+      "politician": "Mary A. Lehman",
+      "topic": "civil-rights",
+      "slug": "lehman01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Supported civil rights and anti-discrimination legislation across multiple sessions; backed LGBTQ+ protections and racial equity bills in the Maryland legislature."
+    },
+    {
+      "politician": "Mary A. Lehman",
+      "topic": "taxes",
+      "slug": "lehman01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2025RS-legislation"
+      ],
+      "original_reasoning": "Supported progressive revenue measures and tax equity legislation; backed taxes on corporations and high earners to fund education and healthcare programs."
+    },
+    {
+      "politician": "Mary A. Lehman",
+      "topic": "voting-rights",
+      "slug": "lehman01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB1261 (2023), cited as the \"Maryland Voting Rights Act\"",
+      "actually_is": "Workplace Fraud and Prevailing Wage - Violations - Penalties and Referrals, sponsored by Delegate Valderrama",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/lehman01?tab=2023RS-legislation"
+      ],
+      "original_reasoning": "Voted for Maryland Voting Rights Act (2023) HB 1261 expanding voting access; supported automatic registration and extended early voting hours."
+    },
+    {
+      "politician": "Matthew J. Schindler",
+      "topic": "public-safety-approach",
+      "slug": "schindler01",
+      "season1_value": 3,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/schindler01"
+      ],
+      "original_reasoning": "Schindler sponsored municipalities body-worn camera legislation and a law enforcement face covering prohibition alongside drug distribution penalties — balanced approach to public safety."
+    },
+    {
+      "politician": "Melissa Wells",
+      "topic": "school-vouchers",
+      "slug": "wells02",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/wells02"
+      ],
+      "original_reasoning": "Wells as a Baltimore City Democrat consistently opposes school voucher programs and has sponsored public education access bills."
+    },
+    {
+      "politician": "Michele Guyton",
+      "topic": "taxes",
+      "slug": "guyton01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/guyton01"
+      ],
+      "original_reasoning": "As a Baltimore County Democrat supporting expanded environmental regulations and social services Guyton supports raising taxes on high earners and corporations to fund state programs."
+    },
+    {
+      "politician": "Nicole A. Williams",
+      "topic": "childcare",
+      "slug": "williams01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams01"
+      ],
+      "original_reasoning": "Supported expanded child care subsidies and early childhood education funding; backed programs making childcare affordable for working families."
+    },
+    {
+      "politician": "Nicole A. Williams",
+      "topic": "civil-rights",
+      "slug": "williams01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams01"
+      ],
+      "original_reasoning": "Supported civil rights and anti-discrimination legislation; backed racial equity bills and LGBTQ+ protections in the Maryland House."
+    },
+    {
+      "politician": "Nicole A. Williams",
+      "topic": "taxes",
+      "slug": "williams01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams01"
+      ],
+      "original_reasoning": "Backed progressive revenue measures and tax equity legislation; supported taxes on high earners to fund education and social service programs."
+    },
+    {
+      "politician": "Nicole A. Williams",
+      "topic": "voting-rights",
+      "slug": "williams01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB1261 (2023), cited as the \"Maryland Voting Rights Act\"",
+      "actually_is": "Workplace Fraud and Prevailing Wage - Violations - Penalties and Referrals, sponsored by Delegate Valderrama",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/williams01"
+      ],
+      "original_reasoning": "Voted for Maryland Voting Rights Act (2023) HB 1261; supported voter registration expansion and expanded early voting access."
+    },
+    {
+      "politician": "Regina T. Boyce",
+      "topic": "public-safety-approach",
+      "slug": "boyce01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/boyce01"
+      ],
+      "original_reasoning": "Boyce sponsored immigration enforcement prohibition and adult prison education — services-first approach with emphasis on social support over enforcement."
+    },
+    {
+      "politician": "Regina T. Boyce",
+      "topic": "taxes",
+      "slug": "boyce01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/boyce01"
+      ],
+      "original_reasoning": "As a Baltimore City Democrat supporting expanded social programs EV infrastructure and climate legislation Boyce supports higher taxes on high earners and corporations to fund public investments."
+    },
+    {
+      "politician": "Robin L. Grammer, Jr.",
+      "topic": "deportation",
+      "slug": "grammer01",
+      "season1_value": 5,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/grammer01"
+      ],
+      "original_reasoning": "Grammer co-sponsored the sanctuary policy prohibition bill — strongly supporting immigration enforcement and opposing sanctuary protections."
+    },
+    {
+      "politician": "Samuel I. Rosenberg",
+      "topic": "childcare",
+      "slug": "rosenberg",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosenberg"
+      ],
+      "original_reasoning": "As a Baltimore City Democrat consistently supporting expanded social services and public programs across his 40-year legislative career Rosenberg supports childcare subsidies and pre-K investment."
+    },
+    {
+      "politician": "Samuel I. Rosenberg",
+      "topic": "redistricting",
+      "slug": "rosenberg",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosenberg"
+      ],
+      "original_reasoning": "As a 40-year Baltimore City Democrat serving in a diverse urban district — Rosenberg has consistently supported independent redistricting and fair maps in line with Maryland Democratic legislative positions."
+    },
+    {
+      "politician": "Samuel I. Rosenberg",
+      "topic": "school-vouchers",
+      "slug": "rosenberg",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosenberg"
+      ],
+      "original_reasoning": "As a Democrat from Baltimore City who has consistently championed public services and legal aid programs throughout his 40-year career Rosenberg opposes school vouchers and supports fully funding public schools."
+    },
+    {
+      "politician": "Samuel I. Rosenberg",
+      "topic": "taxes",
+      "slug": "rosenberg",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/rosenberg"
+      ],
+      "original_reasoning": "Consistent with his progressive Baltimore City Democrat profile and support for expanded public programs including housing healthcare and legal aid — Rosenberg supports higher taxes on high earners to fund social services."
+    },
+    {
+      "politician": "Sean A. Stinnett",
+      "topic": "taxes",
+      "slug": "stinnett01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/stinnett01"
+      ],
+      "original_reasoning": "As a Baltimore City Democrat serving a low-income urban district Stinnett supports higher taxes on wealthy individuals and corporations to fund expanded social services and education."
+    },
+    {
+      "politician": "Sheree Sample-Hughes",
+      "topic": "abortion",
+      "slug": "sample01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sample01"
+      ],
+      "original_reasoning": "Sample-Hughes as a Maryland House Democrat and Speaker Pro Tem supported the 2022 expanded abortion access legislation; her Democratic leadership position is strongly pro-abortion access."
+    },
+    {
+      "politician": "Sheree Sample-Hughes",
+      "topic": "housing",
+      "slug": "sample01",
+      "season1_value": 2,
+      "season2_value_before": 3,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sample01"
+      ],
+      "original_reasoning": "Sample-Hughes's focus on community development and rural economic programs reflects support for affordable housing investment in the Eastern Shore."
+    },
+    {
+      "politician": "Sheree Sample-Hughes",
+      "topic": "school-vouchers",
+      "slug": "sample01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sample01"
+      ],
+      "original_reasoning": "As a House Democrat and Speaker Pro Tem Sample-Hughes has consistently opposed school voucher legislation; her caucus position and sponsorship of public education bills reflects opposition to private school diversion of public funds."
+    },
+    {
+      "politician": "Sheree Sample-Hughes",
+      "topic": "trans-athletes",
+      "slug": "sample01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/sample01"
+      ],
+      "original_reasoning": "As a Democratic House leader Sample-Hughes is aligned with the MD Democratic caucus position supporting transgender inclusion in sports with guidelines."
+    },
+    {
+      "politician": "Stephanie Smith",
+      "topic": "taxes",
+      "slug": "smith03",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/smith03"
+      ],
+      "original_reasoning": "As a Baltimore City Democrat supporting expanded social programs education equity and workforce development Smith supports higher taxes on high earners and corporations."
+    },
+    {
+      "politician": "Tiffany T. Alston",
+      "topic": "judicial-criminal-justice",
+      "slug": "alston01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2025RS-legislation"
+      ],
+      "original_reasoning": "Backed sentencing reform and rehabilitation investment; supported criminal justice reform legislation reducing incarceration for non-violent offenses."
+    },
+    {
+      "politician": "Tiffany T. Alston",
+      "topic": "taxes",
+      "slug": "alston01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/alston01?tab=2025RS-legislation"
+      ],
+      "original_reasoning": "Backed progressive tax equity legislation; supported revenue measures funding education and social programs."
+    },
+    {
+      "politician": "Veronica Turner",
+      "topic": "deportation",
+      "slug": "turner01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB0478 (2026), cited as \"Public Safety - Immigration Enforcement Agreements - Prohibition\"",
+      "actually_is": "Income Tax - Subtraction Modification for Classroom Supplies Purchased by Teachers - Alteration",
+      "member_sponsors_that_number": true,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Sponsored HB0478 (2026) — Public Safety - Immigration Enforcement Agreements - Prohibition; opposes local law enforcement cooperation with ICE-style deportation enforcement."
+    },
+    {
+      "politician": "Veronica Turner",
+      "topic": "healthcare",
+      "slug": "turner01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB0720 and HB0738 (2026), cited as Medical Assistance Continuity of Care and Palliative Care Access",
+      "actually_is": "HB0720 is the Douglas J. J. Peters Veterans Scholarship - Repeal and HB0738 is Real Property - Transfer-on-Death Deed - Establishment",
+      "member_sponsors_that_number": false,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Sponsored HB0720 (2026) — Maryland Medical Assistance Program Continuity of Care; sponsored HB0738 — Palliative Care Required Access and Coverage; supports Medicaid and healthcare access expansion."
+    },
+    {
+      "politician": "Veronica Turner",
+      "topic": "public-safety-approach",
+      "slug": "turner01",
+      "season1_value": 2,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "NO_INSTRUMENT",
+      "cited": null,
+      "actually_is": null,
+      "member_sponsors_that_number": null,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Sponsored body-worn camera requirements and racial disparity commissions; supports accountability-centered public safety approach combining police reform with community investment."
+    },
+    {
+      "politician": "Veronica Turner",
+      "topic": "voting-rights",
+      "slug": "turner01",
+      "season1_value": 1,
+      "season2_value_before": null,
+      "written_value": 0,
+      "disposition": "BLANK",
+      "klass": "COMPOSED_CITATION",
+      "cited": "HB0347 (2026), cited as a \"Voting Rights Act of 2026\"",
+      "actually_is": "Workers' Compensation - Occupational Disease Presumptions - Hypertension",
+      "member_sponsors_that_number": true,
+      "sources_examined": [
+        "https://mgaleg.maryland.gov/mgawebsite/Members/Details/turner01?tab=2026RS-legislation"
+      ],
+      "original_reasoning": "Sponsored HB0347 (2026) — Voting Rights Act of 2026 for counties and municipal corporations; direct evidence of strong commitment to expanding voting rights protections."
+    },
+    {
+      "politician": "Aletheia McCaskill",
+      "topic": "immigration",
+      "slug": "mccaskill01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "McCaskill co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore County district."
+    },
+    {
+      "politician": "Andrea Fletcher Harrison",
+      "topic": "immigration",
+      "slug": "harrison01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported immigrant services and community support programs; backed language access and immigrant protection legislation."
+    },
+    {
+      "politician": "Anne Healey",
+      "topic": "immigration",
+      "slug": "healey",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported Maryland RELIEF Act and immigrant services legislation; backed in-state tuition equity for undocumented students and language access programs."
+    },
+    {
+      "politician": "Ben Barnes",
+      "topic": "immigration",
+      "slug": "barnes",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported Maryland RELIEF Act expanding services for immigrants; backed sanctuary-related provisions and opposed cooperation with ICE in state law enforcement."
+    },
+    {
+      "politician": "Catherine M. Forbes",
+      "topic": "immigration",
+      "slug": "forbes01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Forbes co-sponsored immigration enforcement prohibition — consistent with expansive immigration rights and sanctuary policies for Baltimore County district."
+    },
+    {
+      "politician": "Deni Taveras",
+      "topic": "immigration",
+      "slug": "taveras01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Taveras co-sponsored immigration enforcement prohibition — consistent with expansive immigration rights and sanctuary policies for her PG County district."
+    },
+    {
+      "politician": "Denise Roberts",
+      "topic": "immigration",
+      "slug": "roberts01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families."
+    },
+    {
+      "politician": "Diana M. Fennell",
+      "topic": "immigration",
+      "slug": "fennell01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Fennell co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her PG County district."
+    },
+    {
+      "politician": "Jackie Addison",
+      "topic": "immigration",
+      "slug": "addison01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Addison co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district."
+    },
+    {
+      "politician": "Joseline Peña-Melnyk",
+      "topic": "immigration",
+      "slug": "pena",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Sponsored immigration services legislation; authored bills expanding language access for immigrants and protecting immigrant communities from cooperation with federal immigration enforcement."
+    },
+    {
+      "politician": "Julian Ivey",
+      "topic": "immigration",
+      "slug": "ivey01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Ivey co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for his PG County district."
+    },
+    {
+      "politician": "Karen Toles",
+      "topic": "immigration",
+      "slug": "toles01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families."
+    },
+    {
+      "politician": "Kent Roberson",
+      "topic": "immigration",
+      "slug": "roberson01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported immigrant services and community support legislation; backed language access programs for immigrant families."
+    },
+    {
+      "politician": "Kym Taylor",
+      "topic": "immigration",
+      "slug": "taylor03",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported immigrant services and language access legislation; backed community support programs for immigrant families."
+    },
+    {
+      "politician": "Mary A. Lehman",
+      "topic": "immigration",
+      "slug": "lehman01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported Maryland RELIEF Act and immigration services legislation; backed community college tuition equity for undocumented students (in-state tuition)."
+    },
+    {
+      "politician": "Regina T. Boyce",
+      "topic": "immigration",
+      "slug": "boyce01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Boyce co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district."
+    },
+    {
+      "politician": "Robbyn Lewis",
+      "topic": "immigration",
+      "slug": "lewis01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Lewis co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district."
+    },
+    {
+      "politician": "Stephanie Smith",
+      "topic": "immigration",
+      "slug": "smith03",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Smith co-sponsored immigration enforcement prohibition legislation — consistent with expansive immigration rights and sanctuary policies for her Baltimore City district."
+    },
+    {
+      "politician": "Tiffany T. Alston",
+      "topic": "immigration",
+      "slug": "alston01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "NO_INSTRUMENT",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Supported immigrant services and language access programs; backed community support legislation for immigrant families."
+    },
+    {
+      "politician": "Veronica Turner",
+      "topic": "immigration",
+      "slug": "turner01",
+      "season1_value": 1,
+      "written_value": null,
+      "disposition": "BLOCKED",
+      "klass": "COMPOSED_CITATION",
+      "finding": "Defective, and cannot be blanked: `immigration` has no Season 2 pin.",
+      "original_reasoning": "Sponsored HB0478 (2026) — prohibiting immigration enforcement agreements (sanctuary-type policy); clearly opposes state/local cooperation with federal immigration enforcement."
+    }
+  ]
+}

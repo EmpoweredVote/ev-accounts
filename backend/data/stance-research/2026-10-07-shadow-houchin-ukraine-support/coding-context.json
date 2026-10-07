@@ -1,0 +1,55 @@
+{
+  "batch_id": "2026-10-07-shadow-houchin-ukraine-support",
+  "seat": {
+    "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+    "full_name": "Erin Houchin",
+    "level": "federal",
+    "mode": "seated",
+    "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+    "office_title": "U.S. House of Representatives - Indiana 9th Congressional District",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2023-01-03",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "topic_key": "ukraine-support",
+      "served_revision_id": "9ee7ecb7-fd99-429a-a37d-eff58a381983",
+      "question_text": "What level of military and financial support should be provided to Ukraine?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "significantly increase military and financial aid to Ukraine."
+        },
+        {
+          "value": 2,
+          "text": "continue providing current levels of military and economic aid to help Ukraine defend itself."
+        },
+        {
+          "value": 3,
+          "text": "provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war."
+        },
+        {
+          "value": 4,
+          "text": "reduce aid to Ukraine and focus American resources on domestic priorities instead."
+        },
+        {
+          "value": 5,
+          "text": "end all aid to Ukraine immediately and stay completely out of the conflict."
+        }
+      ],
+      "own_words_levels": [
+        "local",
+        "state"
+      ],
+      "annexMd": "# ukraine-support — served revision 9ee7ecb7-fd99-429a-a37d-eff58a381983 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`107d180d-…`); coders code the served text below.\n\n**Question:** \"What level of military and financial support should be provided to Ukraine?\"\n\n**Orientation:** standard. Rung 1 is the most support (a significant increase), rung 5 ends all aid.\nThe rungs order **how much aid**, and from rung 3 down, **what kind** (humanitarian only) and how far\nthe United States stays involved.\n\n**Levels with a lever:** federal. Congress appropriates the aid and authorizes\ntransfers; state and local officials hold no lever.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"supplemental appropriation\", \"security assistance\", \"Ukraine Security Assistance\nInitiative\" (USAI), \"presidential drawdown authority\" (PDA), \"Foreign Military Financing\" (FMF),\n\"direct budget support\", \"economic support\", \"lend-lease\", \"frozen Russian assets\", \"humanitarian\nassistance\", \"ceasefire\", \"peace talks\", \"negotiated settlement\".\n\n1. **\"significantly increase military and financial aid to Ukraine.\"**\n   - Means: send substantially more military and financial aid than now.\n   - Operative clauses: [a] a significant increase; [b] military and financial aid.\n   - Establishing evidence looks like: own words that call for more aid, or for aid larger or faster\n     than current packages; a bill or amendment that adds aid above what is in force.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - \"Until complete victory\" is no longer part of this rung. A war-aim statement without an amount\n     → not evidence for or against rung 1 _(proposed)_.\n   - \"Military and financial aid\" is one clause with two forms: more **military** aid alone is\n     enough _(ruled 2026-10-01)_.\n   - Commonly confused with rung 2: see rung 2.\n\n2. **\"continue providing current levels of military and economic aid to help Ukraine defend\n   itself.\"**\n   - Means: keep aid at about the level it has been, without a large increase or a cut.\n   - Operative clauses: [a] continue aid; [b] at current levels; [c] military and economic aid.\n   - Establishing evidence looks like: a Yea on a Ukraine-specific aid bill **plus** own words that\n     frame it as keeping support steady, not raising it. A Yea alone excludes rungs 3–5 but not rung\n     1 → `direction-only` (V4: chair-shaped must exclude the adjacent rungs) _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1 because the rungs differ on **magnitude** (\"current levels\" vs\n     \"increase\"). A Yea on a supplemental (H.R. 8035, 2024, codebook V4) does not show whether its\n     size is \"current\" or an \"increase\" → BLANK `direction-only` without own words about the size\n     _(ruled 2026-10-01)_.\n\n3. **\"provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end\n   the war.\"**\n   - Means: humanitarian help only, no weapons, and a push for talks to end the war.\n   - Operative clauses: [a] limited humanitarian aid (and so no military aid); [b] encourage\n     negotiations to end the war.\n   - Establishing evidence looks like: own words or a record that support humanitarian aid while\n     opposing military aid, **and** call for negotiations. Compound: one side only →\n     `compound-partial` (V4.2).\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because a call for talks is common **beside** support for military\n     aid. Talks plus continued weapons is not rung 3 _(proposed)_.\n\n4. **\"reduce aid to Ukraine and focus American resources on domestic priorities instead.\"**\n   - Means: cut aid, but not end it, and spend the money at home.\n   - Operative clauses: [a] reduce aid; [b] direct the resources to domestic priorities.\n   - Establishing evidence looks like: own words or an amendment that cuts aid and moves the money to a\n     domestic purpose. Compound: one side only → `compound-partial` (V4.2) _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because a Yea on a **cut** does not show the person wants some aid\n     to stay. Sponsoring a partial cut sets the amount; voting for one does not exclude rung 5 →\n     `direction-only` without own words _(proposed)_.\n\n5. **\"end all aid to Ukraine immediately and stay completely out of the conflict.\"**\n   - Means: stop every kind of aid now, and take no part in the war at all.\n   - Operative clauses: [a] end all aid; [b] immediately; [c] stay completely out of the conflict.\n   - Establishing evidence looks like: own words or an amendment that strikes all Ukraine aid,\n     **plus** own words against any other involvement. [c] is an absence clause (V4.2) → without\n     it, `compound-partial`.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A **No** on an aid bill excludes rungs 1–2 only; it does not separate 3, 4 and 5 →\n     `direction-only` (V4.1).\n\n**Hard cases:**\n- **Combined packages.** Ukraine aid inside a package with aid for other countries, border measures\n  or other spending → V4 `multi-subject`; a Yea proves direction at most. The defense authorization\n  bill → `multi-subject`.\n- **Condemnation and solidarity resolutions** name no aid level → V4 `rhetorical` or `adjacent`.\n- **Sanctions on Russia** and **use of frozen Russian assets** are not U.S. aid levels → `adjacent`\n  _(proposed)_.\n- **Oversight and audit measures** (an inspector general for Ukraine aid) say how aid is tracked,\n  not how much → `adjacent` _(proposed)_.\n- **Near-unanimous votes** (codebook V4) cannot carry the chair alone.\n"
+    }
+  ]
+}

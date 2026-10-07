@@ -1,0 +1,44 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "710396dc-e618-4011-8118-43c62a786111",
+    "instrument": "hconres21(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "7997ef35-d11e-5aa6-bb99-ee2f3ae1d195",
+        "url": "https://clerk.house.gov/Votes/2023136",
+        "profile": "us-house-clerk-roll-call@1"
+      },
+      {
+        "snapshot_id": "2a7f3987-10ec-57c3-8699-128ebbf4eacb",
+        "url": "https://www.congress.gov/bill/118th-congress/house-concurrent-resolution/21",
+        "profile": "us-congress-gov-bill@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 1,
+    "topic_id": "710396dc-e618-4011-8118-43c62a786111",
+    "instrument": "hconres30(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "b62bc317-9913-5902-9da4-f1c7ac998334",
+        "url": "https://clerk.house.gov/Votes/2023201",
+        "profile": "us-house-clerk-roll-call@1"
+      },
+      {
+        "snapshot_id": "8bc827eb-d3d3-5340-ad76-a6237d26db1b",
+        "url": "https://www.congress.gov/bill/118th-congress/house-concurrent-resolution/30",
+        "profile": "us-congress-gov-bill@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-10-07-shadow-houchin-nosource",
+  "sources": [
+    {
+      "url": "https://www.erinhouchin.com/issues",
+      "source_kind": "own-site",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "campaign-finance",
+        "childcare",
+        "civil-rights",
+        "data-centers",
+        "economic-development",
+        "growth-and-development",
+        "homelessness",
+        "jail-capacity",
+        "judicial-criminal-justice",
+        "misinformation",
+        "redistricting",
+        "religious-freedom",
+        "rent-regulation",
+        "same-sex-marriage",
+        "transportation-priorities",
+        "2020-election",
+        "cannabis-policy",
+        "minimum-wage",
+        "ranked-choice-voting"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

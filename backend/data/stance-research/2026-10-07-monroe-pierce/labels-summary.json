@@ -1,0 +1,726 @@
+[
+ {
+  "topic_key": "abortion",
+  "batch": "pierce-abortion",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on abortion (floor speech or explanation of vote on SB 1(ss) 2022, campaign issue page, or questionnaire)",
+   "Any bill Pierce authored or sponsored that sets a gestational limit or codifies abortion access in Indiana"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/rollcalls/SB0001.64_H.pdf",
+   "https://iga.in.gov/pdf-documents/122/2022ss1/senate/bills/SB0001/SB0001.06.ENRH.pdf",
+   "https://iga.in.gov/legislative/2022ss1/bills/senate/1/details"
+  ]
+ },
+ {
+  "topic_key": "same-sex-marriage",
+  "batch": "pierce-same-sex-marriage",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's own words on same-sex marriage recognition (issue page, questionnaire, floor speech or explanation of his HJR 3 vote)",
+   "Pierce's recorded votes or sponsorship on Indiana sexual-orientation anti-discrimination bills (employment, housing, public accommodations)"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/rollcalls/HJ0003.70_H.pdf",
+   "https://iga.in.gov/pdf-documents/118/2014/house/resolutions/HJ0003/HJ0003.05.ENGH.pdf",
+   "https://iga.in.gov/legislative/2014/resolutions/house/joint/3/details"
+  ]
+ },
+ {
+  "topic_key": "religious-freedom",
+  "batch": "pierce-religious-freedom",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words (floor speech, explanation of vote, issue page) on religious exemptions from anti-discrimination law",
+   "Pierce's vote or sponsorship on SB 50 (2015) RFRA 'fix' or any Indiana bill adding SOGI protections with or without religious exemptions"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/119/2015/senate/bills/SB0101/rollcalls/SB0101.305_H.pdf",
+   "https://iga.in.gov/pdf-documents/119/2015/senate/bills/SB0101/SB0101.05.ENRS.pdf",
+   "https://iga.in.gov/legislative/2015/bills/senate/101/details"
+  ]
+ },
+ {
+  "topic_key": "trans-athletes",
+  "batch": "pierce-trans-athletes",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words (statement, floor speech, or questionnaire) on transgender athlete eligibility that would separate rungs 1-3"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/rollcalls/HB1041.402_H.pdf",
+   "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/HB1041.05.ENRS.pdf",
+   "https://iga.in.gov/legislative/2022/bills/house/1041/details"
+  ]
+ },
+ {
+  "topic_key": "gun-policy",
+  "batch": "pierce-gun-policy",
+  "status": "ok",
+  "value": 2,
+  "blank_reason": null,
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's recorded vote or authorship on any Indiana assault-weapons ban bill, to give the chair a record"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/rollcalls/HB1296.382_H.pdf",
+   "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/HB1296.04.ENRS.pdf"
+  ]
+ },
+ {
+  "topic_key": "deportation",
+  "batch": "pierce-deportation",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on which undocumented immigrants should be deported (questionnaire, issue page, interview, or floor speech)",
+   "SB 76 (2026) text as amended in the House and passed on third reading (Roll Call 240), if the vote is to be coded on the version he acted on"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/rollcalls/SB0076.240_H.pdf",
+   "https://iga.in.gov/legislative/2026/bills/senate/76/details",
+   "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0076/SB0076.01.INTR.pdf"
+  ]
+ },
+ {
+  "topic_key": "redistricting",
+  "batch": "pierce-redistricting",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Text of Rep. Pierce's second-reading amendment to HB 1032 (2026) establishing a non-partisan redistricting system, and the House roll call on it (iga.in.gov / House Journal)"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/rollcalls/HB1032.28_H.pdf",
+   "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/HB1032.02.COMH.pdf",
+   "https://iga.in.gov/legislative/2026/bills/house/1032/details"
+  ]
+ },
+ {
+  "topic_key": "healthcare",
+  "batch": "pierce-healthcare",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House roll call, SEA 1 (2026), final passage \u2014 Pierce's vote",
+   "Any Pierce-authored or co-sponsored bill on Medicaid eligibility expansion or coverage for all Hoosiers (iga.in.gov)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "medicare/aid",
+  "batch": "pierce-medicare-aid",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House roll call, SEA 1 (2026), third reading, with Pierce's vote and the bill's operative text"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "childcare",
+  "batch": "pierce-childcare",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House roll call, HEA 1177 (2026), final passage, with bill text",
+   "Indiana House roll call on the House Democratic amendment to SEA 4 (2026) requiring release of CCDF funds, with amendment text",
+   "Any bill Matt Pierce authored or co-authored on childcare subsidies or provider grants"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "taxes",
+  "batch": "pierce-taxes",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly roll call: Pierce's vote on SEA 1 (2025), property tax",
+   "Any bill Pierce authored or sponsored that changes Indiana income, corporate or sales tax rates"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "school-vouchers",
+  "batch": "pierce-school-vouchers",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House roll calls for Matt Pierce on single-subject Choice Scholarship expansion or repeal bills/amendments (e.g., any amendment to repeal or cap the voucher program)",
+   "Pierce's own words stating whether he would repeal the Choice Scholarship program or keep existing vouchers"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "tariffs",
+  "batch": "pierce-tariffs",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": []
+ },
+ {
+  "topic_key": "data-centers",
+  "batch": "pierce-data-centers",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House Journal roll call on Pierce amendment to HB 1002 (2026) barring further data-center sales tax exemptions, with amendment text",
+   "Indiana House roll call and bill text, HB 1333 (2026), third reading"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "fossil-fuels",
+  "batch": "pierce-fossil-fuels",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House roll calls or sponsorship by Rep. Matt Pierce on bills governing oil and gas well permits, state-land leasing or coal mining production",
+   "Rep. Matt Pierce's own words on oil, gas or coal production levels or new drilling in Indiana"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "climate-change",
+  "batch": "pierce-climate-change",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly roll calls for Pierce's votes on HEA 1421 (2023), SEA 271 (2022), SEA 423 and SEA 424 (2025)",
+   "Any Indiana bill Pierce authored or co-sponsored on a renewable portfolio standard, clean-energy incentives, or renewable siting/interconnection, with bill text"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "housing",
+  "batch": "pierce-housing",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls for any housing bill Matt Pierce authored, co-authored or voted on (rent rules, inclusionary requirements, housing trust fund, LIHTC-style credits)",
+   "Matt Pierce's own campaign issue page or candidate questionnaire answer on housing affordability"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "voting-rights",
+  "batch": "pierce-voting-rights",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House roll calls (final passage) on voter photo-ID or proof-of-citizenship bills during Pierce's House service, with bill text",
+   "Pierce's own first-person statement or questionnaire answer on voter identification requirements"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "homelessness",
+  "batch": "pierce-homelessness",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House roll call, SEA 285 (2026), final passage, with Pierce's vote",
+   "Text and House vote record of Pierce's amendment to SEA 285 (2026)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "civil-rights",
+  "batch": "pierce-civil-rights",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly roll calls or bill pages for any civil-rights or anti-discrimination bill Pierce authored or voted on (e.g. bills on the Diversity Business Enterprise / minority and women business enterprise program)",
+   "The individual roll calls listed on the ACLU of Indiana 2026 Legislative Scorecard, each to be coded as a record"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "ai-regulation",
+  "batch": "pierce-ai-regulation",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls for any AI bills Rep. Matt Pierce authored, co-authored or voted on (e.g. automated decision systems, AI liability, deepfakes)",
+   "Rep. Matt Pierce's own statements on AI oversight (questionnaire, issue page, floor remarks)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "economic-development",
+  "batch": "pierce-economic-development",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 1,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana House Journal: text of and action on Rep. Pierce's amendment to HB 1002 (2026) barring further IEDC sales-tax exemptions for data centers",
+   "Pierce's own words or record on incentive programmes generally (e.g. IEDC tax credits, clawbacks, small-business programmes)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "transportation-priorities",
+  "batch": "pierce-transportation-priorities",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words or Indiana House roll calls on a single-subject measure that sets the split between road capacity and transit/pedestrian/cycling investment"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-curriculum",
+  "batch": "pierce-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's own words (floor remarks or explanation of vote) on the HB 1608 (2023) prohibited-instruction section",
+   "Pierce's own words on how K-12 schools should teach race, gender and history"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+   "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.489_H.pdf",
+   "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.05.ENRS.pdf"
+  ]
+ },
+ {
+  "topic_key": "education-library-books",
+  "batch": "pierce-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's own words (floor remarks or explanation of vote) on the HB 1447 (2023) school library removal chapter",
+   "Pierce's own words on how schools should handle book challenges"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1447/rollcalls/HB1447.535_H.pdf",
+   "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1447/HB1447.04.ENRS.pdf"
+  ]
+ },
+ {
+  "topic_key": "education-gender-identity",
+  "batch": "pierce-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's own words (floor remarks or explanation of vote) on the HB 1608 (2023) parental-notification chapter",
+   "Pierce's own words on what schools should do when a student uses a different name or gender identity"
+  ],
+  "context_urls": [
+   "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+   "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.489_H.pdf",
+   "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.05.ENRS.pdf"
+  ]
+ },
+ {
+  "topic_key": "education-equity-programs",
+  "batch": "pierce-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's own words or votes on K-12 equity offices, training or group-targeted supports"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-school-police",
+  "batch": "pierce-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's votes or own words on school resource officer mandates or funding"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-charter-authorization",
+  "batch": "pierce-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's votes or own words on charter authorization, caps or conversion"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-school-budget",
+  "batch": "pierce-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's own words or single-subject votes on the level of school funding and whether to raise taxes for it"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-ai",
+  "batch": "pierce-education",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Pierce's votes or own words on AI use in K-12 classrooms"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "campaign-finance",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls for campaign-finance contribution or spending limit bills Matt Pierce authored, sponsored or voted on",
+   "Matt Pierce's own words on campaign contribution or spending limits (candidate questionnaire, issue page, interview)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "growth-and-development",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls for growth-management, concurrency or local development-limit bills Matt Pierce acted on",
+   "Matt Pierce's own words on the pace of growth and development"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "jail-capacity",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls on jail/prison construction funding or alternatives-to-incarceration bills Matt Pierce acted on",
+   "Matt Pierce's own words on jail overcrowding and capacity"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "judicial-criminal-justice",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words stating a general orientation on how the system should respond to lawbreaking (questionnaire, issue page)",
+   "Indiana General Assembly bill pages and roll calls on broad sentencing-reform bills Matt Pierce acted on"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "misinformation",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls on platform removal or labeling duties for deceptive content that Matt Pierce acted on",
+   "Matt Pierce's own words on online misinformation and platform moderation"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "rent-regulation",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls on rent caps or rent stabilization coverage that Matt Pierce authored or voted on",
+   "Matt Pierce's own words on rent control"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "social-security",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on Social Security benefits and payroll-tax funding (questionnaire, interview, issue page)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "ukraine-support",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on the level of U.S. aid to Ukraine"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "2020-election",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on the outcome of the 2020 presidential election"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "border-security",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on asylum access and border enforcement"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "cannabis-policy",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls on medical cannabis, decriminalization or adult-use legalization bills Matt Pierce authored or voted on",
+   "Matt Pierce's own words on cannabis legalization"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "defense-spending",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on the size of the U.S. military budget"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "military-intervention",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on when the U.S. should use military force abroad"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "israel-military-aid",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Matt Pierce's own words on the level and terms of U.S. military aid to Israel"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "minimum-wage",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls on general state minimum-wage bills (raise, indexing, local-option) Matt Pierce authored or voted on",
+   "Matt Pierce's own words on the minimum wage"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "ranked-choice-voting",
+  "batch": "pierce-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Indiana General Assembly bill pages and roll calls on any ranked-choice voting adoption, local-option or ban bill Matt Pierce acted on",
+   "Matt Pierce's own words on ranked-choice voting"
+  ],
+  "context_urls": []
+ }
+]

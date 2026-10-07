@@ -1,0 +1,42 @@
+[
+  {
+    "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+    "topic_key": "social-security",
+    "topic_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+    "served_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+    "question_number": 37,
+    "title": "Social Security",
+    "question_text": "How should Social Security be funded and structured for the future?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "expand Social Security benefits significantly and remove the income cap on payroll taxes to fund it."
+      },
+      {
+        "value": 2,
+        "text": "increase Social Security benefits modestly while raising taxes on higher earners to strengthen the program."
+      },
+      {
+        "value": 3,
+        "text": "make small adjustments to both benefits and taxes to keep Social Security stable for future generations."
+      },
+      {
+        "value": 4,
+        "text": "gradually reduce future benefits rather than raise taxes to keep Social Security solvent."
+      },
+      {
+        "value": 5,
+        "text": "transition Social Security to private investment accounts that individuals control themselves."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  }
+]

@@ -1,0 +1,89 @@
+{
+ "date": "2026-10-07",
+ "batches": [
+  {
+   "name": "pierce-education",
+   "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+   "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+   "level": "state",
+   "topic_keys": [
+    "education-curriculum",
+    "education-library-books",
+    "education-gender-identity",
+    "education-equity-programs",
+    "education-school-police",
+    "education-charter-authorization",
+    "education-school-budget",
+    "education-ai"
+   ],
+   "sources": [
+    {
+     "url": "https://iga.in.gov/legislative/2023/bills/house/1608/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1608 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1608-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.05.ENRS.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1608 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1608-enrolled.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1608 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1608-rc220h.txt"
+    },
+    {
+     "url": "https://iga.in.gov/legislative/2023/bills/house/1447/details",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1447 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1447-details.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1447/HB1447.04.ENRS.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1447 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1447-enrolled.txt"
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1447/rollcalls/HB1447.535_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1447 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1447-rc535h.txt"
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-december-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://repmattpierce.substack.com/p/rep-matt-pierces-may-newsletter",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.489_H.pdf",
+     "source_kind": "public-record",
+     "instruments": [
+      "HB 1608 (2023)"
+     ],
+     "human_saved_path": "human-saved/iga-2023-hb1608-rc489h.txt"
+    }
+   ]
+  }
+ ]
+}

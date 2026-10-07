@@ -1,0 +1,98 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "5f5ea07a-ba29-551d-add5-58fa5c06473a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-02",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Statement on his amendment to ban masked law enforcement officers, including ICE; it speaks to how agents operate, not to who should be deported.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "79c56604-2c43-59c4-ac07-0b604371d804",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2026-02-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 76 (2026)",
+          "provision_quote": null,
+          "note": "Nay on third reading of SB 76, a bill requiring state and local cooperation with federal immigration enforcement — the cooperation question (annex: adjacent), and a record cannot seat a chair at this no-lever level anyway.",
+          "record_kind": "vote",
+          "actor_quote": "Pierce, M",
+          "tally_quote": "Yea 61 Immigration matters Nay 28"
+        },
+        {
+          "snapshot_id": "b4226e81-1cf9-5237-b3b8-34b70433b2f5",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-02",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His statement opposing SB 76 objects to entangling the state with ICE and to the attorney general's powers; it says nothing about which undocumented immigrants should be removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "297c3d77-e35c-52ff-8bf0-36e1996fabaf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 76 (2026)",
+          "provision_quote": null,
+          "note": "Bill details header and author block only; Pierce is not named here, so this page identifies the instrument and carries no actor or provision.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "361d58f8-cc6b-53b1-9c37-1c0dbfba907c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-12-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 76 (2026)",
+          "provision_quote": "A governmental body or a postsecondary educational institution may not limit or restrict the enforcement of federal immigration laws",
+          "note": "Introduced version only (the House amended the bill before the vote); its operative sections mandate cooperation and detainer compliance, which is the local-immigration question, not who is deported.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Pierce's Nay on SB 76 and his statements against it and for unmasking ICE agents concern state cooperation with and conduct of federal enforcement, which the annex treats as adjacent; none of his own words address whether to \"Stop deportations entirely\", \"Only deport undocumented immigrants convicted of serious violent crimes\", or any other rung's removal rule. At this state seat only own words on the removal question could seat a chair, and none survive.",
+      "needs_source": [
+        "Matt Pierce's own words on which undocumented immigrants should be deported (questionnaire, issue page, interview, or floor speech)",
+        "SB 76 (2026) text as amended in the House and passed on third reading (Roll Call 240), if the vote is to be coded on the version he acted on"
+      ],
+      "quotes": []
+    }
+  ]
+}

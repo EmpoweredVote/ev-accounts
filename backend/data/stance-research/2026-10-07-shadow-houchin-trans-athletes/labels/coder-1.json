@@ -1,0 +1,111 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "7dbb3832-acd5-571d-970e-8ff9b07fadb9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-20",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.R. 734 (118th)",
+          "provision_quote": "It shall be a violation of subsection (a) for a recipient of Federal financial assistance who operates, sponsors, or facilitates athletic programs or activities to permit a person whose sex is male to participate in an athletic program or activity that is designated for women or girls.",
+          "note": "Single-subject bill she cosponsored; operative section limits women's/girls' teams by sex at birth and leaves other teams open, which is rung 4 and excludes rung 5.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9cacfaf8-60a4-589f-9c3e-05dedb263d8a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-20",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.R. 734 (118th)",
+          "provision_quote": null,
+          "note": "Roll Call 192, final passage; she voted Yea on a divided 219-203 vote.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "VOTES yea: 219 nay: 203 present: 0 not voting: 13"
+        },
+        {
+          "snapshot_id": "96637826-33c9-51ac-83e0-4ea269d3ef1e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01-14",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.R. 28 (119th)",
+          "provision_quote": "It shall be a violation of subsection (a) for a recipient of Federal financial assistance who operates, sponsors, or facilitates athletic programs or activities to permit a person whose sex is male to participate in an athletic program or activity that is designated for women or girls.",
+          "note": "Single-subject bill she cosponsored; same operative text as H.R. 734, matching rung 4.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c8e06077-f5c8-5d02-968d-d13cd39a2f24",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01-14",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.R. 28 (119th)",
+          "provision_quote": null,
+          "note": "Roll Call 12, final passage; she voted Yea on a divided 218-206 vote.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "VOTES yea: 218 nay: 206 present: 1 not voting: 9"
+        },
+        {
+          "snapshot_id": "2d507791-d31f-59ec-877e-c0695b849f8e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person op-ed backing exclusive access to women's teams for biological females; it shows the side but does not by itself state the rung's clauses or exclude rung 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "7dbb3832-acd5-571d-970e-8ff9b07fadb9",
+        "9cacfaf8-60a4-589f-9c3e-05dedb263d8a",
+        "96637826-33c9-51ac-83e0-4ea269d3ef1e",
+        "c8e06077-f5c8-5d02-968d-d13cd39a2f24"
+      ],
+      "reasoning": "Houchin cosponsored and voted Yea on final passage of H.R. 734 (118th) and H.R. 28 (119th), single-subject bills whose operative section bars a person \"whose sex is male\" (by sex at birth) from teams \"designated for women or girls\", on divided votes. That matches the rung \"require transgender athletes to compete only on teams matching their biological sex assigned at birth\"; leaving other teams open excludes a complete ban from all sport.",
+      "needs_source": [
+        "Congress.gov bill page and Houchin's cosponsorship record for the Protection of Women in Olympic and Amateur Sports Act (118th), named in her op-ed"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "2d507791-d31f-59ec-877e-c0695b849f8e",
+          "text": "Our call for exclusive access to women's sports teams echoes the sentiments of concerned parents and student athletes who demand change.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

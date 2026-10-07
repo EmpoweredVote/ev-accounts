@@ -36,6 +36,7 @@ import { runRotationPass } from '../vq/services/questRotation.js';
 import { runExpirationSweep } from '../trivia/cron/expirationSweep.js';
 import { runElectionDetection } from '../trivia/cron/electionDetection.js';
 import { runPipelineCron } from '../trivia/cron/pipelineCron.js';
+import { runLegiscanRefresh } from '../lib/legiscan/refresh.js';
 
 export type JobFn = () => Promise<unknown>;
 
@@ -66,6 +67,9 @@ export const JOBS: Record<string, JobFn> = {
   // after disputing a committee link. Exits non-zero if any row failed.
   'local-finance-summary': () => runLocalFinanceSummaries(),
   'ocpf': () => runAdapterForAll('ocpf'),
+  // Weekly state-legislature votes and bills from LegiScan datasets (ev-cto decision 0030). About 1 query per
+  // state when nothing changed. Needs LEGISCAN_API_KEY and migration 1901. Never reads or stores party.
+  'legiscan': () => runLegiscanRefresh(),
   // Never had an in-process cron: until 2026-09-23 it ran only from the admin endpoint.
   // Heavy (1.58 GB ZIP held in memory while it is parsed), so it runs as its own process.
   'cal-access': () => runAdapterForAll('cal_access'),

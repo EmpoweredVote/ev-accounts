@@ -1,0 +1,115 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "passages": [
+        {
+          "snapshot_id": "0c438c37-4a90-590b-a851-34edbe45cf59",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-06-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A planning-director appointment release about housing and permitting; it says nothing about incentives to companies.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9e8e3a26-faa3-5076-97d9-df20faf3a6b1",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Praises sewer readiness at a public airport as economic development; it neither rejects nor offers company-specific incentives, so it does not separate the rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "32bcaad3-a537-580f-8da9-237e1f71db10",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-07-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Supports a land contribution as subsidy for a convention-center host hotel while saying the RDC lacked capacity for more; this shows a pro-incentive side but states no wage, local-hire, clawback or cost-cap terms that separate rungs 3, 4 and 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ac5e6d1a-0925-5797-bc9a-0c04862f9ef3",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-08-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her letter supports a regional Economic Development District and federal funding strategy, not incentives to individual companies.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c28c93dc-53cd-53bc-b342-3ea34f5e1673",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-01-21",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Marketing a city property for private redevelopment and returning it to the tax rolls is a land sale, not a tax break or subsidy to a company.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In the Seminary Pointe statement she backs a land contribution to a convention-center host hotel, adding that the RDC \"did not have the capacity to contribute additional subsidy beyond the land itself\". That puts her on the side that offers incentives. But nothing in the sources states wage and local-hiring conditions with a clawback, or a policy of keeping limits and passing on deals that cost too much. The other passages are about infrastructure, land sales or regional planning, so they do not separate the rungs.",
+      "needs_source": [
+        "Common Council or Redevelopment Commission record of any tax abatement, TIF or incentive agreement the Thomson administration proposed or signed, with its wage, local-hire or clawback terms",
+        "Thomson's own words (campaign questionnaire or issue page) on whether she would offer tax abatements or subsidies to attract employers, and on what conditions"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "9e8e3a26-faa3-5076-97d9-df20faf3a6b1",
+          "text": "It is infrastructure, partnership, and planning that make future jobs and investment possible.",
+          "v7_tier": "direction",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "c28c93dc-53cd-53bc-b342-3ea34f5e1673",
+          "text": "It needs to be contributing—supporting economic activity, strengthening downtown, and returning to the tax rolls.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus"
+  ],
+  "rows": [
+    {
+      "key": "68568faf-1e0f-4ca2-89d9-bda625665712|b343becb-af7d-4a19-a6a1-2e5df210f344|6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "topic_key": "education-curriculum",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "federal",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "68568faf-1e0f-4ca2-89d9-bda625665712|b343becb-af7d-4a19-a6a1-2e5df210f344|1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "topic_key": "education-library-books",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "federal",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "68568faf-1e0f-4ca2-89d9-bda625665712|b343becb-af7d-4a19-a6a1-2e5df210f344|d96f987e-3404-4667-909d-5889116ba6e5",
+      "topic_key": "education-gender-identity",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "federal",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "68568faf-1e0f-4ca2-89d9-bda625665712|b343becb-af7d-4a19-a6a1-2e5df210f344|66b389c7-86fc-45e9-bf34-964bb747f27b",
+      "topic_key": "education-equity-programs",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "federal",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "68568faf-1e0f-4ca2-89d9-bda625665712|b343becb-af7d-4a19-a6a1-2e5df210f344|15d7e730-119b-43a2-a351-1efb7352b86b",
+      "topic_key": "education-school-police",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "federal",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "68568faf-1e0f-4ca2-89d9-bda625665712|b343becb-af7d-4a19-a6a1-2e5df210f344|49f0b171-2ddf-4e68-887f-0ba78a2562f1",
+      "topic_key": "education-school-budget",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "federal",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    },
+    {
+      "key": "68568faf-1e0f-4ca2-89d9-bda625665712|b343becb-af7d-4a19-a6a1-2e5df210f344|61269f44-9c7f-4b27-818a-3508009f6ae2",
+      "topic_key": "education-ai",
+      "outcome": {
+        "kind": "coder-missing",
+        "missing": [
+          2,
+          3
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "federal",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "coder-missing"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 0
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

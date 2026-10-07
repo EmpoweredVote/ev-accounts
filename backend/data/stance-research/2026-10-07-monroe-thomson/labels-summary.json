@@ -1,0 +1,746 @@
+[
+ {
+  "topic_key": "homelessness",
+  "batch": "thomson-homelessness",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "compound-partial",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Bloomington Municipal Code provision barring overnight camping in parks (and its penalty), plus any action by Mayor Thomson on it",
+   "Bloomington encampment-response protocol in the Housing and Homelessness Response Report (bton.in/hrhi)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "homelessness-response",
+  "batch": "thomson-homelessness-response",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor's proposed City of Bloomington budgets (2025, 2026, 2027) with homelessness/housing lines, and her own words presenting them",
+   "Housing and Homelessness Response Report (bton.in/hrhi, Housing_Investment_Report_20251120) for any first-person funding commitments",
+   "2023 mayoral campaign questionnaire or debate answers on homelessness funding",
+   "Any mayoral act on a dedicated housing/homelessness fund or tax (e.g. Housing Development Fund) with the instrument named"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "housing",
+  "batch": "thomson-housing",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "City of Bloomington Redevelopment Commission resolution and the Hopewell legal framework for permanently affordable homes, with any action by the mayor on it",
+   "Bloomington Housing Action Plan and any executive order or ordinance the mayor signed or proposed on inclusionary units, rent rules or housing subsidies",
+   "Kerry Thomson's own answer to a housing questionnaire or debate question (2023 mayoral campaign or current term)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "residential-zoning",
+  "batch": "thomson-residential-zoning",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on single-family zoning, duplexes/ADUs or upzoning (e.g., 2023 mayoral campaign questionnaire or debate answer, or a mayoral statement on a UDO residential-density amendment)",
+   "Any mayoral signature/veto or own statement on a Bloomington UDO amendment changing residential density allowances"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "growth-and-development",
+  "batch": "thomson-growth-and-development",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "City of Bloomington Comprehensive Audit of Development Review and Permitting Services Recommendations Report (07-07-26) and any executive order or ordinance adopting it",
+   "Hopewell South PUD ordinance and Council action (2026), as the mayor's own act"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "economic-development",
+  "batch": "thomson-economic-development",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Common Council or Redevelopment Commission record of any tax abatement, TIF or incentive agreement the Thomson administration proposed or signed, with its wage, local-hire or clawback terms",
+   "Thomson's own words (campaign questionnaire or issue page) on whether she would offer tax abatements or subsidies to attract employers, and on what conditions"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "taxes",
+  "batch": "thomson-taxes",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on tax policy, e.g. a candidate questionnaire or debate answer on taxes, or a first-person statement on Indiana SEA 1 (2025) property and income tax changes stating whether she supports or opposes them"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "transportation-priorities",
+  "batch": "thomson-transportation-priorities",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Text of Bloomington Ordinance 2026-12 and the mayor's formal veto message to the Common Council (June 22, 2026)",
+   "Mayor Thomson's own words or budget/capital-plan actions stating how city transportation investment should be split between road capacity and walking, cycling and transit"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "public-safety-approach",
+  "batch": "thomson-public-safety-approach",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's proposed city budget (2025 or 2026) showing BPD sworn authorized strength and any civilian or co-responder crisis-response funding",
+   "Any executive order or program launch by the Mayor creating an alternative or co-responder crisis team",
+   "Mayor Thomson's own words (campaign questionnaire or issue page) answering how the city should approach public safety"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "deportation",
+  "batch": "thomson-deportation",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on which undocumented immigrants should or should not be deported (e.g., interview, questionnaire, or campaign issue page)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "local-immigration",
+  "batch": "thomson-local-immigration",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Bloomington Police Department policy or general order on immigration status inquiries, civil immigration arrests, or ICE requests",
+   "Any City of Bloomington ordinance, executive order or council resolution on cooperation with federal immigration enforcement acted on by Mayor Thomson",
+   "Mayor Thomson's own words (questionnaire, debate answer, interview) on ICE detainers or information sharing"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "rent-regulation",
+  "batch": "thomson-rent-regulation",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on rent control or rent stabilization (e.g. campaign questionnaire, issue page, or interview)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "climate-change",
+  "batch": "thomson-climate-change",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "direction-only",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "City of Bloomington appropriation ordinances or Common Council/Board of Public Works records approving municipal solar installations, with the mayor's action on them",
+   "Any mayoral executive order or city ordinance setting binding, dated clean-energy requirements for city operations or utilities",
+   "Thomson's own words (campaign issue page, questionnaire, interview) on whether government should require clean energy by deadlines"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "local-environment",
+  "batch": "thomson-local-environment",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's own words or acts (approval/veto, signed ordinance) on a local land-use or environmental ordinance (tree, wetland, creek, open space) or a contested development approval in Bloomington"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "abortion",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on abortion law (candidate questionnaire, campaign issue page, debate answer or interview)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "ai-regulation",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on government oversight of AI development and deployment"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "campaign-finance",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act on any city campaign-finance ordinance (contribution limits, public financing), or her own words on campaign-finance rules"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "childcare",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act on any city childcare subsidy or provider grant programme, or her own words on childcare cost and availability"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "city-sanitation",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's sanitation budget proposals, executive actions or own words on street cleaning and sanitation service"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "civil-rights",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act on any city human-rights ordinance or equity programme, or her own words on civil rights enforcement"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "data-centers",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act on any data-centre moratorium, permit condition or development agreement, or her own words on data-centre growth"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "fossil-fuels",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on fossil fuel production"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "healthcare",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on government's role in healthcare coverage"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "jail-capacity",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act or own words on county jail capacity, jail construction or alternatives to incarceration"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "medicare/aid",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on Medicare and Medicaid funding and structure"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "misinformation",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on platform and government responsibility for online misinformation"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "redistricting",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on who should draw electoral district boundaries"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "religious-freedom",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act on any city human-rights ordinance religious exemption, or her own words on religious freedom and anti-discrimination law"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "same-sex-marriage",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on same-sex marriage recognition"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "school-vouchers",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on school vouchers (e.g. Indiana Choice Scholarship eligibility)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "social-security",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on Social Security funding and structure"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "tariffs",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on tariffs and trade policy"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "trans-athletes",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's act or own words on transgender athletes' team eligibility"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "ukraine-support",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on military and financial aid to Ukraine"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "voting-rights",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on voter identification and proof of citizenship"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "2020-election",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on the outcome of the 2020 presidential election"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "border-security",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on asylum and border enforcement"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-curriculum",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on school curriculum on race, gender and history"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-library-books",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on challenges to books in school libraries and classrooms"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-gender-identity",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on school policy for students' chosen names, pronouns and parental notification"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-equity-programs",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on school equity programmes and achievement gaps"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-school-police",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act on any city school resource officer contract or funding, or her own words on police in schools"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-charter-authorization",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act as a charter authorizer (if the city holds that role), or her own words on charter school authorization"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-school-budget",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's act or own words on school funding levels, operating referendums or levies"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "education-ai",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on artificial intelligence in classrooms and student work"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "cannabis-policy",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act on city enforcement priorities for cannabis possession, or her own words on cannabis legalization"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "defense-spending",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on military spending levels"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "military-intervention",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on U.S. military intervention abroad"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "gun-policy",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on firearm regulation (assault weapons bans, background checks, permitless carry)"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "israel-military-aid",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on U.S. military aid to Israel"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "minimum-wage",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Mayor Thomson's act on any city living-wage ordinance, or her own words on the minimum wage"
+  ],
+  "context_urls": []
+ },
+ {
+  "topic_key": "ranked-choice-voting",
+  "batch": "thomson-nosource",
+  "status": "ok",
+  "value": null,
+  "blank_reason": "no-evidence",
+  "evidence_type": "statement",
+  "rests_on": 0,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Kerry Thomson's own words on ranked-choice voting"
+  ],
+  "context_urls": []
+ }
+]

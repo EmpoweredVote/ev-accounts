@@ -97,6 +97,8 @@ export interface Vote {
   yea_count: number | null;
   nay_count: number | null;
   session_id: string | null;
+  /** Bill page URL (LegiScan rows link to legiscan.com; used for CC BY credit + Source link). */
+  bill_url: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -352,7 +354,8 @@ export async function getVotesByPolitician(
       COALESCE(v.result, '') AS result,
       v.yea_count,
       v.nay_count,
-      v.session_id
+      v.session_id,
+      b.url AS bill_url
     FROM essentials.legislative_votes v
     LEFT JOIN essentials.legislative_bills b ON b.id = v.bill_id
     WHERE v.politician_id = $1
@@ -374,6 +377,7 @@ export async function getVotesByPolitician(
     yea_count: row.yea_count != null ? Number(row.yea_count) : null,
     nay_count: row.nay_count != null ? Number(row.nay_count) : null,
     session_id: row.session_id ?? null,
+    bill_url: row.bill_url ?? null,
   }));
 }
 

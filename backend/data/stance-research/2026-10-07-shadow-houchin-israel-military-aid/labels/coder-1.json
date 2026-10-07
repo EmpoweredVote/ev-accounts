@@ -1,0 +1,98 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "6783e65c-0722-45d9-8579-65327af7c15c",
+      "served_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+      "passages": [
+        {
+          "snapshot_id": "22238768-2817-5798-8d0c-42b37c2c2770",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.R. 8369 (118th)",
+          "provision_quote": null,
+          "note": "Roll call 217, final passage of the single-subject Israel Security Assistance Support Act; Houchin voted Yea on a divided vote.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 224 nay: 187"
+        },
+        {
+          "snapshot_id": "07a3692a-e6c4-5f6f-b4b2-a176e901b9b1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-16",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "H.R. 8369 (118th)",
+          "provision_quote": "None of the funds appropriated or otherwise made available under any Act appropriating funds for the Department of Defense or the Department of State for fiscal year 2024 or any prior years may be made available-- (1) to withhold, halt, reverse, or cancel the delivery of defense articles or defense services from the United States to Israel",
+          "note": "Houchin is a cosponsor; the operative sections bar withholding any delivery to Israel and require prompt delivery of all expected defense articles, i.e. full aid with no condition on delivery.",
+          "record_kind": "sponsor",
+          "actor_quote": "Rep. Houchin, Erin [R-IN-9]",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "15c5a6dd-1130-5475-8bb7-83d5b57e9638",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-04-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 8034 (118th)",
+          "provision_quote": null,
+          "note": "Roll call 152, Yea on the Israel security supplemental; per the annex a supplemental shows continued aid but does not separate rungs 1 and 2.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 366 nay: 58"
+        },
+        {
+          "snapshot_id": "8827fe78-aa0c-538f-8033-5638fa3ad14e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-04-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 8034 (118th)",
+          "provision_quote": "$4,000,000,000 shall be for the Secretary of Defense to provide to the Government of Israel for the procurement of the Iron Dome and David's Sling defense systems to counter short-range rocket threats",
+          "note": "Bill text of the supplemental she voted for; it appropriates Israel military aid (and humanitarian and other funds) and says nothing about conditions.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "505e986a-1cce-5388-8443-28cd7fdc4ade",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign issue page written in the third person ('Erin stands firmly with Israel'); names no aid level or condition.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "22238768-2817-5798-8d0c-42b37c2c2770",
+        "07a3692a-e6c4-5f6f-b4b2-a176e901b9b1"
+      ],
+      "reasoning": "Houchin cosponsored and voted Yea on H.R. 8369 (118th), a single-subject bill whose operative sections forbid funds 'to withhold, halt, reverse, or cancel the delivery of defense articles or defense services from the United States to Israel' and require prompt delivery of all expected articles. That matches 'Continue full military aid to Israel with no new conditions' and excludes conditioning aid on compliance; her Yea on the H.R. 8034 supplemental shows only continued aid.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

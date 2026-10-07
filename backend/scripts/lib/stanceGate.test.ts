@@ -254,6 +254,18 @@ describe('instrument-not-cited (C68) — spacing/case variants match', () => {
   });
 });
 
+describe('instrument-not-cited: federal spellings (2026-10-07)', () => {
+  const clerk = 'Roll Call 102 | Bill Number: H. R. 22 Share XML View | HTML View Apr 10, 2025, 11:21 AM | 119th Congress, 1st Session Vote Question: On Passage SAVE Act Vote Type: Yea-And-Nay Status: Passed VOTES yea: 220 Houchin';
+  const e = [{ ...ev[0], snippet: clerk }];
+  it('reads the Clerk\'s "H. R. 22" as H.R. 22', () =>
+    expect(ids({ ...good, reasoning: 'Voted for H.R. 22 (119th), the SAVE Act.' }, { evidence: e })).not.toContain('instrument-not-cited'));
+  it('reads "H. J. RES. 44" as H.J.Res. 44, and still flags a bill the snippets do not show', () => {
+    const j = [{ ...ev[0], snippet: clerk.replace('H. R. 22', 'H. J. RES. 44') }];
+    expect(ids({ ...good, reasoning: 'Voted Yea on H.J.Res. 44 (118th).' }, { evidence: j })).not.toContain('instrument-not-cited');
+    expect(ids({ ...good, reasoning: 'Voted Yea on H.J.Res. 45 (118th).' }, { evidence: j })).toContain('instrument-not-cited');
+  });
+});
+
 describe('quote-not-in-snippet (C69)', () => {
   it('does not flag a quote that appears verbatim (normalized) in a cited snippet', () => {
     const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), saying "she believes every Hoosier family deserves affordable coverage"' };
@@ -261,6 +273,11 @@ describe('quote-not-in-snippet (C69)', () => {
   });
   it('does not flag a quote shorter than 4 words — a stance label, not a claimed utterance', () => {
     expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025); called it "good policy".' })).not.toContain('quote-not-in-snippet');
+  });
+  it("does not flag a quote of the topic's own served rung text (codebook V6: cite the rung by its text)", () => {
+    const T = { ...HEALTH, stances: [1, 2, 3, 4, 5].map((value) => ({ value, text: `Require every family to carry rung ${value} coverage by law` })) };
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025), which matches "require every family to carry rung 2 coverage".' }, { topic: T })).not.toContain('quote-not-in-snippet');
+    expect(ids({ ...good, reasoning: 'Voted YES on HB 1001 (2025), saying "require every family to carry rung 9 coverage".' }, { topic: T })).toContain('quote-not-in-snippet');
   });
   it('flags curly quotes the same as straight quotes', () => {
     const row = { ...good, reasoning: 'Voted YES on HB 1001 (2025), saying “this is a total fabrication nobody actually said.”' };

@@ -4,6 +4,8 @@
  * and needs-source.json. Changes NOTHING that is published. --apply stores the labels in
  * inform.stance_coder_labels (needs CA_<slot> applied and the operator's OK).
  *   npx tsx scripts/code-stance-batch.ts --dir <batch> --season-id <uuid> --models "opus,sonnet,sonnet" [--apply]
+ * One model ("--models opus") is the Opus-alone production run (ruling 2026-10-07): only slot 1 is
+ * read and stored; slots 2 and 3 report "file missing" and M1 is undefined, which is expected.
  */
 import 'dotenv/config';
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
@@ -21,8 +23,8 @@ import { profileDivergences } from './lib/profileDivergence.js';
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const seasonId = arg('--season-id'); const models = (arg('--models') ?? '').split(',');
 const APPLY = process.argv.includes('--apply');
-if (!dir || !seasonId || models.length !== 3 || models.some((m) => m.trim().length === 0)) {
-  console.error('usage: --dir <batch> --season-id <uuid> --models "m1,m2,m3" (each name non-empty) [--apply]');
+if (!dir || !seasonId || (models.length !== 3 && models.length !== 1) || models.some((m) => m.trim().length === 0)) {
+  console.error('usage: --dir <batch> --season-id <uuid> --models "m1,m2,m3" | "m1" (slot 1 only; each name non-empty) [--apply]');
   process.exit(2);
 }
 
@@ -42,7 +44,9 @@ const snapshotMarkup = new Map(snapshots.filter((s) => s.ok && s.snapshot_text).
 const profiles = loadSourceProfiles();
 const files = new Map<number, unknown>();
 const rawText = new Map<number, string>();
-for (const slot of [1, 2, 3]) {
+// With one model only slot 1 is read: a stray coder-2/3 file must not be stored under no model name.
+const SLOTS = models.length === 1 ? [1] : [1, 2, 3];
+for (const slot of SLOTS) {
   const p = join(dir, 'labels', `coder-${slot}.json`);
   if (!existsSync(p)) continue;
   const t = readFileSync(p, 'utf8');

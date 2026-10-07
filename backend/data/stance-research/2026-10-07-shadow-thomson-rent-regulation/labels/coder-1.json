@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "passages": [
+        {
+          "snapshot_id": "3608aa0d-c6d8-5104-90ca-abdbc5e7c9b3",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-06-24",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Mayor's statement on code enforcement against one supportive-housing complex; it says nothing about which units a rent rule should cover.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4a6d8134-03a9-5618-b51a-9040164e3007",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-08-05",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Follow-up statement on supportive-services and habitability compliance at Crawford Apartments; no rent-regulation content.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Both passages are the mayor's own words about enforcing Title 16 rental-housing standards and supportive-service obligations at one supportive-housing complex. Neither speaks to rent control or rent stabilization, or to how many units a rent rule should cover, which is what the rungs from \"Expand rent control to cover all rental units communitywide\" to \"Oppose rent control entirely\" order.",
+      "needs_source": [
+        "Kerry Thomson's own words on rent control or rent stabilization (e.g. campaign questionnaire, issue page, or interview)"
+      ],
+      "quotes": []
+    }
+  ]
+}
