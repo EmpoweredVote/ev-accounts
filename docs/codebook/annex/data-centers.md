@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 rungs order **how many conditions government puts on new data centres**: a pause, a ratepayer
 cost bar, pre-approval conditions, disclosure with fast permits, almost none.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). Cost allocation is set by the
+**Levels with a lever:** federal, local, state. Cost allocation is set by the
 state utility commission and legislature (federal for transmission); siting and permits are local
 and state; tax treatment is state and local.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "large load", "large-load tariff", "hyperscale", "co-location", "behind-the-meter",
 "ratepayer protection", "cost allocation", "cost causation", "community benefit agreement" (CBA),

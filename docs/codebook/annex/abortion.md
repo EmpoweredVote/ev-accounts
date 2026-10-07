@@ -9,8 +9,11 @@ older revision (`dab46e5c-…`); coders code the served text below.
 **Orientation:** standard. Rung 1 has no legal limit, rung 5 is a ban with no exceptions. The rungs
 order **when** abortion is legal and **which exceptions** apply after that point.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is state law;
-federal action is national limits or protections; local governments rarely hold one.
+**Levels with a lever:** federal, state. The lever is state law;
+federal action is national limits or protections; local governments rarely hold one, so a local
+officeholder is coded on own words.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "gestational limit", "weeks of gestation", "post-fertilization age", "LMP" (last
 menstrual period), "viability", "heartbeat" (an early limit, about 6 weeks), "medical emergency",

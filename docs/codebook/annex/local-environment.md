@@ -12,10 +12,12 @@ development, rung 5 removes local environmental rules beyond state and federal l
 good (trees, open space, wetlands, creeks) is evidence that places a person; it is not what the rungs
 differ on.
 
-**Levels with a role:** local (`compass_topic_roles`). The lever is local land-use approvals and local
+**Levels with a lever:** local. The lever is local land-use approvals and local
 environmental ordinances (tree, wetland, creek, hillside, open space). State environmental-review law
 and federal law are a floor that local officials cannot lower. State and federal officeholders hold
 no lever here → `scope-unavailable`.
+
+**Asked at:** local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "tree ordinance", "heritage tree", "tree canopy", "riparian buffer", "wetland setback",
 "critical areas ordinance", "open-space preservation", "conservation easement", "environmental

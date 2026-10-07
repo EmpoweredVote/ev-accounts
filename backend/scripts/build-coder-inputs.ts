@@ -112,7 +112,7 @@ const topicsRaw = JSON.parse(readFileSync(join(dir, 'topics.json'), 'utf8')) as 
 const topics: PromptTopic[] = topicsRaw.map((t) => {
   const p = annexPath(repoRoot, t.topic_key);
   return { topic_id: t.topic_id, topic_key: t.topic_key, served_revision_id: t.served_revision_id, question_text: t.question_text, stances: t.stances,
-    annexMd: existsSync(p) ? readFileSync(p, 'utf8') : null };
+    own_words_levels: t.own_words_levels, annexMd: existsSync(p) ? readFileSync(p, 'utf8') : null };
 });
 const snapshots = JSON.parse(readFileSync(join(dir, 'snapshots.json'), 'utf8')) as SnapshotRecord[];
 const codebookMd = readFileSync(join(repoRoot, 'docs', 'codebook', 'stance-and-quote-codebook.md'), 'utf8');

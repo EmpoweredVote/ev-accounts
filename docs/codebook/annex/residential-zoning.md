@@ -15,9 +15,11 @@ rung that permits the most housing; rung 1 keeps the most rules. A "more governm
 "less regulation" reading point in opposite directions here, and placements have been inverted both
 ways before. Place a person only by the density their act or words permit.
 
-**Levels with a role:** local (`compass_topic_roles`). The lever is the city or county zoning code,
+**Levels with a lever:** local. The lever is the city or county zoning code,
 rezonings, and the general or comprehensive plan. State laws that override local zoning are state
 acts; this topic has no state role (see hard cases).
+
+**Asked at:** local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "single-family zoning" (R-1), "upzoning", "downzoning", "accessory dwelling unit"
 (ADU, granny flat, backyard cottage), "duplex", "triplex", "fourplex", "missing middle", "lot split",

@@ -10,9 +10,11 @@ yet ruled. Lines marked _(ruled 2026-10-01)_ carry a later ruling. No `_owed:_` 
 criminal penalties. The rungs order **the penalty** for sleeping or camping in public: none, no
 criminal penalty, enforcement only when shelter exists, civil penalties, criminal penalties.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is the local
+**Levels with a lever:** federal, local, state. The lever is the local
 ordinance and the state statute that sets or forbids camping rules. Federal officeholders act only on
 federal land and through conditions on grants _(proposed)_.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "camping ban", "unauthorized camping", "public camping", "sit-lie", "encampment
 sweep" / "clearance" / "abatement", "move-along order", "right to rest", "infraction",

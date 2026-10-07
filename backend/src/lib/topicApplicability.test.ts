@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
-  appliesFromRoles, appliesToLevel, levelForDistrict, isCommunityCollegeBoard, namesSchoolBoard,
+  appliesFromRoles, appliesToLevel, levelForDistrict, isCommunityCollegeBoard, namesSchoolBoard, ownWordsLevels,
 } from './topicApplicability.js';
 
 describe('appliesFromRoles', () => {
@@ -37,6 +37,24 @@ describe('appliesToLevel', () => {
     expect(appliesToLevel(appliesFromRoles([{ role_scope: 'school' }]), 'school')).toBe(true);
     expect(appliesToLevel(appliesFromRoles([]), 'school')).toBe(false);
     expect(appliesToLevel(appliesFromRoles([{ role_scope: 'local' }]), 'school')).toBe(false);
+  });
+});
+
+describe('ownWordsLevels (CA_0302, option B)', () => {
+  it('lists only the levels marked own-words', () => {
+    expect(ownWordsLevels([
+      { role_scope: 'federal', evidence_basis: 'record' },
+      { role_scope: 'state', evidence_basis: 'own-words' },
+      { role_scope: 'local', evidence_basis: 'own-words' },
+    ])).toEqual(['state', 'local']);
+  });
+  it('reads a missing basis as record — a read from before CA_0302 lists nothing', () => {
+    expect(ownWordsLevels([{ role_scope: 'state' }, { role_scope: 'local', evidence_basis: null }])).toEqual([]);
+  });
+  it('an own-words row still makes the topic apply at that level: asked, own words only', () => {
+    const roles = [{ role_scope: 'federal' }, { role_scope: 'state', evidence_basis: 'own-words' }];
+    expect(appliesToLevel(appliesFromRoles(roles), 'state')).toBe(true);
+    expect(ownWordsLevels(roles)).toEqual(['state']);
   });
 });
 

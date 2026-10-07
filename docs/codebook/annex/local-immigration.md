@@ -12,10 +12,12 @@ enforcement?"
 information), rung 5 the most (local police actively assist and support detention). The rungs order
 **how far local law enforcement cooperates with federal immigration enforcement**.
 
-**Levels with a role:** local (`compass_topic_roles`). The lever is the sheriff's jail and booking
+**Levels with a lever:** local. The lever is the sheriff's jail and booking
 policy, the police department's policy, county jail contracts, and council or county-board
 ordinances on cooperation. State law can require or forbid cooperation, but this topic has **no state
 role**: a state legislator's act on it → `scope-unavailable` (see hard cases).
+
+**Asked at:** local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "ICE detainer" (an I-247 request to hold a person), "judicial warrant", "administrative
 warrant", "hold request", "notification request", "sanctuary" or "welcoming" ordinance, "trust act",

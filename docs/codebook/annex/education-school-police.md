@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 school with discipline and arrest authority. The rungs order **how much police presence and authority
 schools have**.
 
-**Levels with a role:** local, school, state (`compass_topic_roles`). The lever is the school board's
+**Levels with a lever:** local, school, state. The lever is the school board's
 contract with a police agency (or its own district police), the city or county council that funds
 and staffs the officers, and state statute (mandates, grants, limits on officers' role).
+
+**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "school resource officer" (SRO), "school safety officer", "school police department",
 "memorandum of understanding" (MOU), "school-based law enforcement", "police-free schools",

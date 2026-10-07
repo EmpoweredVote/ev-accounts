@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 military aid. It reads in the same direction as `ukraine-support`. The rungs order **how much
 military aid continues and on what terms**: unconditioned, conditioned, defensive only, cut, ended.
 
-**Levels with a role:** federal (`compass_topic_roles`). Congress appropriates the aid and can block
+**Levels with a lever:** federal. Congress appropriates the aid and can block
 arms sales by joint resolution; state and local officials hold no lever. State divestment and
 boycott laws are a different question (see hard cases).
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 "No-lever level").
 
 **Synonyms:** "Foreign Military Financing" (FMF), "memorandum of understanding" (MOU), "security
 assistance", "arms sales", "joint resolution of disapproval" (JRD), "Arms Export Control Act",

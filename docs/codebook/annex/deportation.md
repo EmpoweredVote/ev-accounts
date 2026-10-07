@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 programme. The rungs order **how many undocumented immigrants the government removes**, and which
 groups are left in place. Do not read the number as "more government": rung 1 is the least removal.
 
-**Levels with a role:** federal, state (`compass_topic_roles`). Removal is a federal lever (Congress
+**Levels with a lever:** federal. Removal is a federal lever (Congress
 sets who is removable and funds enforcement). State officials cannot deport anyone; at state level
 most rungs can only be evidenced by own words.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 "No-lever level").
 
 **Synonyms:** "removal", "deportation", "removal proceedings", "expedited removal", "enforcement
 priorities", "interior enforcement", "detainer", "287(g)", "mass deportation", "self-deportation",

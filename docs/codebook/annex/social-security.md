@@ -10,8 +10,10 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 replaces it with private accounts. The rungs order **benefit level and how it is paid for**. Rungs
 1–4 each pair a benefit side with a tax side, so most of them are compound.
 
-**Levels with a role:** federal (`compass_topic_roles`). Only Congress sets benefits and the payroll
+**Levels with a lever:** federal. Only Congress sets benefits and the payroll
 tax. State and local officeholders hold no lever on any rung.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 "No-lever level").
 
 **Synonyms:** "OASDI", "trust fund", "solvency", "payroll tax", "FICA", "taxable maximum" or "wage
 base cap", "donut hole", "full retirement age", "COLA", "CPI-E", "chained CPI", "progressive price

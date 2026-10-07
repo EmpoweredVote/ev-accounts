@@ -10,8 +10,10 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 voting), rung 5 forbids ranked-choice voting by law; rung 3 is the neutral local-option centre. The
 rungs order **openness to changing how votes are cast and counted**.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). Each level sets the method for
+**Levels with a lever:** federal, local, state. Each level sets the method for
 its own elections; states also decide whether their cities may choose.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "ranked-choice voting" (RCV), "instant-runoff voting" (IRV), "single transferable
 vote" (STV), "proportional RCV", "multi-winner" or "multi-member districts", "plurality",

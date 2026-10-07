@@ -10,9 +10,11 @@ yet ruled. No `_owed:_` line is open.
 and the market. The rungs order **how far public money reaches**: every family, low- and
 middle-income families, families under a threshold, the lowest-income families only, no one.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). Federal money flows through
+**Levels with a lever:** federal, local, state. Federal money flows through
 block grants and tax credits; states run subsidy programmes and license providers; some cities and
 counties fund their own programmes.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "child care subsidy", "Child Care and Development Block Grant" (CCDBG), "child care
 assistance", "Child and Dependent Care Tax Credit" (CDCTC), "dependent care FSA", "provider grant",

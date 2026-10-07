@@ -10,10 +10,12 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 can be prosecuted. The rungs order **the default between prosecution and diversion** for a case the
 office could charge. They are not about sentence length.
 
-**Levels with a role:** judicial (`compass_topic_roles`). The lever is a prosecuting office's charging
+**Levels with a lever:** judicial. The lever is a prosecuting office's charging
 and diversion choices: district attorneys, city attorneys with misdemeanor jurisdiction, attorneys
 general where they prosecute. Only a holder of, or candidate for, that office is coded; a legislator
 who votes on diversion statutes is not this office → `off` (V2) (migration 1735 scope rule).
+
+**Asked at:** judicial (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "diversion", "pre-filing" or "pre-charge diversion", "deferred prosecution",
 "declination" or "decline to file", "charging policy", "special directive", "community court",

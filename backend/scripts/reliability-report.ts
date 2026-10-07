@@ -4,7 +4,11 @@
  * (mode blind, submitted, not excluded_from_cert; the newest decision per row). Read-only.
  * A row's stratum = the SEAT's level (stance_coder_labels.level, written from coding-context.json
  * seat.level — the same level codingReport uses) × the weakest evidence class any valid coder rested
- * its chair on (spec §3.2).
+ * its chair on (spec §3.2) × the evidence basis (CA_0302, ruling 2026-10-06 option B): 'own-words' when
+ * compass_topic_roles marks the topic own-words-only at that level, else 'record'. The basis is read
+ * as it stands NOW, not as it stood when the row was coded — roles change rarely, and a changed role
+ * changes which stratum a row belongs to, which is the point. Own-words strata print with an
+ * "own-words" tag; a certification of a record stratum never covers them.
  *   npx tsx scripts/reliability-report.ts [--codebook 0.2] [--run rr1] [--exclude-batches a,b]
  * A re-run of the coders over saved gold inputs (spec §3.4, after a codebook change) is stored under
  * batch ids ending "-<run>" (e.g. "2026-10-01-shadow-wesco-sb101-rr1"). By default those are left out,
@@ -63,11 +67,16 @@ const { rows: goldRows } = await pool.query(
 const OFF_AXIS = new Set(['residential-zoning', 'growth-and-development', 'judicial-government-deference']);
 const gold = new Map(goldRows.map((g) => [`${g.politician_id}|${g.office_id}|${g.topic_id}`, g as { final_value: number | null; topic_key: string }]));
 
+// Evidence basis per (topic, level). to_jsonb so the report still runs before CA_0302 (absent → record).
+const { rows: roleRows } = await pool.query(
+  `SELECT r.topic_id, r.role_scope, to_jsonb(r)->>'evidence_basis' AS basis FROM inform.compass_topic_roles r`);
+const basisOf = new Map(roleRows.map((r) => [`${r.topic_id}|${r.role_scope}`, r.basis === 'own-words' ? 'own-words' : 'record']));
+
 const order = ['statement-other', 'statement-answer', 'record']; // weakest first
-const units = new Map<string, { level: string; classes: Set<string>; values: (string | null)[]; goldKey: string }>();
+const units = new Map<string, { level: string; basis: string; classes: Set<string>; values: (string | null)[]; goldKey: string }>();
 for (const r of rows) {
   const key = `${r.batch_id}|${r.politician_id}|${r.office_id}|${r.topic_id}`;
-  const u = units.get(key) ?? { level: String(r.level ?? 'unknown'), classes: new Set<string>(), values: [null, null, null],
+  const u = units.get(key) ?? { level: String(r.level ?? 'unknown'), basis: basisOf.get(`${r.topic_id}|${r.level}`) ?? 'record', classes: new Set<string>(), values: [null, null, null],
     goldKey: `${r.politician_id}|${r.office_id}|${r.topic_id}` };
   if (slot !== null) u.values = [0, 1, 2].map(() => (r.valid ? chairCategory(r.value) : null)); // one coder stands in for all three
   else u.values[r.coder_slot - 1] = r.valid ? chairCategory(r.value) : null;
@@ -79,7 +88,9 @@ for (const r of rows) {
   units.set(key, u);
 }
 // A unit's stratum = the weakest class ANY coder rested on; 'blank' when no coder seated a chair.
-const stratumOf = (u: { level: string; classes: Set<string> }) => `${u.level} × ${order.find((c) => u.classes.has(c)) ?? 'blank'}`;
+// The level part carries " own-words" for an own-words stratum, so the record strata print exactly as before.
+const stratumOf = (u: { level: string; basis: string; classes: Set<string> }) =>
+  `${u.level}${u.basis === 'own-words' ? ' own-words' : ''} × ${order.find((c) => u.classes.has(c)) ?? 'blank'}`;
 const byStratum = new Map<string, { units: Unit[]; pairs: { coders: (string | null)[]; gold: number | null; offAxis: boolean }[] }>();
 for (const u of units.values()) {
   const b = byStratum.get(stratumOf(u)) ?? { units: [], pairs: [] };
@@ -94,7 +105,7 @@ const record = process.argv.includes('--record');
 const mi = process.argv.indexOf('--models');
 const modelSet = (mi > 0 ? process.argv[mi + 1] : 'opus,sonnet,sonnet').split(',');
 const notes = process.argv.flatMap((a, k) => (a === '--note' ? [`note: ${process.argv[k + 1]}`] : []));
-const toRecord: { level: string; cls: string; n: number; m1: number | null; m2: number | null; m3: number; severe: number }[] = [];
+const toRecord: { level: string; basis: string; cls: string; n: number; m1: number | null; m2: number | null; m3: number; severe: number }[] = [];
 const fmt = (a: number | null) => (a === null ? 'undef' : a.toFixed(3));
 for (const [s, b] of [...byStratum].sort()) {
   const m1 = slot !== null ? null : alphaNominal(b.units).alpha;
@@ -103,7 +114,7 @@ for (const [s, b] of [...byStratum].sort()) {
   // 'blank' = no coder seated a chair: a diagnostic bucket, never certified (ruling 2026-09-28).
   const cSingle = slot !== null ? c.reasons.filter((x) => x !== 'm1 undefined') : null;
   const cert = cSingle !== null && !s.endsWith('× blank') && !s.endsWith('statement-other') ? (cSingle.length ? `M2–M4 only: no — ${cSingle.join('; ')}` : 'M2–M4 only: PASS (not a certification)') : s.endsWith('statement-other') ? 'never (Q2)' : s.endsWith('× blank') ? 'diagnostic (blanks publish no chair)' : c.certified ? 'YES' : `no — ${c.reasons.join('; ')}`;
-  if (cert === 'YES') { const [lvl, cls] = s.split(' × '); toRecord.push({ level: lvl, cls, n: b.pairs.length, m1, m2: g.m2, m3: c.m3WilsonLow, severe: g.severe }); }
+  if (cert === 'YES') { const [lvlPart, cls] = s.split(' × '); const [lvl, tag] = lvlPart.split(' '); toRecord.push({ level: lvl, basis: tag === 'own-words' ? 'own-words' : 'record', cls, n: b.pairs.length, m1, m2: g.m2, m3: c.m3WilsonLow, severe: g.severe }); }
   console.log(s.padEnd(32), String(b.units.length).padStart(5), fmt(m1).padStart(7), String(b.pairs.length).padStart(5), fmt(g.m2).padStart(7),
     `  ${g.unanimousCorrect}/${g.unanimousTotal}`.padEnd(14), String(g.severe).padStart(3), ' ', cert);
 }
@@ -117,10 +128,10 @@ console.log(`\nall strata: M1 α = ${fmt(all.alpha)} (target ≥ 0.80, spec §3.
 if (record) {
   for (const r of toRecord) {
     const { rows: [row] } = await pool.query(
-      `INSERT INTO inform.reliability_certifications (level, evidence_class, topic_id, codebook_version, model_set, n, m1_alpha, m2_alpha, m3_wilson_low, m4_severe, certified, reason)
-       VALUES ($1, $2, NULL, $3, $4, $5, $6, $7, $8, $9, true, $10) RETURNING id, computed_at`,
-      [r.level, r.cls, version, modelSet, r.n, r.m1, r.m2, r.m3, r.severe, notes]);
-    console.log(`recorded certification ${row.id} — ${r.level} × ${r.cls} at ${row.computed_at.toISOString()}`);
+      `INSERT INTO inform.reliability_certifications (level, evidence_class, evidence_basis, topic_id, codebook_version, model_set, n, m1_alpha, m2_alpha, m3_wilson_low, m4_severe, certified, reason)
+       VALUES ($1, $2, $3, NULL, $4, $5, $6, $7, $8, $9, $10, true, $11) RETURNING id, computed_at`,
+      [r.level, r.cls, r.basis, version, modelSet, r.n, r.m1, r.m2, r.m3, r.severe, notes]);
+    console.log(`recorded certification ${row.id} — ${r.level} ${r.basis} × ${r.cls} at ${row.computed_at.toISOString()}`);
   }
   if (!toRecord.length) console.log('--record: no stratum certified; nothing written');
 }

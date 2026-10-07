@@ -12,9 +12,11 @@ public services?"
 far as possible and shrinks government. Rungs 1 and 2 differ by **size** and by **what the money
 funds**; rungs 3 to 5 differ by **how broad** the cut is.
 
-**Levels with a role:** federal, state (`compass_topic_roles`). Congress and state legislatures set
-income, corporate and sales taxes; governors sign or veto them. Local officeholders have no role on
-this topic.
+**Levels with a lever:** federal, state. Congress and state legislatures set
+income, corporate and sales taxes; governors sign or veto them. Local officeholders hold no lever on
+these taxes.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "income tax rate", "bracket", "flat tax",
 "millionaire's tax" / "surtax", "corporate income tax", "capital gains", "estate tax", "loophole",

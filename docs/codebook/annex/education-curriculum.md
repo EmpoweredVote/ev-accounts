@@ -12,9 +12,11 @@ rung 5 **prohibits** some of them; rung 4 is the least prescriptive. The rungs o
 the curriculum gives these topics**, from centring them everywhere to forbidding them — not the
 amount of government action.
 
-**Levels with a role:** local, school, state (`compass_topic_roles`). The lever is state standards
+**Levels with a lever:** local, school, state. The lever is state standards
 and statute, and the school board's curriculum adoption and instruction policy. A city or county
 council holds no curriculum lever unless it runs the school system _(proposed)_.
+
+**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "academic standards", "social studies standards", "ethnic studies", "culturally
 responsive", "divisive concepts", "critical race theory" (CRT), "prohibited concepts", "parental

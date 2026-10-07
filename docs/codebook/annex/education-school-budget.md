@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 cut taxes. The rungs order **the funding level and its tax source**. Rung 4 is about the **mix** of
 spending (administration against classroom), not the level.
 
-**Levels with a role:** local, school, state (`compass_topic_roles`). The lever is the school board's
+**Levels with a lever:** local, school, state. The lever is the school board's
 budget and levy, the city or county council where it funds or approves the school budget, and the
 state's school-aid formula and tax law.
+
+**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "levy", "mill rate", "millage", "operating referendum", "override", "bond", "per-pupil
 funding", "foundation amount", "school-aid formula", "adequacy", "truth in taxation", "levy limit",

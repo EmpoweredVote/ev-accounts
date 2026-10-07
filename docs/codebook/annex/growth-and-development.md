@@ -13,9 +13,11 @@ infrastructure ahead of demand), and rung 5 removes rules. A "more government" r
 regulation" reading point in different directions here, so place a person by the **pace** their act
 or words support, never by who usually holds a view.
 
-**Levels with a role:** local, state (`compass_topic_roles`). Local: approvals, caps, moratoria,
+**Levels with a lever:** local, state. Local: approvals, caps, moratoria,
 capital plans, impact fees, annexation. State: growth-management acts, infrastructure funding, and
 laws that limit or override local development rules. State officials rarely approve one project.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
 
 **Synonyms:** "growth cap", "building-permit allocation", "urban growth boundary", "adequate public
 facilities ordinance" (APFO), "concurrency", "development moratorium", "capital improvement plan",

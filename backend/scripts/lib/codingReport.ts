@@ -23,7 +23,8 @@ export interface RowReport {
   topic_key: string;
   outcome: AgreementOutcome;
   confirm: ConfirmFinding[];
-  stratum: { level: string | null; evidence_class: string | null };
+  /** evidence_basis (CA_0302): 'own-words' when the topic is asked at this seat's level on own words only. */
+  stratum: { level: string | null; evidence_class: string | null; evidence_basis: 'record' | 'own-words' };
   shadow: 'would-publish-if-certified' | 'would-review';
   shadow_reasons: string[];
   /** Information only (spec §7 P1 fresh/stale seed) — never read by agree()/confirmRow() and never
@@ -125,9 +126,13 @@ export function buildCodingReport(i: {
         for (const host of hosts) noProfileHosts[host] = (noProfileHosts[host] ?? 0) + 1;
       }
     }
+    // Option B (ruling 2026-10-06): a chair at a no-lever level rests on own words only, and goes to a
+    // person until a stratum with that basis is certified (none is). A blank is unaffected.
+    const evidenceBasis = seat.level && t.own_words_levels?.includes(seat.level) ? 'own-words' : 'record';
+    if (outcome.kind === 'unanimous-chair' && evidenceBasis === 'own-words') reasons.push('own-words-basis');
     const publishable = outcome.kind === 'unanimous-chair' && reasons.length === 0;
     const seed = leads.get(t.topic_id)?.seed ?? 'none';
-    return { key, topic_key: t.topic_key, outcome, confirm, stratum: { level: seat.level, evidence_class: evidenceClass },
+    return { key, topic_key: t.topic_key, outcome, confirm, stratum: { level: seat.level, evidence_class: evidenceClass, evidence_basis: evidenceBasis },
       shadow: publishable ? 'would-publish-if-certified' : 'would-review', shadow_reasons: reasons, seed, profiles, evidence_tier: tier };
   });
   const a = alphaNominal(units);

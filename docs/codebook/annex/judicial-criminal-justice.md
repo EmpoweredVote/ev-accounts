@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 penalty the law allows. All five rungs sit on one spine: **the role of punishment in the response to
 a person who broke the law**. They are general orientations, not a view on one offense.
 
-**Levels with a role:** federal, judicial, state (`compass_topic_roles`). A judge acts through
+**Levels with a lever:** federal, judicial, state. A judge acts through
 sentencing; a prosecutor through charging and sentence requests; a legislator through sentencing law.
 The rungs are written as orientations so all three can be coded against the same text.
+
+**Asked at:** federal, state, judicial (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "diversion", "drug court", "mental health court", "problem-solving" or "collaborative"
 court, "treatment in lieu of", "restorative justice", "restitution", "community service",

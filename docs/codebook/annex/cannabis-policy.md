@@ -10,9 +10,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 the least (an ordinary legal product). The rungs order **what is legal**: nothing, medical use,
 possession without a crime, a licensed adult market, an open market.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is state law (and
+**Levels with a lever:** federal, local, state. The lever is state law (and
 ballot measures), with federal scheduling above it. Local governments decide where licensed
 businesses may operate and how police treat possession.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "marijuana", "marihuana", "THC", "CBD", "hemp", "Schedule I" / "Schedule III",
 "rescheduling", "descheduling", "decriminalization", "civil infraction", "adult use", "recreational",

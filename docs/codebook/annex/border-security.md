@@ -10,9 +10,12 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 asylum and turns people back. The rungs order **how much access to asylum a person at the border
 has**. Do not read the number as "more government": enforcement rises as the number rises.
 
-**Levels with a role:** federal (`compass_topic_roles`). Asylum law, border enforcement and the
+**Levels with a lever:** federal. Asylum law, border enforcement and the
 immigration courts are federal. State border measures (state troops, barriers, state crossing
-crimes) are actions of an office with no role on this topic.
+crimes) do not decide who may claim asylum or how claims are heard; a state or local officeholder's
+position on these rungs can be shown only by their own words.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 "No-lever level").
 
 **Synonyms:** "asylum", "credible fear", "expedited removal", "ports of entry", "between ports",
 "parole", "CBP One" or "appointments", "Remain in Mexico" / "Migrant Protection Protocols", "safe

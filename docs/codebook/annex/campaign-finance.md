@@ -11,9 +11,11 @@ yet; every reading below is a drafter's.
 law. The rungs order **how much private political money is limited**. Disclosure is a different axis
 and is not ordered here.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). Each level limits money in its
+**Levels with a lever:** federal, local, state. Each level limits money in its
 own elections: federal (FECA, the FEC), state (state contribution limits), local (city limits and
 city public-financing programmes).
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "contribution limit", "aggregate limit", "independent expenditure", "super PAC",
 "dark money", "501(c)(4)", "electioneering communication", "coordination", "soft money",

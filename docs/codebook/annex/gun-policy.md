@@ -12,8 +12,10 @@ restricts which firearms civilians may own, buy and carry**. Each person sits at
 they would go: someone who wants universal checks **and** an assault-weapons ban wants more than
 rung 3 allows ("all types"), so sits at rung 2.
 
-**Levels with a role:** federal, local, state (`compass_topic_roles`). The lever is state and federal
+**Levels with a lever:** federal, local, state. The lever is state and federal
 law. Most states forbid local gun ordinances, so a local lever exists only where state law allows one.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "assault weapon", "assault-style", "semi-automatic", "large-capacity magazine",
 "universal background checks", "private sale", "gun-show loophole", "transfer", "concealed carry",

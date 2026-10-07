@@ -11,9 +11,11 @@ society has changed), rung 5 the most fixed (apply it as written; change is for 
 order **interpretive method**, not policy: any method can produce any policy outcome, so never infer
 a rung from the result of a case or from which judges a person praises.
 
-**Levels with a role:** judicial (`compass_topic_roles`). The lever is a judge's method in written
+**Levels with a lever:** judicial. The lever is a judge's method in written
 opinions. A non-judge can only hold an opinion about method. A legislator's vote on a judicial
 nominee is a vote on a person, not a statement of method → `off` (V2) _(proposed)_.
+
+**Asked at:** judicial (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "living constitution", "evolving standards", "purposivism", "purpose" or "spirit of the
 law", "legislative intent", "legislative history", "plain meaning", "textualism", "original public

@@ -9,9 +9,11 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 **Orientation:** standard. Rung 1 makes Medicare cover everyone, rung 5 ends both programmes. The
 rungs order **how large the two public programmes are**: universal, larger, the same, smaller, none.
 
-**Levels with a role:** federal, state (`compass_topic_roles`). Medicare is federal only. Medicaid is
+**Levels with a lever:** federal, state. Medicare is federal only. Medicaid is
 joint: Congress sets the frame and the federal share; each state sets eligibility, benefits and
 waivers inside it. So a state officeholder holds a lever on Medicaid and none on Medicare.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 "No-lever level").
 
 **Synonyms:** "Medicare Part A / B / C / D", "Medicare Advantage", "traditional Medicare", "premium
 support", "voucher", "Medicare buy-in", "Medicare at 60" (or 55, 50), "Medicare for All",

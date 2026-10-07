@@ -10,10 +10,12 @@ lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 5 the least (courts for serious cases only). The rungs order **how high the bar is to get a case
 heard**, as a legal actor sets it in their own role — not opinions about the legal system.
 
-**Levels with a role:** judicial (`compass_topic_roles`). The lever is held by legal-system actors in
+**Levels with a lever:** judicial. The lever is held by legal-system actors in
 their role: judges (rulings on pleadings, dismissals, fees), presiding judges and court rule-makers
 (court-wide programmes and rules), court clerks (filing, fees, hours, language help). Legislators who
 fund legal aid or write court-access statutes are not in this role → `off` _(proposed)_.
+
+**Asked at:** judicial (`compass_topic_roles`, CA_0302).
 
 **Synonyms:** "fee waiver", "in forma pauperis" (IFP), "self-represented" or "pro se" litigant,
 "self-help center", "e-filing", "language access", "court interpreter", "civil right to counsel",
