@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-thomson-public-safety-approach",
+  "seat": {
+    "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+    "full_name": "Kerry Thomson",
+    "level": "local",
+    "mode": "seated",
+    "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+    "office_title": "City Mayor",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": null,
+    "start_precision": "unknown",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "topic_key": "public-safety-approach",
+      "served_revision_id": "cfc3824f-522e-4671-bd2d-dd628e6578e1",
+      "question_text": "What approach should your community take to public safety?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Shift public safety away from policing and toward mental health, housing, and social services."
+        },
+        {
+          "value": 2,
+          "text": "Send unarmed responders, instead of police, to mental-health and non-violent calls."
+        },
+        {
+          "value": 3,
+          "text": "Keep police as the main responders and add crisis teams to work alongside them."
+        },
+        {
+          "value": 4,
+          "text": "Add more officers and expand police presence to deter and respond to crime."
+        },
+        {
+          "value": 5,
+          "text": "Make policing the community's top public-safety priority, ahead of social and community programs."
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# public-safety-approach — served revision cfc3824f-522e-4671-bd2d-dd628e6578e1 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`b9c1c07f-…`); coders code the served text below.\n\n**Question:** \"What approach should your community take to public safety?\"\n\n**Orientation:** standard. Rung 1 moves public safety away from policing, rung 5 makes policing the\ntop priority. The rungs order **how central police are** in the community's public-safety response:\nreplaced in part, replaced on some calls, kept as main responders with help, expanded, put first.\n\n**Levels with a lever:** local. The lever is the city or county budget, police\nand sheriff staffing, the 911 dispatch system, and civilian response programmes. State and federal\nofficeholders hold no lever here → `scope-unavailable`.\n\n**Asked at:** local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"alternative response\", \"civilian crisis response\", \"unarmed responders\",\n\"co-responder\", \"crisis intervention team\" (CIT), \"mobile crisis team\", \"988\", \"behavioural-health\nresponse\", \"community violence intervention\", \"reallocate\", \"redirect police funding\", \"sworn\nofficers\", \"authorized strength\", \"staffing levels\", \"police presence\", \"hot-spot policing\".\n\n1. **\"Shift public safety away from policing and toward mental health, housing, and social\n   services.\"**\n   - Means: move the community's public-safety effort and money from police to services.\n   - Operative clauses: [a] away from policing (a smaller police role or budget); [b] toward mental\n     health, housing and social services.\n   - Establishing evidence looks like: a single-subject vote or budget amendment that moves money or\n     duties from police to services; own words calling for that shift. Compound: one side only →\n     `compound-partial` (V4.2).\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - More money for services with **no** change to policing does not meet [a] → `direction-only`\n     _(proposed)_.\n   - Commonly confused with rung 2 because an unarmed-responder programme moves some duties away\n     from police. One programme for certain calls is rung 2; a broader shift of the public-safety\n     effort is rung 1 _(proposed)_.\n\n2. **\"Send unarmed responders, instead of police, to mental-health and non-violent calls.\"**\n   - Means: trained civilians, not officers, answer mental-health and non-violent calls.\n   - Operative clauses: [a] unarmed responders **instead of** police; [b] for mental-health and\n     non-violent calls.\n   - Establishing evidence looks like: creating or funding a civilian response team that is\n     dispatched **without** police to those calls; own words calling for it.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - Commonly confused with rung 3 because both add crisis workers. A **co-responder** model\n     (a clinician rides with or meets an officer) keeps police on the call → rung 3. Rung 2 needs\n     the civilians to go **instead of** police. A programme whose text does not say who goes →\n     `direction-only` _(proposed)_.\n\n3. **\"Keep police as the main responders and add crisis teams to work alongside them.\"**\n   - Means: police still answer calls, with crisis specialists working with them.\n   - Operative clauses: [a] police stay the main responders; [b] add crisis teams alongside them.\n   - Establishing evidence looks like: funding a co-responder or crisis-intervention programme\n     attached to the police department, with police staffing kept as it is.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2: see rung 2.\n   - Crisis-intervention **training** for officers is not a crisis team → `direction-only`\n     _(proposed)_.\n\n4. **\"Add more officers and expand police presence to deter and respond to crime.\"**\n   - Means: hire more police and put more of them on the street.\n   - Operative clauses: [a] add more officers; [b] expand police presence.\n   - Establishing evidence looks like: a single-subject vote or budget amendment that funds new sworn\n     positions or raises authorized strength; own words calling for more officers.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Pay raises and hiring bonuses keep or fill current positions; they add officers only when the\n     passage ties them to a larger force → otherwise `direction-only` _(proposed)_.\n   - Commonly confused with rung 5 because adding officers is also consistent with putting policing\n     first. A vote to add officers does not show that police come **ahead of** social programmes;\n     it does not exclude rung 5 on its own → `direction-only` unless another passage keeps services\n     level with or ahead of policing (V4) _(proposed)_.\n\n5. **\"Make policing the community's top public-safety priority, ahead of social and community\n   programs.\"**\n   - Means: policing comes first, and social and community programmes come after it.\n   - Operative clauses: [a] policing as the top public-safety priority; [b] ahead of social and\n     community programmes.\n   - Establishing evidence looks like: own words that rank policing above social programmes; a\n     single-subject vote that cuts or caps social programmes to fund police.\n   - Levels that hold a lever: local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4. \"Public safety is my top priority\" is not [a]: public\n     safety is not policing → `rhetorical` _(proposed)_.\n\n**Hard cases:**\n- **Budget and omnibus votes** that fund the police department among other departments → V4\n  `multi-subject`. A No on such a budget proves nothing.\n- **Police oversight and accountability** (review boards, body cameras, use-of-force rules) do not\n  speak to how central police are → `adjacent` _(proposed)_.\n- **Sentencing, bail and criminal law** are state or court matters → `adjacent` (other topics).\n- **Community violence-intervention grants** fund a service; alone they do not reduce policing →\n  `direction-only` toward rungs 1–2 _(proposed)_.\n- **Slogans for or against police** with no measure named → `rhetorical`.\n- **Near-unanimous** votes (a crisis-line agreement, a grant acceptance) → `near-unanimous`.\n"
+    }
+  ]
+}

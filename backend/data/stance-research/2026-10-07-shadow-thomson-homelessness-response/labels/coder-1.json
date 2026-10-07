@@ -1,0 +1,117 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f",
+      "served_revision_id": "0e47ec98-46af-4e77-ae81-04d1311b4543",
+      "passages": [
+        {
+          "snapshot_id": "8eb12a02-eb17-5ef5-89b2-b74024e92112",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-12-05",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words concern an encampment closure (enforcement, which the annex places off this ladder) and 'steady steps' toward shelter and housing, naming no funding level or form.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5e6efc84-8147-5016-a64b-2b95ca51728c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-08-14",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A call to accelerate a County encampment closure and a description of outreach work; enforcement and outreach practice, not the amount or form of public funding.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a2a55030-bd5d-5eb6-b7ee-4697caa71f12",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-05-03",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her words describe camp-clearing protocol and weekly meetings with service providers; no funding clause is stated.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ca3f1011-c925-5176-9aaa-22486bf0d165",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-11-20",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The investment summary is the city's voice, not hers; her quoted words ('clarity about what the City can—and cannot—do alone') name no funding level; the report itself is not in the sources.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3d694dbf-f66b-58ae-bc41-ecc37877f4e7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-07-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Calls for more housing supply, shared regional responsibility and reliance on nonprofits, but states no increase, hold, limit or withdrawal of public funding; reliance on nonprofit providers is normal delivery per the annex, not rung 4's [a] or [c].",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "None of her quoted words states how much public money should go to housing and services: she speaks of encampment closures, outreach, regional partnership and that 'We must create more housing—of more types—for more people.' No passage matches any rung's funding clause, e.g. 'Expand housing and support services by increasing public funding', and her reliance on nonprofits does not show 'limited public funding … rather than running public programs'.",
+      "needs_source": [
+        "Mayor's proposed City of Bloomington budgets (2025, 2026, 2027) with homelessness/housing lines, and her own words presenting them",
+        "Housing and Homelessness Response Report (bton.in/hrhi, Housing_Investment_Report_20251120) for any first-person funding commitments",
+        "2023 mayoral campaign questionnaire or debate answers on homelessness funding",
+        "Any mayoral act on a dedicated housing/homelessness fund or tax (e.g. Housing Development Fund) with the instrument named"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "3d694dbf-f66b-58ae-bc41-ecc37877f4e7",
+          "text": "We must create more housing—of more types—for more people.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "3d694dbf-f66b-58ae-bc41-ecc37877f4e7",
+          "text": "We rely on nonprofit infrastructure and expertise. We rely on service providers. And we rely on other jurisdictions to help carry the weight.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

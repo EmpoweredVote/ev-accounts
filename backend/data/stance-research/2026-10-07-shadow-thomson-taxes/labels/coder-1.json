@@ -1,0 +1,84 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "8684445f-d72f-53fa-851f-31b76f835147",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-10-11",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words praise the council partnership on the 2025 city budget; they say nothing about raising or cutting taxes on anyone.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b744777a-d1b5-53ee-a415-9097b0360cfc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-08-03",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "\"A tight budget requires clear priorities and honest tradeoffs\" concerns city spending priorities under SEA 1 revenue limits and names no tax policy clause from any rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8b7a7281-4924-528c-9803-fd53c41c40bc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-08-08",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "\"We cannot do more with less\" and \"SEA 1 has changed the landscape\" describe the city's response to a state tax change without stating whether taxes should rise, stay, or fall.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "At the local level only her own words can count, and her quoted words in the three city budget releases (\"We cannot do more with less\", \"A tight budget requires clear priorities and honest tradeoffs\") speak to municipal spending priorities, not to whether taxes on wealthy people and large companies should be raised, kept as-is, or cut. No passage addresses any rung's clauses, so no chair is evidenced.",
+      "needs_source": [
+        "Kerry Thomson's own words on tax policy, e.g. a candidate questionnaire or debate answer on taxes, or a first-person statement on Indiana SEA 1 (2025) property and income tax changes stating whether she supports or opposes them"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "8b7a7281-4924-528c-9803-fd53c41c40bc",
+          "text": "That means doing less with less, but doing it better.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "b744777a-d1b5-53ee-a415-9097b0360cfc",
+          "text": "A tight budget requires clear priorities and honest tradeoffs",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}
