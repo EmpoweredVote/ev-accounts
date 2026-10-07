@@ -1,0 +1,19 @@
+{
+  "findings": [
+    {
+      "full_name": "Paul Wiggins",
+      "topic_key": "taxes",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    }
+  ],
+  "summary": {
+    "rows": 416,
+    "high": 0,
+    "medium": 1,
+    "by_check": {
+      "statement-needs-review": 1
+    }
+  }
+}
