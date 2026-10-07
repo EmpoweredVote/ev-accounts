@@ -168,14 +168,26 @@ export function topicAskedByPublishedSeason(topicIdExpr: string): string {
  * @param pinExpr SQL expression for the pinned compass_topic_revisions id
  * @param alias   alias for the lateral
  */
-export function servedRevisionLateral(pinExpr: string, alias = 'eff'): string {
+export function servedRevisionLateral(
+  pinExpr: string,
+  alias = 'eff',
+  opts: { includeApprovedWhen?: string } = {},
+): string {
+  // PRE-STAGING A DRAFT SEASON (ADR 0006 + the --season research option). A draft season's pin may
+  // be an `approved` revision that is not published yet. Once it publishes it becomes the served
+  // revision of its version, so research against a draft season reads it now. `includeApprovedWhen`
+  // is a SQL boolean that must hold for `approved` to count — the caller passes "this pin belongs
+  // to a DRAFT season". Without it the status list is the voters' one, byte for byte.
+  const statuses = opts.includeApprovedWhen
+    ? `(e.status IN ('published', 'superseded') OR (e.status = 'approved' AND (${opts.includeApprovedWhen})))`
+    : `e.status IN ('published', 'superseded')`;
   return `LATERAL (
     SELECT e.id, e.title, e.short_title, e.question_text, e.version, e.revision
       FROM inform.compass_topic_revisions pin
       JOIN inform.compass_topic_revisions e
         ON e.topic_id = pin.topic_id
        AND e.version  = pin.version
-       AND e.status IN ('published', 'superseded')
+       AND ${statuses}
      WHERE pin.id = ${pinExpr}
      ORDER BY e.revision DESC
      LIMIT 1
@@ -298,6 +310,50 @@ export const UPSERT_CONTEXT_SOURCES_SQL = `
     SET sources = EXCLUDED.sources, editor_id = EXCLUDED.editor_id, updated_at = now()`;
 
 /**
+ * THE SAME TWO WRITES, AIMED AT A NAMED SEASON — research pre-staging (`--season` on the stance
+ * scripts). UPSERT_ANSWER_SQL / UPSERT_CONTEXT_SQL write only the OPEN season, so a draft season
+ * (Season 3 before it opens) could not take a row at all.
+ *
+ * 🔴 `open` or `draft`, NEVER `closed`: a closed season's answers are immutable (ADR 0005). A write
+ * into a draft season is hidden from voters by SEASON_IS_PUBLISHED on every voter read
+ * (draftSeasonReads.test.ts); nothing here changes that.
+ *
+ * Answer param order: $1 politician_id, $2 topic_id, $3 value, $4 editor_id, $5 season_id.
+ * Context param order: $1 politician_id, $2 topic_id, $3 reasoning, $4 sources, $5 editor_id, $6 season_id.
+ */
+export const UPSERT_ANSWER_IN_SEASON_SQL = `
+  INSERT INTO inform.politician_answers
+    (politician_id, topic_id, season_id, topic_revision_id, value, editor_id, updated_at)
+  SELECT $1::uuid, $2::uuid, sq.season_id, sq.topic_revision_id, $3::numeric, $4::uuid, now()
+    FROM inform.season_questions sq
+    JOIN inform.seasons s ON s.id = sq.season_id AND s.id = $5::uuid AND s.status IN ('open', 'draft')
+   WHERE sq.topic_id = $2::uuid
+  ON CONFLICT (politician_id, topic_id, season_id) DO UPDATE
+    SET value = EXCLUDED.value, editor_id = EXCLUDED.editor_id, updated_at = now()`;
+
+export const UPSERT_CONTEXT_IN_SEASON_SQL = `
+  INSERT INTO inform.politician_context
+    (politician_id, topic_id, season_id, topic_revision_id, reasoning, sources, editor_id, updated_at)
+  SELECT $1::uuid, $2::uuid, sq.season_id, sq.topic_revision_id, $3::text, $4::text[], $5::uuid, now()
+    FROM inform.season_questions sq
+    JOIN inform.seasons s ON s.id = sq.season_id AND s.id = $6::uuid AND s.status IN ('open', 'draft')
+   WHERE sq.topic_id = $2::uuid
+  ON CONFLICT (politician_id, topic_id, season_id) DO UPDATE
+    SET reasoning = EXCLUDED.reasoning, sources = EXCLUDED.sources,
+        editor_id = EXCLUDED.editor_id, updated_at = now()`;
+
+/**
+ * A politician's answers in ONE named season — the "previous value" a write into that season would
+ * replace (the named-season form of OPEN_SEASON_ANSWER_SQL). Param order: $1 politician_id, $2 season_id.
+ */
+// @draft-reads: ADMIN-ONLY — the named season's "previous value" for the research scripts; not a voter read.
+export const ANSWERS_IN_SEASON_SQL = `
+  -- @zero-scope: counts-blanks — same reason as OPEN_SEASON_ANSWER_SQL: a blank is the state the next write must see.
+  SELECT a.topic_id, a.value, a.write_in_text
+    FROM inform.politician_answers a
+   WHERE a.politician_id = $1 AND a.season_id = $2::uuid`;
+
+/**
  * THE PRE-FLIGHT FORM OF THE WRITE GATE.
  *
  * 🔴 IT IS DEFINED HERE, BESIDE `UPSERT_ANSWER_SQL`, ON PURPOSE. A validator
@@ -378,6 +434,7 @@ export async function writableTopicIds(
  * comment would swallow the caller's predicate. The zero note below sits at the
  * top of the literal for that reason.
  */
+// @draft-reads: ADMIN-ONLY — the open season's own "previous value" for the research scripts; not a voter read.
 export const OPEN_SEASON_ANSWER_SQL = `
   -- @zero-scope: counts-blanks — a 0 MUST come back, and this is the one site
   --   where filtering it would be actively destructive. These rows are the
@@ -455,8 +512,26 @@ export function isSeasonWriteError(e: unknown): e is SeasonWriteError {
  * Both are silent no-ops without this, and they need different fixes: open a
  * season, versus add the topic to the open season's question set.
  */
-export async function assertWritten(rowCount: number, topicId: string): Promise<void> {
+export async function assertWritten(rowCount: number, topicId: string, seasonId?: string): Promise<void> {
   if (rowCount > 0) return;
+  if (seasonId) {
+    // A write aimed at a NAMED season (open or draft): say which of the two causes it was, for that season.
+    const { rows } = await pool.query<{ status: string | null; pinned: string }>(
+      `SELECT (SELECT status FROM inform.seasons WHERE id = $2::uuid) AS status,
+              (SELECT count(*) FROM inform.season_questions WHERE season_id = $2::uuid AND topic_id = $1) AS pinned`,
+      [topicId, seasonId],
+    );
+    const status = rows[0]?.status ?? null;
+    if (status !== 'open' && status !== 'draft') {
+      throw new SeasonWriteError('NO_OPEN_SEASON', topicId,
+        `season ${seasonId} is ${status ?? 'missing'} — only an open or draft season can take a write`);
+    }
+    if (Number(rows[0]?.pinned ?? 0) === 0) {
+      throw new SeasonWriteError('TOPIC_NOT_IN_SEASON', topicId,
+        `topic ${topicId} is not in season ${seasonId}'s question set, so there is no pinned ladder revision to record this answer against.`);
+    }
+    throw new Error(`write affected 0 rows for topic ${topicId} in season ${seasonId} for an unknown reason`);
+  }
   const { rows } = await pool.query<{ open_seasons: string; pinned: string }>(
     `SELECT (SELECT count(*) FROM inform.seasons WHERE status = 'open')      AS open_seasons,
             (SELECT count(*) FROM inform.season_questions sq

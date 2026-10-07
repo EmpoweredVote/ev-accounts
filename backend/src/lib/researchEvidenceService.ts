@@ -162,7 +162,9 @@ export function buildReviewRowForInsert(args: {
  *
  * Pass `db` (a transaction client) to write inside the caller's transaction; defaults to pool.
  */
-export async function accumulateEvidence(rows: EvidenceInsertRow[], db?: Queryable): Promise<number> {
+export async function accumulateEvidence(
+  rows: EvidenceInsertRow[], db?: Queryable, opts: { seasonId?: string } = {},
+): Promise<number> {
   if (rows.length === 0) return 0;
   // Imported lazily alongside pool, NOT at module scope. This module is loaded
   // by tests that mock './db.js', and a static import of seasonService pulls
@@ -177,7 +179,21 @@ export async function accumulateEvidence(rows: EvidenceInsertRow[], db?: Queryab
     const dated = r.source_date ? { cols: ', source_date, source_date_precision', vals: ', $7::date, $8' } : { cols: '', vals: '' };
     const params: unknown[] = [r.politician_id, r.topic_id, r.source_url, r.snippet, r.snippet_index, r.batch_id];
     if (r.source_date) params.push(r.source_date, r.source_date_precision ?? null);
-    const res = await runner.query(
+    // `opts.seasonId` pins the evidence to ONE named season's context row — research pre-staged into
+    // a DRAFT season, whose context the "newest published season" pick can never see. The evidence
+    // row then carries the draft season_id, and the voter citations read excludes it until the
+    // season opens (compassService.getPoliticianCitations). Without it: unchanged.
+    const res = opts.seasonId
+      ? await runner.query(
+        `INSERT INTO inform.politician_context_evidence
+           (politician_id, topic_id, season_id, source_url, snippet, snippet_index, batch_id${dated.cols})
+         SELECT $1, $2, c.season_id, $3, $4, $5, $6${dated.vals}
+           FROM inform.politician_context c
+          WHERE c.politician_id = $1 AND c.topic_id = $2 AND c.season_id = $${params.length + 1}::uuid
+         ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
+        [...params, opts.seasonId],
+      )
+      : await runner.query(
       // season_id comes from the context row this evidence supports. The FK from
       // evidence to context has always required that row to exist, so this
       // subselect cannot come up empty for a row that would have inserted before.
@@ -263,6 +279,8 @@ export interface ResearchReviewRow {
   topicRevisionId: string | null;
   /** The season open when the row was queued (CA_0264). null = unknown (legacy row). */
   seasonId: string | null;
+  /** 'draft' = pre-staged into a season that has not opened (hidden from voters until it does). null = unknown. */
+  targetSeasonStatus: 'draft' | 'open' | null;
   /** The open season's CURRENT pin for this topic. null = no open season, or it no longer asks the topic. */
   openTopicRevisionId: string | null;
   /**
@@ -317,15 +335,28 @@ export interface LadderInfo {
 export const LADDER_CHANGED_MESSAGE = 'the ladder changed since this row was researched — re-research it';
 
 /**
- * The (politician, topic) pair's stored value in the open season, as a scalar subselect on
+ * The season a review row WRITES to: its own season when that is a DRAFT season (research
+ * pre-staged before the season opened), else the open season — exactly the behaviour before
+ * `--season` existed, including for a row queued in an earlier open season (it still compares with,
+ * and writes to, the season open now). `r.season_id` is the CA_0264 column.
+ */
+const ROW_DRAFT_SEASON_ID_SQL = `(SELECT d.id FROM inform.seasons d WHERE d.id = r.season_id AND d.status = 'draft')`;
+/** The season JOIN predicate on alias `s`: the row's draft season, else the open season. */
+const TARGET_SEASON_PREDICATE_SQL = `(s.id = ${ROW_DRAFT_SEASON_ID_SQL}
+       OR (${ROW_DRAFT_SEASON_ID_SQL} IS NULL AND s.status = 'open'))`;
+
+/**
+ * The (politician, topic) pair's stored value in the target season (the open season, or the draft
+ * season a row was pre-staged into), as a scalar subselect on
  * `r` (inform.stance_research_review). At most one row: one open season (seasons_one_open) and
  * one answer per (politician, topic, season).
  */
+// @draft-reads: ADMIN-ONLY — the review queue is an editor surface; it reads the season a row writes to, draft included.
 const CURRENT_VALUE_SQL = `
   -- @zero-scope: counts-blanks — the reviewer must see that an editor blanked this row.
   (SELECT a.value
      FROM inform.politician_answers a
-     JOIN inform.seasons s ON s.id = a.season_id AND s.status = 'open'
+     JOIN inform.seasons s ON s.id = a.season_id AND ${TARGET_SEASON_PREDICATE_SQL}
     WHERE a.politician_id = r.politician_id AND a.topic_id = r.topic_id) AS current_value`;
 
 /**
@@ -343,14 +374,17 @@ const CURRENT_VALUE_SQL = `
  */
 async function reviewReadJoins(): Promise<string> {
   const { servedRevisionLateral, newestAnswerLateral } = await import('./seasonService.js');
+  // @draft-reads: ADMIN-ONLY — the review queue is an editor surface; `open_pin` is the season a row writes to, draft included.
   return `
   LEFT JOIN LATERAL (
-    SELECT sq.topic_revision_id
+    SELECT sq.topic_revision_id, s.status AS season_status
       FROM inform.season_questions sq
-      JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+      JOIN inform.seasons s ON s.id = sq.season_id AND ${TARGET_SEASON_PREDICATE_SQL}
      WHERE sq.topic_id = r.topic_id
   ) open_pin ON true
-  LEFT JOIN ${servedRevisionLateral('open_pin.topic_revision_id', 'open_eff')} ON true
+  -- A DRAFT season's pin may be an approved, not-yet-published revision (ADR 0006): it counts as
+  -- served for a draft row only. An open season's served text stays published/superseded.
+  LEFT JOIN ${servedRevisionLateral('open_pin.topic_revision_id', 'open_eff', { includeApprovedWhen: "open_pin.season_status = 'draft'" })} ON true
   -- @zero-scope: counts-blanks — a 0 here is a blank voters see; the reviewer must see it as one.
   ${newestAnswerLateral('r.politician_id', 'r.topic_id', 'shown')}
   -- N1 (re-review 2026-09-24): voters read the displayed value against the OPEN season's served
@@ -372,6 +406,7 @@ async function reviewReadJoins(): Promise<string> {
 const REVIEW_READ_COLUMNS = `
   open_pin.topic_revision_id::text AS open_topic_revision_id,
   open_eff.id::text AS open_served_revision_id,
+  open_pin.season_status AS target_season_status,
   -- A topic the open season does not ask is not on the voter compass at all: nothing is shown.
   CASE WHEN open_pin.topic_revision_id IS NULL THEN NULL ELSE shown.value END AS shown_value,
   shown.season_number AS shown_season_number, shown_sr.text AS shown_text,
@@ -434,6 +469,7 @@ function mapReviewRow(row: any): ResearchReviewRow {
     ...ladderState(nullable(row.topic_revision_id), nullable(row.open_topic_revision_id),
       nullable(row.served_revision_id), nullable(row.open_served_revision_id)),
     seasonId: nullable(row.season_id),
+    targetSeasonStatus: row.target_season_status === 'draft' ? 'draft' : row.target_season_status === 'open' ? 'open' : null,
     bodyLabel: nullable(row.body_label),
     consensusValue: row.consensus_value === null || row.consensus_value === undefined ? null : Number(row.consensus_value),
     evidenceTier: row.evidence_tier === 'corroborated' || row.evidence_tier === 'single-source' ? row.evidence_tier : null,
@@ -514,15 +550,21 @@ export async function getResearchReviewById(id: string): Promise<ResearchReviewR
  * (`check:ladder-text`'s gate; see LadderInfo). null when the pin serves nothing, or the served
  * revision does not carry exactly five rungs — a partial ladder must not be shown as the ladder.
  */
-async function fetchLadder(pinRevisionId: string, usingOpenPin: boolean): Promise<LadderInfo | null> {
+async function fetchLadder(
+  pinRevisionId: string, usingOpenPin: boolean, draftSeasonId: string | null = null,
+): Promise<LadderInfo | null> {
   const { pool } = await import('./db.js');
   const { servedRevisionLateral } = await import('./seasonService.js');
+  // A row pre-staged into a DRAFT season reads that pin's approved, not-yet-published revision as served.
+  const approved = draftSeasonId
+    ? { includeApprovedWhen: "EXISTS (SELECT 1 FROM inform.seasons ds WHERE ds.id = $2::uuid AND ds.status = 'draft')" }
+    : {};
   const { rows } = await pool.query<{ served_id: string; question_text: string; value: number; text: string }>(
     `SELECT eff.id::text AS served_id, eff.question_text, s.value, s.text
-       FROM ${servedRevisionLateral('$1::uuid', 'eff')}
+       FROM ${servedRevisionLateral('$1::uuid', 'eff', approved)}
        JOIN inform.compass_stance_revisions s ON s.topic_revision_id = eff.id
       ORDER BY s.value`,
-    [pinRevisionId],
+    draftSeasonId ? [pinRevisionId, draftSeasonId] : [pinRevisionId],
   );
   if (rows.length !== 5) return null;
   return {
@@ -553,7 +595,10 @@ export async function getResearchReviewWithLadder(
   const row = await getResearchReviewById(id);
   if (!row) return null;
   const revisionForLadder = row.topicRevisionId ?? row.openTopicRevisionId;
-  const ladder = revisionForLadder ? await fetchLadder(revisionForLadder, row.topicRevisionId === null) : null;
+  const ladder = revisionForLadder
+    ? await fetchLadder(revisionForLadder, row.topicRevisionId === null,
+      row.targetSeasonStatus === 'draft' ? row.seasonId : null)
+    : null;
   return { ...row, ladder };
 }
 
@@ -569,15 +614,28 @@ export async function getResearchReviewWithLadder(
  */
 export async function writeVerifiedStance(args: {
   politicianId: string; topicId: string; value: number; reasoning: string; sources: string[]; editorId: string | null;
+  /**
+   * Write into this NAMED season (open or draft) instead of the open one — research pre-staged
+   * before a season opens. A draft season's rows are hidden from voters (SEASON_IS_PUBLISHED).
+   * Omitted = the open season, byte for byte as before.
+   */
+  seasonId?: string;
 }, db?: Queryable): Promise<void> {
   // Dynamic imports: a static import pulls db.js in before this file's tests install their mock.
   const runner: Queryable = db ?? (await import('./db.js')).pool;
-  const { UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL, assertWritten } = await import('./seasonService.js');
-  const ans = await runner.query(UPSERT_ANSWER_SQL, [args.politicianId, args.topicId, args.value, args.editorId]);
-  await assertWritten(ans.rowCount ?? 0, args.topicId);
-  const ctx = await runner.query(UPSERT_CONTEXT_SQL,
-    [args.politicianId, args.topicId, args.reasoning, args.sources, args.editorId]);
-  await assertWritten(ctx.rowCount ?? 0, args.topicId);
+  const {
+    UPSERT_ANSWER_SQL, UPSERT_CONTEXT_SQL, UPSERT_ANSWER_IN_SEASON_SQL, UPSERT_CONTEXT_IN_SEASON_SQL, assertWritten,
+  } = await import('./seasonService.js');
+  const ans = args.seasonId
+    ? await runner.query(UPSERT_ANSWER_IN_SEASON_SQL, [args.politicianId, args.topicId, args.value, args.editorId, args.seasonId])
+    : await runner.query(UPSERT_ANSWER_SQL, [args.politicianId, args.topicId, args.value, args.editorId]);
+  await assertWritten(ans.rowCount ?? 0, args.topicId, args.seasonId);
+  const ctx = args.seasonId
+    ? await runner.query(UPSERT_CONTEXT_IN_SEASON_SQL,
+      [args.politicianId, args.topicId, args.reasoning, args.sources, args.editorId, args.seasonId])
+    : await runner.query(UPSERT_CONTEXT_SQL,
+      [args.politicianId, args.topicId, args.reasoning, args.sources, args.editorId]);
+  await assertWritten(ctx.rowCount ?? 0, args.topicId, args.seasonId);
 }
 
 /**
@@ -729,6 +787,11 @@ export async function resolveResearchReview(
   // approval of another chair cannot survive.
   const tierToPublish = row.consensusValue !== null && row.consensusValue === finalValue ? row.evidenceTier : null;
   const batchId = `human-review-${id}`;
+  // A row pre-staged into a DRAFT season writes THERE (its answer, context and evidence), never into
+  // the open season; every other row keeps the open-season behaviour. Voters see none of it until the
+  // season opens (SEASON_IS_PUBLISHED on every voter read).
+  const draftSeasonId = row.targetSeasonStatus === 'draft' ? row.seasonId : null;
+  const evidenceOpts = draftSeasonId ? { seasonId: draftSeasonId } : {};
 
   const client = await pool.connect();
   try {
@@ -740,7 +803,10 @@ export async function resolveResearchReview(
     let contextReasoning = finalReasoning;
     if (finalValue === 0) {
       const { rows: open } = await client.query<{ number: number }>(
-        `SELECT number FROM inform.seasons WHERE status = 'open'`);
+        draftSeasonId
+          ? `SELECT number FROM inform.seasons WHERE id = $1::uuid AND status = 'draft'`
+          : `SELECT number FROM inform.seasons WHERE status = 'open'`,
+        draftSeasonId ? [draftSeasonId] : []);
       const researched = new Date(row.createdAt).toISOString().slice(0, 10);
       contextReasoning = `Blank in Season ${open[0]?.number ?? '?'} (${blankReason}) — researched on ${researched}. ${finalReasoning}`;
     }
@@ -751,9 +817,10 @@ export async function resolveResearchReview(
     await writeVerifiedStance({
       politicianId, topicId, value: finalValue,
       reasoning: contextReasoning, sources: allSources, editorId: resolvedBy,
+      ...(draftSeasonId ? { seasonId: draftSeasonId } : {}),
     }, client);
 
-    await accumulateEvidence(machineVerifiedRows, client);
+    await accumulateEvidence(machineVerifiedRows, client, evidenceOpts);
 
     // Only rows that carry a tier, or that could be overwriting one, name the CA_0300 column — so a
     // legacy row's approval writes the same SQL it always did.
@@ -762,14 +829,27 @@ export async function resolveResearchReview(
         `UPDATE inform.politician_context c
             SET evidence_tier = $3
            FROM inform.seasons s
-          WHERE s.id = c.season_id AND s.status = 'open'
+          WHERE s.id = c.season_id AND ${draftSeasonId ? 's.id = $4::uuid' : "s.status = 'open'"}
             AND c.politician_id = $1 AND c.topic_id = $2`,
-        [politicianId, topicId, tierToPublish],
+        draftSeasonId ? [politicianId, topicId, tierToPublish, draftSeasonId] : [politicianId, topicId, tierToPublish],
       );
     }
 
     // Write human-verified URLs to politician_context_evidence so they appear in citations
     for (const url of cleanedHumanVerifiedUrls) {
+      if (draftSeasonId) {
+        // A DRAFT-season row: the evidence attaches to that season's own context row.
+        await client.query(
+          `INSERT INTO inform.politician_context_evidence
+             (politician_id, topic_id, season_id, source_url, snippet, snippet_index, batch_id)
+           SELECT $1, $2, c.season_id, $3, $4, 0, $5
+             FROM inform.politician_context c
+            WHERE c.politician_id = $1 AND c.topic_id = $2 AND c.season_id = $6::uuid
+           ON CONFLICT (politician_id, topic_id, source_url, snippet_index) DO NOTHING`,
+          [politicianId, topicId, url, '[Human verified during review]', batchId, draftSeasonId],
+        );
+        continue;
+      }
       await client.query(
         // Same season derivation as accumulateEvidence above.
         `INSERT INTO inform.politician_context_evidence

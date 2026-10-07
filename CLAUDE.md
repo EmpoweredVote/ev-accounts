@@ -426,6 +426,23 @@ this person holds, not a rating of how strongly they lean.
 carries reasoning that names no instrument, act or vote. Run it before committing any migration that
 sets a chair.
 
+### Pre-staging research into a DRAFT season (`--season`)
+
+Every stance-research step takes `--season open|draft|<uuid>` (default `open`, unchanged): bundle
+(`build-stance-topic-bundle.ts`), `code-stance-batch.ts`, `queue-coded-batch.ts`,
+`verify-stance-research.ts`, `export-written-ledger.ts`, and `gold-desk/build_batch.py`. Pass the SAME
+value to each step: a non-open bundle writes `<dir>/season.json`, and a step run against another
+season exits 2. A **closed** season is always refused.
+- The draft ladder is the draft season's pin, served as ADR 0006 will serve it once it opens — so an
+  `approved`, not-yet-published revision counts (`servedRevisionLateral(..., {includeApprovedWhen})`).
+  The open season's served text still means published/superseded only.
+- Writes carry the draft season's id (`UPSERT_*_IN_SEASON_SQL`, evidence via `accumulateEvidence(..., {seasonId})`).
+  A review-queue row whose `season_id` is a draft season approves into THAT season (`resolveResearchReview`).
+- 🔴 **Voters must not see it.** Every reader of `politician_answers` / `politician_context` /
+  `politician_context_evidence` excludes draft (`SEASON_IS_PUBLISHED`) or declares `@draft-reads: ADMIN-ONLY`;
+  `draftSeasonWrites.test.ts` scans for a new unguarded one. A draft run does not stamp
+  `last_stances_researched_at`.
+
 ### A blank is `value = 0`, and `-- @zero-scope:` records who counts it
 
 When a ladder changes so that no rung states what a politician holds, the answer is **blanked**
