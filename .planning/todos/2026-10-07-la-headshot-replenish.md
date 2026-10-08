@@ -41,7 +41,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 
 | # | Person | Race | Defect |
 |---|--------|------|--------|
-| 7 | **Barri Worth Girvan** | CD 3 | **White rectangle burned into the top-right corner** — a compositing artifact, visible to a voter. |
+| 7 | ~~**Barri Worth Girvan**~~ ✅ **DONE 2026-10-07** (`CC_0198`) | CD 3 | **White rectangle burned into the top-right corner** — a compositing artifact, visible to a voter. |
 | 8 | **John McKinney** | City Attorney | Full-length walking shot. Head ≈12% of frame. |
 | 9 | ~~Timothy Gaspar~~ ✅ **DONE 2026-10-07** (`CC_0197`) | CD 3 | Half-body, head small, busy signage behind. **Borderline.** |
 
@@ -169,6 +169,35 @@ tiles had changed, meaning every one on the published page was stale.
 
 ▶ **"I looked at the render" is only true for the version you looked at.** Looking once, then
 editing, then publishing is not the same as looking at what you published.
+
+### 2026-10-07, batch 3 — Girvan (`CC_0198`)
+
+**13 of the original 19 remain.**
+
+The white block was never a photo problem. barriforthevalley.com publishes her portrait as a
+**transparent-background cutout** (`…7f10fc86…~mv2.png`, 1000×1465 RGBA). Something composited it
+onto a leafy backdrop and left white where a corner fill failed.
+
+Shipped: the same cutout on a neutral radial-grey studio backdrop, cropped 4:5 to **680×850**,
+head 48.8%, eye line 27.1%, chroma 21.8. A pure crop of the composite; nothing enlarged.
+
+⚠ **This image is composited.** The subject pixels are untouched — only the background behind the
+alpha is new. The operator reviewed a white-background version in the live card first and asked for
+a neutral backdrop, because a white cutout blends into the white card and reads as floating.
+
+🟢 **CHECK A CUTOUT FOR A WHITE MATTE BEFORE PUTTING IT ON GREY.** A cutout matted on white grows a
+pale halo the moment the background stops being white. The test: compare the luma of the
+semi-transparent rim against the opaque pixels just inside it. Here the rim measured **40.7 against
+78.2 — darker by 37.5**, so it is straight alpha with no matte baked in. A white matte would have
+made the rim far *brighter*. Then look at the edges at 3× against the new backdrop anyway.
+
+🟢 **A PREVIEW OBJECT IN THE BUCKET IS THE CHEAPEST WAY TO SEE THE REAL CARD.** Upload the candidate
+to `_preview/`, swap it into the live page's `<img>` with Playwright, screenshot, then delete.
+🔴 **The delete said "Successfully deleted" while the public URL kept serving 200** — a stale CDN
+edge copy. Confirm removal with an authenticated read or a bucket listing, never the public URL.
+
+Rejected and recorded: Ballotpedia holds a larger file (1213×1574) whose alt text names her, but it
+is a half-body street shot with the head at ~12% of frame; cropped tight it yields about 400×500.
 
 ## Notes
 
