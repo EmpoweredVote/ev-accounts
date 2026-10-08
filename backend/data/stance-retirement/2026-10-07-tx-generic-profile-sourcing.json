@@ -15,7 +15,8 @@
    "NOT_A_LEGISLATOR": 5
   },
   "blocked_immigration_no_s2_pin": 27,
-  "held_for_operator": 12
+  "held_for_operator": 9,
+  "resolved_by_operator_ruling_mig_1904": 3
  },
  "evidence_base": {
   "members_with_a_resolved_code": 93,
@@ -640,13 +641,6 @@
    "why": "1->2. Her HJR 59 (87R) seats seven members appointed by the most senior member of each chamber and each other party, and her HB 241 (89(2)) seats eight appointed by the four party caucuses plus a ninth they choose. Both are appointees of elected officials with equal party representation -- rung 2 on any reading. Her row says \"No specific bill found\" while she was the author of HB 241 in the very session she was breaking quorum over."
   },
   {
-   "name": "Borris Miles",
-   "topic": "redistricting",
-   "chair": 2.0,
-   "kind": "OPERATOR:rung1-reading",
-   "why": "chair 2. Author of SJR 3 (89(1)) and SJR 2 (89(2)): a nonpartisan agency draws 15 citizens at random, but a four-legislator select committee approves or rejects the selection pool. Rung 1 under reading (a) -> would move 2->1; rung 2 under (b) -> confirmed."
-  },
-  {
    "name": "Briscoe Cain",
    "topic": "trans-athletes",
    "chair": 5.0,
@@ -696,25 +690,11 @@
    "why": "not a legislator and not generically sourced: his second citation is Abbott v. Perez, the case his office litigated and won, which is evidence about the position rather than a biography. One of the 12 rows the national \"Wikipedia only\" detector counted by mistake."
   },
   {
-   "name": "Penny Morales Shaw",
-   "topic": "redistricting",
-   "chair": 2.0,
-   "kind": "OPERATOR:rung1-reading",
-   "why": "chair 2. Coauthor of HB 282 (87R), the same auditor-draw structure. Rung 1 under reading (a) -> would move 2->1; rung 2 under (b) -> confirmed."
-  },
-  {
    "name": "Ryan Guillen",
    "topic": "healthcare",
    "chair": 4.0,
    "kind": "MOVE",
    "why": "own instrument proves a rung the chair does not hold"
-  },
-  {
-   "name": "Vikki Goodwin",
-   "topic": "redistricting",
-   "chair": 1.0,
-   "kind": "OPERATOR:rung1-reading",
-   "why": "chair 1. HB 693/196 + HJR 26: the state auditor randomly draws citizen applicants and commissioners are barred from office for 10 years, but the four caucus leaders first strike eight applicants. Rung 1 under reading (a), rung 2 under (b)."
   }
  ],
  "rows": [
@@ -1028,8 +1008,8 @@
    "name": "Borris Miles",
    "topic": "redistricting",
    "chair": 2.0,
-   "action": "HELD",
-   "value": null,
+   "action": "WRITTEN_IN_1904",
+   "value": 1,
    "class": null,
    "carry": "SAME"
   },
@@ -2270,8 +2250,8 @@
    "name": "Penny Morales Shaw",
    "topic": "redistricting",
    "chair": 2.0,
-   "action": "HELD",
-   "value": null,
+   "action": "WRITTEN_IN_1904",
+   "value": 1,
    "class": null,
    "carry": "SAME"
   },
@@ -3251,10 +3231,26 @@
    "name": "Vikki Goodwin",
    "topic": "redistricting",
    "chair": 1.0,
-   "action": "HELD",
-   "value": null,
+   "action": "WRITTEN_IN_1904",
+   "value": 1,
    "class": null,
    "carry": "SAME"
+  }
+ ],
+ "operator_rulings": [
+  {
+   "date": "2026-10-08",
+   "migration": 1904,
+   "question": "redistricting rung 1 reads \"independent citizens' commissions with no elected officials involved at any level\". All twelve Texas commission bills give elected officials SOME role, so the rung admits two readings: (a) no elected official SERVES on the commission, or (b) no elected official TOUCHES the process.",
+   "ruling": "(a) -- no elected official SERVES. A caucus leader's power to strike applicants, or a select committee's veto over the applicant pool, is involvement in the process and not membership. Reading (b) would mean no commission that exists in the United States is rung 1.",
+   "effect": {
+    "Vikki Goodwin": "chair 1 CONFIRMED by her own HB 693 / HB 196 / HJR 26 (auditor draw)",
+    "Penny Morales Shaw": "chair 2 -> 1, coauthor of HB 282 (87R), auditor draw",
+    "Borris Miles": "chair 2 -> 1, author of SJR 3 / SJR 2, nonpartisan-agency random draw"
+   },
+   "deliberately_not_moved": {
+    "Royce West": "coauthored the same SJR 3 / SJR 2, so his 2025 filings are rung 1 under this ruling, but his OWN SJR 56 (86R) and SJR 43 (87R) seat Speaker, Lt. Governor and caucus appointees, which is rung 2 on either reading. He is the only member who filed BOTH shapes and his most recent filing is the rung-1 one. Whether the latest filing should govern is left open."
+   }
   }
  ]
 }
