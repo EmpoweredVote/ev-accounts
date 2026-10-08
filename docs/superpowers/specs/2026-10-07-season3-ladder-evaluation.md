@@ -139,9 +139,9 @@ substantive and blank every Season 1-only person on that topic under the default
 | T4 | **5 blind operator labels per changed topic** (5/5, or a review of each miss); **10 for pilots** (≥ 9/10). |
 | pilots (§5) | **climate-change, abortion, homelessness, education-library-books, plus minimum-wage** (tests record anchors L3/L4 and L8 at almost no cost: 2 visible chairs). |
 | voter re-ask (§6.3.1) | **Keep as built** (CC_0061/CC_0062): a moved or invalidated voter answer is hidden and re-asked; a reworded one is kept and prompted. No build. |
-| the open (§6.3.2–3) | **Researched, not seated.** Season 3 opens when every material topic has passed §4 and every person who is **seated now and holds a visible chair** on it has a coded Season 3 row (a chair or a reasoned blank). Everyone else blanks under the default rule; an empty spoke is acceptable (version-aware reads, PR #929). |
+| the open (§6.3.2–3) | **Pilot-scoped, few substantive (option B; revised 2026-10-08, replaces "researched, not seated" for the whole country).** Season 3 opens when every changed topic has passed §4 and every officeholder who **represents a pilot city** — including their state and federal officeholders — has a coded Season 3 row (a chair or a reasoned blank). Elsewhere, only **substantive** topics show an empty spoke until researched (version-aware reads, PR #929); identity and clarifying topics keep every seat. So substantive rulings are kept rare and clarifying is preferred wherever the rules allow. Reason: seasons are national, and re-researching every officeholder first would hold Season 3 back from the pilot cities. A Season 3 for pilot cities only (per-place seasons, ADR 0005 §3.1) was considered and set aside as a large redesign. |
 
-Size of "seated now with a visible chair" (prod, 2026-10-08; visible = latest Season 1/2 answer non-blank):
+For scale, the nationwide count the first version of this rule would have required — "seated now with a visible chair" (prod, 2026-10-08; visible = latest Season 1/2 answer non-blank):
 taxes 1,455 · abortion 1,545 · climate-change 1,519 · homelessness 574 · minimum-wage 2 ·
 education-library-books 0.
 
