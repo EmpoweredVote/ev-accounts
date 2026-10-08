@@ -56,11 +56,30 @@
  * bucket to `ks` and was reported as "NEW state -- this state was clean before". The totals were
  * identical: 179 and 179, with `-` falling 7 -> 6.
  *
- * So the baseline now compares ROW IDENTITIES -- "<politician_id>:<topic_id>" per check, carrying
- * neither state nor season. An identity does not move when a politician is seated, superseded or
- * re-bucketed. Per-state counts are still computed and still printed, because that is how the
- * backlog is discussed and a human reading a failure wants to know where the row is -- but nothing
- * is compared against them.
+ * So the baseline now compares ROW IDENTITIES per check. An identity does not move when a
+ * politician is seated, superseded or re-bucketed. Per-state counts are still computed and still
+ * printed, because that is how the backlog is discussed and a human reading a failure wants to
+ * know where the row is -- but nothing is compared against them.
+ * ⚠ The identity is "<politician_id>:<topic_id>:<season_id>" and has been since seasons landed: a
+ * pair legitimately holds one row per season, and a bad row written into the OPEN season must not
+ * be hidden by an already-recorded row in a closed one. (This paragraph said "carrying neither
+ * state nor season" until 2026-10-08; the state half is still true.)
+ *
+ * 🔴 2026-10-08 -- THE JOIN HAD NO season_id, AND THAT IS A DIFFERENT BUG FROM THE ONE ABOVE.
+ * The answers-driven branch joined context on (politician_id, topic_id) alone, so for a pair with
+ * rows in both seasons EVERY answer paired with EVERY context while the row kept the ANSWER's
+ * season. A Season 2 answer was therefore classified on the SEASON 1 context's sources. Season 1
+ * is closed, so a row repaired forward -- including by doing exactly what the BALLOTPEDIA_ONLY
+ * message tells you to do, deep-linking #Campaign_themes -- could never clear this gate, and
+ * three jurisdiction passes baselined 8 rows that were in fact already fixed.
+ * What the fix moved, measured on prod: the compared `rows` set lost exactly those 8 Season 2
+ * identities and gained none. The printed COUNTS fell much further -- BALLOTPEDIA_ONLY 213 -> 162,
+ * PRIMARY_SITE_NO_PATH 670 -> 580, total 933 -> 792 -- because the missing condition was also
+ * FANNING THE RESULT SET OUT, counting one identity once per season of context. So most of that
+ * 141 was never extra rows; it was the same rows counted twice. 🔑 A count from before this date
+ * is not comparable with one after it. ANSWER_WITHOUT_CONTEXT stayed 0 across the change (every
+ * non-zero answer in prod already had a context row in its own season), which is what made the
+ * fix safe to make in one step.
  *
  * 🔴 ORPHAN_CONTEXT NEEDED ITS OWN QUERY, AND THAT IS THE WHOLE POINT OF IT. Every check above reads
  * `FROM politician_answers LEFT JOIN politician_context`, so a context row with NO answer is outside
@@ -272,8 +291,19 @@ const QUERY = `
       -- by an already-recorded row in a closed one.
       pa.season_id
     FROM inform.politician_answers pa
+    -- 🔴 season_id IS PART OF THE JOIN KEY, and leaving it out was a real defect for a year.
+    -- A (politician, topic) pair holds one row PER SEASON in both tables. Without this condition
+    -- every answer pairs with every context, and since the row is labelled with the ANSWER's
+    -- season (below), a Season 2 answer was being classified on the SEASON 1 context's sources.
+    -- Season 1 is closed and immutable, so a row repaired forward into Season 2 -- including by
+    -- doing exactly what this gate's own failure text tells you to do, deep-linking
+    -- #Campaign_themes -- kept failing, and the only way out was a baseline entry for a row that
+    -- was already fixed. Three jurisdiction passes in a row paid that toll (CA #942, VA #943,
+    -- the held rows in mig 1913) before anyone fixed the join.
     LEFT JOIN inform.politician_context pc
-      ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
+      ON pc.politician_id = pa.politician_id
+     AND pc.topic_id = pa.topic_id
+     AND pc.season_id = pa.season_id
     WHERE pa.value <> 0
 
     UNION ALL
@@ -287,8 +317,14 @@ const QUERY = `
       pc.sources,
       pc.season_id
     FROM inform.politician_context pc
+    -- Same key, for the same reason: an orphan is reasoning with no chair IN ITS OWN SEASON.
+    -- ⚠ Measured on prod the day this changed: 318 context rows with sources have no answer at
+    -- all, and 318 have no answer in their own season -- the same 318. So this condition is a
+    -- no-op TODAY and is here to keep the two branches honest about what a row identity is.
     LEFT JOIN inform.politician_answers pa
-      ON pa.politician_id = pc.politician_id AND pa.topic_id = pc.topic_id
+      ON pa.politician_id = pc.politician_id
+     AND pa.topic_id = pc.topic_id
+     AND pa.season_id = pc.season_id
     WHERE pa.politician_id IS NULL
       -- Empty sources = a documented blank, which is SUPPOSED to have no answer. Excluded on shape,
       -- so this branch never re-reports the 404 rows closed on 2026-08-07.
