@@ -268,8 +268,11 @@ export function checkStanceRow(
     const snippets = ctx.evidence.filter((e) => e.source_url.trim() === url.trim());
     return !(snippets.length > 0 && snippets.every((e) => passageInSurveySection(section, e.snippet)));
   };
-  if (!isBlank && (row.source_urls.length > 0 && row.source_urls.every(isBioOnlyUrl))
-    || (evidenceUrls.length > 0 && evidenceUrls.every(isBioOnlyUrl))) {
+  // A blank claims no chair and its sources are the ones the coder EXAMINED (file header), so this chair
+  // check does not apply to it. The old `!isBlank && A || B` bound the guard to A only, so a blank whose
+  // evidence was all Ballotpedia was flagged anyway (Season 2 pilot, 2026-10-07: 12 blank rows).
+  if (!isBlank && ((row.source_urls.length > 0 && row.source_urls.every(isBioOnlyUrl))
+    || (evidenceUrls.length > 0 && evidenceUrls.every(isBioOnlyUrl)))) {
     add('ballotpedia-only', 'high', 'every source (or every evidence URL) is on ballotpedia.org — cite the underlying record, filing or report Ballotpedia draws on');
   }
 

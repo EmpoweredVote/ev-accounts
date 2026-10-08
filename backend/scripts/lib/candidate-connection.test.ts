@@ -93,6 +93,10 @@ describe('stanceGate C57 carve-out', () => {
     expect(ids(URL_BARE, SURVEY, sections)).toContain('ballotpedia-only'));
   it('NEGATIVE CONTROL: the anchor with a passage from the bio (outside the section) is refused', () =>
     expect(ids(URL_CC, BIO, sections)).toContain('ballotpedia-only'));
+  it('does not apply ballotpedia-only to a blank (it claims no chair)', () => {
+    const blank: ResearchRow = { ...row(URL_BARE), value: 0, blank_reason: 'no-evidence', evidence_type: 'blank' };
+    expect(checkStanceRow(blank, { topic, politician: pol, evidence: ev(URL_BARE, SURVEY) }).map((f) => f.check_id)).not.toContain('ballotpedia-only');
+  });
   it('fails closed: the anchor alone, with no page text supplied, is refused', () =>
     expect(ids(URL_CC, SURVEY)).toContain('ballotpedia-only'));
   it('fails closed: the page has no survey section', () =>
