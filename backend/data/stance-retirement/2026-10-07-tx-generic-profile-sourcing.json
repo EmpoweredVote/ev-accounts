@@ -1,0 +1,3260 @@
+{
+ "migration": 1903,
+ "date": "2026-10-07",
+ "cohort": "Texas state officeholders whose EVERY stance source is a page about the person -- a capitol.texas.gov member page, or a Wikipedia/Ballotpedia biography",
+ "measured": {
+  "keys": 282,
+  "politicians": 96
+ },
+ "written": {
+  "repairs": 173,
+  "blanks": 70,
+  "blank_classes": {
+   "LADDER_SCOPE": 26,
+   "NO_INSTRUMENT": 39,
+   "NOT_A_LEGISLATOR": 5
+  },
+  "blocked_immigration_no_s2_pin": 27,
+  "held_for_operator": 12
+ },
+ "evidence_base": {
+  "members_with_a_resolved_code": 93,
+  "member_session_pairs": 1471,
+  "filed_bill_entries": 81464,
+  "filed_count_mismatches": 0,
+  "roll_calls": {
+   "85R:SB4": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 496,
+     "tally": "94-53",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/85r/pdf/85RDAY58FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "20-10",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/85r/pdf/85RSJ02-08-F.PDF"
+    }
+   ],
+   "86R:HB3": [
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "26-2",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/86r/pdf/86RSJ05-06-F.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "read third time and was passed",
+     "record": 159,
+     "tally": "148-1",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY38FINAL.PDF"
+    }
+   ],
+   "86R:SB2": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 839,
+     "tally": "109-36",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/86r/pdf/86RDAY56FINAL.PDF"
+    }
+   ],
+   "872:SB1": [
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "18-11",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/872/pdf/87S208-11-F.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 61,
+     "tally": "80-41",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY04FINAL.PDF"
+    }
+   ],
+   "873:HB25": [
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "19-12",
+     "reconciled": false,
+     "url": "http://journals.senate.texas.gov/sjrnl/873/pdf/87S310-15-F.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 83,
+     "tally": "76-54",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/873/pdf/87C3DAY06FINAL.PDF"
+    }
+   ],
+   "87R:HB1280": [
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "19-12",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ05-25-F.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 793,
+     "tally": "81-61",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY41FINAL.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed to engrossment",
+     "record": 777,
+     "tally": "80-64",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY40FINAL.PDF"
+    }
+   ],
+   "87R:SB13": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 687,
+     "tally": "105-40",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY39FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "26-4",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ04-15-F.PDF"
+    }
+   ],
+   "87R:SB8": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 784,
+     "tally": "83-64",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/87r/pdf/87RDAY41FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "19-12",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/87r/pdf/87RSJ03-30-F.PDF"
+    }
+   ],
+   "884:SB4": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 48,
+     "tally": "83-61",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/884/pdf/88C4DAY05FINAL.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed to third reading",
+     "record": 35,
+     "tally": "83-60",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/884/pdf/88C4DAY04CFINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "17-11",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/884/pdf/88S4SJ11-09-F.PDF"
+    }
+   ],
+   "88R:SB14": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 1688,
+     "tally": "87-56",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/88r/pdf/88RDAY63FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "19-12",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/88r/pdf/88RSJ04-04-F.PDF"
+    }
+   ],
+   "88R:SB17": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 1921,
+     "tally": "83-62",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/88r/pdf/88RDAY68FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "19-12",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/88r/pdf/88RSJ04-19-F.PDF"
+    }
+   ],
+   "892:HB4": [
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "18-11",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/892/pdf/89S2SJ08-22-F.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 30,
+     "tally": "88-52",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/892/pdf/89C2DAY05FINAL.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed to engrossment",
+     "record": 25,
+     "tally": "88-52",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/892/pdf/89C2DAY04FINAL.PDF"
+    }
+   ],
+   "89R:HB1806": [],
+   "89R:HB2": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 303,
+     "tally": "142-5",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY46FINAL.PDF"
+    }
+   ],
+   "89R:HB229": [
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "20-11",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ05-28-F1.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 2177,
+     "tally": "87-56",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY62FINAL.PDF"
+    }
+   ],
+   "89R:HB4040": [],
+   "89R:HB44": [],
+   "89R:SB10": [
+    {
+     "chamber": "House",
+     "what": "passed to third reading",
+     "record": 3488,
+     "tally": "88-49",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY72FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "20-11",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ03-19-F.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed to engrossment",
+     "record": null,
+     "tally": "20-10",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ03-18-F.PDF"
+    }
+   ],
+   "89R:SB11": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 3315,
+     "tally": "88-48",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY71FINAL.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed to third reading",
+     "record": 3221,
+     "tally": "91-51",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY70FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "23-7",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ03-18-F.PDF"
+    }
+   ],
+   "89R:SB12": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 3506,
+     "tally": "88-47",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY73FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "20-11",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ03-19-F.PDF"
+    }
+   ],
+   "89R:SB16": [
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "20-11",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F.PDF"
+    }
+   ],
+   "89R:SB2": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 300,
+     "tally": "86-61",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY46FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "19-12",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ02-05-F.PDF"
+    }
+   ],
+   "89R:SB31": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 3194,
+     "tally": "134-4",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY70FINAL.PDF"
+    },
+    {
+     "chamber": "House",
+     "what": "passed to third reading",
+     "record": 3163,
+     "tally": "129-6",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY69FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "31-0",
+     "reconciled": null,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-29-F.PDF"
+    }
+   ],
+   "89R:SB8": [
+    {
+     "chamber": "House",
+     "what": "passed",
+     "record": 3502,
+     "tally": "86-47",
+     "reconciled": true,
+     "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY73FINAL.PDF"
+    },
+    {
+     "chamber": "Senate",
+     "what": "passed",
+     "record": null,
+     "tally": "20-11",
+     "reconciled": true,
+     "url": "http://journals.senate.texas.gov/sjrnl/89r/pdf/89RSJ04-01-F.PDF"
+    }
+   ]
+  },
+  "quorum_rolls": {
+   "87(2) day01 Record 1": {
+    "session": "87(2)",
+    "present": 81,
+    "absent": 68,
+    "chamber_size_implied": 149,
+    "disclaimed": {},
+    "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY01FINAL.PDF"
+   },
+   "87(2) day02 Record 2": {
+    "session": "87(2)",
+    "present": 93,
+    "absent": 56,
+    "chamber_size_implied": 149,
+    "disclaimed": {},
+    "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY02FINAL.PDF"
+   },
+   "89(1) day05 Record 6": {
+    "session": "89(1)",
+    "present": 90,
+    "absent": 60,
+    "chamber_size_implied": 150,
+    "disclaimed": {
+     "Guillen": "I was temporarily out of the house chamber and could not be shown present. Guillen and Muñoz",
+     "Muñoz": "I was temporarily out of the house chamber and could not be shown present. Guillen and Muñoz",
+     "J. Lopez": "my vote failed to register and I could not be shown present. J. Lopez",
+     "E. Morales": "I was attending to ur gent family matters within my district that required my full and undivided attention. These responsibilities had been scheduled in advance and could not be postponed. E. Morales",
+     "T oth": "I was absent to care for my wife following a sur gical procedure. Had a quorum been present, a leave of absence would have been requested on my behalf. T oth (Guillen and Muñoz now present)"
+    },
+    "url": "http://journals.house.texas.gov/hjrnl/891/pdf/89C1DAY05FINAL.PDF"
+   },
+   "89(1) day06 Record 9": {
+    "session": "89(1)",
+    "present": 95,
+    "absent": 55,
+    "chamber_size_implied": 150,
+    "disclaimed": {},
+    "url": "http://journals.house.texas.gov/hjrnl/891/pdf/89C1DAY06FINAL.PDF"
+   },
+   "89(1) day09 Record 10": {
+    "session": "89(1)",
+    "present": 95,
+    "absent": 55,
+    "chamber_size_implied": 150,
+    "disclaimed": {},
+    "url": "http://journals.house.texas.gov/hjrnl/891/pdf/89C1DAY09FINAL.PDF"
+   },
+   "89(1) day11 Record 11": {
+    "session": "89(1)",
+    "present": 96,
+    "absent": 54,
+    "chamber_size_implied": 150,
+    "disclaimed": {},
+    "url": "http://journals.house.texas.gov/hjrnl/891/pdf/89C1DAY11FINAL.PDF"
+   },
+   "89(1) day12 Record 12": {
+    "session": "89(1)",
+    "present": 95,
+    "absent": 55,
+    "chamber_size_implied": 150,
+    "disclaimed": {},
+    "url": "http://journals.house.texas.gov/hjrnl/891/pdf/89C1DAY12FINAL.PDF"
+   },
+   "89(1) day15 Record 13": {
+    "session": "89(1)",
+    "present": 95,
+    "absent": 55,
+    "chamber_size_implied": 150,
+    "disclaimed": {},
+    "url": "http://journals.house.texas.gov/hjrnl/891/pdf/89C1DAY15FINAL.PDF"
+   },
+   "89(2) day01 Record 1": {
+    "session": "89(2)",
+    "present": 97,
+    "absent": 53,
+    "chamber_size_implied": 150,
+    "disclaimed": {},
+    "url": "http://journals.house.texas.gov/hjrnl/892/pdf/89C2DAY01FINAL.PDF"
+   }
+  }
+ },
+ "findings": {
+  "wrong_person": {
+   "who": "Ramon Romero Jr.",
+   "carried_as": "A1390",
+   "which_the_site_names": "Taylor Rehmet",
+   "real_code": "A3060",
+   "how_it_got_in": "the member code was taken from the row's own cited URL and never name-checked",
+   "cost": "his filed record read as 0 bills / 3 sessions instead of 395 / 16",
+   "sweep": "all 93 codes then checked two independent ways; 92 confirmed, this the only bad one"
+  },
+  "prose_contradicted_by_the_record": [
+   {
+    "name": "Armando Martinez",
+    "topic": "civil-rights",
+    "chair": 2.0,
+    "bill": "SB12",
+    "key": "89R:SB12",
+    "claimed": "against",
+    "marker": "Y",
+    "tally": "88-47",
+    "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY73FINAL.PDF",
+    "context": "ented a predominantly Hispanic South Texas district since 2005. He has consistently opposed Republican legislation restricting civil rights protections and DEI programs (SB12 banning DEI duties in schools). His leadership role in "
+   },
+   {
+    "name": "Armando Martinez",
+    "topic": "trans-athletes",
+    "chair": 2.0,
+    "bill": "SB12",
+    "key": "89R:SB12",
+    "claimed": "against",
+    "marker": "Y",
+    "tally": "88-47",
+    "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY73FINAL.PDF",
+    "context": "Martinez is a Texas House Democrat who has not sponsored any anti-trans legislation. Texas Democrats voted as a bloc against SB12 (89th session, restricting gender identity instruction)"
+   },
+   {
+    "name": "Claudia Ordaz",
+    "topic": "civil-rights",
+    "chair": 2.0,
+    "bill": "SB12",
+    "key": "89R:SB12",
+    "claimed": "against",
+    "marker": "Y",
+    "tally": "88-47",
+    "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY73FINAL.PDF",
+    "context": "Ordaz is a Hispanic Democrat representing El Paso, a majority-Hispanic border district. She opposes DEI rollbacks and voted against HB 4040 and SB 12. Score 2: strengthen civil rights enforcement and addr"
+   }
+  ],
+  "claims_a_vote_but_was_not_recorded_voting": [
+   {
+    "name": "Armando Walle",
+    "topic": "deportation",
+    "chair": 2.0,
+    "bill": "SB8",
+    "key": "89R:SB8",
+    "claimed": "against",
+    "marker": "E",
+    "tally": "86-47",
+    "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY73FINAL.PDF",
+    "context": "Walle is a Democrat representing Houston's 140th district (heavily working-class and immigrant communities in northeast Harris County). He opposed SB8 (ICE cooperation mandate). Texas Democrats uniformly vot"
+   },
+   {
+    "name": "Armando Walle",
+    "topic": "trans-athletes",
+    "chair": 2.0,
+    "bill": "SB12",
+    "key": "89R:SB12",
+    "claimed": "against",
+    "marker": "E",
+    "tally": "88-47",
+    "url": "http://journals.house.texas.gov/hjrnl/89r/pdf/89RDAY73FINAL.PDF",
+    "context": "Walle is a Texas House Democrat who has not sponsored any anti-trans legislation. Texas Democrats voted as a bloc against SB12 (89th session, restricting gender identity instruction)"
+   }
+  ],
+  "dead_member_page_citations": [
+   {
+    "politician_id": "fd716f6e-aa75-4829-ae39-43e31516b3a5",
+    "full_name": "Philip Cortez",
+    "cited_code": "A1432",
+    "real_code": "A2365",
+    "rows": 5,
+    "cited_url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A1432"
+   },
+   {
+    "politician_id": "217dbd01-bbb3-45ef-afc3-a1a94a937583",
+    "full_name": "Rafael Anchia",
+    "cited_code": "A1290",
+    "real_code": "A2150",
+    "rows": 5,
+    "cited_url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A1290"
+   },
+   {
+    "politician_id": "a436b52d-8801-4588-b676-bd101bb2bdeb",
+    "full_name": "Ray Lopez",
+    "cited_code": "A1424",
+    "real_code": "A3915",
+    "rows": 3,
+    "cited_url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A1424"
+   },
+   {
+    "politician_id": "f4286f1f-dda7-4fe4-9473-455772f40fae",
+    "full_name": "Rhetta Bowers",
+    "cited_code": "A1442",
+    "real_code": "A3565",
+    "rows": 4,
+    "cited_url": "https://capitol.texas.gov/Members/MemberInfo.aspx?Leg=89&Chamber=H&Code=A1442"
+   }
+  ],
+  "bills_that_never_got_a_floor_vote": {
+   "89R:HB44": "left pending in committee 2025-04-07",
+   "89R:HB1806": "referred to State Affairs 2025-03-14, never reported",
+   "89R:HB4040": "referred to Public Education 2025-03-27, never reported",
+   "89R:SB16": "passed the Senate 20-11; died in the House at Calendars"
+  },
+  "ladder_mismatches": {
+   "religious-freedom": "the ladder grades religious EXEMPTIONS from anti-discrimination law; the Texas landmarks are a Ten Commandments display and a school prayer period",
+   "climate-change / fossil-fuels": "87(R) SB 13 bars state investment in companies that boycott energy firms; neither ladder has a rung about state investment policy",
+   "deportation": "every Texas landmark is about enforcement COOPERATION; the ladder asks WHOM to deport"
+  },
+  "band_not_rung": "the 89(2) HB 4 roll call splits the cohort exactly -- every chair-1 and chair-2 member NAY, every chair-4 and chair-5 member YEA -- but no Texas instrument separates rungs WITHIN a side on most ladders"
+ },
+ "held_for_operator": [
+  {
+   "name": "Ann Johnson",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "kind": "MOVE",
+   "why": "1->2. Her HJR 59 (87R) seats seven members appointed by the most senior member of each chamber and each other party, and her HB 241 (89(2)) seats eight appointed by the four party caucuses plus a ninth they choose. Both are appointees of elected officials with equal party representation -- rung 2 on any reading. Her row says \"No specific bill found\" while she was the author of HB 241 in the very session she was breaking quorum over."
+  },
+  {
+   "name": "Borris Miles",
+   "topic": "redistricting",
+   "chair": 2.0,
+   "kind": "OPERATOR:rung1-reading",
+   "why": "chair 2. Author of SJR 3 (89(1)) and SJR 2 (89(2)): a nonpartisan agency draws 15 citizens at random, but a four-legislator select committee approves or rejects the selection pool. Rung 1 under reading (a) -> would move 2->1; rung 2 under (b) -> confirmed."
+  },
+  {
+   "name": "Briscoe Cain",
+   "topic": "trans-athletes",
+   "chair": 5.0,
+   "kind": "MOVE",
+   "why": "own instrument proves a rung the chair does not hold"
+  },
+  {
+   "name": "Carrie Isaac",
+   "topic": "trans-athletes",
+   "chair": 5.0,
+   "kind": "MOVE",
+   "why": "own instrument proves a rung the chair does not hold"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "kind": "MOVE",
+   "why": "own instrument proves a rung the chair does not hold"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "kind": "MOVE",
+   "why": "1->2. His HJR 83 (88R) seats seven: four appointed by the most senior member of each chamber and each other party, a fifth chosen by those four, and two retired federal judges the fifth appoints. Appointees of elected officials, balanced by party -- rung 2 on any reading."
+  },
+  {
+   "name": "Gina Hinojosa",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "kind": "MOVE",
+   "why": "own instrument proves a rung the chair does not hold"
+  },
+  {
+   "name": "Juan \"Chuy\" Hinojosa",
+   "topic": "same-sex-marriage",
+   "chair": 3.0,
+   "kind": "MOVE",
+   "why": "own instrument proves a rung the chair does not hold"
+  },
+  {
+   "name": "Ken Paxton",
+   "topic": "redistricting",
+   "chair": 5.0,
+   "kind": "OUT",
+   "why": "not a legislator and not generically sourced: his second citation is Abbott v. Perez, the case his office litigated and won, which is evidence about the position rather than a biography. One of the 12 rows the national \"Wikipedia only\" detector counted by mistake."
+  },
+  {
+   "name": "Penny Morales Shaw",
+   "topic": "redistricting",
+   "chair": 2.0,
+   "kind": "OPERATOR:rung1-reading",
+   "why": "chair 2. Coauthor of HB 282 (87R), the same auditor-draw structure. Rung 1 under reading (a) -> would move 2->1; rung 2 under (b) -> confirmed."
+  },
+  {
+   "name": "Ryan Guillen",
+   "topic": "healthcare",
+   "chair": 4.0,
+   "kind": "MOVE",
+   "why": "own instrument proves a rung the chair does not hold"
+  },
+  {
+   "name": "Vikki Goodwin",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "kind": "OPERATOR:rung1-reading",
+   "why": "chair 1. HB 693/196 + HJR 26: the state auditor randomly draws citizen applicants and commissioners are barred from office for 10 years, but the four caucus leaders first strike eight applicants. Rung 1 under reading (a), rung 2 under (b)."
+  }
+ ],
+ "rows": [
+  {
+   "name": "Alan Schoolcraft",
+   "topic": "redistricting",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Alma Allen",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ana Hernandez",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ana Hernandez",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Ana Hernandez",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ann Johnson",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ann Johnson",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ann Johnson",
+   "topic": "voting-rights",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Armando Martinez",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Martinez",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Martinez",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Armando Martinez",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Armando Martinez",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Martinez",
+   "topic": "school-vouchers",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Armando Martinez",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Martinez",
+   "topic": "trans-athletes",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Walle",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Walle",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Walle",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Armando Walle",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Armando Walle",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Walle",
+   "topic": "school-vouchers",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Armando Walle",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Armando Walle",
+   "topic": "trans-athletes",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Barbara Gervin-Hawkins",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Barbara Gervin-Hawkins",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Barbara Gervin-Hawkins",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Barbara Gervin-Hawkins",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Barbara Gervin-Hawkins",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Barbara Gervin-Hawkins",
+   "topic": "school-vouchers",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Barbara Gervin-Hawkins",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Barbara Gervin-Hawkins",
+   "topic": "trans-athletes",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ben Bumgarner",
+   "topic": "redistricting",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ben Bumgarner",
+   "topic": "trans-athletes",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Borris Miles",
+   "topic": "redistricting",
+   "chair": 2.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Brad Buckley",
+   "topic": "climate-change",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Brad Buckley",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Brad Buckley",
+   "topic": "redistricting",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Brad Buckley",
+   "topic": "taxes",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Brent Money",
+   "topic": "abortion",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Brent Money",
+   "topic": "trans-athletes",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Brian Harrison",
+   "topic": "healthcare",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Brian Harrison",
+   "topic": "medicare/aid",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Briscoe Cain",
+   "topic": "deportation",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Briscoe Cain",
+   "topic": "immigration",
+   "chair": 5.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Briscoe Cain",
+   "topic": "religious-freedom",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Briscoe Cain",
+   "topic": "same-sex-marriage",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Briscoe Cain",
+   "topic": "taxes",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Briscoe Cain",
+   "topic": "trans-athletes",
+   "chair": 5.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Candy Noble",
+   "topic": "religious-freedom",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Carl Tepper",
+   "topic": "climate-change",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Carl Tepper",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Carl Tepper",
+   "topic": "redistricting",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Caroline Fairly",
+   "topic": "climate-change",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Caroline Fairly",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Caroline Harris Davila",
+   "topic": "climate-change",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Caroline Harris Davila",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Caroline Harris Davila",
+   "topic": "immigration",
+   "chair": 4.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Carrie Isaac",
+   "topic": "abortion",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Carrie Isaac",
+   "topic": "civil-rights",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Carrie Isaac",
+   "topic": "trans-athletes",
+   "chair": 5.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Cassandra Garcia Hernandez",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Cecil Bell Jr.",
+   "topic": "same-sex-marriage",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Charles Cunningham",
+   "topic": "immigration",
+   "chair": 4.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Charlie Geren",
+   "topic": "fossil-fuels",
+   "chair": 3.0,
+   "action": "REPAIR",
+   "value": 3,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Charlie Geren",
+   "topic": "taxes",
+   "chair": 3.0,
+   "action": "REPAIR",
+   "value": 3,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "climate-change",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "taxes",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Chris Turner",
+   "topic": "trans-athletes",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Christian Manuel",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Christian Manuel",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Christian Manuel",
+   "topic": "trans-athletes",
+   "chair": 1.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Christina Morales",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Claudia Ordaz",
+   "topic": "childcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Claudia Ordaz",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Cody Vasut",
+   "topic": "climate-change",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Cody Vasut",
+   "topic": "fossil-fuels",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Cody Vasut",
+   "topic": "taxes",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Dade Phelan",
+   "topic": "misinformation",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Dade Phelan",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Dan Patrick",
+   "topic": "civil-rights",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Dan Patrick",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Denise Villalobos",
+   "topic": "abortion",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Denise Villalobos",
+   "topic": "climate-change",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Denise Villalobos",
+   "topic": "fossil-fuels",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Diego Bernal",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Diego Bernal",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Diego Bernal",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Drew Darby",
+   "topic": "redistricting",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Dustin Burrows",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Eddie Morales",
+   "topic": "deportation",
+   "chair": 3.0,
+   "action": "REPAIR",
+   "value": 3,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Eddie Morales",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Eddie Morales",
+   "topic": "housing",
+   "chair": 3.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Eddie Morales",
+   "topic": "immigration",
+   "chair": 3.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Eddie Morales",
+   "topic": "medicare/aid",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Eddie Morales",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Elizabeth Campos",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Ellen Troxclair",
+   "topic": "taxes",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Ellen Troxclair",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Erin Gamez",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Erin Zwiener",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Gary Gates",
+   "topic": "taxes",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Gary Gates",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Gary VanDeaver",
+   "topic": "redistricting",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Gary VanDeaver",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Gene Wu",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Gene Wu",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Gene Wu",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Gene Wu",
+   "topic": "voting-rights",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Gina Hinojosa",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Gina Hinojosa",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Gina Hinojosa",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Gina Hinojosa",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Gina Hinojosa",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Gina Hinojosa",
+   "topic": "voting-rights",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Glenn Hegar",
+   "topic": "abortion",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Glenn Hegar",
+   "topic": "taxes",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NOT_A_LEGISLATOR",
+   "carry": "SAME"
+  },
+  {
+   "name": "Greg Abbott",
+   "topic": "deportation",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NOT_A_LEGISLATOR",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Greg Abbott",
+   "topic": "immigration",
+   "chair": 5.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Greg Abbott",
+   "topic": "misinformation",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NOT_A_LEGISLATOR",
+   "carry": "SAME"
+  },
+  {
+   "name": "Greg Bonnen",
+   "topic": "climate-change",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Greg Bonnen",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Harold Dutton Jr.",
+   "topic": "deportation",
+   "chair": 3.0,
+   "action": "REPAIR",
+   "value": 3,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Harold Dutton Jr.",
+   "topic": "trans-athletes",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Hubert Vo",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Hubert Vo",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Hubert Vo",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Hubert Vo",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Jessica Gonzalez",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Jessica Gonzalez",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Jessica Gonzalez",
+   "topic": "trans-athletes",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Joan Huffman",
+   "topic": "campaign-finance",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Joe Moody",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "John Bryant",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "John Bryant",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "John Bryant",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "John Bryant",
+   "topic": "housing",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "John Bryant",
+   "topic": "same-sex-marriage",
+   "chair": 3.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "John Bryant",
+   "topic": "trans-athletes",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Jolanda Jones",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Josey Garcia",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Juan \"Chuy\" Hinojosa",
+   "topic": "same-sex-marriage",
+   "chair": 3.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ken Paxton",
+   "topic": "healthcare",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NOT_A_LEGISLATOR",
+   "carry": "SAME"
+  },
+  {
+   "name": "Ken Paxton",
+   "topic": "medicare/aid",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NOT_A_LEGISLATOR",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ken Paxton",
+   "topic": "redistricting",
+   "chair": 5.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Lauren Ashley Simmons",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Lulu Flores",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Lulu Flores",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Lulu Flores",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Lulu Flores",
+   "topic": "trans-athletes",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Mano DeAyala",
+   "topic": "redistricting",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Mano DeAyala",
+   "topic": "same-sex-marriage",
+   "chair": 3.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Mano DeAyala",
+   "topic": "trans-athletes",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Marc LaHood",
+   "topic": "redistricting",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Mark Dorazio",
+   "topic": "redistricting",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Nicole Collier",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Nicole Collier",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Nicole Collier",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Nicole Collier",
+   "topic": "voting-rights",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Oscar Longoria",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Oscar Longoria",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Pat Curry",
+   "topic": "climate-change",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Pat Curry",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Pat Curry",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Paul Dyson",
+   "topic": "climate-change",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Paul Dyson",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Paul Dyson",
+   "topic": "healthcare",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Penny Morales Shaw",
+   "topic": "climate-change",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Penny Morales Shaw",
+   "topic": "redistricting",
+   "chair": 2.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Penny Morales Shaw",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Philip Cortez",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Philip Cortez",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Philip Cortez",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Philip Cortez",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Philip Cortez",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Rafael Anchia",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Rafael Anchia",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Rafael Anchia",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Rafael Anchia",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Rafael Anchia",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Ramon Romero Jr.",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ramon Romero Jr.",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ramon Romero Jr.",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ramon Romero Jr.",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ramon Romero Jr.",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Ramon Romero Jr.",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ray Lopez",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ray Lopez",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ray Lopez",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Rhetta Bowers",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Rhetta Bowers",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Rhetta Bowers",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Rhetta Bowers",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Richard Hayes",
+   "topic": "healthcare",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Richard Raymond",
+   "topic": "deportation",
+   "chair": 3.0,
+   "action": "REPAIR",
+   "value": 3,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Richard Raymond",
+   "topic": "healthcare",
+   "chair": 3.0,
+   "action": "REPAIR",
+   "value": 3,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Richard Raymond",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Robert Guerra",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Robert Guerra",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Ron Reynolds",
+   "topic": "civil-rights",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ron Reynolds",
+   "topic": "climate-change",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ron Reynolds",
+   "topic": "healthcare",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ron Reynolds",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Ron Reynolds",
+   "topic": "medicare/aid",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ron Reynolds",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Ron Reynolds",
+   "topic": "voting-rights",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Royce West",
+   "topic": "abortion",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Royce West",
+   "topic": "redistricting",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Royce West",
+   "topic": "voting-rights",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ryan Guillen",
+   "topic": "deportation",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Ryan Guillen",
+   "topic": "healthcare",
+   "chair": 4.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Salman Bhojani",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Salman Bhojani",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Salman Bhojani",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Senfronia Thompson",
+   "topic": "deportation",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Senfronia Thompson",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Shelby Slawson",
+   "topic": "abortion",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Shelley Luther",
+   "topic": "healthcare",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Sheryl Cole",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Sheryl Cole",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "civil-rights",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "climate-change",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "fossil-fuels",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "healthcare",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "immigration",
+   "chair": 5.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "redistricting",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "religious-freedom",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "same-sex-marriage",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "trans-athletes",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Steve Toth",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Suleman Lalani",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Terri Leo-Wilson",
+   "topic": "civil-rights",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terri Leo-Wilson",
+   "topic": "climate-change",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Terri Leo-Wilson",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terri Leo-Wilson",
+   "topic": "redistricting",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terri Leo-Wilson",
+   "topic": "same-sex-marriage",
+   "chair": 5.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Terri Leo-Wilson",
+   "topic": "trans-athletes",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terry Canales",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terry Canales",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terry Canales",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Terry Canales",
+   "topic": "trans-athletes",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terry Meza",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terry Wilson",
+   "topic": "climate-change",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Terry Wilson",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terry Wilson",
+   "topic": "healthcare",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "SAME"
+  },
+  {
+   "name": "Terry Wilson",
+   "topic": "immigration",
+   "chair": 4.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Terry Wilson",
+   "topic": "religious-freedom",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Terry Wilson",
+   "topic": "same-sex-marriage",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Terry Wilson",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Todd Hunter",
+   "topic": "civil-rights",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Todd Hunter",
+   "topic": "deportation",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Todd Hunter",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Todd Hunter",
+   "topic": "immigration",
+   "chair": 4.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Todd Hunter",
+   "topic": "redistricting",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Todd Hunter",
+   "topic": "religious-freedom",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Todd Hunter",
+   "topic": "same-sex-marriage",
+   "chair": 4.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Todd Hunter",
+   "topic": "voting-rights",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Tom Craddick",
+   "topic": "redistricting",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Tom Oliverson",
+   "topic": "climate-change",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Tom Oliverson",
+   "topic": "fossil-fuels",
+   "chair": 4.0,
+   "action": "REPAIR",
+   "value": 4,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Tom Oliverson",
+   "topic": "redistricting",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Toni Rose",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Toni Rose",
+   "topic": "homelessness",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "NO_INSTRUMENT",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Toni Rose",
+   "topic": "immigration",
+   "chair": 2.0,
+   "action": "BLOCKED",
+   "value": null,
+   "class": null,
+   "carry": "NO-S2-RUNG"
+  },
+  {
+   "name": "Toni Rose",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "REPAIR",
+   "value": 1,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Toni Rose",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Toni Rose",
+   "topic": "taxes",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Toni Rose",
+   "topic": "voting-rights",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Tony Tinderholt",
+   "topic": "religious-freedom",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Tony Tinderholt",
+   "topic": "same-sex-marriage",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Trey Martinez Fischer",
+   "topic": "civil-rights",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Trey Martinez Fischer",
+   "topic": "voting-rights",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Valoree Swanson",
+   "topic": "climate-change",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Valoree Swanson",
+   "topic": "same-sex-marriage",
+   "chair": 5.0,
+   "action": "REPAIR",
+   "value": 5,
+   "class": null,
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Venton Jones",
+   "topic": "same-sex-marriage",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Vikki Goodwin",
+   "topic": "climate-change",
+   "chair": 2.0,
+   "action": "BLANK",
+   "value": 0,
+   "class": "LADDER_SCOPE",
+   "carry": "CHANGED"
+  },
+  {
+   "name": "Vikki Goodwin",
+   "topic": "fossil-fuels",
+   "chair": 2.0,
+   "action": "REPAIR",
+   "value": 2,
+   "class": null,
+   "carry": "SAME"
+  },
+  {
+   "name": "Vikki Goodwin",
+   "topic": "redistricting",
+   "chair": 1.0,
+   "action": "HELD",
+   "value": null,
+   "class": null,
+   "carry": "SAME"
+  }
+ ]
+}
