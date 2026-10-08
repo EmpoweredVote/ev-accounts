@@ -1,6 +1,6 @@
 # Season 3 ladder evaluation worksheet
 
-Date: 2026-10-07. Operator: Chris Andrews. Read-only on prod: no migration, no proposed or approved
+Date: 2026-10-07 (rulebook rulings added 2026-10-08). Operator: Chris Andrews. Read-only on prod: no migration, no proposed or approved
 revision, no write. Data read from prod (session pooler, `default_transaction_read_only = on`) on
 2026-10-07. Companion to
 [`2026-10-07-season3-repointing-findings.md`](2026-10-07-season3-repointing-findings.md).
@@ -53,11 +53,8 @@ exists, and the publish guard raises `REPOINTING_NO_REASONING`).
    topic. Today no revision is open (0 draft or approved, checked 2026-10-07). Rule and land every
    known **Season 2** fix on a topic before any Season 3 revision is proposed on it, and propose
    Season 3 revisions late (findings doc §6).
-2. **The draft Season 3 ladder rulebook (L1–L10, seatability test T1–T6).** It is on branch
-   `claude/s2-seating-analysis` (`docs/superpowers/specs/2026-10-07-season3-design.md`), not ruled.
-   If accepted, it bars degree words, absence clauses on middle rungs, "and"-compounds and
-   level-specific verbs. That would turn many "identity" calls below into "clarifying" or
-   "substantive". Rule it **before** the topic-by-topic pass, or the pass may need repeating.
+2. ~~**The draft Season 3 ladder rulebook (L1–L10).**~~ **Ruled 2026-10-08** — see "Rulebook rulings"
+   below. Every topic section in this worksheet now has to be read against those rules.
 3. **The 13 chained topics.** Under the default rule, a moving map blanks **every** Season 2 row on
    these topics (0 rows map), including 117 seated `transportation-priorities` rows and 97 seated
    `gun-policy` rows. Accept that, or extend CA_0305 to map through the clarifying revisions in
@@ -92,6 +89,45 @@ exists, and the publish guard raises `REPOINTING_NO_REASONING`).
    ruling other than identity requires deleting or rewriting them first.
 10. **Foreign-policy pruning.** Five foreign-policy topics converge (defense-spending note). Pruning
     is a decision for Chris, and it would change which ladders exist at all.
+
+## Rulebook rulings (Chris Andrews, 2026-10-08)
+
+The draft rulebook is §2 of `docs/superpowers/specs/2026-10-07-season3-design.md` (PR #925, branch
+`claude/s2-seating-analysis`). Ruled rule by rule, against a word scan of the 61 current ladders
+(the scan over-counts "and" and "only"; it is a size estimate, not a defect list):
+
+| scan | rungs | topics |
+|---|---:|---:|
+| L4 degree words | 42 | 28 |
+| L5 absence words, any rung | 46 | 41 |
+| L6 "and", upper bound | 159 | 58 |
+| L8 level words | 19 | 12 |
+
+| rule | ruling | detail |
+|---|---|---|
+| **L1** name the spectrum | **adopted, poles stored internally** | Every ladder gets two named poles in a column (needs a `CA_` migration). Coders, lexicon checks and orientation read them. **Not shown to voters yet**, so no compass UI change before the open. Replaces the open P4 orientation question. Off-axis ladders must get an honest pole pair or a re-axis. |
+| **L2** one axis | **adopted** | A rung that mixes two axes is a defect. Known candidates: housing, redistricting, healthcare, civil-rights r5, voting-rights r5, rent-regulation r3, city-sanitation r2, misinformation r5. |
+| **L3** kinds of act | **adopted, with record anchors** | A rung names a kind of act, general in the kind. It may carry an **anchor a record can show** — relative to current law (raise / keep / cut) or a stated threshold (e.g. index to inflation) — instead of an amount. Magnitude ladders keep five rungs this way. |
+| **L4** no degree words | **adopted, with record anchors** | No vague degree word (high, significant, moderate, broadly, as far as possible, …) on any rung. Use an anchor (L3) instead. |
+| **L5** no absence on middle rungs | **adopted as written** | Poles may state an absence. A condition the law itself states is a clause, not an absence. |
+| **L6** no "and"-compounds | **adopted as written** | Split the rung or drop a clause. |
+| **L7** "or" at one point only | **adopted as written** | "Or" joins two ways of doing the same kind of act, never two positions. |
+| **L8** level-neutral verbs | **adopted, level relations excepted** | Verbs are level-neutral. A rung may name another level only when the relation between levels is the subject (cooperation with federal agents, preemption, state-drawn maps). True defects: minimum-wage r3, civil-rights r4, transportation-priorities r5, economic-development r2–3. |
+| **L9** object = what records act on | **adopted** | Checked by the seatability test, not by a lint. Known cases: climate-change, ai-regulation, healthcare, medicare/aid. |
+| **L10** five distinct rungs | **five always in Season 3** | No fewer-rung exception. A topic that cannot reach five kinds of act on one axis is re-axed or retired. Fewer-rung ladders are a separate compass-shape decision later. |
+
+**Widening rule (2026-10-08), refines the 2026-08-28 rewording rule.** A change that widens a rung
+(for example "A and B" becomes "A or B") is **clarifying** when no seat moves: every seated row
+still fits its rung, and no seated row now also fits a neighbour rung. The proposal must state that
+check with the seated-row count. Otherwise it is material.
+
+**What this does to the worksheet.** A topic can stay **identity** only if its ladder passes these
+rules, or Chris rules a written exception. Most L6 fixes can be clarifying under the widening rule.
+L2, L3/L4 (degree to anchor), L8 (true defects) and L9 changes usually move a seat, so they are
+substantive and blank every Season 1-only person on that topic under the default rule.
+
+Still open in the same spec: E1/E2 evidence rules (§3), seatability bars T1–T6 (§4), pilot topics
+(§5), voter-side decisions (§6.3).
 
 ## Cost groups
 
