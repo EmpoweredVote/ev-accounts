@@ -42,7 +42,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 | # | Person | Race | Defect |
 |---|--------|------|--------|
 | 7 | ~~**Barri Worth Girvan**~~ ✅ **DONE 2026-10-07** (`CC_0198`, superseded by `CC_0199`) | CD 3 | **White rectangle burned into the top-right corner** — a compositing artifact, visible to a voter. |
-| 8 | **John McKinney** | City Attorney | Full-length walking shot. Head ≈12% of frame. |
+| 8 | ~~**John McKinney**~~ ✅ **DONE 2026-10-08** (`CC_0205`) | City Attorney | Full-length walking shot. Head ≈12% of frame. |
 | 9 | ~~Timothy Gaspar~~ ✅ **DONE 2026-10-07** (`CC_0197`) | CD 3 | Half-body, head small, busy signage behind. **Borderline.** |
 
 ---
@@ -62,7 +62,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 | # | Person | Seat | Defect |
 |---|--------|------|--------|
 | 13 | ~~**Scott Schmerelson**~~ ✅ **DONE 2026-10-08** (`CC_0204`) | LAUSD District 3 | Heavy blur — an upscale of a small original. Top of head clipped. |
-| 14 | **Sara Hernandez** | LACCD Seat 4 | **200×300** — under the floor. |
+| 14 | ~~**Sara Hernandez**~~ ✅ **DONE 2026-10-08** (`CC_0205`) | LACCD Seat 4 | **200×300** — under the floor. |
 
 ---
 
@@ -70,8 +70,8 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 
 | # | Person | Race | Defect |
 |---|--------|------|--------|
-| 15 | **Cristian Morales** | CA-43 | Heavy blur — an upscale. Head clipped at the top. |
-| 16 | **Angela Gonzales-Torres** | CA-34 | **200×300** — under the floor. |
+| 15 | ~~**Cristian Morales**~~ ✅ **DONE 2026-10-08** (`CC_0205`) | CA-43 | Heavy blur — an upscale. Head clipped at the top. **Also an Instagram source.** |
+| 16 | ~~**Angela Gonzales-Torres**~~ ✅ **DONE 2026-10-08** (`CC_0205`) | CA-34 | **200×300** — under the floor. |
 | 17 | **Houston Brignano** | CA-36 | Full-body standing shot. Head ≈10% of frame. |
 | 18 | Xavier Becerra | Governor | Candid at a campaign event. A microphone intrudes bottom-right, a blurred object left. |
 | 19 | Samantha Mota | CA-37 | Casual shot against a mural, arm raised. Not a portrait. |
@@ -304,6 +304,106 @@ file whose source nobody recorded.
 
 Ceilings measured: `lausd.org` and `boe.lausd.org` both answer **403 to a real browser**, not only
 to curl. Everything else on his own site is a classroom or cafeteria scene.
+
+### 2026-10-08, batch 7 — McKinney, Morales, Hernandez, Gonzales-Torres (`CC_0205`)
+
+**7 of the original 19 remain.** All four verified on the rendered page, not on the API.
+Proof sheet: https://claude.ai/artifact/PCsCQZJQ7fCv2bzqUjXsYD
+
+| Person | Was | Now | How |
+|---|---|---|---|
+| John McKinney | 600×750 enlargement of a 540×751 full-length shot on the City Hall steps | **578×723**, head 48.3%, air above the hair 8.7%, face centre 49.5% | Ballotpedia `JohnMcKinney_CA.png` (680×723). **Pure crop, no resize** — the source height is the binding constraint. |
+| Cristian Morales | 600×750 enlargement, edge energy **1.48**, head clipped | **1200×1500**, head 45.0%, eye line 31.6%, centre 50.5% | Ballotpedia `ChristianMorales26-2_2026-09-03_181854.jpg` (3024×4032), downscaled 2.16×. |
+| Sara Hernandez | 200×300 | **1200×1500**, head 45.0%, eye line 32.1%, centre 50.5% | The **same photograph** at full size, `SaraHernandez2022.jpg` (8192×5464), downscaled 3.12×. |
+| Angela Gonzales-Torres | 200×300 | **1200×1500**, head 45.0%, eye line 31.8%, centre 50.0% | The **same photograph** at full size, `Angela_GonzalesTorres_20250814_062216.jpg` (4094×5337), downscaled 2.53×. |
+
+Nothing enlarged, nothing composited, every one above the chroma floor.
+
+🟢 **A BYTE COMPARISON CAN RETIRE THE IDENTITY QUESTION ENTIRELY.** Both 200×300 files were
+**byte-identical to Ballotpedia's own 200×300 thumbnail** of the originals shipped here. So neither
+is a change of photograph: the subject pixels are the ones we already published, at 4× and 6× the
+linear resolution. There was nothing left to verify, and no second source was needed. Download the
+thumbnail and compare bytes before spending a search on provenance.
+
+🔴 **MORALES WAS A LICENCE DEFECT, NOT ONLY A QUALITY ONE.** His `photo_origin_url` was
+`instagram.com/cmoralescagov`. The standard is press, official or campaign; a social media profile
+is none of those. It was not on the original audit list as a licence problem because the audit
+measured pixels, not provenance. **`CC_0205`'s gate now refuses any row whose `photo_origin_url`
+matches instagram / facebook / twitter / x.com / linkedin / tiktok** — worth copying forward.
+
+### 🔴 THE SKIN-TONE CENTROID IS NOT A UNIVERSAL FACE-CENTRE DETECTOR
+
+`feedback_measure_dont_eyeball_crop_geometry` says to centre a crop on a skin-tone column centroid
+across the eye band. On John McKinney it returned **x=244 against a true centre of 359 — 115 px
+off**, because the Cb/Cr box that defines "skin" is tuned for lighter skin and under-detects his
+face. On Angela Gonzales-Torres it was 126 px off, pulled by asymmetric lighting.
+
+▶ **The Haar face-box centre and the eye midpoint agreed with each other on all four subjects**
+(spread 0–32 px). Those are what the crops use. Keep the skin centroid as a third reading that
+flags disagreement, never as the answer.
+
+### 🔴 TWO DETECTORS, EACH WRONG ON WHAT THE OTHER GETS RIGHT
+
+Head top was measured two ways and they disagreed on half the batch:
+
+- A **background-departure column scan** reads the first row that stops matching the background. It
+  was right on the two plain-backdrop portraits and wrong by **236 px on Morales** (his flags) and
+  **262 px on Hernandez** (a building behind her) — busy texture answers the same way a head does.
+- **GrabCut segmentation** asks which pixels are the subject, so texture does not fool it. It fixed
+  Hernandez, returned 0 on Gonzales-Torres (the plain grey backdrop got absorbed into the
+  foreground) and **could not run at all** on McKinney, whose face fills the frame so the seed
+  rectangle left no background samples.
+
+▶ **Neither is right everywhere, so neither verdict is trustworthy on its own.** Draw every reading
+back onto the photograph and look at it. That is what caught all four errors, and it is the only
+step that worked on every image.
+
+### 🔴 THE GATE WAS PROVED BY WATCHING IT FAIL, THREE WAYS
+
+Before `CC_0205` was applied, three tampered copies were dry-run against production: a wrong name on
+the McKinney row, Morales' origin left as an Instagram URL, and an origin pointed at our own bucket.
+All three raised, each on the guard it targeted. A post-verify gate that has only ever passed has
+not been tested.
+
+### ▶ FOUND ON THE WAY: FOUR CA 2026 GENERAL CANDIDATES RENDER AS GREY INITIALS
+
+Hernandez did not appear on the Elections view after the fix, and the reason was not the photograph.
+She has **two `race_candidates` rows for the same contest**: the 2026-06-02 primary row
+(`240be7d9`, `result = advanced`) carries `politician_id = 3ce8b7fa`, and the 2026-11-03 general row
+(`c7a5fca4`) carries `politician_id = NULL`. The general row therefore has no photo and the card
+falls back to initials.
+
+Measured, not guessed. The loose predicate — an unlinked active candidate sharing a first and last
+name with any linked row — returns 22 people, which is a **lead count and not evidence**. Narrowed
+to the shape Hernandez actually has (a linked primary row and an unlinked general row for the
+**same office** in the same cycle) it returns exactly **four**, and all four politicians already
+carry a photograph:
+
+| Candidate | Office | Politician row |
+|---|---|---|
+| Fiona Ma | Lieutenant Governor | `41ef8aaa` |
+| Gloria Romero | Lieutenant Governor | `f8189ff3` |
+| Richard Barrera | Superintendent of Public Instruction | `96485b13` |
+| Sara Hernandez | State Senate District 26 | `3ce8b7fa` |
+
+All four are on the **CA 2026 Statewide General**, so this is one import that created its rows
+unlinked. The fix is one `UPDATE essentials.race_candidates SET politician_id = …` per row.
+**Not done here** — it is a different table from the one this batch was approved to change, and it
+wants its own slot and its own gate.
+
+⚠ Do not widen the predicate to the 22. A shared first and last name is not identity; what makes
+these four safe is the same office in consecutive stages of the same election.
+
+### Also measured, so nobody re-finds it
+
+- The production card is **95×127 CSS px with `object-fit: cover`** — taller than 4:5, so a 4:5 crop
+  loses about 6.5% of its width at the sides. Worth composing for.
+- The `view=` query parameter does **not** switch the browse view. `view=school-board` silently
+  renders the representatives list. The tab must be clicked; the School Board tab's own URL is
+  `view=educators`. A scan that looks for one person on "the page" can miss them for this reason
+  alone — carry a positive control, as the scans here did.
+- The API exposes the **serving** URL in a field named `photo_origin_url`. That is not the database
+  column of the same name, which holds provenance. Do not read one for the other.
 
 ## Notes
 
