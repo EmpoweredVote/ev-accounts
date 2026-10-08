@@ -41,7 +41,10 @@ export function parseSourcesManifest(raw: unknown): { ok: true; manifest: Source
     if (!(SOURCE_KINDS as readonly unknown[]).includes(e.source_kind)) errors.push(`${at}: source_kind ${String(e.source_kind)} not allowed`);
     if (typeof e.url !== 'string') errors.push(`${at}: url missing`);
     else {
-      try { const u = new URL(e.url); if (u.pathname === '/' || u.pathname === '') errors.push(`${at}: url has no path`); }
+      // A bare root cites nothing on a reference site, but a person's OWN site can be a single page that
+      // carries its issues on the front (ruling 2026-10-08, Chris Andrews). Only 'own-site' may be bare;
+      // stanceGate C58 still reports source-no-path (medium) so a reviewer sees it.
+      try { const u = new URL(e.url); if ((u.pathname === '/' || u.pathname === '') && e.source_kind !== 'own-site') errors.push(`${at}: url has no path`); }
       catch { errors.push(`${at}: url not parseable`); }
     }
     for (const k of ['politician_id', 'office_id'] as const) if (typeof e[k] !== 'string' || !e[k]) errors.push(`${at}: ${k} missing`);
