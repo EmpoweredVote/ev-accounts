@@ -1,0 +1,92 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "served_revision_id": "ae53ba29-79eb-420f-aac6-ec99f8031ec6",
+      "passages": [
+        {
+          "snapshot_id": "87df6884-a8cc-5b9a-9e00-f986f9cc5461",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign page in the third person (\"Steve will extend the $500 limit to the Legislature\"); even as his words, a pay-to-play cap on lobbying interests is a narrow limit, not a strict limit on corporate or dark-money spending, so it shows only the pro-limit side.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "87df6884-a8cc-5b9a-9e00-f986f9cc5461",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Opposition to Proposition 4 and public campaign financing concerns taxpayer money, not how much private political money is limited, and is written in the third person.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "253ac1ca-a9d0-587e-8749-b88c2bf0c37c",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2025",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Describes PG&E donations and uncapped behested payments as corruption but proposes no campaign-finance rule; the plan section is about utilities.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "666a9268-9650-5347-b0e3-567a1dcbc476",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Discusses his own fundraising totals and donor count, which is conduct, not a rule for money in campaigns.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only on-question passage, \"Steve will extend the $500 limit to the Legislature\", is the campaign's third-person promise, not his own words, so nothing survives V1. Even in his own words, a pay-to-play cap on contributions from lobbying interests would not match \"Strictly limit corporate and dark-money spending\" (a narrow ban is direction-only), and opposing Proposition 4 public financing is off the private-money axis.",
+      "needs_source": [
+        "Hilton's own first-person words on campaign contribution or spending limits (questionnaire, debate answer, interview) in the 2026 campaign",
+        "Positive Populism (2018) passage in Hilton's own words arguing for banning \"Conflict Donors\""
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "87df6884-a8cc-5b9a-9e00-f986f9cc5461",
+          "text": "Steve will extend the $500 limit to the Legislature.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

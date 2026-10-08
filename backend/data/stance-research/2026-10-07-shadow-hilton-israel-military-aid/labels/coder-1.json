@@ -1,0 +1,21 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "6783e65c-0722-45d9-8579-65327af7c15c",
+      "served_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+      "passages": [],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "None of the supplied sources (a homelessness interview and campaign policy pages on healthcare, nightlife permits, water, new cities, small business, school supplies and PG&E) mentions Israel or U.S. military aid, so no passage speaks to whether aid should continue in full with no new conditions, be conditioned, be limited to defensive support, be cut, or end. At the state level only his own words could seat a chair, and none are in the sources.",
+      "needs_source": [
+        "Steve Hilton's own words on U.S. military aid to Israel (debate answer, questionnaire, interview, or first-person campaign statement), 2025-2026 governor campaign"
+      ],
+      "quotes": []
+    }
+  ]
+}

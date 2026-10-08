@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-data-centers",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "question_text": "How should government manage the growth of large-scale data centers?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Imposing a moratorium on new data center construction until energy infrastructure can support demand without raising costs for residential ratepayers"
+        },
+        {
+          "value": 2,
+          "text": "Barring utilities from passing any data center energy infrastructure costs to residential customers"
+        },
+        {
+          "value": 3,
+          "text": "Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval"
+        },
+        {
+          "value": 4,
+          "text": "Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts"
+        },
+        {
+          "value": 5,
+          "text": "Welcoming data center investment with minimal regulatory barriers, trusting that economic growth and tax revenue will benefit all residents"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# data-centers — served revision c48a03d6-b972-4f27-9a8a-d41b07f4a929 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should government manage the growth of large-scale data centers?\"\n\n**Orientation:** standard. Rung 1 stops new construction, rung 5 welcomes it with minimal rules. The\nrungs order **how many conditions government puts on new data centres**: a pause, a ratepayer\ncost bar, pre-approval conditions, disclosure with fast permits, almost none.\n\n**Levels with a lever:** federal, local, state. Cost allocation is set by the\nstate utility commission and legislature (federal for transmission); siting and permits are local\nand state; tax treatment is state and local.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"large load\", \"large-load tariff\", \"hyperscale\", \"co-location\", \"behind-the-meter\",\n\"ratepayer protection\", \"cost allocation\", \"cost causation\", \"community benefit agreement\" (CBA),\n\"impact assessment\", \"sales tax exemption\" (equipment), \"microgrid\", \"public utility commission\" (PUC),\n\"FERC\".\n\n1. **\"Imposing a moratorium on new data center construction until energy infrastructure can support\n   demand without raising costs for residential ratepayers\"**\n   - Means: no new data centres are built until the grid can serve them without raising household\n     power bills.\n   - Operative clauses: [a] a moratorium on new construction; [b] lifted when energy infrastructure can\n     carry the demand without raising residential costs.\n   - Establishing evidence looks like: a prime-sponsored moratorium that holds until a utility\n     commission reports on capacity and costs is `chair-shaped` (codebook calibration A1).\n   - Levels that hold a lever: state; local (a local construction or zoning moratorium); federal\n     rarely.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK when the moratorium has another purpose (water, noise, land use,\n     waiting for new zoning rules). [b] ties the pause to energy and ratepayer cost; a pause for\n     another reason → `direction-only` _(proposed)_.\n\n2. **\"Barring utilities from passing any data center energy infrastructure costs to residential\n   customers\"**\n   - Means: the law forbids utilities to put any data-centre power costs on household bills.\n   - Operative clauses: [a] a legal bar on utilities; [b] covering **any** data-centre energy\n     infrastructure cost; [c] to residential customers.\n   - Establishing evidence looks like: operative text that forbids a utility to recover data-centre\n     infrastructure costs from residential rates. [b] is an absence clause (\"any\"): the text must\n     bar all such costs, not a share (V4.2).\n   - Levels that hold a lever: state (legislature, utility commission); federal (transmission cost\n     allocation); local only for a municipal utility.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because a **large-load tariff** that makes data centres pay a set\n     share, a minimum bill or a long contract is a cost-sharing arrangement, not a full bar →\n     rung 3 clause [b] at most _(proposed)_.\n   - Self-supply of power is no longer part of this rung. A rule that data centres build or buy their\n     own generation does not reach rung 2 → `direction-only` _(proposed)_.\n\n3. **\"Allowing data center development with impact assessments, energy cost-sharing agreements, and\n   community benefit requirements before approval\"**\n   - Means: data centres may be built, but only after approval conditions on impacts, energy costs and\n     community benefits are met.\n   - Operative clauses: [a] development allowed; [b] an impact assessment; [c] an energy cost-sharing\n     agreement; [d] community benefit requirements; [e] all as conditions **before approval**.\n   - Establishing evidence looks like: a siting or approval statute that makes all three conditions a\n     precondition of approval. Compound: one or two of the three → `compound-partial` (V4.2).\n   - Levels that hold a lever: state; local (conditions on a permit or development agreement).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because a bill that **orders a study** of data-centre impacts is not\n     an impact assessment made a condition of approval → `study-directive`.\n   - Commonly confused with rung 4 because both allow development with conditions. Rung 3 conditions\n     approval; rung 4 speeds approval and asks only for disclosure.\n\n4. **\"Encouraging data center development through streamlined permitting while requiring transparency\n   about projected energy demand and rate impacts\"**\n   - Means: permits come faster, and developers must disclose expected power demand and its effect on\n     rates.\n   - Operative clauses: [a] streamlined permitting; [b] required disclosure of projected energy demand\n     and rate impacts.\n   - Establishing evidence looks like: a permitting statute that shortens or simplifies approval\n     **and** a disclosure duty on projected demand and rate impacts. Compound: one side only →\n     `compound-partial` (V4.2) _(proposed)_.\n   - Levels that hold a lever: state; local; federal (federal permits, federal land).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because a **reporting duty that is not about projected demand and\n     rate impacts** does not meet [b], and has no permitting clause → BLANK `direction-only`.\n   - A provision about **large-load utility customers** that never names data centers is not about\n     data centers → BLANK `no-evidence` _(ruled 2026-10-01)_.\n   - A local project approval \"with environmental safeguards\" says nothing about permitting speed,\n     disclosure or rate impacts → `adjacent` (codebook V2, Moore / data-centers). Coding it as rung 4\n     is an unevidenced chair.\n\n5. **\"Welcoming data center investment with minimal regulatory barriers, trusting that economic growth\n   and tax revenue will benefit all residents\"**\n   - Means: government invites data centres and keeps rules on them to a minimum, on the view that the\n     growth benefits everyone.\n   - Operative clauses: [a] welcome investment; [b] minimal regulatory barriers; [c] the stated reason\n     — growth and tax revenue benefit all residents.\n   - Establishing evidence looks like: own words that call for minimal rules on data centres. [c] is a\n     reason; own words can give it, an instrument cannot _(proposed)_. One deregulation law cannot\n     show \"minimal\" — that is a magnitude (codebook V2, refined 2026-09-26) → `direction-only`.\n   - Levels that hold a lever: state; local; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because streamlined permits are also fewer barriers. Rung 4 keeps a\n     disclosure duty; a passage that keeps one is not rung 5.\n   - **Tax incentives** are no longer part of this rung. A data-centre tax exemption or incentive shows\n     the welcoming side only → `direction-only` _(proposed)_.\n\n**Hard cases:**\n- **Local control (codebook H11).** \"If a community doesn't want a data center, there shouldn't be\n  someone forcing that data center in there\" names no mechanism → V7 `direction`. As stance evidence it\n  says which level should decide, not what the rule is → `adjacent` _(proposed, by analogy with Q10)_.\n- **Preemption (codebook V2, H12).** A state law that forbids local moratoria or local data-centre\n  zoning rules decides which level may act → `adjacent`.\n- **Water, noise and land-use rules** that say nothing about energy demand, costs or permitting speed →\n  `adjacent` _(proposed)_.\n- **Budget and omnibus votes** with a data-centre item → V4 `multi-subject`.\n"
+    }
+  ]
+}

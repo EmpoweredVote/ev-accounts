@@ -1,0 +1,130 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "253603de-ea78-5c3f-994f-c2f52edd614c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Opposes new federal oil leases off the California coast ('drill baby drill along the coast'); a geographic limit on new drilling shows the anti-expansion side but not 'no new drilling' jurisdiction-wide nor a phase-out.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f99e1ac0-28df-52e0-9226-46c7886f64a4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-10-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says the state should keep in-state capacity and not import oil while transitioning 'with stability'; mostly about refinery/supply (adjacent) and only rules out an abrupt shutdown, it does not state production should be held steady.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7ea62517-bb3e-53fc-baeb-ef296ca113c0",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Same remarks as the 2026-10-01 clip (one occasion, republished); keep industries in place, avoid importing oil, transition with stability — rules out rung 1 only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "796c0754-197a-5b77-a7b1-9bd7a8c1ef25",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-05-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Wants to work with refineries so they keep providing gasoline; refining is not production (annex: use/transport/refineries are adjacent).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9e049279-4c46-5008-a422-00efad2f1b01",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-05-15",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Cites suing fossil fuel and oil companies as AG and moving 'towards a transition to clean energy'; names no production clause and no docket.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fcf053d3-a7c0-5e3b-8dca-dd408560347e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-02-10",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Passing analogy ('as we're transitioning energy from fossil fuel to clean energy') in an answer about AI; no production clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Becerra opposes Trump's offshore oil leases ('drill baby drill along the coast of California'), which leans against 'Expand fossil fuel production with new drilling and permits' and 'Maximize production and open more public land and waters', but a limit on one coastline is not 'Allow no new drilling' across the jurisdiction. His gas-price remarks ('keep in place our industries', avoid 'importing oil') rule out an immediate phase-out but never say production should be 'steady at current levels'; excluding other rungs is not evidence for the remaining one.",
+      "needs_source": [
+        "Becerra's own words or a questionnaire answer on new in-state oil and gas well permits (e.g. CalGEM permitting, SB 1137 setbacks) during the 2026 campaign",
+        "Dockets for the lawsuits against fossil fuel / oil companies he cites from his tenure as Attorney General, to check whether any claim concerns the level of production"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "253603de-ea78-5c3f-994f-c2f52edd614c",
+          "text": "He wants to let Donald Trump take oil leases out of our coast, on our coast.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "f99e1ac0-28df-52e0-9226-46c7886f64a4",
+          "text": "we're going to keep in place our industries that let us bring everyone with us",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

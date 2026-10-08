@@ -1,0 +1,206 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "93bc2f9a-3e8b-50a7-af8e-20ffa6cdfd69",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-04-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer: he would instruct CalGEM to issue permits so the oil industry can produce here, which is new drilling and permits (rung 4 clauses) but says nothing that excludes maximizing or opening more public land and waters (rung 5).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c83d163f-dce7-5af0-974f-ea3e2b358323",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview: plan includes 'to open up oil and gas production in California', a call to expand production with no limit or magnitude stated; the 'As much as possible' line answers an unseen question, likely about industry money, so it is not read as 'maximize'.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e06dd6d5-8cb3-5654-8038-01fb70d54308",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-10-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Repost of the same CBS LA interview as c83d163f (same words), so it is the same occasion and not an independent source; expansion direction only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "56da8d67-ffdf-5566-a52b-2e5b2ffac603",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-05-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate: 'opening up California oil and gas production' to reach $3 gas, which shows the expansion side without separating rung 4 from rung 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1202d2b9-b18f-55e4-a049-8c0cf6e9d318",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "General-election debate: 'let's use what we produce here' instead of imports, which favours in-state production over imports but states no production level.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5cb5d544-69e6-5a58-9889-c1409a8449f4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate: criticises shipping oil in rather than using in-state production, which is a lean toward more production with no clause naming drilling, permits or a magnitude.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c5ad326f-2cd6-589e-a154-2396f20a8ecd",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-10-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign policy page written in the third person ('Steve Hilton's plan'), so under V1 it is characterization; its 'immediate steps to increase California oil production' is expansion direction only; the date is the save date.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2c625eeb-ceef-53ee-8d3a-f23480dfc587",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview mentions 'abundant, oil and gas reserves' and $3 gas but states no production policy.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f846d936-8f96-5f92-9f8a-9f365c4fdd8e",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": "2026-06-09",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "News excerpt on the primary result, with nothing on fossil fuels.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6d7ef017-2fd3-510b-9017-3bfd3deca75a",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Voter-guide excerpt with biography only; Hilton's entry is cut off before any position.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In his own words, Hilton would 'issue permits to our oil industry to produce oil here in California' and 'open up oil and gas production in California', which places him on the expansion side ('Expand fossil fuel production with new drilling and permits'). No passage either calls for maximum production or opening more public land and waters, or rules that out, so the evidence cannot separate rung 4 from 'Maximize production and open more public land and waters to drilling'. Under the annex, a call for more drilling that does not exclude 'maximize' is direction-only.",
+      "needs_source": [
+        "Hilton's own words on how much to expand production, or on opening (or keeping closed) state lands and state waters / offshore areas to new drilling",
+        "First-person version of the $3 gas policy page, or a questionnaire answer on oil and gas production"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "93bc2f9a-3e8b-50a7-af8e-20ffa6cdfd69",
+          "text": "I would replace the people in there and give them a clear instruction to issue permits to our oil industry to produce oil here in California so we can cut gas prices for California families and businesses.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "c83d163f-dce7-5af0-974f-ea3e2b358323",
+          "text": "my plan is to repeal the low-carbon fuel standard, to change the way cap and trade taxes are levied, to change the refinery regulations, to open up oil and gas production in California.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "56da8d67-ffdf-5566-a52b-2e5b2ffac603",
+          "text": "instead of opening up California oil and gas production so we can reduce costs and get $3 gas in California, which is my plan.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "1202d2b9-b18f-55e4-a049-8c0cf6e9d318",
+          "text": "As long as we're using those energy products in California, let's use what we produce here, which is produced cleaner than anywhere else in the world.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

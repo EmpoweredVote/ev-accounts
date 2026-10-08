@@ -1,0 +1,140 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "passages": [
+        {
+          "snapshot_id": "901e6248-df81-51a1-983a-917ec09ddcfe",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-29",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer to the moderator: he is 'absolutely for Medicare for all' and defines it as 'covering everyone', matching Medicare [a] and everyone regardless of age [b]; rung 1 has no state lever, so own words are the only basis.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b0869a65-9da5-5867-8cfb-0a0d7a510e91",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer affirming he has long been a proponent and author of Medicare for All legislation; a separate occasion from the 2026-05-29 debate.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "397cb30e-4d09-55c8-8744-4cf09e911a36",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign forum remark, made while answering a question about health care for immigrants, that he has supported Medicare for all for decades because everyone should have access to care.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f6902c87-1b6b-5492-a6a8-a673295255c6",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person issue page on protecting Medi-Cal coverage, building toward universal coverage, and cutting drug costs; it names no change to Medicare or Medicaid eligibility, so it shows only the expansion side.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c3de0da0-820b-5180-a072-bfe9ff0ffdc7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says he would implement Medicaid work requirements without unjustly removing eligible people; work requirements and enrollment procedure are adjacent under the annex.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "901e6248-df81-51a1-983a-917ec09ddcfe",
+        "b0869a65-9da5-5867-8cfb-0a0d7a510e91",
+        "397cb30e-4d09-55c8-8744-4cf09e911a36"
+      ],
+      "reasoning": "In the 2026-05-29 debate he said 'I am absolutely for Medicare for all' and described it as 'covering everyone with something like Medicare for all'. He repeated his support for Medicare for All in the 2026-05-15 debate and at the 2026-02-10 forum. Together these match the rung 'expand Medicare to cover everyone regardless of age'. A governor holds no lever on Medicare, so this chair rests on his own words only and goes to review.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "901e6248-df81-51a1-983a-917ec09ddcfe",
+          "text": "So I am absolutely for Medicare for all and we will get there.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "901e6248-df81-51a1-983a-917ec09ddcfe",
+          "text": "what we have to do is get to the point where we are covering everyone with something like Medicare for all",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "b0869a65-9da5-5867-8cfb-0a0d7a510e91",
+          "text": "I have been a proponent an author of legislation for Medicare for Medicare for all which is a form of single -payer",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "397cb30e-4d09-55c8-8744-4cf09e911a36",
+          "text": "I have been a supporter of Medicare for all, for decades, because I think everyone should have decent access to care.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "f6902c87-1b6b-5492-a6a8-a673295255c6",
+          "text": "Protect existing coverage from federal rollbacks and chart a clear path to ensuring that no Californian is left without care, regardless of income, zip code or immigration status.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

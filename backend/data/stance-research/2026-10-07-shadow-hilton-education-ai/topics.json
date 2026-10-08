@@ -1,0 +1,42 @@
+[
+  {
+    "topic_id": "61269f44-9c7f-4b27-818a-3508009f6ae2",
+    "topic_key": "education-ai",
+    "topic_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+    "served_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+    "question_number": 53,
+    "title": "Artificial Intelligence in Schools",
+    "question_text": "What role should artificial intelligence play in classrooms and student work?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Prohibit artificial intelligence tools in student work and classroom instruction"
+      },
+      {
+        "value": 2,
+        "text": "Restrict artificial intelligence to teacher planning and administrative use, keeping it out of student work"
+      },
+      {
+        "value": 3,
+        "text": "Permit students to use artificial intelligence on designated assignments, with disclosure required"
+      },
+      {
+        "value": 4,
+        "text": "Encourage broad classroom use of artificial intelligence with light guidelines and teacher discretion"
+      },
+      {
+        "value": 5,
+        "text": "Let teachers and students use artificial intelligence freely, without restrictions"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true,
+    "own_words_levels": [
+      "local",
+      "federal"
+    ]
+  }
+]

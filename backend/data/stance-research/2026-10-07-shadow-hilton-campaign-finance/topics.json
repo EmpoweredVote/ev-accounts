@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+    "topic_key": "campaign-finance",
+    "topic_revision_id": "ae53ba29-79eb-420f-aac6-ec99f8031ec6",
+    "served_revision_id": "ae53ba29-79eb-420f-aac6-ec99f8031ec6",
+    "question_number": 3,
+    "title": "Campaign Finance Reform",
+    "question_text": "What rules should govern money in political campaigns and elections?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Ban all private money in political campaigns"
+      },
+      {
+        "value": 2,
+        "text": "Strictly limit corporate and dark-money spending"
+      },
+      {
+        "value": 3,
+        "text": "Keep contribution limits at current levels"
+      },
+      {
+        "value": 4,
+        "text": "Reduce restrictions on political donations and spending"
+      },
+      {
+        "value": 5,
+        "text": "Eliminate all campaign finance laws and limits"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

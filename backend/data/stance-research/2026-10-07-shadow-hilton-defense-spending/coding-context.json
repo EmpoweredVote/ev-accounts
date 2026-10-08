@@ -1,0 +1,55 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-defense-spending",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "3fd1aa81-e032-4335-8785-452ed10ce9ce",
+      "topic_key": "defense-spending",
+      "served_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+      "question_text": "How much should the government spend on the military?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Increase military spending substantially, launching a major buildup to expand the armed forces and their capabilities."
+        },
+        {
+          "value": 2,
+          "text": "Increase military spending moderately, growing the budget above inflation to keep pace with rising threats."
+        },
+        {
+          "value": 3,
+          "text": "Hold military spending roughly flat, allowing it to rise only with inflation."
+        },
+        {
+          "value": 4,
+          "text": "Reduce military spending modestly below current levels."
+        },
+        {
+          "value": 5,
+          "text": "Cut military spending dramatically, roughly halving the budget or more."
+        }
+      ],
+      "own_words_levels": [
+        "local",
+        "state"
+      ],
+      "annexMd": "# defense-spending — served revision 5b75a7a2-1a72-436f-be9a-e60cf9ffada5 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How much should the government spend on the military?\"\n\n**Orientation:** standard. Rung 1 is the largest budget (a major buildup), rung 5 the deepest cut\n(about half or more). The rungs order **the size of the military budget measured against\ninflation**. How the money is spent, and where forces are based, are not on this ladder.\n\n**Levels with a lever:** federal. Congress sets the budget through the annual\ndefense authorization and defense appropriations bills, budget resolutions and spending caps.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"national defense\" (budget function 050), \"topline\", \"base budget\", \"NDAA\" (National\nDefense Authorization Act), \"defense appropriations\", \"budget request\", \"real growth\",\n\"inflation-adjusted\", \"constant dollars\", \"percent of GDP\", \"spending caps\", \"sequestration\",\n\"continuing resolution\", \"readiness\", \"procurement\", \"end strength\", \"force structure\".\n\n1. **\"Increase military spending substantially, launching a major buildup to expand the armed forces\n   and their capabilities.\"**\n   - Means: a large real increase that grows the size and capability of the forces.\n   - Operative clauses: [a] a substantial increase; [b] a major buildup that expands the forces and\n     their capabilities.\n   - Establishing evidence looks like: own words that call for a large increase (for example a much\n     larger share of GDP) **and** for more forces or capabilities; an amendment that adds a large sum\n     above the request for that purpose.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because both increase. \"Substantial\" and \"major buildup\" separate\n     them; an increase the passage does not size → `direction-only` _(proposed)_.\n\n2. **\"Increase military spending moderately, growing the budget above inflation to keep pace with\n   rising threats.\"**\n   - Means: steady real growth, above inflation but short of a buildup.\n   - Operative clauses: [a] a moderate increase; [b] above inflation.\n   - Establishing evidence looks like: own words that call for real growth (for example \"3 to 5\n     percent above inflation\"), or an instrument whose topline the passage itself compares with\n     inflation. Clause [b] needs that comparison in the snapshot; the coder does not supply an\n     inflation figure _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because a **nominal** increase can be flat or a cut in real terms.\n     Without the comparison → `direction-only` _(proposed)_.\n\n3. **\"Hold military spending roughly flat, allowing it to rise only with inflation.\"**\n   - Means: keep the budget the same in real terms.\n   - Operative clauses: [a] roughly flat; [b] rising only with inflation.\n   - Establishing evidence looks like: own words for a freeze in real terms; a single-subject cap that\n     limits defense growth to inflation.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A spending cap inside a debt-limit or budget deal that also caps other spending → V4\n     `multi-subject`.\n\n4. **\"Reduce military spending modestly below current levels.\"**\n   - Means: a small cut from what is spent now.\n   - Operative clauses: [a] reduce; [b] modestly (a small share, for example around a tenth\n     _(proposed)_).\n   - Establishing evidence looks like: sponsorship of an amendment that cuts the topline by a modest\n     share — sponsorship sets the amount (V4.1) _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because a **Yea** on a modest cut does not show the voter wants no\n     deeper cut. Voting for it without own words → `direction-only` _(proposed)_.\n\n5. **\"Cut military spending dramatically, roughly halving the budget or more.\"**\n   - Means: cut the budget by about half or more.\n   - Operative clauses: [a] a dramatic cut; [b] about half or more.\n   - Establishing evidence looks like: own words or an instrument that names a cut of about half or\n     more. \"Slash the Pentagon budget\" with no size → `direction-only` _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **The annual defense authorization and defense appropriations bills.** Final passage →\n  `multi-subject` _(ruled 2026-10-01)_. A **No** proves nothing (V4.1), and a Yea that the passage does not compare\n  with inflation cannot separate rungs 2 and 3.\n- **Topline amendments** (add or cut a stated sum or share) are the amendment row of the vote ladder\n  (V4.1) and can carry a chair, but only when the size of the change maps to a rung's size\n  (\"substantially\", \"moderately above inflation\", \"roughly flat\", \"modestly below\", \"roughly\n  halving\") _(ruled 2026-10-01)_.\n- **Composition is not size.** Moving money inside the budget (cancel one programme, fund another),\n  pay raises, base closures, or an audit of the department → `adjacent` _(proposed)_.\n- **Force posture** (where troops are based, whether to intervene) is the `military-intervention`\n  question → `adjacent`. Aid to another country is `ukraine-support` or `israel-military-aid`.\n- **Veterans' benefits** are not military spending on this ladder → `adjacent` _(proposed)_.\n- **Reconciliation, omnibus and continuing-resolution votes** with a defense item → V4\n  `multi-subject`. A continuing resolution that holds spending at last year's level is not own\n  evidence for rung 3 _(proposed)_.\n"
+    }
+  ]
+}

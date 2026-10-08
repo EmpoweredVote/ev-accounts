@@ -1,0 +1,76 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "c8807d3d-4264-47ce-b8c4-08c6c9c33ce3",
+      "served_revision_id": "3901e1b0-12b0-4f7e-9e14-061ae2247c26",
+      "passages": [
+        {
+          "snapshot_id": "9998bc56-1272-5d67-9d10-e68d5a131d44",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign issue page written in the third person (\"Steve Hilton will\"); the parent-trigger plan lists conversion to a charter as one option among several, chosen by parents, which shows a pro-charter side at most and not rung 5's conversion of failing schools to independent operators.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a5ff5d1e-bb63-5895-a2c5-1f33aae2d0c0",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "\"New California Dream Charters\" are county development charters for new cities, not charter schools.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "62d63076-4e43-5c4e-a4dc-0e17a8b022f2",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Street-vending and restaurant sales-tax plan; mentions charter cities only, nothing on charter schools.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only relevant passage is the campaign education page, written in the third person, whose parent-trigger plan says parents may trigger \"administrative changes, curriculum overhauls, or conversion to a charter model\"; conversion as one option among several, decided by parents, does not match rung 5 (\"Convert failing district schools into charters run by independent operators\") or say how readily a board should authorize charters. Even read as his own words it shows a pro-charter side only (direction-only); no passage separates the rungs.",
+      "needs_source": [
+        "Steve Hilton's own first-person words (debate answer, questionnaire, interview) on how charter applications should be authorized or on converting failing schools to charters"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "9998bc56-1272-5d67-9d10-e68d5a131d44",
+          "text": "If a school receives a D grade two years in a row, parents will have the right to trigger administrative changes, curriculum overhauls, or conversion to a charter model.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

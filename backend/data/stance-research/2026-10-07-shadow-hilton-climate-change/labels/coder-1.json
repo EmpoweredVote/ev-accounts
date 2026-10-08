@@ -1,0 +1,212 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "b15c1fee-5dcb-5917-be87-1084390f26b6",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remarks against 'unreliable, more expensive wind and solar' and the 'net zero 2045 target' (an emissions target, not a clean-energy mandate) show the anti-support side but name no end to clean-energy subsidies and mandates as such.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "171a949b-c9c2-5c54-ba20-3dfb97eee67c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-10-01",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Plan to repeal the low-carbon fuel standard, change cap-and-trade and refinery rules concerns transport fuel and carbon pricing, not clean-energy supply.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "17ecb39c-d9a7-5b8b-afe2-7035648a5f27",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-06",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Same interview content as 171a949b (one occasion); fuel standard, cap-and-trade and refinery rules are adjacent to the clean-energy rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2b2b95bd-e3d4-53a9-9563-ccc6533a1166",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-05-15",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "'Common sense on climate change not ideology' and wildfire/oil-import remarks name no clean-energy policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b31db63f-037e-5dbf-9a5b-ad078c334828",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticism of the 'climate crusade' and PG&E and a promise to cut electric bills name no clean-energy mandate or subsidy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6fad16e0-8755-56cf-9fd4-047f162cf768",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "chair-shaped",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign policy page says in the third person 'Steve Hilton will repeal California's costly wind and solar mandates and subsidies', which would match rung 5, but V1 treats third-person campaign copy as characterization and no date is shown.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "df07cf6a-6070-5b47-bc3a-63ac428a30cb",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign page ('Steve will repeal climate mandates') covers mandates only, not subsidies, and is undated.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b476065f-3bc5-5a9d-804a-b4026587b9cd",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person natural carbon sequestration plan (forests, conservation corps) does not address clean-energy expansion.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6d75dcc2-a57a-5605-8bbf-e1191b77bb8e",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Snapshot holds only the site title; no content.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "955b926d-2051-5c87-8900-e6363c6402be",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Aggregator pointer page; no position text in the excerpt.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9036247b-b1eb-5aa1-82ce-8f28aaa96fc3",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": "2026-06-09",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "News excerpt on the primary result; nothing on clean energy.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In his own words Hilton attacks 'unreliable, more expensive wind and solar' and vows to 'get rid of this insane net zero 2045 target', which places him against government support but does not state both clauses of 'End government subsidies and mandates for clean energy' (the net-zero target is an emissions goal). The only passage that states both clauses, the campaign page 'Steve Hilton will repeal California's costly wind and solar mandates and subsidies', is third-person campaign copy, which V1 treats as characterization.",
+      "needs_source": [
+        "Hilton's own first-person words (debate answer, questionnaire, signed or first-person issue statement) calling to end both California's renewable/clean-energy mandates (RPS) and clean-energy subsidies, e.g. a first-person version of the 'Cut California's Electricity Bills by Ending Wind and Solar Farm Mandates and Subsidies' plan"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "b15c1fee-5dcb-5917-be87-1084390f26b6",
+          "text": "We're going to get rid of this insane net zero 2045 target that is driving the cost of energy up",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "b15c1fee-5dcb-5917-be87-1084390f26b6",
+          "text": "We will use California natural gas to generate electricity to deliver my promise to cut your electric bills in half.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "2b2b95bd-e3d4-53a9-9563-ccc6533a1166",
+          "text": "we need to have common sense on climate change not ideology",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

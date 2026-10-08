@@ -1,0 +1,985 @@
+You are stance coder 3. You code evidence against the codebook below. You do not search,
+fetch or verify anything: every source you may use is in this message, and code checks your
+labels afterwards. If the evidence a row needs is named but not included here, put it in
+needs_source instead of guessing.
+
+Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts-ca-gov-stances/backend/data/stance-research/2026-10-07-shadow-becerra-homelessness/labels/coder-3.json. Write JSON only, matching
+codebook Part E, with "codebook_version": "0.4" and "coder_slot": 3. One row per
+topic below. Every quoted string you write must be copied exactly from a source below.
+
+## Codebook
+
+# Empowered Vote — Stance & Quote Codebook
+
+**Version:** 0.4 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
+fields (confirm-basis spec). The annex
+readings and examples are not yet ruled on. Every label records `codebook_version`.
+**Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
+record fields are required per instrument group, not per passage (V3 "Record fields", Part E), and V3
+carries a worked two-passage vote example.
+**Updated 2026-09-27 (0.3 → 0.3.1 — a new rule coders must apply, amendment-markup spec §5):** text
+inside a `[deleted: …]` fence is removed from the law; it is never the provision, and a coder never
+quotes it as `provision_quote` (V3 "Record fields").
+**Updated 2026-09-27 (0.3.1 → 0.4 — V5 ruling, option B, Chris Andrews):** a record from **either
+chamber of the same legislature** counts for the current seat (a senator's votes and bills from their
+House years). A record from another level of government (a city council, a county, Congress) is still
+valid for that office only. See V5.
+**Clarified 2026-09-30 (still 0.4 — no new variable or value; two existing rules spelled out):** V4.2
+"Silence is not a clause" and "Ruling out the other rungs is not evidence", with register rows H13 and
+H14. Both restate V4 `direction-only` and the CLAUDE.md tiebreaker rule; the version stays 0.4 so
+existing gold keeps counting. The two gold items that prompted them are not named here, so they stay
+certifiable: their coder labels were written before these lines existed.
+**Clarified 2026-10-01 (still 0.4 — no new variable or value; rulings by Chris Andrews):** V5 says
+how a judge's lower-court record is coded (`pre-seating`, with one lever-match exception), and the
+Maloy / `same-sex-marriage` example now reads the RFMA on its operative section (recognition → rung 2;
+its religious section is a savings clause). The version stays 0.4 so existing labels and gold keep
+counting; no gold item turns on either line.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value):** V3 "A record reported only by news is
+not a record", with register row H15. It restates the V3 rule that a record needs the instrument and
+the person's action on it, for the case where the only source of that action is a reporter's sentence.
+The items that prompted it are not named here, for the same reason as H13 and H14.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4 "A study
+directive that states its goal", with register row H16. It decides which existing blank reason a
+`study-directive` row takes; it changes no chair. The item that prompted it is not named here.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4.2 "The rung's
+object is a clause", with register row H17 and its `climate-change` example. The items that prompted it
+are not named here.
+**Clarified 2026-10-06 (still 0.4 — no new coded variable; ruling by Chris Andrews):** V6 "Evidence
+tier". A chair may still rest on one source, but every published chair carries a tier — `single-source`
+or `corroborated` — that code computes from `rests_on`. Coders code exactly as before.
+**Updated 2026-10-06 (still 0.4 — ruling by Chris Andrews, option B "positions without a lever"):**
+scope now decides **which evidence counts**, not whether a chair can exist. Every level is asked every
+topic unless an exclusion is named; at a level with no lever, only the person's own words can seat a
+chair (V2 "No-lever level"). `scope-unavailable` narrows to the named exclusions (V6). Code computes
+the row's evidence basis, never the coder. The version stays 0.4: no recorded gold turns on the change
+(the two `scope-unavailable` gold rows are `excluded_from_cert`), and own-words rows form their own
+stratum with no gold yet. Memo: `.planning/todos/2026-10-06-positions-without-a-lever.md` (workspace
+root).
+**Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
+**Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
+and a skill or prompt disagree, this file wins; fix the other one.
+**Authorities it consolidates:** CLAUDE.md "Compass chairs are five distinct stances"; stance-program
+spec (2026-09-23) §3, §4, §10; `research-stances` SKILL.md hard rules; `on-the-record`
+`docs/quote-curation/PRINCIPLES.md`, `audit-quotes/CHECKS.md` §4, `CASEBOOK.md`.
+
+> Examples marked **[real]** are taken from rows in `inform.stance_research_review` (Season 1, June
+> 2026). The code shown is what this codebook *would* assign. It is not what was published. Several
+> of those rows were published under older rules; Season 2 research re-codes them.
+
+---
+
+## Part 0 — Frame
+
+### 0.1 Units
+
+- **Unit of analysis:** one *row* = (politician, office, topic, season). The coders code only the
+  season's **served** ladder revision.
+- **Unit of coding:** one *source passage*, meaning one snapshot excerpt, identified by `snapshot_id`.
+- **Quote unit:** one *candidate quote*, a verbatim span inside a snapshot.
+
+### 0.2 What a coder sees, and what it does not see
+
+- **It sees:** this codebook, the topic annex, the served ladder text (all five rungs), the
+  politician's name, office, jurisdiction and term dates, and the snapshot passages.
+- **It does not see:** the collector's opinion, any other coder's label, the chair currently
+  published, the party, or anything about the "usual" position of people like this one.
+- **Party is never evidence.** A coder that uses party, caucus or "voted with the majority" as a basis
+  for anything is wrong on that item (§A6 bad example 2).
+
+### 0.3 Decision order (fixed)
+
+Code the source passages first, one at a time. Then code the row.
+
+```
+per passage:  V1 attribution → V2 relevance → V3 evidence class → V4 shape → V5 time
+              (a disqualifying value at any step ends that passage: it cannot support a chair)
+per row:      V6 chair, using only passages that survived V1–V5
+per quote:    V7 tier → V8 quotable
+```
+
+### 0.4 Principles that override everything below
+
+1. **A blank is a correct answer.** An honest BLANK scores the same as a correct chair. A wrong chair
+   is the only failure that reaches voters.
+2. **Five chairs, not a polarity scale.** Each rung is a distinct stance. Evidence of *direction*
+   (for/against) does not choose between the rungs on one side.
+3. **"The least extreme rung the evidence supports" is a tiebreaker, not evidence.** If you are about
+   to use it, the row is not evidenced: code BLANK `direction-only`.
+4. **Never assume polarity.** Read the rung text. Rung 1 is not always "most government". The annex
+   marks inverted and off-axis topics.
+5. **Scope decides the evidence, per rung (ruling 2026-10-06, option B).** A record needs a lever: a
+   rung that no officeholder at this level can act on cannot be evidenced at this level by a record.
+   It can still be evidenced by the person's own words (V2 "No-lever level"). A voter may want to
+   know a mayor's view on abortion even though she cannot change the law.
+6. **Convergent error is not corroboration.** Two news stories that repeat one press release are one
+   source.
+
+---
+
+## Part A — Stance variables
+
+### V1 Attribution — *is this passage this person's own act or own words?*
+
+| Value | Definition |
+|---|---|
+| `own-words` | First person, or a direct quotation of the person, attributed in the text. |
+| `own-act` | A recorded act of the person: sponsorship, a vote, a veto, a signed filing, an adopted motion. |
+| `third-party-characterization` | Someone else describing the person ("a champion of…", "has long supported…"). |
+| `namesake-unclear` | It cannot be established that this is the same person *in this office*. |
+
+**Rules**
+- Only `own-words` and `own-act` can support a chair.
+- Voice decides, not domain. A campaign site that says "Jane will fight for…" in the third person is a
+  `third-party-characterization` of a promise. Look for the first-person version.
+- A news article's paraphrase is characterization. The article's quotation marks around the person's
+  words are `own-words`.
+- The office and jurisdiction in the passage must match the seat. If they do not, or are absent and
+  the name is common → `namesake-unclear`.
+
+**Good.** A senate press release quoting the president of the senate in his own words on the veto
+override he led. → `own-words` + `own-act`.
+
+**Hard [real].** J. Stuart Adams / `school-vouchers`. The basis says Adams "was a champion of the Utah
+Fits All Scholarship Program (HB215, 2023)", and quotes him in 2024 saying "educational choice is a
+right, not a privilege."
+- "Champion" is a `third-party-characterization`, so it supports nothing on its own.
+- The quotation is `own-words` and can go forward to V2.
+- The fix is to find his own act on HB215 (floor vote, sponsorship) in the legislature's record.
+
+**Hard.** A candidate's questionnaire answer published by a newspaper. → `own-words`: the paper is the
+channel, the words are the candidate's. The same answer summarized by the paper → characterization.
+
+**Bad [real].** Mike Kennedy / `voting-rights`. The only source is a Wikipedia article about the SAVE
+Act. An encyclopedia page about a bill is not the person's act; at most it points to the roll call.
+→ `third-party-characterization`, tagged `pointer` in the snapshot.
+
+---
+
+### V2 Relevance — *does the passage speak to this ladder's question, at this level?*
+
+| Value | Definition |
+|---|---|
+| `on-question` | It addresses the thing the rungs differ on. |
+| `adjacent` | Same policy area, but not the dimension the rungs separate. |
+| `off` | A different question, or the right question for a different office the person also holds. |
+
+**Rules**
+- Test against the **rung text**, not the topic label. `voting-rights` Season 1 is an identification
+  ladder, so a passage about mail ballots is `adjacent`.
+- `adjacent` passages can never support a chair.
+- **Preemption (ruling Q10, 2026-09-26).** A law that forbids another level of government to act
+  decides *which level* may set the rule, not *what* the rule is → `adjacent`, unless a rung is itself
+  about which level decides.
+  - **Refined 2026-09-26:** when the state law removes the very limits a rung names (a rung that says
+    "cut the zoning limits that block building", and a law that voids local zoning limits statewide),
+    it is `on-question` but only `direction-only`. One deregulation law cannot show that the person
+    wants *nothing more* ("rely on the market", "at most") — that is an unproven magnitude → BLANK.
+
+- **No-lever level (ruling 2026-10-06, Chris Andrews, option B).** Read the annex line "Levels that
+  hold a lever" for the rung. If the seat's level is not listed there, the level holds no lever on
+  that rung, and **only the person's own words** (V3 `statement-answer` or `statement-other`) can
+  support it. The prompt also says so per topic ("Evidence basis at this seat's level: OWN WORDS
+  ONLY") when no rung of the topic has a lever at that level.
+  - An act of this office on such a rung cannot enact it. A vote or bill at this level is coded on
+    what its text does, against the rung's clauses; a law on a neighbouring matter is `adjacent`, as
+    anywhere else (no example is given here: the item that prompted this rule is to be re-labelled
+    blind). A resolution that only urges another level to act is V4 `rhetorical`, unless its text
+    states every clause of one rung.
+    _owed:_ whether a member's vote for a resolution that states every clause of a rung counts as
+    their own words (statement class) or stays a record that cannot seat a chair at a no-lever level.
+    Until ruled: code it `statement-other` and let the row go to review.
+  - A record from another level stays `pre-seating` (V5); it is not this person's act in this office.
+  - The election-cycle rule (V5, Q4) applies unchanged.
+  - **Not** this rule: a level the topic is not asked at all (no `compass_topic_roles` row, or a
+    named exclusion). That row is not coded; V6 `scope-unavailable`.
+
+**Good.** `trans-athletes`: a vote to override a veto of a bill that restricts girls' school sports
+teams by sex at birth. The rungs differ exactly on that. → `on-question`.
+
+**Hard [real].** Blake Moore / `childcare`. The evidence is co-sponsorship of a $2,000 newborn tax
+credit and an expanded child tax credit. Season 1 rung 4 is "reducing regulations on childcare
+providers… with limited subsidies reserved for the lowest-income families."
+- A general child tax credit is not a childcare-provider or childcare-subsidy measure. → `adjacent`.
+- It cannot establish rung 4, whose operative clause is deregulation of providers. → Row: BLANK
+  `no-evidence` unless another source exists.
+
+**Hard [real].** Maria Elena Durazo / `voting-rights` / SB 1174 (2023-2024). She voted Aye on a bill
+whose operative section reads "A local government shall not enact or enforce any charter provision,
+ordinance, or regulation requiring a person to present identification for the purpose of voting".
+The ladder asks *what* identification the government should require (rung 1: "Require no
+identification to vote …").
+- The bill decides *which level of government* may set an ID rule. It leaves the state's own rule
+  as it is, and it says nothing about what that rule should be. A legislator can oppose a local
+  patchwork and still favour a state photo-ID law. → `adjacent`.
+- A preemption bill is `on-question` only when a rung is itself about which level decides.
+- 2026-09-25/26: three coders read it as rung 1, twice. Each time, the page mechanics (vote page,
+  bill text, a divided 30–8 tally) were correct, so CONFIRM cannot catch this reading. Only V2 can.
+
+**Bad [real].** Blake Moore / `data-centers`. The quote supports one local data-centre project "with
+environmental safeguards". It says nothing about permitting speed, energy-demand transparency or rate
+impacts, which are the clauses that separate rungs 3, 4 and 5. It is `on-question` only in the sense
+of the topic label. On the rungs → `adjacent`. Coding it as rung 4 ("streamlined permitting") is an
+unevidenced chair.
+
+---
+
+### V3 Evidence class — *what kind of evidence is it?*
+
+| Value | Definition |
+|---|---|
+| `record` | An instrument **plus** the person's action on it: authored, prime-sponsored, co-sponsored, voted yes/no, vetoed, signed into law, filed (a lawsuit, an amicus brief), signed an official letter. The instrument must be named (bill number, ordinance number, docket, case, dated letter). |
+| `statement-answer` | The person's own words **given in answer to this question**: a questionnaire (including one a group published with the candidate's answers), a moderated debate answer to the question, a first-person issue page on their own site, a signed pledge. |
+| `statement-other` | The person's own words matched to the question afterwards: news quotes, interviews, speeches, social posts. |
+| `not-evidence` | Scorecard grades, percentages and endorsements; quizzes; voter-guide summaries not in the person's words; encyclopedia or aggregator pages; advocacy-group profiles. |
+
+**Rules**
+- A record needs a named instrument. "Voted against clean energy mandates" with no instrument →
+  `not-evidence` until the roll call is found. Emit `needs_source` for it.
+- **A record reported only by news is not a record (H15).** "She authored Senate Bill 285" or "he
+  voted against it", written by a reporter, is the reporter's account of a record, not the record. Code
+  that passage by what it is: the person's own quoted words in it are `statement-other`; the
+  reporter's account of the act is context for those words, not a `record` passage, and it cannot
+  carry `record_kind`. Find the record itself (the bill page, the roll call) and code that instead;
+  emit `needs_source` for it. CONFIRM cannot check a record on a news page, because no source profile
+  reads records from one.
+- **Scorecards (Q9, ruled).**
+  - A grade, a percentage or an endorsement is `not-evidence`, and it is not corroboration either.
+    A scorecard is another organization's choice of *which* votes count, with hidden weights, and it
+    often brings back the party signal.
+  - The scorecard **page** is a `pointer`. Follow it to the roll calls it lists, and code each one as
+    a record on its own.
+- **Pledges (Q8, ruled): `statement-answer`.**
+  - The text is the group's, and the person agreed to it, which is how a questionnaire works.
+  - It does **not** outrank the person's later words, because it is not a record.
+  - The election-cycle rule (V5) applies: a pledge signed three campaigns ago → review.
+- **Lawsuits, amicus briefs, signed official letters (Q8, ruled): `record`.** The **legal claim or the
+  letter's demand itself** must match the rung clause in V4. A procedural claim (standing, authority,
+  a deadline) proves nothing about the policy.
+- **Classifying `statement-answer` vs `statement-other`: was there a question?** If the person was
+  answering *this* question (a questionnaire item, a moderator's question, their own issue page
+  heading), it is an answer. If a curator later decided that the words speak to the question, it is
+  `statement-other`. When unsure → `statement-other`.
+- When `record` and a statement conflict, the record wins, and the row is coded
+  `record-vs-statement-conflict` if the conflict decides the chair.
+- **Record fields (0.3).**
+  - `record_kind` is one of `vote` / `sponsor` / `author` / `other-act`. Every `record` passage
+    carries it — the bill-text page of a vote is `vote` too.
+  - `actor_quote` is the words, verbatim, showing this person acted: the Aye/No list segment that
+    contains the surname, or the author/sponsor line. If two members on the page share the surname,
+    or the surname is a common one (Adams, Walker, Smith …), include the initial or first name (for
+    example `Walker G`, or `Watson, R.`).
+  - `tally_quote` is the vote count text, verbatim (for example `Ayes Count 29 Noes Count 8`).
+  - **They are required per record, not per page (ruling 2026-09-26).** All `record` passages on one
+    `instrument` are one record. At least one of them carries `actor_quote`; for a vote, at least one
+    carries `tally_quote`. Put each fact on the page that prints it: `actor_quote` and `tally_quote`
+    on the vote page, `provision_quote` on the page that prints the provision (usually the bill
+    text). A page that does not print a fact carries `null` for it — never copy a fact onto a page
+    that does not show it.
+  - **An amending bill's page keeps deleted text fenced as `[deleted: …]` (amendment-markup spec
+    2026-09-27 §2).** That text is removed from the law — it is never the provision, and never
+    quoted as `provision_quote`. A bill's effect is the added text plus the unchanged text.
+- `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
+  one record must name the same instrument.
+
+**Worked example — a vote is two passages.** The vote page names the voter and the count but not
+the provision; the bill text prints the provision but names no voter. Both are in `rests_on`.
+
+| field | vote page (`billVotesClient`, SB 1174) | bill text (`billNavClient`, SB 1174) |
+|---|---|---|
+| `v3_class` / `record_kind` | `record` / `vote` | `record` / `vote` |
+| `instrument` | `SB 1174 (2023-2024)` | `SB 1174 (2023-2024)` |
+| `actor_quote` | `Ayes Archuleta, Ashby, … Dodd, Durazo` | `null` |
+| `tally_quote` | `Ayes Count 30 Noes Count 8` | `null` |
+| `provision_quote` | `null` | `A local government shall not enact or enforce any charter provision, …` |
+
+**Good.** "H.R. 8035, Ukraine Security Supplemental Appropriations Act, 2024 — Yea", from the Clerk's
+roll call. → `record`.
+
+**Hard [real].** Blake Moore / `taxes`: the ATR Taxpayer Protection Pledge. → `statement-answer`
+(Q8). The pledge commits against *any* net tax increase. It can therefore evidence a "no tax increases" rung, but
+it cannot choose between rungs that differ on *which* cuts.
+
+**Bad [real].** Blake Moore / `climate-change`: "scored 0% from the League of Conservation Voters" +
+the LCV scorecard page. → `not-evidence`. The same row's own quote ("if there needs to be some type of
+tax incentive to make sure that they can be on the grid") leans *toward* subsidy, not toward S1 rung 4
+("let market forces drive"). A coder that leans on the scorecard reaches the opposite reading from the
+person's own words.
+
+**Bad [real].** Blake Moore / `civil-rights`: an advocacy group's lawmaker profile and a
+legislator-directory page. → both `not-evidence`.
+
+---
+
+### V4 Shape — *what can this passage prove?*
+
+This variable is the core of the codebook. The stance-program pass-1 measurement is the reason:
+*shape*, not type, predicted which chairs survived audit (authored bill 67%, co-authored 40%, bare vote
+0%, statement alone 0%).
+
+| Value | Definition | Can support a chair? |
+|---|---|---|
+| `chair-shaped` | The operative content matches **every clause** of one rung and excludes the adjacent rungs. | yes |
+| `direction-only` | It shows for/against but does not separate the rungs on that side. | no |
+| `multi-subject` | A vote on a bill with many unrelated parts (omnibus, budget, appropriations, reconciliation). | only via the vote ladder |
+| `procedural` | Cloture, rule, table, recommit, previous question, adjournment. | no |
+| `study-directive` | It orders a study, task force or report. | no |
+| `near-unanimous` | Fewer than 10% of the body voted against. | no, alone |
+| `rhetorical` | Real and attributed, but it names no policy clause ("hateful and divisive"). | no |
+| `off-axis` | It speaks to the topic along a dimension the ladder does not order. | no |
+
+#### V4.1 The vote ladder (ruling 2026-09-25)
+
+A vote does not mean support for every clause of a bill.
+
+| Vote | Can prove |
+|---|---|
+| Amendment / motion to strike / divided question on **the specific provision** | a chair |
+| Final passage of a **single-subject** bill whose operative section matches the rung | a chair |
+| Final passage of a **multi-subject** bill | direction at most. It proves a chair **only** if the person's own statement ties their vote to *that provision* (an explanation of vote, a floor speech). |
+| **No** on a multi-subject bill | nothing. They may have objected to any part. |
+| Procedural | nothing about the policy |
+
+- A coder citing a vote must fill `provision_quote`: the operative text it relies on, verbatim from a
+  snapshot. The gate rejects the label if the text is not in the snapshot.
+- **The operative section governs, not the recital or the short title** (C38, C51).
+- **A study directive that states its goal (H16, ruling 2026-10-02).** A vote for a study does not say
+  what the person hopes it finds, so a study directive is never a chair. Which blank it gives depends
+  on the bill's own text:
+  - The text states no outcome ("study X and report") → the row is BLANK `no-evidence`.
+  - The text states the outcome it seeks — findings that endorse a side ("the Legislature endorses a
+    health care system with unified financing, such as a single-payer health care system"), or a
+    study ordered "with the objective of creating" a named policy → BLANK `direction-only`, on that
+    side. It applies to anyone who acted on the bill, because the stated goal is in the text they
+    voted for; it is clearest for the author.
+  - This does not let a recital carry a chair: the operative section still governs what the bill
+    does, and the stated goal shows only a side.
+- **Sponsorship evidences the bill as filed** (C37). If the bill was amended out of shape, code the
+  version the person acted on.
+- A vote whose `tally_quote` shows fewer than 10% No is `near-unanimous` and cannot carry the chair
+  alone; a claimed vote with no vote page (for example a bill that died in committee) is not a vote.
+
+#### V4.2 Clause completeness
+
+- **Compound rungs need every clause evidenced** (stance-program §4.2). Rung 3 of `social-security`,
+  "small adjustments to **both** benefits **and** taxes", needs evidence on both.
+- **Broader than the instrument** (stance-program R3): an ADU-only bill cannot evidence "upzone broadly
+  to allow multifamily by right". Seat the narrower rung if one exists; otherwise BLANK.
+- **Silence is not a clause** (gold round 5, 2026-09-30). When a rung's clause is a limit or its
+  absence ("at every stage, with no time limit", "without exceptions"), the instrument must *say* it.
+  A text that declares a right and names no limit has not said "no limit"; it has said nothing about
+  limits, and other law may still set them. → `direction-only`.
+- **Ruling out the other rungs is not evidence for the one left** (gold round 5, 2026-09-30). "Not
+  rung 1 (nothing is required), not rung 3 (the law changes), so rung 2" establishes only a side. The
+  remaining rung still needs its own clauses matched — a repeal that *permits* a programme does not
+  "strengthen enforcement". This is the same fault as reaching for "the least extreme option the
+  reasoning supports" (CLAUDE.md): a tiebreaker, not evidence. → `direction-only`, or
+  `compound-partial` when the rung is compound and one clause is met.
+- **The rung's object is a clause (H17, ruling 2026-10-02).** A rung says *what* the government acts on,
+  not only *how*. A mandate with a firm deadline matches the mechanism of `climate-change` rung 1,
+  "Require a shift to **clean energy** through mandates and firm deadlines", only when the thing it
+  mandates is clean energy.
+  - A renewable-procurement standard with dated targets ("44 percent by December 31, 2024 … 60 percent
+    by December 31, 2030" of retail sales from eligible renewable resources) → rung 1, `chair-shaped`.
+  - A greenhouse-gas emissions limit ("reduced to at least 40 percent below … no later than December
+    31, 2030"), or a declared net-zero policy that names carbon capture and removal as paths, names no
+    energy source; it can be met in other ways → BLANK `direction-only` (the pro-action side).
+  - The same test applies on every ladder: match the rung's object, not only its verb.
+
+**Good (calibration A1).** A prime-sponsored bill that *is* "a moratorium on new data centres until the
+utility commission reports". Rung 1 is a moratorium. → `chair-shaped`.
+
+**Good [real].** J. Stuart Adams / `trans-athletes`. He led the 2022 Senate vote to override the
+governor's veto of HB11, a single-subject bill barring transgender girls from girls' school teams.
+S1 rung 4: "require transgender athletes to compete only on teams matching their biological sex
+assigned at birth."
+- The instrument's operative content is rung 4.
+- Rung 5 (a total ban from all sport) is excluded by the bill's own text.
+- → `chair-shaped`. (Check under V5: the act is in-term.)
+
+**Hard [real].** Blake Moore / `ukraine-support`. Yea on H.R. 8035, a Ukraine-specific supplemental
+appropriation, plus his statement that it is "squarely in our national interest".
+- The bill is single-subject enough (Ukraine aid) → `chair-shaped` for *continuing aid*.
+- The rung-2 vs rung-1 boundary is "current levels" vs "increase". The coder must check that the
+  supplemental's size and the rung's magnitude line up.
+- If the annex does not settle whether a supplemental is "current level", code BLANK
+  `direction-only`. **This is the example to rule on for the annex.**
+
+**Hard [real].** Burgess Owens / `redistricting`: a filed federal lawsuit arguing the Elections Clause
+gives map-drawing "exclusively to state legislatures". → `record` (Q8), and the claim in the
+complaint is itself the position (a substantive claim, not a procedural one). It is `chair-shaped` if rung 5 says "legislature alone draws the
+maps". The coder quotes the complaint's claim as `provision_quote`.
+
+**Bad [real] — the omnibus trap.** Mike Kennedy / `school-vouchers`, published as rung 5 (universal
+vouchers). The basis is a Yea on the One Big Beautiful Bill Act (July 2025), a reconciliation bill
+covering taxes, Medicaid, immigration enforcement and more, one part of which created federal
+tax-credit scholarships.
+- → `multi-subject`. His vote proves nothing about the scholarship clause on its own.
+- A tax-credit scholarship is also not "funding follows the student to any school". → `adjacent`
+  on V2 as well.
+- The row needs his own words tying the vote to that clause, **and** a rung that matches the clause.
+  Otherwise → BLANK.
+
+**Bad [real].** Blake Moore / `medicare/aid` and `healthcare`: the same OBBBA vote used as the basis
+for two further rungs. → `multi-subject`, both times. The statements in those rows ("sound policy",
+defending work requirements) are about work requirements, a narrower clause than either rung. →
+`adjacent`.
+
+**Bad (calibration R1).** No on a rebate deal the member disliked. It rules out one end and names no
+chair. → `direction-only`.
+
+**Bad (calibration R6).** "Morally wrong… hateful and divisive." It is verbatim and attributed. →
+`rhetorical`.
+
+---
+
+### V5 Time — *does it describe the person's position now, in this role?*
+
+| Value | Definition |
+|---|---|
+| `in-term` | The act or statement dates from within a term of this office, or from the current campaign for it. **A record** (vote, sponsorship, authorship, a signed act) also counts as `in-term` when it dates from a term in **either chamber of the same legislature** (V5 ruling 2026-09-27, option B). |
+| `pre-seating` | A vote or act from before the person held a seat in this body. A record from **another level of government** (a city council, a county, Congress) is valid for that office only. |
+| `superseded-by-later` | A later passage from the same person states or acts differently. |
+| `undated` | No date can be established. |
+
+**Rules**
+- A **record** has no age limit if it is chair-shaped against the served rung text.
+- **Earlier chamber, same legislature (ruling 2026-09-27, option B).** A person moves between the two
+  chambers of one legislature as the same person, and what they sponsored there is often what elected
+  them to the other. So their earlier-chamber records are coded exactly like in-term records: the vote
+  ladder (V4.1), the near-unanimous rule and `superseded-by-later` all apply unchanged. Code, not the
+  coder, then checks that the earlier term is on file and that the page shows that term's chamber
+  (CONFIRM `prior-service-unverified`, `chamber-not-evidenced`). A statement is not a record: the
+  election-cycle rule below still decides it.
+  - **[real]** John Kavanagh / `school-vouchers`: co-sponsored and voted for AZ HB 2853 (2022) in the
+    House; a State Senator since 2023. → `in-term`; code the act on its content.
+  - A record from a **different level** (city council → legislature, legislature → Congress) is
+    `pre-seating`: the levers differ, so the ladder may not apply at the new level (scope is a per-rung
+    question). Their **own words** from that time are statements, decided by the election-cycle rule
+    below.
+  - **A judge's record on a lower court** (ruling 2026-10-01) is `pre-seating` too: a trial court and
+    an appellate court are different offices with different levers. It counts for the current seat
+    only when the rung's lever is the same at both courts — an opinion that shows the judge's method
+    of interpretation, or the judge's own sealing or access practice — and the coder names that lever
+    in the note.
+  - **Candidates too (ruling 2026-09-27).** A candidate for a seat in a legislature is coded on their
+    record from either chamber of that legislature, exactly as a seated member is — a former
+    representative running for the senate, say. Earlier service comes from
+    `essentials.legislative_service` (CA_0296); CONFIRM checks it the same way.
+- **A statement follows the election cycle (Q4, ruled).** It counts only if it is from one of:
+  - the current term;
+  - the current campaign;
+  - the campaign that seated the person in *this* office.
+
+  An older statement is coded, but the row goes to review (`statement-out-of-cycle`). Code, not the
+  coder, applies this from the dates; the coder records the date it sees.
+- `superseded-by-later` passages are coded but cannot support the chair. The newest evidence governs.
+- A person's position change is not an error. The closed season keeps the old chair.
+- `undated` statements cannot support a chair. `undated` records are looked up (the instrument has a
+  date).
+
+**Hard [real].** Blake Moore / `redistricting`: co-chair of the Better Boundaries campaign in 2017,
+before he was elected in 2020. Campaign work is not a vote, so this is not a pre-seating vote. But it
+is 9 years old, and the source is Wikipedia (V3 `not-evidence`). Find his own recent words; the 2017
+role alone → review.
+
+**Hard [real].** Celeste Maloy / `same-sex-marriage`: in a 2023 candidate debate she said she "would
+have voted yes" on the Respect for Marriage Act. → `own-words`, `statement-answer` (an answer to a moderator's question in a debate; if the only source is an article paraphrasing it, `statement-other`), pre-seating by
+construction (she was a candidate). A hypothetical vote on a named instrument is a strong statement:
+the instrument's **operative** content is the position. The RFMA's operative section is marriage
+recognition; its religious section saves protections that already exist, so it does not show that she
+insists on a carve-out (V4.1: the operative section governs). → Season 2 rung 2, "the same benefits
+and protections as any other marriage", unless her own words stress the religious exemption (ruling
+2026-10-01). It is `in-term` for the campaign that seated her. Note: the served ladder changed between
+Seasons 1 and 2, and her Season 2 value differs. Re-code it against the served S2 rung text; do not
+carry the S1 reading forward.
+
+---
+
+### V6 Chair — *which rung does the surviving evidence establish?* (row level)
+
+**Values:** `1`–`5`, or `BLANK` with exactly one reason:
+
+| BLANK reason | Use when |
+|---|---|
+| `no-evidence` | No passage survived V1–V5. |
+| `direction-only` | The surviving passages separate the sides but not the rungs on one side. |
+| `adjacent-chairs` | Surviving passages establish two different rungs (stance-program R4). |
+| `compound-partial` | The best rung is compound and only some of its clauses are evidenced. |
+| `record-vs-statement-conflict` | The record and the statement point to different rungs, and the record is not itself chair-shaped. |
+| `scope-unavailable` | This level is **not asked** this topic or rung: a named exclusion (no `compass_topic_roles` row for the level, or the annex rules the office out). Normally dropped before coding. Since 2026-10-06 the lack of a lever alone is **not** this reason: own words can still seat the chair (V2 "No-lever level"). |
+
+**Rules**
+- **`rests_on`** lists the snapshot IDs whose passages establish the chair. At least one is required
+  for a numeric chair.
+- **Reasoning:** 1–3 sentences that name the instrument or quote the words, and that cite the rung by
+  its **text**, not by its number.
+- **One instrument can establish chairs across a whole body** (calibration A4) — but only after a
+  cohort pass shows the members are not being separated by language that separates nobody.
+- **Party inference is a bad code** wherever it appears.
+- **Evidence tier (ruling 2026-10-06, Chris Andrews; option C).** One chair-shaped source is enough to
+  seat a chair, but the voter sees how much evidence stands behind it. The tier is **computed by code
+  from the row's `rests_on`, never coded**:
+  - `corroborated` — at least two **independent** sources in `rests_on`, each of which on its own
+    supports the chair (its passage is `chair-shaped` for that rung, or, for a vote, passes the V4.1
+    vote ladder for it).
+  - `single-source` — anything else that seats a chair.
+  - **Independent** means a different instrument (record passages on one instrument are one source —
+    the instrument group of V3), or a different occasion of the person's own words. Two reports of one
+    statement, or news repeating one press release, are one source (principle 6).
+  - **Two statements on one day (ruling 2026-10-06, Chris Andrews).** A date is not an occasion: a
+    debate answer and a questionnaire on the same day are two occasions. Two same-day statements count
+    as two sources only if (1) both are the person's own words on a first-party page, not news or a
+    pointer; (2) they are on different snapshots; and (3) their texts do not overlap — one page does
+    not reprint the other's words. News on that day adds no source.
+  - _owed:_ whether the person's own explanation of a vote counts as a second source for that same
+    vote, or as the same act. Until ruled, it is the same act (one source).
+  - A tier never upgrades a blank: two `direction-only` sources are still BLANK `direction-only`.
+- **Evidence basis (ruling 2026-10-06, Chris Andrews; option B).** Computed by code, never coded, from
+  `compass_topic_roles.evidence_basis` for the topic at the seat's level (CA_0302): `record` (the
+  level holds a lever) or `own-words` (it holds none). It is not shown to voters: they see the sources
+  (the evidence chain). It splits the reliability strata — a certification measured on `record` rows
+  never covers `own-words` rows — and an own-words chair goes to review until its own stratum is
+  certified. A chair from own words is compared with the voter's view like any other chair.
+
+**Good (calibration A3).** A council appointee's vacancy-application packet, published by the city,
+answers the ladder's question in his own words. It matches one rung clause for clause. → that rung.
+
+**Hard [real].** Celeste Maloy / `social-security`. Her 2024 voter-guide answer supported "gradually
+raising the retirement age"; in 2026 she said "everything's on the table", including lifting the cap.
+- The first statement is benefit-side only.
+- The second is `rhetorical`: "on the table" is not a position.
+- S1 rung 3 ("small adjustments to **both** benefits **and** taxes") is compound.
+- → BLANK `compound-partial`. Rung 4 is not established either: "raise the retirement age" is
+  one clause of rung 4, and "reduce benefits for higher earners" is unevidenced.
+
+**Hard [real].** Burgess Owens / `social-security`: co-sponsored the Social Security Fairness Act
+(repealed WEP/GPO, a benefit expansion for a specific group) and said lawmakers "must be willing to
+reform" the program.
+- The Act increases benefits for one group and has no tax side.
+- Rung 3 is compound (benefits and taxes); rung 2 is "increase benefits modestly **while** raising
+  taxes on higher earners".
+- → BLANK `compound-partial`.
+
+**Bad [real] — party inference.** Celeste Maloy / `trans-athletes`. Basis: "voted with the Republican
+caucus on this party-line vote. She has not expressed any dissent." Neither cited source is the roll
+call.
+- → Every passage fails V1 (no own act in the snapshot), and the reasoning uses the caucus as evidence.
+- → BLANK `no-evidence`. The right fix: fetch the Clerk's roll call for H.R. 28 (2025), which is
+  single-subject and `chair-shaped` for rung 4. It would then be a good example.
+
+**Bad [real].** Mike Kennedy / `voting-rights`. The SAVE Act requires documentary proof of citizenship
+to *register*. S1 rung 4 is "require photo ID for **voting** and regularly update voter rolls". Proof
+of citizenship at registration is a different clause. → V2 `adjacent`, V6 BLANK `no-evidence` (or the
+annex adds a rung that names it).
+
+---
+
+## Part B — Quote variables
+
+These variables apply to every **candidate quote** the collector surfaces, for Read & Rank and for the
+"Why this position?" citation.
+
+### V7 Tier — *what does the quote commit the speaker to?*
+
+The vocabulary is the on-the-record evidence program's.
+
+| Value | Definition |
+|---|---|
+| `lever` | It names a means that passes **both** T1 and T2, below. |
+| `direction` | A contestable lean whose means fails T2 ("remove regulations", "be tougher on…"). |
+| `none` | A shared goal, a diagnosis, a record or accomplishment, a complaint, biography, a slogan. |
+
+**The lever tests (Q5, ruled 2026-09-25).** Name the goal the quote serves, then apply:
+
+- **T1, the opponent test:** could a candidate *who holds the same goal* reasonably choose a different
+  means? If not, the "means" is the shared goal phrased as an action → `none`.
+- **T2, the accountability test:** could a voter later check whether the person *did it*? If not, the
+  means is too vague to hold anyone to → `direction`.
+
+A quote is `lever` only if it passes both. When the lever names a specific instrument (a law, a rule,
+a program, an agency action, a waiver, a budget line), also set `v7_flag = "lever-named"`. That tag
+is useful for display and for chair evidence; it is not required for rankability.
+
+This settles the disagreement between PRINCIPLES.md:139 ("build shelters" is a lever) and the
+decomposition spec (broad actions are not instruments):
+- "Build shelters" passes T1 (an opponent can prefer housing first) and T2 (shelter beds can be
+  counted) → `lever`.
+- "Build more housing", where every candidate says it, fails T1 → `none`.
+- "Triple housing construction" fails T1 (a target on a shared goal) unless the passage names how →
+  `none`.
+
+T1 is relative to the question and the race, not to the words. The coder uses the other candidates'
+passages when the collector supplies them; otherwise it sets `v7_flag = "lever-unclear"`.
+
+**Graded examples [real, `essentials.quotes`, Steve Hilton unless noted]**
+
+| # | Quote (short) | T1 | T2 | Code |
+|---|---|---|---|---|
+| 1 | "repeal the low-carbon fuel standard… change the refinery regulations" | yes | yes | `lever`, `lever-named` |
+| 2 | "a waiver from the Medicaid IMD rule that stops any institution with more than 16 beds…" | yes | yes | `lever`, `lever-named` |
+| 3 | "instructing the California Department of Geologic and Energy Management to… issue permits" | yes | yes | `lever`, `lever-named` |
+| 4 | "it is illegal to live and camp on the streets. We need to enforce the law… drug treatment… cannot be a choice" | yes (vs Becerra's "Housing First approaches… paired… with treatment") | yes | `lever` |
+| 5 | "If a community doesn't want a data center, there shouldn't be someone forcing that data center in there" | yes (vs state siting authority) | only if the passage says how (e.g., a local veto) | `direction` as quoted |
+| 6 | "We could get that back by removing regulations" (AI) | yes | no — which regulations? | `direction` |
+| 7 | "Government's role is to facilitate rather than provide…" (childcare) | yes | no | `direction` |
+| 8 | "common sense on climate change, not ideology" | — | — | `none` |
+
+⚠ **Two currently selected Read & Rank quotes code as not rankable** under this rule:
+- climate-change: #8;
+- economic-development: "California's policy regime should be unequivocally on the side of job- and
+  wealth-creators" → `direction`.
+
+A quote re-audit should review them. This codebook does not change them.
+
+**Good (lever).** "We must build much more housing. That includes… deed-restricted affordable,
+market-rate, social housing, and shelters." (PRINCIPLES.md). The second sentence names the means, so
+keep both sentences in the quote.
+
+**Hard [real, tier_gold_v1].** "I actually really believe in shelter and shelter is an urgent
+response. We've tripled the number of shelter beds…" The labeler wrote: "a mix of record and beliefs.
+I'm saying lever, but I'm not sure." Under the test: "shelter as the urgent response" is a means an
+opponent (housing-first) rejects → `lever`. The "tripled beds" clause is record → it does not add to
+the tier.
+
+**Hard [real, tier_gold_v1].** "I've… created the first real performance data… on our homelessness
+system." The labeler hesitated between direction and lever. Under the test: "manage by performance
+data" is a means few would reject → `direction`.
+
+**Bad → none [real, tier_gold_v1].** "We only have a third of the shelter that we need…" A diagnosis.
+The labeler: "more complaining" than proposing. → `none`.
+
+### V8 Quotable — *may this quote be shown?*
+
+`yes`, or one or more reason codes. The codes are the `audit-quotes` check IDs, so the two systems
+share one vocabulary.
+
+| Code | Meaning (full rule in `audit-quotes/CHECKS.md` §4) |
+|---|---|
+| `not-forward` | Record or retrospective, not what they would do. |
+| `is-attack` | Attacks a person rather than a policy or office. |
+| `off-question` | Does not answer the ranking question (not the topic label). |
+| `misleading-verbatim` | Word-for-word, but the cut changes the meaning in context. |
+| `source-not-an-answer` | Curator-extracted from a passage that was not an answer to this question. |
+| `deid-dishonest` | The blind version changes the position, or hides a load-bearing identity. |
+| `non-differentiating-goal` | V7 = `none` because of a shared goal. Flag for a human; do not gate. |
+
+**Rules**
+- The quote must be verbatim in its snapshot. That is a code check, not a coder judgment.
+- Trimming follows `publish-quotes/EDITORIAL.md`: marked cuts `…`, inserts `[ ]`, no reordering, no
+  cut of a load-bearing qualifier.
+- A quote can be quotable for the "Why this position?" citation and still not rankable in Read & Rank.
+  Rankable needs V7 = `lever` (and a certified quote stratum before any auto-promotion).
+
+---
+
+## Part C — Per-topic annex (template + one example)
+
+One file per open-season topic: `docs/codebook/annex/<topic_key>.md`. Written against the **served**
+revision. A new revision gets a new annex version.
+
+**Template**
+
+```
+# <topic_key> — served revision <id> (Season N)
+Orientation: standard | inverted | off-axis — one sentence why.
+Levels with a lever: federal / state / local / school — records and own words count here
+Asked at: every level unless excluded (compass_topic_roles); a level asked but not listed above is own words only
+Synonyms: statute or program names the state uses for this topic (e.g. "Medical Assistance Program" for Medicaid in Maryland)
+Per rung:
+  <n>. "<rung text>"
+     Operative clauses: [a] … [b] …
+     Establishing evidence looks like: …
+     Levels that hold a lever: …
+     Known chair-shaped instruments: …
+     Commonly confused with rung <m> because …
+Hard cases: …
+```
+
+**Example:** [`annex/school-vouchers.md`](annex/school-vouchers.md).
+
+---
+
+## Part D — Hard-case register
+
+Every row where the coders split, or where a person's blind answer differed from their final one,
+adds an entry here: situation → code → rule → gold item ID. Items listed here are
+`excluded_from_cert` (leakage).
+
+| # | Situation | Code | Rule | Source |
+|---|---|---|---|---|
+| H1 | Yea on a reconciliation bill that contains the clause | V4 `multi-subject` | V4.1 | [real] Kennedy / school-vouchers |
+| H2 | Party-line vote given as the only basis, and no roll call in the sources | V1 fail; BLANK `no-evidence` | 0.2, V6 | [real] Maloy / trans-athletes |
+| H3 | Scorecard beside a quote that points the other way | V3 `not-evidence` | V3 | [real] Moore / climate-change |
+| H4 | A hypothetical vote on a named bill, said as a candidate | `statement-answer`, the instrument is the content | V5 | [real] Maloy / same-sex-marriage |
+| H5 | A compound rung with one side evidenced | BLANK `compound-partial` | V4.2 | [real] Owens, Maloy / social-security |
+| H6 | A child tax credit coded on a childcare-provider rung | V2 `adjacent` | V2 | [real] Moore / childcare |
+| H7 | A filed lawsuit as the position | `record`; the substantive claim must match the rung (Q8) | V3 | [real] Owens / redistricting |
+| H8 | A signed pledge | `statement-answer` (Q8), limited shape | V3 | [real] Moore / taxes |
+| H9 | "Shelter is the urgent response" + a record | V7 `lever` | V7 T1+T2 | [real] tier_gold_v1 |
+| H10 | "Remove regulations" with none named | V7 `direction` (fails T2) | V7 T2 | [real] Hilton / ai-regulation |
+| H11 | Local-control principle without a mechanism | V7 `direction` | V7 T2 | [real] Hilton / data-centers |
+| H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
+| H13 | A declared right with no stated limit coded as the "no limit" rung | V4 `direction-only` | V4.2 "Silence is not a clause" | gold round 5 (item withheld; coded before this entry) |
+| H14 | A chair reached by excluding every other rung, with the remaining rung's clause unmatched | BLANK `direction-only` / `compound-partial` | V4.2 "Ruling out the other rungs" | gold round 5 (item withheld; coded before this entry) |
+| H15 | A news sentence that reports the person's vote or authorship, coded as a `record` | the quoted words → `statement-other`; the reported act → context only, `needs_source` | V3 "A record reported only by news" | gold round 14 (items withheld; coded before this entry) |
+| H16 | A study directive whose findings or stated objective endorse a side, coded `no-evidence` | BLANK `direction-only` (a study with no stated outcome stays `no-evidence`) | V4.1 "A study directive that states its goal" | gold round 15 (item withheld; coded before this entry) |
+| H17 | An emissions limit coded as `climate-change` rung 1 ("a shift to clean energy") | BLANK `direction-only`; a renewable-procurement standard with dates stays rung 1 | V4.2 "The rung's object is a clause" | gold round 17 (items withheld; coded before this entry) |
+
+---
+
+## Part E — Coder output schema (`labels/coder-N.json`)
+
+```json
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "uuid",
+      "office_id": "uuid",
+      "topic_id": "uuid",
+      "served_revision_id": "uuid",
+      "passages": [
+        {
+          "snapshot_id": "uuid",
+          "v1_attribution": "own-words | own-act | third-party-characterization | namesake-unclear",
+          "v2_relevance": "on-question | adjacent | off",
+          "v3_class": "record | statement-answer | statement-other | not-evidence",
+          "date": "YYYY-MM-DD | YYYY-MM | YYYY | null",
+          "v4_shape": "chair-shaped | direction-only | multi-subject | procedural | study-directive | near-unanimous | rhetorical | off-axis",
+          "v5_time": "in-term | pre-seating | superseded-by-later | undated",
+          "instrument": "H.R. 8035 (118th) | null",
+          "provision_quote": "verbatim operative text from this snapshot | null",
+          "note": "≤ 1 sentence",
+          "record_kind": "vote | sponsor | author | other-act | null",
+          "actor_quote": "verbatim span showing this person acted | null",
+          "tally_quote": "verbatim vote count text | null"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": ["snapshot uuid"],
+      "reasoning": "1–3 sentences; names the instrument or quotes the words; cites the rung by its text",
+      "needs_source": ["e.g. Clerk roll call, H.R. 28 (119th), final passage"],
+      "quotes": [
+        {
+          "snapshot_id": "uuid",
+          "text": "verbatim span",
+          "v7_tier": "lever | direction | none",
+          "v7_flag": "lever-named | lever-unclear | null",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Invariants (code-checked):**
+- `v6_value` is null **iff** `v6_blank_reason` is set.
+- A numeric `v6_value` requires `rests_on` to have at least one entry, and every entry must be a
+  passage whose V1–V5 values all allow a chair.
+- Every `provision_quote` and every quote `text` is verbatim in its snapshot.
+- Every value is from the lists above.
+- A `record` passage (`v3_class = "record"`) requires `record_kind`. Per instrument group (all
+  `record` passages of the row on one `instrument`), at least one passage carries a non-empty
+  `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
+  2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
+
+
+## The person
+
+politician_id: 0f74219c-7d10-4d29-85fe-0f1d834df8a7  office_id: 08454462-a1f0-4d11-9f61-aba7a173a3de
+Xavier Becerra — Governor, California (candidate, level: state)
+Candidate in the election of 2026-11-03
+
+## Topics (served ladder text — code against these words only)
+
+### topic_key: homelessness
+topic_id: 4938766b-b45a-46e3-93bd-b8b30651271a  served_revision_id: 6958fa99-e317-45d7-8076-d11a0a78c897
+Question: How should government address people sleeping or camping in public spaces?
+  1. Protecting the right to sleep and shelter in public spaces, with no penalties of any kind
+  2. Decriminalizing public sleeping and camping in public spaces
+  3. Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system
+  4. Prohibiting encampments on public property, enforced through graduated warnings and civil penalties
+  5. Banning public camping and sleeping with criminal penalties to maintain public safety and order
+
+#### Annex
+
+# homelessness — served revision 6958fa99-e317-45d7-8076-d11a0a78c897 (Season 2)
+
+**Status:** draft (2026-10-01). Lines marked _(ruled 2026-08-31)_ carry an operator ruling (Chris
+Andrews, recorded with the chair-4 re-audit). Lines marked _(proposed)_ are a drafter's reading, not
+yet ruled. Lines marked _(ruled 2026-10-01)_ carry a later ruling. No `_owed:_` line is open.
+
+**Question:** "How should government address people sleeping or camping in public spaces?"
+
+**Orientation:** standard. Rung 1 protects public sleeping with no penalty, rung 5 bans it with
+criminal penalties. The rungs order **the penalty** for sleeping or camping in public: none, no
+criminal penalty, enforcement only when shelter exists, civil penalties, criminal penalties.
+
+**Levels with a lever:** federal, local, state. The lever is the local
+ordinance and the state statute that sets or forbids camping rules. Federal officeholders act only on
+federal land and through conditions on grants _(proposed)_.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
+
+**Synonyms:** "camping ban", "unauthorized camping", "public camping", "sit-lie", "encampment
+sweep" / "clearance" / "abatement", "move-along order", "right to rest", "infraction",
+"Class C misdemeanor", "citation", "diversion", "shelter-bed availability", "Martin v. Boise",
+"City of Grants Pass v. Johnson" (2024).
+
+1. **"Protecting the right to sleep and shelter in public spaces, with no penalties of any kind"**
+   - Means: people may sleep and shelter in public spaces, and the law imposes no penalty of any
+     kind for it.
+   - Operative clauses: [a] a protected right to sleep and shelter in public; [b] no penalties of any
+     kind, civil or criminal.
+   - Establishing evidence looks like: a right-to-rest bill or ordinance that protects public
+     sleeping and forbids fines and arrests for it; own words calling for both. [b] is an absence
+     clause and must be stated (V4.2 "Silence is not a clause").
+   - Levels that hold a lever: local; state.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 2 because decriminalizing removes criminal penalties only. A measure
+     that keeps a fine or a civil order is not "no penalties of any kind".
+   - Housing and service spending is no longer part of this rung. A budget shift from enforcement to
+     housing does not move a person to rung 1 → `adjacent` _(proposed)_.
+
+2. **"Decriminalizing public sleeping and camping in public spaces"**
+   - Means: sleeping and camping in public are no longer crimes.
+   - Operative clauses: [a] remove criminal penalties for public sleeping and camping.
+   - Establishing evidence looks like: a repeal of a criminal camping ordinance, or a vote against
+     creating one; own words against criminal penalties for sleeping in public.
+   - Levels that hold a lever: local; state.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 4 because a law that turns a camping crime into a civil fine both
+     decriminalizes (rung 2) and prohibits with civil penalties (rung 4). A law that turns a camping crime
+     into a civil fine still prohibits, with a civil penalty → rung 4 (see the 2026-08-31 penalty-type
+     ruling) _(ruled 2026-10-01)_.
+   - A No on a criminal ban does not separate 1, 2, 3 and 4 → `direction-only`.
+
+3. **"Allowing enforcement only when adequate shelter beds are available, with citations diverting
+   people to services rather than the criminal justice system"**
+   - Means: camping rules may be enforced only when a shelter bed is open, and a citation sends the
+     person to services, not to court.
+   - Operative clauses: [a] enforcement only when adequate shelter beds are available; [b] citations
+     divert to services rather than the criminal justice system.
+   - Establishing evidence looks like: an ordinance that conditions enforcement on an available bed
+     **and** routes citations to services. Compound: one side only → `compound-partial` (V4.2).
+   - Levels that hold a lever: local; state.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 4 because many enforcement ordinances offer shelter first. An offer
+     of shelter before a penalty is not [a] unless the law forbids enforcement when no bed is
+     available _(proposed)_.
+
+4. **"Prohibiting encampments on public property, enforced through graduated warnings and civil
+   penalties"**
+   - Means: encampments on public property are prohibited; enforcement starts with warnings and
+     ends in civil penalties, not jail.
+   - Operative clauses: [a] prohibit encampments on public property; [b] graduated warnings;
+     [c] civil penalties.
+   - Establishing evidence looks like: a camping prohibition whose penalty is a fine or other civil
+     sanction, reached after warnings. A **fine-only Class C misdemeanor** is the civil tier → rung 4
+     _(ruled 2026-08-31)_.
+   - Levels that hold a lever: local; state.
+   - Known chair-shaped instruments: Texas HB 1925 (2021), a statewide camping ban with a fine-only
+     Class C misdemeanor, stayed on this rung in the 2026-08-31 re-audit. Check [b] in the text the
+     person acted on.
+   - Commonly confused with rung 5: the line is **penalty type**. Jail, arrest or prosecution → rung
+     5; a fine only → rung 4 _(ruled 2026-08-31)_.
+   - Shelter mandates are no longer part of this rung. A requirement to keep shelter beds does not
+     move a person to rung 4 → `adjacent` _(proposed)_.
+
+5. **"Banning public camping and sleeping with criminal penalties to maintain public safety and
+   order"**
+   - Means: public camping and sleeping are banned, and breaking the ban can lead to jail, arrest or
+     prosecution.
+   - Operative clauses: [a] ban public camping and sleeping; [b] criminal penalties. "To maintain
+     public safety and order" is a purpose, not a clause the instrument must state _(proposed)_.
+   - Establishing evidence looks like: a camping ordinance or statute with a misdemeanor that carries
+     possible jail time, or that authorizes arrest.
+   - Levels that hold a lever: local; state.
+   - Known chair-shaped instruments: the Fremont camping ordinance (misdemeanor, up to $1,000 and six
+     months in jail), Henderson Ordinance 3967, Colorado Springs Ordinance 26-08 (up to 10 days in
+     jail); all moved to rung 5 in the 2026-08-31 re-audit.
+   - Commonly confused with rung 4: see rung 4. Pairing a jail-backed ban with services, or saying it
+     "does not criminalize", does not keep it at rung 4: the instrument's penalty decides _(ruled
+     2026-08-31)_.
+
+**Hard cases:**
+- **Clearances and sweeps** with notice but no penalty on the person → `compound-partial` for rung 4
+  (prohibition and warnings, no penalty clause) _(proposed)_.
+- **Shelter, housing and outreach spending** with no penalty rule → `adjacent` (the
+  homelessness-response topic covers funding).
+- **Preemption (codebook V2, H12).** A state law that forbids cities to allow camping, or orders
+  them to enforce a ban, decides which level acts → `adjacent`, unless the state law itself sets the
+  penalty (then code that penalty) _(proposed)_.
+- **Court rulings** (Martin v. Boise, Grants Pass) are not a person's act. Own words about a ruling
+  count only when they name a penalty rule.
+- **Budget and omnibus votes** with an enforcement item → V4 `multi-subject`.
+
+
+## Sources
+
+---
+snapshot_id: 70d7b023-986e-53bc-9d27-3ec94f9e78cc
+source_kind: transcript
+url: https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1
+
+# On the Record — Xavier Becerra (0f74219c-7d10-4d29-85fe-0f1d834df8a7) ## CA Governor Candidates on Homelessness (CBS News) - OTR page: https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1 - Video: https://www.youtube.com/watch?v=EHkU_NAZJZ4 - Date on On the Record: 2026-04-12 - Kind: news_clip · Interview · - Linked races: bc936a36-287c-4ffd-abd8-5e4fd798bae5, dd0efd35-c1ae-47ad-8c11-cf8a52141f22 [12:36] every dollar for maximum impact. >> Well, I have some particular ideas here because one, I believe that we have to do more on the mental health and uh drug addiction side because so many of the people that are homeless have these challenges that they're facing. First and foremost, uh we have to work closer with the cities and the counties uh with the money that we send them. And by the way, we send them a good chunk of money. The initiatives that the the voters of California have provided, where the we give them money directly to deal with homelessness, the money that the legislature has made available. And so, we'll work with the cities and counties to make sure that that population of homelessness, and it's somewhere around a 180, 190,000, I think the last census told us, that we work with them to help them make sure that folks can go to a place where they'll get the services And [13:37] them? Uh you're you're talking to a father. Um I'm going to help you, but I'm not going to let you hurt yourself if you say you don't want help and you need help. I'm going to help you. Uh you know, those are Christian values. Uh I'm going to try to help my brother and my sister. If my brother or my sister is clearly in need, hurting, and on the streets, I'm not going to just take their word that they don't want the help. I'm going to help them, and we have an obligation to do that, and we will. And that's where I think these drug courts, these diversion uh programs that we have must be implemented. That's where I think Prop 36 struck a good chord because it says, "I hear you, but I'm
+
+---
+snapshot_id: c64c7a81-6fde-5f41-8d05-496d2d71bee1
+source_kind: transcript
+url: https://ontherecord.empowered.vote/meetings/757023d7-00e3-4a28-a47f-96c43a2021c9
+
+# On the Record — Xavier Becerra (0f74219c-7d10-4d29-85fe-0f1d834df8a7) ## California Politics 360 (KCRA 3) - Xavier Becerra Governor - OTR page: https://ontherecord.empowered.vote/meetings/757023d7-00e3-4a28-a47f-96c43a2021c9 - Video: https://www.youtube.com/watch?v=oySceWN-ckU - Date on On the Record: 2026-04-26 - Kind: news_clip · Interview · - Linked races: bc936a36-287c-4ffd-abd8-5e4fd798bae5 [0:02] Ashley thank you. [0:09] Because it's a hard job and you need someone who's gone through these tough times and it knows what it's like to have to balance a big budget. Someone who knows what it's like to deal with emergencies, crises, and knows how to get out of them. Someone who knows how to fight and someone who knows how to win. I'm getting to do what my parents didn't have a chance to do and that is live a life based on your dream and I'm getting to do it with people who also want to see California thrive. So why not? [1:09] Both. You got to do a little bit of both. I had to do that when I was secretary at HHS in the midst of the worst pandemic any of us had ever seen. I had to save lives, manage a budget, and do it without making cuts to the most essential programs. We were able to do that. We got the economy and the country out of COVID. Uh It took a lot of work but you have to do it with a mix of measures and I think in the case of California we'll need new revenue and there are people who aren't paying their fair share who have to pay a little bit more. At the same time we have to take a look at programs as I had a look at programs when I was at HHS and we had to make decisions on where to cut to make sure that we balanced our books. [2:03] For the most part, yeah. Think of it this way. I'm not sure what bracket you're in, what tax bracket. All I know is that there are people who are paying doctors, doctors nurses, teachers, firefighters, police officers, folks who you think of in the middle. If you're making way more money than the state, you're going to have to raise taxes on the wealthy. And any of those professionals and you're paying at a tax rate lower than them, you're not paying your fair share. So I think it'll be pretty quick and pretty easy to calculate if you're going to have to pay a little bit more. Because if you're paying less in taxes and make, you're a billionaire and you're paying less than that teacher in your effective tax rate, you're likely going to have to pay more. [2:51] So we would try to have a policy on revenue. That is predictable and consistent. That's one thing I've learned that when I was on the Ways and Means Committee in the Congress. Ways and Means Committee is a tax writing committee. So I did tax policy for about 20 years. What you need to do is give people predictability. You want people to pay their taxes? They got to know more or less what they're going to owe at the end of the year. You want a business to be able to invest in your state? They got to know what they're facing in terms of taxes and regulations. Give them predictability. And so I would make sure that we are developing a tax code that gives people predictability. That means if you know you're paying an effective tax rate lower than that teacher or firefighter, you should expect you're going to be paying more at the end of the year. [3:56] No, no, because think of it. Most of those doctors, lawyers, a lot of those professionals who are making three, four, five hundred thousand, eight, nine hundred thousand, a million dollars. I'm not looking to go after them because they already are paying a sizable tax to the state of California for their income. I'm talking about folks who don't have that wealth because of their income. They have it because of their investments. And investments in this country are taxed at lower rates than the effective tax rate of that firefighter and that teacher. And it's because so many billionaires have their wealth in those investments that they get off without paying a fair share of taxes to the state where they make their living, where they love to enjoy. And, you know, most of the folks that I've encountered who are fairly wealthy? Yeah. Don't mind paying their fair share. And they're willing, so long as they can understand why they're being taxed. So long as it's predictable. Everyone understands we pay a premium to live in this great state of California. Go take a look at the price of the gas pump today. We're paying a premium mostly because Donald Trump got us into this reckless foreign war. But I will tell you, we like California. We want to stay in California, but it's got to be affordable. [5:25] would take a real close look at these homeless programs. We have not had accountability. I believe that every dollar that we invest in homelessness is going to be a very precious dollar. And I'd like to make sure that it leads to results. And results for most of us are when I look at those streets, I don't see people lying there in the morning having slept there. I want to see results. I want to see results. I have accountability. I'm willing to invest in having assistance for those who are homeless. But we have to have results. And if you can't produce the results and that accountability, then you shouldn't get the money. [6:23] would certainly make sure that they are delivering results. And if they can't deliver results, I'll take that dollar to someone who is delivering results. And so we have to make the best use of that dollar because there are always programs that have to deal with something like homelessness. I only have so many of those dollars. If I have to make a decision, I'm going to put that one dollar into that one organization that's delivering accountable results. [7:01] Absolutely. [7:17] I understand what the thinking was. I think that's short -sighted. And it's not costly. So you're going to be able to have a family that's going to be most effective. And Ashley, that one's an easy one. You've got a family, you've got a child, your child's hurting, you don't have money, you don't have insurance. You're going to think of everything you can from going to get the aspirin, to trying the massage in the curandera, if you're from a Mexican home. Whatever you can, that's not going to cost you an arm and a leg. But if your child's still hurting, at some point, you're going to the hospital. And if you don't have insurance, and if you're not a wealthy person, if you're not able to afford to buy, person, that bill will drive you out of your house. Whatever nest egg you had has just gone. So if you were looking to use that to buy a house in the future or to get help pay for your kids tuition to college, gone. But you're going to take your your child to that hospital. Why should we wait till you have to take your child to the hospital? Which means you're probably entering through the emergency room. The most expensive door to walk through in healthcare is the ER door. Why should we wait because you didn't have insurance that you let the situation get so bad that now you have no choice but to save your child you go to the hospital through the emergency room. I'm saying no, no. You're gonna have access to that pediatrician, that family doc, that OBGYN now early upfront. Because it cost me so much less to do it upfront than wait till it gets really expensive at the back end. So tell me someone you don't have insurance condemns them to have to use the back door. You're going to be back in the most expensive care. I'm not going there. And I tell you this from my own experience being Secretary at HHS from defending the Affordable Care Act as AG all the way to the Supreme Court. But I'll tell you where I learned it most. From two great Americans. My mom who said, mi hijo es mejor prevenir que remediar. It is always better to prevent than to try to remediate. And Frederick Douglass who said it about 160 years ago, it is easier to build strong children then to repair broken men. We wait until they go to the emergency room to repair broken men and women. If we had built them strong and healthy at the beginning, we'd be spending a lot less money. I'm not going to wait until they're broken and we spend a ton of money. I'm going to build them strong and smart from the beginning, and that means giving them access to health care. [9:58] Well, if that family's not on Medi -Cal, when they do use the health services at the hospital, who's paying? Not Medi -Cal, so the state may not be paying, but you're putting that now on the county. Or you're putting it on the back of that doctor or that clinic or that hospital that doesn't get paid. And at some point, they're going to say, I can only do business this way so long before I have to close my doors. I don't want clinics, doctors, and hospitals to close their door. Go to rural California. They're already closing hospitals. We can't afford that, and I'm not going to let it happen. Because as much as I think it's morally right, health care should be a right, not a privilege, economically, it is not smart to wait for them to use the most expensive care walking in through an emergency room. It's economically smarter to give people access early so they maintain their health. Our system in health care, unfortunately, and I kept saying this when I was secretary at HHS, our health care system is based on treating illness. Our system of health should be based on promoting wellness. So we avoid the expensive care. That's why the U .S., California, we have the most expensive health care in the world, bar none, and we still leave people without insurance. I [11:39] Well, I see two issues there. And let me start with the first, which I'll piggyback off of what I just finished saying about health care. Okay. You can't wait until a child is entering kindergarten, and now we have transitional kindergarten, when they're four or five years of age to expect them to just launch. If their life from zero to four or five has not been one that's equipped them to learn, they're not going to succeed. And we're setting ourselves up and them for failure. And so it should not surprise us that so many of our children, by the time they're in sixth grade, by the time they get to middle school and high school, they're not at grade level. Mejor prevenir que remediar. Better to start early. Build a strong child. And so I think we make a major mistake that costs us less money to provide early care, education. So not just when they're four or five. Think of all those parents who are struggling to find good daycare for their kids. And I don't mean just daycare where it's just you're watching that child during the day. Someone who can also provide them some basic education when they're two or three years old. So that when they get into pre -K, they're ready to learn a little bit in pre -K. So then when they get into the first grade, they're ready to start learning. [12:56] I would front load a lot of education. So we make pre -K and early care affordable. Most families can't afford to pay tuition, college tuition, for a three -year -old so they can go and work. And that's unfortunately what daycare has become. Child care has become, essentially, paying college tuition for your two - and three -year -old while you go work. That's incredibly hard, difficult to absorb. So early, upfront education first. Secondly, how is it that we expect a teacher to take those children and make them the next doctor, scientist, you name it. Major professional, engineer. We want them to be able to teach our child to become that doctor, scientist, or engineer. But how much do we pay them? Way less than a doctor, a scientist, or engineer. Are you surprised then that there is massive turnover among our teachers' ranks? That after three to five years, they're out of there because they're just not making a good living and they can go make more money doing something else. We need the best and the brightest teachers to make that their career. Let's compensate them right. Let's focus our money. We do put most of our money in our state budget into education. So let's put it where it counts. Getting the best teachers and equipping the best classrooms so those kids who have had some pre -K education are ready to learn. [14:38] Because we have to spend a lot of money in doing remediation. Because so many of our children are... in their grade, but not at grade level. And so we're doing a lot of work to help them catch up. That costs a ton of money. We're also spending too much money on things that have nothing to do with the classroom. Too much bureaucracy. And I would cut some of that out as well. And then focus the money where it counts. Same thing as with health care. I'd rather put my dollar into that doctor instead of that pencil pusher, that money cruncher, that accountant, who's trying to figure out the best way to game the system when it comes to charging or paying for that health care service. Give it to the doctor. Give it to the nurse. Give it to that hospital technician who's helping the doctor or nurse rather than give it to the accountant who's trying to figure out how to scheme and game the system to get the best reimbursement or to avoid paying more than necessary. [15:50] The way I had to do it when I was attorney general. We had to, one, enforce laws. Sometimes people weren't happy. We'd tell them they have to do certain things. We'd say, you should have read the law before you decided to do that business because the law is pretty clear. All we're doing is having you follow the law. So if you. . . Said you were going to pay somebody minimum wage by law, you must pay them minimum wage. You can't steal their money. That's called wage theft. So we enforced the law and said, you hired somebody. You had them work. They provided you labor. Now you owe them the money. And you can't say that, oh, woe is me. I didn't realize I was underpaying. Follow the law. And so we have to enforce the law. We also have to make sure we do constant oversight. Delivery. As I said in my earlier answer to the homelessness question, there's got to be accountability. These are taxpayer dollars. They don't belong to me or anyone else in government. They belong to the taxpayers. I have to show that I've spent their money well. I can demand accountability. Oversight, accountability, and enforcement are the ways you drive this. I had to do that when I was AG all the time. I had to do it when I was Secretary of Health and Human Services because when you're in the midst of a monumental pandemic like COVID was, and I had 50 states screaming at me saying, we need more vaccines. We need more Paxlovid and treatment. We need more ventilators. I had to figure out how I was going to distribute all of those items to save lives to 50 different health authorities, 50 different governors all demanding what they needed. And we didn't have everything that they wanted at every minute of time. So we had to distribute. We needed to know how to do that. The way you do that is by having oversight. The way we were able to know when to send vaccines to certain hotspots is because we demanded the data. We were able to spot the hotspots and then be able to direct the resources where they were needed most. We have to do a much better job in government to make sure that we are enforcing accountability, oversight, and we'll get some things done. [18:30] Yeah. As I said, gut punch. You put your trust in people. But what you also have to remember is as much as you've had a working relationship over years, as much as you've done things together and succeeded in so many ways, at the end of the day, we're all accountable. The law is the law. And no one is above the law. And so when accountability comes knocking your way, you've got to show up. And so I don't think anyone will challenge what the law is. And we all have to face up to it. But it was a real gut punch. [19:33] we were paying for management of a dormant account, making sure that nothing was, no laws were violated. Because I was Secretary of Health and Human Services, a cabinet member, I had to distance myself from anything that looked political or campaign related. I had ethics rules that were in place that required me to distance myself. And so I depended on people that I trusted to be able to manage that the right way. We were going to pay for the management. You always pay for someone to oversee, to file the right documents. And I was willing to pay the price to make sure that I didn't have to worry about it. Lo and behold, while I was willing to pay a price, and by the way, the attorneys of the campaign account signed off on all those payments as well. It wasn't as if there wasn't someone who was checking. The attorneys were checking, and they were saying, you know, everything seemed kosher. What happened was, after the payments, the way the money was used is where the violation occurred. There was no violation in terms of the payment. That's why I and my campaign, you know, I was willing to pay the price. But the attorney's office was not saying nothing about it. I had not been involved in the before and after and after, and the P .A. [21:09] I was getting an opinion whether second or not first or second opinion every time because I had campaign attorneys who were watching over the account as well who I also paid and so never once did they flag that there was anything going on with the payment the payment was substantial but it wasn't by itself something that was illegal and so when we made the payments my attorney said they never objected to the payments the [22:05] just look at my record when it came time to Covid take a look at how we were able to get those vaccines some seven hundred million vaccines by the time we had finished our four years in tenure some 700 million vaccines went into the arms of Americans but perhaps the most important fact there is that never once do we have to ask Americans to pay one penny to get that life -saving treatment because we knew that people who were uninsured or were low -income would probably pass and say I'll take my chances I'll try to be safe which of course meant if they were not safe none of us was safe and so the work that we did there I would tell people take a look at my record as Attorney General if you want to see how I'll do my work if I can be accountable take a look at the work I did to protect our state at a time when Donald Trump was president the first time and was coming at our state trying to assault us and in so many different ways very similar to what he's doing now we stood up we protected our state whether it was health care where I took the Affordable Care Act all the way up to the Supreme Court against Donald Trump and beat him whether it was the DACA program for dreamers where he tried to eliminate it in a wrong way we took him to the Supreme Court we beat him whether it was protecting our clean car standards whether it was protecting the right to choose and have reproductive health care services over and over we proved what we could do if people want to see what I do how I do it and whether I can be accountable I'd say take a look at that record okay [23:45] get to building you're talking to a former construction worker my dad was for decades a construction worker I knew how to wield a hammer before I knew how to throw a baseball and so we're gonna build we're gonna do it right that means and everyone I think every one of the candidates will talk about how we're gonna trim back on some of the regulations that make it tough to move forward we're gonna try to make sure we're working with local governments we we try to eliminate some of the fees that make it very difficult to make a project pencil out we're gonna try to make sure that we look at the projects that are almost ready to go there are thousands of units of housing that are essentially shovel ready except something is missing about 40 ,000 units of affordable housing are essentially shovel ready most in most cases they're just missing that last last tranche of funding let's kick that into gear and let's get to building because it's not just a matter of building the state [24:45] the state does have some resources that I would pull on to try to help but we're gonna need some other resources as well it shouldn't be just on the state local governments need to have that housing as well and we could look at the industry and and find out if they have ways that they can help us do this as well so what we could do is kick those into gear because they are they've checked all the boxes they've got most of their financing there's just one thing missing to kick those in the into gear. Let's get the shovel in the ground and start building those units that we need. I would make sure that within my first 100 days, I have moved to freeze property insurance rates, which have gone sky high, and utility rates, which continue to increase. So these private investor utility companies are making a profit, an automatic profit, guaranteed profit, while we're paying higher and higher bills, and we don't understand why we have to continue to pay so much. So whether it's on property insurance or utilities, I would declare a state of emergency on housing, be able to then freeze those rates on property insurance, do the same on utilities, give myself about three or four months working with the legislature, local government, and the industry to figure out what's going on. Let's pull the curtain open and find out what's behind those property insurance increases. Let's find out what's behind the curtain of those utility rate increases. If they can explain themselves, I think most Californians say, that's okay, I got it. [26:30] first, if they're going to say that, I say, okay, show me. And show them. So the public, what those regulations are. And if it's true, and then we'll hear from the public as well. And maybe those are some of the rates we have to trim. But show me, show me. I don't know about you, Ashley, but last year, my property insurance rates more than doubled. I don't live in fire hazard area. I'm in Sacramento area. I'm not in brush country. Just more overnight. who doubled, than doubled My mom, had, I won't name the company, had been for more than three decades paying property insurance. I don't know if she'd ever filed a claim. She got dropped. Never an explanation. When she finally was able to get new insurance, more than double. I think we just want an explanation. Pull the curtain back, show me. If there's something going on that it's our fault, okay, then we'll deal with that. But show me. [27:35] We have to have goals that are achievable. I had to do that with COVID. I had to constantly tell people, we have to, we have to complete this. If we're going to save lives, we have to deliver results. And so, anything having to do with climate change, cleaner energy, when we have goals, they have to be achievable. Is [28:00] It's looking harder and harder to get there. We should strive for it. We have to get there, but it's looking harder and harder. And what's, what's the measure? How do you measure that? Could my parents meet that goal? My parents were working class family. Could my parents meet that goal? If my parents could meet that goal, and they were working every day hard and hard to just make a living and scratch out the best for their kids, if they could meet them, then it's not a good goal. But if they could, let's, let's keep striving. Let's keep pushing. A [28:38] So my dad, all the, all the years I knew him drove a pickup, and not a new one. [28:46] Would my dad have been able to switch out his pickup for an electric view? [28:52] I'd say chances are no, not right now. But then So if he could, we should. goals that are achievable, not goals that are pie in the sky. I think when these goals were first initiated, there was this belief that we could get there. Things have become very difficult. And we should not be shackled by goals because our families can't be driven day to day by things that are not achievable because they have to achieve. They have to make sure their kids can go to school. They have to make sure they've paid that mortgage or that rent. There's nothing, no striving in paying your rent. You need to pay your rent. You've got to have hard and fast measurable results as a family, but as a state government as well. [29:59] Because I want their families to succeed. That we don't agree on Donald Trump. That's the beauty of America and free speech and the First Amendment. But I want them to succeed. If they're working hard, then I want to fight for them. If they're trying to get their kids to college or the military or an apprenticeship program, I want to see it happen. If they want to buy a house, I'm going to try to help them. If they're tired of paying high utility costs, I'm going to try to find out behind that curtain what's going on. You know, it's governing. You realize you're going to have to do something. You're going to realize real quickly, it's not red or blue. Governing is about me and you and getting it done. And if you don't get it done, you could be red or blue, but you won't be in office very long. And so it's just a matter of getting it done. I'm not looking to be the, have my portrait above every mantle in every home in California. I want everyone to have a mantle and a home. [31:14] you're talking to someone who's had to balance a budget bigger than the budget that Governor Newsom had to balance. You're talking to someone who had to deal with a crisis bigger than perhaps any crisis that the governor of California had to deal with when we had to save lives across the country with COVID. You're talking to someone who took care of the economy and took on a rogue, menacing federal government the way Governor Newsom has had to do that. I did that when I was AG. You [31:44] I'm trying to put it in context. Got it. [31:46] it is important to recognize when you grade someone, understand the shoes they're filling. It's not easy to be a governor of the biggest state, the fourth largest economy. So what I would tell you is this, we became the fourth largest economy under Gavin Newsom. Check. We have expanded health care to more Californians. Check. There are many things that he has done well. The other things, public safety, I think he could have been more ambitious. Homelessness could have been more ambitious, more, have people be more accountable. Uh If I were grading, I'd say Gavin Newsom is going to go on to college because he's going to graduate from my high school. What's the [32:32] What's the threshold? The threshold? Yeah. That he's left us in a place where - So like a C? [32:36] Well, I mean, you could go to college with a C. It's a lot more difficult. But I think he has done many of the things that we have asked him to do. And in some areas, well, when I become governor, I'll make sure - But what's [32:48] I don't know if I can give him a grade. [32:52] Well, I was going to try. But what I'm telling you, I wasn't in his shoes. I know a lot of folks who gave me a grade on COVID say, oh, that guy was terrible. But they're still alive. They get to go out and not have to wear a mask. I mean, you can grade anybody the way you want. It's whether you left the place better than you saw it and you started. I would absolutely say he has. He's tried. And knowing how tough it is to manage an enterprise the size of the state of California, as the Department of Health and Human Services, the largest public health agency in the world, with a budget, as I said, bigger than the state of California, I know what it's like. And it's easy to grade. It's tough to accomplish. Okay. So not [33:38] mean, that's not for me to say. Okay. [33:48] Hmm. [33:54] bold, [33:58] Focused. [34:03] Decisive. [34:07] you, Ashley.
+
+---
+snapshot_id: b08736ed-3673-53cb-bafe-82a300179319
+source_kind: transcript
+url: https://ontherecord.empowered.vote/meetings/d770b4c4-dc0a-4f53-b09d-1087ea1bcd4f
+
+# On the Record — Xavier Becerra (0f74219c-7d10-4d29-85fe-0f1d834df8a7) ## CA Governor Forum with Ezra Klein - OTR page: https://ontherecord.empowered.vote/meetings/d770b4c4-dc0a-4f53-b09d-1087ea1bcd4f - Video: https://www.youtube.com/watch?v=6HETwu7Kfu8 - Date on On the Record: 2026-05-08 - Kind: forum · CA Gov Candidate Forum · - Linked races: bc936a36-287c-4ffd-abd8-5e4fd798bae5 [17:14] Well, I think the legislature and Assemblymember uh Wicks took the first measures that we need to get us to that point where we can do is make sure that we are building we're building with men and women who are skilled and we're doing it at a price that we can afford. And so, as we've seen, if you do infill housing and you make sure that if you have housing units that will be up to a certain height, up to usually about eight stories. If you're going to do that, then you have the right to be able as a developer to try to get the the labor that you need and try to negotiate a good price. If you go beyond that, you're talking about major construction. Prevailing wage will be the standard. I think that's a good approach. And then, what we do is provide to those that are in the lower height housing the opportunity to go out and do private actions if you find that there are violations of labor laws. But, I will tell you this, we should not believe that we have to build homes by making it so it's impossible for the carpenter who builds a home to never be able to afford to buy it. I'm going to make sure that those workers who are building those homes can actually think about buying those homes themselves. And it all it takes is for us to work together to make sure we are dropping costs. It's far more than just labor. There are a lot of things that are involved here, and we would we would [18:57] decreasing and by [18:58] Well, if we can get rid of the Trump taxes, the tariffs that are now being found illegal, that would help us reduce the cost of building materials. If we could stop going to war in foreign countries >> But, the cost of construction in California was high before Donald [19:12] Trump. It was high, but not as high as it is now. And we can lower those costs. Transportation of building materials is very expensive. And so, let's not disregard that we need Washington, D.C. to be helping us. But to your point, and remember, again, labor costs for most homes that are going to be built will not be based on simply the highest rates that you have in the large mega projects. The legislation that was passed by Assemblymember Wicks provided different ways to do this, which would make the labor costs affordable for developers. We also have to deal with financing. We have to have a stable force of financing source of financing. We can't just do it one time. I think the the measure that Assemblymember Wicks is going to try to put on the ballot is good. I think the measure that former Assemblymember [19:57] for people not following? $10,000 $10 million billion, excuse me, of bonding financing so that you can start building affordable housing. The 40,000 units that Tom mentioned that are ready to go except the financing, that $10 billion would readily available to get those shovel-ready projects up and running, which helps give confidence to the California families that are looking to get into a place. [20:28] your plan says. [20:29] it down? So, one, you you go after the red tape. So, we try to streamline. And again, the legislation that the legislature passed over this last year helps reduce some of the red tape that you have at the state level. We have to attack it at the local level because of the the high fees that are imposed. You have to also make sure that they aren't trying to use their ordinances to try to prevent us from being able to build. Remember that most home most housing that's built today is reserved for single-family homes. Very little construction is done with apartments and condominiums. Very little to buy other than single-family homes. We're never going to reach the number we need if we continue to only build single family homes. And that's why the legislation that allows us to really build out, do the infill where we know we have transportation, will give us an opportunity to increase greater amounts of housing at affordable rates for people who need to either buy or rent. And I think that if we do that and come up with a stable source of funding into the future, so it's not just a one-time housing bond that people can count on, develop developers will begin to have confidence that we are looking to give them a predictable predictable means of being able to finance these projects and have them pencil out. [38:45] governor to align cities with the state? [38:47] As we you have to use every tool you have, and certainly litigation is one. You hate to have to go there. You would hope that you would have cooperation between state and local government. Local governments have for any number of reasons decided they want to be able to control what happens when it comes to housing in their jurisdiction. And they do have tools, zoning laws. We talk about these fees that they try to collect to help with with infrastructure. But what I would say is we have to have an agreement, a state local government agreement, that there has to be a clear path on what the state of California will do when it comes to housing. Every local government must then fall in place to make sure they're doing their fair share. The lawsuit against Huntington Beach was because Huntington Beach had its own housing element plan. It itself had made the made it clear that they needed to build several hundred units of new housing, and then they reneged. And so when we sued them, we said, "It's in your own plan. You're just not willing to do it." The reason we won is because they were violating the law. The case against San Mateo County was simply to make it clear that the state has a role when it comes to housing because while we all are Californians and we're Angelenos or Oaklanders or whatever else, we all have to be able to live in and work and survive in California. So the state of California has a role to play. I defended the the law that said that every jurisdiction is accountable to meet its housing responsibility, and we prevailed in court and found that that law was constitutional, which set the foundation for us to now be able to push and see the legislation that has now become law that's going to let us build [40:47] make the cities that don't want to do it agree with the [40:49] state. Two issues, Ezra, and this I say as the former chief in law enforcement officer for the state of California. The difficulty with enforcement is sometimes the penalties, the fines are never enough. It's almost a cost of doing business to violate the law. You're willing to pay the cost of the fines to not have to go in that direction. The second problem is, of course, it takes forever. And so, I I take when I've been attorney general or when I was Secretary of Health and Human Services on the health care side, the approach I took when there's a law in place that requires you to do something, I would first give you leash. I'd say, "I'm going to give you incentives to do what you're supposed to do under law." At some point though, those incentives go down and at some point we cross over and now becomes penalties. And the penalties grow the longer it takes you to conform to what the law says you have to do. Incent them to come forward, and if after they don't, then start penalizing them for not coming [41:50] Well, we do have some funding that would be available right now in existing housing and community development agency funding, but it's running out. We do need to have a a funding source. The initiatives that are on the ballot to create bonding authority would help us have some of that funding that we would need, but we would have to certainly make sure we're generating the source of funding. The legislature does provide the state with some money. It's not nearly enough, but there is an opportunity to make it clear the funding that the state has will first and foremost be allocated to those who are conforming to their their state law obligations. Those who aren't the money that you could have gotten is going to those who are actually fulfilling their housing [42:44] state's prerogative to tell them what to do? Well, the state same reason kids have to eat their broccoli. I mean, we have we all have to we have to live by rules. I I guarantee you everyone would love to be able to cross through an intersection and not have to worry about the red light, but we have rules. [43:00] >> [laughter] >> Thank god this is California. See, we're not we're not Look, we're a society that believes that we we must and we teach our kids to follow rules. And if you're a city and you see the housing crisis and you're not following the rules, then get ready because I'm going to enforce. I will use the powers of the state working with the Attorney General, working with our Housing and Community Development agencies, and working with those who are willing to push the envelope to say, I'm going to give you a reason to do this building. I'm going to give you an incentive. I'll put you in the front of the line. But at some point you're going to pay the price because we need to build. [48:59] And I believe he is Matt didn't identify the project specifically, but this was a project in the San Diego County area that was in the hills in wildland wildfire risky areas. Uh it was a pretty large development, several thousand units. It had one route for egress. And we went to the developer, and we went to the county and said, "This is a safety hazard. This is something that could cause lead to the loss of life if indeed we have a wildfire." This was when I was AG between 2018 uh 2017 and 2021, way before Palisades and Altadena. And we simply said to them, "If you're going to build that many housing units, and people are going to be living up there, and there's a wildfire that hits, you better have a way for these folks to be able to save their lives. Having one route of egress was not going to do it." So we said to them, "If you're not going to take care of this, guess what? We're going to have to sue you." We tried we tried not to do the litigation, but sometimes that it does help to have someone who knows how to enforce the [67:53] We didn't focus on outcomes. Uh there were the accountability wasn't there. $24 billion was there, but the outcomes didn't result. We didn't see that people were moved off the street fast enough. We didn't provide the services they needed. To me, the homelessness crisis is as much a mental health crisis as it is someone needing a place of shelter. And we didn't provide the types of resources to make sure we could stand people up and make sure they wouldn't go back to the streets. Uh I I also believe that we have to do far more to prevent people from ever becoming homeless. I don't have control of the streets of Los Angeles, of Oakland, or the counties as governor. What I can control is the monies that we send and try to demand accountability. But the most important thing I I believe, and this is where I will focus as governor, is trying to help that person that is on the very edge of losing their housing, whether it's their home or their apartment that they're renting. Because there are people who under some circumstances, you lose your job unexpectedly. You're trying to get back to work and it's taking you a little longer. You used up your savings. You're on the verge now of losing your apartment that you're renting. You have a medical emergency. You break your piggy bank open, you use it all up, it's not enough, you still have a big bill. All of a sudden, you have to make a decision. Do you pay the bill or do you stay in your home? And I believe those are the folks that if we provided more support, and I would create a stabilizing fund that would be there for to help those Californians who are in a home, make sure they don't lose their home. It will cost us far less to invest in someone maintaining their housing than trying them off the street, get them to stand up, provide them the services, get them the temporary shelter, and then help them get re-employed. And so, let's invest in prevention before we start talking about just trying to pick people off the [70:07] that be? First, I think we have to give everyone an opportunity to have an out. And when I established the 988 program, and I hope some of you are familiar with it, it's like 911 but for mental health crisis and suicide prevention. And if you dial 988 or actually text or chat, you'll get someone who'll help you, not as a police officer, but as someone who can provide you services. We do that. We have a dedicated line for veterans who are hurting. We had We had, but this administration took it away, a line for LGBTQI who wanted to be able to speak to somebody who would understand their concern. We have to give people an out, an opportunity. But what happens too often is we don't do that, and then we don't do the second thing is to make sure that we tell folks, we are your keeper. I am my brother and my sister's keeper. We will not let you languish in the streets. And if you keep saying no, and it's clear that you need help, then it's really our responsibility as civilized people to make sure we provide our brother or sister some assistance. And so, I think we have to get to that point. We don't let people make that decision when it's clear they're not making the right decisions for [71:38] Very similar to the the carrot and stick approach, which I use, by the way, at HHS, we had to help doctors switch from paper record keeping, prescriptions, their medical records, to digital, to finally join the electric electronic world. A lot of folks said, "We can't afford it." And so, what we did was we scaled it. We said, "Look, we're going to give you incentives to uh change your practice into one that can uh function electronically. And we're going to give you incentive, incentive, but at some point, it's going to become penalty, penalty, penalty if you don't join the real world." Uh we would do the same thing. There's a locality. You're not You have programs, but they're not resulting in success, then we have to terminate those programs or stop the funding. I will then scale those programs that are working. I'll take the money from the programs that aren't working, and I'll scale those programs that are working. And that's what you have to do is you have to carrot and stick, but I will use the stick at the end of the day because taxpayers are paying for folks to be pulled Mr. Steyer, [96:16] Becerra. Uh let me give you something uplifting after this conversation. >> [laughter] >> Uh there's a a book called Rain of Gold by Victor Villasenor, which is all about how if you just put your mind to it, you can lift up your family and have success. It's the American dream in this book and it's a Rain of Gold. I love that book. Ms. Porter.
+
+---
+snapshot_id: b58ccf91-8232-50d1-a3c3-8d8d81b86528
+source_kind: transcript
+url: https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7
+
+# On the Record — Xavier Becerra (0f74219c-7d10-4d29-85fe-0f1d834df8a7) ## California Governor Debate - CNN (General Election) - OTR page: https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7 - Video: (no video url) - Date on On the Record: 2026-09-30 - Kind: debate · Debate · - Linked races: bc936a36-287c-4ffd-abd8-5e4fd798bae5, bec5ef3b-095b-4d7d-9117-db81e407cb5e [0:26] Absolutely, he's wrong. Uh, what he would do is he would damage our state even further, make it harder for working families. He'd make it tough for folks like my parents who came to this country with, uh, with $12 and they settled in California. They were able to build the California dream, but they had to work hard. They needed to make sure that the government was, was there with them. If you start cutting taxes and Steve Hilton's plan actually goes beyond just, uh, the 150 ,000, he claims he'll try to cut. He wants to give the richest Californians, millionaires and billionaires, a 40 % tax cut. Which means, of course, he'll take it out of our schools, he'll take it out of healthcare, he'll take it out of housing and make the conditions even worse. We have to have sound policy, whether it's tax policy or spending policy, to make sure that we can bring our California dream back to life. Right now, we have a situation where if you start making tax breaks for the wealthiest, you damage our working families like my parents. Mr. Helton? [2:03] Again you're gonna hear a lot of stories a lot of new math a lot of alternative facts from Steve Hilton the math doesn't add up what he's talking about he's gonna have to take it out of somewhere it will come out of our schools 50 close to 40 % of our budget in California is for our schools and so Steve Hilton is talking about making taxes not just 150 ,000 but he's got a plan to give the wealthiest Californians a 40 % tax cut. [2:47] What I said is that you shouldn't [2:50] give the tax breaks to the folks who are making the most money in California. That's your plan. If you look at your plan, you're going to make across -the -board tax cuts. You're going to end up giving the wealthiest Californians, billionaires, a 40 % tax break, the biggest in California history. You only talk about the portion of about 150 ,000, but there's another aspect to it. You don't like to talk about that. No, I do. I'll tell you, I'm very [3:56] with Javier. What I wouldn't do, Steve, is try to convince the people of California that proposing Trump tax policies, promising Trump tax cuts, believing you're gonna get better results than Trump has gotten so far to date, That that is what isn't it the definition of insanity you do the same thing over and over again expecting different results Yes, you're using Trump's like voting Democrat promises you expect different results You're gonna end up with Trump results If you follow Steve Hilton's plans [6:36] We will the housing gap, I've said already that we have to at least double the rate of building of homes. How much can we do? It just depends. How much red tape can we cut? How fast can we try to expand down payment assistant programs? How fast can we make sure Wall Street isn't outbidding the teacher or the firefighter for a home in California? We have to make sure we don't let Wall Street investors buy homes over those people who are working hard in California. And the final thing I'll do is what I did when I was AG. I will enforce the law that requires local governments to build. Mr. Holman? [7:35] that if you like. You did nothing. [7:46] sued [7:47] the [7:47] of Huntington Beach, Steve. That's more red tape, not less. No, no. It's enforcing the law because Huntington Beach was not following state law which required it to encourage building in its community and so they were not following the law as attorney general i enforced the law and guess what we won because huntington beach was denying permits and we have to build and no locality should have the right to try to stop all of our people in california from having the housing they need even [11:00] If you listen closely, you can hear Donald Trump in that response by Steve Hilton. He's not interested in regulating AI. He's not interested in telling these companies, you have to protect not just our kids and not just in school, you have to protect our workers who are looking at the prospect of losing their jobs to AI. You're looking at public safety that may be in danger by having AI penetrate our privacy. You know, it's really interesting. The president got a pinky promise in this forum that he had with AI leaders. That's all he got. No comment. He could go ahead and start an illegal war in Iran. He could go ahead and tear down East Wing or the White House, but he can only get a pinky promise from the largest leaders of AI. That's not what we need. And Steve, it's not a gimmick to ask for guardrails. It's the real thing. You use the word gimmick. It's not a gimmick. We need real enforcement. [12:01] The reason you could trust me, Steve, is because I... How [12:07] You want to answer? The answer is the reason you could trust me is because I have sued Meta, I have sued Amazon, I have sued Google. I have sued these very companies. I have enforced the law against these companies, and I will continue to do so as governor. The difference between us, Steve, is I have a record of having done that. You just say the talk, but [13:02] First, let me correct the record. I have helped create millions of jobs during my service as a member of Congress in preserving the protection for the state of California when I was attorney general, when Trump was attacking us. And as Secretary of Health and Human Services, I expanded healthcare to more Americans, which required more doctors, more hospitals. So unlike what you've just said, Steve, the facts show that I've helped create jobs. But to your point, since when do I have to respond to politicians? I'm running for governor of California. I'm looking for the vote of California voters, not some politician in Washington, D .C. [13:56] Yeah, of course. And I would work with our local communities to make sure that we enforce. This, Dana, the standard I think is pretty straightforward. Having a data center, does that benefit the community they want to locate. If it doesn't benefit them, if they don't see it as an investment in their community, if all you're going to do is rob their energy and electricity and their water, that's not a good deal and we should say no. But if someone wants to come in and build a data center that creates more jobs in the community, adds more energy to our grid, and it actually protects and adds more water capacity, then let's talk. But it has to be good for the community. We can do that, but if you're Donald Trump and his endorsed candidate, you probably want to lay these guys and let them do whatever they want. [15:14] Maybe the difference here, Steve, is that I've gotten the endorsement of our law enforcement peace officers throughout the state of California because they think I'm gonna help public safety. I've gotten the support of carpenters and construction workers. I was a member of the construction field as well for a while before I got to become a lawyer. But what I'm saying to you is this, people who know my policies are supporting me because they think it'll be good for them in their communities creating jobs but pinky promises Steve is that all you can do is that all your your endorser Donald Trump can do to make sure AI safety reaches our communities a pinky promise [16:29] our peace officers and our carpenters and our teachers know that you think it's their fault that we haven't gotten control of these things. [18:44] Steve, you're running for governor of California and you'll enforce Trump's laws at the federal level, but you won't enforce state laws at our level. California welcomed you into California and you welcomed ICE mercenaries into our state in return. How does that, how do you square that? You know, you're an immigrant. I have fought all my life to make life better for immigrants, to represent them well, to defend them, to let them grow and build like my parents. But here's the problem I have with your policies. You seem to welcome immigrants who look like you but deport immigrants who look like me. We need to have a governor who will protect everyone who works hard. I don't need to stand here and listen to you say that you'll enforce Trump's laws but you won't enforce California state laws. [19:45] farm worker in California why only farm workers that's what you [20:27] Trump, Trump, because he is your supporter. You chased his endorsement. [20:32] you just said it too and your policy say it every day. Because you've got nothing to offer Californians except more of the same. Let's use your words. You said Trump's ICE [20:43] immigration policies in his raids were, your words, perfect. You said that every farm worker in California should be deported. Your words. That's simply not true. Those are your words, Steve. [21:07] Do you deny that you said that Trump's immigration raids are perfect? [21:11] All that he's got are these insults. Here's your chance to deny that you said Trump's [21:39] It is good to have a regulated system of immigrants to come into our country, including California. And that's something that I have always pushed for. It is bad when immigrants are being separated from their children. It's bad when immigrants are being killed indiscriminately. It's bad when US citizens are dying through these immigration raids. So let's have regulation of our borders. We have a right as a sovereign nation to do so. I have always been for that. I am not for violating the constitution. I am not for treating immigrants like animals. And I am for recognizing that immigrants lift up our state. They build it every day. And I say that as the son of immigrants, that what we should do is have an immigration reform that will allow us to decide who stays and who goes. But Steve thinks it's perfect to let ICE mercenaries come on into California. And he welcomes it, even though our state laws require that ICE follow federal immigration law. Helm. [23:43] those Retread Trump talking point with the New York Times that Trump and they want to pull it surprise 24 You've used those. [23:53] In fact, every candidate... It was your Democrat colleague, Antonio Gutierrez. Let's let Secretary [24:00] We could follow the rules, Steve. Let me answer the question. Trump left a system for care of these immigrant kids that had been dismantled. Because he doesn't want them here. He made it very clear. Remember, he used to put kids in cages. He used to separate those children from their parents. We changed all that. I am proud of the record and all my life of working on immigration and in protecting immigrant children. What I won't do is do what you've done and welcome ICE raids so they can come and separate kids from their parents that can kill people indiscriminately. I will not be part of that and the record speaks for itself, Steve. You tried this before, it didn't work. You're gonna try it again because you have nothing else. Those aren't the facts, but you can peddle them if you'd like. [24:46] Mr. Helm. [25:22] that's what messing with [25:23] so once again these [25:27] misrepresentations that he's made of fact made of facts the the New York Times story didn't even go into those details about 480 someone the number keeps changing you said it was one one day, now it's another thing. Look, you could continue to do that. The fact remains, Donald Trump has a history of trying to deny immigrants their rights, abusing them, and he did that with kids. We changed that. I'm proud of the record we have when it came to providing care to these kids. What I will tell you is this, we need to fix a broken immigration system because no child should have to spend time in a detention center when they're three or four years of age. [27:43] Well let me unwrap this a bit here. Steve Hilton wants to put polluters in charge of our fossil fuels, of our move towards greener energy. He wants to let the industries decide at what pace and where and how do it. He wants to let Donald Trump take oil leases out of our coast, on our coast. He wants to, he said it himself, drill baby drill. He wants to drill baby drill along the coast of California. Steve, you weren't living here in California at the time, you weren't living in America at the time. We went through that experience. We don't want to see our coastline damaged. And talking about firefighters, Steve, your policy that gives that 40 ,000, 40 % tax cut to the wealthiest, you're going to cut firefighters from fighting [28:29] wildfires. [28:57] $2 more than it was when Donald Trump started the war in Iran. Just tell them [29:01] number. [29:02] It's over $6 a gallon. The national average. [29:05] The national average is over $4 a gallon. What is it exactly? Do you know? It is over... You can't give an exact number because... [29:14] Yeah. And so what I would tell you is this, Steve, more when it comes to diesel if you didn't have Trump's policies on the Iran War. Gentlemen, I'm... That's caused major pain for folks, but if I can answer on this wildfire issue, [29:28] Steve, you just called firefighters bureaucrats, these are the folks that are on the front line fighting fires and you're saying we should go ahead and get rid of them, cut them because they're bureaucrats. No, I'm saying we should call them bureaucrats [30:22] because as attorney general I demanded accountability and I will make sure that as governor I will demand accountability of our local governments who have control of the streets in their cities and in their counties what we will do is we will make sure the encampments are cleared we will make sure that we are enforcing the law because we have a right to make sure that those encampments are cleared we're gonna make sure that we tackle what is one of the major issues that it's involved with these folks who or staying in the streets. Mental health and substance use addiction. We have to be serious about tackling that. And the thing I'll do most because it's so important to work with the cities and the counties to tackle the streets and remove people from the streets and find them shelter. But as a state leader, I can make sure that we're providing the investments it takes to make sure any California who may be by some medical emergency or unexpected loss of a job is now on the verge of losing their home. I want to help them because it's easier to help you stay in your home than pulling you off the streets and trying to get you upright again. It costs way more to let them get on the streets. [32:08] And I guess Steve, you give Donald Trump an A for having denied our local governments the funding they need to tackle the homelessness crisis. Donald Trump has this habit of holding dollars from the state of California. Californians pay more in taxes to the federal treasury than any other state. Yet Donald Trump keeps holding our money back. He's holding money back for homelessness. He's holding 30 billion dollars hostage for the victims and survivors of the Altadena and Pacific Palisades fires because he wants his way on voting. He wants to restrict voting so he won't give that money up until we change our laws. [32:45] That chance, we're gonna fight to get our 30 billion for our victims and our survivors and we're gonna keep our people voting. [33:20] You've got to correct the record. Steve Hilton is saying that the $30 billion is being held up by the state. What about the $2 .5 billion that Gavin Newsom... I said $30 billion. You just said that in the state. Jake, let's clarify this because there are families here in LA who are still waiting for their assistance. From Gavin Newsom? and 30 billion dollars talk to any member of Congress, Republican or Democrat, 30 billion is waiting to go to Pacific Palisades and Altadena. Donald Trump doesn't wanna let it go because Donald Trump isn't getting his way on elections. [34:18] I'm going to vote no. I said that very clearly from the very beginning. Not because I don't agree with so many Californians who think that billionaires haven't paid their fair share because they haven't. It's that this is not the way to do tax policy. I'm the only one on the stage who's done tax policy. I'm the for working families I did it for making construction of affordable housing more easier to do I've done it for families with children I've given tax cuts I've also had to deal with raising revenue and what you don't do is you don't have a policy where it's a one -time tax and it isn't predictable and sustainable we need to have policy that everyone sees is fair it will sustain us going forward because we need to pay for our schools we need to pay for health care we need to pay for housing and we have to make it so that everyone is willing to do it. But no doubt, billionaires in California, too many of them are not paying their fair share. When you can pay a tax rate lower than a teacher, a firefighter, a nurse, you're not paying your fair share. [37:36] Thank you, sir secretary Sarah, I love these stories Steve you spin them all the time I guess it's from your experience being a talking head on Fox News You're so good at that even though they're not factual even they have nothing to do with reality Did Karen Bassett say that? Can we make sure that we don't get interrupted when we try to give responses? That was part of the rule, Steve. It would be helpful if you stopped interrupting. And I hope that's not gonna count against my time. Well, keep going, sir. Okay, so [38:03] Prop 39 is on the ballot. Prop 39 is an initiative that is backed by Donald Trump. He couldn't get his save act out of Congress, which tries to interfere in elections, so he's gone around the country and put initiatives on the ballot. In California, it's Prop 39. Steve Hilton is supporting the Trump back prop 39 that would make it hard for California's to vote We have to all vote no on 39 to send a clear message to Donald Trump and Steve Hilton that we want people to vote We don't want to make it tougher for them to vote mr. [41:23] You said I learned a lot today. Same here. [46:15] Dana, we had nearly eradicated measles. When I left HHS, you rarely heard of a case of measles. You rarely heard of a case of someone dying of measles. Today, children are dying of measles. Today, the spread of measles has reached a proportion we haven't seen since the 1960s, I believe. That's what happens when vaccine deniers take over. And this is what'll happen to California if you let someone who is willing to promote that type of attitude become governor of the state of California. We can't reward those who are willing to let families die. We know vaccines work. And we should continue to enforce, make it possible for us to have the vaccines available. Actually, I have to mention real quickly that one thing that Steve said is absolutely untrue. [47:03] We never forced anyone to get a vaccine. We don't have the power to do that at HHS, Steve. If you knew the law, you would recognize that. The states have the authority to decide who gets vaccinated in their states. Thank you, sir. Mr. [47:14] Did you give [47:26] Falsely. We didn't suggest that. The medical professionals who helped develop the vaccine And then he spoke out against it. Are the ones that decided what we should do with the vaccines, including for children. We never made a vaccine available for a child until the medical professionals and the science community said it was safe. You should know that because your friend, Donald Trump's HHS, oversees those agencies that make those decisions with working with the states. [48:25] We followed the science. This is the problem when you have politicians dictating what we should do in healthcare. When you have politicians telling the medical experts what we should do like on vaccines. We stayed away from trying to force anyone to do anything especially if it didn't follow the medical science. You are willing to let Donald Trump force people to follow your dictates. It's just like with a woman's right to choose whether she should have an abortion. You wanna be able to dictate whether or not a woman should be able to have an abortion. Let's stay with the [50:22] This is what happens when you get to use your own facts, these alternative facts that don't relate to the actual situation at hand. I won't get into it because I don't have enough time, but what I will tell you is this. In rural California, we're going to have hospitals closed. We're going to have community health centers closed. Doctors won't be able to provide services because of Donald Trump's cuts to pay for tax breaks for billionaires and large corporations. that trillion -dollar cut to health care, we're gonna make sure we don't kick people off of health care because it's not what you should do for families who need health care, and it's not what you should do to those providers, those doctors and those hospitals and those clinics that are willing to stay open, but they need to get paid. [51:12] So if he's gonna let me answer the question, I will answer it, because when I was secretary of healthy human services, we had a state, Georgia, that did have work requirements. And what we found was that the way Georgia was implementing those work requirements, it was kicking people off of Medicaid unjustly who did qualify for it. And so if you're gonna make these requirements that make people jump these hurdles when they do qualify for medical benefits, then you better make sure you do it right. And so this is gonna be a requirement that I as governor will have to work with and I will make it work because I'm not gonna kick people off of the health care rules. [52:28] Jake, first, we've lost some 50 ,000 jobs in Los Angeles and California from the film and movie industry. these are middle -class jobs. I'm not talking about the high -paid actors. I'm talking about the grips, the camera people, the people who build the sets. They make a decent living. Those jobs have left. We've got a fight to keep Hollywood in Hollywood and I've said I'll do everything I can to make sure that happens. Here's the rule. Pretty simple. If we give a tax credit, so long as we get more than one dollar back for that dollar in tax credit, we're to do it because Hollywood belongs here. We don't want it to be in Sydney, Australia. It shouldn't be Sydney wood. It shouldn't be in Toronto, Canada, not Toronto wood. It needs to be Hollywood and we'll fight to keep Hollywood business in Hollywood and in California. [54:10] First, he says that I have done nothing on Hollywood. I was in Congress, I was part of the team that enacted the first federal tax credit for film and movie production. So Steve, I was there 20 years ago when you weren't even in California. Secondly, when it comes to this water issue, quit using false statements. I won that case in court on water, not because I was trying to protect little fish. It's because Donald Trump was trying to impose his standards on California when it comes to water infrastructure. We have a right to make sure water in California is regulated by California. I sued and [55:11] We don't see our education system well coordinated. It is not working well. There's too much compliance required. What we have to do is make sure before we pass a child on, we're making sure that they are at grade level. we have to provide the tutoring that they need, we have to start earlier, we've started transitional kindergarten which gets a four -year -old into our schools, but too often when they're one, two, and three years of age, they're not being ready, prepared to get into our school system. So I would fight to make sure that we're working with our teachers because they're the most important people that will make sure their success for this child. I'll make sure that every public dollar, taxpayer dollar that we put in our schools and nine out of 10 kids in California go to public schools, that those taxpayer dollars stay in our public schools. Steve Hilton wants to send those public taxpayer dollars to private for -profit schools, not on my watch. We wanna make sure we let community schools thrive. Steve Hilton would kill those community schools by taking the money out of those communities and sending it to private for -profit institutions. We're not doing that. [57:01] Secretary Becerra? Well, he attacks teachers. He's made that very clear. He doesn't like teachers. I believe that the people who are supposed to train our kids should be treated like professionals. They are underpaid compared to professionals with similar education levels. He attacks them. He says they're doing the wrong thing for our kids. These are the people we put our children's futures in. We should treat them like real professionals and reward them like real professionals. That's what I'll do. Mr. Pelton.
+
+---
+snapshot_id: fafa0ac2-61c7-5173-8ad7-0acd26288adc
+source_kind: own-site (the person's own site or account)
+url: https://www.xavierbecerra2026.com/homelessness
+
+Homelessness - Xavier Becerra Contribute Now This is a break-glass moment – for our families, our neighbors, and folks all across our great state. Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other About Bio Endorsements Issues Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homelessness Film Industry Power Hour Wildfires Take Action News Room Store Contribute Volunteer About Bio Endorsements Issues Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homelessness Film Industry Power Hour Wildfires Take Action News Room Store Volunteer Contribute Homelessness California’s homelessness crisis is a moral emergency and a policy failure decades in the making, and it will not wait any longer. I have led coordinated national responses to this crisis as U.S. Secretary of Health and Human Services and Chair of the U.S. Interagency Council on Homelessness. I know what works and what does not. We have spent billions, and the results are not good enough. That is not a reason to give up; it is a reason to govern differently. This is not a housing crisis alone. It is a mental health crisis. People are dying on our streets because we have failed to treat it as such, and California voters understood that when they passed Proposition 1. I will implement every reform it authorizes, build thousands of treatment beds, and cut whatever red tape stands between the voters’ verdict and results on the ground. From day one, I will declare a housing emergency, direct agencies to eliminate process barriers, and launch public outcomes dashboards so Californians can see exactly where their money is going and what it is producing. No blank checks. Every dollar tied to results. Programs that fail will be defunded; programs that work will be scaled. Prevention is not a secondary strategy; it is the smartest investment this state can make. A few hundred dollars in rental assistance at the right moment can prevent homelessness and save tens of thousands in emergency response costs. California is home to half the nation’s unsheltered homeless population. We will expand shelter capacity and permanent housing, but local infighting and bureaucratic delays have gone on long enough. Communities that coordinate and produce results will be funded. Those that do not will face real consequences. California has the resources, the tools, and the moral obligation to do better. My administration will demand it. GUIDING PRINCIPLES Prevention Matters : My administration will invest in stopping homelessness before it starts, because that is the more humane and cost-effective thing to do. Targeted rental assistance, sometimes even just a few hundred dollars, can be enough to prevent homelessness, saving tens of thousands of dollars for the state and local communities and saving the dignity for the family who gets to stay housed. That is just a smart investment. Housing First, Paired with Care : My administration will deliver proven Housing First approaches, always paired, where needed, with behavioral health and addiction treatment. Accountability for Outcomes, Not Inputs : Tie every state dollar to results: people housed, not processes funded. POLICY AGENDA Governing for Results from Day One On my first day as Governor, I will issue an executive order declaring California’s housing shortage a state of emergency and directing every state agency to treat housing production and affordability as the paramount priority. My administration will launch public outcomes dashboards to track per-unit costs and 12-month housing retention metrics for all state funding. We will immediately expand rental assistance and eviction defense for those most at risk, including seniors, foster youth, and veterans. I will fully enforce California’s Tenant Protection Act, including its cap on excessive rent increases, just cause eviction standards, and relocation assistance for displaced tenants, as a critical front-line tool to prevent homelessness before it starts. Furthermore, I will prioritize funding for local agencies that coordinate effectively and produce measurable results, ensuring that every dollar spent is tied to success rather than bureaucracy. Strengthen Mental Health Infrastructure California’s voters passed Proposition 1 to get people suffering from mental illness and addiction off the streets and into treatment. Bond funds are flowing, beds are being built, and unsheltered homelessness dropped for the first time in 15 years. But deployment and results must go hand-in-hand. I will implement every reform Proposition 1 authorizes, cut whatever red tape stands between the voters’ verdict and results on the ground, and use every lever the law provides to hold local governments accountable. Invest in Prevention A few hundred dollars in rental assistance at the right moment can prevent homelessness and save tens of thousands in emergency response costs. I will establish a dedicated, stable targeted homelessness prevention funding stream within the state’s homelessness response, one that communities can plan around year over year that targets high-displacement neighborhoods and is tied to measurable reduction targets and local investment. I will fund rental assistance, eviction defense, and foreclosure prevention. Seniors, foster youth, and veterans will be prioritized first. Enforcing the California’s Tenant Protection Act and preserving local rent control ordinances consistent with the statewide framework that encourages continued housing construction while protecting the stability of existing housing stock, is also a key pillar of this prevention strategy. Prevention is not a secondary strategy; it is the smartest investment this state can make. Expand Shelter Access California is home to half of the nation’s unsheltered homeless population. The longer someone lives on the street, the less likely they are to ever leave it. My administration will expand shelter capacity as a bridge, not an endpoint, to reduce harm and accelerate the path to permanent housing. But we will not simply open the treasury. Every dollar of shelter funding will be tied to demonstrated performance: people moved off the streets, into safe shelter, and connected to services. Demand Local Coordination and Consequences for Failure Counties and Continuums of Care are essential partners, but too often they are defined by infighting rather than results. My administration will prioritize homelessness funding to communities that coordinate effectively and demonstrate outcomes. For programs and jurisdictions that are failing, there will be a mandatory playbook and real consequences for not following it. Collaboration is not optional when lives are at stake. Fund Results, Not Bureaucracy California has invested billions in homelessness. It is time to demand the outcomes Californians deserve. My administration will restructure state homelessness grants to require 12-month housing retention outcomes, publish per-unit cost dashboards for every funded program, and eliminate the administrative barriers that slow housing placements. We will measure what works, defund what does not, and scale what does. Up Next Film Industry Contribute Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other OR Volunteer About Issues Take Action News Room Store Privacy Policy Paid for by Becerra for Governor 2026
+
+---
+snapshot_id: aeb17e91-653c-52ef-aa4a-366d892c693f
+source_kind: transcript
+url: https://ontherecord.empowered.vote/meetings/77f91eb0-90c0-47d7-8c37-cda599ea643b
+
+# On the Record — Xavier Becerra (0f74219c-7d10-4d29-85fe-0f1d834df8a7) ## debate — California Governor Debate (NBCLA and Telemundo) - OTR page: https://ontherecord.empowered.vote/meetings/77f91eb0-90c0-47d7-8c37-cda599ea643b - Video: https://www.youtube.com/watch?v=UUOsiG5tkDU - Date on On the Record: 2026-05-07 - Kind: debate · Governor Debate (NBCLA and Telemundo) · California - Linked races: bc936a36-287c-4ffd-abd8-5e4fd798bae5 [6:01] Sure, Conan. We have to make sure we understand how many homes we need and you can't understand how many homes you need unless you know how many people are coming to California. I remember when my parents told me the story when they got here, they had $12 in their pocket, yet they got to live that California dream. They purchased a home. They were able to give my three sisters and I far more than they ever had. And that's what we have to give back to is giving every family that opportunity. I will make sure that down payment assistance programs are expanded under my watch because today California families are essentially buying a house. They're just buying it for the landlord because in their rental payments, they're essentially paying the mortgage. How about we do this? How about we help you get that last cog in the process of buying a house, the down payment. Then when you pay a monthly payment, it's not for rent, it's to own the home. How about we make sure Wall Street isn't the person you're bidding against when you're trying to buy that house. That is unfair when Wall Street can outbid you. Third, how about we streamline regs, make SQL work because SQL was meant to help protect communities, not to stop housing. [11:05] So I have called for a freeze of insurance rates for the very reason you pointed out. Most Californians don't understand why they're losing their insurance. My mom last year lost insurance coverage for a home she has that she had paid for for over 30 years. I don't understand why she's losing her insurance. I don't understand why all of a sudden her insurance company just dropped her without explanation. That is not fair. There are people still in the palisades and Alta Dena who haven't received payment. They haven't received the debt timeline. What [11:42] And Kathleen, I was going to get to that. I'm just trying to make sure we explain the problem because it's real for everybody. And that's why I'm calling for a freeze because those companies ought [11:50] to tell us. We are entitled to know why they continue to raise our rates, why they get out of dodge when the going gets tough. We have to make sure they are there when we need them. We have to make sure we go through that audit. And I will make sure that we base insurance on the rates based on risk and risk based on mitigation that's been done to reduce your risk. [20:42] Versus importing. Yes. [21:30] Democrat Mr. Steyer. We [21:36] This slow speed delivery of high speed rail. No, but a high speed delivery of high speed rail. Yes. [21:42] I [21:42] That means we get rid of all the bureaucracy that has caused all this litigation. We try to make the call. I don't think any of our money's worth. It's [21:55] Is that to me? Yes. I said, I don't want to do it the way it's been done because we've overspent, but yes, we're going to build high speed rail. We're going to build high speed rail. [28:06] Let me give a specific example. Right now, Hollywood is in dire condition because every place in the world wants to have their own Hollywood. We must fight to keep Hollywood here in Southern California because it creates so many great paying jobs. And so I will work with Hollywood. I will work with the industry. I will work with the legislature to make sure we fight back against those who are trying to steal our industry away from us. And that means whether it's the tax credit or making sure we graduate, the next generation of workers who can work in the entertainment industry, we will make it so attractive that they will not want to leave. But we have to make sure we're graduating the workforce for these industries to locate here. We have to create more public -private partnerships. So it's not just that private business that does it on its own, but it knows it's got a government that wants to work with it so they can establish their business here. And we want to make communities livable where the workforce that will come can know they can buy a house and they can afford to live here. If we do all those things, we'll attract business. And then what we have to do is balance our budget. And as someone who has had to balance a budget bigger than the state of California's budget, I will do that. [36:00] It's a state government scam. [36:05] So homelessness is also a mental health crisis. And we have to attack that straight on. That's why when I was secretary of health and human services, we established the 988 program, which functions like 911, but for mental health and suicide prevention. And it is working. We have to start getting people access to the treatment that they need. [36:25] But first and foremost, when it comes to those on the street, we have to have accountability by the folks who are getting those billions of dollars. We have to make sure that we scale the projects that work to get people off the streets and we eliminate those that are failing. But I will tell you this, I'm glad to hear some of my colleagues beginning to take up what I have said at the beginning. My job as governor, because I don't control the streets of the cities and the counties, is to make sure we prevent more Californians from becoming homeless. Because it costs far more to take you off the streets, pick you up, get you the services, and get you the temporary shelter than it does to help you get past that medical emergency or that lost job. Let's keep you in your housing. [41:00] You know, I am proud of my service as a member of Congress, as the attorney general fighting off Donald Trump, as the secretary who brought the country to the highest rate of insurance coverage in the nation's history. What I would ask is, what does a Fox News talking head know about running government? You've never balanced a budget the size of California, Steve. You've never had to worry about declaring a state of emergency the way I had to. I'm proud of my service, my public service. You made private profit. I was doing public service. [41:52] So I'm not sure what that had to do with homelessness, but calm down, Antonio. Calm down. [41:57] you what it had to do. [42:03] That's what it has to do with. [42:09] I'll tell you what We [42:14] we got 30 seconds to respond. Yeah, [42:17] I didn't get 30 seconds to respond to the attack by Mr. Villaregosa, so I would like my 30 seconds. I [42:27] So, [42:30] Trump lied about that, this whole situation with the migrant kids in 2024. The New York [42:35] Why don't you let me finish, Antonio? [42:37] Donald Trump campaigned against our Democratic candidate, Kathleen, I mean, Kamala Harris, vice president in 2024 using these lies. In 2026, now you have candidates like Antonio and Tom Steyer using these very lies. They were lies when Trump said two years ago, they're lies today. We protected kids. We did not let them be abused. Those were the employers, but stop lying. The facts are the facts. [43:04] hits. 26 Democrats condemned him. They said it was outrageous that he pushed kids out. What was outrageous was the expectation by the employers, [43:13] not the care that the United States has. Mr. Villaregosa, please. The assembly line. [44:09] So, Colleen, once again. Once again. [44:12] to move on. Wait, time out. The [44:23] Colleen, so long as I understand, if a candidate is attacked... No, it wasn't. It was up to them. [44:43] attack like that. I agree. [49:09] Please, [49:11] at least answer... You all said I was going to get to answer that question. I'm your enemy here. [49:16] Okay. May I then answer the question? [49:21] First, SB 54 of the Values Act, sanctuary law, I defended it against Donald Trump's attacks the first time he was president, and I beat him. That's why we still have that law in place. I stopped ICE from trying to force our law enforcement to do ICE raids, because I beat Donald Trump in court. As governor, I will investigate ICE, we will prosecute ICE, we will convict ICE if they have violated the law. And what I will tell Steve and Chad is that Chirla is one of the biggest defenders of immigrant rights in this nation. They deserve respect. I agree. [50:51] So once again, an attack. Do I get to respond to the false attack? [50:58] Those were Trump lies in 2024. And now that you're peddling them, Matt, they're still lies. Lies don't become facts because you're a Democrat and Trump was a Republican. You're just peddling a Republican's lie. I [51:11] or Ernie Eshoo were lying. And it was outrageous. If I could just finish with my time. [51:16] We stopped what Donald Trump was doing. Remember those days. Trump was putting kids in cages. Donald Trump was separating children from their parents. We stopped that. We took care of them. We protected those kids. We didn't do what Trump did. And we're not using lies. When it comes [56:05] Yes, safety yes, but safety first. [56:43] Yes, and it's an 11 on a scale of one to 10. you. [57:23] Enforce the law.
+
+---
+snapshot_id: d5bddfed-e2e1-5a64-91ec-10c94581c349
+source_kind: own-site (the person's own site or account)
+url: https://www.xavierbecerra2026.com/priorities/housing/
+
+Housing - Xavier Becerra Contribute Now This is a break-glass moment – for our families, our neighbors, and folks all across our great state. Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other About Bio Endorsements Issues Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homelessness Film Industry Power Hour Wildfires Take Action News Room Store Contribute Volunteer About Bio Endorsements Issues Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homelessness Film Industry Power Hour Wildfires Take Action News Room Store Volunteer Contribute Build more affordable housing. Make the California Dream possible. Making California More Affordable For too long, California simply hasn’t built enough homes, and working families have paid the price. Soaring rents. Overcrowding. Displacement. The California Dream of owning a home, building wealth, staying in the community you love, isn’t just slipping away. For too many, it’s already gone. I know this story from the inside. My father found work as a union construction worker, and built with his own hands the house I grew up in. That home gave my family a place in this country and gave my father a place in its economy. He taught me the dignity of hard work on my first construction jobs, alongside the values he carried across the border and poured into everything he built. That story, of someone who arrived with little and built something lasting, is what California used to promise. It is too rare today. Consider what we’ve allowed to happen. Californians pay some of the highest rents in the nation, and millions of them are spending so much of every paycheck on housing that there is almost nothing left for groceries, healthcare, or a child’s future. For the families living closest to the edge, housing costs aren’t just a burden. They are the difference between stability and the street. At the heart of it is a shortage of millions of homes – California has not built nearly enough homes, and that shortage is the engine driving costs beyond reach for family after family, pushing people out of their communities and too many out of housing altogether. This is not a personal failure. It is a policy failure, and it is the defining affordability crisis of our time. I have no illusions about what stands between California and the housing it needs. The cost of capital, the direction of interest rates, the broader forces of the national economy, these shape every builder’s decision and every family’s options, and no single office commands them. But a Governor is not powerless in the face of them either. Where the private market stalls, we can use the state’s financing tools, its public land, and its capacity to de-risk development to keep shovels in the ground. Where broken laws and bureaucratic delay are adding years and tens of thousands of dollars to the cost of every home built, we can fix that. Where cities are shirking their obligations, we will enforce the law. Where zoning still locks out affordable housing from entire communities, we will open it up. Where the permitting process takes longer than the construction itself, we will end that absurdity. What I cannot control, I will work around. What I can change, I will, from the first day I take office to the last. Every swing of every hammer will carry that message. As Governor, I will reopen the door that has been slammed shut on families like mine, families who do essential work, contribute to our communities, and deserve the chance to build something here. That is the California I am running to build. GUIDING PRINCIPLES More, For the Many. Our state cannot succeed if working people cannot afford to live here. As Governor, I will bring the anger of every person struggling to pay rent or unable to access housing into every decision I make. Good Homes, Good Jobs . Building at the scale this crisis demands means that California will create hundreds of thousands of new good jobs in construction. That is only possible with the wage and labor standards that working families deserve. We know it’s possible: during the years when California built the most housing in its history, it also had the highest number of union jobs in residential construction. It is time to restart that machine. Government Must Earn the Right to Lead. As we demand more from others, we must fix the delays, fragmentation and dysfunction within our own institutions. Every dollar and every day wasted in government is a cost directly added to the mortgage or rent checks of the people we are trying to help. Growth Must Not Displace. We can build at scale without collateral damage to the people we want to help. In fact, it is imperative we do so. As we pursue a California everyone can call home, I will protect renters, preserve existing affordable housing, protect the environment, and keep communities intact as we build. Building more and accomplishing these things are not competing goals. They are all essential. POLICY AGENDA Day One: Real Authority, Real Action On my first day as Governor, I will issue an executive order declaring California’s housing shortage a state of emergency and directing every state agency to treat housing production and affordability as the paramount priority. I will embed a senior housing delivery team across agencies that report directly to my office, whose sole job is removing obstacles to projects and identifying areas within state government that need reform so we can more swiftly deliver on housing commitments. Cabinet members and agency secretaries will coordinate, as they should, but this team will have the authority to act in furthering this priority and the direct line to my office to support that. Their first mission will be the nearly 40,000 affordable housing units sitting in approved projects across California, awaiting only a final tranche of funding to break ground. Everything will be on the table to close the funding gap – bond measures, state subsidies, public-private partnerships. These homes can and will be built, and when the funding is there, the team will identify, track and move every one of them. Cut the Cost of Building It costs too much to build a home in California, and that cost is passed on to Californians in the form of high rents and high home prices. High fees, fragmented approvals, and layers of regulatory compliance are leading causes. On my first day I will require my administration to identify cost reductions that can be made administratively and legislatively, and will work with the Legislature to comprehensively reform fees statewide. In California, building an apartment costs 2.3 times what it costs in Texas, largely because of process delay and fees. I will also work with the Legislature to end the use of impossibly high affordable housing mandates as a backdoor to kill housing for families – a tactic that some cities actually use to skirt their responsibilities. Under my administration, that abuse ends. To further build at scale, we will reform policy to unlock modular housing by creating scalable statewide uniformity in review, while creating stable union jobs. Together, my administration’s central focus will be to keep prices down for Californians and build at the speed we need. Enforce State Housing Law When I was California’s Attorney General, I pioneered legal strategies to help unblock housing projects, leading to historic wins for housing across the state. Since then, California has enacted even stronger reforms, but a law is only as good as our capacity to enforce it. All too often, cities can slow walk, litigate around or ignore their obligations. California must enforce these laws without exception and without favor. I will direct the California Department of Housing and Community Development to immediately identify cities reneging on their housing element commitments and commence enforcement action, including financial penalties where appropriate. I will expand the Housing Accountability Unit so that it can quickly answer every question of technical assistance where laws are unclear or bring enforcement actions where the law is being ignored. And, I will deepen the partnership between HCD and the Department of Justice to proactively monitor compliance wherever public dollars are at stake. We will use a carrot approach as well: cities meeting their obligations should be first in line for state resources. But we will not be naive enough to think a carrot is the only tool we need. Cities that obstruct housing they have already planned for will face real consequences. Communities should have a voice in this process but they should not have a veto over the obligation. And where accountability laws need strengthening or loopholes need closing, I will lead that work with the Legislature. Reform Zoning to Unlock Housing Supply The vast majority of California’s residential land still excludes affordable housing and apartments. My administration will pursue zoning reform, expand by-right approvals near jobs and transit, and improve the laws allowing entry-level ownership options like duplexes and small condos. Last year’s SB 79 created the zoning for more housing, especially affordable housing, near rail transit, critical to building the housing we need in the places where that housing reduces traffic and carbon emissions the most. But the vast majority of cities in California still effectively ban affordable housing – my administration will build off the success of SB 79 by seeking to end exclusionary zoning around more types of transit and in high-opportunity areas, where children have access to the best schools. My administration will support and defend the progress California has made on “missing middle” housing as well, by, for example, encouraging local governments to opt in to AB 1033, which allows ADUs to be sold as affordable condos. We will also build on the successes of SB 684, zoning more land for townhomes, which are the new popular starter home in much of California. We will expand that option to more Californians. Streamline Approvals and Make the Process Predictable Housing that is planned for on paper but never built is not a solution. My administration will deliver permits, not just plans. We will build on the foundation that SB 330 established, working to create a single predictable standard of review throughout California, and will defend and enhance the streamlining tools created by AB 130, reducing permitting delays and making approvals predictable for builders of all sizes, especially small builders like my father. As Governor, I will push the next phase: tightening litigation timelines, closing loopholes used to obstruct infill projects, and making it harder for bad actors to abuse the process, bringing that same discipline to state government as we have demanded of local governments. Every housing project seeking state review will receive a final response within a defined, clear timeline (e.g., 180 days), and our embedded housing teams will have my personal voice when they go to work every day looking for ways to unblock critically needed housing stuck in red tape. In San Francisco, it can take more than four years to get all the permits needed to build, about three years longer than it takes to actually start and finish construction. The path from submitted application to completed review should not take longer than the home takes to build. Under my administration, it won’t. Get the New Housing Agency Right Creating the California Housing and Homelessness Agency and the Housing Development and Finance Committee is the right structural move, but standing up a new agency is the beginning, not the end. The hard work of turning that framework into something that actually cuts costs and speeds production falls largely to the next governor. I have done this before. At HHS I managed an agency with a budget larger than the size of California’s entire state government, and I know what it takes to build a new entity into something that works: the staffing decisions, the interagency coordination, the accountability structures that keep it from drifting. As Governor, I will resource the Agency to succeed, set the production targets it will be held to publicly, and make clear that California’s housing crisis demands results, not just reorganization. Simplify the State Affordable Housing Funding Process Every additional public funding source a developer must assemble in order to build affordable housing adds four months to the timeline and $20,000 per unit in costs. Not because developers are inefficient, but because we built a system that forces them to navigate six, seven, or eight separate agencies and funding streams just to break ground. I watched the same dysfunction play out in health care, and at HHS we moved to fix it by consolidating programs, eliminating duplicative requirements, and holding agencies to unified goals. California’s affordable housing finance system needs the same treatment: a single coordinated state application process, unified state criteria, and funding. Reform the 7th RHNA Cycle Under my administration, the 7th Regional Housing Needs Allocation cycle will no longer function as a paper exercise. I will convene housing stakeholders and policy experts to transform RHNA from a planning requirement into a genuine driver of housing production, with real accountability for jurisdictions that fall short of their allocations. Expand the Path to Homeownership Owning a home is the California Dream, and too many families are being shut out not because they cannot afford the mortgage, but because they cannot save a down payment fast enough and because there are not enough homes to buy in the first place. I will expand California’s down payment assistance program, increase its funding, and broaden eligibility so more first-time buyers can access it faster. This program more than pays for itself: the state recovers its investment when families sell, recycling those dollars to help the next family. But helping families afford a home only solves half the problem if there are not enough homes to buy. Townhomes and small condos were once a standard entry point into homeownership for working families, and decades of zoning rules effectively regulated them out of existence. For too long, California’s laws have made it far easier to build apartments for rent than homes for sale, and I will reform those laws to change that, because the path to homeownership has to start with homes that are actually available to own. Protect Homeownership from Bulk Investors Institutional investors purchasing California single-family homes and converting them into permanent rentals shrink the inventory available to first-time buyers and drive coordinated pricing that goes unchecked for renters and buyers alike. Building more homes only solves the problem if those homes reach families, not corporate portfolios. I will work with the Legislature to make it harder for large institutional investors to compete with California families for homes. I will push for beneficial ownership disclosure on bulk purchases, public registries of institutional landlords, and stronger enforcement targeting price coordination in the housing market, because whether you’re renting or trying to buy, you deserve a market that works for people, not corporations. Stand Up for Renters and Enforce California’s Tenant Protections Building more housing and protecting the people in homes right now are not competing goals, they are both essential, and we must build more housing and ensure that growth does not push people out. California’s Tenant Protection Act gives us the tools to stop excessive rent increases, require just cause before a family loses their home, and guarantee relocation assistance for displaced tenants. I will enforce those protections fully and stand behind communities that have chosen to protect renters through local rent control, within the statewide framework that keeps housing construction moving forward. We can grow our housing stock and protect the homes people are in right now. What we cannot afford is to let speculation and inaction squeeze working families out while California catches up on supply, and that stops on day one. Keeping families housed is also a matter of prevention. California’s Homeless Housing Assistance and Prevention program has helped people move out of homelessness, but its funding has been cut, made one-time, and left unprotected, forcing localities to use prevention dollars just to keep shelter beds open. A few hundred dollars in rental assistance at the right moment can prevent a family from losing their home and save tens of thousands of dollars in downstream costs. As Governor, I would establish a dedicated, stable targeted homelessness prevention funding stream within the state’s homelessness response, one that communities can plan around year over year, tied to measurable reduction targets and local investment. Build a State Master Plan for Housing Affordability California’s housing system is fragmented, with no common strategy and no clear affordability goal. My administration will develop the first-ever California Housing Affordability Master Plan, setting a target of median-income families being able to afford median-priced homes, and unifying the state’s response across zoning, streamlining, fees, financing, and regulatory costs. Like the Climate Scoping Plan for emissions, the Housing Affordability Master Plan will give every department, agency, city, and stakeholder a shared framework to work toward. We will measure progress and hold ourselves accountable for results. Up Next Economy & Affordability Contribute Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other OR Volunteer About Issues Take Action News Room Store Privacy Policy Paid for by Becerra for Governor 2026
+
+---
+snapshot_id: e0a2e38b-bd56-55b9-b60c-3c18ac963576
+source_kind: own-site (the person's own site or account)
+url: https://www.xavierbecerra2026.com/priorities/ai/
+
+Artificial Intelligence - Xavier Becerra Contribute Now This is a break-glass moment – for our families, our neighbors, and folks all across our great state. Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other About Bio Endorsements Issues Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homelessness Film Industry Power Hour Wildfires Take Action News Room Store Contribute Volunteer About Bio Endorsements Issues Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homelessness Film Industry Power Hour Wildfires Take Action News Room Store Volunteer Contribute Artificial Intelligence California is where modern AI was built. The majority of the world’s leading AI companies are headquartered here, and this technology holds real promise to improve the lives of Californians: earlier disease detection, faster permitting, shorter lines at the DMV, and breakthroughs in medicine and science, once the stuff of imagination. That is the promise of progress, and California has always embraced progress. But California cannot accept technology moving so fast that a worker’s right to make a living and be treated with dignity is left behind, or that a child’s safety comes second to profit, or that the technology poses catastrophic risks to public safety. I am determined to channel this technology for human benefit, not as an engine of private wealth for the few, but as a force that lifts every Californian. If this technology transforms the economy as rapidly as many predict, the government must be ready to act: adjusting tax, spending, and regulatory priorities, and doing whatever it takes to keep people employed,economically secure, and safe. The gains of this moment will not be allowed to accrue only to those already at the top. I have taken on the most powerful industries in this state and won, and I will bring that same resolve to any entity that puts profit ahead of people in the age of AI. My approach is grounded in partnership with the technology sector, with workers, and with the communities whose lives this technology will shape. I believe responsible innovation and strong guardrails are not in tension, but in balance. California has shown that before, and we will show it again. With the federal government AWOL on the field — and that must change — California must set the standard. As Governor, I will work with labor, industry, safety experts, and impacted communities to get that done. California is a laboratory of innovation, and we should take pride in what the bright minds of this state have built. The question is never whether to innovate, it’s whether we have the leadership to make sure innovation works for everyone. I intend to answer that question and to make sure no Californian is left on the outside of this moment looking in. GUIDING PRINCIPLES Innovation That Works for Everyone. California built this technology, and California should benefit from it. AI should broaden opportunity, not concentrate it. My administration will pursue policies that help businesses grow, empower workers, and ensure the gains of this moment reach every community, not just the ones already at the top. Accountability First, With Industry at the Table. Through a process that includes industry input but is not captured by it, we will set firm guardrails around real harms, including threats to critical infrastructure, child safety, and harms that could emerge when AI accelerates dangerous capabilities or operates beyond human oversight. Workers Must Share in the Gains. The most valuable asset of our economy is our workers. They will be my priority. Technology should lift workers up, not leave them behind. Workforce investment and transition support are not barriers to progress; they are what make progress sustainable. A California That Brings Everyone Along. Opportunity requires access, and access requires partnership. My administration will work directly with the industry that built this technology to ensure every Californian, in every zip code, has the tools and knowledge to participate in this moment. POLICY AGENDA Expand AI Literacy for Every Californian AI literacy means understanding how AI functions, recognizing its benefits and risks, and using it safely and effectively, and right now that knowledge is not evenly distributed. My administration will work through California’s public schools, libraries, and community colleges to ensure every Californian, regardless of zip code or background, has the tools to participate in this moment. Community institutions are already serving as vital hubs for AI skills training, and my administration will resource and scale that work in partnership with industry, so the communities historically left behind by technological change are at the front of the line this time. Leverage AI to Tackle California’s Most Intractable Problems California faces challenges that have resisted decades of conventional policy: homelessness, housing affordability, climate adaptation, and a health care system that reaches some communities far better than others. My administration will actively partner with the technology sector and research institutions to direct AI toward these problems, deploying it inside state government to cut permitting delays, improve benefits delivery, and find efficiencies that have long eluded us, while ensuring every deployment is transparent, audited, and developed alongside the workers it affects. Responsible AI in State Government AI has real potential to improve how California delivers services: faster permitting, earlier detection of public health risks, and more accessible benefits navigation. My administration will pursue that potential with full transparency and rigorous evaluation. Every California civil servant whose role is affected by automation should have a voice before that decision to deploy is made, not after. And every AI system deployed by a state agency will be subject to an independent audit. Track and Respond to AI’s Economic Impact Automation is already eliminating jobs in measurable numbers, and the advances of artificial intelligence are accelerating both the pace and the scope of that change. The state’s existing labor market infrastructure will be directed to continuously track AI’s effects on wages, employment, and sector-level displacement, with findings feeding directly into workforce investment decisions and, where the data demands it, broader policy intervention to ensure that workers come first and the gains of this technology are broadly shared with all Californians. Workforce Investment and Transition Support Displacement without support is abandonment. I will work with the Legislature, the California public education system and industry partners to build accessible, stackable workforce programs that prepare Californians for the AI economy and support workers navigating role changes. The goal is a skilled workforce that benefits employers and workers alike, with real, reachable transition support, not plans that exist only on paper. Fund CalCompute Startups, researchers, and public institutions should not be locked out of frontier AI infrastructure. I will fund CalCompute fully and make it operational, ensuring it delivers on its promise of broad, equitable access to AI infrastructure. Data Centers, Clean Energy, and Ratepayer Protection California’s electric ratepayers must come out winners from the growth of advanced computing infrastructure. I will pursue an economic-forward standard: data centers that operate in California add value to our current energy infrastructure, are powered with clean energy, cover the costs of their own energy needs, and meet environmental performance disclosure requirements. In return, my administration will improve data center permitting programs and provide the policy certainty industry needs to invest and grow in California and the technological opportunities of tomorrow. Enforce & Strengthen California’s AI Standards California has the nation’s strongest AI safety laws. I will ensure existing requirements are actively enforced, close the gaps that allow bad actors to evade accountability, and work closely with technologists, workers, industry and communities to review, track and strengthen standards as the technology evolves. Good rules mean nothing without monitoring and enforcement. Protect Children and Families Child safety and well-being must be foremost in the formulation of California’s AI policy. AI products accessible to children carry real risks: content promoting self-harm and suicide, manipulative design that exploits adolescent psychology, and AI-generated personas presented as real. I will direct the full resources of my Administration and use its platform to hold accountable any company willing to put profits ahead of children’s safety. Transparency in Automated Decision-Making Workers and consumers deserve to know when consequential decisions about them are shaped by algorithms, and to have meaningful recourse. My administration will pursue transparency and human review standards for high-stakes automated decisions that significantly affect a person’s livelihood, health, housing, or freedoms that are clear, proportionate, and workable. Build a National Framework The Trump administration has abdicated federal responsibility on AI governance, leaving a patchwork of state laws, or no laws at all. This ultimately protects no one. A national framework is essential, and California cannot wait for Washington to act. I will work across party lines to push states – red and blue – to adopt California standards and create a national framework. Strong standards and a thriving AI sector don’t have to be in conflict, and California is fully capable of setting the gold standard. Up Next Homelessness Contribute Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other OR Volunteer About Issues Take Action News Room Store Privacy Policy Paid for by Becerra for Governor 2026
+
+---
+snapshot_id: 4234b62e-6d3b-5ab8-b8c7-2d1c451f9fd6
+source_kind: own-site (the person's own site or account)
+url: https://www.xavierbecerra2026.com/priorities/homelessness/
+
+Homelessness - Xavier Becerra Contribute Now This is a break-glass moment – for our families, our neighbors, and folks all across our great state. Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other About Bio Endorsements Issues Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homelessness Film Industry Power Hour Wildfires Take Action News Room Store Contribute Volunteer About Bio Endorsements Issues Health Care Fighting Donald Trump Housing Economy & Affordability Energy & Utilities Disaster Preparedness Artificial Intelligence Homelessness Film Industry Power Hour Wildfires Take Action News Room Store Volunteer Contribute Homelessness California’s homelessness crisis is a moral emergency and a policy failure decades in the making, and it will not wait any longer. I have led coordinated national responses to this crisis as U.S. Secretary of Health and Human Services and Chair of the U.S. Interagency Council on Homelessness. I know what works and what does not. We have spent billions, and the results are not good enough. That is not a reason to give up; it is a reason to govern differently. This is not a housing crisis alone. It is a mental health crisis. People are dying on our streets because we have failed to treat it as such, and California voters understood that when they passed Proposition 1. I will implement every reform it authorizes, build thousands of treatment beds, and cut whatever red tape stands between the voters’ verdict and results on the ground. From day one, I will declare a housing emergency, direct agencies to eliminate process barriers, and launch public outcomes dashboards so Californians can see exactly where their money is going and what it is producing. No blank checks. Every dollar tied to results. Programs that fail will be defunded; programs that work will be scaled. Prevention is not a secondary strategy; it is the smartest investment this state can make. A few hundred dollars in rental assistance at the right moment can prevent homelessness and save tens of thousands in emergency response costs. California is home to half the nation’s unsheltered homeless population. We will expand shelter capacity and permanent housing, but local infighting and bureaucratic delays have gone on long enough. Communities that coordinate and produce results will be funded. Those that do not will face real consequences. California has the resources, the tools, and the moral obligation to do better. My administration will demand it. GUIDING PRINCIPLES Prevention Matters : My administration will invest in stopping homelessness before it starts, because that is the more humane and cost-effective thing to do. Targeted rental assistance, sometimes even just a few hundred dollars, can be enough to prevent homelessness, saving tens of thousands of dollars for the state and local communities and saving the dignity for the family who gets to stay housed. That is just a smart investment. Housing First, Paired with Care : My administration will deliver proven Housing First approaches, always paired, where needed, with behavioral health and addiction treatment. Accountability for Outcomes, Not Inputs : Tie every state dollar to results: people housed, not processes funded. POLICY AGENDA Governing for Results from Day One On my first day as Governor, I will issue an executive order declaring California’s housing shortage a state of emergency and directing every state agency to treat housing production and affordability as the paramount priority. My administration will launch public outcomes dashboards to track per-unit costs and 12-month housing retention metrics for all state funding. We will immediately expand rental assistance and eviction defense for those most at risk, including seniors, foster youth, and veterans. I will fully enforce California’s Tenant Protection Act, including its cap on excessive rent increases, just cause eviction standards, and relocation assistance for displaced tenants, as a critical front-line tool to prevent homelessness before it starts. Furthermore, I will prioritize funding for local agencies that coordinate effectively and produce measurable results, ensuring that every dollar spent is tied to success rather than bureaucracy. Strengthen Mental Health Infrastructure California’s voters passed Proposition 1 to get people suffering from mental illness and addiction off the streets and into treatment. Bond funds are flowing, beds are being built, and unsheltered homelessness dropped for the first time in 15 years. But deployment and results must go hand-in-hand. I will implement every reform Proposition 1 authorizes, cut whatever red tape stands between the voters’ verdict and results on the ground, and use every lever the law provides to hold local governments accountable. Invest in Prevention A few hundred dollars in rental assistance at the right moment can prevent homelessness and save tens of thousands in emergency response costs. I will establish a dedicated, stable targeted homelessness prevention funding stream within the state’s homelessness response, one that communities can plan around year over year that targets high-displacement neighborhoods and is tied to measurable reduction targets and local investment. I will fund rental assistance, eviction defense, and foreclosure prevention. Seniors, foster youth, and veterans will be prioritized first. Enforcing the California’s Tenant Protection Act and preserving local rent control ordinances consistent with the statewide framework that encourages continued housing construction while protecting the stability of existing housing stock, is also a key pillar of this prevention strategy. Prevention is not a secondary strategy; it is the smartest investment this state can make. Expand Shelter Access California is home to half of the nation’s unsheltered homeless population. The longer someone lives on the street, the less likely they are to ever leave it. My administration will expand shelter capacity as a bridge, not an endpoint, to reduce harm and accelerate the path to permanent housing. But we will not simply open the treasury. Every dollar of shelter funding will be tied to demonstrated performance: people moved off the streets, into safe shelter, and connected to services. Demand Local Coordination and Consequences for Failure Counties and Continuums of Care are essential partners, but too often they are defined by infighting rather than results. My administration will prioritize homelessness funding to communities that coordinate effectively and demonstrate outcomes. For programs and jurisdictions that are failing, there will be a mandatory playbook and real consequences for not following it. Collaboration is not optional when lives are at stake. Fund Results, Not Bureaucracy California has invested billions in homelessness. It is time to demand the outcomes Californians deserve. My administration will restructure state homelessness grants to require 12-month housing retention outcomes, publish per-unit cost dashboards for every funded program, and eliminate the administrative barriers that slow housing placements. We will measure what works, defund what does not, and scale what does. Up Next Film Industry Contribute Click on an option to get started. If you've saved your payment information with ActBlue Express, your donation will go through immediately. $5 $10 $25 $50 $100 Other OR Volunteer About Issues Take Action News Room Store Privacy Policy Paid for by Becerra for Governor 2026

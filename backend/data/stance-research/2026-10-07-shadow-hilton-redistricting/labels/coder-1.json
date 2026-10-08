@@ -1,0 +1,122 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "ca04109b-5550-5324-9c11-56674cdd52ab",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says politicians shouldn't draw their own maps and backs California's citizens independent districting process, but names neither 'no elected officials at any level' (rung 1) nor 'equal representation from both major parties' (rung 2).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ba1c4bc2-10ca-599c-9973-f2f6255b9283",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-10-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Same interview content: maps out of politicians' hands and into 'the people'; announces a planned lawsuit, which is his own words about a future act, not a record.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f3e19e80-e485-5685-abff-45edd29d705c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-10-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Duplicate of the same CBS interview text as ba1c4bc2; one occasion, not an independent source.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "937b21ad-8fd9-5710-a8bf-22e5c53344b5",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says he opposed Prop 50 and argued in court it was unconstitutional; the complaint itself is not in the sources, so this is own words, showing only opposition to legislature-drawn mid-decade maps.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "04da586e-0994-5298-a1d2-c7ad2760457b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-04-01",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview on taxes, the legislative supermajority and abortion; nothing on who draws district maps.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Hilton says \"politicians shouldn't draw their own maps\" and praises taking map-drawing \"out of the hands of the politicians\" through California's citizens independent districting process. That puts him on the independent-commission side, against legislature-drawn maps. But he never says whether he wants a commission with \"no elected officials involved at any level\" or one \"with equal representation from both major parties\", so the evidence does not choose between those two rungs.",
+      "needs_source": [
+        "Hilton's filed federal complaint challenging Proposition 50 (2025), to read its substantive claim"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "ca04109b-5550-5324-9c11-56674cdd52ab",
+          "text": "We all agree, I think, that politicians shouldn't draw their own maps. I mean, that's obviously wrong and corrupt.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "ca04109b-5550-5324-9c11-56674cdd52ab",
+          "text": "Texas didn't change its constitution to take the power to draw the maps out of the hands of the politicians, put it in the hands of the people, which we did here with the two ballot initiatives in 2008 and 2010 um to set up the citizens independent districting uh process.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "937b21ad-8fd9-5710-a8bf-22e5c53344b5",
+          "text": "I think prop 50 was I mean, I totally disagree to try to stop it. It's unconstitutional and so on, and made those arguments in court.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

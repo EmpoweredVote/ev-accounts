@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "407614a8-ba2c-4145-8224-233655e6ac3f",
+      "served_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+      "passages": [
+        {
+          "snapshot_id": "fc592247-1409-5884-ba57-666000e5fa44",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "He describes Trump's and Sanders's 2015-16 arguments against low-wage immigration ('closing the border'); it is about immigration and wages, not who may claim asylum, and states no asylum clause of any rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only border passage is Hilton's account of the 2015-16 'open doors, open borders' argument about low-wage immigration, which is adjacent to this ladder and names no position on whether people who cross can claim asylum. None of the policy pages supplied address asylum, so no rung (from 'Give everyone who crosses the border a fair asylum hearing' to 'End asylum and quickly turn back anyone who crosses illegally') is evidenced.",
+      "needs_source": [
+        "Steve Hilton's own words (campaign policy page, questionnaire or debate answer) on asylum at the border or on border crossings"
+      ],
+      "quotes": []
+    }
+  ]
+}

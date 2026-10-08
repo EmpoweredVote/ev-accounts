@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "topic_key": "ranked-choice-voting",
+    "topic_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+    "served_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+    "question_number": 60,
+    "title": "Ranked-Choice Voting and Electoral Method",
+    "question_text": "How should votes be cast and counted in elections?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Replace winner-take-all elections with proportional ranked-choice voting \u2014 ranked ballots fill several seats at once, so seats reflect how everyone voted."
+      },
+      {
+        "value": 2,
+        "text": "Adopt ranked-choice voting for single-winner offices: voters rank candidates, and if a top choice can't win, the vote shifts to the next choice until someone has a majority."
+      },
+      {
+        "value": 3,
+        "text": "Allow ranked-choice voting where communities choose it, while keeping single-choice voting as the standard."
+      },
+      {
+        "value": 4,
+        "text": "Keep single-choice voting and oppose adopting ranked-choice voting, but stop short of banning it."
+      },
+      {
+        "value": 5,
+        "text": "Ban ranked-choice voting by law."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

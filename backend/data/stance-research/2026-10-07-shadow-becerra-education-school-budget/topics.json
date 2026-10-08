@@ -1,0 +1,41 @@
+[
+  {
+    "topic_id": "49f0b171-2ddf-4e68-887f-0ba78a2562f1",
+    "topic_key": "education-school-budget",
+    "topic_revision_id": "0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc",
+    "served_revision_id": "0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc",
+    "question_number": 52,
+    "title": "School Budget and Spending Priorities",
+    "question_text": "How should schools set spending levels and decide whether to raise more revenue?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Raise taxes to significantly increase school funding"
+      },
+      {
+        "value": 2,
+        "text": "Increase funding modestly to keep pace with costs, without raising taxes"
+      },
+      {
+        "value": 3,
+        "text": "Hold funding flat at current levels"
+      },
+      {
+        "value": 4,
+        "text": "Cut administrative overhead to lower costs while protecting classroom funding"
+      },
+      {
+        "value": 5,
+        "text": "Cut school funding significantly to reduce the taxes residents pay"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true,
+    "own_words_levels": [
+      "federal"
+    ]
+  }
+]

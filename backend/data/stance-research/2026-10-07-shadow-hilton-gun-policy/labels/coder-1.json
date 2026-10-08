@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "bdd72c13-8ad2-51a4-bba1-19d7cbfa3c00",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign policy page written in the third person (\"Steve Hilton will...\"), so V1 makes it a characterization of a promise; its content (an executive order on compliance, consistent concealed-carry permitting, a review of which laws are unconstitutional) only shows the anti-restriction side and names no repeal or permitless carry.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "43da1a1f-50af-5ef9-b4b6-9644700a64ef",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-05-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The debate transcript excerpts contain nothing about firearms.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only on-question source is the campaign's third-person page \"Restoring Second Amendment Rights in California\". It is a characterization, not his own words. Even read as his own words, it shows only the side against restrictions. It names no repeal of major restrictions and no permitless carry (rung 5). It also does not say \"no new restrictions\" (rung 4).",
+      "needs_source": [
+        "Steve Hilton's own first-person words (debate answer, questionnaire, interview) on the assault-weapons ban, new gun restrictions, or permitless carry"
+      ],
+      "quotes": []
+    }
+  ]
+}
