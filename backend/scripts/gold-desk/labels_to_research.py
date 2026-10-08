@@ -138,7 +138,12 @@ for b in spec['batches']:
     for idx, u in enumerate(urls[:3]):
       sid = next(s for s in rests if snaps[s]['url'] == u)
       p, text = passages.get(sid, {}), snaps[sid]['snapshot_text']
-      snip = next((w for w in (window(text, p.get(f)) for f in ('provision_quote', 'actor_quote', 'tally_quote')) if w), None) or window(text, surname)
+      # A statement passage has no provision/actor/tally quote; its words are the row's `quotes` for that
+      # snapshot. Without them the window fell back to the page opening and the gate refused the row
+      # (quote-not-in-snippet): Wein / healthcare, 2026-10-07.
+      stmt = [q.get('text') for q in row.get('quotes', []) if q.get('snapshot_id') == sid and q.get('text')]
+      snip = next((w for w in (window(text, p.get(f)) for f in ('provision_quote', 'actor_quote', 'tally_quote')) if w), None) \
+        or next((w for w in (window(text, q) for q in stmt) if w), None) or window(text, surname)
       if snip: evidence.append({'full_name': full_name, 'topic_key': tk, 'source_url': u, 'snippet': snip, 'snippet_index': '1'})
       # A second window around the instrument's number, so the snippets name the bill the reasoning names.
       ins = instrument_window(text, p.get('instrument'))
