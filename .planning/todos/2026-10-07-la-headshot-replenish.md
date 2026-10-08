@@ -41,7 +41,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 
 | # | Person | Race | Defect |
 |---|--------|------|--------|
-| 7 | ~~**Barri Worth Girvan**~~ ✅ **DONE 2026-10-07** (`CC_0198`) | CD 3 | **White rectangle burned into the top-right corner** — a compositing artifact, visible to a voter. |
+| 7 | ~~**Barri Worth Girvan**~~ ✅ **DONE 2026-10-07** (`CC_0198`, superseded by `CC_0199`) | CD 3 | **White rectangle burned into the top-right corner** — a compositing artifact, visible to a voter. |
 | 8 | **John McKinney** | City Attorney | Full-length walking shot. Head ≈12% of frame. |
 | 9 | ~~Timothy Gaspar~~ ✅ **DONE 2026-10-07** (`CC_0197`) | CD 3 | Half-body, head small, busy signage behind. **Borderline.** |
 
@@ -198,6 +198,35 @@ edge copy. Confirm removal with an authenticated read or a bucket listing, never
 
 Rejected and recorded: Ballotpedia holds a larger file (1213×1574) whose alt text names her, but it
 is a half-body street shot with the head at ~12% of frame; cropped tight it yields about 400×500.
+
+### 2026-10-07, batch 4 — Girvan again (`CC_0199`, supersedes `CC_0198`)
+
+**Operator wanted the BALLOTPEDIA photograph.** I had read "go with the alternative" as "use a
+neutral background" when it meant "use the other source", and `CC_0198` is what that misreading
+shipped. Now live: `ballotpedia-api4/files/DSC4920_20260714_204927_31330_1.jpeg` (1213×1574)
+cropped 4:5 to **720×900**, head 44.4%, eye line 27.8%, chroma 37.4. A pure crop — **nothing
+composited**, so the "this image is composited" caveat is retired.
+
+### 🔴 I ARGUED AGAINST THIS SOURCE ON A NUMBER I NEVER MEASURED
+
+Batch 3 recorded that the Ballotpedia file had "the head at roughly 12% of the frame" and would
+"crop to about 400×500". Both figures were eyeballed off a contact-sheet thumbnail. **Measured on
+the file: the head is 400 px of 1574 — 25.4% — and it crops to 720×900, LARGER than the 680×850
+composite that was shipped instead.** A rejection is a measurement, not an impression; if a source
+is being ruled out on size, measure it at the origin before writing the number down.
+
+### 🔴 MEASURE THE HORIZONTAL CENTRE. DO NOT READ IT OFF A GRID BY EYE.
+
+Twice in this batch I misread the x axis of a labelled grid and cut a face to the edge of the
+frame — once for Hochman, once for Girvan. Both times the labels were in source pixels while I was
+judging positions on a resized render.
+
+▶ **Use a skin-tone column-density centroid across the eye band** (y from about the brow to the
+mouth). For Girvan it returned x=622 against the 430 I had guessed. Assert the result: the shipped
+crop has the face centre at exactly 50.0% of the width.
+
+▶ **Look at the crop itself before anyone else does.** The card simulation caught the first bad
+Girvan crop, and a plain side-by-side caught the bad Hochman one.
 
 ## Notes
 
