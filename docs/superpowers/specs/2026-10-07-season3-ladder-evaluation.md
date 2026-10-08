@@ -54,11 +54,13 @@ exists, and the publish guard raises `REPOINTING_NO_REASONING`).
    the same topic is accepted.
 2. ~~**The draft Season 3 ladder rulebook (L1–L10).**~~ **Ruled 2026-10-08** — see "Rulebook rulings"
    below. Every topic section in this worksheet now has to be read against those rules.
-3. **The 13 chained topics.** Under the default rule, a moving map blanks **every** Season 2 row on
+3. ~~**The 13 chained topics.**~~ **Settled 2026-10-08** by the carry-forward rule (group B carries).
+   Original note: Under the default rule, a moving map blanks **every** Season 2 row on
    these topics (0 rows map), including 117 seated `transportation-priorities` rows and 97 seated
    `gun-policy` rows. Accept that, or extend CA_0305 to map through the clarifying revisions in
    between. The findings doc (Rule detail) lists that extension as a possible later change.
-4. **Season 1-only people on expensive topics.** More than 1,000 people per topic in Group 5 (and
+4. ~~**Season 1-only people on expensive topics.**~~ **Settled 2026-10-08** by the carry-forward rule
+   (same-version carries flagged; older-version blanks). Original note: More than 1,000 people per topic in Group 5 (and
    4 chained topics) show a Season 1 position today. A moving map blanks them all. Confirm this is
    intended per topic, or prefer identity/clarifying where the defect allows it.
 5. **CA_0302 (own-words / no-lever, ruling 2026-10-06).** Does it change any ladder's scope? Rungs
@@ -156,11 +158,37 @@ ADR 0005/0006 are Chris Cantrell's. Reviewed with him using a plain-language sum
 - **Empty spoke:** no per-spoke reason for voters (noise); at most a note on the season itself.
 - **Later, not Season 3:** a season selector showing a person's stance per season (like Treasury
   Tracker's year switch).
-- ⚠ **Open tension:** Cantrell's "carry research forward when it applies" is wider than the accepted
-  default rule (CA_0305), which maps only Season 2 rows on the current revision and blanks every
-  Season 1-only person and every Season 2 row on a chained topic. Whether to extend the rule
-  (rulings owed 3 and 4) is still undecided.
+- **Carry-forward:** see "Carry-forward rule" below (ruled the same day; settles rulings owed 3 and 4).
 - Still owed: who edits the ADR text, and marking ADR 0006 accepted. §7 (On the Record evidence base) is a separate spec.
+
+### Carry-forward rule (Chris Andrews, 2026-10-08) — replaces the CA_0305 default rule, not built yet
+
+Applies only to a topic whose Season 3 change is **substantive** (a moving rung_map). Identity and
+clarifying topics carry every seat already. Seat counts are non-blank answers on the 61 Season 3
+topics, prod 2026-10-08.
+
+| group | who | seats | ruling |
+|---|---|---:|---|
+| A | Season 2 answer on the current revision, with reasoning | all non-chained Season 2 seats | **carry** to `rung_map[value]` (as CA_0305) |
+| B | Season 2 answer on an older revision **of the current version** (the 13 chained topics; only clarifying steps between) | 394 | **carry** through the clarifying steps, then the rung_map |
+| C | Season 1-only answer **on the current version** (only clarifying changes since) | 13,429 | **carry, flagged** "carried from Season 1" so research re-checks it over time, pilot cities first |
+| D | Season 1-only answer on an **older version** (Season 2 changed the ladder substantively) | 14,007 | **blank** — already hidden by version-aware reads (PR #929), so nothing visible is lost |
+
+- **Why:** the 2026-08-28 rule says a clarifying change keeps seats; blanking B and C contradicted it
+  and would remove about 13,800 chairs voters see today. Chris Cantrell asked that research be
+  carried forward where it still applies (call, 2026-10-08).
+- **Exception:** `public-safety-approach` rev 4 is labelled clarifying, but its rationale says chairs 2
+  and 3 "shifted meaning". Seats on those two rungs that pass through rev 4 are **not** carried: they
+  blank or go to re-audit.
+- **Caution on C:** Season 1 evidence is often weaker (bare yes votes). All 27,436 Season 1-only seats
+  have a reasoning row, so reasoning does not separate strong from weak rows; the flag is what
+  lets research find them.
+- **Build owed:** a `CA_` migration extending `inform.repoint_season_answers` (same-version source
+  rows from Season 1 and Season 2, the public-safety exception, the Season 1 flag), with the same
+  rolled-back dry run CA_0305 used. Where the flag lives is a design choice for that migration.
+- **Effect on this worksheet:** the "S2 would map" column and the chained group (Group 6) were
+  computed under CA_0305. Under this rule the chained topics are no longer a special cost, and the
+  cost of a substantive change is the group D count per topic (Appendix C).
 
 ## Cost groups
 
@@ -2481,6 +2509,57 @@ Nothing below is built here.
   `claude/s2-seating-analysis`). Ruling item 2 above depends on it.
 - **Re-point runs.** `inform.repoint_season_answers(season, topic)` runs once per substantive topic,
   as the last step before the open (findings doc, "Re-running").
+
+## Appendix C. Season 1-only seats by ladder version (carry-forward groups C and D)
+
+Non-blank Season 1 answers with no Season 2 row, on Season 3 topics (prod, 2026-10-08). Group C
+carries (flagged) on a substantive change; group D blanks and is already hidden by version-aware
+reads. Every one of these rows has a reasoning row.
+
+| topic | Season 1-only seats | C: same version (carry, flagged) | D: older version (blank) |
+|---|---:|---:|---:|
+| `taxes` | 1,901 | 1,901 | 0 |
+| `climate-change` | 1,816 | 0 | 1,816 |
+| `abortion` | 1,809 | 1,809 | 0 |
+| `healthcare` | 1,692 | 1,692 | 0 |
+| `civil-rights` | 1,493 | 0 | 1,493 |
+| `voting-rights` | 1,441 | 0 | 1,441 |
+| `deportation` | 1,293 | 0 | 1,293 |
+| `fossil-fuels` | 1,291 | 1,291 | 0 |
+| `school-vouchers` | 1,202 | 0 | 1,202 |
+| `medicare/aid` | 1,121 | 1,121 | 0 |
+| `trans-athletes` | 834 | 834 | 0 |
+| `campaign-finance` | 827 | 0 | 827 |
+| `public-safety-approach` | 795 | 795 | 0 |
+| `childcare` | 755 | 0 | 755 |
+| `religious-freedom` | 669 | 0 | 669 |
+| `economic-development` | 665 | 0 | 665 |
+| `tariffs` | 654 | 654 | 0 |
+| `homelessness` | 627 | 0 | 627 |
+| `redistricting` | 627 | 627 | 0 |
+| `ai-regulation` | 596 | 0 | 596 |
+| `social-security` | 586 | 0 | 586 |
+| `local-immigration` | 551 | 551 | 0 |
+| `ukraine-support` | 456 | 456 | 0 |
+| `homelessness-response` | 438 | 0 | 438 |
+| `growth-and-development` | 426 | 0 | 426 |
+| `transportation-priorities` | 425 | 425 | 0 |
+| `misinformation` | 357 | 0 | 357 |
+| `residential-zoning` | 351 | 351 | 0 |
+| `local-environment` | 342 | 0 | 342 |
+| `jail-capacity` | 287 | 287 | 0 |
+| `judicial-criminal-justice` | 281 | 0 | 281 |
+| `data-centers` | 279 | 279 | 0 |
+| `rent-regulation` | 226 | 226 | 0 |
+| `city-sanitation` | 110 | 110 | 0 |
+| `judicial-interpretation` | 71 | 0 | 71 |
+| `judicial-access-to-justice` | 48 | 0 | 48 |
+| `judicial-transparency` | 34 | 0 | 34 |
+| `judicial-government-deference` | 22 | 0 | 22 |
+| `judicial-prosecution-priorities` | 20 | 20 | 0 |
+| `judicial-police-accountability` | 12 | 0 | 12 |
+| `judicial-bail-pretrial` | 6 | 0 | 6 |
+| **total** | 27,436 | 13,429 | 14,007 |
 
 ## Reproduction
 
