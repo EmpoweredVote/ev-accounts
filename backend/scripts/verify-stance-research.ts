@@ -445,12 +445,20 @@ if (duplicatePairs.length) {
 // Tiered fetch ladder (HTTP → Wayback). No LLM in the loop.
 const fetchSession = createVerificationFetchSession();
 const fetcher = createPageFetcher(fetchSession.fetch);
+// URLs the batch declares as the person's own site (sources.json source_kind 'own-site'): attribution
+// there is by ownership, so the surname-proximity test is waived for them (ruling 2026-10-08).
+const ownSiteUrls = new Set<string>();
+try {
+  const manifest = JSON.parse(readFileSync(join(DIR, 'sources.json'), 'utf8')) as { sources?: { url: string; source_kind?: string }[] };
+  for (const src of manifest.sources ?? []) if (src.source_kind === 'own-site') ownSiteUrls.add(src.url);
+} catch { /* no manifest: nothing is waived */ }
 const { pushable, needsReResearch } = await verifyEvidence({
   stanceRows,
   evidenceRows,
   fetcher,
   threshold: THRESHOLD,
   politicianNames,
+  ownSiteUrls,
 });
 
 const failedUrls = (row: VerifiedRow) => row.failedSources.map((s) => s.url);
