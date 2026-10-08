@@ -4,6 +4,48 @@ Date: 2026-10-08. Drafter: the Season 3 ladder session, for Chris Andrews. **Dra
 revision, not pinned, nothing written to prod.** Sixth Season 3 pilot (worksheet
 [`2026-10-07-season3-ladder-evaluation.md`](2026-10-07-season3-ladder-evaluation.md), pilots table).
 
+## A2b v2 — pronoun ladder redraft (2026-10-08) — FOR REVIEW
+
+**Why a second round:** Chris Andrews gave A2b the same second chance as A1. Its own fresh test set
+(v3, 26 items) was frozen before this redraft; the drafter did not open it and did not read the v1
+results report. Still one topic: if both A1 and A2b pass, the one that seats more people wins.
+
+**Errors fixed from v1:**
+1. Rung 1 said "name **and** pronouns" — a law naming only the name came out compound-partial. Now
+   "name **or** pronouns" (L7: one act).
+2. Rungs 4/5 differed only by "even with a parent's permission" — a silence-only boundary (T6). Rung 5
+   is now a stated mandate of its own: require the sex-matching name or pronouns.
+3. Rungs 3/4 were not on one axis (parental consent vs a teacher's right to refuse). They are reordered
+   along one axis: **how far the rule pushes staff toward or away from the name the student asks for**.
+
+**Question:** "Should school staff use the name or pronouns a student asks for?"
+
+**Poles (L1):** *Staff must use the student's chosen name* ↔ *Staff must use the name that matches the
+student's sex.*
+
+| rung | text | stated act |
+|---:|---|---|
+| 1 | Require staff to use the name or pronouns a student asks for. | mandate the chosen name |
+| 2 | Allow staff to use the name or pronouns a student asks for. | permit it |
+| 3 | Forbid rules that require staff to use them. | bar the mandate |
+| 4 | Require a parent's permission before staff use them. | consent first |
+| 5 | Require staff to use the student's legal name or pronouns that match the student's sex. | mandate the sex-matching name |
+
+**What each neighbouring pair differs by (T6):**
+- 1 vs 2: a duty to use the name vs a permission to use it.
+- 2 vs 3: a permission vs a bar on mandates.
+- 3 vs 4: protecting staff who decline vs restricting use until a parent consents.
+- 4 vs 5: use allowed with consent vs a duty to use the sex-matching name.
+
+**Risks for the test:**
+- A law that both permits use and bars mandates fits rungs 2 and 3 (watch for `adjacent-chairs`).
+- Rung 2 needs a **stated** permission; a law silent on use is not rung 2.
+- The test set has no records on the rung 1 side (no roll-called bill found that requires chosen
+  names), so T1 cannot show whether rung 1 seats records.
+
+**Candidate rung_map from rev 1 (not a decision; 0 seats):**
+`{"1":1,"2":1,"3":"invalidated","4":"invalidated","5":4}`.
+
 ## A1 v2 — redraft after the failed first test (2026-10-08) — FOR REVIEW
 
 **Status of the first round:** both options and the control failed T1 (control 9%, A1 8%, A2b 0%).
