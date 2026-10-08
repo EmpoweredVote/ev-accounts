@@ -61,7 +61,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 
 | # | Person | Seat | Defect |
 |---|--------|------|--------|
-| 13 | **Scott Schmerelson** | LAUSD District 3 | Heavy blur — an upscale of a small original. Top of head clipped. |
+| 13 | ~~**Scott Schmerelson**~~ ✅ **DONE 2026-10-08** (`CC_0204`) | LAUSD District 3 | Heavy blur — an upscale of a small original. Top of head clipped. |
 | 14 | **Sara Hernandez** | LACCD Seat 4 | **200×300** — under the floor. |
 
 ---
@@ -280,6 +280,30 @@ The handover is now prepared as **dated rows**, which is what the temporal model
 holder exactly** (365 before `CC_0203`). It came in with `CA_0183`, which seated 421 judges from the
 court roster. Every one has the same failure mode at its next handover. Not renamed blind here:
 most have no office number in our data, and a guessed number is worse than a stale name.
+
+### 2026-10-08, batch 6 — Schmerelson (`CC_0204`)
+
+**11 of the original 19 remain.**
+
+The live 600×750 was an **enlargement**. Measured edge energy (mean absolute neighbour difference
+over luma) **1.15 against 7.15** for the replacement — six times less real detail in a file with
+nearly three times the pixels, and the top of his head clipped.
+
+Shipped: `SMS-squaresredlanyard-triangle-hands.jpg` from **boardmemberscott.org**, his own site.
+947×615 is the original (srcset tops at 771w; the unsuffixed WordPress file is this). Cropped to
+**360×451**, head 43.0%, eye line 31.0%, pure crop. The smallest thing shipped in this run, taken
+knowingly over a larger blurred file.
+
+🟢 **EDGE ENERGY SETTLES "BIGGER BUT BLURRIER".** A pixel count is not information. Compare
+`abs(diff(luma))` means before arguing about dimensions — it turned a judgement call into a number.
+
+🔴 **IT ALSO FIXED A CLAIM WITH NOTHING BEHIND IT.** His `photo_origin_url` was **NULL** while the
+image row asserted licence `government-official`. Same defect class as Price's `cc_by_sa_4.0`.
+▶ **When `photo_origin_url` IS NULL, treat the licence as unverified** — it was asserted about a
+file whose source nobody recorded.
+
+Ceilings measured: `lausd.org` and `boe.lausd.org` both answer **403 to a real browser**, not only
+to curl. Everything else on his own site is a classroom or cafeteria scene.
 
 ## Notes
 
