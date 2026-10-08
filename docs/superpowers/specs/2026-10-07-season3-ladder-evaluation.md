@@ -126,8 +126,27 @@ rules, or Chris rules a written exception. Most L6 fixes can be clarifying under
 L2, L3/L4 (degree to anchor), L8 (true defects) and L9 changes usually move a seat, so they are
 substantive and blank every Season 1-only person on that topic under the default rule.
 
-Still open in the same spec: E1/E2 evidence rules (§3), seatability bars T1–T6 (§4), pilot topics
-(§5), voter-side decisions (§6.3).
+### Evidence rules, seatability test, pilots and the open (same spec §3–§6, ruled 2026-10-08)
+
+| item | ruling |
+|---|---|
+| **E1** sponsorship | **No tightening.** A co-sponsorship on a bill can seat a chair by itself, as today. Research should still look for more sources, especially the person's own words: a second independent source gives the `corroborated` tier. The rest of E1 (prime author, as-filed, Yea cohort pass, guards) is already in codebook 0.4. |
+| **E2** joint evidence | **Adopted as written.** Several instruments may together seat a compound rung: each clause met positively with a verbatim quote, no clause of another rung met, no contradiction, all in `rests_on`, tier always `single-source`. |
+| codebook version | **Bump to 0.5** (E2 changes coding results), with a small gold round on E2 cases. 0.5 rows go to review until that round covers them under certification eb2f791a. |
+| test scope (§4) | **Changed ladders take T1–T6. An identity topic takes T6 only** (rulebook check, or a written exception); T1/T2 are run on it as a measurement, with no bar. |
+| T1 | **≥ 60%** seat rate among rows that show at least a side. Kept. |
+| T3 | **Kept**: 10 ordered pairs per changed topic, 10/10. |
+| T4 | **5 blind operator labels per changed topic** (5/5, or a review of each miss); **10 for pilots** (≥ 9/10). |
+| pilots (§5) | **climate-change, abortion, homelessness, education-library-books, plus minimum-wage** (tests record anchors L3/L4 and L8 at almost no cost: 2 visible chairs). |
+| voter re-ask (§6.3.1) | **Keep as built** (CC_0061/CC_0062): a moved or invalidated voter answer is hidden and re-asked; a reworded one is kept and prompted. No build. |
+| the open (§6.3.2–3) | **Researched, not seated.** Season 3 opens when every material topic has passed §4 and every person who is **seated now and holds a visible chair** on it has a coded Season 3 row (a chair or a reasoned blank). Everyone else blanks under the default rule; an empty spoke is acceptable (version-aware reads, PR #929). |
+
+Size of "seated now with a visible chair" (prod, 2026-10-08; visible = latest Season 1/2 answer non-blank):
+taxes 1,455 · abortion 1,545 · climate-change 1,519 · homelessness 574 · minimum-wage 2 ·
+education-library-books 0.
+
+§6 touches the seasons design (ADR 0005/0006), which is Chris Cantrell's: the open rule above needs
+his review before it is built. §7 (On the Record evidence base) is a separate spec.
 
 ## Cost groups
 
