@@ -51,7 +51,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 
 | # | Person | Seat | Defect |
 |---|--------|------|--------|
-| 10 | **Robert S. Draper** | LA Superior Court judge | **Worst on the page.** Candid snapshot in a courthouse lobby. **672×446 landscape**, subject off-centre and at an angle, flags and furniture behind, poor light. |
+| 10 | ~~**Robert S. Draper**~~ ✅ **DONE 2026-10-08** (`CC_0200`) | LA Superior Court judge | **Worst on the page.** Candid snapshot in a courthouse lobby. **672×446 landscape**, subject off-centre and at an angle, flags and furniture behind, poor light. |
 | 11 | ~~**Nathan Hochman**~~ ✅ **DONE 2026-10-07** (`CC_0197`) | District Attorney | Full-body standing portrait between flags. Head ≈10% of frame. |
 | 12 | ~~Patrick Connolly~~ ✅ **DONE 2026-10-07** (`CC_0197`) | LA Superior Court judge | 588×554, three-quarter body, bokeh city background. **Borderline — crop would fix it.** |
 
@@ -227,6 +227,59 @@ crop has the face centre at exactly 50.0% of the width.
 
 ▶ **Look at the crop itself before anyone else does.** The card simulation caught the first bad
 Girvan crop, and a plain side-by-side caught the bad Hochman one.
+
+### 2026-10-08, batch 5 — Draper (`CC_0200`), and what the search turned up
+
+**12 of the original 19 remain.**
+
+Photo: the live file was byte-identical to LAist's 672×440 web variant of
+`screenshot-2026-04-27-at-4-13-39-pm.png`. Their S3 **original is 1342×890** — twice the linear
+size — so the better crop was behind the variant we had taken. Shipped: the same frame recropped to
+**592×741**, head 60.9%, eye line 31.0%.
+
+Operator chose this over an LA Times staff portrait (5891×3927, Robert Gauthier) because he wears
+**opaque sunglasses** in it and at card size it reads as a dark rectangle. ⚠ **Whether LA Times staff
+photographs belong in the corpus at all is still unanswered** — it will come up again.
+
+Rejected: `judgerobertdraper.com` returns **410 Gone**; recovered from the Wayback Machine, its only
+portrait is 376×284 of him looking down at papers, with nothing larger behind the image optimiser.
+Ballotpedia has no photo of him. The Daily Journal profiles sit behind a Sucuri firewall that
+refuses a real browser, and the Wayback has no snapshot of either.
+
+### 🔴🔴 A SOURCING FAILURE IS A DEPARTURE SIGNAL — AGAIN
+
+Ballotpedia had no photograph because **Draper lost his seat.** He was defeated in the 2026-06-02
+primary by Tal Khan Valbuena, 43.2% to 56.8%; Valbuena won outright so the general was cancelled;
+**Draper's term ends 2027-01-04.** Our own data already said so independently — race
+`LA Superior Court Office 2` records Valbuena `won` and Draper `lost` — we had just never carried
+the result into occupancy.
+
+**He still holds the seat today, so occupancy was correct and was not changed.** A certified result
+is not a fact about who holds the seat.
+
+The handover is now prepared as **dated rows**, which is what the temporal model is for:
+
+- **`CC_0201` (applied):** `seat_officeholder` closed Draper at 2027-01-04 and seated Valbuena from
+  2027-01-05. `current_office_holders` filters on `CURRENT_DATE`, so the future row is invisible
+  until then and the view flips itself. No trigger, no job, no deploy. The gate asserts *today is
+  unchanged* and probes the view's own predicate at both 2027-01-04 and 2027-01-05.
+- **`CC_0202` (WRITTEN, NOT APPLIED — refuses before 2027-01-05):** the two columns that cache
+  "current" and will not move. `politicians.is_incumbent` and the legacy `politicians.office_id`.
+  **Nothing in the codebase recomputes `is_incumbent`** — it is only read, as four
+  `p.is_incumbent = true` filters in `essentialsBrowseService.ts`. Left alone, Draper becomes an
+  active "incumbent" with no seat and **Valbuena is hidden from address search while holding it.**
+  Both guards were proved: it refuses today, and with the guards relaxed the body passes inside a
+  rollback.
+- **`CC_0203` (applied):** the seat was named **"LA County Superior Court - Robert S. Draper"** — the
+  district named after its occupant. Renamed to **"LA County Superior Court - Office 2"**, taken
+  from the race name, not invented.
+
+### ▶ BACKLOG: 364 LA SUPERIOR COURT SEATS ARE STILL NAMED AFTER THEIR SITTING JUDGE
+
+425 districts are labelled `LA County Superior Court - <name>`; **364 still match their current
+holder exactly** (365 before `CC_0203`). It came in with `CA_0183`, which seated 421 judges from the
+court roster. Every one has the same failure mode at its next handover. Not renamed blind here:
+most have no office number in our data, and a guessed number is worse than a stale name.
 
 ## Notes
 
