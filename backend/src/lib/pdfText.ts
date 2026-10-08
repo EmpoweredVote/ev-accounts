@@ -24,7 +24,8 @@ export function isPdfResponse(_contentType: string, buf: Uint8Array): boolean {
 export async function extractPdfText(data: Uint8Array): Promise<string> {
   const { getDocument } = await import('pdfjs-dist/legacy/build/pdf.mjs');
   // pdfjs may transfer (detach) the buffer it is given; hand it a copy.
-  const doc = await getDocument({ data: new Uint8Array(data), verbosity: 0, isEvalSupported: false }).promise;
+  const task = getDocument({ data: new Uint8Array(data), verbosity: 0 });
+  const doc = await task.promise;
   try {
     const pages: string[] = [];
     for (let p = 1; p <= doc.numPages; p++) {
@@ -33,6 +34,6 @@ export async function extractPdfText(data: Uint8Array): Promise<string> {
     }
     return pages.filter(Boolean).join('\n');
   } finally {
-    await doc.destroy();
+    await task.destroy();
   }
 }
