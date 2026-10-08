@@ -463,8 +463,15 @@ export async function verifyEvidence(args: {
   politicianNames: PoliticianNames;
   /** Snippet match tuning. Defaults: minWords 25, minCoverage 0.6. */
   match?: MatchOptions;
+  /**
+   * URLs the batch declares as the person's OWN site (sources.json source_kind 'own-site'; ruling
+   * 2026-10-08, Chris Andrews). Attribution there is by ownership, not by the surname sitting near the
+   * quote: a first-person issue page says "we need…" and prints the name once, in the header. The
+   * snippet must still be found on the page; only the name-proximity test is waived.
+   */
+  ownSiteUrls?: ReadonlySet<string>;
 }): Promise<VerifyResult> {
-  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match } = args;
+  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match, ownSiteUrls } = args;
 
   const grouped = new Map<string, Map<string, EvidenceRow[]>>();
   for (const ev of evidenceRows) {
@@ -528,13 +535,15 @@ export async function verifyEvidence(args: {
             continue;
           }
           // Name proximity is measured from the SPAN — the text that will be published.
-          const proxVerdict = checkNameProximity({
-            fullName: names.fullName,
-            lastName: names.lastName,
-            aliases: names.aliases,
-            pageText: fetched.text,
-            matchOffsetInNormalized: span.offset,
-          });
+          const proxVerdict: SnippetVerdict = ownSiteUrls?.has(url)
+            ? { verdict: 'verified', matchOffset: span.offset }
+            : checkNameProximity({
+              fullName: names.fullName,
+              lastName: names.lastName,
+              aliases: names.aliases,
+              pageText: fetched.text,
+              matchOffsetInNormalized: span.offset,
+            });
           judged.push({
             snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: proxVerdict,
             // I6 + display: the span is what a voter reads, so it is stored decoded. The snippet beside it

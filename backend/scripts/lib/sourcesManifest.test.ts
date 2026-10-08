@@ -23,6 +23,14 @@ describe('parseSourcesManifest', () => {
     expect(r.ok).toBe(false);
     if (!r.ok) expect(r.errors).toEqual(['sources[0]: source_kind blog not allowed', 'sources[0]: url has no path']);
   });
+  it('allows a bare root for an own-site source and still refuses it for every other kind', () => {
+    const bare = 'https://dixie4tn.com/';
+    expect(parseSourcesManifest(manifest([{ ...entry, source_kind: 'own-site', url: bare }])).ok).toBe(true);
+    for (const kind of ['public-record', 'transcript']) {
+      const r = parseSourcesManifest(manifest([{ ...entry, source_kind: kind, url: bare }]));
+      expect(r).toEqual({ ok: false, errors: ['sources[0]: url has no path'] });
+    }
+  });
   it('requires at least one anchor for an excerpt-only kind (news/pointer), else nothing can be excerpted', () => {
     const r = parseSourcesManifest(manifest([{ ...entry, source_kind: 'news', pointer_passages: [], candidate_quotes: [] }]));
     expect(r.ok).toBe(false);

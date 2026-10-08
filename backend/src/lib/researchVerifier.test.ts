@@ -406,6 +406,24 @@ describe('verifyEvidence', () => {
     expect(result.reviewQueue).toHaveLength(0);
   });
 
+  it('waives name proximity for a declared own-site URL, and only for it', async () => {
+    const far = `${'filler '.repeat(200)}`;
+    const text = `Brad Sherman header ${far} ${longSnippet} ${far}`;
+    const evidenceRows: EvidenceRow[] = [
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://own.example/issues', snippet: longSnippet, snippet_index: 0 },
+    ];
+    const fetcher: _PageFetcher = async () => ({ ok: true, text });
+    const base = { stanceRows, evidenceRows, fetcher, threshold: 1,
+      politicianNames: { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } } };
+    const without = await verifyEvidence(base);
+    expect(without.needsReResearch).toHaveLength(1);
+    expect(without.needsReResearch[0].failedSources[0].snippets[0].verdict.verdict).toBe('name_not_present');
+    const withOwn = await verifyEvidence({ ...base, ownSiteUrls: new Set(['https://own.example/issues']) });
+    expect(withOwn.pushable).toHaveLength(1);
+    const otherUrl = await verifyEvidence({ ...base, ownSiteUrls: new Set(['https://elsewhere.example/']) });
+    expect(otherUrl.needsReResearch).toHaveLength(1);
+  });
+
   it('routes below-threshold rows to needsReResearch', async () => {
     const evidenceRows: EvidenceRow[] = [
       { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://a.example', snippet: longSnippet, snippet_index: 0 },

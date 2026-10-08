@@ -41,6 +41,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { Pool } from 'pg';
 import { parse } from 'node-html-parser';
+import { sectionText, CC_ANCHOR_PATTERN } from './lib/candidate-connection.mjs';
 import { extractQuotes, quotePresent, looseIncludes, candidateTerms, identityTerms } from './lib/claim-match.mjs';
 
 const argv = process.argv.slice(2);
@@ -99,8 +100,7 @@ const QUERY = `
     AND NOT EXISTS (
       SELECT 1 FROM unnest(pc.sources) s
        WHERE s NOT ILIKE '%ballotpedia%'
-          OR s ~* 'ballotpedia\\.org/[^#]+#Campaign_themes'
-          OR s ILIKE '%Candidate_Connection%')
+          OR s ~* '${CC_ANCHOR_PATTERN}')
   ORDER BY pa.politician_id, pa.topic_id`;
 
 // ---------------------------------------------------------------------------- fetching
@@ -123,33 +123,6 @@ function cachePut(u, page) {
     // Caching a 202 or a thin body would freeze the silent rate limit in place forever.
     if (page.status === 200 && page.body.length >= MIN_BODY) writeFileSync(cachePath(u), JSON.stringify(page));
   } catch { /* best effort */ }
-}
-
-const HEADING = /^h[1-6]$/i;
-
-/**
- * The text of the section introduced by the element carrying `id`, up to the next heading of the same
- * or higher rank. MediaWiki nests the id on a <span> inside the heading in one skin and on the heading
- * itself in another, so ascend to the heading before walking siblings rather than assuming either.
- */
-function sectionText(root, id) {
-  const marker = root.querySelector(`#${id}`);
-  if (!marker) return null;
-  let heading = marker;
-  while (heading && !HEADING.test(heading.tagName ?? '')) heading = heading.parentNode;
-  if (!heading) heading = marker;
-  const rank = HEADING.test(heading.tagName ?? '') ? parseInt(heading.tagName[1], 10) : 2;
-  const sibs = heading.parentNode?.childNodes ?? [];
-  const start = sibs.indexOf(heading);
-  if (start < 0) return null;
-  const out = [];
-  for (let i = start + 1; i < sibs.length; i++) {
-    const n = sibs[i];
-    const tag = n.tagName ?? '';
-    if (HEADING.test(tag) && parseInt(tag[1], 10) <= rank) break;
-    out.push(n.textContent ?? '');
-  }
-  return out.join(' ').replace(/\s+/g, ' ').trim();
 }
 
 async function fetchPage(url) {

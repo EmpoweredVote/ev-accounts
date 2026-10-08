@@ -19,6 +19,7 @@
  * still run on them.
  */
 import { NAMES_INSTRUMENT } from './chair-evidence-patterns.mjs';
+import { isCandidateConnectionUrl, passageInSurveySection, withoutFragment } from './candidate-connection.mjs';
 import {
   MIN_SNIPPET_WORDS, normalizeText, normName, normTopic, stanceKey, type EvidenceRow, type StanceRow,
 } from '../../src/lib/researchVerifier.js';
@@ -97,11 +98,13 @@ export const PARTY_NOUNS_ANY_CASE = /\b(democrats?|republicans?(?!\s+form\s+of\s
 
 const wordCount = (s: string) => normalizeText(s).split(' ').filter(Boolean).length;
 
-// C57: mirrors check-stance-sources.mjs's BALLOTPEDIA_ONLY predicate (backend/scripts/check-stance-sources.mjs,
-// ~L226-239) for PRE-WRITE use: every source URL is on ballotpedia.org. That script also carves out a
-// Candidate_Connection survey deep link (the candidate's own words, published nowhere else) once a stance is
-// already live; pre-write there is no such row yet to preserve, so any ballotpedia-only row here is simply
-// sent back for a stronger source.
+// C57: mirrors check-stance-sources.mjs's BALLOTPEDIA_ONLY predicate (backend/scripts/check-stance-sources.mjs):
+// a source on ballotpedia.org is a bio, not a citation. One carve-out, ruling 2026-10-07 (Chris Andrews): a
+// Candidate Connection survey answer is the candidate's own words. It needs BOTH tests from
+// lib/candidate-connection.mjs — the URL carries #Campaign_themes AND the cited snippet is inside that
+// section of the fetched page (ctx.surveySections, keyed by page URL without fragment). The SQL check can
+// only test the URL; this pre-write gate is where the page-text half is enforced. No section supplied =
+// the carve-out does not apply (fails closed), so a bare anchor never waives the check by itself.
 function isBallotpediaUrl(url: string): boolean {
   try { return /(^|\.)ballotpedia\.org$/i.test(new URL(url).hostname); } catch { return /ballotpedia\.org/i.test(url); }
 }
@@ -186,7 +189,11 @@ function extractQuotedPhrases(text: string): string[] {
 
 export function checkStanceRow(
   row: ResearchRow,
-  ctx: { topic: BundleTopic | undefined; politician: BundlePolitician | undefined; evidence: EvidenceRow[] },
+  ctx: {
+    topic: BundleTopic | undefined; politician: BundlePolitician | undefined; evidence: EvidenceRow[];
+    /** Survey-section text per Ballotpedia page (key = URL without fragment); null = page has no section. */
+    surveySections?: Readonly<Record<string, string | null>>;
+  },
 ): GateFinding[] {
   const out: GateFinding[] = [];
   const add = (check_id: GateCheckId, severity: 'high' | 'medium', what: string) =>
@@ -252,8 +259,20 @@ export function checkStanceRow(
       }
     }
   }
-  if (!isBlank && (row.source_urls.length > 0 && row.source_urls.every(isBallotpediaUrl))
-    || (evidenceUrls.length > 0 && evidenceUrls.every(isBallotpediaUrl))) {
+  // A Ballotpedia URL is still "only a bio" unless it is a survey deep link whose cited snippets are all
+  // inside the survey section (both tests; see C57 above).
+  const isBioOnlyUrl = (url: string): boolean => {
+    if (!isBallotpediaUrl(url)) return false;
+    if (!isCandidateConnectionUrl(url)) return true;
+    const section = ctx.surveySections?.[withoutFragment(url)] ?? null;
+    const snippets = ctx.evidence.filter((e) => e.source_url.trim() === url.trim());
+    return !(snippets.length > 0 && snippets.every((e) => passageInSurveySection(section, e.snippet)));
+  };
+  // A blank claims no chair and its sources are the ones the coder EXAMINED (file header), so this chair
+  // check does not apply to it. The old `!isBlank && A || B` bound the guard to A only, so a blank whose
+  // evidence was all Ballotpedia was flagged anyway (Season 2 pilot, 2026-10-07: 12 blank rows).
+  if (!isBlank && ((row.source_urls.length > 0 && row.source_urls.every(isBioOnlyUrl))
+    || (evidenceUrls.length > 0 && evidenceUrls.every(isBioOnlyUrl)))) {
     add('ballotpedia-only', 'high', 'every source (or every evidence URL) is on ballotpedia.org — cite the underlying record, filing or report Ballotpedia draws on');
   }
 
@@ -326,6 +345,7 @@ function nameCounts(politicians: BundlePolitician[]): Map<string, number> {
 
 export function checkBatch(
   rows: ResearchRow[], topics: BundleTopic[], politicians: BundlePolitician[], evidence: EvidenceRow[],
+  surveySections?: Readonly<Record<string, string | null>>,
 ): GateFinding[] {
   const topicByKey = new Map(topics.map((t) => [normTopic(t.topic_key), t]));
   const polByName = new Map(politicians.map((p) => [normName(p.full_name), p]));
@@ -356,6 +376,7 @@ export function checkBatch(
       topic: topicByKey.get(normTopic(r.topic_key)),
       politician: polByName.get(normName(r.full_name)),
       evidence: evidence.filter((e) => stanceKey(e.full_name, e.topic_key) === key),
+      surveySections,
     });
     const n = counts.get(normName(r.full_name)) ?? 0;
     if (n > 1) {
