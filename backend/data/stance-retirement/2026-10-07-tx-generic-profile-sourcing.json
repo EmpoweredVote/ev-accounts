@@ -15,9 +15,10 @@
    "NOT_A_LEGISLATOR": 5
   },
   "blocked_immigration_no_s2_pin": 27,
-  "held_for_operator": 9,
+  "held_for_operator": 0,
   "resolved_by_operator_ruling_mig_1904": 3,
-  "resolved_by_operator_ruling_mig_1905": 1
+  "resolved_by_operator_ruling_mig_1905": 1,
+  "awaiting_a_chair_decision": 5
  },
  "evidence_base": {
   "members_with_a_resolved_code": 93,
@@ -757,7 +758,7 @@
    "name": "Ann Johnson",
    "topic": "redistricting",
    "chair": 1.0,
-   "action": "HELD",
+   "action": "WRITTEN_IN_1906",
    "value": null,
    "class": null,
    "carry": "SAME"
@@ -1135,7 +1136,7 @@
    "name": "Briscoe Cain",
    "topic": "trans-athletes",
    "chair": 5.0,
-   "action": "HELD",
+   "action": "WRITTEN_IN_1906",
    "value": null,
    "class": null,
    "carry": "SAME"
@@ -1243,7 +1244,7 @@
    "name": "Carrie Isaac",
    "topic": "trans-athletes",
    "chair": 5.0,
-   "action": "HELD",
+   "action": "WRITTEN_IN_1906",
    "value": null,
    "class": null,
    "carry": "SAME"
@@ -1324,7 +1325,7 @@
    "name": "Chris Turner",
    "topic": "fossil-fuels",
    "chair": 4.0,
-   "action": "HELD",
+   "action": "WRITTEN_IN_1906",
    "value": null,
    "class": null,
    "carry": "SAME"
@@ -1333,7 +1334,7 @@
    "name": "Chris Turner",
    "topic": "redistricting",
    "chair": 1.0,
-   "action": "HELD",
+   "action": "WRITTEN_IN_1906",
    "value": null,
    "class": null,
    "carry": "SAME"
@@ -1756,7 +1757,7 @@
    "name": "Gina Hinojosa",
    "topic": "same-sex-marriage",
    "chair": 2.0,
-   "action": "HELD",
+   "action": "WRITTEN_IN_1906",
    "value": null,
    "class": null,
    "carry": "CHANGED"
@@ -2008,7 +2009,7 @@
    "name": "Juan \"Chuy\" Hinojosa",
    "topic": "same-sex-marriage",
    "chair": 3.0,
-   "action": "HELD",
+   "action": "WRITTEN_IN_1906",
    "value": null,
    "class": null,
    "carry": "CHANGED"
@@ -2035,7 +2036,7 @@
    "name": "Ken Paxton",
    "topic": "redistricting",
    "chair": 5.0,
-   "action": "HELD",
+   "action": "NOT_IN_COHORT",
    "value": null,
    "class": null,
    "carry": "SAME"
@@ -2629,7 +2630,7 @@
    "name": "Ryan Guillen",
    "topic": "healthcare",
    "chair": 4.0,
-   "action": "HELD",
+   "action": "WRITTEN_IN_1906",
    "value": null,
    "class": null,
    "carry": "SAME"
@@ -3266,6 +3267,51 @@
     "Bernal": "his single commission bill defines no commission -- no change"
    },
    "trap_caught_in_the_re_check": "the first pass keyed bills by NUMBER alone and reported Goodwin as having a rung-2 HB 241 in 89(1). Ann Johnson's HB 241 is the Texas Redistricting Commission, in 89(2); GOODWIN'S 89(1) HB 241 IS A NATURAL GAS FLARING BILL, matched only because its caption names the \"Railroad Commission of Texas\". Texas renumbers every session."
+  },
+  {
+   "date": "2026-10-08",
+   "migration": 1906,
+   "ruling": "the operator cleared the held set; 8 chair moves written, Ken Paxton not written",
+   "moves": {
+    "Ann Johnson / redistricting": "1 -> 2",
+    "Chris Turner / redistricting": "1 -> 2",
+    "Chris Turner / fossil-fuels": "4 -> 3",
+    "Ryan Guillen / healthcare": "4 -> 3",
+    "Gina Hinojosa / same-sex-marriage": "2 -> 1",
+    "Juan \"Chuy\" Hinojosa / same-sex-marriage": "3 -> 1 (NOT 4 -- the civil-union bill 1903 held him on is his OLDEST filing)",
+    "Briscoe Cain / trans-athletes": "5 -> 4",
+    "Carrie Isaac / trans-athletes": "5 -> 4"
+   },
+   "not_written": {
+    "Ken Paxton / redistricting": "not in the cohort; Abbott v. Perez is a topical source, not a biography"
+   }
   }
- ]
+ ],
+ "corrections_to_migration_1903": {
+  "migration": 1906,
+  "what_was_wrong": "migration 1903 blanked 26 rows as LADDER_SCOPE by comparing the Season 1 and Season 2 text AT THE SAME RUNG NUMBER. That is the right pair only when the chair was read from Season 1. 13 same-sex-marriage rows already had a Season 2 answer, so they had been carried correctly long before this audit and no carry question existed for them.",
+  "why_the_numbers_differ": "Season 2 INSERTED a new rung 1 on same-sex marriage (\"equal marriage plus protection from discrimination\") and shifted the rest down. Measured against production: S1 1 -> S2 2 (476 rows), S1 2 -> S2 3 (143), S1 3 blanked (28, the federalism rung Season 2 does not contain), rungs 4 and 5 unchanged (229).",
+  "second_defect": "the rung-1 pattern matched \"discrimination ON THE BASIS OF sexual orientation\" but not \"discrimination BASED ON sexual orientation\", which is the commoner Texas caption. It missed a first-person rung-1 filing on six rows, including all eight of Chuy Hinojosa's.",
+  "restored_to_their_season_2_chair": [
+   "Christian Manuel",
+   "Hubert Vo",
+   "Jessica Gonzalez",
+   "Josey Garcia",
+   "Lauren Ashley Simmons",
+   "Lulu Flores",
+   "Suleman Lalani",
+   "Terry Canales"
+  ],
+  "left_at_0_pending_a_chair_decision": {
+   "who": [
+    "Erin Zwiener",
+    "John Bryant",
+    "Penny Morales Shaw",
+    "Toni Rose",
+    "Venton Jones"
+   ],
+   "why": "each filed a bill prohibiting discrimination on the basis of sexual orientation or gender identity, and Season 2 rung 1 is the only rung that adds anti-discrimination protection to equal marriage. Their own record argues rung 1 rather than the rung Season 2 holds, and a chair move needs a decision."
+  },
+  "still_correct": "the other 13 LADDER_SCOPE blanks -- climate-change 2 (4 rows), voting-rights 2 (8) and one same-sex-marriage row -- were read from Season 1 and stand."
+ }
 }
