@@ -137,3 +137,10 @@ export function buildCoderPrompt(i: {
     sources || '(no codable sources — every row is BLANK no-evidence, with needs_source where you can name one)',
   ].join('\n');
 }
+
+/**
+ * A coder input above this many characters is refused (build-coder-inputs.ts, build_batch.py). A
+ * headless `claude -p` given a 13 MB prompt exits with zero usage and writes no label, silently
+ * (2026-10-07). ~1.5 M chars is roughly 375k tokens — beyond what a coder can take in anyway.
+ */
+export const MAX_CODER_INPUT_CHARS = 1_500_000;

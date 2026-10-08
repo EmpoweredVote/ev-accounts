@@ -11,7 +11,7 @@ import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { pool } from '../src/lib/db.js';
-import { buildCoderPrompt, seedFor, type PriorTerm, type SeatContext, type PromptTopic } from './lib/coderPrompt.js';
+import { buildCoderPrompt, seedFor, MAX_CODER_INPUT_CHARS, type PriorTerm, type SeatContext, type PromptTopic } from './lib/coderPrompt.js';
 import { annexPath } from './lib/codebookAnnex.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
 import { seatJurisdictionNames } from './lib/seatJurisdiction.js';
@@ -123,6 +123,13 @@ for (const slot of [1, 2, 3] as const) {
   const labelPath = resolve(dir, 'labels', `coder-${slot}.json`);
   const text = buildCoderPrompt({ codebookMd, seat, topics, snapshots, slot, seed: seedFor(batchId, slot), labelPath });
   const p = join(dir, 'coder-inputs', `coder-${slot}.md`);
+  if (text.length > MAX_CODER_INPUT_CHARS) {
+    // Refuse before writing: a coder fed an oversized prompt returns nothing and says nothing.
+    const big = [...snapshots].sort((a, b) => (b.snapshot_text?.length ?? 0) - (a.snapshot_text?.length ?? 0)).slice(0, 3)
+      .map((s) => `  ${(s.snapshot_text?.length ?? 0).toLocaleString()} chars  ${s.url}`).join('\n');
+    console.error(`REFUSED: coder-${slot} input is ${text.length.toLocaleString()} chars, over the ${MAX_CODER_INPUT_CHARS.toLocaleString()} cap. Largest snapshots:\n${big}`);
+    process.exit(1);
+  }
   writeFileSync(p, text);
   console.log(`${p}  sha256 ${createHash('sha256').update(text).digest('hex').slice(0, 12)}  (${text.length} chars)`);
 }

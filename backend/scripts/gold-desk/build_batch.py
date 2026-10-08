@@ -67,6 +67,7 @@ def build(b, d, keys):
   sh(['npm', 'run', '-s', 'coding:inputs', '--', '--dir', d, '--politician', b['politician_id'], '--office', b['office_id']])
   return True
 
+MAX_CODER_INPUT_BYTES = 3_000_000  # build-coder-inputs.ts caps at 1.5M chars (MAX_CODER_INPUT_CHARS); bytes allow for multibyte text
 jobs = []
 for b in spec['batches']:
   keys = b.get('topic_keys') or [b['topic_key']]
@@ -88,6 +89,10 @@ for name, d, k in jobs:
     for r in running[:]:
       if r[3].poll() is not None: running.remove(r); finish(*r[:3])
     time.sleep(5)
+  size = os.path.getsize(f"{d}/coder-inputs/coder-{k}.md")
+  if size > MAX_CODER_INPUT_BYTES:  # a coder fed this returns nothing, silently (2026-10-07)
+    print(f"{name}: coder {k} input is {size:,} bytes, over the {MAX_CODER_INPUT_BYTES:,} cap — NOT RUN (rebuild the inputs; check snapshots.json for a huge snapshot)", flush=True)
+    continue
   os.makedirs(d + '/labels', exist_ok=True); os.makedirs(d + '/coder-logs', exist_ok=True)
   e = f"{SP}/empty-{name}-{k}"; os.makedirs(e, exist_ok=True)
   running.append((name, d, k, subprocess.Popen(['claude', '-p', '--model', 'opus' if k == 1 else 'sonnet', '--tools', 'Write', '--allowedTools', 'Write',

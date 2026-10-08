@@ -1,7 +1,7 @@
 // backend/scripts/lib/snapshotSources.test.ts
 import { describe, it, expect } from 'vitest';
 import { join, resolve } from 'node:path';
-import { excerptWindows, buildSnapshot, snapshotIdFor, resolveHumanSavedPath, amendmentMarkup, MAX_EXCERPT_WORDS } from './snapshotSources.js';
+import { excerptWindows, buildSnapshot, snapshotIdFor, resolveHumanSavedPath, amendmentMarkup, MAX_EXCERPT_WORDS, MAX_SNAPSHOT_CHARS } from './snapshotSources.js';
 import type { SourceEntry } from './sourcesManifest.js';
 
 const words = (n: number, w = 'filler') => Array.from({ length: n }, (_, i) => `${w}${i}`).join(' ');
@@ -202,5 +202,25 @@ describe('buildSnapshot amendment_markup', () => {
       failure: null, fetchedBy: 'code', batchId: id, amendmentText: 'final', markupUnresolved: true,
     });
     expect(s.amendment_markup).toBe('none');
+  });
+});
+
+describe('buildSnapshot refuses binary and oversized text (2026-10-07 raw-PDF snapshot)', () => {
+  const entry = { url: 'https://example.org/x.pdf', source_kind: 'own-site', pointer_passages: [], candidate_quotes: [] } as unknown as SourceEntry;
+  const build = (fetchedText: string) => buildSnapshot({ entry, fetchedText, failure: null, fetchedBy: 'code', batchId: 'b' });
+  it('positive control: ordinary text is ok', () => {
+    const r = build('Home visiting programs improve child outcomes.');
+    expect(r.ok).toBe(true);
+    expect(r.snapshot_text!.startsWith('%PDF')).toBe(false);
+  });
+  it('a raw PDF body is not ok and carries no snapshot_text', () => {
+    const r = build('%PDF-1.4\n%âãÏÓ\n1 0 obj << /Type /Catalog >> endobj');
+    expect(r).toMatchObject({ ok: false, failure: 'binary-content', snapshot_text: null });
+  });
+  it('NUL-laden text is binary', () => {
+    expect(build('abc\u0000\u0001\u0002 def'.repeat(50)).failure).toBe('binary-content');
+  });
+  it('text over MAX_SNAPSHOT_CHARS is not ok', () => {
+    expect(build('word '.repeat(MAX_SNAPSHOT_CHARS / 5 + 10))).toMatchObject({ ok: false, failure: 'oversized', snapshot_text: null });
   });
 });
