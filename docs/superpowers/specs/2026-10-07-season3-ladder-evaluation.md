@@ -49,10 +49,9 @@ exists, and the publish guard raises `REPOINTING_NO_REASONING`).
 
 ## Rulings Chris still owes (rule these first)
 
-1. **Order of work.** `compass_topic_revisions_one_open` allows one draft or approved revision per
-   topic. Today no revision is open (0 draft or approved, checked 2026-10-07). Rule and land every
-   known **Season 2** fix on a topic before any Season 3 revision is proposed on it, and propose
-   Season 3 revisions late (findings doc §6).
+1. ~~**Order of work.**~~ **Settled 2026-10-08 (call with Chris Cantrell):** Season 2 is being retired,
+   so no Season 2 wording fixes are planned. A pending Season 3 revision blocking a Season 2 fix on
+   the same topic is accepted.
 2. ~~**The draft Season 3 ladder rulebook (L1–L10).**~~ **Ruled 2026-10-08** — see "Rulebook rulings"
    below. Every topic section in this worksheet now has to be read against those rules.
 3. **The 13 chained topics.** Under the default rule, a moving map blanks **every** Season 2 row on
@@ -139,14 +138,29 @@ substantive and blank every Season 1-only person on that topic under the default
 | T4 | **5 blind operator labels per changed topic** (5/5, or a review of each miss); **10 for pilots** (≥ 9/10). |
 | pilots (§5) | **climate-change, abortion, homelessness, education-library-books, plus minimum-wage** (tests record anchors L3/L4 and L8 at almost no cost: 2 visible chairs). |
 | voter re-ask (§6.3.1) | **Keep as built** (CC_0061/CC_0062): a moved or invalidated voter answer is hidden and re-asked; a reworded one is kept and prompted. No build. |
-| the open (§6.3.2–3) | **Pilot-scoped, few substantive (option B; revised 2026-10-08, replaces "researched, not seated" for the whole country).** Season 3 opens when every changed topic has passed §4 and every officeholder who **represents a pilot city** — including their state and federal officeholders — has a coded Season 3 row (a chair or a reasoned blank). Elsewhere, only **substantive** topics show an empty spoke until researched (version-aware reads, PR #929); identity and clarifying topics keep every seat. So substantive rulings are kept rare and clarifying is preferred wherever the rules allow. Reason: seasons are national, and re-researching every officeholder first would hold Season 3 back from the pilot cities. A Season 3 for pilot cities only (per-place seasons, ADR 0005 §3.1) was considered and set aside as a large redesign. |
+| the open (§6.3.2–3) | **No research threshold (Chris Cantrell call, 2026-10-08; replaces the pilot-scoped rule ruled earlier the same day).** Seasons switch to fix question problems, not when research reaches a set point. Research is still pre-staged in the draft season as far as it goes, and Chris Andrews decides when to open. A threshold may fit a much later season (Cantrell: "season eight, nine"). Substantive topics show an empty spoke until researched, so substantive rulings stay rare. |
 
 For scale, the nationwide count the first version of this rule would have required — "seated now with a visible chair" (prod, 2026-10-08; visible = latest Season 1/2 answer non-blank):
 taxes 1,455 · abortion 1,545 · climate-change 1,519 · homelessness 574 · minimum-wage 2 ·
 education-library-books 0.
 
-§6 touches the seasons design (ADR 0005/0006), which is Chris Cantrell's: the open rule above needs
-his review before it is built. §7 (On the Record evidence base) is a separate spec.
+### Seasons ADR review with Chris Cantrell (call, 2026-10-08)
+
+ADR 0005/0006 are Chris Cantrell's. Reviewed with him using a plain-language summary
+(https://claude.ai/artifact/9o3bndcAgf9gWBmL4bsoc6):
+
+- **Agreed:** research into the draft season; an answer and the ladder it answered are one unit,
+  locked to their season, never compared across ladders (version-aware reads); carrying research
+  forward between seasons where it still applies; widening "A and B" to "A or B".
+- **Changed:** no research threshold for the open (row above).
+- **Empty spoke:** no per-spoke reason for voters (noise); at most a note on the season itself.
+- **Later, not Season 3:** a season selector showing a person's stance per season (like Treasury
+  Tracker's year switch).
+- ⚠ **Open tension:** Cantrell's "carry research forward when it applies" is wider than the accepted
+  default rule (CA_0305), which maps only Season 2 rows on the current revision and blanks every
+  Season 1-only person and every Season 2 row on a chained topic. Whether to extend the rule
+  (rulings owed 3 and 4) is still undecided.
+- Still owed: who edits the ADR text, and marking ADR 0006 accepted. §7 (On the Record evidence base) is a separate spec.
 
 ## Cost groups
 
