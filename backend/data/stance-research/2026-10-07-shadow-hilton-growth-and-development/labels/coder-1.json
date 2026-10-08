@@ -1,0 +1,189 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+      "passages": [
+        {
+          "snapshot_id": "426e025c-2f29-5b5d-abf1-762b09ca5a0a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview answer on housing affordability (not this ladder's question): get rid of regulations, end CEQA private suits, allow building outwards; shows the faster-growth side but names no recruitment, no guardrail and no health-and-safety-only limit, so it does not separate rung 4 from rung 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "01e00e32-20df-5613-9321-bb1bd3c4361b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-10",
+          "v4_shape": "direction-only",
+          "v5_time": "pre-seating",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Golden Together report: only the foreword is signed by Hilton (body is the group's voice, lead author Edward Ring); foreword favours abundance over scarcity, a side only; dated before the current campaign, so out of cycle.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "db7aea50-bd73-5cc5-9ca0-13be015c5989",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign page in the third person (\"Steve Hilton will cap...\"); a characterization of a promise under V1, not his own words.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5448dd45-2738-557d-bca1-5e87edfc5d48",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign page (\"Steve Hilton will take a completely different approach\"); mixes streamlining, state recruitment of new communities and front-loaded infrastructure, but is not his own words.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "432809c4-4a12-508f-8b7c-169afab18e02",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign page on starter homes in impersonal/third-person voice; about home type and cost, not the pace of growth.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5239fff1-68a2-5ba0-83c2-d642714c182e",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign page on VMT mitigation charges under AB 130; a fee on housing, not the pace of growth.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4d886c73-a785-5040-ba41-521b397c654a",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "AI policy page; a different question.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b9f0b645-52fe-5909-b32a-9fd633d5a06a",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Water-supply page; infrastructure for water bills, not tied to the pace of development.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f86923e0-2ff7-53a6-85be-a84b7e8796bf",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Crypto policy page; a different question.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "107b693c-5d27-584e-b9ee-8da5c12fcd2c",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Nightlife and event permitting page; a different question.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In his own words (CBS LA interview, 2026-04-12) Hilton says \"Get rid of the regulations\" and \"There is plenty of room to build outwards\", which puts him on the faster-growth side. Nothing in his own words shows \"recruit new development, while keeping basic guardrails\" or says constraints should go only \"beyond basic health and safety\", so neither rung is separated; the detailed campaign pages are third-person and cannot carry a chair.",
+      "needs_source": [
+        "Hilton's own first-person words (debate answer, questionnaire, or first-person issue page) on whether development constraints beyond health and safety should remain, or on government recruiting new development while keeping guardrails"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "426e025c-2f29-5b5d-abf1-762b09ca5a0a",
+          "text": "Get rid of the regulations, the mainly environmental regulations that are making it more much more expensive to build housing.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "426e025c-2f29-5b5d-abf1-762b09ca5a0a",
+          "text": "There is plenty of room to build outwards and let people have that California dream of a home of their own.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

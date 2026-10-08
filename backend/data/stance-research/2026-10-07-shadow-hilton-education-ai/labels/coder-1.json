@@ -1,0 +1,82 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "61269f44-9c7f-4b27-818a-3508009f6ae2",
+      "served_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+      "passages": [
+        {
+          "snapshot_id": "42efe15a-8fae-5273-80d3-b6d4eace2a82",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate words calling for an immediate pause on AI in the classroom show the restrictive side, but a temporary pause neither states a permanent prohibition nor says whether teacher planning use stays allowed, so it cannot separate 'Prohibit' from 'Restrict … to teacher planning'.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5e9350fd-f43f-5f90-962d-a3bac04d3aee",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-10-07",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign issue page in third person ('STEVE'S PLAN WILL') proposing a pause pending an independent review whose stated aim is guidelines including 'the appropriate grade level for AI to be introduced into the classroom', which anticipates eventual use rather than prohibition.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3a3d57ea-f31c-5fba-9f2b-61620f131d78",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-10-07",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Smartphone page mentions AI only in passing ('smartphones, video games, now AI') and its policy is a phone ban, which is adjacent per the annex.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Hilton said 'we should have an immediate pause on AI in the classroom', which places him on the restrictive side, but a pause pending a review that is to set 'the appropriate grade level for AI to be introduced into the classroom' does not establish 'Prohibit artificial intelligence tools in student work and classroom instruction', and nothing addresses whether teachers may keep using AI for planning ('Restrict artificial intelligence to teacher planning and administrative use'). The evidence separates the sides, not the rungs.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "42efe15a-8fae-5273-80d3-b6d4eace2a82",
+          "text": "And that's why I've said that we should have an immediate pause on AI in the classroom, because right now we're seeing real concerns about something called cognitive stunting, where children's ability to learn is being impeded by AI.",
+          "v7_tier": "lever",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "5e9350fd-f43f-5f90-962d-a3bac04d3aee",
+          "text": "Pause the adoption of AI in California schools until a full independent review, to report by the summer of 2027, recommends clear guidelines, including the appropriate grade level for AI to be introduced into the classroom.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

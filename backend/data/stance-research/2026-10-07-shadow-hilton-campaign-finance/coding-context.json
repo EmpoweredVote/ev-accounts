@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-campaign-finance",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "served_revision_id": "ae53ba29-79eb-420f-aac6-ec99f8031ec6",
+      "question_text": "What rules should govern money in political campaigns and elections?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Ban all private money in political campaigns"
+        },
+        {
+          "value": 2,
+          "text": "Strictly limit corporate and dark-money spending"
+        },
+        {
+          "value": 3,
+          "text": "Keep contribution limits at current levels"
+        },
+        {
+          "value": 4,
+          "text": "Reduce restrictions on political donations and spending"
+        },
+        {
+          "value": 5,
+          "text": "Eliminate all campaign finance laws and limits"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# campaign-finance — served revision ae53ba29-79eb-420f-aac6-ec99f8031ec6 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. No gold item exists on this topic\nyet; every reading below is a drafter's.\n\n**Question:** \"What rules should govern money in political campaigns and elections?\"\n\n**Orientation:** standard. Rung 1 is the most limit on private money (a ban), rung 5 removes every\nlaw. The rungs order **how much private political money is limited**. Disclosure is a different axis\nand is not ordered here.\n\n**Levels with a lever:** federal, local, state. Each level limits money in its\nown elections: federal (FECA, the FEC), state (state contribution limits), local (city limits and\ncity public-financing programmes).\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"contribution limit\", \"aggregate limit\", \"independent expenditure\", \"super PAC\",\n\"dark money\", \"501(c)(4)\", \"electioneering communication\", \"coordination\", \"soft money\",\n\"Citizens United\", \"public financing\", \"clean elections\", \"matching funds\", \"democracy vouchers\",\n\"small-dollar\", \"pay-to-play\", \"foreign-influenced corporation\".\n\n1. **\"Ban all private money in political campaigns\"**\n   - Means: no private person or group may fund a campaign.\n   - Operative clauses: [a] a ban; [b] on **all** private money.\n   - Establishing evidence looks like: own words or text that forbid every private contribution and\n     expenditure. [b] is universal (V4.2).\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Public financing is no longer part of this rung. A **voluntary** public-financing programme\n     (matching funds, clean-elections grants, vouchers) leaves private money legal → not rung 1;\n     `direction-only` _(proposed)_.\n\n2. **\"Strictly limit corporate and dark-money spending\"**\n   - Means: the law sets strict limits on political spending by corporations and by groups that hide\n     their donors.\n   - Operative clauses: [a] strict limits; [b] on corporate spending; [c] on dark-money spending.\n   - Establishing evidence looks like: operative text that caps or bans corporate political spending\n     or outside spending by undisclosed sources; own words calling for it, including a proposed\n     constitutional amendment that lets government limit such spending _(proposed)_.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - [b] and [c] are **one clause with two forms**: either is enough. \"Strictly\" still needs a real\n     limit, not a reporting duty _(ruled 2026-10-01)_.\n   - A rule that bars spending unless the group discloses its donors is a **limit** on dark-money\n     spending. A plain reporting duty is not → `direction-only` _(ruled 2026-10-01)_.\n   - Commonly confused with rung 3 when a bill only lowers **contribution** limits to candidates.\n     Rung 2 targets spending by corporations and outside groups.\n   - A narrow ban (foreign-influenced corporations, government contractors, lobbyists) is not \"strictly\n     limit corporate spending\" → `direction-only` _(proposed)_.\n\n3. **\"Keep contribution limits at current levels\"**\n   - Means: contribution limits stay as they are, neither raised nor lowered.\n   - Operative clauses: [a] contribution limits kept at current levels.\n   - Establishing evidence looks like: own words that the limits should stay where they are.\n     Instruments rarely say this _(proposed)_.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because a No on raising limits, or a No on lowering them, shows a\n     side but not \"keep\". Ruling out the other rungs is not evidence for rung 3 (V4.2) →\n     `direction-only`.\n   - An automatic inflation adjustment keeps limits at current levels in real terms; it is not evidence\n     for rung 4 _(proposed)_.\n   - Disclosure was taken out of this rung in Season 2 (CA_0041, 2026-08-30): disclosure is now its\n     own topic. A disclosure bill does not place anyone here → `adjacent`.\n\n4. **\"Reduce restrictions on political donations and spending\"**\n   - Means: the law allows more political giving and spending than it does now.\n   - Operative clauses: [a] fewer or looser restrictions; [b] on donations; [c] on spending.\n   - Establishing evidence looks like: a bill that raises contribution limits, removes aggregate or\n     coordination limits, or repeals a spending restriction. A bill that loosens limits but keeps them\n     excludes rung 5 by its own text _(proposed)_.\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - [b] and [c] are one clause with two forms, as in rung 2 _(ruled 2026-10-01)_.\n   - A **lawsuit or amicus brief** arguing that a limit violates free speech is a `record` (Q8); the\n     substantive claim is the position. A claim against one limit is rung 4, not rung 5 _(proposed)_.\n\n5. **\"Eliminate all campaign finance laws and limits\"**\n   - Means: no law governs campaign money at all — no limits, and no other campaign-finance rule.\n   - Operative clauses: [a] eliminate all limits; [b] eliminate all campaign-finance laws.\n   - Establishing evidence looks like: own words calling for the end of every limit and every\n     campaign-finance law. [a] and [b] are universal (V4.2).\n   - Levels that hold a lever: federal; state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 when a person wants every **limit** gone but keeps disclosure. [b]\n     covers all campaign-finance laws, so that passage → `compound-partial` _(proposed)_.\n\n**Hard cases:**\n- **Disclosure and reporting rules** (donor disclosure, reporting deadlines, disclaimers on ads) →\n  `adjacent`. Disclosure was split to a separate transparency topic (CA_0041, 2026-08-30).\n- **Preemption (codebook V2, H12).** A state law that forbids cities to set their own limits or run\n  public financing decides which level may act → `adjacent`.\n- **Enforcement and agency votes** (FEC quorum, penalties, nominations) → `adjacent` unless the passage\n  names a limit _(proposed)_.\n- **Omnibus election bills** with a campaign-finance title → V4 `multi-subject`.\n- **A person's own fundraising** (refusing corporate PAC money, small-dollar pledges) is conduct, not a\n  rule for others → `adjacent` _(proposed)_.\n"
+    }
+  ]
+}

@@ -1,0 +1,291 @@
+{
+  "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+  "leads": [
+    {
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "dab46e5c-628a-4360-ad1d-3aaba61768f0",
+      "reasoning": "Hilton said he would extradite a California abortion doctor to Louisiana under that state's abortion ban, indicating he supports other states' near-total restrictions and would enforce them against California providers. This goes beyond allowing first-trimester abortion (stance 3) and signals support for restricting abortion to cases of rape, incest, or life threats (stance 4). He has not called for a complete California ban (stance 5) or stated an exceptions-only federal position explicitly, but the extradition stance is the strongest documented evidence.",
+      "sources": [
+        "https://www.ontheissues.org/Steve_Hilton.htm",
+        "https://calmatters.org/california-voter-guide-2026/governor"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "58804871-b768-4d4a-85b5-07c92eb40bc7",
+      "reasoning": "Hilton's AI policy explicitly opposes \"sweeping, preemptive regulation on evolving technologies.\" His \"Keep California the AI Capital of the World\" plan argues for enforcing existing laws and closing narrow gaps rather than new regulatory frameworks. He specifically criticizes proposed California AI bills as risking innovation and pushes for California to allow AI companies to develop and deploy freely — fitting stance 1 (no government interference).",
+      "sources": [
+        "https://stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world",
+        "https://stevehiltonforgovernor.com/policies"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "30cb4666-836f-4f13-a8c3-2c3caadf6337",
+      "reasoning": "Hilton's Golden Together \"Parent Empowerment and Home Visiting\" policy paper (May 2024) explicitly frames the goal as reducing demand for government by intervening early in families through decentralized, coach-delivered home visiting — not expanding subsidized childcare programs. The foreword states: \"Government's role is to facilitate rather than provide these human partnerships.\" This deregulation-and-limited-targeted-support approach matches value 4 (reduce regulations on providers, limited subsidies only for lowest-income families).",
+      "sources": [
+        "https://goldentogether.com/wp-content/uploads/2024/06/GT_Home-Visiting-3.pdf"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "839b4b5b-dd16-45a5-8dce-8e54f85165f6",
+      "reasoning": "Hilton's education platform calls for restoring traditional curricula and removing what he describes as \"social and political indoctrination\" from public schools, opposing DEI/equity-based programming in education. He has no documented position on affirmative action or minority hiring (OnTheIssues records no position there), so the evidence is limited to opposing race- and equity-focused programs in schools — mapping to stance 4 (limit race-based government interventions) rather than a blanket call to eliminate all race-based programs.",
+      "sources": [
+        "https://stevehiltonforgovernor.com",
+        "https://www.ontheissues.org/Steve_Hilton.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "da9cf777-0a95-41aa-8775-c5b29528825b",
+      "reasoning": "Hilton explicitly campaigned on repealing California's greenhouse gas reduction mandates and suspending environmental regulations to lower gas prices. CalMatters' June 2026 primary report notes he wants to \"overturn greenhouse gas reduction mandates.\" He frames climate policy as imposing costly energy choices on working people and proposes redirecting funds to forest management instead of emissions restrictions — a rejection of climate-first policy in favor of economic priorities that aligns with stance 5.",
+      "sources": [
+        "https://www.ontheissues.org/Steve_Hilton.htm",
+        "https://calmatters.org/politics/2026/06/california-governor-primary-hilton-advances/",
+        "https://stevehiltonforgovernor.com/rebalancing-californias-carbon-sequestration-strategy"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "f6630c71-8ba8-464d-82d4-9079803d4e8b",
+      "reasoning": "Hilton has no data-center-specific position; this is an inference from his broader technology and infrastructure stance. His \"Keep California the AI Capital of the World\" plan opposes \"sweeping, preemptive regulation,\" favoring minimal regulatory barriers and faster permitting for tech. Extending that posture to large-scale data centers aligns directionally with stance 5 (welcome data-center investment with competitive incentives and minimal regulation), though he has not addressed data centers specifically.",
+      "sources": [
+        "https://stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world",
+        "https://stevehiltonforgovernor.com/policies"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "673c3758-448d-46ce-ab09-5869488a131f",
+      "reasoning": "Hilton has called for 100% cooperation with ICE and characterized undocumented immigrants participating in political campaigns as an affront to taxpayers. He prioritizes deportation as part of his public safety platform. This aligns with stance 4 (deport everyone without legal status, starting with those who have criminal records) rather than stance 5, since there is no evidence he calls for immediate deportation regardless of family ties.",
+      "sources": [
+        "https://www.ontheissues.org/Steve_Hilton.htm",
+        "https://stevehiltonforgovernor.com/california-taxpayers-are-paying-for-illegal-immigrants-to-campaign-for-xavier-becerra-for-governor"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "6291d7ff-cb36-48c6-8c9e-e94ccafd43ae",
+      "reasoning": "Golden Together's April 2024 business climate policy paper \"From Worst to Best\" calls for repealing CEQA, reversing AB5, cutting corporate and income taxes, and eliminating bureaucratic regulations across labor, environment, and taxes — 45 specific reforms. The paper explicitly states \"California's policy regime should be unequivocally on the side of job- and wealth-creators.\" His campaign platform adds maximum incentives for crypto, Hollywood, and AI sectors with minimal regulatory barriers. This maps squarely to value 5 (maximum incentives, economic growth as top priority, remove regulatory barriers).",
+      "sources": [
+        "https://goldentogether.com/wp-content/uploads/2024/04/GT_The-Business-Climate-3.pdf",
+        "https://stevehiltonforgovernor.com/policy/make-california-the-crypto-capital-of-the-world/",
+        "https://stevehiltonforgovernor.com/policy/bring-hollywood-home/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "c8e12b53-64f6-48ac-9c2d-0a3cf4d3df9b",
+      "reasoning": "Hilton pledges to boost oil drilling in California and cut the gas tax. He wants to suspend environmental regulations to lower fuel prices. The CalMatters voter guide states he wants \"to lower the price of gas by suspending environmental regulations.\" This is consistent with stance 4 (expand fossil fuel drilling permits) — he wants more production and fewer regulatory barriers, but has not called for removing all environmental restrictions entirely.",
+      "sources": [
+        "https://calmatters.org/politics/2026/06/california-governor-primary-hilton-advances/",
+        "https://calmatters.org/california-voter-guide-2026/governor",
+        "https://stevehiltonforgovernor.com"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "aafe1e1c-8855-45b3-9986-740381f45228",
+      "reasoning": "Hilton's Golden Together housing paper (March 2024) proposes expanding California's urban footprint from 5% to 6% of state land to house 10 million new residents, eliminating the CEQA private right of action, capping impact fees, and moving beyond the \"Infill Ideology.\" It also recommends that building codes and environmental regulations not be changed more than once every five years, alongside streamlined fast-track approvals. The framing throughout is removing regulatory barriers and letting market demand drive the pace of growth — matching value 5.",
+      "sources": [
+        "https://goldentogether.com/wp-content/uploads/2024/10/GT_Sustainable-Suburbs-4.pdf",
+        "https://stevehiltonforgovernor.com/policy/bring-back-the-starter-home-in-california/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_key": "healthcare",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "afc91aa2-4d48-4db6-aebd-f4c9788e6ad7",
+      "reasoning": "OnTheIssues records Hilton saying it is \"disgusting to subsidize health care for undocumented aliens,\" and his campaign does not propose expanding coverage or a public option. His platform focuses on cutting costs through deregulation and market competition rather than government coverage expansion. This fits stance 4: only help the poorest people afford healthcare and leave everyone else to employers and private insurance.",
+      "sources": [
+        "https://www.ontheissues.org/Steve_Hilton.htm",
+        "https://stevehiltonforgovernor.com"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "bab0fb79-19dd-43ed-ab73-b50ac3f934b9",
+      "reasoning": "Hilton's campaign lists homelessness as a public-safety enforcement priority alongside crime and illegal immigration; his Emerson-poll campaign update pledges to \"deal forcefully with crime, homelessness, and educational failure\" as part of a law-and-order agenda. This fits stance 4 (prohibit encampments with graduated warnings and penalties while requiring basic shelter options) rather than the most extreme criminalization stance.",
+      "sources": [
+        "https://stevehiltonforgovernor.com/hilton-surges-ahead-in-governors-race-emerson-poll/",
+        "https://www.ontheissues.org/Steve_Hilton.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "234c3f2a-0bbf-4a8f-ab6b-5344e080f783",
+      "reasoning": "Hilton's housing platform focuses almost entirely on cutting regulations, fees, and permitting barriers for private developers — capping impact fees, expediting approvals, adding a deregulatory freeze. He proposes a first-time buyer loan program as a secondary element. The approach centers on enabling private development rather than public housing, rent controls, or mandatory affordable set-asides, fitting stance 4 (cut regulations and zoning rules so private developers can build more).",
+      "sources": [
+        "https://stevehiltonforgovernor.com/bring-back-the-starter-home-in-california",
+        "https://calmatters.org/california-voter-guide-2026/governor"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "topic_key": "jail-capacity",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "f63a4e70-055e-4115-a5e0-3deeb5748816",
+      "reasoning": "Hilton published a June 2025 campaign policy paper titled \"Expanding Prison Capacity To Fight Crime In California\" explicitly calling for reopening all shuttered state prisons, ending early release programs, and expanding total capacity. His stated contrast: \"Democrats: Close prisons, more crime. Steve Hilton: More prisons, less crime.\" This is the clearest possible match to value 5 (expanding jail/prison capacity and enforcement as the primary response to crime).",
+      "sources": [
+        "https://stevehiltonforgovernor.com/crime",
+        "https://stevehiltonforgovernor.com/hilton-and-yolo-county-da-jeff-reisig-unveil-crime-fighting-plan/"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "topic_key": "medicare/aid",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "92e96359-57a9-4c7e-a78e-a6f1af105ec6",
+      "reasoning": "Hilton's campaign launch for the \"CaliFordable\" affordability tour explicitly proposed cutting Medi-Cal (California's Medicaid) coverage for undocumented immigrants to generate \"up to $20 billion a year\" in savings for working Californians. OnTheIssues records his January 2026 statement: \"Disgusting to subsidize health care for undocumented aliens.\" He has not proposed privatizing Medicare or phasing out the programs entirely, but reducing Medicaid coverage maps to value 4.",
+      "sources": [
+        "https://stevehiltonforgovernor.com/policy/hilton-launches-califordable-campaign-to-fix-californias-affordability-crisis-town-hall-tour/",
+        "https://www.ontheissues.org/Steve_Hilton.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "reasoning": "RECOMMENDED VALUE CHANGE from the existing database value of 4 (which had no supporting quote on file). Hilton has sued to block California's 2025 mid-decade congressional redistricting (Prop 50) as \"corrupt,\" \"unconstitutional,\" and says flatly that \"politicians shouldn't draw their own maps.\" He explicitly praises the 2008/2010 ballot initiatives that created California's independent citizens redistricting commission as the correct model, arguing only that its outcome was \"hijacked\" into gerrymandered maps — direct support for an independent, depoliticized process (stance 1-2), the opposite of legislature/party-controlled mapmaking (stance 4-5). Scored as 2 (independent commission with balanced party representation) given his emphasis on the current maps being skewed against Republican representation. Source: CBS News, Congressional Redistricting, 2025-10-06.",
+      "sources": [
+        "https://www.youtube.com/watch?v=DR4SRUWANjI",
+        "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic_key": "rent-regulation",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "99429ab5-e0bc-47b9-b8e8-cd9d6e0136a4",
+      "reasoning": "Hilton's Golden Together housing policy paper (March 2024) and campaign site position housing affordability as an entirely supply-side problem: eliminate CEQA lawsuit abuse, cap impact fees, reduce zoning restrictions, and expand suburban development. Neither source mentions rent control or tenant protections — his framework is explicitly market-driven. His starter-home policy page frames the single-family starter home as \"the foundation of the California Dream,\" to be revived through deregulation rather than any regulation of rents, placing him at value 5 (oppose rent control; rents set by the market).",
+      "sources": [
+        "https://goldentogether.com/wp-content/uploads/2024/10/GT_Sustainable-Suburbs-4.pdf",
+        "https://stevehiltonforgovernor.com/policy/bring-back-the-starter-home-in-california/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "835bc8d1-b31b-4fef-9cca-31318cc0f1d6",
+      "reasoning": "Hilton explicitly proposes launching Education Savings Accounts (ESAs) and open enrollment, the hallmark policies of universal school choice. ESAs allow education funding to follow the student to any school — public, private, or religious. This is the defining policy of stance 5: providing universal vouchers so education funding follows the student to any school chosen by the family.",
+      "sources": [
+        "https://www.ontheissues.org/Steve_Hilton.htm",
+        "https://stevehiltonforgovernor.com"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "season_number": 1,
+      "value": 5,
+      "pin_revision_id": "87f8c011-5c70-4f39-a1ea-5cc53c010c60",
+      "reasoning": "Hilton proposes eliminating state income tax on the first $150,000 earned and setting a flat rate on earnings above that threshold — collapsing the progressive rate structure. He also pledges to cut roughly a third of state spending toward pre-pandemic levels. This aligns with stance 5: drastically cut taxes and shrink government so people and businesses keep more of their money.",
+      "sources": [
+        "https://stevehiltonforgovernor.com/policy/no-state-income-tax-on-your-first-150000/",
+        "https://calmatters.org/politics/2026/06/california-governor-primary-hilton-advances/",
+        "https://www.ontheissues.org/Steve_Hilton.htm"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "af2c6427-daf8-4819-93ba-42db212bae68",
+      "reasoning": "OnTheIssues records that Hilton \"would overturn law allowing trans student-athletes to play,\" indicating support for requiring transgender athletes to compete under their biological sex at birth. This aligns with stance 4. There is no documented position calling for a complete ban on all transgender athletes from all organized sports (stance 5), so stance 4 is the best fit.",
+      "sources": [
+        "https://www.ontheissues.org/Steve_Hilton.htm"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic_key": "transportation-priorities",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "c48782d5-e905-408d-8532-2a5fd5bb6efa",
+      "reasoning": "Hilton pledged (on a joint Republican-slate platform) to stop all California High-Speed Rail payments \"on day one,\" calling the project a taxpayer boondoggle that violates Prop 1A's prohibition on operating subsidies. His transportation focus is fiscal accountability and ending the HSR program rather than any transit, cycling, or pedestrian investment, which his platform does not propose — placing him at value 4 (road/driver-oriented priorities over multimodal investment).",
+      "sources": [
+        "https://stevehiltonforgovernor.com/steve-hilton-pledges-to-stop-high-speed-rail-payments-on-day-one/"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "63c52abb-fc28-42a3-a421-a27eced16da0",
+      "reasoning": "Hilton's \"Emergency Election Count Accelerator\" plan focuses on faster, more reliable vote counting and explicitly \"does not change election laws, security procedures, or vote-counting standards.\" He emphasizes \"secure, transparent, and timely\" elections and has called for investigations into California's slow count. The cited platform contains no photo-ID, voter-roll-purge, or mail-in restrictions, so the documented position is procedural (counting speed and transparency) rather than access-restricting — mapping to stance 3 rather than stance 4.",
+      "sources": [
+        "https://stevehiltonforgovernor.com/fourth-largest-economy-month-long-vote-count-hilton-calls-on-newsom-to-implement-emergency-action/"
+      ],
+      "seed": "stale"
+    }
+  ]
+}

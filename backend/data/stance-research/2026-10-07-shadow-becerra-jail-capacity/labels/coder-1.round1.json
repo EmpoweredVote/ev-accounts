@@ -1,0 +1,167 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "served_revision_id": "7992fadf-a24c-4f73-bd34-76b5bca4764b",
+      "passages": [
+        {
+          "snapshot_id": "ab27a622-bfc9-52f5-8f62-23748796209e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Calls for funding mental-health and addiction services under Prop 36 instead of just incarcerating people, but says nothing about jail capacity (rung 2's 'rather than building new capacity') and proposes new revenue rather than redirecting incarceration funding (rung 1).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "397367b4-1b36-5e6f-8b3c-495447b9c4cb",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "In a homelessness interview he says drug courts and diversion programs must be implemented; this supports alternatives but says nothing about capacity.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4dcfcc1c-16bb-5bf8-ab00-5f0b13169232",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The homelessness issue page covers treatment beds, shelter and prevention, not jail capacity or incarceration.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6a2cd15d-84f9-57b3-a5f5-7c8652e874fa",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The general-election debate covers taxes, housing, ICE, encampments and healthcare; it says nothing about jail capacity.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6dc02de7-1c76-5553-88f4-68fa0bf9b628",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-05-29",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The talk of jailing ICE agents who break the law, and the jab at an opponent's private-prison investments, are not about jail capacity policy.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9baa8404-9c37-55c7-9fe7-c6640cc8515f",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-02-10",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The forum covers biography, ICE, healthcare, AI and taxes; jails do not come up.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a8f85669-c307-58df-871f-eaf5e86b719e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-04-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The Nexstar debate does not discuss jail capacity or incarceration policy.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6cc77753-84c4-56fd-927a-4db76154095c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The housing issue page has nothing on jails.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Becerra says \"Californians are done with just putting people away behind bars\" and calls for funding mental-health and drug-addiction services and diversion programs. That shows the alternatives side and rules out 'prioritizing detention over alternatives'. It does not evidence the second clause of 'reducing the incarcerated population through alternatives to incarceration rather than building new capacity', and he proposes raising revenue, not redirecting incarceration funding.",
+      "needs_source": [
+        "Becerra's own words on building or expanding jail or prison capacity (state jail construction funding, prison closures)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "ab27a622-bfc9-52f5-8f62-23748796209e",
+          "text": "It's a hollow gesture to pass Prop 36 and not provide the funding for mental health services, drug addiction services.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "ab27a622-bfc9-52f5-8f62-23748796209e",
+          "text": "Californians are done with just putting people away behind bars.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "397367b4-1b36-5e6f-8b3c-495447b9c4cb",
+          "text": "that's where I think these drug courts, these diversion uh programs that we have must be implemented.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "b5260e5a-5576-4071-8b2a-088af8d1f9eb",
+      "served_revision_id": "81920cf6-9a30-4c5c-82b1-5f2c16cda95c",
+      "passages": [
+        {
+          "snapshot_id": "cd62ec99-5920-53a5-aa26-c4be7084181d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign policy page on speeding up California's 2026 vote count and future election rules (voter ID, mail-ballot deadlines); it says nothing about the fairness or outcome of the 2020 presidential election, and calls for future reforms do not place a person on rung 2.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "None of the sources states a view of the 2020 outcome; the Emergency Election Count Accelerator Plan concerns counting speed and future California election rules, which the annex says does not show that 2020 'had real problems worth fixing'. No passage speaks to whether 'Joe Biden won legitimately' or whether the election was 'stolen', so the row is blank.",
+      "needs_source": [
+        "Steve Hilton's own words on the 2020 presidential election outcome (debate answer, candidate questionnaire, or interview quote from the 2025-2026 governor campaign)"
+      ],
+      "quotes": []
+    }
+  ]
+}

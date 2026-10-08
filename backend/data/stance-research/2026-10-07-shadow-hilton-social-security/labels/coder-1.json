@@ -1,0 +1,21 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "served_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+      "passages": [],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "None of the eight supplied sources (policy pages on the DMV, election counting, small business, Medi-Cal fraud, insurance and masked criminals; the CNN debate and Courier interview transcripts) mentions Social Security, payroll taxes, benefit levels or private accounts. At this state seat only his own words can seat a chair, and no own-words passage speaks to any rung, from 'expand Social Security benefits significantly' to 'transition Social Security to private investment accounts'.",
+      "needs_source": [
+        "Steve Hilton's own words on Social Security benefits, the payroll tax or private accounts (candidate questionnaire, debate answer, interview, or issue page), current 2026 campaign"
+      ],
+      "quotes": []
+    }
+  ]
+}

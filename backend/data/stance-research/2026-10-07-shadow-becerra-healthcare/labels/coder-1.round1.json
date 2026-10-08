@@ -1,0 +1,160 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "8732cedb-f77a-5cb6-a65c-202c675d57e9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remark backing Medicare for All so everyone has 'decent access to care' shows the everyone-covered side but never says care is free to the patient, so it does not separate rung 1 from rung 2.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f5b6a577-82e5-5c7e-849f-75d557b50059",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer calls Medicare for All 'a form of single -payer' but then frames the goal as 'a bill that they can afford to pay', not care free to the patient; his congressional authorship is only reported in his words, not a record.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "556f9c08-0a50-5fdb-807d-d6571efa751b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer to a single-payer question: 'absolutely for Medicare for all' and 'covering everyone', which meets everyone-covered but states nothing on free-to-patient or full public payment beyond the label.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7ca5f79d-bde7-5c08-be53-d8d2e63a2709",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign issue page aims at universal coverage ('no Californian is left without care') while lowering premiums and out-of-pocket costs, so it points to coverage for everyone without choosing free public payment or a regulated public-private mix.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7ff4351b-7a55-5b3a-9eb7-e732a8bca04a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview recounting his ACA and pre-existing-condition defence as AG; under the annex, defending the ACA and pre-existing-condition protection are direction-only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "511a7d21-c046-58b2-8ec4-7521c7995ea8",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-26",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "'health care should be a right, not a privilege' names no clause, which the annex codes as rhetorical.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "67e094bf-778a-5bcd-ba6f-701370504528",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Answer on how he would implement Medicaid work requirements, which the annex codes as adjacent.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His current-campaign words ('So I am absolutely for Medicare for all and we will get there.'; 'covering everyone with something like Medicare for all') put him on the side of coverage for everyone, which rules out rungs 3 to 5. They do not state 'free' to the patient or 'fully paid for by the public sector', and he frames the goal as 'a bill that they can afford to pay'. Nor do they state 'a mix of public programs and regulated private insurance', so they do not choose between rung 1 and rung 2.",
+      "needs_source": [
+        "Congressional record of Becerra's authorship or co-sponsorship of a Medicare for All bill (bill page and text showing its premium and cost-sharing provisions); this is a federal record, so pre-seating for this office"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "556f9c08-0a50-5fdb-807d-d6571efa751b",
+          "text": "So I am absolutely for Medicare for all and we will get there.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "8732cedb-f77a-5cb6-a65c-202c675d57e9",
+          "text": "I have been a supporter of Medicare for all, for decades, because I think everyone should have decent access to care.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "7ca5f79d-bde7-5c08-be53-d8d2e63a2709",
+          "text": "Protect existing coverage from federal rollbacks and chart a clear path to ensuring that no Californian is left without care, regardless of income, zip code or immigration status.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "511a7d21-c046-58b2-8ec4-7521c7995ea8",
+          "text": "health care should be a right, not a privilege",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

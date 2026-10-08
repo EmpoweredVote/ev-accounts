@@ -1,0 +1,55 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-education-ai",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "61269f44-9c7f-4b27-818a-3508009f6ae2",
+      "topic_key": "education-ai",
+      "served_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+      "question_text": "What role should artificial intelligence play in classrooms and student work?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Prohibit artificial intelligence tools in student work and classroom instruction"
+        },
+        {
+          "value": 2,
+          "text": "Restrict artificial intelligence to teacher planning and administrative use, keeping it out of student work"
+        },
+        {
+          "value": 3,
+          "text": "Permit students to use artificial intelligence on designated assignments, with disclosure required"
+        },
+        {
+          "value": 4,
+          "text": "Encourage broad classroom use of artificial intelligence with light guidelines and teacher discretion"
+        },
+        {
+          "value": 5,
+          "text": "Let teachers and students use artificial intelligence freely, without restrictions"
+        }
+      ],
+      "own_words_levels": [
+        "local",
+        "federal"
+      ],
+      "annexMd": "# education-ai — served revision c6a2c643-aaa3-4d91-958e-e17f421b7dc9 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"What role should artificial intelligence play in classrooms and student work?\"\n\n**Orientation:** standard. Rung 1 prohibits AI in schools, rung 5 allows it with no restriction. The\nrungs order **how much classroom and student use is allowed**: none, staff only, designated\nassignments with disclosure, broad use with light rules, free use.\n\n**Levels with a lever:** school, state. The lever is the school board's\npolicy (acceptable use, academic integrity, device and network rules) and state statute or\nstate-board rules. A city or county council holds none → own words only there _(proposed)_.\n\n**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal, local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"generative AI\", \"large language model\", \"chatbot\", \"AI tutor\", \"acceptable use\npolicy\", \"academic integrity\", \"AI disclosure\", \"AI literacy\", \"AI guidance\", \"responsible use\".\n\n1. **\"Prohibit artificial intelligence tools in student work and classroom instruction\"**\n   - Means: AI is banned both from what students produce and from teaching in class.\n   - Operative clauses: [a] banned in student work; [b] banned in classroom instruction. Compound:\n     one side only → `compound-partial` (V4.2).\n   - Establishing evidence looks like: a policy or statute that bans AI tools for students **and** for\n     classroom instruction.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A ban on student use that is silent on teachers cannot separate rung 1 from rung 2 →\n     `direction-only`.\n   - **Blocking AI sites on district networks and devices** is a ban in practice for students; it\n     says nothing about instruction → [a] only _(proposed)_.\n\n2. **\"Restrict artificial intelligence to teacher planning and administrative use, keeping it out of\n   student work\"**\n   - Means: teachers and staff may use AI for planning and administration; students may not use it\n     for their work.\n   - Operative clauses: [a] staff use allowed for planning and administration; [b] no student use.\n     Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: a policy that permits staff use **and** bars student use.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n\n3. **\"Permit students to use artificial intelligence on designated assignments, with disclosure\n   required\"**\n   - Means: students may use AI only where the assignment allows it, and must say when they did.\n   - Operative clauses: [a] student use only on designated assignments; [b] disclosure required.\n     Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: an academic-integrity or acceptable-use policy with both\n     clauses.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A disclosure or citation rule with no limit to designated assignments meets [b] only →\n     `compound-partial`.\n\n4. **\"Encourage broad classroom use of artificial intelligence with light guidelines and teacher\n   discretion\"**\n   - Means: schools promote wide use of AI in class, with a few rules and room for each teacher to\n     decide.\n   - Operative clauses: [a] broad use encouraged; [b] light guidelines; [c] teacher discretion.\n   - Establishing evidence looks like: a policy or own words that promote classroom use and leave\n     the limits to teachers under general guidance.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because teacher discretion can include \"designated\" assignments.\n     If the policy requires disclosure and limits use to assignments the teacher designates → rung 3.\n\n5. **\"Let teachers and students use artificial intelligence freely, without restrictions\"**\n   - Means: no limits on AI use by teachers or students.\n   - Operative clauses: [a] free use by teachers and students; [b] no restrictions.\n   - Establishing evidence looks like: own words or a policy that rejects any restriction. [b] is an\n     absence clause: a district with no AI policy has not said \"no restrictions\" (V4.2 \"Silence is\n     not a clause\").\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because broad use with few rules reads like free use. Any\n     guideline at all → not rung 5.\n\n**Hard cases:**\n- **A state law that requires each district to adopt an AI policy**, without saying what it must\n  contain, decides that districts decide → `adjacent` (V2, H12) _(ruled 2026-10-01)_.\n- **State guidance, task forces and pilot programmes** → `study-directive`.\n- **Teaching about AI** (AI literacy, computer science standards) is not use in student work →\n  `adjacent` _(proposed)_.\n- **Student data privacy** rules for AI vendors, and **AI-generated images** of students (deepfakes)\n  → `adjacent`.\n- **Buying an AI tutoring product** → `direction-only` toward rungs 3–5 _(proposed)_.\n- **Phone or device bans** that do not name AI → `adjacent`.\n- **Budget or omnibus votes** → V4 `multi-subject`.\n"
+    }
+  ]
+}

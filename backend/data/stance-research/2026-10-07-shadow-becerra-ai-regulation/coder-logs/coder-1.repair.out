@@ -1,0 +1,7 @@
+I've rewritten the label file with the one fix the validator asked for. I haven't re-run the validator myself.
+
+The error came from the last quote, the one from the film-industry page that begins "I will support state requirements that productions disclose how AI is being used…". It was marked quotable while carrying the `source-not-an-answer` code, which blocks display. I kept the code and changed `v8_quotable` to `false`.
+
+Nothing else changed: the row is still blank with reason `direction-only`, with an empty `rests_on`, and the reasoning is word for word the same.
+
+The file is at `/Users/chrisandrews/Documents/GitHub/ev-accounts-ca-gov-stances/backend/data/stance-research/2026-10-07-shadow-becerra-ai-regulation/labels/coder-1.json`.

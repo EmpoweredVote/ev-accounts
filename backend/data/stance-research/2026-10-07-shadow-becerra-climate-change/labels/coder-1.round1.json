@@ -1,0 +1,184 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "c51ac222-d12a-5d75-94b5-e5b103cd81c4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person campaign issue page (current 2026 campaign, no page date): 'treating clean energy and grid resilience as public investments' shows a pro-support side, but it does not exclude mandates (rung 1), names no scale for 'major', and grid investment overlaps rung 3.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "57e64b70-8561-5dce-aa7f-e3e5571705f1",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "AI issue page proposes a standard that data centers be 'powered with clean energy' and better data-center permitting; it names no deadline and covers only one sector, so it shows a side, not a rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bfa33e5f-911d-5b1b-a80d-974c59de47d2",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-26",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview: climate and clean-energy goals 'have to be achievable' and 'we should not be shackled by goals', while 'We should strive for it'; a lean against rigid deadlines that names no mechanism among the rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "76bc008c-51d2-5d9a-bf9f-155b3f73ee21",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-10-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview: commits to moving 'towards a cleaner California, cleaner energy California' with a stable, gradual transition; it names no mandate, subsidy, permitting or market mechanism.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a8fb7a40-8a52-5971-be12-524f9c667ea3",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer: cites his AG lawsuits and promises to 'continue to move towards a transition to clean energy'; it shows a side only, and the lawsuits are his own account, not records in a snapshot.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6f734ea5-aabc-56cb-982f-0605319965da",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-02-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remarks on AI: data centers should help 'expand our grid and our capacity for our clean energy'; it is about data-center obligations, not the government mechanism the rungs order.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b533d502-3f59-5b27-9913-9e971936736a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": "2026-04-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answers on gas prices, transportation funding ('all of the above' refers to road funding), housing and insurance; nothing on clean-energy policy.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "be8f1ed4-042b-5190-9e3e-9864fd398b7d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Housing issue page; it does not address clean-energy policy.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Becerra's own words consistently favour the clean-energy transition ('treating clean energy and grid resilience as public investments'; 'continue to move towards a transition to clean energy'), so his side is pro-action. No passage matches every clause of one rung: none calls for a mandate with firm deadlines (he says goals 'have to be achievable'), none commits to 'major subsidies, tax credits' at scale or excludes mandates, and none pairs cutting permitting red tape for clean-energy projects with grid upgrades. No records are in the sources.",
+      "needs_source": [
+        "Any bill authored, sponsored or voted on by Becerra as a California Assembly member that sets a renewable or clean-energy standard, credit or permitting reform",
+        "A candidate questionnaire answer from Becerra on clean-energy mandates, deadlines (e.g. SB 100 targets) or subsidies"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "c51ac222-d12a-5d75-94b5-e5b103cd81c4",
+          "text": "treating clean energy and grid resilience as public investments",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "57e64b70-8561-5dce-aa7f-e3e5571705f1",
+          "text": "data centers that operate in California add value to our current energy infrastructure, are powered with clean energy, cover the costs of their own energy needs",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "bfa33e5f-911d-5b1b-a80d-974c59de47d2",
+          "text": "anything having to do with climate change, cleaner energy, when we have goals, they have to be achievable.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "76bc008c-51d2-5d9a-bf9f-155b3f73ee21",
+          "text": "Let's not get so far ahead of all the people we want to lead.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "a8fb7a40-8a52-5971-be12-524f9c667ea3",
+          "text": "what I will do as governor to make sure that we continue to move towards a transition to clean energy",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "0a4fd187-6290-5375-8337-7e20f3773439",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign page in the third person ('Steve will prohibit…') about AI in firing decisions; its one line on discrimination law names no enforcement change and is not his own words.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "aea8fe91-d83b-5cf6-a60f-98416a6ad152",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His plan to overturn the girls'-sports legislation on gender-discrimination grounds belongs to the trans-athletes question, not to how much government acts on racial and social inequality.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "No source has Hilton's own words on civil rights enforcement, systemic discrimination, equity mandates, affirmative action or race-based programmes. The campaign page on robo-firing is written in the third person and is about AI in employment decisions. The CBS clip is about transgender athletes. Neither establishes any rung, from 'mandate racial equity requirements in all institutions' to 'eliminate affirmative action and all race-based government programs'.",
+      "needs_source": [
+        "Hilton's own words (questionnaire, debate answer or first-person issue page) on affirmative action, race-based government programmes or civil rights enforcement in California"
+      ],
+      "quotes": []
+    }
+  ]
+}

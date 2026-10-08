@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-jail-capacity",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "topic_key": "jail-capacity",
+      "served_revision_id": "7992fadf-a24c-4f73-bd34-76b5bca4764b",
+      "question_text": "How should government respond to jail overcrowding and criminal justice demand?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system"
+        },
+        {
+          "value": 2,
+          "text": "Reducing the incarcerated population through alternatives to incarceration rather than building new capacity"
+        },
+        {
+          "value": 3,
+          "text": "Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity"
+        },
+        {
+          "value": 4,
+          "text": "Building additional jail capacity to address overcrowding and facility deficiencies"
+        },
+        {
+          "value": 5,
+          "text": "Expanding jail capacity as the primary response to crime, prioritizing detention over alternatives"
+        }
+      ],
+      "own_words_levels": [
+        "federal"
+      ],
+      "annexMd": "# jail-capacity — served revision 7992fadf-a24c-4f73-bd34-76b5bca4764b (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`f63a4e70-…`); coders code the served text below.\n\n**Question:** \"How should government respond to jail overcrowding and criminal justice demand?\"\n\n**Orientation:** standard. Rung 1 moves money out of incarceration to shrink the jail system, rung 5\nexpands jails as the main response to crime. The rungs order **the size of the jail system**: shrink\nit, reduce its population, hold capacity, add capacity, make detention the primary tool.\n\n**Levels with a lever:** local, state. Counties fund, build and run jails\n(boards of supervisors or commissioners, sheriffs); states fund jail construction, set bail and\nsentencing law, and run prisons. No federal officeholder holds a lever.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"jail\", \"detention center\", \"correctional facility\", \"beds\" / \"rated capacity\",\n\"overcrowding\", \"consent decree\", \"conditions of confinement\", \"jail bond\", \"certificates of\nparticipation\", \"pretrial services\", \"diversion\", \"bail reform\", \"electronic monitoring\",\n\"mental-health court\", \"drug court\", \"restorative justice\", \"justice reinvestment\", \"care first\".\n\n1. **\"Redirecting incarceration funding into community-based mental health, addiction, housing, and\n   restorative justice programs to shrink the jail system\"**\n   - Means: take money away from jails and spend it on community programmes, so the jail system gets\n     smaller.\n   - Operative clauses: [a] redirect incarceration funding (money leaves jails or prisons);\n     [b] into community-based programmes (mental health, addiction, housing, restorative justice);\n     [c] to shrink the jail system.\n   - Establishing evidence looks like: a budget amendment or motion that cuts jail or sheriff\n     detention funding and moves it to such programmes; a jail closure plan that reinvests the money.\n     New programme money with no cut to incarceration has no [a] → rung 2 territory _(proposed)_.\n   - Levels that hold a lever: local (county budgets); state (prison and jail funding).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because both reduce the jail population. Rung 1 needs money moved\n     **out of** incarceration.\n   - The four programme types name forms of [b]; one form is enough _(proposed)_.\n\n2. **\"Reducing the incarcerated population through alternatives to incarceration rather than building\n   new capacity\"**\n   - Means: lower the number of people held by using alternatives, instead of building more space.\n   - Operative clauses: [a] reduce the incarcerated population through alternatives; [b] rather than\n     building new capacity.\n   - Establishing evidence looks like: a diversion, pretrial-release, treatment-court or bail-reform\n     measure **plus** evidence against new capacity (a No on a jail expansion, or own words). An\n     alternatives programme alone does not exclude rungs 3 and 4 → `compound-partial` _(proposed)_.\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - Bail reform, pretrial diversion and treatment alternatives are now all inside \"alternatives to\n     incarceration\"; any one of them meets [a].\n\n3. **\"Upgrading jail facilities only as needed to meet constitutional standards, without expanding\n   overall capacity\"**\n   - Means: fix jails so they meet constitutional standards, but do not add beds.\n   - Operative clauses: [a] upgrade facilities only as needed for constitutional standards;\n     [b] without expanding overall capacity.\n   - Establishing evidence looks like: a renovation or replacement project tied to conditions\n     (a consent decree, a court order, an inspection finding) whose bed count does not grow. Read\n     the capacity numbers; [b] must be stated, not assumed (V4.2 \"Silence is not a clause\").\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a \"replacement jail\" can be larger than the old one. If\n     the rated capacity grows → rung 4.\n\n4. **\"Building additional jail capacity to address overcrowding and facility deficiencies\"**\n   - Means: build more jail space to deal with overcrowding and poor facilities.\n   - Operative clauses: [a] build additional capacity; [b] to address overcrowding and facility\n     deficiencies.\n   - Establishing evidence looks like: a vote for a jail expansion or a new, larger facility, justified\n     by crowding or conditions. A capacity vote alone does not exclude rung 5 → `direction-only`,\n     unless the same record or the person's words keep alternatives in place _(proposed)_.\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3: see rung 3.\n   - Commonly confused with rung 5 because both add beds. Rung 5 adds the claim that detention is the\n     **primary** response to crime and comes **before** alternatives.\n\n5. **\"Expanding jail capacity as the primary response to crime, prioritizing detention over\n   alternatives\"**\n   - Means: add jail space as the main answer to crime, and prefer detention to alternatives.\n   - Operative clauses: [a] expand capacity; [b] as the primary response to crime; [c] detention\n     over alternatives.\n   - Establishing evidence looks like: a capacity expansion **plus** own words or records that rank\n     detention ahead of alternatives (for example opposing diversion or pretrial release while\n     funding beds).\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Enforcement is no longer part of this rung. More police or tougher sentences with no capacity\n     clause do not reach rung 5 → `adjacent` _(proposed)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **Prisons.** State prison capacity is on-question: the question names \"criminal justice demand\",\n  rung 1 names incarceration funding, and prisons are the state's lever _(ruled 2026-10-01)_.\n- **Bail and sentencing law** with no capacity or population clause → `adjacent`; the judicial\n  topics order those rules _(proposed)_.\n- **Jail health care, staffing and wages** improve operations without changing capacity → `adjacent`\n  _(proposed)_.\n- **Bonds and capital plans** are a record when the person votes on the specific project; a county\n  budget that funds the whole sheriff's office → V4 `multi-subject`.\n- **Feasibility studies and needs assessments** → V4 `study-directive`.\n"
+    }
+  ]
+}

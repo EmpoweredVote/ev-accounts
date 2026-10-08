@@ -1,0 +1,352 @@
+[
+  {
+    "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+    "topic_key": "religious-freedom",
+    "topic_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+    "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+    "question_number": 32,
+    "title": "Religious Freedom",
+    "question_text": "How should the law balance religious freedom with protection from discrimination?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "prohibit religious exemptions from civil rights and anti-discrimination laws."
+      },
+      {
+        "value": 2,
+        "text": "protect religious freedom while ensuring it doesn't override anti-discrimination protections in employment and housing."
+      },
+      {
+        "value": 3,
+        "text": "balance protecting religious practices with maintaining equal treatment under the law for all citizens."
+      },
+      {
+        "value": 4,
+        "text": "protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs."
+      },
+      {
+        "value": 5,
+        "text": "strongly protect religious freedom and allow religious organizations complete autonomy in their operations and hiring practices."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  },
+  {
+    "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+    "topic_key": "same-sex-marriage",
+    "topic_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+    "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+    "question_number": 35,
+    "title": "Same-Sex Marriage",
+    "question_text": "What legal recognition should same-sex marriages receive?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Guarantee same-sex couples full legal equality \u2014 equal marriage plus protection from discrimination (such as in jobs and housing)."
+      },
+      {
+        "value": 2,
+        "text": "Guarantee same-sex marriage the same benefits and protections as any other marriage."
+      },
+      {
+        "value": 3,
+        "text": "Allow same-sex marriage, but protect religious organizations' right to decline to perform or host these marriages."
+      },
+      {
+        "value": 4,
+        "text": "Recognize civil unions for same-sex couples, but reserve marriage for opposite-sex couples."
+      },
+      {
+        "value": 5,
+        "text": "Make same-sex marriage illegal and define marriage as only between one man and one woman."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local"
+    ]
+  },
+  {
+    "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+    "topic_key": "school-vouchers",
+    "topic_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+    "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+    "question_number": 36,
+    "title": "School Vouchers & Public Education Funding",
+    "question_text": "What role should vouchers and school choice play in the public education system?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Eliminating voucher programs that divert taxpayer money from public schools to private institutions"
+      },
+      {
+        "value": 2,
+        "text": "Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones"
+      },
+      {
+        "value": 3,
+        "text": "Allowing income-based voucher programs, open to a wider range of families under an income cap"
+      },
+      {
+        "value": 4,
+        "text": "Expanding voucher eligibility to most families so parents can choose the school that best fits their child"
+      },
+      {
+        "value": 5,
+        "text": "Providing universal vouchers so that education funding follows the student to any school \u2014 public, private, or religious \u2014 chosen by the family"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local"
+    ]
+  },
+  {
+    "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+    "topic_key": "ukraine-support",
+    "topic_revision_id": "107d180d-a949-4a42-a250-54f0a7683be0",
+    "served_revision_id": "9ee7ecb7-fd99-429a-a37d-eff58a381983",
+    "question_number": 42,
+    "title": "Ukraine - Russia Conflict",
+    "question_text": "What level of military and financial support should be provided to Ukraine?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "significantly increase military and financial aid to Ukraine."
+      },
+      {
+        "value": 2,
+        "text": "continue providing current levels of military and economic aid to help Ukraine defend itself."
+      },
+      {
+        "value": 3,
+        "text": "provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war."
+      },
+      {
+        "value": 4,
+        "text": "reduce aid to Ukraine and focus American resources on domestic priorities instead."
+      },
+      {
+        "value": 5,
+        "text": "end all aid to Ukraine immediately and stay completely out of the conflict."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+    "topic_key": "education-library-books",
+    "topic_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+    "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+    "question_number": 47,
+    "title": "School Library Books and Instructional Materials",
+    "question_text": "How should schools handle challenges to books in libraries and classrooms?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Keep every book available and let professional librarians and educators curate the collection"
+      },
+      {
+        "value": 2,
+        "text": "Keep challenged books available to all, while letting parents limit what their own child can borrow"
+      },
+      {
+        "value": 3,
+        "text": "Remove a challenged book only if a review committee of educators and parents finds it unsuitable"
+      },
+      {
+        "value": 4,
+        "text": "Pull any book a parent challenges until it has been reviewed"
+      },
+      {
+        "value": 5,
+        "text": "Remove any book a parent or community member reports as inappropriate, for all students"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true,
+    "own_words_levels": [
+      "federal"
+    ]
+  },
+  {
+    "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+    "topic_key": "education-gender-identity",
+    "topic_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+    "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+    "question_number": 48,
+    "title": "Parental Notification and Transgender Students",
+    "question_text": "What should schools do when a student uses a different name or gender identity at school than at home?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Use the student's chosen name and pronouns, and keep their gender identity from parents unless the student agrees to share it"
+      },
+      {
+        "value": 2,
+        "text": "Use the student's chosen name and pronouns, and tell parents only if they directly ask"
+      },
+      {
+        "value": 3,
+        "text": "Tell parents when a student changes their name or gender at school, unless staff believe it would put the student in danger"
+      },
+      {
+        "value": 4,
+        "text": "Require staff to notify parents whenever a student asks to be treated as a different gender at school"
+      },
+      {
+        "value": 5,
+        "text": "Require written parental permission before staff use a student's chosen name or pronouns"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true,
+    "own_words_levels": [
+      "local",
+      "federal"
+    ]
+  },
+  {
+    "topic_id": "15d7e730-119b-43a2-a351-1efb7352b86b",
+    "topic_key": "education-school-police",
+    "topic_revision_id": "d81d7662-3c68-425c-a5c6-ca0717384a9e",
+    "served_revision_id": "d81d7662-3c68-425c-a5c6-ca0717384a9e",
+    "question_number": 50,
+    "title": "Police in Schools",
+    "question_text": "What role should police officers play in schools?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Remove police officers from schools and rely on counselors and mental health staff"
+      },
+      {
+        "value": 2,
+        "text": "Keep officers out of schools and call them only when a serious crime occurs"
+      },
+      {
+        "value": 3,
+        "text": "Bring in a shared or part-time officer with a limited, clearly defined role"
+      },
+      {
+        "value": 4,
+        "text": "Place a dedicated officer in every school for safety, but bar them from routine discipline"
+      },
+      {
+        "value": 5,
+        "text": "Place an officer in every school with authority to handle discipline and make arrests on campus"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true,
+    "own_words_levels": [
+      "federal"
+    ]
+  },
+  {
+    "topic_id": "3fd1aa81-e032-4335-8785-452ed10ce9ce",
+    "topic_key": "defense-spending",
+    "topic_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+    "served_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+    "question_number": 55,
+    "title": "Defense Spending",
+    "question_text": "How much should the government spend on the military?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Increase military spending substantially, launching a major buildup to expand the armed forces and their capabilities."
+      },
+      {
+        "value": 2,
+        "text": "Increase military spending moderately, growing the budget above inflation to keep pace with rising threats."
+      },
+      {
+        "value": 3,
+        "text": "Hold military spending roughly flat, allowing it to rise only with inflation."
+      },
+      {
+        "value": 4,
+        "text": "Reduce military spending modestly below current levels."
+      },
+      {
+        "value": 5,
+        "text": "Cut military spending dramatically, roughly halving the budget or more."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "topic_key": "ranked-choice-voting",
+    "topic_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+    "served_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+    "question_number": 60,
+    "title": "Ranked-Choice Voting and Electoral Method",
+    "question_text": "How should votes be cast and counted in elections?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Replace winner-take-all elections with proportional ranked-choice voting \u2014 ranked ballots fill several seats at once, so seats reflect how everyone voted."
+      },
+      {
+        "value": 2,
+        "text": "Adopt ranked-choice voting for single-winner offices: voters rank candidates, and if a top choice can't win, the vote shifts to the next choice until someone has a majority."
+      },
+      {
+        "value": 3,
+        "text": "Allow ranked-choice voting where communities choose it, while keeping single-choice voting as the standard."
+      },
+      {
+        "value": 4,
+        "text": "Keep single-choice voting and oppose adopting ranked-choice voting, but stop short of banning it."
+      },
+      {
+        "value": 5,
+        "text": "Ban ranked-choice voting by law."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

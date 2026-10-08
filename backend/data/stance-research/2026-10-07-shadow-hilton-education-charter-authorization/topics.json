@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "c8807d3d-4264-47ce-b8c4-08c6c9c33ce3",
+    "topic_key": "education-charter-authorization",
+    "topic_revision_id": "3901e1b0-12b0-4f7e-9e14-061ae2247c26",
+    "served_revision_id": "3901e1b0-12b0-4f7e-9e14-061ae2247c26",
+    "question_number": 51,
+    "title": "Charter Schools",
+    "question_text": "How should the board handle charter schools that want to open in the district?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Stop authorizing new charter schools and move to close existing ones"
+      },
+      {
+        "value": 2,
+        "text": "Approve new charters rarely, only when a school is clearly failing students"
+      },
+      {
+        "value": 3,
+        "text": "Judge each charter application on its own merits"
+      },
+      {
+        "value": 4,
+        "text": "Welcome charters and approve strong applications to expand family options"
+      },
+      {
+        "value": 5,
+        "text": "Convert failing district schools into charters run by independent operators"
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true,
+    "own_words_levels": []
+  }
+]

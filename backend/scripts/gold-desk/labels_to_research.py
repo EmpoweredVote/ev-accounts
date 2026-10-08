@@ -43,6 +43,22 @@ full_name = next(p['full_name'] for p in pols if p['politician_id'] == pid)
 surname = re.sub(r'\b(jr|sr|ii|iii|iv)\.?$', '', full_name.strip(), flags=re.I).split()[-1]
 topics = {t['topic_id']: t['topic_key'] for t in json.load(open(os.path.join(person_dir, 'topics.json')))}
 
+OTR_STAMP = re.compile(r'\[\d{1,2}(?::\d{2}){1,2}\]\s*')
+def page_text(snap):
+  """The snapshot text without a saved-copy provenance line; for an On the Record transcript file (extract-otr.mjs): its header lines are not
+  in the transcript and its [m:ss] stamps break the run the verifier matches against the OTR API text, so
+  keep only the turn lines, without stamps."""
+  # A human-saved copy may open with a provenance line ("Saved from <url> (...)"); it is not page text.
+  text = re.sub(r'^\s*Saved from \S+ \([^)]*\)\s*', '', snap['snapshot_text'])
+  if 'ontherecord.empowered.vote/meetings/' not in snap['url'] or not text.lstrip().startswith('# On the Record'):
+    return text
+  first = OTR_STAMP.search(text)  # the snapshot collapses newlines: the header is everything before the first stamp
+  return OTR_STAMP.sub('', text[first.start():]).strip() if first else text
+
+def coder_quotes(row, sid):
+  """The coder's verbatim quotes from this page (statement evidence carries no provision/actor quote)."""
+  return [q.get('text') for q in row.get('quotes', []) if q.get('snapshot_id') == sid and q.get('text')]
+
 def window(text, anchor, words=60):
   """A verbatim run of `text` of about `words` words centred on `anchor` (case-insensitive)."""
   if not anchor: return None
@@ -72,12 +88,12 @@ def blank_rows(row, tk, snaps):
     if not POINTER_ONLY.search(snap['url']): by_url.setdefault(snap['url'], sid)
   urls, ev, without = [], [], []
   for u, sid in by_url.items():
-    p, text = passages.get(sid, {}), snaps[sid]['snapshot_text']
+    p, text = passages.get(sid, {}), page_text(snaps[sid])
     # Last resort, the page's opening words: a bill text or bill page often never prints the member's
     # name. The verifier then cannot match the name near it, so it is never PUBLISHED as a citation —
     # but the page stays listed as examined, which is what the fallback rule asks.
     opening = ' '.join(text.split()[:60]) or None
-    snip = next((w for w in [window(text, surname)] + [window(text, p.get(f)) for f in ('provision_quote', 'actor_quote', 'tally_quote')] + [opening]
+    snip = next((w for w in [window(text, surname)] + [window(text, p.get(f)) for f in ('provision_quote', 'actor_quote', 'tally_quote')] + [window(text, q) for q in coder_quotes(row, sid)] + [opening]
                  if w and len(w.split()) >= MIN_SNIPPET_WORDS), None)
     if not snip: without.append(u); continue
     urls.append(u)
@@ -137,8 +153,8 @@ for b in spec['batches']:
       'source_url_3': urls[2] if len(urls) > 2 else '', 'quote_text': '', 'quote_deidentified': '', 'editor_note': ''})
     for idx, u in enumerate(urls[:3]):
       sid = next(s for s in rests if snaps[s]['url'] == u)
-      p, text = passages.get(sid, {}), snaps[sid]['snapshot_text']
-      snip = next((w for w in (window(text, p.get(f)) for f in ('provision_quote', 'actor_quote', 'tally_quote')) if w), None) or window(text, surname)
+      p, text = passages.get(sid, {}), page_text(snaps[sid])
+      snip = next((w for w in [window(text, p.get(f)) for f in ('provision_quote', 'actor_quote', 'tally_quote')] + [window(text, q) for q in coder_quotes(row, sid)] if w), None) or window(text, surname)
       if snip: evidence.append({'full_name': full_name, 'topic_key': tk, 'source_url': u, 'snippet': snip, 'snippet_index': '1'})
       # A second window around the instrument's number, so the snippets name the bill the reasoning names.
       ins = instrument_window(text, p.get('instrument'))

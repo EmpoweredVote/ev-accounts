@@ -1,0 +1,70 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "d0dd268a-f33e-5db6-834f-c2d2e67af3c0",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-13",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview words in the current campaign: he would overturn the legislation letting transgender girls play on girls' teams, which shows the restrictive side but never states the sex-at-birth team rule (rung 4) or a ban from all sport (rung 5).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "18dcf5aa-9759-5527-afa9-6509cc53d7da",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Aggregator pointer page; the captured text says nothing on this topic.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In a 2026 interview Hilton said \"I want to overturn the legislation that enables that. It's not fair. It's not fair for girls who've worked so hard.\" That places him on the restrictive side, but repealing the existing law is not the same as stating the rung that would \"require transgender athletes to compete only on teams matching their biological sex assigned at birth\". Nothing in the sources separates that rung from a complete ban, so the row is BLANK direction-only.",
+      "needs_source": [
+        "Hilton's own speech at the Clovis track and field championships (2026) announcing his girls' sports plan",
+        "Hilton campaign policy page on girls' sports / transgender athletes, if one exists (first-person statement of the rule he would enact)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "d0dd268a-f33e-5db6-834f-c2d2e67af3c0",
+          "text": "In student sports, I want to overturn the legislation that enables that. It's not fair. It's not fair for girls who've worked so hard.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "d0dd268a-f33e-5db6-834f-c2d2e67af3c0",
+          "text": "ask the legislature to overturn it. That'll be my first step.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

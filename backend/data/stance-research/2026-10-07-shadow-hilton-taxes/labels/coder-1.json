@@ -1,0 +1,168 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "2b0928c5-8abe-52de-b3e0-db1ac17cf6f7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview, current campaign: he proposes raising the state income tax threshold to $100,000 and a 7.5% flat tax above it, which is a broad cut that includes the main rates most people pay; he keeps a tax, so this is not 'as far as possible' (his later plan changes the figures to $150,000 and 8% but stays on the same rung).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fa85c185-5da8-5f4d-8138-81320dff125b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-29",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "In the CNN primary debate, answering on taxes, he says his plan 'eliminates state income tax under 100 grand' for people paying the 9.3% rate, which is a cut to the main income tax rates most people pay.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "00cbc14d-0f3e-565c-bdf2-cbf9495e0bec",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "In the general-election debate he says government should 'take less out' and promises to 'reduce taxes for every worker', paid for by spending cuts; he names no rate, so this shows the tax-cut side but no rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bd564cb8-fa90-5ecf-8e63-4b127a973e9f",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "chair-shaped",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign issue page written in the third person ('Under Steve Hilton's plan…'): no state income tax on the first $150,000 and 8% above; under V1 voice rules it cannot carry the chair on its own.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f4051fba-a8b5-5ea5-9d3e-7f074d2702c3",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign page (Operation Zero Waste) on spending cuts to pay for the same tax plan; it states no 'as far as possible' tax goal.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "aad772cd-717c-5274-9c71-ec25bc6b7c65",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "This snapshot holds only the site title, with no policy text.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7b1bd17c-5026-59f4-a3ed-79f2187c5a76",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "An aggregator pointer page; it has no tax content in the excerpt.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "aa21d853-b43b-5bc2-b5ae-6017e3d94a03",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": "2026-06-09",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A news headline excerpt about the primary result; it has no tax content.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "2b0928c5-8abe-52de-b3e0-db1ac17cf6f7",
+        "fa85c185-5da8-5f4d-8138-81320dff125b"
+      ],
+      "reasoning": "In his own words he proposes to eliminate state income tax 'under 100 grand' and to apply 'a flat tax above $100 ,000, 7 .5%'. That is a broad cut that reaches the 9.3% bracket most earners pay, which matches 'Cut taxes broadly, including the main rates most people pay'. He keeps a flat rate rather than cutting 'as far as possible', so 'Cut taxes as far as possible and shrink what government does' is not established.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "fa85c185-5da8-5f4d-8138-81320dff125b",
+          "text": "That's why my plan eliminates state income tax under 100 grand.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "2b0928c5-8abe-52de-b3e0-db1ac17cf6f7",
+          "text": "The second part, which is a flat tax above $100 ,000, 7 .5%.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "00cbc14d-0f3e-565c-bdf2-cbf9495e0bec",
+          "text": "the quickest way to get more money in people's pockets is for the government to take less out.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

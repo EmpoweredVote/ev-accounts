@@ -1,0 +1,990 @@
+[
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "abortion",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "review",
+    "reasons": [
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+      "https://www.ontheissues.org/Steve_Hilton.htm",
+      "https://calmatters.org/california-voter-guide-2026/governor"
+    ],
+    "failed_urls": [
+      "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "campaign-finance",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/put-the-people-back-in-charge",
+      "https://stevehiltonforgovernor.com/policies/a-modern-wildfire-prevention-plan-for-california",
+      "https://stevehiltonforgovernor.com/policies/ending-the-pge-nightmare"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "civil-rights",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 4, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com",
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+      "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+      "https://ontherecord.empowered.vote/meetings/76051973-b3ac-42f0-b3dc-d36bfffaa42e",
+      "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+      "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+      "https://ontherecord.empowered.vote/meetings/52ee4866-2726-4a8f-b4ab-f47019967178",
+      "https://www.ontheissues.org/Steve_Hilton.htm"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/people-not-the-machine-ban-robo-firing",
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "climate-change",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 5, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com/rebalancing-californias-carbon-sequestration-strategy",
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/38e71313-bdc5-4104-8e9c-9e5d73d23f08",
+      "https://ontherecord.empowered.vote/meetings/6f206fe5-a18b-4af5-b945-c72178d53289",
+      "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+      "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+      "https://www.ontheissues.org/Steve_Hilton.htm",
+      "https://calmatters.org/politics/2026/06/california-governor-primary-hilton-advances/"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/cut-californias-electricity-bills",
+      "https://stevehiltonforgovernor.com/policies/rebalancing-californias-carbon-sequestration-strategy",
+      "https://stevehiltonforgovernor.com/policies/ending-the-pge-nightmare"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "deportation",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "review",
+    "reasons": [
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "https://ontherecord.empowered.vote/meetings/fd106ffe-d61d-4974-be12-12cea7dec518",
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+      "https://www.ontheissues.org/Steve_Hilton.htm",
+      "https://stevehiltonforgovernor.com/california-taxpayers-are-paying-for-illegal-immigrants-to-campaign-for-xavier-becerra-for-governor"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/rebalancing-californias-carbon-sequestration-strategy",
+      "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+      "https://stevehiltonforgovernor.com/policies/cut-californias-water-bills"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "economic-development",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 5, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com/policy/make-california-the-crypto-capital-of-the-world/",
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://stevehiltonforgovernor.com/policy/bring-hollywood-home/"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/bring-hollywood-home",
+      "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+      "https://stevehiltonforgovernor.com/policies/save-small-business-street-vending",
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/ending-the-pge-nightmare",
+      "https://goldentogether.com/wp-content/uploads/2024/04/GT_The-Business-Climate-3.pdf"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "fossil-fuels",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 4, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com",
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/38e71313-bdc5-4104-8e9c-9e5d73d23f08",
+      "https://ontherecord.empowered.vote/meetings/6f206fe5-a18b-4af5-b945-c72178d53289",
+      "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+      "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://calmatters.org/politics/2026/06/california-governor-primary-hilton-advances/",
+      "https://calmatters.org/california-voter-guide-2026/governor"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/3-dollar-gas"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "growth-and-development",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "review",
+    "reasons": [
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/b793ce44-9344-4309-ad4d-5887f9d044da",
+      "https://stevehiltonforgovernor.com/policy/bring-back-the-starter-home-in-california/"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+      "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+      "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/stop-the-hidden-tax-on-new-homes",
+      "https://stevehiltonforgovernor.com/policies/make-california-the-crypto-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/cut-californias-water-bills",
+      "https://goldentogether.com/wp-content/uploads/2024/10/GT_Sustainable-Suburbs-4.pdf"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "healthcare",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 4, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com",
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://ontherecord.empowered.vote/meetings/fd106ffe-d61d-4974-be12-12cea7dec518",
+      "https://www.ontheissues.org/Steve_Hilton.htm"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+      "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/put-the-people-back-in-charge"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "homelessness",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "review",
+    "reasons": [
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+      "https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1",
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://ontherecord.empowered.vote/meetings/77f91eb0-90c0-47d7-8c37-cda599ea643b",
+      "https://stevehiltonforgovernor.com/hilton-surges-ahead-in-governors-race-emerson-poll/",
+      "https://www.ontheissues.org/Steve_Hilton.htm"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+      "https://stevehiltonforgovernor.com/policies/no-state-income-tax-on-your-first-150000",
+      "https://stevehiltonforgovernor.com/policies/end-the-paga-trial-lawyer-extortion-racket",
+      "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "housing",
+    "value": 0,
+    "blank_reason": "compound-partial",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 5, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com/bring-back-the-starter-home-in-california",
+    "displayed_value": {
+      "value": 5,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+      "https://ontherecord.empowered.vote/meetings/77f91eb0-90c0-47d7-8c37-cda599ea643b",
+      "https://ontherecord.empowered.vote/meetings/b793ce44-9344-4309-ad4d-5887f9d044da",
+      "https://calmatters.org/california-voter-guide-2026/governor"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/bring-back-the-starter-home-in-california",
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+      "https://stevehiltonforgovernor.com/policies/stop-the-hidden-tax-on-new-homes",
+      "https://stevehiltonforgovernor.com/policies/making-californias-public-colleges-affordable-again"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "jail-capacity",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 5, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com/crime",
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+      "https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1",
+      "https://stevehiltonforgovernor.com/hilton-and-yolo-county-da-jeff-reisig-unveil-crime-fighting-plan/"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+      "https://stevehiltonforgovernor.com/policies/crack-down-on-masked-criminals",
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/no-state-income-tax-on-your-first-150000"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "judicial-criminal-justice",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://ontherecord.empowered.vote/meetings/fd106ffe-d61d-4974-be12-12cea7dec518"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/crack-down-on-masked-criminals",
+      "https://stevehiltonforgovernor.com/policies/build-a-real-california-state-police-force",
+      "https://stevehiltonforgovernor.com/policies/restoring-second-amendment-rights-in-california",
+      "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+      "https://stevehiltonforgovernor.com/policies/make-california-the-crypto-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "medicare/aid",
+    "value": 0,
+    "blank_reason": "compound-partial",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 4, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com/policy/hilton-launches-califordable-campaign-to-fix-californias-affordability-crisis-town-hall-tour/",
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1",
+      "https://www.ontheissues.org/Steve_Hilton.htm"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+      "https://stevehiltonforgovernor.com/policies/operation-zero-waste"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "misinformation",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "redistricting",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "review",
+    "reasons": [
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 2,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+      "https://ontherecord.empowered.vote/meetings/b38b1d15-c138-43cf-a54e-fa7e9b5ee739",
+      "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+      "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f"
+    ],
+    "failed_urls": [
+      "https://www.youtube.com/watch?v=DR4SRUWANjI"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "rent-regulation",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "review",
+    "reasons": [
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+      "https://stevehiltonforgovernor.com/policy/bring-back-the-starter-home-in-california/"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/making-californias-public-colleges-affordable-again",
+      "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+      "https://goldentogether.com/wp-content/uploads/2024/10/GT_Sustainable-Suburbs-4.pdf"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "school-vouchers",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 5, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com",
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+      "https://www.ontheissues.org/Steve_Hilton.htm"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/making-californias-schools-work-again",
+      "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "social-security",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+      "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+      "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+      "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+      "https://stevehiltonforgovernor.com/policies/crack-down-on-masked-criminals",
+      "https://stevehiltonforgovernor.com/policies/califordable-fixing-californias-insurance-crisis"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "taxes",
+    "value": 4,
+    "action": "review",
+    "reasons": [
+      "statement-evidence",
+      "replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28"
+    ],
+    "failed_urls": [
+      "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "trans-athletes",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "review",
+    "reasons": [
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "https://ontherecord.empowered.vote/meetings/76051973-b3ac-42f0-b3dc-d36bfffaa42e",
+      "https://www.ontheissues.org/Steve_Hilton.htm"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+      "https://stevehiltonforgovernor.com/policies/stop-the-hidden-tax-on-new-homes",
+      "https://stevehiltonforgovernor.com/policies/put-the-people-back-in-charge"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "transportation-priorities",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 4, but the coder did not examine 1 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com/steve-hilton-pledges-to-stop-high-speed-rail-payments-on-day-one/",
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+      "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+      "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+      "https://stevehiltonforgovernor.com/policies/stop-the-hidden-tax-on-new-homes",
+      "https://stevehiltonforgovernor.com/policies/build-a-real-california-state-police-force"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "voting-rights",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "review",
+    "reasons": [
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 3,
+      "season": 1
+    },
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "https://stevehiltonforgovernor.com/fourth-largest-economy-month-long-vote-count-hilton-calls-on-newsom-to-implement-emergency-action/"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+      "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/a-modern-wildfire-prevention-plan-for-california",
+      "https://stevehiltonforgovernor.com/policies/make-california-the-crypto-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/healthy-food-for-kids",
+      "https://stevehiltonforgovernor.com/policies/build-a-real-california-state-police-force"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "border-security",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+      "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/healthy-food-for-kids",
+      "https://stevehiltonforgovernor.com/policies/cut-californias-water-bills",
+      "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+      "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "education-curriculum",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/making-californias-schools-work-again",
+      "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+      "https://stevehiltonforgovernor.com/policies/get-big-tech-out-of-the-classroom",
+      "https://stevehiltonforgovernor.com/policies/cut-californias-electricity-bills",
+      "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/califordable-schools-ban-school-supply-charges"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "education-equity-programs",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "education-ai",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+      "https://stevehiltonforgovernor.com/policies/get-big-tech-out-of-the-classroom",
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "cannabis-policy",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "https://ontherecord.empowered.vote/meetings/fd106ffe-d61d-4974-be12-12cea7dec518"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/3-dollar-gas",
+      "https://stevehiltonforgovernor.com/policies/put-the-people-back-in-charge",
+      "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+      "https://stevehiltonforgovernor.com/policies/operation-zero-waste"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "military-intervention",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+      "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/a-modern-wildfire-prevention-plan-for-california",
+      "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "gun-policy",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/restoring-second-amendment-rights-in-california",
+      "https://stevehiltonforgovernor.com/policies/making-californias-public-colleges-affordable-again",
+      "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+      "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+      "https://stevehiltonforgovernor.com/policies/bring-hollywood-home"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "israel-military-aid",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1"
+    ],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/ending-the-pge-nightmare",
+      "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+      "https://stevehiltonforgovernor.com/policies/cut-californias-water-bills",
+      "https://stevehiltonforgovernor.com/policies/califordable-schools-ban-school-supply-charges"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "ranked-choice-voting",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "same-sex-marriage",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "ukraine-support",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "education-gender-identity",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "education-school-police",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "minimum-wage",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "ai-regulation",
+    "value": 0,
+    "blank_reason": "direction-only",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 1, but the coder did not examine 2 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world https://stevehiltonforgovernor.com/policies",
+    "displayed_value": {
+      "value": 1,
+      "season": 1
+    },
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/people-not-the-machine-ban-robo-firing",
+      "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+      "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+      "https://stevehiltonforgovernor.com/policies/get-big-tech-out-of-the-classroom",
+      "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/end-the-paga-trial-lawyer-extortion-racket"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "childcare",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "review",
+    "reasons": [
+      "human-saved-source",
+      "blank-replaces-published-chair"
+    ],
+    "displayed_value": {
+      "value": 4,
+      "season": 1
+    },
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/home-help-guarantee-for-new-parents",
+      "https://stevehiltonforgovernor.com/policies/12-weeks-paid-leave-for-california-families",
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/no-state-income-tax-on-your-first-150000",
+      "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+      "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+      "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+      "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+      "https://goldentogether.com/wp-content/uploads/2024/06/GT_Home-Visiting-3.pdf"
+    ],
+    "admin_queue_visible": true
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "data-centers",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "re-research",
+    "reasons": [
+      "gate-high"
+    ],
+    "blank_unexamined_fallback": "this blank would remove chair 5, but the coder did not examine 2 of that chair's cited sources that still load — add them to the batch and re-code: https://stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world https://stevehiltonforgovernor.com/policies",
+    "displayed_value": {
+      "value": 5,
+      "season": 1
+    },
+    "verified_sources": [],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "religious-freedom",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+      "https://stevehiltonforgovernor.com/policies/home-help-guarantee-for-new-parents"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "tariffs",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+      "https://stevehiltonforgovernor.com/policies/cut-californias-electricity-bills"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "2020-election",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+      "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+      "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+      "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+      "https://stevehiltonforgovernor.com/policies/make-california-the-crypto-capital-of-the-world",
+      "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+      "https://stevehiltonforgovernor.com/policies/bring-hollywood-home"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "education-library-books",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/end-the-paga-trial-lawyer-extortion-racket"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "education-charter-authorization",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+      "https://stevehiltonforgovernor.com/policies/save-small-business-street-vending",
+      "https://stevehiltonforgovernor.com/policies/making-californias-schools-work-again"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "education-school-budget",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/califordable-schools-ban-school-supply-charges"
+    ]
+  },
+  {
+    "full_name": "Steve Hilton",
+    "topic_key": "defense-spending",
+    "value": 0,
+    "blank_reason": "no-evidence",
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": null,
+    "verified_sources": [],
+    "failed_urls": [
+      "https://stevehiltonforgovernor.com/policies/rebalancing-californias-carbon-sequestration-strategy",
+      "https://stevehiltonforgovernor.com/policies/a-modern-wildfire-prevention-plan-for-california",
+      "https://stevehiltonforgovernor.com/policies/healthy-food-for-kids"
+    ]
+  }
+]

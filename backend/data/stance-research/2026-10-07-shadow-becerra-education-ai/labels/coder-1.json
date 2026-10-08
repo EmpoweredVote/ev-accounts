@@ -1,0 +1,46 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "61269f44-9c7f-4b27-818a-3508009f6ae2",
+      "served_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+      "passages": [
+        {
+          "snapshot_id": "4d0f33b2-b574-5257-87d0-3c75edf11f47",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person campaign AI page; its only school item is AI literacy (teaching about AI), which the annex rules adjacent, and it says nothing about whether students or teachers may use AI in classwork.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is Becerra's campaign AI page, whose school-related pledge is to \"Expand AI Literacy for Every Californian\" through public schools; teaching about AI is not use in student work or classroom instruction, so it does not speak to any rung from \"Prohibit artificial intelligence tools in student work and classroom instruction\" to \"Let teachers and students use artificial intelligence freely, without restrictions\". No passage survives V2.",
+      "needs_source": [
+        "Becerra's own words (questionnaire, debate answer, interview) on whether students and teachers should be allowed to use AI in classwork and assignments"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "4d0f33b2-b574-5257-87d0-3c75edf11f47",
+          "text": "My administration will work through California’s public schools, libraries, and community colleges to ensure every Californian, regardless of zip code or background, has the tools to participate in this moment.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

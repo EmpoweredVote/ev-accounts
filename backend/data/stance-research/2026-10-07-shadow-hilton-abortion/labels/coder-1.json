@@ -1,0 +1,70 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "29a40e2f-40c3-5813-b4b8-db21c2979b50",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview answer leans pro-life ('move us in this sort of direction of life, towards life') via culture, adoption and funding, but names no gestational limit or exception rule, so it shows a side, not a rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e8043ba5-4302-56f7-bfdd-f2acb5dfb264",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer about following the law when another state's laws are at issue concerns interstate legal cooperation, not when abortion is legal or which exceptions apply.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In the 2026-04-01 interview Hilton says his aim is \"to move us in this sort of direction of life, towards life\" through a culture of responsibility, adoption and ending taxpayer spending, which shows the restrictive side but states no time limit or exception rule. None of the rungs' clauses (a trimester limit with a health exception, a ban with rape, incest and life exceptions, or a ban with no exceptions) is matched, so the row is direction only.",
+      "needs_source": [
+        "Hilton's own words on a gestational limit or exceptions (candidate questionnaire or campaign issue page on abortion)",
+        "OnTheIssues abortion section for Steve Hilton, followed to its primary sources"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "29a40e2f-40c3-5813-b4b8-db21c2979b50",
+          "text": "So my attitude to this is what can I get done as governor to move us in this sort of direction of life, towards life, in a way that I can actually deliver.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "29a40e2f-40c3-5813-b4b8-db21c2979b50",
+          "text": "I just think this whole spending taxpayer money promoting abortion, which is what's happening right now, our money is just not okay",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

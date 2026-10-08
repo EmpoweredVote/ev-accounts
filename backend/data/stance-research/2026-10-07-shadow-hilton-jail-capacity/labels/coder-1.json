@@ -1,0 +1,130 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "served_revision_id": "7992fadf-a24c-4f73-bd34-76b5bca4764b",
+      "passages": [
+        {
+          "snapshot_id": "7d2db2df-0fca-51b9-9a61-f3e1464b68a7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-06-17",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted words call for expanding prison space after closures overcrowded local jails (capacity side), but do not say detention is the primary response or rank it over alternatives, so rung 4 and rung 5 are not separated; the plan's bullet list is in the campaign's third person.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d78b057a-29cb-554c-9c2a-34b37eeaf068",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer on homelessness says jail should not be the main place mental illness is treated; it names no jail capacity or population clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4df63756-d7dc-5448-b545-2314f281084e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Homelessness interview on enforcement, required treatment and mental-health bed capacity; not about jail capacity.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1854011f-bebd-5088-a4ed-55eab58f2bd1",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Sentencing enhancements for masked felons are sentencing law with no capacity clause (annex: adjacent).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1feca005-6746-52f0-abb2-4b478a0e3e30",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Funding Proposition 36 enforcement and treatment against retail theft names no jail capacity clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c8c66f46-0ed1-5fe0-aaff-2d44ce8918b9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The saved crime page contains only the site title, no policy text.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": ["7d2db2df-0fca-51b9-9a61-f3e1464b68a7"],
+      "reasoning": "Hilton's own words, \"My plan will reverse the damage by expanding prison space\", place him on the side of adding capacity, which fits both \"Building additional jail capacity to address overcrowding\" and \"Expanding jail capacity as the primary response to crime, prioritizing detention over alternatives\". Nothing in his own words says detention is the primary response or ranks it over alternatives, nor keeps alternatives in place, so the two rungs are not separated.",
+      "needs_source": [
+        "Hilton's Crime-Fighting and Prison Reform Plan in his own first-person words (policy page text), showing whether he ranks detention over alternatives to incarceration",
+        "Text of https://stevehiltonforgovernor.com/crime (snapshot captured only the page title)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "7d2db2df-0fca-51b9-9a61-f3e1464b68a7",
+          "text": "My plan will reverse the damage by expanding prison space so we can ensure real accountability and the opportunity for effective, smart rehabilitation.",
+          "v7_tier": "lever",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "7d2db2df-0fca-51b9-9a61-f3e1464b68a7",
+          "text": "The number of criminals should determine prison capacity; prison capacity should not determine the number of criminals, which appears to be the current state policy.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

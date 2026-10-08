@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-becerra-education-equity-programs",
+  "seat": {
+    "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+    "full_name": "Xavier Becerra",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "66b389c7-86fc-45e9-bf34-964bb747f27b",
+      "topic_key": "education-equity-programs",
+      "served_revision_id": "23d87824-d25c-4b9a-8b13-fb2799d75661",
+      "question_text": "How should schools address gaps in achievement and opportunity between groups of students?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Fund dedicated equity offices and staff to close gaps between student groups"
+        },
+        {
+          "value": 2,
+          "text": "Require equity training for staff and set measurable goals to close gaps between groups"
+        },
+        {
+          "value": 3,
+          "text": "Measure results for each student group and steer extra support to those falling behind"
+        },
+        {
+          "value": 4,
+          "text": "Offer the same supports to every struggling student, without grouping them by race or identity"
+        },
+        {
+          "value": 5,
+          "text": "Eliminate equity programs, training, and staff from the district"
+        }
+      ],
+      "own_words_levels": [
+        "federal"
+      ],
+      "annexMd": "# education-equity-programs — served revision 23d87824-d25c-4b9a-8b13-fb2799d75661 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should schools address gaps in achievement and opportunity between groups of\nstudents?\"\n\n**Orientation:** standard. Rung 1 is the most dedicated institutional effort (funded offices and\nstaff), rung 5 removes equity programmes. The rungs order **the mechanism used for gaps between\ngroups**: offices, training and goals, measurement and targeted support, the same support for every\nstruggling student, nothing.\n\n**Levels with a lever:** local, school, state. The lever is the school board's\nbudget, staffing and policy, and state statute (mandates, bans, accountability rules). A city or\ncounty council holds a lever only where it funds or runs the schools _(proposed)_.\n\n**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"equity office\", \"chief equity officer\", \"diversity, equity and inclusion\" (DEI),\n\"achievement gap\", \"opportunity gap\", \"subgroup\", \"disaggregated data\", \"equity plan\", \"implicit-bias\ntraining\", \"culturally responsive training\", \"targeted support\", \"multi-tiered system of supports\"\n(MTSS), \"Title I\".\n\n1. **\"Fund dedicated equity offices and staff to close gaps between student groups\"**\n   - Means: the district pays for an office and staff whose job is to close gaps between groups.\n   - Operative clauses: [a] a dedicated equity office or staff; [b] funded; [c] with the purpose of\n     closing gaps between groups.\n   - Establishing evidence looks like: a single-item vote or resolution that creates or funds an\n     equity office or position; own words calling for one.\n   - Levels that hold a lever: school; state (a mandate on districts).\n   - Known chair-shaped instruments: _(none on file)_.\n   - A line item inside the annual budget → V4 `multi-subject`.\n\n2. **\"Require equity training for staff and set measurable goals to close gaps between groups\"**\n   - Means: staff must take equity training, and the district sets measurable targets for closing\n     gaps.\n   - Operative clauses: [a] required equity training for staff; [b] measurable gap-closing goals.\n     Compound: one side only → `compound-partial` (V4.2).\n   - Establishing evidence looks like: a policy or statute that requires both.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1 because an equity plan often has both. Funding a dedicated office\n     → rung 1; training and goals with no dedicated office → rung 2 _(proposed)_.\n   - Commonly confused with rung 3 because goals and measurement look alike. A goal is a target;\n     rung 3 is measurement plus support, with no training clause.\n\n3. **\"Measure results for each student group and steer extra support to those falling behind\"**\n   - Means: the district reports results by group and sends extra help to the groups whose results\n     lag.\n   - Operative clauses: [a] results measured for each student group; [b] extra support steered to\n     groups that fall behind. Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: an accountability rule that both reports by subgroup and\n     directs support or intervention to the lagging groups.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Subgroup **reporting** alone (a common state or federal requirement) meets [a] only →\n     `compound-partial`.\n   - A funding weight for low-income or English-learner students steers money by category, not by\n     measured results → `direction-only`, unless the act ties the support to the group's measured\n     results. It is not rung 4 either: a weight treats groups differently _(ruled 2026-10-01)_.\n\n4. **\"Offer the same supports to every struggling student, without grouping them by race or\n   identity\"**\n   - Means: help goes to each student who struggles, by individual need, and not by group.\n   - Operative clauses: [a] supports for every struggling student by need; [b] no grouping by race\n     or identity.\n   - Establishing evidence looks like: own words or a policy that states both. [b] is an absence\n     clause: the instrument must say it, for example by forbidding race- or identity-based\n     eligibility for support (V4.2 \"Silence is not a clause\").\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because a ban on group-based programmes often comes with a\n     closure of equity offices. Rung 4 keeps support for struggling students; a ban that ends\n     programmes and names no support for struggling students → rung 5 territory _(proposed)_.\n\n5. **\"Eliminate equity programs, training, and staff from the district\"**\n   - Means: the district ends its equity programmes, its equity training and its equity staff.\n   - Operative clauses: [a] programmes ended; [b] training ended; [c] staff ended. Compound: some\n     only → `compound-partial` _(proposed)_.\n   - Establishing evidence looks like: a board resolution or statute that ends all three; own words\n     calling for that.\n   - Levels that hold a lever: school; state (a statewide ban that binds every district).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **State law and school boards.** A state law that bans (or requires) equity offices, training or\n  programmes in every district states the rule → `on-question`. A law that only moves the decision\n  to another body → `adjacent` (V2, H12) _(ruled 2026-10-01)_ A state law is the legislator's act, not a school-board member's..\n- **Admissions to selective schools or programmes** (test-based, lottery, geographic) → `adjacent`\n  _(proposed)_.\n- **Curriculum content on race or identity** → `adjacent` (curriculum has its own topic).\n- **Discipline-disparity rules** (limits on suspensions) → `adjacent` _(proposed)_.\n- **Study, audit or task force** on gaps → `study-directive`.\n- **Annual budget votes** → V4 `multi-subject`.\n"
+    }
+  ]
+}
