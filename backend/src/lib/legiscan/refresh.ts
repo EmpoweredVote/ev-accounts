@@ -10,7 +10,7 @@
  *   LEGISCAN_SESSIONS=current   only the newest session (default: current,previous)
  *
  * One failing state does not stop the others. The job throws at the end if any state had
- * errors, so Render marks the run failed. ev-cto decision 0030.
+ * errors, so Render marks the run failed. ev-cto decision 0031.
  */
 import { MONTHLY_QUERY_CAP, readQueriesThisMonth } from './client.js';
 import { STATE_NAMES, type SessionLabel } from './helpers.js';

@@ -1,41 +1,35 @@
-# LegiScan state legislative refresh (CA, IN)
+# LegiScan state legislative refresh
 
-Loads bills, votes and committee data from LegiScan weekly datasets into the
-`essentials.legislative_*` tables. Ported from the archived `EV-Backend` repo
-(`scripts/import_state_legislative.py`, built in March 2026). Decision: ev-cto
-`knowledge/decisions/0030-legiscan-refresh-bulk-datasets.md`.
+The refresh is now a TypeScript job, not a script. Code: `backend/src/lib/legiscan/`.
+Job name: `legiscan` (`backend/src/jobs/registry.ts`). It loads bills, votes and committee
+data from LegiScan's weekly datasets into the `essentials.legislative_*` tables for every
+state that has a sitting state legislator in our database (29 states).
+The old Python loader (built March 2026 in the archived `EV-Backend` repo) was removed
+after the TypeScript job matched it row for row on CA and IN. ev-cto decision 0031.
+
+## Run it
+    node dist/jobs/run.js legiscan                       # what the Render cron runs
+    # manual, from backend/ (needs LEGISCAN_API_KEY and DATABASE_URL in .env):
+    LEGISCAN_DRY_RUN=1 LEGISCAN_STATES=CA,IN npx tsx src/jobs/run.ts legiscan
+
+Optional environment overrides: `LEGISCAN_STATES=CA,IN`, `LEGISCAN_DRY_RUN=1` (write
+nothing), `LEGISCAN_FORCE=1` (ignore the unchanged-hash skip; use after the legislator
+roster grows), `LEGISCAN_SESSIONS=current`.
 
 ## Rules
-- One LegiScan key only: `LEGISCAN_API_KEY`. Do not register a second key or account.
-- Free tier is 10,000 queries a month (about 2 requests a second). A run costs about
-  5 queries per state: `getDatasetList`, `getDataset`, `getSessionPeople`.
-  The counter lives in `~/.ev-backend/legiscan_counter.json`.
-- Data is CC BY 4.0. Pages that show it must credit LegiScan (see `essentials`
-  `LegiScanAttribution.jsx`). Never store or show a legislator's party.
-- Datasets update Sundays about 5am Eastern. Run weekly, after that. Unchanged
-  sessions are skipped by `dataset_hash` (use `--force` to override).
+- One LegiScan key only: `LEGISCAN_API_KEY`. Never register a second key or account.
+- Free tier: 10,000 queries a month, about 2 requests a second. The job spaces calls
+  0.6 s apart and counts every call in `essentials.legiscan_query_counter`. It stops 100
+  short of the cap. A quiet week costs about 1 query per state.
+- A session whose `dataset_hash` matches `essentials.legiscan_dataset_state` is skipped.
+  Datasets update Sundays about 5am Eastern; the cron runs Sundays 14:00 UTC.
+- Data is CC BY 4.0. Pages showing it must credit LegiScan (`essentials`
+  `LegiScanAttribution.jsx`). Never read or store a legislator's party.
+- Legislators are matched by name inside their own state only. A name with 2 or more
+  candidates is skipped and logged, never guessed.
+- LegiScan has no Puerto Rico dataset.
 
-## Run
-    pip install -r requirements.txt
-    python import_state_legislative.py --state CA --sessions current --dry-run --verbose
-    python import_state_legislative.py --state CA --sessions current
-    python import_state_legislative.py --states CA,IN,TX
-    python import_state_legislative.py --all --dry-run     # every state with a sitting legislator
-    python import_state_legislative.py --all
-
-`--all` reads the list of states from our database. For each state it picks the two
-newest regular sessions from LegiScan's dataset list. A state listed in
-`state_legislative_config.json` uses the years in that file instead. Legislators are
-matched by name inside their own state only. A session whose `dataset_hash` has not
-changed since the last good import is skipped at no query cost. After the legislator
-roster grows, run with `--force` so new legislators get their votes.
-
-Known limits: bills already in the database are not updated, so a bill's status
-(passed, signed) can lag. Writes are row by row over the network, so a big state takes
-tens of minutes.
-
-Needs `LEGISCAN_API_KEY` and `DATABASE_URL` in `backend/.env` or the shell.
-
-## Session changes
-Edit `state_legislative_config.json` when a new session starts: IN 2027 (January 2027),
-CA 2027-28 (December 2026). Set `current_year_start` and `previous_year_start`.
+## Known limits
+- New legislators get old votes only after a `LEGISCAN_FORCE=1` run.
+- Sponsors and committees are written for new bills only; existing bills get status and
+  roll-call refreshes.

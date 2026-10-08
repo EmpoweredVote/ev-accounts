@@ -2,7 +2,7 @@
  * helpers.ts — pure helpers for the LegiScan state-legislature refresh (no I/O).
  *
  * Ported from the Python loader (backend/scripts/legiscan/import_state_legislative.py) so the
- * refresh can run as a Render cron job next to the other `ev-jobs-*` jobs. ev-cto decision 0030.
+ * refresh can run as a Render cron job next to the other `ev-jobs-*` jobs. ev-cto decision 0031.
  *
  * Antipartisan rule: nothing here reads, stores or returns a legislator's party.
  */
@@ -19,7 +19,8 @@ export const STATE_NAMES: Record<string, string> = {
   OH: 'Ohio', OK: 'Oklahoma', OR: 'Oregon', PA: 'Pennsylvania',
   RI: 'Rhode Island', SC: 'South Carolina', SD: 'South Dakota', TN: 'Tennessee',
   TX: 'Texas', UT: 'Utah', VT: 'Vermont', VA: 'Virginia', WA: 'Washington',
-  WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming', PR: 'Puerto Rico',
+  WV: 'West Virginia', WI: 'Wisconsin', WY: 'Wyoming',
+  // No PR: LegiScan has no Puerto Rico dataset (getDatasetList answers "Invalid state PR").
 };
 
 /** `legislative_sessions.jurisdiction` value for a state: the lower-case full name. */
