@@ -41,9 +41,9 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 
 | # | Person | Race | Defect |
 |---|--------|------|--------|
-| 7 | **Barri Worth Girvan** | CD 3 | **White rectangle burned into the top-right corner** — a compositing artifact, visible to a voter. |
+| 7 | ~~**Barri Worth Girvan**~~ ✅ **DONE 2026-10-07** (`CC_0198`, superseded by `CC_0199`) | CD 3 | **White rectangle burned into the top-right corner** — a compositing artifact, visible to a voter. |
 | 8 | **John McKinney** | City Attorney | Full-length walking shot. Head ≈12% of frame. |
-| 9 | Timothy Gaspar | CD 3 | Half-body, head small, busy signage behind. **Borderline.** |
+| 9 | ~~Timothy Gaspar~~ ✅ **DONE 2026-10-07** (`CC_0197`) | CD 3 | Half-body, head small, busy signage behind. **Borderline.** |
 
 ---
 
@@ -51,9 +51,9 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 
 | # | Person | Seat | Defect |
 |---|--------|------|--------|
-| 10 | **Robert S. Draper** | LA Superior Court judge | **Worst on the page.** Candid snapshot in a courthouse lobby. **672×446 landscape**, subject off-centre and at an angle, flags and furniture behind, poor light. |
-| 11 | **Nathan Hochman** | District Attorney | Full-body standing portrait between flags. Head ≈10% of frame. |
-| 12 | Patrick Connolly | LA Superior Court judge | 588×554, three-quarter body, bokeh city background. **Borderline — crop would fix it.** |
+| 10 | ~~**Robert S. Draper**~~ ✅ **DONE 2026-10-08** (`CC_0200`) | LA Superior Court judge | **Worst on the page.** Candid snapshot in a courthouse lobby. **672×446 landscape**, subject off-centre and at an angle, flags and furniture behind, poor light. |
+| 11 | ~~**Nathan Hochman**~~ ✅ **DONE 2026-10-07** (`CC_0197`) | District Attorney | Full-body standing portrait between flags. Head ≈10% of frame. |
+| 12 | ~~Patrick Connolly~~ ✅ **DONE 2026-10-07** (`CC_0197`) | LA Superior Court judge | 588×554, three-quarter body, bokeh city background. **Borderline — crop would fix it.** |
 
 ---
 
@@ -61,7 +61,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 
 | # | Person | Seat | Defect |
 |---|--------|------|--------|
-| 13 | **Scott Schmerelson** | LAUSD District 3 | Heavy blur — an upscale of a small original. Top of head clipped. |
+| 13 | ~~**Scott Schmerelson**~~ ✅ **DONE 2026-10-08** (`CC_0204`) | LAUSD District 3 | Heavy blur — an upscale of a small original. Top of head clipped. |
 | 14 | **Sara Hernandez** | LACCD Seat 4 | **200×300** — under the floor. |
 
 ---
@@ -139,6 +139,171 @@ same minute.
 exactly one `type='default'` row — two make the grid's `find()` pick an arbitrary one.
 
 ▶ **A correct API response is not evidence the fix landed.** Only the rendered `<img>` is.
+
+### 2026-10-07, batch 2 — Hochman, Connolly, Gaspar (`CC_0197`)
+
+**14 of the original 19 remain.**
+
+| Person | Was | Now | How |
+|---|---|---|---|
+| Nathan Hochman | 1069×1200, head ~10% | **630×788**, head 40.0%, eyes 30.5% | Pure crop. `da.lacounty.gov`'s own original is also 1069×1200 — measured at the origin, nothing larger exists. |
+| Patrick Connolly | 588×554 suit shot from LAist | **736×920**, head 42.4%, eyes 28.8% | **A different photograph**: the judicial-robe studio portrait on `reelectjudgepatconnolly.com` (1080×1080). Operator compared the faces and approved. |
+| Timothy Gaspar | 1011×1404, busy signage | **840×1050**, head 50.5%, eyes 26.7% | Pure crop. `timgaspar.com` publishes no better portrait. |
+
+Nothing was enlarged; every output is a native-size crop. All three passed the no-monochrome gate.
+
+⚠ **Connolly's identity rests on a filename-only alt** (`DSC_2550_pp.png`) and the fact that it is the
+single hero of a single-candidate site. That is weaker than the two-source standard. It was approved
+on sight against the LAist image we already held.
+
+### 🔴 A PROOF SHEET CAN GO STALE BETWEEN THE NUMBERS AND THE PICTURES
+
+The first version of this batch's proof sheet was published with **re-measured numbers and the
+PREVIOUS crops**: the images were cached as `data:` URIs in a separate file, the crops were re-cut,
+and only the page's text was rebuilt. The operator reviewed a Hochman frame that cut his face in
+half — a crop that had already been discarded — and rejected it.
+
+▶ **Re-encode the assets in the same step that rebuilds the page, and diff them.** The check that
+caught it afterwards was comparing each new data URI against the old one; all three "proposed"
+tiles had changed, meaning every one on the published page was stale.
+
+▶ **"I looked at the render" is only true for the version you looked at.** Looking once, then
+editing, then publishing is not the same as looking at what you published.
+
+### 2026-10-07, batch 3 — Girvan (`CC_0198`)
+
+**13 of the original 19 remain.**
+
+The white block was never a photo problem. barriforthevalley.com publishes her portrait as a
+**transparent-background cutout** (`…7f10fc86…~mv2.png`, 1000×1465 RGBA). Something composited it
+onto a leafy backdrop and left white where a corner fill failed.
+
+Shipped: the same cutout on a neutral radial-grey studio backdrop, cropped 4:5 to **680×850**,
+head 48.8%, eye line 27.1%, chroma 21.8. A pure crop of the composite; nothing enlarged.
+
+⚠ **This image is composited.** The subject pixels are untouched — only the background behind the
+alpha is new. The operator reviewed a white-background version in the live card first and asked for
+a neutral backdrop, because a white cutout blends into the white card and reads as floating.
+
+🟢 **CHECK A CUTOUT FOR A WHITE MATTE BEFORE PUTTING IT ON GREY.** A cutout matted on white grows a
+pale halo the moment the background stops being white. The test: compare the luma of the
+semi-transparent rim against the opaque pixels just inside it. Here the rim measured **40.7 against
+78.2 — darker by 37.5**, so it is straight alpha with no matte baked in. A white matte would have
+made the rim far *brighter*. Then look at the edges at 3× against the new backdrop anyway.
+
+🟢 **A PREVIEW OBJECT IN THE BUCKET IS THE CHEAPEST WAY TO SEE THE REAL CARD.** Upload the candidate
+to `_preview/`, swap it into the live page's `<img>` with Playwright, screenshot, then delete.
+🔴 **The delete said "Successfully deleted" while the public URL kept serving 200** — a stale CDN
+edge copy. Confirm removal with an authenticated read or a bucket listing, never the public URL.
+
+Rejected and recorded: Ballotpedia holds a larger file (1213×1574) whose alt text names her, but it
+is a half-body street shot with the head at ~12% of frame; cropped tight it yields about 400×500.
+
+### 2026-10-07, batch 4 — Girvan again (`CC_0199`, supersedes `CC_0198`)
+
+**Operator wanted the BALLOTPEDIA photograph.** I had read "go with the alternative" as "use a
+neutral background" when it meant "use the other source", and `CC_0198` is what that misreading
+shipped. Now live: `ballotpedia-api4/files/DSC4920_20260714_204927_31330_1.jpeg` (1213×1574)
+cropped 4:5 to **720×900**, head 44.4%, eye line 27.8%, chroma 37.4. A pure crop — **nothing
+composited**, so the "this image is composited" caveat is retired.
+
+### 🔴 I ARGUED AGAINST THIS SOURCE ON A NUMBER I NEVER MEASURED
+
+Batch 3 recorded that the Ballotpedia file had "the head at roughly 12% of the frame" and would
+"crop to about 400×500". Both figures were eyeballed off a contact-sheet thumbnail. **Measured on
+the file: the head is 400 px of 1574 — 25.4% — and it crops to 720×900, LARGER than the 680×850
+composite that was shipped instead.** A rejection is a measurement, not an impression; if a source
+is being ruled out on size, measure it at the origin before writing the number down.
+
+### 🔴 MEASURE THE HORIZONTAL CENTRE. DO NOT READ IT OFF A GRID BY EYE.
+
+Twice in this batch I misread the x axis of a labelled grid and cut a face to the edge of the
+frame — once for Hochman, once for Girvan. Both times the labels were in source pixels while I was
+judging positions on a resized render.
+
+▶ **Use a skin-tone column-density centroid across the eye band** (y from about the brow to the
+mouth). For Girvan it returned x=622 against the 430 I had guessed. Assert the result: the shipped
+crop has the face centre at exactly 50.0% of the width.
+
+▶ **Look at the crop itself before anyone else does.** The card simulation caught the first bad
+Girvan crop, and a plain side-by-side caught the bad Hochman one.
+
+### 2026-10-08, batch 5 — Draper (`CC_0200`), and what the search turned up
+
+**12 of the original 19 remain.**
+
+Photo: the live file was byte-identical to LAist's 672×440 web variant of
+`screenshot-2026-04-27-at-4-13-39-pm.png`. Their S3 **original is 1342×890** — twice the linear
+size — so the better crop was behind the variant we had taken. Shipped: the same frame recropped to
+**592×741**, head 60.9%, eye line 31.0%.
+
+Operator chose this over an LA Times staff portrait (5891×3927, Robert Gauthier) because he wears
+**opaque sunglasses** in it and at card size it reads as a dark rectangle. ⚠ **Whether LA Times staff
+photographs belong in the corpus at all is still unanswered** — it will come up again.
+
+Rejected: `judgerobertdraper.com` returns **410 Gone**; recovered from the Wayback Machine, its only
+portrait is 376×284 of him looking down at papers, with nothing larger behind the image optimiser.
+Ballotpedia has no photo of him. The Daily Journal profiles sit behind a Sucuri firewall that
+refuses a real browser, and the Wayback has no snapshot of either.
+
+### 🔴🔴 A SOURCING FAILURE IS A DEPARTURE SIGNAL — AGAIN
+
+Ballotpedia had no photograph because **Draper lost his seat.** He was defeated in the 2026-06-02
+primary by Tal Khan Valbuena, 43.2% to 56.8%; Valbuena won outright so the general was cancelled;
+**Draper's term ends 2027-01-04.** Our own data already said so independently — race
+`LA Superior Court Office 2` records Valbuena `won` and Draper `lost` — we had just never carried
+the result into occupancy.
+
+**He still holds the seat today, so occupancy was correct and was not changed.** A certified result
+is not a fact about who holds the seat.
+
+The handover is now prepared as **dated rows**, which is what the temporal model is for:
+
+- **`CC_0201` (applied):** `seat_officeholder` closed Draper at 2027-01-04 and seated Valbuena from
+  2027-01-05. `current_office_holders` filters on `CURRENT_DATE`, so the future row is invisible
+  until then and the view flips itself. No trigger, no job, no deploy. The gate asserts *today is
+  unchanged* and probes the view's own predicate at both 2027-01-04 and 2027-01-05.
+- **`CC_0202` (WRITTEN, NOT APPLIED — refuses before 2027-01-05):** the two columns that cache
+  "current" and will not move. `politicians.is_incumbent` and the legacy `politicians.office_id`.
+  **Nothing in the codebase recomputes `is_incumbent`** — it is only read, as four
+  `p.is_incumbent = true` filters in `essentialsBrowseService.ts`. Left alone, Draper becomes an
+  active "incumbent" with no seat and **Valbuena is hidden from address search while holding it.**
+  Both guards were proved: it refuses today, and with the guards relaxed the body passes inside a
+  rollback.
+- **`CC_0203` (applied):** the seat was named **"LA County Superior Court - Robert S. Draper"** — the
+  district named after its occupant. Renamed to **"LA County Superior Court - Office 2"**, taken
+  from the race name, not invented.
+
+### ▶ BACKLOG: 364 LA SUPERIOR COURT SEATS ARE STILL NAMED AFTER THEIR SITTING JUDGE
+
+425 districts are labelled `LA County Superior Court - <name>`; **364 still match their current
+holder exactly** (365 before `CC_0203`). It came in with `CA_0183`, which seated 421 judges from the
+court roster. Every one has the same failure mode at its next handover. Not renamed blind here:
+most have no office number in our data, and a guessed number is worse than a stale name.
+
+### 2026-10-08, batch 6 — Schmerelson (`CC_0204`)
+
+**11 of the original 19 remain.**
+
+The live 600×750 was an **enlargement**. Measured edge energy (mean absolute neighbour difference
+over luma) **1.15 against 7.15** for the replacement — six times less real detail in a file with
+nearly three times the pixels, and the top of his head clipped.
+
+Shipped: `SMS-squaresredlanyard-triangle-hands.jpg` from **boardmemberscott.org**, his own site.
+947×615 is the original (srcset tops at 771w; the unsuffixed WordPress file is this). Cropped to
+**360×451**, head 43.0%, eye line 31.0%, pure crop. The smallest thing shipped in this run, taken
+knowingly over a larger blurred file.
+
+🟢 **EDGE ENERGY SETTLES "BIGGER BUT BLURRIER".** A pixel count is not information. Compare
+`abs(diff(luma))` means before arguing about dimensions — it turned a judgement call into a number.
+
+🔴 **IT ALSO FIXED A CLAIM WITH NOTHING BEHIND IT.** His `photo_origin_url` was **NULL** while the
+image row asserted licence `government-official`. Same defect class as Price's `cc_by_sa_4.0`.
+▶ **When `photo_origin_url` IS NULL, treat the licence as unverified** — it was asserted about a
+file whose source nobody recorded.
+
+Ceilings measured: `lausd.org` and `boe.lausd.org` both answer **403 to a real browser**, not only
+to curl. Everything else on his own site is a classroom or cafeteria scene.
 
 ## Notes
 

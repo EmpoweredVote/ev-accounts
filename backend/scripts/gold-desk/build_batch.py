@@ -1,7 +1,7 @@
 """Build shadow batches for a Blind Gold Desk round from one spec file, without the hand-typed shell
 steps (round 1 lost IDs to zsh's `$P:state` modifier). Run from backend/:
 
-    python3 scripts/gold-desk/build_batch.py <spec.json> [--coders] [--slots 1]
+    python3 scripts/gold-desk/build_batch.py <spec.json> [--coders] [--slots 1] [--season open|draft|<uuid>]
 
 spec.json: {"batches": [{"name": "kavanagh", "politician_id": "...", "office_id": "...", "level": "state",
   "topic_key": "school-vouchers", "instrument": "HB 2853 (2022)",
@@ -30,6 +30,9 @@ if '--slots' in sys.argv:
   if not SLOTS or any(k not in (1, 2, 3) for k in SLOTS) or len(set(SLOTS)) != len(SLOTS): sys.exit(f'--slots: each slot must be 1, 2 or 3, once: {sys.argv[i + 1]}')
   if not run_coders and '--coders-only' not in sys.argv: sys.exit('--slots only applies with --coders')
 CODERS_ONLY = '--coders-only' in sys.argv
+# --season open|draft|<uuid> (or "season" in the spec) builds the bundle against that season; absent = the open
+# season, exactly as before. The later steps (code-stance-batch, verify, queue) take the same --season.
+SEASON = sys.argv[sys.argv.index('--season') + 1] if '--season' in sys.argv else spec.get('season')
 if CODERS_ONLY: run_coders = True
 PAR = int(sys.argv[sys.argv.index('--parallel') + 1]) if '--parallel' in sys.argv else 6
 DATE = spec.get('date') or datetime.date.today().isoformat()
@@ -50,7 +53,7 @@ def build(b, d, keys):
     **({'human_saved_path': s['human_saved_path']} if s.get('human_saved_path') else {})) for s in b['sources']]}, open(d + '/sources.json', 'w'), indent=2)
   # A candidate needs --race so the bundle records the race (build-coder-inputs codes the race's office).
   sh(['npx', 'tsx', 'scripts/build-stance-topic-bundle.ts', '--dir', d, '--politician', f"{b['politician_id']}:{b.get('level', 'state')}"]
-     + (['--race', b['race_id']] if b.get('race_id') else []))
+     + (['--race', b['race_id']] if b.get('race_id') else []) + (['--season', SEASON] if SEASON else []))
   t = json.load(open(d + '/topics.json')); json.dump(t, open(d + '/topics.all.json', 'w'), indent=2)
   f = [x for x in t if x['topic_key'] in keys]
   missing = set(keys) - {x['topic_key'] for x in f}
@@ -64,6 +67,7 @@ def build(b, d, keys):
   sh(['npm', 'run', '-s', 'coding:inputs', '--', '--dir', d, '--politician', b['politician_id'], '--office', b['office_id']])
   return True
 
+MAX_CODER_INPUT_BYTES = 3_000_000  # build-coder-inputs.ts caps at 1.5M chars (MAX_CODER_INPUT_CHARS); bytes allow for multibyte text
 jobs = []
 for b in spec['batches']:
   keys = b.get('topic_keys') or [b['topic_key']]
@@ -85,6 +89,10 @@ for name, d, k in jobs:
     for r in running[:]:
       if r[3].poll() is not None: running.remove(r); finish(*r[:3])
     time.sleep(5)
+  size = os.path.getsize(f"{d}/coder-inputs/coder-{k}.md")
+  if size > MAX_CODER_INPUT_BYTES:  # a coder fed this returns nothing, silently (2026-10-07)
+    print(f"{name}: coder {k} input is {size:,} bytes, over the {MAX_CODER_INPUT_BYTES:,} cap — NOT RUN (rebuild the inputs; check snapshots.json for a huge snapshot)", flush=True)
+    continue
   os.makedirs(d + '/labels', exist_ok=True); os.makedirs(d + '/coder-logs', exist_ok=True)
   e = f"{SP}/empty-{name}-{k}"; os.makedirs(e, exist_ok=True)
   running.append((name, d, k, subprocess.Popen(['claude', '-p', '--model', 'opus' if k == 1 else 'sonnet', '--tools', 'Write', '--allowedTools', 'Write',

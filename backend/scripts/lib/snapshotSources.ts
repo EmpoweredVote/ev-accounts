@@ -80,6 +80,24 @@ export function amendmentMarkup(text: string, amendmentText: AmendmentText): 'ke
   return 'unknown';
 }
 
+/**
+ * A full-text snapshot above this many characters is not codable. 2026-10-07: a 7 MB raw-PDF string
+ * went into a coder input (13-14 MB) and the headless coder exited with no label. The longest real
+ * page seen is well under this; a bigger one is a mis-fetch, or wants an excerpt-only source_kind.
+ */
+export const MAX_SNAPSHOT_CHARS = 400_000;
+
+/**
+ * True when `text` is not readable text: it starts with a PDF header, or it carries NUL / other C0
+ * control bytes (a binary body decoded as UTF-8). Tab, LF, CR and FF are ordinary text.
+ */
+export function looksBinary(text: string): boolean {
+  if (/^\s*%PDF-/.test(text)) return true;
+  const sample = text.slice(0, 20_000);
+  const bad = sample.match(/[\u0000-\u0008\u000e-\u001f]/g)?.length ?? 0;
+  return bad > 0 && bad / sample.length > 0.001;
+}
+
 const collapse = (s: string) => s.replace(/\s+/g, ' ').trim();
 
 export function excerptWindows(text: string, anchors: string[], ctx = EXCERPT_CONTEXT_WORDS, maxWords = MAX_EXCERPT_WORDS): string | null {
@@ -180,9 +198,12 @@ export function buildSnapshot(args: {
   // A JavaScript-only site (iga.in.gov) answers a plain fetch with an app shell and HTTP 200. That is
   // not the page: fail closed rather than hand the coders "You need to enable JavaScript".
   if (collapse(fetchedText).length < 400 && /enable javascript/i.test(fetchedText)) return make(false, 'js-shell', sha, null);
+  // Binary or oversized text must never be marked ok: the coders would be handed bytes (or a book).
+  if (looksBinary(fetchedText)) return make(false, 'binary-content', sha, null);
   const text = excerptOnly
     ? excerptWindows(fetchedText, [...entry.pointer_passages, ...entry.candidate_quotes])
     : collapse(fetchedText);
   if (!text) return make(false, 'anchor-not-found', sha, null);
+  if (text.length > MAX_SNAPSHOT_CHARS) return make(false, 'oversized', sha, null);
   return make(true, null, sha, text);
 }

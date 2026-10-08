@@ -1,0 +1,2207 @@
+{
+ "date": "2026-10-07",
+ "batches": [
+  {
+   "name": "hilton-abortion",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "abortion"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-10df0d42.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-15-deb719ec.md",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    },
+    {
+     "url": "https://calmatters.org/california-voter-guide-2026/governor",
+     "source_kind": "news",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "candidate_quotes": [],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-ai-regulation",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "ai-regulation"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-keep-california-the-ai-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/people-not-the-machine-ban-robo-firing",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-people-not-the-machine-ban-robo-firing.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-operation-zero-waste.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/get-big-tech-out-of-the-classroom",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-get-big-tech-out-of-the-classroom.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-newsoms-vmt-bombshell.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-paga-trial-lawyer-extortion-racket",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-paga-trial-lawyer-extortion-racket.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-campaign-finance",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "campaign-finance"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/put-the-people-back-in-charge",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-put-the-people-back-in-charge.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/a-modern-wildfire-prevention-plan-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-a-modern-wildfire-prevention-plan-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ending-the-pge-nightmare",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ending-the-pge-nightmare.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-childcare",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "childcare"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/home-help-guarantee-for-new-parents",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-home-help-guarantee-for-new-parents.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/12-weeks-paid-leave-for-california-families",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-12-weeks-paid-leave-for-california-families.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/no-state-income-tax-on-your-first-150000",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-no-state-income-tax-on-your-first-150000.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-wait-until-8th-for-smartphones.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cracking-down-on-medi-cal-fraud.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-an-elite-business-school-in-east-la.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-abolish-the-dmv.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://goldentogether.com/wp-content/uploads/2024/06/GT_Home-Visiting-3.pdf",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/pdf-GT_Home-Visiting-3.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-civil-rights",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "civil-rights"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-23-ae234d2f.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/people-not-the-machine-ban-robo-firing",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-people-not-the-machine-ban-robo-firing.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/76051973-b3ac-42f0-b3dc-d36bfffaa42e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-13-76051973.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-f3181318.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-10df0d42.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/52ee4866-2726-4a8f-b4ab-f47019967178",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-11-52ee4866.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-climate-change",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "climate-change"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cut-californias-electricity-bills",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cut-californias-electricity-bills.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/rebalancing-californias-carbon-sequestration-strategy",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-rebalancing-californias-carbon-sequestration-strategy.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/38e71313-bdc5-4104-8e9c-9e5d73d23f08",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-10-01-38e71313.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/6f206fe5-a18b-4af5-b945-c72178d53289",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-06-6f206fe5.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ending-the-pge-nightmare",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ending-the-pge-nightmare.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-f3181318.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-15-deb719ec.md",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    },
+    {
+     "url": "https://calmatters.org/politics/2026/06/california-governor-primary-hilton-advances/",
+     "source_kind": "news",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "candidate_quotes": [],
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/rebalancing-californias-carbon-sequestration-strategy",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-data-centers",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "data-centers"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-deportation",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "deportation"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/fd106ffe-d61d-4974-be12-12cea7dec518",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2025-11-20-fd106ffe.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-10df0d42.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/rebalancing-californias-carbon-sequestration-strategy",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-rebalancing-californias-carbon-sequestration-strategy.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-operation-zero-waste.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cut-californias-water-bills",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cut-californias-water-bills.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/california-taxpayers-are-paying-for-illegal-immigrants-to-campaign-for-xavier-becerra-for-governor",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-economic-development",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "economic-development"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/bring-hollywood-home",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-bring-hollywood-home.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-war-on-small-business.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/save-small-business-street-vending",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-save-small-business-street-vending.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-keep-california-the-ai-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ending-the-pge-nightmare",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ending-the-pge-nightmare.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://goldentogether.com/wp-content/uploads/2024/04/GT_The-Business-Climate-3.pdf",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/pdf-GT_The-Business-Climate-3.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policy/make-california-the-crypto-capital-of-the-world/",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policy/bring-hollywood-home/",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-fossil-fuels",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "fossil-fuels"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/3-dollar-gas",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-3-dollar-gas.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/38e71313-bdc5-4104-8e9c-9e5d73d23f08",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-10-01-38e71313.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/6f206fe5-a18b-4af5-b945-c72178d53289",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-06-6f206fe5.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-23-ae234d2f.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-15-deb719ec.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://calmatters.org/politics/2026/06/california-governor-primary-hilton-advances/",
+     "source_kind": "news",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "candidate_quotes": [],
+     "instruments": []
+    },
+    {
+     "url": "https://calmatters.org/california-voter-guide-2026/governor",
+     "source_kind": "news",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "candidate_quotes": [],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-growth-and-development",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "growth-and-development"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/b793ce44-9344-4309-ad4d-5887f9d044da",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-12-b793ce44.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-newsoms-vmt-bombshell.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-office-of-fun-and-freedom.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-keep-california-the-ai-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/stop-the-hidden-tax-on-new-homes",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-stop-the-hidden-tax-on-new-homes.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/make-california-the-crypto-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-make-california-the-crypto-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cut-californias-water-bills",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cut-californias-water-bills.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://goldentogether.com/wp-content/uploads/2024/10/GT_Sustainable-Suburbs-4.pdf",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/pdf-GT_Sustainable-Suburbs-4.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policy/bring-back-the-starter-home-in-california/",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-healthcare",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "healthcare"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cracking-down-on-medi-cal-fraud.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-operation-zero-waste.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/fd106ffe-d61d-4974-be12-12cea7dec518",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2025-11-20-fd106ffe.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/put-the-people-back-in-charge",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-put-the-people-back-in-charge.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-homelessness",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "homelessness"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-23-ae234d2f.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-12-fd5e0064.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-operation-zero-waste.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/77f91eb0-90c0-47d7-8c37-cda599ea643b",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-07-77f91eb0.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/no-state-income-tax-on-your-first-150000",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-no-state-income-tax-on-your-first-150000.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-paga-trial-lawyer-extortion-racket",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-paga-trial-lawyer-extortion-racket.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-emergency-election-count-accelerator-plan.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/hilton-surges-ahead-in-governors-race-emerson-poll/",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-housing",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "housing"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/bring-back-the-starter-home-in-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-bring-back-the-starter-home-in-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-newsoms-vmt-bombshell.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/stop-the-hidden-tax-on-new-homes",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-stop-the-hidden-tax-on-new-homes.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-15-deb719ec.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/77f91eb0-90c0-47d7-8c37-cda599ea643b",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-07-77f91eb0.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/b793ce44-9344-4309-ad4d-5887f9d044da",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-12-b793ce44.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/making-californias-public-colleges-affordable-again",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-making-californias-public-colleges-affordable-again.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/bring-back-the-starter-home-in-california",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://calmatters.org/california-voter-guide-2026/governor",
+     "source_kind": "news",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "candidate_quotes": [],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-jail-capacity",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "jail-capacity"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-war-on-small-business.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/crack-down-on-masked-criminals",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-crack-down-on-masked-criminals.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/no-state-income-tax-on-your-first-150000",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-no-state-income-tax-on-your-first-150000.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-23-ae234d2f.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-12-fd5e0064.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/crime",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/hilton-and-yolo-county-da-jeff-reisig-unveil-crime-fighting-plan/",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-judicial-criminal-justice",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "judicial-criminal-justice"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/crack-down-on-masked-criminals",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-crack-down-on-masked-criminals.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/build-a-real-california-state-police-force",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-build-a-real-california-state-police-force.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/restoring-second-amendment-rights-in-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-restoring-second-amendment-rights-in-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/fd106ffe-d61d-4974-be12-12cea7dec518",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2025-11-20-fd106ffe.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-wait-until-8th-for-smartphones.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/make-california-the-crypto-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-make-california-the-crypto-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-war-on-small-business.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-medicare-aid",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "medicare/aid"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cracking-down-on-medi-cal-fraud.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-operation-zero-waste.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-12-fd5e0064.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policy/hilton-launches-califordable-campaign-to-fix-californias-affordability-crisis-town-hall-tour/",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-misinformation",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "misinformation"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-wait-until-8th-for-smartphones.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-f3181318.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-redistricting",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "redistricting"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/b38b1d15-c138-43cf-a54e-fa7e9b5ee739",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-06-b38b1d15.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-10df0d42.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2025-10-06-1dc4a5f7.md",
+     "instruments": []
+    },
+    {
+     "url": "https://www.youtube.com/watch?v=DR4SRUWANjI",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2025-10-06-1dc4a5f7.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-religious-freedom",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "religious-freedom"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-wait-until-8th-for-smartphones.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/home-help-guarantee-for-new-parents",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-home-help-guarantee-for-new-parents.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-rent-regulation",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "rent-regulation"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-10df0d42.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/making-californias-public-colleges-affordable-again",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-making-californias-public-colleges-affordable-again.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-newsoms-vmt-bombshell.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://goldentogether.com/wp-content/uploads/2024/10/GT_Sustainable-Suburbs-4.pdf",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/pdf-GT_Sustainable-Suburbs-4.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policy/bring-back-the-starter-home-in-california/",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-school-vouchers",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "school-vouchers"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/making-californias-schools-work-again",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-making-californias-schools-work-again.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-an-elite-business-school-in-east-la.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-10df0d42.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-social-security",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "social-security"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-emergency-election-count-accelerator-plan.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cracking-down-on-medi-cal-fraud.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-abolish-the-dmv.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-war-on-small-business.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/crack-down-on-masked-criminals",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-crack-down-on-masked-criminals.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-fixing-californias-insurance-crisis",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-fixing-californias-insurance-crisis.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-10df0d42.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-tariffs",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "tariffs"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-war-on-small-business.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cut-californias-electricity-bills",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cut-californias-electricity-bills.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-taxes",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "taxes"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/no-state-income-tax-on-your-first-150000",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-no-state-income-tax-on-your-first-150000.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-operation-zero-waste.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-schools-ban-school-supply-charges",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-schools-ban-school-supply-charges.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/10df0d42-381b-4221-bea7-ad6d0b86e3b7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-10df0d42.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cut-californias-electricity-bills",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cut-californias-electricity-bills.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policy/no-state-income-tax-on-your-first-150000/",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://calmatters.org/politics/2026/06/california-governor-primary-hilton-advances/",
+     "source_kind": "news",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "candidate_quotes": [],
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-trans-athletes",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "trans-athletes"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-office-of-fun-and-freedom.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-an-elite-business-school-in-east-la.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-f3181318.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/stop-the-hidden-tax-on-new-homes",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-stop-the-hidden-tax-on-new-homes.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/put-the-people-back-in-charge",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-put-the-people-back-in-charge.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/76051973-b3ac-42f0-b3dc-d36bfffaa42e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-13-76051973.md",
+     "instruments": []
+    },
+    {
+     "url": "https://www.ontheissues.org/Steve_Hilton.htm",
+     "source_kind": "pointer",
+     "pointer_passages": [
+      "Hilton"
+     ],
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-transportation-priorities",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "transportation-priorities"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-newsoms-vmt-bombshell.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-operation-zero-waste.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-abolish-the-dmv.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-23-ae234d2f.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/stop-the-hidden-tax-on-new-homes",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-stop-the-hidden-tax-on-new-homes.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/build-a-real-california-state-police-force",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-build-a-real-california-state-police-force.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-15-deb719ec.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/steve-hilton-pledges-to-stop-high-speed-rail-payments-on-day-one/",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-voting-rights",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "voting-rights"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-emergency-election-count-accelerator-plan.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-abolish-the-dmv.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/a-modern-wildfire-prevention-plan-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-a-modern-wildfire-prevention-plan-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/make-california-the-crypto-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-make-california-the-crypto-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/healthy-food-for-kids",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-healthy-food-for-kids.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/build-a-real-california-state-police-force",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-build-a-real-california-state-police-force.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/fourth-largest-economy-month-long-vote-count-hilton-calls-on-newsom-to-implement-emergency-action/",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-2020-election",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "2020-election"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-war-on-small-business.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-emergency-election-count-accelerator-plan.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/abolish-the-dmv",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-abolish-the-dmv.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/make-california-the-crypto-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-make-california-the-crypto-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cracking-down-on-medi-cal-fraud.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/bring-hollywood-home",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-bring-hollywood-home.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-border-security",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "border-security"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/emergency-election-count-accelerator-plan",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-emergency-election-count-accelerator-plan.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-keep-california-the-ai-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/healthy-food-for-kids",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-healthy-food-for-kids.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cut-californias-water-bills",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cut-californias-water-bills.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-newsoms-vmt-bombshell",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-newsoms-vmt-bombshell.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-an-elite-business-school-in-east-la.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-education-curriculum",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "education-curriculum"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/making-californias-schools-work-again",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-making-californias-schools-work-again.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-an-elite-business-school-in-east-la.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/get-big-tech-out-of-the-classroom",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-get-big-tech-out-of-the-classroom.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cut-californias-electricity-bills",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cut-californias-electricity-bills.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-keep-california-the-ai-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-schools-ban-school-supply-charges",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-schools-ban-school-supply-charges.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-15-deb719ec.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-education-library-books",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "education-library-books"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-paga-trial-lawyer-extortion-racket",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-paga-trial-lawyer-extortion-racket.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-education-equity-programs",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "education-equity-programs"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-23-ae234d2f.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-education-charter-authorization",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "education-charter-authorization"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/save-small-business-street-vending",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-save-small-business-street-vending.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/making-californias-schools-work-again",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-making-californias-schools-work-again.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-education-school-budget",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "education-school-budget"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-schools-ban-school-supply-charges",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-schools-ban-school-supply-charges.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-education-ai",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "education-ai"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/wait-until-8th-for-smartphones",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-wait-until-8th-for-smartphones.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/get-big-tech-out-of-the-classroom",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-get-big-tech-out-of-the-classroom.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/ae234d2f-4fb6-4551-ad7d-846be4d8b29e",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-23-ae234d2f.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-office-of-fun-and-freedom.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-cannabis-policy",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "cannabis-policy"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/3-dollar-gas",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-3-dollar-gas.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/5a98c7c9-d215-4c80-b403-844ad39fc5c7",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-09-30-5a98c7c9.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/put-the-people-back-in-charge",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-put-the-people-back-in-charge.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-office-of-fun-and-freedom.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/fd106ffe-d61d-4974-be12-12cea7dec518",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2025-11-20-fd106ffe.md",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/operation-zero-waste",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-operation-zero-waste.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-defense-spending",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "defense-spending"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/rebalancing-californias-carbon-sequestration-strategy",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-rebalancing-californias-carbon-sequestration-strategy.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/a-modern-wildfire-prevention-plan-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-a-modern-wildfire-prevention-plan-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/healthy-food-for-kids",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-healthy-food-for-kids.txt",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-military-intervention",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "military-intervention"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/a-modern-wildfire-prevention-plan-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-a-modern-wildfire-prevention-plan-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/keep-california-the-ai-capital-of-the-world",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-keep-california-the-ai-capital-of-the-world.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-01-f3181318.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-gun-policy",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "gun-policy"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/restoring-second-amendment-rights-in-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-restoring-second-amendment-rights-in-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/making-californias-public-colleges-affordable-again",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-making-californias-public-colleges-affordable-again.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cracking-down-on-medi-cal-fraud",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cracking-down-on-medi-cal-fraud.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/an-elite-business-school-in-east-la",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-an-elite-business-school-in-east-la.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/bring-hollywood-home",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-bring-hollywood-home.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-05-29-25962209.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-israel-military-aid",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "israel-military-aid"
+   ],
+   "sources": [
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ten-new-cities-for-california",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ten-new-cities-for-california.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/office-of-fun-and-freedom",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-office-of-fun-and-freedom.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/working-class-healthcare-guarantee",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-working-class-healthcare-guarantee.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/ending-the-pge-nightmare",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-ending-the-pge-nightmare.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/end-the-war-on-small-business",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-end-the-war-on-small-business.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/cut-californias-water-bills",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-cut-californias-water-bills.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://stevehiltonforgovernor.com/policies/califordable-schools-ban-school-supply-charges",
+     "source_kind": "own-site",
+     "human_saved_path": "human-saved/site-califordable-schools-ban-school-supply-charges.txt",
+     "instruments": []
+    },
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/fd5e0064-917c-4522-9ed4-e3fa71f289c1",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-04-12-fd5e0064.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-ranked-choice-voting",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "ranked-choice-voting"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/444fa3e9-9466-49b6-a1da-307226c0bbe2",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2026-01-23-444fa3e9.md",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "hilton-nosource",
+   "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+   "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+   "level": "state",
+   "race_id": "bec5ef3b-095b-4d7d-9117-db81e407cb5e",
+   "topic_keys": [
+    "same-sex-marriage",
+    "ukraine-support",
+    "education-gender-identity",
+    "education-school-police",
+    "minimum-wage"
+   ],
+   "sources": [
+    {
+     "url": "https://ontherecord.empowered.vote/meetings/1dc4a5f7-2f0b-48a6-919e-67def1629e4f",
+     "source_kind": "transcript",
+     "human_saved_path": "human-saved/otr-2025-10-06-1dc4a5f7.md",
+     "instruments": []
+    }
+   ]
+  }
+ ]
+}

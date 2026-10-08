@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+    "topic_key": "childcare",
+    "topic_revision_id": "0e9fe0f2-cfab-4553-99cd-c3195d08e236",
+    "served_revision_id": "0e9fe0f2-cfab-4553-99cd-c3195d08e236",
+    "question_number": 4,
+    "title": "Childcare Affordability & Access",
+    "question_text": "How should government address the cost and availability of childcare?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Establishing publicly funded universal childcare so that all families have access regardless of income"
+      },
+      {
+        "value": 2,
+        "text": "Significantly expanding subsidies and provider grants to make childcare affordable for low- and middle-income families"
+      },
+      {
+        "value": 3,
+        "text": "Offering targeted tax credits and subsidies for families below a set income threshold while supporting providers through training and facility grants"
+      },
+      {
+        "value": 4,
+        "text": "Limiting government support to childcare subsidies for the lowest-income families, relying on the private market for everyone else"
+      },
+      {
+        "value": 5,
+        "text": "Leaving childcare to the private market and families, with no government subsidies or mandates that increase costs for providers and taxpayers"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

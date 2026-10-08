@@ -1,0 +1,174 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+      "passages": [
+        {
+          "snapshot_id": "abe9390a-9e49-5f4b-b53e-f1aeb0a35ff4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person campaign issue page: cut fees, streamline approvals with a 180-day state review clock, while keeping environmental and renter protections; shows the faster-growth side with guardrails but never states recruiting new development.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6879116d-87ea-5daa-9b29-3b89e946b560",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-04-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answers: streamline regulations and fees so builders' projects pencil out, and no developers building in high-risk areas; pro-growth side with a guardrail, no recruitment clause; road-maintenance remarks are not infrastructure ahead of demand.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9ffda620-6bca-5c37-9dcb-da9b1c94c673",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer: streamline the regulatory process, ask local governments to cut impact fees, account for fire hazards; cuts red tape but does not separate rung 4 from neighbouring rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f5ce3608-c0f0-543d-bb19-4c4514b2d290",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Wildfire issue page promises an executive order cutting red tape to rebuild faster; direction only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4a22dc40-f4d7-5daa-bb1a-d48f00cc8593",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Film-permit streamlining is about shooting permits for productions, not the pace of growth and new development.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "100e3646-fa47-590e-86c8-43f68244c3f1",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Data-center permitting tied to clean-energy and ratepayer conditions is a single-industry siting question, not the general pace of growth.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "aefa7397-fc1e-550c-b582-ee3671e0a7a9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview on building up near transit hubs is about density and housing type, which the annex assigns to residential-zoning/housing.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "His own words support cutting red tape (\"streamlining the regulations and the fees\", a 180-day state review clock) while keeping guardrails (\"protect the environment\", no developers \"building in high -risk areas\"), which fits two clauses of \"Actively push for faster growth — cut red tape and recruit new development, while keeping basic guardrails.\" No passage states the \"recruit new development\" clause, so that compound rung is only partly evidenced, and nothing shows investing in roads, water and schools ahead of demand.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "abe9390a-9e49-5f4b-b53e-f1aeb0a35ff4",
+          "text": "Every housing project seeking state review will receive a final response within a defined, clear timeline (e.g., 180 days)",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "abe9390a-9e49-5f4b-b53e-f1aeb0a35ff4",
+          "text": "Where the permitting process takes longer than the construction itself, we will end that absurdity.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "abe9390a-9e49-5f4b-b53e-f1aeb0a35ff4",
+          "text": "As we pursue a California everyone can call home, I will protect renters, preserve existing affordable housing, protect the environment, and keep communities intact as we build.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "6879116d-87ea-5daa-9b29-3b89e946b560",
+          "text": "That means streamlining the regulations and the fees that make it impossible to believe that they can make these projects pencil out.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "9ffda620-6bca-5c37-9dcb-da9b1c94c673",
+          "text": "let's streamline the regulatory process so that we can get developers through the process much quicker let's ask our local governments to stop imposing so many impact fees",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "f5ce3608-c0f0-543d-bb19-4c4514b2d290",
+          "text": "As Governor, I'll sign an executive order declaring a housing emergency, cutting red tape so we can build back our communities even faster.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

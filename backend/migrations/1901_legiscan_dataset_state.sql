@@ -1,5 +1,5 @@
 -- 1901_legiscan_dataset_state.sql
--- State for the weekly LegiScan refresh job (ev-cto decision 0030, ev-jobs-legiscan on Render).
+-- State for the weekly LegiScan refresh job (ev-cto decision 0031, ev-jobs-legiscan on Render).
 --
 -- WHY. The Python loader kept two files under ~/.ev-backend: the last dataset_hash it imported per
 -- session, and the monthly query count. A Render cron job has no disk that survives a run, so both

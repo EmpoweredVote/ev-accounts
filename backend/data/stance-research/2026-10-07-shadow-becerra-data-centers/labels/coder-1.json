@@ -1,0 +1,90 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "b4129912-28b5-5b33-b84a-902cdbbfd0bd",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer: approve a data center only if it benefits the community (jobs, grid energy, water); names no impact assessment, cost-sharing agreement or approval precondition, so it shows a conditional-allowance side only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "95343b78-c87d-55c0-afe9-3886a3be98a7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Current-campaign issue page: data centers must cover their own energy costs, use clean energy and meet environmental performance disclosure, in return for improved permitting; this mixes rung 3 and rung 4 clauses and matches neither fully (disclosure is environmental, not projected demand and rate impacts; no impact assessment or community benefit requirement).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "88ad757e-8b43-57d5-a8f9-f784c4ceef38",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum answer on AI: welcomes data centers if they cover their energy expense and maybe help expand the grid; a side, not a rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Becerra's own words allow data centers on conditions: they must \"cover the costs of their own energy needs\" and benefit the community, in return for improved permitting. That touches the cost-sharing and community-benefit clauses of \"Allowing data center development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval\" but not the impact-assessment clause, and his \"environmental performance disclosure\" is not the \"transparency about projected energy demand and rate impacts\" the streamlined-permitting rung requires, so no compound rung is fully evidenced.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "b4129912-28b5-5b33-b84a-902cdbbfd0bd",
+          "text": "if all you're going to do is rob their energy and electricity and their water, that's not a good deal and we should say no. But if someone wants to come in and build a data center that creates more jobs in the community, adds more energy to our grid, and it actually protects and adds more water capacity, then let's talk.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "95343b78-c87d-55c0-afe9-3886a3be98a7",
+          "text": "I will pursue an economic-forward standard: data centers that operate in California add value to our current energy infrastructure, are powered with clean energy, cover the costs of their own energy needs, and meet environmental performance disclosure requirements. In return, my administration will improve data center permitting programs and provide the policy certainty industry needs to invest and grow in California and the technological opportunities of tomorrow.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "88ad757e-8b43-57d5-a8f9-f784c4ceef38",
+          "text": "If they're going to locate here, and I would like them to locate here, they've got to help not just cover their energy expense, but maybe they can help us make sure we can expand our grid and our capacity for our clean energy electric electrification needs as well.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

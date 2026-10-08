@@ -1,0 +1,55 @@
+{
+  "batch_id": "2026-10-07-shadow-becerra-border-security",
+  "seat": {
+    "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+    "full_name": "Xavier Becerra",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "407614a8-ba2c-4145-8224-233655e6ac3f",
+      "topic_key": "border-security",
+      "served_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+      "question_text": "How should the government handle people who cross the border?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Give everyone who crosses the border a fair asylum hearing."
+        },
+        {
+          "value": 2,
+          "text": "Expand orderly, legal ways to seek asylum at the border."
+        },
+        {
+          "value": 3,
+          "text": "Combine strong enforcement with a faster asylum process."
+        },
+        {
+          "value": 4,
+          "text": "Sharply restrict who can claim asylum at the border."
+        },
+        {
+          "value": 5,
+          "text": "End asylum and quickly turn back anyone who crosses illegally."
+        }
+      ],
+      "own_words_levels": [
+        "local",
+        "state"
+      ],
+      "annexMd": "# border-security — served revision 76d9941b-3085-42cf-b229-ac41f4f85b8d (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should the government handle people who cross the border?\"\n\n**Orientation:** standard. Rung 1 gives every person who crosses an asylum hearing, rung 5 ends\nasylum and turns people back. The rungs order **how much access to asylum a person at the border\nhas**. Do not read the number as \"more government\": enforcement rises as the number rises.\n\n**Levels with a lever:** federal. Asylum law, border enforcement and the\nimmigration courts are federal. State border measures (state troops, barriers, state crossing\ncrimes) do not decide who may claim asylum or how claims are heard; a state or local officeholder's\nposition on these rungs can be shown only by their own words.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"asylum\", \"credible fear\", \"expedited removal\", \"ports of entry\", \"between ports\",\n\"parole\", \"CBP One\" or \"appointments\", \"Remain in Mexico\" / \"Migrant Protection Protocols\", \"safe\nthird country\", \"transit ban\", \"Title 42\", \"expulsion\", \"border emergency authority\",\n\"asylum officers\", \"immigration judges\", \"backlog\", \"wall\" / \"barrier\".\n\n1. **\"Give everyone who crosses the border a fair asylum hearing.\"**\n   - Means: every person who crosses, wherever and however they cross, can ask for asylum and gets a\n     full, fair hearing.\n   - Operative clauses: [a] everyone who crosses, including between ports of entry; [b] a fair\n     asylum hearing.\n   - Establishing evidence looks like: own words that every person who crosses must get a hearing; an\n     instrument that ends expedited removal or bars turning people back without a hearing.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because opposing a **restriction** reads like \"a hearing for\n     everyone\". A No on a restriction shows the side only → `direction-only` (V4.1).\n\n2. **\"Expand orderly, legal ways to seek asylum at the border.\"**\n   - Means: the government opens more lawful routes to ask for asylum at the border, such as more\n     processing at ports of entry or appointments.\n   - Operative clauses: [a] expand; [b] orderly, legal ways to seek asylum at the border.\n   - Establishing evidence looks like: an instrument that adds processing capacity or lawful entry\n     routes for asylum seekers, **plus** something that excludes rung 1 (own words that people who\n     cross between ports should use the lawful routes) _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: a new route does not say that everyone who crosses elsewhere\n     still gets a hearing.\n   - Commonly confused with rung 3 because more asylum officers also make the process faster. Rung 3\n     needs the enforcement clause as well; capacity alone → `direction-only` _(proposed)_.\n\n3. **\"Combine strong enforcement with a faster asylum process.\"**\n   - Means: more enforcement at the border, and quicker asylum decisions, together.\n   - Operative clauses: [a] strong enforcement (agents, barriers, detention, removal of those who do\n     not qualify); [b] a faster asylum process (more officers or judges, shorter time to decision).\n   - Establishing evidence looks like: a single-subject border bill that does both. Compound: one side\n     only → `compound-partial` (V4.2).\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a faster process often comes with a **higher screening\n     standard**. Code the eligibility rule: if the bill narrows who may claim, it reaches rung 4's\n     clause; if it only speeds decisions, it is rung 3 _(proposed)_.\n   - Border bills are often attached to foreign-aid supplementals → V4 `multi-subject`.\n\n4. **\"Sharply restrict who can claim asylum at the border.\"**\n   - Means: many fewer people are allowed to ask for asylum at the border.\n   - Operative clauses: [a] restrict eligibility to claim asylum at the border; [b] \"sharply\".\n   - Establishing evidence looks like: an instrument that bars claims by large groups (people who\n     crossed between ports, people who passed through another country) or that suspends claims when\n     crossings exceed a number.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A narrow change (one category, one procedural bar) is not \"sharply\" → `direction-only`\n     _(proposed)_.\n   - Commonly confused with rung 5 because a **suspension** of asylum claims reads like \"end\n     asylum\". A suspension that applies only while crossings stay above a set number restricts asylum\n     → rung 4, not rung 5 _(ruled 2026-10-01)_.\n\n5. **\"End asylum and quickly turn back anyone who crosses illegally.\"**\n   - Means: no asylum claim is available, and anyone who crosses unlawfully is sent back at once.\n   - Operative clauses: [a] end asylum; [b] quickly turn back anyone who crosses illegally.\n   - Establishing evidence looks like: own words or an instrument that does both. An expulsion\n     authority that removes crossers without asylum screening meets [b]; [a] still needs the passage\n     to say asylum is ended, not paused. Compound: one side only → `compound-partial` (V4.2).\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **Barriers and personnel.** Money for a wall, agents or technology is enforcement only → rung 3\n  clause [a] at most; it does not say what happens to asylum claims → `direction-only` _(proposed)_.\n- **Where claimants wait** (a rule that makes claimants wait outside the country) restricts the\n  process, not who may claim → `direction-only` _(proposed)_.\n- **People already inside the country** are the `deportation` question. A passage about removal of\n  long-settled people → `adjacent` here _(proposed)_.\n- **Legal immigration levels** (visas, refugee caps) are not on this ladder → `adjacent`.\n- **Budget, appropriations and supplemental votes** with a border item → V4 `multi-subject`.\n- **Resolutions** that condemn a border policy, or that praise agents, name no clause → V4\n  `rhetorical`.\n"
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "925283c6-dbeb-5aa8-9cb9-5b868016613c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says a CHP officer may not profile or discriminate against drivers; this is policing conduct under existing law (annex: policing has its own topic), not a position on how far civil rights enforcement should go.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d66adc12-661b-568e-8f28-0afdd8593042",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-13",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "On transgender students in sports he says existing anti-discrimination law must be followed; this belongs to a different topic and names no change to civil rights enforcement either way.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "efcd088b-bcb8-5585-8d33-9a5a4a7fc958",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "An attack on an opponent's immigration stance as treating immigrants by appearance; it is about immigration and names no civil rights policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "None of the sources address what role government should play on racial and social inequality. His remarks on driver profiling, on following anti-discrimination law in school sports, and on immigration are adjacent topics. None names a clause of any rung, such as \"strengthen civil rights enforcement and address systemic discrimination\" or \"eliminate affirmative action and all race-based government programs\".",
+      "needs_source": [
+        "Becerra's own words or campaign issue page on civil rights enforcement, affirmative action or racial equity (e.g., candidate questionnaire answer)",
+        "His position on Proposition 16 (2020, restoring affirmative action in California) in his own words",
+        "Congressional roll calls or sponsored bills on civil rights enforcement from his House service (a federal-level record; valid for that office only)"
+      ],
+      "quotes": []
+    }
+  ]
+}

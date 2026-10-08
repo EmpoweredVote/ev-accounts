@@ -1,0 +1,142 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "passages": [
+        {
+          "snapshot_id": "94c34bec-8139-5936-bf70-c20993c67407",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign policy page proposes ending state-funded full-scope Medi-Cal for undocumented immigrants plus asset-limit and premium reforms: a Medicaid eligibility rollback, which is one clause of the compound rung 4 and says nothing about Medicare or a shift to private insurance.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "83940df4-ad31-5e3d-992f-6053b03e31a5",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign policy page would replace Medi-Cal for working-age adults with personal healthcare accounts via a Section 1115 waiver and implement work requirements; it restructures and narrows Medicaid only and names no change to Medicare, so it cannot meet rung 4's 'both programs' clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "abaa0051-07b2-57dc-8015-c34bcd830642",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Medi-Cal anti-fraud plan is cost control (rung 3 clause [b] territory) but sets no position on the size or eligibility of either programme.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8b1018bf-edf6-51c5-b130-de0b87a18ac7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer promises 'affordable, reliable healthcare' and defends Medicaid work requirements, which the annex codes as adjacent; no eligibility or programme-size clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cb39a015-e37c-5020-8001-dea0b944b15f",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-04-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Medicaid IMD waiver is about mental-health bed capacity for homelessness, not the size or structure of Medicare/Medicaid coverage.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "96447d9f-d451-527b-a200-5dc5de1c5ce5",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Aggregator pointer page; snapshot contains no Medicare/Medicaid content.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a22d0965-aa68-5425-b99a-c96b237bdb50",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Snapshot captured only the site title; no content on the question.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Hilton's own policy pages would scale back Medicaid ('Ending state-funded full-scope Medi-Cal for undocumented immigrants', personal accounts via a Section 1115 demonstration, work requirements), which meets only the Medicaid clause of 'scale back both programs, shifting more coverage to private insurance'. Nothing in the sources speaks to scaling back Medicare or shifting coverage to private insurance, and per the annex a state-level Medicaid-only scale-back is compound-partial.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "94c34bec-8139-5936-bf70-c20993c67407",
+          "text": "Ending state-funded full-scope Medi-Cal for undocumented immigrants: $8.5 billion",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "83940df4-ad31-5e3d-992f-6053b03e31a5",
+          "text": "For working-age adults who are not seniors or disabled, California will seek federal approval for personal healthcare accounts containing approximately $8,000 to $10,000 a year.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

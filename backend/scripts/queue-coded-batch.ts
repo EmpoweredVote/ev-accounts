@@ -7,12 +7,13 @@
  *
  * Run AFTER code-stance-batch.ts --apply (which writes coding-report.json and stores the labels):
  *
- *   npx tsx scripts/queue-coded-batch.ts --dir <batch> --season-id <open season uuid> [--apply]
+ *   npx tsx scripts/queue-coded-batch.ts --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) [--apply]
  *
  * Dry-run by default. --apply writes every row and links its labels (stance_coder_labels.review_id)
  * in ONE transaction. Re-running is safe: a row a person already decided is left alone.
  */
 import 'dotenv/config';
+import { seasonIdFromArgs, SeasonTargetError } from './lib/seasonTarget.js';
 import { existsSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { CODEBOOK_VERSION, validateCoderLabelFile, type CoderRow } from './lib/coderLabel.js';
@@ -22,8 +23,19 @@ import type { RowReport } from './lib/codingReport.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
-const dir = arg('--dir'); const seasonId = arg('--season-id'); const APPLY = process.argv.includes('--apply');
-if (!dir || !seasonId) { console.error('usage: --dir <batch> --season-id <uuid> [--apply]'); process.exit(2); }
+const dir = arg('--dir'); const APPLY = process.argv.includes('--apply');
+// --season-id <uuid> (as before) or --season open|draft|<uuid>; a batch dir built for another season is refused.
+let seasonId: string | undefined;
+try {
+  // A uuid (--season-id, as before) needs no database; --season open|draft resolves through the pool.
+  seasonId = (dir ? await seasonIdFromArgs(process.argv, dir,
+    async (q, p) => (await import('../src/lib/db.js')).pool.query(q, p)) : null) ?? undefined;
+} catch (e) {
+  if (!(e instanceof SeasonTargetError)) throw e;
+  console.error(`ERROR: ${e.message}`);
+  process.exit(2);
+}
+if (!dir || !seasonId) { console.error('usage: --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) [--apply]'); process.exit(2); }
 
 const reportPath = join(dir, 'coding-report.json');
 if (!existsSync(reportPath)) { console.error(`no ${reportPath} — run code-stance-batch.ts first`); process.exit(1); }

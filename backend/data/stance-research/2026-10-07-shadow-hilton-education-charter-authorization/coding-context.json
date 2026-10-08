@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-education-charter-authorization",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "c8807d3d-4264-47ce-b8c4-08c6c9c33ce3",
+      "topic_key": "education-charter-authorization",
+      "served_revision_id": "3901e1b0-12b0-4f7e-9e14-061ae2247c26",
+      "question_text": "How should the board handle charter schools that want to open in the district?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Stop authorizing new charter schools and move to close existing ones"
+        },
+        {
+          "value": 2,
+          "text": "Approve new charters rarely, only when a school is clearly failing students"
+        },
+        {
+          "value": 3,
+          "text": "Judge each charter application on its own merits"
+        },
+        {
+          "value": 4,
+          "text": "Welcome charters and approve strong applications to expand family options"
+        },
+        {
+          "value": 5,
+          "text": "Convert failing district schools into charters run by independent operators"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# education-charter-authorization — served revision 3901e1b0-12b0-4f7e-9e14-061ae2247c26 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should the board handle charter schools that want to open in the district?\"\n\n**Orientation:** standard. Rung 1 stops new charters and closes existing ones; rung 5 converts\ndistrict schools into charters. The rungs order **how readily charters are authorized**: none,\nrarely, case by case, readily, by conversion.\n\n**Levels with a lever:** local, school, state. The question is about the\nboard as authorizer. A school board holds the lever only where state law lets districts authorize;\nstate legislators set who may authorize, caps and conversion rules; a city holds a lever only where\nthe mayor or council is an authorizer _(proposed)_.\n\n**Asked at:** state, local, school (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"charter authorizer\", \"charter application\", \"charter petition\", \"charter renewal\",\n\"charter cap\", \"moratorium\", \"state charter commission\", \"conversion charter\", \"restart\",\n\"turnaround\", \"charter management organization\" (CMO), \"education management organization\" (EMO),\n\"innovation school\", \"parent trigger\".\n\n1. **\"Stop authorizing new charter schools and move to close existing ones\"**\n   - Means: no new charters, and the existing ones are wound down.\n   - Operative clauses: [a] no new charters; [b] action to close existing charters. Compound: one\n     side only → `compound-partial` (V4.2).\n   - Establishing evidence looks like: a moratorium **plus** a non-renewal or closure plan for\n     existing charters; own words that state both.\n   - Levels that hold a lever: school (where it authorizes); state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Closing or not renewing **one** charter for its own performance is not [b] → `adjacent`\n     _(proposed)_.\n\n2. **\"Approve new charters rarely, only when a school is clearly failing students\"**\n   - Means: new charters are the exception, approved only where students are clearly being failed.\n   - Operative clauses: [a] approval is rare; [b] approval only where a school is clearly failing\n     students.\n   - Establishing evidence looks like: a policy or statute that limits new charters to areas or\n     schools with documented failure.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - \"A school is clearly failing\" means the **district school the students would leave**, not the\n     applicant _(ruled 2026-10-01)_.\n   - Commonly confused with rung 1 because a moratorium with a failing-school exception blocks most\n     charters. It allows some → rung 2 territory, not rung 1 _(proposed)_.\n\n3. **\"Judge each charter application on its own merits\"**\n   - Means: no presumption for or against charters; each application is judged on its quality.\n   - Operative clauses: [a] case-by-case review; [b] no general presumption either way.\n   - Establishing evidence looks like: own words that state merit review with no presumption; a\n     policy of published quality criteria with no cap, moratorium or preference.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A vote on one application shows the person's act on that application, not a rule →\n     `direction-only`. Approving some and denying others does not establish [b]: it rules out the\n     ends, which is not evidence (V4.2 \"Ruling out the other rungs\").\n\n4. **\"Welcome charters and approve strong applications to expand family options\"**\n   - Means: the board favours charters and approves the strong ones to give families more choice.\n   - Operative clauses: [a] a welcoming posture with the aim of more family options; [b] strong\n     applications approved.\n   - Establishing evidence looks like: own words that state both; a policy that sets expansion of\n     charter options as a goal.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because both favour charters. Lifting a cap or adding an\n     authorizer does not say whether district schools should be converted → `direction-only`\n     _(proposed)_.\n\n5. **\"Convert failing district schools into charters run by independent operators\"**\n   - Means: failing district schools are handed to independent charter operators.\n   - Operative clauses: [a] conversion of failing district schools; [b] run by independent\n     operators.\n   - Establishing evidence looks like: a board vote to convert a named failing school to an\n     independent operator; a statute that requires conversion as the consequence of failure.\n   - Levels that hold a lever: school; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A turnaround law that lists conversion as **one option** among several → `direction-only`\n     _(proposed)_.\n\n**Hard cases:**\n- **Who authorizes.** A state law that moves authorization from districts to a state commission (or\n  back) decides which body decides, and no rung is about that → `adjacent` (V2, H12).\n- **Charter funding formulas and facilities access** → `adjacent` _(proposed)_.\n- **Vouchers and ESAs** → `adjacent` (they have their own topic).\n- **Charter accountability rules** (audits, renewal standards) → `adjacent` _(proposed)_.\n- **Budget or omnibus votes** → V4 `multi-subject`.\n"
+    }
+  ]
+}

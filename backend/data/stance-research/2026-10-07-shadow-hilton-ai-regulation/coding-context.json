@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-ai-regulation",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "question_text": "How much should government oversee artificial intelligence development and deployment?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Allow AI companies to develop and deploy technology freely without government interference"
+        },
+        {
+          "value": 2,
+          "text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+        },
+        {
+          "value": 3,
+          "text": "Hold AI developers legally responsible when their systems cause harm"
+        },
+        {
+          "value": 4,
+          "text": "Require safety testing before AI can be used in high-stakes areas like hiring, healthcare, and policing"
+        },
+        {
+          "value": 5,
+          "text": "Impose strict government approval requirements before any AI system can be deployed"
+        }
+      ],
+      "own_words_levels": [
+        "local"
+      ],
+      "annexMd": "# ai-regulation — served revision c594dc06-0c70-4707-8ae0-d4bc760172db (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How much should government oversee artificial intelligence development and\ndeployment?\"\n\n**Orientation:** **inverted.** Rung 1 is the **least** government action (no interference), rung 5 the\nmost (approval before any deployment). Read the rung text, not the number (CLAUDE.md \"Never assume\npolarity\").\n\n**Levels with a lever:** federal, state. Both legislate; local governments\nare not asked on this topic.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"automated decision system\" (ADS), \"automated employment decision tool\", \"consequential\ndecision\", \"high-risk artificial intelligence system\", \"algorithmic discrimination\", \"frontier model\",\n\"covered model\", \"foundation model\", \"developer\" and \"deployer\", \"bias audit\", \"impact assessment\",\n\"red-teaming\", \"watermark\" or \"provenance\", \"AI Risk Management Framework\" (NIST), \"AI moratorium\".\n\n1. **\"Allow AI companies to develop and deploy technology freely without government interference\"**\n   - Means: government places no rules on how AI is built or used.\n   - Operative clauses: [a] free development and deployment; [b] without government interference.\n   - Establishing evidence looks like: own words that reject any government rule on AI. [b] is an\n     absence clause: a vote against one AI bill does not show that the person rejects every rule\n     (V4.2 \"Silence is not a clause\") → `direction-only`.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because \"remove regulations\" sounds like rung 1. With no regulation\n     named it is V7 `direction` (codebook H10, Hilton / ai-regulation) and, as stance evidence,\n     `direction-only`.\n\n2. **\"Suggest AI safety guidelines but let companies choose whether to follow them\"**\n   - Means: government writes safety guidance, and following it is voluntary.\n   - Operative clauses: [a] government issues safety guidelines; [b] compliance is voluntary.\n   - Establishing evidence looks like: an instrument that tells an agency to publish guidelines or a\n     framework and states that compliance is voluntary; own words for voluntary standards over\n     mandates _(proposed)_.\n   - Levels that hold a lever: federal (agency frameworks); state (state guidance, executive orders).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because an order to **study** AI, convene a task force or report is\n     not a guideline → `study-directive`.\n   - Commonly confused with rung 3 when a bill pairs voluntary guidelines with a legal duty. The\n     binding clause decides the rung.\n\n3. **\"Hold AI developers legally responsible when their systems cause harm\"**\n   - Means: the companies that build AI can be made to answer in law for harm their systems cause.\n   - Operative clauses: [a] legal responsibility (liability, a cause of action, a penalty); [b] on the\n     developer or company; [c] for harm the system causes.\n   - Establishing evidence looks like: operative text that creates liability for harm caused by an AI\n     system, where the liable party **can be the company** that made or provided it → rung 3. If the\n     text reaches only an individual who misuses AI, [b] is not met → `direction-only` _(proposed)_.\n     A general liability statute that does not name AI developers but reaches them meets [b].\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because a **disclosure or labelling** duty (watermarks, provenance,\n     telling users they are dealing with AI) feels like accountability. Disclosure was taken out of\n     this rung in Season 2 → BLANK `direction-only` _(ruled 2026-09-01: disclosure-only rows fit no\n     rung)_.\n   - Commonly confused with rung 4 because many bills test **and** assign liability. A pre-use testing\n     duty is rung 4 _(ruled 2026-09-01: rows resting on safety-testing bills moved from 3 to 4)_.\n\n4. **\"Require safety testing before AI can be used in high-stakes areas like hiring, healthcare, and\n   policing\"**\n   - Means: before AI is used for decisions in sensitive areas, the law requires it to be tested.\n   - Operative clauses: [a] required safety testing; [b] before use; [c] in a high-stakes area. Hiring,\n     healthcare and policing are examples (\"like\"), not the full list.\n   - Establishing evidence looks like: operative text that requires testing of an AI system before it\n     is used for consequential decisions. A testing duty limited to named high-stakes uses excludes\n     rung 5 by its own text (as in codebook V4.2, Adams / trans-athletes).\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because duties on **users** of AI (not developers) are oversight,\n     not testing, and not developer liability → BLANK `direction-only`.\n   - A required pre-use **bias audit** counts as safety testing when it tests the system's outputs\n     before use. An impact assessment that is only a report, with no test → `direction-only` _(ruled 2026-10-01)_.\n   - A pre-deployment testing duty scoped by **model size** (frontier or covered models), not by use\n     area, meets the testing clause but not \"in high-stakes areas\" → `compound-partial`. It is not\n     rung 5 (testing is not approval). A duty only to publish a safety framework → `direction-only`\n     _(ruled 2026-10-01)_.\n\n5. **\"Impose strict government approval requirements before any AI system can be deployed\"**\n   - Means: no AI system may be deployed until government approves it.\n   - Operative clauses: [a] government approval or licence; [b] before deployment; [c] of **any** AI\n     system.\n   - Establishing evidence looks like: own words or operative text for a licence or approval regime\n     that covers AI systems in general. [c] is universal; approval for one class of system is not it.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because both act before deployment. Rung 4 tests in named areas;\n     rung 5 needs approval for all systems.\n   - A **ban or moratorium on one use** (deepfakes, facial recognition, rent-setting algorithms,\n     chatbots for children) is not universal approval, and Season 2 has no ban rung → BLANK\n     `direction-only` _(ruled 2026-09-01: targeted-ban rows fit no rung)_.\n\n**Hard cases:**\n- **Preemption (codebook V2, H12).** A federal bill that forbids or pauses state AI laws decides which\n  level may regulate, not how much → `adjacent`.\n- **Government's own use of AI** (agency inventories, procurement rules, a chief AI officer) is not\n  oversight of AI development and deployment in general → `adjacent` _(proposed)_.\n- **Election deepfakes and synthetic media** also belong to `misinformation`; here they are a targeted\n  ban or a label → BLANK `direction-only` (see rungs 3 and 5).\n- **Budget and omnibus votes** with an AI item → V4 `multi-subject`.\n- **A governor's signature or veto** is a record; code the bill's operative clause as above.\n"
+    }
+  ]
+}

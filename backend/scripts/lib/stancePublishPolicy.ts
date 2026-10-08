@@ -20,7 +20,7 @@ import type { GateFinding } from './stanceGate.js';
 
 export type ReviewReason =
   | 'unresolved-politician' | 'statement-evidence' | 'gate-medium' | 'value-change' | 'review-all-mode'
-  | 'replaces-published-chair' | 'blank-replaces-published-chair';
+  | 'replaces-published-chair' | 'blank-replaces-published-chair' | 'human-saved-source';
 export type ReReason = 'gate-high' | 'below-threshold';
 export type Decision =
   | { action: 'auto-push' }
@@ -54,7 +54,22 @@ export interface PolicyInput {
    * var — it must be a deliberate per-run choice.
    */
   autoPushEnabled: boolean;
+  /**
+   * Own-site sources that failed machine verification but have a person-saved copy containing a
+   * snippet (ruling 2026-10-07). They never count in verifiedSourceCount. Default 0.
+   */
+  humanSavedSourceCount?: number;
 }
+
+/**
+ * Ruling 2026-10-07 (rule 2): a row that clears the threshold ONLY by counting human-saved copies is
+ * always reviewed — never auto-pushed, whatever the run's flags — and says why. Stated as an explicit
+ * rule so a later change to the threshold logic cannot let such a row through.
+ */
+const supportedOnlyByHumanSaved = (i: PolicyInput): boolean =>
+  i.verifiedSourceCount < i.threshold
+  && (i.humanSavedSourceCount ?? 0) > 0
+  && i.verifiedSourceCount + (i.humanSavedSourceCount ?? 0) >= i.threshold;
 
 export function decidePublish(i: PolicyInput): Decision {
   // C43/D3: checked first and unconditionally. A scope finding means the OFFICE does not hold this
@@ -72,6 +87,7 @@ export function decidePublish(i: PolicyInput): Decision {
   }
   if (i.gateFindings.some((f) => f.severity === 'high')) return { action: 're-research', reasons: ['gate-high'] };
   if (i.proposedValue === 0) return decideBlank(i);
+  if (supportedOnlyByHumanSaved(i)) return { action: 'review', reasons: ['human-saved-source'] };
   if (i.verifiedSourceCount < i.threshold) return { action: 're-research', reasons: ['below-threshold'] };
   if (i.existingOpenSeasonValue !== null && i.existingOpenSeasonValue === i.proposedValue) return { action: 'unchanged' };
   // Ruling 2026-09-24: a row that would change what voters see now is never written without a
@@ -111,6 +127,7 @@ function decideBlank(i: PolicyInput): Decision {
   if (i.existingOpenSeasonValue === 0) return { action: 'unchanged' };
   const showsChair = i.displayedValue !== null && i.displayedValue !== 0;
   if (i.existingOpenSeasonValue === null && !showsChair) return { action: 'unchanged' };
+  if (supportedOnlyByHumanSaved(i)) return { action: 'review', reasons: ['human-saved-source', 'blank-replaces-published-chair'] };
   if (i.verifiedSourceCount < i.threshold) return { action: 're-research', reasons: ['below-threshold'] };
   const reasons: ReviewReason[] = [];
   if (i.gateFindings.some((f) => f.severity === 'medium')) reasons.push('gate-medium');

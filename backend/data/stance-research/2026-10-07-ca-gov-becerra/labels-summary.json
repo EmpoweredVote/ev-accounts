@@ -1,0 +1,658 @@
+[
+ {
+  "topic_key": "abortion",
+  "batch": "becerra-abortion",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on gestational limits or late-term abortion (questionnaire or debate answer, 2026 campaign)",
+   "The moderator's question preceding \"Absolutely no\" in the CBS/SF Examiner debate, 2026-05-15"
+  ],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "ai-regulation",
+  "batch": "becerra-ai-regulation",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "campaign-finance",
+  "batch": "becerra-campaign-finance",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on campaign-finance limits from the 2026 governor campaign (candidate questionnaire, debate answer, or a campaign issue page on money in politics)",
+   "Any in-cycle statement by Becerra on Citizens United, corporate or dark-money spending, or California contribution limits"
+  ],
+  "examined": 4,
+  "examined_cited": 4,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "childcare",
+  "batch": "becerra-childcare",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on whether state childcare support should be universal or income-limited (e.g. a candidate questionnaire childcare item or a moderated debate answer on childcare)",
+   "Becerra campaign issue page or plan specifically on childcare/early care, if one exists"
+  ],
+  "examined": 6,
+  "examined_cited": 6,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "civil-rights",
+  "batch": "becerra-civil-rights",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words or campaign issue page on civil rights enforcement, affirmative action or racial equity (e.g., candidate questionnaire answer)",
+   "His position on Proposition 16 (2020, restoring affirmative action in California) in his own words",
+   "Congressional roll calls or sponsored bills on civil rights enforcement from his House service (a federal-level record; valid for that office only)"
+  ],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "climate-change",
+  "batch": "becerra-climate-change",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Any bill authored, sponsored or voted on by Becerra as a California Assembly member that sets a renewable or clean-energy standard, credit or permitting reform",
+   "A candidate questionnaire answer from Becerra on clean-energy mandates, deadlines (e.g. SB 100 targets) or subsidies"
+  ],
+  "examined": 11,
+  "examined_cited": 11,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "data-centers",
+  "batch": "becerra-data-centers",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "compound-partial",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 4,
+  "examined_cited": 4,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "deportation",
+  "batch": "becerra-deportation",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "economic-development",
+  "batch": "becerra-economic-development",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "fossil-fuels",
+  "batch": "becerra-fossil-fuels",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words or a questionnaire answer on new in-state oil and gas well permits (e.g. CalGEM permitting, SB 1137 setbacks) during the 2026 campaign",
+   "Dockets for the lawsuits against fossil fuel / oil companies he cites from his tenure as Attorney General, to check whether any claim concerns the level of production"
+  ],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "growth-and-development",
+  "batch": "becerra-growth-and-development",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "compound-partial",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "healthcare",
+  "batch": "becerra-healthcare",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Congressional record of Becerra's authorship or co-sponsorship of a Medicare for All bill (bill page and text showing its premium and cost-sharing provisions); this is a federal record, so pre-seating for this office"
+  ],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "homelessness",
+  "batch": "becerra-homelessness",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "housing",
+  "batch": "becerra-housing",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on whether the state should build or operate public or social housing (for example a candidate questionnaire answer on social housing or a state public-housing developer)"
+  ],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "jail-capacity",
+  "batch": "becerra-jail-capacity",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "compound-partial",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on building or expanding jail or prison capacity (state jail construction funding, prison closures)"
+  ],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "judicial-criminal-justice",
+  "batch": "becerra-judicial-criminal-justice",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 7,
+  "examined_cited": 7,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "medicare/aid",
+  "batch": "becerra-medicare-aid",
+  "status": "ok",
+  "value": 1,
+  "blank_reason": null,
+  "evidence_type": "statement",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": []
+ },
+ {
+  "topic_key": "misinformation",
+  "batch": "becerra-misinformation",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (questionnaire, debate answer, or issue page) on platform or government responsibility for online misinformation, deepfakes, or content moderation"
+  ],
+  "examined": 3,
+  "examined_cited": 3,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "redistricting",
+  "batch": "becerra-redistricting",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (2025-2026 campaign) on Proposition 50 or on who should draw California's district maps, e.g. a candidate questionnaire or debate answer on redistricting",
+   "Becerra's congressional votes or sponsorships on national redistricting-standards legislation (e.g. independent-commission mandates), with roll calls and bill text"
+  ],
+  "examined": 3,
+  "examined_cited": 3,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "religious-freedom",
+  "batch": "becerra-religious-freedom",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words in the 2026 governor campaign (questionnaire, debate answer or first-person issue page) on religious exemptions from anti-discrimination law",
+   "As California Attorney General (2017-2021): filed lawsuits or amicus briefs on religious exemptions from anti-discrimination law (e.g. challenges to federal conscience / religious-exemption rules), with the complaint or brief text",
+   "As U.S. Representative (1993-2017): Clerk roll calls on single-subject bills or amendments touching religious exemptions in anti-discrimination law (e.g. ENDA religious-exemption provisions, RFRA-related votes), with bill text"
+  ],
+  "examined": 2,
+  "examined_cited": 2,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "rent-regulation",
+  "batch": "becerra-rent-regulation",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (questionnaire or debate answer) on expanding rent control coverage or on Costa-Hawkins / exempting new construction"
+  ],
+  "examined": 6,
+  "examined_cited": 6,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "same-sex-marriage",
+  "batch": "becerra-same-sex-marriage",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words in the 2026 governor campaign on same-sex marriage (candidate questionnaire, debate answer, or first-person issue page)",
+   "OnTheIssues 'Civil Rights' section for Xavier Becerra, followed to the underlying first-person statements or roll calls it cites",
+   "As California Attorney General (2017-2021): any filed brief or signed official letter on marriage recognition or sexual-orientation anti-discrimination (record from another office; pre-seating, but may point to own words)"
+  ],
+  "examined": 2,
+  "examined_cited": 2,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "school-vouchers",
+  "batch": "becerra-school-vouchers",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on school vouchers / school choice from the 2026 California governor campaign: candidate questionnaire answer (e.g. a newspaper or voter-guide questionnaire), moderated debate answer, or first-person issue page on his campaign site",
+   "Any first-party statement by Becerra on a California voucher / education savings account ballot measure or bill during the 2026 campaign"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "social-security",
+  "batch": "becerra-social-security",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (2026 governor campaign) on Social Security benefits, the payroll-tax cap or solvency, e.g. a questionnaire or debate answer"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "tariffs",
+  "batch": "becerra-tariffs",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (questionnaire, issue page or debate answer) on general tariff policy \u2014 whether most or all tariffs should be cut, or which, if any, should stay"
+  ],
+  "examined": 4,
+  "examined_cited": 4,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "taxes",
+  "batch": "becerra-taxes",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "trans-athletes",
+  "batch": "becerra-trans-athletes",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on transgender athletes' sports eligibility (2026 governor campaign: questionnaire, debate answer, interview, or campaign issue page)",
+   "Any in-cycle Becerra statement on California AB 1266 / CIF transgender-athlete eligibility policy"
+  ],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "transportation-priorities",
+  "batch": "becerra-transportation-priorities",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "voting-rights",
+  "batch": "becerra-voting-rights",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Text of California Proposition 39 (November 2026 ballot) and Becerra's own statement of position on its identification clause",
+   "Becerra's own words (questionnaire, issue page or debate answer) on what voter identification California should require"
+  ],
+  "examined": 7,
+  "examined_cited": 7,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "2020-election",
+  "batch": "becerra-2020-election",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on the fairness or legitimacy of the 2020 presidential election result (e.g., a questionnaire or debate answer in the 2026 governor campaign)"
+  ],
+  "examined": 2,
+  "examined_cited": 2,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "border-security",
+  "batch": "becerra-border-security",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (campaign issue page, questionnaire or debate answer) on asylum at the border: hearings, legal routes, restrictions or expulsions"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-curriculum",
+  "batch": "becerra-education-curriculum",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (campaign issue page, questionnaire, or debate answer from the 2026 governor campaign) on how schools should teach race, gender, and history / ethnic studies / curriculum standards"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-equity-programs",
+  "batch": "becerra-education-equity-programs",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (campaign issue page, questionnaire, or debate answer) on K-12 achievement or opportunity gaps between student groups",
+   "Any record from his California Assembly service on school equity offices, equity training, subgroup accountability, or bans on equity programs"
+  ],
+  "examined": 2,
+  "examined_cited": 2,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-charter-authorization",
+  "batch": "becerra-education-charter-authorization",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on charter school authorization (e.g., a 2026 candidate questionnaire, debate answer, or education issue page on xavierbecerra2026.com)"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-school-budget",
+  "batch": "becerra-education-school-budget",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 4,
+  "examined_cited": 4,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-ai",
+  "batch": "becerra-education-ai",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (questionnaire, debate answer, interview) on whether students and teachers should be allowed to use AI in classwork and assignments"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "cannabis-policy",
+  "batch": "becerra-cannabis-policy",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on cannabis legalization or regulation from the 2026 governor campaign (questionnaire, debate answer, or issue page)",
+   "Clerk roll calls for any federal cannabis bills Becerra voted on as a U.S. Representative (records from Congress are pre-seating for a state office; own words would govern)"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "military-intervention",
+  "batch": "becerra-military-intervention",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "gun-policy",
+  "batch": "becerra-gun-policy",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words on firearm regulation from the 2026 governor campaign (candidate questionnaire, issue page, or debate answer on gun policy)",
+   "California Legislature vote/authorship records on firearms bills from his Assembly term (1990-1992), if any"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "israel-military-aid",
+  "batch": "becerra-israel-military-aid",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (2026 campaign or debate/questionnaire answer) on the level of U.S. military aid to Israel and any conditions on it",
+   "Note: his House roll calls on Israel aid (pre-2017) are pre-seating records from another level and cannot seat a chair at this state seat"
+  ],
+  "examined": 3,
+  "examined_cited": 3,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "minimum-wage",
+  "batch": "becerra-minimum-wage",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Becerra's own words (2026 governor campaign questionnaire, debate answer, or issue page) on the level or indexing of California's minimum wage"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "religious-freedom",
+  "batch": "becerra-nosource",
+  "status": "row-not-in-batch-or-duplicate"
+ },
+ {
+  "topic_key": "same-sex-marriage",
+  "batch": "becerra-nosource",
+  "status": "row-not-in-batch-or-duplicate"
+ },
+ {
+  "topic_key": "school-vouchers",
+  "batch": "becerra-nosource",
+  "status": "row-not-in-batch-or-duplicate"
+ },
+ {
+  "topic_key": "ukraine-support",
+  "batch": "becerra-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-library-books",
+  "batch": "becerra-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-gender-identity",
+  "batch": "becerra-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-school-police",
+  "batch": "becerra-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "defense-spending",
+  "batch": "becerra-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "ranked-choice-voting",
+  "batch": "becerra-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ }
+]

@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "3524fe2a-afc9-5cd2-b5f2-d00ea39cd069",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-04-20",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign interview about the insurance market after the fires; it says nothing about school curriculum or contested topics.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is a 2026 interview on California's insurance crisis, which does not address how schools should handle race, gender, or history in what they teach. No passage speaks to any rung, from requiring lessons that center race, gender, and social justice to prohibiting divisive or age-inappropriate lessons.",
+      "needs_source": [
+        "Becerra's own words (campaign issue page, questionnaire, or debate answer from the 2026 governor campaign) on how schools should teach race, gender, and history / ethnic studies / curriculum standards"
+      ],
+      "quotes": []
+    }
+  ]
+}

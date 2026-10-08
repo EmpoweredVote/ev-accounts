@@ -1,10 +1,11 @@
 import { describe, it, expect, vi } from 'vitest';
 
 // importer.ts imports the pool; the roll-call queueing never touches it.
-vi.mock('../db.js', () => ({ pool: { query: vi.fn() } }));
+const queryMock = vi.hoisted(() => vi.fn(async () => ({ rows: [] })));
+vi.mock('../db.js', () => ({ pool: { query: queryMock } }));
 vi.mock('./client.js', () => ({ legiscanQuery: vi.fn() }));
 
-import { queueRollCall, VoteBuffer } from './importer.js';
+import { queueRollCall, VoteBuffer, MAX_ROWS_PER_STATEMENT } from './importer.js';
 
 const rc = {
   roll_call_id: 77, date: '2026-02-26', desc: 'Third reading', passed: 1, yea: 50, nay: 20,
@@ -34,5 +35,22 @@ describe('queueRollCall', () => {
     queueRollCall(rc, 'bill-1', 'sess-1', bridge, buffer, false);
     queueRollCall(rc, 'bill-1', 'sess-1', bridge, buffer, false);
     expect(buffer.full).toBe(false); // still one row
+  });
+});
+
+describe('VoteBuffer.flush', () => {
+  it('never sends more than 65,535 values in one statement', async () => {
+    queryMock.mockClear();
+    const buffer = new VoteBuffer();
+    const many = Array.from({ length: 12_000 }, (_, i) => [
+      `pol-${i}`, 'bill-1', 'sess-1', 'legiscan-1', 'q', 'yea', '2026-01-01', 'passed', 1, 0,
+    ] as never);
+    buffer.add(many);
+    await buffer.flush();
+    expect(queryMock).toHaveBeenCalledTimes(Math.ceil(12_000 / MAX_ROWS_PER_STATEMENT));
+    for (const call of queryMock.mock.calls) {
+      expect((call as unknown as [string, unknown[]])[1].length).toBeLessThanOrEqual(65_535);
+    }
+    expect(buffer.written).toBe(12_000);
   });
 });

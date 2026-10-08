@@ -1,0 +1,120 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "passages": [
+        {
+          "snapshot_id": "12eff48c-0544-5096-9ba2-7984b7ad017b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person campaign issue page pledging to defend and expand the film tax credit where the return justifies it, plus a wage-conditioned federal subsidy; shows the pro-incentive side with some limits but states neither a local-hire term nor a clawback (rung 3) nor large employer-attraction deals with a cost ceiling across the board (rung 4).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0789be55-7c9c-5e3f-b3a0-c40cdfe16310",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate rule for the film tax credit (give it so long as the state gets more than a dollar back) is a cost test on one industry credit; it fits rung 4's limit clause but not its 'large tax breaks and infrastructure to attract major employers' clause, and the data-center and income-tax lines in the same debate are adjacent (siting and general tax policy).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c862c5f1-546e-5bb9-b077-1d4a2569f0c8",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer on attracting business: use the tax credit, workforce training and public-private partnerships to make California attractive; shows the pro-incentive side but names no conditions, clawback or limits.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9141310e-2d56-5fa0-8622-37d82b3d151d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Health-care page proposes a fee on large employers whose workers rely on Medi-Cal; this is health financing, not incentives to attract businesses.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "aa2bfc64-c733-5050-83ce-16e00f38a62c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Disaster page promises recovery aid reaching workers and small businesses; disaster relief, not economic-development incentives.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Becerra's own words back expanding California's film tax credit 'where the return to California justifies it' and giving a tax credit 'so long as we get more than one dollar back for that dollar', which places him on the offer-incentives side and rules out 'Don't give companies tax breaks or subsidies'. But they concern one industry credit: they do not state the wage, local-hiring and pay-back conditions of 'only if they commit to good wages and local hiring — and pay the money back if they don't deliver', nor 'large tax breaks and infrastructure to attract major employers' with limits in general, so no single rung is established.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "12eff48c-0544-5096-9ba2-7984b7ad017b",
+          "text": "Where demand is real, where jobs follow, and where the return to California justifies it, I intend to increase the program’s scale, capacity and access.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "0789be55-7c9c-5e3f-b3a0-c40cdfe16310",
+          "text": "If we give a tax credit, so long as we get more than one dollar back for that dollar in tax credit, we're to do it because Hollywood belongs here.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "c862c5f1-546e-5bb9-b077-1d4a2569f0c8",
+          "text": "And that means whether it's the tax credit or making sure we graduate, the next generation of workers who can work in the entertainment industry, we will make it so attractive that they will not want to leave.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

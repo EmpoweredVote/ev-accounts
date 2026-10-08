@@ -1,0 +1,204 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "passages": [
+        {
+          "snapshot_id": "4024dbe9-6150-5dbd-8a8f-ba21347d85c6",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-party issue page: keeps employer and private coverage, keeps Medi-Cal for children, seniors and disabled but restructures it for working-age adults, adds reinsurance for the individual market; it rejects neither public programs nor private insurance, yet never states coverage for everyone (rung 2), an expansion of programs (rung 3) or help for the poorest only (rung 4).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3c3ef552-deae-5264-9187-e4e0f0424337",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer promising a working-class healthcare guarantee with a low premium and low deductible and backing Medicaid work requirements; shows a government role short of single-payer but names no rung's coverage scope.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "92bcee53-75f3-51f7-8b31-d67822ea95bd",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer calling single-payer 'a total disaster' and opposing state-funded care for undocumented immigrants; rules out rung 1 only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8f30cb3a-9dce-5bde-a8c6-d35435cee727",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-11-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign interview: 'everyone should have access to healthcare' is rhetorical; his rejection of single-payer rules out rung 1 only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c000d7e2-a538-5680-9c40-2bcc9ac5f3ed",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Budget plan narrows Medi-Cal (ends state-funded coverage for undocumented immigrants, asset-limit and premium reforms); a narrowing excludes rung 3's 'expand' but does not state rung 4's 'only'.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c4d8deeb-c8e8-5fbc-ace9-ae4e224f0537",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Medi-Cal fraud enforcement says nothing about whom government covers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "393a101a-6015-54fc-a4d0-3352322e3ce7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Housing plan; mentions health care only as an amenity of new communities.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a1686364-9f4b-512d-96b6-af5f6a5a23f1",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign-finance plan; not about healthcare access.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b35cb482-c7a5-5a18-b97e-600977d36d96",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Aggregator pointer page; not evidence.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Hilton's debate answers rule out rung 1 ('fully paid for by the public sector'), calling single-payer 'a total disaster', and his Working Class Healthcare Guarantee keeps public programs alongside private insurance, so rung 5 ('stay out of healthcare entirely') is out too. No passage says coverage for everyone (rung 2), an expansion of programs for seniors and low-income residents (rung 3, which his Medi-Cal narrowing cuts against), or help 'only' for the poorest (rung 4), so the evidence shows a side but no rung.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "4024dbe9-6150-5dbd-8a8f-ba21347d85c6",
+          "text": "To bring down premiums, Steve will apply for a Section 1332 State Innovation Waiver under the Affordable Care Act.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "4024dbe9-6150-5dbd-8a8f-ba21347d85c6",
+          "text": "For working-age adults who are not seniors or disabled, California will seek federal approval for personal healthcare accounts containing approximately $8,000 to $10,000 a year.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "4024dbe9-6150-5dbd-8a8f-ba21347d85c6",
+          "text": "Steve's Working Class Healthcare Guarantee will give them access to coverage with an affordable premium and a low deductible.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "3c3ef552-deae-5264-9187-e4e0f0424337",
+          "text": "That's why I've announced my plan for a working class healthcare guarantee that will have a low premium and a low deductible by cutting out the waste and the fraud in the system.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "92bcee53-75f3-51f7-8b31-d67822ea95bd",
+          "text": "As a policy maker, you end up with the worst patient satisfaction, cost that you can't afford, taxes skyhigh to pay for it. It is a total disaster.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "c000d7e2-a538-5680-9c40-2bcc9ac5f3ed",
+          "text": "Ending state-funded full-scope Medi-Cal for undocumented immigrants: $8.5 billion",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

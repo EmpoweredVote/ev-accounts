@@ -20,6 +20,8 @@ const isPublishable = (s: EvidenceSnippet) => s.verdict === 'verified' && !!s.ma
 
 interface EvidenceSource {
   url: string;
+  /** A person saved a copy of this own-site page (ruling 2026-10-07). Information only — never verified from. */
+  human_saved?: { sha256: string; snippets_found: number[]; snippets_total: number };
   snippets: EvidenceSnippet[];
 }
 
@@ -508,6 +510,13 @@ function SourceBlock({
           {verified ? '✓ Verified' : 'Mark verified'}
         </button>
       </div>
+      {src.human_saved && (
+        <p className="text-xs text-amber-700 dark:text-amber-400">
+          Human-saved copy on file (sha256 {src.human_saved.sha256.slice(0, 12)}…): {src.human_saved.snippets_found.length} of{' '}
+          {src.human_saved.snippets_total} snippets found in it. The pipeline did not verify this page — open the
+          live URL, check it yourself, then toggle verified. Only the link is published, never a quote.
+        </p>
+      )}
       {src.snippets.map((snip, i) => (
         <SnippetRow key={i} snip={snip} />
       ))}

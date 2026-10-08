@@ -20,7 +20,10 @@
  * guessed into either lane.
  *
  * Usage:
- *   npx tsx scripts/export-written-ledger.ts --batch <id> --dir <dir>
+ *   npx tsx scripts/export-written-ledger.ts --batch <id> --dir <dir> [--season open|draft|<uuid>]
+ * `--season` (default open) names the season a legacy review row with no season_id of its own falls
+ * back to — and, when given, refuses a batch dir built for another season. A row queued after
+ * CA_0264 carries its own season_id, so a draft-season batch resolves without it.
  * Writes <dir>/written-<batch>.json, the shape scripts/audit-chair-evidence.mjs --check reads:
  *   { "season_id": "<uuid>" | null, "rows": [{ politician_id, topic_id, chair_after, season_id }] }
  *
@@ -41,6 +44,7 @@ import { parse } from 'csv-parse/sync';
 import { pool } from '../src/lib/db.js';
 import { stanceKey } from '../src/lib/researchVerifier.js';
 import { reviewLadderColumnsExist } from '../src/lib/researchEvidenceService.js';
+import { resolveSeasonTarget, assertBundleSeason, SeasonTargetError } from './lib/seasonTarget.js';
 import {
   buildLedgerFile, classifyResolvedRows, evidenceTypeByKey,
   type ResearchCsvRow, type ResolvedReviewRow,
@@ -54,8 +58,24 @@ function opt(name: string): string | undefined {
 const BATCH = opt('--batch');
 const DIR = opt('--dir');
 if (!BATCH || !DIR) {
-  console.error('usage: export-written-ledger.ts --batch <id> --dir <dir>');
+  console.error('usage: export-written-ledger.ts --batch <id> --dir <dir> [--season open|draft|<uuid>]');
   process.exit(2);
+}
+// Only an explicit --season changes the query; without it the statement below is the one that has
+// always run (and its seasons_one_open reliance is unchanged).
+const SEASON_SPEC = opt('--season');
+let namedSeasonId: string | null = null;
+if (SEASON_SPEC !== undefined) {
+  try {
+    const t = await resolveSeasonTarget(SEASON_SPEC, (q, p) => pool.query(q, p));
+    assertBundleSeason(DIR, t);
+    namedSeasonId = t.id;
+  } catch (e) {
+    if (!(e instanceof SeasonTargetError)) throw e;
+    console.error(`ERROR: ${e.message}`);
+    await pool.end();
+    process.exit(2);
+  }
 }
 
 const researchPath = join(DIR, 'research.csv');
@@ -109,12 +129,13 @@ const { rows: dbRows } = await pool.query<{
      -- time. That is what makes this a safe LEFT JOIN rather than a fan-out — if the invariant were
      -- ever violated, a legacy row with no season_id of its own (COALESCE below) would silently
      -- multiply into one ledger row per open season instead of at most one.
-     LEFT JOIN inform.seasons open_season ON open_season.status = 'open'
+     LEFT JOIN inform.seasons open_season ON ${namedSeasonId ? 'open_season.id = $2::uuid' : "open_season.status = 'open'"}
      LEFT JOIN inform.politician_answers a
             ON a.politician_id = r.politician_id AND a.topic_id = r.topic_id
            AND a.season_id = COALESCE(${seasonIdSelect}, open_season.id)
-    WHERE r.batch_id = $1 AND r.status = 'resolved'`,
-  [BATCH],
+    WHERE r.batch_id = $1 AND r.status = 'resolved'
+      ${namedSeasonId ? `AND COALESCE(${seasonIdSelect}, open_season.id) = $2::uuid` : ''}`,
+  namedSeasonId ? [BATCH, namedSeasonId] : [BATCH],
 );
 await pool.end();
 

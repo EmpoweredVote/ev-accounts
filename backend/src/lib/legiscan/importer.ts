@@ -5,7 +5,7 @@
  *   getDatasetList -> per session: skip if dataset_hash unchanged -> getDataset (ZIP)
  *   -> getSessionPeople -> match legislators -> bills, sponsors, committees, roll calls.
  * Everything after the downloads is local work on the ZIP contents (zero queries).
- * ev-cto decision 0030. Ported from backend/scripts/legiscan/import_state_legislative.py.
+ * ev-cto decision 0031. Ported from backend/scripts/legiscan/import_state_legislative.py.
  *
  * Antipartisan rule: party fields in LegiScan's people records are never read or stored.
  */
@@ -53,6 +53,27 @@ const emptyResult = (): ImportResult => ({
 
 const log = (msg: string) => console.info(`[legiscan] ${msg}`);
 
+const TRANSIENT = /Connection terminated|ECONNRESET|ETIMEDOUT|ENOTFOUND|EAI_AGAIN|timeout|57P01|08006/i;
+
+/**
+ * pool.query with retries for dropped connections and short network outages (a long load
+ * must survive a blip). Waits 5s, 15s, 45s, 2min, 5min between tries, then gives up.
+ */
+async function query(text: string, params?: unknown[]): Promise<{ rows: any[] }> {
+  const waits = [5_000, 15_000, 45_000, 120_000, 300_000];
+  for (let attempt = 0; ; attempt++) {
+    try {
+      // A fresh copy per attempt: the driver can consume the array it is given.
+      return await pool.query(text, params ? [...params] : undefined);
+    } catch (err) {
+      const msg = (err as Error).message ?? '';
+      if (attempt >= waits.length || !TRANSIENT.test(msg)) throw err;
+      log(`database error (${msg.slice(0, 80)}); retry ${attempt + 1} in ${waits[attempt] / 1000}s`);
+      await new Promise((r) => setTimeout(r, waits[attempt]));
+    }
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Dataset download
 // ---------------------------------------------------------------------------
@@ -99,12 +120,12 @@ export async function downloadDataset(
 async function getOrCreateSession(
   jurisdiction: string, name: string, externalId: number, isCurrent: boolean,
 ): Promise<string> {
-  const found = await pool.query(
+  const found = await query(
     'SELECT id FROM essentials.legislative_sessions WHERE jurisdiction = $1 AND external_id = $2',
     [jurisdiction, String(externalId)],
   );
   if (found.rows.length) return found.rows[0].id;
-  const ins = await pool.query(
+  const ins = await query(
     `INSERT INTO essentials.legislative_sessions (id, jurisdiction, name, external_id, is_current, source)
      VALUES (gen_random_uuid(), $1, $2, $3, $4, 'legiscan') RETURNING id`,
     [jurisdiction, name, String(externalId), isCurrent],
@@ -113,7 +134,7 @@ async function getOrCreateSession(
 }
 
 async function isUnchanged(sessionId: number, hash: string): Promise<boolean> {
-  const { rows } = await pool.query(
+  const { rows } = await query(
     'SELECT dataset_hash, bills FROM essentials.legiscan_dataset_state WHERE legiscan_session_id = $1',
     [sessionId],
   );
@@ -123,7 +144,7 @@ async function isUnchanged(sessionId: number, hash: string): Promise<boolean> {
 async function markImported(
   sessionId: number, jurisdiction: string, hash: string, bridgeCount: number, bills: number,
 ): Promise<void> {
-  await pool.query(
+  await query(
     `INSERT INTO essentials.legiscan_dataset_state
        (legiscan_session_id, jurisdiction, dataset_hash, bridge_count, bills, imported_at)
      VALUES ($1, $2, $3, $4, $5, now())
@@ -146,7 +167,7 @@ export async function buildLegislatorBridge(
   const bridge = new Map<number, string>();
 
   // One query for every bridge that already exists.
-  const existing = await pool.query(
+  const existing = await query(
     `SELECT id_value, politician_id FROM essentials.legislative_politician_id_map
      WHERE id_type = 'legiscan' AND id_value = ANY($1::text[])`,
     [people.map((p) => String(p.people_id))],
@@ -163,7 +184,7 @@ export async function buildLegislatorBridge(
     if (prior) { bridge.set(person.people_id, prior); alreadyBridged++; continue; }
 
     // Same state only: a name shared with a legislator elsewhere must not match.
-    const { rows } = await pool.query(
+    const { rows } = await query(
       `SELECT DISTINCT p.id FROM essentials.politicians p
        JOIN essentials.office_terms ot ON ot.politician_id = p.id
        JOIN essentials.offices o ON o.id = ot.office_id
@@ -178,7 +199,7 @@ export async function buildLegislatorBridge(
       bridge.set(person.people_id, rows[0].id);
       matched++;
       if (!dryRun) {
-        await pool.query(
+        await query(
           `INSERT INTO essentials.legislative_politician_id_map
              (id, politician_id, id_type, id_value, verified_at, source)
            VALUES (gen_random_uuid(), $1, 'legiscan', $2, NOW(), 'legiscan-state-people')
@@ -206,7 +227,7 @@ async function upsertCommittee(
 ): Promise<string | null> {
   const ext = String(c?.committee_id ?? '');
   if (!ext || ext === '0' || dryRun) return null;
-  const { rows } = await pool.query(
+  const { rows } = await query(
     `INSERT INTO essentials.legislative_committees
        (id, session_id, external_id, jurisdiction, name, type, chamber, is_current, source)
      VALUES (gen_random_uuid(), $1, $2, $3, $4, 'committee', $5, true, 'legiscan')
@@ -216,24 +237,6 @@ async function upsertCommittee(
     [sessionId, ext, jurisdiction, c.name ?? 'Unknown Committee', committeeChamber(c.chamber)],
   );
   return rows[0]?.id ?? null;
-}
-
-async function extractCommittees(
-  bill: Json, jurisdiction: string, sessionId: string, dryRun: boolean,
-): Promise<Map<number, string>> {
-  const map = new Map<number, string>();
-  const main = bill.committee;
-  if (main?.committee_id) {
-    const id = await upsertCommittee(main, jurisdiction, sessionId, dryRun);
-    if (id) map.set(main.committee_id, id);
-  }
-  for (const ref of bill.referrals ?? []) {
-    if (ref.committee_id && !map.has(ref.committee_id)) {
-      const id = await upsertCommittee(ref, jurisdiction, sessionId, dryRun);
-      if (id) map.set(ref.committee_id, id);
-    }
-  }
-  return map;
 }
 
 async function upsertMemberships(
@@ -248,7 +251,7 @@ async function upsertMemberships(
     n++;
     if (dryRun) continue;
     // congress_number 0 = state level (unique index on committee, politician, congress_number).
-    await pool.query(
+    await query(
       `INSERT INTO essentials.legislative_committee_memberships
          (id, committee_id, politician_id, congress_number, role, is_current, session_id)
        VALUES (gen_random_uuid(), $1, $2, 0, $3, true, $4)
@@ -260,28 +263,6 @@ async function upsertMemberships(
   return n;
 }
 
-async function linkSponsors(
-  sponsors: Json[], bridge: Map<number, string>, billDbId: string, dryRun: boolean,
-): Promise<{ primary: string | null; cosponsors: number }> {
-  let primary: string | null = null;
-  let cosponsors = 0;
-  for (const s of sponsors) {
-    const politicianId = bridge.get(s.people_id);
-    if (!politicianId) continue;
-    if ((s.sponsor_order ?? 99) === 1) {
-      primary = politicianId;
-    } else if (!dryRun) {
-      await pool.query(
-        `INSERT INTO essentials.legislative_bill_cosponsors (id, bill_id, politician_id)
-         VALUES (gen_random_uuid(), $1, $2) ON CONFLICT (bill_id, politician_id) DO NOTHING`,
-        [billDbId, politicianId],
-      );
-      cosponsors++;
-    }
-  }
-  return { primary, cosponsors };
-}
-
 // ---------------------------------------------------------------------------
 // Votes: queued, written in batches
 // ---------------------------------------------------------------------------
@@ -291,6 +272,9 @@ type VoteRow = [
   question: string, position: string, voteDate: string | null, result: string,
   yea: number, nay: number,
 ];
+
+/** 5,000 rows x 10 values = 50,000, safely under the 65,535-value limit of one statement. */
+export const MAX_ROWS_PER_STATEMENT = 5000;
 
 export class VoteBuffer {
   private rows = new Map<string, VoteRow>();
@@ -304,26 +288,31 @@ export class VoteBuffer {
 
   async flush(): Promise<void> {
     if (!this.rows.size) return;
-    const batch = [...this.rows.values()];
+    const all = [...this.rows.values()];
     this.rows = new Map();
     const COLS = 10;
-    const params: unknown[] = [];
-    const tuples = batch.map((r, i) => {
-      params.push(...r);
-      const o = i * COLS;
-      const ph = Array.from({ length: COLS }, (_, k) => `$${o + k + 1}`).join(', ');
-      return `(gen_random_uuid(), ${ph}, 'legiscan')`;
-    });
-    await pool.query(
-      `INSERT INTO essentials.legislative_votes
-         (id, politician_id, bill_id, session_id, external_vote_id, vote_question, position,
-          vote_date, result, yea_count, nay_count, source)
-       VALUES ${tuples.join(', ')}
-       ON CONFLICT (politician_id, bill_id, session_id, external_vote_id) DO UPDATE SET
-         position = EXCLUDED.position, vote_question = EXCLUDED.vote_question, result = EXCLUDED.result`,
-      params,
-    );
-    this.written += batch.length;
+    // One statement carries at most 65,535 values (a 16-bit count in the protocol), and the
+    // buffer can hold far more rows than that after a group of new bills. Write in slices.
+    for (let start = 0; start < all.length; start += MAX_ROWS_PER_STATEMENT) {
+      const batch = all.slice(start, start + MAX_ROWS_PER_STATEMENT);
+      const params: unknown[] = [];
+      const tuples = batch.map((r, i) => {
+        params.push(...r);
+        const o = i * COLS;
+        const ph = Array.from({ length: COLS }, (_, k) => `$${o + k + 1}`).join(', ');
+        return `(gen_random_uuid(), ${ph}, 'legiscan')`;
+      });
+      await query(
+        `INSERT INTO essentials.legislative_votes
+           (id, politician_id, bill_id, session_id, external_vote_id, vote_question, position,
+            vote_date, result, yea_count, nay_count, source)
+         VALUES ${tuples.join(', ')}
+         ON CONFLICT (politician_id, bill_id, session_id, external_vote_id) DO UPDATE SET
+           position = EXCLUDED.position, vote_question = EXCLUDED.vote_question, result = EXCLUDED.result`,
+        params,
+      );
+      this.written += batch.length;
+    }
   }
 }
 
@@ -352,11 +341,25 @@ export function queueRollCall(
 // Bills (new ones in full; existing ones refreshed: status and roll calls)
 // ---------------------------------------------------------------------------
 
+const BILL_CHUNK = 400;
+
+function chunk<T>(items: T[], size: number): T[][] {
+  const out: T[][] = [];
+  for (let i = 0; i < items.length; i += size) out.push(items.slice(i, i + size));
+  return out;
+}
+
+/** Multi-row VALUES placeholders: ($1,$2,..),($n,..) for rows of `width` columns. */
+function placeholders(rows: number, width: number, startAt = 1): string {
+  return Array.from({ length: rows }, (_, r) =>
+    `(${Array.from({ length: width }, (_, c) => `$${startAt + r * width + c}`).join(', ')})`).join(', ');
+}
+
 async function importBills(
   bills: Map<number, Json>, rollCalls: Map<number, Json>, sessionId: string, jurisdiction: string,
   bridge: Map<number, string>, dryRun: boolean,
 ): Promise<{ bills: number; votes: number; cosponsors: number; committees: Map<number, string>; errors: string[] }> {
-  const existingRows = await pool.query(
+  const existingRows = await query(
     `SELECT external_id, id, raw_status FROM essentials.legislative_bills
      WHERE jurisdiction = $1 AND session_id = $2`,
     [jurisdiction, sessionId],
@@ -372,70 +375,125 @@ async function importBills(
   const errors: string[] = [];
   let votes = 0, cosponsors = 0, count = 0;
 
-  for (const [billId, bill] of [...bills.entries()].sort((a, b) => a[0] - b[0])) {
-    try {
-      const externalId = `legiscan-${billId}`;
-      const prior = existing.get(externalId);
-      let billDbId: string;
+  const sorted = [...bills.entries()].sort((a, b) => a[0] - b[0]);
+  const fresh = sorted.filter(([id]) => !existing.has(`legiscan-${id}`));
+  const known = sorted.filter(([id]) => existing.has(`legiscan-${id}`));
 
-      if (prior) {
-        billDbId = prior.id;
-        const status = bill.status ?? 1;
-        if (String(status) !== String(prior.rawStatus)) {
-          statusUpdates.push([prior.id, String(status), normalizeBillStatus(status, bill.status_desc ?? '')]);
+  const queueVotes = (bill: Json, billDbId: string) => {
+    for (const stub of bill.votes ?? []) {
+      const rc = stub.roll_call_id ? rollCalls.get(stub.roll_call_id) : undefined;
+      if (rc) votes += queueRollCall(rc, billDbId, sessionId, bridge, buffer, dryRun);
+    }
+  };
+
+  // --- Existing bills: refresh status, queue roll calls.
+  for (const [billId, bill] of known) {
+    const prior = existing.get(`legiscan-${billId}`)!;
+    const status = bill.status ?? 1;
+    if (String(status) !== String(prior.rawStatus)) {
+      statusUpdates.push([prior.id, String(status), normalizeBillStatus(status, bill.status_desc ?? '')]);
+    }
+    queueVotes(bill, prior.id);
+    count++;
+    if (!dryRun && buffer.full) await buffer.flush();
+  }
+
+  // --- New bills: committees once, then bills / sponsors / cosponsors in batches.
+  const uniqueCommittees = new Map<number, Json>();
+  for (const [, bill] of fresh) {
+    if (bill.committee?.committee_id) uniqueCommittees.set(bill.committee.committee_id, bill.committee);
+    for (const ref of bill.referrals ?? []) {
+      if (ref.committee_id && !uniqueCommittees.has(ref.committee_id)) uniqueCommittees.set(ref.committee_id, ref);
+    }
+  }
+  for (const [cid, c] of uniqueCommittees) {
+    const id = await upsertCommittee(c, jurisdiction, sessionId, dryRun);
+    if (id) committees.set(cid, id);
+  }
+
+  if (dryRun) {
+    for (const [, bill] of fresh) { queueVotes(bill, 'dry-run'); count++; }
+  } else {
+    for (const group of chunk(fresh, BILL_CHUNK)) {
+      try {
+        const params: unknown[] = [];
+        for (const [billId, bill] of group) {
+          const status = bill.status ?? 1;
+          params.push(
+            sessionId, `legiscan-${billId}`, jurisdiction, bill.bill_number ?? bill.number ?? '',
+            bill.title ?? '', String(status), normalizeBillStatus(status, bill.status_desc ?? ''),
+            parseIsoDate(bill.history?.[0]?.date), bill.url ?? '',
+          );
         }
-      } else {
-        for (const [k, v] of await extractCommittees(bill, jurisdiction, sessionId, dryRun)) committees.set(k, v);
-        if (dryRun) { count++; continue; }
-        const status = bill.status ?? 1;
-        const introduced = parseIsoDate(bill.history?.[0]?.date);
-        const ins = await pool.query(
+        const ins = await query(
           `INSERT INTO essentials.legislative_bills
              (id, session_id, external_id, jurisdiction, number, title, summary,
               raw_status, status_label, introduced_at, url, source)
-           VALUES (gen_random_uuid(), $1, $2, $3, $4, $5, '', $6, $7, $8, $9, 'legiscan')
+           SELECT gen_random_uuid(), v.* FROM (VALUES ${
+             Array.from({ length: group.length }, (_, r) => {
+               const o = r * 9;
+               return `($${o + 1}::uuid, $${o + 2}, $${o + 3}, $${o + 4}, $${o + 5}, ''::text, $${o + 6}, $${o + 7}, $${o + 8}::date, $${o + 9}, 'legiscan'::text)`;
+             }).join(', ')
+           }) AS v(session_id, external_id, jurisdiction, number, title, summary,
+                   raw_status, status_label, introduced_at, url, source)
            ON CONFLICT (external_id, jurisdiction) DO UPDATE SET
              title = EXCLUDED.title, raw_status = EXCLUDED.raw_status,
              status_label = EXCLUDED.status_label, url = EXCLUDED.url
-           RETURNING id`,
-          [sessionId, externalId, jurisdiction, bill.bill_number ?? bill.number ?? '', bill.title ?? '',
-           String(status), normalizeBillStatus(status, bill.status_desc ?? ''), introduced, bill.url ?? ''],
+           RETURNING external_id, id`,
+          params,
         );
-        billDbId = ins.rows[0].id;
-        const { primary, cosponsors: n } = await linkSponsors(bill.sponsors ?? [], bridge, billDbId, dryRun);
-        cosponsors += n;
-        if (primary) {
-          await pool.query('UPDATE essentials.legislative_bills SET sponsor_id = $1 WHERE id = $2', [primary, billDbId]);
-        }
-      }
+        const ids = new Map<string, string>(ins.rows.map((r) => [r.external_id, r.id]));
 
-      for (const stub of bill.votes ?? []) {
-        const rc = stub.roll_call_id ? rollCalls.get(stub.roll_call_id) : undefined;
-        if (rc) votes += queueRollCall(rc, billDbId, sessionId, bridge, buffer, dryRun);
+        const cosponsorRows: Array<[string, string]> = [];
+        const sponsorRows: Array<[string, string]> = [];
+        for (const [billId, bill] of group) {
+          const billDbId = ids.get(`legiscan-${billId}`);
+          if (!billDbId) continue;
+          for (const sp of bill.sponsors ?? []) {
+            const pol = bridge.get(sp.people_id);
+            if (!pol) continue;
+            if ((sp.sponsor_order ?? 99) === 1) sponsorRows.push([billDbId, pol]);
+            else cosponsorRows.push([billDbId, pol]);
+          }
+          queueVotes(bill, billDbId);
+          count++;
+        }
+        for (const part of chunk(cosponsorRows, 1000)) {
+          await query(
+            `INSERT INTO essentials.legislative_bill_cosponsors (id, bill_id, politician_id)
+             SELECT gen_random_uuid(), v.bill_id::uuid, v.politician_id::uuid
+             FROM (VALUES ${placeholders(part.length, 2)}) AS v(bill_id, politician_id)
+             ON CONFLICT (bill_id, politician_id) DO NOTHING`,
+            part.flat(),
+          );
+          cosponsors += part.length;
+        }
+        for (const part of chunk(sponsorRows, 1000)) {
+          await query(
+            `UPDATE essentials.legislative_bills b SET sponsor_id = v.sponsor_id::uuid
+             FROM (VALUES ${placeholders(part.length, 2)}) AS v(id, sponsor_id)
+             WHERE b.id = v.id::uuid`,
+            part.flat(),
+          );
+        }
+        if (buffer.full) await buffer.flush();
+      } catch (err) {
+        errors.push(`bill batch: ${(err as Error).message}`);
+        if (errors.length > 20) { errors.push('too many errors, aborting bill import'); break; }
       }
-      count++;
-      if (!dryRun && buffer.full) await buffer.flush();
-    } catch (err) {
-      errors.push(`bill ${billId}: ${(err as Error).message}`);
-      if (errors.length > 50) { errors.push('too many errors, aborting bill import'); break; }
     }
   }
 
   if (!dryRun) {
     try {
       await buffer.flush();
-      if (statusUpdates.length) {
-        const params: unknown[] = [];
-        const tuples = statusUpdates.map((u, i) => {
-          params.push(...u);
-          return `($${i * 3 + 1}, $${i * 3 + 2}, $${i * 3 + 3})`;
-        });
-        await pool.query(
+      for (const part of chunk(statusUpdates, 1000)) {
+        await query(
           `UPDATE essentials.legislative_bills b
            SET raw_status = v.raw_status, status_label = v.status_label
-           FROM (VALUES ${tuples.join(', ')}) AS v(id, raw_status, status_label)
+           FROM (VALUES ${placeholders(part.length, 3)}) AS v(id, raw_status, status_label)
            WHERE b.id = v.id::uuid`,
-          params,
+          part.flat(),
         );
       }
     } catch (err) {
@@ -512,7 +570,7 @@ export async function importState(
 // ---------------------------------------------------------------------------
 
 export async function statesWithLegislators(): Promise<string[]> {
-  const { rows } = await pool.query(
+  const { rows } = await query(
     `SELECT DISTINCT UPPER(d.state) AS state
      FROM essentials.office_terms ot
      JOIN essentials.offices o ON o.id = ot.office_id

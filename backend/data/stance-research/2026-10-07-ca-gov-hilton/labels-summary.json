@@ -1,0 +1,666 @@
+[
+ {
+  "topic_key": "abortion",
+  "batch": "hilton-abortion",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own words on a gestational limit or exceptions (candidate questionnaire or campaign issue page on abortion)",
+   "OnTheIssues abortion section for Steve Hilton, followed to its primary sources"
+  ],
+  "examined": 4,
+  "examined_cited": 4,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "ai-regulation",
+  "batch": "hilton-ai-regulation",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own first-person words (questionnaire or debate answer) on whether AI developers should be legally liable for harm or AI should be safety-tested before high-stakes use"
+  ],
+  "examined": 10,
+  "examined_cited": 8,
+  "examined_without_snippet": [
+   "https://stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world",
+   "https://stevehiltonforgovernor.com/policies"
+  ]
+ },
+ {
+  "topic_key": "campaign-finance",
+  "batch": "hilton-campaign-finance",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own first-person words on campaign contribution or spending limits (questionnaire, debate answer, interview) in the 2026 campaign",
+   "Positive Populism (2018) passage in Hilton's own words arguing for banning \"Conflict Donors\""
+  ],
+  "examined": 4,
+  "examined_cited": 4,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "childcare",
+  "batch": "hilton-childcare",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words on childcare subsidies or provider funding (questionnaire answer, debate answer, or a campaign issue page on childcare)"
+  ],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "civil-rights",
+  "batch": "hilton-civil-rights",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own words (questionnaire, debate answer or first-person issue page) on affirmative action, race-based government programmes or civil rights enforcement in California"
+  ],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "climate-change",
+  "batch": "hilton-climate-change",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own first-person words (debate answer, questionnaire, signed or first-person issue statement) calling to end both California's renewable/clean-energy mandates (RPS) and clean-energy subsidies, e.g. a first-person version of the 'Cut California's Electricity Bills by Ending Wind and Solar Farm Mandates and Subsidies' plan"
+  ],
+  "examined": 11,
+  "examined_cited": 10,
+  "examined_without_snippet": [
+   "https://stevehiltonforgovernor.com/rebalancing-californias-carbon-sequestration-strategy"
+  ]
+ },
+ {
+  "topic_key": "data-centers",
+  "batch": "hilton-data-centers",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Body text of snapshot 5e30747b-ffd1-59fa-8761-4123ff74b2dc (stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world), which arrived title-only",
+   "Body text of snapshot a702b267-4a66-5c5f-9ebd-fd70ace39ca2 (stevehiltonforgovernor.com/policies), which arrived title-only",
+   "Steve Hilton's own words on data-center permitting, energy cost allocation or regulation (campaign issue page, debate answer or questionnaire)"
+  ],
+  "examined": 2,
+  "examined_cited": 0,
+  "examined_without_snippet": [
+   "https://stevehiltonforgovernor.com/keep-california-the-ai-capital-of-the-world",
+   "https://stevehiltonforgovernor.com/policies"
+  ]
+ },
+ {
+  "topic_key": "deportation",
+  "batch": "hilton-deportation",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own words on whether undocumented immigrants without criminal convictions, including long-settled families and workers, should be removed (e.g., a questionnaire or debate answer on deportation scope)"
+  ],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "economic-development",
+  "batch": "hilton-economic-development",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 11,
+  "examined_cited": 10,
+  "examined_without_snippet": [
+   "https://stevehiltonforgovernor.com/policy/make-california-the-crypto-capital-of-the-world/"
+  ]
+ },
+ {
+  "topic_key": "fossil-fuels",
+  "batch": "hilton-fossil-fuels",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own words on how much to expand production, or on opening (or keeping closed) state lands and state waters / offshore areas to new drilling",
+   "First-person version of the $3 gas policy page, or a questionnaire answer on oil and gas production"
+  ],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "growth-and-development",
+  "batch": "hilton-growth-and-development",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own first-person words (debate answer, questionnaire, or first-person issue page) on whether development constraints beyond health and safety should remain, or on government recruiting new development while keeping guardrails"
+  ],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "healthcare",
+  "batch": "hilton-healthcare",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "homelessness",
+  "batch": "hilton-homelessness",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words or policy page stating the penalty for public camping (civil fine/warnings vs arrest, jail or prosecution), e.g. a homelessness policy page on stevehiltonforgovernor.com"
+  ],
+  "examined": 10,
+  "examined_cited": 10,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "housing",
+  "batch": "hilton-housing",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "compound-partial",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own words on rent control / rent caps (e.g. a questionnaire or debate answer)",
+   "Hilton's own words on inclusionary zoning or required affordable units",
+   "A dated version of the 'Bring Back the Starter Home in California' policy page"
+  ],
+  "examined": 10,
+  "examined_cited": 9,
+  "examined_without_snippet": [
+   "https://stevehiltonforgovernor.com/bring-back-the-starter-home-in-california"
+  ]
+ },
+ {
+  "topic_key": "jail-capacity",
+  "batch": "hilton-jail-capacity",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's Crime-Fighting and Prison Reform Plan in his own first-person words (policy page text), showing whether he ranks detention over alternatives to incarceration",
+   "Text of https://stevehiltonforgovernor.com/crime (snapshot captured only the page title)"
+  ],
+  "examined": 9,
+  "examined_cited": 8,
+  "examined_without_snippet": [
+   "https://stevehiltonforgovernor.com/crime"
+  ]
+ },
+ {
+  "topic_key": "judicial-criminal-justice",
+  "batch": "hilton-judicial-criminal-justice",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own first-person words (questionnaire answer, debate answer, or first-person issue page) stating his general orientation on punishment vs. treatment/restitution for people who break the law"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "medicare/aid",
+  "batch": "hilton-medicare-aid",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "compound-partial",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 7,
+  "examined_cited": 6,
+  "examined_without_snippet": [
+   "https://stevehiltonforgovernor.com/policy/hilton-launches-califordable-campaign-to-fix-californias-affordability-crisis-town-hall-tour/"
+  ]
+ },
+ {
+  "topic_key": "misinformation",
+  "batch": "hilton-misinformation",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words (questionnaire, debate answer, issue page, interview) on platform or government responsibility for online misinformation or content moderation"
+  ],
+  "examined": 2,
+  "examined_cited": 2,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "redistricting",
+  "batch": "hilton-redistricting",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's filed federal complaint challenging Proposition 50 (2025), to read its substantive claim"
+  ],
+  "examined": 5,
+  "examined_cited": 5,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "religious-freedom",
+  "batch": "hilton-religious-freedom",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words (questionnaire, debate answer, first-person issue page, or interview) on religious exemptions from California anti-discrimination law"
+  ],
+  "examined": 2,
+  "examined_cited": 2,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "rent-regulation",
+  "batch": "hilton-rent-regulation",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own 2026-campaign words on rent control or the Tenant Protection Act (AB 1482), e.g. a candidate questionnaire or a debate answer on rent regulation"
+  ],
+  "examined": 7,
+  "examined_cited": 7,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "school-vouchers",
+  "batch": "hilton-school-vouchers",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own first-person words (debate answer, questionnaire, or first-person policy report such as his Golden Together education paper) stating the intended ESA eligibility end state"
+  ],
+  "examined": 5,
+  "examined_cited": 5,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "social-security",
+  "batch": "hilton-social-security",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words on Social Security benefits, the payroll tax or private accounts (candidate questionnaire, debate answer, interview, or issue page), current 2026 campaign"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "tariffs",
+  "batch": "hilton-tariffs",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own first-person words on tariffs or trade policy (debate answer, questionnaire, interview, or campaign statement) from the 2026 governor campaign"
+  ],
+  "examined": 2,
+  "examined_cited": 2,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "taxes",
+  "batch": "hilton-taxes",
+  "status": "ok",
+  "value": 4,
+  "blank_reason": null,
+  "evidence_type": "statement",
+  "rests_on": 2,
+  "urls_dropped": 0,
+  "needs_source": [],
+  "context_urls": []
+ },
+ {
+  "topic_key": "trans-athletes",
+  "batch": "hilton-trans-athletes",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own speech at the Clovis track and field championships (2026) announcing his girls' sports plan",
+   "Hilton campaign policy page on girls' sports / transgender athletes, if one exists (first-person statement of the rule he would enact)"
+  ],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "transportation-priorities",
+  "batch": "hilton-transportation-priorities",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Text of https://stevehiltonforgovernor.com/steve-hilton-pledges-to-stop-high-speed-rail-payments-on-day-one/ (snapshot 672a8b25 captured only the title), for his own first-person words on high-speed rail",
+   "Hilton's own words on how state transportation money should be split between road capacity and transit, cycling and walking (questionnaire or debate answer)"
+  ],
+  "examined": 9,
+  "examined_cited": 8,
+  "examined_without_snippet": [
+   "https://stevehiltonforgovernor.com/steve-hilton-pledges-to-stop-high-speed-rail-payments-on-day-one/"
+  ]
+ },
+ {
+  "topic_key": "voting-rights",
+  "batch": "hilton-voting-rights",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 9,
+  "examined_cited": 9,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "2020-election",
+  "batch": "hilton-2020-election",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words on the 2020 presidential election outcome (debate answer, candidate questionnaire, or interview quote from the 2025-2026 governor campaign)"
+  ],
+  "examined": 7,
+  "examined_cited": 7,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "border-security",
+  "batch": "hilton-border-security",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words (campaign policy page, questionnaire or debate answer) on asylum at the border or on border crossings"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-curriculum",
+  "batch": "hilton-education-curriculum",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own first-person words (questionnaire, debate answer, or first-person issue page) on how schools should teach contested topics such as race, gender and history"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-library-books",
+  "batch": "hilton-education-library-books",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words (campaign issue page, questionnaire, debate answer or interview) on school library or classroom book challenges"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-equity-programs",
+  "batch": "hilton-education-equity-programs",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Hilton's own words on equity/DEI programmes, equity offices or training in schools, or group-based versus need-based student support (campaign issue page, questionnaire, or interview)"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-charter-authorization",
+  "batch": "hilton-education-charter-authorization",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own first-person words (debate answer, questionnaire, interview) on how charter applications should be authorized or on converting failing schools to charters"
+  ],
+  "examined": 3,
+  "examined_cited": 3,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-school-budget",
+  "batch": "hilton-education-school-budget",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own first-person words (questionnaire, debate answer, or first-person issue page) on the overall level of K-12 school funding and whether to raise taxes for it"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-ai",
+  "batch": "hilton-education-ai",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 5,
+  "examined_cited": 5,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "cannabis-policy",
+  "batch": "hilton-cannabis-policy",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "direction-only",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words (debate answer, questionnaire, or issue page) on how cannabis should be regulated, e.g. on the licensed, taxed adult-use market or on loosening cannabis-specific restrictions"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "defense-spending",
+  "batch": "hilton-defense-spending",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words (questionnaire, debate answer, interview, or social post) on the size of the federal military budget, e.g. from his Fox News commentary or 2026 campaign statements"
+  ],
+  "examined": 3,
+  "examined_cited": 3,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "military-intervention",
+  "batch": "hilton-military-intervention",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words (debate answer, interview, questionnaire or first-person post) on when the US should use military force abroad, e.g. on the Iran war"
+  ],
+  "examined": 4,
+  "examined_cited": 4,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "gun-policy",
+  "batch": "hilton-gun-policy",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own first-person words (debate answer, questionnaire, interview) on the assault-weapons ban, new gun restrictions, or permitless carry"
+  ],
+  "examined": 6,
+  "examined_cited": 6,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "israel-military-aid",
+  "batch": "hilton-israel-military-aid",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words on U.S. military aid to Israel (debate answer, questionnaire, interview, or first-person campaign statement), 2025-2026 governor campaign"
+  ],
+  "examined": 8,
+  "examined_cited": 8,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "ranked-choice-voting",
+  "batch": "hilton-ranked-choice-voting",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [
+   "Steve Hilton's own words (questionnaire, debate answer, issue page or interview) on ranked-choice voting during the 2026 governor campaign"
+  ],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "same-sex-marriage",
+  "batch": "hilton-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "ukraine-support",
+  "batch": "hilton-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-gender-identity",
+  "batch": "hilton-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "education-school-police",
+  "batch": "hilton-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ },
+ {
+  "topic_key": "minimum-wage",
+  "batch": "hilton-nosource",
+  "status": "ok",
+  "value": 0,
+  "blank_reason": "no-evidence",
+  "evidence_type": "blank",
+  "needs_source": [],
+  "examined": 1,
+  "examined_cited": 1,
+  "examined_without_snippet": []
+ }
+]

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "66b389c7-86fc-45e9-bf34-964bb747f27b",
+      "served_revision_id": "23d87824-d25c-4b9a-8b13-fb2799d75661",
+      "passages": [
+        {
+          "snapshot_id": "ddbcbb35-6f49-5aa9-ac2c-14d00dcdb918",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign issue page on disaster preparedness; its mention of equity concerns disaster recovery, not gaps between student groups in schools.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9323a0e0-eb96-53f5-bab5-284e5e6e5a5a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign issue page on health care; nothing on how schools address achievement or opportunity gaps between student groups.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Neither source speaks to how schools should address gaps between student groups: one is a disaster-preparedness page and the other a health-care page, so no passage reaches any rung from \"Fund dedicated equity offices and staff\" to \"Eliminate equity programs, training, and staff\".",
+      "needs_source": [
+        "Becerra's own words (campaign issue page, questionnaire, or debate answer) on K-12 achievement or opportunity gaps between student groups",
+        "Any record from his California Assembly service on school equity offices, equity training, subgroup accountability, or bans on equity programs"
+      ],
+      "quotes": []
+    }
+  ]
+}

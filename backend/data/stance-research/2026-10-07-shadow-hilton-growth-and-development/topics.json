@@ -1,0 +1,41 @@
+[
+  {
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "topic_key": "growth-and-development",
+    "topic_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+    "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+    "question_number": 12,
+    "title": "Growth and Development Pace",
+    "question_text": "How should government manage population growth and new development?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Hold the pace of growth down \u2014 cap major new development, and let residents vote directly on the largest projects."
+      },
+      {
+        "value": 2,
+        "text": "Allow growth only as fast as current infrastructure can handle \u2014 make new development wait for capacity."
+      },
+      {
+        "value": 3,
+        "text": "Welcome steady growth \u2014 invest in roads, water and schools ahead of demand so expansion isn't held back."
+      },
+      {
+        "value": 4,
+        "text": "Actively push for faster growth \u2014 cut red tape and recruit new development, while keeping basic guardrails."
+      },
+      {
+        "value": 5,
+        "text": "Step back and let the market set the pace \u2014 remove development constraints beyond basic health and safety."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "federal"
+    ]
+  }
+]
