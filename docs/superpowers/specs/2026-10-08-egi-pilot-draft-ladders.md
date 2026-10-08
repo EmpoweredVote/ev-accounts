@@ -1,10 +1,54 @@
-# education-gender-identity — Season 3 pilot draft ladders (two single-topic options)
+# education-gender-identity — Season 3 pilot draft ladders
 
 Date: 2026-10-08. Drafter: the Season 3 ladder session, for Chris Andrews. **Draft for review — not a
 revision, not pinned, nothing written to prod.** Sixth Season 3 pilot (worksheet
 [`2026-10-07-season3-ladder-evaluation.md`](2026-10-07-season3-ladder-evaluation.md), pilots table).
 
-## Independence of the test
+## A1 v2 — redraft after the failed first test (2026-10-08) — FOR REVIEW
+
+**Status of the first round:** both options and the control failed T1 (control 9%, A1 8%, A2b 0%).
+Chris Andrews ruled: redraft **A1 only**, re-test on a fresh set; A2b is dropped; if A1 fails again the
+topic stays identity for Season 3. Test set v2 (32 items) was frozen before this redraft; the drafter
+did not open it and did not read the results report. Exposed to the drafter (named in the results
+message, so excluded from v2): NC SB 49, TX SB 12, CO HB24-1039, Kavanagh.
+
+**New rule applied (T6 addition, 2026-10-08):** neighbouring rungs must differ by a stated act. In
+v1, rung 3 ("…except when staff believe telling would put the student in danger") and rung 4 ("…every
+time…") differed only by whether the law states an exception — a notice law silent on exceptions fit
+neither cleanly.
+
+**Question (unchanged):** "When a student wants to use a different name or gender identity at school,
+who decides whether parents are told?"
+
+**Poles (L1):** *The student decides* ↔ *Parents decide first.*
+
+| rung | text | stated act | change from v1 |
+|---:|---|---|---|
+| 1 | Require staff to keep a student's gender identity from parents unless the student consents. | require confidentiality | unchanged |
+| 2 | Forbid rules that require schools to tell parents. | bar notice rules | unchanged |
+| 3 | Require schools to tell parents when parents ask. | disclose on request | **new**: replaces "notice, except when danger" |
+| 4 | Require schools to notify parents. | notice duty | **simplified**: "every time" removed; a stated safety exception no longer moves a law off this rung |
+| 5 | Require parental permission before staff use a different name or pronouns. | consent first | "and" → "or" (L7: one act) |
+
+**What each neighbouring pair differs by (T6):**
+- 1 vs 2: a rule that requires secrecy vs a rule that forbids notice mandates.
+- 2 vs 3: forbids notice rules vs requires disclosure when asked.
+- 3 vs 4: disclosure on request vs a duty to notify unasked.
+- 4 vs 5: notice vs permission before staff act.
+
+**Cost of this redraft.** It merges two real positions — notice with a safety exception, and notice
+with none — onto rung 4. The safety exception is a common and debated feature; this ladder no longer
+separates it. That is the price of the T6 rule here, and it brings back "tell parents when they ask",
+which v1 had dropped.
+
+**Risks for the test:** rung 1 vs 2 may still read as adjacent for a statewide bar that also forbids
+disclosure (watch for `adjacent-chairs`); rung 5 may attract consent laws that also impose notice
+(seat 5 — the further rung — per the annex convention).
+
+**Candidate rung_map from rev 1 (not a decision; 0 seats):** `{"1":1,"2":3,"3":4,"4":4,"5":5}` —
+old rung 2's disclosure part is "tell only if asked" (now rung 3); old rungs 3 and 4 merge on rung 4.
+
+## Independence of the test (first round)
 
 - The test set was frozen before this draft was written (34 items, hash-locked in
   `~/Documents/GitHub/.planning/research/s3-pilot-egi/FROZEN.md`). **The drafter never opened that
