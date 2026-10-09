@@ -392,8 +392,16 @@ const QUERY = `
     const bucket = r.st || '-';
     observed[r.chk] ??= {};
     observed[r.chk][bucket] = (observed[r.chk][bucket] ?? 0) + 1;
-    // The identity the gate actually compares. Deliberately carries NO state and NO season, so a row
-    // that is re-bucketed or superseded is still recognised as the same row.
+    // The identity the gate actually compares. Deliberately carries NO STATE, so a row that is
+    // re-bucketed by an occupancy change is still recognised as the same row -- that is the
+    // 2026-09-27 red master, described at the top of this file.
+    //
+    // 🔴 IT DOES CARRY THE SEASON, AND THIS COMMENT USED TO DENY IT. It read "carries NO state and
+    // NO season" while the line below has always interpolated `r.season_id`. The SQL comment on
+    // `pa.season_id` is the one that was right: a pair legitimately holds one row per season, and a
+    // bad row written into the OPEN season must not be hidden by an already-recorded row in a
+    // closed one. #947 made the season load bearing -- the context join now matches on it -- so a
+    // comment denying it is worse than none.
     observedRows[r.chk] ??= new Set();
     observedRows[r.chk].add(`${r.politician_id}:${r.topic_id}:${r.season_id}`);
   }
