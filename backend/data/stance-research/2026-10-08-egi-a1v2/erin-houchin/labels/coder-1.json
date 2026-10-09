@@ -1,0 +1,106 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "583aed60-fd66-5e55-8a92-3dd672be33f1",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2023-09-14",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person op-ed objecting to a ruling that blocked districts from notifying parents of a gender identity change; shows the pro-parental-involvement side but names no mechanism separating notice on request, automatic notice, or prior consent.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f6d60ec4-b21c-5234-9d37-f3ab43766552",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": null,
+          "note": "Aye on final passage of the PROTECT Kids Act; a federal record cannot seat a chair at this no-lever level (own words only).",
+          "record_kind": "vote",
+          "actor_quote": "Hinson Houchin Hudson Huizenga",
+          "tally_quote": "TOTALS 217 198 15"
+        },
+        {
+          "snapshot_id": "51238c44-719c-5104-b628-87a966981587",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": "a public school that receives funds under such Act shall obtain parental consent before changing a covered student's-- (1) gender markers, pronouns, or preferred name on any school form",
+          "note": "Consent is required only for changes on school forms for elementary and middle-grade students, not for staff use of a name or pronouns generally, and the bill also has a separate funding section; in any case a federal record cannot seat a chair here.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b193cf12-598f-5cb2-aa88-79ad2e1bfea0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": null,
+          "note": "Aye on final passage of the multi-subject Parents Bill of Rights Act; proves direction at most, and a federal record cannot seat a chair at this level.",
+          "record_kind": "vote",
+          "actor_quote": "Hinson Houchin Hudson Huizenga",
+          "tally_quote": "TOTALS 213 208 14"
+        },
+        {
+          "snapshot_id": "7c67027d-4916-5d08-b339-1b30c1fbc645",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": "notifies the parents of any child who is a student in such school if a school employee or contractor takes, with respect to such child, any action described in clause (i) or (ii) of paragraph (1)(L)",
+          "note": "The bill contains both a notification clause and a separate parental-consent clause for school forms among many unrelated parts; her op-ed praises the bill generally without tying her vote to either provision.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "At the federal level only her own words count. Her op-ed says a ruling to \"block multiple school districts from notifying parents of a child's gender identity change\" should not \"become the new normal\", which places her against keeping gender identity from parents. It does not choose among \"Require schools to tell parents when parents ask\", \"Require schools to notify parents\", and \"Require parental permission before staff use a different name or pronouns\"; her votes on H.R. 5 and H.R. 2616 are federal records that cannot seat a chair here.",
+      "needs_source": [
+        "Houchin's own words (floor statement or press release) on H.R. 2616 (119th), PROTECT Kids Act, parental consent before changing a student's name or pronouns"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "583aed60-fd66-5e55-8a92-3dd672be33f1",
+          "text": "Just last month, a New Jersey judge ruled to block multiple school districts from notifying parents of a child's gender identity change. Stories like these shouldn't become the new normal.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

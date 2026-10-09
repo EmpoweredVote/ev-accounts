@@ -1,0 +1,55 @@
+{
+  "batch_id": "steve-nass",
+  "seat": {
+    "politician_id": "f8901d87-cb68-480a-84cd-b40290c1bb8b",
+    "full_name": "Steve Nass",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "78b54c34-4ce1-49ad-b7bf-4e44bf734eea",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Wisconsin"
+    ],
+    "term_start": null,
+    "start_precision": "unknown",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "WI",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "topic_key": "egi-draft-a1v2",
+      "served_revision_id": "draft-a1v2-pr945",
+      "question_text": "When a student wants to use a different name or gender identity at school, who decides whether parents are told?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require staff to keep a student's gender identity from parents unless the student consents."
+        },
+        {
+          "value": 2,
+          "text": "Forbid rules that require schools to tell parents."
+        },
+        {
+          "value": 3,
+          "text": "Require schools to tell parents when parents ask."
+        },
+        {
+          "value": 4,
+          "text": "Require schools to notify parents."
+        },
+        {
+          "value": 5,
+          "text": "Require parental permission before staff use a different name or pronouns."
+        }
+      ],
+      "own_words_levels": [
+        "federal",
+        "local"
+      ],
+      "annexMd": null
+    }
+  ]
+}

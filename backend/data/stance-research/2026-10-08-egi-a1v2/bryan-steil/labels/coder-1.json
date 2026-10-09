@@ -1,0 +1,82 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "255d8144-689b-4753-b0e1-bf66ae283026",
+      "office_id": "40712225-6edc-444a-a8e0-05e5c3ae22a4",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "b41e2470-1174-5d77-b12b-5a704c62b3e0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of the multi-subject Parents Bill of Rights Act; a record at a level that holds no lever on this topic cannot seat a chair.",
+          "record_kind": "vote",
+          "actor_quote": "Stauber Steel Stefanik Steil Steube",
+          "tally_quote": "TOTALS 213 208 14"
+        },
+        {
+          "snapshot_id": "d5a97bc9-a0df-5c78-b969-9e7ce5d4ed28",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": "shall be required to obtain parental consent before-- (1) changing a minor child's gender markers, pronouns, or preferred name on any school form",
+          "note": "Title IV is one of many unrelated titles in an omnibus parents'-rights bill; own words only at the federal level.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a135e1f6-cbc7-5d4b-95bc-52696c036e5f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of the PROTECT Kids Act; a record at a no-lever level cannot seat a chair.",
+          "record_kind": "vote",
+          "actor_quote": "Stefanik Steil Steube Strong",
+          "tally_quote": "TOTALS 217 198 15"
+        },
+        {
+          "snapshot_id": "66d37989-72be-5058-bd07-01c0d9522397",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": "a public school that receives funds under such Act shall obtain parental consent before changing a covered student's-- (1) gender markers, pronouns, or preferred name on any school form",
+          "note": "Consent covers changes on school forms (narrower than staff use of names/pronouns) and the bill adds a separate curriculum section; shows the parental-permission side only.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "At the federal level only the person's own words can seat a chair on this topic, and every source here is a record: Yea votes on H.R. 5 (118th) and H.R. 2616 (119th), which require parental consent before changing a child's pronouns or preferred name on school forms. No statement by Steil is in the sources, so no passage survives to support \"Require parental permission before staff use a different name or pronouns\" or any other rung.",
+      "needs_source": [
+        "Bryan Steil's own words (press release, floor statement, interview, or issue page) on parental notification or consent about a student's name/pronoun change at school, e.g. a statement explaining his vote on H.R. 2616 (119th) or H.R. 5 (118th)"
+      ],
+      "quotes": []
+    }
+  ]
+}

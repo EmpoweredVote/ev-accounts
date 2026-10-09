@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "29a72e61-eb0b-44da-b535-974993a59838",
+      "office_id": "3533f253-93b7-4b4b-a3a1-87ac83d88bb1",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "0e9b4120-7433-5733-826a-f6b88d6180ff",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": null,
+          "note": "Senate concurrence/final passage vote on 2SB 100 School Gender Identity Policies; Cullimore voted Yea, 6 of 29 against so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Cullimore, K. A.",
+          "tally_quote": "Yeas 22 Nays 6 Abs 1"
+        },
+        {
+          "snapshot_id": "ba896c5b-a78c-56de-bb24-e9a0d4aeeecf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": "without written parental consent make changes to a student's education record",
+          "note": "Operative section guarantees parental access to education records and requires parental consent for gender-identity changes to the record; it neither mandates proactive notification (rung 4) nor requires permission before staff use a name or pronouns (rung 5), and goes beyond on-request access (rung 3).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Cullimore voted Yea on SB 100 (2023), which bars schools from shielding a student's education record from parents and forbids changing the record's gender identity \"without written parental consent\". That places him on the parental-involvement side, but the bill's object is the education record, not staff use of names or pronouns (\"Require parental permission before staff use a different name or pronouns\") nor a duty to notify parents (\"Require schools to notify parents\"), so no single rung's clauses are fully matched.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

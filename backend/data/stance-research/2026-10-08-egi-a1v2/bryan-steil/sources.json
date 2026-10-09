@@ -1,0 +1,61 @@
+{
+  "batch_id": "bryan-steil",
+  "sources": [
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-118hr5eh/html/BILLS-118hr5eh.htm",
+      "source_kind": "public-record",
+      "politician_id": "255d8144-689b-4753-b0e1-bf66ae283026",
+      "office_id": "40712225-6edc-444a-a8e0-05e5c3ae22a4",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "H.R. 5"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://clerk.house.gov/evs/2023/roll161",
+      "source_kind": "public-record",
+      "politician_id": "255d8144-689b-4753-b0e1-bf66ae283026",
+      "office_id": "40712225-6edc-444a-a8e0-05e5c3ae22a4",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "H.R. 5"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2616eh/html/BILLS-119hr2616eh.htm",
+      "source_kind": "public-record",
+      "politician_id": "255d8144-689b-4753-b0e1-bf66ae283026",
+      "office_id": "40712225-6edc-444a-a8e0-05e5c3ae22a4",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "H.R. 2616"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://clerk.house.gov/evs/2026/roll184",
+      "source_kind": "public-record",
+      "politician_id": "255d8144-689b-4753-b0e1-bf66ae283026",
+      "office_id": "40712225-6edc-444a-a8e0-05e5c3ae22a4",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "H.R. 2616"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

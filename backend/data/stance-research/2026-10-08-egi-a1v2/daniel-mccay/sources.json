@@ -1,0 +1,34 @@
+{
+  "batch_id": "daniel-mccay",
+  "sources": [
+    {
+      "url": "https://le.utah.gov/~2023/bills/sbillenr/SB0100.pdf",
+      "source_kind": "public-record",
+      "politician_id": "6ca52345-ae36-4d19-8058-334f66076ee4",
+      "office_id": "bb9ee06d-4099-4f0a-85c5-a7962625b90f",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "SB 100"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ut-2023-SB0100-enrolled.txt"
+    },
+    {
+      "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=305&house=S",
+      "source_kind": "public-record",
+      "politician_id": "6ca52345-ae36-4d19-8058-334f66076ee4",
+      "office_id": "bb9ee06d-4099-4f0a-85c5-a7962625b90f",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "SB 100"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+ "scope": "LOCAL officials and local candidates (COUNTY, LOCAL, LOCAL_EXEC) in roster-monroe, roster-racine, roster-utah. Local rule: own words only.",
+ "instruments": [
+  { "id": "UT SB 100 (2023) - context only, not local evidence", "year": 2023, "jurisdiction": "UT",
+    "title": "School Gender Identity Policies",
+    "operative_summary": "Each school and local board must ensure no policy shields a student's education record from the parent or interferes with a parent's access to information about the child. A school may not bar parent access to the record, and may not change a record about gender identity without written parental consent.",
+    "operative_quote": "each school and each local governing board shall ensure that no policy or action of the school or LEA: (a) ... operates to shield a student's education record from the student's parent ... (3) ... a school or LEA may not: (a) prohibit a parent of a child from accessing the child's education record; or (b) without written parental consent make changes to a student's education record regarding a student's gender identity that does not conform with the student's sex.",
+    "proposed_rung": 3,
+    "rung_note": "Parent access to records on request = rung 3. Clause 3(b) is a consent rule for RECORD changes, not for staff use of a name or pronouns, so it is near rung 5 but does not state it.",
+    "text_url": "https://le.utah.gov/~2023/bills/sbillenr/SB0100.htm", "text_is_pdf": false,
+    "status": "enacted, signed 2023-02-16",
+    "sponsors": ["Weiler, Todd D.", "Gricius, Stephanie"], "sponsors_url": "https://le.utah.gov/~2023/bills/static/SB0100.html",
+    "roll_calls": [ { "chamber": "House", "date": "2023-02-01", "stage": "final passage", "yes": 59, "no": 6,
+        "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=210&house=H", "url_is_pdf": false,
+        "yes_names_roster": ["Marsha Judkins"], "no_names_roster": [], "absent_roster": [] } ],
+    "local_note": "Marsha Judkins (now Provo Mayor, LOCAL_EXEC) voted YES as state Rep. (listed 'Judkins, M.'). This does NOT seat a local chair: (1) it was cast in a different seat, (2) local level is own words only, (3) No votes were 6 of 65 = 9.2%, under the 10% contested threshold. Fetched le.utah.gov with curl -k (WebFetch failed on the site's TLS certificate)."
+  }
+ ],
+ "own_words": [],
+ "direction_only": [
+  { "person": "Marsha Judkins", "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=210&house=H",
+    "note": "As a state Rep. she voted YES on UT SB 100 (2023), the parent record-access law (59-6-10). Uncontested (<10% No) and cast in a prior, different seat. It is direction-only context for the parents-decide side. No own-words statement on this topic was found." }
+ ],
+ "searched_no_result": [
+  "MONROE IN: Bloomington Common Council resolution on transgender youth in schools / HEA 1608 / pronoun notice: none found. The council's only related act is Res 2024-14 (gender-affirming HEALTHCARE safe haven, 8-0, sponsors Flaherty and Daily; Asare absent; Ruff voted yes after a memo saying he would abstain). Different topic: it names no school or parent-notice rule. https://bsquarebulletin.com/city-council-declares-bloomington-a-safe-haven-for-gender-affirming-healthcare/ (not fetched; search result only)",
+  "MONROE IN: CAPS Commission Resolution 23-01 (2023-11-02, 8-0-1, PDF, fetched) asks the City to declare a Safe Haven for Transgender Youth and opposes HB 1608 'forced disclosures'. It was passed by an advisory commission. No roster person is a sponsor or voter. URL https://bloomington.in.gov/sites/default/files/2023-11/CAPS%20Resolution%2023-01%20-%20ADOPTED%2011.1%20%26%20SIGNED%2011.2.2023.pdf. No later council adoption was found.",
+  "MONROE IN: Mayor Kerry Thomson statements on transgender students / pronouns / outing: none (IDS, bloomington.in.gov)",
+  "MONROE IN: Isak Asare, Matt Flaherty, Andy Ruff with HB 1608 / pronouns: none (IDS, B Square)",
+  "MONROE IN: IDS article on the April 2023 Bloomington rally against HB 1608 (fetched): no roster official is quoted. https://idsnews.com/article/2023/04/protest-legislation-targeting-lgbtq-youth-draws-crowd-bloomington",
+  "MONROE IN: County commissioners (Madeira, Jones, Thomas) and county council on transgender students / 'parental rights': none",
+  "MONROE IN: 2026 county candidates (clerk, assessor, commissioner, prosecutor) with 'parental rights' on a platform: none found",
+  "RACINE WI: Mayor Cory Mason on transgender students / parental notification: none. The 2026 Pride Month proclamation (PDF, fetched) has no school, student, parent or pronoun text. https://media.cityofracinewi.gov/media/wp-content/uploads/2026/05/28112836/June-Pride-Month-2026.pdf",
+  "RACINE WI: Racine Common Council Pride resolution (2025) and the gender-identity non-discrimination ordinance (about 2018): both are general non-discrimination acts, with no school or parent rule (search results only)",
+  "RACINE WI: Racine County Executive Malicki and county board supervisors on 'parental rights' / transgender students: none",
+  "RACINE WI: Racine Journal Times / Racine County Eye on aldermen or supervisors and a Racine Unified gender identity policy: none",
+  "RACINE WI: Burlington (Mayor Schultz, aldermen) on school gender policy: none",
+  "RACINE WI: Village presidents (Mount Pleasant, Caledonia, Sturtevant etc.): none",
+  "UTAH COUNTY: Commissioner Amelia Powers Gardner on transgender / gender identity / parental rights: none",
+  "UTAH COUNTY: Michelle Kaufusi (former Provo mayor, Seat A candidate) on transgender / parental rights: none. Lehi Free Press Seat A profiles (fetched) and The Ballot Brief Seat A (fetched): no such statements, and no campaign website found.",
+  "UTAH COUNTY: Jacob D. Oaks and Jeanne Marie Bowen: no campaign website (The Ballot Brief, fetched); no statements found",
+  "UTAH COUNTY: David Spencer, davidspencerforutah.com and /platform (fetched): no parents/schools/gender text",
+  "UTAH COUNTY: J. ('Fred J.') Allen, allenforutahcounty.com (fetched): only a non-discrimination line, 'regardless of their immigration status, gender, sexual orientation, or political affiliation'. No school or parent rule.",
+  "UTAH COUNTY: David Hinckley, davidhinckley.com (fetched): no parents/schools/gender text",
+  "UTAH COUNTY: Lehi Free Press Seat B profiles (fetched): no statements on the topic",
+  "UTAH COUNTY: Marsha Judkins (Provo mayor) own-words quote on transgender students: none found (KSL, SL Tribune, Deseret)",
+  "UTAH COUNTY: Provo / Orem / Lehi / Saratoga Springs / Eagle Mountain councils and mayors, and 2025 council candidates, on transgender students / 'parental rights': none",
+  "UTAH COUNTY: Provo council Pride or LGBTQ resolution (MacKay, Garrett): none"
+ ],
+ "gaps": [
+  "General non-discrimination or Pride proclamations (Racine Common Council 2025; Racine 2026 proclamation by Mayor Mason) affirm gender-identity protection but state no school disclosure rule. They fit no rung. They are not even direction on this question.",
+  "Bloomington Res 2024-14 (a 'safe haven' for gender-affirming healthcare) is a different question (medical care for minors). It fits no rung on this ladder.",
+  "CAPS 23-01 language opposing 'forced disclosures' under HB 1608 would read as the student-decides direction (against rung 4/5). It names no adopted rule, and no roster person adopted it."
+ ]
+}

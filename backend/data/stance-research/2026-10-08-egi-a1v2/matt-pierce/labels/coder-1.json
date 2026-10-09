@@ -1,0 +1,83 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "b0cc78ca-4ea4-5acb-83a1-e6dfd5c7aede",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Pierce, M voted Nay on the motion to concur in HB 1608, which joins a K-3 human sexuality instruction ban with parental notification; a No on a multi-subject bill proves nothing.",
+          "record_kind": "vote",
+          "actor_quote": "Errington Jackson Pierce, M",
+          "tally_quote": "Yea 63 Education matters Nay 29"
+        },
+        {
+          "snapshot_id": "459ec2dd-3fec-5de8-8265-ff49489430fb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-23",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Pierce, M voted Nay on third reading of HB 1608 (instruction ban plus name/pronoun permission and notification); a No on a multi-subject bill names no chair.",
+          "record_kind": "vote",
+          "actor_quote": "Hatfield Pfaff Errington Jackson Pierce, M",
+          "tally_quote": "Yea 65 Human sexuality instruction Nay 29"
+        },
+        {
+          "snapshot_id": "23e08fe5-ad13-50b5-8539-1f2ba4f95997",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's: (1) name; or (2) pronoun, title, or word to identify the student.",
+          "note": "Enrolled act's notification section matches the notify-parents rung, but the act also bans K-3 human sexuality instruction, and Pierce voted against it.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6aa9904f-16fc-584b-80a0-d2cab33aa04f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-20",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school shall notify the parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's name, pronoun, title, or other word to identify the student that is inconsistent with the student's sex.",
+          "note": "Committee-amended text (version voted on third reading) combines the instruction ban, a parental-permission rule for names/pronouns and notification.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Pierce's only acts in the sources are Nay votes on HB 1608 (2023), a bill that joins a K-3 human sexuality instruction ban with the requirement that \"A school shall notify\" a parent of a name or pronoun request; a No on a multi-subject bill proves nothing (he may have objected to any part), and even read narrowly it would only rule out \"Require schools to notify parents\" without choosing among the other rungs. No own words are in the sources.",
+      "needs_source": [
+        "Matt Pierce's own statements (floor speech, explanation of vote, press release, questionnaire) on HB 1608 (2023) parental notification of student name/pronoun requests",
+        "Any amendment or divided-question vote by Pierce on the parental notification section of HB 1608 (2023) alone"
+      ],
+      "quotes": []
+    }
+  ]
+}

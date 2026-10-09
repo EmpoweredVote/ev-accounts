@@ -1,0 +1,244 @@
+{
+ "_fetch_note": "iga.in.gov PDFs and API fetched with curl (browser User-Agent; API also Accept: application/json + Referer https://iga.in.gov/). WebFetch on these URLs returns only the JS app shell, so a coder must fetch them the same way. Human page (JS-rendered): https://iga.in.gov/legislative/2023/bills/house/1608/details",
+ "instruments": [
+  {
+   "id": "HEA 1608 (enrolled)",
+   "year": 2023,
+   "jurisdiction": "IN",
+   "title": "Education matters (House Enrolled Act 1608, P.L. 248-2023; adds IC 20-33-7.5 Parental Notification Regarding Identification)",
+   "operative_summary": "IC 20-33-7.5-2: a public school (incl. charter, lab school, ISBVI, ISD) must notify in writing at least one parent of an unemancipated minor student of the student's request to change the student's name or pronoun/title/word used to identify the student, within 5 business days of the request. Notice is unasked (not on parent request). No consent requirement and no student-safety exception in the text; Sec. 3 keeps the child-abuse reporting duty and Sec. 4 says counselors/nurses/psychologists/social workers are not required to violate federal law.",
+   "operative_quote": "Sec. 2. (a) A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's: (1) name; or (2) pronoun, title, or word to identify the student. (b) Not later than five (5) business days after the date on which a school receives a request described in subsection (a), the school shall provide notification to a parent as required by subsection (a).",
+   "proposed_rung": 4,
+   "rung_note": "A notice duty triggered by the student's request, not by a parent's request (so rung 4, not 3). Consent before use (rung 5) was in the House-passed version and was struck by Senate Amendment #12 (Donato) on 2023-04-06; the enacted text is notice only.",
+   "text_url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.05.ENRS.pdf",
+   "text_is_pdf": true,
+   "status": "enacted; signed by Governor 2023-05-04 (Public Law 248); effective 2023-07-01",
+   "sponsors": [
+    "Davis, Michelle (House author)",
+    "Teshka, Jake (House co-author)",
+    "Jeter, Chris (House co-author)",
+    "Heaton, Robert (House co-author)",
+    "Donato, Stacey (Senate sponsor)",
+    "Raatz, Jeff (Senate sponsor)",
+    "Byrne, Gary (Senate sponsor)"
+   ],
+   "sponsors_url": "https://iga.in.gov/api/getBillDetails?session_lpid=session_2023&bill_basename=HB1608",
+   "roll_calls": [
+    {
+     "chamber": "Senate",
+     "date": "2023-04-10",
+     "stage": "third reading (on HB1608.04.ENGS text = notice only, same as enrolled)",
+     "yes": 37,
+     "no": 12,
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.345_S.pdf",
+     "url_is_pdf": true,
+     "yes_names_roster": [
+      "Eric A Koch"
+     ],
+     "no_names_roster": [
+      "Shelli Yoder"
+     ],
+     "absent_roster": [],
+     "note": "Contested: 12/49 = 24% No. Koch (SD44) and Yoder (SD40) both held their seats in 2023 (IGA 2023 legislator list)."
+    },
+    {
+     "chamber": "House",
+     "date": "2023-04-24",
+     "stage": "motion to concur in Senate amendments (final text, rung 4)",
+     "yes": 63,
+     "no": 29,
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.489_H.pdf",
+     "url_is_pdf": true,
+     "yes_names_roster": [
+      "Bob Heaton",
+      "Peggy Mayfield",
+      "Dave Hall"
+     ],
+     "no_names_roster": [
+      "Matt Pierce"
+     ],
+     "absent_roster": [],
+     "note": "Contested: 29/92 = 32% No. Roll call prints surnames: 'Heaton', 'Mayfield', 'Hall', 'Pierce, M'. IGA 2023 legislator list confirms Robert Heaton HD46, Peggy Mayfield HD60, David Hall HD62, Matt Pierce HD61 (the other Pierce is Kyle Pierce HD36, listed as 'Pierce, K', voted Yes). Hall first took the seat after the Nov 2022 election, so he held it at the vote."
+    }
+   ]
+  },
+  {
+   "id": "HB 1608 (2023), House-passed version HB1608.02.COMH",
+   "year": 2023,
+   "jurisdiction": "IN",
+   "title": "Human sexuality instruction (engrossed House Bill 1608 as passed by the House)",
+   "operative_summary": "Proposed IC 20-33-7.5-3: school staff may use a name/pronoun inconsistent with the student's biological sex ONLY if the parent of an unemancipated minor requests it in writing (request due at the start of the school year); Sec. 4: school shall notify the parent of a student's request to change name/pronoun inconsistent with sex; Sec. 5: no discipline of staff who use the legal name. This is the text the House voted on at third reading.",
+   "operative_quote": "Sec. 3. (a) An employee or a staff member of a school may only use a name, pronoun, title, or other word to identify a student that is inconsistent with the student's sex if: (1) the student, who is an adult or an emancipated minor; or (2) a parent of the student, who is an unemancipated minor; requests in writing the use of a specific name, pronoun, title, or other word to identify the student.",
+   "proposed_rung": 5,
+   "rung_note": "Parental written request/permission is required before staff use a different name or pronoun = rung 5 (consent first); the same text also carries a rung-4 notice duty (Sec. 4). Second reading 2023-02-22 made no amendment ('ordered engrossed'), so the 02.COMH text is the text passed at third reading. Note: it goes further than plain consent (parent request must be made at the start of the school year).",
+   "text_url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.02.COMH.pdf",
+   "text_is_pdf": true,
+   "status": "passed House 2023-02-23; consent provision removed in Senate 2023-04-06; enacted as notice-only (see HEA 1608)",
+   "sponsors": [
+    "Davis, Michelle",
+    "Teshka, Jake",
+    "Jeter, Chris",
+    "Heaton, Robert"
+   ],
+   "sponsors_url": "https://iga.in.gov/api/getBillDetails?session_lpid=session_2023&bill_basename=HB1608",
+   "roll_calls": [
+    {
+     "chamber": "House",
+     "date": "2023-02-23",
+     "stage": "third reading",
+     "yes": 65,
+     "no": 29,
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+     "url_is_pdf": true,
+     "yes_names_roster": [
+      "Bob Heaton",
+      "Peggy Mayfield",
+      "Dave Hall"
+     ],
+     "no_names_roster": [
+      "Matt Pierce"
+     ],
+     "absent_roster": [],
+     "note": "Contested: 29/94 = 31% No. Roll call prints 'Heaton', 'Mayfield', 'Hall', 'Pierce, M'."
+    }
+   ],
+   "related_text_urls": {
+    "senate_committee_version_03.COMS (consent: 'shall seek parental consent')": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.03.COMS.pdf",
+    "senate_engrossed_04.ENGS (notice only)": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.04.ENGS.pdf",
+    "introduced_01.INTR (no name/pronoun provision; Heaton already co-author)": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.01.INTR.pdf"
+   }
+  },
+  {
+   "id": "HB 1608 Senate Amendment #11 (Yoder), 2023",
+   "year": 2023,
+   "jurisdiction": "IN",
+   "title": "Senate floor motion MO160817 to amend Engrossed HB 1608",
+   "operative_summary": "Would add: when a student requests a name/pronoun change, the school must tell the student that a parent will be notified and let the student withdraw the request; if withdrawn, the school need not notify a parent, and may not use the requested name/pronoun unless it notifies a parent.",
+   "operative_quote": "(b) If a student withdraws a request as described in subsection (a)(2), the school: (1) is not required to notify a parent of the student regarding the request; and (2) may not use the name, pronoun, title, or word requested under section 2(a) of this chapter unless the school provides notification to at least one (1) parent of the student in accordance with section 2 of this chapter.",
+   "proposed_rung": null,
+   "rung_note": "Fits no rung cleanly. It keeps notice as the price of using the new name (a rung-4-style duty), but lets the student stop the notice by withdrawing the request. It does not require staff to keep identity from parents (not rung 1) and does not bar notice rules (not rung 2). Failed amendment; authorship by Yoder.",
+   "text_url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/amendments/HB1608.03.COMS.AMS011.pdf",
+   "text_is_pdf": true,
+   "status": "failed on Senate second reading 2023-04-06",
+   "sponsors": [
+    "Yoder, Shelli"
+   ],
+   "sponsors_url": "https://iga.in.gov/api/getBillDetails?session_lpid=session_2023&bill_basename=HB1608",
+   "roll_calls": [
+    {
+     "chamber": "Senate",
+     "date": "2023-04-06",
+     "stage": "second reading amendment #11",
+     "yes": 14,
+     "no": 34,
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.335_S.pdf",
+     "url_is_pdf": true,
+     "yes_names_roster": [
+      "Shelli Yoder"
+     ],
+     "no_names_roster": [
+      "Eric A Koch"
+     ],
+     "absent_roster": []
+    }
+   ]
+  },
+  {
+   "id": "SB 354 (2023)",
+   "year": 2023,
+   "jurisdiction": "IN",
+   "title": "Education matters (Raatz)",
+   "operative_summary": "Would require a public school to notify the parent of an unemancipated minor within 5 business days if the student discloses conflicted feelings about gender identity, or changes or asks to change name, attire or pronoun inconsistent with biological sex; staff must report such disclosures to the school.",
+   "operative_quote": "Sec. 2. (a) A school shall notify the parent of a student, if the student is an unemancipated minor, of any of the following: ... (2) The student changes, expresses or indicates a desire to change, or makes a request to change the student's: (A) name; (B) attire; or (C) pronoun, title, or word to identify the student; in a manner that is inconsistent with the student's biological sex at birth.",
+   "proposed_rung": 4,
+   "rung_note": "Notice duty, no consent. No roster legislator is an author, and it got no floor vote.",
+   "text_url": "https://iga.in.gov/pdf-documents/123/2023/senate/bills/SB0354/SB0354.01.INTR.pdf",
+   "text_is_pdf": true,
+   "status": "died in Senate Education and Career Development committee (first reading 2023-01-12)",
+   "sponsors": [
+    "Raatz, Jeff"
+   ],
+   "sponsors_url": "https://iga.in.gov/api/getBillDetails?session_lpid=session_2023&bill_basename=SB0354",
+   "roll_calls": []
+  }
+ ],
+ "own_words": [
+  {
+   "person": "Shelli Yoder",
+   "url": "https://indianasenatedemocrats.org/yoder-denounces-senate-passage-of-hb-1608/",
+   "quote": "HB 1608 is an amputation as a cure for a paper cut—it's poorly made, reactionary policy that inserts the state into classrooms and the lives of Hoosier parents and students. School districts have long set their own policies regarding curricula and name and pronoun changes, and these policies have worked well for the vast majority of families: the last thing we need is more nannying and interference from inexpert legislators. All this bill does is guarantee that more kids across Indiana, LGBTQ+ or not, will be put in danger of losing homes and support without their consent or awareness.",
+   "proposed_rung": null,
+   "note": "Caucus press release 2023-04-10 in which Yoder (named) speaks. Opposes the state notice mandate and prefers district-set policy; names no rung act (does not call for a confidentiality duty or a bar on notice rules). Likely direction only toward 'student decides'."
+  },
+  {
+   "person": "Shelli Yoder",
+   "url": "https://www.thestatehousefile.com/politics/human-sexuality-bill-runs-gauntlet-of-amendments-in-fraught-senate-debate/article_38894b72-d4c6-11ed-99ae-63d3abb73385.html",
+   "quote": "Believe me, I have lots of concerns about 1608, and I am trying to find a common ground of where a student can … have any rights in them finding their way through",
+   "proposed_rung": null,
+   "note": "Direct quote from Senate floor debate 2023-04-06 on her Amendment #11 (under 25 words; article paraphrases the rest: amendment gives students an 'out' to withdraw the request so parents are not notified). Pairs with Amendment #11 instrument above; fits no rung."
+  }
+ ],
+ "direction_only": [
+  {
+   "person": "Matt Pierce",
+   "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+   "note": "Voted No on HB 1608 House third reading 2023-02-23 (consent+notice text) and No on concurrence 2023-04-24 (RC 489, notice text). No votes never seat a chair."
+  },
+  {
+   "person": "Shelli Yoder",
+   "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.345_S.pdf",
+   "note": "Voted No on HB 1608 Senate third reading 2023-04-10 (notice text). Also authored failed Amendment #4 (all schools to bar staff from gender-specific terms for groups of students; off-topic) and voted Yes on Ford J.D. Amendment #5 (counselor professional ethics; RC 336)."
+  },
+  {
+   "person": "Eric A Koch",
+   "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.335_S.pdf",
+   "note": "Voted No on Yoder Amendment #11 (student may withdraw request to avoid parent notice), RC 335, 2023-04-06. Consistent with his Yes on the notice mandate."
+  },
+  {
+   "person": "April Hennessey",
+   "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+   "note": "MCCSC Board Resolution 2023-07 (adopted 2023-03-28, scanned PDF linked from https://www.mccsc.edu/12042_3). Signed by all 7 trustees: Shurr, Hennessey (VP), Cooperman, Grimes, Fuentes-Rohwer, Pirani, Wyatt. Recitals object to HB 1608's 'notification to, and approval from, parents' and to 'the required \"outing\" of some LGBTQIA+ students'; resolves the Board 'strongly opposes any Indiana laws or proposed legislation, including 2023 House Bill 1608, that limit the rights of LGBTQIA+ students'. It adopts no rule on notice (directs only an anti-bullying policy), so direction only toward 'student decides'. Vote count not found in minutes; signatures show all 7 adopted it. IPM 2023-03-29 report names Hennessey reading the resolution."
+  },
+  {
+   "person": "Erin Cooperman",
+   "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+   "note": "Signed MCCSC Resolution 2023-07 (see Hennessey entry)."
+  },
+  {
+   "person": "Ross Grimes",
+   "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+   "note": "Signed MCCSC Resolution 2023-07 (see Hennessey entry)."
+  },
+  {
+   "person": "Ashley Pirani",
+   "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+   "note": "Signed MCCSC Resolution 2023-07 (see Hennessey entry). Holder and 2026 candidate, D3."
+  },
+  {
+   "person": "Erin Wyatt",
+   "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+   "note": "Signed MCCSC Resolution 2023-07 (see Hennessey entry). Holder and 2026 candidate, D1."
+  }
+ ],
+ "searched_no_result": [
+  "Bob Heaton own words on HB 1608 names/pronouns (co-author; no quote found in Tribune-Star/press search)",
+  "Peggy Mayfield own words on HB 1608 / pronouns",
+  "Dave Hall own words (votedavehall.com home + /issues: nothing on topic; Capital Chronicle 2026 HD62 guide: no topic question)",
+  "Eric Koch own words on HB 1608 / pronouns",
+  "Matt Pierce own words on HB 1608 / pronouns (IDS 2024 guide, IPM 2026 HD61 candidates page: nothing on topic)",
+  "James H. Pittsford III: no campaign statement on topic found (IDS 2026 primary guide lists him only)",
+  "Carrie L. Syczylo: no statement on topic found; Capital Chronicle has no HD60 guide page (404)",
+  "Amy Huffman Oliver: voteamyoliver.com /priorities /faqs /about-amy and Capital Chronicle HD62 guide: nothing on topic. She is a Brown County School Board member; no Brown County board vote on names/pronouns found",
+  "Indiana bills 2024, 2025, 2026: full scan of 1,250 education/parent/gender-related bill digests via IGA API found no bill on student name/pronoun notice or consent and no bill to repeal or limit IC 20-33-7.5",
+  "MCCSC board minutes with named roll-call vote on Resolution 2023-07 or Policy 3519 (not found online)",
+  "Richland-Bean Blossom school board: no policy, resolution, or vote on names/pronouns/parental notification found; no own words found for Brad Tucker, Angie Jacobs, Jimmie D Durnil, Dana Kerr, Lawrence J Demoss, Christa Curtis, Dennis R. Adams, Kelly D. Scholl",
+  "MCCSC candidates Aja Jester, Tiana Williams Iruoje: no own words on topic found",
+  "Herald-Times / B Square Bulletin / WFHB / LWV 2026 school board questionnaires: none found with a names/pronouns question"
+ ],
+ "gaps": [
+  "MCCSC Policy 3519 'Equity-Centered Sexual Identity and Gender Inclusive Policy' (staff section, adopted 2024-08-27; copy hosted by Indiana AG: https://secure.in.gov/attorneygeneral/files/MCCSC-Equity-Centered-Sexual-Identity-and-Gender-Inclusive-Policy.pdf, PDF). Clause C.4: 'MCCSC will respect and honor an individuals' chosen names and pronouns. The protection of name changes and pronouns will be recognized and followed within the guidelines of current federal and state laws.' Defers to law (so HEA 1608 notice still applies); fits no rung. Vote and named votes not found. Adopted while Hennessey, Cooperman, Grimes, Pirani, Wyatt and (likely) Williams Iruoje were on the board - unverified.",
+  "MCCSC August 2023 district statement (reported by Chalkbeat, https://www.chalkbeat.org/indiana/2023/8/24/23844659/indiana-student-pronouns-law-how-schools-are-responding): called HEA 1608 'Trojan horse legislation' but said schools will comply and notify parents = implements mandate; a district statement, not a board vote.",
+  "HB 1346 (2023, Teshka/King/Carbaugh/Wesco) and SB 215 (2026, Byrne/Charbonneau/Garten): would bar schools from promoting or requiring use of pronouns inconsistent with biological sex or names inconsistent with the birth certificate. Fits no rung (forbids use even with parental consent). Both died at first reading; no roster authors or votes. Digests via IGA API (getBillDetails); bill text not fetched.",
+  "SB 413 (2023, Byrne/Doriot) 'Parental rights in education': parent notice of school health/support services; not specific to names/gender identity; died; no roster involvement."
+ ]
+}

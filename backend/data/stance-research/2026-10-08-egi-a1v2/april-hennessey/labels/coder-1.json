@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "2bf43cdc-5580-4288-ad1e-2c2bd1d40511",
+      "office_id": "c64405e2-814c-4ec0-8fc2-2285c5974b54",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "d6f0c8a9-a01a-5598-8c71-81950ab07f2b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "MCCSC Board Resolution 2023-07 (2023)",
+          "provision_quote": "BE IT FURTHER RESOLVED that the Board strongly opposes any Indiana laws or proposed legislation, including 2023 House Bill 1608, that limit the rights of L@BTQIA+ students and put them at greater risk for discrimination or harassment.",
+          "note": "Signed as board vice president; the resolution opposes a state bill whose recited content includes required parental notification and approval for name/pronoun changes, which shows only the anti-notification side and adopts no school rule of its own.",
+          "record_kind": "other-act",
+          "actor_quote": "[signed] April Hennessey, Vice President",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Resolution 2023-07, signed by Hennessey, \"strongly opposes\" HB 1608, which its recital says would \"require notification to, and approval from, parents when students request name changes and different pronouns\". That places her against \"Require schools to notify parents\" and \"Require parental permission before staff use a different name or pronouns\", but opposing a state bill neither forbids notification rules nor requires confidentiality, and it does not separate those rungs from \"Require schools to tell parents when parents ask\".",
+      "needs_source": [
+        "MCCSC Board of School Trustees minutes, March 28, 2023, roll call on Resolution 2023-07",
+        "Any MCCSC board policy vote on parental notification of student name/pronoun changes during Hennessey's term"
+      ],
+      "quotes": []
+    }
+  ]
+}

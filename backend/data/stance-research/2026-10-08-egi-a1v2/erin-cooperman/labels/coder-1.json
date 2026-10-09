@@ -1,0 +1,39 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e0714c0f-5691-4f55-99b0-8ca5f72777ab",
+      "office_id": "677b48eb-5b51-4d00-b2c2-6dbf94cf34b3",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "fd804f0d-a625-5f49-a6bb-1739cf4ce438",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "MCCSC Board Resolution 2023-07 (adopted 2023-03-28)",
+          "provision_quote": "BE IT FURTHER RESOLVED that the Board strongly opposes any Indiana laws or proposed legislation, including 2023 House Bill 1608, that limit the rights of L@BTQIA+ students and put them at greater risk for discrimination or harassment.",
+          "note": "The operative clause only opposes a state bill whose notification-and-approval content appears in a recital; it shows the anti-notification side but neither forbids notification rules (rung 2) nor requires secrecy (rung 1), and the signature may be an officer's formality rather than a vote.",
+          "record_kind": "other-act",
+          "actor_quote": "Erin Cooperman, Secretary",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Resolution 2023-07, which Cooperman signed, says the Board \"strongly opposes\" laws including HB 1608. Only a recital says that bill requires parental notification and approval, so the resolution puts her on the side against required notification. It does not forbid notification rules (\"Forbid rules that require schools to tell parents\") and it does not require staff to withhold a student's identity (\"Require staff to keep a student's gender identity from parents unless the student consents\"), so it does not pick between those rungs.",
+      "needs_source": [
+        "MCCSC board minutes / roll call for the 2023-03-28 vote adopting Resolution 2023-07, showing Cooperman's vote",
+        "Any MCCSC board policy on telling parents about a student's name or pronoun change, and Cooperman's vote on it",
+        "Cooperman's own words (questionnaire, campaign page, meeting remarks) on whether schools should tell parents"
+      ],
+      "quotes": []
+    }
+  ]
+}

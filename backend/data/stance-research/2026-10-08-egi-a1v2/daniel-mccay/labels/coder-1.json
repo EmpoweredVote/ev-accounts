@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "6ca52345-ae36-4d19-8058-334f66076ee4",
+      "office_id": "bb9ee06d-4099-4f0a-85c5-a7962625b90f",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "af5daee9-30dc-5356-b494-a9448b8290ee",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": null,
+          "note": "Senate concurrence/final passage vote, 22-6-1; McCay voted Yea on a single-subject parental-access bill.",
+          "record_kind": "vote",
+          "actor_quote": "Kennedy, M. McCay, D. McKell, M.",
+          "tally_quote": "Yeas 22 Nays 6 Abs 1"
+        },
+        {
+          "snapshot_id": "0d49cfec-04ff-5fc3-af6c-87f8c5a15c57",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": "without written parental consent make changes to a student's education record",
+          "note": "Operative text guarantees parental access to education records and bars record changes on gender identity without written parental consent; it neither requires proactive notification (rung 4) nor governs staff use of names/pronouns (rung 5), so it shows only the parental-involvement side.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "McCay voted Yea on SB 100 (2023), which bars schools from shielding education records from parents and from changing a record's gender identity \"without written parental consent make changes to a student's education record\". That places him on the parental-involvement side, but the bill's object is the education record, not staff use of a different name or pronouns (\"Require parental permission before staff use a different name or pronouns\"), and it does not require schools to notify parents, so it does not separate rungs 3, 4 and 5.",
+      "needs_source": [
+        "McCay's own words on parental notification of a student's gender identity at school",
+        "Any later Utah Senate roll call by McCay on a bill requiring parental notification or consent for name/pronoun use (e.g., 2024+ sessions)"
+      ],
+      "quotes": []
+    }
+  ]
+}

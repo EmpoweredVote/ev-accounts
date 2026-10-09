@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "a7cc7fe1-b491-4498-bab5-3f3661987abb",
+      "office_id": "93a25e43-6e76-4014-92a4-6a675cc8a463",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "5573c729-f112-5c15-abac-471194edc8de",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "S.B. 100 (2023 General Session)",
+          "provision_quote": null,
+          "note": "Senate concurrence/final passage vote on a single-subject bill; McKell listed among the Yeas, 22-6 so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "McKell, M.",
+          "tally_quote": "Yeas 22 Nays 6 Abs 1"
+        },
+        {
+          "snapshot_id": "718476e8-d152-522c-9ad3-62f840337c48",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "S.B. 100 (2023 General Session)",
+          "provision_quote": "a school or LEA may not: 45 (a) prohibit a parent of a child from accessing the child's education record; or 46 (b) without written parental consent make changes to a student's education record 47 regarding a student's gender identity that does not conform with the student's sex.",
+          "note": "Operative text guarantees parent access to records and requires consent for record changes; it neither requires affirmative notification nor governs staff use of names/pronouns, so it shows the parent-side direction without matching one rung's object.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "McKell voted Yea on S.B. 100 (2023), which bars schools from shielding education records from parents and requires written parental consent to change a record's gender identity, ruling out \"Require staff to keep a student's gender identity from parents\" and \"Forbid rules that require schools to tell parents\". But its object is the education record, not staff use of names or pronouns (\"Require parental permission before staff use a different name or pronouns\") nor an affirmative duty to notify, and it goes beyond record access on request, so it separates the side but not the rungs.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

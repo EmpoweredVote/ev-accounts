@@ -1,0 +1,20 @@
+{
+  "batch_id": "erin-cooperman",
+  "sources": [
+    {
+      "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+      "source_kind": "public-record",
+      "politician_id": "e0714c0f-5691-4f55-99b0-8ca5f72777ab",
+      "office_id": "677b48eb-5b51-4d00-b2c2-6dbf94cf34b3",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "MCCSC Resolution 2023-07"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/mccsc-resolution-2023-07.txt"
+    }
+  ]
+}

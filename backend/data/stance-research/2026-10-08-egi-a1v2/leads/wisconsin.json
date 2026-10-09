@@ -1,0 +1,117 @@
+{
+ "scope": "Wisconsin state level (roster STATE_UPPER/STATE_LOWER, Racine area) + Racine County school boards",
+ "seat_note": "Roster districts are post-2024 maps. Before 2025: Vos held AD63, Wittke held AD62, Neubauer AD66, Wichgers AD84, Ellen Schutt AD31 (2023-24 Assembly; now SD11 candidate). Cruz took her Assembly seat (AD62) in Jan 2025. Senators Nass (SD11), Wanggaard (SD21), Wirch (SD22), Bradley (SD28) held their seats for all votes below. All votes below were cast while the person held a seat in the same chamber/office type as the roster office.",
+ "instruments": [
+  {
+   "id": "AB 103 (2025)", "year": 2025, "jurisdiction": "WI",
+   "title": "School board policies related to changing a pupil's legal name and pronouns (creates s. 118.1255)",
+   "operative_summary": "Parent determines the names and pronouns staff may use for a minor pupil; staff may not use a name or pronouns that do not align with biological sex without written authorization from the parent (Assembly Amendment 1, adopted, made it a written NOTARIZED authorization). Also requires the board to try to notify parents before approving a legal-name/pronoun change in official records.",
+   "operative_quote": "During school hours, school staff may not refer to a pupil who is a minor by using a name or pronouns that do not align with the pupil's biological sex without written authorization from the pupil's parent or legal guardian.",
+   "proposed_rung": 5,
+   "rung_note": "Consent-first: written (notarized, per AA1) parental authorization before staff use a different name/pronoun. Record-change notice in sub (3)(c) is rung-4-like but secondary.",
+   "text_url": "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB103", "text_is_pdf": false,
+   "amendment_url": "https://docs.legis.wisconsin.gov/document/amendments/2025/REG/AB103-AA1",
+   "status": "Passed Assembly 2025-03-20, Senate concurred 2026-02-11, vetoed by Gov. Evers 2026-03-31; 2026-05-13 'failed to pass notwithstanding the Governor's objections under Joint Rule 82' (automatic, no roll call).",
+   "sponsors": ["Dittrich, Barbara", "Behnke", "Jacobson, B.", "Kreibich", "Maxey", "O'Connor", "Tusler", "Mursau", "Murphy (coauthor 3/4/2025)", "Goeben (coauthor 3/5/2025)", "Wichgers, Chuck (coauthor added 3/11/2025)", "Sen. Jacque (cosponsor)", "Sen. Tomczyk (cosponsor 3/5/2025)"],
+   "sponsors_roster": ["Chuck Wichgers"],
+   "sponsors_url": "https://docs.legis.wisconsin.gov/2025/proposals/ab103",
+   "companion": "SB 120 (2025) by Sens. Jacque and Tomczyk; no roster sponsors seen",
+   "roll_calls": [
+    {"chamber": "Assembly", "date": "2025-03-20", "stage": "third reading (passage)", "yes": 50, "no": 43,
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0032", "url_is_pdf": false,
+     "yes_names_roster": ["Robin Vos", "Bob Wittke", "Chuck Wichgers"],
+     "no_names_roster": ["Angelina Cruz", "Greta Neubauer"], "absent_roster": [],
+     "note": "Ellen Schutt not on the roll (not in Assembly in 2025). Parsed from page HTML: vote mark column precedes name; Vos listed as SPEAKER."},
+    {"chamber": "Senate", "date": "2026-02-11", "stage": "concurrence", "yes": 18, "no": 15,
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0170", "url_is_pdf": false,
+     "yes_names_roster": ["Julian Bradley", "Van Wanggaard", "Steve Nass"],
+     "no_names_roster": ["Bob Wirch"], "absent_roster": []}
+   ]
+  },
+  {
+   "id": "AB 510 (2023)", "year": 2023, "jurisdiction": "WI",
+   "title": "Rights reserved to a parent or guardian of a child ('Parental Bill of Rights', creates s. 48.9865)",
+   "operative_summary": "Reserves enumerated rights to parents, enforceable by civil suit; one is the right to determine the names and pronouns used for the child at school. Also notice of 'controversial subjects' (defined to include gender identity), records access.",
+   "operative_quote": "The right to determine the names and pronouns used for the child while at school.",
+   "proposed_rung": 5,
+   "rung_note": "Parent, not student, decides the name/pronouns staff use = consent-first in effect; text frames it as a parental right rather than an explicit 'permission before' rule, so coder should confirm. Records-access rights (s. 48.9865(3)(d),(g)) are general, not gender-identity-specific.",
+   "text_url": "https://docs.legis.wisconsin.gov/document/proposaltext/2023/REG/AB510", "text_is_pdf": false,
+   "enrolled_text_url": "https://docs.legis.wisconsin.gov/document/vetoedenrolledbills/2023/REG/AB510",
+   "status": "Assembly passed 2024-01-18; Senate concurred 2024-02-13; vetoed 2024-03-29; override failed under Joint Rule 82 on 2024-05-15 (automatic, no roll call).",
+   "sponsors": ["Wittke (lead author)", "Gundrum", "Maxey", "Nedweski", "Schmidt", "Binsfeld", "Rettinger", "Allen", "Magnafici", "Steffen", "Brooks", "Armstrong", "Callahan", "O'Connor", "Goeben", "Bodden", "Sapik", "Tittl", "Michalski", "Schutt", "Penterman", "Dittrich", "Murphy", "Green", "Behnke", "Mursau", "Brandtjen", "Wichgers", "Gustafson", "VanderMeer", "Edming", "Macco (added 1/17/2024)", "Sens. Wanggaard, Quinn, Marklein, Nass (cosponsors)"],
+   "sponsors_roster": ["Bob Wittke", "Ellen Schutt", "Chuck Wichgers", "Van Wanggaard", "Steve Nass"],
+   "sponsors_url": "https://docs.legis.wisconsin.gov/2023/proposals/ab510",
+   "companion": "SB 489 (2023): authors Sens. Wanggaard, Quinn, Marklein, Nass; cosponsors include Reps. Wittke, Schutt, Wichgers. Failed to pass 2024-04-15 (no floor vote). https://docs.legis.wisconsin.gov/2023/proposals/sb489",
+   "roll_calls": [
+    {"chamber": "Assembly", "date": "2024-01-18", "stage": "third reading (passage)", "yes": 62, "no": 35,
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0139", "url_is_pdf": false,
+     "yes_names_roster": ["Robin Vos", "Bob Wittke", "Chuck Wichgers", "Ellen Schutt"],
+     "no_names_roster": ["Greta Neubauer"], "absent_roster": []},
+    {"chamber": "Senate", "date": "2024-02-13", "stage": "concurrence", "yes": 22, "no": 10,
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0263", "url_is_pdf": false,
+     "yes_names_roster": ["Julian Bradley", "Van Wanggaard", "Steve Nass"],
+     "no_names_roster": ["Bob Wirch"], "absent_roster": []},
+    {"chamber": "Senate", "date": "2024-02-13", "stage": "Senate Substitute Amendment 1 (Democratic substitute, offered by Larson et al. incl. Wirch) - rejection", "yes": 22, "no": 10,
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0262", "url_is_pdf": false,
+     "note": "Not fetched for names; substitute text not read. Wirch is a co-offerer of the substitute — content unknown, possible lead."}
+   ]
+  },
+  {
+   "id": "AB 963 (2021)", "year": 2021, "jurisdiction": "WI",
+   "title": "Rights reserved to a parent or guardian of a child (Parental Bill of Rights, creates s. 48.9865)",
+   "operative_summary": "Same model as 2023 AB 510: enumerated parental rights incl. the right to determine names and pronouns used at school; operative text does not mention gender identity.",
+   "operative_quote": "The right to determine the names and pronouns used for the child while at school.",
+   "proposed_rung": 5,
+   "rung_note": "Same as AB 510 (parent determines name/pronouns).",
+   "text_url": "https://docs.legis.wisconsin.gov/document/proposaltext/2021/REG/AB963", "text_is_pdf": false,
+   "status": "Assembly passed 2022-02-22; Senate concurred 2022-03-08; vetoed 2022-04-15; override failed under Joint Rule 82 on 2022-05-17 (no roll call).",
+   "sponsors": ["Gundrum", "Thiesfeldt", "Wittke", "Murphy", "Penterman", "Moses", "Steffen", "Vorpagel", "Brandtjen", "Rozar", "Knodl", "Macco", "Magnafici (2/10/2022)", "Wichgers (coauthor 2/11/2022)", "Allen (2/17/2022)", "Sens. Darling, Roth, Wanggaard, Nass (cosponsors)"],
+   "sponsors_roster": ["Bob Wittke", "Chuck Wichgers", "Van Wanggaard", "Steve Nass"],
+   "sponsors_url": "https://docs.legis.wisconsin.gov/2021/proposals/ab963",
+   "companion": "SB 962 (2021) not checked.",
+   "roll_calls": [
+    {"chamber": "Assembly", "date": "2022-02-22", "stage": "third reading (passage)", "yes": 60, "no": 34,
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2021/av0209", "url_is_pdf": false,
+     "yes_names_roster": ["Robin Vos", "Bob Wittke", "Chuck Wichgers"],
+     "no_names_roster": ["Greta Neubauer"], "absent_roster": [],
+     "note": "Paired 2 (Penterman aye / Shankland nay). Schutt and Cruz not in Assembly then."},
+    {"chamber": "Senate", "date": "2022-03-08", "stage": "concurrence", "yes": 19, "no": 12,
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0326", "url_is_pdf": false,
+     "yes_names_roster": ["Julian Bradley", "Van Wanggaard", "Steve Nass"],
+     "no_names_roster": ["Bob Wirch"], "absent_roster": []}
+   ]
+  }
+ ],
+ "own_words": [
+  {"person": "Van Wanggaard",
+   "url": "https://legis.wisconsin.gov/senate/21/Wanggaard/media/acod20my/parental-bill-of-rights-heads-to-governor-evers.pdf",
+   "url_is_pdf": true,
+   "quote": "I've always said you shouldn't have to legislate common sense, but apparently we have to here. Of course parents should have the right to determine the name and religion of their child, and see their medical records. Unfortunately, some school districts and health care providers think differently, making this bill necessary.",
+   "proposed_rung": 5,
+   "note": "Press release 2024-02-13 from his Senate office, named speaker. Same release states 'parents have the right to determine the name and pronoun used by their child at school' (narrator text, not quoted). Also his 11/8/2023 committee testimony lists 'The right to determine the names and pronouns used for the child while at school' (LC hearing materials PDF, https://docs.legis.wisconsin.gov/misc/lc/hearing_testimony_and_materials/2023/ab510/ab0510_2023_11_08.pdf, page 2)."}
+ ],
+ "direction_only": [
+  {"person": "Bob Wirch", "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0170", "note": "Voted No on AB 103 (2025), AB 510 (2023, sv0263), AB 963 (2021, sv0326). Co-offered Senate Substitute Amendment 1 to AB 510 (content not read)."},
+  {"person": "Greta Neubauer", "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0032", "note": "Voted No on AB 103 (2025), AB 510 (2023, av0139), AB 963 (2021, av0209). A WisPolitics statement (https://www.wispolitics.com/?p=318746) says AB 510 is not about parents' rights but is paywalled — not fetched. Spectrum News 2025-03-20 quotes her on trans health care/sports, not on notification."},
+  {"person": "Angelina Cruz", "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0032", "note": "Voted No on AB 103 (2025-03-20)."},
+  {"person": "Bob Wittke", "url": "https://docs.legis.wisconsin.gov/misc/lc/hearing_testimony_and_materials/2023/ab510/ab0510_2023_11_08.pdf", "note": "Lead author of AB 510 (record, see instruments). His own 11/8/2023 testimony (PDF p.1) frames the bill as 'really about transparency' and lists notice/records rights, but does NOT mention names/pronouns — own words give no rung beyond the authorship."},
+  {"person": "Robin Vos", "url": "https://spectrumnews1.com/wi/milwaukee/news/2025/03/20/state-lawmakers-debate-transgender-rights", "note": "2025-03-20 floor remark joking about his name and pronouns; CapTimes 2025-03-26 quotes him saying the bills let the public tell Evers 'he's wrong'. Neither states a rung. Record: Yes votes on AB 963, AB 510, AB 103."}
+ ],
+ "searched_no_result": [
+  "Steve Nass own words on names/pronouns notification (only an older bathroom bill via spokesman found)",
+  "Chuck Wichgers own words on pronouns/parental notice",
+  "Julian Bradley own words",
+  "Angelina Cruz own words (search results dominated by Ted Cruz)",
+  "Ellen Schutt own words (2026 SD11 campaign coverage covers other issues; VoteForEllen.com not checked)",
+  "Mike Bellagio (AD62 candidate; also Racine Unified board member) — no stated position found",
+  "Trevor Jung, Jim Croft (SD21) — nothing found",
+  "Adam Duda (SD11), Maria Elena Bisabarros, Steve Wicklund (AD33), Eddie Phanichkul (AD63), Gina Cefalu Paulick (AD66) — nothing found; Ballotpedia pages return empty to fetch",
+  "2025-26 reintroduction of the Parental Bill of Rights — no 2025 bill number found (WPR 'revive' article refers to 2023 AB 510)",
+  "Democratic WI bill barring forced outing / requiring confidentiality — none found",
+  "Racine County school boards: no Racine Unified, Burlington Area, Union Grove, Waterford gender-identity/parental-notification policy vote found in news search (spent little time; board minutes not checked)"
+ ],
+ "gaps": [
+  "Racine County school boards: our DB has no members; no district policy vote found. Racine Unified board member Mike Bellagio is also an AD62 candidate.",
+  "WI override attempts (2022, 2024, 2026) failed under Joint Rule 82 without roll calls, so no override votes exist to report."
+ ]
+}
