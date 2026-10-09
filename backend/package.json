@@ -53,6 +53,7 @@
     "audit:stance-citations": "node scripts/audit-stance-citations.mjs",
     "verify:quotes": "node scripts/verify-quotes.mjs",
     "sweep:fabricated-articles": "node scripts/sweep-fabricated-articles.mjs",
+    "sweep:cc-anchors": "node scripts/sweep-candidate-connection-anchors.mjs",
     "audit:district-urls": "node scripts/audit-district-urls.mjs",
     "steward": "node scripts/steward.mjs",
     "check:ladder-text": "node scripts/check-ladder-text-reads.mjs",

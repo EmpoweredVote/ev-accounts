@@ -830,6 +830,21 @@ node scripts/audit-chair-evidence.mjs --check $B/written-$(basename $B).json
 npm run check:stance-sources
 ```
 
+⚠ **If a row's ONLY source is a Ballotpedia `#Campaign_themes` deep link**, the gate now checks what
+is actually behind that anchor, against `data/candidate-connection-anchors.json`:
+
+- `CC_ANCHOR_UNVERIFIED` — **report only, never fails the build.** It means nobody has fetched that
+  page yet, not that the row is wrong. Clear it with `npm run sweep:cc-anchors` (one request every
+  three seconds, so ~10 minutes for the full set) and commit the refreshed manifest.
+- `CC_ANCHOR_EMPTY` — **fails.** The page was fetched and carries no words from the candidate: no
+  completed survey, no quoted campaign site, or no such section at all. 🔴 **Do not "fix" it by
+  dropping the `#Campaign_themes` fragment** — without the anchor the row is `BALLOTPEDIA_ONLY` and
+  still wrong. Cite what the chair rests on, or retire the row.
+
+🔑 **Never hand-append the anchor.** It is appended by `deep-link-candidate-connection.mjs` for
+CC_VERIFIED rows only. Adding it by hand used to buy a pass from a gate that could not see the page;
+it now buys a failure instead.
+
 `export-written-ledger.ts` reads `inform.stance_research_review` (resolved rows for this batch
 only) and `$B/research.csv` — read-only, no writes — and refuses to produce an empty ledger (see
 its own header for the two distinct refusal messages: 0 resolved rows vs. 0 of them record
