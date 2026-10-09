@@ -1,0 +1,23 @@
+{
+  // The PRODUCTION build. `tsconfig.json` deliberately still includes the tests, because CI's
+  // `npm run typecheck` (tsc --noEmit) is what type-checks them and an editor reads that file —
+  // excluding them there would quietly drop both.
+  //
+  // 🔴 THIS FILE IS NOT WHAT MAKES THE BUILD WORK. The build needs devDependencies either way:
+  // `typescript` itself is one, as are @types/node, @types/express, @types/cors and @types/pg,
+  // and `src/routes/publicCoverage.ts` — production source — cannot compile without @types/cors.
+  // The build command must therefore install them (`npm install --include=dev`). Render sets
+  // NODE_ENV=production, so a plain `npm install` omits them; that is what failed every
+  // ev-jobs-legiscan deploy from 2026-10-07 onward, ~60 TS2307s deep.
+  //
+  // What this file does do is keep *.test.ts out of dist/ and off the build's critical path.
+  // `exclude` REPLACES the base list rather than merging, so node_modules and dist are repeated.
+  "extends": "./tsconfig.json",
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/__tests__/**"
+  ]
+}
