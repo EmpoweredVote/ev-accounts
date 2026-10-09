@@ -1,0 +1,112 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "6e3e9f2e-c393-45ef-b702-8bba4c209220",
+      "office_id": "e47bd286-26f9-4158-b7d6-e41b6362a497",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "08e43924-b6e1-548d-9c25-d2dab9f61788",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-02-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": null,
+          "note": "Nay on Senate concurrence in AB 103 (18-15); a No on a parental-permission bill rules out rung 5 at most and does not separate rungs 1-4.",
+          "record_kind": "vote",
+          "actor_quote": "NAYS - 15 CARPENTER JOHNSON ROYS DASSLER-ALFHEI KEYESKI SMITH DRAKE LARSON SPREITZER HABUSH SINYKIN PFAFF WALL HESSELBEIN RATCLIFF WIRCH",
+          "tally_quote": "AYES - 18"
+        },
+        {
+          "snapshot_id": "56a527a5-260b-579e-897b-bb4f81f55c14",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": "(b) During school hours, school staff may not refer to a pupil who is a minor by 8 using a name or pronouns that do not align with the pupil’s biological sex without 9 written authorization from the pupil’s parent or legal guardian.",
+          "note": "The operative section is the parental-permission rung; Wirch's vote against it shows only opposition to that rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3c2b511e-20e8-5905-9f11-5c3e770369b9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": null,
+          "note": "Nay on a multi-right parents' bill of rights; a No on a multi-subject bill proves nothing about the names-and-pronouns clause.",
+          "record_kind": "vote",
+          "actor_quote": "NAYS - 12 AGARD JOHNSON ROYS BEWLEY LARSON SMITH CARPENTER PFAFF TAYLOR COWLES RINGHAND WIRCH",
+          "tally_quote": "AYES - 19"
+        },
+        {
+          "snapshot_id": "8e0c4b05-37aa-50c3-a12f-bec23a4e6e5b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 19 school.",
+          "note": "One of fifteen enumerated parental rights; the bill is multi-subject.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8c8b1a2b-4204-5ae9-8661-ce809af3227e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-02-13",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": null,
+          "note": "Nay on a multi-right parents' bill of rights; a No on a multi-subject bill proves nothing about any one clause.",
+          "record_kind": "vote",
+          "actor_quote": "NAYS - 10 AGARD LARSON SPREITZER CARPENTER PFAFF WIRCH",
+          "tally_quote": "AYES - 22"
+        },
+        {
+          "snapshot_id": "9f1f02d0-c7eb-5b1a-863d-a01164173c68",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-18",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 16 school.",
+          "note": "One of sixteen enumerated parental rights; the bill is multi-subject.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Wirch voted Nay on AB 103, whose operative section bars staff from using a name or pronouns not aligned with biological sex \"without written authorization from the pupil’s parent or legal guardian\" — the rung \"Require parental permission before staff use a different name or pronouns.\" Opposing that rung does not show which of the remaining rungs (secrecy, forbidding notification rules, notice on request, or mandatory notification) he holds, and his Nays on the multi-subject parents' bills of rights (AB 963, AB 510) prove nothing about the names-and-pronouns clause.",
+      "needs_source": [
+        "Wirch's own words (floor statement, release, or explanation of vote) on AB 103 (2025-2026) or on whether schools should tell parents of a student's name or gender-identity change"
+      ],
+      "quotes": []
+    }
+  ]
+}

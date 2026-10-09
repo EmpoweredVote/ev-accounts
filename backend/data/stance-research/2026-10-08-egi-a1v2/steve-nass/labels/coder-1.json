@@ -1,0 +1,113 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "f8901d87-cb68-480a-84cd-b40290c1bb8b",
+      "office_id": "78b54c34-4ce1-49ad-b7bf-4e44bf734eea",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "9597c27c-550e-5b85-ad47-4a7852cd0f34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-02-11",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": null,
+          "note": "Senate concurrence roll call on single-subject AB 103 (name/pronoun policy); Nass voted Aye, 18 ayes to 15 nays, not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "AYES - 18 BRADLEY JAGLER QUINN CABRAL-GUEVARA JAMES STAFSHOLT FELZKOWSKI KAPENGA TESTIN FEYEN LEMAHIEU TOMCZYK HUTTON MARKLEIN WANGGAARD JACQUE NASS WIMBERGER",
+          "tally_quote": "AYES - 18"
+        },
+        {
+          "snapshot_id": "ed7d9f92-e1cc-5bed-9eab-77047ebda2e5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": "(b) During school hours, school staff may not refer to a pupil who is a minor by 8 using a name or pronouns that do not align with the pupil’s biological sex without 9 written authorization from the pupil’s parent or legal guardian.",
+          "note": "Operative section requires written parental authorization before staff use a name or pronouns not aligned with biological sex, matching the parental-permission rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0dc650c1-e88b-53a9-8d41-3b8a2e26e368",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-18",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 16 school.",
+          "note": "Nass cosponsored a parental bill of rights covering religion, medical records, surveys, security systems and more; the names/pronouns clause is one of many parts.",
+          "record_kind": "sponsor",
+          "actor_quote": "cosponsored by Senators Wanggaard , Quinn , Marklein and Nass",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "35d1f0b2-0867-5ddb-88c2-d134ef2b7fe5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-02-13",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": null,
+          "note": "Aye on concurrence for the multi-part parental bill of rights; direction at most.",
+          "record_kind": "vote",
+          "actor_quote": "AYES - 22 BALLWEG JAGLER STAFSHOLT BRADLEY JAMES STROEBEL CABRAL-GUEVARA KAPENGA TESTIN COWLES KNODL TOMCZYK FELZKOWSKI LEMAHIEU WANGGAARD FEYEN MARKLEIN WIMBERGER HUTTON NASS",
+          "tally_quote": "AYES - 22"
+        },
+        {
+          "snapshot_id": "413761a4-b446-5544-a1fc-b4149a89c20e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 19 school.",
+          "note": "Nass cosponsored an earlier multi-part parental bill of rights; the names/pronouns clause is one of fifteen rights.",
+          "record_kind": "sponsor",
+          "actor_quote": "cosponsored by Senators Darling , Roth , Wanggaard and Nass",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "42c6a3a6-2a50-5b4d-b1ff-2c00d3d92008",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": null,
+          "note": "Aye on concurrence for the multi-part parental bill of rights; direction at most.",
+          "record_kind": "vote",
+          "actor_quote": "AYES - 19 BERNIER KAPENGA STAFSHOLT BRADLEY KOOYENGA STROEBEL DARLING LEMAHIEU TESTIN FELZKOWSKI MARKLEIN WANGGAARD FEYEN NASS",
+          "tally_quote": "AYES - 19"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "9597c27c-550e-5b85-ad47-4a7852cd0f34",
+        "ed7d9f92-e1cc-5bed-9eab-77047ebda2e5"
+      ],
+      "reasoning": "Nass voted Aye (18-15) on Senate concurrence for single-subject AB 103 (2025), whose operative section bars staff from using a name or pronouns not aligned with biological sex \"without written authorization from the pupil’s parent or legal guardian\" — the rung \"Require parental permission before staff use a different name or pronouns.\" His cosponsorships and votes on the multi-part parental bills of rights AB 963 and AB 510 point the same way but are multi-subject and carry no chair on their own.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

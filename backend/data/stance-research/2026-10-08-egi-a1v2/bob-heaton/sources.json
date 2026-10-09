@@ -1,0 +1,80 @@
+{
+  "batch_id": "bob-heaton",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.01.INTR.pdf",
+      "source_kind": "public-record",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.01.INTR.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.02.COMH.pdf",
+      "source_kind": "public-record",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.02.COMH.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.220_H.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.05.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.05.ENRS.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.489_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.489_H.txt"
+    }
+  ]
+}

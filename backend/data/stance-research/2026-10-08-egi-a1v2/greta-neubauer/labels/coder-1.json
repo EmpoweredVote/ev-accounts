@@ -1,0 +1,116 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4e65b04a-e607-4905-93ef-1e6ec0552fb6",
+      "office_id": "be569a95-da52-4063-9614-69e7a9ab6f3a",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "b47d3867-3117-5a81-9dcb-1666650b25b5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": null,
+          "note": "No on passage of a single-subject bill whose operative section matches rung 5; a No rules out rung 5 but does not separate rungs 1-4.",
+          "record_kind": "vote",
+          "actor_quote": "N NEUBAUER D",
+          "tally_quote": "AYES - 50 NAYS - 43"
+        },
+        {
+          "snapshot_id": "72defd71-e922-5884-930a-013a1f101c90",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": "During school hours, school staff may not refer to a pupil who is a minor by 8 using a name or pronouns that do not align with the pupil’s biological sex without 9 written authorization from the pupil’s parent or legal guardian.",
+          "note": "Bill text of the vote above; the operative provision is rung 5 (parental permission before staff use a different name or pronouns), which she voted against.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bb977294-6d9e-53c4-9143-240c6e2e2282",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-01-18",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": null,
+          "note": "No on a parental-rights bill listing sixteen unrelated rights; a No on a multi-subject bill proves nothing.",
+          "record_kind": "vote",
+          "actor_quote": "N NEUBAUER D",
+          "tally_quote": "AYES - 62 NAYS - 35"
+        },
+        {
+          "snapshot_id": "aafdb9db-7358-56f9-81a7-8490d0104804",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-18",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 16 school.",
+          "note": "The names/pronouns right is one of many unrelated provisions (religion, medical records, surveillance, discipline).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3af8ccab-a5f5-5353-bf04-cb5c7752dc02",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": null,
+          "note": "No on a multi-subject parental-rights bill; proves nothing about the names/pronouns clause.",
+          "record_kind": "vote",
+          "actor_quote": "N NEUBAUER D",
+          "tally_quote": "AYES - 60 NAYS - 34"
+        },
+        {
+          "snapshot_id": "778cebb0-e2a8-54fc-8592-a757d295b991",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 19 school.",
+          "note": "One of fifteen unrelated enumerated parental rights.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [
+        "b47d3867-3117-5a81-9dcb-1666650b25b5",
+        "72defd71-e922-5884-930a-013a1f101c90"
+      ],
+      "reasoning": "She voted No on AB 103 (2025), a single-subject bill barring staff from using a name or pronouns not aligned with biological sex \"without written authorization from the pupil’s parent or legal guardian\", which rules out the rung \"Require parental permission before staff use a different name or pronouns\" but does not choose among the notification and confidentiality rungs. Her No votes on AB 510 and AB 963 are on multi-subject bills and prove nothing.",
+      "needs_source": [
+        "Greta Neubauer's own words (statement, floor speech, or questionnaire) on whether schools should tell parents about a student's name or gender identity change",
+        "Assembly service dates for Greta Neubauer (current term unknown) to confirm the 2022-2025 votes are in-term"
+      ],
+      "quotes": []
+    }
+  ]
+}

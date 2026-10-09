@@ -1,0 +1,85 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e971c7f2-3ab2-483d-97a4-7fe919365f98",
+      "office_id": "847135b4-5bd6-46e2-87e4-41bd792097bd",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "60840e08-acd4-5e92-a2e9-c15efe3406c6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Roll Call 489, motion to concur (final House action on the enrolled text); Hall is in the Yea list; 29 of 92 voting No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Y EA - 63 Abbott Goodrich Lyness Pressel Aylesworth Greene Manning Schaibley Baird Haggard May Slager Barrett Hall",
+          "tally_quote": "Yea 63 Education matters Nay 29"
+        },
+        {
+          "snapshot_id": "f9e27d2f-37a7-53d3-a8d6-d7e0486a7912",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's:",
+          "note": "Enrolled text requires written notice to a parent of any name/pronoun change request (rung 4) and no longer contains the parental-permission rule, so rung 5 is excluded; its only other part is a related K-3 sexuality-instruction ban, treated as single-subject enough.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5b57c676-5d9d-550a-b554-957390c06e8c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-23",
+          "v4_shape": "direction-only",
+          "v5_time": "superseded-by-later",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Third-reading Yea; the engrossed text voted on is not in the sources, and the later concurrence vote on the enrolled text governs.",
+          "record_kind": "vote",
+          "actor_quote": "Y EA - 65 Aylesworth Haggard Mayfield Slager Baird Hall",
+          "tally_quote": "Yea 65 Human sexuality instruction Nay 29"
+        },
+        {
+          "snapshot_id": "744a9f36-4be6-5749-b516-d19f507ca401",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-20",
+          "v4_shape": "direction-only",
+          "v5_time": "superseded-by-later",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "An employee or a staff member of a school may only use a name, pronoun, title, or other word to identify a student that is inconsistent with the student's sex if:",
+          "note": "Committee-amended version with a parental written-request rule; not shown to be the text Hall voted on, and superseded by the enrolled text he concurred in.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "60840e08-acd4-5e92-a2e9-c15efe3406c6",
+        "f9e27d2f-37a7-53d3-a8d6-d7e0486a7912"
+      ],
+      "reasoning": "Hall voted Yea (63-29) to concur in HEA 1608 (2023), whose operative section provides that \"A school shall notify in writing at least one (1) parent of a student\" of a student's name or pronoun change request, matching \"Require schools to notify parents.\" The enrolled text dropped the earlier parental written-request rule, so it does not reach \"Require parental permission before staff use a different name or pronouns,\" and it notifies regardless of whether parents ask.",
+      "needs_source": [
+        "Engrossed HB 1608 (2023) text as passed on third reading, House Roll Call 220 (Feb 23, 2023)"
+      ],
+      "quotes": []
+    }
+  ]
+}

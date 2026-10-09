@@ -1,0 +1,120 @@
+{
+ "scope_note": "FEDERAL people only. Federal level = OWN WORDS ONLY: a lead-sponsored bill whose operative text states a rung counts as own words; a bare YES vote counts only if contested (>=10% No); co-sponsorships reported separately. congress.gov HTML returns 403 to WebFetch; bill text was read from govinfo.gov HTML and sponsor/cosponsor lists from govinfo BILLSTATUS XML (both fetched). Clerk roll-call pages fetched and names read from them.",
+ "instruments": [
+  {
+   "id": "H.R. 5 (118th)", "year": 2023, "jurisdiction": "US", "title": "Parents Bill of Rights Act",
+   "operative_summary": "Sec. 401: as a condition of Dept. of Education funds, elementary and middle-grades-only schools must obtain parental consent before changing a minor's gender markers, pronouns or preferred name on any school form, or allowing a change of sex-based accommodations. Sec. 104 adds an ESEA parental 'right to know' if staff act to change a child's gender markers, pronouns or preferred name, and requires each school to notify the parents if staff take such an action.",
+   "operative_quote": "shall be required to obtain parental consent before-- (1) changing a minor child's gender markers, pronouns, or preferred name on any school form; or (2) allowing a child to change the child's sex-based accommodations, including locker rooms or bathrooms. [Sec. 104 cl. (vii):] notifies the parents of any child who is a student in such school if a school employee or contractor takes, with respect to such child, any action described in clause (i) or (ii) of paragraph (1)(L).",
+   "proposed_rung": 5,
+   "rung_note": "Sec. 401 = consent first (rung 5), but limited to changes 'on any school form' and to elementary/middle schools; coder must decide whether a school-form consent rule states rung 5's act (staff USE of name/pronouns). Sec. 104 also states rung 4 (notice duty). Bill states both 4 and 5; 5 is the stronger act.",
+   "text_url": "https://www.govinfo.gov/content/pkg/BILLS-118hr5eh/html/BILLS-118hr5eh.htm", "text_is_pdf": false,
+   "status": "passed House 2023-03-24; referred to Senate HELP 2023-03-27; died",
+   "sponsors": ["Letlow, Julia (lead)", "cosponsors on roster: Banks, Jim (then R-IN-3)", "Owens, Burgess", "Houchin, Erin", "Steil, Bryan"],
+   "sponsors_url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr5.xml",
+   "roll_calls": [
+    {"chamber": "House", "date": "2023-03-24", "stage": "passage (Roll Call 161)", "yes": 213, "no": 208,
+     "url": "https://clerk.house.gov/evs/2023/roll161", "url_is_pdf": false,
+     "yes_names_roster": ["Steil, Bryan", "Owens, Burgess", "Houchin, Erin", "Banks, Jim (House member then; now Senator - vote predates current seat)", "Curtis, John (House member UT-3 then; now Senator - vote predates current seat)"],
+     "no_names_roster": [], "absent_roster": [],
+     "note": "Contested (49% No). Maloy (sworn in Nov 2023) and Kennedy (Jan 2025) were not members. Senators Lee, Young, Johnson, Baldwin had no vote; no Senate vote occurred."}
+   ]
+  },
+  {
+   "id": "H.R. 2616 (119th)", "year": 2025, "jurisdiction": "US", "title": "Stopping Indoctrination and Protecting Kids Act (PROTECT Kids Act)",
+   "operative_summary": "Sec. 2: as a condition of ESEA funds, a public school must obtain parental consent before changing an elementary or middle-grades student's gender markers, pronouns or preferred name on any school form, or sex-based accommodations. Sec. 3 bars ESEA funds for teaching gender ideology (from Owens' H.R. 2617). No separate notice duty.",
+   "operative_quote": "a public school that receives funds under such Act shall obtain parental consent before changing a covered student's-- (1) gender markers, pronouns, or preferred name on any school form; or (2) sex-based accommodations, including locker rooms or bathrooms.",
+   "proposed_rung": 5,
+   "rung_note": "Consent first, but scoped to 'on any school form' and to elementary/middle students - same scope caveat as H.R. 5 Sec. 401.",
+   "text_url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2616eh/html/BILLS-119hr2616eh.htm", "text_is_pdf": false,
+   "status": "passed House 2026-05-20; referred to Senate HELP 2026-05-21; pending",
+   "sponsors": ["Walberg, Tim (lead)", "cosponsor on roster: Owens, Burgess (merged text includes his H.R. 2617; Owens' office calls it 'Owens Bill')"],
+   "sponsors_url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr2616.xml",
+   "roll_calls": [
+    {"chamber": "House", "date": "2026-05-20", "stage": "passage (Roll Call 184)", "yes": 217, "no": 198,
+     "url": "https://clerk.house.gov/evs/2026/roll184", "url_is_pdf": false,
+     "yes_names_roster": ["Houchin, Erin", "Steil, Bryan", "Owens, Burgess", "Maloy, Celeste", "Kennedy, Mike (UT)"],
+     "no_names_roster": [], "absent_roster": [],
+     "note": "Contested (48% No). Kennedy (NY) voted No - not roster."}
+   ]
+  },
+  {
+   "id": "H.R. 736 (118th)", "year": 2023, "jurisdiction": "US", "title": "PROTECT Kids Act",
+   "operative_summary": "Sec. 3: as a condition of federal funds, elementary and middle-grades-only schools must obtain parental consent before changing a minor's gender markers, pronouns or preferred name on any school form, or sex-based accommodations.",
+   "operative_quote": "shall be required to obtain parental consent before-- (1) changing a minor child's gender markers, pronouns, or preferred name on any school form; or (2) allowing a child to change the child's sex-based accommodations, including locker rooms or bathrooms.",
+   "proposed_rung": 5, "rung_note": "Same 'school form' scope caveat.",
+   "text_url": "https://www.govinfo.gov/content/pkg/BILLS-118hr736ih/html/BILLS-118hr736ih.htm", "text_is_pdf": false,
+   "status": "reported by Ed & Workforce 22-12; Union Calendar No. 599 (2024-10-01); no floor vote; died",
+   "sponsors": ["Walberg, Tim (lead)", "cosponsor on roster: Houchin, Erin"],
+   "sponsors_url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr736.xml",
+   "roll_calls": []
+  },
+  {
+   "id": "S. 2702 (119th)", "year": 2025, "jurisdiction": "US", "title": "Empower Parents to Protect their Kids Act of 2025",
+   "operative_summary": "Sec. 3(b): no federal funds to a K-12 school unless staff (1) take no accommodation to affirm a student's identity incongruent with sex, or aid a minor in adopting it, without express parental consent; (2) do not encourage students to withhold that information from parents; (3) do not withhold or hide from parents information about a student's discomfort with sex or desired identity.",
+   "operative_quote": "(1) School employees do not proceed with any accommodation intended to affirm a student's purported ``identity'' that is incongruent with the student's sex, or any action to facilitate or otherwise aid and abet a minor in adopting such an identity, ... unless the employees have received express parental consent to do so. ... (3) School employees do not withhold or hide information from parents about a student's discomfort with their sex, their desire for an identity that is incongruent with their sex",
+   "proposed_rung": 5,
+   "rung_note": "Consent before any affirming accommodation = rung 5 (operative text does not name 'name' or 'pronouns'; those appear only in Findings Sec. 2(1)). (3) is a no-concealment rule, close to rung 4 but not an affirmative notice duty.",
+   "text_url": "https://www.govinfo.gov/content/pkg/BILLS-119s2702is/html/BILLS-119s2702is.htm", "text_is_pdf": false,
+   "status": "introduced 2025-09-03; referred to Senate HELP; pending",
+   "sponsors": ["Banks, Jim (LEAD SPONSOR - counts as Banks' own words)", "cosponsors (none on roster): Cotton, Marshall, Scott (FL), Tuberville, Blackburn, Hawley, Moody, McCormick"],
+   "sponsors_url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/s/BILLSTATUS-119s2702.xml",
+   "roll_calls": []
+  },
+  {
+   "id": "H.R. 3462 (118th)", "year": 2023, "jurisdiction": "US", "title": "Empower Parents to Protect Their Kids Act of 2023",
+   "operative_summary": "Sec. 3(a): same structure as S. 2702 - no affirming accommodation or gender-transition action without express parental consent; staff may not withhold or hide information from parents about a student's desired gender transition or gender identity.",
+   "operative_quote": "(1) School employees do not proceed with any accommodation intended to affirm a student's purported ``gender identity'' ... unless the employees have received express parental consent to do so. ... (3) School employees do not withhold or hide information from parents about a student's desired ``gender transition'' or a student's purported ``gender identity''",
+   "proposed_rung": 5, "rung_note": "As S. 2702. Lead sponsor Banks while a House member (federal; before his current Senate seat).",
+   "text_url": "https://www.govinfo.gov/content/pkg/BILLS-118hr3462ih/html/BILLS-118hr3462ih.htm", "text_is_pdf": false,
+   "status": "introduced 2023; died in committee",
+   "sponsors": ["Banks, Jim (LEAD, then R-IN-3)"],
+   "sponsors_url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr3462.xml",
+   "roll_calls": [],
+   "related": "Banks also lead-sponsored H.R. 8170 (117th), same title (BILLSTATUS-117hr8170.xml fetched; text not read)."
+  }
+ ],
+ "own_words": [
+  {"person": "Jim Banks", "url": "https://marymiller.house.gov/media/press-releases/rep-miller-senator-banks-cotton-introduces-bill-protect-children-united-states",
+   "quote": "Parents should never be kept in the dark about their own kids. This bill makes sure schools can't push radical gender ideology behind parents' backs and puts families back in charge where they belong.",
+   "proposed_rung": 5, "note": "2025-09-03 release on S. 2702 (his lead-sponsored bill, consent-first). Quote alone states no act; it is anchored by the bill text. Release is Rep. Miller's, Banks named and quoted."},
+  {"person": "Burgess Owens", "url": "https://owens.house.gov/posts/owens-bill-protecting-children-from-radical-gender-ideology-passes-house",
+   "quote": "Yet across the country, school districts are actively pushing radical gender ideology on children and, in some cases, facilitating social transitions without parental knowledge or consent. The Stopping Indoctrination & Protecting Kids Act is simple, any district that promotes these ideologies in the classroom or conceals a child's gender transition from their parents will lose federal funding.",
+   "proposed_rung": 5, "note": "2026-05-20 official release on H.R. 2616 (also given as floor speech per Deseret/KSL). Describes the consent bill; 'conceals ... from their parents' language also leans to rung 4."},
+  {"person": "Erin Houchin", "url": "https://houchin.house.gov/media/press-releases/published-op-ed-im-mom-3-school-aged-children-and-we-need-protect-parents",
+   "quote": "Just last month, a New Jersey judge ruled to block multiple school districts from notifying parents of a child's gender identity change. Stories like these shouldn't become the new normal. That is exactly why House Republicans made commitments to address this problem and pushed for legislation that culminated in H.R. 5",
+   "proposed_rung": 4, "note": "2023-09-14 op-ed (Fox News, reposted on official site). Implies support for notification policies; does not itself state the act. Possibly direction only - coder to decide."}
+ ],
+ "cosponsorships": [
+  {"person": "Erin Houchin", "instrument": "H.R. 5 (118th)", "proposed_rung": 5, "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr5.xml"},
+  {"person": "Erin Houchin", "instrument": "H.R. 736 (118th)", "proposed_rung": 5, "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr736.xml"},
+  {"person": "Bryan Steil", "instrument": "H.R. 5 (118th)", "proposed_rung": 5, "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr5.xml"},
+  {"person": "Burgess Owens", "instrument": "H.R. 5 (118th)", "proposed_rung": 5, "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr5.xml"},
+  {"person": "Burgess Owens", "instrument": "H.R. 2616 (119th)", "proposed_rung": 5, "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/119/hr/BILLSTATUS-119hr2616.xml"},
+  {"person": "Jim Banks", "instrument": "H.R. 5 (118th), as House member", "proposed_rung": 5, "url": "https://www.govinfo.gov/bulkdata/BILLSTATUS/118/hr/BILLSTATUS-118hr5.xml"}
+ ],
+ "direction_only": [
+  {"person": "John Curtis", "url": "https://clerk.house.gov/evs/2023/roll161", "note": "Voted Yea on H.R. 5 as UT-3 Representative (2023). Not a cosponsor. Vote predates his current Senate seat; under federal own-words rule a vote alone does not seat."},
+  {"person": "Celeste Maloy", "url": "https://clerk.house.gov/evs/2026/roll184", "note": "Voted Aye on H.R. 2616 (contested). Not a cosponsor; no own statement found."},
+  {"person": "Mike Kennedy", "url": "https://clerk.house.gov/evs/2026/roll184", "note": "Kennedy (UT) voted Aye on H.R. 2616 (contested). Not a cosponsor; no own statement found."},
+  {"person": "Bryan Steil", "url": "https://clerk.house.gov/evs/2026/roll184", "note": "Aye on H.R. 2616 and Yea on H.R. 5 (roll161); cosponsor of H.R. 5; no own statement found."}
+ ],
+ "searched_no_result": [
+  "Todd Young - no bill, cosponsorship (not on S.200, S.1709, S.3037, S.2702) or statement found",
+  "Ron Johnson - no bill, cosponsorship or statement found",
+  "Tammy Baldwin - no bill, cosponsorship or statement found",
+  "Mike Lee - no bill, cosponsorship or statement found (not on S.200/S.1709/S.2702)",
+  "John Curtis - no Senate statement found",
+  "Celeste Maloy, Mike Kennedy - no statement on H.R. 2616 in Deseret/KSL coverage or search",
+  "Bryan Steil - no statement found",
+  "Senate roll call on any parental-notification/pronoun amendment - none found",
+  "Brad Meyer (IN-9 D), Tonya Hudson (IN-9 L) - no position found; bradmeyerforcongress.com returned empty",
+  "Mitchell Berman (WI-1 D) - bermanforcongress.com and news coverage: no position",
+  "UT-3: Adonis Hooslyn, Ayden Scott, Cassie Easley, Kent Udell, Michael R. Stoddard - no position found",
+  "UT-4: Jonny Larsen (site returns minimal JS shell), Steven Burt, Taylor Wright - no position found",
+  "Sen. Tim Scott PROTECT Kids Act 119th Senate reintroduction - no bill number found"
+ ],
+ "gaps": [
+  "H.R. 5 / H.R. 736 / H.R. 2616 consent rules apply to changes 'on any school form', not to staff use of a name or pronouns in conversation; rung 5 says 'before staff use'. Coder must rule whether the school-form scope fits rung 5.",
+  "S. 2702 / H.R. 3462 operative text does not name names or pronouns ('accommodation intended to affirm'); the names/pronouns example is only in the findings."
+ ]
+}

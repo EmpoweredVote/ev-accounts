@@ -1,0 +1,91 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "023c6644-356e-4afb-925b-e20f9c32209b",
+      "office_id": "53a9daed-6fde-403c-9c63-38769023aff1",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "29aca8c2-b345-5a40-9b4d-fc399ddb2ccc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": null,
+          "note": "House final-passage Aye on a multi-subject bill; a record cannot seat a chair at this no-lever level.",
+          "record_kind": "vote",
+          "actor_quote": "Balderson Banks Barr",
+          "tally_quote": "TOTALS 213 208 14"
+        },
+        {
+          "snapshot_id": "a68fc184-4fa1-540a-addf-8883b3d8e525",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": "shall be required to obtain parental consent before-- (1) changing a minor child's gender markers, pronouns, or preferred name on any school form",
+          "note": "Title IV is one part of an omnibus parents'-rights bill; the vote proves no chair, and records cannot seat one at this level.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c56a04cc-dcdb-5090-926a-cefca05a23f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-09-03",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "S. 2702 (119th)",
+          "provision_quote": "unless the employees have received express parental consent to do so",
+          "note": "Sponsored bill conditions federal funds on parental consent before affirming accommodations; it matches the permission rung but is a record at a no-lever level, so it cannot seat a chair.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mr. Banks introduced the following bill",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f25c2c95-5e09-5ab5-bf9a-53db329ffbeb",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-09-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted words oppose keeping parents in the dark but name neither notification on request, automatic notification, nor a permission requirement.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "At the federal level only own words can seat a chair, so his H.R. 5 vote and his S. 2702 sponsorship cannot. His own words, \"Parents should never be kept in the dark about their own kids\", place him on the parents-informed side but do not separate \"Require schools to tell parents when parents ask\", \"Require schools to notify parents\" and \"Require parental permission before staff use a different name or pronouns.\"",
+      "needs_source": [
+        "Banks's own first-person statement (Senate press release, floor speech, interview or questionnaire) saying whether schools must notify parents or obtain parental permission before staff use a different name or pronouns"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f25c2c95-5e09-5ab5-bf9a-53db329ffbeb",
+          "text": "Parents should never be kept in the dark about their own kids",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

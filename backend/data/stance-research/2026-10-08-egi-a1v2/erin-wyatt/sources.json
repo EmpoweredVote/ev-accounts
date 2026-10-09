@@ -1,0 +1,20 @@
+{
+  "batch_id": "erin-wyatt",
+  "sources": [
+    {
+      "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+      "source_kind": "public-record",
+      "politician_id": "760e1b7d-022c-4c70-b605-07b6fea2384b",
+      "office_id": "8a8393ca-57af-46ce-b13e-d3e936640b85",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "MCCSC Resolution 2023-07"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/mccsc-resolution-2023-07.txt"
+    }
+  ]
+}

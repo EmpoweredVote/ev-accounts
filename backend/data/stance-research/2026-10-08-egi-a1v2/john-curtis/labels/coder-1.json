@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "b87583fe-2348-4bf3-aba5-12f5f88d3606",
+      "office_id": "9c332456-6722-45c3-8ce7-240704b85702",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "1ea6c8e7-09d9-5387-bcdc-e9af78322f87",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": null,
+          "note": "House Aye on final passage of the multi-subject Parents Bill of Rights Act; a record cannot seat a chair at this own-words-only level, and a Yea on a multi-subject bill proves direction at most.",
+          "record_kind": "vote",
+          "actor_quote": "Crenshaw Curtis D'Esposito",
+          "tally_quote": "TOTALS 213 208 14"
+        },
+        {
+          "snapshot_id": "4b6bcf1d-7898-55fd-8533-f132aadacdf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": "shall be required to obtain parental consent before-- (1) changing a minor child's gender markers, pronouns, or preferred name on any school form",
+          "note": "Bill text covers curriculum, budgets, libraries, vaccines and more; the consent clause concerns school forms, not staff use of names or pronouns, and records cannot seat a chair at this level.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is Curtis's 2023 House Aye on H.R. 5 (118th), a multi-subject bill whose consent clause covers changing names or pronouns \"on any school form\" rather than staff use as in the rung \"Require parental permission before staff use a different name or pronouns\"; at the federal level this topic is own words only, so no record can seat a chair and no own-words passage is in the sources.",
+      "needs_source": [
+        "John Curtis's own words (statement, interview, questionnaire or explanation of vote) on whether schools should tell or get permission from parents when a student uses a different name or gender identity"
+      ],
+      "quotes": []
+    }
+  ]
+}

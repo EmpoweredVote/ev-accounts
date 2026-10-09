@@ -1,0 +1,20 @@
+{
+  "batch_id": "ross-grimes",
+  "sources": [
+    {
+      "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+      "source_kind": "public-record",
+      "politician_id": "c062b964-c7bb-4258-8b3f-462f4d5527ae",
+      "office_id": "0e6e40f2-0aab-457f-b5b7-723fa24ad3ce",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "MCCSC Resolution 2023-07"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/mccsc-resolution-2023-07.txt"
+    }
+  ]
+}

@@ -1,0 +1,149 @@
+{
+ "_fetch_note": "le.utah.gov fails WebFetch with a TLS certificate error ('unable to verify the first certificate'). Every le.utah.gov URL below was fetched successfully with curl -k on 2026-10-08 and its content was read. Roll calls were read from the svotes.jsp / mtgvotes.jsp pages, which print every name.",
+ "instruments": [
+  {
+   "id": "SB 100 (2023)",
+   "year": 2023,
+   "jurisdiction": "UT",
+   "title": "School Gender Identity Policies (enacts Utah Code 53E-9-205, 'Parental right to student information')",
+   "operative_summary": "A school or LEA may not adopt a policy or action that shields a student's education record from the parent, or that interferes with the parent's access to information about the child. A school may not stop a parent from accessing the child's education record. A school may not change a student's education record on gender identity (where it does not conform to sex) without written parental consent. The bill does NOT write a notice duty for staff and does not mention names or pronouns in speech. The safety exception is cross-referenced to 53E-9-203(6).",
+   "operative_quote": "Notwithstanding any other provision of law, a school or LEA may not: (a) prohibit a parent of a child from accessing the child's education record; or (b) without written parental consent make changes to a student's education record regarding a student's gender identity that does not conform with the student's sex.",
+   "proposed_rung": 3,
+   "rung_note": "Main act = parents get access on request, and no policy may shield the record from them (rung 3). Subsection (3)(b) adds written parental consent before a gender-identity change to the RECORD. That is close to rung 5, but it covers records, not staff use of names/pronouns. The coder must decide whether (3)(b) reaches rung 5. Note: USBE guidance and Provo policy read (3)(b) as requiring parent permission for a different name/pronoun, but the statute text does not say 'name' or 'pronoun'. Statute unchanged since 2023 (code page shows one version only).",
+   "text_url": "https://le.utah.gov/~2023/bills/sbillenr/SB0100.pdf",
+   "text_is_pdf": true,
+   "alt_text_url_html": "https://le.utah.gov/xcode/Title53E/Chapter9/C53E-9-S205_2023021620230216.html",
+   "status": "enacted; Governor signed 2023-02-16; effective 2023-02-16; Laws of Utah 2023 ch. 13",
+   "sponsors": ["Weiler, Todd D. (chief, Senate; not on roster)", "Gricius, Stephanie (House floor sponsor and sponsor of the 2nd substitute, which is the enacted text)"],
+   "sponsors_url": "https://le.utah.gov/~2023/bills/static/SB0100.html",
+   "roll_calls": [
+    {
+     "chamber": "Senate", "date": "2023-01-20", "stage": "third reading, final passage (1st substitute)", "yes": 22, "no": 6, "absent": 1,
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=47&house=S", "url_is_pdf": false,
+     "contested": true,
+     "yes_names_roster": ["Kirk A. Cullimore", "Keith Grover", "David P. Hinkins", "Daniel McCay", "Michael K. McKell", "Derrin R. Owens"],
+     "no_names_roster": [], "absent_roster": [],
+     "note": "Text voted on was the 1st substitute (broader 'information' wording); the enacted text is the 2nd substitute. Senate also passed 2nd reading 23-6 (voteid=42) with the same roster names yes."
+    },
+    {
+     "chamber": "Senate", "date": "2023-02-03", "stage": "concurrence with House amendment (2nd substitute = enacted text), final passage", "yes": 22, "no": 6, "absent": 1,
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=305&house=S", "url_is_pdf": false,
+     "contested": true,
+     "yes_names_roster": ["Kirk A. Cullimore", "Keith Grover", "David P. Hinkins", "Daniel McCay", "Michael K. McKell", "Derrin R. Owens"],
+     "no_names_roster": [], "absent_roster": [],
+     "note": "Best roll call for the Senate: it is the vote on the enacted text."
+    },
+    {
+     "chamber": "House", "date": "2023-02-01", "stage": "third reading, final passage (2nd substitute)", "yes": 59, "no": 6, "absent": 10,
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=210&house=H", "url_is_pdf": false,
+     "contested": false,
+     "contested_note": "6 of 65 voting = 9.2% No. This is BELOW the 10% threshold, so these House YES votes do not seat a chair under the brief. Gricius is still covered as floor sponsor.",
+     "yes_names_roster": ["Nelson T. Abbott", "Kay J. Christofferson", "Stephanie Gricius", "Jon Hawkins", "A. Cory Maloy", "Val L. Peterson", "Keven J. Stratton (then House member; now Senate 24)", "Norman K Thurston", "Stephen L. Whyte"],
+     "no_names_roster": [],
+     "absent_roster": ["Brady Brammer (then House member; now Senate 21)", "Doug Welton"],
+     "note": "'Stratton, K.' and 'Brammer, B.' on this page are Keven Stratton and Brady Brammer, then representatives. 'Owens, D.' on the House page is Doug Owens, not Derrin Owens. Other roster House holders (Chevrier, Hansen, Shallenberger, Shepherd, Larson, Shelley, Pace) are not on the 2023 House list, so they did not hold a seat then."
+    },
+    {
+     "chamber": "Senate committee (Health and Human Services)", "date": "2023-01-18", "stage": "favorable recommendation", "yes": 5, "no": 2, "absent": 0,
+     "url": "https://le.utah.gov/mtgvotes.jsp?voteid=25604", "url_is_pdf": false,
+     "yes_names_roster": [], "no_names_roster": [], "absent_roster": [],
+     "note": "No roster members on the committee."
+    },
+    {
+     "chamber": "House committee (Health and Human Services)", "date": "2023-01-27", "stage": "substitute #2 adopted 10-1-3; favorable 11-0-3", "yes": 11, "no": 0, "absent": 3,
+     "url": "https://le.utah.gov/mtgvotes.jsp?voteid=26119", "url_is_pdf": false,
+     "yes_names_roster": ["Stephanie Gricius"], "no_names_roster": [], "absent_roster": [],
+     "note": "Not contested (0 No). Substitute vote: https://le.utah.gov/mtgvotes.jsp?voteid=26117 (Gricius yes)."
+    }
+   ]
+  },
+  {
+   "id": "HB 250 (2025)",
+   "year": 2025,
+   "jurisdiction": "UT",
+   "title": "Public Employee Gender-specific Language Requirements",
+   "operative_summary": "1st substitute (the text that passed the House) amends 53G-10-206. It bars the State Board or an LEA from disciplining school staff solely because the staff member called a student by a name/pronoun that (i) matches birth name or sex, used in good faith without knowing a preference; (ii) the student prefers, or, where the parent states a preference, the name the parent prefers; or (iii) fits the employee's religious or moral beliefs. It does not require anyone to tell parents, and does not require parent permission before staff use a name.",
+   "operative_quote": "(c) pursue disciplinary action against an individual who is instructional personnel or administrative personnel solely because the individual, in relation to a student, referred to the student by a name, pronoun, or other gender-specific language: ... (ii)(A) except as provided in Subsection (3)(c)(ii)(B), that the student prefers; or (B) that the student's parent prefers;",
+   "proposed_rung": null,
+   "rung_note": "Fits no rung. It is a discipline shield for staff speech. It ranks the parent's name preference above the student's for the shield, but it states no act on telling parents or on parental permission. Listed so the coder can see it was checked.",
+   "text_url": "https://le.utah.gov/Session/2025/bills/introduced/HB0250S01.pdf",
+   "text_is_pdf": true,
+   "status": "died: passed House 2025-02-21; Senate Government Operations committee motion to recommend failed 2-3 on 2025-03-04; filed 2025-03-07",
+   "sponsors": ["Peck, Nicholeen P. (chief; not on roster)", "McCay, Daniel (Senate floor sponsor)"],
+   "sponsors_url": "https://le.utah.gov/data/2025GS/HB0250.json",
+   "roll_calls": [
+    {
+     "chamber": "House", "date": "2025-02-21", "stage": "third reading (1st substitute)", "yes": 51, "no": 13, "absent": 11,
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2025GS&voteid=618&house=H", "url_is_pdf": false,
+     "yes_names_roster": ["Nelson T. Abbott", "Kristen Chevrier", "Kay J. Christofferson", "Doug Fiefia (now Senate 18 candidate)", "Stephanie Gricius", "Jon Hawkins", "A. Cory Maloy", "David Shallenberger", "Troy Shelley", "Lisa Shepherd", "Norman K Thurston", "Doug Welton", "Stephen L. Whyte"],
+     "no_names_roster": [],
+     "absent_roster": ["Val L. Peterson"]
+    },
+    {
+     "chamber": "Senate committee (Government Operations and Political Subdivisions)", "date": "2025-03-04", "stage": "motion to recommend FAILED", "yes": 2, "no": 3, "absent": 2,
+     "url": "https://le.utah.gov/mtgvotes.jsp?voteid=37267", "url_is_pdf": false,
+     "yes_names_roster": ["Michael K. McKell"], "no_names_roster": [], "absent_roster": []
+    }
+   ]
+  }
+ ],
+ "school_board_policies": [
+  {
+   "id": "Provo City SD Policy 3300 'Gender Inclusive Schools' (update approved 2025-09-09 per file name)",
+   "district": "Provo City School District",
+   "text_url": "https://provo.edu/wp-content/uploads/2025/09/20250911_0956-9.9.25-Approved-3300-Update-Gender-Inclusive-Schools-Policy-.pdf",
+   "text_is_pdf": true,
+   "policy_page": "https://provo.edu/?p=72692",
+   "operative_quote": "The unofficial records of the student shall reflect the preferred name and gender identity of the student, but only if requested by the parent. ... Unofficial records which reflect a student's sex, gender, or gender identity may not be changed to a gender or gender identity which does not conform with the student's sex without written permission of the student's parent.",
+   "second_quote": "A student's transgender status shall not be disclosed to individuals other than the student's parent without the student's and parent's consent.",
+   "proposed_rung": 5,
+   "rung_note": "Preferred name goes on school records only if the PARENT requests it; written parent permission before any record change. That is consent-first (rung 5) for records, and it reaches unofficial records (class lists etc.), which is wider than the state law. The 'not disclosed to anyone other than the parent' line confirms parents are not the ones kept out.",
+   "implements_mandate": "PARTLY. The official-record consent sentence copies 53E-9-205(3)(b). The 'only if requested by the parent' rule for UNOFFICIAL records goes beyond state text. Flag for the coder.",
+   "board_vote": "NOT FOUND. The policy was on the 2025-09-09 business meeting agenda (item 6, https://www.utah.gov/pmn/files/1319407.pdf, PDF). It was pulled from the 2025-08-26 meeting and sent back to the policy committee. The 9/9/25 minutes are not posted on the Utah Public Notice site: the notice (https://www.utah.gov/pmn/sitemap/notice/1020959.html) attaches a file labelled '9.2.25 ... Minutes' that is the 9/2 meeting. Audio of the 9/9 business meeting exists: https://www.utah.gov/pmn/files/1322428.mp3. Board on 2025-09-02 (all present): Melanie Hall, Jennifer Partridge, Gina Hales, Teri McCabe, Lisa Boyce, Megan Van Wagenen, Emily Harrison.",
+   "older_version": "3300 P1 procedures, approval date 2020-12-08 (https://provo.edu/wp-content/uploads/2020/12/3300-P1-Gender-inclusive-Schools.pdf, PDF): says only that students have the same rights to names/pronouns and 'confidentiality of ... communications, without fear of ... disclosure of confidential information'. Fits no rung (names no act on parents)."
+  },
+  {
+   "id": "Provo City SD Policy 3228 P1 'Preferred Student Name and/or Gender Identity Change Request Procedures' (last modified 2023-12-01)",
+   "district": "Provo City School District",
+   "text_url": "https://provo.edu/?p=72449",
+   "text_is_pdf": false,
+   "operative_quote": "For purposes of this procedure, an Authorized Party is: a parent or legal guardian of an unemancipated student 17 years old or younger; a student 18 years of age or older; or an emancipated student of any age",
+   "proposed_rung": 5,
+   "rung_note": "For a minor, only the parent may request the preferred name/pronouns/gender change. This is an administrative PROCEDURE (P1), not a board-voted policy; no board vote found. Implements 53E-9-205 in part.",
+   "implements_mandate": "likely implements 53E-9-205",
+   "board_vote": "none found (procedure)"
+  },
+  {
+   "id": "Alpine SD gender identity guidance (administrative)",
+   "district": "Alpine School District",
+   "text_url": null,
+   "note": "No board-adopted Alpine policy on names/pronouns/parent notice was found. alpineschools.org policy URLs returned 404. An advocacy report (Defending Education, https://defendinged.org/incidents/alpine-school-district-has-guidance-to-keep-gender-identity-of-students-hidden-from-parents-utah-state-board-of-education-provides-guidance-to-districts-that-advises-them-to-keep-gender-identity-hidd/ - not fetched, pointer only) describes administrator guidance modelled on a USBE matrix. Not a board vote. Note: Alpine split into three districts by 2024 Prop 11; roster members are the current Alpine board.",
+   "proposed_rung": null
+  },
+  {
+   "id": "Nebo SD",
+   "district": "Nebo School District",
+   "text_url": null,
+   "note": "No Nebo policy on names/pronouns/parent notice found by web search; nebo.edu policy URL guesses failed (404 / TLS error). Gap.",
+   "proposed_rung": null
+  }
+ ],
+ "own_words": [],
+ "direction_only": [],
+ "searched_no_result": [
+  "Stephanie Gricius: own words on SB 100 / parents and gender identity (news, House site). Only bill sponsorship found. Floor debate is audio only (2023-02-01 House).",
+  "Heidi Balderree: pronouns/parents/gender identity - nothing found.",
+  "Kristen Chevrier: gender identity / parent notice - nothing found.",
+  "Emily Buss (Forward Party, appointed 2025-12-12): nothing found. Not in Legislature for SB 100 or HB 250.",
+  "Utah County House/Senate 2026 candidates (Meyer, Nielsen, Melling, Boyd, Slater, Robinson, Hysell, Grossman, Black, Jimenez, Doud, Chappell, Julie Smith, Youngquist, Wessman, Benson, Dane Anderson, Fiefia, Shana Anderson, Myers, Woodfield, Tucker Smith): combined searches for questionnaires/debates on pronouns, gender identity, parental rights - nothing found. Individual campaign sites were NOT each checked; that is the main remaining gap.",
+  "Alpine board (Ada S. Wilson, Emily B. Peterson, Joylin Lincoln, Julie King, Mark Clement, Sarah L. Beeson, Stacy M. Bateman): Lehi Free Press District 3 Q&A (https://lehifreepress.com/2024/10/29/alpine-school-board-district-3-candidate-qa/) fetched - Bateman speaks only on the district split and budget. Utah Parents in Action Alpine page (https://www.utahparentsinaction.com/alpine.html) fetched - Beeson, Wilson, Lincoln did not answer its questionnaire; no answers posted.",
+  "Nebo board (Rowley, Betts, Warnick, Ainge, Acor, Taylor, Scott Wilson): Daily Herald / Herald Extra / Ballotpedia searches - nothing on this topic.",
+  "Provo board (Boyce, Hall, Van Wagenen, Partridge, McCabe, Harrison, Hales): searches for questionnaires - nothing found. 9/9/25 meeting audio not transcribed.",
+  "Utah bills 2024-2026 with a notice/consent duty for names/pronouns: none found. Checked 2026 HB 95 (Peck; same as HB 250, no floor vote, filed 2026-03-06), 2026 HB 399 (character tracking; not on topic). 53E-9-205 has only its 2023 version."
+ ],
+ "gaps": [
+  "SB 100 (2023) subsection (3)(b) requires written parental consent before a gender-identity change to the education RECORD. Rung 5 speaks of staff USING a name/pronoun. The coder must decide whether a records-consent rule is rung 5. https://le.utah.gov/xcode/Title53E/Chapter9/C53E-9-S205_2023021620230216.html",
+  "HB 250 (2025) protects staff who use the parent-preferred name over the student-preferred name from discipline. No rung covers a discipline shield. https://le.utah.gov/Session/2025/bills/introduced/HB0250S01.pdf (PDF)",
+  "Provo 3300 (2025) also says staff shall refer to transgender students by pronouns of their identified gender, while the preferred name appears in records only on parent request - a mixed policy. https://provo.edu/wp-content/uploads/2025/09/20250911_0956-9.9.25-Approved-3300-Update-Gender-Inclusive-Schools-Policy-.pdf (PDF)"
+ ]
+}

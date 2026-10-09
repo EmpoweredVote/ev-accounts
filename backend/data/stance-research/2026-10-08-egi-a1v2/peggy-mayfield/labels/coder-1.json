@@ -1,0 +1,85 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "f84421ea-eb49-44c3-a6a7-a3cfaf5dc745",
+      "office_id": "4e827459-027f-4998-b86d-c01355c44ed8",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "02061031-ca42-5bfe-89d2-b9da92c2c8e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Mayfield voted Yea on the motion to concur, adopting the enrolled text of HB 1608; 29 of 92 voting were No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Barrett Hall Mayfield Smaltz",
+          "tally_quote": "Yea 63 Education matters Nay 29"
+        },
+        {
+          "snapshot_id": "3a7fdae9-a1bc-5b43-a60e-f0184c0a8a16",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's: (1) name; or (2) pronoun, title, or word to identify the student.",
+          "note": "Enrolled text requires notification without a parent asking (excludes rung 3) and drops the earlier written-permission requirement (excludes rung 5); the other part (K-3 sexuality instruction) is a related school provision, not an omnibus.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0172abee-8f75-592b-8413-2816f361bbf0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-23",
+          "v4_shape": "direction-only",
+          "v5_time": "superseded-by-later",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Third-reading Yea on the House version; the exact third-reading text is not in the sources, and her later concurrence vote on the enrolled text governs.",
+          "record_kind": "vote",
+          "actor_quote": "Aylesworth Haggard Mayfield Slager",
+          "tally_quote": "Yea 65 Human sexuality instruction Nay 29"
+        },
+        {
+          "snapshot_id": "4611ee0e-265b-5042-9f27-411dd56347d1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-20",
+          "v4_shape": "direction-only",
+          "v5_time": "superseded-by-later",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "Sec. 3. (a) An employee or a staff member of a school may only use a name, pronoun, title, or other word to identify a student that is inconsistent with the student's sex if: (1) the student, who is an adult or an emancipated minor; or (2) a parent of the student, who is an unemancipated minor; requests in writing the use of a specific name, pronoun, title, or other word to identify the student.",
+          "note": "Committee-reported text with a parental-permission clause; not shown to be the text she voted on at third reading, and removed from the enrolled act she later voted for.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "02061031-ca42-5bfe-89d2-b9da92c2c8e9",
+        "3a7fdae9-a1bc-5b43-a60e-f0184c0a8a16"
+      ],
+      "reasoning": "Mayfield voted Yea (63-29) to concur in enrolled HB 1608 (2023), whose operative section says \"A school shall notify in writing at least one (1) parent of a student\" of a student's request to change name or pronoun. That matches \"Require schools to notify parents\": it does not wait for parents to ask, and the enrolled text requires no parental permission before staff use a different name or pronouns.",
+      "needs_source": [
+        "HB 1608 (2023) engrossed text as voted at House third reading (Roll Call 220)"
+      ],
+      "quotes": []
+    }
+  ]
+}

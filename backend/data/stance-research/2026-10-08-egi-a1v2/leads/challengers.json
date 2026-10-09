@@ -1,0 +1,103 @@
+{
+ "instruments": [],
+ "own_words": [],
+ "direction_only": [
+  {
+   "person": "Doug Fiefia",
+   "office": "Utah State Senate SD18 (candidate; sitting state House member)",
+   "url": "https://dougfiefia.com/",
+   "note": "Campaign site About section (fetched): focuses on \"supporting parental rights and school choice to give children a strong education and future.\" Key Issues page https://dougfiefia.com/key-issues/ (fetched) says parents, not government, should guide children and that parental rights are increasingly challenged; no mention of gender identity, pronouns, transgender students or parental notification. Generic parental-rights line, no act named. Not checked: his recorded House votes in 2025-2026 sessions on any Utah school gender-identity bill."
+  },
+  {
+   "person": "Brooks Benson",
+   "office": "Utah State Senate SD11",
+   "url": "https://brooksbenson4utah.com/education.html",
+   "note": "Campaign education page (fetched): parents should know what children are taught, review curriculum, opt out of content; quote \"You have the right to know what your children are being taught.\" About curriculum transparency, not gender identity/name/pronoun notification. No act named; does not state a rung."
+  },
+  {
+   "person": "Jennifer K. Doud",
+   "url": "https://ivoterguide.com/candidate/95058/race/33793/election/1486",
+   "note": "HD61, Constitution Party. iVoterGuide multiple-choice selections, NOT written answers: 'Strongly Agree' to 'Government should recognize and support the fundamental right and essential duty of parents to direct their child's health and educational well-being.' and 'Strongly Agree' to 'Attempts to physically or socially transition a child to the opposite sex constitute child abuse.' Direction = parents-first pole, but no act (notice/consent) named and the words are iVoterGuide's, not hers. Her only written comments are on women's sports/spaces and religion in schools. Campaign site https://jenniferdoudhouse61.com/ (fetched) and its blog are silent on the topic."
+  },
+  {
+   "person": "Ellen Schutt",
+   "office": "WI State Senate SD11",
+   "url": "https://www.ellenschuttforsenate.com/",
+   "note": "Campaign homepage (voteforellen.com 301-redirects here), section 'Schools That Work for Parents & Students': \"Parents—not the government—should have the final say in their child's education.\" Generic parental-rights line; names no act and does not mention gender identity, names or pronouns. Direction only (toward parents-decide pole), no rung. Page has no transgender/pronoun content."
+  },
+  {
+   "person": "Gina Cefalu Paulick",
+   "office": "WI Assembly AD66",
+   "url": "https://www.voteginapaulick.com/campaign-priorities",
+   "note": "Campaign 'What I Stand For' page, Education bullet: \"Supporting meaningful parental involvement and transparency in their children's education\". Generic; names no act and does not mention gender identity or pronouns. Weak direction only, no rung."
+  },
+  {
+   "person": "Tonya Hudson",
+   "office": "US House IN-9",
+   "url": "https://ivoterguide.com/candidate/94233/race/30592/election/1456",
+   "note": "iVoterGuide questionnaire prints her own written education answers: 'Eliminate the Department of Education at the federal level...' and 'Let the States manage at the local level with more parental involvement in their children's education.' Generic parental-involvement line; names no notification/consent act. Multiple-choice (not own words): 'Choose not to answer' on child gender transition item; 'Agree' that biological males should not be in women's sports/spaces. Fits no rung. Campaign site https://tonyaforcongress.com/ and /issues-2/ fetched: no education or gender-identity content."
+  }
+ ],
+ "searched_no_result": [
+  "Adonis Hooslyn — campaign site found: none. No web page about this person found at all (exact-name search returned nothing relevant). Positive control failed: could not confirm any page.",
+  "Ayden Scott — campaign site found: none. Only candidate listings found (bluevoterguide, uspollingdata poll listing UT-03 2.8%); no own page.",
+  "Cassie Easley — campaign site found: none. Confirmed 2026 UT-3 Constitution Party nominee via search (Grand County certification, BallotReady); Ballotpedia page fetched empty; Utah News Dispatch 2024 questionnaire (https://utahnewsdispatch.com/?p=6159) returned 403.",
+  "Kent Udell — campaign site found: https://kentudellforcongress.com (fetched; no parental-rights/gender-identity content; education mention is higher-ed track record only).",
+  "Michael R. Stoddard — campaign site found: none (FEC committee exists). iVoterGuide 2026 page fetched: every item 'Did not answer'.",
+  "Jonny Larsen — campaign site found: https://jonnyutah4congress.com (home and /the-commitment fetched; no school/gender content). iVoterGuide 2026 fetched: all 'Did not answer'.",
+  "Steven Burt — campaign site found: https://stevenburt.com/ (fetched; no school/gender content). iVoterGuide 2026 fetched: all 'Did not answer'.",
+  "Taylor Wright — campaign site found: none (iVoterGuide per search shows no answers; BallotReady lists PE teacher). Only ballot certifications found.",
+  "A. Dane Anderson — campaign site found: none. Listed on SL County Dems 2026 candidates page (https://www.slcountydems.com/2026candidates, fetched; bio has no school/gender content).",
+  "Shana Anderson — campaign site found: https://www.andersonforutah.com/ (fetched; no school/gender content; /issues not fetched separately). iVoterGuide 2026 fetched: all 'Did not answer'. SL County Dems bio fetched: nothing relevant.",
+  "Kandee Myers — campaign site found: https://kandee4utah.com/ (fetched; Education is a priority but no parents/gender content shown).",
+  "Wayne Woodfield — campaign site found: none (Ballot Brief says none as of 2026-09-08; Forward Party release fetched, no statements; utahforwardparty.org candidates page refused connection).",
+  "Tucker Smith — campaign site found: https://tuckersmithforutah.com/ (home and /issues fetched; supports tuition-free K-12 public education; nothing on parents/gender identity). iVoterGuide 2026 fetched: all 'Did not answer'.",
+  "Kristin Meyer — campaign site found: https://meyerforhd50.com/ (fetched; schools funding, mental health, IEP/504 only). iVoterGuide: did not answer parental-rights/transition items.",
+  "Brett Nielsen — campaign site found: https://www.brettforutah.com/ (fetched; class size, early ed, school safety bills only). Ballotpedia page (Candidate Connection survey exists) returned empty on WebFetch twice — not read.",
+  "Nicole Melling — campaign site found: https://standup-utah.com/ and /issues (fetched; per-pupil funding only). iVoterGuide: did not answer.",
+  "John Boyd — campaign site found: https://johnboydforutah.com/ and /policy-explainer-videos (fetched; 'education funding' only).",
+  "Kevin R. Slater — campaign site found: none (The Ballot Brief HD53 page, fetched, says no site as of 2026-09-08).",
+  "Kristina Robinson — campaign site found: https://campaignkristina.com/ (fetched; page rendered no content). iVoterGuide https://ivoterguide.com/candidate/95052/race/33786/election/1486: did not answer.",
+  "Travis Hysell — campaign site found: https://www.votehysell.com (fetched; 'Strong Public Schools' heading only). iVoterGuide: did not answer.",
+  "Natassja Grossman — campaign site found: https://natassjagrossman.com/ (fetched; page rendered no content). iVoterGuide https://ivoterguide.com/candidate/95054/race/33788/election/1486: did not answer.",
+  "Karli Black — campaign site found: https://votekarliblack.com/ (fetched; school funding, vouchers; see gaps). iVoterGuide: did not answer.",
+  "Alan Jimenez — campaign site found: https://alanforutah.com/ and /schools-uvu (fetched; funding, child care, UVU only).",
+  "David Chappell — campaign site found: https://www.davidforutah.com/ and /plan (fetched; free school meals only). Run for Something profile fetched, same.",
+  "Julie Smith — campaign site found: none (The Ballot Brief HD63 page, fetched, says no site as of 2026-09-08).",
+  "Mark Youngquist — campaign site found: none (The Ballot Brief HD63 page, fetched, says no site as of 2026-09-08).",
+  "Alan Wessman — campaign site found: https://www.electawessman.com/ and /principles-and-policy/ (fetched; school funding, vouchers, HB 29 book removals, 'Keep school district decisions local'; nothing on parental notice). iVoterGuide: did not answer.",
+  "Mitchell Berman — campaign site found: none (mitchellberman.com is an unrelated Arizona realtor). Positive control: WPR profile https://www.wpr.org/news/democrat-mitchell-berman-challenging-bryan-steil-congress fetched; only quotes are generic ('advocating for safe spaces for our kids'); reports (not quotes) he backed a Raymond principal who alleged anti-gay discrimination. Nothing on the question. Wisconsin Examiner launch article returned 403.",
+  "Maria Elena Bisabarros — campaign site found: https://bisabarrosforassembly33.com/ (fetched; school funding/vouchers only, nothing on gender identity/parents). Did not answer WUWM questionnaire (https://www.wuwm.com/wisconsin-state-assembly-district-33-candidates).",
+  "Steve Wicklund — campaign site found: https://www.wicklundforassembly.com/ (fetched; first 200k chars are image data, no readable issue text). WUWM questionnaire answers (https://www.wuwm.com/wisconsin-state-assembly-district-33-candidates) cover school funding only. Note: one Branch.vote page claims he lost the GOP primary to Rick Stacey; Ballot Brief/iVoterGuide list him as nominee — verify roster status.",
+  "Mike Bellagio — campaign site found: none (Ballot Brief also found none). Did not answer WUWM questionnaire (https://www.wuwm.com/wisconsin-state-assembly-district-62-candidates). He is a sitting Racine Unified board member (District 8, since 2024); no reporting found of an RUSD board vote on a gender-identity/parent-notification policy. News coverage is about profane Facebook posts (WPR, Aug 2026), not this topic.",
+  "Eddie Phanichkul — campaign site found: none located. WUWM questionnaire (https://www.wuwm.com/wisconsin-assembly-district-63-candidates) fetched; answers cover school funding only.",
+  "Adam Duda — campaign site found: https://www.dudaforwi.com/ and /issues (fetched; school funding only). WUWM SD11 questionnaire (https://www.wuwm.com/Wisconsin-State-Senate-District-11-candidates) school funding only.",
+  "Jim Croft — campaign site found: https://croftforsenate.com/ (fetched; no education/parents/gender content). WUWM SD21 questionnaire (https://www.wuwm.com/wisconsin-state-senate-district-21-candidates) nothing on topic.",
+  "Trevor Jung — campaign site found: https://trevorjung.com/ and https://trevorjung.com/campaign-issues/ (fetched; nothing on topic; only 'families have more control over what their kids see online' re social media). WUWM SD21 questionnaire nothing on topic.",
+  "Brad Meyer — campaign site found: https://bradmeyer.org/ (also /education-policy/ fetched: civil-rights enforcement and IDEA, no parental notification, gender identity or pronoun content)",
+  "Tonya Hudson — campaign site found: https://tonyaforcongress.com/ (home and /issues-2/ fetched, nothing on topic; see direction_only for iVoterGuide generic line)",
+  "James H. Pittsford III — campaign site found: https://www.pittsford4indiana.com/ (education = fully fund public schools, end vouchers for affluent; nothing on topic). iVoterGuide https://ivoterguide.com/candidate/95548/race/30695/election/1456: 'Did not answer' the gender-identity item",
+  "Carrie L. Syczylo — campaign site found: https://www.carriecareshd60.com/ (home and /issues-priorites fetched, nothing on schools or gender identity). iVoterGuide https://ivoterguide.com/candidate/95586/race/30709/election/1456: answered nothing",
+  "Amy Huffman Oliver — campaign site found: none (only ActBlue https://secure.actblue.com/donate/voteforamyoliver and DLCC https://www.dlcc.org/candidates/amy-huffman-oliver/ seen in search, not fetched). Indiana Capital Chronicle HD62 questionnaire exists but returns 403 (Cloudflare). No Brown County school board vote on a gender-identity policy found",
+  "Christa Curtis — campaign site found: none; no page about her as a 2026 R-BB candidate found at all (positive control failed: identity unconfirmed online)",
+  "Dennis R. Adams — campaign site found: none; no page about him as a 2026 R-BB candidate found at all (positive control failed)",
+  "Kelly D. Scholl — campaign site found: none; no page about her as a 2026 R-BB candidate found at all (positive control failed)"
+ ],
+ "gaps": [
+  "No own-words statement on school gender-identity / parental notification found for any of the 15 people.",
+  "Doug Fiefia is a sitting Utah House member (since 2025): his recorded votes on any 2025-2026 Utah bill on school name/pronoun notice were not researched here (out of own-words scope); a records pass could check.",
+  "Facebook/Instagram/X pages for these candidates were not fetchable and were not searched in depth.",
+  "Kent Udell and Celeste Maloy debated 2026-10-02 (KUER/Deseret recaps); the recaps found mention public lands, nuclear, affordability, not this topic. No transcript checked.",
+  "Karli Black, https://votekarliblack.com/ : 'Combat policies, which make students feel unwelcome in classrooms.' Possibly aimed at LGBTQ-related school policies but names no group, act, or parental notice; fits no rung and is too vague for direction.",
+  "Brett Nielsen's Ballotpedia Candidate Connection answers (https://ballotpedia.org/Brett_Nielsen) could not be read by WebFetch (empty page). A browser read may be worth one attempt.",
+  "Campaign Facebook pages were not fetched (not fetchable without login).",
+  "Ellen Schutt record lead (NOT verified here; for the votes sweep): she served in the Assembly 2023-2024; the Assembly passed the 2023-24 'parental bill of rights' bill (parents determine children's pronouns; reported 62-35 on 2024-01-18, per https://pbswisconsin.org/news-item/wisconsin-assembly-approves-bill-to-provide-parental-controls-for-children-at-school/). Her vote and the bill's operative text were not fetched/confirmed in this pass.",
+  "Facebook pages (Schutt https://www.facebook.com/voteellenschutt, Croft, Bisabarros, Wicklund) were not fetchable/checked; social posts may hold statements.",
+  "No Racine Journal Times / Racine County Eye 2026 candidate questionnaire touching this topic was found.",
+  "Indiana Capital Chronicle voter guides (congressional-district-9, house-district-62) return HTTP 403 Cloudflare challenge to WebFetch and curl; the questionnaires there (Meyer, Hudson, Oliver) could not be read. A browser fetch may reach them.",
+  "Ball State Daily 2024 Q&A with Tonya Hudson (https://ballstatedaily.com/article/2024/10/special-q-a-interview-with-libertarian-lt-gov-nominee-tonya-hudson) returned 403; search snippet says she leaves education choices to parents (generic, no act).",
+  "Richland-Bean Blossom 2026 school board candidates: no news coverage, questionnaire, or campaign page found for any of the three. Monroe County Election Division filings or a Herald-Times guide would be the next places to look.",
+  "Facebook pages (Hudson facebook.com/tonya.millis, Pittsford facebook.com/jimmy.pittsford, Syczylo profile.php?id=61587529167414) not fetched; Facebook is generally not fetchable.",
+  "Scope note: Celeste Maloy (UT-3) and Mike Kennedy (UT-4) are sitting US House members, Ellen Schutt and Doug Fiefia are sitting state House/Assembly members; incumbents of the seat sought were skipped per brief. Maloy/Kennedy not searched here (covered in federal.json)."
+ ]
+}
