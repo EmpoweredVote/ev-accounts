@@ -1,0 +1,9 @@
+Written: `backend/data/stance-research/2026-09-28-shadow-willoughby/labels/coder-1.json`.
+
+One row (Willoughby / healthcare), coded **BLANK `no-evidence`**.
+
+All three snapshots are the same instrument, HB2332 (2025), and all survive V1 (own act — prime sponsor and an Aye vote), V3 (`record`) and V5 (`in-term`, 2025 within the term beginning 2023). They fail V2: the enacted text directs the department to compile and distribute maternal mental health educational materials and stands up a temporary rural obstetrics advisory committee that reports by December 2026. That is a public-health information mandate, not a position on the dimension this ladder orders — who pays for coverage, and for whom. Per V2, `adjacent` passages cannot support a chair.
+
+Record-field placement follows the per-instrument rule: `actor_quote` `Sponsors: Willoughby (Prime)` on the overview page, `actor_quote` `WILLOUGHBY Y` plus `tally_quote` `Passed 44-13-3-0-0` on the vote page, and `provision_quote` only on the chapter-text page. I did not quote anything inside the `[deleted: …]` fence — note that the fenced text is the *original* title ("postpartum depression; treatment; insurers"), so the insurance-mandate framing the bill number might suggest is not in the law as enacted.
+
+`needs_source` asks for the two things that would actually decide this row: Willoughby's own words on coverage, or an AHCCCS/private-insurance instrument she acted on. No quotes were tiered — nothing in these snapshots is her own words.

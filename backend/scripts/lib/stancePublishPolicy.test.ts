@@ -122,3 +122,60 @@ describe('decidePublish — replaces-published-chair', () => {
       .toEqual({ action: 're-research', reasons: ['gate-high'] });
   });
 });
+
+describe('decidePublish — a blank (spec 2026-10-07 §3.3)', () => {
+  const blank: PolicyInput = { ...base, proposedValue: 0 };
+  it('voters see nothing and the open season holds nothing → unchanged (ruling Q1: write nothing)', () => {
+    expect(decidePublish(blank)).toEqual({ action: 'unchanged' });
+    expect(decidePublish({ ...blank, displayedValue: 0 })).toEqual({ action: 'unchanged' });
+  });
+  it('voters see a Season 1 chair → review, blank-replaces-published-chair', () => {
+    expect(decidePublish({ ...blank, displayedValue: 3 }))
+      .toEqual({ action: 'review', reasons: ['blank-replaces-published-chair'] });
+  });
+  it('the open season holds a chair → review, value-change + blank-replaces-published-chair', () => {
+    expect(decidePublish({ ...blank, existingOpenSeasonValue: 2, displayedValue: 2 }))
+      .toEqual({ action: 'review', reasons: ['value-change', 'blank-replaces-published-chair'] });
+  });
+  it('the open season already holds 0 → unchanged', () => {
+    expect(decidePublish({ ...blank, existingOpenSeasonValue: 0, displayedValue: 0 })).toEqual({ action: 'unchanged' });
+  });
+  it('--auto-push never writes a blank, in any of the four cases', () => {
+    for (const [ex, shown] of [[null, null], [null, 3], [2, 2], [0, 0]] as const) {
+      expect(decidePublish({ ...blank, autoPushEnabled: true, existingOpenSeasonValue: ex, displayedValue: shown }).action)
+        .not.toBe('auto-push');
+    }
+  });
+  it('a blank that would remove a chair with no verified source goes back below-threshold', () => {
+    expect(decidePublish({ ...blank, displayedValue: 3, verifiedSourceCount: 0 }))
+      .toEqual({ action: 're-research', reasons: ['below-threshold'] });
+  });
+  it('a high finding (blank-unexamined-fallback) sends the blank back to research', () => {
+    expect(decidePublish({ ...blank, displayedValue: 3, gateFindings: [f('blank-unexamined-fallback', 'high')] }))
+      .toEqual({ action: 're-research', reasons: ['gate-high'] });
+  });
+  it('carries a medium finding as gate-medium', () => {
+    expect(decidePublish({ ...blank, displayedValue: 3, gateFindings: [f('source-no-path', 'medium')] }))
+      .toEqual({ action: 'review', reasons: ['gate-medium', 'blank-replaces-published-chair'] });
+  });
+});
+
+describe('human-saved own-site copies (ruling 2026-10-07)', () => {
+  const saved = { ...base, verifiedSourceCount: 0, humanSavedSourceCount: 1 };
+  it('a row supported ONLY by a saved copy is reviewed, never auto-pushed — even with --auto-push', () => {
+    expect(decidePublish({ ...saved, autoPushEnabled: true })).toEqual({ action: 'review', reasons: ['human-saved-source'] });
+    expect(decidePublish({ ...saved, autoPushEnabled: false })).toEqual({ action: 'review', reasons: ['human-saved-source'] });
+  });
+  it('a saved copy does not lift a row that is still short after counting it', () => {
+    expect(decidePublish({ ...saved, threshold: 2 })).toEqual({ action: 're-research', reasons: ['below-threshold'] });
+  });
+  it('a row that clears the threshold on machine verification alone is unaffected', () => {
+    expect(decidePublish({ ...base, humanSavedSourceCount: 3 })).toEqual({ action: 'auto-push' });
+  });
+  it('no saved copy keeps today\'s below-threshold behaviour', () => {
+    expect(decidePublish({ ...base, verifiedSourceCount: 0 })).toEqual({ action: 're-research', reasons: ['below-threshold'] });
+  });
+  it('a high gate finding still wins', () => {
+    expect(decidePublish({ ...saved, gateFindings: [f('no-source', 'high')] })).toEqual({ action: 're-research', reasons: ['gate-high'] });
+  });
+});

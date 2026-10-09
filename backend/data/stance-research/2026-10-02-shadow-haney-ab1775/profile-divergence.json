@@ -1,0 +1,82 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+    "instrument": "ab1775(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+        "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1775",
+        "profile": "ca-leginfo-bill-votes@1"
+      },
+      {
+        "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1775",
+        "profile": "ca-leginfo-bill-text@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision",
+      "near-unanimous-vote"
+    ],
+    "profiled": [
+      "name-collision",
+      "near-unanimous-vote"
+    ]
+  },
+  {
+    "slot": 2,
+    "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+    "instrument": "ab1775(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1775",
+        "profile": "ca-leginfo-bill-text@1"
+      },
+      {
+        "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+        "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1775",
+        "profile": "ca-leginfo-bill-votes@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision",
+      "near-unanimous-vote"
+    ],
+    "profiled": [
+      "name-collision",
+      "near-unanimous-vote"
+    ]
+  },
+  {
+    "slot": 3,
+    "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+    "instrument": "ab1775(2023-2024)",
+    "snapshots": [
+      {
+        "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+        "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1775",
+        "profile": "ca-leginfo-bill-text@1"
+      },
+      {
+        "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+        "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1775",
+        "profile": "ca-leginfo-bill-votes@1"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced",
+      "name-collision",
+      "near-unanimous-vote",
+      "provision-missing"
+    ],
+    "profiled": [
+      "name-collision",
+      "near-unanimous-vote",
+      "provision-missing"
+    ]
+  }
+]

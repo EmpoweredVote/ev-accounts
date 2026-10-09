@@ -1,0 +1,40 @@
+{
+  "findings": [
+    {
+      "full_name": "Angela Birney",
+      "topic_key": "public-safety-approach",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Menka Soni",
+      "topic_key": "rent-regulation",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Menka Soni",
+      "topic_key": "public-safety-approach",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Menka Soni",
+      "topic_key": "homelessness-response",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    }
+  ],
+  "summary": {
+    "rows": 416,
+    "high": 0,
+    "medium": 4,
+    "by_check": {
+      "statement-needs-review": 4
+    }
+  }
+}

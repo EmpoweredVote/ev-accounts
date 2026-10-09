@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508",
+      "office_id": "5f95f54d-d57c-4e3b-95ff-611505f721b3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "843cab4f-5897-5496-9266-d6872a6ad6ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call names Carter voting Y; 24 No of 60 members is far above the 10% near-unanimous threshold.",
+          "record_kind": "vote",
+          "actor_quote": "CARTER Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        },
+        {
+          "snapshot_id": "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Enacted chapter text of the same instrument; it prints the operative section but names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "aff26034-bc87-5198-a773-f0f4ecb5a794",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview for the same instrument: single-subject short title and the House passage tally, with Carter absent from the sponsor list.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 03/24/2022 31-24-5-0-0 PASSED"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "843cab4f-5897-5496-9266-d6872a6ad6ae",
+        "0586ad93-ef38-5f64-b8f2-651c243a64bd",
+        "aff26034-bc87-5198-a773-f0f4ecb5a794"
+      ],
+      "reasoning": "Carter voted Y on House Third Reading of SB 1165 (2022), a single-subject athletics bill whose operative section requires every school team to be designated by biological sex and provides that teams designated for \"females\", \"women\" or \"girls\" \"may not be open to students of the male sex\". That is the rung that would \"require transgender athletes to compete only on teams matching their biological sex assigned at birth\"; subsection C, which expressly leaves male and coed teams open to any student, excludes the rung that would \"completely ban all transgender athletes from competing in any organized sports competitions\". The 31-24-5 tally is not near-unanimous, and the vote falls inside his 2021-2023 term in this same office.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

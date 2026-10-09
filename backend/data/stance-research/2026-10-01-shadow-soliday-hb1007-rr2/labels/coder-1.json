@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-05-06",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": null,
+          "note": "Bill details page names him as author and digests the act as an SMR manufacturing tax credit plus IURC approval procedures for energy utilities, large load customers and generation resources; it never names data centers.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Edmond Soliday.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1007 (2025)",
+          "provision_quote": "(2) The large load customer commits to significant and meaningful financial assurances that must: (A) include reimbursement by the large load customer of at least eighty percent (80%) of the project costs reasonably allocable to the large load customer;",
+          "note": "The enrolled act prints the operative text (a nuclear-manufacturing tax credit and expedited IURC review for generation plans and large load customer projects) but names no author and never names a data center.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Soliday authored HB 1007 (2025), which creates a small modular nuclear reactor manufacturing tax credit and expedited utility-commission review of generation plans and of projects serving a large load customer, defined by megawatts, capital investment and employment; the act never names a data center. Under the annex ruling of 2026-10-01, a provision about large-load utility customers that never names data centers is not about data centers, so it cannot reach any rung, including the cost-reimbursement language that might otherwise read toward the energy cost-sharing clause of allowing development with impact assessments, energy cost-sharing agreements, and community benefit requirements before approval.",
+      "needs_source": [
+        "An Indiana record Soliday acted on whose operative text names data centers (approval conditions, permitting speed, or a bar on charging data center infrastructure costs to residential customers)",
+        "Soliday's own words on data center permitting, projected energy demand, or residential rate impacts, from his current term or campaign"
+      ],
+      "quotes": []
+    }
+  ]
+}

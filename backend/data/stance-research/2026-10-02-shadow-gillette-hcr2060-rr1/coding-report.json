@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "50d00238-5334-4616-ac43-72375f53df71|ae116c94-7533-46d0-aa81-20106f5cb572|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "John Gillette's own words (floor speech, explanation of vote, press release or questionnaire answer) tying his HCR2060 vote to the illegal-entry and order-to-return provisions",
+          "John Gillette's own words or an Arizona House record on whether long-settled undocumented immigrants should be removed or left in place",
+          "A Gillette floor statement or explanation of vote tying his HCR2060 vote to the illegal-entry/removal provision specifically",
+          "Any Gillette sponsorship, vote, or own-words statement that addresses deportation scope for Arizona's existing undocumented population (criminal-record basis, settlement duration, or mass removal)",
+          "Gillette's own words (floor statement, interview, or questionnaire answer) on how far deportation of already-present undocumented immigrants should go"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "50d00238-5334-4616-ac43-72375f53df71|ae116c94-7533-46d0-aa81-20106f5cb572|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "John Gillette's own words (floor speech, explanation of vote, press release or questionnaire answer) tying his HCR2060 vote to the illegal-entry and order-to-return provisions",
+        "John Gillette's own words or an Arizona House record on whether long-settled undocumented immigrants should be removed or left in place",
+        "A Gillette floor statement or explanation of vote tying his HCR2060 vote to the illegal-entry/removal provision specifically",
+        "Any Gillette sponsorship, vote, or own-words statement that addresses deportation scope for Arizona's existing undocumented population (criminal-record basis, settlement duration, or mass removal)",
+        "Gillette's own words (floor statement, interview, or questionnaire answer) on how far deportation of already-present undocumented immigrants should go"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

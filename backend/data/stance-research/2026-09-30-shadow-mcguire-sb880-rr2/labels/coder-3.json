@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "260c4d27-e30f-5a59-939c-271dbd17e5aa",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-07-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 880 (2015-2016)",
+          "provision_quote": "“assault weapon” also means any of the following: (1) A semiautomatic, centerfire rifle that does not have a fixed magazine but has any one of the following: (A) A pistol grip that protrudes conspicuously beneath the action of the weapon.",
+          "note": "Bill text redefines “assault weapon” to add more semiautomatic rifles/pistols lacking a fixed magazine, extending the existing ban while leaving other firearms untouched.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "998b80e1-b18a-5259-8b29-a1c32abbaab6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-05-19",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 880 (2015-2016)",
+          "provision_quote": null,
+          "note": "McGuire is listed among the Ayes on SB 880's Senate floor passage, 24-14.",
+          "record_kind": "vote",
+          "actor_quote": "Liu, McGuire, Mendoza",
+          "tally_quote": "Ayes Count 24 Noes Count 14"
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "260c4d27-e30f-5a59-939c-271dbd17e5aa",
+        "998b80e1-b18a-5259-8b29-a1c32abbaab6"
+      ],
+      "reasoning": "McGuire voted Aye on SB 880 (2015-2016), which amends Penal Code Section 30515 to redefine “assault weapon” to include additional semiautomatic centerfire rifles and pistols lacking a fixed magazine, extending the state's existing assault-weapons ban to more weapons while leaving other firearms untouched, matching rung 2's “Ban semi-automatic assault-style weapons, while allowing other firearms.”",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

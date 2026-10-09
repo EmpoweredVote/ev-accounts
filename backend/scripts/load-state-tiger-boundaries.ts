@@ -698,6 +698,115 @@ const STATE_LAYER_ALLOWLIST: Record<string, Set<string>> = {
   // the same ground. MO is the seventh slice in this program that owes no `place` load.
   // cd is EXCLUDED: prod already holds Missouri's 8 congressional districts.
   MO: new Set(['sldu', 'sldl']),
+  // MS. Knight program slice 16 — Biloxi and Harrison County. THE LAST STATE IN THE PROGRAMME
+  // TO OWE LEGISLATIVE GEOGRAPHY. Production held ZERO G5210/G5220 rows for FIPS 28 and ZERO
+  // state legislative offices before this wave; measured 2026-09-28 (Mississippi held ONE
+  // government row, 'State of Mississippi', carrying 5 statewide executives — Governor,
+  // Lieutenant Governor, Attorney General, Secretary of State, Treasurer — all seated, and
+  // nothing else; 0 of 122 House and 0 of 52 Senate).
+  // sldu/sldl MEASURED against raw TIGER 2022, 2023, 2024 and 2025 FIPS 28 by parsing the .dbf
+  // inside each zip (scripts/measure-ms-tiger-legislative.mjs, which counts twice by independent
+  // routes behind a bogus-FIPS control):
+  //   sldu  52 records, MTFCC G5210, 0 'ZZZ', SLDUST '001'..'052' CONTIGUOUS, NO letters
+  //   sldl  122 records, MTFCC G5220, 0 'ZZZ', SLDLST '001'..'122' CONTIGUOUS, NO letters
+  // Both chambers are SINGLE-MEMBER, so unlike SD, ND, AZ and WA the polygon count IS the seat
+  // count. No subdistricts, no positions, no block voting.
+  // 🔴🔴 A COUNT CANNOT DATE A MISSISSIPPI MAP — BUT NOT FOR THE REASON FIRST WRITTEN HERE.
+  // ⚠ CORRECTION, read from the Secretary of State's own published constitution rather than
+  // remembered: Miss. Const. art. 13 § 254 sets CEILINGS, not a fixed size. "The Senate shall
+  // consist of not more than fifty-two (52) Senators, and the House of Representatives shall
+  // consist of not more than one hundred twenty-two (122) Representatives, THE NUMBER OF MEMBERS
+  // OF EACH HOUSE TO BE DETERMINED BY THE LEGISLATURE." An earlier version of this comment said
+  // § 254 "fixes" the chambers and called 122/52 a constitutional constant. IT DOES NOT, AND IT
+  // IS NOT. This is South Carolina's and Pennsylvania's situation only in appearance: there the
+  // number really is fixed, here it is a maximum the Legislature has simply always chosen.
+  // ▶ THE PRACTICAL CONCLUSION SURVIVES AND THE REASON CHANGES. Every apportionment since 1982
+  // has used the maxima, so 122/52 fits the 2022 plan, the 2025 remedial plan and the 2010 plan
+  // alike, and a count check, a contiguity check and an LSY check all pass on every vintage.
+  // ▶ AND THE CORRECTION HAS A CONSEQUENCE THE OVER-CLAIM HID: a FUTURE Mississippi plan may
+  // lawfully seat FEWER than 122 or 52, so the equality assertion below could one day fail on a
+  // perfectly valid map. That is the South Dakota shape (a range), not the Pennsylvania one.
+  // Read the assertion's failure as "this file is not what was measured", never as "this file
+  // is invalid". ⚠ LSY reads 2022/2022/2024/2024 across the four vintages and tracks the Census
+  // refresh, not the plan — the KS-1 trap.
+  // 🟢 § 254 also says "Each apportionment shall be effective for the next regularly scheduled
+  // elections of members of the Legislature", which is the state-law half of why the map
+  // question below turns on the November 2027 cycle.
+  // ⚠ AND ALL FOUR FILE HASHES DIFFER WHILE NO DISTRICT MOVES. Measured by
+  // scripts/diff-ms-tiger-vintages.mjs: 0 of 878 Mississippi census tract internal points change
+  // district in either chamber, across every adjacent vintage pair. The differing bytes are
+  // shoreline and edge re-digitisation. TIGER 2022 through 2025 carry ONE plan.
+  //
+  // 🔴🔴 WHICH PLAN, AND WHY IT IS THE RIGHT ONE TO LOAD. This is the only Knight state whose
+  // map was redrawn, litigated, approved, used in a real election and then vacated inside one
+  // decade, so the vintage question had to be answered twice — once about the file and once
+  // about the law.
+  //   THE FILE. Mississippi's own redistricting publisher, MARIS (the Legislature's PEER
+  //   Committee), publishes each plan as a census-block-to-district assignment, which is the
+  //   plan's legal definition and carries no projection, digitisation or rounding.
+  //   scripts/verify-ms-tiger-vintage.mjs compares all 112,241 of Mississippi's 2020 census
+  //   blocks against it. TIGER 2024 disagrees with the 2025 remedial plan for 7,809 blocks and
+  //   204,910 people in the Senate (6.92% of the state) and 1,261 blocks and 26,099 people in
+  //   the House (0.88%), concentrated in Senate 1, 2, 10, 11, 19 (DeSoto County) and 34, 41, 42,
+  //   44, 45 (Hattiesburg), and House 16, 22, 36, 39, 41 (northeast Mississippi). Every other
+  //   disagreement is a single block of ZERO population — a boundary artefact. ▶ TIGER carries
+  //   the 2022 plan. 🟢 The three-judge court's own order of 2025-04-15 names the same districts
+  //   for an unrelated purpose, and MARIS independently publishes regional maps for exactly
+  //   DeSoto, Hattiesburg and Columbus — two routes that never saw each other, agreeing.
+  //   ⚠ THE GEOMETRIC COMPARISON WAS TRIED FIRST AND COULD NOT SEPARATE ANYTHING: MARIS's House
+  //   plan as adopted (2025-02-04) and as court-approved (2025-05-07) have .shp files of the
+  //   SAME BYTE LENGTH (6,865,892) and different sha256, because the later one is a re-export
+  //   that rounds every coordinate, so a polygon-equality test called all 122 districts
+  //   different. A metric that does not separate is a ranking, not a gate.
+  //   THE LAW. The Supreme Court vacated the judgment approving the 2025 plans on 2026-05-18
+  //   (No. 25-234, remanded in light of Louisiana v. Callais). On 2026-07-24 the Secretary of
+  //   State ordered Circuit Clerks to revert the Statewide Election Management System to the
+  //   2022 lines; plaintiffs moved to stop him and were DENIED on 2026-09-11 (Doc 318, case
+  //   3:22-cv-734-DPJ-HSO-LHS). Because both 2025 Joint Resolutions took effect only "from and
+  //   after [their] approval by" that court, the court held: "J.R. 1 and J.R. 202 must be
+  //   treated as though never approved. Thus, they are not operative."
+  // ▶ SO THE 2022 LINES ARE OPERATIVE, AND THEY ARE EXACTLY WHAT TIGER CARRIES.
+  //
+  // 🔴🔴 THE PROGRAMME'S OWN RULE BREAKS HERE — DO NOT "CORRECT" THIS TO THE 2025 MAP.
+  // Michigan's rule is that the correct map is the one the SITTING MEMBER was elected under. In
+  // Mississippi that rule gives the WRONG answer: about fifteen districts elected their member
+  // on 2025-11-04 under lines now held inoperative, and Doc 318 footnote 3 records that "the
+  // Legislature's current composition will remain unchanged until the 2027 election." A MAP AND
+  // A MEMBER CAN COME APART — the map is a fact about the LINES and the member is a fact about
+  // the SEAT, and a vacatur moves one without the other. The question to ask is what the STATE
+  // answers when it is asked which district an address is in, and since 2026-07-24 that is the
+  // 2022 lines.
+  //
+  // 🔴 THE ANCHORS BELOW GUARD A *FUTURE* TIGER, NOT A PAST ONE — the MI-1 shape, where the
+  // Senate anchors existed to catch a later vintage carrying Crane A1. No TIGER published to
+  // date carries the 2025 remedial plan, so the danger is that a LATER one does, silently, while
+  // the count stays at the constitutional 122/52. Mississippi is also redistricting again:
+  // MARIS scheduled post-Callais public hearings for 18 Aug – 1 Oct 2026 and files the 2025 work
+  // under "Court Work (2025), Pre-Callais", and both sides are briefing a schedule aimed at the
+  // NOVEMBER 2027 elections. ▶ RE-READ THE DOCKET BEFORE ANY RELOAD.
+  //
+  // 🔴 THE geo_id COLLISION IS WITH COUNTIES, AS IN PA, SC, OH, ND, KY and SD — the seventh
+  // state running. Mississippi's 82 counties are '28001'..'28163' odd, sldu runs '28001'..'28052'
+  // and sldl '28001'..'28122', so roughly half the Senate range and most of the House range
+  // collide with a real county id. HARRISON COUNTY — this slice's own county — is '28047' and
+  // Senate District 47 is ALSO '28047'. Every join must pair geo_id with mtfcc. ⚠ And Ohio's
+  // slice already recorded '39153' returning Summit County AND a Mississippi ZCTA; MS holds 427
+  // G6350 rows, so the ZCTA layer is a third party to any unkeyed lookup here.
+  // place/CDP/county/cd are EXCLUDED and MUST NOT be re-run: Mississippi's G4110 (300), G4210
+  // (127), G4020 (82) and G5200 (4) rows are already in production, and Biloxi city 2806220 and
+  // Harrison County 28047 both have geometry. MS is the sixth Knight slice, after Ohio, ND, KY,
+  // KS and SD, that owes no `place` load — and the last of the six.
+  MS: new Set(['sldu', 'sldl']),
+  // IL and AK (Read & Rank city-name lookup, GET /api/readrank/localities). `place` ONLY:
+  // a read-only check on 2026-10-06 found ZERO G4110 rows for either state, so "Springfield, IL"
+  // and "Juneau" resolved to nothing. county is EXCLUDED and MUST NOT be re-run: IL's 102 and
+  // AK's 30 G4020 rows (Alaska's are boroughs / census areas) are already in production, and the
+  // place->county mapping (essentials.geofence_child_county) joins against them. No legislative
+  // or school layers: this slice is for city-name resolution only.
+  // Refresh the view after loading: REFRESH MATERIALIZED VIEW CONCURRENTLY
+  // essentials.geofence_child_county (outside a transaction; see migration 1696).
+  IL: new Set(['place']),
+  AK: new Set(['place']),
 };
 
 // STATE_LAYER_TYPE_MAP: override layerDef.district_type for the insertDistrictIfMissing
@@ -786,6 +895,10 @@ const STATE_CITY_ASSERTIONS: Record<string, string[]> = {
   // wrong-state or wrong-vintage file and nothing finer. The load-bearing check for the
   // Knight municipalities is the EXACT geo_id query in scripts/verify-ga-tiger-import.sql.
   GA: ['Columbus city', 'Macon-Bibb County', 'Milledgeville city'],
+  // IL / AK: measured against raw TIGER 2024 on 2026-10-06 (IL 1,294 G4110; AK 149 G4110).
+  // Juneau is a "city and borough" and Anchorage a "municipality" — the unified governments.
+  IL: ['Chicago city', 'Springfield city', 'Naperville city'],
+  AK: ['Anchorage municipality', 'Juneau city and borough', 'Fairbanks city'],
 };
 
 // STATE_RUN_MAKEVALID: per-state ST_MakeValid layer set (Phase 131 D-07..D-09)
@@ -3546,8 +3659,272 @@ async function processLayer(
     }
   }
 
+  // ── MS pre-flight (Knight slice 16 — Biloxi / Harrison County) ─────────────
+  // Counts MEASURED against raw TIGER 2022, 2023, 2024 and 2025 FIPS 28 on 2026-09-28 by
+  // parsing the .dbf inside each zip directly. All four vintages are identical in shape:
+  //   sldu  52 records, 0 'ZZZ', MTFCC G5210, SLDUST '001'..'052' contiguous, NO letters
+  //   sldl  122 records, 0 'ZZZ', MTFCC G5220, SLDLST '001'..'122' contiguous, NO letters
+  // Both chambers single-member, so the polygon count IS the seat count — unlike SD, ND, AZ, WA.
+  // 🔴🔴 AND THAT COUNT CANNOT DATE THE MAP. ⚠ Miss. Const. art. 13 § 254 sets CEILINGS —
+  // "not more than" 52 and 122, "the number of members of each house to be determined by the
+  // Legislature" — NOT a fixed size; an earlier version of this comment claimed it fixed them.
+  // Every apportionment since 1982 has used the maxima, so 122/52 fits every plan Mississippi
+  // has had, which is what makes the count blind here. The assertion below therefore means only
+  // "right state, right layer, complete download" — it can NEVER mean "right plan", and because
+  // the number is a maximum rather than a constant it could one day fail on a lawful future map
+  // that seats fewer. The plan is the anchors' job.
+  if (fipsArg === '28') {
+    const EXPECTED_MS_MTFCC: Record<string, number> = {
+      sldu: 52,    // 52 MS Senate districts — 2022 plan — measured 2026-09-28
+      sldl: 122,   // 122 MS House districts — 2022 plan — measured 2026-09-28
+    };
+    //
+    // ANCHOR SHAPE: [lat, lon, code under the OPERATIVE 2022 plan, code under the 2025 REMEDIAL
+    // plan, label]. 🔴 THE THIRD ELEMENT IS WHAT WE EXPECT TO LOAD and the fourth is the plan we
+    // must never load by accident — the opposite polarity to South Dakota's, where the fourth
+    // was a superseded past. Here the fourth is a plan a federal court has held "not operative"
+    // but which a FUTURE TIGER could start carrying.
+    //
+    // 🟢 EVERY DISCRIMINATING ANCHOR IS A REAL POPULATED CENSUS BLOCK, NOT A LANDMARK, AND THAT
+    // IS DELIBERATE. The two plans differ in only three parts of the state, so no recognisable
+    // civic point in Mississippi can tell them apart — Biloxi, Gulfport and Jackson all resolve
+    // IDENTICALLY under both, which is exactly the Kansas and South Dakota finding. These 15
+    // points are the most populous disagreeing block of each materially-affected district,
+    // emitted by `verify-ms-tiger-vintage.mjs --emit-anchors` from MARIS's own block equivalency
+    // file. ⚠ Do NOT "tidy" them into landmarks; that would leave Mississippi with a gate that
+    // cannot see the one substitution it exists to catch.
+    // ⚠ Every coordinate was rounded to 4 dp FIRST and re-resolved against TIGER 2024 AND 2025
+    // afterwards, so the value in this file is exactly the value that was tested — the KS-1
+    // rule. All 15 survive the rounding on both vintages.
+    // ⚠ The three landmark anchors are NOT discrimination; they are there so that a wrong state
+    // or a corrupted download fails somewhere a human recognises. Jackson's values are MEASURED
+    // (Senate 29, House 67) — a first guess of 26/66 was wrong and is recorded so nobody
+    // "restores" it.
+    // 🔴🔴 THESE CODES ARE THE OCD-ID SUFFIX, WHICH IS **UNPADDED** — '1', not '001'. TIGER's
+    // SLDUST/SLDLST field is zero-padded to three characters, and `ocdDistrictSuffix()` strips
+    // the padding, so the anchor comparison runs on the STRIPPED form. A padded table silently
+    // fails every anchor. ▶ THAT DEFECT WAS REAL AND A CONTROL CAUGHT IT: the first version of
+    // this table was padded, and `MS_PREFLIGHT_CONTROL=anchor` — which perturbs exactly ONE
+    // anchor — reported **13 of 13 anchors disagreeing**. THE COUNT WAS THE TELL. A control
+    // proves a gate can fire; it is the NUMBER it fires on that says whether the gate is right.
+    const MS_VINTAGE_ANCHORS: Record<string, Array<[number, number, string, string, string]>> = {
+      sldu: [
+        [34.9312, -90.0101, '1', '11', 'DeSoto Co. block 280330702221006, pop 1144 — 2022 SD-1, 2025 SD-11'],
+        [34.1923, -90.5465, '11', '1', 'Tunica Co. block 280279507004000, pop 1046 — 2022 SD-11, 2025 SD-1'],
+        [31.3304, -89.3599, '44', '45', 'Forrest Co. block 280730203082007, pop 997 — 2022 SD-44, 2025 SD-45'],
+        [31.3030, -89.1716, '45', '42', 'Perry Co. block 280350101013000, pop 619 — 2022 SD-45, 2025 SD-42'],
+        [34.9091, -89.9799, '1', '2', 'DeSoto Co. block 280330706351022, pop 600 — 2022 SD-1, 2025 SD-2'],
+        [31.2850, -89.4829, '44', '41', 'Forrest Co. block 280730205021003, pop 526 — 2022 SD-44, 2025 SD-41'],
+        [34.7308, -90.0479, '1', '19', 'DeSoto Co. block 280330711231003, pop 497 — 2022 SD-1, 2025 SD-19'],
+        [31.2736, -89.3211, '45', '44', 'Perry Co. block 280350105001061, pop 464 — 2022 SD-45, 2025 SD-44'],
+        [31.7588, -89.1428, '42', '34', 'Jasper Co. block 280679501013018, pop 452 — 2022 SD-42, 2025 SD-34'],
+        [34.6142, -90.0640, '11', '10', 'Tate Co. block 281379503023016, pop 183 — 2022 SD-11, 2025 SD-10'],
+        [30.3955, -88.8853, '50', '50', 'Biloxi City Hall — this slice’s subject; same under BOTH plans'],
+        [30.3674, -89.0928, '49', '49', 'Gulfport City Hall (Harrison Co. seat) — same under BOTH plans'],
+        [32.2988, -90.1848, '29', '29', 'Jackson, Hinds Co. — MEASURED 29, not the 26 first guessed'],
+      ],
+      sldl: [
+        [33.6277, -88.4552, '39', '36', 'Lowndes Co. block 280879800001006, pop 503 — 2022 HD-39, 2025 HD-36'],
+        [33.6007, -88.4288, '39', '41', 'Lowndes Co. block 280870003023000, pop 347 — 2022 HD-39, 2025 HD-41'],
+        [33.5316, -88.4117, '41', '39', 'Lowndes Co. block 280870003012001, pop 252 — 2022 HD-41, 2025 HD-39'],
+        [33.8113, -88.5472, '36', '22', 'Monroe Co. block 280959508002007, pop 216 — 2022 HD-36, 2025 HD-22'],
+        [34.0809, -88.5939, '22', '16', 'Monroe Co. block 280959502023002, pop 128 — 2022 HD-22, 2025 HD-16'],
+        [30.3955, -88.8853, '115', '115', 'Biloxi City Hall — this slice’s subject; same under BOTH plans'],
+        [30.3674, -89.0928, '120', '120', 'Gulfport City Hall (Harrison Co. seat) — same under BOTH plans'],
+        [32.2988, -90.1848, '67', '67', 'Jackson, Hinds Co. — MEASURED 67, not the 66 first guessed'],
+      ],
+    };
+    // 🔴 The House has only FIVE districts that can discriminate, because the 2025 House remedy
+    // touched only northeast Mississippi. Five is the real ceiling, not a target — do not raise
+    // this threshold hoping for more, and do not lower it to make a tamper pass.
+    const MS_MIN_DISCRIMINATING: Record<string, number> = { sldu: 8, sldl: 5 };
+    // Controls, so every half of this gate can be WATCHED FAILING rather than trusted:
+    //   MS_PREFLIGHT_CONTROL=count    perturbs the expected record count -> MTFCC assertion fires
+    //   MS_PREFLIGHT_CONTROL=anchor   perturbs one anchor's expected code -> VINTAGE fires
+    //   MS_PREFLIGHT_CONTROL=weak     drops the discriminating anchors  -> DISCRIMINATION fires
+    //   MS_PREFLIGHT_CONTROL=gap      fakes a code gap                  -> CONTIGUITY fires
+    // ⚠ MISSISSIPPI HAS NO EQUIVALENT OF SOUTH DAKOTA'S `--vintage 2020` CONTROL, because NO
+    // TIGER vintage carries the plan this gate exists to refuse. That is stated rather than
+    // glossed: the anchor tamper is the only way to watch the vintage half fail, and it is a
+    // weaker control than SD's precisely because the competing plan is not downloadable here.
+    const MS_CONTROL = process.env.MS_PREFLIGHT_CONTROL ?? '';
+    if (MS_CONTROL) console.log(`  [${layer}] ⚠ MS_PREFLIGHT_CONTROL=${MS_CONTROL} — this run is a CONTROL and must FAIL.`);
+    if (MS_CONTROL === 'count') EXPECTED_MS_MTFCC[layer] = EXPECTED_MS_MTFCC[layer] - 1;
+    if (MS_CONTROL === 'anchor' && MS_VINTAGE_ANCHORS[layer]?.length) MS_VINTAGE_ANCHORS[layer][0][2] = '999';
+    if (MS_CONTROL === 'weak' && MS_VINTAGE_ANCHORS[layer]?.length) {
+      MS_VINTAGE_ANCHORS[layer] = MS_VINTAGE_ANCHORS[layer].filter((a) => a[2] === a[3]);
+    }
+
+    if (layer in EXPECTED_MS_MTFCC) {
+      const expected = EXPECTED_MS_MTFCC[layer];
+      const anchors = MS_VINTAGE_ANCHORS[layer];
+      let actualCount = 0;
+      const ocdSuffixes = new Set<string>();
+      const seenCodes = new Set<string>();
+      const anchorHits: Array<string | null> = anchors.map(() => null);
+
+      const ringHas = (x: number, y: number, ring: number[][]): boolean => {
+        let inside = false;
+        for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+          const [xi, yi] = ring[i];
+          const [xj, yj] = ring[j];
+          if ((yi > y) !== (yj > y) && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+        }
+        return inside;
+      };
+      const polyHas = (x: number, y: number, poly: number[][][]): boolean => {
+        if (!ringHas(x, y, poly[0])) return false;
+        for (let k = 1; k < poly.length; k++) if (ringHas(x, y, poly[k])) return false;
+        return true;
+      };
+      type Ring = number[][];
+      type GeoJsonPoly = { type: string; coordinates: Ring[] | Ring[][] };
+      const geomHas = (x: number, y: number, geom: GeoJsonPoly | null | undefined): boolean => {
+        if (!geom) return false;
+        if (geom.type === 'Polygon') return polyHas(x, y, geom.coordinates as Ring[]);
+        if (geom.type === 'MultiPolygon') return (geom.coordinates as Ring[][]).some((p) => polyHas(x, y, p));
+        return false;
+      };
+
+      // 🔴 THE ANCHOR SET MUST BE ABLE TO TELL THE PLANS APART. Runs BEFORE the file is read,
+      // because it is a statement about this source file rather than about the download. It is
+      // what stops a later editor from replacing the odd-looking block-interior anchors with
+      // recognisable civic landmarks and leaving Mississippi with a gate that would accept the
+      // 2025 remedial plan — which, measured, every civic landmark in the state would.
+      const discriminating = anchors.filter((a) => a[2] !== a[3]).length;
+      if (discriminating < MS_MIN_DISCRIMINATING[layer]) {
+        const err = new Error(
+          `[MS anchor discrimination assertion] layer=${layer}: only ${discriminating} of ` +
+          `${anchors.length} anchors distinguish the operative 2022 plan from the 2025 remedial ` +
+          `plan, expected at least ${MS_MIN_DISCRIMINATING[layer]}. ⚠ The two plans differ in only ` +
+          `three parts of the state — DeSoto, Hattiesburg and northeast Mississippi — so every ` +
+          `recognisable civic point resolves IDENTICALLY under both, and an anchor set without ` +
+          `enough block-interior disagreements cannot date the map at all. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+
+      await streamShapefile(shpPath, dbfPath, async (geom, props) => {
+        if (layerDef.filterByStatefp) {
+          const statefpKey = resolveColumn(props, ['STATEFP', 'STATEFP20', 'STATEFP10']);
+          if (String(props[statefpKey] ?? '') !== fipsArg) return;
+        }
+        let code: string | null = null;
+        if (layerDef.districtNumField) {
+          const fpKey = resolveColumn(props, layerDef.districtNumField);
+          const fpVal = String(props[fpKey] ?? '');
+          if (layerDef.skipDistrictCodes.has(fpVal)) return;
+          code = ocdDistrictSuffix(fpVal);
+          ocdSuffixes.add(code);
+          seenCodes.add(fpVal);
+        }
+        actualCount++;
+        for (let i = 0; i < anchors.length; i++) {
+          if (anchorHits[i] !== null) continue;
+          const [lat, lon] = anchors[i];
+          if (geomHas(lon, lat, geom as GeoJsonPoly)) anchorHits[i] = code;
+        }
+      });
+
+      if (actualCount !== expected) {
+        const err = new Error(
+          `[MS MTFCC assertion] layer=${layer}: expected ${expected} records, got ${actualCount}. ` +
+          `TIGER file: ${url}. ⚠ Miss. Const. art. 13 § 254 caps the chambers at 122 and 52 ` +
+          `("not more than", with the number determined by the Legislature), and every plan since ` +
+          `1982 has used the cap — so a RIGHT count can never mean the right plan. A WRONG count ` +
+          `usually means a wrong state, a wrong layer or a truncated download, but it could also ` +
+          `be a lawful future plan seating fewer. Read the file before changing this number. ` +
+          `Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      if (ocdSuffixes.size !== expected) {
+        const err = new Error(
+          `[MS OCD-ID assertion] layer=${layer}: ${actualCount} records collapsed to ` +
+          `${ocdSuffixes.size} distinct OCD-ID suffixes, expected ${expected}. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      // 🔴 MISSISSIPPI IS SINGLE-MEMBER IN BOTH CHAMBERS — asserted, not assumed. A lettered code
+      // would mean subdistricts (the SD/ND shape), which Mississippi does not have, and
+      // ocdDistrictSuffix would then be carrying a letter this loader's callers do not expect.
+      const lettered = [...ocdSuffixes].filter((s) => /[A-Z]$/i.test(s)).sort();
+      if (lettered.length) {
+        const err = new Error(
+          `[MS single-member assertion] layer=${layer}: lettered district codes ` +
+          `${JSON.stringify(lettered)} are present. Mississippi elects one member per district in ` +
+          `both chambers and TIGER has filed no subdistrict in any vintage 2022-2025, so this file ` +
+          `is not the one measured on 2026-09-28. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      // 🔴 CONTIGUITY IS SAFE HERE AND IS NOT SAFE EVERYWHERE — South Dakota's House deliberately
+      // has no '026' or '028', so the identical assertion fails CORRECTLY there. Mississippi
+      // numbers "consecutively" by constitutional command (art. 13 § 254), so a gap is a defect.
+      const nums = [...seenCodes].map((c) => parseInt(c, 10)).sort((a, b) => a - b);
+      const gaps: number[] = [];
+      for (let i = 1; i <= expected; i++) if (!nums.includes(i)) gaps.push(i);
+      if (MS_CONTROL === 'gap') gaps.push(9999);
+      if (gaps.length) {
+        const err = new Error(
+          `[MS contiguity assertion] layer=${layer}: district codes are not 1..${expected} ` +
+          `contiguous — missing ${JSON.stringify(gaps)}. Miss. Const. art. 13 § 254 requires ` +
+          `"consecutively numbered" districts. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      const anchorFailures = anchors
+        .map((a, i) => ({ expected: a[2], other: a[3], got: anchorHits[i], label: a[4] }))
+        .filter((r) => r.got !== r.expected);
+      if (anchorFailures.length) {
+        // 🔴🔴 NAME THE CONDITION ACTUALLY FOUND. South Dakota's equivalent branch fired wrongly
+        // once before it was right, because perturbing one anchor's expected value MAKES it look
+        // discriminating while it lands on its alternative. The correct test is a statement about
+        // the WHOLE discriminating set: this file is the 2025 remedial plan only if EVERY anchor
+        // that distinguishes the plans failed onto its 2025 value. One failure out of fifteen
+        // cannot be a different map — the other fourteen still name the 2022 one.
+        const allOnOther = anchorFailures.every((r) => r.got === r.other);
+        const discriminatingAnchors = anchors.filter((a) => a[2] !== a[3]);
+        const failedDiscriminating = anchorFailures.filter((r) => r.expected !== r.other);
+        const isRemedialPlan = allOnOther
+          && discriminatingAnchors.length > 0
+          && failedDiscriminating.length === discriminatingAnchors.length;
+        const diagnosis = isRemedialPlan
+          ? `⚠ ALL ${discriminatingAnchors.length} discriminating anchors failed onto their 2025 ` +
+            `REMEDIAL value — THIS TIGER VINTAGE CARRIES THE 2025 REMEDIAL PLAN. That plan was ` +
+            `held "not operative" by the three-judge court on 2026-09-11 (Doc 318) after the ` +
+            `Supreme Court's vacatur of 2026-05-18, and Mississippi reverted its own SEMS to the ` +
+            `2022 lines on 2026-07-24 — BUT THE LAW MAY HAVE MOVED AGAIN. Re-read the docket for ` +
+            `3:22-cv-734-DPJ-HSO-LHS and decide deliberately; do not simply raise the vintage.`
+          : `⚠ Only ${failedDiscriminating.length} of ${discriminatingAnchors.length} discriminating ` +
+            `anchors failed, so this is NOT simply the 2025 remedial plan — suspect a wrong state, ` +
+            `a wrong layer, a moved anchor, an edited anchor table, or a NEW post-Callais plan ` +
+            `(Mississippi held redistricting hearings 18 Aug – 1 Oct 2026).`;
+        const err = new Error(
+          `[MS vintage assertion] layer=${layer}: ${anchorFailures.length} of ${anchors.length} ` +
+          `anchors disagree with the operative 2022 plan: ` +
+          anchorFailures.map((r) => `${r.label} expected ${r.expected}, got ${r.got ?? 'NONE'} (2025 remedial: ${r.other})`).join('; ') +
+          `. ${diagnosis} The discriminating anchors come from MARIS's own block equivalency ` +
+          `files, via scripts/verify-ms-tiger-vintage.mjs --emit-anchors. Aborting before any DB write.`
+        );
+        err.name = 'MtfccAssertionError';
+        throw err;
+      }
+      console.log(`  [${layer}] MS MTFCC pre-flight assertion PASSED: ${actualCount} records ` +
+                  `(expected ${expected}), ${ocdSuffixes.size} distinct OCD-ID suffixes, ` +
+                  `no lettered codes, codes 1..${expected} contiguous, ` +
+                  `${anchors.length}/${anchors.length} operative-2022-plan anchors agree ` +
+                  `(${discriminating} of them would detect the 2025 remedial plan).`);
+    }
+  }
+
   // ── Dry-run stops here — every per-state pre-flight assertion above (MA,
-  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY, KS, SD, MO) has now run against
+  // ME, TX, CA, OR, MD, VA, NV, AZ, WA, CO, WI, DC, NC, FL, GA, TN, MN, PA, SC, OH, MI, ND, KY, KS, SD, MO, MS) has now run against
   // the real downloaded/extracted shapefile, so a wrong EXPECTED_*_MTFCC
   // count throws and aborts BEFORE this point, exactly like a live run.
   // `client` is still never touched above this line (see task-1-report.md

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "office_id": "d13d9c57-2851-48fb-a1a6-0b181f449453",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": null,
+          "note": "House final reading vote page recording his No vote and the divided tally, but not the provision.",
+          "record_kind": "vote",
+          "actor_quote": "KAVANAGH Y LIEBERMAN N LONGDON N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1457 (2021)",
+          "provision_quote": "Performs an abortion knowing that the abortion is sought solely because of a genetic abnormality of the child.",
+          "note": "Enacted text of the bill he voted against; it restricts abortion by the reason sought and regulates provision, and sets no gestational limit.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His only record here is a No vote on SB1457 (2021), whose operative content bans abortion sought \"solely because of a genetic abnormality of the child\", adds a personhood construction rule, bars abortions at public educational institution facilities and bars mailing abortion-inducing drugs. Opposing those restrictions shows he is on the permissive side, but nothing in the bill sets a stage limit, so the vote cannot choose between \"keep abortion legal at every stage of pregnancy, with no time limit\", \"keep abortion legal through the second trimester\" and \"allow abortion during the first trimester\".",
+      "needs_source": [
+        "Aaron Lieberman's own words on a gestational limit for abortion (candidate questionnaire, debate answer or first-person issue page) from the 2026 Arizona Senate campaign",
+        "Any Arizona legislative record of his on a gestational-limit instrument (for example a vote or sponsorship on a 15-week or viability bill)"
+      ],
+      "quotes": []
+    }
+  ]
+}

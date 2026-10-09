@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d",
+      "office_id": "8c909ec7-73d2-4488-8eb5-a72f4746f32b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "4c212da4-3762-58c4-ad14-8fb9a928ce75",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview lists Diaz among the co-sponsors and records the House Third Reading result; only one Diaz appears in the 2022 House roll call on this page's companion vote detail.",
+          "record_kind": "sponsor",
+          "actor_quote": "Diaz (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e1974ddd-d5a2-5fc0-8ae4-a4a31cd685c2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call showing Diaz voting Y; 26 of 60 members voted No, so the vote is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "DIAZ Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "bc6d6c40-f82c-5085-93be-c0b59c163104",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Enacted text of the instrument Diaz co-sponsored and voted for; it is a single-subject gestational-limit act, but the fifteen-week line matches no rung's clauses.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Diaz is listed as a co-sponsor of SB 1164 (2022) and voted Y on House Third Reading of a single-subject act barring abortion once gestational age is \"greater than fifteen weeks\", with a medical-emergency exception only. A fifteen-week line does not match \"allow abortion during the first trimester, and after that only to protect the mother's health\", because elective abortion stays lawful past the first trimester, and it is far stricter than \"keep abortion legal through the second trimester, and after that only to protect the mother's health\"; the act carries no rape or incest exception and is not a ban, so it is not \"ban abortion except in cases of rape, incest, or a serious risk to the mother's life\" either. The record fixes a restrictive direction but separates no rung from its neighbour, and choosing the nearest rung would be a tiebreaker rather than evidence.",
+      "needs_source": [
+        "Diaz's own words naming a gestational limit or an exception set (floor statement, candidate questionnaire, or first-person issue page)",
+        "Diaz's roll call on an Arizona measure that does match a rung clause, e.g. a near-total ban or a rape/incest exception bill (bill number and chamber vote page)"
+      ],
+      "quotes": []
+    }
+  ]
+}

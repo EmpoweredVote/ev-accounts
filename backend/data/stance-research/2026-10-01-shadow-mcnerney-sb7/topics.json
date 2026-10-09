@@ -1,0 +1,38 @@
+[
+  {
+    "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+    "topic_key": "ai-regulation",
+    "topic_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+    "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+    "question_number": 2,
+    "title": "Artificial Intelligence Oversight",
+    "question_text": "How much should government oversee artificial intelligence development and deployment?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Allow AI companies to develop and deploy technology freely without government interference"
+      },
+      {
+        "value": 2,
+        "text": "Suggest AI safety guidelines but let companies choose whether to follow them"
+      },
+      {
+        "value": 3,
+        "text": "Hold AI developers legally responsible when their systems cause harm"
+      },
+      {
+        "value": 4,
+        "text": "Require safety testing before AI can be used in high-stakes areas like hiring, healthcare, and policing"
+      },
+      {
+        "value": 5,
+        "text": "Impose strict government approval requirements before any AI system can be deployed"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": false,
+    "applies_school": false
+  }
+]

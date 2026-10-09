@@ -1,0 +1,115 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "ab0fc86d-157d-5613-877c-23484732c75c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Moderated debate answer on AI: an immediate pause on AI in the classroom (a targeted moratorium, no ban rung) and an open question on whether regulation is needed ('we'll see'); shows he does not hold rung 1's 'without government interference' but names no rung's clauses.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b0a7d15f-855f-53f0-8809-6a902dd71fe8",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign AI issue page in impersonal/third-person voice: opposes 'sweeping, preemptive regulation' and liability bills (SB 420) yet backs targeted guardrails and 'basic accountability'; not his own first-person words, and it separates no rung on that side.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c0d3c960-8f2b-5775-b60f-6c3b53da0d15",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign promise ('Steve will prohibit') to ban AI in firing decisions: a ban on one use, a duty on users not developers, which the annex places in no rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4491c38e-bd09-51a1-ada5-cd6766d5a67d",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person plan ('STEVE'S PLAN WILL') to pause AI in schools and require evidence and testing of 'major new technology' in classrooms: a targeted moratorium whose testing object is not AI safety testing in the rung's sense, so not rung 4.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In the CNN debate Hilton backs 'an immediate pause on AI in the classroom' and says of safety 'Whether that's done by them or we need regulation, we'll see', which rules out 'develop and deploy technology freely without government interference' but evidences no rung's clauses. A one-use pause is a targeted ban that fits no rung, and his campaign pages (opposing 'sweeping, preemptive regulation', banning AI in firing decisions) are third-person and also targeted, so they do not choose between suggested guidelines, developer liability, or pre-use safety testing.",
+      "needs_source": [
+        "Hilton's own first-person words (questionnaire or debate answer) on whether AI developers should be legally liable for harm or AI should be safety-tested before high-stakes use"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "ab0fc86d-157d-5613-877c-23484732c75c",
+          "text": "And that's why I've said that we should have an immediate pause on AI in the classroom, because right now we're seeing real concerns about something called cognitive stunting, where children's ability to learn is being impeded by AI.",
+          "v7_tier": "lever",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "ab0fc86d-157d-5613-877c-23484732c75c",
+          "text": "In terms of the regulations, I want to make sure that the priority for these companies is safety, making their products safer. Whether that's done by them or we need regulation, we'll see how quickly they act on the promises they've made.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["non-differentiating-goal"]
+        },
+        {
+          "snapshot_id": "b0a7d15f-855f-53f0-8809-6a902dd71fe8",
+          "text": "Government should enforce basic accountability—but avoid sweeping, preemptive regulation on evolving technologies.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "c0d3c960-8f2b-5775-b60f-6c3b53da0d15",
+          "text": "Steve will prohibit employers from using AI or automated decision systems to determine whether a worker should be fired, disciplined, suspended, demoted, have their regular hours cut, or be deactivated.",
+          "v7_tier": "lever",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

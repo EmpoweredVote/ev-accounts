@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Robert Rivas's own words on who should permanently draw district boundaries (first-person issue page, questionnaire, or debate answer)",
+          "California Assembly floor roll call, ACA 8 (2025-2026), final passage"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "requests": [
+        "Robert Rivas's own words on who should permanently draw district boundaries (first-person issue page, questionnaire, or debate answer)",
+        "California Assembly floor roll call, ACA 8 (2025-2026), final passage"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

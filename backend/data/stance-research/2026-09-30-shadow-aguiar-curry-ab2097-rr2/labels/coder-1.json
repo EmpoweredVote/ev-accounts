@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "9e2d72ba-9f81-5280-9411-ee545091da00",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-08-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2097 (2021-2022)",
+          "provision_quote": null,
+          "note": "Her Aye on concurrence in Senate amendments to AB 2097 is her own recorded act, but the bill governs parking requirements imposed on private development, not where transportation money goes.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Alvarez, Bennett, Berman, Bloom",
+          "tally_quote": "Ayes Count 52 Noes Count 17"
+        },
+        {
+          "snapshot_id": "1a03cbce-3c6a-5f51-a7ff-7cec07571f45",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2097 (2021-2022)",
+          "provision_quote": "A public agency shall not impose or enforce any minimum automobile parking requirement on a residential, commercial, or other development project if the project is located within one-half mile of public transit.",
+          "note": "The operative section bars public agencies from imposing minimum parking requirements on development near transit, which is a land-use rule on private builders rather than any split of transportation investment.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is her Aye on AB 2097, whose operative section says \"A public agency shall not impose or enforce any minimum automobile parking requirement on a residential, commercial, or other development project if the project is located within one-half mile of public transit.\" That removes a parking mandate on private development; it directs no money and so does not speak to prioritizing \"pedestrian infrastructure, cycling networks, and public transit over new road capacity\" or to any other rung's split of investment. The annex rules such parking rules on private builders adjacent, so no passage survives V2 and nothing can seat a rung.",
+      "needs_source": [
+        "An Aguiar-Curry record or own words on the split of transportation investment between road capacity and transit/bike/pedestrian modes (e.g., a transportation funding bill she authored, sponsored or voted on, with its operative appropriation or programme text)"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+      "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+      "passages": [
+        {
+          "snapshot_id": "e6eccf73-35fc-5421-8ded-3ceaca1cb358",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1001 (2023)",
+          "provision_quote": null,
+          "note": "Bill overview shows Kavanagh as prime sponsor of SB1001, a single-subject pronoun/name bill that passed the Senate amended and was vetoed.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Kavanagh (Prime)",
+          "tally_quote": "Senate THIRD 03/01/2023 16-12-2-0-0 PASSED (Amended)"
+        },
+        {
+          "snapshot_id": "a39a47e3-b594-50c3-8560-71a03fcd3ea9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-01",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1001 (2023)",
+          "provision_quote": null,
+          "note": "Senate third-reading roll call on the amended bill; Kavanagh voted Y in a divided 16-12 vote.",
+          "record_kind": "vote",
+          "actor_quote": "KAVANAGH Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        },
+        {
+          "snapshot_id": "2129194b-e9c9-555d-b5b9-a1be638fb494",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1001 (2023)",
+          "provision_quote": "An employee or independent contractor of a school district or charter school may not knowingly address, identify or refer to a student who is under eighteen years of age by either of the following unless the school district or charter school receives written permission from the student's parent: 1. A pronoun that differs from the pronoun that aligns with the student's biological sex. 2. A first name other than the first or middle name that is listed on the student's official school records",
+          "note": "Senate engrossed text (the version voted on) requires written parental permission before staff use a non-matching pronoun or a chosen first name; subsection B (teacher conscience) is adjacent.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "03bcc78c-22a6-5d7a-93cd-ebd706c9ac9e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2023-04-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted defence that most parents will support the child shows a pro-parental-involvement side but names no rung clause; the reported acts in the article are context only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "43e14408-0928-586a-9ae6-4ce06ebf5e2f",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2023-01-01",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His only quoted words concern deferring gender-change decisions (medical) to adulthood; the descriptions of the bill are reporter paraphrase.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "e6eccf73-35fc-5421-8ded-3ceaca1cb358",
+        "a39a47e3-b594-50c3-8560-71a03fcd3ea9",
+        "2129194b-e9c9-555d-b5b9-a1be638fb494"
+      ],
+      "reasoning": "Kavanagh prime-sponsored and voted Y (16-12) on SB 1001 (2023), whose operative section bars staff from using a non-matching pronoun or chosen first name 'unless the school district or charter school receives written permission from the student's parent'. That matches every clause of 'Require written parental permission before staff use a student's chosen name or pronouns' and is consent, not mere notification, so it excludes the notify rung.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

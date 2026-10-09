@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+      "passages": [
+        {
+          "snapshot_id": "b5f1648e-cb32-5d09-af8e-e7642f2e0edb",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign policy page treats adult cannabis use as legal and proposes permits for age-restricted licensed lounges; this is on the legal side but states nothing about a taxed market or minimal restrictions, so it does not separate rung 4 from rung 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "292abe9e-0145-5396-b820-ece7d54252c4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Mentions cannabis-tax funding only as an example of nonprofit spending; says nothing about what should be legal.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His only on-question words, \"GIVE ADULTS LEGAL PLACES TO USE LEGAL CANNABIS INDOORS\" with permits for \"age-restricted licensed lounges and cafes\", accept legal adult use and so rule out keeping cannabis illegal or medical-only. They do not state a \"licensed, taxed commercial market\" or treating cannabis as \"an ordinary legal product, with minimal restrictions\", so no rung on the legal side is established.",
+      "needs_source": [
+        "Steve Hilton's own words (debate answer, questionnaire, or issue page) on how cannabis should be regulated, e.g. on the licensed, taxed adult-use market or on loosening cannabis-specific restrictions"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "b5f1648e-cb32-5d09-af8e-e7642f2e0edb",
+          "text": "The Office of Fun and Freedom will provide a ready-to-adopt local ordinance and a fast, coordinated permit for age-restricted licensed lounges and cafes, with worker ventilation protections, no alcohol and strict rules against impaired driving.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

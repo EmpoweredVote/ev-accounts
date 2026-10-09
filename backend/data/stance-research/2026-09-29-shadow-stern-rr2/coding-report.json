@@ -1,0 +1,57 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6|e090aea1-8a60-4a53-b43f-ce7162477c4a|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 1,
+        "shared_sources": [
+          "75b8d8b2-f726-5f58-b711-b6409af31abd",
+          "c7118dfe-a4bb-56f7-b1cc-7049279c9a26"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "ca-leginfo-bill-text@1",
+        "ca-leginfo-bill-votes@1"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

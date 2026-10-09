@@ -1,0 +1,109 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+      "served_revision_id": "cfc3824f-522e-4671-bd2d-dd628e6578e1",
+      "passages": [
+        {
+          "snapshot_id": "a7450aea-d225-5942-b8a7-1884b899e4e0",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-05-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted aim to 'attract and retain public safety officers' concerns filling existing police and fire positions, not adding officers or reallocating from police, so it shows at most a lean against shrinking policing.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "44943727-1970-589b-82f4-784ca26d9344",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-04-25",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Take-home cars, Tasers and Flock cameras are policing tools; they do not speak to how central police are versus services, nor to adding officers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0ba3d80e-b0a4-5da5-81ca-62de02422b0d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-05-16",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quote about making sure public servants 'had what they needed' names no policy clause; the listed grants are the release's account, not her words or a named instrument.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7ca23e6f-d83a-5eeb-b9e7-ec31052c548e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-15",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Ending the Flock license-plate-reader contract is a surveillance oversight and privacy matter, which the annex treats as adjacent.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her only on-question words, seeking solutions to \"attract and retain public safety officers\", lean against shrinking police but neither add officers nor expand police presence (\"Add more officers and expand police presence\") nor name crisis teams or unarmed responders. The policing-tools and Flock releases are adjacent, and the annual-report quote is rhetorical, so no rung's clauses are matched.",
+      "needs_source": [
+        "Mayor Thomson's proposed city budget (2025 or 2026) showing BPD sworn authorized strength and any civilian or co-responder crisis-response funding",
+        "Any executive order or program launch by the Mayor creating an alternative or co-responder crisis team",
+        "Mayor Thomson's own words (campaign questionnaire or issue page) answering how the city should approach public safety"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "a7450aea-d225-5942-b8a7-1884b899e4e0",
+          "text": "Instead, we’ll seek scaleable, sustainable solutions to attract and retain public safety officers.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "44943727-1970-589b-82f4-784ca26d9344",
+          "text": "These progressive policing tools facilitate collaboration, reduce crime, and allow officers to safely, efficiently protect our community",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward", "off-question"]
+        },
+        {
+          "snapshot_id": "7ca23e6f-d83a-5eeb-b9e7-ec31052c548e",
+          "text": "We take civil liberties seriously. We take public safety seriously.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

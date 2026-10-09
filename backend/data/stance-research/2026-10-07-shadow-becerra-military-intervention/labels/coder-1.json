@@ -1,0 +1,59 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "710396dc-e618-4011-8118-43c62a786111",
+      "served_revision_id": "c42b12b6-d7c3-4b88-a932-06b87d5043c9",
+      "passages": [
+        {
+          "snapshot_id": "042b97c3-c7d7-52e0-9df0-47f41238ce44",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "In an energy answer he calls the Iran war unlawful and opposes 'beginning foolish wars abroad'; this is against one war and against foolish wars generally, but states no rule separating last-resort, territory-only, or withdrawal rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "80f49a64-5fca-5048-aae4-7ec43f0aff35",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Passing references to Trump's 'illegal war in Iran' in AI and gas-price answers name no policy clause on the use of force.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Becerra's own words oppose the Iran war as 'unlawful' and call for 'not beginning foolish wars abroad', which places him on the restraint side but does not state when force is acceptable. Nothing says 'diplomacy and economic sanctions' first with force 'only as a last resort', limits force to defending 'US territory from direct attack', or calls for withdrawing 'from overseas military commitments', so no single rung is established.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "042b97c3-c7d7-52e0-9df0-47f41238ce44",
+          "text": "We need to concentrate on doing things right here in America. And one of the things we need to do is get our energy right. That means concentrating on making use of everything we have and not beginning foolish wars abroad that may start to cost us not just money, but lives.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

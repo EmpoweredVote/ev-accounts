@@ -1,0 +1,55 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4cfacf31-d285-40ac-8373-e350912fddda|6bb9a929-fd7a-4fee-b28e-4faa7c3b95de|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 1,
+        "shared_sources": [
+          "cabcea7d-70f1-5f88-bb56-fff8218444e1"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "ca-leginfo-bill-text@1"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

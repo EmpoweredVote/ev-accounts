@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "602abfe8-7795-5430-9d8c-1342267fe8db",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "Bill details page lists Heaton as a co-author of HJR 3, a proposed constitutional marriage amendment.",
+          "record_kind": "author",
+          "actor_quote": "Co-Authored by: Rep. Timothy Wesco, Rep. Wes Culver, Rep. Rhonda Rhoads, Rep. Robert Heaton, Rep. Don Lehe, Rep. Matthew Lehman, Rep. Randall Frye.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4f7ffef7-0c28-5bba-903c-1e42de6824de",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": "Section 38. Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.",
+          "note": "The operative text of HJR 3 as co-authored, defining marriage exclusively as between one man and one woman.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "89ced2c1-9006-5af5-af37-e478efe8b6e5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "House Roll Call 70, 3rd reading of HJR 3; Heaton is listed among the Yea votes.",
+          "record_kind": "vote",
+          "actor_quote": "Beumer Heaton Neese Turner",
+          "tally_quote": "Yea 57 Nay 40 Excused 3 Not Voting 0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "602abfe8-7795-5430-9d8c-1342267fe8db",
+        "4f7ffef7-0c28-5bba-903c-1e42de6824de",
+        "89ced2c1-9006-5af5-af37-e478efe8b6e5"
+      ],
+      "reasoning": "Heaton co-authored and voted Yea (House Roll Call 70, 3rd reading) on HJR 3 (2014), whose sole operative section states 'Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.' The text is silent on civil unions but bars recognition of same-sex marriage, matching the rung 'Make same-sex marriage illegal and define marriage as only between one man and one woman.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

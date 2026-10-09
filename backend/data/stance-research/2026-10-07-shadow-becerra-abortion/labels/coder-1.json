@@ -1,0 +1,130 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "4c63f90d-e952-554f-bd4d-955d19a61b0c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview answer on abortion that the woman should decide; it names no gestational limit or its absence, so it shows only the pro-choice side.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "38f843ad-3a76-5892-983c-2b2ac9486be9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer invoking a woman's right to choose and his AG defense of reproductive rights; the moderator's question is not in the transcript and no limit or exception is stated.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9fee5ff6-7ffc-5627-b2eb-9ada2ba481cc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Aside in a vaccine answer opposing politicians dictating whether a woman may have an abortion; side only, no limit or exception rule.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "6dd0d99f-1e2d-5d9a-aa52-8d3fe5821e62",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-26",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Cites his AG record of protecting the right to choose with no named case; side only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a93ee9ba-4474-50fa-991d-4f9b06ef259a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Health-care page pledges an executive order protecting access to abortion services from federal restrictions; access and services, not when abortion is legal.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "05befd93-3996-54ee-a251-c60fa572893d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Mentions defending reproductive rights against Trump in court; names no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own words (\"if you trust a woman, she's gonna make the right decision with regard to that pregnancy\"; a woman's right to choose) place him on the side of legal abortion, but none states a gestational limit or its absence. Silence on limits does not reach \"keep abortion legal at every stage of pregnancy, with no time limit\", and nothing separates that rung from \"keep abortion legal through the second trimester, and after that only to protect the mother's health.\"",
+      "needs_source": [
+        "Becerra's own words on gestational limits or late-term abortion (questionnaire or debate answer, 2026 campaign)",
+        "The moderator's question preceding \"Absolutely no\" in the CBS/SF Examiner debate, 2026-05-15"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "4c63f90d-e952-554f-bd4d-955d19a61b0c",
+          "text": "if you trust a woman, she's gonna make the right decision with regard to that pregnancy. You don't have to worry about politics and you don't have to worry about men.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "38f843ad-3a76-5892-983c-2b2ac9486be9",
+          "text": "Absolutely no, and when I was AG, I protected reproductive rights here in California.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

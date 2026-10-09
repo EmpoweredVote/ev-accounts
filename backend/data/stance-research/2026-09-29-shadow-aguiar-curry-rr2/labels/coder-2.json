@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b2056197-763a-566a-abad-fe59bef3eb40",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2017-10-05",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": "This bill would, among other things and subject to exceptions, prohibit state and local law enforcement agencies, including school police and security departments, from using money or personnel to investigate, interrogate, detain, detect, or arrest persons for immigration enforcement purposes, as specified, and would, subject to exceptions, proscribe other activities or conduct in connection with immigration enforcement by law enforcement agencies.",
+          "note": "SB 54's operative provisions limit state/local law enforcement cooperation with federal immigration enforcement, not who the government deports.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e45850e5-c900-5eb6-a053-26d4882babdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2017-09-15",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": null,
+          "note": "Vote page shows Aguiar-Curry among the Ayes on SB 54 final passage; the bill addresses cooperation with federal immigration enforcement, not deportation targets.",
+          "record_kind": "vote",
+          "actor_quote": "Aguiar-Curry",
+          "tally_quote": "Ayes Count 51 Noes Count 26 NVR Count 2"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 54 (2017-2018), which Aguiar-Curry voted for, limits state and local law enforcement cooperation with federal immigration authorities (detainers, notifications, transfers, task forces); per the deportation annex's 'Cooperation with federal enforcement' hard case, this is the local-immigration question of who state/local agencies assist, not how far the government goes in deporting undocumented immigrants, so it is V2 adjacent and establishes no chair.",
+      "needs_source": [
+        "Aguiar-Curry's own words addressing who should be deported (a statement, interview, or questionnaire answer on deportation priorities/targets)",
+        "a record of an instrument that sets federal removal priorities or deportation criteria, rather than state/local cooperation with federal enforcement"
+      ],
+      "quotes": []
+    }
+  ]
+}

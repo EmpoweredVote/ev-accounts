@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+      "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "0ce045a6-529f-58b0-90cf-d6df5bea213c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Senate roll call 8 on HB 1032 third reading; Bray voted Nay and the bill was defeated.",
+          "record_kind": "vote",
+          "actor_quote": "Leising Spencer Bray Doriot Mishler",
+          "tally_quote": "Yea 19 Nay 31 Excused 0 Not Voting 0"
+        },
+        {
+          "snapshot_id": "0c4d9c30-1bb1-5e8d-8ff7-4936441259d4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-09",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Engrossed bill text shows the general assembly would redraw congressional maps and restrict court review of apportionment challenges.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "39a0b7dd-c690-5fd8-9b89-f2dd41f19e61",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Bill details page confirms the Senate third reading of HB 1032 was defeated 19-31 on 12/11/2025; Bray is not listed as an author or sponsor.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "Roll Call 8: yeas 19, nays 31"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bray voted Nay on HB 1032 (2026), a Senate-defeated bill that would have let the general assembly redraw congressional districts mid-decade, established new district maps, and restricted court review of apportionment challenges; a No vote on this bundled redistricting bill shows only that he opposed this specific measure, not which of the ladder's rungs on who should draw boundaries he holds.",
+      "needs_source": [
+        "Bray's own statement or floor explanation of his Nay vote on HB 1032 (2026), if any exists, to show which clause he opposed."
+      ],
+      "quotes": []
+    }
+  ]
+}

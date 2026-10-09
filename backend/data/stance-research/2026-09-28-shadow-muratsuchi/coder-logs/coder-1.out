@@ -1,0 +1,11 @@
+Written: `coder-1.json` — one row, Muratsuchi / climate-change.
+
+**Passage** (snapshot 866c8347, AB 1279 chaptered text):
+- V1 `own-act` — the digest line "AB 1279, Muratsuchi. The California Climate Crisis Act." is his authorship (`record_kind: author`).
+- V2 `on-question` — it speaks to how hard government should drive the energy transition.
+- V3 `record`, dated 2022-09-16; V5 `in-term` (Assembly since 2016).
+- V4 `direction-only` — the operative section (38562.2) declares a net-zero-by-2045 policy goal plus scoping-plan and reporting duties. It is not a clean-energy mechanism, and the bill itself enables carbon capture and carbon dioxide removal as complementary paths, so it does not match rung 1's "shift to clean energy through mandates and firm deadlines" clause for clause, nor exclude rungs 2 and 3.
+
+**Row:** BLANK `direction-only`, `rests_on: []`. The evidence rules out "stay neutral" and "end subsidies" but cannot separate mandates from subsidies from permitting.
+
+`needs_source` asks for a California Assembly record on an actual clean-energy mechanism (RPS-style mandate, subsidy/tax-credit appropriation, or permitting/grid streamlining), or his own in-cycle words answering the ladder's question.

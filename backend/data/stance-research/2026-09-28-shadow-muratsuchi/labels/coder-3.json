@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "ea803096-927f-41fe-98e1-deab56291810",
+      "office_id": "e45c9d52-6288-4865-a2de-dadd73cc18e6",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "866c8347-0adf-554d-9611-6e162b500a57",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": "Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045, and to achieve and maintain net negative greenhouse gas emissions thereafter.",
+          "note": "Bill sets GHG emission-reduction targets and carbon capture/removal policy, not a clean-energy mandate, subsidy, permitting, or market-neutrality clause.",
+          "record_kind": "author",
+          "actor_quote": "AB 1279, Muratsuchi",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 1279 declares a policy of net-zero greenhouse gas emissions by 2045 and directs the state board to pursue carbon capture, utilization, and storage technologies; it does not require 'a shift to clean energy through mandates and firm deadlines', fund clean energy with subsidies, cut permitting red tape, stay neutral among energy sources, or end clean-energy subsidies and mandates. It speaks to emissions-target stringency and carbon-removal technology, a dimension the ladder does not order, so no passage establishes a chair.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

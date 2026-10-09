@@ -1,0 +1,48 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e8054d02-34c2-485b-b54a-47658cc269b7",
+      "office_id": "1ca10b86-0477-4f4c-9cbc-d410cece1d61",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "69f3f360-6ec6-5d88-a7fc-e29709290381",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A reporter's direct quotation of the senator during debate; it rejects jail for homeless people but names no penalty regime or shelter condition of its own.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Randolph's own words reject incarceration — \"That’s not the answer\" ... \"not jail time\" — and favor \"providing the things that they need, like food, shelter and a job\", which rules out \"Banning public camping and sleeping with criminal penalties to maintain public safety and order\" but does not separate \"Protecting the right to sleep and shelter in public spaces, with no penalties of any kind\" from \"Decriminalizing public sleeping and camping in public spaces\" or from \"Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system\"; he says nothing about civil penalties, so even \"Prohibiting encampments on public property, enforced through graduated warnings and civil penalties\" is untouched. The excerpt prints the Senate tally \"29-19\" but no member list and no bill number, so it shows no act of his. Ruling out the criminal-penalty rung is not evidence for any rung left (V4.2).",
+      "needs_source": [
+        "Indiana Senate roll call for the 2026 public camping ban bill (the vote the article reports as 29-19), showing Randolph by name with the tally text",
+        "The bill's operative section text, to test it against the rung clauses",
+        "Randolph's own words on whether any penalty (civil citation, diversion) should apply, or whether enforcement should be conditioned on available shelter beds"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "69f3f360-6ec6-5d88-a7fc-e29709290381",
+          "text": "That’s not the answer. The answer is helping these homeless people by providing the things that they need, like food, shelter and a job — not jail time.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

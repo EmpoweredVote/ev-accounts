@@ -1,0 +1,620 @@
+[
+  {
+    "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+    "topic_key": "campaign-finance",
+    "topic_revision_id": "ae53ba29-79eb-420f-aac6-ec99f8031ec6",
+    "served_revision_id": "ae53ba29-79eb-420f-aac6-ec99f8031ec6",
+    "question_number": 3,
+    "title": "Campaign Finance Reform",
+    "question_text": "What rules should govern money in political campaigns and elections?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Ban all private money in political campaigns"
+      },
+      {
+        "value": 2,
+        "text": "Strictly limit corporate and dark-money spending"
+      },
+      {
+        "value": 3,
+        "text": "Keep contribution limits at current levels"
+      },
+      {
+        "value": 4,
+        "text": "Reduce restrictions on political donations and spending"
+      },
+      {
+        "value": 5,
+        "text": "Eliminate all campaign finance laws and limits"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  },
+  {
+    "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+    "topic_key": "growth-and-development",
+    "topic_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+    "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+    "question_number": 12,
+    "title": "Growth and Development Pace",
+    "question_text": "How should government manage population growth and new development?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Hold the pace of growth down \u2014 cap major new development, and let residents vote directly on the largest projects."
+      },
+      {
+        "value": 2,
+        "text": "Allow growth only as fast as current infrastructure can handle \u2014 make new development wait for capacity."
+      },
+      {
+        "value": 3,
+        "text": "Welcome steady growth \u2014 invest in roads, water and schools ahead of demand so expansion isn't held back."
+      },
+      {
+        "value": 4,
+        "text": "Actively push for faster growth \u2014 cut red tape and recruit new development, while keeping basic guardrails."
+      },
+      {
+        "value": 5,
+        "text": "Step back and let the market set the pace \u2014 remove development constraints beyond basic health and safety."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "federal"
+    ]
+  },
+  {
+    "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+    "topic_key": "jail-capacity",
+    "topic_revision_id": "f63a4e70-055e-4115-a5e0-3deeb5748816",
+    "served_revision_id": "7992fadf-a24c-4f73-bd34-76b5bca4764b",
+    "question_number": 17,
+    "title": "Jail Capacity and Incarceration Alternatives",
+    "question_text": "How should government respond to jail overcrowding and criminal justice demand?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system"
+      },
+      {
+        "value": 2,
+        "text": "Reducing the incarcerated population through alternatives to incarceration rather than building new capacity"
+      },
+      {
+        "value": 3,
+        "text": "Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity"
+      },
+      {
+        "value": 4,
+        "text": "Building additional jail capacity to address overcrowding and facility deficiencies"
+      },
+      {
+        "value": 5,
+        "text": "Expanding jail capacity as the primary response to crime, prioritizing detention over alternatives"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "federal"
+    ]
+  },
+  {
+    "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+    "topic_key": "judicial-criminal-justice",
+    "topic_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+    "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+    "question_number": 20,
+    "title": "Criminal Justice Approach",
+    "question_text": "When someone breaks the law, how should the system respond?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Focus on support and treatment, not punishment."
+      },
+      {
+        "value": 2,
+        "text": "Give the person a chance to make things right through service or restitution, rarely punishment."
+      },
+      {
+        "value": 3,
+        "text": "Each situation is different \u2014 some people need support, some need consequences."
+      },
+      {
+        "value": 4,
+        "text": "Breaking the law needs to have real consequences \u2014 accountability is the priority."
+      },
+      {
+        "value": 5,
+        "text": "Impose the toughest penalties the law allows."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": false,
+    "applies_judicial": true,
+    "applies_school": false,
+    "own_words_levels": []
+  },
+  {
+    "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+    "topic_key": "misinformation",
+    "topic_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+    "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+    "question_number": 29,
+    "title": "Online Misinformation and Content Moderation",
+    "question_text": "What responsibility do platforms and government have in combating online misinformation?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "legally require platforms to remove false information"
+      },
+      {
+        "value": 2,
+        "text": "require platforms to label false content, rather than remove it"
+      },
+      {
+        "value": 3,
+        "text": "encourage voluntary standards for combating misinformation online"
+      },
+      {
+        "value": 4,
+        "text": "protect free speech online and prevent government censorship"
+      },
+      {
+        "value": 5,
+        "text": "ban any government involvement in content moderation decisions"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local"
+    ]
+  },
+  {
+    "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+    "topic_key": "rent-regulation",
+    "topic_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+    "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+    "question_number": 33,
+    "title": "Rent Regulation",
+    "question_text": "What role should government play in regulating rents and protecting tenants?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Expand rent control to cover all rental units communitywide"
+      },
+      {
+        "value": 2,
+        "text": "Strengthen existing rent stabilization and extend coverage to more units"
+      },
+      {
+        "value": 3,
+        "text": "Maintain current tenant protections while allowing market rents for new construction"
+      },
+      {
+        "value": 4,
+        "text": "Limit rent regulations to subsidized units; allow market rents broadly"
+      },
+      {
+        "value": 5,
+        "text": "Oppose rent control entirely; rents should be set by the market without government intervention"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "federal"
+    ]
+  },
+  {
+    "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+    "topic_key": "social-security",
+    "topic_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+    "served_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+    "question_number": 37,
+    "title": "Social Security",
+    "question_text": "How should Social Security be funded and structured for the future?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "expand Social Security benefits significantly and remove the income cap on payroll taxes to fund it."
+      },
+      {
+        "value": 2,
+        "text": "increase Social Security benefits modestly while raising taxes on higher earners to strengthen the program."
+      },
+      {
+        "value": 3,
+        "text": "make small adjustments to both benefits and taxes to keep Social Security stable for future generations."
+      },
+      {
+        "value": 4,
+        "text": "gradually reduce future benefits rather than raise taxes to keep Social Security solvent."
+      },
+      {
+        "value": 5,
+        "text": "transition Social Security to private investment accounts that individuals control themselves."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+    "topic_key": "ukraine-support",
+    "topic_revision_id": "107d180d-a949-4a42-a250-54f0a7683be0",
+    "served_revision_id": "9ee7ecb7-fd99-429a-a37d-eff58a381983",
+    "question_number": 42,
+    "title": "Ukraine - Russia Conflict",
+    "question_text": "What level of military and financial support should be provided to Ukraine?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "significantly increase military and financial aid to Ukraine."
+      },
+      {
+        "value": 2,
+        "text": "continue providing current levels of military and economic aid to help Ukraine defend itself."
+      },
+      {
+        "value": 3,
+        "text": "provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war."
+      },
+      {
+        "value": 4,
+        "text": "reduce aid to Ukraine and focus American resources on domestic priorities instead."
+      },
+      {
+        "value": 5,
+        "text": "end all aid to Ukraine immediately and stay completely out of the conflict."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "b5260e5a-5576-4071-8b2a-088af8d1f9eb",
+    "topic_key": "2020-election",
+    "topic_revision_id": "81920cf6-9a30-4c5c-82b1-5f2c16cda95c",
+    "served_revision_id": "81920cf6-9a30-4c5c-82b1-5f2c16cda95c",
+    "question_number": 44,
+    "title": "2020 Presidential Election",
+    "question_text": "What is your view of the outcome of the 2020 presidential election?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "The election was fair and Joe Biden won legitimately."
+      },
+      {
+        "value": 2,
+        "text": "Joe Biden won, but the election had real problems worth fixing."
+      },
+      {
+        "value": 3,
+        "text": "There was some fraud, but not enough to change the result."
+      },
+      {
+        "value": 4,
+        "text": "Fraud or irregularities may have been enough to change the result."
+      },
+      {
+        "value": 5,
+        "text": "The election was stolen from Donald Trump through widespread fraud."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  },
+  {
+    "topic_id": "407614a8-ba2c-4145-8224-233655e6ac3f",
+    "topic_key": "border-security",
+    "topic_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+    "served_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+    "question_number": 45,
+    "title": "Border Security",
+    "question_text": "How should the government handle people who cross the border?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Give everyone who crosses the border a fair asylum hearing."
+      },
+      {
+        "value": 2,
+        "text": "Expand orderly, legal ways to seek asylum at the border."
+      },
+      {
+        "value": 3,
+        "text": "Combine strong enforcement with a faster asylum process."
+      },
+      {
+        "value": 4,
+        "text": "Sharply restrict who can claim asylum at the border."
+      },
+      {
+        "value": 5,
+        "text": "End asylum and quickly turn back anyone who crosses illegally."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+    "topic_key": "cannabis-policy",
+    "topic_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+    "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+    "question_number": 54,
+    "title": "Cannabis Policy",
+    "question_text": "How should the government regulate cannabis?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Keep cannabis fully illegal and enforce criminal penalties for possessing or selling it."
+      },
+      {
+        "value": 2,
+        "text": "Allow cannabis only for medical use, available to patients with a physician's authorization."
+      },
+      {
+        "value": 3,
+        "text": "Remove criminal penalties for personal possession, replacing them with civil fines, but keep commercial sales illegal."
+      },
+      {
+        "value": 4,
+        "text": "Legalize recreational cannabis and regulate it through a licensed, taxed commercial market."
+      },
+      {
+        "value": 5,
+        "text": "Legalize cannabis and treat it like an ordinary legal product, with minimal restrictions on growing and using it."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  },
+  {
+    "topic_id": "3fd1aa81-e032-4335-8785-452ed10ce9ce",
+    "topic_key": "defense-spending",
+    "topic_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+    "served_revision_id": "5b75a7a2-1a72-436f-be9a-e60cf9ffada5",
+    "question_number": 55,
+    "title": "Defense Spending",
+    "question_text": "How much should the government spend on the military?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Increase military spending substantially, launching a major buildup to expand the armed forces and their capabilities."
+      },
+      {
+        "value": 2,
+        "text": "Increase military spending moderately, growing the budget above inflation to keep pace with rising threats."
+      },
+      {
+        "value": 3,
+        "text": "Hold military spending roughly flat, allowing it to rise only with inflation."
+      },
+      {
+        "value": 4,
+        "text": "Reduce military spending modestly below current levels."
+      },
+      {
+        "value": 5,
+        "text": "Cut military spending dramatically, roughly halving the budget or more."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "710396dc-e618-4011-8118-43c62a786111",
+    "topic_key": "military-intervention",
+    "topic_revision_id": "c42b12b6-d7c3-4b88-a932-06b87d5043c9",
+    "served_revision_id": "c42b12b6-d7c3-4b88-a932-06b87d5043c9",
+    "question_number": 56,
+    "title": "Foreign Military Intervention",
+    "question_text": "How should the United States use military force abroad?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Use US military power to actively lead and police conflicts around the world."
+      },
+      {
+        "value": 2,
+        "text": "Intervene militarily when clear US interests or allied nations are directly threatened."
+      },
+      {
+        "value": 3,
+        "text": "Prefer diplomacy and economic sanctions, using military force only as a last resort."
+      },
+      {
+        "value": 4,
+        "text": "Avoid overseas military action except to defend US territory from direct attack."
+      },
+      {
+        "value": 5,
+        "text": "Withdraw from overseas military commitments and end foreign military intervention."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "6783e65c-0722-45d9-8579-65327af7c15c",
+    "topic_key": "israel-military-aid",
+    "topic_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+    "served_revision_id": "a9e300f1-8d13-4e34-89f0-e321031676b2",
+    "question_number": 58,
+    "title": "U.S. Military Aid to Israel",
+    "question_text": "What level of military aid should the U.S. provide to Israel?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Continue full military aid to Israel with no new conditions."
+      },
+      {
+        "value": 2,
+        "text": "Continue aid to Israel, but require it to comply with humanitarian and human-rights law."
+      },
+      {
+        "value": 3,
+        "text": "Block offensive weapons sales while continuing defensive support such as missile defense."
+      },
+      {
+        "value": 4,
+        "text": "Sharply cut military aid to Israel as a step toward ending it."
+      },
+      {
+        "value": 5,
+        "text": "End all military aid to Israel."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "topic_key": "minimum-wage",
+    "topic_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+    "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+    "question_number": 59,
+    "title": "Minimum Wage",
+    "question_text": "What approach should government take to the minimum wage?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation."
+      },
+      {
+        "value": 2,
+        "text": "Raise the wage floor to a set higher level, then adjust it only when lawmakers vote to."
+      },
+      {
+        "value": 3,
+        "text": "Keep a modest national wage floor as a baseline and let states and cities set higher rates."
+      },
+      {
+        "value": 4,
+        "text": "Hold the wage floor at its current level and let the market set pay above it."
+      },
+      {
+        "value": 5,
+        "text": "Remove the wage floor entirely and let employers and workers set pay by agreement."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  },
+  {
+    "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+    "topic_key": "ranked-choice-voting",
+    "topic_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+    "served_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+    "question_number": 60,
+    "title": "Ranked-Choice Voting and Electoral Method",
+    "question_text": "How should votes be cast and counted in elections?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Replace winner-take-all elections with proportional ranked-choice voting \u2014 ranked ballots fill several seats at once, so seats reflect how everyone voted."
+      },
+      {
+        "value": 2,
+        "text": "Adopt ranked-choice voting for single-winner offices: voters rank candidates, and if a top choice can't win, the vote shifts to the next choice until someone has a majority."
+      },
+      {
+        "value": 3,
+        "text": "Allow ranked-choice voting where communities choose it, while keeping single-choice voting as the standard."
+      },
+      {
+        "value": 4,
+        "text": "Keep single-choice voting and oppose adopting ranked-choice voting, but stop short of banning it."
+      },
+      {
+        "value": 5,
+        "text": "Ban ranked-choice voting by law."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

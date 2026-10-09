@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0",
+      "office_id": "c8952cf4-85b9-4602-9edc-dfa0878583ff",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "190d126e-5005-54a7-bae2-6bd166c9a4f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 7 (2025-2026)",
+          "provision_quote": "An employer shall not rely solely on an ADS when making a discipline, termination, or deactivation decision.",
+          "note": "Mandates notice and human review for employment ADS use, but does not require pre-deployment safety testing, harm-based liability, or government approval.",
+          "record_kind": "author",
+          "actor_quote": "Introduced by Senator McNerney (Coauthors: Assembly Members Bryan and Elhawary)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 7, authored by Senator McNerney, mandates notice, prohibits certain employer uses of automated decision systems, and requires human review before discipline, termination, or deactivation decisions, showing a direction toward government oversight of AI deployment in a high-stakes area (employment); but its notice-and-human-review scheme does not match rung 4's clause requiring safety testing before high-stakes use, rung 3's clause holding developers legally responsible when systems cause harm, or rung 5's clause requiring government approval before deployment, so no rung is chair-shaped.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

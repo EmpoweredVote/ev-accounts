@@ -1,0 +1,54 @@
+[
+  {
+    "slot": 2,
+    "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+    "instrument": "hb1032(2026)",
+    "snapshots": [
+      {
+        "snapshot_id": "dd516298-029b-58eb-a741-716f341447af",
+        "url": "https://iga.in.gov/legislative/2026/bills/house/1032/details",
+        "profile": "in-iga-bill-details@4"
+      },
+      {
+        "snapshot_id": "8e776ba8-1843-50fc-841e-7107d265564e",
+        "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/HB1032.02.COMH.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "17ad74dc-278e-53f9-91c5-37b3dbc6a486",
+        "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/rollcalls/HB1032.28_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced"
+    ],
+    "profiled": []
+  },
+  {
+    "slot": 3,
+    "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+    "instrument": "hb1032(2026)",
+    "snapshots": [
+      {
+        "snapshot_id": "dd516298-029b-58eb-a741-716f341447af",
+        "url": "https://iga.in.gov/legislative/2026/bills/house/1032/details",
+        "profile": "in-iga-bill-details@4"
+      },
+      {
+        "snapshot_id": "8e776ba8-1843-50fc-841e-7107d265564e",
+        "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/HB1032.02.COMH.pdf",
+        "profile": "in-iga-roll-call@2"
+      },
+      {
+        "snapshot_id": "17ad74dc-278e-53f9-91c5-37b3dbc6a486",
+        "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/rollcalls/HB1032.28_H.pdf",
+        "profile": "in-iga-roll-call@2"
+      }
+    ],
+    "generic": [
+      "chamber-not-evidenced"
+    ],
+    "profiled": []
+  }
+]

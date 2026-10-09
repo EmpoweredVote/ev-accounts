@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+      "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "2a4a6f51-471e-5ea5-b0a9-d8d75d8519ff",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-08-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 8 (2025-2026)",
+          "provision_quote": "It is the policy of the State of California to support the use of fair, independent, and nonpartisan redistricting commissions nationwide.",
+          "note": "The same measure temporarily displaces the Citizens Redistricting Commission's congressional maps while declaring support for independent commissions and restoring the commission in 2031, so it matches no single rung clause for clause.",
+          "record_kind": "author",
+          "actor_quote": "ACA 8, Rivas. Congressional redistricting.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Rivas authored ACA 8 (2025-2026), whose operative text both declares that it is \"the policy of the State of California to support the use of fair, independent, and nonpartisan redistricting commissions nationwide\" and, \"notwithstanding the authority of the Citizens Redistricting Commission\", temporarily substitutes legislature-drawn congressional maps until the commission draws new lines \"in 2031\". That rules out \"the party that controls the state legislature without outside interference\" but does not separate \"independent citizens' commissions with no elected officials involved at any level\" from \"independent redistricting commissions with equal representation from both major parties\" or from \"state legislatures with court oversight to prevent extreme partisan bias\", since the legislature-drawn maps here are temporary and voter-approved.",
+      "needs_source": [
+        "Rivas's own words (floor statement, questionnaire or first-person issue page) on who should draw California's districts as a standing rule, rather than as a response to Texas",
+        "Assembly floor roll call on ACA 8 (2025-2026) showing Rivas's vote and the tally"
+      ],
+      "quotes": []
+    }
+  ]
+}

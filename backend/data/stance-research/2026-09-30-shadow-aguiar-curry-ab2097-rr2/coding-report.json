@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257|f4c83c0b-3c35-419b-a618-0e6c4c13fd38|ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic_key": "transportation-priorities",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Aguiar-Curry record or own words on the split of transportation investment between road capacity and transit/bike/pedestrian modes (e.g., a transportation funding bill she authored, sponsored or voted on, with its operative appropriation or programme text)",
+          "A record or own words on road-capacity vs. transit/pedestrian investment spending, e.g. a transportation funding bill vote or sponsorship, is needed to evidence this ladder."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257|f4c83c0b-3c35-419b-a618-0e6c4c13fd38|ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "requests": [
+        "An Aguiar-Curry record or own words on the split of transportation investment between road capacity and transit/bike/pedestrian modes (e.g., a transportation funding bill she authored, sponsored or voted on, with its operative appropriation or programme text)",
+        "A record or own words on road-capacity vs. transit/pedestrian investment spending, e.g. a transportation funding bill vote or sponsorship, is needed to evidence this ladder."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

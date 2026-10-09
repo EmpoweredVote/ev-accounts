@@ -8,34 +8,15 @@
  * See docs/superpowers/specs/2026-04-30-stance-research-verification-design.md
  */
 
-const HTML_ENTITIES: Record<string, string> = {
-  '&amp;': '&',
-  '&lt;': '<',
-  '&gt;': '>',
-  '&quot;': '"',
-  '&apos;': "'",
-  '&nbsp;': ' ',
-  '&#39;': "'",
-};
+import { HTML_ENTITIES, decodeNumericEntities, decodeEntities } from './htmlEntities.js';
 
-// 🔴 Decode numeric character references BEFORE anything else touches punctuation.
-// `&#8217;` (decimal) and `&#x2019;` (hex) are both the curly right single quote — neither is in
-// HTML_ENTITIES above, so left alone they survive as literal "&#8217;" text: "you&#8217;re" would
-// never become "you're" and would fail to match a snippet that (honestly) types a straight
-// apostrophe. Ported from verify-quotes.mjs (backend/scripts/verify-quotes.mjs), which hit this for
-// real on a live wave. `String.fromCodePoint` also gets this right for names/quotes outside the
-// BMP; a malformed reference (bad digits) is left as-is rather than throwing.
-function decodeNumericEntities(input: string): string {
-  return input
-    .replace(/&#(\d+);/g, (match, dec: string) => {
-      const code = Number(dec);
-      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
-    })
-    .replace(/&#[xX]([0-9a-fA-F]+);/g, (match, hex: string) => {
-      const code = parseInt(hex, 16);
-      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
-    });
-}
+/**
+ * Decode a page's character references for DISPLAY, and nothing else. See
+ * {@link decodeEntities} — this is the name the stance pipeline uses for it.
+ */
+export const decodeForDisplay = decodeEntities;
+
+
 
 export function normalizeText(input: string): string {
   // Numeric entities first (see decodeNumericEntities) — decoding `&#8217;` before anything else
@@ -54,6 +35,14 @@ export function normalizeText(input: string): string {
   out = out.replace(/[—–]/g, '-');
   // Lowercase
   out = out.toLowerCase();
+  // 🔴 Fold diacritics. A name is the same name whether the source prints it
+  // "Reneé" or "Renee", but without this fold `checkNameProximity` returns
+  // `name_not_present` for every politician whose STORED name carries an accent
+  // the source drops — the snippet matches, the person is plainly named, and the
+  // row still fails. Measured on Charlotte 2026-10-02: WFAE writes "Renee
+  // Johnson" and `essentials.politicians` holds "Reneé Johnson", and the row
+  // verified under the unaccented spelling and failed under the stored one.
+  out = out.normalize('NFD').replace(/[̀-ͯ]/g, '');
   // Collapse all whitespace runs to single space
   out = out.replace(/\s+/g, ' ');
   // Trim
@@ -247,15 +236,65 @@ export const COMMON_LAST_NAMES: ReadonlySet<string> = new Set([
   'phillips', 'evans', 'turner', 'parker', 'edwards', 'collins',
 ]);
 
-const TITLE_PATTERN = /\b(sen|sen\.|senator|rep|rep\.|representative|gov|gov\.|governor|pres|pres\.|president|mayor|councilor|councilman|councilwoman|councilmember|delegate|asm|asm\.|assemblymember|judge|justice|chief|sheriff|hon|hon\.|honorable)\b/;
+// ⚠ The municipal and county titles matter as much as the legislative ones for
+// this programme: a city commission (Miami, Tallahassee), a county commission,
+// a board of supervisors and a school board of trustees all style their members
+// with words this pattern did not carry. Miami seats a Christine King and
+// Bradenton a Lisa Gonzalez Moore — `king`, `moore`, `brown` and `gonzalez` are
+// all COMMON_LAST_NAMES, so without the title the guard cannot fire for them.
+// ⚠ `council member` and `city council member` are the two-word renderings most
+// newspapers use; the closed-up `councilmember` is mostly an official-site
+// spelling. Without the spaced forms the common-surname fallback cannot fire for
+// a city councillor, which is the whole municipal cohort — "Council member Renee
+// Johnson" failed this test while "Councilmember" would have passed.
+const TITLE_PATTERN = /\b(sen|sen\.|senator|rep|rep\.|representative|gov|gov\.|governor|pres|pres\.|president|mayor|councilor|councilman|councilwoman|councilmember|council member|city council member|commissioner|county commissioner|alderman|alderwoman|alderperson|supervisor|trustee|selectman|delegate|asm|asm\.|assemblymember|judge|justice|chief|sheriff|hon|hon\.|honorable)\b/;
+
+/** How many alternate names one politician may contribute. A bound, not a judgement: the list is
+ * scanned once per snippet, so a row carrying a hundred names must not slow every check. */
+export const MAX_ALIASES = 8;
+
+/**
+ * The usable alternate names on a politician row (`essentials.politicians.alternate_names`).
+ *
+ * A source routinely prints the name a person put on the ballot while our record holds their legal
+ * one. Measured on Duvall WA 2026-10-06: the Snoqualmie Valley Record, the King County voters'
+ * pamphlet and the election results all write "Jenn Hernandez" where the record says "Jennifer
+ * Hernandez". Neither name test fired — the full name is absent from the page, and `hernandez` is
+ * on {@link COMMON_LAST_NAMES}, which demands a title no article has reason to give a candidate —
+ * so a real, read, chair-level answer could not be cited.
+ *
+ * 🔴 ONE-TOKEN NAMES ARE DROPPED, and that is the whole safety property. An alias is accepted as a
+ * FULL name, which is precisely the path that bypasses the common-surname rule; a bare "Jenn" would
+ * hand that bypass to every page carrying a common first name. Two tokens keeps an alias at least
+ * as specific as the full name it stands in for.
+ */
+export function aliasesFrom(value: unknown): string[] {
+  if (!Array.isArray(value)) return [];
+  const out: string[] = [];
+  const seen = new Set<string>();
+  for (const raw of value) {
+    if (typeof raw !== 'string') continue;
+    const collapsed = raw.trim().replace(/\s+/g, ' ');
+    if (collapsed.split(' ').filter(Boolean).length < 2) continue;
+    const key = normalizeText(collapsed);
+    if (!key || seen.has(key)) continue;
+    seen.add(key);
+    out.push(collapsed);
+    if (out.length >= MAX_ALIASES) break;
+  }
+  return out;
+}
 
 export function checkNameProximity(args: {
   fullName: string;
   lastName: string;
+  /** Other full names this person is published under. {@link aliasesFrom} is re-applied here, so a
+   * caller that hands over the raw column cannot widen the test by accident. */
+  aliases?: string[];
   pageText: string;
   matchOffsetInNormalized: number;
 }): SnippetVerdict {
-  const { fullName, lastName, pageText, matchOffsetInNormalized } = args;
+  const { fullName, lastName, aliases, pageText, matchOffsetInNormalized } = args;
   if (matchOffsetInNormalized < 0) {
     return { verdict: 'snippet_not_found' };
   }
@@ -274,6 +313,15 @@ export function checkNameProximity(args: {
   // Full name in window → verified.
   if (window.includes(fullNameLower)) {
     return { verdict: 'verified', matchOffset: matchOffsetInNormalized };
+  }
+
+  // An alternate full name counts the same, and for the same reason: it identifies the person as
+  // precisely as the record's own spelling. It is checked BEFORE the surname path so that a page
+  // printing the ballot name never falls through to the common-surname rule.
+  for (const alias of aliasesFrom(aliases)) {
+    if (window.includes(normalizeText(alias))) {
+      return { verdict: 'verified', matchOffset: matchOffsetInNormalized };
+    }
   }
 
   // Last name in window?
@@ -347,8 +395,10 @@ export interface StanceRow {
    * the column, so the pipeline always passes it.
    */
   source_urls?: string[];
-  /** record | statement, from research.csv (stored on the review row). */
+  /** record | statement | blank, from research.csv (stored on the review row). */
   evidence_type?: string;
+  /** Codebook V6 blank reason when value is 0 (a Season 2 blank); null/absent for a chair. */
+  blank_reason?: string | null;
 }
 
 export interface EvidenceRow {
@@ -370,6 +420,11 @@ export interface VerifiedSnippet {
 export interface VerifiedSource {
   url: string;
   snippets: VerifiedSnippet[];
+  /**
+   * A person-saved copy of this own-site page exists (src/lib/humanSavedCopy.ts). Reviewer
+   * information only: it never changes a verdict and never counts toward the source threshold.
+   */
+  humanSaved?: { sha256: string; snippets_found: number[]; snippets_total: number };
 }
 
 export interface VerifiedRow {
@@ -385,7 +440,7 @@ export interface VerifyResult {
 }
 
 export interface PoliticianNames {
-  [fullName: string]: { fullName: string; lastName: string };
+  [fullName: string]: { fullName: string; lastName: string; aliases?: string[] };
 }
 
 /**
@@ -408,8 +463,15 @@ export async function verifyEvidence(args: {
   politicianNames: PoliticianNames;
   /** Snippet match tuning. Defaults: minWords 25, minCoverage 0.6. */
   match?: MatchOptions;
+  /**
+   * URLs the batch declares as the person's OWN site (sources.json source_kind 'own-site'; ruling
+   * 2026-10-08, Chris Andrews). Attribution there is by ownership, not by the surname sitting near the
+   * quote: a first-person issue page says "we need…" and prints the name once, in the header. The
+   * snippet must still be found on the page; only the name-proximity test is waived.
+   */
+  ownSiteUrls?: ReadonlySet<string>;
 }): Promise<VerifyResult> {
-  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match } = args;
+  const { stanceRows, evidenceRows, fetcher, threshold, politicianNames, match, ownSiteUrls } = args;
 
   const grouped = new Map<string, Map<string, EvidenceRow[]>>();
   for (const ev of evidenceRows) {
@@ -473,15 +535,21 @@ export async function verifyEvidence(args: {
             continue;
           }
           // Name proximity is measured from the SPAN — the text that will be published.
-          const proxVerdict = checkNameProximity({
-            fullName: names.fullName,
-            lastName: names.lastName,
-            pageText: fetched.text,
-            matchOffsetInNormalized: span.offset,
-          });
+          const proxVerdict: SnippetVerdict = ownSiteUrls?.has(url)
+            ? { verdict: 'verified', matchOffset: span.offset }
+            : checkNameProximity({
+              fullName: names.fullName,
+              lastName: names.lastName,
+              aliases: names.aliases,
+              pageText: fetched.text,
+              matchOffsetInNormalized: span.offset,
+            });
           judged.push({
             snippet: ev.snippet, snippet_index: ev.snippet_index, verdict: proxVerdict,
-            ...(proxVerdict.verdict === 'verified' ? { matchedSpan: span.text } : {}),
+            // I6 + display: the span is what a voter reads, so it is stored decoded. The snippet beside it
+            // keeps the researcher's copy of the page; both fold through normalizeText, so
+            // validStoredSpan still pairs them at approval.
+            ...(proxVerdict.verdict === 'verified' ? { matchedSpan: decodeForDisplay(span.text) } : {}),
           });
         }
       }

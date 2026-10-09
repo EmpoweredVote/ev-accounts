@@ -1,0 +1,38 @@
+[
+  {
+    "snapshot_id": "127c96a6-c3c0-5210-ad66-c6079e6f0af7",
+    "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=130&BillNumber=SB1057",
+    "source_kind": "public-record",
+    "fetched_by": "human",
+    "excerpt_only": false,
+    "ok": true,
+    "failure": null,
+    "page_sha256": "c3d40b3f4beaf0f5803ec1bf351bdc6357c2a6689f65e88b5b0f07b7e4f34b19",
+    "snapshot_text": "Bill Status Inquiry. Bill History for SB1057. Short Title: watermark; paper ballots NOW Title: fraud countermeasures; paper ballots. Sponsors: Finchem (Prime) Governor Action 06/19/2026 Vetoed [Bill overview for SB1057 (2026), saved by browser from apps.azleg.gov BillStatus on 2026-09-28.]",
+    "amendment_markup": "none"
+  },
+  {
+    "snapshot_id": "8e89c3c4-71e6-5240-b91d-034eecf14ffc",
+    "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=130&BillNumber=SB1057#senate-third",
+    "source_kind": "public-record",
+    "fetched_by": "human",
+    "excerpt_only": false,
+    "ok": true,
+    "failure": null,
+    "page_sha256": "95a9862675ac5cedd67b06aa7c81f6be89f88d6f8d0fe4aaa2010351f0608536",
+    "snapshot_text": "Senate Third Reading - SB1057 watermark; paper ballots (NOW: fraud countermeasures; paper ballots) Action Date Action Vote 02/23/2026 Passed 16-11-3-0-0 ALSTON N ANGIUS Y BOLICK Y BRAVO N CARROLL Y DIAZ NV DUNN Y EPSTEIN N FARNSWORTH Y FERNANDEZ N FINCHEM Y GABALDÓN N GONZALES N GOWAN Y HATATHLIE NV HOFFMAN Y KAVANAGH Y KUBY N LEACH Y MESNARD Y MIRANDA N ORTIZ N PAYNE Y ROGERS Y SEARS N SHAMP NV SHOPE Y SUNDARESHAN N WERNER Y PETERSEN Y [Vote detail dialog for SB1057 (2026) Senate Third Reading, saved by browser from apps.azleg.gov BillStatus on 2026-09-28.]",
+    "amendment_markup": "none"
+  },
+  {
+    "snapshot_id": "0da06547-3e2d-512f-bcb4-6133a5e73489",
+    "url": "https://www.azleg.gov/legtext/57leg/2R/bills/SB1057S.htm",
+    "source_kind": "public-record",
+    "fetched_by": "code",
+    "excerpt_only": false,
+    "ok": true,
+    "failure": null,
+    "page_sha256": "9594eab108762dd87858bd6156218a10ecc8791b6a7c0d93556d054b3fba9d47",
+    "snapshot_text": "SB1057 - 572R - S Ver Senate Engrossed [deleted: watermark; paper ballots] (now: fraud countermeasures; paper ballots) State of Arizona Senate Fifty-seventh Legislature Second Regular Session 2026 SENATE BILL 1057 AN ACT Repealing section 16-504, Arizona Revised Statutes; amending title 16, chapter 4, article 6, Arizona Revised Statutes, by adding a new section 16-504; relating to election ballots. (TEXT OF BILL BEGINS ON NEXT PAGE) Be it enacted by the Legislature of the State of Arizona: Section 1. Repeal Section 16-504, Arizona Revised Statutes, is repealed. Sec. 2. Title 16, chapter 4, article 6, Arizona Revised Statutes, is amended by adding a new section 16-504, to read: START_STATUTE 16-504. Antifraud ballot paper; vendor certification; antifraud measures Notwithstanding any other statute, any vendor that provides fraud countermeasures that are contained in and on the paper used for ballots shall be ISO 27001 certified, ISO 17025 certified or ISO 9001:2015 certified. Ballot fraud countermeasures shall include the use of at least three of the following: 1. Unique, controlled-supply watermarked clearing bank specification 1 security paper. 2. Secure holographic foil that acts as a visual deterrent and anti-copy feature. 3. Branded overprint of any hologram that personalizes the hologram with customer logo. 4. Custom complex security background designs with banknote-level security. 5. Secure variable digital infill. 6. Thermochromic, tri-thermochromic, photochromic or optically variable inks. 7. Stealth numbering in ultraviolet, infrared or taggant inks. 8. Multicolored micro-numismatic invisible ultraviolet designs. 9. Unique forensic fraud detection technology that is built into security inks. 10. Unique bar code or QR code that is accessible only to the voter and that tracks the voter's ballot as it is processed. END_STATUTE",
+    "amendment_markup": "kept"
+  }
+]

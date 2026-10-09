@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "152ec81f-c8ab-5494-8b68-711193f672d5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote page shows Shope voting Aye on HCR2060.",
+          "record_kind": "vote",
+          "actor_quote": "SHOPE Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        },
+        {
+          "snapshot_id": "54bf0425-8d31-5ced-8b4d-f6ffea98d6d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "the judge shall enter an order that requires the person to return to the foreign nation from which the person entered or attempted to enter the United States or the person's nation of origin.",
+          "note": "The illegal-entry article orders removal of a recent border crosser, not of all undocumented immigrants, matching the annex's state-criminal-entry-law hard case.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Shope voted Aye on HCR2060 (2024), whose illegal-entry article lets a court order a violator to 'return to the foreign nation from which the person entered or attempted to enter the United States or the person's nation of origin.' Per the annex, a state criminal-entry law that lets a court order a person to leave speaks only to removal of recent crossers, not to 'how far should the government go in deporting undocumented immigrants' generally, so it establishes direction only, not a rung.",
+      "needs_source": [
+        "Shope's own statement (floor speech, press release) on HCR2060 or its illegal-entry provision, to establish whether his vote ties to a specific deportation rung beyond direction-only"
+      ],
+      "quotes": []
+    }
+  ]
+}

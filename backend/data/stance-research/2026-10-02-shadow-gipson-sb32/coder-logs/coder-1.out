@@ -1,0 +1,15 @@
+Written: `labels/coder-1.json` — one row, BLANK.
+
+**climate-change — BLANK `direction-only`**
+
+Two passages, both coded `own-act` / `on-question` / `record` (`record_kind: vote`), one instrument group `SB 32 (2015-2016)`:
+
+| | vote page (`b7acd69d`) | bill text (`30741f51`) |
+|---|---|---|
+| `actor_quote` | `Ayes Alejo, … Gatto, Gipson` | null |
+| `tally_quote` | `Ayes Count 48 Noes Count 31 NVR Count 1` | null |
+| `provision_quote` | null | `the state board shall ensure that statewide greenhouse gas emissions are reduced to at least 40 percent below…December 31, 2030` |
+
+Why not a chair: the statute is a mandate with a firm deadline, but the mandate is an **emissions** target addressed to the air board — it names no energy source and no clean-energy requirement, so rung 1's "Require a shift to clean energy" clause is not matched by the text. It also doesn't exclude rung 2 (subsidies) or rung 3 (permitting/grid) as his view on *expanding clean energy*: CARB could meet a 40% cut through pricing, efficiency or transport fuels. Seating rung 1 here would be the V4.2 "ruling out the other rungs" fault. The vote is in-term under V5 option B (Assembly record, same legislature), and not near-unanimous (31 Noes), so the only thing it establishes is the side.
+
+`needs_source` lists what would settle it: a roll call on a clean-energy-specific instrument (SB 350 / SB 100), his own words on the mechanism, and his earlier Assembly term start date (given as unknown, so that he was seated on 2016-08-23 isn't established by the materials here — I coded `own-act` since the page is a California Assembly roll call and the record shows an earlier term in this legislature).

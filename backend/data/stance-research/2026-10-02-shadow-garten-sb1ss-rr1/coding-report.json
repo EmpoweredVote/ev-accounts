@@ -1,0 +1,56 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8af9732c-8050-4732-acdf-6e2c8ed6e30b|b93ba475-ef99-4209-be1d-28cc3eae2399|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 4,
+        "shared_sources": [
+          "2d98cb03-ae4d-58a1-829a-58039d7da041",
+          "6ee430d7-d418-55b6-9c18-c3af1da5167f"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "in-iga-roll-call@2"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

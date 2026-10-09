@@ -1,0 +1,22 @@
+Written: `coder-1.json`, one row for `gun-policy`.
+
+**Chair: rung 5** — "Repeal major gun restrictions and let adults carry a firearm without a permit."
+
+**Passages coded (3):**
+
+| Snapshot | V1 | V2 | V3 | V4 | V5 | Supports chair |
+|---|---|---|---|---|---|---|
+| Roll Call 382 | own-act | on-question | record / vote | chair-shaped | in-term | yes |
+| HB1296 enrolled text | own-act | on-question | record / vote | chair-shaped | in-term | yes |
+| Bill details page | third-party-characterization | adjacent | not-evidence | off-axis | in-term | no |
+
+**Reasoning behind the key calls:**
+
+- **The act exists.** Soliday is printed in the Yea column (`Bartels Heaton May Soliday`), tally `Yea 69 Nay 30`. No party inference was used — the roll call itself is in the sources.
+- **Not procedural.** V4's `procedural` list is cloture/rule/table/recommit/previous question/adjournment. Adopting the conference committee report is the vote on the bill's final enrolled text, so I treated it as the substantive final vote and said so in the note.
+- **Not multi-subject.** Sections 1–7 and 15–17 are almost entirely conforming cross-reference updates from `IC 35-47-2-1` to the new `IC 35-47-2-1.5`, plus one firearms-theft penalty change. The operative core is permitless carry. Not an omnibus under V4.1.
+- **Not near-unanimous.** 30 of 100 voted No.
+- **Rung 5 over rung 4.** Rung 4 caps the loosening at "at most loosen rules on carrying, such as honoring permits across state lines," which presupposes permits. The bill's operative text eliminates the permit itself, and repeals `IC 35-47-2-2`, `-2-2.1` and `-2-24`. Both of rung 5's clauses are matched by the instrument's own words, so this is not H14 reasoning-by-elimination.
+- **Amendment markup respected.** The `provision_quote` span I picked sits between the `[deleted: …]` fences in SECTION 12 and contains none of the struck text.
+
+**Gaps recorded:** the details page shows Soliday was *not* a co-author, so the vote is his only act here; `needs_source` asks for his own words on HB 1296 or handgun licensing. `quotes` is empty — neither source contains anything he said.

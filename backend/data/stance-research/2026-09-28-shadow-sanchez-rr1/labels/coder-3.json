@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0",
+      "office_id": "1621afeb-6cb1-4368-98db-6e18b0723faa",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "f85ff6c9-bb6d-5e4e-a775-4ebcba97382b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-10-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 88 (2023-2024)",
+          "provision_quote": "if a victim of a crime wishes to be heard pursuant to the provisions of Section 28 of Article I of the California Constitution, or pursuant to any other provision of law applicable to the hearing, the victim shall notify the prosecution of their request to be heard within 15 days of being notified that resentencing is being sought and the court shall provide an opportunity for the victim to be heard.",
+          "note": "AB 88 governs victim notice and the right to be heard at resentencing and parole hearings; it does not set the severity or type of consequence for offenders.",
+          "record_kind": "author",
+          "actor_quote": "AB 88, Sanchez.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is AB 88 (2023-2024), a victims'-rights bill Sanchez authored; its operative content sets notice periods and a right to be heard for crime victims at resentencing and parole hearings, not the severity or type of consequence imposed on an offender, so it speaks to a dimension of criminal justice the rungs do not order and establishes no chair.",
+      "needs_source": ["A vote, sponsorship, or own-words record from Sanchez addressing sentencing severity, treatment/diversion programs, or consequences for offenders"],
+      "quotes": []
+    }
+  ]
+}

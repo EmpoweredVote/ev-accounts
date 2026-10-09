@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-09-28-shadow-kolodin-hb2394-rr1",
+  "seat": {
+    "politician_id": "178470c3-94ea-442a-a558-7b3c841ce858",
+    "full_name": "Alexander Kolodin",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "f04e0b05-9d07-4f0d-b4a9-c9dd784545fe",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "question_text": "What responsibility do platforms and government have in combating online misinformation?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "legally require platforms to remove false information"
+        },
+        {
+          "value": 2,
+          "text": "require platforms to label false content, rather than remove it"
+        },
+        {
+          "value": 3,
+          "text": "encourage voluntary standards for combating misinformation online"
+        },
+        {
+          "value": 4,
+          "text": "protect free speech online and prevent government censorship"
+        },
+        {
+          "value": 5,
+          "text": "ban any government involvement in content moderation decisions"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

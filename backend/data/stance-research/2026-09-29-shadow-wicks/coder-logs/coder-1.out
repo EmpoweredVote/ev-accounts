@@ -1,0 +1,11 @@
+Wrote `coder-1.json`.
+
+**Row: Buffy Wicks / rent-regulation → chair 2**
+
+Both snapshots code as `record` / `vote` on AB 1482 (2019-2020): the vote page carries `actor_quote` (`Mark Stone, Ting, Weber, Wicks, Wood, Rendon`) and `tally_quote` (`Ayes Count 48 Noes Count 26`); the bill-text page carries the `provision_quote` (the 5% + CPI / 10% cap) and nulls for the other two, per the V3 worked example.
+
+- **V2** `on-question` — the bill sets what rent regulation applies statewide, which is the ladder's question.
+- **V4** `chair-shaped` — single-subject tenancy bill, final Assembly concurrence, 26 of 79 No so not `near-unanimous`. It extends a cap to units no local ordinance covered while preserving local rent control, which is "Strengthen existing rent stabilization and extend coverage to more units". Rung 1 is excluded by the bill's own 15-year-certificate-of-occupancy exemption and vacancy decontrol; rung 3's "maintain current tenant protections" is excluded because the bill adds new ones.
+- **V5** `in-term` — Sept 2019 falls in her earlier Assembly term (2018-12-03 to 2022-12-05), same chamber of the same legislature.
+
+No quotes: neither snapshot contains Wicks's own words, so `quotes` is empty. `needs_source` asks for her own words in cycle and for any rent-regulation bill she authored or sponsored herself.

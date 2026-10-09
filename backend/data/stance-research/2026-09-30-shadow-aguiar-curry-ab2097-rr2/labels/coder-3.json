@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "1a03cbce-3c6a-5f51-a7ff-7cec07571f45",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2097 (2021-2022)",
+          "provision_quote": "A public agency shall not impose or enforce any minimum automobile parking requirement on a residential, commercial, or other development project if the project is located within one-half mile of public transit.",
+          "note": "Removes parking minimums near transit for private development; a land-use rule, not a transportation-investment split.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9e2d72ba-9f81-5280-9411-ee545091da00",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-08-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2097 (2021-2022)",
+          "provision_quote": null,
+          "note": "Aye vote on concurrence; the bill's parking-minimum provision is adjacent to the investment-split question, per the annex hard case on parking rules.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Alvarez, Bennett,",
+          "tally_quote": "Ayes Count 52 Noes Count 17 NVR Count 11"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "AB 2097 bars local parking minimums on development within a half-mile of transit; per the annex's 'Parking rules on private builders' hard case, this is a land-use rule on private developers, not transportation investment, so it is adjacent to the rungs' question of where government invests. No passage survives V2 to support a chair.",
+      "needs_source": ["A record or own words on road-capacity vs. transit/pedestrian investment spending, e.g. a transportation funding bill vote or sponsorship, is needed to evidence this ladder."],
+      "quotes": []
+    }
+  ]
+}

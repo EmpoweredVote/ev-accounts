@@ -5,6 +5,7 @@
  * Pure: no DB, no network. Verbatim checks use the verifier's own normalisation.
  */
 import { normalizeText } from '../../src/lib/researchVerifier.js';
+import { BLANK_REASONS } from '../../src/lib/blankReasons.js';
 
 /** 🔴 Must equal the codebook's **Version:** line — coderLabel.test.ts pins it. */
 export const CODEBOOK_VERSION = '0.4';
@@ -14,7 +15,7 @@ export const V2_RELEVANCE = ['on-question', 'adjacent', 'off'] as const;
 export const V3_CLASS = ['record', 'statement-answer', 'statement-other', 'not-evidence'] as const;
 export const V4_SHAPE = ['chair-shaped', 'direction-only', 'multi-subject', 'procedural', 'study-directive', 'near-unanimous', 'rhetorical', 'off-axis'] as const;
 export const V5_TIME = ['in-term', 'pre-seating', 'superseded-by-later', 'undated'] as const;
-export const BLANK_REASONS = ['no-evidence', 'direction-only', 'adjacent-chairs', 'compound-partial', 'record-vs-statement-conflict', 'scope-unavailable'] as const;
+export { BLANK_REASONS };
 export const V7_TIER = ['lever', 'direction', 'none'] as const;
 export const V7_FLAGS = ['lever-named', 'lever-unclear'] as const;
 export const V8_CODES = ['not-forward', 'is-attack', 'off-question', 'misleading-verbatim', 'source-not-an-answer', 'deid-dishonest', 'non-differentiating-goal'] as const;

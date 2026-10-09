@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "1f711955-ccb8-5fda-ada7-1c2af3a19bae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1164 (2022)",
+          "provision_quote": null,
+          "note": "Bolick is listed as a Co-Sponsor of SB1164 (2022), a 15-week gestational-limit bill, but the instrument's own construction clause blocks the record from establishing a permitted-stage rung.",
+          "record_kind": "sponsor",
+          "actor_quote": "Bolick (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e034c87f-a963-5a92-b728-aa0dfa230c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1164 (2022)",
+          "provision_quote": null,
+          "note": "Bolick voted Y on SB1164's House Third Reading final passage, but the bill's construction clause prevents the vote from establishing a permitted stage, showing only the restrictive direction.",
+          "record_kind": "vote",
+          "actor_quote": "BOLICK Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "f82c309c-b86d-54c6-9b4a-bd19c57aa7af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB1164 (2022)",
+          "provision_quote": "This act does not : 1. Create or recognize a right to abortion or alter generally accepted medical standards. The Legislature does not intend this act to make lawful an abortion that is currently unlawful. 2. Repeal, by implication or otherwise, section 13-3603, Arizona Revised Statutes, or any other applicable state law regulating or restricting abortion.",
+          "note": "The construction clause states the act does not create or recognize a right to abortion and does not repeal other state law restricting abortion, so the facial 15-week/medical-emergency structure does not permit abortion up to the limit.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bolick co-sponsored and voted Yea on SB1164 (2022), a 15-week gestational limit with a medical-emergency exception, but the act's own construction clause states it \"does not ... create or recognize a right to abortion\" and does not repeal other state law restricting abortion (including section 13-3603), so it does not permit abortion up to the limit. Per the annex's construction-clause rule, this shows only the restrictive direction, not the rung 3 text \"allow abortion during the first trimester, and after that only to protect the mother's health.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

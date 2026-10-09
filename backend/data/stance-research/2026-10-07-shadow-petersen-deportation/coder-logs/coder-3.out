@@ -1,0 +1,10 @@
+I wrote the label file for Warren Petersen / `deportation` (coder slot 3, codebook 0.4). The row is coded BLANK `direction-only`.
+
+- **Evidence level:** the seat is state level, which holds no lever on deportation, so only Petersen's own words can seat a chair.
+- **Cooperation passages:** three passages (`b77f03e5`, `fbb70c81`, `0d9b588b`) are his quoted defence of the AZ ICE Act (SB 1164). That bill is about state cooperation with federal enforcement, so I coded them `adjacent` and `off-axis`. The annex says cooperation is not the removal question.
+- **SB 1164 sponsorship:** it is only reported in the press releases. I did not code it as a `record` (H15) and listed the bill page and roll calls under `needs_source`.
+- **Passage that survives:** the 9 June 2025 release (`3deffd83`) quotes him calling for "deportations of criminal illegal aliens". That is `on-question` and in-term, but it shows the pro-removal side only. It doesn't say removal is limited to violent offenders (rung 2) or extends to everyone (rungs 4–5).
+- **Chair and quote:** no passage supports a chair, so `rests_on` is empty. I included one quote from that release as `direction`, quotable false with code `off-question`.
+- **`needs_source`:** the SB 1164 bill page and roll calls, and a first-person statement from Petersen on who should be deported.
+
+I judged the cooperation passages `adjacent` (so `no-evidence` alone would have fit them) but chose `direction-only` for the row because of the 9 June 2025 quote. A coder who reads that quote as too thin to count as the pro-removal side would code `no-evidence` instead.

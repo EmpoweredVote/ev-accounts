@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+      "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "c0c966a9-84bd-5314-8011-594dd9fad9a3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-07-03",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": "“Race” is inclusive of traits historically associated with race, including, but not limited to, hair texture and protective hairstyles.",
+          "note": "Bill text amends the definition of race under education and FEHA law to include hair texture and protective hairstyles, closing a discrimination loophole.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "395a38a1-fcd1-5a3e-b3df-46bfbc6c14a5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-04-22",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 188 (2019-2020)",
+          "provision_quote": null,
+          "note": "Senate floor vote on SB 188 passed 37-0 with 1 NVR, naming Caballero among the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Bradford, Caballero, Chang",
+          "tally_quote": "Ayes Count 37 Noes Count 0 NVR Count 1"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is her Aye vote on SB 188 (2019-2020), which passed the Senate floor 37-0 with 1 NVR; fewer than 10% voted against, so under V4 the passage is near-unanimous and cannot carry a chair alone. No other source shows her own words or a contested record on civil rights enforcement.",
+      "needs_source": [
+        "A contested vote, sponsorship, or her own statement addressing civil rights enforcement or affirmative action, since the only record found (SB 188) passed 37-0"
+      ],
+      "quotes": []
+    }
+  ]
+}

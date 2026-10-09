@@ -1,0 +1,207 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "893202a1-ed86-5d86-8db2-81d2ba7f39b7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person campaign issue page pairing deregulation and a regulation freeze with tax breaks and incentives for starter-home construction (rung 4 clauses [b][c]); it never states that it rejects binding rules such as rent caps or required affordable units, or public housing.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "53f1c8f7-5090-53bc-9723-584ca97e8dbf",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign page written in the third person ('Steve Hilton will cap…'), proposing a cap on government fees and mandates and faster approvals; this is market-side deregulation and does not separate rungs 4 and 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c4c2a233-a5ff-563c-97f0-94a83cc2b413",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign page on zeroing AB 130 VMT mitigation charges ('Get government out of the way'); deregulation direction only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f1c1fdd0-998c-53f5-989d-5f48cd6b1cf6",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person plan for state-supported new communities (infrastructure aid, fast approvals, use of state land); it concerns where and how to build, not who provides housing or how affordability is enforced.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d864e5c4-dcf3-5f19-9c75-8b0e0a1bb258",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-04-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview answer on housing affordability: cut environmental regulations, end CEQA lawsuits, relax VMT/density limits; it shows a deregulation lean but not the 'at most' ceiling of rung 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "38868427-b9b7-51a5-9769-d536e19d7919",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer: simplify regulations, stop hidden taxes on house building, build starter and single-family homes; direction only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5b0cc4d7-2502-5e64-9da9-ff72e242c232",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer: build outwards in places that want housing rather than forcing density; this concerns where to build and states no rule on government's role in affordability.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "615f8a49-c77e-51e3-9cc2-41989305b30c",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Public-college affordability plan; not about housing policy.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8bb8d4fd-751e-5ef0-ad1c-64f892ae0dc5",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Voter-guide excerpt with a biography; the excerpt says nothing on housing.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f3c985bd-fcd3-5502-86a2-2a7503ac726a",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Page title only; no content captured.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Rung 5 says 'at most, cut the regulations and zoning limits', but Hilton's own plan goes past that: 'Eliminate state income tax on profits tied to qualifying starter home construction' and 'Expand incentives for building and selling ADUs as entry-level homes'. That plan meets the subsidy and tax-break clauses of rung 4, 'offer subsidies and tax breaks so more affordable housing gets built'. Rung 4's other clause, 'Set no binding rules', is never stated: a freeze on new housing regulations and criticism of 'mandates' do not reject rent caps or required affordable units (silence is not a clause). The starter-home page that carries the subsidy clauses is also undated.",
+      "needs_source": [
+        "Hilton's own words on rent control / rent caps (e.g. a questionnaire or debate answer)",
+        "Hilton's own words on inclusionary zoning or required affordable units",
+        "A dated version of the 'Bring Back the Starter Home in California' policy page"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "893202a1-ed86-5d86-8db2-81d2ba7f39b7",
+          "text": "Eliminate state income tax on profits tied to qualifying starter home construction",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "893202a1-ed86-5d86-8db2-81d2ba7f39b7",
+          "text": "Implement a five-year freeze on new housing regulations",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "d864e5c4-dcf3-5f19-9c75-8b0e0a1bb258",
+          "text": "Get rid of the regulations, the mainly environmental regulations that are making it more much more expensive to build housing.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "5b0cc4d7-2502-5e64-9da9-ff72e242c232",
+          "text": "instead of forcing housing into places that don't want it we need to build housing in the places that do want it",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,951 @@
+You are stance coder 3. You code evidence against the codebook below. You do not search,
+fetch or verify anything: every source you may use is in this message, and code checks your
+labels afterwards. If the evidence a row needs is named but not included here, put it in
+needs_source instead of guessing.
+
+Use only the Write tool, exactly once, to write /Users/chrisandrews/Documents/GitHub/ev-accounts-monroe-stances/backend/data/stance-research/2026-10-07-shadow-pierce-gun-policy-r3/labels/coder-3.json. Write JSON only, matching
+codebook Part E, with "codebook_version": "0.4" and "coder_slot": 3. One row per
+topic below. Every quoted string you write must be copied exactly from a source below.
+
+## Codebook
+
+# Empowered Vote — Stance & Quote Codebook
+
+**Version:** 0.4 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
+fields (confirm-basis spec). The annex
+readings and examples are not yet ruled on. Every label records `codebook_version`.
+**Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
+record fields are required per instrument group, not per passage (V3 "Record fields", Part E), and V3
+carries a worked two-passage vote example.
+**Updated 2026-09-27 (0.3 → 0.3.1 — a new rule coders must apply, amendment-markup spec §5):** text
+inside a `[deleted: …]` fence is removed from the law; it is never the provision, and a coder never
+quotes it as `provision_quote` (V3 "Record fields").
+**Updated 2026-09-27 (0.3.1 → 0.4 — V5 ruling, option B, Chris Andrews):** a record from **either
+chamber of the same legislature** counts for the current seat (a senator's votes and bills from their
+House years). A record from another level of government (a city council, a county, Congress) is still
+valid for that office only. See V5.
+**Clarified 2026-09-30 (still 0.4 — no new variable or value; two existing rules spelled out):** V4.2
+"Silence is not a clause" and "Ruling out the other rungs is not evidence", with register rows H13 and
+H14. Both restate V4 `direction-only` and the CLAUDE.md tiebreaker rule; the version stays 0.4 so
+existing gold keeps counting. The two gold items that prompted them are not named here, so they stay
+certifiable: their coder labels were written before these lines existed.
+**Clarified 2026-10-01 (still 0.4 — no new variable or value; rulings by Chris Andrews):** V5 says
+how a judge's lower-court record is coded (`pre-seating`, with one lever-match exception), and the
+Maloy / `same-sex-marriage` example now reads the RFMA on its operative section (recognition → rung 2;
+its religious section is a savings clause). The version stays 0.4 so existing labels and gold keep
+counting; no gold item turns on either line.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value):** V3 "A record reported only by news is
+not a record", with register row H15. It restates the V3 rule that a record needs the instrument and
+the person's action on it, for the case where the only source of that action is a reporter's sentence.
+The items that prompted it are not named here, for the same reason as H13 and H14.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4 "A study
+directive that states its goal", with register row H16. It decides which existing blank reason a
+`study-directive` row takes; it changes no chair. The item that prompted it is not named here.
+**Clarified 2026-10-02 (still 0.4 — no new variable or value; ruling by Chris Andrews):** V4.2 "The rung's
+object is a clause", with register row H17 and its `climate-change` example. The items that prompted it
+are not named here.
+**Clarified 2026-10-06 (still 0.4 — no new coded variable; ruling by Chris Andrews):** V6 "Evidence
+tier". A chair may still rest on one source, but every published chair carries a tier — `single-source`
+or `corroborated` — that code computes from `rests_on`. Coders code exactly as before.
+**Updated 2026-10-06 (still 0.4 — ruling by Chris Andrews, option B "positions without a lever"):**
+scope now decides **which evidence counts**, not whether a chair can exist. Every level is asked every
+topic unless an exclusion is named; at a level with no lever, only the person's own words can seat a
+chair (V2 "No-lever level"). `scope-unavailable` narrows to the named exclusions (V6). Code computes
+the row's evidence basis, never the coder. The version stays 0.4: no recorded gold turns on the change
+(the two `scope-unavailable` gold rows are `excluded_from_cert`), and own-words rows form their own
+stratum with no gold yet. Memo: `.planning/todos/2026-10-06-positions-without-a-lever.md` (workspace
+root).
+**Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
+**Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
+and a skill or prompt disagree, this file wins; fix the other one.
+**Authorities it consolidates:** CLAUDE.md "Compass chairs are five distinct stances"; stance-program
+spec (2026-09-23) §3, §4, §10; `research-stances` SKILL.md hard rules; `on-the-record`
+`docs/quote-curation/PRINCIPLES.md`, `audit-quotes/CHECKS.md` §4, `CASEBOOK.md`.
+
+> Examples marked **[real]** are taken from rows in `inform.stance_research_review` (Season 1, June
+> 2026). The code shown is what this codebook *would* assign. It is not what was published. Several
+> of those rows were published under older rules; Season 2 research re-codes them.
+
+---
+
+## Part 0 — Frame
+
+### 0.1 Units
+
+- **Unit of analysis:** one *row* = (politician, office, topic, season). The coders code only the
+  season's **served** ladder revision.
+- **Unit of coding:** one *source passage*, meaning one snapshot excerpt, identified by `snapshot_id`.
+- **Quote unit:** one *candidate quote*, a verbatim span inside a snapshot.
+
+### 0.2 What a coder sees, and what it does not see
+
+- **It sees:** this codebook, the topic annex, the served ladder text (all five rungs), the
+  politician's name, office, jurisdiction and term dates, and the snapshot passages.
+- **It does not see:** the collector's opinion, any other coder's label, the chair currently
+  published, the party, or anything about the "usual" position of people like this one.
+- **Party is never evidence.** A coder that uses party, caucus or "voted with the majority" as a basis
+  for anything is wrong on that item (§A6 bad example 2).
+
+### 0.3 Decision order (fixed)
+
+Code the source passages first, one at a time. Then code the row.
+
+```
+per passage:  V1 attribution → V2 relevance → V3 evidence class → V4 shape → V5 time
+              (a disqualifying value at any step ends that passage: it cannot support a chair)
+per row:      V6 chair, using only passages that survived V1–V5
+per quote:    V7 tier → V8 quotable
+```
+
+### 0.4 Principles that override everything below
+
+1. **A blank is a correct answer.** An honest BLANK scores the same as a correct chair. A wrong chair
+   is the only failure that reaches voters.
+2. **Five chairs, not a polarity scale.** Each rung is a distinct stance. Evidence of *direction*
+   (for/against) does not choose between the rungs on one side.
+3. **"The least extreme rung the evidence supports" is a tiebreaker, not evidence.** If you are about
+   to use it, the row is not evidenced: code BLANK `direction-only`.
+4. **Never assume polarity.** Read the rung text. Rung 1 is not always "most government". The annex
+   marks inverted and off-axis topics.
+5. **Scope decides the evidence, per rung (ruling 2026-10-06, option B).** A record needs a lever: a
+   rung that no officeholder at this level can act on cannot be evidenced at this level by a record.
+   It can still be evidenced by the person's own words (V2 "No-lever level"). A voter may want to
+   know a mayor's view on abortion even though she cannot change the law.
+6. **Convergent error is not corroboration.** Two news stories that repeat one press release are one
+   source.
+
+---
+
+## Part A — Stance variables
+
+### V1 Attribution — *is this passage this person's own act or own words?*
+
+| Value | Definition |
+|---|---|
+| `own-words` | First person, or a direct quotation of the person, attributed in the text. |
+| `own-act` | A recorded act of the person: sponsorship, a vote, a veto, a signed filing, an adopted motion. |
+| `third-party-characterization` | Someone else describing the person ("a champion of…", "has long supported…"). |
+| `namesake-unclear` | It cannot be established that this is the same person *in this office*. |
+
+**Rules**
+- Only `own-words` and `own-act` can support a chair.
+- Voice decides, not domain. A campaign site that says "Jane will fight for…" in the third person is a
+  `third-party-characterization` of a promise. Look for the first-person version.
+- A news article's paraphrase is characterization. The article's quotation marks around the person's
+  words are `own-words`.
+- The office and jurisdiction in the passage must match the seat. If they do not, or are absent and
+  the name is common → `namesake-unclear`.
+
+**Good.** A senate press release quoting the president of the senate in his own words on the veto
+override he led. → `own-words` + `own-act`.
+
+**Hard [real].** J. Stuart Adams / `school-vouchers`. The basis says Adams "was a champion of the Utah
+Fits All Scholarship Program (HB215, 2023)", and quotes him in 2024 saying "educational choice is a
+right, not a privilege."
+- "Champion" is a `third-party-characterization`, so it supports nothing on its own.
+- The quotation is `own-words` and can go forward to V2.
+- The fix is to find his own act on HB215 (floor vote, sponsorship) in the legislature's record.
+
+**Hard.** A candidate's questionnaire answer published by a newspaper. → `own-words`: the paper is the
+channel, the words are the candidate's. The same answer summarized by the paper → characterization.
+
+**Bad [real].** Mike Kennedy / `voting-rights`. The only source is a Wikipedia article about the SAVE
+Act. An encyclopedia page about a bill is not the person's act; at most it points to the roll call.
+→ `third-party-characterization`, tagged `pointer` in the snapshot.
+
+---
+
+### V2 Relevance — *does the passage speak to this ladder's question, at this level?*
+
+| Value | Definition |
+|---|---|
+| `on-question` | It addresses the thing the rungs differ on. |
+| `adjacent` | Same policy area, but not the dimension the rungs separate. |
+| `off` | A different question, or the right question for a different office the person also holds. |
+
+**Rules**
+- Test against the **rung text**, not the topic label. `voting-rights` Season 1 is an identification
+  ladder, so a passage about mail ballots is `adjacent`.
+- `adjacent` passages can never support a chair.
+- **Preemption (ruling Q10, 2026-09-26).** A law that forbids another level of government to act
+  decides *which level* may set the rule, not *what* the rule is → `adjacent`, unless a rung is itself
+  about which level decides.
+  - **Refined 2026-09-26:** when the state law removes the very limits a rung names (a rung that says
+    "cut the zoning limits that block building", and a law that voids local zoning limits statewide),
+    it is `on-question` but only `direction-only`. One deregulation law cannot show that the person
+    wants *nothing more* ("rely on the market", "at most") — that is an unproven magnitude → BLANK.
+
+- **No-lever level (ruling 2026-10-06, Chris Andrews, option B).** Read the annex line "Levels that
+  hold a lever" for the rung. If the seat's level is not listed there, the level holds no lever on
+  that rung, and **only the person's own words** (V3 `statement-answer` or `statement-other`) can
+  support it. The prompt also says so per topic ("Evidence basis at this seat's level: OWN WORDS
+  ONLY") when no rung of the topic has a lever at that level.
+  - An act of this office on such a rung cannot enact it. A vote or bill at this level is coded on
+    what its text does, against the rung's clauses; a law on a neighbouring matter is `adjacent`, as
+    anywhere else (no example is given here: the item that prompted this rule is to be re-labelled
+    blind). A resolution that only urges another level to act is V4 `rhetorical`, unless its text
+    states every clause of one rung.
+    _owed:_ whether a member's vote for a resolution that states every clause of a rung counts as
+    their own words (statement class) or stays a record that cannot seat a chair at a no-lever level.
+    Until ruled: code it `statement-other` and let the row go to review.
+  - A record from another level stays `pre-seating` (V5); it is not this person's act in this office.
+  - The election-cycle rule (V5, Q4) applies unchanged.
+  - **Not** this rule: a level the topic is not asked at all (no `compass_topic_roles` row, or a
+    named exclusion). That row is not coded; V6 `scope-unavailable`.
+
+**Good.** `trans-athletes`: a vote to override a veto of a bill that restricts girls' school sports
+teams by sex at birth. The rungs differ exactly on that. → `on-question`.
+
+**Hard [real].** Blake Moore / `childcare`. The evidence is co-sponsorship of a $2,000 newborn tax
+credit and an expanded child tax credit. Season 1 rung 4 is "reducing regulations on childcare
+providers… with limited subsidies reserved for the lowest-income families."
+- A general child tax credit is not a childcare-provider or childcare-subsidy measure. → `adjacent`.
+- It cannot establish rung 4, whose operative clause is deregulation of providers. → Row: BLANK
+  `no-evidence` unless another source exists.
+
+**Hard [real].** Maria Elena Durazo / `voting-rights` / SB 1174 (2023-2024). She voted Aye on a bill
+whose operative section reads "A local government shall not enact or enforce any charter provision,
+ordinance, or regulation requiring a person to present identification for the purpose of voting".
+The ladder asks *what* identification the government should require (rung 1: "Require no
+identification to vote …").
+- The bill decides *which level of government* may set an ID rule. It leaves the state's own rule
+  as it is, and it says nothing about what that rule should be. A legislator can oppose a local
+  patchwork and still favour a state photo-ID law. → `adjacent`.
+- A preemption bill is `on-question` only when a rung is itself about which level decides.
+- 2026-09-25/26: three coders read it as rung 1, twice. Each time, the page mechanics (vote page,
+  bill text, a divided 30–8 tally) were correct, so CONFIRM cannot catch this reading. Only V2 can.
+
+**Bad [real].** Blake Moore / `data-centers`. The quote supports one local data-centre project "with
+environmental safeguards". It says nothing about permitting speed, energy-demand transparency or rate
+impacts, which are the clauses that separate rungs 3, 4 and 5. It is `on-question` only in the sense
+of the topic label. On the rungs → `adjacent`. Coding it as rung 4 ("streamlined permitting") is an
+unevidenced chair.
+
+---
+
+### V3 Evidence class — *what kind of evidence is it?*
+
+| Value | Definition |
+|---|---|
+| `record` | An instrument **plus** the person's action on it: authored, prime-sponsored, co-sponsored, voted yes/no, vetoed, signed into law, filed (a lawsuit, an amicus brief), signed an official letter. The instrument must be named (bill number, ordinance number, docket, case, dated letter). |
+| `statement-answer` | The person's own words **given in answer to this question**: a questionnaire (including one a group published with the candidate's answers), a moderated debate answer to the question, a first-person issue page on their own site, a signed pledge. |
+| `statement-other` | The person's own words matched to the question afterwards: news quotes, interviews, speeches, social posts. |
+| `not-evidence` | Scorecard grades, percentages and endorsements; quizzes; voter-guide summaries not in the person's words; encyclopedia or aggregator pages; advocacy-group profiles. |
+
+**Rules**
+- A record needs a named instrument. "Voted against clean energy mandates" with no instrument →
+  `not-evidence` until the roll call is found. Emit `needs_source` for it.
+- **A record reported only by news is not a record (H15).** "She authored Senate Bill 285" or "he
+  voted against it", written by a reporter, is the reporter's account of a record, not the record. Code
+  that passage by what it is: the person's own quoted words in it are `statement-other`; the
+  reporter's account of the act is context for those words, not a `record` passage, and it cannot
+  carry `record_kind`. Find the record itself (the bill page, the roll call) and code that instead;
+  emit `needs_source` for it. CONFIRM cannot check a record on a news page, because no source profile
+  reads records from one.
+- **Scorecards (Q9, ruled).**
+  - A grade, a percentage or an endorsement is `not-evidence`, and it is not corroboration either.
+    A scorecard is another organization's choice of *which* votes count, with hidden weights, and it
+    often brings back the party signal.
+  - The scorecard **page** is a `pointer`. Follow it to the roll calls it lists, and code each one as
+    a record on its own.
+- **Pledges (Q8, ruled): `statement-answer`.**
+  - The text is the group's, and the person agreed to it, which is how a questionnaire works.
+  - It does **not** outrank the person's later words, because it is not a record.
+  - The election-cycle rule (V5) applies: a pledge signed three campaigns ago → review.
+- **Lawsuits, amicus briefs, signed official letters (Q8, ruled): `record`.** The **legal claim or the
+  letter's demand itself** must match the rung clause in V4. A procedural claim (standing, authority,
+  a deadline) proves nothing about the policy.
+- **Classifying `statement-answer` vs `statement-other`: was there a question?** If the person was
+  answering *this* question (a questionnaire item, a moderator's question, their own issue page
+  heading), it is an answer. If a curator later decided that the words speak to the question, it is
+  `statement-other`. When unsure → `statement-other`.
+- When `record` and a statement conflict, the record wins, and the row is coded
+  `record-vs-statement-conflict` if the conflict decides the chair.
+- **Record fields (0.3).**
+  - `record_kind` is one of `vote` / `sponsor` / `author` / `other-act`. Every `record` passage
+    carries it — the bill-text page of a vote is `vote` too.
+  - `actor_quote` is the words, verbatim, showing this person acted: the Aye/No list segment that
+    contains the surname, or the author/sponsor line. If two members on the page share the surname,
+    or the surname is a common one (Adams, Walker, Smith …), include the initial or first name (for
+    example `Walker G`, or `Watson, R.`).
+  - `tally_quote` is the vote count text, verbatim (for example `Ayes Count 29 Noes Count 8`).
+  - **They are required per record, not per page (ruling 2026-09-26).** All `record` passages on one
+    `instrument` are one record. At least one of them carries `actor_quote`; for a vote, at least one
+    carries `tally_quote`. Put each fact on the page that prints it: `actor_quote` and `tally_quote`
+    on the vote page, `provision_quote` on the page that prints the provision (usually the bill
+    text). A page that does not print a fact carries `null` for it — never copy a fact onto a page
+    that does not show it.
+  - **An amending bill's page keeps deleted text fenced as `[deleted: …]` (amendment-markup spec
+    2026-09-27 §2).** That text is removed from the law — it is never the provision, and never
+    quoted as `provision_quote`. A bill's effect is the added text plus the unchanged text.
+- `instrument` names the bill and the session (for example `SB 1174 (2023-2024)`); every page of
+  one record must name the same instrument.
+
+**Worked example — a vote is two passages.** The vote page names the voter and the count but not
+the provision; the bill text prints the provision but names no voter. Both are in `rests_on`.
+
+| field | vote page (`billVotesClient`, SB 1174) | bill text (`billNavClient`, SB 1174) |
+|---|---|---|
+| `v3_class` / `record_kind` | `record` / `vote` | `record` / `vote` |
+| `instrument` | `SB 1174 (2023-2024)` | `SB 1174 (2023-2024)` |
+| `actor_quote` | `Ayes Archuleta, Ashby, … Dodd, Durazo` | `null` |
+| `tally_quote` | `Ayes Count 30 Noes Count 8` | `null` |
+| `provision_quote` | `null` | `A local government shall not enact or enforce any charter provision, …` |
+
+**Good.** "H.R. 8035, Ukraine Security Supplemental Appropriations Act, 2024 — Yea", from the Clerk's
+roll call. → `record`.
+
+**Hard [real].** Blake Moore / `taxes`: the ATR Taxpayer Protection Pledge. → `statement-answer`
+(Q8). The pledge commits against *any* net tax increase. It can therefore evidence a "no tax increases" rung, but
+it cannot choose between rungs that differ on *which* cuts.
+
+**Bad [real].** Blake Moore / `climate-change`: "scored 0% from the League of Conservation Voters" +
+the LCV scorecard page. → `not-evidence`. The same row's own quote ("if there needs to be some type of
+tax incentive to make sure that they can be on the grid") leans *toward* subsidy, not toward S1 rung 4
+("let market forces drive"). A coder that leans on the scorecard reaches the opposite reading from the
+person's own words.
+
+**Bad [real].** Blake Moore / `civil-rights`: an advocacy group's lawmaker profile and a
+legislator-directory page. → both `not-evidence`.
+
+---
+
+### V4 Shape — *what can this passage prove?*
+
+This variable is the core of the codebook. The stance-program pass-1 measurement is the reason:
+*shape*, not type, predicted which chairs survived audit (authored bill 67%, co-authored 40%, bare vote
+0%, statement alone 0%).
+
+| Value | Definition | Can support a chair? |
+|---|---|---|
+| `chair-shaped` | The operative content matches **every clause** of one rung and excludes the adjacent rungs. | yes |
+| `direction-only` | It shows for/against but does not separate the rungs on that side. | no |
+| `multi-subject` | A vote on a bill with many unrelated parts (omnibus, budget, appropriations, reconciliation). | only via the vote ladder |
+| `procedural` | Cloture, rule, table, recommit, previous question, adjournment. | no |
+| `study-directive` | It orders a study, task force or report. | no |
+| `near-unanimous` | Fewer than 10% of the body voted against. | no, alone |
+| `rhetorical` | Real and attributed, but it names no policy clause ("hateful and divisive"). | no |
+| `off-axis` | It speaks to the topic along a dimension the ladder does not order. | no |
+
+#### V4.1 The vote ladder (ruling 2026-09-25)
+
+A vote does not mean support for every clause of a bill.
+
+| Vote | Can prove |
+|---|---|
+| Amendment / motion to strike / divided question on **the specific provision** | a chair |
+| Final passage of a **single-subject** bill whose operative section matches the rung | a chair |
+| Final passage of a **multi-subject** bill | direction at most. It proves a chair **only** if the person's own statement ties their vote to *that provision* (an explanation of vote, a floor speech). |
+| **No** on a multi-subject bill | nothing. They may have objected to any part. |
+| Procedural | nothing about the policy |
+
+- A coder citing a vote must fill `provision_quote`: the operative text it relies on, verbatim from a
+  snapshot. The gate rejects the label if the text is not in the snapshot.
+- **The operative section governs, not the recital or the short title** (C38, C51).
+- **A study directive that states its goal (H16, ruling 2026-10-02).** A vote for a study does not say
+  what the person hopes it finds, so a study directive is never a chair. Which blank it gives depends
+  on the bill's own text:
+  - The text states no outcome ("study X and report") → the row is BLANK `no-evidence`.
+  - The text states the outcome it seeks — findings that endorse a side ("the Legislature endorses a
+    health care system with unified financing, such as a single-payer health care system"), or a
+    study ordered "with the objective of creating" a named policy → BLANK `direction-only`, on that
+    side. It applies to anyone who acted on the bill, because the stated goal is in the text they
+    voted for; it is clearest for the author.
+  - This does not let a recital carry a chair: the operative section still governs what the bill
+    does, and the stated goal shows only a side.
+- **Sponsorship evidences the bill as filed** (C37). If the bill was amended out of shape, code the
+  version the person acted on.
+- A vote whose `tally_quote` shows fewer than 10% No is `near-unanimous` and cannot carry the chair
+  alone; a claimed vote with no vote page (for example a bill that died in committee) is not a vote.
+
+#### V4.2 Clause completeness
+
+- **Compound rungs need every clause evidenced** (stance-program §4.2). Rung 3 of `social-security`,
+  "small adjustments to **both** benefits **and** taxes", needs evidence on both.
+- **Broader than the instrument** (stance-program R3): an ADU-only bill cannot evidence "upzone broadly
+  to allow multifamily by right". Seat the narrower rung if one exists; otherwise BLANK.
+- **Silence is not a clause** (gold round 5, 2026-09-30). When a rung's clause is a limit or its
+  absence ("at every stage, with no time limit", "without exceptions"), the instrument must *say* it.
+  A text that declares a right and names no limit has not said "no limit"; it has said nothing about
+  limits, and other law may still set them. → `direction-only`.
+- **Ruling out the other rungs is not evidence for the one left** (gold round 5, 2026-09-30). "Not
+  rung 1 (nothing is required), not rung 3 (the law changes), so rung 2" establishes only a side. The
+  remaining rung still needs its own clauses matched — a repeal that *permits* a programme does not
+  "strengthen enforcement". This is the same fault as reaching for "the least extreme option the
+  reasoning supports" (CLAUDE.md): a tiebreaker, not evidence. → `direction-only`, or
+  `compound-partial` when the rung is compound and one clause is met.
+- **The rung's object is a clause (H17, ruling 2026-10-02).** A rung says *what* the government acts on,
+  not only *how*. A mandate with a firm deadline matches the mechanism of `climate-change` rung 1,
+  "Require a shift to **clean energy** through mandates and firm deadlines", only when the thing it
+  mandates is clean energy.
+  - A renewable-procurement standard with dated targets ("44 percent by December 31, 2024 … 60 percent
+    by December 31, 2030" of retail sales from eligible renewable resources) → rung 1, `chair-shaped`.
+  - A greenhouse-gas emissions limit ("reduced to at least 40 percent below … no later than December
+    31, 2030"), or a declared net-zero policy that names carbon capture and removal as paths, names no
+    energy source; it can be met in other ways → BLANK `direction-only` (the pro-action side).
+  - The same test applies on every ladder: match the rung's object, not only its verb.
+
+**Good (calibration A1).** A prime-sponsored bill that *is* "a moratorium on new data centres until the
+utility commission reports". Rung 1 is a moratorium. → `chair-shaped`.
+
+**Good [real].** J. Stuart Adams / `trans-athletes`. He led the 2022 Senate vote to override the
+governor's veto of HB11, a single-subject bill barring transgender girls from girls' school teams.
+S1 rung 4: "require transgender athletes to compete only on teams matching their biological sex
+assigned at birth."
+- The instrument's operative content is rung 4.
+- Rung 5 (a total ban from all sport) is excluded by the bill's own text.
+- → `chair-shaped`. (Check under V5: the act is in-term.)
+
+**Hard [real].** Blake Moore / `ukraine-support`. Yea on H.R. 8035, a Ukraine-specific supplemental
+appropriation, plus his statement that it is "squarely in our national interest".
+- The bill is single-subject enough (Ukraine aid) → `chair-shaped` for *continuing aid*.
+- The rung-2 vs rung-1 boundary is "current levels" vs "increase". The coder must check that the
+  supplemental's size and the rung's magnitude line up.
+- If the annex does not settle whether a supplemental is "current level", code BLANK
+  `direction-only`. **This is the example to rule on for the annex.**
+
+**Hard [real].** Burgess Owens / `redistricting`: a filed federal lawsuit arguing the Elections Clause
+gives map-drawing "exclusively to state legislatures". → `record` (Q8), and the claim in the
+complaint is itself the position (a substantive claim, not a procedural one). It is `chair-shaped` if rung 5 says "legislature alone draws the
+maps". The coder quotes the complaint's claim as `provision_quote`.
+
+**Bad [real] — the omnibus trap.** Mike Kennedy / `school-vouchers`, published as rung 5 (universal
+vouchers). The basis is a Yea on the One Big Beautiful Bill Act (July 2025), a reconciliation bill
+covering taxes, Medicaid, immigration enforcement and more, one part of which created federal
+tax-credit scholarships.
+- → `multi-subject`. His vote proves nothing about the scholarship clause on its own.
+- A tax-credit scholarship is also not "funding follows the student to any school". → `adjacent`
+  on V2 as well.
+- The row needs his own words tying the vote to that clause, **and** a rung that matches the clause.
+  Otherwise → BLANK.
+
+**Bad [real].** Blake Moore / `medicare/aid` and `healthcare`: the same OBBBA vote used as the basis
+for two further rungs. → `multi-subject`, both times. The statements in those rows ("sound policy",
+defending work requirements) are about work requirements, a narrower clause than either rung. →
+`adjacent`.
+
+**Bad (calibration R1).** No on a rebate deal the member disliked. It rules out one end and names no
+chair. → `direction-only`.
+
+**Bad (calibration R6).** "Morally wrong… hateful and divisive." It is verbatim and attributed. →
+`rhetorical`.
+
+---
+
+### V5 Time — *does it describe the person's position now, in this role?*
+
+| Value | Definition |
+|---|---|
+| `in-term` | The act or statement dates from within a term of this office, or from the current campaign for it. **A record** (vote, sponsorship, authorship, a signed act) also counts as `in-term` when it dates from a term in **either chamber of the same legislature** (V5 ruling 2026-09-27, option B). |
+| `pre-seating` | A vote or act from before the person held a seat in this body. A record from **another level of government** (a city council, a county, Congress) is valid for that office only. |
+| `superseded-by-later` | A later passage from the same person states or acts differently. |
+| `undated` | No date can be established. |
+
+**Rules**
+- A **record** has no age limit if it is chair-shaped against the served rung text.
+- **Earlier chamber, same legislature (ruling 2026-09-27, option B).** A person moves between the two
+  chambers of one legislature as the same person, and what they sponsored there is often what elected
+  them to the other. So their earlier-chamber records are coded exactly like in-term records: the vote
+  ladder (V4.1), the near-unanimous rule and `superseded-by-later` all apply unchanged. Code, not the
+  coder, then checks that the earlier term is on file and that the page shows that term's chamber
+  (CONFIRM `prior-service-unverified`, `chamber-not-evidenced`). A statement is not a record: the
+  election-cycle rule below still decides it.
+  - **[real]** John Kavanagh / `school-vouchers`: co-sponsored and voted for AZ HB 2853 (2022) in the
+    House; a State Senator since 2023. → `in-term`; code the act on its content.
+  - A record from a **different level** (city council → legislature, legislature → Congress) is
+    `pre-seating`: the levers differ, so the ladder may not apply at the new level (scope is a per-rung
+    question). Their **own words** from that time are statements, decided by the election-cycle rule
+    below.
+  - **A judge's record on a lower court** (ruling 2026-10-01) is `pre-seating` too: a trial court and
+    an appellate court are different offices with different levers. It counts for the current seat
+    only when the rung's lever is the same at both courts — an opinion that shows the judge's method
+    of interpretation, or the judge's own sealing or access practice — and the coder names that lever
+    in the note.
+  - **Candidates too (ruling 2026-09-27).** A candidate for a seat in a legislature is coded on their
+    record from either chamber of that legislature, exactly as a seated member is — a former
+    representative running for the senate, say. Earlier service comes from
+    `essentials.legislative_service` (CA_0296); CONFIRM checks it the same way.
+- **A statement follows the election cycle (Q4, ruled).** It counts only if it is from one of:
+  - the current term;
+  - the current campaign;
+  - the campaign that seated the person in *this* office.
+
+  An older statement is coded, but the row goes to review (`statement-out-of-cycle`). Code, not the
+  coder, applies this from the dates; the coder records the date it sees.
+- `superseded-by-later` passages are coded but cannot support the chair. The newest evidence governs.
+- A person's position change is not an error. The closed season keeps the old chair.
+- `undated` statements cannot support a chair. `undated` records are looked up (the instrument has a
+  date).
+
+**Hard [real].** Blake Moore / `redistricting`: co-chair of the Better Boundaries campaign in 2017,
+before he was elected in 2020. Campaign work is not a vote, so this is not a pre-seating vote. But it
+is 9 years old, and the source is Wikipedia (V3 `not-evidence`). Find his own recent words; the 2017
+role alone → review.
+
+**Hard [real].** Celeste Maloy / `same-sex-marriage`: in a 2023 candidate debate she said she "would
+have voted yes" on the Respect for Marriage Act. → `own-words`, `statement-answer` (an answer to a moderator's question in a debate; if the only source is an article paraphrasing it, `statement-other`), pre-seating by
+construction (she was a candidate). A hypothetical vote on a named instrument is a strong statement:
+the instrument's **operative** content is the position. The RFMA's operative section is marriage
+recognition; its religious section saves protections that already exist, so it does not show that she
+insists on a carve-out (V4.1: the operative section governs). → Season 2 rung 2, "the same benefits
+and protections as any other marriage", unless her own words stress the religious exemption (ruling
+2026-10-01). It is `in-term` for the campaign that seated her. Note: the served ladder changed between
+Seasons 1 and 2, and her Season 2 value differs. Re-code it against the served S2 rung text; do not
+carry the S1 reading forward.
+
+---
+
+### V6 Chair — *which rung does the surviving evidence establish?* (row level)
+
+**Values:** `1`–`5`, or `BLANK` with exactly one reason:
+
+| BLANK reason | Use when |
+|---|---|
+| `no-evidence` | No passage survived V1–V5. |
+| `direction-only` | The surviving passages separate the sides but not the rungs on one side. |
+| `adjacent-chairs` | Surviving passages establish two different rungs (stance-program R4). |
+| `compound-partial` | The best rung is compound and only some of its clauses are evidenced. |
+| `record-vs-statement-conflict` | The record and the statement point to different rungs, and the record is not itself chair-shaped. |
+| `scope-unavailable` | This level is **not asked** this topic or rung: a named exclusion (no `compass_topic_roles` row for the level, or the annex rules the office out). Normally dropped before coding. Since 2026-10-06 the lack of a lever alone is **not** this reason: own words can still seat the chair (V2 "No-lever level"). |
+
+**Rules**
+- **`rests_on`** lists the snapshot IDs whose passages establish the chair. At least one is required
+  for a numeric chair.
+- **Reasoning:** 1–3 sentences that name the instrument or quote the words, and that cite the rung by
+  its **text**, not by its number.
+- **One instrument can establish chairs across a whole body** (calibration A4) — but only after a
+  cohort pass shows the members are not being separated by language that separates nobody.
+- **Party inference is a bad code** wherever it appears.
+- **Evidence tier (ruling 2026-10-06, Chris Andrews; option C).** One chair-shaped source is enough to
+  seat a chair, but the voter sees how much evidence stands behind it. The tier is **computed by code
+  from the row's `rests_on`, never coded**:
+  - `corroborated` — at least two **independent** sources in `rests_on`, each of which on its own
+    supports the chair (its passage is `chair-shaped` for that rung, or, for a vote, passes the V4.1
+    vote ladder for it).
+  - `single-source` — anything else that seats a chair.
+  - **Independent** means a different instrument (record passages on one instrument are one source —
+    the instrument group of V3), or a different occasion of the person's own words. Two reports of one
+    statement, or news repeating one press release, are one source (principle 6).
+  - **Two statements on one day (ruling 2026-10-06, Chris Andrews).** A date is not an occasion: a
+    debate answer and a questionnaire on the same day are two occasions. Two same-day statements count
+    as two sources only if (1) both are the person's own words on a first-party page, not news or a
+    pointer; (2) they are on different snapshots; and (3) their texts do not overlap — one page does
+    not reprint the other's words. News on that day adds no source.
+  - _owed:_ whether the person's own explanation of a vote counts as a second source for that same
+    vote, or as the same act. Until ruled, it is the same act (one source).
+  - A tier never upgrades a blank: two `direction-only` sources are still BLANK `direction-only`.
+- **Evidence basis (ruling 2026-10-06, Chris Andrews; option B).** Computed by code, never coded, from
+  `compass_topic_roles.evidence_basis` for the topic at the seat's level (CA_0302): `record` (the
+  level holds a lever) or `own-words` (it holds none). It is not shown to voters: they see the sources
+  (the evidence chain). It splits the reliability strata — a certification measured on `record` rows
+  never covers `own-words` rows — and an own-words chair goes to review until its own stratum is
+  certified. A chair from own words is compared with the voter's view like any other chair.
+
+**Good (calibration A3).** A council appointee's vacancy-application packet, published by the city,
+answers the ladder's question in his own words. It matches one rung clause for clause. → that rung.
+
+**Hard [real].** Celeste Maloy / `social-security`. Her 2024 voter-guide answer supported "gradually
+raising the retirement age"; in 2026 she said "everything's on the table", including lifting the cap.
+- The first statement is benefit-side only.
+- The second is `rhetorical`: "on the table" is not a position.
+- S1 rung 3 ("small adjustments to **both** benefits **and** taxes") is compound.
+- → BLANK `compound-partial`. Rung 4 is not established either: "raise the retirement age" is
+  one clause of rung 4, and "reduce benefits for higher earners" is unevidenced.
+
+**Hard [real].** Burgess Owens / `social-security`: co-sponsored the Social Security Fairness Act
+(repealed WEP/GPO, a benefit expansion for a specific group) and said lawmakers "must be willing to
+reform" the program.
+- The Act increases benefits for one group and has no tax side.
+- Rung 3 is compound (benefits and taxes); rung 2 is "increase benefits modestly **while** raising
+  taxes on higher earners".
+- → BLANK `compound-partial`.
+
+**Bad [real] — party inference.** Celeste Maloy / `trans-athletes`. Basis: "voted with the Republican
+caucus on this party-line vote. She has not expressed any dissent." Neither cited source is the roll
+call.
+- → Every passage fails V1 (no own act in the snapshot), and the reasoning uses the caucus as evidence.
+- → BLANK `no-evidence`. The right fix: fetch the Clerk's roll call for H.R. 28 (2025), which is
+  single-subject and `chair-shaped` for rung 4. It would then be a good example.
+
+**Bad [real].** Mike Kennedy / `voting-rights`. The SAVE Act requires documentary proof of citizenship
+to *register*. S1 rung 4 is "require photo ID for **voting** and regularly update voter rolls". Proof
+of citizenship at registration is a different clause. → V2 `adjacent`, V6 BLANK `no-evidence` (or the
+annex adds a rung that names it).
+
+---
+
+## Part B — Quote variables
+
+These variables apply to every **candidate quote** the collector surfaces, for Read & Rank and for the
+"Why this position?" citation.
+
+### V7 Tier — *what does the quote commit the speaker to?*
+
+The vocabulary is the on-the-record evidence program's.
+
+| Value | Definition |
+|---|---|
+| `lever` | It names a means that passes **both** T1 and T2, below. |
+| `direction` | A contestable lean whose means fails T2 ("remove regulations", "be tougher on…"). |
+| `none` | A shared goal, a diagnosis, a record or accomplishment, a complaint, biography, a slogan. |
+
+**The lever tests (Q5, ruled 2026-09-25).** Name the goal the quote serves, then apply:
+
+- **T1, the opponent test:** could a candidate *who holds the same goal* reasonably choose a different
+  means? If not, the "means" is the shared goal phrased as an action → `none`.
+- **T2, the accountability test:** could a voter later check whether the person *did it*? If not, the
+  means is too vague to hold anyone to → `direction`.
+
+A quote is `lever` only if it passes both. When the lever names a specific instrument (a law, a rule,
+a program, an agency action, a waiver, a budget line), also set `v7_flag = "lever-named"`. That tag
+is useful for display and for chair evidence; it is not required for rankability.
+
+This settles the disagreement between PRINCIPLES.md:139 ("build shelters" is a lever) and the
+decomposition spec (broad actions are not instruments):
+- "Build shelters" passes T1 (an opponent can prefer housing first) and T2 (shelter beds can be
+  counted) → `lever`.
+- "Build more housing", where every candidate says it, fails T1 → `none`.
+- "Triple housing construction" fails T1 (a target on a shared goal) unless the passage names how →
+  `none`.
+
+T1 is relative to the question and the race, not to the words. The coder uses the other candidates'
+passages when the collector supplies them; otherwise it sets `v7_flag = "lever-unclear"`.
+
+**Graded examples [real, `essentials.quotes`, Steve Hilton unless noted]**
+
+| # | Quote (short) | T1 | T2 | Code |
+|---|---|---|---|---|
+| 1 | "repeal the low-carbon fuel standard… change the refinery regulations" | yes | yes | `lever`, `lever-named` |
+| 2 | "a waiver from the Medicaid IMD rule that stops any institution with more than 16 beds…" | yes | yes | `lever`, `lever-named` |
+| 3 | "instructing the California Department of Geologic and Energy Management to… issue permits" | yes | yes | `lever`, `lever-named` |
+| 4 | "it is illegal to live and camp on the streets. We need to enforce the law… drug treatment… cannot be a choice" | yes (vs Becerra's "Housing First approaches… paired… with treatment") | yes | `lever` |
+| 5 | "If a community doesn't want a data center, there shouldn't be someone forcing that data center in there" | yes (vs state siting authority) | only if the passage says how (e.g., a local veto) | `direction` as quoted |
+| 6 | "We could get that back by removing regulations" (AI) | yes | no — which regulations? | `direction` |
+| 7 | "Government's role is to facilitate rather than provide…" (childcare) | yes | no | `direction` |
+| 8 | "common sense on climate change, not ideology" | — | — | `none` |
+
+⚠ **Two currently selected Read & Rank quotes code as not rankable** under this rule:
+- climate-change: #8;
+- economic-development: "California's policy regime should be unequivocally on the side of job- and
+  wealth-creators" → `direction`.
+
+A quote re-audit should review them. This codebook does not change them.
+
+**Good (lever).** "We must build much more housing. That includes… deed-restricted affordable,
+market-rate, social housing, and shelters." (PRINCIPLES.md). The second sentence names the means, so
+keep both sentences in the quote.
+
+**Hard [real, tier_gold_v1].** "I actually really believe in shelter and shelter is an urgent
+response. We've tripled the number of shelter beds…" The labeler wrote: "a mix of record and beliefs.
+I'm saying lever, but I'm not sure." Under the test: "shelter as the urgent response" is a means an
+opponent (housing-first) rejects → `lever`. The "tripled beds" clause is record → it does not add to
+the tier.
+
+**Hard [real, tier_gold_v1].** "I've… created the first real performance data… on our homelessness
+system." The labeler hesitated between direction and lever. Under the test: "manage by performance
+data" is a means few would reject → `direction`.
+
+**Bad → none [real, tier_gold_v1].** "We only have a third of the shelter that we need…" A diagnosis.
+The labeler: "more complaining" than proposing. → `none`.
+
+### V8 Quotable — *may this quote be shown?*
+
+`yes`, or one or more reason codes. The codes are the `audit-quotes` check IDs, so the two systems
+share one vocabulary.
+
+| Code | Meaning (full rule in `audit-quotes/CHECKS.md` §4) |
+|---|---|
+| `not-forward` | Record or retrospective, not what they would do. |
+| `is-attack` | Attacks a person rather than a policy or office. |
+| `off-question` | Does not answer the ranking question (not the topic label). |
+| `misleading-verbatim` | Word-for-word, but the cut changes the meaning in context. |
+| `source-not-an-answer` | Curator-extracted from a passage that was not an answer to this question. |
+| `deid-dishonest` | The blind version changes the position, or hides a load-bearing identity. |
+| `non-differentiating-goal` | V7 = `none` because of a shared goal. Flag for a human; do not gate. |
+
+**Rules**
+- The quote must be verbatim in its snapshot. That is a code check, not a coder judgment.
+- Trimming follows `publish-quotes/EDITORIAL.md`: marked cuts `…`, inserts `[ ]`, no reordering, no
+  cut of a load-bearing qualifier.
+- A quote can be quotable for the "Why this position?" citation and still not rankable in Read & Rank.
+  Rankable needs V7 = `lever` (and a certified quote stratum before any auto-promotion).
+
+---
+
+## Part C — Per-topic annex (template + one example)
+
+One file per open-season topic: `docs/codebook/annex/<topic_key>.md`. Written against the **served**
+revision. A new revision gets a new annex version.
+
+**Template**
+
+```
+# <topic_key> — served revision <id> (Season N)
+Orientation: standard | inverted | off-axis — one sentence why.
+Levels with a lever: federal / state / local / school — records and own words count here
+Asked at: every level unless excluded (compass_topic_roles); a level asked but not listed above is own words only
+Synonyms: statute or program names the state uses for this topic (e.g. "Medical Assistance Program" for Medicaid in Maryland)
+Per rung:
+  <n>. "<rung text>"
+     Operative clauses: [a] … [b] …
+     Establishing evidence looks like: …
+     Levels that hold a lever: …
+     Known chair-shaped instruments: …
+     Commonly confused with rung <m> because …
+Hard cases: …
+```
+
+**Example:** [`annex/school-vouchers.md`](annex/school-vouchers.md).
+
+---
+
+## Part D — Hard-case register
+
+Every row where the coders split, or where a person's blind answer differed from their final one,
+adds an entry here: situation → code → rule → gold item ID. Items listed here are
+`excluded_from_cert` (leakage).
+
+| # | Situation | Code | Rule | Source |
+|---|---|---|---|---|
+| H1 | Yea on a reconciliation bill that contains the clause | V4 `multi-subject` | V4.1 | [real] Kennedy / school-vouchers |
+| H2 | Party-line vote given as the only basis, and no roll call in the sources | V1 fail; BLANK `no-evidence` | 0.2, V6 | [real] Maloy / trans-athletes |
+| H3 | Scorecard beside a quote that points the other way | V3 `not-evidence` | V3 | [real] Moore / climate-change |
+| H4 | A hypothetical vote on a named bill, said as a candidate | `statement-answer`, the instrument is the content | V5 | [real] Maloy / same-sex-marriage |
+| H5 | A compound rung with one side evidenced | BLANK `compound-partial` | V4.2 | [real] Owens, Maloy / social-security |
+| H6 | A child tax credit coded on a childcare-provider rung | V2 `adjacent` | V2 | [real] Moore / childcare |
+| H7 | A filed lawsuit as the position | `record`; the substantive claim must match the rung (Q8) | V3 | [real] Owens / redistricting |
+| H8 | A signed pledge | `statement-answer` (Q8), limited shape | V3 | [real] Moore / taxes |
+| H9 | "Shelter is the urgent response" + a record | V7 `lever` | V7 T1+T2 | [real] tier_gold_v1 |
+| H10 | "Remove regulations" with none named | V7 `direction` (fails T2) | V7 T2 | [real] Hilton / ai-regulation |
+| H11 | Local-control principle without a mechanism | V7 `direction` | V7 T2 | [real] Hilton / data-centers |
+| H12 | A bill that forbids another level of government to act (preemption) coded as the rule itself | V2 `adjacent` | V2 | [real] Durazo / voting-rights (SB 1174) |
+| H13 | A declared right with no stated limit coded as the "no limit" rung | V4 `direction-only` | V4.2 "Silence is not a clause" | gold round 5 (item withheld; coded before this entry) |
+| H14 | A chair reached by excluding every other rung, with the remaining rung's clause unmatched | BLANK `direction-only` / `compound-partial` | V4.2 "Ruling out the other rungs" | gold round 5 (item withheld; coded before this entry) |
+| H15 | A news sentence that reports the person's vote or authorship, coded as a `record` | the quoted words → `statement-other`; the reported act → context only, `needs_source` | V3 "A record reported only by news" | gold round 14 (items withheld; coded before this entry) |
+| H16 | A study directive whose findings or stated objective endorse a side, coded `no-evidence` | BLANK `direction-only` (a study with no stated outcome stays `no-evidence`) | V4.1 "A study directive that states its goal" | gold round 15 (item withheld; coded before this entry) |
+| H17 | An emissions limit coded as `climate-change` rung 1 ("a shift to clean energy") | BLANK `direction-only`; a renewable-procurement standard with dates stays rung 1 | V4.2 "The rung's object is a clause" | gold round 17 (items withheld; coded before this entry) |
+
+---
+
+## Part E — Coder output schema (`labels/coder-N.json`)
+
+```json
+{
+  "codebook_version": "0.3",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "uuid",
+      "office_id": "uuid",
+      "topic_id": "uuid",
+      "served_revision_id": "uuid",
+      "passages": [
+        {
+          "snapshot_id": "uuid",
+          "v1_attribution": "own-words | own-act | third-party-characterization | namesake-unclear",
+          "v2_relevance": "on-question | adjacent | off",
+          "v3_class": "record | statement-answer | statement-other | not-evidence",
+          "date": "YYYY-MM-DD | YYYY-MM | YYYY | null",
+          "v4_shape": "chair-shaped | direction-only | multi-subject | procedural | study-directive | near-unanimous | rhetorical | off-axis",
+          "v5_time": "in-term | pre-seating | superseded-by-later | undated",
+          "instrument": "H.R. 8035 (118th) | null",
+          "provision_quote": "verbatim operative text from this snapshot | null",
+          "note": "≤ 1 sentence",
+          "record_kind": "vote | sponsor | author | other-act | null",
+          "actor_quote": "verbatim span showing this person acted | null",
+          "tally_quote": "verbatim vote count text | null"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": ["snapshot uuid"],
+      "reasoning": "1–3 sentences; names the instrument or quotes the words; cites the rung by its text",
+      "needs_source": ["e.g. Clerk roll call, H.R. 28 (119th), final passage"],
+      "quotes": [
+        {
+          "snapshot_id": "uuid",
+          "text": "verbatim span",
+          "v7_tier": "lever | direction | none",
+          "v7_flag": "lever-named | lever-unclear | null",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}
+```
+
+**Invariants (code-checked):**
+- `v6_value` is null **iff** `v6_blank_reason` is set.
+- A numeric `v6_value` requires `rests_on` to have at least one entry, and every entry must be a
+  passage whose V1–V5 values all allow a chair.
+- Every `provision_quote` and every quote `text` is verbatim in its snapshot.
+- Every value is from the lists above.
+- A `record` passage (`v3_class = "record"`) requires `record_kind`. Per instrument group (all
+  `record` passages of the row on one `instrument`), at least one passage carries a non-empty
+  `actor_quote`, and a group that is a `vote` has at least one non-empty `tally_quote` (ruling
+  2026-09-26). `actor_quote` and `tally_quote`, when present, are verbatim in their snapshot.
+
+
+## The person
+
+politician_id: 72dd5219-490f-48bb-986e-183a6098d602  office_id: 7b3f68ef-bd9b-4316-9e39-89091b6e9aa1
+Matt Pierce — Representative, Indiana (seated, level: state)
+Current term: 2002-01-01 (precision: year) to present
+
+## Topics (served ladder text — code against these words only)
+
+### topic_key: gun-policy
+topic_id: 56125933-b82a-46c5-847b-b2e9a146b89f  served_revision_id: 44615418-e111-4f2f-a256-92fcf74b0f2f
+Question: How should the government regulate firearms?
+  1. Ban civilian firearm ownership, except for tightly licensed hunting and sport use.
+  2. Ban semi-automatic assault-style weapons, while allowing other firearms.
+  3. Allow all types of firearms, but require universal background checks on every sale.
+  4. Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across state lines.
+  5. Repeal major gun restrictions and let adults carry a firearm without a permit.
+
+#### Annex
+
+# gun-policy — served revision 44615418-e111-4f2f-a256-92fcf74b0f2f (Season 2)
+
+**Status:** draft (2026-10-01). Lines marked _(ruled …)_ carry an operator ruling (Chris Andrews).
+Lines marked _(proposed)_ are a drafter's reading, not yet ruled. No `_owed:_` line is open. The season pin is an older revision (`1a72d5df-…`); coders code the
+served text below.
+
+**Question:** "How should the government regulate firearms?"
+
+**Orientation:** standard. Rung 1 is the most restriction (a ban on civilian ownership), rung 5 the
+least (repeal major restrictions, carry without a permit). The rungs order **how far the law
+restricts which firearms civilians may own, buy and carry**. Each person sits at the furthest line
+they would go: someone who wants universal checks **and** an assault-weapons ban wants more than
+rung 3 allows ("all types"), so sits at rung 2.
+
+**Levels with a lever:** federal, local, state. The lever is state and federal
+law. Most states forbid local gun ordinances, so a local lever exists only where state law allows one.
+
+**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).
+
+**Synonyms:** "assault weapon", "assault-style", "semi-automatic", "large-capacity magazine",
+"universal background checks", "private sale", "gun-show loophole", "transfer", "concealed carry",
+"permitless carry" / "constitutional carry", "reciprocity", "National Firearms Act" (NFA),
+"suppressor", "red flag" / "extreme risk protection order", "safe storage", "ghost gun".
+
+1. **"Ban civilian firearm ownership, except for tightly licensed hunting and sport use."**
+   - Means: civilians may not own firearms, apart from tightly licensed hunting and sport guns.
+   - Operative clauses: [a] ban civilian ownership; [b] the only exception is tightly licensed hunting
+     and sport use.
+   - Establishing evidence looks like: own words or an instrument that bans civilian ownership in
+     general. A ban on one class of firearm is not this rung.
+   - Levels that hold a lever: federal; state.
+   - Known chair-shaped instruments: _(none on file)_.
+   - Commonly confused with rung 2: a broad assault-weapons ban is still a ban on one class.
+
+2. **"Ban semi-automatic assault-style weapons, while allowing other firearms."**
+   - Means: assault-style semi-automatic weapons are banned; other firearms stay legal.
+   - Operative clauses: [a] ban semi-automatic assault-style weapons; [b] allow other firearms.
+   - Establishing evidence looks like: a single-subject assault-weapons ban. A ban written as a
+     definition or list of the banned weapons meets [b]: the definition is the boundary, and the
+     instrument leaves other firearms legal.
+   - A bill that extends an existing assault-weapons ban to more weapons → rung 2.
+   - Levels that hold a lever: federal; state; local where state law allows.
+   - Known chair-shaped instruments: the Assault Weapons Ban of 2025 (S.1531 / H.R.3115), named in the
+     topic note _(proposed: chair-shaped as filed)_.
+   - A **magazine-capacity limit** alone is not a ban on a class of weapon → `direction-only`
+     _(proposed)_.
+
+3. **"Allow all types of firearms, but require universal background checks on every sale."**
+   - Means: no type of firearm is banned, and every sale, private sales included, needs a background
+     check.
+   - Operative clauses: [a] allow all types of firearms; [b] universal background checks on every
+     sale.
+   - Establishing evidence looks like: a universal-checks bill **plus** evidence that the person
+     opposes bans on a type of firearm (a No on an assault-weapons ban, own words). [a] must be shown;
+     a checks bill is silent on bans (V4.2 "Silence is not a clause"). Compound: one side only →
+     `compound-partial`. Not finding a ban cosponsorship is not evidence for [a] (H14) _(ruled 2026-10-01)_.
+   - Levels that hold a lever: federal; state.
+   - Known chair-shaped instruments: _(none on file)_. The Background Check Expansion Act (S.3214),
+     named in the topic note, meets [b] only.
+   - Checks for some sales only (gun shows, buyers under 21) are not "every sale" → `direction-only`
+     _(proposed)_.
+
+4. **"Add no new restrictions, and at most loosen rules on carrying, such as honoring permits across
+   state lines."**
+   - Means: keep current gun laws, with no new limits; the furthest change is easier carrying, such
+     as recognizing other states' carry permits.
+   - Operative clauses: [a] no new restrictions; [b] at most, loosen carry rules (the major laws
+     stay).
+   - Establishing evidence looks like: own words against new restrictions, and a record that loosens
+     carry rules without repealing major laws. The 4 / 5 line is whether the major laws stay _(ruled
+     2026-09-08)_.
+   - Levels that hold a lever: federal; state.
+   - Known chair-shaped instruments: _(none on file)_. The Constitutional Concealed Carry Reciprocity
+     Act (S.65 / H.R.38), named in the topic note, meets the "loosen carry" part of [b].
+   - A reciprocity bill as the only record → BLANK `direction-only`. It meets the "loosen carry"
+     part of [b], but one loosening law cannot show "at most" (V2, 2026-09-26) or "no new
+     restrictions" (V4.2). Seat rung 4 only with a second passage: own words, or a recorded vote
+     against a new restriction or against a repeal. This replaces the 2026-09-08 seating rule _(ruled 2026-10-01)_.
+   - Not finding a rung-5 record is not evidence for rung 4 (V4.2 "Ruling out the other rungs").
+
+5. **"Repeal major gun restrictions and let adults carry a firearm without a permit."**
+   - Means: repeal the major gun laws, and let adults carry with no permit.
+   - Operative clauses: [a] repeal major gun restrictions; [b] permitless carry for adults.
+   - Establishing evidence looks like: a repeal of a major restriction (for example the federal NFA
+     rules on suppressors or short-barrelled rifles, a state registration or assault-weapons ban)
+     **and** permitless carry _(proposed)_. Compound: one side only → `compound-partial` (V4.2). For a
+     state officeholder, see the state rule below.
+   - Levels that hold a lever: federal; state.
+   - Known chair-shaped instruments: _(none on file)_.
+   - **For a state officeholder**, a state law that removes the state's license or permit to carry
+     meets **both** clauses: the carry license is the major restriction the state controls → rung 5.
+     **For a federal officeholder**, [a] still needs repeal of major federal laws; a federal
+     permitless-carry or reciprocity measure alone → `compound-partial` _(ruled 2026-10-01)_.
+
+**Hard cases:**
+- **Rules about how guns are stored, marketed or advertised** (safe storage, advertising to minors)
+  do not say which guns may be owned or who may buy them → V2 `adjacent`; BLANK `no-evidence` when
+  nothing else survives. A Yea and a No on such a bill are the same: the direction of the vote does
+  not make it on-question.
+- **Red-flag laws, waiting periods, minimum ages, ghost-gun rules** restrict but do not match a rung
+  clause → `direction-only` _(proposed)_.
+- **Preemption (codebook V2, H12).** A state law that voids local gun ordinances decides which level
+  may act → `adjacent`.
+- **Budget and omnibus votes** with a firearms item → V4 `multi-subject`.
+
+
+## Sources
+
+---
+snapshot_id: 3f14c3ac-5832-5af5-afa8-e129ce6e76ca
+source_kind: public-record
+url: https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/HB1296.04.ENRS.pdf
+
+Second Regular Session of the 122nd General Assembly (2022) PRINTING CODE. Amendments: Whenever an existing statute (or a section of the Indiana Constitution) is being amended, the text of the existing provision will appear in this style type, additions will appear in this style type , and deletions will appear in [deleted: this style type.] Additions: Whenever a new statutory provision is being enacted (or a new constitutional provision adopted), the text of the new provision will appear in this style type . Also, the word NEW will appear in that style type in the introductory clause of each SECTION that adds a new provision to the Indiana Code or the Indiana Constitution. Conflict reconciliation: Text in a statute in this style type or [deleted: this style type] reconciles conflicts between statutes enacted by the 2021 Regular Session of the General Assembly. HOUSE ENROLLED ACT No. 1296 AN ACT to amend the Indiana Code concerning criminal law and procedure. Be it enacted by the General Assembly of the State of Indiana: SECTION 1. IC 5-2-1-9, AS AMENDED BY P.L.187-2021, SECTION 5, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 9. (a) The board shall adopt in accordance with IC 4-22-2 all necessary rules to carry out the provisions of this chapter. The rules, which shall be adopted only after necessary and proper investigation and inquiry by the board, shall include the establishment of the following: (1) Minimum standards of physical, educational, mental, and moral fitness which shall govern the acceptance of any person for training by any law enforcement training school or academy meeting or exceeding the minimum standards established pursuant to this chapter. (2) Minimum standards for law enforcement training schools administered by towns, cities, counties, law enforcement training centers, agencies, or departments of the state. (3) Minimum standards for courses of study, attendance requirements, equipment, and facilities for approved town, city, county, and state law enforcement officer, police reserve officer, and conservation reserve officer training schools. (4) Minimum standards for a course of study on cultural diversity awareness, including training on the U nonimmigrant visa created HEA 1296 — CC 1 2 through the federal Victims of Trafficking and Violence Protection Act of 2000 (P.L. 106-386) that must be required for each person accepted for training at a law enforcement training school or academy. Cultural diversity awareness study must include an understanding of cultural issues related to race, religion, gender, age, domestic violence, national origin, and physical and mental disabilities. (5) Minimum qualifications for instructors at approved law enforcement training schools. (6) Minimum basic training requirements which law enforcement officers appointed to probationary terms shall complete before being eligible for continued or permanent employment. (7) Minimum basic training requirements which law enforcement officers appointed on other than a permanent basis shall complete in order to be eligible for continued employment or permanent appointment. (8) Minimum basic training requirements which law enforcement officers appointed on a permanent basis shall complete in order to be eligible for continued employment. (9) Minimum basic training requirements for each person accepted for training at a law enforcement training school or academy that include six (6) hours of training in interacting with: (A) persons with autism, mental illness, addictive disorders, intellectual disabilities, and developmental disabilities; (B) missing endangered adults (as defined in IC 12-7-2-131.3); and (C) persons with Alzheimer's disease or related senile dementia; to be provided by persons approved by the secretary of family and social services and the board. The training must include an overview of the crisis intervention teams. (10) Minimum standards for a course of study on human and sexual trafficking that must be required for each person accepted for training at a law enforcement training school or academy and for inservice training programs for law enforcement officers. The course must cover the following topics: (A) Examination of the human and sexual trafficking laws (IC 35-42-3.5). (B) Identification of human and sexual trafficking. (C) Communicating with traumatized persons. (D) Therapeutically appropriate investigative techniques. (E) Collaboration with federal law enforcement officials. HEA 1296 — CC 1 3 (F) Rights of and protections afforded to victims. (G) Providing documentation that satisfies the Declaration of Law Enforcement Officer for Victim of Trafficking in Persons (Form I-914, Supplement B) requirements established under federal law. (H) The availability of community resources to assist human and sexual trafficking victims. (11) Minimum standards for ongoing specialized, intensive, and integrative training for persons responsible for investigating sexual assault cases involving adult victims. This training must include instruction on: (A) the neurobiology of trauma; (B) trauma informed interviewing; and (C) investigative techniques. (12) Minimum standards for de-escalation training. De-escalation training shall be taught as a part of existing use-of-force training and not as a separate topic. (b) A law enforcement officer appointed after July 5, 1972, and before July 1, 1993, may not enforce the laws or ordinances of the state or any political subdivision unless the officer has, within one (1) year from the date of appointment, successfully completed the minimum basic training requirements established under this chapter by the board. If a person fails to successfully complete the basic training requirements within one (1) year from the date of employment, the officer may not perform any of the duties of a law enforcement officer involving control or direction of members of the public or exercising the power of arrest until the officer has successfully completed the training requirements. This subsection does not apply to any law enforcement officer appointed before July 6, 1972, or after June 30, 1993. (c) Military leave or other authorized leave of absence from law enforcement duty during the first year of employment after July 6, 1972, shall toll the running of the first year, which shall be calculated by the aggregate of the time before and after the leave, for the purposes of this chapter. (d) Except as provided in subsections (e), (m), (t), and (u), a law enforcement officer appointed to a law enforcement department or agency after June 30, 1993, may not: (1) make an arrest; (2) conduct a search or a seizure of a person or property; or (3) carry a firearm; unless the law enforcement officer successfully completes, at a board HEA 1296 — CC 1 4 certified law enforcement academy or at a law enforcement training center under section 10.5 or 15.2 of this chapter, the basic training requirements established by the board under this chapter. (e) This subsection does not apply to: (1) a gaming agent employed as a law enforcement officer by the Indiana gaming commission; or (2) an: (A) attorney; or (B) investigator; designated by the securities commissioner as a police officer of the state under IC 23-19-6-1(k). Before a law enforcement officer appointed after June 30, 1993, completes the basic training requirements, the law enforcement officer may exercise the police powers described in subsection (d) if the officer successfully completes the pre-basic course established in subsection (f). Successful completion of the pre-basic course authorizes a law enforcement officer to exercise the police powers described in subsection (d) for one (1) year after the date the law enforcement officer is appointed. (f) The board shall adopt rules under IC 4-22-2 to establish a pre-basic course for the purpose of training: (1) law enforcement officers; (2) police reserve officers (as described in IC 36-8-3-20); and (3) conservation reserve officers (as described in IC 14-9-8-27); regarding the subjects of arrest, search and seizure, the lawful use of force, de-escalation training, interacting with individuals with autism, and the operation of an emergency vehicle. The pre-basic course must be offered on a periodic basis throughout the year at regional sites statewide. The pre-basic course must consist of at least forty (40) hours of course work. The board may prepare the classroom part of the pre-basic course using available technology in conjunction with live instruction. The board shall provide the course material, the instructors, and the facilities at the regional sites throughout the state that are used for the pre-basic course. In addition, the board may certify pre-basic courses that may be conducted by other public or private training entities, including postsecondary educational institutions. (g) Subject to subsection (h), the board shall adopt rules under IC 4-22-2 to establish a mandatory inservice training program for police officers and police reserve officers (as described in IC 36-8-3-20). After June 30, 1993, a law enforcement officer who has satisfactorily completed basic training and has been appointed to a law enforcement department or agency on either a full-time or part-time HEA 1296 — CC 1 5 basis is not eligible for continued employment unless the officer satisfactorily completes the mandatory inservice training requirements established by rules adopted by the board. Inservice training must include de-escalation training. Inservice training must also include training in interacting with persons with mental illness, addictive disorders, intellectual disabilities, autism, developmental disabilities, and Alzheimer's disease or related senile dementia, to be provided by persons approved by the secretary of family and social services and the board, and training concerning human and sexual trafficking and high risk missing persons (as defined in IC 5-2-17-1). The board may approve courses offered by other public or private training entities, including postsecondary educational institutions, as necessary in order to ensure the availability of an adequate number of inservice training programs. The board may waive an officer's inservice training requirements if the board determines that the officer's reason for lacking the required amount of inservice training hours is due to either an emergency situation or the unavailability of courses. (h) This subsection applies only to a mandatory inservice training program under subsection (g). Notwithstanding subsection (g), the board may, without adopting rules under IC 4-22-2, modify the course work of a training subject matter, modify the number of hours of training required within a particular subject matter, or add a new subject matter, if the board satisfies the following requirements: (1) The board must conduct at least two (2) public meetings on the proposed modification or addition. (2) After approving the modification or addition at a public meeting, the board must post notice of the modification or addition on the Indiana law enforcement academy's Internet web site at least thirty (30) days before the modification or addition takes effect. If the board does not satisfy the requirements of this subsection, the modification or addition is void. This subsection does not authorize the board to eliminate any inservice training subject matter required under subsection (g). (i) The board shall also adopt rules establishing a town marshal basic training program, subject to the following: (1) The program must require fewer hours of instruction and class attendance and fewer courses of study than are required for the mandated basic training program. (2) Certain parts of the course materials may be studied by a candidate at the candidate's home in order to fulfill requirements of the program. HEA 1296 — CC 1 6 (3) Law enforcement officers successfully completing the requirements of the program are eligible for appointment only in towns employing the town marshal system (IC 36-5-7) and having not more than one (1) marshal and two (2) deputies. (4) The limitation imposed by subdivision (3) does not apply to an officer who has successfully completed the mandated basic training program. (5) The time limitations imposed by subsections (b) and (c) for completing the training are also applicable to the town marshal basic training program. (6) The program must require training in interacting with individuals with autism. (j) The board shall adopt rules under IC 4-22-2 to establish an executive training program. The executive training program must include training in the following areas: (1) Liability. (2) Media relations. (3) Accounting and administration. (4) Discipline. (5) Department policy making. (6) Lawful use of force and de-escalation training. (7) Department programs. (8) Emergency vehicle operation. (9) Cultural diversity. (k) A police chief shall apply for admission to the executive training program within two (2) months of the date the police chief initially takes office. A police chief must successfully complete the executive training program within six (6) months of the date the police chief initially takes office. However, if space in the executive training program is not available at a time that will allow completion of the executive training program within six (6) months of the date the police chief initially takes office, the police chief must successfully complete the next available executive training program that is offered after the police chief initially takes office. (l) A police chief who fails to comply with subsection (k) may not continue to serve as the police chief until completion of the executive training program. For the purposes of this subsection and subsection (k), "police chief" refers to: (1) the police chief of any city; (2) the police chief of any town having a metropolitan police department; and (3) the chief of a consolidated law enforcement department HEA 1296 — CC 1 7 established under IC 36-3-1-5.1. A town marshal is not considered to be a police chief for these purposes, but a town marshal may enroll in the executive training program. (m) A fire investigator in the department of homeland security appointed after December 31, 1993, is required to comply with the basic training standards established under this chapter. (n) The board shall adopt rules under IC 4-22-2 to establish a program to certify handgun safety courses, including courses offered in the private sector, that meet standards approved by the board for training probation officers in handgun safety as required by [deleted: IC 11-13-1-3.5(3).] IC 11-13-1-3.5(2). (o) The board shall adopt rules under IC 4-22-2 to establish a refresher course for an officer who: (1) is hired by an Indiana law enforcement department or agency as a law enforcement officer; (2) has not been employed as a law enforcement officer for: (A) at least two (2) years; and (B) less than six (6) years before the officer is hired under subdivision (1); and (3) completed at any time a basic training course certified or recognized by the board before the officer is hired under subdivision (1). (p) An officer to whom subsection (o) applies must successfully complete the refresher course described in subsection (o) not later than six (6) months after the officer's date of hire, or the officer loses the officer's powers of: (1) arrest; (2) search; and (3) seizure. (q) The board shall adopt rules under IC 4-22-2 to establish a refresher course for an officer who: (1) is appointed by an Indiana law enforcement department or agency as a reserve police officer; and (2) has not worked as a reserve police officer for at least two (2) years after: (A) completing the pre-basic course; or (B) leaving the individual's last appointment as a reserve police officer. An officer to whom this subsection applies must successfully complete the refresher course established by the board in order to work as a reserve police officer. HEA 1296 — CC 1 8 (r) This subsection applies to an individual who, at the time the individual completes a board certified or recognized basic training course, has not been appointed as a law enforcement officer by an Indiana law enforcement department or agency. If the individual is not employed as a law enforcement officer for at least two (2) years after completing the basic training course, the individual must successfully retake and complete the basic training course as set forth in subsection (d). (s) The board shall adopt rules under IC 4-22-2 to establish a refresher course for an individual who: (1) is appointed as a board certified instructor of law enforcement training; and (2) has not provided law enforcement training instruction for more than one (1) year after the date the individual's instructor certification expired. An individual to whom this subsection applies must successfully complete the refresher course established by the board in order to renew the individual's instructor certification. (t) This subsection applies only to a gaming agent employed as a law enforcement officer by the Indiana gaming commission. A gaming agent appointed after June 30, 2005, may exercise the police powers described in subsection (d) if: (1) the agent successfully completes the pre-basic course established in subsection (f); and (2) the agent successfully completes any other training courses established by the Indiana gaming commission in conjunction with the board. (u) This subsection applies only to a securities enforcement officer designated as a law enforcement officer by the securities commissioner. A securities enforcement officer may exercise the police powers described in subsection (d) if: (1) the securities enforcement officer successfully completes the pre-basic course established in subsection (f); and (2) the securities enforcement officer successfully completes any other training courses established by the securities commissioner in conjunction with the board. (v) As used in this section, "upper level policymaking position" refers to the following: (1) If the authorized size of the department or town marshal system is not more than ten (10) members, the term refers to the position held by the police chief or town marshal. (2) If the authorized size of the department or town marshal HEA 1296 — CC 1 9 system is more than ten (10) members but less than fifty-one (51) members, the term refers to: (A) the position held by the police chief or town marshal; and (B) each position held by the members of the police department or town marshal system in the next rank and pay grade immediately below the police chief or town marshal. (3) If the authorized size of the department or town marshal system is more than fifty (50) members, the term refers to: (A) the position held by the police chief or town marshal; and (B) each position held by the members of the police department or town marshal system in the next two (2) ranks and pay grades immediately below the police chief or town marshal. (w) This subsection applies only to a correctional police officer employed by the department of correction. A correctional police officer may exercise the police powers described in subsection (d) if: (1) the officer successfully completes the pre-basic course described in subsection (f); and (2) the officer successfully completes any other training courses established by the department of correction in conjunction with the board. (x) This subsection applies only to the sexual assault training described in subsection (a)(11). The board shall: (1) consult with experts on the neurobiology of trauma, trauma informed interviewing, and investigative techniques in developing the sexual assault training; and (2) develop the sexual assault training and begin offering the training not later than July 1, 2022. (y) After July 1, 2023, a law enforcement officer who regularly investigates sexual assaults involving adult victims must complete the training requirements described in subsection (a)(11) within one (1) year of being assigned to regularly investigate sexual assaults involving adult victims. (z) A law enforcement officer who regularly investigates sexual assaults involving adult victims may complete the training requirements described in subsection (a)(11) by attending a: (1) statewide or national training; or (2) department hosted local training. (aa) Notwithstanding any other provisions of this section, the board is authorized to establish certain required standards of training and procedure. SECTION 2. IC 11-13-1-3.5, AS AMENDED BY P.L.4-2017, HEA 1296 — CC 1 10 SECTION 3, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 3.5. A probation officer may not carry a handgun [deleted: as described in IC 35-47-2-1] in any vehicle or on or about the probation officer's body while acting in the scope of employment as a probation officer unless all of the following conditions are met: (1) The appointing court enters an order authorizing the probation officer to carry the handgun while on duty. [deleted: (2) The probation officer is issued a license to carry the handgun under IC 35-47-2. (3)] (2) The probation officer successfully completes a handgun safety course certified by the law enforcement training board under IC 5-2-1-9(n). SECTION 3. IC 14-16-1-23, AS AMENDED BY P.L.35-2011, SECTION 1, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 23. (a) An individual shall not operate a vehicle under any of the following conditions: (1) At a rate of speed greater than is reasonable and proper having due regard for existing conditions or in a manner that unnecessarily endangers the person or property of another. (2) While: (A) under the influence of an alcoholic beverage; or (B) unlawfully under the influence of a narcotic or other habit forming or dangerous depressant or stimulant drug. (3) During the hours from thirty (30) minutes after sunset to thirty (30) minutes before sunrise without displaying a lighted headlight and a lighted taillight. (4) In a forest nursery, a planting area, or public land posted or reasonably identified as an area of forest or plant reproduction and when growing stock may be damaged. (5) On the frozen surface of public waters within: (A) one hundred (100) feet of an individual not in or upon a vehicle; or (B) one hundred (100) feet of a fishing shanty or shelter; except at a speed of not more than five (5) miles per hour. (6) Unless the vehicle is equipped with a muffler in good working order and in constant operation to prevent excessive or unusual noise and annoying smoke. (7) Within one hundred (100) feet of a dwelling between midnight and 6:00 a.m., except on the individual's own property or property under the individual's control or as an invited guest. (8) On any property without the consent of the landowner or tenant. HEA 1296 — CC 1 11 (9) While transporting on or in the vehicle a firearm, unless the firearm is: (A) unloaded; and (B) securely encased or equipped with and made inoperative by a manufactured keylocked trigger housing mechanism. (10) On or across a cemetery or burial ground. (11) Within one hundred (100) feet of a slide, ski, or skating area, except for the purpose of servicing the area. (12) On a railroad track or railroad right-of-way, except railroad personnel in the performance of duties. (13) In or upon a flowing river, stream, or creek, except for the purpose of crossing by the shortest possible route, unless the river, stream, or creek is of sufficient water depth to permit movement by flotation of the vehicle at all times. (14) An individual shall not operate a vehicle while a bow is present in or on the vehicle if the nock of an arrow is in position on the string of the bow. (b) Subsection (a)(9) does not apply to a person who is carrying a firearm: (1) if: (A) the firearm is a handgun; and (B) the person [deleted: has been issued an unlimited handgun license to carry a handgun under IC 35-47-2;] is not otherwise prohibited from possessing a firearm under state or federal law; [deleted: (2) if: (A) the firearm is a handgun; and (B) the person is not required to possess a license to carry a handgun under IC 35-47-2-2;] or [deleted: (3)] (2) if the person carrying the firearm is operating the vehicle on property that the person: (A) owns; (B) has a contractual interest in; (C) otherwise legally possesses; or (D) has permission from a person described in clauses (A) through (C) to possess a firearm on. SECTION 4. IC 31-30-1-4, AS AMENDED BY P.L.28-2016, SECTION 1, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 4. (a) The juvenile court does not have jurisdiction over an individual for an alleged violation of: (1) IC 35-41-5-1(a) (attempted murder); (2) IC 35-42-1-1 (murder); HEA 1296 — CC 1 12 (3) IC 35-42-3-2 (kidnapping); (4) IC 35-42-4-1 (rape); (5) IC 35-42-4-2 (criminal deviate conduct) (before its repeal); (6) IC 35-42-5-1 (robbery) if: (A) the robbery was committed while armed with a deadly weapon; or (B) the robbery results in bodily injury or serious bodily injury; (7) IC 35-42-5-2 (carjacking) (before its repeal); (8) [deleted: IC 35-47-2-1 (carrying a handgun without a license), if charged as a felony;] IC 35-47-2-1.5 (unlawful carrying of a handgun), if charged as a felony; (9) IC 35-47-10 (children and firearms), if charged as a felony; or (10) any offense that may be joined under IC 35-34-1-9(a)(2) with any crime listed in this subsection; if the individual was at least sixteen (16) years of age but less than eighteen (18) years of age at the time of the alleged violation. (b) Once an individual described in subsection (a) has been charged with any offense listed in subsection (a), the court having adult criminal jurisdiction shall retain jurisdiction over the case if the individual pleads guilty to or is convicted of any offense listed in subsection (a)(1) through (a)(9). (c) If: (1) an individual described in subsection (a) is charged with one (1) or more offenses listed in subsection (a); (2) all the charges under subsection (a)(1) through (a)(9) resulted in an acquittal or were dismissed; and (3) the individual pleads guilty to or is convicted of any offense other than an offense listed in subsection (a)(1) through (a)(9); the court having adult criminal jurisdiction may withhold judgment and transfer jurisdiction to the juvenile court for adjudication and disposition. In determining whether to transfer jurisdiction to the juvenile court for adjudication and disposition, the court having adult criminal jurisdiction shall consider whether there are appropriate services available in the juvenile justice system, whether the child is amenable to rehabilitation under the juvenile justice system, and whether it is in the best interests of the safety and welfare of the community that the child be transferred to juvenile court. All orders concerning release conditions remain in effect until a juvenile court detention hearing, which must be held not later than forty-eight (48) hours, excluding Saturdays, Sundays, and legal holidays, after the order of transfer of jurisdiction. HEA 1296 — CC 1 13 SECTION 5. IC 35-31.5-2-78, AS AMENDED BY P.L.40-2019, SECTION 4, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 78. "Crime of domestic violence", for purposes of IC 5-2-6.1, IC 35-38-9, IC 35-47-2-1.5, and IC 35-47-4-7, means an offense or the attempt to commit an offense that: (1) has as an element the: (A) use of physical force; or (B) threatened use of a deadly weapon; and (2) is committed against a family or household member, as defined in section 128 of this chapter. SECTION 6. IC 35-33-1-1, AS AMENDED BY P.L.65-2016, SECTION 24, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 1. (a) A law enforcement officer may arrest a person when the officer has: (1) a warrant commanding that the person be arrested; (2) probable cause to believe the person has committed or attempted to commit, or is committing or attempting to commit, a felony; (3) probable cause to believe the person has violated the provisions of IC 9-26-1-1.1 or IC 9-30-5; (4) probable cause to believe the person is committing or attempting to commit a misdemeanor in the officer's presence; (5) probable cause to believe the person has committed a: (A) battery resulting in bodily injury under IC 35-42-2-1; or (B) domestic battery under IC 35-42-2-1.3. The officer may use an affidavit executed by an individual alleged to have direct knowledge of the incident alleging the elements of the offense of battery to establish probable cause; (6) probable cause to believe that the person violated IC 35-46-1-15.1 (invasion of privacy) or IC 35-46-1-15.3; (7) probable cause to believe that the person violated [deleted: IC 35-47-2-1 (carrying a handgun without a license)] IC 35-47-2-1.5 (unlawful carrying of a handgun) or IC 35-47-2-22 (counterfeit handgun license); (8) probable cause to believe that the person is violating or has violated an order issued under IC 35-50-7; (9) probable cause to believe that the person is violating or has violated IC 35-47-6-1.1 (undisclosed transport of a dangerous device); (10) probable cause to believe that the person is: (A) violating or has violated IC 35-45-2-5 (interference with the reporting of a crime); and HEA 1296 — CC 1 14 (B) interfering with or preventing the reporting of a crime involving domestic or family violence (as defined in IC 34-6-2-34.5); (11) probable cause to believe that the person has committed theft (IC 35-43-4-2); (12) a removal order issued for the person by an immigration court; (13) a detainer or notice of action for the person issued by the United States Department of Homeland Security; or (14) probable cause to believe that the person has been indicted for or convicted of one (1) or more aggravated felonies (as defined in 8 U.S.C. 1101(a)(43)). (b) A person who: (1) is employed full time as a federal enforcement officer; (2) is empowered to effect an arrest with or without warrant for a violation of the United States Code; and (3) is authorized to carry firearms in the performance of the person's duties; may act as an officer for the arrest of offenders against the laws of this state where the person reasonably believes that a felony has been or is about to be committed or attempted in the person's presence. SECTION 7. IC 35-43-4-2, AS AMENDED BY P.L.70-2021, SECTION 3, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 2. (a) A person who knowingly or intentionally exerts unauthorized control over property of another person, with intent to deprive the other person of any part of its value or use, commits theft, a Class A misdemeanor. However, the offense is: (1) a Level 6 felony if: (A) the value of the property is at least seven hundred fifty dollars ($750) and less than fifty thousand dollars ($50,000); (B) the property is a: [deleted: (i) firearm; (ii)] (i) motor vehicle (as defined in IC 9-13-2-105(a)); or [deleted: (iii)] (ii) component part (as defined in IC 9-13-2-34) of a motor vehicle; or (C) the person has a prior unrelated conviction for: (i) theft under this section; (ii) criminal conversion under section 3 of this chapter; (iii) robbery under IC 35-42-5-1; or (iv) burglary under IC 35-43-2-1; [deleted: and] (2) a Level 5 felony if: (A) the value of the property is at least fifty thousand dollars HEA 1296 — CC 1 15 ($50,000); (B) the property that is the subject of the theft is a valuable metal (as defined in IC 25-37.5-1-1) and: (i) relates to transportation safety; (ii) relates to public safety; or (iii) is taken from a hospital or other health care facility, telecommunications provider, public utility (as defined in IC 32-24-1-5.9(a)), or critical infrastructure facility; and the absence of the property creates a substantial risk of bodily injury to a person; or (C) the property is a: (i) motor vehicle (as defined in IC 9-13-2-105(a)); or (ii) component part (as defined in IC 9-13-2-34) of a motor vehicle; and the person has a prior unrelated conviction for theft of a motor vehicle (as defined in IC 9-13-2-105(a)) or theft of a component part (as defined in IC 9-13-2-34); and (3) a Level 5 felony if the property is a firearm. (b) For purposes of this section, "the value of property" means: (1) the fair market value of the property at the time and place the offense was committed; or (2) if the fair market value of the property cannot be satisfactorily determined, the cost to replace the property within a reasonable time after the offense was committed. A price tag or price marking on property displayed or offered for sale constitutes prima facie evidence of the value of the property. (c) If the offense described in subsection (a) is committed by a public servant who exerted unauthorized control over public funds (as defined by IC 5-22-2-23) from the public servant's employer, the employer may be reimbursed in accordance with IC 2-3.5-4-11, IC 2-3.5-5-9, IC 5-10-5.5-19, IC 5-10.3-8-9, IC 5-10.4-5-14, IC 10-12-2-10, IC 33-38-6-19.5, IC 33-39-7-10.5, IC 36-8-6-14, IC 36-8-7-22, IC 36-8-7.5-19, or IC 36-8-8-17. SECTION 8. IC 35-47-2-1, AS AMENDED BY P.L.221-2017, SECTION 1, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 1. (a) [deleted: Except as provided in subsections (b) and (c) and sections 2 through 2.1 of this chapter, a person shall not carry a handgun in any vehicle or on or about the person's body without being licensed under this chapter to carry a handgun.] A person who meets the following requirements may carry a handgun in the manner described in subsection (b): (1) The person is not prohibited from possessing or carrying HEA 1296 — CC 1 16 a handgun under federal law as in effect on January 1, 2022. (2) Notwithstanding section 1.5 of this chapter, the person is not otherwise prohibited under state law from possessing or carrying a handgun. (3) The person does not meet the requirements under IC 35-47-2-3 to receive a license to carry a handgun in Indiana. (b) [deleted: Except as provided in subsection (c),] A person may carry a handgun without being licensed under this chapter to carry a handgun if: (1) the person carries the handgun on or about the person's body in or on property that is owned, leased, rented, or otherwise legally controlled by the person; (2) the person carries the handgun on or about the person's body while lawfully present in or on property that is owned, leased, rented, or otherwise legally controlled by another person, if the person: (A) has the consent of the owner, renter, lessor, or person who legally controls the property to have the handgun on the premises; (B) is attending a firearms related event on the property, including a gun show, firearms expo, gun owner's club or convention, hunting club, shooting club, or training course; or (C) is on the property to receive firearms related services, including the repair, maintenance, or modification of a firearm; (3) the person carries the handgun in a vehicle that is owned, leased, rented, or otherwise legally controlled by the person, if the handgun is: (A) unloaded; (B) not readily accessible; and (C) secured in a case; (4) the person carries the handgun while lawfully present in a vehicle that is owned, leased, rented, or otherwise legally controlled by another person, if the handgun is: (A) unloaded; (B) not readily accessible; and (C) secured in a case; or (5) the person carries the handgun: (A) at a shooting range (as defined in IC 14-22-31.5-3); (B) while attending a firearms instructional course; or (C) while engaged in a legal hunting activity. [deleted: or] HEA 1296 — CC 1 17 [deleted: (6) the person is permitted to carry a handgun without a license under section 2.1 of this chapter (persons protected by a protection order). (c) Unless the person's right to possess a firearm has been restored under IC 35-47-4-7, a person who has been convicted of domestic battery under IC 35-42-2-1.3 may not possess or carry a handgun. (d)] (c) This [deleted: section] chapter may not be construed: (1) to prohibit a person who owns, leases, rents, or otherwise legally controls private property from regulating or prohibiting the possession of firearms on the private property; (2) to allow a person to adopt or enforce an ordinance, resolution, policy, or rule that: (A) prohibits; or (B) has the effect of prohibiting; an employee of the person from possessing a firearm or ammunition that is locked in the trunk of the employee's vehicle, kept in the glove compartment of the employee's locked vehicle, or stored out of plain sight in the employee's locked vehicle, unless the person's adoption or enforcement of the ordinance, resolution, policy, or rule is allowed under IC 34-28-7-2(b); or (3) to allow a person to adopt or enforce a law, statute, ordinance, resolution, policy, or rule that allows a person to possess or transport a firearm or ammunition if the person is prohibited from possessing or transporting the firearm or ammunition by state or federal law. (d) Nothing in this chapter may be construed to affect the status or validity of a five (5) year or lifetime license to carry a handgun issued by the superintendent before July 1, 2022. Any license described under this subsection shall remain valid for the duration of the license or the lifetime of the licensee, as applicable. [deleted: (e) A person who knowingly or intentionally violates this section commits a Class A misdemeanor. However, the offense is a Level 5 felony: (1) if the offense is committed: (A) on or in school property; (B) within five hundred (500) feet of school property; or (C) on a school bus; or (2) if the person: (A) has a prior conviction of any offense under: (i) this section; or (ii) section 22 of this chapter; or (B) has been convicted of a felony within fifteen (15) years] HEA 1296 — CC 1 18 [deleted: before the date of the offense.] SECTION 9. IC 35-47-2-1.5 IS ADDED TO THE INDIANA CODE AS A NEW SECTION TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 1.5. (a) The following terms are defined for this section: (1) "Adjudicated a mental defective" means a determination by a court that a person: (A) presents a danger to the person or to others; or (B) lacks the mental capacity necessary to contract or manage the person's affairs. The term includes a finding of insanity by a court in a criminal proceeding. (2) "Alien" means any person who is not lawfully in the United States. The term includes: (A) any person who has: (i) entered the United States without inspection and authorization by an immigration officer; and (ii) not been paroled into the United States under the federal Immigration and Nationality Act; (B) a nonimmigrant: (i) whose authorized period of stay has expired; or (ii) who has violated the terms of the nonimmigrant category under which the person was admitted; (C) a person paroled under the federal Immigration and Nationality Act whose period of parole has: (i) expired; or (ii) been terminated; and (D) a person subject to an order: (i) of deportation, exclusion, or removal; or (ii) to depart the United States voluntarily; regardless of whether or not the person has left the United States. (3) "Committed to a mental institution" means the formal commitment of a person to a mental institution by a court. The term includes: (A) a commitment for: (i) a cognitive or mental defect; or (ii) a mental illness; and (B) involuntary commitments. The term does not include voluntary commitments or a commitment made for observational purposes. (4) "Crime of domestic violence" has the meaning set forth in HEA 1296 — CC 1 19 IC 35-31.5-2-78. (5) "Dangerous" has the meaning set forth in IC 35-47-14-1. (6) "Fugitive from justice" means any person who: (A) flees or leaves from any state to avoid prosecution for a felony or misdemeanor offense; or (B) flees or leaves any state to avoid testifying in a criminal proceeding. (7) "Indictment" means any formal accusation of a crime made by a prosecuting attorney in any court for a crime punishable by a term of imprisonment exceeding one (1) year. (8) A crime or offense "punishable by a term of imprisonment exceeding one (1) year" does not include a federal or state crime or offense pertaining to antitrust violations, unfair trade practices, restraints of trade, or other similar offenses relating to the regulation of business practices. (b) Except as provided in subsections (c) and (d), the following persons may not knowingly or intentionally carry a handgun: (1) A person convicted of a federal or state offense punishable by a term of imprisonment exceeding one (1) year. (2) A fugitive from justice. (3) An alien. (4) A person convicted of: (A) a crime of domestic violence (IC 35-31.5-2-78); (B) domestic battery (IC 35-42-2-1.3); or (C) criminal stalking (IC 35-45-10-5). (5) A person restrained by an order of protection issued under IC 34-26-5. (6) A person under indictment. (7) A person who has been: (A) adjudicated dangerous under IC 35-47-14-6; (B) adjudicated a mental defective; or (C) committed to a mental institution. (8) A person dishonorably discharged from: (A) military service; or (B) the National Guard. (9) A person who renounces the person's United States citizenship in the manner described in 8 U.S.C. 1481. (10) A person who is less than: (A) eighteen (18) years of age; or (B) twenty-three (23) years of age and has an adjudication as a delinquent child for an act described by IC 35-47-4-5; unless authorized under IC 35-47-10. HEA 1296 — CC 1 20 (c) Subsection (b)(4)(A) and (b)(4)(B) does not apply to a person if a court has restored the person's right to possess a firearm under IC 35-47-4-7. (d) A person who has: (1) been adjudicated dangerous under IC 35-47-14-6; and (2) successfully petitioned for the return of a firearm under IC 35-47-14-8 with respect to the adjudication under subdivision (1); is not prohibited from carrying a handgun under subsection (b) on the basis that the person was adjudicated dangerous under subdivision (1). However, the person may still be prohibited from carrying a handgun on one (1) or more of the other grounds listed in subsection (b). (e) A person who violates this section commits unlawful carrying of a handgun, a Class A misdemeanor. However, the offense is a Level 5 felony if: (1) the offense is committed: (A) on or in school property; (B) within five hundred (500) feet of school property; or (C) on a school bus; or (2) the person: (A) has a prior conviction of any offense under: (i) this section; (ii) section 1 of this chapter (carrying a handgun without a license) (before its repeal); or (iii) section 22 of this chapter; or (B) has been convicted of a felony within fifteen (15) years before the date of the offense. SECTION 10. IC 35-47-2-2 IS REPEALED [EFFECTIVE JULY 1, 2022]. [deleted: Sec. 2. Section 1 of this chapter does not apply to: (1) marshals; (2) sheriffs; (3) the commissioner of the department of correction or persons authorized by the commissioner in writing to carry firearms; (4) judicial officers; (5) law enforcement officers; (6) members of the armed forces of the United States or of the national guard or organized reserves while they are on duty; (7) regularly enrolled members of any organization duly authorized to purchase or receive such weapons from the United States or from this state who are at or are going to or from their place of assembly or target practice;] HEA 1296 — CC 1 21 [deleted: (8) employees of the United States duly authorized to carry handguns; (9) employees of express companies when engaged in company business; or (10) any person engaged in the business of manufacturing, repairing, or dealing in firearms or the agent or representative of any such person having in the person's possession, using, or carrying a handgun in the usual or ordinary course of that business.] SECTION 11. IC 35-47-2-2.1 IS REPEALED [EFFECTIVE JULY 1, 2022]. [deleted: Sec. 2.1. (a) As used in this section, "protection order" means a civil protection order issued under IC 34-26-5. (b) A person may carry a handgun without a license if the person: (1) has applied for a license to carry a handgun as described in IC 35-47-2-3; (2) is protected by a protection order; (3) is at least eighteen (18) years of age; and (4) is not otherwise barred by state or federal law from possessing a handgun; during the period described in subsection (c). (c) A person described in subsection (b) may carry a handgun without a license for a period ending sixty (60) days after the date the protection order is issued.] SECTION 12. IC 35-47-2-3, AS AMENDED BY P.L.165-2021, SECTION 196, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 3. (a) A person [deleted: desiring a license to carry] who is at least eighteen (18) years of age and is not otherwise prohibited from carrying or possessing a handgun [deleted: shall apply:] under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana. A resident of this state who wishes to carry a firearm in another state under a reciprocity agreement entered into by this state and another state may obtain a license to carry a handgun in Indiana under this chapter by applying: (1) to the chief of police or corresponding law enforcement officer of the municipality in which the applicant resides; (2) if that municipality has no such officer, or if the applicant does not reside in a municipality, to the sheriff of the county in which the applicant resides after the applicant has obtained an application form prescribed by the superintendent; or (3) if the applicant is a resident of another state and has a regular place of business or employment in Indiana, to the sheriff of the HEA 1296 — CC 1 22 county in which the applicant has a regular place of business or employment. The superintendent and local law enforcement agencies shall allow an applicant desiring to obtain or renew a license to carry a handgun to submit an application electronically under this chapter if funds are available to establish and maintain an electronic application system. (b) This subsection applies before July 1, 2020. The law enforcement agency which accepts an application for a handgun license shall collect the following application fees: (1) From a person applying for a four (4) year handgun license, a ten dollar ($10) application fee, five dollars ($5) of which shall be refunded if the license is not issued. (2) From a person applying for a lifetime handgun license who does not currently possess a valid Indiana handgun license, a fifty dollar ($50) application fee, thirty dollars ($30) of which shall be refunded if the license is not issued. (3) From a person applying for a lifetime handgun license who currently possesses a valid Indiana handgun license, a forty dollar ($40) application fee, thirty dollars ($30) of which shall be refunded if the license is not issued. Except as provided in subsection (j), the fee shall be deposited into the law enforcement agency's firearms training fund or other appropriate training activities fund and used by the agency to train law enforcement officers in the proper use of firearms or in other law enforcement duties, or to purchase firearms, firearm related equipment, or body armor (as defined in IC 35-47-5-13(a)) for the law enforcement officers employed by the law enforcement agency. The state board of accounts shall establish rules for the proper accounting and expenditure of funds collected under this subsection. (c) This subsection applies after June 30, 2020, and before July 1, 2021. The law enforcement agency which accepts an application for a handgun license shall not collect a fee from a person applying for a five (5) year handgun license and shall collect the following application fees: (1) From a person applying for a lifetime handgun license who does not currently possess a valid Indiana handgun license, a fifty dollar ($50) application fee, thirty dollars ($30) of which shall be refunded if the license is not issued. (2) From a person applying for a lifetime handgun license who currently possesses a valid Indiana handgun license, a forty dollar ($40) application fee, thirty dollars ($30) of which shall be refunded if the license is not issued. HEA 1296 — CC 1 23 Except as provided in subsection (j), the fee shall be deposited into the law enforcement agency's firearms training fund or other appropriate training activities fund and used by the agency to train law enforcement officers in the proper use of firearms or in other law enforcement duties, or to purchase firearms, firearm related equipment, or body armor (as defined in IC 35-47-5-13(a)) for the law enforcement officers employed by the law enforcement agency. The state board of accounts shall establish rules for the proper accounting and expenditure of funds collected under this subsection. (d) This subsection applies after June 30, 2021. The law enforcement agency which accepts an application for a handgun license shall not collect a fee from a person applying for a handgun license. (e) The officer to whom the application is made shall ascertain the applicant's name, full address, length of residence in the community, whether the applicant's residence is located within the limits of any city or town, the applicant's occupation, place of business or employment, criminal record, if any, and convictions (minor traffic offenses excepted), age, race, sex, nationality, date of birth, citizenship, height, weight, build, color of hair, color of eyes, scars and marks, whether the applicant has previously held an Indiana license to carry a handgun and, if so, the serial number of the license and year issued, whether the applicant's license has ever been suspended or revoked, and if so, the year and reason for the suspension or revocation, and the applicant's reason for desiring a license. If the applicant is not a United States citizen, the officer to whom the application is made shall ascertain the applicant's country of citizenship, place of birth, and any alien or admission number issued by the United States Citizenship and Immigration Services or United States Customs and Border Protection or any successor agency as applicable. The officer to whom the application is made shall conduct an investigation into the applicant's official records and verify thereby the applicant's character and reputation, and shall in addition verify for accuracy the information contained in the application, and shall forward this information together with the officer's recommendation for approval or disapproval and one (1) set of legible and classifiable fingerprints of the applicant to the superintendent. An investigation conducted under this section must include the consulting of available local, state, and federal criminal history data banks, including the National Instant Criminal Background Check System (NICS), to determine whether possession of a firearm by an applicant would be a violation of state or federal law. (f) The superintendent may make whatever further investigation the superintendent deems necessary. Whenever disapproval is HEA 1296 — CC 1 24 recommended, the officer to whom the application is made shall provide the superintendent and the applicant with the officer's complete and specific reasons, in writing, for the recommendation of disapproval. (g) If it appears to the superintendent that the applicant: (1) has a proper reason for [deleted: carrying a handgun;] receiving a license to carry a handgun; (2) is of good character and reputation; (3) is a proper person to be licensed; and (4) is: (A) a citizen of the United States; or (B) not a citizen of the United States but is allowed to carry a firearm in the United States under federal law; the superintendent shall issue to the applicant a [deleted: qualified or an unlimited] license to carry [deleted: any] a handgun [deleted: lawfully possessed by the applicant.] in Indiana. The original license shall be delivered to the licensee. A copy shall be delivered to the officer to whom the application for license was made. A copy shall be retained by the superintendent for at least five (5) years in the case of a five (5) year license. The superintendent may adopt guidelines to establish a records retention policy for a lifetime license. A five (5) year license shall be valid for a period of five (5) years from the date of issue. A lifetime license is valid for the life of the individual receiving the license. The license of police officers, sheriffs or their deputies, and law enforcement officers of the United States government who have twenty (20) or more years of service shall be valid for the life of these individuals. However, a lifetime license is automatically revoked if the license holder does not remain a proper person. (h) At the time a license is issued and delivered to a licensee under subsection (g), the superintendent shall include with the license information concerning [deleted: handgun] firearms safety rules that: (1) neither opposes nor supports an individual's right to bear arms; and (2) is: (A) recommended by a nonprofit educational organization that is dedicated to providing education on safe handling and use of firearms; (B) prepared by the state police department; and (C) approved by the superintendent. The superintendent may not deny a license under this section because the information required under this subsection is unavailable at the time the superintendent would otherwise issue a license. The state HEA 1296 — CC 1 25 police department may accept private donations or grants to defray the cost of printing and mailing the information required under this subsection. (i) A license to carry a handgun shall not be issued to any person who: (1) has been convicted of a felony; (2) has had a license to carry a handgun suspended, unless the person's license has been reinstated; (3) is under eighteen (18) years of age; (4) is under twenty-three (23) years of age if the person has been adjudicated a delinquent child for an act that would be a felony if committed by an adult; (5) has been arrested for a Class A or Class B felony for an offense committed before July 1, 2014, for a Level 1, Level 2, Level 3, or Level 4 felony for an offense committed after June 30, 2014, or any other felony that was committed while armed with a deadly weapon or that involved the use of violence, if a court has found probable cause to believe that the person committed the offense charged; [deleted: or] (6) is prohibited by federal law from possessing or receiving firearms under 18 U.S.C. 922(g); or (7) is described in IC 35-47-2-1.5, unless exempted by IC 35-47-2-1.5. In the case of an arrest under subdivision (5), a license to carry a handgun may be issued to a person who has been acquitted of the specific offense charged or if the charges for the specific offense are dismissed. The superintendent shall prescribe all forms to be used in connection with the administration of this chapter. (j) If the law enforcement agency that charges a fee under subsection (b) or (c) is a city or town law enforcement agency, the fee shall be deposited in the law enforcement continuing education fund established under IC 5-2-8-2. (k) If a person who holds a valid license to carry a handgun issued under this chapter: (1) changes the person's name; (2) changes the person's address; or (3) experiences a change, including an arrest or a conviction, that may affect the person's status as a proper person (as defined in IC 35-47-1-7) or otherwise disqualify the person from holding a license; the person shall, not later than thirty (30) days after the date of a change described under subdivision (3), and not later than sixty (60) HEA 1296 — CC 1 26 days after the date of the change described under subdivision (1) or (2), notify the superintendent, in writing, of the event described under subdivision (3) or, in the case of a change under subdivision (1) or (2), the person's new name or new address. (l) The state police shall indicate on the form for a license to carry a handgun the notification requirements of subsection (k). (m) The state police department shall adopt rules under IC 4-22-2 to [deleted: (1)] implement an electronic application system under subsection (a). [deleted: and (2) expedite the processing of an application made by a person described in section 2.1(b) of this chapter.] Rules adopted under this section must require the superintendent to keep on file one (1) set of classifiable and legible fingerprints from every person who has received a license to carry a handgun so that a person who applies to renew a license will not be required to submit an additional set of fingerprints. (n) Except as provided in subsection (o), for purposes of IC 5-14-3-4(a)(1), the following information is confidential, may not be published, and is not open to public inspection: (1) Information submitted by a person under this section to: (A) obtain; or (B) renew; a license to carry a handgun. (2) Information obtained by a federal, state, or local government entity in the course of an investigation concerning a person who applies to: (A) obtain; or (B) renew; a license to carry a handgun issued under this chapter. (3) The name, address, and any other information that may be used to identify a person who holds a license to carry a handgun issued under this chapter. (o) Notwithstanding subsection (n): (1) any information concerning an applicant for or a person who holds a license to carry a handgun issued under this chapter may be released to a federal, state, or local government entity: (A) for law enforcement purposes; or (B) to determine the validity of a license to carry a handgun; and (2) general information concerning the issuance of licenses to carry handguns in Indiana may be released to a person conducting HEA 1296 — CC 1 27 journalistic or academic research, but only if all personal information that could disclose the identity of any person who holds a license to carry a handgun issued under this chapter has been removed from the general information. (p) A person who holds a valid license to carry a handgun under this chapter is licensed to carry a handgun in Indiana. [deleted: (p)] (q) A person who knowingly or intentionally violates this section commits a Class B misdemeanor. SECTION 13. IC 35-47-2-4, AS AMENDED BY P.L.165-2021, SECTION 197, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 4. (a) Licenses to carry handguns [deleted: shall be either qualified or unlimited, and] issued under section 3 of this chapter are valid for: (1) five (5) years from the date of issue in the case of a five (5) year license; or (2) the life of the individual receiving the license in the case of a lifetime license. [deleted: A qualified license shall be issued for hunting and target practice. An individual may separately apply for and simultaneously hold both a five (5) year license and a lifetime license. The superintendent may adopt rules imposing limitations on the use and carrying of handguns under a license when handguns are carried by a licensee as a condition of employment. Unlimited licenses shall be issued for the purpose of the protection of life and property. (b) This subsection applies before July 1, 2020. In addition to the application fee, the fee for: (1) a qualified license shall be: (A) five dollars ($5) for a five (5) year qualified license; (B) twenty-five dollars ($25) for a lifetime qualified license from a person who does not currently possess a valid Indiana handgun license; or (C) twenty dollars ($20) for a lifetime qualified license from a person who currently possesses a valid Indiana handgun license; and (2) an unlimited license shall be: (A) thirty dollars ($30) for a five (5) year unlimited license; (B) seventy-five dollars ($75) for a lifetime unlimited license from a person who does not currently possess a valid Indiana handgun license; or (C) sixty dollars ($60) for a lifetime unlimited license from a person who currently possesses a valid Indiana handgun license.] HEA 1296 — CC 1 28 [deleted: The superintendent shall charge a twenty dollar ($20) fee for the issuance of a duplicate license to replace a lost or damaged license. These fees shall be deposited in accordance with subsection (h). (c) This subsection applies after June 30, 2020, and before July 1, 2021. In addition to the application fee, the fee for: (1) a qualified license is: (A) zero dollars ($0) for a five (5) year qualified license; (B) twenty-five dollars ($25) for a lifetime qualified license from a person who does not currently possess a valid Indiana handgun license; and (C) twenty dollars ($20) for a lifetime qualified license from a person who currently possesses a valid Indiana handgun license; and (2) an unlimited license is: (A) zero dollars ($0) for a five (5) year unlimited license; (B) seventy-five dollars ($75) for a lifetime unlimited license from a person who does not currently possess a valid Indiana handgun license; and (C) sixty dollars ($60) for a lifetime unlimited license from a person who currently possesses a valid Indiana handgun license. The superintendent shall charge a twenty dollar ($20) fee for the issuance of a duplicate license to replace a lost or damaged license. These fees shall be deposited in accordance with subsection (h). (d)] (b) [deleted: This subsection applies after June 30, 2021.] There is no fee for a [deleted: qualified or unlimited] license to carry a handgun. The superintendent shall charge a twenty dollar ($20) fee for the issuance of a duplicate license to replace a lost or damaged license. This fee shall be deposited in accordance with subsection [deleted: (h).] (c). [deleted: (e) Licensed dealers are exempt from the payment of fees specified in subsections (b) and (c) for a qualified license or an unlimited license. (f) The following officers of this state or the United States who have been honorably retired by a lawfully created pension board or its equivalent after at least twenty (20) years of service or because of a disability are exempt from the payment of fees specified in subsections (b) and (c): (1) Police officers. (2) Sheriffs or their deputies. (3) Law enforcement officers. (4) Correctional officers. (g) The following officers described in section 3(g) of this chapter] HEA 1296 — CC 1 29 [deleted: who have at least twenty (20) years of service are exempt from the payment of fees for a lifetime qualified license or a lifetime unlimited license specified in subsections (b) and (c): (1) Police officers. (2) Sheriffs or their deputies. (3) Law enforcement officers of the United States government. (h)] (c) Fees collected under this section shall be deposited in the state general fund. [deleted: (i)] (d) The superintendent may not issue a lifetime [deleted: qualified license or a lifetime unlimited] license to a person who is a resident of another state. The superintendent may issue a five (5) year [deleted: qualified license or a five (5) year unlimited] license to a person who is a resident of another state and who has a regular place of business or employment in Indiana as described in section 3(a)(3) of this chapter. [deleted: (j)] (e) A person who knowingly or intentionally violates this section commits a Class B misdemeanor. SECTION 14. IC 35-47-2-24 IS REPEALED [EFFECTIVE JULY 1, 2022]. [deleted: Sec. 24. (a) In an information or indictment brought for the enforcement of any provision of this chapter, it is not necessary to negate any exemption specified under this chapter, or to allege the absence of a license required under this chapter. The burden of proof is on the defendant to prove that he is exempt under section 2 of this chapter, or that he has a license as required under this chapter. (b) Whenever a person who has been arrested or charged with a violation of section 1 of this chapter presents a valid license to the prosecuting attorney or establishes that he is exempt under section 2 of this chapter, any prosecution for a violation of section 1 of this chapter shall be dismissed immediately, and all records of an arrest or proceedings following arrest shall be destroyed immediately.] SECTION 15. IC 35-47-2.5-1, AS AMENDED BY P.L.152-2014, SECTION 3, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 1. (a) Sections 2 through 5 of this chapter do not apply to the following: (1) Transactions between persons who are licensed as firearms importers or collectors or firearms manufacturers or dealers under 18 U.S.C. 923. (2) Purchases by or sales to a law enforcement officer or agent of the United States, the state, or a county or local government. (3) Indiana residents [deleted: licensed to carry handguns under IC 35-47-2-3.] in possession of a license described in IC 35-47-2-3. (b) Notwithstanding any other provision of this chapter, the state HEA 1296 — CC 1 30 shall participate in the NICS if federal funds are available to assist the state in participating in the NICS. If: (1) the state participates in the NICS; and (2) there is a conflict between: (A) a provision of this chapter; and (B) a procedure required under the NICS; the procedure required under the NICS prevails over the conflicting provision of this chapter. SECTION 16. IC 35-47-11.1-4, AS AMENDED BY P.L.147-2014, SECTION 3, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 4. This chapter may not be construed to prevent any of the following: (1) A law enforcement agency of a political subdivision from enacting and enforcing regulations pertaining to firearms, ammunition, or firearm accessories issued to or used by law enforcement officers in the course of their official duties. (2) Subject to IC 34-28-7-2, an employer from regulating or prohibiting the employees of the employer from carrying firearms and ammunition in the course of the employee's official duties. (3) A court or administrative law judge from hearing and resolving any case or controversy or issuing any opinion or order on a matter within the jurisdiction of the court or judge. (4) The enactment or enforcement of generally applicable zoning or business ordinances that apply to firearms businesses to the same degree as other similar businesses. However, a provision of an ordinance that is designed or enforced to effectively restrict or prohibit the sale, purchase, transfer, manufacture, or display of firearms, ammunition, or firearm accessories that is otherwise lawful under the laws of this state is void. A unit (as defined in IC 36-1-2-23) may not use the unit's planning and zoning powers under IC 36-7-4 to prohibit the sale of firearms within a prescribed distance of any other type of commercial property or of school property or other educational property. (5) Subject to IC 35-47-16-1, the enactment or enforcement of a provision prohibiting or restricting the possession of a firearm in any building that contains the courtroom of a circuit, superior, city, town, or small claims court. However, if a portion of the building is occupied by a residential tenant or private business, any provision restricting or prohibiting the possession of a firearm does not apply to the portion of the building that is occupied by the residential tenant or private business, or to common areas of the building used by a residential tenant or private business. HEA 1296 — CC 1 31 (6) The enactment or enforcement of a provision prohibiting or restricting the intentional display of a firearm at a public meeting. (7) The enactment or enforcement of a provision prohibiting or restricting the possession of a firearm in a public hospital corporation that contains a secure correctional health unit that is staffed by a law enforcement officer twenty-four (24) hours a day. (8) The imposition of any restriction or condition placed on a person participating in: (A) a community corrections program (IC 11-12-1); (B) a forensic diversion program (IC 11-12-3.7); or (C) a pretrial diversion program (IC 33-39-1). (9) The enforcement or prosecution of the offense of criminal recklessness (IC 35-42-2-2) involving the use of a firearm. (10) For an event occurring on property leased from a political subdivision or municipal corporation by the promoter or organizer of the event: (A) the establishment, by the promoter or organizer, at the promoter's or organizer's own discretion, of rules of conduct or admission upon which attendance at or participation in the event is conditioned; or (B) the implementation or enforcement of the rules of conduct or admission described in clause (A) by a political subdivision or municipal corporation in connection with the event. (11) The enactment or enforcement of a provision prohibiting or restricting the possession of a firearm in a hospital established and operated under IC 16-22-2 or IC 16-23. (12) A unit from using the unit's planning and zoning powers under IC 36-7-4 to prohibit the sale of firearms within two hundred (200) feet of a school by a person having a business that did not sell firearms within two hundred (200) feet of a school before April 1, 1994. (13) Subject to IC 35-47-16-1, a unit (as defined in IC 36-1-2-23) from enacting or enforcing a provision prohibiting or restricting the possession of a firearm in a building owned or administered by the unit if: (A) metal detection devices are located at each public entrance to the building; (B) each public entrance to the building is staffed by at least one (1) law enforcement officer: (i) who has been adequately trained to conduct inspections of persons entering the building by use of metal detection devices and proper physical pat down searches; and HEA 1296 — CC 1 32 (ii) when the building is open to the public; and (C) each: (i) individual who enters the building through the public entrance when the building is open to the public; and (ii) bag, package, and other container carried by the individual; is inspected by a law enforcement officer described in clause (B). However, except as provided in subdivision (5) concerning a building that contains a courtroom, a unit may not prohibit or restrict the possession of a handgun under this subdivision in a building owned or administered by the unit if the person who possesses the handgun [deleted: has been issued a valid license to carry the handgun under IC 35-47-2.] is not otherwise prohibited from carrying or possessing a handgun. SECTION 17. IC 35-50-2-13, AS AMENDED BY P.L.84-2015, SECTION 5, IS AMENDED TO READ AS FOLLOWS [EFFECTIVE JULY 1, 2022]: Sec. 13. (a) The state may seek, on a page separate from the rest of a charging instrument, to have a person who allegedly committed an offense of dealing in a controlled substance under IC 35-48-4-1 through IC 35-48-4-4 sentenced to an additional fixed term of imprisonment if the state can show beyond a reasonable doubt that the person knowingly or intentionally: (1) used a firearm; or (2) possessed a: (A) handgun in violation of [deleted: IC 35-47-2-1;] IC 35-47-2-1.5; (B) sawed-off shotgun in violation of federal law; or (C) machine gun in violation of IC 35-47-5-8; while committing the offense. (b) If the person was convicted of the offense in a jury trial, the jury shall reconvene to hear evidence in the enhancement hearing. If the trial was to the court, or the judgment was entered on a guilty plea, the court alone shall hear evidence in the enhancement hearing. (c) If the jury (if the hearing is by jury) or the court (if the hearing is to the court alone) finds that the state has proved beyond a reasonable doubt that the person knowingly or intentionally committed an offense as described in subsection (a), the court may sentence the person to an additional fixed term of imprisonment of not more than five (5) years, except as follows: (1) If the firearm is a sawed-off shotgun, the court may sentence the person to an additional fixed term of imprisonment of not more than ten (10) years. HEA 1296 — CC 1 33 (2) If the firearm is a machine gun or is equipped with a firearm silencer or firearm muffler, the court may sentence the person to an additional fixed term of imprisonment of not more than twenty (20) years. The additional sentence under this subdivision is in addition to any additional sentence imposed under section 11 of this chapter for use of a firearm in the commission of an offense. HEA 1296 — CC 1 Speaker of the House of Representatives President of the Senate President Pro Tempore Governor of the State of Indiana Date: Time: HEA 1296 — CC 1 [extracted by pdf-snapshot.ts with strike detection, 2026-09-27T00:54:04.390Z, https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/HB1296.04.ENRS.pdf, from saved file]
+
+---
+snapshot_id: 003ed5ac-2dad-5968-9396-d521bc4e4798
+source_kind: public-record
+url: https://iga.in.gov/legislative/2022/bills/house/1296/details
+
+IGA | House Bill 1296 (2022) Indiana General Assembly 2022 Session. House Bill 1296 Firearms matters. Enrolled House Bill (H) Authored by: Rep. Ben Smaltz. Co-Authored by: Rep. David Abbott, Rep. Beau Baird, Rep. Brad Barrett, Rep. Steve Bartels, Rep. Robert Behning, Rep. Bruce Borders, Rep. Martin Carbaugh, Rep. Robert Cherry, Rep. Anthony Cook, Rep. Michelle Davis, Rep. J. Davisson, Rep. Dale DeVon, Rep. Sean Eberhart, Rep. Jeff Ellington, Rep. Karen Engleman, Rep. Randall Frye, Rep. Chuck Goodrich, Rep. Doug Gutwein, Rep. Robert Heaton, Rep. Dave Heine, Rep. Matt Hostettler, Rep. Todd Huston, Rep. Chris Jeter, Rep. Jack Jordan, Rep. Chris Judy, Rep. Joanna King, Rep. Ryan Lauer, Rep. Cindy Ledbetter, Rep. Don Lehe, Rep. Matt Lehman, Rep. Daniel Leonard, Rep. Shane Lindauer, Rep. Jim Lucas, Rep. Ethan Manning, Rep. Chris May, Rep. Peggy Mayfield, Rep. Doug Miller, Rep. Robert Morris, Rep. Alan Morrison, Rep. Zach Payne, Rep. J.D. Prescott, Rep. Craig Snow, Rep. Gregory Steuerwald, Rep. Jake Teshka, Rep. Jeffrey Thompson, Rep. Heath VanNatter, Rep. Ann Vermilion, Rep. Timothy Wesco, Rep. John Young. Sponsored by: Sen. Jon Ford, Sen. Andy Zay, Sen. Lonnie Randolph.
+
+---
+snapshot_id: d75de51c-4f22-59d3-82a5-7153767dec64
+source_kind: own-site (the person's own site or account)
+url: https://repmattpierce.substack.com/p/rep-matt-pierces-april-newsletter
+
+Rep. Matt Pierce's April Newsletter Rep. Matt Pierce's Newsletter Subscribe Sign in Rep. Matt Pierce's April Newsletter More evidence gun safety laws are needed, the reinstatement of the voting ban on student IDs, and more. Rep. Matt Pierce Apr 27, 2026 Share Welcome to my monthly newsletter, where I provide legislative updates as your state representative for House District 61. Please reach out to me at h61@iga.in.gov if you have any comments, questions, or concerns. Yet More Evidence Gun Safety Laws are Needed Last weekend, five women ages 17 to 21 were injured by gunfire on Kirkwood Avenue. I am relieved that no one lost their life and that the wounded received medical treatment. I am grateful for the quick reaction of our first responders. Thousands flocked to Bloomington to celebrate the Little 500. Instead, they experienced a senseless act of gun violence. More and more young people are picking up guns to settle disputes that should never end in bloodshed. In America, this has become a pattern that I refuse to accept as normal. It must end. That’s why I’m fighting for responsible, common-sense gun legislation. Bloomington’s Police Chief noted in his recent comments that law enforcement itself opposed the passage of permitless carry. I voted against that law because allowing people to carry concealed weapons without a permit puts Hoosiers at risk. Sadly, the legislature refuses to enact even the most basic safety laws like closing loopholes in background checks, instituting safe gun storage requirements and banning assault rifles. Gun safety policies save lives, and we need more common-sense gun legislation at the Statehouse. No one should have to wonder whether their child will come home safe. Not in Bloomington. Not anywhere. Hurdle at the Polls for Students, Again Just before the May 5 primary, a federal appeals court reinstated Statehouse Republicans’ ban on voting with a student ID. This potentially blocks anywhere from 40,000 to 90,000 young Hoosiers from casting a ballot, including members of the Bloomington community. For decades, student IDs from Indiana’s public colleges and universities have been valid at polling places. They’re a valid form of photo ID since they’re issued by a state government institution and include a name, photo and expiration date. Photo IDs are used solely for proof of identity. They’re not intended to confirm your voter registration, citizenship or residency. Now this option has been stripped from students. Last year, Statehouse Republicans passed Senate Enrolled Act 10 , banning the use of student IDs. During the debate on this bill, I questioned its sponsor about why student IDs were being targeted when they clearly met all the requirements and had been accepted for two decades. The sponsor of the bill responded that students should not be given special treatment. He didn’t have a good answer when I asked why he wasn’t concerned about the special treatment given to veterans and members of the military who may use their IDs that lack expiration dates. If the concern is about what makes an ID reliable, one has to wonder why a state university-issued ID with an expiration date fails that test while one without an expiration date passes. Stripping one form of ID from the list isn’t about election integrity. It’s about voter suppression. Statehouse Republicans are under the impression that students vote as a bloc for Democrats, so they want to make it harder for them to vote. I hope students are willing to do the extra work that might be necessary to vote and make their voices heard, no matter which party they support. The 7 th Circuit Court of Appeals has allowed the law to continue in effect while the case is argued in court. The courts have not yet ruled on the issue of whether targeting students for different treatment when it comes to IDs is unconstitutional. In the meantime, if you’re a student heading to the polls, please make sure you have an accepted form of ID. Your vote is worth fighting for. Speaking Out for Lower Energy Bills Earlier this month, the Indiana Utilities Regulatory Commission (IURC) came to Columbus for a listening session. This is part of the IURC’s investigative inquiry into skyrocketing energy costs and Indiana’s five investor-owned utilities: AES Indiana, CenterPoint Energy Indiana, Duke Energy Indiana, LLC, Indiana Michigan Power Company, and Northern Indiana Public Service Company, LLC (NIPSCO). As part of my testimony, I identified multiple pieces of Republican-authored legislation that favor utilities and make it harder for the IURC to protect Hoosiers from high costs. Republicans have passed many bills that allow utility companies to pass more costs onto your bill and repeatedly raise rates. If we want real change, the IURC should ask the legislature to repeal these anti-consumer pieces of legislation. High energy costs is one of the issues I often hear about from voters, and it’s because people are tired. They’re tired of skyrocketing bills that eat more and more into their paychecks. It’s time for the legislature to step in and get Indiana’s utility bills under control. Indiana’s Sales Tax Holiday on Gas is Necessary Because of Reckless Actions by President Trump On April 8, Gov. Mike Braun announced a 30‑day suspension of Indiana’s 7% sales tax on gasoline. The end of those 30 days is approaching, and the sales tax on gas is expected to increase from 17.2 cents per gallon to 23.3 cents. I support this temporary suspension. Families need every bit of relief they can get, but we should be honest about the actual math. The current sales tax is 17.2 cents per gallon. For a 16‑gallon tank, that’s roughly $2.80 in savings per fill‑up. It helps, but it barely creates a dent in the financial strain Hoosiers are facing. And we can’t ignore what caused the spike in gas prices in the first place. Since President Trump started the war with Iran, gas prices have risen by 38% . Global economic forecasts now project that prices will stay at or above $3.70 per gallon for the rest of 2026. Despite these facts, Gov. Braun and most of Indiana’s congressional delegation continue to support Trump’s actions, even as he called for the destruction of an entire civilization. They may say on paper that they want ‘affordability,’ but they refuse to call out the actions that threaten the wallets of Indiana’s working families. Indiana families deserve meaningful, lasting relief from the high cost of necessities. The legislature should be doing everything possible to make the basics like child care, health care, and housing affordable. I hope we continue the gas tax suspension into May to help keep more money in the pockets of Hoosiers. Indiana approves $200 million to reopen child care vouchers, but more than half the waitlist won’t get one Data centers are expanding fast — but so is the opposition Indiana gas sales tax faces jump of 6 cents in May if Braun doesn’t extend suspension ‘A NEW APPROACH’: Gov. Braun says law will address homelessness; critics say it will make the problem worse Property tax relief changes for veterans Sincerely, Matt Pierce Share Top Latest No posts Ready for more? Subscribe © 2026 Rep. Matt Pierce · Privacy ∙ Terms ∙ Collection notice Start your Substack Get the app Substack is the home for great culture This site requires JavaScript to run correctly. Please turn on JavaScript or unblock scripts
+
+---
+snapshot_id: 6d6caeea-036c-530e-94ac-715cd209db8f
+source_kind: public-record
+url: https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1296/rollcalls/HB1296.382_H.pdf
+
+Indiana House of Representatives S ECOND R EGULAR S ESSION 122 ND G ENERAL A SSEMBLY M AR 08, 2022 5:34:54 PM Roll Call 382: Conference Committee Report Adopted HB 1296 - Smaltz Yea 69 Nay 30 Excused 1 Not Voting 0 Presiding: Speaker Y EA - 69 Abbott Frye Lucas Slager Baird Goodrich Lyness Smaltz Barrett Gutwein Manning Snow Bartels Heaton May Soliday Behning Heine Mayfield Speedy Borders Hostettler McNamara Steuerwald Brown, T Jacob Miller Teshka Carbaugh Jeter Morrison Thompson Cherry Jordan Morris Torr Clere Judy Negele VanNatter Cook Karickhoff Nisly Vermilion Davis King O'Brien Wesco Davisson, J. Lauer Olthoff Young, J DeVon Ledbetter Payne Zent Eberhart Lehe Prescott Mr. Speaker Ellington Lehman Pressel Engleman Leonard Rowray Fleming Lindauer Schaibley N AY - 30 Andrade Dvorak Jackson Pryor Austin Errington Johnson Saunders Aylesworth GiaQuinta Klinker Shackleford Bartlett Gore Moseley Smith, V Bauer, M Hamilton Pack Summers Boy Harris Pfaff Ziemke Campbell Hatcher Pierce DeLaney Hatfield Porter E XCUSED - 1 Moed N OT V OTING - 0 v. 1.1 Firearms matters Conference Committee Report #1
+
+---
+snapshot_id: 3f9e2866-1f17-51b4-bf4e-cada69c8fc29
+source_kind: transcript
+url: https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d
+
+# On the Record — Matt Pierce (72dd5219-490f-48bb-986e-183a6098d602) ## forum — Bloomington Regular Session - OTR page: https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d - Video: (no video url) - Date on On the Record: 2026-06-09 · date in the source's file name: 2026-03-23 - Kind: forum · Regular Session · Bloomington - Linked races: 0b5ae739-aa3a-4bfd-b1bf-57cc1c380fd9, 0bab4038-45bc-42b6-a1df-38b98e742952 [2:57] Thank you. I'm asking for your vote in the upcoming May primary because I want to continue being a progressive voice for our community and our community's values at the State House. And that means, you know, treating everyone with dignity and respect and not attacking and trying to marginalize communities, creating an economy that works for everyone. affordable housing which we know is a big issue accessible and affordable health care is another thing people are crying out for we need to support our public schools not private schools we shouldn't be diverting our money away from our public schools we need to defend academic freedom and free speech on the IU campus and our other institutions of higher education and the other thing we have to do is we have to protect democracy that's a sad thing to say and so that means fighting things like attempts to redistrict in the middle of the decade I've had amendments to unmask ice I opposed the governor's military police bill and the ice compliance as well [4:21] Okay. Again, as I was saying broadly, it's just this whole basket of issues surrounding preservation of democracy, and that means fighting off voter suppression and these attempts to kind of militarize the law enforcement. That's a key thing. I think one of the other key things is the economy. We cannot have a system where some people have fabulous wealth while a significant number of people are struggling just to get by, and you have the middle class shrinking in the middle. And so that's a key thing. And, you know, the housing and health care and all that kind of fits into that affordability kind of issue. And I think also. academic freedom and free speech on our campus. I mean, it's really sad what you see happening at IU, having protesters in Dunn Meadow being arrested, faculty members dismissed and punished without due process. These are all things that I think we need to push back on. [8:36] Well, the root of the problem goes all the way back to when the Daniels administration decided that having a regular agency, Department of Commerce, was not good enough for economic development because open-door laws and other transparency requirements applied to that agency. So they decided to create, spin off, this economic development corporation. And the idea was they needed to have these kind of secret negotiations and deals. And what happened is over time... That just spun out into corruption, basically. What you had is self-dealing within the IEDC, and you had these crazy things like the LEAP project. They went out and paid outrageous sums of money for land up there, and they didn't even do their due diligence to figure out whether they had enough water for the things they wanted to do there. And all that was at the expense of the taxpayers, and it was because there was not the kind of credibility or the transparency that they needed. A final one to throw in there is this foundation, which is an appendix of IEDC. And in that case, what they would do is they would get these big contributions, charitable contributions, from mostly utilities. And those then would be used for these worldwide junkets. In the name of economic development, they would go to the Formula One race over in Europe, and the governor would go there and say, I'm making deals, you know, here in the suites of the sports events. And there really was no accountability for that. So I voted for a fuller investigation of what actually happened there. I think the current governor is trying to just blame it all on the last governor and move on. And I think we need to go back and really get to the bottom and the details of what happened there. And so I'm hopeful that that will happen. [10:35] Well, I think at this point, environmental issues and energy issues are inextricable. They're just wrapped together. And so I served for a long time on the Environmental Affairs Committee, and then I had an opportunity to become the ranking member, Democratic member of the Utilities Committee. And I've been a relentless advocate for renewable energy and moving us to a clean energy economy. And one of the most frustrating and dispiriting things is just how there's no interest among the Republican Party to address the climate change problem, despite the evidence that is confronting us with these abnormal weather events, flooding, real significant economic impacts, and longer-term impacts that are going to cause people's grandchildren, future generations, to have real problems. And it's really outrageous that the current people in charge are not willing to do something to try to solve these problems. And so I'm doing everything I can to push us to promote solar, rooftop solar. I fought the net metering law that kind of destroyed the economics of people being able to afford rooftop solar and become more independent and save money on their own energy bills on top of it. I've tried to... create more competition with energy. So way back when, I had several years in a row I put in what was called a feed-in tariff bill. It was based on what Germany has, where they basically allowed anybody to plug in. If you had renewable energy, wind or solar, you had a right to sell that into the utilities grid. And that really boosted up the amount of renewables they had there. [15:36] I haven't seen any politics more cynical and hateful than the Republicans at the State House when it comes to the LBGTQ plus community. You know, this all goes back to 2004. George Bush was in trouble because of his wars going into the election. He needed something to drive his base out to the polls. And so they cynically said, let's make marriage equality the big issue. And the same thing happened at the State House. And we went through year after year. of having to fight off this effort to take the so-called Defense of Marriage Act and put it in the state constitution. And I'm proud that at the time, the Democrats were in the majority. I was the chair of the Courts and Criminal Code Committee, and that constitutional amendment passed out of the Senate was sent to my committee, and I killed it. I said, I'm not giving this bill a hearing. I'm not participating in this cynical, hateful process. Since then, they moved on because people actually, the issue turned on them, right? And they no longer had the political power to attack marriage equality, so now they're attacking trans people. And it's sad. I fought off those efforts to— To basically marginalize that community and I've authored co-authored several bills with representative Campbell from Lafayette that attempts to at least begin to claw back this attack on parents' rights to decide what kind of health care their kids could get when they need gender-affirming care. And so I'll continue to work on those issues. [17:30] Well, what I have found during my time in the legislature, that you have to demand respect from the majority party. You can't just be kind of the go-along, nice guy, junior partner. You've got to really get up in their face sometimes. But you have to balance it out, because if you get in their face too much you end up getting marginalized yourself and so what i found just you know one example is the speaker went too far one day and he ruled out we had an amendment to expand voting rights to an election bill called Various Elections Matters. And the speaker said that our amendment was not germane. It violated the rules and could not be voted upon, which was insane because this bill had like 50 different election provisions of all types in it. And so we appealed the ruling of the chair and we debated it and I basically told the other people, like, My fellow Democrats, stand back. I'm taking this one. And I really went after the Speaker full bore. And I went through every single provision in that bill. I pointed out that it said various elections matter for the title. And I said what the Speaker just did here today is an abuse of power. And I challenged them to say, why are you afraid to vote on these bills? Why are you hiding behind the rules? to prevent yourself from being held accountable to the voters. And I said, it's gotta stop. Now, the interesting thing is, For about the next week or so, there was not a single ruling by the Speaker that our amendments were out of order on stuff that I think probably was stretching it a little bit. So you've got to learn how to push hard and command respect. [22:12] The affordable housing issue is kind of one of the more complex issues that I've come across because you have so many variables and factors impacting it, everything from interest rates to housing supply. We now have hedge funds coming in and buying up homes, competing with average buyers, and they have endless funds to come in, and so we're seeing kind of the housing corporatized. And so you've got to approach it from a lot of different angles, and so we need to do a better job, and this is probably Congress's job on Section 8 vouchers. The wait lists are too long for that. We have to do more to try to get more housing. And, you know, I was excited when in this session the Republicans said that they were actually going to start addressing affordability issues. And one of the things they said they were going to address was housing. But what they ended up doing is they had a home builder spearhead the bill, and the home builder said the big problem is we have too many regulations. And so by the time this affordable housing bill actually got before us in its final form, after it had gone through both houses, it was like a joke. It essentially outlawed two safety items because the home builder said they were too expensive. They had a deal keeping your house from burning down. And it also limited what kind of flood mitigation they could do for these retention ponds and things. And then finally it just told every local community you have to have a hearing. To discuss how your zoning laws might be impacting building, which I think we've already had those debates in our community here, and we continue to have them. [24:23] come up first yeah yeah so I'm I'm pleased that when we had the Black Lives Matters protests and that issue was forefront. One of the things I did is I called up the Republican Person I'd worked with on criminal code reform and I said look this we cannot allow this moment to pass without doing something about police brutality and making clear that we have to have a different way forward and I was pleased that we were able to get a bill put together that prohibited things like chokeholds some things that were resulting in people being injured or killed and stress de-escalation and put into the training rubrics for people at the law enforcement academy processes to try to avoid getting into the situations that we've just seen happen over and over again and so we have to we have to keep after that because after a while kind of people forget and they they maybe resort back to the old ways but i think that the other thing that that bill did which i thought was really important is I believe the most police officers want to serve their community, they want to protect the community, and they're very public spirited. But we unfortunately have a few people who seem to have a different set of priorities. And what would happen is when someone would do something that violated the rules of their department, they would just resign and move to the next department, which was easy because there's a shortage of officers. This bill requires the last department to have to share all the information about their personal records with the new potential hires. [28:15] Yeah, I have to admit, there's some days where just things go so crazy up there, you just want to kind of drop your head on the desk and say, like, I surrender. I mean, what can you possibly do to talk any sense into people? Or the worst thing I hate is, like, you made really good points on that bill, but I couldn't vote with you because, you know, my leadership would get mad at me or something. But, you know. There are just enough victories to keep me going. and that's really what continues to motivate me we had a tremendous victory by defeating redistricting and that was awesome and there are lesser victories that people don't particularly hear about all the time one that i can think of we had last session was uh this crazy bill that wanted to move to uh firing squads for executions which just like the nuttiest thing ever And, you know, I really pushed back on that bill, and it couldn't get enough votes within the House to actually move on to the Senate. And I thought that was another, you know, opportunity. So I think that the worst thing we can do is think of ourselves as helpless and hopeless and not having an ability to impact the system. And so particularly right now, I feel like coming up in this election in the fall, we have an opportunity to really take back some power to change the direction of the country and the state. And I think that is the critical thing to keep people focused on is don't give up hope. It's frustrating. It's dispiriting when you see this horrible legislation continue to come through the process. But we've had some victories, and we can have more victories if we all work together and focus on, basically, gaining that political power at the ballot box. [30:09] Yeah, this is really... um tough because i've offered some amendments on that i've been kind of i think it's because i drew the short straw but it ended up being like the house democrats point person on redistricting so i had to read all those grinding legal cases and everything and I think that it is achievable. It's happened in other states, but it's going to take a long-term movement. You know, I think it's something like the women earning the right to vote. I mean, those were multi-decade kinds of efforts, civil rights movement. I think it has to be something up to that level where it's almost a movement and you have to get people engaged enough to understand the impacts of redistricting. I think it's a root of a lot of our problems because when you pack all the Democrats together to dilute their power and that then creates lopsided Republican districts, the primaries become the elections that matter. And the general elections are really just kind of a rubber stamp kind of thing, and this reduces the accountability of the members. You know, there was a time when you had like a 52-48, 51-49 split in the House. Even a 55-48. A 45 split, which was considered a huge majority in those days. You could literally see people sweating as they were thinking about how to vote. They would see stuff like, oh, how are my people going to explain this back home? And now with 70 members and these lopsided districts, there's no sweating in the General Assembly. People just vote. how they want to they pander to their most extreme bases and there's no um there's no accountability because of that so we definitely need to do something on redistricting [34:24] Yeah, I think it's going to take a lot of education, particularly because, you know, over my objections, the Republicans adopted a law which took away the right of the student ID to be used as a voter ID, even though it met every exact. And I made the author of the bill. For like 15 or 20 minutes, I led him through every single aspect of this, and he could not give a good reason why they were doing it. And so that makes it harder to vote. So you've got to educate people about what you need to do to vote. One of the saddest things that I see, and it happens every election cycle, if you go to the county election board when they meet about 10 days after the election, they go through their provisional ballots. there will be 60 or 80 students who showed up to vote and they're not registered they're not registered in the county they're not even from the state they just showed up because they decided they wanted to vote and participate but they didn't understand that you have to get registered by a certain deadline that you have to get to the right precinct and what happened is you know i don't know if they thought their um provisional ballot would just magically count or what but it didn't and to think about all those votes that are not being accounted for is really bad so education is a key thing and then secondly the other part of education is helping people to understand who is doing what to them One reason why politicians are not held accountable when they don't address the needs of the people is because with this crazy media we have, social media, you can't figure out who's doing what to whom. And so we've got to work much harder for people to understand what votes, what parties are for their interests and against their interests. [36:32] Well, I think if you get back to the Indiana Economic Development Corporation, one of the biggest problems is they just got into this mindset of we're going to get the Fortune 500 company to come build a big factory here because we're going to give them these tremendous benefits. We will outbid the corporate welfare that we'll give to the people to get them here. And they ignored the ability of the small businesses, the startups right here. And so this is one thing where I agree with Governor Braun. He seems to be trying to redirect IEDC to be more focused toward something beyond just central Indiana and kind of the big corporations and the big kind of long bomb deals like the Leap District. And so I think that we need to redirect our efforts so that small businesses, that business that is prospering and it needs to get to the next level but it needs some help to get there, how do we help them do that? And then... We have to make sure that that assistance gets out across the state. And for Bloomington, it's particularly important that we support the tech sector, right? So we have a tech park here. We have a lot of people working really hard to build off of the industries we have now and to figure out how to get this kind of startup entrepreneurial economy going. And I think that if we put more effort into that, we have an opportunity to start some small businesses, some startups that could end up being quite substantial companies that would really help our community because we need better, higher-paying jobs in our community. We don't have enough of those. [40:03] think I'm up first okay all right you know one of the things that I think is really important if you're serving as a legislator is to look around the hearing rooms and the hallways of the Capitol and ask yourself who's not here Because oftentimes you hear only from the interest groups that can afford to have paid lobbyists at the State House who are there constantly, who build the relationships, who become friendly with legislators. And their viewpoints always get across. But there are many average everyday Hoosiers. who aren't organized in a way with the resources to have somebody on the scene at the state house every day working for their interests. And so that's where the responsibility of the legislators who represents all the people within his or her district. that legislator has to be thinking about who's not here, who's getting left out of the conversation. And that's one thing that I really pride myself on. So when the payday lenders show up and say, we need less regulation because we need to give people access to capital, I say, look, guys, this is not Fortune 500 companies talking about. You're exploiting struggling people. So let's not come up with some phony excuses for why you need stuff. We know what's going on here. And so people need legislators who will call out those people who want to prey upon people who are struggling the most. And so that's why I very much would like to be returned to the legislature. I'm asking the voters to return me there for another two years so I can continue working on those issues and representing all the people of District 61. [74:45] It was a good. [78:50] We got one going.

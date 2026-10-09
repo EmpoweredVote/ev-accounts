@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic_key": "rent-regulation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Buffy Wicks' own words on rent regulation from the current term or the campaign that seated her (issue page, questionnaire or debate answer)",
+          "Any rent-regulation bill Wicks authored or sponsored herself, with the CA Legislature bill history page"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "requests": [
+        "Buffy Wicks' own words on rent regulation from the current term or the campaign that seated her (issue page, questionnaire or debate answer)",
+        "Any rent-regulation bill Wicks authored or sponsored herself, with the CA Legislature bill history page"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

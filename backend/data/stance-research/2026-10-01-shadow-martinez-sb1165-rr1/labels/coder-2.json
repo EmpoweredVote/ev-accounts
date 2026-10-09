@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "1d6b7010-dc9b-5123-8e54-281e2c0790f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Signed law text designates teams by biological sex and bars the male sex from female-designated teams, while not restricting their eligibility for male/coed teams.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b11d9fdf-2748-59e2-b6bf-18144546d124",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview confirms SB1165 is single-subject (interscholastic/intramural athletics; biological sex) and that House Third Reading passed 03/24/2022.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5ec5ddad-123b-5a0b-a45d-d44edba17b59",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Martinez voting Y on the final-passage vote for SB1165.",
+          "record_kind": "vote",
+          "actor_quote": "MARTINEZ Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "1d6b7010-dc9b-5123-8e54-281e2c0790f6",
+        "5ec5ddad-123b-5a0b-a45d-d44edba17b59"
+      ],
+      "reasoning": "Martinez voted Y on SB 1165 (2022) House Third Reading, a single-subject bill whose operative text designates athletic teams by biological sex and provides that teams designated for females 'may not be open to students of the male sex,' while explicitly not restricting eligibility for male or coed teams. This matches the rung text requiring transgender athletes to compete only on teams matching their biological sex assigned at birth, and excludes the total-ban rung since male/coed participation is preserved. The vote falls within her service as State Representative, so it is in-term.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

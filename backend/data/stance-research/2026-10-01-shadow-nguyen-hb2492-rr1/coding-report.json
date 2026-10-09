@@ -1,0 +1,58 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7|0561b24d-9c8a-40b1-81a9-8b676e0d56fa|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 5,
+        "shared_sources": [
+          "030fed01-c9fc-5ba9-9ddc-32aa15ca5335",
+          "13b7f1ae-e990-5c00-9f49-a1549a382e07",
+          "a8e46bfe-af8f-544e-bb7a-e83312746708"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "az-azleg-bill-status@4",
+        "az-azleg-bill-text@2"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

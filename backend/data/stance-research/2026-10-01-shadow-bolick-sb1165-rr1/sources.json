@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-01-shadow-bolick-sb1165-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1165",
+      "source_kind": "public-record",
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_keys": [
+        "trans-athletes"
+      ],
+      "instruments": [
+        "SB 1165 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-sb1165-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1165#house-third",
+      "source_kind": "public-record",
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_keys": [
+        "trans-athletes"
+      ],
+      "instruments": [
+        "SB 1165 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-sb1165-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0106.htm",
+      "source_kind": "public-record",
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_keys": [
+        "trans-athletes"
+      ],
+      "instruments": [
+        "SB 1165 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

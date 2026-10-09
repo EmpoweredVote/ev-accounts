@@ -184,6 +184,21 @@ export interface TreasuryBudget {
   // ⚠ `unknown` means NOBODY HAS LOOKED. It is an honesty marker, never a guess and
   // never a judgement about the government, and it is the MAJORITY value.
   audit_grade?: string | null;
+  // ACCOUNTING-BASIS: what measurement basis the figure is ON — 'gaap' |
+  // 'modified_cash' | 'cash' | 'unknown'. NOT NULL with an 'unknown' default
+  // and a CHECK constraint, so always one of the four.
+  //
+  // ⚠⚠ ORTHOGONAL TO audit_grade, and the pair is the whole reason both
+  // exist. Duvall, WA's figures are AUDITED and NOT GAAP: its auditor issues
+  // an unmodified opinion on the BARS regulatory basis and an ADVERSE opinion
+  // on U.S. GAAP, in the same report. `audited_gaap` would be a false claim
+  // about a document that denies GAAP; `unknown` would claim nobody looked.
+  // Neither axis can carry both halves alone.
+  //
+  // ⚠ A consumer must render the non-GAAP values as DIFFERENT, never WORSE.
+  // The assurance lives in audit_grade; this says only what the figure
+  // measures, and a cash-basis figure is not a lesser figure.
+  accounting_basis?: string | null;
   data_source: string | null;
   data_source_info: {
     displayName: string;
@@ -299,6 +314,7 @@ interface BudgetRow {
   reporting_entity: string; // SCOPE-02; NOT NULL with a 'unknown' default, so always present
   derivation: string;   // SCOPE-04; NOT NULL with a 'published' default, so always present
   audit_grade: string;  // AUDIT-GRADE; NOT NULL with a 'unknown' default, so always present
+  accounting_basis: string; // ACCOUNTING-BASIS; NOT NULL with a 'unknown' default + CHECK, so always present
   data_source: string | null;
   source_url: string | null;   // municipal attribution (non-federal fallback)
   source_date: string | null;  // municipal attribution (non-federal fallback)
@@ -439,6 +455,7 @@ function mapBudget(row: BudgetRow): TreasuryBudget {
     reporting_entity: row.reporting_entity,
     derivation: row.derivation,
     audit_grade: row.audit_grade,
+    accounting_basis: row.accounting_basis,
     data_source: row.data_source,
     data_source_info: row.ds_display_name && row.ds_url
       ? {
@@ -804,7 +821,7 @@ export async function getBudgetsByCityId(
   if (fiscalYear !== undefined) {
     const { rows } = await pool.query<BudgetRow>(
       `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade, b.accounting_basis,
               b.data_source, b.source_url, b.source_date,
               sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -825,7 +842,7 @@ export async function getBudgetsByCityId(
 
   const { rows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade, b.accounting_basis,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -1088,8 +1105,14 @@ export interface NestedCategory {
   subcategories?: NestedCategory[];
   lineItems?: Array<{
     description: string;
-    approvedAmount: number;
-    actualAmount: number;
+    // ⚠⚠ NULLABLE, AND THE NULL IS THE POINT. `approved_amount` is NULL for
+    // every source that publishes no adopted budget -- the WA SAO loader writes
+    // `aa: null` on purpose, because a BARS or GAAP statement reports what was
+    // SPENT and never what was budgeted. Typing these `number` forced the
+    // mapper to invent a 0, and Treasury Tracker published "Budgeted $0 /
+    // Actual $140,249,393" for the City of Redmond.
+    approvedAmount: number | null;
+    actualAmount: number | null;
     basePay?: number | null;
     benefits?: number | null;
     overtime?: number | null;
@@ -1113,7 +1136,7 @@ export async function getBudgetById(
 ): Promise<(TreasuryBudget & { categories: NestedCategory[] }) | null> {
   const { rows: budgetRows } = await pool.query<BudgetRow>(
     `SELECT b.id, b.municipality_id, b.fiscal_year, b.dataset_type, b.period_label, b.total_budget,
-              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade,
+              b.fund_scope, b.basis, b.reporting_entity, b.derivation, b.audit_grade, b.accounting_basis,
             b.data_source, b.source_url, b.source_date,
             sr.display_name AS ds_display_name, sr.url AS ds_url,
             dsrc.base_url AS ds_base_url, dsrc.last_synced_at AS ds_last_synced_at,
@@ -1253,8 +1276,24 @@ export async function getBudgetById(
       subcategories: [] as NestedCategory[],
       lineItems: catLineItems?.map(li => ({
         description: li.description,
-        approvedAmount: li.approved_amount !== null ? Number(li.approved_amount) : 0,
-        actualAmount: li.actual_amount !== null ? Number(li.actual_amount) : 0,
+        // ⚠⚠ NULL SURVIVES AS NULL. These two coerced to 0 while every
+        // neighbouring nullable field below preserved null -- and the write
+        // path stores `data.approvedAmount ?? null`, and the route schema
+        // declares both `.optional().nullable()`. The schema, the writer and
+        // the validator all agreed NULL was legal; this reader was the only
+        // place that disagreed, and it is what manufactured the $0 budget.
+        //
+        // ⚠ A REAL ZERO IS STILL 0. `Number('0')` is 0 and stays 0 -- a source
+        // that genuinely budgeted nothing for a line must keep saying so, or
+        // this trades one wrong answer for another.
+        //
+        // ⚠ The symptom was seen before and had a DIFFERENT cause:
+        // buildBudgetTree once had `a`/`aa` inverted, leaving approved_amount
+        // NULL for San Francisco's 19,299 items. That was a bug, fixed by
+        // populating the column. Washington's NULLs are the fact, not a bug.
+        // Preserving NULL is what tells the two apart.
+        approvedAmount: li.approved_amount !== null ? Number(li.approved_amount) : null,
+        actualAmount: li.actual_amount !== null ? Number(li.actual_amount) : null,
         basePay: li.base_pay !== null ? Number(li.base_pay) : null,
         benefits: li.benefits !== null ? Number(li.benefits) : null,
         overtime: li.overtime !== null ? Number(li.overtime) : null,

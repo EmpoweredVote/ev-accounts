@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f3671de4-514f-441c-8ad4-4a9ab7c65ae6",
+      "office_id": "e090aea1-8a60-4a53-b43f-ce7162477c4a",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "75b8d8b2-f726-5f58-b711-b6409af31abd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-09-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": "the procurement of electricity products from eligible renewable energy resources achieves 25 percent of retail sales by December 31, 2016, 33 percent by December 31, 2020, 44 percent by December 31, 2024, 52 percent by December 31, 2027, and 60 percent by December 31, 2030",
+          "note": "RPS mandate with firm percentage targets and dates matches rung 1's mechanism.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c7118dfe-a4bb-56f7-b1cc-7049279c9a26",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-08-29",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": null,
+          "note": "Stern voted Aye on the SB 100 concurrence floor vote, 25-13.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Atkins, Beall, Bradford, De León, Delgado, Dodd, Galgiani, Glazer, Hernandez, Hertzberg, Hill, Hueso, Jackson, Lara, Leyva, McGuire, Mitchell, Monning, Pan, Portantino, Skinner, Stern, Wieckowski, Wiener",
+          "tally_quote": "Ayes Count 25 Noes Count 13"
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "75b8d8b2-f726-5f58-b711-b6409af31abd",
+        "c7118dfe-a4bb-56f7-b1cc-7049279c9a26"
+      ],
+      "reasoning": "Stern voted Aye on SB 100 (2017-2018)'s concurrence floor vote, 25-13, an in-term record in his current Senate seat. The bill's operative RPS provision requires retail sellers to procure eligible renewable energy resources to reach specific, dated percentages of retail sales, matching 'Require a shift to clean energy through mandates and firm deadlines.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

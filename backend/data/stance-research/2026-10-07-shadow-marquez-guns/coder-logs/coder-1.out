@@ -1,0 +1,10 @@
+I wrote the coder-1 label file to `/Users/chrisandrews/Documents/GitHub/ev-accounts-gold20/backend/data/stance-research/2026-10-07-shadow-marquez-guns/labels/coder-1.json`. It has one row, for `gun-policy`, coded as **BLANK `compound-partial`**.
+
+**Why that blank:**
+- Márquez is the prime sponsor of HB 2621 (2025) and the first-listed sponsor of HCR 2034 (2025). Both bills require background checks on private sales, which meets the "require universal background checks on every sale" clause of the rung "Allow all types of firearms, but require universal background checks on every sale".
+- Neither bill says anything about which types of firearm may be owned. Under V4.2 ("Silence is not a clause") and the annex's rung-3 ruling, that leaves the "allow all types of firearms" clause unevidenced. So the rung is only half matched, and I couldn't seat it.
+
+**What the file holds:**
+- **Passages:** three, all coded as sponsorship records, in-term and `direction-only`. They are the HB 2621 bill text, the HB 2621 status page, and the HCR 2034 text. I quoted subsection A as the provision on both bill texts. The sponsor lines come from the "Introduced by Representatives Márquez: Abeytia" line and the status page's "Márquez (Prime)".
+- **`needs_source`:** her own words, or a recorded vote, on an assault-weapons ban or another ban on a firearm type. That would decide whether she belongs on rung 3 or rung 2.
+- **Quotes:** none. No source contains her own words.

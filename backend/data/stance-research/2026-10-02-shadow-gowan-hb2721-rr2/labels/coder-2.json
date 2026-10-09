@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote page records Gowan's Aye on HB2721, a middle-housing zoning bill, but names no provision text.",
+          "record_kind": "vote",
+          "actor_quote": "GOWAN Y",
+          "tally_quote": "Passed 21-7-2-0-0 Amended"
+        },
+        {
+          "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2721 (2024)",
+          "provision_quote": "The municipality may not do any of the following: 1. Discourage the development of middle housing through requirements or actions that individually or cumulatively make impracticable the permitting, siting, or construction of middle housing.",
+          "note": "The enacted bill text bars municipalities from blocking middle-housing development through restrictive zoning and permitting rules, but names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [
+        "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+        "bf815c59-cea5-5c8a-95ee-07a7d522656b"
+      ],
+      "reasoning": "Gowan voted Aye on HB2721 (2024), whose operative text bars municipalities from using zoning and permitting rules to block middle-housing development — on its face this speaks to rung 5's clause to 'cut the regulations and zoning limits that block private building.' Per the annex, a single statewide deregulation law of this kind is on-question but cannot establish the rung's ceiling claim ('at most'), since a person who favors rent caps or subsidies (rungs 3 or 4) could vote for it too, so the row is BLANK direction-only rather than a numeric chair.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

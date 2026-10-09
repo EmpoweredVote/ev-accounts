@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "dc49ccc5-06bc-591f-ae43-b6e68d3239f5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-09-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": "It is the policy of the state that eligible renewable energy resources and zero-carbon resources supply 100 percent of all retail sales of electricity to California end-use customers and 100 percent of electricity procured to serve all state agencies by December 31, 2045.",
+          "note": "Enacted bill text sets a 100% clean energy mandate with a firm December 31, 2045 deadline.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "eed8e3bb-c007-5140-99b2-82050a30bbdf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-08-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": null,
+          "note": "Assembly floor vote record shows Gabriel among the Ayes on SB 100's final Assembly passage.",
+          "record_kind": "vote",
+          "actor_quote": "Friedman, Gabriel, Cristina Garcia",
+          "tally_quote": "Ayes Count 44 Noes Count 33 NVR Count 3"
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "dc49ccc5-06bc-591f-ae43-b6e68d3239f5",
+        "eed8e3bb-c007-5140-99b2-82050a30bbdf"
+      ],
+      "reasoning": "Gabriel voted Aye on SB 100 (2017-2018) in the Assembly floor vote on 2018-08-28, a vote from his earlier term in this legislature. The enacted law's Section 454.53(a) requires that clean and zero-carbon resources 'supply 100 percent of all retail sales of electricity to California end-use customers ... by December 31, 2045,' and Section 399.15 sets firm interim procurement percentages by specific dates, matching the rung text 'Require a shift to clean energy through mandates and firm deadlines.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

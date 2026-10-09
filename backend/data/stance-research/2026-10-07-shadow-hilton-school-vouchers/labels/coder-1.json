@@ -1,0 +1,106 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "bba3bc76-e0e4-5eee-94e7-f1c8df72c113",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign page in the third person ('Hilton will expand choice through ESAs, starting with low-income and special needs students'); even as his words it gives only a starting group, not the eligibility end state that separates rungs 3, 4 and 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4b22c186-405f-516a-bc1b-a350d81185c9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-01-23",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Mentions only that Gloria Romero worked on a school-choice ballot initiative and that they worked together on education policy; states no position of his own on vouchers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "58382e98-e275-5484-8c63-3736dfdd435e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-04-01",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Biographical mention that he met Romero while she worked on a school-choice ballot initiative; no voucher position stated.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9151faa5-634a-58d4-a522-2ceeef381059",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A business-school proposal for higher education; nothing on vouchers or K-12 school choice.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "37af14c2-97cb-5046-82b8-7741dd79b733",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Aggregator pointer page; the excerpt carries no voucher content.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only on-question passage is a third-person campaign page saying 'Hilton will expand choice through ESAs, starting with low-income and special needs students', which is a characterization, not his own words; even read as his own words it shows only the pro-voucher side, since 'starting with' low-income families does not say whether eligibility ends under an income cap, at most families, or universal (every student, any school). His interview remarks mention school choice only as Gloria Romero's ballot work.",
+      "needs_source": [
+        "Hilton's own first-person words (debate answer, questionnaire, or first-person policy report such as his Golden Together education paper) stating the intended ESA eligibility end state"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "bba3bc76-e0e4-5eee-94e7-f1c8df72c113",
+          "text": "To give parents immediate options while traditional schools improve, Hilton will expand choice through ESAs, starting with low-income and special needs students.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

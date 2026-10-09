@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "2bf220a9-505d-5996-9daa-5f252d65e69a",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2022",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Bill-details page lists Smaltz as author and other members as co-authors/sponsors; it does not mention Soliday.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3a61977f-28e8-584b-a0d7-0937aefcabfe",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": "under state or federal law is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana.",
+          "note": "Enrolled act text eliminates the license requirement to carry a handgun, replacing it with no state permit requirement.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ced8e38e-5762-5077-b51f-d27a1cfa7b71",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1296 (2022)",
+          "provision_quote": null,
+          "note": "Roll Call 382 records Soliday voting Yea to adopt the conference committee report on HB 1296, final passage, 69-30.",
+          "record_kind": "vote",
+          "actor_quote": "Heaton May Soliday Behning Heine",
+          "tally_quote": "Yea 69 Nay 30 Excused 1 Not Voting 0"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "3a61977f-28e8-584b-a0d7-0937aefcabfe",
+        "ced8e38e-5762-5077-b51f-d27a1cfa7b71"
+      ],
+      "reasoning": "Soliday voted Yea on Roll Call 382 (Mar. 8, 2022) adopting the conference committee report on HB 1296, final passage of a single-subject firearms bill whose enrolled text provides that a person 'is not required to obtain or possess a license or permit from the state to carry a handgun in Indiana,' matching the rung text 'Repeal major gun restrictions and let adults carry a firearm without a permit.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+I wrote `labels/coder-2.json` with one row, for Janae Shamp on `education-library-books`. I coded it BLANK with reason `compound-partial` and no rung chosen. I did not re-open the file after writing.
+
+- **What the evidence shows:** The two sources are the SB 1700 (2023) bill text and the Senate third-reading page, where she voted Aye (`SHAMP Y`). It passed 16-12, so it is not near-unanimous.
+- **Why it stops short of a rung:** The bill's operative section has the state department of education review parent-submitted books and add them to a prohibited list. The committee rung needs the reviewer to be a committee of educators and parents. Only the clause that removal follows a review is met, and the annex says a state-agency reviewer is `compound-partial`.
+- **Passage coding:** Both passages are coded as `record` / `vote`, `own-act`, `in-term`, with shape `direction-only`. The `actor_quote` and `tally_quote` are on the vote page, and the `provision_quote` is on the bill-text page.
+- **Open item:** I listed one `needs_source`: Shamp's own words on handling library book challenges. No quotes were coded, because neither source contains her words.

@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257|f4c83c0b-3c35-419b-a618-0e6c4c13fd38|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Aguiar-Curry's own words on who should be deported (floor statement, questionnaire answer, or issue page addressing removal priorities)",
+          "A California Assembly record on an instrument that sets a removal rule (for example a legalization or removal-priority measure), with roll call and bill text",
+          "Aguiar-Curry's own words addressing who should be deported (a statement, interview, or questionnaire answer on deportation priorities/targets)",
+          "a record of an instrument that sets federal removal priorities or deportation criteria, rather than state/local cooperation with federal enforcement",
+          "Aguiar-Curry's own words on the extent of deportation (who should be removed), or a removal-specific instrument she sponsored, voted on, or signed"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257|f4c83c0b-3c35-419b-a618-0e6c4c13fd38|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "Aguiar-Curry's own words on who should be deported (floor statement, questionnaire answer, or issue page addressing removal priorities)",
+        "A California Assembly record on an instrument that sets a removal rule (for example a legalization or removal-priority measure), with roll call and bill text",
+        "Aguiar-Curry's own words addressing who should be deported (a statement, interview, or questionnaire answer on deportation priorities/targets)",
+        "a record of an instrument that sets federal removal priorities or deportation criteria, rather than state/local cooperation with federal enforcement",
+        "Aguiar-Curry's own words on the extent of deportation (who should be removed), or a removal-specific instrument she sponsored, voted on, or signed"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12",
+      "office_id": "927850b9-2c91-44f7-a6be-f4c81dc3b75d",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "001832e2-df00-5dd7-8847-550996caebb0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-25",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": "That Section 31 of Article I thereof is repealed.",
+          "note": "Bill-text page prints the operative repeal of Prop 209's ban on race/sex preferences; it names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "63afc856-cd20-5d20-8a29-ea5c72c469e6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": null,
+          "note": "Assembly floor vote page lists Ramos among the Ayes on ACA 5 final passage; it prints no provision text.",
+          "record_kind": "vote",
+          "actor_quote": "Quirk-Silva, Ramos, Reyes",
+          "tally_quote": "Ayes Count 60 Noes Count 14"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "In his earlier Assembly term, Ramos voted Aye on ACA 5 (2019-2020), whose operative text states 'That Section 31 of Article I thereof is repealed,' removing the constitutional bar on race, sex, ethnicity and national-origin preferences in public employment, education and contracting and so permitting affirmative-action programs to resume. A measure that only permits such programs does not itself strengthen civil rights enforcement, so it cannot establish the full compound rung text 'strengthen civil rights enforcement and address systemic discrimination' — at most it touches addressing systemic discrimination, leaving the enforcement clause unmatched, so the row is BLANK compound-partial.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

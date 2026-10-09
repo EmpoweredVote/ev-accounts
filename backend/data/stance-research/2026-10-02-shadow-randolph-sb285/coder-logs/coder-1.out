@@ -1,0 +1,14 @@
+Wrote `labels/coder-1.json` — one row, one passage, BLANK.
+
+**Homelessness — BLANK `direction-only`**
+
+The single snapshot gives one usable passage: the Indiana Capital Chronicle's direct quotation of Randolph during debate (`own-words`, `on-question`, `statement-other`, 2026-02-27, `in-term`).
+
+Why no chair:
+- He rejects jail ("not jail time") and names services instead. That excludes rung 5's criminal penalties and leans away from enforcement generally, but it does not separate rung 1 (no penalties of any kind), rung 2 (decriminalizing), or rung 3 (enforcement only when shelter beds are available). He says nothing about civil penalties, so rung 4 isn't excluded either.
+- This is V4.2: ruling out the criminal-penalty rung is not evidence for whichever rung is left.
+- The excerpt prints the Senate tally (29-19) but no member list and no bill number, so there is no `record` passage — no `actor_quote`, no `instrument`, no `provision_quote` available.
+
+`needs_source` asks for the Senate roll call naming Randolph, the bill's operative text, and his own words on whether any penalty or shelter condition should apply.
+
+One quote captured ("That’s not the answer. The answer is helping these homeless people…"), coded `direction`: it passes T1 (enforcement-first opponents reject it) but fails T2 — "providing the things that they need" names no program a voter could check. Quotable, no V8 codes.

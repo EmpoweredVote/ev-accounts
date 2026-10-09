@@ -1,0 +1,82 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "710396dc-e618-4011-8118-43c62a786111",
+      "served_revision_id": "c42b12b6-d7c3-4b88-a932-06b87d5043c9",
+      "passages": [
+        {
+          "snapshot_id": "72a5fa79-1885-5408-8307-31d8ed659512",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-05-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The only military reference (\"before the Iran war\") dates a gas-price comparison; nothing on when or whether the US should use force abroad.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "53b1343d-b621-5bea-91ac-039d55e4a68e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-04-01",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remarks on agriculture, water, energy and regulation; no mention of military force abroad.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2a51b6f1-86e6-5695-a18b-1ffd0ce662c5",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign wildfire plan; unrelated to military intervention.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e4c327be-c737-54d8-b709-656e04809002",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "AI policy page mentions national security and the US-China race but says nothing about using military force abroad.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "At the state level only Hilton's own words can seat a chair, and none of the four sources speaks to how the United States should use military force abroad; the debate's passing reference to \"the Iran war\" only dates a gas-price claim. No passage addresses any rung, from \"actively lead and police conflicts around the world\" to \"withdraw from overseas military commitments\".",
+      "needs_source": [
+        "Steve Hilton's own words (debate answer, interview, questionnaire or first-person post) on when the US should use military force abroad, e.g. on the Iran war"
+      ],
+      "quotes": []
+    }
+  ]
+}

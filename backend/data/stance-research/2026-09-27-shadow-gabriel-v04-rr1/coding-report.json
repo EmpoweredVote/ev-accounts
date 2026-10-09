@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Jesse Gabriel's own words answering whether platforms should be legally required to remove false information or only to label it (questionnaire, floor statement, or first-person issue page)",
+          "A California Assembly record by Gabriel on a bill whose operative text requires removal or labeling of false content",
+          "Gabriel's own words (floor statement, author's statement, questionnaire answer) explaining why AB 587 was needed or what he believes platforms/government should do about false information specifically",
+          "A bill, vote, or statement by Gabriel that requires removal or labeling of false content, encourages voluntary standards, protects free speech online, or addresses government's role in content moderation decisions directly"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "requests": [
+        "Jesse Gabriel's own words answering whether platforms should be legally required to remove false information or only to label it (questionnaire, floor statement, or first-person issue page)",
+        "A California Assembly record by Gabriel on a bill whose operative text requires removal or labeling of false content",
+        "Gabriel's own words (floor statement, author's statement, questionnaire answer) explaining why AB 587 was needed or what he believes platforms/government should do about false information specifically",
+        "A bill, vote, or statement by Gabriel that requires removal or labeling of false content, encourages voluntary standards, protects free speech online, or addresses government's role in content moderation decisions directly"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

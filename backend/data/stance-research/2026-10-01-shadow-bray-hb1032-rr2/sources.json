@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-10-01-shadow-bray-hb1032-rr2",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2026/bills/house/1032/details",
+      "source_kind": "public-record",
+      "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+      "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+      "topic_keys": [
+        "redistricting"
+      ],
+      "instruments": [
+        "HB 1032 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2026-hb1032-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/rollcalls/HB1032.8_S.pdf",
+      "source_kind": "public-record",
+      "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+      "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+      "topic_keys": [
+        "redistricting"
+      ],
+      "instruments": [
+        "HB 1032 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2026-hb1032-rc8s.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/124/2026/house/bills/HB1032/HB1032.03.COMS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+      "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+      "topic_keys": [
+        "redistricting"
+      ],
+      "instruments": [
+        "HB 1032 (2026)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2026-hb1032-coms.txt"
+    }
+  ]
+}

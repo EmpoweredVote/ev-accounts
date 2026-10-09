@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-becerra-education-school-budget",
+  "seat": {
+    "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+    "full_name": "Xavier Becerra",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "49f0b171-2ddf-4e68-887f-0ba78a2562f1",
+      "topic_key": "education-school-budget",
+      "served_revision_id": "0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc",
+      "question_text": "How should schools set spending levels and decide whether to raise more revenue?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Raise taxes to significantly increase school funding"
+        },
+        {
+          "value": 2,
+          "text": "Increase funding modestly to keep pace with costs, without raising taxes"
+        },
+        {
+          "value": 3,
+          "text": "Hold funding flat at current levels"
+        },
+        {
+          "value": 4,
+          "text": "Cut administrative overhead to lower costs while protecting classroom funding"
+        },
+        {
+          "value": 5,
+          "text": "Cut school funding significantly to reduce the taxes residents pay"
+        }
+      ],
+      "own_words_levels": [
+        "federal"
+      ],
+      "annexMd": "# education-school-budget — served revision 0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should schools set spending levels and decide whether to raise more revenue?\"\n\n**Orientation:** standard. Rung 1 raises taxes to raise funding a lot; rung 5 cuts funding a lot to\ncut taxes. The rungs order **the funding level and its tax source**. Rung 4 is about the **mix** of\nspending (administration against classroom), not the level.\n\n**Levels with a lever:** local, school, state. The lever is the school board's\nbudget and levy, the city or county council where it funds or approves the school budget, and the\nstate's school-aid formula and tax law.\n\n**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"levy\", \"mill rate\", \"millage\", \"operating referendum\", \"override\", \"bond\", \"per-pupil\nfunding\", \"foundation amount\", \"school-aid formula\", \"adequacy\", \"truth in taxation\", \"levy limit\",\n\"tax cap\", \"property-tax relief\", \"maintenance of effort\", \"central office\", \"administrative\noverhead\", \"classroom spending\".\n\n1. **\"Raise taxes to significantly increase school funding\"**\n   - Means: a tax increase that pays for a large rise in school funding.\n   - Operative clauses: [a] a tax increase; [b] a significant funding increase. Compound: one side\n     only → `compound-partial` (V4.2).\n   - Establishing evidence looks like: a vote to raise the levy or rate, or to put an operating\n     referendum or override on the ballot, where the passage shows the increase is large.\n   - Levels that hold a lever: school; local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - \"Significantly\" means an increase **above cost growth** (inflation and enrollment) as the\n     passage shows; rung 2 defines \"modestly\" as keeping pace. A tax-funded increase that only keeps\n     pace → `direction-only` (not rung 1: not significant; not rung 2: it raises taxes) _(ruled 2026-10-01)_.\n\n2. **\"Increase funding modestly to keep pace with costs, without raising taxes\"**\n   - Means: funding rises about as fast as costs, paid from existing revenue.\n   - Operative clauses: [a] a modest increase that tracks costs (inflation, enrollment); [b] no tax\n     increase. Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: a budget whose increase tracks costs **and** a levy or rate\n     held at its current level. [b] is an absence clause: the passage must show no tax increase\n     (V4.2 \"Silence is not a clause\").\n   - Levels that hold a lever: school; local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 when the nominal budget is flat but costs rise. Code the change\n     the passage states; do not convert to real terms _(proposed)_.\n\n3. **\"Hold funding flat at current levels\"**\n   - Means: no increase and no cut.\n   - Operative clauses: [a] the total stays at its current level.\n   - Establishing evidence looks like: a budget or own words that keep the total the same as last\n     year.\n   - Levels that hold a lever: school; local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n\n4. **\"Cut administrative overhead to lower costs while protecting classroom funding\"**\n   - Means: spend less on administration and keep classroom spending whole.\n   - Operative clauses: [a] a cut to administrative overhead; [b] classroom funding protected.\n     Compound: one side only → `compound-partial`.\n   - Establishing evidence looks like: a budget amendment or own words that cut central-office or\n     administrative spending **and** keep classroom spending at or above its level.\n   - Levels that hold a lever: school; local; state (classroom-spending floors).\n   - Known chair-shaped instruments: _(none on file)_.\n   - A classroom-spending floor (a share that must go to instruction) meets [b] only →\n     `compound-partial` _(proposed)_.\n\n5. **\"Cut school funding significantly to reduce the taxes residents pay\"**\n   - Means: a large funding cut that is made to lower taxes.\n   - Operative clauses: [a] a significant funding cut; [b] made to reduce taxes. Compound: one side\n     only → `compound-partial`.\n   - Establishing evidence looks like: a vote to lower the levy or rate together with a large\n     budget cut; own words that tie the two.\n   - Levels that hold a lever: school; local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - **Property-tax relief that the state replaces with state aid** lowers taxes without cutting\n     funding → not [a] → `direction-only` _(proposed)_.\n\n**Hard cases:**\n- **A Yes on the district's annual budget** is `on-question`, not `multi-subject`: the total is this\n  ladder's subject. It is chair-shaped only when the passage shows the year-over-year change and the\n  levy or rate change; otherwise `direction-only` _(ruled 2026-10-01)_.\n- **A No on a budget** proves nothing (V4.1).\n- **What counts as raising taxes.** A higher rate, a higher levy amount, a new tax, or approval of a\n  referendum, override or bond raises taxes. A rate held flat while values rise is not a tax\n  increase unless the instrument says it raises the levy _(proposed)_.\n- **Capital bonds** fund buildings, not operating spending → [a] at most; code [b] only when the\n  passage ties the bond to the funding level _(proposed)_.\n- **State levy limits and tax caps** on districts limit what a district may raise; they do not by\n  their own text cut funding or lower a tax → `adjacent` (V2, H12), unless the act itself lowers\n  rates _(proposed)_.\n- **A state budget** with a school-aid line → V4 `multi-subject`; a single-subject school-aid bill →\n  on-question.\n- **Teacher pay and specific programmes** → `adjacent` unless the passage states the total level.\n"
+    }
+  ]
+}

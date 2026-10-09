@@ -1,0 +1,10 @@
+Written: `labels/coder-1.json` — one row, codebook 0.4, coder slot 1.
+
+**Coding summary (Bascom / deportation)**
+
+Both snapshots are the same record: **HB 1393 (2025)**, which Bascom **authored** (`own-act`, `record`, `record_kind: author`, `in-term` — 2025 session, House seat held since 2024-11-06).
+
+- `actor_quote` sits on the IGA details page that prints it ("Authored by: Rep. Garrett Bascom"); `provision_quote` sits on the enrolled-act PDF that prints the statute. No `tally_quote` — the group is an authorship, not a vote. Nothing quoted falls inside a `[deleted: …]` fence.
+- **V6: BLANK `direction-only`.** The act creates a jail-to-sheriff notification duty triggered by arrest "for a felony or a misdemeanor" with probable cause someone is "not lawfully present in the United States." That is a referral mechanism, not a removal-scope policy. It is incompatible with rung 1 and reaches past rung 2's "convicted of serious violent crimes" limit, but it says nothing about long-settled immigrants, nothing about removing everyone, and never names "all." Seating rung 4 here would be H14 — ruling out the other rungs and taking what's left — so the chair isn't evidenced.
+- `quotes` is empty: there are no `own-words` passages in these sources, only statutory text.
+- `needs_source` names the two things that would resolve the row: Bascom's own words on removal scope, or an instrument of his that sets scope rather than notification.

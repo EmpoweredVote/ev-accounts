@@ -1,0 +1,51 @@
+{
+  "batch_id": "2026-10-01-shadow-bray-hb1032-rr2",
+  "seat": {
+    "politician_id": "97c61094-b962-48b2-b6ef-de96b5f9bb7a",
+    "full_name": "Rodric D Bray",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "d32b3477-0951-4ba6-a359-3ca744adff72",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2012-11-07",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "question_text": "Who should draw electoral district boundaries and how should they be determined?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "independent citizens' commissions with no elected officials involved at any level."
+        },
+        {
+          "value": 2,
+          "text": "independent redistricting commissions with equal representation from both major parties."
+        },
+        {
+          "value": 3,
+          "text": "bipartisan legislative committees with strict rules requiring supermajority approval."
+        },
+        {
+          "value": 4,
+          "text": "state legislatures with court oversight to prevent extreme partisan bias."
+        },
+        {
+          "value": 5,
+          "text": "the party that controls the state legislature without outside interference."
+        }
+      ],
+      "annexMd": "# redistricting — served revision c7f973fc-33f5-4570-bfe2-bff4ac6141cc (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"Who should draw electoral district boundaries and how should they be determined?\"\n\n**Orientation:** standard. Rung 1 puts the map-drawer furthest from elected officials, rung 5 gives\nthe maps to the legislative majority with no check. The rungs order **how insulated the map-drawer is\nfrom the people elected under the maps**. Each rung names an institution and the constraint that\nseparates it from its neighbour.\n\n**Levels with a role:** federal, state (`compass_topic_roles`). The lever is state: constitutions and\nstatutes say who draws the maps. The federal lever is national redistricting-standards legislation;\nfor rungs 2 and 3 a federal official's evidence is usually own words (review 2026-08-31, scope kept).\n\n**Synonyms:** \"independent redistricting commission\" (IRC), \"citizens redistricting commission\",\n\"advisory commission\", \"backup commission\", \"apportionment\", \"gerrymandering\", \"partisan fairness\",\n\"communities of interest\", \"Fair Districts\", \"mid-decade redistricting\", \"Elections Clause\",\n\"independent state legislature\", \"supermajority\".\n\n1. **\"independent citizens' commissions with no elected officials involved at any level.\"**\n   - Means: ordinary citizens draw the maps, and elected officials take no part at any step.\n   - Operative clauses: [a] an independent citizens' commission draws the maps; [b] no elected official\n     is involved at any step (choosing members, drawing, approving).\n   - Establishing evidence looks like: a measure that creates such a commission and gives elected\n     officials no role; own words for it. [b] is an absence clause and must be stated (V4.2).\n   - Levels that hold a lever: state; federal (national standards that require such commissions).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because many citizens' commissions also seat equal numbers from the\n     two largest parties. A citizens' commission with equal party seats, where legislative leaders take\n     part in choosing members, is rung 2: elected officials are involved, so rung 1's absence clause\n     fails _(ruled 2026-10-01)_.\n\n2. **\"independent redistricting commissions with equal representation from both major parties.\"**\n   - Means: a commission outside the legislature draws the maps, with equal seats for the two largest\n     parties.\n   - Operative clauses: [a] an independent commission draws the maps; [b] equal representation of the\n     two major parties.\n   - Establishing evidence looks like: a measure that creates a commission with equal party seats.\n   - Levels that hold a lever: state; federal (own words, mostly).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - An **advisory** commission whose maps the legislature may change or reject is not independent →\n     not rung 1 or 2; `direction-only` _(proposed)_.\n\n3. **\"bipartisan legislative committees with strict rules requiring supermajority approval.\"**\n   - Means: legislators draw the maps in a committee of both parties, and the maps need a supermajority.\n   - Operative clauses: [a] a bipartisan legislative committee; [b] supermajority approval.\n   - Establishing evidence looks like: a rule or constitutional text that gives the maps to a\n     bipartisan legislative committee **and** requires a supermajority. Compound: one side only →\n     `compound-partial` (V4.2).\n   - Levels that hold a lever: state; federal (own words, mostly).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because both keep the maps in the legislature. Rung 3's check is\n     internal (bipartisanship and a supermajority); rung 4's is a court.\n\n4. **\"state legislatures with court oversight to prevent extreme partisan bias.\"**\n   - Means: the legislature draws the maps, and courts can strike maps with extreme partisan bias.\n   - Operative clauses: [a] the legislature draws; [b] courts can review for partisan bias.\n   - Establishing evidence looks like: a measure that leaves the maps with the legislature and sets\n     partisan-fairness standards that courts enforce; own words for that arrangement _(proposed)_.\n   - Levels that hold a lever: state; federal (national standards enforceable in court).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK because a **lawsuit asking a court to strike a map** for partisan\n     bias shows [b] but not [a]: the plaintiff may want a commission → `direction-only` _(proposed)_.\n\n5. **\"the party that controls the state legislature without outside interference.\"**\n   - Means: the legislative majority draws the maps, and no commission or court may change them.\n   - Operative clauses: [a] the legislative majority draws; [b] no outside check (no commission, no\n     court review).\n   - Establishing evidence looks like: a filed lawsuit claiming the Elections Clause gives map-drawing\n     \"exclusively to state legislatures\" is a `record` whose claim is the position (codebook H7,\n     Owens / redistricting). Quote the claim as `provision_quote`. If the claim attacks a commission\n     but accepts court review, it does not exclude rung 4 → `direction-only` _(proposed)_.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **A change of map-drawer that is not permanent** fits no single rung → BLANK `direction-only`. The measure's own findings or declarations are part of the same\n  record, not a separate statement, so there is no `record-vs-statement-conflict`.\n- **A vote for a particular map** is about the map's lines, not about who should draw → `adjacent`\n  _(proposed)_.\n- **Campaign work for a commission initiative** is not a vote. Code the person's own words; an old role\n  sourced only to an encyclopedia → V3 `not-evidence`, and the row goes to review (codebook V5, Moore /\n  redistricting).\n- **Omnibus election bills** that include a commission mandate → V4 `multi-subject`.\n- **Preemption.** This ladder is itself about which body decides, so a measure that moves map-drawing\n  between bodies is `on-question` (codebook V2, Q10 exception).\n"
+    }
+  ]
+}

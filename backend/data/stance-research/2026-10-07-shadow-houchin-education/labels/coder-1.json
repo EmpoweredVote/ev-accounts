@@ -1,0 +1,246 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "a7eee045-339d-5009-851f-707ff6380e92",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2023-09-14",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her op-ed backs a parental right to know what is taught (curriculum transparency), which the annex rules adjacent; it states no rule on what contested topics are taught.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9da6bb5f-c7d4-5c0e-bbf1-9574063e570a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2023-03-24",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words praise putting parents in charge through access to information; transparency only, nothing on curriculum content.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Her own words on H.R. 5 concern parents' right to know what their children are being taught, which is curriculum transparency and adjacent to this ladder. Nothing in her words addresses how race, gender or history should be taught, so no rung from centering those themes to prohibiting divisive lessons is evidenced.",
+      "needs_source": [],
+      "quotes": []
+    },
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "035b809c-3a9b-500b-8771-7bcbc2ce0b37",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": "Nothing in this Act, or the amendments made by this Act, shall be construed as authorizing or granting parents the right or ability to deny any student who is not their child from accessing any books or other reading materials that are otherwise available in the library of their child's school.",
+          "note": "A multi-subject federal bill at a no-lever level; its library provisions give parents a list and inspection right, which sets no challenge process, so it cannot seat a chair.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "69a6e8f0-cf48-566f-bc0d-9b73253476ec",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": null,
+          "note": "Roll call 161 shows her Aye on final passage of the multi-subject Parents Bill of Rights Act.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Aye",
+          "tally_quote": "Aye: 213 No: 208"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only material is her Aye on H.R. 5, a multi-subject federal bill; at the federal level only her own words can seat a chair, and the bill's library list-and-inspect right sets no rule on what a challenge does to access. None of her own words address book challenges, so no rung is evidenced.",
+      "needs_source": [],
+      "quotes": []
+    },
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+      "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+      "passages": [
+        {
+          "snapshot_id": "a7eee045-339d-5009-851f-707ff6380e92",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2023-09-14",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "She objects to a ruling that blocked districts from notifying parents of a gender identity change, which shows the notification side but does not say whether a safety exception, notice on every request, or written consent is wanted.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "035b809c-3a9b-500b-8771-7bcbc2ce0b37",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": "be required to obtain parental consent before-- (1) changing a minor child's gender markers, pronouns, or preferred name on any school form",
+          "note": "Title IV of a multi-subject bill requires parental consent (not stated as written) for school forms; a federal record at a no-lever level cannot seat a chair.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "69a6e8f0-cf48-566f-bc0d-9b73253476ec",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": null,
+          "note": "Roll call 161: her Aye on final passage of H.R. 5.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Aye",
+          "tally_quote": "Aye: 213 No: 208"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In her op-ed she writes that a judge ruled to block multiple school districts from notifying parents of a child's gender identity change and that stories like these shouldn't become the new normal, which places her on the parental-notification side. Her words do not separate telling parents with a safety exception, notifying parents whenever a student asks, or requiring written parental permission; her Aye on the multi-subject H.R. 5 (parental consent before changing pronouns or preferred name on school forms) is a federal record that cannot seat a chair at this level.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "a7eee045-339d-5009-851f-707ff6380e92",
+          "text": "Just last month, a New Jersey judge ruled to block multiple school districts from notifying parents of a child's gender identity change. Stories like these shouldn't become the new normal.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    },
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "66b389c7-86fc-45e9-bf34-964bb747f27b",
+      "served_revision_id": "23d87824-d25c-4b9a-8b13-fb2799d75661",
+      "passages": [],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "No source contains her own words on equity offices, equity training, subgroup measurement or group-neutral support. No rung is evidenced.",
+      "needs_source": [],
+      "quotes": []
+    },
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "15d7e730-119b-43a2-a351-1efb7352b86b",
+      "served_revision_id": "d81d7662-3c68-425c-a5c6-ca0717384a9e",
+      "passages": [
+        {
+          "snapshot_id": "3613dc61-25c5-5c44-ab7e-d48d1068b992",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign text about supporting police generally; it says nothing about officers in schools.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only police-related passage is third-person campaign copy about general law enforcement support, not her own words on officers in schools. No rung from removing officers to placing an officer in every school is evidenced.",
+      "needs_source": [],
+      "quotes": []
+    },
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "49f0b171-2ddf-4e68-887f-0ba78a2562f1",
+      "served_revision_id": "0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc",
+      "passages": [
+        {
+          "snapshot_id": "a7eee045-339d-5009-851f-707ff6380e92",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2023-09-14",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "She backs a parental right to see the school budget, a transparency point that says nothing about the funding level or taxes.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Her op-ed lists that parents have the right to see the school budget, which is budget transparency and adjacent to a ladder on spending levels and taxes. No rung is evidenced.",
+      "needs_source": [],
+      "quotes": []
+    },
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "61269f44-9c7f-4b27-818a-3508009f6ae2",
+      "served_revision_id": "c6a2c643-aaa3-4d91-958e-e17f421b7dc9",
+      "passages": [],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "No source contains her own words on artificial intelligence in classrooms or student work. No rung is evidenced.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "e9ebefcd-c496-45e8-b816-a79f8442ba85",
+    "topic_key": "public-safety-approach",
+    "topic_revision_id": "b9c1c07f-f80e-493a-9bb0-015e46c9bc71",
+    "served_revision_id": "cfc3824f-522e-4671-bd2d-dd628e6578e1",
+    "question_number": 30,
+    "title": "Public Safety Approach",
+    "question_text": "What approach should your community take to public safety?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Shift public safety away from policing and toward mental health, housing, and social services."
+      },
+      {
+        "value": 2,
+        "text": "Send unarmed responders, instead of police, to mental-health and non-violent calls."
+      },
+      {
+        "value": 3,
+        "text": "Keep police as the main responders and add crisis teams to work alongside them."
+      },
+      {
+        "value": 4,
+        "text": "Add more officers and expand police presence to deter and respond to crime."
+      },
+      {
+        "value": 5,
+        "text": "Make policing the community's top public-safety priority, ahead of social and community programs."
+      }
+    ],
+    "applies_federal": false,
+    "applies_state": false,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

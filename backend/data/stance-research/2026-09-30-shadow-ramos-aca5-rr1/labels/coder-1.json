@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12",
+      "office_id": "927850b9-2c91-44f7-a6be-f4c81dc3b75d",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "passages": [
+        {
+          "snapshot_id": "63afc856-cd20-5d20-8a29-ea5c72c469e6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": null,
+          "note": "Assembly Third Reading floor vote; Ramos is in the Ayes list, and 14 Noes of a 79-member vote is above the 10% near-unanimous threshold.",
+          "record_kind": "vote",
+          "actor_quote": "Quirk-Silva, Ramos, Reyes, Luz Rivas, Robert Rivas, Rodriguez",
+          "tally_quote": "Ayes Count 60 Noes Count 14 NVR Count 5"
+        },
+        {
+          "snapshot_id": "001832e2-df00-5dd7-8847-550996caebb0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2020-06-25",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2019-2020)",
+          "provision_quote": "That Section 31 of Article I thereof is repealed.",
+          "note": "The operative section is a bare repeal of the Proposition 209 ban, so it permits race- and gender-conscious programs rather than requiring or enforcing anything; the WHEREAS findings are recitals.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Ramos voted Aye on ACA 5 (2019-2020), whose operative section is \"That Section 31 of Article I thereof is repealed.\", removing the Proposition 209 bar so that race- and gender-conscious programs are permitted again. That places him against \"eliminate affirmative action and all race-based government programs\", but a repeal that permits such programs does not itself \"mandate racial equity requirements in all institutions\", and it creates no enforcement mechanism, so it cannot reach \"strengthen civil rights enforcement and address systemic discrimination\". The vote fixes the side without separating the rungs on it.",
+      "needs_source": [
+        "James C. Ramos's own words on ACA 5 (2019-2020) tying his vote to a specific remedy (floor statement, explanation of vote, or first-person issue page)",
+        "A record of Ramos on a California bill that requires racial equity measures in institutions, or that expands civil rights enforcement (for example a Civil Rights Department enforcement bill), with bill number and roll call"
+      ],
+      "quotes": []
+    }
+  ]
+}

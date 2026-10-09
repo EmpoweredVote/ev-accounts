@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "d406e55d-80fd-5708-be95-8b2bd4399548",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": null,
+          "note": "Assembly Floor concurrence vote; Wicks listed among the Ayes on AB 1228.",
+          "record_kind": "vote",
+          "actor_quote": "Ward, Weber, Wicks, Wilson, Wood, Zbur, Robert Rivas",
+          "tally_quote": "Ayes Count 53 Noes Count 17"
+        },
+        {
+          "snapshot_id": "2b00b586-74a0-5073-9887-3b6484ae1ae5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": "The hourly minimum wage for fast food restaurant employees shall be twenty dollars ($20) per hour, effective April 1, 2024.",
+          "note": "Sets a fast-food-only $20/hour floor with Council-set annual increases; sector-specific, so it cannot show her general wage-floor rule (annex hard case).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Wicks voted Aye on AB 1228 (2023-2024), which sets a $20/hour minimum wage for fast food restaurant employees only, with later increases set by the Fast Food Council. Per the annex's sector/employer-group hard case, a one-industry wage floor is on the wage-floor question but does not show her general rule, so it stays direction-only rather than establishing any numbered rung.",
+      "needs_source": [
+        "A general (non-sector-specific) minimum-wage vote, sponsorship, or own-words statement by Wicks"
+      ],
+      "quotes": []
+    }
+  ]
+}

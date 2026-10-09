@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d",
+      "office_id": "8c909ec7-73d2-4488-8eb5-a72f4746f32b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "4c212da4-3762-58c4-ad14-8fb9a928ce75",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill status page lists Diaz as a co-sponsor of SB 1164.",
+          "record_kind": "sponsor",
+          "actor_quote": "Diaz (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e1974ddd-d5a2-5fc0-8ae4-a4a31cd685c2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Diaz voting Yea on SB 1164.",
+          "record_kind": "vote",
+          "actor_quote": "DIAZ Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "bc6d6c40-f82c-5085-93be-c0b59c163104",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "B. Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Operative text of the signed law Diaz co-sponsored and voted for.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 3,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "4c212da4-3762-58c4-ad14-8fb9a928ce75",
+        "e1974ddd-d5a2-5fc0-8ae4-a4a31cd685c2",
+        "bc6d6c40-f82c-5085-93be-c0b59c163104"
+      ],
+      "reasoning": "As a co-sponsor and a Yea vote on House Third Reading, Diaz acted on SB 1164 (2022), whose operative text bars abortion after fifteen weeks' gestation except in a medical emergency, with no exception for rape or incest and no allowance through the full second trimester. This matches 'allow abortion during the first trimester, and after that only to protect the mother's health' more closely than the rungs it excludes.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

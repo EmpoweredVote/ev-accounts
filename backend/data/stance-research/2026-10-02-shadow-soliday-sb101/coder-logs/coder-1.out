@@ -1,0 +1,15 @@
+Written: `backend/data/stance-research/2026-10-02-shadow-soliday-sb101/labels/coder-1.json` — one row, chair **4**.
+
+**What the row says**
+
+- Three passages, all one record (`SB 101 (2015)`), all `own-act` / `on-question` / `record` / `chair-shaped` / `in-term`, `record_kind: vote`.
+- Record fields placed per page, per the 2026-09-26 ruling: `actor_quote` (`Aylesworth Fine McMillin Soliday`) and `tally_quote` (`Yea 63 Nay 31 Excused 5 Not Voting 0`) on the roll call; `provision_quote` on the enrolled act; `null` elsewhere. Nothing from inside a `[deleted: …]` fence was quoted.
+- V4.1 clears the vote ladder: third-reading final passage of a single-subject bill, 31 Nay so not near-unanimous, not procedural.
+- Chair 4 rests on positive clause matching (Sec. 8 overrides rules of general applicability; Sec. 9 makes it assertable as a claim or defense), not on elimination — the V4.2 fault H14 warns about. Rung 5 is excluded by the act's own Sec. 11 and the strict-scrutiny escape in Sec. 8(b).
+
+**Two judgment calls worth flagging to the reviewer**
+
+1. Rung 3 ("balance… equal treatment") is the live confusion: SB 101's compelling-interest test *is* a balancing test. I read it as rung 4 because the statute's function is to exempt religious exercise from otherwise-applicable law, and the balancing is a limit on the exemption rather than a commitment to equal treatment. A coder who weights the strict-scrutiny language instead would land on BLANK `direction-only`.
+2. `needs_source` names the 2015 follow-up amendment to the same chapter without asserting a bill number — if Soliday acted on it, that act could be `superseded-by-later` and would govern. No source here shows it, so I did not treat it as evidence.
+
+No quotes were coded (`quotes: []`); the sources contain no words of Soliday's.

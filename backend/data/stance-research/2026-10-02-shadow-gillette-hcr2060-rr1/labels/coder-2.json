@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "50d00238-5334-4616-ac43-72375f53df71",
+      "office_id": "ae116c94-7533-46d0-aa81-20106f5cb572",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "3572370e-a6b6-5c8e-86fa-80fff3553f34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Final-reading roll call on a multi-subject border bill; it prints no provision text so establishes only the vote itself.",
+          "record_kind": "vote",
+          "actor_quote": "GILLETTE Y",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "73523759-920c-580b-819b-75e0df267be1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-06-04",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Bill-history page confirms the same final-passage tally but names no individual legislator.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House FINAL 06/04/2024 31-29-0-0-0 PASSED"
+        },
+        {
+          "snapshot_id": "5d7cfa43-a906-5a3c-aee4-81f846261d04",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "This section may only be enforced prospectively. This section does not apply retroactively and shall not be construed to apply to the conduct of any person who entered this state unlawfully from a foreign nation at any time before this section becomes enforceable.",
+          "note": "The new illegal-entry removal order reaches only future border crossers under a law not yet enforceable, so it does not speak to deportation of the state's existing undocumented population.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Gillette voted Yea on HCR2060 (2024)'s House Final Reading (31-29-0-0-0), a multi-subject border bill bundling public-benefits document fraud, e-verify fraud, fentanyl-sale penalties, and a new illegal-entry crime whose removal order 'may only be enforced prospectively' and 'does not apply retroactively... to the conduct of any person who entered this state unlawfully from a foreign nation at any time before this section becomes enforceable,' so it says nothing about the ladder's question of how far to go in deporting the state's existing undocumented population (e.g., 'Deport all undocumented immigrants, starting with those who have criminal records'). No statement from Gillette ties the vote to that clause, so no passage establishes a chair.",
+      "needs_source": [
+        "A Gillette floor statement or explanation of vote tying his HCR2060 vote to the illegal-entry/removal provision specifically",
+        "Any Gillette sponsorship, vote, or own-words statement that addresses deportation scope for Arizona's existing undocumented population (criminal-record basis, settlement duration, or mass removal)"
+      ],
+      "quotes": []
+    }
+  ]
+}

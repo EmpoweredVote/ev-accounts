@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "a7e904b1-ec37-4c43-8594-99d778e7351a|11c6dfc5-e935-4094-a01d-1d30ef64f95d|666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Krell's own words on AI oversight in answer to this question (issue page, questionnaire, or floor statement on AB 316) to test whether she also backs pre-deployment safety testing"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "a7e904b1-ec37-4c43-8594-99d778e7351a|11c6dfc5-e935-4094-a01d-1d30ef64f95d|666bf03d-81fc-4138-ab15-69ae734c9023",
+      "requests": [
+        "Krell's own words on AI oversight in answer to this question (issue page, questionnaire, or floor statement on AB 316) to test whether she also backs pre-deployment safety testing"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

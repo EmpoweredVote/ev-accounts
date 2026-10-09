@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
+      "office_id": "ae285450-8e0b-43d9-a534-e747ea9baf0b",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Bill digest/tracking page describing SB 1(ss)'s content; it names no vote or words of Koch, only authors/sponsors and bill status.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "(i) the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus is diagnosed with a lethal fetal anomaly;",
+          "note": "Enrolled act text amending IC 16-34-2-1 to make abortion a criminal act except under enumerated circumstances including this health/life exception and a separate rape-or-incest exception.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "03a96ddb-0a85-5ab5-a5fd-701c88762989",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Senate Roll Call 58 on SB 1(ss) shows Koch voting Yea, with the bill passing 28-19.",
+          "record_kind": "vote",
+          "actor_quote": "Koch",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "cd82aaef-bdce-5e61-8163-6841ae3300e9",
+        "03a96ddb-0a85-5ab5-a5fd-701c88762989"
+      ],
+      "reasoning": "Koch voted Yea on SB 1(ss) (2022 First Special Session), a single-subject enrolled act amending IC 16-34-2-1 so that abortion is a criminal act except for narrow listed circumstances: a serious health risk to or to save the life of the pregnant woman, a lethal fetal anomaly, and (within a limited window) pregnancies resulting from rape or incest. This ban-with-exceptions structure matches the rung banning abortion except in cases of rape, incest, or a serious risk to the mother's life, and excludes both the no-exceptions rung and the rungs permitting abortion generally in early pregnancy.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

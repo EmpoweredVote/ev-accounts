@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "e71471f4-bef5-46ef-a1f2-f19f275b558d",
+      "office_id": "fe457319-058b-4dc5-8540-dac64a6a328f",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "7be5fdac-8e7c-503a-9706-9df9cdfb6cc4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote; Gowan voted Y on a middle-housing zoning-deregulation bill, a ceiling claim a single vote cannot prove.",
+          "record_kind": "vote",
+          "actor_quote": "GOWAN Y",
+          "tally_quote": "Passed 21-7-2-0-0 Amended"
+        },
+        {
+          "snapshot_id": "bf815c59-cea5-5c8a-95ee-07a7d522656b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2721 (2024)",
+          "provision_quote": "A. On or before January 1, 2026, a municipality with a population of seventy-five thousand persons or more must authorize by ordinance and incorporate into its development regulations, zoning regulations and other official controls the development of duplexes, triplexes, fourplexes and townhomes as a permitted use on both of the following: 1. All lots zoned for single-family residential use within one mile of the municipality's central business district. 2. At least twenty percent of any new development of more than ten contiguous acres.",
+          "note": "Operative clause mandates by-right middle housing and bars added local restrictions; matches rung 5's object but is a single deregulation law, so it shows direction only, not the 'at most' ceiling.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gowan voted Y on HB 2721 (2024), a single-subject bill requiring cities of 75,000+ to allow duplexes, triplexes, fourplexes and townhomes 'as a permitted use' and barring added restrictions on floor count, floor area ratio, parking and owner occupancy — on-question for rung 5's 'cut the regulations and zoning limits that block private building.' Per the annex's ruling on deregulation laws, one such vote cannot show he wants 'at most' this and nothing more, so it establishes direction only, not a chair.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

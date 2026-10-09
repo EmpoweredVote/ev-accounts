@@ -49,6 +49,13 @@ header.top p { margin: 4px 0 0; color: var(--ink-soft); max-width: 62ch; font-si
 .queue { display: flex; flex-direction: column; gap: 6px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); }
 @media (max-width: 860px) { .queue { position: static; } }
 .qhead { font: 600 11px var(--sans); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); margin: 0 0 4px; }
+.qbar { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 0 0 4px; }
+.qbar .qhead { margin: 0; }
+.qtoggle { font: 500 12px var(--sans); color: var(--accent); background: none; border: 1px solid var(--rule); border-radius: 999px; padding: 3px 10px; cursor: pointer; }
+.qtoggle:hover { border-color: var(--accent); }
+.qnote { font-size: 13px; color: var(--ink-soft); margin: 2px 0 0; }
+.queue { max-height: calc(100vh - 24px); overflow-y: auto; }
+@media (max-width: 860px) { .queue { max-height: none; overflow: visible; } }
 .qitem { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 8px; text-align: left; width: 100%; padding: 10px 12px; border: 1px solid var(--rule); border-radius: 6px; background: var(--panel); color: var(--ink); font: inherit; cursor: pointer; }
 .qitem:hover { border-color: var(--accent); }
 .qitem[aria-current="true"] { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
@@ -147,6 +154,9 @@ button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
   let db = null, uid = null, items = [], labels = new Map(), current = null, canWrite = true;
   const draft = new Map();   // itemId -> {value, reason, note} (this visit only)
+  // Per-viewer convenience: hide items already answered. Browser storage can throw (blocked site data).
+  let hideDone = true, picked = false;   // picked: the viewer chose an item this visit
+  try { hideDone = localStorage.getItem('gd.hideDone') !== '0'; } catch {}
 
   function legalText(text) {
     const box = el('div', { class: 'legal', tabindex: '0' });
@@ -170,15 +180,27 @@ button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
   function renderQueue() {
     const q = $('#queue');
-    q.replaceChildren(el('p', { class: 'qhead', text: 'Items' }));
+    const answered = (it) => labels.has(it.id);
+    const nDone = items.filter(answered).length;
+    const toggle = el('button', { class: 'qtoggle', type: 'button', 'aria-pressed': hideDone ? 'true' : 'false',
+      text: hideDone ? `Show answered (${nDone})` : 'Hide answered' });
+    toggle.addEventListener('click', () => {
+      hideDone = !hideDone;
+      try { localStorage.setItem('gd.hideDone', hideDone ? '1' : '0'); } catch {}
+      renderQueue();
+    });
+    q.replaceChildren(el('div', { class: 'qbar' }, el('p', { class: 'qhead', text: 'Items' }), nDone ? toggle : null));
     if (!items.length) { q.append(el('p', { class: 'empty', text: 'No items yet.' })); return; }
-    for (const it of items) {
+    // Newest first: the items still to do sit at the top of the list.
+    const shown = [...items].reverse().filter((it) => !hideDone || !answered(it) || it.id === current);
+    if (!shown.length) q.append(el('p', { class: 'qnote', text: 'All items are answered. New items appear here.' }));
+    for (const it of shown) {
       const [cls, txt] = statusOf(it);
       const b = el('button', { class: 'qitem', type: 'button', 'aria-current': it.id === current ? 'true' : 'false' },
         el('span', { class: 'who', text: it.person }),
         el('span', { class: 'chip ' + cls, text: txt }),
         el('span', { class: 'what', text: `${it.instrument} · ${it.topic_title}` }));
-      b.addEventListener('click', () => { current = it.id; render(); window.scrollTo({ top: 0 }); });
+      b.addEventListener('click', () => { current = it.id; picked = true; render(); window.scrollTo({ top: 0 }); });
       q.append(b);
     }
     const real = items.filter((i) => !i.practice);
@@ -290,7 +312,7 @@ button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
     for (const r of [
       'A rung needs every one of its claims shown. If the act proves only part of a rung, the answer is Blank — "Only part of a rung".',
       'A vote with fewer than 10% No votes cannot set a rung on its own: nearly everyone voted the same way. The person’s own act (writing, sponsoring or carrying the bill) can.',
-      'Records from either chamber of the same legislature count (a senator’s bills and votes from their House years). Records from another office — a city council, a county, Congress — do not.',
+      'Records from either chamber of the same legislature count (a senator’s bills and votes from their House years), for candidates too. Records from another office — a city council, a county, Congress — do not.',
       'Struck words are removed from the law. They are never the provision.',
       'Judge the bill’s operative text, not its title or its statement of purpose.',
     ]) ul.append(el('li', { text: r }));
@@ -306,8 +328,15 @@ button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
       const box = el('div', { class: 'source' },
         el('div', { class: 'shead' }, el('strong', { text: s.label }), s.url ? el('a', { href: s.url, target: '_blank', rel: 'noopener', text: 'Open the original' }) : null));
       if (s.summary) box.append(el('p', { class: 'sub', text: s.summary }));
-      box.append(legalText(s.text));
-      if (s.text.includes('[deleted: ')) box.append(el('p', { class: 'legend' }, 'Words shown like ', el('del', { text: 'this' }), ' are removed from the law by this act. They are not the law.'));
+      if (s.text_file) {
+        // A long text is published as a file beside the page (a database document holds 256 KiB).
+        const slot = el('div', { class: 'legal', text: 'Loading the text…' });
+        box.append(slot);
+        fetch(s.text_file).then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
+          .then((t) => slot.replaceWith(legalText(t)))
+          .catch(() => { slot.textContent = 'The text could not be loaded. Open the original with the link above.'; });
+      } else box.append(legalText(s.text));
+      if (s.has_deleted ?? s.text.includes('[deleted: ')) box.append(el('p', { class: 'legend' }, 'Words shown like ', el('del', { text: 'this' }), ' are removed from the law by this act. They are not the law.'));
       ev.append(box);
     }
     parts.push(ev, answerCard(it));
@@ -334,6 +363,11 @@ button.btn:disabled { opacity: 0.5; cursor: not-allowed; }
     if (uid) {
       db.collection(`labels/${uid}/items`).onSnapshot((snap) => {
         labels = new Map(snap.docs.map((d) => [d.id, d.data()]));
+        // Answers load after the items: open the first unanswered item unless the viewer already chose one.
+        if (!picked && current && labels.has(current)) {
+          const next = items.find((i) => !i.practice && !labels.has(i.id));
+          if (next) current = next.id;
+        }
         render();
       }, () => {});
     }

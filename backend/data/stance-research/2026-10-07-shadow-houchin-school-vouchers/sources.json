@@ -1,0 +1,33 @@
+{
+  "batch_id": "2026-10-07-shadow-houchin-school-vouchers",
+  "sources": [
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-bill/531",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "H.R. 531 (118th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.congress.gov/bill/119th-congress/house-bill/833",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "H.R. 833 (119th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-09-30-shadow-aguiar-curry-ab2097-rr2",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220AB2097",
+      "source_kind": "public-record",
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_keys": [
+        "transportation-priorities"
+      ],
+      "instruments": [
+        "AB 2097 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2021-ab2097-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202120220AB2097",
+      "source_kind": "public-record",
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_keys": [
+        "transportation-priorities"
+      ],
+      "instruments": [
+        "AB 2097 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2021-ab2097-votes.txt"
+    }
+  ]
+}

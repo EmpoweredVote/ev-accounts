@@ -27,6 +27,20 @@
  * Content is the article-body test's job and needs a fetch. Do not read a green run as "stances are
  * sourced" — read it as "no row cites Ballotpedia and nothing else".
  *
+ * ✅ 2026-10-09 — ONE PLACE WHERE IT NOW DOES SEE THE PAGE, BY PROXY. The #Campaign_themes carve-out
+ * was the sharpest form of the limit above: it EXEMPTED a row on the strength of a URL fragment, so
+ * hand-appending "#Campaign_themes" to any Ballotpedia bio bought a pass from a gate with no page
+ * text. The exemption now has to be earned against a recorded observation —
+ * scripts/sweep-candidate-connection-anchors.mjs fetches every anchored page and writes
+ * data/candidate-connection-anchors.json; CC_ANCHOR_EMPTY fails on a page proven to hold nothing
+ * from the candidate, and CC_ANCHOR_UNVERIFIED reports a page nobody has swept.
+ * 🔑 The gate still does not fetch. The split — slow network sweep on demand, fast comparison in CI
+ * — is FABRICATED_SOURCE's architecture, for the same reason: 160 requests to a host that answers
+ * 202 to a fast sweep would make this flaky, and a flaky gate gets ignored.
+ * ⚠ It remains a proxy. The sweep asks whether the page carries the candidate's words AT ALL, not
+ * whether the cited passage is inside the section — that is test 2 in candidate-connection.mjs, and
+ * it is enforced at WRITE time by stanceGate.ts, not here.
+ *
  * 🔴 THE ONE EXCEPTION IS FABRICATED_SOURCE, AND IT IS ONLY HALF AN EXCEPTION. That check does concern
  * whether a page exists, but it cannot DECIDE that — it matches a denylist of URLs and hosts already
  * proven absent (`data/fabricated-sources.json`). Discovery needs a fetch plus an archive probe with a
@@ -56,11 +70,30 @@
  * bucket to `ks` and was reported as "NEW state -- this state was clean before". The totals were
  * identical: 179 and 179, with `-` falling 7 -> 6.
  *
- * So the baseline now compares ROW IDENTITIES -- "<politician_id>:<topic_id>" per check, carrying
- * neither state nor season. An identity does not move when a politician is seated, superseded or
- * re-bucketed. Per-state counts are still computed and still printed, because that is how the
- * backlog is discussed and a human reading a failure wants to know where the row is -- but nothing
- * is compared against them.
+ * So the baseline now compares ROW IDENTITIES per check. An identity does not move when a
+ * politician is seated, superseded or re-bucketed. Per-state counts are still computed and still
+ * printed, because that is how the backlog is discussed and a human reading a failure wants to
+ * know where the row is -- but nothing is compared against them.
+ * ⚠ The identity is "<politician_id>:<topic_id>:<season_id>" and has been since seasons landed: a
+ * pair legitimately holds one row per season, and a bad row written into the OPEN season must not
+ * be hidden by an already-recorded row in a closed one. (This paragraph said "carrying neither
+ * state nor season" until 2026-10-08; the state half is still true.)
+ *
+ * 🔴 2026-10-08 -- THE JOIN HAD NO season_id, AND THAT IS A DIFFERENT BUG FROM THE ONE ABOVE.
+ * The answers-driven branch joined context on (politician_id, topic_id) alone, so for a pair with
+ * rows in both seasons EVERY answer paired with EVERY context while the row kept the ANSWER's
+ * season. A Season 2 answer was therefore classified on the SEASON 1 context's sources. Season 1
+ * is closed, so a row repaired forward -- including by doing exactly what the BALLOTPEDIA_ONLY
+ * message tells you to do, deep-linking #Campaign_themes -- could never clear this gate, and
+ * three jurisdiction passes baselined 8 rows that were in fact already fixed.
+ * What the fix moved, measured on prod: the compared `rows` set lost exactly those 8 Season 2
+ * identities and gained none. The printed COUNTS fell much further -- BALLOTPEDIA_ONLY 213 -> 162,
+ * PRIMARY_SITE_NO_PATH 670 -> 580, total 933 -> 792 -- because the missing condition was also
+ * FANNING THE RESULT SET OUT, counting one identity once per season of context. So most of that
+ * 141 was never extra rows; it was the same rows counted twice. 🔑 A count from before this date
+ * is not comparable with one after it. ANSWER_WITHOUT_CONTEXT stayed 0 across the change (every
+ * non-zero answer in prod already had a context row in its own season), which is what made the
+ * fix safe to make in one step.
  *
  * 🔴 ORPHAN_CONTEXT NEEDED ITS OWN QUERY, AND THAT IS THE WHOLE POINT OF IT. Every check above reads
  * `FROM politician_answers LEFT JOIN politician_context`, so a context row with NO answer is outside
@@ -110,10 +143,12 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { Pool } from 'pg';
+import { CC_ANCHOR_PATTERN } from './lib/candidate-connection.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const BASELINE = path.join(HERE, '..', 'data', 'stance-source-baseline.json');
 const FABRICATED = path.join(HERE, '..', 'data', 'fabricated-sources.json');
+const CC_ANCHORS = path.join(HERE, '..', 'data', 'candidate-connection-anchors.json');
 
 const argv = process.argv.slice(2);
 const VERBOSE = argv.includes('--verbose');
@@ -125,9 +160,30 @@ const UPDATE = argv.includes('--update-baseline');
 // FABRICATED_SOURCE joined the zero-tolerance set on 2026-08-05. Prod held 0 citations to every entry
 // in data/fabricated-sources.json when it was added (verified, not assumed), so any occurrence is a
 // regression that re-introduces a citation a migration already proved does not exist.
+// CC_ANCHOR_EMPTY joined the zero-tolerance set on 2026-10-09. The sweep that backs it measured
+// every one of the 160 pages the corpus deep-links and found ZERO carrying the anchor and nothing
+// behind it, so prod is at 0 (verified, not assumed) and any occurrence is a regression: a row
+// claiming the candidate's own words on a page that does not have them.
 const ZERO_TOLERANCE = new Set([
   'ANSWER_WITHOUT_CONTEXT', 'EMPTY_SOURCES', 'NON_URL_SOURCE', 'FABRICATED_SOURCE',
+  'CC_ANCHOR_EMPTY',
 ]);
+
+/**
+ * Checks that PRINT but never fail the build, and carry no baseline.
+ *
+ * 🔑 WHY A THIRD TIER RATHER THAN A FOURTH ZERO-TOLERANCE CHECK. CC_ANCHOR_UNVERIFIED does not say
+ * a row is wrong; it says WE HAVE NOT LOOKED at the page the row rests on. Failing on that would
+ * turn every legitimately-new Candidate Connection citation red until someone re-ran a network
+ * sweep and committed the result — and a red that means "nobody has swept yet" is indistinguishable
+ * at a glance from a red that means "this row is false", which is how a gate gets ignored. The same
+ * reasoning as WHY BASELINED AND NOT ZERO above, applied to a check whose unit is OUR knowledge
+ * rather than the corpus's state.
+ *
+ * ⚠ A baseline would be wrong here for a second reason: the set shrinks as the sweep runs, so a
+ * recorded baseline would be a snapshot of our ignorance and would need rewriting every sweep.
+ */
+const REPORT_ONLY = new Set(['CC_ANCHOR_UNVERIFIED']);
 
 /**
  * Confirmed-fabricated hosts and URLs. Loaded from disk so the sweep can extend the list without
@@ -152,6 +208,49 @@ function loadFabricated() {
     process.exit(2);
   }
 }
+
+/**
+ * What the sweep found behind each #Campaign_themes anchor.
+ * See scripts/sweep-candidate-connection-anchors.mjs for how it is produced and why it is a
+ * separate on-demand pass rather than network work inside CI.
+ *
+ * 🔴 `unreachable` IS DELIBERATELY IN NEITHER LIST. It is not evidence the page is empty (a 202 is
+ * a bot challenge, not an absence), so it must not FAIL; and it is not evidence the page is good,
+ * so it must not earn the carve-out either. It therefore falls through to CC_ANCHOR_UNVERIFIED and
+ * is reported. Classify every non-200 before reading it as evidence.
+ *
+ * A missing manifest does NOT exit 2 the way a missing denylist does. The two failures are not
+ * symmetric: without fabricated-sources.json a zero-tolerance check silently passes everything,
+ * whereas without this file every anchored row simply reports as unverified — which is exactly
+ * what "we have not looked" should say, and is the honest state of a repo that has not swept yet.
+ */
+function loadCcAnchors() {
+  // Normalised the same way on both sides: no scheme, no www., no fragment, no trailing slash,
+  // lowercased. A manifest entry and a citation must not miss each other over http vs https.
+  const norm = (u) => String(u ?? '').trim().toLowerCase()
+    .replace(/#.*$/, '').replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/+$/, '');
+  try {
+    const f = JSON.parse(readFileSync(CC_ANCHORS, 'utf8'));
+    const pages = f.pages ?? [];
+    return {
+      present: true,
+      generatedAt: f.generatedAt ?? null,
+      empty: pages.filter((p) => p.verdict === 'empty').map((p) => norm(p.page)),
+      verified: pages.filter((p) => p.verdict === 'own-words').map((p) => norm(p.page)),
+    };
+  } catch {
+    return { present: false, generatedAt: null, empty: [], verified: [] };
+  }
+}
+
+/**
+ * The PAGE a citation points at, normalised for comparison with the manifest: fragment dropped,
+ * scheme and www. stripped, trailing slash removed, lowercased. Must stay in step with norm() in
+ * loadCcAnchors — the two sides of one comparison.
+ * ⚠ The backslashes are doubled because this is a JS template literal: a single `\.` would reach
+ * Postgres as a bare `.` and match any character, quietly widening the host test.
+ */
+const CC_PAGE = (col) => `lower(rtrim(regexp_replace(regexp_replace(${col}, '#.*$', ''), '^https?://(www\\.)?', ''), '/'))`;
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
@@ -249,11 +348,58 @@ const QUERY = `
         -- well-sourced survey row or bolting on a second citation that is not really the source.
         -- The anchor is required: a bare /Name page is still just a bio. #Campaign_themes is where
         -- Ballotpedia renders survey responses (verified against live pages, not assumed).
+        -- Ruling 2026-10-07 (Chris Andrews): the survey answer is the candidate's own words and may
+        -- stand alone. The pattern lives in lib/candidate-connection.mjs, shared with the pre-write
+        -- gate (stanceGate.ts C57) and pinned against it by candidate-connection.test.ts.
+        -- 🔴 THIS SQL CAN TEST THE URL ONLY. It has no page text. The page-text half (the passage is
+        -- inside the survey section) is enforced where the anchor is WRITTEN: deep-link-candidate-
+        -- connection.mjs proposes #Campaign_themes only for CC_VERIFIED rows, and the pre-write gate
+        -- requires the same check. Do not hand-append the anchor.
+        -- (The old OR s ILIKE '%Candidate_Connection%' clause was dropped 2026-10-07: measured on
+        -- prod it matched 0 rows, and a substring anywhere in a URL is not an anchor.)
+        --
+        -- 🔴🔴 THE CARVE-OUT ABOVE IS GRANTED ON THE URL ALONE, AND THESE TWO BRANCHES ARE WHAT
+        -- STOPPED THAT BEING THE END OF THE STORY (2026-10-09). The comment immediately above has
+        -- said "THIS SQL CAN TEST THE URL ONLY" since the day it was written, and the protection
+        -- was a convention: the anchor is appended only by deep-link-candidate-connection.mjs, for
+        -- CC_VERIFIED rows. Nothing ENFORCED it. Hand-append #Campaign_themes to any Ballotpedia
+        -- bio and the row passed a gate that could not see the page.
+        --
+        -- The fix is not to fetch here -- a CI job making 160 requests to a host that answers 202
+        -- to a fast sweep would be flaky, and a flaky gate gets ignored. It is the same split
+        -- FABRICATED_SOURCE already uses: an on-demand sweep fetches and records, and this gate
+        -- compares against what was recorded. sweep-candidate-connection-anchors.mjs.
+        --
+        -- Both branches apply ONLY to rows that actually RELY on the carve-out: every source is
+        -- Ballotpedia, and at least one carries the anchor. A row with any other citation is
+        -- untouched, exactly as BALLOTPEDIA_ONLY is.
+        -- ⚠ BOTH BRANCHES REQUIRE THAT NO ANCHOR ON THE ROW IS VERIFIED. A row may cite two
+        -- Ballotpedia pages; if even one of them was fetched and found to carry the candidate's
+        -- words, the row HAS the source it claims and must pass, whatever the other anchor turned
+        -- out to be. Firing on "any anchor is empty" would fail a sound row for its weaker
+        -- citation -- and this is a zero-tolerance check, so an over-fire goes straight to red.
+        WHEN NOT EXISTS (SELECT 1 FROM unnest(pc.sources) s WHERE s NOT ILIKE '%ballotpedia%')
+         AND EXISTS (SELECT 1 FROM unnest(pc.sources) s WHERE s ~* '${CC_ANCHOR_PATTERN}')
+         AND NOT EXISTS (
+           SELECT 1 FROM unnest(pc.sources) s
+            WHERE s ~* '${CC_ANCHOR_PATTERN}' AND ${CC_PAGE('s')} = ANY($4::text[])
+         )
+         AND EXISTS (
+           SELECT 1 FROM unnest(pc.sources) s
+            WHERE s ~* '${CC_ANCHOR_PATTERN}' AND ${CC_PAGE('s')} = ANY($3::text[])
+        )                                                          THEN 'CC_ANCHOR_EMPTY'
+        -- ...and if we have never looked at the page, say so rather than trusting it. Report only:
+        -- this is a statement about OUR KNOWLEDGE, not about the row.
+        WHEN NOT EXISTS (SELECT 1 FROM unnest(pc.sources) s WHERE s NOT ILIKE '%ballotpedia%')
+         AND EXISTS (SELECT 1 FROM unnest(pc.sources) s WHERE s ~* '${CC_ANCHOR_PATTERN}')
+         AND NOT EXISTS (
+           SELECT 1 FROM unnest(pc.sources) s
+            WHERE s ~* '${CC_ANCHOR_PATTERN}' AND ${CC_PAGE('s')} = ANY($4::text[])
+        )                                                          THEN 'CC_ANCHOR_UNVERIFIED'
         WHEN NOT EXISTS (
           SELECT 1 FROM unnest(pc.sources) s
            WHERE s NOT ILIKE '%ballotpedia%'
-              OR s ~* 'ballotpedia.org/[^#]+#Campaign_themes'
-              OR s ILIKE '%Candidate_Connection%'
+              OR s ~* '${CC_ANCHOR_PATTERN}'
         )                                                          THEN 'BALLOTPEDIA_ONLY'
         ELSE NULL
       END AS chk,
@@ -263,8 +409,19 @@ const QUERY = `
       -- by an already-recorded row in a closed one.
       pa.season_id
     FROM inform.politician_answers pa
+    -- 🔴 season_id IS PART OF THE JOIN KEY, and leaving it out was a real defect for a year.
+    -- A (politician, topic) pair holds one row PER SEASON in both tables. Without this condition
+    -- every answer pairs with every context, and since the row is labelled with the ANSWER's
+    -- season (below), a Season 2 answer was being classified on the SEASON 1 context's sources.
+    -- Season 1 is closed and immutable, so a row repaired forward into Season 2 -- including by
+    -- doing exactly what this gate's own failure text tells you to do, deep-linking
+    -- #Campaign_themes -- kept failing, and the only way out was a baseline entry for a row that
+    -- was already fixed. Three jurisdiction passes in a row paid that toll (CA #942, VA #943,
+    -- the held rows in mig 1913) before anyone fixed the join.
     LEFT JOIN inform.politician_context pc
-      ON pc.politician_id = pa.politician_id AND pc.topic_id = pa.topic_id
+      ON pc.politician_id = pa.politician_id
+     AND pc.topic_id = pa.topic_id
+     AND pc.season_id = pa.season_id
     WHERE pa.value <> 0
 
     UNION ALL
@@ -278,8 +435,14 @@ const QUERY = `
       pc.sources,
       pc.season_id
     FROM inform.politician_context pc
+    -- Same key, for the same reason: an orphan is reasoning with no chair IN ITS OWN SEASON.
+    -- ⚠ Measured on prod the day this changed: 318 context rows with sources have no answer at
+    -- all, and 318 have no answer in their own season -- the same 318. So this condition is a
+    -- no-op TODAY and is here to keep the two branches honest about what a row identity is.
     LEFT JOIN inform.politician_answers pa
-      ON pa.politician_id = pc.politician_id AND pa.topic_id = pc.topic_id
+      ON pa.politician_id = pc.politician_id
+     AND pa.topic_id = pc.topic_id
+     AND pa.season_id = pc.season_id
     WHERE pa.politician_id IS NULL
       -- Empty sources = a documented blank, which is SUPPOSED to have no answer. Excluded on shape,
       -- so this branch never re-reports the 404 rows closed on 2026-08-07.
@@ -339,7 +502,8 @@ const QUERY = `
   }
 
   const deny = loadFabricated();
-  const { rows } = await pool.query(QUERY, [deny.urls, deny.hosts]);
+  const cc = loadCcAnchors();
+  const { rows } = await pool.query(QUERY, [deny.urls, deny.hosts, cc.empty, cc.verified]);
 
   const observed = {};
   const observedRows = {};
@@ -347,8 +511,16 @@ const QUERY = `
     const bucket = r.st || '-';
     observed[r.chk] ??= {};
     observed[r.chk][bucket] = (observed[r.chk][bucket] ?? 0) + 1;
-    // The identity the gate actually compares. Deliberately carries NO state and NO season, so a row
-    // that is re-bucketed or superseded is still recognised as the same row.
+    // The identity the gate actually compares. Deliberately carries NO STATE, so a row that is
+    // re-bucketed by an occupancy change is still recognised as the same row -- that is the
+    // 2026-09-27 red master, described at the top of this file.
+    //
+    // 🔴 IT DOES CARRY THE SEASON, AND THIS COMMENT USED TO DENY IT. It read "carries NO state and
+    // NO season" while the line below has always interpolated `r.season_id`. The SQL comment on
+    // `pa.season_id` is the one that was right: a pair legitimately holds one row per season, and a
+    // bad row written into the OPEN season must not be hidden by an already-recorded row in a
+    // closed one. #947 made the season load bearing -- the context join now matches on it -- so a
+    // comment denying it is worse than none.
     observedRows[r.chk] ??= new Set();
     observedRows[r.chk].add(`${r.politician_id}:${r.topic_id}:${r.season_id}`);
   }
@@ -436,6 +608,9 @@ const QUERY = `
       }
       continue;
     }
+    // Report-only checks never become violations and never consult the baseline. They are printed
+    // below so the exposure stays visible and countable on an otherwise green run.
+    if (REPORT_ONLY.has(chk)) continue;
     const known = new Set(baseline.rows?.[chk] ?? []);
     const unknown = [...(observedRows[chk] ?? [])].filter((k) => !known.has(k));
     if (unknown.length > 0) violations.push({ chk, keys: unknown });
@@ -446,11 +621,29 @@ const QUERY = `
   // is indistinguishable from a check that is not running — and FABRICATED_SOURCE is expected to sit at
   // 0 forever, so it would be invisible for its entire useful life.
   for (const chk of ZERO_TOLERANCE) checks.add(chk);
+  for (const chk of REPORT_ONLY) checks.add(chk);
   for (const chk of [...checks].sort()) {
     const total = Object.values(observed[chk] ?? {}).reduce((a, b) => a + b, 0);
     const baseTotal = Object.values(baseline.counts?.[chk] ?? {}).reduce((a, b) => a + b, 0);
-    const tag = ZERO_TOLERANCE.has(chk) ? 'must be 0' : `baseline ${baseTotal}`;
+    const tag = ZERO_TOLERANCE.has(chk) ? 'must be 0'
+      : REPORT_ONLY.has(chk) ? 'report only' : `baseline ${baseTotal}`;
     console.log(`  ${chk.padEnd(24)} observed ${String(total).padStart(4)}   (${tag})`);
+  }
+
+  // Say where the anchor manifest stands, every run. A carve-out granted on an unread page is the
+  // exposure this check exists to measure, so it must be visible on a GREEN run too — a number
+  // that only appears when something is wrong cannot be watched for drift.
+  const ccReported = Object.values(observed.CC_ANCHOR_UNVERIFIED ?? {}).reduce((a, b) => a + b, 0);
+  if (!cc.present) {
+    console.log('\n  ⚠ data/candidate-connection-anchors.json is missing — every #Campaign_themes'
+      + ' citation reports as unverified. Run scripts/sweep-candidate-connection-anchors.mjs.');
+  } else {
+    console.log(`\n  #Campaign_themes anchors: ${cc.verified.length} page(s) verified, `
+      + `${cc.empty.length} proven empty (swept ${cc.generatedAt ?? 'unknown'}).`);
+    if (ccReported > 0) {
+      console.log(`  ${ccReported} row(s) rest on an anchor whose page has not been swept — `
+        + 'report only, not a failure. Re-run the sweep to clear them.');
+    }
   }
 
   if (VERBOSE) {
@@ -507,6 +700,18 @@ const QUERY = `
                             'upstream to re-point to. Re-research the row from a source you fetched, or ' +
                             'retire it. If you believe the denylist entry is wrong, re-verify with a ' +
                             'period control and say so in the commit.',
+    CC_ANCHOR_EMPTY:        'This row\'s only source is a Ballotpedia page deep-linked to ' +
+                            '#Campaign_themes, and the sweep FETCHED that page and found no words ' +
+                            'from the candidate there -- no completed survey, no quoted campaign ' +
+                            'site, or no such section at all. The anchor was appended by hand, or ' +
+                            'the page changed after the row was written. Do NOT just drop the ' +
+                            'fragment: without it the row is BALLOTPEDIA_ONLY and still wrong. ' +
+                            'Cite what the chair rests on, or retire it. If you think the page does ' +
+                            'carry the candidate\'s words, re-run ' +
+                            'scripts/sweep-candidate-connection-anchors.mjs and say so in the commit.',
+    CC_ANCHOR_UNVERIFIED:   'Report only -- this never fails the build. It means the page has not ' +
+                            'been swept, not that the row is wrong. Run ' +
+                            'scripts/sweep-candidate-connection-anchors.mjs and commit the manifest.',
   };
   console.error('');
   for (const chk of [...new Set(violations.map((v) => v.chk))]) {

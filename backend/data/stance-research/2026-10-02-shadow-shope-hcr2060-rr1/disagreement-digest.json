@@ -1,0 +1,115 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac#022d8b7f-14e4-5f50-95fc-77e10a1558ea",
+          "values": [
+            "own-act",
+            null,
+            "namesake-unclear"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac#022d8b7f-14e4-5f50-95fc-77e10a1558ea",
+          "values": [
+            "on-question",
+            null,
+            "off"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac#022d8b7f-14e4-5f50-95fc-77e10a1558ea",
+          "values": [
+            "record",
+            null,
+            "not-evidence"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 3,
+      "alpha": -0.10526315789473673,
+      "examples": [
+        {
+          "unit": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac#152ec81f-c8ab-5494-8b68-711193f672d5",
+          "values": [
+            "direction-only",
+            "multi-subject",
+            "multi-subject"
+          ]
+        },
+        {
+          "unit": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac#54bf0425-8d31-5ced-8b4d-f6ffea98d6d9",
+          "values": [
+            "direction-only",
+            "multi-subject",
+            "multi-subject"
+          ]
+        },
+        {
+          "unit": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac#022d8b7f-14e4-5f50-95fc-77e10a1558ea",
+          "values": [
+            "direction-only",
+            null,
+            "procedural"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1|3451fbc8-ec4d-48c2-a93c-19f135d84bf3|44905f3b-e105-4f6c-afc7-5d223813dbac#022d8b7f-14e4-5f50-95fc-77e10a1558ea",
+          "values": [
+            "in-term",
+            null,
+            "undated"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v1_attribution",
+    "v2_relevance",
+    "v3_class",
+    "v5_time"
+  ]
+}

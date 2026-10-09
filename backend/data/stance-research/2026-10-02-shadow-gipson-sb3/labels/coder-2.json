@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42",
+      "office_id": "7803f2a9-9dd2-4f45-8b85-1cf5fd29e785",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "8b72ea71-4dd8-58df-a205-06f9b9b16340",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-04-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": "The calculation shall increase the minimum wage by the lesser of 3.5 percent and the rate of change in the averages of the most recent July 1 to June 30, inclusive, period over the preceding July 1 to June 30, inclusive, period for the United States Bureau of Labor Statistics nonseasonally adjusted United States Consumer Price Index for Urban Wage Earners and Clerical Workers (U.S. CPI-W). The result shall be rounded to the nearest ten cents ($0.10). Each adjusted minimum wage increase calculated under this subdivision shall take effect on the following January 1.",
+          "note": "The enacted bill ties the wage floor to CPI-W with automatic annual adjustment requiring no new legislation, matching rung 1 and excluding rung 2's legislative-vote requirement.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "295f5a1d-c49c-5f9a-9fc9-5aa165bb0955",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-03-31",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": null,
+          "note": "The Assembly Floor concurrence vote lists Gipson among the Ayes on final passage of SB 3.",
+          "record_kind": "vote",
+          "actor_quote": "Gatto, Gipson, Gomez",
+          "tally_quote": "Ayes Count 48 Noes Count 26 NVR Count 5"
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "8b72ea71-4dd8-58df-a205-06f9b9b16340",
+        "295f5a1d-c49c-5f9a-9fc9-5aa165bb0955"
+      ],
+      "reasoning": "Gipson voted Aye on SB 3 (2015-2016)'s Assembly Floor concurrence (Ayes Count 48 Noes Count 26 NVR Count 5), and the enacted bill's operative minimum-wage section ties the wage floor to the CPI-W with automatic annual adjustments taking effect each following January 1, with no further legislative vote. This matches the rung text \"raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation,\" and excludes rung 2's requirement that adjustments occur \"only when lawmakers vote to.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

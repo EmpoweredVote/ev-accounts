@@ -1,0 +1,20 @@
+Written: `coder-1.json` — one row (Koch × abortion), chair **4**.
+
+**How it codes**
+
+| Snapshot | V1 | V2 | V3 | V4 | V5 | Record fields |
+|---|---|---|---|---|---|---|
+| Roll call 58 | own-act | on-question | record / vote | chair-shaped | in-term | `actor_quote` "Brown Donato Koch Sandlin", `tally_quote` "Yea 28 Abortion. Nay 19 Concurrence" |
+| Enrolled act PDF | own-act | on-question | record / vote | chair-shaped | in-term | `provision_quote` "a criminal act, except when performed under the following circumstances:" |
+| Bill details page | own-act | on-question | record / vote | chair-shaped | in-term | all null (digest only, names the author not a voter) |
+
+All three are one instrument group, `SB 1(ss) (2022 First Special Session)`, so the actor/tally/provision facts sit on the pages that actually print them.
+
+Judgment calls worth flagging:
+
+- **Concurrence is not procedural.** V4's procedural list is cloture/rule/table/recommit/previous question/adjournment. The motion to concur is the Senate's final adoption of the bill in its final form — the Governor signed it the same day. 19 No votes, so not `near-unanimous` either.
+- **Single-subject enough for a chair.** The act amends the Code "concerning health" but its operative work is the abortion statute; I did not treat it as `multi-subject`.
+- **The extra exception.** The law's exceptions are life/serious health risk, lethal fetal anomaly, and rape or incest within ten weeks. Rung 4 names rape, incest, and serious risk to the mother's life; the lethal-anomaly exception is one narrow category beyond that list, and it does not move the bill toward "allow abortion during the first trimester" — elective first-trimester abortion stays criminal. The bill's own exceptions rule out rung 5. So rung 4, not a blank.
+- **Provision quote kept short deliberately.** The enrolled-act PDF breaks "Abortion shall in all instances be … a criminal act" across a page-footer artifact, so a verbatim span of the full sentence would have to carry "SEA 1(ss) — Concur 13" inside it. I quoted the contiguous clause instead and cited the exception text in the reasoning. Every quoted string, including the rung text, is copied exactly from the sources in the prompt, and no `[deleted: …]` text is quoted anywhere.
+
+`needs_source` and `quotes` are empty — no Koch statement appears in the sources, and the record carries the chair on its own.

@@ -1,0 +1,131 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "85039896-b19c-5bae-ac05-92ea9d3f756e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-05-26",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticises the 2025 property-tax cut (SEA 1) for squeezing school and local budgets: leans against the tax-cut side but names no tax increase, size or purpose that separates rungs 1-3.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bbb7e3d3-8a70-5ac6-be93-8b023ec78b59",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Welcomes a temporary gas-tax suspension (narrow relief, rung 3 clause b) while worrying about lost revenue for services; narrow relief alone does not exclude other rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "11e8eade-46ba-5c83-86e3-b953bbfcea50",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Attack on the President's federal tax cuts for the wealthiest inside a redistricting statement; names no tax policy of his own and the year is not printed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "01ceaf5c-475d-5763-89e1-9b7c9b2e808b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remarks on wealth inequality and corporate incentives name no tax rate, tax increase or tax cut.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "53111da1-f298-5ce2-8292-bfd6d85554f9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-02-18",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Self-description as a progressive voice on health care, housing and schools; nothing on taxes.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own words fault the property-tax cut SEA 1 because it \"is making it difficult for schools and local governments to balance their budgets\", which leans away from \"Cut taxes broadly\" but does not show whether he would raise taxes on wealthy people and large companies significantly, moderately, or keep the system mostly as-is. Welcoming a temporary gas-tax suspension is narrow relief only, so no rung is established.",
+      "needs_source": [
+        "Indiana House roll call on SEA 1 (2025), final passage, showing Pierce's vote",
+        "Any tax bill Pierce authored or prime-sponsored (e.g. a surtax or tax increase on high earners/corporations), with bill text"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "85039896-b19c-5bae-ac05-92ea9d3f756e",
+          "text": "Meanwhile, SEA 1 is making it difficult for schools and local governments to balance their budgets.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "bbb7e3d3-8a70-5ac6-be93-8b023ec78b59",
+          "text": "I welcome cheaper gas prices from this suspension.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "11e8eade-46ba-5c83-86e3-b953bbfcea50",
+          "text": "all to give tax cuts to the wealthiest Americans",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["is-attack"]
+        },
+        {
+          "snapshot_id": "01ceaf5c-475d-5763-89e1-9b7c9b2e808b",
+          "text": "We cannot have a system where some people have fabulous wealth while a significant number of people are struggling just to get by",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

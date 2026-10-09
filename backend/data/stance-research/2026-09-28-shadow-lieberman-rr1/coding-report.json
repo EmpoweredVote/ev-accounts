@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "a6d492a6-0d29-4d8d-8533-a3ae82284696|d13d9c57-2851-48fb-a1a6-0b181f449453|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Aaron Lieberman's own first-person answer on what gestational limit the law should set (candidate questionnaire, debate answer, or issue page) for the 2026 Arizona Senate campaign",
+          "Any Arizona legislative record of Lieberman on a bill that itself sets a gestational limit or an exception list (rape, incest, risk to the mother's life)",
+          "Lieberman's own vote, sponsorship, or first-person statement addressing the general legality of abortion by gestational stage or exceptions for rape, incest, or life risk — the dimension this ladder orders.",
+          "A statement by Lieberman tying his No vote to a specific clause of SB1457, or a separate vote/statement on an instrument setting a general gestational-stage rule for abortion legality"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "a6d492a6-0d29-4d8d-8533-a3ae82284696|d13d9c57-2851-48fb-a1a6-0b181f449453|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Aaron Lieberman's own first-person answer on what gestational limit the law should set (candidate questionnaire, debate answer, or issue page) for the 2026 Arizona Senate campaign",
+        "Any Arizona legislative record of Lieberman on a bill that itself sets a gestational limit or an exception list (rape, incest, risk to the mother's life)",
+        "Lieberman's own vote, sponsorship, or first-person statement addressing the general legality of abortion by gestational stage or exceptions for rape, incest, or life risk — the dimension this ladder orders.",
+        "A statement by Lieberman tying his No vote to a specific clause of SB1457, or a separate vote/statement on an instrument setting a general gestational-stage rule for abortion legality"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

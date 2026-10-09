@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257|f4c83c0b-3c35-419b-a618-0e6c4c13fd38|ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic_key": "transportation-priorities",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Aguiar-Curry vote, authorship or co-sponsorship on a California bill that allocates transportation funding between road capacity and transit, bicycle or pedestrian projects (leginfo bill text plus the Assembly floor vote page)",
+          "Her own first-person words answering where transportation investment should go (Assembly district issue page, candidate questionnaire, or transportation committee floor statement), dated within her current term",
+          "a vote, sponsorship, or own-words statement by Aguiar-Curry on a bill that funds or prioritizes transit, cycling, pedestrian infrastructure, or road capacity investment specifically"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257|f4c83c0b-3c35-419b-a618-0e6c4c13fd38|ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "requests": [
+        "An Aguiar-Curry vote, authorship or co-sponsorship on a California bill that allocates transportation funding between road capacity and transit, bicycle or pedestrian projects (leginfo bill text plus the Assembly floor vote page)",
+        "Her own first-person words answering where transportation investment should go (Assembly district issue page, candidate questionnaire, or transportation committee floor statement), dated within her current term",
+        "a vote, sponsorship, or own-words statement by Aguiar-Curry on a bill that funds or prioritizes transit, cycling, pedestrian infrastructure, or road capacity investment specifically"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

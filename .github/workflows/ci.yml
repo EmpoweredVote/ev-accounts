@@ -682,6 +682,52 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+  coverage-honesty:
+    name: coverage honesty
+    runs-on: ubuntu-latest
+    # Does the PUBLISHED coverage catalog claim compass coverage the database does not hold?
+    #
+    # 🔴 WHY IT EXISTS: on 2026-10-06 eight Utah chips (Layton, Lehi, Ogden, Provo, Sandy, St. George,
+    # West Jordan, West Valley City) were purple — "this place has stances, come and read why" — with
+    # ZERO compass rows, ever, for any politician ever linked to those governments. They were found by
+    # ACCIDENT, while measuring the purple cohort to judge seven unrelated GREY chips. Nothing on either
+    # side of the repo boundary was asking the question. essentials #190 flipped them grey; this job is
+    # what stops the next eight.
+    #
+    # Its own job, for the reason spelled out on `stance-sources`: a failing early step masks every
+    # check after it and the masked one reports nothing a human will see.
+    #
+    # NOT on pull_request, and here the reason is specific rather than inherited: this reads
+    # essentials' DEPLOYED /coverage.json, so a PR in THIS repo cannot change what it sees, and a PR in
+    # the OTHER repo has not deployed yet. Running it on PRs would only add a check that is red or green
+    # for reasons no reviewer of that PR can act on.
+    #
+    # ⚠ There is a lag by design: greying a chip in essentials turns this green only once that deploy
+    # regenerates the catalog. That is correct — until the deploy, the false chip is still on screen.
+    if: github.event_name != 'pull_request'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Exit 2 means the catalog could not be fetched, which is NOT a data defect — the script says so
+      # in as many words so a red nightly is not misdiagnosed as a coverage regression.
+      - name: Check coverage honesty — no purple chip without rows behind it
+        run: npm run check:coverage-honesty
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+
   duplicate-people:
     name: duplicate people
     runs-on: ubuntu-latest

@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+      "office_id": "8371ec8f-eb82-4726-81a1-fce6dab10808",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "74360de0-702d-5cd0-ae19-6845db68545b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "A facility that is run by or that operates on the property of a public educational institution may not Perform or provide an abortion, unless the abortion is necessary to save the life of the woman having the abortion.",
+          "note": "SB1457's operative clauses ban sex/race/genetic-abnormality-selective abortion and bar abortion at public-ed-institution facilities (life exception only); neither sets the stage- or rape/incest-exception rule this ladder orders.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "1732c273-0e3c-5ec7-9e3c-a90114ce011d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Petersen co-sponsored SB1457, the sex/race/genetic-abnormality abortion ban and public-school abortion restriction bill, signed into law.",
+          "record_kind": "sponsor",
+          "actor_quote": "Petersen (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8961a524-4eb7-54ce-b5f8-36720ed74076",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "Senate Final Reading #2 on SB1457; Petersen voted Y in a contested 16-14 roll call, but the bill's content is off the stage/exception dimension this ladder orders.",
+          "record_kind": "vote",
+          "actor_quote": "PETERSEN Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1457 (2021) bans sex-, race- and genetic-abnormality-selective abortions, bars abortion at public-educational-institution facilities except to save the woman's life, and adds personhood-interpretation and clinic/informed-consent provisions; none of these clauses states a trimester- or stage-based legality rule or the rape/incest/mother's-life exception structure the rungs differ on, so the bill is adjacent to this ladder's question. Petersen co-sponsored SB1457 and voted Y on its Senate Final Reading, both in-term as a sitting State Senator, but no surviving passage establishes a chair.",
+      "needs_source": [
+        "A vote, sponsorship, or own-words statement by Petersen on a measure that sets a general gestational-age or trimester-based abortion limit, or that defines a rape/incest/health exception structure, to evidence this ladder directly."
+      ],
+      "quotes": []
+    }
+  ]
+}

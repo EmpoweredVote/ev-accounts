@@ -1,0 +1,137 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "0889f9c3-2f6c-5722-b693-52558bd8202d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-04-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer that camping on the streets is illegal and the law should be enforced; it names no penalty type, so it does not separate the civil-penalty rung from the criminal-penalty rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ea1977b8-1699-59ca-b7e7-1a1dd02a9e21",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-12",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Interview clip: enforce the law, get people off the streets into treatment, and use state power to clear encampments; no warnings or penalty type stated.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "183796f6-60c2-5b02-850a-d1fb3a8700c2",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer repeating that living and camping on the streets is illegal and that enforcement is the starting point; no penalty type.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8ab4768c-411e-5630-ac44-a224dce6ba56",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Calls for a change in homelessness policy and cancelling payments to nonprofits; names no rule on public sleeping or camping.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f7dd06d7-a48c-5763-bd6a-b3075cf82f4c",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Third-person campaign policy page on capping homeless-housing costs; spending, not a penalty rule (annex: funding is adjacent).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7f16187c-5cd3-5d10-be38-62e05bab41b8",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-07",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Says the team will deal forcefully with homelessness; names no policy clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Hilton repeatedly says \"it is illegal to live and camp on the streets. We need to enforce the law\", which places him on the enforcement side, but he never says whether enforcement uses \"graduated warnings and civil penalties\" or \"criminal penalties\", the clause that separates the prohibition rung from the ban rung. His criticism that jail is where people with mental illness are treated is not a statement of the camping penalty either, so the row stays blank on direction only.",
+      "needs_source": [
+        "Steve Hilton's own words or policy page stating the penalty for public camping (civil fine/warnings vs arrest, jail or prosecution), e.g. a homelessness policy page on stevehiltonforgovernor.com"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "0889f9c3-2f6c-5722-b693-52558bd8202d",
+          "text": "Number one, it is illegal to live and camp on the streets. We need to enforce the law. Number two, we need to get people into the drug treatment that they need, and it cannot be a choice.",
+          "v7_tier": "lever",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "183796f6-60c2-5b02-850a-d1fb3a8700c2",
+          "text": "it's illegal to live and camp on the streets. And that's the starting point.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "ea1977b8-1699-59ca-b7e7-1a1dd02a9e21",
+          "text": "he's using the power of the state to forcibly act where cities and counties haven't done their job. And if he can do it, then so can I. And I will.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-healthcare-r3",
+  "seat": {
+    "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+    "full_name": "Matt Pierce",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2002-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_key": "healthcare",
+      "served_revision_id": "87719e15-58aa-4729-a73f-d47e64d5a954",
+      "question_text": "What role should government play in healthcare access?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Make healthcare free and available to everyone, fully paid for by the public sector"
+        },
+        {
+          "value": 2,
+          "text": "Make sure everyone has affordable coverage through a mix of public programs and regulated private insurance"
+        },
+        {
+          "value": 3,
+          "text": "Help people who can't afford care and expand programs for seniors and low-income residents, while keeping private insurance for everyone else"
+        },
+        {
+          "value": 4,
+          "text": "Only help the poorest people afford healthcare and leave everyone else to employers and private insurance"
+        },
+        {
+          "value": 5,
+          "text": "Stay out of healthcare entirely and let private markets handle all coverage decisions"
+        }
+      ],
+      "own_words_levels": [
+        "local"
+      ],
+      "annexMd": "# healthcare — served revision 87719e15-58aa-4729-a73f-d47e64d5a954 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. The season pin is an older revision\n(`afc91aa2-…`); coders code the served text below.\n\n**Question:** \"What role should government play in healthcare access?\"\n\n**Orientation:** standard. Rung 1 has the public sector pay for everyone's care, rung 5 gives\ngovernment no role. The rungs order **whom government covers or helps pay for**: everyone in full,\neveryone through a mix, people who cannot afford care plus seniors, only the poorest, no one.\n\n**Levels with a lever:** federal, state. The levers are federal law (Medicare,\nmarketplace subsidies, insurance rules) and state law (Medicaid eligibility, state exchanges and\nsubsidies, state insurance regulation). Local governments hold no lever on coverage.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"single-payer\", \"Medicare for All\", \"universal coverage\", \"public option\", \"Affordable\nCare Act\" (ACA, \"Obamacare\"), \"marketplace\" or \"exchange\", \"premium tax credit\", \"cost-sharing\nreduction\", \"Medicaid expansion\", \"CHIP\", \"individual mandate\", \"pre-existing conditions\",\n\"guaranteed issue\", \"essential health benefits\", \"short-term plans\", \"health savings account\" (HSA),\nstate Medicaid names (\"Medi-Cal\", \"AHCCCS\", \"BadgerCare\", \"MassHealth\").\n\n1. **\"Make healthcare free and available to everyone, fully paid for by the public sector\"**\n   - Means: one public payer covers every resident, with no charge to the patient. (Rung 1 no longer\n     says the public sector *runs* care; the S1 description's \"publicly administered\" is not a\n     clause.)\n   - Operative clauses: [a] everyone; [b] free to the patient; [c] fully paid for by the public\n     sector.\n   - Establishing evidence looks like: authoring or co-sponsoring a single-payer bill whose operative\n     text enrolls every resident and bars premiums and cost-sharing; own words calling for that.\n   - Levels that hold a lever: federal; state (a state single-payer plan).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because \"universal coverage\" and \"public option\" do not remove\n     private insurance or cost-sharing. A plan that keeps private insurance beside a public plan →\n     rung 2 territory, not rung 1.\n   - Private hospitals and doctors do not exclude rung 1: the rung is about who **pays**, not who\n     delivers care _(proposed; the reason \"and run by\" was dropped, CA_0055)_.\n   - \"Healthcare is a human right\" names no clause → `rhetorical`.\n\n2. **\"Make sure everyone has affordable coverage through a mix of public programs and regulated\n   private insurance\"**\n   - Means: the goal is coverage for every person, reached through public programmes and private\n     insurance under public rules.\n   - Operative clauses: [a] everyone covered; [b] affordable; [c] a mix of public programmes and\n     regulated private insurance.\n   - Establishing evidence looks like: an instrument that aims at coverage for every resident through\n     both a public route (a public option, subsidies, Medicaid) and rules on private insurers; own\n     words that name coverage for everyone **and** keep private insurance.\n   - Levels that hold a lever: federal; state (state exchanges, state subsidies, a state public\n     option).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because both expand public programmes and keep private insurance.\n     The separating clause is [a] **everyone**. A measure that helps only people who cannot afford\n     care does not reach [a] → rung 3 territory.\n   - A vote or statement that **defends or expands the ACA** as a whole → `direction-only`: the ACA\n     matches rung 3 too, so it excludes neither; rung 2 needs evidence of \"everyone\" _(ruled 2026-10-01)_.\n   - Pre-existing-condition protection on its own regulates private insurance but says nothing on\n     [a] → `direction-only` _(proposed)_.\n\n3. **\"Help people who can't afford care and expand programs for seniors and low-income residents,\n   while keeping private insurance for everyone else\"**\n   - Means: government helps people who cannot pay and widens the programmes for seniors and\n     low-income people; everyone else stays on private insurance.\n   - Operative clauses: [a] help people who cannot afford care; [b] **expand** programmes for seniors\n     and low-income residents; [c] keep private insurance for everyone else. Compound: one side only\n     → `compound-partial` (V4.2).\n   - Establishing evidence looks like: a single-subject expansion of Medicaid or of Medicare benefits\n     **plus** a passage that keeps private insurance as the main route for others (this excludes\n     rungs 1 and 2). An expansion vote alone matches rungs 2 and 3 alike → `direction-only`\n     _(proposed)_.\n   - [b] lists the two programme populations. Expanding one of them meets [b] _(proposed)_.\n   - Levels that hold a lever: federal (Medicare, federal Medicaid rules); state (Medicaid\n     eligibility and benefits).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a person who keeps Medicaid **as it is** has not expanded\n     it. Keeping a programme is not [b] \"expand\" → not rung 3 on that passage.\n\n4. **\"Only help the poorest people afford healthcare and leave everyone else to employers and\n   private insurance\"**\n   - Means: public help goes to the poorest people and to no one else.\n   - Operative clauses: [a] help for the poorest; [b] \"only\" — no public help beyond them (an absence\n     clause: the passage must say it, V4.2 \"Silence is not a clause\"); [c] everyone else to employers\n     and private insurance.\n   - Establishing evidence looks like: own words that public help should be limited to the poorest;\n     an instrument that narrows eligibility to the poorest and says so.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A repeal of a Medicaid expansion excludes rung 3 [b], but it does not state [b] \"only\" →\n     `direction-only` _(proposed)_.\n   - \"Only the poorest\" is read for people **below Medicare age**; it does not require ending Medicare\n     for seniors. Medicare's structure is coded on `medicare/aid` _(ruled 2026-10-01)_.\n   - Commonly confused with rung 5 because cutting a programme is not leaving healthcare\n     **entirely**. A cut that keeps any programme → not rung 5.\n\n5. **\"Stay out of healthcare entirely and let private markets handle all coverage decisions\"**\n   - Means: no public coverage programmes and no government rules on coverage.\n   - Operative clauses: [a] no government role (\"entirely\"); [b] private markets decide **all**\n     coverage. Both are absence clauses; the passage must state them (V4.2).\n   - Establishing evidence looks like: own words that call for ending public coverage programmes\n     **and** coverage rules.\n   - Levels that hold a lever: federal; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because deregulating private insurance (short-term plans, sales\n     across state lines, HSAs) moves toward the market but ends no programme → `direction-only`\n     _(proposed)_.\n\n**Hard cases:**\n- **Health information is not access.** A measure that has an agency or provider give out\n  information or materials about a specific condition does not say whom government covers →\n  `adjacent`; BLANK `no-evidence` when nothing else survives.\n- **The omnibus trap (codebook V4, [real]).** A Yea on the One Big Beautiful Bill Act (2025), a\n  reconciliation bill that covers taxes, Medicaid, immigration and more → `multi-subject`. Statements\n  that defend its **work requirements** are about a narrower clause than any rung → `adjacent`.\n- **Medicaid work requirements** on their own → `adjacent` _(proposed, from the same codebook\n  example)_.\n- **Drug prices, insulin caps, price transparency, mental-health parity** regulate cost or benefits,\n  not who is covered → `adjacent` _(proposed)_. (Medicare cost control is on `medicare/aid`.)\n- **A Medicare for All bill** can be coded on both `healthcare` and `medicare/aid`. Code each topic\n  on its own rung text; a match on one topic is not a match on the other.\n- **Preemption (codebook V2, H12)** → `adjacent`.\n- **Budget votes** that fund an existing programme → V4 `multi-subject`.\n"
+    }
+  ]
+}

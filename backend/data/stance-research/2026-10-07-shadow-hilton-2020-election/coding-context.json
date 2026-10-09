@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-2020-election",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "b5260e5a-5576-4071-8b2a-088af8d1f9eb",
+      "topic_key": "2020-election",
+      "served_revision_id": "81920cf6-9a30-4c5c-82b1-5f2c16cda95c",
+      "question_text": "What is your view of the outcome of the 2020 presidential election?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "The election was fair and Joe Biden won legitimately."
+        },
+        {
+          "value": 2,
+          "text": "Joe Biden won, but the election had real problems worth fixing."
+        },
+        {
+          "value": 3,
+          "text": "There was some fraud, but not enough to change the result."
+        },
+        {
+          "value": 4,
+          "text": "Fraud or irregularities may have been enough to change the result."
+        },
+        {
+          "value": 5,
+          "text": "The election was stolen from Donald Trump through widespread fraud."
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# 2020-election — served revision 81920cf6-9a30-4c5c-82b1-5f2c16cda95c (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open. No gold item exists on this topic\nyet; every reading below is a drafter's.\n\n**Question:** \"What is your view of the outcome of the 2020 presidential election?\"\n\n**Orientation:** off-axis — a **belief** ladder, not a government-action ladder. Rung 1 accepts the\ncertified result without reservation, rung 5 says it was stolen. The rungs order **how far the\nperson doubts the certified result**. No rung asks what government should do.\n\n**Levels with a lever:** federal, local, state, in the sense that records count at each level. No\nofficeholder can change a past event; the evidence is mostly own words. Records exist too: objections to electoral votes\n(Congress), audit, decertification or elector resolutions (state), certification votes (local\nelection boards).\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"certification\", \"certify\" or \"decertify\", \"electoral count\", \"objection\",\n\"Electoral Count Act\", \"alternate electors\", \"forensic audit\", \"irregularities\", \"rigged\",\n\"stolen\", \"election integrity\", \"legitimate\", \"the will of the voters\".\n\n1. **\"The election was fair and Joe Biden won legitimately.\"**\n   - Means: the 2020 election was fair, and its winner won legitimately.\n   - Operative clauses: [a] the election was fair; [b] Biden won legitimately.\n   - Establishing evidence looks like: own words that say both. A vote to certify, or against an\n     objection, shows acceptance of the result but does not separate rungs 1, 2 and 3 →\n     `direction-only` _(proposed)_.\n   - Levels that hold a lever: none; own words at every level.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 when the person also backs election-security changes. A call to\n     improve future elections is not a statement that 2020 \"had real problems\" → it does not move\n     the person to rung 2 _(proposed)_.\n\n2. **\"Joe Biden won, but the election had real problems worth fixing.\"**\n   - Means: the result stands, but the 2020 election had real faults that need correcting.\n   - Operative clauses: [a] Biden won; [b] the 2020 election had real problems worth fixing.\n   - Establishing evidence looks like: own words that accept the result **and** name problems in the\n     2020 election. Compound: one side only → `compound-partial` (V4.2).\n   - Levels that hold a lever: none; own words at every level.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because \"problems\" can mean fraud. Rung 2's problems are faults\n     (administration, rule changes, delays); a person who says fraud occurred is rung 3 or above.\n\n3. **\"There was some fraud, but not enough to change the result.\"**\n   - Means: some fraud happened in 2020, but the result would have been the same.\n   - Operative clauses: [a] some fraud occurred; [b] not enough to change the result.\n   - Establishing evidence looks like: own words that say both. Compound: one side only →\n     `compound-partial` (V4.2).\n   - Levels that hold a lever: none; own words at every level.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 when the person says fraud occurred and does not say whether it\n     changed the result. That is [a] only → `compound-partial`, not rung 4.\n\n4. **\"Fraud or irregularities may have been enough to change the result.\"**\n   - Means: the person is unsure whether the result was right, because fraud or irregularities may\n     have changed it.\n   - Operative clauses: [a] fraud or irregularities; [b] possibly enough to change the result.\n   - Establishing evidence looks like: own words that the outcome is in doubt because of fraud or\n     irregularities.\n   - Levels that hold a lever: none; own words. Records: see hard cases.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because \"may have\" and \"was\" are close. Rung 5 is certainty; doubt\n     is rung 4.\n\n5. **\"The election was stolen from Donald Trump through widespread fraud.\"**\n   - Means: the person says the election was taken from its rightful winner by widespread fraud.\n   - Operative clauses: [a] the election was stolen (the result is wrong); [b] through widespread\n     fraud.\n   - Establishing evidence looks like: own words that say the election was stolen, or that Trump\n     won, by fraud.\n   - Levels that hold a lever: none; own words. Records: see hard cases.\n   - Known chair-shaped instruments: _(none on file)_.\n   - \"Stolen\" or \"rigged\" with no mechanism named → `compound-partial`: it meets [a] but not [b]\n     \"through widespread fraud\" (H14) _(ruled 2026-10-01)_.\n   - A claim that it was stolen by something other than fraud (rule changes, media, courts) meets [a]\n     but not [b] → `compound-partial` _(proposed)_.\n\n**Hard cases:**\n- **Objections and electoral-count votes.** A vote to object to a state's electoral votes shows doubt\n  about that count. It does not separate rung 4 from rung 5, and an objection can rest on rule\n  changes rather than fraud → `direction-only`, unless the person's own explanation of the vote places it\n  _(proposed)_.\n- **Lawsuits and amicus briefs** (Q8 `record`): the legal claim must match the rung. A claim that\n  states changed election rules unlawfully is not a claim of fraud → `direction-only` at most\n  _(proposed)_.\n- **Audit and certification votes.** A vote for an audit, or against certifying, shows doubt but names\n  no conclusion → `direction-only` _(proposed)_.\n- **Dodges.** \"I'm focused on the future\", \"Biden is the president\", \"that's been litigated\" do not\n  state a view of the outcome → V4 `rhetorical`; BLANK `no-evidence` if nothing else survives. A\n  blank here is correct.\n- **Time (V5).** A person's view may have changed since 2020. The newest evidence governs; older\n  passages are `superseded-by-later`. A statement outside the election cycle goes to review.\n"
+    }
+  ]
+}

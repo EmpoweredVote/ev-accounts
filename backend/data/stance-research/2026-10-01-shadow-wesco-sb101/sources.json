@@ -1,0 +1,50 @@
+{
+  "batch_id": "2026-10-01-shadow-wesco-sb101",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/legislative/2015/bills/senate/101/details",
+      "source_kind": "public-record",
+      "politician_id": "48f99b45-486d-4d6d-8f48-ed21a793778f",
+      "office_id": "92903b72-38f5-4b52-8566-f03eda881b9c",
+      "topic_keys": [
+        "religious-freedom"
+      ],
+      "instruments": [
+        "SB 101 (2015)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2015-sb101-details.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/119/2015/senate/bills/SB0101/rollcalls/SB0101.305_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "48f99b45-486d-4d6d-8f48-ed21a793778f",
+      "office_id": "92903b72-38f5-4b52-8566-f03eda881b9c",
+      "topic_keys": [
+        "religious-freedom"
+      ],
+      "instruments": [
+        "SB 101 (2015)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2015-sb101-rc305.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/119/2015/senate/bills/SB0101/SB0101.05.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "48f99b45-486d-4d6d-8f48-ed21a793778f",
+      "office_id": "92903b72-38f5-4b52-8566-f03eda881b9c",
+      "topic_keys": [
+        "religious-freedom"
+      ],
+      "instruments": [
+        "SB 101 (2015)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/iga-2015-sb101-enrolled.txt"
+    }
+  ]
+}

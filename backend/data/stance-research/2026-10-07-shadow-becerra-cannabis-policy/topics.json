@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+    "topic_key": "cannabis-policy",
+    "topic_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+    "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+    "question_number": 54,
+    "title": "Cannabis Policy",
+    "question_text": "How should the government regulate cannabis?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Keep cannabis fully illegal and enforce criminal penalties for possessing or selling it."
+      },
+      {
+        "value": 2,
+        "text": "Allow cannabis only for medical use, available to patients with a physician's authorization."
+      },
+      {
+        "value": 3,
+        "text": "Remove criminal penalties for personal possession, replacing them with civil fines, but keep commercial sales illegal."
+      },
+      {
+        "value": 4,
+        "text": "Legalize recreational cannabis and regulate it through a licensed, taxed commercial market."
+      },
+      {
+        "value": 5,
+        "text": "Legalize cannabis and treat it like an ordinary legal product, with minimal restrictions on growing and using it."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

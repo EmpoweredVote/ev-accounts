@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-10-02-shadow-gipson-sb32-rr1",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201520160SB32",
+      "source_kind": "public-record",
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42",
+      "office_id": "7803f2a9-9dd2-4f45-8b85-1cf5fd29e785",
+      "topic_keys": [
+        "climate-change"
+      ],
+      "instruments": [
+        "SB 32 (2015-2016)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2016-sb32-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201520160SB32",
+      "source_kind": "public-record",
+      "politician_id": "6133e73c-4c33-4cfc-9fd3-de1382729f42",
+      "office_id": "7803f2a9-9dd2-4f45-8b85-1cf5fd29e785",
+      "topic_keys": [
+        "climate-change"
+      ],
+      "instruments": [
+        "SB 32 (2015-2016)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2016-sb32-votes.txt"
+    }
+  ]
+}

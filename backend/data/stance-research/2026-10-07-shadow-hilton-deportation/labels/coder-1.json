@@ -1,0 +1,144 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "aff42b36-3444-549e-b866-55d70d0980ee",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer that people here illegally who committed dangerous crimes should be removed and their removal prioritized; meets rung 2 clause [a] and the rung 4 ordering but states neither 'only' (rung 2 [b]) nor 'deport all' (rung 4 [a]).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e7a8c6a4-de3a-5801-9b99-23c0aeb10b7d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-05-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Pledges to work with the federal government to enforce immigration law and says the governor does not decide deportations; that is the cooperation (local-immigration) question, not who is removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9da6578c-6f5b-5d7c-a7fd-ae84fceacbd2",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2025-11-20",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Supports state and local cooperation with ICE and opposes SB 54; cooperation with federal enforcement is adjacent per the annex hard case.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c7e4c75b-d1ef-5fef-afe1-cfec77a511e4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-04-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Opposes a pathway to citizenship for those who came under Biden ('That's rewarding law breaking'); a legal-status position that shows the enforcement side but sets no removal rule.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c3b7535a-9740-5732-b1d4-8c88c4d57e99",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-05-06",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "About taxpayer funding of CHIRLA's political canvassing, not about removal.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "12d6e8ee-c4d7-54fe-86db-d3397cee888a",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Budget plan (ending state Medi-Cal for undocumented immigrants) in third-person campaign voice; not about deportation.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "05af29cc-6749-5fdd-b30e-948c692dab2a",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Aggregator pointer page; no deportation content in the excerpt.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "In the 2026-09-30 debate Hilton said people here illegally \"who've committed dangerous crimes, should be removed\" and wants to \"prioritize the removal of dangerous criminals\", and he opposes a pathway to citizenship; this places him on the removal side but states neither that only serious violent offenders are deported (\"Only deport undocumented immigrants convicted of serious violent crimes\") nor that all are deported (\"Deport all undocumented immigrants, starting with those who have criminal records\"). His other statements are about cooperation with ICE, which is adjacent.",
+      "needs_source": [
+        "Hilton's own words on whether undocumented immigrants without criminal convictions, including long-settled families and workers, should be removed (e.g., a questionnaire or debate answer on deportation scope)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "aff42b36-3444-549e-b866-55d70d0980ee",
+          "text": "Everybody agrees that we need secure borders and that we've got to make sure that people who are in this country illegally, who've committed dangerous crimes, should be removed.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "aff42b36-3444-549e-b866-55d70d0980ee",
+          "text": "We've got to get this whole debate back to where most people want it to be, which is to prioritize the removal of dangerous criminals.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

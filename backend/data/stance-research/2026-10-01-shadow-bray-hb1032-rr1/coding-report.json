@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "97c61094-b962-48b2-b6ef-de96b5f9bb7a|d32b3477-0951-4ba6-a359-3ca744adff72|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Bray's own words on who should draw Indiana's congressional districts (Senate floor statement, press release or caucus statement around the December 11, 2025 HB 1032 vote)",
+          "Any bill Bray authored, co-authored or sponsored in the Indiana General Assembly establishing a redistricting commission or map-drawing criteria",
+          "Bray's own floor explanation of his Nay vote on HB 1032 tying it to a specific clause (the court-jurisdiction restrictions in new IC 3-3-2-3 versus the mid-decade redistricting timing itself)",
+          "Any other Bray record or statement on who should draw Indiana's districts (commission vs. legislature) to resolve the direction-only chair",
+          "Bray's own floor statement, explanation of vote, or public comment on HB 1032 (2026) tying his Nay vote to a specific clause (the mid-decade timing change, the specific new district lines, or the restriction on judicial review of apportionment challenges)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "97c61094-b962-48b2-b6ef-de96b5f9bb7a|d32b3477-0951-4ba6-a359-3ca744adff72|48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "requests": [
+        "Bray's own words on who should draw Indiana's congressional districts (Senate floor statement, press release or caucus statement around the December 11, 2025 HB 1032 vote)",
+        "Any bill Bray authored, co-authored or sponsored in the Indiana General Assembly establishing a redistricting commission or map-drawing criteria",
+        "Bray's own floor explanation of his Nay vote on HB 1032 tying it to a specific clause (the court-jurisdiction restrictions in new IC 3-3-2-3 versus the mid-decade redistricting timing itself)",
+        "Any other Bray record or statement on who should draw Indiana's districts (commission vs. legislature) to resolve the direction-only chair",
+        "Bray's own floor statement, explanation of vote, or public comment on HB 1032 (2026) tying his Nay vote to a specific clause (the mid-decade timing change, the specific new district lines, or the restriction on judicial review of apportionment challenges)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

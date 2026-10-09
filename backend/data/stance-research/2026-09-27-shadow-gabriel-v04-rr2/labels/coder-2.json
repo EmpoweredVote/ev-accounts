@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "bb4bbd05-0a4b-5617-9d6d-38b342fa770f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": "A statement of whether the current version of the terms of service defines each of the following categories of content, and, if so, the definitions of those categories, including any subcategories: (A) Hate speech or racism. (B) Extremism or radicalization. (C) Disinformation or misinformation. (D) Harassment. (E) Foreign political interference.",
+          "note": "Requires platforms to report moderation definitions/enforcement stats for misinformation among several content categories, but sets no duty to remove or label false content, so it is on-question yet direction-only per the annex's transparency-mandate guidance.",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "AB 587 (Gabriel, chaptered 2022) is a terms-of-service and content-moderation reporting mandate on large platforms, covering misinformation as one of several disclosed categories; it imposes no legal duty to remove or label false content, so it shows only that Gabriel acted on platform accountability without matching any rung's operative mechanism.",
+      "needs_source": ["Gabriel's own words or an instrument specifically requiring platforms to remove or label false/misinformation content, to separate the rungs"],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "batch_id": "2026-10-07-shadow-becerra-homelessness",
+  "seat": {
+    "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+    "full_name": "Xavier Becerra",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "question_text": "How should government address people sleeping or camping in public spaces?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Protecting the right to sleep and shelter in public spaces, with no penalties of any kind"
+        },
+        {
+          "value": 2,
+          "text": "Decriminalizing public sleeping and camping in public spaces"
+        },
+        {
+          "value": 3,
+          "text": "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"
+        },
+        {
+          "value": 4,
+          "text": "Prohibiting encampments on public property, enforced through graduated warnings and civil penalties"
+        },
+        {
+          "value": 5,
+          "text": "Banning public camping and sleeping with criminal penalties to maintain public safety and order"
+        }
+      ],
+      "own_words_levels": [],
+      "annexMd": "# homelessness — served revision 6958fa99-e317-45d7-8076-d11a0a78c897 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(ruled 2026-08-31)_ carry an operator ruling (Chris\nAndrews, recorded with the chair-4 re-audit). Lines marked _(proposed)_ are a drafter's reading, not\nyet ruled. Lines marked _(ruled 2026-10-01)_ carry a later ruling. No `_owed:_` line is open.\n\n**Question:** \"How should government address people sleeping or camping in public spaces?\"\n\n**Orientation:** standard. Rung 1 protects public sleeping with no penalty, rung 5 bans it with\ncriminal penalties. The rungs order **the penalty** for sleeping or camping in public: none, no\ncriminal penalty, enforcement only when shelter exists, civil penalties, criminal penalties.\n\n**Levels with a lever:** federal, local, state. The lever is the local\nordinance and the state statute that sets or forbids camping rules. Federal officeholders act only on\nfederal land and through conditions on grants _(proposed)_.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302).\n\n**Synonyms:** \"camping ban\", \"unauthorized camping\", \"public camping\", \"sit-lie\", \"encampment\nsweep\" / \"clearance\" / \"abatement\", \"move-along order\", \"right to rest\", \"infraction\",\n\"Class C misdemeanor\", \"citation\", \"diversion\", \"shelter-bed availability\", \"Martin v. Boise\",\n\"City of Grants Pass v. Johnson\" (2024).\n\n1. **\"Protecting the right to sleep and shelter in public spaces, with no penalties of any kind\"**\n   - Means: people may sleep and shelter in public spaces, and the law imposes no penalty of any\n     kind for it.\n   - Operative clauses: [a] a protected right to sleep and shelter in public; [b] no penalties of any\n     kind, civil or criminal.\n   - Establishing evidence looks like: a right-to-rest bill or ordinance that protects public\n     sleeping and forbids fines and arrests for it; own words calling for both. [b] is an absence\n     clause and must be stated (V4.2 \"Silence is not a clause\").\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because decriminalizing removes criminal penalties only. A measure\n     that keeps a fine or a civil order is not \"no penalties of any kind\".\n   - Housing and service spending is no longer part of this rung. A budget shift from enforcement to\n     housing does not move a person to rung 1 → `adjacent` _(proposed)_.\n\n2. **\"Decriminalizing public sleeping and camping in public spaces\"**\n   - Means: sleeping and camping in public are no longer crimes.\n   - Operative clauses: [a] remove criminal penalties for public sleeping and camping.\n   - Establishing evidence looks like: a repeal of a criminal camping ordinance, or a vote against\n     creating one; own words against criminal penalties for sleeping in public.\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a law that turns a camping crime into a civil fine both\n     decriminalizes (rung 2) and prohibits with civil penalties (rung 4). A law that turns a camping crime\n     into a civil fine still prohibits, with a civil penalty → rung 4 (see the 2026-08-31 penalty-type\n     ruling) _(ruled 2026-10-01)_.\n   - A No on a criminal ban does not separate 1, 2, 3 and 4 → `direction-only`.\n\n3. **\"Allowing enforcement only when adequate shelter beds are available, with citations diverting\n   people to services rather than the criminal justice system\"**\n   - Means: camping rules may be enforced only when a shelter bed is open, and a citation sends the\n     person to services, not to court.\n   - Operative clauses: [a] enforcement only when adequate shelter beds are available; [b] citations\n     divert to services rather than the criminal justice system.\n   - Establishing evidence looks like: an ordinance that conditions enforcement on an available bed\n     **and** routes citations to services. Compound: one side only → `compound-partial` (V4.2).\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because many enforcement ordinances offer shelter first. An offer\n     of shelter before a penalty is not [a] unless the law forbids enforcement when no bed is\n     available _(proposed)_.\n\n4. **\"Prohibiting encampments on public property, enforced through graduated warnings and civil\n   penalties\"**\n   - Means: encampments on public property are prohibited; enforcement starts with warnings and\n     ends in civil penalties, not jail.\n   - Operative clauses: [a] prohibit encampments on public property; [b] graduated warnings;\n     [c] civil penalties.\n   - Establishing evidence looks like: a camping prohibition whose penalty is a fine or other civil\n     sanction, reached after warnings. A **fine-only Class C misdemeanor** is the civil tier → rung 4\n     _(ruled 2026-08-31)_.\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: Texas HB 1925 (2021), a statewide camping ban with a fine-only\n     Class C misdemeanor, stayed on this rung in the 2026-08-31 re-audit. Check [b] in the text the\n     person acted on.\n   - Commonly confused with rung 5: the line is **penalty type**. Jail, arrest or prosecution → rung\n     5; a fine only → rung 4 _(ruled 2026-08-31)_.\n   - Shelter mandates are no longer part of this rung. A requirement to keep shelter beds does not\n     move a person to rung 4 → `adjacent` _(proposed)_.\n\n5. **\"Banning public camping and sleeping with criminal penalties to maintain public safety and\n   order\"**\n   - Means: public camping and sleeping are banned, and breaking the ban can lead to jail, arrest or\n     prosecution.\n   - Operative clauses: [a] ban public camping and sleeping; [b] criminal penalties. \"To maintain\n     public safety and order\" is a purpose, not a clause the instrument must state _(proposed)_.\n   - Establishing evidence looks like: a camping ordinance or statute with a misdemeanor that carries\n     possible jail time, or that authorizes arrest.\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: the Fremont camping ordinance (misdemeanor, up to $1,000 and six\n     months in jail), Henderson Ordinance 3967, Colorado Springs Ordinance 26-08 (up to 10 days in\n     jail); all moved to rung 5 in the 2026-08-31 re-audit.\n   - Commonly confused with rung 4: see rung 4. Pairing a jail-backed ban with services, or saying it\n     \"does not criminalize\", does not keep it at rung 4: the instrument's penalty decides _(ruled\n     2026-08-31)_.\n\n**Hard cases:**\n- **Clearances and sweeps** with notice but no penalty on the person → `compound-partial` for rung 4\n  (prohibition and warnings, no penalty clause) _(proposed)_.\n- **Shelter, housing and outreach spending** with no penalty rule → `adjacent` (the\n  homelessness-response topic covers funding).\n- **Preemption (codebook V2, H12).** A state law that forbids cities to allow camping, or orders\n  them to enforce a ban, decides which level acts → `adjacent`, unless the state law itself sets the\n  penalty (then code that penalty) _(proposed)_.\n- **Court rulings** (Martin v. Boise, Grants Pass) are not a person's act. Own words about a ruling\n  count only when they name a penalty rule.\n- **Budget and omnibus votes** with an enforcement item → V4 `multi-subject`.\n"
+    }
+  ]
+}

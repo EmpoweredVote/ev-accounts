@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "43e734b4-4417-4dcd-91c9-f420f3a1b702|f7cad0ce-e9af-46a1-a39d-d5d4520d3879|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "David Livingston's own words or a record of his on the level of the Arizona minimum wage itself (raising it, indexing it, freezing it, or repealing it)",
+          "Any explanation of vote or floor statement by Livingston tying his SCR1040 vote to the general wage floor",
+          "Livingston's own act (vote, sponsorship, or signed statement) on a general minimum-wage-floor bill, not a tipped-worker subminimum-wage carve-out",
+          "Livingston's own words on the general minimum wage question (questionnaire, debate answer, or issue page)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "43e734b4-4417-4dcd-91c9-f420f3a1b702|f7cad0ce-e9af-46a1-a39d-d5d4520d3879|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "David Livingston's own words or a record of his on the level of the Arizona minimum wage itself (raising it, indexing it, freezing it, or repealing it)",
+        "Any explanation of vote or floor statement by Livingston tying his SCR1040 vote to the general wage floor",
+        "Livingston's own act (vote, sponsorship, or signed statement) on a general minimum-wage-floor bill, not a tipped-worker subminimum-wage carve-out",
+        "Livingston's own words on the general minimum wage question (questionnaire, debate answer, or issue page)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,100 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "6b1f7662-f583-5ceb-99ab-604e2b34ab36",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "adjacent",
+          "v3_class": "not-evidence",
+          "date": "2026-03-06",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The excerpt only reports that the candidates discussed school choice; it contains none of Pierce's own words on vouchers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "361c03cb-57c9-5e37-bc82-2bfeea577590",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign-forum opening statement opposing diverting money to private schools; shows the anti-voucher side but neither calls for repeal (rung 1) nor states the no-repeal clause of rung 2.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f0c9cca0-793a-5ac4-b164-0091b60b8d25",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-06-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Newsletter criticizes universal voucher expansion as siphoning money from public schools and pledges to advocate for public schools; against vouchers, but no stated repeal or keep-existing position.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d7c17dbb-0f5b-5a8c-b0ae-17a29c045477",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-10-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Discusses Child Care Development Fund vouchers, a childcare subsidy, not school vouchers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce's own words (\"we shouldn't be diverting our money away from our public schools\"; vouchers \"siphoning money away from public schools\") place him on the side opposing vouchers, but nothing separates \"Eliminating voucher programs\" from \"Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones\": he neither calls for repeal nor says existing programmes should stay.",
+      "needs_source": [
+        "Indiana House roll calls on Choice Scholarship / ESA eligibility bills (single-subject) showing Pierce's vote and any repeal amendment he offered or voted on",
+        "Pierce's own words stating whether existing Indiana voucher programmes should be repealed or kept"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "361c03cb-57c9-5e37-bc82-2bfeea577590",
+          "text": "we need to support our public schools not private schools we shouldn't be diverting our money away from our public schools",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "f0c9cca0-793a-5ac4-b164-0091b60b8d25",
+          "text": "Each dollar in the budget for the voucher program is a dollar less for our public schools.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

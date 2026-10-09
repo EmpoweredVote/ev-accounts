@@ -1,0 +1,92 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "served_revision_id": "598c879d-f387-461c-9120-fbbbf6314bbc",
+      "passages": [
+        {
+          "snapshot_id": "be745a55-d2dd-5052-b3e5-a9911f4f9047",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1229 (2025)",
+          "provision_quote": null,
+          "note": "Senate third-reading Aye on a bill that voids local zoning limits; a deregulation law shows the market side but not the 'at most' ceiling of the market rung.",
+          "record_kind": "vote",
+          "actor_quote": "BOLICK Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        },
+        {
+          "snapshot_id": "4498e821-95a7-504f-9468-b70584d036e7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1229 (2025)",
+          "provision_quote": null,
+          "note": "Prime sponsor of SB 1229; the bill was held in the House, so sponsorship evidences the bill as filed/engrossed.",
+          "record_kind": "sponsor",
+          "actor_quote": "Bolick (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "40486c7d-e370-58f0-ad18-92248e7cc86c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1229 (2025)",
+          "provision_quote": "Notwithstanding any other law, a municipality may not adopt or enforce any code, ordinance, regulation, standard, stipulation or other legal requirement establishing, directly or indirectly, any of the following:",
+          "note": "Operative section preempts local minimum lot sizes, setbacks, lot coverage and design rules — the V2 refined deregulation case: on-question but direction-only, silent on public housing, rent rules and subsidies.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "19d1e655-281f-52d0-a37e-0ce458b69d8c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-03-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted words praise her deregulation bill and oppose 'big government overreach' but do not reject public housing, binding rules or subsidies; the release's account of her sponsorship is context only.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bolick prime-sponsored and voted Aye on SB 1229 (2025), which bars municipalities from enforcing minimum lot sizes, setbacks and design rules; that is cutting \"the regulations and zoning limits that block private building\" but one deregulation law cannot show she would \"rely on the market\" with nothing more. Her own words (\"protects private property rights from big government overreach\") show the market side but do not exclude subsidies and tax breaks, so the rungs on that side are not separated.",
+      "needs_source": [
+        "Bolick's own words or record on housing subsidies or tax credits for affordable construction (e.g. a vote on an Arizona housing trust fund or state LIHTC bill)",
+        "Bolick's own words or record on rent caps or required affordable units"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "19d1e655-281f-52d0-a37e-0ce458b69d8c",
+          "text": "The bill also protects private property rights from big government overreach.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

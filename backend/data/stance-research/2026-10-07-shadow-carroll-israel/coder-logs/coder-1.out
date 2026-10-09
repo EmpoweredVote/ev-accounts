@@ -1,0 +1,8 @@
+I wrote `coder-1.json`. The `israel-military-aid` row is **BLANK `no-evidence`**.
+
+- **Why it's blank:** This is a state-level seat, so only Carroll's own words can seat a chair. The two snippets are his own words: Senate GOP press releases from 2024-10-07 and 2025-06-17, both during his current term. Neither one mentions U.S. military aid, how much there should be, or conditions on it. "I continue to support Israel's right to defend itself from violence" and "continue to support our ally in this battle" name no policy, so I coded them V2 `adjacent` and V4 `rhetorical`. No passage could support a chair, and `rests_on` is empty.
+- **Why not `direction-only`:** "continue to support our ally" could be read as leaning toward continued aid. "Support" is never tied to military aid, though, so I treated it as rhetoric rather than a side. Another coder might read that line as `direction-only`, which would still leave the row blank.
+- **Quotes:** Both quotes are verbatim. The Israel-defense line is tier `none` and the Iran line is `direction`. I marked both not quotable (`off-question`, `source-not-an-answer`).
+- **`needs_source`:** I asked for Carroll's own words on the size of U.S. military aid to Israel or on conditions for it, such as a questionnaire answer, an interview or an issue page.
+
+Six claude.ai connectors (Benevity, Candid, Canva, Figma, Harvey, WorkOS) need to be authorized in your claude.ai connector settings before their tools will work. The GitHub plugin server also failed to connect with an authorization-header error. This task needed none of them.

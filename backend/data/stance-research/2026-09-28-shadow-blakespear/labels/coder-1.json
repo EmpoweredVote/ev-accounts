@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d",
+      "office_id": "76ce3998-b6e1-4fb3-9461-2ab82fff6f04",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "08f5d915-83e0-56c7-a5ea-fadec9e7bc5a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1216 (2023-2024)",
+          "provision_quote": "On and after January 1, 2025, an agency responsible for the development or operation of bikeways or highways where bicycle travel is permitted shall not install a new sharrow on a highway that has a posted speed limit greater than 30 miles per hour, except at or near an intersection for the purpose of connecting a Class I, Class II, or Class IV bikeway through the intersection.",
+          "record_kind": "author",
+          "actor_quote": "SB 1216, Blakespear. Transportation projects: Class III bikeways: prohibition.",
+          "tally_quote": null,
+          "note": "A bikeway design-quality standard inside the Active Transportation Program; it does not address how investment is split between road capacity and transit, cycling and walking, which is what the rungs order."
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is SB 1216 (2023-2024), which she authored; its operative sections bar new sharrows above 30 mph and bar Class III bikeways and sharrows from the Active Transportation Program's project list except on low-speed or low-stress streets. That sets a safety standard for one bikeway treatment and says nothing about whether government should prioritize pedestrian infrastructure, cycling networks, and public transit over new road capacity, invest equally in both, or focus on road capacity and traffic flow. No passage survives to a chair.",
+      "needs_source": [
+        "Blakespear's own words answering where transportation investment should go as between road capacity and transit, bike and pedestrian projects (issue page, questionnaire, or debate answer, current term)",
+        "A named California Senate instrument with her recorded action that allocates transportation funding between highway capacity and transit or active transportation (bill number, session, and roll call)"
+      ],
+      "quotes": []
+    }
+  ]
+}

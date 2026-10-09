@@ -1,0 +1,128 @@
+[
+  {
+    "slug": "ward1",
+    "person": "Wayne Gray",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2025/08/Ward-1-Wayne-Gray-scaled.jpg",
+    "status": 200,
+    "bytes": 692989,
+    "isJpeg": true,
+    "dims": {
+      "h": 2560,
+      "w": 2048
+    }
+  },
+  {
+    "slug": "ward2",
+    "person": "Anthony Marshall",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2025/08/Ward-2-Anthony-Marshall-scaled.jpg",
+    "status": 200,
+    "bytes": 503084,
+    "isJpeg": true,
+    "dims": {
+      "h": 2560,
+      "w": 2048
+    }
+  },
+  {
+    "slug": "ward3",
+    "person": "Robert Nail",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2025/08/Ward-3-Mike-Nail-scaled.jpg",
+    "status": 200,
+    "bytes": 496026,
+    "isJpeg": true,
+    "dims": {
+      "h": 2560,
+      "w": 2048
+    }
+  },
+  {
+    "slug": "ward4",
+    "person": "Jamie Creel",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2025/08/Ward-4-Jamie-Creel-scaled-1.jpg",
+    "status": 200,
+    "bytes": 556995,
+    "isJpeg": true,
+    "dims": {
+      "h": 2560,
+      "w": 2048
+    }
+  },
+  {
+    "slug": "ward5",
+    "person": "Paul Tisdale",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2025/08/Ward-5-Dr.-Paul-Tisdale-scaled.jpg",
+    "status": 200,
+    "bytes": 471329,
+    "isJpeg": true,
+    "dims": {
+      "h": 2560,
+      "w": 2048
+    }
+  },
+  {
+    "slug": "ward6",
+    "person": "Kenny Glavan",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2025/08/Ward-6-Kenny-Glavin-scaled.jpg",
+    "status": 200,
+    "bytes": 477861,
+    "isJpeg": true,
+    "dims": {
+      "h": 2560,
+      "w": 2048
+    }
+  },
+  {
+    "slug": "ward7",
+    "person": "David Shoemaker",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2025/08/Ward-7-David-Shoemaker-scaled.jpg",
+    "status": 200,
+    "bytes": 316165,
+    "isJpeg": true,
+    "dims": {
+      "h": 2560,
+      "w": 2048
+    }
+  },
+  {
+    "slug": "mayor-a",
+    "person": "Andrew Gilich",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2024/07/Mayor-at-city-hall-ed.jpg",
+    "status": 200,
+    "bytes": 1750850,
+    "isJpeg": true,
+    "dims": {
+      "h": 1800,
+      "w": 2400
+    }
+  },
+  {
+    "slug": "mayor-b",
+    "person": "Andrew Gilich",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2024/07/Mayor-at-city-hall-ed-scaled.jpg",
+    "status": 404,
+    "bytes": 13,
+    "isJpeg": false,
+    "dims": null
+  },
+  {
+    "slug": "mayor-c",
+    "person": "Andrew Gilich",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2024/07/Mayor-at-city-hall-ed-300x225.jpg",
+    "status": 200,
+    "bytes": 28187,
+    "isJpeg": true,
+    "dims": {
+      "h": 225,
+      "w": 300
+    }
+  },
+  {
+    "slug": "CONTROL",
+    "person": "n/a",
+    "url": "https://biloxi.ms.us/wp-content/uploads/2025/08/Ward-9-Nobody-At-All-scaled.jpg",
+    "status": 404,
+    "bytes": 13,
+    "isJpeg": false,
+    "dims": null
+  }
+]

@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A record of Wicks on a generally applicable California minimum wage bill (a roll call or sponsorship on a statewide wage-floor measure), not a sector-specific one",
+          "Wicks's own words on whether the state wage floor should be indexed to the cost of living automatically or raised only by legislative vote",
+          "Wicks's vote or sponsorship record on general (non-sector-specific) California minimum wage legislation",
+          "A general, non-sector-specific minimum-wage record or statement from Wicks (e.g., a statewide minimum-wage bill vote/sponsorship or her own words on the general wage floor)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5821d0a9-672e-44c0-bac7-1a802a2e8368|7b3dcdad-b119-4b25-8240-460f70244f9d|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "A record of Wicks on a generally applicable California minimum wage bill (a roll call or sponsorship on a statewide wage-floor measure), not a sector-specific one",
+        "Wicks's own words on whether the state wage floor should be indexed to the cost of living automatically or raised only by legislative vote",
+        "Wicks's vote or sponsorship record on general (non-sector-specific) California minimum wage legislation",
+        "A general, non-sector-specific minimum-wage record or statement from Wicks (e.g., a statewide minimum-wage bill vote/sponsorship or her own words on the general wage floor)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

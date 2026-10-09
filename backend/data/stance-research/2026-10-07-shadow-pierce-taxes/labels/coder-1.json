@@ -1,0 +1,93 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "43c9a529-a789-5f37-b500-03f73e818386",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "rhetorical",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A redistricting statement that attacks federal tax cuts 'to the wealthiest Americans' in passing; it names no tax policy he would pursue, and the page gives no year.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "549cdaaf-43ab-5b74-bc0a-3ac20dc8d064",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "He welcomes the governor's temporary gas-tax suspension (narrow relief) but worries it will crowd out funding for schools and other services; this shows no rung, and it does not rule out the main-rate rungs.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e0857d77-bc5b-5c8e-9a5b-7ff099d12e9e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-05-26",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "He criticizes SEA 1's property-tax relief for cutting school and local revenue and backs a study of assessments; this leans against tax cuts but names no rate or revenue change he favours.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pierce's newsletters object that SEA 1 property-tax relief and the gas-tax suspension drain revenue for schools and services ('SEA 1 is making it difficult for schools and local governments to balance their budgets'), which leans away from 'Cut taxes broadly'. But he names no rate increase on the wealthy and no plan to keep the system mostly as-is, so the passages separate sides, not rungs.",
+      "needs_source": [
+        "Indiana General Assembly roll call: Pierce's vote on SEA 1 (2025), property tax",
+        "Any bill Pierce authored or sponsored that changes Indiana income, corporate or sales tax rates"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "549cdaaf-43ab-5b74-bc0a-3ac20dc8d064",
+          "text": "I am concerned that if the Iran war and gas tax suspension continue with no end in sight, the need to replace lost revenue for road repairs could crowd out funding desperately needed for priorities like schools, health care , child care, and affordable housing",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "e0857d77-bc5b-5c8e-9a5b-7ff099d12e9e",
+          "text": "the General Assembly must also continue analyzing the entire property tax system and the impacts of SEA 1",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "43c9a529-a789-5f37-b500-03f73e818386",
+          "text": "all to give tax cuts to the wealthiest Americans",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["is-attack", "off-question"]
+        }
+      ]
+    }
+  ]
+}

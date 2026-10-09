@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "525a5d79-d7a9-498a-b972-57fa517be375",
+      "office_id": "43dd153e-0834-434f-9577-f9bae44d8f89",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "d684a2cc-ce7b-5bf2-9d9b-42a414539c46",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": "(c) It is the policy of the state to do both of the following: (1) Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045, and to achieve and maintain net negative greenhouse gas emissions thereafter. This goal is in addition to, and does not replace or supersede, the statewide greenhouse gas emissions reduction targets in Section 38566. (2) Ensure that by 2045, statewide anthropogenic greenhouse gas emissions are reduced to at least 85 percent below the statewide greenhouse gas emissions limit established pursuant to Section 38550.",
+          "note": "Operative section sets a net-zero GHG emissions target and directs scoping-plan/carbon-capture strategies, not a clean-energy-specific mandate, subsidy, or permitting clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "be93f3c4-6cf6-5747-940c-bca5f19862e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-08-31",
+          "v4_shape": "study-directive",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": null,
+          "note": "Assembly concurrence vote; Lee is among the Ayes, but the bill's operative content is a GHG-emissions target and planning directive, not a clean-energy expansion mechanism named by any rung.",
+          "record_kind": "vote",
+          "actor_quote": "Jones-Sawyer, Kalra, Lee, Levine, Low, Maienschein",
+          "tally_quote": "Ayes Count 52 Noes Count 18"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Alex Lee voted Aye on AB 1279 (2021-2022), the California Climate Crisis Act, but its operative clause (Health and Safety Code Section 38562.2) declares a policy of net-zero greenhouse gas emissions by 2045 and directs the state board to pursue 'a variety of policies and strategies,' explicitly including carbon capture and storage, rather than 'a shift to clean energy' as rung 1 states. This is the same policy area as the ladder but not the dimension the rungs separate (mandates vs. subsidies vs. permitting vs. market neutrality for clean energy specifically), so both passages are adjacent and no passage survives V2 to support a chair.",
+      "needs_source": [
+        "A clean-energy-specific instrument (e.g., a renewable portfolio standard mandate, a clean-energy subsidy or tax-credit bill, or a permitting-streamlining bill) authored, sponsored, or voted on by Alex Lee as an Assembly Member."
+      ],
+      "quotes": []
+    }
+  ]
+}

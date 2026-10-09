@@ -1,0 +1,41 @@
+[
+  {
+    "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+    "topic_key": "medicare/aid",
+    "topic_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+    "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+    "question_number": 28,
+    "title": "Medicare / Medicaid",
+    "question_text": "How should Medicare and Medicaid be funded and structured?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "expand Medicare to cover everyone regardless of age"
+      },
+      {
+        "value": 2,
+        "text": "significantly expand Medicare or Medicaid eligibility, stopping short of universal coverage"
+      },
+      {
+        "value": 3,
+        "text": "improve current programs while controlling costs"
+      },
+      {
+        "value": 4,
+        "text": "scale back both programs, shifting more coverage to private insurance"
+      },
+      {
+        "value": 5,
+        "text": "phase out both programs and use private insurance only"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local"
+    ]
+  }
+]

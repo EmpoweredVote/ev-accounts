@@ -1,0 +1,8 @@
+I wrote the label file to `labels/coder-2.json`. It has one row, Romero / abortion, coded BLANK `direction-only`. I did not run any validation on it.
+
+- **Passages:** All three are news excerpts quoting Romero in her own words, coded `own-words` / `statement-other`. The first and third are `direction-only`, because they support abortion rights and "the right to choose" but state no gestational limit or exception. The second (her reaction to the Arizona Supreme Court ruling) is `rhetorical`.
+- **Row:** `v6_value` is null and `rests_on` is empty. No rung's clauses (a time limit, a health-only exception, and so on) are met, so the row has a direction and no chair.
+- **Dates:** Only the AZPM passage prints a date (2022-06-07), so I coded it `in-term`. The KGUN passages print no year, so I left their dates null and coded them `undated`.
+- **Needs source:** I listed two items. One is the Tucson resolution text with Romero's vote. The other is a first-person statement from her on gestational limits.
+- **No records:** I did not code the resolution as a record. The only source for it is a reporter's account, which the codebook says is not a record (H15).
+- **Quotes:** Two quotes, both `none` and not quotable (`non-differentiating-goal`).

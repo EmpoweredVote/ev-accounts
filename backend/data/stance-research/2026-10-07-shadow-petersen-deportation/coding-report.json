@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "SB 1164 (2025) bill page and Senate/House roll calls (a record, though at a no-lever level it cannot seat a chair)",
+          "Petersen's own first-person statement on who should be deported (all vs. only criminals, long-settled people)",
+          "SB 1164 (2025) bill page and Senate and House roll calls (the press releases only report his sponsorship, and the bill is a cooperation measure)",
+          "Petersen's own first-person statement on who should be deported (questionnaire, issue page or interview)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "SB 1164 (2025) bill page and Senate/House roll calls (a record, though at a no-lever level it cannot seat a chair)",
+        "Petersen's own first-person statement on who should be deported (all vs. only criminals, long-settled people)",
+        "SB 1164 (2025) bill page and Senate and House roll calls (the press releases only report his sponsorship, and the bill is a cooperation measure)",
+        "Petersen's own first-person statement on who should be deported (questionnaire, issue page or interview)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

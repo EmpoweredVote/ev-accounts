@@ -166,6 +166,7 @@ describe('seatChamber', () => {
     ['Senator', 'upper'], ['State Senator', 'upper'], ['U.S. Senator', 'upper'],
     ['State Representative', 'lower'], ['Representative', 'lower'], ['Assembly Member', 'lower'],
     ['Assemblymember', 'lower'], ['Delegate', 'lower'],
+    ['U.S. House of Representatives - Indiana 9th Congressional District', 'lower'], ['U.S. Senate - Indiana', 'upper'],
     ['Mayor', null], ['County Commissioner', null], ['', null],
   ] as const)('%s -> %s', (t, c) => expect(seatChamber(t)).toBe(c));
 });
@@ -540,6 +541,51 @@ describe("chamber 'reading-else-bill-origin' (AZ BillStatus)", () => {
   it('a reading line wins over the bill origin (Senate vote on an HB)', () => {
     expect(run(senate, 'HOFFMAN Y', 'upper', 'vote', 'Passed 16-12-2-0-0')).not.toContain('chamber-not-evidenced');
     expect(run(senate, 'HOFFMAN Y', 'lower', 'vote', 'Passed 16-12-2-0-0')).toContain('chamber-not-evidenced');
+  });
+  // v3 (2026-10-01): a Senate bill's overview lists Senate co-sponsors, then House ones, unlabelled.
+  const sbOverview = 'Bill Status Inquiry. Bill History for SB1165. Short Title: athletics. Sponsors: Barto (Prime) Petersen (Co-Sponsor) Nguyen (Co-Sponsor)';
+  const sbHouseVote = 'House Third Reading - SB1165 athletics Action Date Action Vote 03/24/2022 Passed 31-24-5-0-0 MEZA N NGUYEN Y OSBORNE Y';
+  const group = (passages: ReturnType<typeof P>[], texts: [string, string][], chamber: 'upper' | 'lower') =>
+    checkRecordGroup({ passages, snapshotText: new Map(texts), fullName: 'Quang Nguyen', chamber: null, profileOf: () => ({ rules: R, chamber }) }).findings;
+  const coSp = P({ snapshot_id: 'o', instrument: 'SB 1165 (2022)', provision_quote: null, record_kind: 'sponsor', actor_quote: 'Nguyen (Co-Sponsor)', tally_quote: null });
+  const vote = P({ snapshot_id: 'v', instrument: 'SB 1165 (2022)', provision_quote: null, record_kind: 'vote', actor_quote: 'NGUYEN Y', tally_quote: 'Passed 31-24-5-0-0' });
+  it('a co-sponsor line alone does not take the bill-origin chamber (fails closed either way)', () => {
+    expect(group([coSp], [['o', sbOverview]], 'lower')).toContain('chamber-not-evidenced');
+    expect(group([coSp], [['o', sbOverview]], 'upper')).toContain('chamber-not-evidenced');
+  });
+  it('a co-sponsor line passes when the same bill\'s House vote shows the House', () => {
+    expect(group([coSp, vote], [['o', sbOverview], ['v', sbHouseVote]], 'lower')).not.toContain('chamber-not-evidenced');
+    expect(group([coSp, vote], [['o', sbOverview], ['v', sbHouseVote]], 'upper')).toContain('chamber-not-evidenced');
+  });
+  it('the prime sponsor still takes the bill origin', () => {
+    const prime = P({ snapshot_id: 'o', instrument: 'SB 1165 (2022)', provision_quote: null, record_kind: 'sponsor', actor_quote: 'Barto (Prime)', tally_quote: null });
+    expect(checkRecordGroup({ passages: [prime], snapshotText: new Map([['o', sbOverview]]), fullName: 'Nancy Barto', chamber: null, profileOf: () => ({ rules: R, chamber: 'upper' }) }).findings).not.toContain('chamber-not-evidenced');
+  });
+  // name_format 'surname-initial-vote' (2026-10-01): AZ prints "SURNAME [INITIAL] VOTE"; a common
+  // surname printed once with no initial is one member (Rep. Neal Carter, SB 1165 (2022)).
+  it("'surname-initial-vote': a common surname printed once, no initial, is one member", () => {
+    const RV: SourceRules = { ...R, name_format: 'surname-initial-vote' };
+    const page = 'House Third Reading - SB1165 athletics Action Date Action Vote 03/24/2022 Passed 31-24-5-0-0 CANO N CARROLL Y CARTER Y CHAPLIK Y';
+    const one = (rules: SourceRules, pg: string, actor = 'CARTER Y') => checkRecordGroup({ passages: [P({ snapshot_id: 'v', instrument: 'SB 1165 (2022)', provision_quote: null, record_kind: 'vote', actor_quote: actor, tally_quote: 'Passed 31-24-5-0-0' })],
+      snapshotText: new Map([['v', pg]]), fullName: 'Neal Carter', chamber: null, profileOf: () => ({ rules, chamber: 'lower' }) }).findings;
+    expect(one(R, page)).toContain('name-collision');
+    expect(one(RV, page)).not.toContain('name-collision');
+    // An initial before the vote mark means the page tells namesakes apart: another member's initial
+    // ("CARTER P Y", a Pamela Carter) does not name Neal Carter.
+    expect(one(RV, 'House Third Reading - SB1165 x Action Date Action Vote 03/24/2022 Passed 31-24-5-0-0 CARTER P Y CHAPLIK Y', 'CARTER P Y')).toContain('name-collision');
+  });
+  // name_format 'surname-doubled' (2026-10-07): the U.S. House Clerk prints every member twice, and a
+  // namesake with the state ("Higgins (LA) Higgins (LA)"). Erin Houchin, H.R. 26 (118th), roll call 29.
+  it("'surname-doubled': a surname printed twice side by side is one member; namesakes still fail closed", () => {
+    const RD: SourceRules = { ...R, name_format: 'surname-doubled' };
+    const page = 'Office of the Clerk, U.S. House of Representatives Roll Call 29 | Bill Number: H. R. 26 VOTES yea: 220 nay: 210 '
+      + 'Horsford Horsford Democratic Nevada NV Nay Houchin Houchin Republican Indiana IN Yea Houlahan Houlahan Democratic Pennsylvania PA Nay';
+    const one = (rules: SourceRules, pg: string, actor: string, name: string) => checkRecordGroup({ passages: [P({ snapshot_id: 'v', instrument: 'H.R. 26 (118th Congress)', provision_quote: null, record_kind: 'vote', actor_quote: actor, tally_quote: 'yea: 220 nay: 210' })],
+      snapshotText: new Map([['v', pg]]), fullName: name, chamber: null, profileOf: () => ({ rules, chamber: 'lower' }) }).findings;
+    expect(one(R, page, 'Houchin Houchin Republican Indiana IN Yea', 'Erin Houchin')).toContain('name-collision');
+    expect(one(RD, page, 'Houchin Houchin Republican Indiana IN Yea', 'Erin Houchin')).not.toContain('name-collision');
+    const twins = page + ' Higgins (LA) Higgins (LA) Republican Louisiana LA Yea Higgins (NY) Higgins (NY) Democratic New York NY Nay';
+    expect(one(RD, twins, 'Higgins (LA) Higgins (LA) Republican Louisiana LA Yea', 'Clay Higgins')).toContain('name-collision');
   });
   it('"House Final Reading" names the House', () =>
     expect(run('House Final Reading - SB1001 x Action Date Action Vote 06/01/2026 Passed 39-16-5-0-0 GRIFFIN Y', 'GRIFFIN Y', 'lower', 'vote', 'Passed 39-16-5-0-0', 'Gail Griffin', 'SB 1001 (2026)'))

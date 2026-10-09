@@ -100,6 +100,10 @@ const CLIENT_ERRORS: Record<string, number> = {
   RUNG_MAP_REQUIRED: 422,
   RUNG_MAP_NOT_NEEDED: 422,
   REPOINTING_NOT_IMPLEMENTED: 422,
+  // CC_0060 / CA_0306: the pinning season is missing answer rows, or a non-blank
+  // answer has no reasoning. Both name what to fix, so pass the message through.
+  REPOINTING_INCOMPLETE: 422,
+  REPOINTING_NO_REASONING: 422,
 };
 
 function sendRpcError(res: Response, err: unknown, where: string): void {

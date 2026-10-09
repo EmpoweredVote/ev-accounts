@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "f80c1731-b603-57aa-b301-4da7c5eb7204",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": null,
+          "note": "Bill status page lists Kavanagh as a co-sponsor of HB 2853.",
+          "record_kind": "sponsor",
+          "actor_quote": "Kavanagh (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b43425fb-be78-5006-a020-25181a763c8f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Kavanagh voting Y on final passage.",
+          "record_kind": "vote",
+          "actor_quote": "KAVANAGH Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "0c8b9be6-e4a1-5a41-8eb8-f48d3f9c4aa7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "Chaptered bill text adds ARS 15-2401.01, extending ESA eligibility to any public-school-eligible resident with no income cap.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "f80c1731-b603-57aa-b301-4da7c5eb7204",
+        "b43425fb-be78-5006-a020-25181a763c8f",
+        "0c8b9be6-e4a1-5a41-8eb8-f48d3f9c4aa7"
+      ],
+      "reasoning": "Kavanagh co-sponsored and voted Y on final passage of HB 2853 (2022), which added ARS 15-2401.01 making any Arizona resident eligible to enroll in public school (preschool for disabilities, kindergarten, or grades one through twelve) also eligible for an Arizona empowerment scholarship account, with no income cap — matching rung 5's 'universal vouchers so that education funding follows the student to any school ... chosen by the family.' Per the V5 ruling (either chamber of the same legislature), his 2022 House-era record counts for his current State Senate seat.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

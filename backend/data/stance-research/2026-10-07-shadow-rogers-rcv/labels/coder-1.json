@@ -1,0 +1,101 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "23b7d096-37ad-4b00-8291-c7f0640a22d2",
+      "office_id": "8a24929f-d3f4-4a39-b8e8-8fa104e6e3be",
+      "topic_id": "81ff12e2-0e4f-44b3-a936-2f154f7d9ab5",
+      "served_revision_id": "100cdf38-0794-4267-b711-934438f05853",
+      "passages": [
+        {
+          "snapshot_id": "4fa1c78d-3daf-5147-a8c6-7c39583f7c1a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1265 (2023)",
+          "provision_quote": null,
+          "note": "Bill overview lists Rogers as co-sponsor of SB1265, a single-subject ban on ranked-choice tabulation (vetoed, but her act stands).",
+          "record_kind": "sponsor",
+          "actor_quote": "Rogers (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8c494645-2364-5fdd-b343-ebb22130f43d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1265 (2023)",
+          "provision_quote": null,
+          "note": "Senate third-reading vote, Rogers Y on a divided 16-13 tally (not near-unanimous).",
+          "record_kind": "vote",
+          "actor_quote": "ROGERS Y",
+          "tally_quote": "Passed 16-13-1-0-0"
+        },
+        {
+          "snapshot_id": "02f8aec0-5a1a-53e4-99e5-d56b0de52d25",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1265 (2023)",
+          "provision_quote": "may not use any of the following voting methods in an election or nomination process for any state, city, town, county or federal office that does any of the following: 1. Allows voters to select or rank, designate or otherwise indicate approval of or preference for more candidates than are eligible to be declared elected for any office. 2. allows ballots cast to be tabulated in any manner that involves the elimination of candidates through multiple rounds of tabulation or the transfer or redistribution of votes between or among candidates.",
+          "note": "Senate engrossed text: the operative section forbids the state and its subdivisions from using ranked/transfer tabulation, a legal ban on RCV (also bans approval voting, which per annex is still rung 5 for RCV).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8a18c8aa-4aff-5429-84dc-77e3d9041490",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2552 (2023)",
+          "provision_quote": null,
+          "note": "Senate third-reading vote on HB2552, Rogers Y on a divided 16-14 tally.",
+          "record_kind": "vote",
+          "actor_quote": "ROGERS Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "f0b34cd1-f8a6-5f5c-bd0d-fe22ece97e09",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2552 (2023)",
+          "provision_quote": "may not use any of the following voting methods in an election or nomination process for any state, city, town, county or federal office that does any of the following: 1. Allows voters to select or rank, designate or otherwise indicate approval of or preference for more candidates than are eligible to be declared elected for any office. 2. allows ballots cast to be tabulated in any manner that involves the elimination of candidates through multiple rounds of tabulation or the transfer or redistribution of votes between or among candidates.",
+          "note": "House engrossed text (the version before the Senate) bans ranked/transfer tabulation statewide, including local elections.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "4fa1c78d-3daf-5147-a8c6-7c39583f7c1a",
+        "8c494645-2364-5fdd-b343-ebb22130f43d",
+        "02f8aec0-5a1a-53e4-99e5-d56b0de52d25",
+        "8a18c8aa-4aff-5429-84dc-77e3d9041490",
+        "f0b34cd1-f8a6-5f5c-bd0d-fe22ece97e09"
+      ],
+      "reasoning": "Rogers co-sponsored SB 1265 (2023) and voted Y on it (16-13) and on HB 2552 (2023) (16-14) in the Senate; both single-subject bills provide that the state and its subdivisions \"may not use\" methods where ballots are tabulated through \"the elimination of candidates through multiple rounds of tabulation or the transfer or redistribution of votes\". That is the rung \"Ban ranked-choice voting by law.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

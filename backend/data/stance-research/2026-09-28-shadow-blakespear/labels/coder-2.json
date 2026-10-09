@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d",
+      "office_id": "76ce3998-b6e1-4fb3-9461-2ab82fff6f04",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "08f5d915-83e0-56c7-a5ea-fadec9e7bc5a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-27",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1216 (2023-2024)",
+          "provision_quote": "On and after January 1, 2025, an agency responsible for the development or operation of bikeways or highways where bicycle travel is permitted shall not install a new sharrow on a highway that has a posted speed limit greater than 30 miles per hour, except at or near an intersection for the purpose of connecting a Class I, Class II, or Class IV bikeway through the intersection.",
+          "note": "Author of a bill setting a safety design standard against sharrows on higher-speed roads and limiting ATP funding for them, not an allocation of investment among transportation modes.",
+          "record_kind": "author",
+          "actor_quote": "SB 1216, Blakespear.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1216 prohibits installing new Class III bikeway sharrow markings on roads with posted speed limits above 30 mph and bars the Active Transportation Program from funding such projects except under specified conditions; it sets a design/safety standard for one type of bike facility rather than addressing 'where should government focus its transportation investment' among pedestrian/cycling/transit and road capacity, so the passage is adjacent to the ladder's question and cannot establish a rung.",
+      "needs_source": [
+        "Blakespear's own statements or votes on transportation funding allocation between road capacity and transit/pedestrian/bike investment"
+      ],
+      "quotes": []
+    }
+  ]
+}

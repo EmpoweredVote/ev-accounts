@@ -1,0 +1,9 @@
+I wrote `labels/coder-3.json` with one row for Shope / abortion. The row is BLANK `direction-only`, so `v6_value` is null and `rests_on` is empty.
+
+- **SB 1164 (2022):** Shope voted Aye and co-sponsored this 15-week limit. Its Sec. 2 says the act creates no right to abortion and does not repeal section 13-3603 (the 1864 ban). Under the annex's construction-clause ruling, that means no permitted stage is shown, so the passages are `direction-only`.
+- **HB 2677 (2024):** He voted Aye on a bare repeal of section 13-3603. The text sets no gestational limit and no exception, so it shows a side but not a rung.
+- **KJZZ quote:** "I voted yes, because I do believe in a 15 week [law]…" states no exception after the limit. It is `statement-other`, dated 2024-04-10 and in-term, but it does not match the clauses of rung 3 ("allow abortion during the first trimester, and after that only to protect the mother's health").
+- **needs_source:** I listed Shope's own statement of the exceptions he supports after 15 weeks.
+- **Quote row:** I coded the KJZZ quote as `direction`, not quotable, with the code `not-forward`, because it explains a past vote.
+
+`record_kind`, `actor_quote` and `tally_quote` are filled for each instrument group. Every verbatim string was copied from the sources in the message.

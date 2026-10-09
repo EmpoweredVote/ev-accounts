@@ -1,0 +1,391 @@
+{
+  "pass": "The 28 WEAK_ONLY rows from the federal generic-sourcing triage (ev-accounts #897), read one at a time",
+  "read_on": "2026-10-06",
+  "written_by": "migrations 1894 and 1895",
+  "method": "Every cited URL was fetched and read, INCLUDING the articles about BILLS, which the claim-on-page guard never tests because it only tests the article about the person. Roll-call claims were verified against the Clerk of the House XML, parsing the OVERALL totals-by-vote block (totals-by-party comes FIRST in the file) and checking that the per-member tally equals the declared totals.",
+  "trap": "Context-window greps of the form .{130}TERM.{130} silently miss matches on SHORT LINES, and every Wikipedia list item becomes its own line. An early pass concluded that Dingell’s article never says \"Energy and Commerce\" when it says it twice. All reads were redone against whitespace-flattened single-line text before any disposition was written.",
+  "gate_bug_found": "check-stance-sources.mjs joins answers to context on (politician_id, topic_id) and NOT on season_id. Measured on production: 41,923 answer-context pairs scored, of which only 36,352 are season-matched -- 5,571 pairs (~13%) score an answer in one season against a context row from another. Reported, not fixed here: fixing it changes what the gate scores and needs a baseline rebuild.",
+  "tally": {
+    "BLANK": 21,
+    "REPAIR": 4,
+    "SOUND": 1,
+    "BLOCKED": 1,
+    "distinct_keys": 27,
+    "rows": 28
+  },
+  "rows": [
+    {
+      "politician_id": "867caca5-ab41-4e1b-b051-4a2cd95a335e",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "full_name": "Michael Whatley",
+      "topic": "same-sex-marriage",
+      "season1_value": 5,
+      "disposition": "BLANK",
+      "klass": "role_or_platform_as_position",
+      "finding": "Chair 5 on a master's degree in theology plus the NC GOP platform. The cited page has no mention of marriage or LGBT people at all. The Season 2 row was UPDATED in place (it already existed, at chair 5, on the re-scaled S2 ladder); Season 1 left as the historical record.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Michael_Whatley"
+      ]
+    },
+    {
+      "politician_id": "1f7429f7-1ecd-4f44-abce-03c72d5cf664",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "full_name": "Roy Cooper",
+      "topic": "ai-regulation",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "self_confessed_absence",
+      "finding": "Row opens \"No specific AI regulation position found\" and closes \"Scored centrist given the absence of direct evidence\". The substitute fact (recruited tech employers to NC) is not on the cited page either.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Roy_Cooper"
+      ]
+    },
+    {
+      "politician_id": "91d28127-8183-4b67-a1fb-dc8a150f6199",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "full_name": "Debbie Dingell",
+      "topic": "ai-regulation",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "role_or_platform_as_position",
+      "finding": "Chair 3 on a subcommittee seat. The seat is real and on the page; the page has no mention of AI, and the row concedes \"No documented support for a full ban or strict approval requirements, nor for a fully hands-off approach\".",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Debbie_Dingell"
+      ]
+    },
+    {
+      "politician_id": "8118811a-aadd-4eb9-9208-de0f5d3b29ad",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "full_name": "Andy Biggs",
+      "topic": "ai-regulation",
+      "season1_value": 1,
+      "disposition": "BLANK",
+      "klass": "evidence_for_a_different_question",
+      "finding": "Net-neutrality opposition is genuine and quoted on the page, but it is 2017 ISP policy carried across to AI. The page has a long political-positions section (abortion, agriculture, climate, COVID, healthcare, LGBTQ, net neutrality, antitrust) and no AI anywhere.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Andy_Biggs"
+      ]
+    },
+    {
+      "politician_id": "867caca5-ab41-4e1b-b051-4a2cd95a335e",
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "full_name": "Michael Whatley",
+      "topic": "campaign-finance",
+      "season1_value": 5,
+      "disposition": "BLANK",
+      "klass": "role_or_platform_as_position",
+      "finding": "Chair 5 because his job involves fundraising. Page silent on campaign finance, donors, PACs, disclosure and independent expenditures.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Michael_Whatley"
+      ]
+    },
+    {
+      "politician_id": "6cad043f-a4c0-48d5-af76-fdf70d319920",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Greg Landsman",
+      "topic": "abortion",
+      "season1_value": 2,
+      "disposition": "REPAIR",
+      "klass": "chair_2_unchanged",
+      "finding": "Ballotpedia records his SUPPORT for Ohio Issue 1 (2023) in its endorsement table; the measure's own Ballotpedia page lists him among official supporters; Wikipedia's Issue 1 article lists him under endorsing US Representatives, sourced to Politico. Issue 1 = a right up to fetal viability with life/health exceptions after = chair 2 almost verbatim. Sources corrected again in migration 1895 to clear BALLOTPEDIA_ONLY.",
+      "sources_examined": [
+        "https://ballotpedia.org/Greg_Landsman",
+        "https://en.wikipedia.org/wiki/Greg_Landsman"
+      ]
+    },
+    {
+      "politician_id": "3030383b-2aaf-40fd-9dfb-8867d1d02f99",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "full_name": "Carlos A. Gimenez",
+      "topic": "abortion",
+      "season1_value": 4,
+      "disposition": "BLANK",
+      "klass": "uncited_aggregator",
+      "finding": "Rests on \"iSideWith records him as supporting abortion bans\"; iSideWith is not among the sources and the one cited page is silent on abortion entirely.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Carlos_A._Gimenez"
+      ]
+    },
+    {
+      "politician_id": "acb046eb-1db6-44bf-a50b-32d16df15057",
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "full_name": "Nikema Williams",
+      "topic": "childcare",
+      "season1_value": 2,
+      "disposition": "REPAIR",
+      "klass": "chair_2_unchanged",
+      "finding": "Clerk roll 385, 19-Nov-2021, H R 5376 \"On Passage\", 220-213-0-1 -> Williams (GA), W000788, D-GA: Yea. The parsed per-member tally equals the declared totals-by-vote exactly, and the sheet distinguishes Williams (GA) from Williams (TX). The Act article carries the childcare content the chair rests on: $400bn, universal pre-K, 7% cost cap to 250% of state median income.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Build_Back_Better_Act",
+        "https://en.wikipedia.org/wiki/Nikema_Williams"
+      ]
+    },
+    {
+      "politician_id": "867caca5-ab41-4e1b-b051-4a2cd95a335e",
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "full_name": "Michael Whatley",
+      "topic": "civil-rights",
+      "season1_value": 5,
+      "disposition": "BLANK",
+      "klass": "role_or_platform_as_position",
+      "finding": "Chair 5 on the RNC/NCGOP platform. Page has no affirmative action, diversity, equity or civil rights. The one checkable adjacent claim is half-true: the STATE PARTY censured Burr over an impeachment vote, not Whatley personally, and not over civil rights.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Michael_Whatley"
+      ]
+    },
+    {
+      "politician_id": "1f7429f7-1ecd-4f44-abce-03c72d5cf664",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "full_name": "Roy Cooper",
+      "topic": "homelessness",
+      "season1_value": 2,
+      "disposition": "BLANK",
+      "klass": "chair_from_another_chair",
+      "finding": "Chair 2 inferred from Medicaid expansion. Page has no homelessness, shelter, encampment, camping, eviction or housing of any kind; the \"2020 emergency housing protections\" claim is not there.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Roy_Cooper"
+      ]
+    },
+    {
+      "politician_id": "0fd6132b-eb62-461d-98f7-8449fb3adbf2",
+      "topic_id": "4e2c69ce-591e-4197-9cd5-7aceff79d390",
+      "full_name": "Mike Ezell",
+      "topic": "immigration",
+      "season1_value": 4,
+      "disposition": "BLOCKED",
+      "klass": "no_season_2_pin",
+      "finding": "Defect-shaped: \"he called for stronger border security\" IS on the page and is his own stated position, but the chair also claims he favours limiting public services for those without legal status, and nothing cited supports that half. UNWRITABLE: `immigration` has no Season 2 pin -- it is the Season-1-only 1,678-stance orphan topic, so no Season 2 row can legally exist. Joins the 10 Texas deportation rows waiting on the Season 3 decision.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Mike_Ezell"
+      ]
+    },
+    {
+      "politician_id": "dd5d3f6d-fc82-4774-b510-287ec47cbd84",
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "full_name": "Chuck Grassley",
+      "topic": "jail-capacity",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "evidence_for_a_different_question",
+      "finding": "S.3649 / First Step Act fully confirmed by the cited BILL article -- but it governs FEDERAL SENTENCING, and the chair is about jail facilities and capacity. The bridging sentence (\"upgrading facilities to constitutional standards\") appears in neither source.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/First_Step_Act",
+        "https://en.wikipedia.org/wiki/Chuck_Grassley"
+      ]
+    },
+    {
+      "politician_id": "1bc949f5-0696-481c-979b-64cfd494983a",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "full_name": "Thomas H. Kean, Jr.",
+      "topic": "medicare/aid",
+      "season1_value": 4,
+      "disposition": "REPAIR",
+      "klass": "chair_4_unchanged",
+      "finding": "Clerk roll 145 Yea (215-214) and roll 190 Aye (218-214). The Act article confirms the Medicare drug-negotiation reversal ($5bn CBO over ten years) and carries a \"Medicaid restrictions and funding cuts\" section. LIMITATION RECORDED IN THE ROW: it is an omnibus vote, and the same article says Kean traded his vote for a SALT deal.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+        "https://en.wikipedia.org/wiki/Tom_Kean_Jr."
+      ]
+    },
+    {
+      "politician_id": "d0ce1d94-216a-46ed-acc8-6febccfe1844",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "full_name": "Ken Paxton",
+      "topic": "medicare/aid",
+      "season1_value": 4,
+      "disposition": "REPAIR",
+      "klass": "chair_4_unchanged",
+      "finding": "Both cited pages carry that he initiated the suit to void the ACA in its entirety (California v. Texas) and that he would keep seeking legal means to challenge it. REMOVED: the attributed quotation \"massive government takeover\", which neither cited page contains.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Ken_Paxton",
+        "https://en.wikipedia.org/wiki/California_v._Texas"
+      ]
+    },
+    {
+      "politician_id": "d01ea902-317a-4a66-b346-8b29a91fcd25",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "full_name": "Pete Ricketts",
+      "topic": "misinformation",
+      "season1_value": 4,
+      "disposition": "BLANK",
+      "klass": "ideology_label_as_position",
+      "finding": "\"Free-speech conservative\" with no instance -- no bill, vote, statement or date. Page silent on every term in the check.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Pete_Ricketts"
+      ]
+    },
+    {
+      "politician_id": "96cc507d-bb3a-4e25-ae6c-4b937f68f9f4",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "full_name": "Laurel M. Lee",
+      "topic": "misinformation",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "evidence_for_a_different_question",
+      "finding": "The DEFIANCE Act is real and on the page, but it is a civil remedy for non-consensual intimate imagery -- image-based sexual abuse, not misinformation -- and chair 3 is \"encourage VOLUNTARY standards\". The row half-admits the mismatch in its own closing words.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Laurel_Lee_(politician)"
+      ]
+    },
+    {
+      "politician_id": "1f7429f7-1ecd-4f44-abce-03c72d5cf664",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "full_name": "Roy Cooper",
+      "topic": "misinformation",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "self_confessed_absence",
+      "finding": "Row says \"no direct policy action was documented. Scored centrist.\" Chair derived from \"general alignment with Democratic mainstream\". Page silent on every term in the check.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Roy_Cooper"
+      ]
+    },
+    {
+      "politician_id": "ed20dd3f-a463-43c0-b08c-23cbf2a5e387",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "full_name": "Abraham J. Hamadeh",
+      "topic": "misinformation",
+      "season1_value": 4,
+      "disposition": "SOUND",
+      "klass": "leave_alone",
+      "finding": "The page states he ran on \"opposition to censorship by technology corporations\" -- his own campaign position, on the cited page, placing him on the speech-protective end of this ladder. Noted for the next reader: the row widens this to \"government or platform content restrictions\" and the page supports only the platform half. Not worth a write; worth not re-finding from scratch.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Abraham_Hamadeh"
+      ]
+    },
+    {
+      "politician_id": "6cad043f-a4c0-48d5-af76-fdf70d319920",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "full_name": "Greg Landsman",
+      "topic": "redistricting",
+      "season1_value": 2,
+      "disposition": "BLANK",
+      "klass": "inference_from_party_and_district",
+      "finding": "Stated openly as inference. Neither page carries it. Notable: the Ballotpedia page DOES carry a table of his own ballot-measure endorsements, and redistricting is not among them.",
+      "sources_examined": [
+        "https://ballotpedia.org/Greg_Landsman",
+        "https://en.wikipedia.org/wiki/Greg_Landsman"
+      ]
+    },
+    {
+      "politician_id": "e27f0fc2-ef98-4592-ae87-f6320f2b847e",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "full_name": "Tim Moore",
+      "topic": "religious-freedom",
+      "season1_value": 4,
+      "disposition": "BLANK",
+      "klass": "misdescribed_bill",
+      "finding": "Row says HB2 \"allowed businesses to deny service based on religious objections\". The cited page describes HB2 as a bathroom / local-preemption bill. The SAME page records Moore BLOCKING a 2017 bill to declare Obergefell null and void -- a fact pointing the other way that the row passed over.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Tim_Moore_(North_Carolina_politician)"
+      ]
+    },
+    {
+      "politician_id": "a0cb697c-3158-4680-8e70-c154c3a15cc4",
+      "topic_id": "d4f18138-a2e0-4110-b925-7387d9d0d16d",
+      "full_name": "Richard Neal",
+      "topic": "residential-zoning",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "self_confessed_absence",
+      "finding": "Row opens \"Neal has not taken a prominent federal position on local zoning reform\" and then treats that silence as deference to local control. Page has no zoning, land use, housing or New Market Tax Credit.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Richard_Neal"
+      ]
+    },
+    {
+      "politician_id": "867caca5-ab41-4e1b-b051-4a2cd95a335e",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "full_name": "Michael Whatley",
+      "topic": "same-sex-marriage",
+      "season1_value": 5,
+      "disposition": "BLANK",
+      "klass": "role_or_platform_as_position",
+      "finding": "Chair 5 on a master's degree in theology plus the NC GOP platform. The cited page has no mention of marriage or LGBT people at all. The Season 2 row was UPDATED in place (it already existed, at chair 5, on the re-scaled S2 ladder); Season 1 left as the historical record.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Michael_Whatley"
+      ]
+    },
+    {
+      "politician_id": "1f7429f7-1ecd-4f44-abce-03c72d5cf664",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "full_name": "Roy Cooper",
+      "topic": "tariffs",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "self_confessed_absence",
+      "finding": "Row opens \"No specific tariff or trade policy position found\". He is now a US Senate candidate, so the question is squarely within the office he seeks.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Roy_Cooper"
+      ]
+    },
+    {
+      "politician_id": "91d28127-8183-4b67-a1fb-dc8a150f6199",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "full_name": "Debbie Dingell",
+      "topic": "tariffs",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "biography_as_position",
+      "finding": "Three specific claims (targeted tariffs, USMCA, no blanket tariffs); the page carries none. Its only occurrence of \"trade\" is a subcommittee name. The GM / auto-industry biography is circumstance, not position.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Debbie_Dingell"
+      ]
+    },
+    {
+      "politician_id": "85e712ff-8b13-4a29-8c94-cb4394650d73",
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "full_name": "Dan Newhouse",
+      "topic": "tariffs",
+      "season1_value": 3,
+      "disposition": "BLANK",
+      "klass": "near_unanimous_vote",
+      "finding": "USMCA passed 385-41 (Republicans 192-2). The Lehman rule: being one of 385 is not a choice a ladder can seat. Same defect that blanked Schrier (417-10) in migration 1893. Neither cited page mentions him on trade at all.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Dan_Newhouse",
+        "https://en.wikipedia.org/wiki/United_States%E2%80%93Mexico%E2%80%93Canada_Agreement"
+      ]
+    },
+    {
+      "politician_id": "9a9d6b64-60b3-40c9-b213-4088d9a51e68",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "full_name": "Eugene Vindman",
+      "topic": "taxes",
+      "season1_value": 2,
+      "disposition": "BLANK",
+      "klass": "no_vote_read_as_programme",
+      "finding": "Votes VERIFIED (roll 145 Nay, roll 190 No) and kept in the sources. But a NO only REJECTS the package; opposing a tax CUT is not advocating a tax RISE, and the evidence cannot choose between chairs 1, 2 and 3. A YES endorses content, which is why Taylor (1893) and Kean could be seated on the same bill.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/One_Big_Beautiful_Bill_Act",
+        "https://en.wikipedia.org/wiki/Eugene_Vindman"
+      ]
+    },
+    {
+      "politician_id": "3a39c313-b994-447b-b3fd-592e4994769b",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "full_name": "Ted W. Lieu",
+      "topic": "trans-athletes",
+      "season1_value": 1,
+      "disposition": "BLANK",
+      "klass": "evidence_for_a_different_question",
+      "finding": "The conversion-therapy ban (real, on page) and H.Res.1058 (real, 110 cosponsors) are both about other questions -- the resolution covers medical care, shelter, safety and economic security, not athletics. Chair 1 is the ABSOLUTE rung and needs evidence rejecting the qualified alternatives. The congress.gov member page 403s to automated retrieval and was not read.",
+      "sources_examined": [
+        "https://www.congress.gov/member/ted-lieu/L000582",
+        "https://en.wikipedia.org/wiki/Ted_Lieu"
+      ]
+    },
+    {
+      "politician_id": "3030383b-2aaf-40fd-9dfb-8867d1d02f99",
+      "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+      "full_name": "Carlos A. Gimenez",
+      "topic": "ukraine-support",
+      "season1_value": 4,
+      "disposition": "BLANK",
+      "klass": "uncited_aggregator",
+      "finding": "Same defect as his abortion row. Ukraine funding has come to repeated recorded House votes, so this one is cheaply answerable by anyone who looks.",
+      "sources_examined": [
+        "https://en.wikipedia.org/wiki/Carlos_A._Gimenez"
+      ]
+    }
+  ]
+}

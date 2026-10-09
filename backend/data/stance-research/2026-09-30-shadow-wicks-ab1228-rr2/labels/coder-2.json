@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "2b00b586-74a0-5073-9887-3b6484ae1ae5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": "The hourly minimum wage for fast food restaurant employees shall be twenty dollars ($20) per hour, effective April 1, 2024.",
+          "note": "AB 1228 sets a fast-food-sector-only minimum wage with Council-set annual increases, a sector floor rather than the general wage-floor rule.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d406e55d-80fd-5708-be95-8b2bd4399548",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": null,
+          "note": "Wicks is recorded Aye on the Assembly floor concurrence vote for AB 1228, the fast-food-sector minimum wage bill.",
+          "record_kind": "vote",
+          "actor_quote": "Weber, Wicks, Wilson",
+          "tally_quote": "Ayes Count 53 Noes Count 17"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "AB 1228 (2023-2024) establishes a minimum wage only for fast food restaurant employees, a sector/employer-group floor the annex treats as on-question but not showing the person's general wage-floor rule; Wicks's Aye vote on it therefore shows only direction, not a chair on \"What approach should government take to the minimum wage?\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

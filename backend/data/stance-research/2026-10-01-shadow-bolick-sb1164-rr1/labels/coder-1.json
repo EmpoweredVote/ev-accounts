@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "f82c309c-b86d-54c6-9b4a-bd19c57aa7af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Single-subject chaptered text of the instrument Bolick co-sponsored and voted for; it sets a fifteen-week threshold with only a medical-emergency exception, which is past the first trimester and well short of the second.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e034c87f-a963-5a92-b728-aa0dfa230c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call naming her Aye as a State Representative, a term in the other chamber of this same legislature (V5 option B); 26 No of 57 voting is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "BOLICK Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "1f711955-ccb8-5fda-ada7-1c2af3a19bae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview page printing her co-sponsorship of the same instrument.",
+          "record_kind": "sponsor",
+          "actor_quote": "Bolick (Co-Sponsor)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Bolick co-sponsored SB 1164 (2022) and voted Aye on its House Third Reading; the bill bars a physician from performing an abortion once gestational age is \"greater than fifteen weeks\", with only a medical-emergency exception. That threshold sits between \"keep abortion legal through the second trimester, and after that only to protect the mother's health.\" and \"allow abortion during the first trimester, and after that only to protect the mother's health.\": the law still leaves abortion elective past the first trimester up to fifteen weeks, so the second clause of the first-trimester rung is contradicted by the instrument's own operative text and neither rung is matched clause for clause. The act fixes the restrictive side of this ladder without fixing a rung on it.",
+      "needs_source": [
+        "Arizona Senate roll call and bill text for any abortion measure Bolick acted on during her Senate term (2023-present) whose operative section names a gestational threshold and its exceptions",
+        "Bolick's own words answering how the law should handle abortion (candidate questionnaire, debate answer, or her own first-person issue page), dated in the current term or the campaign that seated her"
+      ],
+      "quotes": []
+    }
+  ]
+}

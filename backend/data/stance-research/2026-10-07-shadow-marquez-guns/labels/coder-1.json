@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d",
+      "office_id": "cd1412f0-c4c7-4f2a-bbef-b22516834ed4",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "58c272ba-1eb1-5fd1-b86e-4f3abf736751",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2621 (2025)",
+          "provision_quote": "A. A person may not sell or transfer a firearm unless the person is a licensed firearms dealer, the purchaser or transferee is a licensed firearms dealer or a licensed firearms dealer facilitates the transfer pursuant to subsection B of this section.",
+          "note": "Prime-sponsored private-sale background-check bill meets rung 3 clause [b] only; it is silent on bans of any firearm type, so clause [a] is unevidenced.",
+          "record_kind": "sponsor",
+          "actor_quote": "Introduced by Representatives Márquez: Abeytia",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "928f616f-3835-53bb-a4ee-332d4aa75d34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2621 (2025)",
+          "provision_quote": null,
+          "note": "Bill status page shows Márquez as prime sponsor; the bill was held in committee.",
+          "record_kind": "sponsor",
+          "actor_quote": "Márquez (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "acfc5127-3780-560d-aae0-1a893a286188",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR 2034 (2025)",
+          "provision_quote": "A. A person may not sell or transfer a firearm unless the person is a licensed firearms dealer, the purchaser or transferee is a licensed firearms dealer or a licensed firearms dealer facilitates the transfer pursuant to subsection B of this section.",
+          "note": "Referral of the same background-check measure to voters; meets rung 3 clause [b] only and says nothing on banning firearm types.",
+          "record_kind": "sponsor",
+          "actor_quote": "Introduced by Representatives Márquez: Abeytia",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Márquez prime-sponsored HB 2621 and HCR 2034, which say \"A person may not sell or transfer a firearm unless\" a licensed dealer is involved, meeting the \"require universal background checks on every sale\" clause of the rung \"Allow all types of firearms, but require universal background checks on every sale.\" Neither instrument says anything about allowing all types of firearms, and no source shows her opposing a type ban, so the compound rung is only partly evidenced.",
+      "needs_source": [
+        "Márquez's own words or recorded vote on an assault-weapons ban or other firearm-type ban (to evidence or exclude rung 3 clause [a] vs rung 2)"
+      ],
+      "quotes": []
+    }
+  ]
+}

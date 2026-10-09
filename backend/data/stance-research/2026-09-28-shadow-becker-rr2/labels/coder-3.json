@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "d3110657-375e-516d-9153-509804371df6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-19",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 942 (2023-2024)",
+          "provision_quote": "A covered provider shall offer the user the option to include a manifest disclosure in image, video, or audio content, or content that is any combination thereof, created or altered by the covered provider’s GenAI system that meets all of the following criteria",
+          "note": "SB 942 is a signed disclosure/labelling duty for GenAI content, not liability for AI-caused harm, pre-use high-stakes testing, or deployment approval, so per the annex's disclosure-only ruling it shows only the pro-oversight direction.",
+          "record_kind": "author",
+          "actor_quote": "SB 942, Becker.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Becker authored SB 942 (2023-2024), the California AI Transparency Act, signed 2024-09-19, which requires a free AI detection tool and manifest/latent disclosure of AI-generated content with civil penalties for noncompliance; the annex rules disclosure-only instruments out of rung 3 (legal responsibility for harm) and this bill does not require pre-use safety testing in high-stakes areas (rung 4) or approval before any AI system's deployment (rung 5), so it establishes only the pro-oversight direction, not a chair.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

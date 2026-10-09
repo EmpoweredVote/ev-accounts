@@ -1,0 +1,32 @@
+[
+  {
+    "full_name": "Paul Wiggins",
+    "topic_key": "taxes",
+    "value": 3,
+    "action": "unchanged",
+    "reasons": [],
+    "displayed_value": {
+      "value": 3,
+      "season": 2
+    },
+    "verified_sources": [
+      "https://info.kingcounty.gov/kcelections/Vote/contests/candidates.aspx?cid=167385&candidateid=1640310&lang=en-US&pamphletson=true"
+    ],
+    "failed_urls": []
+  },
+  {
+    "full_name": "Jennifer Hernandez",
+    "topic_key": "residential-zoning",
+    "value": 2,
+    "action": "review",
+    "reasons": [
+      "statement-evidence"
+    ],
+    "displayed_value": null,
+    "verified_sources": [
+      "https://www.valleyrecord.com/2025/10/20/duvall-council-mayor-candidate-qas-election-2025/"
+    ],
+    "failed_urls": [],
+    "admin_queue_visible": true
+  }
+]

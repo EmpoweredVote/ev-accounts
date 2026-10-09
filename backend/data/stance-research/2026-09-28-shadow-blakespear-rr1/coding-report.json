@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d|76ce3998-b6e1-4fb3-9461-2ab82fff6f04|ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "topic_key": "transportation-priorities",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Blakespear's own words answering where transportation investment should go between road capacity and transit/bike/pedestrian modes (questionnaire, issue page, or debate answer)",
+          "A California Senate roll call on a transportation funding or allocation bill that sets the split between highway capacity and multimodal investment, with the vote page and the bill text",
+          "Any bill she authored or co-authored that shifts transportation funding between road capacity and transit/active transportation",
+          "A record or statement from Blakespear addressing the balance of transportation investment between road capacity and active transportation/transit (e.g., a transportation budget vote, a roads-vs-transit funding bill, or her own words on investment priorities).",
+          "Blakespear's own votes, sponsorship, or statements on transportation-funding allocation measures (road-capacity vs. transit/active-transportation funding) addressing the investment-priority question this ladder asks."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "fad61dc3-a3ad-4056-b2f2-1f5d32fb886d|76ce3998-b6e1-4fb3-9461-2ab82fff6f04|ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "requests": [
+        "Blakespear's own words answering where transportation investment should go between road capacity and transit/bike/pedestrian modes (questionnaire, issue page, or debate answer)",
+        "A California Senate roll call on a transportation funding or allocation bill that sets the split between highway capacity and multimodal investment, with the vote page and the bill text",
+        "Any bill she authored or co-authored that shifts transportation funding between road capacity and transit/active transportation",
+        "A record or statement from Blakespear addressing the balance of transportation investment between road capacity and active transportation/transit (e.g., a transportation budget vote, a roads-vs-transit funding bill, or her own words on investment priorities).",
+        "Blakespear's own votes, sponsorship, or statements on transportation-funding allocation measures (road-capacity vs. transit/active-transportation funding) addressing the investment-priority question this ladder asks."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

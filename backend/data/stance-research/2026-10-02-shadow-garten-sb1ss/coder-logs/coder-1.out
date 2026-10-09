@@ -1,0 +1,9 @@
+Coded and written to `labels/coder-1.json`.
+
+**abortion — chair 4**, resting on the roll call and the enrolled bill text.
+
+- **Roll Call 58 (2022-08-05)**, SB 1(ss) concurrence: `own-act` / `record` / `vote`. Garten appears in the Yea list (`Baldwin Byrne Garten Mishler`), tally `Yea 28 Abortion. Nay 19` — 40% opposed, so not near-unanimous, and concurrence on the enrolled text is final adoption rather than one of the procedural motions V4 excludes.
+- **Enrolled SEA 1(ss)**: single-subject abortion act. IC 16-34-2-1 makes abortion criminal in all instances except life/serious health risk, lethal fetal anomaly, and rape or incest within ten weeks — matching "ban abortion except in cases of rape, incest, or a serious risk to the mother's life," while its own exceptions exclude rung 5 and its criminalization of elective abortion from conception excludes rung 3.
+- **Bill details page**: coded as a third passage of the same record group, carrying no operative text or voter list, so not rested on.
+
+One thing to flag for the reviewer: the `provision_quote` on the bill-text page contains the running page header mid-sentence (`Sec. 1. (a) Abortion shall in all instances be SEA 1(ss) — Concur 13 a criminal act, except when performed under the following circumstances:`). That is exactly what the PDF extraction produced, and I copied it verbatim rather than silently cleaning it so the string stays checkable against the snapshot. No quotes array — no first-person Garten words appear in any source — and `needs_source` is empty, since the record is complete on its own.

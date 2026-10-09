@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Mesnard's own words stating the general rule for Arizona's minimum wage (current level, indexing, or repeal)",
+          "An Arizona record of Mesnard on a general minimum-wage bill (not a tipped-wage or sector measure)",
+          "Mesnard's own words stating a general minimum-wage floor rule, outside the SCR1040 tipped-wage carve-out"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "Mesnard's own words stating the general rule for Arizona's minimum wage (current level, indexing, or repeal)",
+        "An Arizona record of Mesnard on a general minimum-wage bill (not a tipped-wage or sector measure)",
+        "Mesnard's own words stating a general minimum-wage floor rule, outside the SCR1040 tipped-wage carve-out"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

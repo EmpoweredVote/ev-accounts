@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-medicare-aid-r3",
+  "seat": {
+    "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+    "full_name": "Matt Pierce",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2002-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "topic_key": "medicare/aid",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "question_text": "How should Medicare and Medicaid be funded and structured?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "expand Medicare to cover everyone regardless of age"
+        },
+        {
+          "value": 2,
+          "text": "significantly expand Medicare or Medicaid eligibility, stopping short of universal coverage"
+        },
+        {
+          "value": 3,
+          "text": "improve current programs while controlling costs"
+        },
+        {
+          "value": 4,
+          "text": "scale back both programs, shifting more coverage to private insurance"
+        },
+        {
+          "value": 5,
+          "text": "phase out both programs and use private insurance only"
+        }
+      ],
+      "own_words_levels": [
+        "local"
+      ],
+      "annexMd": "# medicare/aid — served revision 38bab357-9790-4cb3-a6d2-c43cbdca615b (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should Medicare and Medicaid be funded and structured?\"\n\n**Orientation:** standard. Rung 1 makes Medicare cover everyone, rung 5 ends both programmes. The\nrungs order **how large the two public programmes are**: universal, larger, the same, smaller, none.\n\n**Levels with a lever:** federal, state. Medicare is federal only. Medicaid is\njoint: Congress sets the frame and the federal share; each state sets eligibility, benefits and\nwaivers inside it. So a state officeholder holds a lever on Medicaid and none on Medicare.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"Medicare Part A / B / C / D\", \"Medicare Advantage\", \"traditional Medicare\", \"premium\nsupport\", \"voucher\", \"Medicare buy-in\", \"Medicare at 60\" (or 55, 50), \"Medicare for All\",\n\"Medicaid expansion\", \"FMAP\" (federal share), \"block grant\", \"per-capita cap\", \"section 1115\nwaiver\", \"work requirements\" or \"community engagement\", \"CHIP\", \"dual eligibles\", \"drug price\nnegotiation\", state Medicaid names (\"Medi-Cal\", \"AHCCCS\", \"BadgerCare\", \"MassHealth\", \"TennCare\",\n\"Healthy Indiana Plan\").\n\n1. **\"expand Medicare to cover everyone regardless of age\"**\n   - Means: Medicare becomes the coverage for every person, of any age.\n   - Operative clauses: [a] Medicare (the federal programme, or a programme that replaces it for\n     all); [b] everyone, regardless of age.\n   - Establishing evidence looks like: authoring or co-sponsoring a Medicare for All bill that enrolls\n     every resident; own words calling for Medicare for everyone.\n   - Levels that hold a lever: federal. A state cannot expand Medicare; a state single-payer plan is\n     not Medicare → code it on `healthcare`; here a state officeholder's rung 1 is `scope-unavailable`\n     (codebook 0.4 principle 5) _(proposed)_.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because a buy-in or a lower Medicare age is an expansion that\n     stops short of everyone → rung 2.\n\n2. **\"significantly expand Medicare or Medicaid eligibility, stopping short of universal coverage\"**\n   - Means: many more people qualify for one of the two programmes, but not everyone.\n   - Operative clauses: [a] **eligibility** for Medicare **or** Medicaid (one programme is enough);\n     [b] significant; [c] short of universal.\n   - Establishing evidence looks like: a single-subject bill or vote that lowers the Medicare age, or\n     adopts the adult Medicaid expansion in a state; own words calling for such a change. Code the\n     end state the instrument enacts: an instrument that stops short of everyone meets [c]; it does\n     not need a second passage that rejects rung 1 _(proposed; adjudicated gold on another topic\n     seated an instrument that met every clause of one rung, but not the extra clause of the\n     stronger rung beside it, on the rung it met)_. If a surviving rung-1 passage also exists → V6\n     `adjacent-chairs` rules apply.\n   - Levels that hold a lever: federal (Medicare age, federal Medicaid rules); state (Medicaid\n     eligibility).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3 because a **narrow** eligibility change (one group, such as\n     12-month postpartum coverage) is an expansion but not \"significant\" → `direction-only`\n     _(proposed)_.\n   - Benefits are not eligibility. Adding dental, vision or hearing to Medicare improves the programme\n     → rung 3 clause [a], not rung 2 _(proposed)_.\n   - S1 rung 2 named \"lower Medicare age to 55 **and** expand Medicaid\"; the served rung needs one of\n     the two, not both.\n\n3. **\"improve current programs while controlling costs\"**\n   - Means: keep the two programmes' present shape, make them work better, and hold down what they\n     cost.\n   - Operative clauses: [a] improve current programmes (benefits, access, quality, administration);\n     [b] control costs (drug price negotiation, payment reform, fraud and waste). Compound: one side\n     only → `compound-partial` (V4.2).\n   - Establishing evidence looks like: a single-subject Medicare or Medicaid bill that does both, or\n     two passages that each match one clause, inside current eligibility.\n   - Levels that hold a lever: federal; state (Medicaid administration and payment rates).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because \"controlling costs\" can mean cutting coverage. A cut in who\n     is covered is rung-4 territory, not [b].\n   - \"Protect Medicare\", \"no cuts to Medicare\" names no clause → `direction-only` (it excludes rungs\n     4 and 5 only).\n\n4. **\"scale back both programs, shifting more coverage to private insurance\"**\n   - Means: both Medicare and Medicaid cover less, and private insurance covers more.\n   - Operative clauses: [a] scale back Medicare; [b] scale back Medicaid; [c] shift coverage to\n     private insurance. Compound: one programme only → `compound-partial` (V4.2).\n   - Establishing evidence looks like: a premium-support or voucher plan for Medicare **and** a\n     Medicaid cut or cap (block grant, per-capita cap, eligibility rollback); own words calling for\n     both.\n   - Levels that hold a lever: federal for [a] and [b]; state for [b] only.\n   - At state level, a Medicaid-only scale-back → `compound-partial`: the rung says \"both\" _(ruled 2026-10-01)_.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Medicare Advantage growth alone moves enrollees to private plans **inside** Medicare; it does not\n     scale back the programme → `direction-only` _(proposed)_.\n   - S1 rung 4 named \"partially privatize Medicare **and** reduce Medicaid\"; the served rung is about\n     size (\"scale back\"), and needs both programmes.\n\n5. **\"phase out both programs and use private insurance only\"**\n   - Means: Medicare and Medicaid end, and private insurance is the only coverage.\n   - Operative clauses: [a] phase out Medicare; [b] phase out Medicaid; [c] private insurance only (an\n     absence clause: the passage must say it, V4.2).\n   - Establishing evidence looks like: own words that call for ending both programmes.\n   - Levels that hold a lever: federal. A state can leave Medicaid but cannot end Medicare → same\n     scope question as rung 4.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a deep cut is not a phase-out. A plan that keeps either\n     programme → not rung 5.\n\n**Hard cases:**\n- **The omnibus trap (codebook V4, [real]).** A Yea on the One Big Beautiful Bill Act (2025), a\n  reconciliation bill covering taxes, Medicaid, immigration and more → `multi-subject`. Statements\n  that defend its **work requirements** (\"sound policy\") speak to a narrower clause than any rung →\n  `adjacent`.\n- **Medicaid work requirements** on their own → `adjacent` (same codebook example) _(proposed for the\n  stand-alone case)_.\n- **Budget resolutions and appropriations** that assume Medicare or Medicaid savings → V4\n  `multi-subject`; a budget resolution's assumptions are not law _(proposed)_.\n- **A multi-subject bill that includes drug price negotiation** (climate, tax and health together) →\n  `multi-subject`. Only an amendment or a separate vote on the negotiation provision can carry rung 3\n  [b] _(proposed)_.\n- **Medicaid enrollment procedure** (renewals after the pandemic, paperwork, enrollment drives) does\n  not change who is eligible → `adjacent` _(proposed)_.\n- **A Medicare for All bill** can also be evidence on `healthcare`. Code each topic on its own rung\n  text.\n- **Preemption (codebook V2, H12)** → `adjacent`.\n"
+    }
+  ]
+}

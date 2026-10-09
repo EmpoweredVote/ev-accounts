@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "a7675f41-2e50-413c-9864-8a64969f47f9",
+      "office_id": "60ec357f-3c1b-4b58-82e7-447dd47bc111",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "e9e56d07-1b1d-5bd8-b284-2ea2381fed8f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call showing Mathis voting No on the ESA expansion bill; the page prints the voter list and the count but no provision text.",
+          "record_kind": "vote",
+          "actor_quote": "MATHIS N",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "c4059cca-3b4f-51ae-bae8-673e487d5925",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "Chaptered text of the bill Mathis voted against; it prints the operative universal-eligibility definition but names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "de4a25eb-7ddc-596e-a3f4-9878a074a6b9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview page for the same instrument; it prints the short title, the sponsor list (Mathis is not among the sponsors) and the governor's signature, but no vote detail and no provision text.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Mathis voted No on HB2853 (2022), a single-subject bill whose added section makes any resident who is \"eligible to enroll in a public school\" a qualified student for empowerment scholarship accounts. That vote places him against expanding vouchers, but a No on an expansion bill alone does not separate \"Eliminating voucher programs that divert taxpayer money from public schools to private institutions\" from \"Opposing voucher programs and blocking their expansion, without moving to eliminate existing ones\"; the latter's \"without moving to eliminate existing ones\" clause is a limit the instrument never states.",
+      "needs_source": [
+        "Mathis's own words or an act on repeal of the Arizona empowerment scholarship account program (a repeal bill, a repeal amendment vote, or a first-person statement), which would separate the eliminate rung from the block-expansion rung"
+      ],
+      "quotes": []
+    }
+  ]
+}

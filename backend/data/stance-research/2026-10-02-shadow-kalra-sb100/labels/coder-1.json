@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "eb1a285e-fd86-4da1-a198-a66ad6a81be4",
+      "office_id": "3db4bfac-030f-4c8b-afbe-77c093e64ea9",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "269d29a3-0c22-59d0-8c3f-76866fcdf736",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-08-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": null,
+          "note": "Kalra is listed in the Ayes on the Assembly Floor third reading; the 44-33 tally is far from near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Jones-Sawyer, Kalra, Kamlager-Dove",
+          "tally_quote": "Ayes Count 44 Noes Count 33 NVR Count 3"
+        },
+        {
+          "snapshot_id": "d408c686-abf1-56ca-b428-f44adccf94ab",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2018-09-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2017-2018)",
+          "provision_quote": "In establishing quantities for the compliance period from January 1, 2011, to December 31, 2013, inclusive, the commission shall require procurement for each retail seller equal to an average of 20 percent of retail sales. For the following compliance periods, the quantities shall reflect reasonable progress in each of the intervening years sufficient to ensure that the procurement of electricity products from eligible renewable energy resources achieves 25 percent of retail sales by December 31, 2016, 33 percent by December 31, 2020, 44 percent by December 31, 2024, 52 percent by December 31, 2027, and 60 percent by December 31, 2030. The commission shall establish appropriate three-year compliance periods for all subsequent years that require retail sellers to procure not less than 60 percent of retail sales of electricity products from eligible renewable energy resources.",
+          "note": "The chaptered text prints the operative procurement mandates and their deadlines but names no voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "269d29a3-0c22-59d0-8c3f-76866fcdf736",
+        "d408c686-abf1-56ca-b428-f44adccf94ab"
+      ],
+      "reasoning": "Kalra voted Aye on the Assembly Floor third reading of SB 100 (2017-2018), a single-subject energy bill that passed 44-33. Its operative sections require retail sellers and local publicly owned electric utilities to procure eligible renewable energy reaching \"44 percent by December 31, 2024, 52 percent by December 31, 2027, and 60 percent by December 31, 2030\", enforced by penalties for noncompliance, and add a state policy of fully renewable and zero-carbon retail electricity by the end of 2045. That is the rung \"Require a shift to clean energy through mandates and firm deadlines.\" — the bill carries no subsidies, tax credits or public investment, and no permitting or grid-upgrade provisions, so the adjacent rungs are excluded.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

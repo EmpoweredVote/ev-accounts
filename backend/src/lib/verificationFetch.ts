@@ -103,33 +103,8 @@ const CHALLENGE_MARKERS = [
   'request unsuccessful',
 ];
 
-const HTML_ENTITIES: Record<string, string> = {
-  '&nbsp;': ' ',
-  '&amp;': '&',
-  '&lt;': '<',
-  '&gt;': '>',
-  '&quot;': '"',
-  '&apos;': "'",
-  '&#39;': "'",
-};
-
-// 🔴 Decode numeric character references (`&#8217;` decimal, `&#x2019;` hex) before the named-entity
-// pass. Neither form is in HTML_ENTITIES above, so undecoded they survive as literal "&#8217;" text
-// in the extracted page — and the deterministic snippet matcher (researchVerifier.normalizeText)
-// then has no curly quote to fold to a straight one, so "you're" never matches "you&#8217;re".
-// Ported from verify-quotes.mjs (backend/scripts/verify-quotes.mjs), which hit this for real on a
-// live wave; kept in sync with researchVerifier.ts's copy of the same fix.
-function decodeNumericEntities(input: string): string {
-  return input
-    .replace(/&#(\d+);/g, (match, dec: string) => {
-      const code = Number(dec);
-      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
-    })
-    .replace(/&#[xX]([0-9a-fA-F]+);/g, (match, hex: string) => {
-      const code = parseInt(hex, 16);
-      return Number.isSafeInteger(code) ? String.fromCodePoint(code) : match;
-    });
-}
+import { decodeEntities } from './htmlEntities.js';
+import { extractPdfText, isPdfResponse } from './pdfText.js';
 
 /** Strip tags/scripts/styles from raw HTML and collapse to readable text. */
 export function htmlToText(html: string): string {
@@ -138,10 +113,10 @@ export function htmlToText(html: string): string {
     .replace(/<style[\s\S]*?<\/style>/gi, ' ')
     .replace(/<!--[\s\S]*?-->/g, ' ')
     .replace(/<[^>]+>/g, ' ');
-  out = decodeNumericEntities(out);
-  for (const [entity, replacement] of Object.entries(HTML_ENTITIES)) {
-    out = out.split(entity).join(replacement);
-  }
+  // 🔴 Decode at the ROOT, so the extracted page a snippet is matched against — and the span cut
+  // from it and published — carry characters, not references. One shared table (htmlEntities.ts);
+  // this module used to keep its own, and the two drifted apart unnoticed.
+  out = decodeEntities(out);
   return out.replace(/\s+/g, ' ').trim();
 }
 
@@ -387,7 +362,7 @@ async function fetchRobotsRules(origin: string): Promise<RobotsRule[] | null> {
     // caller fails open, except for a known-disallow host.
     if (res.status === 404 || res.status === 410) return [];
     if (!res.ok) return null;
-    const body = await res.text();
+    const body = await decodeHtmlBody(res);
     return parseRobotsForAgent(body, EMPOWERED_VOTE_UA_TOKEN);
   } catch {
     return null; // unreachable / timeout → could not read it
@@ -406,8 +381,13 @@ export async function fetchViaHttp(url: string): Promise<string> {
     },
   });
   if (!res.ok) throw new Error('HTTP ' + res.status);
-  const body = await res.text();
   const ctype = res.headers.get('content-type') ?? '';
+  const buf = new Uint8Array(await res.arrayBuffer());
+  // A PDF is extracted to text, never decoded as one: its bytes are not text (2026-10-07: a 7 MB
+  // "%PDF-1.4 …" string went into a coder input as ok:true). An unreadable PDF throws, so the ladder
+  // falls through to Wayback and, failing that, to a not-codable result.
+  if (isPdfResponse(ctype, buf)) return await extractPdfText(buf);
+  const body = decodeHtmlBytes(buf, ctype);
   return ctype.includes('html') ? htmlToArticleOrText(body, url) : body.replace(/\s+/g, ' ').trim();
 }
 
@@ -485,7 +465,7 @@ async function fetchViaWaybackCdx(url: string, fetchImpl: FetchLike): Promise<st
   if (!res.ok) return null;
   // Pass the ORIGINAL url (not the archive wrapper) so the non-article guard in
   // the extractor reasons about the real document.
-  const text = htmlToArticleOrText(await res.text(), url);
+  const text = await archivedBodyToText(res, url);
   return text || null;
 }
 
@@ -523,7 +503,7 @@ async function fetchViaWaybackAvailable(url: string, fetchImpl: FetchLike): Prom
     if (!res.ok) return null;
     // Pass the ORIGINAL url (not the archive.org wrapper) so the non-article
     // guard in extractArticleText reasons about the real document.
-    return htmlToArticleOrText(await res.text(), url);
+    return await archivedBodyToText(res, url);
   } catch {
     return null;
   }
@@ -624,7 +604,7 @@ async function fetchRawCapture(captureUrl: string, fetchImpl: FetchLike): Promis
     });
     if (!res.ok) return null;
     if (!(res.headers.get('content-type') ?? '').includes('html')) return null;
-    const html = await res.text();
+    const html = await decodeHtmlBody(res);
     return html ? { html, via: 'wayback', fetchedUrl: captureUrl } : null;
   } catch {
     return null;
@@ -685,7 +665,7 @@ export async function fetchRawHtmlViaHttp(
   }
   const ctype = res.headers.get('content-type') ?? '';
   if (!ctype.includes('html')) throw new NotHtmlError(url, ctype);
-  return { html: await res.text(), via: 'live', fetchedUrl: finalUrl };
+  return { html: await decodeHtmlBody(res), via: 'live', fetchedUrl: finalUrl };
 }
 
 /** Injectable tiers for {@link fetchRawHtml}. Defaults are the real network paths. */
@@ -850,4 +830,30 @@ export async function fetchForVerification(url: string): Promise<string> {
   } finally {
     await session.close();
   }
+}
+
+/**
+ * Decode an HTML response body by its declared charset: the Content-Type header's `charset`, else a
+ * `<meta charset>` / `<meta http-equiv=Content-Type>` in the first 4 KB, else UTF-8. `res.text()`
+ * always decodes UTF-8, and azleg.gov serves windows-1252 Word HTML with no header charset — every §,
+ * dash and curly quote became U+FFFD (1,769 in AZ SB 1828's chaptered text). An unknown label falls
+ * back to UTF-8 rather than throwing.
+ */
+export async function decodeHtmlBody(res: Response): Promise<string> {
+  return decodeHtmlBytes(new Uint8Array(await res.arrayBuffer()), res.headers.get('content-type') ?? '');
+}
+
+/** A Wayback `id_` capture is the original bytes, so an archived PDF is still a PDF: extract it. */
+async function archivedBodyToText(res: Response, url: string): Promise<string> {
+  const buf = new Uint8Array(await res.arrayBuffer());
+  if (isPdfResponse(res.headers.get('content-type') ?? '', buf)) return await extractPdfText(buf);
+  return htmlToArticleOrText(decodeHtmlBytes(buf, res.headers.get('content-type') ?? ''), url);
+}
+
+export function decodeHtmlBytes(buf: Uint8Array, contentType: string): string {
+  const fromHeader = /charset\s*=\s*["']?([A-Za-z0-9._:-]+)/i.exec(contentType)?.[1];
+  const head = new TextDecoder('latin1').decode(buf.subarray(0, 4096));
+  const fromMeta = /<meta[^>]*charset\s*=\s*["']?([A-Za-z0-9._:-]+)/i.exec(head)?.[1];
+  const label = (fromHeader ?? fromMeta ?? 'utf-8').toLowerCase();
+  try { return new TextDecoder(label).decode(buf); } catch { return new TextDecoder('utf-8').decode(buf); }
 }

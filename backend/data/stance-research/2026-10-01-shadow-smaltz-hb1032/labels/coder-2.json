@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "7dad2d17-6a9d-49ec-9b5b-621b60f929d0",
+      "office_id": "620160e2-1d50-45f2-b9ab-968b6be31820",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "dd516298-029b-58eb-a741-716f341447af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "Bill details page names Smaltz as author of a bill establishing new Indiana congressional districts directly by statute.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Ben Smaltz.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8e776ba8-1843-50fc-841e-7107d265564e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-02",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": "Sec. 1. The First Congressional District consists of the following:",
+          "note": "Bill text shows the general assembly itself enacting specific congressional districts by statute, not via a commission; the bill also adds a judicial-review section whose purpose is election orderliness, not stated as preventing partisan bias.",
+          "record_kind": "author",
+          "actor_quote": "Smaltz December 1, 2025, read first time and referred to Committee on Elections and Apportionment.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "17ad74dc-278e-53f9-91c5-37b3dbc6a486",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-12-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1032 (2026)",
+          "provision_quote": null,
+          "note": "House floor vote on final passage of HB 1032; Smaltz voted Yea. Single-subject redistricting bill, not near-unanimous (41 Nay of 98).",
+          "record_kind": "vote",
+          "actor_quote": "May Smaltz Baird",
+          "tally_quote": "Yea 57 Nay 41 Excused 2 Not Voting 0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Smaltz authored and voted Yea on HB 1032 (2026), which has the general assembly itself enact specific new congressional districts by statute ('The First Congressional District consists of the following...'), ruling out the commission- and supermajority-committee rungs ('independent citizens' commissions', 'independent redistricting commissions', 'bipartisan legislative committees ... supermajority approval'). But the bill's own added judicial-review section neither states that court review exists 'to prevent extreme partisan bias' (rung 4) nor removes outside interference entirely (rung 5) -- it bars temporary restraining orders and auto-stays injunctions while still giving the supreme court mandatory jurisdiction over any judgment holding the apportionment unconstitutional, for stated reasons of election orderliness rather than partisan bias. The evidence separates legislature-drawn maps from commission-drawn maps but does not establish which of rungs 4 or 5 it matches.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

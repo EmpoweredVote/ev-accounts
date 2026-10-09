@@ -1,0 +1,12 @@
+I wrote the label file for Shope / abortion to `labels/coder-2.json` (codebook 0.4, coder slot 2). I did not read it back or run the code checks. My call is BLANK `direction-only`, with `rests_on` empty.
+
+All six passages are `direction-only`, so none can seat a chair:
+- **SB 1164 (2022), the 15-week limit:** Shope co-sponsored it and voted yes (Senate third reading 16-13-1, "SHOPE Y"). Its Sec. 2 construction clause says it creates no right to abortion and does not repeal section 13-3603 (the older ban). Under the annex, that evidences no permitted stage, only the restrictive side.
+- **HB 2677 (2024), the repeal:** he voted yes (16-14, "SHOPE Y"). The bill only repeals 13-3603 and says nothing about a gestational limit or exceptions. A repeal alone does not match rung 3's clauses.
+- **KJZZ news piece:** his quote about believing in "a 15 week [law]" is own words but `statement-other`. It names no exception rule and, on its own, does not establish rung 3.
+
+I did not combine the two instruments into rung 3. Their link (repeal the old ban so the 15-week limit takes effect) rests on the reporter's account rather than a bill text, and the codebook's rule against reaching a rung by elimination points to BLANK.
+
+The SB 1164 bill-text and HB 2677 bill-text passages carry `provision_quote` only. `actor_quote` and `tally_quote` sit on the vote pages, and the co-sponsor line on the bill-overview page.
+
+I included one quote from the KJZZ piece, coded `direction`, with no `v7_flag` and `v8_quotable` true. `needs_source` is empty.

@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "4cfacf31-d285-40ac-8373-e350912fddda",
+      "office_id": "6bb9a929-fd7a-4fee-b28e-4faa7c3b95de",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "cabcea7d-70f1-5f88-bb56-fff8218444e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 2655 (2023-2024)",
+          "provision_quote": "This bill, to be known as the Defending Democracy from Deepfake Deception Act of 2024, would require a large online platform, as defined, to block the posting of materially deceptive content related to elections in California, during specified periods before and after an election.",
+          "note": "Berman authored AB 2655, chaptered law requiring large platforms to block materially deceptive election content, with labeling required only for content outside the removal window; per the annex the removal duty decides over rung 2.",
+          "record_kind": "author",
+          "actor_quote": "AB 2655, Berman.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": ["cabcea7d-70f1-5f88-bb56-fff8218444e1"],
+      "reasoning": "Berman authored AB 2655 (2023-2024), chaptered law requiring large online platforms to 'block the posting of materially deceptive content related to elections,' with a separate labeling duty only for content outside that removal window; per the annex the removal duty decides, matching rung 1, 'legally require platforms to remove false information.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

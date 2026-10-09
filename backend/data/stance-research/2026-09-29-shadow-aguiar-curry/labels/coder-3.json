@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "8ba12ba5-ba07-48be-ae0e-88e1d1ef5257",
+      "office_id": "f4c83c0b-3c35-419b-a618-0e6c4c13fd38",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "b2056197-763a-566a-abad-fe59bef3eb40",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-10-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": "California law enforcement agencies shall not: (1) Use agency or department moneys or personnel to investigate, interrogate, detain, detect, or arrest persons for immigration enforcement purposes",
+          "note": "The cooperation carve-out (7282.5) reaches far beyond serious violent crimes (theft, fraud, DUI, bribery, drug trafficking, etc.), so this does not match rung 2's exact clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e45850e5-c900-5eb6-a053-26d4882babdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2017-09-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 54 (2017-2018)",
+          "provision_quote": null,
+          "note": "Assembly Floor final-passage vote page shows Aguiar-Curry voting Aye on the single-subject bill.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Aguiar-Curry, Arambula, Berman",
+          "tally_quote": "Ayes Count 51 Noes Count 26"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 54 (2017-2018) bars state and local law enforcement from using resources to assist federal immigration enforcement, but its own cooperation exception (Sec. 7282.5) is not limited to 'serious violent crimes' as rung 2 states -- it also covers many non-violent offenses (theft, fraud, DUI, bribery, drug trafficking). Her Aye vote on this single-subject bill shows a protective direction on deportation cooperation but does not chair-shape any one rung's exact clause.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

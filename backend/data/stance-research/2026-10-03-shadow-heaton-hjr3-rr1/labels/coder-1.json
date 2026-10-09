@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "602abfe8-7795-5430-9d8c-1342267fe8db",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "The chamber's own bill page lists Heaton as a co-author of the marriage amendment resolution.",
+          "record_kind": "author",
+          "actor_quote": "Co-Authored by: Rep. Timothy Wesco, Rep. Wes Culver, Rep. Rhonda Rhoads, Rep. Robert Heaton",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "89ced2c1-9006-5af5-af37-e478efe8b6e5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014-01-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "Third-reading roll call in Heaton's own chamber; he is in the Yea column and the tally is well past the near-unanimous threshold.",
+          "record_kind": "vote",
+          "actor_quote": "Beumer Heaton Neese Turner",
+          "tally_quote": "Yea 57 Nay 40 Excused 3 Not Voting 0"
+        },
+        {
+          "snapshot_id": "4f7ffef7-0c28-5bba-903c-1e42de6824de",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": "Section 38. Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.",
+          "note": "The engrossed text prints the single operative provision the vote and the co-authorship attach to; nothing inside a [deleted: ] fence is quoted.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "602abfe8-7795-5430-9d8c-1342267fe8db",
+        "89ced2c1-9006-5af5-af37-e478efe8b6e5",
+        "4f7ffef7-0c28-5bba-903c-1e42de6824de"
+      ],
+      "reasoning": "Heaton co-authored HJR 3 (2014) and voted Yea on its third reading in the Indiana House, a single-subject constitutional amendment whose whole operative text reads \"Section 38. Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.\" That text itself both denies same-sex marriages any validity or recognition in the state and defines marriage as only between one man and one woman, matching the rung \"Make same-sex marriage illegal and define marriage as only between one man and one woman\" clause for clause rather than by elimination. It excludes the rungs that allow same-sex marriage, and it does not do what \"Recognize civil unions for same-sex couples, but reserve marriage for opposite-sex couples\" requires.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "batch_id": "2026-10-06-shadow-shope-abortion",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164",
+      "source_kind": "public-record",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1164 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-sb1164-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=SB1164#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1164 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-sb1164-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0105.htm",
+      "source_kind": "public-record",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1164 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=128&BillNumber=HB2677#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "HB 2677 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2024-hb2677-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/2R/bills/HB2677H.htm",
+      "source_kind": "public-record",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "HB 2677 (2024)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.kjzz.org/2024-04-10/content-1876720-these-arizona-gop-lawmakers-voted-support-1864-abortion-law-now-they-want-repeal-it",
+      "source_kind": "news",
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SB 1164 (2022)",
+        "HB 2677 (2024)"
+      ],
+      "pointer_passages": [
+        "issued a statement calling on the Legislature to repeal the old, 1864 abortion ban",
+        "I voted yes, because I do believe in a 15 week",
+        "But that\u2019s not all Shope was voting for two years ago",
+        "I don't know that any of us really actually believed that Roe v. Wade was going to be overturned"
+      ],
+      "candidate_quotes": []
+    }
+  ]
+}

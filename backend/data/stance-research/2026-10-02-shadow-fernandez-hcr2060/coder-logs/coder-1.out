@@ -1,0 +1,15 @@
+Written. One row, one passage, BLANK.
+
+**deportation — BLANK `no-evidence`**
+
+| Variable | Value | Why |
+|---|---|---|
+| V1 | `own-words` | The article directly quotes Fernandez; its line that he "voted against it" is the reporter's account, so it is not an `own-act` record — no roll call is in the sources (H2). |
+| V2 | `adjacent` | The excerpt describes HCR 2060 as "allowing local law enforcement officers to arrest those who cross the border illegally" — entry enforcement, not the scope-of-removal dimension the five rungs separate. |
+| V3 | `statement-other` | A news quote matched to the question afterwards, not an answer to it. |
+| V4 | `rhetorical` | Real and attributed, but names no policy clause: safety, cost and "irreversible harm". |
+| V5 | `in-term` | 2024-05-22, inside the term that began 2023-01-02. |
+
+The quote is surfaced but coded `none` / not quotable (`off-question`): it does not answer how far government should go in deporting undocumented immigrants.
+
+`needs_source` asks for the three things that would decide this row: the Arizona Senate roll call for HCR 2060 (actor and tally text), the resolution's operative text on removal, and any first-person statement of his on deportation scope. Note that even with the roll call, a No vote on a multi-topic border measure proves nothing under V4.1 without his own words tying the vote to a specific provision.

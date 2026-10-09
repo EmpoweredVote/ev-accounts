@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8|61fd47dd-1cd3-4be9-a53e-2558dd662edf|669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Ortiz's own words or a further record on whether she supports binding affordability rules (rent caps, inclusionary requirements) alongside zoning liberalization",
+          "Ortiz's own words or a further record on whether she supports public housing construction or housing subsidies and tax breaks"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8|61fd47dd-1cd3-4be9-a53e-2558dd662edf|669cac97-66a6-4087-b036-936fbe62efb3",
+      "requests": [
+        "Ortiz's own words or a further record on whether she supports binding affordability rules (rent caps, inclusionary requirements) alongside zoning liberalization",
+        "Ortiz's own words or a further record on whether she supports public housing construction or housing subsidies and tax breaks"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

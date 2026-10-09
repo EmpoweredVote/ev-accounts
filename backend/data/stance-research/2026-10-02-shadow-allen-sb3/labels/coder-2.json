@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4486f856-118b-475c-83f0-078581a7b268",
+      "office_id": "58c7cb0f-6409-4e6a-aa4f-1d146e88eb69",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "8ac73b47-dab1-5d7f-ab2d-35aeb301746a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-04-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": "Following the implementation of the minimum wage increase specified in subparagraph (F) of paragraph (2) of subdivision (b), on or before August 1 of that year, and on or before each August 1 thereafter, the Director of Finance shall calculate an adjusted minimum wage. The calculation shall increase the minimum wage by the lesser of 3.5 percent and the rate of change in the averages of the most recent July 1 to June 30, inclusive, period over the preceding July 1 to June 30, inclusive, period for the United States Bureau of Labor Statistics nonseasonally adjusted United States Consumer Price Index for Urban Wage Earners and Clerical Workers (U.S. CPI-W).",
+          "note": "SB 3 raises the minimum wage to $15 and then ties further increases to a CPI formula calculated by the Director of Finance with no new legislation required.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d42d09e7-2ede-5fa6-ba21-7954ba81ca8c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-03-31",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": null,
+          "note": "Senate Floor concurrence vote on final passage of SB 3; Allen is recorded among the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Ayes Allen, Beall, Block, De León, Galgiani, Glazer, Hall, Hancock, Hernandez, Hertzberg, Hill, Hueso, Jackson, Lara, Leno, Leyva, Liu, McGuire, Mendoza, Mitchell, Monning, Pan, Pavley, Roth, Wieckowski, Wolk",
+          "tally_quote": "Ayes Count 26 Noes Count 12"
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "8ac73b47-dab1-5d7f-ab2d-35aeb301746a",
+        "d42d09e7-2ede-5fa6-ba21-7954ba81ca8c"
+      ],
+      "reasoning": "Allen voted Aye (Senate Floor concurrence, Ayes 26-Noes 12) on SB 3 (2015-2016), whose operative text raises the minimum wage to $15 and then requires the Director of Finance to calculate an adjusted minimum wage by a CPI-based formula each year, with increases taking effect automatically and no further legislative vote required, matching rung 1's 'tie it to the cost of living, so it rises automatically each year without new legislation.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

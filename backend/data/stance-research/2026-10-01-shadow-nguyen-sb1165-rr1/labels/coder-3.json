@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "9cc152b6-c83b-4501-9e1a-2ab50e1db6a7",
+      "office_id": "0561b24d-9c8a-40b1-81a9-8b676e0d56fa",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "354d6da2-06e5-5981-a82e-32b68951f933",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Bill text requires teams to be designated by biological sex and bars male-sex students from female-designated teams, and section C confirms it does not restrict male or coed team eligibility.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c8fe9b04-9e6f-54f0-a969-3d243fa94359",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Nguyen voting Yea on SB 1165.",
+          "record_kind": "vote",
+          "actor_quote": "NGUYEN Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        },
+        {
+          "snapshot_id": "38a428f8-1758-5191-8651-416dafed5a47",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bill status page lists Nguyen as a co-sponsor of SB 1165.",
+          "record_kind": "sponsor",
+          "actor_quote": "Nguyen (Co-Sponsor)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "354d6da2-06e5-5981-a82e-32b68951f933",
+        "c8fe9b04-9e6f-54f0-a969-3d243fa94359",
+        "38a428f8-1758-5191-8651-416dafed5a47"
+      ],
+      "reasoning": "Nguyen co-sponsored SB 1165 (2022) and voted Yea on its House Third Reading. The bill's operative text requires each team to be designated by biological sex and bars students of the male sex from female-designated teams, matching the rung text 'require transgender athletes to compete only on teams matching their biological sex assigned at birth,' while its own exception for male and coed teams excludes a reading as a total ban.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

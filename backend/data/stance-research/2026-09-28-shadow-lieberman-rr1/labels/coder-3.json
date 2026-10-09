@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "office_id": "d13d9c57-2851-48fb-a1a6-0b181f449453",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call shows a No vote on SB1457, a multi-subject abortion bill; none of its clauses set a general legality-by-stage rule.",
+          "record_kind": "vote",
+          "actor_quote": "LIEBERMAN N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "A facility that is run by or that operates on the property of a public educational institution may not Perform or provide an abortion, unless the abortion is necessary to save the life of the woman having the abortion.",
+          "note": "Enacted bill text (Ch. 286) restricts sex/race/genetic-abnormality-selective abortions, abortions at public-education-institution facilities, and adds procedural requirements; none states a general rule on legality by stage of pregnancy.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is Lieberman's No vote on SB1457 (2021) and the enacted bill text. SB1457 bundles sex/race/genetic-abnormality-selective abortion bans, a ban on abortions at public-education-institution facilities, and informed-consent/affidavit/reporting requirements, but none of these clauses states a general rule on when abortion is legal by stage of pregnancy, which is what the rungs (e.g. \"keep abortion legal at every stage of pregnancy, with no time limit\", \"allow abortion during the first trimester\") differ on. The vote is therefore adjacent to the topic, not on-question, so no rung is established.",
+      "needs_source": [
+        "A statement by Lieberman tying his No vote to a specific clause of SB1457, or a separate vote/statement on an instrument setting a general gestational-stage rule for abortion legality"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Wrote `labels/coder-1.json` — one row, chair **1**.
+
+**Coding summary (minimum-wage, Benjamin Allen):**
+
+| Passage | V1 | V2 | V3 | V4 | V5 |
+|---|---|---|---|---|---|
+| `d42d09e7` vote page | own-act | on-question | record / vote | chair-shaped | in-term |
+| `8ac73b47` bill text | own-act | on-question | record / vote | chair-shaped | in-term |
+
+- **Record group:** one instrument, `SB 3 (2015-2016)`. `actor_quote` + `tally_quote` on the vote page (`Ayes Count 26 Noes Count 12 NVR Count 2` — 12 of 40 against, so not near-unanimous); `provision_quote` on the bill-text page, which is the only one that prints the operative text.
+- **Chair 1:** SEC. 3 amends Labor Code 1182.12 to both raise the floor on a schedule to $15 and then index it annually to CPI-W, taking effect each January 1 with no further legislation — rung 1's two clauses, and the standing indexation is exactly what rung 2 ("adjust it only when lawmakers vote to") excludes.
+- **Two judgment calls worth flagging to the reviewer:**
+  1. **Not `multi-subject`.** SB 3 carries IHSS paid sick days alongside the wage schedule, but it is a two-part Labor Code bill whose sick-leave accrual tiers are keyed to the $13 and $15 wage levels — related parts, not an omnibus/budget/reconciliation. If the reviewer reads it as multi-subject, the row falls to BLANK `direction-only`.
+  2. **V5 `in-term` via the V5 ruling.** The 2016 vote predates the current term; earlier Senate service is on file but with an unknown start date, so I added a `needs_source` entry for the term dates. CONFIRM's `prior-service-unverified` check is the backstop.
+- The Senate Ayes list shows a bare `Allen`; the `Travis Allen` on the page is in the Assembly Noes list, a different chamber, so I did not treat this as `namesake-unclear`. Noted in the passage note.
+- No quotes: neither snapshot contains the person's words.

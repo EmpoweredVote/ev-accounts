@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636|7498c0e1-8652-4f8d-a82d-52e8be764cb4|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Arizona State Senate roll call, HCR 2060 (2024, 56th Legislature, 2nd Regular Session), third reading / final passage — showing Fernandez's vote and the tally",
+          "Text of HCR 2060 (2024) — the operative section, to test it against the deportation rung clauses",
+          "Arizona Senate roll call, HCR 2060 (2024), final passage vote",
+          "Arizona Senate roll call / vote record for HCR 2060 (2024)",
+          "HCR 2060 (2024) bill or resolution text showing its operative provisions"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "2aa0cf37-6c3a-405d-9cd2-0fafc7cf8636|7498c0e1-8652-4f8d-a82d-52e8be764cb4|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "Arizona State Senate roll call, HCR 2060 (2024, 56th Legislature, 2nd Regular Session), third reading / final passage — showing Fernandez's vote and the tally",
+        "Text of HCR 2060 (2024) — the operative section, to test it against the deportation rung clauses",
+        "Arizona Senate roll call, HCR 2060 (2024), final passage vote",
+        "Arizona Senate roll call / vote record for HCR 2060 (2024)",
+        "HCR 2060 (2024) bill or resolution text showing its operative provisions"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

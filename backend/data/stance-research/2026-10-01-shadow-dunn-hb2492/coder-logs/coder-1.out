@@ -1,0 +1,16 @@
+Written: `coder-1.json`.
+
+**Row: Tim Dunn / voting-rights → chair 5**
+
+The record is Arizona HB2492 (2022), coded as one record group across three pages:
+
+- **Vote page** — `DUNN Y` at House Third Reading, `Passed 31-26-3-0-0`. One Dunn in the roster, chamber named on the page, 26 No of 60 so not near-unanimous.
+- **Bill text (Chapter 99)** — `provision_quote` from the amended §16-121.01(C), which requires registration applications to be accompanied by satisfactory evidence of citizenship and directs rejection otherwise. That subsection carries no `[deleted: …]` fence, unlike §16-101, so it is safe to quote as the provision.
+- **Bill overview** — status page; Dunn is not a sponsor, so the vote is his only act on this bill. Nulls for actor/tally/provision since the page prints none of them.
+
+Key calls:
+- **V5 `in-term`** via the 2026-09-27 option-B ruling — the 2022 vote is from his Arizona House term, the other chamber of the same legislature, so it counts for the Senate seat.
+- **V4 `chair-shaped`** — final passage of a single-subject bill (every section falls under "qualification and registration of electors"), matching rung 5's single clause. Not multi-subject: this is not an omnibus election bill with an incidental ID clause.
+- **V2 `on-question`** — no preemption issue here; the bill sets the state's own registration rule rather than deciding which level sets it.
+
+No `quotes` entries: none of the three sources contains Dunn's own words, only his recorded vote. `needs_source` is empty — actor, tally and provision are all present in the snapshots.

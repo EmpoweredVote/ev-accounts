@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "e4460c64-fa27-4e05-96e8-cc005a478444",
+      "office_id": "aba32819-62f2-41a5-a105-569b59d9ac5a",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "a9d948e7-b333-51c9-8523-9debcc4118b2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-07-09",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2241 (2021)",
+          "provision_quote": "the state board of education shall include a requirement that students be taught about the Holocaust and other genocides at least twice between the seventh and TWELFTH grades.",
+          "note": "Enacted statute text mandates Holocaust/genocide instruction, a specific historical-content requirement, not the race/gender/social-justice curriculum dimension this ladder orders.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4a0d6404-e229-5af7-a662-6c6d35dbd0f9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-02-04",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "HB 2241 (2021)",
+          "provision_quote": null,
+          "note": "House Third Reading passed 59-0-0-0-1 with Hernandez A voting Y; near-unanimous and off the ladder's dimension.",
+          "record_kind": "vote",
+          "actor_quote": "HERNANDEZ A Y",
+          "tally_quote": "Passed 59-0-0-0-1"
+        },
+        {
+          "snapshot_id": "ee4f18cb-a494-55f1-a53d-fcf21882f8d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2021-07-09",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2241 (2021)",
+          "provision_quote": null,
+          "note": "Bill status page lists Hernandez A as Prime sponsor of the Holocaust/genocide instruction mandate.",
+          "record_kind": "sponsor",
+          "actor_quote": "Hernandez A (Prime)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB2241 requires teaching the Holocaust and other genocides; it is a narrow, near-unanimous (59-0-0-0-1) historical-content mandate and does not speak to the ladder's question of how schools should handle contested race, gender, and history topics, so it is adjacent rather than on-question.",
+      "needs_source": [
+        "A statement or record from Hernandez addressing race, gender, or sexuality curriculum content specifically, as opposed to the Holocaust/genocide instruction mandate"
+      ],
+      "quotes": []
+    }
+  ]
+}

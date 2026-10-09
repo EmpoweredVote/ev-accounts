@@ -1,0 +1,60 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "3688a87d-4b4c-400c-ab5a-52c90896ef2f|219c260d-1781-43a6-a04d-7567f113db2b|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 5,
+        "shared_sources": [
+          "a09e6e64-9bac-5f53-a71c-f4c5a535f032",
+          "bcc0ba5a-0c29-56b2-bd9a-f0ee074bf16c"
+        ]
+      },
+      "confirm": [
+        "instrument-mismatch"
+      ],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "confirm-failed"
+      ],
+      "seed": "none",
+      "profiles": [
+        "in-iga-roll-call@2"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

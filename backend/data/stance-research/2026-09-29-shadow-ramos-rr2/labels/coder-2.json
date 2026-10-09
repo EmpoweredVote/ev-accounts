@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "01dd07dc-ded1-4ba5-aff3-2dc2b386af12",
+      "office_id": "927850b9-2c91-44f7-a6be-f4c81dc3b75d",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "passages": [
+        {
+          "snapshot_id": "f940ff11-628e-5fe0-8ff8-430c705c443f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-10-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": "an owner of residential real property shall not, over the course of any 12-month period, increase the gross rental rate for a dwelling or a unit more than 5 percent plus the percentage change in the cost of living, or 10 percent, whichever is lower, of the lowest gross rental rate charged for that dwelling or unit at any time during the 12 months prior to the effective date of the increase.",
+          "note": "Bill text of AB 1482 enacting a statewide annual rent cap and just-cause eviction rules.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "87c4898f-b053-592c-a2ad-cf1bdc2e9bac",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-09-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": null,
+          "note": "Assembly Floor concurrence vote on AB 1482; Ramos recorded among the Noes.",
+          "record_kind": "vote",
+          "actor_quote": "Petrie-Norris, Ramos, Blanca Rubio",
+          "tally_quote": "Ayes Count 48 Noes Count 26 NVR Count 5"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Ramos voted No on AB 1482 (2019-2020), a statewide rent-cap bill; per the rent-regulation annex, a No vote on a rent bill rules out the stronger rungs but names no chair.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

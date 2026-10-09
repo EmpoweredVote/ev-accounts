@@ -1,0 +1,40 @@
+{
+  "batch_id": "2026-10-02-shadow-carrasco-sb285-rr2",
+  "sources": [
+    {
+      "url": "https://indianacapitalchronicle.com/2026/02/27/indiana-senate-concurs-with-houses-public-camping-ban-edits-sends-bill-to-governors-desk/",
+      "source_kind": "news",
+      "politician_id": "326c5247-950b-407d-a10b-1116c49098f0",
+      "office_id": "679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3",
+      "topic_keys": [
+        "homelessness"
+      ],
+      "instruments": [
+        "SB 285 (2026)"
+      ],
+      "pointer_passages": [
+        "\u201cI do believe that this bill will make an impact. I believe it will save lives,\u201d said Sen. Cyndi Carrasco",
+        "Carrasco said there is mental health grant funding if jails do experience increases in population."
+      ],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/icc-2026-02-27-public-camping.txt"
+    },
+    {
+      "url": "https://todayscatholic.org/homelessness-housing-in-spotlight-at-statehouse/",
+      "source_kind": "news",
+      "politician_id": "326c5247-950b-407d-a10b-1116c49098f0",
+      "office_id": "679e9a1d-87ab-4fd7-9e00-d0608ff8f3d3",
+      "topic_keys": [
+        "homelessness"
+      ],
+      "instruments": [
+        "SB 285 (2026)"
+      ],
+      "pointer_passages": [
+        "\u201cThe goal of Senate Bill 285 is not to criminalize homelessness,\u201d Carrasco said",
+        "Carrasco described the misdemeanor provision of the bill as means to"
+      ],
+      "candidate_quotes": []
+    }
+  ]
+}

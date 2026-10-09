@@ -10,6 +10,7 @@ import { confirmRowDetailed, type ConfirmFinding } from './confirm.js';
 import type { SeatContext, PromptTopic } from './coderPrompt.js';
 import { leadsById, type S1Lead } from './s1Leads.js';
 import { resolveProfile, type SourceProfile } from './sourceProfiles.js';
+import { evidenceTier, type EvidenceTier } from './evidenceTier.js';
 
 export const EVIDENCE_CLASS_ORDER = ['statement-other', 'statement-answer', 'record'] as const; // weakest first
 export function weakestClass(passages: Passage[]): 'record' | 'statement-answer' | 'statement-other' {
@@ -22,7 +23,8 @@ export interface RowReport {
   topic_key: string;
   outcome: AgreementOutcome;
   confirm: ConfirmFinding[];
-  stratum: { level: string | null; evidence_class: string | null };
+  /** evidence_basis (CA_0302): 'own-words' when the topic is asked at this seat's level on own words only. */
+  stratum: { level: string | null; evidence_class: string | null; evidence_basis: 'record' | 'own-words' };
   shadow: 'would-publish-if-certified' | 'would-review';
   shadow_reasons: string[];
   /** Information only (spec §7 P1 fresh/stale seed) — never read by agree()/confirmRow() and never
@@ -30,6 +32,9 @@ export interface RowReport {
   seed: 'fresh' | 'stale' | 'none';
   /** profile@version tags CONFIRM used for this row's record passages. `[]` when CONFIRM did not run. */
   profiles: string[];
+  /** Codebook V6 evidence tier (ruling 2026-10-06), over the sources all coders share. Information
+   * only — never changes `shadow`. null for any row that is not a unanimous chair. */
+  evidence_tier: EvidenceTier | null;
 }
 
 export interface CodingReport {
@@ -93,6 +98,7 @@ export function buildCodingReport(i: {
     let confirm: ConfirmFinding[] = [];
     let evidenceClass: string | null = null;
     let profiles: string[] = [];
+    let tier: EvidenceTier | null = null;
     if (outcome.kind === 'needs-source') { reasons.push('needs-source'); needsSource.push({ key, requests: outcome.requests }); }
     else if (outcome.kind === 'coder-missing') reasons.push('coder-missing');
     else if (outcome.kind === 'split' || outcome.kind === 'disjoint-sources') reasons.push('coder-split');
@@ -101,6 +107,7 @@ export function buildCodingReport(i: {
       const cRow = rowsBySlot.get(consensusSlot(labels, outcome.value))!;
       const restsOn = cRow.passages.filter((p) => outcome.shared_sources.includes(p.snapshot_id));
       evidenceClass = weakestClass(restsOn);
+      tier = evidenceTier(cRow, outcome.shared_sources, { sourceKind: i.sourceKind, snapshotText: i.snapshotText }).tier;
       const detailed = confirmRowDetailed({ seat, restsOnPassages: restsOn, snapshotText: i.snapshotText, sourceKind: i.sourceKind, rowServedRevisionId: cRow.served_revision_id, bundleServedRevisionId: t.served_revision_id, snapshotUrl: i.snapshotUrl, profiles: i.profiles, snapshotMarkup: i.snapshotMarkup });
       confirm = detailed.findings;
       profiles = detailed.profiles;
@@ -119,10 +126,14 @@ export function buildCodingReport(i: {
         for (const host of hosts) noProfileHosts[host] = (noProfileHosts[host] ?? 0) + 1;
       }
     }
+    // Option B (ruling 2026-10-06): a chair at a no-lever level rests on own words only, and goes to a
+    // person until a stratum with that basis is certified (none is). A blank is unaffected.
+    const evidenceBasis = seat.level && t.own_words_levels?.includes(seat.level) ? 'own-words' : 'record';
+    if (outcome.kind === 'unanimous-chair' && evidenceBasis === 'own-words') reasons.push('own-words-basis');
     const publishable = outcome.kind === 'unanimous-chair' && reasons.length === 0;
     const seed = leads.get(t.topic_id)?.seed ?? 'none';
-    return { key, topic_key: t.topic_key, outcome, confirm, stratum: { level: seat.level, evidence_class: evidenceClass },
-      shadow: publishable ? 'would-publish-if-certified' : 'would-review', shadow_reasons: reasons, seed, profiles };
+    return { key, topic_key: t.topic_key, outcome, confirm, stratum: { level: seat.level, evidence_class: evidenceClass, evidence_basis: evidenceBasis },
+      shadow: publishable ? 'would-publish-if-certified' : 'would-review', shadow_reasons: reasons, seed, profiles, evidence_tier: tier };
   });
   const a = alphaNominal(units);
   return { rows, m1: { alpha: a.alpha, units: a.units }, needsSource, validity, noProfileHosts };

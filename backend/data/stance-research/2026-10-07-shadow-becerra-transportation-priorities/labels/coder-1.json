@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "da7bd627-6059-54d1-b48b-21bc920c1ed9",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer about funding and keeping roads, bridges and highways working ('let's take a look at all of the above'); it names no split between road capacity and walking, cycling or transit.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "817fa72d-3799-551e-8ac9-38c5b2b7a076",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-05-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Defends the gas tax as the way roads, highways and transit systems are funded; this concerns the revenue source, not how investment is split among modes.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e20e35d6-1f3b-55b5-95e6-c02206b99890",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Housing issue page on zoning and by-right approvals near transit; this is land use, not transportation investment.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "His own words cover keeping 'roads, bridges, highways that work', considering 'all of the above' to fund transportation infrastructure, and defending the gas tax that funds roads, highways and transit. None of these says how investment should be split between road capacity and pedestrian, cycling or transit options, which is the question every rung turns on, so no rung is evidenced.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

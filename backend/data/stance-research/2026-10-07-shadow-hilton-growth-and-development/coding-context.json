@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-growth-and-development",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "served_revision_id": "65e8ffd5-5aac-4d40-8862-a321949eafa4",
+      "question_text": "How should government manage population growth and new development?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Hold the pace of growth down — cap major new development, and let residents vote directly on the largest projects."
+        },
+        {
+          "value": 2,
+          "text": "Allow growth only as fast as current infrastructure can handle — make new development wait for capacity."
+        },
+        {
+          "value": 3,
+          "text": "Welcome steady growth — invest in roads, water and schools ahead of demand so expansion isn't held back."
+        },
+        {
+          "value": 4,
+          "text": "Actively push for faster growth — cut red tape and recruit new development, while keeping basic guardrails."
+        },
+        {
+          "value": 5,
+          "text": "Step back and let the market set the pace — remove development constraints beyond basic health and safety."
+        }
+      ],
+      "own_words_levels": [
+        "federal"
+      ],
+      "annexMd": "# growth-and-development — served revision 65e8ffd5-5aac-4d40-8862-a321949eafa4 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should government manage population growth and new development?\"\n\n**Orientation:** off-axis (CLAUDE.md lists it). Read it as one scale of **how fast government lets\ngrowth happen**: rung 1 holds growth down, rung 5 lets the market set the pace. It is **not** a\nsize-of-government scale. Rung 1 restrains growth by regulation, rung 3 spends the most (it builds\ninfrastructure ahead of demand), and rung 5 removes rules. A \"more government\" reading and a \"less\nregulation\" reading point in different directions here, so place a person by the **pace** their act\nor words support, never by who usually holds a view.\n\n**Levels with a lever:** local, state. Local: approvals, caps, moratoria,\ncapital plans, impact fees, annexation. State: growth-management acts, infrastructure funding, and\nlaws that limit or override local development rules. State officials rarely approve one project.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"growth cap\", \"building-permit allocation\", \"urban growth boundary\", \"adequate public\nfacilities ordinance\" (APFO), \"concurrency\", \"development moratorium\", \"capital improvement plan\",\n\"impact fee\", \"annexation\", \"growth-management act\", \"entitlement\", \"streamlining\", \"by-right\napproval\", \"shot clock\", \"ballot-box zoning\", \"voter approval of development\".\n\n1. **\"Hold the pace of growth down — cap major new development, and let residents vote directly on\n   the largest projects.\"**\n   - Means: limit how much new development can happen, and give residents a direct vote on the\n     largest projects.\n   - Operative clauses: [a] cap major new development; [b] residents vote directly on the largest\n     projects.\n   - Establishing evidence looks like: a cap or permit allocation on new development **and** a\n     requirement that the largest projects go to a public vote. Compound: one side only →\n     `compound-partial` (V4.2).\n   - Levels that hold a lever: local (caps, charter amendments); state (authorizing or forbidding\n     local caps or development referendums).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because both slow growth. A cap or moratorium **tied to\n     infrastructure capacity** (\"until the sewer plant is expanded\") is rung 2; a cap that holds\n     growth down **whatever the capacity** is rung 1 [a] _(proposed)_.\n   - A required vote on **annexation** is not a vote on \"the largest projects\" unless the passage\n     ties it to a development _(proposed)_.\n\n2. **\"Allow growth only as fast as current infrastructure can handle — make new development wait for\n   capacity.\"**\n   - Means: new development proceeds only when roads, water, sewer and schools already have room for\n     it.\n   - Operative clauses: [a] growth limited to what current infrastructure can handle; [b] development\n     waits for capacity.\n   - Establishing evidence looks like: an adequate-facilities or concurrency rule that holds approvals\n     until capacity exists; a capacity-based moratorium; own words that development must wait for\n     infrastructure.\n   - Levels that hold a lever: local; state (growth-management acts that require concurrency).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - Commonly confused with rung 3 because both talk about infrastructure. Rung 2 makes development\n     **wait** for capacity; rung 3 **builds** capacity ahead so it does not wait.\n\n3. **\"Welcome steady growth — invest in roads, water and schools ahead of demand so expansion isn't\n   held back.\"**\n   - Means: plan for growth by building infrastructure before it is needed.\n   - Operative clauses: [a] welcome steady growth; [b] invest in infrastructure **ahead of demand**.\n   - Establishing evidence looks like: a capital plan, bond or budget that funds infrastructure for\n     projected growth, with the passage stating it is built ahead of demand.\n   - Levels that hold a lever: local; state (infrastructure funding).\n   - Known chair-shaped instruments: _(none on file)_.\n   - An infrastructure bond or road project alone does not show \"ahead of demand\": it may repair or\n     catch up → `direction-only` _(proposed)_.\n   - Commonly confused with rung 2: see rung 2.\n\n4. **\"Actively push for faster growth — cut red tape and recruit new development, while keeping basic\n   guardrails.\"**\n   - Means: government works to speed up growth by easing approvals and courting developers, but\n     keeps core development rules.\n   - Operative clauses: [a] cut red tape; [b] recruit new development; [c] keep basic guardrails.\n   - Establishing evidence looks like: a streamlining measure (faster approvals, fewer reviews)\n     **and** active recruitment of development, **plus** a passage that keeps standards in place.\n     Compound: some clauses only → `compound-partial` (V4.2).\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because both cut rules. [c] separates them: rung 4 keeps\n     guardrails, rung 5 keeps nothing beyond health and safety. A streamlining measure alone excludes\n     neither → `direction-only` (V4).\n   - Fee cuts (impact fees, permit fees) lower the cost of building; they are not \"red tape\" as such.\n     Alone → `direction-only` _(proposed)_.\n\n5. **\"Step back and let the market set the pace — remove development constraints beyond basic health\n   and safety.\"**\n   - Means: government stops managing the pace of growth and keeps only health and safety rules.\n   - Operative clauses: [a] the market sets the pace; [b] remove development constraints beyond basic\n     health and safety.\n   - Establishing evidence looks like: own words that only health and safety rules should remain; a\n     record that removes the jurisdiction's development constraints **and** states that no other\n     constraint should remain. [b] is a limit clause (\"beyond basic health and safety\"): the passage\n     must say it (V4.2 \"Silence is not a clause\").\n   - Levels that hold a lever: local; state.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **A state law that removes local development limits** (it voids local caps, review steps or\n  approval rules statewide). This is **not** plain preemption: it removes the very limits rungs 4 and\n  5 name, so it is `on-question`. But it is `direction-only`: one deregulation law cannot show that\n  the person keeps guardrails (rung 4) or wants nothing beyond health and safety (rung 5) (codebook V2,\n  \"Refined 2026-09-26\"). Do not code it `adjacent` as preemption, and do not code it rung 5 because\n  it cuts rules.\n- **Preemption that only moves the decision** (which level approves, with no limit removed) → V2\n  `adjacent` (H12).\n- **Density and housing-type rules** (what may be built on one lot) belong to `residential-zoning`\n  and `housing`. Here they show pace only when the passage speaks to the pace of growth →\n  otherwise `adjacent` _(proposed)_.\n- **One project approval or denial** is routine and project-specific → `direction-only` at most.\n- **Comprehensive plans and budget votes** → V4 `multi-subject`.\n"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "2785d691-2404-400e-8dde-bcc5a58e419b|6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Arizona record or her own first-person words showing what stage of pregnancy she would permit abortion in, and which exceptions apply after it (SB 1164's construction clause leaves the permitted stage unevidenced)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "2785d691-2404-400e-8dde-bcc5a58e419b|6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "An Arizona record or her own first-person words showing what stage of pregnancy she would permit abortion in, and which exceptions apply after it (SB 1164's construction clause leaves the permitted stage unevidenced)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

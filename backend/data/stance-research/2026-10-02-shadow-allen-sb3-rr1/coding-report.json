@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4486f856-118b-475c-83f0-078581a7b268|58c7cb0f-6409-4e6a-aa4f-1d146e88eb69|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 1,
+        "shared_sources": [
+          "8ac73b47-dab1-5d7f-ab2d-35aeb301746a",
+          "d42d09e7-2ede-5fa6-ba21-7954ba81ca8c"
+        ]
+      },
+      "confirm": [
+        "tally-other-vote",
+        "name-collision",
+        "prior-service-unverified"
+      ],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "confirm-failed"
+      ],
+      "seed": "none",
+      "profiles": [
+        "ca-leginfo-bill-text@1",
+        "ca-leginfo-bill-votes@1"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

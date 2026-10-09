@@ -9,13 +9,18 @@ argument-hint: "\"Politician Name(s)\" | \"Legislative body\""
 You are running the **research-stances** skill. Your job is to research politician stances on existing Empowered Vote compass topics, produce a reviewable CSV, and optionally push approved data to the database.
 
 > **Related:** if this work involves candidate *quotes* (for Read & Rank / Compass / Essentials),
-> follow the curation principles in `../on-the-record/.claude/skills/audit-quotes/CHECKS.md` (the
+> follow the curation principles in `$OTR_ROOT/.claude/skills/audit-quotes/CHECKS.md` (the
 > checks + the §4 judgment rules — the working rulebook) and
-> `../on-the-record/.claude/skills/publish-quotes/EDITORIAL.md` (editing/de-id mechanics), and hand
+> `$OTR_ROOT/.claude/skills/publish-quotes/EDITORIAL.md` (editing/de-id mechanics), and hand
 > quotes off to the `audit-quotes` skill before they go live (see STEP 4). The canonical source is
-> the on-the-record corpus, docs/quote-curation/PRINCIPLES.md (sibling checkout:
-> ../on-the-record/docs/quote-curation/PRINCIPLES.md) — read it alongside CHECKS.md §4 as the
+> the on-the-record corpus, `$OTR_ROOT/docs/quote-curation/PRINCIPLES.md` — read it alongside CHECKS.md §4 as the
 > rulebook.
+
+> **Paths.** Every command runs from the root of the ev-accounts checkout you are working in, so
+> `cd backend` means `<that checkout>/backend` — never `~/Documents/GitHub/ev-accounts`, whose branch
+> may be anything. `$OTR_ROOT` is the on-the-record checkout: run
+> `export OTR_ROOT=~/Documents/GitHub/on-the-record` once per shell (`extract-canonical-rules.mjs`
+> reads it too, and needs it inside a worktree).
 
 > **Quotes are pushed as DRAFTS, then audited, then promoted.** This skill never sets a quote live
 > in the same step it inserts it. The flow is: research → pre-push QA → insert as drafts
@@ -59,7 +64,7 @@ If `$ARGUMENTS` is empty, ask the user:
 If the input looks like a legislative body (e.g., "Bloomington City Council", "California State Senate"), resolve it to individual politicians by querying the database:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+cd backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
   SELECT DISTINCT ON (p.id) p.id, p.full_name, o.title, c.name AS chamber_name
@@ -88,24 +93,15 @@ through the open season's pin. Never use a hardcoded list, never read `inform.co
 never filter on `is_live`.** The bundle builder below does this, and it is the only topic source for a
 batch.
 
-🔴🔴 **`inform.compass_stances` is FROZEN at v1 and `is_live` does not gate the season read
-path.** The topic query this step used to run joined the frozen table and filtered
-`WHERE t.is_live = true`. Both were wrong, and both failed silently — the frozen table returns a
-complete, plausible ladder on the right subject with the wrong rungs. Measured against the open season
-on 2026-09-23:
-
-| | |
-|---|---|
-| Topics pinned into the open season | **60** |
-| Returned by the old `is_live = true` query | **44** |
-| Pinned topics it dropped | **17** |
-| Topics it returned that are not in the season | **1** — `immigration`, retired in Season 2, which the write gate no longer accepts |
-| Pinned topics whose rungs differ from the frozen table | **29 of 60** (41 of 61 for the Season 3 draft) |
+🔴 **`inform.compass_stances` is FROZEN at v1 and `is_live` does not gate the season read
+path.** Both fail silently: the frozen table returns a complete, plausible ladder on the right
+subject with the wrong rungs, and an `is_live = true` filter drops pinned topics (measured
+2026-09-23: 17 of 60 dropped, and 29 of 60 with rungs that differ from the frozen table).
 
 Build the batch bundle:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a
+cd backend && set -a && source .env && set +a
 npx tsx scripts/build-stance-topic-bundle.ts --dir data/stance-research/<YYYY-MM-DD-batch> \
   --race <race_id> [--race <race_id> ...]          # candidates on these races
   # or, for officeholders not on a race:  --politician <uuid>:<federal|state|local|judicial|school>
@@ -139,9 +135,9 @@ Notes on reading the result:
   A state board of education stays `state`. A school board filed on a city district (district_type
   LOCAL, e.g. Portland, Augusta, Lewiston and Westbrook ME; `SCHOOL_BOARD_OFFICE_RE`) also prints under
   `level unknown`: its district must be re-typed to SCHOOL before research. Do not research it as `local`.
-- **It resolves whichever season is open, by status — do not hard-code a season number.** Today that
-  is Season 2 (60 topics). The Season 3 draft has 61 and a different pin; a run today writes into the
-  open season, so the open season's rung text is the text your evidence must match.
+- **It resolves whichever season is open, by status — do not hard-code a season number.** A run
+  writes into the open season, so the open season's rung text is the text your evidence must match,
+  even while a draft season with a different pin exists.
 - **If no season is open, the bundle exits 1 and writes nothing. STOP.** (It also exits 1 when a
   pinned ladder does not have exactly five rungs.) Do not fall back to the frozen table. The write path
   sources its insert from a join on the open season, so with none open nothing is written and nothing
@@ -177,11 +173,33 @@ speaker-attributed transcripts for many races — debates, forums, and news inte
 they are what the `audit-quotes` source check verifies against. Skipping them was a real failure: a
 prior CA-Governor run used WebFetch/Ballotpedia only and missed **18 of 21** available OTR sources.
 
-If the politicians belong to a race, resolve the `race_id` and pull the transcripts first:
+🔴 **Every person, every run — not only candidates on a race (2026-10-07).** The race lookup below
+misses a seated officeholder who is not on the ballot, a council member speaking in council, and a primary
+forum linked only to the primary race (Matt Pierce's LWV forum was all three). So first, for each person:
+
+```bash
+node .claude/skills/research-stances/scripts/extract-otr.mjs --politician <uuid>[,<uuid>…] \
+  --city <City> --names "<Full Name>[,…]"   # name fallback: also finds UNLINKED speakers by name
+#   one file per meeting: backend/data/stance-research/otr-transcripts/politician/<slug>/<date>-<id8>.md
+#   (only that person's turns; the header gives the OTR page, the linked races, and the real date when the
+#   source's file name disagrees with the date On the Record lists)
+cd backend && npx tsx scripts/list-discovered-sources.ts --politician <uuid> [--race <race_id> …]
+#   discovery rows for the person, approved/ingested first — check these before any web search
+```
+
+A file marked "Found by name, NOT linked" is a speaker On the Record never linked (Mayor Kerry Thomson,
+2026-05-06): confirm it is the person, ask the operator to relink (`run_local.py --relink-person "<name>"
+--to-id <uuid> --dry-run` in on-the-record), and use the turns meanwhile.
+
+Each meeting file is one batch source: `source_kind: "transcript"`, `url` = its OTR page,
+`human_saved_path` = the file copied into `<batch>/human-saved/`. An `approved` discovery row that is not
+yet ingested is a lead: cite the original (the outlet's page or video), never the discovery row itself.
+
+If the politicians belong to a race, also resolve the `race_id` and pull the race's transcripts:
 
 ```bash
 # Resolve the race_id from the candidate names (skip if the user already gave you a --race id)
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+cd backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
   SELECT rc.race_id::text, r.position_name, count(*)::int AS n_candidates
@@ -199,10 +217,10 @@ await pool.end();
 Then extract every candidate's speaker-attributed turns across the race's OTR sources:
 
 ```bash
-node ev-accounts/.claude/skills/research-stances/scripts/extract-otr.mjs \
+node .claude/skills/research-stances/scripts/extract-otr.mjs \
   --race <race_id> --names "Full Name 1,Full Name 2"
 # writes one markdown file per candidate to
-#   ev-accounts/backend/data/stance-research/otr-transcripts/<race_id>/<candidate>.md
+#   backend/data/stance-research/otr-transcripts/<race_id>/<candidate>.md
 # each source section is headed with its YouTube URL + OTR page URL (use these as source_url_1)
 ```
 
@@ -227,10 +245,9 @@ finds debate turns and silently misses every interview.
 
 ## STEP 1 — Research Each Politician Yourself, Inline
 
-🔴🔴 **Do NOT dispatch a research sub-agent. Do this work yourself, one politician per
-run.** This skill used to say to dispatch a `politician-stance-researcher` agent per politician.
-That instruction was withdrawn by ruling on 2026-08-24 and reaffirmed on 2026-09-23. Following it
-as written turned 38 researched rows into 8 survivors.
+🔴 **Do not dispatch a research sub-agent. Do this work yourself, one politician per run**
+(ruling 2026-08-24, reaffirmed 2026-09-23). A dispatched batch once turned 38 researched rows into 8
+survivors.
 
 **Execution rules:**
 - **One politician per run.** Finish a person, review them, then start the next. Do not batch
@@ -238,11 +255,12 @@ as written turned 38 researched rows into 8 survivors.
 - Confirm that person's rows are written to research.csv and evidence.csv before you start the next
   person.
 - Then run the gate on the batch before you start the next person:
-  `cd ev-accounts/backend && npx tsx scripts/stance-gate.ts --dir data/stance-research/<YYYY-MM-DD-batch>`.
+  `cd backend && npx tsx scripts/stance-gate.ts --dir data/stance-research/<YYYY-MM-DD-batch>`.
   It uses no network and no database and writes only `gate-findings.json` and `stances.csv` in the
   batch dir, so it is safe to run as often as you like. Its findings are per row, so they name this
   person's defects before the next person starts; re-research those pairs (STEP 4a(i)) first.
-- Use WebFetch only. Never WebSearch or Playwright — both share a rate-limited quota pool.
+- Search to find sources, fetch to cite them: every cited page is fetched with WebFetch and backed by a
+  snippet; a search result is only a lead. No Playwright.
 
 **Why inline, and not an agent — three reasons, none of them stylistic:**
 1. **No MCP server is bound inside a sub-agent.** A research agent has no route to the season
@@ -273,8 +291,8 @@ node .claude/skills/research-stances/scripts/extract-canonical-rules.mjs gates d
 ```
 
 and paste its output into the research contract below at the three `INJECT:` markers (`gates`, `deid`,
-`note`). These rules come from the on-the-record corpus (sibling checkout; canonical home
-`on-the-record/docs/quote-curation/PRINCIPLES.md` and its mechanics files) — never restate them from
+`note`). These rules come from the on-the-record corpus (canonical home
+`$OTR_ROOT/docs/quote-curation/PRINCIPLES.md` and its mechanics files) — never restate them from
 memory. If the extractor errors, the on-the-record checkout is missing: **STOP** and resolve that, do
 not fall back to a remembered summary.
 
@@ -313,16 +331,13 @@ renewable energy and phasing out fossil fuels by 2030." That claim requires your
 assignment to be defensible with the specific written text — not just a directional
 approximation.
 
-Do NOT pick a value based on party expectation. Do NOT assume direction. For every stance
-you record, ask: "Does this politician's documented position match the EXACT TEXT at this
-value?" If not, pick a different value or leave the value blank.
+For every stance you record, ask: "Does this politician's documented position match the
+text at this value?" If not, pick a different value or leave the value blank.
 
 TOPIC SCALE REFERENCE — assign values by matching to exact stance text:
 [PASTE THE TOPIC SCALE REFERENCE BLOCK FOR THIS POLITICIAN'S LEVEL, printed by build-stance-topic-bundle.ts]
 
-The topic_key in your CSV output MUST be copied exactly as listed above.
-Do NOT invent your own topic_key slugs.
-Do NOT include any topic_key not in the above list — the list is fetched fresh each run.
+Use only the topic_keys listed above, copied exactly; the list is fetched fresh each run.
 
 The TOPIC SCALE REFERENCE is already filtered to the questions this season asks of this office. Research only those. When you cannot find evidence for a specific chair, write the row with a blank value — the pipeline reads a blank as "insufficient evidence".
 
@@ -377,24 +392,24 @@ NOT been checked against the statute. Confirm the statute before you rely on it.
 - school-vouchers is not asked of a school board (no board holds a lever on any rung). It is not in
   this reference; do not add it.
 
---output-dir [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]
+--output-dir [ABSOLUTE_PATH_OF_YOUR_CHECKOUT]/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]
 
 TIER-1 SOURCE — READ THIS FIRST:
 [If an OTR transcript file was produced in STEP 0.5, include:]
 Your PRIMARY source is this On the Record transcript file (verbatim, timestamped, attributed to
 this candidate across the race's debates/forums/interviews):
-  [ABSOLUTE_PATH]/ev-accounts/backend/data/stance-research/otr-transcripts/<race_id>/<candidate>.md
+  [ABSOLUTE_PATH_OF_YOUR_CHECKOUT]/backend/data/stance-research/otr-transcripts/<race_id>/<candidate>.md
 Read it with the Read tool and draw your quotes from it FIRST. Every quote you take from it is
 already verified to the source — cite that source's YouTube URL (shown in the file's section
 header) as source_url_1. Only use WebFetch for topics the transcript does not cover.
 
 TOOL RULE:
 - Prefer the OTR transcript file above (Read tool) — it is the strongest, pre-verified source.
-- For anything it doesn't cover, use WebFetch ONLY. Never use WebSearch or Playwright — both share a
-  rate-limited quota pool. Fetch URLs directly using the patterns under `### URL Patterns — Fetch
-  These in Order` in `.claude/agents/politician-stance-researcher.md` (Ballotpedia,
+- For anything it doesn't cover, fetch URLs with WebFetch using the patterns under `### URL Patterns —
+  Fetch These in Order` in `.claude/agents/politician-stance-researcher.md` (Ballotpedia,
   ontheissues.org, official pages, Wikipedia, CalMatters, LA Times) — read that file for them. If a
-  URL 404s, try the next pattern. Do not fall back to WebSearch.
+  URL 404s, try the next pattern, then use WebSearch to find the page. A search result is a lead:
+  cite only what you fetched and backed with a snippet. No Playwright.
 - vote411.org and thevoterguide.org are POINTER-ONLY: use them to find where the candidate answered,
   then cite the candidate's own page. Never put a vote411.org or thevoterguide.org URL in any
   source_url column — LWV terms bar reproducing it.
@@ -530,7 +545,7 @@ Show the user a formatted summary table:
 | Name 1 | abortion | 1 | "Voted against every restrict..." |
 | ...    | ...        | ... | ... |
 
-Batch directory: `ev-accounts/backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]/` (research.csv, evidence.csv; STEP 4a adds gate-findings.json, stances.csv and publish-report.json)
+Batch directory: `backend/data/stance-research/YYYY-MM-DD-[BATCH_NAME]/` (research.csv, evidence.csv; STEP 4a adds gate-findings.json, stances.csv and publish-report.json)
 ```
 
 ### Value-Change Guard — enforced in code
@@ -622,7 +637,7 @@ quotations. A quote that never existed is a fabricated statement attributed to a
 worst thing this pipeline can produce, and no other check in 4a looks for it.
 
 ```bash
-cd ev-accounts/backend && npm run verify:quotes -- data/stance-research/<YYYY-MM-DD-batch>/research.csv \
+cd backend && npm run verify:quotes -- data/stance-research/<YYYY-MM-DD-batch>/research.csv \
   --sources data/stance-research/otr-transcripts/<race_id>   # drop --sources if STEP 0.5 (OTR) did not run
 ```
 
@@ -650,7 +665,7 @@ a hand-edited quote is unverified until step (0) has run against it again.
 **(i) Stance gate, snippet verification, quote mechanics — in this order.**
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a
+cd backend && set -a && source .env && set +a
 B=data/stance-research/YYYY-MM-DD-[BATCH_NAME]
 npx tsx scripts/stance-gate.ts --dir $B              # exit 1 = high findings: re-research those pairs yourself, re-run —
                                                      # EXCEPT topic-out-of-scope, which is closed research (see below)
@@ -697,12 +712,11 @@ back it with a snippet in evidence.csv, REPLACE the pair's rows, re-run the gate
 Dropping the quote (clearing its quote fields) is a quote-field fix. Do not push a CSV with
 high-severity mechanical findings.
 
-**(ii) Judgment pass — inline, one candidate at a time.** 🔴🔴 **Do NOT dispatch a sub-agent for
+**(ii) Judgment pass — inline, one candidate at a time.** 🔴 **Do not dispatch a sub-agent for
 this.** Read the **audit-quotes CHECKS.md §4 judgment prompt**
-(`../on-the-record/.claude/skills/audit-quotes/CHECKS.md`) and apply it yourself to the
-`<csv>.bundle.json` produced above (`$B/research.bundle.json`), one candidate per pass. This used
-to say to dispatch one `Agent`-tool sub-agent per candidate *or per race*; that was withdrawn on
-2026-09-23 for the same reasons STEP 1 gives, two of which apply here without qualification:
+(`$OTR_ROOT/.claude/skills/audit-quotes/CHECKS.md`) and apply it yourself to the
+`<csv>.bundle.json` produced above (`$B/research.bundle.json`), one candidate per pass, for the
+reasons STEP 1 gives, two of which apply here without qualification:
 
 - **This is a verification pass**, and a sub-agent returning "clean" is not evidence anything was
   checked. That failure is on the record here.
@@ -755,7 +769,7 @@ lookup here fell into (17 pinned topics dropped, without raising) cannot happen.
 ### 4c. Write stances (and their verified snippets) through the verifier
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a
+cd backend && set -a && source .env && set +a
 npx tsx scripts/verify-stance-research.ts --dir data/stance-research/YYYY-MM-DD-[BATCH_NAME] \
   --apply --editor-id <your admin user uuid>          # review-all (default): every stance is queued
 # add --auto-push ONLY as a deliberate, per-run operator decision (ruling 2026-09-22)
@@ -809,12 +823,27 @@ seated. Once approvals for this batch are done — even partially; re-run this l
 build the written ledger from what was actually approved and audit it:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a
+cd backend && set -a && source .env && set +a
 B=data/stance-research/YYYY-MM-DD-[BATCH_NAME]
 npx tsx scripts/export-written-ledger.ts --batch $(basename $B) --dir $B
 node scripts/audit-chair-evidence.mjs --check $B/written-$(basename $B).json
 npm run check:stance-sources
 ```
+
+⚠ **If a row's ONLY source is a Ballotpedia `#Campaign_themes` deep link**, the gate now checks what
+is actually behind that anchor, against `data/candidate-connection-anchors.json`:
+
+- `CC_ANCHOR_UNVERIFIED` — **report only, never fails the build.** It means nobody has fetched that
+  page yet, not that the row is wrong. Clear it with `npm run sweep:cc-anchors` (one request every
+  three seconds, so ~10 minutes for the full set) and commit the refreshed manifest.
+- `CC_ANCHOR_EMPTY` — **fails.** The page was fetched and carries no words from the candidate: no
+  completed survey, no quoted campaign site, or no such section at all. 🔴 **Do not "fix" it by
+  dropping the `#Campaign_themes` fragment** — without the anchor the row is `BALLOTPEDIA_ONLY` and
+  still wrong. Cite what the chair rests on, or retire the row.
+
+🔑 **Never hand-append the anchor.** It is appended by `deep-link-candidate-connection.mjs` for
+CC_VERIFIED rows only. Adding it by hand used to buy a pass from a gate that could not see the page;
+it now buys a failure instead.
 
 `export-written-ledger.ts` reads `inform.stance_research_review` (resolved rows for this batch
 only) and `$B/research.csv` — read-only, no writes — and refuses to produce an empty ledger (see
@@ -862,7 +891,7 @@ gate-passing row build a quote object:
 Only include objects whose `quote_text` is non-blank. Then run:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+cd backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const quotes = JSON.parse(process.argv[2]);
 let inserted = 0, dupes = 0; const missingNote = [];
@@ -898,7 +927,7 @@ With the drafts in place, run the real quote audit (it adds YouTube source-verif
 ingested OTR transcripts — the check the mechanical pass can't do):
 
 ```bash
-cd on-the-record/.claude/skills/audit-quotes && \
+cd $OTR_ROOT/.claude/skills/audit-quotes && \
   ../../../.venv/bin/python -m scripts.audit --race <race_id> --include-drafts
 ```
 
@@ -920,7 +949,7 @@ For each topic where a candidate should have a live pick, promote exactly one qu
 partisan tell, no self-ID) and replaces any currently-selected quote on that topic:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+cd backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const picks = JSON.parse(process.argv[2]);  // [{ id, full_name }]
 let selected = 0; const leaks = [];
@@ -1023,14 +1052,9 @@ queues. Its only outputs are `coding-report.json` and, with the operator's OK, r
 
 # Changing a ladder is not this skill's job
 
-This skill used to carry a `--rewrite-id` REWRITE RE-EVALUATION MODE that fed
-`inform.topic_rewrites` / `inform.topic_rewrite_stance_proposals`. **It was removed on 2026-09-23.**
-Both of those tables have always been empty — zero rows, ever — while the revision model it
-predates has 140 revisions spanning 2026-03-15 to 2026-09-12. It was a second, unused path to a job
-the revision model already does, and it still read the frozen `inform.compass_stances` table for
-both of its ladders, which is the defect this skill spends STEP 0 warning about.
-
-Use the revision model instead. It already carries what rewrite mode was hand-rolling:
+Do not use `inform.topic_rewrites` / `inform.topic_rewrite_stance_proposals`; they are an unused
+path that reads the frozen `inform.compass_stances` ladders. A ladder changes through the revision
+model, which carries:
 
 - **`change_class`** — `clarifying` keeps existing seats and nothing re-audits; `substantive` means
   the seats' evidence was gathered against a sentence that no longer exists, so those rows need a

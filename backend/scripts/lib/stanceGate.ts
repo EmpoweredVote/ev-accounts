@@ -11,11 +11,19 @@
  *   record    — something done in office. Must name the instrument (NAMES_INSTRUMENT). The
  *               regex is NOT widened here: a separate lane, not a looser gate.
  *   statement — the person's own words. No instrument to name, so it goes to human review.
+ *
+ * A BLANK (value 0 + a codebook V6 blank_reason, evidence_type `blank`; spec
+ * 2026-10-07-season2-blank-review-design.md §3.2) claims no chair, so the chair checks
+ * (record-no-instrument, instrument-not-cited, quote-not-in-snippet, ballotpedia-only) do not
+ * apply. Its sources are the sources the coder EXAMINED; the source checks and party-inference
+ * still run on them.
  */
 import { NAMES_INSTRUMENT } from './chair-evidence-patterns.mjs';
+import { isCandidateConnectionUrl, passageInSurveySection, withoutFragment } from './candidate-connection.mjs';
 import {
   MIN_SNIPPET_WORDS, normalizeText, normName, normTopic, stanceKey, type EvidenceRow, type StanceRow,
 } from '../../src/lib/researchVerifier.js';
+import { BLANK_REASONS } from '../../src/lib/blankReasons.js';
 import { appliesToLevel, type Level, type TopicApplicability } from '../../src/lib/topicApplicability.js';
 
 export interface ResearchRow {
@@ -25,6 +33,8 @@ export interface ResearchRow {
   reasoning: string;
   evidence_type: string;
   source_urls: string[];
+  /** Codebook V6 blank reason; set exactly when value is 0 (a blank). Absent in older research.csv files. */
+  blank_reason?: string | null;
 }
 export interface BundleTopic extends TopicApplicability {
   topic_id: string;
@@ -40,6 +50,8 @@ export interface BundleTopic extends TopicApplicability {
   title: string;
   question_text: string;
   stances: { value: number; text: string }[];
+  /** CA_0302: levels at which this topic is asked on own words only. Absent in bundles built before it. */
+  own_words_levels?: Level[];
 }
 export interface BundlePolitician { full_name: string; politician_id: string; level: Level | null; race_id: string | null }
 /**
@@ -52,7 +64,7 @@ export const GATE_CHECK_IDS = [
   'topic-out-of-scope', 'level-unknown', 'no-source', 'source-without-snippet', 'snippet-too-short',
   'evidence-type-invalid', 'record-no-instrument', 'statement-needs-review', 'party-inference',
   'reasoning-empty', 'ballotpedia-only', 'source-no-path', 'pointer-only-source', 'instrument-not-cited',
-  'quote-not-in-snippet', 'evidence-url-not-cited',
+  'quote-not-in-snippet', 'evidence-url-not-cited', 'blank-reason-invalid', 'blank-unexamined-fallback',
 ] as const;
 export type GateCheckId = typeof GATE_CHECK_IDS[number];
 export interface GateFinding {
@@ -86,11 +98,13 @@ export const PARTY_NOUNS_ANY_CASE = /\b(democrats?|republicans?(?!\s+form\s+of\s
 
 const wordCount = (s: string) => normalizeText(s).split(' ').filter(Boolean).length;
 
-// C57: mirrors check-stance-sources.mjs's BALLOTPEDIA_ONLY predicate (backend/scripts/check-stance-sources.mjs,
-// ~L226-239) for PRE-WRITE use: every source URL is on ballotpedia.org. That script also carves out a
-// Candidate_Connection survey deep link (the candidate's own words, published nowhere else) once a stance is
-// already live; pre-write there is no such row yet to preserve, so any ballotpedia-only row here is simply
-// sent back for a stronger source.
+// C57: mirrors check-stance-sources.mjs's BALLOTPEDIA_ONLY predicate (backend/scripts/check-stance-sources.mjs):
+// a source on ballotpedia.org is a bio, not a citation. One carve-out, ruling 2026-10-07 (Chris Andrews): a
+// Candidate Connection survey answer is the candidate's own words. It needs BOTH tests from
+// lib/candidate-connection.mjs — the URL carries #Campaign_themes AND the cited snippet is inside that
+// section of the fetched page (ctx.surveySections, keyed by page URL without fragment). The SQL check can
+// only test the URL; this pre-write gate is where the page-text half is enforced. No section supplied =
+// the carve-out does not apply (fails closed), so a bare anchor never waives the check by itself.
 function isBallotpediaUrl(url: string): boolean {
   try { return /(^|\.)ballotpedia\.org$/i.test(new URL(url).hostname); } catch { return /ballotpedia\.org/i.test(url); }
 }
@@ -125,7 +139,9 @@ const INSTRUMENT_IDENTIFIER_PATTERNS: RegExp[] = [
   /\bS\.?B\.?\s?\d+\b/,
   /\b(?:House|Senate) Bill \d{1,4}\b/,
   /\bS\.?L\.?\s?20\d{2}-\d{1,4}\b/,
-  /\bH\.?R\.?\s?\d+\b/,
+  // The U.S. House Clerk prints "H. R. 22" (a space after each period) and "H. J. RES. 44" (2026-10-07).
+  /\bH\.?\s?R\.?\s?\d+\b/,
+  /\bH\.?\s?(?:J\.?\s?|Con\.?\s?)?Res\.?\s?\d+\b/i,
   /\bS\.?J\.?\s?Res\.?\s?\d+\b/,
   // Asymmetric on purpose: unlike HB/SB/HR above, the hyphen sits AFTER the optional periods ("A.B.-123"
   // as well as "AB-123"), because NAMES_INSTRUMENT's own AB form pairs the hyphen with the digits, not
@@ -173,7 +189,11 @@ function extractQuotedPhrases(text: string): string[] {
 
 export function checkStanceRow(
   row: ResearchRow,
-  ctx: { topic: BundleTopic | undefined; politician: BundlePolitician | undefined; evidence: EvidenceRow[] },
+  ctx: {
+    topic: BundleTopic | undefined; politician: BundlePolitician | undefined; evidence: EvidenceRow[];
+    /** Survey-section text per Ballotpedia page (key = URL without fragment); null = page has no section. */
+    surveySections?: Readonly<Record<string, string | null>>;
+  },
 ): GateFinding[] {
   const out: GateFinding[] = [];
   const add = (check_id: GateCheckId, severity: 'high' | 'medium', what: string) =>
@@ -182,8 +202,21 @@ export function checkStanceRow(
   // value=null is the researcher's explicit "insufficient evidence": nothing proposed, nothing to gate.
   if (row.value === null) return out;
 
+  const reason = row.blank_reason?.trim() || null;
+  // 0 is a blank only WITH a reason; without one it is the old meaningless 0 and stays out of range.
+  const isBlank = row.value === 0 && reason !== null;
   if (!ctx.politician) add('unknown-politician', 'high', `${row.full_name} is not in politicians.json — rebuild the bundle with this person`);
-  if (!Number.isInteger(row.value) || row.value < 1 || row.value > 5) add('value-out-of-range', 'high', `value ${row.value} is not an integer 1-5`);
+  if (!isBlank && (!Number.isInteger(row.value) || row.value < 1 || row.value > 5)) {
+    add('value-out-of-range', 'high', row.value === 0
+      ? 'value 0 (a blank) needs a blank_reason — one of codebook V6\'s six'
+      : `value ${row.value} is not an integer 1-5`);
+  }
+  if (reason !== null && !(BLANK_REASONS as readonly string[]).includes(reason)) {
+    add('blank-reason-invalid', 'high', `blank_reason "${reason}" is not one of ${BLANK_REASONS.join(', ')}`);
+  }
+  if (reason !== null && row.value !== 0) {
+    add('blank-reason-invalid', 'high', `blank_reason "${reason}" beside chair ${row.value} — a row is a chair or a blank, not both`);
+  }
   if (row.reasoning.trim().length === 0) add('reasoning-empty', 'high', 'reasoning is empty for a scored row');
 
   if (!ctx.topic) {
@@ -196,7 +229,9 @@ export function checkStanceRow(
     else if (!appliesToLevel(ctx.topic, ctx.politician.level)) add('topic-out-of-scope', 'high', `${row.topic_key} does not apply at the ${ctx.politician.level} level`);
   }
 
-  if (row.source_urls.length === 0) add('no-source', 'high', 'no source URL');
+  // A blank may have examined nothing (no-evidence); whether it may then remove a chair is the
+  // verifier's blank-unexamined-fallback check, which knows what voters see.
+  if (row.source_urls.length === 0 && !isBlank) add('no-source', 'high', 'no source URL');
   for (const url of row.source_urls) {
     const forUrl = ctx.evidence.filter((e) => e.source_url === url);
     if (forUrl.length === 0) add('source-without-snippet', 'high', `no evidence.csv snippet for ${url}`);
@@ -224,8 +259,20 @@ export function checkStanceRow(
       }
     }
   }
-  if ((row.source_urls.length > 0 && row.source_urls.every(isBallotpediaUrl))
-    || (evidenceUrls.length > 0 && evidenceUrls.every(isBallotpediaUrl))) {
+  // A Ballotpedia URL is still "only a bio" unless it is a survey deep link whose cited snippets are all
+  // inside the survey section (both tests; see C57 above).
+  const isBioOnlyUrl = (url: string): boolean => {
+    if (!isBallotpediaUrl(url)) return false;
+    if (!isCandidateConnectionUrl(url)) return true;
+    const section = ctx.surveySections?.[withoutFragment(url)] ?? null;
+    const snippets = ctx.evidence.filter((e) => e.source_url.trim() === url.trim());
+    return !(snippets.length > 0 && snippets.every((e) => passageInSurveySection(section, e.snippet)));
+  };
+  // A blank claims no chair and its sources are the ones the coder EXAMINED (file header), so this chair
+  // check does not apply to it. The old `!isBlank && A || B` bound the guard to A only, so a blank whose
+  // evidence was all Ballotpedia was flagged anyway (Season 2 pilot, 2026-10-07: 12 blank rows).
+  if (!isBlank && ((row.source_urls.length > 0 && row.source_urls.every(isBioOnlyUrl))
+    || (evidenceUrls.length > 0 && evidenceUrls.every(isBioOnlyUrl)))) {
     add('ballotpedia-only', 'high', 'every source (or every evidence URL) is on ballotpedia.org — cite the underlying record, filing or report Ballotpedia draws on');
   }
 
@@ -233,7 +280,9 @@ export function checkStanceRow(
   // verifier will never publish cannot be the evidence a quote or an instrument points to.
   const citedEvidence = ctx.evidence.filter((e) => cited.has(e.source_url.trim()));
 
-  if (row.evidence_type === 'record') {
+  if (isBlank) {
+    if (row.evidence_type !== 'blank') add('evidence-type-invalid', 'high', `a blank's evidence_type must be blank, got "${row.evidence_type}"`);
+  } else if (row.evidence_type === 'record') {
     if (!NAMES_INSTRUMENT.test(row.reasoning)) add('record-no-instrument', 'high', 'record evidence must name the bill, act, ordinance or recorded vote');
     // C68: citation control in the OTHER direction — naming an instrument in the reasoning is not enough;
     // it must actually appear in one of the row's cited snippets, or the citation is one-way.
@@ -256,7 +305,8 @@ export function checkStanceRow(
   } else if (row.evidence_type === 'statement') {
     add('statement-needs-review', 'medium', "statement evidence (the person's own words) goes to human review");
   } else {
-    add('evidence-type-invalid', 'high', `evidence_type "${row.evidence_type}" must be record or statement`);
+    add('evidence-type-invalid', 'high', `evidence_type "${row.evidence_type}" must be record or statement`
+      + (row.evidence_type === 'blank' ? ' — blank is only for value 0 with a blank_reason' : ''));
   }
 
   if (PARTY_NAMES.test(row.reasoning) || PARTY_PHRASES.test(row.reasoning) || PARTY_NOUNS_ANY_CASE.test(row.reasoning)) {
@@ -265,9 +315,13 @@ export function checkStanceRow(
 
   // C69: a quoted passage in the reasoning that isn't in any cited snippet is either a wrong sentence or a
   // fabricated quote — quotation marks are a promise the words were said, and this checks the promise.
-  const quotes = extractQuotedPhrases(row.reasoning).filter((q) => wordCount(q) >= 4);
+  // A quote of this topic's own served rung text is the ladder, not a claim about what the person said:
+  // codebook V6 tells coders to "cite the rung by its text" (2026-10-07, first Opus-alone batch).
+  const rungTexts = (ctx.topic?.stances ?? []).map((st) => normalizeText(st.text));
+  const quotes = isBlank ? [] : extractQuotedPhrases(row.reasoning).filter((q) => wordCount(q) >= 4);
   for (const q of quotes) {
     const nq = normalizeText(q);
+    if (rungTexts.some((t) => t.includes(nq))) continue;
     if (!citedEvidence.some((e) => normalizeText(e.snippet).includes(nq))) {
       add('quote-not-in-snippet', 'high', `reasoning quotes text not found verbatim in any cited snippet: "${q}"`);
     }
@@ -291,6 +345,7 @@ function nameCounts(politicians: BundlePolitician[]): Map<string, number> {
 
 export function checkBatch(
   rows: ResearchRow[], topics: BundleTopic[], politicians: BundlePolitician[], evidence: EvidenceRow[],
+  surveySections?: Readonly<Record<string, string | null>>,
 ): GateFinding[] {
   const topicByKey = new Map(topics.map((t) => [normTopic(t.topic_key), t]));
   const polByName = new Map(politicians.map((p) => [normName(p.full_name), p]));
@@ -321,6 +376,7 @@ export function checkBatch(
       topic: topicByKey.get(normTopic(r.topic_key)),
       politician: polByName.get(normName(r.full_name)),
       evidence: evidence.filter((e) => stanceKey(e.full_name, e.topic_key) === key),
+      surveySections,
     });
     const n = counts.get(normName(r.full_name)) ?? 0;
     if (n > 1) {
@@ -369,6 +425,45 @@ export function toStanceRows(rows: ResearchRow[], topics: BundleTopic[], politic
       // I1: the verifier verifies only evidence on these URLs; I2: evidence_type is stored on the review row.
       evidence_type: r.evidence_type,
       source_urls: r.source_urls,
+      // Only on a row that carries one, so a chair's stance row keeps its old shape.
+      ...(r.blank_reason?.trim() ? { blank_reason: r.blank_reason.trim() } : {}),
     };
   });
+}
+
+/**
+ * Comparable form of a URL for "did the coder examine this page": scheme, `www.`, a trailing slash
+ * and the fragment do not make a different page. Unparseable input is compared as trimmed text.
+ */
+export function canonicalUrl(url: string): string {
+  try {
+    const u = new URL(url.trim());
+    const host = u.hostname.toLowerCase().replace(/^www\./, '');
+    const path = u.pathname.replace(/\/+$/, '');
+    return `${host}${path}${u.search}`;
+  } catch { return url.trim(); }
+}
+
+/**
+ * blank-unexamined-fallback (spec §3.3; operator ruling 2026-10-07 Q3): a blank may remove a chair
+ * voters see only after the coder examined THAT chair's own cited sources. `fallbackSources` are the
+ * displayed chair's context sources; `fetchable` says which of them still load (a dead page cannot
+ * be examined, so it is not required). Pure; the verifier supplies both, because only it can read
+ * what voters see and fetch the pages. Returns null when the rule is met.
+ */
+export function checkBlankExaminedFallback(args: {
+  row: Pick<ResearchRow, 'full_name' | 'topic_key' | 'source_urls'>;
+  displayedValue: number;
+  fallbackSources: string[];
+  fetchable: (url: string) => boolean;
+}): GateFinding | null {
+  const examined = new Set(args.row.source_urls.map(canonicalUrl));
+  const missing = [...new Set(args.fallbackSources.map((u) => u.trim()).filter(Boolean))]
+    .filter((u) => !examined.has(canonicalUrl(u)) && args.fetchable(u));
+  if (missing.length === 0) return null;
+  return {
+    full_name: args.row.full_name, topic_key: args.row.topic_key, check_id: 'blank-unexamined-fallback', severity: 'high',
+    what: `this blank would remove chair ${args.displayedValue}, but the coder did not examine ${missing.length} of that chair's `
+      + `cited sources that still load — add them to the batch and re-code: ${missing.join(' ')}`,
+  };
 }

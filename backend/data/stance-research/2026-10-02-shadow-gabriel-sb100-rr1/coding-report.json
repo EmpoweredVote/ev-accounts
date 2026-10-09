@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Assembly service dates for Jesse Gabriel covering August 2018 (earlier term start is recorded with unknown precision), to confirm the 2018 vote is in-term under V5"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "f173ce9a-6941-4570-bd3f-97bc1157beaf|2d462db5-4c4d-4d52-90bb-572851612368|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "California Assembly service dates for Jesse Gabriel covering August 2018 (earlier term start is recorded with unknown precision), to confirm the 2018 vote is in-term under V5"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

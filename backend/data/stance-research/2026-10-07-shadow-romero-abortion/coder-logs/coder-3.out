@@ -1,0 +1,15 @@
+I wrote the coder-3 labels file for the Romero / abortion row. It is JSON only, with `codebook_version` "0.4" and `coder_slot` 3. I haven't validated the file against the code checks.
+
+**Result: BLANK `direction-only`.** Romero's own words show she supports abortion rights, but none of them state a gestational limit or an exception. That means they don't separate the rungs. `rests_on` is empty.
+
+- **KGUN, Arizona Supreme Court ruling (`e3da31ad…`):** `own-words`, `statement-other`, `adjacent`, `rhetorical`, undated. Her quote is a reaction to the ruling and names no policy clause.
+- **AZPM, Tucson council resolution (`c54a7b69…`):** `own-words`, `statement-other`, `on-question`, `direction-only`, 2022-06, `in-term`. The quote supports "abortion rights and the right to choose" and says nothing about stage or exceptions. The resolution itself is reported only by news, so I did not code it as a record (H15).
+- **KGUN, Mayor-led resolution (`5ac42baa…`):** `own-words`, `statement-other`, `on-question`, `direction-only`, undated. The text gives the June 7 meeting but not the year, so I left the date null and coded it `undated`.
+
+I coded `in-term` for the 2022 passage on the assumption that Romero was mayor then. The term dates in the prompt are "unknown", so that is my inference, not something the sources state.
+
+**`needs_source`:**
+- The text of the Tucson resolution, June 7, 2022.
+- A first-person statement, questionnaire answer or issue page from Romero that states a gestational limit and exceptions.
+
+**Quotes:** I wrote two, both V7 `none` with `v8_quotable` false and code `non-differentiating-goal`; the first also carries `off-question`. Both are verbatim spans from the snapshots.

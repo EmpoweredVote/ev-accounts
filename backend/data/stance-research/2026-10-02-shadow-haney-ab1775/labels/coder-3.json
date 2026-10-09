@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+      "passages": [
+        {
+          "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "Authors AB 1775, amending B&P Code Section 26200 to let local jurisdictions permit noncannabis food/beverage sales and live performances at already-licensed cannabis consumption lounges, an ancillary operations matter, not the legality/regulatory-model question the rungs order.",
+          "record_kind": "author",
+          "actor_quote": "AB 1775, Haney.",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-08-28",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "Near-unanimous Aye vote (63-5) on final concurrence in Senate amendments to his own AB 1775, covering the same ancillary consumption-lounge provisions; does not address the ladder's legalization/regulatory-model dimension.",
+          "record_kind": "vote",
+          "actor_quote": "Garcia, Gipson, Grayson, Haney, Hart, Holden",
+          "tally_quote": "Ayes Count 63 Noes Count 5"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only sources are Haney's authorship of, and Aye vote on, AB 1775 (2023-2024), which amends Business and Professions Code Section 26200 to let local jurisdictions authorize licensed cannabis retailers and microbusinesses to sell noncannabis food and beverages and host live performances in existing consumption areas. This operates entirely within the state's already-licensed, taxed commercial cannabis market and speaks only to ancillary business authorizations, not to whether cannabis should be kept 'fully illegal,' limited to 'medical use,' decriminalized with 'civil fines,' regulated through a 'licensed, taxed commercial market,' or treated as 'an ordinary legal product with minimal restrictions' -- the dimension the rungs order. No passage establishes a chair.",
+      "needs_source": [
+        "Haney's own statement, questionnaire answer, or a chair-shaped record (bill/vote) addressing cannabis's legal status or regulatory model (criminal penalties, medical-only, decriminalization, commercial licensing/taxation level, or minimal-restriction deregulation)."
+      ],
+      "quotes": []
+    }
+  ]
+}

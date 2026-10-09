@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "A chair-shaped Becker instrument on expanding clean energy itself (a clean-energy mandate or deadline bill, a subsidy/public-investment bill, or a permitting/grid bill) with the CA Legislature vote page and bill text",
+          "Becker's own words answering how much government should do to expand clean energy (issue page, questionnaire, or debate answer)",
+          "Becker's own words or a record (vote, sponsorship, authorship) on a bill addressing clean-energy mandates, subsidies, permitting, or market neutrality"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "64eda290-d172-48de-8827-6ebca668cf5a|69fb6f34-c702-43fb-84fd-93418b521fe4|f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "requests": [
+        "A chair-shaped Becker instrument on expanding clean energy itself (a clean-energy mandate or deadline bill, a subsidy/public-investment bill, or a permitting/grid bill) with the CA Legislature vote page and bill text",
+        "Becker's own words answering how much government should do to expand clean energy (issue page, questionnaire, or debate answer)",
+        "Becker's own words or a record (vote, sponsorship, authorship) on a bill addressing clean-energy mandates, subsidies, permitting, or market neutrality"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

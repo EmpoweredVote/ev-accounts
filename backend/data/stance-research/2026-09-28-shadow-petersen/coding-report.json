@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Arizona Senate or House roll call or sponsorship by Petersen on a bill that sets a gestational limit on abortion (e.g. the 2022 15-week measure), with the vote page and the bill text",
+          "An Arizona roll call or sponsorship by Petersen on a bill that defines abortion exceptions (rape, incest, life of the mother), with the vote page and the bill text",
+          "Petersen's own words answering how the law should handle abortion by stage of pregnancy or by exception (questionnaire, debate answer, or first-person issue page), dated in his current term or the campaign that seated him",
+          "Petersen's own vote, sponsorship, or statement on a bill or policy that sets a general gestational limit or exception structure for abortion (e.g., a bill banning abortion after a set point in pregnancy, a total ban, or a statement on rape/incest/life exceptions).",
+          "A vote, sponsorship, or statement by Petersen addressing Arizona's general gestational abortion limit (e.g., a comprehensive gestational-week ban) to establish a chair on this ladder."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "49b806b1-f15d-4998-a94e-de542d9e323e|8371ec8f-eb82-4726-81a1-fce6dab10808|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "An Arizona Senate or House roll call or sponsorship by Petersen on a bill that sets a gestational limit on abortion (e.g. the 2022 15-week measure), with the vote page and the bill text",
+        "An Arizona roll call or sponsorship by Petersen on a bill that defines abortion exceptions (rape, incest, life of the mother), with the vote page and the bill text",
+        "Petersen's own words answering how the law should handle abortion by stage of pregnancy or by exception (questionnaire, debate answer, or first-person issue page), dated in his current term or the campaign that seated him",
+        "Petersen's own vote, sponsorship, or statement on a bill or policy that sets a general gestational limit or exception structure for abortion (e.g., a bill banning abortion after a set point in pregnancy, a total ban, or a statement on rape/incest/life exceptions).",
+        "A vote, sponsorship, or statement by Petersen addressing Arizona's general gestational abortion limit (e.g., a comprehensive gestational-week ban) to establish a chair on this ladder."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

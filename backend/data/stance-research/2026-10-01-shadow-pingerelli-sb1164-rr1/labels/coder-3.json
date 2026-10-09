@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "office_id": "87c65dff-fa5b-4d7a-a7bc-d78595d2f506",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading vote list shows PINGERELLI voting Y; bill passed 31-26-3-0-0.",
+          "record_kind": "vote",
+          "actor_quote": "PINGERELLI Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "89a47096-9e0c-51ea-89fc-ffed87200c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview confirms House passage 31-26-3-0-0 on 03/24/2022 and governor's signature 03/30/2022; does not list individual legislators.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 03/24/2022 31-26-3-0-0 PASSED"
+        },
+        {
+          "snapshot_id": "f1403cb4-c530-5152-b92d-73f71cebf5b0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Session law sets a 15-week gestational limit with a medical-emergency-only exception; no rape/incest exception; silent on abortion before 15 weeks.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 1164 (2022), which Pingerelli voted Aye on at House Third Reading (31-26-3-0-0) and which was signed into law, prohibits abortion after fifteen weeks' gestation except in a medical emergency, with no exception for rape or incest. Fifteen weeks falls between the clause boundaries of 'allow abortion during the first trimester' and 'keep abortion legal through the second trimester,' so the record shows a restrictive direction but does not match either rung's exact cutoff and exception clause.",
+      "needs_source": [
+        "Pingerelli's own statement (floor speech, interview, questionnaire) tying the fifteen-week cutoff to a specific trimester or rung, if one exists"
+      ],
+      "quotes": []
+    }
+  ]
+}

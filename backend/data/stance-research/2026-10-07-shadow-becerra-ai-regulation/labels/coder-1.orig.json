@@ -1,0 +1,159 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "5115c4ea-0272-5889-b840-1c577f97b5e8",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person campaign AI issue page: 'firm guardrails', enforcing existing law, and 'transparency and human review standards for high-stakes automated decisions' put him on the pro-oversight side, but transparency/human review is not required pre-use safety testing, 'hold accountable' names no liability rule, and state-agency audits are government's own use.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "98e82c89-da2b-5ac5-a847-167dbea9748d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer on AI asks for 'guardrails' and 'real enforcement' against Hilton's position; it rules out rung 1 but names no clause that separates rungs 3, 4 or 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5a2a8a6e-4b93-5de5-8e36-10ca20d2588f",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer: 'establish a clear set of rules' with industry 'without imposing the type of regulation that would move them over to places like China' leans against heavy regulation while favouring rules; names no rung clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "5c45c66e-f81a-5f3d-b460-3d82a0ffb7e5",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum remarks: 'let them innovate' but 'we do have to set the rules of the road' — a side, no mechanism.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ea34d182-d1d2-53f8-937e-3734092852d6",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Film-industry page supports AI-use disclosure by productions and likeness rights; disclosure-only duties fit no rung (annex ruling 2026-09-01).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3dd0aca9-6cfa-561c-aa71-2e31d94235ba",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Supports a law on children's social-media addiction; social media, not AI development or deployment.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Becerra's own words consistently call for 'firm guardrails' and 'real enforcement', which rules out 'Allow AI companies to develop and deploy technology freely without government interference', but none states a clause of one rung: 'transparency and human review standards for high-stakes automated decisions' is not 'Require safety testing before AI can be used in high-stakes areas', and 'hold accountable any company' names no legal liability rule for harm. Excluding rung 1 alone shows only the pro-oversight side.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "5115c4ea-0272-5889-b840-1c577f97b5e8",
+          "text": "My administration will pursue transparency and human review standards for high-stakes automated decisions that significantly affect a person’s livelihood, health, housing, or freedoms that are clear, proportionate, and workable.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "5115c4ea-0272-5889-b840-1c577f97b5e8",
+          "text": "we will set firm guardrails around real harms, including threats to critical infrastructure, child safety, and harms that could emerge when AI accelerates dangerous capabilities or operates beyond human oversight.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "5115c4ea-0272-5889-b840-1c577f97b5e8",
+          "text": "I will direct the full resources of my Administration and use its platform to hold accountable any company willing to put profits ahead of children’s safety.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "98e82c89-da2b-5ac5-a847-167dbea9748d",
+          "text": "And Steve, it's not a gimmick to ask for guardrails. It's the real thing.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "5a2a8a6e-4b93-5de5-8e36-10ca20d2588f",
+          "text": "we'll do this without imposing the type of regulation that would move them over to places like China.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "ea34d182-d1d2-53f8-937e-3734092852d6",
+          "text": "I will support state requirements that productions disclose how AI is being used, that gives performers enforceable rights over their own likenesses, and that ensures the people whose work trained these systems are compensated for it.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": ["source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

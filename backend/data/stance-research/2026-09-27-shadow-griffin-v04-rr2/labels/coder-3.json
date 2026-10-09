@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "188c386e-087b-4587-9510-da7fc5805575",
+      "office_id": "b68ffd33-82dd-4eba-adee-6a853f7fc882",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "bd92bde7-63c0-58d1-9cf6-d40adba823e1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "off",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": null,
+          "note": "Bill overview page lists Griffin as prime sponsor of HB2756, a utility high-load-customer rate bill that never names data centers.",
+          "record_kind": "sponsor",
+          "actor_quote": "Griffin (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "808d1653-39ab-5fb6-ae74-30fd1d32f1ca",
+          "v1_attribution": "own-act",
+          "v2_relevance": "off",
+          "v3_class": "record",
+          "date": "2026-06-01",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": null,
+          "note": "House final reading vote page shows Griffin voting Yea on the same high-load-customer utility bill.",
+          "record_kind": "vote",
+          "actor_quote": "GRIFFIN Y",
+          "tally_quote": "Passed 39-16-5-0-0"
+        },
+        {
+          "snapshot_id": "5ba60589-f014-530e-82f5-4339c10261a9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "off",
+          "v3_class": "record",
+          "date": "2026-06-04",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB 2756 (2026)",
+          "provision_quote": null,
+          "note": "Enacted bill text (Chapter 111) sets reporting and rate-structure rules for 'extra high load factor customers' but never uses the term data center.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "HB 2756 (2026), which Griffin prime-sponsored and voted Yea on at final passage, regulates cost allocation and interconnection reporting for 'extra high load factor customers' generally and never names data centers. Per the annex, 'a provision about large-load utility customers that never names data centers is not about data centers,' so none of these passages speak to the ladder's question of how government should manage the growth of large-scale data centers.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+    "topic_key": "jail-capacity",
+    "topic_revision_id": "f63a4e70-055e-4115-a5e0-3deeb5748816",
+    "served_revision_id": "7992fadf-a24c-4f73-bd34-76b5bca4764b",
+    "question_number": 17,
+    "title": "Jail Capacity and Incarceration Alternatives",
+    "question_text": "How should government respond to jail overcrowding and criminal justice demand?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Redirecting incarceration funding into community-based mental health, addiction, housing, and restorative justice programs to shrink the jail system"
+      },
+      {
+        "value": 2,
+        "text": "Reducing the incarcerated population through alternatives to incarceration rather than building new capacity"
+      },
+      {
+        "value": 3,
+        "text": "Upgrading jail facilities only as needed to meet constitutional standards, without expanding overall capacity"
+      },
+      {
+        "value": 4,
+        "text": "Building additional jail capacity to address overcrowding and facility deficiencies"
+      },
+      {
+        "value": 5,
+        "text": "Expanding jail capacity as the primary response to crime, prioritizing detention over alternatives"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "federal"
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-09-30-shadow-ward-rr2",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202120220SCA10",
+      "source_kind": "public-record",
+      "politician_id": "1ee95c1d-6127-494b-9f68-e8b3c975adee",
+      "office_id": "5b95be8c-1634-43ab-acb5-f904b859a5ef",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SCA 10 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2021-sca10-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202120220SCA10",
+      "source_kind": "public-record",
+      "politician_id": "1ee95c1d-6127-494b-9f68-e8b3c975adee",
+      "office_id": "5b95be8c-1634-43ab-acb5-f904b859a5ef",
+      "topic_keys": [
+        "abortion"
+      ],
+      "instruments": [
+        "SCA 10 (2021-2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2021-sca10-votes.txt"
+    }
+  ]
+}

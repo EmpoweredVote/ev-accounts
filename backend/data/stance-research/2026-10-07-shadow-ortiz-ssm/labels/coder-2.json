@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "bb540c4b-e5d2-40b9-bdaf-e41a721572f8",
+      "office_id": "61fd47dd-1cd3-4be9-a53e-2558dd662edf",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "9d21a2d3-c445-56b1-b4cb-e4d1371dfcd9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HCR 2017 (2024)",
+          "provision_quote": "Marriage between two individuals shall not be prohibited or void on the basis of the sex, race, ethnicity or national origin of those individuals.",
+          "note": "Co-sponsored House concurrent resolution securing the right to marry with no anti-discrimination clause; earlier House term, same legislature.",
+          "record_kind": "sponsor",
+          "actor_quote": "Ortiz A",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9388236a-4422-500f-8870-366702b726df",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SCR 1024 (2025)",
+          "provision_quote": "Marriage between two individuals shall not be prohibited or void on the basis of the sex, race, ethnicity or national origin of those individuals.",
+          "note": "Co-sponsored Senate concurrent resolution with the same operative text, in the current Senate term.",
+          "record_kind": "sponsor",
+          "actor_quote": "Gabaldón, Ortiz",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "9d21a2d3-c445-56b1-b4cb-e4d1371dfcd9",
+        "9388236a-4422-500f-8870-366702b726df"
+      ],
+      "reasoning": "Ortiz co-sponsored HCR 2017 (2024) and SCR 1024 (2025), each proposing that marriage between two individuals not be prohibited or void on the basis of sex, which secures same-sex marriage in the constitution. That matches \"Guarantee same-sex marriage the same benefits and protections as any other marriage\"; neither measure has an anti-discrimination clause, so it is not the full-equality rung, and neither has a religious carve-out.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

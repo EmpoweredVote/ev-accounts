@@ -1,0 +1,58 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5922a7c4-65a4-46da-acb2-6df183e596b2|dd704aff-ea11-4e9c-a290-3debbe40671e|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 5,
+        "shared_sources": [
+          "06efabe0-e0ba-53d3-beb5-dd56c75e0d2f",
+          "90cc52c9-d3d6-5bd9-9fdb-cb4fe4446e99",
+          "e72d0989-fd58-555d-b39c-785354666904"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "in-iga-bill-details@4",
+        "in-iga-roll-call@2"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

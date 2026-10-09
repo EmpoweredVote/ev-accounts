@@ -1,0 +1,10 @@
+Written: `labels/coder-1.json`.
+
+**Row — voting-rights, Alma Hernandez (AZ State Rep): BLANK `direction-only`.**
+
+- **Passages:** the HB 2492 vote detail (`HERNANDEZ A N`, `Passed 31-26-3-0-0`, 2022-02-28), the chaptered bill text (provision quote from the amended §16-101 citizenship clause), and the bill overview page. All three sit in one instrument group, `HB 2492 (55th Legislature, 2nd Regular Session, 2022)`.
+- **V5:** `in-term` — the 2022 House vote falls in an earlier term of the same legislature (V5 option B, 0.4).
+- **Why blank:** a No vote places her against rung 5 ("Require documentary proof of citizenship to register to vote.") and nothing further. It does not separate rung 1 from rungs 2–4, and V4.2 forbids reaching a rung by ruling the others out. The tally (26 of 60 against) is not near-unanimous, so that rule is not what blocks it — the vote's direction is.
+- **Overview page:** coded `namesake-unclear` — it lists sponsors and the governor's signature but never names her, so it establishes no act of hers on its own.
+- **needs_source:** an Arizona instrument she sponsored or voted on that *sets* an identification requirement, or her own words answering the ladder's question.
+- **quotes:** empty — no own-words passage was supplied.

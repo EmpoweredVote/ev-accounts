@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e8bdd8a7-a1b2-43e3-afd4-df975980819e|54a4ad72-bcd1-4fe1-b684-bfa7e72152fc|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Assembly floor roll call on a universal background check bill (Penal Code firearm transfer provisions), showing Lackey's vote",
+          "California Assembly floor roll call on an assault-weapon or semi-automatic rifle restriction bill, showing Lackey's vote",
+          "California Assembly floor roll call on a concealed-carry permit bill (e.g. CCW issuance or permit reciprocity), showing Lackey's vote",
+          "Lackey's own first-person words on background checks, assault-style weapons, or carry permits (questionnaire, issue page, or floor statement)",
+          "A vote, sponsorship, or own-words statement addressing firearm ownership scope, weapon-type restrictions, background-check requirements, or carry-permit rules"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e8bdd8a7-a1b2-43e3-afd4-df975980819e|54a4ad72-bcd1-4fe1-b684-bfa7e72152fc|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "California Assembly floor roll call on a universal background check bill (Penal Code firearm transfer provisions), showing Lackey's vote",
+        "California Assembly floor roll call on an assault-weapon or semi-automatic rifle restriction bill, showing Lackey's vote",
+        "California Assembly floor roll call on a concealed-carry permit bill (e.g. CCW issuance or permit reciprocity), showing Lackey's vote",
+        "Lackey's own first-person words on background checks, assault-style weapons, or carry permits (questionnaire, issue page, or floor statement)",
+        "A vote, sponsorship, or own-words statement addressing firearm ownership scope, weapon-type restrictions, background-check requirements, or carry-permit rules"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

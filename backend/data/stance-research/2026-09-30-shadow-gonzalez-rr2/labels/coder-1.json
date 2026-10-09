@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "b9379b8b-cb68-500a-a099-8922f2af98a7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1137 (2021-2022)",
+          "provision_quote": "commencing January 1, 2023, the division shall not approve any notice of intention under Section 3203 within a health protection zone",
+          "note": "A setback bar on new drilling approvals within 3,200 feet of a sensitive receptor is a geographic limit, not a jurisdiction-wide bar on new drilling.",
+          "record_kind": "author",
+          "actor_quote": "SB 1137, Gonzalez.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Gonzalez authored SB 1137 (2021-2022), which bars the division from approving notices of intention \"within a health protection zone\" — the area within 3,200 feet of a sensitive receptor — and imposes health, safety and leak-detection requirements on existing wells there. That is a siting limit on new drilling in part of the state, not \"no new drilling\" statewide, and it lets existing production continue rather than ending it, so it does not reach \"Allow no new drilling and let production decline over time\" or \"Phase out fossil fuel production entirely\"; the health, safety and emissions requirements regulate how production happens, not how much. The bill shows a side (restricting fossil fuel production) without separating the rungs on it.",
+      "needs_source": [
+        "Gonzalez's own words on the trajectory of California fossil fuel production (phase out entirely, no new drilling statewide, or hold steady) — a first-person issue page, questionnaire answer or floor statement",
+        "A Gonzalez record on a jurisdiction-wide bar on new oil and gas drilling permits or leases in California"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+      "office_id": "897087f2-4301-4097-8245-5ccb22a0ab51",
+      "topic_id": "1fcff1e8-c913-4d97-91da-1145952d7c65",
+      "served_revision_id": "f480f827-cb1f-4a2e-83cd-bef8763948b8",
+      "passages": [
+        {
+          "snapshot_id": "7cbbaca8-97e0-5214-9675-e80abe3cb28c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": "Sec. 1. (a) The governing body of a school corporation or charter school shall establish a: (1) procedure for each school to prepare a catalogue of materials available in the school library; (2) procedure for each school to allow a: (A) parent or guardian of a student enrolled in the school; or (B) community member: (i) within the school district; or (ii) within the school district in which the charter school is located; to submit a request to remove material from the school library that is obscene (as described in IC 35-49-2-1) or harmful to minors (as described in IC 35-49-2-2); and (3) response and appeal procedure for each school to respond to a removal request submitted by a parent, guardian, or community member described in subdivision (2). (b) The response and appeal procedure established under subsection (a)(3) must require the governing body to review the request at the next public meeting.",
+          "note": "Removal follows a review, but the reviewer named is the governing body (school board) itself, not a committee of educators and parents.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "551555f4-acd5-531c-b22e-8500eb58160c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-27",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Final Senate passage of a Conference Committee Report on a bill with several unrelated sections (Muncie schools, vendor-survey privacy, political neutrality, school library, harmful-to-minors criminal defenses); the Yea vote alone does not tie to the library clause.",
+          "record_kind": "vote",
+          "actor_quote": "Donato",
+          "tally_quote": "Yea 39 Education matters. Nay 10"
+        },
+        {
+          "snapshot_id": "86b38e1c-3fd5-5db9-8f93-27bf535708a6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1447 (2023)",
+          "provision_quote": null,
+          "note": "Bill details page names Donato as Senate sponsor of HB 1447, but its visible digest text describes only the third-party vendor survey privacy provision, not the library chapter.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Sen. Stacey Donato, Sen. Jeff Raatz.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [
+        "7cbbaca8-97e0-5214-9675-e80abe3cb28c",
+        "551555f4-acd5-531c-b22e-8500eb58160c",
+        "86b38e1c-3fd5-5db9-8f93-27bf535708a6"
+      ],
+      "reasoning": "As Senate sponsor of HB 1447 (2023) and a Yea vote on its Conference Committee Report, Donato acted on a bill creating IC 20-26-5.5 (School Library), which requires a parent-or-community-member removal request to be reviewed by 'the governing body' at the next public meeting. This tracks rung 3's clause that removal follow a review, but not its clause that the reviewer be 'a review committee of educators and parents,' since the named reviewer is the governing body itself; the bill's other sections are unrelated to this clause.",
+      "needs_source": [
+        "Donato's own floor statement or explanation of vote tying her support to the school-library provision of HB 1447 (2023), since the bill also covers unrelated Muncie-schools, student-survey-privacy, and political-neutrality provisions"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "43e734b4-4417-4dcd-91c9-f420f3a1b702",
+      "office_id": "f7cad0ce-e9af-46a1-a39d-d5d4520d3879",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "5bd9b1c9-1855-5ee6-a5aa-b3215b6e9eb3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-04-03",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Livingston voting Y on SCR1040, a tipped-worker subminimum-wage bill, not this ladder's general wage-floor question.",
+          "record_kind": "vote",
+          "actor_quote": "LIVINGSTON Y",
+          "tally_quote": "Passed 35-24-0-0-1 Amended"
+        },
+        {
+          "snapshot_id": "aaf0c889-8192-5e2d-beae-5259803f0021",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": "For any employee who customarily and regularly receives tips or gratuities from patrons or others, the employer may pay a wage up to twenty-five percent per hour less than the minimum wage established by statute if the employer can establish by the employer's records of charged tips or gratuities or by the employee’s declaration for federal insurance contributions act purposes that for each week, when adding tips or gratuities received to wages paid, the employee received not less than the minimum wage plus $2 for all hours worked.",
+          "note": "Operative text sets a tipped-worker tip-credit formula (up to 25% below minimum wage); it speaks to subminimum wage for tipped workers, a dimension this ladder does not order.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b0246426-bf3f-59b0-b47b-1a9a378b8052",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "Bill status page confirms SCR1040 (tipped workers; wages) passed the House 35-24 on 04/03/2024; same tipped-wage carve-out, off this ladder's dimension.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 04/03/2024 35-24-0-0-1 Amended PASSED"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only record evidence is Livingston's Y vote on SCR1040, a 2024 measure letting employers pay tipped workers up to 25% less than the statutory minimum wage when tips make up the difference. This is a tipped-worker tip-credit formula, not the general wage-floor approach (automatic indexing, legislative increases, state-vs-federal floors, holding the floor while the market sets pay above it, or removing the floor) the five rungs separate on, so every passage is adjacent under V2 and none can support a chair.",
+      "needs_source": [
+        "Livingston's own act (vote, sponsorship, or signed statement) on a general minimum-wage-floor bill, not a tipped-worker subminimum-wage carve-out",
+        "Livingston's own words on the general minimum wage question (questionnaire, debate answer, or issue page)"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+Coded and written to `labels/coder-1.json`.
+
+**Row: Shannon Grove / judicial-criminal-justice — BLANK `direction-only`**
+
+One passage, the chaptered text of SB 14 (2023-2024):
+
+- **V1 `own-act`** — the digest line `SB 14, Grove. Serious felonies: human trafficking.` names her as author of a California Senate bill; office and jurisdiction match the seat.
+- **V2 `on-question`** — the ladder asks how the system should respond to lawbreaking, and the bill sets the severity of the response.
+- **V3 `record`**, `record_kind: author`, instrument `SB 14 (2023-2024)`. No `tally_quote`: the snapshot is the bill-text page, not a vote page, and the record group is authorship, not a vote.
+- **V5 `in-term`** — approved 2023-09-25, inside the term that began 2022-12-05.
+- **V4 `direction-only`** — this is where the row stops. The bill adds one offense to the serious-felony list for Three Strikes purposes. That is punitive in direction, but it does not separate "real consequences — accountability is the priority" from "the toughest penalties the law allows," and the victim carve-out plus the Legislature's stated intent "to protect victims of human trafficking and ensure they are not themselves criminalized" leaves "some people need support, some need consequences" live as well. Seating rung 4 here would be the tiebreaker move V4.2 forbids.
+
+`rests_on` is empty, consistent with the blank. `needs_source` asks for her own words on the general question, the SB 14 floor vote page, and further in-term sentencing records.

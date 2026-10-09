@@ -1,0 +1,76 @@
+{
+  "batch_id": "2026-09-28-shadow-mesnard-sb1305",
+  "seat": {
+    "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+    "full_name": "J.D. Mesnard",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+    "office_title": "State Senator",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": null,
+        "start_precision": "unknown",
+        "term_end": "2019-01-14"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2019-01-14",
+        "start_precision": "day",
+        "term_end": "2021-01-11"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2021-01-11",
+        "start_precision": "day",
+        "term_end": "2023-01-08"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "topic_key": "education-curriculum",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "question_text": "How should schools handle contested topics like race, gender, and history in what they teach?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require lessons that center race, gender, and social justice as themes across the curriculum"
+        },
+        {
+          "value": 2,
+          "text": "Teach an honest account of racism, injustice, and diverse identities as part of the core curriculum"
+        },
+        {
+          "value": 3,
+          "text": "Present contested social and historical topics as open questions, giving competing viewpoints equal weight"
+        },
+        {
+          "value": 4,
+          "text": "Keep the curriculum focused on core academics and leave contested social topics to families"
+        },
+        {
+          "value": 5,
+          "text": "Prohibit lessons on race, gender, or sexuality that the community considers divisive or age-inappropriate"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4|c92c53b0-c0f9-4a30-a060-2996e90bf811|c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic_key": "rent-regulation",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 2,
+        "shared_sources": [
+          "e2dfc4e8-d2ba-5c38-8740-bf578dd693da",
+          "fdb62213-b720-5b80-ac0e-421966fb5a2f"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "ca-leginfo-bill-text@1",
+        "ca-leginfo-bill-votes@1"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

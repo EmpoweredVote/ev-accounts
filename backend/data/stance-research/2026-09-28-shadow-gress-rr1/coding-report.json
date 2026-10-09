@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "5293ff0f-0365-4943-89a5-f4017566c8dd|4021cde6-9098-442f-8126-55f6377a328f|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Arizona House roll call on a bill setting or repealing a firearm background-check requirement, 2023-2026 sessions",
+          "Arizona House roll call on a bill on carrying a firearm without a permit or on out-of-state permit reciprocity, 2023-2026 sessions",
+          "Gress's own words answering how firearms should be regulated (candidate questionnaire, debate answer, or first-person issue page)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "5293ff0f-0365-4943-89a5-f4017566c8dd|4021cde6-9098-442f-8126-55f6377a328f|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "Arizona House roll call on a bill setting or repealing a firearm background-check requirement, 2023-2026 sessions",
+        "Arizona House roll call on a bill on carrying a firearm without a permit or on out-of-state permit reciprocity, 2023-2026 sessions",
+        "Gress's own words answering how firearms should be regulated (candidate questionnaire, debate answer, or first-person issue page)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

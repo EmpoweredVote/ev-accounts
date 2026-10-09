@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+      "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "passages": [
+        {
+          "snapshot_id": "fdb62213-b720-5b80-ac0e-421966fb5a2f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-09-11",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": null,
+          "note": "Assembly Floor concurrence vote lists Robert Rivas among the Ayes, distinct from Luz Rivas.",
+          "record_kind": "vote",
+          "actor_quote": "Luz Rivas, Robert Rivas, Rodriguez",
+          "tally_quote": "Ayes Count 48 Noes Count 26"
+        },
+        {
+          "snapshot_id": "e2dfc4e8-d2ba-5c38-8740-bf578dd693da",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2019-10-08",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1482 (2019-2020)",
+          "provision_quote": "This bill would, until January 1, 2030, prohibit an owner of residential real property from, over the course of any 12-month period, increasing the gross rental rate for a dwelling or unit more than 5% plus the percentage change in the cost of living, as defined, or 10%, whichever is lower, of the lowest gross rental rate charged for the immediately preceding 12 months, subject to specified conditions.",
+          "note": "Chaptered bill text sets the statewide 5%-plus-CPI-or-10% rent cap with stated exemptions that Rivas's vote enacted.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "fdb62213-b720-5b80-ac0e-421966fb5a2f",
+        "e2dfc4e8-d2ba-5c38-8740-bf578dd693da"
+      ],
+      "reasoning": "Robert Rivas voted Aye on AB 1482 (2019-2020), a single-subject statewide cap limiting annual rent increases to 5% plus the change in the cost of living or 10%, whichever is lower, while exempting classes of units such as new construction, single-family homes, and deed-restricted affordable housing. This extends rent-cap coverage to units not previously covered by any local ordinance while leaving exempted classes outside coverage, matching 'Strengthen existing rent stabilization and extend coverage to more units' rather than 'all rental units communitywide.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

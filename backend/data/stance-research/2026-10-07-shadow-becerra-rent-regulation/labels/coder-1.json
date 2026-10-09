@@ -1,0 +1,106 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "served_revision_id": "6fa44a68-8006-48e9-b562-6b5e61d58693",
+      "passages": [
+        {
+          "snapshot_id": "647f07ff-1d93-5087-ba2c-593ccce29a39",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "First-person campaign issue page pledges to enforce the Tenant Protection Act and back local rent control within the statewide framework; it rules out rungs 4-5 but never says whether coverage should be expanded or that new construction should rent at market rates.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e4b34423-1e70-52af-9b45-85755fda13f4",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Pledges to enforce the Tenant Protection Act and preserve local rent control ordinances 'consistent with the statewide framework that encourages continued housing construction'; leans toward maintaining the status quo but states neither 'no expansion' nor 'market rents for new construction' (silence is not a clause).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "960f1f39-0abf-50f3-8245-d3ddf7a46c81",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-04-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate remarks on keeping renters housed via rental assistance and on building supply do not address rent regulation coverage.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "cc4761c1-8cff-5f2c-8791-7c8e5c2002b6",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Promise to 'protect renters and homeowners from displacement' after disasters names no rent rule.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0222bb3f-3a98-5fdb-a7ed-d5b8411a21e1",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Energy and utility bills page; nothing on rents.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own issue pages say he will enforce the Tenant Protection Act and 'stand behind communities that have chosen to protect renters through local rent control, within the statewide framework that keeps housing construction moving forward', which places him on the pro-regulation side and rules out 'Limit rent regulations to subsidized units' and 'Oppose rent control entirely'. They do not say whether coverage should 'extend … to more units' or be held at current protections 'while allowing market rents for new construction', so the words do not separate 'Strengthen existing rent stabilization' from 'Maintain current tenant protections'.",
+      "needs_source": [
+        "Becerra's own words (questionnaire or debate answer) on expanding rent control coverage or on Costa-Hawkins / exempting new construction"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "647f07ff-1d93-5087-ba2c-593ccce29a39",
+          "text": "I will enforce those protections fully and stand behind communities that have chosen to protect renters through local rent control, within the statewide framework that keeps housing construction moving forward.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

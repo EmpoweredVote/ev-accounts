@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-voting-rights-r3",
+  "seat": {
+    "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+    "full_name": "Matt Pierce",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2002-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "served_revision_id": "2a18c152-67a0-4380-a381-cb8795110a7c",
+      "question_text": "How should the government verify a voter's identity and eligibility?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require no identification to vote, verifying voters by signature or existing records."
+        },
+        {
+          "value": 2,
+          "text": "Accept non-photo identification, such as a utility bill or bank statement."
+        },
+        {
+          "value": 3,
+          "text": "Require photo ID to vote, but let voters without one cast a ballot after signing an affidavit."
+        },
+        {
+          "value": 4,
+          "text": "Require photo ID in person and an ID number on every mail ballot."
+        },
+        {
+          "value": 5,
+          "text": "Require documentary proof of citizenship to register to vote."
+        }
+      ],
+      "own_words_levels": [
+        "local"
+      ],
+      "annexMd": "# voting-rights — served revision 2a18c152-67a0-4380-a381-cb8795110a7c (Season 2)\n\n**Status:** draft (2026-10-01 refresh of the 2026-09-26 draft). Lines marked _(proposed)_ are a\ndrafter's reading, not yet ruled; lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should the government verify a voter's identity and eligibility?\"\n\n**Orientation:** standard. Rung 1 requires the least identification, rung 5 the most. Rungs 1–4\norder **what identification a voter must show to vote**; rung 5 moves to **registration** and asks for\ndocumentary proof of citizenship.\n\n**Levels with a lever:** federal, state. The lever is state: election codes set\nID and registration rules. Federal law sets registration and mail-ballot rules for federal elections.\nLocal governments run elections but, in most states, cannot set their own ID rules.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"voter identification\", \"voter ID\", \"photo identification\", \"strict photo ID\",\n\"proof of citizenship\", \"documentary proof of citizenship\" (DPOC), \"SAVE Act\", \"signature\nverification\", \"signature match\", \"HAVA identification\", \"affidavit\", \"reasonable impediment\ndeclaration\", \"provisional ballot\", \"cure\", \"ID number\" (driver's licence number, last four digits of\nthe SSN).\n\n1. **\"Require no identification to vote, verifying voters by signature or existing records.\"**\n   - Means: voters show no ID; officials check them against signatures or the records on file.\n   - Operative clauses: [a] no ID at the polls; [b] signature or record matching instead.\n   - Establishing evidence looks like: a bill that removes an existing state ID requirement; own words\n     against any ID. [a] is an absence clause and must be stated (V4.2).\n   - Levels that hold a lever: state; federal (federal elections).\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 when the person only opposes **photo** ID.\n   - Commonly confused with BLANK when the bill forbids **local** ID rules: that is preemption (see\n     hard cases), not \"require no identification\".\n\n2. **\"Accept non-photo identification, such as a utility bill or bank statement.\"**\n   - Means: an ID is required, and documents without a photo are accepted.\n   - Operative clauses: [a] ID required; [b] non-photo documents accepted.\n   - Establishing evidence looks like: a bill that widens the accepted list to non-photo documents; a\n     bill that keeps a list with non-photo documents against a move to photo only.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with BLANK when a bill amends an existing ID law without setting what ID is\n     required: the existing law's rung is not the person's position → BLANK `no-evidence`.\n\n3. **\"Require photo ID to vote, but let voters without one cast a ballot after signing an\n   affidavit.\"**\n   - Means: voters show photo ID, and a voter without one can still vote after signing a sworn\n     statement.\n   - Operative clauses: [a] photo ID required; [b] an affidavit fallback for voters without one.\n   - Establishing evidence looks like: a photo-ID law with an affidavit or reasonable-impediment\n     declaration that lets the ballot count _(proposed for the declaration)_.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 when the photo-ID law has **no** affidavit fallback. A provisional\n     ballot that counts only if the voter brings ID later is not an affidavit → not rung 3; it is rung\n     4 clause [a] only → `compound-partial` _(proposed)_.\n   - Free-ID provisions are no longer part of any rung. They do not decide the chair _(proposed)_.\n\n4. **\"Require photo ID in person and an ID number on every mail ballot.\"**\n   - Means: photo ID at the polls, and an ID number on each mail ballot.\n   - Operative clauses: [a] photo ID in person; [b] an ID number on every mail ballot.\n   - Establishing evidence looks like: a law, or two records, that cover both. Compound: one side only\n     → `compound-partial` (V4.2).\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 3: see rung 3.\n\n5. **\"Require documentary proof of citizenship to register to vote.\"**\n   - Means: a person must show a document that proves citizenship before they can register.\n   - Operative clauses: [a] documentary proof of citizenship; [b] at registration.\n   - Establishing evidence looks like: a proof-of-citizenship bill (for example the federal SAVE Act).\n     A final-passage Yea on a single-subject proof-of-citizenship bill is `chair-shaped` without\n     sponsorship (V4.1); check `near-unanimous`.\n   - Levels that hold a lever: state; federal.\n   - Known chair-shaped instruments: _(none on file)_. Code each record from its own bill text and\n     roll call.\n   - Commonly confused with rung 2 when the same bill also has weaker identity clauses. The\n     documentary-proof clause is rung 5 verbatim; code it, not the weaker clauses beside it.\n   - A rule for **registration** that is not documentary proof (an ID number, a database match, a\n     sworn statement of citizenship) matches no rung → `direction-only` _(proposed)_.\n   - The SAVE Act is rung 5 verbatim, but an encyclopedia page about it is not the person's act. Find\n     the roll call or the sponsorship (codebook V1, V6, Kennedy / voting-rights).\n\n**Hard cases:**\n- **Preemption is not the rule (codebook V2, H12).** A bill that forbids local governments to require\n  ID (California SB 1174, 2023-2024) decides *which level* may set the rule, not *what* the rule is →\n  `adjacent`; BLANK `no-evidence` when nothing else survives. Three coders read it as rung 1, twice;\n  only V2 catches it.\n- **Ballots, not voters.** Rules about the ballot itself (paper, design, security marks, counting,\n  tabulators) do not verify a voter → `adjacent`.\n- **A mail-ballot rule with no identity clause** (drop boxes, deadlines) → `adjacent` (codebook V2).\n- **A No vote** on an ID or proof-of-citizenship bill shows only that the person did not want that bill\n  → BLANK `direction-only`.\n- **Roll maintenance and eligibility** (removing inactive registrations, citizen-only voting\n  amendments, non-citizen voting in local elections) do not set how identity is verified →\n  `adjacent` _(proposed)_.\n- **An omnibus election bill** that includes an ID clause → V4 `multi-subject`.\n"
+    }
+  ]
+}

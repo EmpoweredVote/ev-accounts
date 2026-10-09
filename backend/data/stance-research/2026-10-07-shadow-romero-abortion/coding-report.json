@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "27e6aaca-8af5-4ec5-a30b-ac4aa19d2df5|1ffda701-1dcc-44ef-a8d9-c9e270f67432|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Romero's own words (questionnaire, issue page, interview) stating whether abortion should be legal with no gestational limit or up to a named point",
+          "Tucson Mayor and Council resolution on reproductive and abortion rights (June 7, 2022), full text and Romero's vote",
+          "Romero's own first-person statement or questionnaire answer on gestational limits",
+          "Tucson Mayor and Council resolution supporting abortion rights, June 7, 2022 (resolution text)",
+          "A first-person statement, questionnaire answer or issue page from Romero stating a gestational limit and exceptions"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "local",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "27e6aaca-8af5-4ec5-a30b-ac4aa19d2df5|1ffda701-1dcc-44ef-a8d9-c9e270f67432|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Romero's own words (questionnaire, issue page, interview) stating whether abortion should be legal with no gestational limit or up to a named point",
+        "Tucson Mayor and Council resolution on reproductive and abortion rights (June 7, 2022), full text and Romero's vote",
+        "Romero's own first-person statement or questionnaire answer on gestational limits",
+        "Tucson Mayor and Council resolution supporting abortion rights, June 7, 2022 (resolution text)",
+        "A first-person statement, questionnaire answer or issue page from Romero stating a gestational limit and exceptions"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,58 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "2785d691-2404-400e-8dde-bcc5a58e419b|6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3|d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "outcome": {
+        "kind": "unanimous-chair",
+        "value": 4,
+        "shared_sources": [
+          "58432c29-d9e9-516c-aabb-7461a3bb55c5",
+          "73b9880f-24d0-5958-bfd1-5a221ad5bcd5",
+          "bdfa6be5-27b0-5508-99cb-15186700b235"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record"
+      },
+      "shadow": "would-publish-if-certified",
+      "shadow_reasons": [],
+      "seed": "none",
+      "profiles": [
+        "az-azleg-bill-status@4",
+        "az-azleg-bill-text@2"
+      ]
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "a7675f41-2e50-413c-9864-8a64969f47f9|60ec357f-3c1b-4b58-82e7-447dd47bc111|00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Mathis's own words or an act on repeal of the Arizona empowerment scholarship account program (a repeal bill, a repeal amendment vote, or a first-person statement), which would separate the eliminate rung from the block-expansion rung",
+          "Mathis's own words on whether existing Arizona ESA accounts should be repealed outright or merely capped from further expansion, to distinguish rung 1 from rung 2 following his No vote on HB2853."
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "a7675f41-2e50-413c-9864-8a64969f47f9|60ec357f-3c1b-4b58-82e7-447dd47bc111|00b95a6a-75db-4521-b523-3326bba938de",
+      "requests": [
+        "Mathis's own words or an act on repeal of the Arizona empowerment scholarship account program (a repeal bill, a repeal amendment vote, or a first-person statement), which would separate the eliminate rung from the block-expansion rung",
+        "Mathis's own words on whether existing Arizona ESA accounts should be repealed outright or merely capped from further expansion, to distinguish rung 1 from rung 2 following his No vote on HB2853."
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

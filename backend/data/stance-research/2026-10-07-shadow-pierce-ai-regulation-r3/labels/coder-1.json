@@ -1,0 +1,77 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "7e5630d0-b022-5f96-b004-f96c69ce1cf2",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-08-29",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "A quoted remark at the AI task force asking 'what, if anything' policymakers should do about chatbot responses; it names no policy clause and takes no position on how much oversight.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e9e42855-ecb8-5106-83f3-cac15e002fed",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-06-30",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "States only that he serves on the Artificial Intelligence Task Force and that it was assigned no topics; no view on AI oversight.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "37b63bb8-ec5e-526e-97e7-8b536b1a1ec3",
+          "v1_attribution": "own-words",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": "2026-03-23",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum transcript covers democracy, housing, energy, policing and other topics; nothing on artificial intelligence.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only on-topic words are a question at the AI task force about 'what, if anything, should we be doing' about harmful chatbot responses, which names no clause of any rung (not liability for developers, not pre-use safety testing, not approval). Task force membership is not a position, and no AI bill or vote is in the sources.",
+      "needs_source": [
+        "Any AI bill Matt Pierce authored, sponsored or voted on in the Indiana House (bill text and roll call)",
+        "Pierce's own statements on AI oversight from the Artificial Intelligence Task Force minutes or video"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "7e5630d0-b022-5f96-b004-f96c69ce1cf2",
+          "text": "So, we as policymakers have to understand — how is that technology actually working to generate that kind of response and then what, if anything, should we be doing about it so those kinds of responses don't get generated",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

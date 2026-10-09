@@ -1,0 +1,91 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "6c43fdec-d084-415d-a15d-d78f48d4fb34",
+      "served_revision_id": "2146e080-bd5e-4e1e-8a51-fcc1b44af916",
+      "passages": [
+        {
+          "snapshot_id": "350a5134-adbe-50e5-86e4-90e47ae2d049",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Campaign page in third person says politicians \"added ideological curricula that crowd out basic skills\"; not his own first-person words, and it states neither a ban nor leaving topics to families.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f2b4d934-3450-57f5-80e5-5231208bbd33",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-05-15",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer on education calls for phonics, third-grade reading and teacher accountability; says nothing about how contested topics of race, gender or history are taught.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0a65c8ba-845a-5292-8d4a-c1f2d7f74a7c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-answer",
+          "date": "2026-09-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Debate answer on education repeats phonics, third-grade reading and accountability; no statement on contested curriculum content.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "273ad670-1320-579b-b8d6-e17c912fe8e4",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "off",
+          "v3_class": "statement-other",
+          "date": null,
+          "v4_shape": "off-axis",
+          "v5_time": "undated",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Plan to bar tech companies from writing curricula concerns who writes curricula, not how contested social topics are taught.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only on-question passage is the campaign page's third-person complaint about \"ideological curricula that crowd out basic skills\", which is not his own words and at most leans toward \"Keep the curriculum focused on core academics\" without the clause \"leave contested social topics to families\". His own debate answers address phonics and accountability only, which is adjacent to this ladder.",
+      "needs_source": [
+        "Steve Hilton's own first-person words (questionnaire, debate answer, or first-person issue page) on how schools should teach contested topics such as race, gender and history"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f2b4d934-3450-57f5-80e5-5231208bbd33",
+          "text": "We need to make sure we use phonics to teach kids to read.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 3,
+      "alpha": -0.33333333333333326,
+      "examples": [
+        {
+          "unit": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|af2fdfd6-02c4-49df-b09c-cf8536f4773f#89a47096-9e0c-51ea-89fc-ffed87200c23",
+          "values": [
+            "direction-only",
+            "chair-shaped",
+            "direction-only"
+          ]
+        },
+        {
+          "unit": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|af2fdfd6-02c4-49df-b09c-cf8536f4773f#9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+          "values": [
+            "direction-only",
+            "chair-shaped",
+            "direction-only"
+          ]
+        },
+        {
+          "unit": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|af2fdfd6-02c4-49df-b09c-cf8536f4773f#f1403cb4-c530-5152-b92d-73f71cebf5b0",
+          "values": [
+            "direction-only",
+            "chair-shaped",
+            "direction-only"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "184bd445-9f61-4bd3-859f-22522c9ccabd|87c65dff-fa5b-4d7a-a7bc-d78595d2f506|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+          "values": [
+            "BLANK",
+            "3",
+            "BLANK"
+          ]
+        }
+      ]
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v6_chair"
+  ]
+}

@@ -1,0 +1,10 @@
+I wrote `coder-1.json` with one row for `deportation`. The row is **BLANK, `direction-only`**, and `rests_on` is empty.
+
+- **Evidence rule:** at a state seat only her own words count for this topic.
+- **Her press-release statement (2026-01-23):** own words, in-term, `statement-other`, on-question, `direction-only`. She condemns ICE taking an asylum-seeking family and says it is not true that only "dangerous criminals" are targeted. That puts her against removal. But she never says deportations should stop entirely (rung 1), or that only people convicted of serious violent crimes should be deported (rung 2).
+- **Her quotes in the KOLD news story:** own words, `statement-other`, `rhetorical`. She objects to profiling and "recklessness" and names no rule on who should be removed.
+- **Her No vote on HCR2060 (2024):** coded as a `record` / `vote` on both the vote page (`HERNANDEZ A N`, `Passed 31-29-0-0-0`) and the bill text. The measure covers several subjects (border, benefits, fentanyl, illegal entry), so it is `multi-subject`. A No vote on such a measure proves nothing, and a record cannot seat a chair at a level with no lever anyway.
+- **`needs_source`:** her own words stating which undocumented immigrants, if any, should be deported (a questionnaire, issue page or debate answer).
+- **Quote:** one candidate quote, tiered `none` and not quotable (`not-forward`, `source-not-an-answer`).
+
+Several connected services are not available in this session. Benevity, Candid, Canva, Figma, Harvey and WorkOS need to be authorized in your claude.ai connector settings, and the GitHub plugin failed to connect. None of them were needed for this task.

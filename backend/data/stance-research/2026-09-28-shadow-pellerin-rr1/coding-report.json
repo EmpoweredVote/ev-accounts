@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "190c3584-0826-4a5f-a2ad-104ff70ff259|4164cda9-e149-46c7-9b5a-7f1f75088ac0|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "topic_key": "misinformation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Pellerin's own words on what platforms must do about false content online (questionnaire, issue page, or floor statement)",
+          "A Pellerin record whose operative text imposes a removal, labeling, or voluntary-standards duty on online platforms",
+          "Pellerin's own words or a record speaking directly to platform content-moderation duties (removal mandates, labeling requirements, voluntary standards, or anti-censorship/free-speech protections for platforms)",
+          "Pellerin's own statements or a record addressing platform obligations to remove, label, or moderate false content online"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "190c3584-0826-4a5f-a2ad-104ff70ff259|4164cda9-e149-46c7-9b5a-7f1f75088ac0|ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "requests": [
+        "Pellerin's own words on what platforms must do about false content online (questionnaire, issue page, or floor statement)",
+        "A Pellerin record whose operative text imposes a removal, labeling, or voluntary-standards duty on online platforms",
+        "Pellerin's own words or a record speaking directly to platform content-moderation duties (removal mandates, labeling requirements, voluntary standards, or anti-censorship/free-speech protections for platforms)",
+        "Pellerin's own statements or a record addressing platform obligations to remove, label, or moderate false content online"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

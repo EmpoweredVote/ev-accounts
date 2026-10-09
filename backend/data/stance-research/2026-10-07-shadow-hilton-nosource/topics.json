@@ -1,0 +1,197 @@
+[
+  {
+    "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+    "topic_key": "same-sex-marriage",
+    "topic_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+    "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+    "question_number": 35,
+    "title": "Same-Sex Marriage",
+    "question_text": "What legal recognition should same-sex marriages receive?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Guarantee same-sex couples full legal equality \u2014 equal marriage plus protection from discrimination (such as in jobs and housing)."
+      },
+      {
+        "value": 2,
+        "text": "Guarantee same-sex marriage the same benefits and protections as any other marriage."
+      },
+      {
+        "value": 3,
+        "text": "Allow same-sex marriage, but protect religious organizations' right to decline to perform or host these marriages."
+      },
+      {
+        "value": 4,
+        "text": "Recognize civil unions for same-sex couples, but reserve marriage for opposite-sex couples."
+      },
+      {
+        "value": 5,
+        "text": "Make same-sex marriage illegal and define marriage as only between one man and one woman."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local"
+    ]
+  },
+  {
+    "topic_id": "24e9212c-b011-422a-865c-093e35050901",
+    "topic_key": "ukraine-support",
+    "topic_revision_id": "107d180d-a949-4a42-a250-54f0a7683be0",
+    "served_revision_id": "9ee7ecb7-fd99-429a-a37d-eff58a381983",
+    "question_number": 42,
+    "title": "Ukraine - Russia Conflict",
+    "question_text": "What level of military and financial support should be provided to Ukraine?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "significantly increase military and financial aid to Ukraine."
+      },
+      {
+        "value": 2,
+        "text": "continue providing current levels of military and economic aid to help Ukraine defend itself."
+      },
+      {
+        "value": 3,
+        "text": "provide limited humanitarian aid to Ukraine while encouraging diplomatic negotiations to end the war."
+      },
+      {
+        "value": 4,
+        "text": "reduce aid to Ukraine and focus American resources on domestic priorities instead."
+      },
+      {
+        "value": 5,
+        "text": "end all aid to Ukraine immediately and stay completely out of the conflict."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local",
+      "state"
+    ]
+  },
+  {
+    "topic_id": "d96f987e-3404-4667-909d-5889116ba6e5",
+    "topic_key": "education-gender-identity",
+    "topic_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+    "served_revision_id": "89f9d4a5-362e-4470-9529-46d4826fdeb9",
+    "question_number": 48,
+    "title": "Parental Notification and Transgender Students",
+    "question_text": "What should schools do when a student uses a different name or gender identity at school than at home?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Use the student's chosen name and pronouns, and keep their gender identity from parents unless the student agrees to share it"
+      },
+      {
+        "value": 2,
+        "text": "Use the student's chosen name and pronouns, and tell parents only if they directly ask"
+      },
+      {
+        "value": 3,
+        "text": "Tell parents when a student changes their name or gender at school, unless staff believe it would put the student in danger"
+      },
+      {
+        "value": 4,
+        "text": "Require staff to notify parents whenever a student asks to be treated as a different gender at school"
+      },
+      {
+        "value": 5,
+        "text": "Require written parental permission before staff use a student's chosen name or pronouns"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true,
+    "own_words_levels": [
+      "local",
+      "federal"
+    ]
+  },
+  {
+    "topic_id": "15d7e730-119b-43a2-a351-1efb7352b86b",
+    "topic_key": "education-school-police",
+    "topic_revision_id": "d81d7662-3c68-425c-a5c6-ca0717384a9e",
+    "served_revision_id": "d81d7662-3c68-425c-a5c6-ca0717384a9e",
+    "question_number": 50,
+    "title": "Police in Schools",
+    "question_text": "What role should police officers play in schools?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Remove police officers from schools and rely on counselors and mental health staff"
+      },
+      {
+        "value": 2,
+        "text": "Keep officers out of schools and call them only when a serious crime occurs"
+      },
+      {
+        "value": 3,
+        "text": "Bring in a shared or part-time officer with a limited, clearly defined role"
+      },
+      {
+        "value": 4,
+        "text": "Place a dedicated officer in every school for safety, but bar them from routine discipline"
+      },
+      {
+        "value": 5,
+        "text": "Place an officer in every school with authority to handle discipline and make arrests on campus"
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": true,
+    "own_words_levels": [
+      "federal"
+    ]
+  },
+  {
+    "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+    "topic_key": "minimum-wage",
+    "topic_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+    "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+    "question_number": 59,
+    "title": "Minimum Wage",
+    "question_text": "What approach should government take to the minimum wage?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation."
+      },
+      {
+        "value": 2,
+        "text": "Raise the wage floor to a set higher level, then adjust it only when lawmakers vote to."
+      },
+      {
+        "value": 3,
+        "text": "Keep a modest national wage floor as a baseline and let states and cities set higher rates."
+      },
+      {
+        "value": 4,
+        "text": "Hold the wage floor at its current level and let the market set pay above it."
+      },
+      {
+        "value": 5,
+        "text": "Remove the wage floor entirely and let employers and workers set pay by agreement."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

@@ -10,6 +10,12 @@
  * Usage (from backend/):
  *   npx tsx scripts/build-stance-topic-bundle.ts --dir data/stance-research/<batch> \
  *     [--race <race_id> ...] [--politician <uuid>:<federal|state|local|judicial|school> ...]
+ *     [--season open|draft|<season uuid>]
+ * `--season` (default open, unchanged) names the season whose pins the bundle serves. `draft`
+ * pre-stages a season that has not opened: its pin may be an `approved`, not-yet-published
+ * revision, which is read as the served text (it becomes the served revision of its version on
+ * publish). A non-open bundle also writes <dir>/season.json; every later step must be given the
+ * same --season and refuses a bundle built for another season. Closed seasons are refused.
  * Writes <dir>/topics.json and <dir>/politicians.json, then prints one TOPIC SCALE REFERENCE
  * block per office level present — paste the matching block into each researcher prompt.
  * politicians.json holds ONE entry per politician_id: a person reached by a --race and also given
@@ -26,9 +32,10 @@ import { mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { pool } from '../src/lib/db.js';
 import {
-  appliesFromRoles, appliesToLevel, levelForDistrict, type Level,
+  appliesFromRoles, appliesToLevel, levelForDistrict, ownWordsLevels, type Level,
 } from '../src/lib/topicApplicability.js';
 import { servedRevisionLateral } from '../src/lib/seasonService.js';
+import { resolveSeasonTarget, seasonSpecFromArgv, writeBundleSeason, SeasonTargetError } from './lib/seasonTarget.js';
 
 const LEVELS: Level[] = ['federal', 'state', 'local', 'judicial', 'school'];
 function opts(name: string): string[] {
@@ -39,8 +46,12 @@ function opts(name: string): string[] {
 const DIR = opts('--dir')[0];
 const RACES = opts('--race');
 const MANUAL = opts('--politician');
+// --season <open|draft|uuid>, default open (unchanged behaviour). `draft` pre-stages a season that
+// has not opened: the ladder is that season's pin, served as ADR 0006 will serve it once it opens.
+let SEASON_SPEC: string;
+try { SEASON_SPEC = seasonSpecFromArgv(process.argv); } catch (e) { console.error(`ERROR: ${(e as Error).message}`); process.exit(2); }
 if (!DIR || (!RACES.length && !MANUAL.length)) {
-  console.error('usage: build-stance-topic-bundle.ts --dir <batch> [--race <id> ...] [--politician <uuid>:<level> ...]');
+  console.error('usage: build-stance-topic-bundle.ts --dir <batch> [--race <id> ...] [--politician <uuid>:<level> ...] [--season open|draft|<uuid>]');
   process.exit(2);
 }
 // Validate every id BEFORE any query: a malformed uuid used to reach `id = $1` and crash with an
@@ -74,6 +85,17 @@ for (const m of MANUAL) {
 // write records (UPSERT_ANSWER_SQL stamps sq.topic_revision_id) and what the drift checks compare.
 // served_revision_id is the revision whose words the researcher is shown; the verifier refuses the
 // batch if either one has moved since this bundle was built.
+let season: Awaited<ReturnType<typeof resolveSeasonTarget>>;
+try { season = await resolveSeasonTarget(SEASON_SPEC, (q, p) => pool.query(q, p)); } catch (e) {
+  if (!(e instanceof SeasonTargetError)) throw e;
+  console.error(`ERROR: ${e.message}`);
+  await pool.end();
+  process.exit(1);
+}
+// A DRAFT season's pin may be an `approved` revision that is not published yet; once it publishes it
+// is the served revision of its version, so the researcher reads it now. The open season's served
+// text stays published/superseded only.
+const servedOpts = season.status === 'draft' ? { includeApprovedWhen: 'true' } : {};
 const { rows: raw } = await pool.query(`
   SELECT t.id::text AS topic_id, t.topic_key, sq.topic_revision_id::text AS topic_revision_id,
          eff.id::text AS served_revision_id,
@@ -81,15 +103,17 @@ const { rows: raw } = await pool.query(`
          (SELECT json_agg(json_build_object('value', sr.value, 'text', sr.text) ORDER BY sr.value)
             FROM inform.compass_stance_revisions sr
            WHERE sr.topic_revision_id = eff.id) AS stances,
-         (SELECT coalesce(json_agg(json_build_object('role_scope', r.role_scope)), '[]'::json)
+         -- evidence_basis via to_jsonb so the bundle still builds before CA_0302 is applied (absent → record).
+         (SELECT coalesce(json_agg(json_build_object('role_scope', r.role_scope,
+                                                     'evidence_basis', to_jsonb(r)->>'evidence_basis')), '[]'::json)
             FROM inform.compass_topic_roles r WHERE r.topic_id = t.id) AS roles
     FROM inform.season_questions sq
-    JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'
+    JOIN inform.seasons s ON s.id = sq.season_id AND s.id = $1::uuid
     JOIN inform.compass_topics t ON t.id = sq.topic_id
-    JOIN ${servedRevisionLateral('sq.topic_revision_id', 'eff')} ON true
-   ORDER BY sq.question_number`);
+    JOIN ${servedRevisionLateral('sq.topic_revision_id', 'eff', servedOpts)} ON true
+   ORDER BY sq.question_number`, [season.id]);
 if (!raw.length) {
-  console.error('ERROR: no open season, or it has no season_questions — refusing to write an empty bundle');
+  console.error(`ERROR: no ${season.status} season, or it has no season_questions — refusing to write an empty bundle`);
   await pool.end();
   process.exit(1);
 }
@@ -97,9 +121,9 @@ if (!raw.length) {
 // nothing and would silently drop out of the bundle. Count it against the open season's question set.
 const { rows: [{ asked }] } = await pool.query(
   `SELECT count(*)::int AS asked FROM inform.season_questions sq
-     JOIN inform.seasons s ON s.id = sq.season_id AND s.status = 'open'`);
+     JOIN inform.seasons s ON s.id = sq.season_id AND s.id = $1::uuid`, [season.id]);
 if (asked !== raw.length) {
-  console.error(`ERROR: the open season asks ${asked} questions but only ${raw.length} have a served (published) revision — refusing a partial bundle`);
+  console.error(`ERROR: the ${season.status} season asks ${asked} questions but only ${raw.length} have a served (published) revision — refusing a partial bundle`);
   await pool.end();
   process.exit(1);
 }
@@ -108,7 +132,7 @@ const topics = raw.map(({ roles, ...t }) => {
     console.error(`ERROR: ${t.topic_key} has ${t.stances?.length ?? 0} rungs, expected 5`);
     process.exit(1);
   }
-  return { ...t, ...appliesFromRoles(roles) };
+  return { ...t, ...appliesFromRoles(roles), own_words_levels: ownWordsLevels(roles) };
 });
 
 type Pol = { full_name: string; politician_id: string; level: Level | null; race_id: string | null };
@@ -158,7 +182,8 @@ const politicians: Pol[] = [...byId.values()];
 mkdirSync(DIR, { recursive: true });
 writeFileSync(join(DIR, 'topics.json'), JSON.stringify(topics, null, 2));
 writeFileSync(join(DIR, 'politicians.json'), JSON.stringify(politicians, null, 2));
-console.log(`wrote ${topics.length} open-season topics and ${politicians.length} politician(s) to ${DIR}`);
+writeBundleSeason(DIR, season); // only for a non-open season — an open bundle is byte-identical to before
+console.log(`wrote ${topics.length} ${season.status}-season topics and ${politicians.length} politician(s) to ${DIR}`);
 
 for (const level of LEVELS) {
   if (!politicians.some((p) => p.level === level)) continue;
@@ -169,7 +194,8 @@ for (const level of LEVELS) {
     console.log(`⚠ no open-season topic applies at the ${level} level — do not research${level === 'school' ? ' (are CA_0256\'s school role rows applied?)' : ''}`);
   }
   for (const t of inScope) {
-    console.log(`\n${t.topic_key} (id: ${t.topic_id}, pin: ${t.topic_revision_id}, served: ${t.served_revision_id})`);
+    const ownWords = t.own_words_levels.includes(level) ? ' — OWN WORDS ONLY at this level (no lever; codebook V2 "No-lever level")' : '';
+    console.log(`\n${t.topic_key} (id: ${t.topic_id}, pin: ${t.topic_revision_id}, served: ${t.served_revision_id})${ownWords}`);
     console.log(`Question: "${t.question_text}"`);
     for (const s of t.stances) console.log(`  ${s.value} = "${s.text}"`);
   }

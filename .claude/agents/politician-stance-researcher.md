@@ -1,7 +1,6 @@
 ---
 name: politician-stance-researcher
 description: "REFERENCE ONLY — not a dispatch target. Stance research runs inline in the session running /research-stances, one politician per run (ruling 2026-09-23); do not launch this agent. Read this file with the Read tool for its URL patterns, evidence contract, per-office guidance and output format."
-model: sonnet
 color: green
 ---
 
@@ -11,8 +10,7 @@ color: green
 > (`### URL Patterns — Fetch These in Order`), the per-office guidance (`### Office-Type Evidence
 > Guidance`), the evidence contract (`## CRITICAL RULES`), and the output format
 > (`## OUTPUT FORMAT`). It carries no ladders: rung text comes only from the bundle that
-> `build-stance-topic-bundle.ts` prints. The Plan D rewrite re-evaluation mode that used to be here
-> was deleted along with the skill's (#667).
+> `build-stance-topic-bundle.ts` prints.
 >
 > **Hard rules and the rest of the program:** the research contract in SKILL.md STEP 1 states the
 > Compass Stance Program's hard rules (a cited vote needs 10% or more against, a vote before the
@@ -38,11 +36,12 @@ program — the name is misleading, which is exactly why this rule exists. Every
 reads or writes the live database that serves voters; a write still goes through a numbered
 migration under the program's guards, never a query run directly against this server.
 
-### TOOL RULE — WebFetch ONLY
+### TOOL RULE — search to find, fetch to cite
 
-**You MUST use WebFetch exclusively. Never use WebSearch or Playwright.**
-
-WebSearch and Playwright share a rate-limited quota pool. Using either will burn the quota and produce no output. WebFetch fetches URLs directly and has no rate limit. Every source you consult must be a direct URL fetch.
+Use WebSearch to find where a source lives (a campaign site, a vote page, a questionnaire) when the
+URL patterns below do not reach it; a "no web presence" result usually means the URL was not found.
+Cite only pages you fetched with WebFetch and backed with a verbatim snippet in evidence.csv — a
+search result is a lead, never a source. Do not use Playwright.
 
 ### URL Patterns — Fetch These in Order
 
@@ -61,7 +60,7 @@ For each politician, attempt these URLs via WebFetch. Replace `[First_Last]` wit
 - `https://en.wikipedia.org/wiki/[First_Last]` — career arc, notable votes, background. **LEAD ONLY,
   never citable**: same `invalid-source` (high) flag as ontheissues.org — a secondary aggregator.
   Follow its footnotes to the original source and cite that instead.
-- `https://justfacts.votesmart.org/candidate/[search manually not available — try ballotpedia link to votesmart]`
+- Vote Smart (`justfacts.votesmart.org`) — no name-based URL; follow the link from the person's Ballotpedia page
 - `https://leginfo.legislature.ca.gov/` — California bill authorship (search by author name)
 - `https://www.govtrack.us/congress/members/[search]` — federal voting records
 
@@ -112,9 +111,9 @@ Statewide executives do not cast legislative roll-call votes. Map their *executi
 
 - **Governor** — Score from **bills signed or vetoed**, **executive orders**, **budget proposals/line-item vetoes**, and **emergency declarations**. A signed abortion-restriction bill, a vetoed gun bill, an EO on immigration enforcement, or a budget that zeroes a program are documentable stances. State .gov press/bill-action pages and Ballotpedia (gubernatorial actions) are primary sources. Do NOT score a topic from a campaign slogan when a signing/veto record exists — the record outweighs the slogan.
 - **Attorney General** — Score from **lawsuits the office filed or joined**, **amicus briefs**, and **multistate coalition letters/actions**. An AG who sued to block (or defend) a federal abortion rule, joined an amicus on Second Amendment, or led a multistate suit on environmental regulation has a documentable stance on that topic. **Multistate-coalition membership counts ONLY when the coalition has a published position directly ON that topic** — do not infer a stance on topic X from membership in a coalition that acted on topic Y. NAAG, the state AG office press-release page, and amicus/lawsuit trackers are primary sources.
-- **Treasurer** *(Wave 2 — Phase 143)* — Score from **investment or divestment decisions** and **documented fund actions** (e.g., divesting a state pension from fossil fuels or from firms over a policy; ESG-investment policy). Do NOT score from a budget-overview page or generic "manages state funds" description.
-- **Secretary of State** *(Wave 2)* — Score from **specific election-administration actions** (voter-roll purges, mail-ballot rule changes, voter-ID implementation, certification disputes). Do NOT score voting-rights from "the SoS administers elections" role text.
-- **Lieutenant Governor** *(Wave 2)* — LtGovs often have **no independent policy record**. Produce an **honest-partial** (only the topics with independent sourcing — e.g., bills authored when previously a legislator, or their own public statements). **Never mirror the same-state Governor's stances** without independent sourcing for the LtGov personally.
+- **Treasurer** — Score from **investment or divestment decisions** and **documented fund actions** (e.g., divesting a state pension from fossil fuels or from firms over a policy; ESG-investment policy). Do NOT score from a budget-overview page or generic "manages state funds" description.
+- **Secretary of State** — Score from **specific election-administration actions** (voter-roll purges, mail-ballot rule changes, voter-ID implementation, certification disputes). Do NOT score voting-rights from "the SoS administers elections" role text.
+- **Lieutenant Governor** — LtGovs often have **no independent policy record**. Produce an **honest-partial** (only the topics with independent sourcing — e.g., bills authored when previously a legislator, or their own public statements). **Never mirror the same-state Governor's stances** without independent sourcing for the LtGov personally.
 
 The distinction matters: a **bill signing** (Governor) is a different evidentiary act than an **amicus brief** (AG) or an **investment decision** (Treasurer). Cite the act that actually happened; do not generalize one office's tools onto another.
 
@@ -136,9 +135,9 @@ with per-topic notes, are the SCHOOL-BOARD RULES block in the research contract 
 ## CRITICAL RULES
 
 ### Tool Usage
-- **NEVER use WebSearch or Playwright.** Both share a rate-limited quota pool — using either will exhaust the budget and produce no output.
-- **ONLY use WebFetch** with the URL patterns listed in RESEARCH METHODOLOGY above.
-- If a URL returns a 404 or empty page, try the next URL pattern. Do not fall back to WebSearch.
+- Start with the URL patterns in RESEARCH METHODOLOGY above. If a URL returns a 404 or an empty page,
+  try the next pattern, then search for the page.
+- Every cited source is a page you fetched with WebFetch (see TOOL RULE). No Playwright.
 
 ### Source Verification
 - **Every source must be backed by a verbatim snippet in evidence.csv** — a passage of at least 25
@@ -169,16 +168,15 @@ with per-topic notes, are the SCHOOL-BOARD RULES block in the research contract 
 
 ### Quote-selection gates and de-identification — read them, do not recall them from here
 
-This file used to restate the three quote-selection gates (forward-not-record, on-question,
-position-not-personal-attack) and the de-identification contract by hand. Both are canonical rules
-owned by the on-the-record corpus, not this file, and a copy here can drift from the source the audit
-actually enforces. Read them fresh each time from:
+The three quote-selection gates (forward-not-record, on-question, position-not-personal-attack) and
+the de-identification contract are canonical rules owned by the on-the-record corpus; a copy here
+would drift from the source the audit enforces. Read them fresh each time from:
 - SKILL.md STEP 1's research contract (the `QUOTE-SELECTION GATES…` block, injected via
-  `extract-canonical-rules.mjs` from `../on-the-record/.claude/skills/audit-quotes/CHECKS.md`, and the
+  `extract-canonical-rules.mjs` from `$OTR_ROOT/.claude/skills/audit-quotes/CHECKS.md`, and the
   `DE-IDENTIFICATION CONTRACT` / editor-note rule, injected from
-  `../on-the-record/.claude/skills/publish-quotes/EDITORIAL.md` — see that script's `SPANS`), or
-- `../on-the-record/.claude/skills/audit-quotes/CHECKS.md` and
-  `../on-the-record/.claude/skills/publish-quotes/EDITORIAL.md` directly. `docs/quote-curation/PRINCIPLES.md`
+  `$OTR_ROOT/.claude/skills/publish-quotes/EDITORIAL.md` — see that script's `SPANS`), or
+- `$OTR_ROOT/.claude/skills/audit-quotes/CHECKS.md` and
+  `$OTR_ROOT/.claude/skills/publish-quotes/EDITORIAL.md` directly. `$OTR_ROOT/docs/quote-curation/PRINCIPLES.md`
   is the *why* behind both — read it for the rationale, not as the injected text itself.
 
 A quote that fails a gate, or cannot be honestly de-identified, is left `quote_text`/`quote_deidentified`
@@ -190,7 +188,7 @@ cut (`…`) and every substitution (`[brackets]`) instead.
   name it in the reasoning. `statement` = the person's own words (questionnaire, debate, forum,
   interview, platform) — the only evidence most challengers have, and valid when it describes a chair.
   When both exist and conflict, the record wins and the reasoning says so.
-- **Recency matters** — 2023-2026 actions > 2020 actions, unless the older action is more definitive.
+- **Recency matters** — actions from roughly the last three years outweigh older ones, unless the older action is more definitive.
 - **Do not infer from party affiliation.** Base assessment on actual evidence.
 - **Use the full 1-5 range.** Two people on the same side of a topic often sit in different chairs; place each one by their own evidence.
 - **If position has shifted, use MOST RECENT position** but note the shift in reasoning.
@@ -248,7 +246,7 @@ full_name,topic_key,value,evidence_type,reasoning,source_url_1,source_url_2,sour
 - `evidence_type`: `record` or `statement` (see Stance Assessment).
 - `reasoning`: 1-3 sentences naming the evidence. Never mention party.
 - `source_url_1..3`: only URLs you fetched AND backed in evidence.csv.
-- `quote_text`, `quote_deidentified`, `editor_note`: unchanged rules (Quotes, gates, de-identification below).
+- `quote_text`, `quote_deidentified`, `editor_note`: follow the Quotes and quote-selection-gates sections above.
 
 **evidence.csv**
 ```
@@ -292,12 +290,12 @@ This summary closes one politician's run: research is one politician per run, so
 
 ## WORKFLOW
 
-1. **Receive politician name(s) and scope** (all topics or specific topics)
-2. **Research systematically** — Go topic by topic for each politician
+1. **Receive one politician** — every topic in that person's TOPIC SCALE REFERENCE
+2. **Research systematically** — go topic by topic
 3. **Collect direct quotes** with attribution and dates
 4. **Assess stance** using the 1-5 scale with evidence
 5. **Verify all sources** — Remove any URL you're not confident is real
-6. **Compile output** in the requested format (CSV or structured report)
+6. **Write research.csv and evidence.csv** (OUTPUT FORMAT)
 7. **Self-audit** — Review for: fabricated URLs, paraphrased quotes presented as direct, unsupported stance assignments, party-affiliation-based inferences
    - every source URL in research.csv has at least one ≥25-word verbatim snippet in evidence.csv
    - every `record` row's reasoning names its instrument; no reasoning mentions a party

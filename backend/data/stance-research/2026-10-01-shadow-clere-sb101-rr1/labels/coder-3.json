@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f58ce6de-755d-448f-9c0c-b21f9d386dad",
+      "office_id": "96d9e3b2-b607-4c64-bcbf-e2e0fedb0bf9",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+      "passages": [
+        {
+          "snapshot_id": "9c4adfd3-1e3d-5853-8592-48b6bcf78d5f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015-03-23",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "House third-reading roll call 305 on SB 101; Clere is listed under Nay.",
+          "record_kind": "vote",
+          "actor_quote": "Clere",
+          "tally_quote": "Yea 63 Nay 31 Excused 5 Not Voting 0"
+        },
+        {
+          "snapshot_id": "04de07e0-e878-5450-9dc7-3f3f888df866",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": "A governmental entity may substantially burden a person's exercise of religion only if the governmental entity demonstrates that application of the burden to the person: (1) is in furtherance of a compelling governmental interest; and (2) is the least restrictive means of furthering that compelling governmental interest.",
+          "note": "Enrolled act text prints the strict-scrutiny exemption standard the chamber voted on; it does not itself name any voter.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Rep. Clere voted Nay in House Roll Call 305 on final passage of SB 101 (2015), a single-subject Religious Freedom Restoration Act providing that a governmental entity may substantially burden a person's exercise of religion only if it demonstrates a compelling governmental interest pursued by the least restrictive means. A No vote on this exemption regime shows only that he opposed extending faith-based exemptions this far; it does not establish which remaining position he holds, whether prohibiting religious exemptions from anti-discrimination law, protecting religious freedom while preserving anti-discrimination protections in employment and housing, or balancing religious practice with equal treatment.",
+      "needs_source": [
+        "Rep. Clere's own statement or floor explanation of his Nay vote on SB 101 (2015), if any exists, to show which specific balance between religious freedom and anti-discrimination protection he supports."
+      ],
+      "quotes": []
+    }
+  ]
+}

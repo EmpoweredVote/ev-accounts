@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Pierce's own first-person words on firearm regulation in this term (questionnaire answer, issue page, floor statement) saying which restrictions he would require",
+          "Any Indiana bill Pierce authored, co-authored or sponsored on background checks or on restricting classes of firearms, with the IGA bill page and roll call",
+          "Pierce's own statement, floor speech, or explanation of vote on HB 1296 (2022) tying his Nay vote to the handgun-carry-license repeal rather than the bill's other provisions",
+          "Pierce's own statement or floor explanation of vote tying his Nay to the handgun-license-repeal provision of HB 1296 specifically, rather than to one of the bill's other, unrelated sections",
+          "a roll call on an amendment or motion to strike the handgun-license-repeal provision of HB 1296 specifically, rather than the bundled final-passage vote"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "72dd5219-490f-48bb-986e-183a6098d602|7b3f68ef-bd9b-4316-9e39-89091b6e9aa1|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "Pierce's own first-person words on firearm regulation in this term (questionnaire answer, issue page, floor statement) saying which restrictions he would require",
+        "Any Indiana bill Pierce authored, co-authored or sponsored on background checks or on restricting classes of firearms, with the IGA bill page and roll call",
+        "Pierce's own statement, floor speech, or explanation of vote on HB 1296 (2022) tying his Nay vote to the handgun-carry-license repeal rather than the bill's other provisions",
+        "Pierce's own statement or floor explanation of vote tying his Nay to the handgun-license-repeal provision of HB 1296 specifically, rather than to one of the bill's other, unrelated sections",
+        "a roll call on an amendment or motion to strike the handgun-license-repeal provision of HB 1296 specifically, rather than the bundled final-passage vote"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

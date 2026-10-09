@@ -1,0 +1,61 @@
+{
+  "batch_id": "2026-10-07-shadow-houchin-military-intervention",
+  "sources": [
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-concurrent-resolution/21",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "military-intervention"
+      ],
+      "instruments": [
+        "H.Con.Res. 21 (118th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://clerk.house.gov/Votes/2023136",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "military-intervention"
+      ],
+      "instruments": [
+        "H.Con.Res. 21 (118th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://www.congress.gov/bill/118th-congress/house-concurrent-resolution/30",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "military-intervention"
+      ],
+      "instruments": [
+        "H.Con.Res. 30 (118th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://clerk.house.gov/Votes/2023201",
+      "source_kind": "public-record",
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_keys": [
+        "military-intervention"
+      ],
+      "instruments": [
+        "H.Con.Res. 30 (118th Congress)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

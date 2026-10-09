@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "a6d492a6-0d29-4d8d-8533-a3ae82284696|d13d9c57-2851-48fb-a1a6-0b181f449453|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Aaron Lieberman's own words on a gestational limit for the 2026 Arizona Senate campaign (candidate questionnaire, debate answer, or first-person issue page)",
+          "Any Arizona legislative record of his on a bill that sets a gestational limit or an exception rule (bill page plus roll call)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "a6d492a6-0d29-4d8d-8533-a3ae82284696|d13d9c57-2851-48fb-a1a6-0b181f449453|af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "requests": [
+        "Aaron Lieberman's own words on a gestational limit for the 2026 Arizona Senate campaign (candidate questionnaire, debate answer, or first-person issue page)",
+        "Any Arizona legislative record of his on a bill that sets a gestational limit or an exception rule (bill page plus roll call)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

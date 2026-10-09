@@ -5,7 +5,7 @@ if something needs a page, put it in `docs/` or an ADR and link it here.
 
 ## How to report
 
-When working on business tasks, only report to me in **ASD-STE100 Simplified Technical
+When working on business tasks, only report to the user in **ASD-STE100 Simplified Technical
 English**. Write clearly and prioritize readability over strict adherence to STE.
 
 In practice: short sentences, one idea per sentence. Active voice. Approved-sense
@@ -40,10 +40,11 @@ duplicate row from a discovery sweep or a genuine second seat. So a politician-r
 one row **per office that person holds**, and needs a `DISTINCT ON (p.id)` or a deliberately chosen
 office.
 
-⚠ **This is not hypothetical.** `GET /api/essentials/politicians?q=` carried the old claim as a
-comment and no `DISTINCT`, and returned **two** Aaron Freemans until `CC_0103` deleted the duplicate
-office (2026-09-12). `getPoliticianById` has the same shape and takes `rows[0]` with no `ORDER BY`,
-so it reports an arbitrary one of the two as the person's office.
+⚠ **This is not hypothetical** — a list query without the `DISTINCT` once returned two Aaron
+Freemans. Both politician-rooted reads in `backend/src/lib/essentialsService.ts` now show the two
+fixes: the `?q=` list wraps a `DISTINCT ON (p.id)`, and `getPoliticianById` takes `LIMIT 1` under an
+`ORDER BY` that prefers a held seat over a sought one. Give a new politician-rooted query one or the
+other.
 
 For history, `essentials.office_holders_as_of(date)` answers "who represented me in 2019". It **skips
 terms whose `source` carries `| unverified <slot>`** (CA_0171): placeholder terms an audit kept because it
@@ -59,12 +60,9 @@ is the whole reason this model exists.
 An office with **no `office_terms` row is invisible**: no holder, so the official never appears in
 Essentials, stance research, coverage or campaign finance — and **nothing errors**. This is the one
 failure mode CI cannot catch. Watch `essentials.offices_missing_terms`. **Baseline, measured
-2026-09-29: 239 unknown-occupancy. Treat a count above 239 unflagged as new drift.** (It was 423
-rows / 185 flagged / 238 unflagged on 2026-09-24; `CC_0178` then created the St. Louis city Sheriff
-seat unseated and unflagged by ruling, which moved the unflagged figure to 239 — that is deliberate
-and is NOT drift.) (`CA_0287` retired 8 flagged duplicate Lewiston school seats.) It was 857 / 158 / 699 at migration 1464; `CA_0183` (421 LA
-Superior Court, 2nd DCA and Supreme Court judges seated from the courts' rosters) and `CA_0187` did
-most of the fall. Lower this number whenever a change shrinks it — a stale, high baseline hides drift.
+2026-09-29: 239 unknown-occupancy. Treat a count above 239 unflagged as new drift.** The St. Louis
+city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling and is counted in that 239; it is
+not drift. Lower this number whenever a change shrinks it — a stale, high baseline hides drift.
 
 Use the helpers rather than hand-rolling the two-step:
 
@@ -218,9 +216,6 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
     sessions reached for `CA_` while Andrews' did too. The namespace is chosen by *who is doing the
     work*, not by what the last migration in the directory happened to be called. If you cannot
     establish which Chris you are working for, ask — do not read `ls` and copy the prefix.
-  - This block previously read "`CA_` IS CLOSED TO NEW WORK" while also telling Andrews nothing
-    about where to write instead. That gap is what sent a session looking for a prefix to copy.
-    Both authors now have a named, open namespace; neither needs to infer one.
   - **The plain `NNNN_` sequence stays open** to everyone else — but it is **allocated now, not
     counted**: `npm run steward --prefix backend -- slot shared --purpose "..."`. This
     superseded "keep taking the next free number there exactly as before" on 2026-09-04, when CI
@@ -427,9 +422,26 @@ this person holds, not a rating of how strongly they lean.
 - A re-sourcing pass that cites **sponsorship** must refuse any row at the anti pole — the new
   citation would contradict the displayed position.
 
-**Gate:** `node scripts/audit-chair-evidence.mjs --check <rollback.json>` fails if any row it lists
+**Gate:** `node backend/scripts/audit-chair-evidence.mjs --check <rollback.json>` fails if any row it lists
 carries reasoning that names no instrument, act or vote. Run it before committing any migration that
 sets a chair.
+
+### Pre-staging research into a DRAFT season (`--season`)
+
+Every stance-research step takes `--season open|draft|<uuid>` (default `open`, unchanged): bundle
+(`build-stance-topic-bundle.ts`), `code-stance-batch.ts`, `queue-coded-batch.ts`,
+`verify-stance-research.ts`, `export-written-ledger.ts`, and `gold-desk/build_batch.py`. Pass the SAME
+value to each step: a non-open bundle writes `<dir>/season.json`, and a step run against another
+season exits 2. A **closed** season is always refused.
+- The draft ladder is the draft season's pin, served as ADR 0006 will serve it once it opens — so an
+  `approved`, not-yet-published revision counts (`servedRevisionLateral(..., {includeApprovedWhen})`).
+  The open season's served text still means published/superseded only.
+- Writes carry the draft season's id (`UPSERT_*_IN_SEASON_SQL`, evidence via `accumulateEvidence(..., {seasonId})`).
+  A review-queue row whose `season_id` is a draft season approves into THAT season (`resolveResearchReview`).
+- 🔴 **Voters must not see it.** Every reader of `politician_answers` / `politician_context` /
+  `politician_context_evidence` excludes draft (`SEASON_IS_PUBLISHED`) or declares `@draft-reads: ADMIN-ONLY`;
+  `draftSeasonWrites.test.ts` scans for a new unguarded one. A draft run does not stamp
+  `last_stances_researched_at`.
 
 ### A blank is `value = 0`, and `-- @zero-scope:` records who counts it
 
@@ -475,10 +487,34 @@ down, and it is what the tests in `compassService.test.ts` pin.
   exactly the wording they were evidenced against. The re-audit question is about what carries forward
   into the NEXT season's research, not about rewriting history.
 
-### Scope is a per-rung question, not a per-topic one (ruling 2026-08-28, Chris Andrews)
+### Scope decides the evidence, not whether a position exists (ruling 2026-10-06, Chris Andrews, option B)
 
-**A ladder is only valid at a level where its rungs are things an officeholder there can actually
-do.** Scopes were originally assigned per topic and never re-checked rung by rung — `voting-rights`
-fails 4 of 5 rungs at `local` (NC wave 2b memo). Before adding a `compass_topic_roles` row for a
-level, read every rung and ask: does an officeholder at this level hold a lever on this? A chair
-that can only be evidenced by opinion at that level is the exact shape the evidence standard refuses.
+This replaces the 2026-08-28 ruling "Scope is a per-rung question, not a per-topic one", which said a
+chair evidenced only by opinion at a level is "the exact shape the evidence standard refuses". The
+operator's reason: *"I would want to know whether my local mayor thinks the 2020 election was stolen or
+her position on abortion, even if she can't change the laws on that."* Memo:
+`.planning/todos/2026-10-06-positions-without-a-lever.md` (workspace root).
+
+- **Which topics a level is ASKED** — every topic, at federal, state and local, unless there is a good
+  reason not to. Named exclusions: judges keep the judicial topics only and judicial topics stay
+  judge-only; **school boards keep the school topics only** (the 2026-09-24 rung-by-rung school ruling
+  stands, for now); local-only topics ("your community") are not asked of federal or state officials
+  until their question text reads at every level. Recorded in `compass_topic_roles` (CA_0302).
+- **What evidence can seat a chair** — still a per-rung question. **A record needs a lever**: a rung no
+  officeholder at this level can act on cannot be evidenced at this level by a record. **The person's
+  own words can** (codebook V2 "No-lever level"). `compass_topic_roles.evidence_basis` marks a
+  (topic, level) `own-words` when no rung has a lever there.
+- **Before adding a topic or a level**, still read every rung and ask whether an officeholder there
+  holds a lever on it. The answer now sets the evidence basis, not whether the level is asked.
+- **Voters see no label** — they see the sources (the evidence chain). An own-words chair is compared
+  with the voter's view like any other chair.
+- 🔴 **An own-words chair is a separate reliability stratum.** A certification measured on `record` rows
+  never covers it; own-words rows go to review until that stratum has its own blind gold.
+- The election-cycle rule for statements (codebook V5, Q4) applies unchanged.
+- **What a voter sees is decided by the lenses, not by `compass_topic_roles`.** The essentials compass
+  draws its spokes from the active lens's curated topic list (or the voter's own compass), and with no
+  lens the stance breakdown lists every topic the official answered. `applies_*` only narrows the pool
+  under the Local Lens, and drives tier badges, coverage counts and the stance-research gate.
+- ⚠ **Legacy out-of-scope chairs exist and are already visible** in that breakdown (Season 1 research at
+  levels that were not asked, e.g. local `taxes`, `deportation`, `same-sex-marriage`). They are owed a
+  re-audit under the codebook; adding a role row does not change whether they show.

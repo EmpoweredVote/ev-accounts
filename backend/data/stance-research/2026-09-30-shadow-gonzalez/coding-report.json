@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "1cede4d2-3075-4860-b133-1ab34cdacff5|a77cd5e4-d43d-4af1-b8e0-46ed80b979c6|a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Gonzalez's own first-person words on whether California should end new oil and gas drilling statewide (questionnaire answer, issue page, or debate answer)",
+          "A statewide-scope instrument she authored, sponsored or voted on that sets the level of California oil and gas production (for example a statewide drilling-permit ban or a phase-out date bill), with the roll call",
+          "Gonzalez's own statements or additional votes/sponsorships on statewide new-drilling or production-level policy to separate the fossil-fuels rungs"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "1cede4d2-3075-4860-b133-1ab34cdacff5|a77cd5e4-d43d-4af1-b8e0-46ed80b979c6|a22215c3-6693-4bc2-b248-01aebba14570",
+      "requests": [
+        "Gonzalez's own first-person words on whether California should end new oil and gas drilling statewide (questionnaire answer, issue page, or debate answer)",
+        "A statewide-scope instrument she authored, sponsored or voted on that sets the level of California oil and gas production (for example a statewide drilling-permit ban or a phase-out date bill), with the roll call",
+        "Gonzalez's own statements or additional votes/sponsorships on statewide new-drilling or production-level policy to separate the fossil-fuels rungs"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d",
+      "office_id": "cd1412f0-c4c7-4f2a-bbef-b22516834ed4",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "58c272ba-1eb1-5fd1-b86e-4f3abf736751",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2621 (2025)",
+          "provision_quote": "A. A person may not sell or transfer a firearm unless the person is a licensed firearms dealer, the purchaser or transferee is a licensed firearms dealer or a licensed firearms dealer facilitates the transfer pursuant to subsection B of this section.",
+          "note": "Prime-sponsored bill meets clause [b] (checks on every sale) but is silent on clause [a] (allow all types of firearms).",
+          "record_kind": "sponsor",
+          "actor_quote": "Introduced by Representatives Márquez",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "928f616f-3835-53bb-a4ee-332d4aa75d34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2621 (2025)",
+          "provision_quote": null,
+          "note": "Bill status page confirms Márquez as prime sponsor; the bill was held in committee with no vote.",
+          "record_kind": "sponsor",
+          "actor_quote": "Márquez (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "acfc5127-3780-560d-aae0-1a893a286188",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR 2034 (2025)",
+          "provision_quote": "A. A person may not sell or transfer a firearm unless the person is a licensed firearms dealer, the purchaser or transferee is a licensed firearms dealer or a licensed firearms dealer facilitates the transfer pursuant to subsection B of this section.",
+          "note": "Same universal-checks text sent to the voters; meets clause [b] only, silent on whether all types of firearms stay legal.",
+          "record_kind": "sponsor",
+          "actor_quote": "Introduced by Representatives Márquez",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Márquez prime-sponsored HB 2621 and HCR 2034, which require that a sale or transfer go through a licensed dealer with a background check, so the clause 'require universal background checks on every sale' is evidenced. Rung 3 also requires 'allow all types of firearms', and a checks bill is silent on bans, so that clause has no evidence and the row is compound-partial.",
+      "needs_source": [
+        "Márquez's own words on gun policy, in this campaign or term, showing he opposes bans on a type of firearm",
+        "A recorded vote (for example on an assault-weapons ban or permitless-carry bill) or a sponsorship showing where he stands on banning a type of firearm"
+      ],
+      "quotes": []
+    }
+  ]
+}

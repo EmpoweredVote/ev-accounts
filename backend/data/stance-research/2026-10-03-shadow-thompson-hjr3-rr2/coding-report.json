@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "3688a87d-4b4c-400c-ab5a-52c90896ef2f|219c260d-1781-43a6-a04d-7567f113db2b|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Any Jeffrey Thompson record or own words on same-sex marriage after Obergefell (2015) — e.g. a vote on repealing the inactive Indiana ban, or a first-person statement — to test V5 superseded-by-later",
+          "Indiana House roster or journal for the 2014 session confirming Jeffrey Thompson is the only member surnamed Thompson (the roll call prints no initial)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "3688a87d-4b4c-400c-ab5a-52c90896ef2f|219c260d-1781-43a6-a04d-7567f113db2b|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "requests": [
+        "Any Jeffrey Thompson record or own words on same-sex marriage after Obergefell (2015) — e.g. a vote on repealing the inactive Indiana ban, or a first-person statement — to test V5 superseded-by-later",
+        "Indiana House roster or journal for the 2014 session confirming Jeffrey Thompson is the only member surnamed Thompson (the roll call prints no initial)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

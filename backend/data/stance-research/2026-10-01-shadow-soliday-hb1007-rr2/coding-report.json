@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "An Indiana record Soliday acted on whose operative text names data centers (approval conditions, permitting speed, or a bar on charging data center infrastructure costs to residential customers)",
+          "Soliday's own words on data center permitting, projected energy demand, or residential rate impacts, from his current term or campaign",
+          "Soliday's own statements (floor speech, press release, interview) explicitly connecting HB 1007 or large-load-customer/utility policy to data centers",
+          "An instrument or statement in Soliday's own words that names 'data center(s)' specifically"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "requests": [
+        "An Indiana record Soliday acted on whose operative text names data centers (approval conditions, permitting speed, or a bar on charging data center infrastructure costs to residential customers)",
+        "Soliday's own words on data center permitting, projected energy demand, or residential rate impacts, from his current term or campaign",
+        "Soliday's own statements (floor speech, press release, interview) explicitly connecting HB 1007 or large-load-customer/utility policy to data centers",
+        "An instrument or statement in Soliday's own words that names 'data center(s)' specifically"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

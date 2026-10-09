@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "3688a87d-4b4c-400c-ab5a-52c90896ef2f",
+      "office_id": "219c260d-1781-43a6-a04d-7567f113db2b",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "a09e6e64-9bac-5f53-a71c-f4c5a535f032",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": "Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana.",
+          "note": "Bill text of HJR 3 prints the operative provision Thompson's Yea vote enacted.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bcc0ba5a-0c29-56b2-bd9a-f0ee074bf16c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2014-01-28",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "Roll Call 70, House 3rd reading, lists Thompson among the 57 Yea votes on HJR 3.",
+          "record_kind": "vote",
+          "actor_quote": "Thompson",
+          "tally_quote": "Yea 57 Nay 40 Excused 3 Not Voting 0"
+        },
+        {
+          "snapshot_id": "c2cfac75-8f4e-5604-8a3b-425e61a7df7d",
+          "v1_attribution": "third-party-characterization",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": "2014",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HJR 3 (2014)",
+          "provision_quote": null,
+          "note": "IGA bill-tracking page names Turner and co-authors as authors; it does not name Thompson or show his action.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "a09e6e64-9bac-5f53-a71c-f4c5a535f032",
+        "bcc0ba5a-0c29-56b2-bd9a-f0ee074bf16c"
+      ],
+      "reasoning": "Thompson is listed among the 57 Yea votes on Roll Call 70 for HJR 3 (2014), a single-subject constitutional amendment whose text states 'Only a marriage between one (1) man and one (1) woman shall be valid or recognized as a marriage in Indiana,' matching the rung that makes same-sex marriage illegal and defines marriage as only between one man and one woman.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

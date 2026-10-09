@@ -1,0 +1,60 @@
+{
+  "batch_id": "2026-10-01-shadow-carter-sb1165",
+  "seat": {
+    "politician_id": "9a81dfd3-b70b-45bf-8851-3907d6e12508",
+    "full_name": "Neal Carter",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "5f95f54d-d57c-4e3b-95ff-611505f721b3",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2021-11-05",
+        "start_precision": "day",
+        "term_end": "2023-01-09"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "question_text": "How should sports leagues determine eligibility for transgender athletes?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "allow all transgender athletes to compete on teams matching their gender identity without any restrictions or requirements."
+        },
+        {
+          "value": 2,
+          "text": "should allow transgender athletes to compete on teams matching their gender identity after completing basic documentation of their transition."
+        },
+        {
+          "value": 3,
+          "text": "decide transgender athletes' eligibility case by case based on individual circumstances and the requirements of each sport."
+        },
+        {
+          "value": 4,
+          "text": "require transgender athletes to compete only on teams matching their biological sex assigned at birth."
+        },
+        {
+          "value": 5,
+          "text": "completely ban all transgender athletes from competing in any organized sports competitions."
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

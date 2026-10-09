@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "eb8b6aa3-a9d2-4792-8175-a105304da87f|429c8d57-1550-4fcf-9592-d6c166f443d7|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Scott Wiener's own first-person words answering what legal recognition same-sex marriages should receive, dated within his current Senate term",
+          "A California Senate bill Wiener authored, sponsored or voted on that pairs marriage recognition with protection from discrimination in employment and housing (to test the \"full legal equality\" rung)",
+          "A California Senate bill or amendment on a religious-organization exemption from performing or hosting marriages, with Wiener's recorded vote (to test the religious-exemption rung)",
+          "Wiener's own words on ACA5 or marriage equality addressing discrimination protections or religious-organization treatment",
+          "Wiener's own statement or floor explanation tying his vote/role on ACA 5 to the marriage-equality provision"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "eb8b6aa3-a9d2-4792-8175-a105304da87f|429c8d57-1550-4fcf-9592-d6c166f443d7|c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "requests": [
+        "Scott Wiener's own first-person words answering what legal recognition same-sex marriages should receive, dated within his current Senate term",
+        "A California Senate bill Wiener authored, sponsored or voted on that pairs marriage recognition with protection from discrimination in employment and housing (to test the \"full legal equality\" rung)",
+        "A California Senate bill or amendment on a religious-organization exemption from performing or hosting marriages, with Wiener's recorded vote (to test the religious-exemption rung)",
+        "Wiener's own words on ACA5 or marriage equality addressing discrimination protections or religious-organization treatment",
+        "Wiener's own statement or floor explanation tying his vote/role on ACA 5 to the marriage-equality provision"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

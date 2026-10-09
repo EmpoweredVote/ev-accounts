@@ -437,7 +437,10 @@ export async function getCompassPoliticians() {
      --   counts above ARE zero-guarded, so such a person gets an honest empty
      --   compass rather than a wrong one. Measured 2026-09-02: nobody is in that
      --   state — every politician holding a blank holds at least 7 other answers.
-     JOIN inform.politician_answers pa ON pa.politician_id = p.id
+     -- A DRAFT season's answers (research pre-staged before it opens) do not make a person listable.
+     JOIN (SELECT DISTINCT a.politician_id FROM inform.politician_answers a
+             JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}) pa
+       ON pa.politician_id = p.id
      -- ADR 0002 phase 5: occupancy resolves via office_current_holder, not offices.politician_id.
      LEFT JOIN essentials.office_current_holder och ON och.politician_id = p.id
      LEFT JOIN essentials.offices o ON o.id = och.office_id
@@ -574,6 +577,7 @@ export async function getCandidates() {
         )
         OR EXISTS (
           SELECT 1 FROM inform.politician_answers pa
+            JOIN inform.seasons s ON s.id = pa.season_id AND ${SEASON_IS_PUBLISHED}
           WHERE pa.politician_id = rc.politician_id AND pa.value != 0
         )
       )`
@@ -722,6 +726,13 @@ export async function getPoliticianAnswers(
   }));
 }
 
+/** One dated source of a context row (CA_0301). Read the date with its precision. */
+export interface ContextEvidenceDate {
+  source_url: string;
+  source_date: string;
+  source_date_precision: 'day' | 'month' | 'year';
+}
+
 /**
  * getPoliticianContext
  * Returns reasoning and sources for a politician's newest-season stance on a
@@ -743,13 +754,56 @@ export async function getPoliticianAnswers(
  * holding.
  */
 export async function getPoliticianContext(politicianId: string, topicId: string) {
-  const { rows } = await pool.query<{ reasoning: string; sources: string[] }>(
-    `SELECT c.reasoning, c.sources
+  // `evidence` (CA_0301) carries the date of each source, for ComparePanel. It is one
+  // entry per URL in `sources` that has a date; an undated source has no entry.
+  //   - politician_context_evidence has no season column, so the newest-season rule is
+  //     applied through `c.sources`: only URLs the chosen season's context lists.
+  //   - One URL can have several snippets with different dates. The earliest wins
+  //     (ties by snippet_index), so the date never depends on row order.
+  //   - source_date is cast to text: a pg `date` would become a JS Date and shift a
+  //     day with the time zone. Year and month dates keep their precision so the
+  //     caller never renders them as a full day.
+  const { rows } = await pool.query<{
+    reasoning: string;
+    sources: string[];
+    evidence: ContextEvidenceDate[];
+  }>(
+    // Q2 (ruling 2026-10-07): a blank's reasoning is never shown to voters — they see an empty
+    // spoke only. The newest-season row is chosen FIRST (inner LIMIT 1) and dropped afterwards
+    // when that same season's answer is 0; a filter inside the collapse would fall back to an older
+    // season's reasoning, arguing a position the person no longer holds.
+    // @zero-scope: excludes-blanks — voter-facing "why this position?" text.
+    `SELECT x.reasoning, x.sources, x.evidence FROM (
+     SELECT c.reasoning, c.sources, c.season_id,
+            COALESCE((
+              SELECT jsonb_agg(jsonb_build_object(
+                       'source_url', d.source_url,
+                       'source_date', d.source_date,
+                       'source_date_precision', d.source_date_precision))
+                FROM (
+                  SELECT DISTINCT ON (e.source_url)
+                         e.source_url,
+                         e.source_date::text AS source_date,
+                         e.source_date_precision
+                    FROM inform.politician_context_evidence e
+                   WHERE e.politician_id = c.politician_id
+                     AND e.topic_id = c.topic_id
+                     AND e.source_url = ANY(COALESCE(c.sources, ARRAY[]::text[]))
+                     AND e.source_date IS NOT NULL
+                     -- Evidence written for a DRAFT season (research pre-staged before it opens) is not published.
+                     AND NOT EXISTS (SELECT 1 FROM inform.seasons ds WHERE ds.id = e.season_id AND ds.status = 'draft')
+                   ORDER BY e.source_url, e.source_date ASC, e.snippet_index ASC
+                ) d
+            ), '[]'::jsonb) AS evidence
        FROM inform.politician_context c
        JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
       WHERE c.politician_id = $1 AND c.topic_id = $2
       ORDER BY s.number DESC
-      LIMIT 1`,
+      LIMIT 1
+     ) x
+     WHERE NOT EXISTS (
+       SELECT 1 FROM inform.politician_answers a
+        WHERE a.politician_id = $1 AND a.topic_id = $2 AND a.season_id = x.season_id AND a.value = 0)`,
     [politicianId, topicId]
   );
   // The route turns null into a 404 — the documented contract for "no context on
@@ -769,11 +823,20 @@ export async function getPoliticianContextAll(
   // maybeSingle() that made that one loud: this returned a row per season per
   // topic and the contributor editor pre-filled from whichever arrived first.
   const { rows } = await pool.query<{ topic_id: string; reasoning: string; sources: string[] }>(
-    `SELECT DISTINCT ON (c.topic_id) c.topic_id, c.reasoning, c.sources
-       FROM inform.politician_context c
-       JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
-      WHERE c.politician_id = $1
-      ORDER BY c.topic_id, s.number DESC`,
+    // Q2 (ruling 2026-10-07): as getPoliticianContext — the endpoint is public, so a topic whose
+    // newest season holds a blank (value 0) is dropped AFTER the per-topic collapse, never inside it.
+    // @zero-scope: excludes-blanks — public context read; a blank's reasoning is not shown.
+    `SELECT x.topic_id, x.reasoning, x.sources FROM (
+       SELECT DISTINCT ON (c.topic_id) c.topic_id, c.reasoning, c.sources, c.season_id
+         FROM inform.politician_context c
+         JOIN inform.seasons s ON s.id = c.season_id AND ${SEASON_IS_PUBLISHED}
+        WHERE c.politician_id = $1
+        ORDER BY c.topic_id, s.number DESC
+     ) x
+     WHERE NOT EXISTS (
+       SELECT 1 FROM inform.politician_answers a
+        WHERE a.politician_id = $1 AND a.topic_id = x.topic_id AND a.season_id = x.season_id AND a.value = 0)
+     ORDER BY x.topic_id`,
     [politicianId]
   );
   return rows;
@@ -1091,6 +1154,13 @@ export interface CitationEntry {
   snippet: string;
   verified_at: string;
   is_primary: boolean;
+  /**
+   * CA_0301: when the person said or did what this source cites (YYYY-MM-DD), read with
+   * source_date_precision. A 'year' date is YYYY-01-01 and must render as the year only;
+   * 'month' as the month. Both null = unknown: render no date.
+   */
+  source_date: string | null;
+  source_date_precision: 'day' | 'month' | 'year' | null;
 }
 
 export interface StanceOption {
@@ -1122,6 +1192,8 @@ interface RawCitationRow {
   snippet: string;
   verified_at: string;
   is_primary: boolean;
+  source_date: string | null;
+  source_date_precision: 'day' | 'month' | 'year' | null;
 }
 
 /**
@@ -1155,6 +1227,8 @@ export function groupCitationRows(rows: RawCitationRow[]): TopicCitationBlock[] 
       snippet: r.snippet,
       verified_at: r.verified_at,
       is_primary: Boolean(r.is_primary),
+      source_date: r.source_date ?? null,
+      source_date_precision: r.source_date_precision ?? null,
     });
   }
   return [...blockMap.values()];
@@ -1191,6 +1265,8 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
        pce.source_url,
        pce.snippet,
        pce.verified_at::text AS verified_at,
+       pce.source_date::text AS source_date,
+       pce.source_date_precision,
        (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) AS is_primary
      FROM inform.politician_context_evidence pce
      -- Topic identity and title only. Which topics may appear is decided by the
@@ -1242,6 +1318,9 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
         LIMIT 1
      ) pc ON true
      WHERE pce.politician_id = $1
+       -- Evidence written for a DRAFT season (research pre-staged before it opens) is not published:
+       -- without this, a draft snippet for a pair that has a published context would render under it.
+       AND NOT EXISTS (SELECT 1 FROM inform.seasons ds WHERE ds.id = pce.season_id AND ds.status = 'draft')
        -- 🔴 THE TOPIC SET FOLLOWS THE SEASON THIS BLOCK SHOWS — not is_live, and
        -- not the open season. This used to be "ct.is_live = true" on the join,
        -- which hid every citation on the 17 Season 2 topics created staged
@@ -1261,6 +1340,11 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
          SELECT 1 FROM inform.season_questions sq
           WHERE sq.topic_id = pce.topic_id
             AND sq.season_id = COALESCE(pa.season_id, pc.season_id))
+       -- Q2 (ruling 2026-10-07): a topic whose newest answer is a blank (value 0) shows NO block —
+       -- no "Position under review", no reasoning, no citations; voters see an empty spoke only.
+       -- Here, after the pa collapse, for the same reason as the predicate above.
+       -- @zero-scope: excludes-blanks — voter-facing citations page.
+       AND (pa.value IS NULL OR pa.value <> 0)
      ORDER BY ct.topic_key ASC,
               (pce.source_url = ANY(COALESCE(pc.sources, ARRAY[]::text[]))) DESC,
               pce.verified_at DESC`,

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "4c7d1cea-a6ce-4185-a977-c754800f491a",
+      "office_id": "f11ac115-0c75-4fbf-baf8-d78ef703dc49",
+      "topic_id": "2d893b95-9365-48f3-b7d6-1d0db8216518",
+      "served_revision_id": "0d9ff53d-0eb1-43a4-80f6-daaaf9851524",
+      "passages": [
+        {
+          "snapshot_id": "9f254fe5-bc4b-5028-b96a-3d9c9c57bcdc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-08-28",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": null,
+          "note": "Concurrence in Senate amendments carried 63-5 with 11 not voting, so fewer than 10% of the body voted against it.",
+          "record_kind": "vote",
+          "actor_quote": "Grayson, Haney, Hart",
+          "tally_quote": "Ayes Count 63 Noes Count 5"
+        },
+        {
+          "snapshot_id": "73703519-83f7-5c2c-b117-e38d22feb88e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 1775 (2023-2024)",
+          "provision_quote": "Preparation or sale of noncannabis food or beverage products in compliance with all applicable provisions of the California Retail Food Code",
+          "note": "The operative amendment to Section 26200 lets a local jurisdiction permit noncannabis food, beverage and ticketed live performances inside an already-licensed consumption area, a dimension the rungs do not order.",
+          "record_kind": "author",
+          "actor_quote": "AB 1775, Haney.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Haney authored and voted for AB 1775 (2023-2024), which amends Section 26200 so that \"a local jurisdiction may allow for any of the following\" at a retailer or microbusiness already licensed for onsite consumption: \"Preparation or sale of noncannabis food or beverage products in compliance with all applicable provisions of the California Retail Food Code\", plus ticketed live performances. That sets operating terms for businesses licensed under a market Proposition 64 already created, so it neither legalizes adult use, builds \"a licensed, taxed commercial market\", nor states \"minimal restrictions on growing and using it\"; on the dimension the rungs separate it is adjacent. The concurrence vote was also near-unanimous at \"Ayes Count 63 Noes Count 5\", so it could not carry a chair alone in any case.",
+      "needs_source": [
+        "Haney's own act on what cannabis use is legal in California: a roll call on an adult-use legalization, decriminalization or medical-only measure",
+        "Haney's own first-person words answering how government should regulate cannabis (questionnaire item, debate answer, or his Assembly issue page)"
+      ],
+      "quotes": []
+    }
+  ]
+}

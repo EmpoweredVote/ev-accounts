@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": "9. Subject to subsection F of this section, for taxable years beginning from and after December 31 of the year in which notice is provided to the department pursuant to section 43-243, subsection B, paragraph 2, the tax is 2.5% of taxable income.",
+          "note": "SB 1828 (2021) is a multi-subject omnibus that amends unemployment insurance benefits (Title 23), property tax valuation ratios, sales tax exemptions, tax credits, fire district taxes, and income tax rates, including a flat 2.5% rate.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "69da793b-7075-56d9-8eae-7d3d89267239",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Bill overview lists Mesnard as Prime sponsor of SB 1828 (2021), the omnibus taxation bill.",
+          "record_kind": "sponsor",
+          "actor_quote": "Mesnard (Prime with permission of Rules)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "420ed0d1-030a-5c8b-a1a6-5d63baffb890",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Senate Third Reading on SB 1828 (2021) passed 16-14 with Mesnard voting Yea.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 1828 (2021), on which Mesnard was Prime sponsor and voted Yea on final passage (16-14), is an omnibus bill (short title 'omnibus; taxation') that bundles unrelated subjects: unemployment-insurance wage base and benefits (Title 23), property-tax valuation ratios, sales-tax exemptions, several tax credits, fire-district tax caps, and the income-tax rate cut to a flat 2.5%. Per the taxes annex's Omnibus rule, a sponsor or voter on such a bill is not shown to support any one tax clause (e.g., the rate cut in Sec. 43-1011, matching rung 4's 'cut taxes broadly, including the main rates most people pay') absent his own words tying the act to that provision, which none of the sources here supply.",
+      "needs_source": [
+        "Mesnard's own statement or floor speech tying his SB 1828 vote or sponsorship specifically to the income-tax-rate-cut provision (Sec. 43-1011), since the bill also enacts unrelated unemployment-insurance, property-tax, and sales-tax provisions.",
+        "A single-subject income-tax-rate bill sponsored or voted on by Mesnard, if one exists, to establish a chair without relying on the SB 1828 omnibus."
+      ],
+      "quotes": []
+    }
+  ]
+}

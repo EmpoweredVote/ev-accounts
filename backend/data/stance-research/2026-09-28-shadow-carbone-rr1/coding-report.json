@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a|5d39ba29-4d41-4a41-b01c-0c48786c3675|669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Carbone's own words or an Arizona legislative record on housing subsidies or tax credits (to separate \"offer subsidies and tax breaks so more affordable housing gets built\" from \"Rely on the market to set prices and supply\")",
+          "Carbone's own words or an Arizona legislative record on rent caps or required affordable units (to test \"set binding rules on the private market\")"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": 0,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "86b6bbf3-cb81-4f8e-a44b-5c4ffe46df7a|5d39ba29-4d41-4a41-b01c-0c48786c3675|669cac97-66a6-4087-b036-936fbe62efb3",
+      "requests": [
+        "Carbone's own words or an Arizona legislative record on housing subsidies or tax credits (to separate \"offer subsidies and tax breaks so more affordable housing gets built\" from \"Rely on the market to set prices and supply\")",
+        "Carbone's own words or an Arizona legislative record on rent caps or required affordable units (to test \"set binding rules on the private market\")"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

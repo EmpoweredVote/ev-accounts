@@ -1,0 +1,63 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Mesnard's own words or a chair-shaped record on the general Arizona minimum wage level or its indexing (e.g. a vote or sponsorship on a bill setting or freezing the statewide wage floor)",
+          "Mesnard's own vote, sponsorship, or statement on the general minimum-wage floor's level, automatic indexing, or state/local preemption, separate from the SCR1040 tipped-worker subminimum wage"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "09ae25a4-9244-455a-960a-b95223bb52d8|9e2dd4d3-2bc2-473d-b255-d418f11cb757|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "Mesnard's own words or a chair-shaped record on the general Arizona minimum wage level or its indexing (e.g. a vote or sponsorship on a bill setting or freezing the statewide wage floor)",
+        "Mesnard's own vote, sponsorship, or statement on the general minimum-wage floor's level, automatic indexing, or state/local preemption, separate from the SCR1040 tipped-worker subminimum wage"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

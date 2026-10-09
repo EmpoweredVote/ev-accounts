@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "served_revision_id": "58796165-cd12-44de-a9b6-84df43f6eda0",
+      "passages": [
+        {
+          "snapshot_id": "b9379b8b-cb68-500a-a099-8922f2af98a7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1137 (2021-2022)",
+          "provision_quote": "the division shall not approve any notice of intention under Section 3203 within a health protection zone, except for approvals of notices of intention necessary for any of the following purposes:",
+          "note": "Digest names Gonzalez as author; the bill bars new drilling permits only within health protection zones near sensitive receptors, not statewide, so it shows restrictive direction without establishing a statewide no-new-drilling rung.",
+          "record_kind": "author",
+          "actor_quote": "SB 1137, Gonzalez.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "SB 1137 (2021-2022), authored by Gonzalez per the Legislative Counsel's Digest, bars approval of new drilling notices of intention only within health protection zones (3,200 feet of sensitive receptors), with exceptions, and expressly leaves drilling outside those zones unaffected. That shows a restrictive direction on new drilling permits but does not establish the rung text \"Allow no new drilling and let production decline over time\" statewide, nor does it show production held \"steady at current levels\"; no passage separates the rungs.",
+      "needs_source": [
+        "Gonzalez's own statements or additional votes/sponsorships on statewide new-drilling or production-level policy to separate the fossil-fuels rungs"
+      ],
+      "quotes": []
+    }
+  ]
+}

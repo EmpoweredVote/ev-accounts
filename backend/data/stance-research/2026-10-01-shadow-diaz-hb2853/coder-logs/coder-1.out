@@ -1,0 +1,10 @@
+Written: `coder-1.json`, one row (school-vouchers), chair **5**.
+
+**Passages**
+- `ac550cec` — House Third Reading vote page, HB 2853 (2022): `own-act` / `on-question` / `record` (`vote`), `chair-shaped`, `in-term`. Actor `DEGRAZIA N DIAZ Y DUNN Y`, tally `Passed 31-26-3-0-0` (26 of 60 No, so not near-unanimous).
+- `387c346b` — chaptered bill text: `record` (`vote`), carries the `provision_quote` — the added §15-2401.01 making "qualified student" include any resident eligible to enroll in public school preschool-disability, kindergarten, or "Any of grades one through twelve". No text quoted from inside a `[deleted: …]` fence.
+- `2edccbea` — bill overview, "Diaz (Co-Sponsor)": `record` (`sponsor`) but coded `direction-only`. C37 says sponsorship evidences the bill *as filed*, the page marks the measure Amended, and no as-introduced text is in the sources — so it supports the side, not the rung. Kept out of `rests_on` and raised in `needs_source`.
+
+**Chair:** rests on the vote + bill text. Universal eligibility plus the 90%-of-base-support transfer following the student matches the rung-5 text and excludes rung 4's "most families". V5: the 2022 act falls inside his earlier House term (2021-11-23 → 2023-01-09), same chamber of the same legislature → `in-term` under the 2026-09-27 ruling.
+
+No candidate quotes — none of the three snapshots contains Diaz's own words, so `quotes` is empty.

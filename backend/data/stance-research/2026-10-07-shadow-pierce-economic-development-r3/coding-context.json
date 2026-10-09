@@ -1,0 +1,54 @@
+{
+  "batch_id": "2026-10-07-shadow-pierce-economic-development-r3",
+  "seat": {
+    "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+    "full_name": "Matt Pierce",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2002-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "question_text": "How should government attract businesses and support economic development?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Don't give companies tax breaks or subsidies. Invest in public services and infrastructure so businesses want to come on their own."
+        },
+        {
+          "value": 2,
+          "text": "Help small and local businesses grow, but don't offer subsidies to attract large outside companies."
+        },
+        {
+          "value": 3,
+          "text": "Offer incentives to attract businesses, but only if they commit to good wages and local hiring — and pay the money back if they don't deliver."
+        },
+        {
+          "value": 4,
+          "text": "Offer large tax breaks and infrastructure to attract major employers, but keep limits and pass on deals that cost too much."
+        },
+        {
+          "value": 5,
+          "text": "Offer the largest incentives to attract any large employer, with no conditions or spending limits."
+        }
+      ],
+      "own_words_levels": [
+        "federal"
+      ],
+      "annexMd": "# economic-development — served revision af855dba-96f3-4fa0-beb7-43c5edb3f499 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should government attract businesses and support economic development?\"\n\n**Orientation:** standard, on an incentive scale. Rung 1 gives companies no tax breaks or subsidies,\nrung 5 gives the largest incentives with no conditions or limits. The rungs order **how much public\nmoney and help goes to individual companies, and on what terms**. This is not a size-of-government\nscale: rung 1 still spends on public services, and rung 5 spends the most on companies. Do not read\nrung 1 as \"most government\".\n\n**Levels with a lever:** local, state. State: tax-credit and closing-fund\nprogrammes, the economic-development agency, megasite deals. Local: property-tax abatements, tax\nincrement financing, land and site infrastructure, local development corporations.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"tax abatement\", \"PILOT\" (payment in lieu of taxes), \"tax increment financing\" (TIF),\n\"enterprise zone\", \"opportunity zone\", \"deal-closing fund\", \"job-creation tax credit\", \"megasite\",\n\"community benefits agreement\" (CBA), \"clawback\", \"recapture\", \"performance agreement\",\n\"prevailing wage\", \"local-hire requirement\", \"business retention and expansion\", \"small-business\ngrant\", \"revolving loan fund\".\n\n1. **\"Don't give companies tax breaks or subsidies. Invest in public services and infrastructure so\n   businesses want to come on their own.\"**\n   - Means: no company-specific incentives; public money goes to services and infrastructure for\n     everyone instead.\n   - Operative clauses: [a] no tax breaks or subsidies to companies; [b] invest in public services\n     and infrastructure instead.\n   - Establishing evidence looks like: own words rejecting incentives as a tool, **plus** support for\n     general public investment; a vote to repeal or end an incentive programme. [a] is an absence\n     clause (\"don't give\"): it must be stated, and a No on one deal does not state it (V4.2 \"Silence\n     is not a clause\"). Compound: one side only → `compound-partial` (V4.2).\n   - Levels that hold a lever: state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 2 because both refuse subsidies to large companies. Rung 2 still\n     helps small and local businesses; any support for a small-business programme excludes rung 1.\n\n2. **\"Help small and local businesses grow, but don't offer subsidies to attract large outside\n   companies.\"**\n   - Means: public help goes to small and local firms; large firms from outside get none.\n   - Operative clauses: [a] help small and local businesses grow; [b] no subsidies to attract large\n     outside companies.\n   - Establishing evidence looks like: a small-business grant, loan or technical-assistance programme\n     **plus** a passage that refuses incentives for large outside firms. Compound: one side only →\n     `compound-partial` (V4.2). [b] is an absence clause and must be stated.\n   - Levels that hold a lever: state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1. A small-business programme alone does not exclude\n     rungs 3–5, because a person can fund small firms and also recruit large ones → `direction-only`\n     _(proposed)_.\n\n3. **\"Offer incentives to attract businesses, but only if they commit to good wages and local hiring\n   — and pay the money back if they don't deliver.\"**\n   - Means: incentives are acceptable when they are tied to job quality and local jobs, and are\n     recovered if the company fails.\n   - Operative clauses: [a] incentives to attract businesses; [b] conditioned on good wages **and**\n     local hiring; [c] clawback if the company does not deliver.\n   - Establishing evidence looks like: an incentive programme or deal whose text carries wage and\n     local-hire conditions and a clawback; own words requiring all three. Compound: some clauses only\n     → `compound-partial` (V4.2).\n   - Levels that hold a lever: state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because many large deals carry some conditions. Rung 4 \"keeps\n     limits\" on **cost**; rung 3 sets **job-quality** conditions and recovers the money. A deal with a\n     job-count target and a cost cap but no wage or local-hire term does not meet [b] _(proposed)_.\n   - A general clawback or disclosure law for all incentive deals meets [c] only → `compound-partial`\n     _(proposed)_.\n\n4. **\"Offer large tax breaks and infrastructure to attract major employers, but keep limits and pass\n   on deals that cost too much.\"**\n   - Means: compete for major employers with large incentives, but with a ceiling, and walk away from\n     deals that are too expensive.\n   - Operative clauses: [a] large tax breaks and infrastructure to attract major employers; [b] keep\n     limits and pass on deals that cost too much.\n   - Establishing evidence looks like: a vote for a large employer-attraction package **plus** a\n     passage that sets or keeps a cap, a cost-per-job limit or a refusal of another deal on cost.\n     Compound: one side only → `compound-partial` (V4.2).\n   - Levels that hold a lever: state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 5 because a Yes on one large deal fits both. One Yes shows [a] and\n     says nothing about limits → `direction-only` (V4: chair-shaped must exclude the adjacent rungs)\n     _(proposed)_.\n   - **Site infrastructure built for one employer** (roads, water, power to a megasite) is an\n     incentive under [a]. **General** infrastructure open to all is rung 1 [b] _(proposed)_.\n\n5. **\"Offer the largest incentives to attract any large employer, with no conditions or spending\n   limits.\"**\n   - Means: give whatever it takes to land any large employer, with no strings and no ceiling.\n   - Operative clauses: [a] the largest incentives, for any large employer; [b] no conditions and no\n     spending limits.\n   - Establishing evidence looks like: own words rejecting caps or conditions on incentives; a vote to\n     remove a cap, a clawback or a job-quality condition from an incentive programme. [b] is an\n     absence clause: a deal that **happens** to carry no conditions does not show that the person\n     rejects all conditions (V4.2 \"Silence is not a clause\").\n   - Levels that hold a lever: state; local.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4: see rung 4.\n\n**Hard cases:**\n- **A uniform tax change for every business** (a general rate cut, a change to how all business\n  property is valued, an across-the-board exemption) is tax policy, not an incentive to attract\n  employers → `adjacent`; BLANK `no-evidence` when nothing else survives. Read the operative numbers\n  carefully: a change to how property is valued is not a tax-rate change.\n- **A No on one deal** fits rung 1, rung 2 and rung 4 (\"pass on deals that cost too much\") →\n  `direction-only`.\n- **Workforce training and education** programmes not tied to attracting a company → `adjacent`\n  _(proposed)_.\n- **Preemption (codebook V2, H12).** A state law that limits what localities may offer decides which\n  level acts → `adjacent`.\n- **Budget and omnibus votes** with an incentive line → V4 `multi-subject`. A single-subject deal\n  approval (one abatement, one TIF district) is not multi-subject.\n- **Ground-breakings, ribbon-cuttings and \"open for business\" lines** → `rhetorical`.\n"
+    }
+  ]
+}

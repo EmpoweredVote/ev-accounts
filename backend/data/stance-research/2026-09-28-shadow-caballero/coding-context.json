@@ -1,0 +1,76 @@
+{
+  "batch_id": "2026-09-28-shadow-caballero",
+  "seat": {
+    "politician_id": "8b15f324-ed8b-4cc9-92b4-fdaf07896b20",
+    "full_name": "Anna Caballero",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "d55ca4b0-d53f-42f5-9ed7-000d188e6634",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2022-12-05",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "CA",
+        "term_start": "2006-12-04",
+        "start_precision": "day",
+        "term_end": "2010-11-30"
+      },
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "CA",
+        "term_start": "2016-12-05",
+        "start_precision": "day",
+        "term_end": "2018-11-30"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "CA",
+        "term_start": "2018-12-03",
+        "start_precision": "day",
+        "term_end": "2022-12-04"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "served_revision_id": "2010cab0-1968-4f24-b74d-ca47c2f90165",
+      "question_text": "What role should government play in addressing racial and social inequality?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "mandate racial equity requirements in all institutions"
+        },
+        {
+          "value": 2,
+          "text": "strengthen civil rights enforcement and address systemic discrimination"
+        },
+        {
+          "value": 3,
+          "text": "maintain current civil rights laws while promoting equal opportunity"
+        },
+        {
+          "value": 4,
+          "text": "limit federal civil rights enforcement to clear cases of discrimination"
+        },
+        {
+          "value": 5,
+          "text": "eliminate affirmative action and all race-based government programs"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

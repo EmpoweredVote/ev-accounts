@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e",
+      "office_id": "5f584301-def4-4b05-bba8-e017dc2273e0",
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "served_revision_id": "c48a03d6-b972-4f27-9a8a-d41b07f4a929",
+      "passages": [
+        {
+          "snapshot_id": "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "House Bill 1007 (2025)",
+          "provision_quote": null,
+          "note": "Bill details page names Soliday as author of HB 1007, which creates the large-load-customer review framework.",
+          "record_kind": "author",
+          "actor_quote": "Authored by: Rep. Edmond Soliday",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "House Bill 1007 (2025)",
+          "provision_quote": "The commission may expedite, in accordance with this chapter, the review of filings and submittals made by an energy utility to meet the energy infrastructure and generation resource needs of customers.",
+          "note": "Enrolled bill text creates an expedited ('EGR') commission review process, with automatic-approval deadlines, for utilities serving large load customers (150 MW / $500M threshold), alongside mandatory load-growth forecasts and rate-impact disclosures.",
+          "record_kind": "author",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+        "fb024c22-ae9a-5f57-b04e-bbe4fc13fc69"
+      ],
+      "reasoning": "Soliday authored HB 1007 (2025), which creates an expedited commission-review process with automatic-approval deadlines for utilities serving 'large load customers' at the data-center-scale threshold (150 megawatts or $500 million investment), while mandating load-growth forecasts and rate-impact descriptions throughout the process. This matches rung 4, 'Encouraging data center development through streamlined permitting while requiring transparency about projected energy demand and rate impacts,' rather than a moratorium, a cost-pass-through ban, or minimal regulatory barriers.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

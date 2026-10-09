@@ -1,0 +1,11 @@
+Wrote `labels/coder-1.json` — one row, coded BLANK.
+
+**Finchem / voting-rights → BLANK `no-evidence`**
+
+All three snapshots are one instrument, SB 1057 (2026), and Finchem's connection to it is solid on V1/V3/V5: he is prime sponsor ("Sponsors: Finchem (Prime)") and voted Aye on Senate Third Reading ("FINCHEM Y", "Passed 16-11-3-0-0", 2026-02-23, in-term). It fails on V2.
+
+The ladder asks how the government should verify a *voter's identity and eligibility*. SB1057's operative section is about the *ballot paper*: ISO-certified vendors and security features (watermarked security paper, holographic foil, thermochromic inks, a voter-accessible tracking code). Nothing in it requires, loosens, or names any form of voter identification, so it cannot separate rung 1 from rung 5 — it is `adjacent`, and V4 `off-axis`. Adjacent passages can't support a chair, so nothing survives to `rests_on`.
+
+Field placement per the 0.3 ruling: `actor_quote`/`tally_quote` on the vote page, `actor_quote` on the overview, `provision_quote` only on the bill-text page. I did not quote the `[deleted: watermark; paper ballots]` fence.
+
+`needs_source` asks for the two things that would actually decide this row: a Finchem record on voter ID itself (photo ID, mail-ballot ID number, or documentary proof of citizenship, with bill number), or his own in-cycle words answering the question.

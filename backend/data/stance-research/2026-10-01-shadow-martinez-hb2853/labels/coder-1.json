@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "4800e623-e763-50c3-9001-948450f45863",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call: she voted Y on final passage; 26 No of 60 members, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "LONGDON N MARTINEZ Y MATHIS N",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "c1b703be-a2d3-5376-8419-b3d9505af7f7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Co-sponsorship evidences the bill as filed (C37), and the vote line shows the bill was amended, so the enacted text is carried by the vote passage rather than by this one.",
+          "record_kind": "sponsor",
+          "actor_quote": "Kavanagh (Co-Sponsor) Martinez (Co-Sponsor) Nguyen (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7e02b0b6-bcb1-5d0b-9253-c21df0a6c8e2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "Enacted text (Chapter 388) of the bill she voted on; single-subject, the appropriation funds administration of the same program.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "4800e623-e763-50c3-9001-948450f45863",
+        "c1b703be-a2d3-5376-8419-b3d9505af7f7",
+        "7e02b0b6-bcb1-5d0b-9253-c21df0a6c8e2"
+      ],
+      "reasoning": "Martinez co-sponsored HB2853 (2022) and voted Y on its final passage; the enacted text adds section 15-2401.01, under which \"qualified student\" includes any resident \"eligible to enroll in a public school in this state\" in \"A kindergarten program\" or \"Any of grades one through twelve\", with the department transferring \"ninety percent of the sum of the base support level and additional assistance\" that would otherwise go to the student's district. That is the rung \"Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family\": eligibility is universal rather than \"most families, not all\", and \"Qualified school\" is defined as \"a nongovernmental primary or secondary school\" with no religious exclusion.",
+      "needs_source": [
+        "HB2853 (2022) as-introduced text, Arizona Legislature 55th/2R, to confirm the co-sponsored version matches the enacted universal-eligibility section (the roll call records the bill as Amended)"
+      ],
+      "quotes": []
+    }
+  ]
+}

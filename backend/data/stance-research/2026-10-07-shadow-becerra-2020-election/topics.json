@@ -1,0 +1,39 @@
+[
+  {
+    "topic_id": "b5260e5a-5576-4071-8b2a-088af8d1f9eb",
+    "topic_key": "2020-election",
+    "topic_revision_id": "81920cf6-9a30-4c5c-82b1-5f2c16cda95c",
+    "served_revision_id": "81920cf6-9a30-4c5c-82b1-5f2c16cda95c",
+    "question_number": 44,
+    "title": "2020 Presidential Election",
+    "question_text": "What is your view of the outcome of the 2020 presidential election?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "The election was fair and Joe Biden won legitimately."
+      },
+      {
+        "value": 2,
+        "text": "Joe Biden won, but the election had real problems worth fixing."
+      },
+      {
+        "value": 3,
+        "text": "There was some fraud, but not enough to change the result."
+      },
+      {
+        "value": 4,
+        "text": "Fraud or irregularities may have been enough to change the result."
+      },
+      {
+        "value": 5,
+        "text": "The election was stolen from Donald Trump through widespread fraud."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": []
+  }
+]

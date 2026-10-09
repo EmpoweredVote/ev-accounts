@@ -1,0 +1,431 @@
+{
+ "date": "2026-10-07",
+ "batches": [
+  {
+   "name": "thomson-homelessness",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "homelessness"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2026/08/14/6626",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/12/05/6397",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2024/05/03/5921",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/11/20/6389",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/07/30/6313",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-homelessness-response",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "homelessness-response"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2026/08/14/6626",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/12/05/6397",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2024/05/03/5921",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/11/20/6389",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/07/30/6313",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-housing",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "housing"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2025/07/30/6313",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/11/20/6389",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/07/01/6296",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/07/07/6593",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-residential-zoning",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "residential-zoning"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2025/06/20/6289",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/07/07/6593",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/07/01/6296",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-growth-and-development",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "growth-and-development"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2024/08/15/6012",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/03/13/6193",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/02/19/6455",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/07/07/6593",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/07/01/6296",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-economic-development",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "economic-development"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2026/01/21/6431",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/07/06/6590",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2024/08/27/6020",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/05/21/6551",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/06/12/6570",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-taxes",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "taxes"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2026/08/03/6617",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/08/08/6325",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2024/10/11/6074",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-transportation-priorities",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "transportation-priorities"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2026/06/22/6576",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/06/13/6571",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2024/03/26/5893",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-public-safety-approach",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "public-safety-approach"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2024/04/25/5916",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/05/16/6259",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2026/04/15/6521",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2024/05/02/5923",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-deportation",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "deportation"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2025/05/02/6246",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-local-immigration",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "local-immigration"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2025/05/02/6246",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-rent-regulation",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "rent-regulation"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2025/08/05/6323",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2025/06/24/6292",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-climate-change",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "climate-change"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2026/07/16/6603",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2024/04/16/5913",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-local-environment",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "local-environment"
+   ],
+   "sources": [
+    {
+     "url": "https://bloomington.in.gov/news/2026/07/16/6603",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://bloomington.in.gov/news/2024/04/16/5913",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "thomson-nosource",
+   "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+   "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+   "level": "local",
+   "topic_keys": [
+    "abortion",
+    "ai-regulation",
+    "campaign-finance",
+    "childcare",
+    "city-sanitation",
+    "civil-rights",
+    "data-centers",
+    "fossil-fuels",
+    "healthcare",
+    "jail-capacity",
+    "medicare/aid",
+    "misinformation",
+    "redistricting",
+    "religious-freedom",
+    "same-sex-marriage",
+    "school-vouchers",
+    "social-security",
+    "tariffs",
+    "trans-athletes",
+    "ukraine-support",
+    "voting-rights",
+    "2020-election",
+    "border-security",
+    "education-curriculum",
+    "education-library-books",
+    "education-gender-identity",
+    "education-equity-programs",
+    "education-school-police",
+    "education-charter-authorization",
+    "education-school-budget",
+    "education-ai",
+    "cannabis-policy",
+    "defense-spending",
+    "military-intervention",
+    "gun-policy",
+    "israel-military-aid",
+    "minimum-wage",
+    "ranked-choice-voting"
+   ],
+   "sources": []
+  }
+ ]
+}

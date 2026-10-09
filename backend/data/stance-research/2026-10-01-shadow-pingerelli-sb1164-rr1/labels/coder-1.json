@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "184bd445-9f61-4bd3-859f-22522c9ccabd",
+      "office_id": "87c65dff-fa5b-4d7a-a7bc-d78595d2f506",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "89a47096-9e0c-51ea-89fc-ffed87200c23",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview page for the same record: it prints the House Third Reading tally and the Governor's signature but does not name Pingerelli, who is not among the listed sponsors.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 03/24/2022 31-26-3-0-0 PASSED"
+        },
+        {
+          "snapshot_id": "9d40bea6-e2ee-53d3-be19-3ff212a323c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call showing her Aye; 26 of 60 members voted No, so the vote is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "PINGERELLI Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "f1403cb4-c530-5152-b92d-73f71cebf5b0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1164 (2022)",
+          "provision_quote": "Except in a medical emergency, a physician may not intentionally or knowingly perform, induce or attempt to perform or induce an abortion if the probable gestational age of the unborn human being has been determined to be greater than fifteen weeks.",
+          "note": "Chaptered single-subject text of the bill she voted for: a fifteen-week limit with a medical-emergency exception, which matches no rung's permitted window.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Aye on SB 1164 (2022) is a record on a single-subject bill, but its operative section bars abortion only when gestational age is \"greater than fifteen weeks\", which is later than \"allow abortion during the first trimester\" and far earlier than \"keep abortion legal through the second trimester\", so it matches no rung's permitted window. The act also states it does \"not : 1. Create or recognize a right to abortion\" and does not \"Repeal, by implication or otherwise, section 13-3603, Arizona Revised Statutes, or any other applicable state law regulating or restricting abortion\", so it cannot show she would allow abortion in any window, and it carries none of the \"rape, incest, or a serious risk to the mother's life\" exceptions that rung 4 names. The vote establishes only the restrictive side.",
+      "needs_source": [
+        "Beverly Pingerelli's own words on how late in pregnancy abortion should remain legal, and on rape/incest exceptions (questionnaire, debate answer, or first-person issue page), from her current term or the campaign that seated her",
+        "An Arizona House roll call or sponsorship by Pingerelli on a bill whose operative section matches one rung's permitted window and exceptions (for example a ban with rape, incest and life-of-the-mother exceptions, or a first-trimester limit)"
+      ],
+      "quotes": []
+    }
+  ]
+}

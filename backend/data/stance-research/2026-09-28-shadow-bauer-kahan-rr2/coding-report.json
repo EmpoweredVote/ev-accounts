@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab|b58a97c0-8ee8-4949-827d-c06946a12a4c|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "topic_key": "gun-policy",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Assembly floor roll call on a single-subject assault-weapons bill during Bauer-Kahan's terms (2018-12-03 to present)",
+          "California Assembly floor roll call or authorship/coauthorship record on a universal background-check bill covering private sales, during Bauer-Kahan's terms",
+          "Bauer-Kahan's own first-person words on banning assault-style weapons or on background checks (campaign issue page, questionnaire, or debate answer)",
+          "a vote or sponsorship record on an assault-weapons ban, universal background-check, carry-permit, or permitless-carry bill",
+          "her own first-person statement on firearm ownership, carry, or background-check policy"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab|b58a97c0-8ee8-4949-827d-c06946a12a4c|56125933-b82a-46c5-847b-b2e9a146b89f",
+      "requests": [
+        "California Assembly floor roll call on a single-subject assault-weapons bill during Bauer-Kahan's terms (2018-12-03 to present)",
+        "California Assembly floor roll call or authorship/coauthorship record on a universal background-check bill covering private sales, during Bauer-Kahan's terms",
+        "Bauer-Kahan's own first-person words on banning assault-style weapons or on background checks (campaign issue page, questionnaire, or debate answer)",
+        "a vote or sponsorship record on an assault-weapons ban, universal background-check, carry-permit, or permitless-carry bill",
+        "her own first-person statement on firearm ownership, carry, or background-check policy"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

@@ -1,0 +1,124 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "407614a8-ba2c-4145-8224-233655e6ac3f",
+      "served_revision_id": "76d9941b-3085-42cf-b229-ac41f4f85b8d",
+      "passages": [
+        {
+          "snapshot_id": "6d207f46-4d4a-5be5-a1cf-95ef997eb6a5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-05-11",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2 (118th)",
+          "provision_quote": null,
+          "note": "Clerk roll call 209, final passage of H.R. 2; Houchin voted Yea on a bill that also covers E-Verify for all employers, H-2A rule nullification, DHS vaccine mandates and TSA ID rules.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 219 nay: 213 present: 0 not voting: 3"
+        },
+        {
+          "snapshot_id": "a780d05d-0429-599f-a491-86feda998966",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-05-11",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2 (118th)",
+          "provision_quote": "This section limits asylum eligibility to individuals who arrived in the United States at a port of entry.",
+          "note": "CRS summary of H.R. 2: its asylum title restricts who may claim (port-of-entry only, transit bar) like rung 4, but the bill bundles unrelated subjects, so a bare Yea shows direction only.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0ef83358-f9dc-595c-9d0f-e9ec3250fa9b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-06-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticizes the 2,500/day threshold before asylum seekers can be turned away and urges passing HR2; shows the restrictive side but does not tie her vote to H.R. 2's eligibility bars or separate rungs 4 and 5.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "83daec3a-4758-5037-a2b4-45e10cdf7522",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2023-05-11",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Statement on H.R. 2 passage praises \"the strongest border bill in years\" but names no asylum clause.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "31cf47a2-5f59-5a39-ba8b-ec0c2faca0a2",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2024-02-15",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Support for an amicus brief backing Texas's state arrest law concerns which level enforces, not who may claim asylum; the brief itself is not in the sources.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Yea on H.R. 2 (118th), whose asylum title \"limits asylum eligibility to individuals who arrived in the United States at a port of entry\", points toward \"Sharply restrict who can claim asylum at the border\", but H.R. 2 is multi-subject and no own statement ties her vote to that provision. Her 2024 call to \"Pass HR2\" and criticism that DHS could not \"turn asylum seekers away\" show the restrictive side without separating rung 4 from rung 5 (\"End asylum and quickly turn back anyone who crosses illegally\").",
+      "needs_source": [
+        "Houchin's own words (floor speech, explanation of vote, issue page) tying her H.R. 2 (118th) vote to its asylum eligibility provisions",
+        "H.R. 2 (118th) engrossed bill text, Division B Title I (asylum eligibility)",
+        "Amicus brief text, United States v. Texas (W.D. Tex., Austin Division, 2024), signed by Houchin"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "0ef83358-f9dc-595c-9d0f-e9ec3250fa9b",
+          "text": "Under Biden’s EO, DHS would not be allowed to turn asylum seekers away until illegal border crossings exceed 2,500 per day – which is nearly 1 million per year.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "0ef83358-f9dc-595c-9d0f-e9ec3250fa9b",
+          "text": "Too little. Too late. Pass HR2.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "83daec3a-4758-5037-a2b4-45e10cdf7522",
+          "text": "Today, House Republicans passed the strongest border bill in years.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "dcfecd0c-4c76-50c4-ab19-82e030d74297",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-04-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": "Following the implementation of the minimum wage increase specified in subparagraph (F) of paragraph (2) of subdivision (b), on or before August 1 of that year, and on or before each August 1 thereafter, the Director of Finance shall calculate an adjusted minimum wage. The calculation shall increase the minimum wage by the lesser of 3.5 percent and the rate of change in the averages of the most recent July 1 to June 30, inclusive, period over the preceding July 1 to June 30, inclusive, period for the United States Bureau of Labor Statistics nonseasonally adjusted United States Consumer Price Index for Urban Wage Earners and Clerical Workers (U.S. CPI-W). The result shall be rounded to the nearest ten cents ($0.10). Each adjusted minimum wage increase calculated under this subdivision shall take effect on the following January 1.",
+          "note": "Bill text also carries an unrelated IHSS paid-sick-day provision, but the minimum-wage schedule and CPI-W indexing clause is the separable, named primary subject.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9b2ded26-858c-5fd2-aac3-c706625ba56f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2016-03-31",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 3 (2015-2016)",
+          "provision_quote": null,
+          "note": "Senate concurrence vote; McGuire listed among the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Liu, McGuire, Mendoza",
+          "tally_quote": "Ayes Count 26 Noes Count 12"
+        }
+      ],
+      "v6_value": 1,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "dcfecd0c-4c76-50c4-ab19-82e030d74297",
+        "9b2ded26-858c-5fd2-aac3-c706625ba56f"
+      ],
+      "reasoning": "McGuire voted Aye (Senate concurrence, 26-12) on SB 3 (2015-2016), which both raises California's wage floor on a set schedule to $15 and then requires the Director of Finance to calculate and implement a CPI-W-indexed increase every year automatically, matching rung 1's text: 'Raise the wage floor and tie it to the cost of living, so it rises automatically each year without new legislation.' The indexing mechanism is not subject to the bill's Governor-suspension clause, which applies only to the earlier scheduled step increases, so the automatic, no-new-legislation feature stands on its own.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

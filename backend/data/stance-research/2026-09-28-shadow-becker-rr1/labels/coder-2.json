@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "64eda290-d172-48de-8827-6ebca668cf5a",
+      "office_id": "69fb6f34-c702-43fb-84fd-93418b521fe4",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "d3110657-375e-516d-9153-509804371df6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-09-19",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 942 (2023-2024)",
+          "provision_quote": "This bill, the California AI Transparency Act, would, among other things, require a covered provider, as defined, to make available an artificial intelligence (AI) detection tool at no cost to the user that meets certain criteria, including that the AI detection tool is publicly accessible.",
+          "note": "A transparency/disclosure mandate (detection tool, content labeling) is a different regulatory lever than the ladder's liability, safety-testing, or approval clauses.",
+          "record_kind": "author",
+          "actor_quote": "SB 942, Becker.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SB 942 requires covered GenAI providers to offer an AI-detection tool and content disclosures, a transparency mandate that does not match any rung's clause: not 'freely without government interference,' not 'voluntary guidelines,' not 'legally responsible when their systems cause harm,' not 'require safety testing before AI can be used in high-stakes areas,' and not 'strict government approval requirements before any AI system can be deployed.' No passage survives V2 to establish a chair.",
+      "needs_source": ["Becker's own statements or acts specifically addressing AI developer liability for harm, mandatory pre-use safety testing in high-stakes areas, or pre-deployment approval requirements"],
+      "quotes": []
+    }
+  ]
+}

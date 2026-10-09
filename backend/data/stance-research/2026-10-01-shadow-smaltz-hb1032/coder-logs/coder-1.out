@@ -1,0 +1,17 @@
+Wrote `coder-1.json`.
+
+**Row: Ben Smaltz / redistricting → BLANK `direction-only`**
+
+Three passages, all `record` on HB 1032 (2026), all `own-act`, all `in-term`:
+
+| snapshot | kind | carries |
+|---|---|---|
+| bill details | `author` | `actor_quote` "Authored by: Rep. Ben Smaltz." |
+| House roll call 28 | `vote` | `actor_quote` (Yea list span containing Smaltz), `tally_quote` "Yea 57 Nay 41 Excused 2 Not Voting 0" |
+| committee bill text | `author` | `provision_quote` (the TRO bar in SECTION 3) |
+
+Why no chair: the bill has the general assembly redraw congressional districts mid-decade and narrows relief in apportionment suits, which plainly excludes the three commission/bipartisan-committee rungs — but V4.2 says excluding rungs is not evidence for the one left. The instrument preserves judicial review (the supreme court is given mandatory and exclusive appellate jurisdiction over apportionment appeals), so it never says the controlling party draws maps "without outside interference," and it does not separate rung 4 from rung 5. That is H13/H14 territory, so `direction-only` with `rests_on: []`.
+
+Two `needs_source` entries: Smaltz's own words tying the bill to court oversight, and any record or statement of his on a commission.
+
+No quotes — none of the three sources contains his own words.

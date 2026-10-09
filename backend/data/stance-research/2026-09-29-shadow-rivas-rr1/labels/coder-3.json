@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "5a75d4fb-e4fe-441a-8658-e6eb57574fd4",
+      "office_id": "c92c53b0-c0f9-4a30-a060-2996e90bf811",
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "served_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "passages": [
+        {
+          "snapshot_id": "2a4a6f51-471e-5ea5-b0a9-d8d75d8519ff",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-08-21",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "ACA 8 (2025-2026)",
+          "provision_quote": "In response to the congressional redistricting in Texas in 2025, and notwithstanding any other provision of this Constitution or existing law, the single-member districts for Congress reflected in Assembly Bill 604 of the 2025–26 Regular Session pursuant to the requirements of Chapter 5 (commencing with Section 21400) of Division 21 of the Elections Code shall temporarily be used for every congressional election for a term of office commencing on or after the date this subdivision becomes operative and before the certification of new congressional boundary lines drawn by the Citizens Redistricting Commission pursuant to subdivision (d).",
+          "note": "Authored measure states general support for independent, nonpartisan commissions but temporarily assigns congressional maps to a legislature-passed district plan with court jurisdiction, not a stated permanent system.",
+          "record_kind": "author",
+          "actor_quote": "ACA 8, Rivas.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "ACA 8 is Rivas's own authored measure; its own text states it is 'the policy of the State of California to support the use of fair, independent, and nonpartisan redistricting commissions nationwide,' which shows a direction favoring independent commissions without specifying whether elected officials are excluded entirely or whether both major parties must have equal representation. Its operative clause separately and temporarily assigns congressional maps to the legislature-passed AB 604 districts with California Supreme Court jurisdiction over challenges, an explicitly temporary measure rather than a stated permanent system, so no rung's full clauses are established as his standing position.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "2a4a6f51-471e-5ea5-b0a9-d8d75d8519ff",
+          "text": "It is the policy of the State of California to support the use of fair, independent, and nonpartisan redistricting commissions nationwide.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "2a4a6f51-471e-5ea5-b0a9-d8d75d8519ff",
+          "text": "President Trump’s election-rigging scheme is an emergency for our democracy.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["is-attack"]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "passages": [
+        {
+          "snapshot_id": "f2f8e4df-1a3b-5e6e-a6b7-3089eff0325e",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-answer",
+          "date": "2026",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Forum answer criticizes IEDC 'corporate welfare' for Fortune 500 deals and calls to redirect help to small businesses and startups, but never states that large outside companies should get no subsidies (rung 2 clause [b]); 'beyond just ... the big corporations' does not exclude them.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c9bc25d7-a9de-522c-ba5e-002531ce6131",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-01-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Caucus release reports an amendment to HB 1002 barring further IEDC sales-tax exemptions for data centers (reported act is context only, H15); his quoted words object to tax breaks for trillion-dollar corporations, a side but no rung.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "91a7c57d-a0f2-5c71-b925-c0d79472142a",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-07-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Defense of the Diversity Business Enterprise state-contracting goals is procurement equity, not incentives to attract or grow businesses.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "In the forum he says 'we need to redirect our efforts so that small businesses ... how do we help them do that?', meeting the first clause of 'Help small and local businesses grow, but don't offer subsidies to attract large outside companies'. His criticism of 'corporate welfare' and of data-center tax exemptions shows a side but never states the absence clause that large outside companies get no subsidies, so the compound rung is only partly evidenced.",
+      "needs_source": [
+        "Indiana House Journal, HB 1002 (2026): text of Pierce amendment on utility sales-tax moratorium and IEDC data-center sales-tax exemptions, and its roll call",
+        "Roll call or instrument for Pierce's vote 'for a fuller investigation' of the IEDC"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f2f8e4df-1a3b-5e6e-a6b7-3089eff0325e",
+          "text": "I think that we need to redirect our efforts so that small businesses, that business that is prospering and it needs to get to the next level but it needs some help to get there, how do we help them do that?",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "f2f8e4df-1a3b-5e6e-a6b7-3089eff0325e",
+          "text": "We will outbid the corporate welfare that we'll give to the people to get them here. And they ignored the ability of the small businesses, the startups right here.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        },
+        {
+          "snapshot_id": "c9bc25d7-a9de-522c-ba5e-002531ce6131",
+          "text": "Apparently, it’s fine for trillion-dollar corporations to pay no sales tax on energy use at their data centers",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

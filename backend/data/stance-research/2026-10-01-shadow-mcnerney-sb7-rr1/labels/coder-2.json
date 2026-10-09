@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "0267f457-cd3f-4790-b0c8-76ec616de3f0",
+      "office_id": "c8952cf4-85b9-4602-9edc-dfa0878583ff",
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "served_revision_id": "c594dc06-0c70-4707-8ae0-d4bc760172db",
+      "passages": [
+        {
+          "snapshot_id": "190d126e-5005-54a7-bae2-6bd166c9a4f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-09-17",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 7 (2025-2026)",
+          "provision_quote": "When an employer relies primarily on ADS output to make a discipline, termination, or deactivation decision, the employer shall use a human reviewer to review the ADS output and compile and review other information that is relevant to the decision, if any.",
+          "note": "Mandates ADS notice, use restrictions, and human review, but names no safety-testing, developer-liability, or pre-deployment-approval mechanism matching a specific rung.",
+          "record_kind": "author",
+          "actor_quote": "Introduced by Senator McNerney",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "McNerney authored SB 7 (2025-2026), which requires ADS notice to workers and applicants, restricts certain ADS functions, and requires human review of ADS output before discipline, termination, or deactivation decisions. This shows a pro-regulation direction but its mechanism (notice and human review) does not match rung 4's 'safety testing,' rung 3's developer liability for harms caused, or rung 5's government approval before deployment.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

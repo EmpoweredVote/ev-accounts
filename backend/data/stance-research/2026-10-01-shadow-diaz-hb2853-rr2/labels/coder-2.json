@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d",
+      "office_id": "8c909ec7-73d2-4488-8eb5-a72f4746f32b",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "ac550cec-a429-53c6-a766-a3103891d3d4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading: Diaz voted Yea on this single-subject empowerment-scholarship bill, 31-26-3-0-0.",
+          "record_kind": "vote",
+          "actor_quote": "DIAZ Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "2edccbea-f0be-540d-844b-0c42eb581705",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Diaz is listed as a co-sponsor of HB2853 as filed; the Governor signed the bill as Chapter 388.",
+          "record_kind": "sponsor",
+          "actor_quote": "Diaz (Co-Sponsor)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "387c346b-0d35-5f09-840c-1456403677e0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "New section 15-2401.01 makes any public-school-eligible resident a qualified student, the annex's own description of a universal instrument.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ac550cec-a429-53c6-a766-a3103891d3d4",
+        "2edccbea-f0be-540d-844b-0c42eb581705",
+        "387c346b-0d35-5f09-840c-1456403677e0"
+      ],
+      "reasoning": "Diaz co-sponsored and voted Yea (House Third Reading, 31-26-3-0-0) on HB2853 (2022), a single-subject Arizona empowerment scholarship accounts bill. Its new section 15-2401.01 makes any resident eligible to enroll in public school (preschool for disabilities, kindergarten, or grades one through twelve) a qualified student without otherwise qualifying, and the Act's 'qualified school' definition is not limited to nonreligious schools, matching rung 5's text that 'education funding follows the student to any school — public, private, or religious — chosen by the family.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

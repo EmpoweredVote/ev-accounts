@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 import { apiFetch } from '../../lib/api';
 import { groupResearchReviewRows } from './researchReviewGrouping';
+import { proposedLabel } from './researchReviewApproval';
 
 interface StagingStance {
   id: string;
@@ -26,7 +27,9 @@ interface ResearchReviewRow {
   id: string;
   fullNameRaw: string;
   topicKey: string;
+  /** 1-5 = a chair; 0 = a blank (CA_0303), shown as "Blank — <reason>". */
   proposedValue: number | null;
+  proposedBlankReason?: string | null;
   verifiedSourceCount: number;
   threshold: number;
   batchId: string;
@@ -303,7 +306,9 @@ export function ReviewQueuePage() {
                           </div>
                           <div className="text-right text-sm text-gray-500 dark:text-gray-400">
                             {row.proposedValue !== null && (
-                              <p className="font-medium text-gray-700 dark:text-gray-300">value {row.proposedValue}</p>
+                              <p className="font-medium text-gray-700 dark:text-gray-300">
+                                {proposedLabel(row.proposedValue, row.proposedBlankReason)}
+                              </p>
                             )}
                             <p className="text-xs">
                               {row.verifiedSourceCount}/{row.threshold} sources verified

@@ -1,0 +1,336 @@
+{
+  "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+  "leads": [
+    {
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "topic_key": "abortion",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "dab46e5c-628a-4360-ad1d-3aaba61768f0",
+      "reasoning": "Becerra has a lifelong 100% NARAL and 100% Planned Parenthood rating. His 2026 campaign states \"I know that abortion access is health care\" and pledges California will \"lead when it comes to protecting access to abortion.\" As HHS Secretary he ensured Planned Parenthood funding reached dependent clinics. He voted against the Prenatal Non-Discrimination Act (PRENDA) and argued against religious exemptions from ACA contraception coverage.",
+      "sources": [
+        "https://www.xavierbecerra2026.com/rights",
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "666bf03d-81fc-4138-ab15-69ae734c9023",
+      "topic_key": "ai-regulation",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "58804871-b768-4d4a-85b5-07c92eb40bc7",
+      "reasoning": "Becerra's AI platform calls for \"firm guardrails around real harms,\" transparency in automated decision-making, human review, and mandatory independent audits of AI systems deployed by state agencies — developed \"with industry at the table.\" It does not require government pre-approval before releasing AI systems. This disclosure-, accountability-, and audit-based approach maps to stance 3 (require developers to disclose risks and be held responsible) rather than a strict pre-approval regime.",
+      "sources": [
+        "https://www.xavierbecerra2026.com/ai"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "92730f69-ae57-401c-8ad1-2d07834a895d",
+      "topic_key": "campaign-finance",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "58ebaab3-0849-446a-82f9-162f084e93e3",
+      "reasoning": "Becerra supports campaign-finance disclosure and automatic voter registration (per OnTheIssues) and has backed limits on dark money. His documented position centers on full disclosure of campaign spending and tighter limits on corporate/dark money, consistent with stance 2.",
+      "sources": [
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "c1ac1330-47f7-44ec-baf3-c913d926b97c",
+      "topic_key": "childcare",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "30cb4666-836f-4f13-a8c3-2c3caadf6337",
+      "reasoning": "Becerra's 2026 campaign commits to \"expanding help with childcare and essential costs\" as a core affordability priority, framing childcare as part of cost-of-living relief for working families. This points to significant subsidy expansion for low- and middle-income families (stance 2).",
+      "sources": [
+        "https://www.xavierbecerra2026.com/priorities/economy-and-affordability/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "0bc588c6-39e1-4084-b5de-cac909b8b762",
+      "topic_key": "civil-rights",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "839b4b5b-dd16-45a5-8dce-8e54f85165f6",
+      "reasoning": "Becerra holds a 100% NAACP rating and consistently supports affirmative action and addressing systemic discrimination. As California AG he created an environmental justice bureau in 2018 and fought Trump administration rollbacks of civil rights protections. His campaign pledges to protect LGBTQ+ rights and voting rights.",
+      "sources": [
+        "https://www.ontheissues.org/Xavier_Becerra.htm",
+        "https://en.wikipedia.org/wiki/Xavier_Becerra"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "topic_key": "climate-change",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "da9cf777-0a95-41aa-8775-c5b29528825b",
+      "reasoning": "Newer 2026 campaign appearances show a more gradualist energy framing than the DB's existing value 2. At an April 2026 Fresno forum Becerra called for an \"all of the above\" approach and a \"balanced transition\" that doesn't leave people behind, and days later on CBS LA he warned against getting \"so far ahead of all the people we want to lead.\" This is closer to stance 3 (invest in clean energy while gradually reducing fossil fuel reliance) than stance 2 (rapid phase-out by 2030); flagging for review given the contrast with his more aggressive AG-era anti-fossil-fuel litigation record.",
+      "sources": [
+        "https://www.youtube.com/watch?v=TeE7gMPTgBo",
+        "https://ontherecord.empowered.vote/meetings/f3181318-9fab-49ea-a15f-44af7caa654d",
+        "https://www.youtube.com/watch?v=1wbrjc25WP8"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "4559b513-0fd8-4ed1-babd-f3b554162f40",
+      "topic_key": "data-centers",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "f6630c71-8ba8-464d-82d4-9079803d4e8b",
+      "reasoning": "Becerra's AI platform states that data centers must be \"powered with clean energy, cover the costs of their own energy needs, and meet environmental disclosure requirements,\" and that electric ratepayers \"must come out winners.\" This aligns with requiring data centers to fund their own power and barring utilities from passing those costs to residential customers (stance 2).",
+      "sources": [
+        "https://www.xavierbecerra2026.com/ai"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "673c3758-448d-46ce-ab09-5869488a131f",
+      "reasoning": "As California AG Becerra led 21 AGs defending DACA against Trump and opposed ICE overreach and family separations. His 2026 campaign frames his mission as \"stopping ICE overreach\" and \"protecting Dreamers from deportation.\" His congressional record shows a 0% FAIR rating. His position is to deport only those committing serious crimes while providing legal status to DACA-eligible and long-term residents.",
+      "sources": [
+        "https://www.xavierbecerra2026.com/",
+        "https://www.ontheissues.org/Xavier_Becerra.htm",
+        "https://en.wikipedia.org/wiki/Xavier_Becerra"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "topic_key": "economic-development",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "6291d7ff-cb36-48c6-8c9e-e94ccafd43ae",
+      "reasoning": "Becerra's clearest economic-development signal is his film-industry incentives page (2025 campaign): he commits to expanding California's existing film tax credit program in a targeted, data-driven way — where \"demand is real, where jobs follow, and where the return to California justifies it\" — and pairs expansion with wage requirements and workforce-development investment. This is explicitly targeted-incentive logic with community-benefit conditions, not a blanket subsidy or maximum-incentive posture. His economy-and-affordability page focuses on consumer protection and anti-price-gouging rather than broad business attraction subsidies.",
+      "sources": [
+        "https://www.xavierbecerra2026.com/priorities/filmindustry/",
+        "https://www.xavierbecerra2026.com/priorities/economy-and-affordability/"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "a22215c3-6693-4bc2-b248-01aebba14570",
+      "topic_key": "fossil-fuels",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "c8e12b53-64f6-48ac-9c2d-0a3cf4d3df9b",
+      "reasoning": "In an April 2026 CBS LA interview on gas prices, Becerra emphasized stabilizing in-state gas supply and avoiding oil imports, and when asked about additional in-state drilling said \"if that's what we need, we'll do what it's going to take.\" This is more production-friendly than the DB's existing value 2 (stop issuing new permits) and reads closer to stance 3 (maintain current production levels); flagging as a possible re-score given the contrast with his AG-era lawsuits against fossil fuel companies.",
+      "sources": [
+        "https://www.youtube.com/watch?v=1wbrjc25WP8",
+        "https://ontherecord.empowered.vote/meetings/6f206fe5-a18b-4af5-b945-c72178d53289"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "fb25c1ac-91cc-49bf-8afc-c7fa22ef45e4",
+      "topic_key": "growth-and-development",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "aafe1e1c-8855-45b3-9986-740381f45228",
+      "reasoning": "Becerra's housing platform (2025 campaign) calls for declaring a housing shortage state of emergency on day one, embedding a senior housing delivery team, imposing 180-day maximum permit timelines, comprehensive fee reform, by-right approvals near jobs and transit, and ending exclusionary zoning. He pledges to actively enforce RHNA commitments against cities that fail to produce housing. This is closer to value 4 — streamlining permitting and reducing fees as an active pro-development posture — than merely planning proactively while waiting for infrastructure to catch up.",
+      "sources": [
+        "https://www.xavierbecerra2026.com/priorities/housing/",
+        "https://www.xavierbecerra2026.com/housing"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "e8dad4a8-eb93-4931-91f5-d8fb5d7dd529",
+      "topic_key": "healthcare",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "afc91aa2-4d48-4db6-aebd-f4c9788e6ad7",
+      "reasoning": "Becerra supports moving \"toward Medicare for All\" as a long-term goal while strengthening Medi-Cal and the ACA as immediate steps. His 2026 campaign states he will \"deliver affordable care without debt or delays.\" As HHS Secretary he oversaw the first negotiated Medicare drug-price reductions (up to 79% on 10 medications). He stops short of full single-payer as a near-term proposal (stance 2).",
+      "sources": [
+        "https://www.xavierbecerra2026.com/healthcare",
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "bab0fb79-19dd-43ed-ab73-b50ac3f934b9",
+      "reasoning": "Becerra's 2026 campaign frames homelessness as \"a moral emergency and a policy failure\" and emphasizes \"Housing First approaches, always paired, where needed, with behavioral health and addiction treatment.\" He proposes prevention-focused rental assistance, expanded shelter capacity, and full implementation of Proposition 1 mental-health reforms — mapping to stance 2 (decriminalize public sleeping while investing in shelter and services).",
+      "sources": [
+        "https://www.xavierbecerra2026.com/homelessness"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "669cac97-66a6-4087-b036-936fbe62efb3",
+      "topic_key": "housing",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "234c3f2a-0bbf-4a8f-ab6b-5344e080f783",
+      "reasoning": "Becerra's 2026 housing platform calls for a Day 1 executive order declaring a housing emergency, reforming exclusionary zoning, expanding by-right approvals near transit, supporting \"missing middle\" housing, funding 40,000 approved affordable units, and enforcing cities' housing element commitments. He states: \"For too long, California simply hasn't built enough homes.\" He also supports renter protections and rent stabilization.",
+      "sources": [
+        "https://www.xavierbecerra2026.com/housing"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "c267e137-0ff9-4e7d-9d13-e3cea1756cd0",
+      "topic_key": "jail-capacity",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "f63a4e70-055e-4115-a5e0-3deeb5748816",
+      "reasoning": "Becerra's 2026 gubernatorial platform has no criminal-justice or public-safety section, so this read rests on his prior record. He earned an 80% rating from CURE (Citizens United for the Rehabilitation of Errants) for pro-rehabilitation positions (Dec 2000), and as California Attorney General (2017-2021) he focused on enforcing existing law rather than expanding jail or prison capacity. These signals point toward reducing incarcerated populations through diversion and treatment alternatives rather than building new capacity, consistent with value 2 — though the absence of a stated 2026 position makes this a lower-confidence read.",
+      "sources": [
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "topic_key": "medicare/aid",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "92e96359-57a9-4c7e-a78e-a6f1af105ec6",
+      "reasoning": "Across multiple 2026 debates (CBS/SF Examiner 5/15, CNN 5/29), Becerra repeatedly and consistently described himself as \"absolutely for Medicare for all,\" a position he says he has held and legislated toward for over 30 years — a direct match to stance 1 (expand Medicare to cover everyone regardless of age). This is a more precise chair match than the DB's existing value 2; his HHS-era action negotiating the first-ever Medicare drug-price cuts (up to 80%) also reflects a strengthen-and-expand-the-program approach. Flagging this as a recommended re-score from 2 to 1 for review.",
+      "sources": [
+        "https://www.youtube.com/watch?v=CKu9rBJTNYw",
+        "https://ontherecord.empowered.vote/meetings/25962209-b5fc-432b-9054-02559fbeeb28",
+        "https://www.youtube.com/watch?v=-_LHkpd7PcM"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "48cc9585-ec22-4f53-8d42-6839828dd36f",
+      "topic_key": "redistricting",
+      "season_number": 1,
+      "value": 4,
+      "pin_revision_id": "c7f973fc-33f5-4570-bfe2-bff4ac6141cc",
+      "reasoning": "Becerra celebrated the California Supreme Court's rejection of the GOP's legal challenge to Proposition 50 — the 2025 measure letting the Democratic-controlled legislature redraw congressional maps mid-decade in response to Texas's gerrymander — and elsewhere called Trump-driven map manipulation an illegitimate \"power grab.\" Supporting a court-validated, legislature-drawn map (overriding California's standing independent commission for this cycle) aligns with stance 4, state legislatures with court oversight to prevent extreme partisan bias.",
+      "sources": [
+        "https://www.youtube.com/watch?v=ecFBZY73WB4",
+        "https://ontherecord.empowered.vote/meetings/4d53e045-cf54-4679-896a-9b162d22f6db",
+        "https://www.youtube.com/watch?v=DR4SRUWANjI"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "topic_key": "religious-freedom",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "6c4b402f-4d41-42ce-a04c-be17b85f131d",
+      "reasoning": "As HHS Secretary Becerra defended the ACA contraception mandate and argued against broad religious exemptions for organizations providing public services. However he has not called for eliminating religious exemptions entirely. His position — that religious freedom should not override civil rights laws in employment and housing, but should be balanced against equal treatment — aligns with a balancing approach.",
+      "sources": [
+        "https://en.wikipedia.org/wiki/Xavier_Becerra",
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "c308e8e8-caac-44f5-ab04-dbfecf40bbe2",
+      "topic_key": "rent-regulation",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "99429ab5-e0bc-47b9-b8e8-cd9d6e0136a4",
+      "reasoning": "Becerra's housing platform explicitly states he will \"enforce those protections fully and stand behind communities that have chosen to protect renters through local rent control, within the statewide framework that keeps housing construction moving forward\" — referring to California's Tenant Protection Act. He frames tenant protection and housing production as compatible rather than competing goals. He does not call for expanding rent stabilization to additional units beyond current law, nor for rolling it back — his stance is to maintain and enforce existing protections while pushing for more supply, mapping to value 3.",
+      "sources": [
+        "https://www.xavierbecerra2026.com/priorities/housing/",
+        "https://www.xavierbecerra2026.com/housing"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "topic_key": "same-sex-marriage",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "5d26a058-0678-449e-ab76-85a31562c1f1",
+      "reasoning": "Becerra was one of a small group of House members to vote against the Defense of Marriage Act in 1996 and earned a 100% Human Rights Campaign rating. As California Attorney General he defended same-sex marriages and challenged Prop 8 enforcement. His 2026 campaign pledges that Californians can \"live and love without restraint\" — mapping to stance 1 (full nationwide recognition with federal benefits).",
+      "sources": [
+        "https://www.xavierbecerra2026.com/rights",
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "topic_key": "school-vouchers",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "835bc8d1-b31b-4fef-9cca-31318cc0f1d6",
+      "reasoning": "Becerra holds a 100% NEA rating and explicitly stated opposition to \"private and religious school voucher programs.\" In Congress he voted NO on vouchers for private/parochial schools. OnTheIssues records his position as: \"Oppose private and religious school voucher programs.\"",
+      "sources": [
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "topic_key": "social-security",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "a624f5d1-8aad-426b-bf46-b5788d8e620d",
+      "reasoning": "Becerra is rated 100% by the Alliance for Retired Americans and has stated he would \"Reject proposals for private saving accounts.\" He sponsored the MEDS Plan covering senior prescriptions under Medicare (2001). His record reflects expanding and protecting benefits rather than cutting or privatizing them (stance 1).",
+      "sources": [
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "stale"
+    },
+    {
+      "topic_id": "683c8084-2281-4920-a07c-18439b2dd413",
+      "topic_key": "tariffs",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "9f094155-f604-47e8-93db-54a3142420ca",
+      "reasoning": "Rated 39% by the Cato Institute, indicating a mixed record rather than consistent free-trade or protectionist views. Explicitly supports imposing tariffs against countries that manipulate their currency while also supporting the $25B expansion of the Export-Import Bank to promote exports. This selective-use-of-tariffs approach — protect American workers from unfair trade, but not blanket protectionism — maps to stance 3.",
+      "sources": [
+        "https://www.ontheissues.org/CA/Xavier_Becerra.htm"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "topic_key": "taxes",
+      "season_number": 1,
+      "value": 1,
+      "pin_revision_id": "87f8c011-5c70-4f39-a1ea-5cc53c010c60",
+      "reasoning": "Becerra is rated 100% by Citizens for Tax Justice. He proposed raising the estate tax to 1990s levels (projected $448 billion in new revenue, 2015) and sponsored legislation to penalize corporate offshore tax havens (2013). His 2026 campaign focuses on making the wealthy pay their fair share rather than broad rate cuts (stance 1).",
+      "sources": [
+        "https://www.ontheissues.org/Xavier_Becerra.htm"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "topic_key": "trans-athletes",
+      "season_number": 1,
+      "value": 3,
+      "pin_revision_id": "af2c6427-daf8-4819-93ba-42db212bae68",
+      "reasoning": "In an April 2026 CBS LA segment on transgender student athletes, Becerra declined to endorse either a blanket inclusion or exclusion rule, instead saying eligibility should be set by each sport's own \"governing body\" and its rules on a sport-by-sport basis, matching stance 3 (case-by-case decisions based on sport requirements) rather than a uniform ban or uniform inclusion policy. This is a substantive on-axis statement that should replace the existing DB quote, which was a content-free non-answer with no stance value attached.",
+      "sources": [
+        "https://www.youtube.com/watch?v=7bYu7KTmhko",
+        "https://ontherecord.empowered.vote/meetings/76051973-b3ac-42f0-b3dc-d36bfffaa42e"
+      ],
+      "seed": "fresh"
+    },
+    {
+      "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "season_number": 1,
+      "value": 2,
+      "pin_revision_id": "63c52abb-fc28-42a3-a421-a27eced16da0",
+      "reasoning": "In the May 2026 CBS/SF Examiner debate, Becerra defended counting mail ballots that arrive a few days after the deadline as long as postmarked on time, citing overseas military voters. This specific quote most directly evidences stance 2 (expand mail-in voting access) rather than stance 1's specific mechanisms (automatic registration, online voting), which the DB's existing quote (\"automatic voter registration for all citizens\") already covers; flagging the two quotes sit at adjacent chairs and recommending the reviewer reconcile whether the overall stance should read 1 or 2.",
+      "sources": [
+        "https://www.youtube.com/watch?v=-_LHkpd7PcM",
+        "https://ontherecord.empowered.vote/meetings/deb719ec-159d-41f7-bcd1-99f7e90d370f"
+      ],
+      "seed": "stale"
+    }
+  ]
+}

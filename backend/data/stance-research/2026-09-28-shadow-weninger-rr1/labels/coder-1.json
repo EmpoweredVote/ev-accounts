@@ -1,0 +1,68 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "b813cb2d-f80e-4f53-83e0-fc0477ff3f3d",
+      "office_id": "2d574e6c-c30a-4897-8995-428b4968c690",
+      "topic_id": "eb3d1247-0de1-4b7f-baec-7259861efd53",
+      "served_revision_id": "af855dba-96f3-4fa0-beb7-43c5edb3f499",
+      "passages": [
+        {
+          "snapshot_id": "3d9fd5e1-db92-594d-bcff-6d7fdf576df8",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-29",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2822 (2022)",
+          "provision_quote": null,
+          "note": "House Final Reading vote page showing his Aye and the 35-24 tally on a personal-property depreciation bill.",
+          "record_kind": "vote",
+          "actor_quote": "WENINGER Y",
+          "tally_quote": "Passed 35-24-1-0-0"
+        },
+        {
+          "snapshot_id": "a50951ea-62ce-5c70-a61e-bf083097318e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2822 (2022)",
+          "provision_quote": null,
+          "note": "Bill overview naming him prime sponsor of HB2822, signed as Chapter 103.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Weninger (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ab0d1c3c-ed2a-56a4-aaad-bad5d34a850b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "HB2822 (2022)",
+          "provision_quote": "For personal property that is initially classified during or after tax year 2022 as class one, paragraph 8, 9, 10 or 13 pursuant to section 42-12001 personal property that is initially classified during or after tax year 2022 as class two (P) pursuant to section 42-12002 and personal property that is acquired during or after tax year 2022 and initially classified during or after tax year 2022 as class six pursuant to section 42-12006, paragraph 2 or 3, the assessor shall use a valuation factor of two and one-half percent.",
+          "note": "Chaptered text: a general change to the depreciation valuation factor for locally assessed business personal property, available to every owner of such property.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only record here, HB2822 (2022), sets a statewide depreciation valuation factor for locally assessed business personal property; it is a general business tax measure open to every such owner, not an incentive offered to attract a company. The rungs separate on whether government offers incentives to attract employers and on what conditions — \"Offer incentives to attract businesses, but only if they commit to good wages and local hiring\", \"Offer large tax breaks and infrastructure to attract major employers, but keep limits\" — and a uniform depreciation schedule speaks to none of those clauses, nor to \"Invest in public services and infrastructure so businesses want to come on their own.\" Every passage is adjacent on V2, so nothing survives to support a chair.",
+      "needs_source": [
+        "An Arizona Legislature record of Weninger acting on a business-attraction incentive instrument (for example a qualified facility tax credit or Arizona Competes Fund bill): bill page plus roll call",
+        "Weninger's own words on whether the state should offer incentives to attract large employers, and on conditions or clawbacks, from the current term or the campaign that seated him"
+      ],
+      "quotes": []
+    }
+  ]
+}

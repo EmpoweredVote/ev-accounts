@@ -1,0 +1,10 @@
+Wrote `coder-1.json` — one row, BLANK.
+
+**Passages (one record, two pages):** Ramos's Aye on ACA 5 (2019-2020).
+- Vote page (`63afc856`): `own-act` / `on-question` / `record` / `vote`, `actor_quote` `"Quirk-Silva, Ramos, Reyes"`, `tally_quote` `"Ayes Count 60 Noes Count 14"`. 14 of 79 voting against is ~18%, so the near-unanimous rule doesn't bite.
+- Bill text (`001832e2`): same instrument, `provision_quote` `"That Section 31 of Article I thereof is repealed."`, `actor_quote`/`tally_quote` null per the per-instrument-group ruling.
+- V5 `in-term`: June 2020 falls in his 2018–2022 Assembly term — same legislature, so option B applies (and in fact the same chamber).
+
+**Chair: BLANK `direction-only`.** The operative section is a bare repeal of the Prop 209 ban, so it points away from "eliminate affirmative action and all race-based government programs" and away from "maintain current civil rights laws". But a repeal only *permits* race-conscious programs: it does not "mandate racial equity requirements in all institutions", and nothing in it evidences "strengthen civil rights enforcement". The long WHEREAS findings say more, but recitals don't govern (C38/C51). So the sides separate and the rungs on the supported side don't.
+
+One judgment call worth flagging for the reviewer: `compound-partial` is a defensible alternative reason if you read rung 2 as the best-fitting rung with only its "address systemic discrimination" clause evidenced. I chose `direction-only` because neither rung 1 nor rung 2 is fully evidenced, and the reasoning names the unevidenced enforcement clause either way.

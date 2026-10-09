@@ -1,0 +1,22 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "None of the eight supplied sources (campaign issue pages on housing, wildfires, health care and homelessness; the CNN debate, Commonwealth Club, Ezra Klein forum and KCRA interview transcripts) addresses how sports leagues should determine eligibility for transgender athletes. No passage speaks to any rung, from letting athletes compete on teams matching their gender identity to requiring teams matching biological sex assigned at birth, so no chair can be seated.",
+      "needs_source": [
+        "Becerra's own words on transgender athletes' sports eligibility (2026 governor campaign: questionnaire, debate answer, interview, or campaign issue page)",
+        "Any in-cycle Becerra statement on California AB 1266 / CIF transgender-athlete eligibility policy"
+      ],
+      "quotes": []
+    }
+  ]
+}

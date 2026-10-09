@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "bc7051d3-e46d-5cc7-97e2-720c91ddd769",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "Overview shows Mesnard as prime sponsor of a tipped-worker subminimum-wage measure, not a general wage-floor rung.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Mesnard (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7e5394eb-9b86-5fda-8a44-2b64a8eb2336",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": "For any employee who customarily and regularly receives tips or gratuities from patrons or others, the employer may pay a wage up to twenty-five percent per hour less than the minimum wage established by statute if the employer can establish by the employer's records of charged tips or gratuities or by the employee’s declaration for federal insurance contributions act purposes that for each week, when adding tips or gratuities received to wages paid, the employee received not less than the minimum wage plus $2 for all hours worked.",
+          "note": "Operative clause creates a tipped-worker subminimum wage credit, a dimension the ladder does not order.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "e121a3e5-fb82-55aa-bf3e-1b9270d55b38",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2024-06-12",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SCR1040 (2024)",
+          "provision_quote": null,
+          "note": "Final-passage vote by Mesnard on the same tipped-worker subminimum-wage measure; names no general wage-floor clause.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-12-2-0-0"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "SCR1040 creates a tipped-worker subminimum wage (pay up to 25% below minimum wage offset by tips, guaranteeing minimum wage plus $2 overall), which is a carve-out for a worker subclass, not the general wage floor's level, indexing, federalism, or abolition that the rungs separate. All three passages are adjacent on V2 and cannot support a chair.",
+      "needs_source": [
+        "Mesnard's own vote, sponsorship, or statement on the general minimum-wage floor's level, automatic indexing, or state/local preemption, separate from the SCR1040 tipped-worker subminimum wage"
+      ],
+      "quotes": []
+    }
+  ]
+}

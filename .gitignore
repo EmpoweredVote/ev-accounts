@@ -192,3 +192,31 @@ backend/data/seed-tn-headshots-2026/portraits/
 # a truncated download), `build-mi-legislature-roster.mjs` and
 # `load-detroit-council-boundaries.mjs`.
 backend/data/seed-mi-2026/_*
+
+# Knight slice 16 (MS-2) working files. All three are REGENERABLE and none is evidence:
+#   _pages   the member-page cache — re-fetched by build-ms-legislature-roster.mjs --refresh
+#   _ca      the GlobalSign intermediate, downloaded on demand from the cert's own AIA URL
+#   _dryrun  the dry-run and tampered-control scripts — rebuilt by ms2-migration-controls.mjs
+# The roster itself (data/ms-legislature-roster.json) IS committed, because it is what the
+# migrations were generated from.
+backend/data/seed-ms-2026/_pages/
+backend/data/seed-ms-2026/_ca/
+backend/data/seed-ms-2026/_dryrun/
+backend/data/seed-biloxi-2026/_pages/
+backend/data/seed-biloxi-2026/_dryrun/
+backend/data/seed-harrison-2026/_pages/
+backend/data/seed-harrison-2026/_dryrun/
+
+# Knight slice 16 (MS-5) asset working files. The IMAGES are regenerable and none is evidence:
+# every source is re-fetchable from its publisher, every processed 600x750 file is rebuilt by
+# ms5-biloxi-process.py / ms5-hc-process.py / ms5-recrop.py, and the shipped copies live in
+# Supabase Storage, byte-verified. The approval sheet is rebuilt by ms5-build-sheet.py.
+# The JSON RECORDS in _assets/ ARE committed: they are what the migration was generated from
+# and what says which file was bound to which seat, and why.
+backend/data/seed-ms-2026/_assets/biloxi/
+backend/data/seed-ms-2026/_assets/harrison/
+backend/data/seed-ms-2026/_assets/biloxi-processed/
+backend/data/seed-ms-2026/_assets/harrison-processed/
+backend/data/seed-ms-2026/_assets/recrop/
+backend/data/seed-ms-2026/_assets/*.png
+backend/data/seed-ms-2026/_assets/*.html

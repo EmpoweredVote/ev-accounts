@@ -1,0 +1,156 @@
+{
+ "date": "2026-10-07",
+ "batches": [
+  {
+   "name": "houchin-abortion",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "abortion"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/26",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 26 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/202329",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 26 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/7",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 7 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/video-congresswoman-erin-houchin-delivers-first-remarks-house-floor-pro-life",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/rep-erin-houchin-introduces-abortion-funding-awareness-act",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-ai-regulation",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "ai-regulation"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/5360",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5360 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/119th-congress/house-bill/6489",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 6489 (119th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-auchincloss-introduce-first-house-bill-ai-chatbot-companions",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/houchin-bills-protect-children-ai-dangers-pass-energy-commerce-committee",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-climate-change",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "climate-change"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/1435",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1435 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023391",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 1435 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/congresswoman-erin-houchin-introduces-resolution-stop-fdic-climate-rule",
+     "source_kind": "own-site",
+     "instruments": []
+    },
+    {
+     "url": "https://houchin.house.gov/media/press-releases/rep-houchin-applauds-announcement-nuclear-microreactor-nws-crane-develop",
+     "source_kind": "own-site",
+     "instruments": []
+    }
+   ]
+  },
+  {
+   "name": "houchin-ukraine-support",
+   "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+   "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+   "level": "federal",
+   "topic_keys": [
+    "ukraine-support"
+   ],
+   "sources": [
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/8035",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8035 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2024151",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 8035 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://www.congress.gov/bill/118th-congress/house-bill/5692",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5692 (118th Congress)"
+     ]
+    },
+    {
+     "url": "https://clerk.house.gov/Votes/2023503",
+     "source_kind": "public-record",
+     "instruments": [
+      "H.R. 5692 (118th Congress)"
+     ]
+    }
+   ]
+  }
+ ]
+}

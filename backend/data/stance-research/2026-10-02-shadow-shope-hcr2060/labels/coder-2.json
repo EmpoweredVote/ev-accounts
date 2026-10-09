@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8bbf9f70-adee-4801-ab19-7b78f9e70aa1",
+      "office_id": "3451fbc8-ec4d-48c2-a93c-19f135d84bf3",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "54bf0425-8d31-5ced-8b4d-f6ffea98d6d9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": "This section may only be enforced prospectively. This section does not apply retroactively and shall not be construed to apply to the conduct of any person who entered this state unlawfully from a foreign nation at any time before this section becomes enforceable.",
+          "note": "Bill bundles benefits-fraud, fentanyl-penalty, illegal-entry, and e-verify provisions in one measure (title: \"border; benefits; fentanyl; illegal entry\").",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "022d8b7f-14e4-5f50-95fc-77e10a1558ea",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Bill overview confirms Senate Third Reading passed on 05/22/2024 but gives no member-level detail.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "16-13-1-0-0 Amended PASSED"
+        },
+        {
+          "snapshot_id": "152ec81f-c8ab-5494-8b68-711193f672d5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-05-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HCR2060 (2024)",
+          "provision_quote": null,
+          "note": "Senate Third Reading roll call shows Shope voted Y on the bundled, multi-subject measure.",
+          "record_kind": "vote",
+          "actor_quote": "SHOPE Y",
+          "tally_quote": "Passed 16-13-1-0-0 Amended"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Senator Shope voted Yes on HCR2060 (2024), the \"Secure the Border Act\" referendum, which bundles public-benefits verification, fentanyl-sale penalties, a new state crime for illegal entry with a court order to \"return to the foreign nation,\" and employment e-verify provisions into one multi-subject measure. Because the vote covers several unrelated statutory additions and no statement ties it specifically to the illegal-entry/return provision, it shows only direction (support for stricter border enforcement), not which of the ladder's rungs he holds.",
+      "needs_source": [
+        "A floor statement, explanation of vote, or other own-words statement by Senator Shope tying his HCR2060 vote specifically to the illegal-entry/return-to-foreign-nation provision (Article 35), which would let the prospective-only clause (\"shall not be construed to apply to the conduct of any person who entered this state unlawfully ... before this section becomes enforceable\") support a specific rung."
+      ],
+      "quotes": []
+    }
+  ]
+}

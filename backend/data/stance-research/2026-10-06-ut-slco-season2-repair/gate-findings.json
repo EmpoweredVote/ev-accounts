@@ -1,0 +1,26 @@
+{
+  "findings": [
+    {
+      "full_name": "Mike Kennedy",
+      "topic_key": "climate-change",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    },
+    {
+      "full_name": "Traci Crockett",
+      "topic_key": "housing",
+      "check_id": "statement-needs-review",
+      "severity": "medium",
+      "what": "statement evidence (the person's own words) goes to human review"
+    }
+  ],
+  "summary": {
+    "rows": 25,
+    "high": 0,
+    "medium": 2,
+    "by_check": {
+      "statement-needs-review": 2
+    }
+  }
+}

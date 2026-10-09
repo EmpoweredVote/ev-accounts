@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "eb8b6aa3-a9d2-4792-8175-a105304da87f",
+      "office_id": "429c8d57-1550-4fcf-9592-d6c166f443d7",
+      "topic_id": "c5ab4eab-702f-49b8-9277-8ea53f3835c6",
+      "served_revision_id": "8bc3d240-bfb8-4e4c-b0f1-760e3cdf0c2f",
+      "passages": [
+        {
+          "snapshot_id": "36e059a0-4d0d-5ef1-9212-bc310d6bccea",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-13",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": null,
+          "note": "Senate Floor final passage was 31 Ayes, 0 Noes, 9 NVR; Wiener is listed in the Ayes.",
+          "record_kind": "vote",
+          "actor_quote": "Umberg, Wahab, Wiener, Wilk",
+          "tally_quote": "Ayes Count 31 Noes Count 0 NVR Count 9"
+        },
+        {
+          "snapshot_id": "7ff4262f-e23d-5c82-a03f-30024e1d89bd",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-07-20",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "ACA 5 (2023-2024)",
+          "provision_quote": "(a) The right to marry is a fundamental right. (b) This section is in furtherance of both of the following: (1) The inalienable rights to enjoy life and liberty and to pursue and obtain safety, happiness, and privacy guaranteed by Section 1. (2) The rights to due process and equal protection guaranteed by Section 7.",
+          "note": "Bill text repeals the one-man-one-woman provision and declares marriage a fundamental right under due process and equal protection; names no voter or tally.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "ACA 5's operative text would otherwise match rung 2 (marriage gets the same due-process and equal-protection guarantees as any other marriage), but every Senate vote Wiener is recorded on (Judiciary, Appropriations, Floor) passed with zero Noes, so the record is near-unanimous and cannot carry the chair alone; no own-words passage ties his vote to this provision.",
+      "needs_source": ["Wiener's own statement or floor explanation tying his vote/role on ACA 5 to the marriage-equality provision"],
+      "quotes": []
+    }
+  ]
+}

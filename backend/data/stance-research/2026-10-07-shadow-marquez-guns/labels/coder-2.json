@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "0df9cd85-3923-48bd-86c2-b7d4b31d510d",
+      "office_id": "cd1412f0-c4c7-4f2a-bbef-b22516834ed4",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "928f616f-3835-53bb-a4ee-332d4aa75d34",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2621 (2025)",
+          "provision_quote": null,
+          "note": "Prime sponsorship of a universal-checks bill; shows clause [b] of rung 3 only, nothing on bans of firearm types.",
+          "record_kind": "sponsor",
+          "actor_quote": "Márquez (Prime)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "58c272ba-1eb1-5fd1-b86e-4f3abf736751",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2621 (2025)",
+          "provision_quote": "A person may not sell or transfer a firearm unless the person is a licensed firearms dealer",
+          "note": "Bill text requires dealer-run background checks on private sales (clause [b]); silent on whether any firearm type is banned, so clause [a] is unshown.",
+          "record_kind": "sponsor",
+          "actor_quote": "Introduced by Representatives Márquez",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "acfc5127-3780-560d-aae0-1a893a286188",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HCR 2034 (2025)",
+          "provision_quote": "A person may not sell or transfer a firearm unless the person is a licensed firearms dealer",
+          "note": "Referral of the same universal-checks measure to voters; same content as HB 2621, so meets clause [b] only.",
+          "record_kind": "sponsor",
+          "actor_quote": "Introduced by Representatives Márquez",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "compound-partial",
+      "rests_on": [],
+      "reasoning": "Márquez prime-sponsored HB 2621 and introduced HCR 2034, whose text requires that a person may not sell or transfer a firearm unless a licensed dealer is involved, which meets 'require universal background checks on every sale'. Nothing shows he would 'allow all types of firearms' (a checks bill is silent on bans), so the compound rung is only half evidenced.",
+      "needs_source": [
+        "Roll call or sponsorship record on an Arizona assault-weapons ban bill, or his own words on bans of firearm types (clause [a] of rung 3 / rung 2 boundary)"
+      ],
+      "quotes": []
+    }
+  ]
+}

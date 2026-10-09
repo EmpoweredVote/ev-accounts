@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "5821d0a9-672e-44c0-bac7-1a802a2e8368",
+      "office_id": "7b3dcdad-b119-4b25-8240-460f70244f9d",
+      "topic_id": "43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "served_revision_id": "bc949d3b-43f4-4612-ba4c-2de39f8757c8",
+      "passages": [
+        {
+          "snapshot_id": "d406e55d-80fd-5708-be95-8b2bd4399548",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-14",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": null,
+          "note": "Wicks voted Aye on Assembly Floor concurrence in Senate amendments to AB 1228, 09/14/23.",
+          "record_kind": "vote",
+          "actor_quote": "Wicks",
+          "tally_quote": "Ayes Count 53 Noes Count 17"
+        },
+        {
+          "snapshot_id": "2b00b586-74a0-5073-9887-3b6484ae1ae5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-09-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1228 (2023-2024)",
+          "provision_quote": "The hourly minimum wage for fast food restaurant employees shall be twenty dollars ($20) per hour, effective April 1, 2024.",
+          "note": "AB 1228 sets a $20/hour minimum wage only for fast food restaurant employees via an appointed Fast Food Council, not a general state wage floor.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Wicks's Aye vote on AB 1228 (2023-2024) raises a wage floor, but only for the fast food sector, via a council that may set capped annual increases ('the lesser of' 3.5% or CPI-W) rather than an automatic cost-of-living formula or a lawmaker-voted increase. This sector-specific, council-administered mechanism shows direction (support for a higher wage floor) but does not match the clauses of any single general minimum-wage rung, so it cannot separate rungs 1-5 for the general 'minimum wage' question.",
+      "needs_source": [
+        "A general, non-sector-specific minimum-wage record or statement from Wicks (e.g., a statewide minimum-wage bill vote/sponsorship or her own words on the general wage floor)"
+      ],
+      "quotes": []
+    }
+  ]
+}

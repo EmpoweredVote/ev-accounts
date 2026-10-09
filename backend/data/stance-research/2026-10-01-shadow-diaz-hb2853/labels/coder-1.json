@@ -1,0 +1,70 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0ac7beee-f298-4d41-8981-30c3c307fe3d",
+      "office_id": "8c909ec7-73d2-4488-8eb5-a72f4746f32b",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "ac550cec-a429-53c6-a766-a3103891d3d4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading (final passage) of a single-subject empowerment scholarship account bill; 26 of 60 members voted No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "DEGRAZIA N DIAZ Y DUNN Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "387c346b-0d35-5f09-840c-1456403677e0",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "Enacted (chaptered) text of the version voted on; the added section 15-2401.01 is the operative universal-eligibility clause, and no quoted text comes from a [deleted: ] fence.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2edccbea-f0be-540d-844b-0c42eb581705",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 2853 (2022)",
+          "provision_quote": null,
+          "note": "Co-sponsorship evidences the bill as filed (C37), and the page marks the measure Amended while no as-introduced text is in the sources, so this page alone shows support but not which rung.",
+          "record_kind": "sponsor",
+          "actor_quote": "Cook (Co-Sponsor) Diaz (Co-Sponsor) Dunn (Co-Sponsor)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ac550cec-a429-53c6-a766-a3103891d3d4",
+        "387c346b-0d35-5f09-840c-1456403677e0"
+      ],
+      "reasoning": "Diaz voted Y on final House passage of HB 2853 (2022), a single-subject empowerment scholarship account bill whose added section 15-2401.01 extends \"qualified student\" to any resident \"eligible to enroll in a public school in this state\" in a kindergarten program or \"Any of grades one through twelve\", with the department transferring \"ninety percent of the sum of the base support level\" out of the student's district. Universal eligibility with the money following the student to a nongovernmental \"qualified school\" matches \"Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family\", and excludes \"Expanding voucher eligibility to most families so parents can choose the school that best fits their child\", which stops short of all families. The 2022 act falls inside his earlier House term in this legislature (2021-11-23 to 2023-01-09), so it is in-term under V5.",
+      "needs_source": [
+        "HB 2853 as introduced (Arizona 55th Legislature, 2nd Regular Session, 2022) — the as-filed text, to code the co-sponsorship on its own content"
+      ],
+      "quotes": []
+    }
+  ]
+}

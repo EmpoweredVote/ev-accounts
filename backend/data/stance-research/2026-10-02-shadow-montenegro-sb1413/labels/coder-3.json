@@ -1,0 +1,65 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+      "office_id": "9d6fd1f4-0372-4576-a7d1-77b09eed2de4",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "c7fb207f-85cc-5317-8436-36b9a7d243be",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": "a city or town shall notify the owner to remove the owner's tent, structure or other personal property from the area in which the encampment is located.",
+          "note": "Engrossed bill text requires a single notice-to-remove before property seizure/cleanup, and separately criminalizes trespassing and drug use tied to encampments on private property, so it does not cleanly match every clause of either rung 4 or rung 5.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "45f5c7f6-1762-51f2-be10-f31c2af3bd1b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": null,
+          "note": "Bill history confirms SB1413 passed the House Third Reading on 05/15/2023 by 31-27-1-0-1 before being vetoed by the Governor.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ecfb8093-af2f-5b3e-a310-2fd65772ce73",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call on single-subject SB1413 shows Montenegro voting Y.",
+          "record_kind": "vote",
+          "actor_quote": "MONTENEGRO Y",
+          "tally_quote": "Passed 31-27-1-0-1"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Montenegro voted Y on SB1413's House Third Reading, a single-subject homeless-encampment bill whose operative section orders a city or town to notify an encampment owner to remove property and, if not removed within 24 hours, to seize and dispose of it and clean the area, with separate criminal trespassing and drug-offense penalties limited to encampments on private property. That single 24-hour notice does not establish the rung text's 'graduated warnings,' and property seizure/disposal is not clearly the rung text's 'civil penalties,' while the bill's only criminal penalties attach to private property and drug use rather than to public camping itself as described in 'Banning public camping and sleeping with criminal penalties.' The vote shows a restrictive/enforcement direction without matching every clause of either rung, so the row stays BLANK.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

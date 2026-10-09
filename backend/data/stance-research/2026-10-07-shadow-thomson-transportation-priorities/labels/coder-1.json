@@ -1,0 +1,93 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "ba59337e-30e2-4aba-a39a-426b3366eb27",
+      "served_revision_id": "555f1618-fcdf-4e0b-8306-7eec8f4d0f4f",
+      "passages": [
+        {
+          "snapshot_id": "5a92ec78-d196-5efb-81b6-7cc5471822eb",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-03-26",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Her quoted support for a walking/bicycling greenway evidences investment in pedestrian and cycling infrastructure but says nothing about putting it 'over new road capacity' or about a split; the contract award was a Board of Public Works act, not hers.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "506b983d-5a92-5797-8811-f9c70623743c",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-06-13",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "'Kirkwood belongs to the community' names no policy clause and concerns a seasonal street closure, not the road-versus-multimodal investment split.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "a842abff-8ece-554c-9087-a5bc506de4af",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2026-06-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "Ordinance 2026-12 (Bloomington Common Council, 2026)",
+          "provision_quote": null,
+          "note": "A veto of a seasonal car-free closure of Kirkwood, grounded on missing fiscal analysis and funding, is a street-use rule rather than an investment split and her stated grounds share the pedestrian goal, so it orders no rung; the ordinance text itself is not in the sources.",
+          "record_kind": "other-act",
+          "actor_quote": "Mayor Kerry Thomson today, June 22, 2026, vetoed Ordinance 2026-12",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her greenway statement, \"Improving streets that are already used for walking and bicycling increases safety and usability for the entire city\", leans toward walking and cycling investment but never puts it \"over new road capacity\" nor sets an equal or density-limited split, so it shows a side, not a rung. The Kirkwood veto and the listening-session remark concern a street closure on fiscal and process grounds and do not address the investment split.",
+      "needs_source": [
+        "Text of Bloomington Ordinance 2026-12 and the mayor's formal veto message to the Common Council (June 22, 2026)",
+        "Mayor Thomson's own words or budget/capital-plan actions stating how city transportation investment should be split between road capacity and walking, cycling and transit"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "5a92ec78-d196-5efb-81b6-7cc5471822eb",
+          "text": "Improving streets that are already used for walking and bicycling increases safety and usability for the entire city",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "506b983d-5a92-5797-8811-f9c70623743c",
+          "text": "Kirkwood belongs to the community and its future should be shaped with the community",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "a842abff-8ece-554c-9087-a5bc506de4af",
+          "text": "The opportunity before us is to move from a shared aspiration to a plan the community can support and the City can fund and successfully deliver.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

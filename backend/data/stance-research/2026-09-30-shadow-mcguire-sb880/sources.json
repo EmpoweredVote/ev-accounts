@@ -1,0 +1,35 @@
+{
+  "batch_id": "2026-09-30-shadow-mcguire-sb880",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201520160SB880",
+      "source_kind": "public-record",
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "SB 880 (2015-2016)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2015-sb880-text.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=201520160SB880",
+      "source_kind": "public-record",
+      "politician_id": "974bfe8b-afb8-424c-bfd2-7805f033b1a0",
+      "office_id": "8cf6fdd7-dd37-40b9-b548-22412b471560",
+      "topic_keys": [
+        "gun-policy"
+      ],
+      "instruments": [
+        "SB 880 (2015-2016)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/leginfo-2015-sb880-votes.txt"
+    }
+  ]
+}

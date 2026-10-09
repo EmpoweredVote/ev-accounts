@@ -1,0 +1,61 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "4486f856-118b-475c-83f0-078581a7b268|58c7cb0f-6409-4e6a-aa4f-1d146e88eb69|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "topic_key": "minimum-wage",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "California Senate term dates for Benjamin Allen (essentials.legislative_service), to confirm he held this Senate seat on 2016-03-31"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": []
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "4486f856-118b-475c-83f0-078581a7b268|58c7cb0f-6409-4e6a-aa4f-1d146e88eb69|43d9e981-f25e-471f-ae92-b8e2a700900c",
+      "requests": [
+        "California Senate term dates for Benjamin Allen (essentials.legislative_service), to confirm he held this Senate seat on 2016-03-31"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

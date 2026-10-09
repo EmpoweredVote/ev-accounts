@@ -1,0 +1,71 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "09ae25a4-9244-455a-960a-b95223bb52d8",
+      "office_id": "9e2dd4d3-2bc2-473d-b255-d418f11cb757",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "69da793b-7075-56d9-8eae-7d3d89267239",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Prime sponsorship of the enacted tax bill; the provision it relies on is printed on the bill-text page.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsors: Mesnard (Prime with permission of Rules)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": "9. Subject to subsection F of this section, for taxable years beginning from and after December 31 of the year in which notice is provided to the department pursuant to section 43-243, subsection B, paragraph 2, the tax is 2.5% of taxable income.",
+          "note": "Chapter 412 text of the bill he prime-sponsored, printing the replacement of the graduated schedule with a flat rate.",
+          "record_kind": "sponsor",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "420ed0d1-030a-5c8b-a1a6-5d63baffb890",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Final-passage vote on a bill titled omnibus; taxation that also rewrites unemployment benefit amounts, so the vote alone shows direction at most and is not in rests_on.",
+          "record_kind": "vote",
+          "actor_quote": "MESNARD Y",
+          "tally_quote": "Passed 16-14-0-0-0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "69da793b-7075-56d9-8eae-7d3d89267239",
+        "9a99df4f-2f5d-5b9d-8ac9-f45758d2887d"
+      ],
+      "reasoning": "As prime sponsor of SB 1828 (2021), Mesnard authored the bill that replaced Arizona's four-bracket individual income tax schedule (2.59% through 4.50%) with a phased flat rate, \"the tax is 2.5% of taxable income\", and cut the class one assessed valuation ratio from eighteen to sixteen percent, which is the rung \"Cut taxes broadly, including the main rates most people pay\". The rung that pairs cuts with shrinking \"what government does\" is excluded by the same bill's own text, which raises urban revenue sharing from fifteen to eighteen percent of income tax proceeds and raises the maximum weekly unemployment benefit from $240 to $320. The rung that would keep the system \"mostly as-is, with targeted adjustments\" is excluded because the bill rewrites the whole rate schedule rather than granting narrow relief.",
+      "needs_source": [
+        "Mesnard's own words tying his sponsorship of SB 1828 (2021) to the income tax rate provision (floor speech, explanation of vote, or press release), which would settle the omnibus concern on the third-reading vote",
+        "SB 1828 (2021) as introduced, since sponsorship evidences the bill as filed and the only text snapshot is the Senate Engrossed / Chapter 412 version"
+      ],
+      "quotes": []
+    }
+  ]
+}

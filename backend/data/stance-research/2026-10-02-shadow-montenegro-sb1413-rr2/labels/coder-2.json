@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+      "office_id": "9d6fd1f4-0372-4576-a7d1-77b09eed2de4",
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "passages": [
+        {
+          "snapshot_id": "ecfb8093-af2f-5b3e-a310-2fd65772ce73",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-05-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": null,
+          "note": "House Third Reading vote tally and Montenegro's Y vote on SB 1413 (2023).",
+          "record_kind": "vote",
+          "actor_quote": "MONTENEGRO Y",
+          "tally_quote": "Passed 31-27-1-0-1"
+        },
+        {
+          "snapshot_id": "c7fb207f-85cc-5317-8436-36b9a7d243be",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": "On receipt of a report of the existence of a homeless encampment, a city or town shall notify the owner to remove the owner's tent, structure or other personal property from the area in which the encampment is located. If removal does not occur within twenty-four hours after the order to remove the property, the city or town shall claim the property and retain the property for a period of fourteen days, during which the owner may claim the owner's property.",
+          "note": "Bill text orders removal/claim of encampment property and names a private-property trespass penalty, but states no public-property-specific clause.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "45f5c7f6-1762-51f2-be10-f31c2af3bd1b",
+          "v1_attribution": "namesake-unclear",
+          "v2_relevance": "on-question",
+          "v3_class": "not-evidence",
+          "date": null,
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1413 (2023)",
+          "provision_quote": null,
+          "note": "Bill status overview confirms sponsors, chamber tallies, and the governor's 2023-06-05 veto, but names no individual legislator's vote.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Montenegro voted Y on SB 1413 (2023)'s House Third Reading, a homeless-encampment bill directing cities/counties to order removal of a homeless person's tent or property from the encampment area and to 'claim the property and retain the property for a period of fourteen days,' with criminal trespass reserved for encampments on private property. The operative text never states this removal process targets public property as rung 4 requires ('Prohibiting encampments on public property, enforced through graduated warnings and civil penalties'), nor does it condition enforcement on shelter-bed availability (rung 3) or impose a criminal penalty on public camping itself (rung 5), so it establishes only an enforcement-leaning direction, not a matched chair.",
+      "needs_source": [
+        "Montenegro's own statement, if any, tying his SB 1413 vote to a public-property camping clause specifically"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-01-shadow-wilmeth-hb2853",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853",
+      "source_kind": "public-record",
+      "politician_id": "729d1a1e-b58f-4a33-bf18-a0f11e3c5e04",
+      "office_id": "8ae7931a-b76b-4ff0-99c8-5619ca6a10ff",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "HB 2853 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-hb2853-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=125&BillNumber=HB2853#house-third",
+      "source_kind": "public-record",
+      "politician_id": "729d1a1e-b58f-4a33-bf18-a0f11e3c5e04",
+      "office_id": "8ae7931a-b76b-4ff0-99c8-5619ca6a10ff",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "HB 2853 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2022-hb2853-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/2R/laws/0388.htm",
+      "source_kind": "public-record",
+      "politician_id": "729d1a1e-b58f-4a33-bf18-a0f11e3c5e04",
+      "office_id": "8ae7931a-b76b-4ff0-99c8-5619ca6a10ff",
+      "topic_keys": [
+        "school-vouchers"
+      ],
+      "instruments": [
+        "HB 2853 (2022)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "bb4bbd05-0a4b-5617-9d6d-38b342fa770f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-13",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 587 (2021-2022)",
+          "provision_quote": "(3) A statement of whether the current version of the terms of service defines each of the following categories of content, and, if so, the definitions of those categories, including any subcategories: (A) Hate speech or racism. (B) Extremism or radicalization. (C) Disinformation or misinformation. (D) Harassment. (E) Foreign political interference.",
+          "note": "AB 587 requires platforms to report on their own disinformation/misinformation moderation policies but imposes no duty to remove or label false content, matching the annex's transparency-mandate guidance (direction-only at most).",
+          "record_kind": "author",
+          "actor_quote": "AB 587, Gabriel.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "AB 587 only requires social media companies to disclose whether their existing terms of service define 'Disinformation or misinformation' and to report enforcement data about it; it does not 'legally require platforms to remove false information' (rung 1) nor 'require platforms to label false content' (rung 2) nor speak to voluntary standards, free-speech protection, or a ban on government involvement. A transparency/reporting mandate shows only that government requires disclosure about misinformation moderation, not which rung mechanism, so it is direction-only per the annex.",
+      "needs_source": [
+        "Gabriel's own in-term statement explaining whether he favors a removal duty, a labeling duty, voluntary standards, or no government role for false content specifically"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33|ae285450-8e0b-43d9-a534-e747ea9baf0b|af2fdfd6-02c4-49df-b09c-cf8536f4773f#c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6",
+          "values": [
+            "own-act",
+            "third-party-characterization",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33|ae285450-8e0b-43d9-a534-e747ea9baf0b|af2fdfd6-02c4-49df-b09c-cf8536f4773f#c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6",
+          "values": [
+            "record",
+            "not-evidence",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33|ae285450-8e0b-43d9-a534-e747ea9baf0b|af2fdfd6-02c4-49df-b09c-cf8536f4773f#c0db8dd5-cec8-54d9-ba04-3cc4f9a30fb6",
+          "values": [
+            "direction-only",
+            "chair-shaped",
+            null
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v1_attribution",
+    "v3_class",
+    "v4_shape"
+  ]
+}

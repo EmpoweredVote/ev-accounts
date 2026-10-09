@@ -1,0 +1,46 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "1c6dbdaf-e110-48d3-9b88-27f911d9521f",
+      "office_id": "b42f6de3-da88-4d50-af66-c78cdb46e628",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "f323a5c2-0b1c-5023-b51c-47e51c4224c6",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-05-02",
+          "v4_shape": "rhetorical",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The mayor's statement addresses the city's lack of authority over federal enforcement and support for residents; it names no view on who should be deported.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is the mayor's May 2, 2025 statement that \"Federal immigration enforcement falls outside the City’s legal authority\"; it speaks to which level acts and to residents' wellbeing, not to how far deportation should go. No passage matches any rung, from \"Stop deportations entirely\" to \"Carry out a mass-deportation program\".",
+      "needs_source": [
+        "Kerry Thomson's own words on which undocumented immigrants should or should not be deported (e.g., interview, questionnaire, or campaign issue page)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "f323a5c2-0b1c-5023-b51c-47e51c4224c6",
+          "text": "Federal immigration enforcement falls outside the City’s legal authority.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question", "source-not-an-answer"]
+        }
+      ]
+    }
+  ]
+}

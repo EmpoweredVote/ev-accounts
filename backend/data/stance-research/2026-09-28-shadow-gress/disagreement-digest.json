@@ -1,0 +1,59 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 3,
+      "split_units": 1,
+      "alpha": 0.4285714285714286,
+      "examples": [
+        {
+          "unit": "5293ff0f-0365-4943-89a5-f4017566c8dd|4021cde6-9098-442f-8126-55f6377a328f|56125933-b82a-46c5-847b-b2e9a146b89f#f54b3d9a-dc48-5ef4-a20e-d92a74f10756",
+          "values": [
+            "near-unanimous",
+            "near-unanimous",
+            "off-axis"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 3,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    }
+  ],
+  "ranked": [
+    "v4_shape"
+  ]
+}

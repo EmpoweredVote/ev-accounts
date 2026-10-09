@@ -1,0 +1,35 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "2cca193f-574d-4ec7-b0c8-e0fcd27d5eab",
+      "office_id": "b58a97c0-8ee8-4949-827d-c06946a12a4c",
+      "topic_id": "56125933-b82a-46c5-847b-b2e9a146b89f",
+      "served_revision_id": "44615418-e111-4f2f-a256-92fcf74b0f2f",
+      "passages": [
+        {
+          "snapshot_id": "71d6b197-b7d9-5675-a5e9-5ddcc6ec1b4f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2022-06-30",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 2571 (2021-2022)",
+          "provision_quote": null,
+          "note": "Restricts firearm advertising/marketing to minors; per annex this does not say which firearms civilians may own, buy, or carry.",
+          "record_kind": "author",
+          "actor_quote": "AB 2571, Bauer-Kahan.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source is AB 2571 (2021-2022), which Bauer-Kahan authored and the Governor signed into law; it restricts firearm advertising and marketing directed at minors. The annex states that rules about how guns are marketed or advertised do not say which guns may be owned or who may buy them, so this passage is adjacent to the ladder's question and cannot establish a chair. No other evidence survives.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

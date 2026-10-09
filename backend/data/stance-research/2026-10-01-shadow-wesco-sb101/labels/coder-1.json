@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "48f99b45-486d-4d6d-8f48-ed21a793778f",
+      "office_id": "92903b72-38f5-4b52-8566-f03eda881b9c",
+      "topic_id": "6b9ba6d9-1001-43f5-b073-4d37130696fd",
+      "served_revision_id": "dfbd847a-294c-49d2-9ac3-69270ea03054",
+      "passages": [
+        {
+          "snapshot_id": "83485042-b577-5384-b262-6791c4cd87eb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "Official bill page listing Wesco first among the House sponsors of the religious freedom restoration act.",
+          "record_kind": "sponsor",
+          "actor_quote": "Sponsored by: Rep. Timothy Wesco",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f453d135-d0ff-5015-b167-a137911145c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": "Sec. 8. (a) Except as provided in subsection (b), a governmental entity may not substantially burden a person's exercise of religion, SEA 101 — Concur 3 even if the burden results from a rule of general applicability. (b) A governmental entity may substantially burden a person's exercise of religion only if the governmental entity demonstrates that application of the burden to the person: (1) is in furtherance of a compelling governmental interest; and (2) is the least restrictive means of furthering that compelling governmental interest.",
+          "note": "Enrolled act text; single subject, adding IC 34-13-9 as a new chapter and naming no other topic.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "c76b672a-11e1-511e-bbba-c1d60455d3bb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2015-03-23",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 101 (2015)",
+          "provision_quote": null,
+          "note": "House third-reading roll call; Wesco appears in the Yea list and the bill is divided far beyond the near-unanimous threshold.",
+          "record_kind": "vote",
+          "actor_quote": "Cook Koch Rhoads Wesco",
+          "tally_quote": "Yea 63 Nay 31 Excused 5 Not Voting 0"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "83485042-b577-5384-b262-6791c4cd87eb",
+        "f453d135-d0ff-5015-b167-a137911145c1",
+        "c76b672a-11e1-511e-bbba-c1d60455d3bb"
+      ],
+      "reasoning": "Wesco is the lead House sponsor of SB 101 (2015) and voted Yea on third reading (Yea 63 Nay 31), a single-subject act whose operative section bars a governmental entity from substantially burdening a person's exercise of religion \"even if the burden results from a rule of general applicability\" unless it meets strict scrutiny, and lets the burdened person \"assert the violation or impending violation as a claim or defense in a judicial or administrative proceeding\". That is the rung \"protect religious freedom and allow faith-based exemptions from laws that conflict with sincere religious beliefs\", matched clause for clause: the chapter protects exercise of religion and creates the exemption remedy from otherwise generally applicable law. The rung giving \"complete autonomy in their operations and hiring practices\" is excluded by the act's own compelling-interest exception and by Sec. 11, which creates no claim \"against any private employer\"; the rungs preserving anti-discrimination protections are excluded by Sec. 2, which exempts no statute or ordinance from the chapter absent an express citation to it.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

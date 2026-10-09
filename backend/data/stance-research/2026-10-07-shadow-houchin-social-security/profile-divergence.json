@@ -1,0 +1,23 @@
+[
+  {
+    "slot": 1,
+    "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+    "instrument": "hr82(118th)",
+    "snapshots": [
+      {
+        "snapshot_id": "7f7971b6-53a1-59de-8706-2a008e3a2fc9",
+        "url": "https://clerk.house.gov/Votes/2024456",
+        "profile": "us-house-clerk-roll-call@1"
+      },
+      {
+        "snapshot_id": "0a77a5b8-daf1-55a6-b5e0-b6e67a37f377",
+        "url": "https://www.congress.gov/bill/118th-congress/house-bill/82",
+        "profile": "us-congress-gov-bill@1"
+      }
+    ],
+    "generic": [
+      "name-collision"
+    ],
+    "profiled": []
+  }
+]

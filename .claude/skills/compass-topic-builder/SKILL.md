@@ -12,12 +12,13 @@ You are running the **compass-topic-builder** skill. Your job is to discover pol
 
 > **Related:** the `topic_key`/spectrum you build here is the shared unit between the Compass and
 > Read & Rank quotes. See the quote↔stance coupling model — same topics, not necessarily the same
-> axis — at `docs/quote-curation/PRINCIPLES.md#coupling-model` in the on-the-record corpus
-> (resolves to `../on-the-record/docs/quote-curation/PRINCIPLES.md` from a sibling checkout).
+> axis — at `$OTR_ROOT/docs/quote-curation/PRINCIPLES.md#coupling-model` in the on-the-record corpus
+> (`export OTR_ROOT=~/Documents/GitHub/on-the-record`). Commands below run from the root of the
+> ev-accounts checkout you are working in.
 
 ---
 
-## READ THIS FIRST — the model has changed
+## READ THIS FIRST — how topics go live
 
 **Topics are versioned, and they go live through Seasons.** Do not push content straight to a
 live topic.
@@ -109,15 +110,14 @@ If `$ARGUMENTS` is empty, ask:
 Before discovery or authoring, fetch the current compass topics so you can deduplicate:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+cd backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query(\`
-  SELECT t.id, t.title, t.short_title,
+  SELECT t.id, t.topic_key, t.title, t.short_title, t.is_live,
          array_agg(DISTINCT tr.role_scope) as role_scopes
   FROM inform.compass_topics t
   LEFT JOIN inform.compass_topic_roles tr ON tr.topic_id = t.id
-  WHERE t.is_live = true
-  GROUP BY t.id, t.title, t.short_title
+  GROUP BY t.id, t.topic_key, t.title, t.short_title, t.is_live
   ORDER BY t.created_at
 \`);
 console.log(JSON.stringify(rows, null, 2));
@@ -130,7 +130,7 @@ Store these in memory for deduplication in later steps.
 Also fetch existing categories:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+cd backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 const { rows } = await pool.query('SELECT id, title FROM inform.compass_categories ORDER BY title');
 console.log(JSON.stringify(rows, null, 2));
@@ -148,10 +148,10 @@ await pool.end();
 
 Use **WebSearch** to research policy issues in the jurisdiction. Run these searches:
 
-1. `"[Jurisdiction] city council agenda 2025 2026 issues"` (for local)
-2. `"[Jurisdiction] ballot measures 2025 2026"`
+1. `"[Jurisdiction] city council agenda [current year] issues"` (for local)
+2. `"[Jurisdiction] ballot measures [current year]"`
 3. `"[Jurisdiction] local politics issues voters care about"`
-4. `"[Jurisdiction] [state] legislature bills 2025 2026"` (for state)
+4. `"[Jurisdiction] [state] legislature bills [current year]"` (for state)
 5. `"[Jurisdiction] community concerns policy debate"`
 
 For each promising result, use **WebFetch** to read the page content.
@@ -296,7 +296,7 @@ Show the complete topic:
 
 ### 4a. Save JSON draft
 
-Write the approved topic to `ev-accounts/backend/data/topic-drafts/YYYY-MM-DD-<topic-key>.json`:
+Write the approved topic to `backend/data/topic-drafts/YYYY-MM-DD-<topic-key>.json`:
 
 ```json
 {
@@ -339,8 +339,9 @@ to prod 2026-08-28) added a `SECURITY DEFINER` RPC that bootstraps a topic acros
 atomically** in one call — identity row, legacy 1..5 ladder, the founding v1 published/current
 revision, its five stance revisions, and the role scopes. You **no longer hand-write the layers**;
 you call the RPC. House style still applies: create a **numbered migration** —
-`backend/migrations/CA_NNNN_<slug>.sql` (your namespace; run `git fetch origin` then
-`npm run check:migrations` for the next free slot), idempotent, ending in a `DO $$…$$` post-verify
+`backend/migrations/<NS>_NNNN_<slug>.sql`, numbered by the allocator — never by counting:
+`npm run steward --prefix backend -- slot <CA|CC> --purpose "..."` (the namespace is the author's;
+see CLAUDE.md → Migrations). Idempotent, ending in a `DO $$…$$` post-verify
 gate, dry-run `BEGIN; … ROLLBACK;` against prod before applying. **Worked example:
 `backend/migrations/CA_0027_2020_election_topic.sql`.**
 
@@ -433,7 +434,7 @@ Based on the topic content and the existing categories loaded in STEP 1, suggest
 If assigning:
 
 ```bash
-cd ev-accounts/backend && set -a && source .env && set +a && node --import tsx -e "
+cd backend && set -a && source .env && set +a && node --import tsx -e "
 import { pool } from './src/lib/db.js';
 await pool.query(\`
   INSERT INTO inform.compass_topic_categories (topic_id, category_id)
@@ -448,7 +449,7 @@ await pool.end();
 ### 4d. Report results
 
 > "Topic '[title]' saved:
-> - JSON draft: `ev-accounts/backend/data/topic-drafts/YYYY-MM-DD-<topic-key>.json`
+> - JSON draft: `backend/data/topic-drafts/YYYY-MM-DD-<topic-key>.json`
 > - Database: [created as draft / skipped]
 > - Levels: [federal, state, local]
 > - Categories: [assigned / none]
@@ -464,5 +465,5 @@ If there are more topics to author from the discovery list, loop back to STEP 3 
 
 - If WebSearch returns no useful results for a jurisdiction, tell the user and suggest they provide a specific issue instead
 - If the database query fails, save the JSON draft anyway — it's the source of truth
-- If a topic_key conflicts with an existing topic, append a number (e.g., `housing-2`) and flag it
+- If a topic_key conflicts with an existing topic, stop and flag it: the key derives from `short_title` and the RPC raises `DUPLICATE_TOPIC_KEY`, so either revise the existing topic or choose a different `short_title` with the user
 - Never lose draft data — the JSON file is written before any DB operation

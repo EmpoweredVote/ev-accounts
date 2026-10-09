@@ -1,0 +1,12 @@
+Wrote `coder-1.json`.
+
+**Row:** Marc Berman / misinformation → **chair 1** ("legally require platforms to remove false information").
+
+**Coding path:**
+- **V1 `own-act`** — the digest line "AB 2655, Berman." names him as author of the chaptered bill.
+- **V2 `on-question`** — the ladder asks what responsibility platforms and government have; the bill imposes platform duties directly.
+- **V3 `record`** / `record_kind: author`, instrument AB 2655 (2023-2024). `actor_quote` = the author line; `tally_quote` = null (an author group is not a vote, so no tally is required).
+- **V4 `chair-shaped`** — §20513(b) mandates removal within 72 hours, enforceable by injunctive relief. That excludes rung 2 ("label … rather than remove it") because removal is mandated alongside labeling, excludes rung 3 (the duty is statutory, not voluntary), and excludes rungs 4 and 5 (government-enforced moderation, with the AG/DA given a cause of action).
+- **V5 `in-term`** — approved 2024-09-17, inside the current term.
+
+One judgment call worth flagging: the law is domain-limited (election deepfakes, large platforms, time windows), while the rung reads broadly. I treated that as scope narrowing rather than a failed clause, since rung 1 carries no "all content" qualifier and no narrower rung exists on that side — unlike the V4.2 "broader than the instrument" case, where the rung's own word ("broadly") is the unmet clause. A coder reading that rule more strictly would land on BLANK `direction-only`, so this is a plausible split point against the other coders.

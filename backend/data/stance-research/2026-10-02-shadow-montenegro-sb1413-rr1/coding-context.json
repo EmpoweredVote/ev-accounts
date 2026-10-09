@@ -1,0 +1,76 @@
+{
+  "batch_id": "2026-10-02-shadow-montenegro-sb1413-rr1",
+  "seat": {
+    "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+    "full_name": "Steve Montenegro",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "9d6fd1f4-0372-4576-a7d1-77b09eed2de4",
+    "office_title": "State Representative",
+    "jurisdiction_names": [
+      "Arizona"
+    ],
+    "term_start": "2023-01-02",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "AZ",
+    "prior_terms": [
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2009-01-01",
+        "start_precision": "day",
+        "term_end": "2012-12-31"
+      },
+      {
+        "office_title": "State Representative",
+        "chamber": "lower",
+        "state_usps": "AZ",
+        "term_start": "2013-01-01",
+        "start_precision": "day",
+        "term_end": "2016-12-31"
+      },
+      {
+        "office_title": "State Senator",
+        "chamber": "upper",
+        "state_usps": "AZ",
+        "term_start": "2017-01-01",
+        "start_precision": "day",
+        "term_end": "2018-12-31"
+      }
+    ]
+  },
+  "topics": [
+    {
+      "topic_id": "4938766b-b45a-46e3-93bd-b8b30651271a",
+      "topic_key": "homelessness",
+      "served_revision_id": "6958fa99-e317-45d7-8076-d11a0a78c897",
+      "question_text": "How should government address people sleeping or camping in public spaces?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Protecting the right to sleep and shelter in public spaces, with no penalties of any kind"
+        },
+        {
+          "value": 2,
+          "text": "Decriminalizing public sleeping and camping in public spaces"
+        },
+        {
+          "value": 3,
+          "text": "Allowing enforcement only when adequate shelter beds are available, with citations diverting people to services rather than the criminal justice system"
+        },
+        {
+          "value": 4,
+          "text": "Prohibiting encampments on public property, enforced through graduated warnings and civil penalties"
+        },
+        {
+          "value": 5,
+          "text": "Banning public camping and sleeping with criminal penalties to maintain public safety and order"
+        }
+      ],
+      "annexMd": null
+    }
+  ]
+}

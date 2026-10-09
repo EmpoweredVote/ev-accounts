@@ -1,0 +1,112 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0f74219c-7d10-4d29-85fe-0f1d834df8a7",
+      "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "25679bed-42a6-5e25-8845-9f62d6e0d36d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": "what we should do is have an immigration reform that will allow us to decide who stays and who goes",
+          "note": "Accepts that some people are removed (not rung 1) but names no rule for who goes, so it does not separate rungs 2-4.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7c47c657-3c74-56a4-9df6-f4725206f784",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-02-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": "We are a sovereign nation. We have a right to know who's coming into a to our through our borders, and we have a right to enforce a law.",
+          "note": "Supports immigration enforcement in general; states no clause on which undocumented immigrants are removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "bc556d7e-a8c5-5d60-971d-7d9f089dfbcc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-05-29",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": "We were able to make sure we protected the DACA program for our dreamers all the way to the Supreme Court and we beat Donald Trump.",
+          "note": "Protecting one group (Dreamers) from removal says nothing about everyone else (annex rung 1 confusion) and is retrospective.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9d8c768b-edff-5bef-9a8e-07830ba4fa5d",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-11-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": "if there are dangerous convicted criminals, yes, we get to we we work with federal law enforcement.",
+          "note": "About state cooperation with federal enforcement (sanctuary law), the local-immigration question, not who should be deported.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "966a78a8-8633-5099-bbf4-9f49770f12d0",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-03-05",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": "SB 54, the Values Act. We defended that in court against the Trump administration the first time that they came after us because of SB 54.",
+          "note": "Defending a law limiting state cooperation with ICE is the cooperation question (annex hard case), adjacent.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own words call for \"an immigration reform that will allow us to decide who stays and who goes\" and say \"we have a right to enforce a law\", which place him against stopping deportations entirely but name no rule for who is removed. Nothing he says matches \"Only deport undocumented immigrants convicted of serious violent crimes\", \"Focus deportation on recent arrivals while leaving long-settled undocumented immigrants in place\", or the deport-all rungs clause for clause; his sanctuary-law statements are about cooperation, not removal.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "25679bed-42a6-5e25-8845-9f62d6e0d36d",
+          "text": "what we should do is have an immigration reform that will allow us to decide who stays and who goes",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "7c47c657-3c74-56a4-9df6-f4725206f784",
+          "text": "We are a sovereign nation. We have a right to know who's coming into a to our through our borders, and we have a right to enforce a law.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["non-differentiating-goal"]
+        }
+      ]
+    }
+  ]
+}

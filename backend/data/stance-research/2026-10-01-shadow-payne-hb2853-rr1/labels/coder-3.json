@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "0b0dc6ea-ed45-45e6-9a59-41d1c8aeb53c",
+      "office_id": "3b68f8ca-249f-4e82-be6a-7cf9b190ac04",
+      "topic_id": "00b95a6a-75db-4521-b523-3326bba938de",
+      "served_revision_id": "88858826-90c0-41c9-a3a4-1d9f5b8c5307",
+      "passages": [
+        {
+          "snapshot_id": "536e927e-57a3-51e6-88f4-bdae2d784a15",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-06-22",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call shows Payne voting Y on HB2853.",
+          "record_kind": "vote",
+          "actor_quote": "PAYNE Y",
+          "tally_quote": "Passed 31-26-3-0-0"
+        },
+        {
+          "snapshot_id": "30c7cd1f-3375-5f26-be47-023a665d1c4d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": "Notwithstanding section 15-2401, beginning in the 2022-2023 school year, in this chapter, unless the context otherwise requires, \"qualified student\" includes a resident of this state who both: 1. Is eligible to enroll in a public school in this state in any of the following: ( a ) A preschool program for children with disabilities. ( b ) A kindergarten program. ( c ) Any of grades one through twelve. 2. Does not otherwise qualify for an Arizona empowerment scholarship account pursuant to this chapter.",
+          "note": "Chaptered bill text adds section 15-2401.01, extending ESA eligibility to any resident eligible to enroll in public school.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2f65c0e0-5cdd-5f66-ad19-d588714103c3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-07-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB2853 (2022)",
+          "provision_quote": null,
+          "note": "Bill History page lists Payne as a co-sponsor of HB2853.",
+          "record_kind": "sponsor",
+          "actor_quote": "Payne (Co-Sponsor)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "536e927e-57a3-51e6-88f4-bdae2d784a15",
+        "30c7cd1f-3375-5f26-be47-023a665d1c4d",
+        "2f65c0e0-5cdd-5f66-ad19-d588714103c3"
+      ],
+      "reasoning": "Kevin Payne co-sponsored HB2853 (2022) and voted Y on its House Third Reading; the chaptered bill added section 15-2401.01 making any \"resident of this state\" who is merely \"eligible to enroll in a public school\" (preschool for disabilities, kindergarten, or grades one through twelve) a qualified empowerment-scholarship-account student, removing the prior targeted-eligibility limits. This matches the rung \"Providing universal vouchers so that education funding follows the student to any school — public, private, or religious — chosen by the family,\" since it extends ESA eligibility to essentially all Arizona K-12 students rather than an income-capped or otherwise targeted subset.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

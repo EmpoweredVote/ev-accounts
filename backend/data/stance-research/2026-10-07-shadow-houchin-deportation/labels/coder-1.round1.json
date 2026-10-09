@@ -1,0 +1,89 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+      "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "df91a342-7f02-503c-89cc-a4e9ece748d6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "S. 5 (119th)",
+          "provision_quote": null,
+          "note": "Yea on final passage of the Laken Riley Act; the act mandates detention of people charged with listed crimes, which shows the enforcement side but neither limits removal to serious violent convictions nor calls for removing all.",
+          "record_kind": "vote",
+          "actor_quote": "Houchin Houchin Republican Indiana IN Yea",
+          "tally_quote": "yea: 263 nay: 156 present: 0 not voting: 14"
+        },
+        {
+          "snapshot_id": "7fba9638-5e6c-5a36-9429-bca35555d7a9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-01",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "S. 5 (119th)",
+          "provision_quote": "is charged with, is arrested for, is convicted of, admits having committed, or admits committing acts which constitute the essential elements of any burglary, theft, larceny, shoplifting, or assault of a law enforcement officer offense, or any crime that results in death or serious bodily injury to another person,",
+          "note": "Operative section requires detention of people charged with (not convicted of) theft-type and other crimes; per the annex this shows the enforcement side only and matches no rung's clauses.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4413ee1b-7c53-5bdb-8a0e-b95d6202d826",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-02-17",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Praises detaining and deporting 'dangerous illegal aliens' and criminals; says nothing about whether only serious violent offenders or all undocumented immigrants should be removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3c953450-c4ad-569e-8eeb-1e137bee59c8",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-03-05",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "The Dalilah Law (H.R. 7793) limits commercial driver's licenses to lawfully present people; it does not address who is deported.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Yea on S. 5, the Laken Riley Act, mandates detention of people 'charged with' theft-type and other crimes, and her statement that 'dangerous illegal aliens are finally being detained and deported' shows the enforcement side only. Neither states the 'only' limit of 'Only deport undocumented immigrants convicted of serious violent crimes' nor the goal to 'Deport all undocumented immigrants', so no rung is separated.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "4413ee1b-7c53-5bdb-8a0e-b95d6202d826",
+          "text": "Thanks to the Laken Riley Act, dangerous illegal aliens are finally being detained and deported before they can commit more crimes.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

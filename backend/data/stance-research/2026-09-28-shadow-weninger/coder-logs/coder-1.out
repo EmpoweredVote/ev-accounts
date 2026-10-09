@@ -1,0 +1,11 @@
+Written: `coder-1.json` — one row, `economic-development`, coded **BLANK `no-evidence`**.
+
+**How it coded**
+
+All three snapshots are one instrument, HB 2822 (2022): the bill overview (prime sponsorship), the enacted Chapter 103 text, and the House Final Reading roll call. V1 `own-act` on all three, V5 `in-term` (his prior House term in the same legislature, per the V5 option-B ruling).
+
+They die at **V2 `adjacent`**. Every rung on this ladder turns on incentives offered to attract businesses — whether to give them, with what conditions, and at what scale. HB 2822 sets one depreciation valuation factor for all qualifying business personal property statewide; it offers nothing to a particular employer and withholds nothing either, so it can't evidence rung 1's "Don't give companies tax breaks or subsidies" any more than rung 4's "large tax breaks and infrastructure to attract major employers." V4 `off-axis` on each. Adjacent passages can't support a chair, so nothing survives → BLANK `no-evidence` (H6 precedent, Moore/childcare).
+
+**Record fields**, placed on the page that prints each fact: `actor_quote` `"Sponsors: Weninger (Prime)"` on the overview and `"WENINGER Y"` on the roll call, `tally_quote` `"Passed 35-24-1-0-0"` on the roll call, `provision_quote` on the chapter text only. The provision quote is paragraph 4, which contains no `[deleted: …]` fence — paragraph 3, the one carrying the deletions, is not quoted.
+
+`needs_source` asks for two things: his own act on an actual Arizona business-attraction incentive instrument, and his own words answering the ladder's question. No quotes array — the sources are all public records with no candidate quote spans.

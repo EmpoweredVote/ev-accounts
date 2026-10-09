@@ -1,0 +1,49 @@
+{
+  "batch_id": "2026-10-02-shadow-montenegro-sb1413-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1413",
+      "source_kind": "public-record",
+      "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+      "office_id": "9d6fd1f4-0372-4576-a7d1-77b09eed2de4",
+      "topic_keys": [
+        "homelessness"
+      ],
+      "instruments": [
+        "SB 1413 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-sb1413-overview.txt"
+    },
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=127&BillNumber=SB1413#house-third",
+      "source_kind": "public-record",
+      "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+      "office_id": "9d6fd1f4-0372-4576-a7d1-77b09eed2de4",
+      "topic_keys": [
+        "homelessness"
+      ],
+      "instruments": [
+        "SB 1413 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2023-sb1413-house-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/56leg/1R/bills/SB1413S.htm",
+      "source_kind": "public-record",
+      "politician_id": "47071c20-df9d-4f9d-9329-25faf64cd163",
+      "office_id": "9d6fd1f4-0372-4576-a7d1-77b09eed2de4",
+      "topic_keys": [
+        "homelessness"
+      ],
+      "instruments": [
+        "SB 1413 (2023)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

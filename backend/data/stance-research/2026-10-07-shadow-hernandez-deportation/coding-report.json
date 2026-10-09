@@ -1,0 +1,67 @@
+{
+  "codebook_version": "0.4",
+  "models": [
+    "opus",
+    "sonnet",
+    "sonnet"
+  ],
+  "rows": [
+    {
+      "key": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "topic_key": "deportation",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Alma Hernandez's own words (questionnaire, issue page, debate answer) stating which undocumented immigrants, if any, should be deported",
+          "Alma Hernandez's own words on who should be deported (questionnaire, issue page, debate answer or interview)",
+          "Her own first-person statement of who should or should not be deported (questionnaire, debate answer, or issue page)"
+        ]
+      },
+      "confirm": [],
+      "stratum": {
+        "level": "state",
+        "evidence_class": null,
+        "evidence_basis": "own-words"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source"
+      ],
+      "seed": "none",
+      "profiles": [],
+      "evidence_tier": null
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 1
+  },
+  "needsSource": [
+    {
+      "key": "e4460c64-fa27-4e05-96e8-cc005a478444|aba32819-62f2-41a5-a105-569b59d9ac5a|44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "requests": [
+        "Alma Hernandez's own words (questionnaire, issue page, debate answer) stating which undocumented immigrants, if any, should be deported",
+        "Alma Hernandez's own words on who should be deported (questionnaire, issue page, debate answer or interview)",
+        "Her own first-person statement of who should or should not be deported (questionnaire, debate answer, or issue page)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {}
+}

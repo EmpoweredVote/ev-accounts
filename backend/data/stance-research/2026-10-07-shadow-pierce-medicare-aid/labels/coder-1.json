@@ -1,0 +1,76 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+      "office_id": "7b3f68ef-bd9b-4316-9e39-89091b6e9aa1",
+      "topic_id": "cab61e8a-64fe-4bbd-bc08-fe9914d0091b",
+      "served_revision_id": "38bab357-9790-4cb3-a6d2-c43cbdca615b",
+      "passages": [
+        {
+          "snapshot_id": "5df4adb4-419b-5417-9393-769db2f8a6e7",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-08-31",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticises procedural Medicaid disenrollment and offers casework help; enrollment procedure does not change who is eligible, so it is adjacent per the annex.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "3a6cc8f2-5b8c-5e0c-8a66-7488b6b4af68",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-09-30",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Opposes HIP work requirements; work requirements on their own are adjacent per the annex and do not order the size of the programmes.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7a4023d1-a7f6-5388-8feb-cd8146fd52d5",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2026-03-11",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Criticises SEA 1 (co-pays, eligibility checks, work requirements) in his newsletter but names no vote of his own on it; the clauses are adjacent to the rungs' programme-size dimension.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "His own words oppose Medicaid work requirements and procedural disenrollment (\"I oppose them because claims of fraud are overblown.\"), which the annex treats as adjacent to rungs that order how large Medicare and Medicaid are; none speaks to expanding eligibility, improving programs while controlling costs, or scaling back both programs. No on-question passage survives.",
+      "needs_source": [
+        "Indiana House roll call, SEA 1 (2026), third reading, with Pierce's vote and the bill's operative text"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "3a6cc8f2-5b8c-5e0c-8a66-7488b6b4af68",
+          "text": "Republicans claim these new requirements will reduce fraud. I oppose them because claims of fraud are overblown.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

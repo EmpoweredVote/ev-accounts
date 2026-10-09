@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "62dfefeb-9979-445a-aee6-06cf7c03a8c0",
+      "office_id": "1621afeb-6cb1-4368-98db-6e18b0723faa",
+      "topic_id": "9db07b16-1076-4b7d-ad89-ebe7b51f4336",
+      "served_revision_id": "c334f475-05bd-48ba-9d25-f4de593a3f15",
+      "passages": [
+        {
+          "snapshot_id": "f85ff6c9-bb6d-5e4e-a775-4ebcba97382b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-10-13",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "AB 88 (2023-2024)",
+          "provision_quote": "the victim shall notify the prosecution of their request to be heard within 15 days of being notified that resentencing is being sought and the court shall provide an opportunity for the victim to be heard.",
+          "note": "AB 88 governs only victim notification and hearing rights in resentencing and parole proceedings, not the treatment-vs-punishment response to the offender, matching the annex's victims'-rights hard case.",
+          "record_kind": "author",
+          "actor_quote": "AB 88, Sanchez.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only source, AB 88 (2023-2024), which Sanchez authored, amends victim-notification and victim-hearing procedures in resentencing and parole proceedings; it says nothing about whether the system's response to a person who broke the law should emphasize treatment, restitution, consequences, or maximum penalties. The annex's victims'-rights hard case places such a bill as adjacent, so no passage survives to establish a chair.",
+      "needs_source": [
+        "A Sanchez vote, sponsorship, or own-words statement addressing sentencing severity, diversion/treatment programs, or the general consequences-vs-rehabilitation orientation (not victims' notification procedure)"
+      ],
+      "quotes": []
+    }
+  ]
+}

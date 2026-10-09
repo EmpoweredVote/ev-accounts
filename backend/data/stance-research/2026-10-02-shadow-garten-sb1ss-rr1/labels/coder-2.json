@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "8af9732c-8050-4732-acdf-6e2c8ed6e30b",
+      "office_id": "b93ba475-ef99-4209-be1d-28cc3eae2399",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "6ee430d7-d418-55b6-9c18-c3af1da5167f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": null,
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": "the abortion is necessary when reasonable medical judgment dictates that performing the abortion is necessary to prevent any serious health risk to the pregnant woman or to save the pregnant woman's life; or (ii) the fetus is diagnosed with a lethal fetal anomaly;",
+          "note": "Operative section bans abortion except for health/life risk, lethal fetal anomaly, or (within 10 weeks) rape or incest.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2d98cb03-ae4d-58a1-829a-58039d7da041",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-08-05",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1(ss) (2022 First Special Session)",
+          "provision_quote": null,
+          "note": "Garten voted Yea on final concurrence, 28-19; not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Baldwin Byrne Garten Mishler",
+          "tally_quote": "Yea 28 Abortion. Nay 19"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "6ee430d7-d418-55b6-9c18-c3af1da5167f",
+        "2d98cb03-ae4d-58a1-829a-58039d7da041"
+      ],
+      "reasoning": "Garten voted Yea on SB 1(ss) (2022 First Special Session), a single-subject abortion bill whose operative section makes abortion a criminal act except when necessary to prevent a serious health risk or save the mother's life, when the fetus has a lethal fetal anomaly, or (within the first ten weeks) when the pregnancy results from rape or incest -- matching the rung text 'ban abortion except in cases of rape, incest, or a serious risk to the mother's life.'",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

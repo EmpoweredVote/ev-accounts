@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "2785d691-2404-400e-8dde-bcc5a58e419b",
+      "office_id": "6ddab4ec-20d4-4a25-a03f-6bf0dceb0be3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "bdfa6be5-27b0-5508-99cb-15186700b235",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "B. Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex. C. This section does not restrict the eligibility of any student to participate in any interscholastic or intramural athletic team or sport designated as being for \"males\", \"men\" or \"boys\" or designated as \"coed\" or \"mixed\".",
+          "note": "Operative text restricts only girls'/women's teams to biological females while leaving boys' and coed teams open, matching rung 4 per the annex.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "73b9880f-24d0-5958-bfd1-5a221ad5bcd5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading vote shows Bolick voting Yea on the single-subject bill; the 31-24 tally is not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "BOLICK Y",
+          "tally_quote": "Passed 31-24-5-0-0"
+        },
+        {
+          "snapshot_id": "58432c29-d9e9-516c-aabb-7461a3bb55c5",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bolick is listed as a House co-sponsor of SB1165, and the overview confirms Senate passage, House passage, and gubernatorial signature in 2022.",
+          "record_kind": "sponsor",
+          "actor_quote": "Bolick (Co-Sponsor)",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "bdfa6be5-27b0-5508-99cb-15186700b235",
+        "73b9880f-24d0-5958-bfd1-5a221ad5bcd5",
+        "58432c29-d9e9-516c-aabb-7461a3bb55c5"
+      ],
+      "reasoning": "Bolick co-sponsored and voted Yea (House Third Reading, 31-24-5-0-0) on SB 1165 (2022), a single-subject bill under which teams designated for \"females\", \"women\" or \"girls\" \"may not be open to students of the male sex\" while leaving boys' and coed teams open to all students. This matches rung 4, \"require transgender athletes to compete only on teams matching their biological sex assigned at birth,\" per the annex's girls'-teams-only reading, which excludes rung 5 because boys'/coed teams stay open. The House action falls within her 2019-2023 term as State Representative in the same Arizona Legislature, which counts as in-term under the V5 earlier-chamber ruling.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

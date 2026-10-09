@@ -1,0 +1,77 @@
+{
+  "codebook_version": "0.4",
+  "variables": [
+    {
+      "variable": "v1_attribution",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v2_relevance",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v3_class",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v4_shape",
+      "units": 2,
+      "split_units": 2,
+      "alpha": -0.25,
+      "examples": [
+        {
+          "unit": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40#206911f6-16c7-55c4-b0a9-47b94c4c0cf1",
+          "values": [
+            "direction-only",
+            "chair-shaped",
+            "direction-only"
+          ]
+        },
+        {
+          "unit": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40#fb024c22-ae9a-5f57-b04e-bbe4fc13fc69",
+          "values": [
+            "direction-only",
+            "chair-shaped",
+            "direction-only"
+          ]
+        }
+      ]
+    },
+    {
+      "variable": "v5_time",
+      "units": 2,
+      "split_units": 0,
+      "alpha": null,
+      "examples": []
+    },
+    {
+      "variable": "v6_chair",
+      "units": 1,
+      "split_units": 1,
+      "alpha": 0,
+      "examples": [
+        {
+          "unit": "79bb9e5a-a74a-44ef-a1c4-5b956ad36e5e|5f584301-def4-4b05-bba8-e017dc2273e0|4559b513-0fd8-4ed1-babd-f3b554162f40",
+          "values": [
+            "BLANK",
+            "4",
+            "BLANK"
+          ]
+        }
+      ]
+    }
+  ],
+  "ranked": [
+    "v4_shape",
+    "v6_chair"
+  ]
+}

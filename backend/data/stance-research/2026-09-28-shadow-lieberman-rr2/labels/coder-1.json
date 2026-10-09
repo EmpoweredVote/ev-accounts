@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "a6d492a6-0d29-4d8d-8533-a3ae82284696",
+      "office_id": "d13d9c57-2851-48fb-a1a6-0b181f449453",
+      "topic_id": "af2fdfd6-02c4-49df-b09c-cf8536f4773f",
+      "served_revision_id": "085feb9c-f157-4dae-bfd0-7b2736c5d87c",
+      "passages": [
+        {
+          "snapshot_id": "cd73a205-cc4e-51c2-b513-80cc050cda4e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": null,
+          "note": "House Final Reading roll call recording his No vote; the page prints no operative text.",
+          "record_kind": "vote",
+          "actor_quote": "LIEBERMAN N",
+          "tally_quote": "Passed 31-29-0-0-0"
+        },
+        {
+          "snapshot_id": "bf071e0c-333a-557c-93a0-8d56ca7f611e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-04-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1457 (2021)",
+          "provision_quote": "A. The laws of this state shall be interpreted and construed to acknowledge, on behalf of an unborn child at every stage of development, all rights, privileges and immunities available to other persons, citizens and residents of this state, subject only to the constitution of the United States and decisional interpretations thereof by the United States supreme court.",
+          "note": "The enacted text sets a fetal-personhood construction rule, a reason-based prohibition and clinic, consent and reporting rules, but no gestational limit and no stage-based exception rule.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "As a State Representative Lieberman voted No on SB 1457 (2021), whose section 1 directs that state law be construed to acknowledge, \"on behalf of an unborn child at every stage of development\", \"all rights, privileges and immunities available to other persons\", and which sets no gestational limit and no stage-based exception rule. A fetal-personhood measure that states no ban or exception rule shows a side only, and opposing it places him on the permissive side without choosing between \"keep abortion legal at every stage of pregnancy, with no time limit.\" and \"keep abortion legal through the second trimester, and after that only to protect the mother's health.\" No surviving passage evidences a stage clause or an exception clause, so the row is blank for direction only.",
+      "needs_source": [
+        "Aaron Lieberman's own words on a gestational limit for the 2026 Arizona Senate campaign (candidate questionnaire, debate answer, or first-person issue page)",
+        "Any Arizona legislative record of his on a bill that sets a gestational limit or an exception rule (bill page plus roll call)"
+      ],
+      "quotes": []
+    }
+  ]
+}

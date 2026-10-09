@@ -193,6 +193,130 @@ describe('checkNameProximity', () => {
   });
 });
 
+// A source routinely prints a ballot name ("Jenn Hernandez") where the record holds the legal one
+// ("Jennifer Hernandez"). Neither name test then fires: the full name is absent, and the surname is
+// on COMMON_LAST_NAMES, which demands a title the article has no reason to use for a candidate.
+// `aliases` carries the other names the record knows, each treated as a full name.
+describe('checkNameProximity with aliases', () => {
+  const longSnippet = 'We need a mix of housing options that support both current and future residents, encouraging smaller homes like cottages, townhomes, or starter homes designed to fit the character of this town.';
+  const at = (page: string) => normalizeText(page).indexOf(normalizeText(longSnippet));
+
+  it('name_not_present without the alias, when the surname is common and untitled', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('verified when an alias full name appears in the window', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+
+  it('matches an alias through normalization (case, spacing, curly punctuation)', () => {
+    const page = `JENN   HERNANDEZ said: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['  jenn hernandez  '],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+
+  it('refuses a one-token alias — a bare first name must not bypass the common-surname rule', () => {
+    const page = `Jenn: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('holds an alias to the same 500-character window as the full name', () => {
+    const page = `Jenn Hernandez spoke first. ${'x'.repeat(2000)}. Later: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez', aliases: ['Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('name_not_present');
+  });
+
+  it('ignores blank and non-string aliases without throwing', () => {
+    const page = `Jenn Hernandez: ${longSnippet}`;
+    expect(checkNameProximity({
+      fullName: 'Jennifer Hernandez', lastName: 'Hernandez',
+      aliases: ['', '   ', null as unknown as string, 'Jenn Hernandez'],
+      pageText: page, matchOffsetInNormalized: at(page),
+    }).verdict).toBe('verified');
+  });
+});
+
+import { decodeForDisplay } from './researchVerifier.js';
+
+// The published citation is the matched span. It was stored exactly as the page's extracted text
+// had it, so a span cut from a news page carried raw `&ldquo;` and `&mdash;` into what a voter
+// reads. Measured 2026-10-06: 3 of 12 live citations in the Redmond and Duvall batches.
+describe('decodeForDisplay', () => {
+  it('decodes the typographic named entities a news page actually uses', () => {
+    expect(decodeForDisplay('Council position 6 &mdash; Jenn Hernandez'))
+      .toBe('Council position 6 — Jenn Hernandez');
+    expect(decodeForDisplay('&ldquo;Placing a levy&rdquo; said the Mayor'))
+      .toBe('“Placing a levy” said the Mayor');
+    expect(decodeForDisplay('the city&rsquo;s finances')).toBe('the city’s finances');
+    expect(decodeForDisplay('RCW &sect; 35.21.830')).toBe('RCW § 35.21.830');
+  });
+
+  it('decodes numeric and hex references', () => {
+    expect(decodeForDisplay('you&#8217;re here')).toBe('you’re here');
+    expect(decodeForDisplay('you&#x2019;re here')).toBe('you’re here');
+  });
+
+  it('preserves case, straight quotes and spacing — it is not normalizeText', () => {
+    const s = 'The Mayor said "no" — twice.';
+    expect(decodeForDisplay(s)).toBe(s);
+    expect(decodeForDisplay('A  B')).toBe('A  B');
+  });
+
+  it('leaves a malformed reference alone rather than throwing', () => {
+    expect(decodeForDisplay('a &notanentity; b &#; c')).toBe('a &notanentity; b &#; c');
+  });
+});
+
+describe('normalizeText folds the same entities, so a decoded span still matches its snippet', () => {
+  it('folds named typographic entities to the characters it already normalizes', () => {
+    expect(normalizeText('a &mdash; b')).toBe(normalizeText('a — b'));
+    expect(normalizeText('&ldquo;x&rdquo;')).toBe(normalizeText('“x”'));
+    expect(normalizeText('city&rsquo;s')).toBe(normalizeText('city’s'));
+  });
+});
+
+import { aliasesFrom } from './researchVerifier.js';
+
+describe('aliasesFrom', () => {
+  it('keeps multi-token names and trims them', () => {
+    expect(aliasesFrom(['  Jenn Hernandez ', 'J. C. Hernandez'])).toEqual(['Jenn Hernandez', 'J. C. Hernandez']);
+  });
+
+  it('drops one-token names, blanks and non-strings', () => {
+    expect(aliasesFrom(['Jenn', '', '   ', 42, null, undefined, 'Jenn Hernandez'])).toEqual(['Jenn Hernandez']);
+  });
+
+  it('dedupes case-insensitively, keeping the first spelling', () => {
+    expect(aliasesFrom(['Jenn Hernandez', 'JENN HERNANDEZ', 'jenn  hernandez'])).toEqual(['Jenn Hernandez']);
+  });
+
+  it('returns an empty array for null, a non-array, or an empty array', () => {
+    expect(aliasesFrom(null)).toEqual([]);
+    expect(aliasesFrom(undefined)).toEqual([]);
+    expect(aliasesFrom('Jenn Hernandez')).toEqual([]);
+    expect(aliasesFrom([])).toEqual([]);
+  });
+
+  it('caps the list so one bad row cannot slow every snippet check', () => {
+    const many = Array.from({ length: 50 }, (_, i) => `Name Number${i}`);
+    expect(aliasesFrom(many)).toHaveLength(8);
+  });
+});
+
 import { createPageFetcher } from './researchVerifier.js';
 
 describe('createPageFetcher', () => {
@@ -280,6 +404,24 @@ describe('verifyEvidence', () => {
     expect(result.pushable[0].verifiedSources).toHaveLength(2);
     expect(result.needsReResearch).toHaveLength(0);
     expect(result.reviewQueue).toHaveLength(0);
+  });
+
+  it('waives name proximity for a declared own-site URL, and only for it', async () => {
+    const far = `${'filler '.repeat(200)}`;
+    const text = `Brad Sherman header ${far} ${longSnippet} ${far}`;
+    const evidenceRows: EvidenceRow[] = [
+      { full_name: 'Brad Sherman', topic_key: 'healthcare', source_url: 'https://own.example/issues', snippet: longSnippet, snippet_index: 0 },
+    ];
+    const fetcher: _PageFetcher = async () => ({ ok: true, text });
+    const base = { stanceRows, evidenceRows, fetcher, threshold: 1,
+      politicianNames: { 'Brad Sherman': { fullName: 'Brad Sherman', lastName: 'Sherman' } } };
+    const without = await verifyEvidence(base);
+    expect(without.needsReResearch).toHaveLength(1);
+    expect(without.needsReResearch[0].failedSources[0].snippets[0].verdict.verdict).toBe('name_not_present');
+    const withOwn = await verifyEvidence({ ...base, ownSiteUrls: new Set(['https://own.example/issues']) });
+    expect(withOwn.pushable).toHaveLength(1);
+    const otherUrl = await verifyEvidence({ ...base, ownSiteUrls: new Set(['https://elsewhere.example/']) });
+    expect(otherUrl.needsReResearch).toHaveLength(1);
   });
 
   it('routes below-threshold rows to needsReResearch', async () => {
@@ -446,5 +588,77 @@ describe('verifyEvidence — I6 published span and I1 cited URLs', () => {
     expect(result.pushable).toHaveLength(0); // only 1 of the 2 needed sources counts
     const failed = result.needsReResearch[0].failedSources;
     expect(failed.map((f) => [f.url, f.snippets[0].verdict.verdict])).toEqual([['https://www.vote411.org/x', 'url_not_cited']]);
+  });
+});
+
+describe('checkNameProximity — accented stored names and spaced council titles', () => {
+  // Both regressions were measured on the Charlotte city batch, 2026-10-02.
+  const longSnippet = 'There is a place for single-family subdivisions, period. You can have strategic development and that is what we are asking for. There are urban areas where duplexes and triplexes are appropriate but not inside them.';
+
+  it('verifies when the source drops an accent the stored name carries', () => {
+    const page = `Council member Renee Johnson, who is also Black, agreed. ${longSnippet}`;
+    const v = checkNameProximity({
+      fullName: 'Reneé Johnson',
+      lastName: 'Johnson',
+      pageText: page,
+      matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+    });
+    expect(v.verdict).toBe('verified');
+  });
+
+  it('verifies a common surname qualified by the two-word rendering "Council member"', () => {
+    // "johnson" is a COMMON_LAST_NAME, so this can only pass via TITLE_PATTERN.
+    // The FULL name must not appear, or the full-name branch short-circuits
+    // the test and it passes without exercising TITLE_PATTERN at all.
+    const page = `Council member Johnson spoke. ${longSnippet}`;
+    const v = checkNameProximity({
+      fullName: 'Dana Johnson',
+      lastName: 'Johnson',
+      pageText: page,
+      matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+    });
+    expect(v.verdict).toBe('verified');
+  });
+
+  it('still refuses an unqualified common surname — the guard is not loosened', () => {
+    const page = `A spokesman named Johnson commented. ${longSnippet}`;
+    const v = checkNameProximity({
+      fullName: 'Dana Johnson',
+      lastName: 'Johnson',
+      pageText: page,
+      matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+    });
+    expect(v.verdict).toBe('name_not_present');
+  });
+});
+
+describe('checkNameProximity — municipal and county titles', () => {
+  const longSnippet = 'There is a place for single-family subdivisions, period. You can have strategic development and that is what we are asking for. There are urban areas where duplexes and triplexes are appropriate but not inside them.';
+
+  // "king", "moore", "brown" and "gonzalez" are all COMMON_LAST_NAMES, and real
+  // Knight-city members carry them. The full name is deliberately absent so the
+  // test exercises TITLE_PATTERN rather than the full-name branch.
+  for (const title of ['Commissioner', 'County Commissioner', 'Alderman', 'Supervisor', 'Trustee']) {
+    it(`verifies a common surname qualified by "${title}"`, () => {
+      const page = `${title} King spoke at the meeting. ${longSnippet}`;
+      const v = checkNameProximity({
+        fullName: 'Christine King',
+        lastName: 'King',
+        pageText: page,
+        matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+      });
+      expect(v.verdict).toBe('verified');
+    });
+  }
+
+  it('still refuses a common surname with no title at all', () => {
+    const page = `A resident named King spoke. ${longSnippet}`;
+    const v = checkNameProximity({
+      fullName: 'Christine King',
+      lastName: 'King',
+      pageText: page,
+      matchOffsetInNormalized: page.toLowerCase().indexOf('there is a place'),
+    });
+    expect(v.verdict).toBe('name_not_present');
   });
 });

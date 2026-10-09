@@ -1,0 +1,94 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-03-10",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1294",
+          "provision_quote": "SB 1294 requires the Arizona Department of Administration to lease the currently vacant Marana Prison to the U.S. government for $1 per year.",
+          "note": "Prison-lease bill builds federal detention capacity for 'criminal illegal aliens'; addresses housing capacity, not who or how many to deport.",
+          "record_kind": "sponsor",
+          "actor_quote": "sponsored by Senator John Kavanagh",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2025-03-10",
+          "v4_shape": "off-axis",
+          "v5_time": "in-term",
+          "instrument": "SB 1299",
+          "provision_quote": "SB 1299 establishes the Law Enforcement Personnel Grant Program to reimburse law enforcement agencies for immigration training costs.",
+          "note": "Training-grant funding bill; does not address the scope of who should be deported.",
+          "record_kind": "sponsor",
+          "actor_quote": "sponsored by Senator John Kavanagh",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1610",
+          "provision_quote": "SB 1610 requires county detention facilities to provide personal identifying information and access to an arrested person, on the request of the U.S. Immigration and Customs Enforcement (ICE).",
+          "note": "Shows support for cooperating with ICE on arrested persons, but neither the bill nor his statement says whether the ultimate goal is deporting all undocumented immigrants or only those with criminal records.",
+          "record_kind": "sponsor",
+          "actor_quote": "sponsored by Senator John Kavanagh",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Kavanagh sponsored SB 1294, SB 1299, and SB 1610 (all passed the Senate, March 2025), which lease a prison for federal detention of 'criminal illegal aliens,' fund immigration-enforcement training, and require county facilities to share arrested persons' information with ICE. His own words say the bills support 'the federal government's deportation efforts,' but neither the instruments nor his statements say whether the goal is to deport all undocumented immigrants or to limit removal to those with criminal records, so no rung's population clause is matched.",
+      "needs_source": [
+        "Arizona Legislature bill text and floor-vote tally for SB 1294 (2025)",
+        "Arizona Legislature bill text and floor-vote tally for SB 1299 (2025)",
+        "Arizona Legislature bill text and floor-vote tally for SB 1610 (2025)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "The federal government should have access to the empty Marana Prison to house these dangerous criminal illegal aliens so that Arizonans are protected from further threats",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "Detention centers are running at max capacity, and as a result, illegal aliens are being released back into communities.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "With this bill, we are supporting the federal government's deportation efforts by requiring detention facilities to supply inmate information to ICE.",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

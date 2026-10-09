@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 3,
+  "rows": [
+    {
+      "politician_id": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2",
+      "office_id": "1c197b51-fded-441e-a72a-de51329efe42",
+      "topic_id": "f7e5678d-dadd-4556-a2fc-446e24642ceb",
+      "served_revision_id": "44ac21e4-76ad-4318-a5c4-d0d744a8313e",
+      "passages": [
+        {
+          "snapshot_id": "c9cb2779-6c2f-529c-9d0d-bcd236631a7d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Senate Third Reading vote on an omnibus taxation bill; a No vote on a multi-subject bill proves nothing about any single provision.",
+          "record_kind": "vote",
+          "actor_quote": "MARSH N",
+          "tally_quote": "Passed 16-14-0-0-0"
+        },
+        {
+          "snapshot_id": "f8862baf-e5bf-50e1-b0e0-a31dd944c8e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2021-06-30",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "SB 1828 (2021)",
+          "provision_quote": null,
+          "note": "Chapter law text of SB1828; covers income-tax rate cuts, property tax, TPT exemptions, unemployment insurance and other unrelated subjects in one act.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Marsh voted No on SB 1828 (2021), an omnibus taxation act combining income-tax rate reductions with unrelated property-tax, TPT-exemption and unemployment-insurance provisions; per V4.1 a No vote on a multi-subject bill proves nothing about any specific clause, so no passage establishes any rung of the taxes ladder.",
+      "needs_source": [
+        "Marsh's own explanation of vote or floor statement on SB 1828 (2021) tying her No vote to a specific provision (e.g., the income-tax rate cut in Sec. 15, amending A.R.S. 43-1011)"
+      ],
+      "quotes": []
+    }
+  ]
+}

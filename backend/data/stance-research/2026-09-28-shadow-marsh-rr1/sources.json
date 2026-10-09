@@ -1,0 +1,34 @@
+{
+  "batch_id": "2026-09-28-shadow-marsh-rr1",
+  "sources": [
+    {
+      "url": "https://apps.azleg.gov/BillStatus/BillOverview?SessionID=123&BillNumber=SB1828#senate-third",
+      "source_kind": "public-record",
+      "politician_id": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2",
+      "office_id": "1c197b51-fded-441e-a72a-de51329efe42",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "SB 1828 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/azleg-2021-sb1828-senate-third.txt"
+    },
+    {
+      "url": "https://www.azleg.gov/legtext/55leg/1R/laws/0412.htm",
+      "source_kind": "public-record",
+      "politician_id": "e7ce87c4-3b49-418d-ba10-88aaf4d827e2",
+      "office_id": "1c197b51-fded-441e-a72a-de51329efe42",
+      "topic_keys": [
+        "taxes"
+      ],
+      "instruments": [
+        "SB 1828 (2021)"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

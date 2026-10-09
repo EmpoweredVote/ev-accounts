@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "190c3584-0826-4a5f-a2ad-104ff70ff259",
+      "office_id": "4164cda9-e149-46c7-9b5a-7f1f75088ac0",
+      "topic_id": "ddd65d64-9dc7-4208-a30f-59f4b9c0653d",
+      "served_revision_id": "bd313c07-02a5-4344-8cc3-0e4b4c3b78a1",
+      "passages": [
+        {
+          "snapshot_id": "8dca6231-481c-5393-ad92-d19f85d328ae",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-09-17",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 2839 (2023-2024)",
+          "provision_quote": "A person, committee, or other entity shall not, during the time period set forth in subdivision (c), with malice, knowingly distribute an advertisement or other election communication containing materially deceptive content of any of the following:",
+          "note": "The duty runs against distributors of election communications, and the section says it does not impose liability on an interactive computer service, so it sets no platform duty.",
+          "record_kind": "author",
+          "actor_quote": "AB 2839, Pellerin. Elections: deceptive media in advertisements.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Pellerin authored AB 2839 (2023-2024), which bars a person, committee, or other entity from knowingly distributing an election advertisement containing materially deceptive content with malice, enforced by private civil actions. The obligation falls on distributors, not on platforms, and the section does not impose liability on an interactive computer service, so it matches neither legally require platforms to remove false information nor require platforms to label false content, rather than remove it. It shows only the side that favors government action against online misinformation, against protect free speech online and prevent government censorship.",
+      "needs_source": [
+        "Pellerin's own words on what platforms must do about false content online (questionnaire, issue page, or floor statement)",
+        "A Pellerin record whose operative text imposes a removal, labeling, or voluntary-standards duty on online platforms"
+      ],
+      "quotes": []
+    }
+  ]
+}

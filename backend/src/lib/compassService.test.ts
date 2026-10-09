@@ -208,8 +208,23 @@ describe('getPoliticianContext — the newest season, never two rows', () => {
   });
 
   it('returns the newest row when the pair has one', async () => {
-    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'r', sources: ['u'] }] });
-    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: ['u'] });
+    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'r', sources: ['u'], evidence: [] }] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: ['u'], evidence: [] });
+  });
+
+  // CA_0301. The date of each source rides along; `sources` is unchanged for old callers.
+  it('returns per-source dates, scoped to the chosen row\'s own sources, as text', async () => {
+    const evidence = [{ source_url: 'u', source_date: '2022-01-01', source_date_precision: 'year' }];
+    mockQuery.mockResolvedValue({ rows: [{ reasoning: 'r', sources: ['u'], evidence }] });
+    await expect(getPoliticianContext('p1', 't1')).resolves.toEqual({ reasoning: 'r', sources: ['u'], evidence });
+
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toContain('politician_context_evidence');
+    expect(sql).toMatch(/e\.source_url = ANY\(COALESCE\(c\.sources/);
+    expect(sql).toMatch(/e\.source_date::text/);
+    expect(sql).toMatch(/e\.source_date IS NOT NULL/);
+    expect(sql).toMatch(/DISTINCT ON \(e\.source_url\)/);
   });
 
   // The route turns null into a 404, which is the documented contract for a
@@ -324,6 +339,35 @@ describe('getPoliticianCitations — a blanked stance reads as no stance', () =>
 
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toMatch(/NULLIF\(\s*pa\.value\s*,\s*0\s*\)/);
+  });
+});
+
+// Q2 (ruling 2026-10-07): voters see an empty spoke for a blank — no reasoning, no citations. Each
+// public read drops a blank AFTER its newest-season collapse, never inside it (inside would serve an
+// older season's reasoning for a position the person no longer holds).
+describe('a blank (value 0) is hidden from every public context read (ruling Q2)', () => {
+  beforeEach(() => mockQuery.mockReset());
+  it('getPoliticianCitations drops the block after the pa collapse', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianCitations('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/AND \(pa\.value IS NULL OR pa\.value <> 0\)/);
+    // after the LATERAL's LIMIT 1, i.e. in the outer WHERE
+    expect(sql.indexOf('pa.value IS NULL OR pa.value <> 0')).toBeGreaterThan(sql.indexOf(') pa ON true'));
+  });
+  it('getPoliticianContext picks the newest season first, then drops it when that season answered 0', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    expect(await getPoliticianContext('p1', 't1')).toBeNull();
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/LIMIT 1\s*\) x\s*WHERE NOT EXISTS/);
+    expect(sql).toMatch(/a\.season_id = x\.season_id AND a\.value = 0/);
+  });
+  it('getPoliticianContextAll collapses per topic first, then drops blanked topics', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContextAll('p1');
+    const sql = mockQuery.mock.calls[0][0] as string;
+    expect(sql).toMatch(/ORDER BY c\.topic_id, s\.number DESC\s*\) x\s*WHERE NOT EXISTS/);
+    expect(sql).toMatch(/a\.topic_id = x\.topic_id AND a\.season_id = x\.season_id AND a\.value = 0/);
   });
 });
 

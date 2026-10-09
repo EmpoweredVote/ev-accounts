@@ -1,0 +1,55 @@
+{
+  "batch_id": "2026-10-07-shadow-hilton-social-security",
+  "seat": {
+    "politician_id": "9a60d603-194d-410f-ae01-85bd6293f1a7",
+    "full_name": "Steve Hilton",
+    "level": "state",
+    "mode": "candidate",
+    "office_id": "08454462-a1f0-4d11-9f61-aba7a173a3de",
+    "office_title": "Governor",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": null,
+    "start_precision": null,
+    "term_end": null,
+    "election_date": "2026-11-03",
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "87d20824-a6e9-407b-983c-65440084a0ab",
+      "topic_key": "social-security",
+      "served_revision_id": "8defc029-0b7e-426f-b838-a2e170f566c9",
+      "question_text": "How should Social Security be funded and structured for the future?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "expand Social Security benefits significantly and remove the income cap on payroll taxes to fund it."
+        },
+        {
+          "value": 2,
+          "text": "increase Social Security benefits modestly while raising taxes on higher earners to strengthen the program."
+        },
+        {
+          "value": 3,
+          "text": "make small adjustments to both benefits and taxes to keep Social Security stable for future generations."
+        },
+        {
+          "value": 4,
+          "text": "gradually reduce future benefits rather than raise taxes to keep Social Security solvent."
+        },
+        {
+          "value": 5,
+          "text": "transition Social Security to private investment accounts that individuals control themselves."
+        }
+      ],
+      "own_words_levels": [
+        "local",
+        "state"
+      ],
+      "annexMd": "# social-security — served revision 8defc029-0b7e-426f-b838-a2e170f566c9 (Season 2)\n\n**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;\nlines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No\n`_owed:_` line is open.\n\n**Question:** \"How should Social Security be funded and structured for the future?\"\n\n**Orientation:** standard. Rung 1 is the largest public programme (bigger benefits, more tax), rung 5\nreplaces it with private accounts. The rungs order **benefit level and how it is paid for**. Rungs\n1–4 each pair a benefit side with a tax side, so most of them are compound.\n\n**Levels with a lever:** federal. Only Congress sets benefits and the payroll\ntax. State and local officeholders hold no lever on any rung.\n\n**Asked at:** federal, state, local (`compass_topic_roles`, CA_0302). Own words only at: state, local (codebook V2 \"No-lever level\").\n\n**Synonyms:** \"OASDI\", \"trust fund\", \"solvency\", \"payroll tax\", \"FICA\", \"taxable maximum\" or \"wage\nbase cap\", \"donut hole\", \"full retirement age\", \"COLA\", \"CPI-E\", \"chained CPI\", \"progressive price\nindexing\", \"minimum benefit\", \"WEP\" and \"GPO\" (Windfall Elimination Provision, Government Pension\nOffset), \"personal accounts\", \"carve-out accounts\", \"fiscal commission\".\n\n1. **\"expand Social Security benefits significantly and remove the income cap on payroll taxes to\n   fund it.\"**\n   - Means: benefits rise a lot for beneficiaries in general, paid for by taxing all earnings.\n   - Operative clauses: [a] a significant benefit increase; [b] remove the payroll-tax cap; [c] the\n     tax pays for the increase. Compound: one side only → `compound-partial` (V4.2).\n   - Establishing evidence looks like: authoring or co-sponsoring a single-subject bill that raises\n     benefits broadly (an across-the-board increase, a higher COLA formula) **and** applies the\n     payroll tax to earnings above the present cap.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A \"donut hole\" design (tax again above a threshold, with a gap below it) meets [b] \"remove the\n     income cap\": no upper limit remains. The **size of the benefit increase** then separates rung 1\n     from rung 2 _(ruled 2026-10-01)_.\n   - Commonly confused with rung 2 because both raise taxes on higher earners. When the tax side does\n     not separate them, the **size** of the benefit increase does: across-the-board → rung 1\n     territory; one group or a small amount → rung 2 territory _(proposed)_.\n\n2. **\"increase Social Security benefits modestly while raising taxes on higher earners to strengthen\n   the program.\"**\n   - Means: a small benefit increase, paid for by more tax on high earners.\n   - Operative clauses: [a] a modest benefit increase; [b] raise taxes on higher earners. Compound:\n     one side only → `compound-partial`.\n   - Establishing evidence looks like: a bill or own words with both a limited increase (a minimum\n     benefit, a targeted increase) and a tax rise aimed at high earners.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 1: see rung 1.\n   - **[real] (codebook V6, H5).** Co-sponsoring the Social Security Fairness Act (WEP/GPO repeal, a\n     benefit increase for one group, no tax side) plus \"must be willing to reform\" → BLANK\n     `compound-partial`.\n\n3. **\"make small adjustments to both benefits and taxes to keep Social Security stable for future\n   generations.\"**\n   - Means: small changes on both sides, without a large cut or a large tax rise.\n   - Operative clauses: [a] a small benefit adjustment; [b] a small tax adjustment. Compound (V4.2\n     names this rung): one side only → `compound-partial`.\n   - Establishing evidence looks like: a solvency bill or own words that name a change on each side\n     (a small retirement-age or COLA change **and** a small payroll-tax or wage-base change).\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - Commonly confused with rung 4 because a benefit-side change (raise the retirement age) is in\n     both. Rung 3 needs a tax side; rung 4 needs the tax side **rejected**. A benefit change plus\n     openness to a tax change → rung 3 territory; a benefit change alone → `compound-partial` for\n     both _(proposed)_.\n\n4. **\"gradually reduce future benefits rather than raise taxes to keep Social Security solvent.\"**\n   - Means: future benefits grow less or are cut over time, and taxes are not raised.\n   - Operative clauses: [a] gradually reduce future benefits (a higher retirement age, chained CPI,\n     price indexing, means-testing all count); [b] **rather than** raise taxes — the person rejects a\n     tax rise for solvency. [b] must be stated (V4.2 \"Silence is not a clause\"). Compound: [a] only →\n     `compound-partial`.\n   - Establishing evidence looks like: a benefit-side solvency plan **plus** the person's own words or\n     record against a tax rise.\n   - A signed no-new-taxes pledge is `statement-answer` (codebook V3, H8) and can meet [b], in cycle\n     (V5) _(proposed)_.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - S1 rung 4 was \"raise the retirement age **and** reduce benefits for higher earners\". The served\n     rung adds [b] and drops the named mechanisms. S1 evidence on the retirement age alone now meets\n     [a] only.\n   - **[real] (codebook V6, H5).** A voter-guide answer for \"gradually raising the retirement age\" and\n     a later \"everything's on the table\" (`rhetorical`) → [a] only, [b] unmet → BLANK\n     `compound-partial`.\n\n5. **\"transition Social Security to private investment accounts that individuals control\n   themselves.\"**\n   - Means: the programme moves to accounts that each person owns and invests.\n   - Operative clauses: [a] a transition of the programme to private accounts; [b] individual control.\n   - Establishing evidence looks like: a bill or own words that move payroll-tax contributions into\n     individually owned investment accounts in place of the benefit.\n   - Levels that hold a lever: federal.\n   - Known chair-shaped instruments: _(none on file)_.\n   - A voluntary carve-out of a small part of the payroll tax is a step, not a transition →\n     `direction-only` _(proposed)_. Accounts **added** on top of Social Security (funded outside the\n     payroll tax) → `adjacent` _(proposed)_.\n\n**Hard cases:**\n- **\"Protect Social Security\", \"no cuts\", \"keep our promise\"** exclude rungs 4 and 5 only →\n  `direction-only`.\n- **A fiscal or trust-fund commission bill** orders a report → V4 `study-directive`.\n- **Income tax on benefits** (exempt benefits from income tax, a senior deduction) is not the payroll\n  tax and not a benefit level → `adjacent` _(proposed)_.\n- **Budget resolutions** that assume Social Security changes → V4 `multi-subject` _(proposed)_.\n- **SSA administration** (field offices, staffing, phone wait times) → `adjacent`.\n- **Ratings from seniors' groups** → V3 `not-evidence`; follow them to the roll calls.\n"
+    }
+  ]
+}

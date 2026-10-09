@@ -1,0 +1,8 @@
+I wrote `labels/coder-2.json` with one row, for Petersen on `deportation`. I haven't run any validator on the file. I copied the quote straight from the snapshot text.
+
+- **Row result:** BLANK with reason `direction-only`, so no chair and nothing in `rests_on`.
+- **Only on-question passage:** the June 9, 2025 press release (`3deffd83…`). He calls for "cooperating with the Trump Administration on enforcement of federal immigration laws, deportations of criminal illegal aliens". That shows the enforcement side. It doesn't match "Only deport undocumented immigrants convicted of serious violent crimes" (no "only") or "Deport all undocumented immigrants, starting with those who have criminal records" (no "all").
+- **AZ ICE Act passages:** the other three snapshots are about SB 1164, which stops state and local limits on cooperating with federal immigration enforcement. The annex's cooperation hard case makes those `adjacent` (V2) and `off-axis` (V4).
+- **Press-release account of the sponsorship:** I coded his own quoted words as `statement-other`. The press release's account of his sponsoring SB 1164 is context only, not a `record`, under H15.
+- **Quote:** the one quote is tiered `direction`, because it names cooperation but no specific means.
+- **`needs_source`:** the SB 1164 (2025) bill page and roll calls, and a first-person statement from Petersen on who should be deported. The roll calls couldn't seat a chair at this level anyway.

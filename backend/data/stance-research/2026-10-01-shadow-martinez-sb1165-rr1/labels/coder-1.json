@@ -1,0 +1,69 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "cacb84a8-4343-4919-a37c-dfcb6e050243",
+      "office_id": "cfe55427-08a5-4f86-84f0-8bb0d3f264d3",
+      "topic_id": "d1618b9c-0b9e-45af-b986-bb33d270b8e4",
+      "served_revision_id": "c47c957a-5eb6-426f-b38d-89e44ba8fe73",
+      "passages": [
+        {
+          "snapshot_id": "5ec5ddad-123b-5a0b-a45d-d44edba17b59",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "House Third Reading roll call on SB1165 recording her Aye; the page prints the voter and the count but not the provision.",
+          "record_kind": "vote",
+          "actor_quote": "LONGDON N MARTINEZ Y MATHIS N",
+          "tally_quote": "Passed 31-24-5-0-0"
+        },
+        {
+          "snapshot_id": "1d6b7010-dc9b-5123-8e54-281e2c0790f6",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": "Athletic teams or sports designated for \"females\", \"women\" or \"girls\" may not be open to students of the male sex.",
+          "note": "Enacted text of the single-subject bill she voted for: teams are designated by biological sex and girls' teams are closed to students of the male sex.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "b11d9fdf-2748-59e2-b6bf-18144546d124",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-30",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "SB 1165 (2022)",
+          "provision_quote": null,
+          "note": "Bill history page for the same instrument, showing the divided House Third Reading and the governor's signature; it names sponsors but not her vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": "House THIRD 03/24/2022 31-24-5-0-0 PASSED."
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "5ec5ddad-123b-5a0b-a45d-d44edba17b59",
+        "1d6b7010-dc9b-5123-8e54-281e2c0790f6",
+        "b11d9fdf-2748-59e2-b6bf-18144546d124"
+      ],
+      "reasoning": "On SB 1165 (2022), a single-subject bill on interscholastic and intramural athletics, Martinez voted Aye on House Third Reading (31-24-5-0-0, so not near-unanimous), and the enacted operative section requires each team to be \"expressly designated as one of the following based on the biological sex of the students who participate on the team or in the sport\" and provides that teams designated for \"females\", \"women\" or \"girls\" \"may not be open to students of the male sex.\" That is the rung requiring transgender athletes to compete only on teams matching their biological sex assigned at birth. The rung completely banning all transgender athletes from any organized sports competition is excluded by the bill's own subsection C, which \"does not restrict the eligibility of any student\" on teams designated for males or as coed or mixed.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

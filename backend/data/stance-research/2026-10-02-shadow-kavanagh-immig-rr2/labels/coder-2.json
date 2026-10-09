@@ -1,0 +1,86 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+      "office_id": "80d6f6f6-c62b-46a8-ae32-725e8a8a8f06",
+      "topic_id": "44905f3b-e105-4f6c-afc7-5d223813dbac",
+      "served_revision_id": "55c3167e-3ad8-425d-a699-b2e91552d912",
+      "passages": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2025-03-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1294 (2025)",
+          "provision_quote": null,
+          "note": "His own words back leasing a prison to house federal immigration detainees; this is enforcement-capacity funding, which the annex says shows the enforcement side only (direction-only), not who is removed.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-03-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1299 (2025)",
+          "provision_quote": null,
+          "note": "His own words back a grant funding immigration-training costs for law enforcement personnel; this is general enforcement-resourcing, not a statement of who should be deported.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "v1_attribution": "own-words",
+          "v2_relevance": "adjacent",
+          "v3_class": "statement-other",
+          "date": "2025-03-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 1610 (2025)",
+          "provision_quote": null,
+          "note": "His own words frame a detainer/information-sharing requirement (county facilities must supply arrestee info to ICE) as supporting deportation efforts; the annex treats a state-local cooperation requirement as the local-immigration question, not the removal-scope question.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "His own quotes back federal enforcement infrastructure (leasing Marana Prison to hold 'dangerous criminal illegal aliens') and a detainer/information-sharing requirement he frames as supporting 'the federal government's deportation efforts,' both of which show the pro-enforcement side without matching any rung's specific scope clause (e.g. 'only... convicted of serious violent crimes' or 'all... starting with those who have criminal records'). SB 1299's training-grant quotes are adjacent, addressing enforcement resourcing rather than who is deported.",
+      "needs_source": [
+        "Arizona Legislature bill text and vote record for SB 1294 (2025)",
+        "Arizona Legislature bill text and vote record for SB 1299 (2025)",
+        "Arizona Legislature bill text and vote record for SB 1610 (2025)"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "The federal government should have access to the empty Marana Prison to house these dangerous criminal illegal aliens so that Arizonans are protected from further threats",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "331352a9-89fd-5104-a66a-b248707e1f78",
+          "text": "we are supporting the federal government's deportation efforts by requiring detention facilities to supply inmate information to ICE",
+          "v7_tier": "lever",
+          "v7_flag": "lever-named",
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

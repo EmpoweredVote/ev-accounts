@@ -1,0 +1,37 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 2,
+  "rows": [
+    {
+      "politician_id": "ea803096-927f-41fe-98e1-deab56291810",
+      "office_id": "e45c9d52-6288-4865-a2de-dadd73cc18e6",
+      "topic_id": "f1e44d66-5d27-4b51-b54f-b7ace86f6a3c",
+      "served_revision_id": "5f1403f3-90b6-491f-ba54-3c8e46a5ae26",
+      "passages": [
+        {
+          "snapshot_id": "866c8347-0adf-554d-9611-6e162b500a57",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-09-16",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1279 (2021-2022)",
+          "provision_quote": "It is the policy of the state to do both of the following: (1) Achieve net zero greenhouse gas emissions as soon as possible, but no later than 2045, and to achieve and maintain net negative greenhouse gas emissions thereafter. This goal is in addition to, and does not replace or supersede, the statewide greenhouse gas emissions reduction targets in Section 38566. (2) Ensure that by 2045, statewide anthropogenic greenhouse gas emissions are reduced to at least 85 percent below the statewide greenhouse gas emissions limit established pursuant to Section 38550.",
+          "note": "A net-zero GHG emissions limit that names carbon capture/removal as a path; it names no energy source, so it cannot establish rung 1's clean-energy mandate (H17).",
+          "record_kind": "author",
+          "actor_quote": "AB 1279, Muratsuchi.",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "AB 1279, which Muratsuchi authored and which was signed into law, sets a net zero/net negative greenhouse gas emissions policy and directs the state board to 'identify and implement a variety of policies and strategies that enable carbon dioxide removal solutions and carbon capture, utilization, and storage technologies' to help meet it. It names an emissions target, not a clean-energy source, so per V4.2 ('The rung's object is a clause', H17) it cannot establish rung 1 ('Require a shift to clean energy through mandates and firm deadlines'); the goal can be met in other ways. It shows only the pro-climate-action side.",
+      "needs_source": [
+        "a chair-shaped instrument matching rung 1's clean-energy mandate (e.g., a renewable-procurement standard with dated targets), or evidence separating rungs 2/3/4/5"
+      ],
+      "quotes": []
+    }
+  ]
+}
