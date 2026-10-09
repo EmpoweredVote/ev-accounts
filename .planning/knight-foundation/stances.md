@@ -23,9 +23,9 @@ programme is for.
 
 | # | Slice | Members | Rows | Scored | Batch |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Charlotte NC | 12 | 420 | 5 ✅queued | `2026-10-02-knight-clt-city` (PR #856) |
-| 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 ✅queued | `2026-10-03-knight-fl-cities` (PR #857) |
-| 3 | Duluth, Saint Paul MN | 18 | 630 | **30** ✅queued | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows in the review queue (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
+| 1 | Charlotte NC | 12 | 420 | 5 ✅LIVE | `2026-10-02-knight-clt-city` (PR #856) |
+| 2 | Bradenton, Miami, Tallahassee FL | 17 | 595 | 2 ✅LIVE | `2026-10-03-knight-fl-cities` (PR #857) |
+| 3 | Duluth, Saint Paul MN | 18 | 630 | **30** ✅LIVE | `2026-10-04-knight-mn-cities` — ✅ **COMPLETE 2026-10-05.** All 18 members, 630 rows, gate `high=0`, 30 rows queued and all 30 approved 2026-10-06 (Kennedy `civil-rights` 2 added by ruling 2026-10-06) |
 
 Eighteen chairs from 35 members. 🔴 **A low yield was the TOOLING, not the world** — re-mining with a
 publisher-agnostic link extractor took Charlotte 3 → 5 and Florida 0 → 2, and attributed passages
@@ -34,7 +34,8 @@ from 22 → 122 in Florida. Price the next slice from these numbers, not from th
 ✅ **Slices 1 and 2 are merged** (2026-10-04): PR #855 (verifier fix), then #857, then #856. #856 had
 cherry-picked only half of #855 and conflicted once #855 landed; the base was merged into it and both
 verifier files were resolved to master, which is a strict superset. Charlotte’s five and Florida’s two
-sit in the admin review queue awaiting human approval.
+were applied to the queue on 2026-10-06 and **approved the same day** — see the slice 3 section for
+why that sentence used to say they were "awaiting human approval" while nothing had been applied.
 
 ## Slice 3 — Duluth and Saint Paul, Minnesota (opened 2026-10-04)
 
@@ -441,7 +442,7 @@ what is untracked before you finish.
 confirming the comparison could see a tampered byte. Re-sweeping them is not cheap: roughly 20
 minutes per member, and Reformer 429s after about four.
 
-#### ✅ APPLIED 2026-10-06 — 30 ROWS ARE IN THE ADMIN REVIEW QUEUE, ALL PENDING
+#### ✅ APPLIED 2026-10-06 — 30 ROWS QUEUED, THEN ALL 30 APPROVED THE SAME DAY
 
 `verify-stance-research --apply --editor-id <chris@empowered.vote>`:
 `pushed=0 reviewed=30 left-alone=0 not-in-admin-queue=0 stamped=18 errors=0`. Confirmed in
@@ -461,8 +462,24 @@ first of the three to have had it run.
 nobody had queried. The query is one line:
 `SELECT batch_id, count(*) FROM inform.stance_research_review GROUP BY batch_id;`
 ✅ **SLICES 1 AND 2 APPLIED 2026-10-06.** Charlotte `reviewed=5 stamped=12 errors=0`, Florida
-`reviewed=2 stamped=17 errors=0`. **All three slices are now in the queue: 37 rows, 37 pending,
-23 people.** 🟢 Their prose was far cleaner than slice 3's — **2 of 7 scored rows** carried
+`reviewed=2 stamped=17 errors=0`. **All three slices went into the queue: 37 rows, 23 people.**
+
+✅ **ALL 37 WERE APPROVED ON 2026-10-06 AND ARE LIVE.** Re-measured 2026-10-09 against production:
+`stance_research_review` holds 37 rows across the three batches, **every one `resolved`**, and each
+has a matching `inform.politician_answers` row in the open season — 5 Charlotte / 4 people, 2 Florida
+/ 2 people, 30 MN / 17 people. **Zero blanks**, so all 37 are seated chairs, not withdrawals.
+The Knight pending count is **0**; the 63 rows pending in the queue on 2026-10-09 belong to the
+CA-governor, Monroe and shadow-coding batches and are nothing to do with this programme.
+
+🔴 **THIS FILE WENT STALE IN THE SAME DIRECTION A SECOND TIME.** The lesson three paragraphs up —
+*check the queue, not the tracker* — was written on 2026-10-06 because two sentences here asserted a
+production state nobody had queried. The replacement sentence ("37 rows, 37 pending") was true for a
+few hours and then wrong for three days, because approval does not write back to this file either.
+▶ **A COUNT OF PENDING ROWS DOES NOT BELONG IN A TRACKER AT ALL.** It is a live value with no
+observer. Record what was *applied* and *approved* — events that happened — and get the pending
+count from the queue every time.
+
+🟢 Charlotte's and Florida's prose was far cleaner than slice 3's — **2 of 7 scored rows** carried
 bookkeeping, and only the word "reviewer", against 21 of 30 with correction logs and rule codes.
 Both were Ajmera, both were real qualifications, and both were kept and reworded.
 
