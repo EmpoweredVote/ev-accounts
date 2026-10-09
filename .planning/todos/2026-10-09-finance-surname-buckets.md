@@ -85,6 +85,41 @@ should be guessed here.
   2 contributions / $1,594. The active namesake is Councilor, District 16. "McCormick for Indiana"
   reads like a statewide committee, which a district councillor is not. **Not ruled.**
 
+## ✅ ATTRIBUTION FIXED — `CC_0213`, applied 2026-10-09
+
+Detached 159 cal_access sources from the seven buckets and repointed 9 to their real owners.
+Published contributions now: Gil Hurtado **0** · David Patterson **0** · Dutra **0** · English **0** ·
+Fish **0** · Dixon **11** (`fec_house:H6CA34302` only, out of scope) · Erickson **981** (his own) ·
+**Melissa Hurtado 1,577** · **Joe Patterson 1,418**.
+
+The detach is `research_status = 'disputed'`, which `campaignFinanceService.ts:37` excludes from every
+read. No contribution row was touched; one `UPDATE` back to `'confirmed'` reverts it.
+
+🟢 **The harm is gone either way now.** Those rows publish nothing, so leaving them unmerged costs a
+voter nothing. The merge is tidiness; the attribution was the harm.
+
+## ▶ NEXT STEP, PRECISELY: READ THE CA SoS ROSTER PDF FOR THE CITY
+
+The three merges are blocked on **thin identity**, not on finance:
+
+| Pair | What the active row proves | What the inactive row proves |
+|---|---|---|
+| Gil Hurtado | origin `cityofsouthgate.org` → **South Gate** councilman | CA SoS **statewide** cities-towns roster — **names no city** |
+| Fernando Dutra | no seat, no origin | same statewide roster — **names no city** |
+| Arthur Dixon | origin `ballotpedia.org/Arthur_Dixon` | **no source, no origin at all** |
+
+▶ **`https://admin.cdn.sos.ca.gov/ca-roster/2025/cities-towns.pdf` is the file to read.** It lists
+California city officials by city, so it can say which city each named official serves. That settles
+**Hurtado and Dutra**. ⚠ **It cannot settle Dixon** — his inactive row never cited the roster, or any
+source. He needs a different basis, and his 11 remaining contributions come from an FEC CA-34
+committee whose attribution is itself unverified.
+
+⚠ The roster is the 2025 edition; the rows were seeded from it on 2026-05-22. Check the edition
+matches before treating a mismatch as evidence of a different person.
+
+**John Fleming** is independent of all of this and blocked only on the overlapping-(topic, season)
+decision.
+
 ## Recommended order, if this is picked up
 
 1. **Fix the attribution first, then merge — never the reverse.** Detaching a mis-attributed
