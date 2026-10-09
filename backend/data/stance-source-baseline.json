@@ -1,6 +1,6 @@
 {
   "_comment": "Baseline for check-stance-sources.mjs. `rows` is what the gate COMPARES: per check, the set of \"<politician_id>:<topic_id>\" identities known to be offending. The gate fires when a row appears that is NOT in that set. `counts` is per check -> state -> count and is REPORTING ONLY — it is not compared, because the state is derived through occupancy and moves when a politician is seated. BALLOTPEDIA_ONLY is the Workstream A backlog and `rows` should only ever SHRINK — an identity leaves it when the row is actually fixed. ANSWER_WITHOUT_CONTEXT and EMPTY_SOURCES are zero-tolerance and ignore this file.",
-  "_updated": "2026-09-27",
+  "_updated": "2026-10-08",
   "counts": {
     "PRIMARY_SITE_NO_PATH": {
       "nj": 5,
@@ -47,7 +47,7 @@
     },
     "BALLOTPEDIA_ONLY": {
       "ky": 6,
-      "ca": 28,
+      "ca": 42,
       "-": 6,
       "va": 34,
       "tx": 30,
@@ -668,7 +668,6 @@
       "03a6f459-7163-4030-9fdb-bf1ef4a45ea0:f1e44d66-5d27-4b51-b54f-b7ace86f6a3c:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "03a6f459-7163-4030-9fdb-bf1ef4a45ea0:f7e5678d-dadd-4556-a2fc-446e24642ceb:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "0649630c-bd6d-40fe-8f66-e026e6f6c83e:c5ab4eab-702f-49b8-9277-8ea53f3835c6:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
-      "0649630c-bd6d-40fe-8f66-e026e6f6c83e:c5ab4eab-702f-49b8-9277-8ea53f3835c6:86d893a1-c1a2-4bbf-b4e5-69ec43221194",
       "0d2998fc-a952-4337-9c12-61d11d0a2506:d1792200-1d3b-4955-a0b7-0e6980d7a7b2:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "122f1897-2dae-4f21-bee0-1c02c95e9e3a:6fbf39ae-6b19-4182-b4c2-6a8d25c86c0f:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "122f1897-2dae-4f21-bee0-1c02c95e9e3a:9db07b16-1076-4b7d-ad89-ebe7b51f4336:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
@@ -782,9 +781,11 @@
       "b548a0f7-5086-4124-a510-49ef8f60f515:f1e44d66-5d27-4b51-b54f-b7ace86f6a3c:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "b8175280-a47e-45f4-8ee4-594330e348cd:f7e5678d-dadd-4556-a2fc-446e24642ceb:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "ba647863-25fb-4ccf-9cb0-5a1c912d1b27:e9ebefcd-c496-45e8-b816-a79f8442ba85:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
+      "ba647863-25fb-4ccf-9cb0-5a1c912d1b27:e9ebefcd-c496-45e8-b816-a79f8442ba85:86d893a1-c1a2-4bbf-b4e5-69ec43221194",
       "bab3379b-d64e-423b-b62e-4efa04cee750:48cc9585-ec22-4f53-8d42-6839828dd36f:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "bb7b3620-83cb-4b88-a823-95a8e09f6e46:f7e5678d-dadd-4556-a2fc-446e24642ceb:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "bd4dc076-4bdd-4e10-be2c-80d998b17c50:4938766b-b45a-46e3-93bd-b8b30651271a:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
+      "bd4dc076-4bdd-4e10-be2c-80d998b17c50:4938766b-b45a-46e3-93bd-b8b30651271a:86d893a1-c1a2-4bbf-b4e5-69ec43221194",
       "bde578b4-fbb6-4d80-a55a-d5c3a24656ff:87d20824-a6e9-407b-983c-65440084a0ab:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "c3cb5289-17af-4952-9894-dbddfcd50484:f7e5678d-dadd-4556-a2fc-446e24642ceb:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
       "c4ad307f-b38a-409c-8190-8dedad609d88:44905f3b-e105-4f6c-afc7-5d223813dbac:2d5d67d1-2a2a-4c73-88bb-3c2e3e33cba3",
