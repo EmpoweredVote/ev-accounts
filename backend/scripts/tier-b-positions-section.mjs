@@ -25,6 +25,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import pg from 'pg';
+import { sourceClassSql } from './lib/source-class.mjs';
 
 const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
@@ -47,14 +48,10 @@ const { rows } = await pool.query(`
     FROM inform.politician_context c, unnest(c.sources) u
   ), cls AS (
     SELECT politician_id, topic_id, nu,
-      CASE WHEN nu ILIKE '%en.wikipedia.org/wiki/%'
-        OR (nu ILIKE '%ballotpedia.org/%' AND nu NOT ILIKE '%candidate_connection%')
-        OR nu ILIKE '%/mgawebsite/members/details/%' OR nu ILIKE '%capitol.texas.gov/members/memberinfo%'
-        OR nu ILIKE '%malegislature.gov/legislators/profile%'
-        OR nu ILIKE '%legislature.maine.gov/%memberprofiles%'
-        OR nu ILIKE '%azleg.gov/house/house-member%' OR nu ILIKE '%azleg.gov/senate/senate-member%'
-        OR nu ILIKE '%ballotready.org/people/%' OR nu ILIKE '%congress.gov/member/%'
-        OR nu ILIKE '%govtrack.us/congress/members/%' THEN 1 ELSE 0 END AS is_generic,
+      -- One shared definition, three classes -- see lib/source-class.mjs. A deep-linked
+      -- #Campaign_themes page and a BallotReady profile are the candidate's own words rather
+      -- than a generic person page, so a row resting on them is not Tier B.
+      CASE WHEN ${sourceClassSql('nu')} = 'generic' THEN 1 ELSE 0 END AS is_generic,
       (nu ILIKE '%wikipedia.org/wiki/%' OR nu ILIKE '%ballotpedia.org/%') AS is_encyc
     FROM src
   ), agg AS (SELECT politician_id, topic_id, count(*) n_src, sum(is_generic) n_gen FROM cls GROUP BY 1,2),
