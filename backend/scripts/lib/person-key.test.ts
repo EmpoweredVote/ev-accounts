@@ -69,4 +69,38 @@ describe('findPairs', () => {
     const p = findPairs([row('a', 'Ann', 'Lee', 'ca', { seated: true }), row('b', 'Ann', 'Lee', 'ca', { answers: 4 })]).get('a|b')!;
     expect(isSplit(p)).toBe(true);
   });
+
+  // Richard Barrera, 2026-10-08: the seated San Diego Unified trustee row held no answers and no
+  // candidacies; a second row held both his 2026 Superintendent races. The gate reported
+  // "0 split pairs needing a look" while this sat in its own baseline.
+  it('isSplit: seat on one row, CANDIDACIES only on the other (the Barrera shape)', () => {
+    const p = findPairs([
+      row('a', 'Richard', 'Barrera', 'ca', { seated: true }),
+      row('b', 'Richard', 'Barrera', 'ca', { cands: 2 }),
+    ]).get('a|b')!;
+    expect(isSplit(p)).toBe(true);
+  });
+
+  // The shape counting candidacies additively would have wrongly flagged: an incumbent who is not
+  // on the ballot beside a same-named challenger who is. That is two different people behaving
+  // normally, and it is 21 of the 61 pairs on production.
+  it('isSplit: an incumbent WITH answers beside a same-named challenger is not a split', () => {
+    const p = findPairs([
+      row('a', 'Ann', 'Lee', 'ca', { seated: true, answers: 6 }),
+      row('b', 'Ann', 'Lee', 'ca', { cands: 1 }),
+    ]).get('a|b')!;
+    expect(isSplit(p)).toBe(false);
+  });
+
+  it('isSplit: both rows empty is not a split — there is nothing on the wrong row', () => {
+    const p = findPairs([row('a', 'Ann', 'Lee', 'ca', { seated: true }), row('b', 'Ann', 'Lee', 'ca')]).get('a|b')!;
+    expect(isSplit(p)).toBe(false);
+  });
+
+  it('isSplit: a caller that never selects cands keeps the old answers-only behaviour', () => {
+    const noCands = (id: string, extra: Record<string, unknown>) =>
+      ({ id, first_name: 'Ann', last_name: 'Lee', st: 'ca', fec: [] as string[], seated: false, answers: 0, ...extra });
+    const p = findPairs([noCands('a', { seated: true }), noCands('b', { answers: 2 })]).get('a|b')!;
+    expect(isSplit(p)).toBe(true);
+  });
 });

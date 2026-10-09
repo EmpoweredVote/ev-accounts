@@ -1,6 +1,6 @@
 {
-  "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = seat on one row, compass answers only on the other (voter-visible harm).",
-  "_updated": "2026-09-25",
+  "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
+  "_updated": "2026-10-08",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -26,7 +26,7 @@
       "why": [
         "NAME_STATE"
       ],
-      "split": false,
+      "split": true,
       "verdict": "unreviewed"
     },
     "04ff9d00-cf63-4d3b-875a-48c027a46a37|755f24a5-2330-4546-9679-d5f7fa94aaa9": {
@@ -44,7 +44,7 @@
       "why": [
         "NAME_STATE"
       ],
-      "split": false,
+      "split": true,
       "verdict": "unreviewed"
     },
     "05e42e3c-3510-479d-b00f-f557dbb272f5|408224f0-7405-4ed5-99da-694a56941c7b": {
@@ -80,7 +80,7 @@
       "why": [
         "NAME_STATE"
       ],
-      "split": false,
+      "split": true,
       "verdict": "unreviewed"
     },
     "0a90ac77-c426-4f4e-add8-f5454c42229f|b8175280-a47e-45f4-8ee4-594330e348cd": {
@@ -152,7 +152,7 @@
       "why": [
         "NAME_STATE"
       ],
-      "split": false,
+      "split": true,
       "verdict": "unreviewed"
     },
     "28411ed8-614d-4da0-b3e5-fde6084e4a21|cad0a17b-1c71-4c4e-9c45-c20c0eaac9d7": {
@@ -323,7 +323,7 @@
       "why": [
         "NAME_STATE"
       ],
-      "split": false,
+      "split": true,
       "verdict": "unreviewed"
     },
     "78f3bb2d-90e4-4263-925e-6203385bc6eb|a0e4e813-6c10-45d8-8f59-f444c6747b61": {
@@ -444,15 +444,6 @@
       "split": false,
       "verdict": "unreviewed"
     },
-    "96485b13-9104-4057-99de-742df6df85ee|b04e1f2d-d1a4-43de-80db-bdc29dadfaeb": {
-      "names": "Richard Barrera ~ Richard Barrera",
-      "state": "ca",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "unreviewed"
-    },
     "9664affa-96b6-461f-976e-6cdf077cbf11|c7088ceb-3326-40ac-81b7-d93926c6060f": {
       "names": "Scott Harriman ~ Scott A. Harriman",
       "state": "me",
@@ -468,7 +459,7 @@
       "why": [
         "NAME_STATE"
       ],
-      "split": false,
+      "split": true,
       "verdict": "unreviewed"
     },
     "9cff8f78-ffde-4821-91e7-6d14fb093ecc|a3be7449-ec25-4511-bf3d-889a340fbb3f": {
@@ -477,7 +468,7 @@
       "why": [
         "NAME_STATE"
       ],
-      "split": false,
+      "split": true,
       "verdict": "unreviewed"
     },
     "a123c59e-694b-43cc-af03-6610b645e6d2|cde0a592-b775-45dc-bd27-a76e3de8802b": {
@@ -486,7 +477,7 @@
       "why": [
         "NAME_STATE"
       ],
-      "split": true,
+      "split": false,
       "verdict": "different_people",
       "note": "Different people, re-confirmed 2026-09-30 — but the ORIGINAL NOTE WAS WRONG ON ITS FACTS and is replaced. It read \"Monica Garcia (LAUSD board, empowered.vote/school-district/los_angeles_unified)\", which asserts a seat she does not hold: LAUSD's seven board seats are held by Newbill, Rivas, Schmerelson, Melvoin, Griego, Gonez and Ortiz Franklin, and District 2 is Rocio Rivas. Monica Garcia (a123c59e) is the FORMER LAUSD District 2 member — Ballotpedia: assumed office 2006, LEFT OFFICE 2022-12-09, did not seek re-election. She is correctly is_incumbent=false with no term. Monica Garcia (cde0a592) is a different, currently SEATED person: Glendora Unified Board Member, Trustee Area 2, also on the 2026-11-03 ballot for that seat. The \"split\" here is BENIGN: a former officeholder keeps her Season-1 stances as history. WARNING for anyone reading those three stances: their prose is PRESENT TENSE (\"Garcia IS the longest-serving LAUSD board member\"), true when written and false since 2022-12-09. Season 1 is CLOSED and is the historical record — do NOT rewrite it; a corrected position belongs in the open season. NB the Wikipedia article at \"Monica Garcia\" is a Spanish health minister — a different person again."
     },

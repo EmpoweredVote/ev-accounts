@@ -62,6 +62,10 @@ const QUERY = `
          lower(coalesce(seat.st, cand.st, '')) AS st,
          seat.st IS NOT NULL                   AS seated,
          (SELECT count(*)::int FROM inform.politician_answers a WHERE a.politician_id = p.id) AS answers,
+         -- Candidacies count as "this row holds what we know about the person" just as answers do.
+         -- Without this, a seated row with nothing beside a same-named row holding two races reads
+         -- as not-a-split. That was Richard Barrera, 2026-10-08. See isSplit in lib/person-key.mjs.
+         (SELECT count(*)::int FROM essentials.race_candidates rc2 WHERE rc2.politician_id = p.id) AS cands,
          coalesce((SELECT array_agg(ps.source_system || ':' || ps.external_id ORDER BY ps.source_system, ps.external_id)
                      FROM transparent_motivations.politician_sources ps
                     WHERE ps.essentials_politician_id = p.id AND ps.source_system LIKE 'fec%'
@@ -157,8 +161,8 @@ function describe(p) {
       _comment:
         'Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict ' +
         'to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the ' +
-        'source you checked. "unreviewed" is the backlog and should only shrink. split = seat on one row, ' +
-        'compass answers only on the other (voter-visible harm).',
+        'source you checked. "unreviewed" is the backlog and should only shrink. split = the seated row holds ' +
+        'nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).',
       _updated: new Date().toISOString().slice(0, 10),
       pairs,
     };
@@ -181,7 +185,7 @@ function describe(p) {
   const benignSplits = allSplits.length - splits.length;
   console.log(`duplicate people — ${rows.length} active rows, ${observed.size} candidate pair(s); positive control found`);
   console.log(`  reviewed: ${count('different_people')} different people, ${count('same_person')} same person (merge owed), ${count('unreviewed')} unreviewed`);
-  console.log(`  split pairs needing a look (seat on one row, answers only on the other): ${splits.length}`);
+  console.log(`  split pairs needing a look (seated row empty, same-named row holds the answers or candidacies): ${splits.length}`);
   if (benignSplits) {
     console.log(`  (+${benignSplits} split pair(s) already settled as different_people — expected shape, not harm)`);
   }

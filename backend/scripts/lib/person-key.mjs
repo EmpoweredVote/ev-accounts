@@ -138,9 +138,29 @@ export function findPairs(rows) {
   return pairs;
 }
 
-/** The pairs that cost a voter something today: seat on one row, answers only on the other. */
+/**
+ * The pairs that cost a voter something today: the SEATED row holds nothing, and a same-named
+ * UNSEATED row holds everything we know about the person — their stance answers, their
+ * candidacies, or both.
+ *
+ * This read `u.answers > 0 && s.answers === 0` until 2026-10-08: stance answers only. It missed
+ * Richard Barrera, whose seated San Diego Unified trustee row carried no answers and no
+ * candidacies while a second row carried both his 2026 Superintendent races. The gate printed
+ * "0 split pairs needing a look" with exactly that harm sitting in its own baseline.
+ *
+ * Measured on production before changing it. Adding candidacies as a separate clause
+ * (`answersSplit || candsSplit`) takes the count from 2 to 23, and 21 of those are an incumbent
+ * with no candidacy beside a same-named challenger with one — "the NORMAL state of the world for
+ * two different people" that the comment in check-duplicate-people.mjs warns against counting.
+ * Asking instead whether the seated row is EMPTY gives 9, and every one is the Barrera shape.
+ *
+ * `cands` is optional: a caller that does not select it leaves it undefined, and `undefined > 0`
+ * is false, so such a caller gets the old answers-only behaviour rather than a crash.
+ */
 export function isSplit(p) {
   const [s, u] = p.a.seated ? [p.a, p.b] : [p.b, p.a];
-  return s.seated && !u.seated && u.answers > 0 && s.answers === 0;
+  if (!s.seated || u.seated) return false;
+  const holdsSomething = (r) => r.answers > 0 || r.cands > 0;
+  return holdsSomething(u) && !holdsSomething(s);
 }
 
