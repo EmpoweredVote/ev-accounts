@@ -1,0 +1,971 @@
+{
+ "note": "What is behind each Ballotpedia #Campaign_themes anchor the corpus cites. Read by check-stance-sources.mjs: `own-words` earns the BALLOTPEDIA_ONLY carve-out, `empty` FAILS as CC_ANCHOR_EMPTY, and anything absent from this file REPORTS as CC_ANCHOR_UNVERIFIED. Regenerate with scripts/sweep-candidate-connection-anchors.mjs.",
+ "unreachableIsNotEmpty": "A page that could not be fetched is recorded `unreachable`, never `empty`. It therefore reports as unverified and can never fail the build. Ballotpedia answers 202 to a fast sweep; a challenge is not an absent page.",
+ "generatedAt": "2026-10-09T15:34:54.776Z",
+ "counts": {
+  "pages": 160,
+  "own-words": 160
+ },
+ "pages": [
+  {
+   "page": "https://ballotpedia.org/Adam_Arafat",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:25:52.913Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Adam_Austill",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:25:56.000Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Adam_Bauman",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:25:59.100Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Alex_Askew",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:02.198Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Alex_Mealer",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:05.318Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Alexander_Hale",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:26:08.409Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Alissa_Ellman",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:11.510Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Amy_Laufer",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:14.602Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Amy_Roma",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:17.693Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Ana_Valencia_(Norwalk_City_Council_At-large,_California,_candidate_2024)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:20.780Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Andres_Valleza",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:23.863Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Angela_Marie_Walls-Windhauser",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:26.967Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Anna_Golladay",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:30.077Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Anthony_Constantino",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:33.162Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Antony_Barran",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:36.317Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Bajun_Mavalwalla",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:39.478Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Blake_Gendebien",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:42.580Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Bobby_Pulido",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:45.679Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Brad_Lander",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:26:48.788Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Brandon_Herrera",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:26:51.878Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Brent_Hennrich",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:26:54.966Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Brent_Taylor_(Tennessee)",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:26:58.052Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Brinker_Harding",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:27:01.271Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Bryce_Nickel",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:04.368Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Cait_Conley",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:27:07.453Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Caitlin_Rourk",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:10.546Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Carleigh_Beriont",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:13.633Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Carlos_De_La_Cruz",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:27:16.716Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Carmela_Conroy",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:19.799Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Carrie_Iacomini",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:22.893Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Casey_Shepard",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:25.982Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Catherine_Hildebrand",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:29.067Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Catherine_Stefani",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:32.155Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Chaney_Mosley",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:35.241Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Charlotte_Bergmann",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:38.346Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Chelsey_Hockett",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:41.439Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Chris_Gober",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:44.525Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Christian_Menefee",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:47.613Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Christopher_B._Monday",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:50.757Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Civil_Miller-Watkins",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:53.855Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Claire_Reynolds",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:27:56.941Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Claire_Valdez",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:28:00.038Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Cliff_Huffman",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:03.124Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Cliff_Johnson_(Mississippi)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:06.206Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Curtis_Goodwin",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:09.292Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Daniel_Cottam",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:12.389Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Daniel_Sayre",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:15.488Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Danny_Minton",
+   "verdict": "own-words",
+   "why": "quotes the candidate directly",
+   "checkedAt": "2026-10-09T15:28:18.771Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Darializa_Avila_Chevalier",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:28:21.854Z"
+  },
+  {
+   "page": "https://ballotpedia.org/David_Kerr_Jr._(Tennessee)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:24.934Z"
+  },
+  {
+   "page": "https://ballotpedia.org/David_Russ_(Oregon)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:28.031Z"
+  },
+  {
+   "page": "https://ballotpedia.org/David_Suetterlein",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:28:31.128Z"
+  },
+  {
+   "page": "https://ballotpedia.org/David_Womack",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:34.224Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Denise_Powell",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:28:37.320Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Dennis_Hannon",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:40.399Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Dennis_Jeffrey_Clark_(Tennessee_congressional_candidate)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:43.487Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Devin_Hermanson",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:46.583Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Dewey_Gordon_Bryan",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:49.669Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Dione_Sims",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:52.753Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Doug_Basler",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:55.840Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Drew_Williams",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:28:58.937Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Dustin_Darden",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:02.102Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Edgardo_Baez",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:05.192Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Ernie_Rivera",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:08.288Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Evan_Hunt_(Texas)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:11.564Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Ghazala_Hashmi",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:14.649Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Glen_Sturtevant",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:29:17.733Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Hunter_Gordon",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:20.820Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jace_Yarbrough",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:23.908Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jackie_Goldberg",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:29:26.992Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jacob_Anders",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:30.140Z"
+  },
+  {
+   "page": "https://ballotpedia.org/James_Hooper",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:33.226Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jarrett_Keohokalole",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:29:36.313Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jason_Pearce",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:39.409Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jason_Poulos",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:42.504Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jeromie_Whalen",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:45.654Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jerrad_Christian",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:48.741Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jessica_Steinmann",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:29:51.834Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jim_Torino",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:55.789Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jimmy_Skovgard",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:29:58.990Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Joel_Anabilah-Azumah",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:02.087Z"
+  },
+  {
+   "page": "https://ballotpedia.org/John_Hancock_(Ohio)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:05.184Z"
+  },
+  {
+   "page": "https://ballotpedia.org/John_Saulie-Rohman",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:09.311Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Johnny_Garrett",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:30:12.405Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jon_Bonck",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:30:15.501Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jon_Henry",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:18.607Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jonathan_Nez",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:30:21.708Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jonathan_Paz_(Massachusetts)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:24.808Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jonny_Larsen",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:27.897Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jordan_Conley",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:31.683Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Jordan_Hinders",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:35.647Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Joshua_Cole_(Virginia)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:40.313Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Joshua_Ray_Ashburn",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:44.422Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Joshua_Warren_Sales",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:48.331Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Joyce_Neal",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:52.193Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Justin_Early",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:55.288Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Katrina_Callsen",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:30:59.971Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Keith_Arnold",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:31:04.739Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Keith_Hodges",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:31:09.519Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Kevin_Burge_(Texas)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:12.679Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Kevin_Fagan",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:16.575Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Kim_Farington",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:19.665Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Kristi_Burke",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:22.758Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Kristin_Hook",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:26.859Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Kurtis_Engle",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:31.271Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Kyle_Rable",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:31:35.175Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Lashrecse_Aird",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:31:39.677Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Laura_Jones_(Texas)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:42.780Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Lauren_Pe%C3%B1a",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:45.880Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Leon_Lawson",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:50.318Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Leticia_Gutierrez",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:53.414Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Lore_Bergman",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:31:56.506Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Luke_Bronin",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:31:59.593Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Mark_Nair",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:03.563Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Mark_Obenshain",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:32:08.099Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Mark_Peake",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:32:12.357Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Mark_Teixeira",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:32:15.504Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Marquette_Greene-Scott",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:18.617Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Marquita_Bradshaw",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:21.731Z"
+  },
+  {
+   "page": "https://ballotpedia.org/May_Nivar",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:26.054Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Melissa_Chaudhry",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:29.155Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Melissa_McDonough",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:32.252Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Michael_Chiaradio",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:35.354Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Michael_McGarr",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:39.255Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Michael_Van_Meter",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:43.363Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Mikel_Wein",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:47.421Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Nadia_Milleron",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:50.519Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Nicholas_Kiswanto",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:54.430Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Nik_Sandman",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:32:58.195Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Nirav_Sheth",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:01.354Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Patrick_Ahrens",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:05.652Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Patrick_Gillespie_(Texas)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:09.964Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Patrick_Schmidt",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:14.381Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Rachel_Hurley",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:18.387Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Reid_Rasner",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:21.481Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Rhonda_Hart",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:25.628Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Richard_Freudenberg",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:29.490Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Sam_Rasoul",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:33:32.592Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Sarah_Zabel_(Idaho)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:35.751Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Sharon_Quirk-Silva",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:33:38.851Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Shaun_Finnie",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:41.944Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Shelly_Simonds",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:46.668Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Steve_Parsons",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:33:49.809Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Steven_Shook",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:52.900Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Suzie_Byrd",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:55.990Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Tanya_Lloyd",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:33:59.075Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Terry_Austin",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:34:03.731Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Tim_Lanier",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:07.621Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Todd_Pillion",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:34:11.924Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Todd_Warner",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:16.590Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Tom_Weiler",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:34:20.612Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Tomas_Scheel",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:24.559Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Trina_Swanson",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:27.651Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Troy_Rasband",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:30.738Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Van_Hilleary",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:34:33.826Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Victoria_Broderick",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:37.882Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Vincent_Dixie",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:43.172Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Virginia_McIntyre",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:46.261Z"
+  },
+  {
+   "page": "https://ballotpedia.org/Will_Martin_(Wisconsin)",
+   "verdict": "own-words",
+   "why": "states a completed Candidate Connection survey",
+   "checkedAt": "2026-10-09T15:34:50.316Z"
+  },
+  {
+   "page": "https://ballotpedia.org/William_Stanley",
+   "verdict": "own-words",
+   "why": "no survey, but quotes the candidate's campaign website",
+   "checkedAt": "2026-10-09T15:34:54.775Z"
+  }
+ ]
+}

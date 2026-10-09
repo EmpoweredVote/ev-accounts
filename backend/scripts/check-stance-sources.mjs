@@ -27,6 +27,20 @@
  * Content is the article-body test's job and needs a fetch. Do not read a green run as "stances are
  * sourced" — read it as "no row cites Ballotpedia and nothing else".
  *
+ * ✅ 2026-10-09 — ONE PLACE WHERE IT NOW DOES SEE THE PAGE, BY PROXY. The #Campaign_themes carve-out
+ * was the sharpest form of the limit above: it EXEMPTED a row on the strength of a URL fragment, so
+ * hand-appending "#Campaign_themes" to any Ballotpedia bio bought a pass from a gate with no page
+ * text. The exemption now has to be earned against a recorded observation —
+ * scripts/sweep-candidate-connection-anchors.mjs fetches every anchored page and writes
+ * data/candidate-connection-anchors.json; CC_ANCHOR_EMPTY fails on a page proven to hold nothing
+ * from the candidate, and CC_ANCHOR_UNVERIFIED reports a page nobody has swept.
+ * 🔑 The gate still does not fetch. The split — slow network sweep on demand, fast comparison in CI
+ * — is FABRICATED_SOURCE's architecture, for the same reason: 160 requests to a host that answers
+ * 202 to a fast sweep would make this flaky, and a flaky gate gets ignored.
+ * ⚠ It remains a proxy. The sweep asks whether the page carries the candidate's words AT ALL, not
+ * whether the cited passage is inside the section — that is test 2 in candidate-connection.mjs, and
+ * it is enforced at WRITE time by stanceGate.ts, not here.
+ *
  * 🔴 THE ONE EXCEPTION IS FABRICATED_SOURCE, AND IT IS ONLY HALF AN EXCEPTION. That check does concern
  * whether a page exists, but it cannot DECIDE that — it matches a denylist of URLs and hosts already
  * proven absent (`data/fabricated-sources.json`). Discovery needs a fetch plus an archive probe with a
@@ -134,6 +148,7 @@ import { CC_ANCHOR_PATTERN } from './lib/candidate-connection.mjs';
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const BASELINE = path.join(HERE, '..', 'data', 'stance-source-baseline.json');
 const FABRICATED = path.join(HERE, '..', 'data', 'fabricated-sources.json');
+const CC_ANCHORS = path.join(HERE, '..', 'data', 'candidate-connection-anchors.json');
 
 const argv = process.argv.slice(2);
 const VERBOSE = argv.includes('--verbose');
@@ -145,9 +160,30 @@ const UPDATE = argv.includes('--update-baseline');
 // FABRICATED_SOURCE joined the zero-tolerance set on 2026-08-05. Prod held 0 citations to every entry
 // in data/fabricated-sources.json when it was added (verified, not assumed), so any occurrence is a
 // regression that re-introduces a citation a migration already proved does not exist.
+// CC_ANCHOR_EMPTY joined the zero-tolerance set on 2026-10-09. The sweep that backs it measured
+// every one of the 160 pages the corpus deep-links and found ZERO carrying the anchor and nothing
+// behind it, so prod is at 0 (verified, not assumed) and any occurrence is a regression: a row
+// claiming the candidate's own words on a page that does not have them.
 const ZERO_TOLERANCE = new Set([
   'ANSWER_WITHOUT_CONTEXT', 'EMPTY_SOURCES', 'NON_URL_SOURCE', 'FABRICATED_SOURCE',
+  'CC_ANCHOR_EMPTY',
 ]);
+
+/**
+ * Checks that PRINT but never fail the build, and carry no baseline.
+ *
+ * 🔑 WHY A THIRD TIER RATHER THAN A FOURTH ZERO-TOLERANCE CHECK. CC_ANCHOR_UNVERIFIED does not say
+ * a row is wrong; it says WE HAVE NOT LOOKED at the page the row rests on. Failing on that would
+ * turn every legitimately-new Candidate Connection citation red until someone re-ran a network
+ * sweep and committed the result — and a red that means "nobody has swept yet" is indistinguishable
+ * at a glance from a red that means "this row is false", which is how a gate gets ignored. The same
+ * reasoning as WHY BASELINED AND NOT ZERO above, applied to a check whose unit is OUR knowledge
+ * rather than the corpus's state.
+ *
+ * ⚠ A baseline would be wrong here for a second reason: the set shrinks as the sweep runs, so a
+ * recorded baseline would be a snapshot of our ignorance and would need rewriting every sweep.
+ */
+const REPORT_ONLY = new Set(['CC_ANCHOR_UNVERIFIED']);
 
 /**
  * Confirmed-fabricated hosts and URLs. Loaded from disk so the sweep can extend the list without
@@ -172,6 +208,49 @@ function loadFabricated() {
     process.exit(2);
   }
 }
+
+/**
+ * What the sweep found behind each #Campaign_themes anchor.
+ * See scripts/sweep-candidate-connection-anchors.mjs for how it is produced and why it is a
+ * separate on-demand pass rather than network work inside CI.
+ *
+ * 🔴 `unreachable` IS DELIBERATELY IN NEITHER LIST. It is not evidence the page is empty (a 202 is
+ * a bot challenge, not an absence), so it must not FAIL; and it is not evidence the page is good,
+ * so it must not earn the carve-out either. It therefore falls through to CC_ANCHOR_UNVERIFIED and
+ * is reported. Classify every non-200 before reading it as evidence.
+ *
+ * A missing manifest does NOT exit 2 the way a missing denylist does. The two failures are not
+ * symmetric: without fabricated-sources.json a zero-tolerance check silently passes everything,
+ * whereas without this file every anchored row simply reports as unverified — which is exactly
+ * what "we have not looked" should say, and is the honest state of a repo that has not swept yet.
+ */
+function loadCcAnchors() {
+  // Normalised the same way on both sides: no scheme, no www., no fragment, no trailing slash,
+  // lowercased. A manifest entry and a citation must not miss each other over http vs https.
+  const norm = (u) => String(u ?? '').trim().toLowerCase()
+    .replace(/#.*$/, '').replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/+$/, '');
+  try {
+    const f = JSON.parse(readFileSync(CC_ANCHORS, 'utf8'));
+    const pages = f.pages ?? [];
+    return {
+      present: true,
+      generatedAt: f.generatedAt ?? null,
+      empty: pages.filter((p) => p.verdict === 'empty').map((p) => norm(p.page)),
+      verified: pages.filter((p) => p.verdict === 'own-words').map((p) => norm(p.page)),
+    };
+  } catch {
+    return { present: false, generatedAt: null, empty: [], verified: [] };
+  }
+}
+
+/**
+ * The PAGE a citation points at, normalised for comparison with the manifest: fragment dropped,
+ * scheme and www. stripped, trailing slash removed, lowercased. Must stay in step with norm() in
+ * loadCcAnchors — the two sides of one comparison.
+ * ⚠ The backslashes are doubled because this is a JS template literal: a single `\.` would reach
+ * Postgres as a bare `.` and match any character, quietly widening the host test.
+ */
+const CC_PAGE = (col) => `lower(rtrim(regexp_replace(regexp_replace(${col}, '#.*$', ''), '^https?://(www\\.)?', ''), '/'))`;
 
 const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
 
@@ -278,6 +357,45 @@ const QUERY = `
         -- requires the same check. Do not hand-append the anchor.
         -- (The old OR s ILIKE '%Candidate_Connection%' clause was dropped 2026-10-07: measured on
         -- prod it matched 0 rows, and a substring anywhere in a URL is not an anchor.)
+        --
+        -- 🔴🔴 THE CARVE-OUT ABOVE IS GRANTED ON THE URL ALONE, AND THESE TWO BRANCHES ARE WHAT
+        -- STOPPED THAT BEING THE END OF THE STORY (2026-10-09). The comment immediately above has
+        -- said "THIS SQL CAN TEST THE URL ONLY" since the day it was written, and the protection
+        -- was a convention: the anchor is appended only by deep-link-candidate-connection.mjs, for
+        -- CC_VERIFIED rows. Nothing ENFORCED it. Hand-append #Campaign_themes to any Ballotpedia
+        -- bio and the row passed a gate that could not see the page.
+        --
+        -- The fix is not to fetch here -- a CI job making 160 requests to a host that answers 202
+        -- to a fast sweep would be flaky, and a flaky gate gets ignored. It is the same split
+        -- FABRICATED_SOURCE already uses: an on-demand sweep fetches and records, and this gate
+        -- compares against what was recorded. sweep-candidate-connection-anchors.mjs.
+        --
+        -- Both branches apply ONLY to rows that actually RELY on the carve-out: every source is
+        -- Ballotpedia, and at least one carries the anchor. A row with any other citation is
+        -- untouched, exactly as BALLOTPEDIA_ONLY is.
+        -- ⚠ BOTH BRANCHES REQUIRE THAT NO ANCHOR ON THE ROW IS VERIFIED. A row may cite two
+        -- Ballotpedia pages; if even one of them was fetched and found to carry the candidate's
+        -- words, the row HAS the source it claims and must pass, whatever the other anchor turned
+        -- out to be. Firing on "any anchor is empty" would fail a sound row for its weaker
+        -- citation -- and this is a zero-tolerance check, so an over-fire goes straight to red.
+        WHEN NOT EXISTS (SELECT 1 FROM unnest(pc.sources) s WHERE s NOT ILIKE '%ballotpedia%')
+         AND EXISTS (SELECT 1 FROM unnest(pc.sources) s WHERE s ~* '${CC_ANCHOR_PATTERN}')
+         AND NOT EXISTS (
+           SELECT 1 FROM unnest(pc.sources) s
+            WHERE s ~* '${CC_ANCHOR_PATTERN}' AND ${CC_PAGE('s')} = ANY($4::text[])
+         )
+         AND EXISTS (
+           SELECT 1 FROM unnest(pc.sources) s
+            WHERE s ~* '${CC_ANCHOR_PATTERN}' AND ${CC_PAGE('s')} = ANY($3::text[])
+        )                                                          THEN 'CC_ANCHOR_EMPTY'
+        -- ...and if we have never looked at the page, say so rather than trusting it. Report only:
+        -- this is a statement about OUR KNOWLEDGE, not about the row.
+        WHEN NOT EXISTS (SELECT 1 FROM unnest(pc.sources) s WHERE s NOT ILIKE '%ballotpedia%')
+         AND EXISTS (SELECT 1 FROM unnest(pc.sources) s WHERE s ~* '${CC_ANCHOR_PATTERN}')
+         AND NOT EXISTS (
+           SELECT 1 FROM unnest(pc.sources) s
+            WHERE s ~* '${CC_ANCHOR_PATTERN}' AND ${CC_PAGE('s')} = ANY($4::text[])
+        )                                                          THEN 'CC_ANCHOR_UNVERIFIED'
         WHEN NOT EXISTS (
           SELECT 1 FROM unnest(pc.sources) s
            WHERE s NOT ILIKE '%ballotpedia%'
@@ -384,7 +502,8 @@ const QUERY = `
   }
 
   const deny = loadFabricated();
-  const { rows } = await pool.query(QUERY, [deny.urls, deny.hosts]);
+  const cc = loadCcAnchors();
+  const { rows } = await pool.query(QUERY, [deny.urls, deny.hosts, cc.empty, cc.verified]);
 
   const observed = {};
   const observedRows = {};
@@ -489,6 +608,9 @@ const QUERY = `
       }
       continue;
     }
+    // Report-only checks never become violations and never consult the baseline. They are printed
+    // below so the exposure stays visible and countable on an otherwise green run.
+    if (REPORT_ONLY.has(chk)) continue;
     const known = new Set(baseline.rows?.[chk] ?? []);
     const unknown = [...(observedRows[chk] ?? [])].filter((k) => !known.has(k));
     if (unknown.length > 0) violations.push({ chk, keys: unknown });
@@ -499,11 +621,29 @@ const QUERY = `
   // is indistinguishable from a check that is not running — and FABRICATED_SOURCE is expected to sit at
   // 0 forever, so it would be invisible for its entire useful life.
   for (const chk of ZERO_TOLERANCE) checks.add(chk);
+  for (const chk of REPORT_ONLY) checks.add(chk);
   for (const chk of [...checks].sort()) {
     const total = Object.values(observed[chk] ?? {}).reduce((a, b) => a + b, 0);
     const baseTotal = Object.values(baseline.counts?.[chk] ?? {}).reduce((a, b) => a + b, 0);
-    const tag = ZERO_TOLERANCE.has(chk) ? 'must be 0' : `baseline ${baseTotal}`;
+    const tag = ZERO_TOLERANCE.has(chk) ? 'must be 0'
+      : REPORT_ONLY.has(chk) ? 'report only' : `baseline ${baseTotal}`;
     console.log(`  ${chk.padEnd(24)} observed ${String(total).padStart(4)}   (${tag})`);
+  }
+
+  // Say where the anchor manifest stands, every run. A carve-out granted on an unread page is the
+  // exposure this check exists to measure, so it must be visible on a GREEN run too — a number
+  // that only appears when something is wrong cannot be watched for drift.
+  const ccReported = Object.values(observed.CC_ANCHOR_UNVERIFIED ?? {}).reduce((a, b) => a + b, 0);
+  if (!cc.present) {
+    console.log('\n  ⚠ data/candidate-connection-anchors.json is missing — every #Campaign_themes'
+      + ' citation reports as unverified. Run scripts/sweep-candidate-connection-anchors.mjs.');
+  } else {
+    console.log(`\n  #Campaign_themes anchors: ${cc.verified.length} page(s) verified, `
+      + `${cc.empty.length} proven empty (swept ${cc.generatedAt ?? 'unknown'}).`);
+    if (ccReported > 0) {
+      console.log(`  ${ccReported} row(s) rest on an anchor whose page has not been swept — `
+        + 'report only, not a failure. Re-run the sweep to clear them.');
+    }
   }
 
   if (VERBOSE) {
@@ -560,6 +700,18 @@ const QUERY = `
                             'upstream to re-point to. Re-research the row from a source you fetched, or ' +
                             'retire it. If you believe the denylist entry is wrong, re-verify with a ' +
                             'period control and say so in the commit.',
+    CC_ANCHOR_EMPTY:        'This row\'s only source is a Ballotpedia page deep-linked to ' +
+                            '#Campaign_themes, and the sweep FETCHED that page and found no words ' +
+                            'from the candidate there -- no completed survey, no quoted campaign ' +
+                            'site, or no such section at all. The anchor was appended by hand, or ' +
+                            'the page changed after the row was written. Do NOT just drop the ' +
+                            'fragment: without it the row is BALLOTPEDIA_ONLY and still wrong. ' +
+                            'Cite what the chair rests on, or retire it. If you think the page does ' +
+                            'carry the candidate\'s words, re-run ' +
+                            'scripts/sweep-candidate-connection-anchors.mjs and say so in the commit.',
+    CC_ANCHOR_UNVERIFIED:   'Report only -- this never fails the build. It means the page has not ' +
+                            'been swept, not that the row is wrong. Run ' +
+                            'scripts/sweep-candidate-connection-anchors.mjs and commit the manifest.',
   };
   console.error('');
   for (const chk of [...new Set(violations.map((v) => v.chk))]) {
