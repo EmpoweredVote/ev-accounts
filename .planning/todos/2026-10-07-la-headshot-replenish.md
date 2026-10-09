@@ -11,6 +11,9 @@ then looked at all 139 on labelled contact sheets.
 
 **612 people. 139 render a photo, 473 are blank. 120 of the 139 pass. 19 are flagged below.**
 
+**▶ CLOSED 2026-10-08. All 19 are resolved: 17 replaced across nine batches (`CC_0195`-`CC_0210`),
+2 closed unchanged by operator ruling.** The blanks in section G are a separate programme.
+
 The pass rate is the positive control: the detector is not uniformly failing.
 
 Quality bar applied (from `feedback_headshot_crop_composition`, `feedback_no_facebook_photos_press_only`,
@@ -26,14 +29,14 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 | 1 | ~~**Curren D. Price Jr.**~~ ✅ **DONE 2026-10-07** (`CC_0195`+`CC_0196`) | CD 9 | **250×333** — under the floor. Only LA-city row on the `<uuid>/default.jpeg` path, and it carries **no `photo_origin_url` at all** (no provenance). | ✅ **YES.** `cd9.lacity.gov/sites/g/files/wph2021/files/2022-02/Curren_D_Price_Jr_Portrait.jpg` — **2213×2728**, the *same photograph*, 8.8× larger. Identity confirmed by the city's own alt, "Councilman Curren D Price Jr". |
 | 2 | ~~**Imelda Padilla**~~ ✅ **DONE 2026-10-07** (`CC_0195`+`CC_0196`) | CD 6 | Environmental shot outside a hot-dog stand. Head ≈15% of frame. Commercial signage behind her. | ✅ **YES.** `cd6.lacity.gov/wp-content/uploads/2024/03/photo-imelda-portrait-02.jpg` — **1500×1500**, alt "Imelda Padilla Portrait", City Hall background. |
 | 3 | ~~**Tim McOsker**~~ ✅ **DONE 2026-10-09** (`CC_0209`) | CD 15 | Street scene. Head ≈15% of frame, cars and trees behind him. | ❌ **No.** The city's own file (`/meet-tim`) is this same image, and its ORIGIN is only **400×267**. Real ceiling at lacity.gov. Lead: filename is Flickr id `51857445559`, so a larger original may exist on Flickr. |
-| 4 | Ysabel J. Jurado | CD 14 | Loud mural background. Head size is acceptable. **Borderline — low priority.** The city serves the same frame; its alt literally reads "Photo of Councilmember Jurado in front of a mural". | — |
+| 4 | ~~**Ysabel J. Jurado**~~ ✅ **DONE 2026-10-08** (`CC_0210`) | CD 14 | Loud mural background — and, found on the way, the live file is a **1.42x enlargement** of the city's 960x530 landscape derivative, carrying a **false `cc_by_sa_4.0`** licence. | ✅ **YES.** Wikimedia Commons `Ysabel Jurado, 2025.jpg`, 1920x1280, **public domain (PD-CAGov)**, author her own council district. |
 
 ### Bookkeeping only (image is correct, the record is untidy)
 
 | # | Person | Problem |
 |---|--------|---------|
-| 5 | Karen Ruth Bass | Stored file is `2f96d5e2-8284-490d-8ba1-d204b649f45a-headshot.jpg`. That UUID **matches no politician row.** Her id is `21c9e711-…`. Image is correct. |
-| 6 | Monica Rodriguez | Stored at a **truncated stem** — `7c0d3bdd-headshot.jpg`, 8 hex characters, not the full id. Image is correct. (Estuardo Mazariegos, `92876cb7-headshot.jpg`, is the same shape.) |
+| 5 | ~~Karen Ruth Bass~~ ⬜ **CLOSED 2026-10-08, no action** (operator ruling) | Stored file is `2f96d5e2-8284-490d-8ba1-d204b649f45a-headshot.jpg`. That UUID **matches no row anywhere in the schema** (checked `politicians`, `politician_images`, `offices`). Image is correct: 2614x3486, head 63%. **One of 48 corpus-wide — see the batch 9 section.** |
+| 6 | ~~Monica Rodriguez~~ ⬜ **CLOSED 2026-10-08, no action** (operator ruling) | Stored at a **truncated stem** — `7c0d3bdd-headshot.jpg`, 8 hex characters, not the full id. Image is correct: 600x750, head 41%. **One of 37 truncated stems corpus-wide, none of which collide — see the batch 9 section.** (Estuardo Mazariegos, `92876cb7-headshot.jpg`, is the same shape.) |
 
 ---
 
@@ -72,9 +75,9 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 |---|--------|------|--------|
 | 15 | ~~**Cristian Morales**~~ ✅ **DONE 2026-10-08** (`CC_0205`) | CA-43 | Heavy blur — an upscale. Head clipped at the top. **Also an Instagram source.** |
 | 16 | ~~**Angela Gonzales-Torres**~~ ✅ **DONE 2026-10-08** (`CC_0205`) | CA-34 | **200×300** — under the floor. |
-| 17 | **Houston Brignano** | CA-36 | Full-body standing shot. Head ≈10% of frame. |
-| 18 | Xavier Becerra | Governor | Candid at a campaign event. A microphone intrudes bottom-right, a blurred object left. |
-| 19 | Samantha Mota | CA-37 | Casual shot against a mural, arm raised. Not a portrait. |
+| 17 | ~~**Houston Brignano**~~ ✅ **DONE 2026-10-08** (`CC_0210`) | CA-36 | 🔴 **THIS DEFECT LINE WAS WRONG.** "Head ≈10% of frame" was eyeballed; measured, his head is **27.3%**, inside the 20-62% bar. Shipped anyway as a framing improvement, not a rescue. |
+| 18 | ~~**Xavier Becerra**~~ ✅ **DONE 2026-10-08** (`CC_0210`) | Governor | Candid at a campaign event. A microphone intrudes bottom-right, a blurred object left. Face sat at 65.2% of the frame width. |
+| 19 | ~~**Samantha Mota**~~ ✅ **DONE 2026-10-08** (`CC_0210`) | CA-37 | Casual shot against a mural, arm raised. Not a portrait. **Not an enlargement — the wrong frame.** |
 
 ---
 
@@ -462,6 +465,136 @@ text and then verifies it matches what it wrote — self-consistent by construct
 the **shape** of the origin URL (external, image extension, not our bucket, not social media) and
 that the pair agrees. It cannot know whether the words are true. Only a human reading the source
 page can.
+
+### 2026-10-08, batch 9 — Brignano, Jurado, Becerra, Mota (`CC_0210`)
+
+**0 of the original 19 remain. THIS WORKLIST IS CLOSED.** All four verified on the rendered page, not
+on the API. Proof sheet: https://claude.ai/artifact/YSu7TgnzbadRwtv3FhXXgb
+
+| Person | Was | Now | How |
+|---|---|---|---|
+| Houston Brignano | 600×750, head **27.3%** (not the ≈10% this list recorded) | **496×620**, head 45.0%, air 9.0%, centre 50.0% | Ballotpedia `Houston_Brignano_20260428_022543.jpg` (1024×1024). **Pure crop, no resize.** Face box 169 px → 230 px. |
+| Ysabel J. Jurado | 600×750, a **1.42× enlargement**, licence falsely `cc_by_sa_4.0` | **777×971**, head 45.0%, air 9.0%, centre 50.1% | Commons `Ysabel Jurado, 2025.jpg` (1920×1280), **PD-CAGov**. **Pure crop.** Face box 204 px → 349 px. |
+| Xavier Becerra | 600×750, face at 65.2% of width, microphone intruding | **1200×1500**, head 42.8%, air 4.4%, centre 49.2% | Commons `HHS Xavier Becerra.jpg` (2400×3000), already 4:5. **Downscaled 2×, not cropped.** |
+| Samantha Mota | 600×750, arm raised against a mural | **1126×1407**, head 51.9%, air 7.8%, centre 50.0% | `motaforcongress.com` hero (2304×1536). **Pure crop, no resize.** |
+
+Nothing enlarged, nothing composited, every one above the chroma floor (32.3 / 47.1 / 44.4 / 80.8).
+
+### 🔴🔴 A DEFECT LINE ON THIS LIST WAS AN EYEBALLED NUMBER, AND IT WAS WRONG BY 2.7×
+
+Row 17 read "Full-body standing shot. Head ≈10% of frame." **Measured, Brignano's head is 27.3% of
+the frame — inside the 20-62% bar this list applies.** The live file is also not an enlargement: it
+is a **1.36× downscaled crop of the Ballotpedia frame itself**, proved by reconstructing the crop
+(mean absolute difference 3.1) and by matched-face edge energy (3.79 against 3.85).
+
+This is the same defect as the Girvan rejection in batch 3, where "head ~12%, crops to 400×500" was
+read off a thumbnail and the file really measured 25.4%. ▶ **A DEFECT LINE IS A MEASUREMENT TOO, not
+only a rejection.** Re-measure a flagged row before sourcing against it — the list can be wrong in
+the direction of over-reporting, and then the search is for a problem that is not there.
+
+He was replaced anyway, deliberately: the crop takes his face from 169 px to 230 px and the framing
+from 27.3% to 45.0%, at the cost of a frame that is smaller in total pixels (496×620 against
+600×750). **Face pixels, not frame pixels, are what the card shows.**
+
+### 🔴 JURADO CARRIED TWO DEFECTS AND THE LIST NAMED NEITHER
+
+It said "loud mural background. Head size is acceptable. Borderline — low priority." Both of the
+real problems were invisible to a framing audit:
+
+- **An enlargement.** Her face box is 204 px, upscaled from the 144 px face in
+  `cd14.lacity.gov/.../Cd14-Ysabeljurado_960x530.png` — a **960×530 landscape** derivative. Edge
+  energy at a matched 200 px face: **5.19 against 5.11.** More pixels, no more detail.
+- **A false licence.** `cc_by_sa_4.0`, asserted over a Drupal CMS derivative path. Nobody licensed
+  that file CC BY-SA.
+
+🔴 **THAT IS THE FOURTH FALSE LICENCE IN THIS PROGRAMME** — after Price (`cc_by_sa_4.0`,
+`CC_0195`), Schmerelson (`government-official` over a NULL origin, `CC_0204`) and McOsker
+(`cc_by_sa_4.0` over an ARR photograph, `CC_0209`). All four were written from the shape of a URL.
+▶ **The rule now has four data points: a licence on a row whose origin is a CMS derivative path is
+unverified until the real publisher is named.** Commons settled this one — her own council district
+is the author, so the portrait is public domain by statute.
+
+### 🔴 A CAMPAIGN PORTRAIT CAN BE A CUTOUT *AND* CLIPPED — CHECK BOTH
+
+`voteforhouston.com` publishes a 2135×2996 studio portrait of Brignano that looked like the obvious
+answer. Two things killed it, and only one was visible on a contact sheet:
+
+- It is a **transparent-background cutout** — 36.9% of its pixels are transparent. PIL renders the
+  palette's fill colour for those, so on a contact sheet it looks like a photograph shot against a
+  teal backdrop. **Only reading the alpha channel shows what it is.** Shipping it needs a composited
+  backdrop, which the operator rejected on Girvan in `CC_0198`.
+- **His hair is clipped flat by the top edge.** Row 0 is 36%, 91% and 35% opaque across the crown.
+  No crop recovers that.
+
+🟢 The Girvan white-matte test still worked and still mattered: the rim measures **86.5 against
+132.7** inside, so it is straight alpha with no matte baked in. That part was sound — it was the
+other two readings that disqualified it.
+
+### 🔴 BOTH HEAD-TOP DETECTORS FAILED AGAIN, ON NEW GROUND
+
+Batch 7 recorded that neither detector is right everywhere. Batch 9 is the third confirmation, with
+two failures neither had shown before:
+
+- The **background-departure column scan** put Brignano's head top **229 px too high**: the gilt
+  **eagle finial on the flagpole directly above his head** sits inside the face-box columns and
+  departs from the wood panelling exactly as a head does. It put Mota's **193 px too high** on the
+  painted mural shapes.
+- **GrabCut returned 0** on both Becerra and Jurado — it absorbed the plain studio backdrop and the
+  bokeh mural into the foreground.
+
+▶ **The head top for all four was read off the photograph at 4× with labelled rows**, and that is
+the only method that has worked on every image in this programme. The face-box centre and eye
+midpoint agreed on all four subjects, so the crops are centred on those.
+
+### 🟢 THE GATE WAS PROVED BY WATCHING IT FAIL, FOUR WAYS
+
+Before `CC_0210` was applied, four tampered copies were dry-run against production — a wrong name on
+the Becerra row, Brignano's origin pointed inside our own bucket, Mota's origin replaced with a
+Facebook URL *still ending `.jpg`* (so only the social-media guard could catch it), and Jurado's
+licence left as the `cc_by_sa_4.0` claim the migration exists to retract. **Each raised on the guard
+it targeted.** The run harness also asserts the before/after snapshot returns exactly 4 rows — a
+snapshot that returns none is blind, not passing.
+
+### ▶ FOUND ON THE WAY: 48 PHOTO OBJECTS ARE NOT NAMED AFTER THEIR POLITICIAN
+
+Rows 5 and 6 (Bass, Monica Rodriguez) were listed here as LA bookkeeping. They are not an LA
+problem. Measured across every row whose `photo_custom_url` points at `politician_photos/…headshot.jpg`:
+
+| Shape | Rows | Collides? |
+|---|---|---|
+| Named after the politician | 7,951 | — |
+| Truncated 8-hex stem | **37** | none — no two politicians share a prefix |
+| Foreign UUID owned by nobody | **3** | none |
+| Foreign UUID that **is another politician** | **8** | **yes** |
+
+🔴 **THOSE EIGHT ARE A DUPLICATE-PERSON SIGNAL, NOT A FILENAME PROBLEM.** Each one's photo filename
+carries the id of a *second politician row bearing the same person's name*: **Brent Taylor, Chelsea
+Byers** (against "Chelsea Lee Byers")**, Emma Sharif, Jeffrey Hulum III, Kelly Smith, London Lamar,
+Patricia D. Jehlen, Vincent Dixie.** The likely history is that a photo was imported against one row
+and the scalar later repointed from another. **A filename is not proof that two rows are one person**
+— `reference_person_merge_policy` and the CASCADE hazard apply before anything is merged. None was
+touched here.
+
+The 3 orphans are Bass, Benjamin T Arrington and Julie M Hays; the latter two carry synthetic ids
+(`ba1e0001-2026-4000-8000-…`).
+
+⚠ **Operator ruling 2026-10-08: close rows 5 and 6 unchanged and log the 48.** Renaming 2 of 48
+objects leaves the set less consistent than it is now, and a voter sees none of it. One query
+re-derives the whole table; it is in this section's history.
+
+### Also measured, so nobody re-finds it
+
+- **Ballotpedia serves a square original for some candidates.** Brignano's is 1024×1024, not a
+  portrait — a 4:5 crop of it is bound by width, not height.
+- **A framer-hosted campaign site gives up its originals** by stripping the `?width=&height=` query
+  from a `framerusercontent.com/images/<id>.<ext>` URL, and its `sitemap.xml` enumerates every page.
+  Brignano's other six images are all **letters**, not photographs.
+- **An imgix-hosted campaign site** (`run.imgix.net/<account>/<id>/<id>.<ext>`) does the same: drop
+  every query parameter, including the `rect=` crop, and the original comes back. Mota's hero is
+  2304×1536 behind a square `rect=384,0,1536,1536` display crop.
+- Commons has **no photograph of Samantha Mota or Houston Brignano**. It has four of Jurado and
+  twelve of Becerra.
+
 
 ## Notes
 
