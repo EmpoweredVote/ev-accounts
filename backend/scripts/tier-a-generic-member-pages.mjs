@@ -20,6 +20,7 @@
 import fs from 'node:fs';
 import pg from 'pg';
 import { extractInstruments, statedYears, claimVerb } from './lib/md-instruments.mjs';
+import { sourceClassSql } from './lib/source-class.mjs';
 
 const argv = process.argv.slice(2);
 const flag = (n, d = null) => { const i = argv.indexOf(n); return i > -1 ? argv[i + 1] : d; };
@@ -40,19 +41,11 @@ const { rows } = await pool.query(`
     FROM inform.politician_context c, unnest(c.sources) u
   ), cls AS (
     SELECT politician_id, topic_id, nu,
-      CASE WHEN nu ILIKE '%en.wikipedia.org/wiki/%'
-        OR (nu ILIKE '%ballotpedia.org/%' AND nu NOT ILIKE '%candidate_connection%')
-        OR nu ILIKE '%/mgawebsite/members/details/%'
-        OR nu ILIKE '%capitol.texas.gov/members/memberinfo%'
-        OR nu ILIKE '%malegislature.gov/legislators/profile%'
-        OR nu ILIKE '%legislature.maine.gov/house/memberprofiles%'
-        OR nu ILIKE '%legislature.maine.gov/senate/memberprofiles%'
-        OR nu ILIKE '%azleg.gov/house/house-member%'
-        OR nu ILIKE '%azleg.gov/senate/senate-member%'
-        OR nu ILIKE '%ballotready.org/people/%'
-        OR nu ILIKE '%congress.gov/member/%'
-        OR nu ILIKE '%govtrack.us/congress/members/%'
-      THEN 1 ELSE 0 END AS is_generic,
+      -- One shared definition, three classes. A Ballotpedia page deep-linked to
+      -- #Campaign_themes and a BallotReady profile carry the CANDIDATE'S OWN WORDS, so they are
+      -- no longer counted generic; lib/source-class.mjs holds the measurement behind that.
+      CASE WHEN ${sourceClassSql('nu')} = 'generic' THEN 1 ELSE 0 END AS is_generic,
+      CASE WHEN ${sourceClassSql('nu')} = 'candidate-page' THEN 1 ELSE 0 END AS is_cand_page,
       CASE
         WHEN nu ILIKE '%/mgawebsite/members/details/%' THEN 'MD'
         WHEN nu ILIKE '%malegislature.gov/legislators/profile%' THEN 'MA'
@@ -63,7 +56,7 @@ const { rows } = await pool.query(`
     FROM src
   ), agg AS (
     SELECT politician_id, topic_id, count(*) n_src, sum(is_generic) n_generic,
-           max(state) AS state
+           sum(is_cand_page) n_cand_page, max(state) AS state
     FROM cls GROUP BY 1,2
   )
   SELECT p.full_name, a.politician_id, a.topic_id, t.title AS topic, a.state,
