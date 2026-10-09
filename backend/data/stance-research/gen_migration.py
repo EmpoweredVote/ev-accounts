@@ -226,6 +226,12 @@ BATCH2_CANDIDATES = [
     ("Charles Booker",     "b5cc94df-2ba3-4057-8abd-5760383b286b"),
     ("Andy Barr",          "d6d297f5-5319-4be1-b938-6bcce63368e7"),
     ("Julia Letlow",       "c79994ff-9e88-4318-97d9-d06b0ede183f"),
+    # 8be7e981 was RETIRED by CC_0215 on 2026-10-09 — it was a duplicate of John Fleming's
+    # canonical row a750bce8-a3ec-45fb-9812-5bb6f726e32f (Treasurer of Louisiana). The id is left
+    # as it is on purpose: it is what this generator actually used for migration 198, which is in
+    # production, and rewriting it would make this file disagree with the SQL it produced. Look the
+    # retirement up in essentials.politician_merges. Re-running this batch would now fail on the
+    # foreign key, which is the correct outcome.
     ("John Fleming",       "8be7e981-77a6-4ef7-b8d7-891fd9cc26d8"),
     ("Graham Platner",     "7f8e0d30-0b48-4c34-8cd7-34df2a9d8bf7"),
     ("Seth Moulton",       "5ccb1f15-f285-470c-b86a-97f9e6b22dff"),
