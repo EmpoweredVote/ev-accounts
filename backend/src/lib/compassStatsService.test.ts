@@ -188,3 +188,25 @@ describe('getStanceBreakdown — blanked answers are not positions', () => {
     for (const sql of sqls) expect(sql).toContain('deleted_at IS NULL');
   });
 });
+
+// A chair written for another ladder version would be bucketed under a rung label that now means
+// something else. Dropped after the collapse, beside the zero guard.
+describe('getStanceBreakdown — chairs on another ladder version are not counted', () => {
+  beforeEach(() => { mockQuery.mockReset(); });
+
+  it('applies the version predicate to both politician queries, after the collapse', async () => {
+    mockRows({ stanceRows: stanceRowsA });
+    await getStanceBreakdown();
+    const sqls = mockQuery.mock.calls.map((c) => c[0] as string).filter((q) => q.includes('inform.politician_answers'));
+    expect(sqls).toHaveLength(2);
+    for (const sql of sqls) {
+      const cteEnd = sql.indexOf('FROM latest');
+      expect(cteEnd).toBeGreaterThan(-1);
+      expect(sql.slice(0, cteEnd)).toMatch(/a\.topic_revision_id/);
+      expect(sql.slice(0, cteEnd)).not.toMatch(/vw\.version = vpin\.version/);
+      expect(sql.search(/vw\.version = vpin\.version/)).toBeGreaterThan(cteEnd);
+      // blank rules unchanged
+      expect(sql.search(/value\s*<>\s*0/)).toBeGreaterThan(cteEnd);
+    }
+  });
+});

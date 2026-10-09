@@ -11,7 +11,7 @@ vi.mock('./supabase.js', () => ({
 import {
   getPromotedTopics, validateTopicIds,
   isNoPromotedTopicsError, NoPromotedTopicsError,
-  getPoliticianAnswers, getPoliticianContext, getPoliticianContextAll,
+  getPoliticianAnswers, getBatchPoliticianAnswers, getCandidateAnswers, getPoliticianContext, getPoliticianContextAll,
   compareWithPoliticians, getPoliticianCitations,
 } from './compassService.js';
 
@@ -360,14 +360,14 @@ describe('a blank (value 0) is hidden from every public context read (ruling Q2)
     expect(await getPoliticianContext('p1', 't1')).toBeNull();
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toMatch(/LIMIT 1\s*\) x\s*WHERE NOT EXISTS/);
-    expect(sql).toMatch(/a\.season_id = x\.season_id AND a\.value = 0/);
+    expect(sql).toMatch(/a\.season_id = x\.season_id\s+AND \(a\.value = 0 OR NOT/);
   });
   it('getPoliticianContextAll collapses per topic first, then drops blanked topics', async () => {
     mockQuery.mockResolvedValue({ rows: [] });
     await getPoliticianContextAll('p1');
     const sql = mockQuery.mock.calls[0][0] as string;
     expect(sql).toMatch(/ORDER BY c\.topic_id, s\.number DESC\s*\) x\s*WHERE NOT EXISTS/);
-    expect(sql).toMatch(/a\.topic_id = x\.topic_id AND a\.season_id = x\.season_id AND a\.value = 0/);
+    expect(sql).toMatch(/a\.topic_id = x\.topic_id AND a\.season_id = x\.season_id\s+AND \(a\.value = 0 OR NOT/);
   });
 });
 
@@ -438,5 +438,87 @@ describe('getPoliticianCitations — the topic set follows the answer’s season
       citations: [{ source_url: 'https://example.gov/s1', domain: 'example.gov', is_primary: true }],
     });
     expect(block.all_stances).toHaveLength(2);
+  });
+});
+
+
+// Version-aware reads (docs/superpowers/specs/2026-10-07-version-aware-reads-design.md): a chair shows only
+// on the ladder version it was written for. The filter is applied AFTER the newest-season collapse and
+// next to the zero guard, never inside the collapse (it would fall back to an older season's rung).
+describe('version-aware reads — a chair shows only on the ladder version it was written for', () => {
+  // Braces: a returned mock would be run by vitest as the teardown, calling it with no arguments.
+  beforeEach(() => { mockQuery.mockReset(); });
+  const VERSION_PRED = /vw\.version = vpin\.version/;
+  const sqlOf = (n = 0) => mockQuery.mock.calls[n][0] as string;
+
+  // Each read: the collapse selects topic_revision_id, and the predicate follows `) latest` / `) l`.
+  it.each([
+    ['getPoliticianAnswers', () => getPoliticianAnswers('p1'), ') latest'],
+    ['getBatchPoliticianAnswers', () => getBatchPoliticianAnswers('p1', ['t1']), ') latest'],
+    ['getCandidateAnswers', () => getCandidateAnswers('p1'), ') latest'],
+  ])('%s applies the version predicate after the collapse, beside the zero guard', async (_n, run, endMarker) => {
+    // `q = ''`: the file-level beforeEach returns the mock, which vitest then calls with no arguments as a teardown.
+    mockQuery.mockImplementation(async (q = '') =>
+      q.includes('race_candidates') ? { rows: [{ politician_id: 'p1' }] }
+      : q.includes('empowered_profiles') ? { rows: [] }
+      : { rows: [{ topic_id: 't1', value: '3' }] });
+    await run();
+    // getCandidateAnswers tries the Empowered profile first; the researched read is the one with the collapse.
+    const sql = mockQuery.mock.calls.map((c) => c[0] as string).find((q) => q.includes('DISTINCT ON') && q.includes('inform.politician_answers'))!;
+    expect(sql).toMatch(/DISTINCT ON \(\s*a\.topic_id\s*\)[^)]*a\.topic_revision_id/);
+    const collapseEnd = sql.indexOf(endMarker);
+    expect(collapseEnd).toBeGreaterThan(-1);
+    expect(sql.search(VERSION_PRED)).toBeGreaterThan(collapseEnd);
+    // …and the zero guard is still there, still after the collapse (blank rules unchanged).
+    expect(sql.search(/value\s*(<>|!=)\s*0/)).toBeGreaterThan(collapseEnd);
+  });
+
+  it('never falls back to an older season: no version predicate inside the collapse subquery', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianAnswers('p1');
+    const sql = sqlOf();
+    const inner = sql.slice(0, sql.indexOf(') latest'));
+    expect(inner).not.toMatch(VERSION_PRED);
+    expect(inner).not.toMatch(/season_questions/);
+  });
+
+  it('a value-0 blank still passes through the version filter as a blank (zero guard intact)', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianAnswers('p1');
+    const sql = sqlOf();
+    expect(sql).toMatch(/value <> 0 AND/);
+    // the blank is dropped by the zero guard, not resurrected by an older season
+    expect(sql.search(/value <> 0/)).toBeGreaterThan(sql.indexOf(') latest'));
+  });
+
+  it('compareWithPoliticians: a mismatched chair is not a shared topic (after the collapse)', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await compareWithPoliticians('u1', ['p1']);
+    const sql = mockQuery.mock.calls.map((c) => c[0] as string).find((q) => q.includes('inform.politician_answers'))!;
+    expect(sql).toMatch(/DISTINCT ON \(a\.topic_id\) a\.topic_id, a\.value, a\.politician_id, a\.topic_revision_id/);
+    expect(sql.search(VERSION_PRED)).toBeGreaterThan(sql.indexOf(') latest'));
+  });
+
+  it('getPoliticianContext drops reasoning whose same-season answer is a mismatch, as for a blank', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContext('p1', 't1');
+    const sql = sqlOf();
+    expect(sql).toMatch(/\(a\.value = 0 OR NOT \(/);
+    expect(sql.search(VERSION_PRED)).toBeGreaterThan(sql.indexOf(') x'));
+  });
+
+  it('getPoliticianContextAll drops the same reasoning, after the per-topic collapse', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianContextAll('p1');
+    const sql = sqlOf();
+    expect(sql.search(VERSION_PRED)).toBeGreaterThan(sql.indexOf(') x'));
+  });
+
+  it('getPoliticianCitations drops the block, outside the pa collapse', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianCitations('p1');
+    const sql = sqlOf();
+    expect(sql).toMatch(/pa\.value IS NULL OR \(\s*NOT EXISTS/);
+    expect(sql.search(VERSION_PRED)).toBeGreaterThan(sql.indexOf(') pa ON true'));
   });
 });

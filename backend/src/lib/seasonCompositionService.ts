@@ -135,6 +135,7 @@ const LADDERS_SQL = `
 //   Every OTHER consumer must not see them, because the ladder text they are
 //   rendered beside follows the OPEN season and would disagree.
 const DISTRIBUTION_SQL = `
+  -- @version-scope: admin compose screen — an editor's view of what the draft season would look like, not a voter read; it counts every newest chair so the editor can see what re-research is owed.
   SELECT x.topic_id, x.value::int AS value, count(*)::int AS n
     FROM (
       SELECT DISTINCT ON (a.politician_id, a.topic_id) a.topic_id, a.value

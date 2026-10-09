@@ -1,5 +1,5 @@
 import { pool } from './db.js';
-import { SEASON_IS_PUBLISHED } from './seasonService.js';
+import { SEASON_IS_PUBLISHED, writtenForServedVersion } from './seasonService.js';
 
 export interface StanceCount {
   id: string; // inform.compass_stances.id — stable handle for per-stance references
@@ -119,7 +119,7 @@ const USER_COUNTS_SQL = `
 const POLITICIAN_COUNTS_SQL = `
   WITH latest AS (
     SELECT DISTINCT ON (a.politician_id, a.topic_id)
-           a.topic_id, a.value, a.write_in_text
+           a.topic_id, a.value, a.write_in_text, a.topic_revision_id
       FROM inform.politician_answers a
       JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
      ORDER BY a.politician_id, a.topic_id, s.number DESC
@@ -130,6 +130,9 @@ const POLITICIAN_COUNTS_SQL = `
          (COUNT(*) FILTER (WHERE write_in_text IS NOT NULL))::int AS write_ins
   FROM latest
   WHERE value <> 0
+    -- @version-scope: written-for-served — a chair written for another ladder version would be
+    -- bucketed under a rung label that now means something else. After the collapse, like the zero.
+    AND ${writtenForServedVersion('latest.topic_id', 'latest.topic_revision_id')}
   GROUP BY topic_id, value
 `;
 
@@ -155,7 +158,7 @@ const USER_TOTALS_SQL = `
 const POLITICIAN_TOTALS_SQL = `
   WITH latest AS (
     SELECT DISTINCT ON (a.politician_id, a.topic_id)
-           a.politician_id, a.value
+           a.politician_id, a.topic_id, a.value, a.topic_revision_id
       FROM inform.politician_answers a
       JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
      ORDER BY a.politician_id, a.topic_id, s.number DESC
@@ -164,6 +167,8 @@ const POLITICIAN_TOTALS_SQL = `
          COUNT(DISTINCT politician_id)::int  AS respondents
   FROM latest
   WHERE value <> 0
+    -- @version-scope: written-for-served — same collapse-then-filter as POLITICIAN_COUNTS_SQL.
+    AND ${writtenForServedVersion('latest.topic_id', 'latest.topic_revision_id')}
 `;
 
 interface TotalsRow {
