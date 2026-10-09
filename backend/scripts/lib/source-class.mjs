@@ -15,22 +15,26 @@
  *                     backlog and sent readers to rows that were already sound.
  *   'specific'        anything else: a bill, a roll call, a news article, a campaign site.
  *
- * 🔴 WHY 'candidate-page' IS A CLASS AND NOT AN EXEMPTION. A URL test is a claim about the URL, not
- * about the page. Measured 2026-10-08 over all 160 Ballotpedia pages the corpus deep-links:
+ * 🔴 WHY 'candidate-page' IS A CLASS AND NOT AN EXEMPTION. A URL test is a claim about the URL,
+ * not about the page, and that gap is a design fact rather than a tally of offenders. The repo
+ * already carries NO_SURVEY_NOTICE in candidate-connection.mjs because an earlier sweep met pages
+ * whose section said the candidate never answered. Pages also change after a row is written.
  *
- *     84 pages / 285 rows   the section carries real Candidate Connection answers
- *     57 pages / 215 rows   no survey, but Ballotpedia quotes the candidate's own campaign website
- *                           under the same heading -- still the candidate's words
- *     19 pages /  58 rows   no survey AND no candidate words: the anchor is all there is
+ * ✅ MEASURED 2026-10-08 over all 160 Ballotpedia pages the corpus deep-links, and the current
+ * population is clean: 143 pages state a completed Candidate Connection survey, 16 more carry no
+ * survey but quote the candidate's own campaign site under the same heading, and the single page
+ * left over was read by hand and also carries his own policy statements. ZERO pages hold the
+ * anchor and nothing behind it. BallotReady the same way: 31 of 33 profiles / 131 of 137 rows
+ * carry an Issue Stances section.
  *
- * So ~90% of deep-linked rows are properly sourced and the remaining 58 are NOT, and no URL can
- * tell them apart. Exempting the anchor outright would have dropped those 58 out of every reading
- * queue while they look like the remedy the gate asks for. They stay in a queue of their own.
- * BallotReady measured the same way: 31 of 33 profiles / 131 of 137 rows carry Issue Stances.
+ * ⚠ AN EARLIER VERSION OF THIS COMMENT CLAIMED 19 PAGES / 58 ROWS WERE EMPTY. That was four bugs
+ * in the sweep, not a finding -- chiefly un-decoded HTML entities, so every pattern containing an
+ * apostrophe failed against Ballotpedia&#39;s. The full account, and the corrected numbers, are in
+ * data/stance-research/2026-10-08-campaign-themes-anchor-sweep.json.
  *
  * ⚠ The CI gate (check-stance-sources.mjs) carves out the same anchor on the URL alone, because
- * SQL cannot fetch a page. That is a deliberate, documented limit there -- and it means those 58
- * rows pass BALLOTPEDIA_ONLY today. See data/stance-research/2026-10-08-anchor-without-survey.json.
+ * SQL cannot fetch a page. That remains a documented limit there; it is a standing exposure, not
+ * a backlog of known-bad rows.
  */
 import { CC_SECTION_ID } from './candidate-connection.mjs';
 

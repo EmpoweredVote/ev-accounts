@@ -1,0 +1,36 @@
+{
+ "pass": "What is behind a Ballotpedia #Campaign_themes anchor — all 160 pages the corpus deep-links (2026-10-08)",
+ "supersedes": "2026-10-08-anchor-without-survey.json, which claimed 19 pages / 58 rows carry the anchor and no candidate words. That file was wrong and is deleted. See `corrections` below.",
+ "finding": "Every one of the 160 pages carries the candidate's own words. There is no anchor-without-substance queue.",
+ "counts": {
+  "pages_deep_linked_by_the_corpus": 160,
+  "pages_stating_a_completed_Candidate_Connection_survey": 143,
+  "pages_with_no_survey_but_a_quoted_campaign_website": 16,
+  "pages_needing_a_human_read": 1,
+  "pages_carrying_nothing_from_the_candidate": 0,
+  "source_mentions_covered": 558
+ },
+ "the_one_page_read_by_hand": {
+  "page": "https://ballotpedia.org/Glen_Sturtevant",
+  "why_it_survived_the_automated_test": "Its section records that he did not complete the 2023 or 2019 surveys, then prints a 2015 block of policy statements under a bare year heading with no 'Campaign website' label for a matcher to find.",
+  "what_is_actually_there": "Substantive policy text in his own voice — 'I'll be a vote for lower taxes and free market, pro-growth economic policies' — so it belongs with the quoted-campaign-site group.",
+  "verdict": "own words"
+ },
+ "corrections": [
+  "THIS SWEEP WAS WRONG THREE TIMES BEFORE IT WAS RIGHT, and each error inflated the same number. Recorded because the shape repeats.",
+  "1. script and style were stripped only inside the already-sliced section, so a page whose Campaign themes block opens with Ballotpedia's survey stylesheet had CSS read as prose.",
+  "2. the no-survey notice was tested BEFORE the affirmative one. A page saying both 'completed ... in 2026' and 'did not complete ... in 2020' scored as having no survey. Ballotpedia lists every cycle it has asked about, so most pages say both.",
+  "3. HTML ENTITIES WERE NOT DECODED. Ballotpedia writes Ballotpedia&#39;s, so every pattern containing an apostrophe failed silently on entity-encoded pages. This alone moved 33 pages.",
+  "4. the own-words test looked for one phrasing ('campaign website stated the following') when the real structure is a 'Campaign website' subsection, or a bare year heading above a quote.",
+  "The published figures went 19 pages / 58 rows -> 15 / 53 -> 1 / 4 -> 0 as each was fixed. A detector that keeps finding the same defect in smaller numbers is not converging on a finding; it is converging on its own bugs."
+ ],
+ "method": [
+  "Fetched each distinct page with a browser user-agent, stripped script and style from the WHOLE document, took the text of the section introduced by id=\"Campaign_themes\" up to the next h2, and HTML-unescaped it before matching.",
+  "Tested the affirmative first: /completed\\s+Ballotpedia'?s\\s+(?:\\d{4}\\s+)?Candidate Connection survey/i. Only on no match did the no-survey notice and then the own-words test apply.",
+  "⚠ Ballotpedia answers 202 to a fast sweep. 122 of the first 160 requests were rate-limited and had to be re-fetched at one every three seconds. A 202 is a challenge, not an absent page."
+ ],
+ "what_this_does_not_settle": [
+  "That the anchor is a safe exemption in general. A URL test still cannot see a page, pages change, and scripts/lib/candidate-connection.mjs carries NO_SURVEY_NOTICE because an earlier sweep met real cases. The three-class model in scripts/lib/source-class.mjs stands on that reasoning, not on a count of current offenders.",
+  "That the cited passage is IN the section. This sweep asks only whether the page carries the candidate's words at all. Test 2 in candidate-connection.mjs — the passage found inside the section — is a separate, stricter check and is not run here."
+ ]
+}
