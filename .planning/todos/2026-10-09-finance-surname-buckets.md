@@ -57,7 +57,66 @@ created by the merge, not by the bug. That is the whole point.
 An earlier draft of this note reported 2,614 disagreements corpus-wide. **That number is wrong** and
 came from predicate (1); the defensible figure is the table above.
 
-## ▶ THE ONE GENUINE MERGE: JOHN FLEMING — needs a decision, not a migration
+## ✅ THE ONE GENUINE MERGE: JOHN FLEMING — DONE, `CC_0215`, applied 2026-10-09
+
+Retired `8be7e981` into `a750bce8` with a ledger row. 5 answers carried across, 15 duplicates and 17
+context rows deleted, the Senate candidacy term and `fec_senate:S6LA00318` re-pointed, the duplicate
+image row deleted. The canonical row now holds 21 answers and still reads as holding exactly **one**
+current office — the closed candidacy term cannot surface as current, because
+`essentials.current_office_holders` filters on `term_end >= CURRENT_DATE`.
+
+### 🔴🔴 THE DECISION WENT TO RUNG 5, AND THE OLD REASONING WAS FACTUALLY WRONG
+
+The canonical row sat at **4** on Season 2 `same-sex-marriage` on this sentence: *"His position is
+state authority to restrict SSM, **not a federal constitutional ban**."* **He cosponsored a federal
+constitutional ban.**
+
+congress.gov lists `Rep. Fleming, John [R-LA-4]*` as an **original cosponsor** of **H.J.Res.32,
+"Marriage Protection Amendment", 114th Congress, 02/12/2015** — one of 37. Its text would write into
+the Constitution that marriage *"shall consist only of the union of a man and a woman"*, and that no
+constitution may be read to require that marriage **or the legal incidents thereof** be conferred on
+any other union.
+
+▶ **RUNG 4 IS EXCLUDED BY THE INSTRUMENT.** Rung 4 requires recognising civil unions; the "legal
+incidents" clause bars any requirement to confer them. Rungs 1–3 all permit same-sex marriage.
+**Rung 5 is reached by elimination from the document**, not by reading its label.
+
+⚠ The caveat is kept in the voter-facing prose: the amendment denies recognition nationwide rather
+than making same-sex marriage a crime, while rung 5's wording says "illegal".
+
+🔴 **BOTH ROWS HAD RESTED ON ontheissues.org — AN AGGREGATOR — FOR A CLAIM THIS STRONG.** The row now
+cites the bill text and the cosponsor list. 🔴 **congress.gov answers 403 to curl even with a browser
+user-agent; it was read in Playwright.**
+
+🔴 **A DUPLICATE CAN HIDE A WRONG READING, NOT JUST A SPLIT.** The split was the visible problem. The
+defect was that the surviving row published an unevidenced chair resting on a sentence the record
+contradicts. ▶ **When two rows disagree, do not just pick one — check whether either is right.**
+
+### Rules this merge paid for
+
+- 🔴 **THE PRIMARY KEY DECIDES MOST OF A STANCE MERGE.** `politician_answers` is PK
+  `(politician_id, topic_id, season_id)`. Overlapping pairs cannot be re-pointed — the key collides,
+  so they are deleted. Only the rows the canonical lacks move. Only an **open-season** disagreement
+  is ever an editorial decision.
+- 🔴 **THE CLOSED-SEASON HATCH IS FOR MOVING A ROW BETWEEN ROWS OF THE SAME PERSON.** `SET LOCAL
+  inform.allow_closed_season_write = 'on'` was needed to re-point 4 Season 1 answers and to delete
+  the duplicate's Season 1 rows. No closed-season value, reasoning or source was edited.
+- 🔴 **DO NOT COPY `photo_origin_url` ACROSS IN A MERGE.** The retired row's origin was the
+  provenance of its own small congressional thumbnail. Attaching it to the canonical row — which
+  serves a different, larger portrait — would assert a false source. The duplicate
+  `politician_images` row is **deleted**, not moved, or the grid gets two `type='default'` rows.
+- 🔴 **`ev_api` HAS NO SELECT ON `politician_id_bridge`**, so a pre-flight that counts it dies with
+  `permission denied` on prod while passing under the MCP. Its FK is `NO ACTION`, so the constraint
+  is the real guard; the check is now privilege-aware.
+- 🟢 **TWO CONTROLS, BOTH WATCHED FAILING FIRST:** a planted `politician_name_aliases` row made the
+  CASCADE guard abort, and a planted gate-visible orphan context made the ORPHAN_CONTEXT guard fire.
+- **The 2 orphan contexts were deleted** (`homelessness`, `voting-rights`, both Season 1, both with
+  no answer at all). Captured first to
+  `backend/data/stance-retirement/2026-10-09-cc0215-fleming-orphan-context.json`.
+
+---
+
+### The state before the merge, kept for the record
 
 | | `a750bce8` (active) | `8be7e981` (inactive) |
 |---|---|---|
@@ -199,8 +258,7 @@ politician"* and the tamper rolled back. The guard that matters was watched fail
 
 ## ▶ WHAT IS STILL OPEN
 
-1. **John Fleming** — the one genuine merge. Blocked on the operator's season decision; the overlap is
-   now measured, see that section above.
+1. ✅ **John Fleming is done** — `CC_0215`, applied 2026-10-09. See the section above.
 2. **The disputed buckets themselves** (72 sources across the three rows, plus the other four rows
    `CC_0213` touched). Adjudicating them is what unblocks a real retirement.
 3. **Hurtado's and Dutra's own contributions were never ingested.** Their committees exist as sources
