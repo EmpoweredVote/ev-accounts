@@ -25,7 +25,7 @@ short side at the ORIGIN, portrait orientation, press / official / campaign sour
 |---|--------|------|--------|-------------------|
 | 1 | ~~**Curren D. Price Jr.**~~ ✅ **DONE 2026-10-07** (`CC_0195`+`CC_0196`) | CD 9 | **250×333** — under the floor. Only LA-city row on the `<uuid>/default.jpeg` path, and it carries **no `photo_origin_url` at all** (no provenance). | ✅ **YES.** `cd9.lacity.gov/sites/g/files/wph2021/files/2022-02/Curren_D_Price_Jr_Portrait.jpg` — **2213×2728**, the *same photograph*, 8.8× larger. Identity confirmed by the city's own alt, "Councilman Curren D Price Jr". |
 | 2 | ~~**Imelda Padilla**~~ ✅ **DONE 2026-10-07** (`CC_0195`+`CC_0196`) | CD 6 | Environmental shot outside a hot-dog stand. Head ≈15% of frame. Commercial signage behind her. | ✅ **YES.** `cd6.lacity.gov/wp-content/uploads/2024/03/photo-imelda-portrait-02.jpg` — **1500×1500**, alt "Imelda Padilla Portrait", City Hall background. |
-| 3 | **Tim McOsker** | CD 15 | Street scene. Head ≈15% of frame, cars and trees behind him. | ❌ **No.** The city's own file (`/meet-tim`) is this same image, and its ORIGIN is only **400×267**. Real ceiling at lacity.gov. Lead: filename is Flickr id `51857445559`, so a larger original may exist on Flickr. |
+| 3 | ~~**Tim McOsker**~~ ✅ **DONE 2026-10-09** (`CC_0209`) | CD 15 | Street scene. Head ≈15% of frame, cars and trees behind him. | ❌ **No.** The city's own file (`/meet-tim`) is this same image, and its ORIGIN is only **400×267**. Real ceiling at lacity.gov. Lead: filename is Flickr id `51857445559`, so a larger original may exist on Flickr. |
 | 4 | Ysabel J. Jurado | CD 14 | Loud mural background. Head size is acceptable. **Borderline — low priority.** The city serves the same frame; its alt literally reads "Photo of Councilmember Jurado in front of a mural". | — |
 
 ### Bookkeeping only (image is correct, the record is untidy)
@@ -404,6 +404,64 @@ these four safe is the same office in consecutive stages of the same election.
   alone — carry a positive control, as the scans here did.
 - The API exposes the **serving** URL in a field named `photo_origin_url`. That is not the database
   column of the same name, which holds provenance. Do not read one for the other.
+
+### 2026-10-09, batch 8 — McOsker (`CC_0209`)
+
+**6 of the original 19 remain.** Verified on the rendered page.
+
+| Was | Now |
+|---|---|
+| 600×750, an enlargement of a 400×267 street scene; head ≈15%, face clipped at the card's left edge | **1032×1290**, head 49.5%, air above the hair 7.8%, face centre exactly 50.0%, chroma 36.5. **A pure crop with no resize.** |
+
+Shipped: `Tim_McOsker_full_portrait_(cropped).jpg` from Wikimedia Commons, **1045×1393** — the
+official studio portrait, suit and tie against the city flag, the same frame the other nineteen LA
+officeholders are shot in. Author **Los Angeles City Council District 15**, 13 January 2023,
+**public domain** under the California Public Records Act (PD-CAGov, citing *County of Santa Clara
+v. CFAC*).
+
+### 🔴 THE "400×267 CEILING AT LACITY.GOV" WAS A COPY OF A COPY
+
+This worklist recorded the city as a real ceiling. It was — of a borrowed thumbnail.
+`cd15.lacity.gov/meet-tim` serves a Drupal 636×358 derivative of a file the city had itself
+downloaded from **Flickr at the `_w` size**, which is 400 px wide. The city was never the
+photograph's publisher, so measuring its ceiling measured nothing.
+
+▶ **When an origin filename looks borrowed, chase the name before trusting the ceiling.** The
+Flickr id in that filename is what unlocked this — not by yielding the photo, but by proving the
+city was a dead end and sending the search elsewhere.
+
+### 🔴 THE FLICKR LEAD RESOLVED, AND IS REJECTED ON LICENCE AND ON PICTURE
+
+`flickr.com/photos/193472024@N08/51857445559` is **his own account**, so a permitted source class.
+But the page states **All rights reserved**, the file is titled
+`©CourtneyLindbergPhotography_082421_3326`, and Flickr serves no larger than `_b` 1024×683
+(`_h` and `_k` both 410). It is landscape and a street scene; a compliant 4:5 crop yields about
+350×438. Worse licence, worse picture, smaller output.
+
+### 🔴 WE WERE ASSERTING `cc_by_sa_4.0` OVER AN ALL-RIGHTS-RESERVED PHOTOGRAPH
+
+The row being replaced claimed `cc_by_sa_4.0`. Nobody licensed that file CC BY-SA — it is a
+derivative of an ARR Flickr photograph with a photographer's copyright in its title. Same defect
+class as Price's `cc_by_sa_4.0` (`CC_0195`) and Schmerelson's `government-official` over a NULL
+origin (`CC_0204`): **a licence written from the shape of a URL rather than from anything the
+source said.** ▶ Three of these have now been found in one programme. Treat any licence on a row
+whose origin is a CMS derivative path as unverified until the real publisher is identified.
+
+### ⚠ THE OPERATOR RULED ON FACEBOOK PROVENANCE (2026-10-09)
+
+Commons records this portrait's origin as a council-district **Facebook** post. The house rule is
+press/official only, no Facebook photographs. Ruled outside that rule: the **author** is the
+government body and the work is public domain **by statute**, not by anyone's permission —
+Facebook is the venue the city published in, not the rights holder. The citation points at Commons;
+the Facebook origin is described in the licence prose.
+
+### ⚠ THE GATE CANNOT VALIDATE LICENCE PROSE
+
+A tamper control that corrupted the licence TEXT passed green, because the migration writes that
+text and then verifies it matches what it wrote — self-consistent by construction. The gate checks
+the **shape** of the origin URL (external, image extension, not our bucket, not social media) and
+that the pair agrees. It cannot know whether the words are true. Only a human reading the source
+page can.
 
 ## Notes
 
