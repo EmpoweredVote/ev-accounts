@@ -624,3 +624,67 @@ and confirmed on the live API: both politicians return `raised=0`, `outside=0`.
 
 Both retirements are recorded in `essentials.politician_merges` with the evidence and a `moved`
 count, so the deleted ids stay resolvable outside the FK graph.
+
+---
+
+## 🔴 THIRTEEN MORE DUPLICATE ROWS, FOUND BY THE CONFIRMED-518 AUDIT (2026-10-10, `CC_0221`)
+
+The audit of the **`confirmed`** CAL-ACCESS population found the same defect this file documents,
+still live, on **thirteen more inactive rows**. `CC_0221` fixed the attribution on eight of them.
+**None of the thirteen is retired, and all thirteen belong on this backlog.**
+
+🔴 **`check:duplicate-people` is blind to every one of them** — all thirteen are `is_active = false`,
+which is the archived-row blindness recorded against `CC_0211`. They will not appear in that guard's
+output, so they have to be carried by name.
+
+### Group A — eight were SURNAME BUCKETS. Attribution fixed by `CC_0221`; merge now safe.
+
+| row | sources | after `CC_0221` | live twin |
+|---|---|---|---|
+| Dan O'Brien `80207395` | 44 | 34 n/a · **10 kept** | Council Member, **Culver City** |
+| Paulette Francis `7e7834d9` | 23 | 17 n/a · 6 kept | — (no live twin found) |
+| Tasha Cerda `7e189f77` | 10 | 5 n/a · 1 disputed · 4 kept | Mayor, **Gardena** |
+| Lauren Meister `55233c22` | 8 | 2 n/a · 1 disputed · 5 kept | Council Member, **West Hollywood** |
+| Maria Davila `4931b7d2` | 6 | 4 n/a · 2 kept | Council Member, **South Gate** |
+| Haidar Awad `156a8cc8` | 4 | 1 n/a · 1 disputed · 2 kept | — (no live twin found) |
+| Marvin Crist `ba8b83fd` | 3 | 1 n/a · 2 kept | — (no live twin found) |
+| Drew Boyles `39d282fe` | 2 | 1 n/a · 1 kept | Council Member, **El Segundo** |
+
+▶ **`CC_0221` is the prerequisite `CC_0214`'s rule asks for**: a bucket row is retired only once its
+sources are adjudicated. That is now done for these eight. 🔴 **The 32 "kept" sources still include
+undetermined ones** — surname-only committee names that name nobody. They are *not* asserted to
+belong to the row they sit on. **Re-read them at merge time; do not carry them blind.**
+
+### Group B — five are SPLITS, not buckets. The opposite disposition.
+
+These five inactive rows hold CAL-ACCESS sources that **correctly name the person**, while a live
+row of the same `full_name` holds the seat. Nothing is misattributed; the person is simply in two
+pieces.
+
+| row | sources | all name them? |
+|---|---|---|
+| Lance Giroux | 2 | yes |
+| Michelle Keldorf | 2 | yes |
+| Chris Pimentel | 1 | yes |
+| Al Rios | 1 | yes |
+| Danny Hang | 1 | yes |
+
+⚠ **A bucket and a split need opposite handling, and the committee name is what tells them apart.**
+For Group A the foreign sources must be detached *before* the merge, or the merge publishes them on
+a live officeholder — the `CC_0220` incident. For Group B the sources must be **carried onto the
+live row**, because withholding them loses finance that is genuinely the person's.
+
+### Two that are neither
+
+**Joe Vinatieri** (7 sources) and **Lula Davis Holmes** (4) are inactive rows whose sources all name
+them correctly, but no live twin of the same `full_name` exists. They are either departed
+officeholders or a `full_name` the guard splits differently — the third blindness `CC_0217`
+recorded against Angie Reyes English. **Check the name split before concluding there is no twin.**
+
+### What the audit measured, for whoever picks this up
+
+`.planning/todos/2026-10-10-cal-access-confirmed-518-audit-log.md` has the method and the full
+result. The two numbers that matter here: **the money side came back clean** — 94.8% of the
+$357.4M these sources publish was checked against CAL-ACCESS candidate pages and not one
+money-carrying source sat on the wrong politician — and **every defect found carried $0**. The
+surname-bucket defect is an attribution problem on quiet rows, not a money problem on loud ones.

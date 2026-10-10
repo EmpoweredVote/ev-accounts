@@ -130,3 +130,75 @@ proves that because their pages were loaded too. **Load the lookalikes, not just
 - ⚠ **A politician can hold two candidate filer ids** (Al Muratsuchi: `1315952` and `1478875`). The
   second listed nine of the first's ten committees. Union them.
 - 🟢 One `browser_evaluate` did 21 candidate pages, and another did 154 list pages. Batch it.
+
+---
+
+# PASS 2 — the remaining 195, and where the audit now stands
+
+After `CC_0221` the `confirmed` / `candidate_committee` population is **449**, down from 518.
+**All 518 have now been through at least one test.** Depth varies, and this records which is which.
+
+| how it was checked | sources |
+|---|---|
+| against the CAL-ACCESS **candidate page** (primary; 43 politicians) | 223 |
+| against the **committee's own official name** (the 8 bucket rows) | 100 |
+| by **shape detector**, with every flagged row read individually | 195 |
+| | **518** |
+
+## The 195 contain no provable defect
+
+Four shapes were tested. Every source that tripped one was read.
+
+| shape | n | verdict |
+|---|---|---|
+| no committee name at all | 0 | — |
+| forename absent from the committee name | 17 | **all benign** |
+| oppose-shaped (`OPPOS`/`AGAINST`/`RECALL`/`NO ON`/`STOP`) | 0 | — |
+| ballot-measure-shaped | 0 | — |
+| support-shaped (`SUPPORT`/`FRIENDS OF`/`NEIGHBORS`/`COALITION`) | 5 | **all benign** |
+| ordinary, forename present | 173 | not individually read |
+
+⚠ **Both detectors that fired are high-false-positive, and that is the finding.**
+
+- 🔴 **`FRIENDS OF <name>` IS THE STANDARD CALIFORNIA NAME FOR A CANDIDATE'S OWN CONTROLLED
+  COMMITTEE**, not an independent one. All five "support-shaped" hits are the person's own:
+  `FRIENDS OF CHELSEA BYERS`, `FRIENDS OF ELOY MORALES JR.`, `FRIENDS OF LULA DAVIS-HOLMES`,
+  `FRIENDS OF RICK RAMIREZ`, `FRIENDS OF ROBERT PULLEN-MILES`. A support/oppose detector must key on
+  `IN SUPPORT OF` / `SUPPORTERS OF` / `OPPOSING`, never on `FRIENDS OF`.
+- 🔴 **A missing forename is normal in a LOCAL race.** All 17 are surname-only committees for city
+  council, mayor or school board — `LUNA FOR SHERIFF 2026`, `ANCONA FOR MAYOR 2024`,
+  `SCHMERELSON FOR SCHOOL BOARD 2024`. ⚠ One is a **nickname**, not an absence:
+  `GIN FOR ALHAMBRA UNIFIED ... ; BOB` on **Robert** Gin. The forename test cannot see Bob/Robert,
+  Mike/Michael or Tony/Anthony, and treating its silence as a defect signal would have disputed
+  seventeen correct rows.
+
+## The residual risk, stated plainly
+
+The 173 unread sources carry the right forename **and** the right surname. What this audit cannot
+rule out for them is a **different person with the same full name** — and the candidate page is the
+only test for that. Most of the 173 sit on local officials who are not CAL-ACCESS *state*
+candidates, so no candidate page exists. ▶ **That residual is best closed by the dedupe programme,
+not by this audit**: a same-full-name collision is a duplicate-row question.
+
+## Sources on OTHER inactive rows — checked, and they are splits, not buckets
+
+21 of the 195 sit on inactive rows. **Every one names its politician correctly**, so none is a
+bucket. Five of those rows have a live twin of the same `full_name` — Lance Giroux, Michelle
+Keldorf, Chris Pimentel, Al Rios, Danny Hang — making them **splits**, whose sources should be
+**carried onto the live row** at merge rather than detached. The opposite of Group A.
+
+⚠ **Joe Vinatieri (7) and Lula Davis Holmes (4)** are inactive, correctly attributed, and show no
+live twin. Check the `full_name` split before concluding there is none — that is the Angie Reyes
+English blindness.
+
+All thirteen rows are now on the dedupe backlog: `.planning/todos/2026-10-09-finance-surname-buckets.md`.
+
+## Still open, unchanged
+
+| source | committee | money | question |
+|---|---|---|---|
+| `1480126` | `DIXON FOR SUPERVISOR 2026; DIANE` | **$798,784** | Absent from Diane Dixon's candidate page, though her **2022** supervisor committee is on it. |
+| `1451483` | `SOLACHE FOR CITY COUNCIL 2022; FRIENDS OF` | $76,121 | Absent from Jose Solache's page; Lynwood, so plausibly the coverage gap. |
+| `1376762` | `MALHI FOR ASSEMBLY 2016` | $31,050 | On `MALHI, SATINDER S.`'s page. Our row is `Raj Malhi`. Same person, or two? |
+
+These three are the only money-carrying sources the audit could not close, out of $357.4M.
