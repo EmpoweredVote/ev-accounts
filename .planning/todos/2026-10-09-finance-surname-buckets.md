@@ -524,6 +524,64 @@ cal_access IE row renders an **unnamed card showing $0**.
 one). **Run it on every `candidate_committee` whose name contains "FOR", "FRIENDS OF", "COALITION",
 "WORKING FAMILIES" or "SPONSORED BY" before trusting the type.**
 
+## ✅ THE TWO IE COMMITTEES PUBLISH — code fix (PR #969) + `CC_0219`, 2026-10-09
+
+`getOutsideSpendingForPolitician` listed committees with **no** `source_system` filter but gathered
+their rows with `source_system = 'la_socrata'` **hardcoded**, and read the label from
+`notes->>'cmt_nm'` only. Both CTEs now **correlate** the source system and the label COALESCEs
+`cmt_nm` with `committee_name`. `CC_0219` then flipped the two parked sources to `confirmed`.
+
+Live API after, with own fundraising **unchanged** on both — outside spending is reported beside a
+politician's money, never added to it:
+
+| | own fundraising | outside spending |
+|---|---|---|
+| Melissa Hurtado | $3,171,325.74 / 348 (unchanged) | **$344,843.80 / 8**, named, 4 top donors |
+| John Erickson | $1,373,852.72 / 966 (unchanged) | **$25,000 / 1**, named |
+| Traci Park (control) | $953,448.90 / 1,430 | $4,050 / 20 — **unchanged** |
+
+🟢 **Traci Park is the regression control that matters.** Hers is the only pre-existing confirmed
+IE link, `la_socrata` filer `1442937` — and **three `cal_access` rows carry that same filer id**.
+The widened query did not absorb them.
+
+### 🔴🔴 I SHIPPED A WRONG REASON, AND THE DATA DISPROVED IT
+
+The first version justified correlating by claiming a CAL-ACCESS filer id and an la_socrata
+committee id could name two unrelated committees. **Measured: false.** `la_socrata` **reuses
+CAL-ACCESS filer ids** — of 36 shared ids naming a committee in both systems, **all 36 agree and
+none collide**; the 11 that failed a crude string match were the same committee with the forename
+moved to the tail (`Bob Blumenfield for City Council 2013` / `BLUMENFIELD … , BOB`).
+
+The real hazard is **DOUBLE COUNTING**. `contributions` is unique on
+**`(data_source, source_transaction_id)`**, so one donation ingested from both systems is two rows.
+**193 ids are shared and 3 carry contributions in both** — `1349095` (Blumenfield 2013) is 446 rows
+via cal_access against 470 via la_socrata, the same money twice.
+
+▶ **A HAZARD CLASS IS A CLAIM ABOUT THE DATA LIKE ANY OTHER — MEASURE WHETHER IT EXISTS BEFORE
+WRITING IT DOWN AS THE REASON FOR A DESIGN.** The fix was right; the reason was invented, and the
+prod query was one minute away.
+
+### Controls
+
+- Tests written first, **watched failing against the pre-fix service** (3 of 5 red; the 2
+  existing-behaviour tests green). The double-count control was then **watched failing against the
+  naive version**, which reports `200 / 2` where the truth is `100 / 1`.
+- `CC_0219`: a parked row retyped → `1489255 resolves to 0 parked ie_committee rows`. ⚠ The first
+  own-fundraising control **failed for the wrong reason** — an INSERT hit
+  `idx_politician_source_system_extid`, a UNIQUE index on
+  `(essentials_politician_id, source_system, external_id)`, before the gate could see it. Re-run by
+  promoting the discovery placeholder instead, it fired correctly:
+  `2 of these committees are confirmed as OWN fundraising`.
+  ▶ **A tamper that cannot reach the comparison proves nothing.**
+
+### ⚠ A third `confirm-cal-access.ts` mistype
+
+`1489255` — "ERICKSON FOR STATE SENATE 2026, **SPONSORED BY UNITE HERE LOCAL 11**" — was typed
+`candidate_committee`. Absent from his candidate page, so it is independent spending. **That is
+three committees the candidate-page test has reclassified**, two of them Hurtado's. ▶ Run it on
+every `candidate_committee` whose name contains FOR, FRIENDS OF, COALITION, WORKING FAMILIES or
+SPONSORED BY before trusting the type.
+
 ## ✅ THE LAST TWO SCRAPED DUPLICATES RETIRED — `CC_0220`, applied 2026-10-09
 
 Operator ruling, **taken against my recommendation** (recorded above): retire them anyway.
