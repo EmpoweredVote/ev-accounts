@@ -9,10 +9,14 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 // surname buckets: two real IE committees (Melissa Hurtado's business coalition, John Erickson's
 // UNITE HERE Local 11 committee) had to be parked at `not_applicable` for exactly this reason.
 //
-// ⚠ THE NAIVE FIX IS WRONG. The gathering CTE joins on `external_id` alone, so simply deleting
-// the source_system filter merges a CAL-ACCESS filer id with an la_socrata committee id that
-// happens to be the same string. Both are bare numbers. `should not merge two committees` below
-// is the control for that, and it must fail against the naive fix.
+// ⚠ THE NAIVE FIX IS WRONG, THOUGH NOT FOR THE REASON IT FIRST LOOKED. `la_socrata` reuses
+// CAL-ACCESS filer ids, so a shared id is the SAME committee, not a collision — measured on prod
+// 2026-10-09: of 36 shared ids carrying a name in both systems, 36 name the same committee and
+// none collide. The hazard is DOUBLE COUNTING. The gathering CTE joins on external_id alone, so
+// deleting the source_system filter sums both systems' ingests of one committee: measured, 193
+// ids are shared and 3 carry contributions in both systems (1349095 is Blumenfield 2013, 446 rows
+// via cal_access against 470 via la_socrata — the same money, twice). So the source system is
+// CORRELATED between the CTEs. `does not sum one committee across source systems` is the control.
 //
 // The fake pool models the two tables and INTERPRETS each query's own predicates — which
 // source_system values it admits, and which `notes` keys it reads, in order — so these tests
@@ -188,29 +192,35 @@ describe('outside spending', () => {
     ]);
   });
 
-  it('should not merge two committees whose ids collide across source systems', async () => {
-    // A CAL-ACCESS filer id and an la_socrata committee id are both bare numbers, so they can
-    // be the same string while naming two unrelated committees. Dropping the source_system
-    // filter instead of correlating it would sum them together.
+  it('does not sum one committee across source systems', async () => {
+    // `la_socrata` reuses CAL-ACCESS filer ids, so these two rows are the SAME committee seen by
+    // two ingests — and its contributions were loaded under both. The unique constraint is on
+    // (data_source, source_transaction_id), so one real donation becomes two rows. Gathering by
+    // external_id alone would report the money twice.
     sources = [
-      ieLink({ id: 's-cal', source_system: 'cal_access', external_id: '1447993', notes: { committee_name: 'THE CAL-ACCESS ONE' } }),
+      ieLink({ id: 's-cal', source_system: 'cal_access', external_id: '1349095', notes: { committee_name: 'BLUMENFIELD FOR CITY COUNCIL 2013, BOB' } }),
       ieLink({
         id: 's-la',
         politician: 'pol-other',
         source_system: 'la_socrata',
-        external_id: '1447993',
-        notes: { cmt_nm: 'AN UNRELATED LA COMMITTEE' },
+        external_id: '1349095',
+        notes: { cmt_nm: 'Bob Blumenfield for City Council 2013' },
       }),
     ];
     contribs = [
-      { id: 'c1', source: 's-cal', amount: 100, donor: 'cal donor' },
-      { id: 'c2', source: 's-la', amount: 999999, donor: 'la donor' },
+      { id: 'c1', source: 's-cal', amount: 100, donor: 'a donor' },
+      { id: 'c2', source: 's-la', amount: 100, donor: 'a donor' }, // the same donation, re-ingested
     ];
 
     const { summary } = await getSummary(POL);
 
     expect(summary.outside_spending.committees).toEqual([
-      expect.objectContaining({ cmt_id: '1447993', cmt_nm: 'THE CAL-ACCESS ONE', total_amount: 100, contribution_count: 1 }),
+      expect.objectContaining({
+        cmt_id: '1349095',
+        cmt_nm: 'BLUMENFIELD FOR CITY COUNCIL 2013, BOB',
+        total_amount: 100,
+        contribution_count: 1,
+      }),
     ]);
   });
 

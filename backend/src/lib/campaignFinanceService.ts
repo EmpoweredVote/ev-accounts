@@ -2539,11 +2539,18 @@ interface IeTopDonorRow {
  * hardcoded `source_system = 'la_socrata'` while the CTE that LISTS the committees carried no such
  * filter, so a confirmed ie_committee link from any other system rendered as a card with an empty
  * name and $0 — which is why two real CAL-ACCESS IE committees had to be parked at
- * `not_applicable` during the surname-bucket adjudication. ⚠ Simply deleting that filter is wrong:
- * the CTEs join on external_id, and a CAL-ACCESS filer id and an la_socrata committee id are both
- * bare numbers, so the same string can name two unrelated committees. The source system is
- * CORRELATED between the two CTEs instead. `campaignFinanceService.outsideSpending.test.ts` pins
- * both halves, the collision case included.
+ * `not_applicable` during the surname-bucket adjudication.
+ *
+ * ⚠ Simply DELETING that filter is wrong, though not for the reason it first looks. `la_socrata`
+ * reuses CAL-ACCESS filer ids, so a shared external_id is the SAME committee, not a collision —
+ * measured 2026-10-09: of 36 shared ids naming a committee in both systems, all 36 agree and none
+ * collide. The hazard is DOUBLE COUNTING. The CTEs join on external_id, and the uniqueness
+ * constraint on contributions is (data_source, source_transaction_id), so one real donation
+ * ingested from both systems is two rows. 193 ids are shared and 3 carry contributions in both
+ * (1349095, Blumenfield 2013: 446 rows via cal_access against 470 via la_socrata — the same money
+ * twice). So the source system is CORRELATED between the two CTEs rather than dropped.
+ * `campaignFinanceService.outsideSpending.test.ts` pins both halves; its double-count control
+ * reports 200/2 instead of 100/1 against the naive version, which was watched failing.
  *
  * Returns { committees: [] } when no IE sources exist — never omits the key.
  */
@@ -2555,9 +2562,10 @@ async function getOutsideSpendingForPolitician(
   // constraint on (data_source, source_transaction_id) means contributions land on whichever
   // politician_source row ingested first. All politician_sources sharing the same cmt_id must
   // be checked so every politician linked to the committee sees the same totals.
-  // ⚠ (cmt_id, source_system) is the key, never cmt_id alone — the same bare number is a valid id
-  // in more than one system. A politician declaring the same cmt_id under two systems would still
-  // collapse into one card, because the response is keyed by cmt_id; nobody does, so it is left.
+  // ⚠ (cmt_id, source_system) is the key, never cmt_id alone — not because ids collide (they do
+  // not; la_socrata reuses CAL-ACCESS filer ids) but because one committee ingested from both
+  // systems holds each donation twice. A politician declaring the same cmt_id under BOTH systems
+  // would still collapse into one card, since the response is keyed by cmt_id; nobody does.
   const totalsResult = await pool.query<IeCommitteeTotalsRow>(
     `WITH ie_cmt_ids AS (
        SELECT external_id AS cmt_id,
