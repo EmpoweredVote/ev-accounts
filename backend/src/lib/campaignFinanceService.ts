@@ -2500,8 +2500,25 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
 export interface OutsideSpendingCommittee {
   cmt_id: string;
   cmt_nm: string;
+  /**
+   * ADR 0008. Direction of this committee's spending RELATIVE TO THIS POLITICIAN.
+   *
+   * 🔴 Required, not optional, and that is deliberate: a consumer must not be able to render
+   * outside spending without having chosen how to say which direction it ran. A committee formed
+   * to recall somebody and one formed to elect them are otherwise the same object — and so are
+   * their `top_donors`, where one list is people who funded them and the other is people who
+   * funded a campaign against them.
+   *
+   * Committees whose direction is unknown are WITHHELD by the query, never defaulted.
+   */
+  support_oppose: 'support' | 'oppose';
   total_amount: number;
   contribution_count: number;
+  /**
+   * 🔴 Under `support_oppose: 'oppose'` these are people who funded a campaign AGAINST the
+   * politician. Rendered like supporters' donations they invert their meaning while looking
+   * identical. ADR 0008 §6 requires the two to be visually and textually distinct.
+   */
   top_donors: Array<{ donor_name: string; amount: number }>;
 }
 
@@ -2514,6 +2531,7 @@ export interface OutsideSpendingResponse {
 interface IeCommitteeTotalsRow {
   cmt_id: string;
   cmt_nm: string;
+  support_oppose: 'support' | 'oppose'; // never null — the query filters NULL out
   total_amount: string;  // numeric -> string
   contribution_count: string; // bigint -> string
 }
@@ -2527,8 +2545,16 @@ interface IeTopDonorRow {
 /**
  * getOutsideSpendingForPolitician returns IE committee spending data linked to a politician.
  *
- * Sources: transparent_motivations.politician_sources rows with source_type='ie_committee'
- * and research_status='confirmed'. Contribution rows are linked via politician_source_id.
+ * Sources: transparent_motivations.politician_sources rows with source_type='ie_committee',
+ * research_status='confirmed' AND support_oppose IS NOT NULL. Contribution rows are linked via
+ * politician_source_id.
+ *
+ * 🔴 ADR 0008: a committee whose DIRECTION is unknown is WITHHELD, never defaulted. There is no
+ * safe default — defaulting to 'support' publishes money raised AGAINST a politician as money
+ * they raised, which is a false statement about a real person. Unknown is withheld here for the
+ * same reason a `disputed` source is withheld and a blank compass spoke is correct.
+ * Evidence a direction from FPPC Form 460 cover page Part 7 (SUPPORT/OPPOSE checkboxes per
+ * candidate, signed under penalty of perjury), then the committee publishes.
  *
  * cmt_id is stored in politician_sources.external_id.
  * cmt_nm is stored in politician_sources.notes as JSON text. `la_socrata` writes it under
@@ -2570,11 +2596,14 @@ async function getOutsideSpendingForPolitician(
     `WITH ie_cmt_ids AS (
        SELECT external_id AS cmt_id,
               source_system,
+              support_oppose,
               COALESCE(notes::jsonb->>'cmt_nm', notes::jsonb->>'committee_name') AS cmt_nm
          FROM transparent_motivations.politician_sources
         WHERE essentials_politician_id = $1
           AND source_type = 'ie_committee'
           AND research_status = 'confirmed'
+          -- ADR 0008: a committee whose DIRECTION is unknown is WITHHELD, never defaulted.
+          AND support_oppose IS NOT NULL
      ),
      ie_all_sources AS (
        SELECT ps.id, ps.external_id AS cmt_id, ps.source_system
@@ -2585,13 +2614,14 @@ async function getOutsideSpendingForPolitician(
      )
      SELECT ic.cmt_id,
             ic.cmt_nm,
+            ic.support_oppose,
             COALESCE(SUM(c.amount), 0)::numeric AS total_amount,
             COUNT(c.*) AS contribution_count
        FROM ie_cmt_ids ic
        LEFT JOIN ie_all_sources ias
               ON ias.cmt_id = ic.cmt_id AND ias.source_system = ic.source_system
        LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = ias.id
-      GROUP BY ic.cmt_id, ic.cmt_nm
+      GROUP BY ic.cmt_id, ic.cmt_nm, ic.support_oppose
       ORDER BY total_amount DESC`,
     [politicianId]
   );
@@ -2608,6 +2638,8 @@ async function getOutsideSpendingForPolitician(
         WHERE essentials_politician_id = $1
           AND source_type = 'ie_committee'
           AND research_status = 'confirmed'
+          -- ADR 0008: must mirror the totals CTE, or a withheld committee's donors leak.
+          AND support_oppose IS NOT NULL
      ),
      ie_all_sources AS (
        SELECT ps.id, ps.external_id AS cmt_id, ps.source_system
@@ -2642,6 +2674,7 @@ async function getOutsideSpendingForPolitician(
   const committees: OutsideSpendingCommittee[] = totalsResult.rows.map((row) => ({
     cmt_id: row.cmt_id,
     cmt_nm: row.cmt_nm ?? '',
+    support_oppose: row.support_oppose,
     total_amount: Number(row.total_amount),
     contribution_count: Number(row.contribution_count),
     top_donors: donorsByCmtId.get(row.cmt_id) ?? [],

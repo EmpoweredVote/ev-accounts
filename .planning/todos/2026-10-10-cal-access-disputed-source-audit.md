@@ -70,7 +70,20 @@ is silent — all four are state politicians, so the candidate page should answe
 ⚠ `politician_sources` has a UNIQUE index on (politician, source_system, external_id): check the
 target does not already hold the id before repointing.
 
-## ▶ NEXT SLICE — the 215 that carry the surname but not at the front
+## ▶ NEXT SLICE — the 212 that carry the surname but not at the front
+
+⚠ **Re-measured after `CC_0223` (2026-10-10): 212 on LIVE rows, not the 215 first reported** — three
+Karen Douglas sources were swept into `CC_0223`. The no-surname bucket on live rows is now **0**.
+⚠ **And there are 64 MORE of the same shape on INACTIVE rows**, which the first count missed:
+**276 in total.** The live 212 are the priority; the inactive 64 carry the same merge hazard as
+`CC_0221`'s eight duplicate rows.
+
+For scale, the whole mig-1792 population now splits:
+
+| | starts with surname | surname not leading | no surname |
+|---|---|---|---|
+| **live rows** (698) | 486 | **212** | 0 ✅ cleared by `CC_0223` |
+| inactive rows (498) | 434 | **64** | 0 |
 
 A read of 18 shows this bucket is **mostly foreign too**, and the matcher's reach is wider than
 surnames — it hit **place names and common nouns**:
