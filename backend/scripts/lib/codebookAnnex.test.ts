@@ -27,6 +27,9 @@ describe('renderAnnexSkeleton', () => {
 });
 
 describe('annexPath', () => {
+  // annexPath uses path.join, so the separator is the platform's. Comparing against a literal
+  // '/'-joined string asserted the separator rather than the segments, and failed on Windows only.
   it('lives under docs/codebook/annex', () =>
-    expect(annexPath('/repo', 'school-vouchers')).toBe('/repo/docs/codebook/annex/school-vouchers.md'));
+    expect(annexPath('/repo', 'school-vouchers').replaceAll('\\', '/'))
+      .toBe('/repo/docs/codebook/annex/school-vouchers.md'));
 });
