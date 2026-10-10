@@ -107,9 +107,15 @@ but against them".**
   support/oppose question:** `1448127` Gipson ($194,000) and `1418587` the Newsom recall committee
   ($33,172.80).
 
-## The single blocker worth naming
+## The single blocker worth naming — now an ADR
 
 **`OutsideSpendingCommittee` has no support/oppose field.** Five committees across `CC_0221`, this
 audit and the closed brief are all waiting on that one schema-plus-read-path decision. Until it
 exists, `disputed` is the honest state: publishing a recall committee under a heading that does not
 say "opposing" is its own false statement about a real person.
+
+▶ **Written up as [`docs/adr/0008-outside-spending-support-or-oppose.md`](../../docs/adr/0008-outside-spending-support-or-oppose.md)
+(status: proposed, 2026-10-10).** It records that **all three currently-published outside-spending
+committees are support by the luck of their names, not by evidence** — so the first oppose committee
+anyone types publishes silently as the politician's own backing. The decision is a nullable
+`support_oppose` that the read path **requires**, because there is no safe default.
