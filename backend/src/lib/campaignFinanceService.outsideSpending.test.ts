@@ -31,7 +31,8 @@ interface Source {
   source_type: string;
   research_status: string;
   support_oppose: 'support' | 'oppose' | null;
-  notes: Record<string, string>;
+  /** RAW TEXT, exactly as the column stores it — `notes` is TEXT, never jsonb. See parseNotes. */
+  notes: string;
 }
 interface Contrib { id: string; source: string; amount: number; donor: string }
 
@@ -52,7 +53,45 @@ function admitsSystem(sql: string, declaring: Source): (s: Source) => boolean {
 
 /** The `notes` keys the query reads, in the order it reads them. */
 function notesKeys(sql: string): string[] {
-  return [...sql.matchAll(/notes::jsonb\s*->>\s*'(\w+)'/g)].map((m) => m[1]);
+  return [...sql.matchAll(/->>\s*'(\w+)'/g)].map((m) => m[1]);
+}
+
+/**
+ * Read `notes` the way POSTGRES would, given what this query actually asks of it.
+ *
+ * 🔴 THIS IS THE GAP THAT LET THE OUTAGE SHIP. The fake previously modelled `notes` as an
+ * already-parsed `Record<string, string>`, so no test could express the only thing that was
+ * wrong: the column is TEXT, and the house convention appends a later note after the JSON with
+ * a ` | ` separator. `CC_0225` did exactly that to all four published rows, every one of them
+ * read by this query, and a bare `notes::jsonb` raised 22P02 — taking the whole /summary
+ * endpoint to HTTP 500 for Newsom, Hurtado, Gipson and Erickson.
+ *
+ * So the fake now throws the way the database throws. A query that casts without guarding gets
+ * the real error; a query that guards gets the committee name. That makes
+ * `survives a note with an appended ` | ` suffix` a CONTROL: delete the guard from the service
+ * and it fails with the production error rather than passing quietly.
+ */
+function parseNotes(sql: string, raw: string): Record<string, string> | null {
+  const tryParse = (t: string): Record<string, string> | null => {
+    try {
+      const v: unknown = JSON.parse(t);
+      return v && typeof v === 'object' && !Array.isArray(v) ? (v as Record<string, string>) : null;
+    } catch {
+      return null;
+    }
+  };
+
+  const whole = tryParse(raw);
+  if (whole) return whole;
+
+  // Unguarded `notes::jsonb` on text that is not JSON is the production failure, verbatim.
+  if (!/IS JSON OBJECT/i.test(sql)) {
+    throw Object.assign(new Error('invalid input syntax for type json'), { code: '22P02' });
+  }
+
+  // The guard: fall back to the prefix before the first `} |`, else NULL — never an error.
+  const cut = raw.indexOf('} |');
+  return cut === -1 ? null : tryParse(raw.slice(0, cut + 1));
 }
 
 /**
@@ -77,7 +116,10 @@ function gathered(sql: string, politicianId: string) {
     const admits = admitsSystem(sql, declaring);
     const rows = sources.filter((s) => s.external_id === declaring.external_id && admits(s));
     const keys = notesKeys(sql);
-    const label = keys.map((k) => declaring.notes[k]).find((v) => v != null) ?? null;
+    // Only the TOTALS query reads `notes`; the top-donors query never touches it, so it must not
+    // be held to the guard it has no reason to carry.
+    const parsed = keys.length > 0 ? parseNotes(sql, declaring.notes) : null;
+    const label = keys.map((k) => parsed?.[k]).find((v) => v != null) ?? null;
     return { declaring, rows, label };
   });
 }
@@ -133,15 +175,26 @@ beforeEach(() => {
   query.mockClear();
 });
 
-function ieLink(over: Partial<Source> & { id: string; external_id: string }): Source {
+/**
+ * `notes` may be given as an object (serialised to JSON, the common case) or as RAW TEXT, which
+ * is how a row that has been appended to must be expressed.
+ */
+function ieLink(
+  over: Partial<Omit<Source, 'notes'>> & {
+    id: string;
+    external_id: string;
+    notes?: Record<string, string> | string;
+  }
+): Source {
+  const { notes, ...rest } = over;
   return {
     politician: POL,
     source_system: 'la_socrata',
     source_type: 'ie_committee',
     research_status: 'confirmed',
     support_oppose: 'support',
-    notes: {},
-    ...over,
+    ...rest,
+    notes: typeof notes === 'string' ? notes : JSON.stringify(notes ?? {}),
   };
 }
 
@@ -296,6 +349,84 @@ describe('outside spending', () => {
         total_amount: 33172.8,
         top_donors: [{ donor_name: 'recall funder', amount: 33172.8 }],
       }),
+    ]);
+  });
+
+  // ──────────────────────────────────────────────────────────────────────────────────────────
+  // `notes` IS TEXT, AND THE HOUSE CONVENTION APPENDS AFTER THE JSON
+  //
+  // 🔴 These four are the regression for the 2026-10-10 outage. `CC_0225` appended
+  // `| IE + DIRECTION CC_0225: …` to all four rows it evidenced — which were precisely the four
+  // rows this query reads — and `notes::jsonb` raised 22P02 on every one. Because
+  // getOutsideSpendingForPolitician is awaited inside the summary handler, the ENTIRE campaign
+  // finance endpoint returned HTTP 500 for Newsom, Hurtado, Gipson and Erickson.
+  //
+  // The note bodies below are the real prod values, abbreviated only in the middle.
+  // ──────────────────────────────────────────────────────────────────────────────────────────
+
+  it('survives a note with an appended ` | ` suffix, and still reads the committee name', async () => {
+    sources = [
+      ieLink({
+        id: 's1',
+        source_system: 'cal_access',
+        external_id: '1418587',
+        support_oppose: 'oppose',
+        notes:
+          '{"disputed_by": "CA_0212 (2026-09-24)", "committee_name": "NEWSOM; RAN ACTION FUND ' +
+          'COMMITTEE TO RECALL GAVIN"} | IE + DIRECTION CC_0225: direction oppose per Form 460 ' +
+          '#2463962 Part 6 (recall measure; polarity inverted)',
+      }),
+    ];
+    contribs = [{ id: 'c1', source: 's1', amount: 33172.8, donor: 'recall funder' }];
+
+    const { summary } = await getSummary(POL);
+
+    expect(summary.outside_spending.committees).toEqual([
+      expect.objectContaining({
+        cmt_id: '1418587',
+        cmt_nm: 'NEWSOM; RAN ACTION FUND COMMITTEE TO RECALL GAVIN',
+        support_oppose: 'oppose',
+        total_amount: 33172.8,
+      }),
+    ]);
+  });
+
+  it('survives two appended notes', async () => {
+    sources = [
+      ieLink({ id: 's1', external_id: 'C1', notes: '{"cmt_nm": "A COMMITTEE"} | one | two' }),
+    ];
+    contribs = [{ id: 'c1', source: 's1', amount: 10, donor: 'd' }];
+
+    const { summary } = await getSummary(POL);
+
+    expect(summary.outside_spending.committees[0].cmt_nm).toBe('A COMMITTEE');
+  });
+
+  // ⚠ The whole-string parse must be tried FIRST. A `} |` occurring inside a JSON string value is
+  // not a separator, and truncating at it would corrupt a name that parses perfectly well.
+  it('does not truncate at a `} |` that sits INSIDE a JSON string value', async () => {
+    sources = [
+      ieLink({ id: 's1', external_id: 'C1', notes: '{"cmt_nm": "ODD } | NAME"}' }),
+    ];
+    contribs = [{ id: 'c1', source: 's1', amount: 10, donor: 'd' }];
+
+    const { summary } = await getSummary(POL);
+
+    expect(summary.outside_spending.committees[0].cmt_nm).toBe('ODD } | NAME');
+  });
+
+  // ▶ A note that cannot be parsed at all costs the committee its NAME. It must never cost the
+  // endpoint — 510 of the 518 confirmed CAL-ACCESS sources are JSON and 8 are prose (CC_0221).
+  it('renders a committee whose notes are unparseable prose, rather than failing', async () => {
+    sources = [
+      ieLink({ id: 's1', external_id: 'C1', notes: 'plain prose note, carrying no JSON at all' }),
+    ];
+    contribs = [{ id: 'c1', source: 's1', amount: 250, donor: 'a donor' }];
+
+    const { summary } = await getSummary(POL);
+
+    expect(summary.outside_spending.committees).toEqual([
+      expect.objectContaining({ cmt_id: 'C1', cmt_nm: '', total_amount: 250 }),
     ]);
   });
 });

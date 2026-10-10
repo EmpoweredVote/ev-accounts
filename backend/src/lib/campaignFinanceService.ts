@@ -2583,6 +2583,34 @@ interface IeTopDonorRow {
 async function getOutsideSpendingForPolitician(
   politicianId: string
 ): Promise<OutsideSpendingResponse> {
+/**
+ * `politician_sources.notes` is a TEXT column, not `jsonb`, and the house convention appends a
+ * later note AFTER the JSON object with a ` | ` separator — 7,863 rows carried one when this was
+ * measured on prod (2026-10-10). A bare `notes::jsonb` therefore raises
+ * `22P02 invalid input syntax for type json` on any appended row.
+ *
+ * 🔴 That is not hypothetical and it is not cheap. `CC_0225` appended
+ * `| IE + DIRECTION CC_0225: …` to all four rows it evidenced, which were exactly the four rows
+ * this query reads. `getOutsideSpendingForPolitician` is awaited inside the summary handler, so
+ * the whole campaign-finance endpoint returned HTTP 500 for Newsom, Hurtado, Gipson and Erickson
+ * — not merely the outside-spending card. The repo already knew the shape: PR #972 carries a test
+ * for "a marker inside notes that are NOT valid JSON (appended `| UNVERIFIED …` text breaks a
+ * jsonb cast)". This query was the one remaining unguarded cast.
+ *
+ * ▶ So the reader tolerates the convention rather than the writer being forbidden it: take the
+ * JSON if the whole string parses, else the prefix before the first `} |`, else NULL. A note that
+ * cannot be parsed costs a committee NAME; it must never cost the endpoint.
+ *
+ * ⚠ Order matters. The whole-string branch runs FIRST so that a `} |` occurring INSIDE a JSON
+ * string value (`{"cmt_nm":"E } | F"}`) is not truncated at it. Verified against prod across
+ * eight shapes, including prose-only and malformed-prefix rows, which return NULL and do not raise.
+ */
+const NOTES_AS_JSONB = `(CASE
+                WHEN notes IS JSON OBJECT THEN notes::jsonb
+                WHEN left(notes, strpos(notes, '} |')) IS JSON OBJECT
+                  THEN left(notes, strpos(notes, '} |'))::jsonb
+              END)`;
+
   // Query IE committee totals.
   // Join through external_id (cmt_id) rather than politician_source_id directly — the unique
   // constraint on (data_source, source_transaction_id) means contributions land on whichever
@@ -2597,7 +2625,7 @@ async function getOutsideSpendingForPolitician(
        SELECT external_id AS cmt_id,
               source_system,
               support_oppose,
-              COALESCE(notes::jsonb->>'cmt_nm', notes::jsonb->>'committee_name') AS cmt_nm
+              COALESCE(${NOTES_AS_JSONB}->>'cmt_nm', ${NOTES_AS_JSONB}->>'committee_name') AS cmt_nm
          FROM transparent_motivations.politician_sources
         WHERE essentials_politician_id = $1
           AND source_type = 'ie_committee'
