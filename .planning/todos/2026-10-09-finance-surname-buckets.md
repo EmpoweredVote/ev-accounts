@@ -263,10 +263,10 @@ politician"* and the tamper rolled back. The guard that matters was watched fail
    below. ⚠ It did NOT unblock retirement, which the line here used to predict it would: 62 of the
    72 have no owner in this corpus, so they stay on the bucket rows and the RESTRICT/NOT NULL
    problem is unchanged. What it bought is that nobody has to adjudicate them again.
-   ▶ Still open, and NOT touched by `CC_0216`: the **other four rows `CC_0213` detached** — David
-   Patterson (56), John M. Erickson (13), Angie Reyes English (12) and Bryan "Bubba" Fish. And
-   corpus-wide there are **1,486 disputed `cal_access` sources across 319 politicians**, many of
-   them on ACTIVE rows (Francis De Leon Sanchez 80, Traci Park 47, Pat Wilson 35, Grant Parks 22).
+   ✅ The **other four rows `CC_0213` detached** are done too — `CC_0217`, applied 2026-10-09.
+   ▶ Still open: **three merges `CC_0217` uncovered and did not do** (see its own section below),
+   and corpus-wide **1,486 disputed `cal_access` sources across 319 politicians**, many of them on
+   ACTIVE rows (Francis De Leon Sanchez 80, Traci Park 47, Pat Wilson 35, Grant Parks 22).
    Whether those are surname buckets of the same shape is unmeasured.
 3. **Hurtado's and Dutra's own contributions were never ingested.** Their committees exist as sources
    and hold zero rows. That is a CAL-ACCESS ingestion gap, not a merge problem.
@@ -376,3 +376,86 @@ before applying. ⚠ The first dry run died with **`invalid input syntax for typ
 do not all parse. ▶ **A guard must not depend on data it did not put there** — it is scoped to the
 72 source ids now. The "nothing was touched" check is scoped the same way, because asking it of the
 whole `contributions` table exceeds the statement timeout, as `CC_0213` already recorded.
+
+## ✅ THE OTHER FOUR BUCKET ROWS — `CC_0217`, applied 2026-10-09
+
+86 of their 87 disputed sources became `not_applicable`; one stays `disputed`; and **five
+`confirmed` rows were downgraded**. **Nothing was repointed** — not one of the 87 belongs to anybody
+this corpus holds.
+
+| Row (all `is_active=false`, all `source='scraped'`) | → `not_applicable` | → `disputed` | kept `confirmed` |
+|---|---|---|---|
+| David Patterson `903b537b` | 56 | **5** (downgraded) | 0 |
+| John M. Erickson `af66146f` | 13 | — | 3 (earned) |
+| Angie Reyes English `97f376e1` | 12 | — | — |
+| Bryan "Bubba" Fish `837613f5` | 5 | **1** (undetermined) | — |
+
+### 🔴🔴 ALL FOUR ARE SCRAPED DUPLICATES OF A SEATED OFFICIAL, AND THREE HAVE A LIVE TWIN
+
+The `city_website` contact identified every one of them — the `CC_0214` lesson paying out a second
+time. ▶ **Read every table that already points at a row before sourcing anything external.**
+
+    John M. Erickson     weho.org             -> John Erickson, Council Member, West Hollywood
+    Bryan "Bubba" Fish   culvercity.org       -> Bryan Fish,   Council Member, Culver City
+    Angie Reyes English  cityofhawthorne.org  -> Angie Reyes English, Council Member, Hawthorne
+    David Patterson      cityofhawthorne.org  -> nobody; Hawthorne seats no Patterson
+
+🔴 **THE DUPLICATE GUARD IS BLIND TO ALL THREE, AND ANGIE REYES ENGLISH IS A NEW BLINDNESS.** It
+compares `(lower(first_name), lower(last_name))`. Her two rows carry the **same `full_name`** and
+split it at different points:
+
+    live    be3ca929   first_name 'Angie'       last_name 'Reyes English'
+    scraped 97f376e1   first_name 'Angie Reyes' last_name 'English'
+
+▶ **A COMPOUND SURNAME SPLIT AT A DIFFERENT POINT DEFEATS THE GUARD EVEN WHEN `full_name` MATCHES
+EXACTLY.** A third blindness beside archived rows and nicknames. (Erickson is the middle-name shape,
+"John M." vs "John"; Fish is `Bryan "Bubba"` vs "Bryan".)
+
+### ▶ THE MERGE THAT MOVES MONEY — NOT DONE HERE
+
+**John Erickson's 2026 State Senate campaign — $1,398,852.72 / 967 contributions — sits on the
+scraped row**, while his live West Hollywood page shows only council money ($116,264.23 / 299). Same
+shape as Patricia Jehlen in `CC_0211`, except both rows publish, so a voter sees a *partial* picture
+rather than none. The identity evidence is the `CC_0212` test: `ERICKSON FOR WH CITY COUNCIL 2020;
+JOHN` **names the seat the live row holds**.
+
+### 🔴 FIVE CONFIRMATIONS THAT WERE NEVER EARNED
+
+`CC_0213` kept any committee containing the row's forename, so every "…; DAVID" survived on David
+Patterson's row. Read together the five describe **two men ~400 miles apart** — a Signal-Hill-area
+city treasurer and a Placer County Board of Education member — and **neither is Hawthorne**, the only
+jurisdiction the row carries. They hold zero contributions, so nothing published changes, but
+▶ **a `confirmed` source is a loaded gun: it fires the moment the ingestion gap closes or the row is
+merged.** Downgraded to `disputed`, **not** `not_applicable` — one of the two clusters could still be
+this row's person; what is disproved is that all five are.
+
+### ⚠ A FILER PHONE IS THE TREASURER'S NUMBER — IT GROUPS, IT DOES NOT IDENTIFY
+
+Measured here: **(310) 817-6679** is shared by `PATTERSON FOR CITY COUNCIL 2024` and `FISH FOR CITY
+COUNCIL 2028`; **(323) 655-4065** by `PATTERSON FOR MALIBU CITY COUNCIL 2014` and John Erickson's own
+`ERICKSON FOR WH CITY COUNCIL 2020`. Unrelated candidates, one filing agent.
+
+🔴 **This corrects `CC_0216`.** That migration used a phone match as one of three signals for
+`DIXON FOR SUPERVISOR 2026`. The conclusion stands on the other two — an explicit non-conflicting
+forename, and donor overlap of 12.4-62.8% against 0.0-4.4% for controls — but **the phone leg is
+weaker than that migration's comment claims.** Treat a shared phone as "same filing agent".
+
+### Jim Patterson, and the one left undetermined
+
+🟢 Nine of David Patterson's 56 are **Jim Patterson's entire Assembly career** (2,937 contributions),
+named by CAL-ACCESS's candidate page for `PATTERSON, JIM` (filer 1346007, AD-23 then AD-08). He has
+no row here. ⚠ Not Joe Patterson's — the two men filed **separate** `PATTERSON FOR ASSEMBLY 2022`
+committees, 1435401 and 1443381. Another ~9 are candidates in the **city of Patterson, California**:
+the Dixon place-name trap again, settled the same way — we hold no government named Patterson.
+
+`FISH FOR CITY COUNCIL 2028` (1465836, 0 contributions) stays **`disputed`**. It has no forename, it
+is the only 310 committee in that bucket, and the seated Bryan Fish is a Culver City council member —
+but CAL-ACCESS lists no FISH on its **state** candidate index and we hold no NetFile agency for
+Culver City (only `LACO` and `WEHO`). ▶ **`not_applicable` would assert "not his", which is a claim,
+not a shrug.**
+
+### 🟢 A FASTER WAY TO READ CAL-ACCESS COMMITTEE PAGES IN BULK
+
+One `browser_evaluate` doing in-page `fetch(..., {credentials:'include'})` over a list of filer ids
+reads 34 committee pages in a single tool call, cookies attached, no navigation. That is the way to
+do this at scale once the Incapsula cookie is set by loading the homepage.
