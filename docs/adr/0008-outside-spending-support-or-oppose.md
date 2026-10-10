@@ -1,5 +1,5 @@
 ---
-status: proposed
+status: accepted
 ---
 
 > **Draft, 2026-10-10.** Written out of the CAL-ACCESS source audits of 2026-10-10
@@ -126,6 +126,37 @@ them.
 ⚠ **This covers `cal_access` only.** Whether `la_socrata` exposes a direction was **not checked**
 and must be before its one published row (`1442937`) can be given a value. If it does not, those
 rows stay `NULL` and stay withheld — which is the correct outcome, not a regression.
+
+## 4a. 🔴🔴 AMENDED AFTER IMPLEMENTATION — THE CHECKBOX IS NOT THE ANSWER
+
+Implementing this (`CC_0224`/`CC_0225`, 2026-10-10) found two things §4 had wrong.
+
+**A recall committee files Part 6, not Part 7, and its polarity is INVERTED.** The Newsom recall
+committee `1418587` files as a **Ballot Measure Committee**:
+
+```
+NAME OF BALLOT MEASURE:  Recall Gavin Newsom
+SUPPORT ☒    OPPOSE ☐
+```
+
+🔴 **The checkbox says SUPPORT and the correct value for that row is `oppose`.** Part 6's direction
+is relative to the **measure**; the measure is his recall; supporting the recall is opposing the
+officeholder. Read as a checkbox rather than as a sentence, this field would have published
+$33,172.80 raised to **remove** a sitting Governor as money **supporting** him — the exact harm
+this ADR exists to prevent, arriving through the field added to prevent it.
+
+▶ **`support_oppose` may never be mechanically copied from a filing.** The column means *direction
+relative to THIS POLITICIAN*; the filing states *direction relative to whatever the filer named*.
+When those differ, a human reads the filing. This is why §3 puts the field on the source row — the
+row knows which politician it is about; the committee does not.
+
+**Form 496 carries the field too.** Erickson's committee files a *Late Independent Expenditure
+Report*, whose Part 1 names `John Erickson · State Senator District 24 · SUPPORT ☒`. A pure-IE
+committee may file **only** 496s, so a Part 7-only rule finds nothing for it.
+
+**§4's `la_socrata` caveat was real.** Traci Park's `1442937` is an LA **city** filer; a sweep of
+CAL-ACCESS sessions found **no filings for it at all**. It stays `NULL` and therefore dark. Its
+name reads as support — and a name is not evidence, which is the rule this ADR rests on.
 
 ## 5. What this costs today
 

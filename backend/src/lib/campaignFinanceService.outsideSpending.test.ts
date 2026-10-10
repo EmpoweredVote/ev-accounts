@@ -30,6 +30,7 @@ interface Source {
   external_id: string;
   source_type: string;
   research_status: string;
+  support_oppose: 'support' | 'oppose' | null;
   notes: Record<string, string>;
 }
 interface Contrib { id: string; source: string; amount: number; donor: string }
@@ -54,15 +55,25 @@ function notesKeys(sql: string): string[] {
   return [...sql.matchAll(/notes::jsonb\s*->>\s*'(\w+)'/g)].map((m) => m[1]);
 }
 
-function declaredIeLinks(politicianId: string): Source[] {
+/**
+ * ADR 0008: the query withholds a committee whose DIRECTION is unknown. The fake honours that
+ * only when the SQL actually asks for it, so deleting the predicate from the service makes
+ * `withholds a confirmed IE committee that has no direction` fail rather than silently pass.
+ */
+function declaredIeLinks(sql: string, politicianId: string): Source[] {
+  const requiresDirection = /support_oppose\s+IS\s+NOT\s+NULL/i.test(sql);
   return sources.filter(
-    (s) => s.politician === politicianId && s.source_type === 'ie_committee' && s.research_status === 'confirmed'
+    (s) =>
+      s.politician === politicianId &&
+      s.source_type === 'ie_committee' &&
+      s.research_status === 'confirmed' &&
+      (!requiresDirection || s.support_oppose != null)
   );
 }
 
 /** Every source row the query would gather for each declared committee. */
 function gathered(sql: string, politicianId: string) {
-  return declaredIeLinks(politicianId).map((declaring) => {
+  return declaredIeLinks(sql, politicianId).map((declaring) => {
     const admits = admitsSystem(sql, declaring);
     const rows = sources.filter((s) => s.external_id === declaring.external_id && admits(s));
     const keys = notesKeys(sql);
@@ -99,6 +110,7 @@ const query = vi.fn(async (sql: string, params: unknown[] = []) => {
         return {
           cmt_id: g.declaring.external_id,
           cmt_nm: g.label,
+          support_oppose: g.declaring.support_oppose,
           total_amount: String(cs.reduce((s, c) => s + c.amount, 0)),
           contribution_count: String(cs.length),
         };
@@ -127,6 +139,7 @@ function ieLink(over: Partial<Source> & { id: string; external_id: string }): So
     source_system: 'la_socrata',
     source_type: 'ie_committee',
     research_status: 'confirmed',
+    support_oppose: 'support',
     notes: {},
     ...over,
   };
@@ -233,5 +246,56 @@ describe('outside spending', () => {
     const { summary } = await getSummary(POL);
 
     expect(summary.outside_spending.committees).toEqual([]);
+  });
+
+  // ADR 0008 ------------------------------------------------------------------------------
+  // A committee whose DIRECTION is unknown is WITHHELD, never defaulted. There is no safe
+  // default: defaulting to 'support' publishes money raised AGAINST a politician as money they
+  // raised. Control: deleting `AND support_oppose IS NOT NULL` from the service makes this fail.
+  it('withholds a confirmed IE committee that has no direction', async () => {
+    sources = [
+      ieLink({ id: 's1', source_system: 'cal_access', external_id: '1442937', support_oppose: null, notes: { committee_name: 'DIRECTION UNKNOWN' } }),
+    ];
+    contribs = [{ id: 'c1', source: 's1', amount: 4050, donor: 'someone' }];
+
+    const { summary } = await getSummary(POL);
+
+    expect(summary.outside_spending.committees).toEqual([]);
+  });
+
+  it('withholds its DONORS too, not just its total', async () => {
+    sources = [
+      ieLink({ id: 's1', source_system: 'cal_access', external_id: '1442937', support_oppose: null, notes: { committee_name: 'DIRECTION UNKNOWN' } }),
+      ieLink({ id: 's2', source_system: 'cal_access', external_id: '1447993', support_oppose: 'support', notes: { committee_name: 'KNOWN' } }),
+    ];
+    contribs = [
+      { id: 'c1', source: 's1', amount: 4050, donor: 'hidden donor' },
+      { id: 'c2', source: 's2', amount: 100, donor: 'visible donor' },
+    ];
+
+    const { summary } = await getSummary(POL);
+
+    const donors = summary.outside_spending.committees.flatMap((c) => c.top_donors.map((d) => d.donor_name));
+    expect(donors).toEqual(['visible donor']);
+  });
+
+  // An OPPOSE committee's money and donors are reported AGAINST the politician. The field has to
+  // survive to the response or a consumer cannot tell this apart from money supporting them.
+  it('reports an oppose committee as oppose', async () => {
+    sources = [
+      ieLink({ id: 's1', source_system: 'cal_access', external_id: '1418587', support_oppose: 'oppose', notes: { committee_name: 'COMMITTEE TO RECALL GAVIN NEWSOM' } }),
+    ];
+    contribs = [{ id: 'c1', source: 's1', amount: 33172.8, donor: 'recall funder' }];
+
+    const { summary } = await getSummary(POL);
+
+    expect(summary.outside_spending.committees).toEqual([
+      expect.objectContaining({
+        cmt_id: '1418587',
+        support_oppose: 'oppose',
+        total_amount: 33172.8,
+        top_donors: [{ donor_name: 'recall funder', amount: 33172.8 }],
+      }),
+    ]);
   });
 });
