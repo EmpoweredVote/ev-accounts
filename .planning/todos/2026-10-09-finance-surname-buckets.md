@@ -523,3 +523,46 @@ cal_access IE row renders an **unnamed card showing $0**.
 ▶ **That is now THREE committees the candidate-page test has reclassified** (Hurtado's two, Erickson's
 one). **Run it on every `candidate_committee` whose name contains "FOR", "FRIENDS OF", "COALITION",
 "WORKING FAMILIES" or "SPONSORED BY" before trusting the type.**
+
+## ✅ THE LAST TWO SCRAPED DUPLICATES RETIRED — `CC_0220`, applied 2026-10-09
+
+Operator ruling, **taken against my recommendation** (recorded above): retire them anyway.
+
+    837613f5  Bryan "Bubba" Fish   ->  6ed5080f  Bryan Fish           Council Member, Culver City
+    97f376e1  Angie Reyes English  ->  be3ca929  Angie Reyes English  Council Member, Hawthorne
+
+⚠ **IT WAS NOT A MERGE — NOTHING OF THEIRS MOVED.** Measured on both retired rows: 0 answers,
+0 contexts, 0 terms, 0 candidacies, 0 images, and 0 on all five CASCADE/SET NULL keys. The canonical
+rows already held the seat, the stances and the photo. What moved was **18 committees belonging to
+other people** plus one `city_website` contact each.
+
+### Identity, from each city's own page
+
+- **culvercity.gov/City-Hall/City-Council** lists `BRYAN "BUBBA" FISH`, Vice Mayor,
+  `bubba.fish@culvercity.org`. The retired row's `full_name` **is the city's own rendering** — which
+  is where the scrape took it — and its contact was `culvercity.org`. One Fish on that council.
+  ▶ **FOLLOW-UP: the city says Vice Mayor; our row says Council Member.** An occupancy question, not
+  an identity one, so it was not touched here.
+- **cityofhawthorne.org/government** lists `Council Member Angie Reyes English`, one of seven.
+
+### What the sweep bought, and what it cost
+
+🟢 Across **every** foreign key into `essentials.politicians`, exactly two tables referenced these
+rows: `politician_sources` (18, RESTRICT) and `politician_contacts` (2, NO ACTION). Everything else
+measured zero, so the delete was unobstructed once those 20 moved.
+
+🔴 **The cost is the one `CC_0217` named: 18 foreign committees now hang on two LIVE rows.** They
+arrive `not_applicable` (17) and `disputed` (1), so they publish nothing — asserted by post-verify,
+and confirmed on the live API: both politicians return `raised=0`, `outside=0`.
+▶ **Anyone later confirming a cal_access source must check it names the politician it sits on.**
+`FISH FOR CITY COUNCIL 2028` is the `disputed` one and is still unresolved.
+
+### Controls
+
+- An alias planted on a retired row → `retired 837613f5 holds 1 CASCADE/SET NULL rows — they would
+  vanish silently`. This is `CC_0208`'s control, re-run.
+- One moved source made publishable → `retired 97f376e1 holds 1 PUBLISHING sources — moving them
+  would publish on a live page`.
+
+Both retirements are recorded in `essentials.politician_merges` with the evidence and a `moved`
+count, so the deleted ids stay resolvable outside the FK graph.
