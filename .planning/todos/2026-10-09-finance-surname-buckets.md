@@ -459,3 +459,67 @@ not a shrug.**
 One `browser_evaluate` doing in-page `fetch(..., {credentials:'include'})` over a list of filer ids
 reads 34 committee pages in a single tool call, cookies attached, no navigation. That is the way to
 do this at scale once the Incapsula cookie is set by loading the homepage.
+
+## ✅ JOHN ERICKSON'S FINANCE REACHES HIS LIVE PAGE — `CC_0218`, applied 2026-10-09
+
+Three sources moved from the scraped duplicate `af66146f` to the live West Hollywood row
+`29ccd743`. The live API now returns **$1,373,852.72 / 966 for 2026**, beside his existing 2024 and
+2020 council cycles; the scraped row returns **0 with no cycles**.
+
+🔴 **THE SCRAPED ROW WAS NOT RETIRED** (operator ruling 2026-10-09). Only the three earned sources
+moved; its 13 `not_applicable` orphans stay. Retiring it would force 13 other Ericksons' committees
+onto a live politician or out of existence — and ⚠ **`contributions.politician_source_id` has NO
+foreign key.** Measured: `filed_report_summaries` is the *only* table referencing
+`politician_sources`, with RESTRICT. So deleting a source **silently strands its contributions**
+rather than failing, and one of the 13 holds 323 of them. ▶ Moving three sources fixes what a voter
+sees and reverts with one UPDATE. Retirement is tidiness; the attribution was the harm.
+
+### 🔴🔴 THE DONOR-OVERLAP TEST CAME BACK UNINFORMATIVE — AND THAT IS NOT A NEGATIVE RESULT
+
+It settled `DIXON FOR SUPERVISOR 2026` in `CC_0216`. Here it could not discriminate at all. Of the
+Senate committee's 617 distinct donors, **his own council committees share 1.6% and 0.7%** — inside
+the control band, and *below* an unrelated control:
+
+    1456951   HURTADO FOR SENATE 2026 (control)       2.2%
+    210075987 ERICKSON WEHO COUNCIL 2024 (his own)    1.6%
+    185138647 ERICKSON WEHO COUNCIL      (his own)    0.7%
+    1393990 / 1418525 / 1460531 / 1301155 / 1463128   0.3% and below
+
+▶ **A $1.3M state-senate donor base and a small-city council donor base are different fundraising
+universes** — party committees and unions against neighbours and local small donors. Dixon's
+Assembly and county-supervisor committees were the same region and era, so they overlapped; these do
+not. **The test requires comparable universes. A null result from a test that cannot discriminate
+must not be read as evidence in either direction.**
+
+### 🟢 WHAT SETTLED IT: A MULTI-POINT BIOGRAPHICAL MATCH ACROSS TWO SOURCES
+
+- **weho.org** (the city's own councilmember page): elected **2020-11-03**; **Ph.D. from Claremont
+  Graduate University** *and* a Dual-Master's from the same institution; **University of Wisconsin
+  Oshkosh**; VP at **Planned Parenthood Los Angeles**, now Chief of Staff, Alliance for a Better
+  Community.
+- **ballotpedia.org/John_Erickson_(California)** (the SD-24 2026 candidate): **Ph.D. Claremont
+  Graduate University, 2011** plus a second degree there; profession **"Nonprofit professional"**;
+  high school **Ripon** — Ripon, Wisconsin, ~25 miles from UW Oshkosh.
+
+A doctorate and a second degree from the same institution, a nonprofit career and a Wisconsin
+upbringing: three specific attributes matching across a city's official page and an independent
+encyclopedia. ⚠ **Neither source alone closes it** — CAL-ACCESS carries no address or officeholder
+line for either committee, and Ballotpedia's page never mentions the council seat. The *match* is
+what closes it.
+
+⚠ **CO-LOCATION ON A BUCKET ROW IS NOT EVIDENCE.** The council committee and the Senate committee
+sit together only because `confirm-cal-access.ts` matched by surname. Reading that as a link is the
+exact defect this programme undoes.
+
+### 🔴 A THIRD `CC_0213` MISTYPE, CAUGHT BY THE SAME TEST
+
+`1489255` — "ERICKSON FOR STATE SENATE 2026, **SPONSORED BY UNITE HERE LOCAL 11**; WORKING FAMILIES
+FOR JOHN", 1 contribution, **$25,000** — was typed `candidate_committee` and `confirmed`. It is
+**absent from his CAL-ACCESS candidate page**, which lists 1479089 alone. Union-sponsored,
+primarily-formed independent spending. Retyped `ie_committee` / `not_applicable`, exactly as
+`CC_0216` handled Melissa Hurtado's coalition committee — and for the same reason: a `confirmed`
+cal_access IE row renders an **unnamed card showing $0**.
+
+▶ **That is now THREE committees the candidate-page test has reclassified** (Hurtado's two, Erickson's
+one). **Run it on every `candidate_committee` whose name contains "FOR", "FRIENDS OF", "COALITION",
+"WORKING FAMILIES" or "SPONSORED BY" before trusting the type.**
