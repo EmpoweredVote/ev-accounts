@@ -193,12 +193,61 @@ English blindness.
 
 All thirteen rows are now on the dedupe backlog: `.planning/todos/2026-10-09-finance-surname-buckets.md`.
 
-## Still open, unchanged
+## ✅ ALL THREE CLOSED 2026-10-10 FROM THE FORM 460 (`CC_0222`)
 
-| source | committee | money | question |
+| source | committee | money | verdict |
 |---|---|---|---|
-| `1480126` | `DIXON FOR SUPERVISOR 2026; DIANE` | **$798,784** | Absent from Diane Dixon's candidate page, though her **2022** supervisor committee is on it. |
-| `1451483` | `SOLACHE FOR CITY COUNCIL 2022; FRIENDS OF` | $76,121 | Absent from Jose Solache's page; Lynwood, so plausibly the coverage gap. |
-| `1376762` | `MALHI FOR ASSEMBLY 2016` | $31,050 | On `MALHI, SATINDER S.`'s page. Our row is `Raj Malhi`. Same person, or two? |
+| `1480126` | `DIXON FOR SUPERVISOR 2026; DIANE` | $798,784 | ✅ **CORRECT — hers.** Stays `confirmed`. |
+| `1451483` | `SOLACHE FOR CITY COUNCIL 2022; FRIENDS OF` | $76,121 | ✅ **CORRECT — his.** Stays `confirmed`. |
+| `1376762` | `MALHI FOR ASSEMBLY 2016` | $31,050 | 🔴 **WRONG — Satinder S. Malhi's.** → `not_applicable`. |
 
-These three are the only money-carrying sources the audit could not close, out of $357.4M.
+**$31,050 of $357,410,183 was misattributed. That is the whole error the audit found.**
+
+### 🔴🔴 ABSENCE FROM THE CANDIDATE PAGE IS NOT EVIDENCE OF MISATTRIBUTION
+
+All three were flagged by that one signal and **two of the three were correct** — a **67%
+false-positive rate on this audit's main instrument.** The reason is specific and checkable:
+
+**Diane Dixon's committee carries no `(OFFICEHOLDER: …)` line**, because the office sought is coded
+**"Other"** — Orange County Supervisor, District 5, a county office with no state office code. Her
+linked committees all show `(OFFICEHOLDER: ASSEMBLY DISTRICT 72)`. Her Form 460 of 2026-09-24 names
+her in Part 5 and she signed it; her Assembly 2026 committee `1477047` **terminated 2026-06-30 with
+$0**, because she switched races. ▶ **A committee seeking a NON-STATE office is invisible to the
+candidate page even when it is genuinely the candidate's.**
+
+Jose Solache's Form 460 names him as **City Council Member, City of Lynwood**, and **cross-lists
+`1443410` `Friends of Solache for Assembly 2024` as his controlled committee** — independently
+confirming a second source of ours.
+
+### 🟢 THE FORM 460 COVER PAGE BEATS THE CANDIDATE PAGE — USE IT WHEN THE PAGE IS SILENT
+
+**Part 5 names the candidate AND the office sought, under penalty of perjury**, and exists for every
+committee that files — including the non-state ones the candidate page cannot reach. It settled all
+three of these in one pass.
+
+```
+/Campaign/Committees/Detail.aspx?id=<cmte>&view=electronic&session=<YYYY>   -> filing ids
+/Misc/pdf.aspx?filingid=<id>&amendid=0                                     -> the PDF
+```
+
+- 🔴 **The PDF endpoint returns the 212-byte Incapsula stub at HTTP 200 `text/html`** to `curl` —
+  `r.ok` is true and the file is a lie. Fetch it **inside the Playwright context**, where it comes
+  back `application/pdf`; base64 it out and decode to disk.
+- 🔴 **The electronic-filings list is SESSION-SCOPED.** A first pass read the default session and
+  reported **zero filings for both** Solache and Malhi. A positive control against `1480126` (known
+  to have 7) exposed it: Solache's sit in 2021/2023/2025, Malhi's in 2015. **A "no filings" answer
+  is a broken query until a control says otherwise.**
+
+### The Malhi finding
+
+Form 460 filing `2000320`, Part 5: **Satinder S. Malhi**, State Assembly **District 14**,
+**Sacramento** — signed by him. Our row is **Raj Malhi**, whose own committee `1382079` is
+**Lancaster** city council, **Los Angeles County**, ~400 miles away. 🟢 Satinder is independently
+present as the placeholder `MALHI FOR MARTINEZ CITY COUNCIL 2024; SATINDER S` (`1470998`) — Martinez
+is in Contra Costa, consistent with AD-14. Two people. He has no real row, so `not_applicable`, not
+a repoint — the Esmeralda Hurtado disposition.
+
+⚠ **Raj Malhi's row is `is_active=false`, `source='scraped'`** — so the $31,050 never reached a
+voter's page, and his row is a **fourteenth** entry for the dedupe backlog with the same loaded-gun
+shape as `CC_0221`'s eight. ⚠ I missed it in the inactive-row sweep because his name was already in
+the "done" list — **a politician marked done for one test is not done for the others.**

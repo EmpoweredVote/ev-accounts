@@ -688,3 +688,29 @@ result. The two numbers that matter here: **the money side came back clean** —
 $357.4M these sources publish was checked against CAL-ACCESS candidate pages and not one
 money-carrying source sat on the wrong politician — and **every defect found carried $0**. The
 surname-bucket defect is an attribution problem on quiet rows, not a money problem on loud ones.
+
+### Group C — a fourteenth row, found 2026-10-10 by the Form 460 (`CC_0222`)
+
+**Raj Malhi** `57ffdbb3` — `is_active=false`, `source='scraped'`, 2 cal_access sources.
+
+| source | committee | verdict |
+|---|---|---|
+| `1376762` | `MALHI FOR ASSEMBLY 2016` | 🔴 **Satinder S. Malhi's** (AD-14, Sacramento). `CC_0222` → `not_applicable`. **$31,050 / 69 contributions.** |
+| `1382079` | `MALHI FOR LANCASTER CITY COUNCIL 2018; RAJ` | ✅ Raj's own. Stays `confirmed`. |
+
+This is a **mixed** row — one foreign committee and one genuine — so it is neither a clean bucket
+nor a clean split. ▶ **After `CC_0222` the remaining source is his**, so at merge time it CARRIES,
+like Group B. 🔴 **No live `Raj Malhi` twin appears under that exact `full_name`** — check the name
+split before concluding there is none, because that is the Angie Reyes English blindness.
+
+🔴 **This row is the reason the sweep must not trust a "done" marker.** Raj Malhi had already been
+checked by the forename test (his name is in `MALHI … ; RAJ`, so the test passed) and was therefore
+excluded from the inactive-row sweep that found the other eight. **A politician cleared by one test
+is not cleared by the others.**
+
+🟢 **The instrument that found it — the FPPC Form 460 cover page, Part 5** — names the candidate and
+the office sought under penalty of perjury, and exists for every committee that files. It is
+stronger than the CAL-ACCESS candidate page and reaches committees the page cannot: it also cleared
+**Diane Dixon's $798,784** and **Jose Solache's $76,121**, both of which the candidate page had
+flagged as suspect. ▶ **Use it on any bucket row before merging.** Method and its two traps:
+`.planning/todos/2026-10-10-cal-access-confirmed-518-audit-log.md`.
