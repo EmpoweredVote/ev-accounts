@@ -763,6 +763,48 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+  cal-access-attribution:
+    name: cal-access attribution
+    runs-on: ubuntu-latest
+    # A `politician_sources` row that is `confirmed` is ON A VOTER'S PAGE. Measured 2026-10-10, of
+    # the 520 confirmed CAL-ACCESS sources publishing $357M, 387 were written by
+    # `confirm-cal-access.ts` — the surname matcher that produced the seven buckets CC_0213-CC_0220
+    # unpicked — and 15 more were flagged `--ambiguous` BY THAT SCRIPT and confirmed anyway.
+    #
+    # 🔑 A RATCHET, NOT A CORRECTNESS TEST. A name-based guard was tried and does NOT work: it flags
+    # 135 of 510 and every one sampled is a false positive ("FRIENDS OF TED" on Ted Lieu, "HOLLY J."
+    # on Holly J. Mitchell). Only CAL-ACCESS's own candidate page settles an attribution, and that is
+    # a network call behind Incapsula. So the existing 520 are grandfathered by key and the check
+    # asks only that anything NEW says who adjudicated it. The baseline SHRINKS as the audit clears
+    # rows; the check reports that shrinkage.
+    #
+    # ⚠ SCHEDULE-ONLY, for the two reasons this file and the memory already record. (1) Cost: the
+    # live-DB jobs run on every one of ~429 pushes and are ~40% of the Actions bill, and a push
+    # cannot cause this drift — migrations are applied BY HAND, so the data moves on the calendar.
+    # (2) A master-only live-DB gate reddens on the NEXT merge rather than the guilty one, naming
+    # innocent PRs; that happened before and held master red for 6 runs. A day's latency on "someone
+    # confirmed a committee without saying why" is the right trade.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: backend/.node-version
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: No new published CAL-ACCESS attribution without a trail
+        run: npm run check:cal-access-attribution
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   instrument-topics:
     name: instrument-topic self-test
     runs-on: ubuntu-latest
