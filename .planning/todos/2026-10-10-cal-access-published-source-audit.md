@@ -1,4 +1,61 @@
-# CAL-ACCESS sources — audit the 518 that PUBLISH, not the 1,333 that do not
+# ✅ CLOSED 2026-10-10 — CAL-ACCESS sources: the 518 that PUBLISH
+
+> ## 🔴 THIS HANDOFF IS DONE. DO NOT RE-RUN IT.
+>
+> **The audit it asks for was completed on 2026-10-10 by `CC_0221` (PR #973) and `CC_0222`
+> (PR #974), both applied to prod and merged.** Everything below is the *original brief*, kept
+> because its reframing and its traps are still correct. It is **not** a to-do list any more.
+>
+> ▶ **Result, method and what is still open:
+> [`2026-10-10-cal-access-confirmed-518-audit-log.md`](2026-10-10-cal-access-confirmed-518-audit-log.md).**
+>
+> | `research_status` | at handoff | now |
+> |---|---|---|
+> | `confirmed` / candidate | 518 | **448** |
+> | `not_applicable` | 5,417 | 5,484 |
+> | `disputed` | 1,333 | 1,336 |
+>
+> **All 518 were tested** — 223 against CAL-ACCESS candidate pages, 100 against the committee's own
+> official name, 195 by shape detector with every flagged row read.
+>
+> 🟢 **The money side came back CLEAN. $31,050 of $357,410,183 was misattributed** — one source,
+> `1376762 MALHI FOR ASSEMBLY 2016`, which is Satinder S. Malhi's, not Raj Malhi's.
+>
+> 🔴 **Two of this brief's own instructions were WRONG, and the audit log says why:**
+> - **"Start with the 259 that carry money, heaviest first"** — money does not predict error here.
+>   The ten heaviest politicians (80 sources, $265M) produced one defect, worth **$0**. The real
+>   predictor is the **absence of a forename tail**. The defect was 100 sources of surname buckets
+>   on **eight inactive duplicate rows**, every one shadowing a live seated official.
+> - **"Presence on the candidate page is the test"** — ⚠ **absence from it is NOT evidence of
+>   misattribution.** Three money-carrying sources were flagged that way and **two were correct**: a
+>   67% false-positive rate. A committee seeking a **non-state** office carries no
+>   `(OFFICEHOLDER: …)` link and is invisible to the candidate page even when genuinely the
+>   candidate's. 🟢 **Use the FPPC Form 460 cover page, Part 5 instead** — it names the candidate
+>   *and* the office sought, under penalty of perjury, for every committee that files.
+>
+> ### 🔴 STILL OPEN — this brief is closed, but these are NOT
+>
+> **The two disputed sources that carry money are UNCHANGED and still sit on LIVE rows.** Verified
+> 2026-10-10. The audit covered the `confirmed` population; these are `disputed`, so they publish
+> nothing — but they are the open item this brief raised and they survive it:
+>
+> | source | committee | on | money | why it is still open |
+> |---|---|---|---|---|
+> | `1448127` | `GIPSON FOR ASSEMBLY 2022; CALIFORNIANS FOR SOLUTIONS SUPPORTING MIKE` | **Mike A. Gipson** (live) | 8 · $194,000.00 | A committee *supporting* him, typed `candidate_committee`. Confirming as-is would publish it as his own fundraising. |
+> | `1418587` | `NEWSOM; RAN ACTION FUND COMMITTEE TO RECALL GAVIN` | **Gavin Newsom** (live) | 402 · $33,172.80 | Money raised to **remove him from office**. ⚠ `OutsideSpendingCommittee` has **no support/oppose field**, so typing it `ie_committee` is a UI design question, not a flip. `disputed` is correct until the UI can say "opposing". |
+>
+> `CC_0221` hit the same wall and left three support/oppose committees `disputed` for the same
+> reason. ▶ **The blocker is one design decision: how outside spending renders support vs. oppose.**
+>
+> **Also open:** the 173 sources whose forename *and* surname both match and which were never
+> individually read — only a same-full-name collision could make one wrong, which is a dedupe
+> question; and **fourteen duplicate rows** on
+> [`2026-10-09-finance-surname-buckets.md`](2026-10-09-finance-surname-buckets.md).
+> ⚠ **The 5,484 `not_applicable` sources have still never been examined.**
+
+---
+
+## The original brief, as written 2026-10-10 (kept for its reframing and its traps)
 
 Handoff written 2026-10-10, after `CC_0213`–`CC_0220` closed the surname-bucket programme.
 Background and every rule those migrations paid for: `2026-10-09-finance-surname-buckets.md`.
