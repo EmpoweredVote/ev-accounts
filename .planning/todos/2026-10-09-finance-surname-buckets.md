@@ -5,11 +5,11 @@ campaign finance stranded on them (Jehlen 3,649 contributions, DiDomenico 8,598,
 Rogers 2,783). The sweep behind them found **170 inactive rows sharing a first and last name with an
 active row, 9 of which hold contributions.** Four are done. These are the remaining six.
 
-**Status 2026-10-09, after `CC_0213` and `CC_0214`:** attribution is fixed on all seven affected rows,
-and **Hurtado, Dutra and Dixon now hold their own confirmed finance on their canonical rows.** Their
-duplicate rows are deliberately **kept, not retired** — they still hold the disputed buckets.
-**John Fleming is the only one still needing a decision, and that decision is now one answer wide**
-(see the measured overlap below). The two Indiana leads stay unruled.
+**Status 2026-10-09, after `CC_0213`, `CC_0214`, `CC_0215` and `CC_0216`:** attribution is fixed on
+all seven affected rows; **Hurtado, Dutra and Dixon hold their own confirmed finance on their
+canonical rows**; **John Fleming is merged** (`CC_0215`); and **the 72 disputed bucket sources are
+adjudicated** (`CC_0216`). Their duplicate rows are still deliberately **kept, not retired** — see
+why below; adjudicating the sources did not change that. The two Indiana leads stay unruled.
 
 ## 🔴🔴 THE HEADLINE: FIVE OF THE SIX MUST NOT BE MERGED
 
@@ -259,8 +259,15 @@ politician"* and the tamper rolled back. The guard that matters was watched fail
 ## ▶ WHAT IS STILL OPEN
 
 1. ✅ **John Fleming is done** — `CC_0215`, applied 2026-10-09. See the section above.
-2. **The disputed buckets themselves** (72 sources across the three rows, plus the other four rows
-   `CC_0213` touched). Adjudicating them is what unblocks a real retirement.
+2. ✅ **The 72 disputed bucket sources are done** — `CC_0216`, applied 2026-10-09. See the section
+   below. ⚠ It did NOT unblock retirement, which the line here used to predict it would: 62 of the
+   72 have no owner in this corpus, so they stay on the bucket rows and the RESTRICT/NOT NULL
+   problem is unchanged. What it bought is that nobody has to adjudicate them again.
+   ▶ Still open, and NOT touched by `CC_0216`: the **other four rows `CC_0213` detached** — David
+   Patterson (56), John M. Erickson (13), Angie Reyes English (12) and Bryan "Bubba" Fish. And
+   corpus-wide there are **1,486 disputed `cal_access` sources across 319 politicians**, many of
+   them on ACTIVE rows (Francis De Leon Sanchez 80, Traci Park 47, Pat Wilson 35, Grant Parks 22).
+   Whether those are surname buckets of the same shape is unmeasured.
 3. **Hurtado's and Dutra's own contributions were never ingested.** Their committees exist as sources
    and hold zero rows. That is a CAL-ACCESS ingestion gap, not a merge problem.
 4. The two Indiana leads, still unruled.
@@ -273,3 +280,99 @@ exists** — it was deleted on 2026-09-23. A CI job guards its return:
 `.github/workflows/ci.yml:340`, which fails if the file comes back without a replaced predicate.
 The rest of that order still holds: **fix attribution first, merge second** — detaching is reversible
 and invisible, publishing is neither.
+
+## ✅ THE 72 ADJUDICATED — `CC_0216`, applied 2026-10-09
+
+The answer is **10 and 62**. Ten sources belong to a politician this corpus already holds. Sixty-two
+belong to people it does not, so there is nowhere for them to go and nothing to publish.
+
+### 🔴🔴 THE PRIZE WAS A LIVE ASSEMBLYMEMBER PUBLISHING NOTHING
+
+**Diane B. Dixon** `9aa10096` — California Assembly Member, AD-72, ACTIVE — held **zero finance
+sources**. Eight of Arthur Dixon's 43 are hers: **3,322 contributions, $3,783,054.16.** Her live API
+summary returned `no_data` before this and now returns four cycles.
+
+🟢 **SEVEN OF THE EIGHT ARE NAMED BY CAL-ACCESS ITSELF.** The Secretary of State's **candidate**
+detail page — `/Campaign/Candidates/Detail.aspx?id=<candidate filer id>` — lists a candidate's own
+committees by filer ID. For `DIXON, DIANE` that is filer **1418515**, and it names 1418525, 1456771,
+1443172, 1438441, 1477047, 1435365 and 1362246.
+
+▶ **THIS IS THE TOOL THIS WHOLE WORKLIST WAS MISSING.** Every earlier pass reasoned from the
+*committee* page, which never names the candidate, and so fell back to reading the committee title —
+which is exactly the surname-matching defect that created the buckets. The route is:
+`/Campaign/Candidates/list.aspx?view=name&letter=<X>` → the candidate → their committees.
+- ⚠ It covers **state** candidates. A purely local filer will not appear, and a candidate who left
+  before ~2005 (John Dutra) is no longer listed at all.
+- 🔴 **cal-access.sos.ca.gov sits behind Incapsula, which answers `curl` with HTTP 200 and a
+  212-byte script stub.** Playwright is refused too *until you load the homepage first*; after that
+  every page works in the same context. Same family as the WAF rule already in memory.
+
+🔴 **THE EIGHTH, 1480126 (791 contributions, $798,783.92), IS NOT ON THAT PAGE**, so it was settled
+on three independent agreeing signals instead:
+1. explicit forename DIANE, with no conflicting forename anywhere;
+2. **filer phone (949) 858-7448, byte-identical to 1438441**, which the candidate page does confirm
+   as hers, for the same office one cycle earlier;
+3. **donor-name overlap with controls** — of its 583 distinct donors, her seven confirmed committees
+   share **12.4%–62.8%**; unrelated committees from the same buckets share **0.0%–4.4%**.
+
+⚠ **THE OVERLAP QUERY WAS BROKEN ON ITS FIRST RUN AND LOOKED FINE.** `contributions.donor_id` is
+NULL on every CAL-ACCESS row here, so joining on it returned a **uniform zero for all nine
+committees**. `donor_name_normalized` is the populated column. A uniform answer is a broken
+detector, and it was the *controls* — not the subject — that showed the rewritten query could
+discriminate at all.
+
+### 🔴🔴 `CC_0213` WAS WRONG ABOUT ONE COMMITTEE, AND THIS REVERSES IT
+
+That migration held back **1456951 "VALLEY FAMILIES FOR MELISSA HURTADO FOR SENATE 2026"** (467
+contributions, **$3,431,362.52**) because the name reads like outside spending, and said its
+`source_type` "needs a human ruling". **CAL-ACCESS lists it on Melissa Hurtado's own candidate page**
+(filer 1401463), beside HURTADO FOR SENATE 2022 and 2018. It is her **controlled committee**. It is
+restored to `confirmed`, and her live summary now carries the 2026 cycle.
+
+▶ **A COMMITTEE NAMED LIKE A SUPPORT GROUP CAN STILL BE THE CANDIDATE'S OWN.** The candidate page
+answers it; the title does not — in either direction. (Its total is mostly party transfers,
+`ENTITY_CD = 'PTY'`: California Democratic Party $400,000, county central committees $100,000 each.)
+
+The other one is the genuine article: **1447993 "COALITION OF BUSINESS ORGANIZATIONS SUPPORTING
+SENATOR MELISSA HURTADO 2022"** (8 / $344,843.80) is **absent** from her candidate page. It moved to
+her row typed `ie_committee`.
+
+🔴 **IT IS DELIBERATELY NOT `confirmed`, AND THAT IS A MEASURED DISPLAY BUG, NOT CAUTION.**
+`getOutsideSpendingForPolitician` scopes its `ie_all_sources` CTE to **`source_system = 'la_socrata'`**
+and labels committees from **`notes::jsonb->>'cmt_nm'`**, a key CAL-ACCESS notes do not carry — while
+the committee-list CTE has **no** source_system filter. A `confirmed` cal_access `ie_committee` row
+therefore renders as an **unnamed card showing $0**. Held at `not_applicable`; verified against the
+live API that `outside_spending.committees` is `[]`. One UPDATE turns it on once that function is
+widened. ▶ **That widening is the open follow-up this created.**
+
+### The 62, and why they end at `not_applicable`
+
+Operator ruling 2026-10-09: `not_applicable`, not `disputed`. `disputed` reads as *contested and
+unresolved* and would invite the next session to redo this research. `indianaAdapter.ts:772` treats
+the two identically ("the wrong committee, and their rows are dropped") and every finance read
+filters on `confirmed`, so **no voter-facing value changes either way** — the difference is that the
+record now says the work was done. Each row carries `adjudicated_by` and `adjudication` in its notes.
+
+- **Arthur Dixon 35.** 🟢 ~24 are candidates in the **CITY of Dixon, California** — Arnold,
+  Batchelor, Bird, Bogue, Castanon, Ceremello, Di Paola, Dingman, Fink, Graham, Hendershot, Janisch,
+  McCaffrey, McCluskey, Minnema, Swanson, Thiessen, Young. **We hold no government named Dixon**, so
+  not one of them can be in this corpus — `SELECT … FROM essentials.governments WHERE name ILIKE
+  '%dixon%'` returning empty settled two dozen rows in one query. ▶ **When a surname is also a place
+  name, ask whether the place is seeded before researching the people.** The rest are Julian, Rich,
+  Linda, Richard, Fredrisha, Ken, Karen L. and Ronda Dixon.
+- **Gil Hurtado 13.** Esmeralda, Jewel, G. Sylvia, Jaime, Ricky Hurtado. None held.
+- **Fernando Dutra 14.** John, Jimmy, Joe M., Dominic, Clancy Dutra. None held. John Dutra's two
+  committees hold 1,983 of the bucket's contributions and he left the Assembly in 2004.
+
+### Two controls, both watched failing first
+
+- plant a 9th `confirmed` cal_access committee on Diane's **live** row →
+  `CC_0216: Diane B. Dixon holds 9 confirmed committees, expected 8`.
+- flip one of the 72 out of `disputed` → `CC_0216: 1 of the 72 are not disputed cal_access sources`.
+
+Each failed at the gate it was aimed at, not at an earlier one, and both rollbacks were re-measured
+before applying. ⚠ The first dry run died with **`invalid input syntax for type json`**: a guard read
+`notes::jsonb` across *every* live politician's cal_access sources, and notes elsewhere in the corpus
+do not all parse. ▶ **A guard must not depend on data it did not put there** — it is scoped to the
+72 source ids now. The "nothing was touched" check is scoped the same way, because asking it of the
+whole `contributions` table exceeds the statement timeout, as `CC_0213` already recorded.
