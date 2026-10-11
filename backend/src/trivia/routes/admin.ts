@@ -8,7 +8,6 @@ import { auditQuestion } from '../services/qualityRules/index.js';
 import type { QuestionInput } from '../services/qualityRules/types.js';
 import { z } from 'zod';
 import { DuplicateReviewService } from '../services/DuplicateReviewService.js';
-import { JSONSyncService } from '../services/JSONSyncService.js';
 import { generateElectionQuestions, GenerationBlockedError } from '../services/generation/ElectionQuestionGenerator.js';
 import { generateCurrentTermQuestions, FollowupBlockedError } from '../services/generation/CurrentTermQuestionGenerator.js';
 import { lastCronRun } from '../cron/electionDetection.js';
@@ -1342,7 +1341,10 @@ router.get('/duplicates', async (req: Request, res: Response) => {
 /**
  * POST /duplicates/resolve - Resolve a single cluster
  * Body: { clusterId: string, keepExternalId: string }
- * Returns: { success: true, archived: string[], jsonSync: SyncSummary[] }
+ * Returns: { success: true, archivedIds: string[] }
+ *
+ * No JSON mirroring: the database is the only source. JSONSyncService used to run here and
+ * return a `jsonSync` summary, but it could never find a file to write -- see #988.
  */
 router.post('/duplicates/resolve', async (req: Request, res: Response) => {
   try {
@@ -1375,14 +1377,9 @@ router.post('/duplicates/resolve', async (req: Request, res: Response) => {
     // Resolve cluster (archive everything not in keepExternalIds)
     const archivedIds = await duplicateReviewService.resolveCluster(clusterId, keepExternalIds);
 
-    // Sync JSON files
-    const jsonSyncService = new JSONSyncService();
-    const jsonSync = jsonSyncService.syncAfterArchive(archivedIds);
-
     res.json({
       success: true,
       archivedIds,
-      jsonSync,
     });
   } catch (error: any) {
     console.error('Error resolving cluster:', error);
@@ -1392,7 +1389,7 @@ router.post('/duplicates/resolve', async (req: Request, res: Response) => {
 
 /**
  * POST /duplicates/auto-resolve - Auto-resolve all 90%+ clusters
- * Returns: { success: true, clustersResolved: number, totalArchived: number, jsonSync: SyncSummary[] }
+ * Returns: { success: true, clustersResolved: number, totalArchived: number }
  */
 router.post('/duplicates/auto-resolve', async (req: Request, res: Response) => {
   try {
@@ -1405,15 +1402,10 @@ router.post('/duplicates/auto-resolve', async (req: Request, res: Response) => {
     // Auto-resolve all eligible clusters
     const result = await duplicateReviewService.autoResolveAll();
 
-    // Sync JSON files
-    const jsonSyncService = new JSONSyncService();
-    const jsonSync = jsonSyncService.syncAfterArchive(result.archivedExternalIds);
-
     res.json({
       success: true,
       clustersResolved: result.clustersResolved,
       totalArchived: result.totalArchived,
-      jsonSync,
     });
   } catch (error: any) {
     console.error('Error auto-resolving clusters:', error);
@@ -1455,10 +1447,6 @@ router.post('/duplicates/undo', async (req: Request, res: Response) => {
 
     // Undo resolution
     const restoredIds = await duplicateReviewService.undoResolve(clusterId);
-
-    // Sync JSON files
-    const jsonSyncService = new JSONSyncService();
-    await jsonSyncService.syncAfterRestore(restoredIds);
 
     res.json({
       success: true,
