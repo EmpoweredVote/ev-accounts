@@ -78,39 +78,118 @@ async function query(text: string, params?: unknown[]): Promise<{ rows: any[] }>
 // Dataset download
 // ---------------------------------------------------------------------------
 
-export async function downloadDataset(
-  apiKey: string,
-  ds: DatasetListEntry,
-): Promise<{ bills: Map<number, Json>; rollCalls: Map<number, Json> }> {
-  const data = await legiscanQuery(apiKey, 'getDataset', {
-    id: String(ds.session_id),
-    access_key: ds.access_key,
-  });
-  const zipB64: string = data?.dataset?.zip ?? '';
-  if (!zipB64) throw new Error(`Empty ZIP in dataset response for session ${ds.session_id}`);
-  const zip = new AdmZip(Buffer.from(zipB64, 'base64'));
+/**
+ * A dataset ZIP, read a slice at a time.
+ *
+ * 🔴 THIS SHAPE EXISTS BECAUSE THE EAGER ONE RAN OUT OF HEAP. Until 2026-10-11 this module
+ * parsed every bill and every roll call of a session into two Maps and returned them, so peak
+ * memory was the WHOLE session before a single row was written. On 2026-10-11 the weekly cron
+ * died with `FATAL ERROR: Reached heap limit` at ~254 MB on California — the first state it
+ * actually had to process, the rest having been skipped as unchanged. Same defect, same fix, as
+ * `ocpfAdapter` on 2026-10-03: read a slice, write it, then read the next.
+ *
+ * What stays resident is the COMPRESSED archive plus two id -> entry-name indexes. JSON
+ * compresses roughly ten to one, and a Buffer is external memory rather than V8 old space —
+ * which is the space that ran out. What is transient is one slice of parsed bills.
+ *
+ * 🟢 Lazy reads are only bounded because adm-zip does not cache: for an archive that was READ
+ * rather than built, `_centralHeader.changed` is false, so `getData()` re-inflates every call
+ * and never fills `uncompressedData`. `datasetReader.test.ts` holds a control on that, because
+ * if a future version starts caching this design silently becomes the old one.
+ */
+export interface DatasetReader {
+  /** Every bill id in the dataset. Ids only — the bills are read on demand. */
+  readonly billIds: number[];
+  readonly rollCallCount: number;
+  /** Parse ONLY these bills. The caller drops the Map when the slice is written. */
+  readBills(ids: number[]): Map<number, Json>;
+  readRollCall(rollCallId: number): Json | undefined;
+}
 
-  const bills = new Map<number, Json>();
-  const rollCalls = new Map<number, Json>();
+export function readDatasetZip(zipBuffer: Buffer): DatasetReader {
+  const zip = new AdmZip(zipBuffer);
+  const billEntries = new Map<number, string>();
+  const rollCallEntries = new Map<number, string>();
+
+  // Index pass. Each entry is parsed to read its id and then DROPPED, so the peak here is one
+  // entry rather than the session. The second parse in readBills is deliberate: CPU is cheap
+  // next to the heap this used to hold, and far cheaper than the job failing outright.
   for (const entry of zip.getEntries()) {
     if (entry.isDirectory || !entry.entryName.endsWith('.json')) continue;
+    const path = entry.entryName.toLowerCase();
+    const isBill = path.includes('/bill/');
+    const isRollCall = path.includes('/vote/') || path.includes('/rollcall/');
+    if (!isBill && !isRollCall) continue;
     let parsed: Json;
     try {
       parsed = JSON.parse(entry.getData().toString('utf8'));
     } catch {
       continue;
     }
-    const path = entry.entryName.toLowerCase();
-    if (path.includes('/bill/')) {
+    if (isBill) {
       const bill = parsed.bill ?? parsed;
-      if (bill?.bill_id) bills.set(bill.bill_id, bill);
-    } else if (path.includes('/vote/') || path.includes('/rollcall/')) {
+      if (bill?.bill_id) billEntries.set(bill.bill_id, entry.entryName);
+    } else {
       const rc = parsed.roll_call ?? parsed;
-      if (rc?.roll_call_id) rollCalls.set(rc.roll_call_id, rc);
+      if (rc?.roll_call_id) rollCallEntries.set(rc.roll_call_id, entry.entryName);
     }
   }
-  log(`dataset ${ds.session_id} extracted: ${bills.size} bills, ${rollCalls.size} roll calls`);
-  return { bills, rollCalls };
+
+  const readOne = (entryName: string | undefined, unwrap: (j: Json) => Json): Json | undefined => {
+    if (!entryName) return undefined;
+    const entry = zip.getEntry(entryName);
+    if (!entry) return undefined;
+    try {
+      return unwrap(JSON.parse(entry.getData().toString('utf8')));
+    } catch {
+      return undefined;
+    }
+  };
+
+  return {
+    billIds: [...billEntries.keys()],
+    rollCallCount: rollCallEntries.size,
+    readBills(ids: number[]): Map<number, Json> {
+      const out = new Map<number, Json>();
+      for (const id of ids) {
+        const bill = readOne(billEntries.get(id), (j) => j.bill ?? j);
+        if (bill) out.set(id, bill);
+      }
+      return out;
+    },
+    readRollCall(rollCallId: number): Json | undefined {
+      return readOne(rollCallEntries.get(rollCallId), (j) => j.roll_call ?? j);
+    },
+  };
+}
+
+/**
+ * ⚠ The base64 ZIP is read inside this helper ON PURPOSE. For a large state the API response
+ * and its `dataset.zip` string are each the size of the archive again, in old space. Scoping
+ * them to a function that returns only the Buffer makes them unreachable the moment it does,
+ * rather than leaving them live for as long as the caller holds anything.
+ */
+function zipBufferFrom(data: Json, sessionId: number): Buffer {
+  const zipB64: string = data?.dataset?.zip ?? '';
+  if (!zipB64) throw new Error(`Empty ZIP in dataset response for session ${sessionId}`);
+  return Buffer.from(zipB64, 'base64');
+}
+
+export async function openDataset(
+  apiKey: string,
+  ds: DatasetListEntry,
+): Promise<DatasetReader> {
+  const reader = readDatasetZip(
+    zipBufferFrom(
+      await legiscanQuery(apiKey, 'getDataset', {
+        id: String(ds.session_id),
+        access_key: ds.access_key,
+      }),
+      ds.session_id,
+    ),
+  );
+  log(`dataset ${ds.session_id} indexed: ${reader.billIds.length} bills, ${reader.rollCallCount} roll calls`);
+  return reader;
 }
 
 // ---------------------------------------------------------------------------
@@ -356,7 +435,7 @@ function placeholders(rows: number, width: number, startAt = 1): string {
 }
 
 async function importBills(
-  bills: Map<number, Json>, rollCalls: Map<number, Json>, sessionId: string, jurisdiction: string,
+  reader: DatasetReader, sessionId: string, jurisdiction: string,
   bridge: Map<number, string>, dryRun: boolean,
 ): Promise<{ bills: number; votes: number; cosponsors: number; committees: Map<number, string>; errors: string[] }> {
   const existingRows = await query(
@@ -367,7 +446,7 @@ async function importBills(
   const existing = new Map<string, { id: string; rawStatus: string }>(
     existingRows.rows.map((r) => [r.external_id, { id: r.id, rawStatus: r.raw_status }]),
   );
-  log(`${bills.size} bills in dataset, ${existing.size} already in the database`);
+  log(`${reader.billIds.length} bills in dataset, ${existing.size} already in the database`);
 
   const buffer = new VoteBuffer();
   const statusUpdates: Array<[string, string, string]> = [];
@@ -375,46 +454,64 @@ async function importBills(
   const errors: string[] = [];
   let votes = 0, cosponsors = 0, count = 0;
 
-  const sorted = [...bills.entries()].sort((a, b) => a[0] - b[0]);
-  const fresh = sorted.filter(([id]) => !existing.has(`legiscan-${id}`));
-  const known = sorted.filter(([id]) => existing.has(`legiscan-${id}`));
+  // IDS ONLY. Partitioning used to hold every parsed bill in `sorted`; it now sorts numbers,
+  // and the bills themselves are read a slice at a time inside the loops below.
+  const sortedIds = [...reader.billIds].sort((a, b) => a - b);
+  const freshIds = sortedIds.filter((id) => !existing.has(`legiscan-${id}`));
+  const knownIds = sortedIds.filter((id) => existing.has(`legiscan-${id}`));
 
   const queueVotes = (bill: Json, billDbId: string) => {
     for (const stub of bill.votes ?? []) {
-      const rc = stub.roll_call_id ? rollCalls.get(stub.roll_call_id) : undefined;
+      const rc = stub.roll_call_id ? reader.readRollCall(stub.roll_call_id) : undefined;
       if (rc) votes += queueRollCall(rc, billDbId, sessionId, bridge, buffer, dryRun);
     }
   };
 
-  // --- Existing bills: refresh status, queue roll calls.
-  for (const [billId, bill] of known) {
-    const prior = existing.get(`legiscan-${billId}`)!;
-    const status = bill.status ?? 1;
-    if (String(status) !== String(prior.rawStatus)) {
-      statusUpdates.push([prior.id, String(status), normalizeBillStatus(status, bill.status_desc ?? '')]);
-    }
-    queueVotes(bill, prior.id);
-    count++;
-    if (!dryRun && buffer.full) await buffer.flush();
-  }
-
-  // --- New bills: committees once, then bills / sponsors / cosponsors in batches.
-  const uniqueCommittees = new Map<number, Json>();
-  for (const [, bill] of fresh) {
-    if (bill.committee?.committee_id) uniqueCommittees.set(bill.committee.committee_id, bill.committee);
-    for (const ref of bill.referrals ?? []) {
-      if (ref.committee_id && !uniqueCommittees.has(ref.committee_id)) uniqueCommittees.set(ref.committee_id, ref);
+  // --- Existing bills: refresh status, queue roll calls. One slice resident at a time.
+  for (const groupIds of chunk(knownIds, BILL_CHUNK)) {
+    for (const [billId, bill] of reader.readBills(groupIds)) {
+      const prior = existing.get(`legiscan-${billId}`)!;
+      const status = bill.status ?? 1;
+      if (String(status) !== String(prior.rawStatus)) {
+        statusUpdates.push([prior.id, String(status), normalizeBillStatus(status, bill.status_desc ?? '')]);
+      }
+      queueVotes(bill, prior.id);
+      count++;
+      if (!dryRun && buffer.full) await buffer.flush();
     }
   }
-  for (const [cid, c] of uniqueCommittees) {
-    const id = await upsertCommittee(c, jurisdiction, sessionId, dryRun);
-    if (id) committees.set(cid, id);
-  }
 
-  if (dryRun) {
-    for (const [, bill] of fresh) { queueVotes(bill, 'dry-run'); count++; }
-  } else {
-    for (const group of chunk(fresh, BILL_CHUNK)) {
+  // --- New bills, one slice at a time: committees, then bills / sponsors / cosponsors.
+  //
+  // COMMITTEES MOVED, DELIBERATELY. They used to be collected in a single pass over EVERY fresh
+  // bill before any insert ran — and that pass is precisely what this change removes, because it
+  // required every fresh bill to be resident at once. They are now upserted per slice. The map is
+  // complete by the time this function returns, which is all `upsertMemberships` needs, and
+  // nothing inside the loop reads it. The one visible difference is the error path: an import
+  // that gives up after 20 errors no longer leaves later slices' committees written.
+  for (const groupIds of chunk(freshIds, BILL_CHUNK)) {
+    const group = [...reader.readBills(groupIds).entries()];
+    if (!group.length) continue;
+
+    const sliceCommittees = new Map<number, Json>();
+    for (const [, bill] of group) {
+      if (bill.committee?.committee_id) sliceCommittees.set(bill.committee.committee_id, bill.committee);
+      for (const ref of bill.referrals ?? []) {
+        if (ref.committee_id && !sliceCommittees.has(ref.committee_id)) sliceCommittees.set(ref.committee_id, ref);
+      }
+    }
+    for (const [cid, c] of sliceCommittees) {
+      if (committees.has(cid)) continue;
+      const id = await upsertCommittee(c, jurisdiction, sessionId, dryRun);
+      if (id) committees.set(cid, id);
+    }
+
+    if (dryRun) {
+      for (const [, bill] of group) { queueVotes(bill, 'dry-run'); count++; }
+      continue;
+    }
+
+    {
       try {
         const params: unknown[] = [];
         for (const [billId, bill] of group) {
@@ -538,7 +635,7 @@ export async function importState(
       continue;
     }
 
-    const { bills, rollCalls } = await downloadDataset(apiKey, ds);
+    const reader = await openDataset(apiKey, ds);
     const sessionId = await getOrCreateSession(
       jurisdiction, sessionName(stateName, ds), ds.session_id, label === 'current',
     );
@@ -549,7 +646,7 @@ export async function importState(
       continue;
     }
 
-    const r = await importBills(bills, rollCalls, sessionId, jurisdiction, bridge, dryRun);
+    const r = await importBills(reader, sessionId, jurisdiction, bridge, dryRun);
     for (const [k, v] of r.committees) allCommittees.set(k, v);
     result.bills += r.bills;
     result.votes += r.votes;
