@@ -299,9 +299,10 @@ export const userCollectionMutes = triviaSchema.table('user_collection_mutes', {
 }));
 
 // Bobit progress -- one row per question a player has a collection bobit for.
-// Slug-keyed on purpose: the session's collection_id is null for the Federal default while
-// the frontend calls that same collection 'federal-civics', so keying on the id would split
-// a Federal player's crowd across two keys. See progressKey() in bobitProgressService.
+// Slug-keyed on purpose: the frontend's GameState carries collectionSlug and never carries
+// the numeric id, and a session whose metadata lookup failed carries null for both. Keying on
+// the slug means one coalesce, in progressKey(), decides what a Federal player's crowd is
+// filed under -- rather than two sides each picking a default. See bobitProgressService.
 export const bobitProgress = triviaSchema.table('bobit_progress', {
   userId: uuid('user_id').notNull(),
   collectionSlug: text('collection_slug').notNull(),

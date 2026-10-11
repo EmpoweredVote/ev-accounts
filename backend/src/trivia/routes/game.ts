@@ -7,6 +7,7 @@ import { selectQuestionsForGame, getCollectionMetadata, getFederalCollectionId, 
 import { getNextQuestionTier, selectNextAdaptiveQuestion } from '../services/gameModes.js';
 import { recordQuestionTelemetry } from '../services/telemetryService.js';
 import { grantBobit, revokeBobit, progressKey, readOwnedExternalIds } from '../services/bobitProgressService.js';
+import { FEDERAL_SLUG } from '../config/federalCollection.js';
 import { db } from '../db/index.js';
 import { collections, collectionQuestions, questions } from '../db/schema.js';
 import { and, eq, sql, isNull, or, gt } from 'drizzle-orm';
@@ -205,7 +206,7 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
           questions: stripAnswers([firstQuestion]),
           degraded: storageFactory.isDegradedMode(),
           collectionName: collectionMeta?.name ?? 'Federal Civics',
-          collectionSlug: collectionMeta?.slug ?? 'federal-civics',
+          collectionSlug: collectionMeta?.slug ?? FEDERAL_SLUG,
           gameMode: resolvedMode,
           totalQuestions: TOTAL_QUESTIONS,
         });
@@ -236,7 +237,7 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
       questions: stripAnswers(selectedQuestions),
       degraded: storageFactory.isDegradedMode(),
       collectionName: collectionMeta?.name ?? 'Federal Civics',
-      collectionSlug: collectionMeta?.slug ?? 'federal-civics',
+      collectionSlug: collectionMeta?.slug ?? FEDERAL_SLUG,
       gameMode: gameMode || 'easy-steps',
       totalQuestions: TOTAL_QUESTIONS,
     });
@@ -441,7 +442,7 @@ router.get('/results/:sessionId', async (req: Request<{ sessionId: string }>, re
         session.xpResult = await awardPlatformXp(session.userId, xpAmount, idempotencyKey, {
           score: results.totalScore,
           correctAnswers: results.totalCorrect,
-          collectionSlug: session.collectionSlug ?? 'federal-civics',
+          collectionSlug: session.collectionSlug ?? FEDERAL_SLUG,
         });
 
         // Write player stats (only count confirmed gems in lifetime_gems)
@@ -484,7 +485,7 @@ router.get('/results/:sessionId', async (req: Request<{ sessionId: string }>, re
       progression,
       degraded: storageFactory.isDegradedMode(),
       collectionName: session.collectionName ?? 'Federal Civics',
-      collectionSlug: session.collectionSlug ?? 'federal-civics',
+      collectionSlug: session.collectionSlug ?? FEDERAL_SLUG,
     });
   } catch (error) {
     console.error('Error fetching results:', error);
