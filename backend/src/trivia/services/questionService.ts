@@ -9,6 +9,7 @@ import { questions, collections, collectionQuestions, topics } from '../db/schem
 import { eq, and, notInArray, isNull, or, gt, sql } from 'drizzle-orm';
 import { Question } from '../services/sessionService.js';
 import { gameModes, DEFAULT_GAME_MODE } from './gameModes.js';
+import { FEDERAL_SLUG, FEDERAL_COLLECTION_ID_FALLBACK } from '../config/federalCollection.js';
 import type { DBQuestionRow } from './gameModes.js';
 
 export const TOTAL_QUESTIONS = 5;
@@ -220,8 +221,11 @@ function applyDifficultySelection(
 }
 
 /**
- * Resolve the federal civics collection ID (cached after first lookup)
- * Returns 1 as hardcoded fallback if query fails (seed creates Federal as ID 1)
+ * Resolve the default (Federal) collection ID, cached after the first successful lookup.
+ *
+ * The slug comes from `FEDERAL_SLUG` rather than a literal because the literal here read
+ * 'federal-civics' until 2026-10-11 and matched nothing, which made the miss path below the
+ * ONLY path -- on every default session, since a miss does not populate the cache.
  */
 export async function getFederalCollectionId(): Promise<number> {
   if (cachedFederalCollectionId !== null) {
@@ -232,7 +236,7 @@ export async function getFederalCollectionId(): Promise<number> {
     const result = await db
       .select({ id: collections.id })
       .from(collections)
-      .where(eq(collections.slug, 'federal-civics'))
+      .where(eq(collections.slug, FEDERAL_SLUG))
       .limit(1);
 
     if (result.length > 0) {
@@ -240,12 +244,19 @@ export async function getFederalCollectionId(): Promise<number> {
       return cachedFederalCollectionId;
     }
 
-    // Collection not found — return hardcoded fallback
-    console.warn('Federal civics collection not found by slug, using fallback ID 1');
-    return 1;
+    // Not cached: a missing row is a condition to recover FROM, not one to settle into.
+    // The slug is named in the message because the old wording ('not found by slug') read
+    // as benign for months while the slug itself was the bug.
+    console.warn(
+      `No collection with slug '${FEDERAL_SLUG}' -- falling back to collection id ${FEDERAL_COLLECTION_ID_FALLBACK}`,
+    );
+    return FEDERAL_COLLECTION_ID_FALLBACK;
   } catch (error) {
-    console.warn('Failed to query federal collection ID, using fallback ID 1:', error);
-    return 1;
+    console.warn(
+      `Failed to query the '${FEDERAL_SLUG}' collection id, using fallback ${FEDERAL_COLLECTION_ID_FALLBACK}:`,
+      error,
+    );
+    return FEDERAL_COLLECTION_ID_FALLBACK;
   }
 }
 
@@ -282,13 +293,13 @@ export async function getCollectionMetadata(
  * Select 8 questions for a game session from a specific collection.
  *
  * Algorithm:
- *   1. Resolve collectionId (use federal-civics if null)
+ *   1. Resolve collectionId (use the Federal collection if null)
  *   2. Query all available questions for the collection (excluding recent + expired)
  *   3. Apply difficulty selection: Q1=easy, Q8=hard, Q2-Q7=balanced mix
  *   4. Transform DB rows to the existing Question interface (externalId -> id)
  *   5. On any error: fall back silently to JSON file
  *
- * @param collectionId - Collection to query (null = federal civics)
+ * @param collectionId - Collection to query (null = the Federal collection)
  * @param recentQuestionIds - Question external IDs to exclude from selection
  * @param gameMode - Game mode strategy name (defaults to 'easy-steps')
  * @param owned - External IDs this player already holds a bobit for. A PREFERENCE only:

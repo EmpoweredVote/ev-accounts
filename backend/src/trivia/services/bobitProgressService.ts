@@ -1,6 +1,7 @@
 import { and, eq } from 'drizzle-orm';
 import { db } from '../db/index.js';
 import { bobitProgress } from '../db/schema.js';
+import { FEDERAL_SLUG } from '../config/federalCollection.js';
 
 /**
  * Per-account bobit progress -- which questions a player has a collection bobit for.
@@ -14,13 +15,15 @@ import { bobitProgress } from '../db/schema.js';
 /**
  * The slug a collection's progress is stored under.
  *
- * A Federal default session carries `collectionSlug: null` (sessionService sets
- * `collectionMeta?.slug ?? null`), but the frontend defaults that same value to
- * 'federal-civics'. Coalescing in exactly one place is what stops a Federal player's crowd
- * splitting across two keys -- earned under one, read back under the other.
+ * A session can carry `collectionSlug: null` -- sessionService sets `collectionMeta?.slug ??
+ * null`, so a failed metadata lookup leaves it empty. Coalescing in exactly one place is what
+ * stops a Federal player's crowd splitting across two keys: earned under one, read back under
+ * the other.
+ *
+ * That coalescing is only worth anything if the default NAMES A REAL COLLECTION. It read
+ * 'federal-civics' until 2026-10-11, which names none, so the one case this function exists to
+ * protect was the one case it could not have survived. See `FEDERAL_SLUG`.
  */
-export const FEDERAL_SLUG = 'federal-civics';
-
 export function progressKey(slug: string | null | undefined): string {
   return slug ?? FEDERAL_SLUG;
 }
