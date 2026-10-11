@@ -124,6 +124,12 @@ export const INDEX_PREFIX_BYTES = 4096;
 /** Entries indexed between yields. The await is what lets a major GC actually finish. */
 const INDEX_YIELD_EVERY = 200;
 
+/**
+ * Entries between progress lines. Deliberately frequent: a run that dies partway through must
+ * leave behind enough of a curve to read, and this loop has now killed the process three times.
+ */
+const INDEX_REPORT_EVERY = 500;
+
 export async function readDatasetZip(zipBuffer: Buffer): Promise<DatasetReader> {
   const zip = new AdmZip(zipBuffer);
   const billEntries = new Map<number, string>();
@@ -151,6 +157,33 @@ export async function readDatasetZip(zipBuffer: Buffer): Promise<DatasetReader> 
   const ROLL_CALL_ID = /"roll_call_id"\s*:\s*(\d+)/;
 
   const entries = zip.getEntries();
+
+  // ── TELEMETRY ────────────────────────────────────────────────────────────────────────────
+  //
+  // 🔴 PRINTED BEFORE AND DURING THE LOOP, NEVER ONLY AFTER IT. Three runs died inside this
+  // pass (2026-10-11 14:01, 19:45, 20:34) and each time the figures that would have explained
+  // it — how many entries there are, how the heap climbs — sat in a summary line AFTER the
+  // loop, which a run that dies in the loop never reaches. Twice I placed a diagnostic behind
+  // the failure and learned nothing from a whole deploy-and-trigger cycle.
+  //
+  // ▶ A diagnostic is only worth having where the process can still reach it.
+  //
+  // What this measures: `heapUsed` is V8's old space, which is what `Reached heap limit` and
+  // `Ineffective mark-compacts` are about; `external` is Buffers (zlib output lands here, and
+  // if THAT is what grows then the heap is the wrong thing to have been tuning); `rss` is what
+  // the 512 MiB container actually kills on. Reading all three apart is the point — the last
+  // three runs could not distinguish them.
+  const mib = (n: number) => (n / 1_048_576).toFixed(1);
+  log(`session index: ${entries.length} entries in archive, scanning`);
+  const reportProgress = (i: number) => {
+    const m = process.memoryUsage();
+    log(
+      `index ${i}/${entries.length}: heap ${mib(m.heapUsed)} MiB, external ${mib(m.external)} MiB, ` +
+      `rss ${mib(m.rss)} MiB, scanned ${mib(indexStats.bytesScanned)} MiB, ` +
+      `${billEntries.size} bills, ${rollCallEntries.size} roll calls, ${indexStats.fullParseFallbacks} fallbacks`,
+    );
+  };
+
   for (let i = 0; i < entries.length; i++) {
     const entry = entries[i];
     if (i > 0 && i % INDEX_YIELD_EVERY === 0) {
@@ -158,6 +191,7 @@ export async function readDatasetZip(zipBuffer: Buffer): Promise<DatasetReader> 
       // finishes; `setImmediate` is enough for V8 to complete a major GC between slices.
       await new Promise((r) => setImmediate(r));
     }
+    if (i > 0 && i % INDEX_REPORT_EVERY === 0) reportProgress(i);
     if (entry.isDirectory || !entry.entryName.endsWith('.json')) continue;
     const path = entry.entryName.toLowerCase();
     const isBill = path.includes('/bill/');
@@ -204,6 +238,8 @@ export async function readDatasetZip(zipBuffer: Buffer): Promise<DatasetReader> 
       continue;
     }
   }
+
+  reportProgress(entries.length);
 
   const readOne = (entryName: string | undefined, unwrap: (j: Json) => Json): Json | undefined => {
     if (!entryName) return undefined;
