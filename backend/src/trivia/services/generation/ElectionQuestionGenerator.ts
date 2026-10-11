@@ -192,7 +192,7 @@ Return ONLY a valid JSON object with no surrounding markdown:
       "text": "Question text ending with ?",
       "options": ["Option A", "Option B", "Option C", "Option D"],
       "correctAnswer": 0,
-      "explanation": "According to [source name], ...",
+      "explanation": "A sentence or two teaching the fact, with no attribution opener",
       "difficulty": "easy",
       "topicCategory": "election-race",
       "source": { "name": "Source Name", "url": "https://example.gov/..." }
