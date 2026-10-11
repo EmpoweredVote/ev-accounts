@@ -59,6 +59,42 @@ export async function revokeBobit(
 }
 
 /**
+ * The question ids this player already holds a bobit for IN ONE COLLECTION.
+ *
+ * Scoped rather than reusing `readBobits`, which pulls every bobit the player owns across all
+ * 43 collections: this one runs on the answer-time path's sibling, session creation, where the
+ * only rows that matter are the collection about to be played. `idx_bobit_progress_user_collection`
+ * covers exactly this predicate.
+ *
+ * The caller passes the slug through `progressKey`, the SAME function the grant path uses, so
+ * what is read back cannot drift from what was written.
+ *
+ * Returns an empty set rather than throwing. The caller is question selection, and a player
+ * must never fail to start a match because their bobits could not be counted -- the cost of
+ * the empty case is today's behaviour, which is the thing being improved rather than relied on.
+ */
+export async function readOwnedExternalIds(
+  userId: string,
+  collectionSlug: string,
+): Promise<Set<string>> {
+  try {
+    const rows = await db
+      .select({ questionExternalId: bobitProgress.questionExternalId })
+      .from(bobitProgress)
+      .where(
+        and(
+          eq(bobitProgress.userId, userId),
+          eq(bobitProgress.collectionSlug, collectionSlug),
+        ),
+      );
+    return new Set(rows.map(r => r.questionExternalId));
+  } catch (error) {
+    console.warn('Could not read owned bobits for question selection:', error);
+    return new Set();
+  }
+}
+
+/**
  * Every bobit this player owns, grouped by collection slug.
  *
  * One indexed read serves the whole crowd. Grouped server-side so the client gets the exact
