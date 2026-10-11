@@ -6,7 +6,7 @@ import { storageFactory } from '../config/redis.js';
 import { selectQuestionsForGame, getCollectionMetadata, getFederalCollectionId, createAdaptiveSession, transformSingleDBQuestion, TOTAL_QUESTIONS } from '../services/questionService.js';
 import { getNextQuestionTier, selectNextAdaptiveQuestion } from '../services/gameModes.js';
 import { recordQuestionTelemetry } from '../services/telemetryService.js';
-import { grantBobit, revokeBobit, progressKey } from '../services/bobitProgressService.js';
+import { grantBobit, revokeBobit, progressKey, readOwnedExternalIds } from '../services/bobitProgressService.js';
 import { db } from '../db/index.js';
 import { collections, collectionQuestions, questions } from '../db/schema.js';
 import { and, eq, sql, isNull, or, gt } from 'drizzle-orm';
@@ -143,6 +143,18 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
       accountContext = { ...ctx, accessToken: req.accessToken };
     }
 
+    // Resolved up here rather than after selection, because selection now needs the
+    // collection's slug: it floats the questions this player holds no bobit for to the front
+    // of the difficulty pools, so the CTC tableau can actually advance (see `preferUnowned`).
+    // The same two lookups every path already did, hoisted, not added.
+    const resolvedCollectionId = collectionId ?? await getFederalCollectionId();
+    const collectionMeta = await getCollectionMetadata(resolvedCollectionId);
+    // `progressKey` is the same call the grant path makes at answer time, so what is read
+    // here cannot key differently from what is written there.
+    const ownedBobits = userId !== 'anonymous'
+      ? await readOwnedExternalIds(userId, progressKey(collectionMeta?.slug))
+      : new Set<string>();
+
     if (questionIds && Array.isArray(questionIds)) {
       // Legacy path: questionIds provided — fetch from DB and filter to matching IDs
       const allQuestions = await selectQuestionsForGame(null, []);
@@ -161,12 +173,9 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
         // Adaptive path: start with 1 question, select rest dynamically
         const { firstQuestion, candidatePools, firstQuestionDbId } = await createAdaptiveSession(
           collectionId ?? null,
-          getRecentQuestionIds(userId)
+          getRecentQuestionIds(userId),
+          ownedBobits
         );
-
-        // Look up collection metadata
-        const resolvedCollectionId = collectionId ?? await getFederalCollectionId();
-        const collectionMeta = await getCollectionMetadata(resolvedCollectionId);
 
         const sessionId = await sessionManager.createSession(
           userId,
@@ -206,13 +215,10 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
       selectedQuestions = await selectQuestionsForGame(
         collectionId ?? null,
         getRecentQuestionIds(userId),
-        gameMode
+        gameMode,
+        ownedBobits
       );
     }
-
-    // Look up collection metadata
-    const resolvedCollectionId = collectionId ?? await getFederalCollectionId();
-    const collectionMeta = await getCollectionMetadata(resolvedCollectionId);
 
     const sessionId = await sessionManager.createSession(
       userId,
