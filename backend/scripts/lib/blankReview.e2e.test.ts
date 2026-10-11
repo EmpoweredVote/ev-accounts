@@ -41,7 +41,11 @@ beforeAll(() => {
     'full_name,topic_key,value,blank_reason,evidence_type,reasoning,source_url_1,source_url_2,source_url_3,source_url_4,quote_text,quote_deidentified,editor_note\n'
     + `Jane Doe,healthcare,0,direction-only,blank,"HB 1001 shows support for a public option but cannot tell rung 1 from rung 2.",${S1_URL},,,,,,\n`);
   writeFileSync(join(dir, 'evidence.csv'), `full_name,topic_key,source_url,snippet,snippet_index\nJane Doe,healthcare,${S1_URL},"${SNIP}",1\n`);
-  const run = spawnSync('npx', ['tsx', 'scripts/stance-gate.ts', '--dir', dir], { encoding: 'utf8' });
+  // 🔴 NOT `npx`. On Windows `spawnSync('npx', …)` is ENOENT (npx is npx.cmd), and spawning
+  // `npx.cmd` without a shell is EINVAL on node >= 20 — so the test failed here on Windows and
+  // passed in CI. `shell: true` would fix it and reintroduce arg-escaping over `dir`, which is a
+  // mkdtemp path. Running the current interpreter with tsx's loader needs neither.
+  const run = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/stance-gate.ts', '--dir', dir], { encoding: 'utf8' });
   if (run.status !== 0) throw new Error(`stance-gate exited ${run.status}: ${run.stdout}${run.stderr}`);
 }, 60_000);
 

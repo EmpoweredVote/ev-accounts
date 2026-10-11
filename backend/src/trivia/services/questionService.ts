@@ -9,9 +9,18 @@ import { questions, collections, collectionQuestions, topics } from '../db/schem
 import { eq, and, notInArray, isNull, or, gt, sql } from 'drizzle-orm';
 import { Question } from '../services/sessionService.js';
 import { gameModes, DEFAULT_GAME_MODE } from './gameModes.js';
+import { FEDERAL_SLUG, FEDERAL_COLLECTION_ID_FALLBACK } from '../config/federalCollection.js';
 import type { DBQuestionRow } from './gameModes.js';
 
 export const TOTAL_QUESTIONS = 5;
+
+/**
+ * The owned-bobit set for a player who has none, or for a signed-out one.
+ *
+ * Shared rather than allocated per call, and the reason it is a named constant is that it is
+ * also the DEFAULT: every selection path must work unchanged when nobody is signed in.
+ */
+const EMPTY_OWNED: ReadonlySet<string> = new Set();
 
 // Module-level caches
 let cachedFederalCollectionId: number | null = null;
@@ -141,6 +150,43 @@ function loadQuestionsFromJSON(): Question[] {
 }
 
 /**
+ * Put the questions a player has NOT yet earned a bobit for at the front.
+ *
+ * WHY THIS EXISTS. A collection bobit is granted the first time a question is answered
+ * correctly, and the CTC tableau needs 100 DISTINCT bobits in one collection to finish its
+ * 25 lines. Measured 2026-10-11 against the live bank: the most engaged player on record had
+ * played 45 games -- roughly 225 question slots -- and held 23 bobits spread across five
+ * collections, two lines deep at best. Selection was the reason. The only memory of what a
+ * player had already seen was a 30-deep in-process Map in the game route, which is wiped by
+ * every deploy, so the same questions came round again and again while most of the collection
+ * was never served at all.
+ *
+ * A PREFERENCE, NOT AN EXCLUSION, and that distinction is the whole design:
+ *   - Repetition is how trivia teaches. A question answered right once should still come back.
+ *   - Collections run from 31 questions upward. Excluding owned questions would starve a small
+ *     collection into an empty pool and then into the JSON fallback -- a worse failure than
+ *     the one being fixed.
+ *   - A player who owns everything sees exactly today's behaviour, because the partition is
+ *     then a no-op.
+ * Every caller takes from the FRONT of these pools (`pool.shift()`), so ordering is all the
+ * steering that is needed; nothing is removed and no pool can shrink.
+ *
+ * STABLE, so the shuffle upstream still decides the order WITHIN each group. Sorting by a
+ * boolean would not be: `Array.prototype.sort` is only required to be stable in modern V8 for
+ * the comparison it is given, and partitioning by hand says what is meant.
+ */
+export function preferUnowned(
+  rows: DBQuestionRow[],
+  owned: ReadonlySet<string>
+): DBQuestionRow[] {
+  if (owned.size === 0) return rows;
+  const fresh: DBQuestionRow[] = [];
+  const seen: DBQuestionRow[] = [];
+  for (const row of rows) (owned.has(row.externalId) ? seen : fresh).push(row);
+  return fresh.concat(seen);
+}
+
+/**
  * Apply difficulty selection using the pluggable game mode strategy system.
  *
  * Delegates to the selected strategy from gameModes registry.
@@ -151,28 +197,36 @@ function loadQuestionsFromJSON(): Question[] {
 function applyDifficultySelection(
   allRows: DBQuestionRow[],
   collectionId: number,
-  gameMode?: string
+  gameMode?: string,
+  owned: ReadonlySet<string> = EMPTY_OWNED
 ): DBQuestionRow[] {
   const modeName = gameMode && gameModes[gameMode] ? gameMode : DEFAULT_GAME_MODE;
   const strategy = gameModes[modeName];
 
-  const easyPool = shuffle(allRows.filter(q => q.difficulty === 'easy'));
-  const mediumPool = shuffle(allRows.filter(q => q.difficulty === 'medium'));
-  const hardPool = shuffle(allRows.filter(q => q.difficulty === 'hard'));
+  // Shuffle first, then partition: the shuffle decides the order within each group and the
+  // partition decides which group goes first.
+  const pool = (difficulty: string) =>
+    preferUnowned(shuffle(allRows.filter(q => q.difficulty === difficulty)), owned);
+  const easyPool = pool('easy');
+  const mediumPool = pool('medium');
+  const hardPool = pool('hard');
 
   if (allRows.length < TOTAL_QUESTIONS) {
     console.warn(
       `Relaxed difficulty constraints: only ${allRows.length} questions for collection ${collectionId}`
     );
-    return shuffle(allRows);
+    return preferUnowned(shuffle(allRows), owned);
   }
 
   return strategy(easyPool, mediumPool, hardPool, TOTAL_QUESTIONS);
 }
 
 /**
- * Resolve the federal civics collection ID (cached after first lookup)
- * Returns 1 as hardcoded fallback if query fails (seed creates Federal as ID 1)
+ * Resolve the default (Federal) collection ID, cached after the first successful lookup.
+ *
+ * The slug comes from `FEDERAL_SLUG` rather than a literal because the literal here read
+ * 'federal-civics' until 2026-10-11 and matched nothing, which made the miss path below the
+ * ONLY path -- on every default session, since a miss does not populate the cache.
  */
 export async function getFederalCollectionId(): Promise<number> {
   if (cachedFederalCollectionId !== null) {
@@ -183,7 +237,7 @@ export async function getFederalCollectionId(): Promise<number> {
     const result = await db
       .select({ id: collections.id })
       .from(collections)
-      .where(eq(collections.slug, 'federal-civics'))
+      .where(eq(collections.slug, FEDERAL_SLUG))
       .limit(1);
 
     if (result.length > 0) {
@@ -191,12 +245,19 @@ export async function getFederalCollectionId(): Promise<number> {
       return cachedFederalCollectionId;
     }
 
-    // Collection not found — return hardcoded fallback
-    console.warn('Federal civics collection not found by slug, using fallback ID 1');
-    return 1;
+    // Not cached: a missing row is a condition to recover FROM, not one to settle into.
+    // The slug is named in the message because the old wording ('not found by slug') read
+    // as benign for months while the slug itself was the bug.
+    console.warn(
+      `No collection with slug '${FEDERAL_SLUG}' -- falling back to collection id ${FEDERAL_COLLECTION_ID_FALLBACK}`,
+    );
+    return FEDERAL_COLLECTION_ID_FALLBACK;
   } catch (error) {
-    console.warn('Failed to query federal collection ID, using fallback ID 1:', error);
-    return 1;
+    console.warn(
+      `Failed to query the '${FEDERAL_SLUG}' collection id, using fallback ${FEDERAL_COLLECTION_ID_FALLBACK}:`,
+      error,
+    );
+    return FEDERAL_COLLECTION_ID_FALLBACK;
   }
 }
 
@@ -233,21 +294,24 @@ export async function getCollectionMetadata(
  * Select 8 questions for a game session from a specific collection.
  *
  * Algorithm:
- *   1. Resolve collectionId (use federal-civics if null)
+ *   1. Resolve collectionId (use the Federal collection if null)
  *   2. Query all available questions for the collection (excluding recent + expired)
  *   3. Apply difficulty selection: Q1=easy, Q8=hard, Q2-Q7=balanced mix
  *   4. Transform DB rows to the existing Question interface (externalId -> id)
  *   5. On any error: fall back silently to JSON file
  *
- * @param collectionId - Collection to query (null = federal civics)
+ * @param collectionId - Collection to query (null = the Federal collection)
  * @param recentQuestionIds - Question external IDs to exclude from selection
  * @param gameMode - Game mode strategy name (defaults to 'easy-steps')
+ * @param owned - External IDs this player already holds a bobit for. A PREFERENCE only:
+ *   these sort last rather than being excluded. See `preferUnowned`. Empty when signed out.
  * @returns Array of up to 8 questions shaped as Question interface
  */
 export async function selectQuestionsForGame(
   collectionId: number | null,
   recentQuestionIds: string[],
-  gameMode?: string
+  gameMode?: string,
+  owned: ReadonlySet<string> = EMPTY_OWNED
 ): Promise<Question[]> {
   try {
     // Resolve collection ID
@@ -309,15 +373,20 @@ export async function selectQuestionsForGame(
       return true;
     });
 
+    const unowned = owned.size === 0
+      ? uniqueRows.length
+      : uniqueRows.filter(r => !owned.has(r.externalId)).length;
     console.log(
-      `Question selection: collection=${targetCollectionId}, available=${uniqueRows.length}, excluded=${recentQuestionIds.length}`
+      `Question selection: collection=${targetCollectionId}, available=${uniqueRows.length}, ` +
+      `excluded=${recentQuestionIds.length}, unowned=${unowned}`
     );
 
     // Apply difficulty selection algorithm
     const selectedRows = applyDifficultySelection(
       uniqueRows,
       targetCollectionId,
-      gameMode
+      gameMode,
+      owned
     );
 
     // Final dedup safety check on selected questions
@@ -358,7 +427,8 @@ export async function transformSingleDBQuestion(row: DBQuestionRow): Promise<Que
  */
 export async function createAdaptiveSession(
   collectionId: number | null,
-  recentQuestionIds: string[]
+  recentQuestionIds: string[],
+  owned: ReadonlySet<string> = EMPTY_OWNED
 ): Promise<{
   firstQuestion: Question;
   candidatePools: { easy: DBQuestionRow[]; medium: DBQuestionRow[]; hard: DBQuestionRow[] };
@@ -413,11 +483,12 @@ export async function createAdaptiveSession(
     return true;
   });
 
-  // Shuffle and split into pools
+  // Shuffle, split into pools, then float the questions this player has no bobit for to the
+  // front of each. Every picker here takes from the front, so that is the whole steering.
   const shuffled = shuffle(uniqueRows);
-  const easyPool = shuffled.filter(q => q.difficulty === 'easy');
-  const mediumPool = shuffled.filter(q => q.difficulty === 'medium');
-  const hardPool = shuffled.filter(q => q.difficulty === 'hard');
+  const easyPool = preferUnowned(shuffled.filter(q => q.difficulty === 'easy'), owned);
+  const mediumPool = preferUnowned(shuffled.filter(q => q.difficulty === 'medium'), owned);
+  const hardPool = preferUnowned(shuffled.filter(q => q.difficulty === 'hard'), owned);
 
   // Pick first question from easy pool (Tier 1 = easy only)
   const firstRow = easyPool.shift() || mediumPool.shift() || hardPool.shift();

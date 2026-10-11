@@ -60,7 +60,7 @@ export interface GameSession {
   plausibilityFlags: number; // Count of suspicious answer patterns in this session
   collectionId: number | null;    // null = Federal default (backward compat)
   collectionName: string | null;  // e.g. "Federal Civics"
-  collectionSlug: string | null;  // e.g. "federal-civics"
+  collectionSlug: string | null;  // e.g. "federal", "washington-dc"
   isConnected: boolean;           // Whether user was Connected tier at session start (default: false)
   isSuspended: boolean;           // Whether account_standing was 'suspended' at session start (default: false)
   accessToken?: string;           // Raw JWT stored for downstream platform calls

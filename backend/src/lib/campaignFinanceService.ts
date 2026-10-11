@@ -2500,8 +2500,25 @@ export async function searchDonors(rawQuery: string): Promise<DonorSearchRespons
 export interface OutsideSpendingCommittee {
   cmt_id: string;
   cmt_nm: string;
+  /**
+   * ADR 0008. Direction of this committee's spending RELATIVE TO THIS POLITICIAN.
+   *
+   * 🔴 Required, not optional, and that is deliberate: a consumer must not be able to render
+   * outside spending without having chosen how to say which direction it ran. A committee formed
+   * to recall somebody and one formed to elect them are otherwise the same object — and so are
+   * their `top_donors`, where one list is people who funded them and the other is people who
+   * funded a campaign against them.
+   *
+   * Committees whose direction is unknown are WITHHELD by the query, never defaulted.
+   */
+  support_oppose: 'support' | 'oppose';
   total_amount: number;
   contribution_count: number;
+  /**
+   * 🔴 Under `support_oppose: 'oppose'` these are people who funded a campaign AGAINST the
+   * politician. Rendered like supporters' donations they invert their meaning while looking
+   * identical. ADR 0008 §6 requires the two to be visually and textually distinct.
+   */
   top_donors: Array<{ donor_name: string; amount: number }>;
 }
 
@@ -2514,6 +2531,7 @@ export interface OutsideSpendingResponse {
 interface IeCommitteeTotalsRow {
   cmt_id: string;
   cmt_nm: string;
+  support_oppose: 'support' | 'oppose'; // never null — the query filters NULL out
   total_amount: string;  // numeric -> string
   contribution_count: string; // bigint -> string
 }
@@ -2527,45 +2545,111 @@ interface IeTopDonorRow {
 /**
  * getOutsideSpendingForPolitician returns IE committee spending data linked to a politician.
  *
- * Sources: transparent_motivations.politician_sources rows with source_type='ie_committee'
- * and research_status='confirmed'. Contribution rows are linked via politician_source_id.
+ * Sources: transparent_motivations.politician_sources rows with source_type='ie_committee',
+ * research_status='confirmed' AND support_oppose IS NOT NULL. Contribution rows are linked via
+ * politician_source_id.
+ *
+ * 🔴 ADR 0008: a committee whose DIRECTION is unknown is WITHHELD, never defaulted. There is no
+ * safe default — defaulting to 'support' publishes money raised AGAINST a politician as money
+ * they raised, which is a false statement about a real person. Unknown is withheld here for the
+ * same reason a `disputed` source is withheld and a blank compass spoke is correct.
+ * Evidence a direction from FPPC Form 460 cover page Part 7 (SUPPORT/OPPOSE checkboxes per
+ * candidate, signed under penalty of perjury), then the committee publishes.
  *
  * cmt_id is stored in politician_sources.external_id.
- * cmt_nm is stored in politician_sources.notes as JSON text (notes::jsonb->>'cmt_nm').
+ * cmt_nm is stored in politician_sources.notes as JSON text. `la_socrata` writes it under
+ * 'cmt_nm' and `cal_access` under 'committee_name', so the label COALESCEs the two — without the
+ * fallback a CAL-ACCESS committee rendered with an empty name.
+ *
+ * 🔴 NOT SCOPED TO ONE SOURCE SYSTEM, AND NOT UNSCOPED EITHER. Until 2026-10-09 the gathering CTE
+ * hardcoded `source_system = 'la_socrata'` while the CTE that LISTS the committees carried no such
+ * filter, so a confirmed ie_committee link from any other system rendered as a card with an empty
+ * name and $0 — which is why two real CAL-ACCESS IE committees had to be parked at
+ * `not_applicable` during the surname-bucket adjudication.
+ *
+ * ⚠ Simply DELETING that filter is wrong, though not for the reason it first looks. `la_socrata`
+ * reuses CAL-ACCESS filer ids, so a shared external_id is the SAME committee, not a collision —
+ * measured 2026-10-09: of 36 shared ids naming a committee in both systems, all 36 agree and none
+ * collide. The hazard is DOUBLE COUNTING. The CTEs join on external_id, and the uniqueness
+ * constraint on contributions is (data_source, source_transaction_id), so one real donation
+ * ingested from both systems is two rows. 193 ids are shared and 3 carry contributions in both
+ * (1349095, Blumenfield 2013: 446 rows via cal_access against 470 via la_socrata — the same money
+ * twice). So the source system is CORRELATED between the two CTEs rather than dropped.
+ * `campaignFinanceService.outsideSpending.test.ts` pins both halves; its double-count control
+ * reports 200/2 instead of 100/1 against the naive version, which was watched failing.
  *
  * Returns { committees: [] } when no IE sources exist — never omits the key.
  */
 async function getOutsideSpendingForPolitician(
   politicianId: string
 ): Promise<OutsideSpendingResponse> {
+/**
+ * `politician_sources.notes` is a TEXT column, not `jsonb`, and the house convention appends a
+ * later note AFTER the JSON object with a ` | ` separator — 7,863 rows carried one when this was
+ * measured on prod (2026-10-10). A bare `notes::jsonb` therefore raises
+ * `22P02 invalid input syntax for type json` on any appended row.
+ *
+ * 🔴 That is not hypothetical and it is not cheap. `CC_0225` appended
+ * `| IE + DIRECTION CC_0225: …` to all four rows it evidenced, which were exactly the four rows
+ * this query reads. `getOutsideSpendingForPolitician` is awaited inside the summary handler, so
+ * the whole campaign-finance endpoint returned HTTP 500 for Newsom, Hurtado, Gipson and Erickson
+ * — not merely the outside-spending card. The repo already knew the shape: PR #972 carries a test
+ * for "a marker inside notes that are NOT valid JSON (appended `| UNVERIFIED …` text breaks a
+ * jsonb cast)". This query was the one remaining unguarded cast.
+ *
+ * ▶ So the reader tolerates the convention rather than the writer being forbidden it: take the
+ * JSON if the whole string parses, else the prefix before the first `} |`, else NULL. A note that
+ * cannot be parsed costs a committee NAME; it must never cost the endpoint.
+ *
+ * ⚠ Order matters. The whole-string branch runs FIRST so that a `} |` occurring INSIDE a JSON
+ * string value (`{"cmt_nm":"E } | F"}`) is not truncated at it. Verified against prod across
+ * eight shapes, including prose-only and malformed-prefix rows, which return NULL and do not raise.
+ */
+const NOTES_AS_JSONB = `(CASE
+                WHEN notes IS JSON OBJECT THEN notes::jsonb
+                WHEN left(notes, strpos(notes, '} |')) IS JSON OBJECT
+                  THEN left(notes, strpos(notes, '} |'))::jsonb
+              END)`;
+
   // Query IE committee totals.
   // Join through external_id (cmt_id) rather than politician_source_id directly — the unique
   // constraint on (data_source, source_transaction_id) means contributions land on whichever
   // politician_source row ingested first. All politician_sources sharing the same cmt_id must
   // be checked so every politician linked to the committee sees the same totals.
+  // ⚠ (cmt_id, source_system) is the key, never cmt_id alone — not because ids collide (they do
+  // not; la_socrata reuses CAL-ACCESS filer ids) but because one committee ingested from both
+  // systems holds each donation twice. A politician declaring the same cmt_id under BOTH systems
+  // would still collapse into one card, since the response is keyed by cmt_id; nobody does.
   const totalsResult = await pool.query<IeCommitteeTotalsRow>(
     `WITH ie_cmt_ids AS (
        SELECT external_id AS cmt_id,
-              notes::jsonb->>'cmt_nm' AS cmt_nm
+              source_system,
+              support_oppose,
+              COALESCE(${NOTES_AS_JSONB}->>'cmt_nm', ${NOTES_AS_JSONB}->>'committee_name') AS cmt_nm
          FROM transparent_motivations.politician_sources
         WHERE essentials_politician_id = $1
           AND source_type = 'ie_committee'
           AND research_status = 'confirmed'
+          -- ADR 0008: a committee whose DIRECTION is unknown is WITHHELD, never defaulted.
+          AND support_oppose IS NOT NULL
      ),
      ie_all_sources AS (
-       SELECT ps.id, ps.external_id AS cmt_id
+       SELECT ps.id, ps.external_id AS cmt_id, ps.source_system
          FROM transparent_motivations.politician_sources ps
-         JOIN ie_cmt_ids ic ON ps.external_id = ic.cmt_id
-        WHERE ps.source_system = 'la_socrata'
+         JOIN ie_cmt_ids ic
+           ON ps.external_id = ic.cmt_id
+          AND ps.source_system = ic.source_system
      )
      SELECT ic.cmt_id,
             ic.cmt_nm,
+            ic.support_oppose,
             COALESCE(SUM(c.amount), 0)::numeric AS total_amount,
             COUNT(c.*) AS contribution_count
        FROM ie_cmt_ids ic
-       LEFT JOIN ie_all_sources ias ON ias.cmt_id = ic.cmt_id
+       LEFT JOIN ie_all_sources ias
+              ON ias.cmt_id = ic.cmt_id AND ias.source_system = ic.source_system
        LEFT JOIN transparent_motivations.contributions c ON c.politician_source_id = ias.id
-      GROUP BY ic.cmt_id, ic.cmt_nm
+      GROUP BY ic.cmt_id, ic.cmt_nm, ic.support_oppose
       ORDER BY total_amount DESC`,
     [politicianId]
   );
@@ -2577,17 +2661,20 @@ async function getOutsideSpendingForPolitician(
   // Query top donors per IE committee (top 10 per committee, UI shows top 5)
   const topDonorsResult = await pool.query<IeTopDonorRow>(
     `WITH ie_cmt_ids AS (
-       SELECT external_id AS cmt_id
+       SELECT external_id AS cmt_id, source_system
          FROM transparent_motivations.politician_sources
         WHERE essentials_politician_id = $1
           AND source_type = 'ie_committee'
           AND research_status = 'confirmed'
+          -- ADR 0008: must mirror the totals CTE, or a withheld committee's donors leak.
+          AND support_oppose IS NOT NULL
      ),
      ie_all_sources AS (
-       SELECT ps.id, ps.external_id AS cmt_id
+       SELECT ps.id, ps.external_id AS cmt_id, ps.source_system
          FROM transparent_motivations.politician_sources ps
-         JOIN ie_cmt_ids ic ON ps.external_id = ic.cmt_id
-        WHERE ps.source_system = 'la_socrata'
+         JOIN ie_cmt_ids ic
+           ON ps.external_id = ic.cmt_id
+          AND ps.source_system = ic.source_system
      )
      SELECT ias.cmt_id,
             c.donor_name_normalized AS donor_name,
@@ -2615,6 +2702,7 @@ async function getOutsideSpendingForPolitician(
   const committees: OutsideSpendingCommittee[] = totalsResult.rows.map((row) => ({
     cmt_id: row.cmt_id,
     cmt_nm: row.cmt_nm ?? '',
+    support_oppose: row.support_oppose,
     total_amount: Number(row.total_amount),
     contribution_count: Number(row.contribution_count),
     top_donors: donorsByCmtId.get(row.cmt_id) ?? [],

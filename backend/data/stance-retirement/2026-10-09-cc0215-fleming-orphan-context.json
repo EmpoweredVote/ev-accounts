@@ -1,0 +1,43 @@
+{
+  "migration": "CC_0215",
+  "captured_at": "2026-10-09",
+  "what": "The two ORPHAN context rows deleted from the retired John Fleming duplicate (8be7e981-77a6-4ef7-b8d7-891fd9cc26d8). Both already had NO politician_answers row before this migration, so nothing was un-chaired by deleting them. Both are Season 1, which is closed, so a documented blank could not be written in their place. Re-pointing them to the canonical row would have parked prose that Citations.jsx renders verbatim if an answer for that pair ever appeared.",
+  "disposition": "deleted",
+  "canonical_id": "a750bce8-a3ec-45fb-9812-5bb6f726e32f",
+  "retired_id": "8be7e981-77a6-4ef7-b8d7-891fd9cc26d8",
+  "rows": [
+    {
+      "politician_id": "8be7e981-77a6-4ef7-b8d7-891fd9cc26d8",
+      "politician_name": "John Fleming",
+      "topic_key": "homelessness",
+      "topic_title": "Criminalization of Homelessness",
+      "season": 1,
+      "season_status": "closed",
+      "reasoning": "Fleming's record on welfare programs emphasizes work requirements and fraud prevention (co-sponsored SNAP photo ID requirement, voted against expanding AmeriCorps/national service). His philosophy favors enforcement and work-based solutions over expanded services, with no documented support for housing-first or decriminalization approaches. He has not advocated for redirecting enforcement budgets toward supportive services.",
+      "sources": [
+        "https://www.ontheissues.org/House/John_Fleming_Welfare_+_Poverty.htm",
+        "https://www.ontheissues.org/House/John_Fleming.htm"
+      ],
+      "evidence_tier": null,
+      "created_at": "2026-08-26T03:46:19.044916+00:00",
+      "updated_at": "2026-08-26T03:46:19.044916+00:00"
+    },
+    {
+      "politician_id": "8be7e981-77a6-4ef7-b8d7-891fd9cc26d8",
+      "politician_name": "John Fleming",
+      "topic_key": "voting-rights",
+      "topic_title": "Voting Rights and Electoral Integrity",
+      "season": 1,
+      "season_status": "closed",
+      "reasoning": "Fleming co-sponsored the SNAP Verify Act requiring photo ID for food stamps, reflecting support for strict ID verification across government programs. His Tea Party affiliation and strong opposition to Democratic voting-expansion initiatives are well-documented. He has not supported automatic voter registration, expanded early voting, or no-excuse mail voting.",
+      "sources": [
+        "https://www.ontheissues.org/House/John_Fleming_Welfare_+_Poverty.htm",
+        "https://www.ontheissues.org/House/John_Fleming.htm"
+      ],
+      "evidence_tier": null,
+      "created_at": "2026-08-26T03:46:19.044916+00:00",
+      "updated_at": "2026-08-26T03:46:19.044916+00:00"
+    }
+  ],
+  "note": "Both rows reason from an aggregator (ontheissues.org) and from party affiliation, and the homelessness row argues from welfare-programme votes to a ladder about criminalizing homelessness. Neither would meet the current evidence bar if proposed today. They are recorded here so the deletion is reversible by hand, not because they should be restored."
+}
