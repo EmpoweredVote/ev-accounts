@@ -1,7 +1,15 @@
 # CAL-ACCESS — the 1,336 DISPUTED sources: audit and worklist
 
 > **STATUS 2026-10-11, measured on prod.** The 1,336 in the title is where this opened.
-> **428 remain.** `CC_0227` (live) and `CC_0228` (inactive) cleared the whole
+> **365 remain.** `CC_0229` closed the last shape — the 64 surname-NOT-LEADING rows on inactive
+> politicians: **63 detached, 1 kept.**
+>
+> 🟢 **NO DISPUTED CAL-ACCESS SOURCE OF ANY OF THE THREE SHAPES IS NOW UNREAD**, live or inactive.
+> The 365 that remain are the honest residue: rows whose committee name begins with the surname
+> and carries no forename, no place and no bucket to argue from. They need a CAL-ACCESS candidate
+> page or a Form 460 Part 5.
+>
+> _Earlier:_ 1,027 after `CC_0226`; 733 after `CC_0227`; 428 after `CC_0228`. `CC_0227` (live) and `CC_0228` (inactive) cleared the whole
 > *starts-with-surname* shape: **599 detached of 953, 354 kept.** 🟢 **No disputed CAL-ACCESS
 > source of ANY of the three shapes is now unread.** What is left is **428** rows that carry no
 > in-corpus signal at all and need a CAL-ACCESS candidate page or a Form 460 Part 5.
@@ -224,7 +232,43 @@ people's entire committee histories.
 Michael, `HERBERS … SUE` on a Susan. A conflict test reading those as "a different forename" would
 detach a person's own committees. All three are LEFT.
 
-### ▶ WHAT IS LEFT OF THIS SHAPE — the 64 on INACTIVE rows
+## ✅ DONE — `CC_0229`: the 64 not-leading rows on INACTIVE politicians. 63 detached, 1 kept
+
+**Applied to prod 2026-10-11.** The companion to `CC_0226`, which did this shape on live rows.
+
+⚠ **A post-`CC_0228` sweep said 74. It is 64** — the other 10 are `CC_0226`'s LIVE keeps, which
+match the same pattern. 64 matches this file's long-standing figure.
+
+**The matcher hit a PLACE, overwhelmingly:** IMPERIAL Irrigation District / County / Beach (11 of
+Jay Imperial's 12), the city of CORONA (8), PASO ROBLES (3), ALUM ROCK (4), RANCHO SANTIAGO (3),
+REED Union School District, the GILBERT Initiative, LOS ALTOS, ADELANTO, ALAMEDA.
+
+🔴 **And a class worth naming: a LONGER SURNAME THAT MERELY CONTAINS THE SHORTER ONE** —
+**MC SHANE** on Kristin *Shane*, **MC KAY** on Ben *Kay*, **DI DONATO** on Nathan *Donato*,
+**BAUTISTA ZAVALA** on Saul *Zavala*, **BURKE MONTEZ** on Arturo *Montez*. A `LIKE '%surname%'`
+predicate cannot tell these apart. Only reading the row does.
+
+🟢 **Every ambiguous row was settled by the politician's OWN already-detached rows**, which is now
+the most reliable instrument in this corpus:
+Roberta Bacon's set names `BACON MAYOR OF FREMONT 2024; COMMITTEE TO ELECT **VINNIE**` ·
+Tina Huber's names `HUBER FOR **OXNARD** CITY COUNCIL 2014 … **STEVE**`, same city and year ·
+Saul Zavala's `BAUTISTA ZAVALA FOR YUBA CC BOARD 2028` was already `not_applicable`.
+
+⚠ **And one was settled only by reading the UNTRUNCATED value.** `RESIDENTS FOR A BETTER IMPERIAL,
+A COMMITTEE TO RECALL …` recalls **Grogan, Leimgruber, Maruca & Wyatt** — Jay Imperial is not among
+them, and the names were in the part the first read cut off.
+
+### 🔴 The one kept
+
+`1277545  SOC - TO SUPPORT RECALL OF **JAY IMPERIAL** AND GARY TAYLOR` — it names him in full, and
+sits in the same bucket as eleven rows that matched "Imperial" as a *place*. That is precisely why
+a bucket may never be detached wholesale without reading it. Control: with the keep removed, the
+gate fired at 64.
+
+⚠ **1 of 64 is 1.6%** — below `CC_0226`'s 4.7% on the live half of this same shape, and far below
+the 37% of the starts-with-surname shape. **The rate tracks the SHAPE, not the population.**
+
+### ▶ (closed) WHAT WAS LEFT OF THIS SHAPE — the 64 on INACTIVE rows
 
 ⚠ **64 of this same shape sit on INACTIVE rows.** They carry the same merge hazard as `CC_0221`'s
 eight duplicate rows — attribution first, merge second — but no live twin exposure, so they rank
