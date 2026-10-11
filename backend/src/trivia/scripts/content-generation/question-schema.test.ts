@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { QuestionSchema, ATTRIBUTION_OPENER } from './question-schema.js';
+import { QuestionSchema, ModelQuestionSchema, ATTRIBUTION_OPENER } from './question-schema.js';
 
 /**
  * WHY THIS EXISTS
@@ -76,5 +76,67 @@ describe('explanation attribution opener', () => {
   it('still enforces the length bounds it always did', () => {
     expect(parse('Too short.').success).toBe(false);
     expect(parse('x'.repeat(501)).success).toBe(false);
+  });
+});
+
+/**
+ * WHY THESE EXIST
+ * ---------------
+ * ElectionQuestionGenerator and CurrentTermQuestionGenerator used to JSON.parse the model's
+ * reply and run it past four loose checks: text present, options an array of AT LEAST four,
+ * correctAnswer not undefined. Then placeAnswer() and the quality gate ran, and it was written.
+ *
+ * Each case below is something that passed those checks and should not have. The one that
+ * matters most is the out-of-range answer: placeAnswer() returns the question UNCHANGED when
+ * the shape is wrong rather than throwing, so the write-time placement guard silently did
+ * nothing and a question with no correct option reached the bank.
+ */
+describe('ModelQuestionSchema — what the loose filter let through', () => {
+  const ok = {
+    text: 'Who is on the ballot for mayor in this race?',
+    options: ['Alice Chen', 'Bob Ruiz', 'Carol Diaz', 'Dan Okafor'],
+    correctAnswer: 1,
+    explanation: 'Bob Ruiz is the incumbent mayor and is standing for a second four-year term.',
+    difficulty: 'medium' as const,
+    source: { name: 'County Registrar', url: 'https://example.gov/ballot' },
+  };
+  const parse = (over: Record<string, unknown>) =>
+    ModelQuestionSchema.safeParse({ ...ok, ...over });
+
+  it('accepts a well-formed question', () => {
+    expect(parse({}).success).toBe(true);
+  });
+
+  it('rejects five options — the old check said "at least four"', () => {
+    expect(parse({ options: [...ok.options, 'Erin Vale'] }).success).toBe(false);
+  });
+
+  it('rejects an answer index past the options, which placeAnswer cannot fix', () => {
+    // It returns `unchanged` for a bad shape, so nothing downstream caught this.
+    expect(parse({ correctAnswer: 7 }).success).toBe(false);
+    expect(parse({ correctAnswer: -1 }).success).toBe(false);
+  });
+
+  it('rejects a difficulty the tiered picker would never select', () => {
+    expect(parse({ difficulty: 'moderate' }).success).toBe(false);
+    expect(parse({ difficulty: 'Easy' }).success).toBe(false);
+  });
+
+  it('rejects a missing or unusable source rather than inserting "Unknown"', () => {
+    expect(parse({ source: undefined }).success).toBe(false);
+    expect(parse({ source: { name: 'Somewhere', url: 'not-a-url' } }).success).toBe(false);
+  });
+
+  it('rejects the attribution opener here too, not only on the content path', () => {
+    expect(parse({ explanation: 'According to the registrar, Bob Ruiz is the incumbent mayor.' })
+      .success).toBe(false);
+  });
+
+  it('does not require the fields the generator supplies itself', () => {
+    // externalId is built from the race id, expiresAt from the term end, and neither
+    // generator reads topicCategory — requiring them would drop good questions.
+    const parsed = ModelQuestionSchema.safeParse(ok);
+    expect(parsed.success).toBe(true);
+    expect(Object.keys(parsed.success ? parsed.data : {})).not.toContain('externalId');
   });
 });

@@ -94,6 +94,24 @@ export const QuestionSchema = z.object({
 });
 
 /**
+ * What a generator gets back from the model when the ids are not its to invent.
+ *
+ * ElectionQuestionGenerator and CurrentTermQuestionGenerator build `externalId` from the race
+ * id at insert time and take `expiresAt` from the race's term end, and neither reads
+ * `topicCategory` (they write a fixed subcategory). Everything else is the SAME contract as a
+ * content-generation question -- exactly four options, an answer index actually within them,
+ * explanation bounds, the attribution-opener ban, and a source with a real URL -- which is why
+ * this is derived from QuestionSchema instead of written out a second time and left to drift.
+ */
+export const ModelQuestionSchema = QuestionSchema.omit({
+  externalId: true,
+  expiresAt: true,
+  topicCategory: true,
+});
+
+export type ModelQuestion = z.infer<typeof ModelQuestionSchema>;
+
+/**
  * Schema for a batch of questions returned by the AI.
  * Expects 15-30 questions per batch.
  */

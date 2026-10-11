@@ -12,6 +12,7 @@ import { client } from '../../scripts/content-generation/anthropic-client.js';
 import { db } from '../../db/index.js';
 import { placeAnswer } from '../questionQuality/answerPlacement.js';
 import { auditBeforeInsert } from './auditBeforeInsert.js';
+import { ModelQuestionSchema, type ModelQuestion } from '../../scripts/content-generation/question-schema.js';
 import {
   questions,
   collectionQuestions,
@@ -28,6 +29,8 @@ import {
 
 export interface CurrentTermResult {
   questionsCreated: number;
+  /** Questions the model returned that the schema refused. 0 is the expected value. */
+  questionsRejected: number;
   raceId: number;
   jurisdiction: string;
   collectionSlug: string;
@@ -182,17 +185,7 @@ export async function generateCurrentTermQuestions(
     );
   }
 
-  let parsed: {
-    questions: Array<{
-      text: string;
-      options: string[];
-      correctAnswer: number;
-      explanation: string;
-      difficulty: string;
-      topicCategory: string;
-      source: { name: string; url: string };
-    }>;
-  };
+  let parsed: { questions: unknown[] };
 
   try {
     parsed = JSON.parse(jsonMatch[0]);
@@ -209,19 +202,39 @@ export async function generateCurrentTermQuestions(
     );
   }
 
-  // Validate — filter out malformed questions
-  const parsedQuestions = parsed.questions.filter((q, idx) => {
-    if (
-      !q.text ||
-      !Array.isArray(q.options) ||
-      q.options.length < 4 ||
-      q.correctAnswer === undefined
-    ) {
-      console.warn(`  Warning: Skipping malformed question at index ${idx}`);
-      return false;
+  // Validate the model's reply against the shared question schema.
+  //
+  // What this replaces checked four things loosely: text present, options an array of AT LEAST
+  // four, correctAnswer not undefined. That let through, silently:
+  //   - five or more options, and an answer index pointing past the fourth
+  //   - correctAnswer out of range (or a string), which placeAnswer() cannot fix -- it returns
+  //     the question UNCHANGED when the shape is wrong, so the guard quietly did nothing and a
+  //     question with no correct option was written
+  //   - any difficulty string at all, including one the tiered picker will never select
+  //   - no explanation checks, so an empty or boilerplate-opening explanation passed
+  //   - no source, which the insert below turns into { name: 'Unknown', url: '' }
+  //
+  // Same drop-and-continue behaviour as before -- one bad question must not cost the batch --
+  // but the reason is now printed rather than "malformed", because "malformed" is what you
+  // read in a log three weeks later and learn nothing from.
+  const rejections: string[] = [];
+  const parsedQuestions: ModelQuestion[] = [];
+  for (const [idx, raw] of parsed.questions.entries()) {
+    const result = ModelQuestionSchema.safeParse(raw);
+    if (!result.success) {
+      const why = result.error.issues
+        .map((i) => `${i.path.join('.') || '(root)'}: ${i.message}`)
+        .join('; ');
+      rejections.push(`question ${idx + 1}: ${why}`);
+      continue;
     }
-    return true;
-  });
+    parsedQuestions.push(result.data);
+  }
+
+  if (rejections.length > 0) {
+    console.warn(`  ${rejections.length} question(s) rejected by the schema:`);
+    for (const r of rejections) console.warn(`    - ${r}`);
+  }
 
   console.log(`  Claude generated ${parsedQuestions.length} valid questions.`);
 
@@ -316,6 +329,7 @@ export async function generateCurrentTermQuestions(
   // 9. Return result
   return {
     questionsCreated,
+    questionsRejected: rejections.length,
     raceId,
     jurisdiction: race.jurisdiction,
     collectionSlug,
