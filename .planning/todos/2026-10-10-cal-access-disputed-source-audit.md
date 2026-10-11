@@ -1,7 +1,12 @@
 # CAL-ACCESS — the 1,336 DISPUTED sources: audit and worklist
 
 > **STATUS 2026-10-11, measured on prod.** The 1,336 in the title is where this opened.
-> **733 remain.** `CC_0227` cleared the live *starts-with-surname* bucket (294 detached of 508;
+> **428 remain.** `CC_0227` (live) and `CC_0228` (inactive) cleared the whole
+> *starts-with-surname* shape: **599 detached of 953, 354 kept.** 🟢 **No disputed CAL-ACCESS
+> source of ANY of the three shapes is now unread.** What is left is **428** rows that carry no
+> in-corpus signal at all and need a CAL-ACCESS candidate page or a Form 460 Part 5.
+>
+> _Earlier:_ 1,027 after `CC_0226`; 733 after `CC_0227`. `CC_0227` cleared the live *starts-with-surname* bucket (294 detached of 508;
 > **214 kept**, a far higher genuine rate than `CC_0226`'s 4.7%). What is left: **445 inactive**
 > starts-with-surname, plus **123 live + 41 singleton** rows that carry no in-corpus signal at all
 > and need a CAL-ACCESS fetch.
@@ -186,6 +191,38 @@ not guessed at. Settling them needs a CAL-ACCESS candidate page or a Form 460 Pa
 Four more are named in `CC_0227`'s `_big_keep` as explicitly **UNSETTLED** rather than evidenced:
 John King's two Supervisor rows (he genuinely ran), Emmanuel Estrada's `FOR MAYOR 2020`, and Juan
 Carrillo's 2022 officeholder account (Wendy Carrillo held AD-52 the same year).
+
+## ✅ DONE — `CC_0228`: the INACTIVE starts-with-surname bucket. 305 detached, 140 kept
+
+**Applied to prod 2026-10-11.** Companion to `CC_0227`. These sit on inactive rows, so nothing
+publishes and the confirm-sweep hazard does not apply — **the exposure is the dedupe merge.**
+`CC_0220` put 18 foreign committees onto two LIVE rows by merging an inactive duplicate that
+carried them. Clearing these is what makes the dedupe programme safe.
+
+⚠ **Only two of `CC_0227`'s three instruments survive here**: an inactive row has no
+`office_current_holder` entry, so there is no seat to compare a jurisdiction against.
+
+🟢 **But a third is stronger here than anywhere — the politician's ALREADY-`not_applicable` rows.**
+**Diana Corona** holds **33** already-detached: Corona *city* council committees for Button,
+Casillas, Connell, Husen, Kelly, Kindred, Rizvi, Speake, Tolstikov — plus other people named
+Corona. "Corona" matched a CITY and a SURNAME at once, and not one of her 39 is hers.
+**George Fuller** holds 25, nearly all **Jean Fuller**, the state senator.
+
+### 🔴🔴 What the forename protection caught — the reason bucket size can be used as evidence
+
+Two "buckets" are not buckets. They are a real person's COMPLETE committee set, misfiled:
+
+- **Tim Nader** — all **8** read `TIM`: Assembly, Judge ×3, Southwestern College Board ×3,
+  `FRIENDS OF TIM`.
+- **David Patterson** — all **5** read `DAVID`.
+
+▶ **The control proves it.** With the protection removed, the gate fired at **26 rows — of which
+13 are Nader's and Patterson's complete sets.** A bucket rule alone would have erased two real
+people's entire committee histories.
+
+🔴 **A DIMINUTIVE IS AGREEMENT, NOT CONFLICT.** `ZUNIGA … EDDIE` on an Edward, `LAYNE … MIKE` on a
+Michael, `HERBERS … SUE` on a Susan. A conflict test reading those as "a different forename" would
+detach a person's own committees. All three are LEFT.
 
 ### ▶ WHAT IS LEFT OF THIS SHAPE — the 64 on INACTIVE rows
 
