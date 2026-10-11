@@ -1,7 +1,12 @@
 # CAL-ACCESS — the 1,336 DISPUTED sources: audit and worklist
 
-> **STATUS 2026-10-10, measured on prod.** The 1,336 in the title is where this opened.
-> **1,027 remain.** `CC_0223` cleared the no-surname bucket (103) and `CC_0226` the
+> **STATUS 2026-10-11, measured on prod.** The 1,336 in the title is where this opened.
+> **733 remain.** `CC_0227` cleared the live *starts-with-surname* bucket (294 detached of 508;
+> **214 kept**, a far higher genuine rate than `CC_0226`'s 4.7%). What is left: **445 inactive**
+> starts-with-surname, plus **123 live + 41 singleton** rows that carry no in-corpus signal at all
+> and need a CAL-ACCESS fetch.
+>
+> _Earlier, 2026-10-10:_ **1,027 remained.** `CC_0223` cleared the no-surname bucket (103) and `CC_0226` the
 > surname-not-leading bucket on live rows (204, keeping 10 genuine support/oppose committees);
 > `CC_0225` retyped 2 to `ie_committee`. **No live row carries an unread disputed source of
 > either shape any more.** What is left is 508 live + 445 inactive that START with the surname
@@ -122,6 +127,65 @@ so the corpus itself named the other Sylvester and settled her two CVUSD rows as
   two is wrong, and a `confirmed` row is a published attribution. Belongs in the confirmed audit.
 - **Phil Brock** has **no `office_current_holder` row** though he is a sitting Santa Monica council
   member — an occupancy gap, the `offices_missing_terms` class.
+
+## ✅ DONE — `CC_0227`: the LIVE starts-with-surname bucket. 294 detached, 214 kept
+
+**Applied to prod 2026-10-11**, after a `ROLLBACK` dry run whose revert was confirmed and a tamper
+control that **removed the forename protection and fired with exactly 28** — the Hochman, Barger,
+Bass, Bonta, Newsom and Park rows it exists to protect.
+
+🔴 **THIS SLICE IS A DIFFERENT PROBLEM, AND THE WORKLIST'S COST ESTIMATE WAS WRONG.** It said
+"~486 Form 460 fetches for no voter-visible change". It was not 486 fetches. Reading the name
+proves nothing here — the name *starts* with the surname, so it is consistent with the attribution
+either way. ⚠ **And the jurisdiction test that carried `CC_0226` does NOT reach this population:
+500 of the 953 sit on politicians with no `office_current_holder` row at all.**
+
+Three in-corpus signals did the work instead:
+
+1. 🟢 **The forename.** `SURNAME, COMMITTEE TO ELECT <FORENAME>` is decisive both ways.
+2. 🟢 **Bucket context** — `CC_0221`'s reasoning for Dan O'Brien's 44.
+3. 🟢 **The politician's own committees** — the `CC_0226` instrument.
+
+⚠ **PR #972 tried a forename test and abandoned it** ("every one of the 22 I read is a false
+positive" — `FRIENDS OF TED` on Ted Lieu). Those examples are forename **agreements** its detector
+called conflicts; the implementation was inverted, not the idea. ▶ **So agreement is used only to
+PROTECT a row, never to detach one**, and that is the gate the control above exercises.
+
+🔴 **PARSE ARTIFACT:** `Dr. Monica Sanchez` has `first_name = 'Dr.'`, so a naive forename
+comparison misses two rows that plainly read `SUPPORT MONICA`. Strip honorifics, and require
+`length(forename) >= 3` so an initial cannot match everything.
+
+| the buckets | n | what they actually contain |
+|---|---|---|
+| Pat Wilson, Rolling Hills (pop ~1,900) | 33 | Lori (Suisun City), Hazel, Abram … and **four about Pete Wilson, the former Governor** |
+| David L. Bradley, Rancho Palos Verdes | 9 | every one is **Tom Bradley**, Mayor of LA 1973-93 |
+| Britt Huff, Rolling Hills Estates | 6 | every one is **Bob Huff**, the state senator |
+| Robert Luna, LA County Sheriff | 12 | Mickie Solorio, Sylvia, David, Sammie, Ray, George |
+
+🔴 **Two buckets are MIXED, which is why this cannot be a predicate.** **Janice Hahn**'s other
+eight are her father **Kenneth P. Hahn** and her brother **James Hahn**; one names JANICE for her
+exact seat. **Rob Bonta**'s fifth is `… FOR **MIA**` — Mia Bonta, who succeeded him in AD-18.
+
+### ▶ The genuine rate is nothing like the last slice
+
+`CC_0226` kept 10 of 214 (4.7%). **`CC_0227` keeps 214 of 508.** A committee named
+`SURNAME FOR OFFICE` about the right person *is* their race, so this population is far richer in
+real independent-expenditure committees — Hochman (7 of 7), Barger (7 of 7), Newsom (8 of 8),
+Bass (6 of 6), Mitchell, Hutt, Caloza, Hernandez, Raman, Thurmond, Kounalakis, Richardson and ~25
+more. ⚠ **Do not size the inactive-445 slice from `CC_0226`'s rate.**
+
+⚠ Several kept rows are OPPOSE committees — `CALIFORNIANS TO RECALL GAVIN`, `VOTE SMART CALIFORNIA
+OPPOSING` Ivan Altamirano, `OPPOSING PATTY` Lopez, the recall of Nancy Tragarz. Withheld until
+typed and evidenced, as `CC_0226`'s ten are.
+
+### ▶ The honest residue — 164 live rows that CANNOT be settled from this corpus
+
+**123** in buckets of 2-4 and **41** singletons carry no forename, no place and no bucket to argue
+from: `JOHNSON FOR CITY COUNCIL`, `ARELLANO FOR MAYOR`, `PARRA 2007`. They are left `disputed` and
+not guessed at. Settling them needs a CAL-ACCESS candidate page or a Form 460 Part 5.
+Four more are named in `CC_0227`'s `_big_keep` as explicitly **UNSETTLED** rather than evidenced:
+John King's two Supervisor rows (he genuinely ran), Emmanuel Estrada's `FOR MAYOR 2020`, and Juan
+Carrillo's 2022 officeholder account (Wendy Carrillo held AD-52 the same year).
 
 ### ▶ WHAT IS LEFT OF THIS SHAPE — the 64 on INACTIVE rows
 
