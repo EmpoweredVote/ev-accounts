@@ -84,16 +84,64 @@ O'Brien's 44 in `CC_0221`, and unlike those eight rows **this one is LIVE**.
 ⚠ **These rows were already partly cleaned; this was the residue.** Sanchez also carries 109
 `not_applicable`, Douglas 38, Chen 10, Bains 8. **A row that has been worked is not finished.**
 
-## ▶ STEP 2 — re-attach the 16 whose owner we hold. NOT YET DONE.
+## ▶ STEP 2 — re-attach the 19 whose owner we hold. NOT YET DONE. Scoped 2026-10-11.
 
-Henry Stern 8 · Thomas Umberg 5 · Maria Elena Durazo 3 (+ Debra Archuleta 1, Valladares 2 once the
-right Valladares is established — Oscar, Suzette Martinez, or the bare `Valladares` netfile row).
+🟢 **Detachment is CLOSED.** `CC_0223`, `CC_0226`, `CC_0227`, `CC_0228`, `CC_0229` adjudicated
+**969 sources**, 1,336 → **365** disputed. Step 2 is the **positive** half and it is a different
+kind of work: detaching only ever needed proof of whose a committee is *not*. **Attaching is a
+positive claim on a LIVE officeholder — the one action in this programme that can create a NEW
+false attribution.**
 
-🔴 **Attaching is a POSITIVE claim and needs POSITIVE evidence.** The committee name proves only
-whose a committee is *not*. Use the candidate page, then the **Form 460 cover page Part 5** when it
-is silent — all four are state politicians, so the candidate page should answer cheaply.
-⚠ `politician_sources` has a UNIQUE index on (politician, source_system, external_id): check the
-target does not already hold the id before repointing.
+🟢 **All 19 carry $0**, so nothing publishes either way and there is no urgency to rush it.
+
+| now sits on (wrong, `not_applicable` via `CC_0223`) | n | real owner | the committees |
+|---|---|---|---|
+| Gregg Hart | 8 | **Henry Stern** | SENATE 2016/2020/2024 · SUPERVISOR 2022 ×2 · CONTROLLER 2030 · CITY COUNCIL 99 · 1 IE |
+| Dr. Corey A. Jackson | 5 | **Thomas Umberg** | SENATE 2022 + officeholder · BOE 2026 · INSURANCE COMMISSIONER 2026 · CONSUMERS FOR TOM |
+| Jasmeet Kaur Bains | 3 | **Maria Elena Durazo** | two literally named `MARIA ELENA DURAZO` · 1 ballot-measure cmte |
+| Phillip Chen | 1 | **Debra Archuleta** | ARCHULETA FOR LA COUNTY DISTRICT ATTORNEY 2024 |
+| Steve Bennett | 2 | ⚠ **unresolved** | VALLADARES FOR RIO HONDO COLLEGE BOARD 2018 / 2022 |
+
+### 🟢 The UNIQUE index is NOT a blocker — measured, not assumed
+
+This file previously warned to "check the target does not already hold the id". Checked on prod
+2026-10-11: **all four real people are live rows holding ZERO `cal_access` sources.**
+
+```
+Henry Stern          f3671de4-514f-441c-8ad4-4a9ab7c65ae6
+Thomas Umberg        712be98b-a05d-4605-9603-cd5d86abfad1
+Maria Elena Durazo   c7dc9c50-84c6-4bde-af06-e7f9d5167e93
+Debra Archuleta      aa799786-0934-4d5e-a4ba-78ae984d7650
+```
+
+### 🔴🔴 THE REAL BLOCKER: EVERY COMMITTEE IS *ALSO* A PLACEHOLDER POLITICIAN ROW, AND MOST ARE DUPLICATED
+
+`UMBERG FOR SENATE 2022; COLONEL (RET.) TOM` is not only a committee name — it is a **politician
+row**: inactive, `full_name` set to the committee name, holding that same `external_id`. There are
+**two** such rows for most of these committees.
+
+▶ **So a bare repoint leaves a second, identical attribution behind on a junk row.** Step 2 must
+decide what happens to the placeholder **in the same migration**, the way a `politician_answers`
+delete obliges a decision about its `politician_context`. This is the
+[`2026-07-03-cal-access-committee-rows-in-politicians`](2026-07-03-cal-access-committee-rows-in-politicians.md)
+defect surfacing here; scope the two together or the repoint makes the duplicate problem worse.
+
+### 🔴 VALLADARES IS UNRESOLVED AND MUST NOT BE GUESSED
+
+Three live candidates exist — `Oscar Valladares`, `Suzette Martinez Valladares`, and a bare
+`Valladares` row. The two committees are **Rio Hondo College Board** (Whittier), which matches
+**neither** Oscar (Assembly) nor Suzette (Senate, Santa Clarita), and the corpus also holds
+`VALLADARES, COMMITTEE TO ELECT MONICA A.`. ▶ **Leave both detached until a filing names the
+person.**
+
+### The evidence bar
+
+🔴 **A committee name proves only whose a committee is NOT.** Use the CAL-ACCESS **candidate
+page**, then the **Form 460 cover page Part 5**, which names candidate AND office under oath.
+⚠ Two retrieval traps, both already paid for: the PDF endpoint returns a **212-byte Incapsula stub
+at HTTP 200 `text/html`** to `curl` and must be fetched in a browser context; and the filings list
+is **session-scoped**, so a default-session read reports zero filings for committees that have them
+(`CC_0222`).
 
 ## ✅ DONE — `CC_0226`: the surname-not-leading slice. 204 detached, 10 kept
 
