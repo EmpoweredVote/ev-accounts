@@ -172,7 +172,13 @@ export function readDatasetZip(zipBuffer: Buffer): DatasetReader {
 function zipBufferFrom(data: Json, sessionId: number): Buffer {
   const zipB64: string = data?.dataset?.zip ?? '';
   if (!zipB64) throw new Error(`Empty ZIP in dataset response for session ${sessionId}`);
-  return Buffer.from(zipB64, 'base64');
+  const buf = Buffer.from(zipB64, 'base64');
+  // ⚠ A BISECT LINE, NOT A PROGRESS LINE. Three stages can exhaust the heap before a single
+  // bill is read — the JSON response, this decode, and the index pass — and on 2026-10-11 the
+  // only evidence left behind was that none of them had finished. Whichever of
+  // "<size>", "zip decoded" and "indexed" is the LAST to appear names the stage that died.
+  log(`session ${sessionId}: zip decoded, ${(buf.length / 1_048_576).toFixed(1)} MiB`);
+  return buf;
 }
 
 export async function openDataset(
@@ -625,7 +631,12 @@ export async function importState(
 
   const allCommittees = new Map<number, string>();
   for (const { label, dataset: ds } of picks) {
-    log(`${stateCode} ${label}: session ${ds.session_id} (${ds.year_start}), hash ${ds.dataset_hash.slice(0, 10)}`);
+    // `dataset_size` is LegiScan's own figure for the ZIP, and it is logged BEFORE the
+    // download on purpose: on 2026-10-11 the job died inside the fetch, so every number that
+    // would have explained why was still unprinted. A size that only prints on success is no
+    // use for diagnosing a failure to reach success.
+    const advertised = ds.dataset_size ? `${(ds.dataset_size / 1_048_576).toFixed(1)} MiB` : 'size unknown';
+    log(`${stateCode} ${label}: session ${ds.session_id} (${ds.year_start}), hash ${ds.dataset_hash.slice(0, 10)}, ${advertised}`);
 
     // Unchanged since the last good import: stop before spending any more queries.
     // A grown legislator roster is not noticed here; use force after roster changes.
