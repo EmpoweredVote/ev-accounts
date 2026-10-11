@@ -1,5 +1,12 @@
 # CAL-ACCESS — the 1,336 DISPUTED sources: audit and worklist
 
+> **STATUS 2026-10-10, measured on prod.** The 1,336 in the title is where this opened.
+> **1,027 remain.** `CC_0223` cleared the no-surname bucket (103) and `CC_0226` the
+> surname-not-leading bucket on live rows (204, keeping 10 genuine support/oppose committees);
+> `CC_0225` retyped 2 to `ie_committee`. **No live row carries an unread disputed source of
+> either shape any more.** What is left is 508 live + 445 inactive that START with the surname
+> (plausible, unverified, $0) and 64 inactive that do not.
+
 Opened 2026-10-10, after `CC_0221`/`CC_0222` closed the **confirmed** population.
 Brief that deprioritised this population: `2026-10-10-cal-access-published-source-audit.md` (closed).
 Result of the confirmed audit: `2026-10-10-cal-access-confirmed-518-audit-log.md`.
@@ -70,23 +77,72 @@ is silent — all four are state politicians, so the candidate page should answe
 ⚠ `politician_sources` has a UNIQUE index on (politician, source_system, external_id): check the
 target does not already hold the id before repointing.
 
-## ▶ NEXT SLICE — the 212 that carry the surname but not at the front
+## ✅ DONE — `CC_0226`: the surname-not-leading slice. 204 detached, 10 kept
 
-⚠ **Re-measured after `CC_0223` (2026-10-10): 212 on LIVE rows, not the 215 first reported** — three
-Karen Douglas sources were swept into `CC_0223`. The no-surname bucket on live rows is now **0**.
-⚠ **And there are 64 MORE of the same shape on INACTIVE rows**, which the first count missed:
-**276 in total.** The live 212 are the priority; the inactive 64 carry the same merge hazard as
-`CC_0221`'s eight duplicate rows.
+**Applied to prod 2026-10-10**, after a `ROLLBACK` dry run whose revert was confirmed and a
+tamper control that fired with the right number (one keep removed -> the gate reported 205).
 
-For scale, the whole mig-1792 population now splits:
+▶ **It was 214 live, not 212.** The 212 are the mig-1792 provenance; two more on William Scott
+come from `confirm-cal-access.ts`. Worked together. The disputed total also moved 1,233 -> 1,231
+because `CC_0225` retyped Gipson and the Newsom recall committee — that reconciles, not drift.
+
+🔴 **10 of 214 are genuine, which is 4.7% — NOT the "roughly one in five" estimated from a sample
+of 18.** The estimate was a lead, not a measurement. **Do not size the inactive-64 slice by it.**
+
+| kept (still `disputed`, all $0) | politician | direction |
+|---|---|---|
+| `1347821` OPPOSED TO NAZARIAN FOR ASSEMBLY 2012 (EdVoice IE) | Adrin Nazarian | **oppose** |
+| `1322096` ...OPPOSING THE ELECTION OF MICHAEL KEEGAN ... 2009 | Michael Keegan | **oppose** |
+| `1444231` PRICE FOR MAYOR 2022 AND OPPOSING REX RICHARDSON | Rex Richardson | **oppose** |
+| `1472886` ...AND AGAINST BROCK FOR CITY COUNCIL 2024 | Phil Brock | **oppose** |
+| `1253962` CHINESE AMERICANS FOR NEWSOM | Gavin Newsom | support |
+| `1396278` LEON, BACA DEL RIO & ALTAMIRANO ... COMMERCE FORWARD | Ivan Altamirano | support |
+| `1416361` D'AMICO, LINDSEY HORVATH, AND LAUREN MEISTER ... 2019 | Lindsey P. Horvath | support |
+| `1423605` DEVINE, GHARPETIAN AND ASTORIAN ... GLENDALE | Vartan Gharpetian | support |
+| `1451076` ENGLER, NEWMAN, AND ROHRBACH ... THOUSAND OAKS 2022 | Kyle Rohrbach | support |
+| `1474164` WILKE AND CHRIS RIZZOTTI ... BURBANK 2024 | Chris Rizzotti | support |
+
+🔴🔴 **THE TEST THAT SETTLED IT WAS JURISDICTION, NOT THE NAME.** Reading the committee name is
+necessary and not sufficient. Four read as genuine and were disproved only by checking the seat:
+
+- **Eniko Gold** is **Hidden** Hills; the committee is **Beverly** Hills (Lili Bosse's city).
+- **Doug Stewart** is Mayor of **Malibu**; the committee is the **San Mateo County** DCC.
+- **Linda Freedman** is Mayor of **Walnut**; `REDLANDS FOR FREEDMAN` is 60 miles away.
+- **Pete Aguilar** is a **US Representative**; the committee is **Hesperia school board**.
+
+🟢 **And the strongest instrument needed no network call: the politician's OWN committees, already
+in this corpus.** `ROHRBACH FOR THOUSAND OAKS CITY COUNCIL 2022; KYLE` sits beside the disputed
+`ENGLER, NEWMAN, AND ROHRBACH ... THOUSAND OAKS 2022` — same city, same year, same race. And
+Penny Sylvester's `SYLVESTER FOR CVUSD SCHOOL BOARD 2024; KAREN` is **already `not_applicable`**,
+so the corpus itself named the other Sylvester and settled her two CVUSD rows as foreign.
+
+⚠ **Two findings carried forward, neither carrying money, both OUT OF SCOPE for `CC_0226`:**
+- **Penny Sylvester** holds `SYLVESTER FOR DALY CITY COUNCIL 2020` / `...DC COUNCIL 2016` as
+  **`confirmed`**, while she is seated as **Mayor of Agoura Hills** — 350 miles apart. One of the
+  two is wrong, and a `confirmed` row is a published attribution. Belongs in the confirmed audit.
+- **Phil Brock** has **no `office_current_holder` row** though he is a sitting Santa Monica council
+  member — an occupancy gap, the `offices_missing_terms` class.
+
+### ▶ WHAT IS LEFT OF THIS SHAPE — the 64 on INACTIVE rows
+
+⚠ **64 of this same shape sit on INACTIVE rows.** They carry the same merge hazard as `CC_0221`'s
+eight duplicate rows — attribution first, merge second — but no live twin exposure, so they rank
+below the live work. **Do not size them from the live slice's 4.7% genuine rate**; that rate was
+measured on live officeholders, and an inactive row is likelier to be a pure name collision.
+
+Measured on prod **after `CC_0226`** (all cal_access `disputed`, both provenances):
 
 | | starts with surname | surname not leading | no surname |
 |---|---|---|---|
-| **live rows** (698) | 486 | **212** | 0 ✅ cleared by `CC_0223` |
-| inactive rows (498) | 434 | **64** | 0 |
+| **live rows** (518) | 508 | **10** ✅ the genuine keeps, see above | 0 ✅ `CC_0223` |
+| inactive rows (509) | 445 | **64** | 0 |
 
-A read of 18 shows this bucket is **mostly foreign too**, and the matcher's reach is wider than
-surnames — it hit **place names and common nouns**:
+**Total disputed: 1,231 -> 1,027.**
+
+✅ **The live half of this bucket has now been read in full, not sampled.** Every shape below was
+confirmed, and `CC_0226` adds two the sample missed: the surname used as **another person's
+forename** (Scott Peters, Anthony Phan — the `CC_0223` trap again), and a **name-parse artifact**
+(`last_name` = "M.D" matching "DHAND M.D."). The matcher's reach is wider than surnames:
 
 ```
 PRINCE FOR SAN GABRIEL VALLEY MUNICIPAL WATER DISTRICT  -> Jesse GABRIEL
