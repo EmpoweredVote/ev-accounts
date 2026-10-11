@@ -16,6 +16,13 @@ export interface SyncSummary {
   remaining: number;
 }
 
+// LEFT STALE DELIBERATELY. 'Federal Civics' is not a collection name -- the row is 'US Civics'
+// -- so syncAfterRestore() logs "No file mapping for collection: US Civics" and skips. Fixing
+// the key would change nothing: `dataDir` resolves to backend/src/data, WHICH DOES NOT EXIST in
+// this repo (the engine embeds trivia/data/questions.ts because tsc does not copy .json into
+// dist/), so every path here fails its existsSync and returns an empty summary. The JSON files
+// this maps to live in the frozen CTC repo. Both methods are no-ops; retiring the service is
+// the real fix and is more than a rename. Checked 2026-10-12.
 const COLLECTION_TO_FILE_MAP: Record<string, string> = {
   'Federal Civics': 'questions.json',
   'Bloomington, IN': 'bloomington-in-questions.json',
