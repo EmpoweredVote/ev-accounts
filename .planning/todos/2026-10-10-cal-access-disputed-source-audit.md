@@ -1,5 +1,12 @@
 # CAL-ACCESS — the 1,336 DISPUTED sources: audit and worklist
 
+> 🟢 **CLOSED 2026-10-11 AT BOTH ENDS.** Detachment closed with `CC_0229`; **STEP 2, the positive
+> half, closed with `CC_0230`** — 9 committees re-attached to Stern, Umberg and Durazo on the
+> evidence of their own CAL-ACCESS candidate pages, 3 repointed as withheld outside spending, 1
+> disproved, 4 left unsettled, and the 19 placeholder rows detached.
+> 🔴 **CONFIRMING THE 9 QUEUES THEM FOR INGESTION — three sitting senators gain real campaign
+> finance.** "All 19 carry $0" was true of our corpus only. See the `CC_0230` section.
+>
 > **STATUS 2026-10-11, measured on prod.** The 1,336 in the title is where this opened.
 > **365 remain.** `CC_0229` closed the last shape — the 64 surname-NOT-LEADING rows on inactive
 > politicians: **63 detached, 1 kept.**
@@ -84,64 +91,86 @@ O'Brien's 44 in `CC_0221`, and unlike those eight rows **this one is LIVE**.
 ⚠ **These rows were already partly cleaned; this was the residue.** Sanchez also carries 109
 `not_applicable`, Douglas 38, Chen 10, Bains 8. **A row that has been worked is not finished.**
 
-## ▶ STEP 2 — re-attach the 19 whose owner we hold. NOT YET DONE. Scoped 2026-10-11.
+## ✅ DONE — `CC_0230`: STEP 2, the POSITIVE half. 9 re-attached, 3 withheld, 5 held, 19 placeholders cleared
 
-🟢 **Detachment is CLOSED.** `CC_0223`, `CC_0226`, `CC_0227`, `CC_0228`, `CC_0229` adjudicated
-**969 sources**, 1,336 → **365** disputed. Step 2 is the **positive** half and it is a different
-kind of work: detaching only ever needed proof of whose a committee is *not*. **Attaching is a
-positive claim on a LIVE officeholder — the one action in this programme that can create a NEW
-false attribution.**
+**Applied to prod 2026-10-11**, after a `ROLLBACK` dry run whose revert was confirmed and **two**
+tamper controls: dropping one worklist entry failed at 16, and pointing every re-attachment at
+Stern failed with *"Stern holds 9 confirmed, expected 4"* — so the per-target split gate really
+does catch a mis-targeted repoint, which is the defect this migration could have introduced.
 
-🟢 **All 19 carry $0**, so nothing publishes either way and there is no urgency to rush it.
+🟢 **THE DISPUTED-SOURCE PROGRAMME IS NOW CLOSED AT BOTH ENDS.** Detachment closed with `CC_0229`
+(969 sources, 1,336 → 365). This is the positive half, and it is a different kind of work:
+detaching needed only proof of whose a committee is *not*; **attaching is a positive claim on a
+live officeholder.** Nothing below moved on a name match.
 
-| now sits on (wrong, `not_applicable` via `CC_0223`) | n | real owner | the committees |
-|---|---|---|---|
-| Gregg Hart | 8 | **Henry Stern** | SENATE 2016/2020/2024 · SUPERVISOR 2022 ×2 · CONTROLLER 2030 · CITY COUNCIL 99 · 1 IE |
-| Dr. Corey A. Jackson | 5 | **Thomas Umberg** | SENATE 2022 + officeholder · BOE 2026 · INSURANCE COMMISSIONER 2026 · CONSUMERS FOR TOM |
-| Jasmeet Kaur Bains | 3 | **Maria Elena Durazo** | two literally named `MARIA ELENA DURAZO` · 1 ballot-measure cmte |
-| Phillip Chen | 1 | **Debra Archuleta** | ARCHULETA FOR LA COUNTY DISTRICT ATTORNEY 2024 |
-| Steve Bennett | 2 | ⚠ **unresolved** | VALLADARES FOR RIO HONDO COLLEGE BOARD 2018 / 2022 |
+| outcome | n | what |
+|---|---|---|
+| re-attached, `confirmed` | **9** | Stern 4 · Umberg 4 · Durazo 1 — each listed BY FILER ID on their own CAL-ACCESS candidate page |
+| re-attached, withheld | **3** | name the person, absent from their page ⇒ outside spending; typed `ie_committee`, held `not_applicable` |
+| **disproved** | 1 | `1076598` is a different Stern |
+| unsettled, left detached | 4 | Stern Supervisor ×2 · Durazo name-only ×2 |
+| Valladares | 2 | unchanged, per the standing ruling |
+| **placeholders detached** | **19** | the `CC_0220` merge hazard, closed |
 
-### 🟢 The UNIQUE index is NOT a blocker — measured, not assumed
+### 🔴🔴 THE PREMISE "ALL 19 CARRY $0 SO NOTHING PUBLISHES" WAS INCOMPLETE
 
-This file previously warned to "check the target does not already hold the id". Checked on prod
-2026-10-11: **all four real people are live rows holding ZERO `cal_access` sources.**
+$0 was true of **our corpus**, not of what happens next. `campaignFinanceScheduler.ts` selects
+`research_status = 'confirmed'` with **no `source_type` filter**, and all 448 confirmed
+`cal_access` candidate committees on prod have a completed ingestion run — **none has no run at
+all.** So confirming the nine QUEUES them, and CAL-ACCESS holds real money: `STERN FOR SENATE
+2024` alone reports **$388,174.70** raised in 2024.
 
-```
-Henry Stern          f3671de4-514f-441c-8ad4-4a9ab7c65ae6
-Thomas Umberg        712be98b-a05d-4605-9603-cd5d86abfad1
-Maria Elena Durazo   c7dc9c50-84c6-4bde-af06-e7f9d5167e93
-Debra Archuleta      aa799786-0934-4d5e-a4ba-78ae984d7650
-```
+▶ **Expect Stern, Umberg and Durazo to move from no finance data, through `data_pending`, to real
+dollars.** That is the correct outcome. It is recorded because it is far larger than "re-attach 19
+dead rows", and the worklist said the opposite. Operator signed it off before apply.
 
-### 🔴🔴 THE REAL BLOCKER: EVERY COMMITTEE IS *ALSO* A PLACEHOLDER POLITICIAN ROW, AND MOST ARE DUPLICATED
+### 🔴 THE WITHHELD THREE ARE IN A DEADLOCK, AND IT IS NAMED ON THE ROWS
 
-`UMBERG FOR SENATE 2022; COLONEL (RET.) TOM` is not only a committee name — it is a **politician
-row**: inactive, `full_name` set to the committee name, holding that same `external_id`. There are
-**two** such rows for most of these committees.
+`getOutsideSpendingForPolitician` has **no zero-amount filter**, so a `confirmed` IE row with no
+ingested money publishes a card reading **$0 with no donors**. But the scheduler ingests
+`confirmed` rows only — so holding them is itself what keeps them at $0. ▶ The exit is to confirm
+them and accept one ingestion cycle. One `UPDATE`, whenever the empty window is acceptable.
 
-▶ **So a bare repoint leaves a second, identical attribution behind on a junk row.** Step 2 must
-decide what happens to the placeholder **in the same migration**, the way a `politician_answers`
-delete obliges a decision about its `politician_context`. This is the
-[`2026-07-03-cal-access-committee-rows-in-politicians`](2026-07-03-cal-access-committee-rows-in-politicians.md)
-defect surfacing here; scope the two together or the repoint makes the duplicate problem worse.
+- `1385335` CALIFORNIANS IN SUPPORT OF HENRY → Stern, `support`
+- `1463858` SAFER LA COMMITTEE SUPPORTING JUDGE DEBRA → Archuleta, `support`
+- ⚠ `1235879` UMBERG, CONSUMERS FOR TOM → Umberg, **`support_oppose` left NULL.** *FOR* is not
+  approved support wording — it is the shape of a candidate's OWN committee name, the `FRIENDS OF`
+  trap from `CC_0221`. ADR 0008 forbids a defaulted direction, so it is owed one.
 
-### 🔴 VALLADARES IS UNRESOLVED AND MUST NOT BE GUESSED
+### 🔴🔴 TWO DETECTORS THAT WOULD HAVE MISLED THIS MIGRATION
 
-Three live candidates exist — `Oscar Valladares`, `Suzette Martinez Valladares`, and a bare
-`Valladares` row. The two committees are **Rio Hondo College Board** (Whittier), which matches
-**neither** Oscar (Assembly) nor Suzette (Senate, Santa Clarita), and the corpus also holds
-`VALLADARES, COMMITTEE TO ELECT MONICA A.`. ▶ **Leave both detached until a filing names the
-person.**
+1. **A candidate page's race history covers STATE races ONLY.** Durazo is an LA County Supervisor
+   candidate in 2026 — her own page carries `DURAZO FOR SUPERVISOR 2026 ATTORNEY FEES FUND`
+   (1480691) — and her race list does not mention it. ▶ So Stern's race list showing only SD-27 is
+   **vacuous** against `STERN FOR SUPERVISOR 2022`. A negative read off that list proves nothing
+   for any county or municipal race.
+2. **The filer phone groups by FILING AGENT, measured cleanly here.** **(916) 285-5733 is shared
+   by ALL FIVE of Stern's committees AND FOUR of Umberg's** — two state senators, one treasurer.
+   A sharper demonstration than the one `CC_0216` recorded.
 
-### The evidence bar
+### ▶ What is still open from step 2
 
-🔴 **A committee name proves only whose a committee is NOT.** Use the CAL-ACCESS **candidate
-page**, then the **Form 460 cover page Part 5**, which names candidate AND office under oath.
-⚠ Two retrieval traps, both already paid for: the PDF endpoint returns a **212-byte Incapsula stub
-at HTTP 200 `text/html`** to `curl` and must be fetched in a browser context; and the filings list
-is **session-scoped**, so a default-session read reports zero filings for committees that have them
-(`CC_0222`).
+- **The 4 unsettled.** `1442984`/`1442999` (STERN FOR SUPERVISOR 2022 + fees fund) and
+  `1479450`/`1480690` (both registered literally `DURAZO, MARIA ELENA`). Absent from the candidate
+  pages, **no electronic filing at all** so no Form 460 Part 5 exists to read, and no `la_socrata`
+  row either. 🟢 The "no filings" reading was CONTROLLED against 1435181/1458805/1415628/1480691,
+  which all return full summary data.
+  ⚠ **The Durazo pair is the close call, left on the honest side.** Its case is strong — the
+  registered name IS her exact full name, which no surname-matcher failure mode can produce; same
+  treasurer as all five confirmed committees; 1480690 is ADJACENT to 1480691, which IS on her
+  page; both ACTIVE in her cycle. The bar was the candidate page or Part 5. Neither answers.
+- **`1235879` is owed a direction.**
+- **The junk `politicians` rows are untouched** — 24,044 wide, and
+  [`2026-07-03-cal-access-committee-rows-in-politicians`](2026-07-03-cal-access-committee-rows-in-politicians.md)
+  is where they belong. Only their SOURCE rows were detached. 10 of the 12 committees carry **two**
+  placeholder rows each.
+
+### ⚠ A GATE THAT TIMED OUT, AND THE FIX IS LOAD-BEARING
+
+The first dry run died on `canceling statement due to statement timeout` in the zero-contributions
+gate. `contributions.politician_source_id` **is** indexed — but a plain `JOIN` to an un-analysed
+TEMP table makes the planner sequential-scan `contributions`. ▶ `ANALYZE` the temp table and use
+`= ANY(ARRAY(SELECT …))`. Both are in `CC_0230` and both are required.
 
 ## ✅ DONE — `CC_0226`: the surname-not-leading slice. 204 detached, 10 kept
 
