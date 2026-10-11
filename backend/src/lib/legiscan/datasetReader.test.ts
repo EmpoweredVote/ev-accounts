@@ -143,6 +143,25 @@ describe('readDatasetZip', () => {
     expect(reader.readRollCall(9).roll_call_id).toBe(9);
   });
 
+  it('🔴 reports the archive size BEFORE scanning, and progress DURING it', async () => {
+    // The lesson of three failed runs: a summary printed after the loop is useless to a run
+    // that dies inside the loop. Twice a whole deploy-and-trigger cycle produced no figures
+    // because the diagnostic sat behind the failure.
+    const seen: string[] = [];
+    const spy = vi.spyOn(console, 'info').mockImplementation((m?: unknown) => { seen.push(String(m)); });
+    try {
+      await readDatasetZip(buildZip(Array.from({ length: 1200 }, (_, i) => i + 1), []));
+    } finally {
+      spy.mockRestore();
+    }
+    // The entry count is known before a single entry is scanned.
+    expect(seen[0]).toMatch(/entries in archive, scanning/);
+    // And the curve is reported while the loop runs, not only at the end.
+    const progress = seen.filter((l) => /^\[legiscan\] index \d+\/\d+:/.test(l));
+    expect(progress.length).toBeGreaterThanOrEqual(2);
+    expect(progress[0]).toMatch(/heap [\d.]+ MiB, external [\d.]+ MiB, rss [\d.]+ MiB/);
+  });
+
   it('indexes a dataset larger than one yield window', async () => {
     // Crosses INDEX_YIELD_EVERY (200) so the await path is exercised, not just the fast path.
     const ids = Array.from({ length: 450 }, (_, i) => i + 1);
