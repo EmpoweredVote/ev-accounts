@@ -7,7 +7,7 @@ import { selectQuestionsForGame, getCollectionMetadata, getFederalCollectionId, 
 import { getNextQuestionTier, selectNextAdaptiveQuestion } from '../services/gameModes.js';
 import { recordQuestionTelemetry } from '../services/telemetryService.js';
 import { grantBobit, revokeBobit, progressKey, readOwnedExternalIds } from '../services/bobitProgressService.js';
-import { FEDERAL_SLUG } from '../config/federalCollection.js';
+import { FEDERAL_SLUG, FEDERAL_NAME } from '../config/federalCollection.js';
 import { db } from '../db/index.js';
 import { collections, collectionQuestions, questions } from '../db/schema.js';
 import { and, eq, sql, isNull, or, gt } from 'drizzle-orm';
@@ -167,7 +167,7 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
         return question;
       });
     } else {
-      // Normal path: select questions from collection (defaults to Federal Civics)
+      // Normal path: select questions from collection (defaults to the Federal collection)
       const resolvedMode = gameMode || 'easy-steps';
 
       if (resolvedMode === 'easy-steps') {
@@ -205,7 +205,7 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
           sessionId,
           questions: stripAnswers([firstQuestion]),
           degraded: storageFactory.isDegradedMode(),
-          collectionName: collectionMeta?.name ?? 'Federal Civics',
+          collectionName: collectionMeta?.name ?? FEDERAL_NAME,
           collectionSlug: collectionMeta?.slug ?? FEDERAL_SLUG,
           gameMode: resolvedMode,
           totalQuestions: TOTAL_QUESTIONS,
@@ -236,7 +236,7 @@ router.post('/session', optionalAuth, async (req: Request, res: Response) => {
       sessionId,
       questions: stripAnswers(selectedQuestions),
       degraded: storageFactory.isDegradedMode(),
-      collectionName: collectionMeta?.name ?? 'Federal Civics',
+      collectionName: collectionMeta?.name ?? FEDERAL_NAME,
       collectionSlug: collectionMeta?.slug ?? FEDERAL_SLUG,
       gameMode: gameMode || 'easy-steps',
       totalQuestions: TOTAL_QUESTIONS,
@@ -484,7 +484,7 @@ router.get('/results/:sessionId', async (req: Request<{ sessionId: string }>, re
       answers: cleanedAnswers,
       progression,
       degraded: storageFactory.isDegradedMode(),
-      collectionName: session.collectionName ?? 'Federal Civics',
+      collectionName: session.collectionName ?? FEDERAL_NAME,
       collectionSlug: session.collectionSlug ?? FEDERAL_SLUG,
     });
   } catch (error) {

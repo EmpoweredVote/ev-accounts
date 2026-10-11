@@ -21,6 +21,16 @@
 export const FEDERAL_SLUG = 'federal';
 
 /**
+ * The collection's display name, for the same fallbacks the slug serves.
+ *
+ * Wrong in the same way and on the same lines until 2026-10-12: the responses read
+ * 'Federal Civics', and the row is named **US Civics**. Display-only and never a key, so it
+ * could not split a player's progress the way the slug could -- it could only tell a player on
+ * a degraded path that they were playing a collection that does not exist by that name.
+ */
+export const FEDERAL_NAME = 'US Civics';
+
+/**
  * Where `getFederalCollectionId()` lands when the lookup by slug finds nothing.
  *
  * A floor, not a routing decision, and deliberately NOT cached by its caller: a transient
