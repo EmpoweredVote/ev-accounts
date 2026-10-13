@@ -156,36 +156,47 @@ Chris's ruling: entries will use a mixture of all three forms, **rarely unattrib
 handles encouraged so that handle use feels commonplace. Most EV staff, Chris and Chris Andrews
 included, expect to hold Empowered accounts.
 
-**The hazard.** Focused Communities' own integration doc states the rule:
+### 🔴 Context follows the PERSON, not the surface
 
-> **Empowered** | Same as Connected. Their legal name is public in Empower contexts, but Focused
-> Communities is a Connect context — still show `display_name` only.
+An earlier draft of this spec asked whether the Compass is a Connect context or an Empower
+context, and clamped every byline to a handle until that was answered. **That question was
+malformed.** Chris's ruling, 2026-10-13:
 
-So FC will render a handle. If the Compass renders a legal name for **the same entry**, the two
-surfaces together de-anonymise the handle — on entries about abortion, immigration and the 2020
-election. That is the opposite of making handles safe to use.
+> The Compass spans all three tiers. You don't need an account to use it. Connected means your
+> compass attaches to you but stays **private** — we know who you are, we don't tell anyone
+> without a very strong reason, and for almost everyone Connect should mean "use my handle".
+> Empowered accounts must fully calibrate before they can empower, their compass is tied to
+> their **real name**, and in place of privacy they prioritise **transparency** — anyone can
+> extensively view the public compass of an Empowered account.
 
-**The design that avoids it:**
+So a surface is not a context. The same page shows a handle for one author and a legal name for
+another, because the two have made different undertakings.
 
-1. **Never store a rendered name.** The table stores `author_id` and a *preference*
-   (`attribution`). What a reader sees is computed at render time.
-2. **Each surface applies its own context rule to that preference.** FC clamps `real` → handle
-   because FC is a Connect context. The rule lives with the surface, not with the row.
-3. **The Compass clamps the same way in v1.** `real` stays expressible in the data and nothing
-   renders a legal name anywhere until the Compass's context has been declared deliberately.
+**And this dissolves the hazard rather than managing it.** The risk was that a handle rendered in
+one place and a real name in another would let anyone correlate the two. That risk is real for a
+**Connected** author, whose default is privacy to the world. It does not exist for an
+**Empowered** author, who has already published the link between their name and their activity —
+that is what Empowered *means*. There is nothing left to leak.
 
-This keeps the option open at zero cost: if the Compass is later ruled an Empower context, that
-is a change to one resolver and no data migration. Shipping the leak first is not reversible.
+**The resolver takes a ceiling from the author's tier and a preference from the row.** The tier
+is a row's existence, never a column: `empower.empowered_profiles` with `is_active = true`.
 
-**Resolution order for a published entry:**
+| author tier | `none` | `handle` | `real` |
+|---|---|---|---|
+| **Connected** | team byline | `display_name` | **clamped to `display_name`** |
+| **Empowered** | team byline | `display_name` | legal name |
 
-| preference | renders as |
-|---|---|
-| `none` | "The EmpoweredVote team" |
-| `handle` | `public.users.display_name` |
-| `real` | `display_name` in v1 (clamped), legal name only once a context ruling exists |
+An Inform author does not appear in that table because an Inform account cannot publish — the
+write routes are admin-gated, and `requireInform` is exclusive rather than a floor.
 
-A missing or empty `display_name` falls back to "The EmpoweredVote team" rather than to an id or
+A Connected author's `real` is clamped **always and everywhere**, not pending a decision — their
+tier is the undertaking, and privacy is its default. An Empowered author's `real` renders as
+written, on every surface including FC.
+
+Still true, and still the reason this works: **never store a rendered name.** The row holds
+`author_id` and a preference. Both the tier and the display name are resolved at render time, so
+a staff member who empowers, demotes, or changes their handle does not leave stale bylines
+behind. A missing or empty `display_name` falls back to the team byline rather than to an id or
 an empty byline.
 
 ---
@@ -310,9 +321,23 @@ change to one page.
 
 ## 10. Decisions still open
 
-1. 🔴 **Is the Compass a Connect context or an Empower context?** §4 clamps to handles in v1 so
-   this can be answered later without a leak, but it does need an answer before `real`
-   attribution renders anywhere.
+1. ~~Is the Compass a Connect context or an Empower context?~~ **Answered 2026-10-13 and the
+   question was malformed** — the Compass spans all three tiers and context follows the author,
+   not the surface. See §4. No v1 clamp remains.
+
+1a. 🔴 **FC's integration doc contradicts §4, and someone must reconcile it when FC wakes.**
+   That doc (2026-04-15) says: *"Their legal name is public in Empower contexts, but Focused
+   Communities is a Connect context — still show `display_name` only."* Under §4 an Empowered
+   author's real name renders everywhere, FC included.
+
+   Both can be right, and the likely reconciliation is an asymmetry FC should decide
+   deliberately: a **journal entry** is EV's editorial voice opening a thread, while a **reply**
+   is peer discussion. Pseudonymising every reply keeps discussion from becoming named authority
+   against anonymous citizens; pseudonymising the EV byline on its own diary entry serves nobody.
+   If FC instead rules that everything in FC is pseudonymous, the resolver takes an FC-specific
+   ceiling and this spec does not change — which is the point of resolving at render time.
+
+   Flagged rather than decided here: FC is shelved, and this is FC's call to make.
 2. **Does an unpublished `watching` entry ever become public?** Proposed: no — `watching` entries
    are published deliberately like any other, and a prediction that was never published is just
    a draft.
@@ -327,7 +352,8 @@ change to one page.
 
 | | |
 |---|---|
-| Unit | the attribution resolver, including the `real` clamp and the empty-`display_name` fallback |
+| Unit | the attribution resolver: a **Connected** author's `real` clamps to `display_name`, an **Empowered** author's does not, and an empty `display_name` falls back to the team byline |
+| Unit | the resolver reads tier from `empower.empowered_profiles` existence, never from a column — the trap in [[reference-account-tiers]] |
 | Unit | `watching` entries reject a `revision_id` (the CHECK, asserted through the service) |
 | Unit | read endpoints exclude drafts — asserted on the query, not only on a fixture |
 | Guard | a static test that the journal table has no `parent_id`/`reply_to` column, and that nothing follows `answers_id` more than one hop, with the §1 reasoning in the failure message |
