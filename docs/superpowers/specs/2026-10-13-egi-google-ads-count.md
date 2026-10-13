@@ -133,3 +133,85 @@ gives the count, not the words.
 Scripts in `scripts/` take paths as arguments. Download the bundle to an empty directory, then
 `match.py` → `enrich_all.py` → hand decisions → `tally.py`. `runla.cjs` runs `roster-la.sql`
 read-only. Python is run with `-I`.
+
+---
+
+# Part 2 — Meta Ad Library Report count (2026-10-13)
+
+Data: `backend/data/stance-research/2026-10-13-egi-google-ads/meta/`.
+
+## Source
+
+- **Meta Ad Library Report**, United States, time range *All dates* (2019-10-10 → 2026-10-09).
+  Public page `facebook.com/ads/library/report`, button "Download report". No login, no ID, $0.
+  - Direct download URLs return **403** to scripts; the file must be fetched by clicking in a
+    browser. 304 MB zipped / 925 MB unzipped.
+  - Contents: `advertisers.csv` (523,659 rows: Page ID, Page name, Disclaimer, lifetime spend,
+    number of ads) and one `regions/<State>.csv` per state (spend in that state by Page +
+    disclaimer). **No ad text, no dates per ad.** 340,484 advertisers show spend as `≤100`
+    (counted as $50 here).
+  - Lifetime file only: it cannot say *when* an advertiser ran. A recency count needs a second
+    download with *Last 90 days*.
+
+## Method
+
+1. For each roster person, scan their state's region file. Candidate pair: surname as a whole word
+   in Page name or disclaimer, and either the first name (or a prefix of it, Dan/Daniel) present
+   or a committee shape (`Smith for …`, `Friends of Smith`). 5,332 pairs.
+2. Keep pairs whose home-state spend is ≥ 50% of the advertiser's US spend (local and state
+   campaigns spend almost all at home). 2,755 pairs.
+3. **Own page (strict rule):** the Page name *or* the disclaimer contains the person's first and
+   last name and nothing else except office / campaign filler words (`for`, `elect`, `council`,
+   `assembly`, `mayor`, `friends of`, years, state names …). Pages with no disclaimer and ≤ $100
+   lifetime are set aside. → **259 people.**
+4. **Precision check by hand** on a seeded random sample (`random.seed(20261013)`):
+   - Strict rule: **40 of 40** sampled people are correct (their own page or committee).
+   - Surname-only committee shape (159 more people): **2–3 of 30** correct (`Pope for Register of
+     Deeds`, `Eich For Council`); the rest are same-surname strangers (`Newman for State Senate`
+     vs Judge Tara Newman). **Excluded** — adds about 13 people, recorded as undercount.
+5. Unlike the Google count, rows were **not** all judged by hand; the sample is the evidence.
+
+## Result
+
+| Level | Status | People | Meta own page | Meta ≥ $1k lifetime | Google own (Part 1) | Either | Meta, not Google |
+|---|---|---:|---:|---:|---:|---:|---:|
+| federal | incumbent | 30 | 26 | 26 | 23 | 28 | 5 |
+| federal | challenger | 30 | 15 | 10 | 6 | 16 | 10 |
+| state | incumbent | 77 | 52 | 44 | 24 | 54 | 30 |
+| state | challenger | 33 | 8 | 4 | 4 | 8 | 4 |
+| county | incumbent | 55 | 10 | 3 | 2 | 11 | 9 |
+| county | challenger | 15 | 3 | 2 | 0 | 3 | 3 |
+| city | incumbent | 616 | 109 | 55 | 15 | 112 | 97 |
+| city | challenger | 12 | 3 | 2 | 2 | 3 | 1 |
+| school | incumbent | 197 | 16 | 9 | 7 | 18 | 11 |
+| school | challenger | 3 | 0 | 0 | 0 | 0 | 0 |
+| judicial | incumbent | 428 | 17 | 8 | 0 | 17 | 17 |
+| **total** | | **1,496** | **259 (17%)** | **163** | **83** | **270 (18%)** | **187** |
+
+By county (Meta): LA 175 of 1,000 · Utah County 56 of 215 · Racine 15 of 167 · Monroe 13 of 114.
+
+The three A1 v2 counties, below federal level: incumbents 63 of 419; **challengers 9 of 55**
+(Google: 4).
+
+Reading:
+
+- **Meta is the larger source: 3× Google** (259 vs 83 people), and nearly all of the gain is
+  local: city incumbents 109 vs 15, judges 17 vs 0. Google adds only 11 people Meta does not.
+- Many local pages are small: of the 259, 96 spent under $1,000 lifetime. A few dozen ads.
+- Utah County is the outlier among the A1 v2 counties (56 of 215, 26%); Monroe and Racine are
+  under 10%.
+- Challengers stay thin: 29 of 93 overall, 9 of 55 in the A1 v2 counties. Ads do not close the
+  challenger gap; they mainly add incumbents who already have an official record.
+- As in Part 1, some local hits advertised for another office (Erickson, Alegria, Taj for state
+  seats; judges who ran for DA or sheriff). The office in the ad is not always the roster seat.
+
+## What this means for the API decision
+
+- The report gives the **count** only. Words need the Meta Ad Library API (ID confirmation,
+  developer app, token — see Part 1) or reading ads in the public Ad Library web page one Page at a
+  time.
+- The API is now justified only if ad words are wanted for **about 260 people, mostly
+  incumbents**. For challengers it would add text for about 29 people across all four counties.
+- Cheap next checks, if wanted: (a) download *Last 90 days* to count who is advertising **now**;
+  (b) read the ads of a sample of 10–15 local Pages in the public Ad Library (browser, no login)
+  to see whether local ads state any EGI rule before paying the setup cost of the API.
