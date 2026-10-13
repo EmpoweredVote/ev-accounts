@@ -325,19 +325,25 @@ change to one page.
    question was malformed** — the Compass spans all three tiers and context follows the author,
    not the surface. See §4. No v1 clamp remains.
 
-1a. 🔴 **FC's integration doc contradicts §4, and someone must reconcile it when FC wakes.**
-   That doc (2026-04-15) says: *"Their legal name is public in Empower contexts, but Focused
-   Communities is a Connect context — still show `display_name` only."* Under §4 an Empowered
-   author's real name renders everywhere, FC included.
+1a. ~~FC's integration doc contradicts §4.~~ **Answered 2026-10-13: FC's doc is stale and §4
+   governs.** Chris's ruling: *"FC's doc is old. We should abide by what we've learned from
+   Inform/Connect/Empower accounts."*
 
-   Both can be right, and the likely reconciliation is an asymmetry FC should decide
-   deliberately: a **journal entry** is EV's editorial voice opening a thread, while a **reply**
-   is peer discussion. Pseudonymising every reply keeps discussion from becoming named authority
-   against anonymous citizens; pseudonymising the EV byline on its own diary entry serves nobody.
-   If FC instead rules that everything in FC is pseudonymous, the resolver takes an FC-specific
-   ceiling and this spec does not change — which is the point of resolving at render time.
+   So an Empowered author's real name renders in Focused Communities too. It is not a
+   concession — it follows from what the tier means. An Empowered account has already traded
+   privacy for standing, and anyone may view its public compass, so there is nothing left for a
+   handle to protect there.
 
-   Flagged rather than decided here: FC is shelved, and this is FC's call to make.
+   I had proposed an asymmetry (editorial byline named, replies pseudonymous) and offered it as
+   FC's call. That was over-thinking a question the tier model already answers: pseudonymity is
+   a property of the **person's undertaking**, not of the room they are speaking in, which is
+   the same mistake §4 corrects for the Compass. The resolver needs no FC-specific ceiling, and
+   nothing in this spec or the phase 1 code changes.
+
+   `docs/FOCUSED-COMMUNITIES-ONBOARDING.md` is annotated to say so, because it is otherwise the
+   first thing whoever picks FC up will read. It is also 39 topics out of date — it describes
+   21 live compass topics against the 60 now promoted — and its repo's last commit is
+   2026-05-07. Treat it as a historical artifact, not an authority.
 2. **Does an unpublished `watching` entry ever become public?** Proposed: no — `watching` entries
    are published deliberately like any other, and a prediction that was never published is just
    a draft.

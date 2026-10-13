@@ -7,6 +7,35 @@
 
 ---
 
+> ## 🔴 STALE IN PARTS — READ THIS FIRST (annotated 2026-10-13)
+>
+> This document has not been revised since 2026-04-15 and Focused Communities is shelved until
+> after the November 2026 election. Two things in it are known to be out of date:
+>
+> **1. The Empowered attribution rule below is WRONG.** The table in "The Three-Tier Model" says
+> an Empowered user shows `display_name` only, because "Focused Communities is a Connect
+> context". Superseded by Chris's ruling of 2026-10-13: *"FC's doc is old. We should abide by
+> what we've learned from Inform/Connect/Empower accounts."*
+>
+> **A surface is never a context — the context follows the PERSON.** An Empowered account has
+> traded privacy for standing: its compass is tied to a real name and anyone may view it
+> extensively. So an Empowered user's real name may render in FC, and there is nothing left for
+> a handle to protect. A **Connected** account is the opposite and unchanged: privacy to the
+> world is its default, handles are encouraged, and its real name never renders publicly
+> anywhere, in FC or out of it.
+>
+> The authority is §4 of `docs/superpowers/specs/2026-10-13-compass-topic-journal-design.md`,
+> which carries the reasoning and the resolver's tier table.
+>
+> **2. The topic count is 39 short.** This document says FC anchors to "the 21 live compass
+> topics". Season 2 promotes **60**.
+>
+> Everything else here — the tier-as-row-existence model, the gating rules, the API shapes — was
+> accurate when written and is worth reading. When FC wakes, rewrite this document against the
+> account doctrine rather than the other way round.
+
+---
+
 ## What You're Building
 
 **Focused Communities** are subreddit-style communities organized around a single compass topic. They live as spokes off the Civic Spaces hub — each community is anchored to one of the 21 live compass topics (Immigration, Healthcare, Housing, etc.).
@@ -38,7 +67,7 @@ auth.users
 |------|-------------------------------|
 | **Inform** | Browse community read-only. Cannot post, react, or follow a topic. |
 | **Connected** | Full access — post, react, follow, see stance context. |
-| **Empowered** | Same as Connected. Their legal name is public in Empower contexts, but Focused Communities is a Connect context — still show `display_name` only. |
+| **Empowered** | ⚠ **SUPERSEDED — see the annotation at the top of this file.** This row used to read "Focused Communities is a Connect context — still show `display_name` only". That is no longer the rule: an Empowered account's real name may render here, because the context follows the person, not the surface. Connected users are unchanged — handle only, always. |
 
 **Focused Communities is a Connected-tier feature.** Gate all write actions behind a tier check. Never gate by checking a status field — gate by checking whether `connected_profiles` exists (the `tier` field on `/api/account/me` reflects this).
 
