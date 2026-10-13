@@ -15,6 +15,7 @@ import topicRewritesRouter from './routes/topicRewrites.js';
 import sourceVerificationsRouter from './routes/sourceVerifications.js';
 import compassContributorRouter from './routes/compassContributor.js';
 import compassRevisionsRouter from './routes/compassRevisions.js';
+import compassJournalRouter from './routes/compassJournal.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
 import profileRouter from './routes/profile.js';
@@ -150,6 +151,9 @@ app.use('/api/compass', compassRouter);
 // Express tries compassRouter first (public routes); admin-only mutations fall through to here.
 // No URL+method collisions exist between the two routers.
 app.use('/api/compass', compassAdminRouter);
+// Same dual-router prefix. Its two routes (/topics/:topicId/journal, /journal)
+// collide with nothing in the routers above.
+app.use('/api/compass', compassJournalRouter);
 app.use('/api/empower', empowerRouter);
 app.use('/api/gems', gemsRouter);
 app.use('/api/xp', xpRouter);
