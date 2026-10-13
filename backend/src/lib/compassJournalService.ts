@@ -95,3 +95,104 @@ export async function listSeasonJournal(seasonNumber: number): Promise<JournalEn
   );
   return rows.map(toEntry);
 }
+
+export interface CreateEntryInput {
+  topicId: string;
+  seasonId: string;
+  kind: 'watching' | 'changed';
+  title: string | null;
+  body: string;
+  revisionId: string | null;
+  answersId: string | null;
+  attribution: JournalAttribution;
+}
+
+/**
+ * The season an entry belongs to when the caller did not name one: the open
+ * season, or the one being prepared when none is open.
+ *
+ * 🔴 THROWS RATHER THAN GUESSING. A closed season is never the answer — stamping
+ * one backdates the entry into a season it was not written for, and nothing
+ * downstream could tell.
+ */
+export async function resolveDefaultSeasonId(): Promise<string> {
+  const { rows } = await pool.query<{ id: string }>(
+    `SELECT id::text FROM inform.seasons
+      WHERE status IN ('open', 'draft')
+      ORDER BY CASE status WHEN 'open' THEN 0 ELSE 1 END, number DESC
+      LIMIT 1`,
+  );
+  if (rows.length === 0) {
+    throw new Error('NO_SEASON: no open or draft season to attach a journal entry to');
+  }
+  return rows[0].id;
+}
+
+/**
+ * ⚠ `answers_id` MUST POINT AT AN ENTRY ON THE SAME TOPIC. Without this the two
+ * topics' threads splice together and a reader following the link lands on a
+ * different question. The CHECK constraint cannot express it (it spans rows), so
+ * it lives here, in the one place entries are created.
+ */
+export async function createEntry(
+  input: CreateEntryInput,
+  authorId: string,
+): Promise<{ id: string }> {
+  if (input.answersId) {
+    const { rows } = await pool.query<{ topic_id: string }>(
+      `SELECT topic_id::text FROM inform.compass_topic_journal WHERE id = $1`,
+      [input.answersId],
+    );
+    if (rows.length === 0 || rows[0].topic_id !== input.topicId) {
+      throw new Error('ANSWERS_WRONG_TOPIC: an entry may only answer one on the same topic');
+    }
+  }
+
+  const { rows } = await pool.query<{ id: string }>(
+    `INSERT INTO inform.compass_topic_journal
+       (topic_id, season_id, kind, title, body, revision_id, answers_id, author_id, attribution)
+     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+     RETURNING id::text`,
+    [input.topicId, input.seasonId, input.kind, input.title, input.body,
+     input.revisionId, input.answersId, authorId, input.attribution],
+  );
+  return { id: rows[0].id };
+}
+
+export async function updateEntry(
+  id: string,
+  patch: { title?: string | null; body?: string; attribution?: JournalAttribution },
+): Promise<boolean> {
+  const { rowCount } = await pool.query(
+    `UPDATE inform.compass_topic_journal
+        SET title       = COALESCE($2, title),
+            body        = COALESCE($3, body),
+            attribution = COALESCE($4, attribution),
+            updated_at  = now()
+      WHERE id = $1`,
+    [id, patch.title ?? null, patch.body ?? null, patch.attribution ?? null],
+  );
+  return (rowCount ?? 0) > 0;
+}
+
+/** Idempotent: re-publishing an already-published entry does not move its date. */
+export async function publishEntry(id: string): Promise<boolean> {
+  const { rowCount } = await pool.query(
+    `UPDATE inform.compass_topic_journal
+        SET status = 'published',
+            published_at = COALESCE(published_at, now()),
+            updated_at = now()
+      WHERE id = $1`,
+    [id],
+  );
+  return (rowCount ?? 0) > 0;
+}
+
+/** Drafts only. A published entry is corrected, not withdrawn. */
+export async function deleteDraft(id: string): Promise<boolean> {
+  const { rowCount } = await pool.query(
+    `DELETE FROM inform.compass_topic_journal WHERE id = $1 AND status = 'draft'`,
+    [id],
+  );
+  return (rowCount ?? 0) > 0;
+}

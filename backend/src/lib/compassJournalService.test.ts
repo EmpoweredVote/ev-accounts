@@ -3,7 +3,10 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 
-import { listTopicJournal, listSeasonJournal } from './compassJournalService.js';
+import {
+  listTopicJournal, listSeasonJournal,
+  createEntry, resolveDefaultSeasonId,
+} from './compassJournalService.js';
 
 beforeEach(() => mockQuery.mockReset());
 
@@ -82,5 +85,54 @@ describe('listSeasonJournal', () => {
     await listSeasonJournal(3);
     expect(sql()).toMatch(/status\s*=\s*'published'/);
     expect(mockQuery.mock.calls[0][1]).toEqual([3]);
+  });
+});
+
+describe('resolveDefaultSeasonId', () => {
+  it('prefers the open season over the draft one', async () => {
+    mockQuery.mockResolvedValue({ rows: [{ id: 's-open' }] });
+    expect(await resolveDefaultSeasonId()).toBe('s-open');
+    expect(sql()).toMatch(/status IN \('open', 'draft'\)/);
+  });
+
+  // 🔴 There is no correct fallback. Stamping a CLOSED season backdates the
+  // entry into a season it was not written for, and nothing downstream could
+  // tell. Failing is the only honest option.
+  it('THROWS rather than stamping a closed season', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await expect(resolveDefaultSeasonId()).rejects.toThrow(/NO_SEASON/);
+  });
+});
+
+describe('createEntry — answers_id may not cross topics', () => {
+  // Without this the two topics' threads splice together and a reader following
+  // the link lands on a different question. A CHECK cannot express it: the rule
+  // spans two rows.
+  it('rejects answering an entry that belongs to another topic', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ topic_id: 't-OTHER' }] });
+    await expect(createEntry({
+      topicId: 't1', seasonId: 's1', kind: 'changed', title: null, body: 'x',
+      revisionId: null, answersId: 'j-elsewhere', attribution: 'handle',
+    }, 'u1')).rejects.toThrow(/ANSWERS_WRONG_TOPIC/);
+    // and it never reached the INSERT
+    expect(mockQuery).toHaveBeenCalledTimes(1);
+  });
+
+  it('rejects answering an entry that does not exist', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [] });
+    await expect(createEntry({
+      topicId: 't1', seasonId: 's1', kind: 'changed', title: null, body: 'x',
+      revisionId: null, answersId: 'j-ghost', attribution: 'handle',
+    }, 'u1')).rejects.toThrow(/ANSWERS_WRONG_TOPIC/);
+  });
+
+  it('inserts with the author id passed separately from the input', async () => {
+    mockQuery.mockResolvedValueOnce({ rows: [{ id: 'j-new' }] });
+    const out = await createEntry({
+      topicId: 't1', seasonId: 's1', kind: 'changed', title: null, body: 'x',
+      revisionId: null, answersId: null, attribution: 'handle',
+    }, 'u-admin');
+    expect(out).toEqual({ id: 'j-new' });
+    expect(mockQuery.mock.calls[0][1]).toContain('u-admin');
   });
 });

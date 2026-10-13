@@ -16,6 +16,7 @@ import sourceVerificationsRouter from './routes/sourceVerifications.js';
 import compassContributorRouter from './routes/compassContributor.js';
 import compassRevisionsRouter from './routes/compassRevisions.js';
 import compassJournalRouter from './routes/compassJournal.js';
+import compassJournalAdminRouter from './routes/compassJournalAdmin.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
 import profileRouter from './routes/profile.js';
@@ -185,6 +186,7 @@ app.use('/api/admin/topic-rewrites', topicRewritesRouter);
 app.use('/api/admin/source-verifications', sourceVerificationsRouter);
 app.use('/api/admin/readrank-quotes', readrankQuotesAdminRouter);
 app.use('/api/admin/readrank-coverage', readrankCoverageAdminRouter);
+app.use('/api/admin/compass', compassJournalAdminRouter);
 app.use('/api/admin/compass-stats', compassStatsAdminRouter);
 app.use('/api/candidates', candidatesRouter);
 // === Essentials Routes (Phase 38 complete — all routes served by ev-accounts, CONS-11 fulfilled) ===
