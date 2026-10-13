@@ -65,3 +65,38 @@ describe('getCompassCategories — tier flags from appliesFromRoles, applies_sch
     });
   });
 });
+
+/**
+ * 🔴 WHY A SEPARATE GUARD FOR WORDING. A topic's text reaches a consumer through
+ * THREE explicit column lists in a row — servedRevisionLateral's SELECT, the
+ * getPromotedTopics SELECT, and the re-projection above — and each silently
+ * drops anything it was not told about.
+ *
+ * `guidance` (CC_0231) cleared the first two and died in the third. So
+ * /compass/topics served a line for all 60 topics while /compass/categories
+ * served none — and the full calibration page builds its topic list from
+ * CATEGORIES, so the feature was blank exactly where it was built for. tsc was
+ * clean and every unit test passed; the smoke suite caught it.
+ */
+describe('nested topics carry the wording, not only the tier flags', () => {
+  it('nests guidance from the served revision', async () => {
+    mockQuery.mockResolvedValue({
+      rows: [{ ...promoted('t-edu', 'education-library-books', 'Library Books'),
+               guidance: 'Who decides what belongs on the shelf.' }],
+    });
+
+    const cats = await getCompassCategories();
+    const topic = cats.flatMap((c) => c.topics)[0] as { guidance?: string };
+
+    expect(topic.guidance).toBe('Who decides what belongs on the shelf.');
+  });
+
+  // An absent gloss must arrive as a field that is simply empty, not as a
+  // missing key — the client branches on falsiness and a `undefined` that only
+  // appears on some topics is the harder bug to see.
+  it('still nests the key when the revision has no guidance', async () => {
+    const cats = await getCompassCategories();
+    const topic = cats.flatMap((c) => c.topics)[0] as object;
+    expect('guidance' in topic).toBe(true);
+  });
+});

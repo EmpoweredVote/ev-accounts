@@ -391,6 +391,15 @@ export async function getCompassCategories() {
           title: t.title,
           short_title: t.short_title,
           question_text: t.question_text,
+          // 🔴 THE THIRD EXPLICIT LIST THAT HAS TO LEARN A NEW FIELD. A topic's
+          // wording reaches a consumer through servedRevisionLateral's SELECT,
+          // then getPromotedTopics', then this re-projection — each one naming
+          // its columns, each one silently dropping anything it has not heard
+          // of. guidance passed the first two and died here, so the calibration
+          // page (which builds its topic list from CATEGORIES, not from
+          // /compass/topics) rendered no line at all while /compass/topics
+          // served one for all 60. Caught by the smoke suite, not by a type.
+          guidance: t.guidance,
           office_scope: t.office_scope,
           ...tierFlagsFor(t.id),
         };
