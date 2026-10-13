@@ -8,7 +8,7 @@
  * Called from: POST /api/admin/election-races/:id/enter-result
  */
 
-import { client } from '../../scripts/content-generation/anthropic-client.js';
+import { client, MODEL, EFFORT, firstText, describeContent } from '../../scripts/content-generation/anthropic-client.js';
 import { db } from '../../db/index.js';
 import { placeAnswer } from '../questionQuality/answerPlacement.js';
 import { auditBeforeInsert } from './auditBeforeInsert.js';
@@ -161,21 +161,22 @@ export async function generateCurrentTermQuestions(
   const userMessage = `Generate 6 current-term civic trivia questions about ${opts.winnerName} as ${race.seat} in ${race.jurisdiction}.`;
 
   // 6. Call Claude API
-  console.log(`\n  Calling Claude API (claude-sonnet-4-6)...`);
+  console.log(`\n  Calling Claude API (${MODEL})...`);
 
   const response = await client.messages.create({
-    model: 'claude-sonnet-4-6',
-    max_tokens: 4096,
+    model: MODEL,
+    max_tokens: 8192, // room for adaptive thinking as well as the reply
     system: systemPrompt,
     messages: [{ role: 'user', content: userMessage }],
+    output_config: { effort: EFFORT },
   });
 
-  const contentBlock = response.content[0];
-  if (contentBlock.type !== 'text') {
-    throw new Error(`Unexpected Claude response type: ${contentBlock.type}`);
+  const text = firstText(response);
+  if (text === null) {
+    throw new Error(`Unexpected Claude response type: ${describeContent(response)}`);
   }
 
-  const responseText = contentBlock.text.trim();
+  const responseText = text.trim();
 
   // Parse JSON from response (handle potential markdown code blocks)
   const jsonMatch = responseText.match(/\{[\s\S]*\}/);

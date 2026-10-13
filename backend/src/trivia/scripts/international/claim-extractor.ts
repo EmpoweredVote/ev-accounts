@@ -1,5 +1,5 @@
 import nlp from 'compromise';
-import { client, MODEL } from '../../scripts/content-generation/anthropic-client.js';
+import { client, MODEL, EFFORT, firstText, describeContent } from '../../scripts/content-generation/anthropic-client.js';
 import type { ParsedArticle } from './rss-ingestor.js';
 import { resolveLane, type Lane } from './lanes.js';
 import { normalizeEntities } from './claimIdentity.js';
@@ -356,11 +356,11 @@ export async function extractClaim(cluster: StoryCluster): Promise<ClaimExtracti
   try {
     response = await client.messages.create({
       model: MODEL,
-      max_tokens: 1024,
+      max_tokens: 4096, // room for adaptive thinking as well as the reply
       system: CLAIM_EXTRACTION_SYSTEM_PROMPT,
       messages: [{ role: 'user', content: articleTexts }],
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      output_config: { format: { type: 'json_schema', schema: CLAIM_EXTRACTION_SCHEMA } } as any,
+      output_config: { effort: EFFORT, format: { type: 'json_schema', schema: CLAIM_EXTRACTION_SCHEMA } } as any,
     });
   } catch (err) {
     const errorMsg = err instanceof Error ? err.message : String(err);
@@ -370,12 +370,13 @@ export async function extractClaim(cluster: StoryCluster): Promise<ClaimExtracti
     return { ok: false, reason: 'api-error', detail: errorMsg };
   }
 
-  const contentBlock = response.content[0];
-  if (contentBlock.type !== 'text') {
+  const text = firstText(response);
+  if (text === null) {
+    const detail = describeContent(response);
     console.error(
-      `[ClaimExtractor] Unexpected response type: ${contentBlock.type} for cluster: "${cluster.representativeTitle}"`,
+      `[ClaimExtractor] Unexpected response type: ${detail} for cluster: "${cluster.representativeTitle}"`,
     );
-    return { ok: false, reason: 'unexpected-content-block', detail: contentBlock.type };
+    return { ok: false, reason: 'unexpected-content-block', detail };
   }
 
   // Should be valid JSON when using structured output — counted separately
@@ -391,7 +392,7 @@ export async function extractClaim(cluster: StoryCluster): Promise<ClaimExtracti
     value: string;
   };
   try {
-    parsed = JSON.parse(contentBlock.text);
+    parsed = JSON.parse(text);
   } catch (err) {
     const errorMsg = err instanceof Error ? err.message : String(err);
     console.error(
