@@ -1,0 +1,951 @@
+{
+ "people": [
+  {
+   "id": "P04",
+   "name": "Dennis R. Adams",
+   "findable": true,
+   "found_page": "https://www.aol.com/articles/few-candidates-no-party-labels-090801770.html",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign website found; Ballotpedia has no page (https://ballotpedia.org/Dennis_Adams is 404)."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://www.aol.com/articles/few-candidates-no-party-labels-090801770.html",
+     "note": "Herald-Times filing story (AOL syndication) lists him only as a filed independent candidate, Richland District; no questionnaire answers found."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to scripted fetch; Google Ads Transparency Center is JS-only (empty shell). Cannot check without a browser."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own social account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "https://bloomingtonian.com/2026/10/13/bloomington-and-monroe-county-candidates-set-school-board-forum-in-ellettsville/",
+     "note": "LWV forum at Edgewood HS is scheduled for 2026-10-26 with Adams confirmed; it has not happened yet (future yield)."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Only listed by name in filing/forum stories; no direct quotes."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Challenger; no prior office found."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P12",
+   "name": "Tonya Hudson",
+   "findable": true,
+   "found_page": "https://ballotpedia.org/Tonya_Hudson",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://tonyaforcongress.com/issues-2/",
+     "note": "Issues page and home page: taxes, IRS, cannabis, war, climate. No LGBTQ/school-gender content."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Tonya_Hudson",
+     "note": "Ballotpedia Candidate Connection 2025/2024/2022 answers: taxes, school choice, cannabis; nothing in domain. Indiana Capital Chronicle voter guide (https://indianacapitalchronicle.com/voter-guides/contests/congressional-district-9/) returns 403 to curl and WebFetch."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "No Vote Smart / iVoterGuide profile found (Vote Smart search returns 403; iVoterGuide search is JS). MADVoters 2024 rating listed on Ballotpedia (cannabis, off-topic)."
+    },
+    "T04": {
+     "result": "found-off-topic",
+     "url": "https://tonyaforcongress.com/issues-2/",
+     "note": "Says she signed a Term Limits Pledge (off-topic)."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to scripted fetch; Google Ads Transparency Center is JS-only (empty shell). Cannot check without a browser."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/Tonyamillisforcongress",
+     "note": "Facebook returns HTTP 400 to scripted fetch."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No 2026 general-election debate or forum transcript found with her."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://tonyaforcongress.com/rollitback/",
+     "note": "'Roll It Back' weekly commentary (2022-2026): long posts on Dept. of Education, school choice, homeschooling; no LGBTQ/gender content."
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://ballstatedaily.com/article/2024/10/special-q-a-interview-with-libertarian-lt-gov-nominee-tonya-hudson",
+     "note": "2024 Lt. Gov. Q&A: one quote on parental choice in education (school choice, not LGBTQ-tied); recorded as borderline statement."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "Ballotpedia lists no endorsements for 2026; INORML endorsed her earlier (cannabis, off-topic)."
+    },
+    "T12": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Tonya_Hudson",
+     "note": "MADVoters Indiana 2024 rating (cannabis)."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Never held office."
+    }
+   },
+   "statements": [
+    {
+     "text": "We as libertarians are for the choice that parents should have the choice for their kids in the education system.",
+     "url": "https://ballstatedaily.com/article/2024/10/special-q-a-interview-with-libertarian-lt-gov-nominee-tonya-hudson",
+     "date": "2024-10-24",
+     "source_type": "T09",
+     "context": "Q&A as 2024 Libertarian Lt. Governor nominee, on education",
+     "sub_issue_hint": "borderline: parental choice of schooling, not tied to LGBTQ issues"
+    }
+   ],
+   "acts": []
+  },
+  {
+   "id": "P20",
+   "name": "Jim Croft",
+   "findable": true,
+   "found_page": "https://www.wuwm.com/wisconsin-state-senate-district-21-candidates",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://croftforsenate.com/why-im-running/",
+     "note": "Priorities: costs, healthcare, taxes, red tape. Nothing in domain (home, about, why pages read)."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://www.wuwm.com/wisconsin-state-senate-district-21-candidates",
+     "note": "WUWM questionnaire answers: affordability, data centers, budget, accountability. Ballotpedia: no Candidate Connection survey."
+    },
+    "T03": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/93641/race/34190/election/1497",
+     "note": "iVoterGuide questionnaire includes domain items (parental rights, child transition, sports/bathrooms, marriage); every item shows 'Did not answer'. A non-answer, recorded here as data."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to scripted fetch; Google Ads Transparency Center is JS-only (empty shell). Cannot check without a browser."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/CroftForSenate",
+     "note": "Facebook returns HTTP 400 to scripted fetch."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No forum/debate transcript found. Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": "WisPolitics campaign announcement (https://www.wispolitics.com/2026/croft-campaign-announces-run-for-state-senate/) returns 403."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "No interview with direct domain quotes found."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/93641/race/34190/election/1497",
+     "note": "Endorsed by NRA-PVF and AFP Action Wisconsin; Milwaukee Police Association (WUWM). AFP cites 'education freedom' but no domain issue group."
+    },
+    "T12": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/93641/race/34190/election/1497",
+     "note": "iVoterGuide (AFA Action) overall rating 'Conservative', assigned despite no questionnaire answers."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Challenger; no prior office."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "AFP Action Wisconsin endorsement (free market, small business, 'education freedom'); NRA-PVF; Milwaukee Police Association",
+     "url": "https://urbanmilwaukee.com/people/jim-croft",
+     "side_hint": "not domain-specific"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "iVoterGuide rates him 'Conservative'; all questionnaire items, including transition/sports/marriage items, 'Did not answer'",
+     "url": "https://ivoterguide.com/candidate/93641/race/34190/election/1497",
+     "side_hint": "rating not based on his answers"
+    }
+   ]
+  },
+  {
+   "id": "P28",
+   "name": "Ada S. Wilson",
+   "findable": true,
+   "found_page": "https://ballotpedia.org/Ada_Wilson",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://www.ada4schoolboard.com",
+     "note": "Campaign site (now running for Seat 4 on the new south district board formed from the Alpine split). 'Parents' rights' principle is generic, not tied to LGBTQ issues: borderline."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Ada_Wilson",
+     "note": "Did not complete Ballotpedia 2022 survey. No 2026 news questionnaire located. Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to scripted fetch; Google Ads Transparency Center is JS-only (empty shell). Cannot check without a browser."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ada4schoolboard/",
+     "note": "Facebook returns HTTP 400 to scripted fetch."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No forum transcript found."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "https://lehifreepress.com/2022/08/10/asd-adopts-new-instructional-materials-and-book-challenge-policy-board-calls-state-law-on-sensitive-material-too-strict/",
+     "note": "2022 Alpine book-removal and sensitive-materials coverage (Lehi Free Press, Herald Extra, KSL) has no Wilson quotes."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://www.ada4schoolboard.com/endorsements",
+     "note": "Individual endorsements only (former board members, parents, USBE vice chair)."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-off-topic",
+     "url": "https://www.utah.gov/pmn/files/1196703.pdf",
+     "note": "Brief check: Oct 22 2024 minutes show votes on travel policy, school closure; no domain vote found in the minutes checked. Board adopted pilot Policy 6161 (sensitive materials) Aug 2022; roll call not found."
+    }
+   },
+   "statements": [
+    {
+     "text": "Parents play the leading role in the rearing and education of their children, whether they choose public, private, or homeschooling. This role must be safeguarded in all aspects of school governance, from policy to instruction.",
+     "url": "https://www.ada4schoolboard.com",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "Campaign 'Governing Principles' under the heading PARENTS' RIGHTS",
+     "sub_issue_hint": "borderline: parental rights in general, not tied to LGBTQ issues"
+    },
+    {
+     "text": "Every child, regardless of any external factors, is a priceless individual, worthy and deserving of an quality education — a mighty launch into adulthood.",
+     "url": "https://www.ada4schoolboard.com",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "Campaign 'Governing Principles' under the heading THE WORTH OF A CHILD",
+     "sub_issue_hint": "vague: every child"
+    }
+   ],
+   "acts": []
+  },
+  {
+   "id": "P36",
+   "name": "Burgess Owens",
+   "findable": true,
+   "found_page": "https://ballotpedia.org/Burgess_Owens",
+   "yield": {
+    "T01": {
+     "result": "inaccessible",
+     "url": "https://burgessowens.com/",
+     "note": "Campaign site is behind a Cloudflare block (403 to curl and WebFetch). Ballotpedia says he is not running for re-election in 2026. Ballotpedia's 2020 campaign-site excerpt: education = local control and parent involvement (generic)."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Burgess_Owens",
+     "note": "Did not complete Ballotpedia surveys (2020-2026). Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Vote Smart returns 403; no other questionnaire with own answers found. Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T04": {
+     "result": "found-off-topic",
+     "url": "https://www.atr.org/pledge/burgess-owens/",
+     "note": "ATR Taxpayer Protection Pledge (linked from Ballotpedia; off-topic)."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to scripted fetch; Google Ads Transparency Center is JS-only (empty shell). Cannot check without a browser."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://twitter.com/RepBurgessOwens",
+     "note": "X requires login; Facebook returns 400 to scripted fetch."
+    },
+    "T07": {
+     "result": "found-on-topic",
+     "url": "https://owens.house.gov/posts/owens-speaks-to-bill-protecting-children-from-radical-gender-ideology-on-house-floor",
+     "note": "House floor remarks (May 2026) and committee hearings (May 2024, Dec 2025) published as transcripts on his official site. No campaign debate found. Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://owens.house.gov/feed",
+     "note": "Official RSS feed lists 590 posts (2022-2026); about 15 are in the domain (sports, Title IX, parental consent for pronouns/names, 'gender ideology' in K-12)."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Daily Caller exclusive on Say No to Indoctrination Act is referenced on his site; link not recoverable. Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T10": {
+     "result": "found-on-topic",
+     "url": "https://owens.house.gov/posts/owens-risch-protect-womens-olympic-sports",
+     "note": "Owens-Risch letter to the IOC on women's categories (Mar 2025); adjacent (Olympic, not K-12)."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Burgess_Owens",
+     "note": "Ballotpedia lists Trump endorsement only; no domain issue-group endorsement found."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC Congressional Scorecard: 6 (118th), 4 (117th). Heritage Action 87% (general)."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "note": "Roll calls verified for H.R. 734 (2023), H.R. 5 (2023), H.R. 28 (2025); sponsor of Say No to Indoctrination Act."
+    }
+   },
+   "statements": [
+    {
+     "text": "There are only two sexes: male and female. Sex is a biological fact, not an ideological whim. Yet across the country, school districts are actively pushing radical gender ideology on children and, in some cases, facilitating social transitions without parental knowledge or consent.",
+     "url": "https://owens.house.gov/posts/owens-bill-protecting-children-from-radical-gender-ideology-passes-house",
+     "date": "2026-05-20",
+     "source_type": "T08",
+     "context": "Press release on House passage of H.R. 2616 (parental consent before schools change pronouns, names, bathroom/locker access)",
+     "sub_issue_hint": "parental notification / social transition"
+    },
+    {
+     "text": "The Stopping Indoctrination & Protecting Kids Act is simple, any district that promotes these ideologies in the classroom or conceals a child’s gender transition from their parents will lose federal funding. Parents, not school administrators, have the ultimate right to make decisions about their children’s upbringing.",
+     "url": "https://owens.house.gov/posts/owens-bill-protecting-children-from-radical-gender-ideology-passes-house",
+     "date": "2026-05-20",
+     "source_type": "T08",
+     "context": "Same press release, H.R. 2616",
+     "sub_issue_hint": "parental notification; curriculum"
+    },
+    {
+     "text": "If a child is struggling with gender dysphoria, parents should be the FIRST to know, not the last.",
+     "url": "https://owens.house.gov/posts/owens-speaks-to-bill-protecting-children-from-radical-gender-ideology-on-house-floor",
+     "date": "2026-05-20",
+     "source_type": "T07",
+     "context": "House floor remarks on H.R. 2616, transcript on official site",
+     "sub_issue_hint": "parental notification"
+    },
+    {
+     "text": "If a child needs a permission slip signed to go on a field trip, a school should never think it has the right to socially transition that same child without informing his or her parents.",
+     "url": "https://owens.house.gov/posts/owens-speaks-to-bill-protecting-children-from-radical-gender-ideology-on-house-floor",
+     "date": "2026-05-20",
+     "source_type": "T07",
+     "context": "House floor remarks on H.R. 2616",
+     "sub_issue_hint": "parental notification / social transition"
+    },
+    {
+     "text": "Our schools should be teaching children how to read, how to write, and how to think — not trying to turn little Johnny into little Jenny.",
+     "url": "https://owens.house.gov/posts/owens-speaks-to-bill-protecting-children-from-radical-gender-ideology-on-house-floor",
+     "date": "2026-05-20",
+     "source_type": "T07",
+     "context": "House floor remarks on H.R. 2616",
+     "sub_issue_hint": "curriculum / social transition"
+    },
+    {
+     "text": "That is real civics education, not the propaganda and subtle indoctrination that the left used to prioritize ideology over education by funneling taxpayer dollars to promote divisive and debunked racial falsehoods, radical gender ideology, and political activism. We’re putting an end to that once and for all with the CHARLIE Act.",
+     "url": "https://owens.house.gov/posts/owens-introduces-charlie-act-to-end-biden-era-indoctrination-of-schools",
+     "date": "2026-05-14",
+     "source_type": "T08",
+     "context": "Press release introducing H.R. 8705 (bars civics grants for 'gender ideology')",
+     "sub_issue_hint": "curriculum"
+    },
+    {
+     "text": "However, some schools increasingly see parents as an obstacle that needs to be ignored or overcome. … We have to start with that premise that there’s only one set of parents, and they’re not in the school system unless it’s their kids.",
+     "url": "https://owens.house.gov/posts/hearing-recap-owens-blasts-schools-for-cutting-parents-out-the-fact-were-having-this-conversation-is-crazy-to-me",
+     "date": "2025-12-04",
+     "source_type": "T07",
+     "context": "Hearing recap (FERPA/PPRA hearing); he then asked a witness about policies that conceal gender transition from parents",
+     "sub_issue_hint": "parental notification"
+    },
+    {
+     "text": "Parents aren’t sending their kids to school to be indoctrinated—they want them to learn to read, write, and do math,",
+     "url": "https://owens.house.gov/posts/owens-codifies-trump-agenda-cracks-down-on-k-12-indoctrination",
+     "date": "2025-04-03",
+     "source_type": "T08",
+     "context": "Press release introducing the Say No to Indoctrination Act (bars ESEA funds for 'radical gender ideology')",
+     "sub_issue_hint": "curriculum"
+    },
+    {
+     "text": "Title IX opened doors for women and girls in sports, but that progress is under attack as radical policies force them to compete against men,",
+     "url": "https://owens.house.gov/posts/owens-defends-womens-sports",
+     "date": "2025-01-14",
+     "source_type": "T08",
+     "context": "Press release on his vote for H.R. 28, Protection of Women and Girls in Sports Act",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "We should never accept men stealing their opportunities, dominating their competitions, and erasing their records.",
+     "url": "https://owens.house.gov/posts/owens-defends-womens-sports",
+     "date": "2025-01-14",
+     "source_type": "T08",
+     "context": "Same press release, H.R. 28",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Allowing biological males to compete in women’s sports destroys competitive integrity, puts female athletes at risk, and erases decades of progress.",
+     "url": "https://owens.house.gov/posts/owens-risch-protect-womens-olympic-sports",
+     "date": "2025-03-11",
+     "source_type": "T08",
+     "context": "Press release on Owens-Risch letter to the IOC",
+     "sub_issue_hint": "sports (adjacent: Olympic, not K-12)"
+    },
+    {
+     "text": "The Biden administration is denying biological reality, stripping away Title IX protections, safety, and fairness in the name of ‘equity.’ Today, House Republicans took a stand to nullify this nonsense and uphold fairness and equal opportunity for our daughters to train, compete, and win.",
+     "url": "https://owens.house.gov/posts/owens-nullifies-bidens-radical-rewrite-of-title-ix",
+     "date": "2024-07-11",
+     "source_type": "T08",
+     "context": "Press release on H.J. Res. 165 (disapproval of 2024 Title IX rule)",
+     "sub_issue_hint": "Title IX rule; sports; facilities"
+    },
+    {
+     "text": "Can you assure us that protecting biological girls from competing against genetically stronger, bigger, and faster biological men will not be considered federal discrimination?",
+     "url": "https://owens.house.gov/posts/owens-to-cardona-i-know-how-i-will-protect-my-girls",
+     "date": "2024-05-07",
+     "source_type": "T07",
+     "context": "Question to Education Secretary Cardona at Education & Workforce hearing, transcript on official site",
+     "sub_issue_hint": "sports / Title IX"
+    },
+    {
+     "text": "If your daughter was reporting she felt uncomfortable in a boy’s presence in a bathroom or locker room, would that be considered by the administration discrimination or bigotry?",
+     "url": "https://owens.house.gov/posts/owens-to-cardona-i-know-how-i-will-protect-my-girls",
+     "date": "2024-05-07",
+     "source_type": "T07",
+     "context": "Same hearing, question to Secretary Cardona",
+     "sub_issue_hint": "bathrooms / locker rooms"
+    },
+    {
+     "text": "Allowing biological men to compete in women’s sports eclipses women if it does not erase them altogether.",
+     "url": "https://owens.house.gov/posts/owens-statement-on-protecting-womens-sports-empowering-parents",
+     "date": "2023-03-08",
+     "source_type": "T08",
+     "context": "Statement at committee markup of H.R. 734 and H.R. 5",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Pitting men, even if they identify themselves as female, against biological women in sports is patently unfair.",
+     "url": "https://owens.house.gov/posts/owens-statement-on-protecting-womens-sports-empowering-parents",
+     "date": "2023-03-08",
+     "source_type": "T08",
+     "context": "Same markup statement",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "In our Commitment to America, House Republicans promised to pass the Parents Bill of Rights and stand up against recent attempts to push moms and dads out of the driver’s seat.",
+     "url": "https://owens.house.gov/posts/owens-helps-reintroduce-the-parents-bill-of-rights",
+     "date": "2023-03-01",
+     "source_type": "T08",
+     "context": "Press release on reintroducing the Parents Bill of Rights (H.R. 5)",
+     "sub_issue_hint": "parental rights (general)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Yea on passage of H.R. 734, Protection of Women and Girls in Sports Act (roll 192, 2023-04-20)",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "side_hint": "restrict trans girls in girls' sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on passage of H.R. 5, Parents Bill of Rights Act (roll 161, 2023-03-24)",
+     "url": "https://clerk.house.gov/evs/2023/roll161.xml",
+     "side_hint": "parental rights"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea on passage of H.R. 28, Protection of Women and Girls in Sports Act of 2025 (roll 12, 2025-01-14)",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "side_hint": "restrict trans girls in girls' sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "Nay on Respect for Marriage Act (H.R. 8404, final House vote 258-169, 2022); Not Voting on Equality Act (H.R. 5, 2021), per Ballotpedia key votes",
+     "url": "https://ballotpedia.org/Burgess_Owens",
+     "side_hint": "adjacent: general LGBTQ equality"
+    },
+    {
+     "kind": "bill",
+     "desc": "Sponsor, Say No to Indoctrination Act (H.R. 2617, 119th, 2025-04-03; also H.R. 4698, 117th); folded into H.R. 2616 Stopping Indoctrination & Protecting Kids Act, which passed the House 2026-05-20 per his release (his roll-call vote not verified: clerk site blocked)",
+     "url": "https://owens.house.gov/posts/owens-bill-protecting-children-from-radical-gender-ideology-passes-house",
+     "side_hint": "parental consent for pronoun/name/facility changes; ban 'gender ideology' instruction"
+    },
+    {
+     "kind": "letter",
+     "desc": "Owens-Risch letter to the IOC asking eligibility for women's events be based on biological sex (2025-03-11)",
+     "url": "https://owens.house.gov/posts/owens-risch-protect-womens-olympic-sports",
+     "side_hint": "restrict; adjacent (not K-12)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard: 6 (118th Congress), 4 (117th)",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "low pro-LGBTQ score"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "Heritage Action session/lifetime score 87% (general conservative scorecard)",
+     "url": "https://heritageaction.com/scorecard/members/O000086",
+     "side_hint": "general, not domain-specific"
+    }
+   ]
+  },
+  {
+   "id": "P44",
+   "name": "Kelly Gonez",
+   "findable": true,
+   "found_page": "https://ballotpedia.org/Kelly_Gonez",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://www.kellygonez.com/",
+     "note": "2026 campaign site bio names 'LGBTQ youth' among groups she has fought for (third-person); letter says classrooms should be places of 'belonging, and safety'. Re-elected outright 2026-06-02."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Kelly_Gonez",
+     "note": "Did not complete Ballotpedia 2022/2026 surveys. 2017 KPCC survey (on Ballotpedia) covers charters, special populations; nothing in domain."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "No interest-group questionnaire with her answers found (UTLA endorsement questionnaire not public). Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to scripted fetch; Google Ads Transparency Center is JS-only (empty shell). Cannot check without a browser."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://twitter.com/KellyGonez",
+     "note": "X requires login; Facebook/Instagram block scripted fetch."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "LAUSD board-meeting video/transcripts sit on lausd.org, which returns 403. No forum transcript found."
+    },
+    "T08": {
+     "result": "inaccessible",
+     "url": "https://www.lausd.org/apps/news/article/2087312",
+     "note": "LAUSD newsroom (2019 'Los Angeles Unified Shows its Pride' release, reportedly quoting her on her all-gender-restroom resolution) returns 403 to curl and WebFetch; no Wayback copy. Lead only, not used as a source."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://www.ksby.com/news/california-news/protests-erupted-outside-los-angeles-elementary-schools-pride-month-assembly",
+     "note": "AP story (June 2023) quotes her on the Saticoy Elementary Pride assembly."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://www.kellygonez.com/endorsements",
+     "note": "UTLA, LA County Democratic Party, Working Families Party, labor unions, Democratic clubs; no LGBTQ issue group listed."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.oneinstitute.org/wp-content/uploads/2026/07/res-064-celebrating-pride-2026.pdf",
+     "note": "Res-064-25/26 'Celebrating Pride 2026' (2026-06-12): co-presenter, mover, Aye. Nov 2024 LGBTQ+ resolutions reported 'unanimous' by EdSource headline, but EdSource page is 403; member roll not verified."
+    }
+   },
+   "statements": [
+    {
+     "text": "At the same time I think it’s really important to be factual about what content was shared today, the fact that it is age-appropriate and that it’s simply about providing inclusive, welcoming environments to all of our students and families,",
+     "url": "https://www.ksby.com/news/california-news/protests-erupted-outside-los-angeles-elementary-schools-pride-month-assembly",
+     "date": "2023-06-03",
+     "source_type": "T09",
+     "context": "AP story on protests at Saticoy Elementary Pride assembly (book about family structures incl. LGBTQ+ parents)",
+     "sub_issue_hint": "curriculum / instruction"
+    },
+    {
+     "text": "Gonez said the school board wants to “listen and to have these tough conversations” with parents who don't support the assembly.",
+     "url": "https://www.ksby.com/news/california-news/protests-erupted-outside-los-angeles-elementary-schools-pride-month-assembly",
+     "date": "2023-06-03",
+     "source_type": "T09",
+     "context": "Same AP story; reporter paraphrase with partial direct quote",
+     "sub_issue_hint": "curriculum / parents"
+    },
+    {
+     "text": "She has fought for students experiencing homelessness, foster youth, immigrant families, multilingual learners, LGBTQ youth, and students with disabilities, while also securing more than $1.2 billion for green schoolyards to bring outdoor learning, shade, and play spaces to campuses across the District.",
+     "url": "https://www.kellygonez.com/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "2026 campaign site biography (third person, campaign-authored)",
+     "sub_issue_hint": "general LGBTQ student support"
+    },
+    {
+     "text": "I will continue fighting to protect our schools from attacks, to expand opportunities for every child no matter their zip code, language, or immigration status, and to ensure our classrooms are places of joy, belonging, and safety.",
+     "url": "https://www.kellygonez.com/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "2026 campaign site letter 'Why I Serve'",
+     "sub_issue_hint": "vague: belonging and safety"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "board-vote",
+     "desc": "Co-presented, moved, and voted Aye on Res-064-25/26 'Celebrating Pride 2026: A Review of LGBTQ+ Supports, Resources, and Programming' (adopted by consent 2026-06-12); directs LGBTQIA+ liaison/grant updates and task force",
+     "url": "https://www.oneinstitute.org/wp-content/uploads/2026/07/res-064-celebrating-pride-2026.pdf",
+     "side_hint": "support LGBTQ+ students"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by UTLA, LA County Democratic Party, California Working Families Party, LA County Federation of Labor",
+     "url": "https://www.kellygonez.com/endorsements",
+     "side_hint": "not domain-specific"
+    }
+   ]
+  },
+  {
+   "id": "P52",
+   "name": "Larry Thompson",
+   "findable": true,
+   "found_page": "https://www.thewrap.com/larry-thompson-republican-congressional-campaign-california/",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://www.larrythompsonforcongress.com/issues",
+     "note": "Issue 10 EDUCATION: schools must be transparent with parents about what is taught and 'which ideologies' are funded. Borderline: no gender/LGBTQ wording. The 32-point plan PDFs are image-only (no text layer): inaccessible to text extraction."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://www.dailynews.com/2026/10/05/larry-thompson-ca-32-candidate-2026-election-questionnaire/",
+     "note": "LA Daily News questionnaire (2026-10-05): affordability, housing, surveillance, immigration, health, data centers. Nothing in domain."
+    },
+    "T03": {
+     "result": "found-off-topic",
+     "url": "https://www.larrythompsonforcongress.com/view-endorsements",
+     "note": "Stand With Crypto questionnaire (rated 'A'); off-topic. vote-usa.org 2024 comparison linked but not in domain."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.larrythompsonforcongress.com/campaign-ads",
+     "note": "Campaign 'ads' page lists news only; Meta/Google ad libraries not scriptable (403 / JS-only)."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/LarryThompsonForCongress/",
+     "note": "Facebook blocks scripted fetch."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No debate or forum transcript found. Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.larrythompsonforcongress.com/news",
+     "note": "Campaign news page links to press coverage; no domain content."
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://www.thewrap.com/larry-thompson-republican-congressional-campaign-california/",
+     "note": "TheWrap launch story quotes him on bipartisanship and Hollywood; nothing in domain."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://www.larrythompsonforcongress.com/view-endorsements",
+     "note": "California GOP and county parties, Republican women's clubs, National Women's Prayer & Voting Army, American Independent Party, Stand With Crypto. No domain issue group found."
+    },
+    "T12": {
+     "result": "found-off-topic",
+     "url": "https://www.standwithcrypto.org/politicians/person/larry---thompson",
+     "note": "Stand With Crypto 'A' (off-topic)."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Never held office."
+    }
+   },
+   "statements": [
+    {
+     "text": "10. EDUCATION: Schools must be assertively transparent with parents as to what is being taught in the classrooms and which ideologies are being funded by the government, namely us!",
+     "url": "https://www.larrythompsonforcongress.com/issues",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "Campaign 'On the Issues' list, item 10",
+     "sub_issue_hint": "borderline: curriculum transparency to parents; ideology unspecified"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by California Republican Party, LA and Ventura County GOP, Republican women's federations, National Women's Prayer & Voting Army",
+     "url": "https://www.larrythompsonforcongress.com/view-endorsements",
+     "side_hint": "not domain-specific"
+    }
+   ]
+  },
+  {
+   "id": "P60",
+   "name": "Mike Kennedy",
+   "findable": true,
+   "found_page": "https://ballotpedia.org/Mike_Kennedy_(Utah)",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://mikekennedyforutah.com/issues/",
+     "note": "Campaign site: sponsored Utah ban on transgender surgeries for minors (SB 16, 2023); says he sponsors the 'Chloe Cole Act' in Congress (not verified on congress.gov: API rate-limited); 'parents more transparency' line."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Mike_Kennedy_(Utah)",
+     "note": "Ballotpedia 2024 Candidate Connection: education = local control and 'empowering parents' (generic). Not completed for 2026."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Vote Smart returns 403; no other questionnaire found. Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to scripted fetch; Google Ads Transparency Center is JS-only (empty shell). Cannot check without a browser."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.instagram.com/repmikekennedy/",
+     "note": "X/Facebook/Instagram block scripted fetch. A 2023 Facebook post on the vandalism and SB 16 is quoted by the Daily Wire (recorded under T09)."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No debate transcript found. Web-search budget for the session was exhausted mid-batch; this type was checked only by direct fetches, not by search."
+    },
+    "T08": {
+     "result": "inaccessible",
+     "url": "https://mikekennedy.house.gov/",
+     "note": "Official House site returns 403 (Akamai) to curl and WebFetch."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://mikekennedyforutah.com/2023/04/vandals-hit-utah-republicans-home-for-bill-banning-gender-surgeries-for-minors-i-will-not-be-silenced/",
+     "note": "Fox News and Daily Wire stories (Apr 2023) on vandalism after SB 16, reposted on campaign site; original Fox/Daily Wire URLs not fetched."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Mike_Kennedy_(Utah)",
+     "note": "Ballotpedia lists Trump endorsement; no domain issue group found."
+    },
+    "T12": {
+     "result": "found-off-topic",
+     "url": "https://heritageaction.com/scorecard/members/K000403",
+     "note": "Heritage Action 100% (general). Not in HRC 118th scorecard (took office 2025)."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://le.utah.gov/~2023/bills/static/SB0016.html",
+     "note": "Sponsor of Utah S.B. 16 (2023), Transgender Medical Treatments and Procedures Amendments. Yea on H.R. 28 (2025)."
+    }
+   },
+   "statements": [
+    {
+     "text": "As a Utah state senator, Mike sponsored and passed legislation to protect minors from dangerous and irreversible transgender surgeries. He took that stand despite intense backlash and did not back down, even when he received threats and his home was vandalized. In Congress, he has continued that work by sponsoring the Chloe Cole Act to further protect children with serious, actionable policy.",
+     "url": "https://mikekennedyforutah.com/issues/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "Campaign 'Results & Priorities' page (third person, campaign-authored)",
+     "sub_issue_hint": "adjacent: gender-affirming care for minors"
+    },
+    {
+     "text": "Supported policies that give parents more transparency and a stronger voice in decisions affecting their children",
+     "url": "https://mikekennedyforutah.com/issues/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "Campaign 'Results & Priorities' list item",
+     "sub_issue_hint": "parental rights (general)"
+    },
+    {
+     "text": "Kennedy, during the Monday segment, blasted gender-affirming care for minors as “radical, irreversible and damaging” and circled back to label the retaliatory vandalism “reprehensible.”",
+     "url": "https://mikekennedyforutah.com/2023/04/vandals-hit-utah-republicans-home-for-bill-banning-gender-surgeries-for-minors-i-will-not-be-silenced/",
+     "date": "2023-04-24",
+     "source_type": "T09",
+     "context": "Fox News story (reposted on campaign site) on Fox & Friends interview; reporter sentence with his quoted words",
+     "sub_issue_hint": "adjacent: gender-affirming care for minors"
+    },
+    {
+     "text": "Kennedy wrote that Utahns “will always stand up and push back against radicals who seek to push their agenda in our state,” adding that he’s “more determined than ever to work with the good people of Utah to make our state a better place for all, especially our children.”",
+     "url": "https://mikekennedyforutah.com/2023/04/these-trannies-bash-back-lawmaker-who-sponsored-child-trans-surgery-ban-says-home-was-vandalized/",
+     "date": "2023-04-22",
+     "source_type": "T09",
+     "context": "Daily Wire story (reposted on campaign site) quoting his Facebook post after vandalism tied to SB 16",
+     "sub_issue_hint": "adjacent: gender-affirming care for minors"
+    },
+    {
+     "text": "Education reform is crucial, with a focus on returning control to local communities, directly benefiting students and teachers, and empowering parents.",
+     "url": "https://ballotpedia.org/Mike_Kennedy_(Utah)",
+     "date": "2024",
+     "source_type": "T02",
+     "context": "Ballotpedia Candidate Connection 2024, answer on the nation's greatest challenges",
+     "sub_issue_hint": "borderline: parental empowerment (general)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "bill",
+     "desc": "Sponsor, Utah S.B. 16 (2023) Transgender Medical Treatments and Procedures Amendments (bars gender surgeries for minors; moratorium on puberty blockers/hormones for new patients); signed Jan 2023",
+     "url": "https://le.utah.gov/~2023/bills/static/SB0016.html",
+     "side_hint": "restrict; adjacent (medical care for minors)"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea on passage of H.R. 28, Protection of Women and Girls in Sports Act of 2025 (roll 12, 2025-01-14)",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "side_hint": "restrict trans girls in girls' sports"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "Heritage Action session/lifetime score 100% (general conservative scorecard)",
+     "url": "https://heritageaction.com/scorecard/members/K000403",
+     "side_hint": "general, not domain-specific"
+    }
+   ]
+  }
+ ]
+}

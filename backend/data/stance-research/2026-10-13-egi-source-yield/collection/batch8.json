@@ -1,0 +1,820 @@
+{
+ "people": [
+  {
+   "id": "P08",
+   "name": "James H. Pittsford III",
+   "findable": true,
+   "found_page": "https://www.pittsford4indiana.com/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.pittsford4indiana.com/",
+     "note": "Issues on homepage: education funding, vouchers, highways, utility tax, corruption. No LGBTQ/gender content. About + Endorsements pages also read."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://www.chamberbloomington.org/state-legislative-candidates-2026.html",
+     "note": "Bloomington Chamber 2026 page and IDS 2026 guide name him only; no questionnaire. BallotReady has no stances. Blue Voter Guide 403."
+    },
+    "T03": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/95548/race/30695/election/1456",
+     "note": "iVoterGuide questionnaire: answered 4 items (abortion/economy). The SOGI nondiscrimination item is marked 'Did not answer'. Vote Smart (justfacts.votesmart.org) returned HTTP 403 'request blocked'."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": "No pledge found."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US",
+     "note": "Meta Ad Library returned HTTP 403 to fetch; Google Ads Transparency is JS-only (no content in HTML). Not checkable in this study."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/jimmy.pittsford",
+     "note": "Personal Facebook linked from iVoterGuide; fetch returned an error page (login wall)."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No 2026 HD46 forum or debate found."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.pittsford4indiana.com/pothole-report",
+     "note": "Only campaign 'Pothole Report' posts."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "No news article with his quotes found; coverage is listings only (IDS, Chamber, BallotReady)."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://www.pittsford4indiana.com/endorsements",
+     "note": "Campaign lists Indiana Stonewall Democrats (LGBTQ Democratic group). Also unions, Indiana Reproductive Freedom PAC (per iVoterGuide)."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Challenger; no scorecard."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "No prior office (iVoterGuide: political offices held N/A)."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by Indiana Stonewall Democrats (listed on campaign endorsements page)",
+     "url": "https://www.pittsford4indiana.com/endorsements",
+     "side_hint": "pro-LGBTQ group"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "iVoterGuide (AFA Action) rates him 'Liberal'; he left the item 'I support adding sexual orientation, gender identity and gender expression as protected classes in non-discrimination laws' unanswered",
+     "url": "https://ivoterguide.com/candidate/95548/race/30695/election/1456",
+     "side_hint": "rating by social-conservative group; non-answer on SOGI item"
+    }
+   ]
+  },
+  {
+   "id": "P16",
+   "name": "Joe Husk",
+   "findable": true,
+   "found_page": "https://bsquarebulletin.com/4-new-contested-races-on-township-level-after-dems-gop-fill-ballot-vacancies-for-monroe-county/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign site found."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://www.chamberbloomington.org/2026-election-candidates.html",
+     "note": "Chamber 2026 page and B Square 2026 primary preview do not mention him or Benton Township board."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "BallotReady has no page (404 for joe-husk / joseph-husk). Vote Smart (justfacts.votesmart.org) returned HTTP 403 'request blocked'."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US",
+     "note": "Meta Ad Library returned HTTP 403 to fetch; Google Ads Transparency is JS-only (no content in HTML). Not checkable in this study."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "https://bsquarebulletin.com/4-new-contested-races-on-township-level-after-dems-gop-fill-ballot-vacancies-for-monroe-county/",
+     "note": "Only found page is a 2022-07-10 B Square article listing him as incumbent Democrat on the Benton Township board ballot; no quotes. No 2026 coverage found."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Township board (budget body); no domain record expected; not checked further."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P24",
+   "name": "Mitchell Berman",
+   "findable": true,
+   "found_page": "https://www.bermanforcongress.com/priorities",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.bermanforcongress.com/priorities",
+     "note": "Priorities page: costs, health care, corruption, jobs, reproductive freedom, public education funding, veterans, environment. No LGBTQ/gender content."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Mitchell_Berman",
+     "note": "Completed Ballotpedia Candidate Connection 2026; answers cover health care, corruption, costs. No domain content."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Vote Smart (justfacts.votesmart.org) returned HTTP 403 'request blocked'. No interest-group questionnaire found."
+    },
+    "T04": {
+     "result": "found-off-topic",
+     "url": "https://www.bermanforcongress.com/priorities",
+     "note": "No-corporate-PAC pledge stated on site; no domain pledge."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US",
+     "note": "Meta Ad Library returned HTTP 403 to fetch; Google Ads Transparency is JS-only (no content in HTML). Not checkable in this study."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://x.com/MBermanWI",
+     "note": "X profile shows only bio without login; posts JS/login-only. Facebook/Instagram/TikTok (bermanforcongress) not readable without login."
+    },
+    "T07": {
+     "result": "found-off-topic",
+     "url": "https://civicmedia.us/news/2026/08/10/three-democrats-vie-to-take-on-steil-in-wisconsins-1st-cd-in-tuesdays-primary",
+     "note": "Primary forums (Kenosha, Janesville UAW hall) reported; no transcript; reported content is health care/data centers. Campaign media page lists 3 ads ('Bucks', 'Going Fishing', 'Working People') not reviewed."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.bermanforcongress.com/media",
+     "note": "Media page lists news and ads; no domain statement."
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://civicmedia.us/news/2026/08/12/berman-wins-democratic-nod-to-challenge-steil-in-wisconsins-1st-district",
+     "note": "Quotes on corruption, working class, health care. WPR and Spectrum articles scanned: no domain content. Wisconsin Examiner returned 403."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://www.bermanforcongress.com/endorsers",
+     "note": "Endorsers include AFT Local 212 and WEAC/NEA (teachers' unions) plus labor and Dem groups; no LGBTQ group listed. No Fair Wisconsin/HRC/Equality PAC link found."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Challenger; no scorecard."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "No prior office."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by American Federation of Teachers Local 212 and Wisconsin Education Association Council / NEA (teachers' unions; not LGBTQ-specific)",
+     "url": "https://www.bermanforcongress.com/endorsers",
+     "side_hint": "teachers' unions; no direct domain signal"
+    }
+   ]
+  },
+  {
+   "id": "P32",
+   "name": "Leah Hansen",
+   "findable": true,
+   "found_page": "https://house.utleg.gov/rep/LHANSEN/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.leahforutah.com/",
+     "note": "Campaign site (Google Sites): limited government, 'proper role of government', citizen engagement. No domain content."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Leah_Hansen_(Utah)",
+     "note": "Has not completed Ballotpedia 2026 Candidate Connection. No news questionnaire found (Utah News Dispatch 'meet new lawmakers' returned 403)."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Vote Smart (justfacts.votesmart.org) returned HTTP 403 'request blocked'."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US",
+     "note": "Meta Ad Library returned HTTP 403 to fetch; Google Ads Transparency is JS-only (no content in HTML). Not checkable in this study."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.instagram.com/leah.hansen/",
+     "note": "Instagram and personal Facebook (facebook.com/leah.t.hansen) need login. Substack (leahforutah) has one post 'Coming soon' (2026-03-17)."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No forum transcript found; primary and convention uncontested in 2026."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://leahforutah.substack.com/archive",
+     "note": "Substack: one 'Coming soon' post."
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://www.ksl.com/article/51460123/utah-gop-lawmaker-casts-most-no-votes-in-20-years--and-its-not-even-close",
+     "note": "KSL 2026-03-11: quotes on her voting philosophy (reads every bill; votes no on unread bills). Lehi Free Press 2026-01-01 quotes reelection post. No domain quotes."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "Wikipedia notes pre-office testimony (2024 support for anti-DEI HB261; 2025 childhood-independence bill); no domain letters/comments found."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Leah_Hansen_(Utah)",
+     "note": "Ballotpedia lists no endorsements."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Leah_Hansen_(Utah)",
+     "note": "Ballotpedia lists 2025 Utah scorecards (UEA, Libertas, Club for Growth, etc.) but she joined Aug 2025; no domain scorecard (e.g. Equality Utah) found for her."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2026GS&voteid=1068&house=H",
+     "note": "2026 floor votes: Yea on HB183 S2 (Sex Designation Amendments); Nay on HB174 (minor hormone-treatment ban) at passage and concurrence. She sponsored no bills."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Yea on H.B. 183 S2 'Sex Designation Amendments' (Strong), House 3rd reading final passage 58-14-3, 2026-03-02 (bill later died in Senate). News reports say bill touched school employees' presentation/sex designation.",
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2026GS&voteid=1068&house=H",
+     "side_hint": "vote for restrictive sex-designation bill"
+    },
+    {
+     "kind": "vote",
+     "desc": "Nay on H.B. 174 S1 'Sex Characteristic Change Treatment Amendments' (Shipp; makes minors' hormone-treatment moratorium a ban), House passage 54-15-6, 2026-02-05 (adjacent: medical care for minors)",
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2026GS&voteid=226&house=H",
+     "side_hint": "vote against restriction; she cast 446 no votes that session, reason not stated"
+    },
+    {
+     "kind": "vote",
+     "desc": "Nay on H.B. 174 S2 House concurrence with Senate amendment, 53-15-7, 2026-03-02 (adjacent)",
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2026GS&voteid=1056&house=H",
+     "side_hint": "vote against restriction"
+    }
+   ]
+  },
+  {
+   "id": "P40",
+   "name": "Brent Rummler",
+   "findable": true,
+   "found_page": "https://www.alpineut.gov/Archive.aspx?ADID=149",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign site found."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "No questionnaire found for 2023 council race."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Vote Smart (justfacts.votesmart.org) returned HTTP 403 'request blocked'."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US",
+     "note": "Meta Ad Library returned HTTP 403 to fetch; Google Ads Transparency is JS-only (no content in HTML). Not checkable in this study."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.alpineut.gov/Archive.aspx?ADID=149",
+     "note": "Feb 2024 Alpine city newsletter 'New City Council Member Spotlight' in his own words: family, FBI career, coaching. No domain content."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "City council; no domain record found (brief check only; pride-flag stories found concern other Utah cities)."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P48",
+   "name": "Mark Gonzalez",
+   "findable": true,
+   "found_page": "https://a54.asmdc.org/press-releases",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://www.markgonzalezforassembly.com/priorities",
+     "note": "Civil Rights section names LGBTQ+ community and his Equality California board seat (general equality; no school-specific policy)."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "No 2026 news/civic questionnaire found (search budget ran out before a deep check)."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Vote Smart (justfacts.votesmart.org) returned HTTP 403 'request blocked'."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US",
+     "note": "Meta Ad Library returned HTTP 403 to fetch; Google Ads Transparency is JS-only (no content in HTML). Not checkable in this study."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Social accounts not readable without login (X/Facebook/Instagram); not individually tested."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No forum transcript found for 2024 or 2026."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://a54.asmdc.org/press-releases",
+     "note": "Official press releases on AB 727 (student IDs) and AB 1540 (LGBTQ+ youth line), 2025-06-18, 2025-07-16, 2025-10-10, 2026-01-05."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://www.theeastsiderla.com/news/government_and_politics/eastside-assemblymember-mark-gonz-lez-aims-big-in-year-two/article_71b70e78-f911-405b-9240-0901e70a19cf.html",
+     "note": "Eastsider 2026-02-09; LA Times 2025-07-17 excerpt on official site. The LA Local 2024 article quotes are off-topic."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://www.markgonzalezforassembly.com/statementsofsupport",
+     "note": "Endorsed by Stonewall Young Democrats and California Legislative LGBTQ Caucus (pro-LGBTQ); also CTA, CFT, CSEA (school unions)."
+    },
+    "T12": {
+     "result": "inaccessible",
+     "url": "https://www.eqca.org/scorecard/",
+     "note": "Equality California scorecard page returned non-HTML/binary content; eBar coverage 403. His EQCA score not verified."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://a54.asmdc.org/press-releases/20251010-assemblymember-gonzalez-governor-newsom-lt-governor-kounalakis-ensure-lgbtq",
+     "note": "Authored AB 727 (signed 2025-10-10) and AB 1540 (introduced 2026). Floor votes on other domain bills not checked."
+    }
+   },
+   "statements": [
+    {
+     "text": "“We have seen decades of hard-fought rights and services rolled back under this federal administration, including access to this proven lifesaving hotline,” said Assemblymember Mark González . “We will not stand by as our youth are pushed into crisis, lost to suicide, and forgotten. With AB 1540, California affirms its commitment and ensures we will not abandon our young people.”",
+     "url": "https://a54.asmdc.org/press-releases/20260105-assemblymember-mark-gonzalez-introduces-ab-1540-aiming-restore-lgbtq-youth",
+     "date": "2026-01-05",
+     "source_type": "T08",
+     "context": "Press release introducing AB 1540 to restore the 988 Press 3 LGBTQ+ youth suicide crisis line",
+     "sub_issue_hint": "LGBTQ youth mental health (minors)"
+    },
+    {
+     "text": "\"When Donald Trump and the federal government turn their backs on LGBTQ+ youth, California steps up,\" said Assemblymember González . \"With the signing of AB 727, we're sending a clear message: our LGBTQ+ youth are seen, valued, and never alone. AB 727 is not just a piece of legislation; it is a lifeline for our queer youth. Thank you, Governor Newsom, for standing with us to protect and affirm every young person in California.\"",
+     "url": "https://a54.asmdc.org/press-releases/20251010-assemblymember-gonzalez-governor-newsom-lt-governor-kounalakis-ensure-lgbtq",
+     "date": "2025-10-10",
+     "source_type": "T08",
+     "context": "Press release on signing of AB 727 (Trevor Project LGBTQ+ crisis line printed on student ID cards, grades 7-12 and higher ed)",
+     "sub_issue_hint": "school student ID / LGBTQ student support"
+    },
+    {
+     "text": "\"I am appalled by the inhumanity this federal administration continues to show towards LGBTQ+ youth across this nation,\" said Assemblymember González . \"These are children who are lost in this confusing world, in mental crisis, and who just need someone to listen and validate their identity. I will not stand by and wait as this President attempts to erase the queer community.\"",
+     "url": "https://a54.asmdc.org/press-releases/20250716-assemblymember-mark-gonzalez-governor-gavin-newsom-lt-governor-eleni",
+     "date": "2025-07-16",
+     "source_type": "T08",
+     "context": "Press release on AB 727 (student ID cards) and end of 988 LGBTQ+ youth line",
+     "sub_issue_hint": "LGBTQ youth / affirming identity"
+    },
+    {
+     "text": "\"This federal government is determined to erase LGBTQ+ Americans by any means necessary,\" said Assemblymember González . \"Youth suicide prevention should be a bipartisan priority. Instead, our community—especially our youth—is being used as a pawn by political opportunists chasing headlines and social media clout. I am proud to fight for my community because these cuts are more than a political decision—lives are on the line.\"",
+     "url": "https://a54.asmdc.org/press-releases/20250618-trump-administration-cuts-specialized-suicide-prevention-resources-lgbtq",
+     "date": "2025-06-18",
+     "source_type": "T08",
+     "context": "Press release on federal end of 988 LGBTQ+ funding; promotes AB 727",
+     "sub_issue_hint": "LGBTQ youth mental health (minors)"
+    },
+    {
+     "text": "\"When the Trump administration threatened and then went through with their threat to cut the program completely, that told us that we had to step up to the plate,\" said Democratic Assemblymember Mark González of Los Angeles, who said he introduced the legislation to ensure that queer youth receive support from counselors who can relate to their life experiences. \"Our goal here is to be the safety net — especially for those individuals who are not in Los Angeles but in other parts of the state who need this hotline to survive.\"",
+     "url": "https://a54.asmdc.org/news/20250717-mother-la-teen-who-took-his-own-life-fighting-new-mental-health-tool-lgbtq-youth",
+     "date": "2025-07-17",
+     "source_type": "T09",
+     "context": "Los Angeles Times article excerpt reposted on his official site, on AB 727 LGBTQ+ youth crisis line",
+     "sub_issue_hint": "LGBTQ youth mental health (minors)"
+    },
+    {
+     "text": "“For me, being Latino, being LGBT, this federal administration is coming after us every [way] that they can, and so we have to obviously put up a defense,” González told The Eastsider during a Zoom interview.",
+     "url": "https://www.theeastsiderla.com/news/government_and_politics/eastside-assemblymember-mark-gonz-lez-aims-big-in-year-two/article_71b70e78-f911-405b-9240-0901e70a19cf.html",
+     "date": "2026-02-09",
+     "source_type": "T09",
+     "context": "Interview on AB 1540 (LGBTQ+ youth crisis line)",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "Mark Gonzalez is a civil rights advocate who has spent his career fighting to protect the rights of women, immigrant communities, the LGBTQ+ community, and communities of color. Mark serves on the board of Equality California, the nation’s largest statewide LGBTQ+ civil rights organization.",
+     "url": "https://www.markgonzalezforassembly.com/priorities",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "Campaign priorities page, 'Civil Rights' section",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "bill",
+     "desc": "Author of AB 727 (2025): student ID cards for grades 7-12 and higher education must include the Trevor Project LGBTQ+ crisis line; signed by Governor 2025-10-10",
+     "url": "https://a54.asmdc.org/press-releases/20251010-assemblymember-gonzalez-governor-newsom-lt-governor-kounalakis-ensure-lgbtq",
+     "side_hint": "pro-LGBTQ student support"
+    },
+    {
+     "kind": "bill",
+     "desc": "Author of AB 1540 (2026): re-establish 988 Press 3 LGBTQ+ youth suicide crisis line in California",
+     "url": "https://a54.asmdc.org/press-releases/20260105-assemblymember-mark-gonzalez-introduces-ab-1540-aiming-restore-lgbtq-youth",
+     "side_hint": "pro-LGBTQ youth"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by Stonewall Young Democrats",
+     "url": "https://www.markgonzalezforassembly.com/endorsements",
+     "side_hint": "pro-LGBTQ group"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by California Legislative LGBTQ Caucus",
+     "url": "https://www.markgonzalezforassembly.com/statementsofsupport",
+     "side_hint": "pro-LGBTQ group"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by California Teachers Association, California Federation of Teachers, CSEA",
+     "url": "https://www.markgonzalezforassembly.com/endorsements",
+     "side_hint": "school unions; not LGBTQ-specific"
+    }
+   ]
+  },
+  {
+   "id": "P56",
+   "name": "Gloria D. Gray",
+   "findable": true,
+   "found_page": "https://www.cityofinglewood.org/574/District-1",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No current campaign site found. Ballotpedia shows 2014 Assembly site themes only (jobs, small business, 'Improving Public Education', public safety, veterans)."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Gloria_Gray",
+     "note": "Did not complete Ballotpedia Candidate Connection (2018, 2022, 2026)."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Vote Smart (justfacts.votesmart.org) returned HTTP 403 'request blocked'."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US",
+     "note": "Meta Ad Library returned HTTP 403 to fetch; Google Ads Transparency is JS-only (no content in HTML). Not checkable in this study."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified (Ballotpedia lists only LinkedIn)."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.cityofinglewood.org/574/District-1",
+     "note": "City District 1 news: statement on death of Bryan Bostic / body cameras, recovery update, holiday message, toy drive."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "No news with domain quotes found. Web-search budget ran out; mayoral-race coverage not searched."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Gloria_Gray",
+     "note": "Ballotpedia: 2026 West Basin endorsement by LA County Democratic Party; 2014 endorsements are officials and clergy. No issue-group endorsement in domain."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Inglewood council and West Basin water board; no domain record found (brief check)."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P64",
+   "name": "Gil Cisneros",
+   "findable": true,
+   "found_page": "https://cisneros.house.gov/media/press-releases",
+   "yield": {
+    "T01": {
+     "result": "inaccessible",
+     "url": "https://www.gilonthehill.com/gilsplan/",
+     "note": "Campaign site (cisnerosforcongress.com redirects to gilonthehill.com) returns 403 to fetch. Its 2024 and 2018 LGBTQ text is reproduced on Ballotpedia and was collected from there (on-topic)."
+    },
+    "T02": {
+     "result": "found-on-topic",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "note": "Ballotpedia Candidate Connection completed 2023 (for 2024): mentions 'promoted LGBTQ equity' as DoD official. Not completed for 2026."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Vote Smart (justfacts.votesmart.org) returned HTTP 403 'request blocked'."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/?active_status=all&ad_type=political_and_issue_ads&country=US",
+     "note": "Meta Ad Library returned HTTP 403 to fetch; Google Ads Transparency is JS-only (no content in HTML). Not checkable in this study."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.instagram.com/repgilcisneros/",
+     "note": "X (@gilcisnerosca), Facebook (RepGilCisneros, cisnerosforcongress), Instagram need login."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No 2026 debate transcript found; 2026 opponent Eric Ching. Search budget ran out before a deep check."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://cisneros.house.gov/media/press-releases/icymi-rep-cisneros-calls-out-secretary-hegseths-purge-books-naval-academy",
+     "note": "94 official press-release slugs scanned; only book-removal (2025-04-07) and Dept of Education EO (2025-03-21, off-topic) relate to schools. No LGBTQ press release found."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://cisneros.house.gov/media/press-releases/icymi-rep-cisneros-calls-out-secretary-hegseths-purge-books-naval-academy",
+     "note": "CNN 'First of All' interview transcript (via official release) on book removals."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "No sign-on letter/amicus in domain found among press releases."
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "note": "Ballotpedia 2026 endorsements include Equality California, California Teachers Association, and a Sway group 'Trans Rights are Human Rights - Amplify Respect'."
+    },
+    "T12": {
+     "result": "inaccessible",
+     "url": "https://www.hrc.org/resources/congressional-scorecard",
+     "note": "HRC scorecard page is JS-rendered; no member data in HTML."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "note": "Nay on H.R. 28 Protection of Women and Girls in Sports Act (2025-01-14); Aye on H.R. 5 Equality Act (2019-05-17)."
+    }
+   },
+   "statements": [
+    {
+     "text": "We have seen that LGBTQ youth are more likely to be subjected to bullying and violence in schools which puts them at an increased risk for suicidal thoughts and behaviors. Gil knows it is imperative that our schools provide a safe environment for LGBTQ youth to learn and grow. That’s why he supports programs that provide educators with the tools that they need to protect students from harassment.",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "date": "2024",
+     "source_type": "T01",
+     "context": "2024 campaign website 'LGBTQ+ Rights' section, as reproduced by Ballotpedia (campaign site gilonthehill.com returns 403)",
+     "sub_issue_hint": "anti-bullying / safe schools"
+    },
+    {
+     "text": "Gil believes that educators throughout the country must work together to identify best practices for providing a safe school environment. Every student should feel safe when stepping into a classroom to learn.",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "date": "2024",
+     "source_type": "T01",
+     "context": "2024 campaign website 'LGBTQ+ Rights' section, as reproduced by Ballotpedia",
+     "sub_issue_hint": "anti-bullying / safe schools"
+    },
+    {
+     "text": "Gil is a fierce advocate for LGBTQ+ and trans rights, with a dedication to securing and expanding these rights. He recognizes that the fight for LGBTQ+ and trans rights is an essential part of the broader struggle for equality and social justice. He will work tirelessly to ensure that all individuals, regardless of their sexual orientation or gender identity, are treated with the dignity and respect they deserve under the law.",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "date": "2024",
+     "source_type": "T01",
+     "context": "2024 campaign website 'LGBTQ+ Rights' section, as reproduced by Ballotpedia",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "In Congress, Gil co-sponsored the Equality Act and will continue to fight for comprehensive anti-discrimination legislation that ensures the protection of LGBTQ+ individuals in various facets of life, including employment, housing, education, and public accommodations.",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "date": "2024",
+     "source_type": "T01",
+     "context": "2024 campaign website 'LGBTQ+ Rights' section, as reproduced by Ballotpedia",
+     "sub_issue_hint": "nondiscrimination incl. education"
+    },
+    {
+     "text": "While we had a historic victory at the Supreme Court guaranteeing marriage equality, the LGBTQ community still faces increased attacks from extremists in Congress and the Trump Administration. Gil was proud to stand with VoteVets against Trump’s decision to ban thousands of transgender troops from protecting our country.",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "date": "2018",
+     "source_type": "T01",
+     "context": "2018 campaign website 'LGBTQ RIGHTS' section, as reproduced by Ballotpedia",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "Gil was appointed by President Biden as the Undersecretary of Defense for Personnel and Readiness, and served as the military’s Chief Diversity, Equity and Inclusion Officer, where he expanded access to reproductive healthcare and access to abortion even in states that had banned it, promoted LGBTQ equity, worked to stop sexual assaults, and expanded universal pre-k to all military families.",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "date": "2023",
+     "source_type": "T02",
+     "context": "Ballotpedia Candidate Connection survey (completed 2023 for 2024 race), answer to 'Who are you?'",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "I think it's horrible that we're taking books out of all our schools, whether it be K-12 or these institutions of higher learning... to go into to just minimize and say, well, now you can only read these books. You know, this isn't Nazi Germany, this isn't the Soviet Union.",
+     "url": "https://cisneros.house.gov/media/press-releases/icymi-rep-cisneros-calls-out-secretary-hegseths-purge-books-naval-academy",
+     "date": "2025-04-07",
+     "source_type": "T08",
+     "context": "Official press release with partial transcript of CNN interview; answer to whether K-12 vs service-academy book removals (anti-DEI order) should be distinguished. Not LGBTQ-specific.",
+     "sub_issue_hint": "library books (general)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Nay on H.R. 28, Protection of Women and Girls in Sports Act, On Passage, 2025-01-14 (Roll 12, passed)",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "side_hint": "against restriction on trans girls in school sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on H.R. 5, Equality Act, On Passage, 2019-05-17 (Roll 217, as CA-39 member)",
+     "url": "https://clerk.house.gov/evs/2019/roll217.xml",
+     "side_hint": "pro-LGBTQ nondiscrimination incl. education"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by Equality California (2026, per Ballotpedia)",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "side_hint": "pro-LGBTQ group"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Recommended by Sway voting group 'Trans Rights are Human Rights - Amplify Respect' (2026, per Ballotpedia)",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "side_hint": "pro-trans voter group"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by California Teachers Association (2026, per Ballotpedia)",
+     "url": "https://ballotpedia.org/Gil_Cisneros",
+     "side_hint": "teachers' union; not LGBTQ-specific"
+    }
+   ]
+  }
+ ],
+ "notes": "Batch 8. Web-search budget (200/turn, shared) ran out during P56 research; P56 Gray's mayoral candidacy was not confirmed (Ballotpedia shows her 2026 race as West Basin MWD District 2; city site confirms her as Inglewood Council District 1). P48/P64 T02/T07 checks were shallower for the same reason. Meta Ad Library 403 and Google Ads Transparency JS-only for all. Vote Smart 403 for all."
+}
