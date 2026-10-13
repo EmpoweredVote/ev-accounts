@@ -182,7 +182,7 @@ export function servedRevisionLateral(
     ? `(e.status IN ('published', 'superseded') OR (e.status = 'approved' AND (${opts.includeApprovedWhen})))`
     : `e.status IN ('published', 'superseded')`;
   return `LATERAL (
-    SELECT e.id, e.title, e.short_title, e.question_text, e.version, e.revision
+    SELECT e.id, e.title, e.short_title, e.question_text, e.version, e.revision, e.guidance
       FROM inform.compass_topic_revisions pin
       JOIN inform.compass_topic_revisions e
         ON e.topic_id = pin.topic_id
