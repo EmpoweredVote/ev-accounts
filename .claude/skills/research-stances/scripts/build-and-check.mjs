@@ -53,7 +53,7 @@ function databaseUrl() {
 // builds both with the same arguments and fails if they differ. Change both together.
 export function servedRevisionLateral(pinExpr, alias = 'eff') {
   return `LATERAL (
-    SELECT e.id, e.title, e.short_title, e.question_text, e.version, e.revision
+    SELECT e.id, e.title, e.short_title, e.question_text, e.version, e.revision, e.guidance
       FROM inform.compass_topic_revisions pin
       JOIN inform.compass_topic_revisions e
         ON e.topic_id = pin.topic_id
