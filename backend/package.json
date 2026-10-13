@@ -67,7 +67,8 @@
   },
   "overrides": {
     "qs": "^6.16.0",
-    "@humanfs/node": "^0.16.8"
+    "@humanfs/node": "^0.16.8",
+    "basic-ftp": "^6.2.1"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
