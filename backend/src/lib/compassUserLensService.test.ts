@@ -80,15 +80,28 @@ describe('recalibration — one source of truth', () => {
   it('never compares rungs itself — CC_0061 owns that', async () => {
     // 🔴 The regression this guards. Two implementations of one editorial rule
     // is how the suppression path and the prompt path come to disagree about
-    // the same answer. One query, and it never touches the stance snapshots.
+    // the same answer.
+    //
+    // ⚠ THIS ASSERTION WAS NARROWED, AND HERE IS WHY. It used to forbid the
+    // query from naming compass_stance_revisions at all, which was a fair proxy
+    // while nothing needed the stance text. The flag now carries the option the
+    // user picked and the one that replaced it, so the table IS joined — twice,
+    // each on the user's OWN value, as a lookup. What stays forbidden is the
+    // part that would re-derive the rule: reading rung_map, or comparing the two
+    // sides' values to decide for itself whether a rung moved. The disposition
+    // is still read, never computed.
     mockRows([dispositionRow()]);
 
     await getRecalibrationFlags(USER, [TOPIC]);
 
     expect(poolQueryMock).toHaveBeenCalledTimes(1);
     const issued = poolQueryMock.mock.calls.map(c => String(c[0])).join('\n');
-    expect(issued).not.toContain('compass_stance_revisions');
     expect(issued).not.toContain('rung_map');
+    // Both joins address the user's stored value. A predicate relating the two
+    // sides to each other would be this service deciding what moved.
+    expect(issued).not.toMatch(/ans\.value\s*(=|<>|!=)\s*eft\.value/);
+    expect(issued).not.toMatch(/eft\.value\s*(=|<>|!=)\s*ans\.value/);
+    expect(issued).toContain('d.disposition');
   });
 
   it('de-duplicates the topic list it was handed', async () => {
@@ -362,5 +375,83 @@ describe('replaceUserLenses — whole-set replace, atomically', () => {
 
     const insert = clientQueryMock.mock.calls.find(c => String(c[0]).includes('INSERT'));
     expect(insert?.[1]?.[2]).toBe('My lens');
+  });
+});
+
+describe('recalibration — the words, not the option number', () => {
+  // 🔴 WHY. Editorial's note says "reworded option 4", so a reader has to count
+  // options to find which one moved — and the note never says what the old one
+  // said. These two fields carry the sentence the user picked and the sentence
+  // that replaced it, which is the question the note cannot answer.
+  it('carries the option at their value from each revision', async () => {
+    mockRows([
+      dispositionRow({
+        answered_text: 'Keep current gun laws, adding no new restrictions.',
+        effective_text: 'Add no new restrictions, and at most loosen rules on carrying.',
+      }),
+    ]);
+
+    const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(flags[0]).toMatchObject({
+      answeredText: 'Keep current gun laws, adding no new restrictions.',
+      effectiveText: 'Add no new restrictions, and at most loosen rules on carrying.',
+    });
+  });
+
+  it('joins each side on the user\'s value, in both reads', async () => {
+    mockRows([]);
+    await getAllRecalibrationFlags(USER);
+
+    const sql = String(poolQueryMock.mock.calls[0]?.[0] ?? '');
+    expect(sql).toContain('inform.compass_stance_revisions');
+    // Joined on the stored value — how an answer addresses an option at all.
+    expect(sql).toContain('ans.value = d.value');
+    expect(sql).toContain('eft.value = d.value');
+  });
+
+  // 24 of the 68 reworded flags in production (2026-10-12) sit on a topic whose
+  // revision changed some OTHER option — the one the user actually picked is
+  // byte-identical. The pair has to survive being equal so the client can say
+  // so, rather than inventing a difference.
+  it('reports both sides unchanged when their own option did not move', async () => {
+    const same = 'Establishing publicly funded universal childcare.';
+    mockRows([dispositionRow({ answered_text: same, effective_text: same })]);
+
+    const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(flags[0]?.answeredText).toBe(same);
+    expect(flags[0]?.effectiveText).toBe(same);
+  });
+
+  it('leaves both null for a write-in, which sits between the options', async () => {
+    // A write-in is stored at 0.5 or 5.5 and matches no option on either side.
+    mockRows([
+      dispositionRow({ value: '5.5', answered_text: null, effective_text: null }),
+    ]);
+
+    const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(flags[0]?.answeredText).toBeNull();
+    expect(flags[0]?.effectiveText).toBeNull();
+  });
+
+  it('gives a dropped topic its old wording and no current one', async () => {
+    // Nothing is being served this season, so there is no "it now reads".
+    mockRows([
+      dispositionRow({
+        disposition: 'fresh',
+        effective_revision_id: null,
+        effective_version: null,
+        answered_text: 'A question this season does not ask.',
+        effective_text: null,
+      }),
+    ]);
+
+    const flag = (await getAllRecalibrationFlags(USER))[0];
+
+    expect(flag?.reason).toBe('not_asked_this_season');
+    expect(flag?.answeredText).toBe('A question this season does not ask.');
+    expect(flag?.effectiveText).toBeNull();
   });
 });
