@@ -366,3 +366,34 @@ change to one page.
 | Smoke | the ⓘ opens a thread on a topic with entries, and is absent for a reader with no stored answer |
 
 The guard in row four is the one that matters in a year. Everything else here is ordinary.
+
+---
+
+## 12. Deferred findings from the phase 1 review (2026-10-13)
+
+The whole-branch review raised 1 Critical and 6 Important findings; all were fixed before merge
+(see the commit "fix(compass): review findings — the byline read the VAULTED name"). An eighth
+arrived after merge and is fixed in `compassMountOrder.test.ts`.
+
+These eleven were graded Minor and deliberately **not** fixed. They are recorded here rather
+than in a ledger because the ledger was scratch and this is where phase 2 will look.
+
+| # | Finding |
+|---|---|
+| 1 | `publishedAt` is typed `string` but is a `Date` at runtime — `lib/db.ts` sets no pg type parsers. The HTTP response is fine (ISO via `JSON.stringify`); the type lies to any in-process consumer, and the mocked tests feed strings so it is invisible. |
+| 2 | `ORDER BY published_at DESC` has no tiebreaker, so entries sharing a timestamp return in arbitrary order. |
+| 3 | `?season=N` has no `LIMIT`, and neither index serves a filter on `seasons.number` — resolve number → `season_id` first if this grows. |
+| 4 | `DELETE /journal/:id` answers 409 `NOT_A_DRAFT` for an id that does not exist, where publish correctly answers 404. |
+| 5 | A published entry's `answers_id` may point at a **draft**, handing an anonymous reader a draft's uuid and giving phase 2 a dangling link. |
+| 6 | The handle comes from `public.users.display_name` only, while `profileService` prefers `connected_profiles.display_name`. Zero rows diverge today; a changed Connect handle would make the journal byline disagree with the profile byline. |
+| 7 | Double auth gate on `/api/admin/compass/*` — `adminRouter`'s path-less `requireAuth`+`requireAdmin` runs, matches nothing, falls through, and runs again here. Two JWT verifications and two `admin_users` round-trips per write. |
+| 8 | No way to correct `revision_id`, `answers_id` or `season_id` after creation — `updateEntry` covers only title/body/attribution, and `deleteDraft` refuses published rows. The fields most likely to be wrong are the ones PATCH does not touch. |
+| 9 | The two-step checks (read target, then insert; resolve season, then insert) are non-transactional. A target deleted in between yields a 500 rather than the named error. |
+| 10 | `body` has no maximum length, while `title` is capped at 200. |
+| 11 | The `/api/compass` mount ordering is load-bearing and now guarded, but the same hazard applies to any future public router on that prefix. |
+
+⚠ **#7 and #11 are the same hazard seen from two angles, and it shipped as a real bug.** The
+reviewer graded the double gate Minor and noted in passing that "the ordering is load-bearing".
+That note was right and the grade was not: mounting the journal after `compassAdminRouter` made
+every public journal route answer 401 to everybody, live, for an hour. When a review says an
+ordering is load-bearing, that outranks the severity label attached to it.
