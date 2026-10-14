@@ -151,10 +151,14 @@ app.use('/api/compass', compassRouter);
 // Dual-router pattern: compassAdminRouter shares the /api/compass prefix with compassRouter.
 // Express tries compassRouter first (public routes); admin-only mutations fall through to here.
 // No URL+method collisions exist between the two routers.
-app.use('/api/compass', compassAdminRouter);
-// Same dual-router prefix. Its two routes (/topics/:topicId/journal, /journal)
-// collide with nothing in the routers above.
+// 🔴 BEFORE compassAdminRouter, AND THAT ORDER IS LOAD-BEARING. compassAdmin.ts
+// opens with a PATH-LESS `router.use(requireAuth, requireAdmin)`, so every
+// request that reaches it — matching route or not — is authenticated first.
+// Mounted after it, these public journal routes were never reached: an
+// anonymous GET fell through compassRouter, hit that blanket gate and came back
+// 401. It is also why an unknown /api/compass/* path answers 401 and not 404.
 app.use('/api/compass', compassJournalRouter);
+app.use('/api/compass', compassAdminRouter);
 app.use('/api/empower', empowerRouter);
 app.use('/api/gems', gemsRouter);
 app.use('/api/xp', xpRouter);
