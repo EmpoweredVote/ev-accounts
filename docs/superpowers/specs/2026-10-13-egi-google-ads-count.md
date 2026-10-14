@@ -294,3 +294,47 @@ policy.
 - Limit: 15 Pages is small, and image/video text was not read. A topic that is loud in a race
   (for example a school-board race fought on gender policy) could show up in that race's ads; this
   sample had only one school-board Page.
+
+---
+
+# Part 4 — do local ads say anything that is not available elsewhere? (2026-10-13)
+
+Question (Chris): for topics other than EGI, are ads worth checking as a source, or is the same
+information found elsewhere?
+
+Data: `meta/ad_claims.json` (40 policy claims copied from the ads of the 10 Pages in Part 3 that
+stated concrete policy), `meta/ad_claims_check_{A,B,C}.json` (cross-check).
+
+Method: three `source-collector` agents (Sonnet), capped at 20 searches / 30 fetches each, looked
+for the **same position** (not just the same topic) in: campaign site / official bio,
+candidate questionnaires (BallotReady, Vote411, newspaper Q&A), local news, official record.
+
+| Result | Claims |
+|---|---:|
+| Same position found elsewhere | **23 of 40 (58%)** |
+| Topic found, position not | 9 |
+| Not found | 8 (20%) |
+
+Where the 23 were found: candidate questionnaires 11 (mostly **BallotReady** and the Daily Herald
+Q&A), news 6, official bio 3, official record 2, campaign site 1.
+
+What only the ads had:
+- Hyper-local items: Wood's over-occupancy and UVU-stadium lines, MacKay's 311 app and Slate
+  Canyon position (the Slate Canyon one is in a video, so the ad text does not state it either).
+- Wishau (Racine County Board): all four claims not found or topic-only — but Racine County's site
+  returned 403 to every fetch, so this is a **blocked search, not proof of absence**.
+- Judkins' SB 2001 vote: the ad claims a "no" vote; the vote record was unreachable (le.utah.gov
+  errors), so it is unverified either way.
+
+Reading:
+- For local candidates, ads mostly repeat what is in **questionnaires**. BallotReady matched more
+  claims than any other source — a source worth checking first for local races, independent of ads.
+- The ad-only content is narrow and hyper-local (a stadium, an app, towing). Few of those items map
+  onto compass topics. Where ads add something, it is usually *more specific wording* of a position
+  already stated elsewhere.
+- **Verdict:** ads are a low-yield source for compass research. Worth a look only as a fallback for
+  a candidate who has no questionnaire, no site and no record — and those candidates mostly do not
+  advertise either (Part 2: 29 of 93 challengers ever, Part 3: 18 local people now).
+
+Limits: 10 people, 40 claims, capped search budget; "not found" includes blocked sites; the
+fetch tool paraphrases, so only quoted excerpts are verbatim.
