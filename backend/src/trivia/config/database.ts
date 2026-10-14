@@ -1,4 +1,4 @@
-import pg from 'pg';
+import pg, { type ClientBase } from 'pg';
 
 // NOTE (engine fold-in, Phase 1): the standalone CTC service called
 // `setDefaultResultOrder('ipv4first')` here. That is a PROCESS-WIDE side effect and
@@ -26,16 +26,24 @@ const pool = new Pool({
   idleTimeoutMillis: 30_000,
   // Fail fast if a connection can't be acquired — prevents indefinite hangs on cold start
   connectionTimeoutMillis: 10_000,
+  onConnect: setSessionParameters,
 });
 
 // On every new connection: set search_path and statement_timeout explicitly.
 // Using SET commands here is more reliable than the `options` connection parameter,
 // which Supabase's Supavisor pooler may not consistently forward on new connections.
-pool.on('connect', (client) => {
+// Run as the pool's `onConnect` hook, which pg-pool awaits before handing the client to
+// its first caller. A fire-and-forget query in a `connect` listener raced that caller's
+// own query onto the same client — pg queued it, but warns that this is deprecated and
+// will be removed in pg@9. A failure is logged and the client is still used, as before.
+async function setSessionParameters(client: ClientBase): Promise<void> {
   console.log('PostgreSQL connected');
-  client.query("SET search_path TO trivia, public; SET statement_timeout TO '10s'")
-    .catch((err: Error) => console.error('Failed to set session parameters:', err));
-});
+  try {
+    await client.query("SET search_path TO trivia, public; SET statement_timeout TO '10s'");
+  } catch (err) {
+    console.error('Failed to set session parameters:', err);
+  }
+}
 
 // Keep-alive: prevent Supavisor from dropping the idle connection.
 // Runs every 20s — under the 30s idleTimeoutMillis — so there's always

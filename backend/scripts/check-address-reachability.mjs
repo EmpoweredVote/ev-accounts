@@ -166,7 +166,12 @@ function loadGuard() {
 }
 
 const GUARD = loadGuard();
-const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: { rejectUnauthorized: false },
+  // Awaited by pg-pool before the client reaches its first caller; see the note at the hook.
+  onConnect: raiseStatementTimeout,
+});
 
 /**
  * Raise the statement timeout for THIS SESSION.
@@ -185,9 +190,11 @@ const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejec
  * prod the same day, a real address point-in-polygon across every geofence row plans as an Index
  * Scan on idx_geofence_boundaries_geometry and runs in 52 ms.
  */
-pool.on('connect', (client) => {
-  client.query("SET statement_timeout = '180s'").catch(() => { /* server may forbid; probe will fail loudly */ });
-});
+async function raiseStatementTimeout(client) {
+  // An `onConnect` hook, not a fire-and-forget `connect` listener: the listener raced the first
+  // real query onto the same client, which pg@8 queues with a deprecation warning and pg@9 drops.
+  await client.query("SET statement_timeout = '180s'").catch(() => { /* server may forbid; probe will fail loudly */ });
+}
 
 // One CTE the three baselined checks all read from: per district, is it reachable, does it have a
 // usable polygon, and is it occupied?
