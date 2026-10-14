@@ -4,7 +4,7 @@ const { mockQuery } = vi.hoisted(() => ({ mockQuery: vi.fn() }));
 vi.mock('./db.js', () => ({ pool: { query: mockQuery } }));
 
 import {
-  listTopicJournal, listSeasonJournal,
+  listTopicJournal, listSeasonJournal, listJournalIndex,
   createEntry, resolveDefaultSeasonId, updateEntry, assertSeasonWritable,
 } from './compassJournalService.js';
 
@@ -85,6 +85,66 @@ describe('listSeasonJournal', () => {
     await listSeasonJournal(3);
     expect(sql()).toMatch(/status\s*=\s*'published'/);
     expect(mockQuery.mock.calls[0][1]).toEqual([3]);
+  });
+});
+
+describe('listJournalIndex', () => {
+  const idxRow = (over = {}) => ({
+    topic_id: 't1', entry_count: 3,
+    latest_published_at: '2026-10-13T00:00:00Z', ...over,
+  });
+
+  it('filters to published in SQL, not in the mapping', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await listJournalIndex();
+    expect(sql()).toMatch(/status\s*=\s*'published'/);
+  });
+
+  // 🔴 THE WHOLE REASON THIS IS NOT ?season=N. An entry written in Season 2
+  // about a change that shipped in Season 2 keeps its ⓘ when Season 3 opens;
+  // scoping the index to a season would retire every older thread's affordance
+  // at the rollover, which is a diary deleting itself.
+  it('spans every season — it takes no season and filters on none', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await listJournalIndex();
+    expect(sql()).not.toMatch(/season/i);
+    expect(mockQuery.mock.calls[0][1]).toBeUndefined();
+  });
+
+  it('groups by topic so one row per topic comes back', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await listJournalIndex();
+    expect(sql()).toMatch(/GROUP BY[\s\S]*topic_id/);
+  });
+
+  it('returns the count and the newest timestamp per topic', async () => {
+    mockQuery.mockResolvedValue({ rows: [idxRow()] });
+    expect(await listJournalIndex()).toEqual([
+      { topicId: 't1', entryCount: 3, latestPublishedAt: '2026-10-13T00:00:00.000Z' },
+    ]);
+  });
+
+  // Deferred finding #1 — pg hands back a Date and `lib/db.ts` sets no type
+  // parsers, so the declared `string` is a lie for any in-process consumer.
+  // Fixed here rather than inherited: the new field is coerced at the boundary.
+  it('ships an ISO string even when pg hands back a Date', async () => {
+    mockQuery.mockResolvedValue({
+      rows: [idxRow({ latest_published_at: new Date('2026-10-13T00:00:00Z') })],
+    });
+    const [row] = await listJournalIndex();
+    expect(row.latestPublishedAt).toBe('2026-10-13T00:00:00.000Z');
+  });
+
+  it('is an empty array when nothing is published, never null', async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    expect(await listJournalIndex()).toEqual([]);
+  });
+
+  // A client that trusted a string count would render "NaN entries" and, worse,
+  // `entryCount > 0` is the ⓘ gate: pg returns COUNT(*) as a string.
+  it('normalises the count to a number', async () => {
+    mockQuery.mockResolvedValue({ rows: [idxRow({ entry_count: '3' })] });
+    expect((await listJournalIndex())[0].entryCount).toBe(3);
   });
 });
 

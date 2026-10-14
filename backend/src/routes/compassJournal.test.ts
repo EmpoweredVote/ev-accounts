@@ -2,11 +2,11 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import express from 'express';
 import request from 'supertest';
 
-const { mockTopic, mockSeason } = vi.hoisted(() => ({
-  mockTopic: vi.fn(), mockSeason: vi.fn(),
+const { mockTopic, mockSeason, mockIndex } = vi.hoisted(() => ({
+  mockTopic: vi.fn(), mockSeason: vi.fn(), mockIndex: vi.fn(),
 }));
 vi.mock('../lib/compassJournalService.js', () => ({
-  listTopicJournal: mockTopic, listSeasonJournal: mockSeason,
+  listTopicJournal: mockTopic, listSeasonJournal: mockSeason, listJournalIndex: mockIndex,
 }));
 vi.mock('../middleware/auth.js', () => ({
   optionalAuth: (_req: unknown, _res: unknown, next: () => void) => next(),
@@ -17,7 +17,7 @@ import journalRouter from './compassJournal.js';
 const app = express();
 app.use('/api/compass', journalRouter);
 
-beforeEach(() => { mockTopic.mockReset(); mockSeason.mockReset(); });
+beforeEach(() => { mockTopic.mockReset(); mockSeason.mockReset(); mockIndex.mockReset(); });
 
 describe('GET /compass/topics/:topicId/journal', () => {
   it('returns the entries for that topic', async () => {
@@ -84,5 +84,47 @@ describe('an empty season parameter is refused', () => {
     const res = await request(app).get('/api/compass/journal?season=');
     expect(res.status).toBe(400);
     expect(mockSeason).not.toHaveBeenCalled();
+  });
+});
+
+/**
+ * The ⓘ gate. One cheap request tells the Compass which questions have a thread
+ * worth opening; without it the client would have to ask 60 times or not ask.
+ */
+describe('GET /compass/journal/index', () => {
+  it('returns one row per topic that has published entries', async () => {
+    mockIndex.mockResolvedValue([
+      { topicId: 't1', entryCount: 2, latestPublishedAt: '2026-10-13T00:00:00.000Z' },
+    ]);
+    const res = await request(app).get('/api/compass/journal/index');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([
+      { topicId: 't1', entryCount: 2, latestPublishedAt: '2026-10-13T00:00:00.000Z' },
+    ]);
+  });
+
+  // 🔴 /journal REQUIRES ?season AND ANSWERS 400 WITHOUT IT. If this path ever
+  // fell through to that handler the index would 400 for every caller and the ⓘ
+  // would silently never appear — a failure that looks exactly like "no entries
+  // have been written yet", which is also true most of the time right now.
+  it('is not shadowed by /journal and needs no season', async () => {
+    mockIndex.mockResolvedValue([]);
+    const res = await request(app).get('/api/compass/journal/index');
+    expect(res.status).toBe(200);
+    expect(mockSeason).not.toHaveBeenCalled();
+  });
+
+  it('answers 200 with an empty array before anything is published', async () => {
+    mockIndex.mockResolvedValue([]);
+    const res = await request(app).get('/api/compass/journal/index');
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([]);
+  });
+
+  it('answers 500 with the house error shape when the service throws', async () => {
+    mockIndex.mockRejectedValue(new Error('boom'));
+    const res = await request(app).get('/api/compass/journal/index');
+    expect(res.status).toBe(500);
+    expect(res.body.code).toBe('INTERNAL_ERROR');
   });
 });

@@ -230,6 +230,7 @@ prepared — that is the point of `watching`.
 
 ```
 GET /api/compass/topics/:topicId/journal   published entries for one topic, newest first
+GET /api/compass/journal/index             which topics have a thread, and how many entries
 GET /api/compass/journal?season=<number>   published entries across topics, for a season view
 ```
 
@@ -253,6 +254,21 @@ the same endpoint gets a label resolved under FC's rule.
 
 **Drafts never leave the admin routes.**
 
+### The index route — added 2026-10-13 for phase 2
+
+`/journal/index` returns `[{ topicId, entryCount, latestPublishedAt }]` and exists because the
+ⓘ has to be decided before 60 sidebar rows are drawn. The other two routes cannot answer it:
+per-topic means 60 requests for 60 answers that are nearly all "no", and the season feed needs a
+season number **the Compass has never known** — nothing in its client is season-aware.
+
+It spans **every season**, deliberately. A thread outlives the season that prompted it, so
+scoping the index to the open season would retire every older thread's affordance at each
+rollover — entries published but unreachable, which is the exact defect §7 exists to fix.
+
+⚠ It is declared **before** `/journal` in the router. `/journal` requires `?season` and answers
+400 without it, so a fall-through would 400 the index for everyone and the ⓘ would never appear
+— indistinguishable from "nobody has written an entry yet", which is also true today.
+
 ---
 
 ## 7. How the Compass renders it
@@ -262,6 +278,13 @@ Read-only. No composer, ever.
 The ⓘ on a calibration question opens the topic's thread: entries newest first, each with its
 season, kind and byline. A `changed` entry that carries a `revision_id` matching the flag the
 reader holds is marked as the one that affected their answer.
+
+🔴 **THE FLAG HAD NOTHING TO MATCH ON, and that was found only when phase 2 started.**
+`RecalibrationFlag` carried `effectiveVersion` — a version *number*, which is per-topic, so every
+topic has a version 2 and an entry's `revisionId` could not be compared to it. The sentence above
+described a join that no payload supported. `effectiveRevisionId` is added to the flag
+(2026-10-13); it is null for `not_asked_this_season`, where nothing is being served and no entry
+may claim to be the cause.
 
 **This fixes a live defect.** Today the ⓘ appears only while a recalibration flag is outstanding,
 because the only note available is keyed to the flag. Measured 2026-10-13: answering a flagged
@@ -380,7 +403,7 @@ than in a ledger because the ledger was scratch and this is where phase 2 will l
 
 | # | Finding |
 |---|---|
-| 1 | `publishedAt` is typed `string` but is a `Date` at runtime — `lib/db.ts` sets no pg type parsers. The HTTP response is fine (ISO via `JSON.stringify`); the type lies to any in-process consumer, and the mocked tests feed strings so it is invisible. |
+| 1 | `publishedAt` is typed `string` but is a `Date` at runtime — `lib/db.ts` sets no pg type parsers. The HTTP response is fine (ISO via `JSON.stringify`); the type lies to any in-process consumer, and the mocked tests feed strings so it is invisible. **Partly closed 2026-10-13:** the index route coerces its own `latestPublishedAt` to an ISO string at the boundary. `JournalEntry.publishedAt` still lies. |
 | 2 | `ORDER BY published_at DESC` has no tiebreaker, so entries sharing a timestamp return in arbitrary order. |
 | 3 | `?season=N` has no `LIMIT`, and neither index serves a filter on `seasons.number` — resolve number → `season_id` first if this grows. |
 | 4 | `DELETE /journal/:id` answers 409 `NOT_A_DRAFT` for an id that does not exist, where publish correctly answers 404. |

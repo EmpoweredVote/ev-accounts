@@ -118,6 +118,19 @@ export interface RecalibrationFlag {
   answeredVersion: number | null;
   effectiveVersion: number | null;
   /**
+   * The revision the user's season serves for this topic, by id.
+   *
+   * 🔴 AN ID, BECAUSE A VERSION NUMBER MATCHES NOTHING. `effectiveVersion` is
+   * per-topic — every topic has a version 2 — so a client holding a journal
+   * entry's `revisionId` had no way to ask "is this the edit that flagged me?".
+   * Spec §7 marks exactly that entry as the one that explains the flag, and
+   * without this field it could not be built.
+   *
+   * Null for `not_asked_this_season`: nothing is being served, so no entry may
+   * claim to be the cause.
+   */
+  effectiveRevisionId: string | null;
+  /**
    * The option at their value, in each of those two revisions.
    *
    * 🔴 WHY THE WORDS AND NOT JUST THE VERSIONS. Editorial's note identifies what
@@ -379,6 +392,8 @@ async function queryRecalibrationFlags(
         publicNote: '',
         answeredVersion: row.answered_version,
         effectiveVersion: null,
+        // Nothing is being served, so no journal entry may claim to explain this.
+        effectiveRevisionId: null,
         answeredText: row.answered_text,
         // No revision is being served, so there is no current wording to show.
         effectiveText: null,
@@ -400,6 +415,7 @@ async function queryRecalibrationFlags(
       publicNote: row.public_note ?? '',
       answeredVersion: row.answered_version,
       effectiveVersion: row.effective_version,
+      effectiveRevisionId: row.effective_revision_id,
       answeredText: row.answered_text,
       effectiveText: row.effective_text,
     });
