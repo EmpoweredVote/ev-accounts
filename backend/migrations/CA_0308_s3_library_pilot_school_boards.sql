@@ -1,7 +1,10 @@
 -- CA_0308_s3_library_pilot_school_boards.sql
 -- CA_0308: seat nine school boards (FL, TX, MD, VA, MN, CA) and two former Alpine (UT) members, so that the
 --   board votes in the Season 3 library-books Stage 0 census can be attributed to people in the roster.
---   Author: Chris Andrews (CA_ namespace). Status: NOT APPLIED -- dry-run only, pending operator approval.
+--   Author: Chris Andrews (CA_ namespace). Status: APPLIED to prod 2026-10-14 (operator OK Chris Andrews), after two
+--   dry runs (BEGIN..ROLLBACK, counts unchanged after rollback). Re-run once after apply: no change (idempotent).
+--   Deltas: +84 politicians, +60 offices, +84 office_terms, +8 G5420 polygons, +9 districts; offices_missing_terms
+--   unflagged stays 239; check:reachability at baseline (nothing regressed).
 --
 -- WHY: the Stage 0 census (.planning/research/s3-pilot-library/stage0-census.md, workspace root) found 23 board
 --   records with named per-member votes, but only Alpine UT members existed in essentials.politicians, so the
