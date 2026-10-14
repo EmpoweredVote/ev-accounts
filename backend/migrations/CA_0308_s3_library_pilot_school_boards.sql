@@ -301,7 +301,6 @@ SELECT v.id, v.first_name, v.last_name, v.full_name, NULL, NULL, true, v.inc, fa
   FROM (VALUES
     ('1e2d6569-3bff-5e81-b7be-e362e2fd7012'::uuid, 'Kevin', 'Adams', 'Kevin Adams', true, 'https://www.escambiaschools.org/district-leadership/school-board'),
     ('1989c671-5762-5ecc-bdc5-f7ffc866fa86'::uuid, 'Paul', 'Fetsko', 'Paul H. Fetsko', true, 'https://www.escambiaschools.org/district-leadership/school-board'),
-    ('02ff3b3f-11e6-5b11-a0a0-f142a381522d'::uuid, 'David', 'Williams', 'David Williams', true, 'https://www.escambiaschools.org/district-leadership/school-board'),
     ('a510247c-f50f-5a6f-8fd7-fa5c6bdb9d38'::uuid, 'Carissa', 'Bergosh', 'Carissa Bergosh', true, 'https://www.escambiaschools.org/district-leadership/school-board'),
     ('1d211d48-18bd-5691-a9fe-de211be1e44d'::uuid, 'Tom', 'Harrell', 'Tom Harrell', true, 'https://www.escambiaschools.org/district-leadership/school-board'),
     ('67b77315-5201-5e8a-8028-9f815d7dbb00'::uuid, 'Patty', 'Hightower', 'Patty Hightower', false, 'https://ballotpedia.org/Escambia_County_School_District,_Florida_elections'),
@@ -385,6 +384,19 @@ SELECT v.id, v.first_name, v.last_name, v.full_name, NULL, NULL, true, v.inc, fa
     ('33e7e69b-f05d-5d57-87f0-7986c0a384ef'::uuid, 'Amber', 'Bonner', 'Amber L. Bonner', false, 'https://ballotpedia.org/Amber_Bonner')
   ) AS v(id, first_name, last_name, full_name, inc, src)
  WHERE NOT EXISTS (SELECT 1 FROM essentials.politicians p WHERE p.id = v.id);
+
+-- Escambia's David Williams (FL school board, District 3) is NOT the active 'David Williams' row 7c6be1d8 (a 2026
+-- U.S. Senate candidate in Virginia). Different person, different state: the duplicate-name guard is lifted for
+-- this one row only, and switched back on straight after.
+SET LOCAL essentials.allow_duplicate_name = 'on';
+INSERT INTO essentials.politicians (id, first_name, last_name, full_name, party, party_short_name, is_active, is_incumbent, is_vacant, is_appointed, data_source)
+SELECT v.id, v.first_name, v.last_name, v.full_name, NULL, NULL, true, v.inc, false, false, v.src
+  FROM (VALUES
+    ('02ff3b3f-11e6-5b11-a0a0-f142a381522d'::uuid, 'David', 'Williams', 'David Williams', true, 'https://www.escambiaschools.org/district-leadership/school-board')
+  ) AS v(id, first_name, last_name, full_name, inc, src)
+ WHERE NOT EXISTS (SELECT 1 FROM essentials.politicians p WHERE p.id = v.id);
+
+SET LOCAL essentials.allow_duplicate_name = 'off';
 
 -- ═══ Terms, oldest first per seat. seat_officeholder closes the predecessor the day before the successor starts. ═══
 -- A first-known holder whose start no source gives is written with term_start NULL / 'unknown' (never a guess).
