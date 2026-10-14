@@ -111,6 +111,29 @@ export async function extractArticleText(url: string): Promise<string | null> {
   }
 }
 
+// ─── Feed Fetch ───────────────────────────────────────────────────────────────
+
+/**
+ * Fetch a feed's XML with the platform `fetch`, for `parser.parseString()`.
+ *
+ * Replaces `parser.parseURL()`: rss-parser 3.13.0 (the latest release, last
+ * published 2023) builds its request with the legacy `url.parse()`, which
+ * Node flags with DEP0169 on every nightly run. The request is kept as
+ * parseURL made it — same headers, 60s timeout, redirects followed, and any
+ * non-2xx status rejected as "Status code N" — so feeds see no change.
+ */
+export async function fetchFeedXml(feedUrl: string): Promise<string> {
+  const response = await fetch(feedUrl, {
+    headers: { 'User-Agent': 'rss-parser', Accept: 'application/rss+xml' },
+    redirect: 'follow',
+    signal: AbortSignal.timeout(60_000),
+  });
+  if (!response.ok) {
+    throw new Error(`Status code ${response.status}`);
+  }
+  return response.text();
+}
+
 // ─── RSS Text Extraction ──────────────────────────────────────────────────────
 
 /**
@@ -147,7 +170,7 @@ async function processFeed(
   const { name: feedName, url: feedUrl } = feed;
 
   try {
-    const parsed = await parser.parseURL(feedUrl);
+    const parsed = await parser.parseString(await fetchFeedXml(feedUrl));
     const articles: ParsedArticle[] = [];
     let articlesSkipped = 0;
 
