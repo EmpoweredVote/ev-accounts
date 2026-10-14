@@ -501,14 +501,21 @@ challengers seated nobody: statements show a side but never choose a rung (#1010
    school boards seated 0, mostly because state law preempts the board (IN HEA 1608, UT SB 100, CA AB 1955).
    The lens runs with 7 topics until a tested replacement exists; 8 per lens is a target, not a rule.
 
+**Ruled 2026-10-14 (items 3-4):**
+3. **EGI federal evidence basis: `own-words` → `record`.** CA_0302 set federal own-words as a conservative
+   default with a review owed; Congress holds a lever here (H.R. 5, 2023; H.R. 2616, 2026, single-subject,
+   217-198). Needs a `CA_` migration on `inform.compass_topic_roles` (not written).
+4. **Rung 5 widened (A1 v2.1, clarifying):** "Require parental permission before staff use **or record** a
+   different name or pronouns" (records consent, Gap A: UT SB 100, H.R. 5, H.R. 2616). Widening check: AB 103
+   still fits 5; AB 1955 still fits 2 and not the new text; HEA 1608 is direction-only (item 7); no seat moves,
+   nothing is pushed. Without item 4, item 3 adds about one seat (Banks, S. 2702); with it, about 6 more in the
+   four counties (H.R. 2616 Ayes), about 217 nationally, plus the Utah senators on SB 100.
+   **Condition before any coding:** the EGI annex states that consent before a change to records or forms
+   seats rung 5, and that a record-**access**-only law does not. Known cost: a records-only voter sits on the
+   same rung as a use-consent voter; L7 accepts "or" as one act, and the voter sees the source.
+   Rejected alternative: records consent as a new rung 3 (order against "notify" is a T6 risk).
+
 **Lean (not ruled):**
-3. Change EGI's **federal** evidence basis from `own-words` to `record`. CA_0302 set federal own-words as a
-   conservative default with a review owed; Congress holds a lever here (H.R. 5, 2023; H.R. 2616, 2026,
-   single-subject, 217-198). About 6 more seats in the four counties (Aye votes), about 217 nationally.
-4. Widen rung 5 to "Require parental permission before staff use **or record** a different name or
-   pronouns" (records consent, Gap A: UT SB 100, H.R. 5, H.R. 2616). Clarifying only if the widening check
-   shows no seat moves (AB 103 still fits 5; AB 1955 and HEA 1608 fit no new rung). The alternative,
-   records consent as a new rung 3, was not chosen: its order against "notify" (rung 4) is a T6 risk.
 5. Keep rungs 1 and 3 as voter positions. Voters answer on the same ladder; their blanks for officials are
    correct. Rung 1 is probably a sampling gap (no rung-1 state in the sample; not verified). Rung 3 ("tell
    when asked") is close to the FERPA baseline, so few bodies legislate it.
@@ -527,10 +534,10 @@ challengers seated nobody: statements show a side but never choose a rung (#1010
      retaliation against staff) and 220.3/220.5 (disclosure) all fall inside this topic; no part is evidence
      for another topic. The 23 rung-2 seats stand.
 
-**Open:** none of Q2-Q4 remain (Q2 is replaced by item 3). The leanings (items 3-5) are still unruled.
+**Open:** none of Q2-Q4 remain (Q2 is replaced by item 3). Item 5 is a leaning only.
 
 **Follow-ups (not started):** a `CA_` migration removing EGI from `inform.compass_lens_topics`, plus the CompassV2
-fallback list and its 8-topic test; a `CA_` migration for the federal role, if ruled; pick the next pilot
+fallback list and its 8-topic test; a `CA_` migration for the federal role (item 3); write A1 v2.1 as a revision and the annex line (item 4) — each step needs Chris's approval; pick the next pilot
 topic from this worksheet. A replacement school-board topic must pass the lens rule first (boards cast named
 roll-call votes on it), e.g. through compass-topic-builder.
 
