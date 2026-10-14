@@ -1,0 +1,80 @@
+{
+  "meta": {
+    "collected": "2026-10-13",
+    "searches_used": 32,
+    "fetches_ok": 19,
+    "summary": "No board vote on parental notification, student names/pronouns, or AB 1955 was found for any of the 40 roster boards. Web search surfaces almost only non-LA-County districts (Chino Valley, Murrieta, Temecula, Orange, Rocklin, Cajon Valley). BoardDocs/Simbli agenda systems were not searchable through the tools available, so 'nothing found' means 'not found in news/web search', not 'no vote occurred'. No candidate own-words on this exact question found."
+  },
+  "board_votes": [],
+  "own_words": [],
+  "direction_only": [
+    {
+      "person": "Amanda Stern (Beverly Hills USD incumbent)",
+      "url": "https://beverlypress.com/2024/10/bhusd-board-candidates-weigh-in-on-key-issues/",
+      "note": "2024-10-23 Beverly Press candidate Q&A. Fetch extraction gave these fragments, which do not name gender identity or notification: 'Those topics are best dealt with directly by families and guardians.' and 'preserving the right for families, parents and children's extended family'. The topic of the underlying question is NOT confirmed from the extraction; re-read the full article before using. Positive control: person found."
+    },
+    {
+      "person": "Jeremy Vanderhal (PVPUSD challenger)",
+      "url": "https://www.lagop.org/events/jeremy-vanderhal-for-pv-school-board",
+      "note": "LA County GOP event page (event dated 2024-07-30; year of candidacy unclear, may be an earlier run). Verbatim: 'He is a US Air Force fighter pilot, husband, and father who wants more transparency from the school board.' Says nothing about gender identity or notification. Party noted only as source venue, not evidence."
+    }
+  ],
+  "boards_searched_nothing_found": [
+    "Los Angeles Unified (LAUSD) - only unrelated board votes: 2023-06-06 unanimous resolution encouraging LGBTQ+ instruction (Goldberg/Melvoin), no notification content (https://www.nbclosangeles.com/news/local/lausd-board-unanimously-backs-lgbtq-instruction-at-district-schools/3165821/); 2018 'Increasing Supports for LGBTQ+ Students, Their Families and Schools', no notification provision (https://thelalocal.org/uncategorized/lausd-lgbtq-resolution-bodes-well-for-students-leaders-say/)",
+    "Palos Verdes Peninsula Unified",
+    "Walnut Valley Unified (student paper claim of no formal policy not fetched; only search snippet)",
+    "Las Virgenes Unified",
+    "Santa Monica-Malibu Unified",
+    "Culver City Unified",
+    "Beverly Hills Unified (only a 2022 sex-ed curriculum complaint, not a vote)",
+    "Manhattan Beach Unified",
+    "Hermosa Beach City Elementary",
+    "Redondo Beach Unified",
+    "El Segundo Unified",
+    "Wiseburn Unified",
+    "Arcadia Unified (only 2013 DOJ settlement on restrooms, not fetched)",
+    "San Marino Unified",
+    "La Canada Unified",
+    "San Gabriel Unified",
+    "West Covina Unified",
+    "Baldwin Park Unified",
+    "El Monte City",
+    "Rosemead Elementary",
+    "Valle Lindo Elementary",
+    "Mountain View Elementary",
+    "El Rancho Unified",
+    "Montebello Unified",
+    "Bassett Unified",
+    "Lynwood Unified",
+    "Paramount Unified",
+    "Hawthorne",
+    "Lennox",
+    "Acton-Agua Dulce Unified (only BP 0410 nondiscrimination and BP 5145.7 in search snippets, not fetched)",
+    "Palmdale Elementary",
+    "Keppel Union Elementary",
+    "Westside Union Elementary",
+    "Gorman Joint"
+  ],
+  "candidate_pages_fetched_no_topic_content": [
+    {"person": "Darrel Menthe (Culver City)", "url": "https://culvercitycrossroads.com/2026/06/15/menthe-running-for-ccusd-school-board/", "note": "No mention of gender identity or notification."},
+    {"person": "Harry Leshner (SMMUSD)", "url": "https://www.santamonica.gov/elections/2026-11-03/candidates/harry-leshner", "note": "Statement says board 'lacks representation from current district parents'; no notification content."},
+    {"person": "Robbie Staenberg (SMMUSD)", "url": "https://www.santamonica.gov/elections/2026-11-03/candidates/robbie-staenberg", "note": "No relevant content."},
+    {"person": "Jackie Kruger / Kim Lifschitz (BHUSD)", "url": "https://beverlyhillscourier.com/2026/09/03/kruger-and-lifschitz-hold-bhusd-board-kickoff-event/", "note": "Kickoff 2026-08-30; focus on spending/results; no relevant content."}
+  ],
+  "out_of_roster": [
+    {
+      "district": "Glendale Unified",
+      "url": "https://www.foxla.com/news/glendale-school-board-meeting-erupts-into-arguments-over-gender-identity-policy",
+      "note": "Fox LA 2023-05-16: contentious meeting over gender identity. Page text: 'require the signature of a parent or guardian before an official school record is changed.' No vote on notification. Also 2023-06 board resolution fostering gender-identity/sexual-orientation classroom discussions plus Pride Month (https://abc6onyourside.com/news/nation-world/parents-continue-to-clash-over-indoctrination-in-glendale-unified-school-district-southern-california-curriculum-pride-mont-resolution-lgbt, article dated 2023-06-21; no operative text or tally in the article)."
+    },
+    {
+      "district": "Burbank Unified",
+      "url": "https://olive.dailysignal.com/2024/07/31/exclusive-organization-fighting-radical-gender-ideology-california-sues-school-district-withholding-public-records/",
+      "note": "Daily Signal 2024-07-31: Center for American Liberty sued the district under the Public Records Act over records on gender-identity compliance and its Gender Support Plan. Allegations only; no board vote. Fetch was through a mirror URL of the dailysignal.com article."
+    }
+  ],
+  "blocked": [
+    {"url": "https://www.bizpacreview.com/2023/06/07/los-angeles-school-district-votes-to-back-lgbtq-lessons-in-schools-following-parent-protests-1366079/", "error": "403 via WebFetch; curl with browser UA returned Cloudflare 'Just a moment' challenge"},
+    {"url": "https://www.aol.com/news/l-school-officials-double-down-120026256.html", "error": "404"}
+  ]
+}

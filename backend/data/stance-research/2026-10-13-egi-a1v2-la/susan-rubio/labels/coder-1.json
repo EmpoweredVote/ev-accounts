@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "b3937fff-ebcf-48d9-b20d-bdf98196e119",
+      "office_id": "9705addc-6364-4439-9cc3-9fcbfeb4caaa",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "498ea89d-0d72-5fb4-a68b-174cafab9339",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-07-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": "shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent",
+          "note": "Chaptered text lists Rubio as Senate coauthor; operative Section 220.5 forbids school rules that require disclosure without the pupil's consent, and 220.3 only removes a duty to disclose rather than mandating secrecy.",
+          "record_kind": "sponsor",
+          "actor_quote": "(Coauthor: Senator Rubio)",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ac492b92-ad3a-57fa-abb4-aa99aef4399e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": null,
+          "note": "Aye on Senate final passage of the Senate-amended text, 29-8 (about 22% No, not near-unanimous).",
+          "record_kind": "vote",
+          "actor_quote": "Portantino, Roth, Rubio, Skinner",
+          "tally_quote": "Result: PASS, 29-8"
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "498ea89d-0d72-5fb4-a68b-174cafab9339",
+        "ac492b92-ad3a-57fa-abb4-aa99aef4399e"
+      ],
+      "reasoning": "Rubio coauthored and voted Aye (29-8) on AB 1955 (2023-2024), whose operative Section 220.5 bars any policy, rule, or administrative regulation that would require staff to disclose a pupil's gender identity without the pupil's consent, matching \"Forbid rules that require schools to tell parents.\" The bill does not require staff to withhold the information (it only removes a requirement to disclose), so \"Require staff to keep a student's gender identity from parents unless the student consents\" is not established.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

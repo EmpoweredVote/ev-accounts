@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "d64c969e-f458-4387-98b5-1e7af8cb42f0",
+      "office_id": "e3c96374-ab47-4fa5-9a23-f1b17d1e393e",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "4b2791bb-dc48-5906-baea-e3b9bc74bb20",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-07-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": "shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent, unless otherwise required by state or federal law.",
+          "note": "Chaptered text (the text voted on at Assembly concurrence): Sec. 220.5 forbids local policies requiring disclosure without consent; it does not require staff to withhold, so the rung-1 mandate is not met, and it bars disclosure-on-request rules.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "775dfec4-0a9a-57de-a35e-0e0febb6c790",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-27",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": null,
+          "note": "Aye on Assembly concurrence in Senate amendments (final passage of the chaptered text), 61-16, about 21% No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Santiago, Schiavo, Soria",
+          "tally_quote": "PASS, 61-16"
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "4b2791bb-dc48-5906-baea-e3b9bc74bb20",
+        "775dfec4-0a9a-57de-a35e-0e0febb6c790"
+      ],
+      "reasoning": "Schiavo voted Aye on final Assembly passage of AB 1955 (2023-2024), whose operative Sec. 220.5 says local educational agencies \"shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose\" a pupil's gender identity without consent. That matches the rung \"Forbid rules that require schools to tell parents\"; the bill does not require staff to keep the information from parents, so the rung requiring secrecy is not met.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "5b711fa7-0ca7-5a84-9316-61b0af39e507",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-13",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": null,
+          "note": "Senate floor final passage of the Senate-amended SAFETY Act text, Durazo Aye, 29-8 (about 22% No, not near-unanimous).",
+          "record_kind": "vote",
+          "actor_quote": "Ayes (29): Allen, Archuleta, Ashby, Atkins, Becker, Blakespear, Bradford, Caballero, Cortese, Dodd, Durazo",
+          "tally_quote": "Result: PASS, 29-8"
+        },
+        {
+          "snapshot_id": "f75ddf5d-67c0-5e6b-9dcb-9ef9fb6c68be",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-07-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": "shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent, unless otherwise required by state or federal law.",
+          "note": "Single-subject pupil-rights bill whose operative Section 220.5 forbids school rules requiring disclosure; it does not require staff to withhold, so rung 1 is excluded.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "5b711fa7-0ca7-5a84-9316-61b0af39e507",
+        "f75ddf5d-67c0-5e6b-9dcb-9ef9fb6c68be"
+      ],
+      "reasoning": "Durazo voted Aye on final Senate passage of AB 1955 (2023-2024), whose operative Section 220.5 says schools and boards \"shall not enact or enforce any policy, rule, or administrative regulation that would require\" disclosure of a pupil's gender identity without consent. That matches the rung \"Forbid rules that require schools to tell parents\"; the rung itself is about forbidding such rules, so this is not the H12 preemption case. The bill only says staff \"shall not be required\" to disclose, and does not require them to keep the information from parents, so it does not reach \"Require staff to keep a student's gender identity from parents unless the student consents.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

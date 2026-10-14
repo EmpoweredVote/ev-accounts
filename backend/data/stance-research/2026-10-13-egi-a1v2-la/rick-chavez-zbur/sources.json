@@ -1,0 +1,35 @@
+{
+  "batch_id": "rick-chavez-zbur",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "ff77225c-51f9-4628-acc3-020d40382d05",
+      "office_id": "7391433d-3597-487f-8355-f39bb5365079",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "ff77225c-51f9-4628-acc3-020d40382d05",
+      "office_id": "7391433d-3597-487f-8355-f39bb5365079",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-assembly-concurrence-2024-06-27.txt"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "batch_id": "lena-gonzalez",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+      "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-senate-floor-2024-06-13.txt"
+    }
+  ]
+}
