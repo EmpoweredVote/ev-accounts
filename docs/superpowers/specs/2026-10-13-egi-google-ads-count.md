@@ -215,3 +215,82 @@ Reading:
 - Cheap next checks, if wanted: (a) download *Last 90 days* to count who is advertising **now**;
   (b) read the ads of a sample of 10–15 local Pages in the public Ad Library (browser, no login)
   to see whether local ads state any EGI rule before paying the setup cost of the API.
+
+---
+
+# Part 3 — who advertises now, and what local Meta ads say (2026-10-13)
+
+Data: `meta/meta_page_matches_90d.csv`, `meta/local_page_reads.csv`.
+
+## Last 90 days (Meta Ad Library Report, 2026-07-12 → 2026-10-09)
+
+Same download route (browser click, no login), 18 MB. Each own Page + disclaimer from Part 2 was
+looked up in the 90-day advertiser file.
+
+| Level | Status | People | Meta own ads, last 90 days | Meta own ads, ever (Part 2) |
+|---|---|---:|---:|---:|
+| federal | incumbent | 30 | 17 | 26 |
+| federal | challenger | 30 | 14 | 15 |
+| state | incumbent | 77 | 15 | 52 |
+| state | challenger | 33 | 6 | 8 |
+| county | incumbent | 55 | 0 | 10 |
+| county | challenger | 15 | 0 | 3 |
+| city | incumbent | 616 | 12 | 109 |
+| city | challenger | 12 | 3 | 3 |
+| school | incumbent | 197 | 2 | 16 |
+| school | challenger | 3 | 0 | 0 |
+| judicial | incumbent | 428 | 1 | 17 |
+| **total** | | **1,496** | **70 (4.7%)** | **259** |
+
+By county: LA 54 · Utah County 7 · Racine 5 · Monroe 4.
+
+- Most local Meta advertising is **old** — it ran during that person's own past election. Only 18
+  of 1,326 county/city/school/judicial people advertised in the last 90 days.
+- Current ads are where November races are: federal and state, mostly in LA.
+
+## Reading 15 local Pages
+
+Public Ad Library (`facebook.com/ads/library/?view_all_page_id=…`), no login. Ad body text is in
+the page and readable. Picked 15 Pages whose ads are for a **local** seat: 3 Monroe, 3 Racine,
+5 Utah County, 4 LA; mixed council, mayor, county, judge, school board. Jeff Gray (Utah County
+Attorney) was replaced by David Spencer because Meta had removed all of Gray's ads.
+
+Method: scroll each Page to load ads and read the body text. For the 7 Pages with more ads than
+scrolling loads (Raman ~500, Bass ~830, Wood ~69, Negrete ~39, Lockhart ~23, MacKay ~21,
+Judkins ~14), also ran Meta's keyword search inside the Page for `gender`, `transgender`,
+`LGBTQ`, `parents`. **Positive control:** the same search returned `encampments` 9 and `family`
+3 on Bass, and `rent` 18 on Raman, so the zero results are real zeros, not a blind search.
+Images and video in ads were **not** read — text bodies only.
+
+Result:
+
+| | Pages |
+|---|---:|
+| State an EGI rule (gender identity in schools, pronouns, facilities, sports, parental notification) | **0 of 15** |
+| State some concrete local policy (taxes, parking, rent caps, police funding, zoning, transport) | 10 of 15 |
+| No policy content (name, endorsements, qualifications, "vote on May 2") | 5 of 15 |
+
+Closest to the topic:
+- Emily Lockhart (Lehi council): "I will always advocate for students, parents, and teachers." No rule.
+- Taylor Wishau's Page (Racine County Board) ran 2025 ads for two *other* people, Burlington school
+  board candidates, with "keep politics out of the classroom". Coded language, no rule, and not
+  Wishau's own race.
+- Laurie Lieberman (school board, LA): record claims only (graduation rates, fiscal management).
+
+Judges and school-board members in this sample advertise qualifications and endorsements, not
+policy.
+
+## Conclusion for EGI
+
+- Paid ads are a **real own-words source for local policy in general** (10 of 15 Pages state
+  something concrete) but **not for this topic**: 0 of 15 local Pages state an EGI rule, including
+  the school-board Page.
+- Combined with Part 2: ad text would mostly re-describe incumbents who already have an official
+  record, and only 18 local people advertise now.
+- **Recommendation: do not set up the Meta Ad Library API for EGI.** It would return text, at no
+  money cost, but this sample predicts close to zero EGI positions from local ads. If a later topic
+  is a local bread-and-butter issue (taxes, housing, policing, transport), the case is different —
+  10 of 15 Pages spoke to those.
+- Limit: 15 Pages is small, and image/video text was not read. A topic that is loud in a race
+  (for example a school-board race fought on gender policy) could show up in that race's ads; this
+  sample had only one school-board Page.
