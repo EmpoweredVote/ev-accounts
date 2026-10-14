@@ -339,3 +339,53 @@ Reading:
 
 Limits: 10 people, 40 claims, capped search budget; "not found" includes blocked sites; the
 fetch tool paraphrases, so only quoted excerpts are verbatim.
+
+---
+
+# Part 5 — BallotReady as an EGI source for challengers (2026-10-13)
+
+Question: Part 4 found BallotReady matched more local ad claims than any other source. Challengers
+have no official record. Does BallotReady give them an EGI position?
+
+Data: `ballotready/ballotready_challengers.json` (one row per challenger, with URL and status),
+`ballotready/fetch.py` (fetch script).
+
+Population: all **67 challengers** on the A1 v2 roster (`2026-10-08-egi-a1v2/roster.csv`, kind
+`candidate`, not also a holder) — Monroe IN, Racine WI, Utah County UT.
+
+Method: `curl` of `ballotready.org/people/<name-slug>` (positive control: Emily Lockhart's page and
+stances read correctly). Each page was checked against the roster race (state + 2026 + office);
+name-slug pages for a different person (5) were rejected, and 3 missed slugs were found by search
+(Fiefia, Pittsford, Spencer). Stance text was scanned for EGI terms (transgender, gender, pronoun,
+bathroom/restroom/locker, girls'/women's sports, Title IX, biological, LGBT, parental rights, sex),
+and **every education section was also read by hand** (14 people), because a keyword scan misses
+coded phrases.
+
+| Level | Profile with stances | Profile, no stances | Empty profile | No profile found | Total |
+|---|---|---|---|---|---|
+| Federal | 10 | 1 | 0 | 1 | 12 |
+| State | 19 | 8 | 2 | 3 | 32 |
+| County | 4 | 6 | 1 | 3 | 14 |
+| Local | 0 | 5 | 0 | 1 | 6 |
+| School | 1 | 2 | 0 | 0 | 3 |
+| **All** | **34** | **22** | **3** | **8** | **67** |
+
+Result:
+
+- **0 of 34 profiles with stances state an EGI rule.**
+- 2 give a direction only: Grossman (UT HD 56) "Defending LGBTQ Lives … full protection of the
+  law"; Fiefia (UT SD 18) "protect parental rights". Neither names sports, facilities, pronouns or
+  records, so neither can seat a chair.
+- Education stances are about funding, vouchers, class size, teacher pay, school meals, book
+  removal (Wessman, HB 29) and bullying — not EGI.
+- Below state level BallotReady is thin: 5 of 23 county/local/school challengers have any stances.
+- **BallotReady is not a separate source.** Every stance carries a "Learn more" link to the
+  candidate's own campaign site; the text is a short summary of that site. It adds reach (one
+  fetchable page per candidate) but no new words.
+
+Conclusion for EGI: BallotReady does not close the challenger gap. It does not need a pipeline
+step for this topic. For local bread-and-butter topics it remains a cheap way to find a
+challenger's campaign-site claims (Part 4).
+
+Limits: one snapshot (2026-10-13); 8 people with no profile found may have a slug with a UUID
+suffix that neither the slug rules nor one search found; scanned text is the page's static HTML.
