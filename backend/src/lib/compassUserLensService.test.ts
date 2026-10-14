@@ -455,3 +455,31 @@ describe('recalibration — the words, not the option number', () => {
     expect(flag?.effectiveText).toBeNull();
   });
 });
+
+/**
+ * Spec §7 marks the journal entry whose revision caused a reader's flag as the
+ * one that explains it. The flag carried `effectiveVersion` — a version NUMBER,
+ * which is per-topic and matches nothing — so the client had no id to match on
+ * and the marking could not be built at all.
+ */
+describe('the flag names the revision now being served', () => {
+  it('carries the effective revision id, not only its version number', async () => {
+    mockRows([dispositionRow()]);
+
+    const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(flags[0]?.effectiveRevisionId).toBe('rev-v2');
+  });
+
+  // Nothing is being served, so there is no revision for an entry to match —
+  // and a journal entry marked "this is what changed your answer" on a question
+  // this season does not even ask would be false twice over.
+  it('is null for a topic the open season does not ask', async () => {
+    mockRows([dispositionRow({ effective_revision_id: null, effective_version: null })]);
+
+    const flags = await getRecalibrationFlags(USER, [TOPIC]);
+
+    expect(flags[0]?.reason).toBe('not_asked_this_season');
+    expect(flags[0]?.effectiveRevisionId).toBeNull();
+  });
+});

@@ -111,6 +111,56 @@ export async function listSeasonJournal(seasonNumber: number): Promise<JournalEn
   return rows.map(toEntry);
 }
 
+export interface JournalIndexRow {
+  topicId: string;
+  entryCount: number;
+  latestPublishedAt: string;
+}
+
+/**
+ * Which topics have a thread, and nothing else.
+ *
+ * 🔴 THIS EXISTS SO THE ⓘ CAN BE DECIDED IN ONE REQUEST. The Compass has to
+ * know, before it draws 60 sidebar rows, which of them have something to open.
+ * Asking per topic is 60 requests for 60 answers that are almost all "no"; the
+ * season feed cannot answer it at all, because the client has never known the
+ * season number — nothing in the Compass is season-aware.
+ *
+ * 🔴 AND IT SPANS EVERY SEASON, DELIBERATELY. A diary thread outlives the season
+ * that prompted it: an entry written in Season 2 about a change that shipped in
+ * Season 2 is exactly the thing a reader coming back in Season 3 wants. Scoping
+ * this to the open season would take the affordance away at every rollover and
+ * leave the entries published but unreachable — the same defect this feature
+ * was built to fix, rebuilt one level up.
+ *
+ * No body, no titles, no bylines. A reader who opens the ⓘ fetches the thread
+ * itself; everyone else has paid for three columns.
+ */
+export async function listJournalIndex(): Promise<JournalIndexRow[]> {
+  const { rows } = await pool.query<{
+    topic_id: string;
+    entry_count: string | number;
+    latest_published_at: string | Date;
+  }>(
+    `SELECT j.topic_id::text   AS topic_id,
+            COUNT(*)           AS entry_count,
+            MAX(j.published_at) AS latest_published_at
+       FROM inform.compass_topic_journal j
+      WHERE j.status = 'published'
+      GROUP BY j.topic_id`,
+  );
+
+  // Both coercions are load-bearing. pg hands back COUNT(*) as a string and
+  // timestamptz as a Date — `lib/db.ts` installs no type parsers (deferred
+  // finding #1) — so the declared types would otherwise be false in-process and
+  // only accidentally true over HTTP, where JSON.stringify tidies up after them.
+  return rows.map((r) => ({
+    topicId: r.topic_id,
+    entryCount: Number(r.entry_count),
+    latestPublishedAt: new Date(r.latest_published_at).toISOString(),
+  }));
+}
+
 export interface CreateEntryInput {
   topicId: string;
   seasonId: string;

@@ -14,7 +14,7 @@
 import { Router, type Request, type Response } from 'express';
 import { z } from 'zod';
 import { optionalAuth } from '../middleware/auth.js';
-import { listTopicJournal, listSeasonJournal } from '../lib/compassJournalService.js';
+import { listTopicJournal, listSeasonJournal, listJournalIndex } from '../lib/compassJournalService.js';
 
 const UUID = z.string().uuid();
 
@@ -44,6 +44,24 @@ router.get(
     }
   },
 );
+
+/**
+ * ⚠ DECLARED BEFORE `/journal`, AND IT HAS TO STAY THAT WAY. Express matches in
+ * declaration order; `/journal` requires `?season` and answers 400 without it,
+ * so if this ever ended up behind a `/journal/:something` handler the index
+ * would 400 for every caller and the ⓘ would simply never appear — which looks
+ * identical to "nobody has written an entry yet", the state this table is in
+ * most of the time right now. A silent, plausible failure is the dangerous
+ * kind; the mount-order bug this router already shipped was the same shape.
+ */
+router.get('/journal/index', optionalAuth, async (_req: Request, res: Response): Promise<void> => {
+  try {
+    res.status(200).json(await listJournalIndex());
+  } catch (err) {
+    console.error('[GET /compass/journal/index] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
 
 router.get('/journal', optionalAuth, async (req: Request, res: Response): Promise<void> => {
   // `Number('')` is 0 and Number.isInteger(0) is true, so an empty ?season=
