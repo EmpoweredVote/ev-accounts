@@ -487,7 +487,7 @@ revision is approved.
 **How we got here.** 6th pilot (2026-10-08) → draft ladder A1 v2 won (T1 records 13/17 = 76%; PR #945) →
 four county waves on A1 v2: Monroe IN, Racine WI, Utah County UT (PR #950) and LA County CA (PR #1017), plus
 the source-yield and speech study (PR #1010) and the paid-ads / BallotReady count (PR #1013). Result:
-**33 of 1,273 people seated** (29 if the four Indiana HEA 1608 rows are direction-only, Q3): r2 = 23 (CA AB 1955),
+**33 of 1,273 people seated** (29 after the Q3 ruling below): r2 = 23 (CA AB 1955),
 r4 = 4 (IN HEA 1608, flagged), r5 = 6 (WI AB 103). **Every seat is a state legislator's roll-call vote.**
 Rungs 1 and 3 hold no seat in any county. Own words, school boards (0 of ~244), local officials and
 challengers seated nobody: statements show a side but never choose a rung (#1010: 77 of 149 statements are
@@ -495,7 +495,7 @@ challengers seated nobody: statements show a side but never choose a rung (#1010
 
 **Ruled (2026-10-13/14):**
 1. **Rate measure — all topics.** Judge a topic's seat rate over the levels that hold a lever and have acted,
-   not over everyone asked. EGI: about 40% of state legislators (33 of 78) against 2.6% of everyone.
+   not over everyone asked. EGI: 29 of 78 state legislators (37%) against 29 of 1,273 everyone (2.3%).
 2. **Lens rule — all topics.** A topic goes into a level's lens only if people at that level can be seated on
    it. **EGI leaves the Education Lens** (`inform.compass_lens_topics`; CompassV2 `src/lib/lenses.js`):
    school boards seated 0, mostly because state law preempts the board (IN HEA 1608, UT SB 100, CA AB 1955).
@@ -513,9 +513,21 @@ challengers seated nobody: statements show a side but never choose a rung (#1010
    correct. Rung 1 is probably a sampling gap (no rung-1 state in the sample; not verified). Rung 3 ("tell
    when asked") is close to the FERPA baseline, so few bodies legislate it.
 
-**Open:** Q3 (HEA 1608 multi-subject, #950), Q4 (AB 1955 single-subject, #1017), and a new codebook question:
-**does a failed amendment that a person authored evidence its text** (e.g. Yoder, IN HB 1608 Senate Amendment
-#11), as sponsorship evidences a bill as filed (C37)? Q2 (#950) is replaced by item 3.
+**Ruled 2026-10-14 (amendments; Q3 and Q4 delegated by Chris Andrews to the session's judgment):**
+6. **Amendments — all topics.** An amendment the person wrote, sponsored or co-sponsored is evidence of its
+   text, failed or adopted, in the same way as a bill (E1: co-sponsorship seats a chair alone). Not yet in the
+   codebook; owed for codebook 0.5. EGI effect: none today. Yoder's IN HB 1608 Senate Amendment #11 (a student
+   may withdraw the request) is Gap C and fits no rung.
+7. **Single-subject test (V4.1), stated:** a bill is multi-subject when any operative part would be evidence
+   for a **different compass topic**.
+   - **Q3 — HEA 1608: multi-subject.** Its K-3 human-sexuality instruction ban is `education-curriculum`
+     evidence. The four Indiana rung-4 rows (Heaton, Hall, Mayfield, Koch) are **direction-only**. This also
+     matches how the same coder run read Pierce's No on the same act. EGI seats: **29**.
+   - **Q4 — AB 1955: single-subject.** Ed Code 217 (resources for parents of LGBTQ pupils), 220.1 (no
+     retaliation against staff) and 220.3/220.5 (disclosure) all fall inside this topic; no part is evidence
+     for another topic. The 23 rung-2 seats stand.
+
+**Open:** none of Q2-Q4 remain (Q2 is replaced by item 3). The leanings (items 3-5) are still unruled.
 
 **Follow-ups (not started):** a `CA_` migration removing EGI from `inform.compass_lens_topics`, plus the CompassV2
 fallback list and its 8-topic test; a `CA_` migration for the federal role, if ruled; pick the next pilot
