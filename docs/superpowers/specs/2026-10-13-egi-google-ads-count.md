@@ -291,6 +291,7 @@ policy.
   money cost, but this sample predicts close to zero EGI positions from local ads. If a later topic
   is a local bread-and-butter issue (taxes, housing, policing, transport), the case is different —
   10 of 15 Pages spoke to those.
+- **Ruling (Chris Andrews, 2026-10-13): agreed — the Meta Ad Library API is not set up for EGI.**
 - Limit: 15 Pages is small, and image/video text was not read. A topic that is loud in a race
   (for example a school-board race fought on gender policy) could show up in that race's ads; this
   sample had only one school-board Page.
