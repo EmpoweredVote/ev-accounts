@@ -1,6 +1,6 @@
 # Empowered Vote — Stance & Quote Codebook
 
-**Version:** 0.4 (DRAFT, 2026-09-25). It carries rulings Q1–Q9 (design spec §9.1) and the record
+**Version:** 0.5 (DRAFT, 2026-10-14). It carries rulings Q1–Q9 (design spec §9.1) and the record
 fields (confirm-basis spec). The annex
 readings and examples are not yet ruled on. Every label records `codebook_version`.
 **Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
@@ -44,6 +44,17 @@ the row's evidence basis, never the coder. The version stays 0.4: no recorded go
 (the two `scope-unavailable` gold rows are `excluded_from_cert`), and own-words rows form their own
 stratum with no gold yet. Memo: `.planning/todos/2026-10-06-positions-without-a-lever.md` (workspace
 root).
+**Updated 2026-10-14 (0.4 → 0.5 — three rules that change coding results; rulings by Chris Andrews):**
+(1) V3 "Amendments": an amendment the person wrote, sponsored or co-sponsored is a record of its own
+text, failed or adopted, in the same way as a bill. (2) V4.1 "The single-subject test": a bill is
+`multi-subject` when any operative part would be evidence for a different compass topic of the season
+being coded. (3) V4.2 "Joint evidence" (E2): two or more independent sources may together seat a rung
+that no one of them meets in full; a passage that meets some of the rung's clauses takes the new V4
+value `clause-shaped` and names the clause in the new field `clause` (Part E). Labels and gold coded
+under 0.4 stay 0.4. 0.5 rows go to review until a small gold round on E2 cases covers them under
+certification eb2f791a. Rulings: `docs/superpowers/specs/2026-10-07-season3-ladder-evaluation.md`
+(E2 row of the evidence-rules table; "EGI decision record — 2026-10-14", items 6 and 7) and
+`docs/superpowers/specs/2026-10-07-season3-design.md` §3.2.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -244,6 +255,23 @@ unevidenced chair.
 - **Lawsuits, amicus briefs, signed official letters (Q8, ruled): `record`.** The **legal claim or the
   letter's demand itself** must match the rung clause in V4. A procedural claim (standing, authority,
   a deadline) proves nothing about the policy.
+- **Amendments (0.5; ruling 2026-10-14, Chris Andrews; all topics).** An amendment the person wrote,
+  sponsored or co-sponsored is a `record` of the **amendment's own text**, failed or adopted, in the
+  same way as a bill. A co-sponsorship can seat a chair by itself, as for a bill (E1).
+  - `record_kind` is `author` or `sponsor`. V4 reads the amendment's operative text, not the bill it
+    amends.
+  - Name the amendment as its own instrument, inside the bill's session: `HB 1608 Senate Amendment #11
+    (2023)`. Its record fields (`actor_quote`, `provision_quote`) come from the page that prints the
+    amendment.
+  - A failed amendment is still the person's act on its text. It shows what they proposed. It says
+    nothing about how they stood on the bill.
+  - Authoring an amendment does not make the person a sponsor of the bill. Sponsoring the bill does not
+    make them the author of an amendment adopted into it: the bill as filed is what they sponsored
+    (V4.1, C37).
+  - A **vote** on an amendment stays under the V4.1 vote ladder (first row), whoever wrote it.
+  - [real] Yoder's IN HB 1608 Senate Amendment #11 (2023), "a student may withdraw the request", is
+    evidence of its text. On `education-gender-identity` it fits no rung of the served ladder, so it
+    seats nothing there.
 - **Classifying `statement-answer` vs `statement-other`: was there a question?** If the person was
   answering *this* question (a questionnaire item, a moderator's question, their own issue page
   heading), it is an answer. If a curator later decided that the words speak to the question, it is
@@ -308,8 +336,9 @@ This variable is the core of the codebook. The stance-program pass-1 measurement
 | Value | Definition | Can support a chair? |
 |---|---|---|
 | `chair-shaped` | The operative content matches **every clause** of one rung and excludes the adjacent rungs. | yes |
+| `clause-shaped` | (0.5) The operative content meets **some, not all,** of the clauses of one rung, positively, and meets no clause of another rung on the same side. The passage names the clause it meets in `clause`. | only jointly (V4.2 "Joint evidence") |
 | `direction-only` | It shows for/against but does not separate the rungs on that side. | no |
-| `multi-subject` | A vote on a bill with many unrelated parts (omnibus, budget, appropriations, reconciliation). | only via the vote ladder |
+| `multi-subject` | A vote on a bill with an operative part that would be evidence for **a different compass topic** (V4.1 "The single-subject test"). Omnibus, budget, appropriations and reconciliation bills almost always are. | only via the vote ladder |
 | `procedural` | Cloture, rule, table, recommit, previous question, adjournment. | no |
 | `study-directive` | It orders a study, task force or report. | no |
 | `near-unanimous` | Fewer than 10% of the body voted against. | no, alone |
@@ -331,6 +360,23 @@ A vote does not mean support for every clause of a bill.
 - A coder citing a vote must fill `provision_quote`: the operative text it relies on, verbatim from a
   snapshot. The gate rejects the label if the text is not in the snapshot.
 - **The operative section governs, not the recital or the short title** (C38, C51).
+- **The single-subject test (0.5; ruling 2026-10-14, Chris Andrews).** A bill is **multi-subject**
+  when **any** operative part of it would be evidence for a **different compass topic**. Otherwise it
+  is single-subject, however long it is.
+  - "Different compass topic" means a topic served in the season being coded (the `--season` the
+    batch runs against). A bill can change class between seasons when a topic is added or retired.
+  - "Would be evidence" means the part would be V2 `on-question` for that other topic. It does not
+    have to seat a chair there.
+  - Count every operative part, not only the main one. A recital, a short title or a savings clause is
+    not an operative part.
+  - This replaces the 0.4 wording "many unrelated parts". Two parts are enough.
+  - [real] **IN HEA 1608 (2023) → multi-subject.** Beside its parental-notice provision
+    (`education-gender-identity`), it bans human-sexuality instruction in grades K–3, which is
+    `education-curriculum` evidence. A Yea on final passage shows a side on EGI and no chair:
+    `direction-only` (H18).
+  - [real] **CA AB 1955 (2024) → single-subject.** Ed Code 217 (resources for parents of LGBTQ
+    pupils), 220.1 (no retaliation against staff) and 220.3/220.5 (disclosure) all fall inside
+    `education-gender-identity`. No part is evidence for another topic.
 - **A study directive that states its goal (H16, ruling 2026-10-02).** A vote for a study does not say
   what the person hopes it finds, so a study directive is never a chair. Which blank it gives depends
   on the bill's own text:
@@ -373,6 +419,25 @@ A vote does not mean support for every clause of a bill.
     31, 2030"), or a declared net-zero policy that names carbon capture and removal as paths, names no
     energy source; it can be met in other ways → BLANK `direction-only` (the pro-action side).
   - The same test applies on every ladder: match the rung's object, not only its verb.
+- **Joint evidence (0.5; E2, Season 3 rulebook, ruled 2026-10-08).** Two or more sources may together
+  seat a compound rung that no one of them meets in full. All six conditions must hold:
+  1. Each passage is the person's own act or own words and passes V1, V2, V3 and V5 as for a chair. A
+     vote also passes the V4.1 vote ladder.
+  2. Each clause of the rung is met **positively** by at least one passage, coded `clause-shaped` (or
+     `chair-shaped`), with a verbatim `provision_quote` and the clause in `clause`. Ruling out another
+     rung meets no clause (above).
+  3. No passage meets a clause of a different rung on the same side. Otherwise → BLANK
+     `adjacent-chairs`.
+  4. No passage contradicts another. Otherwise → V5 `superseded-by-later`, or BLANK
+     `record-vs-statement-conflict`.
+  5. `rests_on` lists every passage used, from **at least two independent sources** (V6
+     "Independent"). The reasoning maps each source to the clause it meets.
+  6. The tier is always `single-source`. Code computes it: a `clause-shaped` passage never counts
+     toward `corroborated`.
+  - If a clause stays unmet, the row is still BLANK `compound-partial`.
+  - A rung with one clause cannot be met jointly. A passage that meets its one clause is
+    `chair-shaped`.
+  - The spec's worked example (gold round 19) is not named here, for the same reason as H13–H17.
 
 **Good (calibration A1).** A prime-sponsored bill that *is* "a moratorium on new data centres until the
 utility commission reports". Rung 1 is a moratorium. → `chair-shaped`.
@@ -388,6 +453,9 @@ assigned at birth."
 **Hard [real].** Blake Moore / `ukraine-support`. Yea on H.R. 8035, a Ukraine-specific supplemental
 appropriation, plus his statement that it is "squarely in our national interest".
 - The bill is single-subject enough (Ukraine aid) → `chair-shaped` for *continuing aid*.
+- 0.5: apply the single-subject test first. Check whether any operative part (for example money to
+  replenish U.S. stocks) is evidence for another served topic, such as `defense-spending`. If one is,
+  the bill is `multi-subject`.
 - The rung-2 vs rung-1 boundary is "current levels" vs "increase". The coder must check that the
   supplemental's size and the rung's magnitude line up.
 - If the annex does not settle whether a supplemental is "current level", code BLANK
@@ -499,7 +567,7 @@ carry the S1 reading forward.
 
 **Rules**
 - **`rests_on`** lists the snapshot IDs whose passages establish the chair. At least one is required
-  for a numeric chair.
+  for a numeric chair. Each must be `chair-shaped`, or `clause-shaped` under joint evidence (V4.2).
 - **Reasoning:** 1–3 sentences that name the instrument or quote the words, and that cite the rung by
   its **text**, not by its number.
 - **One instrument can establish chairs across a whole body** (calibration A4) — but only after a
@@ -523,6 +591,8 @@ carry the S1 reading forward.
   - _owed:_ whether the person's own explanation of a vote counts as a second source for that same
     vote, or as the same act. Until ruled, it is the same act (one source).
   - A tier never upgrades a blank: two `direction-only` sources are still BLANK `direction-only`.
+  - A `clause-shaped` passage is not a source for the tier: it does not support the chair on its own.
+    A chair on joint evidence (V4.2) is `single-source`.
 - **Evidence basis (ruling 2026-10-06, Chris Andrews; option B).** Computed by code, never coded, from
   `compass_topic_roles.evidence_basis` for the topic at the seat's level (CA_0302): `record` (the
   level holds a lever) or `own-words` (it holds none). It is not shown to voters: they see the sources
@@ -713,6 +783,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 | H15 | A news sentence that reports the person's vote or authorship, coded as a `record` | the quoted words → `statement-other`; the reported act → context only, `needs_source` | V3 "A record reported only by news" | gold round 14 (items withheld; coded before this entry) |
 | H16 | A study directive whose findings or stated objective endorse a side, coded `no-evidence` | BLANK `direction-only` (a study with no stated outcome stays `no-evidence`) | V4.1 "A study directive that states its goal" | gold round 15 (item withheld; coded before this entry) |
 | H17 | An emissions limit coded as `climate-change` rung 1 ("a shift to clean energy") | BLANK `direction-only`; a renewable-procurement standard with dates stays rung 1 | V4.2 "The rung's object is a clause" | gold round 17 (items withheld; coded before this entry) |
+| H18 | A Yea on a bill with another operative part that is evidence for a different topic (IN HEA 1608: K–3 human-sexuality instruction beside parental notice) | V4 `multi-subject` → BLANK `direction-only` | V4.1 "The single-subject test" | [real] EGI decision record 2026-10-14, Q3 (four Indiana rung-4 rows) |
 
 ---
 
@@ -720,7 +791,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 
 ```json
 {
-  "codebook_version": "0.3",
+  "codebook_version": "0.5",
   "coder_slot": 1,
   "rows": [
     {
@@ -735,14 +806,15 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
           "v2_relevance": "on-question | adjacent | off",
           "v3_class": "record | statement-answer | statement-other | not-evidence",
           "date": "YYYY-MM-DD | YYYY-MM | YYYY | null",
-          "v4_shape": "chair-shaped | direction-only | multi-subject | procedural | study-directive | near-unanimous | rhetorical | off-axis",
+          "v4_shape": "chair-shaped | clause-shaped | direction-only | multi-subject | procedural | study-directive | near-unanimous | rhetorical | off-axis",
           "v5_time": "in-term | pre-seating | superseded-by-later | undated",
           "instrument": "H.R. 8035 (118th) | null",
           "provision_quote": "verbatim operative text from this snapshot | null",
           "note": "≤ 1 sentence",
           "record_kind": "vote | sponsor | author | other-act | null",
           "actor_quote": "verbatim span showing this person acted | null",
-          "tally_quote": "verbatim vote count text | null"
+          "tally_quote": "verbatim vote count text | null",
+          "clause": "the rung clause this passage meets, in the rung's words — clause-shaped only | null"
         }
       ],
       "v6_value": 4,
@@ -768,7 +840,11 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 **Invariants (code-checked):**
 - `v6_value` is null **iff** `v6_blank_reason` is set.
 - A numeric `v6_value` requires `rests_on` to have at least one entry, and every entry must be a
-  passage whose V1–V5 values all allow a chair.
+  passage whose V1–V5 values all allow a chair (`chair-shaped`, or `clause-shaped` under joint
+  evidence).
+- (0.5) A `clause-shaped` passage requires a non-empty `clause` and `provision_quote`; any other
+  passage leaves `clause` null. If `rests_on` cites a `clause-shaped` passage, it must span at least
+  two sources: one per instrument for a record, one per snapshot otherwise.
 - Every `provision_quote` and every quote `text` is verbatim in its snapshot.
 - Every value is from the lists above.
 - A `record` passage (`v3_class = "record"`) requires `record_kind`. Per instrument group (all
