@@ -3,6 +3,7 @@
  * It copies the rung text verbatim and leaves every judgment field as `_fill:` for a person. It never
  * infers orientation or evidence guidance: those are rulings, not derivations (stance-program P4).
  */
+import { existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 export interface AnnexTopic {
@@ -48,3 +49,23 @@ export function renderAnnexSkeleton(t: AnnexTopic, season: string): string {
 
 export const annexPath = (repoRoot: string, topicKey: string): string =>
   join(repoRoot, 'docs', 'codebook', 'annex', `${topicKey}.md`);
+
+/**
+ * The annex a coder prompt pastes in. A non-open season (a bundle whose batch dir carries
+ * season.json) reads `annex/season<N>/<topic_key>.md` when that file exists: a topic whose pin in
+ * that season is a new revision has its own annex there, and the root file describes the open
+ * season's ladder. With no such file, or for the open season (`season` null or status open), it is
+ * the root file — exactly what the open season has always read.
+ */
+export function coderAnnexPath(
+  repoRoot: string,
+  topicKey: string,
+  season: { number: number; status: string } | null,
+  exists: (p: string) => boolean = existsSync,
+): string {
+  if (season && season.status !== 'open') {
+    const p = join(repoRoot, 'docs', 'codebook', 'annex', `season${season.number}`, `${topicKey}.md`);
+    if (exists(p)) return p;
+  }
+  return annexPath(repoRoot, topicKey);
+}
