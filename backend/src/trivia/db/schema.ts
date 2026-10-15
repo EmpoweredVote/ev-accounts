@@ -258,7 +258,7 @@ export const questionFlags = triviaSchema.table('question_flags', {
   reasons: jsonb('reasons').$type<string[]>(),
   elaborationText: text('elaboration_text'),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
-  // Contributor thank-you gem (migration 343). thanked_at is the UI's state and the
+  // Contributor thank-you gem (CC_0237). thanked_at is the UI's state and the
   // route's cheap replay guard; the ledger idempotency key is the real guarantee.
   thankedAt: timestamp('thanked_at', { withTimezone: true }),
   thankedBy: uuid('thanked_by'),

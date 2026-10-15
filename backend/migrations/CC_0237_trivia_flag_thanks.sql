@@ -1,6 +1,6 @@
 BEGIN;
 
--- Migration 343: contributor thank-you gems on trivia.question_flags
+-- CC_0237: contributor thank-you gems on trivia.question_flags
 --
 -- An admin reviewing a flagged question in the CTC admin panel can thank the
 -- reporter who was right, crediting one yellow gem through connect.credit_gems
