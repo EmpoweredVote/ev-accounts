@@ -204,3 +204,56 @@ describe('instrumentKey long-form chamber-bill (fix round 1)', () => {
   it('does not merge a different bill number just because one is spelled out', () =>
     expect(instrumentKey('Senate Bill 20 (2024)')).not.toBe(instrumentKey('SB 208 (2024)')));
 });
+
+// Codebook 0.5, V4.2 "Joint evidence" (E2, ruled 2026-10-08): a `clause-shaped` passage meets some
+// clauses of one rung, names the clause in `clause`, and can seat a chair only jointly — with at least
+// one other independent source in rests_on.
+describe('0.5 joint evidence (clause-shaped)', () => {
+  const SNAP2 = 'aaaaaaaa-0000-0000-0000-000000000002';
+  const ctx2 = { snapshotText: new Map([...snapshotText, [SNAP2, 'I voted for SB 5 because it funds clinics in every county.']]), expectedSlot: 1 };
+  const clauseVote = passage({ v4_shape: 'clause-shaped', clause: 'compete on teams matching their sex at birth' });
+  const clauseWords = passage({
+    snapshot_id: SNAP2, v1_attribution: 'own-words', v3_class: 'statement-other', v4_shape: 'clause-shaped',
+    instrument: null, provision_quote: 'it funds clinics in every county', clause: 'fund clinics',
+    record_kind: null, actor_quote: null, tally_quote: null,
+  });
+
+  it('accepts clause-shaped as a V4 value that does not allow a chair alone', () => {
+    expect(passageAllowsChair(clauseVote)).toBe(false);
+    const r = validateCoderLabelFile(file([row({ passages: [clauseVote], v6_value: null, v6_blank_reason: 'compound-partial', rests_on: [] })]), ctx);
+    expect(r.rows[0].errors).toEqual([]);
+  });
+  it('seats a chair on two clause-shaped passages from two independent sources', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [clauseVote, clauseWords], rests_on: [SNAP, SNAP2] })]), ctx2);
+    expect(r.rows[0].errors).toEqual([]);
+  });
+  it('refuses a chair that rests on one clause-shaped source alone', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [clauseVote], rests_on: [SNAP] })]), ctx);
+    expect(r.rows[0].errors).toContain('rests_on: joint evidence needs at least two independent sources (V4.2)');
+  });
+  it('counts two passages on one instrument as one source', () => {
+    const billText = passage({ snapshot_id: SNAP2, v4_shape: 'clause-shaped', provision_quote: 'it funds clinics in every county', clause: 'fund clinics', actor_quote: null, tally_quote: null });
+    const r = validateCoderLabelFile(file([row({ passages: [clauseVote, billText], rests_on: [SNAP, SNAP2] })]), ctx2);
+    expect(r.rows[0].errors).toContain('rests_on: joint evidence needs at least two independent sources (V4.2)');
+  });
+  it('lets a clause-shaped passage join a chair-shaped one', () => {
+    const r = validateCoderLabelFile(file([row({ passages: [passage(), clauseWords], rests_on: [SNAP, SNAP2] })]), ctx2);
+    expect(r.rows[0].errors).toEqual([]);
+  });
+  it('requires clause and provision_quote on a clause-shaped passage', () => {
+    const errs = validateCoderLabelFile(file([row({ passages: [passage({ v4_shape: 'clause-shaped', clause: null, provision_quote: null })], v6_value: null, v6_blank_reason: 'compound-partial', rests_on: [] })]), ctx).rows[0].errors;
+    expect(errs).toEqual(expect.arrayContaining([
+      `passage ${SNAP}: clause required for clause-shaped`,
+      `passage ${SNAP}: provision_quote required for clause-shaped`,
+    ]));
+  });
+  it('refuses clause on a passage that is not clause-shaped', () => {
+    expect(validateCoderLabelFile(file([row({ passages: [passage({ clause: 'x' })] })]), ctx).rows[0].errors)
+      .toContain(`passage ${SNAP}: clause set but v4_shape is chair-shaped`);
+  });
+  it('still refuses a clause-shaped passage that fails V1-V5', () => {
+    const late = { ...clauseWords, v5_time: 'pre-seating' as const };
+    const r = validateCoderLabelFile(file([row({ passages: [clauseVote, late], rests_on: [SNAP, SNAP2] })]), ctx2);
+    expect(r.rows[0].errors).toContain(`rests_on: ${SNAP2} does not allow a chair (V1-V5)`);
+  });
+});

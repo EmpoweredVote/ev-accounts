@@ -8,12 +8,12 @@ import { normalizeText } from '../../src/lib/researchVerifier.js';
 import { BLANK_REASONS } from '../../src/lib/blankReasons.js';
 
 /** 🔴 Must equal the codebook's **Version:** line — coderLabel.test.ts pins it. */
-export const CODEBOOK_VERSION = '0.4';
+export const CODEBOOK_VERSION = '0.5';
 
 export const V1_ATTRIBUTION = ['own-words', 'own-act', 'third-party-characterization', 'namesake-unclear'] as const;
 export const V2_RELEVANCE = ['on-question', 'adjacent', 'off'] as const;
 export const V3_CLASS = ['record', 'statement-answer', 'statement-other', 'not-evidence'] as const;
-export const V4_SHAPE = ['chair-shaped', 'direction-only', 'multi-subject', 'procedural', 'study-directive', 'near-unanimous', 'rhetorical', 'off-axis'] as const;
+export const V4_SHAPE = ['chair-shaped', 'clause-shaped', 'direction-only', 'multi-subject', 'procedural', 'study-directive', 'near-unanimous', 'rhetorical', 'off-axis'] as const;
 export const V5_TIME = ['in-term', 'pre-seating', 'superseded-by-later', 'undated'] as const;
 export { BLANK_REASONS };
 export const V7_TIER = ['lever', 'direction', 'none'] as const;
@@ -37,6 +37,8 @@ export interface Passage {
   record_kind?: typeof RECORD_KIND[number] | null;
   actor_quote?: string | null;
   tally_quote?: string | null;
+  /** 0.5, V4.2 "Joint evidence": the rung clause a `clause-shaped` passage meets, in the rung's words. */
+  clause?: string | null;
 }
 export interface QuoteLabel {
   snapshot_id: string;
@@ -74,6 +76,18 @@ export function passageAllowsChair(p: Passage): boolean {
     && p.v4_shape === 'chair-shaped'
     && p.v5_time === 'in-term';
 }
+
+/**
+ * Codebook 0.5, V4.2 "Joint evidence" (E2): a passage that meets some clauses of one rung may seat a
+ * chair together with other independent sources, never alone. V1–V5 apply exactly as for a chair.
+ */
+export function passageAllowsJointChair(p: Passage): boolean {
+  return passageAllowsChair({ ...p, v4_shape: p.v4_shape === 'clause-shaped' ? 'chair-shaped' : p.v4_shape });
+}
+
+/** One source per instrument for a record, one per snapshot otherwise (V6 "Independent"; the tier code refines statements). */
+const jointSourceKey = (p: Passage): string =>
+  (p.v3_class === 'record' ? instrumentKey(p.instrument) : null) ?? `snapshot:${p.snapshot_id}`;
 
 export const verbatimIn = (snapshotText: string, span: string): boolean => {
   const s = normalizeText(span);
@@ -161,6 +175,10 @@ function validateRow(raw: unknown, snapshotText: ReadonlyMap<string, string>): V
       if (typeof p.provision_quote !== 'string') errors.push(`${where}: provision_quote not a string`);
       else if (text !== undefined && !verbatimIn(text, p.provision_quote)) errors.push(`${where}: provision_quote not verbatim in snapshot`);
     }
+    if (p.v4_shape === 'clause-shaped') {
+      if (typeof p.clause !== 'string' || !p.clause.trim()) errors.push(`${where}: clause required for clause-shaped`);
+      if (typeof p.provision_quote !== 'string' || !p.provision_quote.trim()) errors.push(`${where}: provision_quote required for clause-shaped`);
+    } else if (p.clause !== null && p.clause !== undefined) errors.push(`${where}: clause set but v4_shape is ${String(p.v4_shape)}`);
     if (p.v3_class === 'record') {
       if (p.record_kind === null || p.record_kind === undefined) errors.push(`${where}: record_kind required for a record`);
       else { const e = enumErr(where, 'record_kind', p.record_kind, RECORD_KIND); if (e) errors.push(e); }
@@ -202,10 +220,16 @@ function validateRow(raw: unknown, snapshotText: ReadonlyMap<string, string>): V
   if (!isStrArr(raw.rests_on)) errors.push('rests_on: not a string array');
   if (typeof value === 'number') {
     if (restsOn.length === 0) errors.push('rests_on: empty for a numeric chair');
+    const cited: Passage[] = [];
     for (const id of restsOn) {
       const p = byId.get(id);
       if (!p) errors.push(`rests_on: ${id} is not a coded passage`);
-      else if (!passageAllowsChair(p)) errors.push(`rests_on: ${id} does not allow a chair (V1-V5)`);
+      else if (!passageAllowsJointChair(p)) errors.push(`rests_on: ${id} does not allow a chair (V1-V5)`);
+      else cited.push(p);
+    }
+    // A clause-shaped passage seats nothing alone (V4.2 "Joint evidence", condition 5).
+    if (cited.some((p) => p.v4_shape === 'clause-shaped') && new Set(cited.map(jointSourceKey)).size < 2) {
+      errors.push('rests_on: joint evidence needs at least two independent sources (V4.2)');
     }
   }
   if (!isStrArr(raw.needs_source)) errors.push('needs_source: not a string array');
