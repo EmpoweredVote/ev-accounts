@@ -1,6 +1,6 @@
 # Empowered Vote — Stance & Quote Codebook
 
-**Version:** 0.5 (DRAFT, 2026-10-14). It carries rulings Q1–Q9 (design spec §9.1) and the record
+**Version:** 0.6 (DRAFT, 2026-10-15). It carries rulings Q1–Q9 (design spec §9.1) and the record
 fields (confirm-basis spec). The annex
 readings and examples are not yet ruled on. Every label records `codebook_version`.
 **Clarified 2026-09-26 (still 0.3 — no new variable, the validator got more permissive):** the
@@ -55,6 +55,15 @@ under 0.4 stay 0.4. 0.5 rows go to review until a small gold round on E2 cases c
 certification eb2f791a. Rulings: `docs/superpowers/specs/2026-10-07-season3-ladder-evaluation.md`
 (E2 row of the evidence-rules table; "EGI decision record — 2026-10-14", items 6 and 7) and
 `docs/superpowers/specs/2026-10-07-season3-design.md` §3.2.
+**Updated 2026-10-15 (0.5 → 0.6 — one rule that changes coding results; direction agreed by Chris
+Andrews, wording not yet ruled):** V4.1 "Small bodies". On a body of 10 or fewer voting members the
+tally no longer decides `near-unanimous`: one No there is already 10% or more, so the 0.5 rule
+refused every unanimous vote, whatever the reason for the unanimity. A vote on such a body can carry
+a chair only if it was its own action item (not a consent agenda or an en bloc vote) and the provision
+the chair rests on is the body's own choice (not a duty a higher law imposes). Bodies of 11 or more
+keep the 10% rule. Labels and gold coded under 0.5 stay 0.5. 0.6 rows go to review until a small gold
+round on board votes covers them under certification eb2f791a. Prompted by the `education-library-books`
+Season 3 Stage 3 test (2026-10-14/15), where every 5-0 school-board vote was refused.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -341,7 +350,7 @@ This variable is the core of the codebook. The stance-program pass-1 measurement
 | `multi-subject` | A vote on a bill with an operative part that would be evidence for **a different compass topic** (V4.1 "The single-subject test"). Omnibus, budget, appropriations and reconciliation bills almost always are. | only via the vote ladder |
 | `procedural` | Cloture, rule, table, recommit, previous question, adjournment. | no |
 | `study-directive` | It orders a study, task force or report. | no |
-| `near-unanimous` | Fewer than 10% of the body voted against. | no, alone |
+| `near-unanimous` | Fewer than 10% of the body voted against. (0.6) On a body of 10 or fewer voting members, the tally does not decide: a vote adopted on a consent agenda or en bloc, or a vote whose provision is a duty a higher law imposes, is `near-unanimous` (V4.1 "Small bodies"). | no, alone |
 | `rhetorical` | Real and attributed, but it names no policy clause ("hateful and divisive"). | no |
 | `off-axis` | It speaks to the topic along a dimension the ladder does not order. | no |
 
@@ -392,6 +401,27 @@ A vote does not mean support for every clause of a bill.
   version the person acted on.
 - A vote whose `tally_quote` shows fewer than 10% No is `near-unanimous` and cannot carry the chair
   alone; a claimed vote with no vote page (for example a bill that died in committee) is not a vote.
+  On a body of 10 or fewer voting members, "Small bodies" below replaces the tally test.
+- **Small bodies (0.6; direction agreed 2026-10-15, Chris Andrews; wording not yet ruled).** On a body
+  of **10 or fewer voting members** (most school boards, many councils), the tally does not decide
+  `near-unanimous`. On such a body one No is already 10% or more, so the tally test would refuse every
+  unanimous vote, and a small board can be unanimous by real agreement. A vote there, unanimous or not,
+  can carry a chair only if both hold:
+  1. **A real choice.** The vote was on its own motion or roll call, as an action item. A vote that
+     adopted the item with others on a consent agenda, or en bloc, is `near-unanimous`: it cannot
+     carry the chair alone. When the minutes are not in the sources, say so in `needs_source` and code
+     the vote as `near-unanimous`.
+  2. **The body's own provision.** The operative text the chair rests on is not a duty that a higher
+     law imposes. If the text says the duty comes from that law ("pursuant to Florida law", "as
+     required by F.S. 1006.28"), or the topic annex names it as a state mandate, the vote shows
+     compliance, not a choice: that provision is `direction-only`. Other provisions of the same
+     policy that go beyond the law are coded on their own.
+  - Bodies of **11 or more** members keep the 10% rule unchanged. At 11 members one No is 9%, so the
+    tally can again show a split.
+  - Nothing else changes: the vote ladder, the single-subject test and `superseded-by-later` apply as
+    before.
+  - Each topic annex lists, per state, the higher-law duties that boards carry out, so a coder never
+    relies on outside knowledge for test 2.
 
 #### V4.2 Clause completeness
 
@@ -791,7 +821,7 @@ adds an entry here: situation → code → rule → gold item ID. Items listed h
 
 ```json
 {
-  "codebook_version": "0.5",
+  "codebook_version": "0.6",
   "coder_slot": 1,
   "rows": [
     {
