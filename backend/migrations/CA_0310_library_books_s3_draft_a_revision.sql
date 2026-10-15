@@ -8,9 +8,9 @@
 -- Created 2026-10-15. Stage 4 of the Season 3 pilot for this topic. Actor
 -- 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
 --
--- 🔴 NOT APPLIED UNTIL CHRIS ANDREWS SAYS YES. T4 (blind labels) gates the
--- APPROVAL of this revision, not its drafting: on 2026-10-15 1 of 10 T4 labels
--- was in (t4lib-10, agrees). Apply only on his explicit go-ahead.
+-- APPLIED to production 2026-10-15 on Chris Andrews' explicit go-ahead.
+-- Revision 2 = 7bb64029-0103-4df8-a4d8-3dcb2938f27f. At that time 1 of 10 T4
+-- blind labels was in (t4lib-10, agrees); he approved with T4 still open.
 --
 -- WHAT THIS DOES
 --   1. Proposes revision 2 of education-library-books: change_class substantive,

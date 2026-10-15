@@ -1,7 +1,7 @@
-# education-library-books — Season 3 draft, revision 2 (v2, CA_0310)
+# education-library-books — Season 3 draft, served revision 7bb64029-0103-4df8-a4d8-3dcb2938f27f (v2 r2, CA_0310)
 
-**Status:** draft (2026-10-15). Written with revision 2 (Draft A of the Season 3 pilot). The revision id is
-assigned when CA_0310 is applied; replace this line's "revision 2" with the id then. Lines marked
+**Status:** draft (2026-10-15). Written with revision 2 (Draft A of the Season 3 pilot), applied 2026-10-15
+by CA_0310 and pinned in the draft Season 3. Lines marked
 _(ruled 2026-10-15)_ carry an operator ruling (Chris Andrews); _(proposed)_ lines are a drafter's reading.
 
 🔴 **Not live.** `build-coder-inputs.ts` reads `annex/<topic_key>.md` by topic key only, so coders still get
