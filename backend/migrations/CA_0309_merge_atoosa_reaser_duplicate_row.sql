@@ -5,6 +5,7 @@
 --
 -- Slot CA_0309 reserved via `npm run steward --prefix backend -- slot CA` (author: Chris Andrews).
 -- No migration runner exists; this file records SQL applied by hand (pure DML).
+-- ✅ APPLIED to prod 2026-10-14 (approval Chris Andrews): both gates green; duplicate inactive, term on the seated row.
 --
 -- THE PAIR (duplicate -> seated twin):
 --   8e42053a-a353-5dae-9a43-f2afc09eb1ec "Atoosa Reaser" (created 2026-10-14 by CA_0308's school-board sweep; no answers,
