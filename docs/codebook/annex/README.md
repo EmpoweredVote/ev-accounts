@@ -150,3 +150,12 @@ No Season 1 description exists (35 topics; draft "Means" from the served text al
 
 ⚠ `medicare/aid` contains a slash, so `annexPath` resolves it to `annex/medicare/aid.md` (a
 subdirectory). Keep that path when writing its annex.
+
+## Season 3 (draft)
+
+One file per topic whose Season 3 pin is a new revision, under `season3/`. The loader
+(`build-coder-inputs.ts`, `annexPath`) reads by topic key only and does not read these yet.
+
+| Topic | Season 3 revision | Status |
+|---|---|---|
+| [`education-library-books`](season3/education-library-books.md) | revision 2, v2 (CA_0310; id on apply) | draft 2026-10-15; Q2, Q4 ruled; removal-list line provisional |
