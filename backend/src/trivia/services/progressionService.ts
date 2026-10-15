@@ -129,6 +129,33 @@ export async function awardPlatformGems(
   }
 }
 
+/**
+ * Award the contributor thank-you gem to the user who reported a broken question,
+ * once an admin has reviewed the report and agreed with it.
+ *
+ * Yellow, because that is the only colour CTC awards and the only one an
+ * Inform-tier account may hold. What separates this from a gem earned by playing
+ * is the ledger tagging — transaction_type 'ctc_flag_thanks', source_ref the flag
+ * — which is the sole record of why the gem exists, since no UI renders a gem's
+ * reason today.
+ *
+ * Unlike awardPlatformGems, this THROWS. That one runs at the end of a game where
+ * a lost gem is not worth failing a finished game over; this one runs because an
+ * admin deliberately clicked, and they have to be told when it did not happen.
+ */
+export async function awardFlagThanksGem(userId: string, flagId: number): Promise<void> {
+  await awardGems({
+    userId,
+    gemType: 'yellow',
+    amount: 1,
+    // Keyed on the flag, not the click: the admin can press the button twice, or
+    // retry after a failed stamp, without the reporter being paid twice.
+    idempotencyKey: `ctc-flagthanks-${flagId}`,
+    transactionType: 'ctc_flag_thanks',
+    sourceRef: `flag:${flagId}`,
+  });
+}
+
 // ---------------------------------------------------------------------------
 // Platform XP integration (Phase 53)
 // ---------------------------------------------------------------------------

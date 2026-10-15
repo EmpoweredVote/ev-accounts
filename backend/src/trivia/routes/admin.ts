@@ -11,6 +11,7 @@ import { DuplicateReviewService } from '../services/DuplicateReviewService.js';
 import { generateElectionQuestions, GenerationBlockedError } from '../services/generation/ElectionQuestionGenerator.js';
 import { generateCurrentTermQuestions, FollowupBlockedError } from '../services/generation/CurrentTermQuestionGenerator.js';
 import { lastCronRun } from '../cron/electionDetection.js';
+import { awardFlagThanksGem } from '../services/progressionService.js';
 
 const router = Router();
 
@@ -1082,21 +1083,55 @@ router.get('/flags/:questionId/detail', async (req: Request<{ questionId: string
 
     const questionData = result[0];
 
-    // Fetch individual flags - no users table JOIN (identity now in Supabase Auth)
+    // Fetch individual flags, with each reporter's name resolved for the review panel.
+    //
+    // Which name shows is the platform's existing privacy rule, not a choice made here:
+    // an Empowered account's legal_name is public (adminService deliberately keeps it,
+    // and these accounts have public candidate pages), while a Connected account's
+    // legal_name is VAULTED — adminService strips it before any admin sees it, guarded
+    // by a regression test. So Connected accounts show their handle (display_name) and
+    // connect.connected_profiles.legal_name is never read here.
+    //
+    // The Empowered branch is gated on is_active AND deleted_at: a demoted or deleted
+    // Empowered profile falls through to its handle rather than keeping a public real
+    // name it no longer holds.
+    //
+    // eligible drives the Thank button — only Connected and Empowered accounts may
+    // receive a contributor gem. Every Empowered profile carries a NOT NULL
+    // connected_profile_id, so the connected_profiles row covers both tiers.
     const flagsResult = await db.execute<{
       id: number;
       user_id: string;
       reasons: string[];
       elaboration_text: string | null;
       created_at: string;
+      display_name: string | null;
+      eligible: boolean;
+      thanked_at: string | null;
     }>(sql`
       SELECT
         qf.id,
         qf.user_id,
         qf.reasons,
         qf.elaboration_text,
-        qf.created_at
+        qf.created_at,
+        qf.thanked_at,
+        (cp.id IS NOT NULL) AS eligible,
+        COALESCE(
+          CASE WHEN ep.is_active AND ep.deleted_at IS NULL THEN ep.legal_name END,
+          cp.display_name,
+          pu.display_name,
+          au.email
+        ) AS display_name
       FROM trivia.question_flags qf
+      LEFT JOIN connect.connected_profiles cp
+        ON cp.user_id = qf.user_id AND cp.deleted_at IS NULL
+      LEFT JOIN empower.empowered_profiles ep
+        ON ep.user_id = qf.user_id
+      LEFT JOIN public.users pu
+        ON pu.id = qf.user_id
+      LEFT JOIN auth.users au
+        ON au.id = qf.user_id
       WHERE qf.question_id = ${questionId}
       ORDER BY qf.created_at DESC
       LIMIT 20
@@ -1105,6 +1140,9 @@ router.get('/flags/:questionId/detail', async (req: Request<{ questionId: string
     const flags = flagsResult.rows.map(row => ({
       id: row.id,
       userId: row.user_id,
+      displayName: row.display_name,
+      eligible: row.eligible === true,
+      thankedAt: row.thanked_at,
       reasons: row.reasons || [],
       elaboration: row.elaboration_text,
       createdAt: row.created_at
@@ -1261,6 +1299,102 @@ router.patch('/flags/:questionId/restore', async (req: Request<{ questionId: str
   } catch (error: any) {
     console.error('Error restoring question:', error);
     res.status(500).json({ error: 'Failed to restore question', detail: error?.message || String(error) });
+  }
+});
+
+/**
+ * POST /flags/:flagId/thank - Award the reporter a contributor gem
+ *
+ * Keyed on the FLAG, not the question like its neighbours above: archiving is a
+ * verdict on the question, but thanking is a decision about one person, and a
+ * question can carry flags from several reporters.
+ *
+ * Only Connected and Empowered accounts may receive it. Every Empowered profile
+ * carries a NOT NULL connected_profile_id, so "has a live connected_profiles row"
+ * is the single check that covers both tiers.
+ *
+ * Path param: flagId (numeric question_flags ID)
+ * Returns: { success: true, thankedAt } | { success: true, alreadyThanked: true }
+ */
+router.post('/flags/:flagId/thank', async (req: Request<{ flagId: string }>, res: Response) => {
+  try {
+    const flagId = parseInt(req.params.flagId, 10);
+    if (isNaN(flagId)) {
+      return res.status(400).json({ error: 'Invalid flag ID' });
+    }
+
+    const lookup = await db.execute<{
+      id: number;
+      user_id: string;
+      question_id: number;
+      thanked_at: string | null;
+      eligible: boolean;
+    }>(sql`
+      SELECT
+        qf.id,
+        qf.user_id,
+        qf.question_id,
+        qf.thanked_at,
+        EXISTS(
+          SELECT 1 FROM connect.connected_profiles cp
+           WHERE cp.user_id = qf.user_id AND cp.deleted_at IS NULL
+        ) AS eligible
+      FROM trivia.question_flags qf
+      WHERE qf.id = ${flagId}
+      LIMIT 1
+    `);
+
+    const flag = lookup.rows[0];
+    if (!flag) {
+      return res.status(404).json({ error: 'Flag not found' });
+    }
+
+    // Replay: answer from the stamp without a ledger round trip. The ledger would
+    // return is_duplicate anyway (the idempotency key is per-flag), so this is a
+    // cost saving, not the correctness guarantee.
+    if (flag.thanked_at) {
+      return res.json({ success: true, alreadyThanked: true, thankedAt: flag.thanked_at });
+    }
+
+    if (!flag.eligible) {
+      return res.status(422).json({
+        error: 'Only Connected and Empowered accounts can receive a contributor gem',
+        code: 'TIER_INELIGIBLE'
+      });
+    }
+
+    // Award BEFORE stamping. If the stamp then fails, the flag stays unstamped and
+    // the admin can retry — the per-flag idempotency key means the retry credits
+    // nothing a second time. Stamping first would risk a thanked-but-unpaid flag,
+    // which nothing would ever retry.
+    try {
+      await awardFlagThanksGem(flag.user_id, flagId);
+    } catch (awardErr: any) {
+      if (awardErr?.code === 'ACCOUNT_DELETED') {
+        return res.status(409).json({
+          error: 'That reporter has deleted their account',
+          code: 'ACCOUNT_DELETED'
+        });
+      }
+      console.error('Error awarding flag thanks gem:', awardErr);
+      return res.status(502).json({
+        error: 'Gem ledger refused the award — nothing was credited, try again',
+        detail: awardErr?.message || String(awardErr)
+      });
+    }
+
+    const thankedAt = new Date();
+    await db.execute(sql`
+      UPDATE trivia.question_flags
+         SET thanked_at = ${thankedAt.toISOString()},
+             thanked_by = ${req.userId}
+       WHERE id = ${flagId}
+    `);
+
+    res.json({ success: true, thankedAt: thankedAt.toISOString() });
+  } catch (error: any) {
+    console.error('Error thanking flag reporter:', error);
+    res.status(500).json({ error: 'Failed to thank reporter', detail: error?.message || String(error) });
   }
 });
 
