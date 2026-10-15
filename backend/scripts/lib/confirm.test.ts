@@ -139,6 +139,20 @@ describe('record groups (D1)', () => {
   });
 });
 
+describe('small bodies in CONFIRM (codebook 0.6 V4.1)', () => {
+  const board: SeatContext = { ...seat, full_name: 'Dana Moss', level: 'local', office_title: 'Board of Trustees Member',
+    jurisdiction_names: ['Alpine School District'], term_start: '2023-01-01' };
+  const page = 'Alpine School District Board of Trustees regular meeting, action item 7: Policy 4400 Library Materials. '
+    + 'Ayes 5 Noes 0 Ayes Chen, Ito, Lopez, Moss, Reyes. The board shall review library materials on a parent request.';
+  const vote = P({ snapshot_id: 'm', instrument: 'Policy 4400', record_kind: 'vote', date: '2024-03-12',
+    actor_quote: 'Ayes Chen, Ito, Lopez, Moss, Reyes', tally_quote: 'Ayes 5 Noes 0',
+    provision_quote: 'The board shall review library materials on a parent request' });
+  const go = (tally: string) => run({ seat: board, restsOnPassages: [{ ...vote, tally_quote: tally }],
+    snapshotText: new Map([['m', page.replace('Ayes 5 Noes 0', tally)]]), sourceKind: new Map([['m', 'public-record']]) });
+  it('a 5-0 school-board vote is no longer refused as near-unanimous', () => expect(go('Ayes 5 Noes 0')).not.toContain('near-unanimous-vote'));
+  it('an 11-member body voting 11-0 still is', () => expect(go('Ayes 11 Noes 0')).toContain('near-unanimous-vote'));
+});
+
 describe('source profiles in CONFIRM', () => {
   const profile = parseSourceProfile(`---
 profile: test-votes
