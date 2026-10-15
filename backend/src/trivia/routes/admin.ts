@@ -1097,8 +1097,9 @@ router.get('/flags/:questionId/detail', async (req: Request<{ questionId: string
     // name it no longer holds.
     //
     // eligible drives the Thank button — only Connected and Empowered accounts may
-    // receive a contributor gem. Every Empowered profile carries a NOT NULL
-    // connected_profile_id, so the connected_profiles row covers both tiers.
+    // receive a contributor gem, which is red and therefore unholdable at Inform
+    // tier. Every Empowered profile carries a NOT NULL connected_profile_id, so the
+    // connected_profiles row covers both tiers.
     const flagsResult = await db.execute<{
       id: number;
       user_id: string;
@@ -1308,6 +1309,12 @@ router.patch('/flags/:questionId/restore', async (req: Request<{ questionId: str
  * Keyed on the FLAG, not the question like its neighbours above: archiving is a
  * verdict on the question, but thanking is a decision about one person, and a
  * question can carry flags from several reporters.
+ *
+ * The gem is RED — the platform's verification currency, which is what catching a
+ * broken question earns. That makes the tier rule self-enforcing: Inform-tier
+ * accounts cannot hold red at all, so awardGems would refuse underneath this check
+ * even if it were removed. The check stays because a 422 naming the reason beats a
+ * 502 from the ledger.
  *
  * Only Connected and Empowered accounts may receive it. Every Empowered profile
  * carries a NOT NULL connected_profile_id, so "has a live connected_profiles row"

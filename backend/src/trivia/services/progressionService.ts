@@ -133,11 +133,21 @@ export async function awardPlatformGems(
  * Award the contributor thank-you gem to the user who reported a broken question,
  * once an admin has reviewed the report and agreed with it.
  *
- * Yellow, because that is the only colour CTC awards and the only one an
- * Inform-tier account may hold. What separates this from a gem earned by playing
- * is the ledger tagging — transaction_type 'ctc_flag_thanks', source_ref the flag
- * — which is the sole record of why the gem exists, since no UI renders a gem's
- * reason today.
+ * RED, not the yellow the rest of CTC awards. Red is the platform's verification
+ * currency: the only other code that credits it is the VQ quest path (1 gem for a
+ * correct answer, 2 more for citing a valid source), and spotting a factually
+ * broken question is the same kind of act. Yellow would have paid the same amount
+ * for a different thing — playing — and the colour is how this platform says which
+ * thing it is paying for.
+ *
+ * It also means the eligibility rule is enforced twice over. Inform-tier accounts
+ * cannot hold red at all — awardGems throws INFORM_TIER_NO_BLUE_RED — so the
+ * route's "Connected and Empowered only" check is backed by a ledger that would
+ * refuse anyway, rather than being the only thing standing in the way.
+ *
+ * Note this does NOT touch verification_rating. VQ moves that rating because it is
+ * scoring an answer; this is an admin thanking someone, and inferring a rating
+ * change from it would be a second, unasked-for judgement.
  *
  * Unlike awardPlatformGems, this THROWS. That one runs at the end of a game where
  * a lost gem is not worth failing a finished game over; this one runs because an
@@ -146,7 +156,7 @@ export async function awardPlatformGems(
 export async function awardFlagThanksGem(userId: string, flagId: number): Promise<void> {
   await awardGems({
     userId,
-    gemType: 'yellow',
+    gemType: 'red',
     amount: 1,
     // Keyed on the flag, not the click: the admin can press the button twice, or
     // retry after a failed stamp, without the reporter being paid twice.
