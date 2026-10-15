@@ -456,6 +456,14 @@ EVIDENCE CONTRACT — every stance row must be provable from the page it cites:
 
 HARD RULES (Compass Stance Program; do not violate):
 - A cited vote needs 10% or more of the votes against, or it is not a position (C46, spec §4.12).
+  Exception — a body of 10 or fewer voting members (most school boards, many councils; codebook
+  0.6 V4.1 "Small bodies"): the tally does not decide, so a unanimous vote can count. It counts only
+  if (1) it was its own action item — not a consent agenda or an en bloc vote (no minutes in the
+  sources → say so in `needs_source` and treat it as near-unanimous), and (2) the provision is the
+  body's own choice — not a duty a higher law imposes ("pursuant to state law", or named as a state
+  mandate in the topic annex); a mandated provision is `direction-only`. Copy the whole count line,
+  absent and abstaining included, into `tally_quote`: CONFIRM reads the body's size from it. A
+  legislator's committee vote keeps the 10% rule.
 - A vote cast before the member took the seat is not evidence (C44, spec §4.10).
 - An excused absence is not a position. Check tenure before reading a non-vote as one. Verify any
   vote-count parse against the journal's own totals (C28, spec §3.2).

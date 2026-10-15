@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
-import { parseTally, isNearUnanimous, instrumentKey, checkRecordGroup, seatChamber, GENERIC_RULES, type SourceRules } from './recordBasis.js';
+import { parseTally, isNearUnanimous, rollSize, instrumentKey, checkRecordGroup, seatChamber, GENERIC_RULES, type SourceRules } from './recordBasis.js';
 import type { Passage } from './coderLabel.js';
 
 // CA leginfo votes page for SB 1174 (Senate floor block) and the bill text — shadow-durazo batch.
@@ -159,6 +159,39 @@ describe('fail closed on a zero tally (final review fix 3)', () => {
     const f = checkRecordGroup({ passages: [p, billPage], snapshotText: z, fullName: 'Maria Elena Durazo', chamber: 'upper' }).findings;
     expect(f).toEqual(['tally-unreadable']);
   });
+});
+
+describe('rollSize (codebook 0.6 V4.1 "Small bodies")', () => {
+  it.each([
+    ['Ayes 5 Noes 0', 5],
+    ['Ayes Count 30 Noes Count 8 NVR Count 2', 40],
+    ['Yeas: 6 Nays: 0 Absent: 1', 7],
+    ['Ayes 9 Noes 0 Abstain 1 Absent 1', 11],
+    ['Yea 42 Nay 6 Excused 2 Not Voting 0', 50],
+  ])('%s -> %i', (q, n) => expect(rollSize(q)).toBe(n));
+  it('dash format counts every column', () => expect(rollSize('4-1-0-2-0', 'dash-ayes-nays')).toBe(7));
+  it('unreadable tally -> null', () => expect(rollSize('Motion carried unanimously')).toBeNull());
+  it('two counts under one extra label -> null (fail closed)', () => expect(rollSize('Ayes 5 Noes 0 Absent 1 Absent 2')).toBeNull());
+});
+
+describe('small bodies (codebook 0.6 V4.1)', () => {
+  const BOARD = 'Board of Education regular meeting. Policy 4400 Library Materials. Motion to adopt Policy 4400. Ayes 5 Noes 0 Ayes Chen, Durazo, Ito, Lopez, Moss. The board shall adopt a policy on library materials.';
+  const t = new Map([['m', BOARD]]);
+  const vote = P({ snapshot_id: 'm', instrument: 'Policy 4400', actor_quote: 'Ayes Chen, Durazo, Ito, Lopez, Moss', tally_quote: 'Ayes 5 Noes 0',
+    provision_quote: 'The board shall adopt a policy on library materials' });
+  const run = (tally: string, chamber: 'upper' | 'lower' | null = null) => {
+    const page = BOARD.replace('Ayes 5 Noes 0', tally);
+    return checkRecordGroup({ passages: [{ ...vote, tally_quote: tally }], snapshotText: new Map([['m', page]]), fullName: 'Maria Elena Durazo', chamber }).findings;
+  };
+  it('a 5-0 vote of a five-member board is not near-unanimous', () => expect(run('Ayes 5 Noes 0')).toEqual([]));
+  it('a 4-1 vote of a five-member board passes too', () => expect(run('Ayes 4 Noes 1')).toEqual([]));
+  it('10 members recorded is still small', () => expect(run('Ayes 9 Noes 0 Absent 1')).toEqual([]));
+  it('11 members recorded keeps the 10% rule (absentees count toward size)', () =>
+    expect(run('Ayes 10 Noes 0 Absent 1')).toEqual(['near-unanimous-vote']));
+  it('11 voting 11-0 keeps the 10% rule', () => expect(run('Ayes 11 Noes 0')).toEqual(['near-unanimous-vote']));
+  it("a legislator's seat keeps the 10% rule on a small committee roll call (fail closed)", () =>
+    expect(run('Ayes 5 Noes 0', 'upper')).toContain('near-unanimous-vote'));
+  it('the fixture is otherwise clean', () => expect(checkRecordGroup({ passages: [vote], snapshotText: t, fullName: 'Maria Elena Durazo' }).findings).toEqual([]));
 });
 
 describe('seatChamber', () => {

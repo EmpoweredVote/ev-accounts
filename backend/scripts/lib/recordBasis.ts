@@ -3,7 +3,8 @@
  * pages: a vote page that names the person but has no bill text, and the bill text that has the
  * provision but names no voters. So a record is judged as one GROUP of passages on one instrument:
  * one passage must show the person acting (actor_quote), some passage must carry the provision, and
- * a vote must come from a vote page with a readable, divided tally. The coders copy each fact
+ * a vote must come from a vote page with a readable, divided tally (on a body of 10 or fewer, a
+ * readable tally: codebook 0.6 "Small bodies"). The coders copy each fact
  * verbatim (codebook 0.3); code only checks and reads it. Fail closed: anything unreadable is a finding.
  *
  * Namesake guard on the actor page (final review fix 2, ruling 2026-09-26 "Fix it now"):
@@ -104,6 +105,38 @@ export function parseTally(q: string, format: TallyFormat = 'labelled'): { ayes:
 
 export const isNearUnanimous = (t: { ayes: number; noes: number }): boolean =>
   t.ayes + t.noes > 0 && t.noes / (t.ayes + t.noes) < 0.1;
+
+/** Codebook 0.6 V4.1 "Small bodies": on a body of this many voting members or fewer, the tally does not decide. */
+export const SMALL_BODY_MAX = 10;
+
+/**
+ * How many members the roll call in `q` records: Ayes + Noes + every other column it prints
+ * (absent, excused, abstaining, not voting, vacant). Null when the tally is unreadable, or when any
+ * extra column is ambiguous (two counts under one label) — fail closed: an unknown size is never small.
+ *
+ * Why the page and not the database or the coder: the database holds no member count per body
+ * (`essentials.offices` is one seat; counting a body's seat rows silently undercounts when a seat is
+ * missing), and a size the coder types is a number nothing checks. The tally is on the vote page,
+ * already checked verbatim. Known limit: a tally_quote that leaves out a printed absent/excused
+ * column reads small; the codebook asks the coder to copy the whole count line.
+ */
+export function rollSize(q: string, format: TallyFormat = 'labelled'): number | null {
+  const s = q.replace(/\s+/g, ' ');
+  if (format === 'dash-ayes-nays') {
+    // "4-1-0-0-0": Ayes-Nays-NV-Excused-Vacant — every column is a member.
+    const runs = [...s.matchAll(/(?<![\d-])(\d+(?:-\d+){2,5})(?![\d-])/g)];
+    return runs.length === 1 ? runs[0][1].split('-').reduce((a, n) => a + Number(n), 0) : null;
+  }
+  const t = parseTally(q, format);
+  if (!t) return null;
+  let total = t.ayes + t.noes;
+  for (const label of ['absent', 'excused', 'abstain|abstained|abstaining|abstentions?', 'not voting|nvr|nv', 'vacant']) {
+    const n = numbersFor(label, s);
+    if (n.length > 1) return null;
+    if (n.length === 1) total += n[0];
+  }
+  return total;
+}
 
 /** The instrument key without its "(session)" suffix, e.g. 'sb1174 (2023-2024)' -> 'sb1174'. */
 function billTokenOf(instrument: string | null | undefined): string | null {
@@ -493,6 +526,19 @@ export function checkRecordGroup(i: {
     if (AMENDED_TO_READ_RE.test(page) && rules.amendment_text !== 'final' && markup !== 'kept') out.add('amendment-markup-lost');
   }
 
+  // Codebook 0.6 V4.1 "Small bodies": on a body of SMALL_BODY_MAX or fewer voting members the tally
+  // does not decide near-unanimous (one No is already 10%+, so every unanimous vote would fail).
+  // Its two tests — own action item, not a consent agenda or en bloc; the body's own provision, not a
+  // higher-law duty — are coder-judged (v4_shape `near-unanimous` / `direction-only`): the minutes and
+  // the topic annex decide them, not a pattern on the page. Fail closed: a legislator's seat
+  // (prof(p).chamber set) keeps the 10% rule even on a small committee roll call, and an unreadable
+  // roll size is never small.
+  const isSmallBodyVote = (p: Passage, t: { ayes: number; noes: number }): boolean => {
+    if (prof(p).chamber !== null) return false;
+    const size = rollSize(p.tally_quote!, prof(p).rules.tally_format);
+    return size !== null && size <= SMALL_BODY_MAX;
+  };
+
   // A vote must come from a vote page, with a word-bounded, readable and divided tally.
   if (i.passages.some((p) => p.record_kind === 'vote')) {
     const votePages = actorPassages.filter((p) => p.record_kind === 'vote');
@@ -501,7 +547,7 @@ export function checkRecordGroup(i: {
       const t = p.tally_quote && quoteWordsIn(textOf(p), p.tally_quote) ? parseTally(p.tally_quote, prof(p).rules.tally_format) : null;
       // A 0-0 tally proves no division at all: fail closed (final review fix 3).
       if (!t || t.ayes + t.noes === 0) out.add('tally-unreadable');
-      else if (isNearUnanimous(t)) out.add('near-unanimous-vote');
+      else if (isNearUnanimous(t) && !isSmallBodyVote(p, t)) out.add('near-unanimous-vote');
     }
   }
   return { findings: [...out], actorPassages };
