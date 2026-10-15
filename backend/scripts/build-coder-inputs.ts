@@ -12,7 +12,8 @@ import { join, resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { pool } from '../src/lib/db.js';
 import { buildCoderPrompt, seedFor, MAX_CODER_INPUT_CHARS, type PriorTerm, type SeatContext, type PromptTopic } from './lib/coderPrompt.js';
-import { annexPath } from './lib/codebookAnnex.js';
+import { annexPath, coderAnnexPath } from './lib/codebookAnnex.js';
+import { readBundleSeason } from './lib/seasonTarget.js';
 import type { SnapshotRecord } from './lib/snapshotSources.js';
 import { seatJurisdictionNames } from './lib/seatJurisdiction.js';
 
@@ -109,8 +110,11 @@ if (heldRows.length === 1) {
 await pool.end();
 
 const topicsRaw = JSON.parse(readFileSync(join(dir, 'topics.json'), 'utf8')) as Omit<PromptTopic, 'annexMd'>[];
+// A non-open bundle (season.json) reads its season's annex where one exists — see coderAnnexPath.
+const bundleSeason = readBundleSeason(dir);
 const topics: PromptTopic[] = topicsRaw.map((t) => {
-  const p = annexPath(repoRoot, t.topic_key);
+  const p = coderAnnexPath(repoRoot, t.topic_key, bundleSeason);
+  if (p !== annexPath(repoRoot, t.topic_key)) console.log(`${t.topic_key}: Season ${bundleSeason!.number} annex ${p}`);
   return { topic_id: t.topic_id, topic_key: t.topic_key, served_revision_id: t.served_revision_id, question_text: t.question_text, stances: t.stances,
     own_words_levels: t.own_words_levels, annexMd: existsSync(p) ? readFileSync(p, 'utf8') : null };
 });

@@ -153,8 +153,12 @@ subdirectory). Keep that path when writing its annex.
 
 ## Season 3 (draft)
 
-One file per topic whose Season 3 pin is a new revision, under `season3/`. The loader
-(`build-coder-inputs.ts`, `annexPath`) reads by topic key only and does not read these yet.
+One file per topic whose Season 3 pin is a new revision, under `season3/`. The loader reads them:
+`build-coder-inputs.ts` (`coderAnnexPath`) uses `season<N>/<topic_key>.md` when the batch dir carries
+`season.json` (a `--season draft|<uuid>` bundle) and that file exists, and the root `<topic_key>.md`
+otherwise. Open-season bundles write no `season.json`, so they read the root file exactly as before.
+A topic with no file here gets its root annex in the draft season too — add one when its Season 3 pin
+is a new revision.
 
 | Topic | Season 3 revision | Status |
 |---|---|---|

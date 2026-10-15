@@ -4,9 +4,9 @@
 by CA_0310 and pinned in the draft Season 3. Lines marked
 _(ruled 2026-10-15)_ carry an operator ruling (Chris Andrews); _(proposed)_ lines are a drafter's reading.
 
-🔴 **Not live.** `build-coder-inputs.ts` reads `annex/<topic_key>.md` by topic key only, so coders still get
-the Season 2 annex (`../education-library-books.md`, revision 1). Point the loader at this file before coding
-this topic for the draft season.
+**Loaded for the draft season.** `build-coder-inputs.ts` pastes this file into coder prompts built from a
+`--season draft` bundle (one whose batch dir carries `season.json`). Open-season (Season 2) coding still gets
+`../education-library-books.md` (revision 1).
 
 **Question:** "How should schools handle challenges to books in libraries and classrooms?"
 
