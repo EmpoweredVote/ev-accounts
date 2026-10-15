@@ -8,7 +8,7 @@ import { normalizeText } from '../../src/lib/researchVerifier.js';
 import { BLANK_REASONS } from '../../src/lib/blankReasons.js';
 
 /** 🔴 Must equal the codebook's **Version:** line — coderLabel.test.ts pins it. */
-export const CODEBOOK_VERSION = '0.5';
+export const CODEBOOK_VERSION = '0.6';
 
 export const V1_ATTRIBUTION = ['own-words', 'own-act', 'third-party-characterization', 'namesake-unclear'] as const;
 export const V2_RELEVANCE = ['on-question', 'adjacent', 'off'] as const;
