@@ -12,11 +12,13 @@ staff), rung 5 removes equity programmes. The rungs order **the mechanism used f
 groups**: offices, training and goals, measurement and targeted support, the same support for every
 struggling student, nothing.
 
-**Levels with a lever:** local, school, state. The lever is the school board's
+**Levels with a lever:** school, state. The lever is the school board's
 budget, staffing and policy, and state statute (mandates, bans, accountability rules). A city or
-county council holds a lever only where it funds or runs the schools _(proposed)_.
+county council holds no lever on a district's equity offices, training or support → a local act is
+`adjacent`, own words only at local (the role is per level, not per place) _(ruled 2026-10-16, X2, CA_0312)_.
 
-**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal (codebook V2 "No-lever level").
+**Asked at:** federal, state, local, school (`compass_topic_roles`, CA_0302). Own words only at: federal,
+local (codebook V2 "No-lever level"; local changed by CA_0312, ruling 2026-10-16 X2).
 
 **Synonyms:** "equity office", "chief equity officer", "diversity, equity and inclusion" (DEI),
 "achievement gap", "opportunity gap", "subgroup", "disaggregated data", "equity plan", "implicit-bias
