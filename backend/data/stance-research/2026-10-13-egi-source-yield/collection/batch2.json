@@ -1,0 +1,992 @@
+{
+ "people": [
+  {
+   "id": "P02",
+   "name": "Jimmie D Durnil",
+   "findable": true,
+   "found_page": "https://www.rbbschools.net/school-board",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign site found; ran unopposed in Nov 2024 (IPM). Searched name + R-BB."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Jimmie_Durnil",
+     "note": "Ballotpedia has no person page (404); district page lists him only. No local-paper questionnaire found (unopposed 2024)."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "No interest-group questionnaire found."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "No sign of paid ads for an unopposed school board race; ad libraries not queryable anyway."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No personal campaign social account found."
+    },
+    "T07": {
+     "result": "inaccessible",
+     "url": "https://www.ipm.org/show/noonedition/2024-10-01/r-bb-school-board-members-discuss-upcoming-election-and-policies",
+     "note": "WFIU Noon Edition 2024-10-01: 30-min call-in show with Durnil as guest on 'public education and safety'. Audio only, no transcript; content not reviewed."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "https://wfhb.org/?p=116921",
+     "note": "Only news mention is WFHB note that he was elected board vice-president; no quotes."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-off-topic",
+     "url": "https://www.rbbschools.net/school-board",
+     "note": "291 agenda/minutes PDFs (2020-2026) linked on the board page scanned for gender, transgender, pronoun, Title IX, LGBT, sexual orientation, bathroom, locker, library book: no domain item (only a 2021-03-22 routine surplus-library-book disposal, approved 5-0). Policy manual at go.neola.com/rbbcsc-in/policy not reviewed."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P10",
+   "name": "Todd Young",
+   "findable": true,
+   "found_page": "https://www.young.senate.gov/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://toddyoung.org/issues/",
+     "note": "Issues: affordability, stock trading, border, CCP, judges, law enforcement, unborn, 2A, veterans, small business. Nothing in domain."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Todd_Young",
+     "note": "No candidate questionnaire found."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/candidate/political-courage-test/120345/todd-young",
+     "note": "Vote Smart returns 403 to curl and WebFetch."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to non-browser fetch and is JS-only; Google Ads Transparency Center is JS-only (empty shell). Could not query by name."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://x.com/SenToddYoung",
+     "note": "X shows only profile header behind login wall; posts not loaded."
+    },
+    "T07": {
+     "result": "found-on-topic",
+     "url": "https://www.ibj.com/articles/in-senate-debate-mcdermott-goes-on-offensive-against-todd-young",
+     "note": "2022-10-16 Indiana Debate Commission Senate debate: asked about federal protection for same-sex marriage (adjacent). Only paraphrase/fragments in coverage; PBS video exists (https://www.pbs.org/video/indiana-us-senate-candidates-debate-october-21-2022-zcxtqp, not reviewed)."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://indypolitics.org/new-respect-for-marriage-act-will-protect-everyone/",
+     "note": "Op-ed by Young on Respect for Marriage Act (adjacent). Senate site search for transgender / title ix returned nothing in domain."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://wfyi.org/news/articles/democrat-mcdermott-goes-on-the-attack-against-republican-young-in-us-senate-debate",
+     "note": "Fragment quotes only ('distraction', 'settled law') on same-sex marriage (adjacent)."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "https://www.hydesmith.senate.gov/node/5728",
+     "note": "Not on the 22-senator 2023 Title IX comment letter or on the Skrmetti congressional brief."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC: 0 (118th), 19 (117th), 0 (116th); 30% in 2013-14 per OnTheIssues."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.htm",
+     "note": "Yea on cloture S.9 sports bill (2025); Yea on Respect for Marriage Act (2022)."
+    }
+   },
+   "statements": [
+    {
+     "text": "In the debate over how the federal government views civil marriage, all Hoosiers want to be treated with dignity and respect.",
+     "url": "https://indypolitics.org/new-respect-for-marriage-act-will-protect-everyone/",
+     "date": "2022-11-30",
+     "source_type": "T08",
+     "context": "op-ed explaining his vote for the Respect for Marriage Act",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "Same-sex couples — many of whom are also people of faith — want to be treated with dignity and respect as well. In the wake of the Supreme Court’s 2015 decision in Obergefell v. Hodges to legalize same-sex marriages, they want to enjoy the same legal protections of civil marriage as married men and women. They don’t want to live in fear of their families being ripped apart by a future court decision.",
+     "url": "https://indypolitics.org/new-respect-for-marriage-act-will-protect-everyone/",
+     "date": "2022-11-30",
+     "source_type": "T08",
+     "context": "op-ed on Respect for Marriage Act",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "This week, the Senate debated an improved version of the Respect for Marriage Act, and I voted for it, because it will bring the United States government closer to treating both groups with dignity and respect than we ever have in our history.",
+     "url": "https://indypolitics.org/new-respect-for-marriage-act-will-protect-everyone/",
+     "date": "2022-11-30",
+     "source_type": "T08",
+     "context": "op-ed on Respect for Marriage Act",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "Young called the issue a \"distraction,\" since he said same-sex marriage is \"settled law\" at the U.S. Supreme Court.",
+     "url": "https://wfyi.org/news/articles/democrat-mcdermott-goes-on-the-attack-against-republican-young-in-us-senate-debate",
+     "date": "2022-10-16",
+     "source_type": "T09",
+     "context": "FRAGMENT ONLY (reporter paraphrase with two quoted words): debate answer on federal protection for same-sex marriage",
+     "sub_issue_hint": "adjacent-general-equality"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Yea on cloture on motion to proceed to S.9, Protection of Women and Girls in Sports Act (failed 51-45), 2025-03-03",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.htm",
+     "side_hint": "restrict trans girls in girls' sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea on passage of H.R. 8404 Respect for Marriage Act (61-36), 2022-11-29",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1172/vote_117_2_00362.htm",
+     "side_hint": "pro same-sex marriage recognition (adjacent)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard: 0 (118th), 19 (117th), 0 (116th)",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "low pro-LGBTQ score"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC rating 30% for 2013-14 (House), via OnTheIssues",
+     "url": "https://ontheissues.org/Domestic/Todd_Young_Civil_Rights.htm",
+     "side_hint": "mixed"
+    },
+    {
+     "kind": "vote",
+     "desc": "House 2016-05-25: Yea on Maloney Amendment (H.Amdt. 1128) affirming contractor nondiscrimination on sexual orientation and gender identity, via OnTheIssues",
+     "url": "https://ontheissues.org/Domestic/Todd_Young_Civil_Rights.htm",
+     "side_hint": "pro nondiscrimination (adjacent)"
+    }
+   ]
+  },
+  {
+   "id": "P18",
+   "name": "Van Wanggaard",
+   "findable": true,
+   "found_page": "https://legis.wisconsin.gov/senate/21/wanggaard/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "Retiring; announced 2026-03-17 he will not seek re-election. No live campaign site found."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/candidate/biography/68677/",
+     "note": "Vote Smart returns 403."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to non-browser fetch and is JS-only; Google Ads Transparency Center is JS-only (empty shell). Could not query by name."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://twitter.com/Vanwanggaard",
+     "note": "X and Facebook (facebook.com/senvanwanggaard) need login / block fetch."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "He chaired a committee hearing on a transgender-related bill (per his own newsletter) but no hearing video located; WisEye not searched."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://legis.wisconsin.gov/senate/21/wanggaard/news-updates/e-updates/",
+     "note": "58 e-newsletters scanned: 3 touch domain (trans hearing anecdote, gender-neutral admin-rule language, UW survey on trans sports). Press releases list (2026) has nothing in domain."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab100",
+     "note": "Cosponsor of AB 100 and AB 102 (sports); Aye on AB 100, AB 103, AB 104 concurrence 2026-02-11."
+    }
+   },
+   "statements": [
+    {
+     "text": "I remember a committee hearing I chaired a couple of years ago involving something transgender-related. I don’t remember the subject of the hearing, but I remember a trans-activist shouting at the bill author that the legislator “wanted us (transgender people) all dead. You’re trying to kill us!” he/she stated. We ignored the activist and continued with the hearing.",
+     "url": "https://mailchi.mp/78c2fd6988df/lastenewsletter-13878844?e=7601e4f117",
+     "date": "2025-09-12",
+     "source_type": "T08",
+     "context": "e-newsletter Issue 369 'Violence is Never the Answer!'",
+     "sub_issue_hint": "adjacent-general"
+    },
+    {
+     "text": "Exceptionally few things in politics are life and death. That bill certainly wasn’t.",
+     "url": "https://mailchi.mp/78c2fd6988df/lastenewsletter-13878844?e=7601e4f117",
+     "date": "2025-09-12",
+     "source_type": "T08",
+     "context": "same newsletter, about the transgender-related bill",
+     "sub_issue_hint": "adjacent-general"
+    },
+    {
+     "text": "You may remember in the state budget, Governor Evers tried to change the word “mother” to “inseminated person.” He also tried to use the budget to change pronouns and gender-specific words. After the (justified) uproar, the Legislature removed this language from the budget.",
+     "url": "https://mailchi.mp/f84e69f79998/lastenewsletter-13878729?e=7601e4f117",
+     "date": "2025-09-05",
+     "source_type": "T08",
+     "context": "e-newsletter Issue 368, item 'Governor Evers Eliminates the Words “Mother” and “Father” Again!'",
+     "sub_issue_hint": "adjacent-general"
+    },
+    {
+     "text": "Earlier this year, the Wisconsin Supreme Court overturned generations of precedent and ruled the Legislature cannot stop administrative rule changes. So, what did Governor Evers do? He immediately doubled down on gender identity. He changed the words “mother,” “father,” and eliminated gender specific pronouns in the administration rules.",
+     "url": "https://mailchi.mp/f84e69f79998/lastenewsletter-13878729?e=7601e4f117",
+     "date": "2025-09-05",
+     "source_type": "T08",
+     "context": "same item",
+     "sub_issue_hint": "adjacent-general"
+    },
+    {
+     "text": "Depending on the issue, liberal faculty would be 11% to 38% less likely to hire a person expressing a conservative viewpoint. The issues were affirmative action, abortion, immigration, or transgender sports.",
+     "url": "https://mailchi.mp/6427dba44c12/lastenewsletter-13884250?e=7601e4f117",
+     "date": "2026-03-12",
+     "source_type": "T08",
+     "context": "e-newsletter Issue 394 on UW-Madison bias survey; mentions trans sports only as a survey item",
+     "sub_issue_hint": "sports (passing mention)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "bill",
+     "desc": "Senate cosponsor of 2025 AB 100 (K-12 athletic teams by sex) and AB 102 (UW/technical college teams by sex)",
+     "url": "https://docs.legis.wisconsin.gov/2025/proposals/reg/asm/bill/ab100",
+     "side_hint": "restrict trans girls in girls' sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on Senate concurrence in AB 100 (sports, K-12), 18-15, 2026-02-11",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0168",
+     "side_hint": "restrict"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on Senate concurrence in AB 103 (school policies on changing a pupil's name and pronouns; parental consent), 18-15, 2026-02-11",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0170",
+     "side_hint": "parental consent for names/pronouns"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on Senate concurrence in AB 104 (ban on gender transition medical intervention under 18), 18-15, 2026-02-11",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0171",
+     "side_hint": "restrict minors' gender care (adjacent)"
+    }
+   ]
+  },
+  {
+   "id": "P26",
+   "name": "Christopher Schmaling",
+   "findable": true,
+   "found_page": "https://fox6now.com/news/racine-county-sheriff-christopher-schmaling-will-not-seek-re-election",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "https://goodparty.org/candidate/christopher-schmaling/racine-county-sheriff",
+     "note": "Retiring end of 2026, not on ballot. GoodParty auto-profile only, no positions."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to non-browser fetch and is JS-only; Google Ads Transparency Center is JS-only (empty shell). Could not query by name."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/RacineCountySheriffsOffice",
+     "note": "Facebook returns error page to fetch."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "https://www.racinecounty.com/departments/sheriff-s-office",
+     "note": "County site returns 403."
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://fox6now.com/news/racine-county-sheriff-christopher-schmaling-will-not-seek-re-election",
+     "note": "News quotes are on retirement, crime, election-law referrals; 2018 school-threat letter is school safety, not domain."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Office has no legislative record in domain."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P34",
+   "name": "Alan Wessman",
+   "findable": true,
+   "found_page": "https://ballotpedia.org/Alan_Wessman",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://electawessman.com/principles-and-policy/",
+     "note": "Library-book removal law (HB 29, 2024). Utah House 64, unaffiliated (2026); United Utah Party (2022)."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Alan_Wessman",
+     "note": "Ballotpedia Candidate Connection 2026 completed; nothing in domain. BallotReady stance text mirrors his website (https://www.ballotready.org/people/alan-wessman)."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T04": {
+     "result": "found-off-topic",
+     "url": "https://www.forwardparty.com/pledge/",
+     "note": "Forward Party candidate pledge (endorsed by Forward Party of Utah, which requires the pledge). General rule-of-law / dignity text; nothing specific to domain."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to non-browser fetch and is JS-only; Google Ads Transparency Center is JS-only (empty shell). Could not query by name."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Ballotpedia lists Facebook and X accounts; both require login."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "https://electawessman.com/feed/",
+     "note": "Campaign site has no posts."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://www.electawessman.com/",
+     "note": "Only endorsement: Forward Party of Utah (not an issue group in domain)."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Never held office."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Never held office."
+    }
+   },
+   "statements": [
+    {
+     "text": "Repeal the law (HB 29, from 2024) that allows the decision of just three districts in the state to force a book title to be removed from all public school libraries statewide. The decision of a district to remove a title from school libraries should be a local decision limited to that district, as its board only represents the citizens of that district and should not be able to make decisions for those outside it.",
+     "url": "https://electawessman.com/principles-and-policy/",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "campaign policy page, education section",
+     "sub_issue_hint": "library-books"
+    },
+    {
+     "text": "If repeal is not possible, amend the law to require at least two-thirds of the districts in the state to agree on a title’s removal for it to be banned from school libraries statewide—a high threshold requiring considerable statewide consensus rather than the current low threshold that can be heavily influenced by a small number of activists and a handful of school board members in localized pockets of the state.",
+     "url": "https://www.ballotready.org/people/alan-wessman",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "same text as campaign site, shown in full on BallotReady (campaign page excerpt was truncated in fetch)",
+     "sub_issue_hint": "library-books"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by Forward Party of Utah",
+     "url": "https://www.electawessman.com/",
+     "side_hint": "not domain-specific"
+    }
+   ]
+  },
+  {
+   "id": "P42",
+   "name": "Jeanne Marie Bowen",
+   "findable": true,
+   "found_page": "https://www.ballotready.org/people/jeanne-bowen",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://votebowen.weebly.com/about.html",
+     "note": "Utah County Commission Seat A 2026. Site lists county communication, growth, and a top-10 issue list (incl. 'K-12 Education' as a word only). Nothing in domain."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Jeanne_Marie_Bowen",
+     "note": "No Ballotpedia page (404). BallotReady stances are only on county communication. Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to non-browser fetch and is JS-only; Google Ads Transparency Center is JS-only (empty shell). Could not query by name."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "Only LinkedIn listed (https://www.linkedin.com/in/jeanne-bowen-77782630, login wall)."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Never held the office."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Never held the office (Treasurer's office employee)."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P50",
+   "name": "Linda T. Sanchez",
+   "findable": true,
+   "found_page": "https://lindasanchez.house.gov/issues/Civil-Rights-and-Equality",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://voteforlinda.com",
+     "note": "2026 campaign site (running in CA-41 after redistricting): bio, news, endorsements; nothing in domain. Note: lindasanchez.house.gov blocks curl/WebFetch (403); read via browser."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Linda_S%C3%A1nchez",
+     "note": "Did not complete Ballotpedia Candidate Connection 2020/2022/2024/2026."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Vote Smart returns 403 (same as other members)."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to non-browser fetch and is JS-only; Google Ads Transparency Center is JS-only (empty shell). Could not query by name."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://bsky.app/profile/lindatsanchez.bsky.social",
+     "note": "X/Facebook login wall; Bluesky account exists, not reviewed."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not checked beyond official site."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://lindasanchez.house.gov/issues/Civil-Rights-and-Equality",
+     "note": "Many press releases: Safe Schools Improvement Act (anti-bullying incl. gender identity), Pride, Equality Act, LGBTQ+ History Month, Downey Pride flag, trans military ban."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not searched: Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T10": {
+     "result": "found-on-topic",
+     "url": "https://www.supremecourt.gov/DocketPDF/23/23-477/323911/20240903135604903_2024-09-03_Brief-Members-of-Congress-as-Amici-No-23-477-filed.pdf",
+     "note": "Signed 164-member amicus brief in U.S. v. Skrmetti against Tennessee's ban on gender care for minors (adjacent)."
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://ballotpedia.org/Linda_S%C3%A1nchez",
+     "note": "Ballotpedia lists Equality California endorsement and California Teachers Association; campaign site lists California Federation of Teachers."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC 100 (118th), 100 (117th), 100 (116th)."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "note": "Nay H.R. 734 (2023) and H.R. 28 (2025) sports bills; No on H.R. 5 Parents Bill of Rights (2023); lead sponsor Safe Schools Improvement Act."
+    }
+   },
+   "statements": [
+    {
+     "text": "I am also proud to uplift the rights of our LGBTQ+ community as a Vice Chair of the Congressional LGBT Equality Caucus. I believe your gender, whom you love, where you live, or the color of your skin should not make it more difficult for you to be an American. Unfortunately, LGBTQ Americans continue to face discrimination in far too many facets of life. I will continue fighting for dignity, respect, and equality for all Americans.",
+     "url": "https://lindasanchez.house.gov/issues/Civil-Rights-and-Equality",
+     "date": "undated",
+     "source_type": "T08",
+     "context": "official website issue page 'Civil Rights and Equality'",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "“Bullying is a serious issue that threatens our children’s safety and well-being,” said Congresswoman Sánchez. “When students see adults, including our country’s leaders, bullying marginalized communities, they think it’s acceptable. Sadly, we’re too often reminded of the devastating consequences of allowing it to spread. Our students deserve to learn in an environment where respect and kindness are the norm, not fear and intimidation.”",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-takano-introduce-anti-bullying-bill",
+     "date": "2025-03-03",
+     "source_type": "T08",
+     "context": "introducing Safe Schools Improvement Act (bans bullying incl. on sexual orientation and gender identity)",
+     "sub_issue_hint": "anti-bullying"
+    },
+    {
+     "text": "Our kids should be able to wake up and go to school every day without fear of being bullied when they get there. The Safe Schools Improvement Act will help deliver an educational environment that is free of harassment for every single one of our students. As a mother, I know this bill will bring peace of mind to parents, teachers, school administrators and staff, and I know it will make a difference for countless students in school hallways across the country.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/s-nchez-katko-and-takano-introduce-bipartisan-bicameral-anti-bullying",
+     "date": "2021-07-01",
+     "source_type": "T08",
+     "context": "introducing Safe Schools Improvement Act with GLSEN and HRC",
+     "sub_issue_hint": "anti-bullying"
+    },
+    {
+     "text": "No parent wants their child to be bullied at school. Schools must be a safe place for our children to learn and grow and be protected from bullying. The Safe Schools Improvement Act will give parents like me peace of mind to know all our children have an educational environment where they can learn without fear of harassment.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/linda-s-nchez-and-john-katko-introduce-bipartisan-anti-bullying",
+     "date": "2019-05-09",
+     "source_type": "T08",
+     "context": "introducing Safe Schools Improvement Act 2019",
+     "sub_issue_hint": "anti-bullying"
+    },
+    {
+     "text": "Unfortunately, extreme MAGA politicians and state legislatures are actively trying to advance their hateful agenda. We must stand up for LGBTQ+ Americans—especially our trans and non-binary youth—in the face of these attacks. Together with my colleagues in the Equality Caucus, I will keep fighting to amplify LGBTQ+ voices and protect your right to love and be who you are.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/s-nchez-celebrates-start-lgbtq-history-month",
+     "date": "2022-10-03",
+     "source_type": "T08",
+     "context": "LGBTQ+ History Month statement",
+     "sub_issue_hint": "adjacent-trans-youth"
+    },
+    {
+     "text": "I'm proud to join the LGBTQ+ community in celebrating the start of LGBTQ+ History Month. Throughout the month of October, we will honor the people, places, culture, and moments in history that make up the LGBTQ+ experience—an experience that is often left out of history books,",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/s-nchez-celebrates-start-lgbtq-history-month",
+     "date": "2022-10-03",
+     "source_type": "T08",
+     "context": "LGBTQ+ History Month statement (sentence ends with comma before attribution in source)",
+     "sub_issue_hint": "curriculum (history books, passing)"
+    },
+    {
+     "text": "This year, as we celebrate Pride, we must also think about the extreme MAGA politicians and state legislatures actively trying to advance hateful and anti-equality legislation throughout the United States. I joined the Congressional Equality Caucus because I believe LGBTQI+ people deserve to live freely as their authentic selves and deserve full legal equality in the U.S. and around the world. I will continue to fight to protect LGBTQ+ Americans right to love and be who they are.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-celebrates-beginning-pride-month-2023",
+     "date": "2023-06-01",
+     "source_type": "T08",
+     "context": "Pride Month statement",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "The Pride flag represents inclusion, diversity and equality. These are the values we should be uplifting as government leaders. Banning the flag from city hall sends the hateful message that these are no longer the values of our community. I strongly disagree.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-opposes-petty-decision-ban-downey-pride-flag",
+     "date": "2024-05-16",
+     "source_type": "T08",
+     "context": "Downey City Council banned Pride flag at city hall",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "As a vice chair of the Equality Caucus, I will continue to fly the Pride flag outside my congressional office. It’s important to me that all LGBTQI+ residents of Downey – and throughout my district – know they are seen, valued and loved.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-opposes-petty-decision-ban-downey-pride-flag",
+     "date": "2024-05-16",
+     "source_type": "T08",
+     "context": "same statement",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "Unfortunately, MAGA Republicans hijacked this year’s NDAA and attached extreme amendments that made the bill something I could not support. They turned a good and necessary piece of legislation into a bill that is anti-woman, anti-health, anti-diversity, and anti-LGBTQI+.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-statement-against-house-passage-fy24-ndaa",
+     "date": "2023-07-14",
+     "source_type": "T08",
+     "context": "explaining NO vote on FY24 NDAA",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "Everyone, regardless of their sexual orientation or gender identity, deserves to be protected and treated equally under the law. The Equality Act amends existing federal civil rights laws to ensure that LGBTQ Americans are afforded the same protections from discrimination that we all enjoy. I am proud to join a bipartisan majority of my colleagues to support this historic legislation.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/linda-s-nchez-statement-passage-equality-act",
+     "date": "2019-05-17",
+     "source_type": "T08",
+     "context": "House passage of Equality Act",
+     "sub_issue_hint": "nondiscrimination"
+    },
+    {
+     "text": "It is unacceptable that the law today still treats LGBTQ people as second class citizens,",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/linda-s-nchez-statement-re-introduction-equality-act",
+     "date": "2017-05-02",
+     "source_type": "T08",
+     "context": "Equality Act reintroduction (sentence ends with comma before attribution in source)",
+     "sub_issue_hint": "nondiscrimination"
+    },
+    {
+     "text": "Today, we have taken a historic step toward protecting marriage equality for LGBTQ+ and interracial couples,",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/s-nchez-statement-final-passage-respect-marriage-act",
+     "date": "2022-12-08",
+     "source_type": "T08",
+     "context": "final passage of Respect for Marriage Act",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "Transgender members of our military deserve national praise for their dedication and service to our country. They serve our country every day with distinction and courage. Instead, this morning they were demeaned by the commander-in-chief via Twitter. This has to stop.",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/linda-s-nchez-statement-president-trump-s-decision-ban-transgender",
+     "date": "2017-07-26",
+     "source_type": "T08",
+     "context": "Trump announcement banning transgender military service",
+     "sub_issue_hint": "adjacent-general-equality"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "bill",
+     "desc": "Lead sponsor, Safe Schools Improvement Act (anti-bullying codes incl. sexual orientation, gender identity), 2019, 2021, 2025",
+     "url": "https://lindasanchez.house.gov/media-center/press-releases/sanchez-takano-introduce-anti-bullying-bill",
+     "side_hint": "pro LGBTQ student protection"
+    },
+    {
+     "kind": "vote",
+     "desc": "Nay on passage of H.R. 734 Protection of Women and Girls in Sports Act, 2023-04-20",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "side_hint": "oppose sports restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "Nay on passage of H.R. 28 Protection of Women and Girls in Sports Act, 2025-01-14",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "side_hint": "oppose sports restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "No on passage of H.R. 5 Parents Bill of Rights Act, 2023-03-24",
+     "url": "https://clerk.house.gov/evs/2023/roll161.xml",
+     "side_hint": "oppose (parental-rights bill)"
+    },
+    {
+     "kind": "letter",
+     "desc": "Signed 164-member Members of Congress amicus brief in U.S. v. Skrmetti (No. 23-477) opposing Tennessee ban on gender-affirming care for minors, 2024-09-03",
+     "url": "https://www.supremecourt.gov/DocketPDF/23/23-477/323911/20240903135604903_2024-09-03_Brief-Members-of-Congress-as-Amici-No-23-477-filed.pdf",
+     "side_hint": "pro access (adjacent)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard 100 (118th), 100 (117th), 100 (116th)",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "pro-LGBTQ"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Equality California endorsement (listed by Ballotpedia); California Teachers Association; California Federation of Teachers (campaign site)",
+     "url": "https://ballotpedia.org/Linda_S%C3%A1nchez",
+     "side_hint": "pro-LGBTQ / teachers' unions"
+    }
+   ]
+  },
+  {
+   "id": "P58",
+   "name": "Ron Johnson",
+   "findable": true,
+   "found_page": "https://www.ronjohnson.senate.gov/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "https://www.ronjohnsonforsenate.com/",
+     "note": "Campaign domain listed by Ballotpedia now serves unrelated spam content; no live issues page."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Ron_Johnson_(Wisconsin)",
+     "note": "Did not complete Ballotpedia 2022 Candidate Connection."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Vote Smart returns 403."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to non-browser fetch and is JS-only; Google Ads Transparency Center is JS-only (empty shell). Could not query by name."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "X/Facebook login wall."
+    },
+    "T07": {
+     "result": "found-on-topic",
+     "url": "https://www.ronjohnson.senate.gov/2022/04/01/2022-4-sen-johnson-hears-concerns-from-wisconsin-parents/",
+     "note": "2022-04-01 listening session with parents on masking, CRT, 'gender identity curriculum' and school board elections; posted excerpts of his words are about unity and school choice, not gender. Full video not reviewed."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://www.ronjohnson.senate.gov/2025/01/07/2025-1-sen-johnson-joins-tuberville-colleagues-to-introduce-hallmark-legislation-to-preserve-title-ix-protect-women-s-sports/",
+     "note": "Press releases on sports bill, Title IX comment, parents' rights resolutions."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T10": {
+     "result": "found-on-topic",
+     "url": "https://www.ronjohnson.senate.gov/2023/05/16/2023-5-senator-johnson-joins-colleagues-in-public-comment-defending-women-s-sports/",
+     "note": "Signed Tuberville-led public comment (2023-05-15) opposing ED proposed Title IX athletics rule."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web search budget for this run was exhausted midway; checked only by direct URL fetches."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC 0 (118th), 5 (117th), 0 (116th)."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.htm",
+     "note": "Cosponsor and Yea on cloture S.9 (2025); Nay on Respect for Marriage Act (2022)."
+    }
+   },
+   "statements": [
+    {
+     "text": "For the past four years, the Biden administration has taken a sledgehammer to Title IX through rulemaking at the Department of Education (ED). This legislation would reverse the harmful ED rule that forces schools to allow males to share private spaces with females and compete in women’s sports—or risk losing their funding.",
+     "url": "https://www.ronjohnson.senate.gov/2025/01/07/2025-1-sen-johnson-joins-tuberville-colleagues-to-introduce-hallmark-legislation-to-preserve-title-ix-protect-women-s-sports/",
+     "date": "2025-01-07",
+     "source_type": "T08",
+     "context": "office press release on cosponsoring Protection of Women and Girls in Sports Act (office text, not a direct quote)",
+     "sub_issue_hint": "sports; locker rooms"
+    },
+    {
+     "text": "The Department must consider the resulting real-life inherent costs—the cost of lost opportunities for girls in academic settings. By expanding the pool of protected individuals and creating mass uncertainty at each individual school and school district, it stands to reason that biological girls will ultimately lose scholarship and athletic opportunities designated for them under the original intent of Title IX.",
+     "url": "https://www.ronjohnson.senate.gov/2023/05/16/2023-5-senator-johnson-joins-colleagues-in-public-comment-defending-women-s-sports/",
+     "date": "2023-05-15",
+     "source_type": "T10",
+     "context": "signed joint public comment opposing ED Title IX athletics rule (fixed text, as quoted in his press release)",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Rather than expanding the definition of Title IX to fit the current progressive agenda, the administration should support Congress in strengthening its congressional intent and reinforce the protections Title IX afforded women and girls when it was first enacted in 1972.",
+     "url": "https://www.ronjohnson.senate.gov/2023/05/16/2023-5-senator-johnson-joins-colleagues-in-public-comment-defending-women-s-sports/",
+     "date": "2023-05-15",
+     "source_type": "T10",
+     "context": "same signed comment",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "This proposed rule reverts the playing field to a time before Title IX’s enactment and will cause irreparable harm to women entering academia and athletics,",
+     "url": "https://www.hydesmith.senate.gov/node/5728",
+     "date": "2023-05-15",
+     "source_type": "T10",
+     "context": "same signed comment, as quoted by Washington Examiner via Hyde-Smith site (sentence continues into attribution)",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "National School Choice Week is a time to celebrate how families benefit from having the ability to choose the type of education that is best for their children. This choice has never been so important. With parents fighting to keep their kids in school throughout COVID-19 or to have a say in what they’re children are being taught, now is the time to empower parents’ control of their child’s education.",
+     "url": "https://www.ronjohnson.senate.gov/2022/01/25/2022-1-sen-johnson-joins-sen-lankford-colleagues-to-champion-parents-rights-in-education/",
+     "date": "2022-01-25",
+     "source_type": "T08",
+     "context": "parents' rights / school choice resolution; no gender reference in his words (resolution text cites CRT)",
+     "sub_issue_hint": "parental-rights (not explicitly tied to LGBTQ)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Yea on cloture on motion to proceed to S.9 Protection of Women and Girls in Sports Act, 2025-03-03",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.htm",
+     "side_hint": "restrict"
+    },
+    {
+     "kind": "bill",
+     "desc": "Original cosponsor of reintroduced Protection of Women and Girls in Sports Act (Tuberville), 2025-01",
+     "url": "https://www.ronjohnson.senate.gov/2025/01/07/2025-1-sen-johnson-joins-tuberville-colleagues-to-introduce-hallmark-legislation-to-preserve-title-ix-protect-women-s-sports/",
+     "side_hint": "restrict"
+    },
+    {
+     "kind": "letter",
+     "desc": "Signed Tuberville-led public comment opposing ED proposed Title IX athletics rule, 2023-05-15",
+     "url": "https://www.ronjohnson.senate.gov/2023/05/16/2023-5-senator-johnson-joins-colleagues-in-public-comment-defending-women-s-sports/",
+     "side_hint": "restrict"
+    },
+    {
+     "kind": "vote",
+     "desc": "Nay on passage of H.R. 8404 Respect for Marriage Act, 2022-11-29",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1172/vote_117_2_00362.htm",
+     "side_hint": "against (adjacent)"
+    },
+    {
+     "kind": "bill",
+     "desc": "Cosponsor, Senate resolution supporting parents' rights to be involved in children's education (Scott/McConnell), 2021-10",
+     "url": "https://www.ronjohnson.senate.gov/2021/10/29/2021-10-sen-johnson-joins-resolution-supporting-parents-voices-in-education/",
+     "side_hint": "parental-rights (not LGBTQ-specific)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard 0 (118th), 5 (117th), 0 (116th)",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "low pro-LGBTQ score"
+    }
+   ]
+  }
+ ]
+}
