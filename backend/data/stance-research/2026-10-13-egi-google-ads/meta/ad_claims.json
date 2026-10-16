@@ -1,0 +1,55 @@
+{
+  "_note": "Policy claims copied from each person's own Meta ads (public Ad Library, read 2026-10-13). One claim = one position a voter could use.",
+  "people": [
+    {"id": "asare", "name": "Isak Asare", "seat": "Bloomington IN city council at-large (elected 2023)", "claims": [
+      "C1: focus on more affordable and attainable housing",
+      "C2: increased economic opportunities",
+      "C3: immediate climate action"]},
+    {"id": "wishau", "name": "Taylor Wishau", "seat": "Racine County WI Board Supervisor District 21 (Burlington area; 2022 race)", "claims": [
+      "C1: increase funding and support for law enforcement; do not micromanage the police budget",
+      "C2: increase public access to county Health and Human Services (Burlington office)",
+      "C3: business partnerships to attract jobs to Burlington / western Racine County; control property taxes",
+      "C4: expand programs and services for veterans"]},
+    {"id": "wood", "name": "Jacob Wood", "seat": "Vineyard UT city council (2025 race)", "claims": [
+      "C1: end predatory towing / fix the parking crisis",
+      "C2: take on over-occupancy of housing",
+      "C3: lower property taxes / stop tax increases",
+      "C4: restore transparency in city government",
+      "C5: protect the lake (Utah Lake)",
+      "C6: push for discussions on a UVU football stadium in Vineyard"]},
+    {"id": "lockhart", "name": "Emily Lockhart", "seat": "Lehi UT city council (2025 race; also ran Utah Senate 22 in 2024)", "claims": [
+      "C1: transportation plan - more east-west connections, including connecting Pony Express Parkway to the Vineyard connector",
+      "C2: strengthen public safety (endorsed by firefighters and FOP)",
+      "C3: guide strategic growth",
+      "C4: limited government, fiscal responsibility, individual liberty"]},
+    {"id": "judkins", "name": "Marsha Judkins", "seat": "Provo UT mayor (2025 race; former state House District 61)", "claims": [
+      "C1: fix outdated permitting and licensing systems",
+      "C2: update Provo's Master Plan; reverse declining sales tax revenue with neighborhood-focused growth",
+      "C3: support and revitalize downtown",
+      "C4: (as legislator) voted against SB 2001, which would have raised taxes on gas and groceries",
+      "C5: advocate for local control, limited government, less regulation"]},
+    {"id": "mackay", "name": "Katrice MacKay", "seat": "Provo UT city council citywide", "claims": [
+      "C1: zoning should reflect each neighborhood's own concerns; pledge to listen to every neighborhood on projects",
+      "C2: keep parks beautiful and well maintained",
+      "C3: a smartphone app to communicate with the city / 311",
+      "C4: a stated position on the future of Slate Canyon (in a video; text says only 'where I stand')"]},
+    {"id": "spencer", "name": "David Spencer", "seat": "Utah County UT Commissioner (former Orem city council)", "claims": [
+      "C1: no tax increases; county should live within its means",
+      "C2: no commissioner pay raises",
+      "C3: oppose bigger county budgets and higher fees"]},
+    {"id": "raman", "name": "Nithya Raman", "seat": "Los Angeles city council D4; candidate for LA mayor 2026", "claims": [
+      "C1: capped rent increases for over a million Angelenos (claims credit for a rent-cap action)",
+      "C2: plan to lower the cost of housing",
+      "C3: City Hall insiders, the landlord lobby and the LAPD have run city politics (critique of LAPD influence)"]},
+    {"id": "bass", "name": "Karen Bass", "seat": "Los Angeles mayor (re-election 2026)", "claims": [
+      "C1: opposes ICE / federal immigration raids in LA",
+      "C2: encampments cleared, thousands housed (Inside Safe)",
+      "C3: signed Executive Directive 1 (ED1) to speed up affordable housing",
+      "C4: fighting red tape and insurers (wildfire recovery)"]},
+    {"id": "negrete", "name": "Lana Negrete", "seat": "Santa Monica CA city council (2026 re-election)", "claims": [
+      "C1: public safety, including safety on public transit",
+      "C2: homelessness, mental health and drug addiction services",
+      "C3: housing affordability ('who is housing actually affordable for?')",
+      "C4: economic recovery / support small business"]}
+  ]
+}

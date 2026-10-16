@@ -1,0 +1,136 @@
+{
+ "people": [
+  {
+   "id": "raman",
+   "name": "Nithya Raman",
+   "sources_checked": [
+    "https://www.nithyaforla.com (parked domain, not her site)",
+    "https://cd4.lacity.gov/press-releases/council-moves-to-update-the-rent-stabilization-ordinance/ (fetched via curl after 403)",
+    "https://www.nbclosangeles.com/news/local/la-city-council-approves-lower-rent-caps-for-rso-units/3804214/",
+    "https://commercialobserver.com/2026/07/la-nithya-raman-housing-mayoral/",
+    "https://laist.com/brief/news/housing-homelessness/los-angeles-election-june-2-mayors-race-candidates-bass-raman-pratt-housing",
+    "https://ballotpedia.org/Nithya_Raman (empty fetch)",
+    "https://en.wikipedia.org/wiki/Nithya_Raman",
+    "https://spectrumlocalnews.com/ca/california/homelessness/2026/04/07/la-mayoral-candidate-nithya-raman-plan-to-address-homelessness",
+    "https://lamaterial.com/p/nithya-raman-mejia-endorsement-mayor",
+    "https://www.westsidecurrent.com/... (429 blocked)"
+   ],
+   "claims": [
+    {
+     "claim": "C1: capped rent increases for over a million Angelenos (claims credit for a rent-cap action)",
+     "status": "found_elsewhere",
+     "source_type": "official_record",
+     "url": "https://cd4.lacity.gov/press-releases/council-moves-to-update-the-rent-stabilization-ordinance/",
+     "excerpt": "Establish a ceiling of 4% or 90% of the Consumer Price Index, whichever is lower",
+     "note": "Raman's own council office press release (Council Nov 2025, 12-2). NBC LA: 'The update approved by the council establishes a 1% floor and 4% ceiling for allowable annual rent hikes.' (https://www.nbclosangeles.com/news/local/la-city-council-approves-lower-rent-caps-for-rso-units/3804214/). Wikipedia says Raman authored the motion. The 'over a million' figure was not confirmed in fetched text (a search summary said sources vary, up to 1.5 million in RSO units). Excerpts are as returned by the fetch tool; the CD4 line is a bullet, not a full sentence."
+    },
+    {
+     "claim": "C2: plan to lower the cost of housing",
+     "status": "found_elsewhere",
+     "source_type": "news",
+     "url": "https://commercialobserver.com/2026/07/la-nithya-raman-housing-mayoral/",
+     "excerpt": "A huge part of Raman's housing plan seeks to accelerate development timelines.",
+     "note": "Also: 'She proposes a shot clock that would limit delays on approvals and a variety of ways to cut red tape'. Campaign site itself not reached (nithyaforla.com is parked). Ad states 'lower the cost'; news frames plan as speed/supply, so ad is less specific on mechanism (ad_more_general)."
+    },
+    {
+     "claim": "C3: City Hall insiders, the landlord lobby and the LAPD have run city politics (critique of LAPD influence)",
+     "status": "topic_only",
+     "source_type": "news",
+     "url": "https://lamaterial.com/p/nithya-raman-mejia-endorsement-mayor",
+     "excerpt": "(Search summary, not verified on page) Raman diagnosed a chief cause of the city's failings as 'pay-to-play politics' where 'oversight has been treated as attack'",
+     "note": "Fetch of the LAMaterial page returned no direct Raman quotes. LAist (search summary only, not fetched page text) reports the LAPD union spent ~$3M against Raman and took $525,000 from Douglas Emmett; that is about the union, not her statement. No fetched source has Raman herself saying the LAPD/landlord lobby ran City Hall. Searches: 'Raman says LAPD police union landlords City Hall insiders'. Wikipedia fetched: only notes union opposed her."
+    }
+   ]
+  },
+  {
+   "id": "bass",
+   "name": "Karen Bass",
+   "sources_checked": [
+    "https://mayor.lacity.gov/news/mayor-bass-signs-executive-directive-dramatically-accelerate-and-lower-cost-affordable-housing (403 via WebFetch, OK via curl)",
+    "https://www.cbsnews.com/amp/losangeles/news/mayor-bass-regional-mayors-ice-raids-southern-california",
+    "https://laist.com/brief/news/housing-homelessness/los-angeles-election-june-2-mayors-race-candidates-bass-raman-pratt-housing",
+    "https://palisadesnews.com/mayor-basss-inside-safe-completes-140th-operation-in-palms/",
+    "https://hoodline.com/2026/04/bass-barger-press-trump-to-unclog-l-a-wildfire-rebuild-cash/",
+    "https://mayor.lacity.gov/news/mayor-bass-leads-delegation-sacramento-advocate-key-palisades-recovery-priorities-holding (403, not retried)"
+   ],
+   "claims": [
+    {
+     "claim": "C1: opposes ICE / federal immigration raids in LA",
+     "status": "found_elsewhere",
+     "source_type": "news",
+     "url": "https://www.cbsnews.com/amp/losangeles/news/mayor-bass-regional-mayors-ice-raids-southern-california",
+     "excerpt": "called for an end to ICE raids and the federalization of troops",
+     "note": "Reporter paraphrase of Bass. Direct quote on the troop deployment: 'it is a drastic and chaotic escalation and completely unnecessary.' Search results (not fetched pages) add she joined the Vasquez Perdomo v. Noem lawsuit."
+    },
+    {
+     "claim": "C2: encampments cleared, thousands housed (Inside Safe)",
+     "status": "found_elsewhere",
+     "source_type": "news",
+     "url": "https://palisadesnews.com/mayor-basss-inside-safe-completes-140th-operation-in-palms/",
+     "excerpt": "Encampment at Venice and Glendon cleared; program has housed more than 6,000 people citywide.",
+     "note": "Article dated Sept 1, 2026. Includes interim/motel placements per search summary; breakdown not given."
+    },
+    {
+     "claim": "C3: signed Executive Directive 1 (ED1) to speed up affordable housing",
+     "status": "found_elsewhere",
+     "source_type": "official_record",
+     "url": "https://mayor.lacity.gov/news/mayor-bass-signs-executive-directive-dramatically-accelerate-and-lower-cost-affordable-housing",
+     "excerpt": "Mayor Karen Bass today issued Executive Directive 1 to dramatically accelerate and lower the cost of building affordable housing and temporary housing.",
+     "note": "Mayor's office release and ED text; ED1 issued Dec 16, 2022. Approval within 60 days stated."
+    },
+    {
+     "claim": "C4: fighting red tape and insurers (wildfire recovery)",
+     "status": "found_elsewhere",
+     "source_type": "news",
+     "url": "https://hoodline.com/2026/04/bass-barger-press-trump-to-unclog-l-a-wildfire-rebuild-cash/",
+     "excerpt": "press insurance companies to pay claims and lean on big banks for mortgage relief",
+     "note": "Article (Apr 23, 2026) on Bass and Barger meeting Trump; insurer half supported. Red-tape language in the article is attributed to the White House order, not Bass. Search summaries (unfetched) report her office citing expedited permitting. Mayor's Sacramento-delegation page on insurers was 403."
+    }
+   ]
+  },
+  {
+   "id": "negrete",
+   "name": "Lana Negrete",
+   "sources_checked": [
+    "https://www.santamonica.gov/elections/2026-11-02/candidates/lana-negrete-0 (fetched; WebFetch summary + curl text)",
+    "https://santamonicalookout.com/ssm_site/the_lookout/news/News-2026/April-2026/04_28_2026_Negrete_Announces_Bid_for_Reelection.html",
+    "https://www.smdp.com/candidate-profile-lana-negrete.md",
+    "https://www.smdp.com/council-candidate-lana-negrete/ (2022 Q&A)"
+   ],
+   "claims": [
+    {
+     "claim": "C1: public safety, including safety on public transit",
+     "status": "found_elsewhere",
+     "source_type": "official_bio",
+     "url": "https://www.santamonica.gov/elections/2026-11-02/candidates/lana-negrete-0",
+     "excerpt": "I have championed common sense public safety policies, consistently supported our police officers and firefighters",
+     "note": "Her own 2026 candidate statement. Public safety position matches. Transit safety specifically: no source found (Lookout and SMDP profile do not mention it); ad adds that angle."
+    },
+    {
+     "claim": "C2: homelessness, mental health and drug addiction services",
+     "status": "found_elsewhere",
+     "source_type": "official_bio",
+     "url": "https://www.santamonica.gov/elections/2026-11-02/candidates/lana-negrete-0",
+     "excerpt": "advocated for a common sense, accountable approach to homelessness that prioritizes treatment, mental health care, recovery, and safer neighborhoods.",
+     "note": "2026 candidate statement. Lookout quote: 'I started this work on public safety, homelessness, and economic recovery'."
+    },
+    {
+     "claim": "C3: housing affordability ('who is housing actually affordable for?')",
+     "status": "topic_only",
+     "source_type": "questionnaire",
+     "url": "https://www.smdp.com/council-candidate-lana-negrete/",
+     "excerpt": "we risk losing working families due to extremely high rent prices",
+     "note": "2022 SMDP Q&A (older, from her first race). Also supports rent control there. 2026 statement and Lookout/SMDP 2026 profile do not address affordability; SMDP profile covers density downtown only. The ad's framing question is not found as a stated position."
+    },
+    {
+     "claim": "C4: economic recovery / support small business",
+     "status": "found_elsewhere",
+     "source_type": "official_bio",
+     "url": "https://www.santamonica.gov/elections/2026-11-02/candidates/lana-negrete-0",
+     "excerpt": "cut unnecessary red tape for small businesses",
+     "note": "Part of the same 2026 statement sentence on public safety. Lookout: 'I started this work on public safety, homelessness, and economic recovery'."
+    }
+   ]
+  }
+ ]
+}
