@@ -484,6 +484,68 @@ Question: What should schools do when a student uses a different name or gender 
 |---|---|---|
 | ☐ identity · ☐ clarifying · ☐ substantive | | |
 
+#### EGI decision record — 2026-10-14 (Chris Andrews): parked, not dropped
+
+**Status:** parked. Not dropped. Nothing pinned or pushed. Rev 1 stays the Season 3 draft pin until a
+revision is approved.
+
+**How we got here.** 6th pilot (2026-10-08) → draft ladder A1 v2 won (T1 records 13/17 = 76%; PR #945) →
+four county waves on A1 v2: Monroe IN, Racine WI, Utah County UT (PR #950) and LA County CA (PR #1017), plus
+the source-yield and speech study (PR #1010) and the paid-ads / BallotReady count (PR #1013). Result:
+**33 of 1,273 people seated** (29 after the Q3 ruling below): r2 = 23 (CA AB 1955),
+r4 = 4 (IN HEA 1608, flagged), r5 = 6 (WI AB 103). **Every seat is a state legislator's roll-call vote.**
+Rungs 1 and 3 hold no seat in any county. Own words, school boards (0 of ~244), local officials and
+challengers seated nobody: statements show a side but never choose a rung (#1010: 77 of 149 statements are
+"side, no rule").
+
+**Ruled (2026-10-13/14):**
+1. **Rate measure — all topics.** Judge a topic's seat rate over the levels that hold a lever and have acted,
+   not over everyone asked. EGI: 29 of 78 state legislators (37%) against 29 of 1,273 everyone (2.3%).
+2. **Lens rule — all topics.** A topic goes into a level's lens only if people at that level can be seated on
+   it. **EGI leaves the Education Lens** (`inform.compass_lens_topics`; CompassV2 `src/lib/lenses.js`):
+   school boards seated 0, mostly because state law preempts the board (IN HEA 1608, UT SB 100, CA AB 1955).
+   The lens runs with 7 topics until a tested replacement exists; 8 per lens is a target, not a rule.
+
+**Ruled 2026-10-14 (items 3-4):**
+3. **EGI federal evidence basis: `own-words` → `record`.** CA_0302 set federal own-words as a conservative
+   default with a review owed; Congress holds a lever here (H.R. 5, 2023; H.R. 2616, 2026, single-subject,
+   217-198). Needs a `CA_` migration on `inform.compass_topic_roles` (not written).
+4. **Rung 5 widened (A1 v2.1, clarifying):** "Require parental permission before staff use **or record** a
+   different name or pronouns" (records consent, Gap A: UT SB 100, H.R. 5, H.R. 2616). Widening check: AB 103
+   still fits 5; AB 1955 still fits 2 and not the new text; HEA 1608 is direction-only (item 7); no seat moves,
+   nothing is pushed. Without item 4, item 3 adds about one seat (Banks, S. 2702); with it, about 6 more in the
+   four counties (H.R. 2616 Ayes), about 217 nationally, plus the Utah senators on SB 100.
+   **Condition before any coding:** the EGI annex states that consent before a change to records or forms
+   seats rung 5, and that a record-**access**-only law does not. Known cost: a records-only voter sits on the
+   same rung as a use-consent voter; L7 accepts "or" as one act, and the voter sees the source.
+   Rejected alternative: records consent as a new rung 3 (order against "notify" is a T6 risk).
+
+**Lean (not ruled):**
+5. Keep rungs 1 and 3 as voter positions. Voters answer on the same ladder; their blanks for officials are
+   correct. Rung 1 is probably a sampling gap (no rung-1 state in the sample; not verified). Rung 3 ("tell
+   when asked") is close to the FERPA baseline, so few bodies legislate it.
+
+**Ruled 2026-10-14 (amendments; Q3 and Q4 delegated by Chris Andrews to the session's judgment):**
+6. **Amendments — all topics.** An amendment the person wrote, sponsored or co-sponsored is evidence of its
+   text, failed or adopted, in the same way as a bill (E1: co-sponsorship seats a chair alone). Not yet in the
+   codebook; owed for codebook 0.5. EGI effect: none today. Yoder's IN HB 1608 Senate Amendment #11 (a student
+   may withdraw the request) is Gap C and fits no rung.
+7. **Single-subject test (V4.1), stated:** a bill is multi-subject when any operative part would be evidence
+   for a **different compass topic**.
+   - **Q3 — HEA 1608: multi-subject.** Its K-3 human-sexuality instruction ban is `education-curriculum`
+     evidence. The four Indiana rung-4 rows (Heaton, Hall, Mayfield, Koch) are **direction-only**. This also
+     matches how the same coder run read Pierce's No on the same act. EGI seats: **29**.
+   - **Q4 — AB 1955: single-subject.** Ed Code 217 (resources for parents of LGBTQ pupils), 220.1 (no
+     retaliation against staff) and 220.3/220.5 (disclosure) all fall inside this topic; no part is evidence
+     for another topic. The 23 rung-2 seats stand.
+
+**Open:** none of Q2-Q4 remain (Q2 is replaced by item 3). Item 5 is a leaning only.
+
+**Follow-ups (not started):** a `CA_` migration removing EGI from `inform.compass_lens_topics`, plus the CompassV2
+fallback list and its 8-topic test; a `CA_` migration for the federal role (item 3); write A1 v2.1 as a revision and the annex line (item 4) — each step needs Chris's approval; pick the next pilot
+topic from this worksheet. A replacement school-board topic must pass the lens rule first (boards cast named
+roll-call votes on it), e.g. through compass-topic-builder.
+
 ### `education-library-books` — School Library Books and Instructional Materials · ⚠ evidence of a problem
 
 Question: How should schools handle challenges to books in libraries and classrooms?
