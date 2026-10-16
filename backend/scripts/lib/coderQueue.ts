@@ -118,6 +118,8 @@ export interface CoderReviewRow {
   evidence_tier: EvidenceTier | null;
   /** Sources with no publishable window. Approval will not list them unless a person adds the URL. */
   unpublishable: string[];
+  /** Reviewer-only note: on a needs-source row, the coder's chair and its source requests. Never published. */
+  notes: string | null;
 }
 
 /**
@@ -149,5 +151,9 @@ export function buildCoderReviewRow(i: {
     codebook_version: i.codebookVersion,
     evidence_tier: i.report.evidence_tier,
     unpublishable: evidence.filter((e) => e.snippets.length === 0).map((e) => e.url),
+    notes: reasons.includes('needs-source') && i.consensusRow.needs_source.length
+      ? `Coder chair ${o.value}; the coder asked for more sources: `
+        + i.consensusRow.needs_source.map((q, n) => `(${n + 1}) ${q}`).join(' ')
+      : null,
   };
 }

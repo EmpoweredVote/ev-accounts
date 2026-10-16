@@ -126,20 +126,20 @@ try {
       `INSERT INTO inform.stance_research_review
          (batch_id, politician_id, full_name_raw, topic_id, topic_key, proposed_value, proposed_reasoning, evidence,
           verified_source_count, threshold, status, re_research_attempted, season_id, served_revision_id,
-          queue_reasons, evidence_type, review_mode, codebook_version, unanimous, consensus_value, office_id, evidence_tier)
+          queue_reasons, evidence_type, review_mode, codebook_version, unanimous, consensus_value, office_id, evidence_tier, notes)
        VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9, 1, 'pending', false, $10, $11,
-               $12::text[], $13, 'standard', $14, true, $15, $16, $17)
+               $12::text[], $13, 'standard', $14, true, $15, $16, $17, $18)
        ON CONFLICT (batch_id, COALESCE(politician_id::text, full_name_raw), topic_key)
        DO UPDATE SET proposed_value = EXCLUDED.proposed_value, proposed_reasoning = EXCLUDED.proposed_reasoning,
          evidence = EXCLUDED.evidence, verified_source_count = EXCLUDED.verified_source_count,
          queue_reasons = EXCLUDED.queue_reasons, evidence_type = EXCLUDED.evidence_type,
          codebook_version = EXCLUDED.codebook_version, consensus_value = EXCLUDED.consensus_value,
-         evidence_tier = EXCLUDED.evidence_tier, served_revision_id = EXCLUDED.served_revision_id
+         evidence_tier = EXCLUDED.evidence_tier, served_revision_id = EXCLUDED.served_revision_id, notes = EXCLUDED.notes
        WHERE inform.stance_research_review.status IN ('pending', 'unresolved_politician')
        RETURNING id`,
       [q.batch_id, q.politician_id, q.full_name_raw, q.topic_id, q.topic_key, q.proposed_value, q.proposed_reasoning,
         JSON.stringify(q.evidence), q.verified_source_count, q.season_id, q.served_revision_id, q.queue_reasons,
-        q.evidence_type, q.codebook_version, q.consensus_value, q.office_id, q.evidence_tier]);
+        q.evidence_type, q.codebook_version, q.consensus_value, q.office_id, q.evidence_tier, q.notes]);
     if (res.rowCount === 0) { decided++; continue; }
     await client.query(
       `UPDATE inform.stance_coder_labels SET review_id = $1
