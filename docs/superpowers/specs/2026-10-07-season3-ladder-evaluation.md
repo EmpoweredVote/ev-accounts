@@ -597,6 +597,40 @@ Question: How should schools set spending levels and decide whether to raise mor
 |---|---|---|
 | ☐ identity · ☐ clarifying · ☐ substantive | | |
 
+#### School-budget decision record — 2026-10-16 (Chris Andrews): off for Season 3, parked, not dropped
+
+**Status:** parked. Not dropped. Nothing pinned, pushed or migrated. No politician has ever been seated on this
+topic (0 answers in any season), so the decision costs 0 seats; the 1 voter answer gets the usual re-ask.
+
+**How we got here.** Education Lens review (2026-10-15) → Stage 0 census: PASS, 68 seatable records (60 school-board
+budget and tax-rate votes at 8 boards, 8 single-subject state school-finance laws) → Stage 1 froze a test set of
+181 items / 102 people (workspace `.planning/research/s3-pilot-school-budget/stage1/FROZEN.md`; all 7 freeze
+judgment calls accepted). No draft ladder was written.
+
+**Why it is off.** The records pass the count gate but show almost no disagreement:
+- **167 of 176 school acts are Yes.** Boards adopt the annual budget unanimously almost every year, and state law
+  requires them to adopt one, so a Yes is close to procedural. The annex already rules that a No proves nothing.
+- A Yes seats a rung only when the passage shows both the year-over-year change and the rate change; most boards'
+  documents show neither (General Fund only, percent changes only, or totals not found).
+- **The few splits are about the tax rate, not the budget:** Escambia FY26 (millage +0.512, 15.4% above
+  rolled-back), Keller FY26 tax-rate resolution 5-2, Alpine FY26 rate 5-2; Katy's 2022 voter tax-rate election
+  order is the same kind of act.
+- **What the money buys matters more than the total, but it is not one spectrum.** Teachers, class size,
+  administration and buildings are separate choices. Rung 4 (administration against classroom) already shows the
+  problem: it is about mix, not level, and does not sit between rungs 3 and 5.
+
+**Kept on file (option B, not ruled):** re-scope as a local school tax topic — roughly "Should your district raise
+local school taxes to fund schools?" — with rungs from putting a tax increase to voters, through raising the rate
+above the rolled-back / no-new-revenue rate, holding it, to cutting it. That is where boards actually split. The
+frozen Stage 1 set already holds the rate votes, Florida's percent-above-rolled-back figures and the state laws' tax
+provisions, so a draft could be tested without new collection. It is a new question (a material rewrite, 0 seats to
+re-audit), so it must pass its own Stage 0 census first, and its overlap with the general taxes topic must be checked.
+Option C (separate spending-priority topics) is a later-season project.
+
+**Follow-ups (not started; each needs Chris's approval):** a `CA_` migration taking `education-school-budget` out
+of Season 3 and out of the Education Lens (`inform.compass_lens_topics`, plus the CompassV2 `src/lib/lenses.js`
+fallback); the lens rule (2026-10-14) lets a lens run below 8 topics. Next Education pilot: `education-school-police`.
+
 ### `education-school-police` — Police in Schools · ⚠ evidence of a problem
 
 Question: What role should police officers play in schools?
