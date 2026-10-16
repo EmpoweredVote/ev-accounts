@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "a7983eb6-bae0-4269-856b-f4554fb5ce29",
+      "office_id": "482bbeac-5c15-4097-8c1d-5eee8d07a5e9",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "4e22b979-0dc1-5e83-adec-40ac7a75b0ac",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": "a public school that receives funds under such Act shall obtain parental consent before changing a covered student's-- (1) gender markers, pronouns, or preferred name on any school form",
+          "note": "Parental consent for changes on school forms is narrower than the rung 5 object (staff use of a name or pronouns), the bill also carries a separate ESEA-funds section, and as a federal record at a no-lever level it cannot seat a chair.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "de75ea6d-3f0a-5001-ba01-e781bb24ee7f",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": null,
+          "note": "Roll call 184 shows Maloy voting Aye on passage; a record at a level with no lever on this topic cannot seat a chair (own words only).",
+          "record_kind": "vote",
+          "actor_quote": "Malliotakis Maloy Mann",
+          "tally_quote": "TOTALS 217 198 15"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only sources are Maloy's Aye vote on H.R. 2616, which requires parental consent before changing a student's \"gender markers, pronouns, or preferred name on any school form\"; at the federal level the evidence basis is own words only, so this record cannot seat a chair. Even on its text it shows only a parental-consent direction and does not match the rung \"Require parental permission before staff use a different name or pronouns\" clause for clause. No own-words passage is in the sources.",
+      "needs_source": [
+        "Celeste Maloy's own words (statement, floor speech, explanation of vote, or questionnaire answer) on whether schools must tell parents or obtain their permission when a student uses a different name or gender identity"
+      ],
+      "quotes": []
+    }
+  ]
+}

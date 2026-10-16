@@ -1,0 +1,50 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "dd75cf82-f0b2-4820-9356-28ccf0ee58f9",
+      "office_id": "16336c50-9fa9-4ef8-b8d9-061c0b898454",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "dcf9d873-a9ed-5c72-85d3-361223fc39f1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "S.B. 100 (2023 General Session)",
+          "provision_quote": null,
+          "note": "Senate concurrence/final passage vote, Grover Yea; 6 of 29 voted No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Grover, K.",
+          "tally_quote": "Yeas 22 Nays 6 Abs 1"
+        },
+        {
+          "snapshot_id": "99b72a5b-8334-5bbd-adaf-47fa9c49bddf",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "S.B. 100 (2023 General Session)",
+          "provision_quote": "without written parental consent make changes to a student's education record",
+          "note": "Operative text guarantees parental access to the education record and requires parental consent to change the record's gender identity; it neither requires proactive notification (rung 4) nor governs staff use of names or pronouns (rung 5's object), so it shows only the parental-involvement side.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Grover voted Yea on S.B. 100 (2023), which bars schools from shielding a student's education record from parents and forbids changing the record's gender identity \"without written parental consent\". That puts him on the parental side, but the bill's object is the education record: it does not \"Require schools to notify parents\" nor \"Require parental permission before staff use a different name or pronouns\", and its consent clause goes beyond merely telling parents \"when parents ask\", so no single rung is matched clause for clause.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

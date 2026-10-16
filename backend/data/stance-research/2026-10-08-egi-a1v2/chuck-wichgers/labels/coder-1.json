@@ -1,0 +1,131 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "3db74c79-d91c-4bfb-9d1e-7cfc022cde25",
+      "office_id": "4ea2a923-2cfc-4815-9038-694c413c6b82",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "ec68cc55-cd01-5689-9169-bdc4b896c6be",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": "During school hours, school staff may not refer to a pupil who is a minor by 8 using a name or pronouns that do not align with the pupil’s biological sex without 9 written authorization from the pupil’s parent or legal guardian.",
+          "note": "Single-subject bill whose operative s. 118.1255 (4) requires parental written authorization before staff use a different name or pronouns; text as introduced.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "997faf80-8cae-5cd5-9b2c-0d40a1125994",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-20",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": null,
+          "note": "Assembly final passage roll call; Wichgers voted Aye on a divided 50-43 vote.",
+          "record_kind": "vote",
+          "actor_quote": "Y WICHGERS R",
+          "tally_quote": "AYES - 50 NAYS - 43"
+        },
+        {
+          "snapshot_id": "65394afe-1b69-5ec5-b95e-729d7b4588c7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-11",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": null,
+          "note": "Bill history shows Wichgers added as coauthor before Assembly Amendment 1 was adopted, so his sponsorship evidences the bill as filed.",
+          "record_kind": "sponsor",
+          "actor_quote": "Representative Wichgers added as a coauthor",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d7528d56-80d6-5adc-913b-bebbcc42de06",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": "The right to determine the names and pronouns used for the child while at",
+          "note": "Parental-rights bill covering religion, medical care, surveillance systems and more; the names clause declares a parental right but states no permission mechanism for staff.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9e709df5-f8c3-5900-b40b-250663dcda5c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-22",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": null,
+          "note": "Aye on final passage of a multi-subject parental-rights bill; shows direction only.",
+          "record_kind": "vote",
+          "actor_quote": "Y WICHGERS R",
+          "tally_quote": "AYES - 60 NAYS - 34"
+        },
+        {
+          "snapshot_id": "0d6da55d-5f71-5e56-a1ef-f8b1434b1fad",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-18",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": "The right to determine the names and pronouns used for the child while at",
+          "note": "Coauthored multi-subject parental-rights bill; the names clause declares a right without a staff-permission mechanism.",
+          "record_kind": "sponsor",
+          "actor_quote": "Brandtjen , Wichgers , Gustafson",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "fb42a0aa-d3f2-5d7d-bc0c-1c96683ccd8a",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-01-18",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": null,
+          "note": "Aye on final passage of a multi-subject parental-rights bill; shows direction only.",
+          "record_kind": "vote",
+          "actor_quote": "Y WICHGERS R",
+          "tally_quote": "AYES - 62 NAYS - 35"
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ec68cc55-cd01-5689-9169-bdc4b896c6be",
+        "997faf80-8cae-5cd5-9b2c-0d40a1125994",
+        "65394afe-1b69-5ec5-b95e-729d7b4588c7"
+      ],
+      "reasoning": "Wichgers coauthored and voted Aye (50-43) on AB 103 (2025), a single-subject bill whose operative section bars staff from using a name or pronouns not aligned with a minor's biological sex \"without written authorization from the pupil’s parent or legal guardian\". That matches the rung \"Require parental permission before staff use a different name or pronouns\" and goes beyond mere notification. His votes for the multi-subject parental-rights bills AB 963 and AB 510 point the same way but do not seat the chair on their own.",
+      "needs_source": [
+        "Assembly Amendment 1 to AB 103 (2025) or the enrolled text, to confirm s. 118.1255 (4) (b) survived the amendment Wichgers voted on"
+      ],
+      "quotes": []
+    }
+  ]
+}

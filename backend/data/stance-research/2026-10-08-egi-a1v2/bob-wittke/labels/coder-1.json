@@ -1,0 +1,113 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "7c8a7cd3-ac60-4292-81c8-11f1946fb9e0",
+      "office_id": "ed8e18e6-571c-420b-bef7-082fc5c45771",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "dada4ce1-40f2-5b2a-9698-e0f30b10d9e9",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-20",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": null,
+          "note": "Assembly passage roll call on AB 103, 50-43; Wittke voted Aye.",
+          "record_kind": "vote",
+          "actor_quote": "Y WITTKE R",
+          "tally_quote": "AYES - 50 NAYS - 43"
+        },
+        {
+          "snapshot_id": "7722e9f9-3116-5127-8548-436f3c548c87",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": "During school hours, school staff may not refer to a pupil who is a minor by 8 using a name or pronouns that do not align with the pupil’s biological sex without 9 written authorization from the pupil’s parent or legal guardian.",
+          "note": "Single-subject bill whose operative section requires written parental authorization before staff use a different name or pronouns.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "65666d63-b0c5-53b8-b387-d0f2b49736ef",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-01-18",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": null,
+          "note": "Assembly passage roll call on AB 510, authored by Wittke, 62-35; Wittke voted Aye.",
+          "record_kind": "vote",
+          "actor_quote": "Y WITTKE R",
+          "tally_quote": "AYES - 62 NAYS - 35"
+        },
+        {
+          "snapshot_id": "564e26bb-1bb0-5335-9ce1-e969abb51bfb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-18",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 16 school.",
+          "note": "Wittke is first-named author; a declared parental right to determine names and pronouns among many enumerated rights, with no stated permission requirement on staff, shows the parental side only.",
+          "record_kind": "author",
+          "actor_quote": "Introduced by Representatives Wittke , Gundrum",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "8cfc22c3-b7dd-5e63-bbba-d8a2282332f7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-22",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": null,
+          "note": "Assembly passage roll call on AB 963, 60-34; Wittke voted Aye.",
+          "record_kind": "vote",
+          "actor_quote": "Y WITTKE R",
+          "tally_quote": "AYES - 60 NAYS - 34"
+        },
+        {
+          "snapshot_id": "9f094ffc-e6a0-5796-974b-ff20490f9d77",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 19 school.",
+          "note": "Wittke co-sponsored; the same declared right appears among many enumerated parental rights, showing the parental side only.",
+          "record_kind": "sponsor",
+          "actor_quote": "Introduced by Representatives Gundrum , Thiesfeldt , Wittke",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "dada4ce1-40f2-5b2a-9698-e0f30b10d9e9",
+        "7722e9f9-3116-5127-8548-436f3c548c87"
+      ],
+      "reasoning": "Wittke voted Aye on AB 103 (2025), a single-subject bill passed 50-43 whose operative section bars staff from using a name or pronouns not aligned with biological sex \"without written authorization from the pupil’s parent or legal guardian\", matching the rung \"Require parental permission before staff use a different name or pronouns.\" His authored AB 510 and co-sponsored AB 963 declare a parental right to determine names and pronouns at school, consistent in direction but not chair-shaped on their own.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

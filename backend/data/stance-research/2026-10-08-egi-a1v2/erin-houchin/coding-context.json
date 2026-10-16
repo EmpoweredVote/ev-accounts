@@ -1,0 +1,55 @@
+{
+  "batch_id": "erin-houchin",
+  "seat": {
+    "politician_id": "68568faf-1e0f-4ca2-89d9-bda625665712",
+    "full_name": "Erin Houchin",
+    "level": "federal",
+    "mode": "seated",
+    "office_id": "b343becb-af7d-4a19-a6a1-2e5df210f344",
+    "office_title": "U.S. House of Representatives - Indiana 9th Congressional District",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2023-01-03",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "topic_key": "egi-draft-a1v2",
+      "served_revision_id": "draft-a1v2-pr945",
+      "question_text": "When a student wants to use a different name or gender identity at school, who decides whether parents are told?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require staff to keep a student's gender identity from parents unless the student consents."
+        },
+        {
+          "value": 2,
+          "text": "Forbid rules that require schools to tell parents."
+        },
+        {
+          "value": 3,
+          "text": "Require schools to tell parents when parents ask."
+        },
+        {
+          "value": 4,
+          "text": "Require schools to notify parents."
+        },
+        {
+          "value": 5,
+          "text": "Require parental permission before staff use a different name or pronouns."
+        }
+      ],
+      "own_words_levels": [
+        "federal",
+        "local"
+      ],
+      "annexMd": null
+    }
+  ]
+}

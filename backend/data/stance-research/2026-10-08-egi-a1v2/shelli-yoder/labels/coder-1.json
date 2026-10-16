@@ -1,0 +1,115 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "d83e8a10-f31b-5f3d-837a-f48f1d1d61c4",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-10",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Nay on Senate third reading of a bill that both bans K-3 human-sexuality instruction and mandates parental notification; a No on a multi-subject bill proves nothing.",
+          "record_kind": "vote",
+          "actor_quote": "N AY - 12 Alting Breaux Melton Qaddoura Bassler Ford J.D. Niezgodski Taylor Becker Hunley Pol Yoder",
+          "tally_quote": "Yea 37 Education matters. Nay 12"
+        },
+        {
+          "snapshot_id": "1d8424dc-73b2-51e8-8e3d-6422e522fece",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-07",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "Sec. 2. (a) A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's:",
+          "note": "Bill text as voted: the notification mandate (rung 4's content) sits beside an unrelated instruction ban, so the No vote cannot be tied to it.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "9d2c848b-190b-5405-9f45-d854cf07a495",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 Amendment #11 (2023)",
+          "provision_quote": "provide the student an opportunity to withdraw the",
+          "note": "Her amendment keeps notification for requests that stand but lets the student withdraw to avoid it (and then bars use of the new name); it softens the mandate without matching every clause of any rung.",
+          "record_kind": "author",
+          "actor_quote": "Senator YODER",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "0ad8365e-8cfb-5971-b5bb-17d496e8a045",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 Amendment #11 (2023)",
+          "provision_quote": null,
+          "note": "Yea on her own failed amendment on the specific notification provision; shows a lean toward student consent but not a rung.",
+          "record_kind": "vote",
+          "actor_quote": "Randolph Yoder",
+          "tally_quote": "Yea 14 Education matters. Nay 34"
+        },
+        {
+          "snapshot_id": "d65d53ac-c979-593c-ab55-b1c305ca2f6b",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2023-04-10",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "Press statement opposing the state notification mandate and favoring district policies; against rung 4 but names no rung's clause (it neither requires secrecy nor forbids notification rules).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Her Nay on HB 1608 is a No on a multi-subject bill, and her failed Amendment #11 (letting a student \"withdraw the\" request to avoid parental notice) and her statement that districts' own name and pronoun policies \"have worked well\" lean against a state mandate to notify parents. None of these matches every clause of \"Require staff to keep a student's gender identity from parents unless the student consents\" or \"Forbid rules that require schools to tell parents\", so only a side is shown.",
+      "needs_source": [
+        "Senate Journal, April 6, 2023: Yoder's floor explanation of Amendment #11 to EHB 1608",
+        "Any first-party Yoder statement or questionnaire answer on whether schools should tell parents about a student's name or pronoun change"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "d65d53ac-c979-593c-ab55-b1c305ca2f6b",
+          "text": "School districts have long set their own policies regarding curricula and name and pronoun changes, and these policies have worked well for the vast majority of families: the last thing we need is more nannying and interference from inexpert legislators.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "d65d53ac-c979-593c-ab55-b1c305ca2f6b",
+          "text": "All this bill does is guarantee that more kids across Indiana, LGBTQ+ or not, will be put in danger of losing homes and support without their consent or awareness.",
+          "v7_tier": "none",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["not-forward"]
+        }
+      ]
+    }
+  ]
+}

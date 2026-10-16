@@ -1,0 +1,115 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "cb87ddbb-5a83-45b7-b67a-789e63f0e58b",
+      "office_id": "b9f461c6-2ce1-4acf-923b-f9a6c351937d",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "39422a7a-4e66-5c8f-addb-a1d6d1d3fffc",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted words oppose schools concealing a child's gender transition from parents and say parents have the ultimate right to decide, which shows the parental side but does not separate notification (rung 4) from prior permission for staff name/pronoun use (rung 5).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4fe0252f-a9de-5c54-b53f-f426bb3cbc40",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": null,
+          "note": "Aye on passage of H.R. 2616; a record at a no-lever level cannot seat a chair here.",
+          "record_kind": "vote",
+          "actor_quote": "Onder Owens Palmer",
+          "tally_quote": "TOTALS 217 198 15"
+        },
+        {
+          "snapshot_id": "f372f406-f732-57a7-8926-f4745904c0aa",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": "shall obtain parental consent before changing a covered student's-- (1) gender markers, pronouns, or preferred name on any school form",
+          "note": "Consent covers school forms, not staff use of names or pronouns, and the level holds no lever, so it shows direction only.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "2d7cf34c-792e-5075-89c9-30c3e802ac16",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": null,
+          "note": "Aye on passage of the multi-subject Parents Bill of Rights Act; not chair-shaped and no lever at this level.",
+          "record_kind": "vote",
+          "actor_quote": "Ogles Owens Pence",
+          "tally_quote": "TOTALS 213 208 14"
+        },
+        {
+          "snapshot_id": "e059f503-67ed-5d22-b62d-df0edef96de2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-24",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 5 (118th)",
+          "provision_quote": "shall be required to obtain parental consent before-- (1) changing a minor child's gender markers, pronouns, or preferred name on any school form",
+          "note": "Title IV is one of many unrelated titles in an omnibus parents' rights bill.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "At the federal level only own words count. Owens says a district that \"conceals a child’s gender transition from their parents will lose federal funding\" and that parents have \"the ultimate right to make decisions\", which places him on the parental side but does not establish either \"Require schools to notify parents\" or \"Require parental permission before staff use a different name or pronouns\"; his votes on H.R. 2616 and H.R. 5 are records that cannot seat a chair at this level, and their consent clause covers school forms rather than staff use.",
+      "needs_source": [
+        "Owens floor remarks on H.R. 2616 (May 2026), linked from his press release",
+        "Owens' own words (questionnaire, issue page, or interview) on whether staff need parental permission before using a different name or pronouns"
+      ],
+      "quotes": [
+        {
+          "snapshot_id": "39422a7a-4e66-5c8f-addb-a1d6d1d3fffc",
+          "text": "any district that promotes these ideologies in the classroom or conceals a child’s gender transition from their parents will lose federal funding",
+          "v7_tier": "lever",
+          "v7_flag": "lever-unclear",
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "39422a7a-4e66-5c8f-addb-a1d6d1d3fffc",
+          "text": "Parents, not school administrators, have the ultimate right to make decisions about their children’s upbringing.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

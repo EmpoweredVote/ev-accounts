@@ -1,0 +1,34 @@
+{
+  "batch_id": "a-cory-maloy",
+  "sources": [
+    {
+      "url": "https://le.utah.gov/~2023/bills/sbillenr/SB0100.pdf",
+      "source_kind": "public-record",
+      "politician_id": "a42272fb-f41b-4a64-86d5-a0a0eeec5b82",
+      "office_id": "74ee0979-3885-4d52-a79c-f206b6ba22a0",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "SB 100"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ut-2023-SB0100-enrolled.txt"
+    },
+    {
+      "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=210&house=H",
+      "source_kind": "public-record",
+      "politician_id": "a42272fb-f41b-4a64-86d5-a0a0eeec5b82",
+      "office_id": "74ee0979-3885-4d52-a79c-f206b6ba22a0",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "SB 100"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

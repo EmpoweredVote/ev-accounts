@@ -1,0 +1,77 @@
+{
+  "batch_id": "shelli-yoder",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.04.ENGS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.04.ENGS.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.345_S.pdf",
+      "source_kind": "public-record",
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.345_S.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/amendments/HB1608.03.COMS.AMS011.pdf",
+      "source_kind": "public-record",
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608 Amendment #11"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.03.COMS.AMS011.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.335_S.pdf",
+      "source_kind": "public-record",
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.335_S.txt"
+    },
+    {
+      "url": "https://indianasenatedemocrats.org/yoder-denounces-senate-passage-of-hb-1608/",
+      "source_kind": "own-site",
+      "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+      "office_id": "09c567c5-b19f-41d4-b113-5982ad0df4e1",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "77261f08-6172-4a58-a5d6-446c2b84a50e",
+      "office_id": "445584b2-cff8-4040-941f-9c6df1e53037",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "f46b6e63-1ce6-5af0-b219-5edf0e7fb74b",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "A school shall notify in writing at least one (1) parent of a student, if the student is an unemancipated minor, of a request made by the student to change the student's: (1) name; or (2) pronoun, title, or word to identify the student.",
+          "note": "Enrolled text he voted to concur in: the parental-notification chapter requires notice regardless of a parental request and contains no permission-before-use requirement, so it matches the notify rung and excludes the ask-first and permission rungs; the bill's other part (pre-K–3 instruction) is a separate chapter, not an omnibus.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "7a38232b-cc05-56b1-9297-fabdc65518b2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-24",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Roll Call 489, motion to concur in the enrolled version: Heaton is in the Yea list; 29 Nay, not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Y EA - 63 Abbott Goodrich Lyness Pressel Aylesworth Greene Manning Schaibley Baird Haggard May Slager Barrett Hall Mayfield Smaltz Behning Heaton",
+          "tally_quote": "Yea 63 Education matters Nay 29 Motion to Concur"
+        },
+        {
+          "snapshot_id": "3dd53e64-2881-508b-a360-a1a218fad433",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-20",
+          "v4_shape": "chair-shaped",
+          "v5_time": "superseded-by-later",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "An employee or a staff member of a school may only use a name, pronoun, title, or other word to identify a student that is inconsistent with the student's sex if:",
+          "note": "Committee-amended version he remained co-author of required a parent's written request before staff use a different name (permission rung) plus notification; superseded by his later concurrence in the enrolled version that dropped the permission requirement.",
+          "record_kind": "author",
+          "actor_quote": "Davis, Teshka, Jeter, Heaton",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d90ac7b3-059d-5fd4-8978-ccc1d1787457",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-23",
+          "v4_shape": "direction-only",
+          "v5_time": "superseded-by-later",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Third-reading Yea; the engrossed text actually voted on is not in the sources, and the vote is superseded by the later concurrence vote on the enrolled text.",
+          "record_kind": "vote",
+          "actor_quote": "Y EA - 65 Aylesworth Haggard Mayfield Slager Baird Hall McGuire Smaltz Barrett Heaton",
+          "tally_quote": "Yea 65 Human sexuality instruction Nay 29"
+        },
+        {
+          "snapshot_id": "11a7491b-c191-5ee5-b0ae-c2082728453c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "adjacent",
+          "v3_class": "record",
+          "date": "2023-01-19",
+          "v4_shape": "off-axis",
+          "v5_time": "superseded-by-later",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Introduced version he co-authored only restricted K–3 instruction on gender identity and said nothing about parental notification.",
+          "record_kind": "author",
+          "actor_quote": "Davis, Teshka, Jeter, Heaton",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "f46b6e63-1ce6-5af0-b219-5edf0e7fb74b",
+        "7a38232b-cc05-56b1-9297-fabdc65518b2"
+      ],
+      "reasoning": "Heaton, a co-author of HB 1608 (2023), voted Yea (63–29) to concur in the enrolled act, whose operative section says \"A school shall notify in writing at least one (1) parent of a student\" of a student's request to change name or pronoun. That matches \"Require schools to notify parents\" and excludes notice only \"when parents ask\" and \"parental permission before staff use a different name or pronouns\"; the earlier committee version with a permission requirement is superseded by this later act.",
+      "needs_source": [
+        "Indiana engrossed House Bill 1608 (2023) text voted on at third reading, Roll Call 220"
+      ],
+      "quotes": []
+    }
+  ]
+}
