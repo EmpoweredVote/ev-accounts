@@ -106,9 +106,13 @@ year this section does not cover.
   with law enforcement agencies or security agencies to establish or assign one or more safe-school
   officers at each school facility within the district, including charter schools." The same text adds:
   "The school district may implement any combination of the options in subsections (1)-(4)".
-- **In force:** all votes 2023-2026 (the 2025 statutes carry it; section history: s. 6, ch. 2018-3,
-  as amended through s. 5, ch. 2025-58). The 2018 session law that added the duty is not re-read
-  here; the statutes site gives no effective dates. _(date of first effect not verified)_
+- **Effective:** 2018-03-09. The "safe-school officers at each school facility" duty was added by
+  s. 26, ch. 2018-3 (CS/SB 7026), approved by the Governor and filed 2018-03-09; s. 52 of the act says it
+  "shall take effect upon becoming a law" (no separate date for s. 1006.12). The 2018 wording was
+  narrower ("partner with law enforcement agencies"); "or security agencies" and the charter-school text
+  came later.
+- **In force:** all votes 2023-2026 (the 2025 statutes carry it; section history runs through
+  s. 5, ch. 2025-58).
 - **Waiver:** none in the text. The four options are the flexibility.
 - **URL:** https://www.flsenate.gov/Laws/Statutes/2025/1006.12
 
