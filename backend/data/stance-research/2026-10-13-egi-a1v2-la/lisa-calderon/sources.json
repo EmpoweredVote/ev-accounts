@@ -1,0 +1,35 @@
+{
+  "batch_id": "lisa-calderon",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "0afa998d-94e9-4af4-ba00-256c38869398",
+      "office_id": "5badb726-42ee-4919-8574-884cc4e4e3e1",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "0afa998d-94e9-4af4-ba00-256c38869398",
+      "office_id": "5badb726-42ee-4919-8574-884cc4e4e3e1",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-assembly-concurrence-2024-06-27.txt"
+    }
+  ]
+}

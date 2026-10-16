@@ -1,0 +1,35 @@
+{
+  "batch_id": "jesse-gabriel",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "f173ce9a-6941-4570-bd3f-97bc1157beaf",
+      "office_id": "2d462db5-4c4d-4d52-90bb-572851612368",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-assembly-concurrence-2024-06-27.txt"
+    }
+  ]
+}

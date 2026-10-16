@@ -1,0 +1,55 @@
+{
+  "batch_id": "thomas-umberg",
+  "seat": {
+    "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+    "full_name": "Thomas Umberg",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2018-12-03",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "topic_key": "egi-draft-a1v2",
+      "served_revision_id": "draft-a1v2-pr945",
+      "question_text": "When a student wants to use a different name or gender identity at school, who decides whether parents are told?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require staff to keep a student's gender identity from parents unless the student consents."
+        },
+        {
+          "value": 2,
+          "text": "Forbid rules that require schools to tell parents."
+        },
+        {
+          "value": 3,
+          "text": "Require schools to tell parents when parents ask."
+        },
+        {
+          "value": 4,
+          "text": "Require schools to notify parents."
+        },
+        {
+          "value": 5,
+          "text": "Require parental permission before staff use a different name or pronouns."
+        }
+      ],
+      "own_words_levels": [
+        "federal",
+        "local"
+      ],
+      "annexMd": null
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "e8bdd8a7-a1b2-43e3-afd4-df975980819e",
+      "office_id": "54a4ad72-bcd1-4fe1-b684-bfa7e72152fc",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "422630e4-2371-5e5b-a6e1-fc7ddd18cb81",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-27",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": null,
+          "note": "No on Assembly concurrence (final passage of the chaptered text), 61-16; a No on a single-subject bill rules out its rung but does not choose among the rungs on the other side.",
+          "record_kind": "vote",
+          "actor_quote": "Noes (16): Alanis, Chen, Davies, Dixon, Essayli, Flora, Gallagher, Hoover, Jim Patterson, Joe Patterson, Lackey",
+          "tally_quote": "Result: PASS, 61-16"
+        },
+        {
+          "snapshot_id": "8317d985-f720-5db9-9c0a-6a47a492ee80",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-07-15",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": "shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent, unless otherwise required by state or federal law.",
+          "note": "Chaptered text voted on at concurrence; operative Section 220.5 forbids rules requiring disclosure (rung 2), so his No shows only opposition to that rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Lackey voted No on AB 1955 (2023-2024), whose operative section bars any policy that would require staff to disclose a pupil's gender identity without consent, matching the rung \"Forbid rules that require schools to tell parents.\" A No on that bill places him on the notification side but does not separate \"Require schools to tell parents when parents ask,\" \"Require schools to notify parents,\" and \"Require parental permission before staff use a different name or pronouns.\"",
+      "needs_source": [
+        "Tom Lackey's own words, or a record (authored/sponsored bill or vote), on parental notification or consent for a student's name or gender identity at school"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "batch_id": "lena-gonzalez",
+  "seat": {
+    "politician_id": "1cede4d2-3075-4860-b133-1ab34cdacff5",
+    "full_name": "Lena Gonzalez",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "a77cd5e4-d43d-4af1-b8e0-46ed80b979c6",
+    "office_title": "Senator",
+    "jurisdiction_names": [
+      "California"
+    ],
+    "term_start": "2019-01-01",
+    "start_precision": "year",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "CA",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "topic_key": "egi-draft-a1v2",
+      "served_revision_id": "draft-a1v2-pr945",
+      "question_text": "When a student wants to use a different name or gender identity at school, who decides whether parents are told?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require staff to keep a student's gender identity from parents unless the student consents."
+        },
+        {
+          "value": 2,
+          "text": "Forbid rules that require schools to tell parents."
+        },
+        {
+          "value": 3,
+          "text": "Require schools to tell parents when parents ask."
+        },
+        {
+          "value": 4,
+          "text": "Require schools to notify parents."
+        },
+        {
+          "value": 5,
+          "text": "Require parental permission before staff use a different name or pronouns."
+        }
+      ],
+      "own_words_levels": [
+        "federal",
+        "local"
+      ],
+      "annexMd": null
+    }
+  ]
+}

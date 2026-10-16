@@ -1,0 +1,35 @@
+{
+  "batch_id": "caroline-menjivar",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "4baa73c2-d38b-4d07-894f-1577d5ba43a3",
+      "office_id": "7a7d8d8e-3af2-4372-a943-6aa92c10fefb",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "4baa73c2-d38b-4d07-894f-1577d5ba43a3",
+      "office_id": "7a7d8d8e-3af2-4372-a943-6aa92c10fefb",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-senate-floor-2024-06-13.txt"
+    }
+  ]
+}

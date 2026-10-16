@@ -1,0 +1,88 @@
+{
+  "own_words": [
+    {
+      "person": "Mike Cargile",
+      "url": "https://asthegirlturns.substack.com/p/full-interview-mike-cargile-for-california",
+      "date": "2024-06-11",
+      "excerpt": "We're dealing with trafficking. We're dealing with parental rights. If you see where the the big lawsuit with California, they're trying to make employees, primarily teachers, secret keepers.",
+      "note": "Substack interview (CA-35 vs Norma Torres), 2024 cycle, not 2026. Refers to the Chino Hills notification lawsuit; does not name AB 1955 himself (the author does). Direction: teachers keeping secrets from parents is bad; no explicit option."
+    }
+  ],
+  "direction_only": [
+    {
+      "person": "Mike Cargile",
+      "url": "https://ivoterguide.com/candidate/52202/race/1264/election/1202",
+      "note": "iVoterGuide 2024 general (not 2026). Strongly Agree: 'Children must be protected from abuse, including gender ideology, grooming, and bodily mutilation.' Nothing on parental notification."
+    },
+    {
+      "person": "Scott Meyers",
+      "url": "https://ivoterguide.com/candidate/92410/race/30381/election/1454",
+      "note": "iVoterGuide 2026 general. Strongly Agree that 'Attempts to physically or socially transition a child to the opposite sex constitute child abuse.' Also wrote 'In all, children must be allowed to be children. They must be educated, not indoctrinated.' Nothing on telling parents."
+    },
+    {
+      "person": "Jason Gibbs",
+      "url": "https://ivoterguide.com/candidate/90574/race/30378/election/1454",
+      "note": "iVoterGuide 2026: every question (incl. child social transition = abuse) marked 'Did not answer'. No stance."
+    },
+    {
+      "person": "Chuong Vo",
+      "url": "https://ivoterguide.com/candidate/90789/race/30396/election/1454",
+      "note": "iVoterGuide 2026: every question on child transition/education 'Did not answer'. No stance. guides.vote CA-45 page (https://guides.vote/guide/2026-california-ca-45-us-house-voters-guide/) has no parental-rights text for Vo or Tran."
+    }
+  ],
+  "federal_votes_context": [
+    {"person": "Brad Sherman", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Jimmy Gomez", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Judy Chu", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Julia Brownley", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Linda T. Sanchez", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Maxine Waters", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Nanette Barragan", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Norma Torres", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Robert Garcia", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Sydney Kamlager-Dove", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Ted Lieu", "bill": "H.R. 5 (118th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Jay Obernolte", "bill": "H.R. 5 (118th)", "vote": "Aye", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Adam B. Schiff", "bill": "H.R. 5 (118th)", "vote": "No (as House member)", "vote_url": "https://clerk.house.gov/evs/2023/roll161.xml"},
+    {"person": "Brad Sherman", "bill": "H.R. 2616 (119th, PROTECT Kids Act, 2026-05-20, passed 217-198)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Derek Tran", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "George Whitesides", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Gil Cisneros", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Jay Obernolte", "bill": "H.R. 2616 (119th)", "vote": "Aye", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Jimmy Gomez", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Judy Chu", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Julia Brownley", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Laura Friedman", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Linda T. Sanchez", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Luz Rivas", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Maxine Waters", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Nanette Barragan", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Norma Torres", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Robert Garcia", "bill": "H.R. 2616 (119th)", "vote": "No (listed as 'Garcia (CA)' in the roll; only Robert Garcia holds that name in the 119th)", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Sydney Kamlager-Dove", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"},
+    {"person": "Ted Lieu", "bill": "H.R. 2616 (119th)", "vote": "No", "vote_url": "https://clerk.house.gov/evs/2026/roll184.xml"}
+  ],
+  "not_found": [
+    "Adam B. Schiff", "Alex Padilla",
+    "Brad Sherman", "Derek Tran", "George Whitesides", "Gil Cisneros", "Jacqui Irwin",
+    "Jimmy Gomez", "Judy Chu", "Julia Brownley", "Laura Friedman", "Linda T. Sanchez", "Luz Rivas",
+    "Maxine Waters", "Nanette Barragan", "Norma Torres", "Robert Garcia", "Sydney Kamlager-Dove", "Ted Lieu",
+    "Jay Obernolte (a search snippet quoted a social post on H.R. 5 but its source page returned 403 so it is not recorded; obernolte.house.gov press page 14 had nothing relevant; other pages not checked)",
+    "Angela Gonzales-Torres", "Angelica Maria Duenas", "April Verlato (search only; Ballotpedia page empty)", "Brian Burley", "Cristian Morales",
+    "Eric Ching (search only)", "Genevieve Angel", "Hilda Solis", "Houston Brignano", "Larry Thompson (search only)",
+    "Pedro Antonio Casas", "Sam Gallucci (search only)", "Samantha Mota", "Tessa Lynn Hodge (tessaforca.com/about has nothing on topic)"
+  ],
+  "notes": [
+    "No positive control per person was possible for most; searches returned no member statement on AB 1955 / forced outing for any listed person. Equality Caucus release (https://equality.house.gov/passage-of-hr2616) fetched: only Rep. Takano (not in list) quoted.",
+    "Positive controls for findability: Cargile (Substack + iVoterGuide), Meyers, Gibbs, Vo (iVoterGuide pages exist, unanswered).",
+    "Context fetch: ED/FERPA finding on CA (Jan 28 2026) known from search snippets only, not fetched.",
+    "Search budget used ~22 of 40; fetch ~25 of 50."
+  ],
+  "blocked": [
+    {"url": "https://www.dailysignal.com/2026/05/22/parental-consent-pronoun-bill/", "error": "403 Forbidden"},
+    {"url": "https://picso101.sci.pitt.edu/CivicWatch/who/272482466?topic=6", "error": "403 Forbidden (WebFetch and curl with browser UA)"},
+    {"url": "https://obernolte.house.gov/search?keys=parents+gender", "error": "403 Forbidden"},
+    {"url": "https://www.congress.gov/bill/119th-congress/house-bill/2616/cosponsors", "error": "403 Forbidden"},
+    {"url": "https://ballotpedia.org/April_Verlato", "error": "returned empty content"}
+  ]
+}
