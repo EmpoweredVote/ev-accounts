@@ -15,3 +15,6 @@ code-stance-batch `--models "opus" --apply`, queue-coded-batch `--apply`, all `-
   cookie); Utah HB 29 enrolled copy (image-only PDF, read by tesseract OCR); Clay 2023-04-06 minutes (fetcher said
   binary-content; pdftotext). Each file's first line says where it came from and how.
 - `results.json` / `report.py` — the outcome per person.
+- **2026-10-15, operator ruling:** the 14 rows held on needs-source were queued too (`queue-coded-batch.ts
+  --include-needs-source`), with `needs-source` among their queue reasons. All 33 people now have one pending row.
+  The coder's requests per row are in each batch's `needs-source.json` and in `results.json` (`needs_source`).

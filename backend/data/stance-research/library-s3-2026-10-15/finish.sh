@@ -7,5 +7,5 @@ for n in "$@"; do
   [ -f "$d/labels/coder-1.json" ] || { echo "$n: NO LABEL"; continue; }
   npx tsx scripts/store-snapshots.ts --dir "$d" --apply 2>&1 | tail -1
   npx tsx scripts/code-stance-batch.ts --dir "$d" --season draft --models "opus" --apply 2>&1 | grep -E "^would|^stored|ERROR"
-  npx tsx scripts/queue-coded-batch.ts --dir "$d" --season draft --apply 2>&1 | grep -E "^queue|^skip|^queued|ERROR"
+  npx tsx scripts/queue-coded-batch.ts --dir "$d" --season draft --include-needs-source --apply 2>&1 | grep -E "^queue|^skip|^queued|ERROR"
 done

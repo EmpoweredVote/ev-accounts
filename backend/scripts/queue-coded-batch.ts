@@ -7,7 +7,11 @@
  *
  * Run AFTER code-stance-batch.ts --apply (which writes coding-report.json and stores the labels):
  *
- *   npx tsx scripts/queue-coded-batch.ts --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) [--apply]
+ *   npx tsx scripts/queue-coded-batch.ts --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) [--include-needs-source] [--apply]
+ *
+ * --include-needs-source (Opus-alone runs only, operator ruling 2026-10-15): a row whose single coder gave a chair but
+ * asked for more sources is queued too, with 'needs-source' among its queue_reasons; the requests are in
+ * needs-source.json. Off by default, and it never applies to a three-coder run.
  *
  * Dry-run by default. --apply writes every row and links its labels (stance_coder_labels.review_id)
  * in ONE transaction. Re-running is safe: a row a person already decided is left alone.
@@ -24,6 +28,7 @@ import type { SnapshotRecord } from './lib/snapshotSources.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const APPLY = process.argv.includes('--apply');
+const INCLUDE_NEEDS_SOURCE = process.argv.includes('--include-needs-source');
 // --season-id <uuid> (as before) or --season open|draft|<uuid>; a batch dir built for another season is refused.
 let seasonId: string | undefined;
 try {
@@ -71,9 +76,13 @@ for (const slot of [1, 2, 3]) {
 }
 
 const queued: CoderReviewRow[] = [];
-for (const r of report.rows) {
+for (let r of report.rows) {
   const topic = (context.topics as { topic_id: string; topic_key: string; served_revision_id: string }[]).find((t) => t.topic_key === r.topic_key);
-  if (!topic || r.outcome.kind !== 'unanimous-chair') continue;
+  if (!topic) continue;
+  // A held Opus-alone chair is queued as if it were the coder's agreement, keeping 'needs-source' in its reasons.
+  const held = INCLUDE_NEEDS_SOURCE && expectedLabels === 1 && r.outcome.kind === 'needs-source' && r.held_chair;
+  if (held) r = { ...r, outcome: { kind: 'unanimous-chair', ...r.held_chair! } };
+  if (r.outcome.kind !== 'unanimous-chair') continue;
   const labels: CoderRowLabel[] = [1, 2, 3].flatMap((slot) => {
     const row = bySlot.get(slot)!.get(r.key);
     return row ? [{ slot, valid: true, value: row.v6_value, blank_reason: row.v6_blank_reason, rests_on: row.rests_on, needs_source: row.needs_source }] : [];
@@ -85,7 +94,8 @@ for (const r of report.rows) {
   if (row) queued.push(row);
 }
 
-const skipped = report.rows.filter((r) => r.outcome.kind !== 'unanimous-chair');
+const queuedKeys = new Set(queued.map((q) => `${q.politician_id}|${q.office_id}|${q.topic_id}`));
+const skipped = report.rows.filter((r) => !queuedKeys.has(r.key));
 for (const q of queued) {
   console.log(`queue  ${q.topic_key.padEnd(28)} chair ${q.proposed_value}  ${(q.evidence_tier ?? '-').padEnd(13)} `
     + `${q.verified_source_count}/${q.evidence.length} source(s) publishable  [${q.queue_reasons.join(', ')}]`);

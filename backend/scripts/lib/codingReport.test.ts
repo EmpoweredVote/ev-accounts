@@ -54,6 +54,19 @@ describe('buildCodingReport', () => {
     expect(r.rows.find((x) => x.topic_key === 'k-t2')!.outcome).toEqual({ kind: 'unanimous-blank', reason: 'no-evidence' });
     expect(buildCodingReport({ context, files, snapshotText, sourceKind }).rows.every((x) => x.shadow_reasons.includes('coder-missing'))).toBe(true);
   });
+  it('carries an Opus-alone needs-source chair as held_chair, checked like a unanimous one; never with three coders', () => {
+    const ns = { ...row('t1', 3), needs_source: ['term dates'] };
+    const one = buildCodingReport({ context, files: new Map<number, unknown>([[1, file(1, [ns, row('t2', null)])]]), snapshotText, sourceKind, slots: [1] });
+    const t1 = one.rows.find((x) => x.topic_key === 'k-t1')!;
+    expect(t1.outcome.kind).toBe('needs-source');
+    expect(t1.held_chair).toEqual({ value: 3, shared_sources: ['s1'] });
+    expect(t1.shadow).toBe('would-review');
+    expect(t1.shadow_reasons).toContain('needs-source');
+    expect(t1.stratum.evidence_class).toBe('record');
+    expect(one.rows.find((x) => x.topic_key === 'k-t2')!.held_chair).toBeUndefined();
+    const three = buildCodingReport({ context, files: new Map<number, unknown>([1, 2, 3].map((k) => [k, file(k, [ns, row('t2', null)])])), snapshotText, sourceKind });
+    expect(three.rows.find((x) => x.topic_key === 'k-t1')!.held_chair).toBeUndefined();
+  });
   it('never marks a statement-other row publishable (ruling Q2)', () => {
     const so = { ...row('t1', 4), passages: [{ ...P, v3_class: 'statement-other' as const, provision_quote: null }] };
     const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [so, row('t2', null)])]));
