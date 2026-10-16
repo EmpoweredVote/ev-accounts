@@ -161,7 +161,38 @@ year this section does not cover.
   or later. (Earlier amendments: 2023 ch. 104, 2024 ch. 165.)
 - **URL:** https://apps.legislature.ky.gov/law/statutes/statute.aspx?id=56273
 
+### Utah — Utah Code s. 53G-8-701.5 (school safety personnel)
+
+- **Duty:** "An LEA shall ensure each school within the LEA has the following school safety personnel:
+  (i) a school safety and security specialist ... and (ii) based on the results of the needs assessment
+  ... at least one of the following: (A) a school resource officer; (B) a school guardian; or (C) an
+  armed school security guard" (sub. 2(a)). An LEA is a school district or charter school.
+- **Alternatives:** the three options are the flexibility, as in Florida. Sub. 3 also lets an LEA apply to
+  the state security chief for "an approved alternative" to the section's requirements (factors include
+  size, staffing, location and funding).
+- **Contract terms fixed by the statute:** s. 53G-8-703(2) says what an SRO contract must contain: the
+  officer will "emphasize the use of restorative approaches to address negative behavior"; a designation
+  of offences the officer may refer to juvenile court, must confer on, or must refer to a school
+  administrator; students' rights on searches, questioning, arrests and privacy; and the officer's school,
+  hours and duties. These are statutory, so they are not the board's own provision. A board term that
+  goes further is.
+- **Effective:** 2024-05-01. H.B. 84 (2024 G.S., "School Safety Amendments"), s. 27, repealed and
+  re-enacted s. 53G-8-701.5; s. 54 sets May 1, 2024. Sub. 2(e) (2(f) in the version effective
+  2026-07-01) leaves the compliance timeline to the state security chief; the date that timeline set
+  was not read.
+- **Later amendments:** the version effective 2026-07-01 keeps sub. 2(a) unchanged. It adds a three-year
+  assessment cycle and requires a guardian to carry the firearm on duty.
+- **Apply to:** Utah board votes on or after 2024-05-01. Before that date there was no officer duty (for
+  example Alpine School District, 2019).
+- **URLs:** https://le.utah.gov/~2024/bills/static/HB0084.html ·
+  https://le.utah.gov/xcode/Title53G/Chapter8/53G-8-S701.5.html
+
 ## Rulings, 2026-10-16 (Chris Andrews)
+
+- **(J2) Utah is a duty state, read like Texas** _(ruled 2026-10-16)_. A Utah board vote from 2024-05-01
+  that approves an SRO contract meets the s. 53G-8-701.5 duty: "an officer at every school" is
+  `direction-only`. Choosing sworn police over guardians or guards, staffing above one per school, and
+  role terms beyond s. 53G-8-703 are the board's own and are coded on their own. Ruling (b) below applies.
 
 - **(b) A contract under a state mandate is compliance** _(ruled 2026-10-16)_. A board vote that
   approves or renews an SRO contract in Florida (all years), Texas (from 2023-09-01) or Kentucky (from
