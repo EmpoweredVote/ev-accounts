@@ -62,6 +62,10 @@ export function buildCodingReport(i: {
   profiles?: readonly SourceProfile[];
   /** snapshot_id -> amendment_markup (snapshots.json). Passed through to confirmRowDetailed. */
   snapshotMarkup?: ReadonlyMap<string, 'kept' | 'none' | 'unknown'>;
+  /** The coder slots that were run (default all three). `[1]` is the Opus-alone production run (ruling
+   * 2026-10-07): agreement is then judged over slot 1 alone, so its chair can reach the review queue
+   * instead of every row reading coder-missing. */
+  slots?: number[];
 }): CodingReport {
   const { seat, topics } = i.context;
   const leads = leadsById(i.s1Leads ?? []);
@@ -93,7 +97,7 @@ export function buildCodingReport(i: {
         rests_on: got.row?.rests_on ?? [], needs_source: got.row?.needs_source ?? [] });
     }
     units.push([1, 2, 3].map((s) => { const l = labels.find((x) => x.slot === s); return l?.valid ? chairCategory(l.value) : null; }));
-    const outcome = agree(labels);
+    const outcome = agree(labels, i.slots ?? [1, 2, 3]);
     const reasons: string[] = [];
     let confirm: ConfirmFinding[] = [];
     let evidenceClass: string | null = null;

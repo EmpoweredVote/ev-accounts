@@ -47,6 +47,13 @@ describe('buildCodingReport', () => {
     const r = buildCodingReport({ context, files, snapshotText, sourceKind });
     expect(r.rows.every((x) => x.shadow_reasons.includes('coder-missing'))).toBe(true);
   });
+  it('judges an Opus-alone run (slots [1]) over slot 1 alone, so its chair is not coder-missing', () => {
+    const files = new Map<number, unknown>([[1, file(1, [row('t1', 4), row('t2', null)])]]);
+    const r = buildCodingReport({ context, files, snapshotText, sourceKind, slots: [1] });
+    expect(r.rows.find((x) => x.topic_key === 'k-t1')!.outcome).toEqual({ kind: 'unanimous-chair', value: 4, shared_sources: ['s1'] });
+    expect(r.rows.find((x) => x.topic_key === 'k-t2')!.outcome).toEqual({ kind: 'unanimous-blank', reason: 'no-evidence' });
+    expect(buildCodingReport({ context, files, snapshotText, sourceKind }).rows.every((x) => x.shadow_reasons.includes('coder-missing'))).toBe(true);
+  });
   it('never marks a statement-other row publishable (ruling Q2)', () => {
     const so = { ...row('t1', 4), passages: [{ ...P, v3_class: 'statement-other' as const, provision_quote: null }] };
     const files = new Map<number, unknown>([1, 2, 3].map((s) => [s, file(s, [so, row('t2', null)])]));

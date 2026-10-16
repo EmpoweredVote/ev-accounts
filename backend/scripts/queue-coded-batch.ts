@@ -39,7 +39,9 @@ if (!dir || !seasonId) { console.error('usage: --dir <batch> (--season-id <uuid>
 
 const reportPath = join(dir, 'coding-report.json');
 if (!existsSync(reportPath)) { console.error(`no ${reportPath} — run code-stance-batch.ts first`); process.exit(1); }
-const report = JSON.parse(readFileSync(reportPath, 'utf8')) as { codebook_version: string; rows: RowReport[] };
+const report = JSON.parse(readFileSync(reportPath, 'utf8')) as { codebook_version: string; models?: string[]; rows: RowReport[] };
+// One model is the Opus-alone production run (ruling 2026-10-07): slot 1 is the only label stored.
+const expectedLabels = report.models?.length === 1 ? 1 : 3;
 if (report.codebook_version !== CODEBOOK_VERSION) {
   console.error(`coding-report.json is codebook ${report.codebook_version}, this code is ${CODEBOOK_VERSION} — re-run code-stance-batch.ts`);
   process.exit(1);
@@ -107,7 +109,7 @@ try {
       `SELECT count(*) AS n FROM inform.stance_coder_labels
         WHERE batch_id = $1 AND politician_id = $2 AND office_id = $3 AND topic_id = $4 AND coder_slot BETWEEN 1 AND 3`,
       [q.batch_id, q.politician_id, q.office_id, q.topic_id]);
-    if (Number(n) !== 3) throw new Error(`${q.topic_key}: ${n}/3 coder labels stored — run code-stance-batch.ts --apply first`);
+    if (Number(n) !== expectedLabels) throw new Error(`${q.topic_key}: ${n}/${expectedLabels} coder labels stored — run code-stance-batch.ts --apply first`);
 
     // Same idempotent key and the same "never resurrect a decision" guard as upsertReviewRow.
     const res = await client.query<{ id: string }>(
