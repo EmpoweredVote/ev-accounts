@@ -1,0 +1,161 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "lib-defay",
+      "row_id": "R-L093",
+      "person": "Ariel Defay",
+      "expected_chair": 4,
+      "politician_id": "93216d36-4824-4817-823e-a3e0dcbd1f7f",
+      "office_id": "d7d981e5-c9f4-4914-94e9-538fb019e1f9",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=756&house=H",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-wilson",
+      "row_id": "R-L095",
+      "person": "Chris H. Wilson",
+      "expected_chair": 4,
+      "politician_id": "98f08e54-df08-43df-ba89-2cabd738d6bb",
+      "office_id": "3731c18d-fa2f-483e-ad4e-a89c997c4259",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=1168&house=S",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-balderree",
+      "row_id": "R-L096",
+      "person": "Heidi Balderree",
+      "expected_chair": 4,
+      "politician_id": "a352d492-ecaf-45bd-b352-8c9a2cc9cc18",
+      "office_id": "8793a8e1-315d-4bf0-bd6f-b3c49a4a3f47",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=1168&house=S",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-elison",
+      "row_id": "R-L097",
+      "person": "Joseph Elison",
+      "expected_chair": 4,
+      "politician_id": "d5daa5b6-b5f4-45ba-a471-99d14c779afd",
+      "office_id": "a76b494c-5943-49c7-a441-397423b00f55",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=756&house=H",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-ivory",
+      "row_id": "R-L098",
+      "person": "Ken Ivory",
+      "expected_chair": 4,
+      "politician_id": "f3c4cdf1-724e-43d6-ad59-70573badae75",
+      "office_id": "49140efc-8b9e-43b0-941e-ffa8306db21a",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=756&house=H",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "lib-weiler",
+      "row_id": "R-L101",
+      "person": "Todd Weiler",
+      "expected_chair": 4,
+      "politician_id": "612392b2-ab46-4287-a2fd-c74ae0961198",
+      "office_id": "f6f30218-7679-45e4-8c76-43d3bfdce726",
+      "level": "state",
+      "topic_key": "education-library-books",
+      "sources": [
+        {
+          "url": "https://le.utah.gov/~2024/bills/hbillenr/HB0029.pdf",
+          "human_saved_path": "human-saved/ut-hb29-enrolled-ocr.txt",
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        },
+        {
+          "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=1168&house=S",
+          "human_saved_path": null,
+          "instruments": [
+            "Utah H.B. 29 (2024 General Session), Sensitive Material Review Amendments"
+          ]
+        }
+      ]
+    }
+  ]
+}
