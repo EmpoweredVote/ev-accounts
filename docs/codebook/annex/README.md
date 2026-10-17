@@ -162,4 +162,4 @@ is a new revision.
 
 | Topic | Season 3 revision | Status |
 |---|---|---|
-| [`education-library-books`](season3/education-library-books.md) | `7bb64029-0103-4df8-a4d8-3dcb2938f27f` (v2 r2, CA_0310, applied 2026-10-15) | draft 2026-10-15; Q2, Q4 ruled; removal-list line provisional |
+| [`education-library-books`](season3/education-library-books.md) | `7bb64029-0103-4df8-a4d8-3dcb2938f27f` (v2 r2, CA_0310, applied 2026-10-15) | draft 2026-10-15; Q2, Q4, Q5, Q6, removal lists, standing opt-outs ruled |
