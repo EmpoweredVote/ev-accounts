@@ -731,9 +731,51 @@ originals are *not* bigger — `/styles/default/public/` and the unstyled path a
 
 | Item | State |
 | --- | --- |
-| Atlanta banner | **Not started — and it is not a simple add.** Georgia's **state** banner is already the Atlanta skyline (`buildingImages.js`), so this is the FL/MI/IN pattern: the city takes the skyline photo and the **state banner must move to a whole-state subject**, named `-v2`. That changes a second jurisdiction and needs an operator decision before any asset work. |
 | 4 Fulton re-sources | When Fulton publishes anything larger than 200×200. |
 | 6 blank seats | Listed in `CC_0246`'s header comment. Do not fill any of them with a placeholder. |
+
+## ✅ ATL-4 — BANNER DONE 2026-10-17 (essentials PR #205)
+
+🔴 **The banner was not a simple add: Georgia's STATE banner WAS Atlanta.** `states/GA.jpg` is
+"Midtown Atlanta skyline". Read in the 6:1 band the browser cuts (rows 128–411 of 540) it keeps the
+towers, the treeline and the whole downtown front — so the state really shows the city. That is the
+**Michigan case**, not the Charlotte escape hatch, and it was measured, not assumed.
+
+| key | what |
+| --- | --- |
+| `cities/atlanta.jpg` | the Midtown skyline, one tier down — a **byte copy**, sha256 verified |
+| `states/GA-v2.jpg` | Providence Canyon, Stewart County · anonymouse1 · CC BY-SA 3.0 |
+
+🟢 **The byte copy is the point.** `states/GA.jpg` was already exactly 1700×540, so nothing was
+re-rendered and no crop drifted. Michigan had to re-render only because its state asset was off-spec
+at 1700×422, and that re-render cost eleven candidate frames. **When the state asset is on spec,
+copying it is both cheaper and strictly more faithful** — the composition already approved is the
+composition that ships.
+
+⚠ **`states/GA.jpg` must keep serving its old bytes**, because `cities/atlanta.jpg` is now exactly
+those bytes. The state is versioned to `-v2` rather than overwritten, as `STATE_PANORAMA_FILES`
+requires.
+
+Five candidates were rendered by the repo's own `certify_banner.py` — not a second crop
+implementation — so the approved frames are the shipping frames. The shipping file re-measures at
+lum 96.5 / spread 45.4, identical to the certified candidate. **The four refusals transfer:**
+
+- **Cloudland Canyon** — band luminance 56.5, `[dark]`. It had the **best** source ratio of the five
+  (3.39:1) and still failed. 🔴 **Ratio is not the test.**
+- **Tallulah Gorge** — the band is a concrete dam, not the gorge, and the source has no vertical
+  slack, so no anchor reframes it.
+- **Sapelo Island** — channel spread **7.0** against 24–61. Grey water, grey mud, grey birds: a
+  colour photograph of a colourless scene. The Milledgeville greyscale defect again.
+- **Chesser Prairie (Okefenokee)** — the alternate, not refused. Brightest band and highest spread;
+  marked down only on adjacency, being close to the Columbus mill row in composition.
+
+Providence Canyon carries **no architecture**, which is what separates it from every Georgia city
+banner — Columbus, Macon and Milledgeville are all built subjects.
+
+🔴 **On merge, check the deploy actually fired.** Essentials deploys from Render
+(`essentials-frontend`), and auto-deploy can silently not fire — no failed build, no build at all.
+Confirm the SHA in `list_deploys`. The two assets are already uploaded and served; only the registry
+ships with the PR.
 
 🔴 **The January 2027 re-seat is already owed.** Fulton Chair, D1, D3, D5 and the D4 special are on the
 2026-11-03 ballot; DeKalb D2, D3 and D7 likewise. Mo Ivory is the Democratic nominee for Fulton Chair
