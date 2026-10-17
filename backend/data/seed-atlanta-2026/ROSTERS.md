@@ -583,6 +583,93 @@ and completed — but a migration that half-applies is worth knowing about in ad
 
 ▶ **Apply with `psql --single-transaction -v ON_ERROR_STOP=1 -f <file>`**, one file at a time.
 
+
+---
+
+## ✅ GAP-CLOSING ROUND — APPLIED 2026-10-17 (CC_0244, CC_0245)
+
+Prompted by the operator asking whether the gaps could be researched deeper. They could. Two of
+the five were closed, and **both had been written off for a bad reason**.
+
+| | Before | After |
+| --- | --- | --- |
+| Atlanta starts undated | **10 of 17** | **1 of 17** |
+| Probate Judge offices missing | **2** | **0** |
+| Offices / seated, all three governments | 39 / 38 | **41 / 40** |
+| Terms undated, all three governments | **27 of 38** | **20 of 40** |
+
+⚠ The earlier write-up said "19 of 38 undated". That was wrong; the figure was **27 of 38**.
+
+### 🔴🔴 GAP 1 — "the bios carry no date language" WAS A BROKEN DETECTOR, NEVER CONTROLLED
+
+`CC_0239` asserts the member biographies carry no dates and that the year tokens on each page are
+"budget and calendar links — not biography". Both claims came from a regex requiring the literal
+phrase `elected in YYYY`.
+
+Michael Julian Bond's page reads "elected to the Atlanta City Council **in 1993** ... and **in
+2009** to the Post One, At-Large seat". `elected in \d{4}` does not match
+`elected to the Atlanta City Council in 1993`. **The bios were in the server HTML the whole time.**
+
+▶ The sweep *did* hit Hillis ("first elected ... in 2017"), and that one incidental hit is what
+made the empty result look credible. **One lucky match is not a positive control** — it cannot
+tell "the pattern works" from "the pattern is too narrow and got lucky once".
+
+### 🟢🟢 GAP 2 — THE CERTIFIED CHAIN EXISTS; IT IS JUST NOT AT THE SECRETARY OF STATE
+
+`CC_0239`'s claim that the SOS carries no Atlanta municipal election before 2025 is **true** and
+was re-verified (2021 and 2013 return HTTP 204 for both counties; the statewide 2021 payload holds
+one ballot item and no Atlanta contest). The error was treating the SOS as the only certified
+source.
+
+🟢 **Fulton County publishes its own certified-results archive back to 1979** — year-faceted,
+official Election Summary and SOVC PDFs under
+`fultoncountyga.gov/.../Registration-and-Elections/Search-Elections`. Fulton runs Atlanta's
+municipal elections, so this is the authoritative return. It settled nine seats from the
+2021-11-02 general, the 2021-11-30 runoff, the 2017-11 general and the 2017-12 runoff.
+
+▶ **A city's election history lives with the COUNTY that runs its elections.** Check there before
+concluding a chain does not exist.
+
+### 🟢 GAP 3 — WHEN THE ELECTION RECORD IS SILENT ABOUT AN OFFICE, ASK THE OFFICE
+
+The finding that no Probate Judge contest appears in any certified return 2020–2026 **stands** —
+Georgia declares an unopposed nonpartisan candidate elected without a ballot. But "not on any
+ballot" is not "cannot be sourced". Both courts publish their own judges:
+
+| County | Probate Judge | Source |
+| --- | --- | --- |
+| Fulton | **Kenya M. Johnson**, Chief Judge | `fultonprobatega.org`, "Meet our Executive Team" |
+| DeKalb | **Bedelia C. Hargrove**, Chief Probate Court Judge | `dekalbprobatega.com`, in her own first person |
+
+⚠ Fulton also lists an **Associate** Judge (Marian Parker), filled by appointment. Only the
+elected Chief Judge is seeded.
+
+### What the nine newly dated Atlanta seats rest on
+
+| Seat | Start | Evidence |
+| --- | --- | --- |
+| Post 1, M. J. Bond | 2010-01-01 `year` | elected 2009 to this seat (his page); `(I)` in 2021 |
+| District 9, Hillis | 2018-01-01 `month` | won the certified 2017-12 runoff v Kwame Abernathy |
+| District 10, Boone | 2018-01-01 `month` | won the certified 2017-11 general outright |
+| Districts 1, 3, 4, 5, 12 | 2022-01-01 `month` | won the certified 2021-11-30 runoffs |
+| District 6, Wan | 2022-01-01 `month` | 🔴 **a RETURN AFTER A GAP** — two terms 2010–2018, then lost the 2017 presidency runoff to Felicia Moore and left the council |
+| District 8, Norwood | 2022-01-01 `month` | 🔴 **a RETURN AFTER A GAP, and to a different seat** — previously at-large |
+
+🔴 `month`, not `day`: the certified return fixes the **election**, and Atlanta terms begin the
+following January. The city's inauguration page dates the **mayor's** oaths (2022-01-03,
+2026-01-05) but does not say councilmembers were sworn on those days, so no day is claimed.
+
+### Still open after this round
+
+| # | Item | Why |
+| --- | --- | --- |
+| 3 | Eshé Collins's start, Post 3 | **Window narrowed, not closed.** Absent from the 2021 Post 3 ballot (won by Keisha Sean Waites) and `(I)` in 2025, so between January 2022 and November 2025. Fulton's archive holds no Atlanta Post 3 special for 2022, 2023 or 2024, and neither does the SOS. |
+| 4 | Fulton District 4 vacancy date | Not chased this round. BOC minutes are the likely route. |
+| 5 | DeKalb D3 / Super D7 oath dates | Not chased. Special-election winners seat on certification, not in January. |
+| 8 | Fulton Surveyor freshness | Not chased. Still no source newer than the 2024 return. |
+| 2 | Neither county elects a Coroner | Still inferred from absence, not stated by a county source. |
+| — | Stage 5 assets | 40 headshots, 1 banner. Not started. |
+
 ### Still owed
 
 | Wave | Content |

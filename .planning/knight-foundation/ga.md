@@ -703,6 +703,52 @@ Johnson appears nowhere on it. ▶ **ASK ON APPLY DAY.** It is cheap and it is t
 sees a departure. All eight officers were then re-checked; one more gap remains, the Fulton
 Surveyor, who has no source newer than 2024.
 
+### 🟢🟢 A CITY'S ELECTION HISTORY LIVES WITH THE COUNTY THAT RUNS ITS ELECTIONS
+
+The Atlanta wave first concluded that no certified chain existed before 2025, because the SOS
+portal carries no Atlanta municipal election before then. That SOS fact is **true**. The
+conclusion drawn from it was not.
+
+🟢 **Fulton County publishes its own certified-results archive back to 1979** — year-faceted,
+official Election Summary and SOVC PDFs, at
+`fultoncountyga.gov/.../Registration-and-Elections/Search-Elections`, served from
+`/-/media/Project/FultonCountyGa/remos/elections/`. Georgia counties run municipal elections, so
+the COUNTY holds the municipal return the state portal never carried. It dated nine Atlanta
+occupancies from the 2021 and 2017 cycles.
+
+▶ Before recording "no certified chain exists", check the county that administers the election.
+⚠ The archive is not complete — it holds no Atlanta Post 3 special for 2022, 2023 or 2024.
+
+### 🔴🔴 WHEN THE ELECTION RECORD IS SILENT ABOUT AN OFFICE, ASK THE OFFICE
+
+Neither Fulton nor DeKalb shows a Probate Judge contest in any certified return 2020-2026, and
+that finding is correct — Georgia declares an unopposed nonpartisan candidate elected without a
+ballot. The wave first treated that as "cannot be sourced" and left both offices uncreated.
+
+**Both courts publish their own judges.** Fulton: `fultonprobatega.org` "Meet our Executive Team"
+names **Kenya M. Johnson, Chief Judge**. DeKalb: `dekalbprobatega.com` carries the judge's own
+first person — **"I am Bedelia C Hargrove, the Chief Probate Court Judge in DeKalb County"**.
+
+▶ "Not on any ballot" means the ELECTION record is silent, not that the office cannot be sourced.
+⚠ Seed only the elected CHIEF judge; Fulton's Associate Judge is appointed.
+
+### 🔴🔴 A REGEX THAT FINDS ALMOST NOTHING IS A BROKEN DETECTOR, AND ONE LUCKY HIT IS NOT A CONTROL
+
+The Atlanta wave recorded that councilmember biographies "carry no date language at all". They
+carry plenty. The sweep required the literal `elected in YYYY`, and the pages mostly say
+`elected to the Atlanta City Council in YYYY`. The bios were in the server HTML throughout.
+
+🔴 The sweep matched exactly one member ("first elected ... in 2017"), and that single incidental
+hit is what made the empty result look trustworthy. **A lone match cannot distinguish "the
+pattern works" from "the pattern is too narrow and got lucky once."** Plant a control that the
+pattern SHOULD match and watch it match, or widen until the yield stops changing.
+
+### ⚠ Scope a title-based gate to its government
+
+A gate asserting `office_holders_as_of(2015)` returns zero for "Judge of Probate Court" failed on
+correct data: Bibb and Muscogee already hold that exact title from GA-4/GA-5, properly dated, and
+they answer 2015 correctly. Title alone is not a key — scope to the government.
+
 ### ⚠ Smaller things worth keeping
 
 - **District 12 of Atlanta's council is MULTI-PART** — 13 rows for 12 districts, a main body plus a
