@@ -7,7 +7,11 @@
  *
  * Run AFTER code-stance-batch.ts --apply (which writes coding-report.json and stores the labels):
  *
- *   npx tsx scripts/queue-coded-batch.ts --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) [--apply]
+ *   npx tsx scripts/queue-coded-batch.ts --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) [--include-needs-source] [--apply]
+ *
+ * --include-needs-source (Opus-alone runs only, operator ruling 2026-10-15): a row whose single coder gave a chair but
+ * asked for more sources is queued too, with 'needs-source' among its queue_reasons; the requests are in
+ * needs-source.json. Off by default, and it never applies to a three-coder run.
  *
  * Dry-run by default. --apply writes every row and links its labels (stance_coder_labels.review_id)
  * in ONE transaction. Re-running is safe: a row a person already decided is left alone.
@@ -24,6 +28,7 @@ import type { SnapshotRecord } from './lib/snapshotSources.js';
 
 const arg = (n: string) => { const i = process.argv.indexOf(n); return i > 0 ? process.argv[i + 1] : undefined; };
 const dir = arg('--dir'); const APPLY = process.argv.includes('--apply');
+const INCLUDE_NEEDS_SOURCE = process.argv.includes('--include-needs-source');
 // --season-id <uuid> (as before) or --season open|draft|<uuid>; a batch dir built for another season is refused.
 let seasonId: string | undefined;
 try {
@@ -39,7 +44,9 @@ if (!dir || !seasonId) { console.error('usage: --dir <batch> (--season-id <uuid>
 
 const reportPath = join(dir, 'coding-report.json');
 if (!existsSync(reportPath)) { console.error(`no ${reportPath} — run code-stance-batch.ts first`); process.exit(1); }
-const report = JSON.parse(readFileSync(reportPath, 'utf8')) as { codebook_version: string; rows: RowReport[] };
+const report = JSON.parse(readFileSync(reportPath, 'utf8')) as { codebook_version: string; models?: string[]; rows: RowReport[] };
+// One model is the Opus-alone production run (ruling 2026-10-07): slot 1 is the only label stored.
+const expectedLabels = report.models?.length === 1 ? 1 : 3;
 if (report.codebook_version !== CODEBOOK_VERSION) {
   console.error(`coding-report.json is codebook ${report.codebook_version}, this code is ${CODEBOOK_VERSION} — re-run code-stance-batch.ts`);
   process.exit(1);
@@ -69,9 +76,13 @@ for (const slot of [1, 2, 3]) {
 }
 
 const queued: CoderReviewRow[] = [];
-for (const r of report.rows) {
+for (let r of report.rows) {
   const topic = (context.topics as { topic_id: string; topic_key: string; served_revision_id: string }[]).find((t) => t.topic_key === r.topic_key);
-  if (!topic || r.outcome.kind !== 'unanimous-chair') continue;
+  if (!topic) continue;
+  // A held Opus-alone chair is queued as if it were the coder's agreement, keeping 'needs-source' in its reasons.
+  const held = INCLUDE_NEEDS_SOURCE && expectedLabels === 1 && r.outcome.kind === 'needs-source' && r.held_chair;
+  if (held) r = { ...r, outcome: { kind: 'unanimous-chair', ...r.held_chair! } };
+  if (r.outcome.kind !== 'unanimous-chair') continue;
   const labels: CoderRowLabel[] = [1, 2, 3].flatMap((slot) => {
     const row = bySlot.get(slot)!.get(r.key);
     return row ? [{ slot, valid: true, value: row.v6_value, blank_reason: row.v6_blank_reason, rests_on: row.rests_on, needs_source: row.needs_source }] : [];
@@ -83,7 +94,8 @@ for (const r of report.rows) {
   if (row) queued.push(row);
 }
 
-const skipped = report.rows.filter((r) => r.outcome.kind !== 'unanimous-chair');
+const queuedKeys = new Set(queued.map((q) => `${q.politician_id}|${q.office_id}|${q.topic_id}`));
+const skipped = report.rows.filter((r) => !queuedKeys.has(r.key));
 for (const q of queued) {
   console.log(`queue  ${q.topic_key.padEnd(28)} chair ${q.proposed_value}  ${(q.evidence_tier ?? '-').padEnd(13)} `
     + `${q.verified_source_count}/${q.evidence.length} source(s) publishable  [${q.queue_reasons.join(', ')}]`);
@@ -107,27 +119,27 @@ try {
       `SELECT count(*) AS n FROM inform.stance_coder_labels
         WHERE batch_id = $1 AND politician_id = $2 AND office_id = $3 AND topic_id = $4 AND coder_slot BETWEEN 1 AND 3`,
       [q.batch_id, q.politician_id, q.office_id, q.topic_id]);
-    if (Number(n) !== 3) throw new Error(`${q.topic_key}: ${n}/3 coder labels stored — run code-stance-batch.ts --apply first`);
+    if (Number(n) !== expectedLabels) throw new Error(`${q.topic_key}: ${n}/${expectedLabels} coder labels stored — run code-stance-batch.ts --apply first`);
 
     // Same idempotent key and the same "never resurrect a decision" guard as upsertReviewRow.
     const res = await client.query<{ id: string }>(
       `INSERT INTO inform.stance_research_review
          (batch_id, politician_id, full_name_raw, topic_id, topic_key, proposed_value, proposed_reasoning, evidence,
           verified_source_count, threshold, status, re_research_attempted, season_id, served_revision_id,
-          queue_reasons, evidence_type, review_mode, codebook_version, unanimous, consensus_value, office_id, evidence_tier)
+          queue_reasons, evidence_type, review_mode, codebook_version, unanimous, consensus_value, office_id, evidence_tier, notes)
        VALUES ($1, $2, $3, $4, $5, $6, $7, $8::jsonb, $9, 1, 'pending', false, $10, $11,
-               $12::text[], $13, 'standard', $14, true, $15, $16, $17)
+               $12::text[], $13, 'standard', $14, true, $15, $16, $17, $18)
        ON CONFLICT (batch_id, COALESCE(politician_id::text, full_name_raw), topic_key)
        DO UPDATE SET proposed_value = EXCLUDED.proposed_value, proposed_reasoning = EXCLUDED.proposed_reasoning,
          evidence = EXCLUDED.evidence, verified_source_count = EXCLUDED.verified_source_count,
          queue_reasons = EXCLUDED.queue_reasons, evidence_type = EXCLUDED.evidence_type,
          codebook_version = EXCLUDED.codebook_version, consensus_value = EXCLUDED.consensus_value,
-         evidence_tier = EXCLUDED.evidence_tier, served_revision_id = EXCLUDED.served_revision_id
+         evidence_tier = EXCLUDED.evidence_tier, served_revision_id = EXCLUDED.served_revision_id, notes = EXCLUDED.notes
        WHERE inform.stance_research_review.status IN ('pending', 'unresolved_politician')
        RETURNING id`,
       [q.batch_id, q.politician_id, q.full_name_raw, q.topic_id, q.topic_key, q.proposed_value, q.proposed_reasoning,
         JSON.stringify(q.evidence), q.verified_source_count, q.season_id, q.served_revision_id, q.queue_reasons,
-        q.evidence_type, q.codebook_version, q.consensus_value, q.office_id, q.evidence_tier]);
+        q.evidence_type, q.codebook_version, q.consensus_value, q.office_id, q.evidence_tier, q.notes]);
     if (res.rowCount === 0) { decided++; continue; }
     await client.query(
       `UPDATE inform.stance_coder_labels SET review_id = $1

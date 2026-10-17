@@ -35,6 +35,8 @@ export interface RowReport {
   /** Codebook V6 evidence tier (ruling 2026-10-06), over the sources all coders share. Information
    * only — never changes `shadow`. null for any row that is not a unanimous chair. */
   evidence_tier: EvidenceTier | null;
+  /** Opus-alone only: the chair the single coder gave on a needs-source row (see heldChair below). */
+  held_chair?: { value: number; shared_sources: string[] };
 }
 
 export interface CodingReport {
@@ -62,6 +64,10 @@ export function buildCodingReport(i: {
   profiles?: readonly SourceProfile[];
   /** snapshot_id -> amendment_markup (snapshots.json). Passed through to confirmRowDetailed. */
   snapshotMarkup?: ReadonlyMap<string, 'kept' | 'none' | 'unknown'>;
+  /** The coder slots that were run (default all three). `[1]` is the Opus-alone production run (ruling
+   * 2026-10-07): agreement is then judged over slot 1 alone, so its chair can reach the review queue
+   * instead of every row reading coder-missing. */
+  slots?: number[];
 }): CodingReport {
   const { seat, topics } = i.context;
   const leads = leadsById(i.s1Leads ?? []);
@@ -93,21 +99,28 @@ export function buildCodingReport(i: {
         rests_on: got.row?.rests_on ?? [], needs_source: got.row?.needs_source ?? [] });
     }
     units.push([1, 2, 3].map((s) => { const l = labels.find((x) => x.slot === s); return l?.valid ? chairCategory(l.value) : null; }));
-    const outcome = agree(labels);
+    const outcome = agree(labels, i.slots ?? [1, 2, 3]);
     const reasons: string[] = [];
     let confirm: ConfirmFinding[] = [];
     let evidenceClass: string | null = null;
     let profiles: string[] = [];
     let tier: EvidenceTier | null = null;
+    let heldChair: { value: number; shared_sources: string[] } | null = null;
+    // An Opus-alone run (one slot) whose coder gave a chair AND asked for sources: the chair is checked like
+    // a unanimous one and carried as held_chair, so queue-coded-batch.ts --include-needs-source can put it
+    // in front of a person with 'needs-source' among its reasons. With three coders nothing changes.
+    const one = (i.slots ?? [1, 2, 3]).length === 1 ? labels.find((l) => l.valid && l.value !== null) : undefined;
+    if (outcome.kind === 'needs-source' && one) heldChair = { value: one.value!, shared_sources: [...one.rests_on].sort() };
+    const chair = outcome.kind === 'unanimous-chair' ? outcome : heldChair;
     if (outcome.kind === 'needs-source') { reasons.push('needs-source'); needsSource.push({ key, requests: outcome.requests }); }
     else if (outcome.kind === 'coder-missing') reasons.push('coder-missing');
     else if (outcome.kind === 'split' || outcome.kind === 'disjoint-sources') reasons.push('coder-split');
     else if (outcome.kind === 'unanimous-blank') reasons.push('unanimous-blank-no-write');
-    else {
-      const cRow = rowsBySlot.get(consensusSlot(labels, outcome.value))!;
-      const restsOn = cRow.passages.filter((p) => outcome.shared_sources.includes(p.snapshot_id));
+    if (chair) {
+      const cRow = rowsBySlot.get(consensusSlot(labels, chair.value))!;
+      const restsOn = cRow.passages.filter((p) => chair.shared_sources.includes(p.snapshot_id));
       evidenceClass = weakestClass(restsOn);
-      tier = evidenceTier(cRow, outcome.shared_sources, { sourceKind: i.sourceKind, snapshotText: i.snapshotText }).tier;
+      tier = evidenceTier(cRow, chair.shared_sources, { sourceKind: i.sourceKind, snapshotText: i.snapshotText }).tier;
       const detailed = confirmRowDetailed({ seat, restsOnPassages: restsOn, snapshotText: i.snapshotText, sourceKind: i.sourceKind, rowServedRevisionId: cRow.served_revision_id, bundleServedRevisionId: t.served_revision_id, snapshotUrl: i.snapshotUrl, profiles: i.profiles, snapshotMarkup: i.snapshotMarkup });
       confirm = detailed.findings;
       profiles = detailed.profiles;
@@ -129,11 +142,12 @@ export function buildCodingReport(i: {
     // Option B (ruling 2026-10-06): a chair at a no-lever level rests on own words only, and goes to a
     // person until a stratum with that basis is certified (none is). A blank is unaffected.
     const evidenceBasis = seat.level && t.own_words_levels?.includes(seat.level) ? 'own-words' : 'record';
-    if (outcome.kind === 'unanimous-chair' && evidenceBasis === 'own-words') reasons.push('own-words-basis');
+    if (chair && evidenceBasis === 'own-words') reasons.push('own-words-basis');
     const publishable = outcome.kind === 'unanimous-chair' && reasons.length === 0;
     const seed = leads.get(t.topic_id)?.seed ?? 'none';
     return { key, topic_key: t.topic_key, outcome, confirm, stratum: { level: seat.level, evidence_class: evidenceClass, evidence_basis: evidenceBasis },
-      shadow: publishable ? 'would-publish-if-certified' : 'would-review', shadow_reasons: reasons, seed, profiles, evidence_tier: tier };
+      shadow: publishable ? 'would-publish-if-certified' : 'would-review', shadow_reasons: reasons, seed, profiles, evidence_tier: tier,
+      ...(heldChair ? { held_chair: heldChair } : {}) };
   });
   const a = alphaNominal(units);
   return { rows, m1: { alpha: a.alpha, units: a.units }, needsSource, validity, noProfileHosts };

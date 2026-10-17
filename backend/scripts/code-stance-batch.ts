@@ -5,7 +5,8 @@
  * inform.stance_coder_labels (needs CA_<slot> applied and the operator's OK).
  *   npx tsx scripts/code-stance-batch.ts --dir <batch> (--season-id <uuid> | --season open|draft|<uuid>) --models "opus,sonnet,sonnet" [--apply]
  * One model ("--models opus") is the Opus-alone production run (ruling 2026-10-07): only slot 1 is
- * read and stored; slots 2 and 3 report "file missing" and M1 is undefined, which is expected.
+ * read and stored; slots 2 and 3 report "file missing" and M1 is undefined, which is expected. Agreement
+ * is judged over slot 1 alone, so its chairs reach queue-coded-batch.ts.
  */
 import 'dotenv/config';
 import { seasonIdFromArgs, SeasonTargetError } from './lib/seasonTarget.js';
@@ -80,7 +81,7 @@ if (existsSync(s1LeadsPath)) {
   }
   s1Leads = s1LeadsFile.leads;
 }
-const report = buildCodingReport({ context, files, snapshotText, sourceKind, s1Leads, snapshotUrl, profiles, snapshotMarkup });
+const report = buildCodingReport({ context, files, snapshotText, sourceKind, s1Leads, snapshotUrl, profiles, snapshotMarkup, slots: SLOTS });
 writeFileSync(join(dir, 'coding-report.json'), JSON.stringify({ codebook_version: CODEBOOK_VERSION, models, ...report }, null, 2));
 writeFileSync(join(dir, 'needs-source.json'), JSON.stringify(report.needsSource, null, 2));
 
