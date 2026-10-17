@@ -664,10 +664,10 @@ following January. The city's inauguration page dates the **mayor's** oaths (202
 | # | Item | Why |
 | --- | --- | --- |
 | 3 | Eshé Collins's start, Post 3 | **Window narrowed, not closed.** Absent from the 2021 Post 3 ballot (won by Keisha Sean Waites) and `(I)` in 2025, so between January 2022 and November 2025. Fulton's archive holds no Atlanta Post 3 special for 2022, 2023 or 2024, and neither does the SOS. |
-| 4 | Fulton District 4 vacancy date | Not chased this round. BOC minutes are the likely route. |
+| 4 | Fulton District 4 vacancy date | **Still open — the DATE is what is missing, and a third primary source did not supply it.** Chased 2026-10-17: the county's own consolidated sample ballot for 2026-11-03 prints the contest as *"For County Commissioner – District 4 (Unexpired Term **Mo Ivory, Resigned**)"*, and the qualified-candidates list shows all four candidates as `INCUMBENT: No`. That corroborates the predecessor and the reason on the county's own ballot, which is worth having, but neither document states **when** the seat fell vacant. BOC minutes remain the route. `is_vacant = true` with no span still stands. |
 | 5 | DeKalb D3 / Super D7 oath dates | Not chased. Special-election winners seat on certification, not in January. |
 | 8 | Fulton Surveyor freshness | Not chased. Still no source newer than the 2024 return. |
-| 2 | Neither county elects a Coroner | Still inferred from absence, not stated by a county source. |
+| 2 | Neither county elects a Coroner | **Still open, and the obvious route is a DEAD PAGE.** Chased 2026-10-17: web results quote `dekalbcountyga.gov/node/17055` saying DeKalb was *"the second county in the State of Georgia to abolish the office of the coroner"*, with Fulton first. 🔴 **That page now returns the 404 handler, and the live Medical Examiner page carries none of that history** — the search summary is quoting content the county has removed, so it must not be cited as a live source. Both counties do run a Medical Examiner's office (`fultoncountyga.gov/medicalexaminer`, `dekalbcountyga.gov/departments/public-safety/medical-examiner`), but ⚠ **an ME office does not by itself prove no elected coroner** — some Georgia counties have both. The Internet Archive was returning 503 when this was chased; retry the archived capture of node/17055, or go to the county code for the ordinance abolishing the office. |
 
 ---
 
