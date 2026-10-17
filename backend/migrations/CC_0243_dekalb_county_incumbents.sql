@@ -7,18 +7,40 @@
 -- Slot CC_0243 was RESERVED FROM THE ALLOCATOR before this file was named.
 --
 -- ---------------------------------------------------------------------------
--- 🔴🔴 FOUR OF THESE ELEVEN PEOPLE ARE SURNAMED JOHNSON, AND THEY ARE FOUR DIFFERENT PEOPLE.
+-- 🔴🔴 THE APPLY-DAY FRESHNESS CHECK CAUGHT A DEPARTURE, AND THIS FILE CARRIES THE CORRECTION.
 --
---   Lorraine Cochran Johnson   Chief Executive Officer   first 'Lorraine', last 'Cochran Johnson'
---   Chakira Johnson            Commissioner, District 4  first 'Chakira',  last 'Johnson'
---   Mereda Davis Johnson       Commissioner, District 5  first 'Mereda',   last 'Davis Johnson'
---   Irvin J. Johnson           Tax Commissioner          first 'Irvin',    last 'Johnson'
+-- This migration originally seated IRVIN J. JOHNSON as Tax Commissioner. He won that office
+-- UNOPPOSED on the 2024 certified general carrying the SOS's own "(I)" incumbency marker, the
+-- county's roster linked to his office, and every source agreed.
 --
--- The duplicate-name guard keys on (first_name, last_name), so these four do not collide — but
--- the splits above are LOAD-BEARING. "Cochran Johnson" and "Davis Johnson" are the surnames
--- their own county publishes; splitting either as last='Johnson' would create two pairs that
--- differ only by first name on the same board. 🔴 A LATER SURNAME OR full_name MATCH MUST NOT
--- MERGE ANY OF THEM.
+-- 🔴 ALL OF THEM PREDATED THE CHANGE. The Tax Commissioner's own website states:
+--    "Nicole M. Golden was sworn in as DeKalb County Tax Commissioner on December 31, 2025."
+--    Irvin J. Johnson appears nowhere on that site.
+--
+-- That is GA-3's retired-coroner failure exactly — every source agreeing, all of them stale —
+-- and the ONLY thing that caught it was asking again on apply day. ▶ ASK ON APPLY DAY. It is
+-- cheap, and it is the only check that sees a departure.
+--
+-- ⚠ Johnson is NOT seeded as a former holder. This wave seats incumbents only (spec §11); his
+--   closing term is owed if a later pass wants the history.
+--
+-- ---------------------------------------------------------------------------
+-- 🔴 THREE OF THESE ELEVEN PEOPLE ARE SURNAMED JOHNSON, AND THEY ARE THREE DIFFERENT PEOPLE.
+--
+--   Lorraine Cochran-Johnson  Chief Executive Officer   first 'Lorraine', last 'Cochran-Johnson'
+--   Chakira Johnson           Commissioner, District 4  first 'Chakira',  last 'Johnson'
+--   Mereda Davis Johnson      Commissioner, District 5  first 'Mereda',   last 'Davis Johnson'
+--
+-- The duplicate-name guard keys on (first_name, last_name), so these three do not collide — but
+-- the splits above are LOAD-BEARING. "Cochran-Johnson" and "Davis Johnson" are the surnames
+-- their own offices publish; splitting either as last='Johnson' would create pairs that differ
+-- only by first name on the same board. 🔴 A LATER SURNAME OR full_name MATCH MUST NOT MERGE
+-- ANY OF THEM.
+--
+-- ⚠ THE CEO'S NAME IS HYPHENATED AND THE CERTIFIED BALLOT IS NOT. The 2024 SOS return reads
+--   "Lorraine Cochran Johnson"; her own county page reads "Cochran-Johnson" throughout. Settled
+--   against the officeholder's own office, as GA-5 settled its spellings, with the ballot form
+--   kept as an alternate name.
 --
 -- ---------------------------------------------------------------------------
 -- 🟢 SUPER DISTRICT 7 — THE FIRST ROUND INVERTED, AND THE INCUMBENCY MARKER CAUGHT IT.
@@ -33,9 +55,9 @@
 -- 🔴 A CERTIFIED RESULT IS A FACT ABOUT AN ELECTION, NOT ABOUT WHO HOLDS THE SEAT TODAY.
 --
 -- ---------------------------------------------------------------------------
--- 🔴 TWO DATED STARTS, NINE 'unknown'.
+-- 🔴 THREE DATED STARTS, EIGHT 'unknown'.
 --
--- Dated: Lorraine Cochran Johnson (CEO) and Chakira Johnson (District 4) both appear on the
+-- Dated: Lorraine Cochran-Johnson (CEO) and Chakira Johnson (District 4) both appear on the
 -- 2024 certified general WITHOUT the SOS "(I)" marker that the other DeKalb incumbents carry,
 -- so neither held the seat at that election; Georgia county officers take office the January
 -- following. That gives January 2025 at 'year' precision — the inference fixes the year, not
@@ -50,12 +72,12 @@
 --
 -- 🔴 The nine undated terms are tagged '| unverified CC_0243' so office_holders_as_of does not
 --    let them answer every past date. ✅ VERIFIED: current_office_holders does NOT filter that
---    tag, so all nine remain current and visible to address search.
+--    tag, so all eight remain current and visible to address search.
 --
 -- ---------------------------------------------------------------------------
--- ⚠ The three county officers (Maddox, DeBerry, Johnson) rest on a 2024 certified result and a
---   county web page — the stalest cohort here, the same shape as GA-3's retired coroner. They
---   need a freshness check on APPLY DAY, not just a source check.
+-- ⚠ Maddox, DeBerry and Golden were each RE-CONFIRMED on apply day from their own offices'
+--   websites, 2026-10-17, which is how the Tax Commissioner change was found at all.
+
 --
 -- Idempotent. Dry-run with BEGIN; ... ROLLBACK; and confirm the rollback reverted.
 
@@ -79,7 +101,7 @@ CREATE TEMP TABLE dek_people(external_id bigint, full_name text, first_name text
   ON COMMIT DROP;
 
 INSERT INTO dek_people(external_id, full_name, first_name, last_name, alts) VALUES
-  (-2767941::bigint, 'Lorraine Cochran Johnson', 'Lorraine', 'Cochran Johnson', '{}'::text[]),
+  (-2767941::bigint, 'Lorraine Cochran-Johnson', 'Lorraine', 'Cochran-Johnson', ARRAY['Lorraine Cochran Johnson']),
   (-2767942::bigint, 'Robert Patrick',           'Robert',   'Patrick',         '{}'::text[]),
   (-2767943::bigint, 'Michelle Long Spears',     'Michelle', 'Long Spears',     '{}'::text[]),
   (-2767944::bigint, 'Nicole Massiah',           'Nicole',   'Massiah',         '{}'::text[]),
@@ -90,8 +112,10 @@ INSERT INTO dek_people(external_id, full_name, first_name, last_name, alts) VALU
   -- The county's roster says "LaDena Bolton, PhD"; the certified ballot says LaDena Bolton.
   (-2767948::bigint, 'LaDena Bolton',            'LaDena',   'Bolton',          ARRAY['LaDena Bolton, PhD']),
   (-2767949::bigint, 'Melody M. Maddox',         'Melody',   'Maddox',          '{}'::text[]),
-  (-2767950::bigint, 'Debra DeBerry',            'Debra',    'DeBerry',         '{}'::text[]),
-  (-2767951::bigint, 'Irvin J. Johnson',         'Irvin',    'Johnson',         '{}'::text[]);
+  (-2767950::bigint, 'Debra DeBerry',            'Debra',    'DeBerry',         ARRAY['Debra E. DeBerry']),
+  -- 🔴 CORRECTED ON APPLY DAY. Irvin J. Johnson won this office unopposed in 2024 and has
+  --    since left; the Tax Commissioner's own site states Golden was sworn in 2025-12-31.
+  (-2767951::bigint, 'Nicole M. Golden',         'Nicole',   'Golden',          '{}'::text[]);
 
 INSERT INTO essentials.politicians (external_id, full_name, first_name, last_name, source, is_incumbent, is_active, alternate_names)
 SELECT n.external_id, n.full_name, n.first_name, n.last_name,
@@ -125,7 +149,9 @@ INSERT INTO dek_terms(geo_id, mtfcc, title, external_id, term_start, start_preci
   ('dekalb-county-ga-super-commission-7','X0080','Commissioner, Super District 7', -2767948::bigint, NULL, 'unknown', 'elected', true),
   ('13089', 'G4020', 'Sheriff',                  -2767949::bigint, NULL, 'unknown', 'elected', true),
   ('13089', 'G4020', 'Clerk of Superior Court',  -2767950::bigint, NULL, 'unknown', 'elected', true),
-  ('13089', 'G4020', 'Tax Commissioner',         -2767951::bigint, NULL, 'unknown', 'elected', true);
+  -- 🟢 DATED FROM THE OFFICE'S OWN SITE: "Nicole M. Golden was sworn in as DeKalb County Tax
+  --    Commissioner on December 31, 2025". A stated oath date, so 'day' precision.
+  ('13089', 'G4020', 'Tax Commissioner',         -2767951::bigint, '2025-12-31'::date, 'day', 'elected', false);
 
 INSERT INTO essentials.office_terms (office_id, politician_id, term_start, term_end, start_precision, how_started, source)
 SELECT o.id, p.id, t.term_start, NULL, t.start_precision, t.how_started,
@@ -192,8 +218,8 @@ BEGIN
     FROM essentials.politicians p
    WHERE p.external_id BETWEEN -2767951 AND -2767941
      AND p.last_name LIKE '%Johnson';
-  IF v_johnson <> 4 THEN
-    RAISE EXCEPTION 'ATL-6 gate: expected 4 DISTINCT Johnson name-pairs on the DeKalb roster, found % — two of these four people have been collapsed into one', v_johnson;
+  IF v_johnson <> 3 THEN
+    RAISE EXCEPTION 'ATL-6 gate: expected 3 DISTINCT Johnson name-pairs on the DeKalb roster, found % — two of these three people have been collapsed into one', v_johnson;
   END IF;
 
   SELECT count(*) INTO v_untag FROM essentials.office_terms ot
@@ -213,8 +239,8 @@ BEGIN
     JOIN essentials.governments g ON g.id = c.government_id
    WHERE g.name = 'DeKalb County, Georgia, US'
      AND COALESCE(ot.source, '') LIKE '%| unverified %';
-  IF v_tagged <> 9 THEN
-    RAISE EXCEPTION 'ATL-6 gate: expected exactly 9 tagged-unverified DeKalb terms, found % — the CEO and District 4 are dated and must NOT carry the tag', v_tagged;
+  IF v_tagged <> 8 THEN
+    RAISE EXCEPTION 'ATL-6 gate: expected exactly 8 tagged-unverified DeKalb terms, found % — the CEO, District 4 and the Tax Commissioner are dated and must NOT carry the tag', v_tagged;
   END IF;
 
   -- 🔴 THE TAG MUST BITE. Nobody seated here began before 2025, so 2015 must return nothing.
@@ -236,5 +262,5 @@ BEGIN
     RAISE EXCEPTION 'ATL-6 gate CONTROL: expected 236 Georgia legislative offices, found % — wrong database', v_leg;
   END IF;
 
-  RAISE NOTICE 'ATL-6 OK: 11 people, 11 terms, 11 seated, 0 vacancies, 4 distinct Johnsons, 2 dated + 9 tagged-unverified, history clean at 2015, control 236 legislative offices present';
+  RAISE NOTICE 'ATL-6 OK: 11 people, 11 terms, 11 seated, 0 vacancies, 3 distinct Johnsons, 3 dated + 8 tagged-unverified, history clean at 2015, control 236 legislative offices present';
 END $$;

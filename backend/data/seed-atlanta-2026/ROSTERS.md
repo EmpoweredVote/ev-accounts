@@ -6,7 +6,7 @@ Knight jurisdictions** — it reuses the Georgia slice's stages 1 and 2, which a
 Spec: [`docs/superpowers/specs/2026-08-28-knight-cities-program-design.md`](../../../docs/superpowers/specs/2026-08-28-knight-cities-program-design.md) ·
 Slice: [`.planning/knight-foundation/ga.md`](../../../.planning/knight-foundation/ga.md)
 
-**39 offices · 38 people · 1 vacancy** — 17 city, 11 Fulton, 11 DeKalb. Three governments.
+**39 offices · 38 people · 1 vacancy** — ✅ APPLIED 2026-10-17. — 17 city, 11 Fulton, 11 DeKalb. Three governments.
 
 Measured against production 2026-10-17. Every source in the table below is on disk in
 `_sources/`, untracked, fetched through `_fetch.sh`.
@@ -343,9 +343,58 @@ Per `CLAUDE.md` — *"do not write a vacancy span whose start date you don't kno
 | Commission District 5 | **Mereda Davis Johnson** | G 2024 `(I)`, unopposed | open, `unknown` |
 | **Super** District 6 | **Edward "Ted" Terry** | G 2024 `(I)`, unopposed | open, `unknown` |
 | **Super** District 7 | **LaDena Bolton** | G 2024 **special** → runoff; 2026 primary `(I)` 55.99% | see note |
-| Sheriff | **Melody M. Maddox** | G 2024 `(I)`, unopposed | open, `unknown` |
-| Clerk of Superior Court | **Debra DeBerry** | G 2024 `(I)`, unopposed | open, `unknown` |
-| Tax Commissioner | **Irvin J. Johnson** | G 2024 `(I)`, unopposed | open, `unknown` |
+| Sheriff | **Melody M. Maddox** | G 2024 `(I)` + her office's own site, apply day | open, `unknown` |
+| Clerk of Superior Court | **Debra DeBerry** | G 2024 `(I)` + "Meet The Clerk", apply day | open, `unknown` |
+| Tax Commissioner | 🔴 **Nicole M. Golden** | **her office's own site, apply day** — see below | **2025-12-31**, `day` |
+
+#### 🔴🔴 THE APPLY-DAY CHECK CAUGHT A DEPARTURE — AND IT IS GA-3's CORONER, EXACTLY
+
+This wave was built seating **Irvin J. Johnson** as DeKalb Tax Commissioner. He won the office
+**unopposed** on the 2024 certified general, carrying the SOS's own `(I)` incumbency marker, and
+the county's site linked to his office. Three sources, all agreeing.
+
+🔴 **All three predated the change.** The Tax Commissioner's own website states:
+
+> "Nicole M. Golden was sworn in as DeKalb County Tax Commissioner on **December 31, 2025**."
+
+Irvin J. Johnson appears **nowhere** on that site. `ga.md` records that GA-3 put a retired coroner
+into production because every source agreed and all of them were stale. This is the same failure,
+caught one step earlier — and the **only** thing that caught it was asking again on apply day.
+
+▶ **ASK ON APPLY DAY.** It is cheap, and it is the only check that sees a departure.
+
+⚠ The find also produced a **better** date than the one it replaced: a stated oath, so `day`
+precision, where the row it replaced would have been `unknown`.
+
+Because one of eight officers was wrong, **all** of them were then re-checked against their own
+offices' sites on 2026-10-17:
+
+| Officer | Re-confirmed on | |
+| --- | --- | --- |
+| Fulton Sheriff, Patrick "Pat" Labat | the county's own Sheriff page | 🟢 |
+| Fulton Clerk, Che' Alexander | `fultonclerk.org` | 🟢 |
+| Fulton Tax Commissioner, Arthur E. Ferdinand | `fultoncountytaxes.org`, carrying 2026 deadlines | 🟢 |
+| Fulton's 6 commissioners | the county roster, District 4 still absent | 🟢 |
+| DeKalb CEO, Lorraine Cochran-**Johnson** | the county's CEO page | 🟢 |
+| DeKalb Sheriff, Melody M. Maddox | `dekalbsheriff.org` | 🟢 |
+| DeKalb Clerk, Debra DeBerry | `dksuperiorclerk.com`, "Meet The Clerk" | 🟢 |
+| DeKalb Tax Commissioner | 🔴 **CHANGED** — Golden, not Johnson | |
+| **Fulton Surveyor, Fred Quinn, Jr.** | ⚠ **nothing since the 2024 return** | ⚠ |
+
+⚠ **The Surveyor is the one row in the wave with no post-2024 confirmation.** Fulton publishes no
+Surveyor page; the office is real and on the 2024 certified ballot, but nothing newer names its
+holder. (`ga.md` records Ballotpedia as a dead route for Georgia county officers.) Seeded on the
+certified result, and recorded here as the weakest row in the wave — **open item 8**.
+
+#### ⚠ The CEO's name is hyphenated and the certified ballot is not
+
+The 2024 SOS return reads "Lorraine Cochran Johnson". Her own county page reads
+"Cochran-**Johnson**" throughout. Settled against the officeholder's own office, as GA-5 settled
+its spellings; the ballot form is kept as an `alternate_names` entry.
+
+🟢 That page also corroborates the Super District 7 chain independently: "Prior to her election as
+CEO, Cochran-Johnson served as DeKalb County Commissioner for **Super District 7 from 2018 to
+2024**" — which is the seat Adams led and Bolton won.
 
 #### 🟢 Super District 7 — the first round INVERTED, and the incumbency marker caught it
 
@@ -398,6 +447,7 @@ freshness check on apply day, not just a source check.
 | 4 | Fulton **District 4 vacancy date** | Press says 2026-03-06; no primary source. Written `is_vacant` with no span. |
 | 5 | DeKalb **D3 and D7 oath dates** | Special-election winners are seated on certification, not in January. |
 | 6 | **Ten Atlanta start dates** | No certified chain before 2025; bios carry no date language. Written `unknown`. |
+| 8 | **Fulton Surveyor, Fred Quinn, Jr.** | The only row in the wave with no post-2024 confirmation. Fulton publishes no Surveyor page. Seeded on the 2024 certified result; re-check when a source appears. |
 | 7 | **District polygon layers** | ✅ sourced and cross-county coverage proved — see "Geography". **One structural item remains:** the duplicate District 12 row must be resolved (dissolve vs defect) before any load. |
 
 ---
@@ -491,19 +541,53 @@ crosses the line. Two unrelated sources agree.
 
 ---
 
-## What this wave writes
+## ✅ APPLIED TO PRODUCTION 2026-10-17
 
-Nothing yet. This file is the evidence; no migration has been generated and no slot has been
-allocated.
+| Artifact | What it wrote |
+| --- | --- |
+| `scripts/load-atlanta-council-districts.mjs` | **12** boundaries, `X0077` |
+| `scripts/load-fulton-commission-districts.mjs` | **6** boundaries, `X0078` |
+| `scripts/load-dekalb-commission-districts.mjs` | **5** + **2** boundaries, `X0079` / `X0080` |
+| `CC_0238_atlanta_structure.sql` | 1 government, 3 chambers, 13 districts, 17 offices |
+| `CC_0239_atlanta_incumbents.sql` | 17 people, 17 terms |
+| `CC_0240_fulton_county_structure.sql` | 1 government, 2 chambers, 6 districts, 11 offices |
+| `CC_0241_fulton_county_incumbents.sql` | 10 people, 10 terms |
+| `CC_0242_dekalb_county_structure.sql` | 1 government, 3 chambers, 7 districts, 11 offices |
+| `CC_0243_dekalb_county_incumbents.sql` | 11 people, 11 terms |
 
-Planned, once open item 7 is closed:
+Measured in production after the apply:
 
-| Wave | Content | Migrations |
-| --- | --- | --- |
-| ATL-1 | Atlanta council district layer + city structure + occupancy | 1 boundary + 2 |
-| ATL-2 | Fulton commission district layer + offices **and** people | 1 boundary + **1** (spec §3.2) |
-| ATL-3 | DeKalb commission + super district layers + offices **and** people | 1 boundary + **1** |
-| ATL-4 | Assets — 38 headshots, 1 Atlanta banner | 0 |
+| Government | Offices | Seated | Vacant |
+| --- | --- | --- | --- |
+| City of Atlanta | 17 | **17** | 0 |
+| Fulton County | 11 | **10** | 1 |
+| DeKalb County | 11 | **11** | 0 |
+
+25 boundaries · 38 people · `offices_missing_terms` 432 → **433**, exactly the Fulton District 4
+vacancy · `office_holders_as_of(2015-06-01)` returns **0** for all three governments, so the
+`| unverified` tags bite in production and no undated term leaks into history.
+
+`verify-atlanta-probes.sql` passes against production. `check:reachability` reports
+**"nothing regressed"**, all three categories at baseline.
+
+### 🔴 THE APPLY NEEDS `--single-transaction`, AND THE FIRST ATTEMPT PROVED IT
+
+Every migration here builds `CREATE TEMP TABLE … ON COMMIT DROP`. Run through `psql` **without**
+an explicit transaction, each statement autocommits, so the temp table is dropped the moment it
+is created and the next statement fails with `relation "atl_districts" does not exist`.
+
+⚠ **It is a PARTIAL apply, not a clean failure.** CC_0238's government row and its three chambers
+committed before the error; the districts and offices did not. Nothing was corrupted — every
+insert in these files is guarded by `NOT EXISTS`, so the corrected re-run skipped what existed
+and completed — but a migration that half-applies is worth knowing about in advance.
+
+▶ **Apply with `psql --single-transaction -v ON_ERROR_STOP=1 -f <file>`**, one file at a time.
+
+### Still owed
+
+| Wave | Content |
+| --- | --- |
+| ATL-4 | Assets — 38 headshots, 1 Atlanta banner. **Not started.** |
 
 🔴 **The January 2027 re-seat is already owed.** Fulton Chair, D1, D3, D5 and the D4 special are on the
 2026-11-03 ballot; DeKalb D2, D3 and D7 likewise. Mo Ivory is the Democratic nominee for Fulton Chair
