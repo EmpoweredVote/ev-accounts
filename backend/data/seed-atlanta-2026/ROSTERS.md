@@ -265,7 +265,7 @@ All 17 confirmed by A + C. Vote shares are the **merged** Fulton + DeKalb certif
 
 `term_start` is the start of **continuous occupancy by that person**, not the start of the current
 term. Re-election does not restart it. Establishing it needs a dated oath or an explicit
-"since YYYY" from the officeholder's own source, and for eleven of these neither exists:
+"since YYYY" from the officeholder's own source, and for ten of these neither exists:
 
 - The SOS portal carries **no Atlanta municipal election before 2025** (defect 7), so there is no
   certified chain to walk back.
@@ -397,7 +397,7 @@ freshness check on apply day, not just a source check.
 | 3 | Certified **2025-12-02 runoff** return for Atlanta D7 and D11 | Not in the SOS portal. Seats rest on source C. |
 | 4 | Fulton **District 4 vacancy date** | Press says 2026-03-06; no primary source. Written `is_vacant` with no span. |
 | 5 | DeKalb **D3 and D7 oath dates** | Special-election winners are seated on certification, not in January. |
-| 6 | **Eleven Atlanta start dates** | No certified chain before 2025; bios carry no date language. Written `unknown`. |
+| 6 | **Ten Atlanta start dates** | No certified chain before 2025; bios carry no date language. Written `unknown`. |
 | 7 | **District polygon layers** | ✅ sourced and cross-county coverage proved — see "Geography". **One structural item remains:** the duplicate District 12 row must be resolved (dissolve vs defect) before any load. |
 
 ---
