@@ -668,13 +668,72 @@ following January. The city's inauguration page dates the **mayor's** oaths (202
 | 5 | DeKalb D3 / Super D7 oath dates | Not chased. Special-election winners seat on certification, not in January. |
 | 8 | Fulton Surveyor freshness | Not chased. Still no source newer than the 2024 return. |
 | 2 | Neither county elects a Coroner | Still inferred from absence, not stated by a county source. |
-| — | Stage 5 assets | 40 headshots, 1 banner. Not started. |
 
-### Still owed
+---
 
-| Wave | Content |
+## ✅ ATL-4 — HEADSHOTS APPLIED 2026-10-17 (CC_0246)
+
+**34 of the 41 seats now carry a headshot.** 6 are deliberately blank and 1 is the Fulton D4
+vacancy, which has no occupant to picture. Verified on the rendered page, not on the API:
+`essentials.empowered.vote/politician/<id>` serves a 600×750 `<img alt="Andre Dickens portrait">`.
+
+| Government | Seated | With headshot | Blank |
+| --- | --- | --- | --- |
+| City of Atlanta | 17 | **17** | 0 |
+| Fulton County | 11 | **7** | 4 |
+| DeKalb County | 12 | **10** | 2 |
+
+Every image is an official government page, rendered to the house geometry (centre 4:5 crop,
+Lanczos to 600×750, q90) and uploaded as `<politician_id>-headshot.jpg`. `CC_0246` writes **both**
+`politician_images` (`type='default'`) **and** `politicians.photo_custom_url` — the grid reads
+`images[]` first and the backend reads the scalar, so writing one alone is invisible on one side.
+
+### 🔴🔴 A CIRCULAR-FRAMED SOURCE IS A DEFECT, AND NO EXISTING GATE SAW IT
+
+Two sourced portraits — Fulton's Clerk and Fulton's Sheriff — were **discs on a flat matte**, not
+rectangular photographs. Cropped to 4:5 they keep a wedge of that matte in all four corners. Every
+check in the pipeline passed them: licence, resolution, no-monochrome, face-centre, and the source's
+own alt text. **The operator caught them by eye on the contact sheet.**
+
+▶ It is now a gate, in `framecheck.mjs`: corner flatness + corner agreement + matte mass + a radial
+step. The discriminator is **corner agreement** — a disc on matte scores 0 (all four corners
+identical); every real studio backdrop in the wave scored ≥ 24.
+
+- 🔴 **THE GATE'S POSITIVE CONTROL IS TWO FIXTURES ON DISK, NOT TWO ROWS OF THE LIVE SET.** The first
+  version named the two live rows. Fixing those rows removed them, and the next run reported
+  **"FRAMED: none"** while proving nothing — a control that the work itself deletes. A fixture cannot
+  leave the set. There is a **negative** control too (a known rectangular portrait), because a gate
+  that says YES to everything would otherwise read as passing.
+
+### What the two became
+
+- **Sheriff Pat Labat** — re-sourced from the Sheriff's Office (`fcsoga.org/our-sheriff/`) at
+  **1000×1250, already exactly 4:5**, so the crop discards nothing. His uniform nameplate reads
+  LABAT in frame, which is identity evidence inside the image itself.
+- **Ché Alexander, Clerk of Superior Court** — ⚠ **left blank.** The clerk site serves only the disc
+  on green matte. The county's other asset is a **1920×350 banner**, and because her head nearly
+  fills its height, every 4:5 cut from it clips her hair. Three crop anchors were swept and all three
+  failed. A blank beats a clipped frame.
+
+### ⚠ Four Fulton commissioners enlarge 3.75×
+
+Pitts, Thorne, Arrington and Abdur-Rahman publish **nothing larger than a 200×200 grid thumbnail**.
+Per-district pages (`/commissioners/district-N`) all return 404, and the Sitecore `?mw=1600&mh=1600`
+render returns the same 200×200 — the uploads really are that small. Ellis, Barrett and Labat *did*
+grow under `?mw=`, to 417–418, so the query-string trick works where a larger original exists; it
+just does not here. **Re-source these four when Fulton republishes.**
+
+🟢 Two sources were upgraded by probing past the served derivative: DeKalb's Tax Commissioner from
+900×900 to **2065×2065** (WordPress original), and the three Sitecore images above. DeKalb's Drupal
+originals are *not* bigger — `/styles/default/public/` and the unstyled path are both 277×353.
+
+### Still owed on ATL-4
+
+| Item | State |
 | --- | --- |
-| ATL-4 | Assets — 38 headshots, 1 Atlanta banner. **Not started.** |
+| Atlanta banner | **Not started — and it is not a simple add.** Georgia's **state** banner is already the Atlanta skyline (`buildingImages.js`), so this is the FL/MI/IN pattern: the city takes the skyline photo and the **state banner must move to a whole-state subject**, named `-v2`. That changes a second jurisdiction and needs an operator decision before any asset work. |
+| 4 Fulton re-sources | When Fulton publishes anything larger than 200×200. |
+| 6 blank seats | Listed in `CC_0246`'s header comment. Do not fill any of them with a placeholder. |
 
 🔴 **The January 2027 re-seat is already owed.** Fulton Chair, D1, D3, D5 and the D4 special are on the
 2026-11-03 ballot; DeKalb D2, D3 and D7 likewise. Mo Ivory is the Democratic nominee for Fulton Chair
