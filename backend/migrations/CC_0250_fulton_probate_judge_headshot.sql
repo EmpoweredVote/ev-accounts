@@ -156,12 +156,14 @@ END $$;
 COMMIT;
 
 -- ───────────────────────────────────────────────────────────────────────────────────────────
--- THE 4 STILL BLANK:
+-- THE 4 STILL BLANK — these are SEATED people with no photo, measured on production.
+-- (Fulton District 4 is vacant and so has no occupant to picture; it is NOT one of the four,
+-- because the count joins through office_terms.politician_id.)
 --   Fulton  - Ché Alexander (Clerk): only a circular-framed portrait and a 1920x350 banner;
 --             every 4:5 cut clips her hair. A blank beats a clipped frame.
 --           - Arthur E. Ferdinand (Tax): the department page answers fine with a browser UA and
 --             carries NO portrait — its only hero is a 1920x350 photograph of an office SIGN.
---           - District 4 is VACANT, so it has no occupant to picture.
+--           - Fred Quinn, Jr. (Surveyor): Fulton publishes no Surveyor page at all.
 --   DeKalb  - Debra DeBerry (Clerk): no reachable standalone clerk site; the county path 404s.
 -- ▶ Ché Alexander is now the best remaining candidate for a RENDERED fetch, which is what
 --   unblocked both Probate Judges. Her site was only ever read through curl.
