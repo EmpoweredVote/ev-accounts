@@ -784,7 +784,7 @@ and re-seated then — not overwritten.
 
 ---
 
-## 🟢 COUNTY-RETURN ROUND — 2026-10-18 (CC_0248; CC_0249 reserved, deliberately unwritten)
+## 🟢 COUNTY-RETURN ROUND — 2026-10-18 (CC_0248, CC_0249 — both applied)
 
 Prompted by the operator asking to finish the full seed. **13 of the 20 undated occupancies are
 now dated**, open items 2, 3 and 5 are **closed**, item 4 is **narrowed to a five-day window**, and
@@ -795,7 +795,7 @@ item 8 is **re-checked**.
 | Terms undated, all three governments | **20 of 40** | **7 of 40** |
 | Open items 2, 3, 5 | open | **closed** |
 | Item 4, Fulton D4 vacancy | press date only, no primary source | **bracketed 2026-03-05 … 2026-03-09 by the county's own record** |
-| Headshot blanks | 6 | **5 sourced** (Hargrove found and rendered; upload pending) |
+| Headshot blanks | 6 | **5** — Hargrove sourced, uploaded and live (`CC_0249`) |
 
 ### 🔴🔴 THE BLANK ROWS WERE RIGHT, AND THE REASON IS A SCHEMA FACT NOBODY HAD WRITTEN DOWN
 
@@ -942,8 +942,8 @@ passes.
 | --- | --- | --- |
 | 1 | **7 undated occupancies** | Each blocker is named in `CC_0248`'s footer. In short: Pitts needs a Fulton **countywide** Nov-2017 or Nov-2018 return, and the archive slices its 2017 documents **by city**; Alexander arrived mid-term by **appointment** (Fulton's 2020 clerk was Cathelene "Tina" Robinson); Ferdinand dates to the 1990s; DeBerry was already `(I)` in **2012**; Maddox was already `(I)` in 2020 and DeKalb's only 2020 special is the **US House D5** one; both Probate Judges appear in **no** certified return. |
 | 2 | Fulton **D1 and D3** rest on a certified **primary**, not a general | Neither the SOS nor Fulton's archive holds the **November 2022** general. The first-win year is evidenced; the general itself is not. |
-| 3 | **Hargrove headshot — rendered and verified, NOT UPLOADED** | Source: `dekalbprobatega.com/wp-content/uploads/2020/07/Bedelia-2.jpg`, **800×800**, a real rectangular studio portrait sitting beside her own first-person text ("I am Bedelia C Hargrove, the Chief Probate Court Judge in DeKalb County"). Rendered to house geometry (centre 4:5, Lanczos, 600×750, q90) and passed corner-agreement (151.1) and colour (34.5) checks. **The storage upload could not be performed** — the credential is not reachable from that session. `CC_0249` is reserved and deliberately **left unwritten**: a `politician_images` row pointing at an absent asset publishes a broken image. |
-| 4 | 4 Fulton re-sources · the other 5 blanks | Reasons sharpened: Ferdinand's department page serves only a **1920×350 hero of a sign**, not a portrait; Fulton Probate renders its content in **JS** with no portrait in the server HTML; DeKalb's Clerk has no reachable standalone site. |
+| 3 | ✅ **Hargrove headshot — DONE (`CC_0249`, applied 2026-10-18)** | Source: `dekalbprobatega.com/wp-content/uploads/2020/07/Bedelia-2.jpg`, **800×800**, a real rectangular studio portrait sitting beside her own first-person text ("I am Bedelia C Hargrove, the Chief Probate Court Judge in DeKalb County"). Rendered to house geometry (centre 4:5, Lanczos, 600×750, q90), passed corner-agreement (151.1) and colour (34.5), uploaded and **verified on the rendered page** — `essentials.empowered.vote` serves `<img alt="Bedelia C. Hargrove portrait">` at a 600×750 natural size. **Blanks 6 → 5.** |
+| 4 | 4 Fulton re-sources · the other **5** blanks | Reasons sharpened, and two of CC_0246's were wrong about the cause: Ferdinand's department page answers fine with a browser UA but serves only a **1920×350 hero of a SIGN** — there is no portrait on it, rather than the site "refusing automated requests"; Fulton Probate answers 200 but renders its content in **JS**, so a rendered fetch is needed (that is how the DeKalb one was eventually found, so it is worth trying); DeKalb's Clerk has no reachable standalone site. |
 | 5 | **January 2027 re-seat** | Unchanged, and now 16 days from the election. |
 
 ### ⚠ A possible over-precision in the existing data, not fixed here
