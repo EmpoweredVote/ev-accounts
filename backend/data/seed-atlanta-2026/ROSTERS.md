@@ -795,7 +795,7 @@ item 8 is **re-checked**.
 | Terms undated, all three governments | **20 of 40** | **7 of 40** |
 | Open items 2, 3, 5 | open | **closed** |
 | Item 4, Fulton D4 vacancy | press date only, no primary source | **bracketed 2026-03-05 … 2026-03-09 by the county's own record** |
-| Headshot blanks | 6 | **5** — Hargrove sourced, uploaded and live (`CC_0249`) |
+| Headshot blanks | 6 | **4** — both Probate Judges recovered and live (`CC_0249`, `CC_0250`) |
 
 ### 🔴🔴 THE BLANK ROWS WERE RIGHT, AND THE REASON IS A SCHEMA FACT NOBODY HAD WRITTEN DOWN
 
@@ -943,7 +943,7 @@ passes.
 | 1 | **7 undated occupancies** | Each blocker is named in `CC_0248`'s footer. In short: Pitts needs a Fulton **countywide** Nov-2017 or Nov-2018 return, and the archive slices its 2017 documents **by city**; Alexander arrived mid-term by **appointment** (Fulton's 2020 clerk was Cathelene "Tina" Robinson); Ferdinand dates to the 1990s; DeBerry was already `(I)` in **2012**; Maddox was already `(I)` in 2020 and DeKalb's only 2020 special is the **US House D5** one; both Probate Judges appear in **no** certified return. |
 | 2 | Fulton **D1 and D3** rest on a certified **primary**, not a general | Neither the SOS nor Fulton's archive holds the **November 2022** general. The first-win year is evidenced; the general itself is not. |
 | 3 | ✅ **Hargrove headshot — DONE (`CC_0249`, applied 2026-10-18)** | Source: `dekalbprobatega.com/wp-content/uploads/2020/07/Bedelia-2.jpg`, **800×800**, a real rectangular studio portrait sitting beside her own first-person text ("I am Bedelia C Hargrove, the Chief Probate Court Judge in DeKalb County"). Rendered to house geometry (centre 4:5, Lanczos, 600×750, q90), passed corner-agreement (151.1) and colour (34.5), uploaded and **verified on the rendered page** — `essentials.empowered.vote` serves `<img alt="Bedelia C. Hargrove portrait">` at a 600×750 natural size. **Blanks 6 → 5.** |
-| 4 | 4 Fulton re-sources · the other **5** blanks | Reasons sharpened, and two of CC_0246's were wrong about the cause: Ferdinand's department page answers fine with a browser UA but serves only a **1920×350 hero of a SIGN** — there is no portrait on it, rather than the site "refusing automated requests"; Fulton Probate answers 200 but renders its content in **JS**, so a rendered fetch is needed (that is how the DeKalb one was eventually found, so it is worth trying); DeKalb's Clerk has no reachable standalone site. |
+| 4 | 4 Fulton re-sources · the other **4** blanks | ✅ **Fulton Probate recovered too — see below.** Of the rest: Ferdinand's department page answers fine with a browser UA but serves only a **1920×350 hero of a SIGN**, so there is no portrait on it rather than the site "refusing automated requests"; DeKalb's Clerk has no reachable standalone site; Ché Alexander and the vacant Fulton D4 are unchanged. ▶ **Ché Alexander is the best remaining candidate for a RENDERED fetch** — her site was only ever read through `curl`, and that is exactly what hid both Probate Judges. |
 | 5 | **January 2027 re-seat** | Unchanged, and now 16 days from the election. |
 
 ### ⚠ A possible over-precision in the existing data, not fixed here
@@ -987,3 +987,62 @@ Both found while chasing Ferdinand, and both will bite the next person who goes 
    Municipal and Special Election** (Kasim Reed (I) for Mayor). The name says 2000; the content is
    2013. **Read the header date inside every document from this archive before trusting it**, which
    is also the only reason this was caught rather than written up as a 2000 result.
+
+### ✅ BOTH PROBATE JUDGES RECOVERED — and the second one nearly published the wrong face
+
+`CC_0246` recorded both as blank because "county probate paths 404". **Neither 404s.** DeKalb's
+portrait is served under a different path, and **Fulton's court site is CivicPlus, which renders its
+roster in JS** — so the portrait is absent from the server HTML and invisible to `curl`. A rendered
+fetch of `fultonprobatega.org/226/Meet-our-Executive-Team` finds it immediately.
+
+▶ **"404" in a blank-headshot note may mean "I fetched it the wrong way".** Before accepting a
+blank, try a rendered fetch. It unblocked two of the six here.
+
+#### 🔴🔴 THE OBVIOUS GRAB WOULD HAVE PUBLISHED MARIAN PARKER AS KENYA M. JOHNSON
+
+The Fulton page carries **14 portraits whose alt attributes name nobody** — `Fulton COnty
+Probate-(27 of 45)`, `image0`, `otwy`. The Chief Judge's is the **smallest of them**:
+
+| column x | image | native | person |
+| --- | --- | --- | --- |
+| **330** | `documentID=198`, alt **`JJohn`** | **250×334** | **Kenya M. Johnson, Chief Judge** |
+| 522 | `documentID=344` | 2080×2600 | Marian Parker, Associate Judge |
+| 714 | `documentID=333` | 2080×2600 | Myles Braxton, Chief Clerk of Court |
+
+**Picking the largest, or the nearest by DOM ancestry, picks a colleague** — at 8× the resolution,
+which makes the wrong answer look like the better one. This is the memory rule "a contact sheet is
+blind when the wrong person is also plausible" in its sharpest form, with no alt text to save it.
+
+Binding confirmed **three independent ways**: a screenshot of the rendered row (names sit directly
+beneath their portraits), column geometry (names at x=366/531/721 against images at x=330/522/714,
+same order, 253px below), and the alt stem `JJohn`. The lapel pin in frame is the Fulton County seal.
+
+⚠ **Three DOM binders failed first, and each failed loudly enough to catch only because a uniform
+answer is never trusted here:**
+
+1. **ancestry walk** — bound **all 14** images to the first name on the page, *including the
+   2200×430 page banner*. It climbs into a container holding the whole team.
+2. **TreeWalker over `.pageContent`** — returned `[]` twice. `querySelector` matched a **different,
+   empty** element with that class; the real grid is a later node. The control that exposed it was
+   asking the root how many images it contained: **0**, against 20 in the document.
+3. **geometric pairing** — returned 0 names; the element filter was too strict.
+
+**The house rule — LOOK AT THE FRAMES — is what actually resolved it**, in one screenshot.
+
+#### ⚠ An accepted upscale, and the query-string trick that did not work
+
+Her 250×334 PNG is the only version served: `&maxWidth`, `&width`, `&size` and `&w` all return the
+**identical 40,624 bytes**, so the SC-5 "the resize can be in the query string" trick does not apply
+to CivicPlus's `ImageRepository`. Reaching 600×750 is a **2.4× enlargement**. ATL-4 refused four
+Fulton commissioners at **3.75×**, so this sits inside that precedent; the render was inspected and
+reads as a real portrait. **Ruled publishable by the operator, 2026-10-18.** Re-source if the court
+republishes.
+
+🔴 **A fourth detector bug, in the framecheck itself**: the corner check returned `NaN` on this file
+because it is a **4-channel PNG** and the reader strided by 3. Visible rather than silent — unlike
+the `.stats()`/`.extract()` bug — but the fix is the same discipline: call `.removeAlpha()` before
+`.raw()`. With that, corner agreement **224.6**, colour **24.1**, skin centroid **52.4%**.
+
+Both are live and verified on the rendered page, not the API: `essentials.empowered.vote` serves
+`<img alt="Kenya M. Johnson portrait">` and `<img alt="Bedelia C. Hargrove portrait">`, each at a
+600×750 natural size. **Blanks 6 → 4.**
