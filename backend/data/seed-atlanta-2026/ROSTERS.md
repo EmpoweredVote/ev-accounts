@@ -953,3 +953,37 @@ Council President Overstreet. The `CC_0244` note in this file states that the in
 dates **only the Mayor's** oath and that *"no day is claimed"* for councilmembers. Either those four
 rows are over-precise or that note is wrong. **Not changed here** — it needs the inauguration page
 read again, and this round did not do it.
+
+### 🔴🔴 THE CERTIFIED-RETURN ROUTE IS EXHAUSTED. ALL 7 REMAINING ARRIVED OFF-BALLOT.
+
+Chased 2026-10-18 after the 13 were written. Every one of the seven was attempted, and they fail
+for **one structural reason, not seven incidental ones**: a certified return can only date someone
+who *won an election for that seat*. These seven did not.
+
+| Seat | What the record actually shows |
+| --- | --- |
+| DeKalb Sheriff, **Maddox** | ⚠ **Correcting `CC_0248`'s first footer**: there WAS a 2020 Sheriff special — "Sheriff (Special From March)", voted **2020-05-19**, runoff **2020-08-11**. She carries **`(I)` in BOTH**, so it does not date her either. **Appointed** before March 2020. |
+| Fulton Clerk, **Alexander** | Fulton's certified 2020 general shows a different clerk, **Cathelene "Tina" Robinson (I)**. The Clerk is not on the 2022 ballot. **Appointed** mid-term. |
+| DeKalb Clerk, **DeBerry** | Already **`DEBRA DEBERRY (I)(D)`** in DeKalb's certified **2012** general. **Appointed** in or before 2012. |
+| Fulton Probate, **Kenya M. Johnson** | In **no** certified return — the GAP 3 nonpartisan-unopposed rule. |
+| DeKalb Probate, **Hargrove** | Same. |
+| Fulton Chair, **Pitts** | `(I)` in the certified 2022 primary. Needs a **countywide** Nov-2017 or Nov-2018 return (see the two archive defects below). |
+| Fulton Tax, **Ferdinand** | `(I)` continuously from 1996 onward; took office in the 1990s (see below). |
+
+▶ **What would actually close these is APPOINTMENT records** — a Governor's executive order or a
+court order — not another election archive. That is a different source class and a different pass.
+Neither county's Legistar holds them: searches for DeBerry, Maddox, Ferdinand and Alexander return
+only incidental matches in public-comment and proclamation boilerplate.
+
+### 🔴 TWO MORE DEFECTS IN FULTON'S OWN ARCHIVE
+
+Both found while chasing Ferdinand, and both will bite the next person who goes back before ~2005:
+
+1. **The pre-2000 generals are IMAGE SCANS with no text layer.** `November-1996-General-Election.pdf`
+   is 920 KB over 11 pages and `pdftotext` extracts **11 characters**. `November-1998-Fulton-General.pdf`
+   extracts **10**. They are readable only by eye or by OCR, and no OCR is installed here.
+2. 🔴🔴 **A FILENAME IN THE ARCHIVE CAN DESCRIBE THE WRONG ELECTION.**
+   `Nov_07_2000_General.pdf` has a perfectly good text layer — of the **November 5, 2013 General
+   Municipal and Special Election** (Kasim Reed (I) for Mayor). The name says 2000; the content is
+   2013. **Read the header date inside every document from this archive before trusting it**, which
+   is also the only reason this was caught rather than written up as a 2000 result.

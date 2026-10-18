@@ -224,8 +224,12 @@ COMMIT;
 --   DeKalb Clerk, Debra DeBerry       — already "DEBRA DEBERRY (I)(D)" in DeKalb's certified
 --                                       2012 general, so she took office in or before 2012,
 --                                       by appointment. Needs pre-2012 county records.
---   DeKalb Sheriff, Melody M. Maddox  — already "(I)" in the certified 2020 general. The only
---                                       2020 special in DeKalb's archive is the US House
---                                       District 5 special of 2020-09-29, not the Sheriff.
+--   DeKalb Sheriff, Melody M. Maddox  — ⚠ CORRECTED after this file was first written: there WAS
+--                                       a Sheriff special in 2020 ("Sheriff (Special From March)",
+--                                       voted 2020-05-19, runoff 2020-08-11). She carries "(I)" in
+--                                       BOTH, so she already held the office and the special does
+--                                       not date her either. She arrived by APPOINTMENT before
+--                                       March 2020. (The US House District 5 special of 2020-09-29
+--                                       is a separate contest and is not hers.)
 --   DeKalb Probate Judge, Bedelia C. Hargrove — same nonpartisan-unopposed rule as Fulton's.
 -- ───────────────────────────────────────────────────────────────────────────────────────────
