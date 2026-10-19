@@ -792,7 +792,7 @@ item 8 is **re-checked**.
 
 | | Before | After |
 | --- | --- | --- |
-| Terms undated, all three governments | **20 of 40** | **7 of 40** |
+| Terms undated, all three governments | **20 of 40** | **7 of 40**, then **4 of 40** after `CC_0252` |
 | Open items 2, 3, 5 | open | **closed** |
 | Item 4, Fulton D4 vacancy | press date only, no primary source | **bracketed 2026-03-05 … 2026-03-09 by the county's own record** |
 | Headshot blanks | 6 | **3** — both Probate Judges and the Fulton Clerk recovered (`CC_0249`-`CC_0251`) |
@@ -1097,3 +1097,51 @@ not among them, since the measure joins through `office_terms.politician_id`:
 | Arthur E. Ferdinand (Fulton Tax) | department page carries only a 1920×350 hero of a **sign**. ▶ **A rendered fetch has NOT been tried** — it is the obvious next move, having recovered three. |
 | Fred Quinn, Jr. (Fulton Surveyor) | Fulton publishes no Surveyor page at all. |
 | Debra DeBerry (DeKalb Clerk) | no reachable standalone clerk site. ▶ Also worth a rendered fetch. |
+
+### 🔴🔴 "ASK THE OFFICE" CLOSES APPOINTEES TOO — `CC_0248`'s "DIFFERENT SOURCE CLASS" WAS TOO STRONG
+
+`CC_0248` concluded that the certified-return route was exhausted and that the seven remaining
+occupancies needed **appointment records — a governor's order or a court order**. The first half is
+right: a certified return can only date someone who **won an election for that seat**, and all seven
+arrived off-ballot. The second half was wrong, and it missed **this file's own GAP 3 lesson** —
+*"when the election record is silent about an office, ASK THE OFFICE"* — which had already found
+both Probate Judges. It was never applied to the **appointees**.
+
+Three of the four stated their own start date, in the office's own words, on the office's own site.
+**Two give a day.** Undated **7 → 4**; the wave is now **36 of 40 dated**.
+
+| Seat | Start | What the office says |
+| --- | --- | --- |
+| Fulton Tax, **Ferdinand** | **1997-01-01** `day` · appointed | *"On January 1, 1997, Dr. Ferdinand was appointed Tax Commissioner of Fulton County, and subsequently elected and re-elected."* |
+| Fulton Clerk, **Alexander** | **2023-06-30** `day` · succeeded | *"sworn in as the Clerk … on June 30, 2023, to fulfill the remaining term of her predecessor."* |
+| DeKalb Sheriff, **Maddox** | **2019-12-01** `day` · appointed | *"In November 2019, then Sheriff Mann retired and appointed her to serve his unexpired term. Sheriff Maddox became the county's 50th sheriff on December 1, 2019."* |
+
+🔴 **`how_started` IS CORRECTED ON ALL THREE.** `CC_0241`/`CC_0243` wrote `'elected'` for every seat
+in the wave. That is false for an appointee — and the appointment is precisely **why** no election
+archive could date them, so `'elected'` hides the reason and sends the next session back to the
+returns.
+
+▶ **`fultoncountytaxes.org` returns HTTP 403 to curl and renders only in a browser.** `CC_0246`
+recorded that refusal as a fact about the site and stopped. It is the same **rendered fetch** that
+recovered three headshots. One technique unblocked six findings in this wave.
+
+🟢 End-to-end: `office_holders_as_of('2005-06-01')` now returns **Ferdinand, Tax Commissioner since
+1997-01-01** — correctly the only one of the 40 whose occupancy reaches that far back.
+
+#### Headshots: both were asked, neither has one
+
+| | outcome |
+| --- | --- |
+| **Ferdinand** | 🔴 No portrait exists on the site at all. Its only images are the county seal and six division icons (~200×192). `CC_0246`'s "site refuses automated requests" was right about the 403 and wrong about the conclusion — the site renders fine and simply has no photograph of him. |
+| **DeBerry** | 🔴 No *usable* portrait. The "Meet The Clerk" hero has her **at a desk with her eyes down**; the rest are candids — an outdoor event in a leather jacket, a casual two-person snapshot (⚠ **ambiguous which woman she is** — the blind-contact-sheet case), and a red-carpet social photo at a jazz club. None is an official portrait. |
+
+**Blanks stay at 3**: Ferdinand, Quinn (Fulton publishes no Surveyor page at all), DeBerry.
+
+#### The 4 still undated, after asking every office directly
+
+| who | why |
+| --- | --- |
+| **Robb Pitts** | ⚠ **Narrowed, not dated.** His county page says *"Before being elected Chairman in 2017…"* — **elected is not seated**, and whether that was the November 2017 special for John Eaves' unexpired term or the regular cycle is unresolved. ⚠ The same page prints **"Term: Jan. 01, 2023 until Dec. 31, 2026"**, which is his **current statutory term**, not his occupancy start — writing that would be exactly the error this schema exists to prevent. |
+| **Debra DeBerry** | her bio dates only her **2003 arrival as Chief Deputy Clerk**, a different office. It never says when she became Clerk. (A web summary claims "Clerk since March 2011" from a 2019 press release — that is a **lead**; the PDF was not read, so it is not recorded.) |
+| **Kenya M. Johnson** | the court's "Meet our Executive Team" page is a bare **name-and-email list** with no biographies. |
+| **Bedelia C. Hargrove** | her court's site carries no start date in any prose. |
