@@ -781,3 +781,367 @@ ships with the PR.
 2026-11-03 ballot; DeKalb D2, D3 and D7 likewise. Mo Ivory is the Democratic nominee for Fulton Chair
 against Robb Pitts' seat. Those seats change hands in January 2027 and this wave's rows must be closed
 and re-seated then — not overwritten.
+
+---
+
+## 🟢 COUNTY-RETURN ROUND — 2026-10-18 (CC_0248, CC_0249 — both applied)
+
+Prompted by the operator asking to finish the full seed. **13 of the 20 undated occupancies are
+now dated**, open items 2, 3 and 5 are **closed**, item 4 is **narrowed to a five-day window**, and
+item 8 is **re-checked**.
+
+| | Before | After |
+| --- | --- | --- |
+| Terms undated, all three governments | **20 of 40** | **7 of 40**, then **4 of 40** after `CC_0252` |
+| Open items 2, 3, 5 | open | **closed** |
+| Item 4, Fulton D4 vacancy | press date only, no primary source | **bracketed 2026-03-05 … 2026-03-09 by the county's own record** |
+| Headshot blanks | 6 | **3** — both Probate Judges and the Fulton Clerk recovered (`CC_0249`-`CC_0251`) |
+
+### 🔴🔴 THE BLANK ROWS WERE RIGHT, AND THE REASON IS A SCHEMA FACT NOBODY HAD WRITTEN DOWN
+
+`term_start` is the start of **continuous occupancy of the seat**, not the start of the current
+statutory term. Measured on production before anything was written:
+
+```
+same (office_id, politician_id) holding more than one office_terms row = 0
+   across 10,556 terms on 10,173 offices
+```
+
+**A re-election never opens a new row.** So an `(I)` incumbency marker can never date an occupancy
+— it says only "already held it". Every row `CC_0241`/`CC_0243` left blank carried `(I)` in 2024,
+and the three county rows they *did* date (Fulton Surveyor, DeKalb CEO, DeKalb District 4) are
+exactly the three carrying **no** `(I)`. That was not an oversight; it was the honesty rule working.
+What changed in this round is the **source**, not the standard.
+
+▶ **Dating a 2024-re-elected incumbent as 2025-01-01 would have written 10 false start dates.**
+
+### 🔴🔴 THE SECRETARY OF STATE HAS NO COUNTY OFFICES BEFORE 2024 — A SIXTH SOURCE DEFECT
+
+GAP 2 found that Atlanta's municipal chain lives at the county. The same is true of the **county's
+own** offices:
+
+| SOS per-county payload | County offices present? |
+| --- | --- |
+| 2016, 2018, 2020, 2022 | 🔴 **none** — federal and state contests only |
+| 2024 | 🟢 Clerk, Sheriff, Tax Commissioner, Surveyor, Solicitor, three commission seats |
+
+Fulton 2022 returns **49 contests and not one county office**; Fulton 2024 returns 50 including all
+of the above. **Same parser both times — that is the differential control.** Contest counts were
+confirmed non-zero for every file (Fulton 2016=48, 2018=57; DeKalb 2016=34, 2018=43), so the
+absence belongs to the payload, not to the reader.
+
+### 🟢 Three reusable routes, all keyless
+
+| Route | Endpoint | Reach |
+| --- | --- | --- |
+| **DeKalb's own archive** | `dekalbcountyga.gov/departments/voter-registration-and-elections/election-results` | per-year ZIPs of official results, **2003–2025** |
+| **Fulton's own archive** | `POST www.fultoncountyga.gov/api/feature/documents?…&PageFilter={9C10885F-6095-4865-8CE1-CA4C298BCF0A}&startingPath=60650BA70450420CA705EF6A3D2BC555` | **460 certified reports, 1969–2025**. 🔴 Thin after 2022 (2023:2, 2024:2, 2025:2) and holds **no November 2022 general** |
+| **Legistar, no key** | `webapi.legistar.com/v1/{fulton,dekalbcountyga,atlantaga}` | agendas, minutes, matters. Fulton's client slug is `fulton` — one body, id 138 |
+
+⚠ **Four notations for one contest**, across years and counties — `County Commission District 5`,
+`CC D5`, `CC D5- D`, `County Comm 5` — and the `(Vote for 1)` heading format disappears before 2020.
+A heading regex written against one year silently returns nothing on another. **Scan by name as
+well as by heading.** This cost two false "not present" readings in this round.
+
+### What the 13 newly dated seats rest on
+
+| Seat | Start | Evidence |
+| --- | --- | --- |
+| Atlanta Post 3, Collins | 2024-12 `month` | won the certified **2024-12-03** runoff; the 2024-11-05 special gave no majority and she polled **second**, 24.47% |
+| Fulton Sheriff, Labat | 2021-01 `month` | certified Fulton 2020 general, **no `(I)`**; `(I)` by 2024 |
+| Fulton D2, Ellis | 2015-01 `month` | certified Fulton 2014 SOVC, no `(I)`; then `(I)` in 2016, 2020 and 2024 |
+| Fulton D5, Arrington | 2015-01 `month` | certified Fulton 2014 SOVC, no `(I)`; `(I)` in the certified 2022 primary |
+| Fulton D6, Abdur-Rahman | 2021-01 `month` | certified Fulton 2020 general, no `(I)` |
+| Fulton D1, Thorne · D3, Barrett | 2023-01 `month` | certified 2022-05-24 primary, no `(I)`, beside `Robb Pitts (I)` |
+| DeKalb D1, Patrick | 2021-01 `month` | certified DeKalb 2020 general — the `(I)` sits on **Nancy Jester**, whom he beat |
+| DeKalb D2, Spears | 2023-01 `month` | certified DeKalb 2022 general, no `(I)` |
+| DeKalb D3, Massiah | 2024-12 `month` | certified **2024-12-03** runoff, 75.99% |
+| DeKalb D5, Davis Johnson | **2015-07** `month` | certified **2015-07-14 special runoff**, 53.12% |
+| DeKalb Super D6, Terry | 2021-01 `month` | certified DeKalb 2020 general, no `(I)` |
+| DeKalb Super D7, Bolton | 2024-12 `month` | certified **2024-12-03** runoff, 70.32% |
+
+🔴 **`month`, never `day`.** A certified return fixes the **election**. No document in this wave
+states an oath day for any of the 13, and neither county's Legistar holds a matter containing
+"Oath" — controlled against `substringof('Resolution')`, which does return rows.
+
+🔴 **Three of the 13 are seated on CERTIFICATION, not the following January** — Massiah and Bolton
+in December 2024, as `CC_0243` had already warned, and Davis Johnson in **July 2015**.
+
+🔴 **A DOCUMENT TITLED FOR THE RIGHT SEAT CAN DATE THE WRONG PERSON.** *October 2019 Special Runoff
+… Fulton County Commissioner District 6* reads exactly like Abdur-Rahman's start. It was won by
+**J. Carn**, 62.79%; she won the seat a year later. Read the winner, never the title.
+
+🔴 **`CC_0248` STRIPS THE `| unverified <slot>` TAG** from all 13. Per `CA_0171`,
+`office_holders_as_of(date)` **skips** tagged terms. A term that gains a start must lose the tag or
+it stays invisible to "who represented me in 2019" for ever.
+
+⚠ **`seat_officeholder()` IS THE WRONG TOOL FOR DATING AN EXISTING TENURE.** Read its body: when the
+same person already holds the seat it returns the existing row **untouched**. It seats people; it
+does not refine a date. Dating an existing open term is a plain guarded `UPDATE`. **There is no
+helper for this**, and the two-step rule in `CLAUDE.md` does not cover it.
+
+### ✅ Item 2 — NEITHER COUNTY ELECTS A CORONER. Closed on documents, not on the dead page.
+
+The route this file recommended — an archived capture of `dekalbcountyga.gov/node/17055` — is not
+needed and was not used.
+
+| | Coroner on the certified ballot? |
+| --- | --- |
+| Fulton, every return held: 2014, 2016, 2017, 2020, 2022, 2024 | **no** |
+| DeKalb, every return held: 2012, 2014, 2015, 2016, 2020, 2022, 2024 | **no** |
+| 🟢 **Baldwin County 2024 — positive control, identical method** | **yes — Coroner, John Gonzalez** |
+
+🔴 **The control is decisive because Baldwin's coroner ran UNOPPOSED** (one ballot option) and still
+appeared. Coroner is a **partisan** county office, so the GAP 3 exception that hid both Probate
+Judges — Georgia declares an *unopposed nonpartisan* candidate elected **without a ballot** — does
+not apply here. An unopposed coroner *does* appear on the certified ballot. Twelve years of absence
+therefore means the office is not elected in either county. Both run a Medical Examiner instead.
+
+### 🟢 Item 4 — the vacancy is bracketed by Fulton's own legislative record
+
+The press date (2026-03-06) now has primary-source corroboration, from `webapi.legistar.com/v1/fulton`:
+
+| Date | Record |
+| --- | --- |
+| **2026-03-04** | Ivory still serving — sponsors a proclamation dated March 4 2026; her resolution **26-0124** is voted on |
+| **2026-03-09** | matter **26-0182** introduced: qualifying fees for "District 4 **to be filled in the 2026 Special Election**" |
+| 2026-03-13 | matter **26-0173** "Discussion: District 4 Vacancy (Arrington)", heard 03-18, where Ivory's board seats are redistributed |
+
+⇒ the seat fell vacant between **2026-03-05 and 2026-03-09**. Still no document stating the day, so
+`is_vacant = true` with **no span still stands**, per the `CLAUDE.md` rule against writing a span
+whose start you do not know. The month is now certain if a span is ever wanted.
+
+### ✅ Item 8 — re-checked 2026-10-18, and the silence now has a reason
+
+Fulton's Surveyor is **not on the 2026 ballot** — zero Surveyor contests in the certified 2026-05-19
+primary and 2026-06-16 runoff — because the seat runs 2025–2028, and **Fulton's Legistar holds no
+Surveyor vacancy matter**. The 2024 certified result (Quinn, unopposed, 436,159 votes, no `(I)`, so
+his first win) remains the freshest evidence, and the change-check is now **evidenced** rather than
+merely absent. ⚠ Fulton's 2020 return shows the Surveyor contest with **no candidate and 0 votes**,
+so the seat was unfilled immediately before him.
+
+### ⚠ `framecheck.mjs` DOES NOT EXIST IN THIS REPOSITORY
+
+The ATL-4 section above states the circular-source gate "is now a gate, in `framecheck.mjs`", with
+two on-disk fixtures as its positive control. **No such file is tracked on any ref** — `git log
+--all --diff-filter=A -- "*framecheck*"` returns nothing, and the only occurrence of the string in
+the repo is that sentence. The gate was never committed, so it protects nobody. Its checks were
+re-implemented ad hoc for this round and ought to be committed properly.
+
+🔴 **The re-implementation failed its own first run, for a reason worth recording.** `sharp`'s
+`.stats()` **ignores a preceding `.extract()`** and returns whole-image statistics. All four corners
+came back byte-identical — which reads exactly like the disc-on-matte defect the gate hunts for. It
+was a **broken detector**, caught only because a uniform answer is not trusted without a control.
+Extract to a raw buffer first. With planted controls (a synthetic disc scores **0.0** and correctly
+fails; a gradient scores **185.4** and correctly passes) the real portrait scores **151.1** and
+passes.
+
+### Still open after the county-return round
+
+| # | Item | Why |
+| --- | --- | --- |
+| 1 | **7 undated occupancies** | Each blocker is named in `CC_0248`'s footer. In short: Pitts needs a Fulton **countywide** Nov-2017 or Nov-2018 return, and the archive slices its 2017 documents **by city**; Alexander arrived mid-term by **appointment** (Fulton's 2020 clerk was Cathelene "Tina" Robinson); Ferdinand dates to the 1990s; DeBerry was already `(I)` in **2012**; Maddox was already `(I)` in 2020 and DeKalb's only 2020 special is the **US House D5** one; both Probate Judges appear in **no** certified return. |
+| 2 | Fulton **D1 and D3** rest on a certified **primary**, not a general | Neither the SOS nor Fulton's archive holds the **November 2022** general. The first-win year is evidenced; the general itself is not. |
+| 3 | ✅ **Hargrove headshot — DONE (`CC_0249`, applied 2026-10-18)** | Source: `dekalbprobatega.com/wp-content/uploads/2020/07/Bedelia-2.jpg`, **800×800**, a real rectangular studio portrait sitting beside her own first-person text ("I am Bedelia C Hargrove, the Chief Probate Court Judge in DeKalb County"). Rendered to house geometry (centre 4:5, Lanczos, 600×750, q90), passed corner-agreement (151.1) and colour (34.5), uploaded and **verified on the rendered page** — `essentials.empowered.vote` serves `<img alt="Bedelia C. Hargrove portrait">` at a 600×750 natural size. **Blanks 6 → 5.** |
+| 4 | 4 Fulton re-sources · the other **4** blanks | ✅ **Fulton Probate recovered too — see below.** Of the rest: Ferdinand's department page answers fine with a browser UA but serves only a **1920×350 hero of a SIGN**, so there is no portrait on it rather than the site "refusing automated requests"; DeKalb's Clerk has no reachable standalone site; Ché Alexander and the vacant Fulton D4 are unchanged. ▶ **Ché Alexander is the best remaining candidate for a RENDERED fetch** — her site was only ever read through `curl`, and that is exactly what hid both Probate Judges. |
+| 5 | **January 2027 re-seat** | Unchanged, and now 16 days from the election. |
+
+### ⚠ A possible over-precision in the existing data, not fixed here
+
+Four Atlanta seats carry **`2026-01-05` at `day` precision** — D2 Bond, D7 Worthy, D11 Martin and
+Council President Overstreet. The `CC_0244` note in this file states that the inauguration page
+dates **only the Mayor's** oath and that *"no day is claimed"* for councilmembers. Either those four
+rows are over-precise or that note is wrong. **Not changed here** — it needs the inauguration page
+read again, and this round did not do it.
+
+### 🔴🔴 THE CERTIFIED-RETURN ROUTE IS EXHAUSTED. ALL 7 REMAINING ARRIVED OFF-BALLOT.
+
+Chased 2026-10-18 after the 13 were written. Every one of the seven was attempted, and they fail
+for **one structural reason, not seven incidental ones**: a certified return can only date someone
+who *won an election for that seat*. These seven did not.
+
+| Seat | What the record actually shows |
+| --- | --- |
+| DeKalb Sheriff, **Maddox** | ⚠ **Correcting `CC_0248`'s first footer**: there WAS a 2020 Sheriff special — "Sheriff (Special From March)", voted **2020-05-19**, runoff **2020-08-11**. She carries **`(I)` in BOTH**, so it does not date her either. **Appointed** before March 2020. |
+| Fulton Clerk, **Alexander** | Fulton's certified 2020 general shows a different clerk, **Cathelene "Tina" Robinson (I)**. The Clerk is not on the 2022 ballot. **Appointed** mid-term. |
+| DeKalb Clerk, **DeBerry** | Already **`DEBRA DEBERRY (I)(D)`** in DeKalb's certified **2012** general. **Appointed** in or before 2012. |
+| Fulton Probate, **Kenya M. Johnson** | In **no** certified return — the GAP 3 nonpartisan-unopposed rule. |
+| DeKalb Probate, **Hargrove** | Same. |
+| Fulton Chair, **Pitts** | `(I)` in the certified 2022 primary. Needs a **countywide** Nov-2017 or Nov-2018 return (see the two archive defects below). |
+| Fulton Tax, **Ferdinand** | `(I)` continuously from 1996 onward; took office in the 1990s (see below). |
+
+▶ **What would actually close these is APPOINTMENT records** — a Governor's executive order or a
+court order — not another election archive. That is a different source class and a different pass.
+Neither county's Legistar holds them: searches for DeBerry, Maddox, Ferdinand and Alexander return
+only incidental matches in public-comment and proclamation boilerplate.
+
+### 🔴 TWO MORE DEFECTS IN FULTON'S OWN ARCHIVE
+
+Both found while chasing Ferdinand, and both will bite the next person who goes back before ~2005:
+
+1. **The pre-2000 generals are IMAGE SCANS with no text layer.** `November-1996-General-Election.pdf`
+   is 920 KB over 11 pages and `pdftotext` extracts **11 characters**. `November-1998-Fulton-General.pdf`
+   extracts **10**. They are readable only by eye or by OCR, and no OCR is installed here.
+2. 🔴🔴 **A FILENAME IN THE ARCHIVE CAN DESCRIBE THE WRONG ELECTION.**
+   `Nov_07_2000_General.pdf` has a perfectly good text layer — of the **November 5, 2013 General
+   Municipal and Special Election** (Kasim Reed (I) for Mayor). The name says 2000; the content is
+   2013. **Read the header date inside every document from this archive before trusting it**, which
+   is also the only reason this was caught rather than written up as a 2000 result.
+
+### ✅ BOTH PROBATE JUDGES RECOVERED — and the second one nearly published the wrong face
+
+`CC_0246` recorded both as blank because "county probate paths 404". **Neither 404s.** DeKalb's
+portrait is served under a different path, and **Fulton's court site is CivicPlus, which renders its
+roster in JS** — so the portrait is absent from the server HTML and invisible to `curl`. A rendered
+fetch of `fultonprobatega.org/226/Meet-our-Executive-Team` finds it immediately.
+
+▶ **"404" in a blank-headshot note may mean "I fetched it the wrong way".** Before accepting a
+blank, try a rendered fetch. It unblocked two of the six here.
+
+#### 🔴🔴 THE OBVIOUS GRAB WOULD HAVE PUBLISHED MARIAN PARKER AS KENYA M. JOHNSON
+
+The Fulton page carries **14 portraits whose alt attributes name nobody** — `Fulton COnty
+Probate-(27 of 45)`, `image0`, `otwy`. The Chief Judge's is the **smallest of them**:
+
+| column x | image | native | person |
+| --- | --- | --- | --- |
+| **330** | `documentID=198`, alt **`JJohn`** | **250×334** | **Kenya M. Johnson, Chief Judge** |
+| 522 | `documentID=344` | 2080×2600 | Marian Parker, Associate Judge |
+| 714 | `documentID=333` | 2080×2600 | Myles Braxton, Chief Clerk of Court |
+
+**Picking the largest, or the nearest by DOM ancestry, picks a colleague** — at 8× the resolution,
+which makes the wrong answer look like the better one. This is the memory rule "a contact sheet is
+blind when the wrong person is also plausible" in its sharpest form, with no alt text to save it.
+
+Binding confirmed **three independent ways**: a screenshot of the rendered row (names sit directly
+beneath their portraits), column geometry (names at x=366/531/721 against images at x=330/522/714,
+same order, 253px below), and the alt stem `JJohn`. The lapel pin in frame is the Fulton County seal.
+
+⚠ **Three DOM binders failed first, and each failed loudly enough to catch only because a uniform
+answer is never trusted here:**
+
+1. **ancestry walk** — bound **all 14** images to the first name on the page, *including the
+   2200×430 page banner*. It climbs into a container holding the whole team.
+2. **TreeWalker over `.pageContent`** — returned `[]` twice. `querySelector` matched a **different,
+   empty** element with that class; the real grid is a later node. The control that exposed it was
+   asking the root how many images it contained: **0**, against 20 in the document.
+3. **geometric pairing** — returned 0 names; the element filter was too strict.
+
+**The house rule — LOOK AT THE FRAMES — is what actually resolved it**, in one screenshot.
+
+#### ⚠ An accepted upscale, and the query-string trick that did not work
+
+Her 250×334 PNG is the only version served: `&maxWidth`, `&width`, `&size` and `&w` all return the
+**identical 40,624 bytes**, so the SC-5 "the resize can be in the query string" trick does not apply
+to CivicPlus's `ImageRepository`. Reaching 600×750 is a **2.4× enlargement**. ATL-4 refused four
+Fulton commissioners at **3.75×**, so this sits inside that precedent; the render was inspected and
+reads as a real portrait. **Ruled publishable by the operator, 2026-10-18.** Re-source if the court
+republishes.
+
+🔴 **A fourth detector bug, in the framecheck itself**: the corner check returned `NaN` on this file
+because it is a **4-channel PNG** and the reader strided by 3. Visible rather than silent — unlike
+the `.stats()`/`.extract()` bug — but the fix is the same discipline: call `.removeAlpha()` before
+`.raw()`. With that, corner agreement **224.6**, colour **24.1**, skin centroid **52.4%**.
+
+Both are live and verified on the rendered page, not the API: `essentials.empowered.vote` serves
+`<img alt="Kenya M. Johnson portrait">` and `<img alt="Bedelia C. Hargrove portrait">`, each at a
+600×750 natural size. **Blanks 6 → 4.**
+
+### 🔴🔴 ATL-4's "DISC ON GREEN MATTE" WAS A MEASUREMENT BUG. ALEXANDER IS RECOVERED (`CC_0251`)
+
+ATL-4 left Ché Alexander blank on the finding that *"the clerk site serves only the disc on green
+matte"*. **There is no green matte.** The file is a PNG with an **alpha channel**, and the RGB
+stored beneath fully transparent pixels is `(71,112,76)` — a green placeholder. Any reader that
+drops alpha without compositing measures that green in all four corners and concludes
+"flat coloured matte", which is precisely the disc-on-matte signature.
+
+```
+.removeAlpha()                        -> corners 71,112,76 ×4   "FAIL — disc on matte"   WRONG
+.flatten({background:'#ffffff'})      -> corners 255,255,255 ×4  ordinary white studio portrait
+```
+
+▶ **ALPHA IS THIS WAVE'S RECURRING TRAP IN IMAGE CHECKS**, and it bit three different ways in one
+session: `.stats()` ignoring `.extract()` (`CC_0249`), `NaN` from striding a 4-channel PNG by 3
+(`CC_0250`), and now transparent-pixel RGB read as a background colour. **Composite before you
+measure.**
+
+⚠ ATL-4's *other* Alexander finding **stands and is unrelated**: the 1920×350 banner really does
+clip her hair at every 4:5 anchor. That was a different asset.
+
+#### 🔴 A LIMIT OF THE CORNER-AGREEMENT GATE ITSELF, WORTH WRITING DOWN
+
+A legitimate **white-background cutout** scores **0.0** — identically to a disc on a coloured matte
+— because every corner is the same white. **The discriminator cannot separate those two cases.**
+ATL-4 claims "every real studio backdrop in the wave scored ≥ 24", which is true only because every
+such portrait happened to have a *textured* backdrop. Do not gate a cutout on this number; look at
+the frame.
+
+#### Three candidates were compared, not just the first one found
+
+| image | native | verdict |
+| --- | --- | --- |
+| `documentId=1979` | **1250×1250** | ✅ **chosen** — subject bbox measured at x 246..1111, y 161..1102 |
+| `documentId=4137` | 625×625 | ❌ over-cropped: **7px above her hair** (1.1% of frame) against the ~one-ear rule, and needs a 1.2× upscale. Carries the useful alt "Clerk Alexanders Headshot". |
+| `documentId=1980` | 2048×1366 | ❌ an **event photo** in a crowded room, and the prominent woman in it is **not** Ché Alexander. alt `528847941(1)` names nobody. |
+
+Geometry measured rather than anchored by guesswork: centre x=679, hair top y=161, crop **900×1125
+(4:5) at +229+71** leaving ~90px of headroom, Lanczos3 **down** to 600×750 — a **0.67× downscale**,
+no enlargement. Reached only by a **rendered fetch** of `/338/Meet-Clerk-Ch-Alexander`; the site is
+CivicPlus and renders its roster in JS, exactly as Fulton Probate's does.
+
+**Blanks 6 → 3.** The three remaining are all SEATED people with no photo — the vacant Fulton D4 is
+not among them, since the measure joins through `office_terms.politician_id`:
+
+| who | state |
+| --- | --- |
+| Arthur E. Ferdinand (Fulton Tax) | department page carries only a 1920×350 hero of a **sign**. ▶ **A rendered fetch has NOT been tried** — it is the obvious next move, having recovered three. |
+| Fred Quinn, Jr. (Fulton Surveyor) | Fulton publishes no Surveyor page at all. |
+| Debra DeBerry (DeKalb Clerk) | no reachable standalone clerk site. ▶ Also worth a rendered fetch. |
+
+### 🔴🔴 "ASK THE OFFICE" CLOSES APPOINTEES TOO — `CC_0248`'s "DIFFERENT SOURCE CLASS" WAS TOO STRONG
+
+`CC_0248` concluded that the certified-return route was exhausted and that the seven remaining
+occupancies needed **appointment records — a governor's order or a court order**. The first half is
+right: a certified return can only date someone who **won an election for that seat**, and all seven
+arrived off-ballot. The second half was wrong, and it missed **this file's own GAP 3 lesson** —
+*"when the election record is silent about an office, ASK THE OFFICE"* — which had already found
+both Probate Judges. It was never applied to the **appointees**.
+
+Three of the four stated their own start date, in the office's own words, on the office's own site.
+**Two give a day.** Undated **7 → 4**; the wave is now **36 of 40 dated**.
+
+| Seat | Start | What the office says |
+| --- | --- | --- |
+| Fulton Tax, **Ferdinand** | **1997-01-01** `day` · appointed | *"On January 1, 1997, Dr. Ferdinand was appointed Tax Commissioner of Fulton County, and subsequently elected and re-elected."* |
+| Fulton Clerk, **Alexander** | **2023-06-30** `day` · succeeded | *"sworn in as the Clerk … on June 30, 2023, to fulfill the remaining term of her predecessor."* |
+| DeKalb Sheriff, **Maddox** | **2019-12-01** `day` · appointed | *"In November 2019, then Sheriff Mann retired and appointed her to serve his unexpired term. Sheriff Maddox became the county's 50th sheriff on December 1, 2019."* |
+
+🔴 **`how_started` IS CORRECTED ON ALL THREE.** `CC_0241`/`CC_0243` wrote `'elected'` for every seat
+in the wave. That is false for an appointee — and the appointment is precisely **why** no election
+archive could date them, so `'elected'` hides the reason and sends the next session back to the
+returns.
+
+▶ **`fultoncountytaxes.org` returns HTTP 403 to curl and renders only in a browser.** `CC_0246`
+recorded that refusal as a fact about the site and stopped. It is the same **rendered fetch** that
+recovered three headshots. One technique unblocked six findings in this wave.
+
+🟢 End-to-end: `office_holders_as_of('2005-06-01')` now returns **Ferdinand, Tax Commissioner since
+1997-01-01** — correctly the only one of the 40 whose occupancy reaches that far back.
+
+#### Headshots: both were asked, neither has one
+
+| | outcome |
+| --- | --- |
+| **Ferdinand** | 🔴 No portrait exists on the site at all. Its only images are the county seal and six division icons (~200×192). `CC_0246`'s "site refuses automated requests" was right about the 403 and wrong about the conclusion — the site renders fine and simply has no photograph of him. |
+| **DeBerry** | 🔴 No *usable* portrait. The "Meet The Clerk" hero has her **at a desk with her eyes down**; the rest are candids — an outdoor event in a leather jacket, a casual two-person snapshot (⚠ **ambiguous which woman she is** — the blind-contact-sheet case), and a red-carpet social photo at a jazz club. None is an official portrait. |
+
+**Blanks stay at 3**: Ferdinand, Quinn (Fulton publishes no Surveyor page at all), DeBerry.
+
+#### The 4 still undated, after asking every office directly
+
+| who | why |
+| --- | --- |
+| **Robb Pitts** | ⚠ **Narrowed, not dated.** His county page says *"Before being elected Chairman in 2017…"* — **elected is not seated**, and whether that was the November 2017 special for John Eaves' unexpired term or the regular cycle is unresolved. ⚠ The same page prints **"Term: Jan. 01, 2023 until Dec. 31, 2026"**, which is his **current statutory term**, not his occupancy start — writing that would be exactly the error this schema exists to prevent. |
+| **Debra DeBerry** | her bio dates only her **2003 arrival as Chief Deputy Clerk**, a different office. It never says when she became Clerk. (A web summary claims "Clerk since March 2011" from a 2019 press release — that is a **lead**; the PDF was not read, so it is not recorded.) |
+| **Kenya M. Johnson** | the court's "Meet our Executive Team" page is a bare **name-and-email list** with no biographies. |
+| **Bedelia C. Hargrove** | her court's site carries no start date in any prose. |
