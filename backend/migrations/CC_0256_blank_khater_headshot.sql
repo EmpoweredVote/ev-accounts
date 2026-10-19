@@ -2,8 +2,8 @@
 --
 -- Blanks ONE headshot: Tayler Khater (Utah candidate, active, non-incumbent).
 --
--- Her published headshot is a FAMILY HOLIDAY PHOTOGRAPH -- two adults and three children posed
--- in a canyon -- served from her campaign site:
+-- Their published headshot is a FAMILY HOLIDAY PHOTOGRAPH -- five people posed
+-- in a canyon -- served from their campaign site:
 --   https://khaterforutah.com/wp-content/uploads/imgi_4_E2E9C3AA-...-_1_201_a_heic.jpeg  419x501
 --
 -- 🔴 IT PASSES EVERY CHECK WE HAVE, INCLUDING THE NEW ONE. check-headshot-faces.py (CC_0253)
@@ -11,34 +11,43 @@
 -- shape the face gate cannot see, and only looking at it caught this.
 --
 -- 🔴 IT WAS NOT CROPPED TO A FACE, DELIBERATELY. The obvious "fix" is to crop to the detected
--- face -- and there is NO WAY TO TELL WHICH ADULT IS THE CANDIDATE. Cropping to a guess is the
+-- face -- and there is NO WAY TO TELL WHICH PERSON IS THE CANDIDATE. Cropping to a guess is the
 -- wrong-person error, which is the dominant failure mode in headshot work and the one no
 -- automated check can catch. CC_0254 therefore mirrored 14 of 15 external images and left this
 -- row alone, asserting in its own post-verify that exactly one row still rendered off-site.
 --
 -- A BLANK BEATS A LINK. Leaving the family photo in place publishes a holiday snapshot as a
 -- civic portrait of a named candidate, and -- because photo_origin_url is non-empty -- it also
--- reads as COVERAGE, hiding her from every "who still needs a headshot" query. An honest NULL is
+-- reads as COVERAGE, hiding them from every "who still needs a headshot" query. An honest NULL is
 -- findable. This is the same ruling recorded for page-URLs-as-photos in
 -- project_photo_custom_url_is_what_renders.
 --
 -- Safe because there is nothing else to lose, verified before writing and asserted below:
 --   photo_custom_url  IS NULL   (nothing was rendering from the scalar)
 --   politician_images  0 rows   (no CDN copy exists; nothing is orphaned by this)
--- So this clears the ONLY photo reference she has, and introduces no new image.
--- Nothing is deleted from storage: no object was ever uploaded for her.
+-- So this clears the ONLY photo reference they have, and introduces no new image.
+-- Nothing is deleted from storage: no object was ever uploaded for them.
 --
--- ▶ OWED: a real portrait. She is a candidate in the 2026-11-03 general election. utelection.info
--- (which supplied Bowles, Paxman and Herrin in CC_0254) does not list her, and her campaign site
+-- ▶ OWED: a real portrait. They are a candidate in the 2026-11-03 general election. utelection.info
+-- (which supplied Bowles, Paxman and Herrin in CC_0254) does not list them, and their campaign site
 -- serves only this family photograph. BallotReady was the source that resolved three comparable
 -- Utah candidates in CC_0255 and is the obvious next place to look.
+--
+-- ⚠ PRONOUNS CORRECTED 2026-10-19, same day: this file first said "she"/"her" throughout. That
+-- was inferred from the first name and nothing else. Their pronouns are not stated anywhere we
+-- hold, and a photograph does not state them either, so this reads they/them. Recorded rather
+-- than quietly rewritten, because the mistake is the instructive part: a name is not evidence.
+--
+-- ▶ SUPERSEDED BY CC_0257, which seats a real solo portrait from BallotReady. The blank stood
+-- for about an hour and the reasoning above still governs: a blank beats a link, and a crowd
+-- photograph is not a portrait of anybody in particular.
 --
 -- Idempotent: re-running changes nothing.
 
 BEGIN;
 
--- Guard: the id must resolve to Tayler Khater, and she must still be in the state this
--- migration measured. If she has since gained a real photo, REFUSE -- do not blank it.
+-- Guard: the id must resolve to Tayler Khater, and they must still be in the state this
+-- migration measured. If they have since gained a real photo, REFUSE -- do not blank it.
 DO $$
 DECLARE v_name text; v_custom text; v_images int;
 BEGIN
@@ -55,10 +64,10 @@ BEGIN
     RAISE EXCEPTION 'CC_0256: id resolves to "%", expected "Tayler Khater"', v_name;
   END IF;
   IF v_custom IS NOT NULL THEN
-    RAISE EXCEPTION 'CC_0256: photo_custom_url is now set (%) - she has a real photo, REFUSING to blank', v_custom;
+    RAISE EXCEPTION 'CC_0256: photo_custom_url is now set (%) - they have a real photo, REFUSING to blank', v_custom;
   END IF;
   IF v_images <> 0 THEN
-    RAISE EXCEPTION 'CC_0256: % politician_images row(s) now exist - she has a real photo, REFUSING to blank', v_images;
+    RAISE EXCEPTION 'CC_0256: % politician_images row(s) now exist - they have a real photo, REFUSING to blank', v_images;
   END IF;
 END $$;
 
@@ -67,7 +76,7 @@ SET photo_origin_url = NULL
 WHERE id = '28df85e8-73c8-4def-bdd1-6929ff083590'::uuid
   AND photo_origin_url IS NOT NULL;
 
--- post-verify: she now renders nothing, and NO active row renders from an off-site URL.
+-- post-verify: they now render nothing, and NO active row renders from an off-site URL.
 DO $$
 DECLARE v_origin text; v_custom text; n_offsite int;
 BEGIN
