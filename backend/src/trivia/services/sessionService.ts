@@ -59,7 +59,7 @@ export interface GameSession {
   progressionAwarded: boolean; // Prevents double-awarding progression
   plausibilityFlags: number; // Count of suspicious answer patterns in this session
   collectionId: number | null;    // null = Federal default (backward compat)
-  collectionName: string | null;  // e.g. "Federal Civics"
+  collectionName: string | null;  // e.g. "US Civics", "Washington, DC"
   collectionSlug: string | null;  // e.g. "federal", "washington-dc"
   isConnected: boolean;           // Whether user was Connected tier at session start (default: false)
   isSuspended: boolean;           // Whether account_standing was 'suspended' at session start (default: false)

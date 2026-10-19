@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
-  "_updated": "2026-10-08",
+  "_updated": "2026-10-15",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -507,6 +507,16 @@
       ],
       "split": false,
       "verdict": "unreviewed"
+    },
+    "bee3de29-d358-411c-ac5b-499335ddef42|e038ab5a-6f9b-5be9-957e-0635c7c761ed": {
+      "names": "James Davidson ~ Jim Davidson",
+      "state": "tx",
+      "why": [
+        "NAME_STATE"
+      ],
+      "split": false,
+      "verdict": "different_people",
+      "note": "Different people, 2026-10-14. James Davidson (bee3de29) is FEC candidate H6IN09275, James Logan Davidson of Salem, Indiana, a 2026 Democratic challenger for IN-9 (FEC address, filed 2025-06-17); the row carries no state of its own, so the gate paired it by name with the Texas row. Jim Davidson (e038ab5a) is Katy ISD (Texas) Board Position 4, sworn in 2026-05-11 (katyisd.org board announcement). Different state and different office."
     },
     "c2e83228-1f15-4fb6-a1a2-8b11714afe4c|e4e0051a-d7ef-462a-8e1a-24ffda9b3573": {
       "names": "Sean P Hall ~ Sean Hall",

@@ -117,6 +117,40 @@ export interface RecalibrationFlag {
   /** Version they answered against → version their season now serves. */
   answeredVersion: number | null;
   effectiveVersion: number | null;
+  /**
+   * The revision the user's season serves for this topic, by id.
+   *
+   * 🔴 AN ID, BECAUSE A VERSION NUMBER MATCHES NOTHING. `effectiveVersion` is
+   * per-topic — every topic has a version 2 — so a client holding a journal
+   * entry's `revisionId` had no way to ask "is this the edit that flagged me?".
+   * Spec §7 marks exactly that entry as the one that explains the flag, and
+   * without this field it could not be built.
+   *
+   * Null for `not_asked_this_season`: nothing is being served, so no entry may
+   * claim to be the cause.
+   */
+  effectiveRevisionId: string | null;
+  /**
+   * The option at their value, in each of those two revisions.
+   *
+   * 🔴 WHY THE WORDS AND NOT JUST THE VERSIONS. Editorial's note identifies what
+   * changed by POSITION — "reworded option 4" — so reading it means counting
+   * options to find which one that was, and it never says what the old one said.
+   * These two fields let the UI show the sentence the user picked beside the one
+   * that replaced it, which answers the question the note cannot.
+   *
+   * ⚠ THEY ARE THE SAME SLOT, NOT THE SAME POSITION. For `moved` and
+   * `invalidated` the user's rung is precisely what did not survive, so
+   * `effectiveText` is "what sits at that number now" and NOT "their answer,
+   * restated" — the client must not present it as the latter. This is the same
+   * distinction `disposition` exists to carry.
+   *
+   * Null where the slot has nothing behind it: a write-in sits between rungs
+   * (0.5, 5.5) and matches no option, and a topic the open season dropped has no
+   * effective revision at all.
+   */
+  answeredText: string | null;
+  effectiveText: string | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -276,6 +310,8 @@ interface DispositionRow {
   answered_version: number | null;
   effective_version: number | null;
   public_note: string | null;
+  answered_text: string | null;
+  effective_text: string | null;
 }
 
 /**
@@ -321,10 +357,19 @@ async function queryRecalibrationFlags(
             d.effective_revision_id::text AS effective_revision_id,
             ar.version                   AS answered_version,
             eff.version                  AS effective_version,
-            eff.public_note              AS public_note
+            eff.public_note              AS public_note,
+            ans.text                     AS answered_text,
+            eft.text                     AS effective_text
        FROM inform.compass_answer_dispositions d
        LEFT JOIN inform.compass_topic_revisions ar  ON ar.id  = d.answered_revision_id
        LEFT JOIN inform.compass_topic_revisions eff ON eff.id = d.effective_revision_id
+       -- The option sitting at the user's value in each revision. Joined on the
+       -- VALUE, which is how a stored answer addresses an option at all; a
+       -- write-in between rungs matches neither side and stays null.
+       LEFT JOIN inform.compass_stance_revisions ans
+              ON ans.topic_revision_id = d.answered_revision_id AND ans.value = d.value
+       LEFT JOIN inform.compass_stance_revisions eft
+              ON eft.topic_revision_id = d.effective_revision_id AND eft.value = d.value
       WHERE d.user_id = $1${topicFilter}`,
     topicIds === null ? [ownerId] : [ownerId, topicIds]
   );
@@ -347,6 +392,11 @@ async function queryRecalibrationFlags(
         publicNote: '',
         answeredVersion: row.answered_version,
         effectiveVersion: null,
+        // Nothing is being served, so no journal entry may claim to explain this.
+        effectiveRevisionId: null,
+        answeredText: row.answered_text,
+        // No revision is being served, so there is no current wording to show.
+        effectiveText: null,
       });
       continue;
     }
@@ -365,6 +415,9 @@ async function queryRecalibrationFlags(
       publicNote: row.public_note ?? '',
       answeredVersion: row.answered_version,
       effectiveVersion: row.effective_version,
+      effectiveRevisionId: row.effective_revision_id,
+      answeredText: row.answered_text,
+      effectiveText: row.effective_text,
     });
   }
 

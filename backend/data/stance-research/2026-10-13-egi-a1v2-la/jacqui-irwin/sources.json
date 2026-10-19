@@ -1,0 +1,35 @@
+{
+  "batch_id": "jacqui-irwin",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4",
+      "office_id": "3752046e-327e-472d-8c0d-5ce65061e7a4",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "97285c92-b664-4687-a1e4-6d88cf9c7fe4",
+      "office_id": "3752046e-327e-472d-8c0d-5ce65061e7a4",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-assembly-concurrence-2024-06-27.txt"
+    }
+  ]
+}

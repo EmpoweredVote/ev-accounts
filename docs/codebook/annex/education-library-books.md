@@ -115,3 +115,16 @@ collections _(proposed)_.
   title, not the process → `direction-only`, unless the vote adopts or applies a stated process
   _(proposed)_.
 - **Budget or omnibus votes** → V4 `multi-subject`.
+- **Higher-law duties a board carries out (codebook 0.6, V4.1 "Small bodies", test 2).** A school
+  board's vote on one of these provisions shows compliance, not a choice: that provision is
+  `direction-only`. Provisions of the same policy that go beyond the duty are coded on their own.
+  - Florida: when a parent or resident objects that material is pornographic, is prohibited under
+    F.S. 847.012, or depicts or describes sexual conduct, the district must remove it within five
+    school days and keep it out until the objection is resolved (F.S. 1006.28). A board policy that
+    restates this five-day removal is complying with the statute; it does not seat rung 4 _(proposed)_.
+- **A removal list compiled by another body** (for example a state department's list of books other
+  districts removed) is not a challenge in this district. An act that removes listed books, with or
+  without review, is coded like a content-standard law: `direction-only` by itself; the challenge
+  process the act states decides the rung. An act that says listed books need board approval
+  "before returning" presupposes a removal without stating one (V4.2 "Silence is not a clause"), so
+  it does not seat rung 4 either _(proposed)_.

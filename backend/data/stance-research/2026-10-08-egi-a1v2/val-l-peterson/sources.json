@@ -1,0 +1,34 @@
+{
+  "batch_id": "val-l-peterson",
+  "sources": [
+    {
+      "url": "https://le.utah.gov/~2023/bills/sbillenr/SB0100.pdf",
+      "source_kind": "public-record",
+      "politician_id": "61816aa4-4de0-4e1a-a249-cea5e2a8d169",
+      "office_id": "262ebde3-eaf1-4b1c-ab40-dec0cbc15f47",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "SB 100"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ut-2023-SB0100-enrolled.txt"
+    },
+    {
+      "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=210&house=H",
+      "source_kind": "public-record",
+      "politician_id": "61816aa4-4de0-4e1a-a249-cea5e2a8d169",
+      "office_id": "262ebde3-eaf1-4b1c-ab40-dec0cbc15f47",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "SB 100"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "batch_id": "blanca-rubio",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "51d15b77-71bb-475e-b86e-c6e1b37b869d",
+      "office_id": "02cffd4c-9fd6-47c4-ae91-f33c0442efa2",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "51d15b77-71bb-475e-b86e-c6e1b37b869d",
+      "office_id": "02cffd4c-9fd6-47c4-ae91-f33c0442efa2",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-assembly-concurrence-2024-06-27.txt"
+    }
+  ]
+}

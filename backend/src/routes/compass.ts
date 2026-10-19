@@ -6,6 +6,7 @@ import { requestDb } from '../lib/supabase.js';
 import {
   getCompassCompleteness,
   getCompassTopics,
+  getTopicAnswerStats,
   getCompassCategories,
   getCompassLenses,
   getCompassPoliticians,
@@ -149,6 +150,23 @@ router.get('/topics', optionalAuth, async (req: Request, res: Response): Promise
     res.status(200).json(result);
   } catch (err) {
     console.error('[GET /compass/topics] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/topic-stats
+// Auth: optional — works unauthenticated, and is identical for every caller.
+// Per promoted topic: how many officials hold a position, and (where the ladder
+// is comparable) how many hold each one. Feeds the line shown AFTER a voter
+// picks, never before — see getTopicAnswerStats.
+// ---------------------------------------------------------------------------
+
+router.get('/topic-stats', optionalAuth, async (_req: Request, res: Response): Promise<void> => {
+  try {
+    res.status(200).json(await getTopicAnswerStats());
+  } catch (err) {
+    console.error('[GET /compass/topic-stats] error:', err);
     res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
   }
 });

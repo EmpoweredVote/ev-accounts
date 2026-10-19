@@ -109,6 +109,7 @@ The draft rulebook is §2 of `docs/superpowers/specs/2026-10-07-season3-design.m
 | **L1** name the spectrum | **adopted, poles stored internally** | Every ladder gets two named poles in a column (needs a `CA_` migration). Coders, lexicon checks and orientation read them. **Not shown to voters yet**, so no compass UI change before the open. Replaces the open P4 orientation question. Off-axis ladders must get an honest pole pair or a re-axis. |
 | **L2** one axis | **adopted** | A rung that mixes two axes is a defect. Known candidates: housing, redistricting, healthcare, civil-rights r5, voting-rights r5, rent-regulation r3, city-sanitation r2, misinformation r5. |
 | **L3** kinds of act | **adopted, with record anchors** | A rung names a kind of act, general in the kind. It may carry an **anchor a record can show** — relative to current law (raise / keep / cut) or a stated threshold (e.g. index to inflation) — instead of an amount. Magnitude ladders keep five rungs this way. |
+| L3 clarification (2026-10-08) | **a bar is an act** | A law that forbids the other side's policy (e.g. CA AB 1955, which forbids forced-notification policies) is a kind of act, and a rung may name it. Applies to every ladder. Ruled while preparing the education-gender-identity pilot. |
 | **L4** no degree words | **adopted, with record anchors** | No vague degree word (high, significant, moderate, broadly, as far as possible, …) on any rung. Use an anchor (L3) instead. |
 | **L5** no absence on middle rungs | **adopted as written** | Poles may state an absence. A condition the law itself states is a clause, not an absence. |
 | **L6** no "and"-compounds | **adopted as written** | Split the rung or drop a clause. |
@@ -135,11 +136,15 @@ substantive and blank every Season 1-only person on that topic under the default
 | **E2** joint evidence | **Adopted as written.** Several instruments may together seat a compound rung: each clause met positively with a verbatim quote, no clause of another rung met, no contradiction, all in `rests_on`, tier always `single-source`. |
 | codebook version | **Bump to 0.5** (E2 changes coding results), with a small gold round on E2 cases. 0.5 rows go to review until that round covers them under certification eb2f791a. |
 | test scope (§4) | **Changed ladders take T1–T6. An identity topic takes T6 only** (rulebook check, or a written exception); T1/T2 are run on it as a measurement, with no bar. |
-| T1 | **≥ 60%** seat rate among rows that show at least a side. Kept. |
-| T3 | **Kept**: 10 ordered pairs per changed topic, 10/10. |
-| T4 | **5 blind operator labels per changed topic** (5/5, or a review of each miss); **10 for pilots** (≥ 9/10). |
+| T1 | ~~**≥ 60%** seat rate among rows that show at least a side.~~ **Changed 2026-10-08 (applies to every topic from now on): T1 ≥ 60% over affirmative records only** — Yes votes, sponsorship, authorship. **No votes are excluded** (V4.1: they can never seat on any ladder). **Own words are reported separately, with a no-regression bar:** the draft must seat at least as many own-words rows as the control on the same set. Prompted by the education-gender-identity A1 v2 result (overall 27% vs control 15%; Yes-side records 5/7 = 71%; own words 2/16) — recorded here because the bar changed after a result was seen. Reason: the old denominator measured the evidence mix (a side that votes No and argues against can never seat) rather than the ladder; Season 3's goal is ladders that records can seat, and own words mostly corroborate (hearing-transcript study). |
+| T3 | **Kept**: 10 ordered pairs per changed topic, 10/10. **Fixed 2026-10-08:** pairs are pre-registered **before labels**, and only among items that could seat (affirmative records and own words) — a No voter can never seat, so a pair with one is unscorable. The education-gender-identity A1 v2 result (5/5 pairs built after labels) is a provisional pass only. |
+| T4 | **5 blind operator labels per changed topic** (5/5, or a review of each miss); **10 for pilots** (≥ 9/10). **Ruled 2026-10-08:** when a draft seats fewer chairs than the bar needs, **wait** — collect a fresh, frozen extension of the test set until enough chairs exist, then run T4 as written; the extension's T1 is reported separately. |
 | pilots (§5) | **climate-change, abortion, homelessness, education-library-books, plus minimum-wage** (tests record anchors L3/L4 and L8 at almost no cost: 2 visible chairs). |
-| sixth pilot | **education-gender-identity** (added 2026-10-08, proposed by the hearing-transcript study). Tests L6 directly; 0 seats, so no carry-forward cost; a state-level test set already exists (3 opposing instruments in AZ and CA, 35 statements, 2 gold rows — `~/Documents/GitHub/.planning/research/2026-10-hearing-transcripts-as-sources.md` §12). Needs about 10 school-board policies or votes before the test runs. Started in the session "Explore hearing transcripts as own-words sources". |
+| sixth pilot | **education-gender-identity** (added 2026-10-08, proposed by the hearing-transcript study). Tests L6 directly; 0 seats, so no carry-forward cost; a state-level test set already exists (3 opposing instruments in AZ and CA, 35 statements, 2 gold rows — `~/Documents/GitHub/.planning/research/2026-10-hearing-transcripts-as-sources.md` §12). Needs about 10 school-board policies or votes before the test runs. Started in the session "Explore hearing transcripts as own-words sources". Ruled 2026-10-08: **one topic, no split.** Two single-topic ladders are drafted and tested against the frozen set — A1 (who controls telling parents) and A2b (name and pronoun use); the one that seats more people (T1) and passes T2–T4 becomes the topic (T4: 10 blind labels each). Drop "written" from the parental-permission rung. Drafts: `docs/superpowers/specs/2026-10-08-egi-pilot-draft-ladders.md` (PR #945). |
+| no-lever resolutions (2026-10-08) | **Resolves the codebook `_owed:_` in V2 "No-lever level"** (`docs/codebook/stance-and-quote-codebook.md`, "whether a member's vote for a resolution that states every clause of a rung counts as their own words"). At a level that holds no lever on the rung: (1) a resolution or failed measure the person **wrote or sponsored**, whose text states every clause of one rung, counts as their **own words** and can seat the chair (own-words stratum; `single-source` unless corroborated). (2) A **bare Yes vote** on someone else's such text counts as own words **only if contested** — at least 10% of the body voted No (the existing near-unanimous guard); a near-unanimous or ceremonial vote shows direction only. (3) Text that only urges another level without stating the rung stays `rhetorical` / direction-only. Reason (Chris Andrews): such a measure shows where the person stands even when the body cannot enact it; a "political stunt" is still a public, attributed position, and the voter sees the source. **Changes coding results → goes into codebook 0.5.** |
+| sixth pilot result (2026-10-08) | **Failed.** T1: control 9%, A1 8%, A2b 0% (no annex on any ladder; 108 offline labels, no DB write). Half the 34 items could never seat (records at levels without a lever, multi-subject packages, sources not showing the person's act), and the drafts had boundaries that only silence separates. Report: `~/Documents/GitHub/.planning/research/2026-10-egi-pilot-seatability-results.md` (names test items — exposes the frozen set). **Winner (2026-10-08): A1 v2 (the parents ladder).** Same-evidence comparison on both sets (17 affirmative records, 26 own-words rows): A1 v2 records 13/17 = 76%, words 3/26, 16 chairs; A2b v2 records 10/17 = 59% (below the bar — no rung for notification bills), words 3/26, 13 chairs; control records 11/17 = 65%, words 2/26, 13 chairs. A1 v2 is the only draft that improves on the control. A2b dropped. T4: 10 of A1 v2's 16 chairs picked at random before labelling (the drafter never saw v3, so those chairs are independent); ≥ 9/10. The v2x extension was stopped. **T4 deferred (Chris Andrews, 2026-10-08):** the 10 items stay on the Blind Gold Desk unlabelled. Instead, a broad research run codes officeholders and 2026 candidates in Monroe IN, Racine WI and Utah County UT (LA County next) **offline** against A1 v2; human review of those rows stands in for T4. Only after he approves: write A1 v2 as a revision, approve and pin it into the Season 3 draft, then push rows with `--season draft` (rows written earlier would pin to rev 1 and block the re-pin). **Round 2 (2026-10-08): A1 v2 passes T1 under the new rule (records 5/7 = 71% vs control 43%), own words (2 vs 1 of 17) and T2 (2/2); T3 provisional (5/5 post-hoc); T4 waits for 10 chairs (7 so far). A2b v2 approved for its own set v3 (26 items).** Earlier: redraft A1 and re-test on a fresh set drawn first (v2, 32 items); A1 v2 approved 2026-10-08 (PR #945). Revised the same day: A2b also gets a second chance — redraft after its own fresh test set (v3) is frozen. Still one topic: if both pass, the one that seats more people wins; if neither passes, the topic stays identity for Season 3** (0 visible chairs, nothing lost). |
+| T6 addition (2026-10-08) | **No silence-only boundary.** Two neighbouring rungs must differ by a stated act. A difference of "every time", "even with …" or "no exception" alone fails T6, because a record never states what it leaves out. Learned from the sixth pilot (A1 rungs 3/4, A2b rungs 4/5). Applies to every ladder. |
+| test-set rule (ruled 2026-10-08) | **Adopted.** Own words count at **any** level the topic is asked (CA_0302); **records** count only from a level that holds a lever and only from single-subject instruments showing the person's own act. Chris Andrews raised that no-lever opinions still matter; this wording keeps them and drops only items that can never seat. Applies to every seatability test set. |
 | test-set leakage | Transcript passages whose clause matches are discussed in that report (§3, §4, §10) are marked **exposed**: they may inform a ladder draft but do not count toward its seatability test or a later certification (same rule as gold rows used to write a ladder). |
 | voter re-ask (§6.3.1) | **Keep as built** (CC_0061/CC_0062): a moved or invalidated voter answer is hidden and re-asked; a reworded one is kept and prompted. No build. |
 | the open (§6.3.2–3) | **No research threshold (Chris Cantrell call, 2026-10-08; replaces the pilot-scoped rule ruled earlier the same day).** Seasons switch to fix question problems, not when research reaches a set point. Research is still pre-staged in the draft season as far as it goes, and Chris Andrews decides when to open. A threshold may fit a much later season (Cantrell: "season eight, nine"). Substantive topics show an empty spoke until researched, so substantive rulings stay rare. |
@@ -479,6 +484,68 @@ Question: What should schools do when a student uses a different name or gender 
 |---|---|---|
 | ☐ identity · ☐ clarifying · ☐ substantive | | |
 
+#### EGI decision record — 2026-10-14 (Chris Andrews): parked, not dropped
+
+**Status:** parked. Not dropped. Nothing pinned or pushed. Rev 1 stays the Season 3 draft pin until a
+revision is approved.
+
+**How we got here.** 6th pilot (2026-10-08) → draft ladder A1 v2 won (T1 records 13/17 = 76%; PR #945) →
+four county waves on A1 v2: Monroe IN, Racine WI, Utah County UT (PR #950) and LA County CA (PR #1017), plus
+the source-yield and speech study (PR #1010) and the paid-ads / BallotReady count (PR #1013). Result:
+**33 of 1,273 people seated** (29 after the Q3 ruling below): r2 = 23 (CA AB 1955),
+r4 = 4 (IN HEA 1608, flagged), r5 = 6 (WI AB 103). **Every seat is a state legislator's roll-call vote.**
+Rungs 1 and 3 hold no seat in any county. Own words, school boards (0 of ~244), local officials and
+challengers seated nobody: statements show a side but never choose a rung (#1010: 77 of 149 statements are
+"side, no rule").
+
+**Ruled (2026-10-13/14):**
+1. **Rate measure — all topics.** Judge a topic's seat rate over the levels that hold a lever and have acted,
+   not over everyone asked. EGI: 29 of 78 state legislators (37%) against 29 of 1,273 everyone (2.3%).
+2. **Lens rule — all topics.** A topic goes into a level's lens only if people at that level can be seated on
+   it. **EGI leaves the Education Lens** (`inform.compass_lens_topics`; CompassV2 `src/lib/lenses.js`):
+   school boards seated 0, mostly because state law preempts the board (IN HEA 1608, UT SB 100, CA AB 1955).
+   The lens runs with 7 topics until a tested replacement exists; 8 per lens is a target, not a rule.
+
+**Ruled 2026-10-14 (items 3-4):**
+3. **EGI federal evidence basis: `own-words` → `record`.** CA_0302 set federal own-words as a conservative
+   default with a review owed; Congress holds a lever here (H.R. 5, 2023; H.R. 2616, 2026, single-subject,
+   217-198). Needs a `CA_` migration on `inform.compass_topic_roles` (not written).
+4. **Rung 5 widened (A1 v2.1, clarifying):** "Require parental permission before staff use **or record** a
+   different name or pronouns" (records consent, Gap A: UT SB 100, H.R. 5, H.R. 2616). Widening check: AB 103
+   still fits 5; AB 1955 still fits 2 and not the new text; HEA 1608 is direction-only (item 7); no seat moves,
+   nothing is pushed. Without item 4, item 3 adds about one seat (Banks, S. 2702); with it, about 6 more in the
+   four counties (H.R. 2616 Ayes), about 217 nationally, plus the Utah senators on SB 100.
+   **Condition before any coding:** the EGI annex states that consent before a change to records or forms
+   seats rung 5, and that a record-**access**-only law does not. Known cost: a records-only voter sits on the
+   same rung as a use-consent voter; L7 accepts "or" as one act, and the voter sees the source.
+   Rejected alternative: records consent as a new rung 3 (order against "notify" is a T6 risk).
+
+**Lean (not ruled):**
+5. Keep rungs 1 and 3 as voter positions. Voters answer on the same ladder; their blanks for officials are
+   correct. Rung 1 is probably a sampling gap (no rung-1 state in the sample; not verified). Rung 3 ("tell
+   when asked") is close to the FERPA baseline, so few bodies legislate it.
+
+**Ruled 2026-10-14 (amendments; Q3 and Q4 delegated by Chris Andrews to the session's judgment):**
+6. **Amendments — all topics.** An amendment the person wrote, sponsored or co-sponsored is evidence of its
+   text, failed or adopted, in the same way as a bill (E1: co-sponsorship seats a chair alone). Not yet in the
+   codebook; owed for codebook 0.5. EGI effect: none today. Yoder's IN HB 1608 Senate Amendment #11 (a student
+   may withdraw the request) is Gap C and fits no rung.
+7. **Single-subject test (V4.1), stated:** a bill is multi-subject when any operative part would be evidence
+   for a **different compass topic**.
+   - **Q3 — HEA 1608: multi-subject.** Its K-3 human-sexuality instruction ban is `education-curriculum`
+     evidence. The four Indiana rung-4 rows (Heaton, Hall, Mayfield, Koch) are **direction-only**. This also
+     matches how the same coder run read Pierce's No on the same act. EGI seats: **29**.
+   - **Q4 — AB 1955: single-subject.** Ed Code 217 (resources for parents of LGBTQ pupils), 220.1 (no
+     retaliation against staff) and 220.3/220.5 (disclosure) all fall inside this topic; no part is evidence
+     for another topic. The 23 rung-2 seats stand.
+
+**Open:** none of Q2-Q4 remain (Q2 is replaced by item 3). Item 5 is a leaning only.
+
+**Follow-ups (not started):** a `CA_` migration removing EGI from `inform.compass_lens_topics`, plus the CompassV2
+fallback list and its 8-topic test; a `CA_` migration for the federal role (item 3); write A1 v2.1 as a revision and the annex line (item 4) — each step needs Chris's approval; pick the next pilot
+topic from this worksheet. A replacement school-board topic must pass the lens rule first (boards cast named
+roll-call votes on it), e.g. through compass-topic-builder.
+
 ### `education-library-books` — School Library Books and Instructional Materials · ⚠ evidence of a problem
 
 Question: How should schools handle challenges to books in libraries and classrooms?
@@ -529,6 +596,40 @@ Question: How should schools set spending levels and decide whether to raise mor
 | ruling | rung_map (substantive only) | note |
 |---|---|---|
 | ☐ identity · ☐ clarifying · ☐ substantive | | |
+
+#### School-budget decision record — 2026-10-16 (Chris Andrews): off for Season 3, parked, not dropped
+
+**Status:** parked. Not dropped. Nothing pinned, pushed or migrated. No politician has ever been seated on this
+topic (0 answers in any season), so the decision costs 0 seats; the 1 voter answer gets the usual re-ask.
+
+**How we got here.** Education Lens review (2026-10-15) → Stage 0 census: PASS, 68 seatable records (60 school-board
+budget and tax-rate votes at 8 boards, 8 single-subject state school-finance laws) → Stage 1 froze a test set of
+181 items / 102 people (workspace `.planning/research/s3-pilot-school-budget/stage1/FROZEN.md`; all 7 freeze
+judgment calls accepted). No draft ladder was written.
+
+**Why it is off.** The records pass the count gate but show almost no disagreement:
+- **167 of 176 school acts are Yes.** Boards adopt the annual budget unanimously almost every year, and state law
+  requires them to adopt one, so a Yes is close to procedural. The annex already rules that a No proves nothing.
+- A Yes seats a rung only when the passage shows both the year-over-year change and the rate change; most boards'
+  documents show neither (General Fund only, percent changes only, or totals not found).
+- **The few splits are about the tax rate, not the budget:** Escambia FY26 (millage +0.512, 15.4% above
+  rolled-back), Keller FY26 tax-rate resolution 5-2, Alpine FY26 rate 5-2; Katy's 2022 voter tax-rate election
+  order is the same kind of act.
+- **What the money buys matters more than the total, but it is not one spectrum.** Teachers, class size,
+  administration and buildings are separate choices. Rung 4 (administration against classroom) already shows the
+  problem: it is about mix, not level, and does not sit between rungs 3 and 5.
+
+**Kept on file (option B, not ruled):** re-scope as a local school tax topic — roughly "Should your district raise
+local school taxes to fund schools?" — with rungs from putting a tax increase to voters, through raising the rate
+above the rolled-back / no-new-revenue rate, holding it, to cutting it. That is where boards actually split. The
+frozen Stage 1 set already holds the rate votes, Florida's percent-above-rolled-back figures and the state laws' tax
+provisions, so a draft could be tested without new collection. It is a new question (a material rewrite, 0 seats to
+re-audit), so it must pass its own Stage 0 census first, and its overlap with the general taxes topic must be checked.
+Option C (separate spending-priority topics) is a later-season project.
+
+**Follow-ups (not started; each needs Chris's approval):** a `CA_` migration taking `education-school-budget` out
+of Season 3 and out of the Education Lens (`inform.compass_lens_topics`, plus the CompassV2 `src/lib/lenses.js`
+fallback); the lens rule (2026-10-14) lets a lens run below 8 topics. Next Education pilot: `education-school-police`.
 
 ### `education-school-police` — Police in Schools · ⚠ evidence of a problem
 

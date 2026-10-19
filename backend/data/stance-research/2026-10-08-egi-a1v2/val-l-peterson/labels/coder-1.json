@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "61816aa4-4de0-4e1a-a249-cea5e2a8d169",
+      "office_id": "262ebde3-eaf1-4b1c-ab40-dec0cbc15f47",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "edeb78c2-4c64-5b49-afe6-ddc14f133e2c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-01",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": null,
+          "note": "House final passage of 2SB 100 with Yea from Peterson, V.; 6 of 75 members voted No (under 10%), so it cannot carry a chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "Peterson, V.",
+          "tally_quote": "Yeas 59 Nays 6 N/V 10"
+        },
+        {
+          "snapshot_id": "cede42ab-54b2-567b-8b4d-869339205d83",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": "without written parental consent make changes to a student's education record",
+          "note": "Operative section bars shielding education records from parents and requires parental consent to change the record's gender identity; its object is the education record, not staff use of names or pronouns or a notice duty, so it shows the parent-side direction without matching any one rung's clauses.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Peterson voted Yea on SB 100 (2023), which forbids policies that shield a student's education record from parents and bars changing the record's gender identity \"without written parental consent\". That puts him on the parental-information side, but the bill acts on education records, not on \"staff use a different name or pronouns\" (rung 5), an affirmative duty to \"notify parents\" (rung 4), or telling parents \"when parents ask\" (rung 3), and the vote was near-unanimous.",
+      "needs_source": [
+        "Val L. Peterson's own words on parental notification of a student's gender identity at school (statement or questionnaire)"
+      ],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "5cdd28b7-f8be-4968-bc1a-0e7928786980",
+      "office_id": "be3bdca4-d290-474e-aa45-37b336719fa0",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "3fdd0c52-d154-5dde-bb45-b7ce30f06f11",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-27",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": null,
+          "note": "Aye on the Assembly concurrence vote, the final passage of the chaptered text, 61-16 (not near-unanimous), during his current Assembly term.",
+          "record_kind": "vote",
+          "actor_quote": "Bonta, Bryan, Calderon",
+          "tally_quote": "Result: PASS, 61-16"
+        },
+        {
+          "snapshot_id": "1d712758-33d4-58cd-8056-2077cc65babb",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-07-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": "shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent, unless otherwise required by state or federal law.",
+          "note": "Operative Section 220.5 forbids districts and schools from having rules that require disclosure; Section 220.3 makes disclosure not required rather than forbidden, so it does not mandate secrecy (rung 1).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "3fdd0c52-d154-5dde-bb45-b7ce30f06f11",
+        "1d712758-33d4-58cd-8056-2077cc65babb"
+      ],
+      "reasoning": "Bryan voted Aye on final Assembly passage of AB 1955 (2023-2024). Its operative Section 220.5 says schools \"shall not enact or enforce any policy, rule, or administrative regulation that would require\" disclosure of a pupil's gender identity without consent, which matches \"Forbid rules that require schools to tell parents.\" The bill only says disclosure is not required. It does not order staff to keep the information from parents, so it rules out \"Require staff to keep a student's gender identity from parents unless the student consents.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

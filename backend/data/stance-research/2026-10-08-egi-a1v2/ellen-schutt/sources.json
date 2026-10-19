@@ -1,0 +1,33 @@
+{
+  "batch_id": "ellen-schutt",
+  "sources": [
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/proposaltext/2023/REG/AB510",
+      "source_kind": "public-record",
+      "politician_id": "2c8c7755-c1cc-45fc-aa04-a5f9fdeec498",
+      "office_id": "78b54c34-4ce1-49ad-b7bf-4e44bf734eea",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 510"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0139",
+      "source_kind": "public-record",
+      "politician_id": "2c8c7755-c1cc-45fc-aa04-a5f9fdeec498",
+      "office_id": "78b54c34-4ce1-49ad-b7bf-4e44bf734eea",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 510"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

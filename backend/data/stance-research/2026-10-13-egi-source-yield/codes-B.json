@@ -1,0 +1,1752 @@
+[
+ {
+  "sid": "P03-S01",
+  "own_words": "fixed-text",
+  "sub_issue": "parent-notice",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P03-S02",
+  "own_words": "fixed-text",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P03-S03",
+  "own_words": "fixed-text",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Opposes HB 1608, which covers both curriculum and parent notice"
+ },
+ {
+  "sid": "P03-S04",
+  "own_words": "fixed-text",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C3",
+  "frame": "rights-discrimination",
+  "proposition": "Schools must adopt anti-bullying policies that cover sexual orientation and gender identity",
+  "note": "Board directs administration to write the policy with LGBTQIA+ community input"
+ },
+ {
+  "sid": "P03-S05",
+  "own_words": "fixed-text",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Resolution text read aloud by her"
+ },
+ {
+  "sid": "P05-S01",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "fairness-competition",
+  "proposition": "Trans women and girls may not play on female sports teams",
+  "note": "Vote to override veto of K-12 law"
+ },
+ {
+  "sid": "P05-S02",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P05-S03",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "fairness-competition",
+  "proposition": "Trans women and girls may not play on female sports teams",
+  "note": "Collegiate law; 'our' efforts, not an explicit personal vote"
+ },
+ {
+  "sid": "P07-S01",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "parental-rights",
+  "proposition": "The state may not ban gender-affirming care for minors",
+  "note": "Co-authored bills; mostly about marriage history"
+ },
+ {
+  "sid": "P10-S01",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P10-S02",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P10-S03",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Federal law recognizes same-sex marriages",
+  "note": ""
+ },
+ {
+  "sid": "P10-S04",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "none",
+  "proposition": "",
+  "note": "Reporter paraphrase with two quoted words"
+ },
+ {
+  "sid": "P11-S01",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C2",
+  "frame": "fairness-competition",
+  "proposition": "Trans women and girls may not play on female sports teams",
+  "note": ""
+ },
+ {
+  "sid": "P11-S02",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P11-S03",
+  "own_words": "yes",
+  "sub_issue": "facilities",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "privacy",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P11-S04",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P11-S05",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P11-S06",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "Anecdote; not a gender-identity case"
+ },
+ {
+  "sid": "P11-S07",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "Implies parents should be notified but states no rule"
+ },
+ {
+  "sid": "P11-S08",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C0",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P11-S09",
+  "own_words": "no",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C0",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "Third-person campaign page; not tied to gender"
+ },
+ {
+  "sid": "P12-S01",
+  "own_words": "yes",
+  "sub_issue": "off-domain",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "School choice"
+ },
+ {
+  "sid": "P14-S01",
+  "own_words": "fixed-text",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "rights-discrimination",
+  "proposition": "Law bans discrimination based on sexual orientation and gender identity",
+  "note": "State law, not schools"
+ },
+ {
+  "sid": "P17-S01",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C0",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P17-S02",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C0",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P17-S03",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P17-S04",
+  "own_words": "joint",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C0",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P17-S05",
+  "own_words": "joint",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P18-S01",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "none",
+  "proposition": "",
+  "note": "Anecdote about a hearing"
+ },
+ {
+  "sid": "P18-S02",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "none",
+  "proposition": "",
+  "note": "Dismisses stakes of a trans-related bill; side unclear"
+ },
+ {
+  "sid": "P18-S03",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": "Gendered language in state budget"
+ },
+ {
+  "sid": "P18-S04",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": "Gendered language in administrative rules"
+ },
+ {
+  "sid": "P18-S05",
+  "own_words": "yes",
+  "sub_issue": "off-domain",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "none",
+  "proposition": "",
+  "note": "Trans sports only as a survey item"
+ },
+ {
+  "sid": "P19-S01",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "mental-health",
+  "proposition": "",
+  "note": "Conversion-therapy rule"
+ },
+ {
+  "sid": "P19-S02",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "child-safety-protection",
+  "proposition": "",
+  "note": "Conversion-therapy ban"
+ },
+ {
+  "sid": "P19-S03",
+  "own_words": "yes",
+  "sub_issue": "curriculum",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Primarily about race curriculum"
+ },
+ {
+  "sid": "P19-S04",
+  "own_words": "yes",
+  "sub_issue": "off-domain",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "anti-politicization",
+  "proposition": "",
+  "note": "Voucher funding; LGBTQ+ mentioned only as a group private schools need not serve"
+ },
+ {
+  "sid": "P19-S05",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P19-S06",
+  "own_words": "joint",
+  "sub_issue": "sports",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Bills cover sports and gender-affirming care"
+ },
+ {
+  "sid": "P19-S07",
+  "own_words": "joint",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "privacy",
+  "proposition": "The state may not ban gender-affirming care for minors",
+  "note": ""
+ },
+ {
+  "sid": "P19-S08",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": "Fragment; prediction about bills"
+ },
+ {
+  "sid": "P19-S09",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": "Only the quoted phrase is hers"
+ },
+ {
+  "sid": "P19-S10",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "anti-politicization",
+  "proposition": "",
+  "note": "Only the quoted phrase is hers"
+ },
+ {
+  "sid": "P19-S11",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P23-S01",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "local-control",
+  "proposition": "Sports eligibility is decided by state and local bodies, not the federal government",
+  "note": "Opposes federal restriction without affirming trans participation"
+ },
+ {
+  "sid": "P23-S02",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "local-control",
+  "proposition": "Sports eligibility is decided by state and local bodies, not the federal government",
+  "note": ""
+ },
+ {
+  "sid": "P23-S03",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "local-control",
+  "proposition": "Sports eligibility is decided by state and local bodies, not the federal government",
+  "note": "Weak; could be read as mixed"
+ },
+ {
+  "sid": "P23-S04",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Truncated post; also names sports"
+ },
+ {
+  "sid": "P23-S05",
+  "own_words": "yes",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Colleges must prevent and address harassment of LGBTQ+ students",
+  "note": "Higher education, not K-12"
+ },
+ {
+  "sid": "P23-S06",
+  "own_words": "yes",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P23-S07",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P23-S08",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "parental-rights",
+  "proposition": "Military health insurance covers gender-affirming care for servicemembers' children",
+  "note": ""
+ },
+ {
+  "sid": "P23-S09",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "rights-discrimination",
+  "proposition": "Law bans discrimination based on sexual orientation and gender identity",
+  "note": ""
+ },
+ {
+  "sid": "P23-S10",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Law bans discrimination based on sexual orientation and gender identity",
+  "note": ""
+ },
+ {
+  "sid": "P23-S11",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "rights-discrimination",
+  "proposition": "Law bans discrimination based on sexual orientation and gender identity",
+  "note": ""
+ },
+ {
+  "sid": "P23-S12",
+  "own_words": "fixed-text",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C3",
+  "frame": "rights-discrimination",
+  "proposition": "Title IX bans school discrimination based on sexual orientation and gender identity",
+  "note": "Asks Department to rescind rules and issue guidance"
+ },
+ {
+  "sid": "P23-S13",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Third-person campaign copy; marriage"
+ },
+ {
+  "sid": "P23-S14",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "none",
+  "proposition": "Congressional financial disclosure rules apply to same-sex partners",
+  "note": ""
+ },
+ {
+  "sid": "P25-S01",
+  "own_words": "yes",
+  "sub_issue": "books-library",
+  "side": "mixed",
+  "commitment": "C2",
+  "frame": "child-safety-protection",
+  "proposition": "Sexually explicit materials are kept from children in school libraries",
+  "note": "Also asks for diverse materials"
+ },
+ {
+  "sid": "P25-S02",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "mixed",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": "Neutral answer; balances both sides"
+ },
+ {
+  "sid": "P25-S03",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "mixed",
+  "commitment": "C1",
+  "frame": "religion-values",
+  "proposition": "",
+  "note": "Marriage beliefs; not schools"
+ },
+ {
+  "sid": "P28-S01",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C0",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "No gender issue named"
+ },
+ {
+  "sid": "P28-S02",
+  "own_words": "yes",
+  "sub_issue": "off-domain",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "none",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P34-S01",
+  "own_words": "yes",
+  "sub_issue": "books-library",
+  "side": "inclusive",
+  "commitment": "C3",
+  "frame": "local-control",
+  "proposition": "A school district's book removal applies only in that district, not statewide",
+  "note": "Not LGBTQ-specific"
+ },
+ {
+  "sid": "P34-S02",
+  "own_words": "yes",
+  "sub_issue": "books-library",
+  "side": "inclusive",
+  "commitment": "C3",
+  "frame": "local-control",
+  "proposition": "Statewide school-library book removal requires agreement of two-thirds of districts",
+  "note": "Not LGBTQ-specific"
+ },
+ {
+  "sid": "P35-S01",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": "Names LGBTQ+ rights only as a priority; side implied"
+ },
+ {
+  "sid": "P35-S02",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": "Heading only"
+ },
+ {
+  "sid": "P35-S03",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": "Third-person blurb"
+ },
+ {
+  "sid": "P36-S01",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S02",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C3",
+  "frame": "parental-rights",
+  "proposition": "Schools must tell parents if a student socially transitions (new name or pronouns)",
+  "note": "Mechanism: loss of federal funding; also covers classroom content"
+ },
+ {
+  "sid": "P36-S03",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C2",
+  "frame": "parental-rights",
+  "proposition": "Schools must tell parents if a student socially transitions (new name or pronouns)",
+  "note": ""
+ },
+ {
+  "sid": "P36-S04",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C2",
+  "frame": "parental-rights",
+  "proposition": "Schools must tell parents if a student socially transitions (new name or pronouns)",
+  "note": ""
+ },
+ {
+  "sid": "P36-S05",
+  "own_words": "yes",
+  "sub_issue": "curriculum",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "anti-politicization",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S06",
+  "own_words": "yes",
+  "sub_issue": "curriculum",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "anti-politicization",
+  "proposition": "Federal civics grants may not fund instruction promoting gender ideology",
+  "note": ""
+ },
+ {
+  "sid": "P36-S07",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C0",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S08",
+  "own_words": "yes",
+  "sub_issue": "curriculum",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "anti-politicization",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S09",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S10",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S11",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S12",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "fairness-competition",
+  "proposition": "The 2024 Title IX gender-identity rule is repealed",
+  "note": "Group vote; rule is the repeal itself"
+ },
+ {
+  "sid": "P36-S13",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": "Question at hearing"
+ },
+ {
+  "sid": "P36-S14",
+  "own_words": "yes",
+  "sub_issue": "facilities",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "privacy",
+  "proposition": "",
+  "note": "Question at hearing"
+ },
+ {
+  "sid": "P36-S15",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S16",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P36-S17",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P37-S01",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "mixed",
+  "commitment": "C1",
+  "frame": "religion-values",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P37-S02",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C0",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P37-S03",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C0",
+  "frame": "none",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P37-S04",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C0",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P37-S05",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "mixed",
+  "commitment": "C1",
+  "frame": "religion-values",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P38-S01",
+  "own_words": "yes",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Campaign text quoted by Ballotpedia"
+ },
+ {
+  "sid": "P44-S01",
+  "own_words": "yes",
+  "sub_issue": "curriculum",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Pride assembly content"
+ },
+ {
+  "sid": "P44-S02",
+  "own_words": "no",
+  "sub_issue": "curriculum",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "none",
+  "proposition": "",
+  "note": "Paraphrase with partial quote"
+ },
+ {
+  "sid": "P44-S03",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Third-person bio"
+ },
+ {
+  "sid": "P44-S04",
+  "own_words": "yes",
+  "sub_issue": "off-domain",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "No LGBTQ+ issue named"
+ },
+ {
+  "sid": "P48-S01",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "mental-health",
+  "proposition": "The state funds an LGBTQ+ youth suicide crisis line",
+  "note": "Crisis line; no closer sub_issue"
+ },
+ {
+  "sid": "P48-S02",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "mental-health",
+  "proposition": "Student ID cards must list an LGBTQ+ youth crisis line",
+  "note": "Rule from context (AB 727)"
+ },
+ {
+  "sid": "P48-S03",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "mental-health",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P48-S04",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "mental-health",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P48-S05",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "mental-health",
+  "proposition": "The state funds an LGBTQ+ youth suicide crisis line",
+  "note": "Partly reporter paraphrase"
+ },
+ {
+  "sid": "P48-S06",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P48-S07",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Campaign copy"
+ },
+ {
+  "sid": "P49-S01",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "rights-discrimination",
+  "proposition": "Expand access to gender-affirming health care",
+  "note": "Not youth-specific"
+ },
+ {
+  "sid": "P49-S02",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P50-S01",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P50-S02",
+  "own_words": "yes",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "child-safety-protection",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P50-S03",
+  "own_words": "yes",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "child-safety-protection",
+  "proposition": "Schools must adopt anti-bullying policies that cover sexual orientation and gender identity",
+  "note": "Rule from context (Safe Schools Improvement Act)"
+ },
+ {
+  "sid": "P50-S04",
+  "own_words": "yes",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "child-safety-protection",
+  "proposition": "Schools must adopt anti-bullying policies that cover sexual orientation and gender identity",
+  "note": "Rule from context (Safe Schools Improvement Act)"
+ },
+ {
+  "sid": "P50-S05",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P50-S06",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Mentions history books only in passing"
+ },
+ {
+  "sid": "P50-S07",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P50-S08",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Pride flag at city hall"
+ },
+ {
+  "sid": "P50-S09",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Own act (flag) is not a rule"
+ },
+ {
+  "sid": "P50-S10",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "NO vote; no rule stated"
+ },
+ {
+  "sid": "P50-S11",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Law bans discrimination based on sexual orientation and gender identity",
+  "note": ""
+ },
+ {
+  "sid": "P50-S12",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P50-S13",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Federal law recognizes same-sex marriages",
+  "note": ""
+ },
+ {
+  "sid": "P50-S14",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Trans military service"
+ },
+ {
+  "sid": "P52-S01",
+  "own_words": "yes",
+  "sub_issue": "curriculum",
+  "side": "restrictive",
+  "commitment": "C2",
+  "frame": "parental-rights",
+  "proposition": "Schools must disclose to parents what is taught in class",
+  "note": "Not gender-specific"
+ },
+ {
+  "sid": "P57-S01",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "fairness-competition",
+  "proposition": "Trans women and girls may not play on female sports teams",
+  "note": "Amicus brief"
+ },
+ {
+  "sid": "P57-S02",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "parental-rights",
+  "proposition": "Schools must tell parents if a student socially transitions (new name or pronouns)",
+  "note": ""
+ },
+ {
+  "sid": "P57-S03",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "parental-rights",
+  "proposition": "Schools must tell parents if a student socially transitions (new name or pronouns)",
+  "note": ""
+ },
+ {
+  "sid": "P57-S04",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "parental-rights",
+  "proposition": "Schools must tell parents if a student socially transitions (new name or pronouns)",
+  "note": ""
+ },
+ {
+  "sid": "P57-S05",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "parental-rights",
+  "proposition": "States may not treat parents' refusal to affirm a child's gender transition as abuse",
+  "note": "Child-welfare funding, not schools"
+ },
+ {
+  "sid": "P57-S06",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "parental-rights",
+  "proposition": "Foster and adoptive parents may not be rejected for opposing gender transition for minors",
+  "note": "Adoption/foster care, not schools"
+ },
+ {
+  "sid": "P57-S07",
+  "own_words": "yes",
+  "sub_issue": "books-library",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "child-safety-protection",
+  "proposition": "Federal school funds may not pay for sexually explicit materials for minors",
+  "note": ""
+ },
+ {
+  "sid": "P57-S08",
+  "own_words": "yes",
+  "sub_issue": "pronouns-names",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Employees, including teachers, may not be disciplined for refusing to use a person's chosen pronouns",
+  "note": "Pronoun link is from context"
+ },
+ {
+  "sid": "P57-S09",
+  "own_words": "yes",
+  "sub_issue": "curriculum",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P57-S10",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "none",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P57-S11",
+  "own_words": "yes",
+  "sub_issue": "parent-notice",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "Question at hearing"
+ },
+ {
+  "sid": "P57-S12",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": "Question at hearing"
+ },
+ {
+  "sid": "P57-S13",
+  "own_words": "no",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P57-S14",
+  "own_words": "no",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C2",
+  "frame": "fairness-competition",
+  "proposition": "Trans women and girls may not play on female sports teams",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P58-S01",
+  "own_words": "no",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "fairness-competition",
+  "proposition": "Trans women and girls may not play on female sports teams",
+  "note": "Office text, not a direct quote; also covers private spaces"
+ },
+ {
+  "sid": "P58-S02",
+  "own_words": "fixed-text",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P58-S03",
+  "own_words": "fixed-text",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P58-S04",
+  "own_words": "fixed-text",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "fairness-competition",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P58-S05",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C0",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "School choice; no gender reference"
+ },
+ {
+  "sid": "P59-S01",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "fairness-competition",
+  "proposition": "Trans women and girls may not play on female sports teams",
+  "note": ""
+ },
+ {
+  "sid": "P59-S02",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "child-safety-protection",
+  "proposition": "Federal funds may not pay for gender transition research involving minors",
+  "note": ""
+ },
+ {
+  "sid": "P59-S03",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "child-safety-protection",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P59-S04",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "child-safety-protection",
+  "proposition": "Gender transition procedures for minors are banned",
+  "note": "Mechanism: right to sue and penalty funds"
+ },
+ {
+  "sid": "P59-S05",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "child-safety-protection",
+  "proposition": "DC may not shield providers of gender transition drugs from other states' laws",
+  "note": "Mainly about abortion"
+ },
+ {
+  "sid": "P59-S06",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "child-safety-protection",
+  "proposition": "Federal funds may not pay for gender transition research involving minors",
+  "note": ""
+ },
+ {
+  "sid": "P59-S07",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "anti-politicization",
+  "proposition": "",
+  "note": "Opposes Equality Act"
+ },
+ {
+  "sid": "P59-S08",
+  "own_words": "yes",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C0",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "Not tied to gender"
+ },
+ {
+  "sid": "P60-S01",
+  "own_words": "no",
+  "sub_issue": "youth-medical-care",
+  "side": "restrictive",
+  "commitment": "C4",
+  "frame": "child-safety-protection",
+  "proposition": "Gender transition procedures for minors are banned",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P60-S02",
+  "own_words": "no",
+  "sub_issue": "general-parental-rights",
+  "side": "restrictive",
+  "commitment": "C0",
+  "frame": "parental-rights",
+  "proposition": "",
+  "note": "Campaign list item"
+ },
+ {
+  "sid": "P60-S03",
+  "own_words": "no",
+  "sub_issue": "youth-medical-care",
+  "side": "restrictive",
+  "commitment": "C1",
+  "frame": "child-safety-protection",
+  "proposition": "",
+  "note": "Reporter sentence with quoted words"
+ },
+ {
+  "sid": "P60-S04",
+  "own_words": "yes",
+  "sub_issue": "youth-medical-care",
+  "side": "restrictive",
+  "commitment": "C0",
+  "frame": "none",
+  "proposition": "",
+  "note": "Issue from context only (SB 16)"
+ },
+ {
+  "sid": "P60-S05",
+  "own_words": "yes",
+  "sub_issue": "off-domain",
+  "side": "none",
+  "commitment": "C0",
+  "frame": "local-control",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P61-S01",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P61-S02",
+  "own_words": "yes",
+  "sub_issue": "sports",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "local-control",
+  "proposition": "Sports eligibility is decided by state and local bodies, not the federal government",
+  "note": "Opposes federal role without affirming trans participation"
+ },
+ {
+  "sid": "P61-S03",
+  "own_words": "fixed-text",
+  "sub_issue": "sports",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "anti-politicization",
+  "proposition": "",
+  "note": "Letter he led"
+ },
+ {
+  "sid": "P61-S04",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P61-S05",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Tax law covers fertility care costs for LGBTQ+ family planning",
+  "note": ""
+ },
+ {
+  "sid": "P62-S01",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "mental-health",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P62-S02",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P62-S03",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Federal law recognizes same-sex marriages",
+  "note": ""
+ },
+ {
+  "sid": "P62-S04",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P62-S05",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": ""
+ },
+ {
+  "sid": "P62-S06",
+  "own_words": "yes",
+  "sub_issue": "off-domain",
+  "side": "none",
+  "commitment": "C2",
+  "frame": "fairness-competition",
+  "proposition": "College sports reform protects women's roster spots",
+  "note": "Not about trans athletes"
+ },
+ {
+  "sid": "P63-S01",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P63-S02",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Law bans discrimination based on sexual orientation and gender identity",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P63-S03",
+  "own_words": "no",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "none",
+  "proposition": "Government may not restrict gender-affirming care",
+  "note": "Third-person; votes, not youth-specific"
+ },
+ {
+  "sid": "P63-S04",
+  "own_words": "no",
+  "sub_issue": "youth-medical-care",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "The state may not ban gender-affirming care for minors",
+  "note": "Third-person; amicus brief"
+ },
+ {
+  "sid": "P63-S05",
+  "own_words": "no",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "mental-health",
+  "proposition": "Colleges must prevent and address harassment of LGBTQ+ students",
+  "note": "Third-person; also youth mental health grants"
+ },
+ {
+  "sid": "P64-S01",
+  "own_words": "no",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C2",
+  "frame": "child-safety-protection",
+  "proposition": "Schools get programs that give educators tools to protect LGBTQ+ students from harassment",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P64-S02",
+  "own_words": "no",
+  "sub_issue": "bullying-nondiscrimination",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "child-safety-protection",
+  "proposition": "",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P64-S03",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P64-S04",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C4",
+  "frame": "rights-discrimination",
+  "proposition": "Law bans discrimination based on sexual orientation and gender identity",
+  "note": "Third-person campaign copy"
+ },
+ {
+  "sid": "P64-S05",
+  "own_words": "no",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Trans military service"
+ },
+ {
+  "sid": "P64-S06",
+  "own_words": "yes",
+  "sub_issue": "general-lgbtq-equality",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "inclusion-belonging",
+  "proposition": "",
+  "note": "Questionnaire he wrote, in third person; act states no rule"
+ },
+ {
+  "sid": "P64-S07",
+  "own_words": "yes",
+  "sub_issue": "books-library",
+  "side": "inclusive",
+  "commitment": "C1",
+  "frame": "rights-discrimination",
+  "proposition": "",
+  "note": "Not LGBTQ-specific; censorship frame has no exact code"
+ }
+]

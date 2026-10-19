@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "c9205ba1-d0c8-4f17-a165-fb2a8fdae742",
+      "office_id": "1f1502ce-0ab9-4b69-880b-adc8263aa223",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "8a970c20-02d6-5449-82d4-ec235d24f6ec",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-27",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": null,
+          "note": "Aye on Assembly concurrence in Senate amendments, the final Assembly vote on the chaptered text; 16 of 79 voting No, so not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Muratsuchi, Ortega, Pacheco, Papan",
+          "tally_quote": "Result: PASS, 61-16"
+        },
+        {
+          "snapshot_id": "4fc50410-8534-57d2-bd30-626f6b010e28",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-07-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": "shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent, unless otherwise required by state or federal law.",
+          "note": "Chaptered text, the version the concurrence vote enacted; Section 220.5 forbids school rules that require disclosure, and Section 220.3 only says staff are not required to disclose, so it does not order staff to withhold (rung 1).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "8a970c20-02d6-5449-82d4-ec235d24f6ec",
+        "4fc50410-8534-57d2-bd30-626f6b010e28"
+      ],
+      "reasoning": "Pacheco voted Aye on final Assembly passage (concurrence, 61-16) of AB 1955. Its operative Section 220.5 says school entities \"shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose\" a pupil's gender identity without the pupil's consent, which matches \"Forbid rules that require schools to tell parents.\" The bill says only that staff \"shall not be required to disclose\"; it does not order them to keep the information from parents, which rules out \"Require staff to keep a student's gender identity from parents unless the student consents.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

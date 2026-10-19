@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "522efd15-f5e2-4e1a-8708-aad87410637d",
+      "office_id": "35d6cdde-1ce5-423c-9239-97a5b8e54666",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "a5728766-4963-5938-b722-d04e7aa4c9e7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-07-15",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": "shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent, unless otherwise required by state or federal law.",
+          "note": "Chaptered text (the text concurred in on 2024-06-27); Section 220.5 forbids rules requiring disclosure, while 220.3 only says staff shall not be required to disclose, so it does not require staff to withhold (rung 1).",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "313ca0df-1388-5a0d-928a-ee8f597e0d0d",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-06-27",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 1955 (2023-2024)",
+          "provision_quote": null,
+          "note": "Assembly concurrence vote on the chaptered text, during her current Assembly term; 16 of 77 voting No, not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "Low, Lowenthal, Luz Rivas, Maienschein, McCarty, McKinnor",
+          "tally_quote": "Result: PASS, 61-16."
+        }
+      ],
+      "v6_value": 2,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "a5728766-4963-5938-b722-d04e7aa4c9e7",
+        "313ca0df-1388-5a0d-928a-ee8f597e0d0d"
+      ],
+      "reasoning": "McKinnor voted Aye on concurrence in AB 1955 (2023-2024), a single-subject bill whose operative Section 220.5 bars schools from enacting or enforcing any policy that would require staff to disclose a pupil's gender identity without the pupil's consent, which matches \"Forbid rules that require schools to tell parents.\" The bill does not require staff to keep the information from parents (220.3 only removes a requirement to disclose), so it does not reach \"Require staff to keep a student's gender identity from parents unless the student consents.\"",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+ "body_votes": [],
+ "own_words": [
+  {
+   "person": "Konstantine Anthony",
+   "office": "Council Member (Mayor of Burbank at time of article, 2023)",
+   "url": "https://digital-release.newsnationnow.com/us-news/education/conflict-over-transgender-rights-simmering-in-us-schools/",
+   "excerpt": "\"One group says immediately, and the other group says, why don't you let the teacher figure it out?\" Maybe it's a day or two, maybe it's a week,\" he said.",
+   "note": "NewsNation, 'Conflict over transgender rights simmering in US schools', updated 2023-08-24. Fetch tool returned only fragments (quote-length limit); second fragment: 'what you're doing is putting the onus on the teacher and creating more work for them,' Anthony said. Paraphrase: opposes hard-and-fast immediate-notification rules; teacher works with child, 'eventually definitely get the parents involved.' Excerpt is mid-quote fragment; re-fetch page to verify full wording before use. Title in article: Burbank Mayor. People file lists him as Council Member At-Large.",
+   "verified_by_orchestrator": "2026-10-13: full article fetched with curl; quotes match verbatim (\"hard and fast rules\" ... \"eventually definitely get the parents involved\")"
+  }
+ ],
+ "direction_only": [],
+ "searches_run": [
+  "city council resolution AB 1955 parental notification Los Angeles County",
+  "Board of Supervisors motion transgender students parental notification AB 1955 Los Angeles County",
+  "Glendale OR Santa Clarita OR Lancaster OR Palmdale council parental notification gender identity schools vote",
+  "Los Angeles County city council candidate 2026 parental notification transgender students school name pronouns",
+  "Los Angeles city council resolution support AB 1955 SAFETY Act or oppose forced outing",
+  "Santa Clarita OR Glendale OR Torrance OR Long Beach councilmember statement parents notified student gender identity school policy AB 1955",
+  "Los Angeles County Sheriff OR supervisor candidate parental rights schools gender identity notify parents 2026",
+  "Santa Clarita city councilmember transgender students parents school district policy gender identity Signal",
+  "Burbank OR Pasadena OR Whittier OR Downey OR Torrance city council parental notification gender identity students resolution 2025",
+  "Lancaster mayor Parris OR Palmdale mayor Hofbauer transgender students parents notified school gender identity",
+  "Los Angeles mayor race 2026 candidate parental notification gender identity schools position"
+ ],
+ "blocked": [
+  {
+   "url": "https://hermosabeach.gov/home/showpublisheddocument/20140/638525120369870000",
+   "error": "HTTP 403 on WebFetch and on curl with browser UA; content unknown (surfaced by AB 1955 search, relevance unconfirmed)"
+  },
+  {
+   "url": "https://cityclerk.lacity.org/onlinedocs/2024/24-0037_CA.pdf",
+   "error": "fetched but unreadable (compressed PDF); no AB 1955 text visible; likely irrelevant"
+  },
+  {
+   "url": "https://cityclerk.lacity.org/onlinedocs/2025/25-0002-S113_misc_5-1-26.pdf",
+   "error": "fetched but scanned image PDF, no text layer; likely irrelevant"
+  }
+ ],
+ "notes": "Task A: no LA County city council or Board of Supervisors resolution/vote on parental notification, forced outing or AB 1955 found in 2023-2026 via search (search-engine coverage is weak; LA City Clerk council-file search and county BOS Statement of Proceedings were not directly queried). Huntington Beach (Orange County) and Imperial County BOS fights found but out of scope. K-12 fights in LA County (Hart district Santa Clarita, Glendale USD) are school-board, not city. Positive control: Anthony found in people file (Council Member At-Large). Nithya Raman (challenger, LA Mayor) and R. Rex Parris are in file; no statements on this question found."
+}

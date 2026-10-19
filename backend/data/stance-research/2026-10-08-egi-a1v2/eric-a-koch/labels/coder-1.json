@@ -1,0 +1,83 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "8f1088b4-48b5-40ed-95e6-16d8dabd2d33",
+      "office_id": "ae285450-8e0b-43d9-a534-e747ea9baf0b",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "ff2ef69f-3ce5-5952-92bf-01c8d330d958",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-07",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": "Sec. 2. (a) A school shall notify in writing at least one (1) parent EH 1608—LS 7479/DI 92 3 1 of a student, if the student is an unemancipated minor, of a request 2 made by the student to change the student's: 3 (1) name; or 4 (2) pronoun, title, or word to identify the student.",
+          "note": "Senate-engrossed text Koch voted on: the notification section requires schools to tell a parent of any name/pronoun request, with no parent-ask trigger (excludes rung 3) and no permission requirement (the committee consent version was replaced, excluding rung 5); the bill's other section (K-3 human sexuality instruction) is in the same school gender/sexuality domain.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "4c83047e-f499-5d60-87f5-88134e2b85e7",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-10",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023)",
+          "provision_quote": null,
+          "note": "Senate third-reading roll call 345, Koch Yea on final passage, 37-12 (not near-unanimous).",
+          "record_kind": "vote",
+          "actor_quote": "Y EA - 37 Alexander Crane Glick Rogers Baldwin Crider Holdman Sandlin Bohacek Deery Johnson Tomes Bray Dernulc Koch",
+          "tally_quote": "Yea 37 Education matters. Nay 12 Excused 1 Not Voting 0"
+        },
+        {
+          "snapshot_id": "28fd9247-00a7-5f3f-8bbc-fd92459122fc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023), Senate Amendment #11 (Yoder)",
+          "provision_quote": "(2) provide the student an opportunity to withdraw the 11 request if the student does not want the student's parent 12 notified.",
+          "note": "Amendment text that would have let a student avoid parental notification by withdrawing the request.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "06225d2e-bfee-54cc-a799-81ab0c47026c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-04-06",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "HB 1608 (2023), Senate Amendment #11 (Yoder)",
+          "provision_quote": null,
+          "note": "Koch voted Nay on the student-opt-out amendment, which rules out the student-consent side but alone does not seat a rung.",
+          "record_kind": "vote",
+          "actor_quote": "N AY - 34 Alexander Charbonneau Garten Perfect Baldwin Crane Gaskill Raatz Bohacek Crider Glick Rogers Bray Deery Holdman Sandlin Brown Dernulc Johnson Tomes Buchanan Donato Koch",
+          "tally_quote": "Yea 14 Education matters. Nay 34 Amendment #11 - Yoder Excused 2"
+        }
+      ],
+      "v6_value": 4,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "ff2ef69f-3ce5-5952-92bf-01c8d330d958",
+        "4c83047e-f499-5d60-87f5-88134e2b85e7"
+      ],
+      "reasoning": "Koch voted Yea (37-12) on final Senate passage of HB 1608 (2023), whose operative section says a school \"shall notify in writing at least one (1) parent\" of a student's request to change name or pronoun, matching \"Require schools to notify parents\" rather than notifying only when parents ask or requiring parental permission. His Nay on the Yoder amendment, which would have let a student withdraw the request to avoid notification, is consistent but only directional.",
+      "needs_source": [],
+      "quotes": []
+    }
+  ]
+}

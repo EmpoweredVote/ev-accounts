@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "0b36a14c-3d2d-4e05-88ab-47a738d1283b",
+      "office_id": "5e9ac1eb-c074-4622-9ec6-ee51a1ab1c2e",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "08fcb970-6532-59ea-a1a7-2b38cc58a911",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-01",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": null,
+          "note": "House final passage, Thurston voted Yea; 6 Nays of a 75-member body is under 10%, so the vote cannot carry a chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "Stratton, K. Thurston, N. Walter, R.",
+          "tally_quote": "Yeas 59 Nays 6 N/V 10"
+        },
+        {
+          "snapshot_id": "bf42bd4e-ec06-5269-929a-41daec9dd1cc",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": "Notwithstanding any other provision of law, a school or LEA may not: 45 (a) prohibit a parent of a child from accessing the child's education record; or 46 (b) without written parental consent make changes to a student's education record 47 regarding a student's gender identity that does not conform with the student's sex.",
+          "note": "Operative text guarantees parental access to records and consent for record changes, not notification or consent for staff use of names/pronouns; same near-unanimous vote.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "Thurston's only record is a Yea on SB 100 (2023), which bars schools from blocking a parent's access to the education record and from changing gender-identity entries without written parental consent; the 59-6 vote is near-unanimous and cannot seat a chair alone. Even on its text it does not match \"Require schools to notify parents\" or \"Require parental permission before staff use a different name or pronouns\" clause for clause.",
+      "needs_source": [
+        "Norman K Thurston's own words (floor debate, statement, or questionnaire) on parental notification of a student's gender identity at school",
+        "Any sponsorship or contested vote by Thurston on a Utah bill on school notification of parents about student names/pronouns"
+      ],
+      "quotes": []
+    }
+  ]
+}

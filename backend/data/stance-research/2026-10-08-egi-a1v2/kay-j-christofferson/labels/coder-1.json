@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "2fa5347c-fb56-443d-8f1d-c1bff270bf9e",
+      "office_id": "08084776-a748-489a-b296-cb8f67bb7e5d",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "2988d715-661f-578b-b0f9-827193c5abb3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-01",
+          "v4_shape": "near-unanimous",
+          "v5_time": "in-term",
+          "instrument": "S.B. 100 (2023 General Session)",
+          "provision_quote": null,
+          "note": "House final-passage vote, Yea; 6 Nays of 65 voting (under 10%), so it cannot carry a chair alone.",
+          "record_kind": "vote",
+          "actor_quote": "Christofferson, K.",
+          "tally_quote": "Yeas 59 Nays 6 N/V 10"
+        },
+        {
+          "snapshot_id": "0daa630e-fff1-5aac-a053-955c192ae06c",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "S.B. 100 (2023 General Session)",
+          "provision_quote": "(3) Notwithstanding any other provision of law, a school or LEA may not: 45 (a) prohibit a parent of a child from accessing the child's education record; or 46 (b) without written parental consent make changes to a student's education record 47 regarding a student's gender identity that does not conform with the student's sex.",
+          "note": "Guarantees parental access to records and requires consent for gender-identity record changes; it neither requires proactive notification (rung 4) nor consent before staff use a name or pronouns (rung 5), and goes beyond on-request access alone (rung 3), so it shows only the parent-side direction.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Christofferson voted Yea on S.B. 100 (2023), which bars a school from prohibiting a parent's access to the child's education record and from changing that record's gender identity entry \"without written parental consent\". That places him on the parent-information side, but the bill does not match every clause of one rung: it does not \"Require schools to notify parents\", it does not require \"parental permission before staff use a different name or pronouns\", and its consent clause goes beyond \"tell parents when parents ask\"; the vote is also near-unanimous (6 Nays).",
+      "needs_source": [
+        "Kay J. Christofferson's own words (statement, questionnaire, or floor remarks) on parental notification of a student's gender identity at school",
+        "Any bill Christofferson sponsored or voted on that requires school notification of parents or parental permission for name/pronoun use (e.g., later Utah sessions)"
+      ],
+      "quotes": []
+    }
+  ]
+}

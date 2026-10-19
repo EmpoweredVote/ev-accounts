@@ -1,0 +1,35 @@
+{
+  "batch_id": "thomas-umberg",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+      "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "712be98b-a05d-4605-9603-cd5d86abfad1",
+      "office_id": "9d4dce25-ba2b-4835-9490-4ef4bc69d4a5",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-senate-floor-2024-06-13.txt"
+    }
+  ]
+}

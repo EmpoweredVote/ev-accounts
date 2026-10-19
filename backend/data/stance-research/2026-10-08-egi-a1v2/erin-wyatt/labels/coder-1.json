@@ -1,0 +1,38 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "760e1b7d-022c-4c70-b605-07b6fea2384b",
+      "office_id": "8a8393ca-57af-46ce-b13e-d3e936640b85",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "b2b34dac-f4d7-55ec-83dc-fc932a848597",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-03-28",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "MCCSC Board of School Trustees Resolution 2023-07 (adopted 2023-03-28)",
+          "provision_quote": "BE IT FURTHER RESOLVED that the Board strongly opposes any Indiana laws or proposed legislation, including 2023 House Bill 1608, that limit the rights of L@BTQIA+ students and put them at greater risk for discrimination or harassment.",
+          "note": "Signed board resolution opposing a state bill that would require parental notification and approval for name/pronoun changes; it shows the anti-mandate side but neither forbids notification rules (rung 2) nor requires secrecy (rung 1) or notice on request (rung 3), and it does not establish the policy itself.",
+          "record_kind": "other-act",
+          "actor_quote": "[signed] Erin Wyatt, Member",
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Resolution 2023-07, which Wyatt signed, \"strongly opposes\" 2023 House Bill 1608, which its recitals say would \"require notification to, and approval from, parents\". That puts her against the notify and permission rungs, but opposing a state bill does not \"Forbid rules that require schools to tell parents\". It also does not \"Require staff to keep a student's gender identity from parents\" or \"Require schools to tell parents when parents ask\", so the passage shows only a side.",
+      "needs_source": [
+        "MCCSC Board of School Trustees meeting minutes, 2023-03-28: roll-call vote on Resolution 2023-07 showing Erin Wyatt's vote and the tally",
+        "Erin Wyatt's own words (candidate questionnaire, board meeting remarks, or campaign issue page) on whether schools should tell parents about a student's name or gender identity"
+      ],
+      "quotes": []
+    }
+  ]
+}

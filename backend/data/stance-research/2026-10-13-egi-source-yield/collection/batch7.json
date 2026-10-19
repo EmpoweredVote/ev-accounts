@@ -1,0 +1,943 @@
+{
+ "people": [
+  {
+   "id": "P07",
+   "name": "Matt Pierce",
+   "findable": true,
+   "found_page": "https://indianahousedemocrats.org/members/matt-pierce/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "https://specials.idsnews.com/elections-guide-2024-ids/in_house_61.html",
+     "note": "IDS 2024 elections guide states 'Pierce does not have a campaign website'. Bloomington Chamber 2026 page lists no campaign site for him."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://www.ipm.org/news/2026-04-29/meet-the-candidates-for-state-house-district-61",
+     "note": "IPM (WFIU/WTIU) 2026 primary Q&A: answers on affordability, redistricting, experience; nothing in domain. Ballotpedia Candidate Connection status unknown: ballotpedia.org returned only navigation shell to curl and empty to WebFetch (inaccessible)."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/candidate/political-courage-test/34012/matt-pierce",
+     "note": "Vote Smart PCT page returns HTTP 403. iVoterGuide has only a 2016 race page (https://ivoterguide.com/race/5219/election/480); questionnaire content is JS-rendered, not readable."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": "No pledge found in searches."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library requires JS/login; not checked in depth. Uncontested 2026 general; unlikely ads."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Campaign Facebook referenced by Bloomington Chamber page but no URL listed; Facebook/X need login."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No forum/debate transcript found; 2026 primary vs. Lilliana Young had candidate profiles, no transcript located."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://indianahousedemocrats.org/members/matt-pierce/",
+     "note": "House Democrats member page; no domain statement found by site search."
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://www.ipm.org/news/2026-05-05/matt-pierce-wins-primary-for-state-house-in-district-61",
+     "note": "Direct quotes on primary, redistricting, mental health/childcare/housing. Search found a 2019 paraphrase (not direct quote) about LGBTQ hate-crime bill; not recorded."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "None found."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "No issue-group endorsement in domain found."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "https://www.billtrack50.com/public/scorecard/legislator/TNvEht1gV0ilLkxyi9h0rQ/2470",
+     "note": "Only BillTrack50 generic scorecard surfaced; no HRC/ACLU/IFI rating found."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://fastdemocracy.com/bill-search/in/2023/bills/INB00012055/",
+     "note": "Roll calls via FastDemocracy (LegiScan 403): voted NO on HB1608 (2023), NO on SB480 (2023), NO on HB1447 CCR (2023), NO on HB1041 (2025)."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "NO on HB1608 (2023; parental notice of student name/pronoun change; ban on human-sexuality instruction pre-K-3), House third reading RC 220 (2023-02-23) and concurrence RC 489 (2023-04-24)",
+     "url": "https://fastdemocracy.com/bill-search/in/2023/bills/INB00012055/",
+     "side_hint": "against restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "NO on SB480 (2023; ban on gender-affirming care for minors), House third reading RC 306 (2023-03-27); YES on four failed Shackleford amendments RC 290-293",
+     "url": "https://fastdemocracy.com/bill-search/in/2023/bills/INB00012145/",
+     "side_hint": "adjacent; against restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "NO on HB1447 (2023) conference committee report RC 535 (2023-04-27), which added school library 'harmful to minors' material procedures; YES on original third reading RC 223 (94-0)",
+     "url": "https://fastdemocracy.com/bill-search/in/2023/bills/INB00011703/",
+     "side_hint": "library books; against restriction at CCR"
+    },
+    {
+     "kind": "vote",
+     "desc": "NO on HB1041 (2025; student eligibility in interscholastic/collegiate sports by sex), House third reading RC 202 (2025-02-18); YES on failed amendments #5 (Hamilton) and #4 (Gore)",
+     "url": "https://fastdemocracy.com/bill-search/in/2025/bills/INB00013296/",
+     "side_hint": "sports; against restriction"
+    }
+   ]
+  },
+  {
+   "id": "P15",
+   "name": "Randy Jacobs",
+   "findable": true,
+   "found_page": "https://bsquarebulletin.com/wp-content/uploads/2022/11/Sent-morning-of-11-09-2022-2022-General-Unofficial-Cumumlative-results.pdf",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: listed as DEM candidate for Bean Blossom Township Board in Monroe County 2022 general unofficial results (322 votes, 30.18%). No campaign site found in two searches."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://news.yahoo.com/ballot-monroe-county-indiana-2022-104415320.html",
+     "note": "2022 Monroe County ballot guide does not cover township board candidates; no questionnaire found."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "No sign of paid ads for township board race."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No identifiable own account found; common name."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Searches returned only unrelated Jacobs (Andy Jacobs Jr., Angela Jacobs R-BB school board)."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Township board has no role in K-12 or LGBTQ policy; no minutes online found."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P23",
+   "name": "Tammy Baldwin",
+   "findable": true,
+   "found_page": "https://www.baldwin.senate.gov/news/press-releases",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://www.tammybaldwin.com/issues/lgbtq-rights/",
+     "note": "Campaign issues page 'Securing LGBTQ+ Rights' covers Respect for Marriage Act only (general equality, adjacent); nothing on schools."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "No news/civic questionnaire answers found; Ballotpedia not readable (bot shell)."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/",
+     "note": "Vote Smart returns HTTP 403 to curl and WebFetch; PCT status unknown."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta/Google ad libraries need JS. Free Beacon (2024-10-31) reports Baldwin campaign 'defensive ads' on Hovde's transgender attacks; ad text not retrieved."
+    },
+    "T06": {
+     "result": "found-on-topic",
+     "url": "https://wisconsinwatch.org/2024/10/wisconsin-baldwin-gender-affirming-surgeries-children-minors-senate/",
+     "note": "Oct 2023 X post on trans kids quoted (truncated) by Wisconsin Watch; X/Facebook/Instagram themselves need login (inaccessible directly)."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No debate/forum transcript found; WISN UpFront interview known only via Free Beacon quote (video not fetched)."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-on-trumps-executive-order-that-tramples-local-sports-leagues-and-schools-decision-making-power",
+     "note": "Crawled ~3,600 Senate press releases; many on-topic: sports EO (2025), Trans Day of Visibility (2022), Tyler Clementi anti-harassment (2014-2023), TRICARE minors' care (2024), Equality Act (2019-2025), trans youth mental health (2021)."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://noticias.foxnews.com/sports/bill-prevent-males-from-womens-sports-receives-no-support-from-senate-dems-who-were-they",
+     "note": "Direct quotes on sports bill (Fox 2025-03-04) and WISN interview (Free Beacon 2024-10-31)."
+    },
+    "T10": {
+     "result": "found-on-topic",
+     "url": "https://www.hirono.senate.gov/news/press-releases/hirono-balint-fernandez-lead-colleagues-in-urging-scotus-to-protect-transgender-rights",
+     "note": "Joined Nov 2025 congressional amicus brief in West Virginia v. B.P.J. / Little v. Hecox; signed 2020 letter to DeVos on Title IX and Bostock."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "https://victoryfund.org/candidate/tammy-baldwin/",
+     "note": "Victory Fund candidate URL 404; HRC endorsement release URL guessed returned 404. Web search budget ran out before locating endorsement pages."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC 118th Congress scorecard: 100."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "note": "Nay on cloture for S.9 (2025-03-03)."
+    }
+   },
+   "statements": [
+    {
+     "text": "This all comes down to who you trust to make these decisions. I trust our parents, schools, and sports associations to make these decisions, not the President or politicians in Washington. I’ve heard directly from Wisconsin sports associations and parents who are thoughtfully managing this on their own, and they don’t need the federal government butting in. While Republicans are laser-focused on playing politics with kids’ sports leagues, I’m focused on the issues I hear about from Wisconsinites – lowering costs at the pharmacy and grocery store, getting people good, affordable health care, and keeping the Badger State safe.",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-on-trumps-executive-order-that-tramples-local-sports-leagues-and-schools-decision-making-power",
+     "date": "2025-02-05",
+     "source_type": "T08",
+     "context": "statement on Trump executive order on women's sports",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "\"Simply put: it’s not the federal government’s place to tell state and local sports leagues across the country how to do their jobs,\" she said. \"I for one trust our state and local leagues to craft thoughtful policy where parents and players can be involved in the discussion about what is best for our children without interference from the President or Congress.\"",
+     "url": "https://noticias.foxnews.com/sports/bill-prevent-males-from-womens-sports-receives-no-support-from-senate-dems-who-were-they",
+     "date": "2025-03-04",
+     "source_type": "T09",
+     "context": "statement to Fox News Digital after cloture vote on Protection of Women and Girls in Sports Act (S.9)",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "\"This is not a burning issue. I believe that local communities can figure it out,\" Baldwin said during an interview with WISN 12's UpFront on Sunday.",
+     "url": "https://freebeacon.com/?p=1957204",
+     "date": "2024-10-31 (article; interview the prior Sunday)",
+     "source_type": "T09",
+     "context": "WISN UpFront interview, asked whether biological males should play girls' or women's sports (quoted by Free Beacon; original video not fetched)",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Trans kids deserve to feel safe and welcome in Wisconsin, not discriminated against. They deserve the freedom to just be kids, play sports, and get the health care they need,",
+     "url": "https://wisconsinwatch.org/2024/10/wisconsin-baldwin-gender-affirming-surgeries-children-minors-senate/",
+     "date": "2023-10 (post); fact brief 2024-10",
+     "source_type": "T06",
+     "context": "X post reacting to Gov. Evers' veto pledge on minors' gender-transition care ban; text as shown (truncated) in Wisconsin Watch source list; X itself needs login",
+     "sub_issue_hint": "adjacent-medical; sports"
+    },
+    {
+     "text": "No one should live in fear of being bullied just because of who they are, especially in our schools,” said Senator Baldwin. “In the face of increased harassment and discrimination, particularly against members of the LGBTQ+ community, our legislation makes crystal clear that kind of hate has no place on our college campuses or universities. All students deserve to have the freedom to succeed in a safe and healthy place and pursue their dreams, free of discrimination.",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/on-anniversary-of-tyler-clementis-2010-death-baldwin-murray-pocan-renew-push-to-pass-anti-harassment-legislation",
+     "date": "2023-09-22",
+     "source_type": "T08",
+     "context": "reintroduction of Tyler Clementi Higher Education Anti-Harassment Act",
+     "sub_issue_hint": "anti-bullying"
+    },
+    {
+     "text": "\"No student or employee should have to live in fear of being who they are,\" Baldwin said in a statement. \"Our schools should not be, and cannot be a place of discrimination, harassment, bullying, intimidation or violence.\"",
+     "url": "https://www.baldwin.senate.gov/in-the-news/senators-renew-push-for-college-anti-harassment-bill",
+     "date": "2014-03-27",
+     "source_type": "T09",
+     "context": "news item (reposted on Senate site) on reintroducing Tyler Clementi anti-harassment act",
+     "sub_issue_hint": "anti-bullying"
+    },
+    {
+     "text": "“The increase in discrimination and attacks on the trans community come at a time when LGBTQ youth are at increased risk for bullying and are more likely to consider and attempt suicide. This is unacceptable and we must do better. International Transgender Day of Visibility provides us an opportunity to make it clear that words and actions matter and I’m proud to join my colleagues on this resolution,” said Senator Baldwin. “Today, and every day, my message is simple—I see you, I am with you, and I stand with the trans community to celebrate the courage and dignity of living life as who you are. Together, we will create a future where all Americans have the freedom of full equality because trans rights are human rights.”",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-supports-senate-resolution-celebrating-international-transgender-day-of-visibility",
+     "date": "2022-03-31",
+     "source_type": "T08",
+     "context": "Transgender Day of Visibility resolution",
+     "sub_issue_hint": "anti-bullying; general equality"
+    },
+    {
+     "text": "“Let’s be clear: we’re talking about parents who are in uniform serving our country who have earned the right to make the best decisions for their families. I trust our servicemembers and their doctors to make the best healthcare decisions for their kids, not politicians,” said Senator Baldwin. “Our amendment would protect military families’ right to make their own decisions and access sometimes lifesaving care for their children.”",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-20-senators-introduce-ndaa-amendment-to-protect-military-parents-right-to-health-care-for-their-kids",
+     "date": "2024-12-16",
+     "source_type": "T08",
+     "context": "NDAA amendment to strike restriction on TRICARE gender-affirming care for servicemembers' children",
+     "sub_issue_hint": "adjacent-medical"
+    },
+    {
+     "text": "“The Equality Act simply puts into law what we all believe: that every American is created equal and should be treated equally under the law. But, for too many LGBTQ+ Americans in states across the country, equality under the law is not the reality, and they are harassed at work, denied a place to live, and discriminated against just for being who they are,” said Senator Baldwin . “The Equality Act makes clear that in the United States, we can live up to our nation’s highest ideals and we will not tolerate discrimination based on sexual orientation or gender identity – just like religion, race, or ethnicity. Equality is not a privilege, it’s what we’re all owed as American citizens, and I’m committed to making that promise a reality.”",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/senator-baldwin-leads-bill-to-ban-discrimination-against-lgbtq-americans",
+     "date": "2025-04-29",
+     "source_type": "T08",
+     "context": "Equality Act reintroduction",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "“If we want to live up to our nation’s ideal of true equality, we must address the fact that we have been coming up short. It is wrong that in a majority of states, LGBTQ+ people can be denied an apartment, cut from a job, thrown out of a store, or face other forms of discrimination just because of who they are or who they love,” said Senator Baldwin. “And that’s why I am proud to join my colleagues in introducing the Equality Act to protect LGBTQ+ Americans against discrimination and live up to our nation’s ideals of freedom and equality.”",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/senator-baldwin-leads-urgently-needed-bill-to-protect-lgbtq-community-from-discrimination",
+     "date": "2023-06-21",
+     "source_type": "T08",
+     "context": "Equality Act reintroduction",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "“It is just wrong that in a majority of states, LGBTQ Americans live without fully-inclusive non-discrimination laws and are not fully protected from being fired, evicted from their home, or denied services simply because of who they are or who they love. It is time to end this kind of discrimination because LGBTQ Americans should have the freedom of full equality. “The House has taken an historic step forward by passing the Equality Act and the Senate should work together on getting the job done to pass bipartisan legislation that provides full equality for every LGBTQ American across our country.”",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/statement-on-house-passage-of-equality-act",
+     "date": "2019-05-17",
+     "source_type": "T08",
+     "context": "statement on House passage of Equality Act",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "“Rather than advance a discriminatory agenda, your Department should work toward protecting the civil rights of all students. In light of the Court’s decision, we ask you immediately review all Department rules, guidance, and policies and rescind any that undermine rights based on sexual orientation and gender identity and, in their place, adopt guidance clarifying Title IX’s protection against discrimination based on sexual orientation and gender identity, consistent with the Supreme Court’s recent ruling,” wrote the senators .",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/devos-reverse-actions-inconsistent-with-scotus-decision-affirming-lgbtqia-rights",
+     "date": "2020-07-10",
+     "source_type": "T10",
+     "context": "sign-on letter to Education Secretary DeVos after Bostock (fixed text signed by senators incl. Baldwin)",
+     "sub_issue_hint": "nondiscrimination-Title IX"
+    },
+    {
+     "text": "When the Supreme Court signaled they weren’t just interested in overturning abortion rights, they were possibly targeting same sex and interracial marriages next, Tammy led the fight for Wisconsinites’ freedoms.",
+     "url": "https://www.tammybaldwin.com/issues/lgbtq-rights/",
+     "date": "undated (2024 campaign)",
+     "source_type": "T01",
+     "context": "campaign issues page 'Securing LGBTQ+ Rights' (third-person campaign copy)",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "“All members of Congress file annual financial disclosures. Married members must file very important information about their spouses’ income, their investments, gifts and debts, et cetera. Surely, the public interest would require that these obligations apply also to partners of gay and lesbian officeholders,” Baldwin said during a 2009 congressional hearing.",
+     "url": "https://www.nbcnews.com/politics/2024-election/wisconsins-senate-race-eric-hovde-closing-message-tammy-baldwin-rcna178429",
+     "date": "2009 (hearing); article 2024",
+     "source_type": "T09",
+     "context": "2009 congressional hearing on disclosure for partners of gay and lesbian officeholders",
+     "sub_issue_hint": "adjacent-general-equality"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Nay on cloture on motion to proceed to S.9 Protection of Women and Girls in Sports Act (Senate vote 119-1 #100, 2025-03-03)",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "side_hint": "sports; against restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea on motion to table Tuberville Amdt 1781 to H.R.2882 (vote 118-2 #108, 2024-03-23). Free Beacon says a March 2024 vote struck an amendment barring funds to schools letting males in girls' sports; the official record has no purpose statement, so the link is not confirmed.",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1182/vote_118_2_00108.xml",
+     "side_hint": "sports (unconfirmed)"
+    },
+    {
+     "kind": "letter",
+     "desc": "Joined amicus brief of 130 members of Congress arguing categorical bans on transgender students in school sports violate Title IX and Equal Protection (West Virginia v. B.P.J.; Little v. Hecox), Nov 2025",
+     "url": "https://www.hirono.senate.gov/news/press-releases/hirono-balint-fernandez-lead-colleagues-in-urging-scotus-to-protect-transgender-rights",
+     "side_hint": "sports; against ban"
+    },
+    {
+     "kind": "letter",
+     "desc": "Signed 2020 letter asking Education Secretary DeVos to rescind policies undermining Title IX protection for sexual orientation and gender identity",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/devos-reverse-actions-inconsistent-with-scotus-decision-affirming-lgbtqia-rights",
+     "side_hint": "nondiscrimination; pro-protection"
+    },
+    {
+     "kind": "bill",
+     "desc": "Co-led NDAA amendment (Dec 2024) to protect military parents' access to gender-affirming care for their children",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-20-senators-introduce-ndaa-amendment-to-protect-military-parents-right-to-health-care-for-their-kids",
+     "side_hint": "adjacent-medical; pro-access"
+    },
+    {
+     "kind": "bill",
+     "desc": "Lead Senate sponsor, Equality Act (2019-2025)",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/senator-baldwin-leads-bill-to-ban-discrimination-against-lgbtq-americans",
+     "side_hint": "general equality"
+    },
+    {
+     "kind": "bill",
+     "desc": "Co-lead, Tyler Clementi Higher Education Anti-Harassment Act (sexual orientation / gender identity harassment), 2014-2025",
+     "url": "https://www.baldwin.senate.gov/news/press-releases/on-anniversary-of-tyler-clementis-2010-death-baldwin-murray-pocan-renew-push-to-pass-anti-harassment-legislation",
+     "side_hint": "anti-bullying (college)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard, 118th Congress: 100",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "pro-LGBTQ rating"
+    }
+   ]
+  },
+  {
+   "id": "P31",
+   "name": "Nelson T. Abbott",
+   "findable": true,
+   "found_page": "https://le.utah.gov/asp/billsintro/RepResults.asp?Listbox3=ABBOTN",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.nelsonabbott.com/issues",
+     "note": "Campaign site issues: taxes, teacher pay/school choice, crime; nothing in domain."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "No questionnaire located. Shared web-search budget ran out during this person; news/questionnaire search was not possible, so this is a weak not-found."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/",
+     "note": "Vote Smart returns 403."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Ad libraries need JS; not checked."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "https://house.utleg.gov/rep/ABBOTN/",
+     "note": "House profile page renders no social links to curl; no own account identified."
+    },
+    "T07": {
+     "result": "inaccessible",
+     "url": "https://www.utleg.gov/event-streaming/floor/marker/130489",
+     "note": "House floor debate video of HB424 (2025-02-24 and 2025-03-07), Abbott presenting as sponsor; video only, no transcript, not transcribed."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": "No press releases/op-eds found (search unavailable)."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not searchable after web-search budget ran out; weak not-found."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://le.utah.gov/data/2025GS/HB0424.json",
+     "note": "Chief sponsor of HB424 (2025) School Activity Eligibility Commission Amendments (signed 2025-03-26). Votes: Yea SB16 (2023), Yea HB257 (2024), Yea HB29 (2024), absent HB77 3rd reading then Yea concurrence (2025)."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "bill",
+     "desc": "Chief sponsor, HB424 (2025) School Activity Eligibility Commission Amendments: amends commission that rules on eligibility of students whose gender identity does not match birth-certificate sex for gender-designated school sports; sets standard of proof; bars schools from associations not staffing the commission. Passed House 54-13-8, Senate 22-7-0; signed 2025-03-26",
+     "url": "https://le.utah.gov/Session/2025/bills/introduced/HB0424.pdf",
+     "side_hint": "sports; restriction framework"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea on SB16 (2023) Transgender Medical Treatments and Procedures Amendments, House final passage 58-14-2 (2023-01-26)",
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2023GS&voteid=117&house=H",
+     "side_hint": "adjacent-medical; for restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea on HB257 (2024) Sex-based Designations for Privacy, Anti-bullying, and Women's Opportunities (sex-based standard for facilities such as restrooms/changing rooms and opportunities), House 3rd reading 52-17-6 (2024-01-19)",
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=49&house=H",
+     "side_hint": "bathrooms; for restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea on HB29 (2024) Sensitive Material Review Amendments (evaluation and removal of pornographic or indecent instructional/library material in schools), House 3rd reading 51-16-8 (2024-01-30)",
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2024GS&voteid=175&house=H",
+     "side_hint": "library books; for restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "HB77 (2025) Flag Display Amendments (bars government entities, incl. public schools, from displaying flags except exempted ones; widely reported as covering pride flags, not verified from bill text here): absent on House 3rd reading (vote 644); Yea on House concurrence 53-20-2 (vote 1338)",
+     "url": "https://le.utah.gov/DynaBill/svotes.jsp?sessionid=2025GS&voteid=1338&house=H",
+     "side_hint": "school flags; for restriction"
+    }
+   ]
+  },
+  {
+   "id": "P39",
+   "name": "Kevin Oyler",
+   "findable": true,
+   "found_page": "https://www.spanishfork.gov/council-and-administration/mayor-and-council/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "https://www.spanishfork.gov/council-and-administration/elections/",
+     "note": "City elections page lists his conflict-of-interest and campaign finance disclosures only. Guessed campaign domains (kevinoyler.com etc.) do not resolve. Web search budget was exhausted, so no broader search."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Weak not-found: could not search local news questionnaires (search budget exhausted)."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not checked in ad libraries (JS); no sign of paid ads."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified; city page lists only city email."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Weak not-found (no search available)."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "City council; committee roles are water, historic preservation, recreation/arts/parks, senior advisory, risk management. Minutes not searched in depth."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P47",
+   "name": "Isaac G. Bryan",
+   "findable": true,
+   "found_page": "https://www.assembly.ca.gov/assemblymembers/55",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://isaacbryanforca.com/plan/",
+     "note": "Campaign 'plan' page (isaacbryan.com redirects to isaacbryanforca.com): wages, housing, economy; no domain content."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "None found; web-search budget exhausted, so local-paper questionnaires could not be searched (weak not-found). Ballotpedia unreadable."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://www.eqca.org/scorecard/",
+     "note": "Vote Smart 403; Equality California pages 403 to curl, WebFetch returned only an image."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Ad libraries need JS; not checked."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://twitter.com/ib2_real",
+     "note": "Own accounts linked from campaign site: X @ib2_real, Instagram @ib2_real, Facebook isaacbryanforca; all need login."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Official site has 44 video pages; none with domain titles in sitemap."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://bryan.asmdc.org/press-releases",
+     "note": "Official site (a55.asmdc.org -> bryan.asmdc.org) sitemap lists only 10 press releases (2021-2023), none in domain; one 2024 photo page on banned books in state prisons (not K-12)."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Weak not-found (no search available)."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://isaacbryanforca.com/endorsements/",
+     "note": "Endorsed by Equality California, Stonewall Democratic Club, Stonewall Young Democrats (pro-LGBTQ); also CTA, CFT, UTLA, ACSA (education groups)."
+    },
+    "T12": {
+     "result": "inaccessible",
+     "url": "https://www.eqca.org/scorecard/",
+     "note": "EQCA scorecard not readable."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://digitaldemocracy.calmatters.org/bills/ca_202320240ab1955",
+     "note": "Via CalMatters Digital Democracy (leginfo behind Cloudflare challenge). Aye on AB1955, AB1078, AB5, SB760, AB223, SB107, SB59."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by Equality California",
+     "url": "https://isaacbryanforca.com/endorsements/",
+     "side_hint": "pro-LGBTQ group"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by Stonewall Democratic Club and Stonewall Young Democrats",
+     "url": "https://isaacbryanforca.com/endorsements/",
+     "side_hint": "pro-LGBTQ group"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on AB1955 (2024, SAFETY Act; bars school policies requiring disclosure of a student's gender identity to parents without consent), Assembly concurrence 2024-06-27; also Aye on earlier 2024-04-25 floor vote",
+     "url": "https://digitaldemocracy.calmatters.org/bills/ca_202320240ab1955",
+     "side_hint": "parental notification; against forced disclosure"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on AB1078 (2023, instructional materials and curriculum: diversity; limits school-board removal of inclusive materials), Assembly 3rd reading 2023-05-30 and concurrence 2023-09-07",
+     "url": "https://digitaldemocracy.calmatters.org/bills/ca_202320240ab1078",
+     "side_hint": "curriculum/books; against bans"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on AB5 (2023, Safe and Supportive Schools Act; LGBTQ cultural-competency training for school staff), 2023-05-22 and concurrence 2023-09-11",
+     "url": "https://digitaldemocracy.calmatters.org/bills/ca_202320240ab5",
+     "side_hint": "school climate; pro-LGBTQ"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on SB760 (2023, all-gender restrooms in K-12 schools), Assembly floor 2023-09-07",
+     "url": "https://digitaldemocracy.calmatters.org/bills/ca_202320240sb760",
+     "side_hint": "bathrooms; pro-access"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on AB223 (2023, sealing of minors' gender/sex identifier change petitions), 2023-03-23 and concurrence 2023-09-07",
+     "url": "https://digitaldemocracy.calmatters.org/bills/ca_202320240ab223",
+     "side_hint": "adjacent; minors"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on SB107 (2022, gender-affirming health care refuge), Assembly floor 2022-08-29",
+     "url": "https://digitaldemocracy.calmatters.org/bills/ca_202120220sb107",
+     "side_hint": "adjacent-medical; pro-access"
+    },
+    {
+     "kind": "vote",
+     "desc": "Aye on SB59 (2025, change of name or gender and sex identifier), Assembly floor 2025-09-12",
+     "url": "https://digitaldemocracy.calmatters.org/bills/ca_202520260sb59",
+     "side_hint": "adjacent"
+    }
+   ]
+  },
+  {
+   "id": "P55",
+   "name": "Jesus Rivera",
+   "findable": true,
+   "found_page": "https://en.wikipedia.org/wiki/Vernon,_California",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: Wikipedia infobox (citing city council page, accessed 2025-10-19) lists Jesus Rivera on Vernon City Council. City site cityofvernonca.gov returns 403 to curl and WebFetch. No campaign site found; web-search budget exhausted, so not searched broadly."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Weak not-found (search unavailable)."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not checked (JS ad libraries); Vernon has about 200 residents; ads unlikely."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "inaccessible",
+     "url": "https://www.cityofvernonca.gov/government/city-council",
+     "note": "Official city page (bio, news) returns HTTP 403."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Weak not-found."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "inaccessible",
+     "url": "https://www.cityofvernonca.gov/government/city-council",
+     "note": "Council minutes on city site, which returns 403. Vernon is an industrial city with no school district of its own."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P63",
+   "name": "Brad Sherman",
+   "findable": true,
+   "found_page": "https://www.bradsherman.com/meet-brad",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://www.bradsherman.com/priorities",
+     "note": "Campaign priorities page has a 'Supporting the LGBTQ+ Community' section (Equality Act, gender-affirming care votes, Skrmetti amicus, Tyler Clementi Act, Pride in Mental Health Act)."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Weak not-found: web-search budget exhausted before this person; questionnaires could not be searched."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/",
+     "note": "Vote Smart 403."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Ad libraries need JS; not checked."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/BradShermanForCongress/",
+     "note": "Campaign Facebook and YouTube (@BradShermanforCongress2026) linked; Facebook needs login; YouTube not reviewed."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Weak not-found (no search)."
+    },
+    "T08": {
+     "result": "inaccessible",
+     "url": "https://sherman.house.gov/media-center/press-releases",
+     "note": "House office site returns HTTP 403 to curl and WebFetch."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Weak not-found (no search)."
+    },
+    "T10": {
+     "result": "found-on-topic",
+     "url": "https://www.bradsherman.com/priorities",
+     "note": "Campaign site states he signed an amicus brief in U.S. v. Skrmetti against Tennessee's ban on gender-affirming care for minors; brief itself not fetched."
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://www.bradsherman.com/endorsements",
+     "note": "Endorsed by Equality California and Equality PAC (pro-LGBTQ); also CTA, CFT, CSEA; quote endorsement from Rep. Sarah McBride."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC 118th Congress scorecard: 100 (CA-32)."
+    },
+    "T13": {
+     "result": "inaccessible",
+     "url": "https://clerk.house.gov/Votes/2023192",
+     "note": "House Clerk roll calls return 403 (curl and WebFetch); GovTrack 502; congress.gov behind Cloudflare. Individual votes on H.R.734 (2023/2025) and H.R.5 (2023) not verified."
+    }
+   },
+   "statements": [
+    {
+     "text": "Congressman Sherman is a proud member of the Congressional Equality Caucus (formerly known as the LGBTQ+ Equality Caucus) and has earned a voting record rating of 100% from the Human Rights Campaign pertaining to LGBTQ+ rights issues.",
+     "url": "https://www.bradsherman.com/priorities",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "campaign priorities page section 'Supporting the LGBTQ+ Community' (third-person campaign copy)",
+     "sub_issue_hint": "adjacent-general-equality"
+    },
+    {
+     "text": "Congressman Sherman introduced with his colleagues the Equality Act which would amend federal law to protect the LGBTQ+ community from prejudice in all walks of life – in housing, employment, education, and public accommodations.",
+     "url": "https://www.bradsherman.com/priorities",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "campaign priorities page section 'Supporting the LGBTQ+ Community' (third-person campaign copy)",
+     "sub_issue_hint": "adjacent-general-equality; education nondiscrimination"
+    },
+    {
+     "text": "Congressman Sherman has consistently voted against Republican legislative proposals to restrict gender affirming care for transgender Americans and close federal agencies’ civil rights and diversity offices.",
+     "url": "https://www.bradsherman.com/priorities",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "campaign priorities page section 'Supporting the LGBTQ+ Community' (third-person campaign copy)",
+     "sub_issue_hint": "adjacent-medical"
+    },
+    {
+     "text": "In the Skrmetti Supreme Court case, Congressman Sherman signed an amicus brief (a formal argument submitted to the justices) asking the Court to overturn Tennessee’s SB1 law banning gender-affirming care for minors, on the basis that Tennessee’s law was unconstitutional and violates the equal protection clause of the U.S. Constitution.",
+     "url": "https://www.bradsherman.com/priorities",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "campaign priorities page section 'Supporting the LGBTQ+ Community' (third-person campaign copy)",
+     "sub_issue_hint": "adjacent-medical (minors)"
+    },
+    {
+     "text": "Congressman Sherman has also cosponsored legislation such as the Pride in Mental Health Act to establish a grant program for LGBTQ+ youth mental health care, and the Tyler Clementi Higher Education Anti-Harassment Act to establish a grant program to prevent LGBTQ+ harassment and provide counseling to affected students in higher education.",
+     "url": "https://www.bradsherman.com/priorities",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "campaign priorities page section 'Supporting the LGBTQ+ Community' (third-person campaign copy)",
+     "sub_issue_hint": "anti-bullying; youth mental health"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard, 118th Congress: 100",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "pro-LGBTQ rating"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by Equality California (with quote praising him for helping block anti-trans legislation) and Equality PAC",
+     "url": "https://www.bradsherman.com/endorsements",
+     "side_hint": "pro-LGBTQ groups"
+    },
+    {
+     "kind": "letter",
+     "desc": "Signed congressional amicus brief in U.S. v. Skrmetti urging the Court to strike Tennessee SB1 (ban on gender-affirming care for minors) - per campaign site",
+     "url": "https://www.bradsherman.com/priorities",
+     "side_hint": "adjacent-medical; against ban"
+    },
+    {
+     "kind": "bill",
+     "desc": "Cosponsor of Equality Act, Pride in Mental Health Act, Tyler Clementi Higher Education Anti-Harassment Act - per campaign site (not verified on congress.gov, which is blocked)",
+     "url": "https://www.bradsherman.com/priorities",
+     "side_hint": "pro-LGBTQ"
+    }
+   ]
+  }
+ ]
+}

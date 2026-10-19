@@ -1,0 +1,902 @@
+{
+ "people": [
+  {
+   "id": "P01",
+   "name": "Angie Jacobs",
+   "findable": true,
+   "found_page": "https://news.yahoo.com/mccsc-r-bb-school-board-090153517.html",
+   "found_note": "Herald-Times (2022-08-23, syndicated on Yahoo) lists 'Angela Jacobs (I)' for R-BB Bean Blossom District; BallotReady lists her as 2018 R-BB candidate (https://www.ballotready.org/people/angie-jacobs). No 2026 candidacy coverage found.",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign site found in searches or on BallotReady profile."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://www.ballotready.org/people/angie-jacobs",
+     "note": "BallotReady 2018 profile has no answers. Herald-Times 2022 filing list has no Q&A. IPM Noon Edition 2024-10-01 R-BB episode does not include her."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "No interest-group questionnaire found."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returned 403 / JS-only to fetch; Google Ads Transparency Center (adstransparency.google.com) is JS-only. Could not read ads for anyone in this batch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Login wall / JS-only (Facebook returned error page, Instagram empty shell, X shows profile header only). No personal or campaign account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "https://www.ipm.org/show/noonedition/2024-10-01/r-bb-school-board-members-discuss-upcoming-election-and-policies",
+     "note": "2024 R-BB board-member radio forum featured Tucker, DeMoss, Durnil only."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "https://www.rbbschools.net/",
+     "note": "District site has no board-member statements by her."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Only name listings in election roundups; no direct quotes."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Brief search found no R-BB board action on LGBTQ/pronoun/library policy; minutes not reviewed individually."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P09",
+   "name": "Carrie L. Syczylo",
+   "findable": true,
+   "found_page": "https://www.ballotready.org/people/carrie-l-syczylo",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.carriecareshd60.com/issues-priorites",
+     "note": "Issues: people over profit, transparency, rural communities, healthcare, food security. Also checked /meet-carrie, home, /podcast (4 episodes, audio not reviewed), /videos (template placeholder content)."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://www.ballotready.org/people/carrie-l-syczylo",
+     "note": "BallotReady issue stances (environment, government reform) only. Bloomington Chamber 2026 legislative page mentions her once with no answers (https://www.chamberbloomington.org/state-legislative-candidates-2026.html)."
+    },
+    "T03": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/95586/race/30709/election/1456",
+     "note": "iVoterGuide 2026 questionnaire exists; every item 'Did not answer', including 'I support adding sexual orientation, gender identity and gender expression as protected classes in non-discrimination laws.' Vote Smart returned 403."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returned 403 / JS-only to fetch; Google Ads Transparency Center (adstransparency.google.com) is JS-only. Could not read ads for anyone in this batch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/profile.php?id=61587529167414",
+     "note": "Login wall / JS-only (Facebook returned error page, Instagram empty shell, X shows profile header only). Also https://www.instagram.com/carriecareshd60"
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Campaign podcast exists (audio, not transcribed)."
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Exact-name web search returned no news coverage."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/95586/race/30709/election/1456",
+     "note": "Endorsements listed: Madvoters, Indiana Reproductive Freedom PAC. None LGBTQ/education-specific."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Challenger; iVoterGuide assigns its own 'Liberal' label (not a scorecard)."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not in office."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "Indiana Reproductive Freedom PAC and Madvoters listed as endorsers (not in domain)",
+     "url": "https://ivoterguide.com/candidate/95586/race/30709/election/1456",
+     "side_hint": "n/a (off-domain)"
+    }
+   ]
+  },
+  {
+   "id": "P17",
+   "name": "Angelina M. Cruz",
+   "findable": true,
+   "found_page": "https://legis.wisconsin.gov/assembly/62/cruz",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "https://www.ballotready.org/people/angelina-cruz",
+     "note": "No campaign website found; BallotReady lists only legislative page, Facebook (Cruz4AD62), Instagram."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://www.wuwm.com/wisconsin-state-assembly-district-62-candidates",
+     "note": "WUWM 2026 questionnaire (2026-07-13): education funding, wages, data centers, budget; nothing in domain. 2024 WUWM page also exists."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "No interest-group questionnaire with her answers found. Vote Smart blocked (403)."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "https://legis.wisconsin.gov/assembly/52/snodgrass/media/e53d511u/lgbtqplus-caucus-press-__-wisconsin-legislative-lgbtqplus-caucus-kicks-off-2025-2026-session-with-record-membership.pdf",
+     "note": "No signed pledge. Related: LGBTQ+ Caucus membership rule says members 'must not cosponsor or vote in favor of bills or administrative rules that directly or negatively impact the LGBTQ+ community'; she is a listed member."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returned 403 / JS-only to fetch; Google Ads Transparency Center (adstransparency.google.com) is JS-only. Could not read ads for anyone in this batch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/Cruz4AD62/",
+     "note": "Login wall / JS-only (Facebook returned error page, Instagram empty shell, X shows profile header only). Also https://www.instagram.com/cruz4wi/"
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Floor remarks reported in WPR (see T09); no transcript/video found."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://legis.wisconsin.gov/assembly/62/cruz/news-updates/press-releases/",
+     "note": "Her own 9 press releases (2025-2026) are all off-topic (school funding, wages, budget). On-topic item is the joint LGBTQ+ Caucus statement of 2025-01-29 listing her as member."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://wpr.org/news/wisconsin-assembly-gender-healthcare-transgender-sports",
+     "note": "WPR 2025-03-21 floor debate quotes; WPR via Urban Milwaukee 2025-02-03 caucus interview. Wisconsin Examiner 2025-03-21 article returned 403. WisPolitics returned 403."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "http://web.archive.org/web/20241114143440/https://victoryfund.org/candidate/angelina-cruz/",
+     "note": "LGBTQ+ Victory Fund 2024 endorsement (live page now 404; archived copy). Other endorsers per WUWM 2026: WEAC, UAW Region 4, WI Working Families Party, WI Conservation Voters, NASW-WI."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "No HRC/Fair Wisconsin-style scorecard located."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0030",
+     "note": "Voted No on AB100, AB102, AB103, AB104 on 2025-03-20."
+    }
+   },
+   "statements": [
+    {
+     "text": "It’s largely a lesson in treating human beings with kindness, I think, and I don’t think that’s a bad place to start from when you’re legislating as well,",
+     "url": "https://urbanmilwaukee.com/2025/02/03/legislatures-lgbtq-caucus-doubles-in-size",
+     "date": "2025-02-03",
+     "source_type": "T09",
+     "context": "WPR article (republished by Urban Milwaukee) on the LGBTQ+ caucus; she said her teaching background influences her thinking on LGBTQ+ questions.",
+     "sub_issue_hint": "general-equality (adjacent)"
+    },
+    {
+     "text": "Our caucus is focused on ways to bring Wisconsinites together,",
+     "url": "https://urbanmilwaukee.com/2025/02/03/legislatures-lgbtq-caucus-doubles-in-size",
+     "date": "2025-02-03",
+     "source_type": "T09",
+     "context": "Same article; about the Legislative LGBTQ+ Caucus.",
+     "sub_issue_hint": "general-equality (adjacent)"
+    },
+    {
+     "text": "Sports “are meant to foster a sense of belonging and instill values such as kindness, respect, empathy and belonging,” she said. “This bill works counter to those goals.”",
+     "url": "https://wpr.org/news/wisconsin-assembly-gender-healthcare-transgender-sports",
+     "date": "2025-03-21",
+     "source_type": "T09",
+     "context": "Assembly floor debate on bills restricting transgender athletes (AB100/AB102); first part is a partial quote inside reporter's sentence.",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Our message to LGBTQ+ Wisconsinites is simple: you belong here—and we will fight for you.",
+     "url": "https://legis.wisconsin.gov/assembly/52/snodgrass/media/e53d511u/lgbtqplus-caucus-press-__-wisconsin-legislative-lgbtqplus-caucus-kicks-off-2025-2026-session-with-record-membership.pdf",
+     "date": "2025-01-29",
+     "source_type": "T08",
+     "context": "Joint statement of the Wisconsin Legislative LGBTQ+ Caucus; Cruz listed as a member; not individually attributed.",
+     "sub_issue_hint": "general-equality (adjacent)"
+    },
+    {
+     "text": "As the Wisconsin Legislative LGBTQ+ Caucus, we will work to promote equality in our state, support our vibrant and growing LGBTQ+ community, fight back against harmful and divisive actions, and introduce visionary legislation that will move our state forward.",
+     "url": "https://legis.wisconsin.gov/assembly/52/snodgrass/media/e53d511u/lgbtqplus-caucus-press-__-wisconsin-legislative-lgbtqplus-caucus-kicks-off-2025-2026-session-with-record-membership.pdf",
+     "date": "2025-01-29",
+     "source_type": "T08",
+     "context": "Same joint caucus statement.",
+     "sub_issue_hint": "general-equality (adjacent)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "No on 2025 AB100 (K-12/choice-school sports by sex), Assembly passage 3/20/2025",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0030",
+     "side_hint": "against restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "No on 2025 AB102 (UW/technical college sports by sex), 3/20/2025",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0031",
+     "side_hint": "against restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "No on 2025 AB103 (school board policies on changing a pupil's name and pronouns; parental permission), 3/20/2025",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0032",
+     "side_hint": "against parental-permission requirement"
+    },
+    {
+     "kind": "vote",
+     "desc": "No on 2025 AB104 (ban on gender transition medical intervention under 18), 3/20/2025",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0033",
+     "side_hint": "against ban (adjacent: medical care)"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "LGBTQ+ Victory Fund endorsed her 2024 Assembly run (profile lists sexual orientation: queer)",
+     "url": "http://web.archive.org/web/20241114143440/https://victoryfund.org/candidate/angelina-cruz/",
+     "side_hint": "pro-LGBTQ"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Member of Wisconsin Legislative LGBTQ+ Caucus 2025-2026",
+     "url": "https://legis.wisconsin.gov/assembly/52/snodgrass/media/e53d511u/lgbtqplus-caucus-press-__-wisconsin-legislative-lgbtqplus-caucus-kicks-off-2025-2026-session-with-record-membership.pdf",
+     "side_hint": "pro-LGBTQ"
+    }
+   ]
+  },
+  {
+   "id": "P25",
+   "name": "Grace Allen",
+   "findable": true,
+   "found_page": "https://cityofracinewi.gov/?p=2270",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign site found."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://racinecountyeye.com/2024/03/08/grace-allen-rusd-board-candidate/",
+     "note": "Racine County Eye 2024 RUSD board questionnaire: phonics, funding; one generic line on 'programs that promote inclusivity and diversity in education' (not LGBTQ-specific)."
+    },
+    "T03": {
+     "result": "found-on-topic",
+     "url": "https://ivoterguide.com/candidate/87163/race/22624/election/1265",
+     "note": "iVoterGuide questionnaire for 2025 Racine alderman race answered with explanations: library sexually-explicit materials, transgender sports/spaces, marriage-related religious liberty."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returned 403 / JS-only to fetch; Google Ads Transparency Center (adstransparency.google.com) is JS-only. Could not read ads for anyone in this batch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Login wall / JS-only (Facebook returned error page, Instagram empty shell, X shows profile header only). No account URL identified."
+    },
+    "T07": {
+     "result": "found-off-topic",
+     "url": "https://civicmedia.us/shows/don-rosen-show/2025/03/28/a-sit-down-with-grace-allen/transcript",
+     "note": "Don Rosen Show interview transcript 2025-03-28; no domain terms found."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://cityofracinewi.gov/?p=2270",
+     "note": "Official city bio (third person): equity and inclusion generic; library trustee; RUSD board member."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Journal Times RUSD articles fetched did not mention her."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/87163/race/22624/election/1265",
+     "note": "Self-reported endorsers: Eric Hopkins, Fr. Yeprem Kelegian, Marlo Harmon, Maurice Horton, Professional Women's Network of Services. None issue-group in domain."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "She sits on the Racine Unified board (elected 2024) and Racine Common Council (2025); a brief search found no RUSD/Council vote in domain. Racine's gender-identity nondiscrimination ordinance (HRC, 2018-10-03) predates her service. Board minutes not reviewed."
+    }
+   },
+   "statements": [
+    {
+     "text": "As a trustee on the Racine Public Library and a former educator, I believe that children have the right to be protected from sexually explicit materials in publicly funded libraries, including school libraries. It is essential to ensure that library resources are age-appropriate and support educational, developmental, and community values. At the same time, libraries should provide access to diverse materials that encourage learning, critical thinking, and respect for different perspectives.",
+     "url": "https://ivoterguide.com/candidate/87163/race/22624/election/1265",
+     "date": "undated (2025 spring alderman election)",
+     "source_type": "T03",
+     "context": "Answer 'Strongly Agree' to: Children have the right to be protected from sexually explicit materials in publicly funded libraries, including school libraries.",
+     "sub_issue_hint": "library-books"
+    },
+    {
+     "text": "I believe in fairness and inclusivity for all individuals, including those who are transgender. Sports and public spaces should be safe, welcoming, and respectful for everyone. It is important to create policies that respect both the rights of transgender individuals and the needs of women, including ensuring safety and equal opportunities in athletics and public spaces.",
+     "url": "https://ivoterguide.com/candidate/87163/race/22624/election/1265",
+     "date": "undated (2025 spring alderman election)",
+     "source_type": "T03",
+     "context": "Answer 'Neutral' to: Biological males should not be allowed to participate in women's sports or occupy biological women's spaces whether it be bathrooms, locker rooms, sorority houses, women's shelters, or prison.",
+     "sub_issue_hint": "sports / bathrooms (not school-specific)"
+    },
+    {
+     "text": "I believe the government should protect individuals' rights to express their beliefs, including affirming marriage between one man and one woman. In the private sector, businesses and individuals should have the freedom to align with their values. However, in the public sector, it is essential that all individuals are treated with dignity and their rights respected.",
+     "url": "https://ivoterguide.com/candidate/87163/race/22624/election/1265",
+     "date": "undated (2025 spring alderman election)",
+     "source_type": "T03",
+     "context": "Answer 'Agree' to: Government should not discriminate against individuals, organizations, or business owners who affirm marriage as between one man and one woman.",
+     "sub_issue_hint": "general-equality (adjacent)"
+    }
+   ],
+   "acts": []
+  },
+  {
+   "id": "P33",
+   "name": "Grant Pace",
+   "findable": true,
+   "found_page": "https://www.ksl.com/article/51495103/rob-bishop-joins-the-utah-legislature--again",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.grantpaceforutah.com/",
+     "note": "Issues: housing, fiscal, water, schools ('Support both parents and teachers'; academic outcomes, funding transparency). No domain content."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://www.ballotready.org/people/grant-pace",
+     "note": "BallotReady mirrors campaign issue text only; no news questionnaire found."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returned 403 / JS-only to fetch; Google Ads Transparency Center (adstransparency.google.com) is JS-only. Could not read ads for anyone in this batch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/grantpaceforutah/",
+     "note": "Login wall / JS-only (Facebook returned error page, Instagram empty shell, X shows profile header only)."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.grantpaceforutah.com/",
+     "note": "Swearing-in statement and 250th-anniversary message; generic 'protect Utah values, strengthen families'. Official house.utleg.gov page is JS-only."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "KSL 2026-05-10 swearing-in article has no quotes from him."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "https://house.utleg.gov/rep/PACEG/",
+     "note": "Sworn in 2026-05-06, after the 2026 general session; no domain votes found (vote pages JS-only, not fully checked)."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P41",
+   "name": "Van Broderick",
+   "findable": true,
+   "found_page": "https://www.utah.gov/pmn/files/1371017.pdf",
+   "found_note": "Lindon City Council agenda (Jan 2026 swearing-in); also minutes 2026 (https://www.utah.gov/pmn/files/1491593.pdf).",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "2025 candidate list only; no Q&A found."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returned 403 / JS-only to fetch; Google Ads Transparency Center (adstransparency.google.com) is JS-only. Could not read ads for anyone in this batch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Login wall / JS-only (Facebook returned error page, Instagram empty shell, X shows profile header only). No account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-off-topic",
+     "url": "https://www.utah.gov/pmn/files/1491593.pdf",
+     "note": "Council minutes show public works, water, facilities items; no domain items in the two minutes checked."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P49",
+   "name": "Sara Hernandez",
+   "findable": true,
+   "found_page": "https://www.sarahernandez.com/",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://www.sarahernandez.com/platform",
+     "note": "Platform section 'Reproductive Freedom & Gender Equity' mentions gender-affirming healthcare and trans/nonbinary Californians (adjacent; not school-specific). Education sections cover smartphones, AI, higher ed."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://www.theeastsiderla.com/news/race-to-fill-maria-elena-durazo-s-state-senate-seat-draws-a-crowd/article_7762f354-78c0-4311-ad99-d13a121c6ade.html",
+     "note": "Eastsider candidate rundown, bio only. GoodParty profile has no answers."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "No interest-group questionnaire found (Blue Voter Guide 403)."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returned 403 / JS-only to fetch; Google Ads Transparency Center (adstransparency.google.com) is JS-only. Could not read ads for anyone in this batch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://x.com/Sara__Hernandez",
+     "note": "Login wall / JS-only (Facebook returned error page, Instagram empty shell, X shows profile header only). Also Facebook SaraJHernandez, Instagram SaraHernandez.26, TikTok @sara_hernandez_26."
+    },
+    "T07": {
+     "result": "found-off-topic",
+     "url": "https://www.buzzsprout.com/1414123/episodes/19135145-sara-hernandez-candidate-for-state-senate-district-26",
+     "note": "Mike Bonin podcast interview exists (audio; not transcribed, content not verified)."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.sarahernandez.com/press",
+     "note": "Campaign press page lists endorsement announcements."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "No news article with direct quotes in domain found."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://www.sarahernandez.com/endorse",
+     "note": "Equality California listed among community-organization endorsers; also CTA, CFT, AFT Faculty Guild 1521 (teachers' unions)."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not a state legislator; no scorecard."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "LACCD trustee since 2022; board record not checked in this pass."
+    }
+   },
+   "statements": [
+    {
+     "text": "I’ll fight to expand access to abortion care, birth control, and gender-affirming healthcare across California.",
+     "url": "https://www.sarahernandez.com/platform",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "Platform section 'Reproductive Freedom & Gender Equity'.",
+     "sub_issue_hint": "gender-affirming care (adjacent; not minor-specific)"
+    },
+    {
+     "text": "It’s about ending the wage gap, protecting trans and nonbinary Californians, and building systems that center care, not control. In Sacramento, I’ll stand with the coalitions — led by women, trans leaders, and communities of color — that have been defending our rights long before it was politically convenient.",
+     "url": "https://www.sarahernandez.com/platform",
+     "date": "undated (2026 campaign)",
+     "source_type": "T01",
+     "context": "Same platform section.",
+     "sub_issue_hint": "general-equality (adjacent)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "Equality California listed as endorser on campaign endorsement page",
+     "url": "https://www.sarahernandez.com/endorse",
+     "side_hint": "pro-LGBTQ"
+    }
+   ]
+  },
+  {
+   "id": "P57",
+   "name": "Jim Banks",
+   "findable": true,
+   "found_page": "https://www.banks.senate.gov/news/press-releases/senator-banks-urges-supreme-court-to-protect-title-ix-provisions/",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://banksforsenate.com/issues/",
+     "note": "Issue 'Oppose Wokeness in Schools and Sports' (third-person campaign text)."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not found; web-search budget ran out before a full check."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not confirmed; Vote Smart blocked (403); search budget ran out."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": "Campaign site cites Hyde pledge he led (off-domain)."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returned 403 / JS-only to fetch; Google Ads Transparency Center (adstransparency.google.com) is JS-only. Could not read ads for anyone in this batch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://x.com/SenatorBanks",
+     "note": "Login wall / JS-only (Facebook returned error page, Instagram empty shell, X shows profile header only)."
+    },
+    "T07": {
+     "result": "found-on-topic",
+     "url": "https://thepostmillennial.com/watch-biden-s-education-secretary-tells-jim-banks-he-wants-biological-males-in-girls-sports",
+     "note": "House Education & Labor hearing exchange with Sec. Cardona, 2022-05-26, quoted at length."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://www.banks.senate.gov/news/press-releases/",
+     "note": "Senate press releases: Title IX amicus, Empower Parents Act, GUARD Act, SAFE Home Act, Stop the Sexualization of Children Act, Restoring Biological Truth to the Workplace Act. Also Cotton/RSC/Miller releases quoting him."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://www.breitbart.com/politics/2022/03/30/exclusive-rep-jim-banks-standing-up-woke-gender-ideology-voters-reward-you-standing-up-bullies/",
+     "note": "Breitbart interview 2022-03-30."
+    },
+    "T10": {
+     "result": "found-on-topic",
+     "url": "https://www.banks.senate.gov/news/press-releases/senator-banks-urges-supreme-court-to-protect-title-ix-provisions/",
+     "note": "Co-led bicameral amicus brief in Little v. Hecox and West Virginia v. B.P.J. (Sept 2025)."
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://banksforsenate.com/endorsements/",
+     "note": "Endorsement page lists elected officials and Indiana State Police Alliance; no LGBTQ/education issue groups seen. Bill-support coalitions (FRC, Eagle Forum, APP, Heritage Action) back his bills, not endorsements of him."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://banksforsenate.com/issues/",
+     "note": "Campaign site: Family Research Council 'True Blue' award for 100% pro-life, pro-family record. HRC scorecard not checked (search budget ran out)."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "note": "Yea on S.9 cloture (2025-03-03); Yea on H.R.734 (2023-04-20); sponsor of several bills (see acts)."
+    }
+   },
+   "statements": [
+    {
+     "text": "Title IX was meant to protect opportunities for women and girls, and I’m asking the Supreme Court to keep it that way for my daughters and for every girl in Indiana.",
+     "url": "https://www.banks.senate.gov/news/press-releases/senator-banks-urges-supreme-court-to-protect-title-ix-provisions/",
+     "date": "2025-09-26",
+     "source_type": "T08",
+     "context": "Release on amicus brief in Little v. Hecox / West Virginia v. B.P.J.",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Parents should never be kept in the dark about their own kids,” said Senator Jim Banks. “This bill makes sure schools can’t push radical gender ideology behind parents’ backs and puts families back in charge where they belong.",
+     "url": "https://marymiller.house.gov/media/press-releases/rep-miller-senator-banks-cotton-introduces-bill-protect-children-united-states",
+     "date": "2025-09-03",
+     "source_type": "T08",
+     "context": "Reintroduction of Empower Parents to Protect Their Kids Act (Rep. Miller release).",
+     "sub_issue_hint": "parental-notification"
+    },
+    {
+     "text": "School is where children go to learn math, history and science, not to learn about woke gender ideology. No parent should have to worry about a school teacher or administrator coaching their child to ‘gender transition.’ My bill protects parental rights and ensures federally funded schools are not laboratories for the Left’s radical agenda,",
+     "url": "https://www.cotton.senate.gov/news/press-releases/cotton-banks-introduce-legislation-to-prevent-schools-from-concealing-gender-transitions-from-parents/",
+     "date": "2023-05-18",
+     "source_type": "T08",
+     "context": "Empower Parents to Protect Their Kids Act, House companion (as Congressman).",
+     "sub_issue_hint": "parental-notification / curriculum"
+    },
+    {
+     "text": "Our schools are a place for math and history education, not gender theory indoctrination. No parent should have to worry that their child's school is enabling, promoting, or facilitating a child's ‘gender transition' behind their back. This important legislation protects parental rights and ensures federally funded schools are not laboratories for the Left's radical agenda.",
+     "url": "https://rsc-pfluger.house.gov/news/press-releases/reps-banks-lamalfa-introduce-empower-parents-protect-their-kids-act",
+     "date": "2022-06-22",
+     "source_type": "T08",
+     "context": "RSC release introducing Empower Parents to Protect Their Kids Act.",
+     "sub_issue_hint": "parental-notification"
+    },
+    {
+     "text": "The government has no business punishing parents for protecting their kids from radical gender ideology. My bill ensures that states respecting parental rights aren’t strong-armed into embracing dangerous social experiments.",
+     "url": "https://www.banks.senate.gov/news/press-releases/sen-jim-banks-reintroduces-bill-to-protect-parents-rights/",
+     "date": "2025-03-05",
+     "source_type": "T08",
+     "context": "GUARD Act (CAPTA funding; parents who refuse social/medical transition, pronoun or name changes for minors).",
+     "sub_issue_hint": "parental-rights / gender-affirming care (adjacent)"
+    },
+    {
+     "text": "Kids deserve safe, loving homes and parents shouldn’t be blocked from adopting or fostering just because they oppose irreversible sex-change procedures on children. This bill makes sure families aren’t punished for using common sense.",
+     "url": "https://www.banks.senate.gov/news/press-releases/senators-banks-cotton-introduce-the-safe-home-act/",
+     "date": "2025-05-07",
+     "source_type": "T08",
+     "context": "SAFE Home Act (adoption/foster care).",
+     "sub_issue_hint": "gender-affirming care for minors (adjacent)"
+    },
+    {
+     "text": "The American taxpayer should not be funding sexually explicit content for minors, it’s that simple. I’m proud to lead this bicameral effort in the Senate to ensure children aren’t exposed to explicit, sexual themes in the classroom.",
+     "url": "https://www.banks.senate.gov/news/press-releases/banks-introduces-stop-the-sexualization-of-children-act/",
+     "date": "2026-07-06",
+     "source_type": "T08",
+     "context": "Stop the Sexualization of Children Act (bars ESEA funds for sexually explicit literature and for programs 'promoting concepts related to gender dysphoria and transgenderism').",
+     "sub_issue_hint": "library-books / curriculum"
+    },
+    {
+     "text": "This bill is about protecting common sense. Americans shouldn’t fear losing their jobs simply for acknowledging the basic reality of biological sex.",
+     "url": "https://www.banks.senate.gov/news/press-releases/senator-banks-to-introduce-legislation-to-protect-employees-who-dissent-from-left-wing-gender-ideology/",
+     "date": "2025-06-12",
+     "source_type": "T08",
+     "context": "Restoring Biological Truth to the Workplace Act; release background cites Indiana teacher who refused student pronouns.",
+     "sub_issue_hint": "pronouns (workplace; adjacent)"
+    },
+    {
+     "text": "Parents don’t want their elementary-school age kids going to school and having a radical gender theory ideology pushed on them or other left-wing ideologies pushed on them when they’re in first, second and third grades,",
+     "url": "https://www.breitbart.com/politics/2022/03/30/exclusive-rep-jim-banks-standing-up-woke-gender-ideology-voters-reward-you-standing-up-bullies/",
+     "date": "2022-03-30",
+     "source_type": "T09",
+     "context": "On Florida's Parental Rights in Education act.",
+     "sub_issue_hint": "curriculum"
+    },
+    {
+     "text": "And unfortunately when you see the situations like Gov. Holcomb’s veto of the girls sports bill in Indiana, those moments of weakness, the voters see that and they don’t reward that activity, but they reward backbone and the leadership of governors like DeSantis who don’t back down to the bullies,",
+     "url": "https://www.breitbart.com/politics/2022/03/30/exclusive-rep-jim-banks-standing-up-woke-gender-ideology-voters-reward-you-standing-up-bullies/",
+     "date": "2022-03-30",
+     "source_type": "T09",
+     "context": "On Indiana governor's veto of the 2022 girls' sports bill.",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Mr. Secretary, do you agree that school districts should keep a child's involvement in gender transition a secret from their parents?",
+     "url": "https://thepostmillennial.com/watch-biden-s-education-secretary-tells-jim-banks-he-wants-biological-males-in-girls-sports",
+     "date": "2022-05-26",
+     "source_type": "T07",
+     "context": "Question to Education Secretary Cardona at House hearing (as reported).",
+     "sub_issue_hint": "parental-notification"
+    },
+    {
+     "text": "Mr. Secretary, never before have we had an administration like this one that's decimated Title IX like you guys are. Do you believe it's fair or not for biological boys to compete against girls and sports? It's a simple question.",
+     "url": "https://thepostmillennial.com/watch-biden-s-education-secretary-tells-jim-banks-he-wants-biological-males-in-girls-sports",
+     "date": "2022-05-26",
+     "source_type": "T07",
+     "context": "Same hearing exchange.",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "As a dad of three daughters, Jim knows how critically important it is to protect girls’ sports. When Joe Biden and Democrats rewrote Title IX to force schools to allow biological males to play girls’ sports, they turned their backs on our daughters and robbed them of opportunities to compete and work as a team through athletics.",
+     "url": "https://banksforsenate.com/issues/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "Campaign issue 'Oppose Wokeness in Schools and Sports' (third person).",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "In the Senate, Jim stands up for common sense and that includes keeping boys out of girls’ sports.",
+     "url": "https://banksforsenate.com/issues/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "Same campaign issue section.",
+     "sub_issue_hint": "sports"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Yea on cloture on motion to proceed to S.9 (Protection of Women and Girls in Sports Act), 2025-03-03",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "side_hint": "for restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea on H.R.734 Protection of Women and Girls in Sports Act, House roll 192, 2023-04-20",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "side_hint": "for restriction"
+    },
+    {
+     "kind": "bill",
+     "desc": "Sponsor, Empower Parents to Protect Their Kids Act (2022 House, 2023 House companion, 2025 Senate)",
+     "url": "https://marymiller.house.gov/media/press-releases/rep-miller-senator-banks-cotton-introduces-bill-protect-children-united-states",
+     "side_hint": "parental notification / against school social transition"
+    },
+    {
+     "kind": "bill",
+     "desc": "Sponsor, GUARD Act (2025)",
+     "url": "https://www.banks.senate.gov/news/press-releases/sen-jim-banks-reintroduces-bill-to-protect-parents-rights/",
+     "side_hint": "parental rights vs transition"
+    },
+    {
+     "kind": "bill",
+     "desc": "Sponsor, SAFE Home Act (2023 House, 2025 Senate)",
+     "url": "https://www.banks.senate.gov/news/press-releases/senators-banks-cotton-introduce-the-safe-home-act/",
+     "side_hint": "against gender-affirming care requirement (adjacent)"
+    },
+    {
+     "kind": "bill",
+     "desc": "Sponsor, Stop the Sexualization of Children Act (2026)",
+     "url": "https://www.banks.senate.gov/news/press-releases/banks-introduces-stop-the-sexualization-of-children-act/",
+     "side_hint": "restrict school materials on gender"
+    },
+    {
+     "kind": "letter",
+     "desc": "Co-led bicameral amicus brief supporting Idaho and West Virginia sports laws (Sept 2025)",
+     "url": "https://www.banks.senate.gov/news/press-releases/senator-banks-urges-supreme-court-to-protect-title-ix-provisions/",
+     "side_hint": "for restriction"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "Family Research Council 'True Blue' award (per campaign site)",
+     "url": "https://banksforsenate.com/issues/",
+     "side_hint": "social-conservative rating"
+    }
+   ]
+  }
+ ]
+}

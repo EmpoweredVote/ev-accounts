@@ -1,0 +1,1077 @@
+{
+ "people": [
+  {
+   "id": "P03",
+   "name": "April Hennessey",
+   "findable": true,
+   "found_page": "https://www.idsnews.com/article/2024/11/mccsc-board-members-new-term",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign website found; 2020 IPM preview cites a campaign website and Facebook page but gives no URL. Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://www.ipm.org/2020-09-11/2020-election-preview-mccsc-school-board-candidates",
+     "note": "No published questionnaire answers found. IPM 2020 preview paraphrases platform (equity, diversity, SEL); no domain content in her own words. 2024 race uncontested."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://votesmart.org/",
+     "note": "No interest-group questionnaire found for this school-board seat; votesmart.org returns 403 to WebFetch and a JS-only shell to curl; Political Courage Test status could not be read"
+    },
+    "T04": {
+     "result": "found-on-topic",
+     "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+     "note": "Not a campaign pledge: MCCSC Board Resolution 2023-07 (LGBTQIA+ students), a fixed text she signed as Vice President on 2023-03-28. Scanned PDF, read visually. Also recorded under T13."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Meta Ad Library returns 403 (login wall); Google Ads Transparency is a JS-only app; no ads expected for this seat"
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Campaign Facebook page mentioned by IPM 2020; Facebook not readable without login"
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "https://www.ipm.org/show/noonedition/2024-09-04/mccsc-board-member-discuss-their-policies-and-local-education",
+     "note": "IPM Noon Edition 2024-09-04 audio segment with Hennessey exists; page has no transcript, audio not reviewed"
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own statements found beyond board resolution"
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://www.ipm.org/2023-03-29/mccsc-passes-resolution-renewing-commitment-to-lgbtqia-students",
+     "note": "IPM quotes her reading the resolution aloud (board text, not her own composition). IDS 2020/2024 articles quote her off-topic."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "No issue-group endorsements found. Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "No scorecards exist for this seat"
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+     "note": "Signed Resolution 2023-07 opposing Indiana HB 1608 and directing an anti-bullying policy for LGBTQIA+ students"
+    }
+   },
+   "statements": [
+    {
+     "text": "AND WHEREAS, Indiana lawmakers’ attempts to censor conversations about LGBTQIA+ and the required “outing” of some LGBTQIA+ students further discriminates against and harasses students based on their gender identity, gender expression, and sexual orientation;",
+     "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+     "date": "2023-03-28",
+     "source_type": "T13",
+     "context": "Board Resolution 2023-07, fixed text signed by Hennessey as Vice President (scanned PDF, transcribed from image)",
+     "sub_issue_hint": "parental-notification / curriculum"
+    },
+    {
+     "text": "NOW, THEREFORE, BE IT RESOLVED that the Board continues to declare the Corporation to be a Safe Place for students, meaning that the Corporation is a place for LGBTQIA+ students to learn, thrive, and seek assistance, information, and support.",
+     "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+     "date": "2023-03-28",
+     "source_type": "T13",
+     "context": "Board Resolution 2023-07, signed text",
+     "sub_issue_hint": "nondiscrimination / safe schools"
+    },
+    {
+     "text": "BE IT FURTHER RESOLVED that the Board strongly opposes any Indiana laws or proposed legislation, including 2023 House Bill 1608, that limit the rights of LGBTQIA+ students and put them at greater risk for discrimination or harassment.",
+     "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+     "date": "2023-03-28",
+     "source_type": "T13",
+     "context": "Board Resolution 2023-07, signed text; HB 1608 = Indiana bill limiting instruction on sexuality and requiring parent notice of name/pronoun requests",
+     "sub_issue_hint": "curriculum / pronouns / parental-notification"
+    },
+    {
+     "text": "BE IT FURTHER RESOLVED that the Board hereby directs the Monroe County Community School Corporation (MCCSC) administration to work with members of the LGBTQIA+ community and MCCSC staff to create a policy that prohibits the bullying and/or harassment of LGBTQIA+ individuals in accordance with state and federal law, and with the review and input required by the applicable Collective Bargaining Agreements.",
+     "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+     "date": "2023-03-28",
+     "source_type": "T13",
+     "context": "Board Resolution 2023-07, signed text",
+     "sub_issue_hint": "anti-bullying"
+    },
+    {
+     "text": "\"And whereas the Monroe County Community School Corporation has a responsibility to ensure that all students regardless of gender identity, gender expression or sexual orientation can safely attend our schools free of prohibited discrimination.\"",
+     "url": "https://www.ipm.org/2023-03-29/mccsc-passes-resolution-renewing-commitment-to-lgbtqia-students",
+     "date": "2023-03-28",
+     "source_type": "T09",
+     "context": "IPM: 'Board member April Hennessey read a portion of the resolution' at the board meeting; words are the resolution's, read aloud by her",
+     "sub_issue_hint": "nondiscrimination"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "board-vote",
+     "desc": "Signed (as Vice President) MCCSC Board Resolution 2023-07, a public re-commitment to LGBTQIA+ students; opposes Indiana HB 1608; directs an anti-bullying/harassment policy for LGBTQIA+ individuals. Adopted 2023-03-28; signed by all 7 trustees.",
+     "url": "https://s3.amazonaws.com/scschoolfiles/3359/doc042423-04242023100245.pdf",
+     "side_hint": "supports LGBTQIA+ student protections; opposes parental-notification/curriculum limits"
+    }
+   ]
+  },
+  {
+   "id": "P11",
+   "name": "Erin Houchin",
+   "findable": true,
+   "found_page": "https://houchin.house.gov/",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://www.erinhouchin.com/issues",
+     "note": "Borderline: 'Protect Parental Rights' plank cites Parents Bill of Rights; not explicitly tied to gender/LGBTQ issues"
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://lpm.org/news/2024-10-04/lpm-southern-indiana-voter-guide-indiana-9th-congressional-district-representative",
+     "note": "LPM 2024 voter guide; answers paraphrased ('protect Southern Indiana's family values'); nothing in domain"
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "https://ivoterguide.com/candidate/29434/race/30592/election/1456",
+     "note": "iVoterGuide 2026 questionnaire exists; candidate 'Did not answer' every item, incl. 'Attempts to physically or socially transition a child to the opposite sex constitute child abuse.' votesmart.org returns 403 to WebFetch and a JS-only shell to curl; Political Courage Test status could not be read"
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 (login wall); Google Ads Transparency is a JS-only app"
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://x.com/RepHouchin",
+     "note": "X profile pages render posts only with JavaScript; Facebook returns 400/login wall"
+    },
+    "T07": {
+     "result": "found-on-topic",
+     "url": "https://houchin.house.gov/media/press-releases/video-congresswoman-houchin-manages-debate-bill-protect-female-athletes-sports",
+     "note": "House floor rule debate on H.R. 734 (2023-04-18), quoted in press release; no campaign debate found"
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://houchin.house.gov/media/press-releases/statement-congresswoman-houchin-federal-judge-striking-down-biden",
+     "note": "Press releases on Title IX ruling, sports bill, Parents Bill of Rights; Fox News op-ed reposted 2023-09-14"
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "No news interview with direct domain quotes found. Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "No Title IX comment letter or amicus found"
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/29434/race/30592/election/1456",
+     "note": "NRA-PVF, Maggie's List, House Conservatives Fund, National Right to Life, U.S. Chamber, VIEW PAC; none LGBTQ/education-specific"
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC 118th Congress score 0; iVoterGuide rates 'Conservative'"
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "note": "Votes on H.R. 734, H.R. 28, H.R. 5, H.R. 3492, H.R. 498"
+    }
+   },
+   "statements": [
+    {
+     "text": "“The court’s decision to strike down the Biden Administration’s Title IX rewrite is a huge victory for the integrity of women’s and girls’ sports. Allowing biological males to compete in women’s sports threatens the very opportunities Title IX was meant to protect. As a mother of daughters, I applaud this ruling and remain committed to ensuring only biological females compete in women’s sports.”",
+     "url": "https://houchin.house.gov/media/press-releases/statement-congresswoman-houchin-federal-judge-striking-down-biden",
+     "date": "2025-01-10",
+     "source_type": "T08",
+     "context": "statement on federal court vacating the 2024 Title IX rule",
+     "sub_issue_hint": "sports / Title IX"
+    },
+    {
+     "text": "“We have seen women, strong women like Riley Gaines, speak to the real harm female athletes experience from the issues we are discussing today. For those who do not know, Riley is a former University of Kentucky champion swimmer. My own daughters are swimmers and we have admired Riley’s courage.",
+     "url": "https://houchin.house.gov/media/press-releases/video-congresswoman-houchin-manages-debate-bill-protect-female-athletes-sports",
+     "date": "2023-04-18",
+     "source_type": "T07",
+     "context": "House floor remarks managing rule debate on H.R. 734 (Protection of Women and Girls in Sports Act)",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "“Unfortunately, women are becoming collateral damage. Riley told me stories about her competitor, a biological male, sharing locker rooms and showers with her teammates. And how a year later, one teammate who was quiet at the time wrote letters to her about how the experience still traumatizes her.",
+     "url": "https://houchin.house.gov/media/press-releases/video-congresswoman-houchin-manages-debate-bill-protect-female-athletes-sports",
+     "date": "2023-04-18",
+     "source_type": "T07",
+     "context": "House floor remarks on H.R. 734",
+     "sub_issue_hint": "sports / locker rooms"
+    },
+    {
+     "text": "“Riley also shared a story of how when that same biological male competitor won, she was asked to step away from the medal ceremony photo. The sport she loved had been reduced to a photo-op. This is not progress, this is quite the opposite,” said Congresswoman Houchin.",
+     "url": "https://houchin.house.gov/media/press-releases/video-congresswoman-houchin-manages-debate-bill-protect-female-athletes-sports",
+     "date": "2023-04-18",
+     "source_type": "T07",
+     "context": "House floor remarks on H.R. 734",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "“Yet, parents are left pleading. They are left to plead for information, to plead for safety of their kids in public restrooms, to plead for a quality education, and to plead for anyone who would listen to help restore their parental rights,”  Congresswoman Houchin continued.",
+     "url": "https://houchin.house.gov/media/press-releases/video-congresswoman-houchin-manages-debate-house-floor-first-time-parents-bill",
+     "date": "2023-03-24",
+     "source_type": "T07",
+     "context": "House floor remarks managing rule debate on H.R. 5, Parents Bill of Rights",
+     "sub_issue_hint": "bathrooms / parental rights"
+    },
+    {
+     "text": "In fact, one father in Virginia had to learn his daughter was assaulted in a high school bathroom from his child, not the school.",
+     "url": "https://houchin.house.gov/media/press-releases/published-op-ed-im-mom-3-school-aged-children-and-we-need-protect-parents",
+     "date": "2023-09-14",
+     "source_type": "T08",
+     "context": "Fox News op-ed reposted on House site, arguing for H.R. 5",
+     "sub_issue_hint": "bathrooms / parental rights"
+    },
+    {
+     "text": "Just last month, a New Jersey judge ruled to block multiple school districts from notifying parents of a child’s gender identity change. Stories like these shouldn’t become the new normal.",
+     "url": "https://houchin.house.gov/media/press-releases/published-op-ed-im-mom-3-school-aged-children-and-we-need-protect-parents",
+     "date": "2023-09-14",
+     "source_type": "T08",
+     "context": "same op-ed; two consecutive one-sentence paragraphs",
+     "sub_issue_hint": "parental-notification"
+    },
+    {
+     "text": "As I said on the floor of the House of Representatives, sending a child to a public school does not terminate the parents’ rights at the door.",
+     "url": "https://houchin.house.gov/media/press-releases/published-op-ed-im-mom-3-school-aged-children-and-we-need-protect-parents",
+     "date": "2023-09-14",
+     "source_type": "T08",
+     "context": "same op-ed",
+     "sub_issue_hint": "parental rights (general)"
+    },
+    {
+     "text": "Parents should be in the driver's seat of their children's education. The pandemic opened American parents' eyes to the reality of our public school system, and millions of parents didn't like what they saw.",
+     "url": "https://www.erinhouchin.com/issues",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "campaign site plank 'PROTECT PARENTAL RIGHTS' (third-person page); not tied to gender explicitly",
+     "sub_issue_hint": "parental rights (general)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "H.R. 734 Protection of Women and Girls in Sports Act, passage, Roll Call 192, 2023-04-20: Yea",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "side_hint": "restrict trans girls in girls' school sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 28 Protection of Women and Girls in Sports Act, passage, Roll Call 12, 2025-01-14: Yea (Nay on motion to recommit, RC 11)",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "side_hint": "restrict"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 5 Parents Bill of Rights Act, passage, Roll Call 161, 2023-03-24: Aye; original cosponsor; managed rule debate",
+     "url": "https://clerk.house.gov/evs/2023/roll161.xml",
+     "side_hint": "parental rights"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 3492 Protect Children’s Innocence Act, passage, Roll Call 351, 2025-12-17: Yea",
+     "url": "https://clerk.house.gov/evs/2025/roll351.xml",
+     "side_hint": "restrict gender-affirming care for minors (adjacent)"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 498 Do No Harm in Medicaid Act, passage, Roll Call 362, 2025-12-18: Yea",
+     "url": "https://clerk.house.gov/evs/2025/roll362.xml",
+     "side_hint": "restrict Medicaid coverage of gender transition for minors (adjacent)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard, 118th Congress: 0",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "low HRC score"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "iVoterGuide 2026 rating: 'Conservative'; questionnaire not answered",
+     "url": "https://ivoterguide.com/candidate/29434/race/30592/election/1456",
+     "side_hint": "conservative rating"
+    }
+   ]
+  },
+  {
+   "id": "P19",
+   "name": "Greta Neubauer",
+   "findable": true,
+   "found_page": "https://legis.wisconsin.gov/assembly/66/neubauer/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://votegreta.com/",
+     "note": "Campaign site: schools funding, climate, jobs; no LGBTQ content"
+    },
+    "T02": {
+     "result": "found-on-topic",
+     "url": "https://www.wuwm.com/candidates-wisconsin-assembly-district-66-fall-election",
+     "note": "WUWM 2024 questionnaire mentions LGBTQ+ community; WUWM 2026 questionnaire (https://www.wuwm.com/wisconsin-state-assembly-district-66-candidates) off-topic but lists LGBTQ+ Victory Fund endorsement"
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://votesmart.org/",
+     "note": "No interest-group questionnaire found; votesmart.org returns 403 to WebFetch and a JS-only shell to curl; Political Courage Test status could not be read"
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 (login wall); Google Ads Transparency is a JS-only app"
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.instagram.com/repgreta/",
+     "note": "Instagram/X/Facebook require login or JavaScript"
+    },
+    "T07": {
+     "result": "found-on-topic",
+     "url": "https://www.erininthemorning.com/p/wisconsin-rep-neubauer-anti-trans",
+     "note": "Floor debate 2023-10-12 reported with short quote; full floor video (WisEye) not reviewed"
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://legis.wisconsin.gov/assembly/66/neubauer/news-updates",
+     "note": "Own releases (AB 3 conversion therapy remarks, AB 510 floor statement, Equality Agenda) and joint LGBTQ+ Caucus statements naming her as contact"
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://fox11online.com/news/state/transgender-girls-sports-athletes-ban-gender-affirming-surgery-wisconsin-assembly-bills-vote-governor-tony-evers-veto-threat",
+     "note": "Short direct quotes in Fox11 2023, Erin in the Morning 2023, WisPolitics 2025 (WisPolitics 403 to curl; read via WebFetch). Journal Times op-ed 'I'm queer and I'm talking about it' (2020-06-28) is paywalled: inaccessible."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "Joint LGBTQ+ Caucus testimony against AB 377/378/465 (2023-10-04) referenced as attached but not found as a separate file"
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://www.wuwm.com/wisconsin-state-assembly-district-66-candidates",
+     "note": "Own list: LGBTQ+ Victory Fund (2026); LPAC (2024, WUWM 2024). Fair Wisconsin PAC 2026 list: fairwisconsin.com and wispolitics.com return 403 - inaccessible"
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "No state LGBTQ scorecard found. Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0099",
+     "note": "Voted N on AB 377, AB 378, AB 465 (2023) and AB 100, AB 103, AB 104 (2025)"
+    }
+   },
+   "statements": [
+    {
+     "text": "“This issue is personal for me, as a member of the LGBTQ community. It is personal for my family, as I have a transgender younger sister. And it’s personal for my community, where I know many LGBTQ young people who truly struggle to make it through the day, knowing the threats they face now and that more and more policies are being proposed nationwide that discriminate against them and target them for who they are.",
+     "url": "https://wheeler-files.s3.amazonaws.com/upload/files/frontpage/doc_12766167436410d1d0a9b429.07748261.pdf",
+     "date": "2023-03-14",
+     "source_type": "T08",
+     "context": "floor remarks as prepared on AB 3 (conversion-therapy rule)",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "They voted to make our state a place where LGBTQ+ kids don’t feel safe to be themselves.",
+     "url": "https://wheeler-files.s3.amazonaws.com/upload/files/frontpage/doc_12766167436410d1d0a9b429.07748261.pdf",
+     "date": "2023-03-14",
+     "source_type": "T08",
+     "context": "same remarks; about GOP JCRAR members blocking the conversion-therapy ban",
+     "sub_issue_hint": "minors / conversion therapy (adjacent)"
+    },
+    {
+     "text": "“Assembly Bill 510 is about limiting education on race and our history, including discussing topics like Martin Luther King, Jr. and his work. Under this bill, it is less likely that our kids would learn about his and other civil rights leaders’ legacy – that is a problem. This bill also continues to attack LGBTQ+ kids and their families.",
+     "url": "https://wheeler-files.s3.amazonaws.com/upload/files/frontpage/doc_43178087865a99a5a9b70a4.05605201.pdf",
+     "date": "2024-01-18",
+     "source_type": "T08",
+     "context": "statement on Assembly floor session; AB 510 = curriculum bill",
+     "sub_issue_hint": "curriculum"
+    },
+    {
+     "text": "“When it comes to AB 305, I wish we would stop playing politics with our kids. I wish we could fund our public schools adequately, as the people of Wisconsin have asked for again and again, without needing to put more public dollars into unaccountable private schools that have limited public oversight and don’t have to serve every child, whether they have a disability or an LGBTQ+ identity.",
+     "url": "https://wheeler-files.s3.amazonaws.com/upload/files/frontpage/doc_645480895648b09fcbfdf54.00634890.pdf",
+     "date": "2023-06-14",
+     "source_type": "T08",
+     "context": "statement on floor session; AB 305 = school funding/voucher bill",
+     "sub_issue_hint": "nondiscrimination (private schools)"
+    },
+    {
+     "text": "“As out LGBTQ+ legislators, allies, and advocates, we are dedicated to expanding equal rights and protections for all Wisconsinites—especially as Donald Trump and far-right extremists across our country ratchet up the rhetoric and target LGBTQ+ rights.",
+     "url": "https://wheeler-files.s3.amazonaws.com/upload/files/frontpage/doc_382664586838893d3ca3b5.28482786.pdf",
+     "date": "2025-05-29",
+     "source_type": "T08",
+     "context": "own statement on introduction of the LGBTQ+ Caucus 'Equality Agenda'",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "“Although these bills will not become law in our state, their reintroduction alone is harmful and dangerous. We call on our Republican colleagues to stop giving these bills an official platform and to not take any further action on them. We stand with transgender and nonbinary youth in Wisconsin. To the transgender and nonbinary people of our state: you are seen, you are loved, and you belong here.”",
+     "url": "https://wheeler-files.s3.amazonaws.com/upload/files/frontpage/doc_1541113590651da8acc1d517.56065867.pdf",
+     "date": "2023-10-04",
+     "source_type": "T08",
+     "context": "JOINT statement of LGBTQ+ Caucus members (Neubauer a named contact) on AB 377, AB 378 (sports) and AB 465 (gender-affirming care)",
+     "sub_issue_hint": "sports / gender-affirming care"
+    },
+    {
+     "text": "“Once again, Republicans are interfering with private medical decisions that belong in the hands of patients and their doctors - not politicians. Gender-affirming care reduces gender dysphoria and helps people live healthy and authentic lives.",
+     "url": "https://wheeler-files.s3.amazonaws.com/upload/files/frontpage/doc_206520922765148409323da8.86458447.pdf",
+     "date": "2023-09-27",
+     "source_type": "T08",
+     "context": "JOINT LGBTQ+ Caucus statement (Neubauer a named contact) on LRB-0191 youth gender-affirming care ban",
+     "sub_issue_hint": "gender-affirming care for minors (adjacent)"
+    },
+    {
+     "text": "“these bills will not become law.”",
+     "url": "https://www.erininthemorning.com/p/wisconsin-rep-neubauer-anti-trans",
+     "date": "2023-10-12",
+     "source_type": "T09",
+     "context": "fragment quoted by Erin in the Morning after Assembly passed AB 377, 378, 465",
+     "sub_issue_hint": "sports / gender-affirming care"
+    },
+    {
+     "text": "Assembly Minority Leader Greta Neubauer, who says she is queer, called Vos’ remarks “disgusting and completely misguided.”",
+     "url": "https://fox11online.com/news/state/transgender-girls-sports-athletes-ban-gender-affirming-surgery-wisconsin-assembly-bills-vote-governor-tony-evers-veto-threat",
+     "date": "2023-10-12",
+     "source_type": "T09",
+     "context": "reaction to Speaker Vos on the sports and care bills; only the quoted phrase is hers",
+     "sub_issue_hint": "sports / gender-affirming care"
+    },
+    {
+     "text": "Assembly Minority Leader Greta Neubauer charged Republicans with “bullying kids for political gain” today as the chamber approved a series of bills to restrict transgender and nonbinary Wisconsinites’ ability to play the sport that matches their gender identity, use their preferred name or pronouns at school and access gender-affirming care.",
+     "url": "https://www.wispolitics.com/?p=373387",
+     "date": "2025-03-20",
+     "source_type": "T09",
+     "context": "WisPolitics (403 to curl, read via WebFetch); only the quoted phrase is hers",
+     "sub_issue_hint": "sports / pronouns / gender-affirming care"
+    },
+    {
+     "text": "I’ve stood with members of our community speaking out against attacks on the LGBTQ+ community and the impacts of gun violence.",
+     "url": "https://www.wuwm.com/candidates-wisconsin-assembly-district-66-fall-election",
+     "date": "2024-07-31",
+     "source_type": "T02",
+     "context": "WUWM 2024 questionnaire: 'What distinguishes your experience from the other candidate(s)?'",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "AB 377 (2023, K-12 sports by sex at birth), Assembly passage 2023-10-12, 63-35: N",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0099",
+     "side_hint": "oppose restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "AB 378 (2023, college sports), Assembly 2023-10-12: N",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0100",
+     "side_hint": "oppose restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "AB 465 (2023, ban on gender transition care for minors), Assembly 2023-10-12: N",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2023/av0101",
+     "side_hint": "oppose ban (adjacent)"
+    },
+    {
+     "kind": "vote",
+     "desc": "AB 100 (2025, school sports by sex), Assembly 2025-03-20, 51-43: N",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0030",
+     "side_hint": "oppose restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "AB 103 (2025, school board policies on changing a pupil's name and pronouns), Assembly, 50-43: N",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0032",
+     "side_hint": "oppose parental-consent pronoun rule"
+    },
+    {
+     "kind": "vote",
+     "desc": "AB 104 (2025, prohibiting gender transition procedures for minors), Assembly, 50-43: N",
+     "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0033",
+     "side_hint": "oppose ban (adjacent)"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "LGBTQ+ Victory Fund (listed by candidate, 2026)",
+     "url": "https://www.wuwm.com/wisconsin-state-assembly-district-66-candidates",
+     "side_hint": "pro-LGBTQ group"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "LPAC (listed by candidate, 2024)",
+     "url": "https://www.wuwm.com/candidates-wisconsin-assembly-district-66-fall-election",
+     "side_hint": "pro-LGBTQ group"
+    }
+   ]
+  },
+  {
+   "id": "P27",
+   "name": "Sara Gloeckler",
+   "findable": true,
+   "found_page": "https://www.uniongrovewi.gov/village-government/directory/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: listed as 'Trustee #1 (2025-2027)' on village directory; no other page found. One web search returned nothing; Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: listed as 'Trustee #1 (2025-2027)' on village directory; no other page found. One web search returned nothing; Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: listed as 'Trustee #1 (2025-2027)' on village directory; no other page found. One web search returned nothing; Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: listed as 'Trustee #1 (2025-2027)' on village directory; no other page found. One web search returned nothing; Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: listed as 'Trustee #1 (2025-2027)' on village directory; no other page found. One web search returned nothing; Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Ballotpedia has no page (404). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: listed as 'Trustee #1 (2025-2027)' on village directory; no other page found. One web search returned nothing; Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "Positive control: listed as 'Trustee #1 (2025-2027)' on village directory; no other page found. One web search returned nothing; Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "No scorecards exist for this seat"
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://votesmart.org/",
+     "note": "No interest-group questionnaire expected for village trustee; votesmart.org returns 403 to WebFetch and a JS-only shell to curl; Political Courage Test status could not be read"
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Meta Ad Library returns 403 (login wall); Google Ads Transparency is a JS-only app; no ads expected"
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified"
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "https://www.uniongrovewi.gov/village-government/village-government/",
+     "note": "Village board handles budgets/ordinances; no K-12 or LGBTQ items found; minutes not reviewed"
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P35",
+   "name": "Kristina Robinson",
+   "findable": true,
+   "found_page": "https://ballotpedia.org/Kristina_Robinson",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://campaignkristina.com/",
+     "note": "Wix site; rendered text is empty ('Home') to curl and WebFetch, content read from page JSON in the HTML source. Mentions LGBTQ+ rights/equality (adjacent, general)"
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Kristina_Robinson",
+     "note": "Ballotpedia Candidate Connection survey completed 2026-10-01; housing, water, school funding/vouchers; nothing in domain"
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "https://ivoterguide.com/candidate/95052/race/33786/election/1486",
+     "note": "iVoterGuide questionnaire: 'Did not answer' all items. votesmart.org returns 403 to WebFetch and a JS-only shell to curl; Political Courage Test status could not be read"
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 (login wall); Google Ads Transparency is a JS-only app"
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/profile.php?id=61591262571965",
+     "note": "Campaign Facebook (from Ballotpedia) requires login; site lists @CampaignKristina"
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Kristina_Robinson",
+     "note": "NEA (Ballotpedia); own list 'PPAC, UEA, UWDC'; Women's Democratic Club of Utah on site; none LGBTQ-specific"
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Challenger; no record"
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Challenger; no record in office"
+    }
+   },
+   "statements": [
+    {
+     "text": "My focus is on the issues that truly matter and not on frivolous bills or partisan grandstanding. Political corruption, backdoor deals and pay-to-play policies are taking our focus away from key issues that impact our district, such as the of cost of housing, LBGTQ+ rights, the proposed downtown ICE facilities, reproductive rights, corporation tax rates, inflation, cell phones in schools, mental health of our youth, and the environment.",
+     "url": "https://campaignkristina.com/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "campaign site 'Meet Kristina' section (typos as in source)",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "LGBTQIA Rights",
+     "url": "https://campaignkristina.com/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "campaign site priorities list under 'Community' (with Water Conservation, Protect Natural Resources)",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "A former business owner and nonprofit founder, she is focused on addressing corruption and partisanship in politics while prioritizing issues like housing affordability, reproductive rights, LGBTQ+ equality, youth mental health, education, and environmental protection.",
+     "url": "https://campaignkristina.com/",
+     "date": "undated",
+     "source_type": "T01",
+     "context": "campaign site endorsements section, third-person blurb",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "National Education Association (Ballotpedia); candidate also lists UEA (Utah Education Association)",
+     "url": "https://ballotpedia.org/Kristina_Robinson",
+     "side_hint": "teachers' union; not domain-specific"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "PPAC (Planned Parenthood Action Council Utah) and Women's Democratic Club of Utah",
+     "url": "https://campaignkristina.com/",
+     "side_hint": "not domain-specific"
+    }
+   ]
+  },
+  {
+   "id": "P43",
+   "name": "Jen Reyna Abram",
+   "findable": false,
+   "found_page": "",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unfindable: Ballotpedia 404 (Jen_Reyna_Abram, Jennifer_Reyna_Abram, district elections page); district site gormanschool.org returns Cloudflare error 1014 (403) to curl and WebFetch; CA School Directory blocked by bot-detection (not bypassed). Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T13": {
+     "result": "inaccessible",
+     "url": "https://www.gormanschool.org/",
+     "note": "District website (board agendas/minutes) returns 403 / Cloudflare error 1014"
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P51",
+   "name": "George Whitesides",
+   "findable": true,
+   "found_page": "https://whitesides.house.gov/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.georgewhitesides.com/policies/",
+     "note": "Policies page: AI, wildfire, economy, reproductive freedom, kids' online safety; no LGBTQ content"
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/George_Whitesides",
+     "note": "Did not complete Ballotpedia Candidate Connection 2024 or 2026. Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://votesmart.org/",
+     "note": "votesmart.org returns 403 to WebFetch and a JS-only shell to curl; Political Courage Test status could not be read"
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 (login wall); Google Ads Transparency is a JS-only app"
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://twitter.com/gtwhitesides",
+     "note": "X profile pages render posts only with JavaScript; Facebook returns 400/login wall"
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "2024 debates vs. Mike Garcia not located without web search. Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://whitesides.house.gov/wp-json/wp/v2/posts?search=transgender",
+     "note": "House site WordPress search for transgender, LGBT, gender, equality returned no posts (search verified working: 'Pride' returned 2 unrelated posts)"
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://ballotpedia.org/George_Whitesides",
+     "note": "Equality California (2026, Ballotpedia); CTA and CFT on own endorsements page"
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Took office Jan 2025; not on HRC 118th scorecard; 119th scorecard not found"
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "note": "Not Voting on H.R. 28 (2025-01-14); Nay on H.R. 3492 and H.R. 498 (Dec 2025)"
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "H.R. 28 Protection of Women and Girls in Sports Act, passage RC 12 and motion to recommit RC 11, 2025-01-14: Not Voting on both",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "side_hint": "no position recorded"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 3492 Protect Children’s Innocence Act, passage RC 351, 2025-12-17: Nay (Yea on motion to recommit RC 350)",
+     "url": "https://clerk.house.gov/evs/2025/roll351.xml",
+     "side_hint": "oppose criminalizing gender-affirming care for minors (adjacent)"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 498 Do No Harm in Medicaid Act, passage RC 362, 2025-12-18: Nay (Yea on motion to recommit RC 361)",
+     "url": "https://clerk.house.gov/evs/2025/roll362.xml",
+     "side_hint": "oppose (adjacent)"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Equality California (2026 cycle)",
+     "url": "https://ballotpedia.org/George_Whitesides",
+     "side_hint": "pro-LGBTQ group"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "California Teachers Association; California Federation of Teachers",
+     "url": "https://www.georgewhitesides.com/endorsements/",
+     "side_hint": "teachers' unions; not domain-specific"
+    }
+   ]
+  },
+  {
+   "id": "P59",
+   "name": "Mike Lee",
+   "findable": true,
+   "found_page": "https://www.lee.senate.gov/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not up until 2028; no campaign site checked/found. Senate site issue pages /education and /the-family: parental choice and marriage tax, no gender content"
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://votesmart.org/",
+     "note": "votesmart.org returns 403 to WebFetch and a JS-only shell to curl; Political Courage Test status could not be read"
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 (login wall); Google Ads Transparency is a JS-only app"
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "http://twitter.com/SenMikeLee",
+     "note": "X profile pages render posts only with JavaScript; Facebook returns 400/login wall (Lee posts heavily on X; not readable)"
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "2022 debate with Evan McMullin not located without web search. Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://www.lee.senate.gov/press-releases",
+     "note": "Scanned 220 pages (857 releases, 2019-2026): sports bill (2021 lead), minor gender-transition research ban (2023, 2026), STOP Act (2026), DC shield-law repeal (2025), Equality Act (2019)"
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; only direct-URL checks were possible after that point"
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "No sign-on letter on Title IX found in press releases scanned"
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://www.lee.senate.gov/2023/10/sen-lee-introduces-bill-protecting-children-from-sex-reassignment-research",
+     "note": "Bill endorsements (not campaign): Heritage Action, American Principles Project, Students for Life endorse his bills; campaign endorsements not checked"
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC: 118th = 9, 117th = 5, 116th = 0"
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "note": "Yea on cloture, S. 9 sports bill (2025-03-03); sponsor of sports and minor-transition bills"
+    }
+   },
+   "statements": [
+    {
+     "text": "“When transgender athletes compete against women, women’s sports are no longer women’s sports; they become unisex athletic events,”  Sen. Lee  said. “This bill would protect the opportunity of girls throughout America to athletically compete against other girls.”",
+     "url": "https://www.lee.senate.gov/2021/2/sen-lee-leads-legislation-to-protect-women-s-sports",
+     "date": "2021-02-05",
+     "source_type": "T08",
+     "context": "introducing Protection of Women and Girls in Sports Act",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "“Why is the federal bureaucracy in the child mutilation business?” said Senator Mike Lee. “Americans don’t want to pay millions for these disturbing studies where hundreds of kids are experimented on with puberty-blocking drugs. President Trump rightly halted this attack on America’s kids. Our bill will codify his agenda to keep federal dollars out of gender transition research involving minors.”",
+     "url": "https://www.lee.senate.gov/2026/7/lee-introduces-ban-on-federal-funding-for-child-mutilation-studies",
+     "date": "2026-07-31",
+     "source_type": "T08",
+     "context": "introducing Protecting Our Kids from Harmful Research Act",
+     "sub_issue_hint": "gender-affirming care for minors (adjacent)"
+    },
+    {
+     "text": "“There are kids in America receiving life-altering gender surgeries before they graduate high school. There are kids being given hormone blockers that can cause bone loss, depression, and myriad other medical issues when they should be playing hopscotch and riding bikes,” said Senator Mike Lee.",
+     "url": "https://www.lee.senate.gov/2026/4/lee-cosponsors-ban-on-child-sex-change-procedures-with-100k-penalties-fund-for-detransitioning-victims",
+     "date": "2026-04-29",
+     "source_type": "T08",
+     "context": "cosponsoring STOP Act",
+     "sub_issue_hint": "gender-affirming care for minors (adjacent)"
+    },
+    {
+     "text": "“Our kids deserve safe childhoods and informed consent, but instead they have harmful procedures pushed on them by predatory doctors who won’t have to live with the consequences. I’m proud to cosponsor the STOP Act to outlaw risky gender transition procedures on minors, empower victims to sue for damages, and award the penalty funds from criminal doctors to their victims as recovery compensation.”",
+     "url": "https://www.lee.senate.gov/2026/4/lee-cosponsors-ban-on-child-sex-change-procedures-with-100k-penalties-fund-for-detransitioning-victims",
+     "date": "2026-04-29",
+     "source_type": "T08",
+     "context": "same release, continuation of Lee quote",
+     "sub_issue_hint": "gender-affirming care for minors (adjacent)"
+    },
+    {
+     "text": "“Our nation’s capital should not be a refuge for people who take the lives of children or wreck their bodies with illegal drugs” said Senator Mike Lee. “Criminals on the lam can escape to DC after performing abortions in states where they are illegal, because they know DC will let them get away with it. This bill will repeal DC’s safe harbor for illegal abortionists and peddlers of drugs for transexual procedures, restoring the rule of law to Washington.”",
+     "url": "https://www.lee.senate.gov/2025/12/lee-bill-repeals-dc-s-safe-harbor-for-abortionists-and-transgender-surgeons-fleeing-law-enforcement",
+     "date": "2025-12-03",
+     "source_type": "T08",
+     "context": "introducing D.C. Shield Law Repeal Act",
+     "sub_issue_hint": "gender-affirming care for minors (adjacent)"
+    },
+    {
+     "text": "“ The Federal Government should never fund research that harms kids.  This bill will protect taxpayers from funding spurious research, but more importantly, it will protect kids from the permanent damage this irresponsible research can produce .”",
+     "url": "https://www.lee.senate.gov/2023/10/sen-lee-introduces-bill-protecting-children-from-sex-reassignment-research",
+     "date": "2023-10-05",
+     "source_type": "T08",
+     "context": "introducing Protecting Our Kids from Harmful Research Act (spacing as in source)",
+     "sub_issue_hint": "gender-affirming care for minors (adjacent)"
+    },
+    {
+     "text": "“Americans are becoming more tolerant every day, which is why the Equality Act is so counterproductive. It unnecessarily pits communities against each other and divides our nation when patience and understanding are so sorely needed.”",
+     "url": "https://www.lee.senate.gov/2019/5/sen-lee-urges-no-vote-on-divisive-equality-act",
+     "date": "2019-05-17",
+     "source_type": "T08",
+     "context": "statement before House vote on Equality Act",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "Children’s first teachers are their parents, and parents must carry the primary responsibility to oversee and direct their children’s education.",
+     "url": "https://www.lee.senate.gov/education",
+     "date": "undated",
+     "source_type": "T08",
+     "context": "Senate site Education issue page; not tied to gender",
+     "sub_issue_hint": "parental rights (general)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "S. 9 Protection of Women and Girls in Sports Act, cloture on motion to proceed, Senate vote 100, 2025-03-03 (rejected 51-45): Yea",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "side_hint": "restrict"
+    },
+    {
+     "kind": "bill",
+     "desc": "Lead sponsor, Protection of Women and Girls in Sports Act (introduced 2021-02-04, 13 cosponsors)",
+     "url": "https://www.lee.senate.gov/2021/2/sen-lee-leads-legislation-to-protect-women-s-sports",
+     "side_hint": "restrict"
+    },
+    {
+     "kind": "bill",
+     "desc": "Sponsor, Protecting Our Kids from Harmful Research Act (2023 and 2026 versions)",
+     "url": "https://www.lee.senate.gov/2026/7/lee-introduces-ban-on-federal-funding-for-child-mutilation-studies",
+     "side_hint": "restrict (adjacent)"
+    },
+    {
+     "kind": "bill",
+     "desc": "Cosponsor, STOP Act banning gender transition procedures on minors (2026)",
+     "url": "https://www.lee.senate.gov/2026/4/lee-cosponsors-ban-on-child-sex-change-procedures-with-100k-penalties-fund-for-detransitioning-victims",
+     "side_hint": "restrict (adjacent)"
+    },
+    {
+     "kind": "bill",
+     "desc": "Sponsor, D.C. Shield Law Repeal Act (2025)",
+     "url": "https://www.lee.senate.gov/2025/12/lee-bill-repeals-dc-s-safe-harbor-for-abortionists-and-transgender-surgeons-fleeing-law-enforcement",
+     "side_hint": "restrict (adjacent)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard: 118th = 9, 117th = 5, 116th = 0",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "low HRC score"
+    }
+   ]
+  }
+ ]
+}

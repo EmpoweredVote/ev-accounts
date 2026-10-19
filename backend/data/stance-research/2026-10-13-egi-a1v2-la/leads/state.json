@@ -1,0 +1,1284 @@
+{
+ "instruments": [
+  {
+   "bill": "AB 1955",
+   "session": "2023-24",
+   "text_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_VERSION_TBL_17350.lob, chaptered text, Chapter 95, Statutes of 2024, approved 2024-07-15). leginfo.legislature.ca.gov page returned HTTP 403 (Cloudflare) to WebFetch and curl.",
+   "operative_excerpt": "220.3. (a) An employee or a contractor of a school district, county office of education, charter school, or state special school for the blind or the deaf shall not be required to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent unless otherwise required by state or federal law. (b) Subdivision (a) does not constitute a change in, but is declaratory of, existing law. || 220.5. (a) A school district, county office of education, charter school, state special school for the blind or the deaf, or a member of the governing board of a school district or county office of education or a member of the governing body of a charter school, shall not enact or enforce any policy, rule, or administrative regulation that would require an employee or a contractor to disclose any information related to a pupil’s sexual orientation, gender identity, or gender expression to any other person without the pupil’s consent, unless otherwise required by state or federal law. (b) Subdivision (a) does not constitute a change in, but is declaratory of, existing law. (c) Any policy, regulation, guidance, directive, or other action of a school district, county office of education, charter school, or state special school for the blind or the deaf, or a member of the governing board of a school district or county office of education or a member of the governing body of a charter school, that is inconsistent with subdivision (a) is invalid and shall not have any force or effect.",
+   "other_subjects": [
+    "Sec. 3 / Ed Code 217: State Department of Education to develop resources and supports for parents, guardians and families of LGBTQ pupils (grades 7-12)",
+    "Sec. 4 / Ed Code 220.1: anti-retaliation protection for employees who support a pupil in exercising rights, or who teach consistent with state standards and the California Healthy Youth Act",
+    "Sec. 2: legislative findings (e.g. \"Policies that forcibly \\\"out\\\" pupils without their consent remove opportunities for LGBTQ+ young people and their families to build trust\")",
+    "Digest classifies as one subject: \"pupil rights\"; the bill bundles disclosure ban + family-support resources + employee anti-retaliation"
+   ],
+   "authors": [
+    "Ward (lead, Assembly)"
+   ],
+   "coauthors": [
+    "Principal coauthors Assembly: Cervantes, Jackson, Lee, Low, Zbur",
+    "Principal coauthors Senate: Atkins, Eggman, Laird, Menjivar, Padilla, Wiener",
+    "Coauthor Assembly: Muratsuchi",
+    "Coauthor Senate: Rubio"
+   ],
+   "votes": [
+    {
+     "house": "Assembly",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "date": "2024-04-25",
+     "tally": "Ayes 75, Noes 0, NVR 5",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)",
+     "ayes": [
+      "Addis",
+      "Aguiar-Curry",
+      "Alanis",
+      "Alvarez",
+      "Arambula",
+      "Bains",
+      "Bauer-Kahan",
+      "Bennett",
+      "Berman",
+      "Blanca Rubio",
+      "Bonta",
+      "Bryan",
+      "Calderon",
+      "Cervantes",
+      "Chen",
+      "Connolly",
+      "Davies",
+      "Dixon",
+      "Essayli",
+      "Flora",
+      "Friedman",
+      "Gabriel",
+      "Garcia",
+      "Gipson",
+      "Grayson",
+      "Haney",
+      "Holden",
+      "Hoover",
+      "Irwin",
+      "Jackson",
+      "Jim Patterson",
+      "Joe Patterson",
+      "Jones-Sawyer",
+      "Juan Carrillo",
+      "Kalra",
+      "Lackey",
+      "Lee",
+      "Low",
+      "Lowenthal",
+      "Luz Rivas",
+      "Maienschein",
+      "McCarty",
+      "McKinnor",
+      "Mike Fong",
+      "Muratsuchi",
+      "Ortega",
+      "Pacheco",
+      "Papan",
+      "Pellerin",
+      "Petrie-Norris",
+      "Quirk-Silva",
+      "Ramos",
+      "Rendon",
+      "Reyes",
+      "Robert Rivas",
+      "Rodriguez",
+      "Sanchez",
+      "Santiago",
+      "Schiavo",
+      "Soria",
+      "Stephanie Nguyen",
+      "Ta",
+      "Ting",
+      "Valencia",
+      "Villapudua",
+      "Vince Fong",
+      "Waldron",
+      "Wallis",
+      "Ward",
+      "Weber",
+      "Wendy Carrillo",
+      "Wicks",
+      "Wilson",
+      "Wood",
+      "Zbur"
+     ],
+     "noes": [],
+     "nvr": [
+      "Boerner",
+      "Gallagher",
+      "Hart",
+      "Mathis",
+      "Megan Dahle"
+     ],
+     "note": "Vote lists are surnames as printed in the legislature export; Assembly 'Rodriguez' = Freddie Rodriguez (AD53, 2023-24), not Michelle or Celeste Rodriguez."
+    },
+    {
+     "house": "Senate",
+     "motion": "Third reading passage, 2024-06-13",
+     "date": "2024-06-13",
+     "tally": "Ayes 29, Noes 8, NVR 3",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)",
+     "ayes": [
+      "Allen",
+      "Archuleta",
+      "Ashby",
+      "Atkins",
+      "Becker",
+      "Blakespear",
+      "Bradford",
+      "Caballero",
+      "Cortese",
+      "Dodd",
+      "Durazo",
+      "Eggman",
+      "Glazer",
+      "Gonzalez",
+      "Hurtado",
+      "Laird",
+      "McGuire",
+      "Menjivar",
+      "Min",
+      "Newman",
+      "Padilla",
+      "Portantino",
+      "Roth",
+      "Rubio",
+      "Skinner",
+      "Smallwood-Cuevas",
+      "Umberg",
+      "Wahab",
+      "Wiener"
+     ],
+     "noes": [
+      "Dahle",
+      "Grove",
+      "Jones",
+      "Nguyen",
+      "Niello",
+      "Ochoa Bogh",
+      "Seyarto",
+      "Wilk"
+     ],
+     "nvr": [
+      "Alvarado-Gil",
+      "Limón",
+      "Stern"
+     ],
+     "note": "Vote lists are surnames as printed in the legislature export; Assembly 'Rodriguez' = Freddie Rodriguez (AD53, 2023-24), not Michelle or Celeste Rodriguez."
+    },
+    {
+     "house": "Assembly",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "date": "2024-06-27",
+     "tally": "Ayes 55, Noes 15, NVR 9",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)",
+     "ayes": [
+      "Addis",
+      "Aguiar-Curry",
+      "Alvarez",
+      "Arambula",
+      "Bains",
+      "Bauer-Kahan",
+      "Berman",
+      "Blanca Rubio",
+      "Boerner",
+      "Bonta",
+      "Bryan",
+      "Calderon",
+      "Cervantes",
+      "Connolly",
+      "Friedman",
+      "Gabriel",
+      "Garcia",
+      "Gipson",
+      "Grayson",
+      "Haney",
+      "Hart",
+      "Holden",
+      "Jackson",
+      "Juan Carrillo",
+      "Kalra",
+      "Lee",
+      "Low",
+      "Lowenthal",
+      "Luz Rivas",
+      "Maienschein",
+      "McCarty",
+      "McKinnor",
+      "Mike Fong",
+      "Ortega",
+      "Papan",
+      "Pellerin",
+      "Petrie-Norris",
+      "Quirk-Silva",
+      "Ramos",
+      "Rendon",
+      "Reyes",
+      "Robert Rivas",
+      "Rodriguez",
+      "Santiago",
+      "Schiavo",
+      "Stephanie Nguyen",
+      "Ting",
+      "Valencia",
+      "Villapudua",
+      "Weber",
+      "Wendy Carrillo",
+      "Wicks",
+      "Wilson",
+      "Wood",
+      "Zbur"
+     ],
+     "noes": [
+      "Alanis",
+      "Chen",
+      "Davies",
+      "Dixon",
+      "Essayli",
+      "Flora",
+      "Gallagher",
+      "Hoover",
+      "Jim Patterson",
+      "Joe Patterson",
+      "Lackey",
+      "Megan Dahle",
+      "Sanchez",
+      "Ta",
+      "Wallis"
+     ],
+     "nvr": [
+      "Bennett",
+      "Irwin",
+      "Jones-Sawyer",
+      "Mathis",
+      "Muratsuchi",
+      "Pacheco",
+      "Soria",
+      "Waldron",
+      "Ward"
+     ],
+     "note": "Vote lists are surnames as printed in the legislature export; Assembly 'Rodriguez' = Freddie Rodriguez (AD53, 2023-24), not Michelle or Celeste Rodriguez."
+    },
+    {
+     "house": "Assembly",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "date": "2024-06-27",
+     "tally": "Ayes 57, Noes 12, NVR 10",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)",
+     "ayes": [
+      "Addis",
+      "Aguiar-Curry",
+      "Alvarez",
+      "Arambula",
+      "Bains",
+      "Bauer-Kahan",
+      "Berman",
+      "Blanca Rubio",
+      "Boerner",
+      "Bonta",
+      "Bryan",
+      "Calderon",
+      "Cervantes",
+      "Connolly",
+      "Friedman",
+      "Gabriel",
+      "Garcia",
+      "Gipson",
+      "Grayson",
+      "Haney",
+      "Hart",
+      "Holden",
+      "Jackson",
+      "Juan Carrillo",
+      "Kalra",
+      "Lee",
+      "Low",
+      "Lowenthal",
+      "Luz Rivas",
+      "McCarty",
+      "McKinnor",
+      "Mike Fong",
+      "Muratsuchi",
+      "Ortega",
+      "Papan",
+      "Pellerin",
+      "Petrie-Norris",
+      "Quirk-Silva",
+      "Ramos",
+      "Rendon",
+      "Reyes",
+      "Robert Rivas",
+      "Rodriguez",
+      "Santiago",
+      "Schiavo",
+      "Soria",
+      "Stephanie Nguyen",
+      "Ting",
+      "Valencia",
+      "Villapudua",
+      "Ward",
+      "Weber",
+      "Wendy Carrillo",
+      "Wicks",
+      "Wilson",
+      "Wood",
+      "Zbur"
+     ],
+     "noes": [
+      "Chen",
+      "Davies",
+      "Dixon",
+      "Essayli",
+      "Flora",
+      "Gallagher",
+      "Jim Patterson",
+      "Joe Patterson",
+      "Lackey",
+      "Megan Dahle",
+      "Sanchez",
+      "Ta"
+     ],
+     "nvr": [
+      "Alanis",
+      "Bennett",
+      "Hoover",
+      "Irwin",
+      "Jones-Sawyer",
+      "Maienschein",
+      "Mathis",
+      "Pacheco",
+      "Waldron",
+      "Wallis"
+     ],
+     "note": "Vote lists are surnames as printed in the legislature export; Assembly 'Rodriguez' = Freddie Rodriguez (AD53, 2023-24), not Michelle or Celeste Rodriguez."
+    },
+    {
+     "house": "Assembly",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "date": "2024-06-27",
+     "tally": "Ayes 61, Noes 16, NVR 2",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)",
+     "ayes": [
+      "Addis",
+      "Aguiar-Curry",
+      "Alvarez",
+      "Arambula",
+      "Bains",
+      "Bauer-Kahan",
+      "Bennett",
+      "Berman",
+      "Blanca Rubio",
+      "Boerner",
+      "Bonta",
+      "Bryan",
+      "Calderon",
+      "Cervantes",
+      "Connolly",
+      "Friedman",
+      "Gabriel",
+      "Garcia",
+      "Gipson",
+      "Grayson",
+      "Haney",
+      "Hart",
+      "Holden",
+      "Irwin",
+      "Jackson",
+      "Juan Carrillo",
+      "Kalra",
+      "Lee",
+      "Low",
+      "Lowenthal",
+      "Luz Rivas",
+      "Maienschein",
+      "McCarty",
+      "McKinnor",
+      "Mike Fong",
+      "Muratsuchi",
+      "Ortega",
+      "Pacheco",
+      "Papan",
+      "Pellerin",
+      "Petrie-Norris",
+      "Quirk-Silva",
+      "Ramos",
+      "Rendon",
+      "Reyes",
+      "Robert Rivas",
+      "Rodriguez",
+      "Santiago",
+      "Schiavo",
+      "Soria",
+      "Stephanie Nguyen",
+      "Ting",
+      "Valencia",
+      "Villapudua",
+      "Ward",
+      "Weber",
+      "Wendy Carrillo",
+      "Wicks",
+      "Wilson",
+      "Wood",
+      "Zbur"
+     ],
+     "noes": [
+      "Alanis",
+      "Chen",
+      "Davies",
+      "Dixon",
+      "Essayli",
+      "Flora",
+      "Gallagher",
+      "Hoover",
+      "Jim Patterson",
+      "Joe Patterson",
+      "Lackey",
+      "Megan Dahle",
+      "Sanchez",
+      "Ta",
+      "Waldron",
+      "Wallis"
+     ],
+     "nvr": [
+      "Jones-Sawyer",
+      "Mathis"
+     ],
+     "note": "Vote lists are surnames as printed in the legislature export; Assembly 'Rodriguez' = Freddie Rodriguez (AD53, 2023-24), not Michelle or Celeste Rodriguez."
+    }
+   ],
+   "history_note": "Assembly ayes/noes per history: 75-0 (4/25/24), Senate 29-8 (6/13/24), concurrence 61-16 (6/27/24). Approved by Governor 2024-07-15, Chapter 95, Statutes of 2024."
+  },
+  {
+   "bill": "AB 1314",
+   "session": "2023-24",
+   "text_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_VERSION_TBL_7927.lob, version amended Assembly 2023-08-23). leginfo page 403.",
+   "operative_excerpt": "(17) (A) Notwithstanding any other law, including Section 6924 of the Family Code and Section 124260 of the Health and Safety Code, to be notified in writing within three days from the date any teacher, counselor, or employee of the school becomes aware that their child is doing either of the following: (i) Identifying at school as a gender that does not align with the child’s sex on their birth certificate, other official records, or sex assigned at birth. (ii) Using sex-segregated school programs and activities, including athletic teams and competitions, or using facilities that do not align with the child’s sex on their birth certificate, other official records, or sex assigned at birth.",
+   "other_subjects": [
+    "Amends Ed Code 51101 (parental rights list); also notice about sex-segregated programs, athletic teams and facilities (same notification right); legislative-intent subparagraph (B)",
+    "State-mandated local program / reimbursement clause"
+   ],
+   "authors": [
+    "Essayli",
+    "Gallagher",
+    "Joe Patterson"
+   ],
+   "coauthors": [
+    "Mathis"
+   ],
+   "votes": [],
+   "history_note": "Referred to Assembly Education (and Judiciary); amended 2023-03-09 and 2023-08-23; re-referred to Ed 2023-08-24; \"Died pursuant to Art. IV, Sec. 10(c) of the Constitution\" 2024-01-31. No committee or floor vote recorded."
+  },
+  {
+   "bill": "AB 1401",
+   "session": "2025-26",
+   "text_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2025.zip (BILL_VERSION_TBL_2567.lob, introduced 2025-02-21)",
+   "operative_excerpt": "(10) To have access to the official and unofficial school records of their child.",
+   "other_subjects": [
+    "Amends Ed Code 51101 only; does not mention gender identity, name or pronouns. Peripheral: expands parental access to unofficial school records."
+   ],
+   "authors": [
+    "Patterson"
+   ],
+   "coauthors": [],
+   "votes": [],
+   "history_note": "Assembly Education 2025-04-09: \"Failed passage\" (committee vote 2 Ayes, 5 Noes per BILL_SUMMARY_VOTE_TBL); no floor vote."
+  },
+  {
+   "bill": "AB 600",
+   "session": "2025-26",
+   "text_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2025.zip (BILL_VERSION_TBL_1123.lob, introduced 2025-02-13)",
+   "operative_excerpt": "\"Pupil instruction: transgender concepts: opt out\" - parents may excuse child from curriculum referencing transgender concepts (not a notification-of-identity bill).",
+   "other_subjects": [
+    "Curriculum opt-out; private right of action"
+   ],
+   "authors": [
+    "Castillo"
+   ],
+   "coauthors": [],
+   "votes": [],
+   "history_note": "Died at Desk 2026-02-02. No vote. Instruction opt-out, not parental notification of a pupil name/gender change; listed as peripheral."
+  },
+  {
+   "bill": "AB 844 / SB 622",
+   "session": "2025-26",
+   "text_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2025.zip (AB 844 BILL_VERSION lob; SB 622 BILL_VERSION_TBL_3385.lob)",
+   "operative_excerpt": "SB 622 (Grove): \"(2) A pupil’s participation in sex-segregated school programs and activities, including athletic teams and competitions, shall be consistent with the pupil’s sex at birth.\" AB 844 (Essayli) similar plus facilities.",
+   "other_subjects": [
+    "Sports/facilities by sex; no parental-notification clause"
+   ],
+   "authors": [
+    "Essayli (AB 844)",
+    "Grove (SB 622)"
+   ],
+   "coauthors": [],
+   "votes": [],
+   "history_note": "Peripheral; sports and facilities, not parental notification. Not vote-checked."
+  }
+ ],
+ "incumbent_votes": [
+  {
+   "person": "Al Muratsuchi",
+   "district": "AD66",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "NVR",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote. Coauthor of AB 1955 (Assembly)."
+  },
+  {
+   "person": "Benjamin Allen",
+   "district": "SD24",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Blanca Pacheco",
+   "district": "AD64",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "NVR",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "NVR",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Blanca Rubio",
+   "district": "AD48",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Bob J. Archuleta",
+   "district": "SD30",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Caroline Menjivar",
+   "district": "SD20",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote. Principal coauthor of AB 1955 (Senate)."
+  },
+  {
+   "person": "Henry Stern",
+   "district": "SD27",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "NVR",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Isaac G. Bryan",
+   "district": "AD55",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Jesse Gabriel",
+   "district": "AD46",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Josh Lowenthal",
+   "district": "AD69",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Juan Carrillo",
+   "district": "AD39",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Lena Gonzalez",
+   "district": "SD33",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Lisa Calderon",
+   "district": "AD56",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Lola Smallwood-Cuevas",
+   "district": "SD28",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Maria Elena Durazo",
+   "district": "SD26",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Mike A. Gipson",
+   "district": "AD65",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Mike Fong",
+   "district": "AD49",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Pilar Schiavo",
+   "district": "AD40",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Rick Chavez Zbur",
+   "district": "AD51",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote. Principal coauthor of AB 1955 (Assembly)."
+  },
+  {
+   "person": "Sharon Quirk-Silva",
+   "district": "AD67",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Susan Rubio",
+   "district": "SD22",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote. Coauthor of AB 1955 (Senate)."
+  },
+  {
+   "person": "Thomas Umberg",
+   "district": "SD34",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage, 2024-06-13",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Tina Simone McKinnor",
+   "district": "AD61",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Tom Lackey",
+   "district": "AD34",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "vote": "Aye",
+     "motion": "Third reading passage (Consent Calendar), 2024-04-25",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "No",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (by Essayli) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "No",
+     "motion": "PROCEDURAL: Appeal the Decision of the Chair (2nd roll call) during concurrence, 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    },
+    {
+     "bill": "AB 1955",
+     "vote": "No",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote_url": "https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip (BILL_SUMMARY_VOTE_TBL.dat / BILL_DETAIL_VOTE_TBL.dat; official legislature data export, same data as leginfo billVotes page)"
+    }
+   ],
+   "note": "Name matched in legislature export by house + surname; AB 1314 never received a floor or committee vote."
+  },
+  {
+   "person": "Celeste Rodriguez",
+   "district": "AD43",
+   "records": [],
+   "note": "Not in office during 2023-24: AD43 (held by Luz Rivas in 2023-24). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Jessica Caloza",
+   "district": "AD52",
+   "records": [],
+   "note": "Not in office during 2023-24: AD52 (Wendy Carrillo in 2023-24). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "John Harabedian",
+   "district": "AD41",
+   "records": [],
+   "note": "Not in office during 2023-24: AD41 (Chris Holden). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "José Luis Solache",
+   "district": "AD62",
+   "records": [],
+   "note": "Not in office during 2023-24: AD62 (Anthony Rendon). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Laura Richardson",
+   "district": "SD35",
+   "records": [],
+   "note": "Not in office during 2023-24: SD35 (Steven Bradford). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Mark Gonzalez",
+   "district": "AD54",
+   "records": [],
+   "note": "Not in office during 2023-24: AD54 (Miguel Santiago). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Michelle Rodriguez",
+   "district": "AD53",
+   "records": [],
+   "note": "Not in office during 2023-24: AD53 (Freddie Rodriguez). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Nicholas \"Nick\" Schultz",
+   "district": "AD44",
+   "records": [],
+   "note": "Not in office during 2023-24: AD44 (Laura Friedman). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Sade Elhawary",
+   "district": "AD57",
+   "records": [],
+   "note": "Not in office during 2023-24: AD57 (Reggie Jones-Sawyer). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Sasha Renée Pérez",
+   "district": "SD25",
+   "records": [],
+   "note": "Not in office during 2023-24: SD25 (Anthony Portantino). No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Suzette Martinez Valladares",
+   "district": "SD23",
+   "records": [],
+   "note": "Not in office during 2023-24: SD23 (Rosilicie Ochoa Bogh); not in 2023-24 LEGISLATOR_TBL. No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Tony Strickland",
+   "district": "SD36",
+   "records": [],
+   "note": "Not in office during 2023-24: SD36 (Janet Nguyen); not in 2023-24 LEGISLATOR_TBL. No vote on AB 1955/AB 1314. 2025-26 session: no gender-identity parental-notification bill reached a floor vote (see instruments)."
+  },
+  {
+   "person": "Jacqui Irwin",
+   "district": "AD42",
+   "records": [
+    {
+     "bill": "AB 1955",
+     "motion": "Concurrence in Senate amendments (final passage), 2024-06-27",
+     "vote": "Aye",
+     "vote_url": "saved-pages/ca-2024-AB1955-assembly-concurrence-2024-06-27.txt"
+    }
+   ],
+   "note": "Added by orchestrator 2026-10-13: the lead file omitted her; roll call checked."
+  }
+ ],
+ "own_words": [
+  {
+   "person": "Mike Netter (SD22 challenger)",
+   "url": "https://ballotpedia.org/Mike_Netter",
+   "excerpt": "By order of Newsom & School Administrators teachers were told NOT to share information with parents, that's crazy. Newsom & Administrators STOLE the authority to hide information from parents - restore parental rights.",
+   "note": "Ballotpedia Candidate Connection survey completed 2026, 'Campaign themes' answer. Names no bill; opposes policy of not telling parents (points toward options 3-5 side vs 1-2; not coded)."
+  },
+  {
+   "person": "Long David Liu (AD49 challenger)",
+   "url": "https://ballotpedia.org/Long_David_Liu",
+   "excerpt": "No Indoctrination The indoctrination policies like AB957 in California leads teenagers to transgender without proper maturity, resulting in lifelong regrets. AB957 focuses on amending the judicial criteria used to determine custodial rights in family court proceedings. Specifically, it proposes to include parental affirmation of their child's chosen gender as an additional factor considered in custody decisions. This provision would be misused and lead to allegations of child abuse if parents do not affirm their child's gender identity. AB957 clearly took away parent’s right to guide their children to make the proper choice. We must say NO to AB957 !",
+   "note": "Ballotpedia Candidate Connection survey completed in 2024 (page says 2026 survey not yet completed). Names AB 957 (family law: gender identity, custody) which is NOT a school parental-notification bill; direction-only for this question."
+  }
+ ],
+ "direction_only": [
+  {
+   "person": "Charles Frederick Hughes (AD34 challenger)",
+   "url": "https://ballotpedia.org/Charles_Frederick_Hughes",
+   "note": "Ballotpedia survey 2026: \"Protect Parental Rights: Ensure parents are informed, involved, and empowered in their children’s education.\" No act named."
+  },
+  {
+   "person": "Rhonda Shader (SD34 challenger)",
+   "url": "https://ballotpedia.org/Rhonda_Shader",
+   "note": "Ballotpedia survey: \"education and schools to protect our children, includes parents and allows choices.\" Campaign site https://shaderforsenate.com/issues: \"Emphasizing STEM education and parental involvement will equip students for success and give teachers greater flexibility.\" No gender-identity statement."
+  },
+  {
+   "person": "Raul Ortiz Jr. (AD64 challenger)",
+   "url": "https://ballotpedia.org/Raul_Ortiz_Jr.",
+   "note": "Ballotpedia survey (completed 2022 per page): \"We the People will be an advocate of, and will work tirelessly for the rights of parents to direct their child’s education and health.\" No act named; may be a 2022 statement."
+  },
+  {
+   "person": "Ted Nordblum (AD42 challenger)",
+   "url": "https://ballotpedia.org/Ted_Nordblum",
+   "note": "Ballotpedia survey (completed 2024 per page): \"Save our Children. No more mandates or indoctrination of our youth.\" and \"empower parents in shaping their kids' education.\" No act named."
+  },
+  {
+   "person": "Tracey Schroeder (AD46 challenger)",
+   "url": "https://ballotpedia.org/Tracey_Schroeder",
+   "note": "Ballotpedia survey (completed 2024 per page): \"Respect the rights of parents. Rated-G curriculum.\" No act named."
+  },
+  {
+   "person": "Paul Irving Jones (AD62 challenger)",
+   "url": "https://ballotpedia.org/Paul_Irving_Jones",
+   "note": "Ballotpedia page text criticises LAUSD 'trans-affirming' programming and gender pronouns (text refers to 'district 44', so may be an older campaign page); no parental-notification statement."
+  },
+  {
+   "person": "Andrea Lee Anderson (AD52 challenger)",
+   "url": "https://ballotpedia.org/Andrea_Lee_Anderson",
+   "note": "Ballotpedia survey: \"Quality education, involving signed contracts between parents, teachers, and students.\" Generic; no gender-identity content."
+  }
+ ],
+ "not_found": [
+  "Tom Lackey (voted No on 3 of 4 AB 1955 Assembly roll calls; no own-words found; Ballotpedia page has no position text)",
+  "Tony Strickland (Ballotpedia page fetched: no statement; web search: nothing)",
+  "Suzette Martinez Valladares (Ballotpedia page fetched; web search found nothing)",
+  "Zbur, Muratsuchi, Menjivar, S. Rubio (AB 1955 coauthors; web search found no personal statement)",
+  "Ballotpedia pages fetched with no on-topic text: Adam Vena, Alexandra Briseno, Brian Goldsmith, Brian Lockwood, Carolyn J. Essex, Colin D. Hernandez, Dan T. Tran, Deborah Klein Lopez, Joe Lisuzzo, Mark Pulido, Paul Andre Marsh, Paul Seo, Randall Putz, Rickey Tracy Hayes II, Sara Deen, Ricardo Benitez",
+  "Unfindable on Ballotpedia (404 or stub): John M. Erickson, Tony Rodriguez, Chris Duncan, Araceli Martinez",
+  "Not searched at all (budget): Avelino Valencia, Ayanna Davis, Ashley M. Brown, Carolyn Daniels, Constance Jewel Menzies, Jessica Martinez, Lydia A. Gutierrez, Paulo Morales, Rafaela Romero, Sara Hernandez, Sarah Rascon; all incumbents official .gov press pages except via the searches above"
+ ],
+ "blocked": [
+  {
+   "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+   "error": "HTTP 403 Cloudflare challenge (\"Just a moment...\") for both WebFetch and curl with browser UA; bill text and votes obtained instead from official bulk export https://downloads.leginfo.legislature.ca.gov/pubinfo_2023.zip"
+  },
+  {
+   "url": "https://legiscan.com/CA/votes/AB1955/2023",
+   "error": "HTTP 403 Cloudflare"
+  },
+  {
+   "url": "https://edsource.org/2024/short-of-signatures-organizers-target-californias-2026-ballot-for-tightening-transgender-rights/712902",
+   "error": "HTTP 403 from WebFetch and curl; syndicated copy at localnewsmatters.org fetched instead"
+  },
+  {
+   "url": "https://ballotpedia.org/Rhonda_Shader (via WebFetch)",
+   "error": "WebFetch returned empty content; curl with browser UA succeeded"
+  }
+ ],
+ "coverage_note": "Systematic scan of all 2023-24 and 2025-26 bill-version texts in pubinfo_2023.zip and pubinfo_2025.zip for gender-identity/pronoun/name terms with parent+school terms. Only AB 1955 and AB 1314 act on parental notification in 2023-24; none found in 2025-26 (AB 1401, AB 600, AB 844, SB 622 are peripheral). No ACA/SCA hits. Initiatives not checked in the export (see web search notes).",
+ "other_context": {
+  "initiative": {
+   "note": "Students First: Protect Kids California initiatives (school parental notification of gender identity among three measures) FAILED to qualify for the 2024 ballot; organizers said they would target 2026. No evidence found that any such measure is on the Nov 2026 ballot (not verified against Secretary of State list).",
+   "url": "https://localnewsmatters.org/2024/06/06/short-of-signatures-for-fall-organizers-target-2026-ballot-for-tightening-transgender-rights/",
+   "excerpt": "The organization Students First: Protect Kids California started too late to consolidate their three separate initiatives into one, and its signature-gathering came up short of the 546,651 verifiable signatures that had to be collected within six months to make the presidential election ballot."
+  },
+  "court": {
+   "note": "AB 1955 sections 220.3(a) and 220.5(a) partly enjoined by Ninth Circuit (law-firm summary).",
+   "url": "https://www.aalrr.com/newsroom-alerts-Ninth_Circuit_Enjoins_Portions_of_AB_1955",
+   "excerpt": "On June 18, 2026, the Ninth Circuit Court of Appeals issued a preliminary injunction of provisions of California's Assembly Bill (\"AB\") 1955."
+  },
+  "author_quotes": {
+   "url": "https://calmatters.org/education/k-12-education/2024/07/trans-youth-california/",
+   "note": "CalMatters 2024-07; Ward (not in LA people list): \"The very personal decision for a student to come out should be on their own terms\""
+  }
+ }
+}

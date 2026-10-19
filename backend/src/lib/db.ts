@@ -1,4 +1,4 @@
-import { Pool } from 'pg';
+import { Pool, type ClientBase } from 'pg';
 import { env } from './env.js';
 
 // Session Pooler (pooler.supabase.com:5432) — sticky sessions, compatible with
@@ -13,6 +13,7 @@ export const pool = new Pool({
   keepAlive: true,
   keepAliveInitialDelayMillis: 10_000,
   ssl: { rejectUnauthorized: false },
+  onConnect: setSearchPath,
 });
 
 // On every new connection, resolve unqualified spatial functions and operators via
@@ -23,10 +24,17 @@ export const pool = new Pool({
 // schema first, matching the postgres role default. Mirrors the trivia pool's connect
 // hook (src/trivia/config/database.ts); SET is more reliable than the `options`
 // connection parameter, which Supavisor may not forward on new connections.
-pool.on('connect', (client) => {
-  client.query('SET search_path TO "$user", public, extensions')
-    .catch((err: Error) => console.error('[pool] failed to set search_path:', err.message));
-});
+// Run as the pool's `onConnect` hook, which pg-pool awaits before handing the client to
+// its first caller. A fire-and-forget query in a `connect` listener raced that caller's
+// own query onto the same client — pg queued it, but warns that this is deprecated and
+// will be removed in pg@9. A failure is logged and the client is still used, as before.
+async function setSearchPath(client: ClientBase): Promise<void> {
+  try {
+    await client.query('SET search_path TO "$user", public, extensions');
+  } catch (err) {
+    console.error('[pool] failed to set search_path:', (err as Error).message);
+  }
+}
 
 pool.on('error', (err) => {
   console.error('[pool] idle client error:', err.message);

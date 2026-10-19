@@ -15,6 +15,8 @@ import topicRewritesRouter from './routes/topicRewrites.js';
 import sourceVerificationsRouter from './routes/sourceVerifications.js';
 import compassContributorRouter from './routes/compassContributor.js';
 import compassRevisionsRouter from './routes/compassRevisions.js';
+import compassJournalRouter from './routes/compassJournal.js';
+import compassJournalAdminRouter from './routes/compassJournalAdmin.js';
 import empowerRouter from './routes/empower.js';
 import gemsRouter from './routes/gems.js';
 import profileRouter from './routes/profile.js';
@@ -149,6 +151,13 @@ app.use('/api/compass', compassRouter);
 // Dual-router pattern: compassAdminRouter shares the /api/compass prefix with compassRouter.
 // Express tries compassRouter first (public routes); admin-only mutations fall through to here.
 // No URL+method collisions exist between the two routers.
+// 🔴 BEFORE compassAdminRouter, AND THAT ORDER IS LOAD-BEARING. compassAdmin.ts
+// opens with a PATH-LESS `router.use(requireAuth, requireAdmin)`, so every
+// request that reaches it — matching route or not — is authenticated first.
+// Mounted after it, these public journal routes were never reached: an
+// anonymous GET fell through compassRouter, hit that blanket gate and came back
+// 401. It is also why an unknown /api/compass/* path answers 401 and not 404.
+app.use('/api/compass', compassJournalRouter);
 app.use('/api/compass', compassAdminRouter);
 app.use('/api/empower', empowerRouter);
 app.use('/api/gems', gemsRouter);
@@ -181,6 +190,7 @@ app.use('/api/admin/topic-rewrites', topicRewritesRouter);
 app.use('/api/admin/source-verifications', sourceVerificationsRouter);
 app.use('/api/admin/readrank-quotes', readrankQuotesAdminRouter);
 app.use('/api/admin/readrank-coverage', readrankCoverageAdminRouter);
+app.use('/api/admin/compass', compassJournalAdminRouter);
 app.use('/api/admin/compass-stats', compassStatsAdminRouter);
 app.use('/api/candidates', candidatesRouter);
 // === Essentials Routes (Phase 38 complete — all routes served by ev-accounts, CONS-11 fulfilled) ===

@@ -9,6 +9,15 @@ import {
  * Zod schema for validating AI-generated civic trivia questions.
  * Mirrors the database questions table structure from src/db/schema.ts.
  */
+/**
+ * Attribution openers, banned in explanation prose since 2026-09-29.
+ *
+ * Anchored at the start on purpose: "according to" is a perfectly good phrase mid-sentence
+ * ("the deadline depends on the county, according to state law"), and a rule that fires on
+ * that would be a false positive the next person has to argue with. Only the OPENER is noise.
+ */
+export const ATTRIBUTION_OPENER = /^\s*(according to|per\s|source:|as reported by|citing\s)/i;
+
 export const QuestionSchema = z.object({
   // External ID: either scheme.
   //   new     <collection-slug>_<NNNN>   e.g. "akron-oh_0001"
@@ -51,11 +60,22 @@ export const QuestionSchema = z.object({
 
   // Explanation. Attribution lives in source.url, NOT in the prose — the
   // "According to ..." opener was stripped bank-wide on 2026-09-29 (1,978 -> 0),
-  // and this refine would have made the generator write it straight back.
+  // and the refine that USED to sit here required it, which would have made the
+  // generator write it straight back.
+  //
+  // Removing that requirement was not enough: the prompts still ORDERED the opener
+  // ("Every explanation MUST begin with..."), so a generation run on 2026-10-02
+  // produced 8 of 8 with it, three days after the ruling. The prompts are fixed now,
+  // and this is the half that does not depend on the model complying.
   explanation: z
     .string()
     .min(20, 'Explanation must be at least 20 characters')
-    .max(500, 'Explanation must be at most 500 characters'),
+    .max(500, 'Explanation must be at most 500 characters')
+    .refine(
+      (v) => !ATTRIBUTION_OPENER.test(v),
+      'Explanation must not open with an attribution phrase ("According to ...", "Per ...", ' +
+        '"Source: ..."). Attribution belongs in source.url — start with the fact itself.'
+    ),
 
   // Difficulty level matching federal questions
   difficulty: z.enum(['easy', 'medium', 'hard']),
@@ -72,6 +92,24 @@ export const QuestionSchema = z.object({
   // ISO 8601 datetime or null (for elected official questions, set to term end date)
   expiresAt: z.string().datetime({ offset: true }).nullable(),
 });
+
+/**
+ * What a generator gets back from the model when the ids are not its to invent.
+ *
+ * ElectionQuestionGenerator and CurrentTermQuestionGenerator build `externalId` from the race
+ * id at insert time and take `expiresAt` from the race's term end, and neither reads
+ * `topicCategory` (they write a fixed subcategory). Everything else is the SAME contract as a
+ * content-generation question -- exactly four options, an answer index actually within them,
+ * explanation bounds, the attribution-opener ban, and a source with a real URL -- which is why
+ * this is derived from QuestionSchema instead of written out a second time and left to drift.
+ */
+export const ModelQuestionSchema = QuestionSchema.omit({
+  externalId: true,
+  expiresAt: true,
+  topicCategory: true,
+});
+
+export type ModelQuestion = z.infer<typeof ModelQuestionSchema>;
 
 /**
  * Schema for a batch of questions returned by the AI.

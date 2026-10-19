@@ -76,6 +76,14 @@ export function writeBundleSeason(dir: string, t: SeasonTarget): void {
   writeFileSync(join(dir, SEASON_FILE), JSON.stringify({ id: t.id, number: t.number, name: t.name, status: t.status }, null, 2));
 }
 
+/** The season a batch dir records, or null for an open-season bundle (which writes no file). */
+export function readBundleSeason(dir: string): { id: string; number: number; status: string } | null {
+  const p = join(dir, SEASON_FILE);
+  if (!existsSync(p)) return null;
+  const rec = JSON.parse(readFileSync(p, 'utf8')) as { id: string; number: number; status: string };
+  return { id: rec.id, number: Number(rec.number), status: rec.status };
+}
+
 /** Throws when the batch dir's recorded season is not `t`. An open target with no file is the legacy case and passes. */
 export function assertBundleSeason(dir: string, t: SeasonTarget): void {
   const p = join(dir, SEASON_FILE);

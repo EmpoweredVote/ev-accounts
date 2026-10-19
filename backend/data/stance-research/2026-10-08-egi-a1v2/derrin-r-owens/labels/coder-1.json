@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "53162004-fa67-42f7-a2f8-6289dc8237b2",
+      "office_id": "2ddc0f70-c724-4cc3-a7aa-8039fb89a9c3",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "967b2249-caaa-571d-8a9d-e099868a9f47",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-02-03",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": null,
+          "note": "Senate concurrence/final passage vote on 2SB 100 School Gender Identity Policies; Owens voted Yea (22-6-1, not near-unanimous).",
+          "record_kind": "vote",
+          "actor_quote": "Millner, A. Owens, D.R. Sandall, S.",
+          "tally_quote": "Yeas 22 Nays 6 Abs 1"
+        },
+        {
+          "snapshot_id": "b82b457c-96dc-5b59-8503-5623a06980d3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "SB 100 (2023 General Session)",
+          "provision_quote": "a school or LEA may not: 45 (a) prohibit a parent of a child from accessing the child's education record; or 46 (b) without written parental consent make changes to a student's education record 47 regarding a student's gender identity that does not conform with the student's sex.",
+          "note": "Operative section guarantees parental access to the education record and requires consent for gender-identity changes to the record; it requires no proactive notice and does not govern staff use of names or pronouns, so it shows the parental-rights side without separating rungs 3, 4 and 5.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Owens voted Yea on SB 100 (2023), which bars schools from shielding a student's education record from parents and from changing the record's gender identity entry \"without written parental consent\". That places him against \"Require staff to keep a student's gender identity from parents\" and \"Forbid rules that require schools to tell parents\", but the bill's object is the education record, not proactive notification (\"Require schools to notify parents\") or staff name/pronoun use (\"Require parental permission before staff use a different name or pronouns\"), and it does not exclude those rungs, so it cannot choose among \"tell parents when parents ask\", \"notify parents\" and \"parental permission\".",
+      "needs_source": [
+        "Derrin R. Owens's own words (questionnaire, floor debate, issue page) on parental notification or consent regarding a student's name or gender identity at school",
+        "Any Utah bill Owens sponsored or voted on that requires proactive parental notification or parental consent before staff use a different name or pronouns"
+      ],
+      "quotes": []
+    }
+  ]
+}

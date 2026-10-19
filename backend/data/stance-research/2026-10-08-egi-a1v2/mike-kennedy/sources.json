@@ -1,0 +1,33 @@
+{
+  "batch_id": "mike-kennedy",
+  "sources": [
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2616eh/html/BILLS-119hr2616eh.htm",
+      "source_kind": "public-record",
+      "politician_id": "9e3164d5-ce71-4c50-9220-b969265ce551",
+      "office_id": "c9e50902-0d9d-4cfa-ac31-f19fa623b555",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "H.R. 2616"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://clerk.house.gov/evs/2026/roll184",
+      "source_kind": "public-record",
+      "politician_id": "9e3164d5-ce71-4c50-9220-b969265ce551",
+      "office_id": "c9e50902-0d9d-4cfa-ac31-f19fa623b555",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "H.R. 2616"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

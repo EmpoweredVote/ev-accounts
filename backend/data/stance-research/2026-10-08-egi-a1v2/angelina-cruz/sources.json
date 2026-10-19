@@ -1,0 +1,33 @@
+{
+  "batch_id": "angelina-cruz",
+  "sources": [
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB103",
+      "source_kind": "public-record",
+      "politician_id": "11c8f424-55d1-4e28-b297-d6a670a033d6",
+      "office_id": "5d3e9aa3-370a-421c-af59-3c1ce51587db",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 103"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/av0032",
+      "source_kind": "public-record",
+      "politician_id": "11c8f424-55d1-4e28-b297-d6a670a033d6",
+      "office_id": "5d3e9aa3-370a-421c-af59-3c1ce51587db",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 103"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

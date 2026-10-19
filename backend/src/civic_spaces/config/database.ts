@@ -1,4 +1,4 @@
-import pg from 'pg';
+import pg, { type ClientBase } from 'pg';
 import { env } from '../../lib/env.js';
 
 // Dedicated pg pool for the folded Civic Spaces slice-assignment module (engine
@@ -40,6 +40,7 @@ const pool = new Pool({
   connectionTimeoutMillis: 10_000,
   keepAlive: true,
   keepAliveInitialDelayMillis: 10_000,
+  onConnect: setSessionParameters,
 });
 
 // On every new connection: pin search_path to civic_spaces so the module's unqualified SQL
@@ -47,11 +48,18 @@ const pool = new Pool({
 // connection parameter, which Supabase's Supavisor pooler may not forward on new connections.
 // (The role also has search_path set at the DB level in CA_0111; this makes it explicit and
 // survives any future connection-parameter drift.)
-pool.on('connect', (client) => {
-  client
-    .query("SET search_path TO civic_spaces, public; SET statement_timeout TO '10s'")
-    .catch((err: Error) => console.error('[civic_spaces] failed to set session parameters:', err.message));
-});
+//
+// Run as the pool's `onConnect` hook, which pg-pool awaits before handing the client to its
+// first caller. A fire-and-forget query in a `connect` listener raced that caller's own query
+// onto the same client — pg queued it, but warns that this is deprecated and will be removed
+// in pg@9. A failure is logged and the client is still used, as before.
+async function setSessionParameters(client: ClientBase): Promise<void> {
+  try {
+    await client.query("SET search_path TO civic_spaces, public; SET statement_timeout TO '10s'");
+  } catch (err) {
+    console.error('[civic_spaces] failed to set session parameters:', (err as Error).message);
+  }
+}
 
 pool.on('error', (err: Error & { code?: string }) => {
   // 57P01 = admin_shutdown (Supabase closed an idle connection); 57014 = statement_timeout.

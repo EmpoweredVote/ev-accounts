@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "6c4c7919-3e7f-41fa-8b1b-1c8b421fe4a7",
+      "office_id": "1294961c-40db-47ed-8caf-9a721073d902",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "6b2745fc-c0a7-5c43-b262-56163d795e14",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2023-08-24",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "As Burbank mayor he opposes hard-and-fast immediate notification rules and favors teacher discretion while saying staff will eventually definitely get the parents involved; this separates no rung on the anti-mandate side (neither keeping identity from parents nor forbidding notification rules is stated).",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Anthony says “If we create policy with hard and fast rules, where teachers immediately have to notify the parents … what you’re doing is putting the onus on the teacher”, which leans against “Require schools to notify parents”. But he also says staff will “eventually definitely get the parents involved”, which rules out “keep a student's gender identity from parents unless the student consents”, and he never says to “Forbid rules that require schools to tell parents”, so only a side is shown.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "6b2745fc-c0a7-5c43-b262-56163d795e14",
+          "text": "If we create policy with hard and fast rules, where teachers immediately have to notify the parents that a kid said a specific word like transgender, or something like that, what you’re doing is putting the onus on the teacher and creating more work for them",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "6b2745fc-c0a7-5c43-b262-56163d795e14",
+          "text": "Then, at a certain point, if the teacher sees that there’s something important, they’ll work with the child, they’ll work with the school counselor, and eventually definitely get the parents involved.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "batch_id": "dave-hall",
+  "seat": {
+    "politician_id": "e971c7f2-3ab2-483d-97a4-7fe919365f98",
+    "full_name": "Dave Hall",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "847135b4-5bd6-46e2-87e4-41bd792097bd",
+    "office_title": "Representative",
+    "jurisdiction_names": [
+      "Indiana"
+    ],
+    "term_start": "2022-11-09",
+    "start_precision": "day",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "IN",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "topic_key": "egi-draft-a1v2",
+      "served_revision_id": "draft-a1v2-pr945",
+      "question_text": "When a student wants to use a different name or gender identity at school, who decides whether parents are told?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require staff to keep a student's gender identity from parents unless the student consents."
+        },
+        {
+          "value": 2,
+          "text": "Forbid rules that require schools to tell parents."
+        },
+        {
+          "value": 3,
+          "text": "Require schools to tell parents when parents ask."
+        },
+        {
+          "value": 4,
+          "text": "Require schools to notify parents."
+        },
+        {
+          "value": 5,
+          "text": "Require parental permission before staff use a different name or pronouns."
+        }
+      ],
+      "own_words_levels": [
+        "federal",
+        "local"
+      ],
+      "annexMd": null
+    }
+  ]
+}

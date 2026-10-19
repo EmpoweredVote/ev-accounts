@@ -150,3 +150,16 @@ No Season 1 description exists (35 topics; draft "Means" from the served text al
 
 ⚠ `medicare/aid` contains a slash, so `annexPath` resolves it to `annex/medicare/aid.md` (a
 subdirectory). Keep that path when writing its annex.
+
+## Season 3 (draft)
+
+One file per topic whose Season 3 pin is a new revision, under `season3/`. The loader reads them:
+`build-coder-inputs.ts` (`coderAnnexPath`) uses `season<N>/<topic_key>.md` when the batch dir carries
+`season.json` (a `--season draft|<uuid>` bundle) and that file exists, and the root `<topic_key>.md`
+otherwise. Open-season bundles write no `season.json`, so they read the root file exactly as before.
+A topic with no file here gets its root annex in the draft season too — add one when its Season 3 pin
+is a new revision.
+
+| Topic | Season 3 revision | Status |
+|---|---|---|
+| [`education-library-books`](season3/education-library-books.md) | `7bb64029-0103-4df8-a4d8-3dcb2938f27f` (v2 r2, CA_0310, applied 2026-10-15) | draft 2026-10-15; Q2, Q4 ruled; removal-list line provisional |

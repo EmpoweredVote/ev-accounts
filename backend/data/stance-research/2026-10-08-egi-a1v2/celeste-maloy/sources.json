@@ -1,0 +1,33 @@
+{
+  "batch_id": "celeste-maloy",
+  "sources": [
+    {
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr2616eh/html/BILLS-119hr2616eh.htm",
+      "source_kind": "public-record",
+      "politician_id": "a7983eb6-bae0-4269-856b-f4554fb5ce29",
+      "office_id": "482bbeac-5c15-4097-8c1d-5eee8d07a5e9",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "H.R. 2616"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://clerk.house.gov/evs/2026/roll184",
+      "source_kind": "public-record",
+      "politician_id": "a7983eb6-bae0-4269-856b-f4554fb5ce29",
+      "office_id": "482bbeac-5c15-4097-8c1d-5eee8d07a5e9",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "H.R. 2616"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

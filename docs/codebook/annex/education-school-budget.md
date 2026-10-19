@@ -1,6 +1,6 @@
 # education-school-budget — served revision 0c82eb1c-4bb8-4c0e-9fc1-3646925a8bfc (Season 2)
 
-**Status:** draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
+**Status:** off for Season 3 — parked, not dropped (ruling 2026-10-16; removed from Season 3 and the Education Lens by CA_0313). Draft (2026-10-01). Lines marked _(proposed)_ are a drafter's reading, not yet ruled;
 lines marked _(ruled 2026-10-01)_ carry an operator ruling (Chris Andrews). No
 `_owed:_` line is open.
 

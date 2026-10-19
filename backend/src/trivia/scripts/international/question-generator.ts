@@ -1,4 +1,4 @@
-import { client, MODEL } from '../../scripts/content-generation/anthropic-client.js';
+import { client, MODEL, EFFORT, firstText, describeContent } from '../../scripts/content-generation/anthropic-client.js';
 import type { ClaimResult } from './claim-extractor.js';
 import type { QuestionInput } from '../../services/qualityRules/types.js';
 import { auditQuestion } from '../../services/qualityRules/index.js';
@@ -210,23 +210,23 @@ export async function generateQuestions(claim: ClaimResult): Promise<GeneratedQu
   try {
     const response = await client.messages.create({
       model: MODEL,
-      max_tokens: 4096,
+      max_tokens: 8192, // room for adaptive thinking as well as the reply
       system: QUESTION_GENERATION_SYSTEM_PROMPT,
       messages: [{ role: 'user', content: userMessage }],
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      output_config: { format: { type: 'json_schema', schema: QUESTION_GENERATION_SCHEMA } } as any,
+      output_config: { effort: EFFORT, format: { type: 'json_schema', schema: QUESTION_GENERATION_SCHEMA } } as any,
     });
 
-    const contentBlock = response.content[0];
-    if (contentBlock.type !== 'text') {
+    const text = firstText(response);
+    if (text === null) {
       console.error(
-        `[QuestionGenerator] Unexpected response type: ${contentBlock.type} for claim: "${claim.claim.slice(0, 60)}"`,
+        `[QuestionGenerator] Unexpected response type: ${describeContent(response)} for claim: "${claim.claim.slice(0, 60)}"`,
       );
       return [];
     }
 
     // Guaranteed valid JSON when using structured output
-    const parsed = JSON.parse(contentBlock.text) as {
+    const parsed = JSON.parse(text) as {
       questions: Array<{
         text: string;
         options: string[];

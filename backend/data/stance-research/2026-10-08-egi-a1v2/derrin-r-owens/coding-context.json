@@ -1,0 +1,55 @@
+{
+  "batch_id": "derrin-r-owens",
+  "seat": {
+    "politician_id": "53162004-fa67-42f7-a2f8-6289dc8237b2",
+    "full_name": "Derrin R. Owens",
+    "level": "state",
+    "mode": "seated",
+    "office_id": "2ddc0f70-c724-4cc3-a7aa-8039fb89a9c3",
+    "office_title": "State Senator District 27",
+    "jurisdiction_names": [
+      "Utah"
+    ],
+    "term_start": null,
+    "start_precision": "unknown",
+    "term_end": null,
+    "election_date": null,
+    "state_usps": "UT",
+    "prior_terms": []
+  },
+  "topics": [
+    {
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "topic_key": "egi-draft-a1v2",
+      "served_revision_id": "draft-a1v2-pr945",
+      "question_text": "When a student wants to use a different name or gender identity at school, who decides whether parents are told?",
+      "stances": [
+        {
+          "value": 1,
+          "text": "Require staff to keep a student's gender identity from parents unless the student consents."
+        },
+        {
+          "value": 2,
+          "text": "Forbid rules that require schools to tell parents."
+        },
+        {
+          "value": 3,
+          "text": "Require schools to tell parents when parents ask."
+        },
+        {
+          "value": 4,
+          "text": "Require schools to notify parents."
+        },
+        {
+          "value": 5,
+          "text": "Require parental permission before staff use a different name or pronouns."
+        }
+      ],
+      "own_words_levels": [
+        "federal",
+        "local"
+      ],
+      "annexMd": null
+    }
+  ]
+}

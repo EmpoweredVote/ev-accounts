@@ -1,0 +1,65 @@
+{
+  "batch_id": "dave-hall",
+  "sources": [
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.02.COMH.pdf",
+      "source_kind": "public-record",
+      "politician_id": "e971c7f2-3ab2-483d-97a4-7fe919365f98",
+      "office_id": "847135b4-5bd6-46e2-87e4-41bd792097bd",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.02.COMH.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "e971c7f2-3ab2-483d-97a4-7fe919365f98",
+      "office_id": "847135b4-5bd6-46e2-87e4-41bd792097bd",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.220_H.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/HB1608.05.ENRS.pdf",
+      "source_kind": "public-record",
+      "politician_id": "e971c7f2-3ab2-483d-97a4-7fe919365f98",
+      "office_id": "847135b4-5bd6-46e2-87e4-41bd792097bd",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.05.ENRS.txt"
+    },
+    {
+      "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.489_H.pdf",
+      "source_kind": "public-record",
+      "politician_id": "e971c7f2-3ab2-483d-97a4-7fe919365f98",
+      "office_id": "847135b4-5bd6-46e2-87e4-41bd792097bd",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "HB 1608"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/in-2023-HB1608.489_H.txt"
+    }
+  ]
+}

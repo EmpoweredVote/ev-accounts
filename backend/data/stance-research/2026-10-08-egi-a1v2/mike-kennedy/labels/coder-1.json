@@ -1,0 +1,52 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "9e3164d5-ce71-4c50-9220-b969265ce551",
+      "office_id": "c9e50902-0d9d-4cfa-ac31-f19fa623b555",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "adc755b1-476d-5b3e-a27f-a08c8d9597c1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": "a public school that receives funds under such Act shall obtain parental consent before changing a covered student's-- (1) gender markers, pronouns, or preferred name on any school form",
+          "note": "Sec. 2 matches the parental-permission rung's text, but the bill also bars ESEA funds for teaching gender ideology (Sec. 3), and at the federal level only own words can seat a chair on this topic.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "ab51603d-56cb-5732-8362-76894cb35de3",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-05-20",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "H.R. 2616 (119th)",
+          "provision_quote": null,
+          "note": "Roll Call 184, On Passage of H.R. 2616; Kennedy (UT) voted Aye; a record cannot seat a chair at this no-lever level.",
+          "record_kind": "vote",
+          "actor_quote": "Kaptur Kelly (MS) Kelly (PA) Kennedy (UT)",
+          "tally_quote": "TOTALS 217 198 15"
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "no-evidence",
+      "rests_on": [],
+      "reasoning": "The only evidence is his Aye on final passage of H.R. 2616, whose Sec. 2 requires schools to \"obtain parental consent before changing a covered student's-- (1) gender markers, pronouns, or preferred name\", close to the rung \"Require parental permission before staff use a different name or pronouns.\" But the federal level holds no lever on this topic, so only his own words can seat a chair, and no own-words passage is in the sources.",
+      "needs_source": [
+        "Mike Kennedy's own words (statement, press release, floor speech or issue page) on schools telling parents about, or getting parental permission for, a student's name or pronoun change, e.g. any statement on H.R. 2616 (119th)"
+      ],
+      "quotes": []
+    }
+  ]
+}

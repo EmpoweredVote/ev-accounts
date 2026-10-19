@@ -1,0 +1,101 @@
+{
+  "batch_id": "van-wanggaard",
+  "sources": [
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/proposaltext/2025/REG/AB103",
+      "source_kind": "public-record",
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43",
+      "office_id": "1cd3dc50-6b12-4a9e-8a1e-3113c697e773",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 103"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2025/sv0170",
+      "source_kind": "public-record",
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43",
+      "office_id": "1cd3dc50-6b12-4a9e-8a1e-3113c697e773",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 103"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/proposaltext/2023/REG/AB510",
+      "source_kind": "public-record",
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43",
+      "office_id": "1cd3dc50-6b12-4a9e-8a1e-3113c697e773",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 510"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2023/sv0263",
+      "source_kind": "public-record",
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43",
+      "office_id": "1cd3dc50-6b12-4a9e-8a1e-3113c697e773",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 510"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/proposaltext/2021/REG/AB963",
+      "source_kind": "public-record",
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43",
+      "office_id": "1cd3dc50-6b12-4a9e-8a1e-3113c697e773",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 963"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://docs.legis.wisconsin.gov/document/votes/2021/sv0326",
+      "source_kind": "public-record",
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43",
+      "office_id": "1cd3dc50-6b12-4a9e-8a1e-3113c697e773",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 963"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    },
+    {
+      "url": "https://legis.wisconsin.gov/senate/21/Wanggaard/media/acod20my/parental-bill-of-rights-heads-to-governor-evers.pdf",
+      "source_kind": "own-site",
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43",
+      "office_id": "1cd3dc50-6b12-4a9e-8a1e-3113c697e773",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [],
+      "pointer_passages": [],
+      "candidate_quotes": []
+    }
+  ]
+}

@@ -1,0 +1,145 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "908761b2-ab7f-4307-a073-a5a00e220b43",
+      "office_id": "1cd3dc50-6b12-4a9e-8a1e-3113c697e773",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "52d59882-683b-593f-827f-28853cb5de3e",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2026-02-11",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": null,
+          "note": "Senate concurrence roll call on a single-subject name/pronoun school-policy bill; Wanggaard is in the Ayes, 18-15, not near-unanimous.",
+          "record_kind": "vote",
+          "actor_quote": "AYES - 18 BRADLEY JAGLER QUINN CABRAL-GUEVARA JAMES STAFSHOLT FELZKOWSKI KAPENGA TESTIN FEYEN LEMAHIEU TOMCZYK HUTTON MARKLEIN WANGGAARD",
+          "tally_quote": "AYES - 18"
+        },
+        {
+          "snapshot_id": "22a17d0c-528c-5a07-8362-74580cace6d2",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-04",
+          "v4_shape": "chair-shaped",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025-2026)",
+          "provision_quote": "(b) During school hours, school staff may not refer to a pupil who is a minor by 8 using a name or pronouns that do not align with the pupil’s biological sex without 9 written authorization from the pupil’s parent or legal guardian.",
+          "note": "Operative section requires written parental authorization before staff use a different name or pronouns, matching the permission rung.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "f8d9ec06-4d42-5096-b887-752b16c7ed50",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2024-02-13",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": null,
+          "note": "Aye on a parental bill of rights covering religion, medical care, records and education; the name/pronoun right is one of many parts.",
+          "record_kind": "vote",
+          "actor_quote": "FELZKOWSKI LEMAHIEU WANGGAARD",
+          "tally_quote": "AYES - 22"
+        },
+        {
+          "snapshot_id": "40376936-9766-5c57-b982-75a9fefea8fe",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2023-10-18",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 510 (2023-2024)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 16 school.",
+          "note": "Cosponsored; declares a parental right to determine names and pronouns but sets no permission or notification mechanism for staff, so it shows only the parental side.",
+          "record_kind": "sponsor",
+          "actor_quote": "cosponsored by Senators Wanggaard , Quinn , Marklein and Nass",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "652cdbf8-ee83-57f7-8867-a859ff4da742",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-03-08",
+          "v4_shape": "multi-subject",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": null,
+          "note": "Aye on an earlier multi-part parental bill of rights; the vote cannot be tied to the name/pronoun clause alone.",
+          "record_kind": "vote",
+          "actor_quote": "MARKLEIN WANGGAARD",
+          "tally_quote": "AYES - 19"
+        },
+        {
+          "snapshot_id": "d141d7b2-3b4d-55e7-95e1-6dedbf286608",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2022-02-08",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 963 (2021-2022)",
+          "provision_quote": "(e) The right to determine the names and pronouns used for the child while at 19 school.",
+          "note": "Cosponsored; same declared right with no staff-permission or notice mechanism, so direction only.",
+          "record_kind": "sponsor",
+          "actor_quote": "cosponsored by Senators Darling , Roth , Wanggaard and Nass",
+          "tally_quote": null
+        },
+        {
+          "snapshot_id": "d44c4907-b432-5baa-a881-1f26d68e4314",
+          "v1_attribution": "own-words",
+          "v2_relevance": "on-question",
+          "v3_class": "statement-other",
+          "date": "2024-02-13",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": null,
+          "provision_quote": null,
+          "note": "His quoted words say parents should determine the child's name, a parental-control lean without naming permission or notice.",
+          "record_kind": null,
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": 5,
+      "v6_blank_reason": null,
+      "rests_on": [
+        "52d59882-683b-593f-827f-28853cb5de3e",
+        "22a17d0c-528c-5a07-8362-74580cace6d2"
+      ],
+      "reasoning": "Wanggaard voted Aye (18-15) on Senate concurrence in AB 103 (2025-2026), a single-subject bill whose operative section bars staff from referring to a minor by a name or pronouns not aligned with biological sex \"without written authorization from the pupil’s parent or legal guardian\", which matches \"Require parental permission before staff use a different name or pronouns.\" His AB 510 and AB 963 parental-rights bills and his press-release words point the same way but only show direction.",
+      "needs_source": [],
+      "quotes": [
+        {
+          "snapshot_id": "d44c4907-b432-5baa-a881-1f26d68e4314",
+          "text": "Of course parents should have the right to determine the name and religion of their child, and see their medical records.",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": true,
+          "v8_codes": []
+        },
+        {
+          "snapshot_id": "d44c4907-b432-5baa-a881-1f26d68e4314",
+          "text": "Parents, not schools and not health care providers, are best able to make decisions about their children,",
+          "v7_tier": "direction",
+          "v7_flag": null,
+          "v8_quotable": false,
+          "v8_codes": ["off-question"]
+        }
+      ]
+    }
+  ]
+}

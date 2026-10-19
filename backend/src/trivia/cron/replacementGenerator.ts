@@ -69,7 +69,7 @@ export async function generateReplacement(
     }
 
     // Static imports for lightweight modules
-    const { client, MODEL } = await import('../scripts/content-generation/anthropic-client.js');
+    const { client, MODEL, EFFORT, firstText, describeContent } = await import('../scripts/content-generation/anthropic-client.js');
     const { buildSystemPrompt } = await import('../scripts/content-generation/prompts/system-prompt.js');
     const { QuestionSchema } = await import('../scripts/content-generation/question-schema.js');
     const { auditQuestion } = await import('../services/qualityRules/index.js');
@@ -96,17 +96,18 @@ export async function generateReplacement(
 
       const response = await client.messages.create({
         model: MODEL,
-        max_tokens: 2000,
+        max_tokens: 4096, // room for adaptive thinking as well as the reply
         system: systemPrompt,
         messages: [{ role: 'user', content: userMessage }],
+        output_config: { effort: EFFORT },
       });
 
-      const contentBlock = response.content[0];
-      if (contentBlock.type !== 'text') {
-        throw new Error(`Unexpected Anthropic response content type: ${contentBlock.type}`);
+      const text = firstText(response);
+      if (text === null) {
+        throw new Error(`Unexpected Anthropic response content type: ${describeContent(response)}`);
       }
 
-      const responseText = contentBlock.text.trim();
+      const responseText = text.trim();
       const jsonMatch = responseText.match(/\{[\s\S]*\}/);
       if (!jsonMatch) {
         throw new Error(`No JSON found in Anthropic response preview: ${responseText.slice(0, 200)}`);

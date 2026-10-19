@@ -1,0 +1,53 @@
+{
+  "codebook_version": "0.4",
+  "coder_slot": 1,
+  "rows": [
+    {
+      "politician_id": "11c8f424-55d1-4e28-b297-d6a670a033d6",
+      "office_id": "5d3e9aa3-370a-421c-af59-3c1ce51587db",
+      "topic_id": "00000000-0000-0000-0000-0000000a1002",
+      "served_revision_id": "draft-a1v2-pr945",
+      "passages": [
+        {
+          "snapshot_id": "9621ef0d-49b9-5e76-bbfb-ba6b069dadff",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-20",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025)",
+          "provision_quote": null,
+          "note": "No on passage of a single-subject bill requiring parental written authorization for names/pronouns; a No rules out only the parental-permission rung and does not separate rungs 1-4.",
+          "record_kind": "vote",
+          "actor_quote": "N CRUZ D",
+          "tally_quote": "AYES - 50 NAYS - 43 NOT VOTING - 6"
+        },
+        {
+          "snapshot_id": "fc7eac20-a058-5170-802c-cf9ec74474d1",
+          "v1_attribution": "own-act",
+          "v2_relevance": "on-question",
+          "v3_class": "record",
+          "date": "2025-03-04",
+          "v4_shape": "direction-only",
+          "v5_time": "in-term",
+          "instrument": "AB 103 (2025)",
+          "provision_quote": "(b) During school hours, school staff may not refer to a pupil who is a minor by 8 using a name or pronouns that do not align with the pupil’s biological sex without 9 written authorization from the pupil’s parent or legal guardian.",
+          "note": "Bill text; operative section matches the rung requiring parental permission before staff use a different name or pronouns, so a vote against it shows only a side.",
+          "record_kind": "vote",
+          "actor_quote": null,
+          "tally_quote": null
+        }
+      ],
+      "v6_value": null,
+      "v6_blank_reason": "direction-only",
+      "rests_on": [],
+      "reasoning": "Cruz voted No on AB 103 (2025), whose operative section bars staff from using a name or pronouns not aligned with biological sex 'without written authorization from the pupil’s parent or legal guardian' — the rung 'Require parental permission before staff use a different name or pronouns.' Voting against it rules out that rung but does not show whether she favors notification on request, mandatory notification, forbidding notification rules, or confidentiality unless the student consents.",
+      "needs_source": [
+        "Angelina Cruz's own words (statement, floor speech, or questionnaire) on whether schools should tell parents about a student's name or gender identity change",
+        "Any Wisconsin Assembly bill Cruz authored or co-sponsored on parental notification of student gender identity"
+      ],
+      "quotes": []
+    }
+  ]
+}

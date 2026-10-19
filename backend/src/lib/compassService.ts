@@ -1,5 +1,6 @@
 import { adminRpc, supabaseAnon, createUserClient } from './supabase.js';
 import { pool } from './db.js';
+import { cache } from './cache.js';
 import { SEASON_IS_PUBLISHED, servedRevisionLateral } from './seasonService.js';
 import { appliesFromRoles } from './topicApplicability.js';
 
@@ -106,6 +107,15 @@ export interface PromotedTopic {
   office_scope: string[] | null;
   fc_community_slug: string | null;
   judicial_role: string | null;
+  // CC_0231. Editorial's one line on what this question asks you to tell apart,
+  // shown under the question to everyone. It comes from `eff` — the SERVED
+  // revision — for the same reason title and question_text do: it is wording,
+  // and wording follows the season's pin (ADR 0006 Option Y).
+  //
+  // ⚠ NOT `public_note`. That explains why a question CHANGED and is shown only
+  // to a user whose stored answer was flagged by it. Rendering one in the
+  // other's slot tells a first-time voter about an edit they never saw.
+  guidance: string | null;
 }
 
 /**
@@ -145,6 +155,7 @@ export async function getPromotedTopics(): Promise<PromotedTopic[]> {
     // invisible until a season pins it. See ADR 0006 §3.
     `SELECT p.id::text AS id, p.topic_key, eff.title, eff.short_title, eff.question_text,
             eff.version, eff.id::text AS effective_revision_id,
+            NULLIF(btrim(eff.guidance), '') AS guidance,
             p.fc_community_slug, p.judicial_role,
             t.is_live, t.office_scope
        FROM inform.compass_topics_promoted p
@@ -380,6 +391,15 @@ export async function getCompassCategories() {
           title: t.title,
           short_title: t.short_title,
           question_text: t.question_text,
+          // 🔴 THE THIRD EXPLICIT LIST THAT HAS TO LEARN A NEW FIELD. A topic's
+          // wording reaches a consumer through servedRevisionLateral's SELECT,
+          // then getPromotedTopics', then this re-projection — each one naming
+          // its columns, each one silently dropping anything it has not heard
+          // of. guidance passed the first two and died here, so the calibration
+          // page (which builds its topic list from CATEGORIES, not from
+          // /compass/topics) rendered no line at all while /compass/topics
+          // served one for all 60. Caught by the smoke suite, not by a type.
+          guidance: t.guidance,
           office_scope: t.office_scope,
           ...tierFlagsFor(t.id),
         };
@@ -1393,4 +1413,129 @@ export async function getPoliticianCitations(politicianId: string): Promise<Topi
     block.all_stances = stancesByTopic.get(block.topic_key) ?? [];
   }
   return blocks;
+}
+
+// ---------------------------------------------------------------------------
+// getTopicAnswerStats — how the officials answered, per promoted topic.
+// ---------------------------------------------------------------------------
+
+export interface TopicAnswerStats {
+  topicId: string;
+  /** Officials holding a real position (rungs 1–5) on this question. */
+  total: number;
+  /**
+   * Officials per rung, '1'..'5'. ABSENT when the ladder is not comparable —
+   * see the rung_map note below. A consumer with no `byValue` cannot state an
+   * agreement figure, which is the point: the shape makes the unsafe claim
+   * unavailable rather than merely discouraged.
+   */
+  byValue?: Record<string, number>;
+}
+
+/** Below this, a share of the room is a fact about the room, not about politics. */
+export const MIN_STATS_SAMPLE = 25;
+
+/**
+ * Per-topic answer counts for the promoted set — the line a voter sees AFTER
+ * they choose. Public, identical for everyone, cached for an hour.
+ *
+ * 🔴 VALUE 0 IS NOT AN ANSWER. 1,629 rows across the promoted topics carry
+ * value 0 — the "no position recorded" sentinel, not a rung.
+ *
+ * It does NOT change `total`, and that is worth knowing rather than guessing:
+ * measured across all 60 promoted topics, there is no topic where a value-0 row
+ * belongs to somebody who has no real answer as well, so counting DISTINCT
+ * politicians gives the same number either way. The filter is load-bearing for
+ * the other two things:
+ *   - without it `byValue` grows a sixth bucket keyed '0' that is not a rung,
+ *     and the client divides by a denominator that includes non-answers;
+ *   - `latest` takes the most recent row per person, so a stale 0 would
+ *     outrank the real position underneath it and move that official out of
+ *     their bucket entirely.
+ * It is applied before DISTINCT ON for exactly that second reason.
+ *
+ * 🔴 WHY THIS COUNTS ACROSS REVISIONS, AND WHAT MAKES THAT SAFE. The obvious
+ * rule — only answers stamped on the revision this voter is reading — was
+ * measured first and is unusable: it leaves 30 of the 60 promoted topics at
+ * ZERO and 55 of 60 under the sample floor, because officials' answers are
+ * spread over whichever revision was current when each was researched.
+ *
+ * What makes the looser rule honest is `rung_map`. Of the 74 revisions that
+ * carry one, 72 are the identity map {1:1,2:2,3:3,4:4,5:5} — the wording moved,
+ * the ladder did not — and exactly TWO are not. Everywhere else a value means
+ * the position it always meant, which is already the assumption the compass
+ * makes when it scores a voter against an official.
+ *
+ * ⚠ SO THOSE TOPICS ARE DROPPED WHOLE, AND DELIBERATELY BLUNTLY. This does NOT
+ * reimplement CC_0061's per-answer disposition; that rule has an owner and one
+ * copy. It asks a far weaker question — did this topic's ladder EVER move? —
+ * and on a yes withholds `byValue` for the whole topic, so no share can be
+ * computed from it at all. Those topics lose the agreement line and keep their
+ * count. Being right about two topics is not worth a second implementation of
+ * an editorial decision.
+ */
+export async function getTopicAnswerStats(): Promise<TopicAnswerStats[]> {
+  const CACHE_KEY = 'compass:topic-answer-stats:v1';
+  const cached = await cache.get<TopicAnswerStats[]>(CACHE_KEY);
+  if (cached) return cached;
+
+  const { rows } = await pool.query<{
+    topic_id: string;
+    total: number;
+    comparable: boolean;
+    by_value: Record<string, number> | null;
+  }>(
+    `WITH ladder_moved AS (
+       -- Topics whose rungs have ever been remapped to anything but themselves.
+       -- jsonb equality is order-insensitive, so this is an exact test and not
+       -- a string compare that a reformatted map would slip past.
+       SELECT DISTINCT topic_id
+         FROM inform.compass_topic_revisions
+        WHERE rung_map IS NOT NULL
+          AND rung_map <> '{"1":1,"2":2,"3":3,"4":4,"5":5}'::jsonb
+     ),
+     -- One row per person per topic. A politician answered on two revisions of
+     -- the same question is one official, counted once, in the bucket of their
+     -- most recent answer — not once per revision they were researched under.
+     latest AS (
+       SELECT DISTINCT ON (pa.politician_id, pa.topic_id)
+              pa.politician_id, pa.topic_id, pa.value::int AS value
+         FROM inform.politician_answers pa
+         JOIN inform.compass_topics_promoted p ON p.id = pa.topic_id
+         -- Research can be PRE-STAGED into a DRAFT season, and those rows must
+         -- reach no voter read. This one is as voter-facing as they come: it is
+         -- the sentence a person is shown about real officials the instant
+         -- after they answer. Caught by draftSeasonWrites.test.ts, which exists
+         -- because this exact omission had already put unpublished research on
+         -- the public coverage maps once.
+         JOIN inform.seasons s ON s.id = pa.season_id AND ${SEASON_IS_PUBLISHED}
+        WHERE pa.value BETWEEN 1 AND 5
+        ORDER BY pa.politician_id, pa.topic_id,
+                 pa.updated_at DESC NULLS LAST, pa.created_at DESC NULLS LAST
+     ),
+     buckets AS (
+       SELECT topic_id, value, count(*)::int AS n
+         FROM latest GROUP BY topic_id, value
+     )
+     SELECT p.id::text AS topic_id,
+            COALESCE((SELECT sum(b.n)::int FROM buckets b WHERE b.topic_id = p.id), 0) AS total,
+            (m.topic_id IS NULL) AS comparable,
+            CASE WHEN m.topic_id IS NULL THEN
+              COALESCE(
+                (SELECT jsonb_object_agg(b.value::text, b.n)
+                   FROM buckets b WHERE b.topic_id = p.id),
+                '{}'::jsonb)
+            END AS by_value
+       FROM inform.compass_topics_promoted p
+       LEFT JOIN ladder_moved m ON m.topic_id = p.id`
+  );
+
+  const stats: TopicAnswerStats[] = rows.map(r => ({
+    topicId: r.topic_id,
+    total: Number(r.total) || 0,
+    ...(r.comparable && r.by_value ? { byValue: r.by_value } : {}),
+  }));
+
+  await cache.set(CACHE_KEY, stats, 3600);
+  return stats;
 }

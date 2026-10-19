@@ -1,0 +1,35 @@
+{
+  "batch_id": "maria-elena-durazo",
+  "sources": [
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-chaptered.txt"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+      "source_kind": "public-record",
+      "politician_id": "c7dc9c50-84c6-4bde-af06-e7f9d5167e93",
+      "office_id": "493a571f-b01b-4253-afbc-ffe3979f52bb",
+      "topic_keys": [
+        "egi-draft-a1v2"
+      ],
+      "instruments": [
+        "AB 1955"
+      ],
+      "pointer_passages": [],
+      "candidate_quotes": [],
+      "human_saved_path": "human-saved/ca-2024-AB1955-senate-floor-2024-06-13.txt"
+    }
+  ]
+}

@@ -1,0 +1,853 @@
+{
+ "people": [
+  {
+   "id": "P05",
+   "name": "Peggy Mayfield",
+   "findable": true,
+   "found_page": "https://www.indianahouserepublicans.com/members/general/peggy-mayfield/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://peggymayfield.com/issues.html",
+     "note": "Stale campaign site (~2014): Fiscal Conservative, Pro-Life/Dedicated Mom, 2nd Amendment, Leader, Business. Nothing in domain."
+    },
+    "T02": {
+     "result": "inaccessible",
+     "url": "https://dailyjournal.net/?p=1779019",
+     "note": "Daily Journal 'Where They Stand' Q&A (2022 cycle) exists; 403 Cloudflare to WebFetch and curl; no Wayback copy. 2026 Bloomington Chamber page has no Mayfield Q&A."
+    },
+    "T03": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/29510/race/24252/election/1357",
+     "note": "iVoterGuide 2026: every item 'Did not answer' (incl. gender identity nondiscrimination item). Vote Smart Political Courage Test page returns 403."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": "No pledge found."
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to fetch (login/JS); Google Ads Transparency Center is JS-only (no ad content in HTML). Not searchable by fetch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/peggy.mayfield.9",
+     "note": "Facebook pages (listed on iVoterGuide and campaign site) and X @MayfieldHouse60 need login/JS."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No debate/forum transcript or video found."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://www.indianahouserepublicans.com/news/statement/morgan-county-legislators-help-lawmakers-override-veto-to-protect-girls-sports/",
+     "note": "Caucus press release 2022 (K-12 girls' sports) and 2025 newsletter (women's sports). 2026 session recap and 2026 survey handout: off-topic."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "No news article with her direct quotes in domain found; Daily Journal 2024 incumbent article 403."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "None found."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "No issue-group endorsement found."
+    },
+    "T12": {
+     "result": "found-off-topic",
+     "url": "https://ivoterguide.com/candidate/29510/race/24252/election/1357",
+     "note": "iVoterGuide overall rating 'Conservative' (general ideology, not domain-specific). BillTrack50 scorecard (https://www.billtrack50.com/public/scorecard/legislator/TNvEht1gV0ilLkxyi9h0rQ/17115) has no domain bills and no named issuer."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+     "note": "Yea on HB 1608 (2023) third reading and concurrence. HEA 1041 (2022) override vote known from her own release; House roll-call PDF for it and for SEA 480 (2023) not located."
+    }
+   },
+   "statements": [
+    {
+     "text": "\"Participation in sports teaches our children so many valuable skills like work ethic and fair play. Indiana's K-12 girl athletes should be able to compete without fear of losing opportunities to biological males, and I voted to override this veto to continue those protections,\"",
+     "url": "https://www.indianahouserepublicans.com/news/statement/morgan-county-legislators-help-lawmakers-override-veto-to-protect-girls-sports/",
+     "date": "2022-05-24",
+     "source_type": "T08",
+     "context": "Caucus statement on the override of the governor's veto of HEA 1041 (K-12 girls' sports)",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "From safeguarding Hoosier taxpayers and lowering health care costs, to protecting women's sports and reining in Medicaid spending, we took steps to keep Indiana fiscally responsible while funding critical services, and to help ensure a better tomorrow for our students, parents and families.",
+     "url": "https://www.indianahouserepublicans.com/news/press-releases/mayfield-highlighting-news-laws-in-effect-this-july/",
+     "date": "2025-07-30",
+     "source_type": "T08",
+     "context": "Constituent column on new laws in effect July 2025",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Additionally, ensuring fairness in collegiate sports is essential to protecting opportunities for female athletes. House Enrolled Act 1041 protects the integrity of women’s sports in Indiana by preventing biological males from competing in female categories at the collegiate level. This law follows our previous efforts to protect girls’ K-12 sports.",
+     "url": "https://www.indianahouserepublicans.com/news/press-releases/mayfield-highlighting-news-laws-in-effect-this-july/",
+     "date": "2025-07-30",
+     "source_type": "T08",
+     "context": "Same column; 2025 HEA 1041 (collegiate) with reference to K-12 law",
+     "sub_issue_hint": "sports (collegiate; adjacent)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Yea, HB 1608 (2023, human sexuality instruction; name/pronoun parental notice), House 3rd reading, Roll Call 220, 2023-02-23",
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.220_H.pdf",
+     "side_hint": "for parental notice / restrict instruction"
+    },
+    {
+     "kind": "vote",
+     "desc": "Yea, HB 1608 motion to concur, Roll Call 489, 2023-04-24",
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.489_H.pdf",
+     "side_hint": "for parental notice / restrict instruction"
+    },
+    {
+     "kind": "vote",
+     "desc": "Voted to override veto of HEA 1041 (K-12 girls' sports by sex), 2022-05-24 — per her own caucus release; roll-call PDF not located",
+     "url": "https://www.indianahouserepublicans.com/news/statement/morgan-county-legislators-help-lawmakers-override-veto-to-protect-girls-sports/",
+     "side_hint": "restrict trans girls in sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "'Voted No for SB 20 sexual orientation 2016' (amendment adding sexual orientation/gender identity protections) — as reported by iVoterGuide, not verified in roll call",
+     "url": "https://ivoterguide.com/candidate/29510/race/24252/election/1357",
+     "side_hint": "against SOGI nondiscrimination (adjacent)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "iVoterGuide 2026 rating 'Conservative' (general, not domain-specific)",
+     "url": "https://ivoterguide.com/candidate/29510/race/24252/election/1357",
+     "side_hint": "conservative"
+    }
+   ]
+  },
+  {
+   "id": "P13",
+   "name": "Jeffrey Hall",
+   "findable": true,
+   "found_page": "https://www.ipm.org/2024-02-20/jeff-hall-running-for-monroe-county-coroner",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign website found."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "No candidate questionnaire found; IPM 2024 article covers coroner duties only. Blue Voter Guide listing returns 403 (pointer only)."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to fetch (login/JS); Google Ads Transparency Center is JS-only (no ad content in HTML). Not searchable by fetch."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign social account found (LinkedIn mentioned in IPM only)."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://www.ipm.org/2024-02-20/jeff-hall-running-for-monroe-county-coroner",
+     "note": "Quotes on coroner role and public education about the office only."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "Coroner office has no legislative or board votes in domain."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P21",
+   "name": "Mike Bellagio",
+   "findable": true,
+   "found_page": "https://www.wuwm.com/wisconsin-state-assembly-district-62-candidates",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "WUWM and The Ballot Brief (https://theballotbrief.com/state/wisconsin/racine-county/wisconsin-assembly-district-62) report no campaign website."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "WUWM sent a questionnaire; 'Bellagio did not respond'."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": "None found. Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to fetch (login/JS); Google Ads Transparency Center is JS-only (no ad content in HTML). Not searchable by fetch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/profile.php?id=61589763536855",
+     "note": "Public Facebook page (per WUWM, BallotReady); fetch returns 400/login wall."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Leads mention WPR (Aug 2026) coverage of profane Facebook posts, reported as off-topic; article not fetched. Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "inaccessible",
+     "url": "https://www.rusd.org/board-of-education",
+     "note": "Sits on Racine Unified board (District 8, 2024-present, per BallotReady https://www.ballotready.org/people/mike-bellagio-ed914b7d-1b34-4cec-b329-cf86c115429d). rusd.org serves a bot-challenge page; no RUSD board vote in domain found in earlier lead work."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P29",
+   "name": "Melanie Hall",
+   "findable": true,
+   "found_page": "https://www.heraldextra.com/news/2026/jan/21/candidates-running-for-state-local-school-boards-in-2026/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign website found; she runs unopposed in 2026 (Herald Extra)."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Unopposed 2026; no questionnaire found."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to fetch (login/JS); Google Ads Transparency Center is JS-only (no ad content in HTML). Not searchable by fetch."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No public campaign account found. Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://mtec.edu/melanie-hall",
+     "note": "MTECH board bio (education background only). Provo district board news (https://provo.edu/category/news/pcsd-school-board/) carries meeting summaries, none in domain."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-off-topic",
+     "url": "https://provo.edu/category/news/pcsd-school-board/",
+     "note": "Brief check of 2026 board agendas/summaries: boundaries and school consolidation; no domain item seen."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P37",
+   "name": "John Curtis",
+   "findable": true,
+   "found_page": "https://www.curtis.senate.gov/newsroom/press-releases/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.johncurtis.org/issues/",
+     "note": "Issues: Public Lands, China, Southern Border, Energy, Utah Values, Crypto; nothing in domain."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "No news/civic questionnaire with own answers found."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/",
+     "note": "Vote Smart pages return 403 to fetch."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to fetch (login/JS); Google Ads Transparency Center is JS-only (no ad content in HTML). Not searchable by fetch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://x.com/SenJohnCurtis",
+     "note": "X/Facebook need JS/login."
+    },
+    "T07": {
+     "result": "found-off-topic",
+     "url": "https://www.deseret.com/politics/2024/10/10/utah-senate-debate-curtis-gleich/",
+     "note": "2024 general debate recap: abortion, immigration, lands; no domain question reported. No transcript checked."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.curtis.senate.gov/?s=transgender",
+     "note": "Senate site search for transgender/gender/LGBTQ returns no release; 'parents' hits are online child safety."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://www.sltrib.com/news/politics/2019/08/23/rep-john-curtis-says-utah/",
+     "note": "2019 Sutherland Institute speech on LGBTQ rights and religious liberty (adjacent: general equality)."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC: 118th 8, 117th 8, 116th 0."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "note": "House and Senate votes on sports, Parents Bill of Rights, Equality Act; cosponsor of Fairness for All Act."
+    }
+   },
+   "statements": [
+    {
+     "text": "“There is room to protect both rights — without compromising religious values.”",
+     "url": "https://www.sltrib.com/news/politics/2019/08/23/rep-john-curtis-says-utah/",
+     "date": "2019-08-23",
+     "source_type": "T09",
+     "context": "Speech at Sutherland Institute on religious liberty and LGBTQ rights",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "“I’m grateful for my association and relationships in my life that helped me better understand the experiences of the LGBTQ community and who have been patient with a religious, conservative Utah boy who grew up in the ‘60s and took a little longer to develop the appropriate empathy than I would like to admit,”",
+     "url": "https://www.sltrib.com/news/politics/2019/08/23/rep-john-curtis-says-utah/",
+     "date": "2019-08-23",
+     "source_type": "T09",
+     "context": "Same speech",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "“It was firsthand experience with someone that I love who is part of that community. That changed my heart.”",
+     "url": "https://www.sltrib.com/news/politics/2019/08/23/rep-john-curtis-says-utah/",
+     "date": "2019-08-23",
+     "source_type": "T09",
+     "context": "Same speech, on how his view of the LGBTQ community changed",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "“I believe that the LGBTQ community is a critical part of the fabric of our country and our state. They're deserving of our unequivocal love and respect, and their contributions here in Utah are utterly invaluable.”",
+     "url": "https://www.sltrib.com/news/politics/2019/08/23/rep-john-curtis-says-utah/",
+     "date": "2019-08-23",
+     "source_type": "T09",
+     "context": "Same speech",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "“Here in Utah, we have an opportunity to continue leading the way and fostering religious liberty and rebranding,” he said. “I believe there’s still real opportunity to continue cementing a critical balance between religious liberty and individual rights.”",
+     "url": "https://www.sltrib.com/news/politics/2019/08/23/rep-john-curtis-says-utah/",
+     "date": "2019-08-23",
+     "source_type": "T09",
+     "context": "Same speech, citing Utah's 2015 nondiscrimination compromise",
+     "sub_issue_hint": "nondiscrimination (adjacent)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Senate: Yea on cloture on motion to proceed to S. 9 (Protection of Women and Girls in Sports Act), roll 100, 2025-03-03",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "side_hint": "restrict trans girls in sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "Senate: Not Voting on cloture on Tuberville Amdt. 4421 ('protect women and girls in athletics'), roll 60, 2026-03-21",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00060.xml",
+     "side_hint": "none"
+    },
+    {
+     "kind": "vote",
+     "desc": "House (UT-3): Yea on H.R. 734 Protection of Women and Girls in Sports Act, roll 192, 2023-04-20",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "side_hint": "restrict trans girls in sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "House: Aye on H.R. 5 Parents Bill of Rights Act, roll 161, 2023-03-24",
+     "url": "https://clerk.house.gov/evs/2023/roll161.xml",
+     "side_hint": "parental rights"
+    },
+    {
+     "kind": "vote",
+     "desc": "House: No on H.R. 5 Equality Act, roll 217, 2019-05-17",
+     "url": "https://clerk.house.gov/evs/2019/roll217.xml",
+     "side_hint": "against Equality Act (adjacent)"
+    },
+    {
+     "kind": "vote",
+     "desc": "House: Nay on H.R. 5 Equality Act, roll 39, 2021-02-25",
+     "url": "https://clerk.house.gov/evs/2021/roll039.xml",
+     "side_hint": "against Equality Act (adjacent)"
+    },
+    {
+     "kind": "bill",
+     "desc": "Original cosponsor, Fairness for All Act H.R. 5331 (116th, 2019-12-06): SOGI nondiscrimination with religious exemptions",
+     "url": "https://www.govinfo.gov/content/pkg/BILLS-116hr5331ih/html/BILLS-116hr5331ih.htm",
+     "side_hint": "SOGI protections with religious-liberty carve-outs (adjacent)"
+    },
+    {
+     "kind": "bill",
+     "desc": "Original cosponsor, Fairness for All Act H.R. 1440 (117th, 2021-02-26)",
+     "url": "https://www.govinfo.gov/content/pkg/BILLS-117hr1440ih/html/BILLS-117hr1440ih.htm",
+     "side_hint": "SOGI protections with religious-liberty carve-outs (adjacent)"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard: 118th 8, 117th 8, 116th 0",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "low pro-LGBTQ score"
+    }
+   ]
+  },
+  {
+   "id": "P45",
+   "name": "Lesli Stein",
+   "findable": true,
+   "found_page": "https://www.lvusd.org/board-of-education/about-the-board",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No current campaign site found (Ballotpedia cites a 2013 site). Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Ballotpedia page (https://ballotpedia.org/Lesli_Stein) covers 2009/2013 races only; no questionnaire."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to fetch (login/JS); Google Ads Transparency Center is JS-only (no ad content in HTML). Not searchable by fetch."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Searches found no article quoting her in domain. Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Lesli_Stein",
+     "note": "2013 endorsements from LVUSD board members and local mayors; no issue groups. Not on Equality California 2026 list (https://www.eqca.org/elections/)."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "inaccessible",
+     "url": "http://www.boarddocs.com/ca/lvusd/Board.nsf/Public",
+     "note": "Board President (LVUSD site). Votes/minutes are on BoardDocs (JS app); not checked."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P53",
+   "name": "Mary N. Wells",
+   "findable": true,
+   "found_page": "https://www.beverlyhills.org/223/City-Council",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign site found. Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to fetch (login/JS); Google Ads Transparency Center is JS-only (no ad content in HTML). Not searchable by fetch."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not on Equality California 2026 list (https://www.eqca.org/elections/)."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://beverlypress.com/2025/06/beverly-hills-celebrates-pride-month/",
+     "note": "Adjacent: council 'Moment of Unity' for Pride Month, 2025-06-17. No school-related item (BHUSD Pride flag votes are school board, not council)."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "proclamation",
+     "desc": "With the full council, presented a Pride Month 'Moment of Unity' to All Saints' Episcopal Church and its Pride Ministry, 2025-06-17 (ceremonial, not a recorded vote)",
+     "url": "https://beverlypress.com/2025/06/beverly-hills-celebrates-pride-month/",
+     "side_hint": "pro-LGBTQ recognition (adjacent)"
+    }
+   ]
+  },
+  {
+   "id": "P61",
+   "name": "Adam B. Schiff",
+   "findable": true,
+   "found_page": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-introduces-bill-to-provide-lgbtq-individuals-equal-access-to-reproductive-care/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://www.adamschiff.com/plans/",
+     "note": "2024 site: Accomplishments, Democracy, Affordability, Housing, Planet; site search for LGBTQ/equality/transgender returns nothing."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/",
+     "note": "Vote Smart 403."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/ads/library/",
+     "note": "Meta Ad Library returns 403 to fetch (login/JS); Google Ads Transparency Center is JS-only (no ad content in HTML). Not searchable by fetch."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://x.com/SenAdamSchiff",
+     "note": "X needs JS/login (old handle returns 404 page)."
+    },
+    "T07": {
+     "result": "found-off-topic",
+     "url": "https://www.denvergazette.com/2024/10/09/three-takeaways-from-adam-schiff-and-steve-garveys-fiery-california-senate-debate/",
+     "note": "2024 debate recaps: no domain question reported."
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-leads-push-to-stop-department-of-educations-weaponization-of-civil-rights-investigations/",
+     "note": "Senate releases: OCR letter (trans students), Pride resolution, LGBTQ reproductive-care bill (adjacent)."
+    },
+    "T09": {
+     "result": "found-on-topic",
+     "url": "https://twitchy.com/print/2409632",
+     "note": "ABC 'This Week' remarks on trans athletes (2025-03-09), reported by The Hill (403 to fetch) and quoted on Twitchy."
+    },
+    "T10": {
+     "result": "found-on-topic",
+     "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-leads-push-to-stop-department-of-educations-weaponization-of-civil-rights-investigations/",
+     "note": "Led senators' letter to Education Dept (2026-03-23) criticizing OCR's pursuit of trans-athlete cases."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": "HRC/EQCA endorsements not verified by fetch. Web-search budget for the session ran out mid-batch; checked by direct fetch of known pages only."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC: 118th 100, 117th 100, 116th 100."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "note": "Senate and House votes on sports, Parents Bill of Rights, Equality Act."
+    }
+   },
+   "statements": [
+    {
+     "text": "“Look, I played in sports. Our kids played in sports. I want all young people to have the experience of playing in sports, every young person,”",
+     "url": "https://twitchy.com/print/2409632",
+     "date": "2025-03-09",
+     "source_type": "T09",
+     "context": "ABC 'This Week' interview, asked about trans athletes in women's sports (quoted via The Hill)",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "“I want those sports to be safe, and I have confidence that local schools and local communities can make those decisions without the federal government making them for them.”",
+     "url": "https://twitchy.com/print/2409632",
+     "date": "2025-03-09",
+     "source_type": "T09",
+     "context": "Same interview, continuation after “And I want those sports to be fair,”",
+     "sub_issue_hint": "sports"
+    },
+    {
+     "text": "Additionally, the Department’s recent rhetoric, including its proclamation that it is “aggressively pursuing” cases involving transgender youth competing in sports based on their gender identity, has shown that the Department is continuing to use OCR as an ideological arm of the Trump Administration rather than an enforcer of civil rights law.",
+     "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-leads-push-to-stop-department-of-educations-weaponization-of-civil-rights-investigations/",
+     "date": "2026-03-23",
+     "source_type": "T10",
+     "context": "Letter Schiff led to the Department of Education on the Office for Civil Rights",
+     "sub_issue_hint": "sports / nondiscrimination"
+    },
+    {
+     "text": "“As we celebrate the valuable contributions of LGBTQ+ Americans during Pride Month, we must acknowledge our government’s troubling history of discrimination against, and mistreatment of, servicemembers and civil servants in this community. I’m proud to join Senators Kaine and Baldwin in a resolution to acknowledge this troubling history, even as we continue to fight for full equality in the face of hatred and bigotry,”",
+     "url": "https://www.schiff.senate.gov/news/press-releases/news-during-pride-month-sens-schiff-padilla-join-kaine-baldwin-in-resolution-apologizing-for-government-discrimination-against-lgbt-civil-servants-servicemembers/",
+     "date": "2026-06-15",
+     "source_type": "T08",
+     "context": "Release on resolution apologizing for discrimination against LGBT federal employees",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    },
+    {
+     "text": "“Americans, including LGBTQ Americans, should have the freedom to start or expand a family without additional financial and systemic barriers that make it harder to afford reproductive health care services. This bill is crucial in correcting outdated tax laws in order to support LGBTQ individuals in family planning care,”",
+     "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-introduces-bill-to-provide-lgbtq-individuals-equal-access-to-reproductive-care/",
+     "date": "2025-06-26",
+     "source_type": "T08",
+     "context": "Release introducing Equal Access to Reproductive Care Act",
+     "sub_issue_hint": "general LGBTQ equality (adjacent)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "Senate: Nay on cloture on motion to proceed to S. 9 (sports), roll 100, 2025-03-03",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "side_hint": "against sports restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "Senate: Nay on cloture on Tuberville Amdt. 4421 ('protect women and girls in athletics'), roll 60, 2026-03-21",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00060.xml",
+     "side_hint": "against sports restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "House: Nay on H.R. 734 (sports), roll 192, 2023-04-20",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "side_hint": "against sports restriction"
+    },
+    {
+     "kind": "vote",
+     "desc": "House: No on H.R. 5 Parents Bill of Rights Act, roll 161, 2023-03-24",
+     "url": "https://clerk.house.gov/evs/2023/roll161.xml",
+     "side_hint": "against PBOR"
+    },
+    {
+     "kind": "vote",
+     "desc": "House: Aye on Equality Act, roll 217, 2019-05-17",
+     "url": "https://clerk.house.gov/evs/2019/roll217.xml",
+     "side_hint": "pro Equality Act (adjacent)"
+    },
+    {
+     "kind": "vote",
+     "desc": "House: Yea on Equality Act, roll 39, 2021-02-25",
+     "url": "https://clerk.house.gov/evs/2021/roll039.xml",
+     "side_hint": "pro Equality Act (adjacent)"
+    },
+    {
+     "kind": "letter",
+     "desc": "Led Senate Democrats' letter to Education Dept on OCR, incl. criticism of pursuing trans-athlete cases, 2026-03-23",
+     "url": "https://www.schiff.senate.gov/news/press-releases/news-sen-schiff-leads-push-to-stop-department-of-educations-weaponization-of-civil-rights-investigations/",
+     "side_hint": "pro trans-student protections"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard 100 (118th, 117th, 116th)",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "high pro-LGBTQ score"
+    }
+   ]
+  }
+ ]
+}

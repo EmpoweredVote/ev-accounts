@@ -1,0 +1,851 @@
+{
+ "people": [
+  {
+   "id": "P06",
+   "name": "Eric A Koch",
+   "findable": true,
+   "found_page": "https://www.indianasenaterepublicans.com/koch",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign website found. Ballotpedia lists only Facebook (facebook.com/EricKochforIndiana) and the Senate GOP page; erickoch.com / erickochforindiana.com do not resolve."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Eric_Koch",
+     "note": "Did not complete Ballotpedia Candidate Connection 2020 or 2024. No local-paper questionnaire found."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "https://justfacts.votesmart.org/candidate/political-courage-test/34369/eric-koch",
+     "note": "Vote Smart: did not answer 2024 Political Courage Test. No other interest-group questionnaire found."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": "No pledge found."
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Not checked in ad libraries (state race; no evidence of ads). Meta Ad Library needs login/JS."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/EricKochforIndiana",
+     "note": "Facebook page exists; posts need login/JS. Not read."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No debate/forum transcript found. Senate floor debate on SB 182 (2026) coverage quotes only Brown and Yoder."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://www.indianasenaterepublicans.com/koch",
+     "note": "Press releases 2017-2026 on utilities, roads, courts, awards; none on gender/LGBTQ/school topics."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "https://indianapublicradio.org/?p=121452",
+     "note": "News on SB 182 (2026) and HEA 1608 (2023, ibj.com) does not quote Koch. Web search budget ran out before a wider news sweep."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "None found."
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Eric_Koch",
+     "note": "Ballotpedia found no endorsements for 2024."
+    },
+    "T12": {
+     "result": "inaccessible",
+     "url": "https://www.aclu-in.org/2026-legislative-report-scorecard/",
+     "note": "Ballotpedia lists ACLU of Indiana and Indiana Family Institute scorecards for Indiana legislators (2024, 2025), but per-member rows are in PDFs/graphics not extracted (2025 ACLU-IN PDF URL returned 404)."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://iga.in.gov/legislative/2023/bills/senate/480/details",
+     "note": "Official Senate roll calls read from IGA PDFs (see acts)."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "HB 1041 (2022, school sports designated by sex) Senate 3rd reading, Roll Call 278, Mar 1 2022 (passed 32-18): Koch YEA",
+     "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/rollcalls/HB1041.278_S.pdf",
+     "side_hint": "for restricting trans girls in girls' school sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "HEA 1041 (2022) veto override, Senate Roll Call 382, May 24 2022 (32-15): Koch YEA",
+     "url": "https://iga.in.gov/pdf-documents/122/2022/house/bills/HB1041/rollcalls/HB1041.382_S.pdf",
+     "side_hint": "for restricting trans girls in girls' school sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "SB 480 (2023, gender transition procedures for minors) Senate 3rd reading, Roll Call 207 (passed 36-12): Koch YEA",
+     "url": "https://iga.in.gov/pdf-documents/123/2023/senate/bills/SB0480/rollcalls/SB0480.207_S.pdf",
+     "side_hint": "adjacent: for banning gender-transition care for minors"
+    },
+    {
+     "kind": "vote",
+     "desc": "SB 480 (2023) Amendment #4 (Yoder), Roll Call 165, Feb 27 2023 (failed 12-37): Koch NAY",
+     "url": "https://iga.in.gov/pdf-documents/123/2023/senate/bills/SB0480/rollcalls/SB0480.165_S.pdf",
+     "side_hint": "adjacent: against the Yoder amendment (search summary says it would allow care with notarized parental consent; amendment text not read)"
+    },
+    {
+     "kind": "vote",
+     "desc": "HB 1608 (2023, 'Education matters' - student name/pronoun parent notification, human sexuality instruction) Senate 3rd reading, Roll Call 345, Apr 10 2023 (passed 37-12): Koch YEA",
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.345_S.pdf",
+     "side_hint": "for parent notification of name/pronoun change"
+    },
+    {
+     "kind": "vote",
+     "desc": "HB 1608 (2023) Amendment #5 (Ford J.D.), Roll Call 336, Apr 6 2023 (failed 9-39): Koch NAY",
+     "url": "https://iga.in.gov/pdf-documents/123/2023/house/bills/HB1608/rollcalls/HB1608.336_S.pdf",
+     "side_hint": "against a Democratic amendment (content not read)"
+    },
+    {
+     "kind": "vote",
+     "desc": "SB 182 (2026, 'Gender issues' - school/university restrooms and locker rooms by sex) Senate 3rd reading, Roll Call 101, Jan 27 2026 (passed 37-8): Koch YEA",
+     "url": "https://iga.in.gov/pdf-documents/124/2026/senate/bills/SB0182/rollcalls/SB0182.101_S.pdf",
+     "side_hint": "for restricting trans students' restroom use"
+    }
+   ]
+  },
+  {
+   "id": "P14",
+   "name": "Dorothy Granger",
+   "findable": true,
+   "found_page": "https://idsnews.com/article/2022/11/granger-mckinney-sensenstein-elected-bloomington-township-board-feferman-elected-trustee",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign website found."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://bsquarebulletin.com/2019-bloomington-primary-council-candidate-district-2-dorothy-granger/",
+     "note": "2019 B Square candidate profile (paraphrase, not her answers); no domain content. No 2022/2026 township questionnaire found."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Local race; no ads found."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": "Former council profile page bloomington.in.gov/council/granger now 404."
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://idsnews.com/article/2022/11/granger-mckinney-sensenstein-elected-bloomington-township-board-feferman-elected-trustee",
+     "note": "IDS 2022 article has no direct quotes from her."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://bloomington.in.gov/onboard/legislationFiles/160",
+     "note": "As Bloomington council member (2012-2019) she was a co-sponsor of Resolution 15-11 (2015), which the synopsis says was co-sponsored by the entire Council. Township board record not checked."
+    }
+   },
+   "statements": [
+    {
+     "text": "SECTION 2. The Bloomington City Council urges the Indiana General Assembly and Governor to make sexual orientation and gender identity protected classes in the Indiana Code.",
+     "url": "https://bloomington.in.gov/onboard/legislationFiles/160",
+     "date": "2015-04",
+     "source_type": "T13",
+     "context": "Fixed text of Resolution 15-11 opposing Indiana RFRA; synopsis: 'This resolution is co-sponsored by the entire Council.' Granger was a council member (District 2, 2012-2019). Adjacent: general LGBTQ+ equality, not schools.",
+     "sub_issue_hint": "general-equality"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "board-vote",
+     "desc": "Bloomington Common Council Resolution 15-11 (April 2015) opposing RFRA and urging state protections for sexual orientation and gender identity; co-sponsored by the entire Council (Granger was a member). Individual roll call not seen.",
+     "url": "https://bloomington.in.gov/onboard/legislationFiles/160",
+     "side_hint": "pro LGBTQ nondiscrimination (general, not schools)"
+    }
+   ]
+  },
+  {
+   "id": "P22",
+   "name": "Bryan Steil",
+   "findable": true,
+   "found_page": "https://steil.house.gov/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://bryansteil.com/issues/",
+     "note": "Issues page: prices, border, seniors, Second Amendment, education/workforce, IVF, 'strong supporter of life'. No LGBTQ/gender content."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Bryan_Steil",
+     "note": "No completed Ballotpedia Candidate Connection found."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/candidate/181289/bryan-steil",
+     "note": "Vote Smart free-view limit reached before his PCT page could be read."
+    },
+    "T04": {
+     "result": "found-off-topic",
+     "url": "https://www.atr.org/pledge/bryan-steil/",
+     "note": "Ballotpedia links an ATR Taxpayer Protection Pledge (tax, not domain). Not fetched."
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Ad libraries not checked (Meta needs login/JS)."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/bryansteil",
+     "note": "Accounts: facebook.com/bryansteil, instagram repbryansteil/bryansteilwi; posts need login/JS."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": "No debate transcript found."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://steil.house.gov/media/press-releases",
+     "note": "Scanned all 538 press-release titles (54 pages): none on trans sports, Title IX, Parents Bill of Rights, LGBTQ. Site search returned nothing."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "https://www.thecentersquare.com/wisconsin/article_bf61d5a4-e044-11ed-80c9-1f782f8f9dbe.html",
+     "note": "Center Square 2023-04-21 article on WI members and HR 734 does not mention Steil. Search budget ran out before wider sweep."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC 117th: 14; HRC 118th: 6. Heritage Action 118th: 77% (general, not domain-specific)."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "note": "House Clerk roll calls read (see acts)."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "H.R. 5 Equality Act, passage, roll 39, Feb 25 2021: Steil Nay",
+     "url": "https://clerk.house.gov/evs/2021/roll039.xml",
+     "side_hint": "adjacent: against federal SOGI nondiscrimination (incl. education)"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 8404 Respect for Marriage Act, passage, roll 373, Jul 19 2022: Steil Yea; concur in Senate amendment, roll 513, Dec 8 2022: Yea",
+     "url": "https://clerk.house.gov/evs/2022/roll373.xml",
+     "side_hint": "adjacent: for federal same-sex marriage recognition"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 5 Parents Bill of Rights Act, passage, roll 161, Mar 24 2023: Steil Aye",
+     "url": "https://clerk.house.gov/evs/2023/roll161.xml",
+     "side_hint": "parental rights in education"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 734 Protection of Women and Girls in Sports Act, passage, roll 192, Apr 20 2023: Steil Yea (motion to recommit, roll 191: Nay)",
+     "url": "https://clerk.house.gov/evs/2023/roll192.xml",
+     "side_hint": "for restricting trans girls in girls' school sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 28 Protection of Women and Girls in Sports Act of 2025, passage, roll 12, Jan 14 2025: Steil Yea (motion to recommit, roll 11: Nay)",
+     "url": "https://clerk.house.gov/evs/2025/roll012.xml",
+     "side_hint": "for restricting trans girls in girls' school sports"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard 117th Congress: Steil 14",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/assets/117th-Congressional-Scorecard_web.cleaned.pdf",
+     "side_hint": "low LGBTQ-equality rating"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard 118th Congress: Steil 6",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "low LGBTQ-equality rating"
+    }
+   ]
+  },
+  {
+   "id": "P30",
+   "name": "Brian Rowley",
+   "findable": true,
+   "found_page": "https://www.nebo.edu/page/board-of-education",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign website found (Ballotpedia has no page)."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Brian_Rowley",
+     "note": "Ballotpedia page 404. No local questionnaire found."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Local race."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "found-off-topic",
+     "url": "https://www.nebo.edu/page/board-meeting-minutes",
+     "note": "Read 13 Nebo board minutes (Dec 2024 - Dec 2025). Rowley items: sworn in Jan 2025, lunch accounts, calendar, cell phones, vision screening, 'equitable opportunities for students' (paraphrase). The Feb 12 2025 minutes record the Superintendent (not Rowley) on library book removals."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P38",
+   "name": "Jonny Larsen",
+   "findable": true,
+   "found_page": "https://jonnyutah4congress.com/",
+   "yield": {
+    "T01": {
+     "result": "found-on-topic",
+     "url": "https://ballotpedia.org/Jonny_Larsen#Campaign_themes",
+     "note": "Ballotpedia quotes his campaign website ('Equal Rights for Every Utahn'). The current site's 'The Commitment' page (jonnyutah4congress.com/the-commitment) lists only affordability, healthcare, housing, cost of living - the passage is no longer on it."
+    },
+    "T02": {
+     "result": "found-off-topic",
+     "url": "https://ballotpedia.org/Jonny_Larsen",
+     "note": "Completed Ballotpedia Candidate Connection 2026; answers have no domain content except the endorsement list (Stonewall caucus). Salt Lake Tribune voter guide (Oct 12 2026) not read beyond the campaign summary."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/candidate/political-courage-test/236736/jonny-larsen",
+     "note": "Vote Smart PCT page loaded with no position content (free-view limit)."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Ad libraries not checked."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://www.facebook.com/jonnyutah4congress",
+     "note": "Facebook, Instagram, Threads, TikTok (@jonnyutah4congress), X @vote4jonnyutah; need login/JS."
+    },
+    "T07": {
+     "result": "found-off-topic",
+     "url": "https://www.youtube.com/watch?v=xFxqYRtqzqI",
+     "note": "Oct 8 2026 Utah Debate Commission debate; auto-caption transcript (~9.5k words) has no domain content."
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://jonnyutah4congress.com/latest-news",
+     "note": "Campaign newsletters/press releases: Iran war, affordability, sign theft; no domain content in titles/summaries."
+    },
+    "T09": {
+     "result": "found-off-topic",
+     "url": "https://utahnewsdispatch.com/2026/10/09/in-debate-utah-rep-kennedy-says-hes-just-getting-started-while-dem-calls-him-a-lap-dog/",
+     "note": "Debate coverage (UND, SL Tribune, Deseret 10/07) quotes him on Iran, lands, ICE; nothing in domain."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://ballotpedia.org/Jonny_Larsen",
+     "note": "Self-reported endorsements include the Utah Democratic Stonewall Caucus (LGBTQ)."
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": "Non-incumbent."
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "",
+     "note": "No office held."
+    }
+   },
+   "statements": [
+    {
+     "text": "LGBTQ+ and transgender Utahns deserve the same protections everyone else has. No child should walk into school feeling unsafe because of who they are. Every kid deserves to grow up knowing their community has their back. Equality for all!",
+     "url": "https://ballotpedia.org/Jonny_Larsen",
+     "date": "2026",
+     "source_type": "T01",
+     "context": "Campaign website issue section 'Equal Rights for Every Utahn', as quoted by Ballotpedia ('Larsen's campaign website stated the following'); not on the current campaign site.",
+     "sub_issue_hint": "anti-bullying / general-equality"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "endorsement",
+     "desc": "Utah Democratic Caucuses incl. Stonewall (LGBTQ Democratic caucus), self-reported in Ballotpedia survey answer to 'What organizations or individuals have endorsed your campaign?'",
+     "url": "https://ballotpedia.org/Jonny_Larsen",
+     "side_hint": "LGBTQ-rights group"
+    }
+   ]
+  },
+  {
+   "id": "P46",
+   "name": "Tom Lackey",
+   "findable": true,
+   "found_page": "https://ad34.asmrc.org/",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "https://lackeyforassembly.com/",
+     "note": "Campaign domain returns an empty page; /issues and /endorsements 404."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Tom_Lackey",
+     "note": "Did not complete Ballotpedia Candidate Connection 2020/2022/2024."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "https://justfacts.votesmart.org/candidate/political-courage-test/71099/tom-lackey",
+     "note": "Vote Smart: did not answer 2024 PCT."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Ad libraries not checked."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "https://x.com/LackeyTom",
+     "note": "X @LackeyTom, facebook.com/AssemblymanLackey, Instagram, TikTok, YouTube listed; need login/JS."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "found-off-topic",
+     "url": "https://ad34.asmrc.org/",
+     "note": "Searched all 63 official-site posts (WP API) for transgender, gender, parental, LGBT, pride, sports, Title IX, book: no domain hits."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Initial search found no Lackey quotes on parental notification; search budget ran out before a wider sweep."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Tom_Lackey",
+     "note": "Ballotpedia lists only Republican Party of California (2024)."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://www.eqca.org/wp-content/uploads/2022/01/EQCA22_StateLegScore2021_v7_SINGLES.pdf",
+     "note": "Equality California 2021 state scorecard: Lackey 70%. 2023-2025 scorecards are on issuu (not read)."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+     "note": "Assembly floor votes from leginfo (see acts)."
+    }
+   },
+   "statements": [],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "AB 1955 (2024, SAFETY Act - bars school policies requiring disclosure of a student's gender identity to parents) Assembly concurrence Jun 27 2024: Lackey NO (also NO on two Essayli appeals of the chair; AYE on Apr 25 2024 consent-calendar vote on the earlier, unrelated bill text)",
+     "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1955",
+     "side_hint": "against ban on forced-outing policies"
+    },
+    {
+     "kind": "vote",
+     "desc": "AB 1078 (2023, instructional materials / curriculum anti-censorship) Assembly 3rd reading May 30 2023 and concurrence Sep 7 2023: Lackey NO",
+     "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB1078",
+     "side_hint": "against state limits on book/curriculum removal"
+    },
+    {
+     "kind": "vote",
+     "desc": "AB 5 (2023, Safe and Supportive Schools Act - LGBTQ cultural-competency teacher training) Assembly floor May 22 and Sep 11 2023: Lackey NVR (not voting)",
+     "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB5",
+     "side_hint": "abstained"
+    },
+    {
+     "kind": "vote",
+     "desc": "AB 223 (2023, sealing of minors' gender-change petitions) Assembly floor Mar 23 and Sep 7 2023: Lackey NVR",
+     "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240AB223",
+     "side_hint": "adjacent: abstained"
+    },
+    {
+     "kind": "vote",
+     "desc": "SB 107 (2022, refuge for gender-affirming care) Assembly floor Aug 8, Aug 22, Aug 29 2022: Lackey NO",
+     "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202120220SB107",
+     "side_hint": "adjacent: against trans-refuge law for minors' care"
+    },
+    {
+     "kind": "vote",
+     "desc": "SB 407 (2023, foster care - caregivers must support child's SOGIE) Assembly floor Sep 13 2023: Lackey NO",
+     "url": "https://leginfo.legislature.ca.gov/faces/billVotesClient.xhtml?bill_id=202320240SB407",
+     "side_hint": "adjacent: minors/foster, against"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "Equality California 2021 State Legislative Scorecard: Lackey 70%",
+     "url": "https://www.eqca.org/wp-content/uploads/2022/01/EQCA22_StateLegScore2021_v7_SINGLES.pdf",
+     "side_hint": "mid-high LGBTQ rating for 2021"
+    }
+   ]
+  },
+  {
+   "id": "P54",
+   "name": "Frank Talavera",
+   "findable": true,
+   "found_page": "https://www.lawndale.ca.gov/government/city_council/city_council_contact_information",
+   "yield": {
+    "T01": {
+     "result": "not-found",
+     "url": "",
+     "note": "No campaign website found; search budget ran out early for this person."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Frank_Talavera",
+     "note": "Ballotpedia page 404."
+    },
+    "T03": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Local race."
+    },
+    "T06": {
+     "result": "not-found",
+     "url": "",
+     "note": "No own account identified."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T11": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T12": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T13": {
+     "result": "not-found",
+     "url": "https://www.lawndale.ca.gov/government/city_council/agendas_minutes",
+     "note": "Brief check only: city agenda archive is per-meeting PDFs with no keyword search; not scanned. Councilmember, term expires Nov 2026."
+    }
+   },
+   "statements": [],
+   "acts": []
+  },
+  {
+   "id": "P62",
+   "name": "Alex Padilla",
+   "findable": true,
+   "found_page": "https://www.padilla.senate.gov/",
+   "yield": {
+    "T01": {
+     "result": "found-off-topic",
+     "url": "https://alex-padilla.com/",
+     "note": "Campaign site: democracy, climate, Medicare for All, immigration; no domain content on home/about."
+    },
+    "T02": {
+     "result": "not-found",
+     "url": "https://ballotpedia.org/Alex_Padilla",
+     "note": "Did not complete Ballotpedia Candidate Connection 2022."
+    },
+    "T03": {
+     "result": "inaccessible",
+     "url": "https://justfacts.votesmart.org/candidate/146352/alex-padilla",
+     "note": "Vote Smart free-view limit reached."
+    },
+    "T04": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T05": {
+     "result": "not-found",
+     "url": "",
+     "note": "Ad libraries not checked."
+    },
+    "T06": {
+     "result": "inaccessible",
+     "url": "",
+     "note": "Official/campaign Facebook, X, Instagram linked from sites; need login/JS."
+    },
+    "T07": {
+     "result": "not-found",
+     "url": "",
+     "note": ""
+    },
+    "T08": {
+     "result": "found-on-topic",
+     "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-announces-plans-to-launch-first-ever-senate-mental-health-caucus-during-sf-lgbt-center-visit/",
+     "note": "Official press releases (WP API search) include LGBTQ+ youth mental health, Pride, marriage equality, Harvey Milk. No release found on trans students, Title IX, school sports, books."
+    },
+    "T09": {
+     "result": "not-found",
+     "url": "",
+     "note": "Search budget ran out before a news sweep."
+    },
+    "T10": {
+     "result": "not-found",
+     "url": "",
+     "note": "No Title IX comment letter or school-LGBTQ sign-on letter found in his press releases."
+    },
+    "T11": {
+     "result": "found-on-topic",
+     "url": "https://alex-padilla.com/endorsements/",
+     "note": "Endorsed by Equality California, Alice B. Toklas LGBT Democratic Club, Harvey Milk LGBTQ Democratic Club, California Teachers Association, CFT."
+    },
+    "T12": {
+     "result": "found-on-topic",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "note": "HRC 117th: 100; HRC 118th: 90."
+    },
+    "T13": {
+     "result": "found-on-topic",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "note": "Senate roll calls read (see acts)."
+    }
+   },
+   "statements": [
+    {
+     "text": "“LGBTQ+ youth are struggling under the weight of a rise in hateful rhetoric and political attacks—with nearly a third of the community saying their mental health is negatively affected by hostile legislation. My visit to the SF LGBT Center today proves that our work to address the youth mental health crisis isn’t just important, it’s lifesaving,” Senator Padilla said.",
+     "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-announces-plans-to-launch-first-ever-senate-mental-health-caucus-during-sf-lgbt-center-visit/",
+     "date": "2023-06-28",
+     "source_type": "T08",
+     "context": "Press release on SF LGBT Center visit about LGBTQ+ youth mental health",
+     "sub_issue_hint": "general-equality / youth"
+    },
+    {
+     "text": "“Pride Month is an important celebration of the strength, resilience, and contributions of the LGBTQ+ community,” said Senator Padilla. “As members of the LGBTQ+ community continue to face discrimination and violence just for living as their authentic selves, I stand firmly alongside them in the ongoing fight for equality. This June and year-round, I am proud to celebrate with the LGBTQ+ community in California and across the country.”",
+     "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-senate-democrats-introduce-resolution-recognizing-june-as-lgbtq-pride-month%ef%bf%bc/",
+     "date": "2022-06-06",
+     "source_type": "T08",
+     "context": "Introducing Senate Pride Month resolution",
+     "sub_issue_hint": "general-equality"
+    },
+    {
+     "text": "By passing the Respect for Marriage Act, we sent a clear message to all LGBTQ Americans that we see them and recognize that they are worthy of equal treatment under law regardless of who they are, who they love, and who they choose to marry.",
+     "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-on-senate-passage-of-marriage-equality-legislation/",
+     "date": "2022-11-29",
+     "source_type": "T08",
+     "context": "Statement on Senate passage of Respect for Marriage Act",
+     "sub_issue_hint": "general-equality"
+    },
+    {
+     "text": "I will continue working to build on our efforts today until we ensure that every American is treated equally under the law, free from discrimination.",
+     "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-on-senate-passage-of-marriage-equality-legislation/",
+     "date": "2022-11-29",
+     "source_type": "T08",
+     "context": "Same statement, closing sentence",
+     "sub_issue_hint": "general-equality"
+    },
+    {
+     "text": "“Harvey Milk’s legacy will not be erased by Donald Trump and Pete Hegseth’s petty culture wars and attempts to undermine the tremendous contributions and service of the LGBTQ+ community to our country.",
+     "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-on-trump-admin-decision-to-strip-harvey-milks-name-from-naval-vessel/",
+     "date": "2025-06-03",
+     "source_type": "T08",
+     "context": "Statement on renaming USNS Harvey Milk",
+     "sub_issue_hint": "general-equality"
+    },
+    {
+     "text": "“This bill also preserves opportunities for women’s sports and Olympic sports by protecting roster spots and requiring continued investment in the pipeline of American Olympic talent.",
+     "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-statement-on-protect-college-sports-act/",
+     "date": "2026-09-28",
+     "source_type": "T08",
+     "context": "Statement on Protect College Sports Act (college athletics reform, NIL/roster); not about trans athletes - included because it mentions women's sports; likely off-domain",
+     "sub_issue_hint": "sports (probably off-domain)"
+    }
+   ],
+   "acts": [
+    {
+     "kind": "vote",
+     "desc": "S. 9 Protection of Women and Girls in Sports Act, cloture on motion to proceed, Senate vote 100, Mar 3 2025 (rejected): Padilla Nay",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1191/vote_119_1_00100.xml",
+     "side_hint": "against restricting trans girls in girls' school sports"
+    },
+    {
+     "kind": "vote",
+     "desc": "H.R. 8404 Respect for Marriage Act, Senate passage, vote 362, Nov 29 2022: Padilla Yea",
+     "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1172/vote_117_2_00362.xml",
+     "side_hint": "adjacent: general equality"
+    },
+    {
+     "kind": "bill",
+     "desc": "Co-introduced Senate Pride Month resolution (June 2022) with all Senate Democrats",
+     "url": "https://www.padilla.senate.gov/newsroom/press-releases/padilla-senate-democrats-introduce-resolution-recognizing-june-as-lgbtq-pride-month%ef%bf%bc/",
+     "side_hint": "general equality"
+    },
+    {
+     "kind": "endorsement",
+     "desc": "Endorsed by Equality California, Alice B. Toklas LGBT Democratic Club, Harvey Milk LGBTQ Democratic Club, CTA, CFT",
+     "url": "https://alex-padilla.com/endorsements/",
+     "side_hint": "LGBTQ-rights groups and teachers' unions"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard 117th: 100",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/assets/117th-Congressional-Scorecard_web.cleaned.pdf",
+     "side_hint": "high LGBTQ rating"
+    },
+    {
+     "kind": "scorecard",
+     "desc": "HRC Congressional Scorecard 118th: 90",
+     "url": "https://hrc-prod-requests.s3-us-west-2.amazonaws.com/files/documents/118th-Congressional-Scorecard-HRC-2024-Final.pdf",
+     "side_hint": "high LGBTQ rating"
+    }
+   ]
+  }
+ ]
+}

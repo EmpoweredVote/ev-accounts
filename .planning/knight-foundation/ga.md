@@ -457,7 +457,9 @@ attribute vintage are different questions about the same row.
 Joe Biden as President and carries two contradictory US House rows.
 
 🟢🟢 **THE SECRETARY OF STATE PUBLISHES CERTIFIED *MUNICIPAL* RESULTS, AND THEY SETTLED EVERY SEAT.**
-`results.sos.ga.gov/results/public/api/elections/baldwin-county-ga/{electionId}/data` carries the
+🔴 **SUPERSEDED 2026-10-17 — the per-county JURISDICTION index is DEAD (Fulton, DeKalb AND Baldwin
+all return `elections: []`). Enumerate from `/api/jurisdictions/Georgia` instead; the per-county
+DATA route below still works.** `results.sos.ga.gov/results/public/api/elections/baldwin-county-ga/{electionId}/data` carries the
 **November 4, 2025 Municipal General** as well as the 2024 general. ▶ **Look for this first in
 Columbus and Macon** — nothing in Florida used this route. The election ids come from
 `/api/jurisdictions/Georgia`; the county short name is `<county>-county-ga`; a county with no contest
@@ -630,6 +632,140 @@ which is the payload URL with `?size=mpSm` removed.
 
 ⚠ **Re-check SD-12 before GA-5.** It is flagged vacant with a NULL `vacant_since`. A successor may
 be seated after the November 2026 general, and the seat then needs a real `term_start`.
+
+## ✅ ATLANTA · FULTON · DEKALB — APPLIED 2026-10-17 (CC_0238-CC_0243, 39 offices)
+
+Atlanta is **not** a Knight jurisdiction; it reuses this slice's stages 1 and 2, which were
+already applied, so it cost stage 3+4 only. 17 city, 11 Fulton, 11 DeKalb. 25 boundaries across
+four new private MTFCCs (`X0077`-`X0080`). Roster and full evidence:
+`backend/data/seed-atlanta-2026/ROSTERS.md`.
+
+### 🔴🔴 THE SOS PER-COUNTY ELECTION INDEX IS DEAD — AND THIS FILE STILL POINTED AT IT
+
+The line above that says to enumerate elections from
+`results.sos.ga.gov/results/public/api/jurisdictions/<county>-county-ga` **no longer works**.
+Fulton, DeKalb **and Baldwin** all now return `"elections": []` with
+`"redirectToShortName": "Georgia"`. Baldwin is the control this file records as working, so its
+failing is what proves the ROUTE moved rather than the data vanishing — read without a control,
+an empty list reads as "this county has no elections", which is false and very plausible.
+
+▶ **Enumerate from `/api/jurisdictions/Georgia`** — 117 elections, 2012-2026 — and read
+`publicElectionId`. The per-county **data** route (`/api/elections/<county>-county-ga/{id}/data`)
+is unaffected and still correct.
+
+### 🔴🔴 A CERTIFIED RETURN ENUMERATES *CONTESTS*, NOT *OFFICES*
+
+Neither Fulton nor DeKalb shows a **Probate Judge** contest in ANY return 2020-2026 — 16 payloads
+— yet both plainly operate a Probate Court. The scan is sound: the Baldwin control returns
+Surveyor and Coroner on the same predicate.
+
+The cause is Georgia's nonpartisan election law: **an unopposed candidate is declared elected and
+never reaches a ballot.** So a county's elected offices CANNOT be enumerated from results. A
+roster built from returns alone omits exactly the seats nobody challenges, which are
+disproportionately the long-held ones. Both Probate Judges are recorded as owed, not seeded —
+creating an office with no term row would make it invisible.
+
+### 🔴🔴 TWO COUNTIES NAME THE SAME CONTEST DIFFERENTLY, AND A NAME-MERGE INVERTS A RESULT
+
+Atlanta spans Fulton (93.45%) and DeKalb (6.55%), so its citywide contests are split across two
+returns. Fulton writes `Atlanta City Council D1`; DeKalb writes
+`Atlanta City Council Member District 1`. Only *Mayor* and *Council President* carry identical
+names in both, so a naive merge appears to work on the two most prominent contests and silently
+drops the other fifteen.
+
+Post 1 At-Large, read three ways: **DeKalb alone 45.64%** ("runoff"), Fulton alone 60.35%,
+**merged 58.62%** — elected outright. ▶ Normalise contest names before merging anything.
+
+### 🔴 POLYGON AREA AND PRECINCT ASSIGNMENT DISAGREE AT SLIVER SCALE, AND NEITHER IS WRONG
+
+A gate cross-checking council geometry against the certified precinct split FIRED, and the gate
+was what was wrong. District 7's DeKalb sliver is **1,813 m²** and District 2's is **2,152 m²** —
+yet D7 drew a certified DeKalb vote and D2 drew none. A precinct is assigned to a county by that
+county's voter records, so a smaller sliver can hold registered addresses while a larger one holds
+none. ▶ Compare only SUBSTANTIAL presence, and set the threshold from measurement with a gap.
+
+### 🔴 THE BALLOT LAYER IS THE GEOMETRY ARBITER AND ONE COLUMN HELD TWO VINTAGES
+
+Fulton Elections' `VotingDistrictsMapViewerAGOL` layer 8 is the arbiter for Atlanta council
+geometry (the Columbus rule). Its `Officers` column is correct on **9 of 12** — the most dangerous
+ratio — and its staleness carries **two different vintages in one column**: District 11 names a
+holder who left in January 2026, District 7 one who left in January **2022**. GA-4 learned
+freshness is a property of a field, not a row; Atlanta adds that it is a property of a field IN a
+row. Both Fulton commission layers repeat it, naming "Natalie Hall" in District 4 — a holder two
+changes out of date.
+
+### 🔴🔴 THE APPLY-DAY CHECK CAUGHT A DEPARTURE — GA-3'S CORONER, ONE STEP EARLIER
+
+The wave was built seating **Irvin J. Johnson** as DeKalb Tax Commissioner: unopposed on the 2024
+certified general, carrying the SOS `(I)` marker, linked from the county site. **All of it was
+stale.** The Tax Commissioner's own website states **Nicole M. Golden was sworn in on 2025-12-31**;
+Johnson appears nowhere on it. ▶ **ASK ON APPLY DAY.** It is cheap and it is the only check that
+sees a departure. All eight officers were then re-checked; one more gap remains, the Fulton
+Surveyor, who has no source newer than 2024.
+
+### 🟢🟢 A CITY'S ELECTION HISTORY LIVES WITH THE COUNTY THAT RUNS ITS ELECTIONS
+
+The Atlanta wave first concluded that no certified chain existed before 2025, because the SOS
+portal carries no Atlanta municipal election before then. That SOS fact is **true**. The
+conclusion drawn from it was not.
+
+🟢 **Fulton County publishes its own certified-results archive back to 1979** — year-faceted,
+official Election Summary and SOVC PDFs, at
+`fultoncountyga.gov/.../Registration-and-Elections/Search-Elections`, served from
+`/-/media/Project/FultonCountyGa/remos/elections/`. Georgia counties run municipal elections, so
+the COUNTY holds the municipal return the state portal never carried. It dated nine Atlanta
+occupancies from the 2021 and 2017 cycles.
+
+▶ Before recording "no certified chain exists", check the county that administers the election.
+⚠ The archive is not complete — it holds no Atlanta Post 3 special for 2022, 2023 or 2024.
+
+### 🔴🔴 WHEN THE ELECTION RECORD IS SILENT ABOUT AN OFFICE, ASK THE OFFICE
+
+Neither Fulton nor DeKalb shows a Probate Judge contest in any certified return 2020-2026, and
+that finding is correct — Georgia declares an unopposed nonpartisan candidate elected without a
+ballot. The wave first treated that as "cannot be sourced" and left both offices uncreated.
+
+**Both courts publish their own judges.** Fulton: `fultonprobatega.org` "Meet our Executive Team"
+names **Kenya M. Johnson, Chief Judge**. DeKalb: `dekalbprobatega.com` carries the judge's own
+first person — **"I am Bedelia C Hargrove, the Chief Probate Court Judge in DeKalb County"**.
+
+▶ "Not on any ballot" means the ELECTION record is silent, not that the office cannot be sourced.
+⚠ Seed only the elected CHIEF judge; Fulton's Associate Judge is appointed.
+
+### 🔴🔴 A REGEX THAT FINDS ALMOST NOTHING IS A BROKEN DETECTOR, AND ONE LUCKY HIT IS NOT A CONTROL
+
+The Atlanta wave recorded that councilmember biographies "carry no date language at all". They
+carry plenty. The sweep required the literal `elected in YYYY`, and the pages mostly say
+`elected to the Atlanta City Council in YYYY`. The bios were in the server HTML throughout.
+
+🔴 The sweep matched exactly one member ("first elected ... in 2017"), and that single incidental
+hit is what made the empty result look trustworthy. **A lone match cannot distinguish "the
+pattern works" from "the pattern is too narrow and got lucky once."** Plant a control that the
+pattern SHOULD match and watch it match, or widen until the yield stops changing.
+
+### ⚠ Scope a title-based gate to its government
+
+A gate asserting `office_holders_as_of(2015)` returns zero for "Judge of Probate Court" failed on
+correct data: Bibb and Muscogee already hold that exact title from GA-4/GA-5, properly dated, and
+they answer 2015 correctly. Title alone is not a key — scope to the government.
+
+### ⚠ Smaller things worth keeping
+
+- **District 12 of Atlanta's council is MULTI-PART** — 13 rows for 12 districts, a main body plus a
+  27-vertex exclave. A "12 polygons for 12 seats" pre-flight FAILS ON CORRECT DATA. Dissolve first.
+- **DeKalb and Fulton are structurally opposite.** Fulton: at-large Chairperson, no CEO, no super
+  districts. DeKalb: elected CEO, no chair, and **two SUPER districts overlaying its five**, so
+  every DeKalb address has TWO commissioners and an "exactly one holder" control is wrong there.
+- **Two DeKalb GIS name traps:** `DeKalb_County_Commission_District` holds **2** features (it is the
+  supers) and `Commissioner_Districts` holds **2,540** (not districts at all). The adopted map also
+  differs from all three published `Plan_N` options.
+- **Atlanta's Council President votes only to break ties** (Code § 2-36(b)) — `non_voting` with the
+  mandatory ADR 0003 note, the Nashville/Macon-Bibb shape again.
+- **Apply these migrations with `psql --single-transaction`.** They use `ON COMMIT DROP` temp
+  tables; without it each statement autocommits and the file **half-applies** before failing.
+- 🔴 **A JANUARY 2027 RE-SEAT IS OWED.** Fulton Chair, D1, D3, D5 and the D4 special are on the
+  2026-11-03 ballot; DeKalb D2, D3 and D7 likewise. Mo Ivory is the Democratic nominee for Fulton
+  Chair. Close and re-seat those terms; do not overwrite them.
 
 ## The Georgia county-officer template, ruled 2026-09-01 (Cantrell)
 
