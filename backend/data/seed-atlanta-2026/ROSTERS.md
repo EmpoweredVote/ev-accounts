@@ -795,7 +795,7 @@ item 8 is **re-checked**.
 | Terms undated, all three governments | **20 of 40** | **7 of 40** |
 | Open items 2, 3, 5 | open | **closed** |
 | Item 4, Fulton D4 vacancy | press date only, no primary source | **bracketed 2026-03-05 … 2026-03-09 by the county's own record** |
-| Headshot blanks | 6 | **4** — both Probate Judges recovered and live (`CC_0249`, `CC_0250`) |
+| Headshot blanks | 6 | **3** — both Probate Judges and the Fulton Clerk recovered (`CC_0249`-`CC_0251`) |
 
 ### 🔴🔴 THE BLANK ROWS WERE RIGHT, AND THE REASON IS A SCHEMA FACT NOBODY HAD WRITTEN DOWN
 
@@ -1046,3 +1046,54 @@ the `.stats()`/`.extract()` bug — but the fix is the same discipline: call `.r
 Both are live and verified on the rendered page, not the API: `essentials.empowered.vote` serves
 `<img alt="Kenya M. Johnson portrait">` and `<img alt="Bedelia C. Hargrove portrait">`, each at a
 600×750 natural size. **Blanks 6 → 4.**
+
+### 🔴🔴 ATL-4's "DISC ON GREEN MATTE" WAS A MEASUREMENT BUG. ALEXANDER IS RECOVERED (`CC_0251`)
+
+ATL-4 left Ché Alexander blank on the finding that *"the clerk site serves only the disc on green
+matte"*. **There is no green matte.** The file is a PNG with an **alpha channel**, and the RGB
+stored beneath fully transparent pixels is `(71,112,76)` — a green placeholder. Any reader that
+drops alpha without compositing measures that green in all four corners and concludes
+"flat coloured matte", which is precisely the disc-on-matte signature.
+
+```
+.removeAlpha()                        -> corners 71,112,76 ×4   "FAIL — disc on matte"   WRONG
+.flatten({background:'#ffffff'})      -> corners 255,255,255 ×4  ordinary white studio portrait
+```
+
+▶ **ALPHA IS THIS WAVE'S RECURRING TRAP IN IMAGE CHECKS**, and it bit three different ways in one
+session: `.stats()` ignoring `.extract()` (`CC_0249`), `NaN` from striding a 4-channel PNG by 3
+(`CC_0250`), and now transparent-pixel RGB read as a background colour. **Composite before you
+measure.**
+
+⚠ ATL-4's *other* Alexander finding **stands and is unrelated**: the 1920×350 banner really does
+clip her hair at every 4:5 anchor. That was a different asset.
+
+#### 🔴 A LIMIT OF THE CORNER-AGREEMENT GATE ITSELF, WORTH WRITING DOWN
+
+A legitimate **white-background cutout** scores **0.0** — identically to a disc on a coloured matte
+— because every corner is the same white. **The discriminator cannot separate those two cases.**
+ATL-4 claims "every real studio backdrop in the wave scored ≥ 24", which is true only because every
+such portrait happened to have a *textured* backdrop. Do not gate a cutout on this number; look at
+the frame.
+
+#### Three candidates were compared, not just the first one found
+
+| image | native | verdict |
+| --- | --- | --- |
+| `documentId=1979` | **1250×1250** | ✅ **chosen** — subject bbox measured at x 246..1111, y 161..1102 |
+| `documentId=4137` | 625×625 | ❌ over-cropped: **7px above her hair** (1.1% of frame) against the ~one-ear rule, and needs a 1.2× upscale. Carries the useful alt "Clerk Alexanders Headshot". |
+| `documentId=1980` | 2048×1366 | ❌ an **event photo** in a crowded room, and the prominent woman in it is **not** Ché Alexander. alt `528847941(1)` names nobody. |
+
+Geometry measured rather than anchored by guesswork: centre x=679, hair top y=161, crop **900×1125
+(4:5) at +229+71** leaving ~90px of headroom, Lanczos3 **down** to 600×750 — a **0.67× downscale**,
+no enlargement. Reached only by a **rendered fetch** of `/338/Meet-Clerk-Ch-Alexander`; the site is
+CivicPlus and renders its roster in JS, exactly as Fulton Probate's does.
+
+**Blanks 6 → 3.** The three remaining are all SEATED people with no photo — the vacant Fulton D4 is
+not among them, since the measure joins through `office_terms.politician_id`:
+
+| who | state |
+| --- | --- |
+| Arthur E. Ferdinand (Fulton Tax) | department page carries only a 1920×350 hero of a **sign**. ▶ **A rendered fetch has NOT been tried** — it is the obvious next move, having recovered three. |
+| Fred Quinn, Jr. (Fulton Surveyor) | Fulton publishes no Surveyor page at all. |
+| Debra DeBerry (DeKalb Clerk) | no reachable standalone clerk site. ▶ Also worth a rendered fetch. |
