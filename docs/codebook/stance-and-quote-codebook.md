@@ -64,6 +64,12 @@ the chair rests on is the body's own choice (not a duty a higher law imposes). B
 keep the 10% rule. Labels and gold coded under 0.5 stay 0.5. 0.6 rows go to review until a small gold
 round on board votes covers them under certification eb2f791a. Prompted by the `education-library-books`
 Season 3 Stage 3 test (2026-10-14/15), where every 5-0 school-board vote was refused.
+**Clarified 2026-10-19 (still 0.6 — a topic-scoped reading, no new variable or value; ruling by Chris
+Andrews 2026-10-19, R1):** V4.1 "The single-subject test" gains one topic-scoped reading for
+`education-equity-programs`: a separate operative part makes a bill multi-subject only when it acts outside
+K-12 schools. It applies to the Season 3 revision 2 of that topic only (CA_0314). No label or gold row on this
+topic exists under any version, so no recorded result changes. Decision record:
+`.planning/research/s3-pilot-equity-programs/stage3/results.md` (rulings R1–R5; workspace root).
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -386,6 +392,18 @@ A vote does not mean support for every clause of a bill.
   - [real] **CA AB 1955 (2024) → single-subject.** Ed Code 217 (resources for parents of LGBTQ
     pupils), 220.1 (no retaliation against staff) and 220.3/220.5 (disclosure) all fall inside
     `education-gender-identity`. No part is evidence for another topic.
+  - **Topic-scoped reading: `education-equity-programs` (ruling 2026-10-19, Chris Andrews; Season 3
+    revision 2).** For this topic only, one operative part that is evidence for both this topic and a
+    broader topic (`civil-rights`) does not make the bill multi-subject. A separate operative part makes it
+    multi-subject **only when it acts outside K-12 schools**: colleges' or state agencies' own operations,
+    or other employers. Parts of a school equity instrument on racial-harassment reporting, hiring or
+    Title VI compliance, and preparation or licensure standards for K-12 staff, stay inside the topic.
+    Whether this reading extends to other topics is not ruled; everywhere else, apply the test as written.
+    - [real] **WA ESSB 5044 (2021) → single-subject.** Beside the duty on districts to train staff in
+      equity, it sets standards for the preparation of K-12 educators. Both act on K-12 schools, so the
+      bill stays inside `education-equity-programs`.
+    - A ban on equity offices that also covers public colleges or state agencies → **multi-subject**: the
+      college or agency part is `civil-rights` evidence and acts outside K-12 schools.
 - **A study directive that states its goal (H16, ruling 2026-10-02).** A vote for a study does not say
   what the person hopes it finds, so a study directive is never a chair. Which blank it gives depends
   on the bill's own text:
