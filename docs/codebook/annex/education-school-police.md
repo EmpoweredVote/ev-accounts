@@ -216,8 +216,12 @@ pasted whole into open-season coder prompts. This section is for Season 3 pilot 
 stages only. No revision row exists for it yet. When the revision is written (Stage 4), this section
 moves to `annex/season3/education-school-police.md`, as `education-library-books` did, and leaves this
 file. Draft C was picked as the working draft on
-2026-10-16 (ruling W1, Chris Andrews); Drafts A and B are retired for this topic. Still open: the
-question text (Q5), the WI AB 69 and Virginia MOU readings, and the T4 blind labels.
+2026-10-16 (ruling W1, Chris Andrews); Drafts A and B are retired for this topic. The question text
+(Q5), the WI AB 69 reading (S3) and the Virginia MOU reading (S1) were ruled 2026-10-19. Still open:
+the T4 blind labels.
+
+**Question (Season 3 draft)** _(ruled 2026-10-19, Q5)_: "Should schools have police officers on
+campus?" A substantive change from the served question: Draft C measures presence, not role.
 
 **Reading.** The rungs order **how much police presence schools have**: how many schools have an
 officer, and, once every school has armed security, whether that security must be a sworn police
@@ -275,6 +279,11 @@ some / every) or a stated person (police or armed staff / police).
   - **A penalty posting** (an officer posted only at a school that broke a safety rule, such as Tennessee
     SB 274's door-lock rule) → `direction-only` _(ruled 2026-10-16, R3)_. It is an enforcement measure,
     not a choice of which schools have officers.
+  - **A posting triggered by crime on campus is not a penalty posting** → 3 _(ruled 2026-10-19, S3)_.
+    Example: Wisconsin AB 69 requires an armed SRO at a school whose incident and arrest count crosses a
+    threshold, and funds the officers. The trigger is crime at the school, not a breach of a school's own
+    duty, so it is a choice of which schools have officers: "some schools". The separator from R3 is the
+    trigger.
 - **Rung 4** is met by a duty or contract that places a police officer **or** an armed security staff
   member in every school, where the body may meet it with armed non-police staff as a **standing
   choice**.
@@ -312,6 +321,11 @@ Use the state entries under "Higher-law duties by state" above for the duty text
   - choosing police officers **for every school** → 5;
   - choosing armed non-police staff → `direction-only` (compliance: the law already put armed security in
     every school).
+- **A duty that applies only once a body chooses officers is not a higher-law officer duty**
+  _(ruled 2026-10-19, S1)_. Example: Virginia s. 22.1-280.2:3 requires an MOU where a school division
+  uses SROs, but never requires an officer. Virginia is not in the duty list above. A Virginia board's
+  vote to place SROs, or to approve the MOU, is the board's own choice and is coded on the rungs (3 for
+  named schools).
 - In any duty state, the body's other provisions beyond the law are coded on their own: a staffing level
   above the statutory floor → `adjacent`; role or discipline terms → no rung (role is not a clause). This
   replaces, for Draft C, the served text's reading of statutory discipline terms. A term the statute fixes
@@ -343,4 +357,4 @@ funds and staffs the officers), **state** (statute). **Federal**: own words only
 
 Sources: `.planning/research/s3-pilot-school-police-stage2/draft-c.md` §1–§3 and §8 (workspace root);
 `s3-pilot-school-police-stage3-c/results.md` (R1–R3); `s3-pilot-school-police-stage3-supp/results.md`
-(U1, W1).
+(U1, W1; and the 2026-10-19 rulings S1, S3, Q5, Q6).
