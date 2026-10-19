@@ -161,10 +161,20 @@ def main():
     print(f'\nchecked {len(results)}  ok {ok}  flagged {len(flagged)}  unreachable {len(unreachable)}')
     if unreachable:
         print(f'  ({len(unreachable)} could not be fetched; that is a broken link, not a face defect)')
-    for r in sorted(flagged, key=lambda r: (r['verdict'], r['name'])):
-        print(f"  {r['verdict']:14s} {r['name'][:42]:42s} {r.get('dims', '')} {r['url'][:72]}")
+    # Sort by best score, weakest first. Measured over 9,058 rows: a frame that is genuinely not
+    # a photograph of a person (a seal, an election map, a campaign yard sign, a blank) tends to
+    # score 0.00 at EVERY rotation, while a real face the detector merely missed scores 0.68-0.78.
+    # So the top of this list is where the real defects cluster. It is a sort order, NOT a verdict
+    # -- one office seal did reach 0.62 -- so read the whole list either way.
+    def best_conf(r):
+        return max((r.get('confs') or {'_': 0}).values())
+
+    for r in sorted(flagged, key=lambda r: (best_conf(r), r['name'])):
+        print(f"  {r['verdict']:14s} best={best_conf(r):.2f}  {r['name'][:38]:38s} "
+              f"{r.get('dims', '')} {r['url'][:66]}")
     if flagged:
-        print('\nLOOK AT THESE BEFORE ACTING. Most flags are real portraits the detector missed.')
+        print('\nLOOK AT THESE BEFORE ACTING. Most flags are real portraits the detector missed;')
+        print('the ones scoring 0.00 everywhere are where the genuine non-portraits sit.')
         return 1
     return 0
 
