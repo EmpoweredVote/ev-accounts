@@ -41,6 +41,11 @@ WHERE p.is_active = true
 ORDER BY p.id
 """
 
+# 🔴 OUR OWN STORAGE ANSWERS TO TWO HOSTNAMES: <ref>.storage.supabase.co AND <ref>.supabase.co.
+# Matching only the first called 1,279 of OUR OWN files "hotlinked to an outside host" and left
+# them out of the first corpus sweep entirely. Match the storage PATH, which both hostnames share.
+OURS = '%supabase.co/storage/v1/object/public/%'
+
 
 def load_env():
     """DATABASE_URL from the process, else backend/.env, else the MAIN checkout's .env.
@@ -88,7 +93,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--limit', type=int, default=0, help='check only the first N rows')
     ap.add_argument('--all-hosts', action='store_true',
-                    help='include hotlinked images on outside hosts (slower, and a fetch failure is not a defect)')
+                    help='include images on outside hosts too (slower, and a fetch failure is not a defect)')
+    ap.add_argument('--external-only', action='store_true',
+                    help='ONLY images not on our own storage - the genuinely hotlinked ones')
     ap.add_argument('--json', dest='json_out', help='write the full per-row result here')
     ap.add_argument('--workers', type=int, default=8)
     ap.add_argument('--only', nargs='+', metavar='UUID',
@@ -104,13 +111,14 @@ def main():
         return 2
 
     env = load_env()
-    like = '%' if args.all_hosts else '%storage.supabase.co%'
     with psycopg2.connect(env['DATABASE_URL']) as conn, conn.cursor() as cur:
         if args.only:
             cur.execute(SQL.replace('ORDER BY p.id', 'AND p.id = ANY(%s::uuid[]) ORDER BY p.id'),
                         ('%', args.only))
+        elif args.external_only:
+            cur.execute(SQL.replace('LIKE %s', 'NOT LIKE %s'), (OURS,))
         else:
-            cur.execute(SQL, (like,))
+            cur.execute(SQL, ('%' if args.all_hosts else OURS,))
         rows = cur.fetchall()
     if args.limit:
         rows = rows[:args.limit]

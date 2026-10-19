@@ -224,8 +224,21 @@ COMMIT;
 --
 -- 1. THE WRONG PERSON'S FACE. A face detector confirms a face is present, never whose. That
 --    remains the dominant failure mode in headshot work and is invisible to this sweep.
--- 2. 1,381 ACTIVE HEADSHOTS HOSTED OFF OUR CDN were not swept; only the 7,779 on our own
---    storage were. Run: python backend/scripts/check-headshot-faces.py --all-hosts
+-- 2. ⚠ CORRECTED 2026-10-19, SAME DAY: this note first read "1,381 active headshots hosted off
+--    our CDN were not swept". THAT WAS WRONG, and the error was the sweep's own predicate.
+--    Our storage answers to TWO hostnames -- <ref>.storage.supabase.co AND <ref>.supabase.co --
+--    so LIKE '%storage.supabase.co%' called 1,279 of OUR OWN files somebody else's and left them
+--    out of the sweep. Match the PATH instead: '%supabase.co/storage/v1/object/public/%'.
+--    Only 102 rows are genuinely off-site, and they are three different things:
+--      86  a PAGE URL in photo_origin_url with photo_custom_url NULL -- AND a real CDN photo
+--          already in politician_images. 82 of them share ONE url, the Arizona election-info
+--          page the roster was scraped from. The browse grid renders these fine (it reads
+--          images[] first); the PROFILE serves that HTML page to an <img>. All 86 of the CDN
+--          photos they already hold were face-checked: 86 OK. Fixing them is a one-column
+--          write, no new image and no identity risk -- NOT done here, it needs its own slot.
+--      15  genuine external images never mirrored (sboe.dc.gov 9, utelection.info 3, +3)
+--       1  lh3.googleusercontent.com, 403 even with a browser UA
+--    Run: python backend/scripts/check-headshot-faces.py --external-only
 -- 3. ~60 IMPORTERS STILL CARRY A COPY-PASTED crop_to_4_5 AND NONE APPLIES EXIF ORIENTATION.
 --    Only seed-state-exec-headshots.py was rewired onto scripts/lib/headshot_image.py. The rest
 --    are one-shot scripts that have already run, so they were left alone deliberately rather
