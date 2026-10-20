@@ -1,7 +1,7 @@
 # Candidate → person linking — handoff
 
 **Written 2026-10-20. Author: Chris Cantrell (`CC_`).**
-**Status: CALIFORNIA NOVEMBER BALLOT DONE. Next job is CLEARING (§7), then the other states.**
+**Status: CA · IN · NV · OR · TX · CO ALL DONE. 🔴 ONE STATE LEFT — WASHINGTON, 209 rows. Start at §12.**
 
 | Election | total | linked | left |
 | --- | --- | --- | --- |
@@ -9,8 +9,11 @@
 | 2026 LA County General | 796 | **793** | 3 (judged — §6b) |
 | 2026 San Bernardino County General | 5 | 2 | 3 (not examined) |
 
-Migrations: `CC_0262`-`CC_0272`. 549 candidacies linked, 518 people created, 11 wrong people
-refused, 7 left unlinked by judgement across the programme.
+**States finished: CA · IN (102/103) · NV (28/28) · OR (49/50) · TX (170/170) · CO (103/103).**
+**Remaining: Washington, 209.**
+
+Migrations: `CC_0262`-`CC_0276`. 558 candidacies linked, 604 people created, 13 wrong people
+refused, 9 left unlinked by judgement across the programme.
 
 ---
 
@@ -217,7 +220,11 @@ each still needs a reason: Anthony (A.J.) Bayne, Christine R. Sarmiento, David D
 Donna Tryfman, Elaine Alaniz, Justin Allen Clayton, Maria Ghobadi, Oscar de la Torre, Phil Brock,
 Rhonda A. Haymon, Stacy Fortner, Tonia Arey.
 
-## 7. ▶▶ NEXT JOB: THE CLEARING. Start here when picking this back up.
+## 7. ✅ CLOSED — "THE CLEARING" (historical; §14 ruled there was nothing to clear)
+
+⚠ **Read this section only for how it was framed, not for what to do.** The operator's ruling in
+§14 keeps primary losers, and §13a found Colorado's `filed` rows to be the source's own
+distinction. Nothing here needs filtering out. The original text follows.
 
 **Scope: 85 rows, all in WA and CO. No California row needs it.** This is now the front of the
 queue because California is finished and nothing else should be created until it is done.
@@ -334,17 +341,23 @@ Name normalisation, learned the hard way:
 **Read in this order:** this file → `CC_0271` header (the four evidence tiers and every named
 refusal) → `CC_0269`/`CC_0272` (the creation pattern, the name splitting, the escape hatch).
 
-**The queue, in order:**
+**The queue, in order** (rewritten 2026-10-20 after `CC_0276`; §7's "clearing" is CLOSED — the
+operator's §14 ruling means there was never anything to filter out):
 
-1. **THE CLEARING (§7)** — 85 WA/CO rows that must not become people. No migration needed; it is a
-   filter on the next creation sweep. Decide the 'filed' rule and record it here.
+1. ▶▶ **WASHINGTON — 209 rows. The last state, and the biggest.** 130 of its 134 originally-live
+   rows carry `result = 'advanced'`, so **instrument B runs well here** — WA's top-two primary is
+   the one place continuity is cheap. Its certified list is a scanned image with no text layer, so
+   instrument A cannot run. 15 variant hits to adjudicate. 🔴 **The 70 `not_nominated` and 5
+   `withdrew` rows are IN SCOPE** (§14) — create the person, leave `result`/`candidate_status`
+   untouched, and `electionService` keeps them off the ballot page.
+   🔴 **Work it in slices** — `CC_0269`'s 110 creations tipped `duplicate people` past its
+   statement timeout. 209 is twice that.
 2. **San Bernardino County General (§6c)** — 3 rows, all designated. An hour.
-3. **The other states** — WA 134 live, CO 72, IN 13, TX 11, NV 3, OR 3 = **236**. 🔴 **None has a
-   ballot designation**, so instrument A cannot run and this is creation-only unless a per-state
-   document is found first. That is the open question in §11.
-4. **The three LA residue rows (§6b)** — one citation each.
-5. **Brock / de la Torre / Parra closed-term backfill** — history, not occupancy. Needs documented
+3. **The three LA residue rows (§6b)** — one citation each.
+4. **Brock / de la Torre / Parra closed-term backfill** — history, not occupancy. Needs documented
    start AND end dates. **DO NOT SEAT THEM** (see the correction at the top).
+5. **Colorado county occupancy (§15d)** — not this programme's job, but recorded here because this
+   programme is what found it: no Jefferson or Fremont County is seeded in CO at all.
 
 **Before any creation sweep, every time:**
 - Run the dedupe pass (§5) with the **nickname list**, accents, punctuation and archived rows.
@@ -353,7 +366,7 @@ refusal) → `CC_0269`/`CC_0272` (the creation pattern, the name splitting, the 
 - Run the guards **in this branch's own worktree**, and read the file count they print (§10).
 - Expect to find the next CI statement-timeout ceiling; work in slices (§10).
 
-**State of the work as of 2026-10-20:** `CC_0262`-`CC_0272` applied and on master. Branch
+**State of the work as of 2026-10-20:** `CC_0262`-`CC_0276` applied to prod. Branch
 `fix/ca-2026-general-candidates`, worktree `C:/ev-accounts-ca-cands` — run
 `npm run check:deletable --prefix backend -- /c/ev-accounts-ca-cands` before removing either.
 
@@ -441,6 +454,89 @@ not present them as a candidate or an incumbent.
 | IN | ✅ `CC_0273` — 102 of 103. 8 linked, 4 created, Smith III unlinked |
 | NV | ✅ `CC_0274` — 28 of 28 |
 | OR | ✅ `CC_0274` — 49 of 50. Dugger unlinked |
-| TX | 11 live, **0 variant hits** — pure creation, blocked only on §13d decision 2 |
-| CO | 72 |
-| WA | 209 (now including the 75) |
+| TX | ✅ `CC_0275` — 170 of 170. 11 created, 0 variant hits |
+| CO | ✅ `CC_0276` — 103 of 103. 1 linked, 71 created, 2 wrong people refused |
+| WA | 209 (now including the 75) — **the only state left** |
+
+---
+
+## 15. COLORADO — `CC_0276`, applied 2026-10-20. 103 of 103.
+
+**1 linked · 71 created · 2 cross-state matches refused and created as separate people.**
+
+### 15a. 🔴🔴 BOTH STANDING INSTRUMENTS WERE UNAVAILABLE, AND THE STANDARD STILL HELD
+
+Colorado has **no ballot designation** (measured: zero) and **no primary in our data at all** —
+`elections` holds exactly one Colorado row, the general — so instrument B had no
+`result = 'advanced'` to read either. Neither A nor B could run.
+
+The one link rests on the **singleton office**, the shape `CC_0266` established here:
+
+> **Michael J. Allen**, seeking Attorney General → `daae06aa` "Michael Allen", **District
+> Attorney, El Paso County**, term_start 2021-01-12 (source: elpasoco.com/elected-officials).
+
+The document is the candidate's **own campaign site**, michaelallenforcolorado.com: *"Elected
+District Attorney in the Fourth Judicial District (El Paso and Teller counties) in 2020 and
+re-elected in 2024."* Corroborated by Colorado Politics' 2026-10-02 questionnaire (printed under
+"Name: Michael J. Allen / Office Sought: Attorney General", in which he calls himself "the elected
+District Attorney of Colorado's largest judicial district") and by CPR News 2026-06-30, headlined
+"El Paso County prosecutor Michael Allen wins Republican attorney general primary".
+
+🟢 **The dates corroborate independently:** elected 2020 ⇒ took office January 2021; our
+term_start of 2021-01-12 was written from the county's own page months earlier. Neither source
+derives from the other.
+🟢 **It is a singleton that cannot move** — unlike "chair of the Joint Budget Committee", the DA of
+a numbered judicial district does not rotate.
+▶ **The migration asserts the SEAT, not the name:** its pre-check refuses unless that person holds
+exactly one El Paso County District Attorney term. If he stops holding it the evidence has
+evaporated and the link must be re-derived, not re-applied.
+
+### 15b. 🔴 Two refused — and BOTH were created as separate people
+
+| Candidate | Race | Matched person actually is |
+| --- | --- | --- |
+| Amanda Campbell | CO Secretary of State | Board Member Place 5, Allen ISD, **TX** |
+| Travis Star Nelson | CO Senate 35 | State Rep, House District 44, **OREGON** (carries a PHOTO) |
+
+Both got their own new row, because *different person* is the finding — leaving them unlinked
+would assert we could not tell, and we could. The Colorado Amanda Campbell is an American
+Constitution Party candidate who ran for this same office in 2022 (she is in the Colorado SOS's own
+historical election data) and lives in Grand Junction; that is not a sitting Texas school trustee.
+
+### 15c. 🔴🔴 A FIFTH BLINDNESS: THE DUPLICATE DETECTOR CANNOT SEE A CROSS-STATE PAIR
+
+`findPairs` adds a NAME_STATE pair only when `!a.st || !b.st || a.st === b.st` — **same state, or
+one state unknown.** Every wrong-person match this programme catches is by definition
+*cross-state*, so `check:duplicate-people` **will never observe one of them**, and there is
+nothing to record in `duplicate-people-baseline.json`.
+▶ **Do not hand-add a cross-state pair to the baseline.** `--update-baseline` rebuilds from what
+the detector observed, so an unobserved entry is silently dropped on the next run — and that drop
+reads like a resolution. The adjudication belongs in the migration header and in this file.
+
+⚠ **And only ONE of the two even reached the INSERT-time guard.** It keys on
+`(first_name, last_name)`: Amanda Campbell splits to ('Amanda','Campbell') and was blocked;
+`Travis Star Nelson` splits to ('Travis Star','Nelson') and sailed through. **The middle name, not
+the adjudication, is what silenced the guard.** It did not agree with us about Nelson — it never
+looked.
+🟢 The guard was proved live first: inserting Amanda Campbell without the hatch raises
+`DUPLICATE_POLITICIAN_NAME`, watched failing before the hatch was written.
+
+### 15d. ⚠ Five of the 71 hold or have held real office — and a new row is still right
+
+Amanda Gonzalez is the **Jefferson County Clerk and Recorder**; Lesley Dahlkemper a **Jefferson
+County Commissioner**; Kevin Grantham a **Fremont County Commissioner**; Steph Vigil and Terri
+Carver are former state representatives; Greg Lopez a former U.S. Representative.
+
+🔴 **We seed no Jefferson County and no Fremont County at all** — `districts` holds zero CO rows
+matching 'Jefferson County'. Colorado's seeded occupancy is the legislature, the statewide
+executives and El Paso County, which is exactly why Michael Allen was the only link available.
+
+▶ **THIS IS AN OCCUPANCY GAP WEARING A LINKING DEFECT'S CLOTHES.** Check which one you have before
+concluding the evidence is thin. The rows created here hold nothing and claim nothing; if those
+counties are seeded later, **these are the people to seat, not rows to duplicate.**
+
+### 15e. The 10 `filed` rows were left exactly as the source wrote them
+
+No field was touched. §13a settled that `filed` is the Secretary of State's own distinction,
+carried faithfully. Whether a `filed` candidate should render beside an `active` one is still the
+operator's **display** decision — it is not a reason to withhold a person record.
