@@ -12,6 +12,7 @@
     "test:watch": "vitest",
     "lint": "eslint src scripts",
     "typecheck": "tsc --noEmit",
+    "source-store": "tsx scripts/source-store.ts",
     "check:migrations": "node scripts/check-migration-numbers.mjs",
     "check:reservations": "node scripts/check-migration-reservations.mjs",
     "check:deletable": "node scripts/check-worktree-deletable.mjs",
