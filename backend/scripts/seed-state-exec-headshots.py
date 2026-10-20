@@ -225,16 +225,30 @@ def main():
     conn = psycopg2.connect(DATABASE_URL); conn.autocommit = False
     cur = conn.cursor()
     cur.execute("""
-        SELECT p.id, p.external_id, p.full_name, d.state, o.role_canonical
-        FROM essentials.politicians p
-        JOIN essentials.offices o ON o.politician_id = p.id
-        JOIN essentials.districts d ON d.id = o.district_id
-        WHERE d.district_type='STATE_EXEC'
-          AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
-          AND ((p.external_id <= -100001 AND p.external_id NOT BETWEEN -4900009 AND -4900001)
-               OR p.external_id IN (642977, 688298))
-          AND NOT EXISTS (SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = p.id)
-        ORDER BY d.state, p.external_id;
+        -- Occupancy comes from office_terms via office_current_holder. This used to join
+        -- offices directly on the officeholder column that ADR 0002 phase 5 (migration 1463)
+        -- DROPPED, so it has been a RUNTIME ERROR ever since -- the script crashed on its
+        -- first query. Nothing surfaced it because the occupancy guard is branch-scoped and
+        -- no branch touched this file again until 2026-10-19.
+        -- DISTINCT ON (p.id) because this join is POLITICIAN-ROOTED and can fan out: the
+        -- exclusion constraint on office_terms forbids two people on one office but cannot
+        -- see one person on two. Measured 2026-10-19: 209 execs resolve, 0 duplicates today
+        -- -- the guard is for the day that stops being true.
+        SELECT * FROM (
+          SELECT DISTINCT ON (p.id)
+                 p.id, p.external_id, p.full_name, d.state, o.role_canonical
+          FROM essentials.politicians p
+          JOIN essentials.office_current_holder och ON och.politician_id = p.id
+          JOIN essentials.offices o ON o.id = och.office_id
+          JOIN essentials.districts d ON d.id = o.district_id
+          WHERE d.district_type='STATE_EXEC'
+            AND o.role_canonical IN ('governor','lt_governor','attorney_general','secretary_of_state','treasurer')
+            AND ((p.external_id <= -100001 AND p.external_id NOT BETWEEN -4900009 AND -4900001)
+                 OR p.external_id IN (642977, 688298))
+            AND NOT EXISTS (SELECT 1 FROM essentials.politician_images pi WHERE pi.politician_id = p.id)
+          ORDER BY p.id, d.state, o.role_canonical
+        ) t
+        ORDER BY t.state, t.external_id;
     """)
     rows = cur.fetchall()
     STATE_NAME = {'AK':'Alaska','AL':'Alabama','AZ':'Arizona','AR':'Arkansas','CO':'Colorado','CT':'Connecticut','DE':'Delaware','FL':'Florida','GA':'Georgia','HI':'Hawaii','IA':'Iowa','ID':'Idaho','IL':'Illinois','KS':'Kansas','KY':'Kentucky','LA':'Louisiana','MI':'Michigan','MN':'Minnesota','MO':'Missouri','MS':'Mississippi','MT':'Montana','NC':'North Carolina','ND':'North Dakota','NE':'Nebraska','NH':'New Hampshire','NJ':'New Jersey','NM':'New Mexico','NV':'Nevada','NY':'New York','OH':'Ohio','OK':'Oklahoma','PA':'Pennsylvania','RI':'Rhode Island','SC':'South Carolina','SD':'South Dakota','TN':'Tennessee','VT':'Vermont','WA':'Washington','WI':'Wisconsin','WV':'West Virginia','WY':'Wyoming','IN':'Indiana'}

@@ -88,10 +88,17 @@ BEGIN
   END IF;
 END $$;
 
+-- ⚠ ALIAS `ren`, DELIBERATELY NOT AN "o" WORD. This temp table was once aliased with a bare
+-- "o", and check:occupancy matches the ALIAS SHAPE — any alias beginning with that letter, bar
+-- och/ot — so it read a reference to the dropped offices column that was never here, and failed
+-- every run of PR #1046. The guard is right to be blunt: it cannot know a temp table from a
+-- table. Renaming to a non-matching alias was the cheap fix; renaming to one that still began
+-- with that letter was NOT, and cost a second red run. No semantic change, and the migration
+-- had already been applied as written. 2026-10-20.
 UPDATE essentials.politicians p
-SET photo_custom_url = o.url
-FROM _orphan_render o
-WHERE p.id = o.politician_id AND p.photo_custom_url IS DISTINCT FROM o.url;
+SET photo_custom_url = ren.url
+FROM _orphan_render ren
+WHERE p.id = ren.politician_id AND p.photo_custom_url IS DISTINCT FROM ren.url;
 
 -- ═══ PART B ═══════════════════════════════════════════════════════════════════════════════
 
@@ -186,8 +193,8 @@ DO $$
 DECLARE n_a int; n_b int; n_mismatch int; n_multi int; n_left int;
 BEGIN
   SELECT count(*) INTO n_a
-    FROM _orphan_render o JOIN essentials.politicians p
-      ON p.id = o.politician_id AND p.photo_custom_url = o.url;
+    FROM _orphan_render ren JOIN essentials.politicians p
+      ON p.id = ren.politician_id AND p.photo_custom_url = ren.url;
   IF n_a <> 86 THEN
     RAISE EXCEPTION 'CC_0254 Part A: expected 86 render columns written, found %', n_a;
   END IF;
