@@ -251,6 +251,19 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   nor seeks, **delete** the context (a blank would assert an untested absence); if the topic genuinely
   applies and the record was read, **rewrite it as a documented blank**. Never make rows fall out by
   widening the carve-out regex in `check-stance-sources.mjs`.
+- 🔴 **NEVER CREATE A TABLE OR VIEW IN `public`.** Put it in the EV schema it belongs to (`inform`,
+  `treasury`, `connect`, `civic`, `civic_spaces`, `empower`, `validation_quests`, `essentials`).
+  From 2026-10-30 Supabase gives new `public` tables **no automatic Data API grants**
+  ([discussion #45329](https://github.com/orgs/supabase/discussions/45329)).
+  - **The migration that creates a table or view also, in the same file:** grants explicit
+    privileges — only to the roles that need them (`anon`, `authenticated`, `service_role`, `ev_api`),
+    only for the actions they need; runs `enable row level security`; and creates its policies.
+    A serial/identity column also needs `grant usage` on its sequence. A view needs its own grants
+    and `security_invoker = on`.
+  - ⚠ **PostgREST `42501 permission denied` means a grant is missing.** It is not a reason to loosen
+    RLS.
+  - 🔴 **Never fix a 42501 with a bulk `grant ... on all tables in schema ...`.** That also exposes
+    every table in the schema whose RLS is off. Grant the one object, to the one role.
 
 ## Working alongside other sessions
 
