@@ -559,6 +559,24 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # Rides this job rather than taking a tenth one of its own: same live DB, same non-PR trigger,
+      # same `npm ci` already paid for (see the minutes budget at the top of this file).
+      # Carries `if: ${{ !cancelled() }}` so a reachability failure above does not hide a stale map.
+      #
+      # Reachability asks "can a resident surface SOMEONE for this address". This asks "is it the
+      # RIGHT someone" — the question nothing was asking when Los Angeles served the 2012-adopted
+      # council map under a 2024 source tag for years (CA_0317). Every row-count, roster and
+      # reachability check passed the whole time, because the boundaries were stale while the
+      # councilmember names on them were current.
+      #
+      # Compares our polygons against the government that draws them. Skips green (exit 0) when the
+      # authority's GIS is unreachable — we gate drift, not somebody else's uptime.
+      - name: Check council district boundaries still match their authority
+        if: ${{ !cancelled() }}
+        run: npm run check:district-vintage
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   child-county:
     name: child→county mapping
     runs-on: ubuntu-latest
