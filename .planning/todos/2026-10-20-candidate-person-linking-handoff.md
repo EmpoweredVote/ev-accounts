@@ -1,6 +1,46 @@
 # Candidate → person linking — handoff
 
-**Written 2026-10-20. Author: Chris Cantrell (`CC_`). Status: CA Statewide General DONE, LA County General NOT STARTED.**
+**Written 2026-10-20. Author: Chris Cantrell (`CC_`).**
+**Status: CALIFORNIA NOVEMBER BALLOT DONE. Next job is CLEARING (§7), then the other states.**
+
+| Election | total | linked | left |
+| --- | --- | --- | --- |
+| CA 2026 Statewide General | 324 | **324** | 0 |
+| 2026 LA County General | 796 | **793** | 3 (judged — §6b) |
+| 2026 San Bernardino County General | 5 | 2 | 3 (not examined) |
+
+Migrations: `CC_0262`-`CC_0272`. 549 candidacies linked, 518 people created, 11 wrong people
+refused, 7 left unlinked by judgement across the programme.
+
+---
+
+## 🔴🔴 CORRECTION — DO NOT SEAT BROCK, DE LA TORRE OR PARRA
+
+An earlier version of §6 said these three were "Santa Monica councilmembers with NO office_terms
+row, so they are invisible in Essentials… Owed a seating migration." **That was wrong, and acting
+on it would have done real damage.**
+
+**They are FORMER councilmembers.** Phil Brock (then mayor) and Oscar de la Torre were incumbents
+who **LOST re-election in November 2024**; Dan Hall, Ellis Raskin, Natalya Zernitskaya and Barry
+Snell took the four open seats. Our database has all seven Santa Monica At-Large seats occupied by
+the current members, including those four — **the roster is correct and current.** The three carry
+`is_incumbent = false` and zero office_terms rows, which is the RIGHT state for someone who holds
+nothing.
+
+🔴 **Seating them would have called `essentials.seat_officeholder` on OCCUPIED offices, and that
+helper CLOSES the predecessor's term.** The "missing term" I inferred was the absence of a seat
+they do not hold.
+
+⚠ **WHAT WENT WRONG:** I inferred CURRENT occupancy from an IMPORT COHORT. Their external_ids sit
+inside a block of Santa Monica councilmembers, which correctly identified *who they are* — that
+part stands and the `CC_0271` links are right — but a scrape records who held the seat **when it
+ran**, not who holds it now. This is the same family as "a certified result is not a fact about
+who holds the seat" and "FIRST ELECTED IS NOT A TERM START".
+▶ **Before seating anyone, check whether the seat is already occupied and by whom.** One join.
+
+▶ Genuinely owed, and much smaller: we record no CLOSED term for their 2020–2024 service, so their
+history is missing. That is a backfill, not an occupancy defect, and needs a document for the
+start and end dates — do not infer them from the election dates.
 
 🔴 **READ THIS FILE BEFORE TOUCHING `race_candidates.politician_id`.** It carries the evidence
 standard, the measured wrong-person rate, and the specific traps already identified by name. The
@@ -102,7 +142,32 @@ of a district and wrote down which document would supply one — and that docume
 into `office_terms` by `CA_0308` **five days earlier**. The revert examined the designation and
 never joined the table that already held the answer.
 
-## 6. ▶ NEXT JOB: 2026 LA County General — 427 unlinked
+## 6. ✅ DONE: 2026 LA County General — 793 of 796 (`CC_0271`, `CC_0272`)
+
+16 linked by the dedupe pass, 408 created, 5 confirmed different people, 3 left unlinked.
+The four evidence tiers and every named refusal are in `CC_0271`'s header — read it before
+re-deriving anything. **§6b below is the live residue.**
+
+### 6b. ⚠ The three still unlinked, and why no row was created either
+
+For each, we can show neither sameness nor difference, so creating a row would assert "different
+person" exactly as falsely as linking would assert "same". Unlinked is the finding.
+
+- **Christine R. Sarmiento** (El Monte Mayor) — existing row holds a CA GOVERNOR candidacy and an
+  IMAGE. Statewide-to-city on an exact name is the Shaw shape; a wrong link publishes a wrong face.
+  ▶ *Settles it:* any El Monte source naming her, or a CA SOS designation.
+- **Mark Copland** (Norwalk-La Mirada USD **Trustee Area 5**) — existing row holds **Area 6** of the
+  same district. The two return `ST_Intersects` TRUE at **0.0%** shared area. ▶ *Settles it:* the
+  trustee-area boundary redraw, or the district's own roster naming his area.
+- **Michael Braun** (Walnut Valley Water District, Division 2) — matches three rows (an ARIZONA
+  senate candidate, an archived row, a bare row) and the name also matches the Governor of Indiana.
+  ▶ *Settles it:* a Walnut Valley source naming him.
+
+### 6c. Not examined: 2026 San Bernardino County General — 3 unlinked, all designated
+
+Smallest cohort in the corpus and 100% designated. An hour's work with instrument A.
+
+## 6d. (historical) The original LA County scoping
 
 **Election date 2026-11-03. This is live.** `election.name = '2026 LA County General'`.
 
@@ -152,7 +217,30 @@ each still needs a reason: Anthony (A.J.) Bayne, Christine R. Sarmiento, David D
 Donna Tryfman, Elaine Alaniz, Justin Allen Clayton, Maria Ghobadi, Oscar de la Torre, Phil Brock,
 Rhonda A. Haymon, Stacy Fortner, Tonia Arey.
 
-## 7. Clearing — and it does NOT gate LA County
+## 7. ▶▶ NEXT JOB: THE CLEARING. Start here when picking this back up.
+
+**Scope: 85 rows, all in WA and CO. No California row needs it.** This is now the front of the
+queue because California is finished and nothing else should be created until it is done.
+
+**The job, concretely:**
+1. **Washington — 75 rows must NOT become people.** 70 carry `result = 'not_nominated'` (lost the
+   top-two primary, not on the November ballot) and 5 are `withdrew`/`withdrawn`. They are already
+   hidden from voters — `electionService` filters `not_nominated` — so this is **not a live
+   defect** and there is no deadline pressure. The harm is only if a creation sweep includes them.
+2. **Colorado — 10 rows** are `candidate_status = 'filed'` with no result: filed, not confirmed on
+   the ballot. Decide whether 'filed' qualifies. ⚠ Note `essentials.is_live_candidate` currently
+   counts 'filed' AS live, so the predicate alone will not exclude them.
+3. **Decide the rule, then write it down**: does a certified candidate who lost a primary get a
+   person record? The answer belongs in this file, not in a migration header.
+
+🟢 **Use `essentials.is_live_candidate(candidate_status, result)`** — the codebase's own predicate,
+already used by `electionService`. Do not hand-roll the filter.
+
+▶ **Nothing in the clearing requires a migration.** It is a filter applied to the NEXT creation
+sweep. If you only ever create from `is_live_candidate` rows plus an explicit 'filed' decision, the
+85 never enter and there is nothing to clean up afterwards.
+
+## 7b. (historical) Clearing did NOT gate LA County
 
 ⚠ **The clearing items are all in WA and CO. California has none** — all 430 CA unlinked rows pass
 `essentials.is_live_candidate`. So clearing is a separate, small job and LA County is unblocked.
@@ -238,3 +326,33 @@ Name normalisation, learned the hard way:
    are already tangled with the "364 seats named after their sitting judge" item.
 3. **`occupational_designation` is NULL on all CA statewide general rows** though the SOS prints
    it. Populating it is what makes future CA linking cheap and is the asset no other state has.
+
+---
+
+## 12. ▶ RESUME HERE — the shortest path back in
+
+**Read in this order:** this file → `CC_0271` header (the four evidence tiers and every named
+refusal) → `CC_0269`/`CC_0272` (the creation pattern, the name splitting, the escape hatch).
+
+**The queue, in order:**
+
+1. **THE CLEARING (§7)** — 85 WA/CO rows that must not become people. No migration needed; it is a
+   filter on the next creation sweep. Decide the 'filed' rule and record it here.
+2. **San Bernardino County General (§6c)** — 3 rows, all designated. An hour.
+3. **The other states** — WA 134 live, CO 72, IN 13, TX 11, NV 3, OR 3 = **236**. 🔴 **None has a
+   ballot designation**, so instrument A cannot run and this is creation-only unless a per-state
+   document is found first. That is the open question in §11.
+4. **The three LA residue rows (§6b)** — one citation each.
+5. **Brock / de la Torre / Parra closed-term backfill** — history, not occupancy. Needs documented
+   start AND end dates. **DO NOT SEAT THEM** (see the correction at the top).
+
+**Before any creation sweep, every time:**
+- Run the dedupe pass (§5) with the **nickname list**, accents, punctuation and archived rows.
+- Run the cross-state test (§4). One in ten single-namesake matches is a different human.
+- Read the **area share**, never bare `ST_Intersects` (§3).
+- Run the guards **in this branch's own worktree**, and read the file count they print (§10).
+- Expect to find the next CI statement-timeout ceiling; work in slices (§10).
+
+**State of the work as of 2026-10-20:** `CC_0262`-`CC_0272` applied and on master. Branch
+`fix/ca-2026-general-candidates`, worktree `C:/ev-accounts-ca-cands` — run
+`npm run check:deletable --prefix backend -- /c/ev-accounts-ca-cands` before removing either.
