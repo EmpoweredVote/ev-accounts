@@ -359,9 +359,12 @@ operator's §14 ruling means there was never anything to filter out):
    queue, and it is five judgement calls, not a cohort.**
 4. **Brock / de la Torre / Parra closed-term backfill** — history, not occupancy. Needs documented
    start AND end dates. **DO NOT SEAT THEM** (see the correction at the top).
-5. **Occupancy gaps this programme surfaced but did not fix** — no Jefferson or Fremont County in
-   CO (§15d); in WA, dozens of city councils and school boards whose members we now hold as people
-   with no seat (§16f). Both are seeding jobs with their own sources.
+5. **Occupancy gaps this programme surfaced.** ✅ **Colorado DONE** — Jefferson and Fremont
+   counties seeded by `CC_0280` (18 offices, 18 terms), and **three of the people `CC_0276`
+   created as candidates were seated rather than duplicated**, exactly as §15d predicted. Rulings
+   in `backend/data/seed-co-counties-2026/ROSTERS.md`.
+   ▶ Still open: in WA, dozens of city councils and school boards whose members we now hold as
+   people with no seat (§16f). A seeding job with its own sources.
 6. **Re-run the WA pamphlet sweep for the 2027 cycle** — `backend/scripts/wa-voter-pamphlet.mjs`,
    with the new election id in place of `e=898`.
 
@@ -771,7 +774,12 @@ all five are deliberate refusals, each with a named document that would settle i
 | Dugger (OR) | see `CC_0274` | — |
 | William E. Smith III (IN, Van Buren Twp) | **suffix**: father or son, and the incumbent row carries an IMAGE | Monroe County certified list, which prints suffixes |
 
-Everything else in §12 is a different kind of job: occupancy gaps this programme surfaced (no
-Jefferson or Fremont County in CO; dozens of WA city councils and school boards whose members we
-now hold as people with no seat), the Brock/de la Torre/Parra **closed-term** backfill, and
-re-running the WA pamphlet sweep for the next cycle.
+Everything else in §12 is a different kind of job: occupancy gaps this programme surfaced (**the
+Colorado one is now closed — `CC_0280` seeded Jefferson and Fremont**; WA's city councils and
+school boards remain), the Brock/de la Torre/Parra **closed-term** backfill, and re-running the WA
+pamphlet sweep for the next cycle.
+
+🟢 **The Colorado seed is the proof that writing down who someone is pays off later.** `CC_0276`
+created Amanda Gonzalez, Lesley Dahlkemper and Kevin Grantham as candidates with no office and
+recorded that they were a county clerk and two county commissioners. Six migrations later
+`CC_0280` seated those same three rows instead of creating duplicates.
