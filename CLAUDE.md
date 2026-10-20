@@ -258,7 +258,8 @@ Runs in CI on PRs. Catches references to the dropped column; it cannot catch a m
   - **The migration that creates a table or view also, in the same file:** grants explicit
     privileges — only to the roles that need them (`anon`, `authenticated`, `service_role`, `ev_api`),
     only for the actions they need; runs `enable row level security`; and creates its policies.
-    A serial/identity column also needs `grant usage` on its sequence. A view needs its own grants
+    A `serial`/`bigserial` column also needs `grant usage` on its sequence; an identity column does
+    not. A view needs its own grants
     and `security_invoker = on`.
   - ⚠ **PostgREST `42501 permission denied` means a grant is missing.** It is not a reason to loosen
     RLS.
