@@ -1,0 +1,29 @@
+{
+  "monday": {
+    "boardId": "18417210762",
+    "groupId": "group_mm46qn8m",
+    "columns": {
+      "status": "color_mm468pe2",
+      "pillar": "color_mm46skd9",
+      "owner": "multiple_person_mm46ymaf",
+      "epic": "text_mm46npw7"
+    },
+    "epic": "Season 3 topic prep",
+    "pillarLabel": "Inform",
+    "statusLabels": {
+      "working": "In Progress",
+      "stuck": "Blocked",
+      "done": "Done"
+    },
+    "neverWrite": {
+      "privateSprintsBoardId": "18426889128",
+      "subitems": true
+    }
+  },
+  "researchRoot": "~/Documents/GitHub/.planning/research",
+  "sourceStore": "backend/data/source-store",
+  "env": {
+    "mondayUserId": "EV_MONDAY_USER_ID",
+    "researchRoot": "EV_RESEARCH_ROOT"
+  }
+}
