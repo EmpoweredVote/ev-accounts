@@ -175,5 +175,12 @@ COMMIT;
 --   (b) Keep per-race photographs, and teach check-headshot-faces.py to sweep this column so
 --       a graphic here is caught like any other. Costs a permanent second place to look.
 -- Whichever is chosen, THE GATE SHOULD READ THIS COLUMN -- that part is not a trade-off.
--- Until then the sweep is blind to every ballot-page photograph in the corpus.
+--
+-- ▶ RESOLVED THE SAME DAY, option (b): check-headshot-faces.py now sweeps BOTH columns and
+--   each flagged row names the SITE that publishes it. The column is KEPT, so the 25
+--   deliberately-chosen ballot photographs survive and a graphic there is caught like any
+--   other. Recorded here rather than rewritten above, because the trade-off is the useful
+--   part. Coverage went from 9,159 to 9,190 distinct images in the default scope (+31), and
+--   9,160 to 9,199 with --all-hosts (+39); eleven of those ballot rows carry NO politician_id
+--   at all, so no politician-rooted query could ever have reached them.
 -- ───────────────────────────────────────────────────────────────────────────────────────────
