@@ -1,0 +1,181 @@
+{
+ "_comment": "Flags a human has looked at and judged real faces the detector missed. Keyed on (url, sha256): the hash is what makes an acceptance expire by itself, because these paths are overwritten IN PLACE by x-upsert and the URL alone would go on muting a path after the picture behind it changed. Written by check-headshot-faces.py --write-accepted, and only after looking at every flag. It is not a mute button.",
+ "accepted": [
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/3107f5d0-2cfd-43bc-a8eb-6b8ddc75bfc1-headshot.jpg",
+   "sha256": "5fae976933cc9d5a8df1f066edf46d3220b396bb1f7beb5a01165c2f25927120",
+   "name": "Steven S. Howitt",
+   "verdict": "NO_FACE",
+   "best": 0.605,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/e81854b4-6235-4a96-a2b5-a276d1f58044-headshot.jpg",
+   "sha256": "2897a8a83f4b9a9ab3d58364f67cea7068984220c93ff21a78584e390dd77847",
+   "name": "Nate Schluter",
+   "verdict": "NO_FACE",
+   "best": 0.662,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/9de698e8-7ca4-4817-b903-1b095022c8e0/default.jpg",
+   "sha256": "d29c54bf50c6683161f066dc3ec4d6a0c91e7f3096b818c68808758cf908f348",
+   "name": "George Dallaire",
+   "verdict": "NO_FACE",
+   "best": 0.68,
+   "dims": [
+    2000,
+    2015
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/3d9c40d1-62aa-44e5-ab42-116315bc48a8-headshot.jpg",
+   "sha256": "65e409d4a9626c2578a165c8b17f0a80341f6079c3ebbf3e11f2fa952a7b0d61",
+   "name": "Jennifer Moore",
+   "verdict": "NO_FACE",
+   "best": 0.688,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/4bb7dc78-9908-4c45-9e38-e992d6edcfc5-headshot.jpg",
+   "sha256": "69399d1fa387c25cdad0d86a7a0e0f2bdffca5778f95b9d22e01987269cef23f",
+   "name": "Leon Lawson",
+   "verdict": "NO_FACE",
+   "best": 0.717,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/ut/314339.jpg",
+   "sha256": "444815524ce7120cf27f762f8ff270d2a9773ac0439328bdda45a4d99739b76b",
+   "name": "Cherie Wood",
+   "verdict": "NO_FACE",
+   "best": 0.732,
+   "dims": [
+    1136,
+    1420
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/760e1b7d-022c-4c70-b605-07b6fea2384b-headshot.jpg",
+   "sha256": "268e8fd8ebef0bb21b0f8ea89946bd228be258c73e37c50389d4aa812ea2cdc5",
+   "name": "Erin Wyatt",
+   "verdict": "NO_FACE",
+   "best": 0.737,
+   "dims": [
+    1503,
+    2000
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/1d731710-7e7e-4685-ade7-f34bce70c088-headshot.png",
+   "sha256": "4235b4230a3ffcfd7e25f4732fd07ff6a4b341dfbde9618bc0a17f3aafd9b5b8",
+   "name": "Colter Carlisle",
+   "verdict": "NO_FACE",
+   "best": 0.739,
+   "dims": [
+    1160,
+    1459
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/6f34f598-47d0-4b38-ab24-c454021521eb-headshot.jpg",
+   "sha256": "54e8884f665027f86c0747c5a001090eafb57f7b138a516ebab1192fa751f41a",
+   "name": "Robert R Altice",
+   "verdict": "NO_FACE",
+   "best": 0.741,
+   "dims": [
+    1500,
+    1317
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.supabase.co/storage/v1/object/public/politician_photos/ut/candidates/83480756-7b91-4731-9b23-cb2cc6a74cea.jpg",
+   "sha256": "b5bb2936a21a71a9d6a7d2eeefe3c863aa400af0aa6d4bba9136c0019d9c5238",
+   "name": "Peter Crosby",
+   "verdict": "NO_FACE",
+   "best": 0.754,
+   "dims": [
+    2047,
+    1365
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/cf1fc50c-89e6-41ce-aabf-0fef06b5cc16-headshot.jpg",
+   "sha256": "e3cb5b55f9319e0de42072ddc9b829c8b89345c689f7c4cf026b16a71d217014",
+   "name": "Steve Carlson",
+   "verdict": "NO_FACE",
+   "best": 0.775,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/4f7f4ace-fd33-4dca-82c6-7eb6712541e9-headshot.jpg",
+   "sha256": "258aa6fb55e5e59719acf7cf2ccf4cb43beec8de276435c1201462d54cc0795f",
+   "name": "Matt Jennings",
+   "verdict": "NO_FACE",
+   "best": 0.776,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/e6908ff7-834c-4078-9e35-593d000982dd-headshot.jpg",
+   "sha256": "1bfe07a55bb0d9386c39a36b6e5b41299f2eacbcdfd6118471936b82e6e08bc2",
+   "name": "Yolanda Prince",
+   "verdict": "NO_FACE",
+   "best": 0.784,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/4cc8270a-f7b6-4de2-a1c2-54f60533518e-headshot.jpg",
+   "sha256": "0e81a023b9fa245e002e6cec58a9b3e65a85356df768ce34f2d8a8821c5d0c92",
+   "name": "Glenn Turner",
+   "verdict": "NO_FACE",
+   "best": 0.787,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/81db75c5-8c48-40f3-8cb1-7220def31e72-headshot.jpg",
+   "sha256": "d9b3bf6df603d4bcd6f3f5bce565d2b9e95882dbb5a8f7571153bb278c0d3834",
+   "name": "Russell J. Black",
+   "verdict": "NO_FACE",
+   "best": 0.798,
+   "dims": [
+    600,
+    750
+   ]
+  },
+  {
+   "url": "https://kxsdzaojfaibhuzmclfq.storage.supabase.co/storage/v1/object/public/politician_photos/0912c20b-4ab8-48e8-8a2c-96e233161a2c-headshot.jpg",
+   "sha256": "c991510de8deadc6a2adda6622ffb18698218f897a1a450c24e3e0b15bc88a79",
+   "name": "Howard Sapp",
+   "verdict": "ROTATED_180",
+   "best": 0.809,
+   "dims": [
+    600,
+    750
+   ]
+  }
+ ]
+}

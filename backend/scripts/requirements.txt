@@ -9,3 +9,6 @@ psycopg2-binary
 # checksummed on first use.
 Pillow
 opencv-python-headless
+# check-headshot-faces.py fetches every published image. It ran locally on an interpreter that
+# already had requests, so its absence here only showed up when the check was wired into CI.
+requests

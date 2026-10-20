@@ -132,12 +132,24 @@ def _best_face(bgr):
     return float(f[-1]), round(angle, 1)
 
 
-def face_report(img: Image.Image) -> dict:
+def face_report(img: Image.Image, short_circuit_at: float | None = None) -> dict:
     """Confidence that an upright face is present, at each of four rotations.
 
     Returns {'confs': {deg: conf}, 'best': deg, 'eye_angle': deg_or_None}. A frame with no
     face at any rotation is not a portrait; one that only scores when turned is stored
     rotated.
+
+    `short_circuit_at` stops after rotation 0 when it already scores that high, and `confs`
+    then holds ONLY {0: conf}. This is for a corpus sweep, where detection is the whole cost:
+    four rotations per image made a full pass CPU-bound, and adding workers did not help
+    (8 -> 32 workers was flat at ~13 min for 9,190 images).
+
+    🔴 IT IS SAFE ONLY BECAUSE THE VERDICT CANNOT CHANGE. check-headshot-faces.classify()
+    returns OK whenever confs[0] >= FACE_BAR, whatever the other three rotations say -- so
+    for a passing frame the extra work is measured and then discarded. Pass the SAME value
+    the caller bars at; passing a LOWER one would skip rotations that could still have
+    out-scored rotation 0 and changed the answer. Flagged frames are never short-circuited,
+    so a triage list still carries all four scores.
     """
     import cv2
     import numpy as np
@@ -148,6 +160,8 @@ def face_report(img: Image.Image) -> dict:
     for deg in _ROTATIONS:
         frame = bgr if ops[deg] is None else cv2.rotate(bgr, ops[deg])
         confs[deg], angles[deg] = _best_face(frame)
+        if deg == 0 and short_circuit_at is not None and confs[0] >= short_circuit_at:
+            return {"confs": {0: round(confs[0], 3)}, "best": 0, "eye_angle": angles[0]}
     best = max(confs, key=lambda d: confs[d])
     return {"confs": {d: round(c, 3) for d, c in confs.items()}, "best": best, "eye_angle": angles[best]}
 

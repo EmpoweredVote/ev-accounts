@@ -10,7 +10,17 @@ map, a blank white frame, a headless torso and a portrait stored on its side.
   python backend/scripts/check-headshot-faces.py --json out.json
   python backend/scripts/check-headshot-faces.py --no-ballot    # profile column only (the pre-CC_0259 net)
 
-Exit 0 = nothing flagged. Exit 1 = flagged rows (printed). Exit 2 = the check could not run.
+  npm run check:headshot-faces           --prefix backend   # what CI runs weekly (full corpus)
+  npm run check:headshot-faces:external  --prefix backend   # what CI runs nightly (off-site links)
+  npm run check:headshot-faces:accept    --prefix backend   # record the flags you have just LOOKED at
+
+Exit 0 = nothing NEW flagged. Exit 1 = a flag that is not in the accepted-flags baseline, or
+(with --fail-on-unreachable) a URL that will not fetch. Exit 2 = the check could not run.
+
+🔴 A FLAG IS ONLY "ACCEPTED" WHILE THE BYTES ARE THE ONES SOMEBODY LOOKED AT. The baseline is
+keyed on (url, sha256), so an x-upsert overwrite at the same path lapses the acceptance and
+the new picture is judged from scratch. Do not run --write-accepted to turn a red run green;
+run it after reading every flag.
 
 🔴 THERE ARE TWO PLACES A HEADSHOT IS PUBLISHED FROM, AND THIS SWEEPS BOTH (since CC_0259).
 
@@ -41,10 +51,12 @@ from __future__ import annotations
 
 import argparse
 import concurrent.futures as cf
+import hashlib
 import io
 import json
 import os
 import sys
+import time
 
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), 'lib'))
 from headshot_image import open_portrait, face_report, PortraitRejected  # noqa: E402
@@ -79,6 +91,21 @@ WHERE NULLIF(rc.photo_url, '') IS NOT NULL
   AND NULLIF(rc.photo_url, '') LIKE %s
 ORDER BY 1
 """
+
+# The accepted-flags file, same convention as cal-access-attribution-baseline.json.
+#
+# 🔴 KEYED ON (URL, SHA256 OF THE BYTES), AND THE HASH IS THE LOAD-BEARING HALF. Keying on the
+# URL alone was the first attempt and it was WRONG: the claim "replacing an image changes its
+# ?v= cache key, so the acceptance expires by itself" is false for every row it has to cover -
+# NONE of the 16 accepted URLs carries a ?v= key, they are plain <uuid>-headshot.jpg paths that
+# an x-upsert overwrites IN PLACE. A URL-keyed acceptance would have gone on muting that path
+# after someone uploaded a completely different picture to it.
+# With the hash, ANY change to the bytes lapses the acceptance and the frame is judged again.
+# ⚠ It records "a human looked at this and it is a real face the detector missed". It is not a
+# mute button, and `--write-accepted` must not be run to make a red build green.
+ACCEPTED_PATH = os.path.normpath(
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data',
+                 'headshot-accepted-flags.json'))
 
 # 🔴 OUR OWN STORAGE ANSWERS TO TWO HOSTNAMES: <ref>.storage.supabase.co AND <ref>.supabase.co.
 # Matching only the first called 1,279 of OUR OWN files "hotlinked to an outside host" and left
@@ -126,6 +153,44 @@ def classify(rep):
     if confs[0] >= FACE_BAR or best == 0:
         return 'OK'
     return f'ROTATED_{best}'
+
+
+def load_accepted(path):
+    """(url, sha256) -> entry, for flags a human has already looked at.
+
+    Missing file = accept nothing, which is the safe direction: a lost baseline makes the
+    check LOUD, never silently permissive.
+    """
+    if not path or not os.path.exists(path):
+        return set()
+    with open(path, encoding='utf-8') as f:
+        doc = json.load(f)
+    return {(e['url'], e.get('sha256')) for e in doc.get('accepted', [])}
+
+
+def write_accepted(path, flagged, best_conf):
+    """Record the current flags as looked-at, with the hash of the exact bytes judged.
+
+    Stores the verdict, score and dimensions too, so a later reader can see WHAT was accepted
+    rather than only that something was.
+    """
+    doc = {
+        '_comment': 'Flags a human has looked at and judged real faces the detector missed. '
+                    'Keyed on (url, sha256): the hash is what makes an acceptance expire by '
+                    'itself, because these paths are overwritten IN PLACE by x-upsert and the '
+                    'URL alone would go on muting a path after the picture behind it changed. '
+                    'Written by check-headshot-faces.py --write-accepted, and only after '
+                    'looking at every flag. It is not a mute button.',
+        'accepted': [
+            {'url': r['url'], 'sha256': r.get('sha256'), 'name': r['name'],
+             'verdict': r['verdict'], 'best': round(best_conf(r), 3), 'dims': r.get('dims')}
+            for r in sorted(flagged, key=lambda r: (best_conf(r), r['name']))
+        ],
+    }
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, 'w', encoding='utf-8') as f:
+        json.dump(doc, f, ensure_ascii=False, indent=1)
+        f.write('\n')
 
 
 def collect(cur, args):
@@ -191,6 +256,15 @@ def main():
     ap.add_argument('--no-ballot', action='store_true',
                     help='skip race_candidates.photo_url - the profile-only net this script used '
                          'before CC_0259. For comparing the two scopes, not for routine use.')
+    ap.add_argument('--accepted', default=str(ACCEPTED_PATH), metavar='FILE',
+                    help='accepted-flags file: flags listed there do not fail the run (CI mode). '
+                         'Pass an empty string to ignore it and see every flag.')
+    ap.add_argument('--write-accepted', action='store_true',
+                    help='rewrite the accepted-flags file from THIS run. Only after looking at '
+                         'every flag: it is an "I have seen these" record, not a mute button.')
+    ap.add_argument('--fail-on-unreachable', action='store_true',
+                    help='treat a URL that will not fetch as a failure. A dead link is a broken '
+                         'image on a page even though it is not a face defect (CC_0260).')
     args = ap.parse_args()
 
     try:
@@ -219,17 +293,34 @@ def main():
     def check(row):
         rec = dict(row)
         url = rec['url']
+        # ONE retry on a fetch failure, because UNREACHABLE can fail a scheduled run and a
+        # single blip across ~9,200 requests would redden a nightly that is otherwise green.
+        # Only the FETCH is retried: a decode failure is deterministic and retrying it just
+        # doubles the work.
+        last = None
+        for attempt in (1, 2):
+            try:
+                r = session.get(url, timeout=45)
+                r.raise_for_status()
+                break
+            except Exception as e:                       # noqa: BLE001 - reported, not swallowed
+                last = e
+                r = None
+                if attempt == 1:
+                    time.sleep(1.5)
+        if r is None:
+            rec.update(verdict='UNREACHABLE', error=f'{type(last).__name__}: {str(last)[:100]}')
+            return rec
+        rec['sha256'] = hashlib.sha256(r.content).hexdigest()
         try:
-            r = session.get(url, timeout=45)
-            r.raise_for_status()
             img = open_portrait(r.content)
-            rep = face_report(img)
+            rep = face_report(img, short_circuit_at=FACE_BAR)
             rec.update(verdict=classify(rep), confs=rep['confs'], eye_angle=rep['eye_angle'],
                        dims=list(img.size))
         except PortraitRejected as e:
             rec.update(verdict='CHECK_FAILED', error=str(e)[:120])
         except Exception as e:
-            rec.update(verdict='UNREACHABLE', error=f'{type(e).__name__}: {str(e)[:100]}')
+            rec.update(verdict='UNDECODABLE', error=f'{type(e).__name__}: {str(e)[:100]}')
         return rec
 
     with cf.ThreadPoolExecutor(max_workers=args.workers) as ex:
@@ -258,17 +349,45 @@ def main():
     def best_conf(r):
         return max((r.get('confs') or {'_': 0}).values())
 
+    accepted = load_accepted(args.accepted)
+    fresh = [r for r in flagged if (r['url'], r.get('sha256')) not in accepted]
+    known = len(flagged) - len(fresh)
+
     for r in sorted(flagged, key=lambda r: (best_conf(r), r['name'])):
         sites = '+'.join(r.get('sites') or ['?'])
-        print(f"  {r['verdict']:14s} best={best_conf(r):.2f}  {r['name'][:34]:34s} "
+        mark = '      ' if (r['url'], r.get('sha256')) in accepted else ' NEW  '
+        print(f" {mark}{r['verdict']:13s} best={best_conf(r):.2f}  {r['name'][:34]:34s} "
               f"[{sites:14s}] {r.get('dims', '')} {r['url'][:58]}")
-    if flagged:
-        print('\nLOOK AT THESE BEFORE ACTING. Most flags are real portraits the detector missed;')
-        print('the ones scoring 0.00 everywhere are where the genuine non-portraits sit.')
-        print('The [site] column says WHICH COLUMN PUBLISHES IT - "ballot" means')
-        print('race_candidates.photo_url, which outranks the profile column on election pages.')
-        return 1
-    return 0
+    if known:
+        try:
+            where = os.path.relpath(args.accepted)
+        except ValueError:              # different drive on Windows - the full path still reads
+            where = args.accepted
+        print(f'\n  {known} of those are in {where} - already looked at '
+              'and judged real faces the detector missed.')
+
+    if args.write_accepted:
+        write_accepted(args.accepted, flagged, best_conf)
+        print(f'wrote {len(flagged)} accepted flags to {args.accepted}')
+        return 0
+
+    # Report BOTH failure kinds before returning. Returning on the first one hid the dead-link
+    # list behind any new face flag, which is the one run where you most want to see both.
+    failed = False
+    if fresh:
+        print(f'\n{len(fresh)} NEW flag(s). LOOK AT THESE BEFORE ACTING. Most flags are real')
+        print('portraits the detector missed; the ones scoring 0.00 everywhere are where the')
+        print('genuine non-portraits sit. The [site] column says WHICH COLUMN PUBLISHES IT -')
+        print('"ballot" means race_candidates.photo_url, which outranks the profile column on')
+        print('election pages. Once judged, record them with --write-accepted.')
+        failed = True
+    if unreachable and args.fail_on_unreachable:
+        print(f'\n{len(unreachable)} image(s) would not fetch after a retry. A dead link is a')
+        print('broken image on a page, not a face defect - but it is still broken (CC_0260).')
+        for r in unreachable[:20]:
+            print(f"  UNREACHABLE  {r['name'][:34]:34s} {r.get('error', '')[:46]}  {r['url'][:54]}")
+        failed = True
+    return 1 if failed else 0
 
 
 if __name__ == '__main__':
