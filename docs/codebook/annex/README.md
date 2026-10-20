@@ -163,3 +163,4 @@ is a new revision.
 | Topic | Season 3 revision | Status |
 |---|---|---|
 | [`education-library-books`](season3/education-library-books.md) | `7bb64029-0103-4df8-a4d8-3dcb2938f27f` (v2 r2, CA_0310, applied 2026-10-15) | draft 2026-10-15; Q2, Q4 ruled; removal-list line provisional |
+| [`education-equity-programs`](season3/education-equity-programs.md) | `516800d5-b3ce-4eff-ad34-6f1c25a272ef` (v2 r2, CA_0314, applied 2026-10-20) | draft 2026-10-19; Q2–Q5, R1–R4 and the Stage 4 lines ruled 2026-10-19 |
