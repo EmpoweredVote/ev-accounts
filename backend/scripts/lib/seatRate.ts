@@ -168,11 +168,14 @@ export function formatReport(r: SeatRateReport): string {
  * One row per answer. Level comes from the district of ONE current office per politician
  * (office_current_holder is politician-rooted here, so it can fan out): the office named on the
  * topic's review row wins when that politician holds it, otherwise the lowest office id. Read-only.
- * Answers whose office level is unknown (null from levelForDistrict) are skipped and reported via
- * `onSkip`, never scored.
+ * Answers are never lost silently: one whose politician holds no current office (a candidate, a former
+ * holder) or whose office level is unknown (null from levelForDistrict) is not scored, and is reported
+ * through `onSkip(politicianId, why)`. Review rows that were rejected or superseded are ignored when
+ * picking the blank reason.
  */
 export async function loadDbRows(
-  q: Query, topicKey: string, seasonId: string, onSkip?: (politicianId: string) => void,
+  q: Query, topicKey: string, seasonId: string,
+  onSkip?: (politicianId: string, why: 'no-office' | 'unknown-level') => void,
 ): Promise<ResearchRow[]> {
   // @zero-scope: counts-blanks — this report asks whether a politician is SEATED, so a 0 is a blank to count.
   const { rows } = await q(
@@ -183,13 +186,14 @@ export async function loadDbRows(
             ARRAY[o.title, c.name] AS office_labels, rv.proposed_blank_reason
        FROM inform.politician_answers pa
        JOIN inform.compass_topics t ON t.id = pa.topic_id
-       JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
-       JOIN essentials.offices o ON o.id = och.office_id
+       LEFT JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
+       LEFT JOIN essentials.offices o ON o.id = och.office_id
        LEFT JOIN essentials.districts d ON d.id = o.district_id
        LEFT JOIN essentials.chambers c ON c.id = o.chamber_id
        LEFT JOIN LATERAL (
               SELECT r.office_id, r.proposed_blank_reason FROM inform.stance_research_review r
                WHERE r.politician_id = pa.politician_id AND r.topic_id = pa.topic_id AND r.season_id = pa.season_id
+                 AND r.status NOT IN ('rejected', 'superseded')
                ORDER BY r.created_at DESC LIMIT 1) rv ON true
       WHERE t.topic_key = $1 AND pa.season_id = $2
       ORDER BY pa.politician_id, (o.id = rv.office_id) DESC, o.id`,
@@ -197,8 +201,9 @@ export async function loadDbRows(
   );
   const out: ResearchRow[] = [];
   for (const r of rows) {
+    if (!r.office_id) { onSkip?.(r.politician_id, 'no-office'); continue; }
     const level = levelForDistrict(r.district_type ?? null, r.is_judicial ?? null, r.district_label ?? null, r.office_labels ?? []);
-    if (!level) { onSkip?.(r.politician_id); continue; }
+    if (!level) { onSkip?.(r.politician_id, 'unknown-level'); continue; }
     const value = r.value === null ? null : Number(r.value);
     const row: ResearchRow = { politician_id: r.politician_id, office_id: r.office_id, level, value, record_kind: 'none' };
     if (r.proposed_blank_reason) {
@@ -209,4 +214,32 @@ export async function loadDbRows(
     out.push(row);
   }
   return out;
+}
+
+/** True when `inform.compass_topics` has this key, so an unknown key is not mistaken for "no rows". */
+export async function topicExists(q: Query, topicKey: string): Promise<boolean> {
+  const { rows } = await q('SELECT 1 FROM inform.compass_topics WHERE topic_key = $1', [topicKey]);
+  return rows.length > 0;
+}
+
+/**
+ * JOIN research onto the database rows (ruling, spec §9 item 1): the database rows stay the base;
+ * a rows.tsv row with the same politician_id supplies blank_class, record_kind and gate. A database
+ * row with no tsv match keeps none of them. tsv rows matching no database row are counted, not scored.
+ */
+export function mergeResearch(dbRows: ResearchRow[], tsvRows: ResearchRow[]): { rows: ResearchRow[]; researchOnly: number } {
+  const byPol = new Map<string, ResearchRow>();
+  for (const t of tsvRows) if (!byPol.has(t.politician_id)) byPol.set(t.politician_id, t);
+  const seen = new Set<string>();
+  const rows = dbRows.map((d) => {
+    const t = byPol.get(d.politician_id);
+    if (!t) return d;
+    seen.add(d.politician_id);
+    const m: ResearchRow = { ...d, record_kind: t.record_kind };
+    const cls = t.blank_class ?? d.blank_class;
+    if (cls) m.blank_class = cls; else delete m.blank_class;
+    if (t.gate) m.gate = t.gate;
+    return m;
+  });
+  return { rows, researchOnly: [...byPol.keys()].filter((id) => !seen.has(id)).length };
 }

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { summarise, blankClassForReason, parseRowsTsv, formatReport, loadDbRows } from './seatRate.js';
+import { mergeResearch, topicExists, summarise, blankClassForReason, parseRowsTsv, formatReport, loadDbRows } from './seatRate.js';
 
 describe('seatRate', () => {
   it('zero rows', () => {
@@ -60,13 +60,36 @@ describe('seatRate', () => {
       return { rows: [
         { politician_id: 'p1', office_id: 'o1', value: '0', district_type: 'STATE_UPPER', is_judicial: false, district_label: 'x', office_labels: ['Senator'], proposed_blank_reason: 'no-evidence' },
         { politician_id: 'p2', office_id: 'o2', value: '2.5', district_type: 'NATIONAL_LOWER', is_judicial: false, district_label: 'y', office_labels: [], proposed_blank_reason: null },
+        { politician_id: 'p4', office_id: null, value: '3', district_type: null, is_judicial: null, district_label: null, office_labels: [null, null], proposed_blank_reason: null },
         { politician_id: 'p3', office_id: 'o3', value: '1', district_type: 'WEIRD', is_judicial: false, district_label: null, office_labels: [], proposed_blank_reason: null },
       ] };
     };
     const skipped: string[] = [];
-    const rows = await loadDbRows(q, 'k', 's', (id) => skipped.push(id));
+    const why: string[] = [];
+    const rows = await loadDbRows(q, 'k', 's', (id, w) => { skipped.push(id); why.push(w); });
     expect(calls[0]).toEqual(['k', 's']);
     expect(rows.map((r) => [r.level, r.value, r.blank_class])).toEqual([['state', 0, 'source-gap'], ['federal', 2.5, undefined]]);
-    expect(skipped).toEqual(['p3']);
+    expect(skipped).toEqual(['p4', 'p3']);
+    expect(why).toEqual(['no-office', 'unknown-level']);
+  });
+
+  it('mergeResearch joins on politician_id', () => {
+    const db = [
+      { politician_id: 'a', office_id: 'o', level: 'state' as const, value: 0, record_kind: 'none' as const },
+      { politician_id: 'b', office_id: 'o', level: 'state' as const, value: 3, record_kind: 'none' as const },
+    ];
+    const tsv = [
+      { politician_id: 'a', office_id: 'o', level: 'state' as const, value: 0, blank_class: 'gate' as const, record_kind: 'vote-yes' as const, gate: 'consent' },
+      { politician_id: 'z', office_id: 'o', level: 'state' as const, value: 1, record_kind: 'sponsor' as const },
+    ];
+    const m = mergeResearch(db, tsv);
+    expect(m.rows[0]).toMatchObject({ blank_class: 'gate', record_kind: 'vote-yes', gate: 'consent' });
+    expect(m.rows[1]).toEqual(db[1]);
+    expect(m.researchOnly).toBe(1);
+  });
+
+  it('topicExists', async () => {
+    expect(await topicExists(async () => ({ rows: [{}] }), 'k')).toBe(true);
+    expect(await topicExists(async () => ({ rows: [] }), 'k')).toBe(false);
   });
 });
