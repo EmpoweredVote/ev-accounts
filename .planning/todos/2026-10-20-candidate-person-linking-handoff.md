@@ -356,3 +356,61 @@ refusal) → `CC_0269`/`CC_0272` (the creation pattern, the name splitting, the 
 **State of the work as of 2026-10-20:** `CC_0262`-`CC_0272` applied and on master. Branch
 `fix/ca-2026-general-candidates`, worktree `C:/ev-accounts-ca-cands` — run
 `npm run check:deletable --prefix backend -- /c/ev-accounts-ca-cands` before removing either.
+
+---
+
+## 13. PREP FOR THE OTHER STATES (written 2026-10-20, after the Colorado check)
+
+### 13a. 🟢 Colorado's 10 `filed` rows are NOT a defect — checked, close it
+
+They came from the SAME SOS document, on the same day, as the 73 `active` rows, and **every one of
+the six affected races contains BOTH statuses**. The distinction is the source's own and our
+importer carried it faithfully. `filed` is a fact, not a data-entry error.
+
+⚠ They DO render: `result` is NULL so `electionService`'s `not_nominated` filter never touches
+them, and `essentials.is_live_candidate` counts `filed` as live. Six races are affected —
+U.S. Senate (3 filed / 6 active), U.S. House 1 (3/5), 4 (1/3), 5 (1/4), State Rep 16 (1/3), 17 (1/3).
+
+▶ **THE ONLY OPEN QUESTION IS A DISPLAY DECISION, NOT A CLEANUP:** should a candidate the state
+lists as *filed* appear on a ballot page beside candidates it lists as *active*? That is the
+operator's call. Nothing is wrong with the data either way.
+🔴 **The cited source URL now 404s** (`…/2026GeneralCandidateListUnofficial.xlsx`), and
+coloradosos.gov expressly prohibits automated retrieval of its content (see `CC_0267`). So this
+cannot be re-verified by script. A human with the certified list settles it in a minute.
+
+### 13b. The cohorts, measured 2026-10-20
+
+| State | unlinked | **live** | not live | variant hits to adjudicate | designations |
+| --- | --- | --- | --- | --- | --- |
+| WA | 209 | **134** | 75 | 15 | 0 |
+| CO | 72 | 72 | 0 | 3 | 0 |
+| IN | 13 | 13 | 0 | 10 | 0 |
+| TX | 11 | 11 | 0 | 0 | 0 |
+| NV | 3 | 3 | 0 | 1 | 0 |
+| OR | 3 | 3 | 0 | 1 | 0 |
+| **total** | **311** | **236** | **75** | **30** | **0** |
+
+⚠ **INDIANA IS THE ODD ONE: 10 variant hits against 13 live candidates.** Three quarters of that
+cohort matches an existing person. Do Indiana by hand as a linking job; do not treat it as a
+creation sweep. (It is also the smallest, so it is the cheapest place to re-prove the method.)
+
+### 13c. 🔴 There is no evidence instrument in any of these states
+
+Zero ballot designations. Instrument A cannot run anywhere outside California, and Washington's
+certified list is a scanned image with no text layer. So for these 236:
+- **Linking** is possible only via instrument B (primary-advanced continuity, which WA's top-two
+  system supports well — 130 of its 134 live rows carry `result='advanced'`) and geography.
+- **Creation** is name-only. That was approved for California specifically. **It has not been
+  approved for anywhere else** — see §11 question 1.
+
+▶ **Order I would work them:** Indiana (13, mostly links) → Nevada + Oregon (6) → Texas (11) →
+Colorado (72) → Washington (134, and the only one needing the 75-row filter).
+
+### 13d. The two decisions needed before any of it
+
+1. **Does a certified candidate who lost a primary get a person record?** Affects WA's 70. The
+   rows are inert either way; this only decides whether a creation sweep includes them.
+2. **Is name-only creation acceptable outside California?** 236 rows hang on this. California was
+   approved on the understanding that its ballot pages were live now; the same is true of these.
+
+Neither is a data question and neither blocks linking work. Both block creation.
