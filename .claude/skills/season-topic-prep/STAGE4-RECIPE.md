@@ -19,6 +19,8 @@ Write them at the top of `stage4/revision.md`:
   and `{{S3_COUNT}}`;
 - seats on the topic in every season (`politician_answers`, `politician_context`, `stance_research_review`) and
   live voter answers by revision and value. The draft season must hold **no** politician answers on this topic.
+  If it does (Source-path draft rows written before a wording problem appeared), stop and ask the runner whether to
+  withdraw those draft rows or defer the rewording to the next season.
 
 ### 2. Write the offline package (`stage4/`)
 - `revision.md` — every field: change class (`substantive` when a seat or a voter answer moves position or the
@@ -46,6 +48,9 @@ Write them at the top of `stage4/revision.md`:
 - The migration as a file only: copy the template to `stage4/<slot placeholder>_<suffix>.sql` and fill every
   `{{…}}`. Rung texts, title, question, guidance, rationale, public note and review ref sit inside dollar quotes, so
   apostrophes need no escaping. `grep -n '{{' <file>` must print only the comment line that mentions it.
+  The template finds the new revision by its five rung texts on any revision **other than** `{{REV_PREV_ID}}`, so a
+  clarifying revision whose rungs are unchanged (only question, guidance or title change) still works: set
+  `{{CHANGE_CLASS}}` to `clarifying` and `{{VERSION}}` to the control's version.
 
 🛑 **Yes #1: the package.** Ask for the text, the rung map, the rationale and public note, and the annex and codebook
 lines, as one plain question each where there is a choice; recommend.
@@ -64,7 +69,16 @@ Read the question count of each season again. If another season migration ran si
 and `{{S3_COUNT}}` in the file. A gate that expects a stale count fails on apply.
 
 ### 6. Dry run on production
-Run the migration body **twice inside one transaction, then force a rollback with a RAISE**, in one session:
+Run the migration body **twice inside one transaction, then force a rollback with a RAISE**, in one session.
+Write the dry-run file below into the research folder (`stage4/dry-run.sql`) and run it with psql, reading
+`DATABASE_URL` from your `backend/.env` without printing it:
+
+```bash
+set -a; . backend/.env; set +a      # in a worktree: the main checkout's backend/.env. Never echo it.
+psql "$DATABASE_URL" -X -v ON_ERROR_STOP=1 -f <absolute path>/stage4/dry-run.sql
+```
+
+`ON_ERROR_STOP=1` makes psql stop at the forced RAISE (the expected last error) or at the first real failure.
 
 ```sql
 BEGIN;
@@ -74,9 +88,10 @@ DO $$ BEGIN RAISE EXCEPTION 'dry run: forced rollback'; END $$;
 ROLLBACK;
 ```
 
-The forced `RAISE` makes sure nothing commits even if the client would otherwise commit each statement. Then
-confirm the rollback in a fresh read: the topic still has its old number of revisions, the draft season still pins
-the control revision, and no open revision exists. Record in the file header and `README.md`: gate OK, idempotent
+The forced `RAISE` makes sure nothing commits even if the client would otherwise commit each statement. Check
+that the output shows both gate passes and ends with `dry run: forced rollback`. Then confirm nothing persisted
+with a read-only check in a new session (`psql "$DATABASE_URL" -X -c "SELECT …"`): the topic still has its old
+number of revisions, the draft season still pins the control revision, and no open revision exists. Record in the file header and `README.md`: gate OK, idempotent
 second run OK, the voter-answer dispositions the gate printed, rollback confirmed.
 
 🛑 **Yes #2: apply on production.** A separate, explicit yes, after the dry run is reported.

@@ -44,7 +44,8 @@
 -- 🔴 Season question counts in the gate ({{S2_COUNT}} open, {{S3_COUNT}} draft) were read on {{DATE}}.
 --    RE-READ THEM just before the dry run and again before applying.
 --
--- Idempotent: steps are guarded on the five new rung texts; a re-run is a no-op and the gate still
+-- Idempotent: steps are guarded on the five new rung texts (on any revision other than the previous
+-- one, so a clarifying revision with unchanged rungs works); a re-run is a no-op and the gate still
 -- asserts the full shape.
 -- =============================================================================
 
@@ -97,7 +98,7 @@ DECLARE
 BEGIN
   -- The new revision is the approved/published one whose five rungs match these texts exactly.
   SELECT r.id INTO v_new FROM inform.compass_topic_revisions r
-   WHERE r.topic_id = v_topic AND r.status IN ('approved','published')
+   WHERE r.topic_id = v_topic AND r.id <> '{{REV_PREV_ID}}' AND r.status IN ('approved','published')
      AND (SELECT count(*) FROM inform.compass_stance_revisions s
            JOIN jsonb_array_elements(v_rungs) AS x(elem) ON (x.elem->>'value')::int = s.value AND x.elem->>'text' = s.text
           WHERE s.topic_revision_id = r.id) = 5
@@ -169,7 +170,7 @@ BEGIN
          r.question_text, r.guidance, r.rationale, r.rung_map
     INTO v_new, v_ver, v_num, v_stat, v_curr, v_title, v_short, v_q, v_g, v_rat, v_map
   FROM inform.compass_topic_revisions r
-  WHERE r.topic_id = v_topic
+  WHERE r.topic_id = v_topic AND r.id <> '{{REV_PREV_ID}}'
     AND (SELECT count(*) FROM inform.compass_stance_revisions s
           JOIN jsonb_array_elements(v_rungs) AS x(elem) ON (x.elem->>'value')::int = s.value AND x.elem->>'text' = s.text
          WHERE s.topic_revision_id = r.id) = 5

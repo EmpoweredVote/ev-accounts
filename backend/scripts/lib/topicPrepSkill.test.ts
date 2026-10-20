@@ -78,6 +78,15 @@ describe('season-topic-prep stage4-revision.sql', () => {
     for (const p of placeholders) expect(sql, `{{${p}}}`).toContain(`{{${p}}}`);
     expect(sql).toContain('UPDATE inform.compass_topic_revisions SET guidance');
   });
+
+  it('sets guidance before approving (guidance is not a propose parameter)', () => {
+    const sql = read('templates/stage4-revision.sql');
+    const update = sql.indexOf('UPDATE inform.compass_topic_revisions SET guidance');
+    const approve = sql.indexOf('PERFORM inform.admin_approve_topic_revision');
+    expect(update).toBeGreaterThan(-1);
+    expect(approve).toBeGreaterThan(-1);
+    expect(update).toBeLessThan(approve);
+  });
 });
 
 describe('season-topic-prep RULINGS.md', () => {

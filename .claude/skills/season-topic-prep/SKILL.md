@@ -47,7 +47,13 @@ The design and its reasons: `docs/superpowers/specs/2026-10-20-season-topic-prep
   `EV_RESEARCH_ROOT` (your research root). Without them, the owner is the Monday user the connector is signed in as,
   and the research root is `~/Documents/GitHub/.planning/research`.
 - **Research folder:** `<research root>/s3-prep-<topic_key>/`, with one subfolder per stage (`stage0a/`, `stage0/`,
-  `stage1/`, `stage2/`, `stage3/`, `stage4/`). Create it if missing. It is local and never pushed.
+  `stage1/`, `stage2/`, `stage3/`, `stage4/`). It is local and never pushed.
+  🔴 **Before creating any folder, look for an existing trail.** Search the research root for `s3-pilot-*`,
+  `s3-census-*` and `s3-prep-*` folders whose name contains the topic key or its short name (for example
+  `s3-pilot-homelessness-stage0a` … `-stage3`, `s3-pilot-school-police-stage4`, `s3-pilot-equity-programs/stage1/`,
+  `s3-census-education-school-police-supplement2`). If any exist, show them to the runner with the stage outputs
+  you found in each (mapped to this skill's file names), and 🛑 ask which trail to continue. Continue there, in its
+  own folder names. **Never start a second trail for a topic.** Create `s3-prep-<topic_key>/` only when none exists.
 - **Source store:** `backend/data/source-store/` in the repo, committed with each stage's PR. See
   [SOURCE-STORE.md](SOURCE-STORE.md).
 - **Repo changes** (store files, migrations, annexes, codebook lines, RULINGS.md lines) go through your own
@@ -74,7 +80,8 @@ The design and its reasons: `docs/superpowers/specs/2026-10-20-season-topic-prep
 `blank_reason`, `blank_class`, `record_kind`, `gate`. `level` is federal, state, local, judicial or school.
 `value` is empty, 0 (blank) or 1–5 (halves allowed). `blank_class` is `source-gap`, `gate`, `wording` or `no-lever`.
 `record_kind` is `vote-yes`, `vote-no`, `sponsor`, `author`, `own-words` or `none`. `gate` is empty or one of
-`multi-subject`, `consent`, `higher-law-duty`, `near-unanimous`, `off-version-sponsor`.
+`multi-subject`, `consent`, `higher-law-duty`, `near-unanimous`, `off-version-sponsor`, `pre-seating`,
+`study-directive`.
 
 **`gates.tsv` columns** (tab-separated): `instrument_id`, `vote_date`, `body`, `motion`, `kind` (action-item,
 consent, en-bloc, roll-call, sponsor), `yes`, `no`, `absent`, `body_size`, `own_motion`, `higher_law_duty`,
@@ -86,7 +93,7 @@ consent, en-bloc, roll-call, sponsor), `yes`, `no`, `absent`, `body_size`, `own_
 | What Stage 0a finds | Path |
 |---|---|
 | Most blanks are **source gaps** | **Source path**: targeted collection plus joint evidence, then re-measure. No rewording. |
-| Most blanks are **gates** | Run the Stage 0 census first, to find gate-free records (action-item votes, divided roll calls). No wording work before it. |
+| Most blanks are **gates** | Run the Stage 0 census first, to find gate-free records (action-item votes, divided roll calls). No wording work before it. Then re-measure with the census rows classified: if wording blanks now hold the majority, continue on the **Wording path** (Stage 1 on); otherwise take the **Source path**. |
 | Most blanks are **wording**, or the rung lint fails | **Wording path**: full Stages 0–4. |
 | The topic has no history | Wording path's census, to get a baseline. |
 
@@ -119,8 +126,11 @@ otherwise unclear, 🛑 **ask the runner to rule the path** (one question, with 
    people. **Save every source to the store.**
 2. Look for joint evidence (codebook V4.2, E2): independent sources that together meet every clause of one rung.
 3. Hand coding to the research-stances pipeline with `--season draft`, against the topic's current Season 3 pin.
-   🛑 **One yes per coding batch.** In the question, say that rows written now pin the current Season 3 revision:
-   a later rewording cannot re-pin the topic while Season 3 holds answers on it.
+   🛑 **One yes per coding batch.** Batches run only once Stage 0a has chosen the Source path, which means the
+   rungs are final for this season. In the question, say that rows written now pin the current Season 3 revision:
+   a later rewording cannot re-pin the topic while Season 3 holds answers on it. If a wording problem shows up after
+   draft rows exist, stop and 🛑 ask the runner one question: withdraw the draft rows (so the topic can be re-pinned
+   this season), or defer the rewording to the next season. Recommend one.
 4. Rows go through the existing review queue. Re-measure with `topic:seat-rate --season draft --research …`.
 5. 📋 Monday step (stage `done`, or `0a` again if a wording problem showed up).
 
@@ -181,12 +191,14 @@ otherwise unclear, 🛑 **ask the runner to rule the path** (one question, with 
    voter answers that move); **T6** 0 lint hits (or a written reason per hit). Write `stage3/rows.tsv` for the
    leading draft and check it with `topic:seat-rate --research-only <absolute path to stage3>`.
 5. Blind validation: separate validator subagents code the sample from the codebook, ladder, annex and frozen texts
-   only. Bar ≥ 95%.
+   only. Bar ≥ 95%. **Below 95%, stop:** find the checklist gap that explains the misses, fix it, re-code and
+   re-validate. If one checklist entry does not explain the misses, run full holistic coding of the set instead of
+   the checklist (spec §5.4), then validate again.
 6. **Adversarial check** (replaces T4): follow [ADVERSARIAL-CHECK.md](ADVERSARIAL-CHECK.md) with
    [templates/adversary-prompt.md](templates/adversary-prompt.md). It writes `stage3/disputes.md` and
    `stage3/expert-queue.json`.
-7. Write `stage3/results.md`: a one-page summary first (table of T1, T3, T5, T6, validation; winner; rulings owed),
-   then method and detail.
+7. Write `stage3/results.md`: a one-page summary first (table of T1, T3, T5, T6, validation; winner; rulings owed;
+   disputes; the closed attacks with their one-line reasons), then method and detail.
 8. 🛑 Each ruling and each dispute. **Stage 3 passes only when every dispute is ruled.** 📋 Monday step.
 
 ## Stage 4 — revision package and apply

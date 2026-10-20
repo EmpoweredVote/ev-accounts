@@ -30,7 +30,8 @@ not the output; a row with no attack is listed only by id. Output: `stage3/adver
 
 You (the orchestrator) read each attack against the source. An attack that fails on the text (the quote does not
 say what the attack claims, or a ruling in RULINGS.md settles it) is closed with a one-line reason in
-`stage3/disputes.md`. Each attack that **survives** becomes one dispute, in this format:
+`stage3/disputes.md`. The closed attacks and their reasons are also listed in the one-page summary of
+`stage3/results.md`, so the runner can see what was tried and why it failed. Each attack that **survives** becomes one dispute, in this format:
 
 ```markdown
 ### D1 — <person or row id> · <instrument id> · chair <n> → <n or blank>

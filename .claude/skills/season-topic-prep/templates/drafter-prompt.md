@@ -3,7 +3,11 @@
 **Orchestrator notes (do not send this part).**
 - Fill every `{{…}}` with absolute paths, then send everything below the line as the prompt of a fresh subagent
   (general-purpose, the strongest model available). Note its agent id.
-- Every path in "You must not open" is also a `--forbid` for the blindness check. After the drafter finishes, run:
+- Fill `{{FORBIDDEN_PATHS}}` with an explicit list of absolute paths. Do not rely on a glob: search the research
+  root for every `s3-census-*`, `s3-pilot-*` and `s3-prep-*` folder for this topic (by topic key and short name) and
+  list each one, plus this trail's `stage0a/rows.tsv`, `stage0/`, `stage1/`, `stage3/`, the source store, the
+  side-session notes folders, the shadow-run folders and the named memory notes.
+- Every path in `{{FORBIDDEN_PATHS}}` is also a `--forbid` for the blindness check. After the drafter finishes, run:
 
   ```bash
   npm run topic:blindness-check --prefix backend -- \
@@ -46,8 +50,8 @@ You are not lowering the evidence standard.
 
 {{FORBIDDEN_PATHS}}
 
-This always includes: the Stage 0a row list (`stage0a/rows.tsv`), the census folders (`stage0/` and any
-`s3-census-{{TOPIC_KEY}}*` folder), the Stage 1 test set (`stage1/`), Stage 3 (`stage3/`), the source store
+This always includes: the Stage 0a row list (`stage0a/rows.tsv`), every census folder for this topic (listed
+above by name), the Stage 1 test set (`stage1/`), Stage 3 (`stage3/`), the source store
 (`backend/data/source-store/`), the side-session notes folders, shadow runs
 (`backend/data/stance-research/*-shadow-*-{{TOPIC_KEY}}/`), the topic's Stage 1 plan, and these memory notes:
 {{FORBIDDEN_MEMORY_NOTES}}. Do not look up bill numbers, board names or people. Describe example acts **by kind**

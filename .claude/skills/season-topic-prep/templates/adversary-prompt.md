@@ -2,8 +2,8 @@
 
 You are the adversarial checker for the compass topic `{{TOPIC_KEY}}`. Coders have placed politicians on the rungs
 (chairs) of a draft ladder from their records. Your job is to **try to prove each chair wrong** from the source
-text. A chair you cannot break is fine; you do not need to say why it is right. Failed attacks are not your
-output; surviving attacks are.
+text. A chair you cannot break is fine; you do not need to say why it is right. Report every attack you can
+back with a quote; the orchestrator judges which survive.
 
 ## What you may read
 
@@ -26,8 +26,8 @@ Look for the clause that:
 2. makes the evidence direction-only (the text shows a side, but no rung states the act);
 3. makes the instrument multi-subject: an operative part that would be evidence for another served topic;
 4. gates the vote: consent agenda or en bloc; near-unanimous (a body of 11 or more with under 10% No); a small
-   body acting on a duty a higher law imposes, or on someone else's motion; a sponsor of a version that is not the
-   one voted;
+   body acting on someone else's motion; a provision that carries out a higher-law duty (any body size); a sponsor
+   of a version that is not the one voted;
 5. for a blank row: seats it after all, on a clause the coders missed.
 
 Rules: quote the deciding sentence **verbatim** with its section and URL. Never argue from silence: what a text
