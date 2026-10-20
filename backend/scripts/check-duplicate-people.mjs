@@ -114,7 +114,40 @@ function describe(p) {
     process.exit(0);
   }
   const pool = new Pool({ connectionString: process.env.DATABASE_URL, ssl: { rejectUnauthorized: false } });
-  const { rows } = await pool.query(QUERY);
+  // 🔴 RAISE THE STATEMENT TIMEOUT FOR THIS ONE READ. `ev_api` carries
+  // statement_timeout=30s, which is a WEB-REQUEST budget; this is a single analytical sweep
+  // over every active politician with two laterals and three correlated subqueries, and it is
+  // cache-bound. Measured against prod 2026-10-20 on the same pooler host CI uses:
+  //   cold 13.2s · warm 0.39s   -- a ~30x spread on identical SQL.
+  // On 2026-10-20 it crossed the ceiling and FAILED MASTER TWICE with
+  // "canceling statement due to statement timeout" at ~31s, having been green on every run
+  // before it. Nothing about the query changed; CC_0269 added 110 politicians and ~112
+  // candidacy edges, which was enough to push a cold run past 30s.
+  // ⚠ THE QUERY IS NOT WRONG AND IS NOT SPLIT UP HERE. Each component is fast on its own
+  // (seat lateral 0.8s, candidacy lateral 1.5s, subqueries ~0.2s each); the cost is the cold
+  // read, not the shape. Splitting it into four queries joined in JS would trade a clear
+  // single statement for four and still be cache-bound. What was actually wrong is the budget.
+  // A master-only gate that fails on cache luck is worse than no gate: it trains people to
+  // ignore red, which is the reason this file's own --all mode is non-failing.
+  //
+  // ⚠ SET LOCAL INSIDE AN EXPLICIT TRANSACTION ON ONE CHECKED-OUT CLIENT, not pool.query("SET").
+  // We connect through pgbouncer (aws-0-*.pooler.supabase.com). A bare SET on the pool can be
+  // issued on one server connection and the SELECT on another, which silently discards it --
+  // and under TRANSACTION pooling that is the normal case, not an edge case. BEGIN + SET LOCAL
+  // + the query on the same client holds under session and transaction pooling alike.
+  const client = await pool.connect();
+  let rows;
+  try {
+    await client.query('BEGIN');
+    await client.query("SET LOCAL statement_timeout = '180s'");
+    ({ rows } = await client.query(QUERY));
+    await client.query('COMMIT');
+  } catch (err) {
+    await client.query('ROLLBACK').catch(() => {});
+    throw err;
+  } finally {
+    client.release();
+  }
   await pool.end();
 
   if (rows.length < 1000 || !positiveControl(rows)) {
