@@ -1,0 +1,72 @@
+import { describe, it, expect } from 'vitest';
+import { summarise, blankClassForReason, parseRowsTsv, formatReport, loadDbRows } from './seatRate.js';
+
+describe('seatRate', () => {
+  it('zero rows', () => {
+    const r = summarise([]);
+    expect(r.total.rows).toBe(0);
+    expect(r.total.affirmative?.rate ?? null).toBeNull();
+    expect(formatReport(r)).toContain('no rows');
+  });
+
+  it('half value is seated in between', () => {
+    const r = summarise([{ level: 'state', value: 2.5 }]);
+    expect(r.byLevel.state.seated).toBe(1);
+    expect(r.byLevel.state.perRung.between).toBe(1);
+  });
+
+  it('blank classes', () => {
+    const r = summarise([
+      { level: 'local', value: 0, blank_class: 'gate' },
+      { level: 'local', value: 0 },
+    ]);
+    expect(r.byLevel.local.blank).toBe(2);
+    expect(r.byLevel.local.byClass.gate).toBe(1);
+    expect(r.byLevel.local.byClass.unclassified).toBe(1);
+  });
+
+  it('affirmative excludes gated and No', () => {
+    const r = summarise([
+      { level: 'state', value: 4, record_kind: 'vote-yes' },
+      { level: 'state', value: 0, record_kind: 'vote-yes', gate: 'consent', blank_class: 'gate' },
+      { level: 'state', value: 2, record_kind: 'vote-no' },
+      { level: 'state', value: 0, record_kind: 'sponsor' },
+    ]);
+    expect(r.total.affirmative).toEqual({ rows: 2, seated: 1, rate: 0.5 });
+  });
+
+  it('blankClassForReason maps reasons', () => {
+    expect(blankClassForReason('no-evidence')).toBe('source-gap');
+    for (const g of ['near-unanimous', 'multi-subject', 'study-directive', 'pre-seating']) expect(blankClassForReason(g)).toBe('gate');
+    for (const w of ['direction-only', 'adjacent-chairs', 'compound-partial', 'record-vs-statement-conflict']) expect(blankClassForReason(w)).toBe('wording');
+    expect(blankClassForReason('scope-unavailable')).toBe('no-lever');
+    expect(blankClassForReason('banana')).toBeNull();
+  });
+
+  const H = 'politician_id\toffice_id\tlevel\tvalue\tblank_reason\tblank_class\trecord_kind\tgate';
+  it('parseRowsTsv parses and errors with file, line, column', () => {
+    const ok = parseRowsTsv(`${H}\np1\to1\tstate\t3\t\t\tvote-yes\t`, 'rows.tsv');
+    expect(ok).toHaveLength(1);
+    expect(ok[0].value).toBe(3);
+    expect(ok[0].gate).toBeUndefined();
+    const bad = `${H}\np1\to1\tstate\t3\t\t\tvote-yes\t\np2\to2\tstate\t0\tx\tbogus\tnone\t`;
+    expect(() => parseRowsTsv(bad, 'rows.tsv')).toThrow(/rows\.tsv.*line 3.*blank_class/);
+  });
+
+  it('loadDbRows resolves one level per politician and keeps blank reason', async () => {
+    const calls: unknown[][] = [];
+    const q = async (_sql: string, params: unknown[] = []) => {
+      calls.push(params);
+      return { rows: [
+        { politician_id: 'p1', office_id: 'o1', value: '0', district_type: 'STATE_UPPER', is_judicial: false, district_label: 'x', office_labels: ['Senator'], proposed_blank_reason: 'no-evidence' },
+        { politician_id: 'p2', office_id: 'o2', value: '2.5', district_type: 'NATIONAL_LOWER', is_judicial: false, district_label: 'y', office_labels: [], proposed_blank_reason: null },
+        { politician_id: 'p3', office_id: 'o3', value: '1', district_type: 'WEIRD', is_judicial: false, district_label: null, office_labels: [], proposed_blank_reason: null },
+      ] };
+    };
+    const skipped: string[] = [];
+    const rows = await loadDbRows(q, 'k', 's', (id) => skipped.push(id));
+    expect(calls[0]).toEqual(['k', 's']);
+    expect(rows.map((r) => [r.level, r.value, r.blank_class])).toEqual([['state', 0, 'source-gap'], ['federal', 2.5, undefined]]);
+    expect(skipped).toEqual(['p3']);
+  });
+});

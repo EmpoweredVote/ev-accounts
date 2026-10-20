@@ -8,6 +8,7 @@
     "build": "rm -rf dist && tsc -p tsconfig.build.json",
     "start": "node dist/index.js",
     "test": "vitest run",
+    "topic:seat-rate": "tsx scripts/topic-seat-rate.ts",
     "test:unit": "vitest run src scripts --exclude \"**/ingest-gazetteer-places-counties.test.ts\"",
     "test:watch": "vitest",
     "lint": "eslint src scripts",
