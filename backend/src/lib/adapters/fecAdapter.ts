@@ -1011,8 +1011,14 @@ async function retireSupersededFilings(filings: SupersededFiling[]): Promise<num
     // politician_source_id and every pair is compared, so cost is quadratic in the source's row
     // count and it does not complete (measured: >10 min on one committee of one source). The
     // window form is a single pass plus a sort over the same rows.
+    //
+    // The slice predicate is served by idx_contrib_fec_supersession (CA_0316), a partial
+    // expression index that must keep matching these literals ('fec', 'file_number') and these
+    // three JSONB expressions — change them together. MATERIALIZED keeps the window sort to the
+    // five narrow slice columns: inlined, the sort carried the whole row and spilled to disk on
+    // large filings (18 MB on a 27k-row filing, vs 2.2 MB in memory materialized).
     const res = await pool.query(
-      `WITH slice AS (
+      `WITH slice AS MATERIALIZED (
          SELECT id, amount, contribution_date, donor_name_normalized,
                 (raw_record->>'file_number')::bigint AS fn
            FROM transparent_motivations.contributions
