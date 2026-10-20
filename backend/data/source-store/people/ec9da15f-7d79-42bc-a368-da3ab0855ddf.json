@@ -1,0 +1,12 @@
+{
+  "politician_id": "ec9da15f-7d79-42bc-a368-da3ab0855ddf",
+  "sources": [],
+  "terms": [
+    {
+      "office": "State House (WA)",
+      "start": "2021-01-11",
+      "precision": "day",
+      "source": "essentials roster export (s3-census-education-equity-programs-supplement/raw/roster-legislators.tsv)"
+    }
+  ]
+}

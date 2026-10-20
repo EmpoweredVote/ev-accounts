@@ -1,0 +1,86 @@
+{
+  "id": "OR-HB-3124-2021",
+  "scope": "state:or",
+  "title": "Increases notice before removal of homeless individuals from established camping site (ORS 203.079)",
+  "urls": [
+    "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureHistoryActions?$filter=SessionKey eq '2021R1' and MeasurePrefix eq 'HB' and MeasureNumber eq 3124&$format=json"
+  ],
+  "version": "other",
+  "operative_text": "at least 72 hours before removing homeless individuals from an established camping site, law enforcement officials shall post a written notice, in English and Spanish, at all entrances to the camping site",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-04-19",
+      "body": "OR House",
+      "motion": "Third reading. Carried by Lively. Passed.",
+      "kind": "roll-call",
+      "yes": 39,
+      "no": 16,
+      "members": [
+        {
+          "name": "Boomer Wright",
+          "politician_id": "d5386673-4244-44ca-8e54-e1af61803f6e",
+          "vote": "nay"
+        },
+        {
+          "name": "Shelly Boshart Davis",
+          "politician_id": "4919fd6a-c250-47b2-a37d-37b1eec8c63d",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-06-09",
+      "body": "OR House",
+      "motion": "House concurred in Senate amendments and repassed bill.",
+      "kind": "roll-call",
+      "yes": 39,
+      "no": 19,
+      "members": [
+        {
+          "name": "Boomer Wright",
+          "politician_id": "d5386673-4244-44ca-8e54-e1af61803f6e",
+          "vote": "nay"
+        },
+        {
+          "name": "Shelly Boshart Davis",
+          "politician_id": "4919fd6a-c250-47b2-a37d-37b1eec8c63d",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-06-08",
+      "body": "OR Senate",
+      "motion": "Third reading.  Carried by Golden.  Passed.",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 13,
+      "members": [
+        {
+          "name": "Diane Linthicum",
+          "politician_id": "50eab431-7b51-4a56-acaa-61af3509c298",
+          "vote": "nay"
+        },
+        {
+          "name": "Kim Thatcher",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

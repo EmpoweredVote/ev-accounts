@@ -1,0 +1,66 @@
+{
+  "id": "WA-SHB-2489-2026",
+  "scope": "state:wa",
+  "title": "Statewide standards for when local governments may enforce laws regulating use of public space for life-sustaining activities",
+  "urls": [
+    "https://lawfilesext.leg.wa.gov/biennium/2025-26/Pdf/Bill%20Reports/House/2489%20HBR%20HOUS%2026.pdf"
+  ],
+  "version": "other",
+  "operative_text": "A city or town may not enforce any city or town law that criminalizes, penalizes, or otherwise prohibits a person from engaging in life-sustaining activities on public property unless the city or town can demonstrate that adequate alternative shelter space was available at the time and place of the conduct.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2026-02-02",
+      "body": "WA House",
+      "motion": "House Housing Committee executive action: do pass as substitute (signed reports)",
+      "kind": "roll-call",
+      "yes": 9,
+      "no": 6,
+      "members": [
+        {
+          "name": "Andrew Engell",
+          "politician_id": "20691f72-9abe-40ad-b361-eb804b212e29",
+          "vote": "nay"
+        },
+        {
+          "name": "April Connors",
+          "politician_id": "a327c238-cf63-4a27-83f7-cc85468f8742",
+          "vote": "nay"
+        },
+        {
+          "name": "Janice Zahn",
+          "politician_id": "a961a076-f7be-436f-881f-155a0e9e687c",
+          "vote": "yea"
+        },
+        {
+          "name": "Mia Gregerson",
+          "politician_id": "edc48d7e-4f91-4e59-af50-79f34df8b011",
+          "vote": "yea"
+        },
+        {
+          "name": "Natasha Hill",
+          "politician_id": "165640fd-99e3-4e1e-bd73-8df36e4ac1d6",
+          "vote": "yea"
+        },
+        {
+          "name": "Strom Peterson",
+          "politician_id": "6341053d-0580-4fbf-85ea-71ddb6b6f838",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

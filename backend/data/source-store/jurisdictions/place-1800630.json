@@ -1,0 +1,19 @@
+{
+  "scope": "place:1800630",
+  "portals": [
+    {
+      "name": "go.boarddocs.com",
+      "url": "https://go.boarddocs.com/",
+      "status": "needs-browser",
+      "how": "Built-in browser, one item: a single in-page fetch from the BoardDocs public page (direct navigation triggered a file download), text extracted in the page with pdf.js 4.0.379.",
+      "checked_at": "2026-10-19T19:24:17.418Z",
+      "provenance": {
+        "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
+        "fetched_at": "2026-10-19T19:24:17.418Z",
+        "method": "browser"
+      }
+    }
+  ],
+  "rosters": [],
+  "higher_law_duties": []
+}

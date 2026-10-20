@@ -1,0 +1,96 @@
+{
+  "id": "VA-VBCPS-0408-15F-2025",
+  "scope": "place:5103840",
+  "title": "Resolution to comply with legal obligations in exchange for receiving federal financial assistance",
+  "urls": [
+    "https://resources.finalsite.net/images/v1747346503/vbschoolscom/ujvdgqeyobxgc9mmzbok/040825M.pdf"
+  ],
+  "version": "adopted",
+  "operative_text": "Mr. Culpepper read the following resolution:\n To comply with legal obligations in exchange for receiving federal financial assistance.\n WHEREAS, the School Board of the City of Virginia Beach has previously adopted policies, procedures,\n practices, and strategic framework including Diversity, Equity, and Inclusion; and\n WHEREAS, President Trump signed Executive Order 14190 on January 29, 2025, titled Ending Radical\n Indoctrination in K-12 Schooling; and\n WHEREAS, on February 14, 2025, the United States Department of Education Office for Civil Rights\n (USDOE) published a Dear Colleague Letter, reiterating legal requirements under Title VI of the Civil Rights\n Act of 1964 and the Equal Protection Clause of the United States Constitution; and\n WHEREAS, on February 28, 2025, the USDOE released Frequently Asked Questions About Racial\n Preferences and Stereotypes Under Title VI of the Civil Rights Act; and\n WHEREAS, On April 3, 2025, The School Board of the City of Virginia Beach received a request for\n certification of compliance from the Virginia Department of Education, titled Reminder of Legal\n Obligations Undertaken in Exchange for Receiving Federal Financial Assistance and Request for\n Certification under Title VI and SFFA v. Harvard.\n WHEREAS, the deadline for this certification is April 11, 2025, at 5 pm.\n NOW THEREFORE IT BE RESOLVED, that:\n 1. The School Board of the City of Virginia Beach (School Board) directs the Superintendent or designee\n to work with legal counsel for the School Board to take the necessary steps to comply with the above\n federal guidance under Title VI.\n 2. The School Board directs the Superintendent to rename the Department of Diversity, Equity, and\n Inclusion to the Department of Opportunity and Achievement and to work with legal counsel for the\n School Board to suspend all educational program offerings that do not comply with the above federal\n guidance, including but not limited to: the Equity Plan, the Equity Dashboard, and any educational\n program offerings that would not comply.\n 3. The School Board directs the Superintendent to suspend Policy 5-4, until the Policy Review\n Committee has brought recommended changes to the School Board for approval, no later than\n May 31, 2025.\n 4. The School Board directs the Superintendent or designee to work with legal counsel for the School\n Board to suspend any portion of the 2025 or 2030 Strategic Framework that does not comply with the\n above guidance, including but not limited to: all references to equity and equity emphasis, diversified\n workforce, the equity dashboard, and racial emphasis.\n 5. The School Board directs the Superintendent or designee to recommend modifications to the 2025\n and 2030 Strategic Framework to be in compliance with the above guidance for information no later\n than May 15, 2025.\n 6. The School Board directs the Superintendent or designee to work with legal counsel for the School\n Board to evaluate employment, contracting, and purchasing practices to ensure consistency with the\n above guidance.\n 7. The School Board directs the Superintendent to sign the certification and send it to the Virginia\n Department of Education.\n 8. The Superintendent or designee is directed to provide the School Board with timely updates\n concerning compliance with this Resolution.\n This Resolution is adopted by the School Board of the City of Virginia Beach, this 8th day of April 2025.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-04-08",
+      "body": "Virginia Beach City Public Schools",
+      "motion": "Resolution to comply with legal obligations in exchange for receiving federal financial assistance",
+      "kind": "action-item",
+      "yes": 6,
+      "no": 3,
+      "absent": 2,
+      "members": [
+        {
+          "name": "Kathleen Brown",
+          "politician_id": "3e74e711-c6c1-5e3b-8f47-25f1f0f3fc03",
+          "vote": "yea"
+        },
+        {
+          "name": "Carolyn D. Weems",
+          "politician_id": "ffe07962-8735-5aa6-ae8c-2a34df0151dd",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Bohenstiel",
+          "politician_id": "df08ad09-9459-53a1-ad87-81406a986bd5",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Callan",
+          "politician_id": "43c21625-3268-5580-a750-bcdd22fd6ab5",
+          "vote": "yea"
+        },
+        {
+          "name": "David Culpepper",
+          "politician_id": "bc799057-7962-565a-b924-862385fdd535",
+          "vote": "yea"
+        },
+        {
+          "name": "Rose Dwyer",
+          "politician_id": "d3fd9c85-f1e7-551c-a43b-51b2d840c4e0",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Cummings",
+          "politician_id": "00e6f571-4d8b-5241-87c3-5898e0ae2e18",
+          "vote": "nay"
+        },
+        {
+          "name": "Alveta J. Green",
+          "politician_id": "31702c5f-ed24-52f2-9746-f4b13331aa03",
+          "vote": "nay"
+        },
+        {
+          "name": "Melinda Rogers",
+          "politician_id": "f47ed783-a319-5805-8016-2d909597aea1",
+          "vote": "nay"
+        },
+        {
+          "name": "Sharon Felton",
+          "politician_id": "718007cb-41cd-5e5e-8b89-fddd6b460ef1",
+          "vote": "absent"
+        },
+        {
+          "name": "Kimberly A. Melnyk",
+          "politician_id": "853c008a-d5bd-5700-8728-bb8f35b73921",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
+    "fetched_at": "2026-10-19T19:24:17.418Z",
+    "method": "curl",
+    "saved_copy": {
+      "path": "/Users/chrisandrews/Documents/GitHub/.planning/research/s3-pilot-equity-programs/stage1/raw/vb/040825M.pdf",
+      "sha256": "e20ba82c875817ad5eddc439517bd42822923e9a2df7d3f04aba677a80a91d5f"
+    }
+  }
+}

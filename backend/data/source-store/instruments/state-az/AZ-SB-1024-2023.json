@@ -1,0 +1,93 @@
+{
+  "id": "AZ-SB-1024-2023",
+  "scope": "state:az",
+  "title": "public rights-of-way; unlawful acts",
+  "urls": [
+    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S",
+    "https://www.azleg.gov/legtext/56leg/1R/bills/SB1024S.pdf",
+    "https://apps.azleg.gov/api/Bill/?billNumber=SB1024&sessionId=127&legislativeBody=S"
+  ],
+  "version": "other",
+  "operative_text": "A PERSON MAY NOT ERECT OR MAINTAIN IN A PUBLIC STREET, HIGHWAY, ALLEY, LANE, PARKWAY, SIDEWALK OR OTHER RIGHT-OF-WAY ... ANY FULL OR PARTIAL ENCLOSURE FOR HABITATION, INCLUDING A TENT, TARP, BOX OR SIMILAR OBJECT.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-02-21",
+      "body": "AZ Senate",
+      "motion": "Third reading, passed",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 13,
+      "members": [
+        {
+          "name": "Eva Diaz",
+          "politician_id": "901398ea-3180-4b6d-8ba4-9f0dd85d7bb1",
+          "vote": "nay"
+        },
+        {
+          "name": "Frank Carroll",
+          "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8",
+          "vote": "yea"
+        },
+        {
+          "name": "John Kavanagh",
+          "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+          "vote": "yea"
+        },
+        {
+          "name": "Lela Alston",
+          "politician_id": "64520134-c1e3-44b1-aeb5-ed3e8762972d",
+          "vote": "nay"
+        },
+        {
+          "name": "Warren Petersen",
+          "politician_id": "49b806b1-f15d-4998-a94e-de542d9e323e",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2023-03-22",
+      "body": "AZ House",
+      "motion": "Third reading, passed",
+      "kind": "roll-call",
+      "yes": 33,
+      "no": 27,
+      "members": [
+        {
+          "name": "Laurin Hendrix",
+          "politician_id": "1f7399ee-2434-49dc-9a18-857bfa0e41f1",
+          "vote": "yea"
+        },
+        {
+          "name": "Leo Biasiucci",
+          "politician_id": "b1b97401-d1a9-4442-9f78-2749f1853f6e",
+          "vote": "yea"
+        },
+        {
+          "name": "Mae Peshlakai",
+          "politician_id": "fe4cbf96-b145-48d7-9fcf-120e6b75c290",
+          "vote": "nay"
+        },
+        {
+          "name": "Nancy Gutierrez",
+          "politician_id": "ce872623-f6bd-4e90-9eba-239ed00c7491",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

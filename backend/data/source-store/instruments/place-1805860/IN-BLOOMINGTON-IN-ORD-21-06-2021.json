@@ -1,0 +1,60 @@
+{
+  "id": "IN-BLOOMINGTON-IN-ORD-21-06-2021",
+  "scope": "place:1805860",
+  "title": "To Amend Title 2 (\"Administration and Personnel\") of the Bloomington Municipal Code Re: Adding Chapter 2.87 (Protections for People Experiencing Homelessness)",
+  "urls": [
+    "https://bloomington.in.gov/onboard/meetingFiles/8496/download",
+    "https://www.ipm.org/2023-09-14/city-council-rejects-effort-to-prevent-camping-on-sidewalks-streets",
+    "https://bsquarebulletin.com/bloomington-city-council-district-2-democratic-party-primary-kate-rosenbarger-sue-sgambelluri/",
+    "https://web.archive.org/web/20241223130926/https://kateforbloomington.org/issues/"
+  ],
+  "version": "other",
+  "operative_text": "Before the city may displace a person experiencing homelessness from a camp, the city must give at least fifteen (15) days' written notice to the person experiencing homelessness living in the camp",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-03-04",
+      "body": "Bloomington IN Common Council",
+      "motion": "Item Ordinance 21-06",
+      "kind": "action-item",
+      "yes": 4,
+      "no": 4,
+      "body_size": 9,
+      "members": [
+        {
+          "name": "David R Rollo",
+          "politician_id": "85741f19-1c12-43ad-8504-d615522725d7",
+          "vote": "nay"
+        },
+        {
+          "name": "Isabel Piedmont-Smith",
+          "politician_id": "91f6d45d-5e7e-48f6-aab1-9476d81946b5",
+          "vote": "yea"
+        },
+        {
+          "name": "Kate Rosenbarger",
+          "politician_id": "4aa0dadf-a3c0-41e9-a5de-66582a393622",
+          "vote": "yea"
+        },
+        {
+          "name": "Matt Flaherty",
+          "politician_id": "7dc7e4a1-9e52-4287-a100-6e1d715b5085",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

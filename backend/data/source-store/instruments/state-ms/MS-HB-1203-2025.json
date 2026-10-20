@@ -1,0 +1,171 @@
+{
+  "id": "MS-HB-1203-2025",
+  "scope": "state:ms",
+  "title": "Camping; prohibit on public property.",
+  "urls": [
+    "https://billstatus.ls.state.ms.us/2025/pdf/votes/senate/0650042.pdf",
+    "https://billstatus.ls.state.ms.us/2025/pdf/votes/senate/0850028.pdf",
+    "https://billstatus.ls.state.ms.us/2025/pdf/votes/house/0300015.pdf",
+    "https://billstatus.ls.state.ms.us/2025/pdf/votes/house/0850036.pdf",
+    "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/1200-1299/HB1203SG.pdf",
+    "https://billstatus.ls.state.ms.us/2025/pdf/history/HB/HB1203.xml"
+  ],
+  "version": "other",
+  "operative_text": "No person may camp or create a campsite on any sidewalks, streets, sports fields, sports complexes, highways, alleys, roads, passageways or any other public property, except a public property that is otherwise designated for camping",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-03-12",
+      "body": "MS Senate",
+      "motion": "Passed as amended (title suff do pass as amended; Committee Amendment 1 adopted by voice vote)",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 11,
+      "members": [
+        {
+          "name": "Angela Turner Ford",
+          "politician_id": "a295d7b7-b579-4fe0-bbdc-c65feb0db92b",
+          "vote": "nay"
+        },
+        {
+          "name": "Dennis DeBar, Jr.",
+          "politician_id": "e33fad93-d18b-47d3-9c4c-1fded8c01d01",
+          "vote": "yea"
+        },
+        {
+          "name": "Hob Bryan",
+          "politician_id": "8bd09319-824c-41d2-b6e6-849ffdd62d8d",
+          "vote": "yea"
+        },
+        {
+          "name": "Juan Barnett",
+          "politician_id": "f54fcea9-0805-4d0f-af21-9e41ed7a9457",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-01",
+      "body": "MS Senate",
+      "motion": "Report of Conference Committee adopted",
+      "kind": "roll-call",
+      "yes": 36,
+      "no": 12,
+      "members": [
+        {
+          "name": "Angela Turner Ford",
+          "politician_id": "a295d7b7-b579-4fe0-bbdc-c65feb0db92b",
+          "vote": "nay"
+        },
+        {
+          "name": "Dennis DeBar, Jr.",
+          "politician_id": "e33fad93-d18b-47d3-9c4c-1fded8c01d01",
+          "vote": "yea"
+        },
+        {
+          "name": "Hob Bryan",
+          "politician_id": "8bd09319-824c-41d2-b6e6-849ffdd62d8d",
+          "vote": "yea"
+        },
+        {
+          "name": "Juan Barnett",
+          "politician_id": "f54fcea9-0805-4d0f-af21-9e41ed7a9457",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-02-05",
+      "body": "MS House",
+      "motion": "Passage (HB 1203 as introduced)",
+      "kind": "roll-call",
+      "yes": 72,
+      "no": 34,
+      "members": [
+        {
+          "name": "Clay Mansell",
+          "politician_id": "fb93afd6-0f53-478f-95e5-2fc020fd4604",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Tubb",
+          "politician_id": "0fa37961-9955-4d91-83d0-c1081ee5e863",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Roberson",
+          "politician_id": "543e3146-044f-4f5b-a534-f89a6ec24b5c",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert L. Johnson III",
+          "politician_id": "71a28a20-f6c4-4bd5-8738-aa5e39faf280",
+          "vote": "yea"
+        },
+        {
+          "name": "Shanda Yates",
+          "politician_id": "4aab2f9c-67af-4eee-83c1-18daee15a784",
+          "vote": "yea"
+        },
+        {
+          "name": "Zakiya Summers",
+          "politician_id": "bc7f9fb9-25a2-4870-b399-43e870892747",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-04-01",
+      "body": "MS House",
+      "motion": "Conference report adopted",
+      "kind": "roll-call",
+      "yes": 73,
+      "no": 35,
+      "members": [
+        {
+          "name": "Clay Mansell",
+          "politician_id": "fb93afd6-0f53-478f-95e5-2fc020fd4604",
+          "vote": "yea"
+        },
+        {
+          "name": "Joseph Tubb",
+          "politician_id": "0fa37961-9955-4d91-83d0-c1081ee5e863",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Roberson",
+          "politician_id": "543e3146-044f-4f5b-a534-f89a6ec24b5c",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert L. Johnson III",
+          "politician_id": "71a28a20-f6c4-4bd5-8738-aa5e39faf280",
+          "vote": "nay"
+        },
+        {
+          "name": "Shanda Yates",
+          "politician_id": "4aab2f9c-67af-4eee-83c1-18daee15a784",
+          "vote": "yea"
+        },
+        {
+          "name": "Zakiya Summers",
+          "politician_id": "bc7f9fb9-25a2-4870-b399-43e870892747",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

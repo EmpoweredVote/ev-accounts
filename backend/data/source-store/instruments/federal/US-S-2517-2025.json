@@ -1,0 +1,25 @@
+{
+  "id": "US-S-2517-2025",
+  "scope": "federal",
+  "title": "A bill to impose criminal penalties for camping on public property in the District of Columbia (Prohibiting Encampments on Public Grounds Act per sponsor release)",
+  "urls": [
+    "https://www.govinfo.gov/content/pkg/BILLS-119s2517is/html/BILLS-119s2517is.htm"
+  ],
+  "version": "other",
+  "operative_text": "It shall be unlawful in the District of Columbia to camp on public property.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

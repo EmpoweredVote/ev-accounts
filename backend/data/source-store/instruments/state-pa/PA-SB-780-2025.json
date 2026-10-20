@@ -1,0 +1,118 @@
+{
+  "id": "PA-SB-780-2025",
+  "scope": "state:pa",
+  "title": "Encampments (Picozzi) - Title 68, Chapter 57",
+  "urls": [
+    "https://www.palegis.us/senate/committees/roll-call-votes/vote-list/vote-summary?committeecode=3&rollcallid=354&sessYr=2025&sessInd=0",
+    "https://www.palegis.us/senate/roll-calls/summary?sessYr=2025&sessInd=0&rcNum=144",
+    "https://www.palegis.us/senate/committees/roll-call-votes/vote-list/vote-summary?committeecode=15&rollcallid=232&sessYr=2025&sessInd=0"
+  ],
+  "version": "other",
+  "operative_text": "An unauthorized encampment is prohibited.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-06-24",
+      "body": "PA Senate",
+      "motion": "Re-reported as committed, Senate Appropriations Committee",
+      "kind": "roll-call",
+      "yes": 14,
+      "no": 8,
+      "members": [
+        {
+          "name": "Amanda M. Cappelletti",
+          "politician_id": "fe699f0f-07ac-480e-b71f-6e8c22244798",
+          "vote": "nay"
+        },
+        {
+          "name": "Jarrett Coleman",
+          "politician_id": "cf295204-81d6-4268-9362-242799ff5d96",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Picozzi",
+          "politician_id": "09235876-3ea2-437d-95db-91c7796d2979",
+          "vote": "yea"
+        },
+        {
+          "name": "Kim L. Ward",
+          "politician_id": "dc3d771f-a629-4cbf-abca-e65d57cc4ffe",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristin Phillips-Hill",
+          "politician_id": "c6a9a1fa-fd78-46d3-868a-9a5b66b650c1",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-25",
+      "body": "PA Senate",
+      "motion": "Third consideration and final passage",
+      "kind": "roll-call",
+      "yes": 34,
+      "no": 16,
+      "members": [
+        {
+          "name": "Amanda M. Cappelletti",
+          "politician_id": "fe699f0f-07ac-480e-b71f-6e8c22244798",
+          "vote": "nay"
+        },
+        {
+          "name": "Jarrett Coleman",
+          "politician_id": "cf295204-81d6-4268-9362-242799ff5d96",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Picozzi",
+          "politician_id": "09235876-3ea2-437d-95db-91c7796d2979",
+          "vote": "yea"
+        },
+        {
+          "name": "Kim L. Ward",
+          "politician_id": "dc3d771f-a629-4cbf-abca-e65d57cc4ffe",
+          "vote": "yea"
+        },
+        {
+          "name": "Kristin Phillips-Hill",
+          "politician_id": "c6a9a1fa-fd78-46d3-868a-9a5b66b650c1",
+          "vote": "yea"
+        },
+        {
+          "name": "Maria Collett",
+          "politician_id": "612c266e-4cb1-4584-8f47-7f79603eb4fe",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-10",
+      "body": "PA Senate",
+      "motion": "Reported as committed, Senate Local Government Committee",
+      "kind": "roll-call",
+      "yes": 7,
+      "no": 4,
+      "members": [
+        {
+          "name": "Kim L. Ward",
+          "politician_id": "dc3d771f-a629-4cbf-abca-e65d57cc4ffe",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

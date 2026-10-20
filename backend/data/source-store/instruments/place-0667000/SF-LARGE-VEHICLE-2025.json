@@ -1,0 +1,23 @@
+{
+  "id": "SF-LARGE-VEHICLE-2025",
+  "scope": "place:0667000",
+  "title": "Mayor Lurie's large-vehicle parking legislation",
+  "urls": [],
+  "version": "other",
+  "operative_text": "SF Examiner (fetched 2025-10-20, summary) reports the legislation 'would impose a two-hour parking limit for all large vehicles'",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

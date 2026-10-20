@@ -1,0 +1,103 @@
+{
+  "id": "CA-LA-LAMC-41-18-amend-2022",
+  "scope": "place:0644000",
+  "title": "same as above",
+  "urls": [
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1"
+  ],
+  "version": "other",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-05-31",
+      "body": "Los Angeles City Council",
+      "motion": "Item CF 20-1376-S1",
+      "kind": "action-item",
+      "yes": 13,
+      "no": 2,
+      "body_size": 15,
+      "members": [
+        {
+          "name": "John Lee",
+          "politician_id": "c3155cf3-9a97-43d1-a076-dd6ef6aa46e9",
+          "vote": "yea"
+        },
+        {
+          "name": "Marqueece Harris-Dawson",
+          "politician_id": "ece32bfa-26de-4177-9bb3-cea506870747",
+          "vote": "yea"
+        },
+        {
+          "name": "Nithya Raman",
+          "politician_id": "26dbe16a-9dff-42c0-939f-5b5e529063ca",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2022-08-02",
+      "body": "Los Angeles City Council",
+      "motion": "Item CF 20-1376-S1",
+      "kind": "action-item",
+      "yes": 11,
+      "no": 3,
+      "body_size": 15,
+      "members": [
+        {
+          "name": "John Lee",
+          "politician_id": "c3155cf3-9a97-43d1-a076-dd6ef6aa46e9",
+          "vote": "yea"
+        },
+        {
+          "name": "Marqueece Harris-Dawson",
+          "politician_id": "ece32bfa-26de-4177-9bb3-cea506870747",
+          "vote": "nay"
+        },
+        {
+          "name": "Nithya Raman",
+          "politician_id": "26dbe16a-9dff-42c0-939f-5b5e529063ca",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2022-08-09",
+      "body": "Los Angeles City Council",
+      "motion": "Item CF 20-1376-S1",
+      "kind": "action-item",
+      "yes": 11,
+      "no": 3,
+      "body_size": 15,
+      "members": [
+        {
+          "name": "John Lee",
+          "politician_id": "c3155cf3-9a97-43d1-a076-dd6ef6aa46e9",
+          "vote": "yea"
+        },
+        {
+          "name": "Marqueece Harris-Dawson",
+          "politician_id": "ece32bfa-26de-4177-9bb3-cea506870747",
+          "vote": "nay"
+        },
+        {
+          "name": "Nithya Raman",
+          "politician_id": "26dbe16a-9dff-42c0-939f-5b5e529063ca",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

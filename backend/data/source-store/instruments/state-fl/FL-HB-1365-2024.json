@@ -1,0 +1,94 @@
+{
+  "id": "FL-HB-1365-2024",
+  "scope": "state:fl",
+  "title": "Unauthorized Public Camping and Public Sleeping (creates s. 125.0231, F.S.)",
+  "urls": [
+    "https://www.flsenate.gov/Session/Bill/2024/1365/Vote/SenateVote_h01365e1045.PDF",
+    "https://www.flsenate.gov/Session/Bill/2024/1365/Vote/HouseVote_h01365e1762.PDF",
+    "https://www.flsenate.gov/Session/Bill/2024/1365",
+    "https://www.flsenate.gov/Session/Bill/2024/1365/BillText/er/PDF"
+  ],
+  "version": "other",
+  "operative_text": "a county or municipality may not authorize or otherwise allow any person to regularly engage in public camping or sleeping on any public property, including, but not limited to, any public building or its grounds and any public right-of-way",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-03-05",
+      "body": "FL Senate",
+      "motion": "Third reading (CS/CS/HB 1365 / CS/CS/SB 1530)",
+      "kind": "roll-call",
+      "yes": 27,
+      "no": 12,
+      "members": [
+        {
+          "name": "Darryl Ervin Rouson",
+          "politician_id": "4865aa8c-9633-4076-bf9f-0fc46a10a3a4",
+          "vote": "nay"
+        },
+        {
+          "name": "Jim Boyd",
+          "politician_id": "af6eb283-6820-4cd6-9bdb-db17f05792a9",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe Gruters",
+          "politician_id": "8fdbeb73-19d0-470e-b7ed-5b4b3bef1995",
+          "vote": "yea"
+        },
+        {
+          "name": "Lori Berman",
+          "politician_id": "daafe458-8c11-40b0-9382-22b22747b7e2",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2024-03-01",
+      "body": "FL House",
+      "motion": "Passage, third reading (CS/CS/HB 1365, 1st Eng.)",
+      "kind": "roll-call",
+      "yes": 82,
+      "no": 26,
+      "members": [
+        {
+          "name": "Dean Black",
+          "politician_id": "65c6ade3-15ac-43ad-800c-44efe4e35475",
+          "vote": "yea"
+        },
+        {
+          "name": "Dotie Joseph",
+          "politician_id": "aa573206-cf30-4782-8243-a930919c851d",
+          "vote": "nay"
+        },
+        {
+          "name": "Jennifer \"Rita\" Harris",
+          "politician_id": "2e78ebeb-6d16-476d-9429-5b712c0b9942",
+          "vote": "nay"
+        },
+        {
+          "name": "Mike Redondo",
+          "politician_id": "a7a0f205-5d4d-4e41-87e0-ef7a1f3d1e5b",
+          "vote": "yea"
+        },
+        {
+          "name": "Sam Garrison",
+          "politician_id": "b5b59f49-bb6f-48a4-a625-e6173799ca5a",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

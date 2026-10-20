@@ -1,0 +1,25 @@
+{
+  "id": "BERKELEY-RES-37-2024",
+  "scope": "place:0606000",
+  "title": "Encampment Policy Resolution to Promote Healthy and Safe Neighborhoods and Related First Reading of Ordinance Amending Chapter 14.48 of the Berkeley Municipal Code",
+  "urls": [
+    "https://www.berkeleyca.gov/sites/default/files/documents/2024-09-10%20Item%2037%20Encampment%20Policy%20Resolution.pdf"
+  ],
+  "version": "other",
+  "operative_text": "in the event that the City cannot make a shelter offer, then the City Manager is nonetheless authorized to enforce, including the use of citation and arrest, only under the following circumstances:",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

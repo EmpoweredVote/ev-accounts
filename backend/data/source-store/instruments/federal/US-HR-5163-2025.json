@@ -1,0 +1,62 @@
+{
+  "id": "US-HR-5163-2025",
+  "scope": "federal",
+  "title": "Clean and Managed Public Spaces Act",
+  "urls": [
+    "https://www.govinfo.gov/content/pkg/CRPT-119hrpt342/html/CRPT-119hrpt342.htm",
+    "https://www.congress.gov/119/meeting/house/118594/documents/CRPT-119-GO00-Vote008-20250910.pdf"
+  ],
+  "version": "other",
+  "operative_text": "Any person who, without lawful authority, engages in camping outdoors on public property in the District of Columbia shall be fined not more than $500, imprisoned for not more than 30 days, or both.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-09-10",
+      "body": "U.S. Congress",
+      "motion": "Final Passage - H.R. 5163 (order reported; amendment in the nature of a substitute adopted by voice vote)",
+      "kind": "roll-call",
+      "yes": 25,
+      "no": 20,
+      "members": [
+        {
+          "name": "Gary J. Palmer",
+          "politician_id": "9c7e62aa-c793-4630-b58b-4eb219b91d30",
+          "vote": "yea"
+        },
+        {
+          "name": "Kweisi Mfume",
+          "politician_id": "6e2f5cf7-4e00-4a83-b1d7-b3f2ea4c1ffd",
+          "vote": "nay"
+        },
+        {
+          "name": "Lauren Boebert",
+          "politician_id": "58c25b43-0ed1-4636-8213-b89a90f7f6a2",
+          "vote": "yea"
+        },
+        {
+          "name": "Robert Garcia",
+          "politician_id": "28a5f098-7f90-4fa9-af7e-c034d49cb538",
+          "vote": "nay"
+        },
+        {
+          "name": "William R. Timmons IV",
+          "politician_id": "31d3830f-81dd-46b3-a69b-a19e392f09d6",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

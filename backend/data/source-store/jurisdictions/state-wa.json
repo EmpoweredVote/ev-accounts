@@ -1,0 +1,19 @@
+{
+  "scope": "state:wa",
+  "portals": [
+    {
+      "name": "lawfilesext.leg.wa.gov",
+      "url": "https://lawfilesext.leg.wa.gov/",
+      "status": "works",
+      "how": "WebFetch could not decode the PDF; the PDF was saved locally and read with pdftotext.",
+      "checked_at": "2026-10-19T19:24:17.419Z",
+      "provenance": {
+        "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
+        "fetched_at": "2026-10-19T19:24:17.419Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "rosters": [],
+  "higher_law_duties": []
+}

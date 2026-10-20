@@ -1,0 +1,77 @@
+{
+  "id": "NASHVILLE-BL2022-1533",
+  "scope": "county:47037",
+  "title": "An ordinance setting conditions for the closure of an encampment at Brookmeade Park and accepting an easement on certain property located at 7034 Charlotte Pike (Parcel No. 10200008600) owned by Lowes Home Centers, LLC (Proposal No. 2022M-036AG-001).",
+  "urls": [
+    "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf"
+  ],
+  "version": "other",
+  "operative_text": "not in the minutes text; the substitute text read: Section 1. The easement agreement ... is hereby approved, subject to the following conditions related to the closure of the encampment at Brookmeade Park",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-12-20",
+      "body": "Nashville Metro Council",
+      "motion": "Item BL2022-1533",
+      "kind": "action-item",
+      "yes": 14,
+      "no": 16,
+      "body_size": 40,
+      "members": [
+        {
+          "name": "Brandon Taylor",
+          "politician_id": "6f39bc7a-2538-4f47-8219-3c992e0f3d40",
+          "vote": "abstain"
+        },
+        {
+          "name": "Courtney Johnston",
+          "politician_id": "a5832455-f2b6-4dae-9523-5bb0f84b1e41",
+          "vote": "nay"
+        },
+        {
+          "name": "Ginny Welsch",
+          "politician_id": "8d547c7a-9ad0-4b99-8302-e5980687c3e4",
+          "vote": "yea"
+        },
+        {
+          "name": "John Rutherford",
+          "politician_id": "55711225-e548-4af3-9b60-3bf69f3bf783",
+          "vote": "nay"
+        },
+        {
+          "name": "Kyonzté Toombs",
+          "politician_id": "19b1b92c-21f5-4147-8419-cd58a157963f",
+          "vote": "abstain"
+        },
+        {
+          "name": "Sandra Sepulveda",
+          "politician_id": "ebe7cc79-23e2-45d3-9d1a-48a24af862b7",
+          "vote": "yea"
+        },
+        {
+          "name": "Sean Parker",
+          "politician_id": "15372259-2349-4c06-b447-3bc976644ee3",
+          "vote": "yea"
+        },
+        {
+          "name": "Tom Cash",
+          "politician_id": "b2a53204-aea2-4c84-ab33-f406bc3bc9ef",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

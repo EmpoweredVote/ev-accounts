@@ -1,0 +1,68 @@
+{
+  "id": "MN-DULUTH-24-030-O-2024",
+  "scope": "place:2717000",
+  "title": "AN ORDINANCE AMENDING CHAPTER 34 OF THE DULUTH CITY CODE TO ADD SECTION 34-46 PROHIBITING CAMPING ON CITY PROPERTY.",
+  "urls": [
+    "https://duluth-mn.legistar1.com/duluth-mn/meetings/2024/7/2574_M_City_Council_24-07-29_Minutes.pdf",
+    "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
+  ],
+  "version": "other",
+  "operative_text": "No person may camp or establish a campsite in or upon any land owned by the city, or in any city right-of-way, unless specifically authorized by the City.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2024-07-29",
+      "body": "Duluth City Council",
+      "motion": "Item 24-030-O (agenda item 35; enactment 10898)",
+      "kind": "action-item",
+      "yes": 5,
+      "no": 4,
+      "body_size": 9,
+      "members": [
+        {
+          "name": "Arik Forsman",
+          "politician_id": "78bdd8d9-a2a0-44e8-bf1f-28db8a6ac5af",
+          "vote": "yea"
+        },
+        {
+          "name": "Janet Kennedy",
+          "politician_id": "54a12543-7568-4220-b638-211a6f34625a",
+          "vote": "yea"
+        },
+        {
+          "name": "Lynn Marie Nephew",
+          "politician_id": "1033540d-1268-4189-a24d-89d807e20715",
+          "vote": "yea"
+        },
+        {
+          "name": "Roz Randorf",
+          "politician_id": "cbb2a902-f663-40e2-ba0d-1c8d962f71a3",
+          "vote": "yea"
+        },
+        {
+          "name": "Terese Tomanek",
+          "politician_id": "84d06d20-3f6f-4318-a8f7-97b72c59a53d",
+          "vote": "yea"
+        },
+        {
+          "name": "Wendy Durrwachter",
+          "politician_id": "070f6a39-f2cf-401f-9b06-57d56d8dd2d1",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

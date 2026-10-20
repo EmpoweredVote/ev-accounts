@@ -1,0 +1,52 @@
+{
+  "id": "HUNTINGTON-BEACH-ORD-4273",
+  "scope": "place:0636000",
+  "title": "Approve for Introduction Ordinance No. 4273 Amending Municipal Code 13.48 Relating to the Use of Tents and Other Uses Within City Parks",
+  "urls": [
+    "https://huntingtonbeach.legistar1.com/huntingtonbeach/attachments/9e9cdd17-8936-48a6-a485-39c31a27d804.pdf"
+  ],
+  "version": "other",
+  "operative_text": "No person shall erect, maintain or occupy any canopy in excess of 100 square feet, or any tent without at least two sides completely open to public view, in any park",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-02-21",
+      "body": "Huntington Beach City Council",
+      "motion": "Item 23-177 / Ordinance 4273",
+      "kind": "action-item",
+      "yes": 7,
+      "no": 0,
+      "body_size": 7,
+      "members": [
+        {
+          "name": "Casey McKeon",
+          "politician_id": "e7a155f4-eb21-4e0f-b901-695f64ccb5cb",
+          "vote": "yea"
+        },
+        {
+          "name": "Gracey Van Der Mark",
+          "politician_id": "a5595064-ce36-4b12-8eca-a2d796759d53",
+          "vote": "yea"
+        },
+        {
+          "name": "Pat Burns",
+          "politician_id": "deea52f0-0422-4fc8-971a-27a2471e14f2",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

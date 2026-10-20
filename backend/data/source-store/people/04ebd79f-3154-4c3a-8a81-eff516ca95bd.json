@@ -1,0 +1,12 @@
+{
+  "politician_id": "04ebd79f-3154-4c3a-8a81-eff516ca95bd",
+  "sources": [],
+  "terms": [
+    {
+      "office": "Council Member, District 5",
+      "start": "2022-01-01",
+      "precision": "month",
+      "source": "s3-pilot-homelessness-stage1/local-terms.json (read-only essentials query)"
+    }
+  ]
+}

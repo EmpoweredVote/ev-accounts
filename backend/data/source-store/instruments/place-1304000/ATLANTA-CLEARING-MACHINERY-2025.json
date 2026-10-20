@@ -1,0 +1,23 @@
+{
+  "id": "ATLANTA-CLEARING-MACHINERY-2025",
+  "scope": "place:1304000",
+  "title": "Temporary halt on heavy machinery during encampment clearings; report on clearing procedures (resolution)",
+  "urls": [],
+  "version": "other",
+  "operative_text": "the council approved a \"temporary halt on the use of heavy machinery during encampment clearings.\" Councilmember Liliana Bakhtiari sponsored this legislation.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

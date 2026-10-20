@@ -1,0 +1,132 @@
+{
+  "id": "TN-HB-978-2022",
+  "scope": "state:tn",
+  "title": "relative to public property (camping on state/interstate highway right-of-way; extends Equal Access to Public Property Act camping offense to all public property)",
+  "urls": [
+    "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB0978&GA=112",
+    "https://www.capitol.tn.gov/Bills/112/Bill/HB0978.pdf"
+  ],
+  "version": "other",
+  "operative_text": "It is unlawful for a person to engage in camping: (1) On the shoulder, berm, or right-of-way of a state or interstate highway; or (2) Under a bridge or overpass, or within an underpass, of a state or interstate highway.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2022-04-13",
+      "body": "TN Senate",
+      "motion": "Third Consideration as amended",
+      "kind": "roll-call",
+      "yes": 22,
+      "no": 10,
+      "members": [
+        {
+          "name": "Becky D. Massey",
+          "politician_id": "a91cf2ed-26bf-43c7-aae1-964fb6c46840",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Yarbro",
+          "politician_id": "142de671-f7ef-4923-9c3e-3499086da41a",
+          "vote": "nay"
+        },
+        {
+          "name": "Page Walley",
+          "politician_id": "dd755d2a-48a5-4be7-873f-14efba7e8301",
+          "vote": "nay"
+        },
+        {
+          "name": "Paul Bailey",
+          "politician_id": "310955ff-3e44-4032-879f-b3b46026aadb",
+          "vote": "yea"
+        }
+      ]
+    },
+    {
+      "date": "2021-04-14",
+      "body": "TN House",
+      "motion": "Passage on Third Consideration (regular calendar)",
+      "kind": "roll-call",
+      "yes": 62,
+      "no": 22,
+      "members": [
+        {
+          "name": "Bo Mitchell",
+          "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Wright",
+          "politician_id": "d5414dcc-6d0b-4a73-96a1-41b477cfd097",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark White",
+          "politician_id": "3b87c463-9e89-418d-bc39-043ad82616de",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "politician_id": "dc50a463-773d-4aa3-8b04-9325bba10d2b",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Williams",
+          "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845",
+          "vote": "yea"
+        },
+        {
+          "name": "Vincent Dixie",
+          "politician_id": "830d155a-394e-463c-999d-bcf154460225",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2022-04-18",
+      "body": "TN House",
+      "motion": "Message Calendar, concur in Senate Amendment 1",
+      "kind": "roll-call",
+      "yes": 57,
+      "no": 28,
+      "members": [
+        {
+          "name": "Bo Mitchell",
+          "politician_id": "094afd56-f074-4fdc-a053-1482ea501fc8",
+          "vote": "nay"
+        },
+        {
+          "name": "Dave Wright",
+          "politician_id": "d5414dcc-6d0b-4a73-96a1-41b477cfd097",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark White",
+          "politician_id": "3b87c463-9e89-418d-bc39-043ad82616de",
+          "vote": "yea"
+        },
+        {
+          "name": "Michele Carringer",
+          "politician_id": "dc50a463-773d-4aa3-8b04-9325bba10d2b",
+          "vote": "yea"
+        },
+        {
+          "name": "Ryan Williams",
+          "politician_id": "296df1be-a8bb-45ee-bb86-e1de328ed845",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "webfetch"
+  }
+}

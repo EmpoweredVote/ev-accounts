@@ -15,6 +15,7 @@ Large saved copies (PDFs, page captures) are not committed. They stay in the run
 
 - Politician ids are the politician UUIDs.
 - Jurisdiction scopes use the steward form: `federal`, `state:wa`, `county:53033`, `place:5363000`. The directory name replaces `:` with `-` (`state-wa`).
+- School districts use `place:<7-digit district geoid>` (the geoid `essentials.districts` holds for the district, e.g. `place:5103840` Virginia Beach City Public Schools). Consolidated city-counties use the geoid essentials stores (Nashville is `county:47037`).
 - Instrument ids are jurisdiction prefix, instrument, year: `WA-ESSB-5044-2021`.
 
 ## Provenance

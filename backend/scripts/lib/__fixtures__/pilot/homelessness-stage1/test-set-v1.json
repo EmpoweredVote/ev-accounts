@@ -1,0 +1,303 @@
+{
+ "meta": {
+  "topic": "homelessness"
+ },
+ "items": [
+  {
+   "level": "state",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "901398ea-3180-4b6d-8ba4-9f0dd85d7bb1",
+   "name": "Eva Diaz",
+   "body": "AZ Legislature",
+   "instrument": "AZ SB 1024",
+   "title": "public rights-of-way; unlawful acts",
+   "session": "2023 56th Leg., 1st Regular",
+   "acts": [
+    {
+     "chamber": "Senate",
+     "date": "2023-02-21",
+     "motion": "Third reading, passed",
+     "tally": "16-13 (1 not voting)",
+     "act": "no",
+     "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "A PERSON MAY NOT ERECT OR MAINTAIN IN A PUBLIC STREET, HIGHWAY, ALLEY, LANE, PARKWAY, SIDEWALK OR OTHER RIGHT-OF-WAY ... ANY FULL OR PARTIAL ENCLOSURE FOR HABITATION, INCLUDING A TENT, TARP, BOX OR SIMILAR OBJECT.",
+    "penalty_terms": "not stated in the bill text (adds A.R.S. 28-913 in Title 28 offenses against public order)",
+    "condition_terms": "not stated; \"THIS SECTION DOES NOT APPLY TO A COMMERCIAL MOTOR VEHICLE.\"",
+    "status": "vetoed by Governor Katie Hobbs 2023-03-30 (GovernorAction=Vetoed per azleg API; no override on record)"
+   },
+   "sources": [
+    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+   ],
+   "origin": "census",
+   "item_id": "hl-090"
+  },
+  {
+   "level": "state",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "376698b5-a276-4977-b2c3-3d15a822f7d8",
+   "name": "Frank Carroll",
+   "body": "AZ Legislature",
+   "instrument": "AZ SB 1024",
+   "title": "public rights-of-way; unlawful acts",
+   "session": "2023 56th Leg., 1st Regular",
+   "acts": [
+    {
+     "chamber": "Senate",
+     "date": "2023-02-21",
+     "motion": "Third reading, passed",
+     "tally": "16-13 (1 not voting)",
+     "act": "yes",
+     "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "A PERSON MAY NOT ERECT OR MAINTAIN IN A PUBLIC STREET, HIGHWAY, ALLEY, LANE, PARKWAY, SIDEWALK OR OTHER RIGHT-OF-WAY ... ANY FULL OR PARTIAL ENCLOSURE FOR HABITATION, INCLUDING A TENT, TARP, BOX OR SIMILAR OBJECT.",
+    "penalty_terms": "not stated in the bill text (adds A.R.S. 28-913 in Title 28 offenses against public order)",
+    "condition_terms": "not stated; \"THIS SECTION DOES NOT APPLY TO A COMMERCIAL MOTOR VEHICLE.\"",
+    "status": "vetoed by Governor Katie Hobbs 2023-03-30 (GovernorAction=Vetoed per azleg API; no override on record)"
+   },
+   "sources": [
+    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+   ],
+   "origin": "census",
+   "item_id": "hl-091"
+  },
+  {
+   "level": "state",
+   "kind": "record",
+   "record_type": "sponsor+vote",
+   "politician_id": "4f7db8ce-def5-4225-b183-654f8f64cb9a",
+   "name": "John Kavanagh",
+   "body": "AZ Legislature",
+   "instrument": "AZ SB 1024",
+   "title": "public rights-of-way; unlawful acts",
+   "session": "2023 56th Leg., 1st Regular",
+   "acts": [
+    {
+     "chamber": "Senate",
+     "date": "2023-02-21",
+     "motion": "Third reading, passed",
+     "tally": "16-13 (1 not voting)",
+     "act": "yes",
+     "url": "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "A PERSON MAY NOT ERECT OR MAINTAIN IN A PUBLIC STREET, HIGHWAY, ALLEY, LANE, PARKWAY, SIDEWALK OR OTHER RIGHT-OF-WAY ... ANY FULL OR PARTIAL ENCLOSURE FOR HABITATION, INCLUDING A TENT, TARP, BOX OR SIMILAR OBJECT.",
+    "penalty_terms": "not stated in the bill text (adds A.R.S. 28-913 in Title 28 offenses against public order)",
+    "condition_terms": "not stated; \"THIS SECTION DOES NOT APPLY TO A COMMERCIAL MOTOR VEHICLE.\"",
+    "status": "vetoed by Governor Katie Hobbs 2023-03-30 (GovernorAction=Vetoed per azleg API; no override on record)"
+   },
+   "sources": [
+    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
+   ],
+   "origin": "census",
+   "item_id": "hl-092"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "725d4081-e820-4064-83dc-3f8470bd7c2b",
+   "name": "Curren D. Price Jr.",
+   "body": "Los Angeles City Council",
+   "gov": "Los Angeles, California, US",
+   "body_size": 15,
+   "instrument": "LA-LAMC-41.18-2021",
+   "title": "LA Alliance v City and County of Los Angeles / Martin v City of Boise / Ninth Circuit Court of Appeals / Los Angeles Municipal Code / Amendment",
+   "acts": [
+    {
+     "date": "2021-06-29",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376",
+     "tally": "13-2-0",
+     "printed": "Price",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-01",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Price",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-28",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Price",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "penalty_terms": "not stated",
+    "condition_terms": "not stated",
+    "motion_quote": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
+    "section": "Regular"
+   },
+   "sources": [
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1"
+   ],
+   "origin": "census",
+   "item_id": "hl-041"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "c3155cf3-9a97-43d1-a076-dd6ef6aa46e9",
+   "name": "John Lee",
+   "body": "Los Angeles City Council",
+   "gov": "Los Angeles, California, US",
+   "body_size": 15,
+   "instrument": "LA-LAMC-41.18-2021",
+   "title": "LA Alliance v City and County of Los Angeles / Martin v City of Boise / Ninth Circuit Court of Appeals / Los Angeles Municipal Code / Amendment",
+   "acts": [
+    {
+     "date": "2021-06-29",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376",
+     "tally": "13-2-0",
+     "printed": "Lee",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-01",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Lee",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-28",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Lee",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "penalty_terms": "not stated",
+    "condition_terms": "not stated",
+    "motion_quote": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
+    "section": "Regular"
+   },
+   "sources": [
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1"
+   ],
+   "origin": "census",
+   "item_id": "hl-042"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "ece32bfa-26de-4177-9bb3-cea506870747",
+   "name": "Marqueece Harris-Dawson",
+   "body": "Los Angeles City Council",
+   "gov": "Los Angeles, California, US",
+   "body_size": 15,
+   "instrument": "LA-LAMC-41.18-2021",
+   "title": "LA Alliance v City and County of Los Angeles / Martin v City of Boise / Ninth Circuit Court of Appeals / Los Angeles Municipal Code / Amendment",
+   "acts": [
+    {
+     "date": "2021-06-29",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376",
+     "tally": "13-2-0",
+     "printed": "Harris-Dawson",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-01",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Harris-Dawson",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    },
+    {
+     "date": "2021-07-28",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "CF 20-1376-S1",
+     "tally": "13-2-0",
+     "printed": "Harris-Dawson",
+     "url": "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "penalty_terms": "not stated",
+    "condition_terms": "not stated",
+    "motion_quote": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
+    "section": "Regular"
+   },
+   "sources": [
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376",
+    "https://cityclerk.lacity.org/lacityclerkconnect/index.cfm?fa=ccfi.viewrecord&cfnumber=20-1376-S1"
+   ],
+   "origin": "census",
+   "item_id": "hl-043"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "authored",
+   "politician_id": "04ebd79f-3154-4c3a-8a81-eff516ca95bd",
+   "name": "Liliana Bakhtiari",
+   "body": "Atlanta City Council",
+   "gov": "City of Atlanta, Georgia, US",
+   "body_size": 17,
+   "instrument": "ATLANTA-CLEARING-MACHINERY-2025",
+   "title": "Temporary halt on heavy machinery during encampment clearings; report on clearing procedures (resolution)",
+   "acts": [
+    {
+     "date": "2025-02-03",
+     "act": "author",
+     "type": "AUTHORED",
+     "item": "not captured",
+     "tally": "approved, tally not printed",
+     "printed": "Liliana Bakhtiari",
+     "url": "",
+     "term_check": "covered"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "the council approved a \"temporary halt on the use of heavy machinery during encampment clearings.\" Councilmember Liliana Bakhtiari sponsored this legislation.",
+    "penalty_terms": "n/a",
+    "condition_terms": "Continuum of Care to produce a report on procedures in encampment clearings"
+   },
+   "sources": [],
+   "origin": "census",
+   "item_id": "hl-001"
+  }
+ ]
+}

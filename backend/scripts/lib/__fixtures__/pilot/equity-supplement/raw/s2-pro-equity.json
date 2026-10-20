@@ -1,0 +1,137 @@
+{
+ "laws": [
+  {
+   "state": "WA",
+   "bill": "ESSB 5044 (Ch. 197, Laws of 2021)",
+   "session": "2021 Regular",
+   "status": "enacted (approved 2021-05-05)",
+   "subject": "Public schools: equity, cultural competency, antiracism training of staff, school directors and educator preparation",
+   "operative_parts": null,
+   "rollcalls": [
+    {
+     "chamber": "Senate",
+     "date": "2021-04-20",
+     "motion": "Final Passage as Amended by the House (concurrence)",
+     "yeas": 29,
+     "nays": 19,
+     "other": "1 excused",
+     "pct_no": 39.6,
+     "url": "https://app.leg.wa.gov/bi/RollCallsOnABill/RollCall?biennium=2021-22&billNumber=5044&initiative=False",
+     "yea_names": [
+      "Billig",
+      "Carlyle",
+      "Cleveland",
+      "Conway",
+      "Darneille",
+      "Das",
+      "Dhingra",
+      "Frockt",
+      "Hasegawa",
+      "Hobbs",
+      "Hunt",
+      "Keiser",
+      "Kuderer",
+      "Liias",
+      "Lovelett",
+      "Mullet",
+      "Nguyen",
+      "Nobles",
+      "Pedersen",
+      "Randall",
+      "Robinson",
+      "Rolfes",
+      "Saldaña",
+      "Salomon",
+      "Sheldon",
+      "Stanford",
+      "Van De Wege",
+      "Wellman",
+      "Wilson, C."
+     ],
+     "nay_names": [
+      "Braun",
+      "Brown",
+      "Dozier",
+      "Ericksen",
+      "Fortunato",
+      "Gildon",
+      "Hawkins",
+      "Holy",
+      "Honeyford",
+      "King",
+      "McCune",
+      "Padden",
+      "Rivers",
+      "Schoesler",
+      "Short",
+      "Wagoner",
+      "Warnick",
+      "Wilson, J.",
+      "Wilson, L."
+     ],
+     "other_names": [
+      "Muzzall (excused)"
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "state": "OR",
+   "bill": "SB 732 (Ch. 493, 2021 Laws)",
+   "session": "2021 Regular",
+   "status": "enacted (Governor signed 2021-07-14)",
+   "subject": "Requires each school district to establish an educational equity advisory committee",
+   "operative_parts": null,
+   "rollcalls": [
+    {
+     "chamber": "Senate",
+     "date": "2021-06-16",
+     "motion": "Concurred in House amendments and repassed",
+     "yeas": 17,
+     "nays": 12,
+     "other": "Excused 1 (Manning Jr.)",
+     "pct_no": 41.4,
+     "url": "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureHistoryActions?$filter=MeasureNumber eq 732 and SessionKey eq '2021R1' and MeasurePrefix eq 'SB'&$format=json",
+     "yea_names": [
+      "Ginny Burdick",
+      "Rob Wagner",
+      "Peter Courtney",
+      "Kathleen Taylor",
+      "Sara Gelser Blouin",
+      "Elizabeth Steiner",
+      "Lew Frederick",
+      "Floyd Prozanski",
+      "Chuck Riley",
+      "Jeff Golden",
+      "Lee Beyer",
+      "Michael Dembrow",
+      "Dick Anderson",
+      "Kate Lieber",
+      "Deb Patterson",
+      "Chris Gorsek",
+      "Kayse Jama"
+     ],
+     "nay_names": [
+      "Brian Boquist",
+      "Fred Girod",
+      "Lynn Findley",
+      "Dennis Linthicum",
+      "Kim Thatcher",
+      "Betsy Johnson",
+      "Bill Hansell",
+      "Dallas Heard",
+      "Tim Knopp",
+      "Chuck Thomsen",
+      "Art Robinson",
+      "Bill Kennemer"
+     ],
+     "other_names": [
+      "James Manning Jr. (Excused)"
+     ]
+    }
+   ],
+   "notes": ""
+  }
+ ]
+}
