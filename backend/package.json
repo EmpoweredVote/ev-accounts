@@ -30,6 +30,7 @@
     "check:headshot-faces": "python scripts/check-headshot-faces.py --fail-on-unreachable",
     "check:headshot-faces:external": "python scripts/check-headshot-faces.py --external-only --fail-on-unreachable",
     "check:headshot-faces:accept": "python scripts/check-headshot-faces.py --write-accepted",
+    "mirror:candidate-photos": "python scripts/mirror-candidate-photos.py",
     "check:reachability:verbose": "node scripts/check-address-reachability.mjs --verbose",
     "check:child-county": "node scripts/check-child-county-mapping.mjs",
     "check:child-county:verbose": "node scripts/check-child-county-mapping.mjs --verbose",

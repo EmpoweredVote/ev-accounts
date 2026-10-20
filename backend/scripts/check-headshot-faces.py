@@ -334,7 +334,17 @@ def main():
     unreachable = [r for r in results if r['verdict'] == 'UNREACHABLE']
 
     # A sweep that flags nothing is the shape a BROKEN detector also has, so say which it was.
+    #
+    # 🔴 EXCEPT UNDER --external-only, WHERE ZERO ROWS IS THE GOAL AND NOT A FAULT. CC_0261
+    # mirrored the last six hotlinked ballot photographs, so that scope now legitimately
+    # matches nothing - and this guard turned the nightly CI job red the moment it did. "No
+    # rows" is only evidence of a broken query when you had reason to expect rows; for a check
+    # whose whole purpose is to drive a number to zero, reaching zero must be a pass.
     if not results:
+        if args.external_only:
+            print('0 images render from an outside host. That is the goal state for this '
+                  'scope, not an empty query.')
+            return 0
         print('no rows matched - nothing was checked', file=sys.stderr)
         return 2
     ok = sum(1 for r in results if r['verdict'] == 'OK')
