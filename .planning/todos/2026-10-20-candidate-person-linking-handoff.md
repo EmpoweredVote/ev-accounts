@@ -412,3 +412,35 @@ Colorado (72) → Washington (134, the only one needing the 75-row filter).
 2. **Is name-only creation acceptable outside California?** 236 rows hang on this.
 
 Neither is a data question and neither blocks linking work. Both block creation.
+
+---
+
+## 14. OPERATOR RULING 2026-10-20 — primary losers KEEP their person record
+
+> "if someone loses the primary, we should hold onto their information, just not as a
+> candidate/incumbent."
+
+**This closes decision 1 of §13d and unblocks Washington.** The 70 WA `not_nominated` rows and the
+5 `withdrew` rows are **IN SCOPE** for creation, not excluded from it. We keep the person; we do
+not present them as a candidate or an incumbent.
+
+**How it applies:**
+- Create the person as normal: `is_active=true`, **`is_incumbent=false`**, no office, no term.
+- Do **not** clear `race_candidates.result` or `candidate_status` — those fields are what stop the
+  row being presented as a candidate, and `electionService` already filters `not_nominated` off
+  the ballot page. The ruling changes WHO WE KEEP, not what we display.
+- ⚠ So §7's framing was wrong in one respect: there is no filtering-out to do. The "clearing" is
+  now just the Colorado `filed` display question (§13a), which is the operator's call and blocks
+  nothing.
+
+🟢 **Washington's real cohort is therefore 209, not 134.**
+
+### Progress since §13 was written
+| State | status |
+| --- | --- |
+| IN | ✅ `CC_0273` — 102 of 103. 8 linked, 4 created, Smith III unlinked |
+| NV | ✅ `CC_0274` — 28 of 28 |
+| OR | ✅ `CC_0274` — 49 of 50. Dugger unlinked |
+| TX | 11 live, **0 variant hits** — pure creation, blocked only on §13d decision 2 |
+| CO | 72 |
+| WA | 209 (now including the 75) |
