@@ -1,7 +1,7 @@
-# education-equity-programs — Season 3 draft, served revision _(id on apply)_ (v2 r2, CA_0314)
+# education-equity-programs — Season 3 draft, served revision 516800d5-b3ce-4eff-ad34-6f1c25a272ef (v2 r2, CA_0314)
 
-**Status:** draft (2026-10-19). Written with revision 2 (working draft B′ of the Season 3 pilot). **Not yet
-applied**: the revision row does not exist until CA_0314 runs on Chris Andrews' go-ahead. Lines marked
+**Status:** draft (2026-10-19). Written with revision 2 (working draft B′ of the Season 3 pilot), applied
+2026-10-20 by CA_0314 and pinned in the draft Season 3. Lines marked
 _(ruled 2026-10-19)_ carry an operator ruling (Chris Andrews); _(Draft B, R2)_ lines were written with Draft B
 and adopted when Draft B went forward (ruling R2, 2026-10-19); _(ruled 2026-10-19, Stage 4)_ lines were a
 drafter's reading applied in the Stage 3 test and approved with the Stage 4 package.
