@@ -1,9 +1,9 @@
-# education-school-police — Season 3 draft, served revision _(id on apply)_ (v2 r2, CA_0315)
+# education-school-police — Season 3 draft, served revision 37728a13-d7c3-4173-b706-e54dd85804c1 (v2 r2, CA_0315)
 
 **Status:** draft (2026-10-20). Written with revision 2 (working draft C of the Season 3 pilot, ruled W1
-2026-10-16). **Not yet applied**: the revision row does not exist until CA_0315 runs on Chris Andrews'
-go-ahead. Moved here from the "Season 3 draft — Draft C" section of `../education-school-police.md`, which
-leaves that file in the same change. Lines marked _(ruled …)_ carry an operator ruling (Chris Andrews).
+2026-10-16), applied 2026-10-20 by CA_0315 and pinned in the draft Season 3. Moved here from the
+"Season 3 draft — Draft C" section of `../education-school-police.md`, which left that file in the same
+change. Lines marked _(ruled …)_ carry an operator ruling (Chris Andrews).
 `build-coder-inputs.ts` reads this file for `--season draft` bundles (#1031); open-season bundles keep
 reading `../education-school-police.md` (revision 1).
 

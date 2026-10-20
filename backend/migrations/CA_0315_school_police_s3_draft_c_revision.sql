@@ -6,7 +6,12 @@
 --          and pinned in the DRAFT Season 3
 -- =============================================================================
 -- Drafted 2026-10-20, offline, as the Stage 4 package of the Season 3 pilot for this
--- topic. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews). NOT APPLIED.
+-- topic. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
+--
+-- APPLIED to production 2026-10-20 on Chris Andrews' explicit go-ahead.
+-- Revision 2 = 37728a13-d7c3-4173-b706-e54dd85804c1. At that time 0 of 10 T4 blind labels
+-- (Gold Desk t4polc-01 … t4polc-10, bar >= 9 of 10) were in; he approved with T4 still open,
+-- as for education-library-books (CA_0310) and education-equity-programs (CA_0314).
 -- Dry run on prod 2026-10-20 inside BEGIN … ROLLBACK: gate OK, idempotent double run OK
 -- (second run skips propose/approve), voter answers 'reworded' x1, rollback confirmed (1 revision,
 -- Season 3 still pins revision 1).
