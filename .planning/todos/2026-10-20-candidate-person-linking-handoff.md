@@ -1,24 +1,26 @@
 # Candidate → person linking — handoff
 
 **Written 2026-10-20. Author: Chris Cantrell (`CC_`).**
-**Status: ✅ EVERY STATE DONE. 8 rows left nationally, 5 of them deliberate refusals. Start at §12.**
+**Status: ✅✅ THE PROGRAMME IS COMPLETE. Every cohort examined. The only 5 rows left unlinked
+nationally are the 5 DELIBERATE REFUSALS — there is no backlog.**
 **🟢 WASHINGTON HAS AN EVIDENCE INSTRUMENT AFTER ALL — see §16. This file said it had none.**
+**▶ What remains is listed in §12: judgement calls, occupancy gaps this work surfaced, and the
+next cycle's re-run. None of it is linking.**
 
 | Election | total | linked | left |
 | --- | --- | --- | --- |
 | CA 2026 Statewide General | 324 | **324** | 0 |
 | 2026 LA County General | 796 | **793** | 3 (judged — §6b) |
-| 2026 San Bernardino County General | 5 | 2 | 3 (not examined) |
+| 2026 San Bernardino County General | 5 | **5** | 0 |
 
 **States finished: CA · IN (102/103) · NV (28/28) · OR (49/50) · TX (170/170) · CO (103/103) ·
-WA (394/394).** ✅ **No state has an unexamined cohort.**
+WA (394/394) · San Bernardino (5/5).** ✅ **No cohort anywhere is unexamined.**
 
-**8 rows remain unlinked nationally, and 5 are deliberate:** 3 LA residue (§6b), Dugger (OR),
-Smith III (IN). The other 3 are San Bernardino County (§6c), never examined — all designated,
-about an hour's work.
+**Exactly 5 rows remain unlinked nationally, and every one is a deliberate refusal:** 3 LA residue
+(§6b), Dugger (OR), Smith III (IN). **There is no backlog left.**
 
-Migrations: `CC_0262`-`CC_0278`. 767 candidacies linked, 800 people created, 17 wrong people
-refused, 9 left unlinked by judgement across the programme.
+Migrations: `CC_0262`-`CC_0279`. 770 candidacies linked, 803 people created, 17 wrong people
+refused, 5 left unlinked by judgement across the programme.
 
 ---
 
@@ -171,9 +173,10 @@ person" exactly as falsely as linking would assert "same". Unlinked is the findi
   senate candidate, an archived row, a bare row) and the name also matches the Governor of Indiana.
   ▶ *Settles it:* a Walnut Valley source naming him.
 
-### 6c. Not examined: 2026 San Bernardino County General — 3 unlinked, all designated
+### 6c. ✅ DONE: 2026 San Bernardino County General — `CC_0279`. 5 of 5.
 
-Smallest cohort in the corpus and 100% designated. An hour's work with instrument A.
+⚠ **This section used to read "100% designated. An hour's work with instrument A." The first half
+was right and the second did not follow — see §18.** All three were creations.
 
 ## 6d. (historical) The original LA County scoping
 
@@ -351,9 +354,9 @@ operator's §14 ruling means there was never anything to filter out):
 
 1. ✅ **WASHINGTON — DONE** (`CC_0277`, `CC_0278`). 394 of 394. **§16 is the write-up and it
    corrects this file's claim that WA had no instrument.**
-2. ▶▶ **San Bernardino County General (§6c)** — 3 rows, all designated. About an hour, and it is
-   the ONLY unexamined cohort left in the country.
-3. **The three LA residue rows (§6b)** — one citation each.
+2. ✅ **San Bernardino County General — DONE** (`CC_0279`). 5 of 5. Write-up in §18.
+3. **The three LA residue rows (§6b)** — one citation each. ▶ **This is now the front of the
+   queue, and it is five judgement calls, not a cohort.**
 4. **Brock / de la Torre / Parra closed-term backfill** — history, not occupancy. Needs documented
    start AND end dates. **DO NOT SEAT THEM** (see the correction at the top).
 5. **Occupancy gaps this programme surfaced but did not fix** — no Jefferson or Fremont County in
@@ -679,3 +682,96 @@ Elected Experience as JSON the whole time.
 ▶ Before writing *no instrument exists*, ask what the instrument was **doing** — a published,
 sworn self-description — and then look for anything that does that job, **in any format**. The
 standard was never the form.
+
+---
+
+## 18. SAN BERNARDINO — `CC_0279`, applied 2026-10-20. 5 of 5. **The programme is complete.**
+
+**3 created · 0 linked · 0 refused.** The whole election is one race: **Director, Wrightwood
+Community Services District**, five candidates, two already linked.
+
+### 18a. 🔴 "100% DESIGNATED" IS NOT "INSTRUMENT A CAN RUN"
+
+§6c scoped this as *"Smallest cohort in the corpus and 100% designated. An hour's work with
+instrument A."* The first half is true. The second does not follow.
+
+**A ballot designation is only an instrument when it NAMES AN OFFICE.** These name none:
+
+| Candidate | Designation |
+| --- | --- |
+| Jason Agraz | "Business Owner" |
+| Russ Drew | "Retired / Community Volunteer" |
+| Wes Zuber | "Local Businessman" |
+
+▶ **COUNT DESIGNATIONS THAT NAME A SEAT, NOT DESIGNATIONS.** Only the first number is a lead worth
+an hour. The LA County scoping in §6d made the same count — "161 of 427 carry a ballot
+designation" — and the useful figure was always the subset naming an office we record.
+
+🟢 **The consolation: the designation still earned its keep, as a DISCONFIRMATION.** A candidate
+who swears their occupation is "Retired / Community Volunteer" is stating they hold no office.
+Creating all three is the *evidenced* answer, not the fallback — the same shape as Angela Taylor's
+"None." in §16b.
+
+### 18b. 🔴 THE RACE'S `office_id` IS NOT EVIDENCE IN A MULTI-SEAT BOARD RACE
+
+Wrightwood CSD has **five Director offices**, each separately seated from the district's own
+roster (`CA_0250`). The single race row carries **five candidates against ONE of those five office
+ids** (`25a12bc5`, currently Alexis Claiborne's).
+
+⚠ So "the candidate holds the very seat sought" — the strongest test in this programme, which
+carried nine of Washington's twelve links — is **meaningless here**. It would match a candidate
+against whichever Director row the importer happened to pick.
+
+▶ **Open modelling question for whoever owns multi-seat races**, not fixed here: a board election
+for several seats is flattened onto one arbitrary seat row. Nothing in `CC_0279` depends on which
+office the race points at. 🔴 **Before using seat identity as evidence, check the race is
+single-seat.**
+
+### 18c. The dedupe pass returned empty, and the control is what makes that worth anything
+
+🔴 An empty answer from a detector is worth nothing until the detector is shown to work. Controls
+were planted and **they fired**: the same query matched "David Schoenwetter" → `David E.
+Schoenwetter` and "Rick Christensen" → `Rick J. Christensen`, both sitting Wrightwood directors,
+including across the middle-initial difference.
+
+A wider surname sweep over every row, active and archived, confirms it: we hold a **Claudia**
+Agraz, a **Henry** Zuber III and a **Jefferson** Van Drew, and nothing closer. The many `Drew *`
+rows are first-name Drews; the `ZUBER 2018 GOVERNOR`-style rows are CAL-ACCESS committee names
+sitting in `politicians`, not people.
+
+### 18d. ⚠ CORRECTION TO EVERY CREATION MIGRATION'S HEADER: "IDEMPOTENT" IS THE WRONG WORD
+
+`CC_0272`, `CC_0275`, `CC_0276`, `CC_0278` and `CC_0279` all say *"Idempotent: re-running inserts
+nothing."* **That is true about the outcome and wrong about the mechanism.**
+
+Each defines its cohort as `politician_id IS NULL`, so a second run finds **zero** and the count
+gate raises — measured by running `CC_0279` twice in one transaction:
+
+```
+CC_0279: expected 3 to create, found 0 - the cohort moved, re-run the dedupe pass ...
+```
+
+Nothing is inserted because the transaction **ABORTS**, not because the work is skipped.
+🔴 **A re-run therefore looks like a FAILURE to anything reading exit codes.** Expect the
+exception; it is not drift. `CC_0279`'s header now says so; the earlier four still carry the loose
+wording and are not being retro-edited.
+
+---
+
+## 19. ✅ THE PROGRAMME IS COMPLETE — what is actually left
+
+**Nothing in this file is a linking backlog any more.** Five rows remain unlinked nationally and
+all five are deliberate refusals, each with a named document that would settle it:
+
+| Row | Why unlinked | What settles it |
+| --- | --- | --- |
+| Christine R. Sarmiento (El Monte Mayor) | existing row holds a CA GOVERNOR candidacy **and an image** | any El Monte source naming her |
+| Mark Copland (Norwalk-La Mirada TA 5) | existing row holds **Area 6**; 0.0% shared area | the trustee-area redraw, or the district roster |
+| Michael Braun (Walnut Valley Water, Div 2) | matches 3 rows, and the Governor of Indiana | a Walnut Valley source naming him |
+| Dugger (OR) | see `CC_0274` | — |
+| William E. Smith III (IN, Van Buren Twp) | **suffix**: father or son, and the incumbent row carries an IMAGE | Monroe County certified list, which prints suffixes |
+
+Everything else in §12 is a different kind of job: occupancy gaps this programme surfaced (no
+Jefferson or Fremont County in CO; dozens of WA city councils and school boards whose members we
+now hold as people with no seat), the Brock/de la Torre/Parra **closed-term** backfill, and
+re-running the WA pamphlet sweep for the next cycle.
