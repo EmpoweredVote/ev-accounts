@@ -56,6 +56,66 @@ const REGISTRY = [
     // Proved 2026-10-20 against LA County Registrar-Recorder precincts (Political_Boundaries
     // MapServer 34, DST_CITY=LS / DIV_CITY), 25 of 25 disputed cells. See CA_0317.
   },
+  {
+    key: 'sf',
+    label: 'San Francisco Board of Supervisors',
+    ocdPrefix: 'sf-supervisor-district-',
+    // DataSF "Current Supervisor Districts". Socrata, maintained by the city.
+    url: 'https://data.sf.gov/resource/f2zs-jevy.geojson?$limit=50',
+    district: (props) => Number(props.sup_dist),
+    expect: 11,
+    // Swept 2026-10-20, proved BOTH ways: 0/660 interior points against this layer AND against
+    // DataSF's second current publication (cqbw-m5m3), 155/660 against the superseded 2012 map
+    // (keex-zmn4). Matching a current layer is only half the proof — LA matched one too.
+  },
+  {
+    key: 'sj',
+    label: 'San José city council',
+    ocdPrefix: 'sj-council-district-',
+    // City of San José GIS, "City Council Districts (Current)" — the city's own layer, kept in
+    // step with annexations (the 2021 map, effective 2022-02-11). Its sibling layers in
+    // OPN_OpenDataService are explicitly ARCHIVE boundaries; do not point this at one of those.
+    url:
+      'https://geo.sanjoseca.gov/server/rest/services/PLN/PLN_AdministrativeBoundaries/MapServer/1/query' +
+      '?where=1%3D1&outFields=DISTRICT&returnGeometry=true&outSR=4326&f=geojson',
+    district: (props) => Number(props.DISTRICT),
+    expect: 10,
+    // Swept 2026-10-20, proved both ways: 0/600 interior points against this layer, 77/600
+    // against the 2011 archive layer (OPN_OpenDataService/543), worst area delta 74.64%.
+  },
+  {
+    key: 'sd',
+    label: 'San Diego city council',
+    ocdPrefix: 'sd-council-district-',
+    // SanGIS/SANDAG regional council-district layer, filtered to the City of San Diego. The file
+    // is county-wide (62 features across every districted city in San Diego County).
+    url: 'https://geo.sandag.org/server/rest/directories/downloads/Council_Districts.geojson',
+    filter: (props) => props.JUR_NAME === 'SAN DIEGO',
+    district: (props) => Number(props.DISTRICT),
+    expect: 9,
+    // ⚠ Swept 2026-10-20 and CLEAN against this authority (0.00% worst area delta, 1 of 540
+    // interior points, a boundary-hugger) — but this is the ONE of the five with no converse
+    // test: no published superseded San Diego council map could be located (datasd's historic
+    // paths 403, SANDAG serves no archive layer, the open-data API is not reachable). So we have
+    // "agrees with the regional authority", not "and differs from the map it replaced". That is
+    // weaker evidence than the other four carry. If a 2011-map publication turns up, run it.
+  },
+  {
+    key: 'boston',
+    label: 'Boston city council',
+    ocdPrefix: 'boston-ma-council-district-',
+    // 🔴 Boston publishes MANY council-district services, and most of them are wrong to use:
+    // `City_Council_Districts_Nov2022` is the map a federal judge ENJOINED in May 2023,
+    // `city_council_districts_2020`, `CITY_COUNCIL_2015`, `1993_…` and `1983_…` are historic.
+    // The operative map is the one the council passed 2023-05-24 for the 2023-2031 elections.
+    url:
+      'https://services.arcgis.com/sFnw0xNflSi8J0uh/arcgis/rest/services/5_24_2023_passed_district_map/' +
+      'FeatureServer/0/query?where=1%3D1&outFields=DISTRICT&returnGeometry=true&outSR=4326&f=geojson',
+    district: (props) => Number(props.DISTRICT),
+    expect: 9,
+    // Swept 2026-10-20, proved both ways: 0/540 interior points against the passed 2023 map,
+    // 86/540 against the enjoined Nov2022 map. We are NOT serving the enjoined boundaries.
+  },
 ];
 
 /**
@@ -64,12 +124,14 @@ const REGISTRY = [
  * state Los Angeles was in. Each one needs its authority identified and its vintage proved, then an
  * entry in REGISTRY above. Printed on every run; fails the build only under --strict.
  */
-const KNOWN_UNGATED = [
-  'sf_supervisor_districts_2022',
-  'sj_city_council_districts_2022',
-  'sd_city_council_districts_2022',
-  'boston_city_council_districts_2023',
-];
+/**
+ * Which rows count as a council-district layer, for the purpose of noticing an UNGATED one.
+ * Deliberately computed from the database rather than kept as a hand-maintained list: a list
+ * would be correct on the day it was written and silently wrong the first time a new city
+ * landed. Scope is city council / board-of-supervisors district layers (the X-layer ids we mint
+ * for them); county commissions and wards use other id shapes and are out of scope here.
+ */
+const COUNCIL_LAYER_PREDICATE = `mtfcc LIKE 'X%' AND ocd_id ~ '(council|supervisor)[-_]district'`;
 
 const argv = process.argv.slice(2);
 const asJson = argv.includes('--json');
@@ -159,15 +221,21 @@ async function fetchUpstream(entry) {
   if (!res.ok) throw new UpstreamUnavailable(`authority returned HTTP ${res.status}`);
   const fc = await res.json();
   if (!fc.features?.length) throw new Error(`upstream returned no features for ${entry.key}`);
-  return fc.features.map((f) => {
+  // Some authorities publish one regional layer covering many jurisdictions (San Diego's is
+  // county-wide), so an entry may narrow it to the city we actually serve.
+  const features = entry.filter ? fc.features.filter((f) => entry.filter(f.properties)) : fc.features;
+  if (!features.length) throw new Error(`filter left no features for ${entry.key}`);
+  return features.map((f) => {
     const polys = toPolys(f.geometry);
     return { district: entry.district(f.properties), polys, bbox: bboxOf(polys), area: polysArea(polys) };
   });
 }
 
 async function checkEntry(pool, entry) {
+  // The trailing integer is the district number in both id shapes we use:
+  // '…/council_district:13' (OCD) and 'boston-ma-council-district-1' (local slug).
   const { rows } = await pool.query(
-    `SELECT split_part(ocd_id, ':', 5) AS district,
+    `SELECT (regexp_match(ocd_id, '(\\d+)$'))[1] AS district,
             public.ST_AsGeoJSON(geometry) AS gj,
             source
        FROM essentials.geofence_boundaries
@@ -280,12 +348,15 @@ try {
   // Ungated layers: only meaningful on a full run.
   let ungated = [];
   if (!onlyKey) {
+    // Every council layer in the DB whose ids are not claimed by a REGISTRY entry's prefix.
     const { rows } = await pool.query(
-      `SELECT DISTINCT source FROM essentials.geofence_boundaries
-        WHERE mtfcc LIKE 'X%' AND source = ANY($1)`,
-      [KNOWN_UNGATED]
+      `SELECT DISTINCT source, count(*) AS rows FROM essentials.geofence_boundaries
+        WHERE ${COUNCIL_LAYER_PREDICATE}
+          AND NOT (ocd_id LIKE ANY($1))
+        GROUP BY source ORDER BY source`,
+      [REGISTRY.map((e) => `${e.ocdPrefix}%`)]
     );
-    ungated = rows.map((r) => r.source);
+    ungated = rows.map((r) => `${r.source} (${r.rows} rows)`);
   }
 
   if (asJson) {
@@ -303,7 +374,14 @@ try {
     if (ungated.length) {
       console.log(`\nUNGATED council-district layers (${ungated.length}) — no authority registered, ` +
                   `so nothing here vouches for them:`);
-      for (const s of ungated) console.log(`        ? ${s}`);
+      // Many of these carry a long provenance string that already proves vintage at import time;
+      // the short, undated tags are the ones that look like Los Angeles did. Printed shortest-first
+      // so the suspicious ones are the ones you actually see.
+      const shown = [...ungated].sort((a, b) => a.length - b.length).slice(0, 12);
+      for (const s of shown) console.log(`        ? ${s.length > 140 ? s.slice(0, 137) + '...' : s}`);
+      if (ungated.length > shown.length) {
+        console.log(`        ... and ${ungated.length - shown.length} more (--json for the full list)`);
+      }
       console.log(`        Identify each one's authority, prove the vintage against it, then add a`);
       console.log(`        REGISTRY entry in this file. This is the state Los Angeles was in (CA_0317).`);
       console.log(`        (--strict makes this fail the build.)`);
