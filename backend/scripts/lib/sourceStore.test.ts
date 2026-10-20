@@ -3,10 +3,11 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
-  DeadEndSchema, InstrumentSchema, appendDeadEnd, storePaths, upsertInstrument, upsertPerson, validateStore,
+  DeadEndSchema, InstrumentSchema, JurisdictionSchema, PersonSourcesSchema, appendDeadEnd, storePaths, upsertInstrument, upsertPerson, validateStore,
   type Instrument, type Vote,
 } from './sourceStore.js';
 
+const PID = '3f2b8c1e-5d4a-4e6b-9a7c-1b2d3e4f5a6b';
 let root: string;
 beforeEach(() => { root = mkdtempSync(join(tmpdir(), 'source-store-')); });
 afterEach(() => { rmSync(root, { recursive: true, force: true }); });
@@ -34,6 +35,19 @@ describe('schemas', () => {
   it('checks instrument id format', () => {
     expect(InstrumentSchema.safeParse(inst({ id: 'WA-ESSB-5044-2021' })).success).toBe(true);
     expect(InstrumentSchema.safeParse(inst({ id: '5044' })).success).toBe(false);
+  });
+});
+
+describe('provenance and ids', () => {
+  it('rejects a portal without provenance', () => {
+    const portal = { name: 'p', url: 'https://x', status: 'works', checked_at: '2026-10-01' };
+    const j = { scope: 'state:wa', portals: [portal], rosters: [], higher_law_duties: [] };
+    expect(JurisdictionSchema.safeParse(j).success).toBe(false);
+    expect(JurisdictionSchema.safeParse({ ...j, portals: [{ ...portal, provenance: prov('2026-10-01T00:00:00Z') }] }).success).toBe(true);
+  });
+  it('rejects a politician_id that is not a uuid', () => {
+    expect(PersonSourcesSchema.safeParse({ politician_id: '../x', sources: [], terms: [] }).success).toBe(false);
+    expect(PersonSourcesSchema.safeParse({ politician_id: PID, sources: [], terms: [] }).success).toBe(true);
   });
 });
 
@@ -77,11 +91,11 @@ describe('upsertPerson', () => {
   it('unions sources by url and terms by office+start', () => {
     const src = (url: string, at: string) => ({ url, kind: 'record' as const, topic_keys: [], useful: true, provenance: prov(at) });
     const term = { office: 'Senator', start: '2019', precision: 'year' as const, source: 's' };
-    upsertPerson(root, { politician_id: 'p1', sources: [src('u1', '2026-01-01T00:00:00Z')], terms: [term] });
+    upsertPerson(root, { politician_id: PID, sources: [src('u1', '2026-01-01T00:00:00Z')], terms: [term] });
     expect(upsertPerson(root, {
-      politician_id: 'p1', sources: [src('u1', '2026-02-01T00:00:00Z'), src('u2', '2026-02-01T00:00:00Z')], terms: [term],
+      politician_id: PID, sources: [src('u1', '2026-02-01T00:00:00Z'), src('u2', '2026-02-01T00:00:00Z')], terms: [term],
     })).toBe('merged');
-    const saved = JSON.parse(readFileSync(storePaths(root).person('p1'), 'utf8'));
+    const saved = JSON.parse(readFileSync(storePaths(root).person(PID), 'utf8'));
     expect(saved.sources).toHaveLength(2);
     expect(saved.sources[0].provenance.fetched_at).toBe('2026-02-01T00:00:00Z');
     expect(saved.terms).toHaveLength(1);

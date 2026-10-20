@@ -19,7 +19,7 @@ Large saved copies (PDFs, page captures) are not committed. They stay in the run
 
 ## Provenance
 
-Every instrument, person source and saved copy records who fetched it (`fetched_by`), when (`fetched_at`, ISO), how (`method`: webfetch, curl, browser, ocr, api, hand-saved), and the SHA-256 of any saved copy. Hand-saved sources keep the existing rule: source and method on the first line, with Chris's OK.
+Every instrument, person source, jurisdiction portal and saved copy records who fetched it (`fetched_by`), when (`fetched_at`, ISO), how (`method`: webfetch, curl, browser, ocr, api, hand-saved), and the SHA-256 of any saved copy. Hand-saved sources keep the existing rule: source and method on the first line, with Chris's OK.
 
 ## Merge rules (re-running a stage)
 

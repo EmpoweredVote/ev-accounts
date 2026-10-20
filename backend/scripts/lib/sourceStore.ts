@@ -77,7 +77,7 @@ export type Instrument = z.infer<typeof InstrumentSchema>;
 // ---------- people ----------
 
 export const PersonSourcesSchema = z.object({
-  politician_id: z.string().min(1),
+  politician_id: z.string().uuid(), // becomes a file name, so it must not contain / or ..
   sources: z.array(
     z.object({
       url: z.string(),
@@ -111,6 +111,7 @@ export const JurisdictionSchema = z.object({
       status: z.enum(['works', 'blocked', 'needs-browser']),
       how: z.string().optional(),
       checked_at: z.string(),
+      provenance: ProvenanceSchema,
     }),
   ),
   rosters: z.array(z.object({ url: z.string(), note: z.string().optional() })),
