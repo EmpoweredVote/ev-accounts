@@ -1,15 +1,20 @@
 /**
  * topic-blindness-check.ts — scan a blind drafter's transcript for reads of forbidden folders.
  *
- *   npm run topic:blindness-check --prefix backend -- --transcript <jsonl> --forbid <path> [--forbid <path> ...] --out <file>
+ *   npm run topic:blindness-check --prefix backend -- --transcript <jsonl> --forbid <path> [--forbid <path> ...] \
+ *     --out <file> [--cwd <dir>]
  *
- * Writes `PASS` or one `line N: TOOL touched PATH` per hit to --out. Exit 1 on any hit, 2 on bad usage.
- * Reports how many transcript lines could not be parsed (they are skipped, never fatal).
+ * --out is overwritten at start, so a stale PASS can never survive a failed run. It then holds one of:
+ *   PASS (N tool calls scanned, M lines skipped)          exit 0
+ *   one `line N: TOOL touched PATH` per hit               exit 1
+ *   NO EVIDENCE: ...  (zero tool calls scanned)           exit 3
+ *   ERROR: ...        (bad flags, unreadable transcript)  exit 2
+ * --cwd is the base for relative paths on transcript lines that carry no `cwd`.
  * Reads one file and writes one file; no database.
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
-import { scanTranscript } from './lib/blindnessCheck.js';
+import { isEmptyForbidden, scanTranscript, summarise } from './lib/blindnessCheck.js';
 
 function values(name: string): string[] {
   const out: string[] = [];
@@ -24,18 +29,37 @@ function values(name: string): string[] {
 }
 
 function main(): number {
-  const [transcript] = values('--transcript');
-  const forbid = values('--forbid');
-  const [out] = values('--out');
-  if (!transcript || !forbid.length || !out) {
-    console.error('usage: topic-blindness-check --transcript <jsonl> --forbid <path> [--forbid <path> ...] --out <file>');
+  let out: string | undefined;
+  try {
+    [out] = values('--out');
+  } catch (e) {
+    console.error(`ERROR: ${(e as Error).message}`);
     return 2;
   }
-  const { hits, skippedLines } = scanTranscript(readFileSync(transcript, 'utf8'), forbid, homedir());
-  const body = hits.length ? hits.map((h) => `line ${h.line}: ${h.tool} touched ${h.path}`).join('\n') : 'PASS';
-  writeFileSync(out, body + '\n');
-  console.log(`${hits.length ? 'FAIL' : 'PASS'}: ${hits.length} hit(s); ${skippedLines} unparseable line(s) skipped`);
-  return hits.length ? 1 : 0;
+  if (!out) {
+    console.error('usage: topic-blindness-check --transcript <jsonl> --forbid <path> [--forbid <path> ...] --out <file> [--cwd <dir>]');
+    return 2;
+  }
+  try {
+    writeFileSync(out, '');
+    const [transcript] = values('--transcript');
+    const forbid = values('--forbid');
+    const [cwd] = values('--cwd');
+    if (!transcript || !forbid.length) throw new Error('--transcript and at least one --forbid are required');
+    const home = homedir();
+    const bad = forbid.find((f) => isEmptyForbidden(f, home));
+    if (bad !== undefined) throw new Error(`--forbid "${bad}" is empty after normalising`);
+    const scan = scanTranscript(readFileSync(transcript, 'utf8'), forbid, home, { cwd });
+    const v = summarise(scan);
+    writeFileSync(out, v.text + '\n');
+    console.log(`${v.status}: ${scan.hits.length} hit(s), ${scan.toolCalls} tool call(s) scanned, ${scan.skippedLines} unparseable line(s) skipped`);
+    return v.exitCode;
+  } catch (e) {
+    const msg = `ERROR: ${(e as Error).message}`;
+    console.error(msg);
+    try { writeFileSync(out, msg + '\n'); } catch { /* out itself unwritable: stderr already has it */ }
+    return 2;
+  }
 }
 
 process.exit(main());
