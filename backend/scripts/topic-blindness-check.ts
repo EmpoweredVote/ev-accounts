@@ -14,19 +14,10 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { homedir } from 'node:os';
+import { flags } from './lib/cliEnv.js';
 import { isEmptyForbidden, scanTranscript, summarise } from './lib/blindnessCheck.js';
 
-function values(name: string): string[] {
-  const out: string[] = [];
-  for (let i = 0; i < process.argv.length; i++) {
-    if (process.argv[i] === name) {
-      const v = process.argv[i + 1];
-      if (!v || v.startsWith('--')) throw new Error(`${name} needs a value`);
-      out.push(v);
-    }
-  }
-  return out;
-}
+const values = (name: string) => flags(process.argv, name);
 
 function main(): number {
   let out: string | undefined;

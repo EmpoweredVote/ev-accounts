@@ -11,20 +11,28 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { flag, hasFlag } from './lib/cliEnv.js';
 import { ADAPTERS, importNotes, resetImportNotes, type PilotOutput } from './lib/pilotImport.js';
 import { appendDeadEnd, storePaths, upsertInstrument, upsertJurisdiction, upsertPerson } from './lib/sourceStore.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const argv = process.argv.slice(2);
-const flag = (name: string) => { const i = argv.indexOf(name); return i !== -1 ? argv[i + 1] : undefined; };
-const researchArg = flag('--research');
+let researchArg: string | undefined;
+let rootArg: string | undefined;
+try {
+  researchArg = flag(argv, '--research');
+  rootArg = flag(argv, '--root');
+} catch (e) {
+  console.error(`ERROR: ${(e as Error).message}`);
+  process.exit(2);
+}
 if (!researchArg) {
   console.error('Usage: import-pilot-sources.ts --research <root> [--dry-run] [--root <store dir>]');
   process.exit(2);
 }
 const research = resolve(researchArg.replace(/^~/, process.env.HOME ?? '~'));
-const storeRoot = flag('--root') ? resolve(flag('--root')!) : join(here, '..', 'data', 'source-store');
-const dryRun = argv.includes('--dry-run');
+const storeRoot = rootArg ? resolve(rootArg) : join(here, '..', 'data', 'source-store');
+const dryRun = hasFlag(argv, '--dry-run');
 
 const subdirs = (d: string) => (existsSync(d) ? readdirSync(d).map((n) => join(d, n)).filter((p) => statSync(p).isDirectory()) : []);
 const candidates = [research, ...subdirs(research).flatMap((d) => [d, ...subdirs(d)])];

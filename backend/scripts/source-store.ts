@@ -8,13 +8,20 @@
  */
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { flag } from './lib/cliEnv.js';
 import { validateStore } from './lib/sourceStore.js';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const argv = process.argv.slice(2);
 const cmd = argv[0];
-const rootFlag = argv.indexOf('--root');
-const root = rootFlag !== -1 && argv[rootFlag + 1] ? resolve(argv[rootFlag + 1]) : join(here, '..', 'data', 'source-store');
+let rootArg: string | undefined;
+try {
+  rootArg = flag(argv, '--root');
+} catch (e) {
+  console.error(`ERROR: ${(e as Error).message}`);
+  process.exit(2);
+}
+const root = rootArg ? resolve(rootArg) : join(here, '..', 'data', 'source-store');
 
 if (cmd !== 'validate') {
   console.error('Usage: source-store.ts validate [--root <dir>]');

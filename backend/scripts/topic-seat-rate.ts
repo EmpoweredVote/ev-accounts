@@ -11,37 +11,21 @@
  * `--research-only <dir>`: the old behaviour — rows come from rows.tsv alone (frozen test sets).
  * Exit 2 on an unknown topic key. Never writes.
  *
- * Opens its own pg Pool from DATABASE_URL (backend/.env, or the main checkout's .env in a worktree);
- * it does not import db.js, which demands every server variable at import time.
+ * Opens its own pg Pool from DATABASE_URL, loaded by lib/cliEnv.ts (backend/.env, or the main
+ * checkout's .env in a worktree); it does not import db.js. A flag with no value is an error.
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
 import { join, resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { execFileSync } from 'node:child_process';
-import dotenv from 'dotenv';
 import pg from 'pg';
+import { CliFlagError, flag as readFlag, hasFlag, loadBackendEnv } from './lib/cliEnv.js';
 import { resolveSeasonTarget, seasonSpecFromArgv, SeasonTargetError } from './lib/seasonTarget.js';
 import { loadDbRows, parseRowsTsv, summarise, formatReport, mergeResearch, topicExists } from './lib/seatRate.js';
 
 const backendDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
-dotenv.config({ path: join(backendDir, '.env'), quiet: true });
-if (!process.env.DATABASE_URL) {
-  // A linked worktree has no .env of its own: borrow the main checkout's (variables already set win).
-  try {
-    const common = execFileSync('git', ['rev-parse', '--path-format=absolute', '--git-common-dir'],
-      { cwd: backendDir, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
-    const mainEnv = join(dirname(common), 'backend', '.env');
-    if (existsSync(mainEnv)) dotenv.config({ path: mainEnv, quiet: true });
-  } catch { /* no git: fall through to the missing-variable message */ }
-}
-
-function flag(name: string): string | undefined {
-  const i = process.argv.indexOf(name);
-  if (i === -1) return undefined;
-  const v = process.argv[i + 1];
-  if (!v || v.startsWith('--')) throw new Error(`${name} needs a value`);
-  return v;
-}
+loadBackendEnv(backendDir);
+const argv = process.argv;
+const flag = (name: string) => readFlag(argv, name);
 
 async function main(): Promise<number> {
   const topic = flag('--topic');
@@ -49,7 +33,7 @@ async function main(): Promise<number> {
   const research = flag('--research');
   const researchOnly = flag('--research-only');
   if (research && researchOnly) throw new Error('--research and --research-only cannot be combined');
-  const json = process.argv.includes('--json');
+  const json = hasFlag(argv, '--json');
   if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is not set (expected in backend/.env)');
   const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 1 });
   const q = (sql: string, params?: unknown[]) => pool.query(sql, params as any[]);
@@ -93,6 +77,6 @@ async function main(): Promise<number> {
 main()
   .then((code) => { process.exitCode = code; })
   .catch((e) => {
-    console.error(e instanceof SeasonTargetError ? e.message : e);
+    console.error(e instanceof SeasonTargetError || e instanceof CliFlagError ? e.message : e);
     process.exitCode = 1;
   });
