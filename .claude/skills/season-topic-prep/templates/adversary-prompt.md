@@ -25,9 +25,9 @@ Look for the clause that:
 1. moves the row to a different rung (a stronger or weaker act than the chair's rung states);
 2. makes the evidence direction-only (the text shows a side, but no rung states the act);
 3. makes the instrument multi-subject: an operative part that would be evidence for another served topic;
-4. gates the vote: consent agenda or en bloc; near-unanimous (a body of 11 or more with under 10% No); a small
-   body acting on someone else's motion; a provision that carries out a higher-law duty (any body size); a sponsor
-   of a version that is not the one voted;
+4. gates the vote: on a body of 10 or fewer voting members, a consent agenda or en bloc vote, a vote on someone
+   else's motion, or a provision that carries out a higher-law duty; on a body of 11 or more, near-unanimous (under
+   10% No) only; at any size, a sponsor of a version that is not the one voted;
 5. for a blank row: seats it after all, on a clause the coders missed.
 
 Rules: quote the deciding sentence **verbatim** with its section and URL. Never argue from silence: what a text

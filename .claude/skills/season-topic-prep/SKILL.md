@@ -45,7 +45,8 @@ The design and its reasons: `docs/superpowers/specs/2026-10-20-season-topic-prep
   labels, the research root and the source-store path. Nothing in this skill reads another person's files.
 - **Overrides by environment variable:** `EV_MONDAY_USER_ID` (your Monday user id, used as the Story owner) and
   `EV_RESEARCH_ROOT` (your research root). Without them, the owner is the Monday user the connector is signed in as,
-  and the research root is `~/Documents/GitHub/.planning/research`.
+  and the research root is `~/Documents/GitHub/.planning/research`. The Story owner is the runner, the person
+  running this skill (Chris Andrews by default).
 - **Research folder:** `<research root>/s3-prep-<topic_key>/`, with one subfolder per stage (`stage0a/`, `stage0/`,
   `stage1/`, `stage2/`, `stage3/`, `stage4/`). It is local and never pushed.
   🔴 **Before creating any folder, look for an existing trail.** Search the research root for `s3-pilot-*`,
@@ -140,8 +141,9 @@ otherwise unclear, 🛑 **ask the runner to rule the path** (one question, with 
    (bills and votes already found), `people/` (sources and term dates) and `dead-ends.jsonl`. Collect only what is
    missing.
 2. Roster from `essentials.office_terms` (read-only), for every level that holds a lever on the topic.
-3. Brief collectors with [templates/BRIEF-census.md](templates/BRIEF-census.md) (fill every `{{…}}`). Run them as
-   subagents (the `source-collector` agent type), each writing one JSON file into `stage0/raw/`.
+3. Brief collectors with [templates/BRIEF-census.md](templates/BRIEF-census.md) (fill every `{{…}}`). Run each as
+   a general-purpose subagent given that brief (use the `source-collector` agent type if it is installed), each
+   writing one JSON file into `stage0/raw/`.
 4. Match records to roster people. 🔴 **Identity check before any gate result**: confirm each person on the
    official session list or minutes for that vote date, never by surname alone.
 5. **Gate pre-screen per record**, before it counts: tally and body size, consent or action item, higher-law duty,
@@ -239,7 +241,11 @@ topic stands. The latest update is the status.
    ```
 
    `stage` is `0a`, `0`, `1`, `2`, `3`, `4`, `done` or `parked`; `blockedOn` is `ruling`, `sources`, `dispute` or
-   `nothing`. Owed items (rulings, disputes, sources to fetch) go in `owed`.
+   `nothing`. Owed items (rulings, disputes, sources to fetch) go in `owed`. `seatRateBefore` and `seatRateAfter`
+   are the **affirmative-record seat rate** (T1) from `topic:seat-rate` when a research file was joined
+   (`--research` or `--research-only`), and the **overall seat rate** otherwise. Use the same kind for both when
+   you can. When a reader could not tell which (for example the two come from different kinds, or this is the
+   first update), say which in `nextStep` ("rates are affirmative-record" or "rates are overall").
 3. Post the text as an update on the Story (`create_update`). Set Status to the first printed line
    (`change_item_column_values`): `In Progress`, `Blocked` or `Done`.
 4. 🔴 Never create or edit subitems (they are `/standup`'s day-slices). Never write to the private My Sprints board

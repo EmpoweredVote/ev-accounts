@@ -36,8 +36,9 @@ them without opening the source.
 - **Scope:** every topic. Topic-scoped readings of this test are listed below; they are **not general**.
 
 ### Higher-law duty vs own choice
-- **Ruling:** a vote that carries out a duty a higher law imposes shows compliance, so the provision it rests on is
-  `direction-only` (gate `higher-law-duty`). A body's choice made within a higher law is its own choice and can
+- **Ruling:** on a body of **10 or fewer voting members**, a vote that carries out a duty a higher law imposes shows
+  compliance, so the provision it rests on is `direction-only` (gate `higher-law-duty`; codebook V4.1 "Small bodies",
+  item 2). Bodies of 11 or more keep only the 10%-No rule; this gate does not apply to them. A body's choice made within a higher law is its own choice and can
   seat: a menu duty where the body picks the option (police U1), a duty that applies only once the body has chosen
   (police S1, Virginia SRO memorandum), a resolution citing an executive order or guidance letter that is not a
   statute (equity G4), and a city-chosen provision inside a state condition (homelessness, Oregon
@@ -50,9 +51,13 @@ them without opening the source.
 - **Scope:** every topic. Each topic's annex lists, per state, the standing duties boards carry out.
 
 ### Gating
-- **Ruling:** a consent-agenda or en bloc vote and a near-unanimous vote never seat. Pooled T1 is judged on
-  **ungated rows**: rows no ladder can ever seat (consent agenda, near-unanimous chamber, off-version sponsor) leave
-  the denominator, as No votes did on 2026-10-08. All-rows figures are still reported.
+- **Ruling:** on a body of **10 or fewer voting members**, a vote taken on a consent agenda or en bloc, or not on
+  the body's own motion, never seats (gate `consent`), and neither does a provision that carries out a higher-law
+  duty (gate `higher-law-duty`). On a body of **11 or more**, only the 10%-No rule applies: a vote with under 10%
+  No never seats (gate `near-unanimous`); consent, en bloc and higher-law duty are not gates there (codebook V4.1,
+  which wins over this file). Pooled T1 is judged on **ungated rows**: rows no ladder can ever seat (consent
+  agenda on a small body, near-unanimous large chamber, off-version sponsor) leave the denominator, as No votes did
+  on 2026-10-08. All-rows figures are still reported.
 - **Date and source:** Q6, 2026-10-19, Chris Andrews (`.planning/research/s3-pilot-school-police-stage3-supp/results.md`,
   "Rulings, 2026-10-19"); T1 over affirmative records, 2026-10-08
   (`docs/superpowers/specs/2026-10-07-season3-ladder-evaluation.md`).
