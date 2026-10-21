@@ -7,6 +7,10 @@
   root for every `s3-census-*`, `s3-pilot-*` and `s3-prep-*` folder for this topic (by topic key and short name) and
   list each one, plus this trail's `stage0a/rows.tsv`, `stage0/`, `stage1/`, `stage3/`, the source store, the
   side-session notes folders, the shadow-run folders and the named memory notes.
+- Fill `{{ALLOWED_SEARCH_ROOTS}}` with an explicit list of absolute folders the drafter may search: the codebook, the
+  annex, `docs/superpowers/specs` and the topic's ladder and revision sources. Never the research root, the source
+  store or any folder that contains a forbidden path. The blindness check treats a pathless Grep, `**` Glob or
+  recursive Bash search as rooted at the drafter's working folder, which is usually above forbidden paths.
 - Every path in `{{FORBIDDEN_PATHS}}` is also a `--forbid` for the blindness check. After the drafter finishes, run:
 
   ```bash
@@ -56,6 +60,10 @@ above by name), the Stage 1 test set (`stage1/`), Stage 3 (`stage3/`), the sourc
 (`backend/data/stance-research/*-shadow-*-{{TOPIC_KEY}}/`), the topic's Stage 1 plan, and these memory notes:
 {{FORBIDDEN_MEMORY_NOTES}}. Do not look up bill numbers, board names or people. Describe example acts **by kind**
 only. Your transcript is checked for reads of these paths afterwards; one read voids the draft.
+
+Give every Grep, Glob and recursive Bash search (grep -r, rg, find, ls -R) an explicit absolute path inside these
+allowed roots: {{ALLOWED_SEARCH_ROOTS}}. Never omit the path, and never search from a folder that contains a
+forbidden path. Reading a named file with Read is fine.
 
 ## What to write: `{{OUT_PATH}}` (stage2/drafts.md)
 

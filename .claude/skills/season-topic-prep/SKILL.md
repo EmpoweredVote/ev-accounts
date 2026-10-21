@@ -178,7 +178,8 @@ otherwise unclear, 🛑 **ask the runner to rule the path** (one question, with 
 1. Start the blind drafter as a **subagent** with [templates/drafter-prompt.md](templates/drafter-prompt.md). It
    writes `stage2/drafts.md`: the control (live revision, copied), then two drafts that differ in one place only,
    each rung checked against L1–L10 and T6, with annex lines, evidence-by-level tables, a named risk list and open
-   questions with recommendations.
+   questions with recommendations. Fill `{{ALLOWED_SEARCH_ROOTS}}` alongside `{{FORBIDDEN_PATHS}}`; `--cwd` on the
+   blindness check only affects how relative paths resolve and does not make a pathless search safe.
 2. When it finishes, run the blindness check on its transcript
    (`~/.claude/projects/<project-key>/<session-id>/subagents/agent-<agentId>.jsonl`), with every forbidden path from
    the prompt as a `--forbid`, and `--out <absolute path>/stage2/blindness-check.txt`. Exit 0 = PASS. Exit 1 = a
