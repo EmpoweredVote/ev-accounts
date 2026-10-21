@@ -64,12 +64,12 @@ The design and its reasons: `docs/superpowers/specs/2026-10-20-season-topic-prep
   (`CA_` = Chris Andrews, `CC_` = Chris Cantrell). Never infer it from a first name; ask if you do not know who you
   are working for.
 - **Running the CLIs:** from the repo root, as `npm run <name> --prefix backend -- …`. npm switches into
-  `backend/`, so 🔴 **every file path you pass (`--research`, `--research-only`, `--out`, `--transcript`, `--cwd`,
-  `--forbid`) must be absolute.**
+  `backend/`, so 🔴 **every file path you pass (`--research`, `--research-only`, `--rows-out`, `--out`, `--transcript`,
+  `--cwd`, `--forbid`) must be absolute.**
 
 | What | Command |
 |---|---|
-| Seat rate (read-only) | `npm run topic:seat-rate --prefix backend -- --topic <key> [--season open\|draft\|<uuid>] [--research <abs dir>] [--research-only <abs dir>] [--json]` |
+| Seat rate (read-only) | `npm run topic:seat-rate --prefix backend -- --topic <key> [--season open\|draft\|<uuid>] [--research <abs dir>] [--research-only <abs dir>] [--rows-out <abs file>] [--json]` |
 | Rung lint (read-only) | `npm run topic:ladder-lint --prefix backend -- --topic <key> [--season open\|draft\|<uuid>]` |
 | Blindness check | `npm run topic:blindness-check --prefix backend -- --transcript <abs jsonl> --forbid <abs path> [--forbid …] --out <abs file> [--cwd <abs dir>]` |
 | Store check | `npm run source-store --prefix backend -- validate` |
@@ -110,7 +110,12 @@ otherwise unclear, 🛑 **ask the runner to rule the path** (one question, with 
 3. Classify **every** blank into one class: **source gap** (no evidence, or the deciding text was never fetched);
    **gate** (consent agenda, near-unanimous, higher-law duty, multi-subject, off-version sponsor, pre-seating);
    **wording** (compound-partial, absence or degree clause, side shown but no rung, nested rungs); **no lever** (the
-   level cannot act; own words only). Write `stage0a/rows.tsv`.
+   level cannot act; own words only). Write `stage0a/rows.tsv`. Start it with
+   `npm run topic:seat-rate --prefix backend -- --topic <key> --season open --rows-out <absolute path>/stage0a/rows.tsv`
+   (use `--season draft` instead when the draft season holds the rows you classify): one row per database answer,
+   with `blank_class` filled from the stored blank reason where one is known, `record_kind` = `none` and `gate`
+   empty. Then fill `blank_class`, `record_kind` and `gate` by hand for every row. It refuses to overwrite an
+   existing file.
 4. Re-run the seat rate with `--research <absolute path to stage0a>` for the class breakdown and the affirmative
    rate (T1 definition).
 5. Lint the current rungs: `npm run topic:ladder-lint --prefix backend -- --topic <key> --season draft` (and

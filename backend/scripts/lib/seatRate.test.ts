@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { mergeResearch, topicExists, summarise, blankClassForReason, parseRowsTsv, formatReport, loadDbRows } from './seatRate.js';
+import { formatRowsTsv, mergeResearch, topicExists, summarise, blankClassForReason, parseRowsTsv, formatReport, loadDbRows } from './seatRate.js';
 
 describe('seatRate', () => {
   it('zero rows', () => {
@@ -91,5 +91,38 @@ describe('seatRate', () => {
   it('topicExists', async () => {
     expect(await topicExists(async () => ({ rows: [{}] }), 'k')).toBe(true);
     expect(await topicExists(async () => ({ rows: [] }), 'k')).toBe(false);
+  });
+
+  it('parseRowsTsv rejects a gate outside the gate list, with file, line and column', () => {
+    for (const g of ['multi-subject', 'consent', 'higher-law-duty', 'near-unanimous', 'off-version-sponsor', 'pre-seating', 'study-directive']) {
+      expect(parseRowsTsv(`${H}\np1\to1\tstate\t0\t\tgate\tvote-yes\t${g}`, 'r.tsv')[0].gate).toBe(g);
+    }
+    expect(() => parseRowsTsv(`${H}\np1\to1\tstate\t3\t\t\tvote-yes\t\np2\to2\tstate\t0\t\tgate\tvote-yes\tconsent-agenda`, 'r.tsv'))
+      .toThrow(/r\.tsv: line 3, column gate: "consent-agenda" is not one of multi-subject, consent/);
+  });
+
+  it('formatRowsTsv writes a starter rows.tsv that parses back', () => {
+    const rows = [
+      { politician_id: 'p1', office_id: 'o1', level: 'state' as const, value: 3, record_kind: 'none' as const },
+      { politician_id: 'p2', office_id: 'o2', level: 'school' as const, value: 0, blank_reason: 'near-unanimous', blank_class: 'gate' as const, record_kind: 'none' as const },
+      { politician_id: 'p3', office_id: 'o3', level: 'local' as const, value: 0, blank_reason: 'odd\treason', record_kind: 'none' as const },
+      { politician_id: 'p4', office_id: 'o4', level: 'federal' as const, value: 2.5, record_kind: 'vote-yes' as const, gate: 'consent' },
+    ];
+    const text = formatRowsTsv(rows);
+    const lines = text.split('\n');
+    expect(lines[0]).toBe(H);
+    expect(lines[1]).toBe('p1\to1\tstate\t3\t\t\tnone\t');
+    expect(lines[2]).toBe('p2\to2\tschool\t0\tnear-unanimous\tgate\tnone\t');
+    expect(lines[4]).toBe('p4\to4\tfederal\t2.5\t\t\tnone\t');
+    const back = parseRowsTsv(text, 'starter');
+    expect(back).toHaveLength(4);
+    expect(back[2].blank_reason).toBe('odd reason');
+    expect(back[2].blank_class).toBeUndefined();
+    expect(back.every((r) => r.record_kind === 'none' && r.gate === undefined)).toBe(true);
+  });
+
+  it('formatRowsTsv derives blank_class from the reason when the row has none', () => {
+    const text = formatRowsTsv([{ politician_id: 'p', office_id: 'o', level: 'state', value: 0, blank_reason: 'direction-only', record_kind: 'none' }]);
+    expect(text.split('\n')[1]).toBe('p\to\tstate\t0\tdirection-only\twording\tnone\t');
   });
 });

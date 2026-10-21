@@ -19,6 +19,8 @@ export const LEVELS: Level[] = ['federal', 'state', 'local', 'judicial', 'school
 const BLANK_CLASSES: BlankClass[] = ['source-gap', 'gate', 'wording', 'no-lever'];
 const RECORD_KINDS: RecordKind[] = ['vote-yes', 'vote-no', 'sponsor', 'author', 'own-words', 'none'];
 const AFFIRMATIVE_KINDS: RecordKind[] = ['vote-yes', 'sponsor', 'author'];
+/** The gate values rows.tsv may carry (SKILL.md "rows.tsv columns"; gates from lib/gatePrescreen.ts and the pilots). */
+export const GATES = ['multi-subject', 'consent', 'higher-law-duty', 'near-unanimous', 'off-version-sponsor', 'pre-seating', 'study-directive'] as const;
 
 export interface ResearchRow {
   politician_id: string;
@@ -78,6 +80,9 @@ export function parseRowsTsv(text: string, file: string): ResearchRow[] {
     if (!RECORD_KINDS.includes(record_kind as RecordKind)) {
       fail(n, 'record_kind', `${JSON.stringify(record_kind)} is not one of ${RECORD_KINDS.join(', ')}`);
     }
+    if (gate !== '' && !(GATES as readonly string[]).includes(gate)) {
+      fail(n, 'gate', `${JSON.stringify(gate)} is not one of ${GATES.join(', ')}`);
+    }
     const row: ResearchRow = { politician_id, office_id, level: level as Level, value, record_kind: record_kind as RecordKind };
     if (blank_reason) row.blank_reason = blank_reason;
     if (blank_class) row.blank_class = blank_class as BlankClass;
@@ -85,6 +90,22 @@ export function parseRowsTsv(text: string, file: string): ResearchRow[] {
     out.push(row);
   }
   return out;
+}
+
+/**
+ * A starter rows.tsv for Stage 0a (`topic:seat-rate --rows-out`): the header and one row per database
+ * answer, with its level, value and stored blank reason. blank_class comes from the reason
+ * (blankClassForReason) when the row has none; record_kind is `none` and gate is empty, because the
+ * database knows neither. The runner then classifies each blank by hand. Tabs and newlines inside a
+ * cell are turned into spaces so the file always parses back.
+ */
+export function formatRowsTsv(rows: ResearchRow[]): string {
+  const cell = (v: string | number | null | undefined) => (v == null ? '' : String(v).replace(/[\t\r\n]+/g, ' '));
+  const lines = rows.map((r) => {
+    const cls = r.blank_class ?? (r.blank_reason ? blankClassForReason(r.blank_reason) : null);
+    return [r.politician_id, r.office_id, r.level, r.value, r.blank_reason, cls, 'none', ''].map(cell).join('\t');
+  });
+  return [COLUMNS.join('\t'), ...lines].join('\n') + '\n';
 }
 
 // ---- summary -----------------------------------------------------------------------------------
