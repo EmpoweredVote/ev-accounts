@@ -5,6 +5,8 @@
  * Rules, matching the campaign-finance summary API (CA_0255, #714):
  *   - Own fundraising only: OWN_FUNDRAISING_SQL (confirmed AND candidate_committee). An ie_committee link is
  *     outside spending, not the politician's money.
+ *   - Only donations count (DONATION_SQL / REFUND_SQL): LA Schedule B loans and Schedule I cash items, incl. city
+ *     matching funds, are not raised money.
  *   - total_raised is GROSS (amount >= 0 rows). A negative row is a RETURNED CONTRIBUTION: it is reported as
  *     total_refunded (positive) + refund_count, never netted out of raised. The old writers called it
  *     `total_spent`, which it is not — spending is not in the contributions table at all.
@@ -19,7 +21,7 @@
  */
 
 import { pool } from './db.js';
-import { OWN_FUNDRAISING_SQL } from './campaignFinanceService.js';
+import { OWN_FUNDRAISING_SQL, DONATION_SQL, REFUND_SQL } from './campaignFinanceService.js';
 import { runAdapterForAll } from './campaignFinanceScheduler.js';
 
 export type LocalSource = { sourceSystem: 'la_socrata' | 'la_county_netfile'; label: 'LA_SOCRATA' | 'LA_COUNTY_NETFILE' };
@@ -94,9 +96,9 @@ async function getCandidates(src: LocalSource): Promise<Candidate[]> {
 
 async function getOwnTotals(politicianId: string, src: LocalSource): Promise<OwnTotals> {
   const r = await pool.query<{ gross: string; refunded: string; refund_count: string }>(
-    `SELECT COALESCE(SUM(c.amount) FILTER (WHERE c.amount >= 0), 0) AS gross,
-            COALESCE(-SUM(c.amount) FILTER (WHERE c.amount < 0), 0) AS refunded,
-            COUNT(*) FILTER (WHERE c.amount < 0) AS refund_count
+    `SELECT COALESCE(SUM(c.amount) FILTER (WHERE ${DONATION_SQL}), 0) AS gross,
+            COALESCE(-SUM(c.amount) FILTER (WHERE ${REFUND_SQL}), 0) AS refunded,
+            COUNT(*) FILTER (WHERE ${REFUND_SQL}) AS refund_count
        FROM transparent_motivations.contributions c
        JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
       WHERE ps.essentials_politician_id = $1 AND ps.source_system = $2 AND ${OWN_FUNDRAISING_SQL}`,
