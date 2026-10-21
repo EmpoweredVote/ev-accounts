@@ -34,6 +34,26 @@ export interface VoterLocation {
   lng: number | null;
 }
 
+/**
+ * Why `status` exists.
+ *
+ * Until 2026-10-21 an empty payload meant two completely different things and
+ * said neither out loud: "no election is live near this address right now"
+ * (normal, most of the year) and "the upstream is refusing us" (an outage).
+ * Google had in fact been returning 403 on EVERY call — for every address in
+ * every state tested, fourteen days before a general election — and the service
+ * degraded so gracefully that nothing anywhere reported it. It was found by
+ * reading Render logs after a voter wrote in about something else entirely.
+ *
+ * A fallback with no alarm is an outage you hear about from a user. `status`
+ * is the alarm: it lets the UI say "we cannot reach this right now" instead of
+ * implying there is no election, and it lets a check fail.
+ */
+export type VoterInfoStatus =
+  | 'ok'           // upstream answered; payload reflects what it returned
+  | 'no_election'  // upstream answered, nothing live for this address
+  | 'unavailable'; // upstream refused, timed out, or is not configured
+
 export interface VoterInfo {
   electionName: string | null;
   electionDate: string | null; // ISO date (YYYY-MM-DD)
@@ -44,6 +64,7 @@ export interface VoterInfo {
   electionInfoUrl: string | null;
   votingLocationFinderUrl: string | null;
   source: string;
+  status: VoterInfoStatus;
 }
 
 // ---------------------------------------------------------------------------
@@ -126,7 +147,7 @@ function sortByDistance(locs: VoterLocation[], origin: { lat: number; lng: numbe
   return [...locs].sort((a, b) => distanceKm(origin, a) - distanceKm(origin, b));
 }
 
-function emptyVoterInfo(): VoterInfo {
+function emptyVoterInfo(status: VoterInfoStatus = 'no_election'): VoterInfo {
   return {
     electionName: null,
     electionDate: null,
@@ -137,7 +158,43 @@ function emptyVoterInfo(): VoterInfo {
     electionInfoUrl: null,
     votingLocationFinderUrl: null,
     source: SOURCE_LABEL,
+    status,
   };
+}
+
+/**
+ * Pull the REASON out of a Google error body and log that — never the body
+ * itself, and never the request URL, which carries the API key in a query
+ * parameter. Google's error envelope is
+ * `{ error: { code, status, message, errors: [{ reason, ... }] } }`, and for
+ * this failure the reason is the entire diagnosis:
+ *
+ *   SERVICE_DISABLED / accessNotConfigured — the Civic Information API is not
+ *     enabled on the key's Google Cloud project. Enable it there.
+ *   PERMISSION_DENIED with "Requests from referer ... are blocked" — the key is
+ *     HTTP-referrer restricted. A server-side call sends no referrer, so a
+ *     browser Maps key can never work here; use an unrestricted or
+ *     IP-restricted key as GOOGLE_CIVIC_API_KEY.
+ *   API_KEY_SERVICE_BLOCKED — the key has API restrictions that exclude Civic.
+ *
+ * The old code logged `Civic API returned 403` and nothing else, so six days of
+ * logs said what happened and never once said why.
+ */
+function describeGoogleError(bodyText: string): string {
+  try {
+    const parsed = JSON.parse(bodyText) as {
+      error?: { status?: string; message?: string; errors?: Array<{ reason?: string }> };
+    };
+    const err = parsed.error;
+    if (!err) return 'no error envelope in response';
+    const reason = err.errors?.[0]?.reason;
+    // Truncated: a Google message is one sentence, but never let an upstream
+    // decide how much goes in our logs.
+    const message = (err.message ?? '').slice(0, 300);
+    return [err.status, reason, message].filter(Boolean).join(' | ') || 'empty error envelope';
+  } catch {
+    return 'unparseable error body';
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -157,8 +214,12 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
   const apiKey = env.GOOGLE_CIVIC_API_KEY || env.GOOGLE_MAPS_API_KEY;
   if (!apiKey) {
     console.warn('[voterInfo] No Google API key (GOOGLE_CIVIC_API_KEY / GOOGLE_MAPS_API_KEY) — returning empty payload');
-    return emptyVoterInfo();
+    return emptyVoterInfo('unavailable');
   }
+  // Worth knowing which key is in play when a 403 lands: the Maps fallback is a
+  // browser key on most projects, and a browser key is referrer-restricted,
+  // which can never work from a server. Logged as a name, never a value.
+  const keyName = env.GOOGLE_CIVIC_API_KEY ? 'GOOGLE_CIVIC_API_KEY' : 'GOOGLE_MAPS_API_KEY';
 
   const url = new URL(CIVIC_ENDPOINT);
   url.searchParams.set('key', apiKey);
@@ -173,17 +234,22 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
   } catch {
     clearTimeout(timeout);
     console.error('[voterInfo] Civic API request failed (timeout/network)');
-    return emptyVoterInfo();
+    return emptyVoterInfo('unavailable');
   }
   clearTimeout(timeout);
 
   // 400 commonly means "no live election for this address" — expected off-cycle.
-  // Any non-2xx: degrade gracefully to the empty payload.
+  // Anything else is the upstream refusing us, which is NOT the same thing and
+  // must not look the same from outside.
   if (!response.ok) {
-    if (response.status !== 400) {
-      console.error(`[voterInfo] Civic API returned ${response.status}`);
+    if (response.status === 400) {
+      return emptyVoterInfo('no_election');
     }
-    return emptyVoterInfo();
+    const bodyText = await response.text().catch(() => '');
+    console.error(
+      `[voterInfo] Civic API returned ${response.status} using ${keyName} — ${describeGoogleError(bodyText)}`
+    );
+    return emptyVoterInfo('unavailable');
   }
 
   let data: CivicVoterInfoResponse;
@@ -191,7 +257,7 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
     data = (await response.json()) as CivicVoterInfoResponse;
   } catch {
     console.error('[voterInfo] Civic API returned unparseable JSON');
-    return emptyVoterInfo();
+    return emptyVoterInfo('unavailable');
   }
 
   const admin = data.state?.[0]?.electionAdministrationBody;
@@ -217,5 +283,8 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
     electionInfoUrl: admin?.electionInfoUrl ?? null,
     votingLocationFinderUrl: admin?.votingLocationFinderUrl ?? null,
     source: SOURCE_LABEL,
+    // Upstream answered. If it named no election, say so explicitly rather than
+    // letting an empty payload imply it.
+    status: data.election?.name ? 'ok' : 'no_election',
   };
 }
