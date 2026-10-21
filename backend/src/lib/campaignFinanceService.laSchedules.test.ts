@@ -8,7 +8,7 @@ import { vi, describe, it, expect, beforeEach } from 'vitest';
 // ---------------------------------------------------------------------------
 
 const calls: string[] = [];
-const query = vi.fn(async (sql: string) => {
+const query = vi.fn(async (sql: string, _params?: unknown[]) => {
   calls.push(sql);
   return { rows: [] };
 });
