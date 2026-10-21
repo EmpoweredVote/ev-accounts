@@ -12,6 +12,8 @@ each stage's PR. A later project (the database source-and-bill library) will imp
   imports them and reads the collectors' JSON is the usual way.
 - 🔴 **Before every commit:** `npm run source-store --prefix backend -- validate`. It exits 1 and names each broken
   file.
+- `dead-ends.jsonl` is append-only and marked `merge=union` in `.gitattributes`, so two branches that each add
+  lines merge without a conflict.
 
 ## When to write each file
 
@@ -30,13 +32,44 @@ a blocked search.
 
 - People: the politician UUID. Only matched people get a `people/` file; unmatched members keep their printed name
   inside the vote.
-- Jurisdictions: the steward scope form `federal`, `state:wa`, `county:53033`, `place:5363000`.
+- Jurisdictions: the steward scope form `federal`, `state:wa`, `county:53033`, `place:5363000`, and
+  `school:<7-digit geoid>` for a school district (the geoid `essentials.districts` holds for the school district
+  row, e.g. `school:5103840`). A school district never uses `place:`.
 - Instruments: jurisdiction prefix, instrument, year, e.g. `WA-ESSB-5044-2021`. Companion bills are two instruments.
+
+## From the census brief to the store
+
+Collectors write what [templates/BRIEF-census.md](templates/BRIEF-census.md) asks for. Save it in the store's
+terms:
+
+| Census brief | Store |
+|---|---|
+| member vote `yes` | `yea` |
+| member vote `no` | `nay` |
+| member vote `abstain` | `abstain` |
+| member vote `absent` | `absent` |
+| member vote `recused` | `recused` |
+| state roll call `yea_names` / `nay_names` | one member each, `yea` / `nay` |
+| state roll call `other_names` | `absent` when marked excused or absent; `abstain` when marked not voting or present |
+| record type `ACTION_ITEM_NAMED` | a vote with `kind` `action-item` and every named member |
+| record type `ACTION_ITEM_TALLY` | a vote with `kind` `action-item`, the tally and `members: []` |
+| record type `CONSENT` | a vote with `kind` `consent`, or `en-bloc` when the minutes say en bloc |
+| record type `OTHER` | no vote (save the instrument only if its text is useful) |
+| state or federal `rollcalls` entry | a vote with `kind` `roll-call` |
+| `body_size` | `body_size` |
+| `tally` / `yeas`, `nays` | `yes`, `no` (and `absent` when the count is printed); an inferred count gets a `note` |
+| `motion_quote` / `motion` | `motion` |
+| `url_minutes`, `url_item`, `url_other` | `urls` (official pages only) |
+| `content_terms` / `operative_parts` | `operative_text` |
+| `state_duty_note` / `higher_law_note` | `higher_law_duty` (omit when "none cited") |
+| `other_subjects` | input to the single-subject verdict, recorded in `single_subject` once ruled |
+| `own_motion` | not stored on the instrument; it goes in `stage0/gates.tsv` |
 
 ## Provenance
 
 Every instrument, person source and portal records who fetched it (`fetched_by`), when (`fetched_at`, ISO), how
-(`method`: `webfetch`, `curl`, `browser`, `ocr`, `api`, `hand-saved`) and, for a saved copy, its path and SHA-256.
+(`method`: `webfetch`, `curl`, `browser`, `ocr`, `api`, `hand-saved`, or `unrecorded` for an imported source that
+never recorded one) and, for a saved copy, its path and SHA-256.
 A hand-saved source keeps the existing rule: the source and method on its first line, with the runner's OK.
 
 ## Large copies stay out of the repo
@@ -48,6 +81,6 @@ PDFs, page captures and OCR output are **not** committed. Keep them in the resea
 ## One-time import of the pilots
 
 What the Season 3 pilots already hold in structured form (instruments, tallies and member votes, rosters, session
-lists, term starts, blocked portals) is imported once by `npm run import:pilot-sources --prefix backend` (added in
-the import task of the build plan). Free-text notes are not converted. After the import, a run reads the store
-like any other.
+lists, term starts, blocked portals) is imported once by
+`npm run import:pilot-sources --prefix backend -- --research <absolute research root>`. Free-text notes are not
+converted. After the import, a run reads the store like any other.
