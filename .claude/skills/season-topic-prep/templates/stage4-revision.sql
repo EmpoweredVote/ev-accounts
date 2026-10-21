@@ -6,8 +6,9 @@
 --           and pinned in the DRAFT season
 -- =============================================================================
 -- Template: .claude/skills/season-topic-prep/templates/stage4-revision.sql (structure of CA_0314,
--- education-equity-programs, applied 2026-10-20). Fill every {{…}}; `grep -n '{{' <file>` must print
--- nothing before the dry run. Recipe: .claude/skills/season-topic-prep/STAGE4-RECIPE.md.
+-- education-equity-programs, applied 2026-10-20). Fill every placeholder (a name in double curly
+-- braces); a grep of the filled file for two opening curly braces must print nothing before the dry
+-- run. Recipe: .claude/skills/season-topic-prep/STAGE4-RECIPE.md.
 --
 -- Drafted {{DATE}}, offline, as the Stage 4 package of the Season {{SEASON_DRAFT_NUMBER}} prep for this
 -- topic. Actor {{ACTOR_ID}} ({{AUTHOR}}).
@@ -44,9 +45,9 @@
 -- 🔴 Season question counts in the gate ({{S2_COUNT}} open, {{S3_COUNT}} draft) were read on {{DATE}}.
 --    RE-READ THEM just before the dry run and again before applying.
 --
--- Idempotent: steps are guarded on the five new rung texts (on any revision other than the previous
--- one, so a clarifying revision with unchanged rungs works); a re-run is a no-op and the gate still
--- asserts the full shape.
+-- Idempotent: steps are guarded on revision number {{REV_NUM}} with the five new rung texts (on any
+-- revision other than the previous one, so a clarifying revision with unchanged rungs works); a re-run
+-- is a no-op and the gate still asserts the full shape.
 -- =============================================================================
 
 BEGIN;
@@ -96,9 +97,12 @@ DECLARE
   v_open     uuid;
   v_new      uuid;
 BEGIN
-  -- The new revision is the approved/published one whose five rungs match these texts exactly.
+  -- The new revision is the approved/published revision {{REV_NUM}} whose five rungs match these texts
+  -- exactly. Requiring the number stops an older revision that happens to share the rung texts from
+  -- being taken for it.
   SELECT r.id INTO v_new FROM inform.compass_topic_revisions r
-   WHERE r.topic_id = v_topic AND r.id <> '{{REV_PREV_ID}}' AND r.status IN ('approved','published')
+   WHERE r.topic_id = v_topic AND r.id <> '{{REV_PREV_ID}}' AND r.revision = {{REV_NUM}}
+     AND r.status IN ('approved','published')
      AND (SELECT count(*) FROM inform.compass_stance_revisions s
            JOIN jsonb_array_elements(v_rungs) AS x(elem) ON (x.elem->>'value')::int = s.value AND x.elem->>'text' = s.text
           WHERE s.topic_revision_id = r.id) = 5
@@ -170,7 +174,7 @@ BEGIN
          r.question_text, r.guidance, r.rationale, r.rung_map
     INTO v_new, v_ver, v_num, v_stat, v_curr, v_title, v_short, v_q, v_g, v_rat, v_map
   FROM inform.compass_topic_revisions r
-  WHERE r.topic_id = v_topic AND r.id <> '{{REV_PREV_ID}}'
+  WHERE r.topic_id = v_topic AND r.id <> '{{REV_PREV_ID}}' AND r.revision = {{REV_NUM}}
     AND (SELECT count(*) FROM inform.compass_stance_revisions s
           JOIN jsonb_array_elements(v_rungs) AS x(elem) ON (x.elem->>'value')::int = s.value AND x.elem->>'text' = s.text
          WHERE s.topic_revision_id = r.id) = 5

@@ -47,10 +47,11 @@ Write them at the top of `stage4/revision.md`:
   approval". It becomes the progress log.
 - The migration as a file only: copy the template to `stage4/<slot placeholder>_<suffix>.sql` and fill every
   `{{…}}`. Rung texts, title, question, guidance, rationale, public note and review ref sit inside dollar quotes, so
-  apostrophes need no escaping. `grep -n '{{' <file>` must print only the comment line that mentions it.
-  The template finds the new revision by its five rung texts on any revision **other than** `{{REV_PREV_ID}}`, so a
-  clarifying revision whose rungs are unchanged (only question, guidance or title change) still works: set
-  `{{CHANGE_CLASS}}` to `clarifying` and `{{VERSION}}` to the control's version.
+  apostrophes need no escaping. `grep -n '{{' <filled file>` must print nothing (the template's comments name no
+  braces, so any line it prints is an unfilled placeholder).
+  The template finds the new revision by its number `{{REV_NUM}}` and its five rung texts, on any revision **other
+  than** `{{REV_PREV_ID}}`, so a clarifying revision whose rungs are unchanged (only question, guidance or title
+  change) still works: set `{{CHANGE_CLASS}}` to `clarifying` and `{{VERSION}}` to the control's version.
 
 🛑 **Yes #1: the package.** Ask for the text, the rung map, the rationale and public note, and the annex and codebook
 lines, as one plain question each where there is a choice; recommend.
