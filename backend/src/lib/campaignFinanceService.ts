@@ -253,6 +253,9 @@ export interface PageInfo {
 export interface ContributionsResponse {
   results: ContributionResult[];
   page_info: PageInfo;
+  /** Echo of the donor filter, present only when ?donor= was applied. Clients use it to tell
+   *  an API that filters from an older one that ignores the parameter. */
+  filter?: { donor: string };
 }
 
 // ---------------------------------------------------------------------------
@@ -1501,6 +1504,9 @@ async function mostRecentCycleWithData(politicianId: string): Promise<string | n
  * Default limit 50, max 100.
  * Cursor uses contribution_date DESC, id DESC ordering.
  * politician_source_id is never exposed in returned objects.
+ *
+ * options.donor is a top_donors `name` from the summary. It returns exactly the rows grouped under
+ * that name there (refunds included). See donorFilterClause for why it matches on two columns.
  */
 export async function getContributions(
   politicianId: string,
@@ -1509,10 +1515,12 @@ export async function getContributions(
     limit?: number;
     cycle?: string;
     confidence?: string | null;
+    donor?: string | null;
   } = {}
 ): Promise<{ response: ContributionsResponse; updatedAt: string | null }> {
   const effectiveCycle = options.cycle ?? (await mostRecentCycleWithData(politicianId)) ?? defaultCompletedCycle();
   const confidenceFilter = options.confidence ?? null;
+  const donorFilter = options.donor ?? null;
 
   // Clamp limit: default 50, max 100
   let limit = options.limit ?? 50;
@@ -1535,6 +1543,7 @@ export async function getContributions(
     confidenceClause = `AND c.confidence_level = $${queryParams.length + 1}`;
     queryParams.push(confidenceFilter);
   }
+  const donorClause = donorFilter ? donorFilterClause(queryParams, donorFilter) : '';
 
   let cursorClause = '';
   if (cursorDate !== null && cursorId !== null) {
@@ -1559,6 +1568,7 @@ export async function getContributions(
        AND c.election_cycle = $2
        AND ${OWN_FUNDRAISING_SQL}
        ${confidenceClause}
+       ${donorClause}
        ${cursorClause}
      ORDER BY c.contribution_date DESC, c.id DESC
      LIMIT ${limit + 1}`,
@@ -1604,6 +1614,7 @@ export async function getContributions(
     countConfidenceClause = `AND c.confidence_level = $${countParams.length + 1}`;
     countParams.push(confidenceFilter);
   }
+  const countDonorClause = donorFilter ? donorFilterClause(countParams, donorFilter) : '';
 
   const countResult = await pool.query<TotalCountRow>(
     `SELECT COUNT(*) AS count
@@ -1612,7 +1623,8 @@ export async function getContributions(
      WHERE ps.essentials_politician_id = $1
        AND c.election_cycle = $2
        AND ${OWN_FUNDRAISING_SQL}
-       ${countConfidenceClause}`,
+       ${countConfidenceClause}
+       ${countDonorClause}`,
     countParams
   );
   const totalCount = Number(countResult.rows[0]?.count ?? 0);
@@ -1634,9 +1646,30 @@ export async function getContributions(
         end_cursor: endCursor,
         total_count: totalCount,
       },
+      ...(donorFilter ? { filter: { donor: donorFilter } } : {}),
     },
     updatedAt,
   };
+}
+
+/**
+ * donorFilterClause pushes the params for a ?donor= filter and returns its SQL.
+ *
+ * The exact match is on DONOR_NAME_SQL, the key top_donors groups by, so the rows are exactly the
+ * ones behind that donor's summary entry. That expression has no index, so a second predicate on
+ * the indexed donor_name_normalized narrows the rows first; the planner ANDs it with
+ * idx_contrib_src_cycle and reads only the matching heap rows, not the whole
+ * (politician_source_id, election_cycle) slice, which is 204k rows for a Senate campaign.
+ *
+ * The normalized column is matched as IN (key, ''): ~63k older rows (mostly la_socrata) were
+ * loaded with donor_name_normalized = '' and never re-normalized, so the key alone would miss them.
+ * The exact DONOR_NAME_SQL match keeps other donors' '' rows out.
+ */
+function donorFilterClause(params: unknown[], donor: string): string {
+  params.push(normalizeDonorName(donor), donor);
+  const keyParam = params.length - 1;
+  return `AND c.donor_name_normalized IN ($${keyParam}, '')
+       AND ${DONOR_NAME_SQL} = $${keyParam + 1}`;
 }
 
 // ---------------------------------------------------------------------------
