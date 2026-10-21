@@ -577,6 +577,20 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # The other 97.9% of the routing surface. Where the check above gates 106 hand-picked local
+      # upstreams one at a time, this diffs all 73,021 Census-sourced polygons wholesale against
+      # the TIGER vintage they claim — no sampling, because TIGER versions everything and keeps
+      # every vintage queryable.
+      #
+      # What it is really watching for is a town that incorporated after our snapshot: a map can be
+      # faithful to its vintage and still be missing a place where 100,000 people live. Nothing
+      # else we run would notice, because the polygon is not wrong, it is absent.
+      - name: Check Census TIGER layers against the vintage they claim
+        if: ${{ !cancelled() }}
+        run: npm run check:tiger-fidelity
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
   child-county:
     name: child→county mapping
     runs-on: ubuntu-latest

@@ -116,6 +116,20 @@ const REGISTRY = [
     // Swept 2026-10-20, proved both ways: 0/540 interior points against the passed 2023 map,
     // 86/540 against the enjoined Nov2022 map. We are NOT serving the enjoined boundaries.
   },
+  {
+    key: 'lacounty',
+    label: 'Los Angeles County Board of Supervisors',
+    ocdPrefix: 'ocd-division/country:us/state:ca/county:los_angeles/council_district:',
+    // The county's OWN political-boundaries service, layer 27 "Supervisorial District (Current)".
+    // ⚠ This server answers f=geojson with HTTP 400 — Esri JSON only. Layer numbering is NOT the
+    // same as the CITY's lahub service: county layer 4 is State Senate, and reading it as the
+    // Board of Supervisors is a mistake already made once.
+    url:
+      'https://public.gis.lacounty.gov/public/rest/services/LACounty_Dynamic/Political_Boundaries/' +
+      'MapServer/27/query?where=1%3D1&outFields=*&returnGeometry=true&outSR=4326&f=json',
+    district: (props) => Number(props.DISTRICT ?? props.SUP_DIST ?? props.District),
+    expect: 5,
+  },
 ];
 
 /**
@@ -125,13 +139,19 @@ const REGISTRY = [
  * entry in REGISTRY above. Printed on every run; fails the build only under --strict.
  */
 /**
- * Which rows count as a council-district layer, for the purpose of noticing an UNGATED one.
- * Deliberately computed from the database rather than kept as a hand-maintained list: a list
- * would be correct on the day it was written and silently wrong the first time a new city
- * landed. Scope is city council / board-of-supervisors district layers (the X-layer ids we mint
- * for them); county commissions and wards use other id shapes and are out of scope here.
+ * Which rows are LOCALLY SOURCED, for the purpose of noticing an UNGATED layer.
+ *
+ * Scope is every polygon we did not get from Census TIGER: the X-layers we mint for council
+ * districts, wards, commission districts, precincts and special districts, plus G5200V26 (the
+ * 2026-vintage congressional maps taken from state sources). 1,284 polygons across 71 upstreams.
+ * TIGER's 73,021 are checked wholesale by check-tiger-layer-fidelity.mjs instead, because they
+ * have one authority that can be re-fetched rather than 71 that must each be identified.
+ *
+ * Computed from the database, never a hand-maintained list: a list is correct on the day it is
+ * written and silently wrong the first time a new jurisdiction lands.
  */
-const COUNCIL_LAYER_PREDICATE = `mtfcc LIKE 'X%' AND ocd_id ~ '(council|supervisor)[-_]district'`;
+const COUNCIL_LAYER_PREDICATE =
+  `(mtfcc LIKE 'X%' OR mtfcc = 'G5200V26')`;
 
 const argv = process.argv.slice(2);
 const asJson = argv.includes('--json');
@@ -157,6 +177,35 @@ function inPolygon(x, y, poly) {
 }
 function toPolys(geometry) {
   return geometry.type === 'Polygon' ? [geometry.coordinates] : geometry.coordinates;
+}
+/**
+ * Esri JSON geometry. Some authoritative servers serve ONLY this — LA County's
+ * Political_Boundaries MapServer answers f=geojson with HTTP 400 — so a GeoJSON-only checker
+ * simply cannot see them, which is how LA County's supervisorial districts stayed unverified.
+ * An Esri polygon is a flat `rings` array mixing outer rings and holes, with no nesting to say
+ * which is which, so containment is an even-odd parity test over every ring: inside an odd number
+ * of rings = inside the polygon, which puts holes back where they belong.
+ */
+function esriInside(x, y, rings) {
+  let n = 0;
+  for (const ring of rings) if (inRing(x, y, ring)) n++;
+  return n % 2 === 1;
+}
+/** Signed ring areas sum to the polygon's true area, holes subtracting themselves. */
+function esriArea(rings) {
+  let total = 0;
+  for (const ring of rings) total += signedRingArea(ring);
+  return Math.abs(total);
+}
+function signedRingArea(ring) {
+  const R = 6378137;
+  let t = 0;
+  for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+    const [xi, yi] = ring[i];
+    const [xj, yj] = ring[j];
+    t += ((xi - xj) * Math.PI) / 180 * (2 + Math.sin((yj * Math.PI) / 180) + Math.sin((yi * Math.PI) / 180));
+  }
+  return (t * R * R) / 2;
 }
 function bboxOf(polys) {
   let a = Infinity, b = Infinity, c = -Infinity, d = -Infinity;
@@ -189,6 +238,7 @@ function lookup(index, x, y) {
   for (const entry of index) {
     const [a, b, c, d] = entry.bbox;
     if (x < a || x > c || y < b || y > d) continue;
+    if (entry.esriRings) { if (esriInside(x, y, entry.esriRings)) return entry.district; continue; }
     for (const p of entry.polys) if (inPolygon(x, y, p)) return entry.district;
   }
   return null;
@@ -223,11 +273,25 @@ async function fetchUpstream(entry) {
   if (!fc.features?.length) throw new Error(`upstream returned no features for ${entry.key}`);
   // Some authorities publish one regional layer covering many jurisdictions (San Diego's is
   // county-wide), so an entry may narrow it to the city we actually serve.
-  const features = entry.filter ? fc.features.filter((f) => entry.filter(f.properties)) : fc.features;
+  // Esri JSON names the attribute bag `attributes` and the geometry `rings`; GeoJSON uses
+  // `properties` and `coordinates`. Accept either, since the authority does not always choose.
+  const raw = fc.features ?? [];
+  const features = entry.filter
+    ? raw.filter((f) => entry.filter(f.properties ?? f.attributes))
+    : raw;
   if (!features.length) throw new Error(`filter left no features for ${entry.key}`);
   return features.map((f) => {
+    const props = f.properties ?? f.attributes;
+    const rings = f.geometry?.rings;
+    if (rings) {
+      const polys = rings.map((r) => [r]); // for bbox only; containment uses esriInside
+      return {
+        district: entry.district(props), esriRings: rings,
+        bbox: bboxOf(polys), area: esriArea(rings),
+      };
+    }
     const polys = toPolys(f.geometry);
-    return { district: entry.district(f.properties), polys, bbox: bboxOf(polys), area: polysArea(polys) };
+    return { district: entry.district(props), polys, bbox: bboxOf(polys), area: polysArea(polys) };
   });
 }
 
@@ -350,9 +414,12 @@ try {
   if (!onlyKey) {
     // Every council layer in the DB whose ids are not claimed by a REGISTRY entry's prefix.
     const { rows } = await pool.query(
-      `SELECT DISTINCT source, count(*) AS rows FROM essentials.geofence_boundaries
+      // coalesce, NOT a bare ocd_id: many locally-sourced rows carry a NULL ocd_id, and
+      // `NULL LIKE ANY(...)` is NULL, so `NOT (...)` is NULL and the row vanishes from the
+      // result. That silently reported 23 ungated sources when the real number was 100.
+      `SELECT source, count(*) AS rows FROM essentials.geofence_boundaries
         WHERE ${COUNCIL_LAYER_PREDICATE}
-          AND NOT (ocd_id LIKE ANY($1))
+          AND NOT (coalesce(ocd_id, geo_id, '') LIKE ANY($1))
         GROUP BY source ORDER BY source`,
       [REGISTRY.map((e) => `${e.ocdPrefix}%`)]
     );
