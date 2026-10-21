@@ -59,9 +59,10 @@ only. Your transcript is checked for reads of these paths afterwards; one read v
 
 ## What to write: `{{OUT_PATH}}` (stage2/drafts.md)
 
-Header: date, operator, "DRAFT for ruling", a **Blindness** paragraph naming what you did not open and what you
-did read, an **Exposure** paragraph (any gold row or named item that informed you), **Seat cost (T5)** from the
-query, and the design of the comparison.
+Header: date, operator, "DRAFT for ruling", a **Blindness** paragraph naming what you did not open (by kind, never
+by path: a forbidden path written into your file counts as a read) and what you did read, an **Exposure**
+paragraph (any gold row or named item that informed you), **Seat cost (T5)** from the query, and the design of the
+comparison.
 
 - **§0 Control** — the live revision copied verbatim (id, revision, version, class, pins, title, question,
   guidance, levels asked), each rung with its rulebook defects, the T6 lint result, and why it fails.

@@ -88,3 +88,74 @@ describe('findForbiddenReads', () => {
     expect(isEmptyForbidden(S1, HOME)).toBe(false);
   });
 });
+
+describe('recursive search roots (parent of a forbidden folder)', () => {
+  const R = '/Users/u/.planning/research';
+  const F = `${R}/x/stage1`;
+  const withCwd = (cwd: string, name: string, input: Record<string, unknown>) =>
+    JSON.stringify({ cwd, message: { content: [{ type: 'tool_use', name, input }] } });
+  it('flags a Grep rooted at a parent', () => {
+    expect(findForbiddenReads(call('Grep', { pattern: 'x', path: R }), [F], HOME)).toEqual([{ line: 1, path: F, tool: 'Grep' }]);
+  });
+  it('flags a Grep with no path when the cwd is a parent', () => {
+    expect(findForbiddenReads(withCwd(R, 'Grep', { pattern: 'x' }), [F], HOME)).toHaveLength(1);
+    expect(findForbiddenReads(withCwd('/Users/u/other', 'Grep', { pattern: 'x' }), [F], HOME)).toEqual([]);
+  });
+  it('does not flag a Grep rooted at a sibling or below a non-forbidden folder', () => {
+    expect(findForbiddenReads(call('Grep', { pattern: 'x', path: `${R}/y` }), [F], HOME)).toEqual([]);
+  });
+  it('flags grep -r / -R / --recursive on a parent', () => {
+    for (const command of [`grep -rn x ${R}`, `grep -R "x" ${R}/`, `grep --recursive -e x ${R}`, `grep -rl x ~/.planning`]) {
+      expect(findForbiddenReads(call('Bash', { command }), [F], HOME)).toHaveLength(1);
+    }
+  });
+  it('does not flag a non-recursive grep on a parent folder', () => {
+    expect(findForbiddenReads(call('Bash', { command: `grep -n x ${R}/notes.md` }), [F], HOME)).toEqual([]);
+  });
+  it('flags a recursive grep with no path from a parent cwd, after a leading cd', () => {
+    expect(findForbiddenReads(withCwd('/Users/u', 'Bash', { command: 'cd .planning && grep -rn x' }), [F], HOME)).toHaveLength(1);
+  });
+  it('flags rg, find and ls -R rooted at a parent', () => {
+    for (const command of [`rg x ${R}`, `rg --files ${R}`, `find ${R} -name '*.md'`, `ls -R ${R}`, `cat a | rg -n x ${R}`]) {
+      expect(findForbiddenReads(call('Bash', { command }), [F], HOME)).toHaveLength(1);
+    }
+    expect(findForbiddenReads(withCwd(R, 'Bash', { command: 'find . -type f' }), [F], HOME)).toHaveLength(1);
+    expect(findForbiddenReads(call('Bash', { command: `ls ${R}` }), [F], HOME)).toEqual([]);
+    expect(findForbiddenReads(call('Bash', { command: `find /Users/u/other -name x` }), [F], HOME)).toEqual([]);
+  });
+  it('flags a recursive Glob under a parent folder', () => {
+    const forb = '/r/backend/data/source-store';
+    expect(findForbiddenReads(call('Glob', { pattern: '**/*.md', path: '/r/backend/data' }), [forb], HOME)).toHaveLength(1);
+    expect(findForbiddenReads(call('Glob', { pattern: '/r/backend/data/**/*.md' }), [forb], HOME)).toHaveLength(1);
+    expect(findForbiddenReads(withCwd('/r/backend', 'Glob', { pattern: 'data/**/*.json' }), [forb], HOME)).toHaveLength(1);
+    expect(findForbiddenReads(call('Glob', { pattern: '*.md', path: '/r/backend/data' }), [forb], HOME)).toEqual([]);
+    expect(findForbiddenReads(call('Glob', { pattern: '**/*.md', path: '/r/backend/scripts' }), [forb], HOME)).toEqual([]);
+  });
+  it('a root of / covers everything', () => {
+    expect(findForbiddenReads(call('Bash', { command: 'find / -name FROZEN.md' }), [F], HOME)).toHaveLength(1);
+  });
+});
+
+describe('tool_result content', () => {
+  const F = '/Users/u/.planning/research/x/stage1';
+  const use = (id: string, name: string, input: Record<string, unknown>) =>
+    JSON.stringify({ message: { role: 'assistant', content: [{ type: 'tool_use', id, name, input }] } });
+  const result = (id: string, content: unknown) =>
+    JSON.stringify({ message: { role: 'user', content: [{ type: 'tool_result', tool_use_id: id, content }] } });
+  it('flags a forbidden path printed in a tool result and names the tool', () => {
+    const t = T(use('t1', 'Bash', { command: 'find /Users/u/other -name x' }),
+      result('t1', '/Users/u/other/a\n/Users/u/.planning/research/x/stage1/FROZEN.md'));
+    expect(findForbiddenReads(t, [F], HOME)).toEqual([{ line: 2, path: F, tool: 'Bash (result)' }]);
+  });
+  it('scans array-shaped result content and ~ paths', () => {
+    const t = T(use('t2', 'Read', { file_path: '/ok' }),
+      result('t2', [{ type: 'text', text: 'see ~/.planning/research/x/stage1/a.md' }]));
+    expect(findForbiddenReads(t, [F], HOME)).toHaveLength(1);
+  });
+  it('a clean result does not hit and does not count as a tool call', () => {
+    const t = T(use('t3', 'Bash', { command: 'ls' }), result('t3', 'a\nb'));
+    const s = scanTranscript(t, [F], HOME);
+    expect(s.hits).toEqual([]);
+    expect(s.toolCalls).toBe(1);
+  });
+});
