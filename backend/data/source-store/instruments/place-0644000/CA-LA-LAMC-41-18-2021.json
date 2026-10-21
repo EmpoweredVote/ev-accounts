@@ -20,7 +20,7 @@
     {
       "date": "2021-06-29",
       "body": "Los Angeles City Council",
-      "motion": "Item CF 20-1376",
+      "motion": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
       "kind": "action-item",
       "yes": 13,
       "no": 2,
@@ -56,7 +56,7 @@
     {
       "date": "2021-07-01",
       "body": "Los Angeles City Council",
-      "motion": "Item CF 20-1376-S1",
+      "motion": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
       "kind": "action-item",
       "yes": 13,
       "no": 2,
@@ -92,7 +92,7 @@
     {
       "date": "2021-07-28",
       "body": "Los Angeles City Council",
-      "motion": "Item CF 20-1376-S1",
+      "motion": "Council adopted a motion on 06/29/2021, and a second motion was voted on the same day.",
       "kind": "action-item",
       "yes": 13,
       "no": 2,
@@ -129,6 +129,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

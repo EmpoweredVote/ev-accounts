@@ -3,7 +3,8 @@
   "scope": "state:pa",
   "title": "Permitted use of public space; Ending the Criminalization of Homelessness (Smith-Wade-El)",
   "urls": [
-    "https://www.palegis.us/house/committees/roll-call-votes/vote-list/vote-summary?committeecode=60&rollcallid=2002&sessYr=2025&sessInd=0"
+    "https://www.palegis.us/house/committees/roll-call-votes/vote-list/vote-summary?committeecode=60&rollcallid=2002&sessYr=2025&sessInd=0",
+    "https://www.palegis.us/house/committees/roll-call-votes/vote-list/vote-summary?committeecode=60&rollcallid=2001&sessYr=2025&sessInd=0"
   ],
   "version": "other",
   "operative_text": "An individual experiencing homelessness may use public spaces for life-sustaining activities if the activities do not obstruct a public walkway or public street in a manner that pedestrians or vehicles cannot pass",
@@ -61,6 +62,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

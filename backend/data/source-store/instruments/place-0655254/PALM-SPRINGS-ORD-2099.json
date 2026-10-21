@@ -18,7 +18,7 @@
     {
       "date": "2024-07-25",
       "body": "Palm Springs City Council",
-      "motion": "Item Ordinance No. 2099",
+      "motion": "unknown (see pilot)",
       "kind": "action-item",
       "yes": 4,
       "no": 1,
@@ -45,6 +45,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

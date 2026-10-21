@@ -21,7 +21,7 @@
     {
       "date": "2025-08-12",
       "body": "Columbus GA Council",
-      "motion": "Item Ordinance 25-040",
+      "motion": "Councilor Crabb made a motion to adopt the ordinance as amended, seconded by Councilor Hickey and carried by a nine-to-one vote",
       "kind": "action-item",
       "yes": 9,
       "no": 1,
@@ -68,6 +68,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

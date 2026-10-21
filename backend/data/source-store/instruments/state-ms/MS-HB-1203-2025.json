@@ -6,9 +6,7 @@
     "https://billstatus.ls.state.ms.us/2025/pdf/votes/senate/0650042.pdf",
     "https://billstatus.ls.state.ms.us/2025/pdf/votes/senate/0850028.pdf",
     "https://billstatus.ls.state.ms.us/2025/pdf/votes/house/0300015.pdf",
-    "https://billstatus.ls.state.ms.us/2025/pdf/votes/house/0850036.pdf",
-    "https://billstatus.ls.state.ms.us/documents/2025/pdf/HB/1200-1299/HB1203SG.pdf",
-    "https://billstatus.ls.state.ms.us/2025/pdf/history/HB/HB1203.xml"
+    "https://billstatus.ls.state.ms.us/2025/pdf/votes/house/0850036.pdf"
   ],
   "version": "other",
   "operative_text": "No person may camp or create a campsite on any sidewalks, streets, sports fields, sports complexes, highways, alleys, roads, passageways or any other public property, except a public property that is otherwise designated for camping",
@@ -166,6 +164,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

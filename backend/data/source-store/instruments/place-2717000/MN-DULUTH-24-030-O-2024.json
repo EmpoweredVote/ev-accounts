@@ -3,8 +3,7 @@
   "scope": "place:2717000",
   "title": "AN ORDINANCE AMENDING CHAPTER 34 OF THE DULUTH CITY CODE TO ADD SECTION 34-46 PROHIBITING CAMPING ON CITY PROPERTY.",
   "urls": [
-    "https://duluth-mn.legistar1.com/duluth-mn/meetings/2024/7/2574_M_City_Council_24-07-29_Minutes.pdf",
-    "https://www.duluthnewstribune.com/news/local/duluth-tackles-homeless-encampments-other-public-safety-issues"
+    "https://duluth-mn.legistar1.com/duluth-mn/meetings/2024/7/2574_M_City_Council_24-07-29_Minutes.pdf"
   ],
   "version": "other",
   "operative_text": "No person may camp or establish a campsite in or upon any land owned by the city, or in any city right-of-way, unless specifically authorized by the City.",
@@ -21,7 +20,7 @@
     {
       "date": "2024-07-29",
       "body": "Duluth City Council",
-      "motion": "Item 24-030-O (agenda item 35; enactment 10898)",
+      "motion": "A motion was made that this Ordinance be adopted The motion carried by the following vote:",
       "kind": "action-item",
       "yes": 5,
       "no": 4,
@@ -63,6 +62,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

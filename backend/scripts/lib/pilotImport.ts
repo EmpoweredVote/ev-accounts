@@ -20,7 +20,7 @@
  */
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, statSync } from 'node:fs';
-import { basename, join, resolve } from 'node:path';
+import { basename, dirname, join, relative, resolve } from 'node:path';
 import {
   DeadEndSchema, InstrumentIdSchema, InstrumentSchema, JurisdictionSchema, PersonSourcesSchema,
   type DeadEnd, type Instrument, type Jurisdiction, type PersonSources, type Provenance, type Vote,
@@ -35,15 +35,18 @@ export type PilotOutput = {
 export type PilotAdapter = {
   name: string;
   matches(dir: string): boolean;
-  read(dir: string): PilotOutput;
+  /** `researchRoot` is the folder holding all pilot folders; saved-copy paths are stored relative to it. */
+  read(dir: string, researchRoot?: string): PilotOutput;
 };
 
 /** Notes the adapters add to the report (ids built, records skipped). Filled during read(). */
-export type ImportNotes = { constructedIds: string[]; skipped: string[] };
-export const importNotes: ImportNotes = { constructedIds: [], skipped: [] };
+export type ImportNotes = { constructedIds: string[]; skipped: string[]; noRuling: string[]; unknownMotions: string[] };
+export const importNotes: ImportNotes = { constructedIds: [], skipped: [], noRuling: [], unknownMotions: [] };
 export function resetImportNotes(): void {
   importNotes.constructedIds = [];
   importNotes.skipped = [];
+  importNotes.noRuling = [];
+  importNotes.unknownMotions = [];
 }
 
 // ---------- small helpers ----------
@@ -77,16 +80,32 @@ export function readTsv(file: string): Record<string, string>[] {
 
 const isUuid = (s: unknown): s is string => typeof s === 'string' && PersonSourcesSchema.shape.politician_id.safeParse(s).success;
 
+/** Research root of the current read(); saved-copy paths are written relative to it (the store is shared). */
+let ctxRoot = '';
+const setRoot = (dir: string, root?: string) => { ctxRoot = resolve(root ?? dirname(dir)); };
+/** Another pilot folder's file (the census a pilot was built from), or undefined when it is not there. */
+function sibling(folder: string, ...parts: string[]): string | undefined {
+  const f = join(ctxRoot, folder, ...parts);
+  return existsSync(f) ? f : undefined;
+}
+
+/** "browser user agent" is a curl header, not the browser tool. */
+const mentionsBrowserTool = (t: string) => /browser/i.test(t.replace(/browser user[- ]agent/gi, ''));
+
+/** The method the pilot recorded in its access note; `unrecorded` when it recorded none. */
 function methodFromNote(note: unknown): Provenance['method'] {
   const t = typeof note === 'string' ? note : '';
   if (/curl/i.test(t)) return 'curl';
-  if (/browser/i.test(t)) return 'browser';
-  return 'webfetch';
+  if (mentionsBrowserTool(t)) return 'browser';
+  if (/webfetch/i.test(t)) return 'webfetch';
+  return 'unrecorded';
 }
 
-function provenance(label: string, file: string, method: Provenance['method'] = 'webfetch', savedCopy?: string): Provenance {
+function provenance(label: string, file: string, method: Provenance['method'] = 'unrecorded', savedCopy?: string): Provenance {
   const p: Provenance = { fetched_by: `pilot-import (${label})`, fetched_at: mtimeIso(file), method };
-  if (savedCopy && existsSync(savedCopy)) p.saved_copy = { path: resolve(savedCopy), sha256: sha256File(savedCopy) };
+  if (savedCopy && existsSync(savedCopy)) {
+    p.saved_copy = { path: relative(ctxRoot, resolve(savedCopy)), sha256: sha256File(savedCopy) };
+  }
   return p;
 }
 
@@ -164,12 +183,32 @@ function portalFor(sourceUrl: string, note: unknown, prov: Provenance): Jurisdic
   let origin: string;
   try { origin = new URL(sourceUrl).origin + '/'; } catch { return undefined; }
   const n = typeof note === 'string' ? note : '';
-  const status = /browser/i.test(n) ? 'needs-browser' : 'works';
-  const how = n.split(/(?<=\.)\s/)[0]?.slice(0, 240);
+  const status = mentionsBrowserTool(n) ? 'needs-browser' : 'works';
+  const how = n.trim().slice(0, 240);
   return { name: new URL(origin).host, url: origin, status, how: how || undefined, checked_at: prov.fetched_at, provenance: prov };
 }
 
-const SINGLE = [{ season: SEASON, codebook: CODEBOOK, topic_list_hash: TOPIC_LIST_HASH, verdict: 'single' as const, other_topics: [] as string[] }];
+/** Single-subject ruling entry; written only when the pilot's own census ruled the instrument `count`. */
+const singleSubject = (ruled: boolean) =>
+  ruled ? [{ season: SEASON, codebook: CODEBOOK, topic_list_hash: TOPIC_LIST_HASH, verdict: 'single' as const, other_topics: [] as string[] }] : [];
+
+/** `HB 324`-style key (type + number) used to line up bills across the pilot's files. */
+const billKey = (bill: string): string | undefined => {
+  const m = bill.match(/((?:[A-Z]+\/)*)([A-Z][A-Za-z.]*)\s*(\d+)/);
+  return m ? `${m[2].replace(/\./g, '')}-${m[3]}` : undefined;
+};
+
+/** Verdicts the equity supplement census recorded: law key `WA|ESSB-5044` and school key `Virginia|2025-04-08|15.F`. */
+function equityVerdicts(file: string | undefined): { law: Map<string, string>; school: Map<string, string> } {
+  const law = new Map<string, string>();
+  const school = new Map<string, string>();
+  if (!file) return { law, school };
+  const j = readJson(file);
+  for (const l of j.state ?? []) { const k = billKey(String(l.bill)); if (k) law.set(`${l.state}|${k}`, String(l.verdict)); }
+  for (const r of j.school ?? []) school.set(`${String(r.body).split(' ')[0]}|${r.date}|${r.item_no}`, String(r.verdict));
+  return { law, school };
+}
+
 
 // ---------- equity Stage 1 ----------
 
@@ -211,7 +250,15 @@ const BOARD_SCOPE: Record<string, string> = { VB: 'place:5103840', MCCSC: 'place
 const equityStage1: PilotAdapter = {
   name: 'equity-stage1',
   matches: (dir) => has(dir, 'texts-state.json', 'texts-boards.json', 'school-voters.tsv') && topicOf(join(dir, 'test-set-v1.json')) === 'education-equity-programs',
-  read(dir) {
+  read(dir, researchRoot) {
+    setRoot(dir, researchRoot);
+    const verdicts = equityVerdicts(sibling(EQUITY_SUPP, 'stage0-supplement.json'));
+    const ruled = (kind: 'law' | 'school', key: string, id: string) => {
+      const v = verdicts[kind].get(key);
+      if (v === 'count') return true;
+      importNotes.noRuling.push(`${id}: census verdict ${v ?? 'not found'} (single_subject left empty)`);
+      return false;
+    };
     const instruments: Instrument[] = [];
     const portals = new Map<string, Jurisdiction['portals']>();
     const addPortal = (scope: string, p?: Jurisdiction['portals'][number]) => { if (p) portals.set(scope, [...(portals.get(scope) ?? []), p]); };
@@ -221,11 +268,12 @@ const equityStage1: PilotAdapter = {
     for (const i of splitStateInstruments(readJson(stateFile).instruments)) {
       const state = String(i.state);
       const year = yearOf(i.date_approved) ?? yearOf(i.session)!;
-      const id = stateBillId(state, String(i.bill_label ?? i.id.replace(/^[A-Z]{2}-/, '').replace(/-/g, ' ')), year);
+      const label = String(i.bill_label ?? i.id.replace(/^[A-Z]{2}-/, '').replace(/-/g, ' '));
+      const id = stateBillId(state, label, year);
       const prov = provenance(EQUITY_STAGE1, stateFile, methodFromNote(i.access_note), savedCopyFromNote(dir, i.access_note));
       instruments.push(InstrumentSchema.parse({
         id, scope: `state:${usps(state)}`, title: String(i.title), urls: i.source_url ? [i.source_url] : [], version: 'enrolled',
-        operative_text: operativeToString(i.operative_text), single_subject: SINGLE, votes: [], provenance: prov,
+        operative_text: operativeToString(i.operative_text), single_subject: singleSubject(ruled('law', `${state}|${billKey(label)}`, id)), votes: [], provenance: prov,
       }));
       addPortal(`state:${usps(state)}`, portalFor(String(i.source_url), i.access_note, prov));
     }
@@ -256,6 +304,9 @@ const equityStage1: PilotAdapter = {
         votes.push({
           date: String(b.date), body: String(b.body).replace(/\s*\(.*\)$/, ''), motion: String(b.title), kind: 'action-item',
           yes: tally.yes, no: tally.no,
+          ...(/(\d+)\s+Yea listed/i.test(String(b.tally)) && !parseTally(b.tally)
+            ? { note: 'Nay count not printed in the minutes (7 Yea listed; no nays recorded): 0 nays inferred, not stated.' }
+            : {}),
           ...(rows.some((r) => r.vote === 'absent') ? { absent: rows.filter((r) => r.vote === 'absent').length } : {}),
           members: rows.map((r) => ({
             name: r.db_person || r.printed_name,
@@ -267,7 +318,7 @@ const equityStage1: PilotAdapter = {
       const passed = /passed|carries/i.test(String(b.tally));
       instruments.push(InstrumentSchema.parse({
         id, scope, title: String(b.title), urls: b.source_url ? [b.source_url] : [], version: passed && !isPolicy ? 'adopted' : 'other',
-        operative_text: operativeToString(typeof b.operative_text === 'string' ? b.operative_text : b.operative_text), single_subject: SINGLE, votes, provenance: prov,
+        operative_text: operativeToString(typeof b.operative_text === 'string' ? b.operative_text : b.operative_text), single_subject: singleSubject(ruled('school', `${String(b.body).split(' ')[0]}|${b.date}|${b.item}`, id)), votes, provenance: prov,
       }));
       addPortal(scope, portalFor(String(b.source_url), b.access_note, prov));
     }
@@ -288,14 +339,46 @@ function deadEndResult(note: string): DeadEnd['result'] {
   return /\b403\b|refus|not fetchable|not permitted|unable to fetch|blocked|rate-limited/i.test(note) ? 'blocked' : 'nothing';
 }
 
+/**
+ * Members who did not vote, from a roll call's `other_names`. A label in brackets after a name applies to
+ * every unlabelled name before it ("Acevero", "Martinez (not voting)", "Crosby", "Woods (excused/absent)" means
+ * Acevero and Martinez are not voting; Crosby and Woods are excused). Counts are checked against the roll
+ * call's printed `other` line and a mismatch throws, so a bad reading never reaches the store.
+ */
+export function parseOtherNames(names: string[], other: string, where: string): { name: string; vote: 'absent' | 'abstain' }[] {
+  const out: { name: string; vote: 'absent' | 'abstain' }[] = [];
+  let group: string[] = [];
+  for (const raw of names) {
+    const m = raw.match(/^(.*?)\s*\(([^)]*)\)\s*$/);
+    group.push(m ? m[1] : raw);
+    if (!m) continue;
+    const vote = /not voting|present/i.test(m[2]) ? 'abstain' : /excused|absent/i.test(m[2]) ? 'absent' : undefined;
+    if (!vote) throw new Error(`${where}: unknown label "${m[2]}" in other_names`);
+    for (const g of group) out.push({ name: g, vote });
+    group = [];
+  }
+  if (group.length) throw new Error(`${where}: names with no group label after them: ${group.join(', ')}`);
+  const sum = (res: RegExp[]) => res.reduce((n, re) => n + [...other.matchAll(re)].reduce((k, x) => k + Number(x[1]), 0), 0);
+  const expectNotVoting = sum([/not voting[:\s]+(\d+)/gi, /(\d+)\s+not voting/gi]);
+  const expectAbsent = sum([/(?:absent|excused)[:\s]+(\d+)/gi, /(\d+)\s+(?:absent|excused)/gi]);
+  const gotNotVoting = out.filter((o) => o.vote === 'abstain').length;
+  const gotAbsent = out.filter((o) => o.vote === 'absent').length;
+  if (gotNotVoting !== expectNotVoting || gotAbsent !== expectAbsent) {
+    throw new Error(`${where}: other_names give ${gotNotVoting} not voting / ${gotAbsent} absent but the roll call says "${other}"`);
+  }
+  return out;
+}
+
 const equitySupplement: PilotAdapter = {
   name: 'equity-supplement',
   matches: (dir) => has(dir, 'identity-check.json', 'stage0-supplement.json') && topicOf(join(dir, 'stage0-supplement.json')) === 'education-equity-programs',
-  read(dir) {
+  read(dir, researchRoot) {
+    setRoot(dir, researchRoot);
     const idFile = join(dir, 'identity-check.json');
     const idRows: any[] = readJson(idFile);
-    const prov = (file: string) => provenance(EQUITY_SUPP, file, 'webfetch');
+    const prov = (file: string) => provenance(EQUITY_SUPP, file, 'unrecorded');
     const supp = readJson(join(dir, 'stage0-supplement.json'));
+    const verdicts = equityVerdicts(join(dir, 'stage0-supplement.json'));
 
     // Person term rows: seated people (identity-check OK) joined to the roster export's term dates.
     const people: PersonSources[] = [];
@@ -340,19 +423,28 @@ const equitySupplement: PilotAdapter = {
           const hit = ok.get(key(law.state, law.bill, chamber, date, printed, side)) ?? ok.get(key(law.state, law.bill, chamber, date, base, side));
           return { name: hit?.db ?? base, ...(hit && isUuid(hit.id) ? { politician_id: hit.id } : {}), vote };
         };
-        const votes: Vote[] = (law.rollcalls ?? []).map((rc: any) => ({
-          date: String(rc.date), body: `${law.state} ${rc.chamber}`, motion: String(rc.motion), kind: 'roll-call' as const,
-          yes: Number(rc.yeas), no: Number(rc.nays),
-          ...((rc.other_names?.length ?? 0) > 0 ? { absent: rc.other_names.length } : {}),
-          members: [
+        const votes: Vote[] = (law.rollcalls ?? []).map((rc: any) => {
+          const where = `${law.state} ${law.bill} ${rc.chamber} ${rc.date}`;
+          const others = parseOtherNames(rc.other_names ?? [], String(rc.other ?? ''), where);
+          const members = [
             ...(rc.yea_names ?? []).map((n: string) => member(n, rc.chamber, rc.date, 'yea', 'yea')),
             ...(rc.nay_names ?? []).map((n: string) => member(n, rc.chamber, rc.date, 'nay', 'nay')),
-            ...(rc.other_names ?? []).map((n: string) => member(n, rc.chamber, rc.date, 'other', /not voting|present/i.test(n) ? 'abstain' : 'absent')),
-          ],
-        }));
+            // parseOtherNames keeps the input order, so others[i] belongs to other_names[i]
+            ...(rc.other_names ?? []).map((n: string, i: number) => member(n, rc.chamber, rc.date, 'other', others[i].vote)),
+          ];
+          const absent = members.filter((m) => m.vote === 'absent').length;
+          return {
+            date: String(rc.date), body: `${law.state} ${rc.chamber}`, motion: String(rc.motion), kind: 'roll-call' as const,
+            yes: Number(rc.yeas), no: Number(rc.nays), ...(absent > 0 ? { absent } : {}), members,
+          };
+        });
         const urls = [...new Set<string>((law.rollcalls ?? []).map((rc: any) => rc.url).filter(Boolean))];
         instruments.push(InstrumentSchema.parse({
-          id, scope: `state:${usps(law.state)}`, title: String(law.subject), urls, version: 'enrolled', single_subject: SINGLE, votes,
+          id, scope: `state:${usps(law.state)}`, title: String(law.subject), urls, version: 'enrolled', single_subject: singleSubject(((): boolean => {
+            const v = verdicts.law.get(`${law.state}|${billKey(String(law.bill))}`);
+            if (v !== 'count') importNotes.noRuling.push(`${id}: census verdict ${v ?? 'not found'} (single_subject left empty)`);
+            return v === 'count';
+          })()), votes,
           provenance: prov(s2File),
         }));
       }
@@ -423,16 +515,65 @@ function homelessInstrumentId(item: any, lastYear: number): { id: string; scope:
   return { id: fitInstrumentId(pilotId, gov.state, lastYear), scope: gov.scope };
 }
 
+/** Pilot instrument id → text that identifies its records in the census (the pilot's own INSTR table). */
+const CENSUS_LOCAL_KEY: Record<string, string> = {
+  'LA-LAMC-41.18-amend-2022': 'LA 41.18 amendment (2022)', 'LA-LAMC-41.18-2021': 'LA LAMC 41.18 (2021)',
+  'BERKELEY-RES-37-2024': 'Berkeley City Council 37', 'HUNTINGTON-BEACH-ORD-4273': 'HB Ord 4273',
+  'SACRAMENTO-12.74.030-2025': 'Sacramento City Council 2025-01309', 'SAN-DIEGO-O-21674': 'O-21674',
+  'SF-LARGE-VEHICLE-2025': 'San Francisco Board of Supervisors', 'COLORADO-SPRINGS-ORD-26-08': '26-08',
+  'PORTLAND-ENFORCEMENT-DIRECTIVE-2025': 'Portland enforcement directive', 'LAS-VEGAS-BILL-2024-29': 'LV Bill 2024-29',
+  'ATLANTA-CLEARING-MACHINERY-2025': 'Atlanta clearing-machinery', 'DEKALB-2026-0550': 'DeKalb County 2026-0550',
+  'COLUMBUS-GA-ORD-25-040': 'Columbus Consolidated Government Ordinance 25-040', 'ST-LOUIS-BB-14-2022': 'St. Louis Board Bill 14',
+  'DULUTH-24-030-O': 'Duluth City Council 24-030-O', 'BLOOMINGTON-IN-ORD-21-06': 'Ordinance 21-06',
+  'BLOOMINGTON-IN-ORD-23-20': 'Ordinance 23-20', 'PALM-SPRINGS-ORD-2099': 'Palm Springs Ord 2099',
+  'NASHVILLE-BL2022-1533': 'Nashville BL2022-1533', 'MIAMI-WARNING-REPEAL-2026': 'City of Miami',
+};
+
+/** What the census (stage0-census.json, raw/F1-federal.json) says about one instrument: its `final` values and record URLs. */
+function censusFor(group: any[], census: any, federal: any): { finals: Set<string>; urls: string[] } | undefined {
+  if (!census) return undefined;
+  const first = group[0];
+  const finals = new Set<string>();
+  const urls: string[] = [];
+  const take = (r: any) => { if (r.final) finals.add(String(r.final)); if (typeof r.url === 'string' && r.url.startsWith('http')) urls.push(r.url); };
+  if (first.level === 'local') {
+    const key = CENSUS_LOCAL_KEY[String(first.instrument)];
+    if (!key) return undefined;
+    for (const r of census.local ?? []) if (`${r.instrument ?? ''} ${r.body} ${r.item ?? ''}`.includes(key)) take(r);
+  } else if (first.level === 'federal') {
+    const num = String(first.instrument).slice(3);
+    for (const r of census.state ?? []) if (r.state === 'US' && r.bill === num) take(r);
+    const b = (federal?.state_bills ?? []).find((x: any) => x.number === num);
+    if (b) {
+      if (!(b.bundled_funding === true || b.bundled_funding === 'True')) finals.add('count');
+      else finals.add('multi');
+      if (typeof b.url_text === 'string') urls.push(b.url_text);
+    }
+  } else {
+    const st = String(first.instrument).slice(0, 2);
+    const num = String(first.instrument).slice(3);
+    for (const r of census.state ?? []) if (r.state === st && r.bill === num) take(r);
+  }
+  return finals.size ? { finals, urls } : undefined;
+}
+
+const NO_MOTION = /^(not retrieved|not obtained|n\/a|none)\b/i;
+
 const homelessness: PilotAdapter = {
   name: 'homelessness-stage1',
   matches: (dir) => has(dir, 'test-set-v1.json', 'local-terms.json', 'excluded.json') && topicOf(join(dir, 'test-set-v1.json')) === 'homelessness',
-  read(dir) {
+  read(dir, researchRoot) {
+    setRoot(dir, researchRoot);
+    const censusFile = sibling('s3-census-homelessness', 'stage0-census.json');
+    const census = censusFile ? readJson(censusFile) : undefined;
+    const fedFile = sibling('s3-census-homelessness', 'raw', 'F1-federal.json');
+    const federal = fedFile ? readJson(fedFile) : undefined;
     const file = join(dir, 'test-set-v1.json');
     const items: any[] = readJson(file).items;
     const suppFile = join(dir, 'test-set-v1-supp-governors.json');
     const all = items.filter((i) => i.kind === 'record' && i.instrument);
     if (existsSync(suppFile)) all.push(...readJson(suppFile).items.filter((i: any) => i.instrument));
-    const prov = provenance(HOMELESS, file, 'webfetch');
+    const prov = provenance(HOMELESS, file, 'unrecorded');
 
     const groups = new Map<string, any[]>();
     for (const i of all) groups.set(`${i.level}|${i.instrument}`, [...(groups.get(`${i.level}|${i.instrument}`) ?? []), i]);
@@ -453,8 +594,11 @@ const homelessness: PilotAdapter = {
           if (!kind || kind === 'absent' || !a.date) continue;
           const tally = parseTally(a.tally);
           if (!tally) { unreadable++; continue; }
-          const body = it.level === 'state' ? `${String(it.instrument).slice(0, 2)} ${a.chamber ?? 'Legislature'}` : String(it.body ?? 'U.S. Congress');
-          const motion = String(a.motion ?? (a.item && a.item !== 'not captured' ? `Item ${a.item}` : it.title));
+          const body = it.level === 'state' ? `${String(it.instrument).slice(0, 2)} ${a.chamber ?? 'Legislature'}`
+            : it.level === 'federal' ? String(a.chamber ?? it.body ?? 'U.S. Congress') : String(it.body ?? 'U.S. Congress');
+          const quoted = [it.census_record?.motion_quote, ...group.map((g) => g.census_record?.motion_quote)].find((q) => typeof q === 'string' && q.trim() && !NO_MOTION.test(q.trim()));
+          const motion = a.motion ? String(a.motion) : quoted ? String(quoted).trim().slice(0, 300) : 'unknown (see pilot)';
+          if (motion === 'unknown (see pilot)') importNotes.unknownMotions.push(`${id} ${a.date}: the pilot has no motion text`);
           const k = `${a.date}|${body}|${motion}`;
           let v = voteMap.get(k);
           if (!v) {
@@ -465,12 +609,17 @@ const homelessness: PilotAdapter = {
         }
       }
       if (unreadable) importNotes.skipped.push(`homelessness ${first.instrument}: ${unreadable} vote act(s) with an unreadable tally not imported`);
-      const urls = [...new Set<string>(group.flatMap((g) => [...(g.sources ?? []), ...(g.acts ?? []).map((a: any) => a.url)]).filter((u) => typeof u === 'string' && u.startsWith('http')))];
+      // Official instrument URLs only: the acts' own URLs and the census record URL. Person sources
+      // (campaign sites, news stories) stay out.
+      const cen = censusFor(group, census, federal);
+      const urls = [...new Set<string>([...group.flatMap((g) => (g.acts ?? []).map((a: any) => a.url)), ...(cen?.urls ?? [])].filter((u) => typeof u === 'string' && u.startsWith('http')))];
+      const ruledSingle = !!cen && cen.finals.has('count') && !cen.finals.has('duty');
+      if (!ruledSingle) importNotes.noRuling.push(`${id}: ${cen ? `census final ${[...cen.finals].join('/')}` : 'no census record found'} (single_subject left empty)`);
       const quote = first.census_record?.operative_quote;
       instruments.push(InstrumentSchema.parse({
         id, scope, title: String(first.title), urls, version: 'other',
         ...(typeof quote === 'string' && quote ? { operative_text: quote } : {}),
-        single_subject: SINGLE, votes: [...voteMap.values()], provenance: prov,
+        single_subject: singleSubject(ruledSingle), votes: [...voteMap.values()], provenance: prov,
       }));
     }
 

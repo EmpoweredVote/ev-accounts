@@ -22,6 +22,11 @@ const inst = (over: Partial<Instrument> = {}): Instrument => ({
 });
 
 describe('schemas', () => {
+  it('accepts method "unrecorded" and a vote note', () => {
+    expect(InstrumentSchema.safeParse(inst({ provenance: { ...prov('2026-10-01T00:00:00Z'), method: 'unrecorded' } })).success).toBe(true);
+    expect(InstrumentSchema.safeParse(inst({ provenance: { ...prov('2026-10-01T00:00:00Z'), method: 'guess' as never } })).success).toBe(false);
+    expect(InstrumentSchema.safeParse(inst({ votes: [{ ...vote('m'), note: 'nay count not printed; inferred 0' }] })).success).toBe(true);
+  });
   it('rejects an instrument without provenance', () => {
     const { provenance: _p, ...rest } = inst();
     expect(InstrumentSchema.safeParse(rest).success).toBe(false);

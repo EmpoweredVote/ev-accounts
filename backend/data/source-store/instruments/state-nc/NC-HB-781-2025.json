@@ -3,9 +3,7 @@
   "scope": "state:nc",
   "title": "Unauthorized Public Camping & Sleeping (Edition 2, committee substitute favorable 5/6/25)",
   "urls": [
-    "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/324",
-    "https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H781v1.html",
-    "https://www.ncleg.gov/BillLookUp/2025/H781"
+    "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/324"
   ],
   "version": "other",
   "operative_text": "a local government may not authorize or otherwise allow any person to regularly engage in public camping or sleeping on any public property, including any public building or its grounds and any public right-of-way",
@@ -63,6 +61,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

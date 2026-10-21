@@ -26,7 +26,6 @@
       "kind": "roll-call",
       "yes": 22,
       "no": 16,
-      "absent": 1,
       "members": [
         {
           "name": "Barker",
@@ -658,7 +657,7 @@
     "fetched_at": "2026-10-19T19:24:17.419Z",
     "method": "curl",
     "saved_copy": {
-      "path": "/Users/chrisandrews/Documents/GitHub/.planning/research/s3-pilot-equity-programs/stage1/raw/pdf/va/ch24.html",
+      "path": "s3-pilot-equity-programs/stage1/raw/pdf/va/ch24.html",
       "sha256": "e76d1230e865f5673610f274d331b967f7793190f1fbb6262ef6784722ba112e"
     }
   }

@@ -6,8 +6,8 @@
     "https://legistar2.granicus.com/coloradosprings/meetings/2026/2/2771_M_City_Council_26-02-24_Meeting_Minutes.pdf",
     "https://legistar2.granicus.com/coloradosprings/meetings/2026/3/2773_M_City_Council_26-03-10_Meeting_Minutes.pdf",
     "https://legistar2.granicus.com/coloradosprings/attachments/0933b54a-2d70-457d-944c-f5ca68763e40.pdf",
-    "https://www.cpr.org/2025/03/13/colorado-springs-2025-city-council-candidate-questionnaire-dave-donelson/",
-    "https://coloradosprings.legistar.com/LegislationDetail.aspx?ID=12939"
+    "https://legistar2.granicus.com/coloradosprings/meetings/2025/11/2658_M_City_Council_25-11-10_Meeting_Minutes.pdf",
+    "https://legistar2.granicus.com/coloradosprings/meetings/2026/2/2769_M_City_Council_26-02-10_Meeting_Minutes.pdf"
   ],
   "version": "other",
   "operative_text": "It is unlawful for any person to camp on any public property. It is unlawful for any person to camp in a motor vehicle on any public property.",
@@ -24,7 +24,7 @@
     {
       "date": "2026-02-24",
       "body": "Colorado Springs City Council",
-      "motion": "Item Ordinance 26-08 (File 25-590) 9.A.",
+      "motion": "finally passed (Pass)",
       "kind": "action-item",
       "yes": 7,
       "no": 2,
@@ -75,7 +75,7 @@
     {
       "date": "2026-03-10",
       "body": "Colorado Springs City Council",
-      "motion": "Item Ordinance 26-08 (File 25-590) 9.A.",
+      "motion": "finally passed (Pass)",
       "kind": "action-item",
       "yes": 7,
       "no": 2,
@@ -127,6 +127,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

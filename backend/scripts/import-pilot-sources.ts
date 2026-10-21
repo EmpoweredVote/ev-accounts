@@ -41,7 +41,7 @@ for (const adapter of ADAPTERS) {
   for (const dir of candidates) {
     if (seenDirs.has(`${adapter.name}|${dir}`) || !adapter.matches(dir)) continue;
     seenDirs.add(`${adapter.name}|${dir}`);
-    const out: PilotOutput = adapter.read(dir);
+    const out: PilotOutput = adapter.read(dir, research);
     let dead = 0;
     if (!dryRun) {
       for (const i of out.instruments) upsertInstrument(storeRoot, i);
@@ -68,6 +68,10 @@ console.log(dryRun ? 'DRY RUN, nothing written' : `Wrote to ${storeRoot}`);
 for (const l of lines) console.log(l);
 console.log(`Total: ${total.instruments} instruments, ${total.people} people, ${total.jurisdictions} jurisdictions, ${total.deadEnds} dead ends (${total.deadEndsAlreadyThere} already in the store)`);
 const built = [...new Set(importNotes.constructedIds)];
+const noRuling = [...new Set(importNotes.noRuling)];
 if (built.length) console.log(`Ids built (${built.length}):\n  ${built.join('\n  ')}`);
+if (noRuling.length) console.log(`No single-subject ruling written (${noRuling.length}):\n  ${noRuling.join('\n  ')}`);
+const unknownMotions = [...new Set(importNotes.unknownMotions)];
+if (unknownMotions.length) console.log(`Motion unknown (${unknownMotions.length}):\n  ${unknownMotions.join('\n  ')}`);
 if (importNotes.skipped.length) console.log(`Skipped (${importNotes.skipped.length}):\n  ${importNotes.skipped.join('\n  ')}`);
 if (!lines.length) { console.error('No pilot folder recognised under ' + research); process.exit(1); }

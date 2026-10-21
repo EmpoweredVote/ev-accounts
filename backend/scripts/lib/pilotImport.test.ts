@@ -3,13 +3,15 @@ import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { ADAPTERS, fitInstrumentId, parseTally, resetImportNotes, importNotes, type PilotOutput } from './pilotImport.js';
+import { ADAPTERS, fitInstrumentId, parseOtherNames, parseTally, resetImportNotes, importNotes, type PilotOutput } from './pilotImport.js';
 import {
   DeadEndSchema, InstrumentSchema, JurisdictionSchema, PersonSourcesSchema, appendDeadEnd, upsertInstrument, validateStore,
 } from './sourceStore.js';
 
 const fx = (name: string) => join(dirname(fileURLToPath(import.meta.url)), '__fixtures__', 'pilot', name);
 const adapter = (name: string) => ADAPTERS.find((a) => a.name === name)!;
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '__fixtures__', 'pilot');
+const read = (name: string) => adapter(name).read(fx(name), ROOT);
 
 let root: string;
 beforeEach(() => { root = mkdtempSync(join(tmpdir(), 'pilot-import-')); resetImportNotes(); });
@@ -58,7 +60,7 @@ describe('helpers', () => {
 describe('equity stage 1 + supplement', () => {
   it('yields WA-ESSB-5044-2021 with kind, tallies and members once both adapters are merged', () => {
     for (const name of ['equity-stage1', 'equity-supplement']) {
-      const out = adapter(name).read(fx(name));
+      const out = read(name);
       schemaCheck(out);
       for (const i of out.instruments) upsertInstrument(root, i);
     }
@@ -80,7 +82,7 @@ describe('equity stage 1 + supplement', () => {
   });
 
   it('splits the VA pair into two instruments and builds school board ids', () => {
-    const out = adapter('equity-stage1').read(fx('equity-stage1'));
+    const out = read('equity-stage1');
     const ids = out.instruments.map((i) => i.id).sort();
     expect(ids).toEqual(['IN-MCCSC-5518-2023', 'VA-HB-1904-2021', 'VA-SB-1196-2021', 'VA-VBCPS-0408-15F-2025', 'WA-ESSB-5044-2021']);
     const vb = out.instruments.find((i) => i.id === 'VA-VBCPS-0408-15F-2025')!;
@@ -95,7 +97,7 @@ describe('equity stage 1 + supplement', () => {
   });
 
   it('writes term rows for seated people and dead ends for blocked portals', () => {
-    const out = adapter('equity-supplement').read(fx('equity-supplement'));
+    const out = read('equity-supplement');
     schemaCheck(out);
     expect(out.people.length).toBeGreaterThan(0);
     expect(out.people[0].sources).toEqual([]);
@@ -106,7 +108,7 @@ describe('equity stage 1 + supplement', () => {
 
 describe('homelessness stage 1', () => {
   it('imports votes with readable tallies and skips the rest', () => {
-    const out = adapter('homelessness-stage1').read(fx('homelessness-stage1'));
+    const out = read('homelessness-stage1');
     schemaCheck(out);
     const az = out.instruments.find((i) => i.id === 'AZ-SB-1024-2023')!;
     expect(az.scope).toBe('state:az');
@@ -121,9 +123,69 @@ describe('homelessness stage 1', () => {
   });
 });
 
+describe('fix round 1', () => {
+  it('reads group labels after names and cross-checks the counts', () => {
+    expect(parseOtherNames(['Acevero', 'Martinez (not voting)', 'Crosby', 'Munoz', 'Woods (excused/absent)'], '2 Not voting; 3 Excused (Absent)', 'x')).toEqual([
+      { name: 'Acevero', vote: 'abstain' }, { name: 'Martinez', vote: 'abstain' },
+      { name: 'Crosby', vote: 'absent' }, { name: 'Munoz', vote: 'absent' }, { name: 'Woods', vote: 'absent' },
+    ]);
+    expect(() => parseOtherNames(['Acevero', 'Martinez (not voting)'], '1 Not voting', 'x')).toThrow(/other_names give/);
+    expect(() => parseOtherNames(['Acevero'], '1 Not voting', 'x')).toThrow(/no group label/);
+  });
+
+  it('counts only absent members as absent; not-voting members are abstentions', () => {
+    const out = read('equity-supplement');
+    const md = out.instruments.find((i) => i.id === 'MD-HB-1386-2024')!;
+    const v = md.votes.find((x) => x.date === '2024-04-08')!;
+    expect(v.absent).toBe(3);
+    expect(v.members.filter((m) => m.vote === 'abstain').map((m) => m.name).sort()).toEqual(['Ashanti Martinez', 'Gabriel Acevero']);
+    const va = out.instruments.find((i) => i.id === 'VA-SB-1196-2021')!;
+    expect(va.votes[0].absent).toBeUndefined();
+    expect(va.votes[0].members.find((m) => m.name.includes('Stuart'))?.vote).toBe('abstain');
+  });
+
+  it('writes single only for census count', () => {
+    const hl = read('homelessness-stage1');
+    expect(hl.instruments.find((i) => i.id === 'MIAMI-WARNING-REPEAL-2026')!.single_subject).toEqual([]);
+    expect(hl.instruments.find((i) => i.id === 'AZ-SB-1024-2023')!.single_subject).toHaveLength(1);
+    expect(importNotes.noRuling.some((n) => n.startsWith('MIAMI-WARNING-REPEAL-2026') && n.includes('duty'))).toBe(true);
+  });
+
+  it('keeps person sources out of instrument urls', () => {
+    const hl = read('homelessness-stage1');
+    const b = hl.instruments.find((i) => i.id === 'IN-BLOOMINGTON-IN-ORD-21-06-2021')!;
+    expect(b.urls).toEqual(['https://bloomington.in.gov/onboard/meetingFiles/8496/download']);
+  });
+
+  it('takes the motion from the census record and never from the item number', () => {
+    const hl = read('homelessness-stage1');
+    const n = hl.instruments.find((i) => i.id.includes('NASHVILLE'))!;
+    expect(n.votes[0].motion).toContain('Rosenberg offered a substitute');
+    for (const i of hl.instruments) for (const v of i.votes) expect(v.motion).not.toMatch(/^Item /);
+  });
+
+  it('marks a portal reached with a browser user agent as works, with the full note', () => {
+    const j = read('equity-stage1').jurisdictions.find((x) => x.scope === 'state:va')!;
+    expect(j.portals[0].status).toBe('works');
+    expect(j.portals[0].how).toMatch(/browser user agent/);
+  });
+
+  it('stores saved copies relative to the research root and unrecorded methods as unrecorded', () => {
+    const vb = read('equity-stage1').instruments.find((i) => i.id === 'VA-VBCPS-0408-15F-2025')!;
+    expect(vb.provenance.saved_copy?.path).toBe('equity-stage1/raw/vb/040825M.pdf');
+    const hl = read('homelessness-stage1');
+    expect(hl.instruments.every((i) => i.provenance.method === 'unrecorded')).toBe(true);
+  });
+
+  it('notes the inferred nay count of the MCCSC vote', () => {
+    const m = read('equity-stage1').instruments.find((i) => i.id === 'IN-MCCSC-5518-2023')!;
+    expect(m.votes[0].note).toMatch(/inferred/);
+  });
+});
+
 describe('dead ends', () => {
   it('append helper still validates', () => {
-    const d = adapter('equity-supplement').read(fx('equity-supplement')).deadEnds[0];
+    const d = read('equity-supplement').deadEnds[0];
     appendDeadEnd(root, d);
     expect(validateStore(root)).toEqual([]);
   });

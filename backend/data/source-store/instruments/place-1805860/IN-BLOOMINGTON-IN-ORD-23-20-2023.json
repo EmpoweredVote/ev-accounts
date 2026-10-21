@@ -3,10 +3,7 @@
   "scope": "place:1805860",
   "title": "To Amend Title 12 of the Bloomington Municipal Code Entitled \"Streets, Sidewalks, and Storm Sewers,\" Re: Establishing a New Section 12.04.130 Entitled \"Obstructing the right-of-way\"",
   "urls": [
-    "https://bloomington.in.gov/onboard/meetingFiles/13111/download",
-    "https://www.ipm.org/2023-09-14/city-council-rejects-effort-to-prevent-camping-on-sidewalks-streets",
-    "https://bsquarebulletin.com/bloomington-city-council-district-2-democratic-party-primary-kate-rosenbarger-sue-sgambelluri/",
-    "https://web.archive.org/web/20241223130926/https://kateforbloomington.org/issues/"
+    "https://bloomington.in.gov/onboard/meetingFiles/13111/download"
   ],
   "version": "other",
   "operative_text": "It is unlawful to camp in the right-of-way, store personal property in the right-of-way, or otherwise block the right-of-way in a manner that obstructs pedestrian traffic, vehicular traffic, or public travel",
@@ -23,7 +20,7 @@
     {
       "date": "2023-09-13",
       "body": "Bloomington IN Common Council",
-      "motion": "Item Ordinance 23-20",
+      "motion": "Rollo moved and Piedmont-Smith seconded that Ordinance 23-20 be adopted.",
       "kind": "action-item",
       "yes": 2,
       "no": 5,
@@ -55,6 +52,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

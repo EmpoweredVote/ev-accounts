@@ -26,7 +26,7 @@ export const InstrumentIdSchema = z
 export const ProvenanceSchema = z.object({
   fetched_by: z.string().min(1),
   fetched_at: z.string().min(1), // ISO timestamp
-  method: z.enum(['webfetch', 'curl', 'browser', 'ocr', 'api', 'hand-saved']),
+  method: z.enum(['webfetch', 'curl', 'browser', 'ocr', 'api', 'hand-saved', 'unrecorded']),
   saved_copy: z.object({ path: z.string().min(1), sha256: z.string().regex(/^[0-9a-f]{64}$/i) }).optional(),
 });
 export type Provenance = z.infer<typeof ProvenanceSchema>;
@@ -42,6 +42,8 @@ export const VoteSchema = z.object({
   no: z.number(),
   absent: z.number().optional(),
   body_size: z.number().optional(),
+  /** Plain-words caveat about the tally or the member list (for example a count that was inferred). */
+  note: z.string().optional(),
   members: z.array(
     z.object({
       name: z.string(),

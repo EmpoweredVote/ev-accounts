@@ -4,15 +4,15 @@
     {
       "name": "legacylis.virginia.gov",
       "url": "https://legacylis.virginia.gov/",
-      "status": "needs-browser",
-      "how": "WebFetch returned an error page for Ch.",
+      "status": "works",
+      "how": "WebFetch returned an error page for Ch. 23; fetched with curl and a browser user agent and saved to raw/pdf/va/ch23.html (and ch24.html). Quotes are from chaptered text (the Acts of Assembly chapter). Ch. 23 text uses '�' for section symbol",
       "checked_at": "2026-10-19T19:24:17.419Z",
       "provenance": {
         "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
         "fetched_at": "2026-10-19T19:24:17.419Z",
         "method": "curl",
         "saved_copy": {
-          "path": "/Users/chrisandrews/Documents/GitHub/.planning/research/s3-pilot-equity-programs/stage1/raw/pdf/va/ch23.html",
+          "path": "s3-pilot-equity-programs/stage1/raw/pdf/va/ch23.html",
           "sha256": "7d2f7185db76ee93dcb11411e5228ab4ff60f85a2cee086c80cb81cb4616dd43"
         }
       }

@@ -3,8 +3,8 @@
   "scope": "federal",
   "title": "Clean and Managed Public Spaces Act",
   "urls": [
-    "https://www.govinfo.gov/content/pkg/CRPT-119hrpt342/html/CRPT-119hrpt342.htm",
-    "https://www.congress.gov/119/meeting/house/118594/documents/CRPT-119-GO00-Vote008-20250910.pdf"
+    "https://www.congress.gov/119/meeting/house/118594/documents/CRPT-119-GO00-Vote008-20250910.pdf",
+    "https://www.govinfo.gov/content/pkg/CRPT-119hrpt342/html/CRPT-119hrpt342.htm"
   ],
   "version": "other",
   "operative_text": "Any person who, without lawful authority, engages in camping outdoors on public property in the District of Columbia shall be fined not more than $500, imprisoned for not more than 30 days, or both.",
@@ -20,7 +20,7 @@
   "votes": [
     {
       "date": "2025-09-10",
-      "body": "U.S. Congress",
+      "body": "House Committee on Oversight and Government Reform",
       "motion": "Final Passage - H.R. 5163 (order reported; amendment in the nature of a substitute adopted by voice vote)",
       "kind": "roll-call",
       "yes": 25,
@@ -57,6 +57,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

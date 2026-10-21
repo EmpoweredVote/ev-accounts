@@ -2,10 +2,7 @@
   "id": "PORTLAND-ENFORCEMENT-DIRECTIVE-2025",
   "scope": "place:4159000",
   "title": "Resume enforcement of public camping ordinance starting November 1, 2025 (after pause begun Feb 2025)",
-  "urls": [
-    "https://www.portland.gov/sscc/camping-ordinance",
-    "https://www.portland.gov/homeless/homeless-crisis"
-  ],
+  "urls": [],
   "version": "other",
   "operative_text": "Mayor Keith Wilson suspended enforcement of the camping ordinance. [Feb 2025]  ...directed Portland Police to start enforcing the camping regulations again.",
   "single_subject": [
@@ -21,6 +18,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

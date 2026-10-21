@@ -3,7 +3,8 @@
   "scope": "place:3240000",
   "title": "Bill No. 2024-29 - Amends LVMC Chapter 10.86, relating to camping, lodging and similar activities in public rights-of-way, to apply the general prohibitions throughout the City and update applicable enforcement and penalty provisions. Sponsored by: Mayor Carolyn G. Goodman",
   "urls": [
-    "https://lasvegas.primegov.com/Public/CompiledDocument?meetingTemplateId=39673&compileOutputType=1"
+    "https://lasvegas.primegov.com/Public/CompiledDocument?meetingTemplateId=39673&compileOutputType=1",
+    "https://lasvegas.primegov.com/Public/CompiledDocument?meetingTemplateId=39600&compileOutputType=1"
   ],
   "version": "other",
   "operative_text": "Bill title as printed: 'Amends LVMC Chapter 10.86, relating to camping, lodging and similar activities in public rights-of-way, to apply the general prohibitions throughout the City and update applicable enforcement and penalty provisions.' (bill text itself not retrieved)",
@@ -20,7 +21,7 @@
     {
       "date": "2024-11-06",
       "body": "Las Vegas City Council",
-      "motion": "Item Bill No. 2024-29 -> Ordinance No. 6889 (agenda item 50)",
+      "motion": "Second reading and bill adopted as introduced as Ordinance No. 6889. Motion made by Brian Knudsen to Approve",
       "kind": "action-item",
       "yes": 7,
       "no": 0,
@@ -52,6 +53,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

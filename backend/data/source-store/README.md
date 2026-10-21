@@ -6,7 +6,7 @@ Large saved copies (PDFs, page captures) are not committed. They stay in the run
 
 ## Layout
 
-- `instruments/<scope-dir>/<instrument-id>.json` — one bill, ordinance, policy or resolution. Official URL(s), version (as-filed, enrolled, adopted, other), operative text, single-subject verdict per served topic list (with season and codebook version), higher-law duty note, and every vote: date, body, motion, kind (action-item, consent, en-bloc, roll-call), tally, and per-member yea/nay/absent/abstain with politician ids where matched.
+- `instruments/<scope-dir>/<instrument-id>.json` — one bill, ordinance, policy or resolution. Official URL(s), version (as-filed, enrolled, adopted, other), operative text, single-subject verdict per served topic list (with season and codebook version), higher-law duty note, and every vote: date, body, motion, kind (action-item, consent, en-bloc, roll-call), tally, and per-member yea/nay/absent/abstain with politician ids where matched. A vote may carry a `note` for a caveat such as an inferred count.
 - `people/<politician-id>.json` — sources found for one person (own words and records), the topic keys each covers, whether each was useful, and term dates found with their precision.
 - `jurisdictions/<scope-dir>.json` — portals and how to fetch them (works, blocked, needs-browser), roster and session-list sources, and standing higher-law duties per topic.
 - `dead-ends.jsonl` — one JSON object per line: what was searched and found nothing, or was blocked, with date and who searched.
@@ -20,7 +20,7 @@ Large saved copies (PDFs, page captures) are not committed. They stay in the run
 
 ## Provenance
 
-Every instrument, person source, jurisdiction portal and saved copy records who fetched it (`fetched_by`), when (`fetched_at`, ISO), how (`method`: webfetch, curl, browser, ocr, api, hand-saved), and the SHA-256 of any saved copy. Hand-saved sources keep the existing rule: source and method on the first line, with Chris's OK.
+Every instrument, person source, jurisdiction portal and saved copy records who fetched it (`fetched_by`), when (`fetched_at`, ISO), how (`method`: webfetch, curl, browser, ocr, api, hand-saved, unrecorded when an imported source never recorded one), and the SHA-256 of any saved copy. A saved copy's `path` is relative to the runner's research root (for example `s3-pilot-equity-programs/stage1/raw/vb/040825M.pdf`), so the store reads the same on every machine. Hand-saved sources keep the existing rule: source and method on the first line, with Chris's OK.
 
 ## Merge rules (re-running a stage)
 

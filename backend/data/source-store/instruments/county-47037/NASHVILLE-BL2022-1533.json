@@ -20,7 +20,7 @@
     {
       "date": "2022-12-20",
       "body": "Nashville Metro Council",
-      "motion": "Item BL2022-1533",
+      "motion": "Council Member Rosenberg offered a substitute bill and moved that it be adopted, which motion was properly seconded.",
       "kind": "action-item",
       "yes": 14,
       "no": 16,
@@ -72,6 +72,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

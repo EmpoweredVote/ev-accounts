@@ -132,6 +132,78 @@
     }
    ],
    "notes": ""
+  },
+  {
+   "state": "VA",
+   "bill": "SB 1196 (Ch. 24, 2021 Special Session I)",
+   "session": "2021",
+   "status": "enacted (approved 2021-02-25; eff. 2021-07-01)",
+   "subject": "Identical companion to HB 1904: cultural competency (training, evaluation, licensure)",
+   "operative_parts": null,
+   "rollcalls": [
+    {
+     "chamber": "Senate",
+     "date": "2021-02-05",
+     "motion": "Read third time and passed Senate",
+     "yeas": 22,
+     "nays": 16,
+     "other": "Not voting 1",
+     "pct_no": 42.1,
+     "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?212+vot+SC0333SB1196+SB1196",
+     "yea_names": [
+      "Barker",
+      "Bell",
+      "Boysko"
+     ],
+     "nay_names": [
+      "Chase",
+      "Cosgrove",
+      "DeSteph"
+     ],
+     "other_names": [
+      "Stuart (not voting)"
+     ]
+    }
+   ],
+   "notes": ""
+  },
+  {
+   "state": "MD",
+   "bill": "HB 1386 (Ch. 128, 2024 Laws)",
+   "session": "2024 Regular",
+   "status": "enacted (approved 2024-04-25; eff. 2024-07-01)",
+   "subject": "Education - School Employee Antibias Training - Requirements (as enacted; introduced version also had Holocaust study and annual antisemitism/Islamophobia training, struck in conference)",
+   "operative_parts": null,
+   "rollcalls": [
+    {
+     "chamber": "House",
+     "date": "2024-04-08",
+     "motion": "Third reading and final passage (conference committee report adopted)",
+     "yeas": 120,
+     "nays": 16,
+     "other": "2 Not voting; 3 Excused (Absent)",
+     "pct_no": 11.8,
+     "url": "https://mgaleg.maryland.gov/2024RS/votes/house/1665.pdf",
+     "yea_names": [
+      "Speaker",
+      "Cullison",
+      "Howard"
+     ],
+     "nay_names": [
+      "Adams*",
+      "Fisher",
+      "Hutchinson*"
+     ],
+     "other_names": [
+      "Acevero",
+      "Martinez (not voting)",
+      "Crosby",
+      "Munoz",
+      "Woods (excused/absent)"
+     ]
+    }
+   ],
+   "notes": ""
   }
  ]
 }

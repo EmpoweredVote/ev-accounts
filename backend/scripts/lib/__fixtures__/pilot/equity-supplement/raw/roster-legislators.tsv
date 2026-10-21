@@ -1,10 +1,15 @@
 st	district_type	id	full_name	first_name	last_name	term_start	term_end	start_precision	is_active
+md	STATE_LOWER	760cd4a7-235c-472f-a0ba-fb07098dfd57	Adrienne A. Jones	Adrienne	Jones			unknown	t
+md	STATE_LOWER	d8eee978-cec3-492d-9867-9d40b2a50a9d	Ashanti Martinez	Ashanti	Martinez			unknown	t
+md	STATE_LOWER	e1b53b61-d4f7-4d10-bdb3-2a8dcfb12820	Gabriel Acevero	Gabriel	Acevero			unknown	t
 or	STATE_UPPER	b6f5cd9e-a9d2-44ff-9027-0d931765f378	Floyd Prozanski	Floyd	Prozanski			unknown	t
 or	STATE_UPPER	21b454d4-e6a5-48fe-9bd1-0da84f2a1a39	Jeff Golden	Jeff	Golden			unknown	t
 or	STATE_UPPER	4b4702e0-3b88-4fd0-aa17-aa379be0dbac	Kathleen Taylor	Kathleen	Taylor			unknown	t
 or	STATE_UPPER	ae4b1163-e9a7-4529-a8f2-5610f6c93cbd	Lew Frederick	Lew	Frederick			unknown	t
 or	STATE_UPPER	14faa864-de9f-497f-a78a-db41f42ee5e0	Rob Wagner	Rob	Wagner			unknown	t
 or	STATE_UPPER	1ca1abf1-9523-499c-b644-0b32c61257c6	Sara Gelser Blouin	Sara	Gelser Blouin			unknown	t
+va	STATE_UPPER	b4f19462-f23f-4061-831d-ec4544b5678f	Jennifer B. Boysko	Jennifer B.	Boysko			unknown	t
+va	STATE_UPPER	7377cc55-0db6-4b15-8c4c-b1ad79137d25	Richard H. Stuart	Richard H.	Stuart			unknown	t
 wa	STATE_UPPER	14332488-3986-4e86-abc2-666b7a3f2dd5	Annette Cleveland	Annette	Cleveland	2013-01-14		day	t
 wa	STATE_UPPER	755f24a5-2330-4546-9679-d5f7fa94aaa9	John Braun	John	Braun	2013-01-14		day	t
 wa	STATE_UPPER	0097aee3-e409-44bc-ba20-121108c11ec7	Manka Dhingra	Manka	Dhingra	2017-01-01		year	t

@@ -46,7 +46,7 @@
       "kind": "roll-call",
       "yes": 120,
       "no": 16,
-      "absent": 5,
+      "absent": 3,
       "members": [
         {
           "name": "Speaker",
@@ -713,7 +713,7 @@
         {
           "name": "Gabriel Acevero",
           "politician_id": "e1b53b61-d4f7-4d10-bdb3-2a8dcfb12820",
-          "vote": "absent"
+          "vote": "abstain"
         },
         {
           "name": "Ashanti Martinez",
@@ -743,7 +743,6 @@
       "kind": "roll-call",
       "yes": 35,
       "no": 11,
-      "absent": 1,
       "members": [
         {
           "name": "Mr. President",
@@ -981,7 +980,7 @@
     "fetched_at": "2026-10-19T19:24:17.419Z",
     "method": "curl",
     "saved_copy": {
-      "path": "/Users/chrisandrews/Documents/GitHub/.planning/research/s3-pilot-equity-programs/stage1/raw/pdf/md1/ch128.pdf",
+      "path": "s3-pilot-equity-programs/stage1/raw/pdf/md1/ch128.pdf",
       "sha256": "fc7d877ac54461737f0e7480d6110ca98a3c946579ed731a17240970a6294ccf"
     }
   }

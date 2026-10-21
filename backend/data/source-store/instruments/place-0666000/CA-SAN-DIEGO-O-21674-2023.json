@@ -3,11 +3,7 @@
   "scope": "place:0666000",
   "title": "Encampments on Public Property (adds Division 4 to Chapter 6, Article 3, SDMC; councilmember Whitburn proposal)",
   "urls": [
-    "https://docs.sandiego.gov/municode/MuniCodeChapter06/Ch06Art03Division04.pdf",
-    "https://en.wikipedia.org/wiki/Raul_Campillo",
-    "https://timesofsandiego.com/politics/2023/06/14/councils-ban-on-homeless-tent-encampments-draws-strong-reactions/",
-    "https://en.wikipedia.org/wiki/Stephen_Whitburn",
-    "https://www.sandiego.gov/citycouncil/cd3"
+    "https://docs.sandiego.gov/municode/MuniCodeChapter06/Ch06Art03Division04.pdf"
   ],
   "version": "other",
   "operative_text": "It is unlawful for any person to camp or to maintain an encampment in or upon any public property, including in any street, sidewalk, park, beach, open space, waterway, and banks of a waterway, unless specifically authorized by the City Manager.",
@@ -24,7 +20,7 @@
     {
       "date": "2023-06-13",
       "body": "San Diego City Council",
-      "motion": "Item O-21674 N.S. (introduction)",
+      "motion": "unknown (see pilot)",
       "kind": "action-item",
       "yes": 5,
       "no": 4,
@@ -76,6 +72,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

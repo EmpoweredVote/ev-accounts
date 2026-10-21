@@ -3,8 +3,7 @@
   "scope": "state:tn",
   "title": "relative to public property (camping on state/interstate highway right-of-way; extends Equal Access to Public Property Act camping offense to all public property)",
   "urls": [
-    "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB0978&GA=112",
-    "https://www.capitol.tn.gov/Bills/112/Bill/HB0978.pdf"
+    "https://wapp.capitol.tn.gov/apps/BillInfo/Default.aspx?BillNumber=HB0978&GA=112"
   ],
   "version": "other",
   "operative_text": "It is unlawful for a person to engage in camping: (1) On the shoulder, berm, or right-of-way of a state or interstate highway; or (2) Under a bridge or overpass, or within an underpass, of a state or interstate highway.",
@@ -127,6 +126,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

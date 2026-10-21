@@ -298,6 +298,183 @@
    "sources": [],
    "origin": "census",
    "item_id": "hl-001"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "authored",
+   "politician_id": "e1385747-e3fb-4d30-aa7c-359faddadc0c",
+   "name": "Rolando Escalona",
+   "body": "Miami City Commission",
+   "gov": "City of Miami, Florida, US",
+   "body_size": 5,
+   "instrument": "MIAMI-WARNING-REPEAL-2026",
+   "title": "Ordinance ending written-warning requirement before arrest for public encampments (City of Miami)",
+   "acts": [
+    {
+     "date": "2026-07-09",
+     "act": "author",
+     "type": "AUTHORED",
+     "item": "not captured",
+     "tally": "",
+     "printed": "Rolando Escalona",
+     "url": "",
+     "term_check": "covered"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "Sponsored by District 3 Commissioner Rolando Escalona.",
+    "penalty_terms": "\"refusal to accept would qualify as grounds for arrest\" (news)",
+    "condition_terms": "\"If a shelter bed is available, it must be offered.\" (news); verbal warning and reasonable time to leave"
+   },
+   "sources": [],
+   "origin": "census",
+   "item_id": "hl-053"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "6f39bc7a-2538-4f47-8219-3c992e0f3d40",
+   "name": "Brandon Taylor",
+   "body": "Nashville Metro Council",
+   "gov": "Metropolitan Government of Nashville and Davidson County, Tennessee, US",
+   "body_size": 40,
+   "instrument": "NASHVILLE-BL2022-1533",
+   "title": "An ordinance setting conditions for the closure of an encampment at Brookmeade Park and accepting an easement on certain property located at 7034 Charlotte Pike (Parcel No. 10200008600) owned by Lowes Home Centers, LLC (Proposal No. 2022M-036AG-001).",
+   "acts": [
+    {
+     "date": "2022-12-20",
+     "act": "abstain",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "BL2022-1533",
+     "tally": "Yes (14); No (16); Abstain (7) - failed",
+     "printed": "Taylor",
+     "url": "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf",
+     "term_check": "covered"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "not in the minutes text; the substitute text read: Section 1. The easement agreement ... is hereby approved, subject to the following conditions related to the closure of the encampment at Brookmeade Park",
+    "penalty_terms": "not stated (bill sets no penalty)",
+    "condition_terms": "b) All individuals residing at the Brookmeade Park encampment as of December 6, 2022, have been engaged ... and have been offered a clear path to permanent housing.",
+    "motion_quote": "Council Member Rosenberg offered a substitute bill and moved that it be adopted, which motion was properly seconded.",
+    "section": "Bills on Second Reading"
+   },
+   "sources": [
+    "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf"
+   ],
+   "origin": "census",
+   "item_id": "hl-054"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "a5832455-f2b6-4dae-9523-5bb0f84b1e41",
+   "name": "Courtney Johnston",
+   "body": "Nashville Metro Council",
+   "gov": "Metropolitan Government of Nashville and Davidson County, Tennessee, US",
+   "body_size": 40,
+   "instrument": "NASHVILLE-BL2022-1533",
+   "title": "An ordinance setting conditions for the closure of an encampment at Brookmeade Park and accepting an easement on certain property located at 7034 Charlotte Pike (Parcel No. 10200008600) owned by Lowes Home Centers, LLC (Proposal No. 2022M-036AG-001).",
+   "acts": [
+    {
+     "date": "2022-12-20",
+     "act": "no",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "BL2022-1533",
+     "tally": "Yes (14); No (16); Abstain (7) - failed",
+     "printed": "Johnston",
+     "url": "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf",
+     "term_check": "covered"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "not in the minutes text; the substitute text read: Section 1. The easement agreement ... is hereby approved, subject to the following conditions related to the closure of the encampment at Brookmeade Park",
+    "penalty_terms": "not stated (bill sets no penalty)",
+    "condition_terms": "b) All individuals residing at the Brookmeade Park encampment as of December 6, 2022, have been engaged ... and have been offered a clear path to permanent housing.",
+    "motion_quote": "Council Member Rosenberg offered a substitute bill and moved that it be adopted, which motion was properly seconded.",
+    "section": "Bills on Second Reading"
+   },
+   "sources": [
+    "https://nashville.legistar1.com/nashville/meetings/2022/12/1554_M_Metropolitan_Council_22-12-20_Meeting_Minutes.pdf"
+   ],
+   "origin": "census",
+   "item_id": "hl-055"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "85741f19-1c12-43ad-8504-d615522725d7",
+   "name": "David R Rollo",
+   "body": "Bloomington IN Common Council",
+   "gov": "City of Bloomington, Indiana, US",
+   "body_size": 9,
+   "instrument": "BLOOMINGTON-IN-ORD-21-06",
+   "title": "To Amend Title 2 (\"Administration and Personnel\") of the Bloomington Municipal Code Re: Adding Chapter 2.87 (Protections for People Experiencing Homelessness)",
+   "acts": [
+    {
+     "date": "2021-03-04",
+     "act": "no",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "Ordinance 21-06",
+     "tally": "Ayes 4, Nays 4, Abstain 0 (failed); vote at 3:21am Mar 4 (meeting dated 03-03-21)",
+     "printed": "Rollo",
+     "url": "https://bloomington.in.gov/onboard/meetingFiles/8496/download",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "Before the city may displace a person experiencing homelessness from a camp, the city must give at least fifteen (15) days' written notice to the person experiencing homelessness living in the camp",
+    "penalty_terms": "not stated (protective ordinance)",
+    "condition_terms": "15 days' written notice; offer of available transitional or permanent housing before closing a camp",
+    "motion_quote": "The motion to adopt Ordinance 21-06 received a roll call vote of Ayes: 4 (Flaherty, Piedmont-Smith, Rosenbarger, Volan), Nays: 4, Abstain: 0. FAILED",
+    "section": "LEGISLATION FOR SECOND READING AND RESOLUTIONS"
+   },
+   "sources": [
+    "https://bloomington.in.gov/onboard/meetingFiles/8496/download",
+    "https://example.org/candidate-campaign-site"
+   ],
+   "origin": "census",
+   "item_id": "hl-003"
+  },
+  {
+   "level": "local",
+   "kind": "record",
+   "record_type": "vote",
+   "politician_id": "91f6d45d-5e7e-48f6-aab1-9476d81946b5",
+   "name": "Isabel Piedmont-Smith",
+   "body": "Bloomington IN Common Council",
+   "gov": "City of Bloomington, Indiana, US",
+   "body_size": 9,
+   "instrument": "BLOOMINGTON-IN-ORD-21-06",
+   "title": "To Amend Title 2 (\"Administration and Personnel\") of the Bloomington Municipal Code Re: Adding Chapter 2.87 (Protections for People Experiencing Homelessness)",
+   "acts": [
+    {
+     "date": "2021-03-04",
+     "act": "yes",
+     "type": "ACTION_ITEM_NAMED",
+     "item": "Ordinance 21-06",
+     "tally": "Ayes 4, Nays 4, Abstain 0 (failed); vote at 3:21am Mar 4 (meeting dated 03-03-21)",
+     "printed": "Piedmont-Smith",
+     "url": "https://bloomington.in.gov/onboard/meetingFiles/8496/download",
+     "term_check": "start unknown"
+    }
+   ],
+   "census_record": {
+    "operative_quote": "Before the city may displace a person experiencing homelessness from a camp, the city must give at least fifteen (15) days' written notice to the person experiencing homelessness living in the camp",
+    "penalty_terms": "not stated (protective ordinance)",
+    "condition_terms": "15 days' written notice; offer of available transitional or permanent housing before closing a camp",
+    "motion_quote": "The motion to adopt Ordinance 21-06 received a roll call vote of Ayes: 4 (Flaherty, Piedmont-Smith, Rosenbarger, Volan), Nays: 4, Abstain: 0. FAILED",
+    "section": "LEGISLATION FOR SECOND READING AND RESOLUTIONS"
+   },
+   "sources": [
+    "https://bloomington.in.gov/onboard/meetingFiles/8496/download"
+   ],
+   "origin": "census",
+   "item_id": "hl-004"
   }
  ]
 }

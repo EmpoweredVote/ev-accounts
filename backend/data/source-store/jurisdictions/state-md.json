@@ -5,14 +5,14 @@
       "name": "mgaleg.maryland.gov",
       "url": "https://mgaleg.maryland.gov/",
       "status": "works",
-      "how": "curl download to raw/pdf/md1/ch128.pdf, text with pdftotext -layout, strikethrough verified by page images.",
+      "how": "curl download to raw/pdf/md1/ch128.pdf, text with pdftotext -layout, strikethrough verified by page images. Text is all capitals in the PDF; quoted here in sentence case for readability (wording unchanged).",
       "checked_at": "2026-10-19T19:24:17.419Z",
       "provenance": {
         "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
         "fetched_at": "2026-10-19T19:24:17.419Z",
         "method": "curl",
         "saved_copy": {
-          "path": "/Users/chrisandrews/Documents/GitHub/.planning/research/s3-pilot-equity-programs/stage1/raw/pdf/md1/ch128.pdf",
+          "path": "s3-pilot-equity-programs/stage1/raw/pdf/md1/ch128.pdf",
           "sha256": "fc7d877ac54461737f0e7480d6110ca98a3c946579ed731a17240970a6294ccf"
         }
       }

@@ -3,9 +3,7 @@
   "scope": "state:az",
   "title": "public rights-of-way; unlawful acts",
   "urls": [
-    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S",
-    "https://www.azleg.gov/legtext/56leg/1R/bills/SB1024S.pdf",
-    "https://apps.azleg.gov/api/Bill/?billNumber=SB1024&sessionId=127&legislativeBody=S"
+    "https://apps.azleg.gov/api/BillStatusFloorAction/?billStatusId=78071&billNumber=SB1024&billSessionId=127&legislativeBody=S"
   ],
   "version": "other",
   "operative_text": "A PERSON MAY NOT ERECT OR MAINTAIN IN A PUBLIC STREET, HIGHWAY, ALLEY, LANE, PARKWAY, SIDEWALK OR OTHER RIGHT-OF-WAY ... ANY FULL OR PARTIAL ENCLOSURE FOR HABITATION, INCLUDING A TENT, TARP, BOX OR SIMILAR OBJECT.",
@@ -88,6 +86,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

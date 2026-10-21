@@ -1,5 +1,29 @@
 [
  {
+  "pid": "6f39bc7a-2538-4f47-8219-3c992e0f3d40",
+  "ts": "2019-09-01",
+  "te": null,
+  "start_precision": "month",
+  "gov": null,
+  "title": "Council Member, District 21"
+ },
+ {
+  "pid": "a5832455-f2b6-4dae-9523-5bb0f84b1e41",
+  "ts": "2019-09-01",
+  "te": null,
+  "start_precision": "month",
+  "gov": null,
+  "title": "Council Member, District 26"
+ },
+ {
+  "pid": "e1385747-e3fb-4d30-aa7c-359faddadc0c",
+  "ts": "2025-12-17",
+  "te": null,
+  "start_precision": "day",
+  "gov": null,
+  "title": "Commissioner, District 3"
+ },
+ {
   "pid": "04ebd79f-3154-4c3a-8a81-eff516ca95bd",
   "ts": "2022-01-01",
   "te": null,
@@ -30,5 +54,21 @@
   "start_precision": "unknown",
   "gov": null,
   "title": "Council Member"
+ },
+ {
+  "pid": "91f6d45d-5e7e-48f6-aab1-9476d81946b5",
+  "ts": null,
+  "te": null,
+  "start_precision": "unknown",
+  "gov": null,
+  "title": "City Common Council - District 1"
+ },
+ {
+  "pid": "85741f19-1c12-43ad-8504-d615522725d7",
+  "ts": null,
+  "te": null,
+  "start_precision": "unknown",
+  "gov": null,
+  "title": "City Common Council - District 4"
  }
 ]

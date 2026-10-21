@@ -5,7 +5,8 @@
   "urls": [
     "https://www.palegis.us/senate/committees/roll-call-votes/vote-list/vote-summary?committeecode=3&rollcallid=354&sessYr=2025&sessInd=0",
     "https://www.palegis.us/senate/roll-calls/summary?sessYr=2025&sessInd=0&rcNum=144",
-    "https://www.palegis.us/senate/committees/roll-call-votes/vote-list/vote-summary?committeecode=15&rollcallid=232&sessYr=2025&sessInd=0"
+    "https://www.palegis.us/senate/committees/roll-call-votes/vote-list/vote-summary?committeecode=15&rollcallid=232&sessYr=2025&sessInd=0",
+    "https://www.palegis.us/senate/roll-calls/summary?sessYr=2025&sessInd=0&rcNum=143"
   ],
   "version": "other",
   "operative_text": "An unauthorized encampment is prohibited.",
@@ -113,6 +114,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }

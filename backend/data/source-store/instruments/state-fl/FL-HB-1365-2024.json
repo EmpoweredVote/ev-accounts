@@ -4,9 +4,7 @@
   "title": "Unauthorized Public Camping and Public Sleeping (creates s. 125.0231, F.S.)",
   "urls": [
     "https://www.flsenate.gov/Session/Bill/2024/1365/Vote/SenateVote_h01365e1045.PDF",
-    "https://www.flsenate.gov/Session/Bill/2024/1365/Vote/HouseVote_h01365e1762.PDF",
-    "https://www.flsenate.gov/Session/Bill/2024/1365",
-    "https://www.flsenate.gov/Session/Bill/2024/1365/BillText/er/PDF"
+    "https://www.flsenate.gov/Session/Bill/2024/1365/Vote/HouseVote_h01365e1762.PDF"
   ],
   "version": "other",
   "operative_text": "a county or municipality may not authorize or otherwise allow any person to regularly engage in public camping or sleeping on any public property, including, but not limited to, any public building or its grounds and any public right-of-way",
@@ -89,6 +87,6 @@
   "provenance": {
     "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
     "fetched_at": "2026-10-20T20:00:32.455Z",
-    "method": "webfetch"
+    "method": "unrecorded"
   }
 }
