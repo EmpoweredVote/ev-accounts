@@ -415,12 +415,29 @@ function parseRawRecord(rawRecord: string | object | null): FecRawRecord {
   }
 }
 
-function extractDonorType(rawRecord: string | object | null): string {
+export function extractDonorType(rawRecord: string | object | null): string {
   const rec = parseRawRecord(rawRecord);
   // Indiana CFA-4 data uses a simple 'type' field set at ingest time
   const simpleType = (rec.type as string | undefined)?.toLowerCase();
   if (simpleType === 'pac' || simpleType === 'corporate_direct') return 'pac';
   if (simpleType === 'direct' || simpleType === 'in_kind') return 'individual';
+  // State sources: same mapping as IS_INDIVIDUAL_SQL / IS_PAC_SQL. A typed row that is neither is a
+  // 'committee' (building icon), never a PAC.
+  const calEntity = rec['ENTITY_CD'] as string | undefined;
+  if (calEntity) {
+    if (calEntity === 'IND') return 'individual';
+    if (calEntity === 'SCC' || calEntity === 'PTY') return 'pac';
+    return 'committee';
+  }
+  const indianaType = rec['ContributorType'] as string | undefined;
+  if (indianaType) {
+    if (indianaType === 'Individual') return 'individual';
+    if (indianaType === 'Political Action Committee' || indianaType === 'Political Action') return 'pac';
+    return 'committee';
+  }
+  const ocpfType = rec['recordTypeDescription'] as string | undefined;
+  if (ocpfType === 'Individual') return 'individual';
+  if (ocpfType === 'Committee' || ocpfType === 'Union/Association') return 'committee';
   // FEC / Socrata / Netfile use entity_type. Classify consistently with the individual/PAC split
   // (see PAC_CASE_SQL): IND + CAN (candidate/self) are people; PAC + PTY are true PACs; other
   // committees/orgs (COM/CCM/ORG) are 'committee' (building icon) but NOT labeled a PAC — this
@@ -800,7 +817,8 @@ const PAC_LIST_LIMIT = 25;
 
 /**
  * getPacContributions returns the itemized "PACs & committees" list for a politician + cycle,
- * from contributions with entity_type IN ('PAC','PTY'). Real PACs + party committees only —
+ * from contributions matching IS_PAC_SQL (FEC entity_type PAC/PTY and the state equivalents). Real PACs +
+ * party committees only —
  * excludes self-funding, victory-fund/JFC transfers, and candidate-committee transfers that the
  * entity-based split misclassifies as PAC (see project_pac_classification). Returns null when the
  * politician has no PAC/party rows for the cycle. Scoped to the politician's confirmed sources so
@@ -817,7 +835,7 @@ async function getPacContributions(
      JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
      WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
        AND c.election_cycle = $2
-       AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')
+       AND ${IS_PAC_SQL}
        AND ${NOT_REFUND_SQL}`,
     [politicianId, cycle]
   );
@@ -827,14 +845,14 @@ async function getPacContributions(
 
   const listRes = await pool.query<{ name: string; entity_type: string; total: string; n: string }>(
     `SELECT ${DONOR_NAME_SQL} AS name,
-            MAX(c.raw_record->>'entity_type') AS entity_type,
+            MAX(COALESCE(c.raw_record->>'entity_type', c.raw_record->>'ENTITY_CD')) AS entity_type,
             SUM(c.amount) AS total,
             COUNT(*) AS n
      FROM transparent_motivations.contributions c
      JOIN transparent_motivations.politician_sources ps ON ps.id = c.politician_source_id
      WHERE ps.essentials_politician_id = $1 AND ${OWN_FUNDRAISING_SQL}
        AND c.election_cycle = $2
-       AND c.raw_record->>'entity_type' IN ('PAC', 'PTY')
+       AND ${IS_PAC_SQL}
        AND ${NOT_REFUND_SQL}
      GROUP BY ${DONOR_NAME_SQL}
      ORDER BY total DESC
@@ -846,7 +864,7 @@ async function getPacContributions(
     .filter((r) => r.name && r.name.trim() !== '')
     .map((r) => ({
       name: r.name,
-      entity_type: r.entity_type ?? 'PAC',
+      entity_type: r.entity_type === 'PTY' ? 'PTY' : 'PAC',
       total_amount: Number(r.total),
       contribution_count: Number(r.n),
     }));
@@ -877,13 +895,29 @@ async function getPacContributions(
 //
 // Both splits are GROSS (refund rows, amount < 0, left out), like total_raised: a returned contribution is reported in
 // total_refunded, never netted out of a bucket (CA_0255).
+//
+// State sources keep the donor type under their own raw keys, and each is read here:
+//   cal_access ENTITY_CD:         IND = individual; SCC (small contributor committee) + PTY = PAC.
+//                                 COM (any recipient committee — PACs AND other candidates' committees,
+//                                 which Cal-Access does not tell apart), OTH and RCP fall into neither.
+//   indiana ContributorType:      'Individual'; 'Political Action Committee' / 'Political Action' = PAC.
+//                                 Corporation, Labor Organization, Other Organization fall into neither.
+//   ocpf recordTypeDescription:   'Individual'. OCPF's 'Committee' is likewise not split, so neither.
+// la_socrata and la_county_netfile carry no donor-type field at all, so they stay in neither bucket.
+export const IS_INDIVIDUAL_SQL = `(c.raw_record->>'type' IN ('direct', 'in_kind')
+    OR c.raw_record->>'entity_type' LIKE 'IND%'
+    OR c.raw_record->>'ENTITY_CD' = 'IND'
+    OR c.raw_record->>'ContributorType' = 'Individual'
+    OR c.raw_record->>'recordTypeDescription' = 'Individual')`;
+export const IS_PAC_SQL = `(c.raw_record->>'type' IN ('pac', 'corporate_direct')
+    OR c.raw_record->>'entity_type' IN ('PAC', 'PTY')
+    OR c.raw_record->>'ENTITY_CD' IN ('SCC', 'PTY')
+    OR c.raw_record->>'ContributorType' IN ('Political Action Committee', 'Political Action'))`;
 const INDIVIDUAL_CASE_SQL = `CASE
-  WHEN c.amount >= 0 AND (c.raw_record->>'type' IN ('direct', 'in_kind')
-    OR c.raw_record->>'entity_type' LIKE 'IND%')
+  WHEN c.amount >= 0 AND ${IS_INDIVIDUAL_SQL}
   THEN c.amount ELSE 0 END`;
 const PAC_CASE_SQL = `CASE
-  WHEN c.amount >= 0 AND (c.raw_record->>'type' IN ('pac', 'corporate_direct')
-    OR c.raw_record->>'entity_type' IN ('PAC', 'PTY'))
+  WHEN c.amount >= 0 AND ${IS_PAC_SQL}
   THEN c.amount ELSE 0 END`;
 /**
  * Row predicate for every gross figure: sector rollup, top donors, the PAC list and contribution_count.
