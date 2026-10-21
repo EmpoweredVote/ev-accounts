@@ -2,9 +2,12 @@
 
 **Date:** 2026-10-21
 **Status:** proposed, awaiting review. Nothing here is built: no migration reserved or applied, no UI change.
-**Owner:** Chris Andrews (decision to show the spectrum). **Review needed:** Chris Cantrell — the seasons model
-(ADR 0005), per-season version binding (ADR 0006) and `guidance` (CC_0231) are his; §4 and §5 change how a
-revision row behaves under them.
+**Scope (Chris Andrews, 2026-10-21):** **store now, show later.** Build the columns, the backfill, the admin
+inputs and the prep-skill changes. Do **not** show the spectrum to voters yet; §5 records where it would go so the
+display is a small change when the team decides it is ready.
+**Owner:** Chris Andrews. **Review needed:** Chris Cantrell — the seasons model (ADR 0005), per-season version
+binding (ADR 0006) and `guidance` (CC_0231) are his; §2 changes how a revision row behaves under them, and §4/§5
+record what the later display would do to the open season.
 **Repo:** EV-Accounts (`master`), plus the compass frontend that renders the question and results.
 
 ---
@@ -23,10 +26,12 @@ L1 poles: require = "Schools must run equity programs"; ban = "Equity programs a
 The Stage 4 template (`.claude/skills/season-topic-prep/templates/stage4-revision.sql`) checks only that
 `rationale LIKE 'L1 poles: %'`.
 
-Chris Andrews now wants every topic's spectrum **named and listed on the site** (2026-10-21, during the
-voting-rights prep). The original L1 text in `2026-10-07-season3-design.md` §2 already said "the poles are shown
-to voters with the question"; the 2026-10-08 ruling deferred that only for lack of a column. This note plans the
-column, the backfill, the display and the prep-skill changes.
+During the voting-rights prep (2026-10-21) Chris Andrews asked for every topic's spectrum to be named explicitly,
+because it will be listed on the site. He then set the scope: **store it now, so it can be shown when the team is
+ready; do not show it yet.** The original L1 text in `2026-10-07-season3-design.md` §2 said "the poles are shown
+to voters with the question"; the 2026-10-08 ruling kept them internal, partly for lack of a column. This note
+adds the column (so "internal" becomes "stored in a real field" instead of "a line of prose"), the backfill and
+the prep-skill changes, and plans the display for later.
 
 Worked example (voting-rights, Stage 2, not yet applied):
 
@@ -173,27 +178,33 @@ content is a deference ladder under a bail title). L1 says those get a re-axis, 
 - **Closed Season 1.** Its 44 revisions are not touched. They stay unlabelled. When the season selector exists
   (Cantrell, 2026-10-08: "later, not S3"), a Season 1 view shows no spectrum line, and the UI must treat NULL as
   "do not render", never as an empty bar.
-- **Open Season 2 — 🔴 the one real interaction.** 47 of Season 3's 60 pins are the *same revision row* Season 2
-  serves (only 13 were re-pinned). Under ADR 0006 Option Y the open season serves the latest published revision of
-  its pinned version. So labelling a shared revision for Season 3 **also shows the label to Season 2 voters
-  immediately.** No answer moves and no pin moves — the change is additive text — but it is a visible change to
-  the open season. Two ways to handle it (**open decision D2**):
-  - **(a) Accept it.** Labels appear in Season 2 as each shared topic is labelled. Simple. Season 2 is being
-    retired, and a correct label helps its voters too.
-  - **(b) Gate the display by season.** The read path returns the labels always; the UI renders them only when
-    the served season's `number >= 3`. Keeps Season 2 as it opened. Costs one season field on the topics payload.
-  Writing labels through a new clarifying revision instead would not avoid this: a same-version revision is also
-  picked up by the open season (ADR 0006 §3).
-- **Draft Season 3.** The three approved pins get labels by write-once; they reach voters when the season opens
-  and the revisions publish, through the existing approved → published path.
+- **Open Season 2 — no visible change while labels are only stored.** 47 of Season 3's 60 pins are the *same
+  revision row* Season 2 serves (only 13 were re-pinned), so labelling those rows writes onto rows the open season
+  serves. While nothing renders the labels (this build), voters see no difference. The published labels are
+  readable through the same public read rule as the rest of a published revision, but the site does not show them.
+  🔴 **The day the display ships, this matters** (**decision D2, deferred to display time**): under ADR 0006
+  Option Y the open season serves the latest published revision of its pinned version, so any labelled shared
+  revision would appear in whatever season is open. Two ways to handle it then:
+  - **(a) Accept it** — labels appear in the open season as soon as the display ships.
+  - **(b) Gate the display by season** — the UI renders them only when the served season's `number` is at or
+    above the first season whose labels were reviewed for display. Costs one season field on the topics payload.
+  Writing labels through a new clarifying revision would not avoid this: a same-version revision is also picked up
+  by the open season (ADR 0006 §3).
+- **Draft Season 3.** The three approved pins get labels by write-once. They become publicly readable when the
+  revisions publish, through the existing approved → published path; they are shown only once the display ships.
 - **Answers and research.** No `politician_answers`, `politician_context` or `compass_responses` row is
   touched. The poles are not a new rung and cannot move a seat.
 
 ---
 
-## 5. Where the site shows it
+## 5. Where the site would show it — later, not in this build
 
-Principle: the spectrum line is one row of three short texts, pole 1 at the rung 1 side and pole 5 at the rung 5
+**Nothing in this section is built now.** It records where the spectrum would go and what the display must get
+right, so that showing it is a small, separate change once the team decides it is ready (decisions D2, D3, D8).
+The only part of this section that is built now is the **admin** input in §5.2, because labels have to be
+entered and reviewed somewhere.
+
+Principle for the later display: the spectrum line is one row of three short texts, pole 1 at the rung 1 side and pole 5 at the rung 5
 side, **same weight and same neutral colour on both ends** — no pillar colour, no red/blue, no arrow that implies
 a "good" end (antipartisan rule). Rendered only when all three labels are present.
 
@@ -230,9 +241,11 @@ home and is out of scope here.
 from the frozen `inform.compass_topics` columns, not the served revision. They would not see the labels without
 moving to `servedRevisionLateral`. That is an existing staleness, noted, not fixed here.
 
-### 5.2 Read path
+### 5.2 Read path (later) and admin (now)
 
-The labels reach the frontend through three explicit column lists, each of which silently drops a field it does
+**Read path — later.** In this build `/compass/topics` does not return the labels, so the public API's response
+shape does not change and no frontend can render them by accident. When the display ships, the labels reach the
+frontend through three explicit column lists, each of which silently drops a field it does
 not name (the `guidance` failure documented in `compassService.ts`):
 
 1. `servedRevisionLateral` SELECT — `backend/src/lib/seasonService.ts`.
@@ -244,14 +257,14 @@ All three must name the new columns, and the compass smoke suite must assert a l
 `compass_topics_promoted`, …) also name their columns; the served path above does not read text through them, so
 no view needs a `DROP`/`CREATE` for phase 1.
 
-**Admin.** `admin/src/pages/admin/ProposeRevisionPage.tsx` needs three inputs; the save goes through
+**Admin — now.** `admin/src/pages/admin/ProposeRevisionPage.tsx` needs three inputs; the save goes through
 `compassRevisionService.ts` to `inform.admin_propose_topic_revision` (CA_0015/CA_0016), which takes no such
 parameters. Two options: add three defaulted parameters to the RPC (re-emits a function Cantrell maintains), or
 have the service `UPDATE` the draft row right after propose, the way Stage 4 sets `guidance`. The second keeps
 the RPC untouched; recommended. `TopicRevisionReviewPage.tsx` field diffs should show the three fields so a
 reviewer sees an axis change. The legacy CompassV2 admin (`TopicEditor.jsx`, `CreateTopic.jsx`) is not extended.
 
-### 5.3 Relation to `guidance`
+### 5.3 Relation to `guidance` (later)
 
 `guidance` (CC_0231) is "editorial's one line on what this question asks you to tell apart", shown under the
 question to everyone. The axis label is close to that job. **Open decision D3:** keep both (axis = the named
@@ -269,7 +282,7 @@ The skill lives on branch `docs/season-topic-prep-skill-design` (`.claude/skills
 explicit block per draft:
 
 ```
-Spectrum (shown to voters):
+Spectrum (stored; written to be shown to voters later):
   Axis:   <≤ 90 chars, no party, no degree words>
   Pole 1: <≤ 60 chars, the rung 1 end>
   Pole 5: <≤ 60 chars, the rung 5 end>
@@ -285,9 +298,14 @@ line: "would a supporter of each pole accept its label as fair?"
   next to `guidance` (same `UPDATE … WHERE status = 'draft'`), before approve.
 - Post-verify gate: replace `v_rat NOT LIKE 'L1 poles: %'` with an exact match on the three columns.
 - The rationale's first line stays for one transition period (D5), then is dropped from the recipe.
-- `revision.md` lists the three fields; the header comment block's "L1 POLES (stored internally … not shown to
-  voters)" becomes "SPECTRUM (shown to voters with the question)".
-- RULINGS.md: record the change to L1 (shown, not internal) with its date.
+- `revision.md` lists the three fields; the header comment block's "L1 POLES (stored internally as the first line
+  of rationale, not shown to voters)" becomes "SPECTRUM (stored in axis_label/pole_1_label/pole_5_label; not
+  shown to voters yet)".
+- RULINGS.md: record the change to L1 (poles now stored in columns, with an axis; still not shown) with its date.
+
+Labels are written now **as if voters will read them**: plain words, fair to both ends, within the length caps.
+Writing them for internal use only and rewriting them at display time would double the work and re-open every
+topic.
 
 ---
 
@@ -296,24 +314,25 @@ line: "would a supporter of each pole accept its label as fair?"
 | # | Decision | Recommendation |
 |---|---|---|
 | D1 | Approve the three columns on the revision row, write-once after approval, inherit only within a version. | Yes. |
-| D2 | Season 2 shows labels on shared revisions as they are written (a), or only Season 3+ renders them (b). | (b) if Season 3 opens within weeks; (a) otherwise. Needs Cantrell's view. |
-| D3 | Axis line beside `guidance`, or replacing it where both exist. | Beside, for now. Needs Cantrell's view. |
+| D2 | *Deferred to display time.* When the display ships, the open season shows labels on shared revisions (a), or only reviewed seasons render them (b). | Decide with the display. Needs Cantrell's view. |
+| D3 | *Deferred to display time.* Axis line beside `guidance`, or replacing it where both exist. | Decide with the display. Needs Cantrell's view. |
 | D4 | Length caps: axis 90, pole 60 characters. | Yes; check against the 320 px layout before the migration. |
 | D5 | Keep writing the `L1 poles:` rationale line during transition, or stop at once. | Stop once Migration A is applied; the column is the source. |
 | D6 | Write the three missing axes for equity-programs, library-books, school-police. | Owed before Migration A. |
 | D7 | Who writes labels for the other 57 topics, and do topics that fail L1 leave Season 3 or stay unlabelled. | One labelling sheet, Andrews approves; failing topics stay unlabelled and queue for re-axis. |
-| D8 | Where the spectrum row appears (§5.1): question screen only, or also results and topic page. | Question screen and topic page first; results later. |
-| D9 | Record the change to the 2026-10-08 L1 ruling ("poles internal") in the ladder-evaluation worksheet. | Yes, with today's date. |
+| D8 | *Deferred to display time.* When and where the spectrum row appears (§5.1). | Decide when the labels for the open season's topics are written and reviewed. |
+| D9 | Record in the ladder-evaluation worksheet that the 2026-10-08 L1 ruling ("poles internal") now means "stored in columns, with an axis, not shown yet". | Yes, with today's date. |
 
 **For Chris Cantrell (review before build):** §2 adds three columns to the content-immutability trigger with a
-write-once exception and a same-version inheritance trigger (pattern of CC_0231); §4 D2 changes what the open
-season shows; §5.3 D3 touches `guidance`. ADR 0005 status is `accepted`, ADR 0006 `proposed`; neither text needs
-to change if D2 is (a) or (b) — the labels ride on the served revision as `guidance` does.
+write-once exception and a same-version inheritance trigger (pattern of CC_0231). Storing has no visible effect on
+any season. At display time, D2 decides what the open season shows and D3 touches `guidance`. ADR 0005 status is
+`accepted`, ADR 0006 `proposed`; neither text needs to change for the storage build.
 
 ---
 
 ## 8. Not in scope
 
-- Applying any migration, reserving a slot, or merging any UI change.
+- Applying any migration, reserving a slot, or merging any UI change (this note).
+- Showing the spectrum to voters anywhere, and returning it from `/compass/topics` (the storage build). §5 is the
+  plan for that later change.
 - Re-axing off-axis ladders (that is season-topic-prep work, per topic).
-- Showing poles on Essentials politician cards (see §5.1 for where they could go later).
