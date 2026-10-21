@@ -591,6 +591,24 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # Rides this job because it shares the trigger, not the database: it needs no
+      # secrets, it just asks the live proxy whether its upstream is answering.
+      # `if: ${{ !cancelled() }}` so a reachability failure cannot hide it.
+      #
+      # This exists because /api/essentials/voter-info degrades to an empty payload on
+      # ANY upstream failure, which made an outage indistinguishable from a quiet
+      # off-cycle week. Google answered 403 on every call for at least six days,
+      # a fortnight before a general election, and nothing reported it. It asserts the
+      # upstream is WILLING to answer, not that an election is live — `no_election`
+      # passes, only `unavailable` fails.
+      #
+      # ⚠ Expect this RED until the Google key is fixed. That is the point; the card is
+      # empty for every voter right now. It runs on master and the schedule, never on a
+      # PR, so it reports the breakage without blocking anyone's merge.
+      - name: Check the voter-info upstream is answering
+        if: ${{ !cancelled() }}
+        run: npm run check:voter-info
+
   child-county:
     name: child→county mapping
     runs-on: ubuntu-latest
