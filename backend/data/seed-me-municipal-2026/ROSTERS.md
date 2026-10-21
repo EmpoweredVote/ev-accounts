@@ -1,7 +1,13 @@
 # Maine municipalities — seating the flagged-vacant skeletons
 
-**Augusta is done (`CC_0282`). This file is the pattern for the other 16 cities.**
-Read it before touching any Maine municipal office.
+**Done: Augusta (`CC_0282`, 18) · Westbrook (`CC_0283`, 15). 15 cities and 104 offices left.**
+Read this before touching any Maine municipal office.
+
+| | total | flagged | unflagged |
+| --- | --- | --- | --- |
+| before Augusta | 433 | 194 | **239** |
+| after Augusta | 415 | 176 | **239** |
+| after Westbrook | 400 | 161 | **239** |
 
 ---
 
@@ -106,7 +112,33 @@ Record expiries here as a re-check schedule instead:
 
 ---
 
-## 🟢 R5. CHECK WHETHER THE CHAIR IS A REAL SEAT — IN AUGUSTA IT IS
+## 🔴🔴 R4b. A PUBLISHED DATE IS AN OCCUPANCY START **ONLY IF SOMETHING BROKE CONTINUITY BEFORE IT**
+
+Westbrook's City Clerk publishes a **Date Elected** and **Next Election** for all 15 seats
+(`/200/Elected-Officials`). It looks like the dating problem solved. **13 of the 15 are unusable.**
+
+The two columns are always exactly one term apart, so the table is a **TERM schedule**. A
+re-election never opens a new `office_terms` row, so for anyone re-elected "Date Elected" is their
+LATEST win and writing it publishes a false start.
+
+🟢 **The two that ARE usable are usable because the seat was demonstrably EMPTY the day before:**
+
+| Seat | Date | Why it is safe |
+| --- | --- | --- |
+| School At-Large (Allison Brunette) | 2025-10-29 `day` `appointed` | Brittany Barr resigned 2025-10-08; committee filled the vacancy |
+| School At-Large (Flynn Ross) | 2025-12-18 `day` `appointed` | seat vacant 2025-12-01, no qualified candidate on the ballot; committee filled it |
+
+A vacancy breaks continuity, so a new occupancy provably began on the fill date — true even if the
+appointee had sat on the committee before. ▶ **`how_started = 'appointed'`, not 'elected'.**
+
+▶ **ASK WHAT HAPPENED IMMEDIATELY BEFORE THE DATE, NOT HOW AUTHORITATIVE THE PAGE IS.**
+`CC_0283` gates this: exactly 2 dated seats, and every dated seat must be an appointment.
+⚠ Expect other Maine clerks to publish the same kind of table. It will look like free data
+every time.
+
+---
+
+## 🟢 R5. CHECK WHETHER THE CHAIR IS A REAL SEAT — IN AUGUSTA IT IS, IN WESTBROOK IT IS NOT
 
 The house rule says a **rotating role** (vice chair, mayor pro tem) is a parenthetical on a seat
 title and never its own office. Applied blindly it would have deleted Augusta's `School Board
@@ -116,8 +148,22 @@ Chair` office.
 expiry** and no ward or at-large label, alongside 4 ward + 4 at-large seats. Augusta elects its
 school board chair citywide.
 
-▶ **Check each city before applying the general rule.** A correct general rule can still do damage
-to a specific place.
+**Westbrook is the opposite, and also correct.** Its council President and Vice President are
+rotating roles — the city says *"The City Council President is elected by a majority of the City
+Council"* — so they are **not** offices, and our schema correctly has none. Jennifer Munro (Ward 5)
+is President and Michael Shaughnessy (At-Large) is Vice President; both are recorded here as
+parentheticals, not seats.
+
+▶ **Check each city before applying the general rule.** Two cities, opposite answers, both from
+reading the city's own words. A correct general rule can still do damage to a specific place.
+
+### 🔴 R5b. And check whether the Mayor sits ON the council
+
+Augusta: *"nine elected citizens, **including the Mayor**"* → 9 council offices.
+Westbrook: *"**seven** elected members, one from each of the five wards, plus two at-large"*, with
+the Mayor separate → 8 offices (7 + Mayor).
+Our schema was already right in both. **It still needed checking**, and the office count is the
+cheapest place to catch a city whose structure you have assumed.
 
 ---
 
@@ -145,16 +191,21 @@ cities will disagree with each other.
 
 ## The queue — 16 cities, 120 offices
 
+⚠ **An elected office we do not model:** Westbrook elects a `Portland Water District Rep.`
+(Malory Shaughnessy) and we hold no office for it. Creating one means modelling a regional water
+district spanning several municipalities — out of scope for a seating migration. Expect other
+Maine cities to elect similar regional seats, and do not invent an office to hold them.
+
 | City | offices | | City | offices |
 | --- | --- | --- | --- | --- |
-| Westbrook | 15 | | Presque Isle | 7 |
 | Bath | 9 | | Old Town | 7 |
+| Gardiner | 8 | | Presque Isle | 7 |
+| Hallowell | 8 | | Sanford | 7 |
 | Saco | 8 | | Belfast | 6 |
-| Gardiner | 8 | | Brewer | 5 |
-| Waterville | 8 | | Eastport | 5 |
-| Hallowell | 8 | | Rockland | 5 |
-| Calais | 7 | | Ellsworth | 7 |
-| Sanford | 7 | | Caribou | 7 |
+| Waterville | 8 | | Brewer | 5 |
+| Calais | 7 | | Eastport | 5 |
+| Caribou | 7 | | Rockland | 5 |
+| Ellsworth | 7 | | **total** | **104** |
 
 **Two singletons are NOT part of this pattern and need their own look:**
 * `State of Maine` — 1 flagged seat, a **Tribal Representative**. Maine seats three non-voting
