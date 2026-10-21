@@ -1,7 +1,7 @@
 # Season topic prep skill — design
 
 **Date:** 2026-10-20
-**Status:** proposed, awaiting Chris Andrews' approval
+**Status:** approved 2026-10-20 (Chris Andrews); built in EmpoweredVote/ev-accounts#1070
 **Owner:** Chris Andrews (topic owner, operator namespace `CA_`)
 **Repo:** EV-Accounts. The skill lives at `.claude/skills/season-topic-prep/` (my call: shared with the team and
 versioned, unlike the user-level `/standup` skill).
