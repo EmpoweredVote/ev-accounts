@@ -6,7 +6,7 @@ Large saved copies (PDFs, page captures) are not committed. They stay in the run
 
 ## Layout
 
-- `instruments/<scope-dir>/<instrument-id>.json` — one bill, ordinance, policy or resolution. Official URL(s), version (as-filed, enrolled, adopted, other), operative text, single-subject verdict per served topic list (with season and codebook version), higher-law duty note, and every vote: date, body, motion, kind (action-item, consent, en-bloc, roll-call), tally, and per-member yea/nay/absent/abstain with politician ids where matched. A vote may carry a `note` for a caveat such as an inferred count.
+- `instruments/<scope-dir>/<instrument-id>.json` — one bill, ordinance, policy or resolution. Official URL(s), version (as-filed, enrolled, adopted, other), operative text, single-subject verdict per served topic list (with season and codebook version), higher-law duty note, and every vote: date, body, motion, kind (action-item, consent, en-bloc, roll-call), tally, and per-member yea/nay/absent/abstain/recused with politician ids where matched. A vote may carry a `note` for a caveat such as an inferred count.
 - `people/<politician-id>.json` — sources found for one person (own words and records), the topic keys each covers, whether each was useful, and term dates found with their precision.
 - `jurisdictions/<scope-dir>.json` — portals and how to fetch them (works, blocked, needs-browser), roster and session-list sources, and standing higher-law duties per topic.
 - `dead-ends.jsonl` — one JSON object per line: what was searched and found nothing, or was blocked, with date and who searched.
@@ -14,8 +14,8 @@ Large saved copies (PDFs, page captures) are not committed. They stay in the run
 ## Ids
 
 - Politician ids are the politician UUIDs.
-- Jurisdiction scopes use the steward form: `federal`, `state:wa`, `county:53033`, `place:5363000`. The directory name replaces `:` with `-` (`state-wa`).
-- School districts use `place:<7-digit district geoid>` (the geoid `essentials.districts` holds for the district, e.g. `place:5103840` Virginia Beach City Public Schools). Consolidated city-counties use the geoid essentials stores (Nashville is `county:47037`).
+- Jurisdiction scopes use the steward form: `federal`, `state:wa`, `county:53033`, `place:5363000`, plus `school:<7-digit geoid>` for a school district. The directory name replaces `:` with `-` (`state-wa`, `school-5103840`).
+- School districts use `school:<7-digit district geoid>`: the geoid `essentials.districts` holds for the school district row (state FIPS + 5-digit district code), e.g. `school:5103840` Virginia Beach City Public Schools, `school:1800630` Monroe County Community School Corporation. A district is not a place, so it never uses `place:`. Consolidated city-counties use the geoid essentials stores (Nashville is `county:47037`).
 - Instrument ids are jurisdiction prefix, instrument, year: `WA-ESSB-5044-2021`.
 
 ## Provenance

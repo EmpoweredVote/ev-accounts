@@ -33,9 +33,16 @@ describe('schemas', () => {
   });
   it('rejects a bad scope', () => {
     for (const s of ['WA', 'state:WA']) expect(InstrumentSchema.safeParse(inst({ scope: s })).success).toBe(false);
-    for (const s of ['state:wa', 'county:53033', 'place:5363000', 'federal']) {
+    for (const s of ['state:wa', 'county:53033', 'place:5363000', 'school:5103840', 'federal']) {
       expect(InstrumentSchema.safeParse(inst({ scope: s })).success).toBe(true);
     }
+    for (const s of ['school:510384', 'school:51038400', 'school:va']) expect(InstrumentSchema.safeParse(inst({ scope: s })).success).toBe(false);
+  });
+  it('accepts recused as a member vote', () => {
+    const vote = { date: '2026-01-01', body: 'b', motion: 'm', kind: 'action-item', yes: 4, no: 0,
+      members: [{ name: 'A', vote: 'recused' }, { name: 'B', vote: 'yea' }] };
+    expect(InstrumentSchema.safeParse(inst({ votes: [vote] as any })).success).toBe(true);
+    expect(InstrumentSchema.safeParse(inst({ votes: [{ ...vote, members: [{ name: 'A', vote: 'present' }] }] as any })).success).toBe(false);
   });
   it('checks instrument id format', () => {
     expect(InstrumentSchema.safeParse(inst({ id: 'WA-ESSB-5044-2021' })).success).toBe(true);
@@ -61,6 +68,8 @@ describe('paths', () => {
     const p = storePaths(root);
     expect(p.instrument('state:wa', 'WA-ESSB-5044-2021')).toBe(join(root, 'instruments', 'state-wa', 'WA-ESSB-5044-2021.json'));
     expect(p.instrument('federal', 'US-HR-1-2021')).toContain(join('instruments', 'federal'));
+    expect(p.instrument('school:5103840', 'VA-VBCPS-0408-12-2025')).toBe(join(root, 'instruments', 'school-5103840', 'VA-VBCPS-0408-12-2025.json'));
+    expect(p.jurisdiction('school:1800630')).toBe(join(root, 'jurisdictions', 'school-1800630.json'));
   });
 });
 

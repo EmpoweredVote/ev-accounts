@@ -14,9 +14,8 @@
  * `method` from the file if recorded (access note naming curl or a browser), else "webfetch".
  * Saved copies found in the pilot's raw/ folder become `saved_copy` (absolute path + SHA-256).
  *
- * School-district scopes: the store only knows `place:<7-digit geoid>`. School districts are
- * 7 digits too (state FIPS + 5-digit district code), so a district is written as `place:<geoid>`
- * using the geoid essentials.districts holds for it. This is a convention, noted in the README.
+ * School-district scopes: a district is written as `school:<7-digit geoid>`, using the geoid
+ * essentials.districts holds for the SCHOOL district row (state FIPS + 5-digit district code).
  */
 import { createHash } from 'node:crypto';
 import { existsSync, readFileSync, statSync } from 'node:fs';
@@ -156,12 +155,13 @@ export function parseTally(s: unknown): { yes: number; no: number } | undefined 
   return undefined;
 }
 
-const voteKind = (act: string): 'yea' | 'nay' | 'abstain' | 'absent' | undefined => {
+const voteKind = (act: string): 'yea' | 'nay' | 'abstain' | 'absent' | 'recused' | undefined => {
   const a = act.toLowerCase();
   if (a === 'yes' || a === 'yea') return 'yea';
   if (a === 'no' || a === 'nay') return 'nay';
   if (a === 'abstain') return 'abstain';
   if (a === 'absent') return 'absent';
+  if (a === 'recused') return 'recused';
   return undefined;
 };
 
@@ -245,7 +245,7 @@ function splitStateInstruments(list: any[]): any[] {
 
 const BOARD_SHORT: Record<string, string> = { VB: 'VBCPS', MCCSC: 'MCCSC' };
 /** Districts resolved with a read-only query of essentials.districts (geo_id of the SCHOOL district row). */
-const BOARD_SCOPE: Record<string, string> = { VB: 'place:5103840', MCCSC: 'place:1800630' };
+const BOARD_SCOPE: Record<string, string> = { VB: 'school:5103840', MCCSC: 'school:1800630' };
 
 const equityStage1: PilotAdapter = {
   name: 'equity-stage1',

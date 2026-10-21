@@ -86,10 +86,12 @@ describe('equity stage 1 + supplement', () => {
     const ids = out.instruments.map((i) => i.id).sort();
     expect(ids).toEqual(['IN-MCCSC-5518-2023', 'VA-HB-1904-2021', 'VA-SB-1196-2021', 'VA-VBCPS-0408-15F-2025', 'WA-ESSB-5044-2021']);
     const vb = out.instruments.find((i) => i.id === 'VA-VBCPS-0408-15F-2025')!;
-    expect(vb.scope).toBe('place:5103840');
+    expect(vb.scope).toBe('school:5103840');
     expect(vb.votes[0]).toMatchObject({ yes: 6, no: 3, kind: 'action-item' });
     expect(vb.votes[0].members.some((m) => m.vote === 'absent')).toBe(true);
     const mccsc = out.instruments.find((i) => i.id === 'IN-MCCSC-5518-2023')!;
+    expect(mccsc.scope).toBe('school:1800630');
+    expect(out.jurisdictions.map((j) => j.scope)).toEqual(expect.arrayContaining(['school:5103840', 'school:1800630']));
     expect(mccsc.votes[0]).toMatchObject({ yes: 7, no: 0 });
     // two of the seven voters are not in the database: name only
     expect(mccsc.votes[0].members.filter((m) => !m.politician_id)).toHaveLength(2);

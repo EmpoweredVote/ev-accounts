@@ -15,8 +15,12 @@ import { z } from 'zod';
 
 // ---------- shared pieces ----------
 
-/** Steward scope form: `federal`, `state:wa`, `county:53033`, `place:5363000`. */
-export const ScopeSchema = z.string().regex(/^(federal|state:[a-z]{2}|county:\d{5}|place:\d{7})$/, 'bad scope');
+/**
+ * Steward scope form: `federal`, `state:wa`, `county:53033`, `place:5363000`, plus `school:5103840` for a
+ * school district (the 7-digit district geoid essentials.districts holds: state FIPS + 5-digit district
+ * code). A district is not a place, and its geoid can equal a real place's, so it has its own prefix.
+ */
+export const ScopeSchema = z.string().regex(/^(federal|state:[a-z]{2}|county:\d{5}|place:\d{7}|school:\d{7})$/, 'bad scope');
 
 /** Jurisdiction prefix, instrument, year: `WA-ESSB-5044-2021`. */
 export const InstrumentIdSchema = z
@@ -48,7 +52,7 @@ export const VoteSchema = z.object({
     z.object({
       name: z.string(),
       politician_id: z.string().optional(),
-      vote: z.enum(['yea', 'nay', 'absent', 'abstain']),
+      vote: z.enum(['yea', 'nay', 'absent', 'abstain', 'recused']),
     }),
   ),
 });
@@ -136,7 +140,7 @@ export type DeadEnd = z.infer<typeof DeadEndSchema>;
 
 // ---------- paths ----------
 
-/** `state:wa` → `state-wa`; `federal` stays `federal`. */
+/** `state:wa` → `state-wa`, `school:5103840` → `school-5103840`; `federal` stays `federal`. */
 export function scopeDir(scope: string): string {
   return scope.replace(/:/g, '-');
 }

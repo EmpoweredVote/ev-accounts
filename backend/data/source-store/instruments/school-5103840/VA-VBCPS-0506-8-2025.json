@@ -1,12 +1,12 @@
 {
-  "id": "VA-VBCPS-0513-15D-2025",
-  "scope": "place:5103840",
-  "title": "Tie vote procedure pursuant to Code of Virginia § 22.1-75 – Motion from May 6, 2025 Special Meeting",
+  "id": "VA-VBCPS-0506-8-2025",
+  "scope": "school:5103840",
+  "title": "Vote on the Motion to amend previous vote (pause parts of the 2025-04-08 resolution)",
   "urls": [
-    "https://resources.finalsite.net/images/v1748865420/vbschoolscom/cqiba6hm62qxjdrwthtb/051325M.pdf"
+    "https://resources.finalsite.net/images/v1748865421/vbschoolscom/kpnzsh92yd5jotewrbgb/050625M.pdf"
   ],
   "version": "other",
-  "operative_text": "D. Tie vote procedure pursuant to Code of Virginia § 22.1-75 – Motion from May 6, 2025 Special Meeting:\n Chair Brown called for a motion to amend the previous vote, namely, to amend the April 8, 2025 School\n Board Resolution to comply with legal obligations in exchange for receiving federal financial assistance to\n pause the below listed portions of the April 8th Resolution until the federal courts have ruled whether\n Executive Order #14190 can be enforced:\n a. Resolution Sections 1, 3, 4, 5 and 6.\n b. Resolution Section 2 the second sentence regarding suspension of all educational programs offerings\n that do not comply with the above federal guidance, including but not limited to: the Equity Plan, the\n Equity Dashboard, and any educational program offerings that would not comply.",
+  "operative_text": "8. Vote on the Motion to amend previous vote: Chair Brown called for a motion to amend previous vote, namely,\n to amend the April 8, 2025 School Board Resolution To comply with legal obligations in exchange for receiving\n federal financial assistance to pause the below listed portions of the April 8th Resolution until the federal courts\n have ruled whether Executive Order #14190 can be enforced:\n A. Resolution Sections 1, 3, 4, 5 and 6.\n B. Resolution Section 2 the second sentence regarding suspension of all educational programs offerings\n that do not comply with the above federal guidance, including but not limited to: the Equity Plan, the\n Equity Dashboard, and any educational program offerings that would not comply.",
   "single_subject": [
     {
       "season": 3,
@@ -18,12 +18,13 @@
   ],
   "votes": [
     {
-      "date": "2025-05-13",
+      "date": "2025-05-06",
       "body": "Virginia Beach City Public Schools",
-      "motion": "Tie vote procedure pursuant to Code of Virginia § 22.1-75 – Motion from May 6, 2025 Special Meeting",
+      "motion": "Vote on the Motion to amend previous vote (pause parts of the 2025-04-08 resolution)",
       "kind": "action-item",
       "yes": 5,
-      "no": 6,
+      "no": 5,
+      "absent": 1,
       "members": [
         {
           "name": "Matt Cummings",
@@ -36,13 +37,13 @@
           "vote": "yea"
         },
         {
-          "name": "Kimberly A. Melnyk",
-          "politician_id": "853c008a-d5bd-5700-8728-bb8f35b73921",
+          "name": "Alveta J. Green",
+          "politician_id": "31702c5f-ed24-52f2-9746-f4b13331aa03",
           "vote": "yea"
         },
         {
-          "name": "Alveta J. Green",
-          "politician_id": "31702c5f-ed24-52f2-9746-f4b13331aa03",
+          "name": "Kimberly A. Melnyk",
+          "politician_id": "853c008a-d5bd-5700-8728-bb8f35b73921",
           "vote": "yea"
         },
         {
@@ -71,14 +72,14 @@
           "vote": "nay"
         },
         {
-          "name": "David Culpepper",
-          "politician_id": "bc799057-7962-565a-b924-862385fdd535",
-          "vote": "nay"
-        },
-        {
           "name": "Rose Dwyer",
           "politician_id": "d3fd9c85-f1e7-551c-a43b-51b2d840c4e0",
           "vote": "nay"
+        },
+        {
+          "name": "David Culpepper",
+          "politician_id": "bc799057-7962-565a-b924-862385fdd535",
+          "vote": "absent"
         }
       ]
     }
@@ -88,8 +89,8 @@
     "fetched_at": "2026-10-19T19:24:17.418Z",
     "method": "curl",
     "saved_copy": {
-      "path": "s3-pilot-equity-programs/stage1/raw/vb/051325M.pdf",
-      "sha256": "fb9070f81de97d76a05078ffa3bb7730c58cb4232f72a07296a2f706757f1110"
+      "path": "s3-pilot-equity-programs/stage1/raw/vb/050625M.pdf",
+      "sha256": "08fa4b8620325a36fd7c1976ac15db47fedd8c7a9e6443e70514e2e84d162c8c"
     }
   }
 }
