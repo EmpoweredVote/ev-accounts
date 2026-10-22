@@ -30,21 +30,39 @@ count and be perfectly sound.
 
 ---
 
-## THE THREE BUCKETS, AND THEY ARE DIFFERENT KINDS OF WORK
+## THE BUCKETS — AND `rung_map` DECIDES THEM, NOT THE REVISION ID
 
-What matters is whether Season 2 still asks the same question with the same rungs. `season_questions`
-pins a `topic_revision_id` per season, so this is decidable rather than a judgement call.
+🔴 **CORRECTED. The first cut of this document bucketed on "did `topic_revision_id` change" and
+concluded 16,379 rows need re-reading. That is wrong, and wrong in the expensive direction.**
+`compass_topic_revisions.rung_map` exists precisely to state how an old rung corresponds to a new
+one, and for all but three topics it is the identity map — including topics whose `change_class` is
+`substantive`. A revision bump is not evidence that the rungs moved; `rung_map` is.
 
 | bucket | pairs | what porting one costs |
 |---|---|---|
-| **Ladder REVISED in Season 2** | **16,379** | RE-READ. The rungs changed, so the stored value may not mean what the current question says. This is the audit's natural target. |
-| **Ladder unchanged** | **12,134** | RE-PIN. Same question, same rungs — the existing evidence supports the same chair, and the chair-evidence gate applies unchanged. |
-| **Topic ABSENT from Season 2** | **1,677** | NEITHER. There is no Season 2 question to answer. |
+| Same revision | 12,134 | **DIRECT PORT.** Same question, same rungs. |
+| Revised, `rung_map` IDENTITY | **16,140** | **DIRECT PORT.** The revision asserts rung N means rung N. |
+| **→ directly portable** | **28,274** | |
+| Revised, rung **REMAPPED** | 211 | Apply the map, then sanity-check. Affordable Housing, Bail and Pretrial Decisions, Same-Sex Marriage. |
+| Revised, rung **INVALIDATED** | 28 | **RE-READ — there is no target rung.** All Same-Sex Marriage at old rung 3. |
+| Topic ABSENT from Season 2 | 1,677 | NEITHER. No Season 2 question exists. |
 
-🔑 **The 16,379 are the quiet version of the problem migrations 1926/1928/1931 chased through 165
-rows.** Those passes withdrew chairs whose evidence proved the side but not the rung. These rows have
-a subtler defect: the evidence may be fine, but it was weighed against a ladder the live season has
-since replaced, so the rung a voter reads may not be the rung the current question defines.
+**The genuine re-read queue is 239 rows, not 16,379.** The two non-identity maps are:
+
+```
+Affordable Housing  rev 3   {1→1, 2→3, 3→4, 4→5, 5→5}
+Same-Sex Marriage   rev 2   {1→2, 2→3, 3→INVALIDATED, 4→4, 5→5}
+```
+
+🔑 **The 28 invalidated rows are the interesting ones.** Same-Sex Marriage rung 3 has no Season 2
+equivalent — the revision deleted that position rather than moving it. Those 28 people hold a stance
+the live question no longer offers, and they cannot be ported at all. Note the resonance with
+migration 1925, which blanked 53 Same-Sex Marriage chairs for a different reason: this topic's
+ladder has been the most unstable in the corpus.
+
+⚠ What this bucketing does NOT establish is that a direct port is *warranted* — only that the rung
+survives translation. Whether the row's evidence seats that rung is the separate test below, and it
+is the one that actually gates a write.
 
 ### ⚠ The 1,677 absent rows are the known `immigration` orphan, measured independently
 
@@ -59,10 +77,14 @@ topic decisions, not to a porting pass.
 
 ## RETIREMENT DOES NOT SHRINK THIS
 
-| bucket | total | on an ACTIVE person | on a SEATED officeholder | on a retired row |
+Split by whether the topic's `topic_revision_id` moved, which is the cut this table was built on
+before `rung_map` was taken into account. The reachability conclusion is unaffected by that
+correction — the rows are the same rows either way.
+
+| bucket (by revision id) | total | on an ACTIVE person | on a SEATED officeholder | on a retired row |
 |---|---|---|---|---|
-| ladder REVISED | 16,379 | 16,266 | 13,808 | 113 |
-| ladder unchanged | 12,134 | 12,048 | 9,950 | 86 |
+| revision changed | 16,379 | 16,266 | 13,808 | 113 |
+| same revision | 12,134 | 12,048 | 9,950 | 86 |
 | absent from S2 | 1,677 | 1,666 | 1,290 | 11 |
 
 **29,980 of 30,190 sit on active people and 25,048 on sitting officeholders.** Only 210 are on
@@ -72,7 +94,7 @@ retired rows. The exposure is live.
 
 ## PER TOPIC
 
-### Ladder revised — the re-read queue (16,379)
+### Revised but directly portable — rung_map is the identity (16,140)
 
 | topic | pairs | | topic | pairs |
 |---|---|---|---|---|
@@ -94,7 +116,7 @@ retired rows. The exposure is live.
 | | | | Police Accountability | 12 |
 | | | | Bail and Pretrial Decisions | 6 |
 
-### Ladder unchanged — the port queue (12,134)
+### Same revision — directly portable (12,134)
 
 | topic | pairs | | topic | pairs |
 |---|---|---|---|---|
@@ -107,7 +129,7 @@ retired rows. The exposure is live.
 | State Redistricting and Gerrymandering | 662 | | | |
 | United States Tariff Policy | 661 | | | |
 
-🔑 **Four topics carry 57% of the port queue** — Taxation, Reproductive Rights, Healthcare Access and
+🔑 **Four topics carry 57% of the SAME-REVISION slice** — Taxation, Reproductive Rights, Healthcare Access and Fossil Fuel Policy total 6,910 of 12,134. Scoping a port pass to one topic is tractable where "port Season 1" is not.
 Fossil Fuel Policy total 6,910 of 12,134. A port pass scoped to one unchanged-ladder topic is a
 tractable unit of work in a way "port Season 1" is not.
 
@@ -130,9 +152,8 @@ all three were sourced to ontheissues.org with no instrument named — they woul
 
 This is a measurement. What to do with 30,190 rows belongs to the operator. The obvious shapes:
 
-- **Port queue first, by topic.** 12,134 rows where the question did not change, gated on evidence.
-- **Re-read queue by topic.** 16,379 rows where the ladder moved; highest value where the revision
-  changed the rungs most.
+- **Port queue first, by topic.** 28,274 rows port directly by rung_map, gated on evidence.
+- **The 239 that cannot be ported mechanically** — 211 remapped, 28 invalidated. Small enough to read by hand, and the 28 need a real decision.
 - **The 1,677 immigration rows** are a Season 3 topic decision, not a porting problem.
 
 ---
@@ -166,7 +187,28 @@ SELECT CASE WHEN sq.topic_revision_id IS NULL                        THEN 'ABSEN
  GROUP BY status;
 ```
 
-⚠ **A trap that produced wrong numbers on the first attempt.** Computing "does a Season 2 row exist"
+To bucket by what actually matters, join the Season 2 revision and read its `rung_map`:
+
+```sql
+  CASE WHEN sq.topic_revision_id IS NULL                      THEN 'ABSENT from S2'
+       WHEN sq.topic_revision_id = only1.topic_revision_id    THEN 'same revision (direct port)'
+       WHEN tr.rung_map = '{"1":1,"2":2,"3":3,"4":4,"5":5}'::jsonb
+                                                              THEN 'revised, identity (direct port)'
+       WHEN tr.rung_map -> (only1.value::int)::text = '"invalidated"'::jsonb
+                                                              THEN 'revised, rung INVALIDATED'
+       ELSE 'revised, rung REMAPPED' END
+  ...
+  LEFT JOIN inform.compass_topic_revisions tr ON tr.id = sq.topic_revision_id
+```
+
+🔴 **THE TRAP THAT MADE THE FIRST VERSION OF THIS DOCUMENT WRONG: a revision bump is not a ladder
+change.** Bucketing on `topic_revision_id <> topic_revision_id` put 16,379 rows in a "needs
+re-reading" queue. `rung_map` says 16,140 of them map rung-for-rung and port directly. The real
+queue is 239. `change_class = 'substantive'` does not imply the rungs moved either — most
+substantive revisions here carry the identity map. **Read `rung_map`; do not infer from the
+revision id or the change class.**
+
+⚠ **A second trap, in the shadowing test itself.** Computing "does a Season 2 row exist"
 with a window function over a result set already filtered to Season 1 makes the answer always zero,
 so every row reads as unshadowed and the bucket totals come out against 33,008 rows instead of
 30,190. The Season 2 presence test must be a separate scan, as above. The first cut of this
