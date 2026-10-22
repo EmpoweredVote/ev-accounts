@@ -21,6 +21,7 @@ describe('storyName', () => {
 });
 
 describe('statusLabel', () => {
+  it('stage 5 prints as Stage: 5', () => expect(formatUpdate({ ...base, stage: '5' })).toMatch(/^Stage: 5$/m));
   it('done is Done', () => expect(statusLabel({ ...base, stage: 'done' })).toBe('Done'));
   it('a blocker is Blocked', () => expect(statusLabel({ ...base, blockedOn: 'ruling' })).toBe('Blocked'));
   it('parked is Blocked', () => expect(statusLabel({ ...base, stage: 'parked' })).toBe('Blocked'));

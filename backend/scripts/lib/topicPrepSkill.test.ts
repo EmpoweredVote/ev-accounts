@@ -50,21 +50,37 @@ describe('season-topic-prep SKILL.md', () => {
   it('every npm script SKILL.md names exists in backend/package.json', () => {
     const md = read('SKILL.md');
     const scripts = JSON.parse(readFileSync(join(backendDir, 'package.json'), 'utf8')).scripts as Record<string, string>;
-    const names = [...new Set([...md.matchAll(/npm run ([a-z:-]+)/g)].map((m) => m[1]))];
+    const names = [...new Set([...md.matchAll(/npm run ([a-z0-9:-]+)/g)].map((m) => m[1]))];
     expect(names.length).toBeGreaterThan(0);
     for (const n of names) expect(scripts[n], `npm script ${n}`).toBeDefined();
   });
 });
 
+describe('season-topic-prep Stage 5', () => {
+  it('SKILL.md links STAGE5.md and names Stage 5 in its triggers', () => {
+    const md = read('SKILL.md');
+    expect(md).toMatch(/\]\(STAGE5\.md\)/);
+    expect(md.match(/^description: (.+)$/m)![1]).toMatch(/Stage 5/);
+  });
+
+  it('STAGE5.md names every Stage 5 command and the ruled early-check bar', () => {
+    const md = read('STAGE5.md');
+    for (const n of ['topic:stage5-roster', 'topic:stage5-prefill', 'topic:stage5-find', 'topic:stage5-report']) expect(md).toContain(`npm run ${n}`);
+    expect(md).toMatch(/1 in 5/);
+    expect(md).toMatch(/1 in 10/);
+  });
+});
+
 describe('season-topic-prep companion files', () => {
   const files = ['SKILL.md', 'STAGE4-RECIPE.md', 'SOURCE-STORE.md', 'ADVERSARIAL-CHECK.md', 'RULINGS.md',
-    'templates/drafter-prompt.md', 'templates/BRIEF-census-local.md', 'templates/BRIEF-census-state.md', 'templates/BRIEF-stage1.md'];
+    'templates/drafter-prompt.md', 'templates/BRIEF-census-local.md', 'templates/BRIEF-census-state.md', 'templates/BRIEF-stage1.md',
+    'STAGE5.md', 'templates/BRIEF-stage5-find.md', 'templates/stage5-coder-prompt.md', 'templates/stage5-theme-prompt.md'];
 
   it('every npm script any of them names exists, and every link resolves', () => {
     const scripts = JSON.parse(readFileSync(join(backendDir, 'package.json'), 'utf8')).scripts as Record<string, string>;
     for (const f of files) {
       const md = read(f);
-      for (const m of md.matchAll(/npm run ([a-z:-]+)/g)) expect(scripts[m[1]], `${f}: npm script ${m[1]}`).toBeDefined();
+      for (const m of md.matchAll(/npm run ([a-z0-9:-]+)/g)) expect(scripts[m[1]], `${f}: npm script ${m[1]}`).toBeDefined();
       const base = dirname(join(skillDir, f));
       for (const m of md.matchAll(/\]\(([^)\s]+)\)/g)) {
         if (/^(https?:|mailto:|#)/.test(m[1])) continue;
