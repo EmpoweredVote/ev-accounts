@@ -27,4 +27,13 @@ describe('lintRungs', () => {
     expect(hits.every((h) => h.check === 'every/any/all')).toBe(true);
     expect(hits.map((h) => h.rung)).toEqual([3, 4, 5]);
   });
+
+  it('catches compound clauses joined by a comma or "but", not a list item', () => {
+    const hits = lintRungs([
+      'Require no identification at the polls, verifying voters by signature match',
+      'Require photo ID, but let voters with no ID cast a regular ballot after signing a statement',
+      'Eliminate equity programs, training, and staff from the district',
+    ]);
+    expect(summary(hits)).toEqual(['1:comma clause', '2:but', '3:and']);
+  });
 });

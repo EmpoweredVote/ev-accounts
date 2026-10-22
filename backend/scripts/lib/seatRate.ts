@@ -11,12 +11,19 @@
  */
 import { levelForDistrict, type Level } from '../../src/lib/topicApplicability.js';
 
-export type BlankClass = 'source-gap' | 'gate' | 'wording' | 'no-lever';
+/**
+ * Why a blank is blank. `off-question`: the person's real record (or own words) is on a question this
+ * ladder no longer asks, so neither more collection nor a rung change on this question seats it; many such
+ * rows are a question-scope matter for the runner. `nay-only`: the only on-question record is a No vote
+ * (or a pause or keep vote no rung states), which shows a side for ever (codebook V4.1), so it is not a
+ * wording loss. Both are filled by hand: no stored blank reason maps to them.
+ */
+export type BlankClass = 'source-gap' | 'gate' | 'wording' | 'no-lever' | 'off-question' | 'nay-only';
 export type RecordKind = 'vote-yes' | 'vote-no' | 'sponsor' | 'author' | 'own-words' | 'none';
 type Query = (sql: string, params?: unknown[]) => Promise<{ rows: any[] }>;
 
 export const LEVELS: Level[] = ['federal', 'state', 'local', 'judicial', 'school'];
-const BLANK_CLASSES: BlankClass[] = ['source-gap', 'gate', 'wording', 'no-lever'];
+export const BLANK_CLASSES: BlankClass[] = ['source-gap', 'gate', 'wording', 'no-lever', 'off-question', 'nay-only'];
 const RECORD_KINDS: RecordKind[] = ['vote-yes', 'vote-no', 'sponsor', 'author', 'own-words', 'none'];
 const AFFIRMATIVE_KINDS: RecordKind[] = ['vote-yes', 'sponsor', 'author'];
 /** The gate values rows.tsv may carry (SKILL.md "rows.tsv columns"; gates from lib/gatePrescreen.ts and the pilots). */
@@ -31,12 +38,27 @@ export interface ResearchRow {
   blank_class?: BlankClass;
   record_kind: RecordKind;
   gate?: string;
+  /** First 300 characters of this season's politician_context.reasoning (database rows only; never in rows.tsv). */
+  reasoning?: string;
+  /** The same for the earliest season's context row, which holds the original evidence of a repair-blanked row. */
+  first_reasoning?: string;
 }
 
+/** A database answer loadDbRows could not score, reported apart instead of being lost (Stage 0a step 2). */
+export interface SkippedRow {
+  politician_id: string;
+  why: 'no-office' | 'unknown-level';
+  value: number | null;
+  blank_reason?: string;
+}
+
+// `direction-only` is deliberately NOT mapped: a No vote's direction-only can never be fixed by wording
+// (class `nay-only`), while a Yea that shows a side but no rung can. Only the runner, reading the record,
+// can tell them apart, so the starter rows.tsv leaves it unclassified.
 const REASON_CLASS: Record<string, BlankClass> = {
   'no-evidence': 'source-gap',
   'near-unanimous': 'gate', 'multi-subject': 'gate', 'study-directive': 'gate', 'pre-seating': 'gate',
-  'direction-only': 'wording', 'adjacent-chairs': 'wording', 'compound-partial': 'wording',
+  'adjacent-chairs': 'wording', 'compound-partial': 'wording',
   'record-vs-statement-conflict': 'wording',
   'scope-unavailable': 'no-lever',
 };
@@ -108,6 +130,36 @@ export function formatRowsTsv(rows: ResearchRow[]): string {
   return [COLUMNS.join('\t'), ...lines].join('\n') + '\n';
 }
 
+const sidecarCell = (v: string | number | null | undefined) => (v == null ? '' : String(v).replace(/[\t\r\n]+/g, ' '));
+
+/**
+ * The reasons sidecar `--rows-out` writes beside rows.tsv (`<name>.reasons.tsv`): politician_id, value,
+ * stored blank reason, and the first 300 characters of this season's and the earliest season's context
+ * reasoning. Repair migrations blank rows without a review row, so for many topics this prose is the only
+ * place the blank's reason lives. It names people and instruments: forbidden to drafters, like rows.tsv.
+ */
+export function formatReasonsTsv(rows: ResearchRow[]): string {
+  const head = ['politician_id', 'value', 'blank_reason', 'reasoning', 'first_reasoning'];
+  const lines = rows.map((r) => [r.politician_id, r.value, r.blank_reason, r.reasoning, r.first_reasoning].map(sidecarCell).join('\t'));
+  return [head.join('\t'), ...lines].join('\n') + '\n';
+}
+
+/**
+ * The skipped sidecar `--rows-out` writes beside rows.tsv (`<name>.skipped.tsv`): answers with no current
+ * office (candidates, former holders the compass still shows) or an unknown level. They cannot go in
+ * rows.tsv, which needs an office and a level, so the diagnosis reports them apart.
+ */
+export function formatSkippedTsv(rows: SkippedRow[]): string {
+  const head = ['politician_id', 'why', 'value', 'blank_reason'];
+  const lines = rows.map((r) => [r.politician_id, r.why, r.value, r.blank_reason].map(sidecarCell).join('\t'));
+  return [head.join('\t'), ...lines].join('\n') + '\n';
+}
+
+/** `/x/stage0a/rows.tsv` → `/x/stage0a/rows.<kind>.tsv`. */
+export function sidecarPath(rowsOut: string, kind: 'reasons' | 'skipped'): string {
+  return rowsOut.replace(/(\.tsv)?$/, `.${kind}.tsv`);
+}
+
 // ---- summary -----------------------------------------------------------------------------------
 
 type Bucket = {
@@ -121,7 +173,7 @@ type SummaryRow = { level: Level; value: number | null; blank_class?: BlankClass
 
 const emptyBucket = (): Bucket => ({
   rows: 0, seated: 0, blank: 0,
-  byClass: { 'source-gap': 0, gate: 0, wording: 0, 'no-lever': 0, unclassified: 0 },
+  byClass: { 'source-gap': 0, gate: 0, wording: 0, 'no-lever': 0, 'off-question': 0, 'nay-only': 0, unclassified: 0 },
   perRung: { '1': 0, '2': 0, '3': 0, '4': 0, '5': 0, between: 0 },
 });
 
@@ -162,14 +214,17 @@ export function summarise(rows: SummaryRow[]): SeatRateReport {
 
 const pct = (n: number, d: number) => (d ? `${((100 * n) / d).toFixed(1)}%` : '-');
 
+/** Below this many affirmative records the affirmative rate says little; the overall rate is the headline. */
+export const MIN_AFFIRMATIVE_FOR_HEADLINE = 10;
+
 export function formatReport(r: SeatRateReport): string {
   if (r.total.rows === 0) return 'no rows';
   const hasAff = r.total.affirmative !== undefined;
-  const head = ['level', 'rows', 'seated', 'rate', 'blank', 'source-gap', 'gate', 'wording', 'no-lever', 'unclassified'];
+  const head = ['level', 'rows', 'seated', 'rate', 'blank', 'source-gap', 'gate', 'wording', 'no-lever', 'off-question', 'nay-only', 'unclassified'];
   if (hasAff) head.push('aff rows', 'aff seated', 'aff rate');
   const line = (name: string, b: Bucket) => {
     const c = [name, b.rows, b.seated, pct(b.seated, b.rows), b.blank, b.byClass['source-gap'], b.byClass.gate,
-      b.byClass.wording, b.byClass['no-lever'], b.byClass.unclassified];
+      b.byClass.wording, b.byClass['no-lever'], b.byClass['off-question'], b.byClass['nay-only'], b.byClass.unclassified];
     if (hasAff) {
       const a = b.affirmative;
       c.push(a?.rows ?? 0, a?.seated ?? 0, a?.rate == null ? '-' : pct(a.seated, a.rows));
@@ -180,7 +235,11 @@ export function formatReport(r: SeatRateReport): string {
   const w = head.map((_, i) => Math.max(...table.map((row) => row[i].length)));
   const out = table.map((row) => row.map((c, i) => (i === 0 ? c.padEnd(w[i]) : c.padStart(w[i]))).join('  '));
   const rungs = Object.entries(r.total.perRung).map(([k, v]) => `${k}=${v}`).join(' ');
-  return `${out.join('\n')}\n\nrungs held (total): ${rungs}`;
+  const aff = r.total.affirmative;
+  const note = aff && aff.rows < MIN_AFFIRMATIVE_FOR_HEADLINE
+    ? `\nnote: only ${aff.rows} affirmative record(s); report the overall rate (${pct(r.total.seated, r.total.rows)}) as the headline and say why`
+    : '';
+  return `${out.join('\n')}\n\nrungs held (total): ${rungs}${note}`;
 }
 
 // ---- database ----------------------------------------------------------------------------------
@@ -196,7 +255,7 @@ export function formatReport(r: SeatRateReport): string {
  */
 export async function loadDbRows(
   q: Query, topicKey: string, seasonId: string,
-  onSkip?: (politicianId: string, why: 'no-office' | 'unknown-level') => void,
+  onSkip?: (politicianId: string, why: 'no-office' | 'unknown-level', row?: SkippedRow) => void,
 ): Promise<ResearchRow[]> {
   // @zero-scope: counts-blanks — this report asks whether a politician is SEATED, so a 0 is a blank to count.
   const { rows } = await q(
@@ -204,7 +263,8 @@ export async function loadDbRows(
      SELECT DISTINCT ON (pa.politician_id)
             pa.politician_id::text AS politician_id, o.id::text AS office_id, pa.value::float8 AS value,
             d.district_type, d.is_judicial, d.label AS district_label,
-            ARRAY[o.title, c.name] AS office_labels, rv.proposed_blank_reason
+            ARRAY[o.title, c.name] AS office_labels, rv.proposed_blank_reason,
+            left(cx.reasoning, 300) AS reasoning, left(cx1.reasoning, 300) AS first_reasoning
        FROM inform.politician_answers pa
        JOIN inform.compass_topics t ON t.id = pa.topic_id
        LEFT JOIN essentials.office_current_holder och ON och.politician_id = pa.politician_id
@@ -216,22 +276,35 @@ export async function loadDbRows(
                WHERE r.politician_id = pa.politician_id AND r.topic_id = pa.topic_id AND r.season_id = pa.season_id
                  AND r.status NOT IN ('rejected', 'superseded')
                ORDER BY r.created_at DESC LIMIT 1) rv ON true
+       LEFT JOIN inform.politician_context cx
+              ON cx.politician_id = pa.politician_id AND cx.topic_id = pa.topic_id AND cx.season_id = pa.season_id
+       LEFT JOIN LATERAL (
+              SELECT c1.reasoning FROM inform.politician_context c1 JOIN inform.seasons s1 ON s1.id = c1.season_id
+               WHERE c1.politician_id = pa.politician_id AND c1.topic_id = pa.topic_id
+               ORDER BY s1.number LIMIT 1) cx1 ON true
       WHERE t.topic_key = $1 AND pa.season_id = $2
       ORDER BY pa.politician_id, (o.id = rv.office_id) DESC, o.id`,
     [topicKey, seasonId],
   );
   const out: ResearchRow[] = [];
   for (const r of rows) {
-    if (!r.office_id) { onSkip?.(r.politician_id, 'no-office'); continue; }
-    const level = levelForDistrict(r.district_type ?? null, r.is_judicial ?? null, r.district_label ?? null, r.office_labels ?? []);
-    if (!level) { onSkip?.(r.politician_id, 'unknown-level'); continue; }
     const value = r.value === null ? null : Number(r.value);
+    const skip = (why: 'no-office' | 'unknown-level') => {
+      const s: SkippedRow = { politician_id: r.politician_id, why, value };
+      if (r.proposed_blank_reason) s.blank_reason = r.proposed_blank_reason;
+      onSkip?.(r.politician_id, why, s);
+    };
+    if (!r.office_id) { skip('no-office'); continue; }
+    const level = levelForDistrict(r.district_type ?? null, r.is_judicial ?? null, r.district_label ?? null, r.office_labels ?? []);
+    if (!level) { skip('unknown-level'); continue; }
     const row: ResearchRow = { politician_id: r.politician_id, office_id: r.office_id, level, value, record_kind: 'none' };
     if (r.proposed_blank_reason) {
       row.blank_reason = r.proposed_blank_reason;
       const cls = blankClassForReason(r.proposed_blank_reason);
       if (cls) row.blank_class = cls;
     }
+    if (r.reasoning) row.reasoning = r.reasoning;
+    if (r.first_reasoning) row.first_reasoning = r.first_reasoning;
     out.push(row);
   }
   return out;

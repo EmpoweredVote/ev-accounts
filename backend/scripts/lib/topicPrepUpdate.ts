@@ -10,6 +10,7 @@ export type TopicPrepState = {
   topicKey: string;
   stage: '0a' | '0' | '1' | '2' | '3' | '4' | 'done' | 'parked';
   path?: 'source' | 'wording';
+  /** null (shown as —) before the path ruling, or when no rate has been measured yet. */
   seatRateBefore?: number | null;
   seatRateAfter?: number | null;
   blockedOn: 'ruling' | 'sources' | 'dispute' | 'nothing';
@@ -53,4 +54,14 @@ export function formatUpdate(s: TopicPrepState): string {
     `Revision: ${s.revisionId ?? DASH}`,
     `Folder: ${s.researchFolder}`,
   ].join('\n');
+}
+
+const escapeHtml = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+/**
+ * The same update for Monday's `create_update`, which takes HTML: each line escaped and joined with
+ * `<br>`, so the plain-text layout survives (the voting-rights run joined lines by hand).
+ */
+export function formatUpdateHtml(s: TopicPrepState): string {
+  return formatUpdate(s).split('\n').map(escapeHtml).join('<br>');
 }

@@ -224,12 +224,14 @@ BEGIN
   IF v_n <> 0 THEN RAISE EXCEPTION '{{SLOT}} verify: % draft-season politician answers on this topic (expected 0)', v_n; END IF;
 
   -- What opening the draft season will do to voter answers (report only; the open season is not touched).
+  -- Counts ANSWER ROWS of compass_responses (not deleted), not voters: take the expected figure from the
+  -- 'voter_answer_rows' lines of templates/stage4-facts.sql, never from compass_answer_dispositions.
   SELECT string_agg(d || ' x' || c, ', ') INTO v_disp FROM (
     SELECT inform.compass_answer_disposition(r.answered_revision_id, v_new, r.value) AS d, count(*) AS c
       FROM inform.compass_responses r
      WHERE r.topic_id = v_topic AND r.deleted_at IS NULL
      GROUP BY 1) z;
-  RAISE NOTICE '{{SLOT}}: voter answers against the new revision at season open: % (expected {{EXPECTED_DISPOSITIONS}})', coalesce(v_disp, 'none');
+  RAISE NOTICE '{{SLOT}}: voter answers against the new revision at season open: % (expected, as answer rows: {{EXPECTED_DISPOSITIONS}})', coalesce(v_disp, 'none');
 
   RAISE NOTICE '{{SLOT}} post-verify OK: revision % approved/parked (v{{VERSION}}, is_current=false), draft season -> new, open season -> previous.', v_new;
 END $$;

@@ -4,7 +4,7 @@
  *   npm run topic:ladder-lint --prefix backend -- --topic <key> [--season open|draft|<uuid>]
  *
  * Reads the revision the season serves (`inform.season_questions.topic_revision_id`) and its rungs
- * (`inform.compass_stance_revisions`), then prints the raw T6 hits. Exit 2 on an unknown topic key.
+ * (`inform.compass_stance_revisions`), then prints the rung text it linted and the raw T6 hits. Exit 2 on an unknown topic key.
  * Never writes. Opens its own pg Pool from DATABASE_URL, loaded by lib/cliEnv.ts (backend/.env, or the
  * main checkout's .env in a worktree); it does not import db.js. A flag with no value is an error.
  */
@@ -42,6 +42,10 @@ async function main(): Promise<number> {
     const rungs = rows.filter((r: any) => r.value > 0).map((r: any) => r.text as string);
     const hits = lintRungs(rungs);
     console.log(`topic ${topic} — season ${season.number} (${season.status}); ${rungs.length} rungs, ${hits.length} raw hits`);
+    // Print the text linted: the served ladder lives in compass_stance_revisions, not compass_stances
+    // (which still holds Season 1's text), so a runner reading the wrong table sees the wrong ladder.
+    console.log('served rungs (inform.compass_stance_revisions via season_questions.topic_revision_id):');
+    rungs.forEach((t: string, i: number) => console.log(`  ${i + 1}  ${t}`));
     for (const h of hits) console.log(`  rung ${h.rung}  ${h.check}: "${h.match}"`);
     return 0;
   } finally {

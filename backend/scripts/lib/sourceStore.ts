@@ -9,6 +9,7 @@
  *
  * Pure filesystem helpers: no db.js import, no network.
  */
+import { createHash } from 'node:crypto';
 import { appendFileSync, existsSync, mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { z } from 'zod';
@@ -65,6 +66,21 @@ export const InstrumentSchema = z.object({
   urls: z.array(z.string()),
   version: z.enum(['as-filed', 'enrolled', 'adopted', 'other']),
   operative_text: z.string().optional(),
+  /**
+   * Who filed it, as printed on the official bill page. A sponsorship is a record (codebook E1), so co-authors
+   * are kept here rather than appended to operative_text. `version` is the version they are on (as filed, a
+   * substitute); politician_id only once the identity step has confirmed the person.
+   */
+  sponsors: z
+    .array(
+      z.object({
+        name: z.string().min(1),
+        politician_id: z.string().optional(),
+        role: z.enum(['prime', 'co', 'author', 'patron']),
+        version: z.string().optional(),
+      }),
+    )
+    .optional(),
   single_subject: z.array(
     z.object({
       season: z.number(),
@@ -198,6 +214,9 @@ export function mergeInstrument(old: Instrument, next: Instrument): Instrument {
     ...base,
     urls: unionBy(older.urls, newer.urls, (u) => u, (o) => o),
     votes: unionBy(old.votes, next.votes, (v) => `${v.date}|${v.body}|${v.motion}`, (o, n) => (newer === next ? n : o)),
+    sponsors: old.sponsors || next.sponsors
+      ? unionBy(old.sponsors ?? [], next.sponsors ?? [], (x) => `${x.name}|${x.role}|${x.version ?? ''}`, (o, n) => (newer === next ? n : o))
+      : undefined,
     single_subject: unionBy(
       old.single_subject,
       next.single_subject,
@@ -260,6 +279,57 @@ export function appendDeadEnd(root: string, d: DeadEnd): void {
   const file = storePaths(root).deadEnds;
   mkdirSync(dirname(file), { recursive: true });
   appendFileSync(file, JSON.stringify(DeadEndSchema.parse(d)) + '\n');
+}
+
+// ---------- topic list hash ----------
+
+/**
+ * The `topic_list_hash` every single-subject verdict carries: SHA-256 (hex) of the season's served topic
+ * keys, de-duplicated, sorted, one per line, with a trailing newline. Two verdicts with the same hash
+ * were judged against the same list. `npm run source-store --prefix backend -- topic-list-hash --season
+ * <open|draft|uuid>` prints it for a season. (The voting-rights census computed it the same way by hand:
+ * Season 3, 60 topics, a7b0076a….)
+ */
+export function topicListHash(topicKeys: string[]): string {
+  const list = [...new Set(topicKeys)].sort();
+  return createHash('sha256').update(list.map((k) => `${k}\n`).join('')).digest('hex');
+}
+
+// ---------- merging a staging store ----------
+
+/**
+ * Merge a staging store (a dry run, or a run that could not commit, writes one with `--root`) into the
+ * repo store, by the same rules as the upserts. Dead ends already present (same fields apart from `at`)
+ * are not appended again. Validate both first: a broken staging file throws before anything is written
+ * for it.
+ */
+export function mergeStore(fromRoot: string, toRoot: string): { instruments: number; people: number; jurisdictions: number; deadEnds: number } {
+  const n = { instruments: 0, people: 0, jurisdictions: 0, deadEnds: 0 };
+  const load = (f: string) => JSON.parse(readFileSync(f, 'utf8'));
+  for (const f of walkJson(join(fromRoot, 'instruments'))) { upsertInstrument(toRoot, InstrumentSchema.parse(load(f))); n.instruments++; }
+  for (const f of walkJson(join(fromRoot, 'people'))) { upsertPerson(toRoot, PersonSourcesSchema.parse(load(f))); n.people++; }
+  for (const f of walkJson(join(fromRoot, 'jurisdictions'))) { upsertJurisdiction(toRoot, JurisdictionSchema.parse(load(f))); n.jurisdictions++; }
+  const from = storePaths(fromRoot).deadEnds;
+  if (existsSync(from)) {
+    const keyOf = (d: Record<string, unknown>) => {
+      const { at: _at, ...rest } = d;
+      return JSON.stringify(Object.keys(rest).sort().map((k) => [k, rest[k]]));
+    };
+    const to = storePaths(toRoot).deadEnds;
+    const have = new Set(
+      existsSync(to) ? readFileSync(to, 'utf8').split('\n').filter((l) => l.trim()).map((l) => keyOf(JSON.parse(l))) : [],
+    );
+    for (const line of readFileSync(from, 'utf8').split('\n')) {
+      if (!line.trim()) continue;
+      const d = DeadEndSchema.parse(JSON.parse(line));
+      const k = keyOf(d);
+      if (have.has(k)) continue;
+      appendDeadEnd(toRoot, d);
+      have.add(k);
+      n.deadEnds++;
+    }
+  }
+  return n;
 }
 
 // ---------- validation ----------

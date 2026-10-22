@@ -11,6 +11,8 @@
   annex, `docs/superpowers/specs` and the topic's ladder and revision sources. Never the research root, the source
   store or any folder that contains a forbidden path. The blindness check treats a pathless Grep, `**` Glob or
   recursive Bash search as rooted at the drafter's working folder, which is usually above forbidden paths.
+- Fill `{{DRAFTER_SCRATCH}}` with `<research folder>/stage2/tools/` (create it first). The drafter's own session
+  scratchpad is the orchestrator's scratchpad; keep named working files out of it (SKILL.md "Hard rules").
 - Every path in `{{FORBIDDEN_PATHS}}` is also a `--forbid` for the blindness check. After the drafter finishes, run:
 
   ```bash
@@ -48,7 +50,9 @@ You are not lowering the evidence standard.
 - The Stage 0a diagnosis: {{DIAGNOSIS_PATH}} (kinds of loss, no names).
 - Earlier pilots' Stage 2 drafts, for format only: {{FORMAT_PRECEDENT_PATHS}}.
 - One read-only query of the live revision tables for this topic (`inform.compass_topic_revisions`,
-  `inform.compass_stance_revisions`, `inform.compass_topic_roles`, `inform.season_questions`).
+  `inform.compass_stance_revisions`, `inform.compass_topic_roles`, `inform.season_questions`): write the SQL to a
+  file in `{{DRAFTER_SCRATCH}}` and run `npm run db:ro --prefix backend -- --file <abs path to it> --json` from
+  the repo root. It runs inside a read-only transaction.
 
 ## 🔴 You must not open, list or search
 
@@ -65,6 +69,9 @@ Give every Grep, Glob and recursive Bash search (grep -r, rg, find, ls -R) an ex
 allowed roots: {{ALLOWED_SEARCH_ROOTS}}. Never omit the path, and never search from a folder that contains a
 forbidden path. Reading a named file with Read is fine.
 
+Write any helper file (a lint script, a query) **only** in `{{DRAFTER_SCRATCH}}`. Never use your session
+scratchpad or `/tmp`: other stages' working files live there, and touching that folder voids the draft.
+
 ## What to write: `{{OUT_PATH}}` (stage2/drafts.md)
 
 Header: date, operator, "DRAFT for ruling", a **Blindness** paragraph naming what you did not open (by kind, never
@@ -74,7 +81,9 @@ comparison.
 
 - **§0 Control** — the live revision copied verbatim (id, revision, version, class, pins, title, question,
   guidance, levels asked), each rung with its rulebook defects, the T6 lint result, and why it fails.
-- **§1 Shared design** — the proposed question and guidance, the L1 poles, the scope line for the topic's object,
+- **§1 Shared design** — the proposed question and guidance, the L1 spectrum as three lines (`axis:` a short name
+  for the spectrum, `pole_1:` and `pole_5:` each the plain stance at that end, matching rungs 1 and 5), the scope
+  line for the topic's object,
   and the rungs both drafts share with their map from the control.
 - **§2 Draft A** and **§3 Draft B** — two drafts that **differ in one place only** (one rung), so a Stage 3
   difference has one cause. For each: the reading, the five rungs, a rationale per rung against L1–L10, the annex

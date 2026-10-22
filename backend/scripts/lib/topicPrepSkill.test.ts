@@ -11,6 +11,7 @@ import { describe, it, expect } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { BLANK_CLASSES } from './seatRate.js';
 
 const backendDir = resolve(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const skillDir = resolve(backendDir, '..', '.claude', 'skills', 'season-topic-prep');
@@ -52,6 +53,38 @@ describe('season-topic-prep SKILL.md', () => {
     const names = [...new Set([...md.matchAll(/npm run ([a-z:-]+)/g)].map((m) => m[1]))];
     expect(names.length).toBeGreaterThan(0);
     for (const n of names) expect(scripts[n], `npm script ${n}`).toBeDefined();
+  });
+});
+
+describe('season-topic-prep companion files', () => {
+  const files = ['SKILL.md', 'STAGE4-RECIPE.md', 'SOURCE-STORE.md', 'ADVERSARIAL-CHECK.md', 'RULINGS.md',
+    'templates/drafter-prompt.md', 'templates/BRIEF-census-local.md', 'templates/BRIEF-census-state.md', 'templates/BRIEF-stage1.md'];
+
+  it('every npm script any of them names exists, and every link resolves', () => {
+    const scripts = JSON.parse(readFileSync(join(backendDir, 'package.json'), 'utf8')).scripts as Record<string, string>;
+    for (const f of files) {
+      const md = read(f);
+      for (const m of md.matchAll(/npm run ([a-z:-]+)/g)) expect(scripts[m[1]], `${f}: npm script ${m[1]}`).toBeDefined();
+      const base = dirname(join(skillDir, f));
+      for (const m of md.matchAll(/\]\(([^)\s]+)\)/g)) {
+        if (/^(https?:|mailto:|#)/.test(m[1])) continue;
+        expect(existsSync(resolve(base, m[1].split('#')[0])), `${f}: missing link target ${m[1]}`).toBe(true);
+      }
+    }
+  });
+
+  it('SKILL.md lists exactly the blank classes topic:seat-rate accepts', () => {
+    const md = read('SKILL.md');
+    const line = md.split('\n').find((l) => l.includes('`blank_class` is'));
+    expect(line, 'the rows.tsv columns paragraph').toBeDefined();
+    const para = md.slice(md.indexOf(line!), md.indexOf(line!) + 300);
+    for (const c of BLANK_CLASSES) expect(para, c).toContain(`\`${c}\``);
+  });
+
+  it('the Stage 4 recipe re-audits carried seats and the facts template counts voter answer rows', () => {
+    expect(read('STAGE4-RECIPE.md')).toMatch(/reaudit\/carry\.json/);
+    expect(read('templates/stage4-facts.sql')).toMatch(/voter_answer_rows[\s\S]*inform\.compass_responses/);
+    expect(read('templates/stage4-revision.sql')).toContain('as answer rows: {{EXPECTED_DISPOSITIONS}}');
   });
 });
 

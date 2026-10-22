@@ -11,6 +11,8 @@
     "topic:seat-rate": "tsx scripts/topic-seat-rate.ts",
     "topic:ladder-lint": "tsx scripts/topic-ladder-lint.ts",
     "topic:blindness-check": "tsx scripts/topic-blindness-check.ts",
+    "db:ro": "tsx scripts/db-ro.ts",
+    "census:identity": "tsx scripts/census-identity.ts",
     "test:unit": "vitest run src scripts --exclude \"**/ingest-gazetteer-places-counties.test.ts\"",
     "test:watch": "vitest",
     "lint": "eslint src scripts",
