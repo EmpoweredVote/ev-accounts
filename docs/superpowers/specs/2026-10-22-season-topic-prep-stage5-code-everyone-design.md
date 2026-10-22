@@ -131,18 +131,24 @@ classes apply unchanged. Use the existing `research-stances` discovery (STEP 0.5
 **Local records (Chris Andrews, 2026-10-22).** A local ordinance or resolution that shows which way a local
 official leans (for example a clinic buffer-zone ordinance, or a city fund for abortion travel) is saved and
 shown. It **never seats anyone alone**; with the person's own words it may help place them. A local law that only
-decides *which level* may set a rule stays `adjacent` (codebook V2, ruling Q10). 🛑 **Needs a ruling before
-build:** today `compass_topic_roles.evidence_basis = 'own-words'` for local on `voting-rights`, so a local record
-counts for nothing. The ruling asked for: may a local record serve as supporting evidence beside own words?
+decides *which level* may set a rule stays `adjacent` (codebook V2, ruling Q10). Before this ruling,
+`compass_topic_roles.evidence_basis = 'own-words'` for local on `voting-rights` meant a local record counted for
+nothing. **Ruled (Chris Andrews, 2026-10-22): yes, as support only.** A local record may help place a local
+official only beside that person's own words on the topic; it never seats anyone alone.
 
 **Step 5 — Early check** (§6). **Step 6 — Full report** (§6). **Step 7 — Write and show** (§8).
 
 ## 6. The early check and the report
 
 **Early check.** After federal and the first two or three states, the run pauses and shows the split for
-everyone so far: no stance found / seated / doesn't fit, with the open notes. If **"doesn't fit" is more than
-1 in 5 of the people who have any on-topic evidence** (a placeholder: Chris Andrews sets the real bar), it stops
-and asks whether to fix the rungs first (back to Stage 2, or a split) or carry on. Otherwise it continues.
+everyone so far: no stance found / seated / doesn't fit, with the open notes. It stops and asks whether to fix
+the rungs first (back to Stage 2, or a split) or carry on when **either** holds (ruled, Chris Andrews,
+2026-10-22):
+- **"doesn't fit" is more than 1 in 5** of the people who have any on-topic evidence; or
+- **any single theme** from the theme pass holds **more than 1 in 10** of those people. One theme that large points
+  at a missing rung even when the total looks fine.
+
+Otherwise it continues.
 
 **Open coding of "doesn't fit."** No fixed list decides a case.
 - **Starter tags** the coder may use, any number, or none: *between two rungs*; *a related but different
@@ -222,14 +228,15 @@ rows) is the builder's call; it must be per person, per topic, per season.
 
 - **Today:** the stance process sends every own-words row to a human queue (`statement-evidence` in
   `research-stances`), and CLAUDE.md says an own-words chair is a separate reliability stratum that goes to
-  review "until that stratum has its own blind gold". That queue is the bottleneck. 🛑 **Needs a ruling before build, in two parts**, because
-  they are different kinds of row:
+  review "until that stratum has its own blind gold". That queue is the bottleneck. **Ruled in two parts (Chris
+  Andrews, 2026-10-22)**, because they are different kinds of row:
   - **(a) Shown quotes** ("own words, not on the scale", §8 case 2). Display only; no voter answer is compared
-    with them. Chris Andrews has said these go live without human review (2026-10-22); the ruling confirms it in
-    writing.
-  - **(b) Seats placed on own words alone.** Voters' answers are compared with these. Retiring the hold for them
-    overturns the CLAUDE.md "separate reliability stratum" rule, so CLAUDE.md must be updated in the same PR if
-    the ruling says yes.
+    with them. **Ruled: no human hold.** They go live once the AI quote check confirms them.
+  - **(b) Seats placed on own words alone.** Voters' answers are compared with these. **Ruled: retire the hold
+    after a blind check.** The hold stays until a blind gold sample of own-words seats on the topic agrees with
+    the coder at the Stage 3 validation bar (≥ 95%). That sample is the stratum's "own blind gold" CLAUDE.md asks
+    for. When it passes, the hold is retired for that topic and CLAUDE.md's "separate reliability stratum" rule
+    is updated in the same PR.
   Rows that pass the automated checks (the pre-write evidence gate, the quote check, the existing mechanical QA)
   then go live with the draft season without a person.
 - **Later:** Validation Quests (`empowered-validation-quests`) will let users affirm or dispute live rows. Stage 5
@@ -259,22 +266,25 @@ rows) is the builder's call; it must be per person, per topic, per season.
 **Decided (Chris Andrews, 2026-10-22):** everything attributed above — scope (sitting officials, then active
 candidates only); research before the results, winners after; open coding with optional starter tags; own words
 shown right away, including direction-only words; the AI quote check; Validation Quests later, not the admin
-queue; local records as supporting direction evidence (pending the §5 ruling); search once per season and reuse
-across seasons.
+queue; local records as supporting direction evidence (ruled, §5); search once per season and reuse across
+seasons.
 
 **Also decided (2026-10-22, after review):** search once per person per topic for now, one search across all
 topics later; everyone gets an own-words search, including people placed from a vote.
 
-**My calls (to check):** no database writes before the early check passes; the new voter text only for people
-Stage 5 researched; the review ruling split into (a) shown quotes and (b) own-words seats; candidates only in races
-at the topic's levels; federal first, then states one at a time; the early check after federal plus two or three
-contrasting states; the 1-in-5 placeholder bar; keeping the existing blank classes as detail under the three
-outcomes; the per-finding fields in §7; the voter sentence wording in §8.
+**Builder's calls, approved (Chris Andrews, 2026-10-22):** no database writes before the early check passes; the
+new voter text only for people Stage 5 researched; the review ruling split into (a) shown quotes and (b) own-words
+seats; candidates only in races at the topic's levels; federal first, then states one at a time; the early check
+after federal plus two or three contrasting states; the 1-in-5 bar (now ruled, with a theme rule, §6); keeping the
+existing blank classes as detail under the three outcomes; the per-finding fields in §7; the voter sentence wording
+in §8.
 
 **Left to the builder:** where the richer findings and passages are stored; how the theme pass is prompted; batch
 sizes and parallelism; how the run resumes after a stop; the exact API and UI shape for the two blank states; how
 Stage 5 is split into skill text, scripts and tests.
 
-**Open rulings (🛑 before build):** (1) local records as supporting evidence (§5); (2) retiring the
-`statement-evidence` human hold, (a) for shown quotes and (b) for own-words seats (§9); (3) the real "doesn't fit"
-bar (§6).
+**Rulings (Chris Andrews, 2026-10-22):** (1) a local record may support a local official's own words, never seat
+alone (§5); (2a) shown quotes go live with no human hold once the quote check passes; (2b) the hold on own-words
+seats is retired per topic after a blind gold sample reaches ≥ 95%, with CLAUDE.md updated in that PR (§9); (3) the
+early check stops when "doesn't fit" is over 1 in 5 of people with on-topic evidence, or any one theme is over 1 in
+10 (§6). Recorded in `.claude/skills/season-topic-prep/RULINGS.md`, "Stage 5 rulings".
