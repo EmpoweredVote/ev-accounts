@@ -38,15 +38,6 @@
       "split": false,
       "verdict": "unreviewed"
     },
-    "0896566a-c773-4227-aca3-18cf573b60fe|fc1d7143-1be8-49b0-be31-6dbc5874230d": {
-      "names": "Tram Nguyen ~ Tram T. Nguyen",
-      "state": "ma",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "unreviewed"
-    },
     "091c923c-0141-47c1-bf51-f9c6617eed60|73457c02-d058-44cb-ac56-c5120284553b": {
       "names": "Hopi Stosberg ~ Hopi H Stosberg",
       "state": "in",
@@ -91,7 +82,8 @@
         "NAME_STATE"
       ],
       "split": false,
-      "verdict": "unreviewed"
+      "verdict": "different_people",
+      "note": "DIFFERENT PEOPLE, checked 2026-10-22. 2717ff94 is U.S. SENATOR Alex Padilla (California); 123c9a42 is Alex Padilla, COUNCILMEMBER for Inglewood District 2. Migrations 1647, 1649 and 1651 were spent DE-CONFLATING these two after the councilmember email, urls, bio and term dates were found sitting on the senator record. Their apparent stance contradiction (Economic Development 3.0 vs 2.0, Transportation 3.0 vs 2.0) is simply two people holding different views. NEVER MERGE. Inglewood council is nonpartisan so party cannot disambiguate them."
     },
     "125c4d54-6b38-4ccc-a05c-b119f1ea34de|a42744c4-d87e-48b4-aa2c-98b9744601a0": {
       "names": "Noelle M Conyer ~ Noelle Conyer",
@@ -440,15 +432,6 @@
     "a97678bc-8844-4560-87b1-5ef4f8013d96|f0a46feb-43bc-4620-a81f-3bbf7e3cec9c": {
       "names": "Dan Sullivan ~ Daniel J. Sullivan Jr.",
       "state": "ak",
-      "why": [
-        "NAME_STATE"
-      ],
-      "split": false,
-      "verdict": "unreviewed"
-    },
-    "a9e04e1e-92d4-44e4-a411-b6fe4814290a|d33b1fb5-bac7-48b9-9628-8169e28f4e16": {
-      "names": "Steve Marshall ~ Steve Marshall",
-      "state": "al",
       "why": [
         "NAME_STATE"
       ],
