@@ -14,8 +14,11 @@
 -- topic. Actor 854fbc06-40fc-458d-b523-20ef8e5ad1b2 (Chris Andrews).
 --
 -- APPLIED: (fill in on apply — date, who said yes, revision id)
--- Dry run on prod (not yet run) (body twice inside BEGIN, forced RAISE): (fill in — gate OK,
--- second run skipped propose/approve, voter-answer dispositions, rollback confirmed)
+-- Dry run on prod 2026-10-21 (body twice inside BEGIN, forced RAISE): gate OK on both runs; second
+-- run printed "already present — skipping propose/approve" and passed the gate; voter answers at season
+-- open: reworded x5 (5 live answer rows from 4 voters: one voter answered in both Season 1 and Season 2;
+-- none moved or invalidated); rollback confirmed in a new session (3 revisions, 0 open, draft season
+-- still pins 2a18c152-67a0-4380-a381-cb8795110a7c).
 --
 -- WHAT THIS DOES
 --   1. Proposes revision 4 of voting-rights: change_class substantive, version 3.
