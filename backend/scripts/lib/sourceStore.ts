@@ -180,13 +180,19 @@ export const FindingSchema = z
     /** For a vote: the motion, as the instrument's vote records it (two votes on one day differ here). */
     motion: z.string().min(1).optional(),
     local_record: z.boolean().optional(),
+    /** For a pre-filled vote: the census gate it met, per topic (one vote can be on file for two topics). */
+    gate_by_topic: z.record(z.string(), z.string()).optional(),
     note: z.string().min(1),
     subjects: z.array(z.string().min(1)).min(1),
     topic_keys: z.array(z.string().min(1)),
     provenance: ProvenanceSchema,
   })
   .refine((f) => f.kind !== 'own-words' || !!f.passage, { message: 'own-words needs the exact passage', path: ['passage'] })
-  .refine((f) => f.kind !== 'record' || !!f.act, { message: 'a record needs the act', path: ['act'] });
+  .refine((f) => f.kind !== 'record' || !!f.act, { message: 'a record needs the act', path: ['act'] })
+  // Without an instrument id, the motion (the ordinance or resolution named) is what tells two acts on one page apart.
+  .refine((f) => f.kind !== 'record' || !!f.instrument_id || !!f.motion, {
+    message: 'a record with no instrument_id needs a motion naming the act (e.g. "Ordinance 2024-7, …")', path: ['motion'],
+  });
 export type Finding = z.infer<typeof FindingSchema>;
 
 /** One search for one person on one topic in one season, kept even when it found nothing. */
@@ -306,9 +312,18 @@ export function mergePerson(prev: PersonSources, next: PersonSources): PersonSou
 export function mergeFindings(prev: PersonFindings, next: PersonFindings): PersonFindings {
   return PersonFindingsSchema.parse({
     politician_id: prev.politician_id,
-    findings: unionBy(prev.findings, next.findings, (f) => f.id, (o, n) =>
-      time(n.provenance.fetched_at) >= time(o.provenance.fetched_at) ? n : o,
-    ),
+    findings: unionBy(prev.findings, next.findings, (f) => f.id, (o, n) => {
+      // The same passage or act can be on file for several topics: keep the newer copy's fields, but every
+      // topic, subject and per-topic gate either copy carries.
+      const win = time(n.provenance.fetched_at) >= time(o.provenance.fetched_at) ? n : o;
+      const gates = { ...o.gate_by_topic, ...n.gate_by_topic };
+      return {
+        ...win,
+        topic_keys: [...new Set([...o.topic_keys, ...n.topic_keys])],
+        subjects: [...new Set([...o.subjects, ...n.subjects])],
+        ...(Object.keys(gates).length ? { gate_by_topic: gates } : {}),
+      };
+    }),
     searches: unionBy(prev.searches, next.searches, (x) => `${x.topic_key}|${x.season}|${x.at}`, (o) => o),
   });
 }

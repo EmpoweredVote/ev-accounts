@@ -4,10 +4,11 @@
  *   npm run topic:stage5-find --prefix backend -- next --topic <key> --season draft --unit federal|state:xx|local:xx
  *        --size N --roster <abs roster.tsv> --out <abs batch.tsv> [--store <abs store root>]
  *   npm run topic:stage5-find --prefix backend -- import --topic <key> --season draft --dir <abs stage5/raw/find>
- *        [--by <collector name>] [--store <abs store root>]
+ *        --roster <abs roster.tsv> [--by <collector name>] [--store <abs store root>]
  *
  * `next` writes the next batch of people owed a search (roster.tsv columns) for collectors briefed with
- * templates/BRIEF-stage5-find.md. `import` reads every `<politician_id>.json` in `--dir`, validates it, and
+ * templates/BRIEF-stage5-find.md. `import` reads every `<politician_id>.json` in `--dir`, validates it (the id inside
+ * must match the file name and be on the roster), and
  * merges it into the store's findings; a file's modification time is its search time, so importing the same
  * file twice adds nothing. Both refuse any season but a draft one: Stage 5 never researches the open season.
  * The season is read (read-only) only to learn its number.
@@ -69,6 +70,7 @@ async function main(): Promise<number> {
   }
 
   const dir = abs('--dir', flag('--dir'));
+  const onRoster = new Set(parseRosterTsv(readFileSync(abs('--roster', flag('--roster')), 'utf8')).map((r) => r.politician_id));
   const by = flag('--by') ?? 'source-collector';
   let people = 0;
   let found = 0;
@@ -76,7 +78,8 @@ async function main(): Promise<number> {
   for (const name of readdirSync(dir).filter((n) => n.endsWith('.json')).sort()) {
     const file = join(dir, name);
     try {
-      const pf = importFindFile(JSON.parse(readFileSync(file, 'utf8')), topic, season, { by, at: statSync(file).mtime.toISOString() });
+      const pf = importFindFile(JSON.parse(readFileSync(file, 'utf8')), topic, season, { by, at: statSync(file).mtime.toISOString() },
+        { fileId: name.replace(/\.json$/, ''), onRoster });
       upsertFindings(store, pf);
       people++;
       found += pf.findings.length;

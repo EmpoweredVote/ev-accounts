@@ -36,7 +36,8 @@ export type Stage5Summary = {
   withEvidence: number;
   seatRateAll: number | null;
   seatRateEvidence: number | null;
-  themes: { name: string; points_at: string; count: number; share: number | null; summary: string }[];
+  /** `count` is the theme's doesn't-fit people in this summary, once each; `dropped` the ids it named that are not. */
+  themes: { name: string; points_at: string; count: number; dropped: number; share: number | null; summary: string }[];
 };
 
 const zero = (): Counts => ({ seated: 0, doesntFit: 0, noStance: 0, notYet: 0 });
@@ -56,16 +57,23 @@ export function summarise(roster: RosterRow[], codes: Stage5Code[], themes?: The
     if (c?.outcome === 'seated' && c.value !== undefined) perRung[String(c.value)] = (perRung[String(c.value)] ?? 0) + 1;
     for (const t of c?.tags ?? []) tags[t] = (tags[t] ?? 0) + 1;
   }
+  const doesntFit = new Set(roster.map((r) => byPerson.get(r.politician_id)).filter((c) => c?.outcome === 'doesnt-fit').map((c) => c!.politician_id));
   const researched = overall.seated + overall.doesntFit + overall.noStance;
   const withEvidence = overall.seated + overall.doesntFit;
   return {
     overall, byLevel, byState, perRung, tags, withEvidence,
     seatRateAll: researched ? overall.seated / researched : null,
     seatRateEvidence: withEvidence ? overall.seated / withEvidence : null,
-    themes: (themes?.themes ?? []).map((t) => ({
-      name: t.name, points_at: t.points_at, summary: t.summary, count: t.politician_ids.length,
-      share: withEvidence ? t.politician_ids.length / withEvidence : null,
-    })).sort((a, b) => b.count - a.count),
+    themes: (themes?.themes ?? []).map((t) => {
+      // Trust only ids that are doesn't-fit codes in this summary: a repeated, invented or out-of-unit id would
+      // move the share, and the share alone can trigger or hide a stop.
+      const named = new Set(t.politician_ids);
+      const count = [...named].filter((pid) => doesntFit.has(pid)).length;
+      return {
+        name: t.name, points_at: t.points_at, summary: t.summary, count, dropped: named.size - count,
+        share: withEvidence ? count / withEvidence : null,
+      };
+    }).sort((a, b) => b.count - a.count),
   };
 }
 
@@ -116,7 +124,19 @@ export function formatReport(s: Stage5Summary, check: { stop: boolean; reasons: 
     '## Themes in "doesn\'t fit"',
   ];
   if (!s.themes.length) lines.push('No theme pass yet.');
-  for (const t of s.themes) lines.push(`- **${t.name}** — ${t.count} (${pct(t.share)}), points at: ${t.points_at}. ${t.summary}`);
+  for (const t of s.themes) {
+    lines.push(`- **${t.name}** — ${t.count} (${pct(t.share)}), points at: ${t.points_at}. ${t.summary}${t.dropped ? ` (${t.dropped} id(s) named that are not doesn't-fit codes here: not counted)` : ''}`);
+  }
   lines.push('', '## Starter tags used', Object.keys(s.tags).length ? Object.entries(s.tags).map(([t, n]) => `${t} ${n}`).join(' · ') : 'none', '');
   return lines.join('\n');
+}
+
+/** A code is filed as `<politician_id>.json`, so one person has one code and a stray file is caught. */
+export function codeFileProblem(fileName: string, code: Pick<Stage5Code, 'politician_id'>): string | null {
+  return fileName === `${code.politician_id}.json` ? null : `file name ${fileName} does not match politician_id ${code.politician_id}`;
+}
+
+/** 4 when the bar says stop (it wins: failed codes are left out of the counts and may hide part of a stop), 3 when codes failed, else 0. */
+export function exitCode(stop: boolean, failedCodes: number): number {
+  return stop ? 4 : failedCodes ? 3 : 0;
 }

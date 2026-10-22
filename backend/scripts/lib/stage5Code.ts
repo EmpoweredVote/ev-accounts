@@ -53,13 +53,16 @@ export function checkCode(code: Stage5Code, pf: PersonFindings): string[] {
   const cited: Finding[] = [];
   for (const id of code.finding_ids) {
     const f = byId.get(id);
-    if (f) cited.push(f);
-    else out.push(`finding ${id.slice(0, 12)}… is not in the findings file`);
+    if (!f) out.push(`finding ${id.slice(0, 12)}… is not in the findings file`);
+    else if (!f.topic_keys.includes(code.topic_key)) out.push(`finding ${id.slice(0, 12)}… is not on ${code.topic_key}`);
+    else cited.push(f);
   }
 
   if (code.outcome === 'seated') {
     if (code.value === undefined) out.push('a seat needs a value');
-    if (cited.length && cited.every((f) => f.local_record)) out.push('a local record never seats alone: cite their own words too');
+    if (cited.some((f) => f.local_record) && !cited.some((f) => f.kind === 'own-words')) {
+      out.push('a local record never seats alone: it supports their own words, so cite their own words too');
+    }
   } else if (code.value !== undefined) {
     out.push(`a ${code.outcome} code carries no value`);
   }

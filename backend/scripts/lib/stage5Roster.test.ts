@@ -111,8 +111,8 @@ describe('loadRoster', () => {
   it('passes the topic key and the as-of date to the database', async () => {
     const { seen } = await run({});
     expect(seen.find((s) => s.tag === 'roles')?.params).toEqual(['voting-rights']);
-    expect(seen.find((s) => s.tag === 'candidates')?.params).toEqual(['2026-10-22']);
-    expect(seen.find((s) => s.tag === 'upcoming')?.params).toEqual(['2026-10-22']);
+    expect(seen.find((s) => s.tag === 'candidates')?.params).toEqual(['2026-10-22', '2027-01-01']);
+    expect(seen.find((s) => s.tag === 'upcoming')?.params).toEqual(['2026-10-22', '2027-01-01']);
   });
 });
 

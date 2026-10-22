@@ -53,6 +53,15 @@ describe('checkCode', () => {
     expect(checkCode(code({ finding_ids: [local.id, words.id], evidence_basis: 'joint' }), person([local, words]))).toEqual([]);
   });
 
+  it('needs own words beside any local record a seat cites', () => {
+    expect(checkCode(code({ finding_ids: [local.id, vote.id] }), person([local, vote])).join()).toMatch(/own words/);
+  });
+
+  it('refuses a cited finding that is not on this topic', () => {
+    const other = { ...vote, topic_keys: ['abortion'] };
+    expect(checkCode(code({ finding_ids: [other.id] }), person([other])).join()).toMatch(/not on voting-rights/);
+  });
+
   it('needs evidence_basis to match the cited kinds', () => {
     expect(checkCode(code({ evidence_basis: 'own-words' }), person([vote])).join()).toMatch(/evidence_basis/);
     expect(checkCode(code({ finding_ids: [vote.id, words.id], evidence_basis: 'joint' }), person([vote, words]))).toEqual([]);

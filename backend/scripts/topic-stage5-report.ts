@@ -12,7 +12,7 @@
  * open note, with its level, state, tags and blank class but no name, for the theme pass
  * (templates/stage5-theme-prompt.md). `--themes` adds that pass's result. `--early` titles it as the early check.
  *
- * Exit 0 = continue; 3 = some codes failed their check; 4 = the early-check bar says stop.
+ * Exit 0 = continue; 3 = some codes failed their check; 4 = the early-check bar says stop (4 wins over 3).
  */
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, isAbsolute, join, resolve } from 'node:path';
@@ -22,7 +22,7 @@ import { PersonFindingsSchema, storePaths } from './lib/sourceStore.js';
 import { checkCode, Stage5CodeSchema, type Stage5Code } from './lib/stage5Code.js';
 import { parseRosterTsv } from './lib/stage5Roster.js';
 import { parseUnit } from './lib/stage5Find.js';
-import { earlyCheck, formatReport, summarise, ThemesSchema } from './lib/stage5Report.js';
+import { codeFileProblem, earlyCheck, exitCode, formatReport, summarise, ThemesSchema } from './lib/stage5Report.js';
 
 const backendDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const flag = (name: string) => readFlag(process.argv, name);
@@ -58,6 +58,8 @@ function main(): number {
     const parsed = Stage5CodeSchema.safeParse(raw);
     if (!parsed.success) { failed.push(`${name}: ${parsed.error.issues.map((i) => `${i.path.join('.')}: ${i.message}`).join('; ')}`); continue; }
     const code = parsed.data;
+    const nameProblem = codeFileProblem(name, code);
+    if (nameProblem) { failed.push(`${name}: ${nameProblem}`); continue; }
     if (code.topic_key !== topic || !onRoster.has(code.politician_id)) continue;
     const f = storePaths(store).findings(code.politician_id);
     const pf = existsSync(f) ? PersonFindingsSchema.parse(JSON.parse(readFileSync(f, 'utf8'))) : { politician_id: code.politician_id, findings: [], searches: [] };
@@ -84,8 +86,7 @@ function main(): number {
   writeFileSync(out, text);
   console.log(text.split('\n').slice(0, 6).join('\n'));
   console.log(`\nwrote ${out}${failed.length ? `; ${failed.length} code(s) failed their check` : ''}`);
-  if (failed.length) return 3;
-  return check.stop ? 4 : 0;
+  return exitCode(check.stop, failed.length);
 }
 
 try {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { summarise, earlyCheck, formatReport, ThemesSchema, DOESNT_FIT_BAR, THEME_BAR, type Themes } from './stage5Report.js';
+import { summarise, earlyCheck, formatReport, ThemesSchema, DOESNT_FIT_BAR, THEME_BAR, codeFileProblem, exitCode, type Themes } from './stage5Report.js';
 import type { Stage5Code } from './stage5Code.js';
 import type { RosterRow } from './stage5Roster.js';
 
@@ -53,6 +53,15 @@ describe('earlyCheck', () => {
     expect(c.reasons.join()).toMatch(/Backs ID with no rung act/);
   });
 
+  it('counts a theme only by its doesnt-fit people in this summary, once each', () => {
+    const { roster, codes } = fixture(100, 15);
+    const ids = [...Array.from({ length: 8 }, (_, i) => id(i)), id(0), id(0), id(50), 'invented'];
+    const s = summarise(roster, codes, { at: 'now', read_notes: 15, themes: [{ name: 'T', points_at: 'rung-change', politician_ids: ids, summary: 's' }] });
+    expect(s.themes[0].count).toBe(8);
+    expect(s.themes[0].dropped).toBe(2);
+    expect(earlyCheck(s).stop).toBe(false);
+  });
+
   it('leaves no-stance people out of the denominator', () => {
     const { roster, codes } = fixture(10, 2, 90);
     const s = summarise(roster, codes);
@@ -99,5 +108,17 @@ describe('formatReport and ThemesSchema', () => {
   });
   it('refuses a theme with no cases', () => {
     expect(ThemesSchema.safeParse({ at: 'now', read_notes: 1, themes: [{ name: 'x', points_at: 'nothing', politician_ids: [], summary: 's' }] }).success).toBe(false);
+  });
+});
+
+describe('codeFileProblem and exitCode', () => {
+  it('refuses a code whose file name is not its politician id', () => {
+    expect(codeFileProblem(`${id(1)}.json`, code(1, 'no-stance'))).toBeNull();
+    expect(codeFileProblem(`${id(2)}.json`, code(1, 'no-stance'))).toMatch(/file name/);
+  });
+  it('lets a stop win over failed codes', () => {
+    expect(exitCode(true, 3)).toBe(4);
+    expect(exitCode(false, 3)).toBe(3);
+    expect(exitCode(false, 0)).toBe(0);
   });
 });

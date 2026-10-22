@@ -48,7 +48,15 @@ export function prefillFindings(
 ): { findings: PersonFindings[]; unmatched: UnmatchedVote[]; skipped: SkippedVote[] } {
   const onRoster = new Set(roster.map((r) => r.politician_id));
   const byId = new Map(instruments.map((i) => [i.id, i]));
-  const people = new Map<string, Finding[]>();
+  const people = new Map<string, Map<string, Finding>>();
+  const wantedIds = new Set(gates.map((g) => g.instrument_id));
+  // One finding per id per person: two census rows can resolve to the same store vote.
+  const add = (pid: string, base: Omit<Finding, 'id'>) => {
+    const id = findingId(base);
+    const list = people.get(pid) ?? new Map<string, Finding>();
+    if (!list.has(id)) list.set(id, { id, ...base } as Finding);
+    people.set(pid, list);
+  };
   const unmatched: UnmatchedVote[] = [];
   const skipped: SkippedVote[] = [];
 
@@ -69,18 +77,34 @@ export function prefillFindings(
         continue;
       }
       if (!onRoster.has(m.politician_id)) continue;
-      const base = {
+      add(m.politician_id, {
         kind: 'record' as const, url: inst.urls[0], date: vote.date, date_precision: 'day' as const,
-        instrument_id: inst.id, act: m.vote as Finding['act'], motion: vote.motion,
+        instrument_id: inst.id, act: m.vote as Finding['act'], motion: vote.motion, gate_by_topic: { [topicKey]: g.gate || 'none' },
         note: `${vote.body}, ${vote.motion}, ${vote.date}: ${m.vote} (tally ${vote.yes}–${vote.no}); census gate: ${g.gate || 'none'}.`,
         subjects: tags, topic_keys: [topicKey], provenance: inst.provenance,
-      };
-      const list = people.get(m.politician_id) ?? [];
-      list.push({ id: findingId(base), ...base });
-      people.set(m.politician_id, list);
+      });
     }
   }
 
-  const findings = [...people.entries()].map(([politician_id, list]) => ({ politician_id, findings: list, searches: [] }));
+  // Sponsorships are records too (codebook E1). The store keeps no filing date, so the bill's year stands in.
+  for (const inst of instruments) {
+    if (!wantedIds.has(inst.id) || !inst.urls.length) continue;
+    const year = inst.id.slice(-4);
+    for (const sp of inst.sponsors ?? []) {
+      if (!sp.politician_id) {
+        unmatched.push({ instrument_id: inst.id, date: year, body: '', motion: 'sponsor', name: sp.name, vote: sp.role });
+        continue;
+      }
+      if (!onRoster.has(sp.politician_id)) continue;
+      add(sp.politician_id, {
+        kind: 'record' as const, url: inst.urls[0], date: year, date_precision: 'year' as const, instrument_id: inst.id,
+        act: sp.role === 'author' ? 'author' : 'sponsor', motion: `${sp.role} sponsor${sp.version ? `, ${sp.version}` : ''}`,
+        note: `${sp.role} sponsor of ${inst.id}${sp.version ? ` (${sp.version})` : ''}: ${inst.title}.`,
+        subjects: subjects[inst.id], topic_keys: [topicKey], provenance: inst.provenance,
+      });
+    }
+  }
+
+  const findings = [...people.entries()].map(([politician_id, list]) => ({ politician_id, findings: [...list.values()], searches: [] }));
   return { findings, unmatched, skipped };
 }

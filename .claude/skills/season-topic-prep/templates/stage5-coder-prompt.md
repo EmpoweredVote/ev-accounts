@@ -35,8 +35,9 @@ evidence, but never seats anyone alone.
 
 Work through the codebook in its fixed order (V1 attribution → V2 relevance → V3 evidence class → V4 shape →
 V5 time → V6 chair) for each finding, then decide the row. Apply the furthest-act rule, "an escape open to
-everyone", "a fallback does not erase a stated requirement" and every gate in RULINGS.md. A finding's note
-says which census gate its vote met; a gated vote cannot seat.
+everyone", "a fallback does not erase a stated requirement" and every gate in RULINGS.md. A pre-filled vote's
+`gate_by_topic["{{TOPIC_KEY}}"]` says which census gate it met on this topic (`none` = no gate); a gated vote
+cannot seat. Cite only findings whose `topic_keys` include `{{TOPIC_KEY}}`.
 
 Give exactly one outcome:
 

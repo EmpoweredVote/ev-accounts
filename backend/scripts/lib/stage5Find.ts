@@ -43,7 +43,7 @@ export function nextBatch(roster: RosterRow[], store: string, topicKey: string, 
     if (row.leaving === 'yes') continue;
     const pf = loadFindings(store, row.politician_id);
     if (pf && searchedFor(pf, topicKey, season)) continue;
-    owed.push({ row, onFile: !!pf?.findings.length });
+    owed.push({ row, onFile: !!pf?.findings.some((f) => f.topic_keys.includes(topicKey)) });
   }
   // Stable: people with findings on file first, otherwise roster order.
   return owed.sort((a, b) => Number(b.onFile) - Number(a.onFile)).slice(0, size).map((o) => o.row);
@@ -72,8 +72,14 @@ const CollectorFileSchema = z.object({
   findings: z.array(CollectedFindingSchema),
 }).strict();
 
-export function importFindFile(json: unknown, topicKey: string, season: number, by: { by: string; at: string }): PersonFindings {
+export function importFindFile(
+  json: unknown, topicKey: string, season: number, by: { by: string; at: string },
+  expect?: { fileId: string; onRoster: Set<string> },
+): PersonFindings {
   const pid = (json as { politician_id?: string })?.politician_id ?? '(no politician_id)';
+  // A collector that kept a template id, or mixed up two people, would file one person's words under another.
+  if (expect && pid !== expect.fileId) throw new Error(`${pid}: the file name says ${expect.fileId}; a collector file must be <politician_id>.json`);
+  if (expect && !expect.onRoster.has(pid)) throw new Error(`${pid}: not on the roster for this topic`);
   const parsed = CollectorFileSchema.safeParse(json);
   if (!parsed.success) {
     throw new Error(`${pid}: ${parsed.error.issues.map((i) => `${i.path.join('.') || '(root)'}: ${i.message}`).join('; ')}`);

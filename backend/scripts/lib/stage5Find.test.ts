@@ -36,6 +36,15 @@ describe('nextBatch', () => {
     expect(b.map((r) => r.politician_id)).toEqual([id(2), id(3)]);
   });
 
+  it('counts only findings on this topic as on file', () => {
+    const f = { kind: 'record' as const, url: 'https://x.example/b', date: '2011-04-12', date_precision: 'day' as const, instrument_id: 'IN-SB-483-2011',
+      act: 'yea' as const, motion: 'final passage', note: 'n', subjects: ['abortion'], topic_keys: ['abortion'], provenance: prov };
+    upsertFindings(store, { politician_id: id(2), findings: [{ id: findingId(f), ...f }], searches: [] });
+    prefilled(3);
+    const b = nextBatch([row(1), row(2), row(3)], store, 'voting-rights', 3, { level: 'state', state: 'IN' }, 10);
+    expect(b.map((r) => r.politician_id)).toEqual([id(3), id(1), id(2)]);
+  });
+
   it('puts people with pre-filled findings first', () => {
     prefilled(3);
     const b = nextBatch([row(1), row(2), row(3)], store, 'voting-rights', 3, { level: 'state', state: 'IN' }, 10);
@@ -93,6 +102,13 @@ describe('importFindFile', () => {
   it('refuses a finding with no subjects, naming the person', () => {
     const bad = file({ findings: [{ ...file().findings[0], subjects: [] }] });
     expect(() => importFindFile(bad, 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow(new RegExp(id(1)));
+  });
+
+  it('refuses a file whose id is not its file name, or not on the roster', () => {
+    const onRoster = new Set([id(1)]);
+    expect(() => importFindFile(file(), 'voting-rights', 3, { by: 'c', at: 'x' }, { fileId: id(2), onRoster })).toThrow(/file name/);
+    expect(() => importFindFile(file({ politician_id: id(5) }), 'voting-rights', 3, { by: 'c', at: 'x' }, { fileId: id(5), onRoster })).toThrow(/roster/);
+    expect(importFindFile(file(), 'voting-rights', 3, { by: 'c', at: 'x' }, { fileId: id(1), onRoster }).politician_id).toBe(id(1));
   });
 
   it('refuses a file that carries a rung or value (the searcher does not code)', () => {

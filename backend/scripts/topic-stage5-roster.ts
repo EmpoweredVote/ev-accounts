@@ -2,11 +2,13 @@
  * topic-stage5-roster.ts — Stage 5 step 1: everyone in scope for one topic (read-only).
  *
  *   npm run topic:stage5-roster --prefix backend -- --topic <key> --out <absolute roster.tsv> [--as-of YYYY-MM-DD]
+ *        [--before YYYY-MM-DD]
  *
  * Writes `roster.tsv` (stage5Roster.ROSTER_COLUMNS) and `<name>.gaps.tsv` beside it (active candidates with no
  * politician record, offices with no known level, levels the topic is not asked at), then prints the counts
  * per level, state, scope and leaving. Refuses an existing file. Runs inside BEGIN READ ONLY … ROLLBACK.
- * `--as-of` (default today) is the first election date that still counts as upcoming.
+ * `--as-of` (default today) is the first election date that still counts as upcoming; `--before` (default
+ * 2027-01-01) the first that no longer does, so only this cycle's races count.
  *
  * Opens its own pg Pool from DATABASE_URL, loaded by lib/cliEnv.ts; never prints it.
  */
@@ -28,9 +30,12 @@ async function main(): Promise<number> {
   const topic = flag('--topic');
   const out = flag('--out');
   const asOf = flag('--as-of');
+  const before = flag('--before');
   if (!topic || !out) throw new Error('usage: topic-stage5-roster --topic <key> --out <absolute roster.tsv> [--as-of YYYY-MM-DD]');
   if (!isAbsolute(out)) throw new Error(`--out must be an absolute path (npm runs this from backend/): ${out}`);
-  if (asOf && !/^\d{4}-\d{2}-\d{2}$/.test(asOf)) throw new Error(`--as-of must be YYYY-MM-DD: ${asOf}`);
+  for (const [n, v] of [['--as-of', asOf], ['--before', before]] as const) {
+    if (v && !/^\d{4}-\d{2}-\d{2}$/.test(v)) throw new Error(`${n} must be YYYY-MM-DD: ${v}`);
+  }
   for (const f of [out, gapsPath(out)]) if (existsSync(f)) throw new Error(`${f} already exists; refusing to overwrite it`);
   if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is not set (expected in backend/.env)');
 
@@ -41,7 +46,7 @@ async function main(): Promise<number> {
     const q = (sql: string, params?: unknown[]) => client.query(sql, params as any[]);
     if (!(await topicExists(q, topic))) { console.error(`unknown topic: ${topic}`); return 2; }
     const gaps: RosterGap[] = [];
-    const rows = await loadRoster(q, topic, (g) => gaps.push(g), asOf ? { asOf } : {});
+    const rows = await loadRoster(q, topic, (g) => gaps.push(g), { ...(asOf ? { asOf } : {}), ...(before ? { before } : {}) });
     writeFileSync(out, formatRosterTsv(rows), { flag: 'wx' });
     writeFileSync(gapsPath(out), ['kind\tid\tnote', ...gaps.map((g) => `${g.kind}\t${g.id}\t${g.note.replace(/\s+/g, ' ')}`)].join('\n') + '\n', { flag: 'wx' });
 

@@ -35,8 +35,10 @@ No one else. The general election is 2026-11-03:
   the pre-fill only, no open search.
 - **After the results:** drop the losers (their candidacy is no longer live). Finish only the close races as they
   are called. Georgia and Louisiana runoffs stay active until December.
-- `leaving = unknown` means essentials has no upcoming race on file for that chamber. Report the count; do not
-  treat it as leaving.
+- `leaving = yes` only when the official's own seat has an upcoming race (before 2027) with live candidates on file
+  and they are not one of them. `leaving = unknown` means the race data cannot say (no race on file for the seat,
+  or no candidates loaded for it; 2026-10-22: Massachusetts has 200 state races on file and 4 candidates). Report
+  the count; `unknown` gets the full search.
 
 ## Steps
 
@@ -77,11 +79,12 @@ Brief one `source-collector` subagent per person with [templates/BRIEF-stage5-fi
 each writing `stage5/raw/find/<politician_id>.json`. Run them in parallel. Then import:
 
 ```bash
-npm run topic:stage5-find --prefix backend -- import --topic <key> --season draft --dir <abs>/stage5/raw/find
+npm run topic:stage5-find --prefix backend -- import --topic <key> --season draft --dir <abs>/stage5/raw/find --roster <abs>/stage5/roster.tsv
 ```
 
 A refused file names the person and the problem: fix the file or re-brief that person. **To resume after a stop,
-run `next` again**: it lists only people with no search for this topic and season. Commit the store's
+import first, then run `next` again**: it lists only people with no search for this topic and season, so files
+written but not imported would be listed again. Commit the store's
 `findings/` with the stage PR (`npm run source-store --prefix backend -- validate` first).
 
 ### 4. Code

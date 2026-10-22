@@ -52,7 +52,9 @@ blocked page is a gap, never "nothing": list it in `places` as `blocked: <url>`.
   about them by a reporter or an opponent are not their own words.
 - **A record:** the act (`yea`, `nay`, `abstain`, `sponsor`, `author`, `signed`, `vetoed`, `other`), the bill or
   ordinance number in `instrument_id` form if you know it (`IN-SB-483-2011`), the motion for a vote, and the
-  official URL. Set `local_record: true` for a city, county or school-board ordinance or resolution.
+  official URL. Set `local_record: true` for a city, county or school-board ordinance or resolution. With no
+  `instrument_id`, `motion` must name the act ("Ordinance 2024-7, clinic buffer zone"), so two acts on one
+  minutes page stay apart.
 - **The date** of the act or the words (not the date you fetched it), with its precision.
 - **A short plain note** of what it says, in your own words, with no judgement of the person.
 - **Subjects in plain words** (for example "voter ID at the polls", "mail-ballot ID", "proof of citizenship to

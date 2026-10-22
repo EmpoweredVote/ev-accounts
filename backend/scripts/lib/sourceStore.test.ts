@@ -260,6 +260,25 @@ describe('findings', () => {
     const rec = (motion: string) => ownWords({ kind: 'record', passage: undefined, instrument_id: 'IN-SB-483-2011', act: 'yea', motion });
     expect(findingId(rec('amendment 3'))).not.toBe(findingId(rec('final passage')));
   });
+  it('keeps both topics and both gates when one vote is pre-filled for two topics', () => {
+    const rec = (topic: string, gate: string) => {
+      const f = ownWords({ kind: 'record', passage: undefined, instrument_id: 'IN-SB-483-2011', act: 'yea', motion: 'final passage',
+        topic_keys: [topic], subjects: [topic === 'voting-rights' ? 'voter ID at the polls' : 'election administration'], gate_by_topic: { [topic]: gate } });
+      return withId(f);
+    };
+    upsertFindings(root, findings({ findings: [rec('voting-rights', 'none')] }));
+    upsertFindings(root, findings({ findings: [rec('elections-admin', 'multi-subject')] }));
+    const saved = PersonFindingsSchema.parse(JSON.parse(readFileSync(storePaths(root).findings(PID), 'utf8')));
+    expect(saved.findings).toHaveLength(1);
+    expect(saved.findings[0].topic_keys.sort()).toEqual(['elections-admin', 'voting-rights']);
+    expect(saved.findings[0].subjects.sort()).toEqual(['election administration', 'voter ID at the polls']);
+    expect(saved.findings[0].gate_by_topic).toEqual({ 'voting-rights': 'none', 'elections-admin': 'multi-subject' });
+  });
+  it('needs a motion (the act named) for a record with no instrument id', () => {
+    const rec = ownWords({ kind: 'record', passage: undefined, act: 'yea', local_record: true });
+    expect(FindingSchema.safeParse({ id: 'x', ...rec }).success).toBe(false);
+    expect(FindingSchema.safeParse({ id: 'x', ...rec, motion: 'Ordinance 2024-7, clinic buffer zone' }).success).toBe(true);
+  });
   it('stores a finding once when upserted twice', () => {
     expect(upsertFindings(root, findings())).toBe('created');
     expect(upsertFindings(root, findings())).toBe('merged');

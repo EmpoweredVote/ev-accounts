@@ -44,9 +44,12 @@ const levelOf = (r: OfficeFields): Level | null =>
   levelForDistrict(r.district_type ?? null, r.is_judicial ?? null, r.district_label ?? null, r.office_labels ?? []);
 
 export async function loadRoster(
-  q: Query, topicKey: string, onGap: (g: RosterGap) => void, opts: { asOf?: string } = {},
+  q: Query, topicKey: string, onGap: (g: RosterGap) => void, opts: { asOf?: string; before?: string } = {},
 ): Promise<RosterRow[]> {
   const asOf = opts.asOf ?? new Date().toISOString().slice(0, 10);
+  // Only this cycle counts (the 2026-11-03 general and its December runoffs): a 2027 municipal race on file must
+  // not make a sitting official "leaving" and so never searched.
+  const before = opts.before ?? '2027-01-01';
   const roles = await q(
     `-- stage5:roles
      SELECT r.role_scope FROM inform.compass_topic_roles r JOIN inform.compass_topics t ON t.id = r.topic_id
@@ -79,8 +82,8 @@ export async function loadRoster(
        LEFT JOIN essentials.offices o ON o.id = r.office_id
        ${officeJoins}
       WHERE rc.candidate_status = 'active' AND essentials.is_live_candidate(rc.candidate_status, rc.result)
-        AND e.election_date >= $1::date`,
-    [asOf],
+        AND e.election_date >= $1::date AND e.election_date < $2::date`,
+    [asOf, before],
   );
   const upcoming = await q(
     `-- stage5:upcoming
@@ -90,9 +93,9 @@ export async function loadRoster(
        FROM essentials.races r
        JOIN essentials.elections e ON e.id = r.election_id
        LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
-      WHERE e.election_date >= $1::date AND r.office_id IS NOT NULL
+      WHERE e.election_date >= $1::date AND e.election_date < $2::date AND r.office_id IS NOT NULL
       GROUP BY r.office_id`,
-    [asOf],
+    [asOf, before],
   );
   // Seats whose upcoming race has live candidates on file: only for these can "not on the ballot" mean leaving.
   const ballotKnown = new Set<string>(upcoming.rows.filter((r) => Number(r.candidates) > 0).map((r) => r.office_id));
