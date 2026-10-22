@@ -432,3 +432,86 @@ original `updated_at`, and the six rows seated by migrations 1921/1932/1934 all 
 - Season 1's inverted rows (Ishii, Lunaparra, O'Keefe) stay inverted in a closed season.
 - Berkeley auditor **Jenny Wong** sits at Season 1 chair 4 on reasoning that states no position —
   the absence-seating class, not an inversion, and she has no Season 2 row.
+
+---
+
+## 10. Jenny Wong — a NO-OP, and the queue her case points at
+
+§9 queued Berkeley City Auditor **Jenny Wong**, seated at Season 1 `local-immigration` chair 4 on
+reasoning that states no position. **Nothing was written, because nothing is writable.**
+
+### Why there is nothing to do
+
+Wong holds **seven Season 1 rows** — civil-rights, growth-and-development, homelessness,
+homelessness-response, judicial-transparency, local-immigration, public-safety-approach — and
+**every one infers a policy position from the duties of an auditor's office**: *"her audit work
+focuses on procedural compliance"*, *"Wong's office applies this equity lens"*, *"her office
+operates outside the police chain of command"*.
+
+🔑 **The project has already named this shape.** Migration 1917 blanked her growth-and-development
+row in Season 2 with: *"Shape: OFFICE DUTY. The cited activity is a duty of the office, not a
+position on the question."*
+
+**It caught one of her seven** — because the absence audit worked from a ranked model score (0.840
+on that row) rather than from the person. ⚖ **The ranker found a row; the defect belonged to a
+PERSON.** That is the same unit-of-defect lesson as §2, one level up.
+
+But: **Season 1 is closed**, and in Season 2 Wong holds exactly one row — the one 1917 already
+blanked, correctly. So her six remaining bad rows are all in a closed season, and **seeding her a
+Season 2 `local-immigration` chair would be the very defect**: "operates within that city
+framework" and "has not challenged sanctuary protections" are an office duty and an absence, not a
+position. **No migration.**
+
+### ▶ The queue her case points at — 21 live Season 2 rows, READ not written
+
+Officeholders in administrative (non-legislative) offices still seated in Season 2:
+**Treasurer 12 · Auditor of the Commonwealth 2 · Controller 2 · Treasurer and Receiver-General 2 ·
+State Treasurer 1 · City Controller 1 · Assessor-Recorder 1** — 21 rows, 14 people.
+⚠ **These are NOT automatically defective.** A Treasurer can hold a real position on housing
+finance, and several here do (Conine advocating bond funding and criticising the legislature;
+Pellicciotti proposing the Washington Future Fund; Mejia's own organising; Fleming's congressional
+votes). **Reading them found three distinct shapes:**
+
+**(a) 🔴 THE PROSE NAMES A DIFFERENT RUNG THAN THE CHAIR — 6 rows, self-contradicting, no lexicon
+needed.**
+
+| person | topic | chair | rung its own text names |
+|---|---|---:|---:|
+| Erick Russell | housing | 4 | 3 |
+| Erick Russell | same-sex-marriage | 2 | 1 |
+| Fiona Ma | housing | 3 | 2 |
+| Joey Spellerberg | housing | 4 | 3 |
+| Malia M. Cohen | housing | 3 | 2 |
+| Steven Johnson | housing | 4 | 3 |
+
+🔴 **PROBED FOR AN INSERTED RUNG FIRST, because a uniform +1 across a topic is exactly that
+signature** — the trap that produced 13 wrong blanks in migration 1903. **It is not one.** Housing
+rung 3 today reads *"Offer targeted help like subsidies for affordable projects, first-time buyer
+assistance, and easier building permits"*, which is precisely what Russell's, Spellerberg's and
+Johnson's prose describes; rung 4 is *"Cut regulations and zoning rules"*. Spellerberg's text even
+says *"not ... full market deregulation"* **while seated on the deregulation chair**. The prose
+matches **today's** numbering, so the chairs are one too high, not the prose one too low.
+⚠ Ma's and Cohen's say *"new stance 2"* — the author knew the ladder had been renumbered and wrote
+against the new one, which strengthens the same reading.
+
+**(b) A CHAIR SEATED ON IDENTITY, PARTY, AN ENDORSEMENT, OR AN ABSENCE — the same-sex-marriage
+cohort, 5 of 7.**
+· **Russell**: *"first openly gay Black person elected to CT statewide office and is married to a
+man"* — **personal identity is not a policy position.**
+· **Cohen**: *"Equality California endorsed Cohen ... The organization ... endorses only candidates
+who commit to these positions"* — **reasoning from an endorser's criteria**, not her record.
+· **Pellicciotti**: *"has no anti-SSM vote or statement on record"* — **an absence**.
+· **Goldberg**: *"throughout her career as a Massachusetts Democrat ... participated in the
+Massachusetts Democratic Party community"* — **party affiliation**.
+· **DiZoglio**: *"a strong supporter ... a consistent ally"* — no named instrument.
+✅ Only **Fleming** is solidly evidenced: original cosponsor of the Marriage Protection Amendment
+(H.J.Res. 32), which is chair 5's text almost verbatim.
+⚠ Ma names real instruments (SJR 9, SB 1172) but **neither is about marriage** — off-axis.
+
+**(c) OFFICE DUTY, Wong's own shape**: Steven Johnson — *"The Kansas Treasurer's office under
+Johnson administers the Home In The Heartland grant program"*; José Cisneros — *"administered the
+Empty Homes Tax and Commercial Vacancy Tax"*. **The office administering a programme is not the
+officeholder's position on it.**
+
+🔑 **Three shapes, overlapping**: Russell and Johnson appear in two each. ▶ Not written — this is a
+reading queue of 21 rows over 14 people, and it is a separate pass from the cluster campaign.
