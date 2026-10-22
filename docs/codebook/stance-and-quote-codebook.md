@@ -221,6 +221,11 @@ Act. An encyclopedia page about a bill is not the person's act; at most it point
     their own words (statement class) or stays a record that cannot seat a chair at a no-lever level.
     Until ruled: code it `statement-other` and let the row go to review.
   - A record from another level stays `pre-seating` (V5); it is not this person's act in this office.
+  - **A local record supports, never seats (ruling 2026-10-22, Chris Andrews, Stage 5 ruling 1).** At
+    a local level, an ordinance or resolution the person voted for or sponsored that shows which way
+    they lean on the question may be cited **beside** their own words, as joint evidence (V4.2). It
+    never seats a chair alone: with no own words on the question, the row is BLANK. A local law that
+    only decides which level may set a rule stays `adjacent` (H12). No version bump.
   - The election-cycle rule (V5, Q4) applies unchanged.
   - **Not** this rule: a level the topic is not asked at all (no `compass_topic_roles` row, or a
     named exclusion). That row is not coded; V6 `scope-unavailable`.
