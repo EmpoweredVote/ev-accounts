@@ -1,6 +1,6 @@
 {
   "_comment": "Reviewed pairs for check-duplicate-people.mjs. The gate fails on any pair NOT listed here. Set verdict to different_people (quiet for ever) or same_person (needs a merge migration) and add a note naming the source you checked. \"unreviewed\" is the backlog and should only shrink. split = the seated row holds nothing while the same-named unseated row holds the compass answers or the candidacies (voter-visible harm).",
-  "_updated": "2026-10-20",
+  "_updated": "2026-10-21",
   "pairs": {
     "006cec13-0c52-46b2-a509-703826a0f06b|04afc704-a4eb-42f7-bae4-dcacd6490e09": {
       "names": "Lawrence J Demoss ~ Lawrence Demoss",
@@ -554,6 +554,16 @@
       ],
       "split": false,
       "verdict": "unreviewed"
+    },
+    "ce8aef29-b9da-4e25-b7ea-d7a746de317b|d71c4160-9380-4788-88f1-4627b4abcb62": {
+      "names": "Lawrence Kyle Clark ~ Jason Clark",
+      "state": "co",
+      "why": [
+        "SHARED_FEC"
+      ],
+      "split": false,
+      "verdict": "different_people",
+      "note": "Different people, checked 2026-10-21. FEC H6CO06165 is CLARK, JASON, Republican, Colorado District 06, first filed 2026-06-13 (api.open.fec.gov/v1/candidate/H6CO06165). Jason Clark (d71c4160) is on the CO 2026 general ballot for U.S. Representative District 6 and holds the confirmed link. Lawrence Kyle Clark (ce8aef29, created by CC_0276) is on the same ballot for District 7; FEC has no Clark filing for CO-07. His fec_house link is a needs_research surname guess (score 0.6, written 2026-10-21 06:03) and is wrong: do not confirm it."
     },
     "dd088bfc-1d4d-476d-b16f-0d4da6ea88b6|fa143456-4ab3-4d2b-923b-be2b01835cb4": {
       "names": "Maria Isabel López ~ Maria G. Lopez",
