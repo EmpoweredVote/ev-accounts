@@ -20,6 +20,9 @@ import { geocodeAddress } from './geocodingService.js';
 // ---------------------------------------------------------------------------
 
 const CIVIC_ENDPOINT = 'https://www.googleapis.com/civicinfo/v2/voterinfo';
+const ELECTIONS_ENDPOINT = 'https://www.googleapis.com/civicinfo/v2/elections';
+const NATIONAL_OCD_ID = 'ocd-division/country:us';
+const ELECTIONS_TTL_MS = 6 * 60 * 60 * 1000;
 const REQUEST_TIMEOUT_MS = 6000;
 const SOURCE_LABEL = 'Voting Information Project / Google Civic Information API';
 
@@ -89,6 +92,13 @@ interface CivicLocation {
   endDate?: string;
   latitude?: number;
   longitude?: number;
+}
+
+interface CivicElection {
+  id?: string;
+  name?: string;
+  electionDay?: string; // YYYY-MM-DD
+  ocdDivisionId?: string;
 }
 
 interface CivicVoterInfoResponse {
@@ -197,6 +207,55 @@ function describeGoogleError(bodyText: string): string {
   }
 }
 
+// GET a Civic API URL with the shared timeout. Null on timeout/network failure.
+// Never log the URL: it carries the API key in a query parameter.
+async function civicGet(endpoint: string, params: Record<string, string>): Promise<Response | null> {
+  const url = new URL(endpoint);
+  for (const [k, v] of Object.entries(params)) url.searchParams.set(k, v);
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
+  try {
+    return await fetch(url.toString(), { signal: controller.signal });
+  } catch {
+    return null;
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+// The election list changes a few times a year; one fetch per process per
+// ELECTIONS_TTL_MS is plenty. A failed fetch is not cached, so the next lookup retries.
+let electionsCache: { at: number; elections: CivicElection[] } | null = null;
+
+async function listElections(apiKey: string): Promise<CivicElection[] | null> {
+  if (electionsCache && Date.now() - electionsCache.at < ELECTIONS_TTL_MS) return electionsCache.elections;
+  const res = await civicGet(ELECTIONS_ENDPOINT, { key: apiKey });
+  if (!res?.ok) return null;
+  try {
+    const body = (await res.json()) as { elections?: CivicElection[] };
+    electionsCache = { at: Date.now(), elections: body.elections ?? [] };
+    return electionsCache.elections;
+  } catch {
+    return null;
+  }
+}
+
+// The soonest national election that has not happened yet. Only national ones:
+// a state election (a Louisiana special, say) is not on a Boston voter's ballot,
+// and naming it would be worse than naming none. Google's permanent test
+// elections are national too, so they are dropped by name.
+async function upcomingNationalElectionId(apiKey: string): Promise<string | null> {
+  const elections = await listElections(apiKey);
+  if (!elections) return null;
+  const today = new Date().toISOString().slice(0, 10);
+  const next = elections
+    .filter((e) => e.ocdDivisionId === NATIONAL_OCD_ID && !/test election/i.test(e.name ?? ''))
+    .filter((e) => typeof e.electionDay === 'string' && e.electionDay >= today)
+    .sort((a, b) => (a.electionDay! < b.electionDay! ? -1 : 1))[0];
+  return next?.id ?? null;
+}
+
 // ---------------------------------------------------------------------------
 // getVoterInfo
 //
@@ -221,30 +280,32 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
   // which can never work from a server. Logged as a name, never a value.
   const keyName = env.GOOGLE_CIVIC_API_KEY ? 'GOOGLE_CIVIC_API_KEY' : 'GOOGLE_MAPS_API_KEY';
 
-  const url = new URL(CIVIC_ENDPOINT);
-  url.searchParams.set('key', apiKey);
-  url.searchParams.set('address', address);
-
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
-
-  let response: Response;
-  try {
-    response = await fetch(url.toString(), { signal: controller.signal });
-  } catch {
-    clearTimeout(timeout);
+  let response = await civicGet(CIVIC_ENDPOINT, { key: apiKey, address });
+  if (!response) {
     console.error('[voterInfo] Civic API request failed (timeout/network)');
     return emptyVoterInfo('unavailable');
   }
-  clearTimeout(timeout);
 
   // 400 commonly means "no live election for this address" — expected off-cycle.
   // Anything else is the upstream refusing us, which is NOT the same thing and
   // must not look the same from outside.
+  if (response.status === 400) {
+    // "Election unknown" is Google failing to match THIS address to its VIP
+    // data, not proof there is no election: on 2026-10-22, twelve days before
+    // the midterm, Willis Tower and Boston City Hall got it while homes a few
+    // blocks away got full results. Naming the election explicitly still
+    // returns its name and date (and the state's official links when Google has
+    // them), so the card can say "there is an election, here is where to look".
+    const bodyText = await response.text().catch(() => '');
+    if (!/election unknown/i.test(bodyText)) return emptyVoterInfo('no_election');
+    const electionId = await upcomingNationalElectionId(apiKey);
+    if (!electionId) return emptyVoterInfo('no_election');
+    const retry = await civicGet(CIVIC_ENDPOINT, { key: apiKey, address, electionId });
+    if (!retry?.ok) return emptyVoterInfo('no_election');
+    response = retry;
+  }
+
   if (!response.ok) {
-    if (response.status === 400) {
-      return emptyVoterInfo('no_election');
-    }
     const bodyText = await response.text().catch(() => '');
     console.error(
       `[voterInfo] Civic API returned ${response.status} using ${keyName} — ${describeGoogleError(bodyText)}`
