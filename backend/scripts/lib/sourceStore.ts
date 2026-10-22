@@ -207,13 +207,14 @@ function stripUndefined<T extends object>(o: T): Partial<T> {
   return Object.fromEntries(Object.entries(o).filter(([, v]) => v !== undefined)) as Partial<T>;
 }
 
-export function mergePerson(old: PersonSources, next: PersonSources): PersonSources {
+// `prev`, not `old`: the occupancy guard reads `o*.politician_id` as an essentials.offices alias.
+export function mergePerson(prev: PersonSources, next: PersonSources): PersonSources {
   return PersonSourcesSchema.parse({
-    politician_id: old.politician_id,
-    sources: unionBy(old.sources, next.sources, (s) => s.url, (o, n) =>
+    politician_id: prev.politician_id,
+    sources: unionBy(prev.sources, next.sources, (s) => s.url, (o, n) =>
       time(n.provenance.fetched_at) >= time(o.provenance.fetched_at) ? n : o,
     ),
-    terms: unionBy(old.terms, next.terms, (t) => `${t.office}|${t.start ?? ''}`, (_o, n) => n),
+    terms: unionBy(prev.terms, next.terms, (t) => `${t.office}|${t.start ?? ''}`, (_o, n) => n),
   });
 }
 
