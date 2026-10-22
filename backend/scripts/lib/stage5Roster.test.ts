@@ -41,26 +41,34 @@ describe('loadRoster', () => {
     const { roster } = await run({
       sitting: [{ politician_id: 'p1', full_name: 'A One', ...state('o1') }],
       candidates: [{ candidate_id: 'rc1', politician_id: 'p1', full_name: 'A One', race_id: 'r1', ...state('o1') }],
-      upcoming: [{ office_id: 'o1', chamber_id: 'c-house' }],
+      upcoming: [{ office_id: 'o1', chamber_id: 'c-house', candidates: 2 }],
     });
     expect(roster).toHaveLength(1);
     expect(roster[0]).toMatchObject({ scope: 'both', leaving: 'no', race_ids: ['r1'] });
   });
 
-  it('marks a sitting official whose seat is up and who is on no ballot as leaving', async () => {
+  it('marks a sitting official whose seat is up, with candidates on file, and who is not one, as leaving', async () => {
     const { roster } = await run({
       sitting: [{ politician_id: 'p1', full_name: 'A One', ...state('o1') }],
-      upcoming: [{ office_id: 'o1', chamber_id: 'c-house' }],
+      upcoming: [{ office_id: 'o1', chamber_id: 'c-house', candidates: 2 }],
     });
     expect(roster[0].leaving).toBe('yes');
   });
 
-  it('marks a seat not up, in a chamber that has races, as not leaving', async () => {
+  it('says unknown when the seat has a race but no candidates on file (the ballot is not loaded)', async () => {
     const { roster } = await run({
       sitting: [{ politician_id: 'p1', full_name: 'A One', ...state('o1') }],
-      upcoming: [{ office_id: 'o2', chamber_id: 'c-house' }],
+      upcoming: [{ office_id: 'o1', chamber_id: 'c-house', candidates: 0 }],
     });
-    expect(roster[0].leaving).toBe('no');
+    expect(roster[0].leaving).toBe('unknown');
+  });
+
+  it('says unknown, not "staying", when the seat has no race on file (partial race data)', async () => {
+    const { roster } = await run({
+      sitting: [{ politician_id: 'p1', full_name: 'A One', ...state('o1') }],
+      upcoming: [{ office_id: 'o2', chamber_id: 'c-house', candidates: 3 }],
+    });
+    expect(roster[0].leaving).toBe('unknown');
   });
 
   it('says unknown when the chamber has no upcoming races on file', async () => {

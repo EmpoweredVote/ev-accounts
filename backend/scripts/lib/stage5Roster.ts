@@ -8,10 +8,12 @@
  * active candidate with no politician record, an office whose level is unknown, and a level the topic is
  * not asked at are each reported through `onGap`.
  *
- * `leaving` says whether a sitting official is on their way out: `yes` when their seat has an upcoming
- * race and they are not a live candidate in it; `no` when they are on that ballot, or their chamber has
- * upcoming races on file but not for their seat; `unknown` when their chamber has no upcoming race on
- * file at all, so the data cannot say. Read-only.
+ * `leaving` says whether a sitting official is on their way out: `no` when they are a live candidate in an
+ * upcoming race; `yes` only when their own seat has an upcoming race with live candidates on file and they
+ * are not one of them; `unknown` otherwise. Race data is partial (2026-10-22: Massachusetts has 200 state
+ * races on file and 4 candidates; Indiana 7 races), so a seat with no race on file, or a race with no
+ * candidates loaded, says nothing. `unknown` gets the full search, so the error falls on the safe side.
+ * Read-only.
  */
 import { levelForDistrict, type Level } from '../../src/lib/topicApplicability.js';
 
@@ -82,19 +84,21 @@ export async function loadRoster(
   );
   const upcoming = await q(
     `-- stage5:upcoming
-     SELECT DISTINCT r.office_id::text AS office_id, o.chamber_id::text AS chamber_id
+     SELECT r.office_id::text AS office_id,
+            count(rc.id) FILTER (WHERE rc.candidate_status = 'active'
+                                   AND essentials.is_live_candidate(rc.candidate_status, rc.result))::int AS candidates
        FROM essentials.races r
        JOIN essentials.elections e ON e.id = r.election_id
-       JOIN essentials.offices o ON o.id = r.office_id
-      WHERE e.election_date >= $1::date`,
+       LEFT JOIN essentials.race_candidates rc ON rc.race_id = r.id
+      WHERE e.election_date >= $1::date AND r.office_id IS NOT NULL
+      GROUP BY r.office_id`,
     [asOf],
   );
-  const officesUp = new Set<string>(upcoming.rows.map((r) => r.office_id));
-  const chambersUp = new Set<string>(upcoming.rows.map((r) => r.chamber_id).filter(Boolean));
+  // Seats whose upcoming race has live candidates on file: only for these can "not on the ballot" mean leaving.
+  const ballotKnown = new Set<string>(upcoming.rows.filter((r) => Number(r.candidates) > 0).map((r) => r.office_id));
 
   const byPerson = new Map<string, RosterRow & { _rank: number }>();
   const candidacies = new Map<string, { race_id: string; office_id: string | null }[]>();
-  const chamberOf = new Map<string, string | null>(); // the chosen sitting office's chamber, for `leaving`
 
   const place = (id: string, name: string, r: OfficeFields) => {
     const level = levelOf(r);
@@ -112,7 +116,6 @@ export async function loadRoster(
       politician_id: r.politician_id, full_name: r.full_name, office_id: r.office_id, level, state: r.state || null,
       scope: 'sitting', leaving: 'unknown', race_ids: [], _rank: LEVEL_RANK[level],
     });
-    chamberOf.set(r.politician_id, r.chamber_id ?? null);
   }
 
   for (const r of candidates.rows) {
@@ -139,14 +142,9 @@ export async function loadRoster(
     row.race_ids = [...new Set(runs.map((c) => c.race_id))].sort();
     if (row.scope === 'sitting') {
       if (runs.length) row.scope = 'both';
-      const chamber = chamberOf.get(row.politician_id) ?? null;
-      if (row.office_id && officesUp.has(row.office_id)) {
-        row.leaving = runs.some((c) => c.office_id === row.office_id) ? 'no' : 'yes';
-      } else if (chamber && chambersUp.has(chamber)) {
-        row.leaving = 'no';
-      } else {
-        row.leaving = runs.length ? 'no' : 'unknown';
-      }
+      if (runs.length) row.leaving = 'no';
+      else if (row.office_id && ballotKnown.has(row.office_id)) row.leaving = 'yes';
+      else row.leaving = 'unknown';
     }
     const { politician_id, full_name, office_id, level, state, scope, leaving, race_ids } = row;
     out.push({ politician_id, full_name, office_id, level, state, scope, leaving, race_ids });
