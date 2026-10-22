@@ -358,3 +358,77 @@ that is the one migration 1932 just seeded at chair 1, correctly. Lunaparra, O'K
 ▶ If Season 1 is ever reopened or re-exported, these four are the queue.
 ▶ The three Berkeley councilmembers are also seeding candidates for Season 2 on the same primary
 ordinance text used in migration 1932.
+
+---
+
+## 9. Migration 1934 — the Berkeley sanctuary sponsors
+
+**2026-10-22.** §8 queued "the three Berkeley councilmembers are Season 2 seeding candidates".
+**The named roster did not survive contact with the records**, and that is the finding.
+
+### 🔴 The Season 1 corpus asserts a sponsorship that does not exist
+
+§8 named Ishii, **Lunaparra** and **O'Keefe** as the inverted Berkeley rows, and the Season 1
+reasoning says O'Keefe *"co-sponsored the second reading of Berkeley's Sanctuary City Contracting
+Ordinance"*. **She did not.** She appears on **no sponsor line of any of the three instruments**;
+her only record is an Aye on measures that passed unanimously.
+⚖ **Had the Season 1 reasoning been inherited rather than checked, this pass would have seated a
+voter-facing chair on a sponsorship that never happened** — in the very corpus just shown to be
+defective. **O'Keefe is not seeded.**
+
+### The sponsor lines, from the city's own records
+
+| | (A) 2025-01-21 reaffirmation | (B) 2025-04-15 referral | (C) Ord. 7,994-N.S. |
+|---|---|---|---|
+| Ishii | co-sponsor | **author** | co-sponsor |
+| **Lunaparra** | co-sponsor | co-sponsor | **author** |
+| **Blackaby** | **author** | co-sponsor | co-sponsor |
+| **Taplin** | co-sponsor | co-sponsor | — |
+| Humbert | — | — | co-sponsor |
+| O'Keefe | — | — | — |
+
+**Seeded at chair 1: Lunaparra, Blackaby, Taplin** (operator's call among the evidenced sets).
+⚠ **Humbert is not seeded** — one instrument is thinner than the bar this campaign has applied.
+🔑 **Blackaby authored (A), the resolution that set codification in motion, and was never on the
+original list.** The list came from a defective detector output; the records came from the city.
+
+### The bar is unchanged from migration 1932
+
+Berkeley's measures passed **9-0 and 8-0**, so an Aye seats nothing — the Newhouse rule. Every row
+rests on **authorship or named co-sponsorship**. Guard 4 enforces it: a seed whose reasoning
+records no `Author`/`Co-Sponsor` is refused.
+Chair 1 is justified from **Ordinance No. 7,984-N.S.** as in §7 — `13.114.030(C)(5)` (no complying
+with any civil immigration warrant or request to detain/transfer/notify) and `(C)(4)` (no
+disclosing Protected Personal Information). Chair 3 carries neither limb.
+
+### 🔑 A new guard, against a live hazard in this database
+
+`essentials.politicians` holds **Cal-Access committee filer rows with the same names** —
+"LUNAPARRA FOR BERKELEY CITY COUNCIL 2024; CECILIA", "TAPLIN FOR CITY COUNCIL 2024; TERRY", two
+Blackaby filers. Seeding one of those would attach a voter-facing chair to a campaign committee.
+Guard 2 discriminates cheaply: **a committee filer has no Season 1 row on this ladder; the
+officeholder does** — which also proves the seed is the same person the inversion scan read. It
+additionally requires `full_name` to match the seed's label exactly.
+
+### ⚖ The Season 1 defect is INCONSISTENT, not uniform — which sharpens §8
+
+Of the five Berkeley sponsors, **Season 1 seats Blackaby and Taplin correctly at chair 1** while
+**Ishii, Lunaparra and O'Keefe sit at chair 5**. So it is not a Berkeley-wide mis-seed applied to a
+cohort; it is three rows going wrong while two colleagues on the *same instruments* went right.
+🔴 Season 1 is closed and migration 1934 touches none of it, Lunaparra's inverted chair 5 included;
+the guard proves Season 1 did not move.
+
+### Gates
+
+`--csv` pre-write (3/3, CSV generated **from the migration file**) → `check:stance-sources` baseline
+→ dry run → apply → `--check` post-write reading **3 rows** → direct SQL outside the migration: all
+three at chair 1 with 4, 4 and 3 primary Berkeley citations, all Season 1 rows unmoved at their
+original `updated_at`, and the six rows seated by migrations 1921/1932/1934 all at chair 1.
+`check:stance-sources` identical before and after, `ANSWER_WITHOUT_CONTEXT` still 0.
+
+### ▶ Left open
+
+- **O'Keefe and Humbert** remain unseeded on this ladder, for stated reasons.
+- Season 1's inverted rows (Ishii, Lunaparra, O'Keefe) stay inverted in a closed season.
+- Berkeley auditor **Jenny Wong** sits at Season 1 chair 4 on reasoning that states no position —
+  the absence-seating class, not an inversion, and she has no Season 2 row.
