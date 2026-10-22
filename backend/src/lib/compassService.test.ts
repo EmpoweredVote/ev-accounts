@@ -425,11 +425,11 @@ describe('getPoliticianCitations — the topic set follows the answer’s season
         topic_tension_name: 'Gun Policy', stance_value: 2,
         stance_text: 'Require universal background checks.', reasoning: 'Sponsored S.1.',
         source_url: 'https://example.gov/s1', snippet: 'I sponsored S.1.',
-        verified_at: '2026-09-20', is_primary: true,
+        verified_at: '2026-09-20', is_primary: true, served_revision_id: 'rev-gun',
       }] })
       .mockResolvedValueOnce({ rows: [
-        { topic_key: 'gun-policy', value: 1, text: 'Ban' },
-        { topic_key: 'gun-policy', value: 2, text: 'Require universal background checks.' },
+        { topic_revision_id: 'rev-gun', value: 1, text: 'Ban' },
+        { topic_revision_id: 'rev-gun', value: 2, text: 'Require universal background checks.' },
       ] });
 
     const [block] = await getPoliticianCitations('p1');
@@ -438,5 +438,65 @@ describe('getPoliticianCitations — the topic set follows the answer’s season
       citations: [{ source_url: 'https://example.gov/s1', domain: 'example.gov', is_primary: true }],
     });
     expect(block.all_stances).toHaveLength(2);
+  });
+});
+
+// 🔴 THE TITLE, TENSION NAME AND LADDER MUST COME FROM THE SERVED REVISION, not
+// the compass_topics text columns. CA_0012 froze those; measured 2026-10-21, 22 of
+// 185 citation blocks (4 topics) showed old wording — climate-change titled
+// "Climate Change" over a Clean Energy ladder. ADR 0006: the revision is the one
+// the ANSWER's season pinned, since an answer is locked to the ladder it was given
+// against; with no answer, the context's season pin.
+describe('getPoliticianCitations — wording follows the served revision', () => {
+  const citationSql = async () => {
+    mockQuery.mockResolvedValue({ rows: [] });
+    await getPoliticianCitations('p1');
+    return (mockQuery.mock.calls[0][0] as string).replace(/--[^\n]*/g, '');
+  };
+
+  it('reads no text column from compass_topics', async () => {
+    const sql = await citationSql();
+    expect(sql).not.toMatch(/ct\.(question_text|short_title|title)\b/);
+    expect(sql).toMatch(/COALESCE\(eff\.question_text, eff\.short_title\)\s+AS topic_title/);
+    expect(sql).toMatch(/eff\.short_title\s+AS topic_tension_name/);
+  });
+
+  it('resolves through the shared servedRevisionLateral, pinned by the answer, else the context season', async () => {
+    const sql = await citationSql();
+    expect(sql).toContain("e.status IN ('published', 'superseded')");
+    expect(sql).toMatch(/WHERE pin\.id = COALESCE\(pa\.topic_revision_id,/);
+    expect(sql).toMatch(/shown_sq\.season_id = pc\.season_id AND shown_sq\.topic_id = pce\.topic_id/);
+    // after both collapses, so the pin is the one of the season the block shows
+    expect(sql.indexOf('WHERE pin.id = COALESCE')).toBeGreaterThan(sql.indexOf(') pc ON true'));
+  });
+
+  it('takes stance_text from that same revision, never re-resolving is_current', async () => {
+    const sql = await citationSql();
+    expect(sql).toMatch(/sr\.topic_revision_id = eff\.id AND sr\.value = pa\.value/);
+    expect(sql).not.toMatch(/is_current/);
+  });
+
+  it('builds the ladder from each block\'s served revision id, not by topic or is_current', async () => {
+    const row = (key: string, rev: string) => ({
+      topic_key: key, topic_title: `${key}?`, topic_tension_name: key, stance_value: 1,
+      stance_text: 'One', reasoning: 'r', source_url: 'https://a.gov/x', snippet: 's',
+      verified_at: '2026-10-01', is_primary: true, served_revision_id: rev,
+    });
+    mockQuery
+      .mockResolvedValueOnce({ rows: [row('climate-change', 'rev-c'), row('abortion', 'rev-a')] })
+      .mockResolvedValueOnce({ rows: [
+        { topic_revision_id: 'rev-a', value: 1, text: 'A1' },
+        { topic_revision_id: 'rev-c', value: 1, text: 'C1' },
+        { topic_revision_id: 'rev-c', value: 2, text: 'C2' },
+      ] });
+
+    const blocks = await getPoliticianCitations('p1');
+    const ladderSql = mockQuery.mock.calls[1][0] as string;
+    expect(ladderSql).not.toMatch(/is_current|compass_topics\b/);
+    expect(mockQuery.mock.calls[1][1]).toEqual([['rev-c', 'rev-a']]);
+    expect(blocks.find(b => b.topic_key === 'climate-change')!.all_stances.map(s => s.text)).toEqual(['C1', 'C2']);
+    expect(blocks.find(b => b.topic_key === 'abortion')!.all_stances.map(s => s.text)).toEqual(['A1']);
+    // internal only — the response contract is unchanged
+    expect(blocks[0]).not.toHaveProperty('served_revision_id');
   });
 });
