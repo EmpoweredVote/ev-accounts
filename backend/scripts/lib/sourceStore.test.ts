@@ -1,9 +1,11 @@
 import { mkdtempSync, mkdirSync, readFileSync, writeFileSync, rmSync } from 'node:fs';
 import { tmpdir } from 'node:os';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
   DeadEndSchema, InstrumentSchema, JurisdictionSchema, PersonSourcesSchema, appendDeadEnd, storePaths, upsertInstrument, upsertPerson, validateStore,
+  mergeStore, topicListHash,
   type Instrument, type Vote,
 } from './sourceStore.js';
 
@@ -167,5 +169,55 @@ describe('validateStore', () => {
     expect(problems).toHaveLength(1);
     expect(problems[0].file).toContain('WA-BAD-1-2020.json');
     expect(problems[0].error.length).toBeGreaterThan(0);
+  });
+});
+
+describe('sponsors', () => {
+  it('keeps sponsors and unions them on merge', () => {
+    upsertInstrument(root, inst({ sponsors: [{ name: 'A. Prime', role: 'prime', version: 'as filed' }] }));
+    upsertInstrument(root, inst({
+      sponsors: [{ name: 'B. Co', role: 'co' }, { name: 'A. Prime', role: 'prime', version: 'as filed', politician_id: PID }],
+      provenance: prov('2026-10-10T00:00:00Z'),
+    }));
+    const saved = JSON.parse(readFileSync(storePaths(root).instrument('state:wa', 'WA-ESSB-5044-2021'), 'utf8'));
+    expect(saved.sponsors).toEqual([
+      { name: 'A. Prime', politician_id: PID, role: 'prime', version: 'as filed' },
+      { name: 'B. Co', role: 'co' },
+    ]);
+  });
+  it('rejects an unknown sponsor role, and an instrument without sponsors stays valid', () => {
+    expect(InstrumentSchema.safeParse(inst({ sponsors: [{ name: 'x', role: 'friend' as 'co' }] })).success).toBe(false);
+    upsertInstrument(root, inst());
+    const saved = JSON.parse(readFileSync(storePaths(root).instrument('state:wa', 'WA-ESSB-5044-2021'), 'utf8'));
+    expect('sponsors' in saved).toBe(false);
+  });
+});
+
+describe('topicListHash', () => {
+  it('is SHA-256 of the sorted, de-duplicated keys, one per line with a trailing newline', () => {
+    const want = createHash('sha256').update('a-topic\nb-topic\n').digest('hex');
+    expect(topicListHash(['b-topic', 'a-topic', 'b-topic'])).toBe(want);
+  });
+});
+
+describe('mergeStore', () => {
+  it('merges a staging store and does not repeat a dead end', () => {
+    const staging = mkdtempSync(join(tmpdir(), 'source-store-staging-'));
+    try {
+      upsertInstrument(staging, inst({ votes: [vote('concur')], provenance: prov('2026-10-10T00:00:00Z') }));
+      upsertInstrument(root, inst());
+      const d = { at: '2026-10-20T00:00:00Z', scope: 'state:wa', query_or_url: 'https://x.example/portal', result: 'blocked' as const, by: 't' };
+      appendDeadEnd(root, d);
+      appendDeadEnd(staging, { ...d, at: '2026-10-21T00:00:00Z' });
+      appendDeadEnd(staging, { ...d, query_or_url: 'https://y.example/other' });
+      const n = mergeStore(staging, root);
+      expect(n).toEqual({ instruments: 1, people: 0, jurisdictions: 0, deadEnds: 1 });
+      const saved = JSON.parse(readFileSync(storePaths(root).instrument('state:wa', 'WA-ESSB-5044-2021'), 'utf8'));
+      expect(saved.votes.map((v: Vote) => v.motion).sort()).toEqual(['concur', 'final passage']);
+      expect(validateStore(root)).toEqual([]);
+      expect(readFileSync(storePaths(root).deadEnds, 'utf8').trim().split('\n')).toHaveLength(2);
+    } finally {
+      rmSync(staging, { recursive: true, force: true });
+    }
   });
 });

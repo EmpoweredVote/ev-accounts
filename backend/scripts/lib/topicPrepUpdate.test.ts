@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { storyName, statusLabel, formatUpdate, type TopicPrepState } from './topicPrepUpdate.js';
+import { storyName, statusLabel, formatUpdate, formatUpdateHtml, type TopicPrepState } from './topicPrepUpdate.js';
 
 const base: TopicPrepState = {
   topicKey: 'school-vouchers',
@@ -58,4 +58,13 @@ describe('formatUpdate', () => {
     expect(out).toContain('Revision: —');
   });
   it('is plain text with no Markdown table', () => expect(formatUpdate(base)).not.toContain('|'));
+});
+
+describe('formatUpdateHtml', () => {
+  it('joins the plain lines with <br> and escapes HTML', () => {
+    const html = formatUpdateHtml({ ...base, nextStep: 'Ask about <b> & co', path: undefined, seatRateBefore: null });
+    expect(html).toContain('Stage: 2<br>Path: —<br>Seat rate: — → 75%');
+    expect(html).toContain('Next: Ask about &lt;b&gt; &amp; co');
+    expect(html).not.toContain('\n');
+  });
 });

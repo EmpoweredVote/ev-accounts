@@ -11,7 +11,11 @@
  * `--research-only <dir>`: the old behaviour — rows come from rows.tsv alone (frozen test sets).
  * `--rows-out <absolute file>`: also write a starter rows.tsv for Stage 0a (formatRowsTsv): one row per
  * database answer, record_kind `none`, gate empty. Refuses an existing file, so a classified rows.tsv is
- * never overwritten. Not with --research-only.
+ * never overwritten. Not with --research-only. Beside it, it writes two sidecars (same refusal):
+ * `<name>.reasons.tsv` — the stored blank reason and the first 300 characters of this season's and the
+ * earliest season's context reasoning per row (repair-blanked rows keep their reason only there), and
+ * `<name>.skipped.tsv` — answers with no current office or an unknown level, which rows.tsv cannot hold.
+ * Both name people and instruments: forbidden to blind drafters, like rows.tsv.
  * Exit 2 on an unknown topic key. Never writes.
  *
  * Opens its own pg Pool from DATABASE_URL, loaded by lib/cliEnv.ts (backend/.env, or the main
@@ -23,7 +27,7 @@ import { fileURLToPath } from 'node:url';
 import pg from 'pg';
 import { CliFlagError, flag as readFlag, hasFlag, loadBackendEnv } from './lib/cliEnv.js';
 import { resolveSeasonTarget, seasonSpecFromArgv, SeasonTargetError } from './lib/seasonTarget.js';
-import { formatRowsTsv, loadDbRows, parseRowsTsv, summarise, formatReport, mergeResearch, topicExists } from './lib/seatRate.js';
+import { formatReasonsTsv, formatRowsTsv, formatSkippedTsv, sidecarPath, type SkippedRow, loadDbRows, parseRowsTsv, summarise, formatReport, mergeResearch, topicExists } from './lib/seatRate.js';
 
 const backendDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadBackendEnv(backendDir);
@@ -39,7 +43,11 @@ async function main(): Promise<number> {
   const rowsOut = flag('--rows-out');
   if (rowsOut && researchOnly) throw new Error('--rows-out reads the database rows, so it cannot be combined with --research-only');
   if (rowsOut && !isAbsolute(rowsOut)) throw new Error(`--rows-out must be an absolute path (npm runs this from backend/): ${rowsOut}`);
-  if (rowsOut && existsSync(rowsOut)) throw new Error(`--rows-out ${rowsOut} already exists; refusing to overwrite it`);
+  if (rowsOut) {
+    for (const f of [rowsOut, sidecarPath(rowsOut, 'reasons'), sidecarPath(rowsOut, 'skipped')]) {
+      if (existsSync(f)) throw new Error(`${f} already exists; refusing to overwrite it`);
+    }
+  }
   const json = hasFlag(argv, '--json');
   if (!process.env.DATABASE_URL) throw new Error('DATABASE_URL is not set (expected in backend/.env)');
   const pool = new pg.Pool({ connectionString: process.env.DATABASE_URL, max: 1 });
@@ -57,10 +65,16 @@ async function main(): Promise<number> {
       const season = await resolveSeasonTarget(seasonSpecFromArgv(process.argv), q);
       const noOffice: string[] = [];
       const unknownLevel: string[] = [];
-      const dbRows = await loadDbRows(q, topic, season.id, (id, why) => (why === 'no-office' ? noOffice : unknownLevel).push(id));
+      const skipped: SkippedRow[] = [];
+      const dbRows = await loadDbRows(q, topic, season.id, (id, why, row) => {
+        (why === 'no-office' ? noOffice : unknownLevel).push(id);
+        if (row) skipped.push(row);
+      });
       if (rowsOut) {
         writeFileSync(rowsOut, formatRowsTsv(dbRows), { flag: 'wx' });
-        console.error(`wrote ${dbRows.length} starter rows to ${rowsOut}`);
+        writeFileSync(sidecarPath(rowsOut, 'reasons'), formatReasonsTsv(dbRows), { flag: 'wx' });
+        writeFileSync(sidecarPath(rowsOut, 'skipped'), formatSkippedTsv(skipped), { flag: 'wx' });
+        console.error(`wrote ${dbRows.length} starter rows to ${rowsOut}, with ${sidecarPath(rowsOut, 'reasons')} and ${skipped.length} skipped row(s) in ${sidecarPath(rowsOut, 'skipped')}`);
       }
       let rows: Array<Omit<(typeof dbRows)[number], 'record_kind'> & { record_kind?: (typeof dbRows)[number]['record_kind'] }> = dbRows;
       const notes: string[] = [];

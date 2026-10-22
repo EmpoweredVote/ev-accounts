@@ -80,6 +80,13 @@ ID does not meet rung 4. They apply to the Season 3 revision 4 of that topic onl
 `voting-rights` examples below (Kennedy / SAVE Act under V1 and V6, Durazo / SB 1174 under V2) were coded
 against the Season 1 ladder; under Season 2 and this revision a proof-of-citizenship law is rung 5. Decision
 record: `.planning/research/s3-prep-voting-rights/stage3/results.md` and `stage4/` (workspace root).
+**Clarified 2026-10-22 (still 0.6 — no new variable or value; ruling by Chris Andrews 2026-10-22, from the
+season-topic-prep fixes, finding #50):** D3 is no longer topic-scoped. Wherever a Season annex carries the
+furthest-act line, it applies only among acts that bind: a record that also states an escape open to **any**
+person sits on the escape's rung, even when it states a stricter act such as a cure (V4.2 "An escape open to
+everyone"). C-Q4 and DC1 stay topic-scoped to `voting-rights`. Three annexes carry the furthest-act line (the
+Season 3 `education-library-books`, `education-equity-programs` and `voting-rights`); only `voting-rights` has a
+rung that turns on an escape, and D3 already applied there, so no recorded label changes.
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
@@ -477,6 +484,18 @@ A vote does not mean support for every clause of a bill.
     31, 2030"), or a declared net-zero policy that names carbon capture and removal as paths, names no
     energy source; it can be met in other ways → BLANK `direction-only` (the pro-action side).
   - The same test applies on every ladder: match the rung's object, not only its verb.
+- **An escape open to everyone (ruling 2026-10-22; generalises `voting-rights` D3).** Where a Season annex
+  carries the furthest-act line (a record that states the acts of two neighbouring rungs sits on its furthest
+  act), that line applies only among acts that **bind**. If the record also states an escape that lets **any**
+  person avoid the requirement (for any reason, or for a reasonable impediment), the record sits on the
+  escape's rung, even when it also states a stricter act such as a cure. An escape limited to **named
+  exemptions** is not an escape here: the stricter act decides. The escape must be stated in the text, like any
+  clause (silence is not an escape).
+  - Photo ID at the polls, **or** a sworn statement of a reasonable impediment that lets the ballot count,
+    **and** a provisional ballot cured by showing ID within six days → the sworn-statement rung, not the
+    cure rung (`voting-rights` D3).
+  - The same law with the sworn statement limited to voters with a religious objection or a disaster → the
+    stricter rung.
 - **Joint evidence (0.5; E2, Season 3 rulebook, ruled 2026-10-08).** Two or more sources may together
   seat a compound rung that no one of them meets in full. All six conditions must hold:
   1. Each passage is the person's own act or own words and passes V1, V2, V3 and V5 as for a chair. A

@@ -8,6 +8,14 @@ Each entry gives the ruling, its date, its source and its scope. Sources under `
 root (`~/Documents/GitHub/.planning/`, local to Chris Andrews' machine); the ruling text here is enough to apply
 them without opening the source.
 
+## The ladder rulebook, as ruled (L1–L10)
+
+The ruled table is in `docs/superpowers/specs/2026-10-07-season3-ladder-evaluation.md`, "Rulebook rulings" (Chris
+Andrews, 2026-10-08). Quote it, not the design spec's proposal (`2026-10-07-season3-design.md` §2), where they differ.
+Two differences that have misled runners: **L10 is five rungs always in Season 3, with no fewer-rung exception**
+(a topic that cannot reach five kinds of act on one axis is re-axed or retired), and **E1 needs no second source**:
+a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second source; not adopted).
+
 ## Coding rulings
 
 ### Furthest act
@@ -18,6 +26,17 @@ them without opening the source.
   (`.planning/research/s3-pilot-library-stage3/results.md`); confirmed for equity programs Q5, 2026-10-19
   (`.planning/research/s3-pilot-equity-programs/stage2/drafts.md` §7).
 - **Scope:** every topic. Write it as an annex line for each new ladder.
+
+### Furthest act — an escape open to everyone
+- **Ruling:** the furthest-act rule applies only among acts that bind. When a record also states an escape that
+  lets **any** person avoid the requirement (for any reason, or for a reasonable impediment), the record sits on the
+  escape's rung, even when it also states a stricter act such as a cure. An escape limited to named exemptions does
+  not count as an escape: the stricter act decides. Worked example: `voting-rights` D3 (a sworn-statement path open
+  to any voter keeps a photo-ID law at rung 3, even with a cure).
+- **Date and source:** 2026-10-22, Chris Andrews, season-topic-prep fixes (finding #50,
+  `.planning/research/s3-prep-voting-rights/skill-test-notes.md`); generalises D3 (2026-10-21).
+- **Scope:** every topic. Written into the codebook (header line "Clarified 2026-10-22" and V4.2 "An escape open
+  to everyone", still 0.6).
 
 ### Small-body rule
 - **Ruling:** on a body of 10 or fewer voting members the tally does not decide `near-unanimous`. Such a vote can
@@ -79,6 +98,14 @@ them without opening the source.
   ruled for every topic, against the recommendation to keep it topic-scoped.
 - **Scope:** every topic.
 
+### Off-question records
+- **Ruling:** `record_kind` describes the person's record **on this ladder's question**. A Yea vote (or any record)
+  on a question the ladder no longer asks is `record_kind` = `none`: it stays out of the affirmative-record (T1)
+  denominator, and its blank is classed `off-question`.
+- **Date and source:** 2026-10-22, Chris Andrews, season-topic-prep fixes (finding #7,
+  `.planning/research/s3-prep-voting-rights/skill-test-notes.md`).
+- **Scope:** every topic.
+
 ### Exposure
 - **Ruling:** an instrument the live ladder or its annex names is exposed. Its items stay in the test set and are
   scored apart from T1 and T3.
@@ -93,6 +120,14 @@ them without opening the source.
   minutes for the vote date, never by surname alone.
 - **Date and source:** equity programs census supplement, 2026-10-19
   (`.planning/research/s3-census-education-equity-programs-supplement/stage0-supplement.md`, "State identity check").
+- **Scope:** every census.
+
+### Census — what one record is
+- **Ruling:** one record per instrument per chamber: its final vote (final passage, concurrence or conference
+  report; where a veto was overridden, the override vote). A recorded floor-amendment vote that is itself a provision
+  of the topic is its own record. Procedural votes and earlier readings do not count.
+- **Date and source:** 2026-10-22, Chris Andrews, season-topic-prep fixes (finding #26, a law with nine roll calls;
+  `.planning/research/s3-prep-voting-rights/skill-test-notes.md`).
 - **Scope:** every census.
 
 ### Census — private funding of election offices
@@ -139,6 +174,13 @@ them without opening the source.
   §5.6, §10); library books (CA_0310) and equity programs (CA_0314) were applied with T4 open.
 - **Scope:** every topic from Season 3 on.
 
+### Validators get the default readings
+- **Ruling:** blind validators at Stage 3 code from the codebook, the ladder, its annex lines, the frozen texts **and
+  the pre-registered default readings**. The readings were fixed before any label, so giving them is not leakage.
+- **Date and source:** 2026-10-22, Chris Andrews, season-topic-prep fixes (finding #44: all four voting-rights
+  validation misses came from leaving one reading out; `.planning/research/s3-prep-voting-rights/skill-test-notes.md`).
+- **Scope:** every topic.
+
 ### A third draft after Stage 3
 - **Ruling:** a third draft may be written after Stage 3 from the Stage 3 lesson by kind, and tested on the same
   frozen set. It is flagged as not fully blind.
@@ -163,6 +205,8 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
   the strict test is visible.
 
 ### voting-rights — D3, C-Q4, DC1 (rung 3/4 line)
+- **Note (2026-10-22):** D3 is now a general rule ("Furthest act — an escape open to everyone", above). C-Q4 and DC1
+  stay topic-scoped.
 - **Reading:** D3 — a sworn-statement path open to any voter with a reasonable impediment keeps a law at rung 3 even
   when it also states a cure; sworn statements only for named exemptions leave it at rung 4. C-Q4 — on the mail
   branch, a statement limited to people never issued any listed ID number is a named exemption. DC1 — a mail-ballot

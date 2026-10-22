@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { formatRowsTsv, mergeResearch, topicExists, summarise, blankClassForReason, parseRowsTsv, formatReport, loadDbRows } from './seatRate.js';
+import { formatRowsTsv, mergeResearch, topicExists, summarise, blankClassForReason, parseRowsTsv, formatReport, loadDbRows, formatReasonsTsv, formatSkippedTsv, sidecarPath, type SkippedRow } from './seatRate.js';
 
 describe('seatRate', () => {
   it('zero rows', () => {
@@ -38,7 +38,9 @@ describe('seatRate', () => {
   it('blankClassForReason maps reasons', () => {
     expect(blankClassForReason('no-evidence')).toBe('source-gap');
     for (const g of ['near-unanimous', 'multi-subject', 'study-directive', 'pre-seating']) expect(blankClassForReason(g)).toBe('gate');
-    for (const w of ['direction-only', 'adjacent-chairs', 'compound-partial', 'record-vs-statement-conflict']) expect(blankClassForReason(w)).toBe('wording');
+    for (const w of ['adjacent-chairs', 'compound-partial', 'record-vs-statement-conflict']) expect(blankClassForReason(w)).toBe('wording');
+    // A No vote's direction-only is never a wording loss, so the runner classifies it by reading.
+    expect(blankClassForReason('direction-only')).toBeNull();
     expect(blankClassForReason('scope-unavailable')).toBe('no-lever');
     expect(blankClassForReason('banana')).toBeNull();
   });
@@ -58,19 +60,51 @@ describe('seatRate', () => {
     const q = async (_sql: string, params: unknown[] = []) => {
       calls.push(params);
       return { rows: [
-        { politician_id: 'p1', office_id: 'o1', value: '0', district_type: 'STATE_UPPER', is_judicial: false, district_label: 'x', office_labels: ['Senator'], proposed_blank_reason: 'no-evidence' },
+        { politician_id: 'p1', office_id: 'o1', value: '0', district_type: 'STATE_UPPER', is_judicial: false, district_label: 'x', office_labels: ['Senator'], proposed_blank_reason: 'no-evidence', reasoning: 'Season 2 repair: blanked', first_reasoning: 'Voted Yea on a bill' },
         { politician_id: 'p2', office_id: 'o2', value: '2.5', district_type: 'NATIONAL_LOWER', is_judicial: false, district_label: 'y', office_labels: [], proposed_blank_reason: null },
-        { politician_id: 'p4', office_id: null, value: '3', district_type: null, is_judicial: null, district_label: null, office_labels: [null, null], proposed_blank_reason: null },
+        { politician_id: 'p4', office_id: null, value: '3', district_type: null, is_judicial: null, district_label: null, office_labels: [null, null], proposed_blank_reason: 'no-evidence' },
         { politician_id: 'p3', office_id: 'o3', value: '1', district_type: 'WEIRD', is_judicial: false, district_label: null, office_labels: [], proposed_blank_reason: null },
       ] };
     };
     const skipped: string[] = [];
     const why: string[] = [];
-    const rows = await loadDbRows(q, 'k', 's', (id, w) => { skipped.push(id); why.push(w); });
+    const skippedRows: SkippedRow[] = [];
+    const rows = await loadDbRows(q, 'k', 's', (id, w, row) => { skipped.push(id); why.push(w); if (row) skippedRows.push(row); });
     expect(calls[0]).toEqual(['k', 's']);
     expect(rows.map((r) => [r.level, r.value, r.blank_class])).toEqual([['state', 0, 'source-gap'], ['federal', 2.5, undefined]]);
     expect(skipped).toEqual(['p4', 'p3']);
     expect(why).toEqual(['no-office', 'unknown-level']);
+    expect(skippedRows[0]).toEqual({ politician_id: 'p4', why: 'no-office', value: 3, blank_reason: 'no-evidence' });
+    expect(rows[0]).toMatchObject({ reasoning: 'Season 2 repair: blanked', first_reasoning: 'Voted Yea on a bill' });
+    expect(rows[1].reasoning).toBeUndefined();
+  });
+
+  it('reasons and skipped sidecars', () => {
+    const reasons = formatReasonsTsv([
+      { politician_id: 'p1', office_id: 'o1', level: 'state', value: 0, blank_reason: 'direction-only', record_kind: 'none', reasoning: 'line\tone\nline two', first_reasoning: 'old' },
+    ]).split('\n');
+    expect(reasons[0]).toBe('politician_id\tvalue\tblank_reason\treasoning\tfirst_reasoning');
+    expect(reasons[1]).toBe('p1\t0\tdirection-only\tline one line two\told');
+    const skipped = formatSkippedTsv([{ politician_id: 'p9', why: 'no-office', value: 5 }]).split('\n');
+    expect(skipped[1]).toBe('p9\tno-office\t5\t');
+    expect(sidecarPath('/r/stage0a/rows.tsv', 'reasons')).toBe('/r/stage0a/rows.reasons.tsv');
+    expect(sidecarPath('/r/stage0a/rows', 'skipped')).toBe('/r/stage0a/rows.skipped.tsv');
+  });
+
+  it('new blank classes parse and count', () => {
+    const rows = parseRowsTsv(`${H}\np1\to1\tstate\t0\t\toff-question\tnone\t\np2\to2\tstate\t0\tdirection-only\tnay-only\tvote-no\t`, 'r.tsv');
+    const r = summarise(rows);
+    expect(r.total.byClass['off-question']).toBe(1);
+    expect(r.total.byClass['nay-only']).toBe(1);
+    expect(formatReport(r)).toMatch(/off-question\s+nay-only/);
+  });
+
+  it('says to headline the overall rate when few rows are affirmative', () => {
+    const few = summarise([{ level: 'state', value: 4, record_kind: 'vote-yes' }, { level: 'state', value: 0, record_kind: 'none' }]);
+    expect(formatReport(few)).toMatch(/only 1 affirmative record\(s\); report the overall rate \(50\.0%\)/);
+    const many = summarise(Array.from({ length: 10 }, () => ({ level: 'state' as const, value: 3, record_kind: 'vote-yes' as const })));
+    expect(formatReport(many)).not.toMatch(/note:/);
+    expect(formatReport(summarise([{ level: 'state', value: 3 }]))).not.toMatch(/note:/);
   });
 
   it('mergeResearch joins on politician_id', () => {
@@ -122,7 +156,13 @@ describe('seatRate', () => {
   });
 
   it('formatRowsTsv derives blank_class from the reason when the row has none', () => {
-    const text = formatRowsTsv([{ politician_id: 'p', office_id: 'o', level: 'state', value: 0, blank_reason: 'direction-only', record_kind: 'none' }]);
-    expect(text.split('\n')[1]).toBe('p\to\tstate\t0\tdirection-only\twording\tnone\t');
+    const text = formatRowsTsv([{ politician_id: 'p', office_id: 'o', level: 'state', value: 0, blank_reason: 'compound-partial', record_kind: 'none' }]);
+    expect(text.split('\n')[1]).toBe('p\to\tstate\t0\tcompound-partial\twording\tnone\t');
+  });
+
+  it('formatRowsTsv leaves a stored direction-only unclassified, and never writes reasoning', () => {
+    const text = formatRowsTsv([{ politician_id: 'p', office_id: 'o', level: 'state', value: 0, blank_reason: 'direction-only', record_kind: 'none', reasoning: 'secret' }]);
+    expect(text.split('\n')[1]).toBe('p\to\tstate\t0\tdirection-only\t\tnone\t');
+    expect(text).not.toContain('secret');
   });
 });

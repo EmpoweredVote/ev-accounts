@@ -1,8 +1,8 @@
-# Stage 0 census brief — {{TOPIC_KEY}} — {{DATE}}
+# Stage 0 census brief (local bodies) — {{TOPIC_KEY}} — {{DATE}}
 
 <!-- Orchestrator: fill every {{…}}, delete these comments, and give each collector its own task line
-     (bodies or states to search, its caps, its output path). Generalised from the equity-programs
-     census supplement brief (2026-10-19). -->
+     (bodies to search, its caps, its output path). Generalised from the equity-programs census supplement
+     brief (2026-10-19). For state laws and Congress use BRIEF-census-state.md instead. -->
 
 🔴 **Stage 2 drafters must not read this folder.** It names bodies, votes and bill texts.
 
@@ -13,9 +13,9 @@ rate, rank or place anyone on any scale.
 
 🔴 **Meeting and bill portals (BoardDocs, Legistar, Municode, legiscan, and the like): NO scripted bulk requests.**
 Bulk curl got earlier collectors blocked (BoardDocs CloudFront 403 after about 700 requests; legiscan sits behind
-Cloudflare; Municode refuses curl). Do not use curl, wget, loops or scripts to fetch. Fetch ONE known item or minutes
-page at a time with WebFetch, only when you have a reason to think it holds a relevant vote, and stop at your fetch
-cap. If a portal returns 403 or a challenge page, stop using it; try the Wayback Machine
+Cloudflare; Municode refuses curl). No loops, no scripts, no wget. Fetch ONE known item or minutes page at a time
+with WebFetch, only when you have a reason to think it holds a relevant vote, and stop at your fetch cap. When
+WebFetch returns a binary PDF or an iframe, one `curl` of that one document URL, then `pdftotext`, is allowed. If a portal returns 403 or a challenge page, stop using it; try the Wayback Machine
 (`https://web.archive.org/web/2024/<url>`) once, then move on and list the portal under `blocked`. **A blocked portal
 is a gap, never "none".** Respect robots and site terms (some sites forbid automated access entirely).
 
@@ -64,22 +64,10 @@ The topic question: "{{TOPIC_QUESTION}}"
 - `state_duty_note`: does the item say it carries out a state or federal law, rule or order (e.g.
   {{STATE_DUTY_EXAMPLES}})? Quote it; else "none cited".
 - `url_minutes`, `url_item` (policy, ordinance or resolution text), `url_other`, `notes`.
-
-## Per state law (or federal act)
-
-- state, bill, session year, status (enacted, vetoed, died), one-line subject.
-- `version_voted`: the version the final roll call adopted (as filed, engrossed, enrolled). `sponsor_version`: the
-  version the prime sponsor filed, and whether it is substantially the same text.
-- `companion`: an identical bill in the other chamber with its own roll calls, if any (it counts as a separate
-  record).
-- `operative_parts`: list EVERY operative section in a few words each, with a ≤25-word quote of each. Flag any part
-  on {{OTHER_TOPICS_TO_FLAG}}, or anything else outside this topic. We decide single- versus multi-subject; you only
-  list.
-- `higher_law_note`: does the law carry out a federal duty, or impose a duty on local bodies? Quote it.
-- `rollcalls`: [{chamber, date, motion (final passage, concurrence or veto override), yeas, nays, other, pct_no,
-  url, yea_names:[..], nay_names:[..], other_names:[..]}] — names **exactly as printed**. Final passage,
-  concurrence or override votes only; skip procedural motions.
-- `notes`.
+- `names_from`: where the member names came from — `page text`, `pdf text`, `reader summary` (a page reader that
+  summarised rather than copied) or `news`. The identity check re-reads anything not from the page or PDF text.
+- 🔴 A record counts only once its operative text has been read. A title or an agenda line is a lead: give
+  `content_terms` from the item text, or say "text not read".
 
 ## Roster
 
@@ -94,7 +82,7 @@ later against official session lists.
 
 - Do not invent. "None found" is a useful result. Record what you searched (queries and sites) and what blocked you.
 - 🔴 WebSearch is scarce: your cap is {{WEBSEARCH_CAP}}; never exceed it. Prefer WebFetch on known URLs. Stop at
-  {{WEBFETCH_CAP}} fetches. No curl or scripted fetching of any portal.
+  {{WEBFETCH_CAP}} fetches. No loops or scripted fetching of any portal.
 - Write your JSON file early and update it after each body or bill, so partial work survives.
 - Return a ≤150-word summary: counts per type per body.
 
@@ -105,11 +93,6 @@ Local bodies:
   "records":[{"type":..,"kind":..,"date":..,"item_no":..,"item_title":..,"body_size":..,"section":..,
    "section_quote":..,"motion_quote":..,"mover":..,"seconder":..,"own_motion":..,"members":[..],"tally":..,
    "content_terms":..,"other_subjects":..,"state_duty_note":..,"url_minutes":..,"url_item":..,"url_other":..,
-   "notes":..}],"notes":..}],
+   "names_from":..,"notes":..}],"notes":..}],
  "websearch_count":N,"webfetch_count":N}
 
-States:
-{"agent":"<id>","states_searched":{"XX":[".."]},"blocked":[".."],"laws":[{"state":..,"bill":..,"session":..,
-  "status":..,"subject":..,"version_voted":..,"sponsor_version":..,"companion":..,
-  "operative_parts":[{"part":..,"quote":..,"flag":..}],"higher_law_note":..,"rollcalls":[..],"notes":..}],
- "websearch_count":N,"webfetch_count":N}

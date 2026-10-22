@@ -30,7 +30,10 @@ not the output; a row with no attack is listed only by id. Output: `stage3/adver
 
 You (the orchestrator) read each attack against the source. An attack that fails on the text (the quote does not
 say what the attack claims, or a ruling in RULINGS.md settles it) is closed with a one-line reason in
-`stage3/disputes.md`. The closed attacks and their reasons are also listed in the one-page summary of
+`stage3/disputes.md`. 🔴 **Read every closure against the winning draft's own annex lines for that rung** as well as
+RULINGS.md: a general ruling can close an attack that the draft's annex decides the other way. Then have a second,
+independent subagent review the closed-attack table (attack, quote, reason) before Stage 3 passes; reopen any
+closure it disputes. The closed attacks and their reasons are also listed in the one-page summary of
 `stage3/results.md`, so the runner can see what was tried and why it failed. Each attack that **survives** becomes one dispute, in this format:
 
 ```markdown
@@ -48,8 +51,11 @@ say what the attack claims, or a ruling in RULINGS.md settles it) is closed with
 **Ruling:** _(runner, date)_
 ```
 
-No full bill and no blind labelling. Expect 0–3 disputes per topic. Ask them one at a time, as in SKILL.md "How to
-ask for a ruling".
+No full bill and no blind labelling. Ask them one at a time, as in SKILL.md "How to ask for a ruling". There is no
+expected number (voting-rights had six). When several disputes turn on the same boundary that the ladder's annex
+lines do not settle (a fallback that needs another document; a law with both a fallback and a cure), say so in one
+line and ask the runner whether to send that boundary back to Stage 2 as a wording question rather than rule each
+row.
 
 ## 3. The gate
 

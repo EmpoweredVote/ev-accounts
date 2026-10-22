@@ -7,7 +7,10 @@ Goal: collect the EXACT operative text of each instrument listed in your task, a
 can later read what it does. You do NOT judge stances, rungs or sides. No ladder is given to you; do not invent one.
 Offline research, free sources only, no logins.
 
-🔴 Fetch pages **one at a time**. No scripted bulk downloads, no curl loops against meeting or bill portals. If a
+🔴 Fetch pages **one at a time**. No scripted bulk downloads and no loops against meeting or bill portals. When
+WebFetch returns a binary PDF or an iframe, one `curl` of that one document URL, then `pdftotext`, is allowed.
+🔴 **Struck-through text:** many bills print deleted words as strike-through, and text extraction keeps the struck
+words. When a section shows markup, render the page (`pdftoppm -png`) and read the image; say so in `access_note`. If a
 portal blocks you (403, challenge page), stop using it, try the Wayback Machine once, then report it as blocked. **A
 blocked portal is a gap, never "not found in the law".** Respect robots and site terms.
 
@@ -30,7 +33,8 @@ For each instrument give:
   so plainly.
 - `saved_copy`: if you saved a PDF or page capture, its path under {{RAW_DIR}} and its SHA-256.
 - `sponsors`: the PRIME sponsor (or chief patron) as printed on the official bill page, with chamber, and the
-  version they filed. If the instrument has an official companion or cross-file in the other chamber that your task
+  version they filed (the store keeps them as `sponsors: [{name, role, version}]`; the identity step ties each
+  printed name to a roster person, as for roll-call names). If the instrument has an official companion or cross-file in the other chamber that your task
   names, give that bill's prime sponsor too. Give the source URL. Do not list co-sponsors unless the official page
   prints no single prime sponsor (then list the first-named and say so).
 - If the adopted text cannot be reached, say "NOT FOUND" and list what you tried.

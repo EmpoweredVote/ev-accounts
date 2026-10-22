@@ -6,21 +6,31 @@ and `education-equity-programs` (CA_0314, EmpoweredVote/ev-accounts#1053). The S
 [templates/stage4-revision.sql](templates/stage4-revision.sql).
 
 Nothing in steps 1–2 writes anything outside the research folder. Every later step that writes waits for its own
-yes.
+yes. In dry mode (SKILL.md "Hard rules") the run stops at yes #1.
 
 ## Steps, in order
 
 ### 1. Read the topic facts (read-only)
-Write them at the top of `stage4/revision.md`:
+Fill [templates/stage4-facts.sql](templates/stage4-facts.sql) (topic id and key) and run it with
+`npm run db:ro --prefix backend -- --file <abs path> --json`. Write the facts at the top of `stage4/revision.md`:
 - topic id and key; the control revision id (the current published one), its revision number, version and
   change class; any other open (`draft` or `approved`) revision — there must be none;
-- the open and draft season ids and what each pins for this topic;
+- the open and draft season ids and what each pins for this topic (`{{SEASON_OPEN_ID}}`, `{{SEASON_DRAFT_ID}}`);
 - the number of questions in each season (`inform.season_questions`) — these go into the gate as `{{S2_COUNT}}`
   and `{{S3_COUNT}}`;
-- seats on the topic in every season (`politician_answers`, `politician_context`, `stance_research_review`) and
-  live voter answers by revision and value. The draft season must hold **no** politician answers on this topic.
-  If it does (Source-path draft rows written before a wording problem appeared), stop and ask the runner whether to
-  withdraw those draft rows or defer the rewording to the next season.
+- seats on the topic in every season (`politician_answers`, `politician_context`, `stance_research_review`). The
+  draft season must hold **no** politician answers on this topic. If it does (Source-path draft rows written before
+  a wording problem appeared), stop and ask the runner whether to withdraw those draft rows or defer the rewording
+  to the next season;
+- **live voter answers as ROWS** of `inform.compass_responses` (not deleted), by the revision they were **given
+  on** and value. The gate counts rows, so `{{EXPECTED_DISPOSITIONS}}` is worked out from this query by applying the
+  rung map by hand. (`inform.compass_answer_dispositions` keeps only each voter's latest answer, so it can show
+  fewer; do not take the expected figure from it.) Report answers given on an older ladder than the control (a
+  Season 1 axis carried forward by an identity map): the runner sees them when approving the rung map;
+- the actor id `{{ACTOR_ID}}`: the runner's `auth.users` id (the query prints it for the email you give; Chris
+  Andrews' is in the header of CA_0318);
+- `{{FILE_SUFFIX}}`: `<topic_key with _>_s<N>_<draft letter>_revision`, as in
+  `CA_0318_voting_rights_s3_draft_c_revision.sql`.
 
 ### 2. Write the offline package (`stage4/`)
 - `revision.md` — every field: change class (`substantive` when a seat or a voter answer moves position or the
@@ -42,13 +52,16 @@ Write them at the top of `stage4/revision.md`:
   and the row for the "Season 3 (draft)" table in `docs/codebook/annex/README.md`.
 - A codebook line, if a ruling owes one (topic-scoped readings go in the codebook header and in RULINGS.md
   "Topic-scoped readings").
-- RULINGS.md lines for any ruling that generalises.
+- RULINGS.md lines for any ruling that generalises, in `stage4/rulings-proposed.md`, each marked **ruled** (a filing
+  of a ruling the runner already made, with its date) or **needs a ruling** (a new rule: ask it as its own question
+  at yes #1).
 - `README.md` — a file table, a summary of the change, "What the runner must approve" (numbered), and "Steps on
   approval". It becomes the progress log.
 - The migration as a file only: copy the template to `stage4/<slot placeholder>_<suffix>.sql` and fill every
-  `{{…}}`. Rung texts, title, question, guidance, rationale, public note and review ref sit inside dollar quotes, so
-  apostrophes need no escaping. `grep -n '{{' <filled file>` must print nothing (the template's comments name no
-  braces, so any line it prints is an unfilled placeholder).
+  `{{…}}` **except `{{SLOT}}`**, which waits for step 3. Rung texts, title, question, guidance, rationale, public
+  note and review ref sit inside dollar quotes, so apostrophes need no escaping. `grep -n '{{' <filled file>` must
+  print only `{{SLOT}}` lines now, and nothing after step 3 (the template's comments name no braces, so any other
+  line it prints is an unfilled placeholder).
   The template finds the new revision by its number `{{REV_NUM}}` and its five rung texts, on any revision **other
   than** `{{REV_PREV_ID}}`, so a clarifying revision whose rungs are unchanged (only question, guidance or title
   change) still works: set `{{CHANGE_CLASS}}` to `clarifying` and `{{VERSION}}` to the control's version.
@@ -106,11 +119,30 @@ README row, `stage4/README.md` and the PR. Push the update to the PR.
 `npm run steward --prefix backend -- sync --apply` and confirm the slot's state is `written`. (`written` means the
 file exists, not that it ran; the apply is recorded in step 7.)
 
-### 9. Close the stage
-- Re-measure: `npm run topic:seat-rate --prefix backend -- --topic <key> --season draft`.
-- Follow-up owed by every Season 3 revision so far: point `build-coder-inputs.ts` at `annex/season3/` before coding
-  the topic with `--season draft`.
-- Monday step: stage `done`, the revision id, the expert-queue count.
+### 9. Re-audit the carried seats
+The rung map carries existing seats into the new revision. A **material** rewrite (CLAUDE.md "Rewording a chair
+that already holds seated politicians") means each carried seat's evidence was gathered against a sentence that no
+longer exists, so re-audit every one against the new wording, one row at a time:
+- read its record against every clause of its new rung (codebook V4.2), and check it is still on a tracked office
+  (a person with no current office does not carry);
+- run `node backend/scripts/audit-chair-evidence.mjs --check <file>` on the rows; a fail there is either a row
+  with no instrument named or a gap in the pattern (check the reasoning by reading before you call it a row fault);
+- 🛑 ask the runner one question per seat that does not plainly carry (or one question for a group with the same
+  reason), with a recommendation;
+- write `stage4/reaudit/seats.md` (one section per seat, the ruling at the end) and `stage4/reaudit/carry.json`:
+  `{topic_id, season_id, topic_revision_id, ruled_by, ruled_at, carry: [{politician_id, name, rung, records:
+  [{instrument_id, record, vote, source}]}], do_not_carry: [{politician_id, name, reason}]}`. Season 3 research
+  re-cites the carried seats from it.
+A clarifying rewording keeps the seats with no re-audit; say so in `README.md`.
+
+### 10. Close the stage
+- The coder reads the Season 3 annex already (`coderAnnexPath` in `build-coder-inputs.ts`); check that the new
+  `docs/codebook/annex/season3/<topic_key>.md` is the file it resolves for the topic.
+- At apply, measure nothing: `topic:seat-rate --season draft` prints "no rows" until Season 3 research runs on the
+  topic. What to check now is the draft pin (`topic:ladder-lint --season draft` prints the new rungs) and the rung
+  map. **Re-measure the seat rate after the topic's Season 3 research** (`--season draft`, then `--research` with
+  that run's rows), and compare it with the Stage 3 T1 figure and the Stage 0a rate.
+- Monday step: stage `done`, the revision id, the expert-queue count, and the re-measure owed.
 
 ## Known traps
 
@@ -124,4 +156,4 @@ file exists, not that it ran; the apply is recorded in step 7.)
   the draft season, and the precondition refuses to re-pin.
 - **An open revision blocks the propose.** Resolve any `draft` or `approved` revision on the topic first.
 - **Material rewording of seated chairs** needs the seated-row count in the rationale and a re-audit of what carries
-  forward (CLAUDE.md "Rewording a chair that already holds seated politicians").
+  forward (step 9; CLAUDE.md "Rewording a chair that already holds seated politicians").
