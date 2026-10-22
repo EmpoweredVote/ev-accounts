@@ -6,7 +6,8 @@ import { afterEach, beforeEach, describe, expect, it } from 'vitest';
 import {
   DeadEndSchema, InstrumentSchema, JurisdictionSchema, PersonSourcesSchema, appendDeadEnd, storePaths, upsertInstrument, upsertPerson, validateStore,
   mergeStore, topicListHash,
-  type Instrument, type Vote,
+  FindingSchema, PersonFindingsSchema, findingId, upsertFindings, searchedFor,
+  type Instrument, type Vote, type Finding, type PersonFindings,
 } from './sourceStore.js';
 
 const PID = '3f2b8c1e-5d4a-4e6b-9a7c-1b2d3e4f5a6b';
@@ -211,11 +212,76 @@ describe('mergeStore', () => {
       appendDeadEnd(staging, { ...d, at: '2026-10-21T00:00:00Z' });
       appendDeadEnd(staging, { ...d, query_or_url: 'https://y.example/other' });
       const n = mergeStore(staging, root);
-      expect(n).toEqual({ instruments: 1, people: 0, jurisdictions: 0, deadEnds: 1 });
+      expect(n).toEqual({ instruments: 1, people: 0, jurisdictions: 0, findings: 0, deadEnds: 1 });
       const saved = JSON.parse(readFileSync(storePaths(root).instrument('state:wa', 'WA-ESSB-5044-2021'), 'utf8'));
       expect(saved.votes.map((v: Vote) => v.motion).sort()).toEqual(['concur', 'final passage']);
       expect(validateStore(root)).toEqual([]);
       expect(readFileSync(storePaths(root).deadEnds, 'utf8').trim().split('\n')).toHaveLength(2);
+    } finally {
+      rmSync(staging, { recursive: true, force: true });
+    }
+  });
+});
+
+// ---------- findings (Stage 5) ----------
+
+const ownWords = (over: Partial<Finding> = {}): Omit<Finding, 'id'> => ({
+  kind: 'own-words', url: 'https://example.org/forum', date: '2026-09-01', date_precision: 'day',
+  passage: 'Every voter should show a photo ID at the polls.', note: 'Supports photo ID at the polls.',
+  subjects: ['voter ID at the polls'], topic_keys: ['voting-rights'], provenance: prov('2026-10-22T00:00:00Z'), ...over,
+});
+const withId = (f: Omit<Finding, 'id'>): Finding => ({ id: findingId(f), ...f } as Finding);
+const findings = (over: Partial<PersonFindings> = {}): PersonFindings => ({
+  politician_id: PID, findings: [withId(ownWords())], searches: [], ...over,
+});
+const search = (season: number, topic = 'voting-rights') => ({
+  topic_key: topic, season, subjects: ['voter ID'], places: ['campaign site'], found: 1, at: '2026-10-22T00:00:00Z', by: 'collector',
+});
+
+describe('findings', () => {
+  it('needs the exact passage for own words', () => {
+    const { passage: _p, ...rest } = ownWords();
+    expect(FindingSchema.safeParse({ id: 'x', ...rest }).success).toBe(false);
+  });
+  it('needs the act for a record', () => {
+    const rec = ownWords({ kind: 'record', passage: undefined, instrument_id: 'IN-SB-483-2011' });
+    expect(FindingSchema.safeParse({ id: 'x', ...rec }).success).toBe(false);
+    expect(FindingSchema.safeParse({ id: 'x', ...rec, act: 'yea' }).success).toBe(true);
+  });
+  it('needs at least one subject in plain words', () => {
+    expect(FindingSchema.safeParse({ id: 'x', ...ownWords({ subjects: [] }) }).success).toBe(false);
+  });
+  it('gives the same id to the same passage whatever the note or provenance', () => {
+    expect(findingId(ownWords())).toBe(findingId(ownWords({ note: 'other', provenance: prov('2026-11-01T00:00:00Z') })));
+    expect(findingId(ownWords())).not.toBe(findingId(ownWords({ passage: 'Something else entirely.' })));
+    expect(findingId(ownWords())).toMatch(/^[0-9a-f]{64}$/);
+  });
+  it('stores a finding once when upserted twice', () => {
+    expect(upsertFindings(root, findings())).toBe('created');
+    expect(upsertFindings(root, findings())).toBe('merged');
+    const saved = PersonFindingsSchema.parse(JSON.parse(readFileSync(storePaths(root).findings(PID), 'utf8')));
+    expect(saved.findings).toHaveLength(1);
+  });
+  it('keeps one entry per search and knows what was searched', () => {
+    upsertFindings(root, findings({ searches: [search(3)] }));
+    upsertFindings(root, findings({ searches: [search(3)] }));
+    const saved = PersonFindingsSchema.parse(JSON.parse(readFileSync(storePaths(root).findings(PID), 'utf8')));
+    expect(saved.searches).toHaveLength(1);
+    expect(searchedFor(saved, 'voting-rights', 3)).toBe(true);
+    expect(searchedFor(saved, 'voting-rights', 4)).toBe(false);
+    expect(searchedFor(saved, 'abortion', 3)).toBe(false);
+  });
+  it('is checked by validateStore', () => {
+    mkdirSync(join(root, 'findings'), { recursive: true });
+    writeFileSync(storePaths(root).findings(PID), JSON.stringify({ politician_id: PID, findings: [{ id: 'x' }], searches: [] }));
+    expect(validateStore(root).map((p) => p.file)).toEqual([join('findings', `${PID}.json`)]);
+  });
+  it('is carried by mergeStore', () => {
+    const staging = mkdtempSync(join(tmpdir(), 'source-store-staging-'));
+    try {
+      upsertFindings(staging, findings({ searches: [search(3)] }));
+      expect(mergeStore(staging, root).findings).toBe(1);
+      expect(validateStore(root)).toEqual([]);
     } finally {
       rmSync(staging, { recursive: true, force: true });
     }

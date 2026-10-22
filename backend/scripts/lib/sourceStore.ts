@@ -158,6 +158,65 @@ export const DeadEndSchema = z.object({
 });
 export type DeadEnd = z.infer<typeof DeadEndSchema>;
 
+// ---------- findings (Stage 5) ----------
+
+/**
+ * What one Stage 5 search found for one person (design §7): the exact passage of their own words, or their
+ * act on a record, with the date, a plain note and subject tags in plain words (not rung numbers, so a
+ * reworded or split topic can be re-coded from them). `id` is `findingId`, so the same passage or act is
+ * stored once however often it is found. `local_record` marks a local ordinance or resolution, which may
+ * support a local official's own words but never seats alone (RULINGS.md "Stage 5 rulings").
+ */
+export const FindingSchema = z
+  .object({
+    id: z.string().min(1),
+    kind: z.enum(['record', 'own-words']),
+    url: z.string().min(1),
+    date: z.string(),
+    date_precision: z.enum(['day', 'month', 'year', 'unknown']),
+    passage: z.string().min(1).optional(),
+    instrument_id: InstrumentIdSchema.optional(),
+    act: z.enum(['yea', 'nay', 'abstain', 'sponsor', 'author', 'signed', 'vetoed', 'other']).optional(),
+    local_record: z.boolean().optional(),
+    note: z.string().min(1),
+    subjects: z.array(z.string().min(1)).min(1),
+    topic_keys: z.array(z.string().min(1)),
+    provenance: ProvenanceSchema,
+  })
+  .refine((f) => f.kind !== 'own-words' || !!f.passage, { message: 'own-words needs the exact passage', path: ['passage'] })
+  .refine((f) => f.kind !== 'record' || !!f.act, { message: 'a record needs the act', path: ['act'] });
+export type Finding = z.infer<typeof FindingSchema>;
+
+/** One search for one person on one topic in one season, kept even when it found nothing. */
+export const SearchSchema = z.object({
+  topic_key: z.string().min(1),
+  season: z.number().int(),
+  subjects: z.array(z.string().min(1)),
+  places: z.array(z.string().min(1)),
+  found: z.number().int().min(0),
+  at: z.string(),
+  by: z.string().min(1),
+});
+export type Search = z.infer<typeof SearchSchema>;
+
+export const PersonFindingsSchema = z.object({
+  politician_id: z.string().uuid(), // becomes a file name, so it must not contain / or ..
+  findings: z.array(FindingSchema),
+  searches: z.array(SearchSchema),
+});
+export type PersonFindings = z.infer<typeof PersonFindingsSchema>;
+
+/** SHA-256 of kind, url and what was found there (the passage, or the instrument and the act). */
+export function findingId(f: Pick<Finding, 'kind' | 'url' | 'passage' | 'instrument_id' | 'act'>): string {
+  const what = f.kind === 'own-words' ? (f.passage ?? '') : `${f.instrument_id ?? ''}|${f.act ?? ''}`;
+  return createHash('sha256').update(`${f.kind}\n${f.url}\n${what}`).digest('hex');
+}
+
+/** True when this person was searched for this topic in this season. */
+export function searchedFor(pf: PersonFindings, topicKey: string, season: number): boolean {
+  return pf.searches.some((s) => s.topic_key === topicKey && s.season === season);
+}
+
 // ---------- paths ----------
 
 /** `state:wa` → `state-wa`, `school:5103840` → `school-5103840`; `federal` stays `federal`. */
@@ -170,6 +229,7 @@ export function storePaths(root: string) {
     instrument: (scope: string, id: string) => join(root, 'instruments', scopeDir(scope), `${id}.json`),
     person: (politicianId: string) => join(root, 'people', `${politicianId}.json`),
     jurisdiction: (scope: string) => join(root, 'jurisdictions', `${scopeDir(scope)}.json`),
+    findings: (politicianId: string) => join(root, 'findings', `${politicianId}.json`),
     deadEnds: join(root, 'dead-ends.jsonl'),
   };
 }
@@ -241,6 +301,16 @@ export function mergePerson(prev: PersonSources, next: PersonSources): PersonSou
   });
 }
 
+export function mergeFindings(prev: PersonFindings, next: PersonFindings): PersonFindings {
+  return PersonFindingsSchema.parse({
+    politician_id: prev.politician_id,
+    findings: unionBy(prev.findings, next.findings, (f) => f.id, (o, n) =>
+      time(n.provenance.fetched_at) >= time(o.provenance.fetched_at) ? n : o,
+    ),
+    searches: unionBy(prev.searches, next.searches, (x) => `${x.topic_key}|${x.season}|${x.at}`, (o) => o),
+  });
+}
+
 export function mergeJurisdiction(old: Jurisdiction, next: Jurisdiction): Jurisdiction {
   return JurisdictionSchema.parse({
     scope: old.scope,
@@ -275,6 +345,10 @@ export function upsertJurisdiction(root: string, j: Jurisdiction): 'created' | '
   return upsert(storePaths(root).jurisdiction(j.scope), JurisdictionSchema, j, mergeJurisdiction);
 }
 
+export function upsertFindings(root: string, pf: PersonFindings): 'created' | 'merged' {
+  return upsert(storePaths(root).findings(pf.politician_id), PersonFindingsSchema, pf, mergeFindings);
+}
+
 export function appendDeadEnd(root: string, d: DeadEnd): void {
   const file = storePaths(root).deadEnds;
   mkdirSync(dirname(file), { recursive: true });
@@ -303,12 +377,13 @@ export function topicListHash(topicKeys: string[]): string {
  * are not appended again. Validate both first: a broken staging file throws before anything is written
  * for it.
  */
-export function mergeStore(fromRoot: string, toRoot: string): { instruments: number; people: number; jurisdictions: number; deadEnds: number } {
-  const n = { instruments: 0, people: 0, jurisdictions: 0, deadEnds: 0 };
+export function mergeStore(fromRoot: string, toRoot: string): { instruments: number; people: number; jurisdictions: number; findings: number; deadEnds: number } {
+  const n = { instruments: 0, people: 0, jurisdictions: 0, findings: 0, deadEnds: 0 };
   const load = (f: string) => JSON.parse(readFileSync(f, 'utf8'));
   for (const f of walkJson(join(fromRoot, 'instruments'))) { upsertInstrument(toRoot, InstrumentSchema.parse(load(f))); n.instruments++; }
   for (const f of walkJson(join(fromRoot, 'people'))) { upsertPerson(toRoot, PersonSourcesSchema.parse(load(f))); n.people++; }
   for (const f of walkJson(join(fromRoot, 'jurisdictions'))) { upsertJurisdiction(toRoot, JurisdictionSchema.parse(load(f))); n.jurisdictions++; }
+  for (const f of walkJson(join(fromRoot, 'findings'))) { upsertFindings(toRoot, PersonFindingsSchema.parse(load(f))); n.findings++; }
   const from = storePaths(fromRoot).deadEnds;
   if (existsSync(from)) {
     const keyOf = (d: Record<string, unknown>) => {
@@ -361,6 +436,7 @@ export function validateStore(root: string): { file: string; error: string }[] {
   for (const f of walkJson(join(root, 'instruments'))) checkFile(f, InstrumentSchema, problems, root);
   for (const f of walkJson(join(root, 'people'))) checkFile(f, PersonSourcesSchema, problems, root);
   for (const f of walkJson(join(root, 'jurisdictions'))) checkFile(f, JurisdictionSchema, problems, root);
+  for (const f of walkJson(join(root, 'findings'))) checkFile(f, PersonFindingsSchema, problems, root);
   const dead = storePaths(root).deadEnds;
   if (existsSync(dead)) {
     // A dead end stored twice (same fields, any `at`) is a re-run that appended again, not a new
