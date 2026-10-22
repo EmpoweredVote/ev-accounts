@@ -277,3 +277,84 @@ primary citations each, Season 1 unmoved at its original `updated_at`, the three
 still blank, Hernandez's row untouched. `check:stance-sources` **identical before and after**, with
 `ANSWER_WITHOUT_CONTEXT` still 0 — the context rows were inserted **before** the answers for exactly
 that reason.
+
+---
+
+## 8. Running `chair-inversion-scan.mjs` over Season 1 — and what it could not see
+
+§7 logged "worth running `chair-inversion-scan.mjs` over Season 1 to see whether it is systemic."
+Done. **The scan does not answer the question, and finding out why was the useful part.**
+
+### 🔴🔴 First, a correctness bug in the scanner itself — fixed in this commit
+
+Its query joined `politician_context` to `politician_answers` on `(politician_id, topic_id)` with
+**no season predicate**. Both tables are keyed `(politician_id, topic_id, season_id)`, so a pair
+with rows in two seasons **cross-joined**: four rows where there should be two, **pairing Season 2
+reasoning with a Season 1 chair** and vice versa.
+
+Measured: **4,728 of 34,501 pairs span more than one season**; the unscoped query returned
+**47,843** rows where season-matched joining returns **38,417** — **~9,400 phantom rows, ~20%**.
+Those rows both *manufacture* inversions and *distort the per-topic calibration* that decides which
+rows get flagged at all. Fixed by joining on `season_id` and adding an optional `--season`.
+⚖ This is the same trap already documented in `audit-chair-evidence.mjs`: **name the season for any
+pair that has rows in more than one.** It was written down in one script and not the other.
+
+### The run: 80 flags, and they are overwhelmingly FALSE POSITIVES
+
+| flags | topic |
+|---:|---|
+| 45 | School Vouchers & Public Education Funding |
+| 9 | Healthcare Access |
+| 8 | Climate Change and Environmental Protection |
+| 7 | Same-Sex Marriage |
+| 6 | Affordable Housing |
+| 3 | Misinformation and Algorithms |
+| 1 each | Civil Rights, Ukraine |
+
+**43 of the 45 School Vouchers flags have reasoning explicitly about public-school funding, sitting
+at chair 1 — which reads "Fully funding public schools and eliminating voucher programs."** Those
+are *correct* seatings. The cause is the failure the script's own header documents: **a verb has an
+OBJECT the regex cannot see.** This ladder has something to *support* at BOTH ends — public schools
+at chair 1, vouchers at chair 5 — so a PRO lexicon cannot be monotonic in the chair number, and
+`RESTRICTIVE_ANYWHERE` does not catch "supports public education funding".
+The sampled flags in the other topics are the same shape: Mike Kelly at Same-Sex Marriage chair 5
+("voted NAY on the Respect for Marriage Act, cosponsored the Federal Marriage Amendment") is
+*correctly* seated; "cosponsored" read as PRO.
+
+### 🔴 And it found NONE of the real ones, because the topic is UNCALIBRATED
+
+`Local Immigration Enforcement` calibrates at **strength 0.10 → UNCALIBRATED**, so it contributes
+**zero flags**. ⚖⚖ **The detector is blind on the exact topic that prompted the scan.** A clean
+report from it would have meant nothing.
+
+### What a targeted structural probe found instead — a BERKELEY CLUSTER
+
+One query, no lexicon: on Season 1 `local-immigration`, **chair 5 holds 12 rows and 8 of them
+mention "sanctuary" (67%) — a higher rate than chair 1 itself (45%)**, where sanctuary belongs.
+Reading all 12: **9 are correctly seated** (DeMaio's AB-18, Trump's 287(g) EO, Fortunato and
+McCune's SB 5002, Fattman's SHIELD Act, Boldyga's H.2573, Paxton, Vance, Pratt) and **3 are
+inverted — all three Berkeley**:
+
+| person | chair 5 says | their reasoning says |
+|---|---|---|
+| **Adena Ishii** | direct police to actively assist ICE | "we will not be doing that" re ICE assistance; led the sanctuary ordinance |
+| **Cecilia Lunaparra** | " | co-sponsored Berkeley's sanctuary reaffirmation and ICE non-cooperation resolution |
+| **Shoshana O'Keefe** | " | co-sponsored the Sanctuary City Contracting Ordinance |
+
+Chair 4's 15 sanctuary-mentioning rows are by contrast **correct** — anti-sanctuary officials
+opposing SB54, cosponsoring the Stop Sanctuary Policies Act, backing 287(g). ⚠ Three there are
+seated on *inference* rather than evidence ("likely supports ICE detainer compliance", "Inferred
+from state law context", and Berkeley auditor **Jenny Wong**, whose reasoning states no position at
+all) — the absence-seating defect class, not an inversion.
+
+🔑 **So it is a cluster, not a scatter** — the same lesson as §2: one bad mapping applied across the
+members of one body.
+
+### ▶ Nothing here is writable, and that is the finding
+
+**All of it lives in Season 1, which is closed.** Of the four, only Ishii has a Season 2 row — and
+that is the one migration 1932 just seeded at chair 1, correctly. Lunaparra, O'Keefe and Wong have
+**no Season 2 row at all**, so nothing voter-facing in the open season is wrong.
+▶ If Season 1 is ever reopened or re-exported, these four are the queue.
+▶ The three Berkeley councilmembers are also seeding candidates for Season 2 on the same primary
+ordinance text used in migration 1932.
