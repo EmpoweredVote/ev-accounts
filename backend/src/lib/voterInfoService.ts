@@ -1,5 +1,6 @@
 import { env } from './env.js';
 import { geocodeAddress } from './geocodingService.js';
+import { lookupLocalVotingLocations, type LocalVotingLocations, type LocalVotingSite } from './localVotingLocations.js';
 
 // ---------------------------------------------------------------------------
 // Voter info service — proxies Google's Civic Information API `voterInfoQuery`.
@@ -35,6 +36,18 @@ export interface VoterLocation {
   endDate: string | null;   // early-vote / drop-off window end (ISO date)
   lat: number | null;
   lng: number | null;
+  /** 'vip' = Google / Voting Information Project; 'county' = our hand-checked list (CA_0320). */
+  source: 'vip' | 'county';
+}
+
+/**
+ * Where county-list locations on this payload came from — the card shows it, with the date it was
+ * last checked. Null when every location came from Google.
+ */
+export interface LocalVotingSource {
+  label: string;
+  url: string;
+  lastChecked: string; // ISO date
 }
 
 /**
@@ -68,6 +81,13 @@ export interface VoterInfo {
   votingLocationFinderUrl: string | null;
   source: string;
   status: VoterInfoStatus;
+  localSource: LocalVotingSource | null;
+  /**
+   * 'near_precinct_boundary' — we know the county and its early-voting sites, but the address sits
+   * so close to a precinct line that naming one Election Day site could send the voter to the
+   * wrong place. The card says so and points to the state's official lookup instead.
+   */
+  pollingNotice: 'near_precinct_boundary' | null;
 }
 
 // ---------------------------------------------------------------------------
@@ -135,6 +155,20 @@ function mapLocation(loc: CivicLocation): VoterLocation {
     endDate: loc.endDate || null,
     lat: typeof loc.latitude === 'number' ? loc.latitude : null,
     lng: typeof loc.longitude === 'number' ? loc.longitude : null,
+    source: 'vip',
+  };
+}
+
+function mapLocalSite(site: LocalVotingSite): VoterLocation {
+  return {
+    name: site.name,
+    address: site.address,
+    hours: site.hours,
+    startDate: site.startDate,
+    endDate: site.endDate,
+    lat: site.lat,
+    lng: site.lng,
+    source: 'county',
   };
 }
 
@@ -169,6 +203,8 @@ function emptyVoterInfo(status: VoterInfoStatus = 'no_election'): VoterInfo {
     votingLocationFinderUrl: null,
     source: SOURCE_LABEL,
     status,
+    localSource: null,
+    pollingNotice: null,
   };
 }
 
@@ -262,9 +298,104 @@ async function upcomingNationalElectionId(apiKey: string): Promise<string | null
 // Returns normalized voter info for an address. Never throws on "no live
 // election" or upstream errors — returns a safe empty payload so the route
 // can always respond 200 and the UI can fall back to official links.
+//
+// Google first; then, for counties with a hand-checked list (CA_0320), fill in
+// only what Google left empty. See localVotingLocations.ts for the safety rules.
 // ---------------------------------------------------------------------------
 
 export async function getVoterInfo(address: string): Promise<VoterInfo> {
+  // Geocoding runs alongside the Google call: it orders locations nearest-first
+  // and places the address for the county fallback. Best-effort: if it fails
+  // (PO box, geocoder down) we keep the API's order and skip the fallback.
+  const [google, origin] = await Promise.all([
+    queryGoogle(address),
+    geocodeAddress(address).then(
+      (g) => ({ lat: g.lat, lng: g.lng }),
+      () => null,
+    ),
+  ]);
+
+  const info: VoterInfo = {
+    ...google,
+    dropOffLocations: sortByDistance(google.dropOffLocations, origin),
+    earlyVoteSites: sortByDistance(google.earlyVoteSites, origin),
+    pollingLocations: sortByDistance(google.pollingLocations, origin),
+  };
+
+  // Nothing to fill, or nowhere to look it up.
+  const missing = info.pollingLocations.length === 0 || info.earlyVoteSites.length === 0;
+  if (!origin) return info;
+
+  let local: LocalVotingLocations | null;
+  try {
+    local = await lookupLocalVotingLocations(origin);
+  } catch (err) {
+    // A database error must not cost the voter Google's answer.
+    console.error('[voterInfo] local voting-location lookup failed:', (err as Error).message);
+    return info;
+  }
+  if (!local) return info;
+
+  if (!missing) {
+    warnIfGoogleDisagrees(info.pollingLocations, local);
+    return info;
+  }
+  return mergeLocal(info, local, origin);
+}
+
+/** Fill Google's empty lists from the county's hand-checked list. Exported for tests. */
+export function mergeLocal(
+  info: VoterInfo,
+  local: LocalVotingLocations,
+  origin: { lat: number; lng: number } | null,
+): VoterInfo {
+  const out = { ...info };
+  let used = false;
+
+  if (out.pollingLocations.length === 0) {
+    if (local.electionDaySite) {
+      out.pollingLocations = [mapLocalSite(local.electionDaySite)];
+      used = true;
+    } else if (local.nearBoundary) {
+      out.pollingNotice = 'near_precinct_boundary';
+    }
+  }
+  if (out.earlyVoteSites.length === 0 && local.earlyVoteSites.length > 0) {
+    out.earlyVoteSites = sortByDistance(local.earlyVoteSites.map(mapLocalSite), origin);
+    used = true;
+  }
+
+  if (used || out.pollingNotice) {
+    // Google may have named no election (or been unreachable); the set knows which one this is.
+    out.electionName ??= local.set.electionName;
+    out.electionDate ??= local.set.electionDate;
+    out.votingLocationFinderUrl ??= local.set.lookupUrl;
+    out.electionInfoUrl ??= local.set.lookupUrl;
+  }
+  if (used) {
+    out.localSource = { label: local.set.sourceLabel, url: local.set.sourceUrl, lastChecked: local.set.lastChecked };
+  }
+  return out;
+}
+
+// When Google DID answer, compare it with the county list. They agreed on all 125
+// addresses tested on 2026-10-22; a disagreement means one of them changed, and
+// whichever it is, someone should re-check the county list. Logs the precinct,
+// never the address.
+function warnIfGoogleDisagrees(polling: VoterLocation[], local: LocalVotingLocations): void {
+  const ours = local.electionDaySite;
+  const theirs = polling[0];
+  if (polling.length !== 1 || !ours || ours.lat == null || ours.lng == null) return;
+  const km = distanceKm({ lat: ours.lat, lng: ours.lng }, theirs);
+  if (km > 0.3 && Number.isFinite(km)) {
+    console.warn(
+      `[voterInfo] Google and the ${local.set.countyName} list disagree for precinct ${local.precinctCode}: ` +
+        `"${theirs.name}" vs "${ours.name}" (${km.toFixed(1)} km apart) — re-check the county list`,
+    );
+  }
+}
+
+async function queryGoogle(address: string): Promise<VoterInfo> {
   // Reuse the shared Google Cloud key: prefer a dedicated GOOGLE_CIVIC_API_KEY,
   // else fall back to the Maps/Places key so we don't need a second Render var.
   // (The key's Google Cloud project must have the Civic Information API enabled,
@@ -323,23 +454,12 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
 
   const admin = data.state?.[0]?.electionAdministrationBody;
 
-  // Order locations nearest-first so the UI can surface the closest few.
-  // Best-effort: if geocoding the address fails (PO box, geocoder down), we keep
-  // the API's order rather than failing the whole request.
-  let origin: { lat: number; lng: number } | null;
-  try {
-    const g = await geocodeAddress(address);
-    origin = { lat: g.lat, lng: g.lng };
-  } catch {
-    origin = null;
-  }
-
   return {
     electionName: data.election?.name ?? null,
     electionDate: data.election?.electionDay ?? null,
-    dropOffLocations: sortByDistance((data.dropOffLocations ?? []).map(mapLocation), origin),
-    earlyVoteSites: sortByDistance((data.earlyVoteSites ?? []).map(mapLocation), origin),
-    pollingLocations: sortByDistance((data.pollingLocations ?? []).map(mapLocation), origin),
+    dropOffLocations: (data.dropOffLocations ?? []).map(mapLocation),
+    earlyVoteSites: (data.earlyVoteSites ?? []).map(mapLocation),
+    pollingLocations: (data.pollingLocations ?? []).map(mapLocation),
     ballotInfoUrl: admin?.ballotInfoUrl ?? null,
     electionInfoUrl: admin?.electionInfoUrl ?? null,
     votingLocationFinderUrl: admin?.votingLocationFinderUrl ?? null,
@@ -347,5 +467,7 @@ export async function getVoterInfo(address: string): Promise<VoterInfo> {
     // Upstream answered. If it named no election, say so explicitly rather than
     // letting an empty payload imply it.
     status: data.election?.name ? 'ok' : 'no_election',
+    localSource: null,
+    pollingNotice: null,
   };
 }
