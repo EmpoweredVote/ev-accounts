@@ -214,8 +214,23 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 ### The Stage 5 early-check bar
 - **Ruling:** the early check stops the run and asks whether to fix the rungs when "doesn't fit" is more than 1 in 5
   of the people with any on-topic evidence, **or** any single theme from the theme pass holds more than 1 in 10 of
-  them.
-- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 3 (design §6).
+  them. Doesn't-fit cases whose only record is a No vote (`nay-only`) or a gated vote (`gate`) are counted and
+  reported apart, and left out of both sides of both bars: no rung change can seat them.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 3 (design §6); the No-vote and gated cases ruled
+  apart the same day, after the `voting-rights` pilot (`.planning/research/s3-prep-voting-rights/stage5/`).
+- **Scope:** every topic.
+
+### The early check may run on a seeded sample
+- **Ruling:** when a unit is large, the early check may run on a seeded random sample of it (the seed and the draw
+  recorded before the draw). The rest of the unit is researched after the check passes; nothing found is wasted.
+- **Date and source:** 2026-10-22, Chris Andrews, `voting-rights` run: 300 of 1,452 federal people, plus every
+  state legislator in IN, NC and MA.
+- **Scope:** every topic.
+
+### Quotes that name a party are never shown
+- **Ruling:** the quote check fails any passage that names a political party, so it is never shown to voters.
+  Quotes are never edited to remove the name. The coder picks another passage, or the person shows no quote.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 pilot (design §8).
 - **Scope:** every topic.
 
 ## Topic-scoped readings

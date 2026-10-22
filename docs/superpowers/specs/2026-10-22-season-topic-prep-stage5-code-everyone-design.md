@@ -150,6 +150,11 @@ the rungs first (back to Stage 2, or a split) or carry on when **either** holds 
 
 Otherwise it continues.
 
+**Reported apart (ruled, Chris Andrews, 2026-10-22, after the pilot):** doesn't-fit cases whose only record is a No
+vote (`nay-only`) or a gated vote (`gate`) are counted and shown, but left out of both sides of both bars. No rung
+change can seat them, so they say nothing about the rungs. The early check may run on a seeded sample of a large
+unit (`voting-rights`: 300 of 1,452 federal people, plus every state legislator in IN, NC and MA).
+
 **Open coding of "doesn't fit."** No fixed list decides a case.
 - **Starter tags** the coder may use, any number, or none: *between two rungs*; *a related but different
   question* (a possible other topic); *a position no rung names*; *direction only* (shows a side, not a rung —
@@ -212,7 +217,8 @@ Voters are never told "we researched" when we did not.
 
 **Safeguard: the quote check (G5).** Before any quote or record summary goes live, a second AI agent confirms:
 the passage is on the source page word for word; it is the person's own words (codebook V1); it is about this
-topic. A failed check keeps it off the page and logs why. This runs on every quote, every time.
+topic; and it names no political party (ruled, Chris Andrews, 2026-10-22: a quote that names a party is never
+shown, and quotes are never edited). A failed check keeps it off the page and logs why. This runs on every quote, every time.
 
 **Wording rules for the voter text:** plain words; no party names or colours; no adjectives about the person;
 dates on everything; "no public stance found" never phrased as a judgement.
