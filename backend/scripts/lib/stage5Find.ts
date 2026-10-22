@@ -22,6 +22,8 @@ import type { Level } from '../../src/lib/topicApplicability.js';
 
 export type Unit = { level: Level; state?: string };
 
+const PARTY_RE = /\b(republicans?|democrats?|democratic party|libertarians?|GOP|DNC|RNC|green party|independent party)\b/i;
+
 /** `federal`, `state:in`, `local:in` → a unit. */
 export function parseUnit(s: string): Unit {
   if (s === 'federal') return { level: 'federal' };
@@ -85,6 +87,11 @@ export function importFindFile(
     throw new Error(`${pid}: ${parsed.error.issues.map((i) => `${i.path.join('.') || '(root)'}: ${i.message}`).join('; ')}`);
   }
   const file = parsed.data;
+  // Antipartisan rule: our own text never names a party. A verbatim passage is the person's words and is kept
+  // as found; whether it may be shown is the quote check's call.
+  const ours = [...file.searched.places, ...file.searched.subjects, ...file.findings.flatMap((f) => [f.note, ...f.subjects])];
+  const hit = ours.find((t) => PARTY_RE.test(t.replace(/https?:\/\/\S+/g, "")));
+  if (hit) throw new Error(`${pid}: a party name in our own text ("${hit.slice(0, 80)}"); write notes, subjects and places without parties`);
   const findings: Finding[] = file.findings.map((c, i) => {
     const { method, saved_copy, ...rest } = c;
     const base = {

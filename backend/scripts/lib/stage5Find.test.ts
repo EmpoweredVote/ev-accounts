@@ -111,6 +111,17 @@ describe('importFindFile', () => {
     expect(importFindFile(file(), 'voting-rights', 3, { by: 'c', at: 'x' }, { fileId: id(1), onRoster }).politician_id).toBe(id(1));
   });
 
+  it('refuses a party name in our own words (notes, subjects, places), but not in a verbatim passage', () => {
+    const inNote = file({ findings: [{ ...file().findings[0], note: 'A Republican statement on ID.' }] });
+    expect(() => importFindFile(inNote, 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow(/party/);
+    const inPlaces = file({ searched: { subjects: ['voter ID'], places: ['Ballotpedia (Libertarian candidate)'] } });
+    expect(() => importFindFile(inPlaces, 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow(/party/);
+    const inUrl = file({ searched: { subjects: ['voter ID'], places: ['blocked: https://x.example/news/files-lawsuit-against-gop-chairman'] } });
+    expect(importFindFile(inUrl, 'voting-rights', 3, { by: 'c', at: 'x' }).searches).toHaveLength(1);
+    const inPassage = file({ findings: [{ ...file().findings[0], passage: 'Democrats and Republicans should both back ID.' }] });
+    expect(importFindFile(inPassage, 'voting-rights', 3, { by: 'c', at: 'x' }).findings).toHaveLength(1);
+  });
+
   it('refuses a file that carries a rung or value (the searcher does not code)', () => {
     const bad = file({ findings: [{ ...file().findings[0], value: 4 }] });
     expect(() => importFindFile(bad, 'voting-rights', 3, { by: 'c', at: 'x' })).toThrow(/value/);

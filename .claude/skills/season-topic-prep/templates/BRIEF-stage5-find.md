@@ -29,19 +29,37 @@ Search for anything this person did or said on the **subject**, including parts 
 
 A vote on file saves you the record search, **not** the own-words search. Search for their own words anyway.
 
+## First: is this person still in scope?
+
+Confirm who they are (a page that names them in this office or race). For a candidate, confirm they are on the
+2026 general-election ballot. If they lost a primary or withdrew, stop: write the file with `findings: []` and put
+`status: lost the <date> primary` (or `status: withdrew <date>`) first in `places`, with the page that says so.
+
 ## Where to look, in this order
+
+Check **every** place on this list, and name each in `places` (with `nothing on the subject`, `blocked: <url>` or
+`not reviewed: <url>` as it went). Stopping after the first page of a press-release list is not a search.
 
 1. **On the Record first.** `node .claude/skills/research-stances/scripts/extract-otr.mjs --politician {{POLITICIAN_ID}}
    --names "{{FULL_NAME}}"` (add `--city` for a local official). Each meeting file is an own-words source; its
-   OTR page is the URL. Then `cd backend && npx tsx scripts/list-discovered-sources.ts --politician {{POLITICIAN_ID}}`.
-2. **The URL patterns** in `.claude/agents/politician-stance-researcher.md`, `### URL Patterns — Fetch These in
+   OTR page is the URL.
+2. **Their official site** (and campaign site): search the site for the subject words ("voter ID", "photo ID",
+   "SAVE Act", "proof of citizenship", "election integrity", "mail ballot"), not only page 1 of the news list.
+3. **Their record:** for a legislator, the legislature's own bill pages for sponsorships and co-sponsorships on the
+   subject (congress.gov for Congress; if it blocks you, say so).
+4. **Ballotpedia** and one news search on their name plus the subject words.
+5. **The URL patterns** in `.claude/agents/politician-stance-researcher.md`, `### URL Patterns — Fetch These in
    Order` (official page, campaign site, Ballotpedia, then the rest). ontheissues.org and vote411 are leads only:
    find the original and cite that.
 3. **Records:** votes, sponsorships, vetoes and signatures, lawsuits, official letters, amendments; for a local
    official, ordinances and resolutions they voted for or sponsored.
 4. **Own words:** questionnaires, debate and forum answers, issue pages, pledges, speeches, interviews, posts.
 
-Search to find, fetch to cite: every URL you save was fetched by you, and the passage is on that page. A search
+A debate or interview video you cannot read is `not reviewed: <url>` in `places`, never "nothing".
+
+Search to find, fetch to cite: every URL you save was fetched by you, and the passage is on that page.
+🔴 **The fetch tool may summarise a page.** Copy a passage only from the page's own text: when in doubt, one
+`curl -sL <url>` of that page and copy from the HTML text. Never copy a passage from a summary. A search
 result snippet is a lead, never a source. Fetching manners: one page at a time; no loops, no scripts, no wget. A
 blocked page is a gap, never "nothing": list it in `places` as `blocked: <url>`.
 
@@ -49,14 +67,17 @@ blocked page is a gap, never "nothing": list it in `places` as `blocked: <url>`.
 
 - **Own words:** the **exact passage**, copied word for word (at least one full sentence; keep the speaker's
   wording, including mistakes). Only words this person said or wrote, or a statement issued in their name. Words
-  about them by a reporter or an opponent are not their own words.
+  about them by a reporter or an opponent are not their own words. A direct quote of them in a news story counts;
+  say in the note which outlet quoted them, and prefer the original (their site, the transcript) when you can
+  reach it.
 - **A record:** the act (`yea`, `nay`, `abstain`, `sponsor`, `author`, `signed`, `vetoed`, `other`), the bill or
   ordinance number in `instrument_id` form if you know it (`IN-SB-483-2011`), the motion for a vote, and the
   official URL. Set `local_record: true` for a city, county or school-board ordinance or resolution. With no
   `instrument_id`, `motion` must name the act ("Ordinance 2024-7, clinic buffer zone"), so two acts on one
   minutes page stay apart.
 - **The date** of the act or the words (not the date you fetched it), with its precision.
-- **A short plain note** of what it says, in your own words, with no judgement of the person.
+- **A short plain note** of what it says, in your own words, with no judgement of the person. 🔴 Never name a
+  party, in notes, subjects or places (an import refuses it). Name a bill by its number and short title.
 - **Subjects in plain words** (for example "voter ID at the polls", "mail-ballot ID", "proof of citizenship to
   register"). Never rung numbers.
 - Save off-subject material only if it is on the subject above. Save nothing else.
