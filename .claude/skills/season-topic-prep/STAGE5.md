@@ -104,7 +104,10 @@ Exit 3 means some codes failed their check: fix those first. Then run the theme 
 writing `stage5/themes.json`, and run the report again with `--themes <abs>/stage5/themes.json`.
 
 **The bar (ruled 2026-10-22):** stop when "doesn't fit" is **more than 1 in 5** of the people with any on-topic
-evidence, or when **any one theme holds more than 1 in 10** of them (exit 4). 🛑 Either way, show the runner the
+evidence, or when **any one theme holds more than 1 in 10** of them (exit 4). Doesn't-fit cases whose only record
+is a No vote (`nay-only`) or a gated vote (`gate`) are reported apart and left out of both sides of both bars: no
+rung change can seat them. A large unit may be checked on a **seeded sample** (record the seed and the draw before
+drawing); the rest of the unit follows once the check passes. 🛑 Either way, show the runner the
 split and the themes. On a stop, ask one question: fix the rungs first (back to Stage 2, or a split), or carry on.
 Recommend one, with the cases that show why.
 
@@ -116,7 +119,8 @@ cases), or split the topic. 📋 Monday step (SKILL.md), stage `5`.
 
 ### 7. Write and show (after the early check passes)
 
-Built separately (plan Phase B): the quote check, the two tables for research outcomes and shown passages, the
+Built separately (plan Phase B): the quote check (which also fails any passage that names a party: such a quote
+is never shown, and never edited), the two tables for research outcomes and shown passages, the
 writer and the voter-facing rows. Seats and blanks still go through the research-stances pipeline with
 `--season draft`, so the stance gate and the pre-write `audit-chair-evidence.mjs` check still run. Seats placed
 on own words alone keep the `statement-evidence` hold until the topic's blind check passes (RULINGS.md "Own-words

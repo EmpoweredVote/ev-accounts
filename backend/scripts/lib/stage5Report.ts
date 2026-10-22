@@ -4,8 +4,10 @@
  * Counts the three outcomes (and "not yet researched") over the roster, overall, per level and per state;
  * the seats per rung; and the seat rate measured honestly, over everyone researched and over everyone with
  * on-topic evidence (design §6). `earlyCheck` applies the ruled bars (RULINGS.md "The Stage 5 early-check
- * bar"): stop when doesn't fit is MORE than 1 in 5 of the people with any on-topic evidence (seated plus
- * doesn't fit), or when any one theme holds more than 1 in 10 of them. Pure.
+ * bar"): stop when doesn't fit is MORE than 1 in 5 of the people with on-topic evidence, or when any one theme
+ * holds more than 1 in 10 of them. Doesn't-fit cases whose only record is a No vote (`nay-only`) or a gated
+ * vote (`gate`) are counted and reported apart, and left out of both sides of the bars: no rung change can
+ * seat them, so they say nothing about the rungs (ruling 2026-10-22). Pure.
  */
 import { z } from 'zod';
 import type { Stage5Code } from './stage5Code.js';
@@ -33,12 +35,20 @@ export type Stage5Summary = {
   byState: Record<string, Counts>;
   perRung: Record<string, number>;
   tags: Record<string, number>;
+  /** Seated plus the doesn't-fit cases the bars judge (all doesn't fit minus those reported apart). */
   withEvidence: number;
+  /** Doesn't-fit cases the bars judge. */
+  barDoesntFit: number;
+  /** Doesn't-fit cases reported apart, by blank class. */
+  apart: Record<string, number>;
   seatRateAll: number | null;
   seatRateEvidence: number | null;
   /** `count` is the theme's doesn't-fit people in this summary, once each; `dropped` the ids it named that are not. */
   themes: { name: string; points_at: string; count: number; dropped: number; share: number | null; summary: string }[];
 };
+
+/** Blank classes no rung change can seat: reported apart from the bars. */
+export const APART_CLASSES = new Set(['nay-only', 'gate']);
 
 const zero = (): Counts => ({ seated: 0, doesntFit: 0, noStance: 0, notYet: 0 });
 const KEY = { seated: 'seated', 'doesnt-fit': 'doesntFit', 'no-stance': 'noStance' } as const;
@@ -57,13 +67,19 @@ export function summarise(roster: RosterRow[], codes: Stage5Code[], themes?: The
     if (c?.outcome === 'seated' && c.value !== undefined) perRung[String(c.value)] = (perRung[String(c.value)] ?? 0) + 1;
     for (const t of c?.tags ?? []) tags[t] = (tags[t] ?? 0) + 1;
   }
-  const doesntFit = new Set(roster.map((r) => byPerson.get(r.politician_id)).filter((c) => c?.outcome === 'doesnt-fit').map((c) => c!.politician_id));
+  const fits = roster.map((r) => byPerson.get(r.politician_id)).filter((c): c is Stage5Code => c?.outcome === 'doesnt-fit');
+  const apart: Record<string, number> = {};
+  for (const c of fits) if (c.blank_class && APART_CLASSES.has(c.blank_class)) apart[c.blank_class] = (apart[c.blank_class] ?? 0) + 1;
+  // Themes are judged over the same people as the bar.
+  const doesntFit = new Set(fits.filter((c) => !(c.blank_class && APART_CLASSES.has(c.blank_class))).map((c) => c.politician_id));
   const researched = overall.seated + overall.doesntFit + overall.noStance;
-  const withEvidence = overall.seated + overall.doesntFit;
+  const barDoesntFit = doesntFit.size;
+  const withEvidence = overall.seated + barDoesntFit;
+  const allEvidence = overall.seated + overall.doesntFit;
   return {
-    overall, byLevel, byState, perRung, tags, withEvidence,
+    overall, byLevel, byState, perRung, tags, withEvidence, barDoesntFit, apart,
     seatRateAll: researched ? overall.seated / researched : null,
-    seatRateEvidence: withEvidence ? overall.seated / withEvidence : null,
+    seatRateEvidence: allEvidence ? overall.seated / allEvidence : null,
     themes: (themes?.themes ?? []).map((t) => {
       // Trust only ids that are doesn't-fit codes in this summary: a repeated, invented or out-of-unit id would
       // move the share, and the share alone can trigger or hide a stop.
@@ -80,9 +96,9 @@ export function summarise(roster: RosterRow[], codes: Stage5Code[], themes?: The
 export function earlyCheck(s: Stage5Summary): { stop: boolean; reasons: string[] } {
   const reasons: string[] = [];
   if (!s.withEvidence) return { stop: false, reasons: ['no one with on-topic evidence yet'] };
-  const share = s.overall.doesntFit / s.withEvidence;
+  const share = s.barDoesntFit / s.withEvidence;
   if (share > DOESNT_FIT_BAR) {
-    reasons.push(`doesn't fit is ${s.overall.doesntFit} of ${s.withEvidence} people with on-topic evidence (${pct(share)}), over 1 in 5`);
+    reasons.push(`doesn't fit is ${s.barDoesntFit} of ${s.withEvidence} people with on-topic evidence (${pct(share)}), over 1 in 5`);
   }
   for (const t of s.themes) {
     if (t.share !== null && t.share > THEME_BAR) reasons.push(`theme "${t.name}" holds ${t.count} of ${s.withEvidence} (${pct(t.share)}), over 1 in 10`);
@@ -107,10 +123,13 @@ export function formatReport(s: Stage5Summary, check: { stop: boolean; reasons: 
       ? '**Nothing to judge yet.** No one in these units has on-topic evidence coded.'
       : check.stop
       ? `**STOP — ask whether to fix the rungs first.** ${check.reasons.join('; ')}.`
-      : `**Continue.** Doesn't fit is ${o.doesntFit} of ${s.withEvidence} people with on-topic evidence (${pct(s.withEvidence ? o.doesntFit / s.withEvidence : null)}); no theme is over 1 in 10.`,
+      : `**Continue.** Doesn't fit is ${s.barDoesntFit} of ${s.withEvidence} people with on-topic evidence (${pct(s.withEvidence ? s.barDoesntFit / s.withEvidence : null)}); no theme is over 1 in 10.`,
+    '',
+    `Doesn't fit reported apart, outside the bars (no rung change can seat them): ${o.doesntFit - s.barDoesntFit}`
+      + (Object.keys(s.apart).length ? ` (${Object.entries(s.apart).map(([k, n]) => `${k} ${n}`).join(', ')})` : '') + '.',
     '',
     `Seated ${o.seated}, doesn't fit ${o.doesntFit}, no stance found ${o.noStance}, not yet researched ${o.notYet}.`,
-    `Seat rate: ${pct(s.seatRateAll)} of everyone researched; ${pct(s.seatRateEvidence)} of everyone with on-topic evidence.`,
+    `Seat rate: ${pct(s.seatRateAll)} of everyone researched; ${pct(s.seatRateEvidence)} of everyone with any on-topic evidence (reported-apart cases included).`,
     '',
     '## By level',
     ...table(Object.entries(s.byLevel)),

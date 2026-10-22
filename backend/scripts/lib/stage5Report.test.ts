@@ -62,6 +62,20 @@ describe('earlyCheck', () => {
     expect(earlyCheck(s).stop).toBe(false);
   });
 
+  it('reports No-vote-only and gated-only cases apart, outside both sides of the bar', () => {
+    const { roster, codes } = fixture(100, 10); // 10 doesn't fit, 90 seated
+    for (let i = 100; i < 140; i++) {
+      roster.push(row(i));
+      codes.push({ ...code(i, 'doesnt-fit'), blank_class: i < 130 ? 'nay-only' : 'gate' });
+    }
+    const s = summarise(roster, codes);
+    expect(s.overall.doesntFit).toBe(50);
+    expect(s.apart).toEqual({ 'nay-only': 30, gate: 10 });
+    expect(s.withEvidence).toBe(100); // 90 seated + 10 that a rung change could reach
+    expect(earlyCheck(s).stop).toBe(false);
+    expect(formatReport(s, earlyCheck(s))).toMatch(/reported apart.*40/);
+  });
+
   it('leaves no-stance people out of the denominator', () => {
     const { roster, codes } = fixture(10, 2, 90);
     const s = summarise(roster, codes);
