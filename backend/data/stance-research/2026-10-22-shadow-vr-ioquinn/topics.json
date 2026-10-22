@@ -1,0 +1,41 @@
+[
+  {
+    "topic_id": "d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+    "topic_key": "voting-rights",
+    "topic_revision_id": "08e7026f-2eb5-4386-9288-f1dbfc3185c3",
+    "served_revision_id": "08e7026f-2eb5-4386-9288-f1dbfc3185c3",
+    "question_number": 43,
+    "title": "Voting Rights and Electoral Integrity",
+    "question_text": "What proof of identity or citizenship should a person have to show to vote?",
+    "stances": [
+      {
+        "value": 1,
+        "text": "Require no proof of identity to vote."
+      },
+      {
+        "value": 2,
+        "text": "Accept non-photo documents, such as a utility bill or bank statement, as voter ID."
+      },
+      {
+        "value": 3,
+        "text": "Require photo ID to vote, with a sworn statement for a voter who has none."
+      },
+      {
+        "value": 4,
+        "text": "Require ID before a ballot counts: photo ID at the polls, or an ID number or a copy of an ID with each mail ballot."
+      },
+      {
+        "value": 5,
+        "text": "Require documentary proof of citizenship to register or to vote."
+      }
+    ],
+    "applies_federal": true,
+    "applies_state": true,
+    "applies_local": true,
+    "applies_judicial": false,
+    "applies_school": false,
+    "own_words_levels": [
+      "local"
+    ]
+  }
+]

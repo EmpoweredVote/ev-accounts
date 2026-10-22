@@ -1,0 +1,516 @@
+{
+  "season": "draft",
+  "batches": [
+    {
+      "name": "vr-chefner",
+      "person": "Cole Hefner",
+      "politician_id": "cb331eaa-fe08-4692-b92c-c3d303a426aa",
+      "office_id": "cccae0d1-42a4-4879-b15d-c6a940b011b1",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-1-2021",
+          "",
+          "yea",
+          "season2-row"
+        ],
+        [
+          "TX-SB-5-2017",
+          "",
+          "yea",
+          "season2-row"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/872/billtext/html/SB00001F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY06FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/tlodocs/85R/billtext/html/SB00005F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/85r/pdf/85RDAY84FINAL.PDF",
+          "human_saved_path": "human-saved/tx-hj-85-day84-sb5.txt",
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-cperry",
+      "person": "Charles Perry",
+      "politician_id": "eb7ef2a7-d0bb-475e-b2de-d96e6931932c",
+      "office_id": "3ba45ca8-73ba-459e-b883-3f498b0090cb",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-5-2017",
+          "Senate",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/85R/billtext/html/SB00005F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.senate.texas.gov/sjrnl/85r/pdf/85RSJ05-27-F.PDF",
+          "human_saved_path": "human-saved/tx-sj-85-0527-sb5.txt",
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-cvanderwall",
+      "person": "Curtis VanderWall",
+      "politician_id": "e40b492e-dc22-4150-9c07-6966e01f41a6",
+      "office_id": "8e69f18d-4e79-4252-93f0-bfb597dc51fb",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "MI-SB-303-2021",
+          "Senate",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.legislature.mi.gov/documents/2021-2022/billenrolled/Senate/htm/2021-SNB-0303.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Michigan SB 303 (2021), voter identification, as passed"
+          ]
+        },
+        {
+          "url": "https://www.legislature.mi.gov/documents/2021-2022/Journal/Senate/htm/2021-SJ-10-06-077.htm",
+          "human_saved_path": "human-saved/mi-sj-2021-10-06.txt",
+          "instruments": [
+            "Michigan SB 303 (2021), voter identification, as passed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-dphelan",
+      "person": "Dade Phelan",
+      "politician_id": "9974fbb8-10d1-452c-ae8e-a853dd3f7d37",
+      "office_id": "734a2964-8a43-4b8e-96e8-6f14004dadb6",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-5-2017",
+          "",
+          "yea",
+          "season2-row"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/85R/billtext/html/SB00005F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/85r/pdf/85RDAY84FINAL.PDF",
+          "human_saved_path": "human-saved/tx-hj-85-day84-sb5.txt",
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-gcapriglione",
+      "person": "Giovanni Capriglione",
+      "politician_id": "b652c0bb-1dc5-4043-8a2e-9e12ea034dc8",
+      "office_id": "4b024f4f-18fe-4dbe-b4fc-76fad118cf3c",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-5-2017",
+          "House",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/85R/billtext/html/SB00005F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/85r/pdf/85RDAY84FINAL.PDF",
+          "human_saved_path": "human-saved/tx-hj-85-day84-sb5.txt",
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-gvandeaver",
+      "person": "Gary VanDeaver",
+      "politician_id": "0f8b9952-c966-415a-bb5a-35a95430e80b",
+      "office_id": "d972db9a-dbb4-4edc-a18b-261b0131a359",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-1-2021",
+          "",
+          "yea",
+          "season2-row"
+        ],
+        [
+          "TX-SB-5-2017",
+          "",
+          "yea",
+          "season2-row"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/872/billtext/html/SB00001F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY06FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/tlodocs/85R/billtext/html/SB00005F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/85r/pdf/85RDAY84FINAL.PDF",
+          "human_saved_path": "human-saved/tx-hj-85-day84-sb5.txt",
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-lkolkhorst",
+      "person": "Lois Kolkhorst",
+      "politician_id": "2db78ab9-242e-46cd-ba95-5c504a2c8892",
+      "office_id": "06656722-b801-46a9-bc70-aff98e1c8b2d",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-14-2011",
+          "House",
+          "yea",
+          "draw"
+        ],
+        [
+          "TX-SB-5-2017",
+          "Senate",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/82R/billtext/html/SB00014F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 14 (82nd Leg., 2011), photo identification for voting, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/82r/pdf/82RDAY77FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 14 (82nd Leg., 2011), photo identification for voting, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB14",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 14 (82nd Leg., 2011), photo identification for voting, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/tlodocs/85R/billtext/html/SB00005F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.senate.texas.gov/sjrnl/85r/pdf/85RSJ05-27-F.PDF",
+          "human_saved_path": "human-saved/tx-sj-85-0527-sb5.txt",
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-routman",
+      "person": "Rick Outman",
+      "politician_id": "e118ad3d-4541-4710-bf50-f643f07f7921",
+      "office_id": "24e99705-c4a5-4e41-b073-f60a4c9f0c92",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "MI-SB-303-2021",
+          "Senate",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://www.legislature.mi.gov/documents/2021-2022/billenrolled/Senate/htm/2021-SNB-0303.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Michigan SB 303 (2021), voter identification, as passed"
+          ]
+        },
+        {
+          "url": "https://www.legislature.mi.gov/documents/2021-2022/Journal/Senate/htm/2021-SJ-10-06-077.htm",
+          "human_saved_path": "human-saved/mi-sj-2021-10-06.txt",
+          "instruments": [
+            "Michigan SB 303 (2021), voter identification, as passed"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-thunter",
+      "person": "Todd Hunter",
+      "politician_id": "d66fb5fd-7b56-47a5-9762-e29b7403bb39",
+      "office_id": "4105c4af-ef17-4913-9378-671f063182d3",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-1-2021",
+          "",
+          "yea",
+          "season2-row"
+        ],
+        [
+          "TX-SB-14-2011",
+          "",
+          "yea",
+          "season2-row"
+        ],
+        [
+          "TX-SB-5-2017",
+          "",
+          "yea",
+          "season2-row"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/872/billtext/html/SB00001F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/872/pdf/87C2DAY06FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 1 (87th Leg., 2nd C.S., 2021), Election Integrity Protection Act of 2021, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/tlodocs/82R/billtext/html/SB00014F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 14 (82nd Leg., 2011), photo identification for voting, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/82r/pdf/82RDAY77FINAL.PDF",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 14 (82nd Leg., 2011), photo identification for voting, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB14",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 14 (82nd Leg., 2011), photo identification for voting, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/tlodocs/85R/billtext/html/SB00005F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/85r/pdf/85RDAY84FINAL.PDF",
+          "human_saved_path": "human-saved/tx-hj-85-day84-sb5.txt",
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "vr-vswanson",
+      "person": "Valoree Swanson",
+      "politician_id": "7c2c52a2-4047-4090-bc88-e543aaaeba50",
+      "office_id": "b2989545-43a9-4adf-b62f-3f00daec6da7",
+      "level": "state",
+      "topic_key": "voting-rights",
+      "records": [
+        [
+          "TX-SB-5-2017",
+          "House",
+          "yea",
+          "draw"
+        ]
+      ],
+      "sources": [
+        {
+          "url": "https://capitol.texas.gov/tlodocs/85R/billtext/html/SB00005F.htm",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "http://journals.house.texas.gov/hjrnl/85r/pdf/85RDAY84FINAL.PDF",
+          "human_saved_path": "human-saved/tx-hj-85-day84-sb5.txt",
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        },
+        {
+          "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+          "human_saved_path": null,
+          "instruments": [
+            "Texas S.B. 5 (85th Leg., 2017), voter identification, enrolled"
+          ]
+        }
+      ]
+    }
+  ]
+}

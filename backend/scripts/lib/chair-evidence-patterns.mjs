@@ -112,8 +112,14 @@
 //     Bill \d` above. A bare "file" never passes.
 //   · `SF<number>` / `HF<number>` — upper case, a number of 1–4 digits that ENDS the token, so Wyoming's
 //     zero-padded `SF0190` passes while "SF 49ers" and lower-case prose do not.
+// ⚠ EIGHTH WIDENING (2026-10-22, voting-rights Season 3 run). The Massachusetts General Court prints
+// its bills as `H.4359` / `S.2554` — a chamber letter, a period and the number with no space. The
+// pattern saw `S. 1383` (the federal form below) but not `H.4359`, so a row naming "H.4359 House
+// Amendment #7" failed as "names no instrument". Admitted: `H.` + 3-5 digits, no space, which is the
+// printed form. `S.` + digits was already admitted. Refused: `H. Smith`, `H. 12` (a spaced short
+// number reads as a section or a page as often as a bill).
 export const NAMES_INSTRUMENT =
-  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b)/;
+  /(\bHB\s?\d|\bSB\s?\d|\b(?:House|Senate) Bill \d{1,4}\b|\bS\.L\. 20\d{2}-\d{1,4}\b|\bH\.R\.|\bS\.J\.Res|\bAB-?\s?\d|\bLD\s?\d|\bSJR\s?\d|\bAct\b|\bOrdinance\b|[Vv]oted (YES|Yes|NO|No|Yea|YEA|Nay|NAY|AYE|Aye)|[Rr]oll [Cc]all|Chapter \d|Resolution No\.|Ordinance No\.|referrals? (approved|adopted|considered)|recorded roll call|Measure \d+\.\d+|\bO-\d{4,5}\b|\bR-\d{5,6}\b|\bProposition [A-Z0-9]{1,3}\b|Commissioners Court (approved|adopted|voted)|(?<![A-Za-z]\.)\bS\.\s?\d{1,4}\b|\bBan of (?:19|20)\d{2}\b|\bR-\d{1,4}-\d{2}\b|\b(?:Senate|House) File (?:No\. )?\d{1,4}\b|\b[SH]F\s?\d{1,4}\b|\bH\.\d{3,5}\b)/;
 // A source that could carry such an instrument, as opposed to a bio or an aggregator profile.
 export const INSTRUMENT_SRC =
   /(legislature|mgaleg|leginfo|congress\.gov|govtrack|clerk\.house|senate\.gov\/legislative|\/bill|\/legislation|rollcall|roll_call|ordinance|agenda|minutes|\.pdf|capitol|legiscan)/i;
