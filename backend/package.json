@@ -32,14 +32,6 @@
     "check:occupancy:all": "node scripts/check-office-occupancy.mjs --all",
     "check:season-scaffold": "node scripts/check-season-scaffold.mjs",
     "check:reachability": "node scripts/check-address-reachability.mjs",
-    "check:district-vintage": "node scripts/check-council-district-vintage.mjs",
-    "check:district-vintage:strict": "node scripts/check-council-district-vintage.mjs --strict",
-    "check:tiger-fidelity": "node scripts/check-tiger-layer-fidelity.mjs",
-    "check:voter-info": "node scripts/check-voter-info-live.mjs",
-    "check:headshot-faces": "python scripts/check-headshot-faces.py --fail-on-unreachable",
-    "check:headshot-faces:external": "python scripts/check-headshot-faces.py --external-only --fail-on-unreachable",
-    "check:headshot-faces:accept": "python scripts/check-headshot-faces.py --write-accepted",
-    "mirror:candidate-photos": "python scripts/mirror-candidate-photos.py",
     "check:reachability:verbose": "node scripts/check-address-reachability.mjs --verbose",
     "check:child-county": "node scripts/check-child-county-mapping.mjs",
     "check:child-county:verbose": "node scripts/check-child-county-mapping.mjs --verbose",
@@ -76,7 +68,9 @@
     "check:spatial-ref": "node scripts/check-spatial-ref-baseline.mjs",
     "check:rls-coverage": "node scripts/check-rls-coverage.mjs",
     "check:stance-audit": "node scripts/check-stance-audit.mjs",
-    "check:entity-types": "node scripts/check-entity-types.mjs"
+    "check:entity-types": "node scripts/check-entity-types.mjs",
+    "check:instrument-contradictions": "node scripts/check-instrument-rung-contradictions.mjs",
+    "check:instrument-contradictions:selftest": "node scripts/check-instrument-rung-contradictions.mjs --selftest"
   },
   "overrides": {
     "qs": "^6.16.0",
