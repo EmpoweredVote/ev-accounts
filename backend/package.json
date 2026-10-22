@@ -15,6 +15,7 @@
     "census:identity": "tsx scripts/census-identity.ts",
     "topic:stage5-roster": "tsx scripts/topic-stage5-roster.ts",
     "topic:stage5-prefill": "tsx scripts/topic-stage5-prefill.ts",
+    "topic:stage5-find": "tsx scripts/topic-stage5-find.ts",
     "test:unit": "vitest run src scripts --exclude \"**/ingest-gazetteer-places-counties.test.ts\"",
     "test:watch": "vitest",
     "lint": "eslint src scripts",
