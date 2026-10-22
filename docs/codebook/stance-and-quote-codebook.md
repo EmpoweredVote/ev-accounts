@@ -70,6 +70,16 @@ Andrews 2026-10-19, R1):** V4.1 "The single-subject test" gains one topic-scoped
 K-12 schools. It applies to the Season 3 revision 2 of that topic only (CA_0314). No label or gold row on this
 topic exists under any version, so no recorded result changes. Decision record:
 `.planning/research/s3-pilot-equity-programs/stage3/results.md` (rulings R1–R5; workspace root).
+**Clarified 2026-10-21 (still 0.6 — a topic-scoped reading, no new variable or value; rulings by Chris
+Andrews 2026-10-21, D3, C-Q4, DC1):** `voting-rights` gains three topic-scoped readings of its rung 3/4 line.
+D3: a sworn-statement path open to any voter with a reasonable impediment keeps a law at rung 3 even when it
+also states a cure; sworn statements only for named exemptions leave it at rung 4. C-Q4: on the mail branch, a
+statement limited to people never issued any listed ID number is a named exemption. DC1: a mail-ballot
+request-ID rule whose failure still lets the ballot be sent and counted on documents that are not the requested
+ID does not meet rung 4. They apply to the Season 3 revision 4 of that topic only (CA_0318). The [real]
+`voting-rights` examples below (Kennedy / SAVE Act under V1 and V6, Durazo / SB 1174 under V2) were coded
+against the Season 1 ladder; under Season 2 and this revision a proof-of-citizenship law is rung 5. Decision
+record: `.planning/research/s3-prep-voting-rights/stage3/results.md` and `stage4/` (workspace root).
 **Design:** [`docs/superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md`](../superpowers/specs/2026-09-25-stance-quote-codebook-reliability-design.md).
 **Governs:** the three stance coders, the blind human reviewer, and quote tiering. Where this file
 and a skill or prompt disagree, this file wins; fix the other one.
