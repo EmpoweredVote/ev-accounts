@@ -22,6 +22,9 @@ stance from silence: an absence is not evidence.
 3. The topic's annex: `docs/codebook/annex/season3/{{TOPIC_KEY}}.md`.
 4. `.claude/skills/season-topic-prep/RULINGS.md` (rulings are applied, not re-argued).
 5. For each person in your batch: `backend/data/source-store/findings/<politician_id>.json`.
+6. For a record finding with an `instrument_id`, that instrument's file in the store
+   (`backend/data/source-store/instruments/<scope>/<instrument_id>.json`): its `operative_text` and
+   `single_subject` verdicts are what the vote acted on. Quote the operative words in your reasoning.
 
 Your batch (politician id, office, level, state; the level decides the evidence basis):
 
@@ -77,4 +80,4 @@ Give exactly one outcome:
 }
 ```
 
-Omit `value` unless `seated`. Return one line per person: id, outcome, value or tags.
+Omit `value` unless `seated`. `tags` may be `[]`. Return one line per person: id, outcome, value or tags.

@@ -89,6 +89,11 @@ describe('Stage5CodeSchema', () => {
     expect(Stage5CodeSchema.safeParse(code({ value: 2.3 })).success).toBe(false);
     expect(Stage5CodeSchema.safeParse(code({ value: 6 })).success).toBe(false);
   });
+  it('reads a missing tags list as no tags', () => {
+    const { tags: _t, ...rest } = code({});
+    const r = Stage5CodeSchema.safeParse(rest);
+    expect(r.success && r.data.tags).toEqual([]);
+  });
   it('refuses an unknown tag', () => {
     expect(Stage5CodeSchema.safeParse(code({ tags: ['nonsense' as never] })).success).toBe(false);
   });

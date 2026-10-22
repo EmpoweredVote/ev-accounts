@@ -27,7 +27,7 @@ export const Stage5CodeSchema = z.object({
   reasoning: z.string().min(1),
   blank_class: z.enum(BLANK_CLASSES as [BlankClass, ...BlankClass[]]).optional(),
   open_note: z.string().optional(),
-  tags: z.array(z.enum(STARTER_TAGS)),
+  tags: z.array(z.enum(STARTER_TAGS)).default([]),
   finding_ids: z.array(z.string()),
   evidence_basis: z.enum(['record', 'own-words', 'joint']).optional(),
   codebook: z.string().min(1),
