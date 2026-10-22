@@ -1,6 +1,13 @@
 -- CA_0319_dispute_clark_surname_fec_guess.sql
 -- Author: Chris Andrews (CA_ namespace). Slot reserved from the steward allocator 2026-10-21.
 --
+-- APPLIED: 2026-10-22 01:33 UTC on production, on yes from Chris Andrews. UPDATE 1; gate passed;
+-- f8b6bc77 now reads disputed with the CA_0319 note. Dry run first on prod (COMMIT swapped for
+-- ROLLBACK): UPDATE 1, gate OK, row unchanged after. Re-run after apply: UPDATE 0, gate OK (no-op).
+-- ⚠ check:duplicate-people still reports this pair after apply: it counts any FEC link with an ID,
+-- disputed included. The different_people verdict in data/duplicate-people-baseline.json (#1098)
+-- is what quiets it.
+--
 -- =============================================================================
 -- CA_0319: Lawrence Kyle Clark does not hold FEC H6CO06165 — dispute the
 --          surname-only guess the auto-match queue wrote on his row
