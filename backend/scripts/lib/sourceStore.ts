@@ -132,7 +132,11 @@ export const DeadEndSchema = z.object({
   scope: ScopeSchema.optional(),
   politician_id: z.string().optional(),
   topic_key: z.string().optional(),
-  query_or_url: z.string(),
+  // String() of an object gives '[object Object]', which tells the next researcher nothing about
+  // what was blocked. Format { target, reason } records as text before appending.
+  query_or_url: z.string().min(1).refine((s) => !s.includes('[object Object]'), {
+    message: 'query_or_url is a stringified object ([object Object]); write the query or URL as text',
+  }),
   result: z.enum(['nothing', 'blocked', 'paywalled', 'robots']),
   by: z.string(),
 });
