@@ -115,9 +115,9 @@ chair-shaped instrument from a directional one; a human read is what separated t
 1. **Re-read the two clusters 1926 blanked that the sample would have re-seated** — TX
    Medicaid-expansion → healthcare (13) and TX SB13 → climate (4). Now a re-seat from blank against
    the record, which is the cleaner operation.
-2. **🔴 Migration 1921 kept two members (Hernandez, Ishii) at deportation chair 2 on sanctuary
-   instruments.** That reading reached chair 2 the same way this pass just rejected, so those rows
-   are very likely defective. Re-examine rather than treat as precedent.
+2. ✅ **DONE — migration 1930 (§6).** Migration 1921 kept members at deportation chair 2 on
+   sanctuary instruments; all are now blank. It was **three** rows, not the two this item named —
+   **Hugo Soto-Martinez** (1921 ledger row R21) was kept the same way and the note missed him.
 3. **Sample the 8 unread clusters of 3+ (36 rows)** — Fair Share → taxes r3 (7) and r4 (6),
    Ballotpedia themes → taxes r4 (5), police reform → public-safety r4 (5), Ballotpedia themes →
    healthcare r4 (4), rent stabilization → housing r1 (3), SB13 → climate r4 (3), ROE Act →
@@ -128,3 +128,75 @@ chair-shaped instrument from a directional one; a human read is what separated t
    no named instrument at all.
 5. **The contradiction check (PR #1085) still has 119 groups / 1,090 rows** to work as a reading
    queue.
+
+---
+
+## 6. Migration 1930 — the 1921 sanctuary rows, re-examined
+
+**2026-10-22, same day.** Closes open item 2 above. ⚖ **A ruling that implicates earlier rows is
+not self-executing** — 1927 deliberately did not reach these; they are read here on their own
+evidence.
+
+**Three rows, all blanked**, each a 1921 KEEP at deportation chair 2:
+
+| 1921 row | person | evidence |
+|---|---|---|
+| R01 | Adena Ishii (Berkeley) | unanimous council vote reaffirming sanctuary status + her own remark that some cities actively assist ICE |
+| R10 | Eunisses Hernandez (LA) | co-introduced the 2023 motion that became LA ordinance 188441 |
+| R21 | Hugo Soto-Martinez (LA) | introduced that motion with Hernandez and Raman |
+
+🔴 **1921's own reasoning states the defect.** R01: *"Enforcement-sceptical direction; rung 1 (stop
+deportations entirely) needs more, **so narrowing lands on 2**."* R10: *"rung 1 needs more."* That
+is the least-extreme-option tiebreaker, which the standard names as the signal a row is **not**
+evidenced rather than as a way to pick a chair.
+
+🔑 **The decisive point is the project's own adjudication.** 1921 seated the *same ordinance* at
+chair 1 of the separate **`local-immigration`** ladder for Hernandez, writing that there *"it is
+squarely on-axis"* (R14). **Squarely on-axis there concedes off-axis here.** That row is untouched
+and Guard 3 refuses to run if it ever stops being seated at chair 1.
+
+### 🔴 The one real argument the other way — and why it did not carry
+
+Press coverage reports that LA ordinance 188441 carries an **LAPD carve-out for "serious
+offenses"**, which Council President Harris-Dawson described as letting police contact ICE about a
+migrant *convicted of a violent felony* who was deported and returned. **If the enacted text drew
+that line, this would be a re-seat, not a blank** — it is close to chair 2's own words.
+
+**It could not be verified.** The amlegal code library returned HTTP 403, the City Clerk's document
+host did not respond, and the only available description is **a reporter's paraphrase plus a
+councilmember's spoken characterisation** — the article does not quote the ordinance.
+⚖ **Same shape as the RFMA cluster (migration 1925): A CHAIR DECIDED BY A PARAPHRASE.** The
+standing rule is to read the enacted text and never seat from a news summary.
+⚠ And as described the carve-out is **narrower than chair 2 anyway** — it concerns re-entry after a
+prior removal, not a general proposition about whom to deport.
+▶ **If the enacted Chapter 19 text is obtained and does draw chair 2's line, the two LA rows are a
+re-seat candidate on that text.** Ishii's Berkeley reaffirmation carries no such carve-out.
+
+### ⚠ Admissibility is not sufficiency
+
+`compass_topic_roles` marks **deportation/local** as `evidence_basis = 'own-words'`,
+`is_required = false`, so own words *may* seat this chair. That settles what **kind** of evidence is
+allowed, never whether the evidence **describes** the chair. Ishii's remark criticises cities that
+assist ICE; it states no removal threshold.
+
+### ⚠ What this leaves behind
+
+**Soto-Martinez and Ishii have no `local-immigration` row at all**, so for them the sanctuary
+evidence now has no on-axis home. That is **a gap to seed, not a reason to keep an unevidenced
+chair** — Soto-Martinez introduced the same LA motion Hernandez is seated on, so his
+`local-immigration` row is a strong candidate to seat at chair 1 on the same evidence. ▶ Seeding a
+new row is research, not adjudication; left for a pass that can do it properly.
+
+### Chain checked and closed
+
+1921's R01 cites *"the Grijalva and Menendez rulings in mig 1920"* as precedent. **Neither has a
+deportation row in Season 2 at all**, so the chain does not propagate to live rows and stops here.
+
+### Gates
+
+Dry run (all assertions passed, rolled back) → apply → **direct SQL outside the migration**: 3/3 at
+`value = 0`, each carrying the withdrawal notice and its original reasoning verbatim, sources
+intact, Hernandez's `local-immigration` row unmoved at chair 1 with its original `updated_at`.
+`check:stance-sources` **identical before and after** (790 across 4 checks, no baseline moved).
+No re-seats in this migration, so the chair-evidence CSV gate has nothing to score — it scores only
+valued rows.
