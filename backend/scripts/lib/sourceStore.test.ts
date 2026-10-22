@@ -125,9 +125,22 @@ describe('appendDeadEnd', () => {
     expect(lines).toHaveLength(2);
     for (const l of lines) expect(DeadEndSchema.safeParse(JSON.parse(l)).success).toBe(true);
   });
+  it('refuses an object stringified into query_or_url', () => {
+    const d = { at: '2026-10-20', query_or_url: String({ target: 'x', reason: 'y' }), result: 'blocked' as const, by: 'tester' };
+    expect(() => appendDeadEnd(root, d)).toThrow(/object Object/);
+    expect(() => appendDeadEnd(root, { ...d, query_or_url: '' })).toThrow();
+  });
 });
 
 describe('validateStore', () => {
+  it('reports a dead end whose query_or_url is [object Object]', () => {
+    mkdirSync(root, { recursive: true });
+    writeFileSync(storePaths(root).deadEnds, JSON.stringify({ at: '2026-10-21', query_or_url: '[object Object]', result: 'blocked', by: 'tester' }) + '\n');
+    const problems = validateStore(root);
+    expect(problems).toHaveLength(1);
+    expect(problems[0].file).toBe('dead-ends.jsonl:1');
+    expect(problems[0].error).toMatch(/object Object/);
+  });
   it('is clean for an empty or missing store', () => {
     expect(validateStore(root)).toEqual([]);
     expect(validateStore(join(root, 'nope'))).toEqual([]);
