@@ -27,6 +27,17 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   (`.planning/research/s3-pilot-equity-programs/stage2/drafts.md` §7).
 - **Scope:** every topic. Write it as an annex line for each new ladder.
 
+### Furthest act — an escape open to everyone
+- **Ruling:** the furthest-act rule applies only among acts that bind. When a record also states an escape that
+  lets **any** person avoid the requirement (for any reason, or for a reasonable impediment), the record sits on the
+  escape's rung, even when it also states a stricter act such as a cure. An escape limited to named exemptions does
+  not count as an escape: the stricter act decides. Worked example: `voting-rights` D3 (a sworn-statement path open
+  to any voter keeps a photo-ID law at rung 3, even with a cure).
+- **Date and source:** 2026-10-22, Chris Andrews, season-topic-prep fixes (finding #50,
+  `.planning/research/s3-prep-voting-rights/skill-test-notes.md`); generalises D3 (2026-10-21).
+- **Scope:** every topic. The codebook does not yet carry this line (its header still scopes D3 to voting-rights);
+  a codebook line is owed before coding applies it outside `voting-rights`.
+
 ### Small-body rule
 - **Ruling:** on a body of 10 or fewer voting members the tally does not decide `near-unanimous`. Such a vote can
   carry a chair only if it was its own action item (not a consent agenda or an en bloc vote) and the provision the
@@ -194,6 +205,8 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
   the strict test is visible.
 
 ### voting-rights — D3, C-Q4, DC1 (rung 3/4 line)
+- **Note (2026-10-22):** D3 is now a general rule ("Furthest act — an escape open to everyone", above). C-Q4 and DC1
+  stay topic-scoped.
 - **Reading:** D3 — a sworn-statement path open to any voter with a reasonable impediment keeps a law at rung 3 even
   when it also states a cure; sworn statements only for named exemptions leave it at rung 4. C-Q4 — on the mail
   branch, a statement limited to people never issued any listed ID number is a named exemption. DC1 — a mail-ballot
