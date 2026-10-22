@@ -293,11 +293,20 @@ export function validateStore(root: string): { file: string; error: string }[] {
   for (const f of walkJson(join(root, 'jurisdictions'))) checkFile(f, JurisdictionSchema, problems, root);
   const dead = storePaths(root).deadEnds;
   if (existsSync(dead)) {
+    // A dead end stored twice (same fields, any `at`) is a re-run that appended again, not a new
+    // finding. Key on every field but `at`, in sorted order, so field order does not hide a repeat.
+    const seen = new Map<string, number>();
     readFileSync(dead, 'utf8').split('\n').forEach((line, i) => {
       if (!line.trim()) return;
       try {
-        const r = DeadEndSchema.safeParse(JSON.parse(line));
+        const parsed = JSON.parse(line);
+        const r = DeadEndSchema.safeParse(parsed);
         if (!r.success) problems.push({ file: `dead-ends.jsonl:${i + 1}`, error: r.error.issues.map((x) => x.message).join('; ') });
+        const { at: _at, ...rest } = parsed;
+        const key = JSON.stringify(Object.keys(rest).sort().map((k) => [k, rest[k]]));
+        const first = seen.get(key);
+        if (first) problems.push({ file: `dead-ends.jsonl:${i + 1}`, error: `duplicate of line ${first} (only "at" differs, if anything)` });
+        else seen.set(key, i + 1);
       } catch (e) {
         problems.push({ file: `dead-ends.jsonl:${i + 1}`, error: `invalid JSON: ${(e as Error).message}` });
       }
