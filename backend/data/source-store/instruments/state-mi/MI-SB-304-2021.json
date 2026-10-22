@@ -1,0 +1,75 @@
+{
+  "id": "MI-SB-304-2021",
+  "scope": "state:mi",
+  "title": "SB 304 (2021) — Notice to provisional-ballot voter about burden of proving identity and fee-free state ID (amends MCL 168.523a)",
+  "urls": [
+    "https://www.legislature.mi.gov/Bills/Bill?ObjectName=2021-SB-0304"
+  ],
+  "version": "other",
+  "operative_text": "Provisional-ballot notice about ID burden and free state ID: [bill-page subject line only; enrolled text not fetched]",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "not checked",
+  "votes": [
+    {
+      "date": "2021-06-16",
+      "body": "MI Senate",
+      "motion": "passage",
+      "kind": "roll-call",
+      "yes": 19,
+      "no": 16,
+      "absent": 1,
+      "body_size": 38,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2021-06-23",
+      "body": "MI House",
+      "motion": "passage with H-1",
+      "kind": "roll-call",
+      "yes": 58,
+      "no": 52,
+      "absent": 0,
+      "body_size": 110,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2021-10-07",
+      "body": "MI Senate",
+      "motion": "concurrence S-3",
+      "kind": "roll-call",
+      "yes": 20,
+      "no": 16,
+      "absent": 0,
+      "body_size": 38,
+      "note": "member names not captured",
+      "members": []
+    },
+    {
+      "date": "2021-10-14",
+      "body": "MI House",
+      "motion": "concurrence S-3",
+      "kind": "roll-call",
+      "yes": 56,
+      "no": 51,
+      "absent": 2,
+      "body_size": 110,
+      "note": "member names not captured",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}

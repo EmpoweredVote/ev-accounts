@@ -71,6 +71,20 @@ them without opening the source.
   (`.planning/research/s3-pilot-equity-programs/stage3/results.md`, Virginia Beach pause motions).
 - **Scope:** every topic.
 
+### A fallback does not erase a stated requirement
+- **Ruling:** a fallback printed beside a stated requirement (a records match, an attestation route, an affidavit)
+  does not move the record off the requirement's rung, unless the rung itself turns on that fallback (as
+  `voting-rights` rungs 3 and 4 do, reading D3).
+- **Date and source:** D6, 2026-10-21, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage3/disputes-C.md`; `.planning/research/s3-prep-voting-rights/stage4/README.md`);
+  ruled for every topic, against the recommendation to keep it topic-scoped.
+- **Scope:** every topic.
+
+### Exposure
+- **Ruling:** an instrument the live ladder or its annex names is exposed. Its items stay in the test set and are
+  scored apart from T1 and T3.
+- **Date and source:** J1, 2026-10-20, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage1/rulings.md`).
+- **Scope:** every topic.
+
 ## Census and test-set rulings
 
 ### Census
@@ -81,6 +95,19 @@ them without opening the source.
   (`.planning/research/s3-census-education-equity-programs-supplement/stage0-supplement.md`, "State identity check").
 - **Scope:** every census.
 
+### Census — private funding of election offices
+- **Ruling:** a ban on private funding of election offices is not campaign-finance evidence. It does not make a
+  bill multi-subject while `campaign-finance` is served.
+- **Date and source:** census Q1, 2026-10-20, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage0/census.md`).
+- **Scope:** every census.
+
+### Census — a record needs its operative text
+- **Ruling:** a record counts toward the census gate only once its operative text (or amendment text) has been
+  read. A title or summary is a lead, not a record.
+- **Date and source:** 2026-10-21, Chris Andrews, from the KY HB 574 HFA 3 correction
+  (`.planning/research/s3-prep-voting-rights/stage0/census.md`; `.planning/research/s3-prep-voting-rights/stage4/README.md`).
+- **Scope:** every census.
+
 ### Stage 1 sampling
 - **Ruling:** one coder row per board member. Absent = no row; an abstention = a row. For state laws: the prime
   sponsors plus a seeded draw of 2 Yea and 2 Nay per chamber per law, from identity-checked rows on each chamber's
@@ -88,6 +115,17 @@ them without opening the source.
   in a separate set). Overlap with another topic's test set is allowed and flagged, checked by politician id.
 - **Date and source:** equity programs Stage 1, D1–D7, 2026-10-19, Chris Andrews
   (`.planning/research/s3-pilot-equity-programs/stage1/FROZEN.md`).
+- **Scope:** every Stage 1.
+
+### Stage 1 sampling — extensions
+- **Ruling:** federal acts are sampled like state laws. A recorded floor-amendment vote that is itself a provision
+  of the topic is its own record (2 Yea + 2 Nay). Where a veto was overridden, the override vote is the enacting
+  roll call. Existing Season rows the census reaches with a counted Yea form a whole second stratum (Nay-only rows
+  are left out). Where no single prime sponsor is printed, the first-named author is the sponsor item, and there is
+  none when the page is ambiguous (co-authors stay in the store). A sponsor now at a different level gets no item
+  for that record. Roll calls on bills that died after one chamber or were vetoed stay in.
+- **Date and source:** voting-rights Stage 1, J2–J5, J7, J9, J10, 2026-10-20/21, Chris Andrews
+  (`.planning/research/s3-prep-voting-rights/stage1/rulings.md`).
 - **Scope:** every Stage 1.
 
 ## Process rulings
@@ -100,6 +138,12 @@ them without opening the source.
 - **Date and source:** 2026-10-20, Chris Andrews (`docs/superpowers/specs/2026-10-20-season-topic-prep-skill-design.md`
   §5.6, §10); library books (CA_0310) and equity programs (CA_0314) were applied with T4 open.
 - **Scope:** every topic from Season 3 on.
+
+### A third draft after Stage 3
+- **Ruling:** a third draft may be written after Stage 3 from the Stage 3 lesson by kind, and tested on the same
+  frozen set. It is flagged as not fully blind.
+- **Date and source:** C1, 2026-10-21, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage2/c-lesson.md`, `.planning/research/s3-prep-voting-rights/stage2/drafts-c.md`).
+- **Scope:** every topic.
 
 ## Topic-scoped readings
 
@@ -117,6 +161,19 @@ topic; if a topic seems to need the same reading, ask for a ruling and point to 
 - **Contrast:** homelessness kept the strict test (2026-10-20): a camping law that also funds shelters is
   multi-subject while `homelessness-response` is served. Bundled laws are counted on their own line so the cost of
   the strict test is visible.
+
+### voting-rights — D3, C-Q4, DC1 (rung 3/4 line)
+- **Reading:** D3 — a sworn-statement path open to any voter with a reasonable impediment keeps a law at rung 3 even
+  when it also states a cure; sworn statements only for named exemptions leave it at rung 4. C-Q4 — on the mail
+  branch, a statement limited to people never issued any listed ID number is a named exemption. DC1 — a mail-ballot
+  request-ID rule whose failure still lets the ballot be sent and counted on documents that are not the requested
+  ID does not meet rung 4.
+- **Date and source:** D3, C-Q4, DC1, 2026-10-21, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage3/disputes.md`,
+  `.planning/research/s3-prep-voting-rights/stage3/disputes-C.md`); written into the codebook "Clarified 2026-10-21" header line and the Season 3 annex
+  (`docs/codebook/annex/season3/voting-rights.md`, EmpoweredVote/ev-accounts#1096).
+- **Scope:** the Season 3 revision 4 of `voting-rights` only (CA_0318).
+- **Contrast:** the standing furthest-act rule (above). A record that states both a rung 3 and a rung 4 act sits at
+  rung 4.
 
 ## How to add a ruling
 

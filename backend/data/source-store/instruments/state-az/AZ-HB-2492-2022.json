@@ -1,0 +1,54 @@
+{
+  "id": "AZ-HB-2492-2022",
+  "scope": "state:az",
+  "title": "HB 2492 (55th Legislature, 2nd Regular Session, 2022) — voter registration; verification; citizenship",
+  "urls": [
+    "https://www.azleg.gov/legtext/55leg/2R/laws/0099.htm",
+    "https://www.azleg.gov/legtext/55leg/2r/bills/hb2492h.htm",
+    "https://www.azleg.gov/legtext/55leg/2R/summary/H.HB2492_032822_TRANSMITTED.DOCX.htm",
+    "https://www.azleg.gov/legtext/55leg/2R/bills/HB2492P.htm (search result, not fetched)"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec 1, 16-101 qualification: satisfactory evidence of citizenship: Is a citizen of the United States and has provided SATISFACTORY evidence of CITIZENSHIP as PRESCRIBED in section 16-166.\n16-121.01(C),(E) application must include evidence; without it no presidential or mail early ballot: any application for registration shall be accompanied by satisfactory evidence of citizenship\nSec 2 16-112 driver license registration: Every person who is applying for a driver license or renewal and who is otherwise qualified to register to vote shall\nSec 5 new 16-123 proof of location of residence: a person who registers to vote shall provide an identifying document that establishes proof of location of residence.\nSec 6 16-134 incomplete forms: shall notify the applicant within ten business days of receipt of the registration form\nSec 7 new 16-143 Attorney General review of unverified registrants: THE SECRETARY OF STATE AND EACH COUNTY RECORDER SHALL MAKE AVAILABLE TO THE ATTORNEY GENERAL A LIST OF ALL INDIVIDUALS\nSec 8 16-165 cancellation: When the county recorder receives and confirms information that the person registered is not a United States citizen.\nSec 4 16-121.01 presumption of proper registration: A person is presumed to be properly registered to vote on completion of a registration form\nSec 9 severability: If a provision of this act or its application to any person or circumstance is held invalid,",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "No citation of HAVA or NVRA found in fetched summary; duties imposed on county recorders and Secretary of State. Summary says recorders use SAVE database for federal-form applicants.",
+  "votes": [
+    {
+      "date": "unknown (before 2022-03-23)",
+      "body": "AZ House",
+      "motion": "third read (final passage)",
+      "kind": "roll-call",
+      "yes": 31,
+      "no": 26,
+      "absent": 3,
+      "body_size": 60,
+      "note": "member names not captured; date as printed: unknown (before 2022-03-23)",
+      "members": []
+    },
+    {
+      "date": "unknown (before 2022-03-23)",
+      "body": "AZ Senate",
+      "motion": "third read (final passage)",
+      "kind": "roll-call",
+      "yes": 16,
+      "no": 12,
+      "absent": 2,
+      "body_size": 30,
+      "note": "member names not captured; date as printed: unknown (before 2022-03-23)",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}

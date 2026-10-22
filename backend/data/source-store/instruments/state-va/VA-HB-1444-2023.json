@@ -1,0 +1,490 @@
+{
+  "id": "VA-HB-1444-2023",
+  "scope": "state:va",
+  "title": "Elections; voter identification containing a photograph required (HB 1444), 2023",
+  "urls": [
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+    "https://www.democracydocket.com/news-alerts/virginia-house-passes-strict-photo-id-to-vote-bill/",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+vot+HV1322+HB1444",
+    "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+ful+HB1444H1"
+  ],
+  "version": "enrolled",
+  "operative_text": "(a_in_person_id) (section) 24.2-643(B) as in House committee substitute (engrossed)\n(quote) The officer shall ask the voter to present any one of the following forms of identification: (i)[- his voter confirmation documents; (ii)-] his valid Virginia driver's license, his valid United States passport, or any other identification issued by the Commonwealth, one of its political subdivisions, or the United States, other than a driver privilege card issued under 46.2-328.3 or an identification privilege card issued under 46.2-345.3;[- (iii)-][+ (ii)+] any valid student identification card[+ containing a photograph of the voter and+] issued by any institution of higher education located in the Commonwealth or any private school located in the Commonwealth;[- (iv)-][+ (iii)+] any valid student identification card containing a photograph of the voter and issued by any institution of higher education located in any other state or territory of the United States;[- (v)-][+ or (iv)+] any valid employee identification card containing a photograph of the voter and issued by an employer of the voter in the ordinary course of the employer's business[-; or (vi) a copy of a current utility bill, bank statement, government check, paycheck, or other government document containing the name and address of the voter-].\n(b_no_id) (section) 24.2-643(B) as in engrossed version\n(quote) [-Except as provided in subsection E, any -][+Any +]voter who does not show one of the forms of identification specified in this subsection[- shall be allowed to vote after signing a statement, subject to felony penalties for false statements pursuant to 24.2-1016, that he is the named registered voter he claims to be. ... A voter who does not show one of the forms of identification specified in this subsection and does not sign this statement-] shall be offered a provisional ballot under the provisions of 24.2-653.\n(c_mail_ballot_id) (section) 24.2-701(C)(1), existing text, not marked as changed\n(quote) The applicant's printed name and the last four digits of the applicant's social security number. However, an applicant completing the application in person shall not be required to provide the last four digits of his social security number;\n(section) 24.2-701(B)(1) as amended (in-person application)\n(quote) The applicant shall provide one of the forms of identification specified in subsection B of 24.2-643[-, or if he is unable to present one of the specified forms of identification listed in that subsection, he shall sign a statement, subject to felony penalties for making false statements pursuant to 24.2-1016, that he is the named registered voter he claims to be. ...-]. Any applicant who does not show one of the forms of identification specified in subsection B of 24.2-643[- or does not sign this statement-] shall be offered a provisional ballot under the provisions of 24.2-653.\n(d_proof_of_citizenship) not stated as new. Existing text in 24.2-404(A)(4) (not marked changed) refers to SAVE Program reports for removing voters 'known not to be a United States citizen'.\n(e_signature_or_records) not stated\n\nSponsors (as printed): R. Lee Ware (Introduced by; House). Header of substitute: 'Patron Prior to Substitute--Delegate Ware'\nSource: ENGROSSED version only (House committee substitute 23104635D-H1, agreed to 02/01/23 and engrossed as HB1444H1). Not enacted; no enrolled text exists. Note: the page header reads 'AMENDMENT IN THE NATURE OF A SUBSTITUTE (Proposed by the House Committee on Privileges and Elections on January 27, 2023)'. Fetched with curl -sL browser user agent (WebFetch summarised only); text read from page HTML with italic/strike tags converted to markers. Markers in quotes: [+ ... +] = words the bill adds (italic on page); [- ... -] = words the bill deletes (struck on page). Base text of Code sections is the law as of 2022-23 (i.e. already including the 2020 changes), so [-...-] shows what HB 1444 would repeal from the 2020 law.\n\nAuthors and sponsors as printed (all): {\"prime_sponsor\":\"R. Lee Ware (Introduced by; House). Header of substitute: 'Patron Prior to Substitute--Delegate Ware'\",\"version_filed\":\"HB 1444 prefiled 12/20/22 (23100770D); committee substitute 23104635D-H1 passed House\",\"source_url\":\"https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444\"}",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "a7b0076a3fe79708c0448b1fdb287b35a568aa42e14f13935bccc91b2b05231b",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "higher_law_duty": "not examined",
+  "votes": [
+    {
+      "date": "2023-02-02",
+      "body": "VA House",
+      "motion": "passage",
+      "kind": "roll-call",
+      "yes": 52,
+      "no": 48,
+      "body_size": 100,
+      "members": [
+        {
+          "name": "Adams, L.R.",
+          "vote": "yea"
+        },
+        {
+          "name": "Anderson",
+          "vote": "yea"
+        },
+        {
+          "name": "Austin",
+          "politician_id": "3049ed75-9743-42f4-8c9e-037a41f9bdc3",
+          "vote": "yea"
+        },
+        {
+          "name": "Avoli",
+          "vote": "yea"
+        },
+        {
+          "name": "Ballard",
+          "politician_id": "03b1536c-8724-4e7e-a9ae-e07dcd07aba5",
+          "vote": "yea"
+        },
+        {
+          "name": "Batten",
+          "vote": "yea"
+        },
+        {
+          "name": "Bell",
+          "vote": "yea"
+        },
+        {
+          "name": "Bloxom",
+          "politician_id": "573ef077-c62f-45d3-9a5c-189d1c5308bf",
+          "vote": "yea"
+        },
+        {
+          "name": "Brewer",
+          "vote": "yea"
+        },
+        {
+          "name": "Byron",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell, E.H.",
+          "vote": "yea"
+        },
+        {
+          "name": "Campbell, J.L.",
+          "vote": "yea"
+        },
+        {
+          "name": "Cherry",
+          "politician_id": "c7f94731-2162-4fb7-803a-a2ff7443a9a1",
+          "vote": "yea"
+        },
+        {
+          "name": "Cordoza",
+          "vote": "yea"
+        },
+        {
+          "name": "Coyner",
+          "vote": "yea"
+        },
+        {
+          "name": "Davis",
+          "vote": "yea"
+        },
+        {
+          "name": "Durant",
+          "politician_id": "70d45f9c-aef9-4cd7-be4c-5ae568e94f94",
+          "vote": "yea"
+        },
+        {
+          "name": "Edmunds",
+          "vote": "yea"
+        },
+        {
+          "name": "Fariss",
+          "vote": "yea"
+        },
+        {
+          "name": "Fowler",
+          "vote": "yea"
+        },
+        {
+          "name": "Freitas",
+          "vote": "yea"
+        },
+        {
+          "name": "Greenhalgh",
+          "vote": "yea"
+        },
+        {
+          "name": "Head",
+          "politician_id": "7eba070e-c4ed-404b-8a74-01794b2bd9ed",
+          "vote": "yea"
+        },
+        {
+          "name": "Hodges",
+          "vote": "yea"
+        },
+        {
+          "name": "Kilgore",
+          "politician_id": "84257075-047c-46d3-ab7b-ed0e0ae0dd56",
+          "vote": "yea"
+        },
+        {
+          "name": "Knight",
+          "vote": "yea"
+        },
+        {
+          "name": "LaRock",
+          "vote": "yea"
+        },
+        {
+          "name": "Leftwich",
+          "politician_id": "01f1abf8-84c8-4cbc-8ff7-4d900bc6c3a6",
+          "vote": "yea"
+        },
+        {
+          "name": "March",
+          "vote": "yea"
+        },
+        {
+          "name": "Marshall",
+          "vote": "yea"
+        },
+        {
+          "name": "McGuire",
+          "vote": "yea"
+        },
+        {
+          "name": "McNamara",
+          "politician_id": "61e69826-c7d3-492b-a319-d2a34a33f92e",
+          "vote": "yea"
+        },
+        {
+          "name": "Morefield",
+          "politician_id": "df51bc00-8a69-4bd0-9418-e61a3cfe248b",
+          "vote": "yea"
+        },
+        {
+          "name": "O'Quinn",
+          "politician_id": "36673ec0-1045-4a98-8074-12d6deed5cc8",
+          "vote": "yea"
+        },
+        {
+          "name": "Orrock",
+          "vote": "yea"
+        },
+        {
+          "name": "Ransone",
+          "vote": "yea"
+        },
+        {
+          "name": "Robinson",
+          "vote": "yea"
+        },
+        {
+          "name": "Runion",
+          "politician_id": "f3908370-f489-4a77-96f3-b19bf983618e",
+          "vote": "yea"
+        },
+        {
+          "name": "Scott, P.A.",
+          "politician_id": "597a4057-4ccc-43f6-bf97-bcc701d7e637",
+          "vote": "yea"
+        },
+        {
+          "name": "Tata",
+          "politician_id": "4eac03a8-a742-4dd9-8cdb-4f466df2fd24",
+          "vote": "yea"
+        },
+        {
+          "name": "Taylor",
+          "vote": "yea"
+        },
+        {
+          "name": "Wachsmann",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker",
+          "politician_id": "f830ca33-179a-4981-8b89-0b02155e374b",
+          "vote": "yea"
+        },
+        {
+          "name": "Wampler",
+          "vote": "yea"
+        },
+        {
+          "name": "Ware",
+          "vote": "yea"
+        },
+        {
+          "name": "Webert",
+          "politician_id": "28714014-4c7e-427e-8190-fcc21875377a",
+          "vote": "yea"
+        },
+        {
+          "name": "Wiley",
+          "vote": "yea"
+        },
+        {
+          "name": "Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Wilt",
+          "politician_id": "742d2c42-b277-4859-9269-1abc55affbe2",
+          "vote": "yea"
+        },
+        {
+          "name": "Wright",
+          "politician_id": "ff50eaf3-0f12-455e-85b2-bc37f1e542db",
+          "vote": "yea"
+        },
+        {
+          "name": "Wyatt",
+          "politician_id": "d918e6be-5933-4b24-aada-84cbc461c207",
+          "vote": "yea"
+        },
+        {
+          "name": "Mr. Speaker",
+          "vote": "yea"
+        },
+        {
+          "name": "Adams, D.M.",
+          "vote": "nay"
+        },
+        {
+          "name": "Bagby",
+          "vote": "nay"
+        },
+        {
+          "name": "Bennett-Parker",
+          "politician_id": "612b8663-46c6-4f34-887d-0dadd06dd194",
+          "vote": "nay"
+        },
+        {
+          "name": "Bourne",
+          "vote": "nay"
+        },
+        {
+          "name": "Bulova",
+          "vote": "nay"
+        },
+        {
+          "name": "Carr",
+          "politician_id": "a1e1e5e6-661e-4bea-b29a-06eeb2dcba14",
+          "vote": "nay"
+        },
+        {
+          "name": "Clark",
+          "vote": "nay"
+        },
+        {
+          "name": "Convirs-Fowler",
+          "politician_id": "e65fba41-a46c-407c-86b3-810f1c8ecf38",
+          "vote": "nay"
+        },
+        {
+          "name": "Delaney",
+          "politician_id": "b17426e3-d363-44fd-a2b7-a04f54f6d7cb",
+          "vote": "nay"
+        },
+        {
+          "name": "Filler-Corn",
+          "vote": "nay"
+        },
+        {
+          "name": "Glass",
+          "politician_id": "57517048-31a9-4974-bb5a-f82c3563a514",
+          "vote": "nay"
+        },
+        {
+          "name": "Gooditis",
+          "vote": "nay"
+        },
+        {
+          "name": "Guzman",
+          "politician_id": "cea4db8b-acb5-4ebb-be09-e731d4412249",
+          "vote": "nay"
+        },
+        {
+          "name": "Hayes",
+          "vote": "nay"
+        },
+        {
+          "name": "Helmer",
+          "politician_id": "090cebbd-19b5-41ed-9c9a-5f537cdb5470",
+          "vote": "nay"
+        },
+        {
+          "name": "Herring",
+          "politician_id": "51f5dd85-abb6-4f50-bcb9-e5e6b82376b7",
+          "vote": "nay"
+        },
+        {
+          "name": "Hope",
+          "politician_id": "af6e165b-4668-449b-97a5-6b25c01c572a",
+          "vote": "nay"
+        },
+        {
+          "name": "Hudson",
+          "vote": "nay"
+        },
+        {
+          "name": "Jenkins",
+          "vote": "nay"
+        },
+        {
+          "name": "Kory",
+          "vote": "nay"
+        },
+        {
+          "name": "Krizek",
+          "politician_id": "cd70f416-c844-41db-9ff4-c528e04a72be",
+          "vote": "nay"
+        },
+        {
+          "name": "Lopez",
+          "politician_id": "5b7f3c42-b1a2-4dbc-870b-7f1a96a7f4ba",
+          "vote": "nay"
+        },
+        {
+          "name": "Maldonado",
+          "vote": "nay"
+        },
+        {
+          "name": "McQuinn",
+          "politician_id": "980c9e90-4249-4a48-a777-5f37dd4d52b1",
+          "vote": "nay"
+        },
+        {
+          "name": "Mullin",
+          "vote": "nay"
+        },
+        {
+          "name": "Mundon King",
+          "vote": "nay"
+        },
+        {
+          "name": "Murphy",
+          "vote": "nay"
+        },
+        {
+          "name": "Plum",
+          "vote": "nay"
+        },
+        {
+          "name": "Price",
+          "politician_id": "0bac7849-1edb-46b4-b139-dcc759c0d626",
+          "vote": "nay"
+        },
+        {
+          "name": "Rasoul",
+          "politician_id": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+          "vote": "nay"
+        },
+        {
+          "name": "Reid",
+          "politician_id": "5061959c-b625-4b7a-b17f-a1291c50d001",
+          "vote": "nay"
+        },
+        {
+          "name": "Roem",
+          "politician_id": "2d726661-e210-42f3-8454-3cf2d3ecf811",
+          "vote": "nay"
+        },
+        {
+          "name": "Scott, D.L.",
+          "politician_id": "407ffdf5-dc46-4081-b883-1cda1cfbbaa0",
+          "vote": "nay"
+        },
+        {
+          "name": "Seibold",
+          "politician_id": "4a5090f7-8d76-40c1-b2f4-c2ed038e6687",
+          "vote": "nay"
+        },
+        {
+          "name": "Sewell",
+          "politician_id": "77ce6e63-7379-4c8a-9038-5c708510d6cc",
+          "vote": "nay"
+        },
+        {
+          "name": "Shin",
+          "politician_id": "98023fc8-d83b-43ba-b7e1-5bd132122bbe",
+          "vote": "nay"
+        },
+        {
+          "name": "Sickles",
+          "vote": "nay"
+        },
+        {
+          "name": "Simon",
+          "politician_id": "c490eece-71f4-4051-975d-8fa5ed5f652b",
+          "vote": "nay"
+        },
+        {
+          "name": "Simonds",
+          "politician_id": "c25726d9-566e-4283-b35c-c608b921599f",
+          "vote": "nay"
+        },
+        {
+          "name": "Subramanyam",
+          "vote": "nay"
+        },
+        {
+          "name": "Sullivan",
+          "politician_id": "1964984f-1751-4ac7-ae94-69e50b0c2968",
+          "vote": "nay"
+        },
+        {
+          "name": "Torian",
+          "politician_id": "87aa078a-ab94-4b17-86fc-6301d47a5824",
+          "vote": "nay"
+        },
+        {
+          "name": "Tran",
+          "politician_id": "f224a300-8b54-4b57-b988-5c340667f99b",
+          "vote": "nay"
+        },
+        {
+          "name": "VanValkenburg",
+          "politician_id": "38b9461f-2f5b-45d8-ae99-626c75ae305d",
+          "vote": "nay"
+        },
+        {
+          "name": "Ward",
+          "politician_id": "c1e6a404-33c1-4a0d-9ff8-6e01890024c8",
+          "vote": "nay"
+        },
+        {
+          "name": "Watts",
+          "politician_id": "b6e0f927-9ce6-41ba-b1b7-43c8c4ae2264",
+          "vote": "nay"
+        },
+        {
+          "name": "Willett",
+          "politician_id": "e39d94c7-99d5-4c1d-b8d9-11736637b1eb",
+          "vote": "nay"
+        },
+        {
+          "name": "Williams Graves",
+          "politician_id": "b65454d1-6707-4d4e-be3e-27121afc8388",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+    "fetched_at": "2026-10-21T03:40:10.564Z",
+    "method": "curl"
+  }
+}

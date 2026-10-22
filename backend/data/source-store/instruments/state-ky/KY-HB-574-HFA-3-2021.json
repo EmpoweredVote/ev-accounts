@@ -1,0 +1,17 @@
+{
+  "id": "KY-HB-574-HFA-3-2021",
+  "scope": "state:ky",
+  "title": "House Floor Amendment 3 to HB 574/HCS 1 (2021 RS)",
+  "urls": [
+    "https://apps.legislature.ky.gov/recorddocuments/bill/21RS/HB574/HFA3.pdf"
+  ],
+  "version": "other",
+  "operative_text": "(form) [full text] On page 29, line 8, after \"the\" and before \"Thursday,\" insert \"Wednesday,\"; and On page 29, line 9, after \"Saturday\" and before \"immediately\" insert \"during the two (2) weeks\".\n(a_in_person_id_required_and_documents) not stated\n(b_voter_without_id) not stated\n(c_mail_ballot_id) not stated\n(d_proof_of_citizenship_to_register) not stated\n(e_signature_or_records_verification) not stated\n(context) Page 29 line 8-9 of HB 574/HCS 1 (https://apps.legislature.ky.gov/recorddocuments/bill/21RS/HB574/HCS1.pdf, fetched) reads: '(2)[(c)] In-person absentee voting shall be conducted in the county clerk's office ... during normal business hours on the Thursday, Friday, and Saturday immediately preceding the day of a primary or an election.' So the amendment would add Wednesday and 'during the two (2) weeks' (early in-person absentee days).\n\nSponsors (as printed): Rep. Buddy Wheatley (House)\nSource: curl with browser UA; 1-page PDF read with pdftotext. Defeat date from https://apps.legislature.ky.gov/record/21rs/hb574.html. RCS# 138 not independently checked. Coder should note the amendment is about early-voting days, which differs from what the task description might imply.\n\nAuthors and sponsors as printed (all): {\"prime_sponsor\":\"Rep. Buddy Wheatley (House)\",\"version_filed\":\"Amendment No. HFA 3 to printed copy HB 574/HCS 1\",\"source_url\":\"https://apps.legislature.ky.gov/recorddocuments/bill/21RS/HB574/HFA3.pdf\",\"note\":\"Printed: 'Amendment No. HFA 3 Rep. Rep. Buddy Wheatley'. HB 574 prime sponsor (not this instrument) is J. Decker.\"}",
+  "single_subject": [],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+    "fetched_at": "2026-10-21T03:40:10.568Z",
+    "method": "curl"
+  }
+}

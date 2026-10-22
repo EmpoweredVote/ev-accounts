@@ -1,0 +1,44 @@
+{
+  "id": "MO-HB-1878-2022",
+  "scope": "state:mo",
+  "title": "HB 1878 (2022) — Strict photo ID plus in-person absentee voting, drop-box ban, paper ballots, etc.",
+  "urls": [
+    "https://news.ballotpedia.org/2022/05/20/missouri-general-assembly-passes-one-election-related-bill-in-2022-session/",
+    "https://www.democracydocket.com/analysis/missouris-omnibus-election-law-unpacked/",
+    "same"
+  ],
+  "version": "enrolled",
+  "operative_text": "Photo ID: Voters casting absentee ballots in person would be required to present photo identification.\nProvisional ballot without ID: A voter without the required photo identification would be permitted to vote by provisional ballot\nRepeal of non-photo documents (student ID, voter card, utility bill, bank statement): [paraphrase, democracydocket]\nTwo weeks in-person absentee voting tied to ID law validity: [paraphrase, democracydocket]\nPaper ballot official: Beginning January 1, 2023, the official ballot shall be a paper ballot that is hand-marked by the voter.\nDRE ban after 2024-01-01 except accessibility: equipment that is designed for accessibility\nBan on private donations to election administrators; SoS may withhold funds; cybersecurity review every two years: [paraphrase]\nVoter registration solicitors unpaid, >10 must register with SoS: [paraphrase]\nNo one may ask voters whether they want an absentee application: [paraphrase]\nDrop boxes banned: [paraphrase; also says bans drop boxes]\nPresidential primary replaced with caucus: [paraphrase, democracydocket; NOT corroborated, check enrolled text]",
+  "single_subject": [],
+  "higher_law_duty": "not verified",
+  "votes": [
+    {
+      "date": "2022-05 (final, date not captured)",
+      "body": "MO Senate",
+      "motion": "final passage",
+      "kind": "roll-call",
+      "yes": 23,
+      "no": 11,
+      "absent": 0,
+      "body_size": 34,
+      "note": "member names not captured; date as printed: 2022-05 (final, date not captured)",
+      "members": []
+    },
+    {
+      "date": "2022-05 (final, date not captured)",
+      "body": "MO House",
+      "motion": "final passage (after Senate changes)",
+      "kind": "roll-call",
+      "yes": 97,
+      "no": 47,
+      "absent": 0,
+      "note": "member names not captured; date as printed: 2022-05 (final, date not captured)",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}
