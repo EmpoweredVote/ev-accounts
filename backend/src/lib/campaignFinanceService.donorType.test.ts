@@ -31,6 +31,13 @@ describe('extractDonorType — state sources', () => {
     expect(extractDonorType(raw)).toBe(expected);
   });
 
+  it('reads is_individual on FEC rows with a blank entity_type, and only then', () => {
+    expect(extractDonorType({ entity_type: null, is_individual: true })).toBe('individual');
+    expect(extractDonorType({ entity_type: null, is_individual: false })).toBe('unknown');
+    expect(extractDonorType({ entity_type: 'PAC', is_individual: true })).toBe('pac');
+    expect(IS_INDIVIDUAL_SQL).toContain("(COALESCE(c.raw_record->>'entity_type', '') = '' AND c.raw_record->>'is_individual' = 'true')");
+  });
+
   it('leaves FEC, Monroe and la_socrata rows as before', () => {
     expect(extractDonorType({ entity_type: 'IND' })).toBe('individual');
     expect(extractDonorType({ entity_type: 'COM' })).toBe('committee');

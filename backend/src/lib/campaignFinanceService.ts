@@ -484,6 +484,8 @@ export function extractDonorType(rawRecord: string | object | null): string {
   if (entityType.startsWith('IND') || entityType.startsWith('CAN')) return 'individual';
   if (entityType.startsWith('PAC') || entityType.startsWith('PTY')) return 'pac';
   if (entityType.startsWith('COM') || entityType.startsWith('CCM') || entityType.startsWith('ORG')) return 'committee';
+  // Older FEC filings (mostly before 2004) leave entity_type blank but set is_individual (see IS_INDIVIDUAL_SQL).
+  if (entityType === '' && rec['is_individual'] === true) return 'individual';
   if (rec.contributor_committee_id) return 'committee';
   if (entityType !== '') return 'committee';
   return 'unknown';
@@ -965,8 +967,12 @@ async function getPublicMatchingFunds(
 //                                 Corporation, Labor Organization, Other Organization fall into neither.
 //   ocpf recordTypeDescription:   'Individual'. OCPF's 'Committee' is likewise not split, so neither.
 // la_socrata and la_county_netfile carry no donor-type field at all, so they stay in neither bucket.
+// Older FEC filings (mostly before 2004) leave entity_type blank but set is_individual. Where both are filled in
+// they agree ~98% of the time (sampled 2026-10-21), so a blank entity_type with is_individual = true counts as an
+// individual. is_individual = false cannot tell a PAC from any other committee, so it stays in neither bucket.
 export const IS_INDIVIDUAL_SQL = `(c.raw_record->>'type' IN ('direct', 'in_kind')
     OR c.raw_record->>'entity_type' LIKE 'IND%'
+    OR (COALESCE(c.raw_record->>'entity_type', '') = '' AND c.raw_record->>'is_individual' = 'true')
     OR c.raw_record->>'ENTITY_CD' = 'IND'
     OR c.raw_record->>'ContributorType' = 'Individual'
     OR c.raw_record->>'recordTypeDescription' = 'Individual')`;
