@@ -38,6 +38,23 @@
 
 import { pool } from './db.js';
 
+/**
+ * Ids of every bill the politician ($1) sponsored or cosponsored, for `b.id IN (...)`.
+ *
+ * Written as a UNION, not `sponsor_id = $1 OR EXISTS (cosponsor)`: Postgres cannot drive an
+ * OR across two tables from indexes, so that form seq-scanned all of legislative_bills
+ * (222k rows, ~70 MB) on every profile view. When the disk-read budget ran low those pages
+ * came off disk and legislative-summary took 3-16 s for a politician with no bills at all.
+ * Each UNION arm reads one index instead: (sponsor_id, introduced_at) on bills and
+ * (politician_id, bill_id) on cosponsors, both from migration CA_0321. Without those indexes
+ * this form is no slower than the OR form, so the code can ship first.
+ */
+const BILL_IDS_FOR_POLITICIAN = `
+  SELECT id FROM essentials.legislative_bills WHERE sponsor_id = $1
+  UNION
+  SELECT bill_id FROM essentials.legislative_bill_cosponsors WHERE politician_id = $1
+`;
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -159,10 +176,9 @@ export async function getLegislativeByPolitician(
     ) active_sessions ON active_sessions.session_id = s.id
     LEFT JOIN (
       -- Bill count: sponsored + cosponsored
-      SELECT lb.session_id, COUNT(DISTINCT lb.id)::int AS bill_count
+      SELECT lb.session_id, COUNT(*)::int AS bill_count
       FROM essentials.legislative_bills lb
-      LEFT JOIN essentials.legislative_bill_cosponsors lbc ON lbc.bill_id = lb.id AND lbc.politician_id = $1
-      WHERE lb.sponsor_id = $1 OR lbc.politician_id = $1
+      WHERE lb.id IN (${BILL_IDS_FOR_POLITICIAN})
       GROUP BY lb.session_id
     ) bill_counts ON bill_counts.session_id = s.id
     LEFT JOIN (
@@ -287,12 +303,7 @@ export async function getBillsByPolitician(
       (b.sponsor_id = $1) AS is_sponsor
     FROM essentials.legislative_bills b
     LEFT JOIN essentials.legislative_sessions s ON s.id = b.session_id
-    WHERE (b.sponsor_id = $1
-       OR EXISTS (
-         SELECT 1
-         FROM essentials.legislative_bill_cosponsors lbc
-         WHERE lbc.bill_id = b.id AND lbc.politician_id = $1
-       ))
+    WHERE b.id IN (${BILL_IDS_FOR_POLITICIAN})
     ${statusFilter}
     ORDER BY b.introduced_at DESC NULLS LAST
     LIMIT $2

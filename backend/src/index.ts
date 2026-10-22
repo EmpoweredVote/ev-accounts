@@ -92,6 +92,8 @@ import { campaignFinanceInit } from './lib/campaignFinanceService.js';
 import { startSqsWorker } from './lib/campaignFinanceScheduler.js';
 import { maybeResumeBackfillOnBoot } from './lib/fecBackfill.js';
 import { maybeResumeFecBurstOnBoot } from './lib/fecBurstResume.js';
+import { pool as enginePool } from './lib/db.js';
+import { pool as triviaPool } from './trivia/config/database.js';
 
 const app = express();
 
@@ -367,6 +369,9 @@ if (env.NODE_ENV !== 'test' && !isLambda) {
       // Render marks deploys as "Timed Out" after the grace period.
       process.once('SIGTERM', () => {
         server.close(() => process.exit(0));
+        // The new instance is already live and opening sessions under the same ev_api role
+        // cap (15). Hand back the ones this instance is not using; see sessionPoolerPool.ts.
+        void Promise.allSettled([enginePool.releaseIdleSessions(), triviaPool.releaseIdleSessions()]);
       });
     })();
   }
