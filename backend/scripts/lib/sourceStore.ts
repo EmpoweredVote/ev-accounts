@@ -177,6 +177,8 @@ export const FindingSchema = z
     passage: z.string().min(1).optional(),
     instrument_id: InstrumentIdSchema.optional(),
     act: z.enum(['yea', 'nay', 'abstain', 'sponsor', 'author', 'signed', 'vetoed', 'other']).optional(),
+    /** For a vote: the motion, as the instrument's vote records it (two votes on one day differ here). */
+    motion: z.string().min(1).optional(),
     local_record: z.boolean().optional(),
     note: z.string().min(1),
     subjects: z.array(z.string().min(1)).min(1),
@@ -206,9 +208,9 @@ export const PersonFindingsSchema = z.object({
 });
 export type PersonFindings = z.infer<typeof PersonFindingsSchema>;
 
-/** SHA-256 of kind, url and what was found there (the passage, or the instrument and the act). */
-export function findingId(f: Pick<Finding, 'kind' | 'url' | 'passage' | 'instrument_id' | 'act'>): string {
-  const what = f.kind === 'own-words' ? (f.passage ?? '') : `${f.instrument_id ?? ''}|${f.act ?? ''}`;
+/** SHA-256 of kind, url and what was found there (the passage, or the instrument, act, date and motion). */
+export function findingId(f: Pick<Finding, 'kind' | 'url' | 'passage' | 'instrument_id' | 'act' | 'date' | 'motion'>): string {
+  const what = f.kind === 'own-words' ? (f.passage ?? '') : `${f.instrument_id ?? ''}|${f.act ?? ''}|${f.date}|${f.motion ?? ''}`;
   return createHash('sha256').update(`${f.kind}\n${f.url}\n${what}`).digest('hex');
 }
 

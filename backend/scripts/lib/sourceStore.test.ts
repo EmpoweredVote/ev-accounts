@@ -256,6 +256,10 @@ describe('findings', () => {
     expect(findingId(ownWords())).not.toBe(findingId(ownWords({ passage: 'Something else entirely.' })));
     expect(findingId(ownWords())).toMatch(/^[0-9a-f]{64}$/);
   });
+  it('tells apart two votes on one bill on the same day by their motion', () => {
+    const rec = (motion: string) => ownWords({ kind: 'record', passage: undefined, instrument_id: 'IN-SB-483-2011', act: 'yea', motion });
+    expect(findingId(rec('amendment 3'))).not.toBe(findingId(rec('final passage')));
+  });
   it('stores a finding once when upserted twice', () => {
     expect(upsertFindings(root, findings())).toBe('created');
     expect(upsertFindings(root, findings())).toBe('merged');
