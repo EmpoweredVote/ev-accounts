@@ -1,0 +1,41 @@
+{
+  "id": "OH-HB-458-2022",
+  "scope": "state:oh",
+  "title": "HB 458 (134th GA) (2021-2022 (134th GA)) — In-person photo ID for voting; also absentee/early voting and special election changes (per news)",
+  "urls": [
+    "https://www.legislature.ohio.gov/legislation/134/hb458 (inaccessible: TLS cert)",
+    "https://www.legislature.ohio.gov/legislation/legislation-documents?id=GA134-HB-458 (inaccessible)",
+    "https://www.fox19.com/2023/04/03/new-ohio-voter-id-law-go-into-effect-friday-everything-you-need-know (fetched)"
+  ],
+  "version": "enrolled",
+  "operative_text": "Photo ID for in-person voting: will require Ohio voters to use a photo ID card for all elections in-person.\nAccepted IDs: [paraphrase only] Ohio driver's license, state ID, certain interim IDs, U.S. passport or passport card, certain military and VA cards; SS cards, birth certificates, out-of-state licences not accepted\nFree state ID for residents 17+: [paraphrase only]\nMail-in application deadline shortened to 7 days before Election Day: [paraphrase only]\nMail-ballot identification: [paraphrase only; wording unclear in source]\nChanges to absentee and early in-person voting; limits on August special elections: [paraphrase only, per search snippets]\nReligious-objection exemption and provisional ballot for voters lacking ID: [paraphrase only, per search snippet of LSC final analysis]",
+  "single_subject": [],
+  "higher_law_duty": "not verified",
+  "votes": [
+    {
+      "date": "unknown",
+      "body": "OH House",
+      "motion": "passage (per snippet 'passed the Ohio House 55-32', V-Independent; not fetched)",
+      "kind": "roll-call",
+      "yes": 55,
+      "no": 32,
+      "note": "member names not captured; date as printed: undefined",
+      "members": []
+    },
+    {
+      "date": "unknown",
+      "body": "OH Senate",
+      "motion": "passage (per snippet 24-6, NBC4; not fetched)",
+      "kind": "roll-call",
+      "yes": 24,
+      "no": 6,
+      "note": "member names not captured; date as printed: undefined",
+      "members": []
+    }
+  ],
+  "provenance": {
+    "fetched_by": "D (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+    "fetched_at": "2026-10-21T01:52:20.308Z",
+    "method": "webfetch"
+  }
+}
