@@ -515,3 +515,82 @@ officeholder's position on it.**
 
 🔑 **Three shapes, overlapping**: Russell and Johnson appear in two each. ▶ Not written — this is a
 reading queue of 21 rows over 14 people, and it is a separate pass from the cluster campaign.
+
+---
+
+## 11. Migrations 1935 and 1936 — the six self-contradicting rows, and the mistake I made doing them
+
+### 🔴🔴 READ THIS FIRST: `inform.compass_stances` IS NOT THE SEASON'S LADDER
+
+**Migration 1935 judged Season 2 rows against the Season 1 ladder.** `compass_stances` holds one
+row per `(topic_id, value)` and is **not season-scoped**. The ladder a Season 2 answer is defined
+against lives in **`inform.compass_stance_revisions`**, keyed by the **`topic_revision_id` carried
+on the answer row itself**:
+
+```sql
+SELECT csr.value, csr.text
+  FROM inform.politician_answers pa
+  JOIN inform.compass_stance_revisions csr USING (topic_revision_id)
+ WHERE pa.politician_id = ... AND pa.season_id = ...;
+```
+
+⚖⚖ **And migration 1935 made precisely the error it claimed to have ruled out.** Its header says it
+"PROBED FOR AN INSERTED RUNG ... IT IS NOT ONE HERE" — but it ran that probe against
+`compass_stances`, so it checked the Season 1 ladder and concluded the Season 1 ladder had not
+changed. **The "+1 shift" on housing WAS the Season 1 → Season 2 remap.** The standing rule ("a +1
+shift across a topic = an INSERTED RUNG, probe for it before writing") was correct and the probe
+was pointed at the wrong table. 🔑 **Migration 1921 got this right** — its R12 quotes the Season 2
+text verbatim — so the knowledge existed in this repo and was not used.
+
+**Season 2 housing ladder** (what the rows are actually defined against):
+1 government as main provider · 2 a large public housing sector · 3 **no public housing but binding
+rules such as rent caps** · 4 **no binding rules but subsidies and tax breaks** · 5 rely on the
+market, at most cut zoning limits.
+
+### What was wrong, and what was not
+
+🔴 **ONE SUBSTANTIVE ERROR, LIVE IN PRODUCTION UNTIL 1936 REVERSED IT.** Migration 1935 re-seated
+**Joey Spellerberg / housing from chair 4 to chair 3**. Under the real Season 2 ladder, chair 4 is
+*"Set no binding rules, but offer subsidies and tax breaks"* — exactly Nebraska LB 803's
+tax-deductible first-time-buyer savings accounts — and chair 3 is *"binding rules on the private
+market like rent caps"*, which he has never supported. **His original chair was right.** Restored.
+
+✅ **The five blanks stand**, because none turned on which rung the text named. Each rests on a
+ladder-independent ground that survives the correction: Russell/housing (administers a programme
+created before his tenure, and Baby Bonds is a four-use asset-building vehicle, not housing
+policy); Russell/same-sex-marriage (**identity is not a policy record**); Ma (ex officio
+chairmanship of CDLAC/CTCAC + a salience claim); Cohen (no bill, vote, date or quotation,
+aggregator sourcing); Johnson (the *office* administers; bare-domain citation).
+
+### Blast radius, measured rather than assumed
+
+Compared `compass_stances` with each topic's Season 2 revision, rung by rung:
+
+| topic | agrees with Season 2? | affected pass |
+|---|---|---|
+| abortion, jail-capacity, public-safety-approach | ✅ identical | 1927 — unaffected |
+| local-immigration | ✅ identical | 1932, 1934 — unaffected |
+| deportation | ⚠ wording refresh only, same meaning and order | 1927 (C8), 1930 — arguments stand |
+| **housing, same-sex-marriage** | 🔴 **renumbered** | **1935 — corrected by 1936** |
+| climate-change | 🔴 differs | not used in a chair argument this pass |
+
+🔑 **Deportation is worth noting precisely**: *"Only deport people convicted of serious violent
+crimes"* became *"Only deport undocumented immigrants convicted of serious violent crimes"*. The
+wording moved; the rung did not. Migrations 1927 and 1930 quoted the old wording and reached the
+same place, so they stand as written.
+
+⚠ Same-sex-marriage is also renumbered — S2 chair 2 reads *"Guarantee same-sex marriage the same
+benefits and protections as any other marriage"* — so **Russell's original chair 2 was the correct
+image of the Season 1 rung 1 his prose named.** That dissolves the *mismatch*, not the *defect*: no
+rung on either ladder is evidenced by whom someone is married to.
+
+### ⚖ What this costs the detector from §10
+
+**The "prose names rung N, chair serves M" signal is mostly a REMAP ARTIFACT, not a defect.** All
+six rows had Season 1 values equal to the rung their prose named — the reasoning was written in
+Season 1 and carried into Season 2 while the chair was correctly remapped. 🔴 **So that detector
+should NOT be used as a defect queue**, and §10's framing of it as "the cleanest detector shape in
+the campaign" is withdrawn. What it reliably finds is **stale prose**, which is a readability
+problem, not a wrong chair.
+🔑 The five blanks survived only because they were decided on the EVIDENCE, not on the mismatch —
+which is the one thing migration 1935 did right.
