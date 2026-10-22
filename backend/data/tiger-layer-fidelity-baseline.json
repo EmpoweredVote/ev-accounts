@@ -1,6 +1,6 @@
 {
   "_comment": "Baseline for check-tiger-layer-fidelity.mjs, keyed mtfcc -> { missing, areaOff, displaced } as GEOIDs. Identities, NOT counts: a count baseline cannot see a defect that replaces another. `missing` = a governed polygon the authority lists inside a state we have adopted and we do not hold (2026-10-21: eight newly incorporated municipalities, San Tan Valley AZ the largest at ~100k residents). `areaOff` = right GEOID, area off the claimed vintage by >5%, cause not diagnosed. `displaced` = right GEOID, geometry in the WRONG PLACE. THE displaced LIST IS NOT NOISE AND MUST NOT BE TREATED AS ACCEPTED: 5100090 is \"Albemarle County Public Schools\" and we hold ALEXANDRIA CITY under it, 156 km away, so nobody in Albemarle County reaches their school board and Alexandria residents reach Albemarle's. 5513359275 (Oconomowoc town) is 7 km off with a 1 km radius and 81 sq km against the authority's 1.3. Those two are repairs owed, baselined only to keep the gate green while they are worked. The gate fires on anything NOT in these lists. Shrink them as the backlog is worked off; never grow one without saying why in the commit message.",
-  "_asOf": "2026-10-21",
+  "_asOf": "2026-10-22",
   "_vintage": "tigerWMS_ACS2024",
   "layers": {
     "G6350": {
@@ -634,14 +634,11 @@
     "G5420": {
       "missing": [],
       "areaOff": [
-        "5100090",
         "5500270",
         "5508160",
         "5510710"
       ],
-      "displaced": [
-        "5100090"
-      ]
+      "displaced": []
     },
     "G5400": {
       "missing": [],
