@@ -106,15 +106,26 @@ retired rows. The exposure is live.
 | Medicare / Medicaid | 1,131 | | Criminal Justice Approach | 287 |
 | Campaign Finance Reform | 835 | | Data Center Development & Energy Costs | 282 |
 | Childcare Affordability & Access | 773 | | Rent Regulation | 228 |
-| Economic Development Incentives | 693 | | Same-Sex Marriage | 147 |
-| Religious Freedom | 676 | | City Sanitation and Cleanliness | 113 |
-| Criminalization of Homelessness | 634 | | Affordable Housing | 86 |
-| Artificial Intelligence Oversight | 603 | | Judicial Interpretation | 71 |
-| | | | Access to Justice | 48 |
-| | | | Transparency in Legal Proceedings | 34 |
+| Economic Development Incentives | 693 | | City Sanitation and Cleanliness | 113 |
+| Religious Freedom | 676 | | Judicial Interpretation | 71 |
+| Criminalization of Homelessness | 634 | | Access to Justice | 48 |
+| Artificial Intelligence Oversight | 603 | | Transparency in Legal Proceedings | 34 |
 | | | | Judicial & Prosecutorial Discretion | 22 |
 | | | | Police Accountability | 12 |
-| | | | Bail and Pretrial Decisions | 6 |
+
+### 🔴 NOT portable mechanically — the whole re-read queue (239)
+
+The three topics whose `rung_map` is not the identity. These are the only rows in the corpus where
+the Season 1 rung does not survive translation into Season 2.
+
+| topic | rows | rung_map | what it means |
+|---|---|---|---|
+| Same-Sex Marriage | 147 | `{1→2, 2→3, 3→INVALIDATED, 4→4, 5→5}` | 119 remap; **28 sit at old rung 3, which Season 2 deleted** |
+| Affordable Housing | 86 | `{1→1, 2→3, 3→4, 4→5, 5→5}` | all 86 remap; note 4 and 5 both collapse to 5 |
+| Bail and Pretrial Decisions | 6 | non-identity | all 6 remap |
+
+**211 remapped + 28 invalidated = 239.** The 28 are the only rows here that cannot be ported at any
+price: there is no Season 2 rung to carry them to.
 
 ### Same revision — directly portable (12,134)
 
@@ -130,8 +141,9 @@ retired rows. The exposure is live.
 | United States Tariff Policy | 661 | | | |
 
 🔑 **Four topics carry 57% of the SAME-REVISION slice** — Taxation, Reproductive Rights, Healthcare Access and Fossil Fuel Policy total 6,910 of 12,134. Scoping a port pass to one topic is tractable where "port Season 1" is not.
-Fossil Fuel Policy total 6,910 of 12,134. A port pass scoped to one unchanged-ladder topic is a
-tractable unit of work in a way "port Season 1" is not.
+Across the whole portable set of 28,274, the five largest topics — those four plus Climate Change at
+1,884 — account for 8,794. A port pass scoped to one topic is a tractable unit of work in a way
+"port Season 1" is not.
 
 ---
 
