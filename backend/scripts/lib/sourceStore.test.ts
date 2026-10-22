@@ -141,6 +141,19 @@ describe('validateStore', () => {
     expect(problems[0].file).toBe('dead-ends.jsonl:1');
     expect(problems[0].error).toMatch(/object Object/);
   });
+  it('reports a dead end stored twice, ignoring the timestamp', () => {
+    mkdirSync(root, { recursive: true });
+    const d = { at: '2026-10-21T01:47:30Z', topic_key: 'voting-rights', query_or_url: 'legiscan.com (403)', result: 'blocked', by: 'tester' };
+    writeFileSync(storePaths(root).deadEnds, [
+      d,
+      { ...d, query_or_url: 'congress.gov (403)' },
+      { by: d.by, result: d.result, query_or_url: d.query_or_url, topic_key: d.topic_key, at: '2026-10-21T01:52:20Z' },
+    ].map((x) => JSON.stringify(x)).join('\n') + '\n');
+    const problems = validateStore(root);
+    expect(problems).toHaveLength(1);
+    expect(problems[0].file).toBe('dead-ends.jsonl:3');
+    expect(problems[0].error).toMatch(/duplicate of line 1/);
+  });
   it('is clean for an empty or missing store', () => {
     expect(validateStore(root)).toEqual([]);
     expect(validateStore(join(root, 'nope'))).toEqual([]);
