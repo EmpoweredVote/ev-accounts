@@ -1,4 +1,6 @@
-# voting-rights — Season 3 revision CA_0318 (revision 4, version 3) — DRAFT, not yet applied
+# voting-rights — Season 3 draft, served revision 08e7026f-2eb5-4386-9288-f1dbfc3185c3 (v3 r4, CA_0318)
+
+**Applied:** 2026-10-21 by CA_0318 (approved and parked; pinned in the draft Season 3 only).
 
 **Status:** drafted 2026-10-21 in the Stage 4 package of the season-topic-prep skill (research folder
 `~/Documents/GitHub/.planning/research/s3-prep-voting-rights/`). The Season 2 annex (`../voting-rights.md`) stays as it
