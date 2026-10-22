@@ -1,0 +1,73 @@
+{
+  "id": "GA-COLUMBUS-GA-ORD-25-040-2025",
+  "scope": "place:1319000",
+  "title": "Ordinance (25-040) - 2nd Reading: An Ordinance amending the Columbus Code to repeal and replace Section 14-13. with a new code section that prohibits camping on public property within Columbus, Georgia, and for other purposes. (Proposed Substitute) (Councilor Crabb)",
+  "urls": [
+    "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2950/cg_meeting_minutes._08-12-2025.pdf",
+    "https://columbus-ga.municodemeetings.com/sites/default/files/fileattachments/city_council/meeting/2948/cg_meeting_minutes._07-22-2025.pdf"
+  ],
+  "version": "other",
+  "operative_text": "repeal and replace Section 14-13. with a new code section that prohibits camping on public property within Columbus, Georgia",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2025-08-12",
+      "body": "Columbus GA Council",
+      "motion": "Councilor Crabb made a motion to adopt the ordinance as amended, seconded by Councilor Hickey and carried by a nine-to-one vote",
+      "kind": "action-item",
+      "yes": 9,
+      "no": 1,
+      "body_size": 10,
+      "members": [
+        {
+          "name": "Bruce Huff",
+          "politician_id": "8952e435-16a2-4b90-9a6b-6d74732aaee2",
+          "vote": "yea"
+        },
+        {
+          "name": "Charmaine Crabb",
+          "politician_id": "f9d3b3e5-82c3-4ab7-9fb0-4a0342baf6b9",
+          "vote": "yea"
+        },
+        {
+          "name": "Glenn Davis",
+          "politician_id": "8066fc50-e888-4093-99da-6600f2b68bb2",
+          "vote": "yea"
+        },
+        {
+          "name": "JoAnne Cogle",
+          "politician_id": "00e5a419-e34f-4afa-9fa3-f19b77590878",
+          "vote": "nay"
+        },
+        {
+          "name": "Toyia Tucker",
+          "politician_id": "e39922f9-cf51-4065-8faf-b35e474b6a12",
+          "vote": "yea"
+        },
+        {
+          "name": "Travis L. Chambers",
+          "politician_id": "ab232509-c9e2-41ee-9b95-4de1ada8cf54",
+          "vote": "yea"
+        },
+        {
+          "name": "Walker Garrett",
+          "politician_id": "a1e20b77-57e5-4feb-8423-d6f7623757b1",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

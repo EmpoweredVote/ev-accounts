@@ -1,0 +1,19 @@
+{
+ "boards": [
+  {
+   "body": "Virginia Beach City Public Schools",
+   "state": "VA",
+   "blocked": [
+    "13newsnow.com 403 (Akamai) on WebFetch and curl; BoardDocs-type portal not used by VB (site is finalsite)"
+   ]
+  },
+  {
+   "body": "Portland Public Schools",
+   "state": "OR",
+   "blocked": [
+    "pps.net/Page/1840 404 (guessed URL)",
+    "go.boarddocs.com slug probes returned 403 (IP rate-limited) - PPS portal not reached"
+   ]
+  }
+ ]
+}

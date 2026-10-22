@@ -7,3 +7,4 @@
 *.md text eol=lf
 *.toml text eol=lf
 *.sh text eol=lf
+backend/data/source-store/dead-ends.jsonl merge=union

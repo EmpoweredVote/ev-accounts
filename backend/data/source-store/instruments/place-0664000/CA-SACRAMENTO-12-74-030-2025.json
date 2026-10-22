@@ -1,0 +1,23 @@
+{
+  "id": "CA-SACRAMENTO-12-74-030-2025",
+  "scope": "place:0664000",
+  "title": "Ordinance Amending Section 12.74.030 ... City Hall Facilities",
+  "urls": [],
+  "version": "other",
+  "operative_text": "Hoodline: credits Mayor Kevin McCarty with introducing the ordinance (page does not quote text)",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "id": "CA-SAN-DIEGO-O-21674-2023",
+  "scope": "place:0666000",
+  "title": "Encampments on Public Property (adds Division 4 to Chapter 6, Article 3, SDMC; councilmember Whitburn proposal)",
+  "urls": [
+    "https://docs.sandiego.gov/municode/MuniCodeChapter06/Ch06Art03Division04.pdf"
+  ],
+  "version": "other",
+  "operative_text": "It is unlawful for any person to camp or to maintain an encampment in or upon any public property, including in any street, sidewalk, park, beach, open space, waterway, and banks of a waterway, unless specifically authorized by the City Manager.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-06-13",
+      "body": "San Diego City Council",
+      "motion": "unknown (see pilot)",
+      "kind": "action-item",
+      "yes": 5,
+      "no": 4,
+      "body_size": 9,
+      "members": [
+        {
+          "name": "Jennifer Campbell",
+          "politician_id": "c6d7ea83-d6ee-4d08-a183-effd36f6a2cc",
+          "vote": "yea"
+        },
+        {
+          "name": "Joe LaCava",
+          "politician_id": "1e93b635-3706-4268-91e2-97abae0c54a0",
+          "vote": "yea"
+        },
+        {
+          "name": "Kent Lee",
+          "politician_id": "3fb56c85-f8b7-4732-88e1-f79b56750428",
+          "vote": "nay"
+        },
+        {
+          "name": "Marni von Wilpert",
+          "politician_id": "c3f1fad4-46cd-4f2f-8723-d7a3f99dca65",
+          "vote": "yea"
+        },
+        {
+          "name": "Raul Campillo",
+          "politician_id": "84ba4a09-a90f-4ad4-9fa3-995961bd839c",
+          "vote": "yea"
+        },
+        {
+          "name": "Sean Elo-Rivera",
+          "politician_id": "dc3d8a98-07ce-4797-bc84-957a72fd854f",
+          "vote": "nay"
+        },
+        {
+          "name": "Stephen Whitburn",
+          "politician_id": "f86591f9-4341-4e3a-a9cb-f284887ccf74",
+          "vote": "yea"
+        },
+        {
+          "name": "Vivian Moreno",
+          "politician_id": "0b16443e-fec4-4f33-abbc-eb1331e3b42d",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}

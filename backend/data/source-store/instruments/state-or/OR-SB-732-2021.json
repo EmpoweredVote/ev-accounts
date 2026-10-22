@@ -1,0 +1,590 @@
+{
+  "id": "OR-SB-732-2021",
+  "scope": "state:or",
+  "title": "Senate Bill 732 (enrolled, SB 732-B) - Educational equity advisory committees",
+  "urls": [
+    "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureHistoryActions?$filter=MeasureNumber eq 732 and SessionKey eq '2021R1' and MeasurePrefix eq 'SB'&$format=json",
+    "https://olis.oregonlegislature.gov/liz/2021R1/Downloads/MeasureDocument/SB732/Enrolled"
+  ],
+  "version": "enrolled",
+  "operative_text": "Sec. 2(1): Nothing in this section shall interfere with the duties, responsibilities and rights of duly elected school district boards. There shall be established at each school district an educational equity advisory committee.\nSec. 2(2): The duties of an educational equity advisory committee shall include: (a) Advising the school district board about the educational equity impacts of policy decisions; (b) Advising the school district superintendent about the educational equity impacts of policy decisions; and (c) Informing the school district board and school district superintendent when a situation arises in a school of the school district that negatively impacts underrepresented students and advising the board and superintendent on how best to handle that situation.\nSec. 2(3): The educational equity advisory committee may prepare an annual report that: (a) Contains the following information: (A) The successes and challenges the school district has experienced in meeting the educational equity needs of students in the school district;\nSec. 2(4)(a): An educational equity advisory committee shall be selected by the school district board and school district superintendent and must be composed of parents, employees, students and community members from the school district.\nSec. 2(4)(b): (B) Must ensure that membership is primarily representative of underserved student groups; (C) May not exclude members based on immigration status;\nSec. 2(5): The State Board of Education shall adopt any rules necessary for the administration of this section.\nSec. 3(1)-(2): A school district must first convene an educational equity advisory committee no later than September 15, 2022. Notwithstanding subsection (1) of this section, if a school district has an average daily membership of 10,000 or less, the school district is not required to first convene an educational equity advisory committee until September 15, 2025.\nSec. 5 (ORS 328.542(2)): In addition to the requirements prescribed by ORS 294.305 to 294.565, a school district must include at least one member of the educational equity advisory committee of the school district on the budget committee.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-05-05",
+      "body": "OR Senate",
+      "motion": "Third reading, passed (A-Eng)",
+      "kind": "roll-call",
+      "yes": 18,
+      "no": 6,
+      "absent": 6,
+      "members": [
+        {
+          "name": "Ginny Burdick",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Wagner",
+          "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Courtney",
+          "vote": "yea"
+        },
+        {
+          "name": "James I. Manning Jr.",
+          "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathleen Taylor",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Gelser Blouin",
+          "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6",
+          "vote": "yea"
+        },
+        {
+          "name": "Elizabeth Steiner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lew Frederick",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd",
+          "vote": "yea"
+        },
+        {
+          "name": "Floyd Prozanski",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378",
+          "vote": "yea"
+        },
+        {
+          "name": "Chuck Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Golden",
+          "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39",
+          "vote": "yea"
+        },
+        {
+          "name": "Tim Knopp",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Kate Lieber",
+          "politician_id": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4",
+          "vote": "yea"
+        },
+        {
+          "name": "Deb Patterson",
+          "politician_id": "631cc414-8793-42ec-b883-594ed7f0b249",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Gorsek",
+          "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5",
+          "vote": "yea"
+        },
+        {
+          "name": "Kayse Jama",
+          "politician_id": "a703adb5-1086-471b-ba8b-2dbeddd8102b",
+          "vote": "yea"
+        },
+        {
+          "name": "Bill Kennemer",
+          "vote": "yea"
+        },
+        {
+          "name": "Fred Girod",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynn Findley",
+          "vote": "nay"
+        },
+        {
+          "name": "Betsy Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Hansell",
+          "vote": "nay"
+        },
+        {
+          "name": "Lee Beyer",
+          "vote": "nay"
+        },
+        {
+          "name": "Dick Anderson",
+          "politician_id": "d9803822-6bf8-437d-aa4b-d7e6b4a67b7c",
+          "vote": "nay"
+        },
+        {
+          "name": "Brian Boquist",
+          "vote": "absent"
+        },
+        {
+          "name": "Diane Linthicum",
+          "politician_id": "50eab431-7b51-4a56-acaa-61af3509c298",
+          "vote": "absent"
+        },
+        {
+          "name": "Kim Thatcher",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515",
+          "vote": "absent"
+        },
+        {
+          "name": "Dallas Heard",
+          "vote": "absent"
+        },
+        {
+          "name": "Chuck Thomsen",
+          "vote": "absent"
+        },
+        {
+          "name": "Art Robinson",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2021-06-14",
+      "body": "OR House",
+      "motion": "Third reading, passed (B-Eng)",
+      "kind": "roll-call",
+      "yes": 36,
+      "no": 20,
+      "absent": 3,
+      "members": [
+        {
+          "name": "Nancy Nathanson",
+          "politician_id": "ca404c61-11af-43d9-9563-07dde3f7b8e7",
+          "vote": "yea"
+        },
+        {
+          "name": "Andrea Salinas",
+          "vote": "yea"
+        },
+        {
+          "name": "Marty Wilde",
+          "vote": "yea"
+        },
+        {
+          "name": "Tina Kotek",
+          "vote": "yea"
+        },
+        {
+          "name": "Janelle Bynum",
+          "vote": "yea"
+        },
+        {
+          "name": "Tawna D. Sanchez",
+          "politician_id": "051b4e9a-6966-45b3-9b65-e23ad4672364",
+          "vote": "yea"
+        },
+        {
+          "name": "Janeen Sollman",
+          "vote": "yea"
+        },
+        {
+          "name": "Dan Rayfield",
+          "vote": "yea"
+        },
+        {
+          "name": "Sheri Schouten",
+          "vote": "yea"
+        },
+        {
+          "name": "Mark Meek",
+          "vote": "yea"
+        },
+        {
+          "name": "Julie Fahey",
+          "politician_id": "24398310-8e0c-487e-a11c-253e3060f77c",
+          "vote": "yea"
+        },
+        {
+          "name": "Karin Power",
+          "vote": "yea"
+        },
+        {
+          "name": "Courtney Neron Misslin",
+          "vote": "yea"
+        },
+        {
+          "name": "Rachel Prusak",
+          "vote": "yea"
+        },
+        {
+          "name": "Anna Williams",
+          "vote": "yea"
+        },
+        {
+          "name": "Maxine Dexter",
+          "vote": "yea"
+        },
+        {
+          "name": "Brad Witt",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Reardon",
+          "vote": "yea"
+        },
+        {
+          "name": "Susan McLain",
+          "politician_id": "3fbaa80c-be2d-411f-a3ab-95add9ae6c84",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Holvey",
+          "vote": "yea"
+        },
+        {
+          "name": "John Lively",
+          "politician_id": "f2b4e1d0-9603-42fd-b2b7-fefd7905ec3d",
+          "vote": "yea"
+        },
+        {
+          "name": "Barbara Smith Warner",
+          "vote": "yea"
+        },
+        {
+          "name": "Pam Marsh",
+          "politician_id": "03af5908-a069-4ab7-91db-2f388a885bf9",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Clem",
+          "vote": "yea"
+        },
+        {
+          "name": "Paul Evans",
+          "politician_id": "e5c0549e-4454-4cea-b7dc-67eb17d28b49",
+          "vote": "yea"
+        },
+        {
+          "name": "Teresa Alonso Leon",
+          "vote": "yea"
+        },
+        {
+          "name": "David Gomberg",
+          "politician_id": "00ddecfd-648a-4118-82e6-a60327068b32",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Nosse",
+          "politician_id": "c5c49832-aa2d-477e-b44e-d6059a98d426",
+          "vote": "yea"
+        },
+        {
+          "name": "Ken Helm",
+          "politician_id": "40ecc3a4-ca59-48c4-8b17-634cc385bc9a",
+          "vote": "yea"
+        },
+        {
+          "name": "Wlnsvey Campos",
+          "vote": "yea"
+        },
+        {
+          "name": "Khanh Pham",
+          "vote": "yea"
+        },
+        {
+          "name": "Lisa Reynolds",
+          "vote": "yea"
+        },
+        {
+          "name": "Ricki Ruiz",
+          "politician_id": "5e5e267a-808e-4a57-9f80-7c3e47fcb5f6",
+          "vote": "yea"
+        },
+        {
+          "name": "Zach Hudson",
+          "politician_id": "37247ac1-5444-4fdd-b58e-123b5db4d0fe",
+          "vote": "yea"
+        },
+        {
+          "name": "Dacia Grayber",
+          "politician_id": "c5640f05-239a-47fd-97f3-e284859c1cc9",
+          "vote": "yea"
+        },
+        {
+          "name": "Jason Kropf",
+          "politician_id": "bbc19752-8675-48ef-87fb-480e3f8bf3f6",
+          "vote": "yea"
+        },
+        {
+          "name": "Kim Wallan",
+          "politician_id": "3778353d-cbc9-43cf-866a-a7c01397503a",
+          "vote": "nay"
+        },
+        {
+          "name": "Rep Leif",
+          "vote": "nay"
+        },
+        {
+          "name": "Jack Zika",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Post",
+          "vote": "nay"
+        },
+        {
+          "name": "Duane Stark",
+          "vote": "nay"
+        },
+        {
+          "name": "E. Werner Reschke",
+          "politician_id": "3c7c9b46-a054-41a7-8752-f0d8706f754d",
+          "vote": "nay"
+        },
+        {
+          "name": "Daniel Bonham",
+          "vote": "nay"
+        },
+        {
+          "name": "Gregory Smith",
+          "politician_id": "81cda574-d820-4ac3-b7fe-0ac3d2638c28",
+          "vote": "nay"
+        },
+        {
+          "name": "David Brock Smith",
+          "vote": "nay"
+        },
+        {
+          "name": "Christine Drazan",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Owens",
+          "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1",
+          "vote": "nay"
+        },
+        {
+          "name": "Raquel Moore-Green",
+          "vote": "nay"
+        },
+        {
+          "name": "Vikki Breese-Iverson",
+          "vote": "nay"
+        },
+        {
+          "name": "Ron Noble",
+          "vote": "nay"
+        },
+        {
+          "name": "Shelly Boshart Davis",
+          "politician_id": "4919fd6a-c250-47b2-a37d-37b1eec8c63d",
+          "vote": "nay"
+        },
+        {
+          "name": "Suzanne Weber",
+          "vote": "nay"
+        },
+        {
+          "name": "Boomer Wright",
+          "politician_id": "d5386673-4244-44ca-8e54-e1af61803f6e",
+          "vote": "nay"
+        },
+        {
+          "name": "Lily Morgan",
+          "vote": "nay"
+        },
+        {
+          "name": "Bobby Levy",
+          "politician_id": "05152597-fd40-49bb-bcd3-9e21945ae8b0",
+          "vote": "nay"
+        },
+        {
+          "name": "Jami Cate",
+          "politician_id": "c854f51f-0ab0-4b46-9397-596501e3ee67",
+          "vote": "nay"
+        },
+        {
+          "name": "Cedric Hayden",
+          "vote": "absent"
+        },
+        {
+          "name": "Rick Lewis",
+          "politician_id": "aa57168d-58b8-4f70-a937-09fdaf18b325",
+          "vote": "absent"
+        },
+        {
+          "name": "Andrea Valderrama",
+          "politician_id": "a5a3918c-3e24-44fa-9573-440436a05b04",
+          "vote": "absent"
+        }
+      ]
+    },
+    {
+      "date": "2021-06-16",
+      "body": "OR Senate",
+      "motion": "Concurred in House amendments and repassed",
+      "kind": "roll-call",
+      "yes": 17,
+      "no": 12,
+      "absent": 1,
+      "members": [
+        {
+          "name": "Ginny Burdick",
+          "vote": "yea"
+        },
+        {
+          "name": "Rob Wagner",
+          "politician_id": "14faa864-de9f-497f-a78a-db41f42ee5e0",
+          "vote": "yea"
+        },
+        {
+          "name": "Peter Courtney",
+          "vote": "yea"
+        },
+        {
+          "name": "Kathleen Taylor",
+          "politician_id": "4b4702e0-3b88-4fd0-aa17-aa379be0dbac",
+          "vote": "yea"
+        },
+        {
+          "name": "Sara Gelser Blouin",
+          "politician_id": "1ca1abf1-9523-499c-b644-0b32c61257c6",
+          "vote": "yea"
+        },
+        {
+          "name": "Elizabeth Steiner",
+          "vote": "yea"
+        },
+        {
+          "name": "Lew Frederick",
+          "politician_id": "ae4b1163-e9a7-4529-a8f2-5610f6c93cbd",
+          "vote": "yea"
+        },
+        {
+          "name": "Floyd Prozanski",
+          "politician_id": "b6f5cd9e-a9d2-44ff-9027-0d931765f378",
+          "vote": "yea"
+        },
+        {
+          "name": "Chuck Riley",
+          "vote": "yea"
+        },
+        {
+          "name": "Jeff Golden",
+          "politician_id": "21b454d4-e6a5-48fe-9bd1-0da84f2a1a39",
+          "vote": "yea"
+        },
+        {
+          "name": "Lee Beyer",
+          "vote": "yea"
+        },
+        {
+          "name": "Michael Dembrow",
+          "vote": "yea"
+        },
+        {
+          "name": "Dick Anderson",
+          "politician_id": "d9803822-6bf8-437d-aa4b-d7e6b4a67b7c",
+          "vote": "yea"
+        },
+        {
+          "name": "Kate Lieber",
+          "politician_id": "529ea93b-c234-4df5-ae22-6ba32d0ae9a4",
+          "vote": "yea"
+        },
+        {
+          "name": "Deb Patterson",
+          "politician_id": "631cc414-8793-42ec-b883-594ed7f0b249",
+          "vote": "yea"
+        },
+        {
+          "name": "Chris Gorsek",
+          "politician_id": "22a1e980-4f15-435d-a0c4-1a08202d6bb5",
+          "vote": "yea"
+        },
+        {
+          "name": "Kayse Jama",
+          "politician_id": "a703adb5-1086-471b-ba8b-2dbeddd8102b",
+          "vote": "yea"
+        },
+        {
+          "name": "Brian Boquist",
+          "vote": "nay"
+        },
+        {
+          "name": "Fred Girod",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda",
+          "vote": "nay"
+        },
+        {
+          "name": "Lynn Findley",
+          "vote": "nay"
+        },
+        {
+          "name": "Diane Linthicum",
+          "politician_id": "50eab431-7b51-4a56-acaa-61af3509c298",
+          "vote": "nay"
+        },
+        {
+          "name": "Kim Thatcher",
+          "politician_id": "b548a0f7-5086-4124-a510-49ef8f60f515",
+          "vote": "nay"
+        },
+        {
+          "name": "Betsy Johnson",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Hansell",
+          "vote": "nay"
+        },
+        {
+          "name": "Dallas Heard",
+          "vote": "nay"
+        },
+        {
+          "name": "Tim Knopp",
+          "vote": "nay"
+        },
+        {
+          "name": "Chuck Thomsen",
+          "vote": "nay"
+        },
+        {
+          "name": "Art Robinson",
+          "vote": "nay"
+        },
+        {
+          "name": "Bill Kennemer",
+          "vote": "nay"
+        },
+        {
+          "name": "James I. Manning Jr.",
+          "politician_id": "bef7b04c-a2ba-4daf-9359-ae1ae0e38e9e",
+          "vote": "absent"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
+    "fetched_at": "2026-10-19T19:24:17.419Z",
+    "method": "webfetch"
+  }
+}

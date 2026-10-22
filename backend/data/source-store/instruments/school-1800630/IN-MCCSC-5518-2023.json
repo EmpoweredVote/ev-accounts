@@ -1,0 +1,70 @@
+{
+  "id": "IN-MCCSC-5518-2023",
+  "scope": "school:1800630",
+  "title": "Policy 5518: Anti-Racism (Racial Equity), second and final reading",
+  "urls": [
+    "https://go.boarddocs.com/in/mccsc/Board.nsf/files/CPBKRW52D16F/$file/Policy%205518%20-%20Anti%20Racism%20second%20reading%2002282023%5B76%5D.pdf"
+  ],
+  "version": "other",
+  "operative_text": "Background and Purpose: \"With this policy and the corresponding administrative guidelines and procedures, the Board commits to being proactively anti-racist in our policies, making it clear that a racially hostile environment will not be tolerated in our school corporation.\"\n\"The purpose of this policy is to confront, mitigate and eliminate racism, racist behaviors and microaggressions in all forms.\"\nPolicy Objectives: \"1. To create a racially safe, inclusive, and accepting learning environment for every student, 2. To raise the academic achievement of all students [...] 4. To provide instruction centered on principles of equity, 5. To eliminate predictability in student outcomes and educational experiences according to race, 6. To actively center equity in the development of all newly created and revised policies, and 7. To provide opportunities that include diverse student perspectives, voice, and lived experiences in the development of corporation and school wide programs, practices and procedures.\"\nImplementation and Accountability: \"the Superintendent or designee will publicly report on progress in development of the plan to the Board on at least a quarterly basis.\"\n\"1. Build individual and collective capacity among district staff to effectively teach all students through ongoing and systemic professional development, including but not limited to anti-bias, inclusive practices, and equitable approaches.\"\n\"2. Engage students and staff in collaborative educational opportunities to respond to microaggressions, bias, and racism effectively so that they are equipped to recognize and respond effectively to microaggressions, bias, and racism.\"\n\"3. Establish a baseline understanding of the current state of our school environment, and conducting an ongoing evaluation through equity audits and student/staff culture and climate assessments.\"\n\"4. [...] a safe incident reporting system to make it clear that any act of racial discrimination [...] by administration, staff, or students will not be tolerated in MCCSC schools.\" \"5. [...] Respond to reports of harassment of members of marginalized groups immediately [...]\"\n\"6. Expand recruiting, hiring, retaining and supporting practices that attract racially, linguistically, and culturally diverse employees that reflect our student population.\"\n\"7. Develop measurement, interventions, and training with the goal of reducing and eventually eliminating racial/ethnic disparities in exclusionary discipline in MCCSC.\"\nSanctions and Monitoring: \"The Board of School Trustees shall receive semi-annual reports on racial harassment and discrimination incidents, including incident response timelines and disciplinary action taken.\"\nDefinition: \"Culturally Responsive Practices: Practices that involve recognizing and incorporating the cultural histories, practices, languages, and lived experiences as assets and strengths all students bring into the classroom, and ensuring that learning experiences, from curriculum through assessment, are relevant to all students.\"",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2023-02-28",
+      "body": "Monroe County Community School Corporation (MCCSC) Board of School Trustees",
+      "motion": "Policy 5518: Anti-Racism (Racial Equity), second and final reading",
+      "kind": "action-item",
+      "yes": 7,
+      "no": 0,
+      "note": "Nay count not printed in the minutes (7 Yea listed; no nays recorded): 0 nays inferred, not stated.",
+      "members": [
+        {
+          "name": "April Hennessey",
+          "politician_id": "2bf43cdc-5580-4288-ad1e-2c2bd1d40511",
+          "vote": "yea"
+        },
+        {
+          "name": "Erin Cooperman",
+          "politician_id": "e0714c0f-5691-4f55-99b0-8ca5f72777ab",
+          "vote": "yea"
+        },
+        {
+          "name": "Ross Grimes",
+          "politician_id": "c062b964-c7bb-4258-8b3f-462f4d5527ae",
+          "vote": "yea"
+        },
+        {
+          "name": "Ashley Pirani",
+          "politician_id": "556a7d23-3acb-4068-a7bc-cecf5194296c",
+          "vote": "yea"
+        },
+        {
+          "name": "Erin Wyatt",
+          "politician_id": "760e1b7d-022c-4c70-b605-07b6fea2384b",
+          "vote": "yea"
+        },
+        {
+          "name": "Cathy Fuentes-Rohwer",
+          "vote": "yea"
+        },
+        {
+          "name": "Brandon Shurr",
+          "vote": "yea"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-equity-programs/stage1)",
+    "fetched_at": "2026-10-19T19:24:17.418Z",
+    "method": "browser"
+  }
+}

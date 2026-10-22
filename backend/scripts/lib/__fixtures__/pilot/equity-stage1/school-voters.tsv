@@ -1,0 +1,19 @@
+instrument	board	date	printed_name	vote	db_person	politician_id	seated_evidence	in_library_test_set	result
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Chair Brown	yes	Kathleen Brown	3e74e711-c6c1-5e3b-8f47-25f1f0f3fc03	term_start 2023-01-01 (DB)	no	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Vice Chair Weems	yes	Carolyn D. Weems	ffe07962-8735-5aa6-ae8c-2a34df0151dd	term_start 2002-07-01 (DB)	no	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Mr. Bohenstiel	yes	Mark Bohenstiel	df08ad09-9459-53a1-ad87-81406a986bd5	term_start 2025-01-01 (DB)	no	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Mr. Callan	yes	Michael Callan	43c21625-3268-5580-a750-bcdd22fd6ab5	term_start 2023-01-01 (DB)	no	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Mr. Culpepper	yes	David Culpepper	bc799057-7962-565a-b924-862385fdd535	term_start 2023-01-01 (DB)	yes	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Ms. Dwyer	yes	Rose Dwyer	d3fd9c85-f1e7-551c-a43b-51b2d840c4e0	term_start 2025-01-01 (DB)	no	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Mr. Cummings	no	Matt Cummings	00e6f571-4d8b-5241-87c3-5898e0ae2e18	term_start 2025-01-01 (DB)	no	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Dr. Green	no	Alveta J. Green	31702c5f-ed24-52f2-9746-f4b13331aa03	term_start 2024-11-01 (DB)	no	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Ms. Rogers	no	Melinda Rogers	f47ed783-a319-5805-8016-2d909597aea1	term_start 2025-01-01 (DB)	no	item
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Ms. Felton	absent	Sharon Felton	718007cb-41cd-5e5e-8b89-fddd6b460ef1	term_start 2025-01-01 (DB)	no	no row (absent)
+VB-2025-04-08-15F	Virginia Beach City Public Schools	2025-04-08	Ms. Melnyk	absent	Kimberly A. Melnyk	853c008a-d5bd-5700-8728-bb8f35b73921	term_start 2015-01-01 (DB)	yes	no row (absent)
+MCCSC-2023-02-28-5.01	Monroe County Community School Corporation	2023-02-28	April Hennessey	yes	April Hennessey	2bf43cdc-5580-4288-ad1e-2c2bd1d40511	minutes name them as a voter; DB term undated	no	item
+MCCSC-2023-02-28-5.01	Monroe County Community School Corporation	2023-02-28	Erin Cooperman	yes	Erin Cooperman	e0714c0f-5691-4f55-99b0-8ca5f72777ab	minutes name them as a voter; DB term undated	no	item
+MCCSC-2023-02-28-5.01	Monroe County Community School Corporation	2023-02-28	Ross Grimes	yes	Ross Grimes	c062b964-c7bb-4258-8b3f-462f4d5527ae	minutes name them as a voter; DB term undated	no	item
+MCCSC-2023-02-28-5.01	Monroe County Community School Corporation	2023-02-28	Ashley Pirani	yes	Ashley Pirani	556a7d23-3acb-4068-a7bc-cecf5194296c	minutes name them as a voter; DB term undated	no	item
+MCCSC-2023-02-28-5.01	Monroe County Community School Corporation	2023-02-28	Erin Wyatt	yes	Erin Wyatt	760e1b7d-022c-4c70-b605-07b6fea2384b	minutes name them as a voter; DB term undated	no	item
+MCCSC-2023-02-28-5.01	Monroe County Community School Corporation	2023-02-28	Cathy Fuentes-Rohwer	yes			not in DB	no	no row (not in DB)
+MCCSC-2023-02-28-5.01	Monroe County Community School Corporation	2023-02-28	Brandon Shurr	yes			not in DB	no	no row (not in DB)

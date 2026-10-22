@@ -1,0 +1,12 @@
+{
+  "politician_id": "234fefcf-6ae6-43eb-892b-730e9469baa4",
+  "sources": [],
+  "terms": [
+    {
+      "office": "Council Member, District 1",
+      "start": "2021-04-20",
+      "precision": "day",
+      "source": "s3-pilot-homelessness-stage1/local-terms.json (read-only essentials query)"
+    }
+  ]
+}

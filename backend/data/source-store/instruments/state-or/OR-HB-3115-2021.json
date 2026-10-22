@@ -1,0 +1,66 @@
+{
+  "id": "OR-HB-3115-2021",
+  "scope": "state:or",
+  "title": "Objective reasonableness of local laws on sitting, lying, sleeping or keeping warm and dry outdoors (ORS 195.530)",
+  "urls": [
+    "https://api.oregonlegislature.gov/odata/odataservice.svc/MeasureHistoryActions?$filter=SessionKey eq '2021R1' and MeasurePrefix eq 'HB' and MeasureNumber eq 3115&$format=json"
+  ],
+  "version": "other",
+  "operative_text": "Any city or county law that regulates the acts of sitting, lying, sleeping or keeping warm and dry outdoors on public property that is open to the public must be objectively reasonable as to time, place and manner with regards to persons experiencing homelessness.",
+  "single_subject": [
+    {
+      "season": 3,
+      "codebook": "0.6",
+      "topic_list_hash": "pilot-unrecorded",
+      "verdict": "single",
+      "other_topics": []
+    }
+  ],
+  "votes": [
+    {
+      "date": "2021-06-09",
+      "body": "OR Senate",
+      "motion": "Third reading.  Carried by Dembrow.  Passed.",
+      "kind": "roll-call",
+      "yes": 18,
+      "no": 10,
+      "members": [
+        {
+          "name": "Diane Linthicum",
+          "politician_id": "50eab431-7b51-4a56-acaa-61af3509c298",
+          "vote": "nay"
+        },
+        {
+          "name": "Fred Girod",
+          "politician_id": "6b107b84-afbe-4141-8951-bafb65543dda",
+          "vote": "nay"
+        }
+      ]
+    },
+    {
+      "date": "2021-04-15",
+      "body": "OR House",
+      "motion": "Third reading. Carried by Power. Passed.",
+      "kind": "roll-call",
+      "yes": 35,
+      "no": 23,
+      "members": [
+        {
+          "name": "Kim Wallan",
+          "politician_id": "3778353d-cbc9-43cf-866a-a7c01397503a",
+          "vote": "nay"
+        },
+        {
+          "name": "Mark Owens",
+          "politician_id": "ca7c06f8-d4cf-4bec-947f-fb39a00e2cb1",
+          "vote": "nay"
+        }
+      ]
+    }
+  ],
+  "provenance": {
+    "fetched_by": "pilot-import (s3-pilot-homelessness-stage1)",
+    "fetched_at": "2026-10-20T20:00:32.455Z",
+    "method": "unrecorded"
+  }
+}
