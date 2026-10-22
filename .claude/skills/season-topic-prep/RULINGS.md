@@ -187,6 +187,37 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 - **Date and source:** C1, 2026-10-21, Chris Andrews (`.planning/research/s3-prep-voting-rights/stage2/c-lesson.md`, `.planning/research/s3-prep-voting-rights/stage2/drafts-c.md`).
 - **Scope:** every topic.
 
+## Stage 5 rulings
+
+### Local records support own words, never seat alone
+- **Ruling:** a local ordinance or resolution that shows which way a local official leans may serve as supporting
+  evidence beside that person's own words on the topic. It never seats anyone alone. A local law that only decides
+  which level may set a rule stays `adjacent` (codebook V2).
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 1
+  (`docs/superpowers/specs/2026-10-22-season-topic-prep-stage5-code-everyone-design.md` §5).
+- **Scope:** every topic with local officials in scope.
+
+### Shown quotes need no human hold
+- **Ruling:** a person's own words shown to voters as "own words, not on the scale" go live without human review,
+  once the AI quote check confirms the passage is on its source page word for word, is the person's own words
+  (codebook V1), and is on the topic. A failed check keeps it off the page.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 2a (design §9).
+- **Scope:** every topic.
+
+### Own-words seats: the hold ends after a blind check
+- **Ruling:** a seat placed on own words alone keeps the `statement-evidence` human hold until a blind gold sample
+  of own-words seats on that topic agrees with the coder at the Stage 3 validation bar (≥ 95%). When it passes, the
+  hold is retired for that topic, and CLAUDE.md's "separate reliability stratum" rule is updated in the same PR.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 2b (design §9).
+- **Scope:** every topic, decided per topic.
+
+### The Stage 5 early-check bar
+- **Ruling:** the early check stops the run and asks whether to fix the rungs when "doesn't fit" is more than 1 in 5
+  of the people with any on-topic evidence, **or** any single theme from the theme pass holds more than 1 in 10 of
+  them.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 ruling 3 (design §6).
+- **Scope:** every topic.
+
 ## Topic-scoped readings
 
 These change how a general rule reads for **one topic only**. They are not general. Do not apply them to another
