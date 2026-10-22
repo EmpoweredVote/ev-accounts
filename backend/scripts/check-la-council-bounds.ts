@@ -1,3 +1,7 @@
+// ⚠ Despite the name, this is an ad-hoc PROBE, not a check: it prints what rows exist and asserts
+// nothing. It passed for years while those rows held the 2012-adopted council map (CA_0317).
+// The real gate is scripts/check-council-district-vintage.mjs (`npm run check:district-vintage`),
+// which compares the polygons against the authority that draws them.
 import 'dotenv/config';
 import pg from 'pg';
 

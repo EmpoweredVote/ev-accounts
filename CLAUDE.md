@@ -61,10 +61,40 @@ is the whole reason this model exists.
 
 An office with **no `office_terms` row is invisible**: no holder, so the official never appears in
 Essentials, stance research, coverage or campaign finance — and **nothing errors**. This is the one
-failure mode CI cannot catch. Watch `essentials.offices_missing_terms`. **Baseline, measured
-2026-09-29: 239 unknown-occupancy. Treat a count above 239 unflagged as new drift.** The St. Louis
-city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling and is counted in that 239; it is
-not drift. Lower this number whenever a change shrinks it — a stale, high baseline hides drift.
+failure mode CI cannot catch. Watch `essentials.offices_missing_terms`.
+
+🔴 **IT IS A THREE-PART MEASUREMENT, AND ONLY THE THIRD NUMBER IS THE BASELINE.** The view's own
+`count(*)` is NOT the metric. Always measure all three:
+
+```sql
+SELECT count(*) AS total,
+       count(*) FILTER (WHERE o.is_vacant)     AS flagged,
+       count(*) FILTER (WHERE NOT o.is_vacant) AS unflagged   -- ← the baseline
+  FROM essentials.offices_missing_terms m
+  JOIN essentials.offices o ON o.id = m.office_id;
+```
+
+**Measured 2026-10-20: `433 / 194 / 239`.** The Knight trackers report it in exactly this
+`total / flagged / unflagged` form — see `.planning/knight-foundation/fl.md` §"Flagging is
+load-bearing twice over". **Baseline, measured 2026-09-29 and unchanged since: 239 UNFLAGGED.
+Treat a count above 239 unflagged as new drift.** A flagged seat is a *declared vacancy* and is
+deliberately not drift.
+
+⚠ **READING THE TOTAL AGAINST THE BASELINE RAISES A FALSE ALARM**, and has: on 2026-10-20 a
+session reported "433 against a baseline of 239, +194 of drift". The +194 it had found was the
+flagged population itself — the metric was intact and nothing was wrong.
+
+The St. Louis city Sheriff seat (`CC_0178`) is unseated and unflagged by ruling and is counted in
+that 239; it is not drift. Lower this number whenever a change shrinks it — a stale, high baseline
+hides drift, and 🔴 **never raise it to clear a red.**
+
+⚠ **THE FLAGGED BUCKET IS NOT AUDITED, AND IT HIDES THINGS.** Of the 194 flagged on 2026-10-20,
+only **13 carry a `vacant_since` date** — the real, documented vacancies this flag is for (a named
+incumbent died or resigned; see `fl.md`). The other **181 are flagged with no date**, and **138 of
+those are Maine**: every municipal and school office in 17 Maine cities, 100% of them, none ever
+seated. That is "we have not seeded a holder" wearing "this seat is empty"'s clothes — it asserts a
+vacancy to voters and keeps the rows out of the drift metric. Seeding Maine municipalities is the
+fix; until then, **do not read a stable 239 as "occupancy is clean".**
 
 Use the helpers rather than hand-rolling the two-step:
 

@@ -1,19 +1,26 @@
 # Candidate → person linking — handoff
 
 **Written 2026-10-20. Author: Chris Cantrell (`CC_`).**
-**Status: CA · IN · NV · OR · TX · CO ALL DONE. 🔴 ONE STATE LEFT — WASHINGTON, 209 rows. Start at §12.**
+**Status: ✅✅ THE PROGRAMME IS COMPLETE. Every cohort examined. The only 5 rows left unlinked
+nationally are the 5 DELIBERATE REFUSALS — there is no backlog.**
+**🟢 WASHINGTON HAS AN EVIDENCE INSTRUMENT AFTER ALL — see §16. This file said it had none.**
+**▶ What remains is listed in §12: judgement calls, occupancy gaps this work surfaced, and the
+next cycle's re-run. None of it is linking.**
 
 | Election | total | linked | left |
 | --- | --- | --- | --- |
 | CA 2026 Statewide General | 324 | **324** | 0 |
 | 2026 LA County General | 796 | **793** | 3 (judged — §6b) |
-| 2026 San Bernardino County General | 5 | 2 | 3 (not examined) |
+| 2026 San Bernardino County General | 5 | **5** | 0 |
 
-**States finished: CA · IN (102/103) · NV (28/28) · OR (49/50) · TX (170/170) · CO (103/103).**
-**Remaining: Washington, 209.**
+**States finished: CA · IN (102/103) · NV (28/28) · OR (49/50) · TX (170/170) · CO (103/103) ·
+WA (394/394) · San Bernardino (5/5).** ✅ **No cohort anywhere is unexamined.**
 
-Migrations: `CC_0262`-`CC_0276`. 558 candidacies linked, 604 people created, 13 wrong people
-refused, 9 left unlinked by judgement across the programme.
+**Exactly 5 rows remain unlinked nationally, and every one is a deliberate refusal:** 3 LA residue
+(§6b), Dugger (OR), Smith III (IN). **There is no backlog left.**
+
+Migrations: `CC_0262`-`CC_0279`. 770 candidacies linked, 803 people created, 17 wrong people
+refused, 5 left unlinked by judgement across the programme.
 
 ---
 
@@ -166,9 +173,10 @@ person" exactly as falsely as linking would assert "same". Unlinked is the findi
   senate candidate, an archived row, a bare row) and the name also matches the Governor of Indiana.
   ▶ *Settles it:* a Walnut Valley source naming him.
 
-### 6c. Not examined: 2026 San Bernardino County General — 3 unlinked, all designated
+### 6c. ✅ DONE: 2026 San Bernardino County General — `CC_0279`. 5 of 5.
 
-Smallest cohort in the corpus and 100% designated. An hour's work with instrument A.
+⚠ **This section used to read "100% designated. An hour's work with instrument A." The first half
+was right and the second did not follow — see §18.** All three were creations.
 
 ## 6d. (historical) The original LA County scoping
 
@@ -344,20 +352,21 @@ refusal) → `CC_0269`/`CC_0272` (the creation pattern, the name splitting, the 
 **The queue, in order** (rewritten 2026-10-20 after `CC_0276`; §7's "clearing" is CLOSED — the
 operator's §14 ruling means there was never anything to filter out):
 
-1. ▶▶ **WASHINGTON — 209 rows. The last state, and the biggest.** 130 of its 134 originally-live
-   rows carry `result = 'advanced'`, so **instrument B runs well here** — WA's top-two primary is
-   the one place continuity is cheap. Its certified list is a scanned image with no text layer, so
-   instrument A cannot run. 15 variant hits to adjudicate. 🔴 **The 70 `not_nominated` and 5
-   `withdrew` rows are IN SCOPE** (§14) — create the person, leave `result`/`candidate_status`
-   untouched, and `electionService` keeps them off the ballot page.
-   🔴 **Work it in slices** — `CC_0269`'s 110 creations tipped `duplicate people` past its
-   statement timeout. 209 is twice that.
-2. **San Bernardino County General (§6c)** — 3 rows, all designated. An hour.
-3. **The three LA residue rows (§6b)** — one citation each.
+1. ✅ **WASHINGTON — DONE** (`CC_0277`, `CC_0278`). 394 of 394. **§16 is the write-up and it
+   corrects this file's claim that WA had no instrument.**
+2. ✅ **San Bernardino County General — DONE** (`CC_0279`). 5 of 5. Write-up in §18.
+3. **The three LA residue rows (§6b)** — one citation each. ▶ **This is now the front of the
+   queue, and it is five judgement calls, not a cohort.**
 4. **Brock / de la Torre / Parra closed-term backfill** — history, not occupancy. Needs documented
    start AND end dates. **DO NOT SEAT THEM** (see the correction at the top).
-5. **Colorado county occupancy (§15d)** — not this programme's job, but recorded here because this
-   programme is what found it: no Jefferson or Fremont County is seeded in CO at all.
+5. **Occupancy gaps this programme surfaced.** ✅ **Colorado DONE** — Jefferson and Fremont
+   counties seeded by `CC_0280` (18 offices, 18 terms), and **three of the people `CC_0276`
+   created as candidates were seated rather than duplicated**, exactly as §15d predicted. Rulings
+   in `backend/data/seed-co-counties-2026/ROSTERS.md`.
+   ▶ Still open: in WA, dozens of city councils and school boards whose members we now hold as
+   people with no seat (§16f). A seeding job with its own sources.
+6. **Re-run the WA pamphlet sweep for the 2027 cycle** — `backend/scripts/wa-voter-pamphlet.mjs`,
+   with the new election id in place of `e=898`.
 
 **Before any creation sweep, every time:**
 - Run the dedupe pass (§5) with the **nickname list**, accents, punctuation and archived rows.
@@ -535,8 +544,242 @@ executives and El Paso County, which is exactly why Michael Allen was the only l
 concluding the evidence is thin. The rows created here hold nothing and claim nothing; if those
 counties are seeded later, **these are the people to seat, not rows to duplicate.**
 
+### 15e-bis. See §16 — Washington, and the correction to §3 and §13c
+
 ### 15e. The 10 `filed` rows were left exactly as the source wrote them
 
 No field was touched. §13a settled that `filed` is the Secretary of State's own distinction,
 carried faithfully. Whether a `filed` candidate should render beside an `active` one is still the
 operator's **display** decision — it is not a reason to withhold a person record.
+
+---
+
+## 16. WASHINGTON — `CC_0277` + `CC_0278`, applied 2026-10-20. 394 of 394.
+
+**12 linked · 196 people created for 197 candidacies · 4 wrong people refused.**
+
+### 16a. 🔴🔴 CORRECTION TO §3 AND §13c — WASHINGTON *DOES* HAVE AN INSTRUMENT
+
+§3 said WA's certified list is "a scanned photocopier image with no text layer" and §13c concluded
+there is "no evidence instrument in any of these states". **The scan is real. The conclusion was
+wrong.** The instrument is not in the PDF.
+
+🟢 **The online voters' pamphlet publishes every candidate's own `Elected Experience` as JSON,
+over a public endpoint, with no key:**
+
+```
+https://voter.votewa.gov/elections/voterguide.ashx?e=898&la=en&c=
+   -> every category, race, BallotID and BallotName for the election
+https://voter.votewa.gov/elections/candidate.ashx?e=898&r=<RaceID>&b=<BallotID>&la=en&c=
+   -> statement.Statement is HTML; its first section is <b>Elected Experience</b>
+```
+
+🟢 **`backend/scripts/wa-voter-pamphlet.mjs` harvests it.** `--name "Nikki Torres"` for one,
+no flags to sweep every unlinked WA row.
+
+⚠ **READ THE PRIMARY, NOT THE GENERAL.** `e=898` is the 2026 primary and carries EVERY filed
+candidate; the general carries only the survivors. Measured 2026-10-20: 1,311 ballot names over
+757 races; of our 209 unlinked rows, **205 matched by ballot name and 193 carried Elected
+Experience text — 92% coverage**, against the ballot designation's 38% in LA County.
+
+⚠ **It is NOT `occupational_designation` and must not be stored there.** That column holds
+California's three-word sworn ballot designation. A pamphlet paragraph is a different artefact
+with different rules; one column holding both makes "which rows carry a designation?" count two
+unlike things. The harvest is reproducible in a minute, so nothing is cached.
+
+### 16b. 🟢 A SELF-DESCRIPTION DISCONFIRMS AS WELL AS IT CONFIRMS
+
+Every earlier refusal in this programme was an argument from improbability: *the matched person
+holds a seat in another state, so this is probably someone else.* The pamphlet makes four
+refusals **positive**:
+
+| Candidate | Elected Experience, in their own words | Matched person |
+| --- | --- | --- |
+| Angela Taylor (House 2) | **"None."** | NV State Senator D15 |
+| Eric W. Pratt (House 24) | "Precinct Committee Officer" | MN Senator D54 |
+| Kathy Richardson (House 28) | "Board member, ARNP's United" | Philadelphia Councilmember At Large |
+| Michael Alvarez Shepard (Senate 42) | "Port Commissioner in his third term" | Lavon, **TX** council |
+
+🔴 A sitting state senator does not write "None." That is evidence of difference, not absence of
+evidence of sameness.
+⚠ **Not one of the four trips the duplicate guard** — each splits to a first_name the existing row
+does not carry. The silence is the guard not looking.
+
+### 16c. The 12 links — two tiers
+
+**Tier 1 (9): filed for the very seat we record them holding.** Two unrelated official systems
+agreeing, which is what makes the name difference explainable rather than lucky — the candidacy
+comes from the **SoS filings**, which print the LEGAL name ("Jamila E. Taylor", "Drew C MacEwen"),
+and the seat from the **Legislature's own member web service**, which prints the COMMON name
+("Jamila Taylor", "Drew MacEwen"). Three statements name the district number outright (Reed 36th,
+Entenman 47th, Gregerson 33rd); MacEwen's and Frame's "2023 to present" match our `term_start` of
+2023-01-09, written long before the pamphlet was read.
+
+**Tier 2 (3): a different seat, named by the candidate, that we also record.**
+- 🟢 **Forsythe and Kritzer INTERLOCK.** Forsythe: Redmond Council President '22-'23, VP '24-'25.
+  Kritzer: VP 2022-2023, President 2024-2025. Two pamphlet entries, written separately, describing
+  the same council's officer rotation from opposite sides. Coincidence of names cannot do that.
+- 🔴 **Nikki Torres looks exactly like a wrong-person match and is not.** She holds Senate **15**
+  and is standing in Senate **8** — same chamber, different district, the shape that should stop a
+  link. Her own pamphlet entry for the 8th resolves it: *"Elected to the Senate, 15th District
+  2022."* ⚠ Her 15th-District occupancy record is untouched. A candidacy is not occupancy.
+
+### 16d. 🔴🔴 THE PRE-FLIGHT COLLISION CHECK IS BLIND TO THE BATCH ITSELF
+
+**This nearly shipped and only the dry run caught it.** The collision check asks *does this name
+already exist in `politicians`?* — it compares the batch against the **table**. It cannot see a
+name repeated **inside** the batch, because the first insert is what creates the collision for the
+second. It reported **ZERO** collisions for this cohort and was wrong: the loop inserted **Julia
+Payne**, then hit `DUPLICATE_POLITICIAN_NAME` on her own freshly written row.
+
+▶ **A BATCH MUST BE CHECKED AGAINST ITSELF AS WELL AS AGAINST THE TABLE.** `CC_0278` now does
+both. Add this to any future creation sweep.
+
+**And the adjudication matters as much as the gate.** Julia Payne has two rows, both in
+**Legislative District 6** — Position 1 `withdrew`, Position 2 `advanced` — and the SoS pamphlet
+carries **exactly one** Julia Payne (BallotID 1600273, LD6 Pos. 2, "I am a first-time candidate").
+One person who filed for one position, withdrew, and ran for the other. One person row, two
+candidacies.
+🔴 **The gate refuses any repeated name whose rows sit in DIFFERENT districts** — that shape is two
+people and must never be collapsed. The house rule "key the link on `rc_id`, not `full_name`" is
+not broken here; it is what forced the question.
+
+### 16e. ⚠ `race_candidates.is_incumbent` LOOKED LIKE THE ANSWER AND IS NOT
+
+All 209 unlinked rows read `is_incumbent = false`, and all 113 rows reading true were already
+linked — which invites "the source says these nine are not incumbents". 🔴 **It does not.**
+Grouping by `source` shows the SoS filings feed carries 295 rows of which **93 ARE flagged** — so
+the flag is set for some rows from that very source and absent for others. In all nine tier-1
+races, no row is flagged and none is linked: the flag is missing for the whole race, not denied
+for the candidate. **`false` here is an unset default, not an assertion.**
+
+### 16f. 🔴 Many of the 196 hold office, and not one was seated
+
+The pamphlet shows councilmembers in Tacoma, Shoreline, Edmonds, Vancouver, Burien, Bothell, Moses
+Lake, Ellensburg, Port Angeles, Aberdeen and Yakima, school directors in Puyallup, Peninsula and
+Walla Walla, and a port commissioner. **We hold no politician row for any of them** — our WA
+occupancy is the legislature plus a slice of King County.
+
+▶ **A self-description identifies a person; it does not seat them.** "I am a Tacoma
+councilmember" is excellent for saying WHO someone is and worth nothing as a record of WHO HOLDS A
+SEAT. Occupancy comes from the body's own roster, with dates. Same family as "a certified result
+is not a fact about who holds the seat" and "FIRST ELECTED IS NOT A TERM START".
+▶ If those cities are seeded later, **these are the people to seat, not rows to duplicate.**
+
+### 16g. The 70 primary losers and 5 withdrawals kept their rows untouched
+
+Created as people per the §14 ruling; `result` and `candidate_status` were not rewritten, and a
+post-verify gate asserts all 70 `not_nominated` rows survived unchanged. Those fields are what
+keep them off the ballot page.
+
+---
+
+## 17. 🔴 THE RULE THE WHOLE PROGRAMME ENDS ON
+
+**"There is no document" is a claim about where you looked.**
+
+This file recorded Washington as having no instrument, on the strength of a real observation — the
+certified list is a scan. The same Secretary of State was publishing every candidate's sworn
+Elected Experience as JSON the whole time.
+
+▶ Before writing *no instrument exists*, ask what the instrument was **doing** — a published,
+sworn self-description — and then look for anything that does that job, **in any format**. The
+standard was never the form.
+
+---
+
+## 18. SAN BERNARDINO — `CC_0279`, applied 2026-10-20. 5 of 5. **The programme is complete.**
+
+**3 created · 0 linked · 0 refused.** The whole election is one race: **Director, Wrightwood
+Community Services District**, five candidates, two already linked.
+
+### 18a. 🔴 "100% DESIGNATED" IS NOT "INSTRUMENT A CAN RUN"
+
+§6c scoped this as *"Smallest cohort in the corpus and 100% designated. An hour's work with
+instrument A."* The first half is true. The second does not follow.
+
+**A ballot designation is only an instrument when it NAMES AN OFFICE.** These name none:
+
+| Candidate | Designation |
+| --- | --- |
+| Jason Agraz | "Business Owner" |
+| Russ Drew | "Retired / Community Volunteer" |
+| Wes Zuber | "Local Businessman" |
+
+▶ **COUNT DESIGNATIONS THAT NAME A SEAT, NOT DESIGNATIONS.** Only the first number is a lead worth
+an hour. The LA County scoping in §6d made the same count — "161 of 427 carry a ballot
+designation" — and the useful figure was always the subset naming an office we record.
+
+🟢 **The consolation: the designation still earned its keep, as a DISCONFIRMATION.** A candidate
+who swears their occupation is "Retired / Community Volunteer" is stating they hold no office.
+Creating all three is the *evidenced* answer, not the fallback — the same shape as Angela Taylor's
+"None." in §16b.
+
+### 18b. 🔴 THE RACE'S `office_id` IS NOT EVIDENCE IN A MULTI-SEAT BOARD RACE
+
+Wrightwood CSD has **five Director offices**, each separately seated from the district's own
+roster (`CA_0250`). The single race row carries **five candidates against ONE of those five office
+ids** (`25a12bc5`, currently Alexis Claiborne's).
+
+⚠ So "the candidate holds the very seat sought" — the strongest test in this programme, which
+carried nine of Washington's twelve links — is **meaningless here**. It would match a candidate
+against whichever Director row the importer happened to pick.
+
+▶ **Open modelling question for whoever owns multi-seat races**, not fixed here: a board election
+for several seats is flattened onto one arbitrary seat row. Nothing in `CC_0279` depends on which
+office the race points at. 🔴 **Before using seat identity as evidence, check the race is
+single-seat.**
+
+### 18c. The dedupe pass returned empty, and the control is what makes that worth anything
+
+🔴 An empty answer from a detector is worth nothing until the detector is shown to work. Controls
+were planted and **they fired**: the same query matched "David Schoenwetter" → `David E.
+Schoenwetter` and "Rick Christensen" → `Rick J. Christensen`, both sitting Wrightwood directors,
+including across the middle-initial difference.
+
+A wider surname sweep over every row, active and archived, confirms it: we hold a **Claudia**
+Agraz, a **Henry** Zuber III and a **Jefferson** Van Drew, and nothing closer. The many `Drew *`
+rows are first-name Drews; the `ZUBER 2018 GOVERNOR`-style rows are CAL-ACCESS committee names
+sitting in `politicians`, not people.
+
+### 18d. ⚠ CORRECTION TO EVERY CREATION MIGRATION'S HEADER: "IDEMPOTENT" IS THE WRONG WORD
+
+`CC_0272`, `CC_0275`, `CC_0276`, `CC_0278` and `CC_0279` all say *"Idempotent: re-running inserts
+nothing."* **That is true about the outcome and wrong about the mechanism.**
+
+Each defines its cohort as `politician_id IS NULL`, so a second run finds **zero** and the count
+gate raises — measured by running `CC_0279` twice in one transaction:
+
+```
+CC_0279: expected 3 to create, found 0 - the cohort moved, re-run the dedupe pass ...
+```
+
+Nothing is inserted because the transaction **ABORTS**, not because the work is skipped.
+🔴 **A re-run therefore looks like a FAILURE to anything reading exit codes.** Expect the
+exception; it is not drift. `CC_0279`'s header now says so; the earlier four still carry the loose
+wording and are not being retro-edited.
+
+---
+
+## 19. ✅ THE PROGRAMME IS COMPLETE — what is actually left
+
+**Nothing in this file is a linking backlog any more.** Five rows remain unlinked nationally and
+all five are deliberate refusals, each with a named document that would settle it:
+
+| Row | Why unlinked | What settles it |
+| --- | --- | --- |
+| Christine R. Sarmiento (El Monte Mayor) | existing row holds a CA GOVERNOR candidacy **and an image** | any El Monte source naming her |
+| Mark Copland (Norwalk-La Mirada TA 5) | existing row holds **Area 6**; 0.0% shared area | the trustee-area redraw, or the district roster |
+| Michael Braun (Walnut Valley Water, Div 2) | matches 3 rows, and the Governor of Indiana | a Walnut Valley source naming him |
+| Dugger (OR) | see `CC_0274` | — |
+| William E. Smith III (IN, Van Buren Twp) | **suffix**: father or son, and the incumbent row carries an IMAGE | Monroe County certified list, which prints suffixes |
+
+Everything else in §12 is a different kind of job: occupancy gaps this programme surfaced (**the
+Colorado one is now closed — `CC_0280` seeded Jefferson and Fremont**; WA's city councils and
+school boards remain), the Brock/de la Torre/Parra **closed-term** backfill, and re-running the WA
+pamphlet sweep for the next cycle.
+
+🟢 **The Colorado seed is the proof that writing down who someone is pays off later.** `CC_0276`
+created Amanda Gonzalez, Lesley Dahlkemper and Kevin Grantham as candidates with no office and
+recorded that they were a county clerk and two county commissioners. Six migrations later
+`CC_0280` seated those same three rows instead of creating duplicates.

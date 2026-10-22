@@ -559,6 +559,56 @@ jobs:
         env:
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
 
+      # Rides this job rather than taking a tenth one of its own: same live DB, same non-PR trigger,
+      # same `npm ci` already paid for (see the minutes budget at the top of this file).
+      # Carries `if: ${{ !cancelled() }}` so a reachability failure above does not hide a stale map.
+      #
+      # Reachability asks "can a resident surface SOMEONE for this address". This asks "is it the
+      # RIGHT someone" — the question nothing was asking when Los Angeles served the 2012-adopted
+      # council map under a 2024 source tag for years (CA_0317). Every row-count, roster and
+      # reachability check passed the whole time, because the boundaries were stale while the
+      # councilmember names on them were current.
+      #
+      # Compares our polygons against the government that draws them. Skips green (exit 0) when the
+      # authority's GIS is unreachable — we gate drift, not somebody else's uptime.
+      - name: Check council district boundaries still match their authority
+        if: ${{ !cancelled() }}
+        run: npm run check:district-vintage
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      # The other 97.9% of the routing surface. Where the check above gates 106 hand-picked local
+      # upstreams one at a time, this diffs all 73,021 Census-sourced polygons wholesale against
+      # the TIGER vintage they claim — no sampling, because TIGER versions everything and keeps
+      # every vintage queryable.
+      #
+      # What it is really watching for is a town that incorporated after our snapshot: a map can be
+      # faithful to its vintage and still be missing a place where 100,000 people live. Nothing
+      # else we run would notice, because the polygon is not wrong, it is absent.
+      - name: Check Census TIGER layers against the vintage they claim
+        if: ${{ !cancelled() }}
+        run: npm run check:tiger-fidelity
+        env:
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+
+      # Rides this job because it shares the trigger, not the database: it needs no
+      # secrets, it just asks the live proxy whether its upstream is answering.
+      # `if: ${{ !cancelled() }}` so a reachability failure cannot hide it.
+      #
+      # This exists because /api/essentials/voter-info degrades to an empty payload on
+      # ANY upstream failure, which made an outage indistinguishable from a quiet
+      # off-cycle week. Google answered 403 on every call for at least six days,
+      # a fortnight before a general election, and nothing reported it. It asserts the
+      # upstream is WILLING to answer, not that an election is live — `no_election`
+      # passes, only `unavailable` fails.
+      #
+      # ⚠ Expect this RED until the Google key is fixed. That is the point; the card is
+      # empty for every voter right now. It runs on master and the schedule, never on a
+      # PR, so it reports the breakage without blocking anyone's merge.
+      - name: Check the voter-info upstream is answering
+        if: ${{ !cancelled() }}
+        run: npm run check:voter-info
+
   child-county:
     name: child→county mapping
     runs-on: ubuntu-latest
