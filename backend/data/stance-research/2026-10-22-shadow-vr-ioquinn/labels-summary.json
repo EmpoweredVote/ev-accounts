@@ -1,0 +1,18 @@
+[
+ {
+  "topic_key": "voting-rights",
+  "batch": "vr-ioquinn",
+  "status": "ok",
+  "value": 4,
+  "blank_reason": null,
+  "evidence_type": "record",
+  "rests_on": 3,
+  "urls_dropped": 0,
+  "needs_source": [
+   "Confirmation on file that O'Quinn's House of Delegates service includes the 2013 session (current term start is unknown)"
+  ],
+  "context_urls": [
+   "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256"
+  ]
+ }
+]

@@ -1,0 +1,82 @@
+{
+  "codebook_version": "0.6",
+  "models": [
+    "opus"
+  ],
+  "rows": [
+    {
+      "key": "36673ec0-1045-4a98-8074-12d6deed5cc8|35824300-70a9-4d2c-8760-156d89a535d8|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "topic_key": "voting-rights",
+      "outcome": {
+        "kind": "needs-source",
+        "requests": [
+          "Confirmation on file that O'Quinn's House of Delegates service includes the 2013 session (current term start is unknown)"
+        ]
+      },
+      "confirm": [
+        "no-source-profile",
+        "instrument-mismatch",
+        "tally-unreadable",
+        "dates-imprecise"
+      ],
+      "stratum": {
+        "level": "state",
+        "evidence_class": "record",
+        "evidence_basis": "record"
+      },
+      "shadow": "would-review",
+      "shadow_reasons": [
+        "needs-source",
+        "confirm-failed"
+      ],
+      "seed": "none",
+      "profiles": [
+        "va-lis-bill-text@1"
+      ],
+      "evidence_tier": "single-source",
+      "held_chair": {
+        "value": 4,
+        "shared_sources": [
+          "20cfb725-dc1b-5844-a316-e153bb305466",
+          "71df88c5-89a5-59de-bcc7-4aa36de46e5e"
+        ]
+      }
+    }
+  ],
+  "m1": {
+    "alpha": null,
+    "units": 0
+  },
+  "needsSource": [
+    {
+      "key": "36673ec0-1045-4a98-8074-12d6deed5cc8|35824300-70a9-4d2c-8760-156d89a535d8|d1792200-1d3b-4955-a0b7-0e6980d7a7b2",
+      "requests": [
+        "Confirmation on file that O'Quinn's House of Delegates service includes the 2013 session (current term start is unknown)"
+      ]
+    }
+  ],
+  "validity": [
+    {
+      "slot": 1,
+      "fileErrors": [],
+      "rowErrors": 0
+    },
+    {
+      "slot": 2,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    },
+    {
+      "slot": 3,
+      "fileErrors": [
+        "file missing"
+      ],
+      "rowErrors": 0
+    }
+  ],
+  "noProfileHosts": {
+    "legacylis.virginia.gov": 1
+  }
+}

@@ -1,0 +1,1758 @@
+[
+  {
+    "name": "vr-abutton",
+    "person": "Angie Button",
+    "politician_id": "560e4b06-f145-4f5f-adcf-515d5ae0b61b",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-14-2011",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Angie Button's Texas House service dates (82nd Legislature, 2011) on file, to confirm the earlier term in the same chamber",
+      "SB 14 (82R) House committee substitute / version as co-sponsored, if the co-sponsorship is to be coded"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 1/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-agentry",
+    "person": "Al Gentry",
+    "politician_id": "1f2924ca-d840-4648-8164-18c2cc369f2f",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "KY-SB-2-2020",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Enrolled text of KY SB 2 (2020 RS) as passed with Free Conference Committee Report 1 (Acts ch. 89), to code his 3/19/2020 final-passage Yea against the rung text"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-asmith",
+    "person": "Adrian Smith",
+    "politician_id": "3498a850-4dfe-49d2-8af9-a11651adb3c2",
+    "level": "federal",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      5
+    ],
+    "records": [
+      [
+        "US-HR-22-2025",
+        "",
+        "yea",
+        "season2-row"
+      ],
+      [
+        "US-S-1383-2026",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 5  corroborated  2/4 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-bhall",
+    "person": "Bob Hall",
+    "politician_id": "452cad0a-57e0-48fd-893a-4101fc41cd48",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Season 3 served-topic list, to confirm SB 1 (87(2)) is single-subject under V4.1",
+      "SB 1 (87(2)) as filed, to code Hall's coauthorship on its own text"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-bhughes",
+    "person": "Bryan Hughes",
+    "politician_id": "7e85ff40-5ad8-4374-81a9-c18e60fad8b0",
+    "level": "state",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      4,
+      5
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "Senate",
+        "sponsor",
+        "sponsor"
+      ],
+      [
+        "TX-SB-16-2025",
+        "Senate",
+        "sponsor",
+        "sponsor"
+      ]
+    ],
+    "needs_source": [
+      "Hughes's current Texas Senate term dates (essentials) to confirm SB 1 (2021) and SB 16 (2025) are in-term"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 5  single-source 2/3 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-cgeren",
+    "person": "Charlie Geren",
+    "politician_id": "01d02684-5189-4b52-9d38-e7827b4d6b42",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Season 3 served-topic list, to settle whether SB 1 (87th 2nd C.S.) is single-subject under V4.1 (criminal penalty and court-procedure parts)",
+      "Charlie Geren's own words (statement, questionnaire, floor remarks) on voter ID or mail-ballot ID requirements",
+      "Geren's votes on SB 14 (82nd R.S., 2011) and SB 5 (85th 1st C.S., 2017) Texas photo-ID laws"
+    ],
+    "queue": [
+      "skip   voting-rights                needs-source"
+    ]
+  },
+  {
+    "name": "vr-chefner",
+    "person": "Cole Hefner",
+    "politician_id": "cb331eaa-fe08-4692-b92c-c3d303a426aa",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      3,
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "",
+        "yea",
+        "season2-row"
+      ],
+      [
+        "TX-SB-5-2017",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [
+      "Single-subject check of SB 1 (87(2), 2021) against the Season 3 served-topic list (criminal-penalty and court-procedure articles)",
+      "SB 1 (87(2)) and SB 5 (85R) House committee/engrossed versions Hefner co-sponsored"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-cperry",
+    "person": "Charles Perry",
+    "politician_id": "eb7ef2a7-d0bb-475e-b2de-d96e6931932c",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "TX-SB-5-2017",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "SB 5 (85R, 2017) as filed (introduced text) to code Perry's co-authorship on its own content"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-croy",
+    "person": "Chip Roy",
+    "politician_id": "815bc4fa-a987-4245-9fa1-cb1026ca3ee5",
+    "level": "federal",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      5
+    ],
+    "records": [
+      [
+        "US-HR-22-2025",
+        "House",
+        "sponsor",
+        "sponsor"
+      ],
+      [
+        "US-S-1383-2026",
+        "House",
+        "sponsor",
+        "sponsor"
+      ]
+    ],
+    "needs_source": [
+      "Clerk roll call, H.R. 22 (119th), final passage, April 10, 2025",
+      "Clerk roll call, House amendment to S. 1383 (119th), February 11, 2026"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 5  corroborated  2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-ctenney",
+    "person": "Claudia Tenney",
+    "politician_id": "e1d8c7bb-cde0-4ec5-8863-0b8ce838cb57",
+    "level": "federal",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      5
+    ],
+    "records": [
+      [
+        "US-HR-22-2025",
+        "",
+        "yea",
+        "season2-row"
+      ],
+      [
+        "US-S-1383-2026",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 5  corroborated  2/4 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-cvanderwall",
+    "person": "Curtis VanderWall",
+    "politician_id": "e40b492e-dc22-4150-9c07-6966e01f41a6",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      null
+    ],
+    "records": [
+      [
+        "MI-SB-303-2021",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "SB 303 (2021-2022) as introduced, for the co-sponsorship record (sponsorship evidences the bill as filed)",
+      "Any first-person statement by VanderWall on voter ID or proof of citizenship"
+    ],
+    "queue": [
+      "skip   voting-rights                needs-source"
+    ]
+  },
+  {
+    "name": "vr-ddecoste",
+    "person": "David F. DeCoste",
+    "politician_id": "a743a9a0-711c-40cf-b6e2-0ce2b587949a",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "MA-H-4359-AMDT-7-2022",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-dmarsden",
+    "person": "David W. Marsden",
+    "politician_id": "8db8b2e3-9160-4c14-9b47-707a7a27e4ab",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "Senate",
+        "yea",
+        "draw"
+      ],
+      [
+        "VA-SB-1256-2013",
+        "Senate",
+        "nay",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-dmeade",
+    "person": "David Meade",
+    "politician_id": "73842ff6-610a-459d-aa4e-db20efde35ad",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "KY-SB-2-2020",
+        "House",
+        "nay",
+        "draw"
+      ],
+      [
+        "KY-SB-2-2020",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "skip   voting-rights                unanimous-blank"
+    ]
+  },
+  {
+    "name": "vr-dosborne",
+    "person": "David W. Osborne",
+    "politician_id": "cac083c7-4f4f-4ef0-8683-dd87245a9036",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "KY-SB-2-2020",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-dphelan",
+    "person": "Dade Phelan",
+    "politician_id": "9974fbb8-10d1-452c-ae8e-a853dd3f7d37",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "TX-SB-5-2017",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-dreid",
+    "person": "David A. Reid",
+    "politician_id": "5061959c-b625-4b7a-b17f-a1291c50d001",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Confirmation that David A. Reid's House of Delegates service covers the 2020 session (current term dates unknown)"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-dwong",
+    "person": "Donald H. Wong",
+    "politician_id": "44ca0b25-e4b9-4409-8407-f5119568be3e",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "MA-H-4359-AMDT-7-2022",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Wong's term dates in the Massachusetts House, to confirm 2022 service in the 9th Essex seat"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-gcampsen",
+    "person": "George E. \"Chip\" Campsen III",
+    "politician_id": "4b92412d-e472-4a41-a4d9-085ff1a6b22e",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "SC-H-3003-2011",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-gcapriglione",
+    "person": "Giovanni Capriglione",
+    "politician_id": "b652c0bb-1dc5-4043-8a2e-9e12ea034dc8",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "TX-SB-5-2017",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-ggates",
+    "person": "Gary Gates",
+    "politician_id": "1769fdb6-9c60-4c99-b08d-55cbe95bcedd",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [
+      "Season 3 served-topic list, to confirm SB 1 (2021) is single-subject (its court-procedure, criminal-penalty and voter-assistance parts are assumed not on-question for another served topic)",
+      "Gates's current term start date in the Texas House"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-gpalmer",
+    "person": "Gary J. Palmer",
+    "politician_id": "9c7e62aa-c793-4630-b58b-4eb219b91d30",
+    "level": "federal",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      5
+    ],
+    "records": [
+      [
+        "US-S-1383-2026",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 5  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-gvandeaver",
+    "person": "Gary VanDeaver",
+    "politician_id": "0f8b9952-c966-415a-bb5a-35a95430e80b",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      3,
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "",
+        "yea",
+        "season2-row"
+      ],
+      [
+        "TX-SB-5-2017",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [
+      "Served-topic list for the season being coded, to confirm SB 1 (87(2)) has no operative part that is on-question for another served topic (single-subject test)",
+      "essentials.legislative_service term record for VanDeaver in the Texas House covering 2017 and 2021"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 1/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-hhageman",
+    "person": "Harriet M. Hageman",
+    "politician_id": "1e08c7c7-68c1-4498-90b2-20850bac1c80",
+    "level": "federal",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      5
+    ],
+    "records": [
+      [
+        "US-HR-22-2025",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 5  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-ioquinn",
+    "person": "Israel D. O'Quinn",
+    "politician_id": "36673ec0-1045-4a98-8074-12d6deed5cc8",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4,
+      null
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "House",
+        "nay",
+        "draw"
+      ],
+      [
+        "VA-HB-1444-2023",
+        "",
+        "yea",
+        "season2-row"
+      ],
+      [
+        "VA-SB-1256-2013",
+        "",
+        "yea",
+        "season2-row"
+      ],
+      [
+        "VA-HB-46-2022",
+        "House",
+        "yea",
+        "carry"
+      ]
+    ],
+    "needs_source": [
+      "Confirmation on file that O'Quinn's House of Delegates service includes the 2013 session (current term start is unknown)"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-jadams",
+    "person": "Julie Raque Adams",
+    "politician_id": "04d835c3-c1a6-4d62-8d68-f806e842128c",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "KY-SB-2-2020",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 3/3 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-jboysko",
+    "person": "Jennifer B. Boysko",
+    "politician_id": "b4f19462-f23f-4061-831d-ec4544b5678f",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-jfoy",
+    "person": "Jennifer D. Carroll Foy",
+    "politician_id": "b3c03be3-ae7a-4393-a99b-80b63fea74d0",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-jhuffman",
+    "person": "Joan Huffman",
+    "politician_id": "0ad0ceaa-2aa7-477b-bafb-03e927fe81ff",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3,
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-14-2011",
+        "Senate",
+        "yea",
+        "draw"
+      ],
+      [
+        "TX-SB-5-2017",
+        "Senate",
+        "sponsor",
+        "sponsor"
+      ]
+    ],
+    "needs_source": [
+      "Senate Journal roll call, SB 5 (85R) final passage, 2017-03-28",
+      "Senate Journal roll call, SB 5 (85R) conference committee report adoption, 2017-05-27"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-jmcpike",
+    "person": "Jeremy S. McPike",
+    "politician_id": "230412ca-7207-41f8-9eb0-99486f54826d",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-kcorbin",
+    "person": "Kevin Corbin",
+    "politician_id": "06b89994-4cdf-47d1-9a68-effbd3fd5c14",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "NC-S-824-2018",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-khall",
+    "person": "Kyle Hall",
+    "politician_id": "e784bdf3-bf62-41c7-bdae-0a62f9da2456",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "NC-S-824-2018",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-ksparks",
+    "person": "Kevin Sparks",
+    "politician_id": "183d6ca3-be06-4d4f-a727-103687f80e69",
+    "level": "state",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      5
+    ],
+    "records": [
+      [
+        "TX-SB-16-2025",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "SB 16 (89R) as filed (introduced text), to evidence Sparks's co-authorship on the bill as filed"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 5  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-laird",
+    "person": "Lashrecse D. Aird",
+    "politician_id": "731049dd-0a5b-44fb-a778-b637dded0a5b",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-lbagby",
+    "person": "Lamont Bagby",
+    "politician_id": "52daeb4d-205d-426a-80a4-40e00b7ee9c0",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-lkolkhorst",
+    "person": "Lois Kolkhorst",
+    "politician_id": "2db78ab9-242e-46cd-ba95-5c504a2c8892",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3,
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-14-2011",
+        "House",
+        "yea",
+        "draw"
+      ],
+      [
+        "TX-SB-5-2017",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "SB 5 (85R) as filed / Senate engrossed text, for her authorship",
+      "SB 14 (82R) engrossed text as received in the House, for her cosponsorship",
+      "Current Senate term dates for Kolkhorst"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-mobenshain",
+    "person": "Mark D. Obenshain",
+    "politician_id": "b7e9d159-b766-445c-b95f-9797b57247d9",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "VA-SB-1256-2013",
+        "Senate",
+        "yea",
+        "draw"
+      ],
+      [
+        "VA-SB-1256-2013",
+        "Senate",
+        "sponsor",
+        "sponsor"
+      ]
+    ],
+    "needs_source": [
+      "Engrossed text SB 1256 ES1 (2013), the version passed by the Senate on 02/05/13, to confirm it matches the enacted Chapter 725 text",
+      "Obenshain's current Senate term dates (essentials.legislative_service) to confirm the 2013 record falls within Senate service"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-mrogers",
+    "person": "Mike Rogers",
+    "politician_id": "dafa64fd-de0a-4b33-817c-813d3c799b99",
+    "level": "federal",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      5
+    ],
+    "records": [
+      [
+        "US-HR-22-2025",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 5  single-source 1/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-mwebert",
+    "person": "Michael J. Webert",
+    "politician_id": "28714014-4c7e-427e-8190-fcc21875377a",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4,
+      null
+    ],
+    "records": [
+      [
+        "VA-HB-1444-2023",
+        "House",
+        "yea",
+        "draw"
+      ],
+      [
+        "VA-SB-1256-2013",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Code of Virginia \u00a7 24.2-653 and \u00a7 24.2-653.01 as in force under 2013 Acts ch. 725 (to confirm the provisional-ballot cure period and that no sworn-statement path let the ballot count)"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-nballentine",
+    "person": "Nathan Ballentine",
+    "politician_id": "033391af-de42-42bd-9961-7414218f605e",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "SC-H-3003-2011",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "SC Legislature service record confirming Ballentine's House term covering April 2011"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-pbettencourt",
+    "person": "Paul Bettencourt",
+    "politician_id": "f7f56e38-194a-4cc5-8883-cba2a61a2a62",
+    "level": "state",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      4,
+      5
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "Senate",
+        "yea",
+        "draw"
+      ],
+      [
+        "TX-SB-16-2025",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "SB 16 (89R) as filed (introduced text), to code his authorship on the bill as filed",
+      "Served Season 3 topic list, to confirm SB 1 (87(2)) is single-subject under V4.1"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 5  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-pfrost",
+    "person": "Paul K. Frost",
+    "politician_id": "799c1cea-4020-4c50-b7d1-1e9aac867529",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "MA-H-4359-AMDT-7-2022",
+        "House",
+        "sponsor",
+        "sponsor"
+      ]
+    ],
+    "needs_source": [
+      "Frost's current-term dates (seat start) to confirm the 2022 amendment is in-term for this office"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-pgreen",
+    "person": "Phil Green",
+    "politician_id": "8a6e0f99-acde-4ce1-a15a-cef54b7d8ad9",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      null
+    ],
+    "records": [
+      [
+        "MI-SB-303-2021",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Statutory definition of 'identification for election purposes' (MCL 168.2) as it applied to SB 303 (2021-2022), to test the photo condition",
+      "Record of Phil Green's Michigan House term covering October 2021",
+      "Confirmation that the enrolled SB 303 text matches substitute (S-3) concurred in by Roll Call 469"
+    ],
+    "queue": [
+      "skip   voting-rights                needs-source"
+    ]
+  },
+  {
+    "name": "vr-pscott",
+    "person": "Phillip A. Scott",
+    "politician_id": "597a4057-4ccc-43f6-bf97-bcc701d7e637",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      null
+    ],
+    "records": [
+      [
+        "VA-HB-1444-2023",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "skip   voting-rights                unanimous-blank"
+    ]
+  },
+  {
+    "name": "vr-rhise",
+    "person": "Ralph Hise",
+    "politician_id": "6085fe64-28cc-473d-a69f-d5905abb8aa3",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "NC-S-824-2018",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-rmcdougle",
+    "person": "Ryan T. McDougle",
+    "politician_id": "ceba2c53-8da5-4ef9-9e1b-57fdfba98f50",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "VA-SB-1256-2013",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Text of the Senate engrossed version SB1256ES1 (13104633D-ES1), the version McDougle voted on, to confirm it matches the chapter text",
+      "Any later vote by McDougle on Virginia voter-ID repeal (e.g. 2020 session) to check superseded-by-later"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-rmills",
+    "person": "Robby Mills",
+    "politician_id": "0e7af788-d735-46ec-9cd2-cd3818e002fd",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "KY-SB-2-2020",
+        "Senate",
+        "sponsor",
+        "sponsor"
+      ]
+    ],
+    "needs_source": [
+      "Kentucky Senate roll call, SB 2 (2020 RS), final passage and veto override, showing Mills's vote"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-rnichols",
+    "person": "Robert Nichols",
+    "politician_id": "1ea8b603-7f4d-40e5-b8c7-0ba19af17717",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-14-2011",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "SB 14 (82R, 2011) as filed (introduced text), to code Nichols's co-authorship on its own text"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-routman",
+    "person": "Rick Outman",
+    "politician_id": "e118ad3d-4541-4710-bf50-f643f07f7921",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      null
+    ],
+    "records": [
+      [
+        "MI-SB-303-2021",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "MCL 168.2 definition of 'identification for election purposes' (whether it requires a photo, D1)",
+      "MCL 168.523a(5), (6), and (8) as in force with SB 303 (provisional-ballot processing)",
+      "SB 303 (2021-2022) as introduced, for Outman's sponsorship of the bill as filed",
+      "Outman's current Senate term dates on file (prior-service check for the 2021 Senate record)"
+    ],
+    "queue": [
+      "skip   voting-rights                needs-source"
+    ]
+  },
+  {
+    "name": "vr-rware",
+    "person": "R. Lee Ware",
+    "politician_id": "af619400-b4b0-48f4-ba87-69a5ddd53301",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      null
+    ],
+    "records": [
+      [
+        "VA-HB-1444-2023",
+        "House",
+        "sponsor",
+        "sponsor"
+      ]
+    ],
+    "needs_source": [
+      "House roll call, HB 1444 (2023) third reading and passage, 02/02/23 (52-Y 48-N), with member names",
+      "Ware's own words on voter ID or photo ID"
+    ],
+    "queue": [
+      "skip   voting-rights                needs-source"
+    ]
+  },
+  {
+    "name": "vr-slightner",
+    "person": "Sarah Lightner",
+    "politician_id": "44215a1e-cb8f-41ae-8953-596868c36007",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      null
+    ],
+    "records": [
+      [
+        "MI-SB-303-2021",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "MCL 168.2 definition of 'identification for election purposes' as in force in 2021 (whether it states a photo condition), for reviewer reference",
+      "Confirmation that the enrolled SB 303 text is the Senate substitute (S-3) concurred in by Roll Call No. 469"
+    ],
+    "queue": [
+      "skip   voting-rights                needs-source"
+    ]
+  },
+  {
+    "name": "vr-srasoul",
+    "person": "Sam Rasoul",
+    "politician_id": "307597bd-3a05-41ad-a991-a7325ece5b5f",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "House",
+        "yea",
+        "draw"
+      ],
+      [
+        "VA-HB-19-2020",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-ssimonds",
+    "person": "Shelly A. Simonds",
+    "politician_id": "c25726d9-566e-4283-b35c-c608b921599f",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-ssurovell",
+    "person": "Scott A. Surovell",
+    "politician_id": "f3ffde61-ca65-4028-8552-2d4e9a9c6055",
+    "level": "state",
+    "chair": 2,
+    "blank_reason": null,
+    "expected": [
+      2
+    ],
+    "records": [
+      [
+        "VA-HB-19-2020",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 2  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-stoth",
+    "person": "Steve Toth",
+    "politician_id": "579a5a6f-c12e-4f01-af74-ec30f6bfbafe",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "House",
+        "yea",
+        "draw"
+      ],
+      [
+        "TX-SB-1-2021",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [
+      "Season 3 served-topic list, to confirm SB 1 (87(2)) is single-subject under V4.1",
+      "Steve Toth's current Texas House term dates, to confirm the 2021 House record is in-term"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 1/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-swest",
+    "person": "Stephen West",
+    "politician_id": "e1b781c8-8cb2-4254-9f34-51fb567a4852",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "KY-SB-2-2020",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Introduced text of KY SB 2 (2020 RS), to code West's co-sponsorship on the bill as filed"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-swomack",
+    "person": "Steve Womack",
+    "politician_id": "2392d04a-fdb9-45be-8a02-3bb60a1517aa",
+    "level": "federal",
+    "chair": 5,
+    "blank_reason": null,
+    "expected": [
+      5
+    ],
+    "records": [
+      [
+        "US-S-1383-2026",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Season 3 served-topic list, to confirm no non-ID operative part of S. 1383 House amendment (e.g. the DHS removal-investigation clause) is on-question evidence for another served topic (single-subject test)"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 5  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-talexander",
+    "person": "Thomas C. Alexander",
+    "politician_id": "6da277b4-ff35-4147-8f46-cadbc595ea45",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "SC-H-3003-2011",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-tbojanowski",
+    "person": "Tina Bojanowski",
+    "politician_id": "bddc46b3-f049-4d3a-852d-0a7ee6022bc0",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "KY-SB-2-2020",
+        "House",
+        "yea",
+        "draw"
+      ],
+      [
+        "KY-SB-2-2020",
+        "House",
+        "nay",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 1/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-thunter",
+    "person": "Todd Hunter",
+    "politician_id": "d66fb5fd-7b56-47a5-9762-e29b7403bb39",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      3,
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "",
+        "yea",
+        "season2-row"
+      ],
+      [
+        "TX-SB-14-2011",
+        "",
+        "yea",
+        "season2-row"
+      ],
+      [
+        "TX-SB-5-2017",
+        "",
+        "yea",
+        "season2-row"
+      ]
+    ],
+    "needs_source": [
+      "Season 3 served-topic list, to confirm that no operative part of TX SB 1 (87th, 2nd C.S., 2021) is evidence for another served topic (single-subject test)",
+      "TX SB 5 (85R, 2017) and SB 14 (82R, 2011) as filed, to code Hunter's co-sponsorships"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-twilson",
+    "person": "Terry Wilson",
+    "politician_id": "56b91150-194f-4699-ba31-e944443eacae",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "TX-SB-1-2021",
+        "House",
+        "yea",
+        "carry"
+      ]
+    ],
+    "needs_source": [
+      "Season 3 served-topic list, to confirm SB 1 (2021) has no operative part that is evidence for another served topic (single-subject test)",
+      "Version of SB 1 (87th, 2nd C.S.) as Wilson cosponsored it in the House"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-twilt",
+    "person": "Tony O. Wilt",
+    "politician_id": "742d2c42-b277-4859-9269-1abc55affbe2",
+    "level": "state",
+    "chair": null,
+    "blank_reason": "direction-only",
+    "expected": [
+      null
+    ],
+    "records": [
+      [
+        "VA-HB-1444-2023",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Operative text of HB 1444 (2023) committee substitute 23104635D-H1 / HB1444H1 (the bill-text snapshot returned an error page), to check whether it states that the provisional ballot counts once the voter shows photo ID, and to confirm the photo condition",
+      "Contents of the absentee-voting part named in the HB 1444 title, for the single-subject check"
+    ],
+    "queue": [
+      "skip   voting-rights                needs-source"
+    ]
+  },
+  {
+    "name": "vr-twright",
+    "person": "Thomas C. Wright, Jr.",
+    "politician_id": "ff50eaf3-0f12-455e-85b2-bc37f1e542db",
+    "level": "state",
+    "chair": 4,
+    "blank_reason": null,
+    "expected": [
+      4
+    ],
+    "records": [
+      [
+        "VA-SB-1256-2013",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "Text of Va. Code \u00a7 24.2-653 as in force after Chapter 725 (2013), to confirm no sworn-statement path lets a provisional ballot count without ID (D3)",
+      "Confirmation of Thomas C. Wright, Jr.'s House of Delegates service in the 2013 session"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 4  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-vsawyer",
+    "person": "Vickie Sawyer",
+    "politician_id": "981c5d04-fbc8-4642-b145-f72fcdd2dc40",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "NC-S-824-2018",
+        "Senate",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-vswanson",
+    "person": "Valoree Swanson",
+    "politician_id": "7c2c52a2-4047-4090-bc88-e543aaaeba50",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "TX-SB-5-2017",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "SB 5 (85R) House committee/engrossed version text that Swanson cosponsored"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  },
+  {
+    "name": "vr-whixon",
+    "person": "William M. \"Bill\" Hixon",
+    "politician_id": "ce66d36d-d959-40cc-8b2b-565bb57f63bf",
+    "level": "state",
+    "chair": 3,
+    "blank_reason": null,
+    "expected": [
+      3
+    ],
+    "records": [
+      [
+        "SC-H-3003-2011",
+        "House",
+        "yea",
+        "draw"
+      ]
+    ],
+    "needs_source": [
+      "H. 3003 (2011-2012) as introduced/prefiled 12/7/2010 bill text, to code Hixon's co-sponsorship (added 1/18/2011) on the version he sponsored"
+    ],
+    "queue": [
+      "queue  voting-rights                chair 3  single-source 2/2 source(s) publishable  [needs-source, confirm-failed]"
+    ]
+  }
+]
