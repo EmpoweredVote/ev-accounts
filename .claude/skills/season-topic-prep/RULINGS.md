@@ -35,8 +35,8 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
   to any voter keeps a photo-ID law at rung 3, even with a cure).
 - **Date and source:** 2026-10-22, Chris Andrews, season-topic-prep fixes (finding #50,
   `.planning/research/s3-prep-voting-rights/skill-test-notes.md`); generalises D3 (2026-10-21).
-- **Scope:** every topic. The codebook does not yet carry this line (its header still scopes D3 to voting-rights);
-  a codebook line is owed before coding applies it outside `voting-rights`.
+- **Scope:** every topic. Written into the codebook (header line "Clarified 2026-10-22" and V4.2 "An escape open
+  to everyone", still 0.6).
 
 ### Small-body rule
 - **Ruling:** on a body of 10 or fewer voting members the tally does not decide `near-unanimous`. Such a vote can
