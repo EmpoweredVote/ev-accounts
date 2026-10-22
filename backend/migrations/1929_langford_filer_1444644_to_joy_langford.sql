@@ -112,7 +112,18 @@ UPDATE transparent_motivations.politician_sources
                      || ' name -- which is why migration 1790 purged it from Kyle Langford rather'
                      || ' than reassigning it -- but LA County NetFile indexes the same sosId under'
                      || ' candidate "Langford, Joy" (entity 208822159), the only Langford'
-                     || ' candidate in the county.',
+                     || ' candidate in the county.'
+                     -- check-cal-access-attribution.mjs is a ratchet: a cal_access source that is
+                     -- `confirmed` publishes on a voter's page, so anything newly confirmed must
+                     -- carry a machine-readable trail. It matches "adjudicated_by" as a JSON KEY,
+                     -- deliberately, so prose saying "adjudicated" does not satisfy it.
+                     || ' | {"adjudicated_by":"chris@empowered.vote","adjudication":"LA County'
+                     || ' NetFile candidate entity 208822159 (Langford, Joy) lists all 16 filings'
+                     || ' by committee entity 208822164, sosId 1444644 -- the same filer id space'
+                     || ' as cal_access.external_id. Cal-Access''s own candidate page was'
+                     || ' unreachable (Incapsula refuses curl, headless and headful Chromium), so'
+                     || ' the county agency that receives the filings was used instead.'
+                     || ' Verified 2026-10-21."}',
        updated_at = now()
  WHERE id = '6f8cf7fd-f28d-4a42-9ddf-9fe36b086f3d';
 
