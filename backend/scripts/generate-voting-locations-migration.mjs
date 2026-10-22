@@ -94,9 +94,13 @@ for (const s of cfg.early_vote_sites) {
 }
 out.push('');
 
+// ST_MakeValid: ArcGIS's GeoJSON can emit an enclave's ring as a second SHELL
+// ("nested shells") instead of a hole. Monroe had two (RICHLAND 01, 03): each
+// enclave was also listed under its real precinct, so the raw shapes covered those
+// few houses twice. MakeValid turns the nested shell back into a hole.
 for (const p of precincts.sort((a, b) => a.code.localeCompare(b.code))) {
   out.push(
-    `INSERT INTO essentials.voting_precincts (set_id, code, geometry) VALUES (${setId}, ${q(p.code)}, ST_Multi(ST_SetSRID(ST_GeomFromGeoJSON(${q(JSON.stringify(p.geometry))}), 4326)));`,
+    `INSERT INTO essentials.voting_precincts (set_id, code, geometry) VALUES (${setId}, ${q(p.code)}, ST_Multi(ST_CollectionExtract(ST_MakeValid(ST_SetSRID(ST_GeomFromGeoJSON(${q(JSON.stringify(p.geometry))}), 4326)), 3)));`,
   );
 }
 out.push('');
@@ -133,7 +137,7 @@ BEGIN
   SELECT string_agg(code, ', ') INTO bad
     FROM essentials.voting_precincts WHERE set_id = sid AND NOT ST_IsValid(geometry);
   IF bad IS NOT NULL THEN
-    RAISE NOTICE 'precincts with invalid geometry (ST_Covers still works; check if lookups look wrong): %', bad;
+    RAISE EXCEPTION 'precincts with invalid geometry after ST_MakeValid: %', bad;
   END IF;
 END $$;`);
 
