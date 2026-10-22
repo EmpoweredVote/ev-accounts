@@ -200,3 +200,80 @@ intact, Hernandez's `local-immigration` row unmoved at chair 1 with its original
 `check:stance-sources` **identical before and after** (790 across 4 checks, no baseline moved).
 No re-seats in this migration, so the chair-evidence CSV gate has nothing to score — it scores only
 valued rows.
+
+---
+
+## 7. Migration 1932 — seeding the on-axis rows 1930 left empty
+
+**2026-10-22.** Closes the gap §6 named: Soto-Martinez and Ishii had **no `local-immigration` row
+at all**, so blanking their deportation chairs left verified evidence with nowhere on-axis to sit.
+
+⚖⚖ **A SEED IS A BIGGER CLAIM THAN A BLANK.** Blanking needs only a showing that the evidence does
+not reach the chair; seating asserts affirmatively that this person holds this stance. Both rows
+were therefore built from **primary documents read in full** — the enacted ordinance in each city,
+plus a primary record of the person's own act.
+
+### Chair 1 has two limbs, and both had to be found in the enacted text
+
+> *"Refuse all ICE detainers; prohibit local employees from sharing immigration status information
+> with federal agencies"*
+
+Chair 3, the nearest weaker neighbour, carries **neither** limb (*"follow federal law as required
+but do not use local resources for proactive immigration enforcement"*). That is exactly why the
+text had to be read rather than assumed — a sanctuary ordinance could easily be a chair-3 ordinance.
+
+| person | their own act (primary record) | enacted text |
+|---|---|---|
+| **Hugo Soto-Martinez** | LA council file 23-0243 lists him as a **Mover**; originating motion 2023-06-09 is *"Motion (Soto-Martinez - Rodriguez)"* | Ord. 188441 §19.191(c) bars responding to "any administrative warrant or other request to detain, transfer, or notify any Immigration Agent"; §19.192 bars providing data that can "determine or trace a person's Citizenship or Immigration Status" |
+| **Adena Ishii** | City Attorney's report to Council, 2025-09-09: *"In January 2025, the Mayor convened a Sanctuary City Task Force that recommended codifying these sanctuary policies in an ordinance"* | Ord. 7,984-N.S. §13.114.030(C)(5) bars "Complying with any civil immigration warrant or request to detain, transfer, or notify"; (C)(4) bars "Disseminating or disclosing Protected Personal Information to Immigration Authorities" |
+
+⚠ **Ishii's chair does NOT rest on the vote.** Ordinance 7,984-N.S. passed **9-0, none absent**, and
+a unanimous vote is weak evidence of an individual's position — the rule that blanked Newhouse on
+385-41. It rests on her convening the task force that produced the ordinance, an act recorded in an
+official City Attorney report, with the recorded Aye as corroboration.
+⚠ Berkeley's §13.114.050 exceptions (consent, necessity to provide a City service, or where
+required by state/federal law incl. 8 U.S.C. 1373) do **not** reopen either limb — none permits
+honouring a civil detainer.
+
+### 🔴 The press had the LA carve-out BACKWARDS, and the enacted text says so
+
+§6 blanked three rows partly because the reported LAPD "serious offenses" carve-out could not be
+verified. **The enacted text was obtained for this pass** (the City Clerk PDF has a text layer;
+`pdftotext` reads it — the earlier 403s were the amlegal code library, not the Clerk).
+
+**Sec. 19.191(b)** does not *permit* cooperation for violent felons. It **requires** that, before a
+probable-cause arrest for illegal re-entry under 8 U.S.C. §1326(a) carrying the §1326(b)(2)
+aggravated-felony enhancement, *"City personnel shall obtain approval from their respective
+department's designated immigrant affairs liaison."* **A restriction, reported as a permission.**
+✅ **§6's blanks were right, and now rest on the enacted text rather than on "could not verify".**
+
+### ⚠⚠ Found while writing this, recorded not fixed: Ishii's Season 1 row is INVERTED
+
+Her **Season 1** `local-immigration` row sits at **chair 5** — *"Direct local police to actively
+assist with immigration enforcement and support federal detention operations"* — while its own
+stored reasoning says she *"reaffirmed Berkeley's sanctuary city status … stating 'we will not be
+doing that' regarding ICE assistance"* and *"led passage of a codified sanctuary ordinance in
+September 2025"*. **The row asserts the opposite of the evidence printed beneath it.**
+🔑 It carries the **same `topic_revision_id`** as the Season 2 ladder, so this is **not** a
+season-remap artifact — it is a chair inversion.
+🔴 **Season 1 is closed and migration 1932 does not touch it.** ▶ Logged for a pass that can; worth
+running `chair-inversion-scan.mjs` over Season 1 to see whether it is systemic.
+🔑 It also **independently corroborates the seed**: a separate research pass, working from different
+sources, likewise recorded Ishii as having *led* the ordinance.
+
+### A guard bug worth keeping
+
+The first draft asserted that **no** Season 1 row existed for these pairs, and failed its own dry
+run — **both targets already had one**, untouched since 2026-08-26. The assertion was testing a
+pre-existing condition it had not caused. Replaced with a **snapshot-and-compare**, the same shape
+1927 and 1930 use. ⚖ *"Season 1 must not move"* is a delta, never an absence.
+
+### Gates
+
+`audit-chair-evidence --csv` **pre-write** (2/2 name an instrument; the CSV is generated **from the
+migration file** so the gate tests the text that will actually be written) → dry run → apply →
+`--check` post-write reading **2 rows** → direct SQL outside the migration: both at chair 1 with two
+primary citations each, Season 1 unmoved at its original `updated_at`, the three deportation blanks
+still blank, Hernandez's row untouched. `check:stance-sources` **identical before and after**, with
+`ANSWER_WITHOUT_CONTEXT` still 0 — the context rows were inserted **before** the answers for exactly
+that reason.
