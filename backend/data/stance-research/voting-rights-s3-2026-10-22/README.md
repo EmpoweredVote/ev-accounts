@@ -39,8 +39,23 @@ multi-subject) and David Meade (KY SB 2: read the eight impediments as named exe
 those two bills was seated as Stage 3 expected. Of the 9 blanks, 7 were expected (VA HB 1444 under ruling D1,
 MI SB 303 under DC1). The 6 carried seats (Wilson, Gates, VanDeaver, Toth, Hunter, O'Quinn) all came out at 4.
 
-Pre-write gate: `audit-chair-evidence.mjs --csv` fails 1 of 66 — Paul K. Frost, whose reasoning names
-"H.4359 House Amendment #7", which the lexical pattern does not recognise.
+Pre-write gate: `audit-chair-evidence.mjs --csv` first failed 1 of 66 — Paul K. Frost, whose reasoning names
+"H.4359 House Amendment #7", which the lexical pattern did not recognise. The pattern now admits the Massachusetts
+form (eighth widening, `chair-evidence-patterns.mjs`) and the gate passes 66 of 66.
 
 Every queued row carries `confirm-failed` (no source profile for most of these sites); 31 seated rows also carry
 `needs-source` (mostly term dates). Coder cost about $178 (API-price equivalent), including superseded runs.
+
+## Written (Chris Andrews' yes, 2026-10-22)
+
+- 57 rows queued (`store-snapshots` / `code-stance-batch --models "opus"` / `queue-coded-batch --include-needs-source`,
+  all `--apply --season draft`) and approved under Chris Andrews' admin account on his instruction
+  (`resolveResearchReview`). The draft Season 3 now holds 57 voting-rights answers (2=10, 3=20, 4=17, 5=10), 57
+  context rows and 110 evidence snippets. Blanks are not written (the coder pipeline queues chairs only).
+- needs-source, checked before approval: every bill here is single-subject for Season 3 under codebook 0.6
+  (Stage 1 verdicts in the source store), and every seated Yea is a member confirmed on the vote date by the Stage 0
+  identity check, except the two carry-list records Chris ruled on 2026-10-21. The other requests ask for as-filed
+  text to code co-sponsorships on top of a vote that already decides the chair.
+- Seat rate: `topic:seat-rate --season draft` reads written answers only, so it prints 57/57. With the blanks
+  (`rows.tsv`, `--research-only`): **57 of 66 = 86.4%**; 7 blanks `wording` (VA HB 1444, MI SB 303), 2 unclassified
+  (Geren, Meade).

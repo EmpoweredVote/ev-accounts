@@ -45,6 +45,14 @@ describe('NAMES_INSTRUMENT — what each widening admits', () => {
     expect(NAMES_INSTRUMENT.test('voted for H.R. 8')).toBe(true);
   });
 
+  it('sees a Massachusetts bill number — the eighth widening', () => {
+    expect(NAMES_INSTRUMENT.test('Frost authored H.4359 House Amendment #7 (2022), which requires valid photo identification')).toBe(true);
+    expect(NAMES_INSTRUMENT.test('voted for S.2554 on final passage')).toBe(true);
+    // Refused: an initial, and a spaced short number.
+    expect(NAMES_INSTRUMENT.test('as H. Smith argued in committee')).toBe(false);
+    expect(NAMES_INSTRUMENT.test('see H. 12 of the report')).toBe(false);
+  });
+
   it('sees a Miami-Dade County resolution — the sixth widening', () => {
     // The three instruments the transportation and housing rows are seated on.
     expect(NAMES_INSTRUMENT.test('She is the prime sponsor of R-551-26, adopted in 2026')).toBe(true);
