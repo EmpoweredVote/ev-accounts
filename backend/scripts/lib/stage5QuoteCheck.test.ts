@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { namesParty, shownSha256, normaliseForMatch, passageOnPage, QuoteCheckSchema, readQuoteChecks } from './stage5QuoteCheck.js';
+import { namesParty, pageText, shownSha256, normaliseForMatch, passageOnPage, QuoteCheckSchema, readQuoteChecks } from './stage5QuoteCheck.js';
 
 const PID = '11111111-1111-4111-8111-111111111111';
 const check = (over: Record<string, unknown> = {}) => ({
@@ -91,5 +91,22 @@ describe('readQuoteChecks', () => {
 describe('shownSha256', () => {
   it('is the sha256 of the exact text', () => {
     expect(shownSha256('abc')).toBe('ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
+  });
+});
+
+describe('QuoteCheckSchema timestamps', () => {
+  it('needs an ISO timestamp with a zone, so "newest" sorts by time, not text', () => {
+    expect(QuoteCheckSchema.safeParse(check({ at: '2026-10-22 01:00' })).success).toBe(false);
+    expect(QuoteCheckSchema.safeParse(check({ at: '2026-10-22T01:00:00-05:00' })).success).toBe(true);
+  });
+});
+
+describe('pageText', () => {
+  it('turns HTML into text: drops scripts and tags, decodes entities', () => {
+    const html = '<html><script>var x="Every";</script><p>She said: &ldquo;Every&nbsp;voter&rsquo;s <b>ballot</b> counts.&rdquo; &amp; more</p></html>';
+    const t = pageText(html);
+    expect(t).not.toContain('var x');
+    expect(passageOnPage('"Every voter\'s ballot counts."', t)).toBe(true);
+    expect(t).toContain('& more');
   });
 });
