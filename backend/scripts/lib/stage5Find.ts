@@ -17,12 +17,11 @@ import {
   FindingSchema, PersonFindingsSchema, ProvenanceSchema, findingId, searchedFor, storePaths,
   type Finding, type PersonFindings,
 } from './sourceStore.js';
+import { PARTY_RE } from './stage5QuoteCheck.js';
 import type { RosterRow } from './stage5Roster.js';
 import type { Level } from '../../src/lib/topicApplicability.js';
 
 export type Unit = { level: Level; state?: string };
-
-const PARTY_RE = /\b(republicans?|democrats?|democratic party|libertarians?|GOP|DNC|RNC|green party|independent party)\b/i;
 
 /** `federal`, `state:in`, `local:in` → a unit. */
 export function parseUnit(s: string): Unit {
