@@ -818,6 +818,8 @@ export interface ResearchState {
  * published answer, in any season, is not 0) returns nothing, so this read never contradicts the compass.
  */
 export async function getResearchStates(politicianId: string): Promise<ResearchState[]> {
+  // CA_0322 is applied by hand after the Stage 5 early check, and this route ships before it. Until the
+  // table exists nobody has been researched, so the answer is [] rather than a 500 on every profile.
   const { rows } = await pool.query<{ topic_id: string; outcome: ResearchState['outcome']; researched_on: string; passages: ResearchPassage[] | null }>(
     `-- @zero-scope: counts-blanks — shows voters that a person was researched and holds no seat; the
      -- outcome filter sits OUTSIDE the newest-season collapse, so a newer seat hides an older blank.
@@ -849,7 +851,10 @@ export async function getResearchStates(politicianId: string): Promise<ResearchS
               ) na WHERE na.value <> 0)
       ORDER BY latest.topic_id ASC`,
     [politicianId]
-  );
+  ).catch((err: { code?: string }) => {
+    if (err?.code === '42P01') return { rows: [] };
+    throw err;
+  });
   return rows.map((r) => ({
     topic_id: r.topic_id,
     outcome: r.outcome,
