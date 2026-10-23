@@ -228,9 +228,11 @@ a co-sponsorship seats a chair by itself (design spec §3.1 proposed a second so
 - **Scope:** every topic.
 
 ### Quotes that name a party are never shown
-- **Ruling:** the quote check fails any passage that names a political party, so it is never shown to voters.
-  Quotes are never edited to remove the name. The coder picks another passage, or the person shows no quote.
-- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 pilot (design §8).
+- **Ruling:** the quote check fails any passage that names a political party, or uses a party colour as a label
+  ("red states", "a blue district"), so it is never shown to voters. Quotes are never edited to remove the name or
+  colour. The coder picks another passage, or the person shows no quote.
+- **Date and source:** 2026-10-22, Chris Andrews, Stage 5 pilot (design §8); colours added the same day, Chris
+  Andrews, Phase B review (EmpoweredVote/ev-accounts#1125).
 - **Scope:** every topic.
 
 ## Topic-scoped readings
