@@ -2,17 +2,19 @@
  * topic-stage5-write.ts — Stage 5 step 7: write a batch's research outcomes and checked passages to the DRAFT season.
  *
  *   npm run topic:stage5-write --prefix backend -- --topic <key> --research <abs topic folder> --season draft
- *        --csv-out <abs research.csv> [--units federal,state:in,…] [--store <abs store root>] [--apply]
+ *        --csv-out <abs research.csv> [--units federal,state:in,…] [--store <abs store root>]
+ *   npm run topic:stage5-write … (same flags, without --csv-out) --apply
  *
  * Reads `<research>/stage5/roster.tsv`, every `<research>/stage5/codes/<politician_id>.json`, the people's saved
  * findings, and `<research>/stage5/quote-checks.jsonl` (templates/stage5-quote-check-prompt.md), and plans the
- * batch (lib/stage5Write.planBatch). `--csv-out` receives the seats and blanks as research.csv for the existing
- * pipeline (stance-gate.ts → verify-stance-research.ts --season draft); this script never writes answers.
+ * batch (lib/stage5Write.planBatch). In a dry run `--csv-out` receives the seats and blanks as research.csv for the
+ * existing pipeline (stance-gate.ts → verify-stance-research.ts --season draft); this script never writes answers.
  *
  * DRY RUN BY DEFAULT: it reads the database only to resolve the season and prints what it would write.
  * `--apply` writes inform.topic_research_outcomes and inform.own_words_passages in one transaction, and only
  * after Chris Andrews' yes for this batch (Global Constraints). `--season` must name the draft season
- * (`draft`, or the draft season's uuid); `open` and any other season are refused.
+ * (`draft`, or the draft season's uuid); `open` and any other season are refused. `--apply` also refuses while
+ * any code is refused (lib/stage5Write.applyBlocker), so no earlier write is left stale.
  *
  * Opens its own pg Pool from DATABASE_URL, loaded by lib/cliEnv.ts; never prints it.
  * Exit 0 = planned (or written); 3 = some codes or passages were refused (listed); 2 = a usage or input error.
@@ -28,7 +30,7 @@ import { Stage5CodeSchema, type Stage5Code } from './lib/stage5Code.js';
 import { parseUnit } from './lib/stage5Find.js';
 import { readQuoteChecks } from './lib/stage5QuoteCheck.js';
 import { parseRosterTsv } from './lib/stage5Roster.js';
-import { applyBatch, assertDraftSeason, planBatch } from './lib/stage5Write.js';
+import { applyBatch, applyBlocker, assertDraftSeason, planBatch } from './lib/stage5Write.js';
 
 const backendDir = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 loadBackendEnv(backendDir);
@@ -43,13 +45,14 @@ async function main(): Promise<number> {
   const topic = flag('--topic');
   if (!topic) throw new Error('usage: topic-stage5-write --topic <key> --research <abs dir> --season draft --csv-out <abs file> [--apply] (see the file header)');
   const research = abs('--research', flag('--research'));
-  const csvOut = abs('--csv-out', flag('--csv-out'));
-  const store = flag('--store') ? abs('--store', flag('--store')) : join(backendDir, 'data', 'source-store');
   const apply = hasFlag(process.argv, '--apply');
+  // The dry run writes research.csv; --apply writes the database only, so the same command plus --apply works.
+  const csvOut = apply ? undefined : abs('--csv-out', flag('--csv-out'));
+  const store = flag('--store') ? abs('--store', flag('--store')) : join(backendDir, 'data', 'source-store');
   if (!process.argv.includes('--season')) throw new Error('--season draft is required: Stage 5 writes to the draft season only');
   const seasonSpec = seasonSpecFromArgv(process.argv);
   if (seasonSpec === 'open') throw new Error('--season open is refused: Stage 5 writes to the draft season only');
-  if (existsSync(csvOut)) throw new Error(`${csvOut} already exists; refusing to overwrite it`);
+  if (csvOut && existsSync(csvOut)) throw new Error(`${csvOut} already exists; refusing to overwrite it`);
 
   let roster = parseRosterTsv(readFileSync(join(research, 'stage5', 'roster.tsv'), 'utf8'));
   const unitsFlag = flag('--units');
@@ -83,13 +86,13 @@ async function main(): Promise<number> {
     assertDraftSeason(season);
 
     const plan = planBatch(codes, findings, checks, { seasonId: season.id, names });
-    writeFileSync(csvOut, plan.researchCsv, { flag: 'wx' });
+    if (csvOut) writeFileSync(csvOut, plan.researchCsv, { flag: 'wx' });
 
     const by = (o: string) => plan.outcomes.filter((x) => x.outcome === o).length;
     console.log(`topic ${topic} — season ${season.number} (${season.name}) [draft]; ${codes.length} codes read`);
     console.log(`outcomes:  ${plan.outcomes.length} (seated ${by('seated')}, doesnt-fit ${by('doesnt-fit')}, no-stance ${by('no-stance')})`);
     console.log(`passages:  ${plan.passages.length} (own-words ${plan.passages.filter((p) => p.kind === 'own-words').length}, local-record ${plan.passages.filter((p) => p.kind === 'local-record').length})`);
-    console.log(`research.csv: ${csvOut} (run stance-gate.ts and verify-stance-research.ts --season draft on it)`);
+    if (csvOut) console.log(`research.csv: ${csvOut} (run stance-gate.ts and verify-stance-research.ts --season draft on it)`);
     if (plan.notInCsv.length) {
       console.log(`not in research.csv (${plan.notInCsv.length}) — add by hand:`);
       for (const r of plan.notInCsv) console.log(`  ${r.politician_id}  ${r.reason}`);
@@ -102,6 +105,8 @@ async function main(): Promise<number> {
     if (!apply) {
       console.log('DRY RUN — nothing written to the database. Re-run with --apply after Chris Andrews\' yes for this batch.');
     } else {
+      const blocker = applyBlocker(plan);
+      if (blocker) { console.error(`NOT WRITTEN: ${blocker}`); return 3; }
       const n = await applyBatch(q, plan, season.id);
       console.log(`WROTE ${n.outcomes} outcomes and ${n.passages} passages to the draft season (hidden from voters until it opens).`);
     }

@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest';
-import { namesParty, normaliseForMatch, passageOnPage, QuoteCheckSchema, readQuoteChecks } from './stage5QuoteCheck.js';
+import { namesParty, shownSha256, normaliseForMatch, passageOnPage, QuoteCheckSchema, readQuoteChecks } from './stage5QuoteCheck.js';
 
 const PID = '11111111-1111-4111-8111-111111111111';
 const check = (over: Record<string, unknown> = {}) => ({
   finding_id: 'f1', politician_id: PID, topic_key: 'voting-rights', verdict: 'passed',
-  on_page: true, own_words: true, on_topic: true, names_party: false,
+  on_page: true, own_words: true, on_topic: true, names_party: false, shown_sha256: 'a'.repeat(64),
   reason: 'On the page word for word; their own floor speech; about voter ID.', checker: 'quote-checker', at: '2026-10-22T00:00:00Z', ...over,
 });
 
@@ -39,6 +39,16 @@ describe('namesParty', () => {
     expect(namesParty('Our Democratic Party platform says so.')).toBe(true);
     expect(namesParty('the GOP plan')).toBe(true);
   });
+  it('finds the common forms: Democratic as a name, Dems, GOPers, DFL, minor parties', () => {
+    for (const t of ['Democratic lawmakers blocked it.', 'the Dems want this', 'GOPers in the House', 'the DFL caucus',
+      'the Working Families Party', 'the Independence Party', 'Tea Party members', 'the Conservative Party line']) {
+      expect(namesParty(t), t).toBe(true);
+    }
+  });
+  it('finds party colours used as labels', () => {
+    for (const t of ['red states do this', 'in blue states', 'a red county', 'blue districts']) expect(namesParty(t), t).toBe(true);
+    expect(namesParty('a red light camera')).toBe(false);
+  });
   it('passes plain words', () => {
     expect(namesParty('Every eligible voter should be able to vote.')).toBe(false);
     expect(namesParty('a democratic process')).toBe(false);
@@ -62,6 +72,9 @@ describe('QuoteCheckSchema', () => {
   it('refuses passed when the passage names a party', () => {
     expect(QuoteCheckSchema.safeParse(check({ names_party: true })).success).toBe(false);
   });
+  it('needs the sha256 of the text it checked', () => {
+    expect(QuoteCheckSchema.safeParse(check({ shown_sha256: 'abc' })).success).toBe(false);
+  });
   it('needs a reason', () => {
     expect(QuoteCheckSchema.safeParse(check({ reason: '' })).success).toBe(false);
   });
@@ -72,5 +85,11 @@ describe('readQuoteChecks', () => {
     const ok = JSON.stringify(check());
     expect(readQuoteChecks(`${ok}\n\n${ok}\n`)).toHaveLength(2);
     expect(() => readQuoteChecks(`${ok}\n${JSON.stringify(check({ own_words: false }))}\n`)).toThrow(/line 2/);
+  });
+});
+
+describe('shownSha256', () => {
+  it('is the sha256 of the exact text', () => {
+    expect(shownSha256('abc')).toBe('ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad');
   });
 });

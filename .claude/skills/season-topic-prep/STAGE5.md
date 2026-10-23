@@ -134,8 +134,10 @@ and appends one line per finding to `stage5/quote-checks.jsonl`. A passage **pas
 - it is on the page word for word (only whitespace, quote marks and long dashes may differ);
 - it is the person's own words (codebook V1);
 - it is on the topic;
-- it names no party.
+- it names no party and uses no party colour as a label;
+- for a local record, the plain-words note voters see is a fair summary of the act.
 
+Each check also records the sha256 of the exact text it checked, so a passage or note edited later has no check.
 A passage that names a party fails and is never edited (RULINGS.md "Quotes that name a party are never shown").
 Run the check again every time you write a batch. The newest check for a finding wins.
 
@@ -149,8 +151,9 @@ It reads the database only to find the draft season. It prints:
 
 - the outcome rows by type, and the passages it would store;
 - **not in research.csv**: blanks whose detail fits no single codebook V6 reason. Add those rows by hand.
-- **refused**: codes that fail `checkCode`, and passages with no passed check or that name a party. Those
-  passages stay off the page; the person's outcome row is still written.
+- **refused**: codes that fail `checkCode` (`code`), and passages kept off the page (`passage`): no passed check,
+  text changed since its check, a party name, or a local record with none of their own words beside it. The
+  person's outcome row is still written for a refused passage.
 
 It also writes `research.csv` for the seats and blanks. Run that file through the research-stances pipeline with
 `--season draft`: `stance-gate.ts`, then the pre-write `audit-chair-evidence.mjs --csv`, then
@@ -158,7 +161,9 @@ It also writes `research.csv` for the seats and blanks. Run that file through th
 `statement-evidence` hold until the topic's blind check passes (step 8).
 
 **c. Write.** 🛑 Show the runner the dry-run counts and the refused list. After their yes **for this batch**, run
-the same command with `--apply`. It writes the outcomes and passages in one transaction. Running it again for the
+the same command with `--apply` and without `--csv-out`. It writes the outcomes and passages in one transaction.
+It refuses to run while any code is refused: fix those codes and dry-run again first, or an earlier write for
+those people would stay live. Running it again for the
 same people replaces their outcome and their passages. It refuses any season but the draft one.
 
 **What voters see when the season opens.** The profile reads
