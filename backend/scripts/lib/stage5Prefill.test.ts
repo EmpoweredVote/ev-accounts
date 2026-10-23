@@ -40,6 +40,7 @@ describe('prefillFindings', () => {
       url: 'https://iga.in.gov/IN-SB-483-2011', subjects: ['voter ID at the polls'], topic_keys: ['voting-rights'],
     });
     expect(pf.findings[0].note).toMatch(/gate: near-unanimous/);
+    expect(pf.findings[0].gate_by_topic).toEqual({ 'voting-rights': 'near-unanimous' });
   });
 
   it('ignores a vote the census did not count (an earlier reading)', () => {
@@ -71,6 +72,23 @@ describe('prefillFindings', () => {
       [inst('IN-SB-483-2011', [])], [{ ...gate('IN-SB-483-2011'), vote_date: '', motion: 'something else' }], roster, 'voting-rights', subjects,
     );
     expect(skipped).toEqual([expect.objectContaining({ instrument_id: 'IN-SB-483-2011' })]);
+  });
+
+  it('turns a roster sponsor into a sponsor finding, and lists an unmatched sponsor', () => {
+    const i = inst('IN-SB-483-2011', []);
+    i.sponsors = [{ name: 'A One', politician_id: P1, role: 'prime' }, { name: 'Z Nobody', role: 'co' }];
+    const { findings, unmatched } = prefillFindings([i], [gate('IN-SB-483-2011')], roster, 'voting-rights', subjects);
+    expect(findings).toHaveLength(1);
+    expect(findings[0].findings[0]).toMatchObject({ kind: 'record', act: 'sponsor', instrument_id: 'IN-SB-483-2011', date: '2011', date_precision: 'year' });
+    expect(unmatched).toEqual([expect.objectContaining({ name: 'Z Nobody', vote: 'co' })]);
+  });
+
+  it('writes one finding when two census rows resolve to the same vote', () => {
+    const { findings } = prefillFindings(
+      [inst('IN-SB-483-2011', [{ name: 'One', politician_id: P1, vote: 'yea' }])],
+      [gate('IN-SB-483-2011'), { ...gate('IN-SB-483-2011'), motion: 'final passage (as printed)' }], roster, 'voting-rights', subjects,
+    );
+    expect(findings[0].findings).toHaveLength(1);
   });
 
   it('lists a member with no politician id as unmatched, for the identity check', () => {
