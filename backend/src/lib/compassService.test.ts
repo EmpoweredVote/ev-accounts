@@ -530,11 +530,17 @@ describe('getResearchStates — Stage 5 research outcomes, newest published seas
     expect(sql).toContain('@zero-scope: counts-blanks');
   });
 
-  it('hides a topic a published answer of the same or a newer season seats', async () => {
+  // The compass shows the person's NEWEST published answer in any season (getPoliticianAnswers). A seat
+  // there must hide the research state even when it is OLDER than the outcome (an outcome with no answer
+  // row of its own season, e.g. a blank left out of research.csv), or the two reads disagree.
+  it('hides a topic the compass seats: the same newest-published-answer collapse, any season', async () => {
     mockQuery.mockResolvedValue({ rows: [] });
     await getResearchStates('p1');
     const sql = mockQuery.mock.calls[0][0] as string;
-    expect(sql).toMatch(/NOT EXISTS[\s\S]*inform\.politician_answers[\s\S]*value <> 0[\s\S]*number >= latest\.season_number/);
+    const guard = sql.slice(sql.indexOf('NOT EXISTS'));
+    expect(guard).toMatch(/DISTINCT ON \(\s*a\.topic_id\s*\)[\s\S]*inform\.politician_answers[\s\S]*ORDER BY\s+a\.topic_id,\s*sa\.number DESC/);
+    expect(guard).toMatch(/\)\s*na\s+WHERE\s+na\.value <> 0/);
+    expect(guard).not.toMatch(/number >= latest\.season_number/);
   });
 
   it('attaches each topic\'s passages and returns plain JSON', async () => {

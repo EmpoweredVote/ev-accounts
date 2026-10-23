@@ -773,8 +773,8 @@ export interface ResearchState {
  * `value = 0`, which also covers older blanks and people never researched (spec §8).
  *
  * Newest PUBLISHED season per topic first (a draft season's rows stay hidden until it opens), THEN the
- * outcome filter, so a newer seat hides an older blank. A topic that a published answer of the same or a
- * newer season seats returns nothing, so this read never contradicts the compass.
+ * outcome filter, so a newer seat hides an older blank. A topic the compass seats (the person's newest
+ * published answer, in any season, is not 0) returns nothing, so this read never contradicts the compass.
  */
 export async function getResearchStates(politicianId: string): Promise<ResearchState[]> {
   const { rows } = await pool.query<{ topic_id: string; outcome: ResearchState['outcome']; researched_on: string; passages: ResearchPassage[] | null }>(
@@ -782,7 +782,7 @@ export async function getResearchStates(politicianId: string): Promise<ResearchS
      -- outcome filter sits OUTSIDE the newest-season collapse, so a newer seat hides an older blank.
      SELECT latest.topic_id, latest.outcome, latest.researched_on::text AS researched_on, p.passages
        FROM (
-         SELECT DISTINCT ON (o.topic_id) o.topic_id, o.season_id, o.outcome, o.researched_on, s.number AS season_number
+         SELECT DISTINCT ON (o.topic_id) o.topic_id, o.season_id, o.outcome, o.researched_on
            FROM inform.topic_research_outcomes o
            JOIN inform.seasons s ON s.id = o.season_id AND ${SEASON_IS_PUBLISHED}
           WHERE o.politician_id = $1
@@ -796,11 +796,16 @@ export async function getResearchStates(politicianId: string): Promise<ResearchS
           WHERE w.politician_id = $1 AND w.topic_id = latest.topic_id AND w.season_id = latest.season_id
        ) p ON true
       WHERE latest.outcome IN ('doesnt-fit', 'no-stance')
+        -- The compass's own read (getPoliticianAnswers): the newest published answer, any season. A seat
+        -- there hides the topic here, so the two never disagree.
         AND NOT EXISTS (
-              SELECT 1 FROM inform.politician_answers a
-                JOIN inform.seasons sa ON sa.id = a.season_id AND sa.status <> 'draft'
-               WHERE a.politician_id = $1 AND a.topic_id = latest.topic_id AND a.value <> 0
-                 AND sa.number >= latest.season_number)
+              SELECT 1 FROM (
+                SELECT DISTINCT ON (a.topic_id) a.value
+                  FROM inform.politician_answers a
+                  JOIN inform.seasons sa ON sa.id = a.season_id AND sa.status <> 'draft'
+                 WHERE a.politician_id = $1 AND a.topic_id = latest.topic_id
+                 ORDER BY a.topic_id, sa.number DESC
+              ) na WHERE na.value <> 0)
       ORDER BY latest.topic_id ASC`,
     [politicianId]
   );
