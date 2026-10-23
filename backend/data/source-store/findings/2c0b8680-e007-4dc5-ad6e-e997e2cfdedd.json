@@ -1,0 +1,25 @@
+{
+  "politician_id": "2c0b8680-e007-4dc5-ad6e-e997e2cfdedd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia: https://ballotpedia.org/Kaysia_Earley says she ran for Florida's 22nd Congressional District and lost the primary on August 18, 2026; the general election lists two other candidates)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched; out of scope, no further search)",
+        "campaign/personal site https://kaysiaearley.com (home page only, nothing on the subject)",
+        "not reviewed: news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:00:25.624Z",
+      "by": "source-collector"
+    }
+  ]
+}

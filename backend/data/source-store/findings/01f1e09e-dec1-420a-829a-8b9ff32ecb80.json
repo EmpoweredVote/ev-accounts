@@ -1,0 +1,30 @@
+{
+  "politician_id": "01f1e09e-dec1-420a-829a-8b9ff32ecb80",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "discovered-sources script (could not run: backend environment variables missing)",
+        "web search: Eric Hafner Alaska voter ID / platform / election integrity",
+        "WFAE 2024-09-11 article (fetched; confirms the person, no voting-rule statements): https://www.wfae.org/2024-09-11/hes-in-a-new-york-prison-yet-courts-let-him-stay-on-a-u-s-house-ballot-in-alaska",
+        "Fairbanks News-Miner 2024 interview article (fetched; no statements on the subject)",
+        "BallotReady profile (fetched; nothing on the subject found)",
+        "blocked: https://alaskabeacon.com/voter-guides/contests/2026-u-s-house/ (403)",
+        "blocked: https://alaskabeacon.com/voter-guides/contests/2026-alaska-congress-u-s-house/ (403)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:10:18.721Z",
+      "by": "source-collector"
+    }
+  ]
+}

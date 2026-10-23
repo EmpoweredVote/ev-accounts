@@ -1,0 +1,81 @@
+{
+  "politician_id": "a7bf31bd-e2b4-481f-b93b-2f0d4838f2f0",
+  "findings": [
+    {
+      "id": "7f7353cfd3ec34348176a5b38f2f12195a1043d2a8afb33211f2b78805dec4b9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/444/2025",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate roll call)",
+      "note": "The Senator's vote list shows Aye on Second Reading of HB 958, Election Law Changes, on 7/28/2026 at 6:13 PM, tally 28 to 13 (9 not voting, per the list), result PASS. The bill text (Fifth Edition, fetched from ncleg.gov) includes: a longer deadline (third to fifth business day after the election) for a voter without photo ID to bring ID to the county board for a provisional ballot to count (Sec. 1.2(c)); the same longer deadline for voters whose ID numbers did not match at registration (Sec. 1.2(b)); a temporary rule treating certain Class C drivers licenses with extended expiration dates as valid photo ID for voting through 2027 (Sec. 2.9); and handling of voter registration applications that indicate lack of citizenship (Sec. 2.10). The bill page says it was passed on Third Reading in the Senate on 7/28/2026 and the House concurred 8/4/2026; I did not find a separate Third Reading line in the Senator's vote list.",
+      "subjects": [
+        "photo ID cure deadline for provisional ballot",
+        "mail-ballot ID photocopy or affidavit cure",
+        "drivers license validity for voting ID",
+        "citizenship on voter registration applications",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:17.146Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7b466f365e57c9f7cedf53628bd1f98caa33ea29fae95540be0baef21c44a141",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/444/2025",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Amendment 5 (Senate roll call, adopted)",
+      "note": "The Senator's vote list shows Aye on Amendment 5 to HB 958 on 7/28/2026, tally 28 to 14, PASS. The list also shows Aye on Amendment 1 (31 to 11, PASS) and Aye on motions to table Amendments 2, 3, 6, 7, 8, 9 and 10 (each PASS). The text of these amendments was not read, so their content is not stated here.",
+      "subjects": [
+        "election law omnibus",
+        "amendments to HB 958"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:17.146Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Brad_Overcash (NC Senate District 43, on 3 Nov 2026 general ballot; 3 Mar 2026 primary was canceled) and ncleg.gov https://www.ncleg.gov/Members/Biography/S/444",
+        "On the Record (0 appearances for this politician; name search also 0)",
+        "campaign site https://bradovercash.com and /meetbradovercash/ (nothing on the subject)",
+        "official legislature member page and vote list https://www.ncleg.gov/Members/Votes/S/444/2025 (reviewed for election bills)",
+        "ncleg.gov bill page for HB 958 (reviewed); sponsor search page https://www.ncleg.gov/Legislation/Bills/Bills?SessionCode=2025&sponsor=444 (not reviewed: results load by script, nothing readable)",
+        "Ballotpedia (no issue positions or survey answers on the subject; he did not complete the Candidate Connection survey)",
+        "not reviewed: news search on name plus subject words (the shared web-search budget was used up)",
+        "not reviewed: any 2023 session vote list (only the 2025 session list was fetched)",
+        "no own-words statement on the subject found in any place reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:04:17.146Z",
+      "by": "source-collector"
+    }
+  ]
+}

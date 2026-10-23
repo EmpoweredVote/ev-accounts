@@ -1,0 +1,54 @@
+{
+  "politician_id": "3f5dd4b3-c0b6-470b-861d-41a71637797c",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "status: in scope, on the 2026 general-election ballot (https://ballotpedia.org/Rob_Consalvo, advanced from the September 1, 2026 primary; malegislature.gov profile https://malegislature.gov/Legislators/Profile/R_C1)",
+        "On the Record (0 appearances)",
+        "official legislature profile and sponsored-bill list (malegislature.gov): no bill on the subject seen",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: https://www.robconsalvo.com (no response)",
+        "blocked: web search budget used up, so no news or own-words search was run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:08:15.424Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "politician_id": "7c19c055-65b3-4ab0-b93e-f10e06036974",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Indiana_House_of_Representatives_District_2 names Earl Harris, Jr. as running in the Nov 3, 2026 general election for House District 2 (positive control; https://ballotpedia.org/Earl_Harris,_Jr. also fetched)",
+        "On the Record (0 appearances)",
+        "official caucus page https://indianahousedemocrats.org/members/earl-l-harris-jr: nothing on the subject",
+        "Ballotpedia profile https://ballotpedia.org/Earl_Harris,_Jr.: nothing on the subject",
+        "Wikipedia (lead only): nothing on the subject",
+        "not reviewed: Indiana General Assembly bill pages (iga.in.gov pages render no content to the fetch tool; no sponsorship list reached)",
+        "not reviewed: news search on name plus subject words (shared search budget used up)",
+        "blocked: https://indianahousedemocrats.org/members/iblc/2026-agenda (404)",
+        "campaign site: none found"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:40:49.770Z",
+      "by": "source-collector"
+    }
+  ]
+}

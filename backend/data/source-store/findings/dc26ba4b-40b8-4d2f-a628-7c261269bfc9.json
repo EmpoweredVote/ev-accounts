@@ -1,0 +1,22 @@
+{
+  "politician_id": "dc26ba4b-40b8-4d2f-a628-7c261269bfc9",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "scope check: 2026 ballot status"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (Ballotpedia https://ballotpedia.org/Keith_Kidwell: North Carolina House District 79 incumbent Keith Kidwell received 47.7% (6,799 votes) and Darren Armstrong 52.3% (7,447 votes); results certified; the general-election race lists no incumbent)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (profile fetched, confirms identity and primary loss)",
+        "not reviewed: official site, campaign site, ncleg.gov bill pages, news search (stopped after scope check because he is out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:11:09.828Z",
+      "by": "source-collector"
+    }
+  ]
+}

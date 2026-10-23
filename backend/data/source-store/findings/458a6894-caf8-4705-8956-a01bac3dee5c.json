@@ -1,0 +1,128 @@
+{
+  "politician_id": "458a6894-caf8-4705-8956-a01bac3dee5c",
+  "findings": [
+    {
+      "id": "90d57b5218d3832e56a763e1b4d337ea5e7f89018660c6493ae12c4897308dab",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Second Reading, Senate Bill 747 Election Law Changes (House roll call 542, passed 69 to 47)",
+      "note": "Voted no on House second reading of S747, a wide election bill. Its text includes photo ID rules for same-day registration, a notation of which ID type each voter used, and a report of jury-duty excusals for non-citizens to the State Board of Elections. His name is in the No list on the roll call.",
+      "subjects": [
+        "election integrity law in general",
+        "photo ID with same-day registration",
+        "non-citizen voting and jury-duty citizenship reports"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:07.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "94e2ab96b60a913b3dc946ae30e46f6cc0fef44fc255fa2c2c251e0716d12431",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Veto Override, Senate Bill 747 Election Law Changes (House roll call 596, 72 to 44, became SL 2023-140)",
+      "note": "Voted no on the House veto override of S747. His name is in the No list on the roll call.",
+      "subjects": [
+        "election integrity law in general",
+        "photo ID with same-day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:07.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "36e0549d0f01a8f665b6b234ef85ef211e60cc520a5a96e2670a0da3784701af",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/534",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "other",
+      "motion": "Amendment A12 (Longest) to S747 on second reading, failed 46 to 71; text at https://webservices.ncleg.gov/ViewBillDocument/2023/7087/0/S747-ACH-38-V-2",
+      "note": "He offered an amendment to S747 that would change a reference on page 5 from the first notice under G.S. 163-82.7(c) to the second notice under G.S. 163-82.7(e). The statute section concerns notices in voter-roll list maintenance. The amendment failed.",
+      "subjects": [
+        "voter-roll checks and list maintenance notices"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:07.849Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c1e099dc72314254d04e9d417f6b7c1be58e41c41e3d84d1fd3154edda8a3e48",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/536",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "other",
+      "motion": "Amendment A14 (Longest) to S747 on second reading, failed 47 to 69; text at https://webservices.ncleg.gov/ViewBillDocument/2023/7092/0/S747-AST-132-V-1",
+      "note": "He offered an amendment to S747 to add new G.S. 163-212.5, Falsification of electors, making it a Class D felony to create, serve in, or conspire to create a false slate of presidential electors. The amendment failed.",
+      "subjects": [
+        "election integrity law in general",
+        "false slate of presidential electors"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:07.849Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "ID with mail or absentee ballot",
+        "proof of citizenship",
+        "non-citizen voting and jury-duty citizenship reports",
+        "voter-roll list maintenance notices",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Tim_Longest names him as NC House District 34 member, on the Nov 3 2026 general-election ballot (primary was cancelled, he advanced unopposed)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/818 (confirms Representative Tim Longest, District 34)",
+        "On the Record (0 meetings; extract-otr returned OTR_SOURCES=0)",
+        "campaign site https://timlongest.com (placeholder WordPress page, nothing on the subject)",
+        "official legislature bill page and roll-call votes for S747 (2023 Election Law Changes)",
+        "ncleg.gov member votes page https://www.ncleg.gov/Members/Votes/H/818 (reviewed election-related titles)",
+        "ncleg.gov member introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/818 (no voter ID or citizenship bill sponsored; HB 691 Voter Protection and Reliance Act is not sponsored by him and not on ID)",
+        "Ballotpedia: no candidate survey and no campaign themes on the subject",
+        "not reviewed: https://www.facebook.com/TimLongestNC/, https://x.com/timlongest, https://www.instagram.com/timlongestnc (social media, not fetched)",
+        "blocked: web search budget used up, so no news search and no search for own-words quotes was possible",
+        "blocked: https://www.ncleg.gov/Members/MemberTable/House returned HTTP 500 via fetch tool (reached the same data by curl)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:44:07.849Z",
+      "by": "source-collector"
+    }
+  ]
+}

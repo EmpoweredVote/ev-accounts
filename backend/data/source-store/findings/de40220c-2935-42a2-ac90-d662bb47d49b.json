@@ -1,0 +1,55 @@
+{
+  "politician_id": "de40220c-2935-42a2-ac90-d662bb47d49b",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / non-citizen voting / election integrity"
+      ],
+      "places": [
+        "in scope: https://malegislature.gov/Legislators/Profile/SPK1 names Representative Sally P. Kerans of Danvers (13th Essex); https://electionstats.state.ma.us/elections/search/year_from:2026/year_to:2026/office_id:8/district_id: shows Sally Patrice Kerans won the 2026 13th Essex primary against no opponents (5,874 votes)",
+        "On the Record (0 appearances, 0 candidates)",
+        "malegislature.gov legislator profile and sponsored-bills list (31 petitions; none on voter ID or citizenship proof; only election-related bill is H.5539 recall elections in the town of Danvers, off subject)",
+        "Ballotpedia: no page exists for Sally P. Kerans (https://ballotpedia.org/Sally_P._Kerans empty)",
+        "official site: no separate site beyond the legislature profile; nothing on the subject",
+        "campaign site: not reviewed (not located; web search budget exhausted)",
+        "news search: not reviewed (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:27:08.748Z",
+      "by": "source-collector"
+    }
+  ]
+}

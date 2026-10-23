@@ -1,0 +1,59 @@
+{
+  "politician_id": "2f16bdad-8486-48c7-94f2-cbe7ea6853c9",
+  "findings": [
+    {
+      "id": "5f8194e0332c20a50e185f2c857f03bb431feb4795737b1a962c63bb1ac00708",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=82R&Bill=SB14",
+      "date": "2011-05-16",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-14-2011",
+      "act": "nay",
+      "motion": "adoption of conference committee report (Record 1128)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report (Record 1128), 2011-05-16: nay (tally 98–46); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.559Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "74bf910cb5ee8741ffedfcc0ac0048793f1f968b5b13ecc1797d53237fa75174",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-28",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 5 (Record 1963)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 5 (Record 1963), 2017-05-28: nay (tally 92–56); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.560Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

@@ -1,0 +1,30 @@
+{
+  "politician_id": "d014a2a7-2afe-4cc9-96a4-028408d9af5a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity and non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Chris_Campbell_(Tennessee) lists Chris Campbell, independent, on the Nov 3, 2026 general-election ballot for U.S. House Tennessee District 1",
+        "On the Record (0 appearances, extract-otr.mjs run)",
+        "Ballotpedia page and Candidate Connection survey answers: nothing on the subject",
+        "campaign site https://campbellforcongress2026.com/ (home, /lets-fix, /the-plan, /the-reality, /who-am-i, /get-involved): nothing on the subject",
+        "congress.gov: not reviewed (candidate has held no office; no sponsorships possible)",
+        "news search: not reviewed: web search budget exhausted for the session",
+        "Facebook https://www.facebook.com/profile.php?id=61594194753214: not reviewed: social page, not fetched",
+        "Instagram https://www.instagram.com/campbellforcongress2026/: not reviewed: social page, not fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:09:21.388Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "politician_id": "d62b489b-2280-41d4-b06c-16cde06b5610",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://www.ncleg.gov/Members/MemberList/H lists Rep. Allen Chesser, District 25 (Nash); https://ballotpedia.org/North_Carolina_House_of_Representatives_District_25 lists incumbent Allen Chesser II on the 2026 general-election ballot",
+        "On the Record (0 appearances, 0 sources)",
+        "https://www.ncleg.gov/Members/IntroducedBills/H/799 (2025 session, all introduced bills reviewed: no bill on ID, citizenship or election integrity; nothing on the subject)",
+        "not reviewed: https://www.ncleg.gov/Members/Votes/H/799/2025 (votes list loads by script; no vote data returned)",
+        "not reviewed: roll-call votes on election bills (could not identify and reach member-level vote pages)",
+        "blocked: https://ballotpedia.org/Allen_Chesser (empty response to fetch)",
+        "not reviewed: official and campaign site (no address found; web search budget exhausted, so no search for own words or news)",
+        "nothing on the subject: web news search not run, search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:11:36.168Z",
+      "by": "source-collector"
+    }
+  ]
+}

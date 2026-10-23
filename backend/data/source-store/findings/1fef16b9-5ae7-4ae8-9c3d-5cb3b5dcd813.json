@@ -1,0 +1,25 @@
+{
+  "politician_id": "1fef16b9-5ae7-4ae8-9c3d-5cb3b5dcd813",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: left office, not in scope. Ballotpedia (https://ballotpedia.org/Alan_Morrison, fetched by curl) says: \"Alan Morrison is the Indiana Director of Natural Resources. He assumed office on January 17, 2025.\" and lists Indiana House District 42 years in office as 2012 - 2025, successor Tim Yocum. He is an appointed agency head, not a sitting legislator, and no 2026 ballot race appears on the page.",
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirmed person and office; no voter ID material on the page)",
+        "not reviewed: iga.in.gov bill pages, official site and news search (stopped after scope check; web search budget was also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:19:54.858Z",
+      "by": "source-collector"
+    }
+  ]
+}

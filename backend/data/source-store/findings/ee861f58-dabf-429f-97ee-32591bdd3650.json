@@ -1,0 +1,29 @@
+{
+  "politician_id": "ee861f58-dabf-429f-97ee-32591bdd3650",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "confirmed in office: https://malegislature.gov/Legislators/Profile/APR1 (Representative Adrianne Pusateri Ramos, North Andover; 2026 general ballot status not confirmed)",
+        "On the Record (0 appearances; extract-otr found none)",
+        "MA Legislature profile sponsored/cosponsored list (first page): nothing on the subject",
+        "MA Legislature bill search for voter identification: page returned no readable results",
+        "blocked: https://ballotpedia.org/Adrianne_Ramos (empty via fetch and curl)",
+        "not reviewed: campaign site, news search (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:28:22.333Z",
+      "by": "source-collector"
+    }
+  ]
+}

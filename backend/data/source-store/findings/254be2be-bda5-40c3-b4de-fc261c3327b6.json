@@ -1,0 +1,33 @@
+{
+  "politician_id": "254be2be-bda5-40c3-b4de-fc261c3327b6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Mike_Bohacek) names him as a member of the Indiana State Senate, District 8, term ends November 8, 2028, so he is a sitting official with no 2026 race",
+        "On the Record (0 appearances, 0 candidate speakers)",
+        "Indiana Senate caucus page https://www.indianasenaterepublicans.com/bohacek and its news list: nothing on the subject",
+        "Indiana Senate caucus page https://www.indianasenaterepublicans.com/2026-bohacek-legislative-updates: nothing on the subject",
+        "Indiana Senate caucus page https://www.indianasenaterepublicans.com/state-sen-bohacek-to-introduce-legislation-addressing-vote-centers: nothing on the subject (about polling-place locations, not ID)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://mikebohacek.com (campaign site, HTTP 403)",
+        "blocked: https://legiscan.com/IN/bill/HB1264/2025 (HTTP 403, bot check)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_michael_bohacek_1 (page needs JavaScript, no text returned; bill and vote records not reviewed)",
+        "not reviewed: web news search on name plus subject words (search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:21:46.544Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "politician_id": "86a423ca-a4e5-4890-8b9b-a9392ff051a5",
+  "findings": [
+    {
+      "id": "f6341fec5bb00cce88108f4134cabff69e7698a8debd998d4f25f647096bf1fb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/762",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (RCS 758)",
+      "note": "Voted aye on second reading (66 aye, 47 no). Ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds new G.S. 163-83: a county board processes a registration only if it affirmatively says the applicant is a US citizen, and a form with no answer gets a 30-day notice and a sworn citizenship statement or the registration is denied. It also has the State Board set up a process to remove voters flagged as possible non-citizens by a federal database. The bill page shows a Governor's veto and a last action of placed on calendar for 09/02/2026.",
+      "subjects": [
+        "proof of citizenship to register",
+        "citizenship statement on voter registration",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:52.356Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: NC House District 113, on the Nov 3, 2026 general-election ballot (https://ballotpedia.org/Jake_Johnson_(North_Carolina))",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "campaign site https://www.jakefornc.com/issues/ (nothing on the subject)",
+        "official legislature member page https://www.ncleg.gov/Members/Biography/H/762 (member confirmed; no statements)",
+        "ncleg.gov introduced bills list https://www.ncleg.gov/Members/IntroducedBills/H/762 (2025-26 session; no sponsored bill on the subject)",
+        "ncleg.gov votes list https://www.ncleg.gov/Members/Votes/H/762 (2025-26 session; one election bill on the subject found)",
+        "Ballotpedia (no issue positions on the subject)",
+        "ncleg.gov SB 747 (2023) bill page reviewed; content is not clearly on the subject, not saved",
+        "not reviewed: news search and own-words search (the shared web search budget was used up); X https://x.com/RepJakeJohnson and Facebook pages not reviewed",
+        "not reviewed: prior-session (2019-2024) vote lists"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:56:52.356Z",
+      "by": "source-collector"
+    }
+  ]
+}

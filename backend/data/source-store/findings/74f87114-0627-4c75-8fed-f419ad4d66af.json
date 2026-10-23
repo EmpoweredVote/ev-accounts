@@ -1,0 +1,33 @@
+{
+  "politician_id": "74f87114-0627-4c75-8fed-f419ad4d66af",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope. Won the March 17, 2026 primary for IL-15 and is on the November 3, 2026 ballot (https://ballotpedia.org/Jennifer_Todd ; https://www.nprillinois.org/illinois/2026-04-20/democrat-wants-to-unseat-a-3-term-republican-in-ultra-conservative-illinois-district)",
+        "On the Record (0 appearances, nothing on the subject)",
+        "campaign site https://www.jentodd2026.us/ and /issues (nothing on the subject; issues: healthcare, working families, immigration)",
+        "Ballotpedia (candidate survey and campaign site excerpt, nothing on the subject)",
+        "BallotReady profile (nothing on the subject)",
+        "NPR Illinois profile (nothing on the subject)",
+        "news search on name plus subject words (nothing on the subject)",
+        "congress.gov: not applicable, not a legislator (no sponsorships or votes)",
+        "not reviewed: Facebook https://www.facebook.com/jentoddforcongress and Instagram https://www.instagram.com/jentodd2026 (social posts not readable)",
+        "ontheissues.org: lead only, no record as non-incumbent"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:35:41.093Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "politician_id": "c947719a-cd1a-497a-8fc9-d9c4d434b18f",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances, extract-otr run)",
+        "Ballotpedia https://ballotpedia.org/Vanna_Howard (confirms Massachusetts State Senate 1st Middlesex District, on 2026 general-election ballot after 2026-09-01 primary; nothing on the subject)",
+        "campaign site https://www.vannahoward.com (home and /vote pages: nothing on the subject; /about and /policies not reviewed in detail)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/V_H0 (nothing on the subject in fetched text)",
+        "not reviewed: web news search (search budget exhausted)",
+        "not reviewed: malegislature.gov bill search for sponsorships (not reached)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:23:33.460Z",
+      "by": "source-collector"
+    }
+  ]
+}

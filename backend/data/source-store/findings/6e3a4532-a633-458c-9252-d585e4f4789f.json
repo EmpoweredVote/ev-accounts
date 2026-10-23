@@ -1,0 +1,30 @@
+{
+  "politician_id": "6e3a4532-a633-458c-9252-d585e4f4789f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballots",
+        "documentary proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Kandie_Smith names her as NC State Senate District 5 incumbent, on the Nov 3, 2026 general ballot; March 3, 2026 primary was canceled",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/447 (confirms Senator Kandie D. Smith, District 5)",
+        "On the Record (0 appearances, no meetings on file; name search run with no city)",
+        "Ballotpedia (no 2026 Candidate Connection survey; no positions on the subject)",
+        "NC General Assembly bill page https://www.ncleg.gov/BillLookUp/2025/H958 and bill digest https://webservices.ncleg.gov/BillDigests/2025/H958: HB 958 Election Law Changes touches photo ID, citizenship on registration; Senate roll calls S-684 to S-693 (7/28/2026) list her under Excused Absence, so no vote by her; an excused absence is not a position",
+        "nothing on the subject: ncleg Introduced Bills page for her (https://www.ncleg.gov/Members/Bills/S/447 returned 404)",
+        "not reviewed: official Senate site and campaign site (no URL located; web search budget exhausted, so no news or own-words search was run)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/817 (HTTP 500, wrong ID anyway)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:52:35.618Z",
+      "by": "source-collector"
+    }
+  ]
+}

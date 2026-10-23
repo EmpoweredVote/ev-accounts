@@ -1,0 +1,109 @@
+{
+  "politician_id": "bc074749-7bf4-42ca-8eab-6fffc1e20729",
+  "findings": [
+    {
+      "id": "f0f2ea5e1063856b33c3b104c91273fd4cac5f78e4e3ebabfe7bf9c4a32c9bea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: nay (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7e640afa5849d56bd4579984a1d2d218c16c90c00661c1f9cc8375ee58e1ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: nay (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "342289e484778afaa65e2f63224e9aa339a5cf85480e2fa9e07177855efad7b1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1246-2025",
+      "act": "sponsor",
+      "note": "Ball is listed among the additional sponsors of House Bill 1246, Safeguarding Elections Act, filed 7/30/2026. Section 2(b) adds a misdemeanor for any person to demand citizenship documentation from a voter other than what State law requires at any point during the voting process. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H1246v1.html) also makes voter photo identification images and photocopies of identification for voting confidential records. Referred to House Rules committee 8/4/2026.",
+      "subjects": [
+        "demanding citizenship documents from voters",
+        "voter ID records confidentiality",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:06:27.656Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "documentary proof of citizenship",
+        "demanding citizenship documents from voters",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "Confirmed in scope: https://ballotpedia.org/Cynthia_Ball (NC House District 49, on the 2026 general-election ballot; primary was canceled and she advanced unopposed)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/711 (identity confirmed)",
+        "ncleg.gov introduced bills list https://www.ncleg.gov/Members/IntroducedBills/H/711 (primary-sponsored bills: none on the subject; H31 Election Day holiday, H691 and H1246 election bills checked)",
+        "ncleg.gov bill pages and text for H691 (Voter Protection and Reliance Act: nothing on ID or citizenship proof) and H1246",
+        "Ballotpedia (no voter ID statements found on page)",
+        "not reviewed: https://www.cynthiafornc.com (script-rendered site, no readable text for the subject)",
+        "not reviewed: https://www.youtube.com/@cynthiaball8845 (video)",
+        "blocked: web search budget used up, so no news search or own-words search by search engine was possible",
+        "ontheissues.org, vote411, Wikipedia: not fetched (lead-only sources)"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:06:27.656Z",
+      "by": "source-collector"
+    }
+  ]
+}

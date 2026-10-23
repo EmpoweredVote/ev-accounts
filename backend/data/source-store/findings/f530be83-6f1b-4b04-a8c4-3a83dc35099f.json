@@ -1,0 +1,56 @@
+{
+  "politician_id": "f530be83-6f1b-4b04-a8c4-3a83dc35099f",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Paul_Mark names him as incumbent State Senator (Berkshire, Hampden, Franklin, and Hampshire District), advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot",
+        "On the Record (0 meetings, extract-otr.mjs run with --names)",
+        "Ballotpedia: nothing on the subject",
+        "malegislature.gov profile PWM1 (only shows House-era data; Senate sponsored and cosponsored tabs returned no bills, so sponsorship check is incomplete)",
+        "blocked: https://www.paulmarkma.com (no content returned)",
+        "blocked: https://www.paulmark.org/ (no content returned)",
+        "blocked: https://malegislature.gov/Bills/SearchResults (404)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:29:10.323Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "politician_id": "1c9edb0f-f3b9-480b-b04b-fd20908fcaae",
+  "findings": [
+    {
+      "id": "6728175d663ba3cd2096e90b3f590b995288e70c92575f0fae46c990df6913b8",
+      "kind": "own-words",
+      "url": "https://blakemiguez.com/issues/",
+      "date": "2026-10-22",
+      "date_precision": "day",
+      "passage": "Blake passed the law banning Big Tech private funding from interfering in Louisiana elections. Voter ID, proof of citizenship, and no foreign money running our elections. Congress needs to pass the SAVE America Act and get it to the President’s desk. Only American citizens should be deciding American elections. If people don’t trust the process, nothing else matters.",
+      "note": "Election Integrity item on his campaign issues page. Names voter ID, proof of citizenship and passing the SAVE America Act. Date is the day the page was fetched; the page itself is undated.",
+      "subjects": [
+        "voter ID",
+        "proof of citizenship",
+        "SAVE America Act",
+        "election integrity in general",
+        "foreign and private money in elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:47.312Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "12d5274cd99ea92832e91c855b6962d5af22f9b08052d0437a7d32e395147604",
+      "kind": "record",
+      "url": "https://legis.la.gov/legis/ViewDocument.aspx?d=1382204",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "LA-SB-436-2024",
+      "act": "sponsor",
+      "note": "Listed among the senators on the byline of SB 436 (Act 500 of 2024), which requires proof of United States citizenship with a voter registration application. Lead author is Sen. Fesi; he is one of the listed co-authors. Enrolled as Act 500.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:47.312Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "47d954c6874274f477f0166b4e086baa57202a85c3625edda91b9bcc1a0b71c9",
+      "kind": "record",
+      "url": "https://legis.la.gov/legis/ViewDocument.aspx?d=1475017",
+      "date": "2026",
+      "date_precision": "year",
+      "instrument_id": "LA-HB-691-2026",
+      "act": "sponsor",
+      "note": "Listed among the senators on the byline of HB 691 (Act 6 of 2026), which sends state voter information to the federal SAVE program and has the election integrity division investigate registered voters who may be non-citizens. Lead author is Rep. Beaullieu; he is one of the listed senate co-authors.",
+      "subjects": [
+        "non-citizen voter-roll checks",
+        "proof of citizenship to vote",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:47.312Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE America Act",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "in scope: Ballotpedia says he is on the Nov 3, 2026 primary ballot for US House Louisiana District 6 (https://ballotpedia.org/Blake_Miguez); campaign site says he is on the ballot in the new 6th (https://blakemiguez.com/issues/)",
+        "On the Record (0 appearances)",
+        "campaign site issues page (https://blakemiguez.com/issues/)",
+        "Ballotpedia (nothing on the subject; no candidate survey completed)",
+        "Louisiana Legislature bill pages (legis.la.gov enrolled documents for SB 436 of 2024 and HB 691 of 2026)",
+        "news search on name plus subject words (nothing quoting him on the subject)",
+        "not reviewed: congress.gov (blocked, HTTP 403); he holds no federal office",
+        "not reviewed: debate or interview video"
+      ],
+      "found": 3,
+      "at": "2026-10-22T21:28:47.312Z",
+      "by": "source-collector"
+    }
+  ]
+}

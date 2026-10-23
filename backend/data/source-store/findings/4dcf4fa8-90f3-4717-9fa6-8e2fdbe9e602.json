@@ -1,0 +1,28 @@
+{
+  "politician_id": "4dcf4fa8-90f3-4717-9fa6-8e2fdbe9e602",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: sitting Indiana State Senator, District 20, term ends 2028 (https://ballotpedia.org/Scott_Baldwin; https://www.indianasenaterepublicans.com/baldwin)",
+        "On the Record (1 meeting, Senate Judiciary Committee 2026-01-14: nothing on the subject, only court security bill SB 291) https://ontherecord.empowered.vote/meetings/ff03d33d-4cb1-437b-bfea-1a4f8462035a",
+        "official Senate caucus page and news list: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_scott_baldwin_1 (page is a script shell with no readable content; bill sponsorship list not reviewed)",
+        "not reviewed: campaign site, news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:32:45.379Z",
+      "by": "source-collector"
+    }
+  ]
+}

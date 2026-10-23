@@ -1,0 +1,127 @@
+{
+  "politician_id": "7f991f5f-005b-40b9-8b23-ef91cef5c882",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "1843bd3c33145e07372f72f0cffd2a722a039d7ddcb3fd91e756f9b8229f2b4c",
+      "kind": "own-words",
+      "url": "https://sheribiggs.house.gov/media/press-releases/congresswoman-sheri-biggs-stands-president-trump-speaker-vote-passes-first",
+      "date": "2025-01-03",
+      "date_precision": "day",
+      "passage": "“I was given a strong directive by my constituents to fight for the conservative values of South Carolina’s Third Congressional District. Protecting girls’ sports, ridding our nation of criminal illegal aliens, and only allowing American citizens to vote is both common sense and necessary in advancing the America First agenda.”",
+      "note": "Statement issued in her name on her official site after her first votes in Congress. She says only American citizens should be allowed to vote.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:18:23.440Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "712feb6b082984def409f8d7c1ea2589d001af7b8339026b112f60114d1b13b6",
+      "kind": "record",
+      "url": "https://sheribiggs.house.gov/media/press-releases/congresswoman-sheri-biggs-stands-president-trump-speaker-vote-passes-first",
+      "date": "2025-01-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "sponsor",
+      "note": "Her official press release says: \"Congresswoman Biggs is also an original co-sponsor of the SAVE Act which requires individuals to provide proof of United States citizenship in order to vote in federal elections.\" H.R. 22, SAVE Act. Co-sponsor status taken from her release; congress.gov was blocked.",
+      "subjects": [
+        "proof of citizenship to register or vote",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:18:23.440Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Sheri_Biggs says she is on the general-election ballot on November 3, 2026 and the June 9, 2026 primary for this office was canceled",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site sheribiggs.house.gov: home, press releases pages 1-3, issue pages (constitution, border-security, homeland-security); five releases checked for subject words; one finding",
+        "official site search page: blocked: https://sheribiggs.house.gov/search?q=voter (403)",
+        "campaign site sheribiggs.com: nothing on the subject",
+        "Ballotpedia: no 2026 survey answers; no own words on the subject (SAVE Act vote only, already on file)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (403)",
+        "blocked: https://www.govtrack.us/congress/bills/119/hr22 (bot check)",
+        "not searched: web search budget used up, so no news search was run",
+        "no own-words or record found on voter ID at the polls, no-ID voters, or mail-ballot ID"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:18:23.440Z",
+      "by": "source-collector"
+    }
+  ]
+}

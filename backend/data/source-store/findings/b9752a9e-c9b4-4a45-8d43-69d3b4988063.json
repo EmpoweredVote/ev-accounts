@@ -1,0 +1,24 @@
+{
+  "politician_id": "b9752a9e-c9b4-4a45-8d43-69d3b4988063",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida Election Watch, District 22 primary results: Terri Hasdorff 3,683 votes, 7.69%; Casey Askar first with 30.86%) https://floridaelectionwatch.gov/CompareStateToCounty/140221",
+        "identity confirmed: https://flvoicenews.com/belinda-keiser-terri-hasdorff-launch-gop-bids-for-newly-redrawn-florida-congressional-seat/ (nothing on the subject)",
+        "On the Record (0 appearances)",
+        "not searched further: out of scope after primary loss"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:27:23.218Z",
+      "by": "source-collector"
+    }
+  ]
+}

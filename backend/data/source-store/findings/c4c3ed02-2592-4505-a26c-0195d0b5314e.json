@@ -1,0 +1,29 @@
+{
+  "politician_id": "c4c3ed02-2592-4505-a26c-0195d0b5314e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Judith_Garc%C3%ADa names her as the sitting 11th Suffolk District representative, advanced from the Sept 1, 2026 primary, on the Nov 3, 2026 general ballot; legislature profile https://malegislature.gov/Legislators/Profile/JAG2 confirms Representative Judith A. Garcia",
+        "On the Record (0 appearances, extract-otr.mjs, nothing on the subject)",
+        "Ballotpedia (nothing on the subject; she did not complete the 2022 or 2024 Candidate Connection survey)",
+        "malegislature.gov bill search for voter identification, proof of citizenship, photo identification (she is not listed on the voter-identification bills H.833 and H.3308 cosponsor pages; full sponsored and cosponsored lists load by script and could not be read, so not reviewed: https://malegislature.gov/Legislators/Profile/JAG2/194/Bills/Cosponsored)",
+        "not reviewed: official site and campaign site (no page fetched with subject content)",
+        "blocked: web news search (the shared search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:23:29.855Z",
+      "by": "source-collector"
+    }
+  ]
+}

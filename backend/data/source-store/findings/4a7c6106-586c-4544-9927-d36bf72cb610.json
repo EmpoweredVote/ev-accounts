@@ -1,0 +1,26 @@
+{
+  "politician_id": "4a7c6106-586c-4544-9927-d36bf72cb610",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: unfindable - no page confirming this person in the race was reached; scope not confirmed",
+        "On the Record (0 appearances)",
+        "Ballotpedia: https://ballotpedia.org/Carta_Sierra returned 404 (no such page)",
+        "not reviewed: web search (session search budget of 200 used up before this agent could search)",
+        "not reviewed: campaign site, official site, congress.gov, news (URLs unknown without search)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:09:49.140Z",
+      "by": "source-collector"
+    }
+  ]
+}

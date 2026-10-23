@@ -1,0 +1,80 @@
+{
+  "politician_id": "3abe0871-1d44-42bb-a5ab-37013852beae",
+  "findings": [
+    {
+      "id": "b2e6e2cf6e0d41ecb614042fcec3a4ee0d4618f1f40422bcb5845aa916f04920",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Second Reading, S747 Elections Law Changes (House roll call H-542, 69 to 47)",
+      "note": "Roll call lists Wheatley among the Ayes. S747 is an omnibus election bill. Its enacted text (Session Law 2023-140) refers to photo identification under G.S. 163-166.16, photocopy of ID or an affidavit with absentee ballots, and driver license or ID card numbers on absentee ballot requests. It also covers other election administration changes.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:41:16.696Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ec4dc89058ad9dd72917400f871db974e64c3280ec3cffec79434ee993e00db",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Veto Override, S747 Elections Law Changes (House roll call H-596, 72 to 44)",
+      "note": "Roll call lists Wheatley among the Ayes on the vote to override the governor's veto of S747. The bill became Session Law 2023-140. It is an omnibus election bill that touches photo ID, absentee ballot ID, and other election rules.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:41:16.696Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or absentee ballot",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity omnibus bills"
+      ],
+      "places": [
+        "In scope: Representative Diane Wheatley, NC House District 43, on the Nov 3 2026 general ballot (https://ballotpedia.org/Diane_Wheatley; https://www.ncleg.gov/Members/Biography/H/785)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.dianewheatleync.com (page is script-rendered, no issue text retrievable; /about is 404): nothing on the subject",
+        "Ballotpedia: nothing on the subject (no Candidate Connection survey answers)",
+        "ncleg.gov introduced bills, 2025 session (https://www.ncleg.gov/Members/IntroducedBills/H/785): nothing on the subject",
+        "ncleg.gov bill page and roll calls for S747 (2023)",
+        "not reviewed: https://www.ncleg.gov/Members/Votes/H/785 (full vote list; only S747 checked)",
+        "not reviewed: 2025 session election bills other than the introduced-bills list",
+        "not reviewed: news search and own-words search (web search budget used up)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:41:16.696Z",
+      "by": "source-collector"
+    }
+  ]
+}

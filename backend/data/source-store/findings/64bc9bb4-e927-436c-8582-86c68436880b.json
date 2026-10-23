@@ -1,0 +1,30 @@
+{
+  "politician_id": "64bc9bb4-e927-436c-8582-86c68436880b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Jereme_Peters names him as a candidate for U.S. House Arizona District 6 who advanced from the July 21, 2026 primary and is on the November 3, 2026 general-election ballot",
+        "On the Record (0 meetings)",
+        "Ballotpedia page (no issue positions, no Candidate Connection survey on the subject): nothing on the subject",
+        "campaign site: blocked: https://www.jeremepeters.com (redirects to a parked /lander page, no content)",
+        "not reviewed: Campaign Instagram and personal Facebook (listed on Ballotpedia, no URL reachable)",
+        "state party sites azlp.org and lpaz.org: nothing reachable or no mention of him",
+        "congress.gov: not applicable, not a legislator",
+        "web news search: not reviewed, the shared search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:55:58.503Z",
+      "by": "source-collector"
+    }
+  ]
+}

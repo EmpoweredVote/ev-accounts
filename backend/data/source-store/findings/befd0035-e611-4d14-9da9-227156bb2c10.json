@@ -1,0 +1,31 @@
+{
+  "politician_id": "befd0035-e611-4d14-9da9-227156bb2c10",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Julie_Olthoff) names her as Indiana House District 19 member, on the Nov 3, 2026 general ballot after advancing from the May 5, 2026 primary",
+        "On the Record (0 appearances, extract-otr run with name)",
+        "Ballotpedia: nothing on the subject (no voter-ID or citizenship text on page)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_julie_olthoff_1 (page is a script-built shell, no readable bill list)",
+        "blocked: https://iga.in.gov/api/legislators/julie_olthoff (returns the same empty shell)",
+        "blocked: https://indianahouserepublicans.com/members/view/julie-olthoff (404)",
+        "blocked: https://www.olthoff4indiana.com (no connection)",
+        "not reviewed: news search on name plus subject words (session web-search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:50:26.974Z",
+      "by": "source-collector"
+    }
+  ]
+}

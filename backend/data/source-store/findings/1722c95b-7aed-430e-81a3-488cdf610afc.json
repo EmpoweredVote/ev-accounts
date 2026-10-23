@@ -1,0 +1,58 @@
+{
+  "politician_id": "1722c95b-7aed-430e-81a3-488cdf610afc",
+  "findings": [
+    {
+      "id": "f00d68b97612f622842ed8d22a446c6b16526fb862fecc6a83b7d11a909846e6",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-07",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, conference report agreed to, 2020-03-07: nay (tally 20–19); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "78bd84913f7341f5b7f5922d799620162f7c731716a854b48ac8784da122b529",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "yea",
+      "motion": "passed Senate (Chair votes Yes; tie 20-20)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, passed Senate (Chair votes Yes; tie 20-20), 2013-02-05: yea (tally 20–20); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

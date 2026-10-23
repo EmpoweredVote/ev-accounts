@@ -1,0 +1,29 @@
+{
+  "politician_id": "4136d986-0eb0-4a0c-9b17-9fa202a82bea",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Donnie_Ownby (fetched with curl) names Donnie Ownby, independent, U.S. House Tennessee District 3, on the general-election ballot Nov 3, 2026",
+        "On the Record (0 appearances)",
+        "Ballotpedia page and Candidate Connection survey: nothing on the subject (survey mentions borders, term limits, education, jobs only)",
+        "not reviewed: campaign site (no URL known; web search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "congress.gov: not applicable, never a legislator, no record to check",
+        "blocked: ballotpedia via WebFetch returned empty; curl worked"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:16:32.757Z",
+      "by": "source-collector"
+    }
+  ]
+}

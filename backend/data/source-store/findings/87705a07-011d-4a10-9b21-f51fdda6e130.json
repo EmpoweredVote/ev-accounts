@@ -1,0 +1,121 @@
+{
+  "politician_id": "87705a07-011d-4a10-9b21-f51fdda6e130",
+  "findings": [
+    {
+      "id": "cd34be8c8d750c154045efc1f1ddd18ba5c5ff2008e2273490f6a071d6fe557f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "House veto override vote, roll call 596, SB 747 Elections Law Changes (passed 72-44)",
+      "note": "Budd is listed among the No votes on overriding the Governor's veto of SB 747, Elections Law Changes. I did not check whether the bill text covers ID rules, so this is saved as an election-law vote only.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:57:37.356Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5311a6a7b96d8b089d0151d4de3c6328acbfafeb2231e8b1e18c7de4288944b3",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "House second reading, roll call 542, SB 747 Elections Law Changes (passed 69-47)",
+      "note": "Budd is listed among the No votes on second reading of SB 747, Elections Law Changes. I did not check whether the bill text covers ID rules, so this is saved as an election-law vote only.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:57:37.356Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2de49db57dc15bb35984653d3109f70d95fffa95ad0bd0f2be4e0cea36ae9614",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H475v1.pdf",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-475-2025",
+      "act": "sponsor",
+      "note": "HB 475, State ID Cards for High School Students. Budd is named among the primary sponsors. It lets residents aged 16 and up get a state special identification card and sets up a pilot to issue the cards to public high school students in four counties. It does not mention voting. It was referred to committee.",
+      "subjects": [
+        "access to state ID cards",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:57:37.356Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e9481dac06a607fd65fe2b1dc83471a9d4457c78461c065398dbc7f3515f140",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Sessions/2023/Bills/House/PDF/H780v1.pdf",
+      "date": "2023-04-19",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-780-2023",
+      "act": "sponsor",
+      "note": "HB 780, State ID Cards for High School Students (2023 version). Budd is listed first among the primary sponsors. It was referred to committee and later re-referred. It does not mention voting.",
+      "subjects": [
+        "access to state ID cards",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:57:37.356Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free or special state ID cards",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Laura_Budd (confirms NC House District 103, on the Nov 3, 2026 general ballot; no issue positions on the subject; 2022 survey nothing on the subject)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/796 (no subject content)",
+        "NC General Assembly introduced bills 2025 and 2023 https://www.ncleg.gov/Members/IntroducedBills/H/796 (two ID-card bills found; nothing else on the subject)",
+        "NC General Assembly roll calls for SB 747 (2023)",
+        "campaign site https://www.laurabuddnc.com (page text is script-rendered; nothing on the subject readable)",
+        "not reviewed: campaign Facebook, X, Instagram and official-site news posts (not reachable by fetch)",
+        "not reviewed: ontheissues.org and Vote Smart (leads only)",
+        "news search: not done, the shared web-search budget was used up"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:57:37.356Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "politician_id": "3de8d183-2323-45d5-a178-4d24b8f56702",
+  "findings": [
+    {
+      "id": "5eb7f5d3d4ec2a6d7f9ec9369658eecc29505b3dfffebf1e89531df6c5b3db23",
+      "kind": "own-words",
+      "url": "https://indianahousedemocrats.org/news/delaney-urges-morales-to-remove-himself-from-deerys-recount",
+      "date": "2026-05-13",
+      "date_precision": "day",
+      "passage": "Diego Morales has persistently undermined our confidence in elections and the integrity of his office.",
+      "note": "Statement issued in his name by his caucus, asking the Secretary of State to step aside from chairing a recount of a state senator's primary. It concerns who runs a recount, not ID rules to vote. Saved only as a related election-integrity item.",
+      "subjects": [
+        "election integrity in general",
+        "recount oversight by the Secretary of State"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:30:44.342Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / affidavit / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity in general"
+      ],
+      "places": [
+        "identity confirmed: https://indianahousedemocrats.org/members/ed-delaney (Indiana House District 86, sitting member, name spelled Ed DeLaney); on the 2026 general-election ballot per https://ballotpedia.org/Indiana_House_of_Representatives_elections,_2026 (District 86 listed as incumbent in the primary and in the general-election list)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances for the politician id, no unlinked-name search done beyond --names)",
+        "official caucus page and news category page (indianahousedemocrats.org/news/category/Rep.+Ed+DeLaney, first page only: nothing on the subject except one election-integrity statement)",
+        "Substack newsletter archive https://repeddelaney.substack.com/archive (titles reviewed; nothing on the subject; individual posts not opened)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_edward_delaney_1 (page is a script-built shell with no readable text; bill sponsorships not reachable)",
+        "not reviewed: Indiana General Assembly bill pages for authored or co-authored voter ID bills (site unreadable by fetch)",
+        "Ballotpedia: no personal page at Ed_Delaney, Edward_Delaney or Ed_DeLaney (empty page); only the 2026 House election page was used",
+        "Wikipedia https://en.wikipedia.org/wiki/Ed_DeLaney (lead only, not cited)",
+        "web search: not done, session search budget was used up before this person started",
+        "nothing on the subject: campaign site (none found)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:30:44.342Z",
+      "by": "source-collector"
+    }
+  ]
+}

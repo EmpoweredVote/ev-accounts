@@ -1,0 +1,56 @@
+{
+  "politician_id": "78f3bb2d-90e4-4263-925e-6203385bc6eb",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "confirmed in office: https://malegislature.gov/Legislators/Profile/WCG1 (Representative William C. Galvin, 6th Norfolk, 194th General Court); 2026 ballot status not confirmed",
+        "On the Record (0 appearances, extract-otr.mjs)",
+        "MA Legislature member profile and filed bills list: nothing on the subject (only a Canton town-elections local bill and a request-filed street-list bill, not about ID or citizenship)",
+        "MA Legislature H.4359 amendments page (https://malegislature.gov/Bills/192/H4359/Amendments): lists amendment 7 'Voter Identification', Rejected, Roll Call #139; vote already on file, not re-collected",
+        "blocked: https://ballotpedia.org/William_C._Galvin (bot challenge, no content)",
+        "blocked: https://ballotpedia.org/Massachusetts_House_of_Representatives_elections,_2026 (bot challenge, no content)",
+        "not reviewed: official campaign site and news search (shared web-search budget exhausted; no campaign URL found)",
+        "own words on the subject: none found"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:32.995Z",
+      "by": "source-collector"
+    }
+  ]
+}

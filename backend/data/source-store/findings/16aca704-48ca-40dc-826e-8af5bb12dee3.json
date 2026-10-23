@@ -1,0 +1,27 @@
+{
+  "politician_id": "16aca704-48ca-40dc-826e-8af5bb12dee3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: unfindable - no page found that names James Duffe in a Georgia congressional race; scope not confirmed",
+        "On the Record (0 appearances)",
+        "nothing on the subject: https://ballotpedia.org/James_Duffe (page does not exist)",
+        "nothing on the subject: https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Georgia,_2026 (no mention of Duffe)",
+        "blocked: https://www.duffeforcongress.com (domain does not resolve)",
+        "not reviewed: web news search, campaign site, congress.gov (search budget of 200 used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:14:58.166Z",
+      "by": "source-collector"
+    }
+  ]
+}

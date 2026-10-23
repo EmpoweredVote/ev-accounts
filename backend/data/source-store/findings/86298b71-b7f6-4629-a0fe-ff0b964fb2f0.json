@@ -1,0 +1,147 @@
+{
+  "politician_id": "86298b71-b7f6-4629-a0fe-ff0b964fb2f0",
+  "findings": [
+    {
+      "id": "d197aed057402ed5f9d18c401babfbc0f58e6c33fbcc8706ae659b1d6427c029",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (66 ayes, 47 noes)",
+      "note": "Roll call lists Goodwin among the ayes. HB 958 (sixth edition) lets a voter without photo ID cast a provisional ballot and bring ID to the county board by noon on the fifth business day after the election; extends the same window where driver license or Social Security digits do not match; keeps a photocopy of ID or an affidavit in the absentee envelope rules; treats certain Class C licenses as valid photo ID for voting; and requires registration applicants to affirm US citizenship, with a statement under penalty of perjury if the question is left blank.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:39.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d2659e9248d8b6814774a5151abe786802efbb7e3800ddbc8afd395fc64c6cc7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 motion to concur in the Senate committee substitute (62 ayes, 47 noes)",
+      "note": "Roll call lists Goodwin among the ayes on the final concurrence vote. The bill was ratified and the Governor vetoed it on 2026-08-17 (bill page https://www.ncleg.gov/BillLookUp/2025/H958).",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:39.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d176a910198a00c958eb9da6ab19b2a1f101a79643329778c834a18db72f02dd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/755",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, amendment A1 (Blackwell), Second Reading (112 ayes, 0 noes)",
+      "note": "Roll call lists Goodwin among the ayes on amendment A1 to HB 958.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:39.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "31a24d0153b6d73688cb60dec8ca7a3b358e27cfb5fdb5bb9301ff293a7d8c04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/756",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, amendment A2 (Blackwell), Second Reading (69 ayes, 44 noes)",
+      "note": "Roll call lists Goodwin among the ayes on amendment A2 to HB 958.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:39.299Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c5fcf3378565886b07aad578d754bcabd7f97c76c32a5949fb04ae4904e50bb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/757",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, amendment A3 (Dahle), Second Reading (47 ayes, 66 noes)",
+      "note": "Roll call lists Goodwin among the noes on amendment A3 to HB 958.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:39.299Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register",
+        "voter-roll and registration checks"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Ed_Goodwin says he is the sitting NC House District 1 member, won the March 3, 2026 primary, and is on the Nov 3, 2026 general-election ballot (NC General Assembly bio https://www.ncleg.gov/Members/Biography/H/744 also names Representative Edward C. Goodwin)",
+        "On the Record (0 appearances, 0 sources)",
+        "Ballotpedia (no issue positions on the subject)",
+        "NC General Assembly bill page and roll-call votes for HB 958 (2025-26, Election Law Changes)",
+        "blocked: https://electedgoodwin.com/ (campaign site did not load, redirect/no response)",
+        "not reviewed: https://www.facebook.com/RepEdGoodwinNCHouseDistrict1",
+        "not reviewed: https://www.facebook.com/edgoodwinnc",
+        "not reviewed: member sponsorship list and other election bills (2019-2024 sessions, e.g. 2023 S 747); search budget exhausted, no news search run",
+        "own words on the subject: nothing found in reachable pages"
+      ],
+      "found": 5,
+      "at": "2026-10-22T23:56:39.299Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "politician_id": "63df70bd-91d8-4576-8136-d2128ea5e9b9",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia (https://ballotpedia.org/Bridget_Plouffe) says she is on the Nov 3, 2026 general-election ballot for MA House 9th Plymouth and advanced from the Sept 1, 2026 primary; malegislature.gov profile https://malegislature.gov/Legislators/Profile/BMP1 names her as Representative, 9th Plymouth",
+        "On the Record (0 appearances)",
+        "malegislature.gov legislator profile and sponsored bills list: nothing on the subject (sponsored bills cover disability retirement, vision screening, MassHealth waivers, interpreter reimbursement, etc.)",
+        "malegislature.gov bill search for 'voter identification': no bill by her found",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: her campaign site and news coverage (web search budget used up for the session, so no name-plus-subject news search was run)",
+        "not reviewed: House roll-call votes on election-law amendments (no search possible)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:10:17.884Z",
+      "by": "source-collector"
+    }
+  ]
+}

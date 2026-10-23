@@ -1,0 +1,31 @@
+{
+  "politician_id": "7131c893-90fc-4c27-b4f6-e3fc8fcf6ec2",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "noncitizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Alyson_Sullivan-Almeida names her as incumbent, MA House 7th Plymouth District, advanced from the September 1, 2026 primary and on the November 3, 2026 general ballot",
+        "On the Record (0 appearances, 0 sources)",
+        "Ballotpedia (nothing on the subject)",
+        "malegislature.gov legislator profile https://malegislature.gov/Legislators/Profile/AMS2 (sponsored list shows no voter ID or election bill; page lists only a partial set of bills)",
+        "malegislature.gov bill H.833 (194th, voter identification, filed by another member): https://malegislature.gov/Bills/194/H833 ; blocked: cosponsor list https://malegislature.gov/Bills/194/H833/Cosponsor (loads empty, cosponsors not visible)",
+        "malegislature.gov bill search 'voter' (nothing naming her)",
+        "not reviewed: official site and campaign site (URLs not known; no web search budget left)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ontheissues.org, vote411 (lead-only; no search budget)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:12:51.398Z",
+      "by": "source-collector"
+    }
+  ]
+}

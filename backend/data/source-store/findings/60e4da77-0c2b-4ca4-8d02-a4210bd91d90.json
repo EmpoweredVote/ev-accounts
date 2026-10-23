@@ -1,0 +1,33 @@
+{
+  "politician_id": "60e4da77-0c2b-4ca4-8d02-a4210bd91d90",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: official profile https://malegislature.gov/Legislators/Profile/MJB0 names Senator Michael J. Barrett, Third Middlesex, Assistant Majority Leader; MA election results site https://electionstats.state.ma.us/elections/search/year_from/2026/year_to/2026/office_id/9/stage/General lists a 2026 State Senate 3rd Middlesex primary won by Michael J. Barrett against no opponents (2026 general result not shown)",
+        "On the Record (0 appearances, extract-otr.mjs run with --names)",
+        "official legislature profile and sponsored-bill list: nothing on the subject (S.497 is about the governor's councillor on the ballot, not identity)",
+        "legislature bill search 'voter identification': only Barrett filing is S.1423 (transit revenue), not on the subject",
+        "legislature bill pages S.510 and H.833 (voter ID bills by other members): Barrett not listed as petitioner or cosponsor on H.833; S.510 petitioner tab not readable; no roll calls shown",
+        "campaign/official site https://www.senatormikebarrett.com: nothing on the subject",
+        "blocked: https://ballotpedia.org/Michael_Barrett_(Massachusetts) (404; other name variants also 404, page not found)",
+        "not reviewed: news search on name plus subject words (shared web search budget exhausted)",
+        "not reviewed: ontheissues.org, vote411 (leads only; no search budget to find originals)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:10:49.968Z",
+      "by": "source-collector"
+    }
+  ]
+}

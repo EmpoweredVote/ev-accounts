@@ -1,0 +1,32 @@
+{
+  "politician_id": "250a7ae0-f130-449e-9625-4c2d1512bbf6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Stacey_Donato (sitting Indiana State Senate District 18, term ends 2028, not up in 2026)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "official site https://www.indianasenaterepublicans.com/donato (news list, 2026 legislative updates page, and 98% voting record page fetched): nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Stacey_Donato: nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_stacey_donato_1 (page needs JavaScript, no text returned)",
+        "blocked: https://api.iga.in.gov/2026/legislators/stacey_donato_1 (403, API key required), so bill sponsorships and roll-call votes not reviewed",
+        "not reviewed: web search for news on her name plus the subject words (session search budget was used up)",
+        "not reviewed: https://www.facebook.com/donatoforsenate, https://x.com/DonatoStacey (social posts, login or script walls)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:21:22.582Z",
+      "by": "source-collector"
+    }
+  ]
+}

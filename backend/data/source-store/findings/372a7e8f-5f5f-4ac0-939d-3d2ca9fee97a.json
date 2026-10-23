@@ -1,0 +1,23 @@
+{
+  "politician_id": "372a7e8f-5f5f-4ac0-939d-3d2ca9fee97a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (https://ballotpedia.org/Ericka_Kopp: \"She lost in the Democratic primary on August 4, 2026.\")",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched; survey answers have nothing on the subject)",
+        "not reviewed: campaign site and news search (stopped as out of scope; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:55:46.431Z",
+      "by": "source-collector"
+    }
+  ]
+}

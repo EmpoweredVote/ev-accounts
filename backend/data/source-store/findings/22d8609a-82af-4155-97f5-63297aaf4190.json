@@ -1,0 +1,55 @@
+{
+  "politician_id": "22d8609a-82af-4155-97f5-63297aaf4190",
+  "findings": [
+    {
+      "id": "6e6cf72168a082bde184279852dfb090e3828e1b8cfc48b38b1237abf3af3f7e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1231",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1231-2025",
+      "act": "sponsor",
+      "note": "McNeely is listed among the sponsors of House Bill 1231, No Voter Registration Changes At DMV (primary sponsors are three other members). The bill would stop voters from changing an existing registration (address, name, party) at the DMV website or DMV offices and require those changes at county boards of elections. The bill text keeps the DMV question asking applicants whether they are U.S. citizens. Referred to the House Rules committee on 5/12/2026.",
+      "subjects": [
+        "voter registration changes at DMV",
+        "voter-roll integrity",
+        "citizenship question on DMV registration form"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:37:51.202Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID for mail or absentee ballots",
+        "proof of citizenship to register or vote",
+        "voter registration changes and voter-roll integrity",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Jeffrey_McNeely (NC House District 84, on the 2026 general-election ballot; primary canceled)",
+        "On the Record (0 meetings)",
+        "campaign site https://jeffmcneely.com (home page only; nothing on the subject)",
+        "official legislature page https://www.ncleg.gov/Members/Biography/H/761 (nothing on the subject in own words)",
+        "ncleg.gov introduced and sponsored bills list https://www.ncleg.gov/Members/IntroducedBills/H/761 (277 bills reviewed by title; one on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jeffrey_McNeely (no voter ID or citizenship statements found)",
+        "not reviewed: https://www.ncleg.gov/Members/Votes/H/761 (roll-call list loads by script, not readable; no roll-call votes collected)",
+        "not reviewed: news search (the shared web search limit was used up)",
+        "not reviewed: Facebook https://www.facebook.com/RepJeffMcNeely and X https://x.com/mcneely_jeff (not readable without login)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:37:51.202Z",
+      "by": "source-collector"
+    }
+  ]
+}

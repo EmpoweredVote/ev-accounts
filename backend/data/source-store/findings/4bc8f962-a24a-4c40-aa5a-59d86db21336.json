@@ -1,0 +1,28 @@
+{
+  "politician_id": "4bc8f962-a24a-4c40-aa5a-59d86db21336",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "identity check: Ballotpedia (https://ballotpedia.org/Katie_Jenner) shows Katie Jenner as Indiana Secretary of Education, appointed November 19, 2020, term ends 2029; this is an appointed office, not an election-administration office",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://en.wikipedia.org/wiki/Katie_Jenner (404)",
+        "blocked: https://www.in.gov/sos/news/ (404; not her office)",
+        "not reviewed: official Department of Education site and news search (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:31:08.424Z",
+      "by": "source-collector"
+    }
+  ]
+}

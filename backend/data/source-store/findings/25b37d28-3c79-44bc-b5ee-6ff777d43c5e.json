@@ -1,0 +1,29 @@
+{
+  "politician_id": "25b37d28-3c79-44bc-b5ee-6ff777d43c5e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Dave_Heine (fetched with curl) names David Heine as Indiana House District 85 member, on the November 3, 2026 general ballot after the May 5, 2026 primary",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_dave_heine_1 (page is a script-only shell, no content readable); bill sponsorships not reviewed",
+        "blocked: https://www.indianahouserepublicans.com/members/house-district-85/ (404); members index fetched, no member page found",
+        "not reviewed: official and campaign site issue pages, news search (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:21:20.455Z",
+      "by": "source-collector"
+    }
+  ]
+}

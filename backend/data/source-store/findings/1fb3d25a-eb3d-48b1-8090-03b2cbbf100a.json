@@ -1,0 +1,82 @@
+{
+  "politician_id": "1fb3d25a-eb3d-48b1-8090-03b2cbbf100a",
+  "findings": [
+    {
+      "id": "9e8202b9e1652ed87d680003ece9d4dc2331d343494db1ec76c2f7841902c232",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/719/2025",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes, Second Reading",
+      "note": "Voted Aye (final tally 66 Aye, 47 No). The bill, as ratified (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf), requires a voter registration application to affirmatively state the applicant is a United States citizen before the county board processes it, and has the State Board of Elections create a process to remove voters flagged as possible non-citizens by a federal database. It does not change in-person photo ID rules.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:36:50.170Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "786ef612939babbfa10b8cdf264918ae159522f7b34913f28ae65b459951a799",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/719/2025",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes, M11 Concur",
+      "note": "Voted Aye (62 Aye, 47 No) on the House concurring vote on the Senate changes to HB 958, which the member vote page lists as passing. The bill adds a citizenship statement on registration applications and a removal process for flagged non-citizen registrations.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:36:50.170Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Destin_Hall lists him as incumbent, NC House District 87, and on the Nov 3, 2026 general election ballot (Speaker since Jan 8, 2025); ncleg.gov https://www.ncleg.gov/Members/Biography/H/719 names him House Speaker, District 87",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject in his own words",
+        "ncleg.gov member vote record https://www.ncleg.gov/Members/Votes/H/719/2025 (one election-law bill on the subject found)",
+        "ncleg.gov bill page HB 958 and ratified text H958v9",
+        "ncleg.gov member sponsored-bills page https://www.ncleg.gov/Members/Bills/H/719/2025: nothing on the subject returned",
+        "not reviewed: https://www.destinhall.org (campaign site, built with page-builder scripts; no readable text on the subject)",
+        "not reviewed: https://www.speakerhall.com (official site, built with page-builder scripts; no readable text on the subject)",
+        "not reviewed: https://x.com/ncspeakerhall and https://www.youtube.com/@representativedestinhall4112 (not fetched)",
+        "blocked: web search budget used up, so no news search on his name plus the subject words was possible",
+        "no own-words statement found"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:36:50.170Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "politician_id": "32768af6-7d8c-4727-aec2-9110f38d375e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: out of scope, not a sitting member of Congress and not on the 2026 ballot; the only Scott Turner found is the U.S. Secretary of Housing and Urban Development (Senate confirmed 55-44 on 2025-02-05), per https://ballotpedia.org/Scott_Turner (positive control: page names him in that office; his only run for Congress was a 2006 special election he lost)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (fetched with curl)",
+        "one web search: Scott Turner member of Congress 2026",
+        "not reviewed: official site, congress.gov and subject searches, because the person is out of scope and the identity does not match the record"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:38:38.548Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "politician_id": "ccbd986f-6986-4d0e-9739-b02578a62672",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "Ballotpedia https://ballotpedia.org/Holly_Lambert (confirms Indiana Commissioner of Insurance, appointed 2024; not a legislator and not a candidate; nothing on the subject)",
+        "On the Record (0 appearances)",
+        "Official site https://www.in.gov/idoi/ (blocked: 504); site search https://www.in.gov/idoi/?s=voter+ID (nothing on the subject)",
+        "not reviewed: legislature bill pages (she is an appointed agency head and has no bills)",
+        "not reviewed: news search (blocked: session web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:52:19.348Z",
+      "by": "source-collector"
+    }
+  ]
+}

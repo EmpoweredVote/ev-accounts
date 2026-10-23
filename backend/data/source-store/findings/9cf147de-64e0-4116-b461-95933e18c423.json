@@ -1,0 +1,59 @@
+{
+  "politician_id": "9cf147de-64e0-4116-b461-95933e18c423",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with a mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Aaron_Michlewitz names him as member of the Massachusetts House of Representatives, 3rd Suffolk District, advanced from the September 1, 2026 primary and on the November 3, 2026 general ballot; https://malegislature.gov/Legislators/Profile/AMM1 lists Representative Aaron Michlewitz, 3rd Suffolk",
+        "On the Record (0 appearances for this politician id; name search found no sources)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/AMM1 (no subject content)",
+        "campaign site https://aaronforrep.com and https://www.aaronforrep.com/issues: nothing on the subject",
+        "Ballotpedia: nothing on the subject (no survey responses; no voter ID content)",
+        "malegislature.gov bill search 'voter identification', filtered to him as primary sponsor: only H.4430 (2022 supplemental budget amendment) and it contains no voter ID text; nothing on the subject",
+        "malegislature.gov bill search filtered to him: 'citizenship voting', 'non-citizen voting', 'voter registration citizenship': no results",
+        "malegislature.gov bill search filtered to him: 'election integrity' (H.5050, 2024 supplemental budget amendment) and 'mail ballot identification' (H.4430): both budget amendments, text has no ID or ballot content; nothing on the subject",
+        "not reviewed: web news search on his name plus subject words (session web search budget was used up)",
+        "not reviewed: roll-call vote pages for election bills other than the one already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:19:05.292Z",
+      "by": "source-collector"
+    }
+  ]
+}

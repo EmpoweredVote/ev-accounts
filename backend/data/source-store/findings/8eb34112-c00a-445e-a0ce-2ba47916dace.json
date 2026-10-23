@@ -1,0 +1,28 @@
+{
+  "politician_id": "8eb34112-c00a-445e-a0ce-2ba47916dace",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "identity confirmed: https://ballotpedia.org/Brad_Briner (North Carolina Treasurer since 2025-01-01, term ends 2029-01-01; not on the 2026 ballot; sitting statewide official, in scope)",
+        "On the Record (0 appearances, 0 candidates)",
+        "Ballotpedia page text (no voter-ID, citizenship or election-law content in profile or Candidate Connection survey text)",
+        "official site https://www.nctreasurer.gov/ (home page, nothing on the subject; no site search run)",
+        "not reviewed: ncleg.gov (statewide executive, not a legislator; member page returned HTTP 500)",
+        "not reviewed: news search (web search budget exhausted for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:57:31.893Z",
+      "by": "source-collector"
+    }
+  ]
+}

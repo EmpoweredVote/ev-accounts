@@ -1,0 +1,57 @@
+{
+  "politician_id": "05a8fe10-5b46-493d-b9af-44162b2de2eb",
+  "findings": [
+    {
+      "id": "f4a879fcf3b335c68958df696c19b06f1c5e4535f64776bc08d90898505f9160",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H691",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-691-2025",
+      "act": "sponsor",
+      "motion": "HB 691, Voter Protection and Reliance Act (listed among sponsors)",
+      "note": "Ya Liu is on the sponsor list of HB 691. The bill says a vote cast under the election rules in place on election day cannot be thrown out because of a later law, ruling or rule change, and it speeds up election lawsuits filed close to an election. It does not itself set an ID or citizenship rule. Saved as a related election-integrity bill.",
+      "subjects": [
+        "election integrity laws in general",
+        "election-rule changes after ballots are cast"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:31:40.362Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Ya_Liu names her as NC House District 21 incumbent on the Nov 3, 2026 general election ballot (primary canceled)",
+        "On the Record (0 appearances)",
+        "NCGA member page https://www.ncleg.gov/Members/Biography/H/806 (confirms Rep. Ya Liu, District 21)",
+        "NCGA introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/806 (primary-sponsored: HB 31 election-day holiday, off subject; Tribal ID for alcohol/tobacco, off subject)",
+        "NCGA bill page https://www.ncleg.gov/BillLookUp/2025/H691 (co-sponsor list)",
+        "campaign site https://yaliu4nc.com/ and /meet-ya/ (nothing on the subject; home page is dated to an earlier primary)",
+        "Ballotpedia (no positions on voter ID found)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: NCGA co-sponsorship list for other 2025 voter ID bills and roll-call votes (no member vote-record page fetched)",
+        "not reviewed: https://www.facebook.com/YaLiu4NC/ , https://x.com/YaLiu4NC (social pages not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:31:40.362Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "politician_id": "28714014-4c7e-427e-8190-fcc21875377a",
+  "findings": [
+    {
+      "id": "80f316d441bacd17f6c9bced7e4b0cc9d4de694f657c7debfd130ac965388c3f",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?201+sum+HB19",
+      "date": "2020-03-05",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-19-2020",
+      "act": "nay",
+      "motion": "conference report agreed to (Adoption)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, conference report agreed to (Adoption), 2020-03-05: nay (tally 54–45); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "d17fc3171e5c59eb9f5a858ee72e1a4878b111f110d4442a54e3be7bb94c8397",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-20",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "yea",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2013-02-20: yea (tally 65–34); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "785d0338b0138a0df4aef02cdfcc1e114d96e293356af794ee4aaefe27813933",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "yea",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: yea (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

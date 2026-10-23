@@ -1,0 +1,29 @@
+{
+  "politician_id": "5cd1c798-31dc-4e53-b578-7e2d81378478",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: partial. Identity confirmed (https://malegislature.gov/Legislators/Profile/JFK0 names Senator John F. Keenan, Norfolk and Plymouth, 194th General Court). 2026 general-election ballot status NOT confirmed: Ballotpedia pages for his name returned a different person or nothing, and the MA election stats pages showed no Norfolk and Plymouth 2026 list",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "malegislature.gov legislator profile: his sponsored petitions list has one election bill, S.516 'An Act to protect democracy' (https://malegislature.gov/Bills/194/S516), whose text covers protecting election workers only; nothing on the subject",
+        "Ballotpedia: blocked/not usable (https://ballotpedia.org/John_F._Keenan served another person's page; John_Keenan_(Massachusetts) 404)",
+        "electionstats.state.ma.us: nothing on the subject",
+        "not reviewed: web searches (news, official site, campaign site, own words) because the shared 200-search budget was used up",
+        "not reviewed: malegislature.gov bill search (results load by script) and Senate roll calls on election bills",
+        "not reviewed: https://www.sec.state.ma.us/divisions/elections/2026-state-primary/candidates.htm (fetch returned empty)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:10:20.250Z",
+      "by": "source-collector"
+    }
+  ]
+}

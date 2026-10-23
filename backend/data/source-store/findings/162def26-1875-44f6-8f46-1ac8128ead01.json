@@ -1,0 +1,33 @@
+{
+  "politician_id": "162def26-1875-44f6-8f46-1ac8128ead01",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Tyler_Johnson_(Indiana) names him as Indiana State Senate District 14 incumbent, advanced from the May 5, 2026 primary, on the November 3, 2026 general-election ballot",
+        "On the Record (0 meetings, extract-otr.mjs run with --names 'Tyler Johnson')",
+        "Ballotpedia profile: nothing on the subject (biography, committees including Elections Committee 2023-2026, campaign themes only)",
+        "official site https://www.indianasenaterepublicans.com/johnson: home page and 12 linked news pages checked for voter ID, citizen, election, ballot words: nothing on the subject",
+        "official site 2026 Summary of New Laws PDF (cdn.zephyrcms.com): nothing on the subject for voter ID or citizenship",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_tyler_johnson_1 (JavaScript app, no readable text)",
+        "blocked: https://api.iga.in.gov/2026/legislators (403, API key required), so sponsorship and roll-call lists not reviewed",
+        "blocked: BillTrack50 legislator page guessed URLs (404)",
+        "campaign site: not found (guessed URLs failed)",
+        "web search: not run, session search budget used up; no news search done"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:20:56.987Z",
+      "by": "source-collector"
+    }
+  ]
+}

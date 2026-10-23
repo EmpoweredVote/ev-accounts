@@ -1,0 +1,24 @@
+{
+  "politician_id": "578dfc2e-03e4-44fc-9cd2-faed3248af54",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia https://ballotpedia.org/Elijah_Manley, fetched by curl: \"He lost in the Democratic primary on August 18, 2026.\" for Florida's 20th Congressional District)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.elijahmanley.com (page names him as candidate for FL-20; site paused or lapsed, nothing on the subject)",
+        "Ballotpedia (confirms identity and primary loss; stopped per scope rule)",
+        "not reviewed: web news search (search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:47:16.633Z",
+      "by": "source-collector"
+    }
+  ]
+}

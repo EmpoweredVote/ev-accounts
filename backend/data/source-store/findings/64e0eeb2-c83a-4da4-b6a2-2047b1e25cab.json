@@ -1,0 +1,57 @@
+{
+  "politician_id": "64e0eeb2-c83a-4da4-b6a2-2047b1e25cab",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll bills"
+      ],
+      "places": [
+        "in scope: Ballotpedia says he advanced from the primary on September 1, 2026 and is on the November 3, 2026 general ballot for 10th Hampden: https://ballotpedia.org/Carlos_Gonzalez_(Massachusetts)",
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/C_G1 (fetched; no subject content)",
+        "legislature sponsored bills, sessions 193 and 194: nothing on the subject",
+        "legislature cosponsored bills, sessions 193 and 194: nothing on the subject",
+        "Ballotpedia page: nothing on the subject",
+        "amendment 7 page https://malegislature.gov/Bills/192/H4359/Amendment/7 (already on file; fetched, vote itself not re-collected)",
+        "not reviewed: official campaign site and news search (web search budget exhausted; campaign site URL not found)",
+        "not reviewed: https://www.facebook.com/VoteCarlosGonzalez (social page, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:11:18.194Z",
+      "by": "source-collector"
+    }
+  ]
+}

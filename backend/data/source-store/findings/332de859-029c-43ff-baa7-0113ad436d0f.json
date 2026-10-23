@@ -1,0 +1,107 @@
+{
+  "politician_id": "332de859-029c-43ff-baa7-0113ad436d0f",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register (SAVE Act)",
+        "election integrity / voter-roll checks / non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Frank_Pallone (fetched by curl) says he is on the Nov 3, 2026 general-election ballot for NJ-6 after advancing from the June 2, 2026 primary",
+        "On the Record (0 appearances, nothing on the subject)",
+        "Ballotpedia (only the votes already on file; no own words on the subject)",
+        "official site press-release page https://pallone.house.gov/media/press-releases (first page fetched, nothing on the subject; the site search parameter is ignored and the site's own search page returned 403)",
+        "blocked: https://pallone.house.gov/search?search_api_fulltext=SAVE+Act",
+        "blocked: https://www.congress.gov/member/frank-pallone/P000034 (cosponsorship list, Cloudflare challenge/403)",
+        "blocked: https://www.govtrack.us/congress/members/frank_pallone/400326 (403)",
+        "not reviewed: campaign site, news search, ontheissues.org, Vote Smart (web search budget exhausted for the session; no search could be run)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:49:11.606Z",
+      "by": "source-collector"
+    }
+  ]
+}

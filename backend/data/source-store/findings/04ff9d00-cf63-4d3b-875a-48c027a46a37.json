@@ -1,0 +1,35 @@
+{
+  "politician_id": "04ff9d00-cf63-4d3b-875a-48c027a46a37",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/John_Braun confirms John Braun is on the Nov 3, 2026 general ballot for U.S. House WA-3 after advancing from the Aug 4, 2026 top-two primary",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.votebraun.com/issues (Where I Stand): nothing on the subject; topics are cost of living, education, crime, border and fentanyl, salmon, energy, veterans, guns, women's sports",
+        "campaign site https://www.votebraun.com/about: nothing on the subject",
+        "campaign site https://www.votebraun.com/news (press list through Jul 2026): headlines only, nothing on the subject",
+        "Ballotpedia John_Braun page text: nothing on the subject",
+        "official legislature caucus site https://johnbraun.src.wastateleg.org site search for 'voter ID', 'election integrity', 'citizenship': results were unrelated posts (budget, taxes), nothing on the subject",
+        "OPB poll article https://www.opb.org/article/2026/10/01/gluesenkamp-perez-braun-southwest-washington-3rd-district/: nothing by Braun on the subject",
+        "not reviewed: Washington Legislature sponsor/bill pages (https://app.leg.wa.gov/bi/report/Sponsor returned 404; no sponsor list reached), so state-level voter ID or citizenship bill sponsorships are not checked",
+        "not reviewed: news search on name plus subject words, and the other URL-pattern pages, because the shared web search budget was used up",
+        "not reviewed: x.com/votejohnbraun, Facebook, debate or forum videos"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:57:26.935Z",
+      "by": "source-collector"
+    }
+  ]
+}

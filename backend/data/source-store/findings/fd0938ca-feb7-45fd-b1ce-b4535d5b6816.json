@@ -1,0 +1,27 @@
+{
+  "politician_id": "fd0938ca-feb7-45fd-b1ce-b4535d5b6816",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: not on the 2026 general-election ballot (withdrew or disqualified, date not stated); Ballotpedia, https://ballotpedia.org/Michael_Jackson_(Virginia_congressional_candidate): \"He will not appear on the ballot for the general election on November 3, 2026.\" and listed under \"Withdrawn or disqualified candidates\" for U.S. House Virginia District 9",
+        "On the Record (0 appearances)",
+        "Ballotpedia page and Candidate Connection survey (nothing on the subject)",
+        "Ballotpedia VA House 2026 page (confirms not on ballot)",
+        "not reviewed: campaign site (stopped after scope check; no web searches left in the session budget)",
+        "not reviewed: congress.gov (not a legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:51:27.249Z",
+      "by": "source-collector"
+    }
+  ]
+}

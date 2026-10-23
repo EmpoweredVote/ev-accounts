@@ -1,0 +1,184 @@
+{
+  "politician_id": "d81df43f-1f30-4c79-92ce-c61be7150a6e",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "97924777000353d99d254c83672f8fdf55e7efb99db277d0dcab1d0288504e1e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "NC-H-825-2025",
+      "act": "sponsor",
+      "note": "Blust is listed as a sponsor (not the primary sponsor) of HB 825, Election Improvements. The date is the first-edition date; the page does not say when he signed on. The bill would change what a voter must give to request an absentee ballot: the last four digits of a Social Security number plus a driver license number, state ID card number or date of birth. It would also let a voter who cannot attach a photocopy of ID to a returned absentee ballot use a reasonable-impediment affidavit with the same identifiers. The same bill bans ranked choice voting and shortens early voting. It stayed in the Rules committee.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID number to request an absentee ballot",
+        "reasonable-impediment affidavit",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:12:46.803Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d0e896ac9e176571afa05edf485eef9f6de7245d389c988b6279bae4773beb01",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "sponsor",
+      "note": "Blust is listed among the sponsors of HB 958, Election Law Changes. The date is the filing date; the first version listed only the primary sponsor, so the page does not say when he joined. The ratified bill requires a voter registration application to state affirmatively that the applicant is a U.S. citizen before it is processed, and requires a process to remove voters flagged as possible non-citizens from a federal database. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:12:46.803Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bdd1ec8cdab76ca8871d6f6a17667b26c21d15911d7d97428df27516e3ad3e82",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/234",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading",
+      "note": "Blust voted Aye on second reading of HB 958 (66 for, 47 against). The bill requires an affirmative citizenship answer on voter registration applications and removal of voters flagged as possible non-citizens.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:12:46.803Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32ef80c0daf7d1ebe709246b10e553e3e7bac644c9b2b7d54df7f1b0b57011b9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/234",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur",
+      "note": "Blust voted Aye on the House concurrence vote on HB 958 (62 for, 47 against), the last House vote before the bill was ratified and then vetoed.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:12:46.803Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "ID with a mail or absentee ballot or to request one",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/John_Blust) says Blust is the sitting NC House District 62 member and is on the Nov 3, 2026 general-election ballot (primary canceled)",
+        "On the Record (0 appearances, 0 sources)",
+        "NC General Assembly member page (https://www.ncleg.gov/Members/Biography/H/234)",
+        "NC General Assembly introduced bills list (https://www.ncleg.gov/Members/IntroducedBills/H/234)",
+        "NC General Assembly vote record (https://www.ncleg.gov/Members/Votes/H/234)",
+        "NC General Assembly bill pages H825, H958, H967 (H967 Disorderly Conduct at Voting Places is off-subject, not saved)",
+        "Ballotpedia: no voter ID or citizenship statements by Blust; he did not complete the 2024 Candidate Connection survey",
+        "blocked: http://www.voteforblust.com/issues/ (no response; campaign site appears offline)",
+        "not reviewed: Ballotpedia WebFetch returned empty; read through curl instead",
+        "not searched: web news search (the shared search budget was used up); no own-words quotes found without it",
+        "nothing on the subject: own-words sources (none reachable)"
+      ],
+      "found": 4,
+      "at": "2026-10-23T00:12:46.803Z",
+      "by": "source-collector"
+    }
+  ]
+}

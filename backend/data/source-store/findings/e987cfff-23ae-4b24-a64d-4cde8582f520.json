@@ -1,0 +1,55 @@
+{
+  "politician_id": "e987cfff-23ae-4b24-a64d-4cde8582f520",
+  "findings": [
+    {
+      "id": "e01d411bb4c52b1358ac8018b17cd9c4dd5f2ffa59a553e59cf07dcdbfcf0403",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Jason_Pearce",
+      "date": "2026-01-01",
+      "date_precision": "year",
+      "passage": "As a Texan, we are on the Frontline of election manipulation. There are so many systems in place to create voter suppression. Here are my beliefs in order of importance:",
+      "note": "Answer to Ballotpedia Candidate Connection question 'What legislation would you enact related to election administration in the United States?' Date is approximate (2026 cycle; exact survey date not shown). Followed by a list: one person one vote by eliminating the electoral college, federal paid holiday for election day, year-round voter registration and correction, more voting locations, free transport to voting locations, and the one-hour voting allowance extended to early voting. No mention of ID or citizenship proof.",
+      "subjects": [
+        "election administration in general",
+        "voting access",
+        "voter suppression concerns",
+        "voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:18.626Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID exceptions and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election administration and voting access in general",
+        "non-citizen voting and voter-roll checks"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Jason_Pearce says he is on the general-election ballot on November 3, 2026 for U.S. House Texas District 4 and advanced from the March 3, 2026 primary",
+        "On the Record (0 appearances for this politician, 0 sources)",
+        "campaign site https://www.pearcefortexas.com/ (stub page, no issue text; /issues and subject-word paths returned the same stub; nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Jason_Pearce (Candidate Connection answer on election administration saved)",
+        "congress.gov: not reviewed, not a sitting legislator so no sponsorships",
+        "web search: not performed, shared search budget used up",
+        "news search: not reviewed, search budget used up",
+        "nothing on the subject: no own words found on photo ID, proof of citizenship, SAVE Act or mail-ballot ID"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:09:18.626Z",
+      "by": "source-collector"
+    }
+  ]
+}

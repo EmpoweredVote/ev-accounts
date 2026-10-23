@@ -1,0 +1,239 @@
+{
+  "politician_id": "9a67fdf3-9ace-484f-9751-f2aee243c8f8",
+  "findings": [
+    {
+      "id": "07921e81dbf3121a8cb6c12178f38cdde55541812bb8dff4e8bbed24f68b0b48",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-06",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "concur in House committee substitute (Motion 9 To Concur)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, concur in House committee substitute (Motion 9 To Concur), 2018-12-06: yea (tally 25–7); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c765281624eba034064dc2920b2d55a63acb3cbe9cb7b9dac0d48c3712e9023",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: yea (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ca8d2e6290c7849a1d96ddbae895044aa90e0c579e36359cae7ad43efa2594f0",
+      "kind": "own-words",
+      "url": "https://normansanderson.com/issues",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "I believe that voting integrity is key to a free society, and I have co-sponsored legislation since I took office to implement Voter ID.",
+      "note": "Campaign issues page. He says he has co-sponsored voter ID legislation since taking office and describes voter ID as now in place. Page footer is dated 2024; the page itself shows no post date.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:18.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b502eb43f1d31b5fbd9c61f805f5197fa6cb389683c982458daaec82131effe9",
+      "kind": "own-words",
+      "url": "https://normansanderson.com/issues",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Thankfully this is now in place to protect the integrity of our elections.",
+      "note": "Same campaign issues page, the sentence right after the voter ID co-sponsorship claim. Says voter ID is now in place and ties it to protecting elections.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:18.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "20be2574e887b8f26e0423663043672fda0241604a721f5e5c77973ec93f2138",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/882",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "yea",
+      "motion": "Third Reading (Roll Call #882)",
+      "note": "Senate third reading of HB 589, VIVA/Election Reform, which passed 33 to 14. Sanderson is listed among the ayes.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:18.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "58574aab1a99a748d4e79afc415cabb303434f0e166275230c3545cfa931cf46",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/866",
+      "date": "2013-07-24",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "yea",
+      "motion": "Second Reading (Roll Call #866)",
+      "note": "Senate second reading of HB 589, VIVA/Election Reform, which passed 32 to 14. Sanderson is listed among the ayes.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:18.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "19d89bd36bbbaab3973edf3ff78fed9a252eea4da29330929487d28ff526cc4f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2011/H/930",
+      "date": "2011-06-09",
+      "date_precision": "day",
+      "instrument_id": "NC-H-351-2011",
+      "act": "yea",
+      "motion": "Third Reading (Roll Call #930)",
+      "note": "House third reading of HB 351, Restore Confidence in Government, which passed 66 to 48. Sanderson is listed among the ayes. The bill is the 2011 voter ID bill.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:18.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "59251b66ffcb0fbc32c25268c9aa25ff3fd93ad2d635fe3a063e661270ad9437",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2011/H/1081",
+      "date": "2011-06-16",
+      "date_precision": "day",
+      "instrument_id": "NC-H-351-2011",
+      "act": "yea",
+      "motion": "M11 Concur (Roll Call #1081)",
+      "note": "House vote to concur in HB 351, Restore Confidence in Government, which passed 62 to 51. Sanderson is listed among the ayes.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:18.205Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8509c4508d896963197f3c5f2965619edeefb78d514afa773aada667f876de5d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2011/H/1278",
+      "date": "2011-07-26",
+      "date_precision": "day",
+      "instrument_id": "NC-H-351-2011",
+      "act": "yea",
+      "motion": "Veto Override M6 Reconsider (Roll Call #1278)",
+      "note": "House vote to override the veto of HB 351, Restore Confidence in Government, which passed 68 to 51. Sanderson is listed among the ayes.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:18.205Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote / SAVE Act",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Scope confirmed: Ballotpedia (https://ballotpedia.org/Norman_Sanderson) lists him as NC Senate District 2 incumbent on the Nov 3 2026 general ballot; the March 3 2026 primary was canceled, so he advanced unopposed",
+        "On the Record (0 appearances; nothing on the subject)",
+        "campaign site https://normansanderson.com (home, issues, accomplishments pages read; one voter ID passage found)",
+        "ncleg.gov bill pages and roll calls for HB 589 (2013) and HB 351 (2011): votes found; sponsor lists not shown in page text, so co-sponsorship not confirmed from the legislature page",
+        "Ballotpedia (no voter ID content found)",
+        "not reviewed: https://x.com/normsanderson",
+        "not reviewed: news search on name plus subject words (the shared web search limit was used up)",
+        "not reviewed: 2013 HB 589 Senate floor amendments 10 and 14 (roll calls #865 and #881); their content was not read",
+        "not reviewed: 2025-2026 session bills on ID or citizenship; no bill page found",
+        "nothing on the subject: mail-ballot ID, proof of citizenship, SAVE Act"
+      ],
+      "found": 7,
+      "at": "2026-10-23T00:04:18.205Z",
+      "by": "source-collector"
+    }
+  ]
+}

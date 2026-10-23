@@ -1,0 +1,30 @@
+{
+  "politician_id": "946f7bc2-48ed-447e-a9a5-cb99aae00b31",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Gregory_Steuerwald names him as Indiana House District 40 incumbent on the Nov 3, 2026 general-election ballot after the May 5, 2026 primary",
+        "On the Record (0 appearances; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_gregory_steuerwald_1 (page loads only a script shell, no bill list readable)",
+        "blocked: https://www.indianahouserepublicans.com/members/steuerwald (404)",
+        "Ballotpedia page fetched; no voter ID or election-law content found on it",
+        "not reviewed: news search on name plus voter ID words (the shared web-search budget was used up)",
+        "not reviewed: IGA bill pages for sponsorships (no readable bill search without search tool)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:42:45.982Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "politician_id": "15f59b0c-f71c-4199-b195-7b653a05a310",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Barry_Finegold) says he is on the Nov 3, 2026 general ballot for MA Senate 2nd Essex and Middlesex",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "https://malegislature.gov/Legislators/Profile/BRF0/Sponsored (only sponsored election bill is S.515 campaign finance, not on the subject)",
+        "https://malegislature.gov/Legislators/Profile/BRF0/Cosponsored: nothing on the subject",
+        "official/campaign site https://www.barryfinegold.com (home page only): nothing on the subject",
+        "not reviewed: news search on name plus subject words (shared web search budget was used up)",
+        "not reviewed: site-wide search of official site and bill search for voter ID bills for roll-call votes"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:59:35.076Z",
+      "by": "source-collector"
+    }
+  ]
+}

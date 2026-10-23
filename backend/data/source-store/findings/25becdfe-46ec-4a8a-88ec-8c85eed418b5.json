@@ -1,0 +1,31 @@
+{
+  "politician_id": "25becdfe-46ec-4a8a-88ec-8c85eed418b5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope. Sitting state senator, District 9 (in office since 2004, re-elected 2024 unopposed per Ballotpedia). Confirmed on https://www.indianasenaterepublicans.com/mishler",
+        "On the Record (0 appearances; extract-otr with name search returned 0 sources)",
+        "official Senate caucus page https://www.indianasenaterepublicans.com/mishler (nothing on the subject)",
+        "official Senate caucus legislative updates page and media room (nothing on the subject in the text fetched)",
+        "Ballotpedia https://ballotpedia.org/Ryan_Mishler (nothing on the subject)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_ryan_mishler_1 (page is script-rendered; bill and sponsorship lists not readable)",
+        "not reviewed: news search on name plus subject words (shared web search budget was used up)",
+        "not reviewed: campaign site, questionnaires, forums, social posts (no search budget to locate them)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:21:30.312Z",
+      "by": "source-collector"
+    }
+  ]
+}

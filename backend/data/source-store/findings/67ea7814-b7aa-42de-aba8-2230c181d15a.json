@@ -1,0 +1,32 @@
+{
+  "politician_id": "67ea7814-b7aa-42de-aba8-2230c181d15a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Michael_Brady says he is on the Nov 3, 2026 general election ballot for 2nd Plymouth and Norfolk Senate district, advanced from the Sept 1, 2026 primary",
+        "On the Record (0 appearances)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MDB0 (sponsored bills reviewed; only election-related one is S.498, Election Day registration at polling places, not on identification; nothing on the subject)",
+        "personal site https://senatormikebrady.org (home page only; nothing on the subject; internal pages not reviewed)",
+        "Ballotpedia (nothing on the subject)",
+        "malegislature.gov H.4776 (2022) bill page: no linked roll call on identification; nothing on the subject",
+        "blocked: web search budget used up, so no news search for name plus subject words was run",
+        "not reviewed: Senate roll-call lists and amendments on voter identification (no way to locate them without search)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:11:12.987Z",
+      "by": "source-collector"
+    }
+  ]
+}

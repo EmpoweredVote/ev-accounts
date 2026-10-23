@@ -1,0 +1,34 @@
+{
+  "politician_id": "785c2d95-9d99-41c9-b903-7aab661f8928",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Ryan_Fattman (fetched by curl) says he is on the Nov 3, 2026 general-election ballot for Worcester and Hampden District, advanced from the Sept 1, 2026 primary",
+        "On the Record (0 appearances, extract-otr run with --names)",
+        "official Senate profile https://malegislature.gov/Legislators/Profile/RCF0: sponsored list for 194th court reviewed, nothing on the subject (S.513 moves the state primary date; S.1089 is identity theft; S.1313 is employer falsified citizenship documents for employment, not voting)",
+        "cosponsored list for 194th court: page returned the same list as sponsored, nothing on the subject",
+        "malegislature.gov bill search for voter identification: H.833 (194th) checked, sponsor Garry only, no Fattman listed",
+        "official site https://senatorfattman.com/: single JavaScript page, no readable text; /news, /press-releases, /blog return 404; nothing on the subject",
+        "not reviewed: news search on name plus subject words (web search budget for the session was used up)",
+        "not reviewed: Senate roll-call votes and floor amendments on voter ID (not located without search)",
+        "not reviewed: campaign site, Facebook, Instagram, YouTube, X posts"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:23.222Z",
+      "by": "source-collector"
+    }
+  ]
+}

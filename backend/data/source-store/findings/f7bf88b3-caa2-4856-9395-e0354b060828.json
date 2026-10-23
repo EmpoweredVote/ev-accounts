@@ -1,0 +1,57 @@
+{
+  "politician_id": "f7bf88b3-caa2-4856-9395-e0354b060828",
+  "findings": [
+    {
+      "id": "534ceed7d96d4db1ae4afe84aab143fcd9a3aaf0cf02300447a0ec5bac3cdd10",
+      "kind": "own-words",
+      "url": "https://cerettaforgeorgia.com",
+      "date": "2026-10-22",
+      "date_precision": "day",
+      "passage": "Free & fair elections: expand access and protect voters.",
+      "note": "Bullet under the 'Defending Democracy & Our Rights' priority on the campaign site. It does not mention ID or proof of citizenship. Date is the date the page was fetched, as the page is undated.",
+      "subjects": [
+        "election integrity in general",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:12:14.122Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity / free and fair elections"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Ceretta_Smith (won the June 16, 2026 primary runoff; on the November 3, 2026 general-election ballot for U.S. House Georgia District 12)",
+        "On the Record (0 appearances)",
+        "campaign site https://cerettaforgeorgia.com (priorities section read; one general election line saved, nothing on ID or citizenship)",
+        "Ballotpedia (Candidate Connection survey read; nothing on the subject)",
+        "not a legislator: no sponsorships or votes in Congress; congress.gov not applicable",
+        "not reviewed: https://www.facebook.com/CerettaforGeorgia",
+        "not reviewed: https://bsky.app/profile/cerettaforgeorgia.bsky.social",
+        "not reviewed: https://www.instagram.com/cerettaforga/",
+        "not reviewed: https://www.tiktok.com/@cerettaforgeorgia",
+        "blocked: web search budget used up, so no news search on name plus subject words was run",
+        "https://www.take-bac-congress.us/team/ceretta-smith (fetched, nothing on the subject)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:12:14.122Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "politician_id": "eb8e8033-33dd-4ac3-aa5f-8225d747f91e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback for voters",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Robert_Burke_(Massachusetts) names him as a candidate for U.S. House Massachusetts District 8 on the Nov 3, 2026 ballot after the Sept 1, 2026 primary (Ballotpedia lists the district as MA-8, not MA-7)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "campaign site https://burke4congress.us/ (single page, no issue text on the subject)",
+        "campaign site https://burke4congress.us/priorities: blocked: 404",
+        "https://burke4congress.com/ (meet-rob, robs-platform): blocked: 404, and the domain now serves unrelated spam, so it is not usable",
+        "Ballotpedia (campaign themes 2022 and 2024 quoted from his old site: nothing on the subject; no 2026 themes listed)",
+        "https://x.com/RBurke4Congress: nothing on the subject in the page text served without login",
+        "congress.gov: not applicable, he has not held legislative office",
+        "web search: not performed, the session search budget was used up before this run",
+        "not reviewed: https://www.youtube.com/@Burke4Congress",
+        "not reviewed: https://www.facebook.com/profile.php?id=61586092474944",
+        "not reviewed: https://www.instagram.com/burke4congress",
+        "not reviewed: https://www.tiktok.com/@BURKE4CONGRESS"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:55:33.494Z",
+      "by": "source-collector"
+    }
+  ]
+}

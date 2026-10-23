@@ -1,0 +1,101 @@
+{
+  "politician_id": "67b46e18-cec0-4851-9535-92d1e8d58f65",
+  "findings": [
+    {
+      "id": "b9e18dd67694a95c0b720a12fc15d6621900245893d876d9f133ba1d2e872438",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-278-2025",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor (not primary) of HB 278, Protect Military Votes. Bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H278v1.html) says: \"A covered voter voting under this Article shall not be required to include a photocopy of identification described in G.S. 163-166.16(a) or an affidavit as described in G.S. 163-166.16(d)(1), (d)(2), or (d)(3) when submitting a ballot in accordance with this Article.\" It would codify that military and overseas absentee voters need no photo ID. The bill was referred to House Rules and did not move.",
+      "subjects": [
+        "photo ID with a military or overseas absentee ballot",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:39.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d6077fe644565cb7ec22140c6fa710f6168144e14d17043a65565586222876eb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/798",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (House roll call 758)",
+      "note": "Voted No on second reading of HB 958, Election Law Changes (passed 66 to 47 per the votes list). The bill text (edition 8, https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H958v8.html) includes a rule that a voter registration application is processed only if it affirmatively states the applicant is a United States citizen, and voter-roll checks against federal-database information on possible non-citizens.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:39.944Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f9a38ad15704ad50876db31c7e323bb0dcc3ce075f20000bd252caea61bc2646",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/798",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Motion 11 Concur with Senate changes (House roll call 801)",
+      "note": "Voted No on the House concurrence vote on HB 958, Election Law Changes (passed 62 to 47 per the votes list). Same bill as the second-reading entry; it carries citizenship-statement and voter-roll non-citizen provisions.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:51:39.944Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for military/overseas absentee ballots",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen records",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Maria_Cervania (NC House District 41, on the 2026 general-election ballot; primary canceled) and https://www.ncleg.gov/Members/Biography/H/798",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.mariafornc.com (home page only; nothing on the subject; /issues and /priorities return 404)",
+        "Ballotpedia (nothing on the subject; no 2026 candidate survey completed)",
+        "NC General Assembly introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/798 (reviewed full list)",
+        "NC General Assembly votes list https://www.ncleg.gov/Members/Votes/H/798 (reviewed election-related votes)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: official legislative site press releases, social media, debate or forum video"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:51:39.944Z",
+      "by": "source-collector"
+    }
+  ]
+}

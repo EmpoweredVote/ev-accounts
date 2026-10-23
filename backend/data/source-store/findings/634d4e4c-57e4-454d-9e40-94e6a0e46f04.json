@@ -1,0 +1,77 @@
+{
+  "politician_id": "634d4e4c-57e4-454d-9e40-94e6a0e46f04",
+  "findings": [
+    {
+      "id": "d2a7bce5f0439eb010e19178a01ce884f0f7377983f68c163913ffa75dd4703c",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "passage": "\"A student ID gives very little information about the voter, only their name, university and a photo,\" Culp said. \"This bill would treat college students the same as other voters, ensuring they have a government-issued ID to vote, such as a drivers license.\"",
+      "note": "Quote in a House caucus press release issued in his name. He explains Senate Bill 10, which removes student IDs as accepted ID at the polls.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "student ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:36:24.765Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "50efb9e1c08b5ab2e5fdb31346200979d1a5bd7c952643f604bde94e329f9815",
+      "kind": "record",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/rep.-culp-legislation-to-improve-election-integrity-passes-the-house/",
+      "date": "2025-04-16",
+      "date_precision": "day",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "sponsor",
+      "note": "Caucus press release says the House passed legislation sponsored by Culp, Senate Bill 10. It removes student IDs as authorized proof of identification, requires county voter registration offices to keep updated voter lists, and requires local health officers to share death records with them every quarter. The bill then went to the governor. Official bill page was not readable, so the sponsor role rests on this release.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:36:24.765Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types",
+        "voter-roll maintenance",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Kendell_Culp (House District 16, advanced from May 5, 2026 primary, on Nov 3, 2026 general ballot)",
+        "On the Record (0 appearances for this politician)",
+        "official site: https://www.indianahouserepublicans.com/members/general/kendell-culp (press-release list scanned for subject words; one election item found)",
+        "Ballotpedia (no subject positions found)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_kendell_culp_1 (page needs JavaScript; bill pages unreadable)",
+        "blocked: https://www.kendellculp.com (no connection)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject: SAVE Act, proof of citizenship, mail-ballot ID"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:36:24.765Z",
+      "by": "source-collector"
+    }
+  ]
+}

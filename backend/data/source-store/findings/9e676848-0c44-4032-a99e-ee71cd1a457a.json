@@ -1,0 +1,30 @@
+{
+  "politician_id": "9e676848-0c44-4032-a99e-ee71cd1a457a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Stylo_Sapaskis) names him as a candidate for U.S. House New York District 15 and says he is on the 2026 general-election ballot on November 3, 2026; nothing on the subject",
+        "On the Record (0 appearances for this politician id; run with --names, no unlinked speaker matches reported): nothing on the subject",
+        "Ballotpedia: nothing on the subject (2026 Candidate Connection survey not completed; no campaign themes)",
+        "campaign site: not found; guessed domains sapaskis.com, sapaskisforcongress.com, stylosapaskis.com did not respond; blocked: https://www.sapaskis.com",
+        "congress.gov: not reviewed, he has never held federal office so no sponsorships or votes exist",
+        "Vote Smart: nothing on the subject (https://www.votesmart.org/candidate/stylo-sapaskis returned 404)",
+        "news search on name plus subject words: not reviewed, the shared web search budget was used up (blocked: search limit)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:57:42.621Z",
+      "by": "source-collector"
+    }
+  ]
+}

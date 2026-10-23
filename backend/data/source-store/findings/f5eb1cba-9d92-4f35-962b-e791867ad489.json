@@ -1,0 +1,113 @@
+{
+  "politician_id": "f5eb1cba-9d92-4f35-962b-e791867ad489",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2c7e347cc1bf72519eb7577169020e16749fb4a9fcd5c4e79f44ba9c53063176",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "Second Reading, HB 958 Election Law Changes (Senate committee substitute), roll call 693, passed 28-13",
+      "note": "Senate roll call lists Ford among the ayes. The bill digest says the bill requires a covered military or overseas voter to send a photo ID copy with the ballot, requires voters to affirmatively state US citizenship (under penalty of perjury if they left the question blank) before a registration is processed, requires a full Social Security number to register, adds a challenge and audit process for ineligible votes, and gives voters five business days to cure missing ID after a provisional ballot. The page's history shows the bill was ratified 2026-08-06 and vetoed by the Governor 2026-08-17. The Senate third reading shows no recorded vote.",
+      "subjects": [
+        "voter ID with overseas and military ballots",
+        "proof of citizenship to register",
+        "voter-roll checks and challenges",
+        "provisional ballot ID cure period",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:17:45.327Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options (affidavit, provisional ballot)",
+        "ID with mail or overseas ballots",
+        "proof of citizenship to register",
+        "voter-roll checks and challenges",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia says he is on the 2026 general-election ballot for NC Senate District 33 (https://ballotpedia.org/Carl_Ford_(North_Carolina))",
+        "On the Record (0 appearances)",
+        "campaign site votecarlford.com (home, issues, meet-carl): nothing on the subject",
+        "NC General Assembly member page, introduced bills (2025-26 session): nothing on the subject",
+        "NC General Assembly member vote list (2025-26 session): one bill on the subject, HB 958",
+        "Ballotpedia: no survey answers, nothing on the subject",
+        "blocked: https://www.facebook.com/SenatorCarlFord/ (HTTP 400)",
+        "not reviewed: https://x.com/VoteCarlFord (page needs scripts, no readable posts)",
+        "not reviewed: earlier-session votes (2019 to 2024) other than those already on file",
+        "not reviewed: news search (the shared web-search budget was used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:17:45.327Z",
+      "by": "source-collector"
+    }
+  ]
+}

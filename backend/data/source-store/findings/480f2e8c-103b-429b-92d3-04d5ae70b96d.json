@@ -1,0 +1,32 @@
+{
+  "politician_id": "480f2e8c-103b-429b-92d3-04d5ae70b96d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Timothy_Reeder (incumbent NC House District 9, on the Nov 3 2026 general-election ballot; the March 3 2026 primary was canceled) and https://www.ncleg.gov/Members/Biography/H/811",
+        "On the Record (0 meetings)",
+        "campaign site https://www.drtimreeder.com (home page only; nothing on the subject; /issues is 404)",
+        "Ballotpedia (candidate survey answers cover education, economy and problem solving; nothing on the subject)",
+        "NC legislature introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/811 (nothing on the subject in the list returned; the session selector was not exercised)",
+        "NC legislature votes page https://www.ncleg.gov/Members/Votes/H/811 (only local election-change bills seen; nothing on the subject)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ontheissues.org, vote411, social media posts, interviews and forum videos",
+        "blocked: https://ballotpedia.org via WebFetch returned empty; read by curl instead",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:42:46.486Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "politician_id": "e4041605-4af0-492b-a7e5-e5425db6516c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "blocked: backend list-discovered-sources.ts (needs database environment variables that are not set; not read or supplied)",
+        "Ballotpedia not fetched",
+        "https://www.ballotready.org/people/manuel-p-asensio (fetched; profile found, no issue positions; confirms the person: US House FL-6 2026 candidate)",
+        "https://www.asensioforcongress.com/ (campaign site, fetched; no voter ID/citizenship/election integrity text; focus is judicial conduct)",
+        "blocked: https://www.accessnewswire.com/newsroom/en/government/asensio-files-lawsuit-accusing-florida-gop-chairman-of-deceitful-scheme-to-protect-congr-1191595 (403 via fetch; curl returned no matching text)",
+        "web search: name + voter ID; name + SAVE Act/election integrity (no hits on subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:10:21.803Z",
+      "by": "source-collector"
+    }
+  ]
+}

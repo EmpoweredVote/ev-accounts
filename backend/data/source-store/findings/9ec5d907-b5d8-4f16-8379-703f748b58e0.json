@@ -1,0 +1,30 @@
+{
+  "politician_id": "9ec5d907-b5d8-4f16-8379-703f748b58e0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Carolyn_Jackson names her as Indiana House District 1 incumbent, advanced from the May 5, 2026 primary, on the November 3, 2026 general ballot",
+        "On the Record (0 appearances)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators (page is a script-driven app, no readable content; bill sponsorships not reviewed)",
+        "not reviewed: https://indianahouse.org/h01/ (connection failed)",
+        "nothing on the subject: https://www.indianahousedemocrats.org/ (loaded, no matching text; member page URL guess returned 404)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:45:28.313Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "politician_id": "9ce52d3c-b1d6-4ff5-9054-33aa14bc441e",
+  "findings": [
+    {
+      "id": "b64565b9a8e8b2ab8bcb76b07dd8925d8b1cd36bf04eea6a3bd0c57ff6b31c3a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/882",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "yea",
+      "motion": "Third Reading, Roll Call #882, HB 589 (VIVA/Election Reform)",
+      "note": "Senate third-reading vote on House Bill 589, which passed 33-14. The roll call lists Newton among the Ayes. The filed text (https://www.ncleg.gov/Sessions/2013/Bills/House/PDF/H589v0.pdf) is titled VIVA and, as filed, requires voters to provide photo identification before voting; the final Senate version was not read line by line, so the ID rules in the version voted on are not confirmed here.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo identification before voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:53.553Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be939f37852cf3435d35b5354a47e0a369e6ebc2978bef92206de4aa130e8e58",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S88",
+      "date": "2023-02-09",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-88-2023",
+      "act": "sponsor",
+      "motion": "Co-sponsor of SB 88, Various Elections Changes (filed as Election Day Integrity Act)",
+      "note": "The bill page lists B. Newton among the co-sponsors (primary sponsors: Daniel, P. Newton, Hise). As filed, it changed the deadline for mail-in absentee ballots to be received. The engrossed third edition (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S88v3.pdf) adds challenges to ballots of voters ineligible by death or felony conviction and signature verification on absentee ballots. Last action: referred to House Rules on 2024-06-26. Date shown is the filing date; the date Newton was added as co-sponsor is not shown on the page.",
+      "subjects": [
+        "mail-ballot signature verification",
+        "absentee ballot rules",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:53.553Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e8b4e584595245411b43eddb016831fef57236d8f081d3349a96492aa4aba2c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S352",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-352-2023",
+      "act": "sponsor",
+      "motion": "Co-sponsor of SB 352, Remove Foreign Citizens from Voting Rolls",
+      "note": "The bill page lists B. Newton among the co-sponsors (primary sponsor: Burgin). The filed text (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S352v0.pdf) requires United States citizenship to serve as a juror and shares the names of people excused from jury duty for lack of citizenship with the State Board of Elections. Last action: referred to Senate Rules on 2023-03-23. Date shown is the filing date; the date Newton was added is not shown.",
+      "subjects": [
+        "non-citizen voting and voter-roll checks",
+        "proof of citizenship (related: jury-duty citizenship data shared with elections board)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:53.553Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo identification before voting",
+        "mail-ballot signature verification / absentee ID",
+        "proof of citizenship",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Buck_Newton names Eldon Sharpe Newton III (Buck) as the sitting NC State Senate District 4 member, on the 2026 general-election ballot (Nov 3, 2026; primary canceled); NC General Assembly bio https://www.ncleg.gov/Members/Biography/S/443 confirms Senator Buck Newton, District 4",
+        "On the Record (0 meetings; extract-otr.mjs returned 0 appearances, no name-only search run because he is a state legislator)",
+        "NC General Assembly introduced-bills list, 2025 session (https://www.ncleg.gov/Members/IntroducedBills/S/443): nothing on the subject",
+        "NC General Assembly introduced-bills list, 2023 session (https://www.ncleg.gov/Members/IntroducedBills/S/443/2023): two co-sponsored election bills saved",
+        "NC General Assembly introduced-bills lists, 2011 and 2013 sessions: pages returned no usable list (same page as the default view); not reviewed for those sessions",
+        "NC General Assembly roll-call vote on HB 589 (2013) saved",
+        "Ballotpedia: nothing on the subject (page has no issue-position text on voter ID)",
+        "official site and campaign site: not reviewed (no URL reachable without search; ncleg.gov bio page has no statements)",
+        "news search and own-words search: not done, blocked: the shared web-search budget was used up for this session",
+        "debates, interviews, videos: not reviewed (no search available)"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:05:53.553Z",
+      "by": "source-collector"
+    }
+  ]
+}

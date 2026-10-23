@@ -1,0 +1,106 @@
+{
+  "politician_id": "2219ec2a-f45f-43e9-863c-0265b420d1ac",
+  "findings": [
+    {
+      "id": "34a59c49eb35c1d69a379045ff766ef1ac0907d91a231938e8a93f34ca547829",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/777",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (vote 758; passed 66-47)",
+      "note": "Voted aye on second reading of HB 958, a ratified omnibus election bill. Its text includes a rule that a county board processes a voter registration application only if it affirmatively states the applicant is a US citizen, a notice and sworn-statement form for applications that leave the citizenship question blank, and a process to remove voters flagged as possible non-citizens from a federal database. Bill page: https://www.ncleg.gov/BillLookUp/2025/H958",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:37:35.657Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2c7df72e9c293de660475d1c5f4567c2eea5531dee6549bc24cae9689bd04027",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/777",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (vote 801; passed 62-47)",
+      "note": "Voted aye on the House concurrence vote on the Senate changes to HB 958. The bill was presented to the Governor on 8/7/2026 and vetoed on 8/17/2026 per the ncleg bill page https://www.ncleg.gov/BillLookUp/2025/H958. Bill covers citizenship statement on registration and removal of possible non-citizens from rolls.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:37:35.657Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0657a489c2e61d54e38e5013d1b3795ef05e3bdfa5b3bbfd8ce23787cb0d33a6",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/777",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-834-2025",
+      "act": "yea",
+      "motion": "HB 834 State Board of Elections Administrative Changes, M11 Concur (vote 800; passed 74-35)",
+      "note": "Voted aye on concurrence for HB 834, an election administration bill. Contents were not reviewed for ID or citizenship provisions, so it is saved only as an election-law vote on the same day.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:37:35.657Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Dudley_Greene (NC House District 85, on the Nov 3, 2026 general ballot; the March 3, 2026 primary was canceled)",
+        "On the Record (0 appearances for this politician)",
+        "official legislature member page https://www.ncleg.gov/Members/Biography/H/777 (fetched; member id 777)",
+        "ncleg introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/777 (2025 session: nothing on the subject; one election-law referral on fire/emergency agency property voting limits, not on subject)",
+        "ncleg votes https://www.ncleg.gov/Members/Votes/H/777 (HB 958 and HB 834 votes saved)",
+        "ncleg bill page https://www.ncleg.gov/BillLookUp/2025/H958 and ratified text H958v9.pdf",
+        "Ballotpedia (no own-words on subject found on page)",
+        "campaign site: not reviewed, no site found at guessed addresses dudleygreenenc.com, dudleygreene.com, votedudleygreene.com",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: earlier sessions (2021-2024) vote history on ncleg; page lists votes only for the current session view",
+        "nothing on the subject in own words"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:37:35.657Z",
+      "by": "source-collector"
+    }
+  ]
+}

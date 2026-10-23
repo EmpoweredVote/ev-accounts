@@ -1,0 +1,478 @@
+{
+  "politician_id": "e4b27d5e-59de-4e71-a8a7-28e7b9a80807",
+  "findings": [
+    {
+      "id": "1be803ef1452ab1a548e9609e54f5ff1138165372449b1dd15a112fdc8248f43",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-praises-the-save-america-act/",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "passage": "I believe you should be required to present a photo ID in order to be able to vote.",
+      "note": "Floor remarks ahead of the vote to begin debate on the SAVE America Act (release from his Senate site). He backs a photo ID requirement and citizen-only voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89ce4b2d6d0e984f96535554e3244f314ce45f45e36665e29e3499edb251bb52",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-praises-the-save-america-act/",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "passage": "“American voters in 36 states already show an ID to vote in elections. In my home state of Wyoming, we have voter ID laws. And getting your voter ID is free.",
+      "note": "Says Wyoming has voter ID and that the ID is free; says the SAVE America Act builds on current law.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cdc41f7f4df191d6a3661213b86e21db833da55a20d3ea50e6e856bfb5b065f3",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-praises-the-save-america-act/",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "passage": "“Voter ID and proof of citizenship are safeguards for our elections, not restrictions.",
+      "note": "Argues photo ID and proof of citizenship are safeguards, and rejects the claim that they suppress turnout.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter suppression claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4642afd56a6e13d822bd1c985284e65fcbdc519db38622e5b0e2eb1c956648a7",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-the-save-america-act-is-common-sense/",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "passage": "I believe you should have to present a photo identification card in order to vote.",
+      "note": "Remarks at a press conference on the SAVE America Act.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2e937725b13053254b892cc6719db91e981ca3e592dad2c7f23254753c59a15a",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-american-elections-should-be-decided-by-american-citizens/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "The SAVE America Act requires two things.",
+      "note": "Floor remarks as prepared. In the next two sentences he lists the two requirements: a photo ID to vote and proof of citizenship to register.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4c0362c68f71ea1340e3e60cea9dd1131241b239daf1ad0eec08f70a17df8a80",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-american-elections-should-be-decided-by-american-citizens/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "One – Show a photo ID in order to vote. Two – Show proof of citizenship to register to vote.",
+      "note": "His own summary of what the SAVE America Act requires.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "87983c1deb401a3d6e2e50647b78cd48900300e852e74bbb186d63aa54b3bdc5",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-american-elections-should-be-decided-by-american-citizens/",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "In many of these same states, obtaining a driver’s license automatically registers someone to vote.",
+      "note": "Raises driver's-license automatic registration and non-citizens on voter rolls as a related concern (Oregon example).",
+      "subjects": [
+        "non-citizen voting",
+        "automatic voter registration through driver's license",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc2fcc6d8619202374af09af2252208ea06647a92022e246fd17a7fef9207526",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-republicans-support-photo-id-every-senate-democrat-voted-against-it/",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "The SAVE America Act simply says you need to be a citizen of America to register to vote.",
+      "note": "Floor remarks as prepared on photo ID and citizenship to register.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6390290453f90c0ff7bc11edb35f4844c659dc81a53af850c18c73690e845eca",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-republicans-support-photo-id-every-senate-democrat-voted-against-it/",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "Thirty-six states in America, including Wyoming, require voters to present an ID when arriving at the polls.",
+      "note": "Points to state practice, including Wyoming, as support for photo ID.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "54abfa271736b848efeb5fb7721d30e325fd907ecc2e434bc6f8e910d7f4fa23",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-highlights-democrat-voter-id-hypocrisy/",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "It simply requires a photo ID when Americans show up to vote.",
+      "note": "Remarks on the Husted amendment to the SAVE America Act, a photo-ID-only amendment.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bce08ac5f0078fc56b03960d8d1369b8e143f68c611d9fcb981e2fe9af2f54db",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-highlights-democrat-voter-id-hypocrisy/",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "Voters can use a driver’s license.",
+      "note": "Describes the accepted ID types in the amendment; the next sentences name state ID, U.S. passport, military ID and tribal ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "accepted ID types"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "875e582895334978a19d50d7add2613d62296828bee9ed8a47b77a0ae943cddd",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-highlights-democrat-voter-id-hypocrisy/",
+      "date": "2026-03-25",
+      "date_precision": "day",
+      "passage": "It does not touch voter rolls.",
+      "note": "Says the Husted photo-ID amendment does not change voter rolls (next sentence: it does not touch mail-in voting).",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a063f22778398700b8a08b1665d0129b3689491f883c9c7267fa2f4663d0ab3f",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/democrats-want-to-turn-polling-places-into-sanctuary-locations/",
+      "date": "2026-02-10",
+      "date_precision": "day",
+      "passage": "Illegal immigrants are not permitted to vote in federal elections.",
+      "note": "Floor remarks as prepared, on barring immigration enforcement at polling places; says non-citizens may not vote in federal elections.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0f944e222845466576b6173bf2d357ba7e6276c4c40fed60da281cce7473ca8",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-election-security-begins-with-border-security/",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "When it comes to elections in America, only American citizens should be allowed to vote.",
+      "note": "Floor remarks as delivered, after New Jersey reported non-citizens on its voter rolls.",
+      "subjects": [
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "14f8e2140f4cf2ad3ca7eadae35953a6b6b52e69ab9925e1ac5f3862d193af54",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/barrasso-election-security-begins-with-border-security/",
+      "date": "2026-07-23",
+      "date_precision": "day",
+      "passage": "States need to clean up their voter rolls aggressively and do it immediately.",
+      "note": "Calls on states to clean voter rolls and cites the National Voter Registration Act.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "95517b1eced2060a2be0ac171f6aad45022be53b5f8cb9259f64dcb8dc241241",
+      "kind": "own-words",
+      "url": "https://www.barrasso.senate.gov/newsroom-news-releases-barrasso-americans-deserve-secure-elections/",
+      "date": "2021-03-03",
+      "date_precision": "day",
+      "passage": "At a time like this, Americans want to make sure that our own elections are safe and secure and fair.",
+      "note": "Floor remarks on House Bill Number One (H.R. 1, 2021 elections bill); general election integrity remarks, no ID detail in the excerpt read.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "795abfd153a3d26f20ad85b3a8ab3773060b504ef6eaeb22cf9aa3ff3494f536",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.xml",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Cloture on Husted Amdt. 4732 to S. 1383: to require voters to provide photo identification. Result 53-47, rejected.",
+      "note": "Voted yes on the vote to end debate on the photo ID amendment.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ed1c7edae3c3ed7f4805c6984c01030c718ee191da901bfcdab25fa1cc76aeb5",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00096.xml",
+      "date": "2026-04-23",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Motion to waive budget rules re Kennedy Amdt. 5414 to S.Con.Res. 33: reserve funds for ID requirements for registration and photo ID for voting. Result 48-50, rejected.",
+      "note": "Voted yes on a motion tied to an amendment about ID to register and photo ID to vote.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f614ad03954660c5a36dd45d1c8507f4d36ae28cdaef8bee5963d8a5ffa7da6",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00144.xml",
+      "date": "2026-06-04",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Motion to waive budget rules re Graham Amdt. 5779 to S. 2: citizens-only registration and photo ID to vote. Result 48-50, rejected.",
+      "note": "Voted yes on a motion tied to an amendment on citizen-only registration and photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "317216f67959174b8fcb4d60c78e588f9124f953f310ad77af3bf046fc64838d",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00151.xml",
+      "date": "2026-06-05",
+      "date_precision": "day",
+      "act": "yea",
+      "motion": "Motion to waive budget rules re Lee Amdt. 5804 to S. 2: citizens-only registration and photo ID to vote. Result 50-49, rejected.",
+      "note": "Voted yes on a motion tied to an amendment on citizen-only registration and photo ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b08b197402410a7debdb089cba668250fc0995c59439a95b3612efbeac726fef",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00231.xml",
+      "date": "2026-08-08",
+      "date_precision": "day",
+      "instrument_id": "US-S-5271-2026",
+      "act": "yea",
+      "motion": "Cloture on the motion to proceed to S. 5271, a bill to amend the Help America Vote Act of 2002 to require voters to provide photo identification. Result 52-46, rejected.",
+      "note": "Voted yes on ending debate on a photo ID bill.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:18.250Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID documents",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE America Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: sitting U.S. Senator from Wyoming, assumed office June 25, 2007, current term ends January 3, 2031 (https://ballotpedia.org/John_Barrasso); not on the 2026 ballot as senator; titled Senate Majority Whip on his Senate site",
+        "On the Record (0 appearances; extract script returned nothing)",
+        "official site barrasso.senate.gov (site search for SAVE Act, voter ID, election integrity, proof of citizenship; releases above)",
+        "Ballotpedia (fetched; nothing on the subject in key votes)",
+        "senate.gov roll call votes, 119th Congress 2nd session (5 votes found)",
+        "blocked: https://www.congress.gov/ (403), so sponsorship and cosponsorship lists not checked",
+        "not reviewed: video links in the releases",
+        "not reviewed: news search (web search budget used up)",
+        "nothing found on: mail-ballot ID, no-ID provisional or affidavit remedies beyond the passages above",
+        "not reviewed: March 17, 2026 roll call 57 (motion to proceed to House message to S. 1383); the vote title does not name the SAVE America Act"
+      ],
+      "found": 21,
+      "at": "2026-10-22T22:17:18.250Z",
+      "by": "source-collector"
+    }
+  ]
+}

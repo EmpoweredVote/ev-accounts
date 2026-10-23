@@ -1,0 +1,137 @@
+{
+  "politician_id": "5c6cb815-dfae-4883-91cf-c6428c7e2444",
+  "findings": [
+    {
+      "id": "a2c9a2d8ec405bd51490ceb128a0affd42a72ed7ce2a24a50be08b2d8951f647",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-ensuring-fair-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "In 2025, I supported Senate Enrolled Act 10, which makes Indiana's already strong voter ID laws even stronger by removing loosely regulated college IDs as a legal form of voter ID to ensure only Indiana residents are voting in our elections.",
+      "note": "Column by the senator on his official site (undated on the page; year inferred from reference to 2025 as an earlier year). He says he supported SEA 10 (2025), which removes student IDs from the accepted voter ID list.",
+      "subjects": [
+        "voter ID at the polls",
+        "which IDs are accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ffa13e6ca900e40d3026f1fa93f6a2f88561ca9360b66c9e1cce7960d4d379c",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-ensuring-fair-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "That is why I have supported many bills to increase election transparency and crack down on voter fraud.",
+      "note": "Same column. General statement of support for election transparency and voter fraud bills.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef4269305acb3d11dca0098947a6cee944a260f5864ba1377b2277b978095073",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-ensuring-fair-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I also supported House Enrolled Act 1680 (2025) to require all electronic voting machines in Indiana to have a voter-verifiable paper trail and gave the Secretary of State more authority to perform post-election audits.",
+      "note": "Same column. Says he supported HEA 1680 (2025): paper trail on voting machines and more audit authority.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting machine paper trail and audits"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5a71872fd88cf8d6c414347e7608315dda709758ac88b8cea172cbd43b0a0cd4",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-ensuring-fair-elections",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I also supported Senate Enrolled Act 113, which changes the amount of time election materials are preserved in county election offices from the current requirement of 22 months after an election to 34 months.",
+      "note": "Same column. Says he supported SEA 113: election materials kept 34 months instead of 22, so they can serve as evidence in election fraud cases.",
+      "subjects": [
+        "election integrity laws in general",
+        "election records retention"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "64ec73802efc8475fba0a874fd9d52f123dd093ef4798d22886f0f876df6be4f",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/raatz-roundup-preparing-to-vote",
+      "date": "2024-10",
+      "date_precision": "month",
+      "passage": "To make sure your vote counts, I have supported laws that strengthen identification requirements for mail-in ballots, increase election security and ensure elections in Indiana are fair.",
+      "note": "Column by the senator before the 2024 general election (page says the election is on Nov. 5 and registration deadline is Oct. 7). Says he supported laws that strengthen ID requirements for mail-in ballots.",
+      "subjects": [
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:34:27.348Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Jeff_Raatz lists him as 2026 primary winner and 2026 general-election candidate, Indiana State Senate District 27 (general election November 3, 2026)",
+        "On the Record (0 appearances)",
+        "official site https://www.indianasenaterepublicans.com/raatz (news list scanned; two election items found)",
+        "Ballotpedia (fetched; no voter ID statements)",
+        "Wikipedia (lead only)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_jeff_raatz_1 (JavaScript app, bill and vote pages did not load)",
+        "not reviewed: roll-call votes on SEA 10 (2025), SEA 112, SEA 113, HEA 1680 (2025) on iga.in.gov (page needs JavaScript)",
+        "news search not done: the shared web search budget was used up",
+        "campaign site: none found"
+      ],
+      "found": 5,
+      "at": "2026-10-22T22:34:27.348Z",
+      "by": "source-collector"
+    }
+  ]
+}

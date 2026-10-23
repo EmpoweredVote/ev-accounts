@@ -1,0 +1,29 @@
+{
+  "politician_id": "35392708-1b50-48e0-a62d-b09c61a25192",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Carrie_Syczylo names her as candidate for Indiana House District 60, on the Nov 3, 2026 general ballot after the May 5, 2026 primary",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject (no Candidate Connection survey completed)",
+        "blocked: campaign site not located (Ballotpedia page text exposed no campaign URL; guessed domains did not resolve)",
+        "not reviewed: web search for news and forums (session search budget used up)",
+        "not reviewed: https://iga.in.gov (candidate has no legislative record; page is a script-rendered app)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:24:01.365Z",
+      "by": "source-collector"
+    }
+  ]
+}

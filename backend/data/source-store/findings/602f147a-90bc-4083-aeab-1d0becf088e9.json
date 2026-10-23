@@ -1,0 +1,56 @@
+{
+  "politician_id": "602f147a-90bc-4083-aeab-1d0becf088e9",
+  "findings": [
+    {
+      "id": "d93932d6bb6c737c2eb53cc5c2951d594aed9fdc0d913a9ff17ead15a77abd40",
+      "kind": "own-words",
+      "url": "https://andreacampbell.org/accomplishments/",
+      "date": "2026-09-17",
+      "date_precision": "day",
+      "passage": "Trump tried to disqualify eligible voters and throw out lawfully cast ballots. Andrea fought back, co-leading a lawsuit with 24 states to block his unconstitutional voting order and winning in court when Trump’s Justice Department demanded Massachusetts voter data. When Trump directed the Post Office to take control of mail-in voting, requiring states to overhaul their entire election systems in a matter of weeks, Andrea co-led a coalition of 25 states to sue to stop it, and won a preliminary injunction blocking the rule from taking effect before November.",
+      "note": "Campaign site text (page last modified 2026-09-17) describing her lawsuits as Attorney General against a federal voting order, a federal demand for state voter data, and a federal rule on mail-in voting. It does not mention photo ID or documentary proof of citizenship by name. Date is the page's last-modified date, not the date of the lawsuits.",
+      "subjects": [
+        "lawsuit against federal voting executive order",
+        "voter-roll data demand by federal government",
+        "mail-in voting rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:10:26.604Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll data demands",
+        "mail-in voting rules",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Andrea_Joy_Campbell names her as Attorney General of Massachusetts, on the Nov 3, 2026 general-election ballot (positive control)",
+        "On the Record (0 appearances)",
+        "campaign site andreacampbell.org (bio, accomplishments, news list, site search for voter ID, SAVE Act, citizenship, election integrity, mail ballot, voting)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://www.mass.gov/orgs/office-of-the-attorney-general (HTTP 403 for WebFetch and curl with browser agent)",
+        "blocked: https://www.mass.gov/people/andrea-joy-campbell (HTTP 403)",
+        "not applicable: legislature bill pages (statewide executive office, not a legislator)",
+        "not reviewed: news search on name plus subject words (session web search budget used up)",
+        "not reviewed: ontheissues.org and vote411 (lead-only sources, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:10:26.604Z",
+      "by": "source-collector"
+    }
+  ]
+}

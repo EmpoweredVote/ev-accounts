@@ -1,0 +1,32 @@
+{
+  "politician_id": "c91ee44d-9532-4fdc-b04d-5791b1e1c9af",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity laws",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot for U.S. House NC District 2 (party primary canceled, advanced) - https://ballotpedia.org/Matthew_Laszacs and https://ballotpedia.org/United_States_House_of_Representatives_elections_in_North_Carolina,_2026",
+        "On the Record (0 meetings; no appearances)",
+        "Ballotpedia https://ballotpedia.org/Matthew_Laszacs (profile and Candidate Connection survey text): nothing on the subject",
+        "campaign site https://matt4nc.us/ (home, priorities, equal-justice-for-all, meet-matt-laszacs, take-action/vote): nothing on the subject; vote page only gives logistics on absentee requests from the state board, no position",
+        "congress.gov / legislature bill pages: not applicable, never held legislative office (2022 state Senate and 2024 state House nominee only)",
+        "not reviewed: https://x.com/MattLaszacs4NC (login-walled social feed)",
+        "not reviewed: https://www.linkedin.com/in/matthew-laszacs-cts-itil-67bb244a/ (login-walled)",
+        "blocked: web search budget used up, so no news search on name plus subject words was possible"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:51:45.360Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "politician_id": "fe167afd-f670-4f13-9fee-2aa3fd6d048e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-05-05 primary (Ballotpedia, https://ballotpedia.org/Linda_Rogers_(Indiana): she lost the primary for Indiana State Senate District 11 on May 5, 2026, 41.1% to 58.9%; the 2026 general-election ballot for District 11 lists other candidates)",
+        "On the Record (0 meetings)",
+        "Ballotpedia (https://ballotpedia.org/Linda_Rogers_(Indiana)), stopped there because she is out of scope",
+        "not reviewed: official legislature page, campaign site, bill pages, news (stopped as out of scope; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:57:49.144Z",
+      "by": "source-collector"
+    }
+  ]
+}

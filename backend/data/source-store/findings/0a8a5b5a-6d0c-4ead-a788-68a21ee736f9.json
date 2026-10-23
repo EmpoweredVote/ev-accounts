@@ -1,0 +1,215 @@
+{
+  "politician_id": "0a8a5b5a-6d0c-4ead-a788-68a21ee736f9",
+  "findings": [
+    {
+      "id": "10062e7f69fec910f63ba5704c9949eb12536c4e6b22da22ebaa47076c71d2d6",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/768",
+      "date": "2024-12-11",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-921-2023",
+      "act": "yea",
+      "motion": "Third Reading",
+      "note": "Roll-call record shows an Aye vote on SB 921, Const. Am./Require Photo ID For All Voters (73-45). The bill text (S921v1) rewrites Art. VI Sec. 2(4) so that all voters, not only in-person voters, must present photographic identification. Second Reading vote the same day was also Aye.",
+      "subjects": [
+        "photo ID for all voters",
+        "ID with a mail or absentee ballot",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:29.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e2ccc2d848aa8018bfd85af210e9d8cc2a14c3ea65a42cce27980696048a9b24",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/768",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "M11 Concur, Election Law Changes",
+      "note": "Roll-call record shows an Aye vote to concur on HB 958, Election Law Changes (62-47). Edition 4 of the bill includes provisions on identification for absentee ballots (photocopy of ID or affidavit as curable deficiency), ID when identification numbers do not match, and provisional ballots without photo identification, and moves cure deadlines to the fifth business day. The same roll-call history shows Aye on Second Reading (2026-06-30, 66-47).",
+      "subjects": [
+        "ID cure for absentee ballot",
+        "provisional ballot without photo ID",
+        "ID number match at registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:29.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2d62d1e4f1542235637f0223e30687986d9565ee06468a7a5f77aabfdfd1b59f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/768",
+      "date": "2024-06-27",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1074-2023",
+      "act": "yea",
+      "motion": "Third Reading, Constitutional Amendment/Citizens-Only Voting",
+      "note": "Roll-call record shows an Aye vote on HB 1074, Constitutional Amendment/Citizens-Only Voting (99-12). He also voted Aye on Second Reading (2024-06-26) and No on one amendment (A1 Harrison) the same day.",
+      "subjects": [
+        "non-citizen voting",
+        "citizenship to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:29.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0e78f7d4ff46e4fa3ced08fbea445fa87293cab6d85fe4d27b6984d638eb2288",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/768",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Veto Override, Elections Law Changes",
+      "note": "Roll-call record shows an Aye vote to override the veto of SB 747, Elections Law Changes (72-44). On 2023-08-16 he voted Aye on Second Reading (69-47) and No on 17 floor amendments (A1-A17), which failed. The bill text was not read for ID content, so only the title is recorded.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:29.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f3c271222057e2e5c003ab275e1ca78812c502b786c627e4349fdaca1e8668bd",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/768",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-237-2023",
+      "act": "yea",
+      "motion": "Veto Override, Various Criminal and Election Law Changes",
+      "note": "Roll-call record shows an Aye vote to override the veto of HB 237, Various Criminal and Election Law Changes (70-46). The bill text was not read for ID content, so only the title is recorded.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:29.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "79db8e48b5a2df6f86016d30467aafd27c3fd7b049b4e0ff3c8a5d21aca9c785",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/768",
+      "date": "2024-06-27",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1071-2023",
+      "act": "yea",
+      "motion": "Second Reading, Use Methods of Certain Groups/Voter Rolls",
+      "note": "Roll-call record shows an Aye vote on HB 1071, Use Methods of Certain Groups/Voter Rolls (66-45). Only the title was reviewed.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:29.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b7c32d9be179ec095428b9bfde6441e00a4f03bdd0f6beb39de9db4afaaa4c39",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2021/H/768",
+      "date": "2021-11-18",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-259-2021",
+      "act": "yea",
+      "motion": "Second Reading, Election Integrity Act",
+      "note": "Roll-call record shows an Aye vote on HB 259, Election Integrity Act (61-48). Only the title was reviewed.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:29.892Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "314c16887aa4caa699889b9882c4ea704347bc96faa53529ab93ddfc5c27970f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2021/H/768",
+      "date": "2021-11-18",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-326-2021",
+      "act": "yea",
+      "motion": "Second Reading, Election Day Integrity Act",
+      "note": "Roll-call record shows an Aye vote on SB 326, Election Day Integrity Act (62-48). Only the title was reviewed.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:29.892Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment or provisional ballot without ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: in scope; Ballotpedia (https://ballotpedia.org/Howard_Penny_Jr.) lists him as NC House District 53 incumbent on the Nov 3, 2026 general-election ballot; NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/768 names him in District 53",
+        "On the Record (extract-otr.mjs: 0 appearances)",
+        "Ballotpedia (no voter-ID content found)",
+        "NC General Assembly roll-call history 2021, 2023, 2025 sessions (7 election-related bill votes saved)",
+        "NC General Assembly bill texts S921v1 and H958v1/v4",
+        "not reviewed: official house site, campaign site, Facebook, Instagram (not fetched; no URL reached from Ballotpedia text)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "nothing on the subject: own words not found; no sponsorships or co-sponsorships checked (ncleg sponsor list page is dynamic and returned 404)"
+      ],
+      "found": 8,
+      "at": "2026-10-22T23:33:29.892Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "politician_id": "ae9d9760-d09d-4a94-ad8b-6e4d24323364",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: https://www.wsmv.com/2026/08/07/heidi-kuhn-wins-democratic-nomination-district-8-congressional-seat/ names her as nominee for Tennessee's 8th district; Ballotpedia https://ballotpedia.org/Heidi_Kuhn lists her under 2026 general election",
+        "On the Record (0 appearances; extract-otr returned none)",
+        "iVoterGuide https://ivoterguide.com/candidate/96821/race/34523/election/1499 (nothing on the subject: 'People should be able to vote without photo identification.' is marked 'Did not answer')",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://tennesseelookout.com/voter-guides/contests/congressional-district-8-u-s-house-of-representatives/ (403 and bot challenge)",
+        "campaign site: heidikuhnforcongress.com and heidikuhnformayor.com/issues returned no readable text (nothing on the subject)",
+        "not reviewed: https://www.pbs.org/video/us-house-candidate-heidi-kuhn-lh892e/ (WKNO Behind the Headlines video, 2026-10-09; description lists voter turnout, immigration; video not readable)",
+        "news search on name plus voter ID, SAVE Act, proof of citizenship (nothing on the subject)",
+        "congress.gov (no record: she has not served in Congress)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:29:21.296Z",
+      "by": "source-collector"
+    }
+  ]
+}

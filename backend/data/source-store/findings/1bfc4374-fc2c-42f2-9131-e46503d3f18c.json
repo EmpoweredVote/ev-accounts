@@ -1,0 +1,128 @@
+{
+  "politician_id": "1bfc4374-fc2c-42f2-9131-e46503d3f18c",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1bb81a7ab84c52e1b280b047739cb45d865c32785d587536defda58ae69153ce",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2013/H589",
+      "date": "2013-04-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "sponsor",
+      "note": "NCGA bill page lists Iler among the co-sponsors of House Bill 589, VIVA/Election Reform (filed 4/4/2013, became S.L. 2013-381). The filed text says it would require voters to provide photo identification and set up a voter information verification effort to help registered voters without photo ID obtain one. The co-sponsor list is the bill's full list; the page does not say on which date he signed on.",
+      "subjects": [
+        "voter ID at the polls",
+        "free ID for voters without one",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:35:38.726Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c906d41f87e959386a12327a28d84cd5691d90dfefd41f40b9427d4910fe71a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2011/H351",
+      "date": "2011-03-14",
+      "date_precision": "day",
+      "instrument_id": "NC-H-351-2011",
+      "act": "sponsor",
+      "note": "NCGA bill page lists Iler among the co-sponsors of House Bill 351, Restore Confidence in Government (filed 3/14/2011; the page shows a Governor's veto and veto-override votes). The filed text says it would restore confidence in government by requiring that voters provide photo identification before voting, with other election and campaign-finance provisions. The page does not say on which date he signed on.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity laws"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:35:38.726Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to register or vote",
+        "voter information verification",
+        "election integrity bills",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Frank_Iler says he is on the 2026 general-election ballot for NC House District 17 after the March 3, 2026 primary; NCGA member page https://www.ncleg.gov/Members/Biography/H/598 confirms Representative Frank Iler, District 17",
+        "On the Record (0 appearances for this person)",
+        "NCGA bill pages (sponsorships): 2013 H589 and 2011 H351 found with this member as a co-sponsor; 2017 H1092, 2023 S747 and 2025 H958 checked, no sponsorship by this member found",
+        "Ballotpedia (fetched with curl; page has no passage on voter ID)",
+        "not reviewed: official NCGA page has no issue statements; campaign site not located",
+        "not searched: news search and own-words search, blocked because the shared web search budget was used up",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/370 (HTTP 500, wrong member id)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:35:38.726Z",
+      "by": "source-collector"
+    }
+  ]
+}

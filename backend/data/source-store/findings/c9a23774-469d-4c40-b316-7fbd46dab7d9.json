@@ -1,0 +1,54 @@
+{
+  "politician_id": "c9a23774-469d-4c40-b316-7fbd46dab7d9",
+  "findings": [
+    {
+      "id": "55f3dd00941f368cb7c2d3f512c2555e345435b303679bde096fb583117d15de",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H878",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HD-878-2025",
+      "act": "sponsor",
+      "note": "Vaughn filed H.878, 'An Act relative to public information requests', described as relative to the availability of voter lists. Referred to Election Laws on Feb 27, 2025. On June 10, 2025 the committee reported it to accompany a study order; on April 2, 2026 it accompanied study order H.5311. Bill text was not on the page.",
+      "subjects": [
+        "voter-roll access (availability of voter lists)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:23:44.184Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll access and checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Marcus_Vaughn says he is on the Nov 3, 2026 general ballot, 9th Norfolk, after the Sept 1, 2026 primary",
+        "On the Record (0 appearances, 0 candidates)",
+        "malegislature.gov member profile MSV1 (sponsored bills: only H.877 and H.878 are election bills; nothing on voter ID)",
+        "malegislature.gov bill pages H.877, H.878",
+        "not reviewed: malegislature.gov cosponsored-bills tab (page did not load list)",
+        "Ballotpedia (no 2026 survey answers; 2022 survey has no subject content)",
+        "campaign site https://www.marcusvaughn.com: blocked, no readable content",
+        "web search: not done, session search budget used up"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:23:44.184Z",
+      "by": "source-collector"
+    }
+  ]
+}

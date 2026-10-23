@@ -1,0 +1,128 @@
+{
+  "politician_id": "cbbf5ae6-0793-46fb-ba4f-e6e3ffe90849",
+  "findings": [
+    {
+      "id": "c722bebf84007a25d3f9f79d6f2033d447a051ea4de561bce9db84c28889f808",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/832",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (roll call 758, passed 66-47)",
+      "note": "Recorded as voting No on second reading of HB 958. The ratified text bars processing a voter registration application unless the applicant states they are a US citizen, requires a signed statement under penalty of perjury about citizenship when the question is left blank, and orders the State Board of Elections to set up a process to remove voters flagged as possible non-citizens by a federal database.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:06.717Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d015d517b5dd8f7eb466626650c43de817d314df23fc056dac5a2ec6deb70e45",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/832",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (roll call 801, passed 62-47)",
+      "note": "Recorded as voting No on the House concurrence vote on HB 958 (citizenship statement on registration, removal process for flagged non-citizens, other election law changes). The bill text is at https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:06.717Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "067b6d48da81872dd99327a604f8cee1b099e81953a8b8750a4a9ac9493cefe5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/832",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-834-2025",
+      "act": "nay",
+      "motion": "HB 834 State Board of Elections Administrative Changes, M11 Concur (roll call 800, passed 74-35; became SL 2026-60)",
+      "note": "Recorded as voting No on concurrence in HB 834. The session law moves the deadline to cure ballot problems to the fifth business day after the election, including bringing photo ID after a provisional ballot cast without it, supplying an ID photocopy or affidavit with an absentee ballot, and fixing mismatched ID numbers. Text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H834v6.pdf.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for voter with no ID",
+        "ID with mail or absentee ballot",
+        "deadline to cure missing ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:06.717Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "89b4bea1ceffb933500e0a89413270c55bead5e09318fb028ecd7a7889b640cb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2026",
+      "act": "sponsor",
+      "motion": "Co-sponsor of HB 1246 Safeguarding Elections Act (listed in her Introduced Bills page at https://www.ncleg.gov/Members/IntroducedBills/H/832)",
+      "note": "Rep. Helfrich is listed among the sponsors of HB 1246 (primary sponsor another member). Among other provisions, the filed text makes it a Class 2 misdemeanor for any person to demand citizenship documentation from a voter other than what State law requires at any point during the voting process (draft text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v0.pdf). The bill was referred to the Rules committee.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:06.717Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "Confirmed in office: NC House District 98, https://www.ncleg.gov/Members/Biography/H/832 (Terms in House: 1; 2025-2026 Session)",
+        "Confirmed on 2026 ballot: NC State Board of Elections candidate listing, https://s3.amazonaws.com/dl.ncsbe.gov/Elections/2026/Candidate%20Filing/Candidate_Listing_2026.csv (row for 11/03/2026, NC House District 098, Beth Helfrich); primary result not separately checked",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "ncleg.gov votes page https://www.ncleg.gov/Members/Votes/H/832 (all election-related roll calls reviewed)",
+        "ncleg.gov introduced/co-sponsored bills https://www.ncleg.gov/Members/IntroducedBills/H/832 (HB 31, HB 129, HB 691, HB 1198, HB 1246 checked; only HB 1246 touches citizenship documentation; HB 691 and HB 31 nothing on the subject)",
+        "Ballotpedia: no page exists for Beth Helfrich (404) https://ballotpedia.org/Beth_Helfrich",
+        "official/campaign site: not found; https://www.bethhelfrich.com is a life-coaching business site, nothing on the subject",
+        "blocked: web search budget exhausted, so no news, interview, forum or questionnaire search was run (own-words search not done)"
+      ],
+      "found": 4,
+      "at": "2026-10-23T00:10:06.717Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "politician_id": "121954e0-f205-45f5-b3c8-14199ed1fc9f",
+  "findings": [
+    {
+      "id": "c569da8f4905e80506c5c6b280ea53356a4b5c9b03efc0d536cdad7eccfe2864",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-06",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "concur in House committee substitute (Motion 9 To Concur)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, concur in House committee substitute (Motion 9 To Concur), 2018-12-06: nay (tally 25–7); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f4adf14a66813977af26e1cbafed844a4fb972fb3256b46a179c350f1520891",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: nay (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7d01d32360dc187e31bdf150bb2040b4beac6a802ef001064ee2d0806ffbcea0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S715",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "instrument_id": "NC-S-715-2025",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor (not primary) of Senate Bill 715, Student Voter ID Grant Program/CCs. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/Senate/HTML/S715v0.html) appropriates $500,000 for grants of up to $20,000 to community colleges to produce student ID cards that can be used to vote in person under G.S. 163-166.16, and directs the State Board of Elections to review community college applications to approve student IDs as photo ID. Referred to the Appropriations/Base Budget committee.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID accepted as voter photo ID",
+        "help for voters to get acceptable ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:33:53.555Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: ncleg.gov biography page names Senator Joyce Waddell, District 40 (https://www.ncleg.gov/Members/Biography/S/393); Ballotpedia says she is on the Nov 3, 2026 general ballot (https://ballotpedia.org/Joyce_Waddell)",
+        "On the Record (0 appearances, 0 sources)",
+        "Ballotpedia (no voter ID content)",
+        "NC General Assembly introduced bills 2025-26 and 2023-24 lists (https://www.ncleg.gov/Members/IntroducedBills/S/393): one on-subject bill found",
+        "NC General Assembly vote record page: not reviewed: https://www.ncleg.gov/Members/Votes/S/393",
+        "official campaign/Senate site, news search, and own-words search: not reviewed (web search budget used up; no official site link found on Ballotpedia fetch)",
+        "Wikipedia page: nothing on the subject",
+        "SB 392 (2025, Safeguard Fair Elections) and SB 652 (2025, Voter Fraud Prevention Act, a party-switch special election bill) read or listed; off subject, not saved"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:33:53.555Z",
+      "by": "source-collector"
+    }
+  ]
+}

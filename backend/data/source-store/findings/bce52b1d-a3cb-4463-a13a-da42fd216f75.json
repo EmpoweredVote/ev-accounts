@@ -1,0 +1,131 @@
+{
+  "politician_id": "bce52b1d-a3cb-4463-a13a-da42fd216f75",
+  "findings": [
+    {
+      "id": "f0f2ea5e1063856b33c3b104c91273fd4cac5f78e4e3ebabfe7bf9c4a32c9bea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: nay (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7e640afa5849d56bd4579984a1d2d218c16c90c00661c1f9cc8375ee58e1ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: nay (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c3eae4c692f6bc3ce5990980ac9aceee6bd8813f1de06a822f846e106ce402ef",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "nay",
+      "motion": "Veto Override, roll call #596 (passed 72-44)",
+      "note": "Voted no on overriding the Governor's veto of SB 747. SB 747 (Elections Law Changes, SL 2023-140) is a broad election-administration bill; its text includes provisions that refer to the photo identification requirement in G.S. 163-166.16, so it is on the edge of this subject.",
+      "subjects": [
+        "election integrity laws in general",
+        "photo ID provisions inside a wider election bill"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:07:38.850Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f2e175fffd818a25f1a8f678183db6d5011c3341487034a2d0601ba6a8479681",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "nay",
+      "motion": "Second Reading, roll call #542 (passed 69-47)",
+      "note": "Voted no on second reading of SB 747 in the House. SB 747 (Elections Law Changes, SL 2023-140) is a broad election-administration bill; its text includes provisions that refer to the photo identification requirement in G.S. 163-166.16, so it is on the edge of this subject.",
+      "subjects": [
+        "election integrity laws in general",
+        "photo ID provisions inside a wider election bill"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:07:38.850Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: in scope, on the 2026 general-election ballot for NC House District 58 (Ballotpedia https://ballotpedia.org/Amos_Quick; ncleg bio https://www.ncleg.gov/Members/Biography/H/725)",
+        "On the Record (0 appearances)",
+        "campaign site: not reviewed: https://www.amosquick.com (no connection)",
+        "blocked: https://www.facebook.com/profile.php?id=100078697155244",
+        "Ballotpedia: nothing on the subject",
+        "ncleg.gov member votes page (recent votes only): nothing on voter ID",
+        "ncleg.gov SB 747 roll calls reviewed (H/524-542, H/596)",
+        "votesmart: not found (404)",
+        "news search: not run, search budget exhausted",
+        "own-words search: nothing found"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:07:38.850Z",
+      "by": "source-collector"
+    }
+  ]
+}

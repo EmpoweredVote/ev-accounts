@@ -1,0 +1,26 @@
+{
+  "politician_id": "62764b2a-5b54-4edb-9c69-06320cbebbad",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary (Ballotpedia https://ballotpedia.org/Michael_Rush: \"He lost in the Democratic primary on September 1, 2026.\"; identity confirmed at https://malegislature.gov/Legislators/Profile/MFR0, Senator Michael F. Rush, Norfolk and Suffolk)",
+        "On the Record (0 appearances)",
+        "Ballotpedia",
+        "official legislature profile and bills page (nothing on the subject)",
+        "not reviewed: web news search (search budget used up)",
+        "not reviewed: official campaign site (https://www.michaelrush.org returned no content)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:10:12.747Z",
+      "by": "source-collector"
+    }
+  ]
+}

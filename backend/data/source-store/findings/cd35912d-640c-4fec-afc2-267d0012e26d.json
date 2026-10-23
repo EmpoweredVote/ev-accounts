@@ -1,0 +1,22 @@
+{
+  "politician_id": "cd35912d-640c-4fec-afc2-267d0012e26d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Florida Election Watch, Representative in Congress District 3 primary: Troy Albers 5,188; Seth Harp 20,671; Tom Wells 15,447; George Hubac 4,458) https://floridaelectionwatch.gov/ContestResultsByCounty/140032; News4JAX 2026-07-31 guide names Seth Harp as the November candidate for District 3, not Albers: https://www.news4jax.com/voters-guide/2026/07/31/2026-voters-guide-floridas-3rd-congressional-district/",
+        "On the Record (0 appearances)",
+        "stopped after scope check: not on the general-election ballot, so no further places searched"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:31:26.528Z",
+      "by": "source-collector"
+    }
+  ]
+}

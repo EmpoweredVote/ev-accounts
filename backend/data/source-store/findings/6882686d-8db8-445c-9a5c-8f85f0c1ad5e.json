@@ -1,0 +1,26 @@
+{
+  "politician_id": "6882686d-8db8-445c-9a5c-8f85f0c1ad5e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-05-05 primary (https://ballotpedia.org/Bruce_Borders: he lost in the primary on May 5, 2026; the general-election race for District 45 lists two other candidates, 4,360 votes to 4,949)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (identity and primary result confirmed)",
+        "Wikipedia (identity confirmed: Indiana House District 45)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_bruce_borders_1 (page loads no content without scripts)",
+        "blocked: https://www.indianahouserepublicans.com/members/bruce-borders/ (404)",
+        "not reviewed: news search on name plus subject words (search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:36:21.483Z",
+      "by": "source-collector"
+    }
+  ]
+}

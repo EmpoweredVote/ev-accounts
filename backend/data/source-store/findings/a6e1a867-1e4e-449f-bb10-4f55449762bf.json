@@ -1,0 +1,54 @@
+{
+  "politician_id": "a6e1a867-1e4e-449f-bb10-4f55449762bf",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity bills"
+      ],
+      "places": [
+        "identity confirmed: Ballotpedia https://ballotpedia.org/Bradley_Jones_Jr. (20th Middlesex District, sitting House member, term ends 2027-01-06; announced 2026-03-23 he is not running for re-election, so not on the 2026 ballot; still a sitting official)",
+        "On the Record (0 appearances)",
+        "malegislature.gov legislator profile https://malegislature.gov/Legislators/Profile/BHJ1 (194th session sponsorships reviewed: election bills H.843-H.847 cover presidential electors, investment-adviser contributions, campaign finance reporting, synthetic media in ads, voter information from the Secretary; nothing on ID or citizenship proof)",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: official site and news search (web search budget exhausted for the session)",
+        "blocked: https://malegislature.gov/Bills/194/Search?SearchTerms=voter+identification (404)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:19:07.491Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "politician_id": "5068b8f5-fcb9-4412-877e-e65809e1ddc3",
+  "findings": [
+    {
+      "id": "acf1961d09bcee7e5382160a6357964012b095a2b43dfe595f59d57c241c092b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate floor, 6:13 PM); Craven voted Aye; the Senate vote was 28 Aye, 13 No, 9 not voting, passed",
+      "note": "Voted for HB 958 on second reading in the Senate. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) says a voter registration application, including one made at a drivers license office, is processed only if the applicant affirmatively states US citizenship; a blank answer gets a notice and a 30-day window to return a citizenship statement under penalty of perjury. It also directs the State Board of Elections to create a process to remove voters flagged as possible non-citizens from a federal database, and to remove deceased voters from the rolls weekly. It has no photo ID provision that I found. The bill page shows 'Vetoed 08/17/2026'. His vote page (https://www.ncleg.gov/Members/Votes/S/423) lists no third-reading or override vote on HB 958.",
+      "subjects": [
+        "citizenship statement required to register",
+        "voter-roll checks against federal data",
+        "non-citizen voting",
+        "removing deceased voters from rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:07.266Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b516119c4e1b4ec280a07957192434684b5a4a328df3b65bb4d2fd09079a65e4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/423",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Amendment 1 adopted (5:06 PM) and Amendment 5 adopted (5:28 PM); motions to table Amendments 2, 3, 6, 7, 8, 9 and 10 (5:11 to 6:04 PM) passed; Craven voted Aye on each",
+      "note": "His votes page shows Aye on each of these floor votes on HB 958 on 7/28/2026. The page does not give the text of the amendments, and I did not read them, so what each one does is not stated here.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:07.266Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "citizenship statement on registration",
+        "voter-roll checks against federal data",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/S/423 (Senator David W. Craven, Jr., District 29, 2025-2026 session); whether he is on the 2026 general-election ballot was not confirmed by a page I fetched",
+        "On the Record (0 appearances, 0 candidates)",
+        "ncleg.gov member page, introduced bills (nothing on the subject; SB 153 North Carolina Border Protection Act checked, no voter-ID or voting provisions found)",
+        "ncleg.gov member votes page (one subject-related bill, HB 958, found)",
+        "ncleg.gov HB 958 bill page and ratified text",
+        "not reviewed: official Senate site, campaign site, Ballotpedia (Ballotpedia page returned empty), news search: web search budget was used up and no search could be run",
+        "no own-words statements found; none searched beyond the pages above"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:47:07.266Z",
+      "by": "source-collector"
+    }
+  ]
+}

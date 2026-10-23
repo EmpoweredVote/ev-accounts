@@ -1,0 +1,53 @@
+{
+  "politician_id": "a6eb79f8-c7e7-41b0-8a1c-baf85e7cd22c",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Mary_Keefe names her as 15th Worcester representative, on the Nov 3, 2026 general ballot after advancing from the Sept 1, 2026 primary",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/MSK1 (sponsored bills listed cover other topics; nothing on the subject; full bill search not run)",
+        "Ballotpedia page fetched; no voter ID or citizenship content seen",
+        "not reviewed: official site and campaign site (not fetched)",
+        "not reviewed: news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:18:58.769Z",
+      "by": "source-collector"
+    }
+  ]
+}

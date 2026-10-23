@@ -1,0 +1,76 @@
+{
+  "politician_id": "ef18190f-e5de-440a-ba0a-8aae0b5490fc",
+  "findings": [
+    {
+      "id": "d5fa1f80ab2ad33e63f7e3cd46f17f601fe82d7231b8bd3b355ed377dc7af3e9",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Zuhdi_Jasser",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Protecting the integrity of our elections must be a responsibility we take seriously, and one we hold our elected officials to account for. Demanding transparency is critical. While most election reforms are the responsibility of our state and local government, the Federal Government has tried its hand at interference and loosening the protections around voting (think the radical “For the People Act”). As your next representative in Congress, you can rest assured that I will oppose all radical attempts to weaken our election security. I will ensure to the best of my ability that the federal government does not interfere in the Constitutionally guaranteed rights of localities and states to govern their own elections.",
+      "note": "Quoted on Ballotpedia as from his 2024 campaign website, under 'Free & Fair Elections'. General election-security statement; no mention of ID or citizenship proof. Says election rules are mainly for states and localities, and opposes federal moves he sees as loosening voting protections. Original 2024 site page not fetched; cited via Ballotpedia.",
+      "subjects": [
+        "election integrity in general",
+        "federal role vs state control of elections",
+        "opposition to the For the People Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:06:00.165Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5c1705aa7eadabe4cd169eacc65fb7422b1a08d1844d52843ba0cb0a328fdf5d",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Zuhdi_Jasser",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "Today, we face a crossroads. We can no longer have total confidence that our elections will be conducted fairly, freely, and without interference.",
+      "note": "Same 2024 campaign-site section as quoted on Ballotpedia; the same passage also lists ballot harvesting as commonplace.",
+      "subjects": [
+        "election integrity in general",
+        "ballot harvesting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:06:00.165Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "election integrity in general",
+        "ballot harvesting",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/Zuhdi_Jasser (advanced from the July 21, 2026 primary; on the Nov 3, 2026 ballot for AZ-4)",
+        "On the Record (0 appearances)",
+        "campaign site https://z4az.com/ and /meet-dr-jasser (nothing on the subject)",
+        "Ballotpedia (one election-integrity passage, quoting 2024 campaign site; 2026 Candidate Connection survey has nothing on the subject)",
+        "congress.gov: not reviewed (not a sitting legislator; no sponsorships)",
+        "news search: not reviewed: web search budget exhausted",
+        "ontheissues.org/votesmart: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:06:00.165Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "politician_id": "81fc1250-b2d5-4573-8947-99b37acb6e37",
+  "findings": [
+    {
+      "id": "69edeb1ee1d0c958ce88118673f3dba0405313a4b6fdeb3921735cd6e5ad47eb",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Jonah_Garson",
+      "date": "2022-05-01",
+      "date_precision": "year",
+      "passage": "Among many other things, as Representative, I will work to finally enact redistricting reform to prevent racial and partisan gerrymandering and to ensure meaningful political representation for every community; introduce automatic registration for all voting eligible North Carolinians, including those turning 18; fight against voter ID requirements and other attempts to disenfranchise voters of color and poor voters; expand the right to vote and participation in our democracy through greater access to voter registration, early voting, and vote-by-mail, and the introduction of ballot drop-boxes; and increase funding and training for county boards of elections.",
+      "note": "Answer in his 2022 Ballotpedia Candidate Connection survey, when he ran for the NC House (District 56) and lost the primary. He says he would fight voter ID requirements and expand registration, early voting, vote-by-mail and drop-boxes. Date is the 2022 campaign year; exact day of the answer is not shown on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter registration access",
+        "mail-ballot access",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:53:57.353Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter suppression and voting access",
+        "mail-ballot access",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Jonah_Garson) names him as appointed to NC State Senate District 23 on April 10, 2026 and on the Nov 3, 2026 general-election ballot",
+        "On the Record (0 appearances, 0 sources)",
+        "Ballotpedia profile and 2022 Candidate Connection survey",
+        "not reviewed: https://www.jonahgarson.com/ (campaign site is script-rendered; page text not readable by fetch)",
+        "not reviewed: ncleg.gov bill pages for sponsorships (member page not located; appointed April 2026, so a short record)",
+        "not reviewed: news search (web search budget used up for the session)",
+        "nothing on the subject: ontheissues.org and Wikipedia not used (lead-only sources)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:53:57.353Z",
+      "by": "source-collector"
+    }
+  ]
+}

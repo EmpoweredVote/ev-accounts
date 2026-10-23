@@ -1,0 +1,31 @@
+{
+  "politician_id": "85c6928b-ba33-479d-b0da-11f94d4e4579",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Tricia_Cotham names her as incumbent NC House District 105, advanced from the March 3, 2026 primary, on the November 3, 2026 ballot; ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/817 confirms Rep. Tricia Ann Cotham",
+        "On the Record (0 appearances for this politician)",
+        "Ballotpedia https://ballotpedia.org/Tricia_Cotham (nothing on the subject)",
+        "campaign site https://www.triciacotham.net and /issues (nothing on the subject)",
+        "NC General Assembly bill pages: https://www.ncleg.gov/BillLookUp/2023/S747 (Elections Law Changes, roll calls not read; no voter ID content found on page) and https://www.ncleg.gov/BillLookUp/2025/H958 (her name is not among the sponsors); full sponsor and vote search not completed",
+        "not reviewed: news search on name plus subject words (shared web-search budget was used up)",
+        "not reviewed: ncleg.gov roll-call transcripts for her individual votes on election bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:55:54.120Z",
+      "by": "source-collector"
+    }
+  ]
+}

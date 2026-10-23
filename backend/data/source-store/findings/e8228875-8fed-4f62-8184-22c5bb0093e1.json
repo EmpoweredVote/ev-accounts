@@ -1,0 +1,32 @@
+{
+  "politician_id": "e8228875-8fed-4f62-8184-22c5bb0093e1",
+  "findings": [
+    {
+      "id": "78bd84913f7341f5b7f5922d799620162f7c731716a854b48ac8784da122b529",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?131+sum+SB1256",
+      "date": "2013-02-05",
+      "date_precision": "day",
+      "instrument_id": "VA-SB-1256-2013",
+      "act": "yea",
+      "motion": "passed Senate (Chair votes Yes; tie 20-20)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA Senate, passed Senate (Chair votes Yes; tie 20-20), 2013-02-05: yea (tally 20–20); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.563Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

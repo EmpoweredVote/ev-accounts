@@ -1,0 +1,75 @@
+{
+  "politician_id": "7dcb0256-5bb8-4249-a048-232c59b4f8b1",
+  "findings": [
+    {
+      "id": "e5c8eb39413e8b574add241ef4e28844737a3c932656858b84ddeb311470f48d",
+      "kind": "own-words",
+      "url": "https://www.conrad4congress2026.com/vision",
+      "date": "2026-10-22",
+      "date_precision": "day",
+      "passage": "At the same time, voter suppression laws make it harder for working families, students, and seniors to cast a ballot.",
+      "note": "Campaign vision page, date shown is the fetch date because the page is undated. Refers to voter suppression laws in general; names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter suppression laws (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:06.706Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "622b7c278b178ae8129f7909472a1a47ca7afe53d9d9a5c4d25dd7034d5c22e7",
+      "kind": "own-words",
+      "url": "https://www.conrad4congress2026.com/vision",
+      "date": "2026-10-22",
+      "date_precision": "day",
+      "passage": "We support national standards to end partisan gerrymandering and protect voting rights.",
+      "note": "Campaign vision page (undated, date is fetch date). Related voting-rights platform line; the next sentence lists fair maps, automatic registration and restored Voting Rights Act protections. No ID or citizenship wording.",
+      "subjects": [
+        "voting rights in general (related)",
+        "automatic registration (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:17:06.706Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register (SAVE Act)",
+        "ID with mail ballot",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general",
+        "voting rights and voter suppression (related)"
+      ],
+      "places": [
+        "status: in scope; Ballotpedia names Conrad Cable as a candidate in the Nov 3, 2026 U.S. House Louisiana District 4 primary (general Dec 12, 2026): https://ballotpedia.org/Conrad_Cable",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "campaign site https://www.conrad4congress2026.com (home, /vision, /meet-conrad, /videos): nothing on voter ID, photo ID, SAVE Act or proof of citizenship; one related voting-rights passage saved",
+        "Ballotpedia https://ballotpedia.org/Conrad_Cable (bio and Candidate Connection survey text): nothing on the subject",
+        "congress.gov / legislature bill pages: not applicable, candidate holds no legislative seat",
+        "web news search: not reviewed, the shared 200-search budget was used up",
+        "not reviewed: video content at https://www.youtube.com/@conrad4congress and https://www.tiktok.com/@conrad4congress (not readable)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:17:06.706Z",
+      "by": "source-collector"
+    }
+  ]
+}

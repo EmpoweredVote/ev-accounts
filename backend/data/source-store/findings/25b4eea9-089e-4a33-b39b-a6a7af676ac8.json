@@ -1,0 +1,29 @@
+{
+  "politician_id": "25b4eea9-089e-4a33-b39b-a6a7af676ac8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Ryan_Dvorak names him as incumbent, Indiana House District 8, advanced from the May 5, 2026 primary and on the November 3, 2026 general ballot",
+        "On the Record (0 meetings, nothing on the subject)",
+        "official caucus member page https://www.indianahousedemocrats.org/members/ryan-dvorak (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_ryan_dvorak_1 (page is script-rendered, no bill list reachable)",
+        "not reviewed: Indiana General Assembly bill and roll-call pages for election bills (not reachable without a script-rendered page or API key)",
+        "not reviewed: news searches on his name plus the subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:21:23.397Z",
+      "by": "source-collector"
+    }
+  ]
+}

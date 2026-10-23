@@ -1,0 +1,130 @@
+{
+  "politician_id": "5297cab2-3706-458e-85cb-a6146347cbfb",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5308c286ce2a4b5289ef6dc73bf28a0d282c282801ba4fa01420cf34e713fcbf",
+      "kind": "own-words",
+      "url": "https://rsc-pfluger.house.gov/media/press-releases/rsc-members-stop-stall-pass-save-act",
+      "date": "2026-02-06",
+      "date_precision": "day",
+      "passage": "This is something that is long overdue.",
+      "note": "Short remark in a group video, transcribed in a House study committee press release titled 'RSC Members: Stop the Stall, Pass the SAVE Act'. The release is about the Senate not passing the SAVE Act, which requires documentary proof of citizenship to register to vote. The remark is his full quoted turn in the transcript; it does not name the bill itself, so the link to the SAVE Act comes from the release's topic.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "Senate action on election bill"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:37:12.258Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "documentary proof of citizenship to register (SAVE Act)",
+        "voter ID at the polls",
+        "non-citizen voting",
+        "election integrity laws in general",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "scope check: Ballotpedia page lists him as a general-election candidate for U.S. House Oklahoma District 2 on November 3, 2026, after winning the June 16, 2026 primary (https://ballotpedia.org/Josh_Brecheen)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site brecheen.house.gov press release list and four releases (IDs 1543, 1520, 1595, 1577): nothing on the subject (site keyword filter did not filter; no voter ID, SAVE Act or citizenship text found)",
+        "Ballotpedia profile: no own-words on the subject; only the already-filed H.R. 22 vote",
+        "congress.gov member and bill cosponsor pages: blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (Cloudflare challenge); blocked: https://www.congress.gov/member/josh-brecheen/B001292 (403)",
+        "govtrack H.R. 22 page: nothing naming him",
+        "web searches on name plus SAVE Act, voter ID, noncitizen, election integrity, cosponsor: only the Feb 6 2026 video release found",
+        "not reviewed: https://nondoc.com/2026/06/01/cheat-sheet-brecheen-lucas-cole-try-to-defend-cd-2-cd-3-cd-4-seats-in-okgop-primary/ (403)",
+        "campaign site: not located"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:37:12.258Z",
+      "by": "source-collector"
+    }
+  ]
+}

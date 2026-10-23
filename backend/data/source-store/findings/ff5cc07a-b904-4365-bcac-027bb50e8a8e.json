@@ -1,0 +1,33 @@
+{
+  "politician_id": "ff5cc07a-b904-4365-bcac-027bb50e8a8e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Michael_Day_(Massachusetts) says he is on the Nov 3, 2026 general-election ballot for MA House 31st Middlesex after advancing from the Sept 1, 2026 primary",
+        "On the Record (0 appearances; run with --names, no meetings found)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MSD1 and /Bills: nothing on the subject (only H.816 on campaign contributions, which is off subject)",
+        "legislature votes tab: lists bills only, no roll calls; nothing on the subject",
+        "campaign site https://electmikeday.com/issues/ (page text has no voter ID, photo ID, citizenship, SAVE Act or election integrity words): nothing on the subject",
+        "Ballotpedia profile: nothing on the subject",
+        "blocked: https://www.repmikeday.com (fetch returned empty page)",
+        "not reviewed: web news search on name plus subject words (the shared 200-search budget was used up)",
+        "not reviewed: legislature roll-call pages for House votes on election bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:31:02.239Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "politician_id": "5839a24e-4ce7-4ae4-b60b-07b4cd6525dc",
+  "findings": [
+    {
+      "id": "43682d4baeda9db84fdd1d2f3af9552507956babe8614a325197f069ff6f13be",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Senate Second Reading, Roll Call #693 (passed 28-13)",
+      "note": "Senator Galey is listed among the ayes on Senate second reading of HB 958, Election Law Changes. The bill's digest (https://webservices.ncleg.gov/BillDigests/2025/H958, fetched) describes changes touching the subject: military-overseas ballots must come with photo ID or an affidavit, the deadline to provide ID after a provisional ballot rises from the third to the fifth business day, a voter registration is processed only if the applicant affirmatively states US citizenship, and a full social security number is required to register. The digest covers several bill editions, so not every item is necessarily in the version voted on.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional-ballot ID cure deadline",
+        "ID with military-overseas absentee ballot",
+        "citizenship statement to register",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:48.942Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "reasonable-impediment affidavit / provisional ballot ID cure",
+        "ID with absentee or military-overseas ballot",
+        "proof of citizenship to register",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia (https://ballotpedia.org/Amy_Galey) names her as NC State Senate District 25 incumbent on the Nov 3, 2026 general-election ballot; NCGA bio https://www.ncleg.gov/Members/Biography/S/429 confirms Senator Amy S. Galey, District 25",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site amygaley.com home, /meet-amy-galey/ and /issues/ (nothing on the subject; issues page covers economy, education, firearms, agriculture)",
+        "official legislature bill pages: https://www.ncleg.gov/Members/IntroducedBills/S/429 (no introduced bill on the subject)",
+        "https://www.ncleg.gov/Members/Votes/S/429 (page lists House roll calls for HB 958 only; not usable for her record, so the Senate roll call transcript was used instead)",
+        "Ballotpedia (nothing on the subject; no candidate survey completed)",
+        "not reviewed: her Facebook, X and Instagram accounts (not fetched; social platforms)",
+        "not reviewed: news search on her name plus subject words (web search budget for the session was used up)",
+        "not reviewed: ontheissues.org, Vote Smart (lead-only; no search budget to find originals)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:47:48.942Z",
+      "by": "source-collector"
+    }
+  ]
+}

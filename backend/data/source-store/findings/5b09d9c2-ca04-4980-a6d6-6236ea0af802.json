@@ -1,0 +1,57 @@
+{
+  "politician_id": "5b09d9c2-ca04-4980-a6d6-6236ea0af802",
+  "findings": [
+    {
+      "id": "d9d03f6e88fdfdea620e72a880316e35e12a860104798da1ddb5e7be5cac3742",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/gaskill-to-chair-senate-committee-on-elections",
+      "date": "2023-11-20",
+      "date_precision": "day",
+      "passage": "\"I am honored to have been chosen to serve as chairman of the Senate Committee on Elections,\" Gaskill said. \"I look forward to the challenge of maintaining and improving the integrity of our elections by working with my fellow senators on the committee and with the House Committee on Elections.\"",
+      "note": "Senate caucus news release on his appointment as chair of the Senate Committee on Elections for the 2024 session. He speaks of election integrity in general terms only; it names no ID or citizenship rule.",
+      "subjects": [
+        "election integrity in general",
+        "chair of Senate Committee on Elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:36:17.616Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity in general",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Mike_Gaskill names him as Indiana State Senate District 25 incumbent, on the Nov 3, 2026 general-election ballot after winning the May 5, 2026 primary",
+        "On the Record (0 appearances, extract-otr.mjs run with name search)",
+        "Senate caucus official page https://www.indianasenaterepublicans.com/gaskill (news list, legislative-updates page, chair release, HB 1032 statement, end-of-session statement reviewed: nothing on photo ID or citizenship proof)",
+        "campaign site https://electmikegaskill.com/ (bio page only, nothing on the subject)",
+        "Ballotpedia (profile fetched; no voter ID statements found)",
+        "blocked: https://indianacapitalchronicle.com/2024/02/13/controversial-elections-security-bill-could-see-changes/ (HTTP 403, also with browser user agent)",
+        "blocked: https://indianacapitalchronicle.com/2025/04/08/senate-sends-vote-center-study-student-id-voting-ban-income-tax-cuts-to-governor/ (HTTP 403)",
+        "blocked: https://legiscan.com/legislator/Mike_Gaskill/people/ (bot challenge)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_mike_gaskill_1 (page is script-rendered; no bill list readable, so sponsorships on the subject not confirmed)",
+        "HB 1264 (2024, election security) engrossed House text fetched from iga.in.gov: does not name him; Senate-stage versions not reachable",
+        "not reviewed: news searches on his name plus subject words (the shared web search budget was used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:36:17.616Z",
+      "by": "source-collector"
+    }
+  ]
+}

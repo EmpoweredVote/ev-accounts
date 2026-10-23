@@ -1,0 +1,30 @@
+{
+  "politician_id": "6a849ebb-4642-409f-98fc-4a85598fdd8c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Renee_Pack names her as Indiana House District 92 incumbent, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances, nothing on the subject)",
+        "Ballotpedia profile (fetched by curl; nothing on the subject; no 2026 candidate survey completed)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_renee_pack_1 (JavaScript app, no readable text; bill sponsorships and roll calls not reached)",
+        "nothing on the subject: https://indianahousedemocrats.org/members/renee-pack (page loaded, no subject text found)",
+        "blocked: https://www.reneepack.com (no connection)",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)",
+        "not reviewed: ontheissues.org, vote411, own-words searches, social posts"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:37:16.727Z",
+      "by": "source-collector"
+    }
+  ]
+}

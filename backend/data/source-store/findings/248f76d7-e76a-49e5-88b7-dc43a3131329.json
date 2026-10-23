@@ -1,0 +1,29 @@
+{
+  "politician_id": "248f76d7-e76a-49e5-88b7-dc43a3131329",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Cindy_Friedman names Cindy Friedman as MA State Senate 4th Middlesex incumbent, advanced from the Sept 1, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances; extract-otr.mjs run, no --city because state official)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/CFF0 and bill list https://malegislature.gov/Legislators/Profile/CFF0/Bills: nothing on the subject (election-related sponsorships are local Arlington petitions on youth voting, ranked choice and recall, which are off subject)",
+        "malegislature.gov bill search for voter identification https://malegislature.gov/Bills/Search?SearchTerms=voter+identification: sponsors listed were others; no filing by Friedman seen on first page",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.cindyfriedman.com (no response)",
+        "not reviewed: news search, official Senate site issue pages and roll-call votes (web search budget used up; no direct fetch pattern found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:02:26.867Z",
+      "by": "source-collector"
+    }
+  ]
+}

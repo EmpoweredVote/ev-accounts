@@ -1,0 +1,75 @@
+{
+  "politician_id": "9a74561d-7bd2-42b7-83d1-810475545297",
+  "findings": [
+    {
+      "id": "f0f2ea5e1063856b33c3b104c91273fd4cac5f78e4e3ebabfe7bf9c4a32c9bea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: nay (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7e640afa5849d56bd4579984a1d2d218c16c90c00661c1f9cc8375ee58e1ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: nay (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (https://ballotpedia.org/Carla_Cunningham: incumbent North Carolina House District 106; Rodney Sadler defeated incumbent Carla Cunningham in the 2026-03-03 primary; Sadler is the only candidate listed for the 2026-11-03 general election)",
+        "On the Record (0 appearances)",
+        "not searched further: out of scope after primary loss"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:00:57.096Z",
+      "by": "source-collector"
+    }
+  ]
+}

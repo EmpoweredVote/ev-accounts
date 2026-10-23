@@ -1,0 +1,32 @@
+{
+  "politician_id": "110c964b-854d-467c-9b2b-f80218906afd",
+  "findings": [
+    {
+      "id": "a2b1975477b21ef83f0dbf724d458376d2cda60788041b4a67bdfec14a02c77e",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess119_2011-2012/bills/3003.htm",
+      "date": "2011-04-26",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3003-2011",
+      "act": "nay",
+      "motion": "adoption of conference report",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "SC House, adoption of conference report, 2011-04-26: nay (tally 71–36); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.566Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

@@ -1,0 +1,74 @@
+{
+  "politician_id": "748ab4d4-9d92-4286-9488-46a0f38d6723",
+  "findings": [
+    {
+      "id": "67a7efa0ee9f021a1e341fbdde51382f488313a06cfe5b2f090e184eb661f183",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/John_Cowan",
+      "date": "2026-04-18",
+      "date_precision": "day",
+      "passage": "President Trump is securing the border. Congress needs to back him up. And we need nationwide Voter ID — make it easy to vote and impossible to cheat.",
+      "note": "Candidate's answer in his Ballotpedia Candidate Connection survey (submitted April 18, 2026). Calls for a nationwide voter ID requirement; also names border and election security as a policy interest.",
+      "subjects": [
+        "voter ID at the polls",
+        "nationwide voter ID requirement",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:50:47.869Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1d69b5dd87d6952a2b8ebb606476c232920b092a2273531833ff30d2829d10b",
+      "kind": "own-words",
+      "url": "https://cowanforcongress.com/issues.html",
+      "date": "2026-10-22",
+      "date_precision": "day",
+      "passage": "Require proof of citizenship to vote, secure our election infrastructure, and demand full transparency in how ballots are cast and counted — make it easy to vote and impossible to cheat.",
+      "note": "Under the heading 'Elections Americans Can Trust' on his campaign issues page. Page date not shown; date is the day fetched. Says to require proof of citizenship to vote and to secure election systems.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "election integrity in general",
+        "ballot counting transparency"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:50:47.869Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to vote",
+        "mail-ballot ID",
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/John_Cowan (GA-11, won the June 16, 2026 runoff, on the Nov 3, 2026 general ballot)",
+        "On the Record (0 appearances)",
+        "campaign site https://cowanforcongress.com/ (home page and issues.html)",
+        "Ballotpedia page and Candidate Connection survey",
+        "nothing on the subject: congress.gov (he holds no federal office; no bills)",
+        "not reviewed: news search (web search budget used up)",
+        "not reviewed: ontheissues.org, vote411, debate or forum video"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:50:47.869Z",
+      "by": "source-collector"
+    }
+  ]
+}

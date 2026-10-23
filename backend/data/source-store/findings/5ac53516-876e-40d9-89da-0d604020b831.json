@@ -1,0 +1,104 @@
+{
+  "politician_id": "5ac53516-876e-40d9-89da-0d604020b831",
+  "findings": [
+    {
+      "id": "d2b101e209c82f58d03611424d98cbd2579c4f67ca63c072a67266d93b220274",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/839/2025",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (final House second-reading vote)",
+      "note": "Member vote record on HB 958 (Election Law Changes). The ratified text requires a registration application to affirmatively state US citizenship (with a sworn-statement notice process if blank) and orders a removal process for voters flagged as non-citizens by a federal database. It also changes precinct-official and list-maintenance rules. It has no photo-ID section. Roll call 758: member voted No; tally 66 Aye, 47 No; bill passed.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks against federal database",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:48:56.089Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff8f828803177ea9fb257effa3e994389a92866b902ef3f7ededecab51d15fe9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/839/2025",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Motion 11 Concur (Senate changes)",
+      "note": "Member vote record on HB 958 (Election Law Changes). The ratified text requires a registration application to affirmatively state US citizenship (with a sworn-statement notice process if blank) and orders a removal process for voters flagged as non-citizens by a federal database. It also changes precinct-official and list-maintenance rules. It has no photo-ID section. Roll call 801: member voted No; tally 62 Aye, 47 No.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks against federal database",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:48:56.089Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c75d31bbef5b848b6ebc589b4ad4c02ec2deb3dab26ebdf3e7ef850b4cd0fcc5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookup/2025/H691",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-691-2025",
+      "act": "sponsor",
+      "motion": "Co-sponsor, HB 691 Voter Protection and Reliance Act",
+      "note": "Listed as a co-sponsor of HB 691. The bill says votes cast under the rules in place on election day cannot be discounted because of later changes, and speeds up late election lawsuits. It does not set an ID or citizenship rule.",
+      "subjects": [
+        "election integrity law in general",
+        "voters relying on rules in place on election day"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:48:56.089Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID (affidavit, provisional, free ID)",
+        "ID with mail or absentee ballot",
+        "documentary proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Dante_Pittman (NC House District 24, on the Nov 3 2026 general ballot; primary cancelled) and NCGA member page https://www.ncleg.gov/Members/Biography/H/839",
+        "On the Record (0 appearances for this politician; extract-otr run with name search, nothing on the subject)",
+        "NCGA votes 2025-26 session (all election-related roll calls reviewed: HB 958, HB 834 Sportsman's Voter Act, local election bills)",
+        "NCGA introduced/co-sponsored bills list https://www.ncleg.gov/Members/IntroducedBills/H/839 (only HB 691 and HB 93 literacy-test repeal and HB 1240 early-voting amendment touch elections; none set ID rules)",
+        "Ballotpedia (nothing on the subject)",
+        "not reviewed: official and campaign sites (dantepittmannc.com and electdantepittman.com did not resolve; no official site found)",
+        "not reviewed: news and own-words search (web search budget used up for the session)",
+        "not reviewed: ontheissues.org, vote411, Vote Smart"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:48:56.089Z",
+      "by": "source-collector"
+    }
+  ]
+}

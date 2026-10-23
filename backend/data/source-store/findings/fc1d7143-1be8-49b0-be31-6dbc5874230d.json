@@ -1,0 +1,50 @@
+{
+  "politician_id": "fc1d7143-1be8-49b0-be31-6dbc5874230d",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary (U.S. House, Massachusetts 6th District); page: https://ballotpedia.org/Tram_Nguyen",
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/TTN1 (no election or ID bills among sponsored bills)",
+        "Ballotpedia",
+        "not reviewed: campaign site, news search (search budget used up; stopped because she is out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:30:10.252Z",
+      "by": "source-collector"
+    }
+  ]
+}

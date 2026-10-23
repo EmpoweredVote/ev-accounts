@@ -1,0 +1,103 @@
+{
+  "politician_id": "66a20edb-0795-46a5-ad96-d8ced5cf65ed",
+  "findings": [
+    {
+      "id": "e1e7ed8b831d47fd9fd4d39b3130b4e08da278212a6a7bafeee90b46b67bfc00",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/829",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (House vote 66 to 47)",
+      "note": "Her recorded vote on second reading was No. The bill text (ratified version) requires county boards to process a registration only if the applicant affirmatively says they are a citizen, requires a sworn statement on citizenship if the answer is blank, and sets up removal of voters flagged as possible non-citizens from a federal database. It contains no photo ID changes.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:50:45.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b98e9c6ad875907b558f689f0a71bca932354bde0513fc6036372cf51ea64716",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/829",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (House vote 62 to 47)",
+      "note": "Her recorded vote on the House concurrence vote on the same bill was No. Bill text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:50:45.423Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "afb31919b013c97680d71bcf67500f2fe48945b80d12436dbe47f967e93e8e8b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "sponsor",
+      "motion": "HB 1246 Safeguarding Elections Act, co-sponsor",
+      "note": "She is listed as a co-sponsor (not a primary sponsor). The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v1.pdf) would make it a Class 2 misdemeanor for any person to demand citizenship documentation from a voter other than what State law requires at any point during the voting process. It also keeps voter photo ID images and copies of ID confidential.",
+      "subjects": [
+        "demanding citizenship documents from voters",
+        "voter ID at the polls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:50:45.423Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "demanding citizenship documents from voters",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: NC House District 100 member page https://www.ncleg.gov/Members/Biography/H/829 (first term); Ballotpedia https://ballotpedia.org/Julia_Greenfield lists her as a 2026 primary winner and a 2026 general election incumbent candidate",
+        "On the Record (0 appearances on file)",
+        "legislature introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/829 (no photo ID bill authored; HB 31, HB 691, HB 1230, HB 1246 are election bills)",
+        "legislature votes page https://www.ncleg.gov/Members/Votes/H/829",
+        "Ballotpedia (page reached, nothing on the subject found in the part reviewed)",
+        "blocked: https://www.juliagreenfield.com (403, bot challenge); campaign site not reachable",
+        "not reviewed: web news search for name plus subject words (the shared search budget was used up); ontheissues.org not used",
+        "own-words search: nothing found on the subject (no quote located)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:50:45.423Z",
+      "by": "source-collector"
+    }
+  ]
+}

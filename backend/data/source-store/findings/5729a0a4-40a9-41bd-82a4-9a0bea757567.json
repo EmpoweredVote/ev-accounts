@@ -1,0 +1,30 @@
+{
+  "politician_id": "5729a0a4-40a9-41bd-82a4-9a0bea757567",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/FAM1 (Representative Frank A. Moran of Lawrence, sitting House member)",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov member profile and sponsored-bill list (nothing on the subject; only election-related item is H.820 on polling-place access for voters with disabilities, not about ID, so not saved)",
+        "Ballotpedia: no page at https://ballotpedia.org/Frank_A._Moran (404), nothing on the subject",
+        "not reviewed: campaign site and official-site keyword search (web search budget used up)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: roll-call votes on election bills",
+        "not reviewed: 2026 general-election ballot status not confirmed by a page"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:09:06.347Z",
+      "by": "source-collector"
+    }
+  ]
+}

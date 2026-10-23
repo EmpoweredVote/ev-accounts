@@ -1,0 +1,110 @@
+{
+  "politician_id": "3f7603aa-e71f-47be-8297-b13adc02b117",
+  "findings": [
+    {
+      "id": "9f3777733a2dc35ac253714f10f416ab182263e2610f4a044392bfb074c40c12",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/765",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (House concurrence in Senate committee substitute), roll call 801, passed 62-47",
+      "note": "Voted no on House concurrence in the Senate version of HB 958. Per the legislature's bill digest (https://webservices.ncleg.gov/BillDigests/2025/H958), the Senate version keeps the in-person photo ID rule (GS 163-166.16) and treats certain expired Class C drivers licenses as valid for it through 2027, extends the time to supply ID after a provisional ballot, requires an affirmative US-citizenship statement on voter registration, requires a full social security number to register, limits who may hand-deliver an absentee ballot to a near relative or legal guardian with an affidavit, and limits overseas-voter ID to specific documents with no affidavit option. The Governor vetoed it on 2026-08-17 (https://www.ncleg.gov/BillLookUp/2025/H958). This page shows only her vote, not her reasons.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "absentee ballot delivery and ID for overseas voters",
+        "citizenship statement to register",
+        "full social security number to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:34.303Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eec4f53b764e320f0944a4da34192de8ac651345ad53d97fa05c9b91000c1e64",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/765",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-834-2025",
+      "act": "nay",
+      "motion": "HB 834 State Board of Elections Administrative Changes, M11 Concur (House concurrence in Senate committee substitute), roll call 800, passed 74-35",
+      "note": "Voted no on House concurrence in the Senate version of HB 834 (became SL 2026-60). Per the bill digest (https://webservices.ncleg.gov/BillDigests/2025/H834), it extends the deadline to fix a registration form, to supply ID when ID numbers do not match, and to supply ID after a provisional ballot, from the third to the fifth business day after an election, and treats certain expired Class C drivers licenses as valid for the in-person photo ID rule through 2027. Her vote is on file; her reasons are not on this page.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:34.303Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "db951f5aed58b65e752e4cb913f693cd3a5de1ef7da42609d13b0354961f903c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H691",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-691-2025",
+      "act": "sponsor",
+      "motion": "Co-sponsor of HB 691 Voter Protection and Reliance Act (filed 2025-04-02; referred to Rules 2025-04-03)",
+      "note": "Listed as a co-sponsor (not primary). Per the bill digest (https://webservices.ncleg.gov/BillDigests/2025/H691), the bill says courts and election boards must treat election rules and State Board directives in place on election day as binding, and bars excluding votes based on a law or procedure not in effect on election day. It does not itself set ID or citizenship rules. Saved as a related election-rules item. It stayed in committee.",
+      "subjects": [
+        "election integrity laws in general",
+        "rules applied to votes after election day"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:34.303Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID documents",
+        "no-ID voter: affidavit, reasonable impediment, provisional ballot, free ID",
+        "ID for mail or absentee ballot",
+        "documentary proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: in scope; Ballotpedia (https://ballotpedia.org/Vernetta_Alston) fetched by curl shows NC House District 29, on the 2026 general-election ballot, primary cancelled; ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/765 names her as Representative, District 29, Durham",
+        "On the Record (0 appearances, extract-otr run with --names)",
+        "campaign site https://www.vernettaalston.com (home page only text: about/donate/join; nothing on the subject); /issues-1 returned 404",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/765 (2025-26): only HB 691 relates to elections; nothing on voter ID or proof of citizenship",
+        "ncleg.gov roll calls https://www.ncleg.gov/Members/Votes/H/765 (2025-26): HB 958 and HB 834 concurrence votes saved; excused absence on all HB 958 second-reading votes on 2026-06-30 (not a position, not saved)",
+        "ncleg.gov bill pages and digests for H691, H834, H958",
+        "Ballotpedia page: no voter ID or citizenship content found",
+        "not reviewed: earlier sessions (2021-2024) roll calls and bills; the member-votes page only returned the current session",
+        "not reviewed: news and interview coverage of her own words; web search budget was used up for the session, so no news search was run",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/849 (HTTP 500, wrong URL guess, not her page)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:43:34.303Z",
+      "by": "source-collector"
+    }
+  ]
+}

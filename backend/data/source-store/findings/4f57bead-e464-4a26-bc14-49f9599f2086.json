@@ -1,0 +1,29 @@
+{
+  "politician_id": "4f57bead-e464-4a26-bc14-49f9599f2086",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://mattlehman.com/ names Matt Lehman, State Representative, House District 79 (2026 ballot status not shown on page; not confirmed)",
+        "On the Record (0 appearances, 0 meetings)",
+        "campaign site https://mattlehman.com/ (home page only; nothing on the subject; Issues page content not reachable)",
+        "https://www.indianahouserepublicans.com/news (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Matthew_Lehman_(Indiana) (HTTP 202 challenge, empty body)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/ (script-rendered, no readable text; bill and sponsorship search not possible)",
+        "not reviewed: web news search (session search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:34:12.914Z",
+      "by": "source-collector"
+    }
+  ]
+}

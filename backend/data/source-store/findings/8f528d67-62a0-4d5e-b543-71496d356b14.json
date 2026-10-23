@@ -1,0 +1,22 @@
+{
+  "politician_id": "8f528d67-62a0-4d5e-b543-71496d356b14",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/John_Strand: ran for U.S. House Florida District 19, lost the August 18, 2026 primary with 3,508 votes, 3.9 percent; not among the listed general-election candidates)",
+        "On the Record (0 appearances)",
+        "not reviewed: campaign site, congress.gov, news search (stopped after the primary loss; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:16:59.739Z",
+      "by": "source-collector"
+    }
+  ]
+}

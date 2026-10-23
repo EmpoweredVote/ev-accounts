@@ -1,0 +1,85 @@
+{
+  "politician_id": "f3b4b50e-279d-4f47-b7f6-743432f50b00",
+  "findings": [
+    {
+      "id": "e00ed9c091b27d82228aeaa116eea24c9c986d9f53cf2a2e92a9bf47e793e888",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/794",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, House second reading (passed 66-47)",
+      "note": "Voted no on second reading. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires a voter registration application to affirmatively state US citizenship before it is processed, sets a 30-day notice-and-sworn-statement step for applications with no citizenship answer, and orders the State Board to remove voters flagged as possible non-citizens by a federal database. It also covers removal of deceased voters and precinct-official rules. It does not itself set an in-person ID rule in the text checked.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:00.704Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd57d11c4e266d33217a773454d552835e9951e2e8b7a6b5ad2aee7831a28a97",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/794",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, House vote to concur in Senate committee substitute (passed 62-47)",
+      "note": "Voted no on concurrence. The bill page (https://www.ncleg.gov/BillLookup/2025/H958) records a Governor veto on 8/17/2026.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:00.704Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms NC House District 8 incumbent on the Nov 3, 2026 general ballot; no own-words on the subject; no Candidate Connection survey): https://ballotpedia.org/Gloristine_Brown",
+        "NC General Assembly member page (confirms Representative Gloristine Brown): https://www.ncleg.gov/Members/Biography/H/794",
+        "NC General Assembly roll-call votes page, all listed votes scanned for election-law bills: https://www.ncleg.gov/Members/Votes/H/794",
+        "NC General Assembly bill page and ratified text for HB 958: https://www.ncleg.gov/BillLookup/2025/H958",
+        "campaign site https://www.gloristinebrown.com (nothing on the subject)",
+        "NC General Assembly introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/794 (no election-ID sponsorship identified)",
+        "not reviewed: news search and own-words search (the shared web search limit was used up before this person was searched)",
+        "not reviewed: Facebook pages https://www.facebook.com/GloristineBrownNC and https://www.facebook.com/gloristine.brown",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/860 returned HTTP 500 (wrong member number, not used)"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:16:00.704Z",
+      "by": "source-collector"
+    }
+  ]
+}

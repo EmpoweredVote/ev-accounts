@@ -1,0 +1,98 @@
+{
+  "politician_id": "49963775-d2d5-4ae2-95cf-b2b8d0ed2a92",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "ca0893f92d5aea513ddb1ff5503b4b36470fc4e74896e2f8ea2e1da85a2ed1ce",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H810",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "MA-H-810-2025",
+      "act": "sponsor",
+      "note": "Connolly is the filer of H.810, a bill to extend voting rights in municipal elections to noncitizen residents. Page text: 'By Representative Connolly of Cambridge, a petition (accompanied by bill, House, No. 810) of Mike Connolly relative to extending voting rights in municipal elections to noncitizen voters.'",
+      "subjects": [
+        "non-citizen voting in local elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:08:17.343Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "55f6cbfce355394eced3dfaf9866068f593a37101da916cb0ced7f794ac444d5",
+      "kind": "own-words",
+      "url": "https://www.mikeconnolly.org",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "That proposal was opposed by the Speaker and did not pass, but I have continued co-sponsoring Same-Day Registration bills because voting should be made more accessible — not more difficult.",
+      "note": "Campaign site statement on voting access, about same-day registration. It does not name ID or citizenship documents. Saved as related material only.",
+      "subjects": [
+        "same-day voter registration",
+        "voting access in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:08:17.343Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "same-day registration (related)"
+      ],
+      "places": [
+        "On the Record (0 appearances; nothing on the subject)",
+        "campaign site https://www.mikeconnolly.org (one page read; no voter ID, SAVE Act or proof-of-citizenship text; only same-day registration and access text)",
+        "Ballotpedia https://ballotpedia.org/Mike_Connolly_(Massachusetts) (confirms on Nov 3 2026 ballot after Sept 1 2026 primary win; nothing on the subject)",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/M_C1 (no voter ID or mail ballot bills listed)",
+        "malegislature.gov bill page https://malegislature.gov/Bills/194/H810",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: official house page, ontheissues.org, vote411"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:08:17.343Z",
+      "by": "source-collector"
+    }
+  ]
+}

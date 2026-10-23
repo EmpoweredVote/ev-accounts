@@ -1,0 +1,79 @@
+{
+  "politician_id": "c8f917f9-f6c4-49f8-b5a4-c330b07f90d2",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06435f530ee4604f82ce4ed5bbdb53a9eaecab771712d59848dbf1b91dcdfe85",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H833",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-833-2025",
+      "act": "sponsor",
+      "note": "Colleen M. Garry is the lead petitioner on H.833, titled 'An Act ensuring the election integrity through voter identification', described on the bill page as 'relative to the identification requirements for voters'. It was referred to the Election Laws committee on 2025-02-27 and had a hearing on 2025-07-08. The committee reported it on 2025-06-27 to accompany a study order. On 2026-04-02 it accompanied study order H.5311 (House Rule 27). The bill text itself was not readable on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity law"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:23:31.321Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter identification requirements",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity bills"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/CMG1 (Representative, 36th Middlesex) and Ballotpedia https://ballotpedia.org/Colleen_Garry (on the 2026 general-election ballot, advanced from the 2026-09-01 primary)",
+        "On the Record (0 appearances, 0 meetings)",
+        "malegislature.gov sponsored/cosponsored bills list: https://malegislature.gov/Legislators/Profile/CMG1/Sponsored (one bill on the subject: H.833)",
+        "malegislature.gov bill page and history for H.833",
+        "Ballotpedia (no voter ID or citizenship material on page)",
+        "official site and campaign site: not reviewed, no separate site found (Ballotpedia lists links; not fetched)",
+        "news search: not reviewed, web search budget exhausted",
+        "ontheissues.org and vote411: not reviewed (lead-only sources)",
+        "own-words statements (forums, questionnaires, interviews): nothing found within the budget"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:23:31.321Z",
+      "by": "source-collector"
+    }
+  ]
+}

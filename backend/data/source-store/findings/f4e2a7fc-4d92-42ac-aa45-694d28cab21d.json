@@ -1,0 +1,153 @@
+{
+  "politician_id": "f4e2a7fc-4d92-42ac-aa45-694d28cab21d",
+  "findings": [
+    {
+      "id": "5170c38df95abc8cd0669faaf34ca34b35c71589e6cb8e90a4cca17cef9f63a5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Senate second reading, roll call 693",
+      "note": "Senate roll call 693 lists Settle among the Ayes (28 to 13). The ratified bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) stops a drivers license office or county board from processing a voter registration unless the applicant affirmatively states U.S. citizenship, requires a sworn citizenship statement if the answer is blank, and sends DMV data and federal database matches on possible non-citizens to the State Board for removal from the rolls. The bill page shows the Governor vetoed it. The member vote list shows no separate Settle entry for a third-reading vote.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "non-citizen voting and voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:31.976Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c68546342fd23202c92b4cc3f11ec2122751632aa0b27a53613c3b0129083bf1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/684",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Senate Amendment 1, roll call 684",
+      "note": "Senate roll call 684 lists Settle among the Ayes on Amendment 1 to HB 958 (31 to 11). The member vote list shows him voting Aye on the other HB 958 amendment and table motions the same evening (roll calls 685 to 692).",
+      "subjects": [
+        "election integrity laws in general",
+        "citizenship statement on voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:31.976Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b7c55cf07a3b81cf22e90d1aa4ebfe7b588a95f18519015f119a531f2d76a06",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/620",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-88-2023",
+      "act": "yea",
+      "motion": "SB 88 Various Elections Changes, Senate third reading, roll call 620",
+      "note": "Roll call 620 lists Settle among the Ayes (28 to 19). The third edition (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S88v3.pdf) requires county boards to challenge ballots of voters ineligible through death or felony conviction and requires signature verification software on executed absentee ballots.",
+      "subjects": [
+        "signature check on mail ballots",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:31.976Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "37d3e62a8ff6fd1043f586d2255b6f54341992d475831f2885daf41096d7fb8f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookup/2023/S352",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-352-2023",
+      "act": "sponsor",
+      "motion": "SB 352 Remove Foreign Citizens from Voting Rolls, listed as a sponsor (not primary)",
+      "note": "The bill page lists Settle among the sponsors, with Burgin as primary. Filed 3/22/2023 and sent to committee 3/23/2023, no further action. The bill text (https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S352v0.pdf) makes U.S. citizenship a juror requirement and has court-excuse forms on non-citizenship shared with the State Board of Elections.",
+      "subjects": [
+        "non-citizen voting and voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:31.976Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3fbba473256401e9a92dcc9c013a1247f533e97f825edf8df071b1c003ab1777",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookup/2023/S88",
+      "date": "2023-02-13",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-88-2023",
+      "act": "sponsor",
+      "motion": "SB 88 Various Elections Changes, listed as a sponsor (not primary)",
+      "note": "The bill page lists Settle among the sponsors, with Hise as primary. The bill was filed February 13, 2023. It covers voter-roll ballot challenges and signature verification on absentee ballots.",
+      "subjects": [
+        "signature check on mail ballots",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:31.976Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "ID or signature with mail/absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Eddie_Settle names him as NC State Senate District 36 incumbent on the Nov 3, 2026 general-election ballot; ncleg.gov https://www.ncleg.gov/Members/Biography/S/446 lists him as Senator Eddie D. Settle",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "campaign site https://www.eddiesettle.com (home page only, biography text, nothing on the subject; no issues page found linked)",
+        "Ballotpedia https://ballotpedia.org/Eddie_Settle (nothing on the subject; he has not completed the Candidate Connection survey)",
+        "NC General Assembly member vote list https://www.ncleg.gov/Members/Votes/S/446 (2025-26 session reviewed)",
+        "NC General Assembly sponsored-bill lists https://www.ncleg.gov/Members/IntroducedBills/S/446 and .../S/446/2023 (reviewed; election bills checked)",
+        "NC bill pages and roll-call transcripts for HB 958 (2025), SB 88 (2023), SB 352 (2023)",
+        "nothing on the subject: no photo-ID bill sponsorship or vote found for him in the lists reviewed (SB 1084 Reduce Early Voting Period and SB 994 Early Voting Procedures at Fire Stations are early-voting bills, not ID, and were not saved)",
+        "not reviewed: 2023-24 member vote list (the ncleg session URL variants returned the 2025-26 list); individual votes on 2023-24 election bills other than SB 88 third reading were not checked",
+        "not reviewed: news search and official Senate press releases (web search budget used up in this session; no direct Senate news URL found)",
+        "not reviewed: Facebook pages and any debate or interview video (not located)"
+      ],
+      "found": 5,
+      "at": "2026-10-23T00:18:31.976Z",
+      "by": "source-collector"
+    }
+  ]
+}

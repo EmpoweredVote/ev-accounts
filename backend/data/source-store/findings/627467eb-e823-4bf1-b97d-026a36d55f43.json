@@ -1,0 +1,30 @@
+{
+  "politician_id": "627467eb-e823-4bf1-b97d-026a36d55f43",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: sitting Indiana House member for District 34 (term ends 2026-11-04); Ballotpedia says she is not running for re-election in 2026 (https://ballotpedia.org/Sue_Errington); still in office, so kept in scope",
+        "On the Record (0 meetings, extract-otr run with --names)",
+        "Ballotpedia https://ballotpedia.org/Sue_Errington (office and status confirmed; Candidate Connection survey answers on other topics; nothing on the subject)",
+        "official House caucus page https://indianahousedemocrats.org/members/sue-errington (names her; lists Elections and Apportionment Committee membership; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_sue_errington_1 (page needs JavaScript; no bill or vote data returned)",
+        "blocked: https://iga.in.gov/legislative/2025/bills/house/1264/details (page needs JavaScript; no bill or vote data returned)",
+        "blocked: https://api.iga.in.gov/ (HTTP 403)",
+        "not reviewed: news search on her name plus subject words (shared web search budget was used up)",
+        "not reviewed: campaign site, press releases, interviews and forum answers (no fetch of these was possible within the search limit)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:35:43.064Z",
+      "by": "source-collector"
+    }
+  ]
+}

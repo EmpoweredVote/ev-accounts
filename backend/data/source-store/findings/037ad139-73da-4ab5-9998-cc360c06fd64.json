@@ -1,0 +1,31 @@
+{
+  "politician_id": "037ad139-73da-4ab5-9998-cc360c06fd64",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Tanya_Lloyd lists her as 2026 primary winner (March 3, 2026), next election November 3, 2026, U.S. House Texas District 27",
+        "On the Record (0 appearances)",
+        "campaign site https://www.tanyafortexas.com/ and /issues: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "branch.vote candidate page: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "news search on name plus subject words: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:30:52.477Z",
+      "by": "source-collector"
+    }
+  ]
+}

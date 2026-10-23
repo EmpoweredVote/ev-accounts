@@ -1,0 +1,80 @@
+{
+  "politician_id": "541efc37-b332-4c80-8264-7b655efed5ac",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e302ce80d49996308fc6fceeb851e0c4da225194d70e942267c578f54cfd72da",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H812",
+      "date": "2021-03-29",
+      "date_precision": "day",
+      "instrument_id": "MA-H-812-2021",
+      "act": "sponsor",
+      "note": "H.812, 'An Act relative to Massachusetts voter identification law', is described on the legislature's page as a petition of Marc T. Lombardo and Nicholas A. Boldyga 'relative to the identification requirements for certain voters.' The page lists it as referred to the Election Laws committee on 3/29/2021 and accompanied a study order (H5026) on 9/12/2022. The bill text itself did not load on the page, so what it requires is not confirmed here. Boldyga is named as a petitioner (lead petitioner is Lombardo).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:11:22.366Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Nicholas_Boldyga names him as the incumbent for 3rd Hampden District, advanced from the September 1, 2026 primary, on the November 3, 2026 general-election ballot; legislature page https://malegislature.gov/Legislators/Profile/NAG1 confirms Representative Nicholas A. Boldyga",
+        "On the Record (0 appearances for this politician id, 0 sources; name search also returned 0)",
+        "campaign site https://stickwithnick.org (home and About Nick pages fetched): nothing on the subject; no issues page (the /issues path returns 404)",
+        "official legislature profile and bill pages (sponsored bills 187th to 194th sessions reviewed): one voter-identification bill found (H.812, 192nd); the cosponsored-bills listing returned the same list as the sponsored one, so cosponsorships were not separately confirmed",
+        "Ballotpedia: nothing on the subject; he has not completed the 2026 Candidate Connection survey",
+        "not reviewed: web news search on name plus subject words (the shared web search budget was used up before this agent could search)",
+        "not reviewed: https://www.x.com/@RepNickBoldyga (campaign social account, not fetched)",
+        "not reviewed: campaign video 'Getting Answers- Interview with Dave Madsen' linked on https://stickwithnick.org (video, unreadable)",
+        "not reviewed: ontheissues.org (lead-only source, not fetched)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:11:22.366Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "politician_id": "9c8fccf3-b44e-450b-9c40-de61c959d769",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fa6eba00953b1c460175bc66004b979f5271951d4e7542fe3c4be12c2f2ceaab",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (Roll Call 758)",
+      "note": "Voted aye (66 to 47) on second reading of HB 958. The ratified bill includes a process to remove voters flagged by a federal database as possibly not citizens, and a citizenship question and sworn statement on voter registration forms. The bill text has no photo ID section.",
+      "subjects": [
+        "voter-roll checks for non-citizens",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:03:12.129Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f27cd7e211ddb9f87d01cd7fb399bcd63b9176157297595e8fc6749f37ad1b11",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Motion 11 Concur (Roll Call 801)",
+      "note": "Voted aye (62 to 47) to concur with the Senate changes to HB 958. The bill was ratified 2026-08-06 and vetoed by the governor 2026-08-17. No override vote was shown on the bill page when fetched.",
+      "subjects": [
+        "voter-roll checks for non-citizens",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:03:12.129Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "29b8902fa52600b4fe0f3813b6572696e46ad40d49f50a80fa5900cdc948baaf",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+      "date": "2026-08-06",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "other",
+      "motion": "HB 958 ratified text, Section 2.3(b) and G.S. 163-83 citizenship on registration forms (context for the votes above, not a separate act by Potts)",
+      "note": "Ratified text says: \"If the State Board of Elections received information regarding potential non-eligible citizens appearing on the State's voter registration records from a federal database on or after January 1, 2026, and a challenge has not been entered against a voter appearing on the information from the federal database and the voter has not otherwise been removed from the list of eligible voters in the State, then the State Board of Elections shall create a process for removing such voters from the State's voter registration records.\" This describes the bill he voted on, not his own words.",
+      "subjects": [
+        "voter-roll checks for non-citizens",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:03:12.129Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks for non-citizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: NC House District 81, on the Nov 3 2026 general ballot per https://ballotpedia.org/Larry_Potts (advanced from the Mar 3 2026 primary); ncleg.gov member list shows Rep. Larry W. Potts, member 724",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site larrywpotts.com (home, press-releases, in-the-press): nothing on the subject",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/702 (HTTP 500, wrong member id anyway)",
+        "ncleg.gov member pages 724: Introduced Bills (2025-26: only HB 31 Make Election Day A State Holiday, not about ID or citizenship), Votes (2025-26 votes reviewed)",
+        "ncleg.gov HB 958 bill page and ratified text H958v9.pdf, roll calls 758 and 801",
+        "Ballotpedia: no survey answers or positions on the subject",
+        "not reviewed: https://www.facebook.com/LarryWPottsNC/ and https://twitter.com/LarryPottsNC (social posts not fetched)",
+        "not reviewed: news search on name plus subject words (shared web-search budget was used up)",
+        "not reviewed: 2018 NC-S-824 own-words (already on file as votes)",
+        "own words on the subject: none found"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:03:12.129Z",
+      "by": "source-collector"
+    }
+  ]
+}

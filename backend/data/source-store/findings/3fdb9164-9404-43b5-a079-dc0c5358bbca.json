@@ -1,0 +1,23 @@
+{
+  "politician_id": "3fdb9164-9404-43b5-a079-dc0c5358bbca",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/Robert_Neeld: Robert Neeld lost in the primary on August 18, 2026 for U.S. House Florida District 19, with 13.4 percent of the vote)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched; no Candidate Connection survey, nothing on the subject)",
+        "not reviewed: web searches, campaign site and congress.gov (stopped because candidate is out of scope; shared search budget was also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:58:13.617Z",
+      "by": "source-collector"
+    }
+  ]
+}

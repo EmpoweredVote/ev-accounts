@@ -1,0 +1,30 @@
+{
+  "politician_id": "4a12bdcb-e722-426e-b2e7-338acac23f40",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Mike_Andrade (Indiana House District 12, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched with curl; no voter ID or citizenship material; 2026 Candidate Connection survey not completed)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/ (page is a script-built app and returned no text; the API needs a key)",
+        "not reviewed: official House site and campaign site (not reached)",
+        "not reviewed: news search and bill-sponsorship search (session web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:29:58.319Z",
+      "by": "source-collector"
+    }
+  ]
+}

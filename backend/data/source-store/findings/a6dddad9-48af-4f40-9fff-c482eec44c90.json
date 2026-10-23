@@ -1,0 +1,107 @@
+{
+  "politician_id": "a6dddad9-48af-4f40-9fff-c482eec44c90",
+  "findings": [
+    {
+      "id": "49fbaaeeb33ab78778d84e9872026a4a751bdbf37b9a489a4635ac9f31ad8bc8",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 to concur in the House committee substitute and House amendments (Roll Call #439, passed 27-18)",
+      "note": "Senate vote to accept the House version of SB 747, Various Changes Regarding Elections Law. The bill text (Session Law 2023-140) lets a person register and vote the same day at early voting only with a photo ID plus a listed proof-of-address document (utility bill, bank statement, paycheck or similar), and lists no photo ID at the polls as a ground for a voter challenge. She is listed among the Noes.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "non-photo documents as proof of address",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:54.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6e5a390778ead3d1962740695defdf236a6debb638c5c344e3d82e0dede5a25d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11, Senate vote to override the Governor's veto of SB 747 (Roll Call #482, passed 30-19)",
+      "note": "Senate vote to override the Governor's veto of SB 747, Various Changes Regarding Elections Law, including its photo ID requirement for same-day registration. She is listed among the Noes.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:54.227Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "865be2c1ad0a0c654acf368ccd2c50d76234722c5bc7e368b1d68798954c6255",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Second Reading of HB 958, Election Law Changes (Senate Roll Call #693, passed 28-13)",
+      "note": "Senate second-reading vote on HB 958, Election Law Changes. The Senate committee substitute (Seventh Edition) includes a rule that a voter registration application must state citizenship under penalty of perjury, and a State Board process to remove voters flagged as possibly non-citizens by a federal database. She is listed among the Noes. The bill history shows no recorded roll call for the third reading.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:04:54.227Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for same-day registration",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Natalie_Murdock) names her as NC State Senate District 20 incumbent on the Nov 3, 2026 general-election ballot; the March 3, 2026 primary for the seat was canceled",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "Official NC General Assembly member page (https://www.ncleg.gov/Members/Biography/S/422) - confirms office; nothing on the subject",
+        "Campaign site natalie-murdock.com (home, /issues/, /press/, /press/blog/) - nothing on the subject",
+        "Ballotpedia - nothing on the subject",
+        "NC General Assembly bill pages and roll-call transcripts for SB 747 (2023) and HB 958 (2025-26) - votes found",
+        "not reviewed: her personal X and Facebook posts (https://x.com/divamurdock, https://www.facebook.com/natalie.murdock.92) - not fetchable as readable text",
+        "not reviewed: YouTube channel https://www.youtube.com/@nataliemurdock6192 - video",
+        "blocked: web search (the shared 200-search budget was used up), so no news search on name plus subject words was possible",
+        "not searched: sponsorship lists for voter-ID bills on ncleg.gov - no voter ID sponsorship found in the bill pages reviewed"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:04:54.227Z",
+      "by": "source-collector"
+    }
+  ]
+}

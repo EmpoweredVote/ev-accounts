@@ -1,0 +1,54 @@
+{
+  "politician_id": "933d399d-b0d2-42eb-94a2-d0a073ea179f",
+  "findings": [
+    {
+      "id": "72a0e00a9c939b775c9d1d5ffee723454f558092a4b1177346ec5ec56abc5700",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H278",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "passage": "A covered voter voting under this Article shall not be required to include a photocopy of identification described in G.S. 163-166.16(a) or an affidavit as described in G.S. 163-166.16(d)(1), (d)(2), or (d)(3) when submitting a ballot in accordance with this Article.",
+      "instrument_id": "NC-HB-278-2025",
+      "act": "sponsor",
+      "motion": "HB 278, Protect Military Votes",
+      "note": "Crawford is named in the sponsor list of HB 278 and the bill appears on her introduced-bills page (https://www.ncleg.gov/Members/IntroducedBills/H/800). It adds G.S. 163-258.21, so a covered military or overseas voter would not have to include a photocopy of ID, or the listed affidavits, when submitting a ballot. It was referred to the House Rules committee on 03/05/2025 and has no further action listed.",
+      "subjects": [
+        "ID with absentee ballot for military and overseas voters",
+        "voter ID with mail ballot"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:01:21.562Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID with mail or absentee ballot",
+        "military and overseas voter ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Rep. Sarah Crawford, NC House District 66, on the Nov 3, 2026 general ballot (https://ballotpedia.org/Sarah_Crawford and https://www.ncleg.gov/Members/Biography/H/800)",
+        "On the Record (0 appearances; extract-otr returned nothing)",
+        "ncleg.gov member page and introduced-bills list (4 bills in 2025-26 session; one on the subject)",
+        "ncleg.gov bill pages and text for HB 278, HB 691, HB 1240 (only HB 278 on the subject)",
+        "Ballotpedia (no issue positions on the subject)",
+        "not reviewed: https://www.ncleg.gov/Members/Votes/H/800 (page loads votes dynamically; no vote data readable)",
+        "not reviewed: official site, campaign site, news and interview search (web search budget exhausted)"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:01:21.562Z",
+      "by": "source-collector"
+    }
+  ]
+}

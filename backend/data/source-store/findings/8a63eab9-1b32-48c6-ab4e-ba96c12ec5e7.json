@@ -1,0 +1,124 @@
+{
+  "politician_id": "8a63eab9-1b32-48c6-ab4e-ba96c12ec5e7",
+  "findings": [
+    {
+      "id": "6991878e7efd105115f427ca452705674ccdb89f5ee942a1833fc5051beb692f",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/voting-by-mail/",
+      "date": "2020-06-17",
+      "date_precision": "day",
+      "passage": "The in-person process gives the opportunity for informal authentication of who the voter is.  Poll workers often have personal knowledge of the voter.",
+      "note": "In a post on the 2020 temporary vote-by-mail bill, he describes how Massachusetts polling places confirm who a voter is, through poll workers who often know the voter, with no mention of a photo ID requirement.",
+      "subjects": [
+        "in-person identity check at the polls",
+        "who is the voter: poll worker knowledge"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:16:02.001Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "05ab2790363a7f6ad7c1d760b5bfd631f6d3e5056ecf5d2fa5484f3886136303",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/voting-by-mail/",
+      "date": "2020-06-17",
+      "date_precision": "day",
+      "passage": "A person will not receive a ballot mailed to them unless they confirm their address by returning the ballot application.    This will provide stronger protection for the integrity of the process.",
+      "note": "He explains why the 2020 bill had voters apply for a mail ballot instead of having ballots mailed to every listed voter, citing outdated voter lists and fraud risk or the perception of it.",
+      "subjects": [
+        "mail-ballot application",
+        "voter-roll accuracy",
+        "election integrity in general",
+        "mail-ballot fraud concern"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:16:02.001Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "baf35ccc95f1d148465c129b99357f2fc0622ec8d6f2c957633ab7419637ded4",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/election-security/",
+      "date": "2020-08-21",
+      "date_precision": "day",
+      "passage": "As voters arrive in person and check in, their names are checked off on a copy of the voting list.",
+      "note": "In a post on how Massachusetts elections are secured, he describes in-person check-in by name against the voting list, and absentee envelopes that carry the voter's name and signature. He does not mention photo ID or proof of citizenship.",
+      "subjects": [
+        "in-person check-in",
+        "election integrity in general",
+        "mail-ballot envelope name and signature"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:16:02.001Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1b8c32741729f0c95c3e5aebce7090b052b64627dfa8a378e69ccfb04b13e54d",
+      "kind": "own-words",
+      "url": "https://willbrownsberger.com/voting-rights-in-massachusetts/",
+      "date": "2022-01-19",
+      "date_precision": "day",
+      "passage": "Finally, the bill requires the Commonwealth to start working with the Electronic Registration Information Center and share data with other states to identify people who have moved, remove them from their old addresses, and help them re-register in their new addresses.",
+      "note": "He describes the Senate voting-reform package, including a voter-roll data-sharing provision to find people who have moved. The same post backs permanent no-excuse mail voting with the state mailing ballot applications.",
+      "subjects": [
+        "voter-roll checks",
+        "mail-voting application",
+        "same-day registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:16:02.001Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID or signature",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity and security in general",
+        "in-person identity check by poll workers"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/William_Brownsberger says he advanced from the 2026-09-01 primary and is on the 2026-11-03 general-election ballot (Suffolk and Middlesex Senate district)",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "official Senate page https://malegislature.gov/Legislators/Profile/WNB0 (confirms office; nothing on the subject)",
+        "personal site https://willbrownsberger.com site search for: voter ID, photo ID, SAVE Act, proof of citizenship (nothing on the subject), election integrity, mail ballot (4 posts saved)",
+        "Ballotpedia page fetched (election status only; no voter ID material found in the text read)",
+        "https://malegislature.gov/Bills/192/S2545 (VOTES Act): history shown has amendment roll calls only, no individual vote or sponsorship by him visible; not saved",
+        "https://willbrownsberger.com/votes-act/ is posted by a staff member and says it derives from the Senate press release; not saved as his own words",
+        "https://willbrownsberger.com/2025-constituent-survey/ and the Sept 2026 primary-guide post: nothing on ID or citizenship",
+        "blocked: https://www.brownsberger.com/ (certificate error; the live site is willbrownsberger.com)",
+        "not searched: news search for his name plus voter ID (the shared web-search budget was used up); congress.gov not applicable; vote411 not used",
+        "not reviewed: malegislature.gov page 2 of S.2545 history and other election-bill sponsor lists"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:16:02.001Z",
+      "by": "source-collector"
+    }
+  ]
+}

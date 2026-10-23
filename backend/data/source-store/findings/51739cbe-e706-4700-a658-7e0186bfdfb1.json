@@ -1,0 +1,35 @@
+{
+  "politician_id": "51739cbe-e706-4700-a658-7e0186bfdfb1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: on the Nov 3, 2026 general ballot for IL-11 as Jeffrey Walter, per https://ballotpedia.org/Jeffrey_Walter and https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Illinois,_2026",
+        "On the Record (0 appearances, no meetings)",
+        "campaign site issues page https://www.jeffwalterforcongress.com/issues: nothing on the subject",
+        "campaign site about, home: nothing on the subject",
+        "not reviewed: https://www.jeffwalterforcongress.com/news and /in-the-news (pages returned no text)",
+        "Ballotpedia Jeffrey_Walter page and Candidate Connection survey: nothing on the subject",
+        "Ballotpedia Jeff_Walter: 404 (name is listed as Jeffrey Walter)",
+        "congress.gov: not applicable, not a member of Congress; no sponsorships",
+        "news search: not run, the shared web search budget was used up",
+        "not reviewed: https://x.com/JeffWalterIL, Facebook and Instagram campaign accounts"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:54:24.648Z",
+      "by": "source-collector"
+    }
+  ]
+}

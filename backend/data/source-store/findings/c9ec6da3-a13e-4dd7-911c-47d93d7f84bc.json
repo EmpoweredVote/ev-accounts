@@ -1,0 +1,25 @@
+{
+  "politician_id": "c9ec6da3-a13e-4dd7-911c-47d93d7f84bc",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: no longer in office. Ballotpedia (https://ballotpedia.org/Andy_Zay) lists Indiana State Senate District 17, years in office 2016 - 2026, successor Nick McKinley, and Indiana Utility Regulatory Commission, assumed office January 12, 2026, left office August 3, 2026. Scope not confirmed as a sitting state official; search stopped.",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched with curl)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_andy_zay_1 (page returned only a title, no content)",
+        "not reviewed: official site, campaign site, news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:51:40.990Z",
+      "by": "source-collector"
+    }
+  ]
+}

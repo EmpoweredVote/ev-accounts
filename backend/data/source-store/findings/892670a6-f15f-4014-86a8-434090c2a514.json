@@ -1,0 +1,57 @@
+{
+  "politician_id": "892670a6-f15f-4014-86a8-434090c2a514",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Steven_Xiarhos names him as member of the Massachusetts House, 5th Barnstable District, on the 2026 general-election ballot (advanced from the 2026-09-01 primary)",
+        "On the Record (0 meetings, 0 unlinked-name matches)",
+        "campaign site https://www.xiarhosforrep.com/issues (nothing on the subject; home page returned no text)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/SGX1 (no sponsored bill on voter ID, proof of citizenship or mail ballots; only H.2357, a Sandwich town clerk appointed-to-elected petition, not a voting-rules bill)",
+        "bill page https://malegislature.gov/Bills/192/H4359 (H.4359, amendment 7 roll call already on file; page does not state what the amendment did)",
+        "Ballotpedia https://ballotpedia.org/Steven_Xiarhos (nothing on the subject; no Candidate Connection survey)",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:55.797Z",
+      "by": "source-collector"
+    }
+  ]
+}

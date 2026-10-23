@@ -1,0 +1,84 @@
+{
+  "politician_id": "02e74087-5a81-474b-9771-62451239007a",
+  "findings": [
+    {
+      "id": "589d2eb50ea05184bca7602c7bee542b5e09debe0484eb94c490080a597e2210",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=85R&Bill=SB5",
+      "date": "2017-05-27",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-5-2017",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 5",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, adoption of conference committee report on SB 5, 2017-05-27: yea (tally 21–10); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "sworn statement when no ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.560Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "38990bec58e03ed480bb2459bd7a689e70e30c7221e8e09a000ccc8dd49b927b",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "yea",
+      "motion": "adoption of conference committee report on SB 1",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, adoption of conference committee report on SB 1, 2021-08-31: yea (tally 18–13); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.561Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "f81b318e70befab7499adabc7a395398e8139d96b907d3f86da8959ff19e2416",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "yea",
+      "motion": "third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes), 2025-04-01: yea (tally 20–11); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

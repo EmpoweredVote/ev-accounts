@@ -1,0 +1,57 @@
+{
+  "politician_id": "0cb5bf41-db67-4c4e-b4cf-79c4e4e8dcd7",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "Scope confirmed: https://ballotpedia.org/Steven_Ultrino names him as sitting member of the Massachusetts House, 33rd Middlesex District, advanced from the 2026-09-01 primary and on the 2026-11-03 general-election ballot",
+        "On the Record (0 appearances for this politician id; nothing on the subject)",
+        "Official legislature profile https://malegislature.gov/Legislators/Profile/S_G2 and its sponsored-bills page (39 listed petitions; none on voter ID, citizenship or election integrity)",
+        "Ballotpedia https://ballotpedia.org/Steven_Ultrino (no positions on the subject)",
+        "blocked: https://www.repultrino.com (no connection)",
+        "not reviewed: https://www.facebook.com/RepSteveUltrino",
+        "not reviewed: https://www.instagram.com/repultrino/",
+        "blocked: web search budget used up, so no news search was run",
+        "Vote on file MA-H-4359-AMDT-7-2022 not collected again"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:59:23.329Z",
+      "by": "source-collector"
+    }
+  ]
+}

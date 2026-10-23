@@ -1,0 +1,30 @@
+{
+  "politician_id": "ac732037-2172-4899-95c9-ca42ea69c4a0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://www.in.gov/attorneygeneral/about-the-office/about-the-attorney-general/ (Todd Rokita was elected to office on November 3, 2020, having earned the highest number of votes of any state officeholder in Indiana history.) Sitting statewide office holder; not a 2026 candidate check made",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "official site newsroom https://www.in.gov/attorneygeneral/newsroom/ : not reviewed, list is script-loaded and shows no items to a plain fetch",
+        "Ballotpedia: blocked: https://ballotpedia.org/Todd_Rokita (fetch returned another person's page, Matt Hostettler, and a second try returned a different state senator page; unusable)",
+        "news search: not reviewed, session web search budget exhausted (200 shared searches used)",
+        "campaign site: not reviewed",
+        "legislature bill pages: not applicable (statewide executive office)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:47:37.487Z",
+      "by": "source-collector"
+    }
+  ]
+}

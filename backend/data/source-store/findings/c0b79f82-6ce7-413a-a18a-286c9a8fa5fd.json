@@ -1,0 +1,28 @@
+{
+  "politician_id": "c0b79f82-6ce7-413a-a18a-286c9a8fa5fd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 appearances, nothing on the subject)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/MOM0 (confirms Senator Michael O. Moore; sponsored bill list shows no voter ID or citizenship bill; only S.44 election deepfakes and S.265 personal identifying information, both off subject)",
+        "Ballotpedia https://ballotpedia.org/Michael_Moore_(Massachusetts) (in scope: 2nd Worcester District, on the 2026-11-03 general ballot; nothing on the subject)",
+        "not reviewed: official Senate site and campaign site (no fetchable URL found)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:22:20.412Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "politician_id": "e9ae7dbc-e266-4d10-ad47-4cd63efc5d0d",
+  "findings": [
+    {
+      "id": "dce07def23c254ed92fdc1700114a1bd9f20545f1cc37549ef16fce72e795a48",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=89R&Bill=SB16",
+      "date": "2025-04-01",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-16-2025",
+      "act": "nay",
+      "motion": "third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX Senate, third reading and final passage of CSSB 16 (as amended on second reading, FA1 Hughes), 2025-04-01: nay (tally 20–11); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.562Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

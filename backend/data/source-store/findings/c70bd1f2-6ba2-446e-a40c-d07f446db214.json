@@ -1,0 +1,58 @@
+{
+  "politician_id": "c70bd1f2-6ba2-446e-a40c-d07f446db214",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/TMS1 (Representative Thomas M. Stanley, 9th Middlesex, 194th General Court, current; page text summarised by fetch tool)",
+        "On the Record (0 appearances)",
+        "malegislature.gov sponsored bills page https://malegislature.gov/Legislators/Profile/TMS1/Sponsored: nothing on the subject (fetch tool summary only)",
+        "malegislature.gov cosponsored page https://malegislature.gov/Legislators/Profile/TMS1/Cosponsored: nothing on the subject (fetch tool summary only)",
+        "blocked: https://ballotpedia.org/Thomas_Stanley (returned empty content)",
+        "blocked: https://ballotpedia.org/Thomas_M._Stanley (returned empty content)",
+        "blocked: https://ballotpedia.org/Massachusetts_House_of_Representatives_elections,_2026 (returned empty content; 2026 ballot status not confirmed)",
+        "not reviewed: official site and campaign site (not reached; web search budget used up)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ontheissues.org and vote411 (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:22:28.402Z",
+      "by": "source-collector"
+    }
+  ]
+}

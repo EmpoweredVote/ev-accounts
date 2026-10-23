@@ -1,0 +1,24 @@
+{
+  "politician_id": "4dbc8de1-9984-42a5-b2aa-5445bf0619b9",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: withdrew 2026-01-26 (announced she would not seek re-election in 2026; page: https://ballotpedia.org/United_States_House_of_Representatives_election_in_the_District_of_Columbia,_2026 says \"On January 26, 2026, Eleanor Holmes Norton , the incumbent to the non-voting seat, announced she would not seek re-election in 2026.\"; also https://ballotpedia.org/Eleanor_Holmes_Norton says \"Norton is not running for re-election to U.S. House Non-Voting Delegate District of Columbia in 2026.\")",
+        "On the Record (0 appearances)",
+        "Ballotpedia (person page and 2026 race page)",
+        "official site press release page 1 only: nothing on the subject",
+        "not searched after scope check: congress.gov, news search (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:47:41.828Z",
+      "by": "source-collector"
+    }
+  ]
+}

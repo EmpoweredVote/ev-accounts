@@ -1,0 +1,56 @@
+{
+  "politician_id": "cd91941f-44d7-4250-9f09-e6979d805de4",
+  "findings": [
+    {
+      "id": "a724edf4b27a4b9a2963f2a64779f52b62629b20987db7b0bc988debf8c02d36",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "sponsor",
+      "note": "Listed among the sponsors (not a primary sponsor; primary sponsors are Buansi, Dahle, F. Jackson and Clark) of HB 1246, Safeguarding Elections Act, filed 2026-08-04 and referred to the House Rules committee. The bill makes it a Class 2 misdemeanor for any person to demand citizenship documentation from a voter other than what State law requires at any point during the voting process. It also makes voter photo ID images and photocopies of ID confidential records. Bill text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v1.pdf. The sponsor list on the bill page reads 'T. Brown'.",
+      "subjects": [
+        "proof of citizenship demands at the polls",
+        "voter ID records kept confidential",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:40.563Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/H/783 (Representative Terry M. Brown Jr., House District 92, Mecklenburg, 2025-2026 session; 2026 ballot status not checked)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "ncleg.gov introduced and co-sponsored bills 2021, 2023, 2025 (https://www.ncleg.gov/Members/IntroducedBills/H/783/2025): reviewed; one relevant bill found",
+        "ncleg.gov bill pages and PDFs for H1246 (2025), H293 (2023), H446 (2021): reviewed; H293 and H446 text has no change to photo ID or proof of citizenship rules, so not saved",
+        "ncleg.gov votes page https://www.ncleg.gov/Members/Votes/H/783: not reviewed (page loads its vote list by script; no rows in fetched HTML)",
+        "Ballotpedia https://ballotpedia.org/Terry_Brown_Jr.: blocked (fetch returned empty page)",
+        "official or campaign site: not reviewed (no URL known; web search budget for the session was used up)",
+        "news search on name plus subject words: not reviewed (web search budget used up)",
+        "own words (questionnaires, debates, interviews, posts): nothing found; no search possible"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:10:40.563Z",
+      "by": "source-collector"
+    }
+  ]
+}

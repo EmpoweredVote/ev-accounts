@@ -1,0 +1,78 @@
+{
+  "politician_id": "fd793f38-f539-4ad0-b18c-1b9b280371b7",
+  "findings": [
+    {
+      "id": "131afd2f8244ada1a2ce2e2369a866f1390e9e0b2e5e806a9eed9fbc30fe4cea",
+      "kind": "own-words",
+      "url": "https://pressofatlanticcity.com/opinion/letters/article_30b3654a-68b6-408e-848f-749a166f41a8.html",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "Election integrity should not be a partisan weapon. It should mean respecting legitimate election results, protecting every lawful vote and holding fraud accountable wherever it occurs — even when the person committing it is working for your own campaign.",
+      "note": "Letter to the editor signed by Mullock, answering his opponent's call for election integrity. He defines election integrity as respecting results, protecting lawful votes and punishing fraud. He names no ID or citizenship rule. The letter also covers a convicted operative who cast fraudulent mail-in ballots.",
+      "subjects": [
+        "election integrity in general",
+        "mail-ballot fraud"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:16:31.569Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "16b5c10406f07bc04e894b597d60adff8a49e93fbeff0e97793751d2ab77c728",
+      "kind": "own-words",
+      "url": "https://pressofatlanticcity.com/opinion/letters/article_30b3654a-68b6-408e-848f-749a166f41a8.html",
+      "date": "2026-09-01",
+      "date_precision": "day",
+      "passage": "Callaway later pleaded guilty to procuring and casting fraudulent mail-in ballots in that election and was sentenced to two years in federal prison.",
+      "note": "In the same signed letter, Mullock describes a mail-ballot fraud conviction of an operative paid by his opponent. It is a statement about fraud, not about ID rules.",
+      "subjects": [
+        "mail-ballot fraud",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:16:31.569Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity in general",
+        "mail-ballot fraud",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: Cape May mayor, won the June 2026 primary for NJ-2 and faces the incumbent in November (https://ocnjdaily.com/politics/mullock-wins-democratic-primary-to-face-van-drew-in-november/)",
+        "On the Record (0 meetings)",
+        "campaign site https://www.mullockforcongress.com (page text and site code read; only election integrity op-ed and a Protect voting rights bullet; nothing on ID or citizenship)",
+        "Press of Atlantic City letter (fetched)",
+        "WHYY voter guide https://whyy.org/articles/election-2026-new-jersey-2nd-congressional-district-voter-guide/ (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Zack_Mullock (HTTP 202, empty body)",
+        "not reviewed: congress.gov (not a legislator; no record to search)",
+        "not reviewed: web news search on name plus subject words (session search budget used up)",
+        "not reviewed: https://youtu.be/81g9ykR3btQ (video, cannot read)",
+        "not reviewed: the Inquirer, New Jersey Globe, Insider NJ and Cape May County Herald articles listed on the campaign site"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:16:31.569Z",
+      "by": "source-collector"
+    }
+  ]
+}

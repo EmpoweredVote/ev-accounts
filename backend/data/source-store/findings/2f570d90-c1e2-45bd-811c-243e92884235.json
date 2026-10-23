@@ -1,0 +1,38 @@
+{
+  "politician_id": "2f570d90-c1e2-45bd-811c-243e92884235",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/John_Nagel says he is on the Nov 3, 2026 general-election ballot for U.S. House Minnesota District 5 and won the Aug 11, 2026 primary",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "campaign site https://nagelforcongress.com/ (home page issues list, /how-to-vote, /press list): nothing on the subject",
+        "campaign press statement https://nagelforcongress.com/press/statement-on-ilhan-omar-and-hasan-piker: nothing on the subject",
+        "Ballotpedia John_Nagel page including 2026 Candidate Connection survey: nothing on the subject",
+        "MinnPost 2026-09-17 candidates article: nothing on the subject",
+        "Hometown Source Sun Post announcement article: nothing on the subject",
+        "Fox News Digital candidate article (about him as the incumbent's challenger): nothing on the subject",
+        "not reviewed: https://minnesotareformer.com/2026/09/04/at-the-minnesota-state-fair-underdog-candidates-find-an-even-playing-field/ (page returned no readable text)",
+        "not reviewed: campaign press-page interview videos (YouTube links, Jon Justice Show, Alpha News, NEWS24, Fox News Digital)",
+        "not reviewed: Google Drive press release PDFs linked from the press page, including the Oct 12 statement on Omar's citizenship records (about the incumbent's own records, not voter proof of identity)",
+        "not reviewed: https://x.com/Nagel4Congress and Facebook/Instagram campaign pages (social media, not fetchable)",
+        "not applicable: congress.gov (he has never served in Congress; 2024 state House candidate only)",
+        "blocked: web search budget exhausted for the session, so no news search by name plus subject words was run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:56:04.730Z",
+      "by": "source-collector"
+    }
+  ]
+}

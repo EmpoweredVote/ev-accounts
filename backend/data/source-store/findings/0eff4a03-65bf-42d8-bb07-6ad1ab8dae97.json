@@ -1,0 +1,79 @@
+{
+  "politician_id": "0eff4a03-65bf-42d8-bb07-6ad1ab8dae97",
+  "findings": [
+    {
+      "id": "0edb2780c3ff7cdac4fb0632c4e92645614536150d2170779fa8cc5997bdc14b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/542",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Second Reading, House Roll Call #542 (Ayes 69, Noes 47)",
+      "note": "House roll call on SB 747, Elections Law Changes. A. Jones is listed among the Noes. The bill is a general election-law bill; this page does not show it as an ID bill, so it is saved as a related election-integrity-law vote.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll and registration rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:32:14.871Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aa69214e6de56fb25ac4a66a36255c852ec96db07893336b08b6382a6acc5a52",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Veto Override, House Roll Call #596 (Ayes 72, Noes 44)",
+      "note": "House vote to override the veto of SB 747, Elections Law Changes. A. Jones is listed among the Noes.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter-roll and registration rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:32:14.871Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Abe_Jones names Abraham P. Jones as NC House District 38 incumbent on the Nov 3, 2026 general ballot; NC General Assembly biography https://www.ncleg.gov/Members/Biography/H/780 titled 'Representative Abe Jones'",
+        "On the Record (0 appearances; extract-otr run with --names 'Abe Jones')",
+        "campaign site https://abejonesfornchouse.com (home page fetched; issue topics are housing, vocational education, criminal justice; nothing on the subject; no search of subpages)",
+        "Ballotpedia (no 2026/2024/2022/2020 candidate survey answers; nothing on the subject)",
+        "NC General Assembly bill page and roll calls for S747 (2023)",
+        "not reviewed: Ballotpedia sponsored-legislation list (table did not load in fetched text); ncleg.gov sponsored-bill list for voter ID bills",
+        "not reviewed: official Facebook https://www.facebook.com/repabejones and X https://x.com/repabejones",
+        "not reviewed: news search on name plus subject words (web search budget exhausted for the session)",
+        "not reviewed: other House roll calls on voter ID bills (2021-2026), no roll call located"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:32:14.871Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "politician_id": "2118ad9a-0cb2-4f07-b600-cdb8e86e96c5",
+  "findings": [
+    {
+      "id": "719294159a2b6f6dfd8c7183422de12596f0eced25147f1fd3e8cf473bbf3a4f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/1003",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (RCS 758, 66 aye, 47 no)",
+      "note": "Voted aye on second reading of HB 958, Election Law Changes. The bill digest describes changes to voter list maintenance, audit and challenge of votes cast by ineligible voters, a temporary moratorium on expiration of certain Class C drivers licenses used for photo ID, and a requirement that voter registration staff stop an application when the applicant says they are not a citizen or declines to answer.",
+      "subjects": [
+        "election integrity law in general",
+        "voter-roll checks",
+        "non-citizen registration",
+        "photo ID at the polls (licence validity)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:36:53.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f67f0278f3b75fb9aff64fb73a9005f4ff7c6723a5b432c8688e31796977e672",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/1003",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur with Senate changes (RCS 801, 62 aye, 47 no)",
+      "note": "Voted aye to concur with the Senate version of HB 958. The bill page shows it was later vetoed by the Governor and placed on the calendar for 2026-09-02. See https://www.ncleg.gov/BillLookUp/2025/H958 and digest https://webservices.ncleg.gov/BillDigests/2025/H958.",
+      "subjects": [
+        "election integrity law in general",
+        "voter-roll checks",
+        "non-citizen registration",
+        "photo ID at the polls (licence validity)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:36:53.623Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8565524f48e17f19022ef820b51fc912ce9f7a6dc79e415f600d49fd265db4b4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/1003",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-834-2025",
+      "act": "yea",
+      "motion": "HB 834 State Board of Elections Administrative Changes, M11 Concur (RCS 800, 74 aye, 35 no)",
+      "note": "Voted aye to concur on HB 834. The digest says the bill gives a voter more time (to noon on the fifth business day after an election) to provide ID when ID numbers do not match or after voting a provisional ballot for lack of photo ID, and treats certain Class C drivers licenses as valid and unexpired for the photo ID rule. Digest: https://webservices.ncleg.gov/BillDigests/2025/H834.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure period",
+        "no-ID voter"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:36:53.623Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot cure",
+        "mail and overseas ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen records",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: NC House District 119, appointed 2026-04-16, on the 2026-11-03 general ballot (https://ballotpedia.org/Anna_Ferguson_(North_Carolina)); the March 2026 primary loss noted there was to the then-sitting member before the appointment",
+        "On the Record (0 appearances for this politician id; run with --names, nothing found)",
+        "campaign site https://voteannaferguson.com (nothing on the subject; issues named are budget, Medicaid and healthcare, public education)",
+        "Ballotpedia Candidate Connection survey (nothing on the subject)",
+        "NC General Assembly member pages: biography, introduced bills (6 bills, none on the subject), votes (full list reviewed)",
+        "NC General Assembly bill pages and digests for HB 958 and HB 834",
+        "not reviewed: official legislator page news/press list, social media (https://www.instagram.com/repannaferguson, https://www.facebook.com/anna.ferguson.781572)",
+        "web search: not run, the shared search budget was used up"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:36:53.623Z",
+      "by": "source-collector"
+    }
+  ]
+}

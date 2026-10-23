@@ -1,0 +1,96 @@
+{
+  "politician_id": "b1bd9a21-a37e-49f4-907b-9fba480a1ca2",
+  "findings": [
+    {
+      "id": "179e6c8d698a0bf61b9958ec954a44b24875e18009041a6a871c4eef14aa6d68",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/187/S320",
+      "date": "2011-01-24",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-320-2011",
+      "act": "sponsor",
+      "note": "Senate bill 320 of the 187th General Court, 'An Act relative to voter identification.', filed by Bruce E. Tarr with other Senate petitioners. Referred to the Joint Committee on Election Laws on 1/24/2011. A hearing was scheduled for 9/21/2011. It was accompanied by a study order (S2364). The page does not show the bill text in the saved view.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:22:18.390Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "be8edd180b843a5933f3fd93654570547a2398da7c28b9c59863a68c111f35c7",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/188/S339",
+      "date": "2013-01-22",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-339-2013",
+      "act": "sponsor",
+      "note": "Senate bill 339 of the 188th General Court, 'An Act relative to voter identification.', filed by Bruce E. Tarr with two co-petitioners. Referred to the committee on Election Laws on 1/22/2013. A hearing was scheduled for 12/04/2013. It was accompanied by a study order (H4145).",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:22:18.390Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6e679bc19f7f8c47ba437f333f2c8e1742b48a8a4a66e3da5d36f74b5e78897",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S1273",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-SB-1273-2025",
+      "act": "sponsor",
+      "note": "Senate bill 1273 of the 194th General Court, 'legislation relative the power of courts and judges to maintain election integrity', filed by Bruce E. Tarr and sent to the Judiciary committee. A hearing was scheduled for 6/03/2025. Related to election integrity in general; the listing does not mention ID.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:22:18.390Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "what happens to a voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Bruce_Tarr says he is on the Nov 3, 2026 general-election ballot for MA Senate 1st Essex and Middlesex and advanced from the Sept 1, 2026 primary; https://malegislature.gov/Legislators/Profile/BET0 names him in this office",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site / campaign site https://www.brucetarr.com (site search for 'voter ID' and 'election integrity' returned no results)",
+        "malegislature.gov bill search: 'voter identification' pages 1 and 2, 'proof of citizenship'; Tarr profile and press page",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)",
+        "not reviewed: Wikipedia, ontheissues.org, Vote Smart (leads only; not fetched for citation)",
+        "nothing on the subject in own words: no quote, speech, interview or questionnaire answer found"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:22:18.390Z",
+      "by": "source-collector"
+    }
+  ]
+}

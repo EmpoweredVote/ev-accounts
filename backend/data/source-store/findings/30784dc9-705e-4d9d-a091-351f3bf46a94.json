@@ -1,0 +1,34 @@
+{
+  "politician_id": "30784dc9-705e-4d9d-a091-351f3bf46a94",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Doug_Chapin names him as a candidate for U.S. House Minnesota District 6, advanced from the Aug 11, 2026 primary, on the Nov 3, 2026 general-election ballot",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site https://www.chapinforcongress.com/issues: nothing on the subject",
+        "campaign site https://www.chapinforcongress.com/about: nothing on the subject (describes election-administration career only, no ID or citizenship-proof position)",
+        "Ballotpedia https://ballotpedia.org/Doug_Chapin (Candidate Connection survey): nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "ontheissues.org: not reviewed, no congressional record",
+        "news search: not reviewed, web search budget was used up for the session",
+        "campaign social media (https://x.com/ChapinForMN6, https://www.facebook.com/ChapinforCongress): not reviewed",
+        "campaign site /media-press-kit: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:44:21.330Z",
+      "by": "source-collector"
+    }
+  ]
+}

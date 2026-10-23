@@ -1,0 +1,80 @@
+{
+  "politician_id": "c9210730-9236-4ab1-9602-e8c9866e4f59",
+  "findings": [
+    {
+      "id": "fc327b44ee8abdac756e2281bafd728446164865265569898dc60ae88d287029",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, second reading (House vote 758, 66 ayes, 47 noes)",
+      "note": "Voted aye on second reading of HB 958. The bill text (ratified version at https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) says county boards may process a voter registration application only if it affirmatively states the applicant is a US citizen. An application with no answer gets a notice and a 30-day window to return a citizenship statement under penalty of perjury. It also requires the State Board to create a process to remove voters flagged as possible non-citizens from a federal database. The bill adds a citizenship question step at drivers license office registration. It does not set a photo-ID rule.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:09:03.580Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ceada8a8a2fbfd3679959c2129f7e5d6a3d7163cf670d7dd27c5f53db891ae7d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, motion 11 concur with Senate changes (House vote 801, 62 ayes, 47 noes)",
+      "note": "Voted aye to concur in the Senate version of HB 958, the final vote before ratification. The Governor vetoed the bill on 2026-08-17 (https://www.ncleg.gov/BillLookUp/2025/H958). Subjects as in the second-reading vote: citizenship statement on registration, removal of flagged non-citizens from voter rolls, deceased-voter list removal.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:09:03.580Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia (https://ballotpedia.org/Todd_Carver) and NC General Assembly member page (https://www.ncleg.gov/Members/Biography/H/842) name him as the NC House District 95 member; on the Nov 3, 2026 general-election ballot after winning the Mar 3, 2026 primary",
+        "On the Record (0 appearances, extract-otr run)",
+        "official legislature member page: no personal or campaign website listed",
+        "ncleg.gov introduced bills (https://www.ncleg.gov/Members/IntroducedBills/H/842): one primary-sponsored bill, HB 11 No Tax on Tips, Overtime, Bonus Pay; nothing on the subject",
+        "ncleg.gov votes page (https://www.ncleg.gov/Members/Votes/H/842): reviewed; the only election-integrity bill is HB 958",
+        "Ballotpedia: no issue positions, no candidate survey completed; nothing on the subject",
+        "not reviewed: campaign site (none found; web search budget was used up by the session, so no news or own-words search could be run)",
+        "own words on the subject: none found"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:09:03.580Z",
+      "by": "source-collector"
+    }
+  ]
+}

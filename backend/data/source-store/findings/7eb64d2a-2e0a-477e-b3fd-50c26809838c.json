@@ -1,0 +1,28 @@
+{
+  "politician_id": "7eb64d2a-2e0a-477e-b3fd-50c26809838c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity / voter rolls"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Coumba_Kebe names her as a candidate for Indiana Treasurer on the Nov 3, 2026 general ballot (lost May 5, 2026 House District 29 primary, but advanced from the June 6, 2026 convention for Treasurer)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.kebeforindiana.com and /priorities: nothing on the subject",
+        "Ballotpedia profile and Candidate Connection survey answers: nothing on the subject",
+        "not reviewed: web news search (search budget exhausted)",
+        "not reviewed: ontheissues.org, vote411, Indiana legislature records (not a legislator)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:40:21.025Z",
+      "by": "source-collector"
+    }
+  ]
+}

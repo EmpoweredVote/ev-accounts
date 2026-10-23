@@ -1,0 +1,77 @@
+{
+  "politician_id": "f46a2bfc-628f-4991-9522-e8b75889cc6f",
+  "findings": [
+    {
+      "id": "42c9eee7b7bf3352fc92c2affb46a45a7a1aad7b234dcedbdd97a7572eca5b8b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and H Amends (Senate Roll Call #439)",
+      "note": "Senate vote on Senate Bill 747, Elections Law Changes, to accept the House changes. Hunt is listed among the Noes. The motion passed 27 to 18. The bill is a broad elections bill; this review could not read the bill text, so whether it touches ID rules is unconfirmed. Saved as an election-law vote in general.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:45.063Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "81a73ab77729ab410ec2064f71a3c5375383b02b2a37f26d0405877e15942fda",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override (Senate Roll Call #482)",
+      "note": "Senate vote to override the Governor's veto of Senate Bill 747, Elections Law Changes. Hunt is listed among the Noes. The override passed 30 to 19. The bill text could not be read here, so whether it touches ID rules is unconfirmed. Saved as an election-law vote in general.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:45.063Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "In scope: Lieutenant Governor of North Carolina since 2025-01-01 (Ballotpedia https://ballotpedia.org/Rachel_Hunt); state senator District 42 in 2023-2025",
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Rachel_Hunt (survey answers cover schools, health care, reproductive rights; nothing on the subject)",
+        "Official site https://ltgov.nc.gov/ (home, news, press-releases, about: nothing on the subject; site search is Google-powered and not readable: not reviewed https://ltgov.nc.gov/search?keys=voter+ID)",
+        "Campaign site: blocked: https://www.rachelhuntnc.com (no connection); https://rachelhunt.com is not clearly her site, not used",
+        "ncleg.gov bill page and Senate roll calls for 2023 Senate Bill 747 (Elections Law Changes)",
+        "ncleg.gov bill text S747 PDF: blocked: https://www.ncleg.gov/Sessions/2023/Bills/Senate/PDF/S747v7.pdf (returned HTML, not readable)",
+        "Web news search: not run, shared web search budget used up; nothing on the subject from news; own-words search incomplete",
+        "ontheissues.org, vote411, debate or interview videos: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:16:45.063Z",
+      "by": "source-collector"
+    }
+  ]
+}

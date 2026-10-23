@@ -1,0 +1,160 @@
+{
+  "politician_id": "1ea3c520-481e-4975-9fcb-ef1c508d680f",
+  "findings": [
+    {
+      "id": "ca0691ee99dbd315042cf5e0ca2c991c1166f797c81d040bbd0bfcae6490d62e",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/2026-byrne-legislative-updates",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "For nearly two decades, Indiana has been a leader in ensuring our elections remain secure by requiring voters to have a valid photo ID when they cast their ballot. In 2025, I co-authored a bill to strengthen Indiana's voter ID law by prohibiting student IDs issued by state colleges or universities from being recognized as an ID to vote, since college IDs are less secure than other forms of identification and standards vary from school to school.",
+      "note": "From his Senate page 'Sticking up for Common Sense', section 'Maintaining election integrity'. Describes the photo ID requirement and says he co-authored a 2025 bill to stop state college or university student IDs from counting as voting ID. Page has no visible date; year taken from the page title and 2026 content.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID not accepted as voting ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:20:15.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c5e80e78fd74c57c4d7be0f593e22c6ca2ef3e44f235d1d5288b7a710aa20072",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/2026-byrne-legislative-updates",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I also supported laws:Preventing a state agency or a local government unit from sending an absentee ballot application to an individual unless the application was requested by that individual or a member of their family; andProviding county clerks and election offices with more tools to help identify registered voters who may be ineligible, or hold inaccurate records, and helping clerks take steps to update, confirm or repeal voter registrations.",
+      "note": "Same page. He says he supported laws limiting who may send absentee ballot applications and giving clerks tools to check and update voter rolls. Text copied from the page as the page's list items run together without spaces.",
+      "subjects": [
+        "mail-ballot application",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:20:15.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "968348e1e24747c14dd6e060e48b373516b6e4f6871a7ba8e6936dadfc09c9a8",
+      "kind": "own-words",
+      "url": "https://www.indianasenaterepublicans.com/2026-byrne-legislative-updates",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The passage of these and other laws is why Indiana is ranked among the top states in the nation for election integrity.",
+      "note": "Same page. Closing line of the election integrity section.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:20:15.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "775f79c5328f5125cbc86a4b696f063e9f6324a84ce8a75a2055ecc680e84020",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2025/bills/senate/10/details",
+      "date": "2025",
+      "date_precision": "year",
+      "instrument_id": "IN-SB-10-2025",
+      "act": "author",
+      "note": "Bill number taken from the link his own Senate page gives for 'a bill' he co-authored in 2025 to bar college-issued student IDs as voting ID. The bill page itself would not load (script-only), so title and his co-author listing were not checked there.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID not accepted as voting ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:20:15.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0b236a41504b3b5a4df905a906f7d7bd8ad803bfec99f1c7c313891e037ccbd5",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2023/bills/house/1334/details",
+      "date": "2023",
+      "date_precision": "year",
+      "instrument_id": "IN-HB-1334-2023",
+      "act": "other",
+      "note": "Linked from his Senate page as a law he says he supported, on absentee ballot applications sent by agencies or local governments. His own page says 'supported'; the roll call was not reviewed and the bill page would not load.",
+      "subjects": [
+        "mail-ballot application"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:20:15.355Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "eeedb3da873dd7108ba4471fed54e5fd4b286ea7c8f4271d509dbb4d04f3c9b0",
+      "kind": "record",
+      "url": "https://iga.in.gov/legislative/2024/bills/house/1264/details",
+      "date": "2024",
+      "date_precision": "year",
+      "instrument_id": "IN-HB-1264-2024",
+      "act": "other",
+      "note": "Linked from his Senate page as a law he says he supported, giving clerks tools to find ineligible voters and update registrations. The roll call was not reviewed and the bill page would not load.",
+      "subjects": [
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:20:15.355Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voting ID",
+        "mail-ballot application",
+        "voter-roll checks",
+        "proof of citizenship",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Gary_Byrne (Indiana State Senate District 47, on the Nov 3, 2026 general-election ballot)",
+        "On the Record (0 appearances)",
+        "official Senate site: https://www.indianasenaterepublicans.com/byrne and 2026-byrne-legislative-updates page (reviewed); Oct 16 2026 fraud-pledge statement reviewed (benefits only, nothing on voting)",
+        "Ballotpedia (reviewed, nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2025/bills/senate/10/details (script-only page, bill text and vote not readable; bill numbers taken from links on his own page)",
+        "web search: not run, session search budget used up",
+        "campaign site: not reviewed (not found)",
+        "SAVE Act / proof of citizenship: nothing on the subject found"
+      ],
+      "found": 6,
+      "at": "2026-10-22T22:20:15.355Z",
+      "by": "source-collector"
+    }
+  ]
+}

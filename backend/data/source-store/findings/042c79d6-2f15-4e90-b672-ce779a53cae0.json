@@ -1,0 +1,29 @@
+{
+  "politician_id": "042c79d6-2f15-4e90-b672-ce779a53cae0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Rita_Mendes names her as 11th Plymouth incumbent on the 2026 general-election ballot (Nov 3, 2026)",
+        "On the Record (0 appearances; no meetings on file)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/RAM1 (sponsored list: nothing on the subject; H.451 is professional-licence ID, not voting)",
+        "legislature sponsored-bills page https://malegislature.gov/Legislators/Profile/RAM1/Sponsored (nothing on the subject)",
+        "Ballotpedia (no voter ID content; she has not completed the 2026 Candidate Connection survey)",
+        "not reviewed: legislature roll-call votes on election bills (not fetched)",
+        "not reviewed: personal/campaign site and news search; the shared web search budget was used up, so no news or own-words search could be run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:58:34.295Z",
+      "by": "source-collector"
+    }
+  ]
+}

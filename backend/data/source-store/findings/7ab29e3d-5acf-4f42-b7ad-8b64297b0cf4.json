@@ -1,0 +1,83 @@
+{
+  "politician_id": "7ab29e3d-5acf-4f42-b7ad-8b64297b0cf4",
+  "findings": [
+    {
+      "id": "1c59e53cb2a9c58cafdc3788762362f62006996a9625e01c2bc4a8aaa08a4e07",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-825-2025",
+      "act": "sponsor",
+      "note": "Primary sponsor (with one other member) of House Bill 825, Election Improvements, filed 2025-04-08, referred to the House Rules committee 2025-04-09, no further action. Text (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H825v1.html) changes absentee-ballot requests: the request form would ask for the last four digits of the Social Security number plus a driver license number, special ID card number or date of birth, and the State Board rules on returned absentee ballots would allow an alternative affidavit when a voter cannot attach an ID photocopy. The same bill also bans ranked choice voting, shortens early voting and adjusts rules on activity near polling places.",
+      "subjects": [
+        "ID with absentee ballot request",
+        "ID with returned absentee ballot",
+        "reasonable-impediment affidavit for absentee voters",
+        "election integrity laws in general",
+        "ranked choice voting ban (related)",
+        "early voting period (related)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:53:58.772Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6b7dc98418a627d5c8a9c992f27559ca075acf51eefe70155669bcbd1ead73b7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/841",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2026",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (vote 66 to 47, passed)",
+      "note": "Voted aye on second reading of House Bill 958, Election Law Changes. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H958v9.html) requires a voter registration application to affirmatively state US citizenship before it is processed, has the State Board create a process to remove voters flagged as possible non-citizens from a federal database, and also changes precinct-official, deceased-voter list and campaign-finance rules. On 2026-08-04 the final concurrence vote is recorded as an excused absence for this member, and the bill page shows a Governor's veto.",
+      "subjects": [
+        "citizenship statement required to register",
+        "non-citizen voter-roll removal",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:53:58.772Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot request or returned ballot",
+        "proof of citizenship to register",
+        "non-citizen voter-roll removal",
+        "election integrity bills in general"
+      ],
+      "places": [
+        "scope confirmed: NC General Assembly biography page https://www.ncleg.gov/Members/Biography/H/841 (House District 111) and Ballotpedia https://ballotpedia.org/Paul_Scott_(North_Carolina) (incumbent, on the Nov 3 2026 general-election ballot for House District 111)",
+        "On the Record (0 appearances for this politician id; run with --names 'Paul Scott')",
+        "NC General Assembly introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/841 (2025 session, reviewed for subject bills)",
+        "NC General Assembly vote record https://www.ncleg.gov/Members/Votes/H/841 (reviewed for subject votes)",
+        "NC General Assembly bill pages and text for HB 825 and HB 958",
+        "Ballotpedia (page reviewed; no issue statements on the subject; candidate survey not completed)",
+        "official site: no personal or campaign site found; nothing on the subject on the ncleg member page",
+        "news search: not reviewed, session web-search budget was used up before this person's search",
+        "own-words search (interviews, forums, posts): not reviewed, no searches available; no quote found in pages fetched"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:53:58.772Z",
+      "by": "source-collector"
+    }
+  ]
+}

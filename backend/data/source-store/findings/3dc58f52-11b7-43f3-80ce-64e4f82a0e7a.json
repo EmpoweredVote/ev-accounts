@@ -1,0 +1,33 @@
+{
+  "politician_id": "3dc58f52-11b7-43f3-80ce-64e4f82a0e7a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Phil_GiaQuinta (name is spelled GiaQuinta; Indiana House District 80; advanced from the May 5, 2026 primary; on the November 3, 2026 general ballot)",
+        "On the Record (0 appearances; extract-otr run with --names Philip Giaquinta)",
+        "Ballotpedia page text: nothing on the subject",
+        "Indiana House Democratic Caucus member page https://www.indianahousedemocrats.org/members/phil-giaquinta: nothing on the subject (fetch tool summary only)",
+        "Indiana House Democratic Caucus site search for voter ID https://www.indianahousedemocrats.org/search?q=voter+ID: nothing on the subject (fetch tool summary only)",
+        "Indiana House Democratic Caucus news list https://www.indianahousedemocrats.org/news?q=GiaQuinta+election: nothing on the subject (first page only, fetch tool summary only)",
+        "Indiana Capital Chronicle site search https://indianacapitalchronicle.com/?s=GiaQuinta+voter: nothing on the subject (fetch tool summary only)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators (page loads only an empty app shell, so bill sponsorships and votes could not be read)",
+        "not reviewed: Indiana General Assembly bill and roll-call pages for voter ID and citizenship bills (could not be read)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "not reviewed: campaign site, Facebook page https://www.facebook.com/phil.giaquinta, ontheissues.org, vote411"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:26:32.247Z",
+      "by": "source-collector"
+    }
+  ]
+}

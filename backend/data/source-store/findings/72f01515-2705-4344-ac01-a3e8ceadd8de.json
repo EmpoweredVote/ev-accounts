@@ -1,0 +1,81 @@
+{
+  "politician_id": "72f01515-2705-4344-ac01-a3e8ceadd8de",
+  "findings": [
+    {
+      "id": "f533d2b9cd66e874d89d252c2ec29b93bb1e6c33017f7c7acd034b0213ec6c36",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/790",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Concur in Senate changes, HB 958 Election Law Changes (roll call 801), result 62 to 47",
+      "note": "On the House concurrence vote on HB 958, Election Law Changes, the legislature's own vote list shows this member voting No. The ratified bill requires a county board to process a registration only if the applicant states citizenship, adds a citizenship question and a perjury statement for incomplete forms, and sets a process to remove voters flagged as possible non-citizens by a federal database. It does not change the photo ID rules for voting. Page also shows a Governor's veto of HB 958.",
+      "subjects": [
+        "election law changes in general",
+        "citizenship statement on voter registration",
+        "voter-roll checks for non-citizens"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:54:00.858Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "94d11ef77e4e061ba0bc963cb070d42d89dbf9a6ddcfca58716f60647399b24a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/790",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, second reading (roll call 758), result 66 to 47",
+      "note": "On second reading of HB 958, Election Law Changes, the legislature's vote list shows this member voting No. The same bill carries the citizenship-on-registration and removal-of-flagged-voters provisions described in the ratified text.",
+      "subjects": [
+        "election law changes in general",
+        "citizenship statement on voter registration",
+        "voter-roll checks for non-citizens"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:54:00.858Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for voting",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register",
+        "voter-roll checks for non-citizens",
+        "election law changes in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Allen_Buansi (member of NC House District 56, on the Nov 3, 2026 general-election ballot) and https://www.ncleg.gov/Members/Biography/H/790",
+        "On the Record (0 meetings, extract-otr.mjs returned OTR_SOURCES=0)",
+        "campaign site https://www.allenbuansi.com (home, /voting, /priorities): nothing on the subject; /voting is early-voting hours and same-day registration logistics only",
+        "legislature votes page https://www.ncleg.gov/Members/Votes/H/790 (read in full via curl; no voter ID, photo ID, absentee ID or SAVE Act floor vote found; only HB 958 touches citizenship and voter-roll checks)",
+        "legislature introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/790: nothing on the subject (HB 31 Election Day holiday, HB 691 Voter Protection and Reliance Act cosponsor about post-election matters, not ID)",
+        "legislature bill page https://www.ncleg.gov/BillLookUp/2025/HB%20958 and ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+        "Ballotpedia: nothing on the subject (candidate has not completed the 2026 Candidate Connection survey)",
+        "not reviewed: news search on name plus subject words, because the shared web-search budget was used up",
+        "not reviewed: floor debate audio or video for HB 958 (no transcript reachable)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:54:00.858Z",
+      "by": "source-collector"
+    }
+  ]
+}

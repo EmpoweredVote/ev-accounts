@@ -1,0 +1,28 @@
+{
+  "politician_id": "8658e02a-1456-45ba-96bb-19ff438d8e1b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances, 0 meetings)",
+        "malegislature.gov legislator profile https://malegislature.gov/Legislators/Profile/MDS1 (confirms Mark D. Sylvia, 10th Bristol District; sponsored bills listed show nothing on the subject)",
+        "blocked: https://ballotpedia.org/Mark_Sylvia (fetch returned empty)",
+        "not reviewed: official and campaign site (no page fetched; web search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "2026 general-election ballot status not confirmed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:06.750Z",
+      "by": "source-collector"
+    }
+  ]
+}

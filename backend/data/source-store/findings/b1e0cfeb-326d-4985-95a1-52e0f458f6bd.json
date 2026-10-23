@@ -1,0 +1,32 @@
+{
+  "politician_id": "b1e0cfeb-326d-4985-95a1-52e0f458f6bd",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Elise_Nieshalla names her as Indiana Comptroller of State (appointed 2023), on the Nov 3, 2026 general election ballot after the June 20, 2026 convention; she is a statewide executive, not a legislator, so there are no bill sponsorships",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "campaign site https://eliseforcomptroller.com/ (home, issues-and-accomplishments, defending-conservative-values, news, meet-elise: nothing on the subject)",
+        "official office site https://www.in.gov/comptroller/ (nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "legislature bill pages: not applicable, statewide executive office with no sponsor record",
+        "not reviewed: news search on name plus subject words (the session web search budget was used up)",
+        "blocked: https://www.indianahouserepublicans.com/members/elise-nieshalla/ (404, not her page)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:47:38.662Z",
+      "by": "source-collector"
+    }
+  ]
+}

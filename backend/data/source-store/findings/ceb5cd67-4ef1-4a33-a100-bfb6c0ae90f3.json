@@ -1,0 +1,32 @@
+{
+  "politician_id": "ceb5cd67-4ef1-4a33-a100-bfb6c0ae90f3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Adam_Rueda names him as a candidate for U.S. House, New Jersey District 5, on the November 3, 2026 general-election ballot (fetched with curl)",
+        "On the Record (0 meetings, name search also 0)",
+        "campaign site https://adamruedafornj5.com/ (single bio page; nothing on the subject; /issues, /platform, /about return no content)",
+        "Ballotpedia profile and 2025 Candidate Connection survey answers (nothing on ID or citizenship; one answer mentions election reform, boosting turnout, ballot reform and open primaries, not saved because it is not about proof of identity or citizenship)",
+        "congress.gov: not applicable, he holds no seat and has no sponsorships",
+        "not reviewed: https://www.instagram.com/reprueda/ (campaign says his full campaign is there; login-walled)",
+        "web news search: not run, the shared search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:18:16.553Z",
+      "by": "source-collector"
+    }
+  ]
+}

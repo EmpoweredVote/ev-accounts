@@ -1,0 +1,33 @@
+{
+  "politician_id": "759855ff-3d90-4009-9e33-7f9b56665922",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Diamant_Hysenaj names him as a candidate for U.S. House New York District 14, on the general-election ballot November 3, 2026",
+        "On the Record (0 appearances, nothing on the subject)",
+        "campaign site https://www.votefordiamant.com/ home, /diamants-plan-for-ny-14, /my-story, /vote (nothing on the subject; the plan page covers immigration and healthcare only; /vote only has early mail or absentee ballot and polling place links)",
+        "Ballotpedia (no survey responses, nothing on the subject)",
+        "congress.gov / legislature bill pages: not applicable, not a sitting legislator",
+        "not reviewed: news search on name plus subject words (web search budget was used up, search not performed)",
+        "not reviewed: https://x.com/diamanthysenaj (social posts, not fetched)",
+        "not reviewed: https://www.instagram.com/diamanthysenaj_ (not fetched)",
+        "not reviewed: https://www.facebook.com/profile.php?id=61573642144007 (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:04:51.635Z",
+      "by": "source-collector"
+    }
+  ]
+}

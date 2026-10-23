@@ -1,0 +1,23 @@
+{
+  "politician_id": "8549a721-b4de-4848-98ac-108d0a6d063c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (Ballotpedia https://ballotpedia.org/Mark_Pless: Jimmy Rogers defeated incumbent Mark Pless in the 2026-03-03 primary for NC House District 118; the general-election ballot lists Danny Davis and Jimmy Rogers)",
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Mark_Pless (confirms identity; nothing on the subject)",
+        "not reviewed: official site, ncleg.gov bill pages (https://www.ncleg.gov/Members/Biography/H/773), news search: stopped because out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:54:27.704Z",
+      "by": "source-collector"
+    }
+  ]
+}

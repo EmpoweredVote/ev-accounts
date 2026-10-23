@@ -1,0 +1,31 @@
+{
+  "politician_id": "340c4a0a-e6cb-4e32-9a56-f5cbf951cbc4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Eric_Ching says he advanced from the June 2, 2026 primary and is on the November 3, 2026 general ballot for U.S. House California District 31",
+        "On the Record (0 appearances for this politician)",
+        "campaign site https://www.ericchingforcongress.com/ (single-page site, read from its page script: priorities text mentions government transparency, integrity and honesty, term limits and border security, nothing on the subject)",
+        "Ballotpedia page and 2026 Candidate Connection survey answers (nothing on the subject)",
+        "not a legislator, no sponsorship or vote record to check",
+        "not reviewed: news search and congress.gov, web search budget used up for the session",
+        "not reviewed: https://www.facebook.com/ericchingforcongress, https://www.instagram.com/ericching4congress (social pages not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:18:07.103Z",
+      "by": "source-collector"
+    }
+  ]
+}

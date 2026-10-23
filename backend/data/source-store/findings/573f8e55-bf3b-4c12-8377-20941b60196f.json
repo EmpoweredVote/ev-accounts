@@ -1,0 +1,200 @@
+{
+  "politician_id": "573f8e55-bf3b-4c12-8377-20941b60196f",
+  "findings": [
+    {
+      "id": "f87879cf11a3794f0175655892e743d4d39625086aa5e7c9032559675b69c2b1",
+      "kind": "own-words",
+      "url": "https://www.lauriforliberty.com/vote-indiana",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Indiana requires valid photo ID when voting in person.",
+      "note": "Voter-information page on her campaign site lists photo ID among steps for voting in Indiana. It states the current rule and gives no view on changing it.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:33:59.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "710313249076581395699264cb55ca5f64a2f80483fe540fe1b1b24efb792c22",
+      "kind": "own-words",
+      "url": "https://www.lauriforliberty.com/vote-indiana",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Voter registration and education should be clear, accessible, and nonpartisan. Every Hoosier deserves to understand how to participate without confusion or barriers.",
+      "note": "Quote on her voter-information page about registration and voter education.",
+      "subjects": [
+        "voter education",
+        "access to voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:33:59.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ec1e9cff7287bb585d1399d9f487ac1fa9cac29a63b42e386b86da1a8e16f74",
+      "kind": "own-words",
+      "url": "https://www.lauriforliberty.com/vote-indiana",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Hundreds of thousands of voter records in Indiana have been marked inactive or removed in recent years.",
+      "note": "States a fact about voter-roll removals as a reason voters should check their registration.",
+      "subjects": [
+        "voter-roll maintenance"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:33:59.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2be65b2ecf3c3231b77c927b387be28627d089c53ee59299ee571ae1951a6cd6",
+      "kind": "own-words",
+      "url": "https://www.lauriforliberty.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Your registration information — your address, your primary ballot history, your driver's license number — belongs to you. I will treat it that way.",
+      "note": "Issues page, under protecting election integrity and privacy. Speaks about privacy of voter registration data, including the driver's license number; does not mention ID rules at the polls.",
+      "subjects": [
+        "voter data privacy",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:33:59.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4eb4a44241fdd0acdeae6dc5166d6805db948ef20fc2579355507a6a5bc47114",
+      "kind": "own-words",
+      "url": "https://www.lauriforliberty.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "The Secretary of State's office should never be used as a tool to advance a political agenda or to hand sensitive voter data to outside interests.",
+      "note": "Issues page, on not sharing sensitive voter data with outside interests.",
+      "subjects": [
+        "voter data privacy",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:33:59.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc97c778c7e9276d9b2e18a4ec6e7bd1fbfd4a1b0b22d02c78f3fa9c8c120886",
+      "kind": "own-words",
+      "url": "https://www.lauriforliberty.com/blog/low-voter-turnout-is-a-policy-failure",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "In recent years, federal officials have increasingly sought to influence state election policy by weighing in on mail-in voting rules, early voting access, voter roll maintenance, identification requirements, and congressional district maps. Hoosiers are best positioned to serve Hoosiers. Indiana does not need election mandates driven by national party priorities rather than the practical realities of voters on the ground.",
+      "note": "Campaign blog post. Mentions identification requirements only in a list of areas where federal officials weigh in, and argues against federal election mandates on states.",
+      "subjects": [
+        "federal role in state election rules",
+        "voter ID (general mention)",
+        "mail-in voting rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:33:59.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b01d94731532bbd7a127c2ce8c9c9bebdb003969861a0ca29359dccd51eb133d",
+      "kind": "own-words",
+      "url": "https://www.lauriforliberty.com/blog/low-voter-turnout-is-a-policy-failure",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Publishing audit findings, reporting both successes and failures, and clearly communicating corrective actions would go a long way toward rebuilding trust.",
+      "note": "Campaign blog post on election audits and public trust.",
+      "subjects": [
+        "election audits",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:33:59.608Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d19761274b93f5aef60254877fc379ec47d886e53d70d725d627b2531f8e50d",
+      "kind": "own-words",
+      "url": "https://www.lauriforliberty.com/blog/voting-access-for-hoosiers-with-disabilities",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Support mail-in ballots and early voting as standard options for every Hoosier,",
+      "note": "One item in her accessibility plan: supports mail-in ballots and early voting as standard options. It names no ID rule for them.",
+      "subjects": [
+        "mail-in ballot access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:33:59.608Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and provisional ballots",
+        "ID with mail or absentee ballot",
+        "proof of citizenship / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Lauri_Shillings (confirms 2026 general-election ballot, Secretary of State; survey answers have nothing on the subject)",
+        "campaign site https://www.lauriforliberty.com/ (home, about, issues, vote-indiana, blog posts on turnout, disability access and registration partnership read)",
+        "legislative record: nothing on the subject (not a legislator)",
+        "not reviewed: https://www.lauriforliberty.com/blog/holdem-accountable-podcast-interview-with-lauri-shillings (audio/video)",
+        "not reviewed: https://www.lauriforliberty.com/blog/all-indiana-politics-interviews-lauri-shillings (video)",
+        "not reviewed: https://www.lauriforliberty.com/blog/interview-with-abdul-hakim-shabazz (video/audio)",
+        "not reviewed: news interview pages (WIBC, WLFI, WPTA, Fox59, Indy Politics) and other campaign blog posts",
+        "not searched: web search budget used up for the session, so no news search on name plus subject words"
+      ],
+      "found": 8,
+      "at": "2026-10-22T22:33:59.608Z",
+      "by": "source-collector"
+    }
+  ]
+}

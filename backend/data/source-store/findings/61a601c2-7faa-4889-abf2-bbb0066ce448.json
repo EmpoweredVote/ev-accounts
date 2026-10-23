@@ -1,0 +1,148 @@
+{
+  "politician_id": "61a601c2-7faa-4889-abf2-bbb0066ce448",
+  "findings": [
+    {
+      "id": "88fc6106616bb0be0e5f39d9de61dd965f5822d99192b82030dbc8277df69284",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00073.htm",
+      "date": "2026-03-26",
+      "date_precision": "day",
+      "instrument_id": "US-S-AMDT-4732-2026",
+      "act": "nay",
+      "motion": "Roll call 73, cloture on Husted Amdt. 4732 to S.Amdt. 4420 to S. 1383 (SAVE America Act vehicle), to require voters to provide photo identification; rejected 53-47",
+      "note": "Voted nay on ending debate on an amendment requiring voters to show photo identification. Cloture failed, 53 yeas to 47 nays, 3/5 needed.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "611bf00d5657472021e55ae441763adaac46e6f7b43a68a2f81cb297cf25321c",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00068.htm",
+      "date": "2026-03-24",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Roll call 68, motion to table the motion to refer the House message to accompany S. 1383 (SAVE America Act vehicle) to the Committee on Rules and Administration; agreed to 53-47",
+      "note": "Voted nay on a procedural motion tied to the House message carrying the SAVE America Act (proof of citizenship to register, photo ID to vote).",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE America Act procedure"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "052b8ef0d4a1f556b9b23ff01cfcb03146cbbf5f502284187f4504a289a10e76",
+      "kind": "record",
+      "url": "https://www.senate.gov/legislative/LIS/roll_call_votes/vote1192/vote_119_2_00057.htm",
+      "date": "2026-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "Roll call 57, motion to proceed to the House message to accompany S. 1383 (SAVE America Act vehicle); agreed to 51-48",
+      "note": "Voted nay on the motion to begin Senate consideration of the House message carrying the SAVE America Act.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID at the polls",
+        "SAVE America Act procedure"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9722baf2a68af241d7eac2902711eafc6371a2d28486ac5fa54a9886e846dd18",
+      "kind": "own-words",
+      "url": "https://www.vanhollen.senate.gov/news/videos/watch/this-is-a-fraud-masquerading-as-an-election-integrity-effort",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "This is a fraud masquerading as an election integrity effort.",
+      "note": "Caption on his official video page about the SAVE America Act, which the page describes as a bill designed to make it harder for certain citizens to vote. Issued in his name.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f6da04cf76dfaf2cc4b02464821a71e65b896dbd3f193ffa3468049fe268e42",
+      "kind": "own-words",
+      "url": "https://www.vanhollen.senate.gov/about/issues/voting-rights",
+      "date": "",
+      "date_precision": "unknown",
+      "passage": "In Congress, Senator Van Hollen is fighting to pass the Freedom to Vote Act, legislation he has cosponsored that would establish a minimum set of national standards to ensure that our fellow citizens can make their voices heard at the ballot box.",
+      "note": "Issue page on his official site (undated) says he cosponsored the Freedom to Vote Act, a national minimum-standards voting bill. The page does not mention voter ID by name.",
+      "subjects": [
+        "national voting standards",
+        "Freedom to Vote Act",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:36:36.519Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act / SAVE America Act)",
+        "election integrity laws in general",
+        "national voting standards (Freedom to Vote Act)",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "confirmed in scope: sitting U.S. Senator, Maryland, term ends 2029, not on the 2026 ballot (https://ballotpedia.org/Chris_Van_Hollen)",
+        "On the Record (0 appearances, 0 candidates)",
+        "official site press releases first page and site search for SAVE Act (https://www.vanhollen.senate.gov/news/press-releases): nothing on the subject in pages seen",
+        "official site videos (2 floor-remarks pages, 2026-03-18) and voting-rights issue page",
+        "Senate roll call votes 57, 68, 73 of the 119th Congress, 2nd session (senate.gov)",
+        "Ballotpedia (office and term only; nothing on the subject)",
+        "news search: WFMD 2025-04-16 town hall report (reporter paraphrase only, not saved as his words)",
+        "not reviewed: video of the 2026-03-18 floor speech (no transcript on page)",
+        "not reviewed: https://www.congress.gov/member/chris-van-hollen/V000128 (sponsorship list not fetched)",
+        "official video page 2026-03-18 'speaks on Senate floor' not saved: the only usable sentence names a party"
+      ],
+      "found": 5,
+      "at": "2026-10-22T21:36:36.519Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "politician_id": "5080c1c2-b9ec-4d98-a066-cc8d11e58be5",
+  "findings": [
+    {
+      "id": "d3eb076f2f6588e06c12b41e860cdc9f52382abcbba2a78c50402c72f794f3ad",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/451",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, Second Reading (Senate vote 693)",
+      "note": "Senate second-reading vote on HB 958 (passed 28 to 13). His vote is listed as No. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) makes registration forms at driver license offices and county boards proceed only if the applicant affirmatively states US citizenship (new G.S. 163-83, with a 30-day sworn-statement notice for blank answers), and requires a process to remove voters flagged as non-citizens from a federal database. It has no photo ID or ID-number rule. He also voted No on amendments 1, 5 and on motions to table amendments 2, 3, 6, 7, 8, 9, 10 the same evening (votes 684-692).",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting and voter-roll removal",
+        "election law changes omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:46:52.648Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b6951b2da708f2f8ebb5dffff1d6925cb25c1ee7e43880da50e419498c915640",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S457",
+      "date": "2025-03-25",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-457-2025",
+      "act": "sponsor",
+      "note": "Listed as a cosponsor (not primary) of SB 457, Automatic Voter Registration. The bill registers eligible people automatically through driver license offices, public agencies and colleges, keeps the question asking whether the applicant is a US citizen, and bars ineligible people from applying. Referred to committee and not enacted. It sets no ID rule for voting.",
+      "subjects": [
+        "automatic voter registration",
+        "citizenship question on registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:46:52.648Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Caleb_Theodros names him as State Senate District 41 incumbent, on the Nov 3, 2026 ballot (primary canceled)",
+        "On the Record (0 meetings)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/451",
+        "NC General Assembly introduced bills (2025 session) https://www.ncleg.gov/Members/IntroducedBills/S/451 (no photo ID or proof-of-citizenship bills among his primary bills; cosponsored SB 392 on voter intimidation, text has no ID rule, not saved)",
+        "NC General Assembly votes https://www.ncleg.gov/Members/Votes/S/451",
+        "Ballotpedia (page has no voter ID or citizenship material on him)",
+        "not reviewed: campaign site (could not find a working URL; web search budget for the session was used up, so no news or own-words search was possible)",
+        "nothing on the subject: own words (none found)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:46:52.648Z",
+      "by": "source-collector"
+    }
+  ]
+}

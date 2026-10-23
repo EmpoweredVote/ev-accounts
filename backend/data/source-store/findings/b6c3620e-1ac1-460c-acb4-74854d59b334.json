@@ -1,0 +1,78 @@
+{
+  "politician_id": "b6c3620e-1ac1-460c-acb4-74854d59b334",
+  "findings": [
+    {
+      "id": "5b1bbac00d435bef5cc0b83f21fc2ca7db74c703256de40451fba30ac895d830",
+      "kind": "own-words",
+      "url": "https://sethformontana.com/issues",
+      "date": "2026-10-04",
+      "date_precision": "day",
+      "passage": "Montana's existing voter ID law and the state's constitutional authority to run its own elections.",
+      "note": "Issue item 'Protect voting rights and election security' on his campaign site, listed under 'Seth supports'. The date is the page's last-updated stamp for this item. It names the state's current voter ID law and state authority over elections. It gives no detail on what ID counts or what happens to a voter without ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "state control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:43.399Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "35691183bf43b8b37c3f26a9e71eee0b50fcc8695bc8f4d50e5a2494b0e7f0e3",
+      "kind": "own-words",
+      "url": "https://sethformontana.com/issues",
+      "date": "2026-10-04",
+      "date_precision": "day",
+      "passage": "Seth will oppose federal mandates that strip states of that authority, from either party.",
+      "note": "Same campaign-site item. It says he would oppose federal mandates on how states run elections. It does not name the SAVE Act or any bill.",
+      "subjects": [
+        "federal election mandates",
+        "state control of elections",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:43.399Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID fallback",
+        "mail or absentee ballot ID",
+        "documentary proof of citizenship (SAVE Act)",
+        "voter-roll checks and non-citizen voting",
+        "election integrity and state control of elections",
+        "voting access"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Seth_Bodnar says he is an independent candidate for U.S. Senate in Montana, on the Nov. 3, 2026 general-election ballot, and that neither he nor Bankhead withdrew by Aug. 10, 2026. He is a candidate, not a sitting member of Congress.",
+        "On the Record (0 meetings)",
+        "campaign site https://sethformontana.com/issues (issue list; one voting item)",
+        "campaign site https://sethformontana.com/news (press list, nothing on the subject in titles)",
+        "campaign site https://sethformontana.com/voter-guide (voting checklist only, nothing on ID)",
+        "campaign site https://sethformontana.com/media and /About (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Seth_Bodnar (candidate survey and platform text, nothing on the subject)",
+        "congress.gov: not applicable, he holds no seat in Congress so there are no votes or sponsorships",
+        "news search: not done, the shared web search budget was used up",
+        "not reviewed: debate or interview video"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:10:43.399Z",
+      "by": "source-collector"
+    }
+  ]
+}

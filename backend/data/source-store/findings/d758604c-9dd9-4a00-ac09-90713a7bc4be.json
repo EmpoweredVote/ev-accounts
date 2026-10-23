@@ -1,0 +1,32 @@
+{
+  "politician_id": "d758604c-9dd9-4a00-ac09-90713a7bc4be",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity bills"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Jim_Lucas (Indiana House District 69, advanced from the 2026 primary on May 5, 2026, on the Nov 3, 2026 ballot)",
+        "On the Record (0 appearances; run with --names, nothing on the subject)",
+        "Ballotpedia profile (fetched, nothing on the subject)",
+        "caucus member page https://www.indianahouserepublicans.com/members/general/jim-lucas (fetched, nothing on the subject in the news list)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_jim_lucas_1/ (page renders by script, no bill list readable)",
+        "blocked: https://api.iga.in.gov/2026/legislators/jim_lucas (needs an API key)",
+        "blocked: https://www.jimlucas.org (empty response)",
+        "not reviewed: https://x.com/JimLucas0311 (script-rendered, no posts readable)",
+        "not reviewed: https://www.facebook.com/jim.lucas.52",
+        "not searched: news search on name plus subject words (shared web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:53:36.810Z",
+      "by": "source-collector"
+    }
+  ]
+}

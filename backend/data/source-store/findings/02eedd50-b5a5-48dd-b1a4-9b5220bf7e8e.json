@@ -1,0 +1,33 @@
+{
+  "politician_id": "02eedd50-b5a5-48dd-b1a4-9b5220bf7e8e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Manny_Cruz says he is the 7th Essex District state representative, advanced from the 2026-09-01 primary, and is on the 2026-11-03 general ballot",
+        "On the Record (0 appearances, 0 sources)",
+        "Official legislature profile https://malegislature.gov/Legislators/Profile/M_C3 (sponsored bills listed: Salem election commissioners, Salem ranked choice voting, PILOT, sales tax, cannabis; nothing on voter ID or citizenship)",
+        "Legislature bill search for 'voter identification' https://malegislature.gov/Bills/Search?searchTerms=voter%20identification (titles only, sponsor not shown in results; no result tied to Cruz)",
+        "Ballotpedia page: no voter ID or election integrity positions found",
+        "not reviewed: https://www.facebook.com/mannycruzforrep (campaign Facebook, login-gated)",
+        "not reviewed: campaign website (Ballotpedia link not resolved; no fetchable text)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "nothing on the subject: all pages fetched"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:58:45.792Z",
+      "by": "source-collector"
+    }
+  ]
+}

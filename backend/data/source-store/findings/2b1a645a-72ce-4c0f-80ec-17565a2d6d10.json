@@ -1,0 +1,56 @@
+{
+  "politician_id": "2b1a645a-72ce-4c0f-80ec-17565a2d6d10",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Marjorie_Decker (fetched with curl) says she advanced from the September 1, 2026 primary and is on the November 3, 2026 general-election ballot, MA House 25th Middlesex",
+        "On the Record (0 appearances; nothing on the subject)",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/MCD1 (confirms office; no voter ID or citizenship bills listed)",
+        "official legislature bills page https://malegislature.gov/Legislators/Profile/MCD1/Bills (only election bill H.818, donation disclosure; nothing on the subject)",
+        "malegislature.gov bill search 'voter identification' (no sponsorship by Decker among results shown, page 1 only)",
+        "campaign site http://www.decker4rep.com/ (home page only; nothing on the subject)",
+        "Ballotpedia candidate survey: not reviewed, link not fetched",
+        "news search: not done, web search budget exhausted"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:04:12.559Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "politician_id": "c94874d1-e92b-4b64-8c11-d0108d935583",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Steve_Bartels says he represents Indiana House District 74, is on the Nov 3, 2026 general-election ballot, and advanced from the May 5, 2026 primary",
+        "On the Record (0 appearances for this politician id)",
+        "campaign site https://www.sbartels.com/ , /bio and /issues: nothing on the subject",
+        "Ballotpedia: nothing on the subject (no candidate survey completed for 2020, 2022, 2024)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_steve_bartels_1 (page needs JavaScript; fetch returns only a title, so bill and vote records could not be read)",
+        "blocked: https://legiscan.com/IN/people (HTTP 403)",
+        "blocked: https://www.indianahouserepublicans.com/members/steve-bartels (HTTP 404)",
+        "not reviewed: news search on name plus subject words (the shared web-search budget was used up)",
+        "not reviewed: Indiana House roll-call votes and sponsorships on voter ID or citizenship bills (legislature pages unreadable)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:52:37.254Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "politician_id": "b78f058c-94de-4081-91fb-86ab7badb2fb",
+  "findings": [
+    {
+      "id": "034c285304e045273f9f1b39b37fcafebe73d22f8fff2da1be5490a9b2bd35a7",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2019118",
+      "date": "2019-03-08",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2019",
+      "act": "yea",
+      "motion": "H.R. 1, For the People Act, On Passage (Roll Call 118)",
+      "note": "Voted yes on passage of H.R. 1 as a member of the House. Section 1903 of the bill (text at https://www.congress.gov/116/bills/hr1/BILLS-116hr1eh.htm) says that where a state requires ID to vote, the state must let a voter in person or by mail meet it with a sworn written statement signed under penalty of perjury attesting to identity and eligibility. First-time voters who registered by mail are excepted.",
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement in place of ID",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:32:11.533Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement in place of ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote / SAVE Act",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://www.deseret.com/utah/2026/06/23/ap-ben-mcadams-wins-democratic-primary-in-utah-1st-district/ (won the June 23, 2026 primary for Utah's 1st District; on the November ballot)",
+        "On the Record (0 meetings; name search also 0)",
+        "campaign site benmcadams.com: priorities, FAQ, voting-information, court-brief press release, endorsement press release - nothing on the subject in his own words (FAQ voter-ID line is general voting information, not his stance)",
+        "Ballotpedia: page fetched, nothing on the subject",
+        "House Clerk roll calls for H.R. 1 (2019)",
+        "congress.gov text of H.R. 1 (116th, as passed House)",
+        "news searches (name plus voter ID / photo ID / SAVE Act / proof of citizenship / noncitizen voting): nothing quoting him on the subject",
+        "blocked: https://www.congress.gov/member/ben-mcadams/M001204 (403)",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/141278/ben-mcadams (403)",
+        "blocked: https://www.axios.com/local/salt-lake-city/2026/06/25/rep-ben-mcadams-utah-congress-win-post-interview (403, post-primary Q&A not read)",
+        "not reviewed: ontheissues.org and Wikipedia (lead-only, not citable)",
+        "nothing on the subject: SAVE Act House passage in 2026 (he was not a member; no statement by him found)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:32:11.533Z",
+      "by": "source-collector"
+    }
+  ]
+}

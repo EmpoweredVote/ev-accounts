@@ -1,0 +1,56 @@
+{
+  "politician_id": "46520610-990c-42d0-8596-88362edb33de",
+  "findings": [
+    {
+      "id": "c569da8f4905e80506c5c6b280ea53356a4b5c9b03efc0d536cdad7eccfe2864",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-06",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "concur in House committee substitute (Motion 9 To Concur)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, concur in House committee substitute (Motion 9 To Concur), 2018-12-06: nay (tally 25–7); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Paul_Lowe and NC General Assembly https://www.ncleg.gov/Members/Biography/S/394 name him as Senator for District 32 (Forsyth); Ballotpedia lists the March 3, 2026 primary as won and the November 3, 2026 general election as next",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "Ballotpedia: page fetched, nothing on the subject",
+        "NC General Assembly member biography page: nothing on the subject",
+        "not reviewed: https://www.facebook.com/senatorpaullowejr/ (social page, not fetched)",
+        "not reviewed: https://www.instagram.com/senator_paul_lowe/ (social page, not fetched)",
+        "not reviewed: official and campaign site issue pages, ncleg.gov sponsor lists and news search (web search budget used up; not reached by direct fetch)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:42:45.869Z",
+      "by": "source-collector"
+    }
+  ]
+}

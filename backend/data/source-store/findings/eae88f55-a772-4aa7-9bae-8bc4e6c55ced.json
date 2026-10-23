@@ -1,0 +1,78 @@
+{
+  "politician_id": "eae88f55-a772-4aa7-9bae-8bc4e6c55ced",
+  "findings": [
+    {
+      "id": "a22b02c3fbc6dc2185100cf25d8595afa3684abe5cb4350c20131cf62f9d5e21",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/st.-joseph-county-lawmakers-voters-can-use-new-election-text-hotline-to-ask-questions-report-issues/",
+      "date": "2023-11-02",
+      "date_precision": "day",
+      "passage": "\"Hoosiers shouldn't hesitate to reach out and ask for help or report an issue.\"",
+      "note": "In a caucus press release, DeVon is quoted urging voters to use the new state text hotline for election questions and problems. The release says he said voters can use it to report something suspicious at a polling site and to ask about election security. It does not mention ID or citizenship.",
+      "subjects": [
+        "election security",
+        "election hotline for voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:57:02.559Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d60dc6185bb275f6b1ca89567d7a809a6cbb6819343e44057e7694e19901e10a",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/devon-wesco-don-t-miss-oct.-5-voter-registration-deadline/",
+      "date": "2020-09-24",
+      "date_precision": "day",
+      "passage": "I recommend taking just a few minutes to check your voter registration and personal information at IndianaVoters.com.",
+      "note": "In a caucus press release, DeVon urges residents to check their voter registration and update their record before the Oct. 5 deadline. This is about registration upkeep, not ID or citizenship.",
+      "subjects": [
+        "voter registration checks",
+        "voter-roll accuracy"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:57:02.559Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election security and integrity",
+        "voter registration"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Dale_DeVon) names Dale DeVon as Indiana House District 5 incumbent, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances for this politician; name search returned 0)",
+        "Indiana House caucus member page and press-release list https://www.indianahouserepublicans.com/members/leadership/dale-devon (reviewed the listed headlines; two election items opened; nothing on photo ID, mail-ballot ID or citizenship proof)",
+        "campaign site: not found (no link on Ballotpedia or caucus page other than Facebook/Instagram; not reviewed: https://www.facebook.com/dale.devon.5, https://www.instagram.com/daledevon4/)",
+        "Ballotpedia: page fetched; sponsored-bill list is a script widget that did not load; no issue positions on the page",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_dale_devon_1108 (script-only page, no bill or vote text returned)",
+        "blocked: https://legiscan.com/IN/legislators (bot challenge)",
+        "web search: not performed, the session search budget was used up",
+        "Wikipedia: lead only, no subject content",
+        "not reviewed: vote records on voter-ID, citizenship and election bills (could not read IGA roll calls)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:57:02.559Z",
+      "by": "source-collector"
+    }
+  ]
+}

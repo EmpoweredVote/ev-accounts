@@ -1,0 +1,29 @@
+{
+  "politician_id": "d2b8e2ab-dc6b-42a9-9aea-b6b661e0476e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Todd_Huston names him as Speaker and Indiana House District 37 member, with the November 3, 2026 general election listed (fetched by curl; page has nothing on the subject)",
+        "On the Record (0 appearances, extract-otr run with --names Todd Huston)",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: web search for his name plus subject words (the shared search budget was used up)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_todd_huston_1004 (page needs JavaScript; no bill list readable)",
+        "Indiana House caucus site: member page URLs tried returned 404; news list page 1 had nothing on the subject",
+        "not reviewed: official campaign site and his own site search"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:53:27.511Z",
+      "by": "source-collector"
+    }
+  ]
+}

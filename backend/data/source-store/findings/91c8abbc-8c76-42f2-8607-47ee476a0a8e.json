@@ -1,0 +1,57 @@
+{
+  "politician_id": "91c8abbc-8c76-42f2-8607-47ee476a0a8e",
+  "findings": [
+    {
+      "id": "7654e89c46a503a0acccfa9bd3a47adbee8ca951497d3a2c922d7c35f785fade",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/H1074",
+      "date": "2024-05-23",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1074-2023",
+      "act": "sponsor",
+      "note": "Listed among the additional (non-primary) sponsors of HB 1074, Constitutional Amendment/Citizens-Only Voting, which proposes a constitutional amendment that only a citizen of the United States who is 18 or older and otherwise qualified may vote. The bill was filed May 23, 2024 per the bill text, passed the Senate third reading 40-4 on 2024-06-27 and was chaptered as S.L. 2024-18 on 2024-06-28. Her own floor vote was not read.",
+      "subjects": [
+        "citizens-only voting",
+        "non-citizen voting",
+        "citizenship requirement to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:55.725Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "citizens-only voting",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Erin_Par%C3%A9 says she is on the ballot in the general election on November 3, 2026 for NC House District 37 and the March 3, 2026 primary was canceled; NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/770 names Representative Erin Paré, District 37, Wake County",
+        "On the Record (0 appearances, 0 meetings)",
+        "official legislature bill pages: sponsored bills 2025 session (https://www.ncleg.gov/Members/IntroducedBills/H/770) nothing on the subject; 2023 session (https://www.ncleg.gov/Members/IntroducedBills/H/770/2023) one bill on the subject",
+        "legislature votes list https://www.ncleg.gov/Members/Votes/H/770 reviewed by keyword only; her individual vote on HB 1074 not read: roll call pages 2023/H/729-731 and 769 did not return readable text",
+        "Ballotpedia: no own-words survey answers (page says she did not complete the 2022 and 2024 Candidate Connection surveys); nothing on the subject",
+        "not reviewed: personal or campaign site (not located; no search budget left)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: debates, forums, interviews, questionnaires (could not search)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:59:55.725Z",
+      "by": "source-collector"
+    }
+  ]
+}

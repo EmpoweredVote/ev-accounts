@@ -1,0 +1,195 @@
+{
+  "politician_id": "23f38835-0bf7-43c7-88fa-229004eb9c3d",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "15cf2f09cbd79003979cfcd32ae850be56d8ea75459b3b168d41c939a6201c2c",
+      "kind": "own-words",
+      "url": "https://franklin.house.gov/news/documentsingle.aspx?DocumentID=387",
+      "date": "2024-07-11",
+      "date_precision": "day",
+      "passage": "“Today’s vote was a critical step towards restoring Americans’ confidence in our elections.",
+      "note": "Statement issued in his name on House passage of H.R. 8281, the SAVE Act, which the release says would require proof of citizenship when registering to vote in federal elections. He calls the vote a step toward restoring confidence in elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:15.613Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f06b608250edbac8ad4a56fb50288749c388cb8813637af20c50fb1ff94e3658",
+      "kind": "own-words",
+      "url": "https://franklin.house.gov/news/documentsingle.aspx?DocumentID=387",
+      "date": "2024-07-11",
+      "date_precision": "day",
+      "passage": "The fact remains—the SAVE Act is our only tool to ensure American votes decide American elections. It’s the law of the land in Florida and contributes to the security and integrity of our model election system.  I was pleased this bill passed with bipartisan support, and I remain committed to fighting for election integrity in Congress.”",
+      "note": "Same release. He describes the SAVE Act as the only tool to make sure American votes decide American elections, says it is law in Florida, and says he will keep working on election integrity in Congress. Elsewhere in the release he links the bill to non-citizen voting.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:15.613Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "901df0d3d1d31d3b7c03a631833598f6d81fa249fb8ed5d0c2c70b303aac8d2b",
+      "kind": "own-words",
+      "url": "https://franklin.house.gov/news/documentsingle.aspx?DocumentID=524",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "While the vast majority of Americans oppose noncitizen voting, many states continue to find noncitizens on their voter rolls due to inadequate safeguards. The SAVE Act helps address this by requiring states to verify citizenship when registering individuals to vote in federal elections.",
+      "note": "Statement issued in his name after he voted for H.R. 22, the SAVE Act (220-208). He ties the bill to non-citizens found on state voter rolls and to states checking citizenship at registration.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:15.613Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "94df81bb6a6745c43738f0b1f47d8e6bdd7d57620a4c5310ea01c9b8c003f1cf",
+      "kind": "own-words",
+      "url": "https://franklin.house.gov/news/documentsingle.aspx?DocumentID=524",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "I urge the Senate to pass this bill and send it to the president’s desk.”",
+      "note": "Same release. He asks the Senate to pass H.R. 22 and send it to the president.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:15.613Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Scott_Franklin names him as incumbent, U.S. House Florida District 18, on the 2026-11-03 general-election ballot (primary of 2026-08-18 was canceled)",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "official site franklin.house.gov press releases (all 12 listing pages, 120 titles scanned; keyword filter on the site is ignored, so titles were read by hand); two releases on the subject found and fetched",
+        "official site issue pages (Energy, Veterans, Economy, Agriculture, Conservative Values, National Security/Defense, Second Amendment, Education): nothing on the subject",
+        "campaign site votescottfranklin.com: one-page site, nothing on the subject; /issues returned 404",
+        "Ballotpedia: no Candidate Connection survey from him in 2020-2026; page lists the SAVE Act votes only (already on file)",
+        "blocked: https://www.congress.gov/member/scott-franklin/F000472 (403, Cloudflare challenge); sponsorships and cosponsorships not reviewed",
+        "not reviewed: news search on name plus subject words (shared web-search budget was used up)",
+        "not reviewed: ontheissues.org and vote411 (lead-only sources; not fetched)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T22:19:15.613Z",
+      "by": "source-collector"
+    }
+  ]
+}

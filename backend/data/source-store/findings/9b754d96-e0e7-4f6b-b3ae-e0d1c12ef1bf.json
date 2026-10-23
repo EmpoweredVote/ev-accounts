@@ -1,0 +1,29 @@
+{
+  "politician_id": "9b754d96-e0e7-4f6b-b3ae-e0d1c12ef1bf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "In scope: on the 2026 general-election ballot, 14th Worcester District, Nov 3 2026 (https://ballotpedia.org/James_O%27Day)",
+        "On the Record (0 appearances): nothing on the subject",
+        "Legislature profile https://malegislature.gov/Legislators/Profile/JJO1: nothing on the subject",
+        "Legislature sponsored and cosponsored tabs: nothing on the subject (H.4032 is state ID for homeless youth and adults via the Registrar of Motor Vehicles, not about voting)",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: official and campaign site subject-word search (not reached)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:17:21.334Z",
+      "by": "source-collector"
+    }
+  ]
+}

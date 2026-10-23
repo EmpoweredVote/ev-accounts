@@ -1,0 +1,21 @@
+{
+  "politician_id": "f0c3c20d-3089-47ff-8116-ea98fe4a29a3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (https://ballotpedia.org/Nick_Lewis says he lost the August 18, 2026 primary. Results: Nicholas Lewis 1,205 votes, 1.5 percent; general election is Amanda Green and Austin Rogers)",
+        "On the Record (0 appearances)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:33:15.460Z",
+      "by": "source-collector"
+    }
+  ]
+}

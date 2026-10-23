@@ -1,0 +1,241 @@
+{
+  "politician_id": "b295210e-a45d-4a80-8001-47cdc522a3e5",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "feb41f4c34a14d49f150cb22de53f95c02834287f6468f37197856a349676d79",
+      "kind": "own-words",
+      "url": "https://mccormick.house.gov/media/press-releases/congressman-mccormick-votes-pass-hr-22-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“In my district, constituents have repeatedly raised alarms about the integrity of our elections—and I agree that even one illegal ballot is one too many. That’s why I support the SAVE Act: it’s a smart, targeted solution to enforce existing laws and protect the power of your vote.”",
+      "note": "Quote issued in his name in his office press release on the House vote on H.R. 22. He says he supports the SAVE Act and ties it to election integrity and illegal ballots.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:40:41.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bc3900507661b0cb88ded68cca128faad7460219aed738b656a2bd8dec741750",
+      "kind": "own-words",
+      "url": "https://mccormick.house.gov/media/press-releases/congressman-mccormick-votes-pass-hr-22-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“As your representative, I hear your concerns loud and clear: voter fraud and election interference are real issues that demand action,”",
+      "note": "Quote from the same press release, attributed to him. He names voter fraud and election interference as issues needing action.",
+      "subjects": [
+        "election integrity in general",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:40:41.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e52fe15d346c75f2c704e328645e026a69c71ac9e8e0464fc826971f178026b",
+      "kind": "own-words",
+      "url": "https://mccormick.house.gov/media/press-releases/congressman-mccormick-votes-pass-hr-22-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "“The SAVE Act isn’t about politics—it’s about principles,”",
+      "note": "Continuation of his quoted statement in the press release (the release adds: “It strengthens our republic by enforcing the law and ensuring every legal vote counts.”).",
+      "subjects": [
+        "SAVE Act",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:40:41.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4fc3ebf8cc23904bc5f57db157fd762599fcc2521f025eafb86a5250e8186779",
+      "kind": "own-words",
+      "url": "https://mccormick.house.gov/media/press-releases/congressman-mccormick-votes-pass-hr-22-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "The identification requirements are straightforward and secure: to vote, individuals must present a valid form of ID such as a REAL ID, U.S. passport, military ID, or another government-issued identification from a federal, state, or tribal authority.",
+      "note": "Office press release text (not a quotation marked as his) describing the ID rule in H.R. 22 as stated by his office: ID to vote, with a list of accepted government-issued documents.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:40:41.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aeef3d1bfe53b08113556ed33a3b48dc4a0da4b9b1cf3779bf4b6d753ba2b66c",
+      "kind": "own-words",
+      "url": "https://mccormick.house.gov/media/press-releases/congressman-mccormick-votes-pass-hr-22-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "The SAVE Act would require states to verify citizenship for federal elections by strengthening voter registration processes. It empowers states to remove non-citizens from voter rolls and holds those who knowingly attempt to register ineligible individuals accountable.",
+      "note": "Office press release text describing the citizenship-verification and voter-roll provisions of H.R. 22.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:40:41.422Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ab31aee85c24043d7d2bbf897fee81adaf8913e6a432e82f2697e0d10c96cf6",
+      "kind": "record",
+      "url": "https://mccormick.house.gov/media/press-releases/congressman-mccormick-votes-pass-hr-22-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "sponsor",
+      "note": "His office release says he co-sponsored H.R. 22, the Safeguard American Voter Eligibility (SAVE) Act, with original sponsor Rep. Chip Roy. Cosponsor list on congress.gov could not be read to confirm; the date is the release date.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:40:41.422Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks and non-citizen removal",
+        "election integrity in general",
+        "mail-ballot ID",
+        "no-ID fallback (affidavit, provisional ballot)"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Rich_McCormick says he is on the November 3, 2026 general-election ballot for GA-7 after advancing from the May 19, 2026 primary",
+        "On the Record (0 appearances, 0 sources)",
+        "official site https://mccormick.house.gov (press release list page 1, issue page immigration-border-security, home page; site search returned nothing on the subject)",
+        "blocked: https://mccormick.house.gov/about/votes-and-legislation (fetched, no subject text found)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (no readable text; API needs a key)",
+        "Ballotpedia (nothing on the subject beyond ballot status)",
+        "news search on name plus subject words (results about a different person, a US Senator of the same surname, were discarded; nothing from this person after April 2025)",
+        "not reviewed: https://www.youtube.com/@reprichmccormick",
+        "campaign site: not located; nothing on the subject",
+        "ontheissues.org: not used (lead only)"
+      ],
+      "found": 6,
+      "at": "2026-10-22T21:40:41.422Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "politician_id": "afb64fe5-b2a7-4c47-b113-5200ed26182a",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "094a56fcec610b86bce770f0914ed3ac25f472179cca26ed76ebae4395c97179",
+      "kind": "own-words",
+      "url": "https://repkengordon.org/2018/07/rep-gordon-votes-in-favor-of-legislation-to-create-automatic-voter-registration-in-massachusetts/",
+      "date": "2018-07",
+      "date_precision": "month",
+      "passage": "“This legislation is especially important now given the recent Supreme Judicial Court ruling that certain restrictions on access to the ballot are constitutional. It is important that we remove barriers and allow any person qualified to vote access to the ballot. Above all, we live in a democracy and the right to vote is critical” said Rep. Ken Gordon.",
+      "note": "Statement in his name on his official site about a vote for automatic voter registration. Does not mention ID or citizenship documents. Saved as related material on registration and ballot access.",
+      "subjects": [
+        "automatic voter registration",
+        "ballot access barriers (related, not ID)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:21:28.174Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "related: automatic voter registration, mail voting access, voter-roll checks"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Kenneth_Gordon (on the 2026-11-03 general-election ballot, House 21st Middlesex; advanced from the 2026-09-01 primary)",
+        "On the Record (0 appearances, 0 candidate matches)",
+        "official site repkengordon.org (site search for 'voter ID': only registration and mail-voting access items, none on ID)",
+        "malegislature.gov profile KIG1 and sponsored-bills list (nothing on ID or citizenship; one local ranked-choice bill H.4916 is off subject)",
+        "Ballotpedia (no positions on the subject)",
+        "not reviewed: campaign sites kengordon.org, kengordon.com, kenforbedford.com (no content returned)",
+        "blocked: web news search (session search budget used up, so no news search was run)",
+        "not reviewed: https://www.youtube.com/@rappinwiththerep4761 (video)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:21:28.174Z",
+      "by": "source-collector"
+    }
+  ]
+}
