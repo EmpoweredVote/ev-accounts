@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import { parse } from 'csv-parse/sync';
-import { applyBatch, applyBlocker, assertDraftSeason, blankReasonFor, planBatch } from './stage5Write.js';
+import { applyBatch, applyBlocker, assertDraftSeason, blankReasonFor, planBatch, refusePassagesNotOnPage } from './stage5Write.js';
 import type { Stage5Code } from './stage5Code.js';
 import { shownSha256, type QuoteCheck } from './stage5QuoteCheck.js';
 import { findingId, type Finding, type PersonFindings } from './sourceStore.js';
@@ -201,6 +201,7 @@ describe('applyBatch', () => {
     const calls: { sql: string; params: unknown[] }[] = [];
     const q = async (sql: string, params: unknown[] = []) => {
       calls.push({ sql, params });
+      if (/FROM inform\.seasons/.test(sql)) return { rows: [{ status: 'draft' }] };
       if (/FROM inform\.compass_topics/.test(sql)) return { rows: topicRows.map((t) => ({ id: t.id, topic_key: 'voting-rights', asked: t.asked })) };
       return { rows: [] };
     };
@@ -244,5 +245,60 @@ describe('applyBlocker', () => {
   });
   it('lets passage refusals through: those passages stay off the page', () => {
     expect(applyBlocker(plan([code({})], [person(PID, [words])], []))).toBeNull();
+  });
+});
+
+describe('stale and mixed-zone checks', () => {
+  it('ignores a check older than the code: a check from an earlier run never carries over', () => {
+    const r = plan([code({ coded_at: '2026-10-23T00:00:00Z' })], [person(PID, [words])], [check(words, { at: '2026-10-22T01:00:00Z' })]);
+    expect(r.passages).toEqual([]);
+    expect(r.refused[0].reason).toMatch(/no quote check since this code/);
+  });
+  it('picks the newest check by time, across time zones', () => {
+    // 01:00-05:00 is 06:00Z, later than 05:00Z, though it sorts first as text.
+    const r = plan([code({})], [person(PID, [words])], [
+      check(words, { at: '2026-10-22T01:00:00-05:00' }),
+      check(words, { verdict: 'failed', on_page: false, at: '2026-10-22T05:00:00Z', reason: 'Not on the page.' }),
+    ]);
+    expect(r.passages).toHaveLength(1);
+  });
+});
+
+describe('applyBatch season guard', () => {
+  it('re-checks inside the write that the season is still the draft one', async () => {
+    const calls: string[] = [];
+    const q = async (sql: string) => {
+      calls.push(sql);
+      if (/FROM inform\.seasons/.test(sql)) return { rows: [{ status: 'open' }] };
+      return { rows: [] };
+    };
+    await expect(applyBatch(q, plan([code({})], [person(PID, [words])], [check(words)]), SEASON)).rejects.toThrow(/no longer a draft/);
+    expect(calls.some((s) => /FOR SHARE/.test(s))).toBe(true);
+    expect(calls.some((s) => /INSERT/.test(s))).toBe(false);
+    expect(calls.at(-1)).toBe('ROLLBACK');
+  });
+});
+
+describe('refusePassagesNotOnPage', () => {
+  const r0 = () => plan([code({})], [person(PID, [words])], [check(words)]);
+  it('keeps a passage found on the fetched page', async () => {
+    const out = await refusePassagesNotOnPage(r0(), async () => '<p>He said: “Every voter should be able to vote by mail.”</p>');
+    expect(out.passages).toHaveLength(1);
+    expect(out.unchecked).toEqual([]);
+  });
+  it('refuses an own-words passage the page does not hold, whatever the agent said', async () => {
+    const out = await refusePassagesNotOnPage(r0(), async () => '<p>Every voter should vote by mail.</p>');
+    expect(out.passages).toEqual([]);
+    expect(out.refused.at(-1)).toEqual({ politician_id: PID, kind: 'passage', reason: expect.stringMatching(/not on the page/) });
+  });
+  it('keeps a passage whose page cannot be fetched, and lists it', async () => {
+    const out = await refusePassagesNotOnPage(r0(), async () => { throw new Error('403'); });
+    expect(out.passages).toHaveLength(1);
+    expect(out.unchecked).toEqual([{ politician_id: PID, reason: expect.stringMatching(/could not re-fetch.*403/) }]);
+  });
+  it('drops a local record whose only own words were refused', async () => {
+    const both = plan([code({ finding_ids: [words.id, local.id], evidence_basis: 'joint' })], [person(PID, [words, local])], [check(words), check(local)]);
+    const out = await refusePassagesNotOnPage(both, async (u) => (u.includes('minutes') ? 'x' : 'nothing here'));
+    expect(out.passages).toEqual([]);
   });
 });

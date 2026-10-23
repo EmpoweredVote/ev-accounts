@@ -61,13 +61,30 @@ export const QuoteCheckSchema = z
     fair_summary: z.boolean().optional(),
     reason: z.string().min(1),
     checker: z.string().min(1),
-    at: z.string().min(1),
+    /** ISO timestamp with a zone; compared as a time, never as text. */
+    at: z.string().datetime({ offset: true }),
   })
   .refine((c) => c.verdict !== 'passed' || (c.on_page && c.own_words && c.on_topic && !c.names_party && c.fair_summary !== false), {
     message: 'passed needs on_page, own_words and on_topic true, names_party false, and fair_summary not false',
     path: ['verdict'],
   });
 export type QuoteCheck = z.infer<typeof QuoteCheckSchema>;
+
+const ENTITIES: Record<string, string> = {
+  nbsp: ' ', amp: '&', lt: '<', gt: '>', quot: '"', apos: "'", ldquo: '\u201C', rdquo: '\u201D',
+  lsquo: '\u2018', rsquo: '\u2019', ndash: '\u2013', mdash: '\u2014', hellip: '\u2026',
+};
+
+/** A fetched page as text: scripts, styles and tags dropped, entities decoded. For passageOnPage. */
+export function pageText(html: string): string {
+  return html
+    .replace(/<(script|style|noscript)\b[\s\S]*?<\/\1>/gi, ' ')
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&(#x[0-9a-f]+|#\d+|[a-z]+);/gi, (m, e: string) => {
+      if (e[0] === '#') return String.fromCodePoint(e[1] === 'x' || e[1] === 'X' ? parseInt(e.slice(2), 16) : parseInt(e.slice(1), 10));
+      return ENTITIES[e.toLowerCase()] ?? m;
+    });
+}
 
 /** Read quote-checks.jsonl. A bad line throws with its line number. */
 export function readQuoteChecks(jsonl: string): QuoteCheck[] {
