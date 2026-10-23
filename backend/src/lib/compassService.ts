@@ -492,6 +492,47 @@ export async function getCompassPoliticians() {
 }
 
 /**
+ * getCompassPoliticianIds
+ * The ids getCompassPoliticians would list, and nothing else. Essentials only
+ * needs to know WHO has a compass; the full list is ~3.3 MB (1.26 MB of it
+ * answered_topic_ids), this is ~165 KB. Same set by construction: the same
+ * is_active filter and the same published-season answer join. The office
+ * LEFT JOINs there never add or drop a person (DISTINCT ON p.id), so they are
+ * left out here.
+ *
+ * Cached in memory for COMPASS_IDS_TTL_MS. The list changes only when research
+ * is published, and a one-minute lag on "does this person have a compass" is
+ * harmless. Concurrent misses share one query.
+ */
+const COMPASS_IDS_TTL_MS = 60_000;
+let compassIdsCache: { at: number; ids: Promise<string[]> } | null = null;
+
+export function getCompassPoliticianIds(now: number = Date.now()): Promise<string[]> {
+  if (compassIdsCache && now - compassIdsCache.at < COMPASS_IDS_TTL_MS) return compassIdsCache.ids;
+  const ids = pool
+    .query(
+      `SELECT p.id
+         FROM essentials.politicians p
+        WHERE p.is_active = true
+          AND EXISTS (SELECT 1 FROM inform.politician_answers a
+                        JOIN inform.seasons s ON s.id = a.season_id AND ${SEASON_IS_PUBLISHED}
+                       WHERE a.politician_id = p.id)
+        ORDER BY p.id`
+    )
+    .then(({ rows }) => rows.map((r) => r.id as string));
+  const entry = { at: now, ids };
+  compassIdsCache = entry;
+  // A failed query must not be served from the cache for the next minute.
+  ids.catch(() => { if (compassIdsCache === entry) compassIdsCache = null; });
+  return ids;
+}
+
+/** Test hook: forget the cached id list. */
+export function resetCompassPoliticianIdsCache(): void {
+  compassIdsCache = null;
+}
+
+/**
  * getCandidates
  * Returns active election candidates that have at least one compass answer via
  * either their empowered_profile (Path A: compass_responses) or researched stances

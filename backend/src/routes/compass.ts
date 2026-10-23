@@ -10,6 +10,7 @@ import {
   getCompassCategories,
   getCompassLenses,
   getCompassPoliticians,
+  getCompassPoliticianIds,
   getCandidates,
   getCandidateAnswers,
   getPoliticianAnswers,
@@ -758,6 +759,26 @@ router.get(
     }
   }
 );
+
+// ---------------------------------------------------------------------------
+// GET /api/compass/politicians/ids
+// Auth: none needed — public, no PII
+// Returns a JSON array of the politician id strings GET /politicians lists
+// (without include_candidates). Essentials only needs the ids to decide which
+// profiles get a compass; the full list is ~20x larger. Browsers may cache it
+// for 5 minutes. Registered before any /politicians/:id route.
+// ---------------------------------------------------------------------------
+
+router.get('/politicians/ids', async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const ids = await getCompassPoliticianIds();
+    res.set('Cache-Control', 'public, max-age=300');
+    res.status(200).json(ids);
+  } catch (err) {
+    console.error('[GET /compass/politicians/ids] error:', err);
+    res.status(500).json({ code: 'INTERNAL_ERROR', message: 'An unexpected error occurred' });
+  }
+});
 
 // ---------------------------------------------------------------------------
 // GET /api/compass/politicians
