@@ -1,0 +1,104 @@
+{
+  "politician_id": "50460952-dd8a-4d81-aa0f-77986ded987e",
+  "findings": [
+    {
+      "id": "399e8222d0d6af1c268bc41a5417c409a985351d4ebdbfa4b5e61987deeaefed",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H788",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-788-2025",
+      "act": "sponsor",
+      "note": "She is listed as a sponsor of HB 788, Fix Our Democracy (primary sponsors: Buansi, Willingham, Cohn, Rubin). The date is the bill's filing date; the date she joined is not shown. The bill covers online and automatic voter registration through driver license offices (the form asks if the applicant is a citizen and warns that non-citizens commit a felony by applying), a ban on voter-roll purging, and confidentiality of photocopies of identification for voting. It sets no ID rule for voting in person or by mail. Referred to committee 4/8/2025 and not moved since.",
+      "subjects": [
+        "automatic voter registration with citizenship question",
+        "voter-roll purge ban",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:04.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0fd203b759bb8cd211640f869c9b66315f7d653c8f6322d6204686dbb4ff5eef",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, Second Reading (Roll Call #758); passed 66 to 47",
+      "note": "She voted no on second reading of HB 958. The seventh edition of the bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v7.pdf) requires driver license offices to proceed with a voter registration only if the applicant states they are a citizen (Section 2.4), requires the State Board of Elections to create a process to remove voters flagged as possible non-citizens by a federal database (Section 2.3), and requires a statement under penalty of perjury on citizenship for registration applications.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:04.728Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1ea5a93977faf75ddf48449eb188a941c562dd237141890e51c0dbf4630eecc0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, M11 Concur (House vote to concur in the Senate committee substitute, Roll Call #801); passed 62 to 47",
+      "note": "She voted no on the House vote to concur in the Senate version of HB 958. The bill page shows the concurrence vote and that the bill was then placed on the calendar for 9/2/2026. Same citizenship-on-registration and non-citizen voter-roll provisions as in the seventh edition of the bill.",
+      "subjects": [
+        "citizenship statement to register",
+        "voter-roll checks for non-citizens",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:04.728Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks for non-citizens",
+        "automatic voter registration and citizenship questions",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "Ballotpedia: confirms NC House District 33 incumbent, on the 3 Nov 2026 general ballot (https://ballotpedia.org/Monika_Johnson-Hostler); nothing on the subject",
+        "NC General Assembly member page and introduced-bills list (https://www.ncleg.gov/Members/Biography/H/834 and https://www.ncleg.gov/Members/IntroducedBills/H/834): reviewed all 2025 bills; one election-related bill touching the subject (HB 788)",
+        "NC General Assembly bill pages and roll calls for HB 788 and HB 958",
+        "not reviewed: her official and campaign sites (no web searches left in the shared budget; no site-search done)",
+        "not reviewed: news search and interviews (web search budget used up)",
+        "not reviewed: other 2025-2026 roll-call votes on election bills beyond HB 958",
+        "nothing on the subject: own-words search (none found)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:47:04.728Z",
+      "by": "source-collector"
+    }
+  ]
+}

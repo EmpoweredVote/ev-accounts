@@ -1,0 +1,51 @@
+{
+  "politician_id": "275cabb1-7a15-4bcf-88b5-10469a721244",
+  "findings": [
+    {
+      "id": "e04c827667c88a2eec75c41f64b67b8ab909e3433a3751e1c7066d4d8f39bf39",
+      "kind": "own-words",
+      "url": "https://indianasenatedemocrats.org/niezgodski-op-ed-hoosiers-value-our-right-to-vote-this-election/",
+      "date": "2020-08-31",
+      "date_precision": "day",
+      "passage": "This is why I have pushed for giving all Hoosiers the option for no-excuse absentee voting.",
+      "note": "Op-ed by Sen. Niezgodski posted on the caucus site. He says he has pushed for no-excuse absentee voting and calls absentee voting easy and secure. It does not mention photo ID or proof of citizenship.",
+      "subjects": [
+        "mail-ballot access without an excuse",
+        "absentee ballot security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:21:59.393Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship",
+        "election integrity and voter-roll checks",
+        "no-excuse absentee voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/David_Niezgodski) names him as Indiana State Senate District 10, term ends 2028, no 2026 race",
+        "On the Record (0 appearances, nothing on the subject)",
+        "Indiana Senate caucus site: site search for voter ID and his caucus page (one 2020 op-ed on mail voting found)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_david_niezgodski_1 (page loads empty without scripts; no bill list readable)",
+        "not reviewed: Indiana General Assembly bill pages for sponsorships and roll-call votes (script-driven site)",
+        "not reviewed: news search on name plus voter ID (shared web-search budget used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:21:59.393Z",
+      "by": "source-collector"
+    }
+  ]
+}

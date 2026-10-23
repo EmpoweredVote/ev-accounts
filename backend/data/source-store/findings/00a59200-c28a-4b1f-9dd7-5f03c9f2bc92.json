@@ -1,0 +1,32 @@
+{
+  "politician_id": "00a59200-c28a-4b1f-9dd7-5f03c9f2bc92",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/Christopher_Reichard (Democratic primary winner Aug 4, 2026; on the Nov 3, 2026 general ballot, Missouri 8th District)",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.reichardforrep.com/issues: nothing on the subject",
+        "campaign site https://www.reichardforrep.com/: nothing on the subject",
+        "Ballotpedia page, including quoted campaign site text and Candidate Connection survey section: nothing on the subject",
+        "congress.gov: not reviewed, challenger with no legislative record",
+        "ontheissues.org, Wikipedia: not reviewed, lead-only and no congressional record",
+        "news search: not run, web search budget for the session was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:13:54.753Z",
+      "by": "source-collector"
+    }
+  ]
+}

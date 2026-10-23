@@ -1,0 +1,58 @@
+{
+  "politician_id": "3d4368ce-8d60-4ae2-8000-ebed288c078c",
+  "findings": [
+    {
+      "id": "f0f2ea5e1063856b33c3b104c91273fd4cac5f78e4e3ebabfe7bf9c4a32c9bea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: nay (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID with no ID (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Brian_Turner_(North_Carolina)) names him as sitting NC House District 116 member, on the Nov 3, 2026 general ballot; the March 3, 2026 primary was canceled",
+        "On the Record (0 appearances, extract-otr.mjs run with --names 'Brian Turner')",
+        "official legislature page https://www.ncleg.gov/Members/Biography/H/696 (confirms Representative Brian Turner, District 116, Buncombe): nothing on the subject",
+        "https://www.ncleg.gov/Members/Sponsored/H/696 (sponsored bill list did not load usable bill rows): not reviewed",
+        "campaign site turnerfornc.com (home, about, news): nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "https://www.ncleg.gov/BillLookUp/2017/S824 (SB 824 Implementation of Voter ID Const. Amendment; vote already on file, not re-collected)",
+        "news search: not done, the shared web search budget was used up",
+        "not reviewed: debate and interview video"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:41:47.766Z",
+      "by": "source-collector"
+    }
+  ]
+}

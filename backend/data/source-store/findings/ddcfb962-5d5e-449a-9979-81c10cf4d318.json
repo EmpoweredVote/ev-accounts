@@ -1,0 +1,104 @@
+{
+  "politician_id": "ddcfb962-5d5e-449a-9979-81c10cf4d318",
+  "findings": [
+    {
+      "id": "d351ff0d999ec8e5701dfc59a68c51bc1c5f163f189ddf07106c83cfd229eef4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2011/S/718",
+      "date": "2011-06-15",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-351-2011",
+      "act": "nay",
+      "motion": "Second Reading",
+      "note": "Senate second-reading vote on HB 351, Restore Confidence in Government (5th edition), a bill requiring voters to show photo identification before voting in person and creating free voter ID cards. He is listed among the Noes. Passed 31 to 19.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote in person",
+        "free voter ID card"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:06.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bb2fa070467c980ee818935e35c8b563bf90e5dc694d3f0b6294a1d39f20bf88",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/866",
+      "date": "2013-07-24",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "nay",
+      "motion": "Second Reading",
+      "note": "Senate second-reading vote on HB 589, VIVA/Election Reform, a bill that includes a photo identification requirement before voting. He is listed among the Noes. Passed 32 to 14.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote in person",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:06.779Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5889029b78263f92a64daf37908f4951fabcf4d41320d01d85204c4899ea25a4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/882",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "nay",
+      "motion": "Third Reading",
+      "note": "Senate third-reading vote on HB 589, VIVA/Election Reform, a bill that includes a photo identification requirement before voting. He is listed among the Noes. Passed 33 to 14.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote in person",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:06.779Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement to register and vote in person",
+        "voter ID and absentee ballots",
+        "proof of citizenship",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Dan_Blue_Jr. (State Senate District 14, on the Nov 3, 2026 general-election ballot; the Mar 3, 2026 primary was canceled)",
+        "On the Record (0 appearances for this politician)",
+        "Ballotpedia (https://ballotpedia.org/Dan_Blue_Jr.; no voter ID statements on the page; no Candidate Connection survey)",
+        "NC General Assembly bill pages and roll-call transcripts: SB 824 (2017-18, voter ID amendment implementation), HB 351 (2011), HB 589 (2013)",
+        "NC General Assembly bill text H351v5 and H589v5 (to confirm photo ID content)",
+        "SB 824 roll calls 810, 811, 818, 819, 824: this member was an excused absence on each, so no vote recorded and nothing saved",
+        "not reviewed: NC Senate Democratic caucus site (unreachable from curl) and official member press releases",
+        "not reviewed: news interviews and floor-speech transcripts on voter ID (web search budget used up; no own-words search possible)",
+        "not reviewed: 2023-24 session voter ID bills (no vote lookup completed)"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:13:06.779Z",
+      "by": "source-collector"
+    }
+  ]
+}

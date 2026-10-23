@@ -1,0 +1,80 @@
+{
+  "politician_id": "49835316-b888-4589-b8b1-7de05637f7c6",
+  "findings": [
+    {
+      "id": "f1511f3fcccde321627f7ec971e83d2222c8a1c2dfd5101d45521e80214962d4",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Motion 9 To Concur HCS and H Amends (RCS S-439), Senate vote 27 to 18; Jarvis is listed among the ayes",
+      "note": "Senate vote to accept the House changes to S747, Elections Law Changes. The ratified bill text includes language on photo identification under G.S. 163-166.16 and on observers and election officials at polling places. Only the photo-ID provisions seen in the bill text are on the subject; the full bill covers more election topics.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:53.680Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7844f424a4583b331b204f3296f6458999e64df1624a335b3c2b317d4ebad02d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override (RCS S-482), Senate vote 30 to 19; Jarvis is listed among the ayes",
+      "note": "Senate vote to override the Governor's veto of S747, Elections Law Changes. The override passed the Senate and then the House the same day.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:53.680Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope check: Ballotpedia page https://ballotpedia.org/Steven_Jarvis_(North_Carolina) names him as NC State Senate District 30 incumbent, advanced from the March 3, 2026 primary, on the Nov 3, 2026 general ballot (Steve Jarvis and Steven Jarvis are the same person; the ncleg page lists 'Senator Steve Jarvis')",
+        "On the Record (0 meetings)",
+        "campaign site https://www.electjarvis.com (pages: home, meet-steve, volunteer; no issue pages, nothing on the subject; the page text is mostly site code and no statement on voting was found)",
+        "official legislature member page https://www.ncleg.gov/Members/Biography/S/430 (fetched; sponsored-bill list not readable from the fetched HTML, not reviewed for sponsorships)",
+        "Ballotpedia: nothing on the subject (2022 survey answers cover jobs, regulation, education; no 2024 or 2026 survey)",
+        "ncleg bill page and roll-call pages for SB 747 (2023), reviewed",
+        "not reviewed: news search on name plus subject words (web search budget used up for this session)",
+        "not reviewed: other ncleg bill pages for 2021-2026 voter-ID or citizenship bills (sponsorship list not reached; no per-bill search)",
+        "not reviewed: ontheissues.org, vote411, Vote Smart (lead-only sources, not fetched)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:43:53.680Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "politician_id": "5149b843-8e34-4ccd-8e0a-590d7fc17233",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "in scope: won the 2026 Senate primary in Kansas (https://thebrunswicknews.com/news/national_news/pastor-adam-hamilton-wins-democratic-primary-for-us-senate-in-kansas/article_96a025cc-b2cb-5370-8f80-f587ba308023.html); campaign site names him as the Senate candidate in Kansas (https://hamiltonforkansas.com/); general election 3 Nov 2026",
+        "On the Record (0 appearances; extract-otr.mjs run with --names)",
+        "campaign site home page and /issues page (nothing on the subject; the only election-related line is a general reference to a broken campaign finance and electoral system, which is not about ID or citizenship)",
+        "congress.gov / legislature bill pages: not applicable, he has held no legislative office",
+        "Ballotpedia: https://ballotpedia.org/Adam_Hamilton is only a disambiguation page, no candidate page reached",
+        "Wikipedia 2026 Kansas Senate election page (nothing on the subject)",
+        "ABC News interview page (nothing on the subject)",
+        "CS Monitor profile (nothing on the subject)",
+        "Heartlander News debate recap, 22 Oct 2026 (the voter ID line is the opponent's words, not Hamilton's; not saved)",
+        "Newsweek debate article (nothing on the subject)",
+        "blocked: https://www.ksn.com/news/your-local-election-hq/get-to-know-adam-hamilton-the-democrat-and-pastor-running-for-us-senate/ (403)",
+        "blocked: https://religionnews.com/2026/09/23/how-a-middle-of-the-road-megapastor-could-break-the-gops-hold-on-kansas/ (403)",
+        "blocked: https://www.christiancentury.org/news/how-megapastor-adam-hamilton-could-break-gop-s-hold-kansas (403)",
+        "blocked: https://www.axios.com/local/kansas-city/2026/10/15/kansas-senate-voter-guide-axios (403)",
+        "not reviewed: video of the 21 Oct 2026 Fox4 Kansas City Senate debate (no transcript reached)",
+        "news searches on name plus voter ID, SAVE Act, proof of citizenship, election integrity, mail ballots: nothing from Hamilton himself"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:30:09.227Z",
+      "by": "source-collector"
+    }
+  ]
+}

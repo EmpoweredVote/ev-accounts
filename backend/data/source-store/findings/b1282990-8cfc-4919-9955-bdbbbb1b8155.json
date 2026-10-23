@@ -1,0 +1,24 @@
+{
+  "politician_id": "b1282990-8cfc-4919-9955-bdbbbb1b8155",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-11 primary (Ballotpedia https://ballotpedia.org/Joshua_McKee: lost the AL-2 primary on August 11, 2026; earlier lost the AL-1 primary on May 19, 2026)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (did not complete Candidate Connection survey; nothing on the subject)",
+        "Spectrum News 2026-07-30 profile (nothing on the subject)",
+        "not searched further: out of scope after lost primary"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:39:22.468Z",
+      "by": "source-collector"
+    }
+  ]
+}

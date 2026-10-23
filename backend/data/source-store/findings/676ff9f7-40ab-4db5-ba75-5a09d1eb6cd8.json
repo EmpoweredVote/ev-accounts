@@ -1,0 +1,80 @@
+{
+  "politician_id": "676ff9f7-40ab-4db5-ba75-5a09d1eb6cd8",
+  "findings": [
+    {
+      "id": "d1005d89a18d5cc5d41848038e45ba3f9155d2b018698c9cb4ae28d3fd793fb7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/S/824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-824-2017",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override",
+      "note": "Senate roll call 824 on SB 824, Implementation of Voter ID Const. Amendment, veto override vote (33 ayes, 12 noes). Rabon is on the aye list.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID implementation law",
+        "veto override"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:50:59.343Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "42f72512692985f24f0468d2b4dd105336170b7592e3e078360473c9b9580801",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/S/866",
+      "date": "2013-07-24",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-589-2013",
+      "act": "yea",
+      "motion": "Second Reading",
+      "note": "Senate roll call 866 on HB 589, VIVA/Election Reform, second reading (32 ayes, 14 noes). Rabon is on the aye list.",
+      "subjects": [
+        "election reform",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:50:59.343Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "voter ID constitutional amendment implementation",
+        "election reform",
+        "mail ballot ID",
+        "proof of citizenship"
+      ],
+      "places": [
+        "in scope: Ballotpedia page (https://ballotpedia.org/William_Rabon) names William Rabon as State Senate District 8 incumbent on the Nov 3, 2026 general election ballot",
+        "On the Record (0 appearances, 0 meetings)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/494 (HTTP 500)",
+        "ncleg.gov bill pages and roll-call pages for SB 824 (2017) and HB 589 (2013): reviewed",
+        "ncleg.gov SB 824 sponsor list (Krawiec; Ford; Daniel primary): no sponsorship by this person",
+        "not reviewed: official Senate site news list and campaign site (no fetch made; search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)",
+        "nothing on the subject: Ballotpedia page text for voter ID in own words",
+        "not reviewed: 2023 election bills (SB 747) vote pages; sponsor list not rendered in fetched page"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:50:59.343Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "politician_id": "1dc0bb5d-963d-41d4-a38f-4f3e4254b844",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-08-11 primary (https://ballotpedia.org/Keith_Pilkington: \"He lost in the Democratic primary on August 11, 2026.\")",
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms identity and primary loss; no candidate survey completed)",
+        "not reviewed: campaign site, congress.gov, news search (stopped after lost primary; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:54:09.053Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "politician_id": "7072bd94-b465-414e-bcf5-6e3feb7ec8dd",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Sean_Garballey) names him as member for the 23rd Middlesex District, on the Nov 3, 2026 general-election ballot after advancing on Sep 1, 2026",
+        "On the Record (0 appearances; run by id and by name only, no city)",
+        "official legislature profile and sponsored/cosponsored bill lists, session 194 (https://malegislature.gov/Legislators/Profile/S_G1): election bills found are age rules, ballot uniformity, local ranked-choice and recall; none on proof of identity or citizenship to vote",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.seangarballey.com (no connection)",
+        "not reviewed: malegislature.gov bill search filtered by sponsor (site error); campaign and official issue pages not found",
+        "news search not done: the shared web search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:12:30.290Z",
+      "by": "source-collector"
+    }
+  ]
+}

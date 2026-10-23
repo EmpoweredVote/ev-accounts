@@ -1,0 +1,110 @@
+{
+  "politician_id": "112fe50f-2717-4ba5-9170-9725b25aa289",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "8e193d86cde9075274e0d7f7fb0e499a3b70474c67607e284e5678725f53ccd7",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958, Election Law Changes, second reading (roll call 758, passed 66-47)",
+      "note": "Ross voted aye on second reading of HB 958. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf, Section 2.4) says a county board may process a voter registration application only if the applicant affirmatively states they are a US citizen, with a 30-day notice and a statement under penalty of perjury if the question is left blank. Section 2.3(b) requires the State Board of Elections to set up a process to remove voters flagged as possible non-citizens by a federal database. The bill was vetoed 2026-08-17 (bill page https://www.ncleg.gov/BillLookUp/2025/H958). Ross was recorded as an excused absence on the 2026-08-04 concurrence vote (roll call 801), so that vote is not a position.",
+      "subjects": [
+        "citizenship statement to register",
+        "removal of possible non-citizens from voter rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:12.384Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallbacks",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope: sitting NC House member, District 63 (ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/812; Ballotpedia https://ballotpedia.org/Stephen_M._Ross says he is not running in 2026 and his term ends 2027-01-01; still sitting, so in scope as a sitting official)",
+        "On the Record (0 appearances linked; extract-otr run with name only)",
+        "campaign site https://www.rossfornchouse.com/ (home page only, no issue pages or subject words found)",
+        "ncleg.gov introduced bills 2025-26 (https://www.ncleg.gov/Members/IntroducedBills/H/812): nothing on the subject (HB 31, Election Day state holiday, is off-subject)",
+        "ncleg.gov member votes 2025-26 (https://www.ncleg.gov/Members/Votes/H/812): one on-subject bill, HB 958",
+        "ncleg.gov bill page and ratified text for HB 958",
+        "Ballotpedia page (no voter ID statements)",
+        "not reviewed: ncleg.gov member votes for the 2023-24 session (no session selector reachable); 2023 SB 747 not confirmed as on-subject",
+        "not reviewed: web search for news quotes, because the shared search budget was used up; Alamance News, Burlington Times-News, social media (https://www.facebook.com/srossnc, https://x.com/RossforNCHouse)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/738 (not his page; HTTP 500)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:34:12.384Z",
+      "by": "source-collector"
+    }
+  ]
+}

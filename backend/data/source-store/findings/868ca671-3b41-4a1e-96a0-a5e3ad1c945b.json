@@ -1,0 +1,30 @@
+{
+  "politician_id": "868ca671-3b41-4a1e-96a0-a5e3ad1c945b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Michael_Crider) names him as Indiana State Senate District 28, term ends 2028, so not on the 2026 ballot; sitting senator",
+        "On the Record (0 appearances, extract-otr.mjs run)",
+        "Official Senate caucus page https://www.indianasenaterepublicans.com/crider (news list scanned, nothing on the subject; it lists road funding, pages, awards, mental health, tracking-device bills)",
+        "Ballotpedia page text (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_michael_crider_1 (page is a script-driven app, no readable text; sponsorships not reviewed)",
+        "not reviewed: bill-by-bill sponsorship and vote record on iga.in.gov",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "not reviewed: campaign site, ontheissues.org, vote411"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:40:52.990Z",
+      "by": "source-collector"
+    }
+  ]
+}

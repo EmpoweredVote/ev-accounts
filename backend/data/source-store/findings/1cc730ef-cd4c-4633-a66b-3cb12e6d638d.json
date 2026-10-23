@@ -1,0 +1,36 @@
+{
+  "politician_id": "1cc730ef-cd4c-4633-a66b-3cb12e6d638d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: no-party candidate for Florida's 3rd Congressional District, running for the November 2026 general election (https://www.alligator.org/article/2026/09/uf-college-independents-forum, 2026-09-25; campaign site https://mikekleinforcongress.com)",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site home page https://mikekleinforcongress.com: nothing on the subject",
+        "campaign site https://mikeklein4congress.com/5-pillars/: nothing on the subject (only a general line on defending the right to vote, not about ID or citizenship proof)",
+        "campaign site https://mikeklein4congress.com/meet-mike/: nothing on the subject",
+        "campaign site https://mikeklein4congress.com/press/: nothing on the subject (page empty of articles)",
+        "https://alligator.org forum article 2026-09-25: nothing on the subject",
+        "Wikipedia page on 2026 Florida House elections: nothing on the subject",
+        "congress.gov: not applicable, not a sitting legislator",
+        "blocked: https://ballotpedia.org/Mike_Klein (returned a disambiguation page or an empty response; Florida page not reached)",
+        "not reviewed: campaign social video channels (YouTube, X, Facebook, Instagram, TikTok, Threads) linked from the campaign site",
+        "not reviewed: further news searches (the shared web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:06:55.406Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "politician_id": "9dd7276b-1c24-466c-a530-d2297607a784",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JJM1 (Representative John J. Marsi, 6th Worcester, 194th General Court)",
+        "On the Record (0 appearances, extract-otr.mjs)",
+        "Ballotpedia: https://ballotpedia.org/John_Marsi (no page exists)",
+        "malegislature.gov bill search 'voter identification' (first page of 347 results; Marsi not among listed sponsors)",
+        "malegislature.gov bill H.833 (194th, voter identification) petitioner list: Marsi not listed",
+        "not reviewed: official site, campaign site and news search (web search budget used up; 2026 ballot status not confirmed by a page)",
+        "nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:18:06.614Z",
+      "by": "source-collector"
+    }
+  ]
+}

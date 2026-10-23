@@ -1,0 +1,32 @@
+{
+  "politician_id": "cc873a93-cb47-405a-93b0-bb2848fdd57e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity laws",
+        "non-citizen voting"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia https://ballotpedia.org/Lisa_Murkowski names her as U.S. Senator from Alaska, term ends January 3, 2029 (not on the 2026 ballot; next election 2028)",
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Lisa_Murkowski (nothing on the subject)",
+        "official site https://www.murkowski.senate.gov/press/press-releases (first page only, nothing on the subject; site keyword filter did not narrow results)",
+        "official site https://www.murkowski.senate.gov/issues/voting-record (loads votes from govtrack by script; not readable)",
+        "blocked: https://www.congress.gov/member/lisa-murkowski/M001153 (HTTP 403, also with browser user agent)",
+        "blocked: https://www.govtrack.us/congress/members/lisa_murkowski/300075 (HTTP 403)",
+        "blocked: https://www.govtrack.us/api/v2/vote_voter?person=300075 (HTTP 403)",
+        "not reviewed: web news search on her name plus subject words (session web search budget was used up)",
+        "not reviewed: campaign site, press releases pages beyond page 1, speeches, op-eds, videos"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:05:57.650Z",
+      "by": "source-collector"
+    }
+  ]
+}

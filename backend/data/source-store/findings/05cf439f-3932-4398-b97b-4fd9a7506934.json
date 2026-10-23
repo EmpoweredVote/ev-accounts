@@ -1,0 +1,155 @@
+{
+  "politician_id": "05cf439f-3932-4398-b97b-4fd9a7506934",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "197bf1d64ae416d695c025e649b0ca407c14e205aae8a81e110386b29e03f319",
+      "kind": "own-words",
+      "url": "https://casten.house.gov/media/press-releases/casten-proposes-measure-to-protect-ballot-access-for-overseas-service-members",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "passage": "“For too long, outdated absentee processes have effectively disenfranchised those in uniform. The Military VOTE Act modernizes this system, ensuring that a transition in duty station never means a loss of their fundamental right to vote.”",
+      "note": "Quote from his press release on the Military VOTE Act, about absentee ballot requests for service members. It does not mention ID or citizenship proof. Saved as related material on the absentee-ballot request process.",
+      "subjects": [
+        "absentee ballot request process",
+        "mail-ballot access for military and overseas voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:30.604Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7dc48ff74fcba05d9d23f117866050eb083fc88c399d9af7400a6c73799f665e",
+      "kind": "record",
+      "url": "https://casten.house.gov/media/press-releases/casten-proposes-measure-to-protect-ballot-access-for-overseas-service-members",
+      "date": "2026-04-22",
+      "date_precision": "day",
+      "act": "sponsor",
+      "motion": "Military Voter Overseas Technical Enhancement (VOTE) Act, introduced as the lead sponsor",
+      "note": "Bill he introduced. It would require states to accept voter registration and absentee ballot requests online or by email, send ballots electronically by default, keep absentee status across elections without reapplying, and bar rejecting applications for early submission. The release does not mention ID or proof of citizenship. Bill number not confirmed because congress.gov was blocked.",
+      "subjects": [
+        "absentee ballot request process",
+        "mail-ballot access for military and overseas voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:19:30.604Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID or request",
+        "proof of citizenship to register (SAVE Act)",
+        "election integrity / non-citizen voting / voter rolls",
+        "absentee ballot request rules"
+      ],
+      "places": [
+        "scope check: Ballotpedia https://ballotpedia.org/Sean_Casten says he is on the Nov 3, 2026 general-election ballot for Illinois' 6th District and advanced from the Mar 17, 2026 primary",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "official site casten.house.gov home page and /voting page: nothing on the subject (the /voting page gives no ID rules)",
+        "official site press-release list (search box did not filter; first page read only): one related item, the Military VOTE Act release",
+        "official site /issues page and issue-page guesses (voting-rights, democracy, government-reform, elections): the guesses returned HTTP 410; nothing on the subject",
+        "Ballotpedia: lists nay on H.R. 22 SAVE Act (already on file); no own-words on voter ID",
+        "blocked: https://www.congress.gov (HTTP 403 from curl, bill search not reachable)",
+        "blocked: https://api.congress.gov (HTTP 403)",
+        "blocked: https://casten.house.gov/search?q=voter+ID (Access Denied)",
+        "not reviewed: campaign site (seancasten.com did not load)",
+        "not reviewed: news and interview search on name plus subject words (shared web-search budget was used up)",
+        "not reviewed: ontheissues.org (lead-only source)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:19:30.604Z",
+      "by": "source-collector"
+    }
+  ]
+}

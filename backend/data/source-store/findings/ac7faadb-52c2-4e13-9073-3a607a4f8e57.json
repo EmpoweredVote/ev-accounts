@@ -1,0 +1,76 @@
+{
+  "politician_id": "ac7faadb-52c2-4e13-9073-3a607a4f8e57",
+  "findings": [
+    {
+      "id": "f31364fa4f2a94cc30c56c5082a5714cfcaa873febd7929b815b2b3e14c719a4",
+      "kind": "own-words",
+      "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-colleagues-demand-trump-admin-halt-2026-election-interference-efforts",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "The 2026 midterm elections are already underway. Your unsubstantiated allegations of noncitizen voter fraud, public recitation of unreliable data, and unwarranted conditioning of continued grant funding for state election security measures on compliance with politically motivated requests for voter data appear to be calculated efforts to undermine confidence in our elections and risks wrongly disenfranchising voters.",
+      "note": "Letter from Baldwin and other senators to the Homeland Security Secretary, published on her official site. It disputes claims of non-citizen registration and objects to pressure on states over voter-roll data.",
+      "subjects": [
+        "non-citizen voting claims",
+        "voter-roll citizenship checks",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:23.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "04c7e86004c902ae9864e8f5aac2982fe88cdc197a782aa5fffb135c1cf9a23f",
+      "kind": "own-words",
+      "url": "https://www.baldwin.senate.gov/news/press-releases/baldwin-colleagues-demand-trump-admin-halt-2026-election-interference-efforts",
+      "date": "2026-10-01",
+      "date_precision": "day",
+      "passage": "Since then, DHS has repeatedly pressured states to share their voter rolls and run them through the modified SAVE program, despite legal concerns and known accuracy issues.",
+      "note": "Same joint letter. Concerns the federal SAVE data system (a citizenship-status checking system), not the SAVE Act bill. It says the system's data on citizenship can be inaccurate.",
+      "subjects": [
+        "voter-roll citizenship checks",
+        "non-citizen voting claims"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:23.003Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll citizenship checks",
+        "non-citizen voting claims",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting U.S. Senator (Wisconsin), confirmed on https://www.baldwin.senate.gov/news/press-releases; current term runs to 2031 per 2024 re-election on Ballotpedia, so not on the 2026 ballot; in scope as a sitting member",
+        "On the Record (0 appearances)",
+        "official site press release list and site search (baldwin.senate.gov): one relevant release found",
+        "Ballotpedia https://ballotpedia.org/Tammy_Baldwin: nothing on the subject (only a Freedom to Vote: John R. Lewis Act vote mention, not reviewed in detail)",
+        "blocked: https://www.congress.gov/search (HTTP 403)",
+        "blocked: https://www.congress.gov/bill/117th-congress/senate-bill/2747/cosponsors (page returned no cosponsor data)",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: https://www.baldwin.senate.gov/about/voting-record"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:11:23.003Z",
+      "by": "source-collector"
+    }
+  ]
+}

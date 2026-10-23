@@ -1,0 +1,84 @@
+{
+  "politician_id": "d0bcb2c4-3653-4b57-b8f1-c5688e40b54d",
+  "findings": [
+    {
+      "id": "86a5b1e4a190e56e25a7578799664dae2edb89140ac7d271b883ab7fa736251e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, Second Reading, Roll Call #758",
+      "note": "House Second Reading vote on HB 958, Election Law Changes. Passed 66 to 47. Lopez is listed among the Noes. The ratified bill requires an applicant at a drivers license office to affirmatively state US citizenship before the registration proceeds, requires a sworn citizenship statement on registration forms, and directs the State Board to set a process to remove voters flagged as possible non-citizens by a federal database.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:40.095Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "69d35c4bb1cff98f0284e567076d4fcfb4c3d63499dfcd7f9fb7b72c1794d48a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958, Election Law Changes, M11 Concur, Roll Call #801",
+      "note": "House vote to concur in the Senate changes to HB 958, Election Law Changes. Passed 62 to 47. Lopez is listed among the Noes. The bill page lists a Governor's veto of HB 958 and a last action of placed on calendar for 09/02/2026.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:40.095Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks against federal database",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "scope confirmed: https://www.ncleg.gov/Members/Biography/H/835 (Representative Jordan Lopez, District 112, Mecklenburg, 2025-2026 Session) and https://ballotpedia.org/Jordan_Lopez (on the 2026 general election ballot, November 3, 2026)",
+        "Ballotpedia (no survey completed, nothing on the subject)",
+        "campaign site: blocked: https://www.jordanlopeznc.com (domain does not resolve; real campaign site not located)",
+        "ncleg.gov member bills page: blocked: https://www.ncleg.gov/Members/Bills/H/835 (404); sponsorship list not reviewed",
+        "ncleg.gov bill page and roll calls for HB 958 (reviewed)",
+        "web news search: not reviewed: search budget for the session was used up, so no news or own-words search on his name plus subject words was run",
+        "other voter ID bills (for example 2025 session bills beyond HB 958): not reviewed",
+        "own words (interviews, forums, posts): nothing found; not searched beyond Ballotpedia and the legislature"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:10:40.095Z",
+      "by": "source-collector"
+    }
+  ]
+}

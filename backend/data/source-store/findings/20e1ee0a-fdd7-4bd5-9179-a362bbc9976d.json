@@ -1,0 +1,32 @@
+{
+  "politician_id": "20e1ee0a-fdd7-4bd5-9179-a362bbc9976d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Peter_Jassenoff says he is on the Nov 3, 2026 general-election ballot for U.S. House Florida District 25 and the August 18, 2026 primary was canceled",
+        "On the Record (0 appearances, 0 meetings)",
+        "Ballotpedia: nothing on the subject (candidate has not completed Candidate Connection survey)",
+        "campaign site: not found (guessed domains jassenoff.com, peterjassenoff.com did not load; no site linked on Ballotpedia)",
+        "blocked: https://www.facebook.com/peter.jassenoff (not readable)",
+        "not reviewed: web news search (search budget for the session was used up)",
+        "congress.gov: not reviewed, not a legislator, no sponsorships",
+        "state political organization candidate pages: nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:10:00.789Z",
+      "by": "source-collector"
+    }
+  ]
+}

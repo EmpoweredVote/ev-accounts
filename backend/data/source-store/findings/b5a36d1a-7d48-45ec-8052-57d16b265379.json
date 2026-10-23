@@ -1,0 +1,58 @@
+{
+  "politician_id": "b5a36d1a-7d48-45ec-8052-57d16b265379",
+  "findings": [
+    {
+      "id": "4618de0eac32671aae6982b7f7b988877fd3112887043bb6f88d6119c138de3d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "M11 Concur (House concurrence in the Senate committee substitute), Roll Call #801, passed 62-47",
+      "note": "The roll call transcript lists Zenger among the Ayes on House concurrence in HB 958, Election Law Changes. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) says a county board processes a voter registration application only if it affirmatively indicates the applicant is a United States citizen, with a 30-day notice and a statement under penalty of perjury if the answer is blank. It also requires a process to remove voters flagged as possible non-citizens by a federal database. The bill page shows the Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "non-citizen voting and voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:06:23.095Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter procedures",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Jeff_Zenger) says he represents NC House District 74 and is on the Nov 3, 2026 general-election ballot; his March 3, 2026 primary was canceled and he advanced unopposed",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.jeffzenger.com (home page only, nothing on the subject)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/775 (confirms Representative Jeff Zenger)",
+        "NC General Assembly introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/775 (no bill of his on the subject; the election-related ones are an Election Day holiday bill, H31, and an AI bill, H934)",
+        "NC General Assembly bill page and roll call for HB 958 (2025-2026)",
+        "Ballotpedia (no issue positions on the subject)",
+        "not reviewed: news search on his name plus subject words (web search budget used up for the session)",
+        "not reviewed: official ncleg press releases, social media, committee video (no own-words item found; no search available)",
+        "blocked: https://www.zengerfornc.com (no response)"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:06:23.095Z",
+      "by": "source-collector"
+    }
+  ]
+}

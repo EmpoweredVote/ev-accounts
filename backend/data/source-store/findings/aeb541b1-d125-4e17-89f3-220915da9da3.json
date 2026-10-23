@@ -1,0 +1,125 @@
+{
+  "politician_id": "aeb541b1-d125-4e17-89f3-220915da9da3",
+  "findings": [
+    {
+      "id": "ea0baaea319dd17ae547d7ec0e67d2916d0bde2937cc62d1f52f397bd73987bb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Motion 9 To Concur HCS and H Amends (Senate RCS 439), 27-18",
+      "note": "Burgin is listed among the Aye votes on the Senate concurrence vote for S747, Elections Law Changes (keywords on the bill page include voter registration, ballots and ballot issues, aliens). Governor vetoed it on 2023-08-24. Bill page does not itself spell out provisions; this is a general election-law bill, tagged accordingly.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter registration rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:50.931Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "076ca862ee38392d3b01a030bcdf98b2b4baddab136b8222175c1f18d5ca215c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override (Senate RCS 482), 30-19",
+      "note": "Burgin is listed among the Aye votes to override the Governor's veto of S747, Elections Law Changes. The bill became Session Law 2023-140 the same day after the House also overrode.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter registration rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:50.931Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc9cbcbadd780e9756d6ae34507762820600686f5f27fa562da7b8b24ab30507",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-921-2023",
+      "act": "yea",
+      "motion": "Third Reading (Senate RCS 677), 30-19; Second Reading (RCS 676) also Aye, 30-19",
+      "note": "Burgin is listed among the Aye votes on S921, Constitutional Amendment/Require Photo ID For All Voters. The bill was ratified as Session Law 2024-58 on 2024-12-13.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID required for all voters"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:50.931Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9c58f42ff75e6f2354fd4cf564dc32e7bc6256bf7ff90a47a674a5df3e20452b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/635",
+      "date": "2024-06-27",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1074-2023",
+      "act": "yea",
+      "motion": "Second Reading (Senate RCS 635), 40-4; Third Reading (RCS 636) also Aye, 40-4",
+      "note": "Burgin is listed among the Aye votes on H1074, Constitutional Amendment/Citizens-Only Voting. The bill became Session Law 2024-18 on 2024-06-28.",
+      "subjects": [
+        "citizens-only voting",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:50.931Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "constitutional amendment requiring photo ID",
+        "proof of citizenship to vote / citizens-only voting",
+        "election integrity laws in general",
+        "mail-ballot ID",
+        "no-ID voter fallback"
+      ],
+      "places": [
+        "scope check: Ballotpedia (https://ballotpedia.org/Jim_Burgin, fetched with curl) names him as NC State Senate District 12 incumbent, won the March 3, 2026 primary, on the Nov 3, 2026 general ballot; NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/412 confirms Senator Jim Burgin, District 12",
+        "On the Record (0 meetings, extract-otr returned 0 appearances)",
+        "ncleg.gov member vote history 2023-24 and 2025-26 sessions (https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/S/412 and .../2025/S/412), reviewed for election-related votes",
+        "ncleg.gov bill pages for S747, S921, H1074, S88 (2023 session) and roll call transcripts",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://www.jimburginnc.com (no response; campaign site not reached)",
+        "not reviewed: official Senate press pages and news coverage (web search budget was used up, so no news or own-words search was possible)",
+        "own words on the subject: none found",
+        "2025 session HB 958 Election Law Changes votes: recorded as excused absence, not saved"
+      ],
+      "found": 4,
+      "at": "2026-10-23T00:05:50.931Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "politician_id": "69a4aaa2-5265-45e0-87c7-8cea22b2dc18",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Michael_Chaisson names him as 1st Bristol District representative, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot",
+        "On the Record (0 appearances for this politician id)",
+        "MA Legislature profile https://malegislature.gov/Legislators/Profile/MSC1 (his sponsored bills: none on the subject)",
+        "MA Legislature bill search: voter identification, proof of citizenship, election integrity, citizenship voter (194th Court); only H.833 (Garry, voter identification requirements) is on voter ID, and its Cosponsor page https://malegislature.gov/Bills/194/H833/Cosponsor does not list him; S.514, S.520, S.1273 election-integrity bills not checked for cosponsors beyond headers",
+        "Ballotpedia: nothing on the subject (he has not completed the candidate survey)",
+        "blocked: https://www.chaissonforma.com (no content returned)",
+        "not reviewed: official House page text and campaign site issue pages (web search budget exhausted, so no news or own-words search was possible)",
+        "nothing on the subject: news search not run, search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:07.027Z",
+      "by": "source-collector"
+    }
+  ]
+}

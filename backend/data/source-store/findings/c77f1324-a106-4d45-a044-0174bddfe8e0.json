@@ -1,0 +1,55 @@
+{
+  "politician_id": "c77f1324-a106-4d45-a044-0174bddfe8e0",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Norman_Orrall (advanced from the 2026-09-01 primary; on the 2026-11-03 general ballot, MA House 12th Bristol)",
+        "On the Record (0 appearances)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/NJO1 (sponsored bills: none on the subject; only a Berkley town recall bill S.2552)",
+        "campaign site https://www.normanorrall.com (nothing on the subject)",
+        "Ballotpedia (nothing on the subject; no candidate survey completed)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: official house page news list and other URL patterns (not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:23:01.853Z",
+      "by": "source-collector"
+    }
+  ]
+}

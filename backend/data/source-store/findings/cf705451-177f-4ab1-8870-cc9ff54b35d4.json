@@ -1,0 +1,299 @@
+{
+  "politician_id": "cf705451-177f-4ab1-8870-cc9ff54b35d4",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dcb8fea120a6ab595d07ad0030e7d391d1b471b003aa61c9a95bd5ad674029ff",
+      "kind": "own-words",
+      "url": "https://harshbarger.house.gov/media/press-releases/icymi-harshbarger-joins-freedom-caucus-colleagues-demanding-senate-action-save",
+      "date": "2026-06-25",
+      "date_precision": "day",
+      "passage": "The SAVE America Act is supported by an overwhelming majority of Americans.",
+      "note": "Remarks as prepared for delivery at a House Freedom Caucus press conference, posted on her official site. Press release says the act would require proof of citizenship to register to vote in federal elections.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE America Act",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9847d04e039547fc2238c72cfa3546b6ce1d95cdb64196e0f88ef38a7e094688",
+      "kind": "own-words",
+      "url": "https://harshbarger.house.gov/media/press-releases/icymi-harshbarger-joins-freedom-caucus-colleagues-demanding-senate-action-save",
+      "date": "2026-06-25",
+      "date_precision": "day",
+      "passage": "I want to speak directly to every Senator blocking the SAVE America Act:",
+      "note": "She calls on the Senate to pass the SAVE America Act, in the same prepared remarks.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "65d62ec497617887eaa515011a40dfde680628c86f95ece9bb0ab6a428070b8e",
+      "kind": "own-words",
+      "url": "https://harshbarger.house.gov/media/press-releases/icymi-harshbarger-joins-freedom-caucus-colleagues-demanding-senate-action-save",
+      "date": "2026-06-25",
+      "date_precision": "day",
+      "passage": "The integrity of American elections is on the line—and the Senate is doing nothing about it.",
+      "note": "Opening line of the same remarks; frames the bill as election integrity.",
+      "subjects": [
+        "election integrity laws in general",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72e8aa0ea1fb8ad417dafb01ab751f017535a188b99d695304d155a66d7d2c70",
+      "kind": "own-words",
+      "url": "https://harshbarger.house.gov/media/press-releases/icymi-harshbarger-joins-freedom-caucus-colleagues-demanding-senate-action-save",
+      "date": "2026-06-25",
+      "date_precision": "day",
+      "passage": "Legal American citizens are losing control of their own country, and you are letting it happen.",
+      "note": "Same remarks; links the bill to citizens' control of elections, an adjacent theme (who is allowed to vote).",
+      "subjects": [
+        "noncitizen voting (adjacent theme)",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c74e9faa020e1ae3edf307fe0cad727c9dd96ee7f151157e93428d653bad0ca5",
+      "kind": "own-words",
+      "url": "https://harshbarger.house.gov/media/press-releases/congresswoman-diana-harshbargers-statement-her-opposition-democrats-latest",
+      "date": "2021-08-25",
+      "date_precision": "day",
+      "passage": "Elections should be run at the state level, not by unelected federal bureaucrats who would be empowered to override commonsense election reforms like voter ID requirements.",
+      "note": "Statement issued in her name on her vote against H.R. 4; she names voter ID requirements as state election reforms she does not want overridden.",
+      "subjects": [
+        "voter ID at the polls",
+        "federal versus state control of elections",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "676cd7ff02d16b324678f88c6cec6096170d217f2514053de0a30a2525fb0cfd",
+      "kind": "own-words",
+      "url": "https://harshbarger.house.gov/media/press-releases/congresswoman-diana-harshbargers-statement-her-opposition-democrats-latest",
+      "date": "2021-08-25",
+      "date_precision": "day",
+      "passage": "Instead, Congress should work on solutions to ensure our elections are fair, transparent, and that it is easier to vote legally and harder to cheat.",
+      "note": "Same statement; her stated goal for election law.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "246d0e0da2e12d3399ab614bbd12017f611ce8c2b58e0bd550d622b21976bf79",
+      "kind": "record",
+      "url": "https://harshbarger.house.gov/media/press-releases/congresswoman-diana-harshbargers-statement-her-opposition-democrats-latest",
+      "date": "2021-08-25",
+      "date_precision": "day",
+      "instrument_id": "US-HR-4-2021",
+      "act": "nay",
+      "note": "Her press release says it is a statement about her vote against H.R. 4 (a federal elections bill). Vote date is not stated on the page; date given is the release date. Roll call not fetched.",
+      "subjects": [
+        "voter ID at the polls",
+        "federal versus state control of elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b551e8792d3b57d97400c43aef6562429f7092cf716d7d041a4accd4bb6b4b52",
+      "kind": "record",
+      "url": "https://harshbarger.house.gov/media/press-releases/congresswoman-diana-harshbargers-statement-her-opposition-democrats-latest",
+      "date": "2021-06-01",
+      "date_precision": "month",
+      "instrument_id": "US-HR-93-2021",
+      "act": "other",
+      "note": "Her release says that in June 2021 she co-sponsored H.R. 93, the Eliminating Foreign Intervention in Elections Act, which would eliminate federal funding for any municipality that allows illegal immigrants and non-citizens to vote in local or statewide elections. Co-sponsorship is as stated by her office; congress.gov was blocked.",
+      "subjects": [
+        "noncitizen voting (adjacent theme)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef33ea5154f86bb8fcb88724c496f08a192bcc21dacbf65959142a562daeb556",
+      "kind": "record",
+      "url": "https://harshbarger.house.gov/media/press-releases/congresswoman-diana-harshbargers-statement-her-opposition-democrats-latest",
+      "date": "2021-04-01",
+      "date_precision": "month",
+      "instrument_id": "US-HR-322-2021",
+      "act": "other",
+      "note": "Her release says that in April 2021 she co-sponsored H.R. 322, the Save Democracy Act, described as bringing transparency to elections and restoring election integrity. Co-sponsorship is as stated by her office.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:11:56.838Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act / SAVE America Act",
+        "noncitizen voting",
+        "election integrity laws in general",
+        "federal control of elections"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site harshbarger.house.gov (home page, press releases)",
+        "web search for press releases, op-eds, interviews (nothing further found)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/7296/cosponsors (HTTP 403 / bot challenge)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (HTTP 403 / bot challenge)",
+        "blocked: https://www.congress.gov/bill/118th-congress/house-bill/8281/cosponsors (HTTP 403)",
+        "not run: list-discovered-sources.ts (backend env variables missing)",
+        "not fetched: Ballotpedia, campaign site"
+      ],
+      "found": 9,
+      "at": "2026-10-22T21:11:56.838Z",
+      "by": "source-collector"
+    }
+  ]
+}

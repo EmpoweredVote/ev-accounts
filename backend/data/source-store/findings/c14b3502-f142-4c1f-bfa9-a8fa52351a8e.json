@@ -1,0 +1,56 @@
+{
+  "politician_id": "c14b3502-f142-4c1f-bfa9-a8fa52351a8e",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Natalie_Higgins names her as incumbent for MA House 4th Worcester District, on the Nov 3, 2026 general ballot after advancing from the Sept 1, 2026 primary",
+        "On the Record (0 appearances; extract-otr.mjs with --names returned OTR_SOURCES=0)",
+        "campaign site http://www.electnataliehiggins.com/issues.html (issues page has only a 'Democracy & Transparency' line about being accessible; nothing on the subject)",
+        "Ballotpedia (no statements on the subject)",
+        "blocked: https://malegislature.gov/Legislators/Profile/NJH1 (404; legislator profile and sponsorship list not reached)",
+        "not reviewed: official house.state.ma.us / malegislature.gov sponsored-bill list for Higgins (profile URL not found)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: https://www.facebook.com/StateRepNatalieHiggins (social posts not readable)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:22:43.254Z",
+      "by": "source-collector"
+    }
+  ]
+}

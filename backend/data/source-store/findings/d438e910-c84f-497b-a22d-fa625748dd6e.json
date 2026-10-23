@@ -1,0 +1,232 @@
+{
+  "politician_id": "d438e910-c84f-497b-a22d-fa625748dd6e",
+  "findings": [
+    {
+      "id": "07921e81dbf3121a8cb6c12178f38cdde55541812bb8dff4e8bbed24f68b0b48",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-06",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "concur in House committee substitute (Motion 9 To Concur)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, concur in House committee substitute (Motion 9 To Concur), 2018-12-06: yea (tally 25–7); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c765281624eba034064dc2920b2d55a63acb3cbe9cb7b9dac0d48c3712e9023",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: yea (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "a40edcc4ab7054bea24d261bead2524a4d63612bbe48b7b76f7e04874457a406",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S921",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "sponsor",
+      "note": "Named as one of three primary sponsors (Hise, Daniel, P. Newton) of SB 921, Const. Am./Require Photo ID For All Voters. The bill text says it amends Article VI of the state constitution so that all voters, not just those voting in person, must present photographic identification before voting, and puts the question to voters on November 3, 2026. The bill was ratified 12/13/2024 (S.L. 2024-58).",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail and absentee ballots",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:34.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a4e3c53e4f72d3830e202a12244af1569156ee31a668e3c5928d81d877e3f9c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/677",
+      "date": "2024-12-02",
+      "date_precision": "day",
+      "instrument_id": "NC-S-921-2023",
+      "act": "yea",
+      "motion": "Third Reading, Roll Call #677 (30 ayes, 19 noes)",
+      "note": "Senate third-reading vote on SB 921, the constitutional amendment requiring photo ID from all voters. Daniel is on the list of senators voting aye.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail and absentee ballots",
+        "constitutional amendment on photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:34.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b20a00e19307a6ce85e82be19f6828146cba6af84ad08d6f43ae6295d7a749f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S747",
+      "date": "2023-06-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "sponsor",
+      "note": "Named as one of three primary sponsors (Hise, P. Newton, Daniel) of SB 747, Elections Law Changes. The bill text includes ID provisions: photo identification for same-day registration, a list of documents accepted as proof for mail registrants, a photocopy of ID or a sworn affidavit with absentee ballots, and a rule that a voter who does not present photo ID may be challenged. It also has provisions on jury-duty excusals of non-citizens being passed to the State Board of Elections. It became law over a veto as S.L. 2023-140.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail and absentee ballots",
+        "ID for same-day registration",
+        "non-citizens on voter rolls",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:34.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7e949a2929049a8211a099726912322fc6e79ca13a51be993316e47b8eeb1b04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-S-747-2023",
+      "act": "yea",
+      "motion": "Motion 11 Veto Override, Roll Call #482 (30 ayes, 19 noes)",
+      "note": "Senate vote to override the governor's veto of SB 747, Elections Law Changes. Daniel is on the list of senators voting aye.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail and absentee ballots",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:34.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "21338c0bfa96e7f81891e28465f8a12486c1604f28b6c9fffe946c590fa91b80",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2019/S683",
+      "date": "2019-07-01",
+      "date_precision": "day",
+      "instrument_id": "NC-S-683-2019",
+      "act": "sponsor",
+      "note": "Named as the first of three primary sponsors (Daniel, McKissick, Hise) of SB 683, Combat Absentee Ballot Fraud. The bill text has the State Board set the forms of identification sent with a written request for an absentee ballot, and a reasonable-impediment process (such as a license number, special ID card number or last four digits of the Social Security number) for a voter who cannot attach a copy. It became law as S.L. 2019-239 on 11/6/2019.",
+      "subjects": [
+        "photo ID for mail and absentee ballots",
+        "ID to request an absentee ballot",
+        "reasonable impediment to ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:34.771Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2b2b8db17dd8fa543bdc617f815244d14d264fb468d7ef4d86f20f1d6d4f5d29",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2021/S326",
+      "date": "2021-03-22",
+      "date_precision": "day",
+      "instrument_id": "NC-S-326-2021",
+      "act": "sponsor",
+      "note": "Named as the first of three primary sponsors (Daniel, Newton, Hise) of SB 326, Election Integrity Act. The bill text includes an appropriation of five million dollars to set up a program to identify people who need photo ID to vote in person, with a mobile component to visit them. It also moves absentee-ballot request and receipt dates and bars private money for election offices. The bill page shows it vetoed.",
+      "subjects": [
+        "voter ID at the polls",
+        "help for voters without photo ID",
+        "photo ID for mail and absentee ballots",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:13:34.771Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail and absentee ballots",
+        "voters without ID / help getting photo ID",
+        "proof of citizenship",
+        "voter-roll checks and non-citizens on rolls",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/S/295 (Senator Warren Daniel, District 46) and https://ballotpedia.org/Warren_Daniel (on the 2026 general-election ballot, Senate District 46; the March 3, 2026 primary was canceled and he advanced without appearing on the ballot)",
+        "On the Record (0 appearances, 0 meetings; extract-otr.mjs with --names 'Warren Daniel')",
+        "ncleg.gov member page, introduced bills for 2025, 2023, 2021, 2019 (https://www.ncleg.gov/Members/IntroducedBills/S/295)",
+        "ncleg.gov bill pages, bill text and roll-call transcripts for NC-S-921-2023, NC-S-747-2023, NC-S-683-2019, NC-S-326-2021",
+        "Ballotpedia (page fetched by curl; no voter ID statements on the page)",
+        "campaign site: not found; guessed domains warrendaniel.com, warrendanielnc.com and electwarrendaniel.com did not resolve",
+        "official site: ncleg.gov biography page has no own-words issue statements; ncsenate.gov did not resolve",
+        "blocked: https://ncnewsline.com/?s=%22Warren+Daniel%22+photo+ID (returned a 5 KB shell with no results)",
+        "web search: not performed, the shared search budget was used up; no news search on his name and the subject words was possible",
+        "not reviewed: committee and floor debate audio or video on SB 921 and SB 747 (no transcript reachable)",
+        "nothing on the subject: 2025 introduced bills as primary sponsor (SB 1084 Reduce Early Voting Period and SB 1087 Post-Election Audits are not ID bills)",
+        "not saved: SB 250 (2019) Remove Foreign Citizens from Voting Rolls, a bill he co-sponsored but did not lead; its filed text covers records of jury-duty excusals, so it was left out"
+      ],
+      "found": 6,
+      "at": "2026-10-23T00:13:34.771Z",
+      "by": "source-collector"
+    }
+  ]
+}

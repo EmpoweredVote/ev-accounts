@@ -1,0 +1,25 @@
+{
+  "politician_id": "c58d68a1-3d5e-464f-9497-c192ecd62a72",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (page: https://ballotpedia.org/North_Carolina_House_of_Representatives_District_65 , states Seth Woodall defeated incumbent A. Reece Pyrtle, Jr. in the 2026-03-03 primary for NC House District 65; he is not on the 2026 general-election ballot)",
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/H/787 (Representative A. Reece Pyrtle, Jr., District 65, Rockingham)",
+        "On the Record (0 appearances)",
+        "not reviewed: https://www.ncleg.gov/Members/IntroducedBills/H/787 (stopped after out-of-scope finding)",
+        "blocked: web search budget used up; no news or own-words search run"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:07:20.827Z",
+      "by": "source-collector"
+    }
+  ]
+}

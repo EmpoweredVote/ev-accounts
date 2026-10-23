@@ -1,0 +1,30 @@
+{
+  "politician_id": "78ae3786-e71e-4dc4-8b84-0ab28b555632",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "Massachusetts Legislature member page https://malegislature.gov/Legislators/Profile/A_G0 (confirms Senator Adam Gómez, Hampden, 194th General Court; sponsored-bill list reviewed, nothing on the subject; only election-adjacent item is S.367 on student representative voting rights, which is not about ID)",
+        "campaign site https://www.adamgomezma.com: nothing on the subject",
+        "not reviewed: https://www.masenate.gov/Senators/Adam_Gomez (fetched, no voter/election/ballot terms found)",
+        "blocked: https://ballotpedia.org/Adam_G%C3%B3mez (empty page returned)",
+        "not reviewed: https://www.sec.state.ma.us/divisions/elections/candidates-and-political-committees/candidate-listing.htm (empty page returned; 2026 ballot status not confirmed)",
+        "blocked: web search (session budget of 200 searches used up), so no news or own-words search was possible"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:31.164Z",
+      "by": "source-collector"
+    }
+  ]
+}

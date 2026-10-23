@@ -1,0 +1,83 @@
+{
+  "politician_id": "e784bdf3-bf62-41c7-bdae-0a62f9da2456",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "in scope: NC House District 91, on the 2026 general-election ballot on November 3, 2026 (https://ballotpedia.org/Kyle_Hall_(North_Carolina); https://www.ncleg.gov/Members/Biography/H/704)",
+        "On the Record (0 appearances for this politician id; name search with --names also returned 0 candidates)",
+        "Ballotpedia page: nothing on the subject (no voter ID or citizenship statements on the page)",
+        "NC General Assembly member page and introduced-bills list (https://www.ncleg.gov/Members/IntroducedBills/H/704): 60 bills listed; none about voter ID, mail-ballot ID or proof of citizenship (election-related titles were HB 31 Election Day holiday, HB 93 repeal of literacy test, HB 144 SBE chair; all off the subject). Co-sponsorships not reviewed.",
+        "not reviewed: https://www.kylehallnc.com/ (campaign site is script-rendered; issues page returned HTTP 400 to fetch and curl)",
+        "blocked: https://www.kylehallnc.com/issues.html",
+        "not reviewed: news search on name plus subject words (shared web search budget was used up, so no search ran)",
+        "not reviewed: ncleg.gov vote history pages beyond the two SB 824 votes already on file"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:12:54.523Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "politician_id": "e47f2082-6fcb-4961-9df5-c5fb94004b59",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Robyn_Kennedy (Massachusetts State Senate, 1st Worcester District; advanced from the 1 September 2026 primary; on the 3 November 2026 general ballot)",
+        "On the Record (0 appearances, 0 name-matched sources) - nothing on the subject",
+        "official legislature profile https://malegislature.gov/Legislators/Profile/RKK0 - reached; its sponsored list could not be read beyond the first 61 bills and showed no bill on the subject",
+        "malegislature.gov bill search (voter identification, voter ID, photo identification, citizenship, voting, elections, ballot, voter rolls) - the two photo-ID bills found, H.833 and S.510 (194th Court), show no sign of her as presenter or on the page text; the petitioner list could not be fully read, so her co-sponsorship is not confirmed either way",
+        "campaign site https://www.electrobynkennedy.com/ and /campaign-news - nothing on the subject",
+        "Ballotpedia page - no issue positions, no 2026 candidate survey completed - nothing on the subject",
+        "not reviewed: Facebook pages https://www.facebook.com/SenRobynKennedy and https://www.facebook.com/Robyn4Senate (login-walled)",
+        "not reviewed: Senate roll-call votes (no voter ID vote located)",
+        "news search not run: the shared web-search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:31:10.553Z",
+      "by": "source-collector"
+    }
+  ]
+}

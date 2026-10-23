@@ -1,0 +1,23 @@
+{
+  "politician_id": "6280a36a-9c26-4c22-a0d8-3ac06693fbfb",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-05-05 primary (Ballotpedia https://ballotpedia.org/James_Buck: a challenger defeated incumbent James Buck in the primary for Indiana State Senate District 21 on May 5, 2026)",
+        "On the Record (1 meeting, Senate Judiciary 2026-01-14, nothing on the subject; not reviewed further because out of scope)",
+        "Ballotpedia (fetched, confirms office Indiana State Senate District 21 and primary loss)",
+        "not reviewed: official site, legislature bill pages, news search (stopped because out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:35:15.478Z",
+      "by": "source-collector"
+    }
+  ]
+}

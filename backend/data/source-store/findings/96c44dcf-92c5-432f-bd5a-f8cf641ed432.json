@@ -1,0 +1,54 @@
+{
+  "politician_id": "96c44dcf-92c5-432f-bd5a-f8cf641ed432",
+  "findings": [
+    {
+      "id": "f7ad34126b630b00fc50fdd52767cd6e4648553bb8f4d6087b4f774657512471",
+      "kind": "own-words",
+      "url": "https://repwendydantchesser.substack.com/p/dant-chessers-digest-september-update-b3e",
+      "date": "2026-09-30",
+      "date_precision": "day",
+      "passage": "If you aren’t currently registered to vote, you can register on the same webpage under the “Register To Vote” box. You’ll need a valid driver’s license or state-issued ID card number and your current address.",
+      "note": "In her monthly newsletter she tells voters what is needed to register online: a driver's license or state ID number. She also tells voters to check their registration and lists who may vote, including being a U.S. citizen. No comment on photo ID at the polls or on new rules.",
+      "subjects": [
+        "ID number to register",
+        "voter-roll check",
+        "citizenship as a voting requirement (informational)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:45:50.293Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail/absentee ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "ID number to register"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Wendy_Dant_Chesser names her as Indiana House District 71 member, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances; no meeting files)",
+        "official caucus page https://www.indianahousedemocrats.org/members/wendy-dant-chesser (biography only, nothing on the subject)",
+        "official newsletter https://repwendydantchesser.substack.com (all 23 posts Oct 2025 to Sep 2026 checked by keyword; one post touches the subject)",
+        "Ballotpedia (Candidate Connection survey: nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_wendy_dant_chesser_1 (JavaScript site; API needs a key, 403), so bill sponsorships and votes not reviewed",
+        "not reviewed: campaign site (no URL found; web search budget used up)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:45:50.293Z",
+      "by": "source-collector"
+    }
+  ]
+}

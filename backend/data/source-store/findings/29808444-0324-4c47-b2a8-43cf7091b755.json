@@ -1,0 +1,32 @@
+{
+  "politician_id": "29808444-0324-4c47-b2a8-43cf7091b755",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/James_Bronke names him on the Nov 3, 2026 general-election ballot for U.S. House Michigan District 5",
+        "On the Record (0 appearances, 0 name matches)",
+        "campaign site https://www.bronkeforcongress.org/ (home, about-us, info, jim-bronke, my-opponents, ranked-choice-voting): nothing on the subject",
+        "Ballotpedia: nothing on the subject (page text mixes in another candidate's survey; not used)",
+        "blocked: https://bronkeforcongress.com/issues/ (Cloudflare 525 SSL error; site says old site was hacked)",
+        "not reviewed: congress.gov (not a legislator, no sponsorships expected)",
+        "not reviewed: ontheissues.org, Wikipedia (Wikipedia 404; no original sources to follow)",
+        "not reviewed: news search (web search budget used up; Wikipedia returned 404)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:08:53.971Z",
+      "by": "source-collector"
+    }
+  ]
+}

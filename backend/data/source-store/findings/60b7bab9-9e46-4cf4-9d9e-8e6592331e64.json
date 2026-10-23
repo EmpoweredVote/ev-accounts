@@ -1,0 +1,30 @@
+{
+  "politician_id": "60b7bab9-9e46-4cf4-9d9e-8e6592331e64",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: ncleg.gov Biography/H/813 names Representative Charles Smith, District 44; Ballotpedia District 44 page shows him unopposed in the cancelled March 3, 2026 primary and running in the November 3, 2026 general election (https://ballotpedia.org/Charles_Smith_(North_Carolina_House_of_Representatives,_District_44))",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "ncleg.gov introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/813 (reviewed all titles; no ID or citizenship bill; election-related titles HB 93 literacy test repeal, HB 691 Voter Protection and Reliance Act, HB 1240 early voting amendment are not about proof of identity or citizenship; HB 93 lists him as a co-sponsor, HB 691 and HB 1240 sponsor pages do not name him)",
+        "Ballotpedia member page (no page for him under the House title; the similarly named page is a different person)",
+        "nothing on the subject: Ballotpedia district page",
+        "not reviewed: ncleg.gov roll-call votes on voter ID bills (no search of vote pages done)",
+        "not reviewed: official and campaign site, news search (web search budget exhausted for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:49:24.004Z",
+      "by": "source-collector"
+    }
+  ]
+}

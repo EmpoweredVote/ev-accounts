@@ -1,0 +1,133 @@
+{
+  "politician_id": "3f90c6a1-21b8-4e28-a94f-db3b584af143",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "72b787c0ddf2f27827081d433889870ccd439e77ead52afcb4139ddfc758c8ac",
+      "kind": "record",
+      "url": "https://webservices.ncleg.gov/ViewBillDocument/2017/7648/0/S824-ATC-203-V-1",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "author",
+      "motion": "House floor amendment A6 (S824-ATC-203) offered by Representative Warren, second reading; failed 17-89",
+      "note": "Amendment text: a voter without photo ID who signs the affidavit would cast a provisional ballot that includes date of birth and the last four digits of the Social Security number or driver license number, and the county board would count it unless the declaration was false or nonsensical, the data was missing, or registration could not be confirmed. The vote page (https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1316) lists Warren among the 17 ayes.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot for a voter without ID",
+        "reasonable-impediment affidavit review",
+        "voter-roll check of identity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:42:47.808Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "af7415dd340aa7e2c1f26efb818b5e943ee976fcbc0fc71d5b05971232ecb47d",
+      "kind": "record",
+      "url": "https://webservices.ncleg.gov/ViewBillDocument/2017/7649/0/S824-ATC-204-V-2",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "author",
+      "motion": "House floor amendment A5 (S824-ATC-204) offered by Representative Warren, second reading; adopted 68-39",
+      "note": "Amendment text: colleges that issue student ID cards under the bill would hand students State Board of Elections material on voting ID rules, absentee, early and election-day voting, provisional ballots and the free voter photo ID card; the State Board would post the same information on its website. The vote page (https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2017/H/1315) lists the Warren amendment as adopted.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state voter ID card",
+        "voter education on ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:42:47.808Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter, affidavit and provisional ballot",
+        "voter education on ID rules",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "scope: sitting member, NC House District 76 (Rowan), per https://www.ncleg.gov/Members/Biography/H/630; Ballotpedia (https://ballotpedia.org/Harry_Warren) says he did not file for re-election in 2026, term ends January 1, 2027, so he is a sitting official but not on the 2026 ballot",
+        "On the Record (0 meetings)",
+        "NC General Assembly bill page S824 (2017 session) with House amendment documents and roll calls",
+        "Ballotpedia (no voter ID content found)",
+        "not reviewed: official and campaign websites (not fetched)",
+        "not reviewed: other NC voter ID, mail-ballot and citizenship bills for sponsorships",
+        "not reviewed: news search on name plus subject words (shared web search budget was used up)",
+        "nothing on the subject: own-words sources (none found)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:42:47.808Z",
+      "by": "source-collector"
+    }
+  ]
+}

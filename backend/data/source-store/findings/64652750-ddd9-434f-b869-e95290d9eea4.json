@@ -1,0 +1,29 @@
+{
+  "politician_id": "64652750-ddd9-434f-b869-e95290d9eea4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "identity confirmed: https://ballotpedia.org/Bradford_Barrett (Bradford 'Brad' Barrett, Indiana House District 56, in office since 2018, term ends November 4, 2026; page says he did not file to run for re-election in 2026, so he is a sitting member but not on the 2026 ballot)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "Ballotpedia: nothing on the subject (https://ballotpedia.org/Bradford_Barrett, https://ballotpedia.org/Indiana_House_of_Representatives_District_56); note https://ballotpedia.org/Brad_Barrett is a different person (Kansas House)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_bradford_barrett_1 (page needs JavaScript; bill list unreadable by fetch)",
+        "blocked: https://www.indianahouserepublicans.com/members/brad-barrett (returns an error page, no member content)",
+        "not reviewed: official and campaign sites and news search (web search budget for the session was used up; no direct URL found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:36:35.983Z",
+      "by": "source-collector"
+    }
+  ]
+}

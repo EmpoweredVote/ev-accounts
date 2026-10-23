@@ -1,0 +1,56 @@
+{
+  "politician_id": "4a0609a0-7073-4de1-9bf8-b3ecaebc9638",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Patricia_Duffy names her as incumbent for 5th Hampden District, won the 2026-09-01 primary, on the 2026-11-03 general ballot; malegislature.gov profile https://malegislature.gov/Legislators/Profile/PAD1 names her as the 5th Hampden representative in the current General Court",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "Ballotpedia: nothing on the subject",
+        "malegislature.gov sponsored bills https://malegislature.gov/Legislators/Profile/PAD1/Sponsored: nothing on the subject (only Holyoke charter petitions H.5332, H.5333, H.5364 about city elections and residency, not voter identification)",
+        "malegislature.gov amendment page https://malegislature.gov/Bills/192/H4359/Amendments: amendment 7 is titled Voter Identification, rejected on Roll Call 139; this is the vote already on file, not collected again",
+        "official site: malegislature.gov profile only; no separate campaign or official site found (patriciaduffy.com is a different person, a musician)",
+        "not reviewed: news search and own-words search (web search budget for the session was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:08:28.141Z",
+      "by": "source-collector"
+    }
+  ]
+}

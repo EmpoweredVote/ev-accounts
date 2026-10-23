@@ -1,0 +1,23 @@
+{
+  "politician_id": "e0f1ce07-dedf-4c60-9f8e-e410a421d9ae",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (FL CD 22 primary: Keiser 8,785 votes, third of seven; https://floridaelectionwatch.gov/ContestResultsByCounty/140221)",
+        "On the Record (0 appearances)",
+        "positive control: https://floridianpress.com/2026/06/belinda-keiser-announces-cd-22-run-joins-crowded-republican-field/ names her as a CD 22 candidate",
+        "not reviewed: Ballotpedia (page returned empty), campaign site, congress.gov (out of scope after primary loss)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:31:46.665Z",
+      "by": "source-collector"
+    }
+  ]
+}

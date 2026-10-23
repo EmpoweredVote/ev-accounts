@@ -1,0 +1,54 @@
+{
+  "politician_id": "11554908-83ca-4923-9252-49a0716bf21e",
+  "findings": [
+    {
+      "id": "cc8240f08212345cffc35f0c2a35e39416ba9a68ef77031cf1500e42d4058369",
+      "kind": "own-words",
+      "url": "https://sophiafornc.com/",
+      "date": "2026-09-06",
+      "date_precision": "month",
+      "passage": "House Bill 958 is absolutely full of ways to make it harder to vote.",
+      "note": "Campaign-site Instagram feed post (the date is the feed timestamp). She describes House Bill 958 as an election-law bill with early voting cuts, easier vote challenges, voter registration hurdles and less campaign finance transparency, notes the governor vetoed it, and asks supporters to press to uphold the veto. The post does not mention voter ID.",
+      "subjects": [
+        "election law changes in general",
+        "early voting periods",
+        "challenges to voters",
+        "voter registration hurdles"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:32:31.446Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election law changes in general"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "campaign site https://sophiafornc.com (home page and platform page fetched; nothing on voter ID besides the election-law post saved here)",
+        "Wikipedia https://en.wikipedia.org/wiki/Sophia_Chitlik (confirms NC Senate District 22, in office since 2025-01-01)",
+        "blocked: https://ballotpedia.org/Sophia_Chitlik (fetch returned no content)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/884 (HTTP 500)",
+        "not reviewed: ncleg.gov bill pages for sponsorships (member page unreachable)",
+        "not reviewed: news search (web search budget used up)",
+        "not reviewed: Instagram posts https://www.instagram.com/sophiafornc/"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:32:31.446Z",
+      "by": "source-collector"
+    }
+  ]
+}

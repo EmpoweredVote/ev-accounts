@@ -1,0 +1,54 @@
+{
+  "politician_id": "2d3def44-9916-469d-8f8f-b098ad896768",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Richard_Haggerty says he is on the Nov 3, 2026 general ballot for MA House 30th Middlesex after the Sept 1, 2026 primary; https://malegislature.gov/Legislators/Profile/RMH1 names him as 30th Middlesex representative",
+        "On the Record (0 appearances, extract-otr.mjs run with name)",
+        "malegislature.gov legislator profile and bill list (H.836 regional school district ballot access, H.837 'An Act relative to election ballots': title only, nothing on ID or citizenship, not saved)",
+        "Ballotpedia: nothing on the subject",
+        "campaign/official site: not reviewed: https://www.haggertyforstaterep.com and https://www.richardhaggerty.com returned no content",
+        "news search: not reviewed, session web search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:03:35.539Z",
+      "by": "source-collector"
+    }
+  ]
+}

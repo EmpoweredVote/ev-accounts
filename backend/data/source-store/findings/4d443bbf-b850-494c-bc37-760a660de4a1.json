@@ -1,0 +1,31 @@
+{
+  "politician_id": "4d443bbf-b850-494c-bc37-760a660de4a1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "early voting period"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/S/416 (Senator W. Ted Alexander, District 44, Cleveland, Gaston, Lincoln; 2025-2026 session)",
+        "2026 ballot status not confirmed: Ballotpedia page returned no readable text; the 2026 NC Senate election page lists him as incumbent but primary result was not verified",
+        "On the Record (0 appearances)",
+        "NC legislature introduced bills page https://www.ncleg.gov/Members/IntroducedBills/S/416 (2025 session): no voter ID, proof-of-citizenship or mail-ballot ID bill; only an early-voting bill (Reduce Early Voting Period), which is not on this subject",
+        "NC legislature votes page https://www.ncleg.gov/Members/Votes/S/416: nothing on the subject in the rows reviewed",
+        "not reviewed: official Senate site and campaign site (no web search budget left to locate them)",
+        "blocked: https://ballotpedia.org/Ted_Alexander (empty content)",
+        "not searched: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:44:02.355Z",
+      "by": "source-collector"
+    }
+  ]
+}

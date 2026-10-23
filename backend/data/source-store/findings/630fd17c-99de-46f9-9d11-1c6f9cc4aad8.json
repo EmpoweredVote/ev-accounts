@@ -1,0 +1,35 @@
+{
+  "politician_id": "630fd17c-99de-46f9-9d11-1c6f9cc4aad8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot for IL-4, confirmed by https://news.ballotpedia.org/2026/07/31/after-two-independents-removed-from-the-ballot-four-candidates-remain-in-general-election-for-illinois-4th-congressional-district/ and https://fox32chicago.com/news/election-2026-chuy-garcia-seat-candidates",
+        "On the Record (0 appearances; extract-otr returned 0 sources)",
+        "campaign site https://pattygarciaforcongress.com/ (placeholder page, 'Launching Soon', nothing on the subject)",
+        "https://pattygarcia.com/ (redirects to a lander page, nothing on the subject)",
+        "Ballotpedia candidate page https://ballotpedia.org/Patty_Garcia_(Illinois) (404, no page) ; Ballotpedia news race overview (nothing on the subject)",
+        "congress.gov: not applicable, she has never held federal office (no sponsorships or votes)",
+        "news: Fox32 debate story (nothing on the subject); Sun-Times 2026-07-21 (immigration and ballot-challenge talk only, nothing on the subject); Sun-Times 2026-10-01 race guide (the voter ID line there is about another candidate, not her)",
+        "blocked: https://news.wttw.com/2025/11/20/amid-controversy-sparked-chuy-garc-s-resignation-patty-garcia-vows-stand-her-own (403)",
+        "not reviewed: https://www.pbs.org/video/congressional-candidate-patty-garcia-on-her-vision-for-the-office-vbzayf (video)",
+        "not reviewed: https://omny.fm/shows/chewsviews/wcpt-820-candidate-interview-patty-garcia-1 (audio interview)",
+        "https://www.boldpac.com/candidates/patty-garcia (nothing on the subject)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:41:26.056Z",
+      "by": "source-collector"
+    }
+  ]
+}

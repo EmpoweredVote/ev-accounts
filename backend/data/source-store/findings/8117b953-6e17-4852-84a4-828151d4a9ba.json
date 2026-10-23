@@ -1,0 +1,26 @@
+{
+  "politician_id": "8117b953-6e17-4852-84a4-828151d4a9ba",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: did not make the 2026 ballot (Ballotpedia, 2026 Louisiana U.S. House elections page lists Joshua Morott under 'Did not make the ballot'; page fetched by curl on 2026-10-22; no primary date given on the page): https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Louisiana,_2026",
+        "On the Record (0 appearances)",
+        "Ballotpedia personal page: no page exists for Josh Morott (https://ballotpedia.org/Josh_Morott)",
+        "campaign site: not found (guessed joshmorott.com, joshforlouisiana.com, morottforcongress.com; none resolved)",
+        "web search: not run, the shared search budget was used up",
+        "congress.gov: not reviewed, not a legislator"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:14:32.313Z",
+      "by": "source-collector"
+    }
+  ]
+}

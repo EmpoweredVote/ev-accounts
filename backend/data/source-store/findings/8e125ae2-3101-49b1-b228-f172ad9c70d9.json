@@ -1,0 +1,29 @@
+{
+  "politician_id": "8e125ae2-3101-49b1-b228-f172ad9c70d9",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "https://malegislature.gov/Legislators/Profile/EAR1 (confirms Rep. Estela A. Reyes, 4th Essex district, 194th General Court; sponsored/cosponsored list shows nothing on the subject)",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/Estela_Reyes (fetch returned no usable page text)",
+        "news search: not reviewed (web search budget exhausted)",
+        "campaign site: not reviewed (not located)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:15:09.691Z",
+      "by": "source-collector"
+    }
+  ]
+}

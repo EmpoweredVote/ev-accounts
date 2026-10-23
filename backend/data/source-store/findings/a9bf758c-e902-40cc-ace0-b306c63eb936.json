@@ -1,0 +1,33 @@
+{
+  "politician_id": "a9bf758c-e902-40cc-ace0-b306c63eb936",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Martin_Carbaugh names him as Indiana House District 81 incumbent on the Nov 3, 2026 general election ballot, advanced from the May 5, 2026 primary",
+        "On the Record (0 appearances for this politician id)",
+        "official House caucus member page https://indianahouserepublicans.com/members/general/martin-carbaugh/ (press list reviewed, nothing on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "Wikipedia https://en.wikipedia.org/wiki/Martin_Carbaugh (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_martin_carbaugh_1 (page loads only a script shell; bill sponsorship list not readable)",
+        "not reviewed: Indiana General Assembly bill pages for sponsorships and floor votes on the subject (not readable without script rendering or API key)",
+        "blocked: https://www.martincarbaugh.com (no connection)",
+        "blocked: news search (session web search limit reached)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:46:58.618Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "politician_id": "93624490-3233-4b71-8ad4-f57416a8fddd",
+  "findings": [
+    {
+      "id": "a60b5c054d3d4ffaf60e01044d57d1b90f6701374e3ea5b68a894700aeba0dc0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/448",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate roll call 693; 28 aye, 13 no)",
+      "note": "The senator's recorded vote on second reading was Aye. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds G.S. 163-83, under which a county board processes a voter registration only if it affirmatively says the applicant is a US citizen; if the answer is blank, the board sends a notice and the applicant must return a statement under penalty of perjury within 30 days. It also requires the State Board of Elections to create a process to remove voters flagged as possible non-citizens by a federal database, and requires weekly removal of deceased voters. The bill does not add a photo-ID rule. The governor vetoed it on 2026-08-17 (bill page shows 'Vetoed 08/17/2026'). He is not a listed sponsor.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voter-roll removal",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:02:56.382Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID / reasonable impediment",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Senator Bob Brinson, NC Senate District 3 (https://www.ncleg.gov/Members/Biography/S/448); Ballotpedia says he is on the Nov 3, 2026 general-election ballot, primary canceled (https://ballotpedia.org/Bob_Brinson)",
+        "On the Record (0 appearances, 0 sources)",
+        "NC General Assembly member vote record (https://www.ncleg.gov/Members/Votes/S/448)",
+        "NC General Assembly introduced/sponsored bills list (https://www.ncleg.gov/Members/IntroducedBills/S/448): only election items are S801, S818, S1077, S1084, none on proof of identity or citizenship",
+        "NC General Assembly bill page and ratified text of HB 958 (https://www.ncleg.gov/BillLookUp/2025/H958)",
+        "Ballotpedia (https://ballotpedia.org/Bob_Brinson): no Candidate Connection survey answers, nothing on the subject",
+        "official site: only the legislature biography page found; no own senate or campaign site located (bobbrinson.com belongs to a different person)",
+        "news search: not done, blocked: the shared web-search budget was used up",
+        "own words (interviews, forums, posts): nothing found; not searched by web search (budget used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-23T00:02:56.382Z",
+      "by": "source-collector"
+    }
+  ]
+}

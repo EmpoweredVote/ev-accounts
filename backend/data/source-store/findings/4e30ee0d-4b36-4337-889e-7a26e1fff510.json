@@ -1,0 +1,36 @@
+{
+  "politician_id": "4e30ee0d-4b36-4337-889e-7a26e1fff510",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: confirmed by https://ballotpedia.org/Chris_Jeter (Indiana House District 88, advanced from the May 5, 2026 primary, on the November 3, 2026 general-election ballot)",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "campaign site https://chrisjeter.com/ (home, bio, updates list, /vote/ page, and site search for voter ID, photo ID, citizenship, election integrity, absentee, SAVE Act, voter): nothing on the subject",
+        "https://chrisjeter.com/vote/ : voter deadlines and county offices only, nothing on ID",
+        "https://chrisjeter.com/2020/05/house-candidate-feels-called-to-serve-again/ : nothing on the subject",
+        "official House caucus page https://www.indianahouserepublicans.com/members/general/chris-jeter/ : nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Chris_Jeter : nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_chris_jeter_1 (page loads only a script shell, no bill list readable)",
+        "blocked: https://api.iga.in.gov/2026/legislators (403, needs API key)",
+        "blocked: https://legiscan.com/IN/legislators (403)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up, so no news search ran)",
+        "not reviewed: legislature bill pages for sponsorships and roll-call votes on election-ID bills (could not be read, see blocked entries)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:34:22.374Z",
+      "by": "source-collector"
+    }
+  ]
+}

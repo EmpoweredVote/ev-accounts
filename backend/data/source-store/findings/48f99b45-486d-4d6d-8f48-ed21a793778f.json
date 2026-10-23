@@ -1,0 +1,31 @@
+{
+  "politician_id": "48f99b45-486d-4d6d-8f48-ed21a793778f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Timothy_Wesco (fetched with curl) says he is an Indiana House of Representatives District 21 member, advanced from the May 5, 2026 primary, and is on the November 3, 2026 general-election ballot",
+        "On the Record (0 appearances; nothing on the subject)",
+        "Ballotpedia: no voter ID, citizenship or election-integrity text on the page; nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_timothy_wesco_1 (page needs JavaScript; bill sponsorships not readable)",
+        "not reviewed: Indiana General Assembly bill search for sponsorships on the subject (no readable page reached)",
+        "blocked: https://indianahouserepublicans.com/members/wesco/ (404; member page URL not found, house caucus search page gave no Wesco results)",
+        "not reviewed: news search on his name plus the subject words (the session web search budget was used up)",
+        "not reviewed: campaign site, questionnaires, debate or forum answers (not located without search)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:31:28.223Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "politician_id": "d30ac1dc-c292-4397-8708-8e3432a58e69",
+  "findings": [
+    {
+      "id": "441b5c17143655ebf6aebdeff282255471d79b46f611b48647d774f69caf9504",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/439",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 9 To Concur HCS and H Amends (SB 747, Elections Law Changes)",
+      "note": "Senate vote 27 to 18 to concur in the House changes to SB 747, Elections Law Changes. Applewhite is listed among the Noes. The bill page lists subjects including elections, voter registration, ballots and aliens; the specific ID provisions were not checked.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:35.834Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b94e7c77079442872a0c34abaf8e4793db543694c72477bd29d60c5084493e49",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/S/482",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Motion 11 Veto Override (SB 747, Elections Law Changes)",
+      "note": "Senate vote 30 to 19 on the motion to override the Governor's veto of SB 747, Elections Law Changes. Applewhite is listed among the Noes. The specific ID provisions were not checked.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:35.834Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter process",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws in general",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Val_Applewhite (NC Senate District 19, on the Nov 3, 2026 general-election ballot)",
+        "On the Record (0 meetings, 0 appearances)",
+        "Ballotpedia (no own-words on the subject; no Candidate Connection survey)",
+        "ncleg.gov bill page and two Senate roll calls for SB 747 (2023)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/484 (HTTP 500, member page and sponsored-bill list not reached)",
+        "not reviewed: official Senate site and campaign site issue pages (not reached; web search budget used up, so no news search was run)",
+        "not reviewed: other 2023-2025 election bills (for example 2025 election-law bills) for sponsorships and votes",
+        "nothing on the subject: own words found"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:10:35.834Z",
+      "by": "source-collector"
+    }
+  ]
+}

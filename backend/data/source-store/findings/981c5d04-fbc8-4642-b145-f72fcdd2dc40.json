@@ -1,0 +1,85 @@
+{
+  "politician_id": "981c5d04-fbc8-4642-b145-f72fcdd2dc40",
+  "findings": [
+    {
+      "id": "07921e81dbf3121a8cb6c12178f38cdde55541812bb8dff4e8bbed24f68b0b48",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-06",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "concur in House committee substitute (Motion 9 To Concur)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, concur in House committee substitute (Motion 9 To Concur), 2018-12-06: yea (tally 25–7); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c765281624eba034064dc2920b2d55a63acb3cbe9cb7b9dac0d48c3712e9023",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: yea (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Vickie_Sawyer (confirms State Senate District 37, on the Nov 3, 2026 general-election ballot; nothing on the subject)",
+        "ncleg.gov biography https://www.ncleg.gov/Members/Biography/S/405 (identity confirmed; nothing on the subject)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/S/405 (2025-26 list reviewed; no bill on ID or proof of citizenship; election-related titles only: SB 14 literacy test repeal, SB 1084 Reduce Early Voting Period; neither is on the subject)",
+        "ncleg.gov votes page https://www.ncleg.gov/Members/Votes/S/405 (recent votes only; nothing on the subject)",
+        "not reviewed: https://www.sawyernc.com (campaign site is script-rendered; no readable text)",
+        "not reviewed: official Senate press-release list and news search (web search budget exhausted)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/783 (HTTP 500, wrong ID guess)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:00:50.749Z",
+      "by": "source-collector"
+    }
+  ]
+}

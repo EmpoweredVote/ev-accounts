@@ -1,0 +1,59 @@
+{
+  "politician_id": "2268d89f-1c59-4aad-9384-306522605ee6",
+  "findings": [
+    {
+      "id": "6c765281624eba034064dc2920b2d55a63acb3cbe9cb7b9dac0d48c3712e9023",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: yea (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll laws"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/Biography/S/399 (Senator Danny Earl Britt, Jr., District 24, current session)",
+        "2026 ballot status: not confirmed from an official page (only a Wikipedia lead listing him as incumbent in the 2026 District 24 race); no primary loss found",
+        "On the Record (0 appearances for this politician id)",
+        "official site / campaign site: not found by direct fetch; no web search available (search budget used up)",
+        "NC legislature introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/S/399 (2025-26 session): nothing on the subject (nearest titles are early-voting bills SB 994 and SB 1084, and SB 14 on repeal of the literacy test, none about proof of identity or citizenship)",
+        "NC legislature vote record https://www.ncleg.gov/Members/Votes/S/399: election bills HB 3, HB 58, HB 1035 are local-election acts with nothing on the subject; HB 958 (Election Law Changes, 2026) votes were all excused absences, which are not a position",
+        "blocked: https://ballotpedia.org/Danny_Britt (404, no page under that name)",
+        "nothing on the subject: Wikipedia page (lead only, not cited)",
+        "not reviewed: 2023-24 session votes and earlier bills (not fetched)",
+        "not reviewed: news search on name plus subject words (no search budget)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:37:28.365Z",
+      "by": "source-collector"
+    }
+  ]
+}

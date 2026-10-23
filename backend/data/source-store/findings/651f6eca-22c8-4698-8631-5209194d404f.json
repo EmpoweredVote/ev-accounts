@@ -1,0 +1,84 @@
+{
+  "politician_id": "651f6eca-22c8-4698-8631-5209194d404f",
+  "findings": [
+    {
+      "id": "07921e81dbf3121a8cb6c12178f38cdde55541812bb8dff4e8bbed24f68b0b48",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-06",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "concur in House committee substitute (Motion 9 To Concur)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, concur in House committee substitute (Motion 9 To Concur), 2018-12-06: yea (tally 25–7); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c765281624eba034064dc2920b2d55a63acb3cbe9cb7b9dac0d48c3712e9023",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: yea (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks, non-citizen voting, election integrity"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Brent_Jackson_(North_Carolina_State_Senator) names him as NC Senate District 9 incumbent, advanced from the March 3, 2026 primary, on the November 3, 2026 general-election ballot",
+        "On the Record (0 appearances; extract-otr.mjs, id and name search)",
+        "campaign site https://brentjacksonforsenate.com (home page fetched; issues listed are education, agriculture, jobs, coronavirus, healthcare, 2nd Amendment; nothing on the subject)",
+        "official page https://www.ncleg.gov/Members/Biography/S/281 (confirms Senate District 9; nothing on the subject)",
+        "not reviewed: https://www.ncleg.gov/Members/IntroducedBills/S/281 (fetched, but the bill list loads by script and was empty in the page text; sponsorships on the subject could not be checked)",
+        "blocked: https://www.ncleg.gov/Legislation/Bills/BillSearch (HTTP 404 on the sponsor-search URL tried)",
+        "Ballotpedia (page has no voter ID or election integrity content; nothing on the subject)",
+        "blocked: web search (the shared 200-search budget was used up; no news search possible)",
+        "ontheissues.org, Wikipedia: not used (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:49:17.836Z",
+      "by": "source-collector"
+    }
+  ]
+}

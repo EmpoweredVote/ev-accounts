@@ -1,0 +1,33 @@
+{
+  "politician_id": "a73e7a2a-48b0-4636-8fa4-5324ede65833",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID voting ban",
+        "proof of citizenship",
+        "election integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "in scope: https://www.in.gov/gov/about-the-governor/ header reads 'Indiana Governor Mike Braun' (sitting governor, not on the 2026 ballot)",
+        "On the Record (0 appearances)",
+        "governor site in.gov/gov newsroom pages: nothing on the subject (lists load by script, no items visible)",
+        "blocked: https://www.mikebraun.com/ (socket closed)",
+        "Ballotpedia: page fetch returned the wrong person or a 404, nothing on the subject",
+        "blocked: https://www.indystar.com/story/news/politics/2020/12/03/indiana-senator-criticizes-media-failing-investigate-voter-fraud/3796414001/ (fetch refused, then HTTP 402)",
+        "blocked: https://indianacapitalchronicle.com/2025/04/08/senate-sends-vote-center-study-student-id-voting-ban-income-tax-cuts-to-governor/ (HTTP 403)",
+        "blocked: https://indianacapitalchronicle.com/2025/05/08/indiana-elections-chief-defends-voting-ban-on-unsecured-student-ids-after-legal-challenge/ (HTTP 403)",
+        "not reviewed: https://iga.in.gov/legislative/2025/bills/house/1264/details (page is script-driven, no bill text returned)",
+        "blocked: https://www.congress.gov (HTTP 403)",
+        "web search: not performed, session search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:49:08.301Z",
+      "by": "source-collector"
+    }
+  ]
+}

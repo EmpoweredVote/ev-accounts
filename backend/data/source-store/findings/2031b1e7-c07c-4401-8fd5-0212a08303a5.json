@@ -1,0 +1,33 @@
+{
+  "politician_id": "2031b1e7-c07c-4401-8fd5-0212a08303a5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "identity confirmed: https://theballotbrief.com/candidate/whitfield-harrington-jr-il lists him on the Illinois certified candidate list for U.S. Senate in 2026 (the race is U.S. Senate, not the House); still in scope",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://whit4ilsenate.com/ (fetched; single-page app; no text on voter ID, citizenship, election integrity or mail ballots; nothing on the subject)",
+        "The Ballot Brief profile (nothing on the subject)",
+        "blocked: https://ballotpedia.org/Whitfield_Harrington_Jr. (fetch returned empty; no page found)",
+        "blocked: https://ballotpedia.org/Whitfield_Harrington (fetch returned empty)",
+        "congress.gov: not applicable, never held federal office, no sponsorships",
+        "web search on name plus voter ID / election integrity / forum / questionnaire (nothing about this person)",
+        "not reviewed: ontheissues.org, vote411 (no page located)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:38:00.340Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "politician_id": "a8ef5f09-5bd2-4acb-9e83-549466878901",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-05-05 primary (Ballotpedia https://ballotpedia.org/Craig_Haggard, fetched with curl: he is the Indiana House District 57 member, is not running for re-election to that seat, and lost the Indiana 4th Congressional District primary on May 5, 2026; he is not on the 2026 general-election ballot)",
+        "On the Record (0 appearances)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_craig_haggard_1 (page returned only a heading)",
+        "not reviewed: official site, campaign site, news search (stopped after lost primary; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:45:44.257Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "politician_id": "4f7eefdf-d9ba-405e-ba9f-4bff28113da6",
+  "findings": [
+    {
+      "id": "d197aed057402ed5f9d18c401babfbc0f58e6c33fbcc8706ae659b1d6427c029",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/758",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (66 ayes, 47 noes)",
+      "note": "Voted yes on second reading of the omnibus election bill. The bill lengthens the time to 12:00 P.M. on the fifth business day after an election for a voter without photo ID to bring ID for a provisional ballot, and for a mail ballot with a missing ID copy to be fixed. It also treats certain extended Class C drivers licenses as valid photo ID for voting through 2027, and changes the citizenship question at drivers license voter registration.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "mail-ballot ID cure",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:46:32.617Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "452d1a9dea0bf2469bff329eefdd0fe7e1c13d81474973208ec8ccef17814950",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, motion M11 to concur in the Senate committee substitute (62 ayes, 47 noes)",
+      "note": "Voted yes to concur in the Senate version of the omnibus election bill with the photo ID and ID cure provisions described above. The bill page shows the Governor vetoed it on 08/17/2026.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "mail-ballot ID cure",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:46:32.617Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5d5b7726ab65d127bdb0fbb95b2ebda095ebe7b82fc546b814dfafd840d0f90f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/756",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Amendment A2 (Blackwell), Second Reading (69 ayes, 44 noes)",
+      "note": "Voted yes on a floor amendment to the omnibus election bill. The transcript does not describe what the amendment does, so its content was not reviewed.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:46:32.617Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot without photo ID",
+        "ID with absentee ballot",
+        "proof of citizenship to register",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Steve_Tyson names him as the sitting member for NC House District 3, on the 2026 general-election ballot (primary was canceled)",
+        "On the Record (0 meetings; extract-otr.mjs returned 0 appearances)",
+        "campaign site https://www.tysonfornchouse.com (issues page, about page, news feed): nothing on the subject",
+        "Ballotpedia: nothing on the subject (no 2022, 2024 or 2026 survey; 2020 survey has no election topics)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/774, introduced-bills and votes lists: reviewed, one relevant bill found through the bill page (HB 958)",
+        "ncleg.gov HB 958 bill page and roll-call transcripts H/755, H/756, H/757, H/758, H/801 reviewed",
+        "not reviewed: other 2021-2024 election bills (SB 747 2023 etc.) vote-by-vote; no web search run because the shared search budget was used up",
+        "news search: not run (search budget exhausted)",
+        "not reviewed: Tyson floor or committee speeches on HB 958 (no transcript located)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:46:32.617Z",
+      "by": "source-collector"
+    }
+  ]
+}

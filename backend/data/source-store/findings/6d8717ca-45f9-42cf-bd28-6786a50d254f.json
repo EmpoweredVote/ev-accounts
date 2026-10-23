@@ -1,0 +1,28 @@
+{
+  "politician_id": "6d8717ca-45f9-42cf-bd28-6786a50d254f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JBL0 (Senator, Second Essex, sitting)",
+        "On the Record (0 appearances; nothing on the subject)",
+        "malegislature.gov profile and bills pages (nothing on the subject; only Salem ranked choice H.5584, Danvers recall H.5539, Salem election commissioners H.3907)",
+        "Wikipedia https://en.wikipedia.org/wiki/Joan_Lovely (no subject content)",
+        "Ballotpedia: blocked/empty: https://ballotpedia.org/Joan_Lovely (fetch returned no text)",
+        "not reviewed: official Senate site, campaign site, news search, roll-call votes (web search budget exhausted; no direct fetch of those pages made)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:11:09.492Z",
+      "by": "source-collector"
+    }
+  ]
+}

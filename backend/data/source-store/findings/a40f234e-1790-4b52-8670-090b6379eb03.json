@@ -1,0 +1,23 @@
+{
+  "politician_id": "a40f234e-1790-4b52-8670-090b6379eb03",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: withdrew before the 2026-09-01 primary (exact date not given); Ballotpedia lists him under withdrawn candidates for Massachusetts State Senate 5th Middlesex District and says he did not appear on the primary ballot: https://ballotpedia.org/Jason_Lewis_(Massachusetts)",
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JML0 (Senator Jason M. Lewis, Fifth Middlesex)",
+        "On the Record (0 appearances)",
+        "not reviewed: other places, because he is out of scope and the shared web search budget was used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:20:51.818Z",
+      "by": "source-collector"
+    }
+  ]
+}

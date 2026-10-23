@@ -1,0 +1,23 @@
+{
+  "politician_id": "7b655406-115d-4545-830f-7aa29c886d1a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: withdrew (date not stated on page); Ballotpedia https://ballotpedia.org/Joshua_Cain says: \"Joshua Cain (independent) ran for election to the U.S. Senate to represent Texas. He will not appear on the ballot for the general election on November 3, 2026.\" and lists him under \"Withdrawn or disqualified candidates\"",
+        "On the Record (0 appearances)",
+        "Ballotpedia https://ballotpedia.org/Joshua_Cain (curl, fetched)",
+        "not reviewed: campaign site, congress.gov, news search (stopped after withdrawal; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:53:29.368Z",
+      "by": "source-collector"
+    }
+  ]
+}

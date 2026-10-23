@@ -1,0 +1,269 @@
+{
+  "politician_id": "ceb5b1cb-144a-44b9-945f-e40225264428",
+  "findings": [
+    {
+      "id": "a562d2b8fc82eea3815cd8a49c351fe239093c246da07b0a5ffee5bdd348591f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2019/H646",
+      "date": "2019-06-03",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-646-2019",
+      "act": "sponsor",
+      "motion": "Sponsor listing, HB 646 (SL 2019-22), ID approval for student and employee cards",
+      "note": "The bill page lists Hawkins among the sponsors (Lewis; Hawkins; Hardister; Russell (Primary)). The act, ratified as SL 2019-22, sets how student and employee ID cards are approved for voting identification and gives an added approval window for the 2020 elections. Date is the ratification date; the filing date was not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "student and employee ID cards accepted for voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51c41480b9a0b587f9590c51639277b5e012a75c37c248128b51fa6ab118c164",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2019/H/742",
+      "date": "2019-04-11",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-646-2019",
+      "act": "yea",
+      "motion": "HB 646 Identification Approval/Flexibility Municipal One-Stop, Second Reading (vote 100-9)",
+      "note": "Member vote history shows Aye on second reading of HB 646, which clarifies approval of student and employee ID cards for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "student and employee ID cards accepted for voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "26859facc7d0a486855830d00221ef70164dc098cb48d550bfe87aba06beeb51",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2019/H/742",
+      "date": "2019-05-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-646-2019",
+      "act": "yea",
+      "motion": "HB 646 M11 Concur (vote 109-6)",
+      "note": "Member vote history shows Aye on the concurrence vote for HB 646 on student and employee ID cards for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "student and employee ID cards accepted for voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b5f69f23be7aa3a7cc19454410e1133c4834b15082bb564577ebf760563a2ec1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2021/H/742",
+      "date": "2021-11-18",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-259-2021",
+      "act": "nay",
+      "motion": "HB 259 Election Integrity Act, Second Reading (vote 61-48)",
+      "note": "Member vote history shows No on second reading. The committee substitute codifies a citizenship requirement to vote and sets up checks of voter registration and citizenship status against jury-excusal and federal records.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks against citizenship records"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32826e06613c508e7f1816ffaa4e3d008423b2d9050826045dc0ab5a1442f087",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/742",
+      "date": "2023-08-16",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "SB 747 Elections Law Changes, Second Reading (vote 69-47)",
+      "note": "Member vote history shows No on second reading. The act (SL 2023-140) includes same-day registration that requires photo identification plus a proof-of-residence document, and keeps photo ID as a ground to challenge a voter at the polls. The history also shows Aye on many floor amendments to this bill that failed; their contents were not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "same-day registration ID requirement",
+        "voter challenges at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e511f12d6ef6a9571c37f63f67164b67e400bef2ec9117aff67d911325f62da9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/742",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "SB 747 Elections Law Changes, Veto Override (vote 72-44)",
+      "note": "Member vote history shows No on the vote to override the veto of SB 747.",
+      "subjects": [
+        "voter ID at the polls",
+        "same-day registration ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "32d7c8c26641d975510f29edbb6217f08272a908521c9c48889e1e7999636b1b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/742",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1074-2023",
+      "act": "nay",
+      "motion": "HB 1074 Constitutional Amendment/Citizens-Only Voting, Second Reading (vote 104-12)",
+      "note": "Member vote history shows No on second reading of the proposed constitutional amendment that only a citizen of the United States may vote. The same history shows Aye on an amendment (A1 Harrison) that failed 46-70. The history shows a different entry on third reading (next record).",
+      "subjects": [
+        "non-citizen voting",
+        "citizens-only voting amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b686a456c3024ad63246871c201fdcde22a008fd69432cf571648e62d9be79d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2023/H/742",
+      "date": "2024-06-27",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1074-2023",
+      "act": "yea",
+      "motion": "HB 1074 Constitutional Amendment/Citizens-Only Voting, Third Reading (vote 99-12)",
+      "note": "Member vote history shows Aye on third reading of HB 1074 (SL 2024-18), the proposed constitutional amendment limiting voting to citizens.",
+      "subjects": [
+        "non-citizen voting",
+        "citizens-only voting amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7de2c60b5241260570131c6705b29f6d5eafae86b788ae5a48c5a99665e5166a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/742",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (vote 66-47)",
+      "note": "Member vote history shows No on second reading. The ratified bill requires a voter registration application to state that the applicant is a citizen, with a notice and a statement under penalty of perjury if the answer is blank, and sets monthly sharing of motor-vehicle records for voter-roll maintenance.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cfd9619a4dd44519d9b62f9ba1b2f279829e118157f03aa9cec7ad5b3f743c0e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/742",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (vote 62-47)",
+      "note": "Member vote history shows No on the concurrence vote; the bill page shows a Governor's veto of House Bill 958.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:11:39.773Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student and employee ID cards for voting",
+        "no-ID voter / provisional ballot / affidavit",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote / SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: confirmed on Ballotpedia (https://ballotpedia.org/Zack_Hawkins): NC House District 31, on the Nov 3 2026 general ballot; primary was canceled",
+        "On the Record (0 meetings; extract-otr found no appearances)",
+        "campaign site zackhawkinsnc.com (home, issues, about, site search): nothing on the subject",
+        "Ballotpedia: nothing on the subject (no candidate survey completed)",
+        "NC General Assembly member vote history 2019, 2021, 2023, 2025 sessions and bill pages/texts for HB 646, HB 259, SB 747, HB 1074, HB 958 (reviewed)",
+        "not reviewed: official NCGA member biography page https://www.ncleg.gov/Members/Biography/H/742 (only linked; no press releases read)",
+        "not reviewed: X, Facebook, Instagram, TikTok posts (social pages not fetched)",
+        "not reviewed: news and own-words search: WebSearch budget was used up, so no news search was run; no own-words passages collected",
+        "blocked: first ncleg.gov biography fetch via WebFetch returned HTTP 500; vote-history pages fetched by curl instead",
+        "ontheissues.org, vote411, Wikipedia not used (lead-only sources)"
+      ],
+      "found": 10,
+      "at": "2026-10-23T00:11:39.773Z",
+      "by": "source-collector"
+    }
+  ]
+}

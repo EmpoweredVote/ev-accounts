@@ -1,0 +1,151 @@
+{
+  "politician_id": "17c741bd-42b9-4d9a-8cb0-c4d4505b5df1",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7cb44b532e59c2d22018face06be025deb7e275462ac971ef59305fec76249d2",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/350",
+      "date": "2013-04-24",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "yea",
+      "motion": "HB 589 Voter Information Verification Act, House third reading (roll call 350, passed 81-36)",
+      "note": "Arp is listed among the ayes on the House third reading of the Voter Information Verification Act, which adds photo ID requirements for voting.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:35:03.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "91ffb704c2e437f7858b8307814aa335f9c4f053b9131634199565156e489f7b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "yea",
+      "motion": "HB 589 VIVA/Election Reform, House vote to concur with the Senate committee substitute (roll call 1337, passed 73-41)",
+      "note": "Arp is listed among the ayes when the House concurred in the Senate version of the voter ID and election changes bill.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:35:03.415Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fec1954a0a51bea05090e6ffd1a30d7c92093290415e0d289bd2c6ee4206e29c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2013/H589",
+      "date": "2013-04-24",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "sponsor",
+      "motion": "HB 589 Voter Information Verification Act, additional sponsor",
+      "note": "The bill page lists Arp among the additional sponsors; Warren, Murry, T. Moore and Samuelson are the primary sponsors. The date given is that of the first House vote, since the filing date was not read from the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:35:03.415Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of identity to vote",
+        "election integrity law in general",
+        "mail-ballot ID",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "in scope: NC House District 69, on the Nov 3 2026 general ballot (primary was canceled); page: https://ballotpedia.org/Dean_Arp",
+        "On the Record (0 appearances)",
+        "campaign site https://www.deanarp.com (home page only; nothing on the subject)",
+        "ncleg.gov bill pages: 2013 H589 (votes and sponsor list saved), 2025 H805 (not on the subject)",
+        "Ballotpedia https://ballotpedia.org/Dean_Arp (nothing on the subject)",
+        "blocked: WebSearch budget used up, so no news search for his own words and no search of his official or campaign site issue pages",
+        "not reviewed: https://www.ncleg.gov/Members/Biography/H/640 (page loaded but no subject content read)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:35:03.415Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "politician_id": "a5cfcdfd-b283-45d4-9219-10f96d9120c3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote"
+      ],
+      "places": [
+        "status: lost the August 4, 2026 primary (https://ballotpedia.org/Matthew_DenOtter: lost a party primary on August 4, 2026, MI-01, 12.9% of the vote)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched; campaign site text quoted there has nothing on the subject)",
+        "blocked: https://www.denotterforcongress.com (returned 114 bytes, no content)",
+        "not reviewed: web news search (search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:50:19.399Z",
+      "by": "source-collector"
+    }
+  ]
+}

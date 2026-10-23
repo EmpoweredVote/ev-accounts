@@ -1,0 +1,24 @@
+{
+  "politician_id": "76e38c6e-12b2-4286-9bfe-22ea0b05c947",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "places": [
+        "status: not in scope - Doug Burgum is U.S. Secretary of the Interior (appointed, confirmed January 30, 2025, term ends 2029), not a member of Congress and not a 2026 candidate; page: https://ballotpedia.org/Doug_Burgum",
+        "On the Record (0 meetings)",
+        "Wikipedia (lead only): https://en.wikipedia.org/wiki/Doug_Burgum",
+        "blocked: https://www.doi.gov/person/doug-burgum (404)",
+        "not reviewed: campaign site, congress.gov, news search (stopped at scope check)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:14:35.245Z",
+      "by": "source-collector"
+    }
+  ]
+}

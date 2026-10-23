@@ -1,0 +1,56 @@
+{
+  "politician_id": "2670f716-cfe7-4083-bf36-20843b3474cc",
+  "findings": [
+    {
+      "id": "b1fa27b78a85178b33637df47195bc7ef3346ce4f3bc1324a23808a5399fecb6",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Barb_Regnitz",
+      "date": "2026-04-15",
+      "date_precision": "day",
+      "passage": "Make Americans' Votes Count Again Ensure 100% election integrity through transparency, accountability, and secure voting procedures. Support same-day, in-person voting using verifiable, watermarked paper ballots. Limit mail-in ballots to rare, verified exceptions to protect against fraud and maintain confidence in election results.",
+      "note": "Campaign website text as quoted verbatim by Ballotpedia (campaign site version dated April 15, 2026). Lists election integrity, same-day in-person voting with verifiable watermarked paper ballots, and limiting mail-in ballots to rare verified exceptions. Does not mention photo ID, proof of citizenship or the SAVE Act.",
+      "subjects": [
+        "election integrity in general",
+        "mail-in ballot limits",
+        "in-person voting on election day"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:04:15.927Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity in general",
+        "mail-in ballot limits"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/Barb_Regnitz (confirms IN-01 general election candidate, Nov 3 2026, won May 5 2026 primary; campaign-site text and Candidate Connection survey read)",
+        "campaign site https://barbregnitzforcongress.com/ (blocked: page is script-rendered, no readable text from fetch or curl; original wording taken from the Ballotpedia quote of the site dated 2026-04-15)",
+        "campaign site https://regnitzforcongress.com (nothing on the subject: 'Launching Soon' page)",
+        "Ballotpedia Candidate Connection survey (nothing on the subject)",
+        "congress.gov (nothing on the subject: not a member of Congress; no sponsorships possible; not separately fetched)",
+        "web news search: not reviewed (search budget exhausted)",
+        "not reviewed: https://www.youtube.com/@BarbRegnitzforCongress",
+        "not reviewed: https://x.com/BarbRegnitz",
+        "not reviewed: https://www.facebook.com/Barb-Regnitz-for-Congress"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:04:15.927Z",
+      "by": "source-collector"
+    }
+  ]
+}

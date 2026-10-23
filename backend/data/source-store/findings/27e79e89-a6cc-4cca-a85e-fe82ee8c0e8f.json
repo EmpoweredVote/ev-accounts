@@ -1,0 +1,112 @@
+{
+  "politician_id": "27e79e89-a6cc-4cca-a85e-fe82ee8c0e8f",
+  "findings": [
+    {
+      "id": "2ac5d288b1f38761158e5a7d322fbd94ef1568926866ac7bbaaac9e3920a6dc3",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/793",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, House Second Reading",
+      "note": "On his member vote list, Biggs is recorded Aye on second reading of HB 958 (Election Law Changes). The ratified bill requires county boards to process a voter registration only if the applicant affirmatively states US citizenship (new G.S. 163-83). It requires DMV staff to proceed with a registration only after the applicant states citizenship. It sets a 30-day notice, with a sworn citizenship statement, for forms with no citizenship answer. It also directs the State Board of Elections to set up a process for removing voters flagged as possibly non-citizens by a federal database, and to remove deceased voters from the rolls. Bill page: https://www.ncleg.gov/BillLookUp/2025/H958 ; text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:41:13.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "66c810cfccf241c84e78307308759b545d611971df516a52247ce1817c376310",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/793",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (House vote H-801, 62-47)",
+      "note": "On his member vote list, Biggs is recorded Aye on the House vote to concur in the Senate committee substitute of HB 958 (final House passage, 62-47). The bill was ratified 2026-08-06 and vetoed by the Governor 2026-08-17. Its last listed action is placed on the House calendar for 2026-09-02 (override status not checked).",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:41:13.122Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2f99879c925f2a888e70b2d453919e47b83f515dccb40a39cd185716ec287eff",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H475",
+      "date": "2025-03-24",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-475-2025",
+      "act": "sponsor",
+      "motion": "HB 475 State ID Cards for High School Students, filed and referred to committee",
+      "note": "Biggs is a primary sponsor of HB 475, which lets residents aged 16 get a state special identification card and sets up a pilot to issue the cards to public high school students in four counties, including his home county of Randolph. The bill text does not mention voting. It is on file because it concerns access to a state ID. The bill stayed in committee.",
+      "subjects": [
+        "state ID card access",
+        "free or low-cost state ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:41:13.122Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters and reasonable-impediment process",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote",
+        "state ID cards",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Brian_Biggs names him as NC House District 70 incumbent on the Nov 3, 2026 general election ballot (primary canceled, he advanced)",
+        "On the Record (0 appearances, extract-otr.mjs run with --names)",
+        "Campaign site https://www.brianbiggsnchouse.com (no issue text readable; nothing on the subject)",
+        "Campaign site https://biggsnchouse.com/ (protected blog page; nothing on the subject)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/793 (no statements)",
+        "ncleg.gov Introduced Bills list for member 793 (reviewed in full for subject words)",
+        "ncleg.gov Votes list for member 793 (reviewed in full for subject words)",
+        "ncleg.gov bill pages and ratified text for HB 958 and HB 475",
+        "Ballotpedia page (no issue statements or survey answers on voter ID)",
+        "not reviewed: https://x.com/BrianBiggs7 (dynamic social page)",
+        "not reviewed: https://www.facebook.com/BiggsNCHouse (dynamic social page)",
+        "not reviewed: HB 834 (2025) bill text; the PDF URL returned 404",
+        "news search: not done, the shared web search budget was used up",
+        "no own-words statement on the subject found in the places reached"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:41:13.122Z",
+      "by": "source-collector"
+    }
+  ]
+}

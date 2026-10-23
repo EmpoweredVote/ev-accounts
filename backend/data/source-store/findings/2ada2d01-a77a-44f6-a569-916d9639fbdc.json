@@ -1,0 +1,30 @@
+{
+  "politician_id": "2ada2d01-a77a-44f6-a569-916d9639fbdc",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Priscila_Sousa says she advanced from the 2026-09-01 primary and is on the 2026-11-03 general ballot, 6th Middlesex District",
+        "On the Record (0 appearances; extract-otr with name returned no sources)",
+        "Massachusetts Legislature profile https://malegislature.gov/Legislators/Profile/PSS1 (sponsored bills list: no bill on the subject)",
+        "Ballotpedia (nothing on the subject)",
+        "campaign site: not reviewed: could not locate a campaign site URL; guessed sousaforstaterep.com returned nothing",
+        "news search: not reviewed: shared web-search budget exhausted",
+        "malegislature.gov bill search by subject: not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:03:21.932Z",
+      "by": "source-collector"
+    }
+  ]
+}

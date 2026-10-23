@@ -1,0 +1,58 @@
+{
+  "politician_id": "5bd54ac0-c8b9-486c-844c-ecc4313e5de7",
+  "findings": [
+    {
+      "id": "bc4bdd97939a0f69e81e5617c3b1570b2d561c11b6c0a5bffa2c2d06b57ff87b",
+      "kind": "record",
+      "url": "https://clerk.house.gov/Votes/2025102",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "On Passage, H.R. 22, SAVE Act (Roll Call 102)",
+      "note": "She voted Nay on passage of H.R. 22, the SAVE Act, which requires documentary proof of citizenship when registering to vote in federal elections. The bill passed the House 220 to 208. Ballotpedia also lists this vote as Nay.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:59:40.423Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope check: Ballotpedia https://ballotpedia.org/Nanette_Barrag%C3%A1n says she is on the Nov 3, 2026 general-election ballot and advanced from the June 2, 2026 primary",
+        "On the Record (0 meetings)",
+        "official site barragan.house.gov (site search returns only recent unrelated releases; nothing on the subject)",
+        "campaign site: not reviewed (URL not located; web search budget was used up)",
+        "Ballotpedia (key votes section, SAVE Act vote)",
+        "House Clerk roll call 2025 no. 102 (fetched)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/all-actions (403)",
+        "blocked: https://www.congress.gov/member/nanette-barragan/B001300 (403)",
+        "blocked: https://www.govtrack.us/congress/votes/119-2025/h109 (403)",
+        "news search: not done, web search budget used up",
+        "own-words search (speeches, interviews, posts): not done beyond official site; nothing found on the subject",
+        "sponsorships on voter ID or proof of citizenship: not reviewed, congress.gov blocked"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:59:40.423Z",
+      "by": "source-collector"
+    }
+  ]
+}

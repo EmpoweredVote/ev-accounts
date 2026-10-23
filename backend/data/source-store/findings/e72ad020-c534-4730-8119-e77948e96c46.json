@@ -1,0 +1,100 @@
+{
+  "politician_id": "e72ad020-c534-4730-8119-e77948e96c46",
+  "findings": [
+    {
+      "id": "db09b5849619311c6161a4eb80983b98a8ba45d25e130c949b36049fcb7d260e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "other",
+      "note": "Listed as a co-sponsor of HB 1246, Safeguarding Elections Act (introduced and referred to Rules 08/04/2026). Bill text makes it a Class 2 misdemeanor to demand citizenship documentation from a voter other than what state law requires at any point in voting, and also covers observers and election-worker intimidation. Co-sponsor status taken from the bill page sponsor list; primary sponsors are Buansi, Dahle, F. Jackson, Clark.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "election integrity law in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:12:58.018Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "adf19954caf2585bf5ab75208a0170c1feb2b00efe3fb00fb403e33b0ac35f65",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/786",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (House vote 66-47, passed)",
+      "note": "Voted no on second reading of HB 958, a bill making many election-law changes. The ratified text includes a requirement that the State Board of Elections create a process to remove voters flagged as possible non-citizens by a federal database, plus voter-roll deceased checks and drivers-license office registration citizenship questions. Amendment votes the same day were not read for content and are not saved.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:12:58.018Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c9215e961625fb0dc70d1e6433b303fae0af6cc633b0136a5fc33ce565f589ea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/786",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, motion 11 (concur in Senate version) (House vote 62-47, passed)",
+      "note": "Voted no on the final concurrence vote on HB 958 (bill page: https://www.ncleg.gov/BillLookUp/2025/H958). Ratified text includes a State Board of Elections removal process for voters flagged as non-citizens by a federal database.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:12:58.018Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: in scope; NC House District 39 member, on the 2026 general-election ballot (primary cancelled): https://ballotpedia.org/James_Roberson and https://www.ncleg.gov/Members/Biography/H/786",
+        "On the Record (0 appearances)",
+        "ncleg.gov introduced bills list (5 election bills; only H691 and H1246 list him as co-sponsor, H129/H1233/H1230 not checked beyond H1230 sponsor list; H691 is about right to vote under prevailing law, not on subject, not saved)",
+        "ncleg.gov recorded votes list (HB 958 votes saved; no photo-ID bill vote found in his list)",
+        "Ballotpedia (office and ballot status only; no own words on subject)",
+        "nothing on the subject: no own-words found",
+        "not reviewed: official and campaign site, news search (web search budget exhausted this session)"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:12:58.018Z",
+      "by": "source-collector"
+    }
+  ]
+}

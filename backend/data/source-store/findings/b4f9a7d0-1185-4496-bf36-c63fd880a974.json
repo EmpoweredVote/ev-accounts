@@ -1,0 +1,107 @@
+{
+  "politician_id": "b4f9a7d0-1185-4496-bf36-c63fd880a974",
+  "findings": [
+    {
+      "id": "4eb692a150091092cd0074f980d31516101e00d6670b1644f7d968a822f11db1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/844",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (RCS 758)",
+      "note": "Member's recorded vote on the House second-reading vote of HB 958, a bill making many election-law changes. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) has a process to remove voters flagged by federal databases as potentially non-citizens (Section 2.3(b)), and Section 163-83 requires voter registration applications to state citizenship, with a sworn statement and a 30-day deadline if the answer is blank. The bill does not change photo ID rules in the pages read. Vote page was fetched; the vote line is the member's own row.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:30.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "76cbd03437fe88865d7e069a025f85e1c9c4cc804f53e9c2ca09026c840a998a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/844",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (RCS 801), House vote to concur with the Senate version",
+      "note": "Member's recorded vote on the House concurrence vote for HB 958 (final House vote before ratification). The bill page (https://www.ncleg.gov/BillLookUp/2025/H958) shows this vote passed 62 to 47 and lists a governor's veto of the bill.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:30.628Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6d7baaafa254d7443de5198634d07d93d8e4aca51fdc7dfb8fa79d43d3ef0a18",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/844",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Amendment A3 (Dahle), Second Reading (RCS 757)",
+      "note": "Member voted aye on amendment A3 to HB 958; the amendment failed. Amendment text was not read, so its content is unknown to this note.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:05:30.628Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Phil_Rubin (NC House District 40, appointed January 29, 2025; March 3, 2026 primary canceled and he advanced without appearing on the ballot; next election November 3, 2026)",
+        "On the Record (0 appearances for this person)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/844 (fetched, no subject text)",
+        "ncleg.gov member votes list https://www.ncleg.gov/Members/Votes/H/844 (800 recorded votes read; election-related ones checked)",
+        "ncleg.gov bill page https://www.ncleg.gov/BillLookUp/2025/H958 and ratified text https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+        "ncleg.gov member sponsored-bills list: blocked: https://www.ncleg.gov/Legislation/Bills/MemberBills/H/844 (404), sponsorships not reviewed",
+        "Ballotpedia (no issue text on the subject)",
+        "official/campaign site: not reviewed, no working address found (https://www.philrubinnc.com and https://www.philforncd40.com did not load; https://philrubin.com loaded but is unverified as his site)",
+        "news and own-words search: not done, the shared web-search budget was used up before this person was searched; own words on the subject are a gap, not 'nothing'",
+        "HB 834 (Sportsman's Voter Act, State Board of Elections Administrative Changes): not reviewed for ID content"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:05:30.628Z",
+      "by": "source-collector"
+    }
+  ]
+}

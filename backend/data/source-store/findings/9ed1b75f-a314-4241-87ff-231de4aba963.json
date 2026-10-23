@@ -1,0 +1,53 @@
+{
+  "politician_id": "9ed1b75f-a314-4241-87ff-231de4aba963",
+  "findings": [
+    {
+      "id": "8fb3a3582e090ee15f5ba52e9c937d73a6e8c134994480ed228fddde19769e78",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/S512",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-S-512-2025",
+      "act": "sponsor",
+      "note": "Lead sponsor of S.512, a bill to give non-citizen residents the right to vote in municipal elections. Related to non-citizen voting; says nothing about ID. Date is the first date listed on the bill page (filing); hearing was scheduled 05/06/2025.",
+      "subjects": [
+        "non-citizen voting in local elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:18:12.604Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/James_Eldridge (on 2026 general ballot, Nov 3, 2026, advanced from Sept 1, 2026 primary)",
+        "On the Record (0 appearances)",
+        "official legislature profile and Sponsored tab https://malegislature.gov/Legislators/Profile/JBE0/Sponsored",
+        "malegislature.gov bill search for 'voter identification': no bill by this person found",
+        "campaign/official site https://www.senatoreldridge.com: page text did not load usable content, nothing on the subject seen",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject in own words found"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:18:12.604Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "politician_id": "bba53cbb-15de-432f-9d6e-d0ab431eac15",
+  "findings": [
+    {
+      "id": "e9186102e3c486a3b94c61ade12a1b87cca770187456c3a047c73f8db415d526",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/o-brien-voting-with-confidence/",
+      "date": "2022-04-13",
+      "date_precision": "day",
+      "passage": "This new law also makes changes to the absentee voting process by requiring anyone requesting an online absentee ballot application through the statewide voter portal to provide either their driver's license number or the last four digits of their Social Security number. This extra layer of identification will help guard against fraud without creating an unnecessary burden for voters.",
+      "note": "In a column posted on the Indiana House caucus site under his name, he describes a law he co-authored that requires an ID number (driver's license or last four of Social Security number) to request an absentee ballot application online. He says it guards against fraud without burdening voters.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID number to request an absentee ballot online"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:50:59.615Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e7ef2fcc00a92b13046451f677b2a3a5e064bd4d5a508193c68433f9a4ed8183",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/o-brien-voting-with-confidence/",
+      "date": "2022-04-13",
+      "date_precision": "day",
+      "passage": "To beef up security even more, I co-authored a new law to ensure all Indiana electronic voting machines are equipped with a voter-verifiable paper audit trail by the 2024 election.",
+      "note": "Same column. He says he co-authored a law requiring paper audit trails on all electronic voting machines by 2024. Related election-integrity item, not an ID rule.",
+      "subjects": [
+        "election integrity laws in general",
+        "voting machine paper audit trail"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:50:59.615Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d33e74d0df061a8cf15916322f2c9d9f53f3cecaec7135271167c09d7230c724",
+      "kind": "own-words",
+      "url": "https://www.indianahouserepublicans.com/news/press-releases/o-brien-voting-with-confidence/",
+      "date": "2022-04-13",
+      "date_precision": "day",
+      "passage": "Free, fair and secure elections are vital to our democracy. Every Hoosier voter should be confident that their ballot is counted, and election results are accurate and free of interference.",
+      "note": "Opening of the same column. General statement on election security and voter confidence.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:50:59.615Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee ballot or online absentee application",
+        "voter ID number or last four of SSN for absentee request",
+        "proof of citizenship",
+        "voting machine paper audit trail",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Tim_O'Brien_(Indiana) names Tim O'Brien, Indiana House District 78, on the Nov 3 2026 general-election ballot (advanced from May 5 2026 primary)",
+        "On the Record (0 appearances; extract-otr.mjs run by politician id and by name)",
+        "official site: Indiana House caucus page https://www.indianahouserepublicans.com/members/general/house-district-78 (press release list of about 495 titles scanned for election and voting words; one relevant item found)",
+        "campaign site https://timobrienforstaterep.com/ (home page only; nothing on the subject)",
+        "Ballotpedia (page has no subject content; sponsored-bill table is a script widget that did not load)",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_timothy_obrien_1/ (script-built page, no text returned)",
+        "blocked: https://legiscan.com/IN/bill/HB1116/2022 (403)",
+        "not reviewed: news search on name plus subject words (shared web search budget was used up before this agent could search)",
+        "not reviewed: iga.in.gov bill pages for sponsorships (script-built pages, no readable text), so no bill number could be confirmed"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:50:59.615Z",
+      "by": "source-collector"
+    }
+  ]
+}

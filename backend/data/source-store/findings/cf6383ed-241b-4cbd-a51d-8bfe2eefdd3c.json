@@ -1,0 +1,30 @@
+{
+  "politician_id": "cf6383ed-241b-4cbd-a51d-8bfe2eefdd3c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: sitting Indiana State Senate District 5 member, term ends 2028 (https://ballotpedia.org/Ed_Charbonneau)",
+        "On the Record (0 appearances, 0 sources)",
+        "official Senate caucus page https://www.indianasenaterepublicans.com/charbonneau: nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Ed_Charbonneau: nothing on the subject",
+        "not reviewed: Indiana General Assembly bill and sponsor pages (iga.in.gov pages load by script and returned no readable text)",
+        "not reviewed: campaign site and news search (web search budget used up, no search possible)",
+        "not reviewed: Vote Smart, ontheissues.org (lead-only, not fetched)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:52:57.352Z",
+      "by": "source-collector"
+    }
+  ]
+}

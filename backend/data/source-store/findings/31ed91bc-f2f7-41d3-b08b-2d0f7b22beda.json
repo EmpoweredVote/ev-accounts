@@ -1,0 +1,35 @@
+{
+  "politician_id": "31ed91bc-f2f7-41d3-b08b-2d0f7b22beda",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "mail or absentee ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: on the 2026 general-election ballot for U.S. House Ohio District 2 (Ballotpedia https://ballotpedia.org/Jen_Mazzuckelli and https://ballotpedia.org/Ohio%27s_2nd_Congressional_District_election,_2026; she defeated Todd Wilson in the May 5, 2026 primary)",
+        "On the Record (0 appearances; extract-otr.mjs run by politician id only, no unlinked-name search since she is not a local official)",
+        "campaign site https://www.jen4oh2.com (home, /about, /in-the-news): nothing on the subject",
+        "Ballotpedia candidate page and Candidate Connection survey: nothing on the subject (survey lists 'time, place, and manner of federal elections' only as a core responsibility of Congress, no ID or citizenship content)",
+        "WVXU candidate Q&A https://www.wvxu.org/politics/2026-04-03/democratic-candidates-ohio-2nd-district-jennifer-mazzuckelli-todd-wilson: nothing on the subject",
+        "Marietta Times https://www.mariettatimes.com/news/2026/05/mazzuckelli-wilson-seek-democratic-nomination-in-ohios-2nd-house-district/: nothing on the subject",
+        "congress.gov sponsorships: not applicable, never held federal office",
+        "not reviewed: https://www.facebook.com/jen.mazzuckelli/ (social media, login wall)",
+        "not reviewed: https://www.tiktok.com/@jen4oh2 (video)",
+        "not reviewed: campaign YouTube (video)",
+        "not searched: web search budget was used up, so no news search on her name plus subject words was run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:52:59.215Z",
+      "by": "source-collector"
+    }
+  ]
+}

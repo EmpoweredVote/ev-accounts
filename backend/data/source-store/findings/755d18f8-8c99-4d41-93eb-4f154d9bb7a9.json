@@ -1,0 +1,56 @@
+{
+  "politician_id": "755d18f8-8c99-4d41-93eb-4f154d9bb7a9",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JMM1 (Representative James M. Murphy, 4th Norfolk, Weymouth, 194th General Court)",
+        "On the Record (0 appearances, 0 candidates)",
+        "malegislature.gov profile and sponsored-bill list (https://malegislature.gov/Legislators/Profile/JMM1/Sponsored): nothing on the subject; only election-related petitions are H.857 (commission on primary turnout) and H.858 (political phone call disclosure), both off the subject",
+        "Ballotpedia: not reviewed: https://ballotpedia.org/James_Murphy_(Massachusetts_House_of_Representatives) (page does not exist)",
+        "blocked: https://ballotpedia.org/James_Murphy_(Massachusetts) (returned empty)",
+        "blocked: https://electionstats.state.ma.us/candidates/search (returned no readable results), so 2026 ballot status not confirmed",
+        "official or campaign site: not reviewed, no campaign URL found (https://www.jamesmurphy4rep.com is another person's site)",
+        "web news search: not reviewed, session search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:01.155Z",
+      "by": "source-collector"
+    }
+  ]
+}

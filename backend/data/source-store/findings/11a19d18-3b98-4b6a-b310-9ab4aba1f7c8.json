@@ -1,0 +1,31 @@
+{
+  "politician_id": "11a19d18-3b98-4b6a-b310-9ab4aba1f7c8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Indiana_House_of_Representatives_District_83 names Christopher Judy as incumbent, advanced from the May 5, 2026 primary, on the November 3, 2026 general ballot for House District 83",
+        "On the Record (0 appearances, no meetings)",
+        "Ballotpedia https://ballotpedia.org/Christopher_Judy (no 2026, 2024 or 2022 survey answers; nothing on the subject; sponsored-bill table not readable)",
+        "official House caucus page https://www.indianahouserepublicans.com/members/general/christopher-judy (news list reviewed; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators (page loads only an empty app shell; API at api.iga.in.gov needs a key), so bill sponsorships and votes on the subject were not reviewed",
+        "not reviewed: web news search on name plus subject words (session search budget used up)",
+        "campaign site: none found; not reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:19:50.986Z",
+      "by": "source-collector"
+    }
+  ]
+}

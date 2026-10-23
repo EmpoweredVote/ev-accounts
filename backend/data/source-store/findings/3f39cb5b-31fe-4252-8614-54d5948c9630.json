@@ -1,0 +1,27 @@
+{
+  "politician_id": "3f39cb5b-31fe-4252-8614-54d5948c9630",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "election integrity"
+      ],
+      "places": [
+        "identity: Ballotpedia (https://ballotpedia.org/Anthony_Swinger) names him as a member of the Indiana Utility Regulatory Commission, appointed December 12, 2025, in office since January 12, 2026, term ends December 31, 2029; this is an appointed utility regulator, not a legislator and not on a ballot",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: web search budget used up (200 shared searches), so no news or own-words search was run",
+        "not reviewed: Indiana Utility Regulatory Commission site and any commission statements (not fetched successfully)",
+        "not reviewed: Indiana General Assembly bill pages (not a legislator; legislators page did not load)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:26:51.292Z",
+      "by": "source-collector"
+    }
+  ]
+}

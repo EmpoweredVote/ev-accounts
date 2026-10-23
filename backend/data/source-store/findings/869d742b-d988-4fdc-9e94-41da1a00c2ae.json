@@ -1,0 +1,32 @@
+{
+  "politician_id": "869d742b-d988-4fdc-9e94-41da1a00c2ae",
+  "findings": [
+    {
+      "id": "830535b0a66463c2d046b0cd9d446d33b0a8c8b5cecd27fdf3b369cfd8910179",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21rs/hb574.html",
+      "date": "2021-03-16",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-574-2021",
+      "act": "yea",
+      "motion": "passage with SCS1, SFA1, SCTA1 (RSN# 1775)",
+      "gate_by_topic": {
+        "voting-rights": "near-unanimous"
+      },
+      "note": "KY Senate, passage with SCS1, SFA1, SCTA1 (RSN# 1775), 2021-03-16: yea (tally 33–3); census gate: near-unanimous.",
+      "subjects": [
+        "voter ID at the polls",
+        "early and mail voting (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

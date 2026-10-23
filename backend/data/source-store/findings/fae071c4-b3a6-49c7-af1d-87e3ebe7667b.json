@@ -1,0 +1,153 @@
+{
+  "politician_id": "fae071c4-b3a6-49c7-af1d-87e3ebe7667b",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c4d68df59993c073118af85c9ea1b15ad3c1eb7faad7878c2dc6f2c153e3807",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/H1092",
+      "date": "2018-06-07",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1092-2017",
+      "act": "sponsor",
+      "note": "She is listed among the co-sponsors (shown as 'White') of the constitutional amendment bill to require photo ID to vote, filed 2018-06-07. The bill is also on her own ncleg.gov introduced-bills list for the 2017 session. It became Session Law 2018-128.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:35.615Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "09c9a64bc6f590aa7187a3fa10634521df79e9e272b994acf5f79ed3624b0a3c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/H1107",
+      "date": "2018-11-27",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1107-2017",
+      "act": "sponsor",
+      "note": "She is listed among the co-sponsors (shown as 'White') of the bill titled 'Implementation of Voter ID Const. Amendment', filed 2018-11-27. It is on her own introduced-bills list for the 2017 session. The bill page gives only the title.",
+      "subjects": [
+        "voter ID at the polls",
+        "implementing photo ID rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:35.615Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "87fedbe77fad23a93d3c1e6a7a6c558a3e772c43cf7d817a9dfeff257a84ab66",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/H1074",
+      "date": "2024-05-23",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1074-2023",
+      "act": "sponsor",
+      "note": "She is listed among the co-sponsors (shown as 'White') of 'Constitutional Amendment/Citizens-Only Voting', filed 2024-05-23. The page keywords include citizenship, voter registration and aliens. It was ratified as Session Law 2024-18. Related topic: non-citizen voting.",
+      "subjects": [
+        "citizens-only voting",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:35.615Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID constitutional amendment",
+        "proof of citizenship to vote",
+        "citizens-only voting",
+        "election integrity laws",
+        "mail-ballot ID",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Donna_McDowell_White) names her as NC House District 26 incumbent, advanced from the March 3, 2026 primary, on the November 3, 2026 ballot",
+        "On the Record (0 appearances for the politician id; name search with no city also 0 sources)",
+        "official legislature page https://www.ncleg.gov/Members/Biography/H/728 (confirmed identity; no bio text on the subject)",
+        "ncleg.gov introduced-bills pages for 2017, 2021, 2023, 2025 sessions (sponsor lists checked on bill pages)",
+        "campaign site https://donnawhitenc26.com (nothing on the subject)",
+        "Ballotpedia profile (nothing on the subject in text)",
+        "blocked: https://sites.google.com/site/donnawhite4nchouse/platform (old campaign platform, redirects to a Google login)",
+        "not reviewed: news search on her name plus subject words (web search budget used up)",
+        "not reviewed: bill text of 2021 H259 Election Integrity Act (co-sponsor; page gives no summary, so not saved)",
+        "own-words search: nothing found on the subject"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:18:35.615Z",
+      "by": "source-collector"
+    }
+  ]
+}

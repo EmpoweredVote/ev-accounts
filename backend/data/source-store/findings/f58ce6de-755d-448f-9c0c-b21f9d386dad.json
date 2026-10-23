@@ -1,0 +1,32 @@
+{
+  "politician_id": "f58ce6de-755d-448f-9c0c-b21f9d386dad",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot)",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "status: sitting Indiana House member, District 72 (confirmed on https://ballotpedia.org/Edward_Clere and https://www.indianahouserepublicans.com/members/general/ed-clere); Ballotpedia says he did not file for re-election in 2026, so he is a sitting official only, term ends 2026-11-04",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://www.edclere.com (one page, nothing on the subject)",
+        "official caucus page https://www.indianahouserepublicans.com/members/general/ed-clere (biography only, nothing on the subject)",
+        "Ballotpedia (profile page, nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_edward_clere_984/ (page loads as an app with no readable text; the data API refused without a key, so sponsorships and roll calls were not reviewed)",
+        "blocked: https://legiscan.com/IN/legislator/ed-clere/id/6838 (403)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "not reviewed: https://www.indianahouserepublicans.com/news (press release list)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:57:26.536Z",
+      "by": "source-collector"
+    }
+  ]
+}

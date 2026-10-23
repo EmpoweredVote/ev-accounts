@@ -1,0 +1,72 @@
+{
+  "politician_id": "72dd5219-490f-48bb-986e-183a6098d602",
+  "findings": [
+    {
+      "id": "c447b0fb0d1af67196cf692e72af244166c6fbee5a63f82f8f8c07c682de0d61",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "For like 15 or 20 minutes, I led him through every single aspect of this, and he could not give a good reason why they were doing it. And so that makes it harder to vote.",
+      "note": "Said at the LWV candidate forum (transcript from On the Record). He is describing a state law that ended the use of a student ID as a voter ID, and says he questioned the bill's author about it. Text taken from the extracted transcript file, since the OTR page loads by script.",
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:39:28.975Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c7037ad78c66bd9460fbd5b2c6c59b3fcbf86d0bc9b2acedb5c7ea9d0d51672d",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/9d4c9fdb-cbec-4d10-b0a5-3455c6db752d",
+      "date": "2026-03-23",
+      "date_precision": "day",
+      "passage": "One of the saddest things that I see, and it happens every election cycle, if you go to the county election board when they meet about 10 days after the election, they go through their provisional ballots.",
+      "note": "Same forum answer. He describes provisional ballots cast by students who were not registered, and says education about registration deadlines and precincts is needed. Related to what happens when a voter's ballot does not count.",
+      "subjects": [
+        "provisional ballot",
+        "voter registration education for students"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:39:28.975Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "student ID as voter ID",
+        "provisional ballot for voters not registered",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Matt_Pierce_(Indiana)) says he is on the Nov 3, 2026 general-election ballot for Indiana House District 61 after winning the May 5, 2026 primary",
+        "On the Record (1 meeting: LWV Candidate Forum, 2026-03-23, read from extracted transcript; the OTR web page itself loads by script and could not be read by fetch)",
+        "Ballotpedia (https://ballotpedia.org/Matt_Pierce_(Indiana)): nothing on the subject",
+        "not reviewed: https://iga.in.gov (legislator and bill pages returned no readable content by fetch)",
+        "not reviewed: official site and campaign site (not fetched; web search budget was exhausted so no URLs were found)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T22:39:28.975Z",
+      "by": "source-collector"
+    }
+  ]
+}

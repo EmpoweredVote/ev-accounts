@@ -1,0 +1,54 @@
+{
+  "politician_id": "6ab8e9cc-6315-40d8-bb99-eb00faed61fa",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity and voter-roll checks"
+      ],
+      "places": [
+        "in scope: Representative Daniel J. Ryan, 2nd Suffolk, confirmed at https://malegislature.gov/Legislators/Profile/DJR1 ; Ballotpedia https://ballotpedia.org/Massachusetts_House_of_Representatives_elections,_2026 lists Daniel Joseph Ryan (i) for 2nd Suffolk District",
+        "On the Record (0 appearances)",
+        "malegislature.gov legislator profile and bills page (only election-related bill is H.868 on ballot question committee finance reporting, not on the subject)",
+        "Ballotpedia personal page: no page for Daniel Ryan (Massachusetts) or Daniel J. Ryan (empty pages)",
+        "nothing on the subject: official site and campaign site not separately located",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:11:16.890Z",
+      "by": "source-collector"
+    }
+  ]
+}

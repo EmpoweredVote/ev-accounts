@@ -1,0 +1,29 @@
+{
+  "politician_id": "129c2764-370c-4385-ad64-4cb5744c3541",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician)",
+        "official site https://www.rickscott.senate.gov: site search pages return no results to a plain fetch; press-release and op-ed lists load by script; the one op-ed fetched (https://www.rickscott.senate.gov/2026/8/we-must-protect-the-value-of-american-citizenship) is about birthright citizenship, nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Rick_Scott: fetched, no mention of the subject words",
+        "blocked: https://www.congress.gov/bill/119th-congress/senate-bill/128/cosponsors (HTTP 403)",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/22/cosponsors (HTTP 403)",
+        "not reviewed: news search on name plus subject words (shared web-search budget used up)",
+        "not reviewed: campaign site, other URL-pattern pages beyond official site and Ballotpedia"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:10:40.119Z",
+      "by": "source-collector"
+    }
+  ]
+}

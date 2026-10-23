@@ -1,0 +1,128 @@
+{
+  "politician_id": "f17c2322-69b4-4b9a-bcea-e5ea4ace8649",
+  "findings": [
+    {
+      "id": "8f9b587590eae41893ebcc2abe37a52b88e27b871c8c4c60d9f09746382c742f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/778",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (RCS H-801), vote 62 to 47",
+      "note": "Voted aye on the House concurring in the Senate changes to HB 958. The ratified bill requires a voter registration application to affirmatively state US citizenship before it is processed (a blank answer gets a notice and 30 days to return a statement under penalty of perjury), bars staff from proceeding with an application that does not affirm citizenship, and sets up state-board removal of voters flagged as possible non-citizens from a federal database. It also adds monthly motor-vehicle data sharing and cross-state list checks. It does not add a photo ID rule. The Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting and voter-roll checks",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:41.200Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0ee08f9f7ff2902e1f1dbfe4db560c4f6fb9d84c789f6e014a02a3523a25c5c8",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/778",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (RCS H-758), vote 66 to 47",
+      "note": "Voted aye on second reading of HB 958 in the House. The edition then before the House (edition 6) already contained the citizenship-on-registration provisions. Same date: aye on amendment A2 (Blackwell, RCS H-756, 69 to 44) and aye on amendment A1 (Blackwell, RCS H-755); no on amendment A3 (Dahle, RCS H-757, failed 47 to 66). The content of these amendments was not read.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting and voter-roll checks",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:41.200Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fea6d12017562cf661cd67581be84e1ae23c4e5a27ef541f3fce24e9570f598f",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-17",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "other",
+      "motion": "HB 958 Election Law Changes: bill history, Governor's veto 2026-08-17; override calendar 2026-09-02",
+      "note": "Bill page shows the primary sponsors are Blackwell and Stevens and the cosponsors are Blust, Dixon, Kidwell, Penny, Pike and Ward. Charles W. Miller is not listed as a sponsor. The bill was ratified 2026-08-06, vetoed 2026-08-17, and last placed on the calendar for 2026-09-02. No override vote by Miller appears on his votes page.",
+      "subjects": [
+        "citizenship statement to register",
+        "election law changes in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:41.200Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "469f5660afcd7501183c9fdcb3260330a13dbd7413557364a9741ea9764e3718",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+      "date": "2026-08-06",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "other",
+      "motion": "HB 958 ratified text, Part II sections 2.3 and 2.4 (reference for what the votes above covered)",
+      "note": "Section 2.4 adds G.S. 163-83: the county board processes a voter registration application only if it affirmatively indicates the applicant is a citizen of the United States. Section 2.3(b) requires a State Board process to remove voters flagged as potential non-citizens by a federal database. Effective January 1, 2027.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting and voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:16:41.200Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election law changes in general"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Charles_Miller_(North_Carolina)) and NC General Assembly member page (https://www.ncleg.gov/Members/Biography/H/778) name Charles W. Miller as House District 19 member; Ballotpedia says he is on the 2026 general-election ballot (primary was canceled)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances, 0 candidates)",
+        "campaign site https://www.charliemillernc.com (home, /about, /media, blog feed): nothing on the subject",
+        "Ballotpedia: nothing on the subject (sponsored-legislation table did not load in the saved page)",
+        "NC General Assembly votes page https://www.ncleg.gov/Members/Votes/H/778 (2025-2026 session, all rows scanned for election/voter/citizenship bills)",
+        "NC General Assembly introduced/sponsored bills page https://www.ncleg.gov/Members/IntroducedBills/H/778: no sponsored bill on photo ID, mail-ballot ID or proof of citizenship (only HB 31 Make Election Day A State Holiday, off subject)",
+        "NC General Assembly bill page for HB 958 and ratified text, edition 6 text",
+        "not reviewed: https://x.com/CharlieMillerNC (not fetched)",
+        "not reviewed: 2023-2024 and earlier session votes (members votes page shows the current session only)",
+        "web search: not run, session search budget was used up; no news search done"
+      ],
+      "found": 4,
+      "at": "2026-10-23T00:16:41.200Z",
+      "by": "source-collector"
+    }
+  ]
+}

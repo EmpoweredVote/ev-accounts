@@ -1,0 +1,80 @@
+{
+  "politician_id": "2f1ccb1c-4c03-4213-b4be-759ff2cad119",
+  "findings": [
+    {
+      "id": "ba23f9f7f15fd57a6b75e665be34c07bdcfc754825c2ab2b4faec2c99471a135",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/S715",
+      "date": "2025-03-26",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-715-2025",
+      "act": "sponsor",
+      "note": "Listed among the sponsors (not the primary sponsors) of SB 715, Student Voter ID Grant Program/CCs, a bill that creates a grant program tied to voter ID for students; it was re-referred to the Senate Appropriations/Base Budget committee. The bill page lists Meyer and Murdock as primary sponsors and Mohammed among the other sponsors.",
+      "subjects": [
+        "voter ID at the polls",
+        "free or grant-funded voter ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:40:11.997Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9559d118a5d2fdcc31875423984d5a41c55aa4730343a794858a5efc1d75482b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (Senate vote RCS 693, 28 to 13, passed)",
+      "note": "Senate Second Reading vote on HB 958, Election Law Changes. The bill text (ratified version) requires a county board to process a registration application only if it affirmatively states the applicant is a United States citizen, with a sworn citizenship statement when the question is left blank. It also sets a process to remove from the rolls voters flagged as possible non-citizens from a federal database and requires removal of deceased voters. Mohammed's recorded vote on the member vote page is No.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:40:11.997Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free or grant-funded voter ID",
+        "proof of citizenship to register",
+        "voter-roll checks and removal of non-citizens",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Mujtaba_Mohammed names him as NC State Senate District 38 incumbent on the November 3, 2026 general election ballot (the March 3, 2026 primary was canceled)",
+        "On the Record (0 meetings)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/417 (positive control: Sen. Mujtaba A. Mohammed)",
+        "NC General Assembly introduced bills https://www.ncleg.gov/Members/IntroducedBills/S/417 (reviewed; 2025 co-sponsorships on voter ID grants, election safeguards, automatic registration noted)",
+        "NC General Assembly vote history https://www.ncleg.gov/Members/Votes/S/417 (reviewed all election-related rows)",
+        "NC General Assembly bill pages for S715, S392, H958, H3, H58, H1035 (2025 session)",
+        "Ballotpedia page: no own words on the subject (candidate survey for 2026 not completed)",
+        "campaign site: blocked or unusable, mohammednc.com returned an unrelated site, not reviewed",
+        "official Senate member site: not reviewed",
+        "news search and own-words search: not performed, the shared web search budget was used up",
+        "ontheissues.org, vote411, questionnaires, debates, interviews, social posts: not reviewed"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:40:11.997Z",
+      "by": "source-collector"
+    }
+  ]
+}

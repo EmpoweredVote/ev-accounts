@@ -1,0 +1,136 @@
+{
+  "politician_id": "c362a1f6-01b9-4355-a4bd-bbd1bb7fb1fb",
+  "findings": [
+    {
+      "id": "ee251ad4956fb6de6f098189b5fdaf2ec487b89a33c715fdbe67c06e621ffc65",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-01-23",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "passage of SB 2 with SCS 1 (RSN# 1160)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY Senate, passage of SB 2 with SCS 1 (RSN# 1160), 2020-01-23: yea (tally 29–9); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.567Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4a8615c0e2d5365686a4c7689a2ee27c7d4d32b8972cdfa3fc0df8a81514a64f",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-03-19",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "final passage of SB 2 with free conference committee report (RSN# 1407)",
+      "gate_by_topic": {
+        "voting-rights": "near-unanimous"
+      },
+      "note": "KY Senate, final passage of SB 2 with free conference committee report (RSN# 1407), 2020-03-19: yea (tally 25–2); census gate: near-unanimous.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.567Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d71b11159bf911b0aefdeb3f4d2b75946326a55e9d2548a2185cab40d4dbcb7f",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "veto override (RSN# 1433)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY Senate, veto override (RSN# 1433), 2020-04-14: yea (tally 27–6); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.567Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4d8c715a420f5c0ff23e7c73b97853a572b599fe408ed9e302a0512417912368",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/20rs/sb2.html",
+      "date": "2020-04-14",
+      "date_precision": "day",
+      "instrument_id": "KY-SB-2-2020",
+      "act": "yea",
+      "motion": "final passage after veto (RSN# 1434)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "KY Senate, final passage after veto (RSN# 1434), 2020-04-14: yea (tally 27–6); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.567Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9a701e85ff0a05a52043d9ccc57ec9719cbaea5c95529ff37ed1825d19fb71af",
+      "kind": "record",
+      "url": "https://apps.legislature.ky.gov/record/21rs/hb574.html",
+      "date": "2021-03-16",
+      "date_precision": "day",
+      "instrument_id": "KY-HB-574-2021",
+      "act": "nay",
+      "motion": "passage with SCS1, SFA1, SCTA1 (RSN# 1775)",
+      "gate_by_topic": {
+        "voting-rights": "near-unanimous"
+      },
+      "note": "KY Senate, passage with SCS1, SFA1, SCTA1 (RSN# 1775), 2021-03-16: nay (tally 33–3); census gate: near-unanimous.",
+      "subjects": [
+        "voter ID at the polls",
+        "early and mail voting (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "B (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": []
+}

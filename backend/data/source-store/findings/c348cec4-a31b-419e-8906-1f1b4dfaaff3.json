@@ -1,0 +1,23 @@
+{
+  "politician_id": "c348cec4-a31b-419e-8906-1f1b4dfaaff3",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "places": [
+        "status: lost the 2026-05-05 primary (https://ballotpedia.org/Nick_McKinley says he lost the primary for Indiana State Senate District 17 on May 5, 2026; his term ends November 4, 2026)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched, confirms identity and primary loss)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_nick_mckinley_1 (page returned no content)",
+        "not reviewed: web news search (search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:50:15.861Z",
+      "by": "source-collector"
+    }
+  ]
+}

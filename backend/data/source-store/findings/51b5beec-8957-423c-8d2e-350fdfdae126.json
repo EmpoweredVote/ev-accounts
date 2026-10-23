@@ -1,0 +1,26 @@
+{
+  "politician_id": "51b5beec-8957-423c-8d2e-350fdfdae126",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (https://ballotpedia.org/Julie_Perry says she ran for Virginia's 10th Congressional District and lost the primary on August 4, 2026; the general-election candidate list does not include her)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched with curl; campaign website text quoted there has nothing on the subject)",
+        "not reviewed: campaign site (guessed domains julieperry.com, julieperryforcongress.com, julieperryva.com returned nothing; not searched further because she is out of scope)",
+        "not reviewed: web news search (search budget used up; not needed because she is out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:57:52.691Z",
+      "by": "source-collector"
+    }
+  ]
+}

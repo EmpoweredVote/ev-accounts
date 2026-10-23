@@ -1,0 +1,156 @@
+{
+  "politician_id": "79a8f85e-c217-48d5-9909-1e9248cadd39",
+  "findings": [
+    {
+      "id": "f0f2ea5e1063856b33c3b104c91273fd4cac5f78e4e3ebabfe7bf9c4a32c9bea",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: nay (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7c7e640afa5849d56bd4579984a1d2d218c16c90c00661c1f9cc8375ee58e1ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: nay (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3051e2f9929507c83f75702e660ef9e8497d82adb42c5d1fe20b448c17d2f9a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H278v0.pdf",
+      "date": "2025-03-05",
+      "date_precision": "day",
+      "instrument_id": "NC-H-278-2025",
+      "act": "sponsor",
+      "note": "Morey is the sole listed sponsor of HB 278, Protect Military Votes. The bill's title says it would write into law a State Board of Elections rule that overseas and military voters casting a military-overseas ballot do not have to include photo identification. Bill text: 'A covered voter voting under this Article shall not be required to include a photocopy of identification described in G.S. 163-166.16(a) or an affidavit as described in G.S. 163-166.16(d)(1), (d)(2), or (d)(3) when submitting a ballot in accordance with this Article.' Referred to committee; no further action shown on the member page. Date is the filing date shown on the member's introduced-bills page.",
+      "subjects": [
+        "photo ID for military and overseas ballots",
+        "mail-ballot ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:53:53.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9d2cbff25bb7a3db0a5895f99217af469d8953f85cbcc89ff01379151e2c7dfc",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/732",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading",
+      "note": "Morey voted no on second reading of HB 958 (66 aye, 47 no on the roll call for the whole House). Bill text (ratified version, https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) includes: DMV staff proceed with a voter registration only if the applicant affirmatively states US citizenship; county boards process a registration only if it affirmatively indicates citizenship, with a sworn citizenship statement if the answer is blank; and a State Board process to remove potential non-citizens flagged from a federal database. It also covers removal of deceased voters, absentee-ballot challenges and campaign finance.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting and voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:53:53.547Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bd7b283acdf7511d2fd3d337a7211c179a670dc2e8b73aa0aa207afc843c528c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/732",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, M11 Concur (House vote on the Senate changes)",
+      "note": "Morey voted no on the motion to concur in the Senate version of HB 958, which passed the House 62 to 47. The ratified text includes the citizenship-on-registration rules and the non-citizen voter-removal process described above.",
+      "subjects": [
+        "citizenship statement to register",
+        "non-citizen voting and voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:53:53.547Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for mail/overseas ballots",
+        "proof of citizenship to register",
+        "non-citizen voting and voter-roll removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Marcia_Morey says she is on the Nov 3, 2026 general-election ballot for NC House District 30 (March 3, 2026 primary canceled)",
+        "On the Record (0 appearances)",
+        "official legislature member page https://www.ncleg.gov/Members/Biography/H/732 (confirms office; nothing on the subject)",
+        "NC General Assembly vote record https://www.ncleg.gov/Members/Votes/H/732",
+        "NC General Assembly introduced bills https://www.ncleg.gov/Members/IntroducedBills/H/732",
+        "NC bill text HB 958 and HB 278 on ncleg.gov",
+        "campaign site https://www.marciamorey.com (issues pages and home page: nothing on the subject)",
+        "Ballotpedia (page fetched; no voter ID statements)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: interviews, forum and debate videos, social posts",
+        "blocked: https://www.ncleg.gov/Members/Biography/D/742 (HTTP 500, wrong URL pattern guess)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:53:53.547Z",
+      "by": "source-collector"
+    }
+  ]
+}

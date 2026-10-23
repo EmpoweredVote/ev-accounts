@@ -1,0 +1,79 @@
+{
+  "politician_id": "c250d372-dc47-49d7-9594-c43075e648e2",
+  "findings": [
+    {
+      "id": "ebc01f08cde4ed07a1d3782e75a0b25ff49ea365df89fbf9cd89bdbcb29feda1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2025",
+      "act": "sponsor",
+      "motion": "HB 1246, Safeguarding Elections Act, co-sponsor; referred to Rules, Calendar, and Operations of the House",
+      "note": "Baker is listed as a co-sponsor, not a primary sponsor. Among many changes, the bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H1246v1.html) would make it a Class 2 misdemeanor for any person to demand citizenship documentation from a voter other than what State law requires during the voting process. It also deals with election observers, voter challenges and absentee-ballot challenges.",
+      "subjects": [
+        "proof of citizenship to vote",
+        "election integrity laws in general",
+        "absentee ballot challenges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:10.581Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3a2a6ac31472434336ea3fd980b1de0c729516f62c0c260ee267e8f32ea5c27",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H691",
+      "date": "2025-04-03",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-691-2025",
+      "act": "sponsor",
+      "motion": "HB 691, Voter Protection and Reliance Act, primary sponsor; referred to Rules, Calendar, and Operations of the House",
+      "note": "Baker is one of four primary sponsors. The bill text (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H691v1.html) says no vote may be excluded based on a law, court ruling or interpretation not in effect on election day, and sets timing rules for election lawsuits. It does not set an ID or citizenship rule. Saved as related election-integrity material.",
+      "subjects": [
+        "election integrity laws in general",
+        "changes to voting rules after ballots are cast"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:08:10.581Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Amber_Baker_(North_Carolina) says she represents House District 72, is on the Nov 3, 2026 general ballot, and her March 3, 2026 primary was canceled; https://www.ncleg.gov/Members/Biography/H/782 names Representative Amber M. Baker",
+        "On the Record (0 appearances for this politician id)",
+        "Official site: ncleg.gov member page and IntroducedBills list for 2021, 2023, 2025 sessions (no voter ID or proof-of-citizenship bill as primary sponsor)",
+        "Ballotpedia: page read, no issue positions; 2024 Candidate Connection survey has no answer on the subject",
+        "ncleg.gov Votes page for member: nothing on the subject in the list fetched",
+        "not reviewed: news search and campaign site search (web search budget was used up for the session)",
+        "blocked: https://www.ncleg.gov/Legislation/Bills/BillSearchResults?SponsorCode=H782 (404)"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:08:10.581Z",
+      "by": "source-collector"
+    }
+  ]
+}

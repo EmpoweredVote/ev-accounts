@@ -1,0 +1,54 @@
+{
+  "politician_id": "869ba820-3138-473c-b70d-383e67f5797d",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "scope: sitting MA House member, 2nd Worcester, term ends 2027-01-06; Ballotpedia says he did not file for re-election in 2026 (https://ballotpedia.org/Jonathan_Zlotnik); https://malegislature.gov/Legislators/Profile/JDZ1 confirms the office",
+        "On the Record (0 appearances)",
+        "malegislature.gov sponsored and cosponsored lists: nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "campaign site: not reviewed: https://www.jonathanzlotnik.com (domain does not resolve)",
+        "official site, news search and ontheissues/vote411: not reviewed: web search budget exhausted"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:17.894Z",
+      "by": "source-collector"
+    }
+  ]
+}

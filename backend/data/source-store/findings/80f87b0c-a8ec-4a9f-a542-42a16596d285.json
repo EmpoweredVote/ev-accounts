@@ -1,0 +1,132 @@
+{
+  "politician_id": "80f87b0c-a8ec-4a9f-a542-42a16596d285",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5eacaddcfc070ec1e6d0e70a9cd5bdb9a9640a6bcbbaf68ad219d6c3baeb063c",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/149",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (passed 66-47)",
+      "note": "Voted aye on second reading of HB 958. The ratified bill requires county boards to process a registration only if the applicant states they are a U.S. citizen (with a 30-day sworn-statement fix when the answer is blank), and requires the State Board of Elections to create a process to remove voters flagged as possible non-citizens from a federal database. It also changes deceased-voter removal. Bill page: https://www.ncleg.gov/BillLookUp/2025/H958 ; ratified text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf",
+      "subjects": [
+        "citizenship statement to register",
+        "removing possible non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:54:00.788Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d7884aa89f8782b2c9ff9d0353d131f38fb000644459802ff77e0d6e11d31ba9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/149",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (passed 62-47)",
+      "note": "Voted aye to concur with the Senate changes to HB 958, the final House vote before ratification. The bill page shows the Governor vetoed it on 08/17/2026. Bill page: https://www.ncleg.gov/BillLookUp/2025/H958",
+      "subjects": [
+        "citizenship statement to register",
+        "removing possible non-citizens from voter rolls",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:54:00.788Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Mitchell_Setzer (NC House District 89, on the 2026 general-election ballot, advanced from the 2026 primary on March 3, 2026)",
+        "On the Record (0 appearances, 0 sources)",
+        "NC General Assembly member biography https://www.ncleg.gov/Members/Biography/H/149 (confirms Representative Mitchell S. Setzer)",
+        "NC General Assembly member vote list https://www.ncleg.gov/Members/Votes/H/149 (reviewed for election bills; found HB 958 votes; the 2018 S824 votes are already on file)",
+        "NC General Assembly bill page https://www.ncleg.gov/BillLookUp/2025/H958 and ratified text H958v9.pdf",
+        "nothing on the subject: Ballotpedia page (no voter ID or election integrity statements or sponsorships)",
+        "nothing on the subject: https://www.ncleg.gov/Members/Bills/H/149 (returned 404)",
+        "not reviewed: official campaign site, news search, and web searches (the shared search budget was used up before this person was searched); no own-words statements were found",
+        "not reviewed: Setzer social media pages (Facebook, Instagram, TikTok linked from Ballotpedia)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:54:00.788Z",
+      "by": "source-collector"
+    }
+  ]
+}

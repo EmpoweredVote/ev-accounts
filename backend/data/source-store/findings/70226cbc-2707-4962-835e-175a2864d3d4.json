@@ -1,0 +1,42 @@
+{
+  "politician_id": "70226cbc-2707-4962-835e-175a2864d3d4",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Dan_Schwartz_(Maryland) says he won the June 23, 2026 primary for U.S. House Maryland District 1 and is on the November 3, 2026 general election ballot",
+        "On the Record (0 appearances, extract-otr.mjs run with name search): nothing on the subject",
+        "campaign site https://www.schwartzforcongress.com/policies (only related line: 'Protect the Voting Rights Act.'; no ID or citizenship text)",
+        "campaign site /meet-dan, /press, /media-kit, /endorsements: nothing on the subject",
+        "Ballotpedia Candidate Connection survey answers (on his Ballotpedia page): nothing on the subject",
+        "https://willfries.substack.com/p/candidate-questionnaire-dan-schwartz: fetched, nothing on the subject",
+        "https://willfries.substack.com/p/chesapeake-contenders-dan-schwartz: fetched, nothing on the subject",
+        "https://statepolitics.substack.com/p/interview-with-dan-schwartz-candidate: fetched, only about 1.7k characters of text readable (likely partial), nothing on the subject",
+        "https://progressive.org/op-eds/trumps-fraudulent-war-on-fraud-schwartz-20260914/: fetched, nothing on the subject",
+        "https://www.thebanner.com/politics-power/state-government/andy-harris-dan-schwartz-forum-R3P3VHH4JZBPBO7R4N24XTSVVU: fetched, nothing on the subject",
+        "https://www.thebanner.com/politics-power/state-government/andy-harris-dan-schwartz-maryland-1st-district-6ORPAJOLYJC3NKDWA4VAEYZH2I: fetched, nothing on the subject",
+        "https://www.baltimoresun.com/2026/10/15/andy-harris-debate-performance/: fetched, nothing on the subject",
+        "not reviewed: https://www.youtube.com/watch?v=MmiJl3TSoxc (video)",
+        "not reviewed: https://www.youtube.com/watch?v=sabw1KoYNRY (video)",
+        "not reviewed: https://www.buzzsprout.com/2593772/free_share_page (podcast audio)",
+        "not applicable: congress.gov (never held legislative office; challenger)",
+        "not run: web news search (session search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:15:17.470Z",
+      "by": "source-collector"
+    }
+  ]
+}

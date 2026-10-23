@@ -1,0 +1,31 @@
+{
+  "politician_id": "194b9b91-6986-423e-89a0-ee9750f275d8",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/WFM1 (Representative William F. MacGregor of Boston, 10th Suffolk; 2026 ballot status not confirmed by a fetched page)",
+        "On the Record (0 appearances, 0 meetings)",
+        "MA Legislature profile bill list (about 15 filed petitions, none on the subject): nothing on the subject",
+        "blocked: https://ballotpedia.org/William_MacGregor (fetch returned empty page)",
+        "blocked: https://ballotpedia.org/William_F._MacGregor (fetch returned empty page)",
+        "not reviewed: news and own-words web searches (session web search budget used up)",
+        "not reviewed: official campaign site (not located, no search budget)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:59:54.408Z",
+      "by": "source-collector"
+    }
+  ]
+}

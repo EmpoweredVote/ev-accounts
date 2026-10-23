@@ -1,0 +1,29 @@
+{
+  "politician_id": "be502033-c0b7-42b7-be14-5e41bdd4532f",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Robin_Shackleford (fetched with curl) lists her as Current member, Indiana House of Representatives, 2026 incumbent, 2026 primary (winner), 2026 general election",
+        "On the Record (0 appearances, no meetings)",
+        "Indiana House caucus member page https://indianahousedemocrats.org/members/robin-shackleford (fetched; nothing on the subject)",
+        "Ballotpedia (page text has no voter ID or citizenship content)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_robin_shackleford_1 (page needs JavaScript; bill and vote lists not readable)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: campaign site, floor votes and sponsorships on Indiana voter ID or citizenship bills (could not reach the legislature's bill data without search)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:49:27.479Z",
+      "by": "source-collector"
+    }
+  ]
+}

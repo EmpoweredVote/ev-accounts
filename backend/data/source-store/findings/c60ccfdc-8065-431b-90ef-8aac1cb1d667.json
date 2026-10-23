@@ -1,0 +1,169 @@
+{
+  "politician_id": "c60ccfdc-8065-431b-90ef-8aac1cb1d667",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "08f70fd5ee3a8165d5dd22824940a9858a6361e4dfcc6188fbd19ca108bb9561",
+      "kind": "own-words",
+      "url": "https://jerrysindivisible.substack.com/p/baumgartner-voted-to-make-voting",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "passage": "Requiring ID to vote is just common sense. I was proud to vote YES on the SAVE America Act.",
+      "note": "His X post after the House vote on S. 1383 (Roll Call 69), as quoted in an opinion piece by another author. The original post was not fetched.",
+      "subjects": [
+        "voter ID at the polls",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:53.041Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1f676f479affe9a96854f513e0a5d8da818f02e0fa5451e9199b54efad1a8bf9",
+      "kind": "own-words",
+      "url": "https://www.rawstory.com/maga-fact-check-pamela-brown/",
+      "date": "2026-07-31",
+      "date_precision": "day",
+      "passage": "It shouldn't be that difficult to make the same requirement to get on an airplane as the requirement to vote.",
+      "note": "Said in a CNN interview with Pamela Brown (Friday, July 31, 2026 per the article), as quoted by Raw Story. He compares the ID needed to vote with the ID needed to fly.",
+      "subjects": [
+        "voter ID at the polls",
+        "SAVE America Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:53.041Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e28028dcc44b6f9163645c2f8fefbb7ccd50bbb510c33a5ba36af7816c960da0",
+      "kind": "own-words",
+      "url": "https://www.rawstory.com/maga-fact-check-pamela-brown/",
+      "date": "2026-07-31",
+      "date_precision": "day",
+      "passage": "we've seen non-citizens voting in places like New Jersey, and we need to restore that trust.",
+      "note": "Same CNN interview, as quoted by Raw Story. He raises non-citizen voting and trust in elections.",
+      "subjects": [
+        "non-citizen voting",
+        "election trust"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:53.041Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9ed323fd5b3982f47492feaa5ffe40ead903ecfd1119192f9bd010d163e8c6fb",
+      "kind": "own-words",
+      "url": "https://www.rawstory.com/maga-fact-check-pamela-brown/",
+      "date": "2026-07-31",
+      "date_precision": "day",
+      "passage": "So we voted for the SAVE America Act, I think at least four times in the House.",
+      "note": "Same CNN interview, as quoted by Raw Story. He says the House has voted for the bill several times.",
+      "subjects": [
+        "SAVE America Act",
+        "proof of citizenship to register",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:53.041Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "SAVE America Act",
+        "non-citizen voting",
+        "election trust / integrity",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "backend list-discovered-sources.ts (failed: missing environment variables; not run)",
+        "official site baumgartner.house.gov homepage, press releases page 1, votes-and-legislation page (nothing on subject)",
+        "Ballotpedia (returned empty page)",
+        "web search (2 queries)",
+        "Substack opinion piece quoting his X post",
+        "Raw Story article quoting CNN interview",
+        "Spokesman-Review letters 2026-02-19 (no own words)",
+        "not checked: press releases pages 2-10, original X post, CNN transcript"
+      ],
+      "found": 4,
+      "at": "2026-10-22T21:10:53.041Z",
+      "by": "source-collector"
+    }
+  ]
+}

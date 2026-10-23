@@ -1,0 +1,138 @@
+{
+  "politician_id": "5e7e232c-25e2-46ea-a511-4b9a7ab58b21",
+  "findings": [
+    {
+      "id": "d3650860314e92f6a1c29ea802f2fb2448b2fbc6fa7b4ae68979e5ea2ec11200",
+      "kind": "own-words",
+      "url": "https://www.wfyi.org/statewide/2026-09-21/2026-voter-guide-indianas-5th-congressional-district",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "passage": "Yeah, I think, you know, for the SAVE Act, you know, it's a controversial, hot topic issue in our country at the moment, and what I would do and what I would say is that, you know, I believe that people should show their voter ID, you know, when they go vote. But I also believe that this administration is putting this proposal in place, it's currently stalled in the Senate, so we'll have to see what happens, but I think it's a way to save his presidency.*",
+      "note": "Asked by WFYI about the SAVE America Act (proof of citizenship and photo ID). He says people should show voter ID when they vote, and says the proposal is stalled in the Senate. Interview took place Aug. 4, 2026; guide published Sept. 21, 2026.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship (SAVE America Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:37:29.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7056c011dfd3808126a70da7e2f7fbdede7cbb2ff892d8e3459a8f7faee38263",
+      "kind": "own-words",
+      "url": "https://www.wfyi.org/statewide/2026-09-21/2026-voter-guide-indianas-5th-congressional-district",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "passage": "When I'm elected as your member of Congress, yes, I want to make sure that our elections are safe, secure and fair, but I also believe that we need to pass the John Lewis Voting Rights Act. That is something in our Congress right now that we could do, that could help with voting in our state.",
+      "note": "Same WFYI answer. He says elections should be safe, secure and fair, and names a federal voting rights bill he would pass.",
+      "subjects": [
+        "election security and integrity in general",
+        "federal voting rights bill"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:37:29.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0f662f5949e06f5819c26fe581bbddce1d89f7295c6d6471e0a9e4e98622234",
+      "kind": "own-words",
+      "url": "https://indianasenatedemocrats.org/sen-j-d-ford-affirms-commitment-to-fair-free-secure-and-accessible-elections-in-response-to-white-house-threat-to-mail-in-ballots/",
+      "date": "2025-08-19",
+      "date_precision": "day",
+      "passage": "“I will always advocate for fair, free, secure and accessible elections,” said Ford. “Any restriction on mail-in voting would restrict people from fulfilling a paramount civic responsibility.”",
+      "note": "Statement issued in his name as ranking member of the Senate Elections Committee, answering a White House call to end mail-in ballots. He opposes restrictions on voting by mail.",
+      "subjects": [
+        "mail-in ballot access and restrictions",
+        "election security and integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:37:29.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "555b5c99ba843afe30ace4a408d33fa042be1bf4320968a20e214717c50edc26",
+      "kind": "own-words",
+      "url": "https://indianasenatedemocrats.org/sen-j-d-ford-affirms-commitment-to-fair-free-secure-and-accessible-elections-in-response-to-white-house-threat-to-mail-in-ballots/",
+      "date": "2025-08-19",
+      "date_precision": "day",
+      "passage": "“We should not be disenfranchising people who have legitimate reasons that keep them from the polls,” said Ford. “We are talking about our elderly, our neighbors who are disabled, our poll workers fulfilling their duties during the election and our service members all over the globe.”",
+      "note": "Same statement. He lists groups who vote by mail in Indiana (elderly, disabled, poll workers, service members). Also carried by The Reporter (readthereporter.com) on Aug. 20, 2025.",
+      "subjects": [
+        "mail-in ballot access and restrictions"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:37:29.597Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "82eba7fa506df18218fdd366d0c1d34f8740db5e641320891eec93af4b733aa1",
+      "kind": "own-words",
+      "url": "https://indianasenatedemocrats.org/ford-on-court-striking-indiana-voting-law/",
+      "date": "2020-08-21",
+      "date_precision": "day",
+      "passage": "“I’m glad to see this law was struck down with enough time before this year’s general election. Unfortunately it is just one in a long series of voter suppression attempts by my friends across the aisle. This case demonstrates what I have said time and time again – we as elected officials should be doing what we can to make it easier for people to vote, not putting up more barriers. While I am thankful for today’s ruling, it is sad that it took a lawsuit to shine the spotlight on this blatantly unconstitutional law.”",
+      "note": "Statement on a federal court ruling that struck down Indiana's signature-match rule for mail-in absentee ballots. He says officials should make voting easier and not add barriers.",
+      "subjects": [
+        "signature check on mail-in ballots",
+        "mail-in ballot access and restrictions"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:37:29.597Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship (SAVE America Act)",
+        "mail-in ballot access and restrictions",
+        "signature checks on mail ballots",
+        "election security and integrity in general",
+        "non-citizen voting / voter-roll checks"
+      ],
+      "places": [
+        "status: in scope; on the 2026 general-election ballot for U.S. House, Indiana District 5 (https://ballotpedia.org/J.D._Ford); sitting Indiana State Senate District 29",
+        "On the Record (0 meetings)",
+        "Ballotpedia (page and 2026/2018 candidate survey answers; nothing on voter ID or citizenship)",
+        "campaign site electjdford.com (home, platform, news list; nothing on the subject)",
+        "official Senate caucus page for Ford (page and site searches for 'voter ID', 'citizenship', 'election')",
+        "WFYI 2026 voter guide interview (read)",
+        "blocked: https://iga.in.gov (legislature bill pages are a script-only app; sponsorships and votes could not be read)",
+        "blocked: https://www.wthr.com/article/news/politics/elections/5th-congressional-district-indiana-candidates-jd-ford-victoria-spartz-decision-2026-interview/531-76882f4a-14fe-4cf4-86eb-a39358f75a21 (403)",
+        "not reviewed: https://www.indystar.com/story/news/politics/2026/08/11/watch-jd-ford-interview-indiana-5th-congressional-district-victoria-spartz/91167443007/ (video interview)",
+        "web search: not run (shared search budget used up); Wikipedia used only to find leads"
+      ],
+      "found": 5,
+      "at": "2026-10-22T22:37:29.597Z",
+      "by": "source-collector"
+    }
+  ]
+}

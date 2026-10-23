@@ -1,0 +1,27 @@
+{
+  "politician_id": "9b3c9aa8-d22a-4761-93e3-8054c762f4a5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/MJM1 (confirms Michael J. Moran, 18th Suffolk; nothing on the subject)",
+        "legislature bills page https://malegislature.gov/Legislators/Profile/MJM1/Bills (only election bill is H.856 on reprecincting; off-subject, nothing on the subject)",
+        "blocked: https://ballotpedia.org/Michael_Moran_(Massachusetts) (fetch returned empty page)",
+        "not reviewed: official site and campaign site (not fetched)",
+        "not reviewed: news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:17:12.054Z",
+      "by": "source-collector"
+    }
+  ]
+}

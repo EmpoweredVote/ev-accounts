@@ -1,0 +1,51 @@
+{
+  "politician_id": "a4dd0a2c-564f-4e5c-9e1b-9bb942964cab",
+  "findings": [
+    {
+      "id": "ef6961445130c2493166307207ee95d2bd409ba83f03cf730c0f566901d532ba",
+      "kind": "own-words",
+      "url": "https://ivoterguide.com/candidate/66532/race/30394/election/1454",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "People should be able to vote without photo identification. Strongly Disagree",
+      "note": "Answer to a voter-guide questionnaire statement in the Elections and Voting section of the candidate's iVoterGuide profile for U.S. Rep., Dist. 43. The statement is the guide's wording; the answer 'Strongly Disagree' is the candidate's. Exact date of the answer not shown on the page.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:25.312Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: on the 2026 general-election ballot for CA-43 (NBC Los Angeles, 2026-10-12: https://www.nbclosangeles.com/news/local/congressional-district-43-maxine-waters-cristian-morales/3954907/)",
+        "On the Record (0 meetings)",
+        "campaign site: URL not found; not reviewed (NBC LA describes its content as tax cuts, spending, affordability, crime, homelessness; nothing on the subject)",
+        "blocked: https://ballotpedia.org/Cristian_Morales (empty response)",
+        "iVoterGuide candidate profile (questionnaire answer saved)",
+        "NBC Los Angeles article (nothing on the subject)",
+        "news search on name plus voter ID / election integrity (nothing on the subject; results were a different person)",
+        "congress.gov: not applicable, not a sitting legislator"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:38:25.312Z",
+      "by": "source-collector"
+    }
+  ]
+}

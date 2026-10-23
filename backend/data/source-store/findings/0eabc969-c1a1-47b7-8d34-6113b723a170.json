@@ -1,0 +1,222 @@
+{
+  "politician_id": "0eabc969-c1a1-47b7-8d34-6113b723a170",
+  "findings": [
+    {
+      "id": "babfd00d58c7606d7a1d160e02edfb4bee4c7a300cbfa97a8ee7b9610d4d456e",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/34904915-3c38-4502-953b-8854e6e9b23e",
+      "date": "2026-07-12",
+      "date_precision": "day",
+      "passage": "And this act would federalize the elections.",
+      "note": "In a recorded interview (transcript from On the Record), he describes the SAVE Act's effects on registration and tribal ID. Passage below is the ID-related one; see next finding for the rest.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d87ee0e4196bd9e15e4a76faf84ce9b745bcd2938e4649a922ee3eb7ee46840c",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/34904915-3c38-4502-953b-8854e6e9b23e",
+      "date": "2026-07-12",
+      "date_precision": "day",
+      "passage": "Uh very very uh difficult for tribal members to vote because of the act says it you have to have an expiration date on your ID.",
+      "note": "He says the SAVE Act's ID rule, which he describes as requiring an expiration date, would make voting hard for tribal members, whose tribal ID has none.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID document requirements",
+        "proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5bec75dd9b54d092ac20201ae5a282d426b939da532d69f4a931ad4613e8a2b",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/34904915-3c38-4502-953b-8854e6e9b23e",
+      "date": "2026-07-12",
+      "date_precision": "day",
+      "passage": "They would purge names off the off the registration rolls, and people would have to reapply, and they couldn't even get re-registered to vote using their birth certificate.",
+      "note": "He describes the SAVE Act as removing names from registration rolls and requiring people to re-register, including married women whose names differ from their birth certificates.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "438f38be7968ae54811d4cba1e29a285080646ac3e85ce2a2ebfadc9930376f9",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/34904915-3c38-4502-953b-8854e6e9b23e",
+      "date": "2026-07-12",
+      "date_precision": "day",
+      "passage": "And that act, which he frames as stopping non-citizens from voting, it's actually about stopping citizens from voting.",
+      "note": "He says the SAVE Act is described by the president as a non-citizen voting measure, and says in his view it keeps citizens from voting.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44bd69b30777c1ef23262d30e62dfde9e7860e11a730f9968b596379f47be59e",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/03d0fdd3-3126-4938-aee0-de443de9d965",
+      "date": "2026-06-28",
+      "date_precision": "day",
+      "passage": "It's not about non-citizens voting.",
+      "note": "In a recorded interview (transcript from On the Record) about a housing bill, he says the SAVE Act is not about non-citizen voting.",
+      "subjects": [
+        "non-citizen voting",
+        "proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44161c5f445606d24f7dfff4a994704a3f04dce6f3cfe6a059df1b020e7a203d",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/03d0fdd3-3126-4938-aee0-de443de9d965",
+      "date": "2026-06-28",
+      "date_precision": "day",
+      "passage": "It's about stopping citizens from voting who are members of tribes, who are college students, who are women, or who dwell in cities.",
+      "note": "He names groups he says the SAVE Act would keep from voting.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "897b4c6a2e4b4f1d0e28a7983fb7fc3c2b3b6c1d491e2a694d4a576111d07ac1",
+      "kind": "own-words",
+      "url": "https://ontherecord.empowered.vote/meetings/03d0fdd3-3126-4938-aee0-de443de9d965",
+      "date": "2026-06-28",
+      "date_precision": "day",
+      "passage": "But vote by mail stops all those shenanigans.",
+      "note": "He contrasts election-day voting with vote by mail, which he says resists suppression; same interview, related to mail ballots.",
+      "subjects": [
+        "mail-ballot security",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5445e5f44a359adfda7f9c4ad1756e0cdd43ead90936726e2470ad033b5d13a6",
+      "kind": "own-words",
+      "url": "https://www.merkley.senate.gov/oregon-lawmakers-demand-trump-reverse-course-on-plan-to-suppress-oregon-voters/",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "passage": "Trump continues to push passage of his Safeguard American Voter Eligibility (SAVE) Act in Congress, which would undermine vote-by-mail in an illegal and unconstitutional effort to undermine the rights of states to control their own election systems.",
+      "note": "Joint press release from the Oregon Senate and House delegation (issued in his name among others) on the SAVE Act and vote by mail.",
+      "subjects": [
+        "proof of citizenship to register (SAVE Act)",
+        "mail-ballot security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "926bbedff7a12224ad3d46602fa076e5f32b3b36e2a928da36258495a1d2220b",
+      "kind": "own-words",
+      "url": "https://www.merkley.senate.gov/oregon-lawmakers-demand-trump-reverse-course-on-plan-to-suppress-oregon-voters/",
+      "date": "2026-07-14",
+      "date_precision": "day",
+      "passage": "Earlier this year, Trump issued an executive order requiring the creation of a national voter database, which would require states to submit their voter registration lists to the federal government for review.",
+      "note": "Same joint release, about a federal executive order on a national voter database and state voter-roll sharing.",
+      "subjects": [
+        "voter-roll checks",
+        "federal voter database"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:11:07.436Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "federal voter database"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia page https://ballotpedia.org/Jeff_Merkley lists 2026 general election, 2026 incumbent, 2026 primary (winner), U.S. Senate, Oregon",
+        "On the Record (3 meetings; 2 have SAVE Act remarks, 1 nothing on the subject; OTR meeting pages load by script, so passages come from the OTR transcript extract of each meeting)",
+        "official site merkley.senate.gov (site search for voter ID: no voter ID or proof-of-citizenship release; 2026 voting releases saved)",
+        "Ballotpedia (confirms candidacy; no subject content read)",
+        "not reviewed: https://www.congress.gov (sponsor/vote search on the SAVE Act not done)",
+        "not reviewed: https://www.youtube.com/watch?v=pGEBQww1BMA",
+        "not reviewed: https://www.youtube.com/watch?v=LFFEvMqY4SA",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: campaign site, ontheissues.org, govtrack, vote411"
+      ],
+      "found": 9,
+      "at": "2026-10-22T22:11:07.436Z",
+      "by": "source-collector"
+    }
+  ]
+}

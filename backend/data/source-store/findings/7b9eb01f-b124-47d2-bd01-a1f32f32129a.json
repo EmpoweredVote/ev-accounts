@@ -1,0 +1,33 @@
+{
+  "politician_id": "7b9eb01f-b124-47d2-bd01-a1f32f32129a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/James_Martin_(Florida) names him as a candidate for U.S. House Florida District 21, on the November 3, 2026 general-election ballot after the August 18, 2026 primary",
+        "On the Record (0 appearances, 0 meetings)",
+        "campaign site https://www.jamesmartinforflorida.com/ (home, /about, /media, /news and all 12 news posts checked for the subject words; nothing on the subject; /issues, /priorities, /platform return the same app shell with no issue text)",
+        "Ballotpedia (no Candidate Connection survey completed; nothing on the subject)",
+        "congress.gov / legislature bill pages: not applicable, he is a challenger with no legislative record",
+        "blocked: https://justfacts.votesmart.org/candidate/biography/james-martin (HTTP 403)",
+        "not reviewed: campaign YouTube https://www.youtube.com/@JamesMartinforFL and media/TV appearances (video, unreadable)",
+        "not reviewed: news search on name plus subject words (shared web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:19:17.937Z",
+      "by": "source-collector"
+    }
+  ]
+}

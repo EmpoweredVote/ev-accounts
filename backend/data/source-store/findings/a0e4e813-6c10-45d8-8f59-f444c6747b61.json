@@ -1,0 +1,31 @@
+{
+  "politician_id": "a0e4e813-6c10-45d8-8f59-f444c6747b61",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voter-roll checks and non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/William_Galvin_(Massachusetts_Secretary_of_the_Commonwealth)) says he advanced from the September 1, 2026 primary and is on the November 3, 2026 general ballot; nothing on the subject on that page",
+        "On the Record (0 appearances)",
+        "blocked: https://www.sec.state.ma.us/ (bot wall, no page text returned)",
+        "blocked: https://www.sec.state.ma.us/divisions/elections/voter-id/voter-id.htm",
+        "blocked: https://www.mass.gov/orgs/office-of-the-secretary-of-the-commonwealth/news (HTTP 403)",
+        "blocked: https://www.mass.gov/info-details/id-requirements-for-voting (HTTP 403)",
+        "campaign site: not reachable (guessed domains did not resolve; Ballotpedia lists no usable link)",
+        "not reviewed: news search on name plus subject words (the session web-search limit was used up)",
+        "legislature bill pages: not applicable, statewide office holder"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:19:55.967Z",
+      "by": "source-collector"
+    }
+  ]
+}

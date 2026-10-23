@@ -1,0 +1,32 @@
+{
+  "politician_id": "eb88bdd6-d1c7-4e08-aff8-bb7517ad24b5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Deborah_Goldberg (Deb Goldberg, Massachusetts Treasurer, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot)",
+        "On the Record (0 appearances; nothing on the subject)",
+        "campaign site https://www.debgoldberg.com (home page fetched; nothing on the subject; /issues returned 404)",
+        "Ballotpedia (profile fetched; nothing on the subject)",
+        "blocked: https://www.mass.gov/orgs/office-of-the-treasurer-and-receiver-general (HTTP 403)",
+        "legislature bill pages: not applicable, the office is statewide Treasurer, not a legislator; nothing on the subject",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "Wikipedia 2026 Massachusetts elections page (lead only; confirms the race)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:28:21.540Z",
+      "by": "source-collector"
+    }
+  ]
+}

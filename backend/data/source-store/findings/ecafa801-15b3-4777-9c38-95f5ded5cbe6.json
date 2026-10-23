@@ -1,0 +1,77 @@
+{
+  "politician_id": "ecafa801-15b3-4777-9c38-95f5ded5cbe6",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "28d0a224816660845caef59f93beae7aa3a9df494c760a857c11ad3dd607fbd8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H4190",
+      "date": "2025-06-04",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4190-2025",
+      "act": "sponsor",
+      "note": "Joint petition with a senator, H.4190, to let the town of Amherst extend local voting rights to lawful permanent residents. Related to who may vote (non-citizen voting), not to ID. Date is the first action date listed on the page.",
+      "subjects": [
+        "non-citizen voting (local, lawful permanent residents)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:28:46.725Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Mindy_Domb says she is on the Nov 3, 2026 general ballot for MA House 3rd Hampshire",
+        "On the Record (0 appearances)",
+        "Ballotpedia (nothing on the subject)",
+        "MA Legislature profile https://malegislature.gov/Legislators/Profile/M_D2 (one related bill found)",
+        "MA Legislature bill search 'voter identification' (194th court; no confirmed sponsorship by her; not reviewed bill by bill)",
+        "blocked: https://www.mindydomb.com (404)",
+        "not reviewed: web news search (search budget exhausted)",
+        "not reviewed: official house page issue pages beyond legislature profile"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:28:46.725Z",
+      "by": "source-collector"
+    }
+  ]
+}

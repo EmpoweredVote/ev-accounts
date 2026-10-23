@@ -1,0 +1,34 @@
+{
+  "politician_id": "7cf1080e-6e7e-4f5b-be00-6fb170896a7c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "same-day registration proof of residency"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Maura_Healey names her as incumbent Governor, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot",
+        "On the Record (0 meetings)",
+        "Ballotpedia (Maura_Healey page: nothing on the subject in her own words; Question 4 same-day registration page lists her as a supporter, no quote or primary source)",
+        "campaign site https://www.maurahealey.com/ (home page, nothing on the subject; /issues returns 404)",
+        "blocked: https://www.mass.gov/orgs/office-of-the-governor/news (403 on WebFetch and curl)",
+        "blocked: https://www.mass.gov/news/search?q=voter+ID (403)",
+        "blocked: https://www.telegram.com/story/news/politics/2026/10/08/how-would-same-day-voter-registration-change-elections-in-ma/92133618007/ (402)",
+        "ACLUM Yes on 4 press release and boston.com Galvin mail-voting article: fetched, no Healey statement",
+        "not reviewed: news search on name plus subject words (shared web search budget exhausted)",
+        "not reviewed: Massachusetts legislature bill pages (not applicable to a governor; no search budget to find signed or vetoed election bills)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:14:47.731Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "politician_id": "cf3e8aed-2c52-4df1-8a70-35be43fc0c96",
+  "findings": [
+    {
+      "id": "07921e81dbf3121a8cb6c12178f38cdde55541812bb8dff4e8bbed24f68b0b48",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-06",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "concur in House committee substitute (Motion 9 To Concur)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, concur in House committee substitute (Motion 9 To Concur), 2018-12-06: yea (tally 25–7); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c765281624eba034064dc2920b2d55a63acb3cbe9cb7b9dac0d48c3712e9023",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: yea (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (Ballotpedia, https://ballotpedia.org/Phil_Berger, fetched by curl: the page reports Sam Page defeated incumbent Phil Berger in the primary for North Carolina State Senate District 26 on March 3, 2026. Certified result 13,135 to 13,112; November 2026 ballot lists Steve Luking and Sam Page, not Phil Berger. The page also confirms he is the sitting State Senator, term ends 2027.)",
+        "On the Record (0 appearances)",
+        "not reviewed (stopped after out-of-scope finding): official site, legislature bill pages, news search",
+        "blocked: web search budget used up, no searches run"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:09:24.252Z",
+      "by": "source-collector"
+    }
+  ]
+}

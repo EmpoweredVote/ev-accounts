@@ -1,0 +1,194 @@
+{
+  "politician_id": "8a776315-0da0-43a9-9f35-0cc2408ec6e4",
+  "findings": [
+    {
+      "id": "efd811046c5edd9cb58bff0cfb436eed3c39c86b04c0d432e9087b355ab6375d",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: nay (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "e6a7d25b2dc84e735bdf0c1ae9fbaf025831aa802391aeb55c03561fad23a72e",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "nay",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: nay (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "86ac2f5b1f26975d170fdf01a29b7922d4cf9716cb4ebe882ed2b5c79ec47bd0",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "nay",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: nay (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e167346c2808ab66313b4ba00831044ab45683add32504d468454c1b4a9cde47",
+      "kind": "own-words",
+      "url": "https://cleaver.house.gov/media-center/press-releases/rep-cleaver-votes-against-gops-save-act-would-disenfranchise-voters",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "I am compelled to express my strong opposition to the proposed SAVE Act, which seeks to impose stringent voter identification requirements under the guise of election security.",
+      "note": "Official press release statement ahead of the House vote on the SAVE Act. He says he opposes the bill because of its voter identification requirements.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID requirements",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:28.234Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3bf47c22f40398fabc14dd8146493a84ec32cc3a538a815972b5945dd7bc7f1b",
+      "kind": "own-words",
+      "url": "https://cleaver.house.gov/media-center/press-releases/rep-cleaver-votes-against-gops-save-act-would-disenfranchise-voters",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "The claim that this legislation is necessary to combat noncitizen voting is not backed by any significant evidence. In fact, studies have shown that voter fraud, especially by noncitizens, is exceedingly rare.",
+      "note": "He disputes the argument that the bill is needed to stop non-citizen voting, and says non-citizen fraud is rare.",
+      "subjects": [
+        "non-citizen voting",
+        "voter fraud",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:28.234Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "51e72d344fddb7493bee11e58ca86474582534be0960eab78ae6e7f5fc394fff",
+      "kind": "own-words",
+      "url": "https://cleaver.house.gov/media-center/press-releases/rep-cleaver-votes-against-gops-save-act-would-disenfranchise-voters",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "We should be making it easier, not harder, for Americans to vote. Our democracy is strongest when every eligible citizen has a fair and equal opportunity to make their voice heard. I stand in firm opposition to the SAVE Act and any similar legislation that seeks to impose unnecessary barriers to voting.",
+      "note": "Closing of the same statement. He says he opposes the SAVE Act and similar bills.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter ID requirements",
+        "voting access"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:28.234Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d5acc14de0c4810647830a18577952800e03e6ad1f2a02a1baae9d0a3bf36586",
+      "kind": "own-words",
+      "url": "https://www.krcu.org/politics/2012-10-10/congressman-cleaver-opposes-voter-ids",
+      "date": "2012-10-10",
+      "date_precision": "day",
+      "passage": "We could have a drop off from seniors who believe that they need government issued ID and don’t have it,” Cleaver said.",
+      "note": "KRCU (KCUR) interview, 2012. Quoted words on how confusion over ID rules could reduce turnout among seniors. The article says Missouri then did not require photo ID, and that he told voters which existing ID forms still counted. The quote begins mid-quotation in the article's own text, as fetched.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter confusion about ID rules",
+        "photo ID versus other documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:28.234Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter ID with mail ballot",
+        "no-ID voter fallbacks"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "official site cleaver.house.gov (press release found via search, then fetched)",
+        "web search: Emanuel Cleaver SAVE Act voter ID statement",
+        "KRCU 2012 interview",
+        "blocked: https://cleaver.house.gov/media/press-releases (404)",
+        "not run: list-discovered-sources.ts (backend env variables missing; .env not read)",
+        "not searched: Ballotpedia, Congress.gov, mail-ballot ID, the 2026 SAVE America Act statements (none turned up in search)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T21:10:28.234Z",
+      "by": "source-collector"
+    }
+  ]
+}

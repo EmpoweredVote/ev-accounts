@@ -1,0 +1,233 @@
+{
+  "politician_id": "96cc507d-bb3a-4e25-ae6c-4b937f68f9f4",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ff98cdc5b480c9d1dd523c8183f38ddd811e24ecdeaab2f4462701c8e83d05eb",
+      "kind": "own-words",
+      "url": "https://laurellee.house.gov/media/press-releases/rep-laurel-lees-statement-house-passage-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "The SAVE Act will support state and local elections officials by providing them with data and tools necessary to help them verify the accuracy of voter rolls to help protect our elections and ensure that only American citizens are casting ballots.",
+      "note": "Press release statement after House passage. The release text says the bill requires documentary proof of U.S. citizenship to register to vote in federal elections. She links it to voter-roll checks.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:33.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "678b9c387aa6440e72ab6392566d2d26362d547bd0bf939fe43aeff12a147303",
+      "kind": "own-words",
+      "url": "https://laurellee.house.gov/media/press-releases/rep-laurel-lees-statement-house-passage-save-act",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "Ensuring Americans have confidence in our election system is a top priority of mine, and one of the most effective ways we can do that is by guaranteeing that only citizens are voting in federal elections because the vast majority of Americans believe that only U.S. citizens should vote in our elections.",
+      "note": "Same release. Gives her reason: public confidence and citizens-only voting in federal elections.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:33.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d3f9552f287d736d4b0aa6343102a9c65db401e7ed4dab6bf72a61d48e18f596",
+      "kind": "own-words",
+      "url": "https://laurellee.house.gov/media/press-releases/rep-laurel-lee-only-americans-should-be-voting-our-elections",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "The SAVE Act will strengthen current law by requiring documentary proof of U.S. citizenship to register to vote in federal elections.",
+      "note": "From her prepared House floor remarks on H.R. 8281, published in the release.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:33.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "61891ef7fa1684f04efe8971179d5eeb92d131d2f4a5ef458f63655bb28758b7",
+      "kind": "own-words",
+      "url": "https://laurellee.house.gov/media/press-releases/rep-laurel-lee-only-americans-should-be-voting-our-elections",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "While it is already illegal for non-citizens to vote, this legislation provides much-needed enforcement and tools for states to verify that their voter rolls are accurate and that illegal aliens are not slipping through the cracks.",
+      "note": "Floor remarks as prepared. She notes non-citizen voting is already illegal and describes the bill as adding enforcement and voter-roll verification tools.",
+      "subjects": [
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:33.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "62bd58f7ca9c4fde351b197346829dbbfa029e07a657dd04d79fee0117f1c0c8",
+      "kind": "own-words",
+      "url": "https://laurellee.house.gov/media/press-releases/rep-laurel-lee-only-americans-should-be-voting-our-elections",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "passage": "Recently, we have seen documented instances of noncitizen voting in jurisdictions across the country, including right here in our nation's capital.",
+      "note": "Floor remarks as prepared. She cites instances of non-citizen voting as a reason for the bill.",
+      "subjects": [
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:33.003Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "93243c9c48e953412d8b14d8572bd6e0114b56dd6225150de398cfa6a97620e4",
+      "kind": "own-words",
+      "url": "https://www.cbsnews.com/amp/colorado/news/house-passes-save-act-proof-of-citizenship-voter-registration-federal-elections",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "passage": "Citizens will be able to use combinations of existing identification documents in order to register to vote,",
+      "note": "Quote from Lee as reported by CBS News after the House vote (she said it Thursday). It describes which documents citizens could use to register. The article also says she described name-change cases; that part is a paraphrase and is not saved. The quote is partial: the sentence is cut by the reporter at a comma, so this is a news-reported quote, not a page of her own.",
+      "subjects": [
+        "proof of citizenship to register",
+        "documents accepted"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:10:33.003Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician)",
+        "blocked: list-discovered-sources.ts could not run (no database settings in the build worktree; backend/.env not read)",
+        "official site laurellee.house.gov (two press releases fetched with curl, browser user agent)",
+        "web search: SAVE Act statements; SAVE America Act / photo ID 2026 (no 2026 Lee statement found)",
+        "CBS News article on April 2025 House vote",
+        "not fetched: Ballotpedia, campaign site, ontheissues (lead only)"
+      ],
+      "found": 6,
+      "at": "2026-10-22T21:10:33.003Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "politician_id": "02007d93-f874-4fd4-8c2e-acc2c8217586",
+  "findings": [
+    {
+      "id": "2d857e33171f5bffdc8e21027a3666fd73cd461e12f9e1d886bbe8c1aa4b2c2d",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Chris_Gober",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "I have spent my career defending free speech, election integrity, and the Constitution in court and winning for conservative Americans.",
+      "note": "From his Ballotpedia Candidate Connection survey answers (2026). General statement that he has defended election integrity in court. It does not mention voter ID or proof of citizenship.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:47.380Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "28a07eb1704cb7ee5fef77db8520734efe6a69f51ba4e467945f85d65d4c4181",
+      "kind": "own-words",
+      "url": "https://chrisgober.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Defended free speech, election integrity, and the Constitution before the U.S. Supreme Court and courts nationwide.",
+      "note": "Line on his campaign home page (page undated; read 2026-10-22). Describes his past legal work in general terms. No ID or citizenship detail.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:47.380Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter ID for people with no ID",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Chris_Gober) says he is on the Nov 3, 2026 general-election ballot for TX-10",
+        "On the Record (0 appearances for this politician id; nothing on the subject)",
+        "campaign site https://chrisgober.com/ home, /campaign-overview, /communications (only general election-integrity wording; nothing on ID or citizenship proof)",
+        "Ballotpedia page and its Candidate Connection survey (general election-integrity wording only)",
+        "Texas Tribune 2026-02-12 candidate profile (nothing on the subject)",
+        "web searches on name plus voter ID / SAVE Act / proof of citizenship / noncitizen (nothing on the subject)",
+        "congress.gov (not a sitting legislator; search blocked: https://www.congress.gov/search)",
+        "blocked: https://www.axios.com/local/austin/2026/08/20/elon-musk-pac-lawyer-eyes-texas-congressional-seat (403)",
+        "not reviewed: campaign YouTube https://www.youtube.com/@ChrisGoberforTexas and X https://x.com/ChrisKGober"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:28:47.380Z",
+      "by": "source-collector"
+    }
+  ]
+}

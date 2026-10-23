@@ -1,0 +1,22 @@
+{
+  "politician_id": "e25c3c66-7b9c-498b-8ff4-bfd5c0354863",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "places": [
+        "status: lost the 2026-03-03 primary (Ballotpedia, https://ballotpedia.org/Nasif_Majeed: \"He lost in the Democratic primary on March 3, 2026.\" for NC House District 99)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (confirms identity and primary loss)",
+        "not reviewed: ncleg.gov bill pages, official site, news search (stopped as out of scope; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:11:27.794Z",
+      "by": "source-collector"
+    }
+  ]
+}

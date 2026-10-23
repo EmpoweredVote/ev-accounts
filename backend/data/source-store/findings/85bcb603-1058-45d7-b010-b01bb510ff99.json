@@ -1,0 +1,34 @@
+{
+  "politician_id": "85bcb603-1058-45d7-b010-b01bb510ff99",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Timothy_Bennett names Timothy Bennett as a candidate for Colorado's 7th District, on the November 3, 2026 general-election ballot after advancing from the June 30, 2026 primary",
+        "On the Record (0 appearances, extract-otr.mjs run with politician id and name)",
+        "campaign site https://timbennettforcongress.com/home: nothing on the subject",
+        "campaign site https://timbennettforcongress.com/platform: nothing on the subject",
+        "campaign site https://timbennettforcongress.com/meet-tim: nothing on the subject",
+        "Ballotpedia https://ballotpedia.org/Timothy_Bennett: nothing on the subject (no survey responses on voting rules)",
+        "congress.gov: not applicable, no legislative record found (never held federal office)",
+        "not reviewed: news search on name plus subject words (web search budget for the session was used up)",
+        "not reviewed: ontheissues.org, vote411, debates or forum videos (no search possible; no direct URL known)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:08:58.795Z",
+      "by": "source-collector"
+    }
+  ]
+}

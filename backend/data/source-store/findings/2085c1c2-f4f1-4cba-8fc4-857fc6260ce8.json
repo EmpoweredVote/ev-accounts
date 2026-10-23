@@ -1,0 +1,54 @@
+{
+  "politician_id": "2085c1c2-f4f1-4cba-8fc4-857fc6260ce8",
+  "findings": [
+    {
+      "id": "a037e321b308954e3930c982029d428d0b444d717086aaa5f6d0187d73807590",
+      "kind": "own-words",
+      "url": "https://www.juliefortier.org/issues",
+      "date": "2026-10-20",
+      "date_precision": "day",
+      "passage": "In a turbulent time where voting and constitutional rights are being threatened, I will work to ensure that both are kept intact for all of the constituents in District 12.",
+      "note": "Campaign issues page, section 'Democracy & Freedom'. General statement on protecting voting rights. It does not mention ID, citizenship proof, or any specific law. Date is the site publication date shown in the page code (Oct 20, 2026), not the date the words were written.",
+      "subjects": [
+        "voting rights in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:45:58.861Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "election integrity",
+        "voting rights in general"
+      ],
+      "places": [
+        "status: on 2026 general ballot as nominee for Illinois 12th district (unopposed in the primary, 26,791 votes, 100.0 percent), per https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Illinois (lead page; campaign site https://www.juliefortier.org/ names her as running for Congress in IL 12). Note: brief labelled the race federal-04, the district found is IL-12",
+        "On the Record (0 appearances)",
+        "campaign site https://www.juliefortier.org/ (home, /about, /issues, /get-involved reviewed; no mention of voter ID, photo ID, SAVE Act, proof of citizenship or election integrity)",
+        "blocked: https://ballotpedia.org/Julie_Fortier (empty response, HTTP 202, via WebFetch and curl)",
+        "blocked: https://ballotpedia.org/Illinois%27s_12th_Congressional_District_election,_2026 (empty response, HTTP 202)",
+        "congress.gov: nothing on the subject (not a legislator; no sponsorships)",
+        "news search: not reviewed, the shared web search budget was exhausted",
+        "not reviewed: https://www.tiktok.com/@juliefortier4congress",
+        "not reviewed: https://instagram.com/juliefortier2026"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:45:58.861Z",
+      "by": "source-collector"
+    }
+  ]
+}

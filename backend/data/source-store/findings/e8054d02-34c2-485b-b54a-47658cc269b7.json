@@ -1,0 +1,29 @@
+{
+  "politician_id": "e8054d02-34c2-485b-b54a-47658cc269b7",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks / election integrity"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Lonnie_Randolph names him as member of the Indiana State Senate, District 2, term ends November 8, 2028 (not up in 2026)",
+        "On the Record (0 appearances, 0 sources)",
+        "Indiana Senate caucus site search 'voter ID' and 'Randolph voter' (https://indianasenatedemocrats.org/?s=voter+ID): nothing on the subject by Randolph; one Randolph release (https://indianasenatedemocrats.org/sen-lonnie-m-randolph-admonishes-super-majority-for-discrimination-bill-and-budget-bill-process/) read, nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_lonnie_randolph_1 (page loads by script only; no bill list readable)",
+        "not reviewed: official Randolph personal site, Facebook and X (not located)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:55:27.327Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "politician_id": "7657733c-f50b-4670-8989-d9e143c977c1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "In scope: https://ballotpedia.org/Michael_Bouchard_(Michigan_congressional_candidate) names him as candidate for U.S. House Michigan District 10, advanced from the August 4, 2026 primary, on the November 3, 2026 general-election ballot",
+        "On the Record (0 appearances for this politician id; run with --names Michael Bouchard, no sources)",
+        "campaign site https://www.bouchardforcongress.com/ (issues: economy, immigration and security, education, affordability, Medicare and Social Security, health care, gas prices): nothing on the subject",
+        "campaign site news page https://www.bouchardforcongress.com/news/ (list of news and radio links, Nov 2025 to Apr 2026): nothing on the subject",
+        "campaign site endorsements page: nothing on the subject",
+        "Ballotpedia profile: nothing on the subject (no survey answers or issue text on voter ID)",
+        "congress.gov: not applicable, never a member of Congress",
+        "not reviewed: radio and video interviews listed on the campaign news page (WJR 730 AM, All Talk with Kevin Dietz, Fox 2 The Pulse), audio or video not readable",
+        "not reviewed: news-search for name plus voter ID words, web search budget was used up for the session"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:10:40.966Z",
+      "by": "source-collector"
+    }
+  ]
+}

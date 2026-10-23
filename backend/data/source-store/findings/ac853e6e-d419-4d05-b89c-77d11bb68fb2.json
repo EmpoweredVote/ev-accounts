@@ -1,0 +1,55 @@
+{
+  "politician_id": "ac853e6e-d419-4d05-b89c-77d11bb68fb2",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Alice_Peisch says she advanced from the primary on September 1, 2026 and is on the November 3, 2026 general-election ballot (14th Norfolk, MA House); legislature profile https://malegislature.gov/Legislators/Profile/AHP1 names her in this office",
+        "On the Record (0 appearances)",
+        "Ballotpedia: nothing on the subject",
+        "malegislature.gov bill search 'voter identification' (347 results; visible 25 listed other sponsors; Peisch-sponsor filter could not be reached by URL, so her 2 matching bills are not identified): not reviewed: https://malegislature.gov/Bills/Search?SearchTerms=voter%20identification",
+        "blocked: https://www.alicepeisch.com (socket closed)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: other URL patterns in politician-stance-researcher.md (search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:20:08.260Z",
+      "by": "source-collector"
+    }
+  ]
+}

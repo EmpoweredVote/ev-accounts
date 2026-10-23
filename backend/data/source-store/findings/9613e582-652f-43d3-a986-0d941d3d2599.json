@@ -1,0 +1,30 @@
+{
+  "politician_id": "9613e582-652f-43d3-a986-0d941d3d2599",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/John_L._Bartlett_(Indiana_House_District_95_representative) names him as District 95 representative on the Nov 3, 2026 general-election ballot after winning the May 5, 2026 primary",
+        "On the Record (0 appearances)",
+        "Ballotpedia (nothing on the subject)",
+        "Indiana House Caucus member page https://www.indianahousedemocrats.org/members/john-bartlett (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_john_bartlett (page needs scripts, returned no content)",
+        "not reviewed: bill sponsorship and roll-call records on iga.in.gov (not readable without scripts or an API key; api.iga.in.gov returned 403)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:44:34.249Z",
+      "by": "source-collector"
+    }
+  ]
+}

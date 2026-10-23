@@ -1,0 +1,27 @@
+{
+  "politician_id": "81d4edf8-07a5-4316-8fe3-c6020365c53c",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: lost the 2026-09-01 primary (Beth Andres-Beck is listed among the candidates for the 6th District primary on 2026-09-01; Dan Koh is marked the winner and is the only candidate on the general-election list): https://ballotpedia.org/Massachusetts%27_6th_Congressional_District_election,_2026",
+        "https://ballotpedia.org/United_States_House_of_Representatives_elections_in_Massachusetts,_2026 (lists her as a primary candidate, not a general-election candidate)",
+        "On the Record (0 appearances)",
+        "Ballotpedia personal page: no page exists for Bethany Andres-Beck (https://ballotpedia.org/Bethany_Andres-Beck)",
+        "not reviewed: campaign site (guessed domains did not resolve; web search budget was used up)",
+        "not reviewed: news search (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:17:01.635Z",
+      "by": "source-collector"
+    }
+  ]
+}

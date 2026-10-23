@@ -1,0 +1,33 @@
+{
+  "politician_id": "358ad74d-dab2-42f9-94ad-38ad1f40dd31",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: in scope. NC Senate District 31 (Forsyth, Stokes), confirmed at https://www.ncleg.gov/Members/Biography/S/449 and listed on https://ballotpedia.org/North_Carolina_State_Senate_elections,_2026 as Dana Caudill Jones (incumbent) on the District 31 general-election line",
+        "On the Record (0 appearances for this politician id; extract-otr.mjs run)",
+        "official legislature page https://www.ncleg.gov/Members/Biography/S/449 (reviewed)",
+        "ncleg.gov introduced bills https://www.ncleg.gov/Members/IntroducedBills/S/449 (reviewed; no voter ID, citizenship or mail-ballot bill found; SB 1084 Reduce Early Voting Period is sponsored by others and only referred to Elections, nothing on the subject)",
+        "blocked: https://www.ncleg.gov/Members/Votes/S/449 (vote list loads by script, not readable; no roll-call checked)",
+        "Ballotpedia personal page: not reviewed, no NC page exists (https://ballotpedia.org/Dana_Jones is a Maryland legislator, not this person)",
+        "campaign site: not reviewed, guessed domains did not resolve",
+        "news search and other web searches: not reviewed, session search budget exhausted",
+        "nothing on the subject found in the places reviewed"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:41:09.598Z",
+      "by": "source-collector"
+    }
+  ]
+}

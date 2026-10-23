@@ -1,0 +1,77 @@
+{
+  "politician_id": "ffb8e526-7ad7-4911-92c5-d69528a0f280",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "8f33873230019c2a4ef78a61f56f712a8ca2d31d124dd8d54af3038ab410fbe8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H866",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-866-2025",
+      "act": "sponsor",
+      "note": "H.866 is a petition filed by Rogers to let cities and towns extend voting rights in municipal elections to certain non-citizens of the Commonwealth. Related to non-citizen voting; it does not address ID or proof of citizenship directly.",
+      "subjects": [
+        "non-citizen voting in municipal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:30:53.230Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/David_Rogers_(Massachusetts) says he is on the Nov 3, 2026 general-election ballot for the 24th Middlesex District",
+        "On the Record (0 appearances, 0 candidate matches)",
+        "legislature profile https://malegislature.gov/Legislators/Profile/DMR1 and sponsored list https://malegislature.gov/Legislators/Profile/DMR1/Sponsored (no voter ID bills; H.865 felony disqualification is off subject, H.866 saved)",
+        "Ballotpedia page (no voter ID statements found)",
+        "campaign and official site: not reviewed, no working URL found (https://www.davidrogersma.com failed: host not found)",
+        "news search and URL-pattern searches: not reviewed, the shared web search budget was used up"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:30:53.230Z",
+      "by": "source-collector"
+    }
+  ]
+}

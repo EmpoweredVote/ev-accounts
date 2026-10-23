@@ -1,0 +1,74 @@
+{
+  "politician_id": "c4b7fad5-a25f-4323-afbc-0a986547ae96",
+  "findings": [
+    {
+      "id": "6d1ae8a5f807a8ac16a7a89c085efe4add356977b5de2993dbdb5c3b5ac4a0f7",
+      "kind": "own-words",
+      "url": "https://www.libertyangel.us/policy",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "A clear national standard for voter ID with free, accessible verification",
+      "note": "On the Civic and Election Reform section of her campaign policy page, listed under 'I support:'. Page is undated; copied from the page text on 2026-10-22. It is a list item, not a full sentence. Page text does not say which documents count, or what happens to a voter without ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "national voter ID standard",
+        "free ID or free verification"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:27.492Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ac03ac16259d1942d89bfb004355080e3038268ee5218e28c2487e444b894474",
+      "kind": "own-words",
+      "url": "https://www.libertyangel.us/policy",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "America’s democracy should be accessible to every eligible citizen, not just the well-funded or politically connected.",
+      "note": "Opening line of the same Civic and Election Reform section, which also lists a ban on foreign influence and dark money in elections. Context for the voter ID item.",
+      "subjects": [
+        "election integrity in general",
+        "access to voting for eligible citizens"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:53:27.492Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship / SAVE Act",
+        "election integrity",
+        "foreign influence in elections"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "scope confirmed: https://ballotpedia.org/Angel_Oakley names her as candidate, U.S. House Illinois District 3, advanced from the March 17, 2026 primary and on the November 3, 2026 ballot",
+        "campaign site https://www.libertyangel.us/ (home, /policy, /articles list)",
+        "Ballotpedia page and Candidate Connection survey text (nothing on the subject)",
+        "not reviewed: congress.gov (not a sitting legislator, no sponsorships)",
+        "not reviewed: news search (web search budget used up for the session)",
+        "not reviewed: individual campaign articles beyond the list page (titles concern safety act, endorsement, political violence)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:53:27.492Z",
+      "by": "source-collector"
+    }
+  ]
+}

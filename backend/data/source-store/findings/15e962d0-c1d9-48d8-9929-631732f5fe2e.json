@@ -1,0 +1,75 @@
+{
+  "politician_id": "15e962d0-c1d9-48d8-9929-631732f5fe2e",
+  "findings": [
+    {
+      "id": "0e8a24915ea25366c0d5a32e24e9a9fd698ee04e90518e2070b216c541e028bf",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Renee_Price",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "As the District 50 Representative in the NC House, I will rise up, speak out, and, as the late John Lewis said, “get in good trouble” to protect and assure our right to the ballot and our right for representation.",
+      "note": "From her 2022 Ballotpedia Candidate Connection survey answer on key campaign messages (first message: the right to vote and the right to representation). It does not mention ID or citizenship rules.",
+      "subjects": [
+        "right to vote, general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:35.918Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b57ecfaf2cff03e1086e936e25af1888f2a2c2204f06207cb33fc2bd8645a2ae",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/596",
+      "date": "2023-10-10",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-747-2023",
+      "act": "nay",
+      "motion": "Veto Override (House roll call 596, passed 72-44)",
+      "note": "Listed among the No votes on the House vote to override the Governor's veto of S747, Elections Law Changes. The bill text includes photo-ID cross references (G.S. 163-166.16) alongside observer, same-day registration and other changes, so it is election law in general rather than a voter ID bill alone.",
+      "subjects": [
+        "election integrity laws in general",
+        "voter ID at the polls (cross references only)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:35.918Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election law changes",
+        "right to vote"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Renee_Price) says she is on the Nov 3 2026 general ballot for NC House District 50 after winning the March 3 2026 primary",
+        "On the Record (0 appearances; extract-otr returned none)",
+        "ncleg.gov member list and bill page for S747 (2023) and roll call H-596",
+        "Ballotpedia (Candidate Connection survey 2022; none for 2024)",
+        "blocked: https://reneeprice4nc.com (Cloudflare block)",
+        "not reviewed: https://www.reneeprice.com (no content returned)",
+        "not reviewed: official ncleg.gov sponsor list for 2025 bills and news search (web search budget used up)",
+        "nothing on the subject: ncleg member biography page (H/810)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:34:35.918Z",
+      "by": "source-collector"
+    }
+  ]
+}

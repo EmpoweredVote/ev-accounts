@@ -1,0 +1,32 @@
+{
+  "politician_id": "f5f63005-94a6-4170-b120-a421ea5a8f3b",
+  "findings": [
+    {
+      "id": "3f40a200037499a1725335a35a21cf6ceb87f3257b7940e3fba2c9e7b2a0f382",
+      "kind": "record",
+      "url": "https://capitol.texas.gov/BillLookup/History.aspx?LegSess=872&Bill=SB1",
+      "date": "2021-08-31",
+      "date_precision": "day",
+      "instrument_id": "TX-SB-1-2021",
+      "act": "nay",
+      "motion": "adoption of conference committee report on SB 1 (Record 118)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "TX House, adoption of conference committee report on SB 1 (Record 118), 2021-08-31: nay (tally 80–41); census gate: none.",
+      "subjects": [
+        "mail-ballot ID",
+        "election administration (omnibus)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.561Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

@@ -1,0 +1,31 @@
+{
+  "politician_id": "6975d96d-d06f-4a47-80f4-de665c56f216",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity / voter-roll checks"
+      ],
+      "places": [
+        "identity confirmed: https://www.ncleg.gov/Members/MemberList/H and https://www.ncleg.gov/Members/Biography/H/804 (Representative Neal Jackson, House District 78, Moore and Randolph)",
+        "On the Record (0 appearances, 0 candidates)",
+        "NC General Assembly introduced bills, 2025 session: https://www.ncleg.gov/Members/IntroducedBills/H/804 (nothing on the subject; only an Election Day holiday bill, off subject)",
+        "NC General Assembly biography page: nothing on the subject",
+        "blocked: https://ballotpedia.org/Neal_Jackson (fetch returned empty page)",
+        "not reviewed: personal or campaign site (not located; web search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: roll-call votes on voter ID bills (no direct URL located without search)",
+        "not reviewed: earlier sessions' introduced bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:50:25.915Z",
+      "by": "source-collector"
+    }
+  ]
+}

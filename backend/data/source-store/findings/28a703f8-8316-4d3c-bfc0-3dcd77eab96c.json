@@ -1,0 +1,55 @@
+{
+  "politician_id": "28a703f8-8316-4d3c-bfc0-3dcd77eab96c",
+  "findings": [
+    {
+      "id": "ee6a241838130cde9575b42fbad9f17cd3ec50760ac7512d00a36d0aa7942046",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H855",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-855-2025",
+      "act": "sponsor",
+      "note": "She is the sole sponsor of H.855, An Act extending voting rights in municipal elections to noncitizen voters of the Commonwealth, referred to the Election Laws committee. Related topic: non-citizen voting. Filing date is the first history date shown on the bill page.",
+      "subjects": [
+        "non-citizen voting in municipal elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:03:36.763Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia district page https://ballotpedia.org/Massachusetts_House_of_Representatives_15th_Suffolk_District lists Sam Montaño running in the general election on November 3, 2026 for 15th Suffolk; MA Legislature profile https://malegislature.gov/Legislators/Profile/S_M1 names her as Representative, 15th Suffolk",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "MA Legislature profile and sponsored-bills list (https://malegislature.gov/Legislators/Profile/S_M1 and /SponsoredLegislation)",
+        "MA Legislature bill page H.855 (194th)",
+        "Ballotpedia personal page https://ballotpedia.org/Samantha_Montaño: no such page (empty)",
+        "campaign site: not reviewed: no campaign site URL found (samanthamontano.com did not connect)",
+        "news search: not reviewed: web search budget used up",
+        "nothing on the subject: no sponsored bill on voter ID, no-ID fallback, mail-ballot ID, or proof of citizenship found in her sponsored list",
+        "nothing on the subject: no own words on voter ID found in reachable pages"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:03:36.763Z",
+      "by": "source-collector"
+    }
+  ]
+}

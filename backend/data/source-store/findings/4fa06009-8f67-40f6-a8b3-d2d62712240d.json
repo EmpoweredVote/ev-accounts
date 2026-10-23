@@ -1,0 +1,213 @@
+{
+  "politician_id": "4fa06009-8f67-40f6-a8b3-d2d62712240d",
+  "findings": [
+    {
+      "id": "644199cde78de91fe9c8a3566876ccb914e2199081fc1c9be1b7365b3316426d",
+      "kind": "own-words",
+      "url": "https://www.heinrich.senate.gov/newsroom/press-releases/heinrich-save-act-is-one-of-the-most-extreme-voter-suppression-bills-in-recent-history",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "Republicans’ SAVE Act would strip the right to vote from those who don’t already have a passport or birth certificate, or the time and money to expedite getting one.",
+      "note": "Senate floor remarks, issued as an official press release. He says the SAVE Act's documentary proof-of-citizenship rule would keep people without a passport or birth certificate from voting.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:56.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "dc986277b79c3ec048637ec2c84d8758f07069f947d3d647d3c313b2835b8e95",
+      "kind": "own-words",
+      "url": "https://www.heinrich.senate.gov/newsroom/press-releases/heinrich-save-act-is-one-of-the-most-extreme-voter-suppression-bills-in-recent-history",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "It is today’s poll tax...This is not a voter ID bill. This is a voter suppression bill.",
+      "note": "Same floor remarks. He describes the SAVE Act's costs and document rules as a poll tax and rejects calling it a voter ID bill. He also names effects on mail registration and mail voting.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "voter ID at the polls",
+        "registering by mail",
+        "mail-in voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:56.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "399ba507c7f2c25692949349824078ca7987b28b2d80bea22e4dcb194d677b4c",
+      "kind": "own-words",
+      "url": "https://www.heinrich.senate.gov/newsroom/press-releases/heinrich-save-act-is-one-of-the-most-extreme-voter-suppression-bills-in-recent-history",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "I call upon my colleagues in the Senate: Choose freedom. Choose democracy. And say ‘no’ to the so-called SAVE Act.",
+      "note": "He closes his Senate floor remarks by asking colleagues to vote no on the SAVE Act. The same release says he also described his work on foreign interference, election security funding in New Mexico, election certification, and the John R. Lewis Voting Rights Act.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to register",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:56.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9719aca18114e44a6aa957cbf5582e3f9719cdbec79380402805412f13b3ca4a",
+      "kind": "own-words",
+      "url": "https://www.heinrich.senate.gov/newsroom/blog/its-not-a-voter-id-bill_its-voter-suppression",
+      "date": "2026-03-19",
+      "date_precision": "day",
+      "passage": "I believe in having a way to verify citizenship – but a Jim Crow 2.0 is not it.",
+      "note": "Signed newsletter-style post on his official site. He says he supports a way to verify citizenship but opposes the SAVE Act's approach. The post is titled 'It's not a voter ID bill – it's voter suppression.'",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "verifying citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:56.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "03101b58e6ad8c0367ae0813a65f1af7e178b423e100f5a3471f9cde53b53475",
+      "kind": "own-words",
+      "url": "https://www.heinrich.senate.gov/newsroom/in-the-news/kunm-heinrich-says-save-act-would-stop-thousands-of-new-mexicans-from-voting",
+      "date": "2026-03-18",
+      "date_precision": "day",
+      "passage": "“Requiring voters to purchase or renew a passport for $130 is a modern day poll tax. This is Jim Crow 2.0,” he said.",
+      "note": "Quoted by KUNM (reposted on his official site) from his Senate floor remarks. He objects to the passport cost as a way to meet proof of citizenship.",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "cost of documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:56.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "45390afcee08a84fdcb9f53401a9cf3d2770a9c063997edf77c46aec6a8a591f",
+      "kind": "own-words",
+      "url": "https://www.heinrich.senate.gov/newsroom/in-the-news/santa-fe-new-mexican-new-mexico-democrats-push-back-against-federal-voter-id-bill-at-santa-fe-forum",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "“This legislation would be absolutely devastating for New Mexicans,” Heinrich said during a roundtable on elections at the Santa Fe Community College.",
+      "note": "Quoted by the Santa Fe New Mexican (reposted on his official site) at a roundtable on the SAVE Act's proof-of-citizenship and photo ID rules. The article also quotes him: \"Our message today is simple: Not on our watch.\"",
+      "subjects": [
+        "proof of citizenship to register",
+        "SAVE Act",
+        "photo ID to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:56.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "88579af385e88e3cfc9e13dad3519f4b00f2476b5d720e8016c3795e48a48c36",
+      "kind": "own-words",
+      "url": "https://www.heinrich.senate.gov/newsroom/in-the-news/santa-fe-new-mexican-new-mexico-democrats-push-back-against-federal-voter-id-bill-at-santa-fe-forum",
+      "date": "2026-02-27",
+      "date_precision": "day",
+      "passage": "“His Department of Justice is literally suing Secretary Toulouse Oliver to gain access to full, unredacted statewide voter registration records. Those are your records, your Social Security numbers.”",
+      "note": "Related topic, voter-roll data. He objects to a federal demand for New Mexico's full voter registration records. Quoted by the Santa Fe New Mexican; the paper's text begins the quote with 'When he [Trump] isn't trying to dismantle our local elections, he is trying to get his hands on your personal information,' Heinrich said.",
+      "subjects": [
+        "voter-roll records access",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:56.094Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "aadb9596301af64406ea353673f639ab71726c0a79cf6cee6dec1537dc422aca",
+      "kind": "record",
+      "url": "https://www.heinrich.senate.gov/newsroom/press-releases/heinrich-lujn-introduce-for-the-people-act-to-strengthen-democracy-put-power-back-in-the-hands-of-voters",
+      "date": "2021-03-17",
+      "date_precision": "day",
+      "instrument_id": "US-S-1-2021",
+      "act": "sponsor",
+      "note": "Press release says Heinrich and another senator introduced S.1, the For the People Act. The release says the bill would, among other things, ensure that discriminatory voter ID laws do not prevent American citizens from voting, ban voter roll purges, expand voting by mail, and fund election security upgrades. Passage quoted from the release: 'ensuring that discriminatory voter ID laws do not prevent Americans citizens from exercising their rights.'",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll purges",
+        "mail voting",
+        "election security"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:09:56.094Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register (SAVE Act)",
+        "photo ID with mail ballot",
+        "mail-in voting limits",
+        "voter-roll access and checks",
+        "non-citizen voting",
+        "election integrity and security"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Martin_Heinrich) shows U.S. Senator, New Mexico, term ends January 3, 2031, last elected November 5, 2024",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official Senate site search for 'voter ID' (page 1 reviewed; page 2 not reviewed: https://www.heinrich.senate.gov/search?q=voter%20ID&pagenum_rs=2)",
+        "official Senate site search for 'SAVE Act' (returned unrelated results; nothing relevant on page 1)",
+        "official Senate site voting record page: nothing on the subject (listings load from Congress.gov)",
+        "Ballotpedia page: nothing on the subject",
+        "blocked: https://www.congress.gov/member/martin-heinrich/H001046 (HTTP 403)",
+        "web search not performed: session search budget was used up, so no news search or campaign-site search was done",
+        "not reviewed: Senate floor video of March 18, 2026 remarks (video, not read)",
+        "not reviewed: Senate roll call vote on the SAVE Act (H.R.22) and any amendment votes (congress.gov blocked; senate.gov not fetched)"
+      ],
+      "found": 8,
+      "at": "2026-10-22T22:09:56.094Z",
+      "by": "source-collector"
+    }
+  ]
+}

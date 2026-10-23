@@ -1,0 +1,95 @@
+{
+  "politician_id": "5dd4fa3d-3348-4158-8d77-3b804c095a18",
+  "findings": [
+    {
+      "id": "d730862938383ab143e5cc7f60549cb439878d1606c7d6a962061a4be7d783d4",
+      "kind": "own-words",
+      "url": "https://repcherrishpryor.substack.com/p/early-voting-is-open-today",
+      "date": "2026-10-06",
+      "date_precision": "day",
+      "passage": "If you registered to vote by the Oct. 5 deadline and have a valid photo ID, you are approved to vote early in person.",
+      "note": "In her constituent newsletter she tells voters a valid photo ID is needed to vote early in person. She states the rule without comment for or against it.",
+      "subjects": [
+        "voter ID at the polls",
+        "early voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:35:26.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "784528028478bec38288a67b68fa7469f24d5ae6ceebcf745b93bce439229462",
+      "kind": "own-words",
+      "url": "https://repcherrishpryor.substack.com/p/last-day-to-check-your-voter-registration",
+      "date": "2026-10-05",
+      "date_precision": "day",
+      "passage": "You’ll need a valid driver’s license or state-issued ID card number and your current address.",
+      "note": "In her newsletter she explains what a person needs to register online: a license or state ID number plus an address.",
+      "subjects": [
+        "ID number to register to vote"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:35:26.854Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "003a217775446c169d5ede3d01d61193a5984eae10f57c03e08ce656d436bddc",
+      "kind": "own-words",
+      "url": "https://repcherrishpryor.substack.com/p/last-day-to-check-your-voter-registration",
+      "date": "2026-10-05",
+      "date_precision": "day",
+      "passage": "It is extremely important to check your registration before the Oct. 5 deadline even if you have voted recently.",
+      "note": "She urges voters to check their registration and cites a news report of a long-time voter whose registration was removed without her knowledge. Tagged as a voter-roll topic.",
+      "subjects": [
+        "voter-roll checks",
+        "registration removal"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:35:26.854Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID to register to vote",
+        "mail or absentee ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Cherrish_Pryor) names her as Indiana House District 94 incumbent, on the Nov 3, 2026 general ballot after the May 5, 2026 primary",
+        "On the Record (0 appearances)",
+        "official caucus page https://www.indianahousedemocrats.org/members/cherrish-pryor (no subject content)",
+        "her newsletter https://repcherrishpryor.substack.com (archive reviewed, voting posts read)",
+        "Ballotpedia (no voter ID content found)",
+        "blocked: https://iga.in.gov (page needs JavaScript; bill sponsorship pages could not be read)",
+        "not reviewed: web news search (session search budget used up)",
+        "nothing on the subject: campaign site not located",
+        "not reviewed: ontheissues.org, vote411, Vote Smart"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:35:26.854Z",
+      "by": "source-collector"
+    }
+  ]
+}

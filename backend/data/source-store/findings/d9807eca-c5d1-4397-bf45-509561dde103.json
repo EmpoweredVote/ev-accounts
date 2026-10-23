@@ -1,0 +1,40 @@
+{
+  "politician_id": "d9807eca-c5d1-4397-bf45-509561dde103",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID for mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "SAVE Act / SAVE America Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Paul_Nolley names him as the candidate on the Nov 3, 2026 general-election ballot for U.S. House Illinois District 16 after advancing from the Mar 17, 2026 primary",
+        "On the Record (0 appearances)",
+        "campaign site https://www.nolleyforcongress.com/issues: nothing on the subject",
+        "campaign site news list https://www.nolleyforcongress.com/news: nothing on the subject (headlines only; linked articles not individually opened)",
+        "campaign site about page: nothing on the subject",
+        "Ballotpedia (campaign-website text quoted there, Feb 18, 2026): nothing on the subject; no Candidate Connection survey completed",
+        "congress.gov: not applicable, not a sitting member, no sponsorships or votes",
+        "news: NPR Illinois Oct 8, 2026 debate report https://www.nprillinois.org/illinois/2026-10-08/at-peoria-debate-challenger-paul-nolley-on-the-attack-while-longtime-incumbent-darin-lahood-touts-record: nothing on the subject",
+        "news: 25 News Now Feb 24, 2026 SAVE America Act story: does not quote Nolley",
+        "news: 25 News Now Feb 27, 2026 Nolley profile: nothing on the subject",
+        "interview transcript: The 21st Show https://will.illinois.edu/21stshow/story/democrat-paul-nolley: nothing on the subject",
+        "NPR Illinois May 12, 2025 profile: nothing on the subject",
+        "web search: Nolley plus SAVE Act, voter ID, proof of citizenship: no Nolley statement found",
+        "blocked: https://www.wttw.com/voters-guide/2026/general/us-house-16th-district (403)",
+        "not reviewed: https://www.pbs.org/video/2026-illinois-16th-congressional-district-candidate-forum-oxtg6b/ (video; Oct 2026 forum, immigration and other topics)",
+        "not reviewed: other linked news items and podcast interviews on the campaign news page (Ben Jaravsky Show, Pantagraph, WGLT, Rockton-Roscoe News)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:37:34.969Z",
+      "by": "source-collector"
+    }
+  ]
+}

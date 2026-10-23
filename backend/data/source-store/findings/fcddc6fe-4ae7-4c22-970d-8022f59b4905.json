@@ -1,0 +1,31 @@
+{
+  "politician_id": "fcddc6fe-4ae7-4c22-970d-8022f59b4905",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Jessica_Bailey names her as a general-election candidate for Indiana Comptroller of State on Nov 3, 2026 (convention winner June 6, 2026); she is a two-term Porter County Clerk",
+        "On the Record (0 appearances; extract-otr run with --names, nothing found)",
+        "Ballotpedia (Candidate Connection survey read: nothing on the subject)",
+        "blocked: https://www.baileyforindiana.com (HTTP 403 on WebFetch-equivalent curl with browser UA, also /issues and bare domain)",
+        "not reviewed: https://www.instagram.com/bailey4indiana/, https://www.facebook.com/jessica.bailey.71619, https://www.tiktok.com/@bailey4indiana (social links from Ballotpedia, not fetched)",
+        "not reviewed: news search on name plus subject words (session web search budget exhausted)",
+        "legislature bill pages: not applicable (she holds county office, not a legislative seat)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:57:44.179Z",
+      "by": "source-collector"
+    }
+  ]
+}

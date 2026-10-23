@@ -1,0 +1,32 @@
+{
+  "politician_id": "bb10c11e-644e-41a2-af41-b311097deb0a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "scope confirmed: California Secretary of State returns page https://api.sos.ca.gov/returns/us-rep/district/13 lists Adam Gray and Kevin Lincoln as the only two candidates in U.S. House District 13 (September 24, 2026 report); Stocktonia https://stocktonia.org/news/politics/2025/11/07/former-stockton-mayor-kevin-lincoln-vs-adam-gray-congress-2026/ places him in the District 13 race",
+        "On the Record (0 appearances, no meetings)",
+        "campaign site https://www.kevinlincolnforcongress.com (home, /issues, /meet-kevin): nothing on the subject",
+        "kevinlincoln.com: personal site, not reviewed in depth, nothing on the subject seen",
+        "Ballotpedia https://ballotpedia.org/Kevin_Lincoln: fetched, no voter ID or election integrity text found",
+        "congress.gov: not applicable, never a legislator",
+        "news searches on name plus voter ID, election integrity, SAVE Act, noncitizen voting: nothing on the subject",
+        "not reviewed: ontheissues.org, Wikipedia (lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:28:14.846Z",
+      "by": "source-collector"
+    }
+  ]
+}

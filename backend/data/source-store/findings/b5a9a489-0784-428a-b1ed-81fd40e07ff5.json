@@ -1,0 +1,30 @@
+{
+  "politician_id": "b5a9a489-0784-428a-b1ed-81fd40e07ff5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Joanna_King) names her as Indiana House District 49 incumbent, advanced from the May 5, 2026 primary, on the Nov 3, 2026 general ballot",
+        "On the Record (0 appearances, 0 candidates)",
+        "Ballotpedia page and 2026 Candidate Connection survey: nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_joanna_king_1 (JavaScript-only page, no readable text; bill sponsorships not reviewed)",
+        "not reviewed: Indiana House caucus member page (member URLs returned 404/Oops)",
+        "not reviewed: news search on name plus subject words (session web-search budget exhausted)",
+        "not reviewed: campaign site and ontheissues/vote411 leads"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:48:44.495Z",
+      "by": "source-collector"
+    }
+  ]
+}

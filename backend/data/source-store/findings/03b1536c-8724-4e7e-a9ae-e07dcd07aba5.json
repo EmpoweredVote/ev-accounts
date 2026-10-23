@@ -1,0 +1,32 @@
+{
+  "politician_id": "03b1536c-8724-4e7e-a9ae-e07dcd07aba5",
+  "findings": [
+    {
+      "id": "785d0338b0138a0df4aef02cdfcc1e114d96e293356af794ee4aaefe27813933",
+      "kind": "record",
+      "url": "https://legacylis.virginia.gov/cgi-bin/legp604.exe?231+sum+HB1444",
+      "date": "2023-02-02",
+      "date_precision": "day",
+      "instrument_id": "VA-HB-1444-2023",
+      "act": "yea",
+      "motion": "passage",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "VA House, passage, 2023-02-02: yea (tally 52–48); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

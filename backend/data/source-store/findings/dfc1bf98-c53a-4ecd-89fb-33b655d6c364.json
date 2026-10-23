@@ -1,0 +1,72 @@
+{
+  "politician_id": "dfc1bf98-c53a-4ecd-89fb-33b655d6c364",
+  "findings": [
+    {
+      "id": "338e0b804f7804da82c0615338530f7acc1ea6896e2b057c8a14cfbddf0cda6f",
+      "kind": "own-words",
+      "url": "https://www.nancymannion.com/Priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Nancy supports every citizen's right to take part in fair and free elections. She advocates for voter ID requirements that are inclusive and believes that stricter rules are unnecessary.",
+      "note": "Campaign site Voting Rights section, written in the third person on the campaign's behalf. Supports voter ID that is inclusive and says stricter rules are not needed.",
+      "subjects": [
+        "voter ID at the polls",
+        "inclusive ID requirements"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:30.183Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e238635b11020e740651e0ce7ef9b5b2fe4254caf690ee23254277ea4dd61534",
+      "kind": "own-words",
+      "url": "https://www.nancymannion.com/Priorities/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Not everyone is able to vote conveniently in person on Election Day. Nancy believes in making voting easier by providing options such as early voting and mail-in voting.",
+      "note": "Same section. Favors early and mail-in voting options.",
+      "subjects": [
+        "mail-in voting access",
+        "early voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:38:30.183Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "early and mail-in voting access",
+        "election integrity"
+      ],
+      "places": [
+        "status: on 2026 general-election ballot for US House PA-11 (BallotReady, https://www.ballotready.org/people/nancy-mannion)",
+        "On the Record (0 appearances)",
+        "campaign site (https://www.nancymannion.com/Priorities/ ; Platform page fetched, nothing further on the subject)",
+        "BallotReady profile (same text as campaign site)",
+        "Ballotpedia (https://ballotpedia.org/Nancy_Mannion fetched; page text did not yield subject passages)",
+        "congress.gov: not applicable, not a legislator",
+        "one news search on name plus voter ID: nothing on the subject"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:38:30.183Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "politician_id": "167d272b-fc1b-4a72-a44d-dfa1a9a42fcf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID for voting bills",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: https://malegislature.gov/Legislators/Profile/KES0 names her Senate President; https://ballotpedia.org/Karen_Spilka says she advanced from the 2026 primary and is on the 2026 general-election ballot",
+        "On the Record (0 appearances, 0 candidates from extract-otr.mjs)",
+        "Ballotpedia (fetched with curl; nothing on the subject)",
+        "malegislature.gov sponsored-bills list for KES0 (nothing on the subject)",
+        "malegislature.gov bill pages S510 (photo ID for voting, sponsored by another senator) and S2567 (committee study order); neither is an act by her",
+        "blocked: https://www.senatorspilka.com (curl returned no response)",
+        "not reviewed: web news search on her name plus subject words (shared 200-search budget was used up; no search could run)",
+        "nothing on the subject: massnews.com site search"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:00:16.908Z",
+      "by": "source-collector"
+    }
+  ]
+}

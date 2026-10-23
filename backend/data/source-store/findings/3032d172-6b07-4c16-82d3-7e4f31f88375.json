@@ -1,0 +1,29 @@
+{
+  "politician_id": "3032d172-6b07-4c16-82d3-7e4f31f88375",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "Ballotpedia https://ballotpedia.org/La_Keisha_Jackson (confirms Indiana State Senate District 34, term ends 2028, sitting; nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2025/bills/senate/10 (page needs JavaScript; API needs a key, 403)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_la_keisha_jackson (no readable content)",
+        "blocked: https://www.indianasenatedemocrats.com (certificate error)",
+        "not reviewed: web news search and campaign site (web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:22:24.757Z",
+      "by": "source-collector"
+    }
+  ]
+}

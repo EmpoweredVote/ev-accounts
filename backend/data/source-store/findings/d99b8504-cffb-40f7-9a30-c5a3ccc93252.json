@@ -1,0 +1,54 @@
+{
+  "politician_id": "d99b8504-cffb-40f7-9a30-c5a3ccc93252",
+  "findings": [
+    {
+      "id": "795f9347398ce8bbc45b7134d3c609239de63a78daccb543d08cfdaf63fe635d",
+      "kind": "own-words",
+      "url": "https://foremantakebackourhouse.com/home",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "Securing our Votes and Borders",
+      "note": "One bullet in a list of campaign goals on the campaign home page. It gives no detail on ID, citizenship proof, or any specific rule. Page date is the fetch date; the page carries a 2026 copyright. Tagged as a general election-integrity item.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:54:03.399Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Eric_Foreman (redirects to Eric_Michael_Foreman) says he advanced from the May 12, 2026 primary and is on the November 3, 2026 general-election ballot for Nebraska's 2nd District",
+        "On the Record (1 meeting, 2026-07-20, podcast): transcript read, nothing on the subject",
+        "blocked: https://ontherecord.empowered.vote/meetings/f610f66f-8489-4cc5-8371-94da6f343111 (page loads only 'Loading meeting...'; transcript read from local extract)",
+        "campaign site https://foremantakebackourhouse.com/ (home, platform, meet-eric pages): one general line on securing votes, nothing specific on ID or citizenship",
+        "Ballotpedia Candidate Connection survey: nothing on the subject",
+        "congress.gov / legislature bill pages: not applicable, never held legislative office",
+        "web search for news: not performed, search budget exhausted (not reviewed)",
+        "not reviewed: campaign X https://x.com/The1Knocking, Instagram, Facebook (login-walled)",
+        "ontheissues.org / vote411: not reviewed (leads only)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T21:54:03.399Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "politician_id": "8b98d8e9-c41c-4722-80de-3bc5192656ee",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship"
+      ],
+      "places": [
+        "status: lost the 2026-05-05 primary (Ballotpedia, https://ballotpedia.org/Travis_Holdman: page says he lost his primary on May 5, 2026, and names him as Indiana State Senate District 19; term ends 2026-11-04)",
+        "On the Record (0 appearances)",
+        "not reviewed: https://iga.in.gov (page returned no usable content; stopped because he is out of scope)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:41:35.811Z",
+      "by": "source-collector"
+    }
+  ]
+}

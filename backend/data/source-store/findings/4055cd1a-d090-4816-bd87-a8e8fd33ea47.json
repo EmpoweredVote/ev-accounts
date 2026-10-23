@@ -1,0 +1,130 @@
+{
+  "politician_id": "4055cd1a-d090-4816-bd87-a8e8fd33ea47",
+  "findings": [
+    {
+      "id": "cbe1a29872e4e849f2a2326a35b7bb127f844fb318c2e75db082b66f1f0dc5ef",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/797",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (passed 66 to 47); Cairns recorded Aye",
+      "note": "House vote on the second reading of the Election Law Changes bill. The ratified text requires a voter registration application to affirmatively state US citizenship before it is processed (with a 30-day notice and sworn-statement fix if the question is left blank) and directs the State Board of Elections to create a process to remove voters flagged as possible non-citizens by a federal database. The ratified text was later vetoed by the Governor per the bill page.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:47.632Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ef6a2d5b9ab39e3fa4b5f7b24e934e0ac2e9fdc2824e4042fabcbf3ff3c1131a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/797",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (passed 62 to 47); Cairns recorded Aye",
+      "note": "House vote to concur with the Senate changes to the Election Law Changes bill, sending it to the Governor; the bill page lists a Governor's veto and a veto-override calendar placement for 09/02/2026.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:47.632Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5b5cb06cb88956e08560120e44e281559aefd6174d73ea674b814f528745e971",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-825-2025",
+      "act": "other",
+      "motion": "Co-sponsor of HB 825 Election Improvements (date shown is the bill's introduction date; date she was added not seen)",
+      "note": "Cairns is listed as a co-sponsor. Filed text bans ranked choice voting, changes election-related activity rules, shortens early voting, and changes the identification rules for requesting an absentee ballot: photocopies of readable ID go with the returned request and voted ballot, and a voter without them completes an alternative affidavit giving the last four digits of a social security number plus a drivers license or state ID number. Bill was referred to the Rules committee and not shown as passed.",
+      "subjects": [
+        "mail-ballot ID",
+        "reasonable-impediment affidavit",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:47.632Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "658f1edaa04c7ff2d19dfea81a9252e766096580a696c078d190d12ee8a003a6",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1231",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1231-2025",
+      "act": "other",
+      "motion": "Co-sponsor of HB 1231 No Voter Registration Changes At DMV (date shown is the bill's introduction date; date she was added not seen)",
+      "note": "Cairns is listed as a co-sponsor. The bill would stop voters from updating an existing registration (address, name, party change) at drivers license offices, requiring those changes at the county board of elections; the citizenship question at the DMV application stays in the text. Referred to Rules committee and not shown as passed.",
+      "subjects": [
+        "voter registration at DMV",
+        "proof of citizenship to register",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:43:47.632Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "reasonable-impediment affidavit",
+        "proof of citizenship to register",
+        "non-citizen voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Celeste_Cairns (NC House District 13, on the Nov 3 2026 general ballot; March 3 2026 primary was canceled, she advanced unopposed); legislature member list https://www.ncleg.gov/Members/MemberTable/H names Celeste C. Cairns as member 797",
+        "On the Record (0 appearances found by extract-otr.mjs; nothing on the subject)",
+        "official site: no personal official site found beyond ncleg.gov member pages (https://www.ncleg.gov/Members/Biography/H/797); nothing on the subject",
+        "campaign site: https://celestecairns.com is an empty placeholder page ('A Brand New Domain!'); nothing on the subject",
+        "NC General Assembly votes page https://www.ncleg.gov/Members/Votes/H/797 (reviewed; HB 958 votes saved)",
+        "NC General Assembly introduced/sponsored bills page https://www.ncleg.gov/Members/IntroducedBills/H/797 (reviewed; she is primary on no election-ID bill)",
+        "NC bill pages and texts HB 958, HB 825, HB 1231 (reviewed)",
+        "Ballotpedia https://ballotpedia.org/Celeste_Cairns (no issue statements on the subject)",
+        "news search: not done, web search budget for the session was used up; own-words search by news not reviewed",
+        "ontheissues.org, vote411: not reviewed (leads only)"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:43:47.632Z",
+      "by": "source-collector"
+    }
+  ]
+}

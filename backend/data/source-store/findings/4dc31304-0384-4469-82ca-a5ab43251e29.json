@@ -1,0 +1,214 @@
+{
+  "politician_id": "4dc31304-0384-4469-82ca-a5ab43251e29",
+  "findings": [
+    {
+      "id": "76f272e94a76c2e86bded1f3ab518fef45c59d62de734d777fb7e0c82e32e532",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Bill_Ward_(North_Carolina)",
+      "date": "2024",
+      "date_precision": "year",
+      "passage": "I have worked to ensure that voter integrity is in place by passing a Voter ID law to ensure that only citizens that are eligible to vote may exercise that right. I assisted in passing a law that placed stringent requirements on the NC State Board of Elections to clean up the voter rolls and remove duplicate registrations as well as any deceased individuals.",
+      "note": "From his 2024 Ballotpedia Candidate Connection survey answers (campaign key messages). He describes the state photo ID law and voter-roll clean-up legislation as work he took part in.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter-roll clean-up",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ce2908d4f779490577d21a0dc4094c093999310ae29d280091e6f0a3956fa63a",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Bill_Ward_(North_Carolina)",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "Election integrity is a major concern. We must ensure that only citizens are allowed to vote in our elections. Voter I.D. and signature verification must be implemented to ensure that outside interference does not occur.",
+      "note": "From his 2022 Ballotpedia Candidate Connection survey answers (campaign key messages, written as a candidate).",
+      "subjects": [
+        "voter ID at the polls",
+        "signature verification on ballots",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2ccd66aca164dc000c761b96d984871d9e9a846c207850b34a4d341d30f85c1e",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Bill_Ward_(North_Carolina)",
+      "date": "2022",
+      "date_precision": "year",
+      "passage": "We must ensure that our elections are free and fair and that the electoral process is available to only our citizens through voter I.D. and signature verification on ballots without interference from outside entities.",
+      "note": "Same 2022 survey, answer on policy areas he cares about.",
+      "subjects": [
+        "voter ID at the polls",
+        "signature verification on ballots"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1c59e53cb2a9c58cafdc3788762362f62006996a9625e01c2bc4a8aaa08a4e07",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-08",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-825-2025",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 825, Election Improvements (filed 4/8/2025; sent to House Rules and not acted on). Among other things it would require the last four digits of the Social Security number plus a driver license, state ID card or date of birth number on absentee ballot requests, and set an alternative affidavit for voters who cannot attach an ID copy.",
+      "subjects": [
+        "mail-ballot ID",
+        "reasonable-impediment affidavit",
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "bca972497df0d36477ff7529d9954f458c06baa6a143fe5b30ce4060187cbf1d",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2025-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "sponsor",
+      "note": "Co-sponsor of HB 958, Election Law Changes. The ratified text requires a county board to process a registration application only if it states the applicant is a U.S. citizen, with a sworn citizenship form if the answer is blank, and sets a process to remove voters flagged as possible non-citizens by a federal database. The bill page also shows a Governor's veto entry.",
+      "subjects": [
+        "citizenship on voter registration",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "648966c1a3f24503b9a05d92119488c68bad3a4849d197e68ce2eb182f268cd5",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/816",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (RCS 758, 66-47)",
+      "note": "Voted aye on second reading of HB 958 (citizenship on registration, non-citizen removal, other election changes) per his member votes page.",
+      "subjects": [
+        "citizenship on voter registration",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6c643daf0f1111811094f25625e3a47472d9186bc8da0c1f0713c4660454b304",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/816",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (RCS 801, 62-47)",
+      "note": "Voted aye on the House concurrence vote on HB 958 per his member votes page.",
+      "subjects": [
+        "citizenship on voter registration",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6dcab9c2a39d86299967bd8286bc05cf407cdd574f2ce7355f82875eb99aca1a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1231",
+      "date": "2026-05-11",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1231-2025",
+      "act": "author",
+      "note": "Primary sponsor of HB 1231, No Voter Registration Changes At DMV (filed 5/11/2026; sent to House Rules). It would require voters to make address, name or affiliation changes at county boards of elections instead of at DMV, and keeps the DMV question asking if the applicant is a U.S. citizen.",
+      "subjects": [
+        "registration changes at DMV",
+        "citizenship on voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:45:33.490Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "signature verification on ballots",
+        "ID number with absentee ballot request",
+        "reasonable-impediment affidavit for absentee voters",
+        "citizenship on voter registration",
+        "non-citizen removal from voter rolls",
+        "voter-roll clean-up",
+        "registration changes at DMV"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Bill_Ward_(North_Carolina)) shows Bill Ward, NC House District 5, on the Nov 3, 2026 general-election ballot; primary was canceled",
+        "On the Record (0 meetings)",
+        "campaign site https://electbillward.com (nothing on the subject)",
+        "official site ncleg.gov member page and introduced-bills list (reviewed)",
+        "ncleg.gov member votes page (reviewed)",
+        "Ballotpedia (candidate surveys reviewed)",
+        "news search: not run, web search budget exhausted",
+        "ontheissues.org, vote411: not reviewed",
+        "not reviewed: bill-by-bill floor debate video"
+      ],
+      "found": 8,
+      "at": "2026-10-22T23:45:33.490Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "politician_id": "36b039a6-2224-4b73-90b4-2de142d16183",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Michael_J._Aylesworth says Indiana House District 11, advanced from the May 5, 2026 primary, on the November 3, 2026 general ballot",
+        "On the Record (0 appearances for this person)",
+        "official site https://www.indianahouserepublicans.com/members/general/mike-aylesworth/ (press list and biography reviewed; nothing on the subject; only 2023 voter registration deadline reminders, not on subject)",
+        "2026 legislative survey handout (4 questions: school choice, health costs, roads, judges; nothing on the subject)",
+        "Ballotpedia (page has no voter ID or citizenship content)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_mike_aylesworth_1096 (page content did not load; the API at api.iga.in.gov needs a key), so bill sponsorships were not reviewed",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)",
+        "not reviewed: campaign site, press releases beyond page 1 of the member page, floor votes on voter ID or citizenship bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:25:00.807Z",
+      "by": "source-collector"
+    }
+  ]
+}

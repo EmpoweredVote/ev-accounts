@@ -1,0 +1,33 @@
+{
+  "politician_id": "316e2004-e309-4e6b-a6cb-8a37932448cf",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Dan_Kiger names him as appointed member of NC House District 90 on 2026-06-24 and on the 2026-11-03 general-election ballot after winning the 2026-03-03 primary (fetched with curl, browser user agent)",
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia: nothing on the subject (no candidate survey completed, no positions listed)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/1004: nothing on the subject",
+        "NC General Assembly votes page https://www.ncleg.gov/Members/Votes/H/1004: nothing on the subject (page reports no votes found)",
+        "NC General Assembly sponsored bills page https://www.ncleg.gov/Members/Bills/H/1004: nothing on the subject (page not found)",
+        "blocked: https://www.facebook.com/kigerdn (HTTP 400 to curl)",
+        "not reviewed: official and campaign websites (no URL located; Ballotpedia lists only Facebook pages)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:40:03.627Z",
+      "by": "source-collector"
+    }
+  ]
+}

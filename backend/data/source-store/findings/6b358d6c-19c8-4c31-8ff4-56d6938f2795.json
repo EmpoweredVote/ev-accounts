@@ -1,0 +1,57 @@
+{
+  "politician_id": "6b358d6c-19c8-4c31-8ff4-56d6938f2795",
+  "findings": [
+    {
+      "id": "a37a71f018b75195d22e9edd80989c55bee603b73e15115ebfe07be0c4d8ef96",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "M11 Concur (House concurrence in the Senate committee substitute), Roll Call #801, passed 62-47; Cohn is listed among the No votes",
+      "note": "House vote on HB 958, Election Law Changes. The ratified text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) requires an applicant to affirmatively state US citizenship before a registration is processed, adds a 30-day sworn-statement notice when the citizenship question is left blank, has the State Board create a process to remove voters flagged as non-citizens from a federal database, and also covers other election administration changes. The bill was vetoed 2026-08-17. The bill text does not change photo ID rules at the polls.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "removal of non-citizens from voter rolls",
+        "election law omnibus"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:52:38.784Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "non-citizen voter-roll checks",
+        "election law omnibus bills"
+      ],
+      "places": [
+        "On the Record (0 meetings)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/827 (confirms House District 32, 2025-2026 session)",
+        "Ballotpedia https://ballotpedia.org/Bryan_Cohn (confirms on the 2026 general-election ballot, District 32; no Candidate Connection survey answers)",
+        "NC General Assembly introduced/co-sponsored bills list https://www.ncleg.gov/Members/IntroducedBills/H/827/2025 (nothing on the subject; H31 Election Day holiday is off subject)",
+        "NC General Assembly bill page and roll-call votes for HB 958 Election Law Changes",
+        "campaign site: blocked: https://www.cohnfornc.com (bot challenge page)",
+        "campaign site: blocked: https://www.bryancohn.com and https://www.bryancohnnc.com (expired site, no content)",
+        "news search: not reviewed (web search budget used up)",
+        "not reviewed: debate, forum and interview video, questionnaires (no search possible)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:52:38.784Z",
+      "by": "source-collector"
+    }
+  ]
+}

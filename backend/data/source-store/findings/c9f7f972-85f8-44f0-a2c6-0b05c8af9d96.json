@@ -1,0 +1,134 @@
+{
+  "politician_id": "c9f7f972-85f8-44f0-a2c6-0b05c8af9d96",
+  "findings": [
+    {
+      "id": "d32d02d4d4d13bc37853dc0dd2545aa0a838530d4d0e8ec00274865c7a2995d9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/822",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Second Reading (House roll call 759, passed 66-47)",
+      "note": "The member's vote column shows No on House passage of HB 958. Part II of the ratified bill (staff summary at https://dashboard.ncleg.gov/api/Services/BillSummary/2025/H958-SMST-37(rat)-v-8) has DMV send full social security numbers to the elections board monthly, requires removal of deceased voters, requires a process to remove non-eligible citizens found in a federal database, and bars processing a registration unless the applicant affirmatively states US citizenship (a sworn form if left blank). Bill page: https://www.ncleg.gov/BillLookUp/2025/H958. Veto status is on the bill page (see the 2026-08-17 veto finding).",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "removal of non-citizens from voter rolls",
+        "voter-roll checks against federal data",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:25.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "b0c05915cf4f4f8d5777930c67a95997d79e4b6b71be9983ecb6faa3a4f9cff1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/822",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "HB 958 Election Law Changes, Motion 11 Concur with Senate changes (House roll call 802, passed 62-47)",
+      "note": "The member's vote column shows No on the House vote to concur in the Senate version of HB 958, the same bill with the citizenship-statement and non-citizen roll-removal provisions in Part II.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "removal of non-citizens from voter rolls",
+        "voter-roll checks against federal data",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:25.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f1bd2a4a1a136d42c435decf10ed09c6a0234ad8caf822de6ca8fa6279221714",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-17",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "other",
+      "motion": "HB 958 vetoed by the Governor 2026-08-17 (context only; the member's votes on the bill are in the two findings above)",
+      "note": "Bill page shows ratified 2026-08-06 and vetoed 2026-08-17. No member vote on a veto override of HB 958 appears on the member's vote list as reviewed. This is context for the two votes above, not an act of the member.",
+      "subjects": [
+        "election integrity laws in general",
+        "citizenship statement on voter registration"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:25.565Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e9f30851a87b77a9418a9c3b1cc0f99c5c31894657fcd788bf31947acefc2e5e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1246",
+      "date": "2026-07-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-1246-2026",
+      "act": "sponsor",
+      "motion": "HB 1246 Safeguarding Elections Act, filed 2026-07-30, primary sponsor group (Buansi, Dahle, F. Jackson, Clark)",
+      "note": "Bill page lists Clark in the primary sponsor group; referred to House Rules 2026-08-04, no further action. Text (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1246v0.pdf) includes a Class 2 misdemeanor for demanding citizenship documentation from a voter other than what State law requires, a new citizenship ground for voter challenges, and a rule that voter photo-ID photographs and photocopies of ID for voting are confidential and not released to the federal government without a court order or warrant. It also covers voter intimidation, early voting hours, certification and forensic audits.",
+      "subjects": [
+        "citizenship documentation demanded of voters",
+        "confidentiality of voter photo ID records",
+        "voter intimidation",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:10:25.565Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register",
+        "citizenship question on registration",
+        "voter-roll checks / non-citizen removal",
+        "election integrity laws in general",
+        "personal data of voters (photo ID copies)"
+      ],
+      "places": [
+        "in scope: Rep. Tracy Clark, NC House District 57 (Guilford), on the 2026 general-election ballot; Democratic primary of 2026-03-03 was canceled (https://ballotpedia.org/Tracy_Clark; https://www.ncleg.gov/Members/Biography/H/822)",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "campaign site tracyclarkfornc.com (home, about-me, motivation-to-serve, nc-house-district-57, community-safety): nothing on the subject; issues/news/democracy/voting pages 404; no search function, so subject words were checked on each page fetched",
+        "ncleg.gov member pages: introduced bills (https://www.ncleg.gov/Members/IntroducedBills/H/822) and votes (https://www.ncleg.gov/Members/Votes/H/822) reviewed for election bills",
+        "ncleg.gov bill pages and texts for HB 958, HB 1246, HB 691 (HB 691 nothing on the subject)",
+        "Ballotpedia (candidate page; survey answers have nothing on the subject)",
+        "not reviewed: https://www.youtube.com/@RepTracyClark (video channel, cannot be read)",
+        "not reviewed: Facebook and Instagram pages",
+        "news search and Ballotpedia search not run: the session web-search budget was used up; no news search was possible",
+        "no own-words statement on the subject found"
+      ],
+      "found": 4,
+      "at": "2026-10-23T00:10:25.565Z",
+      "by": "source-collector"
+    }
+  ]
+}

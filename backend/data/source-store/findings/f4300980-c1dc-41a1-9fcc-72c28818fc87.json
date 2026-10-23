@@ -1,0 +1,83 @@
+{
+  "politician_id": "f4300980-c1dc-41a1-9fcc-72c28818fc87",
+  "findings": [
+    {
+      "id": "e6c014586179347676a8f455d7d85db97aa91ee374a81cf77a05fdf17687fecb",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/S352",
+      "date": "2023-03-22",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-352-2023",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor (not primary) of SB 352, short title Remove Foreign Citizens from Voting Rolls, filed in the Senate 3/22/2023. As filed, it requires citizenship to serve as a juror and has jury-excuse names for non-citizens shared with the State Board of Elections, which reviews their voter registration and citizenship status and removes non-citizens from the rolls. Last action: referred to Rules and Operations of the Senate, 3/23/2023.",
+      "subjects": [
+        "non-citizen voting",
+        "voter-roll checks",
+        "proof of citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:46.405Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f5f9d63707690a505616b6fe9a9724b15249b60420873f7520452d229daa126a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/S/438",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading, roll call 693 (Aye 28, No 13)",
+      "note": "Senate roll call vote on the second reading of HB 958, Election Law Changes. The latest edition of the bill on the bill page (https://www.ncleg.gov/BillLookUp/2025/H958) includes new G.S. 163-83, which says a voter registration application is processed only if it affirmatively indicates the applicant is a U.S. citizen, plus removal of non-citizens from voter registration records. The same bill covers many other election topics. I could not confirm which edition was voted on 7/28/2026. His vote on the amendments the same day is also listed on the votes page.",
+      "subjects": [
+        "proof of citizenship to register",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:18:46.405Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: in scope. Ballotpedia https://ballotpedia.org/Timothy_Moffitt says he is the incumbent for NC Senate District 48 and is on the Nov 3, 2026 general-election ballot; the March 3, 2026 primary was canceled and he advanced",
+        "positive control: NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/438 (Senator Timothy D. Moffitt, Senate member list)",
+        "On the Record (0 appearances; extract-otr.mjs run with --names, no meetings found)",
+        "campaign site https://www.timmoffitt.com/ (home, /issues-, /about): nothing on the subject",
+        "NC General Assembly introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/S/438/2023 and /2025 (reviewed)",
+        "NC General Assembly member votes page https://www.ncleg.gov/Members/Votes/S/438 (2025-2026 session list reviewed; the 2023-2024 session vote list was not reachable by URL, not reviewed: https://www.ncleg.gov/Members/Votes/S/438)",
+        "Ballotpedia https://ballotpedia.org/Timothy_Moffitt: no issue positions; he did not complete the Candidate Connection survey in 2020, 2022, 2024 or 2026",
+        "co-sponsored bill SB 356 (2023) https://www.ncleg.gov/BillLookUp/2023/S356: short title reads Constitutional Amendment/Photo ID but the edition text I fetched is about motor vehicles, so not saved as a finding",
+        "news search: not done, the shared search budget was used up (not reviewed)",
+        "social media: not reviewed: https://twitter.com/TimMoffitt",
+        "no own-words statement on the subject found on any page fetched"
+      ],
+      "found": 2,
+      "at": "2026-10-23T00:18:46.405Z",
+      "by": "source-collector"
+    }
+  ]
+}

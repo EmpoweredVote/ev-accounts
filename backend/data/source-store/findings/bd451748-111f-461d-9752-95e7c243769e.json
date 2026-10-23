@@ -1,0 +1,32 @@
+{
+  "politician_id": "bd451748-111f-461d-9752-95e7c243769e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official Senate profile https://malegislature.gov/Legislators/Profile/JAC0 (confirms Senator Julian Cyr, Cape and Islands district; 2026 ballot status not confirmed)",
+        "sponsored bills https://malegislature.gov/Legislators/Profile/JAC0/Sponsored (only election-related item is S.506 dark money in local government, off subject; nothing on the subject)",
+        "official site https://www.senatorcyr.com (nothing on the subject; only a general democracy-participation priority)",
+        "blocked: https://ballotpedia.org/Julian_Cyr (404/empty)",
+        "blocked: https://ballotpedia.org/Massachusetts_State_Senate_elections,_2026 (empty)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: campaign site (julian-cyr.com does not resolve)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:21:42.719Z",
+      "by": "source-collector"
+    }
+  ]
+}

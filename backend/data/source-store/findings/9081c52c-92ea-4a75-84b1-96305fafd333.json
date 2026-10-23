@@ -1,0 +1,78 @@
+{
+  "politician_id": "9081c52c-92ea-4a75-84b1-96305fafd333",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "cb3baf09c53c562a29fc6949e5b4ab6d205efe06c8bc5c49b52c0c2e452261ad",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H3990",
+      "date": "2021-05-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-3990-2021",
+      "act": "sponsor",
+      "note": "H.3990 (192nd session), An Act granting noncitizen permanent residents in the town of Warwick the right to vote in municipal elections. A local home-rule petition filed by Rep. Whipps and Sen. Comerford at the vote of the town. It was referred to the Joint Committee on Election Laws. The 5/27/2021 date is the first date on the bill history page and is the filing date as read from that page.",
+      "subjects": [
+        "non-citizen voting in local elections",
+        "voter eligibility by citizenship"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:16:51.973Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Susannah_Whipps names her as 2nd Franklin District incumbent on the November 3, 2026 general-election ballot",
+        "On the Record (0 appearances)",
+        "campaign site: https://www.susannahwhipps.com is a parked page that redirects to /lander, nothing on the subject",
+        "Ballotpedia: nothing on the subject",
+        "MA Legislature sponsored bills, 192nd, 193rd, 194th sessions (https://malegislature.gov/Legislators/Profile/SLG1): one bill on the subject, no voter ID or proof of citizenship bill",
+        "not reviewed: official House page text, social media (facebook.com/repwhipps, youtube.com/@susannahwhipps9169)",
+        "not searched: news search, web search budget used up for the session"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:16:51.973Z",
+      "by": "source-collector"
+    }
+  ]
+}

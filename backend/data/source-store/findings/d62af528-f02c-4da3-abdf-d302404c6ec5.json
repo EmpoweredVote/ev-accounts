@@ -1,0 +1,25 @@
+{
+  "politician_id": "d62af528-f02c-4da3-abdf-d302404c6ec5",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "status: resigned 2026-08-24 from NC Senate District 1 and lost the 2026-03-03 primary for U.S. House NC-01; no longer in office and not on the 2026 general-election ballot (https://ballotpedia.org/Bobby_Hanig ; https://www.ncleg.gov/Members/Biography/S/435 shows 'Resigned 8/24/26')",
+        "On the Record (0 appearances)",
+        "ncleg.gov member page (confirmed identity, District 1)",
+        "Ballotpedia (confirmed status; not searched further because out of scope)",
+        "not reviewed: web news search (search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:10:40.289Z",
+      "by": "source-collector"
+    }
+  ]
+}

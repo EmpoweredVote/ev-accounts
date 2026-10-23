@@ -1,0 +1,57 @@
+{
+  "politician_id": "5ff1a6f7-5a1e-4a2d-ba20-13a005101d4a",
+  "findings": [
+    {
+      "id": "37df5113aae75f983db9d79d2f73d901b23d246fc0116c229f234a1041d1f1e9",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H825",
+      "date": "2025-04-09",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-825-2025",
+      "act": "sponsor",
+      "note": "Eddins is on the sponsor list of HB 825, Election Improvements (filed 2025-04-09; primary sponsors are two other members; the bill was referred to House Rules and shows no further action on the member page). The bill text, read from the official PDF, would change what a voter must give when asking for an absentee ballot: the last four digits of the Social Security number plus one of a driver license number, a special ID card number, or a date of birth. It would also let voters without a photocopy of ID complete a reasonable-impediment affidavit with the same details. It also bans ranked choice voting, adjusts the area for election activity near polls, and shortens early voting.",
+      "subjects": [
+        "mail-ballot ID",
+        "ID number to request an absentee ballot",
+        "reasonable-impediment affidavit for absentee ballot ID",
+        "ranked choice voting ban (same bill)",
+        "early voting period (same bill)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:48:30.960Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "ID number to request an absentee ballot",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Blair_Eddins (on the Nov 3, 2026 general ballot, NC House District 94; primary cancelled)",
+        "On the Record (0 appearances for this politician id)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/H/825 (confirms Rep. Blair Eddins)",
+        "NC General Assembly introduced-bills list https://www.ncleg.gov/Members/IntroducedBills/H/825 (2025 session: one bill on the subject, HB 825)",
+        "Ballotpedia (own-words survey answers: nothing on the subject)",
+        "not reviewed: https://www.eddinsfornc.com (page loads by script; no readable text on the subject)",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: 2023-24 and earlier sessions bill lists (he took office Oct 1, 2024)",
+        "no own-words statement on the subject found"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:48:30.960Z",
+      "by": "source-collector"
+    }
+  ]
+}

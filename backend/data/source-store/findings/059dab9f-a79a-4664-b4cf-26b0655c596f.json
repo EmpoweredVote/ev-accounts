@@ -1,0 +1,96 @@
+{
+  "politician_id": "059dab9f-a79a-4664-b4cf-26b0655c596f",
+  "findings": [
+    {
+      "id": "707043c5af5b3251beca113cd36a6cee0765b95bac19f4c647625f7facf5e42e",
+      "kind": "own-words",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-urges-senators-to-vote-for-critical-election-protection-and-voting-rights-bill",
+      "date": "2022-01-19",
+      "date_precision": "day",
+      "passage": "Expanded voter purges; increased barriers for voters with disabilities; and harsher voter ID requirements.",
+      "note": "In Senate floor remarks, she lists harsher voter ID requirements among protections she says she is trying to claw back, alongside voter purges and barriers for voters with disabilities. Text is from her office's press release carrying the speech.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "0d1f5910c012b0aec46aeae84b97d55c825fa22072cea9e9a9c4b012be84f735",
+      "kind": "own-words",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-colleagues-introduce-for-the-people-act-to-strengthen-democracy",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "passage": "Promote Integrity – Fights back against the assault on voting rights by reaffirming Congress’s commitment to restoring the Voting Rights Act, prohibiting voter roll purges like those seen in Ohio, Georgia and elsewhere, and ensuring that discriminatory voter ID laws do not prevent Americans citizens from exercising their rights.",
+      "note": "Press release from her office on introducing the For the People Act. This bill summary says one part of the bill ensures discriminatory voter ID laws do not stop citizens from voting. Statement issued in her name; the bill summary is not a personal quote.",
+      "subjects": [
+        "voter ID at the polls",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad15942e7226a6f580e97c0504bbc11bada12c5fb70e0ab5068a9e6b12be7b76",
+      "kind": "record",
+      "url": "https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-colleagues-introduce-for-the-people-act-to-strengthen-democracy",
+      "date": "2021-03-18",
+      "date_precision": "day",
+      "instrument_id": "US-S-S1-2021",
+      "act": "sponsor",
+      "note": "For the People Act (S. 1, 117th Congress): her office's release says she joined colleagues to introduce it. It covers voter registration, mail voting, voter roll purges and voter ID laws. Bill number is from memory of the 117th Congress and not confirmed on congress.gov (blocked); the release does not state it.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot access",
+        "voter roll purges"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:13:35.305Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "discriminatory voter ID laws",
+        "voter roll purges",
+        "mail-ballot access",
+        "proof of citizenship / SAVE Act"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "official site duckworth.senate.gov: site search 'voter ID' (6 results; 2 press releases fetched and read; senator page confirms Senate office: https://www.duckworth.senate.gov/news/press-releases/duckworth-urges-senators-to-vote-for-critical-election-protection-and-voting-rights-bill)",
+        "nothing on the subject: SAVE Act / proof of citizenship (not found on official site search)",
+        "not reviewed: https://www.duckworth.senate.gov/news/press-releases/duckworth-durbin-join-entire-senate-democratic-caucus-to-introduce-for-the-people-act",
+        "not reviewed: https://www.duckworth.senate.gov/imo/media/doc/amicus-brief-of-bipartisan-current-and-former-members-of-congress-filed.pdf",
+        "blocked: https://www.congress.gov/member/tammy-duckworth/D000622 (HTTP 403)",
+        "blocked: https://ballotpedia.org/Tammy_Duckworth (fetch returned empty content)",
+        "not reviewed: ontheissues.org, govtrack, news search (web search budget used up)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:13:35.305Z",
+      "by": "source-collector"
+    }
+  ]
+}

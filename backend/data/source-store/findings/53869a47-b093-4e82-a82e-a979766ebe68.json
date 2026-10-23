@@ -1,0 +1,33 @@
+{
+  "politician_id": "53869a47-b093-4e82-a82e-a979766ebe68",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Nik_Sandman says he is on the Nov 3, 2026 general ballot for U.S. House Nebraska District 1 after advancing from the May 12, 2026 primary",
+        "On the Record (0 appearances): nothing on the subject",
+        "campaign site niksandman.com (home, priorities, about, blog posts via site API, site search for 'voter'): nothing on the subject",
+        "Ballotpedia Candidate Connection survey: nothing on the subject",
+        "not a legislator, no bill record: congress.gov not applicable",
+        "not reviewed: news search (web search budget used up for this session)",
+        "not reviewed: debate and forum videos (none located)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:53:45.353Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "politician_id": "fcad2ac3-c7e5-49a7-8452-e7c951d3be87",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: Ballotpedia (https://ballotpedia.org/Doug_Miller_(Indiana)) names Doug Miller as Indiana House District 48 incumbent, advanced from the 5 May 2026 primary, on the 3 November 2026 ballot",
+        "On the Record (0 appearances; script returned OTR_SOURCES=0)",
+        "official caucus page https://www.indianahouserepublicans.com/members/leadership/doug-miller (bio and press list reviewed; press releases are on housing, local funding, interns; one 2023 and one 2020 release on voter registration deadlines only, not on ID or citizenship; nothing on the subject)",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_doug_miller_1/bills (page loads only through scripts; bill and roll-call lists could not be read)",
+        "blocked: web search budget used up, so no news search and no campaign-site search was run",
+        "not reviewed: campaign site (not located without search)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:57:32.692Z",
+      "by": "source-collector"
+    }
+  ]
+}

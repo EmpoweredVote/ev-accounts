@@ -1,0 +1,57 @@
+{
+  "politician_id": "3b82d9c2-7d70-45c1-a4c2-bcb4bfe0e565",
+  "findings": [
+    {
+      "id": "f47d901d262f14ea5f4f0aa6ced7e35b67aa570068069e4d400cdc64e02fe2d1",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "M11 Concur (House concurrence vote on HB 958, Election Law Changes)",
+      "note": "Voted aye on House concurrence for HB 958, which passed 62 to 47. The ratified text requires the State Board of Elections to create a process to remove voters flagged as possible non-citizens by a federal database, and allows cross-state data sharing to check voter registration records. The text does not set a photo ID or documentary proof of citizenship rule. The Governor vetoed the bill on 2026-08-17 (see bill page); the member list shows excused absence on the second-reading votes on 2026-06-30.",
+      "subjects": [
+        "non-citizen removal from voter rolls",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:41:41.248Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen removal from voter rolls",
+        "voter-roll maintenance",
+        "election law changes in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia NC House District 68 page (https://ballotpedia.org/North_Carolina_House_of_Representatives_District_68) says the 2026 primary was canceled and the incumbent advanced; he is on the Nov 3, 2026 ballot; NCGA bio https://www.ncleg.gov/Members/Biography/H/779 names Representative David Willis, District 68, Union",
+        "On the Record (0 appearances for this politician id)",
+        "NCGA introduced bills list https://www.ncleg.gov/Members/IntroducedBills/H/779 (sponsored HB 31 election-day holiday and HB 66 early-voting period; nothing on ID or citizenship)",
+        "NCGA member vote list https://www.ncleg.gov/Members/Votes/H/779 (one on-subject vote found: HB 958)",
+        "NCGA bill page and ratified text for HB 958",
+        "blocked: https://ballotpedia.org/David_Willis_(North_Carolina) (no such page, 404; the district page was used instead)",
+        "nothing on the subject: own words (no official site, campaign site, interview or news quote reviewed; web search budget was exhausted, so no news search was run)",
+        "not reviewed: official campaign site and news coverage (no search available)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:41:41.248Z",
+      "by": "source-collector"
+    }
+  ]
+}

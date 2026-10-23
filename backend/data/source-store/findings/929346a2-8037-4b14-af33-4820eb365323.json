@@ -1,0 +1,31 @@
+{
+  "politician_id": "929346a2-8037-4b14-af33-4820eb365323",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Lieutenant Governor of Indiana, term 2025 to 2029 (confirmed at https://ballotpedia.org/Micah_Beckwith and https://www.in.gov/lg/); not on the 2026 ballot as a candidate for this office",
+        "On the Record (0 appearances for this politician id)",
+        "official site https://www.in.gov/lg/: nothing on the subject on the home page",
+        "blocked: https://www.in.gov/lg/newsroom/news-releases (list loads dynamically; page text shows no releases, so not reviewed)",
+        "Ballotpedia https://ballotpedia.org/Micah_Beckwith: nothing on the subject",
+        "not reviewed: https://x.com/LGMicahBeckwith, https://www.youtube.com/@LGMicahBeckwith, campaign site, news search (web search budget exhausted for the session)",
+        "legislature bill pages: not reviewed; the lieutenant governor presides over the Senate and does not sponsor bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:42:37.907Z",
+      "by": "source-collector"
+    }
+  ]
+}

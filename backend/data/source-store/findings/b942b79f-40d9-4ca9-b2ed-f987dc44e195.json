@@ -1,0 +1,33 @@
+{
+  "politician_id": "b942b79f-40d9-4ca9-b2ed-f987dc44e195",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "non-citizen voting",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Matt_Little says he is on the Nov 3, 2026 general ballot for Minnesota District 2 and advanced from the Aug 11, 2026 primary",
+        "On the Record (0 appearances, 0 sources)",
+        "campaign site https://littleforcongress.com (home and key-issues page: nothing on the subject)",
+        "Ballotpedia profile page: nothing on the subject beyond a general mention of voting rights in a survey answer, no ID or citizenship content",
+        "not reviewed: https://littleforcongress.com/meet-matt/ (fetch returned no saved page)",
+        "blocked: web search budget used up, so no news search, no congress.gov or Minnesota legislature bill-page search was done",
+        "not reviewed: Minnesota legislature bill pages for 2017-2020 Senate sponsorships",
+        "blocked: https://www.mattlittle.org (TLS error)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:15:20.630Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "politician_id": "469c2ab4-2b4d-48dd-9576-7b9359ed3e58",
+  "findings": [
+    {
+      "id": "367e651b6839c51ef2f01d0ddc4f1f1491cf67cbb70602c3702c9a0aca446d9e",
+      "kind": "own-words",
+      "url": "https://www.michaelechols.com/issues/",
+      "date": "2026-03-31",
+      "date_precision": "day",
+      "passage": "Free and fair elections are the foundation of our republic. I strongly support nationwide voter ID laws to ensure that only eligible citizens vote in American elections. I also support the Safeguard American Voter Eligibility (SAVE) Act, which requires proof of U.S. citizenship to register for federal elections and closes dangerous loopholes that could allow non-citizens onto voter rolls. These commonsense safeguards help restore confidence in our elections and ensure that America's future is decided by American citizens.",
+      "note": "Campaign issues page, section 'Protecting Election Integrity'. He states support for nationwide voter ID laws and for the SAVE Act. Date is the page's last-modified date (page first published 2026-03-05). The page's own text uses a curly apostrophe in 'America's'.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register",
+        "SAVE Act",
+        "non-citizen voting and voter rolls",
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:12:47.392Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register (SAVE Act)",
+        "non-citizen voting and voter rolls",
+        "election integrity in general",
+        "mail-ballot ID",
+        "no-ID fallback (affidavit, provisional ballot)"
+      ],
+      "places": [
+        "scope: Ballotpedia https://ballotpedia.org/Michael_Echols lists him as a candidate for U.S. House Louisiana District 5 in the November 3, 2026 primary (general election December 12, 2026); not withdrawn",
+        "On the Record (0 appearances; extract-otr run with --names only)",
+        "campaign site https://www.michaelechols.com/ (issues page, media page)",
+        "Ballotpedia page and 2026 Candidate Connection survey (nothing on the subject)",
+        "not reviewed: https://house.louisiana.gov/H_Reps/members?ID=14 (page loads; no state bill search done)",
+        "not reviewed: legis.la.gov bill sponsorships on voter ID or proof of citizenship",
+        "not reviewed: congress.gov (state legislator, no federal record)",
+        "not reviewed: https://www.youtube.com/@EcholsCongressLA5 (video)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:12:47.392Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "politician_id": "24a2410f-8e5f-4295-9c74-a29139bbab89",
+  "findings": [
+    {
+      "id": "6c765281624eba034064dc2920b2d55a63acb3cbe9cb7b9dac0d48c3712e9023",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: yea (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: confirmed by https://www.ncleg.gov/Members/Biography/S/387 (Senator Michael V. Lee, Senate Majority Leader, District 7) and https://en.wikipedia.org/wiki/2026_North_Carolina_Senate_election (lists him as incumbent seeking the 2026 District 7 seat)",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "official site: ncleg.gov biography page fetched, no subject statements on it; https://www.ncleg.gov/Members/Biography/S/387/Press fetched, nothing on the subject found",
+        "not reviewed: ncleg.gov sponsor bill list (https://www.ncleg.gov/Legislation/Bills/Sponsor/S/387 returned 404, so no sponsorship search done)",
+        "blocked: https://www.ncleg.gov/Members/Biography/S/458 (HTTP 500, wrong member id)",
+        "Ballotpedia: tried Michael_Lee_(North_Carolina), Michael_V._Lee, Michael_Lee_(North_Carolina_state_senator), Michael_V._Lee_(North_Carolina), Michael_V._Lee_(North_Carolina_state_senator), Michael_Lee_(North_Carolina_Senate); all returned 404, correct page not found",
+        "campaign site: guessed domains leeforncsenate.com and michaelleenc.com did not connect; not found",
+        "news search: not done, the shared web search budget was used up (search tool refused)",
+        "https://en.wikipedia.org/wiki/Michael_V._Lee fetched: biography only, nothing on the subject"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:39:04.574Z",
+      "by": "source-collector"
+    }
+  ]
+}

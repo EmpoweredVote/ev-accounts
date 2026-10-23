@@ -1,0 +1,33 @@
+{
+  "politician_id": "9e190d2a-a1a3-44f5-a018-c9a28bdc2c18",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Rodney_King (redirect from Rodney_Joe_King) lists Rodney King as an independent on the Nov 3, 2026 general-election ballot for U.S. House Tennessee District 3",
+        "On the Record (0 appearances; extract-otr run with --names, nothing on the subject)",
+        "campaign site https://rodneykingforcongress.com (home, /about, /contact read in full; nothing on the subject; the platform lists other issues only)",
+        "Ballotpedia Candidate Connection survey on https://ballotpedia.org/Rodney_King (nothing on the subject)",
+        "congress.gov: not applicable (not a legislator, no sponsorships)",
+        "not reviewed: Facebook page https://www.facebook.com/profile.php?id=61592512484507 (login-gated social page, not fetched)",
+        "not reviewed: news search (web search budget exhausted for the session; none run)",
+        "not reviewed: ontheissues.org, Vote Smart (no record for a first-time candidate; lead-only sources)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:51:34.198Z",
+      "by": "source-collector"
+    }
+  ]
+}

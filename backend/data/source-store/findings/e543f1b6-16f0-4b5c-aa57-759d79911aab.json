@@ -1,0 +1,25 @@
+{
+  "politician_id": "e543f1b6-16f0-4b5c-aa57-759d79911aab",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to vote",
+        "election integrity"
+      ],
+      "places": [
+        "status: disqualified from the 2026-08-18 primary (FL-11); also withdrew from the FL-7 primary; page: https://ballotpedia.org/Mike_Wilnau",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched with curl; page confirms person and status)",
+        "blocked: web search budget used up, no news search done",
+        "blocked: https://www.wilnauforcongress.com (host not found)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:10:37.699Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "politician_id": "e3e2b475-f389-4db3-a446-f491b11ff599",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia, https://ballotpedia.org/Ronnie_Murchinson-Rivera, says he lost the August 18, 2026 primary for U.S. House Florida District 6; not on the general-election ballot)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (fetched; confirms the person and the primary loss)",
+        "not reviewed: web search (search budget used up); stopped after scope check because he is out of scope"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:01:23.498Z",
+      "by": "source-collector"
+    }
+  ]
+}

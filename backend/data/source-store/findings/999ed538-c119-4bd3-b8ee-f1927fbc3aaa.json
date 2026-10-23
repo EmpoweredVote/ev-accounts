@@ -1,0 +1,112 @@
+{
+  "politician_id": "999ed538-c119-4bd3-b8ee-f1927fbc3aaa",
+  "findings": [
+    {
+      "id": "7d7ba00e2268a374985d90864a4a40946a095cbd7bec0ba8b0bd8d1efedc8451",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/788/2025",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "House second reading, passed 66-47 (roll call 758)",
+      "note": "Loftis voted Aye on second reading. HB 958, Election Law Changes (2025-2026 session). The bill digest (https://webservices.ncleg.gov/BillDigests/2025/H958) says it extends the time to provide photo ID after a provisional ballot cast without ID, requires overseas voters to submit a military-overseas ballot with a copy of photo ID or an affidavit, and allows voter registration at DMV and other agencies only if the applicant affirmatively states US citizenship.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with provisional ballot (cure period)",
+        "ID with military-overseas absentee ballot",
+        "proof of citizenship on voter registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:01:55.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ae93e137ee76d051f9dcb75d5323fdd2e62814e49871d1a693b453b727b620b8",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/788/2025",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "Amendment A3 (Dahle) on second reading, failed 47-66 (roll call 757)",
+      "note": "Loftis voted No on Amendment A3. The amendment text was not read, so its content is not described here. Context: HB 958, Election Law Changes (2025-2026 session). The bill digest (https://webservices.ncleg.gov/BillDigests/2025/H958) says it extends the time to provide photo ID after a provisional ballot cast without ID, requires overseas voters to submit a military-overseas ballot with a copy of photo ID or an affidavit, and allows voter registration at DMV and other agencies only if the applicant affirmatively states US citizenship.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with provisional ballot (cure period)",
+        "ID with military-overseas absentee ballot",
+        "proof of citizenship on voter registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:01:55.753Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "49a1b0c21f55e4c8d9d79b1755126575fcc287a8285c92186725a9d681a657cf",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/788/2025",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "House vote to concur in Senate changes, passed 62-47 (roll call 801)",
+      "note": "Loftis voted Aye on the motion to concur. HB 958, Election Law Changes (2025-2026 session). The bill digest (https://webservices.ncleg.gov/BillDigests/2025/H958) says it extends the time to provide photo ID after a provisional ballot cast without ID, requires overseas voters to submit a military-overseas ballot with a copy of photo ID or an affidavit, and allows voter registration at DMV and other agencies only if the applicant affirmatively states US citizenship.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with provisional ballot (cure period)",
+        "ID with military-overseas absentee ballot",
+        "proof of citizenship on voter registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-23T00:01:55.753Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "non-photo ID",
+        "no-ID voter / provisional ballot / affidavit",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia says Loftis, NC House District 109, is on the Nov 3, 2026 general-election ballot (primary canceled, advanced unopposed): https://ballotpedia.org/Donnie_Loftis; ncleg.gov bio https://www.ncleg.gov/Members/Biography/H/788",
+        "On the Record (0 meetings)",
+        "ncleg.gov member votes page 2025-2026 session (first 100000 characters read by summary; HB 958 rows verified by curl)",
+        "ncleg.gov bill page https://www.ncleg.gov/BillLookUp/2025/H958 (Loftis not listed as sponsor) and bill digest",
+        "Ballotpedia (no issue positions or endorsements listed)",
+        "not reviewed: official and campaign sites and Facebook pages https://www.facebook.com/repdonnieloftis (not fetched)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "nothing on the subject: own-words search not completed, no own-words found",
+        "not reviewed: last 29965 characters of the member votes page by summary; sponsorship list page not fetched"
+      ],
+      "found": 3,
+      "at": "2026-10-23T00:01:55.753Z",
+      "by": "source-collector"
+    }
+  ]
+}

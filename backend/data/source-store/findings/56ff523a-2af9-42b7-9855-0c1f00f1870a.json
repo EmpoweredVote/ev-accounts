@@ -1,0 +1,33 @@
+{
+  "politician_id": "56ff523a-2af9-42b7-9855-0c1f00f1870a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: on the November 3, 2026 general-election ballot for U.S. House NJ-6 (https://ballotpedia.org/Hillary_Herzig)",
+        "On the Record (0 appearances)",
+        "campaign site https://www.herzigforcongress.com home page: nothing on the subject (its Immigration section speaks of legal immigration, not voting)",
+        "campaign site https://www.herzigforcongress.com/about-hillary: nothing on the subject",
+        "Ballotpedia page and Candidate Connection survey answers: nothing on the subject",
+        "congress.gov: not applicable, not a legislator",
+        "not reviewed: web news search (session search budget used up)",
+        "not reviewed: Watch Videos page on campaign site (video)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:05:43.605Z",
+      "by": "source-collector"
+    }
+  ]
+}

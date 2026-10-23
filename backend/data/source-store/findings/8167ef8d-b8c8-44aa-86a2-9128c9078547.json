@@ -1,0 +1,31 @@
+{
+  "politician_id": "8167ef8d-b8c8-44aa-86a2-9128c9078547",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/G_S1 (Representative Greg Schwartz of Newton, House); sitting legislator, not a candidate-status check",
+        "On the Record (0 appearances, 0 sources)",
+        "malegislature.gov profile page: 16 sponsored/co-sponsored petitions listed on the profile, none on voter ID, citizenship or election law (nothing on the subject)",
+        "malegislature.gov bills tab: nothing on the subject",
+        "Ballotpedia: nothing on the subject (page fetched, no matching terms)",
+        "not reviewed: official site and campaign site (no fetch made)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:13:41.394Z",
+      "by": "source-collector"
+    }
+  ]
+}

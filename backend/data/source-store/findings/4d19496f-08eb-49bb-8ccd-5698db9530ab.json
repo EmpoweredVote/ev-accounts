@@ -1,0 +1,73 @@
+{
+  "politician_id": "4d19496f-08eb-49bb-8ccd-5698db9530ab",
+  "findings": [
+    {
+      "id": "5643b8a74e722cac31d31d67a5bae337cf12b0f2375f62e5ccb07c83c585314e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2019/S641",
+      "date": "2019-04-04",
+      "date_precision": "day",
+      "instrument_id": "NC-SB-641-2019",
+      "act": "sponsor",
+      "note": "Garrett is listed among the sponsors of S641, Fix Our Democracy. The filed text sets up automatic voter registration through driver license and special ID card applications, with the person taking the application asking whether the applicant is a citizen, and treats a stated non-citizen or a person who declines to answer as not registered. Garrett's campaign site names this bill as one he co-sponsored. Date is the date shown on the bill page history; not re-checked against the filing entry.",
+      "subjects": [
+        "citizenship question in automatic voter registration",
+        "registration through driver license or ID card"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:41.457Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "9b707fe5939421c0675786bb3f53c5f7ff581b17731fdeeca6a1d16bd97c6987",
+      "kind": "own-words",
+      "url": "https://garrettfornc.com/issues/",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "The fundamental cornerstone of our democracy is the right of citizens to have a say in the makeup of their government through voting. I believe that our state and country are better off when more eligible people vote, not fewer. My voting record and bills that I have introduced or co-sponsored reflect that belief.",
+      "note": "General statement on his campaign issues page about voting access. It does not mention photo ID, proof of citizenship or mail-ballot ID. Page is undated; the date is the fetch date and precision is year at best.",
+      "subjects": [
+        "general election access statement (related, not ID-specific)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:44:41.457Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity bills"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia (https://ballotpedia.org/Michael_Garrett_(North_Carolina)) says he is NC Senate District 27 and on the Nov 3, 2026 general ballot; the March 3, 2026 primary was canceled",
+        "On the Record (0 meetings, extract-otr run with name Michael Garrett)",
+        "official legislature member page https://www.ncleg.gov/Members/Biography/S/414 (listed; no subject content found)",
+        "campaign site https://garrettfornc.com and /issues/ (election-access statements only; nothing on voter ID, citizenship proof or mail-ballot ID)",
+        "NC legislature bill page H958 (2025): excused absent on all Senate votes on 2026-07-28, so no recorded vote",
+        "Ballotpedia page (no ID statements found)",
+        "not searched: news search for name plus subject words (web search budget for the session was used up)",
+        "not reviewed: ncleg.gov member sponsorship list and Senate roll calls for other 2019-2026 elections bills (not reached)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:44:41.457Z",
+      "by": "source-collector"
+    }
+  ]
+}

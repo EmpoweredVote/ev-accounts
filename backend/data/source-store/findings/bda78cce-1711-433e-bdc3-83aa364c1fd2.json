@@ -1,0 +1,34 @@
+{
+  "politician_id": "bda78cce-1711-433e-bdc3-83aa364c1fd2",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws",
+        "voter-roll checks",
+        "non-citizen voting"
+      ],
+      "places": [
+        "scope confirmed: https://ballotpedia.org/Charles_Moseley (Indiana House District 10, advanced from the 2026 primary, on the 2026 general-election ballot) - fetched",
+        "On the Record (0 appearances, extract-otr.mjs returned OTR_SOURCES=0)",
+        "https://www.indianahousedemocrats.org/members/chuck-moseley (official caucus page) - nothing on the subject",
+        "https://www.indianahousedemocrats.org/news/category/Rep.+Chuck+Moseley (12 release titles read; none on the subject)",
+        "Ballotpedia page text - nothing on the subject",
+        "blocked: https://iga.in.gov/legislative/2026/legislators (page does not render without scripts; bill sponsorships and votes not readable)",
+        "blocked: https://api.iga.in.gov/2026/legislators/charles_moseley (HTTP 403)",
+        "blocked: https://legiscan.com (HTTP 403)",
+        "not reviewed: campaign site (not located; web search budget exhausted)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:50:49.092Z",
+      "by": "source-collector"
+    }
+  ]
+}

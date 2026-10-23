@@ -1,0 +1,27 @@
+{
+  "politician_id": "afa7fc22-a6c6-4b4e-ab60-f1eb499fb7c0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: in scope. Ballotpedia https://ballotpedia.org/Mark_Hackett (fetched by curl) says he is on the November 3, 2026 general-election ballot for U.S. Senate, South Carolina; it also lists his 2020 and 2024 U.S. House races. Ballotpedia shows no 2026 Candidate Connection survey and no stated positions",
+        "On the Record (0 meetings; extract-otr returned 0 appearances)",
+        "Ballotpedia (nothing on the subject)",
+        "blocked: web search budget used up, so no news search and no campaign-site search was possible",
+        "not reviewed: campaign site (URL not found; guessed domains markhackett.org, markhackett.us, markhackettforsc.com did not respond)",
+        "congress.gov (not a legislator, no record to check; not reviewed)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:09:05.571Z",
+      "by": "source-collector"
+    }
+  ]
+}

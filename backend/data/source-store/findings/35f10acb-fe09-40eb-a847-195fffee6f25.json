@@ -1,0 +1,78 @@
+{
+  "politician_id": "35f10acb-fe09-40eb-a847-195fffee6f25",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "7d419d5b61dbb3526a3570b409198d4c136bed01a2bf086fc93fbeb68613aeb0",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H3842",
+      "date": "2025-02-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-3842-2025",
+      "act": "sponsor",
+      "note": "Co-petitioner (with Rep. Gentile) on H.3842, resolutions asking Congress to call a convention to propose amendments, stated aim being concerns about the integrity of elections. Referred to Veterans and Federal Affairs 2/27/2025; heard 11/13/2025; reported to accompany study order H.5422 on 5/14/2026. Does not name ID or citizenship requirements.",
+      "subjects": [
+        "election integrity",
+        "constitutional convention resolution on elections"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:05:41.399Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "confirmed in scope: https://ballotpedia.org/David_Vieira (on the 2026 general-election ballot, 3rd Barnstable District, Nov 3, 2026; advanced from Sept 1, 2026 primary)",
+        "On the Record (0 appearances, 0 candidates)",
+        "malegislature.gov legislator profile (DTV1): only election-related bill listed is H.3842",
+        "malegislature.gov bill page H.3842",
+        "Ballotpedia (nothing on the subject)",
+        "not reviewed: official and campaign site subject-word search (not done)",
+        "not reviewed: news search on name plus subject words (web search budget used up)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:05:41.399Z",
+      "by": "source-collector"
+    }
+  ]
+}

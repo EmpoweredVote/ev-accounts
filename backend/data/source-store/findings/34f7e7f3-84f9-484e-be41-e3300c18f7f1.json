@@ -1,0 +1,31 @@
+{
+  "politician_id": "34f7e7f3-84f9-484e-be41-e3300c18f7f1",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: sitting Indiana Senate District 50 member, elected 2024 (page: https://ballotpedia.org/Vaneta_Becker; official page https://www.indianasenaterepublicans.com/becker names her in the office)",
+        "On the Record (0 appearances, nothing on the subject)",
+        "official Senate caucus site page https://www.indianasenaterepublicans.com/becker and its 2026 session statements (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Vaneta_Becker (nothing on the subject)",
+        "blocked: https://iga.in.gov/legislative/2025/bills/house/1264 (page loads only as a script shell, no text)",
+        "blocked: https://api.iga.in.gov/2025/bills/house/1264 (needs an API key, 403)",
+        "not reviewed: legislature roll-call records and bill sponsorships for voter ID or citizenship bills (could not be read)",
+        "not reviewed: news search on her name plus subject words (shared web search limit was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:23:38.914Z",
+      "by": "source-collector"
+    }
+  ]
+}

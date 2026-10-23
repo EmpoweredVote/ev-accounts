@@ -1,0 +1,140 @@
+{
+  "politician_id": "e2c3e1a7-78b2-4c90-a136-c0a22c3f3e48",
+  "findings": [
+    {
+      "id": "b87c567ca45afb2c7ca87a1d63404b19a5e0a24a95ea88f8a0d2a297537f4ab2",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "yea",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: yea (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "7b2d4b3506526c2cbacd6c4548ddfa4202cf5549942da82e881b1ab3eeb8a5c4",
+      "kind": "own-words",
+      "url": "https://www.marclombardo.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Marc supports requiring voters to present identification before receiving a ballot. His proposal would also ensure that eligible voters who do not have identification can obtain one without charge.",
+      "note": "Campaign issues page (page is undated; date is the 2026 campaign cycle). States support for ID before receiving a ballot and free ID for eligible voters who lack one.",
+      "subjects": [
+        "voter ID at the polls",
+        "free state ID for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:40.103Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "d4a23ea4571dd1d01a62df5f304f3fd474da9dcbfb8832157f72923aad1f228e",
+      "kind": "own-words",
+      "url": "https://www.marclombardo.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Voter identification is a commonsense safeguard that protects legitimate voters, strengthens public confidence and helps ensure every lawful vote is counted properly.",
+      "note": "Campaign issues page (undated, 2026 cycle). Gives his reasons for voter ID.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:40.103Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "24a151d73200449e3aa61a46234c555a3a2da94ce1f7e85b50d77577cb33831d",
+      "kind": "own-words",
+      "url": "https://www.marclombardo.com/",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Filed legislation to secure elections with showing an ID to vote",
+      "note": "Campaign home page lists this among his accomplishments. No matching bill number was found on his legislature sponsor list, so the bill is not identified.",
+      "subjects": [
+        "voter ID at the polls",
+        "election integrity"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:40.103Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "65e2fe96a5bdad8273a8293760c8812b17cf4cccef4c047b79a0e67de86f59e2",
+      "kind": "own-words",
+      "url": "https://www.marclombardo.com/issues",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Requiring verification of citizenship or lawful status before receiving taxpayer-funded benefits",
+      "note": "Related item, not about voting: he lists verifying citizenship or lawful status for public benefits. Saved only as a related theme (citizenship verification).",
+      "subjects": [
+        "citizenship verification for benefits (related, not voting)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:27:40.103Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "free ID for voters without ID",
+        "proof of citizenship",
+        "election integrity",
+        "mail ballot ID",
+        "verification of citizenship for benefits (related)"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Marc_Lombardo says he advanced from the 2026-09-01 primary and is on the 2026-11-03 general ballot for MA House 22nd Middlesex; malegislature.gov profile https://malegislature.gov/Legislators/Profile/MTL1 names him as state representative, 22nd Middlesex",
+        "On the Record (0 appearances)",
+        "campaign site marclombardo.com (home, issues, accomplishments pages)",
+        "malegislature.gov sponsored and cosponsored bill lists (no election-ID bill listed in the 194th session pages; page shows only the current session)",
+        "Ballotpedia (nothing on the subject)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: Twitter https://twitter.com/MarcTLombardo and Facebook (not fetched)",
+        "not reviewed: bill pages for prior-session voter ID filings"
+      ],
+      "found": 4,
+      "at": "2026-10-22T23:27:40.103Z",
+      "by": "source-collector"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "politician_id": "2a22bd69-fd7a-4782-9057-4647fdb4e7cb",
+  "findings": [
+    {
+      "id": "1c1f31122b0bd5e6e9082fca0bab3a346303111b2efb5eb845684497f76cb01a",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2021/roll062.xml",
+      "date": "2021-03-03",
+      "date_precision": "day",
+      "instrument_id": "US-HR-1-2021",
+      "act": "yea",
+      "motion": "On Passage, H.R. 1, For the People Act (roll call 62)",
+      "note": "Voted yea on passage. Section 1903 of the bill (govinfo engrossed text, https://www.govinfo.gov/content/pkg/BILLS-117hr1eh/html/BILLS-117hr1eh.htm) says that if a state requires ID to cast a ballot in a federal election, the voter may instead give a signed sworn written statement, under penalty of perjury, of identity and eligibility, in person or with a mail ballot. The same bill has other voting and election provisions not read in full.",
+      "subjects": [
+        "sworn statement in place of ID",
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:10:03.437Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "sworn statement in place of ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Elaine_Luria) says she is on the Nov 3, 2026 general-election ballot for U.S. House, Virginia District 2, after advancing from the Aug 4, 2026 primary",
+        "On the Record (0 appearances, extract-otr.mjs run)",
+        "campaign site elaineforcongress.com home, /issues, /about: nothing on the subject",
+        "Ballotpedia page: nothing on the subject beyond vote list",
+        "House Clerk roll call 2021 no. 62 (H.R. 1): reviewed",
+        "govinfo text of H.R. 1 (engrossed): reviewed",
+        "blocked: https://www.congress.gov/member/elaine-luria/L000591 (HTTP 403)",
+        "blocked: https://www.congress.gov/bill/117th-congress/house-bill/1/text (HTTP 403)",
+        "not reviewed: news search and other web searches (session search budget used up)",
+        "not reviewed: congress.gov sponsorship and co-sponsorship lists (blocked)",
+        "not reviewed: debate, forum and interview videos, vote411, ontheissues.org"
+      ],
+      "found": 1,
+      "at": "2026-10-22T22:10:03.437Z",
+      "by": "source-collector"
+    }
+  ]
+}

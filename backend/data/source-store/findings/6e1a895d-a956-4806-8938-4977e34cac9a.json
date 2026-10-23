@@ -1,0 +1,26 @@
+{
+  "politician_id": "6e1a895d-a956-4806-8938-4977e34cac9a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026 primary (renomination lost to Jay Starkey, 43.9% to 56.1%), per https://en.wikipedia.org/wiki/Rick_Niemeyer",
+        "On the Record (0 meetings)",
+        "official Senate page https://www.indianasenaterepublicans.com/niemeyer: nothing on the subject",
+        "Ballotpedia: blocked: https://ballotpedia.org/Rick_Niemeyer (fetch returned no page text)",
+        "not reviewed: iga.in.gov bill pages (stopped, out of scope)",
+        "web search: not run, session search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:37:14.916Z",
+      "by": "source-collector"
+    }
+  ]
+}

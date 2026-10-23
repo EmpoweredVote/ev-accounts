@@ -1,0 +1,32 @@
+{
+  "politician_id": "5d57215a-7a47-4650-9c7b-47ff41d6322b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "scope confirmed: Indiana State Senate District 7, term ends 2028, not on the 2026 ballot (https://ballotpedia.org/Brian_Buchanan; https://www.indianasenaterepublicans.com/buchanan)",
+        "On the Record (0 appearances)",
+        "official Senate site (profile page, 2026 legislative updates page, 2026 session-end statement, 100% voting record release): nothing on the subject",
+        "Ballotpedia: nothing on the subject (did not complete 2020 or 2024 Candidate Connection surveys)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_brian_buchanan_1 (page loads only as a script shell, bill and vote lists not readable)",
+        "not reviewed: Indiana General Assembly bill and roll-call pages for election bills",
+        "not reviewed: campaign site (https://www.brianbuchanan.com did not return a readable page)",
+        "blocked: web search (session search budget used up), so no news search was run"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:34:12.588Z",
+      "by": "source-collector"
+    }
+  ]
+}

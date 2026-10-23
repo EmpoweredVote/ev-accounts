@@ -1,0 +1,179 @@
+{
+  "politician_id": "cd10014f-2a57-4d68-b7ae-ad5233747c5a",
+  "findings": [
+    {
+      "id": "be5f28f24e608f3eaae3176b7381924ab143791e3c85325313bbb1647812417c",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "I support the core goal of the SAVE Act: ensuring that only American citizens register and vote in federal elections. Secure elections strengthen public confidence and protect every lawful vote.",
+      "note": "Campaign issues page, Election Security and Voter Access section. Page is undated; date given is the fetch date and the words are from the 2026 campaign. Says he backs the aim of the SAVE Act.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:56.513Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7ac3691d97ad0aa8c98f48e7f3264319b7889343b95fc6b613cffaba446b7608",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "Any new citizenship-documentation requirement must be implemented carefully, with adequate time, funding, and practical assistance for local election officials and individual voters.",
+      "note": "Same section. Says a citizenship-documentation requirement needs time, money and help for officials and voters.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:56.513Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "ad01a5e736dca0b21dd640d0457e39e04481c8e1d68a2b34cf0da5926074e117",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "A rushed rollout could prevent far more eligible citizens from voting than it stops unlawful votes.",
+      "note": "Same section. Warns about a fast rollout of citizenship proof; names married women with name changes, older voters, naturalized citizens, rural residents, and people who cannot easily replace documents.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "voters lacking documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:56.513Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "4eff6503aafbbf6fa8899bd1901c382c9bc4c806128df0b96357bb7a9cf72731",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "The federal government should help states verify existing records, provide required documents without charge, accept reasonable alternative evidence, and give voters notice and time to correct discrepancies.",
+      "note": "Same section. Lists steps: help verify existing records, free required documents, accept alternative evidence, notice and time to fix mismatches.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "free documents",
+        "alternative evidence of citizenship",
+        "voter-roll checks"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:56.513Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1fdb439bc24872bf5683c9789250565432db1278860a01aaabf5ac87ef549788",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "The SAVE Act should likewise allow sufficient time—potentially more than one election cycle—for election offices and citizens to adapt.",
+      "note": "Same section. Says the SAVE Act should be phased in over a long period, citing the 2002 Help America Vote Act timeline.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:56.513Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e5a44a6d50f705e762e6550928b44726538c7e2878824f25691fed61c804d1e0",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "My standard is simple: prevent illegal voting without needlessly blocking lawful voters.",
+      "note": "Closing line of the Election Security and Voter Access section; also opens with 'nly eligible citizens should vote—and every eligible citizen should be able to.' (first letter missing on the page).",
+      "subjects": [
+        "election integrity in general",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:56.513Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6ca3c1fab89af82984779c619289ef2df2a29943c88821f21c027de7da9a93a7",
+      "kind": "own-words",
+      "url": "https://www.jeffwadlin.com/issues",
+      "date": "2026-10-22",
+      "date_precision": "year",
+      "passage": "I also support making Election Day a national holiday.",
+      "note": "Same section. Related voter-access proposal raised alongside ID and citizenship rules.",
+      "subjects": [
+        "voter access (Election Day holiday)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:14:56.513Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voters with no ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "election integrity and voter access in general"
+      ],
+      "places": [
+        "On the Record (0 appearances for this politician id)",
+        "Ballotpedia https://ballotpedia.org/Jeff_Wadlin (confirms 2026 general-election ballot, U.S. Senate, Arkansas, nominated at convention 2026-02-22; no Candidate Connection survey; nothing on the subject)",
+        "campaign site issues page https://www.jeffwadlin.com/issues (fetched by curl; Election Security and Voter Access section)",
+        "campaign site about page https://www.jeffwadlin.com/about (nothing on the subject)",
+        "campaign site in-the-news list https://www.jeffwadlin.com/in-the-news (headlines only; nothing on the subject; individual releases not reviewed)",
+        "not reviewed: congress.gov (not a sitting legislator, no sponsorships to check)",
+        "not reviewed: web news search on name plus subject words (session search budget used up)",
+        "not reviewed: upcoming U.S. Senate debates announced 2026-08-20 (no transcripts or video reached)",
+        "nothing found: ontheissues.org and vote411 not fetched"
+      ],
+      "found": 7,
+      "at": "2026-10-22T22:14:56.513Z",
+      "by": "source-collector"
+    }
+  ]
+}

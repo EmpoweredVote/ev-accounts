@@ -1,0 +1,109 @@
+{
+  "politician_id": "8a528e10-77a3-4bb0-894c-a9f0131f0e77",
+  "findings": [
+    {
+      "id": "c569da8f4905e80506c5c6b280ea53356a4b5c9b03efc0d536cdad7eccfe2864",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-06",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "concur in House committee substitute (Motion 9 To Concur)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, concur in House committee substitute (Motion 9 To Concur), 2018-12-06: nay (tally 25–7); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3f4adf14a66813977af26e1cbafed844a4fb972fb3256b46a179c350f1520891",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-18",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "nay",
+      "motion": "veto override (Motion 11)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC Senate, veto override (Motion 11), 2018-12-18: nay (tally 33–12); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "7a42f7d2b18ef32473021d08149fe708d4539d98bbcd1f1c15e8ef914903e1c0",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/S/693",
+      "date": "2026-07-28",
+      "date_precision": "day",
+      "instrument_id": "NC-H-958-2025",
+      "act": "nay",
+      "motion": "Second Reading, Roll Call #693 (passed 28-13)",
+      "note": "Senate vote on House Bill 958, Election Law Changes. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H958v9.pdf) adds G.S. 163-83, which has county boards process a voter registration application only if it affirmatively says the applicant is a US citizen, with a 30-day notice and a statement under penalty of perjury if the question is left blank. It also directs the State Board of Elections to set up a process to remove voters flagged as possible non-citizens by a federal database. The roll call lists Chaudhuri among the noes. The bill was later vetoed on 2026-08-17 per the bill page https://www.ncleg.gov/BillLookUp/2025/H958.",
+      "subjects": [
+        "citizenship statement on voter registration",
+        "non-citizen voter removal from rolls",
+        "election law changes (general)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:59:14.482Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "non-citizen voting and voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Jay_Chaudhuri names him as NC State Senate District 15 incumbent on the Nov 3, 2026 general-election ballot (primary canceled)",
+        "On the Record (0 meetings; extract-otr found no appearances)",
+        "Ballotpedia (nothing on the subject)",
+        "NC General Assembly member page https://www.ncleg.gov/Members/Biography/S/395 (confirms office; nothing on the subject)",
+        "NC General Assembly bill page and Senate roll calls for HB 958 (2025-2026) (one record saved)",
+        "campaign site https://jayfornc.com/ (home, about-jay, break-the-supermajority pages: nothing on the subject)",
+        "not reviewed: https://www.ncleg.gov/Members/MemberBills/S/395 (bill list loads dynamically; no sponsorship list could be read)",
+        "not reviewed: news search on name plus subject words (web search budget used up for the session)",
+        "not reviewed: social media (x.com/jay_chaudhuri, Facebook, Instagram)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:59:14.482Z",
+      "by": "source-collector"
+    }
+  ]
+}

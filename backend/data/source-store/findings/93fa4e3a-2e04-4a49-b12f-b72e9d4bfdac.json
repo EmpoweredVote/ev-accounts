@@ -1,0 +1,155 @@
+{
+  "politician_id": "93fa4e3a-2e04-4a49-b12f-b72e9d4bfdac",
+  "findings": [
+    {
+      "id": "0ff1a1d94df1bd58ec20e6a88f024590e5567ce2469ead3614a4616ac1f5265c",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr22eh/html/BILLS-119hr22eh.htm",
+      "date": "2025-04-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-22-2025",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2025-04-10: yea (tally 220–208); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.555Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "11f07a12b54a1fcb7894c3e6d9f2880eca60b449bc137912dec5a296e4b4f79a",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119s1383eah/html/BILLS-119s1383eah.htm",
+      "date": "2026-02-11",
+      "date_precision": "day",
+      "instrument_id": "US-S-1383-2026",
+      "act": "yea",
+      "motion": "passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act')",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, passage of S. 1383 with House amendment (On Passage; clerk description 'Veterans Accessibility Advisory Committee Act'), 2026-02-11: yea (tally 218–213); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T1 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.558Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "06ec1bc1cdccd814c21a231ce7c826de45ddb7bcd63c042a6cdd784095cbb58e",
+      "kind": "record",
+      "url": "https://clerk.house.gov/evs/2024/roll345.xml",
+      "date": "2024-07-10",
+      "date_precision": "day",
+      "instrument_id": "US-HR-8281-2024",
+      "act": "yea",
+      "motion": "final passage (On Passage)",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "US House, final passage (On Passage), 2024-07-10: yea (tally 221–198); census gate: none.",
+      "subjects": [
+        "proof of citizenship to register"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "A (source-collector subagent, voting-rights Stage 0, 2026-10-20)",
+        "fetched_at": "2026-10-21T01:52:20.308Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f0a0f66d39f6f133a9baf34e90bd25a403f1c5df7544504e6bacaf1cfce7bdfb",
+      "kind": "own-words",
+      "url": "https://bice.house.gov/media/press-releases/bice-supports-budget-reconciliation-bill-0",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "Importantly, it also mimics my legislation, the STEADFAST Act, which contains budgetary mechanisms to help secure our elections, in line with the SAVE Act.",
+      "note": "Statement issued in her name on a budget resolution that tells House committees to draft election-security text. She ties her own STEADFAST Act to the SAVE Act. The same release says she has supported voter ID and the SAVE Act in committee and on the House floor.",
+      "subjects": [
+        "SAVE Act",
+        "proof of citizenship to vote",
+        "voter ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:57:29.020Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "6f225b376b0603fd3da9c2b649271aae8e483aa1b62e1a36c99c40b2e88ce504",
+      "kind": "record",
+      "url": "https://www.govinfo.gov/content/pkg/BILLS-119hr7418ih/html/BILLS-119hr7418ih.htm",
+      "date": "2026-02-09",
+      "date_precision": "day",
+      "instrument_id": "US-HR-7418-2026",
+      "act": "sponsor",
+      "note": "H.R. 7418, STEADFAST Act. Pays states through the Election Assistance Commission to upgrade voting systems. States must certify they do not allow non-citizens to vote in public elections. The Commission is to give priority to states that use paper ballots, keep non-citizens off voter rolls, and require photo ID to obtain a ballot. Her July 2026 release says it passed the House Administration Committee.",
+      "subjects": [
+        "voter ID at the polls",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election security funding conditions"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:57:29.020Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks",
+        "election security funding conditions",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia OK-5 2026 page lists Stephanie Bice as incumbent in the Nov 3, 2026 general election (https://ballotpedia.org/Oklahoma%27s_5th_Congressional_District_election,_2026)",
+        "On the Record (0 appearances)",
+        "official site bice.house.gov press releases (page 1 and page 2 of list reviewed; one on-subject release found; later pages not reviewed: https://bice.house.gov/media/press-releases)",
+        "govinfo.gov text of H.R. 7418",
+        "blocked: https://www.congress.gov/bill/119th-congress/house-bill/7418 (403)",
+        "blocked: https://ballotpedia.org/Stephanie_Bice (empty page returned)",
+        "not reviewed: campaign site, ontheissues.org, news search (web search budget used up)",
+        "nothing on the subject: Wikipedia page (lead only, not cited)"
+      ],
+      "found": 2,
+      "at": "2026-10-22T21:57:29.020Z",
+      "by": "source-collector"
+    }
+  ]
+}

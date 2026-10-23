@@ -1,0 +1,33 @@
+{
+  "politician_id": "33e307e0-dc84-43c0-b842-de34268c206d",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "In scope: Ballotpedia https://ballotpedia.org/Fady_Qaddoura (fetched by curl) names him as Indiana State Senate District 30 member, term ends 2028; he is a sitting senator, not on the 2026 ballot",
+        "On the Record (0 appearances for this politician id; extract-otr.mjs run)",
+        "Ballotpedia: only subject-adjacent text is a 2020 survey answer listing 'Fair Elections and Voter Rights' as a policy interest, with no mention of ID or citizenship; not saved",
+        "not reviewed: https://iga.in.gov/legislative/2026/legislators/legislator_fady_qaddoura_1 (page loads as an empty app shell; no bill list readable)",
+        "blocked: https://www.indianasenatedemocrats.com/senator/fady-qaddoura/ (connection failed)",
+        "blocked: https://www.fadyqaddoura.com (domain not found)",
+        "blocked: https://www.fadyforindiana.com (connection failed)",
+        "nothing on the subject: https://www.in.gov/legislative/senate_democrats/senators/ (no mention of him or the subject)",
+        "not searched: news and web search on name plus subject words (the shared 200-search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:23:14.967Z",
+      "by": "source-collector"
+    }
+  ]
+}

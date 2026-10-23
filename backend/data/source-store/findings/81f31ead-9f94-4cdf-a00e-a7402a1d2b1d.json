@@ -1,0 +1,109 @@
+{
+  "politician_id": "81f31ead-9f94-4cdf-a00e-a7402a1d2b1d",
+  "findings": [
+    {
+      "id": "10deda6bc410b2b65f6806fec1dbe226f1c365367e35bb1bf7413387b9e55451",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/776",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (passed 66 to 47)",
+      "note": "Voted Aye on second reading of HB 958, a broad election law bill. The bill's official digest says it extends the deadline for a voter to show photo ID after voting a provisional ballot without ID, changes how citizenship is checked on voter registration forms, and sets steps for removing non-citizens and deceased people from voter rolls. On the same day he voted Aye on amendment A1 (112 to 0) and amendment A2 (69 to 44), and No on amendment A3 (failed 47 to 66).",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:09.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "999ee8d07c3d3fa171b3d9feb38d8c4dee1a56002e2f303da378b0c23891ab4e",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/776",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur with Senate changes (passed 62 to 47)",
+      "note": "Voted Aye to concur with the Senate version of HB 958, the final passage vote. The bill page shows the governor vetoed it on 08/17/2026. The listed votes through the end of the August 2026 session show no override vote for HB 958 on his record.",
+      "subjects": [
+        "voter ID at the polls",
+        "provisional ballot ID cure",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:09.420Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "f6634158bce0e78065b62ed54aefa5ed90c2b954a8d9c7123a45477724a35039",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H958",
+      "date": "2026-08-17",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "other",
+      "motion": "HB 958 Election Law Changes: governor's veto (context for the votes above)",
+      "note": "Official bill page for HB 958 lists the action 'Vetoed 08/17/2026'. Context only. The digest at https://webservices.ncleg.gov/BillDigests/2025/H958 says the act requires military and overseas voters to send the photo ID described in GS 163-166.16(a) with the ballot, and extends the time to bring ID after a provisional ballot from the third to the fifth business day after the election.",
+      "subjects": [
+        "voter ID at the polls",
+        "ID with absentee or military-overseas ballot",
+        "provisional ballot ID cure"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:56:09.420Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter / provisional ballot ID cure",
+        "ID with absentee or military-overseas ballot",
+        "proof of citizenship to register",
+        "voter-roll checks and non-citizen removal",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope check: ncleg.gov member table and biography (https://www.ncleg.gov/Members/Biography/H/776) name Representative Matthew Winslow, District 7, sitting; Ballotpedia says he is not running for re-election in 2026 (still sitting, so in scope)",
+        "On the Record (0 appearances, 0 candidates)",
+        "campaign site matthewwinslow.com: blocked: https://www.matthewwinslow.com/ (domain shows a Wix 'ConnectYourDomain' error, page not live)",
+        "official legislature page, introduced bills 2025-26 (https://www.ncleg.gov/Members/IntroducedBills/H/776): checked all titles; nothing on voter ID or citizenship proof (only HB 411 early voting period for primaries as co-sponsor, HB 58 local elections, HB 93 literacy-test repeal; none on the subject)",
+        "official legislature page, roll-call votes (https://www.ncleg.gov/Members/Votes/H/776): read in full; found HB 958 votes",
+        "bill page and digest for HB 958 (ncleg.gov, webservices.ncleg.gov)",
+        "Ballotpedia (https://ballotpedia.org/Matthew_Winslow): status only, no positions on the subject; he did not complete Candidate Connection surveys on issues in 2022 or 2024",
+        "news search: not done, web search budget for the session was used up",
+        "nothing on the subject in own words: no own-words source reached"
+      ],
+      "found": 3,
+      "at": "2026-10-22T23:56:09.420Z",
+      "by": "source-collector"
+    }
+  ]
+}

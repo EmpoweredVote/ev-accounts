@@ -1,0 +1,30 @@
+{
+  "politician_id": "b104e0d2-104f-4fd0-84ba-d68874c3e19e",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "election integrity / voter rolls / non-citizen voting"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Jim_Schwartzel names him as candidate for U.S. House Florida District 19, on the Nov 3, 2026 general-election ballot after the Aug 18, 2026 primary",
+        "On the Record (0 appearances; names search also 0)",
+        "Ballotpedia page and Candidate Connection survey: nothing on the subject",
+        "campaign site https://www.jimforcongress.com/ (home page text searched for voter, ID, citizenship, SAVE, integrity, election): nothing on the subject; the Ballotpedia copy of the campaign issues text (June 23, 2026) also has nothing on the subject",
+        "blocked: https://www.jimforcongress.com/issues (404)",
+        "blocked: https://www.congress.gov (403; also he holds no seat, so no record expected)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: https://www.ontheissues.org, Vote Smart, X and Facebook posts, debate/forum videos"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:52:47.437Z",
+      "by": "source-collector"
+    }
+  ]
+}

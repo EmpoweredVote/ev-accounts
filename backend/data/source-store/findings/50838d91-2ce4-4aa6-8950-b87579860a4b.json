@@ -1,0 +1,54 @@
+{
+  "politician_id": "50838d91-2ce4-4aa6-8950-b87579860a4b",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "identity confirmed: https://malegislature.gov/Legislators/Profile/JJM2 (Rep. John J. Mahoney, 13th Worcester, 194th General Court)",
+        "On the Record (0 appearances)",
+        "legislature sponsored-bills page https://malegislature.gov/Legislators/Profile/JJM2/Sponsored: nothing on the subject (10 bills, none on voting)",
+        "https://malegislature.gov/Bills/193/H4359/Amendments: page did not show amendment 7 or the roll call; the vote on file was not re-verified",
+        "blocked: https://ballotpedia.org/John_Mahoney_(Massachusetts) (fetch returned empty)",
+        "not reviewed: official/campaign site, news search, other URL patterns (web search budget exhausted for the session)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:08:25.978Z",
+      "by": "source-collector"
+    }
+  ]
+}

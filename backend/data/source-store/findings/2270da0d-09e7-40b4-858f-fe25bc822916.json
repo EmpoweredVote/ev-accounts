@@ -1,0 +1,53 @@
+{
+  "politician_id": "2270da0d-09e7-40b4-858f-fe25bc822916",
+  "findings": [
+    {
+      "id": "e232132723fb59072a603a300746f08a2c1a8834e0f8f5edb8f83866225656a3",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/192/H4359",
+      "date": "2022-01-27",
+      "date_precision": "day",
+      "instrument_id": "MA-H-4359-AMDT-7-2022",
+      "act": "nay",
+      "motion": "On adoption of amendment #7 (H.4359) - failed",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "MA House, On adoption of amendment #7 (H.4359) - failed, 2022-01-27: nay (tally 32–126); census gate: none.",
+      "subjects": [
+        "voter ID at the polls"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T3 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.569Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship",
+        "mail-ballot ID",
+        "election integrity"
+      ],
+      "places": [
+        "status: not seeking re-election; announced 2026-01-23 he would not run in 2026, term ends 2027 (https://ballotpedia.org/Christopher_Markey); still a sitting member of the 9th Bristol district (https://malegislature.gov/Legislators/Profile/CMM1)",
+        "On the Record (0 appearances, 0 candidate meetings)",
+        "malegislature.gov legislator profile (nothing on the subject)",
+        "malegislature.gov bill search 'voter identification' (no Markey filings found)",
+        "Ballotpedia (nothing on the subject)",
+        "not reviewed: news search, campaign site, own-words search (web search budget exhausted)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:01:06.595Z",
+      "by": "source-collector"
+    }
+  ]
+}

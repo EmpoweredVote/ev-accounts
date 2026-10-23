@@ -1,0 +1,245 @@
+{
+  "politician_id": "0c2a4e1c-9bb5-4a09-b644-67371bd9dbe2",
+  "findings": [
+    {
+      "id": "28c7fb7516c08905f0aff02e15f57e4d731521d10da48c0f99d26499d119fb04",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-05",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "third reading of committee substitute",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, third reading of committee substitute, 2018-12-05: yea (tally 67–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "e6f866e8ba9aca775855e785caa9e4231e714021d674d98788d21d7771121def",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2017/S824",
+      "date": "2018-12-19",
+      "date_precision": "day",
+      "instrument_id": "NC-S-824-2018",
+      "act": "yea",
+      "motion": "veto override",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "NC House, veto override, 2018-12-19: yea (tally 72–40); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.564Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1bb81a7ab84c52e1b280b047739cb45d865c32785d587536defda58ae69153ce",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2013/H589",
+      "date": "2013-04-04",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor (not a primary sponsor) of House Bill 589, the Voter Information Verification Act. The filed text requires voters to provide photo identification before voting and sets up an advisory board and outreach to help voters without photo ID obtain one. Filed text: https://www.ncleg.gov/Sessions/2013/Bills/House/PDF/H589v0.pdf",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "help for voters without ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:53.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "44a9ae798dc84b576c59a00ee106aad73943884933325157c7a61cdb8bb33b63",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/350",
+      "date": "2013-04-24",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "yea",
+      "motion": "HB 589 Voter Information Verification Act, Third Reading, Roll Call #350 (passed 81 to 36)",
+      "note": "Listed among the Ayes on the House third reading of the photo ID bill HB 589.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:53.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "cc8b36283c6d6801fec5b5bc9860d836b167ea5e8b5c375ad379ffbd0cfc65ef",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2013/H/1337",
+      "date": "2013-07-25",
+      "date_precision": "day",
+      "instrument_id": "NC-H-589-2013",
+      "act": "other",
+      "motion": "HB 589 M11 Concur, Roll Call #1337 (passed 73 to 41): marked as an excused absence, no vote cast",
+      "note": "On the final House vote to concur with the Senate version of HB 589, she is listed under Excused Absence, so no vote was recorded. The same excused absence is listed on Roll Call #1335 (failed) of the same night.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:53.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "3ac542bd49a529e3e4c0636ca9414387814f5569da816e7dc3994135fc34e0ca",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/H396",
+      "date": "2023-03-20",
+      "date_precision": "day",
+      "instrument_id": "NC-H-396-2023",
+      "act": "sponsor",
+      "note": "Primary sponsor of House Bill 396, Repeal Participation in ERIC. It repeals the State Board of Elections' authorization to take part in the Electronic Registration Information Center (a voter-roll data sharing group) and bars joining unless the General Assembly approves. Referred to committee; no further action on the page. Text: https://www.ncleg.gov/Sessions/2023/Bills/House/PDF/H396v1.pdf",
+      "subjects": [
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:53.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "87fedbe77fad23a93d3c1e6a7a6c558a3e772c43cf7d817a9dfeff257a84ab66",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2023/H1074",
+      "date": "2024-05-23",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1074-2023",
+      "act": "sponsor",
+      "note": "Listed as a co-sponsor of House Bill 1074, Constitutional Amendment/Citizens-Only Voting (S.L. 2024-18), which amends the state constitution so that only a citizen of the United States may vote. It does not set a document requirement.",
+      "subjects": [
+        "non-citizen voting",
+        "citizens-only voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:53.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "c0e1ee066eef16d764aaa71321cfa9da2026f26ca4be452a8bdb81cf33dbd25b",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/731",
+      "date": "2024-06-26",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1074-2023",
+      "act": "other",
+      "motion": "HB 1074 Citizens-Only Voting, Second Reading, Roll Call #731 (passed 104 to 12): excused absence, no vote cast",
+      "note": "She is listed under Excused Absence on the second reading, and also on Roll Calls #729 and #730 the same day. On the June 27 2024 concurrence vote (Roll Call #769, https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2023/H/769) she is also listed as excused.",
+      "subjects": [
+        "non-citizen voting",
+        "citizens-only voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:53.209Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1fa984bbf6cf7af894f59651bd95bb5a30d409c7ecb1637645c7e9053e9b6b84",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/BillLookUp/2025/H1231",
+      "date": "2026-05-12",
+      "date_precision": "day",
+      "instrument_id": "NC-H-1231-2025",
+      "act": "sponsor",
+      "note": "Listed as a primary sponsor (with Ward and Loftis) of House Bill 1231, No Voter Registration Changes At DMV. It ends changes to an existing voter registration (address, name, party) at DMV offices or on the DMV website and requires those changes at county boards of elections. Referred to committee. Text: https://www.ncleg.gov/Sessions/2025/Bills/House/PDF/H1231v1.pdf",
+      "subjects": [
+        "voter registration changes at DMV",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:34:53.209Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID requirement",
+        "proof of citizenship to vote",
+        "citizens-only voting",
+        "voter-roll checks (ERIC)",
+        "voter registration changes at DMV",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Julia_Howard (NC House District 77, on the 2026 general election ballot Nov 3 2026; primary canceled) and ncleg.gov member list https://www.ncleg.gov/Members/MemberList/H",
+        "On the Record (0 appearances; extract-otr ran with --names, nothing found)",
+        "ncleg.gov member page https://www.ncleg.gov/Members/Biography/H/53 (introduced bills 2013 to 2025 sessions reviewed)",
+        "ncleg.gov roll call pages for H589 (2013), H1074 (2023)",
+        "Ballotpedia (no issue positions or voter ID statements on page)",
+        "nothing on the subject: official site and campaign site (no own-words page found; the Official website link on Ballotpedia points to a different member, https://www.ncleg.gov/Members/Biography/H/618, so not used)",
+        "not reviewed: news search, own-words search (web search budget used up for the session; no search possible)",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/416 and /H/180 returned HTTP 500 (wrong member ids, not hers)"
+      ],
+      "found": 7,
+      "at": "2026-10-22T23:34:53.209Z",
+      "by": "source-collector"
+    }
+  ]
+}

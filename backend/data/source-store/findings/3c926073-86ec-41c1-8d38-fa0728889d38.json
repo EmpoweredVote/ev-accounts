@@ -1,0 +1,23 @@
+{
+  "politician_id": "3c926073-86ec-41c1-8d38-fa0728889d38",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: withdrew (date not stated on page); Ballotpedia's page for the 2026 Alaska U.S. House race, certified primary results section, lists 'Withdrawn or disqualified candidates: Gerald Heikes' https://ballotpedia.org/United_States_House_of_Representatives_election_in_Alaska,_2026",
+        "On the Record (0 appearances)",
+        "Ballotpedia candidate page https://ballotpedia.org/Gerald_Heikes (fetched, no profile content found)",
+        "not reviewed: campaign site, congress.gov, news search (stopped as out of scope; web search budget also used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:17:24.615Z",
+      "by": "source-collector"
+    }
+  ]
+}

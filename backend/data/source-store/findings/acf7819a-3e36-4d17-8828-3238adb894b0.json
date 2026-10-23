@@ -1,0 +1,34 @@
+{
+  "politician_id": "acf7819a-3e36-4d17-8828-3238adb894b0",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity laws"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Lisa_Field names her as 3rd Bristol District representative, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot",
+        "On the Record (0 appearances, extract-otr returned 0 sources)",
+        "legislature member page https://malegislature.gov/Legislators/Profile/LMF1 (nothing on the subject)",
+        "legislature bills page https://malegislature.gov/Legislators/Profile/LMF1/Bills (nothing on the subject)",
+        "legislature cosponsored list https://malegislature.gov/Legislators/Profile/LMF1/194/Bills/Cosponsored (nothing on the subject)",
+        "legislature sponsored list https://malegislature.gov/Legislators/Profile/LMF1/194/Bills/Sponsored (nothing on the subject)",
+        "campaign site https://www.lisafieldforrep.com/ (nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Lisa_Field (nothing on the subject)",
+        "not reviewed: news search (session web-search budget exhausted)",
+        "not reviewed: official mahouse.gov page, social media, debate or forum videos, vote411"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:20:57.453Z",
+      "by": "source-collector"
+    }
+  ]
+}

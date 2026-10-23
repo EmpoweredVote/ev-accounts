@@ -1,0 +1,58 @@
+{
+  "politician_id": "9f2780f0-597d-4eda-ab82-0b49f4e96829",
+  "findings": [
+    {
+      "id": "343e8ad5b1102d8c3e34fad1bc7fcc13627a81850eb0bd325c33a3a9fad5ccf9",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess119_2011-2012/bills/3003.htm",
+      "date": "2011-05-11",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3003-2011",
+      "act": "nay",
+      "motion": "adoption of conference report",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "SC Senate, adoption of conference report, 2011-05-11: nay (tally 26–16); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.566Z",
+        "method": "curl"
+      }
+    },
+    {
+      "id": "12238315bd83034e0819a81d0821cebe3d506432cb46d1cc0dab19ca03c41039",
+      "kind": "record",
+      "url": "https://www.scstatehouse.gov/sess119_2011-2012/bills/3003.htm",
+      "date": "2011-02-24",
+      "date_precision": "day",
+      "instrument_id": "SC-H-3003-2011",
+      "act": "nay",
+      "motion": "third reading, returned to House with amendments",
+      "gate_by_topic": {
+        "voting-rights": "none"
+      },
+      "note": "SC Senate, third reading, returned to House with amendments, 2011-02-24: nay (tally 24–15); census gate: none.",
+      "subjects": [
+        "voter ID at the polls",
+        "photo ID"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "stage1 text-T2 (source-collector subagent, 2026-10-20)",
+        "fetched_at": "2026-10-21T03:40:10.566Z",
+        "method": "curl"
+      }
+    }
+  ],
+  "searches": []
+}

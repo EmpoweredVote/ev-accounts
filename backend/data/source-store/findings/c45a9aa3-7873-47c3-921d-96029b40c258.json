@@ -1,0 +1,30 @@
+{
+  "politician_id": "c45a9aa3-7873-47c3-921d-96029b40c258",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity laws",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: Representative John L. Lowery, NC House District 47, appointed 2025-10-13 (https://www.ncleg.gov/Members/Biography/H/1001); on the 2026 general-election ballot, primary cancelled, advanced without appearing on ballot (https://ballotpedia.org/North_Carolina_House_of_Representatives_District_47)",
+        "On the Record (0 appearances, extract-otr run)",
+        "NC General Assembly member page: nothing on the subject",
+        "NC General Assembly introduced bills list (https://www.ncleg.gov/Members/IntroducedBills/H/1001): HB 1019, HB 1081, HB 1083, HB 1089, HB 1090, HR 1238, HR 1239; nothing on the subject",
+        "Ballotpedia district page: nothing on the subject",
+        "not reviewed: official campaign site and news search (web search budget used up; no campaign site URL known)",
+        "not reviewed: NC House roll-call votes on 2025-26 election bills (not located by direct fetch)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:07:16.019Z",
+      "by": "source-collector"
+    }
+  ]
+}

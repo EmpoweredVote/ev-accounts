@@ -1,0 +1,24 @@
+{
+  "politician_id": "ae6bd84c-2899-459d-99f1-25c3bdb0d666",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote",
+        "mail-ballot ID"
+      ],
+      "places": [
+        "status: lost the 2026-08-04 primary (https://ballotpedia.org/Byron_Nolen: 'He lost in the Democratic primary on August 4, 2026.' Michigan 12th District, 8.8 percent of votes)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (https://ballotpedia.org/Byron_Nolen): nothing on the subject",
+        "not searched further: out of scope after lost primary; web search budget also used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:44:51.736Z",
+      "by": "source-collector"
+    }
+  ]
+}

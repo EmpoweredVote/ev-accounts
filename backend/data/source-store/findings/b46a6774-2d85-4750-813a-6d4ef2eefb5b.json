@@ -1,0 +1,31 @@
+{
+  "politician_id": "b46a6774-2d85-4750-813a-6d4ef2eefb5b",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "voter without ID",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE Act",
+        "election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Cynthia_Creem names her as Massachusetts State Senate Norfolk and Middlesex incumbent, advanced from the September 1, 2026 primary, on the November 3, 2026 ballot",
+        "malegislature.gov profile https://malegislature.gov/Legislators/Profile/CSC0 (names her, Majority Leader, Norfolk and Middlesex)",
+        "On the Record (0 appearances, 0 candidates)",
+        "Ballotpedia: nothing on the subject",
+        "malegislature.gov bill search for voter identification https://malegislature.gov/Bills/194/Search?searchTerms=voter%20identification: not reviewed (page returned no readable text)",
+        "malegislature.gov sponsorship page https://malegislature.gov/Legislators/Profile/CSC0/Sponsorship: not reviewed (no readable text)",
+        "campaign site https://www.cynthiacreem.com: blocked (no readable content)",
+        "news search: not reviewed (shared web search budget used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:20:43.182Z",
+      "by": "source-collector"
+    }
+  ]
+}

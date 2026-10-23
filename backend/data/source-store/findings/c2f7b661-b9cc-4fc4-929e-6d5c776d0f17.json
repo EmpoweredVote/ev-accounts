@@ -1,0 +1,31 @@
+{
+  "politician_id": "c2f7b661-b9cc-4fc4-929e-6d5c776d0f17",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter remedies",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "voter-roll checks",
+        "election integrity"
+      ],
+      "places": [
+        "status: sitting Indiana House member District 63; Ballotpedia (https://ballotpedia.org/Shane_Lindauer) says he did not file to run for re-election in 2026, so he is not on the 2026 ballot; term ends November 4, 2026",
+        "On the Record (0 appearances)",
+        "Indiana House caucus member page https://www.indianahouserepublicans.com/members/general/shane-lindauer (press list scanned; only a voter-registration-deadline reminder and border statements; nothing on the subject)",
+        "blocked: https://www.shanelindauer.com/ (no readable text returned)",
+        "blocked: https://iga.in.gov/legislative/2026/legislators/legislator_shane_lindauer_1 (script-only page, no bill list readable)",
+        "Ballotpedia: nothing on the subject",
+        "blocked: news search (web search budget used up)",
+        "not reviewed: https://www.indianahouserepublicans.com/members/general/shane-lindauer/news/press-releases/rep.-lindauer-reminds-hoosiers-of-oct.-10-voter-registration-deadline/ (404)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:51:02.566Z",
+      "by": "source-collector"
+    }
+  ]
+}

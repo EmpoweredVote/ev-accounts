@@ -1,0 +1,95 @@
+{
+  "politician_id": "f7ab655e-48bd-4e51-b22f-5ca6128f2f66",
+  "findings": [
+    {
+      "id": "5dd5a9b99b86662d8d80bef039ae790c3aa7242b8d9aa7852c69fca2a4d2a968",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Max_Engling",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Election security: Indiana is a national leader in election security for holding the line on voter ID laws, citizenship verification, and ensuring the security of absentee ballots. I will work to build on this strong foundation and work proactively to give our voters confidence in our elections.",
+      "note": "From his 2026 Ballotpedia Candidate Connection survey answer on his three key campaign messages. He says Indiana's voter ID laws, citizenship verification and absentee ballot security are a strong base and says he will build on them.",
+      "subjects": [
+        "voter ID at the polls",
+        "citizenship verification",
+        "mail-ballot security",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:56:27.135Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5f1c7394677a9b0f62d4c173bf5ecd8696d635b33571ae1da6778b757ae07420",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Max_Engling",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "As Secretary of State, Max will fight to protect election integrity, reduce government red tape, and uphold Indiana’s conservative values.",
+      "note": "Biography text in his 2026 Ballotpedia Candidate Connection survey, written in the third person for his campaign. He names election integrity as a priority.",
+      "subjects": [
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:56:27.135Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "80b5abb15737220e108ceafcf8de89e69fe6f4cf23a879aecfe3a49978982b43",
+      "kind": "own-words",
+      "url": "https://ballotpedia.org/Max_Engling",
+      "date": "2026",
+      "date_precision": "year",
+      "passage": "Transparency portal: a direct channel for citizens to report potential election issues themselves.",
+      "note": "In the same 2026 survey he proposes a portal where citizens report possible election problems directly to the Secretary of State.",
+      "subjects": [
+        "election integrity laws in general",
+        "citizen reporting of election issues"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T22:56:27.135Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "citizenship verification",
+        "absentee ballot security",
+        "non-citizen voting",
+        "ballot harvesting",
+        "election integrity in general"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia page lists him on the Nov 3, 2026 general election ballot for Indiana Secretary of State (https://ballotpedia.org/Max_Engling)",
+        "On the Record (0 appearances)",
+        "Ballotpedia (2026 Candidate Connection survey)",
+        "not reviewed: campaign site (address not found by direct fetch; web search budget used up)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: ontheissues.org, vote411, ivoterguide.com",
+        "nothing on the subject: legislature bill pages (not a legislator; no sponsorships)"
+      ],
+      "found": 3,
+      "at": "2026-10-22T22:56:27.135Z",
+      "by": "source-collector"
+    }
+  ]
+}

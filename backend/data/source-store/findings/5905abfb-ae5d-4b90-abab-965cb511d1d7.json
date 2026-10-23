@@ -1,0 +1,83 @@
+{
+  "politician_id": "5905abfb-ae5d-4b90-abab-965cb511d1d7",
+  "findings": [
+    {
+      "id": "fa22c90e4a1c2bb5f48948e4f002008b8c076a0bcaa27574c998a94344176781",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/747",
+      "date": "2026-06-30",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, Second Reading (member vote: Aye, 66 to 47)",
+      "note": "HB 958 is a broad election law bill. Its text includes photo ID rules: a voter whose driver license or Social Security number does not match at registration must show ID with the ballot, in person or absentee; a voter without photo ID may cast a provisional ballot and must present ID by a deadline; absentee request forms carry ID information. Same day the member voted Aye on amendment A1 (Blackwell, 112 to 0) and Aye on amendment A2 (Blackwell, 69 to 44), and No on amendment A3 (Dahle, failed 47 to 66). Contents of the amendments were not read.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "provisional ballot without photo ID",
+        "ID number mismatch at registration",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:01.688Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "5ce1eee6ac3df99cf04e2ad20793c15f32c467db9a43e47db3fd144daf094a2a",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Members/Votes/H/747",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "yea",
+      "motion": "HB 958 Election Law Changes, M11 Concur (vote to agree with Senate changes; member vote: Aye, 62 to 47)",
+      "note": "Final House vote to concur on HB 958, sending it on. The bill page shows the Governor vetoed it on 08/17/2026 (https://www.ncleg.gov/BillLookUp/2025/H958). No override vote was found on the member's vote list at fetch time.",
+      "subjects": [
+        "voter ID at the polls",
+        "mail-ballot ID",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:47:01.688Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "ID number matching at registration",
+        "proof of citizenship",
+        "election integrity laws in general",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: NC House District 12, on the Nov 3 2026 general ballot (https://ballotpedia.org/Chris_Humphrey; https://www.ncleg.gov/Members/Biography/H/747)",
+        "On the Record (0 appearances)",
+        "NC General Assembly member vote record (https://www.ncleg.gov/Members/Votes/H/747)",
+        "NC General Assembly introduced bills list (https://www.ncleg.gov/Members/IntroducedBills/H/747): nothing on the subject except a 2026 bill titled No Voter Registration Changes At DMV (H1231, referred to committee, not read for ID content)",
+        "NC General Assembly bill page and text for HB 958 (https://www.ncleg.gov/BillLookUp/2025/H958)",
+        "Ballotpedia: nothing on the subject",
+        "not reviewed: official and campaign sites (no URL fetched; web search budget was used up)",
+        "not reviewed: news search on name plus subject words (web search budget used up)",
+        "not reviewed: votes before 2025 session (2023 election law votes) not checked"
+      ],
+      "found": 2,
+      "at": "2026-10-22T23:47:01.688Z",
+      "by": "source-collector"
+    }
+  ]
+}

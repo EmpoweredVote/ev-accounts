@@ -1,0 +1,29 @@
+{
+  "politician_id": "5aa536e1-faaa-485c-b6d8-0e4d99d16361",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voters",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "election integrity laws"
+      ],
+      "places": [
+        "status: in scope - sitting Indiana State Senator, District 40, term ends 2028 (https://ballotpedia.org/Shelli_Yoder); not on the 2026 ballot, no primary lost",
+        "On the Record (0 appearances; extract-otr run with name search, nothing on the subject)",
+        "Ballotpedia https://ballotpedia.org/Shelli_Yoder (nothing on the subject; 2020 survey lists only 'expanding voting rights' in general terms, 2024 survey not completed; sponsored-bill table did not render)",
+        "campaign site https://www.shelliyoder.com and /priorities (nothing on the subject; only redistricting)",
+        "official caucus page https://indianasenatedemocrats.org/senators/senator-shelli-yoder/ (one page fetched, nothing on the subject)",
+        "not reviewed: https://iga.in.gov/legislative/2025/legislators/legislator_shelli_yoder_1 (page loads by script, bill list unreadable; api.iga.in.gov returned 403)",
+        "not reviewed: news search on name plus subject words (the shared web search budget was used up)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T22:33:38.535Z",
+      "by": "source-collector"
+    }
+  ]
+}

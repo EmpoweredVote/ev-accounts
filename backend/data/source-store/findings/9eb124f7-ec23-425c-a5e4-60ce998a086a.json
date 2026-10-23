@@ -1,0 +1,24 @@
+{
+  "politician_id": "9eb124f7-ec23-425c-a5e4-60ce998a086a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "proof of citizenship to register or vote"
+      ],
+      "places": [
+        "status: lost the 2026-08-18 primary (Ballotpedia John Peters (Florida): ran for U.S. House FL-14, lost the primary on August 18, 2026; also ran in FL-16, not on that primary ballot). https://ballotpedia.org/John_Peters_(Florida)",
+        "On the Record (0 appearances)",
+        "Ballotpedia FL-6 district page (no John Peters listed): https://ballotpedia.org/Florida%27s_6th_Congressional_District",
+        "not reviewed: campaign site, congress.gov (stopped after finding the candidate out of scope)",
+        "not searched: web search budget used up"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:52:15.037Z",
+      "by": "source-collector"
+    }
+  ]
+}

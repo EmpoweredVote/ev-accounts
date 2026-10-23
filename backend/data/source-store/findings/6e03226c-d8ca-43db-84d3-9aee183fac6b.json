@@ -1,0 +1,54 @@
+{
+  "politician_id": "6e03226c-d8ca-43db-84d3-9aee183fac6b",
+  "findings": [
+    {
+      "id": "fa8bd352babae7f326f6831c5fc710e318b92fa4637974887e81a332b3d7d9ee",
+      "kind": "record",
+      "url": "https://www.ncleg.gov/Legislation/Votes/RollCallVoteTranscript/2025/H/801",
+      "date": "2026-08-04",
+      "date_precision": "day",
+      "instrument_id": "NC-HB-958-2025",
+      "act": "nay",
+      "motion": "House roll call #801, motion M11 Concur in the Senate committee substitute for HB 958, Election Law Changes (passed 62-47). K. Brown is listed among the Noes.",
+      "note": "She voted no on concurring with the Senate version of HB 958, which the House passed 62-47. The ratified bill (https://www.ncleg.gov/Sessions/2025/Bills/House/HTML/H958v9.html) requires county boards to process a voter registration application only if it affirmatively states the applicant is a citizen, with a 30-day sworn-statement notice when the citizenship question is left blank; adds the same citizenship question check at motor vehicle offices; allows data-sharing with other states to cross-check voter records; and sends monthly motor vehicle data to the State Board for list maintenance. Per the bill page the Governor vetoed it on 2026-08-17.",
+      "subjects": [
+        "proof of citizenship to register",
+        "voter-roll checks",
+        "election integrity laws in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:52:37.153Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "ID with mail or absentee ballot",
+        "proof or statement of citizenship to register",
+        "voter-roll list maintenance",
+        "election integrity laws in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia and NC General Assembly biography page (https://www.ncleg.gov/Members/Biography/H/795) name her as House District 71 member; Ballotpedia says she is on the Nov 3, 2026 general ballot and her March 3, 2026 primary was canceled",
+        "On the Record (0 appearances; extract-otr returned nothing)",
+        "nothing on the subject: Ballotpedia (https://ballotpedia.org/Kanika_Brown) has no issue positions or survey answers; she has not completed the 2026 Candidate Connection survey",
+        "blocked: https://www.kanikabrown.com (no response from the campaign site)",
+        "NC General Assembly bill page and roll call for HB 958 (reviewed)",
+        "not reviewed: her full NC vote history page (https://www.ncleg.gov/Legislation/Votes/MemberVoteHistory/2025/H/795 loads by script, no readable content); HB 958 House second/third reading roll call of 2026-06-30 (roll call number not found)",
+        "not reviewed: news search and own-words search (the shared web search budget was used up, so no searches were run)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:52:37.153Z",
+      "by": "source-collector"
+    }
+  ]
+}

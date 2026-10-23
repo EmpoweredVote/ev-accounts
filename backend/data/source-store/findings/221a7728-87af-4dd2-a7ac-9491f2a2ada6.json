@@ -1,0 +1,35 @@
+{
+  "politician_id": "221a7728-87af-4dd2-a7ac-9491f2a2ada6",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "SAVE America Act",
+        "election integrity",
+        "non-citizen voting",
+        "voter-roll checks"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Joe_Hathaway names him on the Nov 3, 2026 general-election ballot for U.S. House NJ-11 after the June 2, 2026 primary",
+        "On the Record (0 appearances; nothing on the subject)",
+        "campaign site https://www.joehathawayforcongress.com/platform (nothing on the subject; page covers housing tax, workforce, health, spending, immigration enforcement)",
+        "campaign site home page (nothing on the subject)",
+        "Ballotpedia (no Candidate Connection survey; nothing on the subject)",
+        "news: wrnjradio.com announcement of campaign (nothing on the subject)",
+        "news: newjerseyglobe.com 2026-04-06 final-week story (a voter at his event asked about the SAVE America Act; no answer from him quoted, so not saved)",
+        "news: aol.com debate story, newjerseymonitor.com 2026-04-09 story, insidernj.com CD-11 story (nothing on the subject)",
+        "congress.gov (not applicable: not a sitting member of Congress; no sponsorships or votes)",
+        "not reviewed: Oct 26, 2026 debate and April 1, 2026 debate video (no transcript reached)"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:32:02.357Z",
+      "by": "source-collector"
+    }
+  ]
+}

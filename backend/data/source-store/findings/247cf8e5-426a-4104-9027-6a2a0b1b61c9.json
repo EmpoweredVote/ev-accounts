@@ -1,0 +1,54 @@
+{
+  "politician_id": "247cf8e5-426a-4104-9027-6a2a0b1b61c9",
+  "findings": [
+    {
+      "id": "3cab8731c0dee55629415878960f15bf0b188e33a5bc8cd04d06e44f63123850",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/SD3058",
+      "date": "2025-07-17",
+      "date_precision": "day",
+      "instrument_id": "MA-SD-3058-2025",
+      "act": "other",
+      "motion": "Filed by request of Larry Quintal: An Act ensuring uniform treatment of vote by mail ballots",
+      "note": "She presented this petition at a constituent's request only, and it was referred to the Election Laws committee. The bill text is not on the page, so what it requires is unknown. Related to mail ballots, not to ID.",
+      "subjects": [
+        "vote-by-mail ballots (general, not ID)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:02:15.848Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity / vote-by-mail ballots"
+      ],
+      "places": [
+        "in scope: Ballotpedia (https://ballotpedia.org/Kelly_Dooner) says she is on the 2026 general-election ballot, 3rd Bristol and Plymouth Senate district, and advanced from the 1 Sept 2026 primary",
+        "On the Record (0 appearances; none to read)",
+        "malegislature.gov legislator profile KAD0 (sponsored bills list: no voter ID or citizenship bill)",
+        "malegislature.gov bill search 'voter identification' (first page only; she is not listed as sponsor)",
+        "malegislature.gov SD.3058 bill page",
+        "Ballotpedia page (no voter ID, citizenship or election integrity text found)",
+        "campaign site: not found (www.kellydooner.com does not resolve)",
+        "not reviewed: news search, own-words search (web search budget used up)",
+        "not reviewed: Senate roll-call votes on election bills (not reached)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:02:15.848Z",
+      "by": "source-collector"
+    }
+  ]
+}

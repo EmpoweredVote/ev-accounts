@@ -1,0 +1,32 @@
+{
+  "politician_id": "05889a4f-f4e5-4fb3-87a4-984bc9c23131",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity"
+      ],
+      "places": [
+        "scope: Wikipedia lists Josh Stein as incumbent NC governor since 2025-01-01 (https://en.wikipedia.org/wiki/Josh_Stein); not on the 2026 ballot",
+        "On the Record (0 appearances)",
+        "official site governor.nc.gov press-release list page 1 (nothing on the subject; Oct 15 2026 vote release only says voting is a fundamental right, no ID content)",
+        "blocked: https://governor.nc.gov/search?keys=voter+ID (site search returned no results list)",
+        "not reviewed: governor.nc.gov press releases pages 2-170",
+        "blocked: https://www.ncleg.gov/Legislation/Vetoes (404)",
+        "https://www.ncleg.gov/BillLookUp/2025/S382 (not on the subject)",
+        "Ballotpedia https://ballotpedia.org/Josh_Stein (page returned no usable content)",
+        "not reviewed: news search (web search budget exhausted)",
+        "not reviewed: campaign site, ncleg bill pages for ID bills"
+      ],
+      "found": 0,
+      "at": "2026-10-22T23:31:04.678Z",
+      "by": "source-collector"
+    }
+  ]
+}

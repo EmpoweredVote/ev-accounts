@@ -1,0 +1,34 @@
+{
+  "politician_id": "926943ad-ee64-4ddb-b9e7-6475a6a2d087",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship (SAVE Act)",
+        "voter-roll checks",
+        "non-citizen voting",
+        "election integrity"
+      ],
+      "places": [
+        "On the Record (0 appearances)",
+        "confirmed in scope: https://www.chamberbloomington.org/district-9-congressional-candidates-2026.html says he will face the incumbent in the Indiana 9th District general election (fetch tool summary, not verbatim)",
+        "campaign site bradmeyer.org home, policy-overview, immigration-policy: nothing on the subject",
+        "blocked: https://bradmeyer.org/defending-democracy/ (curl 403; fetch tool gave only a summary with nothing on the subject)",
+        "blocked: https://ballotpedia.org/Brad_Meyer (fetch returned empty)",
+        "blocked: https://www.joplinglobe.com/region/brad-meyer-wins-democratic-nomination-for-u-s-house-in-indianas-9th-congressional-district/article_474b84d2-b5ae-52d0-8518-e32abbb437fc.html (HTTP 429)",
+        "congress.gov sponsorships: not applicable (not a legislator)",
+        "news search on name plus subject words: nothing on the subject",
+        "not reviewed: bradmeyer.org Brad's FAQs, Newsletter Archive, Socials, YouTube, Substack",
+        "not reviewed: vote411 and other questionnaires"
+      ],
+      "found": 0,
+      "at": "2026-10-22T21:39:57.876Z",
+      "by": "source-collector"
+    }
+  ]
+}

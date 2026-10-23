@@ -1,0 +1,29 @@
+{
+  "politician_id": "e7f351cf-d668-4d09-b8ff-0f8dbd85b33a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter options",
+        "mail-ballot ID",
+        "proof of citizenship to register or vote",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/Elaine_Marshall (fetched with curl) names her as the sitting NC Secretary of State, won 2024 general, term ends 2029; not on the 2026 ballot",
+        "On the Record (0 appearances; extract-otr returned OTR_SOURCES=0)",
+        "official site https://www.sosnc.gov/ home page fetched; nothing on the subject; the about-page URL tried returned 404; site search page returned nothing on the subject",
+        "Ballotpedia: nothing on the subject in the page text; Candidate Connection page fetch returned empty (not reviewed: https://ballotpedia.org/Elaine_Marshall_Candidate_Connection)",
+        "legislature bill pages: not reviewed (she is a statewide executive, not a legislator; not searched by name)",
+        "campaign site: not reviewed",
+        "news search: blocked: web search budget used up for the session, no searches run"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:12:13.422Z",
+      "by": "source-collector"
+    }
+  ]
+}

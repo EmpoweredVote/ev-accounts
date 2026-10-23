@@ -1,0 +1,120 @@
+{
+  "politician_id": "9a41971c-1e38-41b8-a6ec-bec6055a00b3",
+  "findings": [
+    {
+      "id": "7bd5773efd9209d06effbf98bd2d8eb112a05038245f79528395d4cb5401d2e3",
+      "kind": "own-words",
+      "url": "https://www.kmvt.com/2026/08/05/risch-v-achilles-may-be-idahos-most-active-us-senate-race-years-heres-where-they-stand/",
+      "date": "2026-08-05",
+      "date_precision": "day",
+      "passage": "“That is not true all over America, and we as Idahoans have the right to demand that other states do not allow people who are not citizens of this country to vote,” Risch said. “I’m all in on that. I’m all in on the Save Act.”",
+      "note": "Quoted by the Idaho Capital Sun (read on KMVT) in a candidate interview. Risch says he backs the SAVE Act and ties it to keeping non-citizens from voting in other states.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:44.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "1a869f8864b3e3534e30c75a1507ceb777c115aef3afd0b5703ee153ab12470d",
+      "kind": "own-words",
+      "url": "https://www.kmvt.com/2026/08/05/risch-v-achilles-may-be-idahos-most-active-us-senate-race-years-heres-where-they-stand/",
+      "date": "2026-08-05",
+      "date_precision": "day",
+      "passage": "“That’s a manufactured complaint by people who are opposed to it,” he said. “If you’re going to go get a driver’s license, you’ve got to go get those documents. You can’t just walk in and say, ‘I’m here to get a driver’s license’ and not give them backup to document it. So I don’t buy that argument. … I’m not in favor of anything that keeps a person from voting who is eligible to vote.”",
+      "note": "Quoted by the Idaho Capital Sun (read on KMVT). Responding to the concern that the bill could burden eligible voters such as people who changed their names (the reporter says he called it a red herring), he compares the document requirement to getting a driver's license and says he does not favor anything that keeps an eligible person from voting.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "burden on eligible voters",
+        "name-change documents"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:44.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "2621f88400080a8e8cf73da67946a5d5d7be74caa4178448e157391d8d3eb6f2",
+      "kind": "own-words",
+      "url": "https://www.kmvt.com/2026/08/05/risch-v-achilles-may-be-idahos-most-active-us-senate-race-years-heres-where-they-stand/",
+      "date": "2026-08-05",
+      "date_precision": "day",
+      "passage": "Risch said that Idaho’s elections are “rock solid safe.”",
+      "note": "Reporter's sentence with a short direct quote of Risch, in the same section as the SAVE Act answers. Related talk on election integrity in Idaho.",
+      "subjects": [
+        "election integrity in general"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:44.625Z",
+        "method": "webfetch"
+      }
+    },
+    {
+      "id": "fbed4409ad836b55bd9456d2461bf2a92db0bc9d6589792d1635def358bdf975",
+      "kind": "own-words",
+      "url": "https://www.mtexpress.com/opinion/letters_to_editor/would-save-act-put-extra-burden-on-idahoans/article_bbc2d980-fdab-47c5-bfb8-15f14ebde365.html",
+      "date": "2026-07-22",
+      "date_precision": "day",
+      "passage": "Some states, like Idaho, already require proof of citizenship to register and vote in federal elections. The SAVE America Act simply holds the rest of the country to the standard we follow in the Gem State.",
+      "note": "Form response to constituents about the SAVE America Act, quoted in a letter to the editor by Lori Banducci of Hailey (Mountain Express, published 2026-07-22). The response itself is undated; the date is the letter's. The letter writer disputes the claim, which is her view, not Risch's.",
+      "subjects": [
+        "proof of citizenship to register or vote (SAVE Act)",
+        "Idaho current rules"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T21:28:44.625Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "documentary proof of citizenship to register or vote (SAVE America Act)",
+        "non-citizen voting",
+        "voter ID with mail or absentee ballot",
+        "what happens to a voter with no ID",
+        "election integrity in general"
+      ],
+      "places": [
+        "in scope: Ballotpedia https://ballotpedia.org/James_Risch (redirects to Jim_Risch) says he is on the Nov 3, 2026 general-election ballot and advanced from the May 19, 2026 primary",
+        "On the Record (0 appearances; nothing on the subject)",
+        "official site: https://www.risch.senate.gov/public/index.cfm/pressreleases (page 1 only, nothing on the subject); site search URL guess returned 404",
+        "blocked: https://www.congress.gov/bill/119th-congress/senate-bill/128/cosponsors (HTTP 403); sponsorship and cosponsorship not confirmed",
+        "blocked: https://idahocapitalsun.com/2026/08/05/risch-v-achilles-may-be-idahos-most-competitive-us-senate-race-in-years-heres-where-they-stand/ (Cloudflare challenge); same story read at KMVT",
+        "blocked: https://www.newsfromthestates.com/node/420868 (HTTP 403)",
+        "Ballotpedia (no voter ID or SAVE Act section found)",
+        "news: Mountain Express letter, KMVT (Idaho Capital Sun story), Washington Examiner",
+        "Legal Insurrection 2026-06-05 on a 48-50 Senate amendment vote: does not list Risch's vote, so no record saved",
+        "not reviewed: https://www.buzzsprout.com/2390029/episodes/18837227-3-12-2026-interviews-us-sen-jim-risch-idaho-dem-chair-lauren-necochea-save-act-iran (audio interview, 2026-03-12)",
+        "not reviewed: Senate roll-call pages for SAVE America Act votes",
+        "Washington Examiner 2026-07-30 quotes only a fragment of a Risch statement (committed to doing whatever it takes); not saved because it is not a whole sentence"
+      ],
+      "found": 4,
+      "at": "2026-10-22T21:28:44.625Z",
+      "by": "source-collector"
+    }
+  ]
+}

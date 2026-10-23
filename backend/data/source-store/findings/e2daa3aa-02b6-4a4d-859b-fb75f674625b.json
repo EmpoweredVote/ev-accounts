@@ -1,0 +1,53 @@
+{
+  "politician_id": "e2daa3aa-02b6-4a4d-859b-fb75f674625b",
+  "findings": [
+    {
+      "id": "ffc22057434d66167ed027495f9b9b455b1d85c2b25be3b4f8cc75e8081c85c8",
+      "kind": "record",
+      "url": "https://malegislature.gov/Bills/194/H4148",
+      "date": "2025-05-19",
+      "date_precision": "day",
+      "instrument_id": "MA-HB-4148-2025",
+      "act": "sponsor",
+      "note": "Lead House petitioner, with a state senator, on H.4148, An Act relative to lawful noncitizen permanent resident voting in the town of Shutesbury, a local-approval home-rule petition. Referred to the Election Laws committee 5/19/2025, heard 9/16/2025, reported to accompany a study order, which was accompanied on 4/2/2026 (see H5311). It concerns who may vote in one town, not proof of identity.",
+      "subjects": [
+        "non-citizen voting",
+        "who may vote (local noncitizen permanent residents)"
+      ],
+      "topic_keys": [
+        "voting-rights"
+      ],
+      "provenance": {
+        "fetched_by": "source-collector",
+        "fetched_at": "2026-10-22T23:28:07.349Z",
+        "method": "webfetch"
+      }
+    }
+  ],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID fallback (affidavit, provisional ballot, free ID)",
+        "ID with mail or absentee ballot",
+        "proof of citizenship to register or vote (SAVE Act)",
+        "non-citizen voting",
+        "voter-roll checks and election integrity"
+      ],
+      "places": [
+        "scope confirmed: Ballotpedia https://ballotpedia.org/Aaron_Saunders (7th Hampden District, advanced from the 2026-09-01 primary, on the 2026-11-03 general ballot) and https://malegislature.gov/Legislators/Profile/ALS1",
+        "On the Record (0 appearances; extract-otr.mjs returned OTR_SOURCES=0)",
+        "campaign site: https://www.aaronsaunders.org nothing on the subject; https://www.aaronsaunders.org/issues returned 404",
+        "legislature bill pages: sponsored-bills list https://malegislature.gov/Legislators/Profile/ALS1/SponsoredBills (only one election-law bill on the subject: H.4148; H.4224 is a town-election validation bill, off subject)",
+        "Ballotpedia: nothing on the subject (no Candidate Connection survey completed)",
+        "not reviewed: news search on name plus subject words (web search budget exhausted, no search could be run)",
+        "not reviewed: ontheissues.org, vote411, Vote Smart (lead-only sources; no searches available)"
+      ],
+      "found": 1,
+      "at": "2026-10-22T23:28:07.349Z",
+      "by": "source-collector"
+    }
+  ]
+}

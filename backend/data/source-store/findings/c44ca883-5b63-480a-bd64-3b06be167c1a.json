@@ -1,0 +1,31 @@
+{
+  "politician_id": "c44ca883-5b63-480a-bd64-3b06be167c1a",
+  "findings": [],
+  "searches": [
+    {
+      "topic_key": "voting-rights",
+      "season": 3,
+      "subjects": [
+        "voter ID at the polls",
+        "no-ID voter fallback",
+        "mail-ballot ID",
+        "proof of citizenship",
+        "election integrity",
+        "non-citizen voting"
+      ],
+      "places": [
+        "in scope: https://ballotpedia.org/Mike_Schietzelt names him as NC House District 35 incumbent, on the Nov 3, 2026 general ballot after winning the Mar 3, 2026 primary; https://www.ncleg.gov/Members/Biography/H/840 confirms Rep. Mike Schietzelt",
+        "On the Record (0 appearances, extract-otr.mjs run with --names)",
+        "Ballotpedia (page and 2026 Candidate Connection survey) nothing on the subject",
+        "ncleg.gov member introduced-bills page https://www.ncleg.gov/Members/IntroducedBills/H/840 nothing on the subject in the default listing; only a Medicaid dental rates bill was referred to Election Law committee; full session-by-session sponsorship list not reviewed",
+        "campaign site https://www.mikeschietzelt.com fetched, nothing on the subject found by keyword scan",
+        "not reviewed: news search on name plus subject words (web search budget exhausted)",
+        "not reviewed: ncleg.gov roll-call vote pages for election bills",
+        "blocked: https://www.ncleg.gov/Members/Biography/H/792 (HTTP 500, wrong ID anyway)"
+      ],
+      "found": 0,
+      "at": "2026-10-23T00:07:03.781Z",
+      "by": "source-collector"
+    }
+  ]
+}
