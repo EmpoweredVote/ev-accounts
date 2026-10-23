@@ -26,6 +26,8 @@ const ACCESS_TOKEN = 'test-access-token';
 // Records every builder call so the test can assert the query was scoped.
 const eqMock = vi.hoisted(() => vi.fn());
 const requestDbMock = vi.hoisted(() => vi.fn());
+const getResearchStatesMock = vi.hoisted(() => vi.fn());
+const getCandidateResearchStatesMock = vi.hoisted(() => vi.fn());
 
 // A chainable stub matching the supabase-js query builder surface the routes
 // use: .schema().from().eq().select().in().is() and a terminal await → {data}.
@@ -74,6 +76,8 @@ vi.mock('../lib/compassService.js', () => ({
   getUserVerdicts: vi.fn(),
   getBatchPoliticianAnswers: vi.fn(),
   getPoliticianCitations: vi.fn(),
+  getResearchStates: getResearchStatesMock,
+  getCandidateResearchStates: getCandidateResearchStatesMock,
 }));
 
 // User-lens service is imported by the router at load time; stub the surface.
@@ -126,5 +130,42 @@ describe('POST /api/compass/answers/batch — owner scoping', () => {
 
     expect(res.status).toBe(200);
     expect(eqMock).toHaveBeenCalledWith('user_id', USER);
+  });
+});
+
+// Stage 5: what voters see for a researched person with no seat (spec 2026-10-22 §8).
+describe('GET research-states — same UUID and error handling as /answers', () => {
+  const PID = '33333333-3333-4333-8333-333333333333';
+  const state = { topic_id: 't1', outcome: 'no-stance', researched_on: '2026-10-21', passages: [] };
+
+  it('serves a politician\'s research states', async () => {
+    getResearchStatesMock.mockResolvedValue([state]);
+    const res = await request(app).get(`/api/compass/politicians/${PID}/research-states`);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([state]);
+    expect(getResearchStatesMock).toHaveBeenCalledWith(PID);
+  });
+
+  it('serves a candidate\'s research states, [] when none', async () => {
+    getCandidateResearchStatesMock.mockResolvedValue([]);
+    const res = await request(app).get(`/api/compass/candidates/${PID}/research-states`);
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([]);
+  });
+
+  it('422s a bad uuid on both routes', async () => {
+    for (const path of ['/api/compass/politicians/nope/research-states', '/api/compass/candidates/nope/research-states']) {
+      const res = await request(app).get(path);
+      expect(res.status).toBe(422);
+      expect(res.body.code).toBe('VALIDATION_ERROR');
+    }
+    expect(getResearchStatesMock).not.toHaveBeenCalled();
+  });
+
+  it('500s on a read error', async () => {
+    getResearchStatesMock.mockRejectedValue(new Error('boom'));
+    const res = await request(app).get(`/api/compass/politicians/${PID}/research-states`);
+    expect(res.status).toBe(500);
+    expect(res.body.code).toBe('INTERNAL_ERROR');
   });
 });

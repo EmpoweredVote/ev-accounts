@@ -1,6 +1,6 @@
 ---
 name: season-topic-prep
-description: "Prepare one compass topic for the next season, from audit to an applied Season revision: measure the seat rate, classify every blank, pick the Source or Wording path, run Stages 0–4 (census with gate pre-screen, frozen test set, blind drafts, seatability test with the adversarial check, revision package), save every source to the shared store, and post each stage's status to the topic's Monday Story. Triggers on: 'prep a topic', 'season prep', 'topic prep', 'topic audit', 'seat rate', 'Stage 0a', 'Stage 0', 'Stage 1', 'Stage 2', 'Stage 3', 'Stage 4', 'Stage 0–4'."
+description: "Prepare one compass topic for the next season, from audit to an applied Season revision: measure the seat rate, classify every blank, pick the Source or Wording path, run Stages 0–4 (census with gate pre-screen, frozen test set, blind drafts, seatability test with the adversarial check, revision package), save every source to the shared store, and post each stage's status to the topic's Monday Story; then Stage 5, code everyone the topic applies to with an early check on the rungs. Triggers on: 'prep a topic', 'season prep', 'topic prep', 'topic audit', 'seat rate', 'Stage 0a', 'Stage 0', 'Stage 1', 'Stage 2', 'Stage 3', 'Stage 4', 'Stage 0–4', 'Stage 5', 'code everyone'."
 argument-hint: "<topic_key> [stage]"
 ---
 
@@ -60,7 +60,7 @@ The design and its reasons: `docs/superpowers/specs/2026-10-20-season-topic-prep
   and the research root is `~/Documents/GitHub/.planning/research`. The Story owner is the runner, the person
   running this skill (Chris Andrews by default).
 - **Research folder:** `<research root>/s3-prep-<topic_key>/`, with one subfolder per stage (`stage0a/`, `stage0/`,
-  `stage1/`, `stage2/`, `stage3/`, `stage4/`). It is local and never pushed.
+  `stage1/`, `stage2/`, `stage3/`, `stage4/`, `stage5/`). It is local and never pushed.
   🔴 **Before creating any folder, look for an existing trail.** Search the research root for `s3-pilot-*`,
   `s3-census-*` and `s3-prep-*` folders whose name contains the topic key or its short name (for example
   `s3-pilot-homelessness-stage0a` … `-stage3`, `s3-pilot-school-police-stage4`, `s3-pilot-equity-programs/stage1/`,
@@ -326,6 +326,13 @@ migration on production; merging the PR. Then re-audit the carried seats (recipe
 for any ruling that generalises (same PR), and 📋 Monday step with stage `done` and the revision id. The seat rate is
 re-measured only after Season 3 research has run on the topic; at apply, `--season draft` prints "no rows".
 
+## Stage 5 — code everyone
+
+After Stage 4, follow [STAGE5.md](STAGE5.md): build the roster of everyone the topic applies to, pre-fill from the
+roll calls on file, search each person once (own words for everyone), code from the saved findings, and stop at the
+early check after federal and two or three contrasting states. 🛑 No database write before the early check passes;
+then one yes per batch.
+
 ## How to ask for a ruling
 
 One plain question per ruling, each with a recommendation. Never a batch of options with no view.
@@ -355,7 +362,7 @@ topic stands. The latest update is the status.
      npx tsx -e "import('./scripts/lib/topicPrepUpdate.ts').then(m => { const s = JSON.parse(process.env.TOPIC_PREP_STATE); console.log(m.statusLabel(s)); console.log(m.formatUpdateHtml(s)); })")
    ```
 
-   `stage` is `0a`, `0`, `1`, `2`, `3`, `4`, `done` or `parked`; `blockedOn` is `ruling`, `sources`, `dispute` or
+   `stage` is `0a`, `0`, `1`, `2`, `3`, `4`, `5`, `done` or `parked`; `blockedOn` is `ruling`, `sources`, `dispute` or
    `nothing`. Owed items (rulings, disputes, sources to fetch) go in `owed`. `path` and the rates may be `null`
    before the path ruling (printed as —). `seatRateBefore` and `seatRateAfter`
    are the **affirmative-record seat rate** (T1) from `topic:seat-rate` when a research file was joined

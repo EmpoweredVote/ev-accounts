@@ -54,7 +54,7 @@ async function main(): Promise<number> {
     }
     if (!report(validateStore(fromArg), fromArg)) return 1;
     const n = mergeStore(fromArg, root);
-    console.log(`merged ${n.instruments} instrument(s), ${n.people} person file(s), ${n.jurisdictions} jurisdiction(s), ${n.deadEnds} new dead end(s) into ${root}`);
+    console.log(`merged ${n.instruments} instrument(s), ${n.people} person file(s), ${n.jurisdictions} jurisdiction(s), ${n.findings} findings file(s), ${n.deadEnds} new dead end(s) into ${root}`);
     return report(validateStore(root), root) ? 0 : 1;
   }
   if (cmd === 'topic-list-hash') {

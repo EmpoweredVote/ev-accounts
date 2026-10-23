@@ -8,7 +8,7 @@
 
 export type TopicPrepState = {
   topicKey: string;
-  stage: '0a' | '0' | '1' | '2' | '3' | '4' | 'done' | 'parked';
+  stage: '0a' | '0' | '1' | '2' | '3' | '4' | '5' | 'done' | 'parked';
   path?: 'source' | 'wording';
   /** null (shown as —) before the path ruling, or when no rate has been measured yet. */
   seatRateBefore?: number | null;
